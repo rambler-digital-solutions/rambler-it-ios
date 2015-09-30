@@ -6,3 +6,5 @@ inhibit_all_warnings!
 
 pod 'MagicalRecord', '~> 2.3'
 pod 'Parse', '~> 1.8'
+pod 'Typhoon', '~> 3.3'
+
