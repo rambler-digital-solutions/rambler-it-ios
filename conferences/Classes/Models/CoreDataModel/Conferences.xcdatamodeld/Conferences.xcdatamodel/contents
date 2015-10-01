@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="14F27" minimumToolsVersion="Automatic">
+    <entity name="Event" representedClassName="Event" syncable="YES">
+        <attribute name="endDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="eventDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="liveStreamLink" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="timePadID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="twitterLink" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="lectures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lecture" inverseName="event" inverseEntity="Lecture" syncable="YES"/>
+        <relationship name="registrationQuestions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RegistrationQuestion" inverseName="event" inverseEntity="RegistrationQuestion" syncable="YES"/>
+    </entity>
+    <entity name="Lecture" representedClassName="Talk" syncable="YES">
+        <attribute name="favourite" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="orderID" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="slideLink" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="talkDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="videoLink" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="lectures" inverseEntity="Event" syncable="YES"/>
+        <relationship name="lecture" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LectureMaterials" inverseName="lectureMaterials" inverseEntity="LectureMaterials" syncable="YES"/>
+        <relationship name="speakers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Speaker" inverseName="talks" inverseEntity="Speaker" syncable="YES"/>
+    </entity>
+    <entity name="LectureMaterials" representedClassName="TalkMaterial" syncable="YES">
+        <attribute name="link" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="lectureMaterials" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lecture" inverseName="lecture" inverseEntity="Lecture" syncable="YES"/>
+    </entity>
+    <entity name="RegistrationQuestion" representedClassName="RegistrationQuestion" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="orderID" attributeType="String" syncable="YES"/>
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="registrationQuestions" inverseEntity="Event" syncable="YES"/>
+    </entity>
+    <entity name="SocialNetworkAccount" representedClassName="SocialAccount" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="profileLink" attributeType="String" syncable="YES"/>
+        <relationship name="speaker" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Speaker" inverseName="socialNetworkAccounts" inverseEntity="Speaker" syncable="YES"/>
+    </entity>
+    <entity name="Speaker" representedClassName="Speaker" syncable="YES">
+        <attribute name="biography" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="pictureLink" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="socialNetworkAccounts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SocialNetworkAccount" inverseName="speaker" inverseEntity="SocialNetworkAccount" syncable="YES"/>
+        <relationship name="talks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lecture" inverseName="speakers" inverseEntity="Lecture" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Event" positionX="-63" positionY="-97" width="128" height="178"/>
+        <element name="RegistrationQuestion" positionX="162" positionY="191" width="128" height="88"/>
+        <element name="SocialNetworkAccount" positionX="333" positionY="-270" width="128" height="88"/>
+        <element name="Speaker" positionX="135" positionY="-306" width="128" height="118"/>
+        <element name="Lecture" positionX="153" positionY="-124" width="128" height="178"/>
+        <element name="LectureMaterials" positionX="340" positionY="72" width="137" height="88"/>
+    </elements>
+</model>
