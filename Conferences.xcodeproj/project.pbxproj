@@ -8,6 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		5A5668508B92FC833070BA13 /* libPods-ConferencesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E72B1E234365770B87BDC6D /* libPods-ConferencesTests.a */; };
+		63FDCDCC1BBD9B5E00A43B60 /* RegistrationQuestion+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FDCDB51BBD9B5E00A43B60 /* RegistrationQuestion+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		63FDCDCD1BBD9B5E00A43B60 /* RegistrationQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FDCDB71BBD9B5E00A43B60 /* RegistrationQuestion.m */; settings = {ASSET_TAGS = (); }; };
+		63FDCDCE1BBD9B5E00A43B60 /* Event+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FDCDB91BBD9B5E00A43B60 /* Event+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		63FDCDCF1BBD9B5E00A43B60 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FDCDBB1BBD9B5E00A43B60 /* Event.m */; settings = {ASSET_TAGS = (); }; };
+		63FDCDD01BBD9B5E00A43B60 /* Talk+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FDCDBD1BBD9B5E00A43B60 /* Talk+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		63FDCDD11BBD9B5E00A43B60 /* Talk.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FDCDBF1BBD9B5E00A43B60 /* Talk.m */; settings = {ASSET_TAGS = (); }; };
+		63FDCDD21BBD9B5E00A43B60 /* TalkMaterial+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FDCDC11BBD9B5E00A43B60 /* TalkMaterial+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		63FDCDD31BBD9B5E00A43B60 /* TalkMaterial.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FDCDC31BBD9B5E00A43B60 /* TalkMaterial.m */; settings = {ASSET_TAGS = (); }; };
+		63FDCDD41BBD9B5E00A43B60 /* Speaker+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FDCDC51BBD9B5E00A43B60 /* Speaker+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		63FDCDD51BBD9B5E00A43B60 /* Speaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FDCDC71BBD9B5E00A43B60 /* Speaker.m */; settings = {ASSET_TAGS = (); }; };
+		63FDCDD61BBD9B5E00A43B60 /* SocialAccount+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FDCDC91BBD9B5E00A43B60 /* SocialAccount+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		63FDCDD71BBD9B5E00A43B60 /* SocialAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FDCDCB1BBD9B5E00A43B60 /* SocialAccount.m */; settings = {ASSET_TAGS = (); }; };
 		9F1F37E91BBBB80D00C7797D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1F37E81BBBB80D00C7797D /* main.m */; };
 		9F1F37EC1BBBB80D00C7797D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1F37EB1BBBB80D00C7797D /* AppDelegate.m */; };
 		9F1F37EF1BBBB80D00C7797D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1F37EE1BBBB80D00C7797D /* ViewController.m */; };
@@ -35,6 +47,30 @@
 		559ED4EDBC100544852E4E6A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		5E72B1E234365770B87BDC6D /* libPods-ConferencesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ConferencesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FED76184BAB5478101AC945 /* Pods-ConferencesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConferencesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConferencesTests/Pods-ConferencesTests.release.xcconfig"; sourceTree = "<group>"; };
+		63FDCDB41BBD9B5E00A43B60 /* RegistrationQuestion+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RegistrationQuestion+CoreDataProperties.h"; sourceTree = "<group>"; };
+		63FDCDB51BBD9B5E00A43B60 /* RegistrationQuestion+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RegistrationQuestion+CoreDataProperties.m"; sourceTree = "<group>"; };
+		63FDCDB61BBD9B5E00A43B60 /* RegistrationQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationQuestion.h; sourceTree = "<group>"; };
+		63FDCDB71BBD9B5E00A43B60 /* RegistrationQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationQuestion.m; sourceTree = "<group>"; };
+		63FDCDB81BBD9B5E00A43B60 /* Event+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Event+CoreDataProperties.h"; sourceTree = "<group>"; };
+		63FDCDB91BBD9B5E00A43B60 /* Event+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Event+CoreDataProperties.m"; sourceTree = "<group>"; };
+		63FDCDBA1BBD9B5E00A43B60 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		63FDCDBB1BBD9B5E00A43B60 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		63FDCDBC1BBD9B5E00A43B60 /* Talk+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Talk+CoreDataProperties.h"; sourceTree = "<group>"; };
+		63FDCDBD1BBD9B5E00A43B60 /* Talk+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Talk+CoreDataProperties.m"; sourceTree = "<group>"; };
+		63FDCDBE1BBD9B5E00A43B60 /* Talk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Talk.h; sourceTree = "<group>"; };
+		63FDCDBF1BBD9B5E00A43B60 /* Talk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Talk.m; sourceTree = "<group>"; };
+		63FDCDC01BBD9B5E00A43B60 /* TalkMaterial+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TalkMaterial+CoreDataProperties.h"; sourceTree = "<group>"; };
+		63FDCDC11BBD9B5E00A43B60 /* TalkMaterial+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TalkMaterial+CoreDataProperties.m"; sourceTree = "<group>"; };
+		63FDCDC21BBD9B5E00A43B60 /* TalkMaterial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkMaterial.h; sourceTree = "<group>"; };
+		63FDCDC31BBD9B5E00A43B60 /* TalkMaterial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkMaterial.m; sourceTree = "<group>"; };
+		63FDCDC41BBD9B5E00A43B60 /* Speaker+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Speaker+CoreDataProperties.h"; sourceTree = "<group>"; };
+		63FDCDC51BBD9B5E00A43B60 /* Speaker+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Speaker+CoreDataProperties.m"; sourceTree = "<group>"; };
+		63FDCDC61BBD9B5E00A43B60 /* Speaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Speaker.h; sourceTree = "<group>"; };
+		63FDCDC71BBD9B5E00A43B60 /* Speaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Speaker.m; sourceTree = "<group>"; };
+		63FDCDC81BBD9B5E00A43B60 /* SocialAccount+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SocialAccount+CoreDataProperties.h"; sourceTree = "<group>"; };
+		63FDCDC91BBD9B5E00A43B60 /* SocialAccount+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SocialAccount+CoreDataProperties.m"; sourceTree = "<group>"; };
+		63FDCDCA1BBD9B5E00A43B60 /* SocialAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialAccount.h; sourceTree = "<group>"; };
+		63FDCDCB1BBD9B5E00A43B60 /* SocialAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialAccount.m; sourceTree = "<group>"; };
 		84D2CBEF6E088EFC9A139E49 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9F1F37E41BBBB80D00C7797D /* Conferences.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conferences.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F1F37E81BBBB80D00C7797D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -72,6 +108,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		63FDCD771BBD917F00A43B60 /* ManagedObjectModel */ = {
+			isa = PBXGroup;
+			children = (
+				63FDCDB41BBD9B5E00A43B60 /* RegistrationQuestion+CoreDataProperties.h */,
+				63FDCDB51BBD9B5E00A43B60 /* RegistrationQuestion+CoreDataProperties.m */,
+				63FDCDB61BBD9B5E00A43B60 /* RegistrationQuestion.h */,
+				63FDCDB71BBD9B5E00A43B60 /* RegistrationQuestion.m */,
+				63FDCDB81BBD9B5E00A43B60 /* Event+CoreDataProperties.h */,
+				63FDCDB91BBD9B5E00A43B60 /* Event+CoreDataProperties.m */,
+				63FDCDBA1BBD9B5E00A43B60 /* Event.h */,
+				63FDCDBB1BBD9B5E00A43B60 /* Event.m */,
+				63FDCDBC1BBD9B5E00A43B60 /* Talk+CoreDataProperties.h */,
+				63FDCDBD1BBD9B5E00A43B60 /* Talk+CoreDataProperties.m */,
+				63FDCDBE1BBD9B5E00A43B60 /* Talk.h */,
+				63FDCDBF1BBD9B5E00A43B60 /* Talk.m */,
+				63FDCDC01BBD9B5E00A43B60 /* TalkMaterial+CoreDataProperties.h */,
+				63FDCDC11BBD9B5E00A43B60 /* TalkMaterial+CoreDataProperties.m */,
+				63FDCDC21BBD9B5E00A43B60 /* TalkMaterial.h */,
+				63FDCDC31BBD9B5E00A43B60 /* TalkMaterial.m */,
+				63FDCDC41BBD9B5E00A43B60 /* Speaker+CoreDataProperties.h */,
+				63FDCDC51BBD9B5E00A43B60 /* Speaker+CoreDataProperties.m */,
+				63FDCDC61BBD9B5E00A43B60 /* Speaker.h */,
+				63FDCDC71BBD9B5E00A43B60 /* Speaker.m */,
+				63FDCDC81BBD9B5E00A43B60 /* SocialAccount+CoreDataProperties.h */,
+				63FDCDC91BBD9B5E00A43B60 /* SocialAccount+CoreDataProperties.m */,
+				63FDCDCA1BBD9B5E00A43B60 /* SocialAccount.h */,
+				63FDCDCB1BBD9B5E00A43B60 /* SocialAccount.m */,
+			);
+			name = ManagedObjectModel;
+			path = conferences/ManagedObjectModel;
+			sourceTree = SOURCE_ROOT;
+		};
 		9879306505819DD768BE2239 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +174,7 @@
 		9F1F37E61BBBB80D00C7797D /* Conferences */ = {
 			isa = PBXGroup;
 			children = (
+				63FDCD771BBD917F00A43B60 /* ManagedObjectModel */,
 				9F1F37EA1BBBB80D00C7797D /* AppDelegate.h */,
 				9F1F37EB1BBBB80D00C7797D /* AppDelegate.m */,
 				9F1F37ED1BBBB80D00C7797D /* ViewController.h */,
@@ -313,7 +382,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63FDCDD01BBD9B5E00A43B60 /* Talk+CoreDataProperties.m in Sources */,
+				63FDCDD51BBD9B5E00A43B60 /* Speaker.m in Sources */,
+				63FDCDD71BBD9B5E00A43B60 /* SocialAccount.m in Sources */,
+				63FDCDCC1BBD9B5E00A43B60 /* RegistrationQuestion+CoreDataProperties.m in Sources */,
+				63FDCDD41BBD9B5E00A43B60 /* Speaker+CoreDataProperties.m in Sources */,
 				9F1F37EF1BBBB80D00C7797D /* ViewController.m in Sources */,
+				63FDCDD21BBD9B5E00A43B60 /* TalkMaterial+CoreDataProperties.m in Sources */,
+				63FDCDCD1BBD9B5E00A43B60 /* RegistrationQuestion.m in Sources */,
+				63FDCDD61BBD9B5E00A43B60 /* SocialAccount+CoreDataProperties.m in Sources */,
+				63FDCDCE1BBD9B5E00A43B60 /* Event+CoreDataProperties.m in Sources */,
+				63FDCDD11BBD9B5E00A43B60 /* Talk.m in Sources */,
+				63FDCDCF1BBD9B5E00A43B60 /* Event.m in Sources */,
+				63FDCDD31BBD9B5E00A43B60 /* TalkMaterial.m in Sources */,
 				9F1F37EC1BBBB80D00C7797D /* AppDelegate.m in Sources */,
 				9F1F37E91BBBB80D00C7797D /* main.m in Sources */,
 				9F1F37F51BBBB80D00C7797D /* Conferences.xcdatamodeld in Sources */,
