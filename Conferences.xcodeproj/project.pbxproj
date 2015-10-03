@@ -108,6 +108,7 @@
 		9F1830991BC022EA000E21A5 /* RCFRESTRequestConfiguratorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCFRESTRequestConfiguratorTests.m; path = CoreLayer/CoreComponents/RequestConfigurators/RESTRequestConfigurator/RCFRESTRequestConfiguratorTests.m; sourceTree = "<group>"; };
 		9F18309D1BC024A9000E21A5 /* RCFRequestDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCFRequestDataModel.h; path = CoreComponents/RequestConfigurators/Models/RequestDataModel/RCFRequestDataModel.h; sourceTree = "<group>"; };
 		9F18309E1BC024A9000E21A5 /* RCFRequestDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCFRequestDataModel.m; path = CoreComponents/RequestConfigurators/Models/RequestDataModel/RCFRequestDataModel.m; sourceTree = "<group>"; };
+		9F1830A21BC03133000E21A5 /* RCFRequestSigner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCFRequestSigner.h; path = CoreComponents/RequestSigners/Protocols/RCFRequestSigner.h; sourceTree = "<group>"; };
 		9F1F37E41BBBB80D00C7797D /* Conferences.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conferences.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F1F38001BBBB80D00C7797D /* ConferencesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConferencesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F1F38061BBBB80D00C7797D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -380,6 +381,7 @@
 		9F18308B1BC01E65000E21A5 /* CoreComponents */ = {
 			isa = PBXGroup;
 			children = (
+				9F1830A01BC030C1000E21A5 /* RequestSigners */,
 				9F18308C1BC01EB3000E21A5 /* RequestConfigurators */,
 			);
 			name = CoreComponents;
@@ -467,6 +469,22 @@
 				9F18309E1BC024A9000E21A5 /* RCFRequestDataModel.m */,
 			);
 			name = RequestDataModel;
+			sourceTree = "<group>";
+		};
+		9F1830A01BC030C1000E21A5 /* RequestSigners */ = {
+			isa = PBXGroup;
+			children = (
+				9F1830A11BC030CC000E21A5 /* Protocols */,
+			);
+			name = RequestSigners;
+			sourceTree = "<group>";
+		};
+		9F1830A11BC030CC000E21A5 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9F1830A21BC03133000E21A5 /* RCFRequestSigner.h */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 		9F1F37DB1BBBB80D00C7797D = {
