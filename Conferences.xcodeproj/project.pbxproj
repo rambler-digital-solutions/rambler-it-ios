@@ -31,7 +31,9 @@
 		63FDCE141BBDBA2A00A43B60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63FDCE021BBDBA2A00A43B60 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
 		63FDCE151BBDBA2A00A43B60 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63FDCE041BBDBA2A00A43B60 /* Info.plist */; settings = {ASSET_TAGS = (); }; };
 		63FDCE161BBDBA2A00A43B60 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FDCE051BBDBA2A00A43B60 /* main.m */; settings = {ASSET_TAGS = (); }; };
-		9F1F38051BBBB80D00C7797D /* ConferencesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1F38041BBBB80D00C7797D /* ConferencesTests.m */; };
+		9F1830931BC02293000E21A5 /* RCFRESTRequestConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830921BC02293000E21A5 /* RCFRESTRequestConfigurator.m */; settings = {ASSET_TAGS = (); }; };
+		9F18309A1BC022EA000E21A5 /* RCFRESTRequestConfiguratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830991BC022EA000E21A5 /* RCFRESTRequestConfiguratorTests.m */; settings = {ASSET_TAGS = (); }; };
+		9F18309F1BC024A9000E21A5 /* RCFRequestDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F18309E1BC024A9000E21A5 /* RCFRequestDataModel.m */; settings = {ASSET_TAGS = (); }; };
 		F826C56E7FA67515D33573A9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A4F504A716A8833A7A01A5D /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -101,9 +103,13 @@
 		63FDCE051BBDBA2A00A43B60 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		84D2CBEF6E088EFC9A139E49 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9F18308E1BC01F1E000E21A5 /* RCFRequestConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCFRequestConfigurator.h; path = CoreComponents/RequestConfigurators/Protocols/RCFRequestConfigurator.h; sourceTree = "<group>"; };
+		9F1830911BC02293000E21A5 /* RCFRESTRequestConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCFRESTRequestConfigurator.h; path = CoreComponents/RequestConfigurators/ConcreteClasses/RESTRequestConfigurator/RCFRESTRequestConfigurator.h; sourceTree = "<group>"; };
+		9F1830921BC02293000E21A5 /* RCFRESTRequestConfigurator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCFRESTRequestConfigurator.m; path = CoreComponents/RequestConfigurators/ConcreteClasses/RESTRequestConfigurator/RCFRESTRequestConfigurator.m; sourceTree = "<group>"; };
+		9F1830991BC022EA000E21A5 /* RCFRESTRequestConfiguratorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCFRESTRequestConfiguratorTests.m; path = CoreLayer/CoreComponents/RequestConfigurators/RESTRequestConfigurator/RCFRESTRequestConfiguratorTests.m; sourceTree = "<group>"; };
+		9F18309D1BC024A9000E21A5 /* RCFRequestDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCFRequestDataModel.h; path = CoreComponents/RequestConfigurators/Models/RequestDataModel/RCFRequestDataModel.h; sourceTree = "<group>"; };
+		9F18309E1BC024A9000E21A5 /* RCFRequestDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCFRequestDataModel.m; path = CoreComponents/RequestConfigurators/Models/RequestDataModel/RCFRequestDataModel.m; sourceTree = "<group>"; };
 		9F1F37E41BBBB80D00C7797D /* Conferences.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conferences.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F1F38001BBBB80D00C7797D /* ConferencesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConferencesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F1F38041BBBB80D00C7797D /* ConferencesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConferencesTests.m; sourceTree = "<group>"; };
 		9F1F38061BBBB80D00C7797D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -382,6 +388,8 @@
 		9F18308C1BC01EB3000E21A5 /* RequestConfigurators */ = {
 			isa = PBXGroup;
 			children = (
+				9F18309B1BC0248D000E21A5 /* Models */,
+				9F18308F1BC02226000E21A5 /* ConcreteClasses */,
 				9F18308D1BC01EBB000E21A5 /* Protocols */,
 			);
 			name = RequestConfigurators;
@@ -393,6 +401,72 @@
 				9F18308E1BC01F1E000E21A5 /* RCFRequestConfigurator.h */,
 			);
 			name = Protocols;
+			sourceTree = "<group>";
+		};
+		9F18308F1BC02226000E21A5 /* ConcreteClasses */ = {
+			isa = PBXGroup;
+			children = (
+				9F1830901BC02231000E21A5 /* RESTRequestConfigurator */,
+			);
+			name = ConcreteClasses;
+			sourceTree = "<group>";
+		};
+		9F1830901BC02231000E21A5 /* RESTRequestConfigurator */ = {
+			isa = PBXGroup;
+			children = (
+				9F1830911BC02293000E21A5 /* RCFRESTRequestConfigurator.h */,
+				9F1830921BC02293000E21A5 /* RCFRESTRequestConfigurator.m */,
+			);
+			name = RESTRequestConfigurator;
+			sourceTree = "<group>";
+		};
+		9F1830941BC0229F000E21A5 /* CoreLayer */ = {
+			isa = PBXGroup;
+			children = (
+				9F1830951BC022A6000E21A5 /* CoreComponents */,
+			);
+			name = CoreLayer;
+			sourceTree = "<group>";
+		};
+		9F1830951BC022A6000E21A5 /* CoreComponents */ = {
+			isa = PBXGroup;
+			children = (
+				9F1830961BC022AD000E21A5 /* RequestConfigurators */,
+			);
+			name = CoreComponents;
+			sourceTree = "<group>";
+		};
+		9F1830961BC022AD000E21A5 /* RequestConfigurators */ = {
+			isa = PBXGroup;
+			children = (
+				9F1830981BC022B9000E21A5 /* RESTRequestConfigurator */,
+			);
+			name = RequestConfigurators;
+			sourceTree = "<group>";
+		};
+		9F1830981BC022B9000E21A5 /* RESTRequestConfigurator */ = {
+			isa = PBXGroup;
+			children = (
+				9F1830991BC022EA000E21A5 /* RCFRESTRequestConfiguratorTests.m */,
+			);
+			name = RESTRequestConfigurator;
+			sourceTree = "<group>";
+		};
+		9F18309B1BC0248D000E21A5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9F18309C1BC02491000E21A5 /* RequestDataModel */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		9F18309C1BC02491000E21A5 /* RequestDataModel */ = {
+			isa = PBXGroup;
+			children = (
+				9F18309D1BC024A9000E21A5 /* RCFRequestDataModel.h */,
+				9F18309E1BC024A9000E21A5 /* RCFRequestDataModel.m */,
+			);
+			name = RequestDataModel;
 			sourceTree = "<group>";
 		};
 		9F1F37DB1BBBB80D00C7797D = {
@@ -428,7 +502,7 @@
 		9F1F38031BBBB80D00C7797D /* ConferencesTests */ = {
 			isa = PBXGroup;
 			children = (
-				9F1F38041BBBB80D00C7797D /* ConferencesTests.m */,
+				9F1830941BC0229F000E21A5 /* CoreLayer */,
 				9F1F38061BBBB80D00C7797D /* Info.plist */,
 			);
 			path = ConferencesTests;
@@ -609,9 +683,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F1830931BC02293000E21A5 /* RCFRESTRequestConfigurator.m in Sources */,
 				636B63E61BBDCEEA0053E38F /* Lecture+CoreDataProperties.m in Sources */,
 				636B64101BBDD6260053E38F /* RCFSpeakerServiceImplementation.m in Sources */,
 				636B63ED1BBDCEEA0053E38F /* Speaker.m in Sources */,
+				9F18309F1BC024A9000E21A5 /* RCFRequestDataModel.m in Sources */,
 				63FDCE061BBDBA2A00A43B60 /* AppDelegate.m in Sources */,
 				636B63E81BBDCEEA0053E38F /* RegistrationQuestion+CoreDataProperties.m in Sources */,
 				636B64041BBDD19A0053E38F /* RCFLectureServiceImplementation.m in Sources */,
@@ -637,7 +713,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F1F38051BBBB80D00C7797D /* ConferencesTests.m in Sources */,
+				9F18309A1BC022EA000E21A5 /* RCFRESTRequestConfiguratorTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

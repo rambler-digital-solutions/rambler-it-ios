@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class RCFRequestDataModel;
+
 /**
  @author Egor Tolstoy
  
@@ -20,7 +22,7 @@
  
  This method return a serialized NSURLRequest for a URL, specified during the instantiation of a concrete RequestConfigurator.
  
- @param method           REST method
+ @param method           HTTP method name
  @param serviceName      The name of the API service (e.g. the Entity name)
  @param urlParameters    Other parts of the URL (e.g. specific object identifier)
  @param requestDataModel The model containing query/body payload
@@ -30,6 +32,6 @@
 - (NSURLRequest *)requestWithMethod:(NSString *)method
                         serviceName:(NSString *)serviceName
                       urlParameters:(NSArray *)urlParameters
-                   requestDataModel:(id)requestDataModel;
+                   requestDataModel:(RCFRequestDataModel *)requestDataModel;
 
 @end

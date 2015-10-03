@@ -1,0 +1,94 @@
+//
+//  RCFRESTRequestConfiguratorTests.m
+//  Conferences
+//
+//  Created by Egor Tolstoy on 03/10/15.
+//  Copyright © 2015 Rambler. All rights reserved.
+//
+
+#import <XCTest/XCTest.h>
+
+#import "RCFRESTRequestConfigurator.h"
+#import "RCFRequestDataModel.h"
+
+static NSString *const kTestBaseURLPath = @"https://myapi.com";
+static NSString *const kTestBaseAPIPath = @"/v1/rest/";
+
+@interface RCFRESTRequestConfiguratorTests : XCTestCase
+
+@property (strong, nonatomic) RCFRESTRequestConfigurator *configurator;
+
+@end
+
+@implementation RCFRESTRequestConfiguratorTests
+
+- (void)setUp {
+    [super setUp];
+    
+    NSURL *baseURL = [NSURL URLWithString:kTestBaseURLPath];
+    self.configurator = [[RCFRESTRequestConfigurator alloc] initWithBaseURL:baseURL
+                                                                    apiPath:kTestBaseAPIPath];
+}
+
+- (void)tearDown {
+    self.configurator = nil;
+    
+    [super tearDown];
+}
+
+- (void)testThatConfiguratorCreatesSimpleRequest {
+    // given
+    NSString *expectedURLPath = @"https://myapi.com/v1/rest/";
+    
+    // when
+    NSURLRequest *result = [self.configurator requestWithMethod:@"GET"
+                                                    serviceName:nil
+                                                  urlParameters:nil
+                                               requestDataModel:nil];
+    
+    // then
+    XCTAssertEqualObjects(result.URL.absoluteString, expectedURLPath);
+}
+
+- (void)testThatConfiguratorCreatesRequestWithPath {
+    // given
+    NSString *expectedURLPath = @"https://myapi.com/v1/rest/service/object";
+    
+    // when
+    NSURLRequest *result = [self.configurator requestWithMethod:@"GET"
+                                                    serviceName:@"service"
+                                                  urlParameters:@[@"object"]
+                                               requestDataModel:nil];
+    
+    // then
+    XCTAssertEqualObjects(result.URL.absoluteString, expectedURLPath);
+}
+
+- (void)testThatConfiguratorCreatesQueryRequests {
+    // given
+    NSString *expectedURLPath = @"https://myapi.com/v1/rest/service/object?key1=value1&key2=value2";
+    
+    RCFRequestDataModel *dataModel = [[RCFRequestDataModel alloc] init];
+    dataModel.queryParameters = [self generateRequestParameters];
+    
+    // when
+    NSURLRequest *result = [self.configurator requestWithMethod:@"GET"
+                                                    serviceName:@"service"
+                                                  urlParameters:@[@"object"]
+                                               requestDataModel:dataModel];
+    
+    // then
+    XCTAssertEqualObjects(result.URL.path, expectedURLPath);
+    
+}
+
+#pragma mark - Helper methods
+
+- (NSDictionary *)generateRequestParameters {
+    return @{
+             @"key1" : @"value1",
+             @"key2" : @"value2"
+             };
+}
+
+@end
