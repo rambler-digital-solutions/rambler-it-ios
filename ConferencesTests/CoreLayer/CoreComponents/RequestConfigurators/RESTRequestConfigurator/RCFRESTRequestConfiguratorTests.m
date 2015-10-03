@@ -48,6 +48,7 @@ static NSString *const kTestBaseAPIPath = @"/v1/rest/";
     
     // then
     XCTAssertEqualObjects(result.URL.absoluteString, expectedURLPath);
+    XCTAssertEqualObjects(result.HTTPMethod, @"GET");
 }
 
 - (void)testThatConfiguratorCreatesRequestWithPath {
@@ -62,6 +63,7 @@ static NSString *const kTestBaseAPIPath = @"/v1/rest/";
     
     // then
     XCTAssertEqualObjects(result.URL.absoluteString, expectedURLPath);
+    XCTAssertEqualObjects(result.HTTPMethod, @"GET");
 }
 
 - (void)testThatConfiguratorCreatesQueryRequests {
@@ -79,7 +81,26 @@ static NSString *const kTestBaseAPIPath = @"/v1/rest/";
     
     // then
     XCTAssertEqualObjects(result.URL.absoluteString, expectedURLPath);
+    XCTAssertEqualObjects(result.HTTPMethod, @"GET");
+}
+
+- (void)testThatConfiguratorCreatesBodyRequests {
+    // given
+    NSString *expectedURLPath = @"https://myapi.com/v1/rest/service/object";
     
+    RCFRequestDataModel *dataModel = [[RCFRequestDataModel alloc] init];
+    dataModel.bodyData = [self generateBodyData];
+    
+    // when
+    NSURLRequest *result = [self.configurator requestWithMethod:@"POST"
+                                                    serviceName:@"service"
+                                                  urlParameters:@[@"object"]
+                                               requestDataModel:dataModel];
+    
+    // then
+    XCTAssertEqualObjects(result.URL.absoluteString, expectedURLPath);
+    XCTAssertEqualObjects(result.HTTPMethod, @"POST");
+    XCTAssertEqualObjects(result.HTTPBody, dataModel.bodyData);
 }
 
 #pragma mark - Helper methods
@@ -89,6 +110,12 @@ static NSString *const kTestBaseAPIPath = @"/v1/rest/";
              @"key1" : @"value1",
              @"key2" : @"value2"
              };
+}
+
+- (NSData *)generateBodyData {
+    NSString *dataString = @"test body data";
+    NSData *data = [dataString dataUsingEncoding:NSUTF8StringEncoding];
+    return data;
 }
 
 @end

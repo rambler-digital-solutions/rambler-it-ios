@@ -39,8 +39,16 @@
                    requestDataModel:(RCFRequestDataModel *)requestDataModel {
     NSURL *finalURL = [self generateURLWithServiceName:serviceName
                                          urlParameters:urlParameters];
-    NSURLRequest *request = [NSURLRequest requestWithURL:finalURL];
-    request = [self requestBySerializingRequest:request withParameters:requestDataModel.queryParameters error:nil];
+    NSMutableURLRequest *mutableRequest = [NSMutableURLRequest requestWithURL:finalURL];
+    [mutableRequest setHTTPMethod:method];
+    
+    if (requestDataModel.bodyData) {
+        [mutableRequest setHTTPBody:requestDataModel.bodyData];
+    }
+    
+    NSURLRequest *request = [self requestBySerializingRequest:[mutableRequest copy]
+                                               withParameters:requestDataModel.queryParameters
+                                                        error:nil];
     
     return request;
 }
