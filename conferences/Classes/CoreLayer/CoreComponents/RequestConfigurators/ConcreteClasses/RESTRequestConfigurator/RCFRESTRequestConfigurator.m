@@ -37,22 +37,18 @@
                         serviceName:(NSString *)serviceName
                       urlParameters:(NSArray *)urlParameters
                    requestDataModel:(RCFRequestDataModel *)requestDataModel {
-    NSDictionary *queryParameters = requestDataModel.queryParameters;
     NSURL *finalURL = [self generateURLWithServiceName:serviceName
-                                         urlParameters:urlParameters
-                                       queryParameters:queryParameters];
-    NSMutableURLRequest *mutableRequest = [NSMutableURLRequest requestWithURL:finalURL];
+                                         urlParameters:urlParameters];
+    NSURLRequest *request = [NSURLRequest requestWithURL:finalURL];
+    request = [self requestBySerializingRequest:request withParameters:requestDataModel.queryParameters error:nil];
     
-    
-    
-    return mutableRequest;
+    return request;
 }
 
 #pragma mark - Helper Methods
 
 - (NSURL *)generateURLWithServiceName:(NSString *)serviceName
-                        urlParameters:(NSArray *)urlParameters
-                      queryParameters:(NSDictionary *)queryParameters {
+                        urlParameters:(NSArray *)urlParameters {
     NSMutableArray *urlParts = [NSMutableArray new];
 
     [urlParts addObject:self.apiPath];
@@ -61,22 +57,12 @@
     }
 
     [urlParts addObjectsFromArray:urlParameters];
-    [urlParts addObject:[self stringFromQueryParameters:queryParameters]];
     
     NSString *urlPath = [urlParts componentsJoinedByString:@"/"];
     urlPath = [self filterSlachesInURLPath:urlPath];
     
     NSURL *finalURL = [self.baseURL URLByAppendingPathComponent:urlPath];
     return finalURL;
-}
-
-- (NSString *)stringFromQueryParameters:(NSDictionary *)parameters {
-    NSMutableArray *queryParts = [NSMutableArray new];
-    [parameters enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-        [queryParts addObject:[NSString stringWithFormat:@"%@=%@", key, obj]];
-    }];
-    NSString *queryString = [queryParts componentsJoinedByString:@"&"];
-    return [NSString stringWithFormat:@"?%@", queryString];
 }
 
 - (NSString *)filterSlachesInURLPath:(NSString *)urlPath {

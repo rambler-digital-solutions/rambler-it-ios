@@ -6,7 +6,7 @@
 //  Copyright © 2015 Rambler. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <AFNetworking/AFURLRequestSerialization.h>
 
 #import "RCFRequestConfigurator.h"
 
@@ -15,7 +15,7 @@
  
  This class is intended for serializing NSURLRequests for the REST API
  */
-@interface RCFRESTRequestConfigurator : NSObject <RCFRequestConfigurator>
+@interface RCFRESTRequestConfigurator : AFHTTPRequestSerializer <RCFRequestConfigurator>
 
 /**
  @author Egor Tolstoy

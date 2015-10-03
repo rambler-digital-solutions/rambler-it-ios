@@ -78,7 +78,7 @@ static NSString *const kTestBaseAPIPath = @"/v1/rest/";
                                                requestDataModel:dataModel];
     
     // then
-    XCTAssertEqualObjects(result.URL.path, expectedURLPath);
+    XCTAssertEqualObjects(result.URL.absoluteString, expectedURLPath);
     
 }
 
