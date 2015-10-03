@@ -100,6 +100,7 @@
 		63FDCE041BBDBA2A00A43B60 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63FDCE051BBDBA2A00A43B60 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		84D2CBEF6E088EFC9A139E49 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		9F18308E1BC01F1E000E21A5 /* RCFRequestConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCFRequestConfigurator.h; path = CoreComponents/RequestConfigurators/Protocols/RCFRequestConfigurator.h; sourceTree = "<group>"; };
 		9F1F37E41BBBB80D00C7797D /* Conferences.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conferences.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F1F38001BBBB80D00C7797D /* ConferencesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConferencesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F1F38041BBBB80D00C7797D /* ConferencesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConferencesTests.m; sourceTree = "<group>"; };
@@ -258,6 +259,7 @@
 		63FDCDDF1BBDBA2A00A43B60 /* CoreLayer */ = {
 			isa = PBXGroup;
 			children = (
+				9F18308B1BC01E65000E21A5 /* CoreComponents */,
 			);
 			path = CoreLayer;
 			sourceTree = "<group>";
@@ -367,6 +369,30 @@
 				5FED76184BAB5478101AC945 /* Pods-ConferencesTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		9F18308B1BC01E65000E21A5 /* CoreComponents */ = {
+			isa = PBXGroup;
+			children = (
+				9F18308C1BC01EB3000E21A5 /* RequestConfigurators */,
+			);
+			name = CoreComponents;
+			sourceTree = "<group>";
+		};
+		9F18308C1BC01EB3000E21A5 /* RequestConfigurators */ = {
+			isa = PBXGroup;
+			children = (
+				9F18308D1BC01EBB000E21A5 /* Protocols */,
+			);
+			name = RequestConfigurators;
+			sourceTree = "<group>";
+		};
+		9F18308D1BC01EBB000E21A5 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9F18308E1BC01F1E000E21A5 /* RCFRequestConfigurator.h */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 		9F1F37DB1BBBB80D00C7797D = {
