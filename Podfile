@@ -8,6 +8,7 @@ pod 'MagicalRecord', '~> 2.3'
 pod 'Parse', '~> 1.8'
 pod 'Typhoon', '~> 3.3'
 pod 'libextobjc', '~> 0.4'
+pod 'AFNetworking', '~> 2.6'
 
 target 'ConferencesTests', :exclusive => true do
     pod 'OCMock', '~> 3.1'

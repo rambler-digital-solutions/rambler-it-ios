@@ -1,4 +1,25 @@
 PODS:
+  - AFNetworking (2.6.0):
+    - AFNetworking/NSURLConnection (= 2.6.0)
+    - AFNetworking/NSURLSession (= 2.6.0)
+    - AFNetworking/Reachability (= 2.6.0)
+    - AFNetworking/Security (= 2.6.0)
+    - AFNetworking/Serialization (= 2.6.0)
+    - AFNetworking/UIKit (= 2.6.0)
+  - AFNetworking/NSURLConnection (2.6.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.6.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.6.0)
+  - AFNetworking/Security (2.6.0)
+  - AFNetworking/Serialization (2.6.0)
+  - AFNetworking/UIKit (2.6.0):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
   - Bolts/Tasks (1.3.0)
   - libextobjc (0.4.1):
     - libextobjc/EXTADT (= 0.4.1)
@@ -47,6 +68,7 @@ PODS:
   - Typhoon/no-arc (3.3.2)
 
 DEPENDENCIES:
+  - AFNetworking (~> 2.6)
   - libextobjc (~> 0.4)
   - MagicalRecord (~> 2.3)
   - MMBarricade (~> 1.0.1)
@@ -55,6 +77,7 @@ DEPENDENCIES:
   - Typhoon (~> 3.3)
 
 SPEC CHECKSUMS:
+  AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
   Bolts: 805a4a87413e49d4a0c2b7d469084cbc46b09342
   libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
   MagicalRecord: 89eb7d7ead39fb37f01c3d010665ee94d17f8dba
@@ -63,4 +86,4 @@ SPEC CHECKSUMS:
   Parse: 17ad8e0677ed682f7f00503860fcda0f4eb74168
   Typhoon: d0f4b40120b7011ac41748c3ca141cb12aac3737
 
-COCOAPODS: 0.38.0
+COCOAPODS: 0.38.2
