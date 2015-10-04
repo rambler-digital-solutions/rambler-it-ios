@@ -10,8 +10,11 @@
 
 @class CompoundOperationBuilderConfig;
 @class CompoundOperationBase;
+@class OperationChainer;
 
 @interface NetworkCompoundOperationBuilder : NSObject
+
+- (instancetype)initWithOperationChainer:(OperationChainer *)chainer;
 
 - (CompoundOperationBase *)buildCompoundOperationWithConfig:(CompoundOperationBuilderConfig *)config;
 

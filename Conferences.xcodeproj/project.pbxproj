@@ -31,6 +31,7 @@
 		63FDCE141BBDBA2A00A43B60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63FDCE021BBDBA2A00A43B60 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
 		63FDCE151BBDBA2A00A43B60 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63FDCE041BBDBA2A00A43B60 /* Info.plist */; settings = {ASSET_TAGS = (); }; };
 		63FDCE161BBDBA2A00A43B60 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FDCE051BBDBA2A00A43B60 /* main.m */; settings = {ASSET_TAGS = (); }; };
+		9F0A6C1D1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */; settings = {ASSET_TAGS = (); }; };
 		9F0A84C31BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A84C21BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m */; settings = {ASSET_TAGS = (); }; };
 		9F0A84C51BC166F6006F79FB /* RCFManagedObjectMapperTests.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9F0A84C41BC166F6006F79FB /* RCFManagedObjectMapperTests.bundle */; settings = {ASSET_TAGS = (); }; };
 		9F0A84F91BC1698B006F79FB /* AsyncOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A84CA1BC1698B006F79FB /* AsyncOperation.m */; settings = {ASSET_TAGS = (); }; };
@@ -151,6 +152,14 @@
 		63FDCE041BBDBA2A00A43B60 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63FDCE051BBDBA2A00A43B60 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		84D2CBEF6E088EFC9A139E49 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		9F0A6C1B1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CompoundOperationBuilderConfig.h; path = OperationBuilders/CompoundOperationBuilderConfig/CompoundOperationBuilderConfig.h; sourceTree = "<group>"; };
+		9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CompoundOperationBuilderConfig.m; path = OperationBuilders/CompoundOperationBuilderConfig/CompoundOperationBuilderConfig.m; sourceTree = "<group>"; };
+		9F0A6C1E1BC1B53F00A25417 /* RequestConfigurationType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RequestConfigurationType.h; path = CoreComponents/RequestConfigurators/RequestConfigurationType.h; sourceTree = "<group>"; };
+		9F0A6C1F1BC1B5C500A25417 /* RequestSigningType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RequestSigningType.h; path = CoreComponents/RequestSigners/RequestSigningType.h; sourceTree = "<group>"; };
+		9F0A6C201BC1B60500A25417 /* NetworkConnectionType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NetworkConnectionType.h; path = CoreComponents/NetworkClients/NetworkConnectionType.h; sourceTree = "<group>"; };
+		9F0A6C211BC1B62D00A25417 /* ResponseDeserializationType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ResponseDeserializationType.h; path = CoreComponents/ResponseDeserializers/ResponseDeserializationType.h; sourceTree = "<group>"; };
+		9F0A6C221BC1B65B00A25417 /* ResponseValidationType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ResponseValidationType.h; path = CoreComponents/ResponseValidators/ResponseValidationType.h; sourceTree = "<group>"; };
+		9F0A6C231BC1B68E00A25417 /* ResponseMappingType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ResponseMappingType.h; path = CoreComponents/ResponseMappers/ResponseMappingType.h; sourceTree = "<group>"; };
 		9F0A84C21BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCFSingleResponseObjectFormatterTests.m; path = CoreLayer/CoreComponents/ResponseObjectFormatters/SingleResponseObjectFormatter/RCFSingleResponseObjectFormatterTests.m; sourceTree = "<group>"; };
 		9F0A84C41BC166F6006F79FB /* RCFManagedObjectMapperTests.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = RCFManagedObjectMapperTests.bundle; path = CoreLayer/CoreComponents/ResponseMappers/ManagedObjectMapper/RCFManagedObjectMapperTests.bundle; sourceTree = "<group>"; };
 		9F0A84C91BC1698B006F79FB /* AsyncOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncOperation.h; sourceTree = "<group>"; };
@@ -525,6 +534,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		9F0A6C1A1BC1AFB200A25417 /* CompoundOperationBuilderConfig */ = {
+			isa = PBXGroup;
+			children = (
+				9F0A6C1B1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.h */,
+				9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */,
+			);
+			name = CompoundOperationBuilderConfig;
+			sourceTree = "<group>";
+		};
 		9F0A84C11BC16290006F79FB /* SingleResponseObjectFormatter */ = {
 			isa = PBXGroup;
 			children = (
@@ -877,6 +895,7 @@
 		9F0A85331BC18A10006F79FB /* OperationBuilders */ = {
 			isa = PBXGroup;
 			children = (
+				9F0A6C1A1BC1AFB200A25417 /* CompoundOperationBuilderConfig */,
 				9F0A85381BC1906C006F79FB /* OperationChainer */,
 				9F0A85341BC18A1A006F79FB /* NetworkCompoundOperationBuilder */,
 			);
@@ -937,6 +956,7 @@
 				9F18309B1BC0248D000E21A5 /* Models */,
 				9F18308F1BC02226000E21A5 /* ConcreteClasses */,
 				9F18308D1BC01EBB000E21A5 /* Protocols */,
+				9F0A6C1E1BC1B53F00A25417 /* RequestConfigurationType.h */,
 			);
 			name = RequestConfigurators;
 			sourceTree = "<group>";
@@ -1029,6 +1049,7 @@
 			children = (
 				9F1830A31BC03210000E21A5 /* ConcreteClasses */,
 				9F1830A11BC030CC000E21A5 /* Protocols */,
+				9F0A6C1F1BC1B5C500A25417 /* RequestSigningType.h */,
 			);
 			name = RequestSigners;
 			sourceTree = "<group>";
@@ -1079,6 +1100,7 @@
 			children = (
 				9F1830AF1BC117F1000E21A5 /* ConcreteClasses */,
 				9F1830AD1BC116E1000E21A5 /* Protocols */,
+				9F0A6C201BC1B60500A25417 /* NetworkConnectionType.h */,
 			);
 			name = NetworkClients;
 			sourceTree = "<group>";
@@ -1129,6 +1151,7 @@
 			children = (
 				9F1830BC1BC11CFA000E21A5 /* ConcreteClasses */,
 				9F1830BA1BC11BD7000E21A5 /* Protocols */,
+				9F0A6C211BC1B62D00A25417 /* ResponseDeserializationType.h */,
 			);
 			name = ResponseDeserializers;
 			sourceTree = "<group>";
@@ -1198,6 +1221,7 @@
 				9F1830D31BC12595000E21A5 /* ConcreteClasses */,
 				9F1830CE1BC12476000E21A5 /* BaseClasses */,
 				9F1830CC1BC123CE000E21A5 /* Protocols */,
+				9F0A6C221BC1B65B00A25417 /* ResponseValidationType.h */,
 			);
 			name = ResponseValidators;
 			sourceTree = "<group>";
@@ -1276,6 +1300,7 @@
 			children = (
 				9F1830E91BC14270000E21A5 /* BaseClasses */,
 				9F1830E71BC141B9000E21A5 /* Protocols */,
+				9F0A6C231BC1B68E00A25417 /* ResponseMappingType.h */,
 			);
 			name = ResponseMappers;
 			sourceTree = "<group>";
@@ -1680,6 +1705,7 @@
 				9F0A84FF1BC1698B006F79FB /* RequestSigningOperation.m in Sources */,
 				9F1830F51BC14444000E21A5 /* NSString+RCFCapitalization.m in Sources */,
 				636B63EC1BBDCEEA0053E38F /* Speaker+CoreDataProperties.m in Sources */,
+				9F0A6C1D1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m in Sources */,
 				636B63EF1BBDCEEA0053E38F /* LectureMaterials.m in Sources */,
 				9F0A85001BC1698B006F79FB /* ResponseDeserializationOperation.m in Sources */,
 				9F0A853B1BC1908B006F79FB /* OperationChainer.m in Sources */,
