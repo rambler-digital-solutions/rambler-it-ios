@@ -32,6 +32,7 @@
 		63FDCE151BBDBA2A00A43B60 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63FDCE041BBDBA2A00A43B60 /* Info.plist */; settings = {ASSET_TAGS = (); }; };
 		63FDCE161BBDBA2A00A43B60 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FDCE051BBDBA2A00A43B60 /* main.m */; settings = {ASSET_TAGS = (); }; };
 		9F0A84C31BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A84C21BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m */; settings = {ASSET_TAGS = (); }; };
+		9F0A84C51BC166F6006F79FB /* RCFManagedObjectMapperTests.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9F0A84C41BC166F6006F79FB /* RCFManagedObjectMapperTests.bundle */; settings = {ASSET_TAGS = (); }; };
 		9F1830931BC02293000E21A5 /* RCFRESTRequestConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830921BC02293000E21A5 /* RCFRESTRequestConfigurator.m */; settings = {ASSET_TAGS = (); }; };
 		9F18309A1BC022EA000E21A5 /* RCFRESTRequestConfiguratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830991BC022EA000E21A5 /* RCFRESTRequestConfiguratorTests.m */; settings = {ASSET_TAGS = (); }; };
 		9F18309F1BC024A9000E21A5 /* RCFRequestDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F18309E1BC024A9000E21A5 /* RCFRequestDataModel.m */; settings = {ASSET_TAGS = (); }; };
@@ -124,6 +125,7 @@
 		63FDCE051BBDBA2A00A43B60 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		84D2CBEF6E088EFC9A139E49 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9F0A84C21BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCFSingleResponseObjectFormatterTests.m; path = CoreLayer/CoreComponents/ResponseObjectFormatters/SingleResponseObjectFormatter/RCFSingleResponseObjectFormatterTests.m; sourceTree = "<group>"; };
+		9F0A84C41BC166F6006F79FB /* RCFManagedObjectMapperTests.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = RCFManagedObjectMapperTests.bundle; path = CoreLayer/CoreComponents/ResponseMappers/ManagedObjectMapper/RCFManagedObjectMapperTests.bundle; sourceTree = "<group>"; };
 		9F18308E1BC01F1E000E21A5 /* RCFRequestConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCFRequestConfigurator.h; path = CoreComponents/RequestConfigurators/Protocols/RCFRequestConfigurator.h; sourceTree = "<group>"; };
 		9F1830911BC02293000E21A5 /* RCFRESTRequestConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCFRESTRequestConfigurator.h; path = CoreComponents/RequestConfigurators/ConcreteClasses/RESTRequestConfigurator/RCFRESTRequestConfigurator.h; sourceTree = "<group>"; };
 		9F1830921BC02293000E21A5 /* RCFRESTRequestConfigurator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCFRESTRequestConfigurator.m; path = CoreComponents/RequestConfigurators/ConcreteClasses/RESTRequestConfigurator/RCFRESTRequestConfigurator.m; sourceTree = "<group>"; };
@@ -886,6 +888,7 @@
 		9F1830FB1BC14C15000E21A5 /* ManagedObjectMapper */ = {
 			isa = PBXGroup;
 			children = (
+				9F0A84C41BC166F6006F79FB /* RCFManagedObjectMapperTests.bundle */,
 				9F1830FC1BC14C37000E21A5 /* RCFManagedObjectMapperTests.m */,
 			);
 			name = ManagedObjectMapper;
@@ -1095,6 +1098,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F0A84C51BC166F6006F79FB /* RCFManagedObjectMapperTests.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

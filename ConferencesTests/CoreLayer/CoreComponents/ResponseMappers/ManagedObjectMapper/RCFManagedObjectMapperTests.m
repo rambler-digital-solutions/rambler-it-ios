@@ -13,6 +13,8 @@
 #import "RCFManagedObjectMappingProvider.h"
 #import "RCFResultsResponseObjectFormatter.h"
 
+#import "SocialNetworkAccount.h"
+
 @interface RCFManagedObjectMapperTests : XCTestCase
 
 @property (strong, nonatomic) RCFManagedObjectMapper *mapper;
@@ -42,30 +44,50 @@
 
 - (void)testThatMapperMapsSocialNetworkAccount {
     // given
-    NSDictionary *serverResponse = @{
-                                     @"results": @[
-                                                 @{
-                                                     @"createdAt": @"2015-10-04T12:01:59.391Z",
-                                                     @"name": @"Twitter",
-                                                     @"objectId": @"5aU1er9TO6",
-                                                     @"profileLink": @"https://twitter.com/igrekde",
-                                                     @"speaker": @{
-                                                         @"__type": @"Relation",
-                                                         @"className": @"Speaker"
-                                                     },
-                                                     @"updatedAt": @"2015-10-04T12:02:09.462Z"
-                                                 }
-                                                 ]
-                                     };
+    Class targetClass = [SocialNetworkAccount class];
+    NSDictionary *serverResponse = [self generateServerResponseForModelClass:targetClass];
+    NSDictionary *mappingContext = [self generateMappingContextForModelClass:targetClass];
     
     // when
     NSArray *result = [self.mapper mapServerResponse:serverResponse
-                                  withMappingContext:@{@"kMappingContextManagedObjectClassKey":@"SocialNetworkAccount"}
+                                  withMappingContext:mappingContext
                                                error:nil];
     
     // then
     XCTAssertEqual(result.count, 1);
+    XCTAssertTrue([[result firstObject] isKindOfClass:targetClass]);
+}
+
+#pragma mark - Helper Methods
+
+- (NSDictionary *)generateMappingContextForModelClass:(Class)modelClass {
+    NSString *className = NSStringFromClass(modelClass);
+    return @{
+             @"kMappingContextManagedObjectClassKey" : className
+             };
+}
+
+- (NSDictionary *)generateServerResponseForModelClass:(Class)modelClass {
+    Class testCaseClass = [self class];
     
+    NSString *bundleName = NSStringFromClass(testCaseClass);
+    NSString *modelName = NSStringFromClass(modelClass);
+    NSString *fileName = [NSString stringWithFormat:@"%@.json", modelName];
+    
+    NSBundle *resourceBundle = [NSBundle bundleForClass:testCaseClass];
+    
+    NSString *pathToTestBundle = [resourceBundle pathForResource:bundleName ofType:@"bundle"];
+    NSBundle *testBundle = [NSBundle bundleWithPath:pathToTestBundle];
+    
+    NSString *pathToFile = [[testBundle resourcePath] stringByAppendingPathComponent:fileName];
+    NSData *responseData = [NSData dataWithContentsOfFile:pathToFile
+                                                  options:0
+                                                    error:nil];
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseData
+                                                         options:kNilOptions
+                                                           error:nil];
+    
+    return json;
 }
 
 @end
