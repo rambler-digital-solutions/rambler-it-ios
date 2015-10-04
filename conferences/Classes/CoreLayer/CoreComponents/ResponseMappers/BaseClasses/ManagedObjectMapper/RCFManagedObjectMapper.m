@@ -45,14 +45,10 @@ static NSString *const kMappingContextManagedObjectClassKey = @"kMappingContextM
     if (self.responseFormatter) {
         response = [self.responseFormatter formatServerResponse:response];
     }
-    
-    Class managedObjectClass = NSClassFromString(context[kMappingContextManagedObjectClassKey]);
-    EKManagedObjectMapping *mapping = [self.provider mappingForManagedObjectModelClass:managedObjectClass];
-    
     NSManagedObjectContext *rootSavingContext = [NSManagedObjectContext MR_rootSavingContext];
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    [request setEntity:[NSEntityDescription entityForName:context[kMappingContextManagedObjectClassKey]
-                                   inManagedObjectContext:rootSavingContext]];
+    EKManagedObjectMapping *mapping = [self retreiveMappingForMappingContext:context];
+    NSFetchRequest *request = [self createFetchRequestForMappingContext:context
+                                                         managedContext:rootSavingContext];
     
     __block NSArray *result;
     [rootSavingContext performBlockAndWait:^{
@@ -63,6 +59,22 @@ static NSString *const kMappingContextManagedObjectClassKey = @"kMappingContextM
     }];
     
     return result;
+}
+
+#pragma mark - Helper Methods
+
+- (EKManagedObjectMapping *)retreiveMappingForMappingContext:(NSDictionary *)mappingContext {
+    Class managedObjectClass = NSClassFromString(mappingContext[kMappingContextManagedObjectClassKey]);
+    EKManagedObjectMapping *mapping = [self.provider mappingForManagedObjectModelClass:managedObjectClass];
+    return mapping;
+}
+
+- (NSFetchRequest *)createFetchRequestForMappingContext:(NSDictionary *)mappingContext
+                                         managedContext:(NSManagedObjectContext *)managedContext {
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:[NSEntityDescription entityForName:mappingContext[kMappingContextManagedObjectClassKey]
+                                   inManagedObjectContext:managedContext]];
+    return request;
 }
 
 #pragma mark - Debug Description
