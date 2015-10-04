@@ -8,6 +8,8 @@
 
 #import <XCTest/XCTest.h>
 
+typedef void (^ProxyBlock)(NSInvocation *);
+
 /**
  @author Egor Tolstoy
  

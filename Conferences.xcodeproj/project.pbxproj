@@ -44,6 +44,17 @@
 		9F0A85011BC1698B006F79FB /* ResponseMappingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A84E81BC1698B006F79FB /* ResponseMappingOperation.m */; settings = {ASSET_TAGS = (); }; };
 		9F0A85021BC1698B006F79FB /* ResponseValidationOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A84EB1BC1698B006F79FB /* ResponseValidationOperation.m */; settings = {ASSET_TAGS = (); }; };
 		9F0A85031BC1698B006F79FB /* OperationDebugDescriptionFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A84EF1BC1698B006F79FB /* OperationDebugDescriptionFormatter.m */; settings = {ASSET_TAGS = (); }; };
+		9F0A851E1BC185AA006F79FB /* CompoundOperationBaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A85071BC185AA006F79FB /* CompoundOperationBaseTests.m */; settings = {ASSET_TAGS = (); }; };
+		9F0A851F1BC185AA006F79FB /* TestCancellableOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A85091BC185AA006F79FB /* TestCancellableOperation.m */; settings = {ASSET_TAGS = (); }; };
+		9F0A85201BC185AA006F79FB /* TestChainableOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A850B1BC185AA006F79FB /* TestChainableOperation.m */; settings = {ASSET_TAGS = (); }; };
+		9F0A85211BC185AA006F79FB /* TestChainableOperationWithValidationBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A850D1BC185AA006F79FB /* TestChainableOperationWithValidationBlock.m */; settings = {ASSET_TAGS = (); }; };
+		9F0A85221BC185AA006F79FB /* TestErrorChainableOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A850F1BC185AA006F79FB /* TestErrorChainableOperation.m */; settings = {ASSET_TAGS = (); }; };
+		9F0A85231BC185AA006F79FB /* ChainableOperationTestsBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A85131BC185AA006F79FB /* ChainableOperationTestsBase.m */; settings = {ASSET_TAGS = (); }; };
+		9F0A85241BC185AA006F79FB /* RequestConfigurationOperationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A85151BC185AA006F79FB /* RequestConfigurationOperationTests.m */; settings = {ASSET_TAGS = (); }; };
+		9F0A85251BC185AA006F79FB /* RequestSigningOperationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A85171BC185AA006F79FB /* RequestSigningOperationTests.m */; settings = {ASSET_TAGS = (); }; };
+		9F0A85261BC185AA006F79FB /* ResponseDeserializationOperationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A85191BC185AA006F79FB /* ResponseDeserializationOperationTests.m */; settings = {ASSET_TAGS = (); }; };
+		9F0A85271BC185AA006F79FB /* ResponseMappingOperationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A851B1BC185AA006F79FB /* ResponseMappingOperationTests.m */; settings = {ASSET_TAGS = (); }; };
+		9F0A85281BC185AA006F79FB /* ResponseValidationOperationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A851D1BC185AA006F79FB /* ResponseValidationOperationTests.m */; settings = {ASSET_TAGS = (); }; };
 		9F1830931BC02293000E21A5 /* RCFRESTRequestConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830921BC02293000E21A5 /* RCFRESTRequestConfigurator.m */; settings = {ASSET_TAGS = (); }; };
 		9F18309A1BC022EA000E21A5 /* RCFRESTRequestConfiguratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830991BC022EA000E21A5 /* RCFRESTRequestConfiguratorTests.m */; settings = {ASSET_TAGS = (); }; };
 		9F18309F1BC024A9000E21A5 /* RCFRequestDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F18309E1BC024A9000E21A5 /* RCFRequestDataModel.m */; settings = {ASSET_TAGS = (); }; };
@@ -165,6 +176,22 @@
 		9F0A84F41BC1698B006F79FB /* ChainableOperationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainableOperationDelegate.h; sourceTree = "<group>"; };
 		9F0A84F61BC1698B006F79FB /* ChainableOperationInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainableOperationInput.h; sourceTree = "<group>"; };
 		9F0A84F81BC1698B006F79FB /* ChainableOperationOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainableOperationOutput.h; sourceTree = "<group>"; };
+		9F0A85071BC185AA006F79FB /* CompoundOperationBaseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompoundOperationBaseTests.m; sourceTree = "<group>"; };
+		9F0A85081BC185AA006F79FB /* TestCancellableOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCancellableOperation.h; sourceTree = "<group>"; };
+		9F0A85091BC185AA006F79FB /* TestCancellableOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCancellableOperation.m; sourceTree = "<group>"; };
+		9F0A850A1BC185AA006F79FB /* TestChainableOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestChainableOperation.h; sourceTree = "<group>"; };
+		9F0A850B1BC185AA006F79FB /* TestChainableOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestChainableOperation.m; sourceTree = "<group>"; };
+		9F0A850C1BC185AA006F79FB /* TestChainableOperationWithValidationBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestChainableOperationWithValidationBlock.h; sourceTree = "<group>"; };
+		9F0A850D1BC185AA006F79FB /* TestChainableOperationWithValidationBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestChainableOperationWithValidationBlock.m; sourceTree = "<group>"; };
+		9F0A850E1BC185AA006F79FB /* TestErrorChainableOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestErrorChainableOperation.h; sourceTree = "<group>"; };
+		9F0A850F1BC185AA006F79FB /* TestErrorChainableOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestErrorChainableOperation.m; sourceTree = "<group>"; };
+		9F0A85121BC185AA006F79FB /* ChainableOperationTestsBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainableOperationTestsBase.h; sourceTree = "<group>"; };
+		9F0A85131BC185AA006F79FB /* ChainableOperationTestsBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChainableOperationTestsBase.m; sourceTree = "<group>"; };
+		9F0A85151BC185AA006F79FB /* RequestConfigurationOperationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestConfigurationOperationTests.m; sourceTree = "<group>"; };
+		9F0A85171BC185AA006F79FB /* RequestSigningOperationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestSigningOperationTests.m; sourceTree = "<group>"; };
+		9F0A85191BC185AA006F79FB /* ResponseDeserializationOperationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseDeserializationOperationTests.m; sourceTree = "<group>"; };
+		9F0A851B1BC185AA006F79FB /* ResponseMappingOperationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseMappingOperationTests.m; sourceTree = "<group>"; };
+		9F0A851D1BC185AA006F79FB /* ResponseValidationOperationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseValidationOperationTests.m; sourceTree = "<group>"; };
 		9F18308E1BC01F1E000E21A5 /* RCFRequestConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCFRequestConfigurator.h; path = CoreComponents/RequestConfigurators/Protocols/RCFRequestConfigurator.h; sourceTree = "<group>"; };
 		9F1830911BC02293000E21A5 /* RCFRESTRequestConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCFRESTRequestConfigurator.h; path = CoreComponents/RequestConfigurators/ConcreteClasses/RESTRequestConfigurator/RCFRESTRequestConfigurator.h; sourceTree = "<group>"; };
 		9F1830921BC02293000E21A5 /* RCFRESTRequestConfigurator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCFRESTRequestConfigurator.m; path = CoreComponents/RequestConfigurators/ConcreteClasses/RESTRequestConfigurator/RCFRESTRequestConfigurator.m; sourceTree = "<group>"; };
@@ -700,6 +727,102 @@
 			path = ChainableOperationOutput;
 			sourceTree = "<group>";
 		};
+		9F0A85041BC185AA006F79FB /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				9F0A85051BC185AA006F79FB /* CompoundOperations */,
+				9F0A85101BC185AA006F79FB /* ConcreteOperations */,
+			);
+			name = Operations;
+			path = CoreLayer/Operations;
+			sourceTree = "<group>";
+		};
+		9F0A85051BC185AA006F79FB /* CompoundOperations */ = {
+			isa = PBXGroup;
+			children = (
+				9F0A85061BC185AA006F79FB /* CompoundOperationBaseTests */,
+			);
+			path = CompoundOperations;
+			sourceTree = "<group>";
+		};
+		9F0A85061BC185AA006F79FB /* CompoundOperationBaseTests */ = {
+			isa = PBXGroup;
+			children = (
+				9F0A85071BC185AA006F79FB /* CompoundOperationBaseTests.m */,
+				9F0A85081BC185AA006F79FB /* TestCancellableOperation.h */,
+				9F0A85091BC185AA006F79FB /* TestCancellableOperation.m */,
+				9F0A850A1BC185AA006F79FB /* TestChainableOperation.h */,
+				9F0A850B1BC185AA006F79FB /* TestChainableOperation.m */,
+				9F0A850C1BC185AA006F79FB /* TestChainableOperationWithValidationBlock.h */,
+				9F0A850D1BC185AA006F79FB /* TestChainableOperationWithValidationBlock.m */,
+				9F0A850E1BC185AA006F79FB /* TestErrorChainableOperation.h */,
+				9F0A850F1BC185AA006F79FB /* TestErrorChainableOperation.m */,
+			);
+			path = CompoundOperationBaseTests;
+			sourceTree = "<group>";
+		};
+		9F0A85101BC185AA006F79FB /* ConcreteOperations */ = {
+			isa = PBXGroup;
+			children = (
+				9F0A85111BC185AA006F79FB /* ChainableOperationTestsBase */,
+				9F0A85141BC185AA006F79FB /* RequestConfigurationOperationTests */,
+				9F0A85161BC185AA006F79FB /* RequestSigningOperationTests */,
+				9F0A85181BC185AA006F79FB /* ResponseDeserializationOperationTests */,
+				9F0A851A1BC185AA006F79FB /* ResponseMappingOperationTests */,
+				9F0A851C1BC185AA006F79FB /* ResponseValidationOperationTests */,
+			);
+			path = ConcreteOperations;
+			sourceTree = "<group>";
+		};
+		9F0A85111BC185AA006F79FB /* ChainableOperationTestsBase */ = {
+			isa = PBXGroup;
+			children = (
+				9F0A85121BC185AA006F79FB /* ChainableOperationTestsBase.h */,
+				9F0A85131BC185AA006F79FB /* ChainableOperationTestsBase.m */,
+			);
+			path = ChainableOperationTestsBase;
+			sourceTree = "<group>";
+		};
+		9F0A85141BC185AA006F79FB /* RequestConfigurationOperationTests */ = {
+			isa = PBXGroup;
+			children = (
+				9F0A85151BC185AA006F79FB /* RequestConfigurationOperationTests.m */,
+			);
+			path = RequestConfigurationOperationTests;
+			sourceTree = "<group>";
+		};
+		9F0A85161BC185AA006F79FB /* RequestSigningOperationTests */ = {
+			isa = PBXGroup;
+			children = (
+				9F0A85171BC185AA006F79FB /* RequestSigningOperationTests.m */,
+			);
+			path = RequestSigningOperationTests;
+			sourceTree = "<group>";
+		};
+		9F0A85181BC185AA006F79FB /* ResponseDeserializationOperationTests */ = {
+			isa = PBXGroup;
+			children = (
+				9F0A85191BC185AA006F79FB /* ResponseDeserializationOperationTests.m */,
+			);
+			path = ResponseDeserializationOperationTests;
+			sourceTree = "<group>";
+		};
+		9F0A851A1BC185AA006F79FB /* ResponseMappingOperationTests */ = {
+			isa = PBXGroup;
+			children = (
+				9F0A851B1BC185AA006F79FB /* ResponseMappingOperationTests.m */,
+			);
+			path = ResponseMappingOperationTests;
+			sourceTree = "<group>";
+		};
+		9F0A851C1BC185AA006F79FB /* ResponseValidationOperationTests */ = {
+			isa = PBXGroup;
+			children = (
+				9F0A851D1BC185AA006F79FB /* ResponseValidationOperationTests.m */,
+			);
+			path = ResponseValidationOperationTests;
+			sourceTree = "<group>";
+		};
 		9F18308B1BC01E65000E21A5 /* CoreComponents */ = {
 			isa = PBXGroup;
 			children = (
@@ -752,6 +875,7 @@
 		9F1830941BC0229F000E21A5 /* CoreLayer */ = {
 			isa = PBXGroup;
 			children = (
+				9F0A85041BC185AA006F79FB /* Operations */,
 				9F1830F61BC14628000E21A5 /* MappingProviders */,
 				9F1830951BC022A6000E21A5 /* CoreComponents */,
 			);
@@ -1474,8 +1598,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F0A85211BC185AA006F79FB /* TestChainableOperationWithValidationBlock.m in Sources */,
 				9F1830DB1BC126D7000E21A5 /* RCFParseResponseValidatorTests.m in Sources */,
+				9F0A85201BC185AA006F79FB /* TestChainableOperation.m in Sources */,
 				9F18309A1BC022EA000E21A5 /* RCFRESTRequestConfiguratorTests.m in Sources */,
+				9F0A85261BC185AA006F79FB /* ResponseDeserializationOperationTests.m in Sources */,
+				9F0A85231BC185AA006F79FB /* ChainableOperationTestsBase.m in Sources */,
+				9F0A85251BC185AA006F79FB /* RequestSigningOperationTests.m in Sources */,
+				9F0A85241BC185AA006F79FB /* RequestConfigurationOperationTests.m in Sources */,
+				9F0A851F1BC185AA006F79FB /* TestCancellableOperation.m in Sources */,
+				9F0A85271BC185AA006F79FB /* ResponseMappingOperationTests.m in Sources */,
 				9F1830F91BC1464C000E21A5 /* RCFManagedObjectMappingProviderTests.m in Sources */,
 				9F1830C81BC11EE6000E21A5 /* XCTestCase+RCFHelpers.m in Sources */,
 				9F0A84C31BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m in Sources */,
@@ -1484,8 +1616,11 @@
 				9F1830DF1BC12749000E21A5 /* RCFResponseValidatorTestsBase.m in Sources */,
 				9F1830B81BC119A5000E21A5 /* CommonNetworkClientTests.m in Sources */,
 				9F1830C31BC11DE7000E21A5 /* RCFJSONResponseDeserializerTests.m in Sources */,
+				9F0A85221BC185AA006F79FB /* TestErrorChainableOperation.m in Sources */,
 				9F1830FD1BC14C37000E21A5 /* RCFManagedObjectMapperTests.m in Sources */,
 				9F1830FE1BC14E64000E21A5 /* Conference.xcdatamodeld in Sources */,
+				9F0A851E1BC185AA006F79FB /* CompoundOperationBaseTests.m in Sources */,
+				9F0A85281BC185AA006F79FB /* ResponseValidationOperationTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
