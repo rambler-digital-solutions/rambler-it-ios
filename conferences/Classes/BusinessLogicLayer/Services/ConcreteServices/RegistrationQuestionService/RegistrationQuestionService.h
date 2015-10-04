@@ -13,6 +13,11 @@
 
 typedef void (^RegistrationQuestionCompletionBlock)(RegistrationQuestion *registrationQuestion, NSError *error);
 
+/**
+ @author Artem Karpushin
+ 
+ The service is designed to obtain / update RegistrationQuestion objects
+ */
 @protocol RegistrationQuestionService <NSObject>
 
 /**

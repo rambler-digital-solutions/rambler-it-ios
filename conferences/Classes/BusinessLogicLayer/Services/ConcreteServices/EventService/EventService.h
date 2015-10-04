@@ -13,6 +13,11 @@
 
 typedef void (^EventCompletionBlock)(Event *event, NSError *error);
 
+/**
+ @author Artem Karpushin
+ 
+ The service is designed to obtain / update Event objects
+ */
 @protocol EventService <NSObject>
 
 /**

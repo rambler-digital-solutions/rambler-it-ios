@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ @author Artem Karpushin
+ 
+ The class is designed to start / stop operation of the basic elements.
+ */
 @protocol ApplicationConfigurator <NSObject>
 
 /**

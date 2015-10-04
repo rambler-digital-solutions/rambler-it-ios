@@ -14,6 +14,7 @@
 		636A37C51BC142BB00B49C3D /* ApplicationAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37C41BC142BB00B49C3D /* ApplicationAssembly.m */; settings = {ASSET_TAGS = (); }; };
 		636A37CA1BC147FD00B49C3D /* ApplicationAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37C91BC147FD00B49C3D /* ApplicationAssemblyTests.m */; settings = {ASSET_TAGS = (); }; };
 		636A37CC1BC1481300B49C3D /* SystemInfrastructureAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37CB1BC1481300B49C3D /* SystemInfrastructureAssemblyTests.m */; settings = {ASSET_TAGS = (); }; };
+		636A37CF1BC1500700B49C3D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 636A37CE1BC1500700B49C3D /* Info.plist */; settings = {ASSET_TAGS = (); }; };
 		636B63FF1BBDD0C70053E38F /* EventServiceEmplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B63FE1BBDD0C70053E38F /* EventServiceEmplementation.m */; settings = {ASSET_TAGS = (); }; };
 		636B64041BBDD19A0053E38F /* LectureServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64031BBDD19A0053E38F /* LectureServiceImplementation.m */; settings = {ASSET_TAGS = (); }; };
 		636B64071BBDD2A40053E38F /* LectureMaterialsServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64061BBDD2A40053E38F /* LectureMaterialsServiceImplementation.m */; settings = {ASSET_TAGS = (); }; };
@@ -39,7 +40,6 @@
 		63FDCE141BBDBA2A00A43B60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63FDCE021BBDBA2A00A43B60 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
 		63FDCE151BBDBA2A00A43B60 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63FDCE041BBDBA2A00A43B60 /* Info.plist */; settings = {ASSET_TAGS = (); }; };
 		63FDCE161BBDBA2A00A43B60 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FDCE051BBDBA2A00A43B60 /* main.m */; settings = {ASSET_TAGS = (); }; };
-		9F1F38051BBBB80D00C7797D /* ConferencesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1F38041BBBB80D00C7797D /* ConferencesTests.m */; };
 		F826C56E7FA67515D33573A9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A4F504A716A8833A7A01A5D /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +69,7 @@
 		636A37C41BC142BB00B49C3D /* ApplicationAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationAssembly.m; sourceTree = "<group>"; };
 		636A37C91BC147FD00B49C3D /* ApplicationAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationAssemblyTests.m; sourceTree = "<group>"; };
 		636A37CB1BC1481300B49C3D /* SystemInfrastructureAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemInfrastructureAssemblyTests.m; sourceTree = "<group>"; };
+		636A37CE1BC1500700B49C3D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		636B63C91BBDCC550053E38F /* LectureMaterialsService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectureMaterialsService.h; sourceTree = "<group>"; };
 		636B63CA1BBDCC720053E38F /* LectureService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectureService.h; sourceTree = "<group>"; };
 		636B63CB1BBDCC910053E38F /* SocialNetworkAccountService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialNetworkAccountService.h; sourceTree = "<group>"; };
@@ -123,8 +124,6 @@
 		84D2CBEF6E088EFC9A139E49 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9F1F37E41BBBB80D00C7797D /* Conferences.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conferences.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F1F38001BBBB80D00C7797D /* ConferencesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConferencesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F1F38041BBBB80D00C7797D /* ConferencesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConferencesTests.m; sourceTree = "<group>"; };
-		9F1F38061BBBB80D00C7797D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +245,14 @@
 				636A37CB1BC1481300B49C3D /* SystemInfrastructureAssemblyTests.m */,
 			);
 			path = SystemInfrastructureAssemblyTests;
+			sourceTree = "<group>";
+		};
+		636A37CD1BC1500700B49C3D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				636A37CE1BC1500700B49C3D /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		636B63C51BBDCC060053E38F /* LectureMaterialsService */ = {
@@ -532,8 +539,7 @@
 				636A37B51BC13B4B00B49C3D /* ConferencesAssembliesTests */,
 				636A37B61BC13B4B00B49C3D /* ConferencesLogicTests */,
 				636A37B91BC13B4B00B49C3D /* ConferencesPresentationTests */,
-				9F1F38041BBBB80D00C7797D /* ConferencesTests.m */,
-				9F1F38061BBBB80D00C7797D /* Info.plist */,
+				636A37CD1BC1500700B49C3D /* Supporting Files */,
 			);
 			path = ConferencesTests;
 			sourceTree = "<group>";
@@ -641,6 +647,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				636A37CF1BC1500700B49C3D /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -746,7 +753,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F1F38051BBBB80D00C7797D /* ConferencesTests.m in Sources */,
 				636A37BB1BC13B9800B49C3D /* ApplicationConfiguratorTests.m in Sources */,
 				636A37CA1BC147FD00B49C3D /* ApplicationAssemblyTests.m in Sources */,
 				636A37CC1BC1481300B49C3D /* SystemInfrastructureAssemblyTests.m in Sources */,
@@ -873,7 +879,7 @@
 			baseConfigurationReference = 2C01BA17D4018DCA62CC6C3B /* Pods-ConferencesTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = ConferencesTests/Info.plist;
+				INFOPLIST_FILE = "ConferencesTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.rambler.ConferencesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -886,7 +892,7 @@
 			baseConfigurationReference = 5FED76184BAB5478101AC945 /* Pods-ConferencesTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = ConferencesTests/Info.plist;
+				INFOPLIST_FILE = "ConferencesTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.rambler.ConferencesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -13,6 +13,11 @@
 
 typedef void (^LectureCompletionBlock)(Lecture *lecture, NSError *error);
 
+/**
+ @author Artem Karpushin
+ 
+ The service is designed to obtain / update Lecture objects
+ */
 @protocol LectureService <NSObject>
 
 /**

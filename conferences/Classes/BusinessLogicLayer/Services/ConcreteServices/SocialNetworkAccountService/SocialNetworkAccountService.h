@@ -13,6 +13,11 @@
 
 typedef void (^SocialNetworkAccountCompletionBlock)(SocialNetworkAccount *socialNetworkAccount, NSError *error);
 
+/**
+ @author Artem Karpushin
+ 
+ The service is designed to obtain / update SocialNetworkAccount objects
+ */
 @protocol SocialNetworkAccountService <NSObject>
 
 /**

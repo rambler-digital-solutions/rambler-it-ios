@@ -13,6 +13,11 @@
 
 typedef void (^SpeakerCompletionBlock)(Speaker *speaker, NSError *error);
 
+/**
+ @author Artem Karpushin
+ 
+ The service is designed to obtain / update Speaker objects
+ */
 @protocol SpeakerService <NSObject>
 
 /**
