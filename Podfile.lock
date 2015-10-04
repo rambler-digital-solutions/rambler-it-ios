@@ -21,6 +21,9 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - Bolts/Tasks (1.3.0)
+  - EasyMapping (0.15.3):
+    - EasyMapping/Core (= 0.15.3)
+  - EasyMapping/Core (0.15.3)
   - libextobjc (0.4.1):
     - libextobjc/EXTADT (= 0.4.1)
     - libextobjc/EXTConcreteProtocol (= 0.4.1)
@@ -69,6 +72,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.6)
+  - EasyMapping (~> 0.15)
   - libextobjc (~> 0.4)
   - MagicalRecord (~> 2.3)
   - MMBarricade (~> 1.0.1)
@@ -79,6 +83,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
   Bolts: 805a4a87413e49d4a0c2b7d469084cbc46b09342
+  EasyMapping: 5baf5a9a814538fdac4859cf56270ae761dd904a
   libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
   MagicalRecord: 89eb7d7ead39fb37f01c3d010665ee94d17f8dba
   MMBarricade: 61e17f747baa1a33cd7f8a9c75d520ca958508dd
