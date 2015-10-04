@@ -10,4 +10,9 @@
 
 @implementation RCFEventServiceEmplementation
 
+- (void)updateEventWithPredicate:(NSPredicate *)predicate
+                 completionBlock:(RCFEventCompletionBlock)completionBlock {
+    
+}
+
 @end

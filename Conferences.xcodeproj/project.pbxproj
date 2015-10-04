@@ -55,6 +55,11 @@
 		9F0A85261BC185AA006F79FB /* ResponseDeserializationOperationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A85191BC185AA006F79FB /* ResponseDeserializationOperationTests.m */; settings = {ASSET_TAGS = (); }; };
 		9F0A85271BC185AA006F79FB /* ResponseMappingOperationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A851B1BC185AA006F79FB /* ResponseMappingOperationTests.m */; settings = {ASSET_TAGS = (); }; };
 		9F0A85281BC185AA006F79FB /* ResponseValidationOperationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A851D1BC185AA006F79FB /* ResponseValidationOperationTests.m */; settings = {ASSET_TAGS = (); }; };
+		9F0A852D1BC188B0006F79FB /* EventOperationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A852C1BC188B0006F79FB /* EventOperationFactory.m */; settings = {ASSET_TAGS = (); }; };
+		9F0A85321BC18906006F79FB /* EventQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A85311BC18906006F79FB /* EventQuery.m */; settings = {ASSET_TAGS = (); }; };
+		9F0A85371BC18A3C006F79FB /* NetworkCompoundOperationBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A85361BC18A3C006F79FB /* NetworkCompoundOperationBuilder.m */; settings = {ASSET_TAGS = (); }; };
+		9F0A853B1BC1908B006F79FB /* OperationChainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A853A1BC1908B006F79FB /* OperationChainer.m */; settings = {ASSET_TAGS = (); }; };
+		9F0A853F1BC192F0006F79FB /* OperationChainerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A853E1BC192F0006F79FB /* OperationChainerTests.m */; settings = {ASSET_TAGS = (); }; };
 		9F1830931BC02293000E21A5 /* RCFRESTRequestConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830921BC02293000E21A5 /* RCFRESTRequestConfigurator.m */; settings = {ASSET_TAGS = (); }; };
 		9F18309A1BC022EA000E21A5 /* RCFRESTRequestConfiguratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830991BC022EA000E21A5 /* RCFRESTRequestConfiguratorTests.m */; settings = {ASSET_TAGS = (); }; };
 		9F18309F1BC024A9000E21A5 /* RCFRequestDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F18309E1BC024A9000E21A5 /* RCFRequestDataModel.m */; settings = {ASSET_TAGS = (); }; };
@@ -192,6 +197,15 @@
 		9F0A85191BC185AA006F79FB /* ResponseDeserializationOperationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseDeserializationOperationTests.m; sourceTree = "<group>"; };
 		9F0A851B1BC185AA006F79FB /* ResponseMappingOperationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseMappingOperationTests.m; sourceTree = "<group>"; };
 		9F0A851D1BC185AA006F79FB /* ResponseValidationOperationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseValidationOperationTests.m; sourceTree = "<group>"; };
+		9F0A852B1BC188B0006F79FB /* EventOperationFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventOperationFactory.h; path = OperationFactories/EventOperationFactory/EventOperationFactory.h; sourceTree = "<group>"; };
+		9F0A852C1BC188B0006F79FB /* EventOperationFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventOperationFactory.m; path = OperationFactories/EventOperationFactory/EventOperationFactory.m; sourceTree = "<group>"; };
+		9F0A85301BC18906006F79FB /* EventQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventQuery.h; path = ObjectQueries/EventQuery/EventQuery.h; sourceTree = "<group>"; };
+		9F0A85311BC18906006F79FB /* EventQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventQuery.m; path = ObjectQueries/EventQuery/EventQuery.m; sourceTree = "<group>"; };
+		9F0A85351BC18A3C006F79FB /* NetworkCompoundOperationBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkCompoundOperationBuilder.h; path = OperationBuilders/NetworkCompoundOperationBuilder/NetworkCompoundOperationBuilder.h; sourceTree = "<group>"; };
+		9F0A85361BC18A3C006F79FB /* NetworkCompoundOperationBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkCompoundOperationBuilder.m; path = OperationBuilders/NetworkCompoundOperationBuilder/NetworkCompoundOperationBuilder.m; sourceTree = "<group>"; };
+		9F0A85391BC1908B006F79FB /* OperationChainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OperationChainer.h; path = OperationBuilders/OperationChainer/OperationChainer.h; sourceTree = "<group>"; };
+		9F0A853A1BC1908B006F79FB /* OperationChainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OperationChainer.m; path = OperationBuilders/OperationChainer/OperationChainer.m; sourceTree = "<group>"; };
+		9F0A853E1BC192F0006F79FB /* OperationChainerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OperationChainerTests.m; path = CoreLayer/OperationBuilder/OperationChainer/OperationChainerTests.m; sourceTree = "<group>"; };
 		9F18308E1BC01F1E000E21A5 /* RCFRequestConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCFRequestConfigurator.h; path = CoreComponents/RequestConfigurators/Protocols/RCFRequestConfigurator.h; sourceTree = "<group>"; };
 		9F1830911BC02293000E21A5 /* RCFRESTRequestConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCFRESTRequestConfigurator.h; path = CoreComponents/RequestConfigurators/ConcreteClasses/RESTRequestConfigurator/RCFRESTRequestConfigurator.h; sourceTree = "<group>"; };
 		9F1830921BC02293000E21A5 /* RCFRESTRequestConfigurator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCFRESTRequestConfigurator.m; path = CoreComponents/RequestConfigurators/ConcreteClasses/RESTRequestConfigurator/RCFRESTRequestConfigurator.m; sourceTree = "<group>"; };
@@ -393,6 +407,8 @@
 		63FDCDDF1BBDBA2A00A43B60 /* CoreLayer */ = {
 			isa = PBXGroup;
 			children = (
+				9F0A85331BC18A10006F79FB /* OperationBuilders */,
+				9F0A85291BC18853006F79FB /* OperationFactories */,
 				9F0A84C61BC1698B006F79FB /* Operations */,
 				9F1830E21BC13F6A000E21A5 /* MappingProviders */,
 				9F18308B1BC01E65000E21A5 /* CoreComponents */,
@@ -418,6 +434,7 @@
 		63FDCDE21BBDBA2A00A43B60 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9F0A852E1BC188E0006F79FB /* ObjectQueries */,
 				63FDCDE31BBDBA2A00A43B60 /* CoreDataModel */,
 				63FDCDE61BBDBA2A00A43B60 /* ManagedObjects */,
 			);
@@ -823,6 +840,83 @@
 			path = ResponseValidationOperationTests;
 			sourceTree = "<group>";
 		};
+		9F0A85291BC18853006F79FB /* OperationFactories */ = {
+			isa = PBXGroup;
+			children = (
+				9F0A852A1BC1885D006F79FB /* EventOperationFactory */,
+			);
+			name = OperationFactories;
+			sourceTree = "<group>";
+		};
+		9F0A852A1BC1885D006F79FB /* EventOperationFactory */ = {
+			isa = PBXGroup;
+			children = (
+				9F0A852B1BC188B0006F79FB /* EventOperationFactory.h */,
+				9F0A852C1BC188B0006F79FB /* EventOperationFactory.m */,
+			);
+			name = EventOperationFactory;
+			sourceTree = "<group>";
+		};
+		9F0A852E1BC188E0006F79FB /* ObjectQueries */ = {
+			isa = PBXGroup;
+			children = (
+				9F0A852F1BC188EA006F79FB /* EventQuery */,
+			);
+			name = ObjectQueries;
+			sourceTree = "<group>";
+		};
+		9F0A852F1BC188EA006F79FB /* EventQuery */ = {
+			isa = PBXGroup;
+			children = (
+				9F0A85301BC18906006F79FB /* EventQuery.h */,
+				9F0A85311BC18906006F79FB /* EventQuery.m */,
+			);
+			name = EventQuery;
+			sourceTree = "<group>";
+		};
+		9F0A85331BC18A10006F79FB /* OperationBuilders */ = {
+			isa = PBXGroup;
+			children = (
+				9F0A85381BC1906C006F79FB /* OperationChainer */,
+				9F0A85341BC18A1A006F79FB /* NetworkCompoundOperationBuilder */,
+			);
+			name = OperationBuilders;
+			sourceTree = "<group>";
+		};
+		9F0A85341BC18A1A006F79FB /* NetworkCompoundOperationBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				9F0A85351BC18A3C006F79FB /* NetworkCompoundOperationBuilder.h */,
+				9F0A85361BC18A3C006F79FB /* NetworkCompoundOperationBuilder.m */,
+			);
+			name = NetworkCompoundOperationBuilder;
+			sourceTree = "<group>";
+		};
+		9F0A85381BC1906C006F79FB /* OperationChainer */ = {
+			isa = PBXGroup;
+			children = (
+				9F0A85391BC1908B006F79FB /* OperationChainer.h */,
+				9F0A853A1BC1908B006F79FB /* OperationChainer.m */,
+			);
+			name = OperationChainer;
+			sourceTree = "<group>";
+		};
+		9F0A853C1BC192D1006F79FB /* OperationBuilders */ = {
+			isa = PBXGroup;
+			children = (
+				9F0A853D1BC192D9006F79FB /* OperationChainer */,
+			);
+			name = OperationBuilders;
+			sourceTree = "<group>";
+		};
+		9F0A853D1BC192D9006F79FB /* OperationChainer */ = {
+			isa = PBXGroup;
+			children = (
+				9F0A853E1BC192F0006F79FB /* OperationChainerTests.m */,
+			);
+			name = OperationChainer;
+			sourceTree = "<group>";
+		};
 		9F18308B1BC01E65000E21A5 /* CoreComponents */ = {
 			isa = PBXGroup;
 			children = (
@@ -875,6 +969,7 @@
 		9F1830941BC0229F000E21A5 /* CoreLayer */ = {
 			isa = PBXGroup;
 			children = (
+				9F0A853C1BC192D1006F79FB /* OperationBuilders */,
 				9F0A85041BC185AA006F79FB /* Operations */,
 				9F1830F61BC14628000E21A5 /* MappingProviders */,
 				9F1830951BC022A6000E21A5 /* CoreComponents */,
@@ -1558,8 +1653,10 @@
 				9F1830D71BC125C3000E21A5 /* RCFParseResponseValidator.m in Sources */,
 				636B64101BBDD6260053E38F /* RCFSpeakerServiceImplementation.m in Sources */,
 				9F1830D11BC12492000E21A5 /* RCFResponseValidatorBase.m in Sources */,
+				9F0A85371BC18A3C006F79FB /* NetworkCompoundOperationBuilder.m in Sources */,
 				636B63ED1BBDCEEA0053E38F /* Speaker.m in Sources */,
 				9F18309F1BC024A9000E21A5 /* RCFRequestDataModel.m in Sources */,
+				9F0A852D1BC188B0006F79FB /* EventOperationFactory.m in Sources */,
 				63FDCE061BBDBA2A00A43B60 /* AppDelegate.m in Sources */,
 				636B63E81BBDCEEA0053E38F /* RegistrationQuestion+CoreDataProperties.m in Sources */,
 				636B64041BBDD19A0053E38F /* RCFLectureServiceImplementation.m in Sources */,
@@ -1579,11 +1676,13 @@
 				9F0A84FB1BC1698B006F79FB /* CompoundOperationBase.m in Sources */,
 				9F0A84F91BC1698B006F79FB /* AsyncOperation.m in Sources */,
 				636B63FF1BBDD0C70053E38F /* RCFEventServiceEmplementation.m in Sources */,
+				9F0A85321BC18906006F79FB /* EventQuery.m in Sources */,
 				9F0A84FF1BC1698B006F79FB /* RequestSigningOperation.m in Sources */,
 				9F1830F51BC14444000E21A5 /* NSString+RCFCapitalization.m in Sources */,
 				636B63EC1BBDCEEA0053E38F /* Speaker+CoreDataProperties.m in Sources */,
 				636B63EF1BBDCEEA0053E38F /* LectureMaterials.m in Sources */,
 				9F0A85001BC1698B006F79FB /* ResponseDeserializationOperation.m in Sources */,
+				9F0A853B1BC1908B006F79FB /* OperationChainer.m in Sources */,
 				636B63EE1BBDCEEA0053E38F /* LectureMaterials+CoreDataProperties.m in Sources */,
 				6373A4101BBDC5EA00DF67FF /* Conference.xcdatamodeld in Sources */,
 				636B640D1BBDD5000053E38F /* RCFSocialNetworkAccountServiceImplementation.m in Sources */,
@@ -1598,6 +1697,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F0A853F1BC192F0006F79FB /* OperationChainerTests.m in Sources */,
 				9F0A85211BC185AA006F79FB /* TestChainableOperationWithValidationBlock.m in Sources */,
 				9F1830DB1BC126D7000E21A5 /* RCFParseResponseValidatorTests.m in Sources */,
 				9F0A85201BC185AA006F79FB /* TestChainableOperation.m in Sources */,
