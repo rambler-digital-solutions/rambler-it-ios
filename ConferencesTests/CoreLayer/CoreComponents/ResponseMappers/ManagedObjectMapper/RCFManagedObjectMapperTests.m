@@ -11,6 +11,7 @@
 
 #import "RCFManagedObjectMapper.h"
 #import "RCFManagedObjectMappingProvider.h"
+#import "RCFResultsResponseObjectFormatter.h"
 
 @interface RCFManagedObjectMapperTests : XCTestCase
 
@@ -26,7 +27,9 @@
     [MagicalRecord setupCoreDataStackWithInMemoryStore];
     
     RCFManagedObjectMappingProvider *provider = [[RCFManagedObjectMappingProvider alloc] init];
-    self.mapper = [[RCFManagedObjectMapper alloc] initWithMappingProvider:provider];
+    RCFResultsResponseObjectFormatter *formatter = [[RCFResultsResponseObjectFormatter alloc] init];
+    self.mapper = [[RCFManagedObjectMapper alloc] initWithMappingProvider:provider
+                                                  responseObjectFormatter:formatter];
 }
 
 - (void)tearDown {

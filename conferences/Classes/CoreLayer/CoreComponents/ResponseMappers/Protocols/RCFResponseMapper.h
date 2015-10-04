@@ -26,7 +26,7 @@
  
  @return Mapped model object
  */
-- (id)mapServerResponse:(NSDictionary *)response
+- (id)mapServerResponse:(id)response
      withMappingContext:(NSDictionary *)context
                   error:(NSError **)error;
 

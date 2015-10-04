@@ -12,12 +12,14 @@
 #import <MagicalRecord/MagicalRecord.h>
 
 #import "RCFManagedObjectMappingProvider.h"
+#import "RCFResponseObjectFormatter.h"
 
 static NSString *const kMappingContextManagedObjectClassKey = @"kMappingContextManagedObjectClassKey";
 
 @interface RCFManagedObjectMapper ()
 
 @property (strong, nonatomic) RCFManagedObjectMappingProvider *provider;
+@property (strong, nonatomic) id<RCFResponseObjectFormatter> responseFormatter;
 
 @end
 
@@ -25,20 +27,24 @@ static NSString *const kMappingContextManagedObjectClassKey = @"kMappingContextM
 
 #pragma mark - Initialization
 
-- (instancetype)initWithMappingProvider:(RCFManagedObjectMappingProvider *)mappingProvider {
+- (instancetype)initWithMappingProvider:(RCFManagedObjectMappingProvider *)mappingProvider
+                responseObjectFormatter:(id<RCFResponseObjectFormatter>)formatter {
     self = [super init];
     if (self) {
         _provider = mappingProvider;
+        _responseFormatter = formatter;
     }
     return self;
 }
 
 #pragma mark - RCFResponseMapper
 
-- (id)mapServerResponse:(NSDictionary *)response
+- (id)mapServerResponse:(id)response
      withMappingContext:(NSDictionary *)context
                   error:(NSError *__autoreleasing *)error {
-    NSArray *objects = response[@"results"];
+    if (self.responseFormatter) {
+        response = [self.responseFormatter formatServerResponse:response];
+    }
     
     Class managedObjectClass = NSClassFromString(context[kMappingContextManagedObjectClassKey]);
     EKManagedObjectMapping *mapping = [self.provider mappingForManagedObjectModelClass:managedObjectClass];
@@ -50,7 +56,7 @@ static NSString *const kMappingContextManagedObjectClassKey = @"kMappingContextM
     
     __block NSArray *result;
     [rootSavingContext performBlockAndWait:^{
-        result = [EKManagedObjectMapper syncArrayOfObjectsFromExternalRepresentation:objects
+        result = [EKManagedObjectMapper syncArrayOfObjectsFromExternalRepresentation:response
                                                                                   withMapping:mapping
                                                                                  fetchRequest:request
                                                                        inManagedObjectContext:rootSavingContext];
