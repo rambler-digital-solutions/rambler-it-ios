@@ -284,7 +284,7 @@
     </object>
     <object type="LMREQUEST" id="z125">
         <attribute name="uuid" type="string">1B02B456-C81C-4D53-92BF-A1BE336B4B47</attribute>
-        <attribute name="url" type="string">[{"data":{"environmentVariable":"64350179-CA60-4BAF-8A6B-F16A27A5E263"},"identifier":"com.luckymarmot.EnvironmentVariableDynamicValue"},"\\/Lecture?include=speakers"]</attribute>
+        <attribute name="url" type="string">[{"data":{"environmentVariable":"64350179-CA60-4BAF-8A6B-F16A27A5E263"},"identifier":"com.luckymarmot.EnvironmentVariableDynamicValue"},"\\/SocialNetworkAccount"]</attribute>
         <attribute name="storecookies" type="bool">1</attribute>
         <attribute name="sendcookies" type="bool">1</attribute>
         <attribute name="redirectmethod" type="bool">0</attribute>
@@ -295,7 +295,7 @@
         <attribute name="name" type="string">get events</attribute>
         <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM" idrefs="z117"></relationship>
         <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM"></relationship>
-        <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z119 z122 z118 z123"></relationship>
+        <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z118 z119 z123 z122"></relationship>
     </object>
     <object type="LMENVIRONMENTVARIABLE" id="z126">
         <attribute name="uuid" type="string">64350179-CA60-4BAF-8A6B-F16A27A5E263</attribute>
