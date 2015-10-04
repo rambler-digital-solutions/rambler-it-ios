@@ -1,5 +1,5 @@
 //
-//  RCFSpeakerServiceImplementation.h
+//  LectureServiceImplementation.h
 //  Conferences
 //
 //  Created by Karpushin Artem on 01/10/15.
@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "RCFSpeakerService.h"
+#import "LectureService.h"
 
-@interface RCFSpeakerServiceImplementation : NSObject <RCFSpeakerService>
+@interface LectureServiceImplementation : NSObject <LectureService>
 
 @end

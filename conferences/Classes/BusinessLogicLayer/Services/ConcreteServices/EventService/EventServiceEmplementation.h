@@ -1,5 +1,5 @@
 //
-//  RCFEventServiceEmplementation.h
+//  EventServiceEmplementation.h
 //  Conferences
 //
 //  Created by Karpushin Artem on 01/10/15.
@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "RCFEventService.h"
+#import "EventService.h"
 
-@interface RCFEventServiceEmplementation : NSObject <RCFEventService>
+@interface EventServiceEmplementation : NSObject <EventService>
 
 @end

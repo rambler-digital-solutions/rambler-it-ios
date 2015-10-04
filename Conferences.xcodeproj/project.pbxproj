@@ -8,24 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		5A5668508B92FC833070BA13 /* libPods-ConferencesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E72B1E234365770B87BDC6D /* libPods-ConferencesTests.a */; };
-		636B63E41BBDCEEA0053E38F /* Event+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B63CD1BBDCEEA0053E38F /* Event+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
-		636B63E51BBDCEEA0053E38F /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B63CF1BBDCEEA0053E38F /* Event.m */; settings = {ASSET_TAGS = (); }; };
-		636B63E61BBDCEEA0053E38F /* Lecture+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B63D11BBDCEEA0053E38F /* Lecture+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
-		636B63E71BBDCEEA0053E38F /* Lecture.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B63D31BBDCEEA0053E38F /* Lecture.m */; settings = {ASSET_TAGS = (); }; };
-		636B63E81BBDCEEA0053E38F /* RegistrationQuestion+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B63D51BBDCEEA0053E38F /* RegistrationQuestion+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
-		636B63E91BBDCEEA0053E38F /* RegistrationQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B63D71BBDCEEA0053E38F /* RegistrationQuestion.m */; settings = {ASSET_TAGS = (); }; };
-		636B63EA1BBDCEEA0053E38F /* SocialNetworkAccount+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B63D91BBDCEEA0053E38F /* SocialNetworkAccount+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
-		636B63EB1BBDCEEA0053E38F /* SocialNetworkAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B63DB1BBDCEEA0053E38F /* SocialNetworkAccount.m */; settings = {ASSET_TAGS = (); }; };
-		636B63EC1BBDCEEA0053E38F /* Speaker+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B63DD1BBDCEEA0053E38F /* Speaker+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
-		636B63ED1BBDCEEA0053E38F /* Speaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B63DF1BBDCEEA0053E38F /* Speaker.m */; settings = {ASSET_TAGS = (); }; };
-		636B63EE1BBDCEEA0053E38F /* LectureMaterials+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B63E11BBDCEEA0053E38F /* LectureMaterials+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
-		636B63EF1BBDCEEA0053E38F /* LectureMaterials.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B63E31BBDCEEA0053E38F /* LectureMaterials.m */; settings = {ASSET_TAGS = (); }; };
-		636B63FF1BBDD0C70053E38F /* RCFEventServiceEmplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B63FE1BBDD0C70053E38F /* RCFEventServiceEmplementation.m */; settings = {ASSET_TAGS = (); }; };
-		636B64041BBDD19A0053E38F /* RCFLectureServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64031BBDD19A0053E38F /* RCFLectureServiceImplementation.m */; settings = {ASSET_TAGS = (); }; };
-		636B64071BBDD2A40053E38F /* RCFLectureMaterialsServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64061BBDD2A40053E38F /* RCFLectureMaterialsServiceImplementation.m */; settings = {ASSET_TAGS = (); }; };
-		636B640A1BBDD3FA0053E38F /* RCFRegistrationQuestionServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64091BBDD3FA0053E38F /* RCFRegistrationQuestionServiceImplementation.m */; settings = {ASSET_TAGS = (); }; };
-		636B640D1BBDD5000053E38F /* RCFSocialNetworkAccountServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B640C1BBDD5000053E38F /* RCFSocialNetworkAccountServiceImplementation.m */; settings = {ASSET_TAGS = (); }; };
-		636B64101BBDD6260053E38F /* RCFSpeakerServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B640F1BBDD6260053E38F /* RCFSpeakerServiceImplementation.m */; settings = {ASSET_TAGS = (); }; };
+		636B63FF1BBDD0C70053E38F /* EventServiceEmplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B63FE1BBDD0C70053E38F /* EventServiceEmplementation.m */; settings = {ASSET_TAGS = (); }; };
+		636B64041BBDD19A0053E38F /* LectureServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64031BBDD19A0053E38F /* LectureServiceImplementation.m */; settings = {ASSET_TAGS = (); }; };
+		636B64071BBDD2A40053E38F /* LectureMaterialsServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64061BBDD2A40053E38F /* LectureMaterialsServiceImplementation.m */; settings = {ASSET_TAGS = (); }; };
+		636B640A1BBDD3FA0053E38F /* RegistrationQuestionServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64091BBDD3FA0053E38F /* RegistrationQuestionServiceImplementation.m */; settings = {ASSET_TAGS = (); }; };
+		636B640D1BBDD5000053E38F /* SocialNetworkAccountServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B640C1BBDD5000053E38F /* SocialNetworkAccountServiceImplementation.m */; settings = {ASSET_TAGS = (); }; };
+		636B64101BBDD6260053E38F /* SpeakerServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B640F1BBDD6260053E38F /* SpeakerServiceImplementation.m */; settings = {ASSET_TAGS = (); }; };
+		636B64121BBFE2C20053E38F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 636B64111BBFE2C20053E38F /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
+		636B64151BBFE3420053E38F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64141BBFE3420053E38F /* ViewController.m */; settings = {ASSET_TAGS = (); }; };
+		636B642E1BBFE4740053E38F /* Event+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64171BBFE4740053E38F /* Event+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		636B642F1BBFE4740053E38F /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64191BBFE4740053E38F /* Event.m */; settings = {ASSET_TAGS = (); }; };
+		636B64301BBFE4740053E38F /* RegistrationQuestion+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B641B1BBFE4740053E38F /* RegistrationQuestion+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		636B64311BBFE4740053E38F /* RegistrationQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B641D1BBFE4740053E38F /* RegistrationQuestion.m */; settings = {ASSET_TAGS = (); }; };
+		636B64321BBFE4740053E38F /* Lecture+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B641F1BBFE4740053E38F /* Lecture+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		636B64331BBFE4740053E38F /* Lecture.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64211BBFE4740053E38F /* Lecture.m */; settings = {ASSET_TAGS = (); }; };
+		636B64341BBFE4740053E38F /* SocialNetworkAccount+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64231BBFE4740053E38F /* SocialNetworkAccount+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		636B64351BBFE4740053E38F /* SocialNetworkAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64251BBFE4740053E38F /* SocialNetworkAccount.m */; settings = {ASSET_TAGS = (); }; };
+		636B64361BBFE4740053E38F /* LectureMaterials+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64271BBFE4740053E38F /* LectureMaterials+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		636B64371BBFE4740053E38F /* LectureMaterials.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64291BBFE4740053E38F /* LectureMaterials.m */; settings = {ASSET_TAGS = (); }; };
+		636B64381BBFE4740053E38F /* Speaker+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B642B1BBFE4740053E38F /* Speaker+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		636B64391BBFE4740053E38F /* Speaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B642D1BBFE4740053E38F /* Speaker.m */; settings = {ASSET_TAGS = (); }; };
 		6373A4101BBDC5EA00DF67FF /* Conference.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6373A40E1BBDC5EA00DF67FF /* Conference.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
 		63FDCE061BBDBA2A00A43B60 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FDCDDC1BBDBA2A00A43B60 /* AppDelegate.m */; settings = {ASSET_TAGS = (); }; };
 		63FDCE141BBDBA2A00A43B60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63FDCE021BBDBA2A00A43B60 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
@@ -51,48 +53,51 @@
 		559ED4EDBC100544852E4E6A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		5E72B1E234365770B87BDC6D /* libPods-ConferencesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ConferencesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FED76184BAB5478101AC945 /* Pods-ConferencesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConferencesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConferencesTests/Pods-ConferencesTests.release.xcconfig"; sourceTree = "<group>"; };
-		636B63C91BBDCC550053E38F /* RCFLectureMaterialsService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCFLectureMaterialsService.h; sourceTree = "<group>"; };
-		636B63CA1BBDCC720053E38F /* RCFLectureService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCFLectureService.h; sourceTree = "<group>"; };
-		636B63CB1BBDCC910053E38F /* RCFSocialNetworkAccountService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCFSocialNetworkAccountService.h; sourceTree = "<group>"; };
-		636B63CC1BBDCEEA0053E38F /* Event+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Event+CoreDataProperties.h"; sourceTree = "<group>"; };
-		636B63CD1BBDCEEA0053E38F /* Event+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Event+CoreDataProperties.m"; sourceTree = "<group>"; };
-		636B63CE1BBDCEEA0053E38F /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
-		636B63CF1BBDCEEA0053E38F /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
-		636B63D01BBDCEEA0053E38F /* Lecture+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Lecture+CoreDataProperties.h"; sourceTree = "<group>"; };
-		636B63D11BBDCEEA0053E38F /* Lecture+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Lecture+CoreDataProperties.m"; sourceTree = "<group>"; };
-		636B63D21BBDCEEA0053E38F /* Lecture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lecture.h; sourceTree = "<group>"; };
-		636B63D31BBDCEEA0053E38F /* Lecture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lecture.m; sourceTree = "<group>"; };
-		636B63D41BBDCEEA0053E38F /* RegistrationQuestion+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RegistrationQuestion+CoreDataProperties.h"; sourceTree = "<group>"; };
-		636B63D51BBDCEEA0053E38F /* RegistrationQuestion+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RegistrationQuestion+CoreDataProperties.m"; sourceTree = "<group>"; };
-		636B63D61BBDCEEA0053E38F /* RegistrationQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationQuestion.h; sourceTree = "<group>"; };
-		636B63D71BBDCEEA0053E38F /* RegistrationQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationQuestion.m; sourceTree = "<group>"; };
-		636B63D81BBDCEEA0053E38F /* SocialNetworkAccount+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SocialNetworkAccount+CoreDataProperties.h"; sourceTree = "<group>"; };
-		636B63D91BBDCEEA0053E38F /* SocialNetworkAccount+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SocialNetworkAccount+CoreDataProperties.m"; sourceTree = "<group>"; };
-		636B63DA1BBDCEEA0053E38F /* SocialNetworkAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialNetworkAccount.h; sourceTree = "<group>"; };
-		636B63DB1BBDCEEA0053E38F /* SocialNetworkAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialNetworkAccount.m; sourceTree = "<group>"; };
-		636B63DC1BBDCEEA0053E38F /* Speaker+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Speaker+CoreDataProperties.h"; sourceTree = "<group>"; };
-		636B63DD1BBDCEEA0053E38F /* Speaker+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Speaker+CoreDataProperties.m"; sourceTree = "<group>"; };
-		636B63DE1BBDCEEA0053E38F /* Speaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Speaker.h; sourceTree = "<group>"; };
-		636B63DF1BBDCEEA0053E38F /* Speaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Speaker.m; sourceTree = "<group>"; };
-		636B63E01BBDCEEA0053E38F /* LectureMaterials+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LectureMaterials+CoreDataProperties.h"; sourceTree = "<group>"; };
-		636B63E11BBDCEEA0053E38F /* LectureMaterials+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LectureMaterials+CoreDataProperties.m"; sourceTree = "<group>"; };
-		636B63E21BBDCEEA0053E38F /* LectureMaterials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectureMaterials.h; sourceTree = "<group>"; };
-		636B63E31BBDCEEA0053E38F /* LectureMaterials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LectureMaterials.m; sourceTree = "<group>"; };
-		636B63FD1BBDD0C70053E38F /* RCFEventServiceEmplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCFEventServiceEmplementation.h; sourceTree = "<group>"; };
-		636B63FE1BBDD0C70053E38F /* RCFEventServiceEmplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCFEventServiceEmplementation.m; sourceTree = "<group>"; };
-		636B64021BBDD19A0053E38F /* RCFLectureServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCFLectureServiceImplementation.h; sourceTree = "<group>"; };
-		636B64031BBDD19A0053E38F /* RCFLectureServiceImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCFLectureServiceImplementation.m; sourceTree = "<group>"; };
-		636B64051BBDD2A40053E38F /* RCFLectureMaterialsServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCFLectureMaterialsServiceImplementation.h; sourceTree = "<group>"; };
-		636B64061BBDD2A40053E38F /* RCFLectureMaterialsServiceImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCFLectureMaterialsServiceImplementation.m; sourceTree = "<group>"; };
-		636B64081BBDD3FA0053E38F /* RCFRegistrationQuestionServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCFRegistrationQuestionServiceImplementation.h; sourceTree = "<group>"; };
-		636B64091BBDD3FA0053E38F /* RCFRegistrationQuestionServiceImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCFRegistrationQuestionServiceImplementation.m; sourceTree = "<group>"; };
-		636B640B1BBDD5000053E38F /* RCFSocialNetworkAccountServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCFSocialNetworkAccountServiceImplementation.h; sourceTree = "<group>"; };
-		636B640C1BBDD5000053E38F /* RCFSocialNetworkAccountServiceImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCFSocialNetworkAccountServiceImplementation.m; sourceTree = "<group>"; };
-		636B640E1BBDD6260053E38F /* RCFSpeakerServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCFSpeakerServiceImplementation.h; sourceTree = "<group>"; };
-		636B640F1BBDD6260053E38F /* RCFSpeakerServiceImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCFSpeakerServiceImplementation.m; sourceTree = "<group>"; };
-		6373A3E61BBDBFDC00DF67FF /* RCFEventService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCFEventService.h; sourceTree = "<group>"; };
-		6373A3E71BBDC02100DF67FF /* RCFRegistrationQuestionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCFRegistrationQuestionService.h; sourceTree = "<group>"; };
-		6373A3E91BBDC05900DF67FF /* RCFSpeakerService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCFSpeakerService.h; sourceTree = "<group>"; };
+		636B63C91BBDCC550053E38F /* LectureMaterialsService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectureMaterialsService.h; sourceTree = "<group>"; };
+		636B63CA1BBDCC720053E38F /* LectureService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectureService.h; sourceTree = "<group>"; };
+		636B63CB1BBDCC910053E38F /* SocialNetworkAccountService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialNetworkAccountService.h; sourceTree = "<group>"; };
+		636B63FD1BBDD0C70053E38F /* EventServiceEmplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventServiceEmplementation.h; sourceTree = "<group>"; };
+		636B63FE1BBDD0C70053E38F /* EventServiceEmplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventServiceEmplementation.m; sourceTree = "<group>"; };
+		636B64021BBDD19A0053E38F /* LectureServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectureServiceImplementation.h; sourceTree = "<group>"; };
+		636B64031BBDD19A0053E38F /* LectureServiceImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LectureServiceImplementation.m; sourceTree = "<group>"; };
+		636B64051BBDD2A40053E38F /* LectureMaterialsServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectureMaterialsServiceImplementation.h; sourceTree = "<group>"; };
+		636B64061BBDD2A40053E38F /* LectureMaterialsServiceImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LectureMaterialsServiceImplementation.m; sourceTree = "<group>"; };
+		636B64081BBDD3FA0053E38F /* RegistrationQuestionServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationQuestionServiceImplementation.h; sourceTree = "<group>"; };
+		636B64091BBDD3FA0053E38F /* RegistrationQuestionServiceImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationQuestionServiceImplementation.m; sourceTree = "<group>"; };
+		636B640B1BBDD5000053E38F /* SocialNetworkAccountServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialNetworkAccountServiceImplementation.h; sourceTree = "<group>"; };
+		636B640C1BBDD5000053E38F /* SocialNetworkAccountServiceImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialNetworkAccountServiceImplementation.m; sourceTree = "<group>"; };
+		636B640E1BBDD6260053E38F /* SpeakerServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerServiceImplementation.h; sourceTree = "<group>"; };
+		636B640F1BBDD6260053E38F /* SpeakerServiceImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerServiceImplementation.m; sourceTree = "<group>"; };
+		636B64111BBFE2C20053E38F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		636B64131BBFE3420053E38F /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		636B64141BBFE3420053E38F /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		636B64161BBFE4740053E38F /* Event+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Event+CoreDataProperties.h"; sourceTree = "<group>"; };
+		636B64171BBFE4740053E38F /* Event+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Event+CoreDataProperties.m"; sourceTree = "<group>"; };
+		636B64181BBFE4740053E38F /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		636B64191BBFE4740053E38F /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		636B641A1BBFE4740053E38F /* RegistrationQuestion+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RegistrationQuestion+CoreDataProperties.h"; sourceTree = "<group>"; };
+		636B641B1BBFE4740053E38F /* RegistrationQuestion+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RegistrationQuestion+CoreDataProperties.m"; sourceTree = "<group>"; };
+		636B641C1BBFE4740053E38F /* RegistrationQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationQuestion.h; sourceTree = "<group>"; };
+		636B641D1BBFE4740053E38F /* RegistrationQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationQuestion.m; sourceTree = "<group>"; };
+		636B641E1BBFE4740053E38F /* Lecture+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Lecture+CoreDataProperties.h"; sourceTree = "<group>"; };
+		636B641F1BBFE4740053E38F /* Lecture+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Lecture+CoreDataProperties.m"; sourceTree = "<group>"; };
+		636B64201BBFE4740053E38F /* Lecture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lecture.h; sourceTree = "<group>"; };
+		636B64211BBFE4740053E38F /* Lecture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lecture.m; sourceTree = "<group>"; };
+		636B64221BBFE4740053E38F /* SocialNetworkAccount+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SocialNetworkAccount+CoreDataProperties.h"; sourceTree = "<group>"; };
+		636B64231BBFE4740053E38F /* SocialNetworkAccount+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SocialNetworkAccount+CoreDataProperties.m"; sourceTree = "<group>"; };
+		636B64241BBFE4740053E38F /* SocialNetworkAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialNetworkAccount.h; sourceTree = "<group>"; };
+		636B64251BBFE4740053E38F /* SocialNetworkAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialNetworkAccount.m; sourceTree = "<group>"; };
+		636B64261BBFE4740053E38F /* LectureMaterials+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LectureMaterials+CoreDataProperties.h"; sourceTree = "<group>"; };
+		636B64271BBFE4740053E38F /* LectureMaterials+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LectureMaterials+CoreDataProperties.m"; sourceTree = "<group>"; };
+		636B64281BBFE4740053E38F /* LectureMaterials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectureMaterials.h; sourceTree = "<group>"; };
+		636B64291BBFE4740053E38F /* LectureMaterials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LectureMaterials.m; sourceTree = "<group>"; };
+		636B642A1BBFE4740053E38F /* Speaker+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Speaker+CoreDataProperties.h"; sourceTree = "<group>"; };
+		636B642B1BBFE4740053E38F /* Speaker+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Speaker+CoreDataProperties.m"; sourceTree = "<group>"; };
+		636B642C1BBFE4740053E38F /* Speaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Speaker.h; sourceTree = "<group>"; };
+		636B642D1BBFE4740053E38F /* Speaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Speaker.m; sourceTree = "<group>"; };
+		6373A3E61BBDBFDC00DF67FF /* EventService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventService.h; sourceTree = "<group>"; };
+		6373A3E71BBDC02100DF67FF /* RegistrationQuestionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationQuestionService.h; sourceTree = "<group>"; };
+		6373A3E91BBDC05900DF67FF /* SpeakerService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerService.h; sourceTree = "<group>"; };
 		6373A40F1BBDC5EA00DF67FF /* Conference.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Conference.xcdatamodel; sourceTree = "<group>"; };
 		63FDCDDB1BBDBA2A00A43B60 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		63FDCDDC1BBDBA2A00A43B60 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -129,9 +134,9 @@
 		636B63C51BBDCC060053E38F /* LectureMaterialsService */ = {
 			isa = PBXGroup;
 			children = (
-				636B63C91BBDCC550053E38F /* RCFLectureMaterialsService.h */,
-				636B64051BBDD2A40053E38F /* RCFLectureMaterialsServiceImplementation.h */,
-				636B64061BBDD2A40053E38F /* RCFLectureMaterialsServiceImplementation.m */,
+				636B63C91BBDCC550053E38F /* LectureMaterialsService.h */,
+				636B64051BBDD2A40053E38F /* LectureMaterialsServiceImplementation.h */,
+				636B64061BBDD2A40053E38F /* LectureMaterialsServiceImplementation.m */,
 			);
 			path = LectureMaterialsService;
 			sourceTree = "<group>";
@@ -139,9 +144,9 @@
 		636B63C61BBDCC060053E38F /* LectureService */ = {
 			isa = PBXGroup;
 			children = (
-				636B63CA1BBDCC720053E38F /* RCFLectureService.h */,
-				636B64021BBDD19A0053E38F /* RCFLectureServiceImplementation.h */,
-				636B64031BBDD19A0053E38F /* RCFLectureServiceImplementation.m */,
+				636B63CA1BBDCC720053E38F /* LectureService.h */,
+				636B64021BBDD19A0053E38F /* LectureServiceImplementation.h */,
+				636B64031BBDD19A0053E38F /* LectureServiceImplementation.m */,
 			);
 			path = LectureService;
 			sourceTree = "<group>";
@@ -149,9 +154,9 @@
 		636B63C71BBDCC060053E38F /* SocialNetworkAccountService */ = {
 			isa = PBXGroup;
 			children = (
-				636B63CB1BBDCC910053E38F /* RCFSocialNetworkAccountService.h */,
-				636B640B1BBDD5000053E38F /* RCFSocialNetworkAccountServiceImplementation.h */,
-				636B640C1BBDD5000053E38F /* RCFSocialNetworkAccountServiceImplementation.m */,
+				636B63CB1BBDCC910053E38F /* SocialNetworkAccountService.h */,
+				636B640B1BBDD5000053E38F /* SocialNetworkAccountServiceImplementation.h */,
+				636B640C1BBDD5000053E38F /* SocialNetworkAccountServiceImplementation.m */,
 			);
 			path = SocialNetworkAccountService;
 			sourceTree = "<group>";
@@ -180,9 +185,9 @@
 		6373A3E01BBDBDF700DF67FF /* EventService */ = {
 			isa = PBXGroup;
 			children = (
-				6373A3E61BBDBFDC00DF67FF /* RCFEventService.h */,
-				636B63FD1BBDD0C70053E38F /* RCFEventServiceEmplementation.h */,
-				636B63FE1BBDD0C70053E38F /* RCFEventServiceEmplementation.m */,
+				6373A3E61BBDBFDC00DF67FF /* EventService.h */,
+				636B63FD1BBDD0C70053E38F /* EventServiceEmplementation.h */,
+				636B63FE1BBDD0C70053E38F /* EventServiceEmplementation.m */,
 			);
 			path = EventService;
 			sourceTree = "<group>";
@@ -190,9 +195,9 @@
 		6373A3E11BBDBDF700DF67FF /* RegistrationQuestionService */ = {
 			isa = PBXGroup;
 			children = (
-				6373A3E71BBDC02100DF67FF /* RCFRegistrationQuestionService.h */,
-				636B64081BBDD3FA0053E38F /* RCFRegistrationQuestionServiceImplementation.h */,
-				636B64091BBDD3FA0053E38F /* RCFRegistrationQuestionServiceImplementation.m */,
+				6373A3E71BBDC02100DF67FF /* RegistrationQuestionService.h */,
+				636B64081BBDD3FA0053E38F /* RegistrationQuestionServiceImplementation.h */,
+				636B64091BBDD3FA0053E38F /* RegistrationQuestionServiceImplementation.m */,
 			);
 			path = RegistrationQuestionService;
 			sourceTree = "<group>";
@@ -200,9 +205,9 @@
 		6373A3E31BBDBDF700DF67FF /* SpeakerService */ = {
 			isa = PBXGroup;
 			children = (
-				6373A3E91BBDC05900DF67FF /* RCFSpeakerService.h */,
-				636B640E1BBDD6260053E38F /* RCFSpeakerServiceImplementation.h */,
-				636B640F1BBDD6260053E38F /* RCFSpeakerServiceImplementation.m */,
+				6373A3E91BBDC05900DF67FF /* SpeakerService.h */,
+				636B640E1BBDD6260053E38F /* SpeakerServiceImplementation.h */,
+				636B640F1BBDD6260053E38F /* SpeakerServiceImplementation.m */,
 			);
 			path = SpeakerService;
 			sourceTree = "<group>";
@@ -296,30 +301,30 @@
 		63FDCDE61BBDBA2A00A43B60 /* ManagedObjects */ = {
 			isa = PBXGroup;
 			children = (
-				636B63CC1BBDCEEA0053E38F /* Event+CoreDataProperties.h */,
-				636B63CD1BBDCEEA0053E38F /* Event+CoreDataProperties.m */,
-				636B63CE1BBDCEEA0053E38F /* Event.h */,
-				636B63CF1BBDCEEA0053E38F /* Event.m */,
-				636B63D01BBDCEEA0053E38F /* Lecture+CoreDataProperties.h */,
-				636B63D11BBDCEEA0053E38F /* Lecture+CoreDataProperties.m */,
-				636B63D21BBDCEEA0053E38F /* Lecture.h */,
-				636B63D31BBDCEEA0053E38F /* Lecture.m */,
-				636B63D41BBDCEEA0053E38F /* RegistrationQuestion+CoreDataProperties.h */,
-				636B63D51BBDCEEA0053E38F /* RegistrationQuestion+CoreDataProperties.m */,
-				636B63D61BBDCEEA0053E38F /* RegistrationQuestion.h */,
-				636B63D71BBDCEEA0053E38F /* RegistrationQuestion.m */,
-				636B63D81BBDCEEA0053E38F /* SocialNetworkAccount+CoreDataProperties.h */,
-				636B63D91BBDCEEA0053E38F /* SocialNetworkAccount+CoreDataProperties.m */,
-				636B63DA1BBDCEEA0053E38F /* SocialNetworkAccount.h */,
-				636B63DB1BBDCEEA0053E38F /* SocialNetworkAccount.m */,
-				636B63DC1BBDCEEA0053E38F /* Speaker+CoreDataProperties.h */,
-				636B63DD1BBDCEEA0053E38F /* Speaker+CoreDataProperties.m */,
-				636B63DE1BBDCEEA0053E38F /* Speaker.h */,
-				636B63DF1BBDCEEA0053E38F /* Speaker.m */,
-				636B63E01BBDCEEA0053E38F /* LectureMaterials+CoreDataProperties.h */,
-				636B63E11BBDCEEA0053E38F /* LectureMaterials+CoreDataProperties.m */,
-				636B63E21BBDCEEA0053E38F /* LectureMaterials.h */,
-				636B63E31BBDCEEA0053E38F /* LectureMaterials.m */,
+				636B64161BBFE4740053E38F /* Event+CoreDataProperties.h */,
+				636B64171BBFE4740053E38F /* Event+CoreDataProperties.m */,
+				636B64181BBFE4740053E38F /* Event.h */,
+				636B64191BBFE4740053E38F /* Event.m */,
+				636B641A1BBFE4740053E38F /* RegistrationQuestion+CoreDataProperties.h */,
+				636B641B1BBFE4740053E38F /* RegistrationQuestion+CoreDataProperties.m */,
+				636B641C1BBFE4740053E38F /* RegistrationQuestion.h */,
+				636B641D1BBFE4740053E38F /* RegistrationQuestion.m */,
+				636B641E1BBFE4740053E38F /* Lecture+CoreDataProperties.h */,
+				636B641F1BBFE4740053E38F /* Lecture+CoreDataProperties.m */,
+				636B64201BBFE4740053E38F /* Lecture.h */,
+				636B64211BBFE4740053E38F /* Lecture.m */,
+				636B64221BBFE4740053E38F /* SocialNetworkAccount+CoreDataProperties.h */,
+				636B64231BBFE4740053E38F /* SocialNetworkAccount+CoreDataProperties.m */,
+				636B64241BBFE4740053E38F /* SocialNetworkAccount.h */,
+				636B64251BBFE4740053E38F /* SocialNetworkAccount.m */,
+				636B64261BBFE4740053E38F /* LectureMaterials+CoreDataProperties.h */,
+				636B64271BBFE4740053E38F /* LectureMaterials+CoreDataProperties.m */,
+				636B64281BBFE4740053E38F /* LectureMaterials.h */,
+				636B64291BBFE4740053E38F /* LectureMaterials.m */,
+				636B642A1BBFE4740053E38F /* Speaker+CoreDataProperties.h */,
+				636B642B1BBFE4740053E38F /* Speaker+CoreDataProperties.m */,
+				636B642C1BBFE4740053E38F /* Speaker.h */,
+				636B642D1BBFE4740053E38F /* Speaker.m */,
 			);
 			path = ManagedObjects;
 			sourceTree = "<group>";
@@ -327,6 +332,9 @@
 		63FDCDFF1BBDBA2A00A43B60 /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				636B64111BBFE2C20053E38F /* Main.storyboard */,
+				636B64131BBFE3420053E38F /* ViewController.h */,
+				636B64141BBFE3420053E38F /* ViewController.m */,
 			);
 			path = PresentationLayer;
 			sourceTree = "<group>";
@@ -501,6 +509,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				636B64121BBFE2C20053E38F /* Main.storyboard in Resources */,
 				63FDCE151BBDBA2A00A43B60 /* Info.plist in Resources */,
 				63FDCE141BBDBA2A00A43B60 /* Assets.xcassets in Resources */,
 			);
@@ -583,27 +592,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				636B63E61BBDCEEA0053E38F /* Lecture+CoreDataProperties.m in Sources */,
-				636B64101BBDD6260053E38F /* RCFSpeakerServiceImplementation.m in Sources */,
-				636B63ED1BBDCEEA0053E38F /* Speaker.m in Sources */,
+				636B64381BBFE4740053E38F /* Speaker+CoreDataProperties.m in Sources */,
+				636B642F1BBFE4740053E38F /* Event.m in Sources */,
+				636B64101BBDD6260053E38F /* SpeakerServiceImplementation.m in Sources */,
 				63FDCE061BBDBA2A00A43B60 /* AppDelegate.m in Sources */,
-				636B63E81BBDCEEA0053E38F /* RegistrationQuestion+CoreDataProperties.m in Sources */,
-				636B64041BBDD19A0053E38F /* RCFLectureServiceImplementation.m in Sources */,
-				636B63EA1BBDCEEA0053E38F /* SocialNetworkAccount+CoreDataProperties.m in Sources */,
+				636B64041BBDD19A0053E38F /* LectureServiceImplementation.m in Sources */,
+				636B64361BBFE4740053E38F /* LectureMaterials+CoreDataProperties.m in Sources */,
+				636B64311BBFE4740053E38F /* RegistrationQuestion.m in Sources */,
 				63FDCE161BBDBA2A00A43B60 /* main.m in Sources */,
-				636B63E51BBDCEEA0053E38F /* Event.m in Sources */,
-				636B63E91BBDCEEA0053E38F /* RegistrationQuestion.m in Sources */,
-				636B63E41BBDCEEA0053E38F /* Event+CoreDataProperties.m in Sources */,
-				636B63EB1BBDCEEA0053E38F /* SocialNetworkAccount.m in Sources */,
-				636B64071BBDD2A40053E38F /* RCFLectureMaterialsServiceImplementation.m in Sources */,
-				636B63FF1BBDD0C70053E38F /* RCFEventServiceEmplementation.m in Sources */,
-				636B63EC1BBDCEEA0053E38F /* Speaker+CoreDataProperties.m in Sources */,
-				636B63EF1BBDCEEA0053E38F /* LectureMaterials.m in Sources */,
-				636B63EE1BBDCEEA0053E38F /* LectureMaterials+CoreDataProperties.m in Sources */,
+				636B64341BBFE4740053E38F /* SocialNetworkAccount+CoreDataProperties.m in Sources */,
+				636B64321BBFE4740053E38F /* Lecture+CoreDataProperties.m in Sources */,
+				636B64071BBDD2A40053E38F /* LectureMaterialsServiceImplementation.m in Sources */,
+				636B64391BBFE4740053E38F /* Speaker.m in Sources */,
+				636B64331BBFE4740053E38F /* Lecture.m in Sources */,
+				636B64371BBFE4740053E38F /* LectureMaterials.m in Sources */,
+				636B642E1BBFE4740053E38F /* Event+CoreDataProperties.m in Sources */,
+				636B63FF1BBDD0C70053E38F /* EventServiceEmplementation.m in Sources */,
+				636B64301BBFE4740053E38F /* RegistrationQuestion+CoreDataProperties.m in Sources */,
+				636B64351BBFE4740053E38F /* SocialNetworkAccount.m in Sources */,
+				636B64151BBFE3420053E38F /* ViewController.m in Sources */,
 				6373A4101BBDC5EA00DF67FF /* Conference.xcdatamodeld in Sources */,
-				636B640D1BBDD5000053E38F /* RCFSocialNetworkAccountServiceImplementation.m in Sources */,
-				636B63E71BBDCEEA0053E38F /* Lecture.m in Sources */,
-				636B640A1BBDD3FA0053E38F /* RCFRegistrationQuestionServiceImplementation.m in Sources */,
+				636B640D1BBDD5000053E38F /* SocialNetworkAccountServiceImplementation.m in Sources */,
+				636B640A1BBDD3FA0053E38F /* RegistrationQuestionServiceImplementation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

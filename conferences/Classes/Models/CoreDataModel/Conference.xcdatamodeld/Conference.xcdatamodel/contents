@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="14F27" minimumToolsVersion="Xcode 7.0">
-    <entity name="RCFEvent" representedClassName="Event" syncable="YES">
+    <entity name="Event" representedClassName="Event" syncable="YES">
         <attribute name="endDate" attributeType="Date" syncable="YES"/>
         <attribute name="eventDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="liveStreamLink" optional="YES" attributeType="String" syncable="YES"/>
@@ -8,48 +8,48 @@
         <attribute name="startDate" attributeType="Date" syncable="YES"/>
         <attribute name="timePadID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="twitterLink" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="lectures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RCFLecture" inverseName="event" inverseEntity="RCFLecture" syncable="YES"/>
-        <relationship name="registrationQuestions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RCFRegistrationQuestion" inverseName="event" inverseEntity="RCFRegistrationQuestion" syncable="YES"/>
+        <relationship name="lectures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lecture" inverseName="event" inverseEntity="Lecture" syncable="YES"/>
+        <relationship name="registrationQuestions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RegistrationQuestion" inverseName="event" inverseEntity="RegistrationQuestion" syncable="YES"/>
     </entity>
-    <entity name="RCFLecture" representedClassName="Lecture" syncable="YES">
+    <entity name="Lecture" representedClassName="Lecture" syncable="YES">
         <attribute name="favourite" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="name" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="orderID" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="slideLink" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="talkDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="videoLink" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RCFEvent" inverseName="lectures" inverseEntity="RCFEvent" syncable="YES"/>
-        <relationship name="lectureMaterials" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RCFLectureMaterials" inverseName="lecture" inverseEntity="RCFLectureMaterials" syncable="YES"/>
-        <relationship name="speakers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RCFSpeaker" inverseName="lectures" inverseEntity="RCFSpeaker" syncable="YES"/>
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="lectures" inverseEntity="Event" syncable="YES"/>
+        <relationship name="lectureMaterials" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LectureMaterials" inverseName="lecture" inverseEntity="LectureMaterials" syncable="YES"/>
+        <relationship name="speakers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Speaker" inverseName="lectures" inverseEntity="Speaker" syncable="YES"/>
     </entity>
-    <entity name="RCFLectureMaterials" representedClassName="LectureMaterials" syncable="YES">
+    <entity name="LectureMaterials" representedClassName="LectureMaterials" syncable="YES">
         <attribute name="link" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
-        <relationship name="lecture" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RCFLecture" inverseName="lectureMaterials" inverseEntity="RCFLecture" syncable="YES"/>
+        <relationship name="lecture" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lecture" inverseName="lectureMaterials" inverseEntity="Lecture" syncable="YES"/>
     </entity>
-    <entity name="RCFRegistrationQuestion" representedClassName="RegistrationQuestion" syncable="YES">
+    <entity name="RegistrationQuestion" representedClassName="RegistrationQuestion" syncable="YES">
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="orderID" attributeType="String" syncable="YES"/>
-        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RCFEvent" inverseName="registrationQuestions" inverseEntity="RCFEvent" syncable="YES"/>
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="registrationQuestions" inverseEntity="Event" syncable="YES"/>
     </entity>
-    <entity name="RCFSocialNetworkAccount" representedClassName="SocialNetworkAccount" syncable="YES">
+    <entity name="SocialNetworkAccount" representedClassName="SocialNetworkAccount" syncable="YES">
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="profileLink" attributeType="String" syncable="YES"/>
-        <relationship name="speaker" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RCFSpeaker" inverseName="socialNetworkAccounts" inverseEntity="RCFSpeaker" syncable="YES"/>
+        <relationship name="speaker" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Speaker" inverseName="socialNetworkAccounts" inverseEntity="Speaker" syncable="YES"/>
     </entity>
-    <entity name="RCFSpeaker" representedClassName="Speaker" syncable="YES">
+    <entity name="Speaker" representedClassName="Speaker" syncable="YES">
         <attribute name="biography" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="pictureLink" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="lectures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RCFLecture" inverseName="speakers" inverseEntity="RCFLecture" syncable="YES"/>
-        <relationship name="socialNetworkAccounts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RCFSocialNetworkAccount" inverseName="speaker" inverseEntity="RCFSocialNetworkAccount" syncable="YES"/>
+        <relationship name="lectures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lecture" inverseName="speakers" inverseEntity="Lecture" syncable="YES"/>
+        <relationship name="socialNetworkAccounts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SocialNetworkAccount" inverseName="speaker" inverseEntity="SocialNetworkAccount" syncable="YES"/>
     </entity>
     <elements>
-        <element name="RCFEvent" positionX="-207" positionY="-243" width="128" height="178"/>
-        <element name="RCFLecture" positionX="-27" positionY="-243" width="128" height="178"/>
-        <element name="RCFLectureMaterials" positionX="187" positionY="-126" width="128" height="88"/>
-        <element name="RCFRegistrationQuestion" positionX="7" positionY="-36" width="128" height="88"/>
-        <element name="RCFSocialNetworkAccount" positionX="178" positionY="-408" width="128" height="88"/>
-        <element name="RCFSpeaker" positionX="-45" positionY="-414" width="128" height="118"/>
+        <element name="Event" positionX="-207" positionY="-243" width="128" height="178"/>
+        <element name="Lecture" positionX="-27" positionY="-243" width="128" height="178"/>
+        <element name="LectureMaterials" positionX="187" positionY="-126" width="128" height="88"/>
+        <element name="RegistrationQuestion" positionX="7" positionY="-36" width="128" height="88"/>
+        <element name="SocialNetworkAccount" positionX="178" positionY="-408" width="128" height="88"/>
+        <element name="Speaker" positionX="-45" positionY="-414" width="128" height="118"/>
     </elements>
 </model>

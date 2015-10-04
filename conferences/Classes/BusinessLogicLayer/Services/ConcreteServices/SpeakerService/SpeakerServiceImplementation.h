@@ -1,5 +1,5 @@
 //
-//  RCFLectureServiceImplementation.h
+//  SpeakerServiceImplementation.h
 //  Conferences
 //
 //  Created by Karpushin Artem on 01/10/15.
@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "RCFLectureService.h"
+#import "SpeakerService.h"
 
-@interface RCFLectureServiceImplementation : NSObject <RCFLectureService>
+@interface SpeakerServiceImplementation : NSObject <SpeakerService>
 
 @end
