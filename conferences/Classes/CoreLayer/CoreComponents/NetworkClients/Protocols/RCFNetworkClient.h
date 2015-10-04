@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void(^RCFNetworkClientResultBlock)(NSData *data, NSError *error);
+typedef void(^RCFNetworkClientCompletionBlock)(NSData *data, NSError *error);
 
 /**
  @author Egor Tolstoy
@@ -22,10 +22,10 @@ typedef void(^RCFNetworkClientResultBlock)(NSData *data, NSError *error);
  
  This asynchronyous method initiates sending the provided NSURLRequest to some server and receiving its response as NSData object.
  
- @param request     The NSURLRequest containing all the necessary information (target URL, HTTP headers, request body, etc) for performing the request.
- @param resultBlock The block, which is called when the response data is received.
+ @param request  The NSURLRequest containing all the necessary information (target URL, HTTP headers, request body, etc) for performing the request.
+ @param block    The block, which is called when the response data is received.
  */
 - (void)sendRequest:(NSURLRequest *)request
-        resultBlock:(RCFNetworkClientResultBlock)resultBlock;
+    completionBlock:(RCFNetworkClientCompletionBlock)block;
 
 @end

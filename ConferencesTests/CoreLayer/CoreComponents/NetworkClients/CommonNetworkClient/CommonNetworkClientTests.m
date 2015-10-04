@@ -41,7 +41,8 @@ static NSString *const kTestURLPath = @"https://myapi.com/v1/rest";
     NSURLRequest *request = [self generatePreconfiguredRequest];
     
     // when
-    [self.client sendRequest:request resultBlock:nil];
+    [self.client sendRequest:request
+             completionBlock:nil];
     
     // then
     OCMVerify([self.mockSession dataTaskWithRequest:request

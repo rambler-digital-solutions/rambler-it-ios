@@ -29,12 +29,12 @@
 #pragma mark - RCFNetworkClient
 
 - (void)sendRequest:(NSURLRequest *)request
-        resultBlock:(RCFNetworkClientResultBlock)resultBlock {
+    completionBlock:(RCFNetworkClientCompletionBlock)block {
     NSAssert(request != nil, @"NSURLRequest should not be nil");
     
     NSURLSessionDataTask *dataTask = [self.session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        if (resultBlock) {
-            resultBlock(data, error);
+        if (block) {
+            block(data, error);
         }
     }];
     
