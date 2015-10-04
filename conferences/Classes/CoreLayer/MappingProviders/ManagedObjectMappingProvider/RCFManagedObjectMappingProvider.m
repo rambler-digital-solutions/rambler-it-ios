@@ -31,12 +31,14 @@
 
 - (EKManagedObjectMapping *)socialNetworkAccountMapping {
     NSArray *properties = @[
+                            NSStringFromSelector(@selector(objectId)),
                             NSStringFromSelector(@selector(name)),
                             NSStringFromSelector(@selector(profileLink))
                             ];
     NSString *entityName = NSStringFromClass([SocialNetworkAccount class]);
     return [EKManagedObjectMapping mappingForEntityName:entityName
                                               withBlock:^(EKManagedObjectMapping *mapping) {
+                                                  mapping.primaryKey = NSStringFromSelector(@selector(objectId));
                                                   [mapping mapPropertiesFromArray:properties];
                                               }];
 }

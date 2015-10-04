@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SocialNetworkAccount (CoreDataProperties)
 
+@property (nullable, nonatomic, retain) NSString *objectId;
 @property (nullable, nonatomic, retain) NSString *name;
 @property (nullable, nonatomic, retain) NSString *profileLink;
 @property (nullable, nonatomic, retain) Speaker *speaker;

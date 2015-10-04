@@ -13,6 +13,7 @@
 
 @implementation SocialNetworkAccount (CoreDataProperties)
 
+@dynamic objectId;
 @dynamic name;
 @dynamic profileLink;
 @dynamic speaker;
