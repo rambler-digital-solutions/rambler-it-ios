@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol RCFSession;
-
 /**
  @author Egor Tolstoy
  
@@ -20,14 +18,12 @@
 /**
  @author Egor Tolstoy
  
- The method signs a NSURLRequest using data from RCFSession object
+ The method signs a NSURLRequest using data, provided by the specific signer's dependencies
  
  @param request Previously configurated NSURLRequest
- @param session A session object containing all necessary tokens
  
  @return Signed NSURLRequest
  */
-- (NSURLRequest *)signRequest:(NSURLRequest *)request
-                   forSession:(id<RCFSession>)session;
+- (NSURLRequest *)signRequest:(NSURLRequest *)request;
 
 @end

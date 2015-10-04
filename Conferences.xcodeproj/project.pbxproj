@@ -34,6 +34,8 @@
 		9F1830931BC02293000E21A5 /* RCFRESTRequestConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830921BC02293000E21A5 /* RCFRESTRequestConfigurator.m */; settings = {ASSET_TAGS = (); }; };
 		9F18309A1BC022EA000E21A5 /* RCFRESTRequestConfiguratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830991BC022EA000E21A5 /* RCFRESTRequestConfiguratorTests.m */; settings = {ASSET_TAGS = (); }; };
 		9F18309F1BC024A9000E21A5 /* RCFRequestDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F18309E1BC024A9000E21A5 /* RCFRequestDataModel.m */; settings = {ASSET_TAGS = (); }; };
+		9F1830A71BC032CF000E21A5 /* RCFParseRequestSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830A61BC032CF000E21A5 /* RCFParseRequestSigner.m */; settings = {ASSET_TAGS = (); }; };
+		9F1830AB1BC1139B000E21A5 /* RCFParseRequestSignerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830AA1BC1139B000E21A5 /* RCFParseRequestSignerTests.m */; settings = {ASSET_TAGS = (); }; };
 		F826C56E7FA67515D33573A9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A4F504A716A8833A7A01A5D /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -109,6 +111,9 @@
 		9F18309D1BC024A9000E21A5 /* RCFRequestDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCFRequestDataModel.h; path = CoreComponents/RequestConfigurators/Models/RequestDataModel/RCFRequestDataModel.h; sourceTree = "<group>"; };
 		9F18309E1BC024A9000E21A5 /* RCFRequestDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCFRequestDataModel.m; path = CoreComponents/RequestConfigurators/Models/RequestDataModel/RCFRequestDataModel.m; sourceTree = "<group>"; };
 		9F1830A21BC03133000E21A5 /* RCFRequestSigner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCFRequestSigner.h; path = CoreComponents/RequestSigners/Protocols/RCFRequestSigner.h; sourceTree = "<group>"; };
+		9F1830A51BC032CF000E21A5 /* RCFParseRequestSigner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCFParseRequestSigner.h; path = CoreComponents/RequestSigners/ConcreteClasses/ParseRequestSigner/RCFParseRequestSigner.h; sourceTree = "<group>"; };
+		9F1830A61BC032CF000E21A5 /* RCFParseRequestSigner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCFParseRequestSigner.m; path = CoreComponents/RequestSigners/ConcreteClasses/ParseRequestSigner/RCFParseRequestSigner.m; sourceTree = "<group>"; };
+		9F1830AA1BC1139B000E21A5 /* RCFParseRequestSignerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCFParseRequestSignerTests.m; path = CoreLayer/CoreComponents/RequestSigners/ParseRequestSigner/RCFParseRequestSignerTests.m; sourceTree = "<group>"; };
 		9F1F37E41BBBB80D00C7797D /* Conferences.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conferences.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F1F38001BBBB80D00C7797D /* ConferencesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConferencesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F1F38061BBBB80D00C7797D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -433,6 +438,7 @@
 		9F1830951BC022A6000E21A5 /* CoreComponents */ = {
 			isa = PBXGroup;
 			children = (
+				9F1830A81BC11373000E21A5 /* RequestSigners */,
 				9F1830961BC022AD000E21A5 /* RequestConfigurators */,
 			);
 			name = CoreComponents;
@@ -474,6 +480,7 @@
 		9F1830A01BC030C1000E21A5 /* RequestSigners */ = {
 			isa = PBXGroup;
 			children = (
+				9F1830A31BC03210000E21A5 /* ConcreteClasses */,
 				9F1830A11BC030CC000E21A5 /* Protocols */,
 			);
 			name = RequestSigners;
@@ -485,6 +492,39 @@
 				9F1830A21BC03133000E21A5 /* RCFRequestSigner.h */,
 			);
 			name = Protocols;
+			sourceTree = "<group>";
+		};
+		9F1830A31BC03210000E21A5 /* ConcreteClasses */ = {
+			isa = PBXGroup;
+			children = (
+				9F1830A41BC0321E000E21A5 /* ParseRequestSigner */,
+			);
+			name = ConcreteClasses;
+			sourceTree = "<group>";
+		};
+		9F1830A41BC0321E000E21A5 /* ParseRequestSigner */ = {
+			isa = PBXGroup;
+			children = (
+				9F1830A51BC032CF000E21A5 /* RCFParseRequestSigner.h */,
+				9F1830A61BC032CF000E21A5 /* RCFParseRequestSigner.m */,
+			);
+			name = ParseRequestSigner;
+			sourceTree = "<group>";
+		};
+		9F1830A81BC11373000E21A5 /* RequestSigners */ = {
+			isa = PBXGroup;
+			children = (
+				9F1830A91BC1137B000E21A5 /* ParseRequestSigner */,
+			);
+			name = RequestSigners;
+			sourceTree = "<group>";
+		};
+		9F1830A91BC1137B000E21A5 /* ParseRequestSigner */ = {
+			isa = PBXGroup;
+			children = (
+				9F1830AA1BC1139B000E21A5 /* RCFParseRequestSignerTests.m */,
+			);
+			name = ParseRequestSigner;
 			sourceTree = "<group>";
 		};
 		9F1F37DB1BBBB80D00C7797D = {
@@ -702,6 +742,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F1830931BC02293000E21A5 /* RCFRESTRequestConfigurator.m in Sources */,
+				9F1830A71BC032CF000E21A5 /* RCFParseRequestSigner.m in Sources */,
 				636B63E61BBDCEEA0053E38F /* Lecture+CoreDataProperties.m in Sources */,
 				636B64101BBDD6260053E38F /* RCFSpeakerServiceImplementation.m in Sources */,
 				636B63ED1BBDCEEA0053E38F /* Speaker.m in Sources */,
@@ -732,6 +773,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F18309A1BC022EA000E21A5 /* RCFRESTRequestConfiguratorTests.m in Sources */,
+				9F1830AB1BC1139B000E21A5 /* RCFParseRequestSignerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
