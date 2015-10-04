@@ -8,9 +8,7 @@
 
 #import "AppDelegate.h"
 
-#import <MagicalRecord/MagicalRecord.h>
-
-static NSString * const kRCFCoreDataStoreName = @"Conference";
+#import "ApplicationConfigurator.h"
 
 @interface AppDelegate ()
 
@@ -20,7 +18,7 @@ static NSString * const kRCFCoreDataStoreName = @"Conference";
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [MagicalRecord setupCoreDataStackWithStoreNamed:kRCFCoreDataStoreName];
+    [self.applicationConfigurator setupCoreDataStack];
     
     return YES;
 }

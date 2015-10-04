@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5A5668508B92FC833070BA13 /* libPods-ConferencesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E72B1E234365770B87BDC6D /* libPods-ConferencesTests.a */; };
+		636A37B31BC1356400B49C3D /* ApplicationConfiguratorImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37B21BC1356400B49C3D /* ApplicationConfiguratorImplementation.m */; settings = {ASSET_TAGS = (); }; };
+		636A37BB1BC13B9800B49C3D /* ApplicationConfiguratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37BA1BC13B9800B49C3D /* ApplicationConfiguratorTests.m */; settings = {ASSET_TAGS = (); }; };
 		636B63FF1BBDD0C70053E38F /* EventServiceEmplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B63FE1BBDD0C70053E38F /* EventServiceEmplementation.m */; settings = {ASSET_TAGS = (); }; };
 		636B64041BBDD19A0053E38F /* LectureServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64031BBDD19A0053E38F /* LectureServiceImplementation.m */; settings = {ASSET_TAGS = (); }; };
 		636B64071BBDD2A40053E38F /* LectureMaterialsServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64061BBDD2A40053E38F /* LectureMaterialsServiceImplementation.m */; settings = {ASSET_TAGS = (); }; };
@@ -53,6 +55,10 @@
 		559ED4EDBC100544852E4E6A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		5E72B1E234365770B87BDC6D /* libPods-ConferencesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ConferencesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FED76184BAB5478101AC945 /* Pods-ConferencesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConferencesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConferencesTests/Pods-ConferencesTests.release.xcconfig"; sourceTree = "<group>"; };
+		636A37B11BC1356400B49C3D /* ApplicationConfiguratorImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationConfiguratorImplementation.h; sourceTree = "<group>"; };
+		636A37B21BC1356400B49C3D /* ApplicationConfiguratorImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationConfiguratorImplementation.m; sourceTree = "<group>"; };
+		636A37B41BC1361000B49C3D /* ApplicationConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationConfigurator.h; sourceTree = "<group>"; };
+		636A37BA1BC13B9800B49C3D /* ApplicationConfiguratorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationConfiguratorTests.m; sourceTree = "<group>"; };
 		636B63C91BBDCC550053E38F /* LectureMaterialsService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectureMaterialsService.h; sourceTree = "<group>"; };
 		636B63CA1BBDCC720053E38F /* LectureService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectureService.h; sourceTree = "<group>"; };
 		636B63CB1BBDCC910053E38F /* SocialNetworkAccountService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialNetworkAccountService.h; sourceTree = "<group>"; };
@@ -131,6 +137,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		636A37B01BC1354100B49C3D /* ApplicationConfigurator */ = {
+			isa = PBXGroup;
+			children = (
+				636A37B41BC1361000B49C3D /* ApplicationConfigurator.h */,
+				636A37B11BC1356400B49C3D /* ApplicationConfiguratorImplementation.h */,
+				636A37B21BC1356400B49C3D /* ApplicationConfiguratorImplementation.m */,
+			);
+			path = ApplicationConfigurator;
+			sourceTree = "<group>";
+		};
+		636A37B51BC13B4B00B49C3D /* ConferencesAssembliesTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ConferencesAssembliesTests;
+			sourceTree = "<group>";
+		};
+		636A37B61BC13B4B00B49C3D /* ConferencesLogicTests */ = {
+			isa = PBXGroup;
+			children = (
+				636A37B71BC13B4B00B49C3D /* BaseServicesTests */,
+			);
+			path = ConferencesLogicTests;
+			sourceTree = "<group>";
+		};
+		636A37B71BC13B4B00B49C3D /* BaseServicesTests */ = {
+			isa = PBXGroup;
+			children = (
+				636A37B81BC13B4B00B49C3D /* ApplicationConfigurator */,
+			);
+			path = BaseServicesTests;
+			sourceTree = "<group>";
+		};
+		636A37B81BC13B4B00B49C3D /* ApplicationConfigurator */ = {
+			isa = PBXGroup;
+			children = (
+				636A37BA1BC13B9800B49C3D /* ApplicationConfiguratorTests.m */,
+			);
+			path = ApplicationConfigurator;
+			sourceTree = "<group>";
+		};
+		636A37B91BC13B4B00B49C3D /* ConferencesPresentationTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ConferencesPresentationTests;
+			sourceTree = "<group>";
+		};
 		636B63C51BBDCC060053E38F /* LectureMaterialsService */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,6 +285,7 @@
 		63FDCDD91BBDBA2A00A43B60 /* ApplicationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				636A37B01BC1354100B49C3D /* ApplicationConfigurator */,
 				63FDCDDA1BBDBA2A00A43B60 /* AppDelegate */,
 			);
 			path = ApplicationLayer;
@@ -410,6 +465,9 @@
 		9F1F38031BBBB80D00C7797D /* ConferencesTests */ = {
 			isa = PBXGroup;
 			children = (
+				636A37B51BC13B4B00B49C3D /* ConferencesAssembliesTests */,
+				636A37B61BC13B4B00B49C3D /* ConferencesLogicTests */,
+				636A37B91BC13B4B00B49C3D /* ConferencesPresentationTests */,
 				9F1F38041BBBB80D00C7797D /* ConferencesTests.m */,
 				9F1F38061BBBB80D00C7797D /* Info.plist */,
 			);
@@ -599,6 +657,7 @@
 				636B64041BBDD19A0053E38F /* LectureServiceImplementation.m in Sources */,
 				636B64361BBFE4740053E38F /* LectureMaterials+CoreDataProperties.m in Sources */,
 				636B64311BBFE4740053E38F /* RegistrationQuestion.m in Sources */,
+				636A37B31BC1356400B49C3D /* ApplicationConfiguratorImplementation.m in Sources */,
 				63FDCE161BBDBA2A00A43B60 /* main.m in Sources */,
 				636B64341BBFE4740053E38F /* SocialNetworkAccount+CoreDataProperties.m in Sources */,
 				636B64321BBFE4740053E38F /* Lecture+CoreDataProperties.m in Sources */,
@@ -622,6 +681,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F1F38051BBBB80D00C7797D /* ConferencesTests.m in Sources */,
+				636A37BB1BC13B9800B49C3D /* ApplicationConfiguratorTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
