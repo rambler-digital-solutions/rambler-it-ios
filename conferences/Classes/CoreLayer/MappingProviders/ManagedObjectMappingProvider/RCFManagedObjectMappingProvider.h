@@ -20,8 +20,12 @@
 /**
  @author Egor Tolstoy
  
- The mapping for SocialNetworkAccount class
+ This method processes the provided NSManagedObject class to a specific mapping
+ 
+ @param managedObjectModelClass The class for mapping
+ 
+ @return EKManagedObjectMapping object
  */
-+ (EKManagedObjectMapping *)socialNetworkModelMapping;
+- (EKManagedObjectMapping *)mappingForManagedObjectModelClass:(Class)managedObjectModelClass;
 
 @end

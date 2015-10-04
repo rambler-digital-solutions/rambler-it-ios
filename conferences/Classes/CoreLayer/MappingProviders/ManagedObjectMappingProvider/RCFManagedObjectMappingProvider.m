@@ -10,11 +10,26 @@
 
 #import <EasyMapping/EasyMapping.h>
 
+#import "NSString+RCFCapitalization.h"
+
 #import "SocialNetworkAccount.h"
 
 @implementation RCFManagedObjectMappingProvider
 
-+ (EKManagedObjectMapping *)socialNetworkModelMapping {
+- (EKManagedObjectMapping *)mappingForManagedObjectModelClass:(Class)managedObjectModelClass {
+    NSString *managedObjectModelStringName = NSStringFromClass(managedObjectModelClass);
+    NSString *mappingName = [NSString stringWithFormat:@"%@Mapping", managedObjectModelStringName];
+    NSString *decapitalizedMappingName = [mappingName rcf_decapitalizedStringSavingCase];
+    
+    EKManagedObjectMapping *selectedMapping = nil;
+    SEL mappingSelector = NSSelectorFromString(decapitalizedMappingName);
+    if ([self respondsToSelector:mappingSelector]) {
+        selectedMapping = ((EKManagedObjectMapping* (*)(id, SEL))[self methodForSelector:mappingSelector])(self, mappingSelector);
+    }
+    return selectedMapping;
+}
+
+- (EKManagedObjectMapping *)socialNetworkAccountMapping {
     NSArray *properties = @[
                             NSStringFromSelector(@selector(name)),
                             NSStringFromSelector(@selector(profileLink))

@@ -46,6 +46,9 @@
 		9F1830DB1BC126D7000E21A5 /* RCFParseResponseValidatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830DA1BC126D7000E21A5 /* RCFParseResponseValidatorTests.m */; settings = {ASSET_TAGS = (); }; };
 		9F1830DF1BC12749000E21A5 /* RCFResponseValidatorTestsBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830DE1BC12749000E21A5 /* RCFResponseValidatorTestsBase.m */; settings = {ASSET_TAGS = (); }; };
 		9F1830E61BC13F9F000E21A5 /* RCFManagedObjectMappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830E51BC13F9F000E21A5 /* RCFManagedObjectMappingProvider.m */; settings = {ASSET_TAGS = (); }; };
+		9F1830ED1BC14293000E21A5 /* RCFManagedObjectMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830EC1BC14293000E21A5 /* RCFManagedObjectMapper.m */; settings = {ASSET_TAGS = (); }; };
+		9F1830F51BC14444000E21A5 /* NSString+RCFCapitalization.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830F41BC14444000E21A5 /* NSString+RCFCapitalization.m */; settings = {ASSET_TAGS = (); }; };
+		9F1830F91BC1464C000E21A5 /* RCFManagedObjectMappingProviderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830F81BC1464C000E21A5 /* RCFManagedObjectMappingProviderTests.m */; settings = {ASSET_TAGS = (); }; };
 		F826C56E7FA67515D33573A9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A4F504A716A8833A7A01A5D /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -145,6 +148,12 @@
 		9F1830DE1BC12749000E21A5 /* RCFResponseValidatorTestsBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCFResponseValidatorTestsBase.m; sourceTree = "<group>"; };
 		9F1830E41BC13F9F000E21A5 /* RCFManagedObjectMappingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCFManagedObjectMappingProvider.h; path = MappingProviders/ManagedObjectMappingProvider/RCFManagedObjectMappingProvider.h; sourceTree = "<group>"; };
 		9F1830E51BC13F9F000E21A5 /* RCFManagedObjectMappingProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCFManagedObjectMappingProvider.m; path = MappingProviders/ManagedObjectMappingProvider/RCFManagedObjectMappingProvider.m; sourceTree = "<group>"; };
+		9F1830E81BC141D6000E21A5 /* RCFResponseMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCFResponseMapper.h; path = CoreComponents/ResponseMappers/Protocols/RCFResponseMapper.h; sourceTree = "<group>"; };
+		9F1830EB1BC14293000E21A5 /* RCFManagedObjectMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCFManagedObjectMapper.h; path = CoreComponents/ResponseMappers/BaseClasses/ManagedObjectMapper/RCFManagedObjectMapper.h; sourceTree = "<group>"; };
+		9F1830EC1BC14293000E21A5 /* RCFManagedObjectMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCFManagedObjectMapper.m; path = CoreComponents/ResponseMappers/BaseClasses/ManagedObjectMapper/RCFManagedObjectMapper.m; sourceTree = "<group>"; };
+		9F1830F31BC14444000E21A5 /* NSString+RCFCapitalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+RCFCapitalization.h"; sourceTree = "<group>"; };
+		9F1830F41BC14444000E21A5 /* NSString+RCFCapitalization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+RCFCapitalization.m"; sourceTree = "<group>"; };
+		9F1830F81BC1464C000E21A5 /* RCFManagedObjectMappingProviderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCFManagedObjectMappingProviderTests.m; path = CoreLayer/MappingProviders/ManagedObjectMappingProvider/RCFManagedObjectMappingProviderTests.m; sourceTree = "<group>"; };
 		9F1F37E41BBBB80D00C7797D /* Conferences.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conferences.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F1F38001BBBB80D00C7797D /* ConferencesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConferencesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F1F38061BBBB80D00C7797D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -311,6 +320,7 @@
 		63FDCDE01BBDBA2A00A43B60 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				9F1830F21BC14444000E21A5 /* NSString+RCFCapitalization */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -466,6 +476,7 @@
 		9F1830941BC0229F000E21A5 /* CoreLayer */ = {
 			isa = PBXGroup;
 			children = (
+				9F1830F61BC14628000E21A5 /* MappingProviders */,
 				9F1830951BC022A6000E21A5 /* CoreComponents */,
 			);
 			name = CoreLayer;
@@ -766,6 +777,8 @@
 		9F1830E01BC12837000E21A5 /* ResponseMappers */ = {
 			isa = PBXGroup;
 			children = (
+				9F1830E91BC14270000E21A5 /* BaseClasses */,
+				9F1830E71BC141B9000E21A5 /* Protocols */,
 			);
 			name = ResponseMappers;
 			sourceTree = "<group>";
@@ -783,6 +796,56 @@
 			children = (
 				9F1830E41BC13F9F000E21A5 /* RCFManagedObjectMappingProvider.h */,
 				9F1830E51BC13F9F000E21A5 /* RCFManagedObjectMappingProvider.m */,
+			);
+			name = ManagedObjectMappingProvider;
+			sourceTree = "<group>";
+		};
+		9F1830E71BC141B9000E21A5 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9F1830E81BC141D6000E21A5 /* RCFResponseMapper.h */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		9F1830E91BC14270000E21A5 /* BaseClasses */ = {
+			isa = PBXGroup;
+			children = (
+				9F1830EA1BC14277000E21A5 /* ManagedObjectMapper */,
+			);
+			name = BaseClasses;
+			sourceTree = "<group>";
+		};
+		9F1830EA1BC14277000E21A5 /* ManagedObjectMapper */ = {
+			isa = PBXGroup;
+			children = (
+				9F1830EB1BC14293000E21A5 /* RCFManagedObjectMapper.h */,
+				9F1830EC1BC14293000E21A5 /* RCFManagedObjectMapper.m */,
+			);
+			name = ManagedObjectMapper;
+			sourceTree = "<group>";
+		};
+		9F1830F21BC14444000E21A5 /* NSString+RCFCapitalization */ = {
+			isa = PBXGroup;
+			children = (
+				9F1830F31BC14444000E21A5 /* NSString+RCFCapitalization.h */,
+				9F1830F41BC14444000E21A5 /* NSString+RCFCapitalization.m */,
+			);
+			path = "NSString+RCFCapitalization";
+			sourceTree = "<group>";
+		};
+		9F1830F61BC14628000E21A5 /* MappingProviders */ = {
+			isa = PBXGroup;
+			children = (
+				9F1830F71BC1462F000E21A5 /* ManagedObjectMappingProvider */,
+			);
+			name = MappingProviders;
+			sourceTree = "<group>";
+		};
+		9F1830F71BC1462F000E21A5 /* ManagedObjectMappingProvider */ = {
+			isa = PBXGroup;
+			children = (
+				9F1830F81BC1464C000E21A5 /* RCFManagedObjectMappingProviderTests.m */,
 			);
 			name = ManagedObjectMappingProvider;
 			sourceTree = "<group>";
@@ -1023,12 +1086,14 @@
 				636B63EB1BBDCEEA0053E38F /* SocialNetworkAccount.m in Sources */,
 				636B64071BBDD2A40053E38F /* RCFLectureMaterialsServiceImplementation.m in Sources */,
 				636B63FF1BBDD0C70053E38F /* RCFEventServiceEmplementation.m in Sources */,
+				9F1830F51BC14444000E21A5 /* NSString+RCFCapitalization.m in Sources */,
 				636B63EC1BBDCEEA0053E38F /* Speaker+CoreDataProperties.m in Sources */,
 				636B63EF1BBDCEEA0053E38F /* LectureMaterials.m in Sources */,
 				636B63EE1BBDCEEA0053E38F /* LectureMaterials+CoreDataProperties.m in Sources */,
 				6373A4101BBDC5EA00DF67FF /* Conference.xcdatamodeld in Sources */,
 				636B640D1BBDD5000053E38F /* RCFSocialNetworkAccountServiceImplementation.m in Sources */,
 				636B63E71BBDCEEA0053E38F /* Lecture.m in Sources */,
+				9F1830ED1BC14293000E21A5 /* RCFManagedObjectMapper.m in Sources */,
 				9F1830E61BC13F9F000E21A5 /* RCFManagedObjectMappingProvider.m in Sources */,
 				636B640A1BBDD3FA0053E38F /* RCFRegistrationQuestionServiceImplementation.m in Sources */,
 			);
@@ -1040,6 +1105,7 @@
 			files = (
 				9F1830DB1BC126D7000E21A5 /* RCFParseResponseValidatorTests.m in Sources */,
 				9F18309A1BC022EA000E21A5 /* RCFRESTRequestConfiguratorTests.m in Sources */,
+				9F1830F91BC1464C000E21A5 /* RCFManagedObjectMappingProviderTests.m in Sources */,
 				9F1830C81BC11EE6000E21A5 /* XCTestCase+RCFHelpers.m in Sources */,
 				9F1830AB1BC1139B000E21A5 /* RCFParseRequestSignerTests.m in Sources */,
 				9F1830DF1BC12749000E21A5 /* RCFResponseValidatorTestsBase.m in Sources */,
