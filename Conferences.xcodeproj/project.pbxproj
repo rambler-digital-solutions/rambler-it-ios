@@ -41,6 +41,10 @@
 		9F1830BF1BC11D26000E21A5 /* RCFJSONResponseDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830BE1BC11D26000E21A5 /* RCFJSONResponseDeserializer.m */; settings = {ASSET_TAGS = (); }; };
 		9F1830C31BC11DE7000E21A5 /* RCFJSONResponseDeserializerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830C21BC11DE7000E21A5 /* RCFJSONResponseDeserializerTests.m */; settings = {ASSET_TAGS = (); }; };
 		9F1830C81BC11EE6000E21A5 /* XCTestCase+RCFHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830C71BC11EE6000E21A5 /* XCTestCase+RCFHelpers.m */; settings = {ASSET_TAGS = (); }; };
+		9F1830D11BC12492000E21A5 /* RCFResponseValidatorBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830D01BC12492000E21A5 /* RCFResponseValidatorBase.m */; settings = {ASSET_TAGS = (); }; };
+		9F1830D71BC125C3000E21A5 /* RCFParseResponseValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830D61BC125C3000E21A5 /* RCFParseResponseValidator.m */; settings = {ASSET_TAGS = (); }; };
+		9F1830DB1BC126D7000E21A5 /* RCFParseResponseValidatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830DA1BC126D7000E21A5 /* RCFParseResponseValidatorTests.m */; settings = {ASSET_TAGS = (); }; };
+		9F1830DF1BC12749000E21A5 /* RCFResponseValidatorTestsBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830DE1BC12749000E21A5 /* RCFResponseValidatorTestsBase.m */; settings = {ASSET_TAGS = (); }; };
 		F826C56E7FA67515D33573A9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A4F504A716A8833A7A01A5D /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -130,6 +134,14 @@
 		9F1830C61BC11EE6000E21A5 /* XCTestCase+RCFHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "XCTestCase+RCFHelpers.h"; path = "Helpers/XCTestCase+RCFHelpers/XCTestCase+RCFHelpers.h"; sourceTree = "<group>"; };
 		9F1830C71BC11EE6000E21A5 /* XCTestCase+RCFHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "XCTestCase+RCFHelpers.m"; path = "Helpers/XCTestCase+RCFHelpers/XCTestCase+RCFHelpers.m"; sourceTree = "<group>"; };
 		9F1830C91BC121D3000E21A5 /* TestConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TestConstants.h; path = Helpers/TestConstants/TestConstants.h; sourceTree = "<group>"; };
+		9F1830CD1BC123E4000E21A5 /* RCFResponseValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCFResponseValidator.h; path = CoreComponents/ResponseValidators/Protocols/RCFResponseValidator.h; sourceTree = "<group>"; };
+		9F1830CF1BC12492000E21A5 /* RCFResponseValidatorBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCFResponseValidatorBase.h; path = CoreComponents/ResponseValidators/BaseClasses/ResponseValidatorBase/RCFResponseValidatorBase.h; sourceTree = "<group>"; };
+		9F1830D01BC12492000E21A5 /* RCFResponseValidatorBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCFResponseValidatorBase.m; path = CoreComponents/ResponseValidators/BaseClasses/ResponseValidatorBase/RCFResponseValidatorBase.m; sourceTree = "<group>"; };
+		9F1830D51BC125C3000E21A5 /* RCFParseResponseValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCFParseResponseValidator.h; path = CoreComponents/ResponseValidators/ConcreteClasses/ParseResponseValidator/RCFParseResponseValidator.h; sourceTree = "<group>"; };
+		9F1830D61BC125C3000E21A5 /* RCFParseResponseValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCFParseResponseValidator.m; path = CoreComponents/ResponseValidators/ConcreteClasses/ParseResponseValidator/RCFParseResponseValidator.m; sourceTree = "<group>"; };
+		9F1830DA1BC126D7000E21A5 /* RCFParseResponseValidatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCFParseResponseValidatorTests.m; path = CoreLayer/CoreComponents/ResponseValidators/ParseResponseValidator/RCFParseResponseValidatorTests.m; sourceTree = "<group>"; };
+		9F1830DD1BC12749000E21A5 /* RCFResponseValidatorTestsBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCFResponseValidatorTestsBase.h; sourceTree = "<group>"; };
+		9F1830DE1BC12749000E21A5 /* RCFResponseValidatorTestsBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCFResponseValidatorTestsBase.m; sourceTree = "<group>"; };
 		9F1F37E41BBBB80D00C7797D /* Conferences.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conferences.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F1F38001BBBB80D00C7797D /* ConferencesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConferencesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F1F38061BBBB80D00C7797D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -402,6 +414,7 @@
 		9F18308B1BC01E65000E21A5 /* CoreComponents */ = {
 			isa = PBXGroup;
 			children = (
+				9F1830CB1BC123C7000E21A5 /* ResponseValidators */,
 				9F1830B91BC11BCC000E21A5 /* ResponseDeserializers */,
 				9F1830AC1BC116D6000E21A5 /* NetworkClients */,
 				9F1830A01BC030C1000E21A5 /* RequestSigners */,
@@ -456,6 +469,7 @@
 		9F1830951BC022A6000E21A5 /* CoreComponents */ = {
 			isa = PBXGroup;
 			children = (
+				9F1830D81BC126B0000E21A5 /* ResponseValidators */,
 				9F1830C01BC11DC0000E21A5 /* ResponseDeserializers */,
 				9F1830B51BC11982000E21A5 /* NetworkClients */,
 				9F1830A81BC11373000E21A5 /* RequestSigners */,
@@ -663,6 +677,85 @@
 				9F1830C91BC121D3000E21A5 /* TestConstants.h */,
 			);
 			name = TestConstants;
+			sourceTree = "<group>";
+		};
+		9F1830CB1BC123C7000E21A5 /* ResponseValidators */ = {
+			isa = PBXGroup;
+			children = (
+				9F1830D31BC12595000E21A5 /* ConcreteClasses */,
+				9F1830CE1BC12476000E21A5 /* BaseClasses */,
+				9F1830CC1BC123CE000E21A5 /* Protocols */,
+			);
+			name = ResponseValidators;
+			sourceTree = "<group>";
+		};
+		9F1830CC1BC123CE000E21A5 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9F1830CD1BC123E4000E21A5 /* RCFResponseValidator.h */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		9F1830CE1BC12476000E21A5 /* BaseClasses */ = {
+			isa = PBXGroup;
+			children = (
+				9F1830D21BC12495000E21A5 /* ResponseValidatorBase */,
+			);
+			name = BaseClasses;
+			sourceTree = "<group>";
+		};
+		9F1830D21BC12495000E21A5 /* ResponseValidatorBase */ = {
+			isa = PBXGroup;
+			children = (
+				9F1830CF1BC12492000E21A5 /* RCFResponseValidatorBase.h */,
+				9F1830D01BC12492000E21A5 /* RCFResponseValidatorBase.m */,
+			);
+			name = ResponseValidatorBase;
+			sourceTree = "<group>";
+		};
+		9F1830D31BC12595000E21A5 /* ConcreteClasses */ = {
+			isa = PBXGroup;
+			children = (
+				9F1830D41BC1259D000E21A5 /* ParseResponseValidator */,
+			);
+			name = ConcreteClasses;
+			sourceTree = "<group>";
+		};
+		9F1830D41BC1259D000E21A5 /* ParseResponseValidator */ = {
+			isa = PBXGroup;
+			children = (
+				9F1830D51BC125C3000E21A5 /* RCFParseResponseValidator.h */,
+				9F1830D61BC125C3000E21A5 /* RCFParseResponseValidator.m */,
+			);
+			name = ParseResponseValidator;
+			sourceTree = "<group>";
+		};
+		9F1830D81BC126B0000E21A5 /* ResponseValidators */ = {
+			isa = PBXGroup;
+			children = (
+				9F1830DC1BC12749000E21A5 /* ResponseValidatorTestsBase */,
+				9F1830D91BC126B8000E21A5 /* ParseResponseValidator */,
+			);
+			name = ResponseValidators;
+			sourceTree = "<group>";
+		};
+		9F1830D91BC126B8000E21A5 /* ParseResponseValidator */ = {
+			isa = PBXGroup;
+			children = (
+				9F1830DA1BC126D7000E21A5 /* RCFParseResponseValidatorTests.m */,
+			);
+			name = ParseResponseValidator;
+			sourceTree = "<group>";
+		};
+		9F1830DC1BC12749000E21A5 /* ResponseValidatorTestsBase */ = {
+			isa = PBXGroup;
+			children = (
+				9F1830DD1BC12749000E21A5 /* RCFResponseValidatorTestsBase.h */,
+				9F1830DE1BC12749000E21A5 /* RCFResponseValidatorTestsBase.m */,
+			);
+			name = ResponseValidatorTestsBase;
+			path = CoreLayer/CoreComponents/ResponseValidators/ResponseValidatorTestsBase;
 			sourceTree = "<group>";
 		};
 		9F1F37DB1BBBB80D00C7797D = {
@@ -885,7 +978,9 @@
 				9F1830931BC02293000E21A5 /* RCFRESTRequestConfigurator.m in Sources */,
 				9F1830A71BC032CF000E21A5 /* RCFParseRequestSigner.m in Sources */,
 				636B63E61BBDCEEA0053E38F /* Lecture+CoreDataProperties.m in Sources */,
+				9F1830D71BC125C3000E21A5 /* RCFParseResponseValidator.m in Sources */,
 				636B64101BBDD6260053E38F /* RCFSpeakerServiceImplementation.m in Sources */,
+				9F1830D11BC12492000E21A5 /* RCFResponseValidatorBase.m in Sources */,
 				636B63ED1BBDCEEA0053E38F /* Speaker.m in Sources */,
 				9F18309F1BC024A9000E21A5 /* RCFRequestDataModel.m in Sources */,
 				63FDCE061BBDBA2A00A43B60 /* AppDelegate.m in Sources */,
@@ -913,9 +1008,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F1830DB1BC126D7000E21A5 /* RCFParseResponseValidatorTests.m in Sources */,
 				9F18309A1BC022EA000E21A5 /* RCFRESTRequestConfiguratorTests.m in Sources */,
 				9F1830C81BC11EE6000E21A5 /* XCTestCase+RCFHelpers.m in Sources */,
 				9F1830AB1BC1139B000E21A5 /* RCFParseRequestSignerTests.m in Sources */,
+				9F1830DF1BC12749000E21A5 /* RCFResponseValidatorTestsBase.m in Sources */,
 				9F1830B81BC119A5000E21A5 /* CommonNetworkClientTests.m in Sources */,
 				9F1830C31BC11DE7000E21A5 /* RCFJSONResponseDeserializerTests.m in Sources */,
 			);
