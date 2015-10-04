@@ -52,10 +52,14 @@
     NSArray *result = [self.mapper mapServerResponse:serverResponse
                                   withMappingContext:mappingContext
                                                error:nil];
+    id firstObject = [result firstObject];
     
     // then
     XCTAssertEqual(result.count, 1);
-    XCTAssertTrue([[result firstObject] isKindOfClass:targetClass]);
+    XCTAssertTrue([firstObject isKindOfClass:targetClass]);
+    XCTAssertNotNil([firstObject objectId]);
+    XCTAssertNotNil([firstObject name]);
+    XCTAssertNotNil([firstObject profileLink]);
 }
 
 #pragma mark - Helper Methods
