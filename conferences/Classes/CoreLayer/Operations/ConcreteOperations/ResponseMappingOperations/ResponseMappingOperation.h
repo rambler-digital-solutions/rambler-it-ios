@@ -15,7 +15,7 @@
 /**
  @author Egor Tolstoy
  
- Операция маппинга ответа сервера
+ The operation is responsible for server response mapping
  */
 @interface ResponseMappingOperation : AsyncOperation <ChainableOperation>
 

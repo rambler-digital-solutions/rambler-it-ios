@@ -15,7 +15,7 @@
 /**
  @author Egor Tolstoy
  
- Операция создания NSURLRequest
+ The operation is responsible for configuring a NSURLRequest using the provided information
  */
 @interface RequestConfigurationOperation : AsyncOperation <ChainableOperation>
 

@@ -67,7 +67,7 @@
     BOOL isBufferContentValid = block(data);
     if (!isBufferContentValid) {
         [NSException raise:NSInternalInconsistencyException
-                    format:@"Буфер %@ содержит данные в некорректном формате (%@)", self, NSStringFromClass([data class])];
+                    format:@"Buffer %@ data has incorrect format (%@)", self, NSStringFromClass([data class])];
     }
     return data;
 }

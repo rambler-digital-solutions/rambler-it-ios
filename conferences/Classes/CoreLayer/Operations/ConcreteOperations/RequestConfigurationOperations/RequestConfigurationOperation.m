@@ -59,13 +59,13 @@ static const int ddLogLevel = DDLogLevelVerbose;
 #pragma mark - Выполнение операции
 
 - (void)main {
-    DDLogVerbose(@"Начало выполнения операции %@", NSStringFromClass([self class]));
+    DDLogVerbose(@"The operation %@ is started", NSStringFromClass([self class]));
     RCFRequestDataModel *inputData = [self.input obtainInputDataWithTypeValidationBlock:^BOOL(id data) {
         if ([data isKindOfClass:[RCFRequestDataModel class]] || data == nil) {
-            DDLogVerbose(@"Входные данные операции %@ прошли валидацию", NSStringFromClass([self class]));
+            DDLogVerbose(@"The input data for the operation %@ has passed the validation", NSStringFromClass([self class]));
             return YES;
         }
-        DDLogVerbose(@"Входные данные операции %@ не прошли валидацию, класс данных: %@",
+        DDLogVerbose(@"The input data for the operation %@ hasn't passed the validation. The input data type is: %@",
                      NSStringFromClass([self class]),
                      NSStringFromClass([data class]));
         return NO;
@@ -76,18 +76,18 @@ static const int ddLogLevel = DDLogLevelVerbose;
                                                           urlParameters:self.urlParameters
                                                        requestDataModel:inputData];
     
-    DDLogVerbose(@"Успешно создан сетевой запрос: %@", request);
+    DDLogVerbose(@"Successfully created a request: %@", request);
     [self completeOperationWithData:request error:nil];
 }
 
 - (void)completeOperationWithData:(id)data error:(NSError *)error {
     if (data) {
         [self.output didCompleteChainableOperationWithOutputData:data];
-        DDLogVerbose(@"Выходные данные операции %@ переданы буферу", NSStringFromClass([self class]));
+        DDLogVerbose(@"The operation %@ output data has been passed to the buffer", NSStringFromClass([self class]));
     }
     
     [self.delegate didCompleteChainableOperationWithError:error];
-    DDLogVerbose(@"Операция %@ завершена", NSStringFromClass([self class]));
+    DDLogVerbose(@"The operation %@ is over", NSStringFromClass([self class]));
     [self complete];
 }
 
@@ -95,7 +95,7 @@ static const int ddLogLevel = DDLogLevelVerbose;
 
 - (NSString *)debugDescription {
     NSArray *additionalDebugInfo = @[
-                                     [NSString stringWithFormat:@"Работает с конфигуратором: %@\n",
+                                     [NSString stringWithFormat:@"Works with configurator: %@\n",
                                       [self.requestConfigurator debugDescription]]
                                      ];
     return [OperationDebugDescriptionFormatter debugDescriptionForOperation:self

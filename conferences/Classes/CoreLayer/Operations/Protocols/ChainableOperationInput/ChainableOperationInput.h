@@ -15,16 +15,21 @@ typedef BOOL(^ChainableOperationInputTypeValidationBlock)(id data);
  
  Протокол источника данных операции
  */
+/**
+ @author Egor Tolstoy
+ 
+ The protocol for the operation input data source
+ */
 @protocol ChainableOperationInput <NSObject>
 
 /**
  @author Egor Tolstoy
  
- Метод возвращает стартовые данные (если они есть), необходимые для выполнения операции
+ This method returns input data (if there is any) for the operation execution
  
- @param block Блок валидации типа данных
+ @param block The data type validation block
  
- @return Данные любого типа, прошедшие валидацию
+ @return Data of any kind, that has passed the validation process
  */
 - (id)obtainInputDataWithTypeValidationBlock:(ChainableOperationInputTypeValidationBlock)block;
 

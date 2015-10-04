@@ -8,19 +8,24 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ @author Egor Tolstoy
+ 
+ The base NSOperation class, which provides the asynchronyous capabilities to all of its subclasses.
+ */
 @interface AsyncOperation : NSOperation
 
 /**
  @author Egor Tolstoy
  
- При старте операции метод вызывается в отдельном потоке. необходимо переопределить.
+ This method is called in a separate thread after operation start. Should be overriden.
  */
 - (void)main;
 
 /**
  @author Egor Tolstoy
  
- Метод выставляет флаги о завершении операции, обязательно нужно вызвать по завершении.
+ This method sets all operation flags to appropriate values. Should be manually called after operation executes.
  */
 - (void)complete;
 

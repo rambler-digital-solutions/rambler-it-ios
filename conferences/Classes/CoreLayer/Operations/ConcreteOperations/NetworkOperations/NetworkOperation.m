@@ -44,27 +44,27 @@ static const int ddLogLevel = DDLogFlagVerbose;
 #pragma mark - Выполнение операции
 
 - (void)main {
-    DDLogVerbose(@"Начало выполнения операции %@", NSStringFromClass([self class]));
+    DDLogVerbose(@"The operation %@ is started", NSStringFromClass([self class]));
     NSURLRequest *inputData = [self.input obtainInputDataWithTypeValidationBlock:^BOOL(id data) {
         if ([data isKindOfClass:[NSURLRequest class]]) {
-            DDLogVerbose(@"Входные данные операции %@ прошли валидацию", NSStringFromClass([self class]));
+            DDLogVerbose(@"The input data for the operation %@ has passed the validation", NSStringFromClass([self class]));
             return YES;
         }
-        DDLogVerbose(@"Входные данные операции %@ не прошли валидацию, класс данных: %@",
+        DDLogVerbose(@"The input data for the operation %@ hasn't passed the validation. The input data type is: %@",
                      NSStringFromClass([self class]),
                      NSStringFromClass([data class]));
         return NO;
     }];
     
-    DDLogVerbose(@"Старт отправки запроса к серверу");
+    DDLogVerbose(@"Start sending request to the remote server");
     @weakify(self);
     [self.networkClient sendRequest:inputData completionBlock:^(id data, NSError *error) {
         @strongify(self);
         if (error) {
-            DDLogError(@"NetworkClient в операции %@ вернул ошибку: %@", NSStringFromClass([self class]), error);
+            DDLogError(@"NetworkClient in operation %@ has produced an error: %@", NSStringFromClass([self class]), error);
         }
         if (data) {
-            DDLogVerbose(@"Сервер вернул данные объемом: %li", [(NSData *)data length]);
+            DDLogVerbose(@"Server returned data with length: %li", [(NSData *)data length]);
         }
         
         [self completeOperationWithData:data error:error];
@@ -74,11 +74,11 @@ static const int ddLogLevel = DDLogFlagVerbose;
 - (void)completeOperationWithData:(id)data error:(NSError *)error {
     if (data) {
         [self.output didCompleteChainableOperationWithOutputData:data];
-        DDLogVerbose(@"Выходные данные операции %@ переданы буферу", NSStringFromClass([self class]));
+        DDLogVerbose(@"The operation %@ output data has been passed to the buffer", NSStringFromClass([self class]));
     }
     
     [self.delegate didCompleteChainableOperationWithError:error];
-    DDLogVerbose(@"Операция %@ завершена", NSStringFromClass([self class]));
+    DDLogVerbose(@"The operation %@ is over", NSStringFromClass([self class]));
     [self complete];
 }
 
@@ -86,7 +86,7 @@ static const int ddLogLevel = DDLogFlagVerbose;
 
 - (NSString *)debugDescription {
     NSArray *additionalDebugInfo = @[
-                                     [NSString stringWithFormat:@"Работает с клиентом: %@\n",
+                                     [NSString stringWithFormat:@"Works with client: %@\n",
                                       [self.networkClient debugDescription]]
                                      ];
     return [OperationDebugDescriptionFormatter debugDescriptionForOperation:self

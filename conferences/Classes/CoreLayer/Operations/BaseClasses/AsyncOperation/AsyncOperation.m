@@ -39,20 +39,31 @@
 #pragma mark - Приватные методы
 
 - (void)start {
-    // Перед стартом всегда требуется проверить, не отменили ли операцию
+    /**
+     @author Egor Tolstoy
+     
+     Always check, if the operation was cancelled before the start
+     */
     if ([self isCancelled])
     {
-        // Если операция была отменена, нужно перевести ее в состояние finished
+        /**
+         @author Egor Tolstoy
+         
+         If it was cancelled, we are switching it to finished state
+         */
         [self willChangeValueForKey:@"isFinished"];
         finished = YES;
         [self didChangeValueForKey:@"isFinished"];
         return;
     }
     
-    // Если операция не была отменена, начинаем задачу
+    /**
+     @author Egor Tolstoy
+     
+     If it wasn't cancelled, we're beginning the task
+     */
     [self willChangeValueForKey:@"isExecuting"];
     
-    // Создаем новый тред и запускаем в нем операцию.
     [NSThread detachNewThreadSelector:@selector(main) toTarget:self withObject:nil];
     executing = YES;
     [self didChangeValueForKey:@"isExecuting"];
@@ -64,7 +75,11 @@
 }
 
 - (void)complete {
-    // При завершении операции всегда нужно выставить соответствующие флаги
+    /**
+     @author Egor Tolstoy
+     
+     We should always manually setup finished and executing flags after the operation is complete
+     */
     [self willChangeValueForKey:@"isFinished"];
     [self willChangeValueForKey:@"isExecuting"];
     

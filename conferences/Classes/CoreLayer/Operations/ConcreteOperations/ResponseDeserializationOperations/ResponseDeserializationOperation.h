@@ -15,7 +15,7 @@
 /**
  @author Egor Tolstoy
  
- Операция десериализации ответа сервера
+ The operation is responsible for deserializing server raw responses
  */
 @interface ResponseDeserializationOperation : AsyncOperation <ChainableOperation>
 

@@ -16,7 +16,7 @@
 /**
  @author Egor Tolstoy
  
- Операция подписывания сетевого запроса
+ The operation is responsible for signing a preconfigured NSURLRequest with some authorization data
  */
 @interface RequestSigningOperation : AsyncOperation <ChainableOperation>
 

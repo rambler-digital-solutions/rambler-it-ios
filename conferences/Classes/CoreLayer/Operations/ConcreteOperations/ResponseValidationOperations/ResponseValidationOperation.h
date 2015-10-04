@@ -15,7 +15,7 @@
 /**
  @author Egor Tolstoy
  
- Операция валидации ответа сервера
+ The operation is responsible for validating deserialized server response
  */
 @interface ResponseValidationOperation : AsyncOperation <ChainableOperation>
 

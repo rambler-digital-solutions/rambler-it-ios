@@ -15,7 +15,7 @@
 /**
  @author Egor Tolstoy
  
- Операция отправки сетевого запроса на сервер
+ The operation is responsible for sending preconfigured NSURLRequest to the remote server and receiving back some response.
  */
 @interface NetworkOperation : AsyncOperation <ChainableOperation>
 

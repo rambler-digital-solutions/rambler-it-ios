@@ -11,16 +11,16 @@
 /**
  @author Egor Tolstoy
  
- Протокол делегата операции
+ The chainable operation delegate
  */
 @protocol ChainableOperationDelegate <NSObject>
 
 /**
  @author Egor Tolstoy
  
- Метод сообщает compound-операции (а именно она является делегатом) о том, что операция завершилась (либо успешно, либо с ошибкой). Что делать дальше - решать уже compound-операции.
+ The method tells a compound operation (usually it poses as the delegate) that the operation is finished (either successfully, or with an error).
  
- @param error Ошибка выполнения под-операции
+ @param error The error, produced either by operation or by its dependencies.
  */
 - (void)didCompleteChainableOperationWithError:(NSError *)error;
 

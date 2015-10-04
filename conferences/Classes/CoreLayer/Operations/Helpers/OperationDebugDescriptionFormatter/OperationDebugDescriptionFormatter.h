@@ -13,24 +13,24 @@
 /**
  @author Egor Tolstoy
  
- Объект, реализующий общую логику вывода debugDescription для всех чейнящихся операций
+ This object formats the chainable NSOperation description for logging it
  */
 @interface OperationDebugDescriptionFormatter : NSObject
 
 /**
  @author Egor Tolstoy
  
- Метод отдает строку с описанием любой ChainableOperation. В описание входят:
- - Класс операции
- - Описание входных данных из буфера
- - Описание зависимостей на другие операции
- - Состояние операции (флажки)
- - Переданные методу дополнительные данные
+ The method returns an NSString with the description of chainable operation. It consists of:
+ - The operation class
+ - Input data description
+ - Dependencies on other operations
+ - Operation state (flags)
+ - Additional information
  
  @param operation      ChainableOperation
- @param additionalInfo Дополнительные данные, специфичные для конкретной операции
+ @param additionalInfo Additional information specific for the provided operation
  
- @return Отформатированная строка для вывода в консоль
+ @return Formatted debug description
  */
 + (NSString *)debugDescriptionForOperation:(NSOperation <ChainableOperation> *)operation
                         withAdditionalInfo:(NSArray *)additionalInfo;

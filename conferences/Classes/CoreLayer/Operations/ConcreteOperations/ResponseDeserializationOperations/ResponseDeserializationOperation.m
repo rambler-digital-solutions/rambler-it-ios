@@ -44,27 +44,27 @@ static const int ddLogLevel = DDLogLevelVerbose;
 #pragma mark - Выполнение операции
 
 - (void)main {
-    DDLogVerbose(@"Начало выполнения операции %@", NSStringFromClass([self class]));
+    DDLogVerbose(@"The operation %@ is started", NSStringFromClass([self class]));
     NSData *inputData = [self.input obtainInputDataWithTypeValidationBlock:^BOOL(id data) {
         if ([data isKindOfClass:[NSData class]]) {
-            DDLogVerbose(@"Входные данные операции %@ прошли валидацию", NSStringFromClass([self class]));
+            DDLogVerbose(@"The input data for the operation %@ has passed the validation", NSStringFromClass([self class]));
             return YES;
         }
-        DDLogVerbose(@"Входные данные операции %@ не прошли валидацию, класс данных: %@",
+        DDLogVerbose(@"The input data for the operation %@ hasn't passed the validation. The input data type is: %@",
                      NSStringFromClass([self class]),
                      NSStringFromClass([data class]));
         return NO;
     }];
     
-    DDLogVerbose(@"Старт действия десериализации ответа сервера");
+    DDLogVerbose(@"Start server response deserialization");
     @weakify(self);
     [self.responseDeserializer deserializeServerResponse:inputData completionBlock:^(NSDictionary *response, NSError *error) {
         @strongify(self);
         if (error) {
-            DDLogError(@"ResponseDeserializer в операции %@ вернул ошибку: %@", NSStringFromClass([self class]), error);
+            DDLogError(@"ResponseDeserializer in operation %@ has produced error: %@", NSStringFromClass([self class]), error);
         }
         if (response) {
-            DDLogVerbose(@"Успешно десериализован ответ сервера: %@", response);
+            DDLogVerbose(@"The server response was successfully deserialized: %@", response);
         }
         
         [self completeOperationWithData:response error:error];
@@ -74,11 +74,11 @@ static const int ddLogLevel = DDLogLevelVerbose;
 - (void)completeOperationWithData:(id)data error:(NSError *)error {
     if (data) {
         [self.output didCompleteChainableOperationWithOutputData:data];
-        DDLogVerbose(@"Выходные данные операции %@ переданы буферу", NSStringFromClass([self class]));
+        DDLogVerbose(@"The operation %@ output data has been passed to the buffer", NSStringFromClass([self class]));
     }
     
     [self.delegate didCompleteChainableOperationWithError:error];
-    DDLogVerbose(@"Операция %@ завершена", NSStringFromClass([self class]));
+    DDLogVerbose(@"The operation %@ is over", NSStringFromClass([self class]));
     [self complete];
 }
 
@@ -86,7 +86,7 @@ static const int ddLogLevel = DDLogLevelVerbose;
 
 - (NSString *)debugDescription {
     NSArray *additionalDebugInfo = @[
-                                     [NSString stringWithFormat:@"Работает с десериализатором: %@\n",
+                                     [NSString stringWithFormat:@"Works with deserializer: %@\n",
                                       [self.responseDeserializer debugDescription]]
                                      ];
     return [OperationDebugDescriptionFormatter debugDescriptionForOperation:self

@@ -17,49 +17,49 @@
                                  withInternalQueue:(NSOperationQueue *)internalQueue {
     NSMutableString *debugDescription = [NSMutableString new];
     
-    // Общая информация
+    // General Information
     [debugDescription appendString:@"====================================\n"];
-    [debugDescription appendString:@"Общая информация:\n"];
-    [debugDescription appendString:[NSString stringWithFormat:@"- Класс операции: %@\n", NSStringFromClass([compoundOperation class])]];
-    [debugDescription appendString:[NSString stringWithFormat:@"- Имя внутренней очереди: %@\n", internalQueue.name]];
-    [debugDescription appendString:[NSString stringWithFormat:@"- Операций в очереди: %li\n", internalQueue.operationCount]];
+    [debugDescription appendString:@"General Information:\n"];
+    [debugDescription appendString:[NSString stringWithFormat:@"- The operation class: %@\n", NSStringFromClass([compoundOperation class])]];
+    [debugDescription appendString:[NSString stringWithFormat:@"- The inner operation queue name: %@\n", internalQueue.name]];
+    [debugDescription appendString:[NSString stringWithFormat:@"- Count of operations in the inner queue: %li\n", internalQueue.operationCount]];
     [debugDescription appendString:[NSString stringWithFormat:@"- maxConcurrentOperationCount: %li\n", compoundOperation.maxConcurrentOperationsCount]];
     [debugDescription appendString:@"====================================\n"];
     
-    // Буферы данных
+    // Buffers
     id inputData = [(OperationBuffer *)compoundOperation.queueInput obtainInputDataWithTypeValidationBlock:nil];
     id outputData = [compoundOperation.queueOutput obtainOperationQueueOutputData];
     if (inputData) {
-        [debugDescription appendString:@"Входные данные:\n"];
-        [debugDescription appendString:[NSString stringWithFormat:@"- Тип: %@;\n", NSStringFromClass([inputData class])]];
-        [debugDescription appendString:[NSString stringWithFormat:@"- Содержание: %@;\n", inputData]];
+        [debugDescription appendString:@"Input Data:\n"];
+        [debugDescription appendString:[NSString stringWithFormat:@"- Type: %@;\n", NSStringFromClass([inputData class])]];
+        [debugDescription appendString:[NSString stringWithFormat:@"- Contents: %@;\n", inputData]];
     } else {
-        [debugDescription appendString:@"Нет входных данных\n"];
+        [debugDescription appendString:@"No input data\n"];
     }
     if (outputData) {
-        [debugDescription appendString:@"Выходные данные:\n"];
-        [debugDescription appendString:[NSString stringWithFormat:@"- Тип: %@;\n", NSStringFromClass([outputData class])]];
-        [debugDescription appendString:[NSString stringWithFormat:@"- Содержание: %@;\n", outputData]];
+        [debugDescription appendString:@"Output Data:\n"];
+        [debugDescription appendString:[NSString stringWithFormat:@"- Type: %@;\n", NSStringFromClass([outputData class])]];
+        [debugDescription appendString:[NSString stringWithFormat:@"- Contents: %@;\n", outputData]];
     } else {
-        [debugDescription appendString:@"Нет выходных данных\n"];
+        [debugDescription appendString:@"No output data\n"];
     }
     [debugDescription appendString:@"====================================\n"];
     
-    // Внешнее состояние
-    [debugDescription appendString:@"Зависимости от других операций:\n"];
+    // Dependencies
+    [debugDescription appendString:@"Dependencies on other NSOperations:\n"];
     if (compoundOperation.dependencies.count > 0) {
-        [debugDescription appendString:@"Зависит от:\n"];
+        [debugDescription appendString:@"Depends on:\n"];
         [compoundOperation.dependencies enumerateObjectsUsingBlock:^(NSOperation *obj, NSUInteger idx, BOOL *stop) {
             NSString *dependencyDescription = [NSString stringWithFormat:@"%li: %@, isExecuting: %i\n", idx, NSStringFromClass([obj class]), obj.isExecuting];
             [debugDescription appendString:dependencyDescription];
         }];
     } else {
-        [debugDescription appendString:@"Нет зависимостей на другие операции\n"];
+        [debugDescription appendString:@"No dependencies on other operations\n"];
     }
     [debugDescription appendString:@"====================================\n"];\
     
-    // Флажки
-    [debugDescription appendString:@"Состояние:\n"];
+    // Flags
+    [debugDescription appendString:@"State:\n"];
     [debugDescription appendString:[NSString stringWithFormat:@"- isQueueSuspended: %i;\n", internalQueue.isSuspended]];
     [debugDescription appendString:[NSString stringWithFormat:@"- isExecuting: %i;\n", compoundOperation.isExecuting]];
     [debugDescription appendString:[NSString stringWithFormat:@"- isFinished: %i;\n", compoundOperation.isFinished]];
@@ -68,32 +68,32 @@
     [debugDescription appendString:[NSString stringWithFormat:@"- isAsynchronous: %i;\n", compoundOperation.isAsynchronous]];
     [debugDescription appendString:@"====================================\n"];
     
-    // Дополнительная информация
-    [debugDescription appendString:@"Дополнительная информация:\n"];
+    // Additional Information
+    [debugDescription appendString:@"Additional information:\n"];
     if (compoundOperation.resultBlock) {
-        [debugDescription appendString:@"resultBlock установлен"];
+        [debugDescription appendString:@"resultBlock is set"];
     } else {
-        [debugDescription appendString:@"resultBlock не установлен"];
+        [debugDescription appendString:@"resultBlock is not set"];
     }
     [debugDescription appendString:@"====================================\n"];
     
-    // Сейчас выполняется
+    // Executing suboperations
     NSUInteger executingOperationsCount = 0;
     for (NSOperation *operation in internalQueue.operations) {
         if (operation.isExecuting) {
             executingOperationsCount += 1;
         }
     }
-    [debugDescription appendString:[NSString stringWithFormat:@"Сейчас выполняется %li операций\n", executingOperationsCount]];
+    [debugDescription appendString:[NSString stringWithFormat:@"%li operations are executing right now\n", executingOperationsCount]];
     if (executingOperationsCount > 0) {
         [internalQueue.operations enumerateObjectsUsingBlock:^(NSOperation *obj, NSUInteger idx, BOOL *stop) {
             if (obj.isExecuting) {
-                [debugDescription appendString:[NSString stringWithFormat:@"- Операция %li\n", idx]];
-                [debugDescription appendString:[NSString stringWithFormat:@"  - Класс операции: %@\n", NSStringFromClass([obj class])]];
-                [debugDescription appendString:@"  - Описание операции: \n"];
-                [debugDescription appendString:@"\n{{{НАЧАЛО ОПИСАНИЯ ВЫПОЛНЯЕМОЙ ОПЕРАЦИИ}}}\n"];
+                [debugDescription appendString:[NSString stringWithFormat:@"- Operation %li\n", idx]];
+                [debugDescription appendString:[NSString stringWithFormat:@"  - Class: %@\n", NSStringFromClass([obj class])]];
+                [debugDescription appendString:@"  - Description: \n"];
+                [debugDescription appendString:@"\n{{{START OF EXECUTING OPERATION DESCRIPTION}}}\n"];
                 [debugDescription appendString:[obj debugDescription]];
-                [debugDescription appendString:@"{{{ОКОНЧАНИЕ ОПИСАНИЯ ВЫПОЛНЯЕМОЙ ОПЕРАЦИИ}}}\n\n"];
+                [debugDescription appendString:@"{{{END OF EXECUTING OPERATION DESCRIPTION}}}\n\n"];
             }
         }];
     }

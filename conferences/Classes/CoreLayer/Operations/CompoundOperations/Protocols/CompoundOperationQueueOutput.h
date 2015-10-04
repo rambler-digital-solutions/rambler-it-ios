@@ -11,7 +11,7 @@
 /**
  @author Egor Tolstoy
  
- Протокол, которым закрывается объект, способный обработать выходные данные, получившиеся в результате работы очереди операций
+ The protocol describes an object, capable of processing operation queue output data
  */
 @protocol CompoundOperationQueueOutput <NSObject>
 
@@ -19,6 +19,11 @@
  @author Egor Tolstoy
  
  Метод устанавливает данные, которые будут переданы compound-операцией как результат ее выполнения
+ */
+/**
+ @author Egor Tolstoy
+ 
+ The method setups the operation queue output data.
  */
 - (id)obtainOperationQueueOutputData;
 

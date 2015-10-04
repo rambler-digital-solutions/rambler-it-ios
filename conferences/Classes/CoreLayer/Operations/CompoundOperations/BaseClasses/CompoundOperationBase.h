@@ -18,45 +18,46 @@ typedef void(^CompoundOperationResultBlock)(id data, NSError *error);
 /**
  @author Egor Tolstoy
  
- Базовый класс для Compound-операции. Не предназначен для использования напрямую.
+ The base class for compound operation.
  */
 @interface CompoundOperationBase : AsyncOperation <ChainableOperationDelegate>
 
 /**
  @author Egor Tolstoy
  
- Свойство, указывающее, какое количество операций может выполняться параллельно.
- Используется в случае наличия связок 1-ко-многим.
+ This property points, how many operations are allowed to execute in parallel.
  */
 @property (assign, nonatomic) NSUInteger maxConcurrentOperationsCount;
 
 /**
  @author Egor Tolstoy
  
- Блок, который будет выполнен по завершении операции.
+ This block is called after the operation is finished.
  */
 @property (copy, nonatomic) CompoundOperationResultBlock resultBlock;
 
 /**
  @author Egor Tolstoy
  
- Буфер для связи compound-операции и первой операции в очереди
- С его помощью мы можем передать в обработку какие-то данные (к примеру, письмо, которое надо отправить)
+ The buffer is used to chain the compound operation with the first suboperation from its queue.
+ It can be used to pass some input data for the operations chain.
  */
 @property (strong, nonatomic) id<CompoundOperationQueueInput> queueInput;
 
 /**
  @author Egor Tolstoy
  
- Буфер для связи последней операции в очереди и compound-операции
- С его помощью мы можем получить результат выполнения всей последовательности операций
+ The buffer is used to chain the compound operation with the last suboperation from its queue.
+ It can be used to obtain the result of operations chain work.
  */
 @property (strong, nonatomic) id<CompoundOperationQueueOutput> queueOutput;
 
 /**
  @author Egor Tolstoy
  
- Метод добавляет переданную ему операцию во внутреннюю очередь
+ This method adds the provided operation to a compound operation inner queue.
+ 
+ @param operation Chainable NSOperation
  */
 - (void)addOperation:(NSOperation <ChainableOperation> *)operation;
 

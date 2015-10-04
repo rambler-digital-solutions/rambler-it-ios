@@ -43,22 +43,22 @@ static const int ddLogLevel = DDLogLevelVerbose;
 #pragma mark - Выполнение операции
 
 - (void)main {
-    DDLogVerbose(@"Начало выполнения операции %@", NSStringFromClass([self class]));
+    DDLogVerbose(@"The operation %@ is started", NSStringFromClass([self class]));
     id inputData = [self.input obtainInputDataWithTypeValidationBlock:^BOOL(id data) {
         if (data) {
-            DDLogVerbose(@"Входные данные операции %@ прошли валидацию", NSStringFromClass([self class]));
+            DDLogVerbose(@"The input data for the operation %@ has passed the validation", NSStringFromClass([self class]));
             return YES;
         }
-        DDLogVerbose(@"Входные данные операции %@ не прошли валидацию, класс данных: %@",
+        DDLogVerbose(@"The input data for the operation %@ hasn't passed the validation. The input data type is: %@",
                      NSStringFromClass([self class]),
                      NSStringFromClass([data class]));
         return NO;
     }];
     
-    DDLogVerbose(@"Старт валидации ответа сервера");
+    DDLogVerbose(@"Start server response validation");
     NSError *validationError = [self.responseValidator validateServerResponse:inputData];
     if (validationError) {
-        DDLogError(@"ResponseValidator в операции %@ вернул ошибку: %@", NSStringFromClass([self class]), validationError);
+        DDLogError(@"ResponseValidator in operation %@ has produced an error: %@", NSStringFromClass([self class]), validationError);
     }
     
     [self completeOperationWithData:inputData error:validationError];
@@ -67,11 +67,11 @@ static const int ddLogLevel = DDLogLevelVerbose;
 - (void)completeOperationWithData:(id)data error:(NSError *)error {
     if (data) {
         [self.output didCompleteChainableOperationWithOutputData:data];
-        DDLogVerbose(@"Выходные данные операции %@ переданы буферу", NSStringFromClass([self class]));
+        DDLogVerbose(@"The operation %@ output data has been passed to the buffer", NSStringFromClass([self class]));
     }
     
     [self.delegate didCompleteChainableOperationWithError:error];
-    DDLogVerbose(@"Операция %@ завершена", NSStringFromClass([self class]));
+    DDLogVerbose(@"The operation %@ is over", NSStringFromClass([self class]));
     [self complete];
 }
 
@@ -79,7 +79,7 @@ static const int ddLogLevel = DDLogLevelVerbose;
 
 - (NSString *)debugDescription {
     NSArray *additionalDebugInfo = @[
-                                     [NSString stringWithFormat:@"Работает с валидатором: %@\n",
+                                     [NSString stringWithFormat:@"Works with validator: %@\n",
                                       [self.responseValidator debugDescription]]
                                      ];
     return [OperationDebugDescriptionFormatter debugDescriptionForOperation:self

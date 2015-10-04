@@ -11,16 +11,16 @@
 /**
  @author Egor Tolstoy
  
- Протокол, которым закрывается объект, способный обработать входные данные для старта очереди операций
+ The protocol describes an object, capable of processing operation queue input data.
  */
 @protocol CompoundOperationQueueInput <NSObject>
 
 /**
  @author Egor Tolstoy
  
- Метод устанавливает стартовые данные для очереди операций
+ The method setups input data for operations queue.
  
- @param inputData Данные любого типа (могут быть и массивом, и словарем, и кастомной моделью). Приведение типов и интерпретация лежат на плечах конкретных подопераций.
+ @param inputData The input data can be of any kind (array, dictionary, custom object). Type casting and interpreting are the responsibilities of concrete suboperations.
  */
 - (void)setOperationQueueInputData:(id)inputData;
 

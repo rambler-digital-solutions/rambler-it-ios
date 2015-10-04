@@ -11,16 +11,16 @@
 /**
  @author Egor Tolstoy
  
- Протокол объекта, принимающего результат работы под-операции
+ The protocol for the operation output data container
  */
 @protocol ChainableOperationOutput <NSObject>
 
 /**
  @author Egor Tolstoy
  
- Метод спередает результат работы текущей операции
+ The method passes the operation's result to the container
  
- @param outputData Результат работы операции
+ @param outputData The operation's result
  */
 - (void)didCompleteChainableOperationWithOutputData:(id)outputData;
 

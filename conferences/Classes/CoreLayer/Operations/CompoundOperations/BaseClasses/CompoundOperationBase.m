@@ -26,8 +26,7 @@ static NSUInteger const DefaultMaxConcurrentOperationsCount = 3;
         _queue = [[NSOperationQueue alloc] init];
         _queue.name = [NSString stringWithFormat:@"ru.rambler.conferences.%@-%@.queue", NSStringFromClass([self class]), [[NSUUID UUID] UUIDString]];
         _queue.maxConcurrentOperationCount = _maxConcurrentOperationsCount > 0 ?: DefaultMaxConcurrentOperationsCount;
-        
-        // По умолчанию очередь должна быть остановлена, запускается одновременно с началом выполнения самой операции
+
         [_queue setSuspended:YES];
     }
     return self;
@@ -56,9 +55,9 @@ static NSUInteger const DefaultMaxConcurrentOperationsCount = 3;
     /**
      @author Egor Tolstoy
      
-     Завершать операцию нужно в двух случаях:
-     - Случилась ошибка
-     - Очередь операций закончилась (т.е. есть data у queueOutput)
+     We should finish the operation in two cases:
+     - If an error occures,
+     - When the queue is finished (queueOutput is not nil)
      */
     if (error || data) {
         [self completeOperationWithData:data error:error];
