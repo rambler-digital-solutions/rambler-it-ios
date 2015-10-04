@@ -10,6 +10,10 @@
 		5A5668508B92FC833070BA13 /* libPods-ConferencesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E72B1E234365770B87BDC6D /* libPods-ConferencesTests.a */; };
 		636A37B31BC1356400B49C3D /* ApplicationConfiguratorImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37B21BC1356400B49C3D /* ApplicationConfiguratorImplementation.m */; settings = {ASSET_TAGS = (); }; };
 		636A37BB1BC13B9800B49C3D /* ApplicationConfiguratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37BA1BC13B9800B49C3D /* ApplicationConfiguratorTests.m */; settings = {ASSET_TAGS = (); }; };
+		636A37C21BC1413A00B49C3D /* SystemInfrastructureAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37C11BC1413A00B49C3D /* SystemInfrastructureAssembly.m */; settings = {ASSET_TAGS = (); }; };
+		636A37C51BC142BB00B49C3D /* ApplicationAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37C41BC142BB00B49C3D /* ApplicationAssembly.m */; settings = {ASSET_TAGS = (); }; };
+		636A37CA1BC147FD00B49C3D /* ApplicationAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37C91BC147FD00B49C3D /* ApplicationAssemblyTests.m */; settings = {ASSET_TAGS = (); }; };
+		636A37CC1BC1481300B49C3D /* SystemInfrastructureAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37CB1BC1481300B49C3D /* SystemInfrastructureAssemblyTests.m */; settings = {ASSET_TAGS = (); }; };
 		636B63FF1BBDD0C70053E38F /* EventServiceEmplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B63FE1BBDD0C70053E38F /* EventServiceEmplementation.m */; settings = {ASSET_TAGS = (); }; };
 		636B64041BBDD19A0053E38F /* LectureServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64031BBDD19A0053E38F /* LectureServiceImplementation.m */; settings = {ASSET_TAGS = (); }; };
 		636B64071BBDD2A40053E38F /* LectureMaterialsServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64061BBDD2A40053E38F /* LectureMaterialsServiceImplementation.m */; settings = {ASSET_TAGS = (); }; };
@@ -59,6 +63,12 @@
 		636A37B21BC1356400B49C3D /* ApplicationConfiguratorImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationConfiguratorImplementation.m; sourceTree = "<group>"; };
 		636A37B41BC1361000B49C3D /* ApplicationConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationConfigurator.h; sourceTree = "<group>"; };
 		636A37BA1BC13B9800B49C3D /* ApplicationConfiguratorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationConfiguratorTests.m; sourceTree = "<group>"; };
+		636A37C01BC1413A00B49C3D /* SystemInfrastructureAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemInfrastructureAssembly.h; sourceTree = "<group>"; };
+		636A37C11BC1413A00B49C3D /* SystemInfrastructureAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemInfrastructureAssembly.m; sourceTree = "<group>"; };
+		636A37C31BC142BB00B49C3D /* ApplicationAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationAssembly.h; sourceTree = "<group>"; };
+		636A37C41BC142BB00B49C3D /* ApplicationAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationAssembly.m; sourceTree = "<group>"; };
+		636A37C91BC147FD00B49C3D /* ApplicationAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationAssemblyTests.m; sourceTree = "<group>"; };
+		636A37CB1BC1481300B49C3D /* SystemInfrastructureAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemInfrastructureAssemblyTests.m; sourceTree = "<group>"; };
 		636B63C91BBDCC550053E38F /* LectureMaterialsService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectureMaterialsService.h; sourceTree = "<group>"; };
 		636B63CA1BBDCC720053E38F /* LectureService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectureService.h; sourceTree = "<group>"; };
 		636B63CB1BBDCC910053E38F /* SocialNetworkAccountService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialNetworkAccountService.h; sourceTree = "<group>"; };
@@ -150,6 +160,7 @@
 		636A37B51BC13B4B00B49C3D /* ConferencesAssembliesTests */ = {
 			isa = PBXGroup;
 			children = (
+				636A37C61BC1466900B49C3D /* ApplicationLayerTests */,
 			);
 			path = ConferencesAssembliesTests;
 			sourceTree = "<group>";
@@ -183,6 +194,58 @@
 			children = (
 			);
 			path = ConferencesPresentationTests;
+			sourceTree = "<group>";
+		};
+		636A37BC1BC13FA200B49C3D /* Assemblies */ = {
+			isa = PBXGroup;
+			children = (
+				636A37BD1BC13FA200B49C3D /* ApplicationAssembly */,
+				636A37BF1BC1410800B49C3D /* SystemInfrastructureAssembly */,
+			);
+			path = Assemblies;
+			sourceTree = "<group>";
+		};
+		636A37BD1BC13FA200B49C3D /* ApplicationAssembly */ = {
+			isa = PBXGroup;
+			children = (
+				636A37C31BC142BB00B49C3D /* ApplicationAssembly.h */,
+				636A37C41BC142BB00B49C3D /* ApplicationAssembly.m */,
+			);
+			path = ApplicationAssembly;
+			sourceTree = "<group>";
+		};
+		636A37BF1BC1410800B49C3D /* SystemInfrastructureAssembly */ = {
+			isa = PBXGroup;
+			children = (
+				636A37C01BC1413A00B49C3D /* SystemInfrastructureAssembly.h */,
+				636A37C11BC1413A00B49C3D /* SystemInfrastructureAssembly.m */,
+			);
+			path = SystemInfrastructureAssembly;
+			sourceTree = "<group>";
+		};
+		636A37C61BC1466900B49C3D /* ApplicationLayerTests */ = {
+			isa = PBXGroup;
+			children = (
+				636A37C71BC1466900B49C3D /* ApplicationAssemblyTests */,
+				636A37C81BC1466900B49C3D /* SystemInfrastructureAssemblyTests */,
+			);
+			path = ApplicationLayerTests;
+			sourceTree = "<group>";
+		};
+		636A37C71BC1466900B49C3D /* ApplicationAssemblyTests */ = {
+			isa = PBXGroup;
+			children = (
+				636A37C91BC147FD00B49C3D /* ApplicationAssemblyTests.m */,
+			);
+			path = ApplicationAssemblyTests;
+			sourceTree = "<group>";
+		};
+		636A37C81BC1466900B49C3D /* SystemInfrastructureAssemblyTests */ = {
+			isa = PBXGroup;
+			children = (
+				636A37CB1BC1481300B49C3D /* SystemInfrastructureAssemblyTests.m */,
+			);
+			path = SystemInfrastructureAssemblyTests;
 			sourceTree = "<group>";
 		};
 		636B63C51BBDCC060053E38F /* LectureMaterialsService */ = {
@@ -285,6 +348,7 @@
 		63FDCDD91BBDBA2A00A43B60 /* ApplicationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				636A37BC1BC13FA200B49C3D /* Assemblies */,
 				636A37B01BC1354100B49C3D /* ApplicationConfigurator */,
 				63FDCDDA1BBDBA2A00A43B60 /* AppDelegate */,
 			);
@@ -653,6 +717,7 @@
 				636B64381BBFE4740053E38F /* Speaker+CoreDataProperties.m in Sources */,
 				636B642F1BBFE4740053E38F /* Event.m in Sources */,
 				636B64101BBDD6260053E38F /* SpeakerServiceImplementation.m in Sources */,
+				636A37C51BC142BB00B49C3D /* ApplicationAssembly.m in Sources */,
 				63FDCE061BBDBA2A00A43B60 /* AppDelegate.m in Sources */,
 				636B64041BBDD19A0053E38F /* LectureServiceImplementation.m in Sources */,
 				636B64361BBFE4740053E38F /* LectureMaterials+CoreDataProperties.m in Sources */,
@@ -673,6 +738,7 @@
 				6373A4101BBDC5EA00DF67FF /* Conference.xcdatamodeld in Sources */,
 				636B640D1BBDD5000053E38F /* SocialNetworkAccountServiceImplementation.m in Sources */,
 				636B640A1BBDD3FA0053E38F /* RegistrationQuestionServiceImplementation.m in Sources */,
+				636A37C21BC1413A00B49C3D /* SystemInfrastructureAssembly.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -682,6 +748,8 @@
 			files = (
 				9F1F38051BBBB80D00C7797D /* ConferencesTests.m in Sources */,
 				636A37BB1BC13B9800B49C3D /* ApplicationConfiguratorTests.m in Sources */,
+				636A37CA1BC147FD00B49C3D /* ApplicationAssemblyTests.m in Sources */,
+				636A37CC1BC1481300B49C3D /* SystemInfrastructureAssemblyTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
