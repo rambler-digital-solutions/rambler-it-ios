@@ -1,6 +1,6 @@
 //
 //  ResponseDeserializationOperation.m
-//  LiveJournal
+//  Conferences
 //
 //  Created by Egor Tolstoy on 02/09/15.
 //  Copyright © 2015 Rambler&Co. All rights reserved.
@@ -8,14 +8,16 @@
 
 #import "ResponseDeserializationOperation.h"
 
-#import "ResponseDeserializer.h"
+#import "RCFResponseDeserializer.h"
 
 #import <CocoalumberJack/CocoaLumberjack.h>
 #import <libextobjc/EXTScope.h>
 
+static const int ddLogLevel = DDLogLevelVerbose;
+
 @interface ResponseDeserializationOperation ()
 
-@property (strong, nonatomic) id<ResponseDeserializer> responseDeserializer;
+@property (strong, nonatomic) id<RCFResponseDeserializer> responseDeserializer;
 
 @end
 
@@ -27,7 +29,7 @@
 
 #pragma mark - Инициализация
 
-- (instancetype)initWithResponseDeserializer:(id<ResponseDeserializer>)responseDeserializer {
+- (instancetype)initWithResponseDeserializer:(id<RCFResponseDeserializer>)responseDeserializer {
     self = [super init];
     if (self) {
         _responseDeserializer = responseDeserializer;
@@ -35,7 +37,7 @@
     return self;
 }
 
-+ (instancetype)operationWithResponseDeserializer:(id<ResponseDeserializer>)responseDeserializer {
++ (instancetype)operationWithResponseDeserializer:(id<RCFResponseDeserializer>)responseDeserializer {
     return [[[self class] alloc] initWithResponseDeserializer:responseDeserializer];
 }
 

@@ -1,6 +1,6 @@
 //
 //  ResponseMappingOperation.m
-//  LiveJournal
+//  Conferences
 //
 //  Created by Egor Tolstoy on 02/09/15.
 //  Copyright © 2015 Rambler&Co. All rights reserved.
@@ -8,14 +8,16 @@
 
 #import "ResponseMappingOperation.h"
 
-#import "ResponseMapper.h"
+#import "RCFResponseMapper.h"
 
 #import <CocoalumberJack/CocoaLumberjack.h>
 #import <libextobjc/EXTScope.h>
 
+static const int ddLogLevel = DDLogLevelVerbose;
+
 @interface ResponseMappingOperation ()
 
-@property (strong, nonatomic) id<ResponseMapper> responseMapper;
+@property (strong, nonatomic) id<RCFResponseMapper> responseMapper;
 @property (strong, nonatomic) NSDictionary *mappingContext;
 
 @end
@@ -28,7 +30,7 @@
 
 #pragma mark - Инициализация
 
-- (instancetype)initWithResponseMapper:(id<ResponseMapper>)responseMapper
+- (instancetype)initWithResponseMapper:(id<RCFResponseMapper>)responseMapper
                         mappingContext:(NSDictionary *)context {
     self = [super init];
     if (self) {
@@ -38,7 +40,7 @@
     return self;
 }
 
-+ (instancetype)operationWithResponseMapper:(id<ResponseMapper>)responseMapper
++ (instancetype)operationWithResponseMapper:(id<RCFResponseMapper>)responseMapper
                              mappingContext:(NSDictionary *)context {
     return [[[self class] alloc] initWithResponseMapper:responseMapper
                                          mappingContext:context];

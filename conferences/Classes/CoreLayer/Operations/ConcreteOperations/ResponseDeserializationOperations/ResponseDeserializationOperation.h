@@ -1,6 +1,6 @@
 //
 //  ResponseDeserializationOperation.h
-//  LiveJournal
+//  Conferences
 //
 //  Created by Egor Tolstoy on 02/09/15.
 //  Copyright © 2015 Rambler&Co. All rights reserved.
@@ -10,7 +10,7 @@
 
 #import "ChainableOperation.h"
 
-@protocol ResponseDeserializer;
+@protocol RCFResponseDeserializer;
 
 /**
  @author Egor Tolstoy
@@ -19,6 +19,6 @@
  */
 @interface ResponseDeserializationOperation : AsyncOperation <ChainableOperation>
 
-+ (instancetype)operationWithResponseDeserializer:(id<ResponseDeserializer>)responseDeserializer;
++ (instancetype)operationWithResponseDeserializer:(id<RCFResponseDeserializer>)responseDeserializer;
 
 @end

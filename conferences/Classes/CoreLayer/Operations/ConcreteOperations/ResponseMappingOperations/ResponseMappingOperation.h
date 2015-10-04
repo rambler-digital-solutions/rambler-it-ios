@@ -1,6 +1,6 @@
 //
 //  ResponseMappingOperation.h
-//  LiveJournal
+//  Conferences
 //
 //  Created by Egor Tolstoy on 02/09/15.
 //  Copyright © 2015 Rambler&Co. All rights reserved.
@@ -10,7 +10,7 @@
 
 #import "ChainableOperation.h"
 
-@protocol ResponseMapper;
+@protocol RCFResponseMapper;
 
 /**
  @author Egor Tolstoy
@@ -19,7 +19,7 @@
  */
 @interface ResponseMappingOperation : AsyncOperation <ChainableOperation>
 
-+ (instancetype)operationWithResponseMapper:(id<ResponseMapper>)responseMapper
++ (instancetype)operationWithResponseMapper:(id<RCFResponseMapper>)responseMapper
                              mappingContext:(NSDictionary *)context;
 
 @end

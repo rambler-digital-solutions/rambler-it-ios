@@ -1,6 +1,6 @@
 //
 //  NetworkOperation.m
-//  LiveJournal
+//  Conferences
 //
 //  Created by Egor Tolstoy on 02/09/15.
 //  Copyright © 2015 Rambler&Co. All rights reserved.
@@ -8,14 +8,16 @@
 
 #import "NetworkOperation.h"
 
-#import "NetworkClient.h"
+#import "RCFNetworkClient.h"
 
 #import <CocoalumberJack/CocoaLumberjack.h>
 #import <libextobjc/EXTScope.h>
 
+static const int ddLogLevel = DDLogFlagVerbose;
+
 @interface NetworkOperation ()
 
-@property (strong, nonatomic) id<NetworkClient> networkClient;
+@property (strong, nonatomic) id<RCFNetworkClient> networkClient;
 
 @end
 
@@ -27,7 +29,7 @@
 
 #pragma mark - Инициализация
 
-- (instancetype)initWithNetworkClient:(id<NetworkClient>)networkClient {
+- (instancetype)initWithNetworkClient:(id<RCFNetworkClient>)networkClient {
     self = [super init];
     if (self) {
         _networkClient = networkClient;
@@ -35,7 +37,7 @@
     return self;
 }
 
-+ (instancetype)operationWithNetworkClient:(id<NetworkClient>)networkClient {
++ (instancetype)operationWithNetworkClient:(id<RCFNetworkClient>)networkClient {
     return [[[self class] alloc] initWithNetworkClient:networkClient];
 }
 
@@ -56,7 +58,7 @@
     
     DDLogVerbose(@"Старт отправки запроса к серверу");
     @weakify(self);
-    [self.networkClient sendRequest:inputData resultBlock:^(id data, NSError *error) {
+    [self.networkClient sendRequest:inputData completionBlock:^(id data, NSError *error) {
         @strongify(self);
         if (error) {
             DDLogError(@"NetworkClient в операции %@ вернул ошибку: %@", NSStringFromClass([self class]), error);

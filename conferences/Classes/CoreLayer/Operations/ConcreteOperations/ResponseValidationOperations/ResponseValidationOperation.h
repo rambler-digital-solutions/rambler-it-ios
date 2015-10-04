@@ -1,6 +1,6 @@
 //
 //  ResponseValidationOperation.h
-//  LiveJournal
+//  Conferences
 //
 //  Created by Egor Tolstoy on 02/09/15.
 //  Copyright © 2015 Rambler&Co. All rights reserved.
@@ -10,7 +10,7 @@
 
 #import "ChainableOperation.h"
 
-@protocol ResponseValidator;
+@protocol RCFResponseValidator;
 
 /**
  @author Egor Tolstoy
@@ -19,6 +19,6 @@
  */
 @interface ResponseValidationOperation : AsyncOperation <ChainableOperation>
 
-+ (instancetype)operationWithResponseValidator:(id<ResponseValidator>)responseValidator;
++ (instancetype)operationWithResponseValidator:(id<RCFResponseValidator>)responseValidator;
 
 @end

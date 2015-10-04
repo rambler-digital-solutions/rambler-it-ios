@@ -1,6 +1,6 @@
 //
 //  RequestConfigurationOperation.h
-//  LiveJournal
+//  Conferences
 //
 //  Created by Egor Tolstoy on 02/09/15.
 //  Copyright © 2015 Rambler&Co. All rights reserved.
@@ -10,7 +10,7 @@
 
 #import "ChainableOperation.h"
 
-@protocol RequestConfigurator;
+@protocol RCFRequestConfigurator;
 
 /**
  @author Egor Tolstoy
@@ -19,10 +19,9 @@
  */
 @interface RequestConfigurationOperation : AsyncOperation <ChainableOperation>
 
-+ (instancetype)operationWithRequestConfigurator:(id<RequestConfigurator>)configurator
++ (instancetype)operationWithRequestConfigurator:(id<RCFRequestConfigurator>)configurator
                                           method:(NSString *)method
-                                         service:(NSNumber *)service
-                                          userID:(NSString *)userID
-                                   otherURLParts:(NSArray *)otherURLParts;
+                                     serviceName:(NSString *)serviceName
+                                   urlParameters:(NSArray *)urlParameters;
 
 @end

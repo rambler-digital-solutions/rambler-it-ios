@@ -1,6 +1,6 @@
 //
 //  CompoundOperationBase.m
-//  LiveJournal
+//  Conferences
 //
 //  Created by Egor Tolstoy on 01/09/15.
 //  Copyright © 2015 Rambler&Co. All rights reserved.
@@ -24,7 +24,7 @@ static NSUInteger const DefaultMaxConcurrentOperationsCount = 3;
     self = [super init];
     if (self) {
         _queue = [[NSOperationQueue alloc] init];
-        _queue.name = [NSString stringWithFormat:@"LiveJournal.%@-%@.queue", NSStringFromClass([self class]), [[NSUUID UUID] UUIDString]];
+        _queue.name = [NSString stringWithFormat:@"ru.rambler.conferences.%@-%@.queue", NSStringFromClass([self class]), [[NSUUID UUID] UUIDString]];
         _queue.maxConcurrentOperationCount = _maxConcurrentOperationsCount > 0 ?: DefaultMaxConcurrentOperationsCount;
         
         // По умолчанию очередь должна быть остановлена, запускается одновременно с началом выполнения самой операции

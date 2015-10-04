@@ -1,6 +1,6 @@
 //
 //  NetworkOperation.h
-//  LiveJournal
+//  Conferences
 //
 //  Created by Egor Tolstoy on 02/09/15.
 //  Copyright © 2015 Rambler&Co. All rights reserved.
@@ -10,7 +10,7 @@
 
 #import "ChainableOperation.h"
 
-@protocol NetworkClient;
+@protocol RCFNetworkClient;
 
 /**
  @author Egor Tolstoy
@@ -19,6 +19,6 @@
  */
 @interface NetworkOperation : AsyncOperation <ChainableOperation>
 
-+ (instancetype)operationWithNetworkClient:(id<NetworkClient>)networkClient;
++ (instancetype)operationWithNetworkClient:(id<RCFNetworkClient>)networkClient;
 
 @end

@@ -1,6 +1,6 @@
 //
 //  RequestConfigurationOperation.m
-//  LiveJournal
+//  Conferences
 //
 //  Created by Egor Tolstoy on 02/09/15.
 //  Copyright © 2015 Rambler&Co. All rights reserved.
@@ -8,18 +8,19 @@
 
 #import "RequestConfigurationOperation.h"
 
-#import "RequestConfigurator.h"
-#import "RequestDataModel.h"
+#import "RCFRequestConfigurator.h"
+#import "RCFRequestDataModel.h"
 
 #import <CocoalumberJack/CocoaLumberjack.h>
 
+static const int ddLogLevel = DDLogLevelVerbose;
+
 @interface RequestConfigurationOperation ()
 
-@property (strong, nonatomic) id<RequestConfigurator> requestConfigurator;
+@property (strong, nonatomic) id<RCFRequestConfigurator> requestConfigurator;
 @property (strong, nonatomic) NSString *method;
-@property (nonatomic) APIServiceType serviceType;
-@property (strong, nonatomic) NSString *userID;
-@property (strong, nonatomic) NSArray *otherURLParts;
+@property (strong, nonatomic) NSString *serviceName;
+@property (strong, nonatomic) NSArray *urlParameters;
 
 @end
 
@@ -31,40 +32,36 @@
 
 #pragma mark - Инициализация
 
-- (instancetype)initWithRequestConfigurator:(id<RequestConfigurator>)configurator
+- (instancetype)initWithRequestConfigurator:(id<RCFRequestConfigurator>)configurator
                                      method:(NSString *)method
-                                    service:(NSNumber *)service
-                                     userID:(NSString *)userID
-                              otherURLParts:(NSArray *)otherURLParts {
+                                serviceName:(NSString *)serviceName
+                              urlParameters:(NSArray *)urlParameters {
     self = [super init];
     if (self) {
         _requestConfigurator = configurator;
         _method = method;
-        _serviceType = [service integerValue];
-        _userID = userID;
-        _otherURLParts = otherURLParts;
+        _serviceName = serviceName;
+        _urlParameters = urlParameters;
     }
     return self;
 }
 
-+ (instancetype)operationWithRequestConfigurator:(id<RequestConfigurator>)configurator
++ (instancetype)operationWithRequestConfigurator:(id<RCFRequestConfigurator>)configurator
                                           method:(NSString *)method
-                                         service:(NSNumber *)service
-                                          userID:(NSString *)userID
-                                   otherURLParts:(NSArray *)otherURLParts {
+                                     serviceName:(NSString *)serviceName
+                                   urlParameters:(NSArray *)urlParameters {
     return [[[self class] alloc] initWithRequestConfigurator:configurator
                                                       method:method
-                                                     service:service
-                                                      userID:userID
-                                               otherURLParts:otherURLParts];
+                                                 serviceName:serviceName
+                                               urlParameters:urlParameters];
 }
 
 #pragma mark - Выполнение операции
 
 - (void)main {
     DDLogVerbose(@"Начало выполнения операции %@", NSStringFromClass([self class]));
-    RequestDataModel *inputData = [self.input obtainInputDataWithTypeValidationBlock:^BOOL(id data) {
-        if ([data isKindOfClass:[RequestDataModel class]] || data == nil) {
+    RCFRequestDataModel *inputData = [self.input obtainInputDataWithTypeValidationBlock:^BOOL(id data) {
+        if ([data isKindOfClass:[RCFRequestDataModel class]] || data == nil) {
             DDLogVerbose(@"Входные данные операции %@ прошли валидацию", NSStringFromClass([self class]));
             return YES;
         }
@@ -75,9 +72,8 @@
     }];
     
     NSURLRequest *request = [self.requestConfigurator requestWithMethod:self.method
-                                                                service:self.serviceType
-                                                          otherURLParts:self.otherURLParts
-                                                                 userID:self.userID
+                                                            serviceName:self.serviceName
+                                                          urlParameters:self.urlParameters
                                                        requestDataModel:inputData];
     
     DDLogVerbose(@"Успешно создан сетевой запрос: %@", request);

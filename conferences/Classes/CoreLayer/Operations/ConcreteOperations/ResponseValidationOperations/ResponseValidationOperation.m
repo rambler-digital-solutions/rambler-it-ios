@@ -1,9 +1,9 @@
 //
 //  ResponseValidationOperation.m
-//  LiveJournal
+//  Conferences
 //
-//  Created by Egor Tolstoy on 02/09/15.
-//  Copyright © 2015 Rambler&Co. All rights reserved.
+//  Created by Egor Tolstoy on 04/10/15.
+//  Copyright © 2015 Rambler. All rights reserved.
 //
 
 #import "ResponseValidationOperation.h"
@@ -12,9 +12,11 @@
 
 #import <CocoalumberJack/CocoaLumberjack.h>
 
+static const int ddLogLevel = DDLogLevelVerbose;
+
 @interface ResponseValidationOperation ()
 
-@property (strong, nonatomic) id<ResponseValidator> responseValidator;
+@property (strong, nonatomic) id<RCFResponseValidator> responseValidator;
 
 @end
 
@@ -26,7 +28,7 @@
 
 #pragma mark - Инициализация
 
-- (instancetype)initWithResponseValidator:(id<ResponseValidator>)responseValidator {
+- (instancetype)initWithResponseValidator:(id<RCFResponseValidator>)responseValidator {
     self = [super init];
     if (self) {
         _responseValidator = responseValidator;
@@ -34,7 +36,7 @@
     return self;
 }
 
-+ (instancetype)operationWithResponseValidator:(id<ResponseValidator>)responseValidator {
++ (instancetype)operationWithResponseValidator:(id<RCFResponseValidator>)responseValidator {
     return [[[self class] alloc] initWithResponseValidator:responseValidator];
 }
 

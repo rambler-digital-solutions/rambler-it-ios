@@ -1,6 +1,6 @@
 //
 //  RequestSigningOperation.m
-//  LiveJournal
+//  Conferences
 //
 //  Created by Egor Tolstoy on 04/09/15.
 //  Copyright © 2015 Rambler&Co. All rights reserved.
@@ -8,16 +8,16 @@
 
 #import "RequestSigningOperation.h"
 
-#import "RequestSigner.h"
-#import "Session.h"
+#import "RCFRequestSigner.h"
 
 #import <CocoalumberJack/CocoaLumberjack.h>
 #import <libextobjc/EXTScope.h>
 
+static const int ddLogLevel = DDLogLevelVerbose;
+
 @interface RequestSigningOperation ()
 
-@property (strong, nonatomic) id<RequestSigner> requestSigner;
-@property (strong, nonatomic) id<Session> session;
+@property (strong, nonatomic) id<RCFRequestSigner> requestSigner;
 
 @end
 
@@ -29,18 +29,16 @@
 
 #pragma mark - Инициализация
 
-- (instancetype)initWithRequestSigner:(id<RequestSigner>)signer session:(id<Session>)session {
+- (instancetype)initWithRequestSigner:(id<RCFRequestSigner>)signer {
     self = [super init];
     if (self) {
         _requestSigner = signer;
-        _session = session;
     }
     return self;
 }
 
-+ (instancetype)operationWithRequestSigner:(id<RequestSigner>)signer session:(id<Session>)session {
-    return [[[self class] alloc] initWithRequestSigner:signer
-                                               session:session];
++ (instancetype)operationWithRequestSigner:(id<RCFRequestSigner>)signer {
+    return [[[self class] alloc] initWithRequestSigner:signer];
 }
 
 #pragma mark - Выполнение операции
@@ -59,18 +57,10 @@
     }];
     
     DDLogVerbose(@"Старт действия подписывания сетевого запроса");
-    @weakify(self);
-    [self.requestSigner signRequest:inputData forSession:self.session resultBlock:^(NSURLRequest *signedRequest, NSError *error) {
-        @strongify(self);
-        if (error) {
-            DDLogError(@"RequestSigner в операции %@ вернул ошибку: %@", NSStringFromClass([self class]), error);
-        }
-        if (signedRequest) {
-            DDLogVerbose(@"Успешно подписан сетевой запрос: %@", signedRequest);
-        }
-        
-        [self completeOperationWithData:signedRequest error:error];
-    }];
+    NSURLRequest *signedRequest = [self.requestSigner signRequest:inputData];
+    DDLogVerbose(@"Успешно подписан сетевой запрос: %@", signedRequest);
+
+    [self completeOperationWithData:signedRequest error:nil];
 }
 
 - (void)completeOperationWithData:(id)data error:(NSError *)error {
