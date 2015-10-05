@@ -15,6 +15,8 @@
 #import "ResponseValidationOperation.h"
 #import "ResponseMappingOperation.h"
 
+#import "RequestConfiguratorsFactory.h"
+
 #import "ChainableOperation.h"
 #import "OperationBuffer.h"
 #import "OperationChainer.h"
@@ -25,6 +27,8 @@
 
 @property (strong, nonatomic) NSMutableArray *operationsArray;
 @property (strong, nonatomic) OperationChainer *chainer;
+
+@property (strong, nonatomic) id<RequestConfiguratorsFactory> requestConfiguratorsFactory;
 
 @end
 
@@ -48,7 +52,8 @@
 }
 
 - (void)buildRequestConfigurationOperationWithConfig:(CompoundOperationBuilderConfig *)config {
-    RequestConfigurationOperation *operation = [RequestConfigurationOperation operationWithRequestConfigurator:nil method:config.requestMethod serviceName:config.serviceName urlParameters:config.urlParameters];
+    id<RCFRequestConfigurator> configurator = [self.requestConfiguratorsFactory requestConfiguratorWithType:@(config.requestConfigurationType)];
+    RequestConfigurationOperation *operation = [RequestConfigurationOperation operationWithRequestConfigurator:configurator method:config.requestMethod serviceName:config.serviceName urlParameters:config.urlParameters];
     [self addOperation:operation];
 }
 

@@ -32,6 +32,7 @@
 		63FDCE151BBDBA2A00A43B60 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63FDCE041BBDBA2A00A43B60 /* Info.plist */; settings = {ASSET_TAGS = (); }; };
 		63FDCE161BBDBA2A00A43B60 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FDCE051BBDBA2A00A43B60 /* main.m */; settings = {ASSET_TAGS = (); }; };
 		9F0A6C1D1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */; settings = {ASSET_TAGS = (); }; };
+		9F0A6C2E1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C2D1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m */; settings = {ASSET_TAGS = (); }; };
 		9F0A84C31BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A84C21BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m */; settings = {ASSET_TAGS = (); }; };
 		9F0A84C51BC166F6006F79FB /* RCFManagedObjectMapperTests.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9F0A84C41BC166F6006F79FB /* RCFManagedObjectMapperTests.bundle */; settings = {ASSET_TAGS = (); }; };
 		9F0A84F91BC1698B006F79FB /* AsyncOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A84CA1BC1698B006F79FB /* AsyncOperation.m */; settings = {ASSET_TAGS = (); }; };
@@ -84,6 +85,12 @@
 		9F18311C1BC1615C000E21A5 /* RCFResultsResponseObjectFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1831181BC1615C000E21A5 /* RCFResultsResponseObjectFormatter.m */; settings = {ASSET_TAGS = (); }; };
 		9F18311D1BC1615C000E21A5 /* RCFSingleResponseObjectFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F18311B1BC1615C000E21A5 /* RCFSingleResponseObjectFormatter.m */; settings = {ASSET_TAGS = (); }; };
 		9F1831211BC16195000E21A5 /* RCFResultResponseObjectFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1831201BC16195000E21A5 /* RCFResultResponseObjectFormatterTests.m */; settings = {ASSET_TAGS = (); }; };
+		9F8E5F701BC2552600DC10DB /* Conferences.API.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F8E5F6F1BC2552600DC10DB /* Conferences.API.plist */; settings = {ASSET_TAGS = (); }; };
+		9F8E5F741BC255AA00DC10DB /* RequestSignersAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5F731BC255AA00DC10DB /* RequestSignersAssembly.m */; settings = {ASSET_TAGS = (); }; };
+		9F8E5F781BC2571B00DC10DB /* NetworkClientsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5F771BC2571B00DC10DB /* NetworkClientsAssembly.m */; settings = {ASSET_TAGS = (); }; };
+		9F8E5F7C1BC2584500DC10DB /* ResponseDeserializersAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5F7B1BC2584500DC10DB /* ResponseDeserializersAssembly.m */; settings = {ASSET_TAGS = (); }; };
+		9F8E5F801BC2592600DC10DB /* ResponseValidatorsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5F7F1BC2592600DC10DB /* ResponseValidatorsAssembly.m */; settings = {ASSET_TAGS = (); }; };
+		9F8E5F841BC25A0700DC10DB /* ResponseMappersAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5F831BC25A0700DC10DB /* ResponseMappersAssembly.m */; settings = {ASSET_TAGS = (); }; };
 		F826C56E7FA67515D33573A9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A4F504A716A8833A7A01A5D /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -160,6 +167,9 @@
 		9F0A6C211BC1B62D00A25417 /* ResponseDeserializationType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ResponseDeserializationType.h; path = CoreComponents/ResponseDeserializers/ResponseDeserializationType.h; sourceTree = "<group>"; };
 		9F0A6C221BC1B65B00A25417 /* ResponseValidationType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ResponseValidationType.h; path = CoreComponents/ResponseValidators/ResponseValidationType.h; sourceTree = "<group>"; };
 		9F0A6C231BC1B68E00A25417 /* ResponseMappingType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ResponseMappingType.h; path = CoreComponents/ResponseMappers/ResponseMappingType.h; sourceTree = "<group>"; };
+		9F0A6C2B1BC1B8D400A25417 /* RequestConfiguratorsFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequestConfiguratorsFactory.h; path = Assemblies/RequestConfiguratorsFactory/RequestConfiguratorsFactory.h; sourceTree = "<group>"; };
+		9F0A6C2C1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequestConfiguratorsAssembly.h; path = Assemblies/RequestConfiguratorsFactory/RequestConfiguratorsAssembly.h; sourceTree = "<group>"; };
+		9F0A6C2D1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RequestConfiguratorsAssembly.m; path = Assemblies/RequestConfiguratorsFactory/RequestConfiguratorsAssembly.m; sourceTree = "<group>"; };
 		9F0A84C21BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCFSingleResponseObjectFormatterTests.m; path = CoreLayer/CoreComponents/ResponseObjectFormatters/SingleResponseObjectFormatter/RCFSingleResponseObjectFormatterTests.m; sourceTree = "<group>"; };
 		9F0A84C41BC166F6006F79FB /* RCFManagedObjectMapperTests.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = RCFManagedObjectMapperTests.bundle; path = CoreLayer/CoreComponents/ResponseMappers/ManagedObjectMapper/RCFManagedObjectMapperTests.bundle; sourceTree = "<group>"; };
 		9F0A84C91BC1698B006F79FB /* AsyncOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncOperation.h; sourceTree = "<group>"; };
@@ -262,6 +272,22 @@
 		9F1F37E41BBBB80D00C7797D /* Conferences.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conferences.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F1F38001BBBB80D00C7797D /* ConferencesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConferencesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F1F38061BBBB80D00C7797D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F8E5F6F1BC2552600DC10DB /* Conferences.API.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Conferences.API.plist; path = Assemblies/RequestConfiguratorsFactory/Conferences.API.plist; sourceTree = "<group>"; };
+		9F8E5F711BC2559B00DC10DB /* RequestSignersFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequestSignersFactory.h; path = Assemblies/RequestSignersFactory/RequestSignersFactory.h; sourceTree = "<group>"; };
+		9F8E5F721BC255AA00DC10DB /* RequestSignersAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequestSignersAssembly.h; path = Assemblies/RequestSignersFactory/RequestSignersAssembly.h; sourceTree = "<group>"; };
+		9F8E5F731BC255AA00DC10DB /* RequestSignersAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RequestSignersAssembly.m; path = Assemblies/RequestSignersFactory/RequestSignersAssembly.m; sourceTree = "<group>"; };
+		9F8E5F751BC2571100DC10DB /* NetworkClientsFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkClientsFactory.h; path = Assemblies/NetworkClientsFactory/NetworkClientsFactory.h; sourceTree = "<group>"; };
+		9F8E5F761BC2571B00DC10DB /* NetworkClientsAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkClientsAssembly.h; path = Assemblies/NetworkClientsFactory/NetworkClientsAssembly.h; sourceTree = "<group>"; };
+		9F8E5F771BC2571B00DC10DB /* NetworkClientsAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkClientsAssembly.m; path = Assemblies/NetworkClientsFactory/NetworkClientsAssembly.m; sourceTree = "<group>"; };
+		9F8E5F791BC2583600DC10DB /* ResponseDeserializersFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResponseDeserializersFactory.h; path = Assemblies/ResponseDeserializersFactory/ResponseDeserializersFactory.h; sourceTree = "<group>"; };
+		9F8E5F7A1BC2584500DC10DB /* ResponseDeserializersAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResponseDeserializersAssembly.h; path = Assemblies/ResponseDeserializersFactory/ResponseDeserializersAssembly.h; sourceTree = "<group>"; };
+		9F8E5F7B1BC2584500DC10DB /* ResponseDeserializersAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResponseDeserializersAssembly.m; path = Assemblies/ResponseDeserializersFactory/ResponseDeserializersAssembly.m; sourceTree = "<group>"; };
+		9F8E5F7D1BC2591A00DC10DB /* ResponseValidatorsFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResponseValidatorsFactory.h; path = Assemblies/ResponseValidatorsFactory/ResponseValidatorsFactory.h; sourceTree = "<group>"; };
+		9F8E5F7E1BC2592600DC10DB /* ResponseValidatorsAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResponseValidatorsAssembly.h; path = Assemblies/ResponseValidatorsFactory/ResponseValidatorsAssembly.h; sourceTree = "<group>"; };
+		9F8E5F7F1BC2592600DC10DB /* ResponseValidatorsAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResponseValidatorsAssembly.m; path = Assemblies/ResponseValidatorsFactory/ResponseValidatorsAssembly.m; sourceTree = "<group>"; };
+		9F8E5F811BC259F500DC10DB /* ResponseMappersFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResponseMappersFactory.h; path = Assemblies/ResponseMappersFactory/ResponseMappersFactory.h; sourceTree = "<group>"; };
+		9F8E5F821BC25A0700DC10DB /* ResponseMappersAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResponseMappersAssembly.h; path = Assemblies/ResponseMappersFactory/ResponseMappersAssembly.h; sourceTree = "<group>"; };
+		9F8E5F831BC25A0700DC10DB /* ResponseMappersAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResponseMappersAssembly.m; path = Assemblies/ResponseMappersFactory/ResponseMappersAssembly.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -416,11 +442,12 @@
 		63FDCDDF1BBDBA2A00A43B60 /* CoreLayer */ = {
 			isa = PBXGroup;
 			children = (
+				9F0A6C241BC1B85A00A25417 /* Assemblies */,
+				9F18308B1BC01E65000E21A5 /* CoreComponents */,
 				9F0A85331BC18A10006F79FB /* OperationBuilders */,
 				9F0A85291BC18853006F79FB /* OperationFactories */,
 				9F0A84C61BC1698B006F79FB /* Operations */,
 				9F1830E21BC13F6A000E21A5 /* MappingProviders */,
-				9F18308B1BC01E65000E21A5 /* CoreComponents */,
 			);
 			path = CoreLayer;
 			sourceTree = "<group>";
@@ -541,6 +568,80 @@
 				9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */,
 			);
 			name = CompoundOperationBuilderConfig;
+			sourceTree = "<group>";
+		};
+		9F0A6C241BC1B85A00A25417 /* Assemblies */ = {
+			isa = PBXGroup;
+			children = (
+				9F0A6C2A1BC1B8AA00A25417 /* ResponseMappersFactory */,
+				9F0A6C291BC1B8A000A25417 /* ResponseValidatorsFactory */,
+				9F0A6C281BC1B89900A25417 /* ResponseDeserializersFactory */,
+				9F0A6C271BC1B88E00A25417 /* NetworkClientsFactory */,
+				9F0A6C251BC1B87300A25417 /* RequestSignersFactory */,
+				9F0A6C261BC1B88000A25417 /* RequestConfiguratorsFactory */,
+			);
+			name = Assemblies;
+			sourceTree = "<group>";
+		};
+		9F0A6C251BC1B87300A25417 /* RequestSignersFactory */ = {
+			isa = PBXGroup;
+			children = (
+				9F8E5F711BC2559B00DC10DB /* RequestSignersFactory.h */,
+				9F8E5F721BC255AA00DC10DB /* RequestSignersAssembly.h */,
+				9F8E5F731BC255AA00DC10DB /* RequestSignersAssembly.m */,
+			);
+			name = RequestSignersFactory;
+			sourceTree = "<group>";
+		};
+		9F0A6C261BC1B88000A25417 /* RequestConfiguratorsFactory */ = {
+			isa = PBXGroup;
+			children = (
+				9F0A6C2B1BC1B8D400A25417 /* RequestConfiguratorsFactory.h */,
+				9F0A6C2C1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.h */,
+				9F0A6C2D1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m */,
+				9F8E5F6F1BC2552600DC10DB /* Conferences.API.plist */,
+			);
+			name = RequestConfiguratorsFactory;
+			sourceTree = "<group>";
+		};
+		9F0A6C271BC1B88E00A25417 /* NetworkClientsFactory */ = {
+			isa = PBXGroup;
+			children = (
+				9F8E5F751BC2571100DC10DB /* NetworkClientsFactory.h */,
+				9F8E5F761BC2571B00DC10DB /* NetworkClientsAssembly.h */,
+				9F8E5F771BC2571B00DC10DB /* NetworkClientsAssembly.m */,
+			);
+			name = NetworkClientsFactory;
+			sourceTree = "<group>";
+		};
+		9F0A6C281BC1B89900A25417 /* ResponseDeserializersFactory */ = {
+			isa = PBXGroup;
+			children = (
+				9F8E5F791BC2583600DC10DB /* ResponseDeserializersFactory.h */,
+				9F8E5F7A1BC2584500DC10DB /* ResponseDeserializersAssembly.h */,
+				9F8E5F7B1BC2584500DC10DB /* ResponseDeserializersAssembly.m */,
+			);
+			name = ResponseDeserializersFactory;
+			sourceTree = "<group>";
+		};
+		9F0A6C291BC1B8A000A25417 /* ResponseValidatorsFactory */ = {
+			isa = PBXGroup;
+			children = (
+				9F8E5F7D1BC2591A00DC10DB /* ResponseValidatorsFactory.h */,
+				9F8E5F7E1BC2592600DC10DB /* ResponseValidatorsAssembly.h */,
+				9F8E5F7F1BC2592600DC10DB /* ResponseValidatorsAssembly.m */,
+			);
+			name = ResponseValidatorsFactory;
+			sourceTree = "<group>";
+		};
+		9F0A6C2A1BC1B8AA00A25417 /* ResponseMappersFactory */ = {
+			isa = PBXGroup;
+			children = (
+				9F8E5F811BC259F500DC10DB /* ResponseMappersFactory.h */,
+				9F8E5F821BC25A0700DC10DB /* ResponseMappersAssembly.h */,
+				9F8E5F831BC25A0700DC10DB /* ResponseMappersAssembly.m */,
+			);
+			name = ResponseMappersFactory;
 			sourceTree = "<group>";
 		};
 		9F0A84C11BC16290006F79FB /* SingleResponseObjectFormatter */ = {
@@ -1586,6 +1687,7 @@
 			files = (
 				63FDCE151BBDBA2A00A43B60 /* Info.plist in Resources */,
 				63FDCE141BBDBA2A00A43B60 /* Assets.xcassets in Resources */,
+				9F8E5F701BC2552600DC10DB /* Conferences.API.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1670,6 +1772,7 @@
 				9F18311D1BC1615C000E21A5 /* RCFSingleResponseObjectFormatter.m in Sources */,
 				9F1830B31BC11879000E21A5 /* CommonNetworkClient.m in Sources */,
 				9F0A84FD1BC1698B006F79FB /* NetworkOperation.m in Sources */,
+				9F8E5F801BC2592600DC10DB /* ResponseValidatorsAssembly.m in Sources */,
 				9F1830BF1BC11D26000E21A5 /* RCFJSONResponseDeserializer.m in Sources */,
 				9F1830931BC02293000E21A5 /* RCFRESTRequestConfigurator.m in Sources */,
 				9F1830A71BC032CF000E21A5 /* RCFParseRequestSigner.m in Sources */,
@@ -1685,10 +1788,12 @@
 				63FDCE061BBDBA2A00A43B60 /* AppDelegate.m in Sources */,
 				636B63E81BBDCEEA0053E38F /* RegistrationQuestion+CoreDataProperties.m in Sources */,
 				636B64041BBDD19A0053E38F /* RCFLectureServiceImplementation.m in Sources */,
+				9F8E5F841BC25A0700DC10DB /* ResponseMappersAssembly.m in Sources */,
 				9F18311C1BC1615C000E21A5 /* RCFResultsResponseObjectFormatter.m in Sources */,
 				9F0A85011BC1698B006F79FB /* ResponseMappingOperation.m in Sources */,
 				636B63EA1BBDCEEA0053E38F /* SocialNetworkAccount+CoreDataProperties.m in Sources */,
 				63FDCE161BBDBA2A00A43B60 /* main.m in Sources */,
+				9F8E5F741BC255AA00DC10DB /* RequestSignersAssembly.m in Sources */,
 				636B63E51BBDCEEA0053E38F /* Event.m in Sources */,
 				636B63E91BBDCEEA0053E38F /* RegistrationQuestion.m in Sources */,
 				636B63E41BBDCEEA0053E38F /* Event+CoreDataProperties.m in Sources */,
@@ -1697,6 +1802,7 @@
 				636B64071BBDD2A40053E38F /* RCFLectureMaterialsServiceImplementation.m in Sources */,
 				9F0A84FC1BC1698B006F79FB /* CompoundOperationDebugDescriptionFormatter.m in Sources */,
 				9F0A84FE1BC1698B006F79FB /* RequestConfigurationOperation.m in Sources */,
+				9F8E5F781BC2571B00DC10DB /* NetworkClientsAssembly.m in Sources */,
 				9F0A85021BC1698B006F79FB /* ResponseValidationOperation.m in Sources */,
 				9F0A84FB1BC1698B006F79FB /* CompoundOperationBase.m in Sources */,
 				9F0A84F91BC1698B006F79FB /* AsyncOperation.m in Sources */,
@@ -1705,12 +1811,14 @@
 				9F0A84FF1BC1698B006F79FB /* RequestSigningOperation.m in Sources */,
 				9F1830F51BC14444000E21A5 /* NSString+RCFCapitalization.m in Sources */,
 				636B63EC1BBDCEEA0053E38F /* Speaker+CoreDataProperties.m in Sources */,
+				9F8E5F7C1BC2584500DC10DB /* ResponseDeserializersAssembly.m in Sources */,
 				9F0A6C1D1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m in Sources */,
 				636B63EF1BBDCEEA0053E38F /* LectureMaterials.m in Sources */,
 				9F0A85001BC1698B006F79FB /* ResponseDeserializationOperation.m in Sources */,
 				9F0A853B1BC1908B006F79FB /* OperationChainer.m in Sources */,
 				636B63EE1BBDCEEA0053E38F /* LectureMaterials+CoreDataProperties.m in Sources */,
 				6373A4101BBDC5EA00DF67FF /* Conference.xcdatamodeld in Sources */,
+				9F0A6C2E1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m in Sources */,
 				636B640D1BBDD5000053E38F /* RCFSocialNetworkAccountServiceImplementation.m in Sources */,
 				636B63E71BBDCEEA0053E38F /* Lecture.m in Sources */,
 				9F1830ED1BC14293000E21A5 /* RCFManagedObjectMapper.m in Sources */,

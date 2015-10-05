@@ -11,10 +11,12 @@
 @class CompoundOperationBuilderConfig;
 @class CompoundOperationBase;
 @class OperationChainer;
+@protocol RequestConfiguratorsFactory;
 
 @interface NetworkCompoundOperationBuilder : NSObject
 
-- (instancetype)initWithOperationChainer:(OperationChainer *)chainer;
+- (instancetype)initWithOperationChainer:(OperationChainer *)chainer
+             requestConfiguratorsFactory:(id<RequestConfiguratorsFactory>)requestConfiguratorsFactory;
 
 - (CompoundOperationBase *)buildCompoundOperationWithConfig:(CompoundOperationBuilderConfig *)config;
 
