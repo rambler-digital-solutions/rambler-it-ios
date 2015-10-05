@@ -35,7 +35,7 @@
     return [TyphoonDefinition withClass:[RCFManagedObjectMapper class] configuration:^(TyphoonDefinition *definition) {
         [definition useInitializer:@selector(initWithMappingProvider:responseObjectFormatter:) parameters:^(TyphoonMethod *initializer) {
             [initializer injectParameterWith:[self mappingProvider]];
-            [initializer injectParameterWith:[self resultsResponseMapper]];
+            [initializer injectParameterWith:[self resultsObjectFormatter]];
         }];
     }];
 }
@@ -44,7 +44,7 @@
     return [TyphoonDefinition withClass:[RCFManagedObjectMapper class] configuration:^(TyphoonDefinition *definition) {
         [definition useInitializer:@selector(initWithMappingProvider:responseObjectFormatter:) parameters:^(TyphoonMethod *initializer) {
             [initializer injectParameterWith:[self mappingProvider]];
-            [initializer injectParameterWith:[self singleResponseMapper]];
+            [initializer injectParameterWith:[self singleObjectFormatter]];
         }];
     }];
 }

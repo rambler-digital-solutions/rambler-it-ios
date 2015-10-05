@@ -13,6 +13,7 @@
 
 @implementation Event (CoreDataProperties)
 
+@dynamic objectId;
 @dynamic endDate;
 @dynamic eventDescription;
 @dynamic liveStreamLink;

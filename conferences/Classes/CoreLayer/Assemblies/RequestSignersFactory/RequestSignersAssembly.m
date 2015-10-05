@@ -10,9 +10,9 @@
 
 #import "RCFParseRequestSigner.h"
 
-static  NSString *const kConfigFileName  = @"Conferences.API.plist";
-static  NSString *const kParseRootApplicationIdKey = @"API.Parse.ApplicationId";
-static  NSString *const kParseApiKey = @"API.Parse.APIKey";
+static  NSString *const kConfigFileName  = @"Conferences.Parse.plist";
+static  NSString *const kParseApplicationIdKey = @"ApplicationId";
+static  NSString *const kParseApiKey = @"APIKey";
 
 @implementation RequestSignersAssembly
 
@@ -30,7 +30,7 @@ static  NSString *const kParseApiKey = @"API.Parse.APIKey";
 - (id<RCFRequestSigner>)parseRequestSigner {
     return [TyphoonDefinition withClass:[RCFParseRequestSigner class] configuration:^(TyphoonDefinition *definition) {
         [definition useInitializer:@selector(initWithApplicationId:apiKey:) parameters:^(TyphoonMethod *initializer) {
-            [initializer injectParameterWith:TyphoonConfig(kParseRootApplicationIdKey)];
+            [initializer injectParameterWith:TyphoonConfig(kParseApplicationIdKey)];
             [initializer injectParameterWith:TyphoonConfig(kParseApiKey)];
         }];
     }];

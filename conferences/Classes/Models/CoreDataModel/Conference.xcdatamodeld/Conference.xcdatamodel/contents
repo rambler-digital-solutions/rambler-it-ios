@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="15A282b" minimumToolsVersion="Xcode 7.0">
-    <entity name="RCFEvent" representedClassName="Event" syncable="YES">
+    <entity name="Event" representedClassName="Event" syncable="YES">
         <attribute name="endDate" attributeType="Date" syncable="YES"/>
         <attribute name="eventDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="liveStreamLink" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="objectId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="startDate" attributeType="Date" syncable="YES"/>
         <attribute name="timePadID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="twitterLink" optional="YES" attributeType="String" syncable="YES"/>
@@ -18,7 +19,7 @@
         <attribute name="slideLink" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="talkDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="videoLink" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RCFEvent" inverseName="lectures" inverseEntity="RCFEvent" syncable="YES"/>
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="lectures" inverseEntity="Event" syncable="YES"/>
         <relationship name="lectureMaterials" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RCFLectureMaterials" inverseName="lecture" inverseEntity="RCFLectureMaterials" syncable="YES"/>
         <relationship name="speakers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RCFSpeaker" inverseName="lectures" inverseEntity="RCFSpeaker" syncable="YES"/>
     </entity>
@@ -30,7 +31,7 @@
     <entity name="RCFRegistrationQuestion" representedClassName="RegistrationQuestion" syncable="YES">
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="orderID" attributeType="String" syncable="YES"/>
-        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RCFEvent" inverseName="registrationQuestions" inverseEntity="RCFEvent" syncable="YES"/>
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="registrationQuestions" inverseEntity="Event" syncable="YES"/>
     </entity>
     <entity name="RCFSpeaker" representedClassName="Speaker" syncable="YES">
         <attribute name="biography" optional="YES" attributeType="String" syncable="YES"/>
@@ -46,11 +47,11 @@
         <relationship name="speaker" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RCFSpeaker" inverseName="socialNetworkAccounts" inverseEntity="RCFSpeaker" syncable="YES"/>
     </entity>
     <elements>
-        <element name="RCFEvent" positionX="-207" positionY="-243" width="128" height="178"/>
+        <element name="Event" positionX="-207" positionY="-243" width="128" height="195"/>
         <element name="RCFLecture" positionX="-27" positionY="-243" width="128" height="178"/>
         <element name="RCFLectureMaterials" positionX="187" positionY="-126" width="128" height="88"/>
         <element name="RCFRegistrationQuestion" positionX="7" positionY="-36" width="128" height="88"/>
-        <element name="SocialNetworkAccount" positionX="178" positionY="-408" width="128" height="105"/>
         <element name="RCFSpeaker" positionX="-45" positionY="-414" width="128" height="118"/>
+        <element name="SocialNetworkAccount" positionX="178" positionY="-408" width="128" height="105"/>
     </elements>
 </model>

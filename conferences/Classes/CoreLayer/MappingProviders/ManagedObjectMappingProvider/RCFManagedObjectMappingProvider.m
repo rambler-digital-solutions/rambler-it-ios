@@ -13,6 +13,7 @@
 #import "NSString+RCFCapitalization.h"
 
 #import "SocialNetworkAccount.h"
+#import "Event.h"
 
 @implementation RCFManagedObjectMappingProvider
 
@@ -36,6 +37,20 @@
                             NSStringFromSelector(@selector(profileLink))
                             ];
     NSString *entityName = NSStringFromClass([SocialNetworkAccount class]);
+    return [EKManagedObjectMapping mappingForEntityName:entityName
+                                              withBlock:^(EKManagedObjectMapping *mapping) {
+                                                  mapping.primaryKey = NSStringFromSelector(@selector(objectId));
+                                                  [mapping mapPropertiesFromArray:properties];
+                                              }];
+}
+
+// TODO: It's just an example, the mapping is not finished yet
+- (EKManagedObjectMapping *)eventMapping {
+    NSArray *properties = @[
+                            NSStringFromSelector(@selector(objectId)),
+                            NSStringFromSelector(@selector(name))
+                            ];
+    NSString *entityName = NSStringFromClass([Event class]);
     return [EKManagedObjectMapping mappingForEntityName:entityName
                                               withBlock:^(EKManagedObjectMapping *mapping) {
                                                   mapping.primaryKey = NSStringFromSelector(@selector(objectId));

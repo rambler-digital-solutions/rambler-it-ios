@@ -7,7 +7,7 @@
 		<key>Parse</key>
 		<dict>
 			<key>RootURL</key>
-			<string>https://api.parse.com</string>
+			<string>NSURL(https://api.parse.com)</string>
 			<key>RESTPath</key>
 			<string>/1/classes</string>
 		</dict>

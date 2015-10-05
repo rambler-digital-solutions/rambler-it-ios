@@ -92,6 +92,10 @@
 		9F8E5F801BC2592600DC10DB /* ResponseValidatorsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5F7F1BC2592600DC10DB /* ResponseValidatorsAssembly.m */; settings = {ASSET_TAGS = (); }; };
 		9F8E5F841BC25A0700DC10DB /* ResponseMappersAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5F831BC25A0700DC10DB /* ResponseMappersAssembly.m */; settings = {ASSET_TAGS = (); }; };
 		9F8E5F941BC269EA00DC10DB /* OperationFactoriesAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5F931BC269EA00DC10DB /* OperationFactoriesAssembly.m */; settings = {ASSET_TAGS = (); }; };
+		9F8E5F9B1BC2753100DC10DB /* CompoundOperationFactoryTestsBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5F9A1BC2753100DC10DB /* CompoundOperationFactoryTestsBase.m */; settings = {ASSET_TAGS = (); }; };
+		9F8E5F9D1BC2777100DC10DB /* Conferences.Parse.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F8E5F9C1BC2777100DC10DB /* Conferences.Parse.plist */; settings = {ASSET_TAGS = (); }; };
+		9F8E5FA11BC27B5B00DC10DB /* EventOperationFactoryTests.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9F8E5F9F1BC27B5B00DC10DB /* EventOperationFactoryTests.bundle */; settings = {ASSET_TAGS = (); }; };
+		9F8E5FA21BC27B5B00DC10DB /* EventOperationFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5FA01BC27B5B00DC10DB /* EventOperationFactoryTests.m */; settings = {ASSET_TAGS = (); }; };
 		F826C56E7FA67515D33573A9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A4F504A716A8833A7A01A5D /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -291,6 +295,11 @@
 		9F8E5F831BC25A0700DC10DB /* ResponseMappersAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResponseMappersAssembly.m; path = Assemblies/ResponseMappersFactory/ResponseMappersAssembly.m; sourceTree = "<group>"; };
 		9F8E5F921BC269EA00DC10DB /* OperationFactoriesAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OperationFactoriesAssembly.h; path = Assemblies/OperationFactoriesAssembly/OperationFactoriesAssembly.h; sourceTree = "<group>"; };
 		9F8E5F931BC269EA00DC10DB /* OperationFactoriesAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OperationFactoriesAssembly.m; path = Assemblies/OperationFactoriesAssembly/OperationFactoriesAssembly.m; sourceTree = "<group>"; };
+		9F8E5F991BC2753100DC10DB /* CompoundOperationFactoryTestsBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompoundOperationFactoryTestsBase.h; sourceTree = "<group>"; };
+		9F8E5F9A1BC2753100DC10DB /* CompoundOperationFactoryTestsBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompoundOperationFactoryTestsBase.m; sourceTree = "<group>"; };
+		9F8E5F9C1BC2777100DC10DB /* Conferences.Parse.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Conferences.Parse.plist; path = Assemblies/RequestSignersFactory/Conferences.Parse.plist; sourceTree = "<group>"; };
+		9F8E5F9F1BC27B5B00DC10DB /* EventOperationFactoryTests.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = EventOperationFactoryTests.bundle; sourceTree = "<group>"; };
+		9F8E5FA01BC27B5B00DC10DB /* EventOperationFactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventOperationFactoryTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -593,6 +602,7 @@
 				9F8E5F711BC2559B00DC10DB /* RequestSignersFactory.h */,
 				9F8E5F721BC255AA00DC10DB /* RequestSignersAssembly.h */,
 				9F8E5F731BC255AA00DC10DB /* RequestSignersAssembly.m */,
+				9F8E5F9C1BC2777100DC10DB /* Conferences.Parse.plist */,
 			);
 			name = RequestSignersFactory;
 			sourceTree = "<group>";
@@ -1094,6 +1104,7 @@
 		9F1830941BC0229F000E21A5 /* CoreLayer */ = {
 			isa = PBXGroup;
 			children = (
+				9F8E5F951BC274DD00DC10DB /* OperationFactories */,
 				9F0A853C1BC192D1006F79FB /* OperationBuilders */,
 				9F0A85041BC185AA006F79FB /* Operations */,
 				9F1830F61BC14628000E21A5 /* MappingProviders */,
@@ -1605,6 +1616,35 @@
 			name = OperationFactoriesAssembly;
 			sourceTree = "<group>";
 		};
+		9F8E5F951BC274DD00DC10DB /* OperationFactories */ = {
+			isa = PBXGroup;
+			children = (
+				9F8E5F9E1BC27B5B00DC10DB /* EventOperationFactory */,
+				9F8E5F981BC2753100DC10DB /* CompoundOperationFactoryTestsBase */,
+			);
+			name = OperationFactories;
+			sourceTree = "<group>";
+		};
+		9F8E5F981BC2753100DC10DB /* CompoundOperationFactoryTestsBase */ = {
+			isa = PBXGroup;
+			children = (
+				9F8E5F991BC2753100DC10DB /* CompoundOperationFactoryTestsBase.h */,
+				9F8E5F9A1BC2753100DC10DB /* CompoundOperationFactoryTestsBase.m */,
+			);
+			name = CompoundOperationFactoryTestsBase;
+			path = CoreLayer/OperationFactories/CompoundOperationFactoryTestsBase;
+			sourceTree = "<group>";
+		};
+		9F8E5F9E1BC27B5B00DC10DB /* EventOperationFactory */ = {
+			isa = PBXGroup;
+			children = (
+				9F8E5F9F1BC27B5B00DC10DB /* EventOperationFactoryTests.bundle */,
+				9F8E5FA01BC27B5B00DC10DB /* EventOperationFactoryTests.m */,
+			);
+			name = EventOperationFactory;
+			path = CoreLayer/OperationFactories/EventOperationFactory;
+			sourceTree = "<group>";
+		};
 		D1799435EABEFA40D1849E2A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1699,6 +1739,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63FDCE151BBDBA2A00A43B60 /* Info.plist in Resources */,
+				9F8E5F9D1BC2777100DC10DB /* Conferences.Parse.plist in Resources */,
 				63FDCE141BBDBA2A00A43B60 /* Assets.xcassets in Resources */,
 				9F8E5F701BC2552600DC10DB /* Conferences.API.plist in Resources */,
 			);
@@ -1709,6 +1750,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F0A84C51BC166F6006F79FB /* RCFManagedObjectMapperTests.bundle in Resources */,
+				9F8E5FA11BC27B5B00DC10DB /* EventOperationFactoryTests.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1850,10 +1892,12 @@
 				9F1830DB1BC126D7000E21A5 /* RCFParseResponseValidatorTests.m in Sources */,
 				9F0A85201BC185AA006F79FB /* TestChainableOperation.m in Sources */,
 				9F18309A1BC022EA000E21A5 /* RCFRESTRequestConfiguratorTests.m in Sources */,
+				9F8E5FA21BC27B5B00DC10DB /* EventOperationFactoryTests.m in Sources */,
 				9F0A85261BC185AA006F79FB /* ResponseDeserializationOperationTests.m in Sources */,
 				9F0A85231BC185AA006F79FB /* ChainableOperationTestsBase.m in Sources */,
 				9F0A85251BC185AA006F79FB /* RequestSigningOperationTests.m in Sources */,
 				9F0A85241BC185AA006F79FB /* RequestConfigurationOperationTests.m in Sources */,
+				9F8E5F9B1BC2753100DC10DB /* CompoundOperationFactoryTestsBase.m in Sources */,
 				9F0A851F1BC185AA006F79FB /* TestCancellableOperation.m in Sources */,
 				9F0A85271BC185AA006F79FB /* ResponseMappingOperationTests.m in Sources */,
 				9F1830F91BC1464C000E21A5 /* RCFManagedObjectMappingProviderTests.m in Sources */,
