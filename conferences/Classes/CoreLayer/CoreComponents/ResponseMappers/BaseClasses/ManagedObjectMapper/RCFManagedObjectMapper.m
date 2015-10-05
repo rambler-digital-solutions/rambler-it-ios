@@ -13,8 +13,7 @@
 
 #import "RCFManagedObjectMappingProvider.h"
 #import "RCFResponseObjectFormatter.h"
-
-static NSString *const kMappingContextManagedObjectClassKey = @"kMappingContextManagedObjectClassKey";
+#import "NetworkingConstantsHeader.h"
 
 @interface RCFManagedObjectMapper ()
 
@@ -64,7 +63,7 @@ static NSString *const kMappingContextManagedObjectClassKey = @"kMappingContextM
 #pragma mark - Helper Methods
 
 - (EKManagedObjectMapping *)retreiveMappingForMappingContext:(NSDictionary *)mappingContext {
-    Class managedObjectClass = NSClassFromString(mappingContext[kMappingContextManagedObjectClassKey]);
+    Class managedObjectClass = NSClassFromString(mappingContext[kMappingContextModelClassKey]);
     EKManagedObjectMapping *mapping = [self.provider mappingForManagedObjectModelClass:managedObjectClass];
     return mapping;
 }
@@ -72,7 +71,7 @@ static NSString *const kMappingContextManagedObjectClassKey = @"kMappingContextM
 - (NSFetchRequest *)createFetchRequestForMappingContext:(NSDictionary *)mappingContext
                                          managedContext:(NSManagedObjectContext *)managedContext {
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    [request setEntity:[NSEntityDescription entityForName:mappingContext[kMappingContextManagedObjectClassKey]
+    [request setEntity:[NSEntityDescription entityForName:mappingContext[kMappingContextModelClassKey]
                                    inManagedObjectContext:managedContext]];
     return request;
 }

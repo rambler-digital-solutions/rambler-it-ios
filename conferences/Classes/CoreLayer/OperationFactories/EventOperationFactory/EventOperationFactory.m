@@ -13,6 +13,7 @@
 #import "CompoundOperationBase.h"
 #import "EventQuery.h"
 #import "Event.h"
+#import "NetworkingConstantsHeader.h"
 
 @interface EventOperationFactory ()
 
@@ -38,8 +39,8 @@
     CompoundOperationBuilderConfig *config = [CompoundOperationBuilderConfig new];
     
     config.requestConfigurationType = RequestConfigurationRESTType;
-    config.requestMethod = @"GET";
-    config.serviceName = @"Event";
+    config.requestMethod = kHTTPMethodGET;
+    config.serviceName = kEventServiceName;
     config.urlParameters = @[];
     
     config.requestSigningType = RequestSigningParseType;
@@ -50,7 +51,7 @@
     
     config.responseMappingType = ResponseMappingResultsType;
     config.mappingContext = @{
-                              @"kMappingContextManagedObjectClassKey" : NSStringFromClass([Event class])
+                              kMappingContextModelClassKey : NSStringFromClass([Event class])
                               };
     
     return [self.builder buildCompoundOperationWithConfig:config];

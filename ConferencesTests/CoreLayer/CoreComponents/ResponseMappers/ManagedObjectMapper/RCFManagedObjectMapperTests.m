@@ -14,6 +14,7 @@
 #import "RCFResultsResponseObjectFormatter.h"
 
 #import "SocialNetworkAccount.h"
+#import "NetworkingConstantsHeader.h"
 
 @interface RCFManagedObjectMapperTests : XCTestCase
 
@@ -67,7 +68,7 @@
 - (NSDictionary *)generateMappingContextForModelClass:(Class)modelClass {
     NSString *className = NSStringFromClass(modelClass);
     return @{
-             @"kMappingContextManagedObjectClassKey" : className
+             kMappingContextModelClassKey : className
              };
 }
 

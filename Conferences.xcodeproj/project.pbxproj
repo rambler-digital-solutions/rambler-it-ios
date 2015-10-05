@@ -96,6 +96,9 @@
 		9F8E5F9D1BC2777100DC10DB /* Conferences.Parse.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F8E5F9C1BC2777100DC10DB /* Conferences.Parse.plist */; settings = {ASSET_TAGS = (); }; };
 		9F8E5FA11BC27B5B00DC10DB /* EventOperationFactoryTests.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9F8E5F9F1BC27B5B00DC10DB /* EventOperationFactoryTests.bundle */; settings = {ASSET_TAGS = (); }; };
 		9F8E5FA21BC27B5B00DC10DB /* EventOperationFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5FA01BC27B5B00DC10DB /* EventOperationFactoryTests.m */; settings = {ASSET_TAGS = (); }; };
+		9F8E5FA61BC27CCE00DC10DB /* MappingConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5FA51BC27CCE00DC10DB /* MappingConstants.m */; settings = {ASSET_TAGS = (); }; };
+		9F8E5FA91BC27D0D00DC10DB /* ServiceNameConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5FA81BC27D0D00DC10DB /* ServiceNameConstants.m */; settings = {ASSET_TAGS = (); }; };
+		9F8E5FAD1BC27E7F00DC10DB /* HTTPMethodConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5FAC1BC27E7F00DC10DB /* HTTPMethodConstants.m */; settings = {ASSET_TAGS = (); }; };
 		F826C56E7FA67515D33573A9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A4F504A716A8833A7A01A5D /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -300,6 +303,13 @@
 		9F8E5F9C1BC2777100DC10DB /* Conferences.Parse.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Conferences.Parse.plist; path = Assemblies/RequestSignersFactory/Conferences.Parse.plist; sourceTree = "<group>"; };
 		9F8E5F9F1BC27B5B00DC10DB /* EventOperationFactoryTests.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = EventOperationFactoryTests.bundle; sourceTree = "<group>"; };
 		9F8E5FA01BC27B5B00DC10DB /* EventOperationFactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventOperationFactoryTests.m; sourceTree = "<group>"; };
+		9F8E5FA41BC27CCE00DC10DB /* MappingConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MappingConstants.h; path = Constants/MappingConstants.h; sourceTree = "<group>"; };
+		9F8E5FA51BC27CCE00DC10DB /* MappingConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MappingConstants.m; path = Constants/MappingConstants.m; sourceTree = "<group>"; };
+		9F8E5FA71BC27D0D00DC10DB /* ServiceNameConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServiceNameConstants.h; path = Constants/ServiceNameConstants.h; sourceTree = "<group>"; };
+		9F8E5FA81BC27D0D00DC10DB /* ServiceNameConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServiceNameConstants.m; path = Constants/ServiceNameConstants.m; sourceTree = "<group>"; };
+		9F8E5FAA1BC27D1D00DC10DB /* NetworkingConstantsHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NetworkingConstantsHeader.h; path = Constants/NetworkingConstantsHeader.h; sourceTree = "<group>"; };
+		9F8E5FAB1BC27E7F00DC10DB /* HTTPMethodConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTTPMethodConstants.h; path = Constants/HTTPMethodConstants.h; sourceTree = "<group>"; };
+		9F8E5FAC1BC27E7F00DC10DB /* HTTPMethodConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTTPMethodConstants.m; path = Constants/HTTPMethodConstants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -454,6 +464,7 @@
 		63FDCDDF1BBDBA2A00A43B60 /* CoreLayer */ = {
 			isa = PBXGroup;
 			children = (
+				9F8E5FA31BC27CB400DC10DB /* Constants */,
 				9F0A6C241BC1B85A00A25417 /* Assemblies */,
 				9F18308B1BC01E65000E21A5 /* CoreComponents */,
 				9F0A85331BC18A10006F79FB /* OperationBuilders */,
@@ -1645,6 +1656,20 @@
 			path = CoreLayer/OperationFactories/EventOperationFactory;
 			sourceTree = "<group>";
 		};
+		9F8E5FA31BC27CB400DC10DB /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				9F8E5FAA1BC27D1D00DC10DB /* NetworkingConstantsHeader.h */,
+				9F8E5FA41BC27CCE00DC10DB /* MappingConstants.h */,
+				9F8E5FA51BC27CCE00DC10DB /* MappingConstants.m */,
+				9F8E5FA71BC27D0D00DC10DB /* ServiceNameConstants.h */,
+				9F8E5FA81BC27D0D00DC10DB /* ServiceNameConstants.m */,
+				9F8E5FAB1BC27E7F00DC10DB /* HTTPMethodConstants.h */,
+				9F8E5FAC1BC27E7F00DC10DB /* HTTPMethodConstants.m */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
 		D1799435EABEFA40D1849E2A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1828,6 +1853,7 @@
 				9F18311D1BC1615C000E21A5 /* RCFSingleResponseObjectFormatter.m in Sources */,
 				9F1830B31BC11879000E21A5 /* CommonNetworkClient.m in Sources */,
 				9F0A84FD1BC1698B006F79FB /* NetworkOperation.m in Sources */,
+				9F8E5FA61BC27CCE00DC10DB /* MappingConstants.m in Sources */,
 				9F8E5F801BC2592600DC10DB /* ResponseValidatorsAssembly.m in Sources */,
 				9F1830BF1BC11D26000E21A5 /* RCFJSONResponseDeserializer.m in Sources */,
 				9F1830931BC02293000E21A5 /* RCFRESTRequestConfigurator.m in Sources */,
@@ -1843,6 +1869,7 @@
 				9F0A852D1BC188B0006F79FB /* EventOperationFactory.m in Sources */,
 				63FDCE061BBDBA2A00A43B60 /* AppDelegate.m in Sources */,
 				636B63E81BBDCEEA0053E38F /* RegistrationQuestion+CoreDataProperties.m in Sources */,
+				9F8E5FA91BC27D0D00DC10DB /* ServiceNameConstants.m in Sources */,
 				636B64041BBDD19A0053E38F /* RCFLectureServiceImplementation.m in Sources */,
 				9F8E5F841BC25A0700DC10DB /* ResponseMappersAssembly.m in Sources */,
 				9F18311C1BC1615C000E21A5 /* RCFResultsResponseObjectFormatter.m in Sources */,
@@ -1859,6 +1886,7 @@
 				9F0A84FC1BC1698B006F79FB /* CompoundOperationDebugDescriptionFormatter.m in Sources */,
 				9F0A84FE1BC1698B006F79FB /* RequestConfigurationOperation.m in Sources */,
 				9F8E5F781BC2571B00DC10DB /* NetworkClientsAssembly.m in Sources */,
+				9F8E5FAD1BC27E7F00DC10DB /* HTTPMethodConstants.m in Sources */,
 				9F0A85021BC1698B006F79FB /* ResponseValidationOperation.m in Sources */,
 				9F0A84FB1BC1698B006F79FB /* CompoundOperationBase.m in Sources */,
 				9F0A84F91BC1698B006F79FB /* AsyncOperation.m in Sources */,
