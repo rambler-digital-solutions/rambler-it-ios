@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-#import "NetworkConnectionType.h"
-
 @protocol RCFNetworkClient;
 
 /**
@@ -22,12 +20,12 @@
 /**
  @author Egor Tolstoy
  
- The method returns a proper NetworkClient based on a given type
+ The method returns a common NetworkClient
  
  @param type NetworkConnectionType
  
  @return id<NetworkClient>
  */
-- (id<RCFNetworkClient>)clientWithType:(NSNumber *)type;
+- (id<RCFNetworkClient>)commonNetworkClient;
 
 @end

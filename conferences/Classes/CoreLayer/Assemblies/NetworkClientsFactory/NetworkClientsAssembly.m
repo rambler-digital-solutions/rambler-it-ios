@@ -12,15 +12,6 @@
 
 @implementation NetworkClientsAssembly
 
-#pragma mark - Option matcher
-
-- (id<RCFNetworkClient>)clientWithType:(NSNumber *)type {
-    return [TyphoonDefinition withOption:type matcher:^(TyphoonOptionMatcher *matcher) {
-        [matcher caseEqual:@(NetworkConnectionCommonType)
-                       use:[self commonNetworkClient]];
-    }];
-}
-
 #pragma mark - Concrete definitions
 
 - (id<RCFNetworkClient>)commonNetworkClient {

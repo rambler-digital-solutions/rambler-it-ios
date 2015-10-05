@@ -91,6 +91,7 @@
 		9F8E5F7C1BC2584500DC10DB /* ResponseDeserializersAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5F7B1BC2584500DC10DB /* ResponseDeserializersAssembly.m */; settings = {ASSET_TAGS = (); }; };
 		9F8E5F801BC2592600DC10DB /* ResponseValidatorsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5F7F1BC2592600DC10DB /* ResponseValidatorsAssembly.m */; settings = {ASSET_TAGS = (); }; };
 		9F8E5F841BC25A0700DC10DB /* ResponseMappersAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5F831BC25A0700DC10DB /* ResponseMappersAssembly.m */; settings = {ASSET_TAGS = (); }; };
+		9F8E5F941BC269EA00DC10DB /* OperationFactoriesAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5F931BC269EA00DC10DB /* OperationFactoriesAssembly.m */; settings = {ASSET_TAGS = (); }; };
 		F826C56E7FA67515D33573A9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A4F504A716A8833A7A01A5D /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -288,6 +289,8 @@
 		9F8E5F811BC259F500DC10DB /* ResponseMappersFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResponseMappersFactory.h; path = Assemblies/ResponseMappersFactory/ResponseMappersFactory.h; sourceTree = "<group>"; };
 		9F8E5F821BC25A0700DC10DB /* ResponseMappersAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResponseMappersAssembly.h; path = Assemblies/ResponseMappersFactory/ResponseMappersAssembly.h; sourceTree = "<group>"; };
 		9F8E5F831BC25A0700DC10DB /* ResponseMappersAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResponseMappersAssembly.m; path = Assemblies/ResponseMappersFactory/ResponseMappersAssembly.m; sourceTree = "<group>"; };
+		9F8E5F921BC269EA00DC10DB /* OperationFactoriesAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OperationFactoriesAssembly.h; path = Assemblies/OperationFactoriesAssembly/OperationFactoriesAssembly.h; sourceTree = "<group>"; };
+		9F8E5F931BC269EA00DC10DB /* OperationFactoriesAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OperationFactoriesAssembly.m; path = Assemblies/OperationFactoriesAssembly/OperationFactoriesAssembly.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -573,6 +576,7 @@
 		9F0A6C241BC1B85A00A25417 /* Assemblies */ = {
 			isa = PBXGroup;
 			children = (
+				9F8E5F911BC269D000DC10DB /* OperationFactoriesAssembly */,
 				9F0A6C2A1BC1B8AA00A25417 /* ResponseMappersFactory */,
 				9F0A6C291BC1B8A000A25417 /* ResponseValidatorsFactory */,
 				9F0A6C281BC1B89900A25417 /* ResponseDeserializersFactory */,
@@ -996,9 +1000,9 @@
 		9F0A85331BC18A10006F79FB /* OperationBuilders */ = {
 			isa = PBXGroup;
 			children = (
+				9F0A85341BC18A1A006F79FB /* NetworkCompoundOperationBuilder */,
 				9F0A6C1A1BC1AFB200A25417 /* CompoundOperationBuilderConfig */,
 				9F0A85381BC1906C006F79FB /* OperationChainer */,
-				9F0A85341BC18A1A006F79FB /* NetworkCompoundOperationBuilder */,
 			);
 			name = OperationBuilders;
 			sourceTree = "<group>";
@@ -1592,6 +1596,15 @@
 			path = ConferencesTests;
 			sourceTree = "<group>";
 		};
+		9F8E5F911BC269D000DC10DB /* OperationFactoriesAssembly */ = {
+			isa = PBXGroup;
+			children = (
+				9F8E5F921BC269EA00DC10DB /* OperationFactoriesAssembly.h */,
+				9F8E5F931BC269EA00DC10DB /* OperationFactoriesAssembly.m */,
+			);
+			name = OperationFactoriesAssembly;
+			sourceTree = "<group>";
+		};
 		D1799435EABEFA40D1849E2A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1769,6 +1782,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F8E5F941BC269EA00DC10DB /* OperationFactoriesAssembly.m in Sources */,
 				9F18311D1BC1615C000E21A5 /* RCFSingleResponseObjectFormatter.m in Sources */,
 				9F1830B31BC11879000E21A5 /* CommonNetworkClient.m in Sources */,
 				9F0A84FD1BC1698B006F79FB /* NetworkOperation.m in Sources */,

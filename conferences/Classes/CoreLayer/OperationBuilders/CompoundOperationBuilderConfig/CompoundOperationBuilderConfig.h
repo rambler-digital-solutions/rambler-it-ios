@@ -17,6 +17,11 @@
 
 typedef id(^CompoundOperationInputDataMappingBlock)(id data);
 
+/**
+ @author Egor Tolstoy
+ 
+ The config is used by NetworkCompoundOperationBuilder to build a proper compound operation
+ */
 @interface CompoundOperationBuilderConfig : NSObject
 
 // General parameters

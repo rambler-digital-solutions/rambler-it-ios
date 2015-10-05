@@ -16,6 +16,11 @@
 #import "ResponseMappingOperation.h"
 
 #import "RequestConfiguratorsFactory.h"
+#import "RequestSignersFactory.h"
+#import "NetworkClientsFactory.h"
+#import "ResponseDeserializersFactory.h"
+#import "ResponseValidatorsFactory.h"
+#import "ResponseMappersFactory.h"
 
 #import "ChainableOperation.h"
 #import "OperationBuffer.h"
@@ -27,8 +32,6 @@
 
 @property (strong, nonatomic) NSMutableArray *operationsArray;
 @property (strong, nonatomic) OperationChainer *chainer;
-
-@property (strong, nonatomic) id<RequestConfiguratorsFactory> requestConfiguratorsFactory;
 
 @end
 
@@ -48,12 +51,58 @@
 #pragma mark - Building Compound operation
 
 - (CompoundOperationBase *)buildCompoundOperationWithConfig:(CompoundOperationBuilderConfig *)config {
-    return nil;
+    NSAssert(config, @"Config shouldn't be nil");
+    
+    [self buildRequestConfigurationOperationWithConfig:config];
+    [self buildRequestSigningOperationWithConfig:config];
+    [self buildNetworkOperationWithConfig:config];
+    [self buildResponseDeserializationOperationWithConfig:config];
+    [self buildResponseValidationOperationWithConfig:config];
+    [self buildResponseMappingOperationWithConfig:config];
+    
+    CompoundOperationBase *compoundOperation = [self getResultCompoundOperation];
+    id inputData = config.inputQueueData;
+    if (config.inputDataMappingBlock) {
+        inputData = config.inputDataMappingBlock(inputData);
+    }
+    [compoundOperation.queueInput setOperationQueueInputData:inputData];
+    
+    return compoundOperation;
 }
 
 - (void)buildRequestConfigurationOperationWithConfig:(CompoundOperationBuilderConfig *)config {
     id<RCFRequestConfigurator> configurator = [self.requestConfiguratorsFactory requestConfiguratorWithType:@(config.requestConfigurationType)];
     RequestConfigurationOperation *operation = [RequestConfigurationOperation operationWithRequestConfigurator:configurator method:config.requestMethod serviceName:config.serviceName urlParameters:config.urlParameters];
+    [self addOperation:operation];
+}
+
+- (void)buildRequestSigningOperationWithConfig:(CompoundOperationBuilderConfig *)config {
+    id<RCFRequestSigner> signer = [self.requestSignersFactory requestSignerWithType:@(config.requestSigningType)];
+    RequestSigningOperation *operation = [RequestSigningOperation operationWithRequestSigner:signer];
+    [self addOperation:operation];
+}
+
+- (void)buildNetworkOperationWithConfig:(CompoundOperationBuilderConfig *)config {
+    id<RCFNetworkClient> client = [self.networkClientsFactory commonNetworkClient];
+    NetworkOperation *operation = [NetworkOperation operationWithNetworkClient:client];
+    [self addOperation:operation];
+}
+
+- (void)buildResponseDeserializationOperationWithConfig:(CompoundOperationBuilderConfig *)config {
+    id<RCFResponseDeserializer> deserializer = [self.responseDeserializersFactory deserializerWithType:@(config.responseDeserializationType)];
+    ResponseDeserializationOperation *operation = [ResponseDeserializationOperation operationWithResponseDeserializer:deserializer];
+    [self addOperation:operation];
+}
+
+- (void)buildResponseValidationOperationWithConfig:(CompoundOperationBuilderConfig *)config {
+    id<RCFResponseValidator> validator = [self.responseValidatorsFactory validatorWithType:@(config.responseValidationType)];
+    ResponseValidationOperation *operation = [ResponseValidationOperation operationWithResponseValidator:validator];
+    [self addOperation:operation];
+}
+
+- (void)buildResponseMappingOperationWithConfig:(CompoundOperationBuilderConfig *)config {
+    id <RCFResponseMapper> mapper = [self.responseMappersFactory mapperWithType:@(config.responseMappingType)];
+    ResponseMappingOperation *operation = [ResponseMappingOperation operationWithResponseMapper:mapper mappingContext:config.mappingContext];
     [self addOperation:operation];
 }
 
