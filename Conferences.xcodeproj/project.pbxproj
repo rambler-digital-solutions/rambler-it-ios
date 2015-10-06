@@ -99,6 +99,8 @@
 		9F8E5FA61BC27CCE00DC10DB /* MappingConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5FA51BC27CCE00DC10DB /* MappingConstants.m */; settings = {ASSET_TAGS = (); }; };
 		9F8E5FA91BC27D0D00DC10DB /* ServiceNameConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5FA81BC27D0D00DC10DB /* ServiceNameConstants.m */; settings = {ASSET_TAGS = (); }; };
 		9F8E5FAD1BC27E7F00DC10DB /* HTTPMethodConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5FAC1BC27E7F00DC10DB /* HTTPMethodConstants.m */; settings = {ASSET_TAGS = (); }; };
+		9FF99E511BC42FF6006F15AF /* OperationSchedulerImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF99E501BC42FF6006F15AF /* OperationSchedulerImplementation.m */; settings = {ASSET_TAGS = (); }; };
+		9FF99E541BC4317E006F15AF /* OperationSchedulerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF99E531BC4317E006F15AF /* OperationSchedulerTests.m */; settings = {ASSET_TAGS = (); }; };
 		F826C56E7FA67515D33573A9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A4F504A716A8833A7A01A5D /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -310,6 +312,10 @@
 		9F8E5FAA1BC27D1D00DC10DB /* NetworkingConstantsHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NetworkingConstantsHeader.h; path = Constants/NetworkingConstantsHeader.h; sourceTree = "<group>"; };
 		9F8E5FAB1BC27E7F00DC10DB /* HTTPMethodConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTTPMethodConstants.h; path = Constants/HTTPMethodConstants.h; sourceTree = "<group>"; };
 		9F8E5FAC1BC27E7F00DC10DB /* HTTPMethodConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTTPMethodConstants.m; path = Constants/HTTPMethodConstants.m; sourceTree = "<group>"; };
+		9FF99E4E1BC42FDE006F15AF /* OperationScheduler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OperationScheduler.h; path = OperationScheduler/OperationScheduler.h; sourceTree = "<group>"; };
+		9FF99E4F1BC42FF5006F15AF /* OperationSchedulerImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OperationSchedulerImplementation.h; path = OperationScheduler/OperationSchedulerImplementation.h; sourceTree = "<group>"; };
+		9FF99E501BC42FF6006F15AF /* OperationSchedulerImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OperationSchedulerImplementation.m; path = OperationScheduler/OperationSchedulerImplementation.m; sourceTree = "<group>"; };
+		9FF99E531BC4317E006F15AF /* OperationSchedulerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OperationSchedulerTests.m; path = CoreLayer/OperationScheduler/OperationSchedulerTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -464,6 +470,7 @@
 		63FDCDDF1BBDBA2A00A43B60 /* CoreLayer */ = {
 			isa = PBXGroup;
 			children = (
+				9FF99E4D1BC42FBA006F15AF /* OperationScheduler */,
 				9F8E5FA31BC27CB400DC10DB /* Constants */,
 				9F0A6C241BC1B85A00A25417 /* Assemblies */,
 				9F18308B1BC01E65000E21A5 /* CoreComponents */,
@@ -1115,6 +1122,7 @@
 		9F1830941BC0229F000E21A5 /* CoreLayer */ = {
 			isa = PBXGroup;
 			children = (
+				9FF99E521BC43164006F15AF /* OperationScheduler */,
 				9F8E5F951BC274DD00DC10DB /* OperationFactories */,
 				9F0A853C1BC192D1006F79FB /* OperationBuilders */,
 				9F0A85041BC185AA006F79FB /* Operations */,
@@ -1670,6 +1678,24 @@
 			name = Constants;
 			sourceTree = "<group>";
 		};
+		9FF99E4D1BC42FBA006F15AF /* OperationScheduler */ = {
+			isa = PBXGroup;
+			children = (
+				9FF99E4E1BC42FDE006F15AF /* OperationScheduler.h */,
+				9FF99E4F1BC42FF5006F15AF /* OperationSchedulerImplementation.h */,
+				9FF99E501BC42FF6006F15AF /* OperationSchedulerImplementation.m */,
+			);
+			name = OperationScheduler;
+			sourceTree = "<group>";
+		};
+		9FF99E521BC43164006F15AF /* OperationScheduler */ = {
+			isa = PBXGroup;
+			children = (
+				9FF99E531BC4317E006F15AF /* OperationSchedulerTests.m */,
+			);
+			name = OperationScheduler;
+			sourceTree = "<group>";
+		};
 		D1799435EABEFA40D1849E2A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1880,6 +1906,7 @@
 				636B63E51BBDCEEA0053E38F /* Event.m in Sources */,
 				636B63E91BBDCEEA0053E38F /* RegistrationQuestion.m in Sources */,
 				636B63E41BBDCEEA0053E38F /* Event+CoreDataProperties.m in Sources */,
+				9FF99E511BC42FF6006F15AF /* OperationSchedulerImplementation.m in Sources */,
 				9F0A85031BC1698B006F79FB /* OperationDebugDescriptionFormatter.m in Sources */,
 				636B63EB1BBDCEEA0053E38F /* SocialNetworkAccount.m in Sources */,
 				636B64071BBDD2A40053E38F /* RCFLectureMaterialsServiceImplementation.m in Sources */,
@@ -1934,6 +1961,7 @@
 				9F1831211BC16195000E21A5 /* RCFResultResponseObjectFormatterTests.m in Sources */,
 				9F1830AB1BC1139B000E21A5 /* RCFParseRequestSignerTests.m in Sources */,
 				9F1830DF1BC12749000E21A5 /* RCFResponseValidatorTestsBase.m in Sources */,
+				9FF99E541BC4317E006F15AF /* OperationSchedulerTests.m in Sources */,
 				9F1830B81BC119A5000E21A5 /* CommonNetworkClientTests.m in Sources */,
 				9F1830C31BC11DE7000E21A5 /* RCFJSONResponseDeserializerTests.m in Sources */,
 				9F0A85221BC185AA006F79FB /* TestErrorChainableOperation.m in Sources */,
