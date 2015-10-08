@@ -12,8 +12,8 @@
 
 @interface RCFRESTRequestConfigurator ()
 
-@property (strong, nonatomic) NSURL *baseURL;
-@property (strong, nonatomic) NSString *apiPath;
+@property (copy, nonatomic) NSURL *baseURL;
+@property (copy, nonatomic) NSString *apiPath;
 
 @end
 
@@ -25,8 +25,8 @@
                         apiPath:(NSString *)apiPath {
     self = [super init];
     if (self) {
-        _baseURL = baseURL;
-        _apiPath = apiPath;
+        _baseURL = [baseURL copy];
+        _apiPath = [apiPath copy];
     }
     return self;
 }
@@ -67,15 +67,15 @@
     [urlParts addObjectsFromArray:urlParameters];
     
     NSString *urlPath = [urlParts componentsJoinedByString:@"/"];
-    urlPath = [self filterSlachesInURLPath:urlPath];
+    urlPath = [self filterSlashesInURLPath:urlPath];
     
     NSURL *finalURL = [self.baseURL URLByAppendingPathComponent:urlPath];
     return finalURL;
 }
 
-- (NSString *)filterSlachesInURLPath:(NSString *)urlPath {
-    NSString *filteredPath = [urlPath stringByReplacingOccurrencesOfString:@"?" withString:@""];
-    filteredPath = [urlPath stringByReplacingOccurrencesOfString:@"//" withString:@"/"];
+- (NSString *)filterSlashesInURLPath:(NSString *)urlPath {
+    NSString *filteredPath = [urlPath stringByReplacingOccurrencesOfString:@"//"
+                                                                withString:@"/"];
     
     return filteredPath;
 }

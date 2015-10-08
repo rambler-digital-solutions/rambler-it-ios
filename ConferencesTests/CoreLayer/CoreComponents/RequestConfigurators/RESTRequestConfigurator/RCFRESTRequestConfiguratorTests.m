@@ -105,6 +105,26 @@ static NSString *const kTestBaseAPIPath = @"/v1/rest/";
     XCTAssertEqualObjects(result.HTTPBody, dataModel.bodyData);
 }
 
+- (void)testThatConfiguratorFiltersSlashes {
+    // given
+    NSString *expectedURLPath = @"https://myapi.com/v1/rest";
+    NSURL *baseURL = [NSURL URLWithString:@"https://myapi.com"];
+    NSString *apiPath = @"/v1//rest";
+    
+    self.configurator = [[RCFRESTRequestConfigurator alloc] initWithBaseURL:baseURL
+                                                                    apiPath:apiPath];
+    
+    // when
+    NSURLRequest *result = [self.configurator requestWithMethod:kHTTPMethodGET
+                                                    serviceName:nil
+                                                  urlParameters:nil
+                                               requestDataModel:nil];
+    
+    // then
+    XCTAssertEqualObjects(result.URL.absoluteString, expectedURLPath);
+    XCTAssertEqualObjects(result.HTTPMethod, @"GET");
+}
+
 #pragma mark - Helper methods
 
 - (NSDictionary *)generateRequestParameters {
