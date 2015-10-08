@@ -60,9 +60,7 @@
     compoundOperation.resultBlock = ^void(id data, NSError *error) {
         resultData = data;
         resultError = error;
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [expectation fulfill];
-        });
+        [self fulfillExpectationInMainThread:expectation];
     };
     
     // when
