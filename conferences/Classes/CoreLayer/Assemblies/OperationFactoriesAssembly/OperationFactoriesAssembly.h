@@ -17,6 +17,11 @@
 
 @class EventOperationFactory;
 
+/**
+ @author Egor Tolstoy
+ 
+ A TyphoonAssembly which is responsible for creating operation factories for different services
+ */
 @interface OperationFactoriesAssembly : TyphoonAssembly
 
 - (EventOperationFactory *)eventOperationFactory;
