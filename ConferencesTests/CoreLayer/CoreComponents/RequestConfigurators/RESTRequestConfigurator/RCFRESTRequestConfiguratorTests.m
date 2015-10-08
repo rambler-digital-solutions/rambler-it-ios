@@ -8,6 +8,8 @@
 
 #import <XCTest/XCTest.h>
 
+#import "NetworkingConstantsHeader.h"
+
 #import "RCFRESTRequestConfigurator.h"
 #import "RCFRequestDataModel.h"
 
@@ -41,7 +43,7 @@ static NSString *const kTestBaseAPIPath = @"/v1/rest/";
     NSString *expectedURLPath = @"https://myapi.com/v1/rest/";
     
     // when
-    NSURLRequest *result = [self.configurator requestWithMethod:@"GET"
+    NSURLRequest *result = [self.configurator requestWithMethod:kHTTPMethodGET
                                                     serviceName:nil
                                                   urlParameters:nil
                                                requestDataModel:nil];
@@ -56,7 +58,7 @@ static NSString *const kTestBaseAPIPath = @"/v1/rest/";
     NSString *expectedURLPath = @"https://myapi.com/v1/rest/service/object";
     
     // when
-    NSURLRequest *result = [self.configurator requestWithMethod:@"GET"
+    NSURLRequest *result = [self.configurator requestWithMethod:kHTTPMethodGET
                                                     serviceName:@"service"
                                                   urlParameters:@[@"object"]
                                                requestDataModel:nil];
@@ -74,7 +76,7 @@ static NSString *const kTestBaseAPIPath = @"/v1/rest/";
     dataModel.queryParameters = [self generateRequestParameters];
     
     // when
-    NSURLRequest *result = [self.configurator requestWithMethod:@"GET"
+    NSURLRequest *result = [self.configurator requestWithMethod:kHTTPMethodGET
                                                     serviceName:@"service"
                                                   urlParameters:@[@"object"]
                                                requestDataModel:dataModel];
@@ -92,7 +94,7 @@ static NSString *const kTestBaseAPIPath = @"/v1/rest/";
     dataModel.bodyData = [self generateBodyData];
     
     // when
-    NSURLRequest *result = [self.configurator requestWithMethod:@"POST"
+    NSURLRequest *result = [self.configurator requestWithMethod:kHTTPMethodPOST
                                                     serviceName:@"service"
                                                   urlParameters:@[@"object"]
                                                requestDataModel:dataModel];
