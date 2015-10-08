@@ -86,7 +86,7 @@
     }];
 }
 
-#pragma mark - Вспомогательные методы
+#pragma mark - Helper methods
 
 - (void)stubSignerWithData:(NSURLRequest *)data {
     OCMStub([self.mockRequestSigner signRequest:OCMOCK_ANY]).andReturn(data);

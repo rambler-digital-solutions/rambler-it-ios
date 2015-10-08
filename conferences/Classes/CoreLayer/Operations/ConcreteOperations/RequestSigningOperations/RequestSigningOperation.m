@@ -27,7 +27,7 @@ static const int ddLogLevel = DDLogLevelVerbose;
 @synthesize input = _input;
 @synthesize output = _output;
 
-#pragma mark - Инициализация
+#pragma mark - Initialization
 
 - (instancetype)initWithRequestSigner:(id<RCFRequestSigner>)signer {
     self = [super init];
@@ -41,7 +41,7 @@ static const int ddLogLevel = DDLogLevelVerbose;
     return [[[self class] alloc] initWithRequestSigner:signer];
 }
 
-#pragma mark - Выполнение операции
+#pragma mark - Operation execution
 
 - (void)main {
     DDLogVerbose(@"The operation %@ is started", NSStringFromClass([self class]));

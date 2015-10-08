@@ -47,7 +47,7 @@ static NSUInteger const DefaultMaxConcurrentOperationsCount = 3;
     [self.queue addOperation:operation];
 }
 
-#pragma mark - Методы ChainableOperationDelegate
+#pragma mark - Protocol ChainableOperationDelegate
 
 - (void)didCompleteChainableOperationWithError:(NSError *)error {
     id data = [self.queueOutput obtainOperationQueueOutputData];
@@ -64,7 +64,7 @@ static NSUInteger const DefaultMaxConcurrentOperationsCount = 3;
     }
 }
 
-#pragma mark - Приватные методы
+#pragma mark - Private methods
 
 - (void)completeOperationWithData:(id)data error:(NSError *)error {
     [self.queue cancelAllOperations];

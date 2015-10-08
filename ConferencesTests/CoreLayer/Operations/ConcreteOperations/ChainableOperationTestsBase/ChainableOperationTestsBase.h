@@ -16,14 +16,14 @@
 /**
  @author Egor Tolstoy
  
- Базовый класс для тестов под-операций
+ The base class for ChainableOperation tests
  */
 @interface ChainableOperationTestsBase : XCTestCase
 
 /**
  @author Egor Tolstoy
  
- Метод настраивает входные данные для операции
+ The method setups input data for an operation
  */
 - (void)setInputData:(id)data
         forOperation:(NSOperation <ChainableOperation> *)operation;
@@ -31,7 +31,7 @@
 /**
  @author Egor Tolstoy
  
- Метод настраивает выходные данные для операции
+ The method setups output data for an operation
  */
 - (void)setOutputData:(id)data
          forOperation:(NSOperation <ChainableOperation> *)operation;
@@ -39,9 +39,9 @@
 /**
  @author Egor Tolstoy
  
- Метод проверяет output у переданной ему операции
+ The method checks output data of an operation
  
- @param operation Операция
+ @param operation Chainable operation
  */
 - (void)verifyNotNilResultForOperation:(NSOperation <ChainableOperation> *)operation;
 

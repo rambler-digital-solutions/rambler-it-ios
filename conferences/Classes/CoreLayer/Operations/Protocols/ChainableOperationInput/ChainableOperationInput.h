@@ -13,11 +13,6 @@ typedef BOOL(^ChainableOperationInputTypeValidationBlock)(id data);
 /**
  @author Egor Tolstoy
  
- Протокол источника данных операции
- */
-/**
- @author Egor Tolstoy
- 
  The protocol for the operation input data source
  */
 @protocol ChainableOperationInput <NSObject>

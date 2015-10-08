@@ -27,7 +27,7 @@ static const int ddLogLevel = DDLogFlagVerbose;
 @synthesize input = _input;
 @synthesize output = _output;
 
-#pragma mark - Инициализация
+#pragma mark - Initialization
 
 - (instancetype)initWithNetworkClient:(id<RCFNetworkClient>)networkClient {
     self = [super init];
@@ -41,7 +41,7 @@ static const int ddLogLevel = DDLogFlagVerbose;
     return [[[self class] alloc] initWithNetworkClient:networkClient];
 }
 
-#pragma mark - Выполнение операции
+#pragma mark - Operation execution
 
 - (void)main {
     DDLogVerbose(@"The operation %@ is started", NSStringFromClass([self class]));

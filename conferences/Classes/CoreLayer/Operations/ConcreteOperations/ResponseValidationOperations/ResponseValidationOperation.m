@@ -26,7 +26,7 @@ static const int ddLogLevel = DDLogLevelVerbose;
 @synthesize input = _input;
 @synthesize output = _output;
 
-#pragma mark - Инициализация
+#pragma mark - Initialization
 
 - (instancetype)initWithResponseValidator:(id<RCFResponseValidator>)responseValidator {
     self = [super init];
@@ -40,7 +40,7 @@ static const int ddLogLevel = DDLogLevelVerbose;
     return [[[self class] alloc] initWithResponseValidator:responseValidator];
 }
 
-#pragma mark - Выполнение операции
+#pragma mark - Operation execution
 
 - (void)main {
     DDLogVerbose(@"The operation %@ is started", NSStringFromClass([self class]));

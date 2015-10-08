@@ -30,7 +30,7 @@ static const int ddLogLevel = DDLogLevelVerbose;
 @synthesize input = _input;
 @synthesize output = _output;
 
-#pragma mark - Инициализация
+#pragma mark - Initialization
 
 - (instancetype)initWithRequestConfigurator:(id<RCFRequestConfigurator>)configurator
                                      method:(NSString *)method
@@ -56,7 +56,7 @@ static const int ddLogLevel = DDLogLevelVerbose;
                                                urlParameters:urlParameters];
 }
 
-#pragma mark - Выполнение операции
+#pragma mark - Operation execution
 
 - (void)main {
     DDLogVerbose(@"The operation %@ is started", NSStringFromClass([self class]));

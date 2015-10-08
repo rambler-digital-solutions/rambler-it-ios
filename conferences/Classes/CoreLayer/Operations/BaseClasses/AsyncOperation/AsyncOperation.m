@@ -25,7 +25,7 @@ static NSString *const kFinishedFlagSelector = @"isFinished";
     return self;
 }
 
-#pragma mark - Геттеры
+#pragma mark - Getters
 
 - (BOOL)isAsynchronous {
     return YES;
@@ -39,7 +39,7 @@ static NSString *const kFinishedFlagSelector = @"isFinished";
     return finished;
 }
 
-#pragma mark - Приватные методы
+#pragma mark - Private methods
 
 - (void)start {
     /**

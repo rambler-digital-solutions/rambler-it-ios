@@ -20,7 +20,7 @@
     return [[[self class] alloc] init];
 }
 
-#pragma mark - Методы ChainableOperationInput
+#pragma mark - Protocol ChainableOperationInput
 
 - (id)obtainInputData {
     return [self obtainBufferData];
@@ -34,25 +34,25 @@
     return [self obtainBufferData];
 }
 
-#pragma mark - Методы ChainableOperationOutput
+#pragma mark - Protocol ChainableOperationOutput
 
 - (void)didCompleteChainableOperationWithOutputData:(id)outputData {
     [self updateBufferWithData:outputData];
 }
 
-#pragma mark - Методы CompoundOperationQueueInput
+#pragma mark - Protocol CompoundOperationQueueInput
 
 - (void)setOperationQueueInputData:(id)inputData {
     [self updateBufferWithData:inputData];
 }
 
-#pragma mark - Методы CompoundOperationQueueOutput
+#pragma mark - Protocol CompoundOperationQueueOutput
 
 - (id)obtainOperationQueueOutputData {
     return [self obtainBufferData];
 }
 
-#pragma mark - Приватные методы
+#pragma mark - Private Methods
 
 - (void)updateBufferWithData:(id)data {
     self.buffer = data;

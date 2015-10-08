@@ -15,7 +15,6 @@
 @synthesize output = _output;
 
 - (void)main {
-    // Эмулируем длительное выполнение операции
     [NSThread sleepForTimeInterval:0.1f];
     NSNumber *operationCompleted = @(YES);
     [self.output didCompleteChainableOperationWithOutputData:operationCompleted];

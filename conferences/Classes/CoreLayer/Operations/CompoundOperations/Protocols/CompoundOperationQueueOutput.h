@@ -18,11 +18,6 @@
 /**
  @author Egor Tolstoy
  
- Метод устанавливает данные, которые будут переданы compound-операцией как результат ее выполнения
- */
-/**
- @author Egor Tolstoy
- 
  The method setups the operation queue output data.
  */
 - (id)obtainOperationQueueOutputData;
