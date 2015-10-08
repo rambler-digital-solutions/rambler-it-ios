@@ -33,36 +33,67 @@
     [super tearDown];
 }
 
-- (void)testThatDeserializerDeserializeSimpleJSON {
+- (void)testThatDeserializerDeserializeValidJSON {
     // given
     XCTestExpectation *expectation = [self expectationForCurrentTest];
-    NSData *data = [self generateJSONResponseData];
-    __block NSDictionary *result;
+    NSData *data = [self generateValidJSONResponseData];
+    __block NSError *resultError;
+    __block NSDictionary *resultDictionary;
     
     // when
     [self.deserializer deserializeServerResponse:data
                                  completionBlock:^(NSDictionary *response, NSError *error) {
-        result = response;
-        [self fulfillExpectationInMainThread:expectation];
+                                     resultError =  error;
+                                     resultDictionary = response;
+                                     [self fulfillExpectationInMainThread:expectation];
     }];
     
     // then
     [self waitForExpectationsWithTimeout:kTestExpectationTimeout
                                  handler:^(NSError *error) {
-        XCTAssertNotNil(result);
-        XCTAssertEqualObjects([[result allKeys] firstObject], @"key");
-        XCTAssertEqualObjects([[result allValues] firstObject], @"value");
+        XCTAssertNotNil(resultDictionary);
+        XCTAssertNil(resultError);
+        XCTAssertEqualObjects([[resultDictionary allKeys] firstObject], @"key");
+        XCTAssertEqualObjects([[resultDictionary allValues] firstObject], @"value");
     }];
+}
+
+- (void)testThatDeserializerFailsWithInvalidData {
+    // given
+    XCTestExpectation *expectation = [self expectationForCurrentTest];
+    NSData *data = [self generateInvalidJSONResponseData];
+    __block NSError *resultError;
+    __block NSDictionary *resultDictionary;
+    
+    // when
+    [self.deserializer deserializeServerResponse:data
+                                 completionBlock:^(NSDictionary *response, NSError *error) {
+                                     resultError =  error;
+                                     resultDictionary = response;
+                                     [self fulfillExpectationInMainThread:expectation];
+                                 }];
+    
+    // then
+    [self waitForExpectationsWithTimeout:kTestExpectationTimeout
+                                 handler:^(NSError *error) {
+                                     XCTAssertNotNil(resultError);
+                                     XCTAssertNil(resultDictionary);
+                                 }];
 }
 
 #pragma mark - Helper Methods
 
-- (NSData *)generateJSONResponseData {
+- (NSData *)generateValidJSONResponseData {
     NSData *data = [NSJSONSerialization dataWithJSONObject:@{
                                                              @"key" : @"value"
                                                              }
                                                    options:0
                                                      error:nil];
+    return data;
+}
+
+- (NSData *)generateInvalidJSONResponseData {
+    NSData *data = [@"1" dataUsingEncoding:NSUTF8StringEncoding];
     return data;
 }
 
