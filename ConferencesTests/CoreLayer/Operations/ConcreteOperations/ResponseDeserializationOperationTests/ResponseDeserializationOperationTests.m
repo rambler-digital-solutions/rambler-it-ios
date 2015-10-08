@@ -60,7 +60,11 @@
     // given
     XCTestExpectation *expectation = [self expectationForCurrentTest];
     
-    [self stubDeserializerWithData:@{} error:nil];
+    NSDictionary *inputDictionary = @{
+                                      @"key" : @"value"
+                                      };
+    
+    [self stubDeserializerWithData:inputDictionary error:nil];
     [self setInputData:[NSData new] forOperation:self.operation];
     
     id mockDelegate = OCMProtocolMock(@protocol(ChainableOperationDelegate));
@@ -77,7 +81,7 @@
     
     // then
     [self waitForExpectationsWithTimeout:kTestExpectationTimeout handler:^(NSError *error) {
-        OCMVerify([self.operation.output didCompleteChainableOperationWithOutputData:@{}]);
+        OCMVerify([self.operation.output didCompleteChainableOperationWithOutputData:inputDictionary]);
         OCMVerify([mockDelegate didCompleteChainableOperationWithError:nil]);
         XCTAssertTrue(self.operation.isFinished);
     }];
@@ -87,8 +91,8 @@
     // given
     XCTestExpectation *expectation = [self expectationForCurrentTest];
     
-    NSError *error = [NSError errorWithDomain:@"" code:0 userInfo:nil];
-    [self stubDeserializerWithData:nil error:error];
+    NSError *innerError = [NSError errorWithDomain:@"" code:0 userInfo:nil];
+    [self stubDeserializerWithData:nil error:innerError];
     [self setInputData:[NSData new] forOperation:self.operation];
     
     id mockDelegate = OCMProtocolMock(@protocol(ChainableOperationDelegate));
@@ -105,7 +109,7 @@
     
     // then
     [self waitForExpectationsWithTimeout:kTestExpectationTimeout handler:^(NSError *error) {
-        OCMVerify([mockDelegate didCompleteChainableOperationWithError:OCMOCK_ANY]);
+        OCMVerify([mockDelegate didCompleteChainableOperationWithError:innerError]);
         XCTAssertTrue(self.operation.isFinished);
     }];
 }
