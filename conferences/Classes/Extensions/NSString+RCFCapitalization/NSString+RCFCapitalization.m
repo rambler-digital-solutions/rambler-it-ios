@@ -16,7 +16,7 @@
     }
     NSString *firstSymbol = [self substringToIndex:1];
     return [self stringByReplacingCharactersInRange:NSMakeRange(0, 1)
-                                         withString:[firstSymbol lowercaseString]];
+                                         withString:firstSymbol.lowercaseString];
 }
 
 @end
