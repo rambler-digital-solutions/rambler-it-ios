@@ -8,6 +8,8 @@
 
 #import "RCFJSONResponseDeserializer.h"
 
+static NSString *const kPlainTextContentType = @"text/plain";
+
 @implementation RCFJSONResponseDeserializer
 
 #pragma mark - Initialization
@@ -16,7 +18,7 @@
     self = [super init];
     if (self) {
         NSMutableSet *contentTypes = [self.acceptableContentTypes mutableCopy];
-        [contentTypes addObject: @"text/plain"];
+        [contentTypes addObject:kPlainTextContentType];
         self.acceptableContentTypes = [contentTypes copy];
     }
     return self;
@@ -26,6 +28,7 @@
 
 - (void)deserializeServerResponse:(NSData *)responseData
                   completionBlock:(RCFResponseDeserializerCompletionBlock)block {
+    NSAssert(block, @"Block shouldn't be nil");
     NSError *error;
     NSDictionary *deserializedResponse = [super responseObjectForResponse:nil
                                                                      data:responseData
