@@ -30,14 +30,11 @@
 
 - (void)testThatFormatterFormatsResponse {
     // given
+    NSArray *resultsArray = @[@"1", @"2", @"3"];
     NSDictionary *response = @{
-                               @"results" : @[
-                                       @"1",
-                                       @"2",
-                                       @"3"
-                                       ]
+                               @"results" : resultsArray
                                };
-    NSUInteger const kExpectedNumberOfItems = 3;
+    NSUInteger const kExpectedNumberOfItems = resultsArray.count;
     
     // when
     NSArray *result = [self.formatter formatServerResponse:response];
