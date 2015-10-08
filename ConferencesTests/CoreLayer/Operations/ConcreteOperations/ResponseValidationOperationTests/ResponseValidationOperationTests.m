@@ -59,8 +59,11 @@
     // given
     XCTestExpectation *expectation = [self expectationForCurrentTest];
     
+    NSDictionary *inputData = @{
+                                @"key" : @"value"
+                                };
     [self stubValidatorWithError:nil];
-    [self setInputData:@{} forOperation:self.operation];
+    [self setInputData:inputData forOperation:self.operation];
     
     id mockDelegate = OCMProtocolMock(@protocol(ChainableOperationDelegate));
     self.operation.delegate = mockDelegate;
@@ -76,7 +79,7 @@
     
     // then
     [self waitForExpectationsWithTimeout:kTestExpectationTimeout handler:^(NSError *error) {
-        OCMVerify([self.operation.output didCompleteChainableOperationWithOutputData:@{}]);
+        OCMVerify([self.operation.output didCompleteChainableOperationWithOutputData:inputData]);
         OCMVerify([mockDelegate didCompleteChainableOperationWithError:nil]);
         XCTAssertTrue(self.operation.isFinished);
     }];

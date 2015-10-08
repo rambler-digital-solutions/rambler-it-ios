@@ -67,7 +67,7 @@
     NSDictionary *inputData = @{
                                 @"key" : @"value"
                                 };
-    [self stubMapperWithData:@{} error:nil];
+    [self stubMapperWithData:inputData error:nil];
     [self setInputData:inputData forOperation:self.operation];
     
     id mockDelegate = OCMProtocolMock(@protocol(ChainableOperationDelegate));
@@ -84,7 +84,7 @@
     
     // then
     [self waitForExpectationsWithTimeout:kTestExpectationTimeout handler:^(NSError *error) {
-        OCMVerify([self.operation.output didCompleteChainableOperationWithOutputData:@{}]);
+        OCMVerify([self.operation.output didCompleteChainableOperationWithOutputData:inputData]);
         OCMVerify([mockDelegate didCompleteChainableOperationWithError:nil]);
         XCTAssertTrue(self.operation.isFinished);
     }];
