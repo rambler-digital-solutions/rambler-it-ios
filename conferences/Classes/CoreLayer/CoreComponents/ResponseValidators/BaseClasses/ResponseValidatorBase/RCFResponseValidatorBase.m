@@ -16,9 +16,9 @@ static NSUInteger const kInvalidResponseErrorCode = 1;
 
 - (BOOL)validateResponseIsDictionaryClass:(id)response
                                     error:(NSError *__autoreleasing *)error {
-    if (response == nil || ![response isKindOfClass: [NSDictionary class]]) {
+    if (![response isKindOfClass: [NSDictionary class]]) {
         NSDictionary *userData = @{
-                                   @"response" : (response == nil ? [NSNull null] : response)
+                                   @"response" : (response ?: [NSNull null])
                                    };
         *error = [NSError errorWithDomain:kResponseValidationErrorDomain
                                      code:kInvalidResponseErrorCode
