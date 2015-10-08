@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "RCFEventService.h"
 
-@interface RCFEventServiceEmplementation : NSObject <RCFEventService>
+@interface RCFEventServiceImplementation : NSObject <RCFEventService>
 
 @end

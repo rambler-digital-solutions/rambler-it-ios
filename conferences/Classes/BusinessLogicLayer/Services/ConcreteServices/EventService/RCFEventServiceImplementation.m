@@ -6,9 +6,9 @@
 //  Copyright © 2015 Rambler. All rights reserved.
 //
 
-#import "RCFEventServiceEmplementation.h"
+#import "RCFEventServiceImplementation.h"
 
-@implementation RCFEventServiceEmplementation
+@implementation RCFEventServiceImplementation
 
 - (void)updateEventWithPredicate:(NSPredicate *)predicate
                  completionBlock:(RCFEventCompletionBlock)completionBlock {

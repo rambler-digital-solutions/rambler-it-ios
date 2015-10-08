@@ -20,7 +20,7 @@
 		636B63ED1BBDCEEA0053E38F /* Speaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B63DF1BBDCEEA0053E38F /* Speaker.m */; settings = {ASSET_TAGS = (); }; };
 		636B63EE1BBDCEEA0053E38F /* LectureMaterials+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B63E11BBDCEEA0053E38F /* LectureMaterials+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
 		636B63EF1BBDCEEA0053E38F /* LectureMaterials.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B63E31BBDCEEA0053E38F /* LectureMaterials.m */; settings = {ASSET_TAGS = (); }; };
-		636B63FF1BBDD0C70053E38F /* RCFEventServiceEmplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B63FE1BBDD0C70053E38F /* RCFEventServiceEmplementation.m */; settings = {ASSET_TAGS = (); }; };
+		636B63FF1BBDD0C70053E38F /* RCFEventServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B63FE1BBDD0C70053E38F /* RCFEventServiceImplementation.m */; settings = {ASSET_TAGS = (); }; };
 		636B64041BBDD19A0053E38F /* RCFLectureServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64031BBDD19A0053E38F /* RCFLectureServiceImplementation.m */; settings = {ASSET_TAGS = (); }; };
 		636B64071BBDD2A40053E38F /* RCFLectureMaterialsServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64061BBDD2A40053E38F /* RCFLectureMaterialsServiceImplementation.m */; settings = {ASSET_TAGS = (); }; };
 		636B640A1BBDD3FA0053E38F /* RCFRegistrationQuestionServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64091BBDD3FA0053E38F /* RCFRegistrationQuestionServiceImplementation.m */; settings = {ASSET_TAGS = (); }; };
@@ -147,8 +147,8 @@
 		636B63E11BBDCEEA0053E38F /* LectureMaterials+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LectureMaterials+CoreDataProperties.m"; sourceTree = "<group>"; };
 		636B63E21BBDCEEA0053E38F /* LectureMaterials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectureMaterials.h; sourceTree = "<group>"; };
 		636B63E31BBDCEEA0053E38F /* LectureMaterials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LectureMaterials.m; sourceTree = "<group>"; };
-		636B63FD1BBDD0C70053E38F /* RCFEventServiceEmplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCFEventServiceEmplementation.h; sourceTree = "<group>"; };
-		636B63FE1BBDD0C70053E38F /* RCFEventServiceEmplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCFEventServiceEmplementation.m; sourceTree = "<group>"; };
+		636B63FD1BBDD0C70053E38F /* RCFEventServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCFEventServiceImplementation.h; sourceTree = "<group>"; };
+		636B63FE1BBDD0C70053E38F /* RCFEventServiceImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCFEventServiceImplementation.m; sourceTree = "<group>"; };
 		636B64021BBDD19A0053E38F /* RCFLectureServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCFLectureServiceImplementation.h; sourceTree = "<group>"; };
 		636B64031BBDD19A0053E38F /* RCFLectureServiceImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCFLectureServiceImplementation.m; sourceTree = "<group>"; };
 		636B64051BBDD2A40053E38F /* RCFLectureMaterialsServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCFLectureMaterialsServiceImplementation.h; sourceTree = "<group>"; };
@@ -393,8 +393,8 @@
 			isa = PBXGroup;
 			children = (
 				6373A3E61BBDBFDC00DF67FF /* RCFEventService.h */,
-				636B63FD1BBDD0C70053E38F /* RCFEventServiceEmplementation.h */,
-				636B63FE1BBDD0C70053E38F /* RCFEventServiceEmplementation.m */,
+				636B63FD1BBDD0C70053E38F /* RCFEventServiceImplementation.h */,
+				636B63FE1BBDD0C70053E38F /* RCFEventServiceImplementation.m */,
 			);
 			path = EventService;
 			sourceTree = "<group>";
@@ -1917,7 +1917,7 @@
 				9F0A85021BC1698B006F79FB /* ResponseValidationOperation.m in Sources */,
 				9F0A84FB1BC1698B006F79FB /* CompoundOperationBase.m in Sources */,
 				9F0A84F91BC1698B006F79FB /* AsyncOperation.m in Sources */,
-				636B63FF1BBDD0C70053E38F /* RCFEventServiceEmplementation.m in Sources */,
+				636B63FF1BBDD0C70053E38F /* RCFEventServiceImplementation.m in Sources */,
 				9F0A85321BC18906006F79FB /* EventQuery.m in Sources */,
 				9F0A84FF1BC1698B006F79FB /* RequestSigningOperation.m in Sources */,
 				9F1830F51BC14444000E21A5 /* NSString+RCFCapitalization.m in Sources */,
