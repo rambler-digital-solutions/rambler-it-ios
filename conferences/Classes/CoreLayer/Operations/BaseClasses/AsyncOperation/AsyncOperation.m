@@ -8,6 +8,9 @@
 
 #import "AsyncOperation.h"
 
+static NSString *const kExecutingFlagSelector = @"isExecuting";
+static NSString *const kFinishedFlagSelector = @"isFinished";
+
 @implementation AsyncOperation {
     BOOL        executing;
     BOOL        finished;
@@ -51,9 +54,9 @@
          
          If it was cancelled, we are switching it to finished state
          */
-        [self willChangeValueForKey:@"isFinished"];
+        [self willChangeValueForKey:kFinishedFlagSelector];
         finished = YES;
-        [self didChangeValueForKey:@"isFinished"];
+        [self didChangeValueForKey:kFinishedFlagSelector];
         return;
     }
     
@@ -62,16 +65,16 @@
      
      If it wasn't cancelled, we're beginning the task
      */
-    [self willChangeValueForKey:@"isExecuting"];
+    [self willChangeValueForKey:kExecutingFlagSelector];
     
     [NSThread detachNewThreadSelector:@selector(main) toTarget:self withObject:nil];
     executing = YES;
-    [self didChangeValueForKey:@"isExecuting"];
+    [self didChangeValueForKey:kExecutingFlagSelector];
 }
 
 - (void)main {
     [NSException raise:NSInternalInconsistencyException
-                format:@"Требуется переопределить метод %@ в конкретном наследнике", NSStringFromSelector(_cmd)];
+                format:@"You should override the method %@ in a subclass", NSStringFromSelector(_cmd)];
 }
 
 - (void)complete {
@@ -80,14 +83,14 @@
      
      We should always manually setup finished and executing flags after the operation is complete
      */
-    [self willChangeValueForKey:@"isFinished"];
-    [self willChangeValueForKey:@"isExecuting"];
+    [self willChangeValueForKey:kFinishedFlagSelector];
+    [self willChangeValueForKey:kExecutingFlagSelector];
     
     executing = NO;
     finished = YES;
     
-    [self didChangeValueForKey:@"isExecuting"];
-    [self didChangeValueForKey:@"isFinished"];
+    [self didChangeValueForKey:kExecutingFlagSelector];
+    [self didChangeValueForKey:kFinishedFlagSelector];
 }
 
 @end
