@@ -8,13 +8,13 @@
 
 #import "ResponseValidatorsAssembly.h"
 
-#import "RCFParseResponseValidator.h"
+#import "ParseResponseValidator.h"
 
 @implementation ResponseValidatorsAssembly
 
 #pragma mark - Option matcher
 
-- (id<RCFResponseValidator>)validatorWithType:(NSNumber *)type {
+- (id<ResponseValidator>)validatorWithType:(NSNumber *)type {
     return [TyphoonDefinition withOption:type matcher:^(TyphoonOptionMatcher *matcher) {
         [matcher caseEqual:@(ResponseValidationParseType)
                        use:[self parseResponseValidator]];
@@ -23,8 +23,8 @@
 
 #pragma mark - Concrete definitions
 
-- (id<RCFResponseValidator>)parseResponseValidator {
-    return [TyphoonDefinition withClass:[RCFParseResponseValidator class]];
+- (id<ResponseValidator>)parseResponseValidator {
+    return [TyphoonDefinition withClass:[ParseResponseValidator class]];
 }
 
 @end

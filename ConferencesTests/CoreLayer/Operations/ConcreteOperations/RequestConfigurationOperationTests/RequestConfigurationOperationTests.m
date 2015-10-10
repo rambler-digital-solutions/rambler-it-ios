@@ -9,9 +9,9 @@
 #import "ChainableOperationTestsBase.h"
 
 #import "RequestConfigurationOperation.h"
-#import "RCFRequestConfigurator.h"
+#import "RequestConfigurator.h"
 #import "OperationBuffer.h"
-#import "RCFRequestDataModel.h"
+#import "RequestDataModel.h"
 
 @interface RequestConfigurationOperationTests : ChainableOperationTestsBase
 
@@ -25,7 +25,7 @@
 - (void)setUp {
     [super setUp];
     
-    self.mockRequestConfigurator = OCMProtocolMock(@protocol(RCFRequestConfigurator));
+    self.mockRequestConfigurator = OCMProtocolMock(@protocol(RequestConfigurator));
     self.operation = [RequestConfigurationOperation operationWithRequestConfigurator:self.mockRequestConfigurator method:nil serviceName:nil urlParameters:nil];
 }
 
@@ -40,7 +40,7 @@
     // given
     XCTestExpectation *expectation = [self expectationForCurrentTest];
     
-    RCFRequestDataModel *dataModel = [RCFRequestDataModel new];
+    RequestDataModel *dataModel = [RequestDataModel new];
     [self setInputData:dataModel forOperation:self.operation];
     
     [self.operation setCompletionBlock:^{
@@ -62,7 +62,7 @@
 - (void)testThatOperationCompletesSuccessfully {
     // given
     XCTestExpectation *expectation = [self expectationForCurrentTest];
-    RCFRequestDataModel *dataModel = [RCFRequestDataModel new];
+    RequestDataModel *dataModel = [RequestDataModel new];
     [self setInputData:dataModel forOperation:self.operation];
     
     OperationBuffer *outputBuffer = [OperationBuffer buffer];

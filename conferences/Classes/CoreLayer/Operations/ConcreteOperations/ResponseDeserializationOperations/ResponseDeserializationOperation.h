@@ -10,7 +10,7 @@
 
 #import "ChainableOperation.h"
 
-@protocol RCFResponseDeserializer;
+@protocol ResponseDeserializer;
 
 /**
  @author Egor Tolstoy
@@ -19,6 +19,6 @@
  */
 @interface ResponseDeserializationOperation : AsyncOperation <ChainableOperation>
 
-+ (instancetype)operationWithResponseDeserializer:(id<RCFResponseDeserializer>)responseDeserializer;
++ (instancetype)operationWithResponseDeserializer:(id<ResponseDeserializer>)responseDeserializer;
 
 @end

@@ -11,11 +11,11 @@
 #import "XCTestCase+RCFHelpers.h"
 #import "TestConstants.h"
 
-#import "RCFJSONResponseDeserializer.h"
+#import "JSONResponseDeserializer.h"
 
 @interface RCFJSONResponseDeserializerTests : XCTestCase
 
-@property (strong, nonatomic) RCFJSONResponseDeserializer *deserializer;
+@property (strong, nonatomic) JSONResponseDeserializer *deserializer;
 
 @end
 
@@ -24,7 +24,7 @@
 - (void)setUp {
     [super setUp];
     
-    self.deserializer = [[RCFJSONResponseDeserializer alloc] init];
+    self.deserializer = [[JSONResponseDeserializer alloc] init];
 }
 
 - (void)tearDown {

@@ -8,13 +8,13 @@
 
 #import "ResponseDeserializersAssembly.h"
 
-#import "RCFJSONResponseDeserializer.h"
+#import "JSONResponseDeserializer.h"
 
 @implementation ResponseDeserializersAssembly
 
 #pragma mark - Option matcher
 
-- (id<RCFResponseDeserializer>)deserializerWithType:(NSNumber *)type {
+- (id<ResponseDeserializer>)deserializerWithType:(NSNumber *)type {
     return [TyphoonDefinition withOption:type matcher:^(TyphoonOptionMatcher *matcher) {
         [matcher caseEqual:@(ResponseDeserializationJSONType)
                        use:[self jsonResponseDeserializer]];
@@ -23,8 +23,8 @@
 
 #pragma mark - Concrete definitions
 
-- (id<RCFResponseDeserializer>)jsonResponseDeserializer {
-    return [TyphoonDefinition withClass:[RCFJSONResponseDeserializer class]];
+- (id<ResponseDeserializer>)jsonResponseDeserializer {
+    return [TyphoonDefinition withClass:[JSONResponseDeserializer class]];
 }
 
 @end

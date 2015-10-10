@@ -14,7 +14,7 @@
 
 #pragma mark - Concrete definitions
 
-- (id<RCFNetworkClient>)commonNetworkClient {
+- (id<NetworkClient>)commonNetworkClient {
     return [TyphoonDefinition withClass:[CommonNetworkClient class] configuration:^(TyphoonDefinition *definition) {
         [definition useInitializer:@selector(initWithURLSession:) parameters:^(TyphoonMethod *initializer) {
             [initializer injectParameterWith:[NSURLSession sharedSession]];

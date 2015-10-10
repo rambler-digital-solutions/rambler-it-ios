@@ -7,11 +7,11 @@
 //
 
 #import "RCFResponseValidatorTestsBase.h"
-#import "RCFResponseValidator.h"
+#import "ResponseValidator.h"
 
 @implementation RCFResponseValidatorTestsBase
 
-- (void)verifyThatValidator:(id<RCFResponseValidator>)validator
+- (void)verifyThatValidator:(id<ResponseValidator>)validator
   validatesCorrectResponse :(NSArray *)response {
     // given
     
@@ -29,7 +29,7 @@
     XCTAssertEqual(resultErrors.count, 0);
 }
 
-- (void)verifyThatValidator:(id<RCFResponseValidator>)validator
+- (void)verifyThatValidator:(id<ResponseValidator>)validator
 validatesIncorrectResponse :(NSArray *)response {
     // given
     

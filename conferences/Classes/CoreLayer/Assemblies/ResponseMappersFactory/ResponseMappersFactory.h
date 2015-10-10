@@ -10,7 +10,7 @@
 
 #import "ResponseMappingType.h"
 
-@protocol RCFResponseMapper;
+@protocol ResponseMapper;
 
 /**
  @author Egor Tolstoy
@@ -28,6 +28,6 @@
  
  @return id<ResponseMapper>
  */
-- (id<RCFResponseMapper>)mapperWithType:(NSNumber *)type;
+- (id<ResponseMapper>)mapperWithType:(NSNumber *)type;
 
 @end

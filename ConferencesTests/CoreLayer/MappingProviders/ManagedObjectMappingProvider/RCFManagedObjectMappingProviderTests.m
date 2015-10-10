@@ -9,12 +9,12 @@
 #import <XCTest/XCTest.h>
 #import <EasyMapping/EasyMapping.h>
 
-#import "RCFManagedObjectMappingProvider.h"
+#import "ManagedObjectMappingProvider.h"
 #import "SocialNetworkAccount.h"
 
 @interface RCFManagedObjectMappingProviderTests : XCTestCase
 
-@property (strong, nonatomic) RCFManagedObjectMappingProvider *provider;
+@property (strong, nonatomic) ManagedObjectMappingProvider *provider;
 
 @end
 
@@ -23,7 +23,7 @@
 - (void)setUp {
     [super setUp];
     
-    self.provider = [[RCFManagedObjectMappingProvider alloc] init];
+    self.provider = [[ManagedObjectMappingProvider alloc] init];
 }
 
 - (void)tearDown {

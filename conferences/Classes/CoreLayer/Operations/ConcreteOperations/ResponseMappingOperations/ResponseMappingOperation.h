@@ -10,7 +10,7 @@
 
 #import "ChainableOperation.h"
 
-@protocol RCFResponseMapper;
+@protocol ResponseMapper;
 
 /**
  @author Egor Tolstoy
@@ -19,7 +19,7 @@
  */
 @interface ResponseMappingOperation : AsyncOperation <ChainableOperation>
 
-+ (instancetype)operationWithResponseMapper:(id<RCFResponseMapper>)responseMapper
++ (instancetype)operationWithResponseMapper:(id<ResponseMapper>)responseMapper
                              mappingContext:(NSDictionary *)context;
 
 @end

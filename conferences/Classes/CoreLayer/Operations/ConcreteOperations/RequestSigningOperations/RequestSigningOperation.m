@@ -8,7 +8,7 @@
 
 #import "RequestSigningOperation.h"
 
-#import "RCFRequestSigner.h"
+#import "RequestSigner.h"
 
 #import <CocoalumberJack/CocoaLumberjack.h>
 #import <libextobjc/EXTScope.h>
@@ -17,7 +17,7 @@ static const int ddLogLevel = DDLogLevelVerbose;
 
 @interface RequestSigningOperation ()
 
-@property (strong, nonatomic) id<RCFRequestSigner> requestSigner;
+@property (strong, nonatomic) id<RequestSigner> requestSigner;
 
 @end
 
@@ -29,7 +29,7 @@ static const int ddLogLevel = DDLogLevelVerbose;
 
 #pragma mark - Initialization
 
-- (instancetype)initWithRequestSigner:(id<RCFRequestSigner>)signer {
+- (instancetype)initWithRequestSigner:(id<RequestSigner>)signer {
     self = [super init];
     if (self) {
         _requestSigner = signer;
@@ -37,7 +37,7 @@ static const int ddLogLevel = DDLogLevelVerbose;
     return self;
 }
 
-+ (instancetype)operationWithRequestSigner:(id<RCFRequestSigner>)signer {
++ (instancetype)operationWithRequestSigner:(id<RequestSigner>)signer {
     return [[[self class] alloc] initWithRequestSigner:signer];
 }
 

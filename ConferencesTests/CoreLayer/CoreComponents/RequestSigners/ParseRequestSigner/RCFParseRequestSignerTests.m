@@ -1,5 +1,5 @@
 //
-//  RCFParseRequestSignerTests.m
+//  ParseRequestSignerTests.m
 //  Conferences
 //
 //  Created by Egor Tolstoy on 04/10/15.
@@ -8,24 +8,24 @@
 
 #import <XCTest/XCTest.h>
 
-#import "RCFParseRequestSigner.h"
+#import "ParseRequestSigner.h"
 
 static NSString *const kTestApplicationId = @"applicationId";
 static NSString *const kTestApiKey = @"apiKey";
 static NSString *const kTestURLPath = @"https://myapi.com/v1/rest";
 
-@interface RCFParseRequestSignerTests : XCTestCase
+@interface ParseRequestSignerTests : XCTestCase
 
-@property (strong, nonatomic) RCFParseRequestSigner *signer;
+@property (strong, nonatomic) ParseRequestSigner *signer;
 
 @end
 
-@implementation RCFParseRequestSignerTests
+@implementation ParseRequestSignerTests
 
 - (void)setUp {
     [super setUp];
     
-    self.signer = [[RCFParseRequestSigner alloc] initWithApplicationId:kTestApplicationId
+    self.signer = [[ParseRequestSigner alloc] initWithApplicationId:kTestApplicationId
                                                                 apiKey:kTestApiKey];
 }
 

@@ -10,7 +10,7 @@
 
 #import "ChainableOperation.h"
 
-@protocol RCFRequestSigner;
+@protocol RequestSigner;
 @protocol Session;
 
 /**
@@ -20,6 +20,6 @@
  */
 @interface RequestSigningOperation : AsyncOperation <ChainableOperation>
 
-+ (instancetype)operationWithRequestSigner:(id<RCFRequestSigner>)signer;
++ (instancetype)operationWithRequestSigner:(id<RequestSigner>)signer;
 
 @end

@@ -10,7 +10,7 @@
 
 #import "RequestConfigurationType.h"
 
-@protocol RCFRequestConfigurator;
+@protocol RequestConfigurator;
 
 /**
  @author Egor Tolstoy
@@ -28,6 +28,6 @@
  
  @return id<RCFRequestConfigurator>
  */
-- (id<RCFRequestConfigurator>)requestConfiguratorWithType:(NSNumber *)type;
+- (id<RequestConfigurator>)requestConfiguratorWithType:(NSNumber *)type;
 
 @end

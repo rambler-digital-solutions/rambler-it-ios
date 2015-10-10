@@ -71,37 +71,37 @@
 }
 
 - (void)buildRequestConfigurationOperationWithConfig:(CompoundOperationBuilderConfig *)config {
-    id<RCFRequestConfigurator> configurator = [self.requestConfiguratorsFactory requestConfiguratorWithType:@(config.requestConfigurationType)];
+    id<RequestConfigurator> configurator = [self.requestConfiguratorsFactory requestConfiguratorWithType:@(config.requestConfigurationType)];
     RequestConfigurationOperation *operation = [RequestConfigurationOperation operationWithRequestConfigurator:configurator method:config.requestMethod serviceName:config.serviceName urlParameters:config.urlParameters];
     [self addOperation:operation];
 }
 
 - (void)buildRequestSigningOperationWithConfig:(CompoundOperationBuilderConfig *)config {
-    id<RCFRequestSigner> signer = [self.requestSignersFactory requestSignerWithType:@(config.requestSigningType)];
+    id<RequestSigner> signer = [self.requestSignersFactory requestSignerWithType:@(config.requestSigningType)];
     RequestSigningOperation *operation = [RequestSigningOperation operationWithRequestSigner:signer];
     [self addOperation:operation];
 }
 
 - (void)buildNetworkOperationWithConfig:(CompoundOperationBuilderConfig *)config {
-    id<RCFNetworkClient> client = [self.networkClientsFactory commonNetworkClient];
+    id<NetworkClient> client = [self.networkClientsFactory commonNetworkClient];
     NetworkOperation *operation = [NetworkOperation operationWithNetworkClient:client];
     [self addOperation:operation];
 }
 
 - (void)buildResponseDeserializationOperationWithConfig:(CompoundOperationBuilderConfig *)config {
-    id<RCFResponseDeserializer> deserializer = [self.responseDeserializersFactory deserializerWithType:@(config.responseDeserializationType)];
+    id<ResponseDeserializer> deserializer = [self.responseDeserializersFactory deserializerWithType:@(config.responseDeserializationType)];
     ResponseDeserializationOperation *operation = [ResponseDeserializationOperation operationWithResponseDeserializer:deserializer];
     [self addOperation:operation];
 }
 
 - (void)buildResponseValidationOperationWithConfig:(CompoundOperationBuilderConfig *)config {
-    id<RCFResponseValidator> validator = [self.responseValidatorsFactory validatorWithType:@(config.responseValidationType)];
+    id<ResponseValidator> validator = [self.responseValidatorsFactory validatorWithType:@(config.responseValidationType)];
     ResponseValidationOperation *operation = [ResponseValidationOperation operationWithResponseValidator:validator];
     [self addOperation:operation];
 }
 
 - (void)buildResponseMappingOperationWithConfig:(CompoundOperationBuilderConfig *)config {
-    id <RCFResponseMapper> mapper = [self.responseMappersFactory mapperWithType:@(config.responseMappingType)];
+    id <ResponseMapper> mapper = [self.responseMappersFactory mapperWithType:@(config.responseMappingType)];
     ResponseMappingOperation *operation = [ResponseMappingOperation operationWithResponseMapper:mapper mappingContext:config.mappingContext];
     [self addOperation:operation];
 }

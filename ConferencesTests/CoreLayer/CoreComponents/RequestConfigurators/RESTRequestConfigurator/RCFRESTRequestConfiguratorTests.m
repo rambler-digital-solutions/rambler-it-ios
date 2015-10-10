@@ -10,15 +10,15 @@
 
 #import "NetworkingConstantsHeader.h"
 
-#import "RCFRESTRequestConfigurator.h"
-#import "RCFRequestDataModel.h"
+#import "RESTRequestConfigurator.h"
+#import "RequestDataModel.h"
 
 static NSString *const kTestBaseURLPath = @"https://myapi.com";
 static NSString *const kTestBaseAPIPath = @"/v1/rest/";
 
 @interface RCFRESTRequestConfiguratorTests : XCTestCase
 
-@property (strong, nonatomic) RCFRESTRequestConfigurator *configurator;
+@property (strong, nonatomic) RESTRequestConfigurator *configurator;
 
 @end
 
@@ -28,7 +28,7 @@ static NSString *const kTestBaseAPIPath = @"/v1/rest/";
     [super setUp];
     
     NSURL *baseURL = [NSURL URLWithString:kTestBaseURLPath];
-    self.configurator = [[RCFRESTRequestConfigurator alloc] initWithBaseURL:baseURL
+    self.configurator = [[RESTRequestConfigurator alloc] initWithBaseURL:baseURL
                                                                     apiPath:kTestBaseAPIPath];
 }
 
@@ -72,7 +72,7 @@ static NSString *const kTestBaseAPIPath = @"/v1/rest/";
     // given
     NSString *expectedURLPath = @"https://myapi.com/v1/rest/service/object?key1=value1&key2=value2";
     
-    RCFRequestDataModel *dataModel = [[RCFRequestDataModel alloc] init];
+    RequestDataModel *dataModel = [[RequestDataModel alloc] init];
     dataModel.queryParameters = [self generateRequestParameters];
     
     // when
@@ -90,7 +90,7 @@ static NSString *const kTestBaseAPIPath = @"/v1/rest/";
     // given
     NSString *expectedURLPath = @"https://myapi.com/v1/rest/service/object";
     
-    RCFRequestDataModel *dataModel = [[RCFRequestDataModel alloc] init];
+    RequestDataModel *dataModel = [[RequestDataModel alloc] init];
     dataModel.bodyData = [self generateBodyData];
     
     // when
@@ -111,7 +111,7 @@ static NSString *const kTestBaseAPIPath = @"/v1/rest/";
     NSURL *baseURL = [NSURL URLWithString:@"https://myapi.com"];
     NSString *apiPath = @"/v1//rest";
     
-    self.configurator = [[RCFRESTRequestConfigurator alloc] initWithBaseURL:baseURL
+    self.configurator = [[RESTRequestConfigurator alloc] initWithBaseURL:baseURL
                                                                     apiPath:apiPath];
     
     // when

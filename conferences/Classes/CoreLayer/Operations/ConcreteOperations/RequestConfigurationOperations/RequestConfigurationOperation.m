@@ -8,8 +8,8 @@
 
 #import "RequestConfigurationOperation.h"
 
-#import "RCFRequestConfigurator.h"
-#import "RCFRequestDataModel.h"
+#import "RequestConfigurator.h"
+#import "RequestDataModel.h"
 
 #import <CocoalumberJack/CocoaLumberjack.h>
 
@@ -17,7 +17,7 @@ static const int ddLogLevel = DDLogLevelVerbose;
 
 @interface RequestConfigurationOperation ()
 
-@property (strong, nonatomic) id<RCFRequestConfigurator> requestConfigurator;
+@property (strong, nonatomic) id<RequestConfigurator> requestConfigurator;
 @property (strong, nonatomic) NSString *method;
 @property (strong, nonatomic) NSString *serviceName;
 @property (strong, nonatomic) NSArray *urlParameters;
@@ -32,7 +32,7 @@ static const int ddLogLevel = DDLogLevelVerbose;
 
 #pragma mark - Initialization
 
-- (instancetype)initWithRequestConfigurator:(id<RCFRequestConfigurator>)configurator
+- (instancetype)initWithRequestConfigurator:(id<RequestConfigurator>)configurator
                                      method:(NSString *)method
                                 serviceName:(NSString *)serviceName
                               urlParameters:(NSArray *)urlParameters {
@@ -46,7 +46,7 @@ static const int ddLogLevel = DDLogLevelVerbose;
     return self;
 }
 
-+ (instancetype)operationWithRequestConfigurator:(id<RCFRequestConfigurator>)configurator
++ (instancetype)operationWithRequestConfigurator:(id<RequestConfigurator>)configurator
                                           method:(NSString *)method
                                      serviceName:(NSString *)serviceName
                                    urlParameters:(NSArray *)urlParameters {
@@ -60,8 +60,8 @@ static const int ddLogLevel = DDLogLevelVerbose;
 
 - (void)main {
     DDLogVerbose(@"The operation %@ is started", NSStringFromClass([self class]));
-    RCFRequestDataModel *inputData = [self.input obtainInputDataWithTypeValidationBlock:^BOOL(id data) {
-        if ([data isKindOfClass:[RCFRequestDataModel class]] || data == nil) {
+    RequestDataModel *inputData = [self.input obtainInputDataWithTypeValidationBlock:^BOOL(id data) {
+        if ([data isKindOfClass:[RequestDataModel class]] || data == nil) {
             DDLogVerbose(@"The input data for the operation %@ has passed the validation", NSStringFromClass([self class]));
             return YES;
         }

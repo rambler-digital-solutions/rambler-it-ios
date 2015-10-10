@@ -8,7 +8,7 @@
 
 #import "ResponseValidationOperation.h"
 
-#import "RCFResponseValidator.h"
+#import "ResponseValidator.h"
 
 #import <CocoalumberJack/CocoaLumberjack.h>
 
@@ -16,7 +16,7 @@ static const int ddLogLevel = DDLogLevelVerbose;
 
 @interface ResponseValidationOperation ()
 
-@property (strong, nonatomic) id<RCFResponseValidator> responseValidator;
+@property (strong, nonatomic) id<ResponseValidator> responseValidator;
 
 @end
 
@@ -28,7 +28,7 @@ static const int ddLogLevel = DDLogLevelVerbose;
 
 #pragma mark - Initialization
 
-- (instancetype)initWithResponseValidator:(id<RCFResponseValidator>)responseValidator {
+- (instancetype)initWithResponseValidator:(id<ResponseValidator>)responseValidator {
     self = [super init];
     if (self) {
         _responseValidator = responseValidator;
@@ -36,7 +36,7 @@ static const int ddLogLevel = DDLogLevelVerbose;
     return self;
 }
 
-+ (instancetype)operationWithResponseValidator:(id<RCFResponseValidator>)responseValidator {
++ (instancetype)operationWithResponseValidator:(id<ResponseValidator>)responseValidator {
     return [[[self class] alloc] initWithResponseValidator:responseValidator];
 }
 

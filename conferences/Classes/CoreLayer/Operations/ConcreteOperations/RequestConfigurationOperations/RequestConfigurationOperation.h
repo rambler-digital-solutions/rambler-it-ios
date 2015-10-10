@@ -10,7 +10,7 @@
 
 #import "ChainableOperation.h"
 
-@protocol RCFRequestConfigurator;
+@protocol RequestConfigurator;
 
 /**
  @author Egor Tolstoy
@@ -19,7 +19,7 @@
  */
 @interface RequestConfigurationOperation : AsyncOperation <ChainableOperation>
 
-+ (instancetype)operationWithRequestConfigurator:(id<RCFRequestConfigurator>)configurator
++ (instancetype)operationWithRequestConfigurator:(id<RequestConfigurator>)configurator
                                           method:(NSString *)method
                                      serviceName:(NSString *)serviceName
                                    urlParameters:(NSArray *)urlParameters;

@@ -8,18 +8,18 @@
 
 #import "ResponseMappersAssembly.h"
 
-#import "RCFManagedObjectMapper.h"
+#import "ManagedObjectMapper.h"
 
-#import "RCFResultsResponseObjectFormatter.h"
-#import "RCFSingleResponseObjectFormatter.h"
+#import "ResultsResponseObjectFormatter.h"
+#import "SingleResponseObjectFormatter.h"
 
-#import "RCFManagedObjectMappingProvider.h"
+#import "ManagedObjectMappingProvider.h"
 
 @implementation ResponseMappersAssembly
 
 #pragma mark - Option matcher
 
-- (id<RCFResponseMapper>)mapperWithType:(NSNumber *)type {
+- (id<ResponseMapper>)mapperWithType:(NSNumber *)type {
     return [TyphoonDefinition withOption:type matcher:^(TyphoonOptionMatcher *matcher) {
         [matcher caseEqual:@(ResponseMappingResultsType)
                        use:[self resultsResponseMapper]];
@@ -31,8 +31,8 @@
 
 #pragma mark - Concrete definitions
 
-- (id<RCFResponseMapper>)resultsResponseMapper {
-    return [TyphoonDefinition withClass:[RCFManagedObjectMapper class] configuration:^(TyphoonDefinition *definition) {
+- (id<ResponseMapper>)resultsResponseMapper {
+    return [TyphoonDefinition withClass:[ManagedObjectMapper class] configuration:^(TyphoonDefinition *definition) {
         [definition useInitializer:@selector(initWithMappingProvider:responseObjectFormatter:) parameters:^(TyphoonMethod *initializer) {
             [initializer injectParameterWith:[self mappingProvider]];
             [initializer injectParameterWith:[self resultsObjectFormatter]];
@@ -40,8 +40,8 @@
     }];
 }
 
-- (id<RCFResponseMapper>)singleResponseMapper {
-    return [TyphoonDefinition withClass:[RCFManagedObjectMapper class] configuration:^(TyphoonDefinition *definition) {
+- (id<ResponseMapper>)singleResponseMapper {
+    return [TyphoonDefinition withClass:[ManagedObjectMapper class] configuration:^(TyphoonDefinition *definition) {
         [definition useInitializer:@selector(initWithMappingProvider:responseObjectFormatter:) parameters:^(TyphoonMethod *initializer) {
             [initializer injectParameterWith:[self mappingProvider]];
             [initializer injectParameterWith:[self singleObjectFormatter]];
@@ -51,18 +51,18 @@
 
 #pragma mark - Object formatters
 
-- (id<RCFResponseObjectFormatter>)resultsObjectFormatter {
-    return [TyphoonDefinition withClass:[RCFResultsResponseObjectFormatter class]];
+- (id<ResponseObjectFormatter>)resultsObjectFormatter {
+    return [TyphoonDefinition withClass:[ResultsResponseObjectFormatter class]];
 }
 
-- (id<RCFResponseObjectFormatter>)singleObjectFormatter {
-    return [TyphoonDefinition withClass:[RCFSingleResponseObjectFormatter class]];
+- (id<ResponseObjectFormatter>)singleObjectFormatter {
+    return [TyphoonDefinition withClass:[SingleResponseObjectFormatter class]];
 }
 
 #pragma mark - Mapping provider
 
-- (RCFManagedObjectMappingProvider *)mappingProvider {
-    return [TyphoonDefinition withClass:[RCFManagedObjectMappingProvider class]];
+- (ManagedObjectMappingProvider *)mappingProvider {
+    return [TyphoonDefinition withClass:[ManagedObjectMappingProvider class]];
 }
 
 @end

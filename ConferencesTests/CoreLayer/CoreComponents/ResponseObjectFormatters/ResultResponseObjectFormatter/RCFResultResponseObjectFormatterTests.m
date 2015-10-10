@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-#import "RCFResultsResponseObjectFormatter.h"
+#import "ResultsResponseObjectFormatter.h"
 
 @interface RCFResultResponseObjectFormatterTests : XCTestCase
 
-@property (strong, nonatomic) RCFResultsResponseObjectFormatter *formatter;
+@property (strong, nonatomic) ResultsResponseObjectFormatter *formatter;
 
 @end
 
@@ -20,7 +20,7 @@
 
 - (void)setUp {
     [super setUp];
-    self.formatter = [[RCFResultsResponseObjectFormatter alloc] init];
+    self.formatter = [[ResultsResponseObjectFormatter alloc] init];
 }
 
 - (void)tearDown {

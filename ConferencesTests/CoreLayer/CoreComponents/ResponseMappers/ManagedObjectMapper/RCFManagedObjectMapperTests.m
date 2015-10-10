@@ -9,16 +9,16 @@
 #import <XCTest/XCTest.h>
 #import <MagicalRecord/MagicalRecord.h>
 
-#import "RCFManagedObjectMapper.h"
-#import "RCFManagedObjectMappingProvider.h"
-#import "RCFResultsResponseObjectFormatter.h"
+#import "ManagedObjectMapper.h"
+#import "ManagedObjectMappingProvider.h"
+#import "ResultsResponseObjectFormatter.h"
 
 #import "SocialNetworkAccount.h"
 #import "NetworkingConstantsHeader.h"
 
 @interface RCFManagedObjectMapperTests : XCTestCase
 
-@property (strong, nonatomic) RCFManagedObjectMapper *mapper;
+@property (strong, nonatomic) ManagedObjectMapper *mapper;
 
 @end
 
@@ -29,9 +29,9 @@
     
     [MagicalRecord setupCoreDataStackWithInMemoryStore];
     
-    RCFManagedObjectMappingProvider *provider = [[RCFManagedObjectMappingProvider alloc] init];
-    RCFResultsResponseObjectFormatter *formatter = [[RCFResultsResponseObjectFormatter alloc] init];
-    self.mapper = [[RCFManagedObjectMapper alloc] initWithMappingProvider:provider
+    ManagedObjectMappingProvider *provider = [[ManagedObjectMappingProvider alloc] init];
+    ResultsResponseObjectFormatter *formatter = [[ResultsResponseObjectFormatter alloc] init];
+    self.mapper = [[ManagedObjectMapper alloc] initWithMappingProvider:provider
                                                   responseObjectFormatter:formatter];
 }
 

@@ -8,14 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-#import "RCFNetworkClient.h"
+#import "NetworkClient.h"
 
 /**
  @author Egor Tolstoy
  
  A very simple network client, which just sends preconfigured NSURLRequests and processes received raw data up the chain.
  */
-@interface CommonNetworkClient : NSObject <RCFNetworkClient>
+@interface CommonNetworkClient : NSObject <NetworkClient>
 
 /**
  @author Egor Tolstoy

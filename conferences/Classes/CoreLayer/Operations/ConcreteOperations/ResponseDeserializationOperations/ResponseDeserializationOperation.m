@@ -8,7 +8,7 @@
 
 #import "ResponseDeserializationOperation.h"
 
-#import "RCFResponseDeserializer.h"
+#import "ResponseDeserializer.h"
 
 #import <CocoalumberJack/CocoaLumberjack.h>
 #import <libextobjc/EXTScope.h>
@@ -17,7 +17,7 @@ static const int ddLogLevel = DDLogLevelVerbose;
 
 @interface ResponseDeserializationOperation ()
 
-@property (strong, nonatomic) id<RCFResponseDeserializer> responseDeserializer;
+@property (strong, nonatomic) id<ResponseDeserializer> responseDeserializer;
 
 @end
 
@@ -29,7 +29,7 @@ static const int ddLogLevel = DDLogLevelVerbose;
 
 #pragma mark - Initialization
 
-- (instancetype)initWithResponseDeserializer:(id<RCFResponseDeserializer>)responseDeserializer {
+- (instancetype)initWithResponseDeserializer:(id<ResponseDeserializer>)responseDeserializer {
     self = [super init];
     if (self) {
         _responseDeserializer = responseDeserializer;
@@ -37,7 +37,7 @@ static const int ddLogLevel = DDLogLevelVerbose;
     return self;
 }
 
-+ (instancetype)operationWithResponseDeserializer:(id<RCFResponseDeserializer>)responseDeserializer {
++ (instancetype)operationWithResponseDeserializer:(id<ResponseDeserializer>)responseDeserializer {
     return [[[self class] alloc] initWithResponseDeserializer:responseDeserializer];
 }
 

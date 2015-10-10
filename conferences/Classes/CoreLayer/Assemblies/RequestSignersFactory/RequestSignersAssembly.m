@@ -8,7 +8,7 @@
 
 #import "RequestSignersAssembly.h"
 
-#import "RCFParseRequestSigner.h"
+#import "ParseRequestSigner.h"
 
 static  NSString *const kConfigFileName  = @"Conferences.Parse.plist";
 static  NSString *const kParseApplicationIdKey = @"ApplicationId";
@@ -18,7 +18,7 @@ static  NSString *const kParseApiKey = @"APIKey";
 
 #pragma mark - Option matcher
 
-- (id<RCFRequestSigner>)requestSignerWithType:(NSNumber *)type {
+- (id<RequestSigner>)requestSignerWithType:(NSNumber *)type {
     return [TyphoonDefinition withOption:type matcher:^(TyphoonOptionMatcher *matcher) {
         [matcher caseEqual:@(RequestSigningParseType)
                        use:[self parseRequestSigner]];
@@ -27,8 +27,8 @@ static  NSString *const kParseApiKey = @"APIKey";
 
 #pragma mark - Concrete definitions
 
-- (id<RCFRequestSigner>)parseRequestSigner {
-    return [TyphoonDefinition withClass:[RCFParseRequestSigner class] configuration:^(TyphoonDefinition *definition) {
+- (id<RequestSigner>)parseRequestSigner {
+    return [TyphoonDefinition withClass:[ParseRequestSigner class] configuration:^(TyphoonDefinition *definition) {
         [definition useInitializer:@selector(initWithApplicationId:apiKey:) parameters:^(TyphoonMethod *initializer) {
             [initializer injectParameterWith:TyphoonConfig(kParseApplicationIdKey)];
             [initializer injectParameterWith:TyphoonConfig(kParseApiKey)];

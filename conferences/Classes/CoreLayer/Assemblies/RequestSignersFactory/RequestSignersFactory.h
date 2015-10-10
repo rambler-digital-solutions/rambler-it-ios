@@ -10,7 +10,7 @@
 
 #import "RequestSigningType.h"
 
-@protocol RCFRequestSigner;
+@protocol RequestSigner;
 
 /**
  @author Egor Tolstoy
@@ -28,6 +28,6 @@
  
  @return id<RCFRequestSigner>
  */
-- (id<RCFRequestSigner>)requestSignerWithType:(NSNumber *)type;
+- (id<RequestSigner>)requestSignerWithType:(NSNumber *)type;
 
 @end

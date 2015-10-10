@@ -8,7 +8,7 @@
 
 #import "NetworkOperation.h"
 
-#import "RCFNetworkClient.h"
+#import "NetworkClient.h"
 
 #import <CocoalumberJack/CocoaLumberjack.h>
 #import <libextobjc/EXTScope.h>
@@ -17,7 +17,7 @@ static const int ddLogLevel = DDLogFlagVerbose;
 
 @interface NetworkOperation ()
 
-@property (strong, nonatomic) id<RCFNetworkClient> networkClient;
+@property (strong, nonatomic) id<NetworkClient> networkClient;
 
 @end
 
@@ -29,7 +29,7 @@ static const int ddLogLevel = DDLogFlagVerbose;
 
 #pragma mark - Initialization
 
-- (instancetype)initWithNetworkClient:(id<RCFNetworkClient>)networkClient {
+- (instancetype)initWithNetworkClient:(id<NetworkClient>)networkClient {
     self = [super init];
     if (self) {
         _networkClient = networkClient;
@@ -37,7 +37,7 @@ static const int ddLogLevel = DDLogFlagVerbose;
     return self;
 }
 
-+ (instancetype)operationWithNetworkClient:(id<RCFNetworkClient>)networkClient {
++ (instancetype)operationWithNetworkClient:(id<NetworkClient>)networkClient {
     return [[[self class] alloc] initWithNetworkClient:networkClient];
 }
 

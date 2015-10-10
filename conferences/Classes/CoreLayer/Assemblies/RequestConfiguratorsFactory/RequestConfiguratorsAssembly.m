@@ -8,7 +8,7 @@
 
 #import "RequestConfiguratorsAssembly.h"
 
-#import "RCFRESTRequestConfigurator.h"
+#import "RESTRequestConfigurator.h"
 
 static  NSString *const kConfigFileName  = @"Conferences.API.plist";
 static  NSString *const kParseRootURLKey = @"API.Parse.RootURL";
@@ -18,7 +18,7 @@ static  NSString *const kParseRESTPathKey = @"API.Parse.RESTPath";
 
 #pragma mark - Option matcher
 
-- (id<RCFRequestConfigurator>)requestConfiguratorWithType:(NSNumber *)type {
+- (id<RequestConfigurator>)requestConfiguratorWithType:(NSNumber *)type {
     return [TyphoonDefinition withOption:type matcher:^(TyphoonOptionMatcher *matcher) {
         [matcher caseEqual:@(RequestConfigurationRESTType)
                        use:[self restRequestConfigurator]];
@@ -27,8 +27,8 @@ static  NSString *const kParseRESTPathKey = @"API.Parse.RESTPath";
 
 #pragma mark - Concrete definitions
 
-- (id<RCFRequestConfigurator>)restRequestConfigurator {
-    return [TyphoonDefinition withClass:[RCFRESTRequestConfigurator class] configuration:^(TyphoonDefinition *definition) {
+- (id<RequestConfigurator>)restRequestConfigurator {
+    return [TyphoonDefinition withClass:[RESTRequestConfigurator class] configuration:^(TyphoonDefinition *definition) {
         [definition useInitializer:@selector(initWithBaseURL:apiPath:) parameters:^(TyphoonMethod *initializer) {
             [initializer injectParameterWith:TyphoonConfig(kParseRootURLKey)];
             [initializer injectParameterWith:TyphoonConfig(kParseRESTPathKey)];

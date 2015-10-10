@@ -1,5 +1,5 @@
 //
-//  RCFParseResponseValidatorTests.m
+//  ParseResponseValidatorTests.m
 //  Conferences
 //
 //  Created by Egor Tolstoy on 04/10/15.
@@ -8,11 +8,11 @@
 
 #import "RCFResponseValidatorTestsBase.h"
 
-#import "RCFParseResponseValidator.h"
+#import "ParseResponseValidator.h"
 
 @interface RCFParseResponseValidatorTests : RCFResponseValidatorTestsBase
 
-@property (strong, nonatomic) RCFParseResponseValidator *validator;
+@property (strong, nonatomic) ParseResponseValidator *validator;
 
 @end
 
@@ -21,7 +21,7 @@
 - (void)setUp {
     [super setUp];
     
-    self.validator = [[RCFParseResponseValidator alloc] init];
+    self.validator = [[ParseResponseValidator alloc] init];
 }
 
 - (void)tearDown {

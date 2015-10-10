@@ -10,7 +10,7 @@
 
 #import "ResponseValidationType.h"
 
-@protocol RCFResponseValidator;
+@protocol ResponseValidator;
 
 /**
  @author Egor Tolstoy
@@ -28,6 +28,6 @@
  
  @return id<ResponseValidator>
  */
-- (id<RCFResponseValidator>)validatorWithType:(NSNumber *)type;
+- (id<ResponseValidator>)validatorWithType:(NSNumber *)type;
 
 @end

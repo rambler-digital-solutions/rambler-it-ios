@@ -9,7 +9,7 @@
 #import "ChainableOperationTestsBase.h"
 
 #import "ResponseDeserializationOperation.h"
-#import "RCFResponseDeserializer.h"
+#import "ResponseDeserializer.h"
 
 @interface ResponseDeserializationOperationTests : ChainableOperationTestsBase
 
@@ -23,7 +23,7 @@
 - (void)setUp {
     [super setUp];
     
-    self.mockResponseDeserializer = OCMProtocolMock(@protocol(RCFResponseDeserializer));
+    self.mockResponseDeserializer = OCMProtocolMock(@protocol(ResponseDeserializer));
     self.operation = [ResponseDeserializationOperation operationWithResponseDeserializer:self.mockResponseDeserializer];
 }
 

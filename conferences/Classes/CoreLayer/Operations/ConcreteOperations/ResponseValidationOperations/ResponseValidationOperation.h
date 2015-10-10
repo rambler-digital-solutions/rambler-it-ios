@@ -10,7 +10,7 @@
 
 #import "ChainableOperation.h"
 
-@protocol RCFResponseValidator;
+@protocol ResponseValidator;
 
 /**
  @author Egor Tolstoy
@@ -19,6 +19,6 @@
  */
 @interface ResponseValidationOperation : AsyncOperation <ChainableOperation>
 
-+ (instancetype)operationWithResponseValidator:(id<RCFResponseValidator>)responseValidator;
++ (instancetype)operationWithResponseValidator:(id<ResponseValidator>)responseValidator;
 
 @end

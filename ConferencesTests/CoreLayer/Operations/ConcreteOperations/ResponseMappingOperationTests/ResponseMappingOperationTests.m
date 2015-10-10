@@ -9,7 +9,7 @@
 #import "ChainableOperationTestsBase.h"
 
 #import "ResponseMappingOperation.h"
-#import "RCFResponseMapper.h"
+#import "ResponseMapper.h"
 
 @interface ResponseMappingOperationTests : ChainableOperationTestsBase
 
@@ -23,7 +23,7 @@
 - (void)setUp {
     [super setUp];
     
-    self.mockResponseMapper = OCMProtocolMock(@protocol(RCFResponseMapper));
+    self.mockResponseMapper = OCMProtocolMock(@protocol(ResponseMapper));
     self.operation = [ResponseMappingOperation operationWithResponseMapper:self.mockResponseMapper
                                                             mappingContext:nil];
 }

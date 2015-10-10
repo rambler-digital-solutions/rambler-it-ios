@@ -8,7 +8,7 @@
 
 #import "ResponseMappingOperation.h"
 
-#import "RCFResponseMapper.h"
+#import "ResponseMapper.h"
 
 #import <CocoalumberJack/CocoaLumberjack.h>
 #import <libextobjc/EXTScope.h>
@@ -17,7 +17,7 @@ static const int ddLogLevel = DDLogLevelVerbose;
 
 @interface ResponseMappingOperation ()
 
-@property (strong, nonatomic) id<RCFResponseMapper> responseMapper;
+@property (strong, nonatomic) id<ResponseMapper> responseMapper;
 @property (strong, nonatomic) NSDictionary *mappingContext;
 
 @end
@@ -30,7 +30,7 @@ static const int ddLogLevel = DDLogLevelVerbose;
 
 #pragma mark - Initialization
 
-- (instancetype)initWithResponseMapper:(id<RCFResponseMapper>)responseMapper
+- (instancetype)initWithResponseMapper:(id<ResponseMapper>)responseMapper
                         mappingContext:(NSDictionary *)context {
     self = [super init];
     if (self) {
@@ -40,7 +40,7 @@ static const int ddLogLevel = DDLogLevelVerbose;
     return self;
 }
 
-+ (instancetype)operationWithResponseMapper:(id<RCFResponseMapper>)responseMapper
++ (instancetype)operationWithResponseMapper:(id<ResponseMapper>)responseMapper
                              mappingContext:(NSDictionary *)context {
     return [[[self class] alloc] initWithResponseMapper:responseMapper
                                          mappingContext:context];

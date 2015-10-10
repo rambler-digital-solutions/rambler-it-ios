@@ -10,7 +10,7 @@
 
 #import "ChainableOperation.h"
 
-@protocol RCFNetworkClient;
+@protocol NetworkClient;
 
 /**
  @author Egor Tolstoy
@@ -19,6 +19,6 @@
  */
 @interface NetworkOperation : AsyncOperation <ChainableOperation>
 
-+ (instancetype)operationWithNetworkClient:(id<RCFNetworkClient>)networkClient;
++ (instancetype)operationWithNetworkClient:(id<NetworkClient>)networkClient;
 
 @end

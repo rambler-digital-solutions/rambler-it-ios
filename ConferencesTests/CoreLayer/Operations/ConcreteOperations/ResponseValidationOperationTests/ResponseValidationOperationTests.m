@@ -9,7 +9,7 @@
 #import "ChainableOperationtestsBase.h"
 
 #import "ResponseValidationOperation.h"
-#import "RCFResponseValidator.h"
+#import "ResponseValidator.h"
 
 @interface ResponseValidationOperationTests : ChainableOperationTestsBase
 
@@ -23,7 +23,7 @@
 - (void)setUp {
     [super setUp];
     
-    self.mockResponseValidator = OCMProtocolMock(@protocol(RCFResponseValidator));
+    self.mockResponseValidator = OCMProtocolMock(@protocol(ResponseValidator));
     self.operation = [ResponseValidationOperation operationWithResponseValidator:self.mockResponseValidator];
 }
 

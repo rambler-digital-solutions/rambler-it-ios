@@ -9,7 +9,7 @@
 #import "ChainableOperationTestsBase.h"
 
 #import "RequestSigningOperation.h"
-#import "RCFRequestSigner.h"
+#import "RequestSigner.h"
 #import "OperationBuffer.h"
 
 @interface RequestSigningOperationTests : ChainableOperationTestsBase
@@ -23,7 +23,7 @@
 
 - (void)setUp {
     [super setUp];
-    self.mockRequestSigner = OCMProtocolMock(@protocol(RCFRequestSigner));
+    self.mockRequestSigner = OCMProtocolMock(@protocol(RequestSigner));
     
     self.operation = [RequestSigningOperation operationWithRequestSigner:self.mockRequestSigner];
 }

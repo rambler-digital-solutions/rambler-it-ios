@@ -10,7 +10,7 @@
 
 #import "ResponseDeserializationType.h"
 
-@protocol RCFResponseDeserializer;
+@protocol ResponseDeserializer;
 
 /**
  @author Egor Tolstoy
@@ -28,6 +28,6 @@
  
  @return id<ResponseDeserializer>
  */
-- (id<RCFResponseDeserializer>)deserializerWithType:(NSNumber *)type;
+- (id<ResponseDeserializer>)deserializerWithType:(NSNumber *)type;
 
 @end

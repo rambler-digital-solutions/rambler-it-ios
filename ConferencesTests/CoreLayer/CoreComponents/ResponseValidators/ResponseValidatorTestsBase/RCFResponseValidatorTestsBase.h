@@ -1,5 +1,5 @@
 //
-//  RCFParseResponseValidatorTests.m
+//  ParseResponseValidatorTests.m
 //  Conferences
 //
 //  Created by Egor Tolstoy on 04/10/15.
@@ -8,7 +8,7 @@
 
 #import <XCTest/XCTest.h>
 
-@protocol RCFResponseValidator;
+@protocol ResponseValidator;
 
 /**
  @author Egor Tolstoy
@@ -25,7 +25,7 @@
  @param validator Server response validator
  @param response  Deserialized server response
  */
-- (void)verifyThatValidator:(id<RCFResponseValidator>)validator
+- (void)verifyThatValidator:(id<ResponseValidator>)validator
    validatesCorrectResponse:(NSArray *)response;
 
 /**
@@ -36,7 +36,7 @@
  @param validator Server response validator
  @param response  Deserialized server response
  */
-- (void)verifyThatValidator:(id<RCFResponseValidator>)validator
+- (void)verifyThatValidator:(id<ResponseValidator>)validator
  validatesIncorrectResponse:(NSArray *)response;
 
 @end

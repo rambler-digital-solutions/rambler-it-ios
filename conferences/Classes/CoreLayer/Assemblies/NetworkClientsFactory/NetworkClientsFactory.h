@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol RCFNetworkClient;
+@protocol NetworkClient;
 
 /**
  @author Egor Tolstoy
@@ -26,6 +26,6 @@
  
  @return id<NetworkClient>
  */
-- (id<RCFNetworkClient>)commonNetworkClient;
+- (id<NetworkClient>)commonNetworkClient;
 
 @end
