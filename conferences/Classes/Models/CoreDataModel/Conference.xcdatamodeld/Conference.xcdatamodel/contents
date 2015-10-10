@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="14F27" minimumToolsVersion="Xcode 7.0">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="15A284" minimumToolsVersion="Xcode 7.0">
     <entity name="Event" representedClassName="Event" syncable="YES">
         <attribute name="endDate" attributeType="Date" syncable="YES"/>
         <attribute name="eventDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="liveStreamLink" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="objectId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="startDate" attributeType="Date" syncable="YES"/>
         <attribute name="timePadID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="twitterLink" optional="YES" attributeType="String" syncable="YES"/>
@@ -34,6 +35,7 @@
     </entity>
     <entity name="SocialNetworkAccount" representedClassName="SocialNetworkAccount" syncable="YES">
         <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="objectId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="profileLink" attributeType="String" syncable="YES"/>
         <relationship name="speaker" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Speaker" inverseName="socialNetworkAccounts" inverseEntity="Speaker" syncable="YES"/>
     </entity>
@@ -48,8 +50,8 @@
         <element name="Event" positionX="-207" positionY="-243" width="128" height="178"/>
         <element name="Lecture" positionX="-27" positionY="-243" width="128" height="178"/>
         <element name="LectureMaterials" positionX="187" positionY="-126" width="128" height="88"/>
-        <element name="RegistrationQuestion" positionX="7" positionY="-36" width="128" height="88"/>
-        <element name="SocialNetworkAccount" positionX="178" positionY="-408" width="128" height="88"/>
+        <element name="RegistrationQuestion" positionX="25" positionY="-18" width="128" height="88"/>
         <element name="Speaker" positionX="-45" positionY="-414" width="128" height="118"/>
+        <element name="SocialNetworkAccount" positionX="279" positionY="-396" width="128" height="103"/>
     </elements>
 </model>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API</key>
+	<dict>
+		<key>Parse</key>
+		<dict>
+			<key>RootURL</key>
+			<string>NSURL(https://api.parse.com)</string>
+			<key>RESTPath</key>
+			<string>/1/classes</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

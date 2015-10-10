@@ -2,7 +2,7 @@
 //  SocialNetworkAccount+CoreDataProperties.m
 //  Conferences
 //
-//  Created by Karpushin Artem on 03/10/15.
+//  Created by Karpushin Artem on 10/10/15.
 //  Copyright © 2015 Rambler. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -14,6 +14,7 @@
 @implementation SocialNetworkAccount (CoreDataProperties)
 
 @dynamic name;
+@dynamic objectId;
 @dynamic profileLink;
 @dynamic speaker;
 

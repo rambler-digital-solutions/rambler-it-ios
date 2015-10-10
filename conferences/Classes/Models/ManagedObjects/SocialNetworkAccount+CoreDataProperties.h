@@ -2,7 +2,7 @@
 //  SocialNetworkAccount+CoreDataProperties.h
 //  Conferences
 //
-//  Created by Karpushin Artem on 03/10/15.
+//  Created by Karpushin Artem on 10/10/15.
 //  Copyright © 2015 Rambler. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SocialNetworkAccount (CoreDataProperties)
 
 @property (nullable, nonatomic, retain) NSString *name;
+@property (nullable, nonatomic, retain) NSString *objectId;
 @property (nullable, nonatomic, retain) NSString *profileLink;
 @property (nullable, nonatomic, retain) Speaker *speaker;
 
