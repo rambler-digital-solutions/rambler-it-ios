@@ -79,10 +79,8 @@
 
 - (NSArray *)tabs {
     return @[
-             [self.newsListModuleAssembly newsListTabBarButtonPrototype],
-             [self.myFeedModuleAssembly myFeedTabBarButtonPrototype],
-             [self.matchesListModuleAssembly matchesListTabBarButtonPrototype],
-             [self.statsSportSelectorModuleAssembly statisticsTabBarButtonPrototype]
+             [self.eventListModuleAssembly eventListTabBarButtonPrototype],
+             [self.ramblerLocationModuleAssembly ramblerLocationTabBarButtonPrototype],
              ];
 }
 

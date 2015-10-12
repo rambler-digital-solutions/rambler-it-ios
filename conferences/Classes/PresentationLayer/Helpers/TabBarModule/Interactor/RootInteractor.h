@@ -10,16 +10,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BaseInteractor.h"
 #import "RootInteractorInput.h"
 
 @class TabsDDM;
 @protocol RootInteractorOutput;
 
-/**
- 
- */
-@interface RootInteractor : BaseInteractor <RootInteractorInput>
+@interface RootInteractor : NSObject <RootInteractorInput>
 
 @property (nonatomic,strong) NSArray *tabs;
 @property (nonatomic, weak) id<RootInteractorOutput> output;

@@ -10,7 +10,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BaseViewController.h"
 #import "RootViewInput.h"
 #import "TabBarControllerContentEmbedder.h"
 

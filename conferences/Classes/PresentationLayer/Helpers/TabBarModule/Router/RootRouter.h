@@ -10,7 +10,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BaseRouter.h"
 #import "RootRouterInput.h"
 
 @protocol TabBarControllerContentEmbedder;
@@ -18,7 +17,7 @@
 /**
  
  */
-@interface RootRouter : BaseRouter <RootRouterInput>
+@interface RootRouter : NSObject <RootRouterInput>
 
 @property (nonatomic,weak) id<TabBarControllerContentEmbedder> tabBarControllerContentEmbedder;
 

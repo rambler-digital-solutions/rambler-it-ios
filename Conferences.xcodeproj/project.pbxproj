@@ -64,6 +64,11 @@
 		636F8DFB1BCB90E500552B91 /* EventListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8DF31BCB90E500552B91 /* EventListViewController.m */; settings = {ASSET_TAGS = (); }; };
 		636F8DFD1BCB914100552B91 /* EventsUserStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 636F8DFC1BCB914100552B91 /* EventsUserStory.storyboard */; settings = {ASSET_TAGS = (); }; };
 		636F8DFF1BCB91A900552B91 /* RamblerLocationUserStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 636F8DFE1BCB91A900552B91 /* RamblerLocationUserStory.storyboard */; settings = {ASSET_TAGS = (); }; };
+		636F8E101BCC163600552B91 /* RDSEmbedModuleSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8E021BCC163600552B91 /* RDSEmbedModuleSegue.m */; settings = {ASSET_TAGS = (); }; };
+		636F8E111BCC163600552B91 /* RDSEmbedModuleTransitionSegueInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8E041BCC163600552B91 /* RDSEmbedModuleTransitionSegueInfo.m */; settings = {ASSET_TAGS = (); }; };
+		636F8E121BCC163600552B91 /* RDSModuleConfigurationPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8E071BCC163600552B91 /* RDSModuleConfigurationPromise.m */; settings = {ASSET_TAGS = (); }; };
+		636F8E131BCC163600552B91 /* RDSModuleTransitionSegueInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8E0D1BCC163600552B91 /* RDSModuleTransitionSegueInfo.m */; settings = {ASSET_TAGS = (); }; };
+		636F8E141BCC163600552B91 /* UIViewController+DefaultTransitionHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8E0F1BCC163600552B91 /* UIViewController+DefaultTransitionHandling.m */; settings = {ASSET_TAGS = (); }; };
 		6373A4101BBDC5EA00DF67FF /* Conference.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6373A40E1BBDC5EA00DF67FF /* Conference.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
 		63EF15BB1BC4559900480CAF /* PushNotificationCenterImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF15BA1BC4559900480CAF /* PushNotificationCenterImplementation.m */; settings = {ASSET_TAGS = (); }; };
 		63EF15C01BC461DD00480CAF /* PushNotificationServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF15BF1BC461DD00480CAF /* PushNotificationServiceImplementation.m */; settings = {ASSET_TAGS = (); }; };
@@ -292,6 +297,21 @@
 		636F8DF51BCB90E500552B91 /* EventListViewOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListViewOutput.h; sourceTree = "<group>"; };
 		636F8DFC1BCB914100552B91 /* EventsUserStory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventsUserStory.storyboard; sourceTree = "<group>"; };
 		636F8DFE1BCB91A900552B91 /* RamblerLocationUserStory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RamblerLocationUserStory.storyboard; sourceTree = "<group>"; };
+		636F8E011BCC163600552B91 /* RDSEmbedModuleSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSEmbedModuleSegue.h; sourceTree = "<group>"; };
+		636F8E021BCC163600552B91 /* RDSEmbedModuleSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDSEmbedModuleSegue.m; sourceTree = "<group>"; };
+		636F8E031BCC163600552B91 /* RDSEmbedModuleTransitionSegueInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSEmbedModuleTransitionSegueInfo.h; sourceTree = "<group>"; };
+		636F8E041BCC163600552B91 /* RDSEmbedModuleTransitionSegueInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDSEmbedModuleTransitionSegueInfo.m; sourceTree = "<group>"; };
+		636F8E051BCC163600552B91 /* RDSIntermoduleDataTransfer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSIntermoduleDataTransfer.h; sourceTree = "<group>"; };
+		636F8E061BCC163600552B91 /* RDSModuleConfigurationPromise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSModuleConfigurationPromise.h; sourceTree = "<group>"; };
+		636F8E071BCC163600552B91 /* RDSModuleConfigurationPromise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDSModuleConfigurationPromise.m; sourceTree = "<group>"; };
+		636F8E081BCC163600552B91 /* RDSModuleConfigurationPromiseProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSModuleConfigurationPromiseProtocol.h; sourceTree = "<group>"; };
+		636F8E091BCC163600552B91 /* RDSModuleConfiguratorHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSModuleConfiguratorHolder.h; sourceTree = "<group>"; };
+		636F8E0A1BCC163600552B91 /* RDSModuleConfiguratorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSModuleConfiguratorProtocol.h; sourceTree = "<group>"; };
+		636F8E0B1BCC163600552B91 /* RDSModuleTransitionHandlerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSModuleTransitionHandlerProtocol.h; sourceTree = "<group>"; };
+		636F8E0C1BCC163600552B91 /* RDSModuleTransitionSegueInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSModuleTransitionSegueInfo.h; sourceTree = "<group>"; };
+		636F8E0D1BCC163600552B91 /* RDSModuleTransitionSegueInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDSModuleTransitionSegueInfo.m; sourceTree = "<group>"; };
+		636F8E0E1BCC163600552B91 /* UIViewController+DefaultTransitionHandling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DefaultTransitionHandling.h"; sourceTree = "<group>"; };
+		636F8E0F1BCC163600552B91 /* UIViewController+DefaultTransitionHandling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DefaultTransitionHandling.m"; sourceTree = "<group>"; };
 		6373A3E61BBDBFDC00DF67FF /* EventService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventService.h; sourceTree = "<group>"; };
 		6373A3E71BBDC02100DF67FF /* RegistrationQuestionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationQuestionService.h; sourceTree = "<group>"; };
 		6373A3E91BBDC05900DF67FF /* SpeakerService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerService.h; sourceTree = "<group>"; };
@@ -636,6 +656,7 @@
 		636F8D0D1BCB869500552B91 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				636F8E001BCC163600552B91 /* IntermoduleDataTransfer */,
 				636F8D0E1BCB869500552B91 /* TabBarModule */,
 			);
 			path = Helpers;
@@ -930,6 +951,28 @@
 				636F8DFC1BCB914100552B91 /* EventsUserStory.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		636F8E001BCC163600552B91 /* IntermoduleDataTransfer */ = {
+			isa = PBXGroup;
+			children = (
+				636F8E011BCC163600552B91 /* RDSEmbedModuleSegue.h */,
+				636F8E021BCC163600552B91 /* RDSEmbedModuleSegue.m */,
+				636F8E031BCC163600552B91 /* RDSEmbedModuleTransitionSegueInfo.h */,
+				636F8E041BCC163600552B91 /* RDSEmbedModuleTransitionSegueInfo.m */,
+				636F8E051BCC163600552B91 /* RDSIntermoduleDataTransfer.h */,
+				636F8E061BCC163600552B91 /* RDSModuleConfigurationPromise.h */,
+				636F8E071BCC163600552B91 /* RDSModuleConfigurationPromise.m */,
+				636F8E081BCC163600552B91 /* RDSModuleConfigurationPromiseProtocol.h */,
+				636F8E091BCC163600552B91 /* RDSModuleConfiguratorHolder.h */,
+				636F8E0A1BCC163600552B91 /* RDSModuleConfiguratorProtocol.h */,
+				636F8E0B1BCC163600552B91 /* RDSModuleTransitionHandlerProtocol.h */,
+				636F8E0C1BCC163600552B91 /* RDSModuleTransitionSegueInfo.h */,
+				636F8E0D1BCC163600552B91 /* RDSModuleTransitionSegueInfo.m */,
+				636F8E0E1BCC163600552B91 /* UIViewController+DefaultTransitionHandling.h */,
+				636F8E0F1BCC163600552B91 /* UIViewController+DefaultTransitionHandling.m */,
+			);
+			path = IntermoduleDataTransfer;
 			sourceTree = "<group>";
 		};
 		6373A3DE1BBDBDF700DF67FF /* Services */ = {
@@ -2693,6 +2736,7 @@
 				636F8DDA1BCB8FE800552B91 /* RamblerLocationModuleAssembly.m in Sources */,
 				9F1830A71BC032CF000E21A5 /* ParseRequestSigner.m in Sources */,
 				636F8DDD1BCB8FE800552B91 /* RamblerLocationRouter.m in Sources */,
+				636F8E141BCC163600552B91 /* UIViewController+DefaultTransitionHandling.m in Sources */,
 				636F8D4F1BCB869500552B91 /* RDSCollectionViewSupplementaryViewObject.m in Sources */,
 				9F0A84FA1BC1698B006F79FB /* OperationBuffer.m in Sources */,
 				636F8D511BCB869500552B91 /* UIViewController+TabBarControllerContent.m in Sources */,
@@ -2704,6 +2748,8 @@
 				636F8CBD1BC97E7F00552B91 /* Event+CoreDataProperties.m in Sources */,
 				9F18309F1BC024A9000E21A5 /* RequestDataModel.m in Sources */,
 				9F0A852D1BC188B0006F79FB /* EventOperationFactory.m in Sources */,
+				636F8E101BCC163600552B91 /* RDSEmbedModuleSegue.m in Sources */,
+				636F8E121BCC163600552B91 /* RDSModuleConfigurationPromise.m in Sources */,
 				636F8CB81BC97E7F00552B91 /* LectureMaterials.m in Sources */,
 				63FDCE061BBDBA2A00A43B60 /* AppDelegate.m in Sources */,
 				636F8D521BCB869500552B91 /* RootViewController.m in Sources */,
@@ -2759,11 +2805,13 @@
 				636F8D0C1BCB825F00552B91 /* ModuleAssemblyBase.m in Sources */,
 				636A37C21BC1413A00B49C3D /* SystemInfrastructureAssembly.m in Sources */,
 				9F0A6C2E1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m in Sources */,
+				636F8E131BCC163600552B91 /* RDSModuleTransitionSegueInfo.m in Sources */,
 				636F8CB91BC97E7F00552B91 /* Speaker+CoreDataProperties.m in Sources */,
 				636F8D4E1BCB869500552B91 /* RDSCollectionViewSectionInfo.m in Sources */,
 				9F1830ED1BC14293000E21A5 /* ManagedObjectMapper.m in Sources */,
 				9F1830E61BC13F9F000E21A5 /* ManagedObjectMappingProvider.m in Sources */,
 				636F8D4B1BCB869500552B91 /* RootPresenter.m in Sources */,
+				636F8E111BCC163600552B91 /* RDSEmbedModuleTransitionSegueInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

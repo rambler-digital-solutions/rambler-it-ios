@@ -20,9 +20,6 @@
 
 @end
 
-/**
- 
- */
 @implementation RootRouter
 
 #pragma mark - RootRouterInput
@@ -30,7 +27,7 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.contentCache = [NSMutableDictionary dictionary];
+        _contentCache = [NSMutableDictionary dictionary];
     }
     return self;
 }

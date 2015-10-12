@@ -7,9 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BaseRouterInput.h"
 
-@protocol RootRouterInput <BaseRouterInput>
+@protocol RootRouterInput <NSObject>
 
 - (void)openTabWithIndex:(NSUInteger)tabIndex;
 

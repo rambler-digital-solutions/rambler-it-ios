@@ -10,12 +10,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BaseViewInput.h"
 
 /**
  
  */
-@protocol RootViewInput <BaseViewInput>
+@protocol RootViewInput <NSObject>
 
 - (void)showTabs:(NSArray*)tabs;
 

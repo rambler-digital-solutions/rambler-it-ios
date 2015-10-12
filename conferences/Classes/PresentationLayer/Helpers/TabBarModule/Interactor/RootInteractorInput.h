@@ -10,12 +10,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BaseInteractorInput.h"
 
 /**
  
  */
-@protocol RootInteractorInput <BaseInteractorInput>
+@protocol RootInteractorInput <NSObject>
 
 - (void)getTabs;
 
