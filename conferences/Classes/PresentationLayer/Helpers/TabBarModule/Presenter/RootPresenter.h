@@ -1,0 +1,31 @@
+//
+//  RootPresenter.h
+//  Проект:   Championat
+//
+//  Модуль:   Root
+//  Описание: Главный модуль приложения
+//
+//  Создан Andrey Zarembo-Godzyatsky  11/08/15
+//  Rambler DS 2015
+//
+
+#import <Foundation/Foundation.h>
+#import "RootViewOutput.h"
+#import "RootInteractorOutput.h"
+#import "RootModuleConfigurator.h"
+
+@protocol RootViewInput;
+@protocol RootInteractorInput;
+@protocol RootRouterInput;
+
+/**
+ 
+ */
+@interface RootPresenter : NSObject <RootViewOutput, RootInteractorOutput, RootModuleConfigurator>
+
+@property (nonatomic, weak) id<RootViewInput> view;
+@property (nonatomic, strong) id<RootInteractorInput> interactor;
+@property (nonatomic, strong) id<RootRouterInput> router;
+
+@end
+
