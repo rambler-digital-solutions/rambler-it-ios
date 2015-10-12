@@ -40,18 +40,28 @@
 		636F8CBE1BC97E7F00552B91 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8CB01BC97E7F00552B91 /* Event.m */; settings = {ASSET_TAGS = (); }; };
 		636F8CBF1BC97E7F00552B91 /* RegistrationQuestion+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8CB21BC97E7F00552B91 /* RegistrationQuestion+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
 		636F8CC01BC97E7F00552B91 /* RegistrationQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8CB41BC97E7F00552B91 /* RegistrationQuestion.m */; settings = {ASSET_TAGS = (); }; };
-		636F8CFD1BCB800200552B91 /* RootModuleAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8CD21BCB800200552B91 /* RootModuleAssembly.m */; settings = {ASSET_TAGS = (); }; };
-		636F8CFE1BCB800200552B91 /* RootInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8CD51BCB800200552B91 /* RootInteractor.m */; settings = {ASSET_TAGS = (); }; };
-		636F8CFF1BCB800200552B91 /* RootPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8CDB1BCB800200552B91 /* RootPresenter.m */; settings = {ASSET_TAGS = (); }; };
-		636F8D001BCB800200552B91 /* RootRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8CDF1BCB800200552B91 /* RootRouter.m */; settings = {ASSET_TAGS = (); }; };
-		636F8D011BCB800200552B91 /* RDSCollectionViewDataDisplayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8CE71BCB800200552B91 /* RDSCollectionViewDataDisplayManager.m */; settings = {ASSET_TAGS = (); }; };
-		636F8D021BCB800200552B91 /* RDSCollectionViewSectionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8CE91BCB800200552B91 /* RDSCollectionViewSectionInfo.m */; settings = {ASSET_TAGS = (); }; };
-		636F8D031BCB800200552B91 /* RDSCollectionViewSupplementaryViewObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8CEB1BCB800200552B91 /* RDSCollectionViewSupplementaryViewObject.m */; settings = {ASSET_TAGS = (); }; };
-		636F8D041BCB800200552B91 /* TabBarButtonPrototype.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8CF01BCB800200552B91 /* TabBarButtonPrototype.m */; settings = {ASSET_TAGS = (); }; };
-		636F8D051BCB800200552B91 /* UIViewController+TabBarControllerContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8CF61BCB800200552B91 /* UIViewController+TabBarControllerContent.m */; settings = {ASSET_TAGS = (); }; };
-		636F8D061BCB800200552B91 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8CF81BCB800200552B91 /* RootViewController.m */; settings = {ASSET_TAGS = (); }; };
-		636F8D071BCB800200552B91 /* TabBarButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8CFC1BCB800200552B91 /* TabBarButtonCell.m */; settings = {ASSET_TAGS = (); }; };
 		636F8D0C1BCB825F00552B91 /* ModuleAssemblyBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D0B1BCB825F00552B91 /* ModuleAssemblyBase.m */; settings = {ASSET_TAGS = (); }; };
+		636F8D491BCB869500552B91 /* RootModuleAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D111BCB869500552B91 /* RootModuleAssembly.m */; settings = {ASSET_TAGS = (); }; };
+		636F8D4A1BCB869500552B91 /* RootInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D141BCB869500552B91 /* RootInteractor.m */; settings = {ASSET_TAGS = (); }; };
+		636F8D4B1BCB869500552B91 /* RootPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D1A1BCB869500552B91 /* RootPresenter.m */; settings = {ASSET_TAGS = (); }; };
+		636F8D4C1BCB869500552B91 /* RootRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D1E1BCB869500552B91 /* RootRouter.m */; settings = {ASSET_TAGS = (); }; };
+		636F8D4D1BCB869500552B91 /* RDSCollectionViewDataDisplayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D261BCB869500552B91 /* RDSCollectionViewDataDisplayManager.m */; settings = {ASSET_TAGS = (); }; };
+		636F8D4E1BCB869500552B91 /* RDSCollectionViewSectionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D281BCB869500552B91 /* RDSCollectionViewSectionInfo.m */; settings = {ASSET_TAGS = (); }; };
+		636F8D4F1BCB869500552B91 /* RDSCollectionViewSupplementaryViewObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D2A1BCB869500552B91 /* RDSCollectionViewSupplementaryViewObject.m */; settings = {ASSET_TAGS = (); }; };
+		636F8D501BCB869500552B91 /* TabBarButtonPrototype.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D2F1BCB869500552B91 /* TabBarButtonPrototype.m */; settings = {ASSET_TAGS = (); }; };
+		636F8D511BCB869500552B91 /* UIViewController+TabBarControllerContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D351BCB869500552B91 /* UIViewController+TabBarControllerContent.m */; settings = {ASSET_TAGS = (); }; };
+		636F8D521BCB869500552B91 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D371BCB869500552B91 /* RootViewController.m */; settings = {ASSET_TAGS = (); }; };
+		636F8D531BCB869500552B91 /* TabBarButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D3B1BCB869500552B91 /* TabBarButtonCell.m */; settings = {ASSET_TAGS = (); }; };
+		636F8D8B1BCB890000552B91 /* EventListInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D7D1BCB890000552B91 /* EventListInteractor.m */; settings = {ASSET_TAGS = (); }; };
+		636F8D8C1BCB890000552B91 /* EventListModuleAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D811BCB890000552B91 /* EventListModuleAssembly.m */; settings = {ASSET_TAGS = (); }; };
+		636F8D8D1BCB890000552B91 /* EventListPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D831BCB890000552B91 /* EventListPresenter.m */; settings = {ASSET_TAGS = (); }; };
+		636F8D8E1BCB890000552B91 /* EventListRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D851BCB890000552B91 /* EventListRouter.m */; settings = {ASSET_TAGS = (); }; };
+		636F8D8F1BCB890000552B91 /* EventListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D881BCB890000552B91 /* EventListView.m */; settings = {ASSET_TAGS = (); }; };
+		636F8D9F1BCB893700552B91 /* RamblerLocationInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D911BCB893700552B91 /* RamblerLocationInteractor.m */; settings = {ASSET_TAGS = (); }; };
+		636F8DA01BCB893700552B91 /* RamblerLocationModuleAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D951BCB893700552B91 /* RamblerLocationModuleAssembly.m */; settings = {ASSET_TAGS = (); }; };
+		636F8DA11BCB893700552B91 /* RamblerLocationPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D971BCB893700552B91 /* RamblerLocationPresenter.m */; settings = {ASSET_TAGS = (); }; };
+		636F8DA21BCB893700552B91 /* RamblerLocationRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D991BCB893700552B91 /* RamblerLocationRouter.m */; settings = {ASSET_TAGS = (); }; };
+		636F8DA31BCB893700552B91 /* RamblerLocationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D9C1BCB893700552B91 /* RamblerLocationView.m */; settings = {ASSET_TAGS = (); }; };
 		6373A4101BBDC5EA00DF67FF /* Conference.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6373A40E1BBDC5EA00DF67FF /* Conference.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
 		63EF15BB1BC4559900480CAF /* PushNotificationCenterImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF15BA1BC4559900480CAF /* PushNotificationCenterImplementation.m */; settings = {ASSET_TAGS = (); }; };
 		63EF15C01BC461DD00480CAF /* PushNotificationServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF15BF1BC461DD00480CAF /* PushNotificationServiceImplementation.m */; settings = {ASSET_TAGS = (); }; };
@@ -183,8 +193,6 @@
 		636B640E1BBDD6260053E38F /* SpeakerServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerServiceImplementation.h; sourceTree = "<group>"; };
 		636B640F1BBDD6260053E38F /* SpeakerServiceImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerServiceImplementation.m; sourceTree = "<group>"; };
 		636B64111BBFE2C20053E38F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		636B64131BBFE3420053E38F /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		636B64141BBFE3420053E38F /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		636F8C951BC97B3100552B91 /* EventServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventServiceImplementation.h; sourceTree = "<group>"; };
 		636F8C961BC97B3100552B91 /* EventServiceImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventServiceImplementation.m; sourceTree = "<group>"; };
 		636F8C9D1BC97E7F00552B91 /* Lecture+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Lecture+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -211,45 +219,75 @@
 		636F8CB21BC97E7F00552B91 /* RegistrationQuestion+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RegistrationQuestion+CoreDataProperties.m"; sourceTree = "<group>"; };
 		636F8CB31BC97E7F00552B91 /* RegistrationQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationQuestion.h; sourceTree = "<group>"; };
 		636F8CB41BC97E7F00552B91 /* RegistrationQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationQuestion.m; sourceTree = "<group>"; };
-		636F8CD11BCB800200552B91 /* RootModuleAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootModuleAssembly.h; sourceTree = "<group>"; };
-		636F8CD21BCB800200552B91 /* RootModuleAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootModuleAssembly.m; sourceTree = "<group>"; };
-		636F8CD41BCB800200552B91 /* RootInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootInteractor.h; sourceTree = "<group>"; };
-		636F8CD51BCB800200552B91 /* RootInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootInteractor.m; sourceTree = "<group>"; };
-		636F8CD61BCB800200552B91 /* RootInteractorInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootInteractorInput.h; sourceTree = "<group>"; };
-		636F8CD81BCB800200552B91 /* RootInteractorOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootInteractorOutput.h; sourceTree = "<group>"; };
-		636F8CD91BCB800200552B91 /* RootModuleConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootModuleConfigurator.h; sourceTree = "<group>"; };
-		636F8CDA1BCB800200552B91 /* RootPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootPresenter.h; sourceTree = "<group>"; };
-		636F8CDB1BCB800200552B91 /* RootPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootPresenter.m; sourceTree = "<group>"; };
-		636F8CDC1BCB800200552B91 /* RootViewOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewOutput.h; sourceTree = "<group>"; };
-		636F8CDE1BCB800200552B91 /* RootRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootRouter.h; sourceTree = "<group>"; };
-		636F8CDF1BCB800200552B91 /* RootRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootRouter.m; sourceTree = "<group>"; };
-		636F8CE01BCB800200552B91 /* RootRouterInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootRouterInput.h; sourceTree = "<group>"; };
-		636F8CE11BCB800200552B91 /* RootTabFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootTabFactory.h; sourceTree = "<group>"; };
-		636F8CE41BCB800200552B91 /* RDSCollectionViewCellObjectProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSCollectionViewCellObjectProtocol.h; sourceTree = "<group>"; };
-		636F8CE51BCB800200552B91 /* RDSCollectionViewCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSCollectionViewCellProtocol.h; sourceTree = "<group>"; };
-		636F8CE61BCB800200552B91 /* RDSCollectionViewDataDisplayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSCollectionViewDataDisplayManager.h; sourceTree = "<group>"; };
-		636F8CE71BCB800200552B91 /* RDSCollectionViewDataDisplayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDSCollectionViewDataDisplayManager.m; sourceTree = "<group>"; };
-		636F8CE81BCB800200552B91 /* RDSCollectionViewSectionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSCollectionViewSectionInfo.h; sourceTree = "<group>"; };
-		636F8CE91BCB800200552B91 /* RDSCollectionViewSectionInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDSCollectionViewSectionInfo.m; sourceTree = "<group>"; };
-		636F8CEA1BCB800200552B91 /* RDSCollectionViewSupplementaryViewObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSCollectionViewSupplementaryViewObject.h; sourceTree = "<group>"; };
-		636F8CEB1BCB800200552B91 /* RDSCollectionViewSupplementaryViewObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDSCollectionViewSupplementaryViewObject.m; sourceTree = "<group>"; };
-		636F8CEC1BCB800200552B91 /* RDSCollectionViewSupplementaryViewObjectProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSCollectionViewSupplementaryViewObjectProtocol.h; sourceTree = "<group>"; };
-		636F8CED1BCB800200552B91 /* RDSCollectionViewSupplementaryViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSCollectionViewSupplementaryViewProtocol.h; sourceTree = "<group>"; };
-		636F8CEF1BCB800200552B91 /* TabBarButtonPrototype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarButtonPrototype.h; sourceTree = "<group>"; };
-		636F8CF01BCB800200552B91 /* TabBarButtonPrototype.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarButtonPrototype.m; sourceTree = "<group>"; };
-		636F8CF11BCB800200552B91 /* TabBarButtonPrototypeProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarButtonPrototypeProtocol.h; sourceTree = "<group>"; };
-		636F8CF21BCB800200552B91 /* TabBarControllerContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarControllerContent.h; sourceTree = "<group>"; };
-		636F8CF31BCB800200552B91 /* TabBarControllerContentEmbedder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarControllerContentEmbedder.h; sourceTree = "<group>"; };
-		636F8CF41BCB800200552B91 /* TabBarControllerEmbeddedContentConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarControllerEmbeddedContentConfigurator.h; sourceTree = "<group>"; };
-		636F8CF51BCB800200552B91 /* UIViewController+TabBarControllerContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TabBarControllerContent.h"; sourceTree = "<group>"; };
-		636F8CF61BCB800200552B91 /* UIViewController+TabBarControllerContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TabBarControllerContent.m"; sourceTree = "<group>"; };
-		636F8CF71BCB800200552B91 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
-		636F8CF81BCB800200552B91 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		636F8CF91BCB800200552B91 /* RootViewInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewInput.h; sourceTree = "<group>"; };
-		636F8CFB1BCB800200552B91 /* TabBarButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarButtonCell.h; sourceTree = "<group>"; };
-		636F8CFC1BCB800200552B91 /* TabBarButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarButtonCell.m; sourceTree = "<group>"; };
 		636F8D0A1BCB825F00552B91 /* ModuleAssemblyBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleAssemblyBase.h; sourceTree = "<group>"; };
 		636F8D0B1BCB825F00552B91 /* ModuleAssemblyBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModuleAssemblyBase.m; sourceTree = "<group>"; };
+		636F8D101BCB869500552B91 /* RootModuleAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootModuleAssembly.h; sourceTree = "<group>"; };
+		636F8D111BCB869500552B91 /* RootModuleAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootModuleAssembly.m; sourceTree = "<group>"; };
+		636F8D131BCB869500552B91 /* RootInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootInteractor.h; sourceTree = "<group>"; };
+		636F8D141BCB869500552B91 /* RootInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootInteractor.m; sourceTree = "<group>"; };
+		636F8D151BCB869500552B91 /* RootInteractorInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootInteractorInput.h; sourceTree = "<group>"; };
+		636F8D171BCB869500552B91 /* RootInteractorOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootInteractorOutput.h; sourceTree = "<group>"; };
+		636F8D181BCB869500552B91 /* RootModuleConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootModuleConfigurator.h; sourceTree = "<group>"; };
+		636F8D191BCB869500552B91 /* RootPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootPresenter.h; sourceTree = "<group>"; };
+		636F8D1A1BCB869500552B91 /* RootPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootPresenter.m; sourceTree = "<group>"; };
+		636F8D1B1BCB869500552B91 /* RootViewOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewOutput.h; sourceTree = "<group>"; };
+		636F8D1D1BCB869500552B91 /* RootRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootRouter.h; sourceTree = "<group>"; };
+		636F8D1E1BCB869500552B91 /* RootRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootRouter.m; sourceTree = "<group>"; };
+		636F8D1F1BCB869500552B91 /* RootRouterInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootRouterInput.h; sourceTree = "<group>"; };
+		636F8D201BCB869500552B91 /* RootTabFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootTabFactory.h; sourceTree = "<group>"; };
+		636F8D231BCB869500552B91 /* RDSCollectionViewCellObjectProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSCollectionViewCellObjectProtocol.h; sourceTree = "<group>"; };
+		636F8D241BCB869500552B91 /* RDSCollectionViewCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSCollectionViewCellProtocol.h; sourceTree = "<group>"; };
+		636F8D251BCB869500552B91 /* RDSCollectionViewDataDisplayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSCollectionViewDataDisplayManager.h; sourceTree = "<group>"; };
+		636F8D261BCB869500552B91 /* RDSCollectionViewDataDisplayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDSCollectionViewDataDisplayManager.m; sourceTree = "<group>"; };
+		636F8D271BCB869500552B91 /* RDSCollectionViewSectionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSCollectionViewSectionInfo.h; sourceTree = "<group>"; };
+		636F8D281BCB869500552B91 /* RDSCollectionViewSectionInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDSCollectionViewSectionInfo.m; sourceTree = "<group>"; };
+		636F8D291BCB869500552B91 /* RDSCollectionViewSupplementaryViewObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSCollectionViewSupplementaryViewObject.h; sourceTree = "<group>"; };
+		636F8D2A1BCB869500552B91 /* RDSCollectionViewSupplementaryViewObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDSCollectionViewSupplementaryViewObject.m; sourceTree = "<group>"; };
+		636F8D2B1BCB869500552B91 /* RDSCollectionViewSupplementaryViewObjectProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSCollectionViewSupplementaryViewObjectProtocol.h; sourceTree = "<group>"; };
+		636F8D2C1BCB869500552B91 /* RDSCollectionViewSupplementaryViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSCollectionViewSupplementaryViewProtocol.h; sourceTree = "<group>"; };
+		636F8D2E1BCB869500552B91 /* TabBarButtonPrototype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarButtonPrototype.h; sourceTree = "<group>"; };
+		636F8D2F1BCB869500552B91 /* TabBarButtonPrototype.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarButtonPrototype.m; sourceTree = "<group>"; };
+		636F8D301BCB869500552B91 /* TabBarButtonPrototypeProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarButtonPrototypeProtocol.h; sourceTree = "<group>"; };
+		636F8D311BCB869500552B91 /* TabBarControllerContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarControllerContent.h; sourceTree = "<group>"; };
+		636F8D321BCB869500552B91 /* TabBarControllerContentEmbedder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarControllerContentEmbedder.h; sourceTree = "<group>"; };
+		636F8D331BCB869500552B91 /* TabBarControllerEmbeddedContentConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarControllerEmbeddedContentConfigurator.h; sourceTree = "<group>"; };
+		636F8D341BCB869500552B91 /* UIViewController+TabBarControllerContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TabBarControllerContent.h"; sourceTree = "<group>"; };
+		636F8D351BCB869500552B91 /* UIViewController+TabBarControllerContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TabBarControllerContent.m"; sourceTree = "<group>"; };
+		636F8D361BCB869500552B91 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		636F8D371BCB869500552B91 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		636F8D381BCB869500552B91 /* RootViewInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewInput.h; sourceTree = "<group>"; };
+		636F8D3A1BCB869500552B91 /* TabBarButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarButtonCell.h; sourceTree = "<group>"; };
+		636F8D3B1BCB869500552B91 /* TabBarButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarButtonCell.m; sourceTree = "<group>"; };
+		636F8D7C1BCB890000552B91 /* EventListInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventListInteractor.h; path = ../EventListInteractor.h; sourceTree = "<group>"; };
+		636F8D7D1BCB890000552B91 /* EventListInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListInteractor.m; path = ../EventListInteractor.m; sourceTree = "<group>"; };
+		636F8D7E1BCB890000552B91 /* EventListInteractorInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventListInteractorInput.h; path = ../EventListInteractorInput.h; sourceTree = "<group>"; };
+		636F8D7F1BCB890000552B91 /* EventListInteractorOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventListInteractorOutput.h; path = ../EventListInteractorOutput.h; sourceTree = "<group>"; };
+		636F8D801BCB890000552B91 /* EventListModuleAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventListModuleAssembly.h; path = ../EventListModuleAssembly.h; sourceTree = "<group>"; };
+		636F8D811BCB890000552B91 /* EventListModuleAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListModuleAssembly.m; path = ../EventListModuleAssembly.m; sourceTree = "<group>"; };
+		636F8D821BCB890000552B91 /* EventListPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventListPresenter.h; path = ../EventListPresenter.h; sourceTree = "<group>"; };
+		636F8D831BCB890000552B91 /* EventListPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListPresenter.m; path = ../EventListPresenter.m; sourceTree = "<group>"; };
+		636F8D841BCB890000552B91 /* EventListRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventListRouter.h; path = ../EventListRouter.h; sourceTree = "<group>"; };
+		636F8D851BCB890000552B91 /* EventListRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListRouter.m; path = ../EventListRouter.m; sourceTree = "<group>"; };
+		636F8D861BCB890000552B91 /* EventListRouterInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventListRouterInput.h; path = ../EventListRouterInput.h; sourceTree = "<group>"; };
+		636F8D871BCB890000552B91 /* EventListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventListView.h; path = ../EventListView.h; sourceTree = "<group>"; };
+		636F8D881BCB890000552B91 /* EventListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListView.m; path = ../EventListView.m; sourceTree = "<group>"; };
+		636F8D891BCB890000552B91 /* EventListViewInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventListViewInput.h; path = ../EventListViewInput.h; sourceTree = "<group>"; };
+		636F8D8A1BCB890000552B91 /* EventListViewOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventListViewOutput.h; path = ../EventListViewOutput.h; sourceTree = "<group>"; };
+		636F8D901BCB893700552B91 /* RamblerLocationInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RamblerLocationInteractor.h; path = ../RamblerLocationInteractor.h; sourceTree = "<group>"; };
+		636F8D911BCB893700552B91 /* RamblerLocationInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RamblerLocationInteractor.m; path = ../RamblerLocationInteractor.m; sourceTree = "<group>"; };
+		636F8D921BCB893700552B91 /* RamblerLocationInteractorInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RamblerLocationInteractorInput.h; path = ../RamblerLocationInteractorInput.h; sourceTree = "<group>"; };
+		636F8D931BCB893700552B91 /* RamblerLocationInteractorOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RamblerLocationInteractorOutput.h; path = ../RamblerLocationInteractorOutput.h; sourceTree = "<group>"; };
+		636F8D941BCB893700552B91 /* RamblerLocationModuleAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RamblerLocationModuleAssembly.h; path = ../RamblerLocationModuleAssembly.h; sourceTree = "<group>"; };
+		636F8D951BCB893700552B91 /* RamblerLocationModuleAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RamblerLocationModuleAssembly.m; path = ../RamblerLocationModuleAssembly.m; sourceTree = "<group>"; };
+		636F8D961BCB893700552B91 /* RamblerLocationPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RamblerLocationPresenter.h; path = ../RamblerLocationPresenter.h; sourceTree = "<group>"; };
+		636F8D971BCB893700552B91 /* RamblerLocationPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RamblerLocationPresenter.m; path = ../RamblerLocationPresenter.m; sourceTree = "<group>"; };
+		636F8D981BCB893700552B91 /* RamblerLocationRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RamblerLocationRouter.h; path = ../RamblerLocationRouter.h; sourceTree = "<group>"; };
+		636F8D991BCB893700552B91 /* RamblerLocationRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RamblerLocationRouter.m; path = ../RamblerLocationRouter.m; sourceTree = "<group>"; };
+		636F8D9A1BCB893700552B91 /* RamblerLocationRouterInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RamblerLocationRouterInput.h; path = ../RamblerLocationRouterInput.h; sourceTree = "<group>"; };
+		636F8D9B1BCB893700552B91 /* RamblerLocationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RamblerLocationView.h; path = ../RamblerLocationView.h; sourceTree = "<group>"; };
+		636F8D9C1BCB893700552B91 /* RamblerLocationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RamblerLocationView.m; path = ../RamblerLocationView.m; sourceTree = "<group>"; };
+		636F8D9D1BCB893700552B91 /* RamblerLocationViewInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RamblerLocationViewInput.h; path = ../RamblerLocationViewInput.h; sourceTree = "<group>"; };
+		636F8D9E1BCB893700552B91 /* RamblerLocationViewOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RamblerLocationViewOutput.h; path = ../RamblerLocationViewOutput.h; sourceTree = "<group>"; };
 		6373A3E61BBDBFDC00DF67FF /* EventService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventService.h; sourceTree = "<group>"; };
 		6373A3E71BBDC02100DF67FF /* RegistrationQuestionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationQuestionService.h; sourceTree = "<group>"; };
 		6373A3E91BBDC05900DF67FF /* SpeakerService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerService.h; sourceTree = "<group>"; };
@@ -574,114 +612,6 @@
 			path = SocialNetworkAccountService;
 			sourceTree = "<group>";
 		};
-		636F8CCF1BCB800200552B91 /* TabBarModule */ = {
-			isa = PBXGroup;
-			children = (
-				636F8CD01BCB800200552B91 /* Assembly */,
-				636F8CD31BCB800200552B91 /* Interactor */,
-				636F8CD71BCB800200552B91 /* Presenter */,
-				636F8CDD1BCB800200552B91 /* Router */,
-				636F8CE21BCB800200552B91 /* View */,
-			);
-			path = TabBarModule;
-			sourceTree = "<group>";
-		};
-		636F8CD01BCB800200552B91 /* Assembly */ = {
-			isa = PBXGroup;
-			children = (
-				636F8CD11BCB800200552B91 /* RootModuleAssembly.h */,
-				636F8CD21BCB800200552B91 /* RootModuleAssembly.m */,
-			);
-			path = Assembly;
-			sourceTree = "<group>";
-		};
-		636F8CD31BCB800200552B91 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				636F8CD41BCB800200552B91 /* RootInteractor.h */,
-				636F8CD51BCB800200552B91 /* RootInteractor.m */,
-				636F8CD61BCB800200552B91 /* RootInteractorInput.h */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		636F8CD71BCB800200552B91 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				636F8CD81BCB800200552B91 /* RootInteractorOutput.h */,
-				636F8CD91BCB800200552B91 /* RootModuleConfigurator.h */,
-				636F8CDA1BCB800200552B91 /* RootPresenter.h */,
-				636F8CDB1BCB800200552B91 /* RootPresenter.m */,
-				636F8CDC1BCB800200552B91 /* RootViewOutput.h */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		636F8CDD1BCB800200552B91 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				636F8CDE1BCB800200552B91 /* RootRouter.h */,
-				636F8CDF1BCB800200552B91 /* RootRouter.m */,
-				636F8CE01BCB800200552B91 /* RootRouterInput.h */,
-				636F8CE11BCB800200552B91 /* RootTabFactory.h */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		636F8CE21BCB800200552B91 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				636F8CE31BCB800200552B91 /* CollectionViewDataDisplayManager */,
-				636F8CEE1BCB800200552B91 /* Entities */,
-				636F8CF71BCB800200552B91 /* RootViewController.h */,
-				636F8CF81BCB800200552B91 /* RootViewController.m */,
-				636F8CF91BCB800200552B91 /* RootViewInput.h */,
-				636F8CFA1BCB800200552B91 /* TabBarButtonCell */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		636F8CE31BCB800200552B91 /* CollectionViewDataDisplayManager */ = {
-			isa = PBXGroup;
-			children = (
-				636F8CE41BCB800200552B91 /* RDSCollectionViewCellObjectProtocol.h */,
-				636F8CE51BCB800200552B91 /* RDSCollectionViewCellProtocol.h */,
-				636F8CE61BCB800200552B91 /* RDSCollectionViewDataDisplayManager.h */,
-				636F8CE71BCB800200552B91 /* RDSCollectionViewDataDisplayManager.m */,
-				636F8CE81BCB800200552B91 /* RDSCollectionViewSectionInfo.h */,
-				636F8CE91BCB800200552B91 /* RDSCollectionViewSectionInfo.m */,
-				636F8CEA1BCB800200552B91 /* RDSCollectionViewSupplementaryViewObject.h */,
-				636F8CEB1BCB800200552B91 /* RDSCollectionViewSupplementaryViewObject.m */,
-				636F8CEC1BCB800200552B91 /* RDSCollectionViewSupplementaryViewObjectProtocol.h */,
-				636F8CED1BCB800200552B91 /* RDSCollectionViewSupplementaryViewProtocol.h */,
-			);
-			path = CollectionViewDataDisplayManager;
-			sourceTree = "<group>";
-		};
-		636F8CEE1BCB800200552B91 /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				636F8CEF1BCB800200552B91 /* TabBarButtonPrototype.h */,
-				636F8CF01BCB800200552B91 /* TabBarButtonPrototype.m */,
-				636F8CF11BCB800200552B91 /* TabBarButtonPrototypeProtocol.h */,
-				636F8CF21BCB800200552B91 /* TabBarControllerContent.h */,
-				636F8CF31BCB800200552B91 /* TabBarControllerContentEmbedder.h */,
-				636F8CF41BCB800200552B91 /* TabBarControllerEmbeddedContentConfigurator.h */,
-				636F8CF51BCB800200552B91 /* UIViewController+TabBarControllerContent.h */,
-				636F8CF61BCB800200552B91 /* UIViewController+TabBarControllerContent.m */,
-			);
-			path = Entities;
-			sourceTree = "<group>";
-		};
-		636F8CFA1BCB800200552B91 /* TabBarButtonCell */ = {
-			isa = PBXGroup;
-			children = (
-				636F8CFB1BCB800200552B91 /* TabBarButtonCell.h */,
-				636F8CFC1BCB800200552B91 /* TabBarButtonCell.m */,
-			);
-			path = TabBarButtonCell;
-			sourceTree = "<group>";
-		};
 		636F8D081BCB822F00552B91 /* Assemblies */ = {
 			isa = PBXGroup;
 			children = (
@@ -697,6 +627,255 @@
 				636F8D0B1BCB825F00552B91 /* ModuleAssemblyBase.m */,
 			);
 			path = ModuleAssemblyBase;
+			sourceTree = "<group>";
+		};
+		636F8D0D1BCB869500552B91 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				636F8D0E1BCB869500552B91 /* TabBarModule */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		636F8D0E1BCB869500552B91 /* TabBarModule */ = {
+			isa = PBXGroup;
+			children = (
+				636F8D0F1BCB869500552B91 /* Assembly */,
+				636F8D121BCB869500552B91 /* Interactor */,
+				636F8D161BCB869500552B91 /* Presenter */,
+				636F8D1C1BCB869500552B91 /* Router */,
+				636F8D211BCB869500552B91 /* View */,
+			);
+			path = TabBarModule;
+			sourceTree = "<group>";
+		};
+		636F8D0F1BCB869500552B91 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				636F8D101BCB869500552B91 /* RootModuleAssembly.h */,
+				636F8D111BCB869500552B91 /* RootModuleAssembly.m */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		636F8D121BCB869500552B91 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				636F8D131BCB869500552B91 /* RootInteractor.h */,
+				636F8D141BCB869500552B91 /* RootInteractor.m */,
+				636F8D151BCB869500552B91 /* RootInteractorInput.h */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		636F8D161BCB869500552B91 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				636F8D171BCB869500552B91 /* RootInteractorOutput.h */,
+				636F8D181BCB869500552B91 /* RootModuleConfigurator.h */,
+				636F8D191BCB869500552B91 /* RootPresenter.h */,
+				636F8D1A1BCB869500552B91 /* RootPresenter.m */,
+				636F8D1B1BCB869500552B91 /* RootViewOutput.h */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		636F8D1C1BCB869500552B91 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				636F8D1D1BCB869500552B91 /* RootRouter.h */,
+				636F8D1E1BCB869500552B91 /* RootRouter.m */,
+				636F8D1F1BCB869500552B91 /* RootRouterInput.h */,
+				636F8D201BCB869500552B91 /* RootTabFactory.h */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		636F8D211BCB869500552B91 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				636F8D221BCB869500552B91 /* CollectionViewDataDisplayManager */,
+				636F8D2D1BCB869500552B91 /* Entities */,
+				636F8D361BCB869500552B91 /* RootViewController.h */,
+				636F8D371BCB869500552B91 /* RootViewController.m */,
+				636F8D381BCB869500552B91 /* RootViewInput.h */,
+				636F8D391BCB869500552B91 /* TabBarButtonCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		636F8D221BCB869500552B91 /* CollectionViewDataDisplayManager */ = {
+			isa = PBXGroup;
+			children = (
+				636F8D231BCB869500552B91 /* RDSCollectionViewCellObjectProtocol.h */,
+				636F8D241BCB869500552B91 /* RDSCollectionViewCellProtocol.h */,
+				636F8D251BCB869500552B91 /* RDSCollectionViewDataDisplayManager.h */,
+				636F8D261BCB869500552B91 /* RDSCollectionViewDataDisplayManager.m */,
+				636F8D271BCB869500552B91 /* RDSCollectionViewSectionInfo.h */,
+				636F8D281BCB869500552B91 /* RDSCollectionViewSectionInfo.m */,
+				636F8D291BCB869500552B91 /* RDSCollectionViewSupplementaryViewObject.h */,
+				636F8D2A1BCB869500552B91 /* RDSCollectionViewSupplementaryViewObject.m */,
+				636F8D2B1BCB869500552B91 /* RDSCollectionViewSupplementaryViewObjectProtocol.h */,
+				636F8D2C1BCB869500552B91 /* RDSCollectionViewSupplementaryViewProtocol.h */,
+			);
+			path = CollectionViewDataDisplayManager;
+			sourceTree = "<group>";
+		};
+		636F8D2D1BCB869500552B91 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				636F8D2E1BCB869500552B91 /* TabBarButtonPrototype.h */,
+				636F8D2F1BCB869500552B91 /* TabBarButtonPrototype.m */,
+				636F8D301BCB869500552B91 /* TabBarButtonPrototypeProtocol.h */,
+				636F8D311BCB869500552B91 /* TabBarControllerContent.h */,
+				636F8D321BCB869500552B91 /* TabBarControllerContentEmbedder.h */,
+				636F8D331BCB869500552B91 /* TabBarControllerEmbeddedContentConfigurator.h */,
+				636F8D341BCB869500552B91 /* UIViewController+TabBarControllerContent.h */,
+				636F8D351BCB869500552B91 /* UIViewController+TabBarControllerContent.m */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		636F8D391BCB869500552B91 /* TabBarButtonCell */ = {
+			isa = PBXGroup;
+			children = (
+				636F8D3A1BCB869500552B91 /* TabBarButtonCell.h */,
+				636F8D3B1BCB869500552B91 /* TabBarButtonCell.m */,
+			);
+			path = TabBarButtonCell;
+			sourceTree = "<group>";
+		};
+		636F8D3C1BCB869500552B91 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				636F8D3D1BCB869500552B91 /* EventListModule */,
+				636F8D431BCB869500552B91 /* RamblerLocationModule */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		636F8D3D1BCB869500552B91 /* EventListModule */ = {
+			isa = PBXGroup;
+			children = (
+				636F8D3E1BCB869500552B91 /* Assembly */,
+				636F8D3F1BCB869500552B91 /* Interactor */,
+				636F8D401BCB869500552B91 /* Presenter */,
+				636F8D411BCB869500552B91 /* Router */,
+				636F8D421BCB869500552B91 /* View */,
+			);
+			path = EventListModule;
+			sourceTree = "<group>";
+		};
+		636F8D3E1BCB869500552B91 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				636F8D801BCB890000552B91 /* EventListModuleAssembly.h */,
+				636F8D811BCB890000552B91 /* EventListModuleAssembly.m */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		636F8D3F1BCB869500552B91 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				636F8D7C1BCB890000552B91 /* EventListInteractor.h */,
+				636F8D7D1BCB890000552B91 /* EventListInteractor.m */,
+				636F8D7E1BCB890000552B91 /* EventListInteractorInput.h */,
+				636F8D7F1BCB890000552B91 /* EventListInteractorOutput.h */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		636F8D401BCB869500552B91 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				636F8D821BCB890000552B91 /* EventListPresenter.h */,
+				636F8D831BCB890000552B91 /* EventListPresenter.m */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		636F8D411BCB869500552B91 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				636F8D841BCB890000552B91 /* EventListRouter.h */,
+				636F8D851BCB890000552B91 /* EventListRouter.m */,
+				636F8D861BCB890000552B91 /* EventListRouterInput.h */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		636F8D421BCB869500552B91 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				636F8D871BCB890000552B91 /* EventListView.h */,
+				636F8D881BCB890000552B91 /* EventListView.m */,
+				636F8D891BCB890000552B91 /* EventListViewInput.h */,
+				636F8D8A1BCB890000552B91 /* EventListViewOutput.h */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		636F8D431BCB869500552B91 /* RamblerLocationModule */ = {
+			isa = PBXGroup;
+			children = (
+				636F8D441BCB869500552B91 /* Assembly */,
+				636F8D451BCB869500552B91 /* Interactor */,
+				636F8D461BCB869500552B91 /* Presenter */,
+				636F8D471BCB869500552B91 /* Router */,
+				636F8D481BCB869500552B91 /* View */,
+			);
+			path = RamblerLocationModule;
+			sourceTree = "<group>";
+		};
+		636F8D441BCB869500552B91 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				636F8D941BCB893700552B91 /* RamblerLocationModuleAssembly.h */,
+				636F8D951BCB893700552B91 /* RamblerLocationModuleAssembly.m */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		636F8D451BCB869500552B91 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				636F8D901BCB893700552B91 /* RamblerLocationInteractor.h */,
+				636F8D911BCB893700552B91 /* RamblerLocationInteractor.m */,
+				636F8D921BCB893700552B91 /* RamblerLocationInteractorInput.h */,
+				636F8D931BCB893700552B91 /* RamblerLocationInteractorOutput.h */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		636F8D461BCB869500552B91 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				636F8D961BCB893700552B91 /* RamblerLocationPresenter.h */,
+				636F8D971BCB893700552B91 /* RamblerLocationPresenter.m */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		636F8D471BCB869500552B91 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				636F8D981BCB893700552B91 /* RamblerLocationRouter.h */,
+				636F8D991BCB893700552B91 /* RamblerLocationRouter.m */,
+				636F8D9A1BCB893700552B91 /* RamblerLocationRouterInput.h */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		636F8D481BCB869500552B91 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				636F8D9B1BCB893700552B91 /* RamblerLocationView.h */,
+				636F8D9C1BCB893700552B91 /* RamblerLocationView.m */,
+				636F8D9D1BCB893700552B91 /* RamblerLocationViewInput.h */,
+				636F8D9E1BCB893700552B91 /* RamblerLocationViewOutput.h */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		6373A3DE1BBDBDF700DF67FF /* Services */ = {
@@ -1046,7 +1225,8 @@
 			isa = PBXGroup;
 			children = (
 				636F8D081BCB822F00552B91 /* Assemblies */,
-				636F8CCF1BCB800200552B91 /* TabBarModule */,
+				636F8D0D1BCB869500552B91 /* Helpers */,
+				636F8D3C1BCB869500552B91 /* Modules */,
 				636B64111BBFE2C20053E38F /* Main.storyboard */,
 				636B64131BBFE3420053E38F /* ViewController.h */,
 				636B64141BBFE3420053E38F /* ViewController.m */,
@@ -2439,41 +2619,48 @@
 			files = (
 				636B64101BBDD6260053E38F /* SpeakerServiceImplementation.m in Sources */,
 				636A37C51BC142BB00B49C3D /* ApplicationAssembly.m in Sources */,
-				636F8CFE1BCB800200552B91 /* RootInteractor.m in Sources */,
+				636F8D4A1BCB869500552B91 /* RootInteractor.m in Sources */,
+				636F8DA31BCB893700552B91 /* RamblerLocationView.m in Sources */,
 				9F8E5F941BC269EA00DC10DB /* OperationFactoriesAssembly.m in Sources */,
 				9F18311D1BC1615C000E21A5 /* SingleResponseObjectFormatter.m in Sources */,
+				636F8D8D1BCB890000552B91 /* EventListPresenter.m in Sources */,
+				636F8DA01BCB893700552B91 /* RamblerLocationModuleAssembly.m in Sources */,
 				636F8CBC1BC97E7F00552B91 /* SocialNetworkAccount.m in Sources */,
 				9F1830B31BC11879000E21A5 /* CommonNetworkClient.m in Sources */,
 				9F0A84FD1BC1698B006F79FB /* NetworkOperation.m in Sources */,
-				636F8D041BCB800200552B91 /* TabBarButtonPrototype.m in Sources */,
+				636F8D501BCB869500552B91 /* TabBarButtonPrototype.m in Sources */,
 				9F8E5FA61BC27CCE00DC10DB /* MappingConstants.m in Sources */,
 				9F8E5F801BC2592600DC10DB /* ResponseValidatorsAssembly.m in Sources */,
 				9F1830BF1BC11D26000E21A5 /* JSONResponseDeserializer.m in Sources */,
 				9F1830931BC02293000E21A5 /* RESTRequestConfigurator.m in Sources */,
-				636F8D001BCB800200552B91 /* RootRouter.m in Sources */,
+				636F8D4C1BCB869500552B91 /* RootRouter.m in Sources */,
 				9F1830A71BC032CF000E21A5 /* ParseRequestSigner.m in Sources */,
-				636F8D031BCB800200552B91 /* RDSCollectionViewSupplementaryViewObject.m in Sources */,
+				636F8DA21BCB893700552B91 /* RamblerLocationRouter.m in Sources */,
+				636F8D4F1BCB869500552B91 /* RDSCollectionViewSupplementaryViewObject.m in Sources */,
 				9F0A84FA1BC1698B006F79FB /* OperationBuffer.m in Sources */,
-				636F8D051BCB800200552B91 /* UIViewController+TabBarControllerContent.m in Sources */,
+				636F8D511BCB869500552B91 /* UIViewController+TabBarControllerContent.m in Sources */,
 				636F8CB61BC97E7F00552B91 /* Lecture.m in Sources */,
 				9F1830D71BC125C3000E21A5 /* ParseResponseValidator.m in Sources */,
 				9F1830D11BC12492000E21A5 /* ResponseValidatorBase.m in Sources */,
-				636F8CFD1BCB800200552B91 /* RootModuleAssembly.m in Sources */,
+				636F8D491BCB869500552B91 /* RootModuleAssembly.m in Sources */,
 				9F0A85371BC18A3C006F79FB /* NetworkCompoundOperationBuilder.m in Sources */,
 				636F8CBD1BC97E7F00552B91 /* Event+CoreDataProperties.m in Sources */,
 				9F18309F1BC024A9000E21A5 /* RequestDataModel.m in Sources */,
 				9F0A852D1BC188B0006F79FB /* EventOperationFactory.m in Sources */,
 				636F8CB81BC97E7F00552B91 /* LectureMaterials.m in Sources */,
 				63FDCE061BBDBA2A00A43B60 /* AppDelegate.m in Sources */,
-				636F8D061BCB800200552B91 /* RootViewController.m in Sources */,
+				636F8D521BCB869500552B91 /* RootViewController.m in Sources */,
 				636B64041BBDD19A0053E38F /* LectureServiceImplementation.m in Sources */,
 				63F54D9B1BC5AB3C00DB1746 /* ServiceComponentsAssembly.m in Sources */,
 				636A37B31BC1356400B49C3D /* ApplicationConfiguratorImplementation.m in Sources */,
 				9F8E5FA91BC27D0D00DC10DB /* ServiceNameConstants.m in Sources */,
 				636F8CB51BC97E7F00552B91 /* Lecture+CoreDataProperties.m in Sources */,
 				636F8C971BC97B3100552B91 /* EventServiceImplementation.m in Sources */,
+				636F8D8F1BCB890000552B91 /* EventListView.m in Sources */,
 				636F8CB71BC97E7F00552B91 /* LectureMaterials+CoreDataProperties.m in Sources */,
 				9F8E5F841BC25A0700DC10DB /* ResponseMappersAssembly.m in Sources */,
+				636F8DA11BCB893700552B91 /* RamblerLocationPresenter.m in Sources */,
+				636F8D9F1BCB893700552B91 /* RamblerLocationInteractor.m in Sources */,
 				9F18311C1BC1615C000E21A5 /* ResultsResponseObjectFormatter.m in Sources */,
 				636F8CBB1BC97E7F00552B91 /* SocialNetworkAccount+CoreDataProperties.m in Sources */,
 				9F0A85011BC1698B006F79FB /* ResponseMappingOperation.m in Sources */,
@@ -2482,8 +2669,8 @@
 				63EF15C01BC461DD00480CAF /* PushNotificationServiceImplementation.m in Sources */,
 				636B64151BBFE3420053E38F /* ViewController.m in Sources */,
 				9F8E5F741BC255AA00DC10DB /* RequestSignersAssembly.m in Sources */,
-				636F8D071BCB800200552B91 /* TabBarButtonCell.m in Sources */,
 				9FF99E511BC42FF6006F15AF /* OperationSchedulerImplementation.m in Sources */,
+				636F8D531BCB869500552B91 /* TabBarButtonCell.m in Sources */,
 				9F0A85031BC1698B006F79FB /* OperationDebugDescriptionFormatter.m in Sources */,
 				9F0A84FC1BC1698B006F79FB /* CompoundOperationDebugDescriptionFormatter.m in Sources */,
 				9F0A84FE1BC1698B006F79FB /* RequestConfigurationOperation.m in Sources */,
@@ -2491,17 +2678,20 @@
 				636F8CBE1BC97E7F00552B91 /* Event.m in Sources */,
 				9F8E5F781BC2571B00DC10DB /* NetworkClientsAssembly.m in Sources */,
 				9F8E5FAD1BC27E7F00DC10DB /* HTTPMethodConstants.m in Sources */,
+				636F8D8E1BCB890000552B91 /* EventListRouter.m in Sources */,
 				9F0A85021BC1698B006F79FB /* ResponseValidationOperation.m in Sources */,
 				9F0A84FB1BC1698B006F79FB /* CompoundOperationBase.m in Sources */,
+				636F8D8B1BCB890000552B91 /* EventListInteractor.m in Sources */,
 				9F0A84F91BC1698B006F79FB /* AsyncOperation.m in Sources */,
 				9F0A85321BC18906006F79FB /* EventQuery.m in Sources */,
 				9F0A84FF1BC1698B006F79FB /* RequestSigningOperation.m in Sources */,
 				9F1830F51BC14444000E21A5 /* NSString+RCFCapitalization.m in Sources */,
 				9F8E5F7C1BC2584500DC10DB /* ResponseDeserializersAssembly.m in Sources */,
+				636F8D8C1BCB890000552B91 /* EventListModuleAssembly.m in Sources */,
 				9F0A6C1D1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m in Sources */,
 				9F0A85001BC1698B006F79FB /* ResponseDeserializationOperation.m in Sources */,
-				636F8D011BCB800200552B91 /* RDSCollectionViewDataDisplayManager.m in Sources */,
 				9F0A853B1BC1908B006F79FB /* OperationChainer.m in Sources */,
+				636F8D4D1BCB869500552B91 /* RDSCollectionViewDataDisplayManager.m in Sources */,
 				636F8CC01BC97E7F00552B91 /* RegistrationQuestion.m in Sources */,
 				63EF15BB1BC4559900480CAF /* PushNotificationCenterImplementation.m in Sources */,
 				6373A4101BBDC5EA00DF67FF /* Conference.xcdatamodeld in Sources */,
@@ -2514,10 +2704,10 @@
 				636A37C21BC1413A00B49C3D /* SystemInfrastructureAssembly.m in Sources */,
 				9F0A6C2E1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m in Sources */,
 				636F8CB91BC97E7F00552B91 /* Speaker+CoreDataProperties.m in Sources */,
-				636F8D021BCB800200552B91 /* RDSCollectionViewSectionInfo.m in Sources */,
+				636F8D4E1BCB869500552B91 /* RDSCollectionViewSectionInfo.m in Sources */,
 				9F1830ED1BC14293000E21A5 /* ManagedObjectMapper.m in Sources */,
 				9F1830E61BC13F9F000E21A5 /* ManagedObjectMappingProvider.m in Sources */,
-				636F8CFF1BCB800200552B91 /* RootPresenter.m in Sources */,
+				636F8D4B1BCB869500552B91 /* RootPresenter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

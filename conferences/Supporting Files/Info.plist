@@ -7,6 +7,10 @@
 		<string>ServiceComponentsAssembly</string>
 		<string>ApplicationAssembly</string>
 		<string>SystemInfrastructureAssembly</string>
+		<string>RamblerLocationModuleAssembly</string>
+		<string>EventListModuleAssembly</string>
+		<string>ApplicationAssembly</string>
+		<string>SystemInfrastructureAssembly</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
