@@ -52,16 +52,18 @@
 		636F8D511BCB869500552B91 /* UIViewController+TabBarControllerContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D351BCB869500552B91 /* UIViewController+TabBarControllerContent.m */; settings = {ASSET_TAGS = (); }; };
 		636F8D521BCB869500552B91 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D371BCB869500552B91 /* RootViewController.m */; settings = {ASSET_TAGS = (); }; };
 		636F8D531BCB869500552B91 /* TabBarButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D3B1BCB869500552B91 /* TabBarButtonCell.m */; settings = {ASSET_TAGS = (); }; };
-		636F8D8B1BCB890000552B91 /* EventListInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D7D1BCB890000552B91 /* EventListInteractor.m */; settings = {ASSET_TAGS = (); }; };
-		636F8D8C1BCB890000552B91 /* EventListModuleAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D811BCB890000552B91 /* EventListModuleAssembly.m */; settings = {ASSET_TAGS = (); }; };
-		636F8D8D1BCB890000552B91 /* EventListPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D831BCB890000552B91 /* EventListPresenter.m */; settings = {ASSET_TAGS = (); }; };
-		636F8D8E1BCB890000552B91 /* EventListRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D851BCB890000552B91 /* EventListRouter.m */; settings = {ASSET_TAGS = (); }; };
-		636F8D8F1BCB890000552B91 /* EventListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D881BCB890000552B91 /* EventListView.m */; settings = {ASSET_TAGS = (); }; };
-		636F8D9F1BCB893700552B91 /* RamblerLocationInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D911BCB893700552B91 /* RamblerLocationInteractor.m */; settings = {ASSET_TAGS = (); }; };
-		636F8DA01BCB893700552B91 /* RamblerLocationModuleAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D951BCB893700552B91 /* RamblerLocationModuleAssembly.m */; settings = {ASSET_TAGS = (); }; };
-		636F8DA11BCB893700552B91 /* RamblerLocationPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D971BCB893700552B91 /* RamblerLocationPresenter.m */; settings = {ASSET_TAGS = (); }; };
-		636F8DA21BCB893700552B91 /* RamblerLocationRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D991BCB893700552B91 /* RamblerLocationRouter.m */; settings = {ASSET_TAGS = (); }; };
-		636F8DA31BCB893700552B91 /* RamblerLocationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D9C1BCB893700552B91 /* RamblerLocationView.m */; settings = {ASSET_TAGS = (); }; };
+		636F8DDA1BCB8FE800552B91 /* RamblerLocationModuleAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8DC21BCB8FE800552B91 /* RamblerLocationModuleAssembly.m */; settings = {ASSET_TAGS = (); }; };
+		636F8DDB1BCB8FE800552B91 /* RamblerLocationInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8DC51BCB8FE800552B91 /* RamblerLocationInteractor.m */; settings = {ASSET_TAGS = (); }; };
+		636F8DDC1BCB8FE800552B91 /* RamblerLocationPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8DCA1BCB8FE800552B91 /* RamblerLocationPresenter.m */; settings = {ASSET_TAGS = (); }; };
+		636F8DDD1BCB8FE800552B91 /* RamblerLocationRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8DCD1BCB8FE800552B91 /* RamblerLocationRouter.m */; settings = {ASSET_TAGS = (); }; };
+		636F8DDE1BCB8FE800552B91 /* RamblerLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8DD11BCB8FE800552B91 /* RamblerLocationViewController.m */; settings = {ASSET_TAGS = (); }; };
+		636F8DF71BCB90E500552B91 /* EventListModuleAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8DE41BCB90E500552B91 /* EventListModuleAssembly.m */; settings = {ASSET_TAGS = (); }; };
+		636F8DF81BCB90E500552B91 /* EventListInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8DE71BCB90E500552B91 /* EventListInteractor.m */; settings = {ASSET_TAGS = (); }; };
+		636F8DF91BCB90E500552B91 /* EventListPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8DEC1BCB90E500552B91 /* EventListPresenter.m */; settings = {ASSET_TAGS = (); }; };
+		636F8DFA1BCB90E500552B91 /* EventListRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8DEF1BCB90E500552B91 /* EventListRouter.m */; settings = {ASSET_TAGS = (); }; };
+		636F8DFB1BCB90E500552B91 /* EventListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8DF31BCB90E500552B91 /* EventListViewController.m */; settings = {ASSET_TAGS = (); }; };
+		636F8DFD1BCB914100552B91 /* EventsUserStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 636F8DFC1BCB914100552B91 /* EventsUserStory.storyboard */; settings = {ASSET_TAGS = (); }; };
+		636F8DFF1BCB91A900552B91 /* RamblerLocationUserStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 636F8DFE1BCB91A900552B91 /* RamblerLocationUserStory.storyboard */; settings = {ASSET_TAGS = (); }; };
 		6373A4101BBDC5EA00DF67FF /* Conference.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6373A40E1BBDC5EA00DF67FF /* Conference.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
 		63EF15BB1BC4559900480CAF /* PushNotificationCenterImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF15BA1BC4559900480CAF /* PushNotificationCenterImplementation.m */; settings = {ASSET_TAGS = (); }; };
 		63EF15C01BC461DD00480CAF /* PushNotificationServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF15BF1BC461DD00480CAF /* PushNotificationServiceImplementation.m */; settings = {ASSET_TAGS = (); }; };
@@ -258,36 +260,38 @@
 		636F8D381BCB869500552B91 /* RootViewInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewInput.h; sourceTree = "<group>"; };
 		636F8D3A1BCB869500552B91 /* TabBarButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarButtonCell.h; sourceTree = "<group>"; };
 		636F8D3B1BCB869500552B91 /* TabBarButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarButtonCell.m; sourceTree = "<group>"; };
-		636F8D7C1BCB890000552B91 /* EventListInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventListInteractor.h; path = ../EventListInteractor.h; sourceTree = "<group>"; };
-		636F8D7D1BCB890000552B91 /* EventListInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListInteractor.m; path = ../EventListInteractor.m; sourceTree = "<group>"; };
-		636F8D7E1BCB890000552B91 /* EventListInteractorInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventListInteractorInput.h; path = ../EventListInteractorInput.h; sourceTree = "<group>"; };
-		636F8D7F1BCB890000552B91 /* EventListInteractorOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventListInteractorOutput.h; path = ../EventListInteractorOutput.h; sourceTree = "<group>"; };
-		636F8D801BCB890000552B91 /* EventListModuleAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventListModuleAssembly.h; path = ../EventListModuleAssembly.h; sourceTree = "<group>"; };
-		636F8D811BCB890000552B91 /* EventListModuleAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListModuleAssembly.m; path = ../EventListModuleAssembly.m; sourceTree = "<group>"; };
-		636F8D821BCB890000552B91 /* EventListPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventListPresenter.h; path = ../EventListPresenter.h; sourceTree = "<group>"; };
-		636F8D831BCB890000552B91 /* EventListPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListPresenter.m; path = ../EventListPresenter.m; sourceTree = "<group>"; };
-		636F8D841BCB890000552B91 /* EventListRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventListRouter.h; path = ../EventListRouter.h; sourceTree = "<group>"; };
-		636F8D851BCB890000552B91 /* EventListRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListRouter.m; path = ../EventListRouter.m; sourceTree = "<group>"; };
-		636F8D861BCB890000552B91 /* EventListRouterInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventListRouterInput.h; path = ../EventListRouterInput.h; sourceTree = "<group>"; };
-		636F8D871BCB890000552B91 /* EventListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventListView.h; path = ../EventListView.h; sourceTree = "<group>"; };
-		636F8D881BCB890000552B91 /* EventListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListView.m; path = ../EventListView.m; sourceTree = "<group>"; };
-		636F8D891BCB890000552B91 /* EventListViewInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventListViewInput.h; path = ../EventListViewInput.h; sourceTree = "<group>"; };
-		636F8D8A1BCB890000552B91 /* EventListViewOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventListViewOutput.h; path = ../EventListViewOutput.h; sourceTree = "<group>"; };
-		636F8D901BCB893700552B91 /* RamblerLocationInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RamblerLocationInteractor.h; path = ../RamblerLocationInteractor.h; sourceTree = "<group>"; };
-		636F8D911BCB893700552B91 /* RamblerLocationInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RamblerLocationInteractor.m; path = ../RamblerLocationInteractor.m; sourceTree = "<group>"; };
-		636F8D921BCB893700552B91 /* RamblerLocationInteractorInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RamblerLocationInteractorInput.h; path = ../RamblerLocationInteractorInput.h; sourceTree = "<group>"; };
-		636F8D931BCB893700552B91 /* RamblerLocationInteractorOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RamblerLocationInteractorOutput.h; path = ../RamblerLocationInteractorOutput.h; sourceTree = "<group>"; };
-		636F8D941BCB893700552B91 /* RamblerLocationModuleAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RamblerLocationModuleAssembly.h; path = ../RamblerLocationModuleAssembly.h; sourceTree = "<group>"; };
-		636F8D951BCB893700552B91 /* RamblerLocationModuleAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RamblerLocationModuleAssembly.m; path = ../RamblerLocationModuleAssembly.m; sourceTree = "<group>"; };
-		636F8D961BCB893700552B91 /* RamblerLocationPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RamblerLocationPresenter.h; path = ../RamblerLocationPresenter.h; sourceTree = "<group>"; };
-		636F8D971BCB893700552B91 /* RamblerLocationPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RamblerLocationPresenter.m; path = ../RamblerLocationPresenter.m; sourceTree = "<group>"; };
-		636F8D981BCB893700552B91 /* RamblerLocationRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RamblerLocationRouter.h; path = ../RamblerLocationRouter.h; sourceTree = "<group>"; };
-		636F8D991BCB893700552B91 /* RamblerLocationRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RamblerLocationRouter.m; path = ../RamblerLocationRouter.m; sourceTree = "<group>"; };
-		636F8D9A1BCB893700552B91 /* RamblerLocationRouterInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RamblerLocationRouterInput.h; path = ../RamblerLocationRouterInput.h; sourceTree = "<group>"; };
-		636F8D9B1BCB893700552B91 /* RamblerLocationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RamblerLocationView.h; path = ../RamblerLocationView.h; sourceTree = "<group>"; };
-		636F8D9C1BCB893700552B91 /* RamblerLocationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RamblerLocationView.m; path = ../RamblerLocationView.m; sourceTree = "<group>"; };
-		636F8D9D1BCB893700552B91 /* RamblerLocationViewInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RamblerLocationViewInput.h; path = ../RamblerLocationViewInput.h; sourceTree = "<group>"; };
-		636F8D9E1BCB893700552B91 /* RamblerLocationViewOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RamblerLocationViewOutput.h; path = ../RamblerLocationViewOutput.h; sourceTree = "<group>"; };
+		636F8DC11BCB8FE800552B91 /* RamblerLocationModuleAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RamblerLocationModuleAssembly.h; sourceTree = "<group>"; };
+		636F8DC21BCB8FE800552B91 /* RamblerLocationModuleAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RamblerLocationModuleAssembly.m; sourceTree = "<group>"; };
+		636F8DC41BCB8FE800552B91 /* RamblerLocationInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RamblerLocationInteractor.h; sourceTree = "<group>"; };
+		636F8DC51BCB8FE800552B91 /* RamblerLocationInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RamblerLocationInteractor.m; sourceTree = "<group>"; };
+		636F8DC61BCB8FE800552B91 /* RamblerLocationInteractorInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RamblerLocationInteractorInput.h; sourceTree = "<group>"; };
+		636F8DC71BCB8FE800552B91 /* RamblerLocationInteractorOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RamblerLocationInteractorOutput.h; sourceTree = "<group>"; };
+		636F8DC91BCB8FE800552B91 /* RamblerLocationPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RamblerLocationPresenter.h; sourceTree = "<group>"; };
+		636F8DCA1BCB8FE800552B91 /* RamblerLocationPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RamblerLocationPresenter.m; sourceTree = "<group>"; };
+		636F8DCC1BCB8FE800552B91 /* RamblerLocationRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RamblerLocationRouter.h; sourceTree = "<group>"; };
+		636F8DCD1BCB8FE800552B91 /* RamblerLocationRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RamblerLocationRouter.m; sourceTree = "<group>"; };
+		636F8DCE1BCB8FE800552B91 /* RamblerLocationRouterInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RamblerLocationRouterInput.h; sourceTree = "<group>"; };
+		636F8DD01BCB8FE800552B91 /* RamblerLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RamblerLocationViewController.h; sourceTree = "<group>"; };
+		636F8DD11BCB8FE800552B91 /* RamblerLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RamblerLocationViewController.m; sourceTree = "<group>"; };
+		636F8DD21BCB8FE800552B91 /* RamblerLocationViewInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RamblerLocationViewInput.h; sourceTree = "<group>"; };
+		636F8DD31BCB8FE800552B91 /* RamblerLocationViewOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RamblerLocationViewOutput.h; sourceTree = "<group>"; };
+		636F8DE31BCB90E500552B91 /* EventListModuleAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListModuleAssembly.h; sourceTree = "<group>"; };
+		636F8DE41BCB90E500552B91 /* EventListModuleAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListModuleAssembly.m; sourceTree = "<group>"; };
+		636F8DE61BCB90E500552B91 /* EventListInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListInteractor.h; sourceTree = "<group>"; };
+		636F8DE71BCB90E500552B91 /* EventListInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListInteractor.m; sourceTree = "<group>"; };
+		636F8DE81BCB90E500552B91 /* EventListInteractorInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListInteractorInput.h; sourceTree = "<group>"; };
+		636F8DE91BCB90E500552B91 /* EventListInteractorOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListInteractorOutput.h; sourceTree = "<group>"; };
+		636F8DEB1BCB90E500552B91 /* EventListPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListPresenter.h; sourceTree = "<group>"; };
+		636F8DEC1BCB90E500552B91 /* EventListPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListPresenter.m; sourceTree = "<group>"; };
+		636F8DEE1BCB90E500552B91 /* EventListRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListRouter.h; sourceTree = "<group>"; };
+		636F8DEF1BCB90E500552B91 /* EventListRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListRouter.m; sourceTree = "<group>"; };
+		636F8DF01BCB90E500552B91 /* EventListRouterInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListRouterInput.h; sourceTree = "<group>"; };
+		636F8DF21BCB90E500552B91 /* EventListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListViewController.h; sourceTree = "<group>"; };
+		636F8DF31BCB90E500552B91 /* EventListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListViewController.m; sourceTree = "<group>"; };
+		636F8DF41BCB90E500552B91 /* EventListViewInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListViewInput.h; sourceTree = "<group>"; };
+		636F8DF51BCB90E500552B91 /* EventListViewOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListViewOutput.h; sourceTree = "<group>"; };
+		636F8DFC1BCB914100552B91 /* EventsUserStory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventsUserStory.storyboard; sourceTree = "<group>"; };
+		636F8DFE1BCB91A900552B91 /* RamblerLocationUserStory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RamblerLocationUserStory.storyboard; sourceTree = "<group>"; };
 		6373A3E61BBDBFDC00DF67FF /* EventService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventService.h; sourceTree = "<group>"; };
 		6373A3E71BBDC02100DF67FF /* RegistrationQuestionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationQuestionService.h; sourceTree = "<group>"; };
 		6373A3E91BBDC05900DF67FF /* SpeakerService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerService.h; sourceTree = "<group>"; };
@@ -745,137 +749,187 @@
 			path = TabBarButtonCell;
 			sourceTree = "<group>";
 		};
-		636F8D3C1BCB869500552B91 /* Modules */ = {
+		636F8DA41BCB8FE800552B91 /* UserStories */ = {
 			isa = PBXGroup;
 			children = (
-				636F8D3D1BCB869500552B91 /* EventListModule */,
-				636F8D431BCB869500552B91 /* RamblerLocationModule */,
+				636F8DDF1BCB90E500552B91 /* EventsUserStory */,
+				636F8DBD1BCB8FE800552B91 /* RamblerLocationUserStory */,
+			);
+			path = UserStories;
+			sourceTree = "<group>";
+		};
+		636F8DBD1BCB8FE800552B91 /* RamblerLocationUserStory */ = {
+			isa = PBXGroup;
+			children = (
+				636F8DBE1BCB8FE800552B91 /* Modules */,
+				636F8DD41BCB8FE800552B91 /* Storyboard */,
+			);
+			path = RamblerLocationUserStory;
+			sourceTree = "<group>";
+		};
+		636F8DBE1BCB8FE800552B91 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				636F8DBF1BCB8FE800552B91 /* RamblerLocationModule */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
 		};
-		636F8D3D1BCB869500552B91 /* EventListModule */ = {
+		636F8DBF1BCB8FE800552B91 /* RamblerLocationModule */ = {
 			isa = PBXGroup;
 			children = (
-				636F8D3E1BCB869500552B91 /* Assembly */,
-				636F8D3F1BCB869500552B91 /* Interactor */,
-				636F8D401BCB869500552B91 /* Presenter */,
-				636F8D411BCB869500552B91 /* Router */,
-				636F8D421BCB869500552B91 /* View */,
-			);
-			path = EventListModule;
-			sourceTree = "<group>";
-		};
-		636F8D3E1BCB869500552B91 /* Assembly */ = {
-			isa = PBXGroup;
-			children = (
-				636F8D801BCB890000552B91 /* EventListModuleAssembly.h */,
-				636F8D811BCB890000552B91 /* EventListModuleAssembly.m */,
-			);
-			path = Assembly;
-			sourceTree = "<group>";
-		};
-		636F8D3F1BCB869500552B91 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				636F8D7C1BCB890000552B91 /* EventListInteractor.h */,
-				636F8D7D1BCB890000552B91 /* EventListInteractor.m */,
-				636F8D7E1BCB890000552B91 /* EventListInteractorInput.h */,
-				636F8D7F1BCB890000552B91 /* EventListInteractorOutput.h */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		636F8D401BCB869500552B91 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				636F8D821BCB890000552B91 /* EventListPresenter.h */,
-				636F8D831BCB890000552B91 /* EventListPresenter.m */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		636F8D411BCB869500552B91 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				636F8D841BCB890000552B91 /* EventListRouter.h */,
-				636F8D851BCB890000552B91 /* EventListRouter.m */,
-				636F8D861BCB890000552B91 /* EventListRouterInput.h */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		636F8D421BCB869500552B91 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				636F8D871BCB890000552B91 /* EventListView.h */,
-				636F8D881BCB890000552B91 /* EventListView.m */,
-				636F8D891BCB890000552B91 /* EventListViewInput.h */,
-				636F8D8A1BCB890000552B91 /* EventListViewOutput.h */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		636F8D431BCB869500552B91 /* RamblerLocationModule */ = {
-			isa = PBXGroup;
-			children = (
-				636F8D441BCB869500552B91 /* Assembly */,
-				636F8D451BCB869500552B91 /* Interactor */,
-				636F8D461BCB869500552B91 /* Presenter */,
-				636F8D471BCB869500552B91 /* Router */,
-				636F8D481BCB869500552B91 /* View */,
+				636F8DC01BCB8FE800552B91 /* Assembly */,
+				636F8DC31BCB8FE800552B91 /* Interactor */,
+				636F8DC81BCB8FE800552B91 /* Presenter */,
+				636F8DCB1BCB8FE800552B91 /* Router */,
+				636F8DCF1BCB8FE800552B91 /* View */,
 			);
 			path = RamblerLocationModule;
 			sourceTree = "<group>";
 		};
-		636F8D441BCB869500552B91 /* Assembly */ = {
+		636F8DC01BCB8FE800552B91 /* Assembly */ = {
 			isa = PBXGroup;
 			children = (
-				636F8D941BCB893700552B91 /* RamblerLocationModuleAssembly.h */,
-				636F8D951BCB893700552B91 /* RamblerLocationModuleAssembly.m */,
+				636F8DC11BCB8FE800552B91 /* RamblerLocationModuleAssembly.h */,
+				636F8DC21BCB8FE800552B91 /* RamblerLocationModuleAssembly.m */,
 			);
 			path = Assembly;
 			sourceTree = "<group>";
 		};
-		636F8D451BCB869500552B91 /* Interactor */ = {
+		636F8DC31BCB8FE800552B91 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				636F8D901BCB893700552B91 /* RamblerLocationInteractor.h */,
-				636F8D911BCB893700552B91 /* RamblerLocationInteractor.m */,
-				636F8D921BCB893700552B91 /* RamblerLocationInteractorInput.h */,
-				636F8D931BCB893700552B91 /* RamblerLocationInteractorOutput.h */,
+				636F8DC41BCB8FE800552B91 /* RamblerLocationInteractor.h */,
+				636F8DC51BCB8FE800552B91 /* RamblerLocationInteractor.m */,
+				636F8DC61BCB8FE800552B91 /* RamblerLocationInteractorInput.h */,
+				636F8DC71BCB8FE800552B91 /* RamblerLocationInteractorOutput.h */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
 		};
-		636F8D461BCB869500552B91 /* Presenter */ = {
+		636F8DC81BCB8FE800552B91 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				636F8D961BCB893700552B91 /* RamblerLocationPresenter.h */,
-				636F8D971BCB893700552B91 /* RamblerLocationPresenter.m */,
+				636F8DC91BCB8FE800552B91 /* RamblerLocationPresenter.h */,
+				636F8DCA1BCB8FE800552B91 /* RamblerLocationPresenter.m */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		636F8D471BCB869500552B91 /* Router */ = {
+		636F8DCB1BCB8FE800552B91 /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				636F8D981BCB893700552B91 /* RamblerLocationRouter.h */,
-				636F8D991BCB893700552B91 /* RamblerLocationRouter.m */,
-				636F8D9A1BCB893700552B91 /* RamblerLocationRouterInput.h */,
+				636F8DCC1BCB8FE800552B91 /* RamblerLocationRouter.h */,
+				636F8DCD1BCB8FE800552B91 /* RamblerLocationRouter.m */,
+				636F8DCE1BCB8FE800552B91 /* RamblerLocationRouterInput.h */,
 			);
 			path = Router;
 			sourceTree = "<group>";
 		};
-		636F8D481BCB869500552B91 /* View */ = {
+		636F8DCF1BCB8FE800552B91 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				636F8D9B1BCB893700552B91 /* RamblerLocationView.h */,
-				636F8D9C1BCB893700552B91 /* RamblerLocationView.m */,
-				636F8D9D1BCB893700552B91 /* RamblerLocationViewInput.h */,
-				636F8D9E1BCB893700552B91 /* RamblerLocationViewOutput.h */,
+				636F8DD01BCB8FE800552B91 /* RamblerLocationViewController.h */,
+				636F8DD11BCB8FE800552B91 /* RamblerLocationViewController.m */,
+				636F8DD21BCB8FE800552B91 /* RamblerLocationViewInput.h */,
+				636F8DD31BCB8FE800552B91 /* RamblerLocationViewOutput.h */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		636F8DD41BCB8FE800552B91 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				636F8DFE1BCB91A900552B91 /* RamblerLocationUserStory.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		636F8DDF1BCB90E500552B91 /* EventsUserStory */ = {
+			isa = PBXGroup;
+			children = (
+				636F8DE01BCB90E500552B91 /* Modules */,
+				636F8DF61BCB90E500552B91 /* Storyboard */,
+			);
+			path = EventsUserStory;
+			sourceTree = "<group>";
+		};
+		636F8DE01BCB90E500552B91 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				636F8DE11BCB90E500552B91 /* EventListModule */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		636F8DE11BCB90E500552B91 /* EventListModule */ = {
+			isa = PBXGroup;
+			children = (
+				636F8DE21BCB90E500552B91 /* Assembly */,
+				636F8DE51BCB90E500552B91 /* Interactor */,
+				636F8DEA1BCB90E500552B91 /* Presenter */,
+				636F8DED1BCB90E500552B91 /* Router */,
+				636F8DF11BCB90E500552B91 /* View */,
+			);
+			path = EventListModule;
+			sourceTree = "<group>";
+		};
+		636F8DE21BCB90E500552B91 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				636F8DE31BCB90E500552B91 /* EventListModuleAssembly.h */,
+				636F8DE41BCB90E500552B91 /* EventListModuleAssembly.m */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		636F8DE51BCB90E500552B91 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				636F8DE61BCB90E500552B91 /* EventListInteractor.h */,
+				636F8DE71BCB90E500552B91 /* EventListInteractor.m */,
+				636F8DE81BCB90E500552B91 /* EventListInteractorInput.h */,
+				636F8DE91BCB90E500552B91 /* EventListInteractorOutput.h */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		636F8DEA1BCB90E500552B91 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				636F8DEB1BCB90E500552B91 /* EventListPresenter.h */,
+				636F8DEC1BCB90E500552B91 /* EventListPresenter.m */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		636F8DED1BCB90E500552B91 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				636F8DEE1BCB90E500552B91 /* EventListRouter.h */,
+				636F8DEF1BCB90E500552B91 /* EventListRouter.m */,
+				636F8DF01BCB90E500552B91 /* EventListRouterInput.h */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		636F8DF11BCB90E500552B91 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				636F8DF21BCB90E500552B91 /* EventListViewController.h */,
+				636F8DF31BCB90E500552B91 /* EventListViewController.m */,
+				636F8DF41BCB90E500552B91 /* EventListViewInput.h */,
+				636F8DF51BCB90E500552B91 /* EventListViewOutput.h */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		636F8DF61BCB90E500552B91 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				636F8DFC1BCB914100552B91 /* EventsUserStory.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		6373A3DE1BBDBDF700DF67FF /* Services */ = {
@@ -1225,8 +1279,8 @@
 			isa = PBXGroup;
 			children = (
 				636F8D081BCB822F00552B91 /* Assemblies */,
+				636F8DA41BCB8FE800552B91 /* UserStories */,
 				636F8D0D1BCB869500552B91 /* Helpers */,
-				636F8D3C1BCB869500552B91 /* Modules */,
 				636B64111BBFE2C20053E38F /* Main.storyboard */,
 				636B64131BBFE3420053E38F /* ViewController.h */,
 				636B64141BBFE3420053E38F /* ViewController.m */,
@@ -2485,11 +2539,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				636F8DFF1BCB91A900552B91 /* RamblerLocationUserStory.storyboard in Resources */,
 				636B64121BBFE2C20053E38F /* Main.storyboard in Resources */,
 				63FDCE151BBDBA2A00A43B60 /* Info.plist in Resources */,
 				9F8E5F9D1BC2777100DC10DB /* Conferences.Parse.plist in Resources */,
 				63FDCE141BBDBA2A00A43B60 /* Assets.xcassets in Resources */,
 				892D07F71BEB619A00825704 /* LaunchScreen.xib in Resources */,
+				636F8DFD1BCB914100552B91 /* EventsUserStory.storyboard in Resources */,
 				9F8E5F701BC2552600DC10DB /* Conferences.API.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2620,22 +2676,23 @@
 				636B64101BBDD6260053E38F /* SpeakerServiceImplementation.m in Sources */,
 				636A37C51BC142BB00B49C3D /* ApplicationAssembly.m in Sources */,
 				636F8D4A1BCB869500552B91 /* RootInteractor.m in Sources */,
-				636F8DA31BCB893700552B91 /* RamblerLocationView.m in Sources */,
+				636F8DDE1BCB8FE800552B91 /* RamblerLocationViewController.m in Sources */,
 				9F8E5F941BC269EA00DC10DB /* OperationFactoriesAssembly.m in Sources */,
 				9F18311D1BC1615C000E21A5 /* SingleResponseObjectFormatter.m in Sources */,
-				636F8D8D1BCB890000552B91 /* EventListPresenter.m in Sources */,
-				636F8DA01BCB893700552B91 /* RamblerLocationModuleAssembly.m in Sources */,
 				636F8CBC1BC97E7F00552B91 /* SocialNetworkAccount.m in Sources */,
 				9F1830B31BC11879000E21A5 /* CommonNetworkClient.m in Sources */,
 				9F0A84FD1BC1698B006F79FB /* NetworkOperation.m in Sources */,
 				636F8D501BCB869500552B91 /* TabBarButtonPrototype.m in Sources */,
+				636F8DFB1BCB90E500552B91 /* EventListViewController.m in Sources */,
 				9F8E5FA61BC27CCE00DC10DB /* MappingConstants.m in Sources */,
 				9F8E5F801BC2592600DC10DB /* ResponseValidatorsAssembly.m in Sources */,
+				636F8DF71BCB90E500552B91 /* EventListModuleAssembly.m in Sources */,
 				9F1830BF1BC11D26000E21A5 /* JSONResponseDeserializer.m in Sources */,
 				9F1830931BC02293000E21A5 /* RESTRequestConfigurator.m in Sources */,
 				636F8D4C1BCB869500552B91 /* RootRouter.m in Sources */,
+				636F8DDA1BCB8FE800552B91 /* RamblerLocationModuleAssembly.m in Sources */,
 				9F1830A71BC032CF000E21A5 /* ParseRequestSigner.m in Sources */,
-				636F8DA21BCB893700552B91 /* RamblerLocationRouter.m in Sources */,
+				636F8DDD1BCB8FE800552B91 /* RamblerLocationRouter.m in Sources */,
 				636F8D4F1BCB869500552B91 /* RDSCollectionViewSupplementaryViewObject.m in Sources */,
 				9F0A84FA1BC1698B006F79FB /* OperationBuffer.m in Sources */,
 				636F8D511BCB869500552B91 /* UIViewController+TabBarControllerContent.m in Sources */,
@@ -2656,11 +2713,9 @@
 				9F8E5FA91BC27D0D00DC10DB /* ServiceNameConstants.m in Sources */,
 				636F8CB51BC97E7F00552B91 /* Lecture+CoreDataProperties.m in Sources */,
 				636F8C971BC97B3100552B91 /* EventServiceImplementation.m in Sources */,
-				636F8D8F1BCB890000552B91 /* EventListView.m in Sources */,
 				636F8CB71BC97E7F00552B91 /* LectureMaterials+CoreDataProperties.m in Sources */,
+				636F8DDC1BCB8FE800552B91 /* RamblerLocationPresenter.m in Sources */,
 				9F8E5F841BC25A0700DC10DB /* ResponseMappersAssembly.m in Sources */,
-				636F8DA11BCB893700552B91 /* RamblerLocationPresenter.m in Sources */,
-				636F8D9F1BCB893700552B91 /* RamblerLocationInteractor.m in Sources */,
 				9F18311C1BC1615C000E21A5 /* ResultsResponseObjectFormatter.m in Sources */,
 				636F8CBB1BC97E7F00552B91 /* SocialNetworkAccount+CoreDataProperties.m in Sources */,
 				9F0A85011BC1698B006F79FB /* ResponseMappingOperation.m in Sources */,
@@ -2671,6 +2726,7 @@
 				9F8E5F741BC255AA00DC10DB /* RequestSignersAssembly.m in Sources */,
 				9FF99E511BC42FF6006F15AF /* OperationSchedulerImplementation.m in Sources */,
 				636F8D531BCB869500552B91 /* TabBarButtonCell.m in Sources */,
+				636F8DF81BCB90E500552B91 /* EventListInteractor.m in Sources */,
 				9F0A85031BC1698B006F79FB /* OperationDebugDescriptionFormatter.m in Sources */,
 				9F0A84FC1BC1698B006F79FB /* CompoundOperationDebugDescriptionFormatter.m in Sources */,
 				9F0A84FE1BC1698B006F79FB /* RequestConfigurationOperation.m in Sources */,
@@ -2678,22 +2734,22 @@
 				636F8CBE1BC97E7F00552B91 /* Event.m in Sources */,
 				9F8E5F781BC2571B00DC10DB /* NetworkClientsAssembly.m in Sources */,
 				9F8E5FAD1BC27E7F00DC10DB /* HTTPMethodConstants.m in Sources */,
-				636F8D8E1BCB890000552B91 /* EventListRouter.m in Sources */,
+				636F8DF91BCB90E500552B91 /* EventListPresenter.m in Sources */,
 				9F0A85021BC1698B006F79FB /* ResponseValidationOperation.m in Sources */,
 				9F0A84FB1BC1698B006F79FB /* CompoundOperationBase.m in Sources */,
-				636F8D8B1BCB890000552B91 /* EventListInteractor.m in Sources */,
 				9F0A84F91BC1698B006F79FB /* AsyncOperation.m in Sources */,
 				9F0A85321BC18906006F79FB /* EventQuery.m in Sources */,
 				9F0A84FF1BC1698B006F79FB /* RequestSigningOperation.m in Sources */,
 				9F1830F51BC14444000E21A5 /* NSString+RCFCapitalization.m in Sources */,
 				9F8E5F7C1BC2584500DC10DB /* ResponseDeserializersAssembly.m in Sources */,
-				636F8D8C1BCB890000552B91 /* EventListModuleAssembly.m in Sources */,
 				9F0A6C1D1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m in Sources */,
 				9F0A85001BC1698B006F79FB /* ResponseDeserializationOperation.m in Sources */,
 				9F0A853B1BC1908B006F79FB /* OperationChainer.m in Sources */,
 				636F8D4D1BCB869500552B91 /* RDSCollectionViewDataDisplayManager.m in Sources */,
 				636F8CC01BC97E7F00552B91 /* RegistrationQuestion.m in Sources */,
 				63EF15BB1BC4559900480CAF /* PushNotificationCenterImplementation.m in Sources */,
+				636F8DDB1BCB8FE800552B91 /* RamblerLocationInteractor.m in Sources */,
+				636F8DFA1BCB90E500552B91 /* EventListRouter.m in Sources */,
 				6373A4101BBDC5EA00DF67FF /* Conference.xcdatamodeld in Sources */,
 				63F54D951BC5A79900DB1746 /* EXTScope.m in Sources */,
 				636B640D1BBDD5000053E38F /* SocialNetworkAccountServiceImplementation.m in Sources */,

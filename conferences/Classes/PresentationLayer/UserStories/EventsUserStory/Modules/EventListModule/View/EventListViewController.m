@@ -1,15 +1,15 @@
 //
-//  RamblerLocationView.m
+//  EventListView.m
 //  Conferences
 //
 //  Created by Karpushin Artem on 12/10/15.
 //  Copyright 2015 Rambler. All rights reserved.
 //
 
-#import "RamblerLocationView.h"
-#import "RamblerLocationViewOutput.h"
+#import "EventListViewController.h"
+#import "EventListViewOutput.h"
 
-@interface RamblerLocationView()
+@interface EventListViewController()
 
 @end
 
@@ -18,13 +18,13 @@
  *
  *  
  */
-@implementation RamblerLocationView
+@implementation EventListViewController
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	[self.output setupView];
 }
 
-#pragma mark - RamblerLocationViewInput
+#pragma mark - EventListViewInput
 
 @end

@@ -8,7 +8,11 @@
 
 #import "ModuleAssemblyBase.h"
 
+@protocol TabBarButtonPrototypeProtocol;
+
 @interface RamblerLocationModuleAssembly : ModuleAssemblyBase
+
+- (id<TabBarButtonPrototypeProtocol>)ramblerLocationTabBarButtonPrototype;
 
 @end
 

@@ -17,18 +17,13 @@
 
 #import "TabBarButtonPrototype.h"
 
-#import "NewsListModuleAssembly.h"
-#import "MyFeedModuleAssembly.h"
-#import "MatchesListModuleAssembly.h"
-#import "StatsSportSelectorModuleAssembly.h"
-
+#import "RamblerLocationModuleAssembly.h"
+#import "EventListModuleAssembly.h"
 
 @interface  RootModuleAssembly()
 
-@property (nonatomic,strong,readonly) NewsListModuleAssembly *newsListModuleAssembly;
-@property (nonatomic,strong,readonly) MyFeedModuleAssembly   *myFeedModuleAssembly;
-@property (nonatomic,strong,readonly) MatchesListModuleAssembly *matchesListModuleAssembly;
-@property (nonatomic,strong,readonly) StatsSportSelectorModuleAssembly *statsSportSelectorModuleAssembly;
+@property (nonatomic,strong,readonly) EventListModuleAssembly *eventListModuleAssembly;
+@property (nonatomic,strong,readonly) RamblerLocationModuleAssembly *ramblerLocationModuleAssembly;
 
 @end
 
@@ -83,7 +78,8 @@
 }
 
 - (NSArray *)tabs {
-    return @[[self.newsListModuleAssembly newsListTabBarButtonPrototype],
+    return @[
+             [self.newsListModuleAssembly newsListTabBarButtonPrototype],
              [self.myFeedModuleAssembly myFeedTabBarButtonPrototype],
              [self.matchesListModuleAssembly matchesListTabBarButtonPrototype],
              [self.statsSportSelectorModuleAssembly statisticsTabBarButtonPrototype]

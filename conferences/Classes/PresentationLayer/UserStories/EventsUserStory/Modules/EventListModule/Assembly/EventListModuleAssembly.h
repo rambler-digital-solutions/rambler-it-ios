@@ -8,7 +8,11 @@
 
 #import "ModuleAssemblyBase.h"
 
+@protocol TabBarButtonPrototypeProtocol;
+
 @interface EventListModuleAssembly : ModuleAssemblyBase
+
+- (id<TabBarButtonPrototypeProtocol>)eventListTabBarButtonPrototype;
 
 @end
 

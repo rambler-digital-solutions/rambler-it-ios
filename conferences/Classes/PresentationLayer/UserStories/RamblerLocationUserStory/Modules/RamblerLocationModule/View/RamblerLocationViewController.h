@@ -11,7 +11,7 @@
 
 @protocol RamblerLocationViewOutput;
 
-@interface RamblerLocationView : UIViewController<RamblerLocationViewInput>
+@interface RamblerLocationViewController : UIViewController<RamblerLocationViewInput>
 
 @property (nonatomic, strong) id<RamblerLocationViewOutput> output;
 
