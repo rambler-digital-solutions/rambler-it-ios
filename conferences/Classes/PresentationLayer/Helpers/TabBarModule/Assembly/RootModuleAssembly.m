@@ -34,8 +34,8 @@
                           configuration:^(TyphoonDefinition *definition) {
                             [definition injectProperty:@selector(output) 
                                                   with:[self presenterRoot]];
-                            [definition injectProperty:@selector(moduleConfigurator) 
-                                                  with:[self presenterRoot]];
+                            //[definition injectProperty:@selector(moduleConfigurator)
+                                                 // with:[self presenterRoot]];
                             
              }];
 }
@@ -65,8 +65,8 @@
 - (RootRouter *)routerRoot {
     return [TyphoonDefinition withClass:[RootRouter class]
                            configuration:^(TyphoonDefinition *definition) {
-                               [definition injectProperty:@selector(transitionHandler)
-                                                     with:[self viewRoot]];
+                              // [definition injectProperty:@selector(transitionHandler)
+                                                   //  with:[self viewRoot]];
                                [definition injectProperty:@selector(tabBarControllerContentEmbedder)
                                                      with:[self viewRoot]];
                                [definition injectProperty:@selector(tabFactories)

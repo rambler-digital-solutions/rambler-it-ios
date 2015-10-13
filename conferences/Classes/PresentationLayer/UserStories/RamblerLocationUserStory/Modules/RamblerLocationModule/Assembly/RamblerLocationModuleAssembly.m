@@ -60,9 +60,9 @@ static NSString * const kRamblerLocationStoryboardName = @"RamblerLocationUserSt
     return [TyphoonDefinition withClass:[TabBarButtonPrototype class]
                           configuration:^(TyphoonDefinition *definition) {
                               [definition injectProperty:@selector(tabBarButtonIdleStateImage)
-                                                    with:[UIImage imageNamed:@"news"]];
+                                                    with:[UIImage imageNamed:@"update"]];
                               [definition injectProperty:@selector(tabBarButtonSelectedStateImage)
-                                                    with:[UIImage imageNamed:@"news_sel"]];
+                                                    with:[UIImage imageNamed:@"update"]];
                               [definition injectProperty:@selector(tabBarButtonTitle)
                                                     with:@"Схема проезда"];
                               [definition injectProperty:@selector(tabbarButtonId)

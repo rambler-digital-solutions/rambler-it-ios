@@ -60,9 +60,9 @@ static NSString * const kEventListStoryboardName = @"EventsUserStory";
     return [TyphoonDefinition withClass:[TabBarButtonPrototype class]
                           configuration:^(TyphoonDefinition *definition) {
                               [definition injectProperty:@selector(tabBarButtonIdleStateImage)
-                                                    with:[UIImage imageNamed:@"news"]];
+                                                    with:[UIImage imageNamed:@"umbrella"]];
                               [definition injectProperty:@selector(tabBarButtonSelectedStateImage)
-                                                    with:[UIImage imageNamed:@"news_sel"]];
+                                                    with:[UIImage imageNamed:@"umbrella"]];
                               [definition injectProperty:@selector(tabBarButtonTitle)
                                                     with:@"Конференции"];
                               [definition injectProperty:@selector(tabbarButtonId)
