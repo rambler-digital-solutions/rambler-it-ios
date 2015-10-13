@@ -77,9 +77,11 @@ PODS:
   - RamblerMcFlurry/Core (0.0.2)
   - RamblerMcFlurry/Testing (0.0.2):
     - RamblerMcFlurry/Core
-  - Typhoon (3.4.2):
-    - Typhoon/no-arc (= 3.4.2)
-  - Typhoon/no-arc (3.4.2)
+  - PureLayout (3.0.1)
+  - Typhoon (3.3.2):
+    - Typhoon/no-arc (= 3.3.2)
+  - Typhoon/no-arc (3.3.2)
+  - UIViewController+Routing (0.1.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.6)
@@ -91,7 +93,9 @@ DEPENDENCIES:
   - OCMock (~> 3.1)
   - Parse (~> 1.8)
   - RamblerMcFlurry/Testing (= 0.0.2)
+  - PureLayout (~> 3.0)
   - Typhoon (~> 3.3)
+  - UIViewController+Routing (~> 0.1.0)
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
@@ -104,6 +108,8 @@ SPEC CHECKSUMS:
   OCMock: 28def049ef47f996b515a8eeea958be7ccab2dbb
   Parse: 54a965c8c19a6dde90284ab654dbcc77ef8c001b
   RamblerMcFlurry: b7cd02526648000ef0b87c17d632bb53bf886206
-  Typhoon: 7888288534355491b8295373029d8713cd6386da
+  PureLayout: f35f5384c9c4e4479df041dbe33ad7577b71ddfb
+  Typhoon: d0f4b40120b7011ac41748c3ca141cb12aac3737
+  UIViewController+Routing: 6d34de88e5a30250d453f49ddd5993212f279b9a
 
 COCOAPODS: 0.39.0

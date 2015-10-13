@@ -18,7 +18,7 @@
 /**
  
  */
-@interface RootViewController : BaseViewController <RootViewInput,TabBarControllerContentEmbedder>
+@interface RootViewController : UIViewController <RootViewInput,TabBarControllerContentEmbedder>
 
 @property (nonatomic, strong) id<RootViewOutput> output;
 

@@ -59,7 +59,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>PureLayout.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Typhoon.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>UIViewController+Routing.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -127,7 +137,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7E41CA2ECB40C640963734378302229C</key>
+		<key>54C149DC5855A0CDB795C7EB8751C26D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -198,6 +208,11 @@
 			<true/>
 		</dict>
 		<key>FFA3070B0B55C5E405FC79C14B93E97B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D6775B27F6655DDE6DFBA1564939A3FF</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -30,8 +30,7 @@
 @implementation  RootModuleAssembly
 
 - (RootViewController *)viewRoot {
-    return [TyphoonDefinition withParent:[self.baseModuleComponentsAssembly baseViewController]
-                                   class:[RootViewController class]
+    return [TyphoonDefinition withClass:[RootViewController class]
                           configuration:^(TyphoonDefinition *definition) {
                             [definition injectProperty:@selector(output) 
                                                   with:[self presenterRoot]];
@@ -42,8 +41,7 @@
 }
 
 - (RootInteractor *)interactorRoot {
-    return [TyphoonDefinition withParent:[self.baseModuleComponentsAssembly baseInteractor]
-                                   class:[RootInteractor class]
+    return [TyphoonDefinition withClass:[RootInteractor class]
                           configuration:^(TyphoonDefinition *definition) {
                             [definition injectProperty:@selector(output) 
                                                   with:[self presenterRoot]];
@@ -65,8 +63,7 @@
 }
 
 - (RootRouter *)routerRoot {
-    return [TyphoonDefinition withParent:[self.baseModuleComponentsAssembly baseRouter]
-                                   class:[RootRouter class]
+    return [TyphoonDefinition withClass:[RootRouter class]
                            configuration:^(TyphoonDefinition *definition) {
                                [definition injectProperty:@selector(transitionHandler)
                                                      with:[self viewRoot]];
