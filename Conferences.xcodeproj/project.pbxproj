@@ -41,16 +41,16 @@
 		636F8CBF1BC97E7F00552B91 /* RegistrationQuestion+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8CB21BC97E7F00552B91 /* RegistrationQuestion+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
 		636F8CC01BC97E7F00552B91 /* RegistrationQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8CB41BC97E7F00552B91 /* RegistrationQuestion.m */; settings = {ASSET_TAGS = (); }; };
 		636F8D0C1BCB825F00552B91 /* ModuleAssemblyBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D0B1BCB825F00552B91 /* ModuleAssemblyBase.m */; settings = {ASSET_TAGS = (); }; };
-		636F8D491BCB869500552B91 /* RootModuleAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D111BCB869500552B91 /* RootModuleAssembly.m */; settings = {ASSET_TAGS = (); }; };
-		636F8D4A1BCB869500552B91 /* RootInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D141BCB869500552B91 /* RootInteractor.m */; settings = {ASSET_TAGS = (); }; };
-		636F8D4B1BCB869500552B91 /* RootPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D1A1BCB869500552B91 /* RootPresenter.m */; settings = {ASSET_TAGS = (); }; };
-		636F8D4C1BCB869500552B91 /* RootRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D1E1BCB869500552B91 /* RootRouter.m */; settings = {ASSET_TAGS = (); }; };
-		636F8D4D1BCB869500552B91 /* RDSCollectionViewDataDisplayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D261BCB869500552B91 /* RDSCollectionViewDataDisplayManager.m */; settings = {ASSET_TAGS = (); }; };
-		636F8D4E1BCB869500552B91 /* RDSCollectionViewSectionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D281BCB869500552B91 /* RDSCollectionViewSectionInfo.m */; settings = {ASSET_TAGS = (); }; };
-		636F8D4F1BCB869500552B91 /* RDSCollectionViewSupplementaryViewObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D2A1BCB869500552B91 /* RDSCollectionViewSupplementaryViewObject.m */; settings = {ASSET_TAGS = (); }; };
+		636F8D491BCB869500552B91 /* TabBarModuleAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D111BCB869500552B91 /* TabBarModuleAssembly.m */; settings = {ASSET_TAGS = (); }; };
+		636F8D4A1BCB869500552B91 /* TabBarInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D141BCB869500552B91 /* TabBarInteractor.m */; settings = {ASSET_TAGS = (); }; };
+		636F8D4B1BCB869500552B91 /* TabBarPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D1A1BCB869500552B91 /* TabBarPresenter.m */; settings = {ASSET_TAGS = (); }; };
+		636F8D4C1BCB869500552B91 /* TabBarRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D1E1BCB869500552B91 /* TabBarRouter.m */; settings = {ASSET_TAGS = (); }; };
+		636F8D4D1BCB869500552B91 /* CollectionViewDataDisplayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D261BCB869500552B91 /* CollectionViewDataDisplayManager.m */; settings = {ASSET_TAGS = (); }; };
+		636F8D4E1BCB869500552B91 /* CollectionViewSectionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D281BCB869500552B91 /* CollectionViewSectionInfo.m */; settings = {ASSET_TAGS = (); }; };
+		636F8D4F1BCB869500552B91 /* CollectionViewSupplementaryViewObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D2A1BCB869500552B91 /* CollectionViewSupplementaryViewObject.m */; settings = {ASSET_TAGS = (); }; };
 		636F8D501BCB869500552B91 /* TabBarButtonPrototype.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D2F1BCB869500552B91 /* TabBarButtonPrototype.m */; settings = {ASSET_TAGS = (); }; };
 		636F8D511BCB869500552B91 /* UIViewController+TabBarControllerContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D351BCB869500552B91 /* UIViewController+TabBarControllerContent.m */; settings = {ASSET_TAGS = (); }; };
-		636F8D521BCB869500552B91 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D371BCB869500552B91 /* RootViewController.m */; settings = {ASSET_TAGS = (); }; };
+		636F8D521BCB869500552B91 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D371BCB869500552B91 /* TabBarViewController.m */; settings = {ASSET_TAGS = (); }; };
 		636F8D531BCB869500552B91 /* TabBarButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D3B1BCB869500552B91 /* TabBarButtonCell.m */; settings = {ASSET_TAGS = (); }; };
 		636F8DDA1BCB8FE800552B91 /* RamblerLocationModuleAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8DC21BCB8FE800552B91 /* RamblerLocationModuleAssembly.m */; settings = {ASSET_TAGS = (); }; };
 		636F8DDB1BCB8FE800552B91 /* RamblerLocationInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8DC51BCB8FE800552B91 /* RamblerLocationInteractor.m */; settings = {ASSET_TAGS = (); }; };
@@ -64,10 +64,10 @@
 		636F8DFB1BCB90E500552B91 /* EventListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8DF31BCB90E500552B91 /* EventListViewController.m */; settings = {ASSET_TAGS = (); }; };
 		636F8DFD1BCB914100552B91 /* EventsUserStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 636F8DFC1BCB914100552B91 /* EventsUserStory.storyboard */; settings = {ASSET_TAGS = (); }; };
 		636F8DFF1BCB91A900552B91 /* RamblerLocationUserStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 636F8DFE1BCB91A900552B91 /* RamblerLocationUserStory.storyboard */; settings = {ASSET_TAGS = (); }; };
-		636F8E101BCC163600552B91 /* RDSEmbedModuleSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8E021BCC163600552B91 /* RDSEmbedModuleSegue.m */; settings = {ASSET_TAGS = (); }; };
-		636F8E111BCC163600552B91 /* RDSEmbedModuleTransitionSegueInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8E041BCC163600552B91 /* RDSEmbedModuleTransitionSegueInfo.m */; settings = {ASSET_TAGS = (); }; };
-		636F8E121BCC163600552B91 /* RDSModuleConfigurationPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8E071BCC163600552B91 /* RDSModuleConfigurationPromise.m */; settings = {ASSET_TAGS = (); }; };
-		636F8E131BCC163600552B91 /* RDSModuleTransitionSegueInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8E0D1BCC163600552B91 /* RDSModuleTransitionSegueInfo.m */; settings = {ASSET_TAGS = (); }; };
+		636F8E101BCC163600552B91 /* EmbedModuleSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8E021BCC163600552B91 /* EmbedModuleSegue.m */; settings = {ASSET_TAGS = (); }; };
+		636F8E111BCC163600552B91 /* EmbedModuleTransitionSegueInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8E041BCC163600552B91 /* EmbedModuleTransitionSegueInfo.m */; settings = {ASSET_TAGS = (); }; };
+		636F8E121BCC163600552B91 /* ModuleConfigurationPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8E071BCC163600552B91 /* ModuleConfigurationPromise.m */; settings = {ASSET_TAGS = (); }; };
+		636F8E131BCC163600552B91 /* ModuleTransitionSegueInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8E0D1BCC163600552B91 /* ModuleTransitionSegueInfo.m */; settings = {ASSET_TAGS = (); }; };
 		636F8E141BCC163600552B91 /* UIViewController+DefaultTransitionHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8E0F1BCC163600552B91 /* UIViewController+DefaultTransitionHandling.m */; settings = {ASSET_TAGS = (); }; };
 		6373A4101BBDC5EA00DF67FF /* Conference.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6373A40E1BBDC5EA00DF67FF /* Conference.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
 		63EF15BB1BC4559900480CAF /* PushNotificationCenterImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF15BA1BC4559900480CAF /* PushNotificationCenterImplementation.m */; settings = {ASSET_TAGS = (); }; };
@@ -228,30 +228,30 @@
 		636F8CB41BC97E7F00552B91 /* RegistrationQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationQuestion.m; sourceTree = "<group>"; };
 		636F8D0A1BCB825F00552B91 /* ModuleAssemblyBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleAssemblyBase.h; sourceTree = "<group>"; };
 		636F8D0B1BCB825F00552B91 /* ModuleAssemblyBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModuleAssemblyBase.m; sourceTree = "<group>"; };
-		636F8D101BCB869500552B91 /* RootModuleAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootModuleAssembly.h; sourceTree = "<group>"; };
-		636F8D111BCB869500552B91 /* RootModuleAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootModuleAssembly.m; sourceTree = "<group>"; };
-		636F8D131BCB869500552B91 /* RootInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootInteractor.h; sourceTree = "<group>"; };
-		636F8D141BCB869500552B91 /* RootInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootInteractor.m; sourceTree = "<group>"; };
-		636F8D151BCB869500552B91 /* RootInteractorInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootInteractorInput.h; sourceTree = "<group>"; };
-		636F8D171BCB869500552B91 /* RootInteractorOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootInteractorOutput.h; sourceTree = "<group>"; };
-		636F8D181BCB869500552B91 /* RootModuleConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootModuleConfigurator.h; sourceTree = "<group>"; };
-		636F8D191BCB869500552B91 /* RootPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootPresenter.h; sourceTree = "<group>"; };
-		636F8D1A1BCB869500552B91 /* RootPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootPresenter.m; sourceTree = "<group>"; };
-		636F8D1B1BCB869500552B91 /* RootViewOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewOutput.h; sourceTree = "<group>"; };
-		636F8D1D1BCB869500552B91 /* RootRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootRouter.h; sourceTree = "<group>"; };
-		636F8D1E1BCB869500552B91 /* RootRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootRouter.m; sourceTree = "<group>"; };
-		636F8D1F1BCB869500552B91 /* RootRouterInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootRouterInput.h; sourceTree = "<group>"; };
-		636F8D201BCB869500552B91 /* RootTabFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootTabFactory.h; sourceTree = "<group>"; };
-		636F8D231BCB869500552B91 /* RDSCollectionViewCellObjectProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSCollectionViewCellObjectProtocol.h; sourceTree = "<group>"; };
-		636F8D241BCB869500552B91 /* RDSCollectionViewCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSCollectionViewCellProtocol.h; sourceTree = "<group>"; };
-		636F8D251BCB869500552B91 /* RDSCollectionViewDataDisplayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSCollectionViewDataDisplayManager.h; sourceTree = "<group>"; };
-		636F8D261BCB869500552B91 /* RDSCollectionViewDataDisplayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDSCollectionViewDataDisplayManager.m; sourceTree = "<group>"; };
-		636F8D271BCB869500552B91 /* RDSCollectionViewSectionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSCollectionViewSectionInfo.h; sourceTree = "<group>"; };
-		636F8D281BCB869500552B91 /* RDSCollectionViewSectionInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDSCollectionViewSectionInfo.m; sourceTree = "<group>"; };
-		636F8D291BCB869500552B91 /* RDSCollectionViewSupplementaryViewObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSCollectionViewSupplementaryViewObject.h; sourceTree = "<group>"; };
-		636F8D2A1BCB869500552B91 /* RDSCollectionViewSupplementaryViewObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDSCollectionViewSupplementaryViewObject.m; sourceTree = "<group>"; };
-		636F8D2B1BCB869500552B91 /* RDSCollectionViewSupplementaryViewObjectProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSCollectionViewSupplementaryViewObjectProtocol.h; sourceTree = "<group>"; };
-		636F8D2C1BCB869500552B91 /* RDSCollectionViewSupplementaryViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSCollectionViewSupplementaryViewProtocol.h; sourceTree = "<group>"; };
+		636F8D101BCB869500552B91 /* TabBarModuleAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarModuleAssembly.h; sourceTree = "<group>"; };
+		636F8D111BCB869500552B91 /* TabBarModuleAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarModuleAssembly.m; sourceTree = "<group>"; };
+		636F8D131BCB869500552B91 /* TabBarInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarInteractor.h; sourceTree = "<group>"; };
+		636F8D141BCB869500552B91 /* TabBarInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarInteractor.m; sourceTree = "<group>"; };
+		636F8D151BCB869500552B91 /* TabBarInteractorInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarInteractorInput.h; sourceTree = "<group>"; };
+		636F8D171BCB869500552B91 /* TabBarInteractorOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarInteractorOutput.h; sourceTree = "<group>"; };
+		636F8D181BCB869500552B91 /* TabBarModuleConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarModuleConfigurator.h; sourceTree = "<group>"; };
+		636F8D191BCB869500552B91 /* TabBarPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarPresenter.h; sourceTree = "<group>"; };
+		636F8D1A1BCB869500552B91 /* TabBarPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarPresenter.m; sourceTree = "<group>"; };
+		636F8D1B1BCB869500552B91 /* TabBarViewOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewOutput.h; sourceTree = "<group>"; };
+		636F8D1D1BCB869500552B91 /* TabBarRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarRouter.h; sourceTree = "<group>"; };
+		636F8D1E1BCB869500552B91 /* TabBarRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarRouter.m; sourceTree = "<group>"; };
+		636F8D1F1BCB869500552B91 /* TabBarRouterInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarRouterInput.h; sourceTree = "<group>"; };
+		636F8D201BCB869500552B91 /* TabBarTabFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarTabFactory.h; sourceTree = "<group>"; };
+		636F8D231BCB869500552B91 /* CollectionViewCellObjectProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCellObjectProtocol.h; sourceTree = "<group>"; };
+		636F8D241BCB869500552B91 /* CollectionViewCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCellProtocol.h; sourceTree = "<group>"; };
+		636F8D251BCB869500552B91 /* CollectionViewDataDisplayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewDataDisplayManager.h; sourceTree = "<group>"; };
+		636F8D261BCB869500552B91 /* CollectionViewDataDisplayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewDataDisplayManager.m; sourceTree = "<group>"; };
+		636F8D271BCB869500552B91 /* CollectionViewSectionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewSectionInfo.h; sourceTree = "<group>"; };
+		636F8D281BCB869500552B91 /* CollectionViewSectionInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewSectionInfo.m; sourceTree = "<group>"; };
+		636F8D291BCB869500552B91 /* CollectionViewSupplementaryViewObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewSupplementaryViewObject.h; sourceTree = "<group>"; };
+		636F8D2A1BCB869500552B91 /* CollectionViewSupplementaryViewObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewSupplementaryViewObject.m; sourceTree = "<group>"; };
+		636F8D2B1BCB869500552B91 /* CollectionViewSupplementaryViewObjectProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewSupplementaryViewObjectProtocol.h; sourceTree = "<group>"; };
+		636F8D2C1BCB869500552B91 /* CollectionViewSupplementaryViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewSupplementaryViewProtocol.h; sourceTree = "<group>"; };
 		636F8D2E1BCB869500552B91 /* TabBarButtonPrototype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarButtonPrototype.h; sourceTree = "<group>"; };
 		636F8D2F1BCB869500552B91 /* TabBarButtonPrototype.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarButtonPrototype.m; sourceTree = "<group>"; };
 		636F8D301BCB869500552B91 /* TabBarButtonPrototypeProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarButtonPrototypeProtocol.h; sourceTree = "<group>"; };
@@ -260,9 +260,9 @@
 		636F8D331BCB869500552B91 /* TabBarControllerEmbeddedContentConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarControllerEmbeddedContentConfigurator.h; sourceTree = "<group>"; };
 		636F8D341BCB869500552B91 /* UIViewController+TabBarControllerContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TabBarControllerContent.h"; sourceTree = "<group>"; };
 		636F8D351BCB869500552B91 /* UIViewController+TabBarControllerContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TabBarControllerContent.m"; sourceTree = "<group>"; };
-		636F8D361BCB869500552B91 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
-		636F8D371BCB869500552B91 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		636F8D381BCB869500552B91 /* RootViewInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewInput.h; sourceTree = "<group>"; };
+		636F8D361BCB869500552B91 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
+		636F8D371BCB869500552B91 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
+		636F8D381BCB869500552B91 /* TabBarViewInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewInput.h; sourceTree = "<group>"; };
 		636F8D3A1BCB869500552B91 /* TabBarButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarButtonCell.h; sourceTree = "<group>"; };
 		636F8D3B1BCB869500552B91 /* TabBarButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarButtonCell.m; sourceTree = "<group>"; };
 		636F8DC11BCB8FE800552B91 /* RamblerLocationModuleAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RamblerLocationModuleAssembly.h; sourceTree = "<group>"; };
@@ -297,19 +297,19 @@
 		636F8DF51BCB90E500552B91 /* EventListViewOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListViewOutput.h; sourceTree = "<group>"; };
 		636F8DFC1BCB914100552B91 /* EventsUserStory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventsUserStory.storyboard; sourceTree = "<group>"; };
 		636F8DFE1BCB91A900552B91 /* RamblerLocationUserStory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RamblerLocationUserStory.storyboard; sourceTree = "<group>"; };
-		636F8E011BCC163600552B91 /* RDSEmbedModuleSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSEmbedModuleSegue.h; sourceTree = "<group>"; };
-		636F8E021BCC163600552B91 /* RDSEmbedModuleSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDSEmbedModuleSegue.m; sourceTree = "<group>"; };
-		636F8E031BCC163600552B91 /* RDSEmbedModuleTransitionSegueInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSEmbedModuleTransitionSegueInfo.h; sourceTree = "<group>"; };
-		636F8E041BCC163600552B91 /* RDSEmbedModuleTransitionSegueInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDSEmbedModuleTransitionSegueInfo.m; sourceTree = "<group>"; };
-		636F8E051BCC163600552B91 /* RDSIntermoduleDataTransfer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSIntermoduleDataTransfer.h; sourceTree = "<group>"; };
-		636F8E061BCC163600552B91 /* RDSModuleConfigurationPromise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSModuleConfigurationPromise.h; sourceTree = "<group>"; };
-		636F8E071BCC163600552B91 /* RDSModuleConfigurationPromise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDSModuleConfigurationPromise.m; sourceTree = "<group>"; };
-		636F8E081BCC163600552B91 /* RDSModuleConfigurationPromiseProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSModuleConfigurationPromiseProtocol.h; sourceTree = "<group>"; };
-		636F8E091BCC163600552B91 /* RDSModuleConfiguratorHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSModuleConfiguratorHolder.h; sourceTree = "<group>"; };
-		636F8E0A1BCC163600552B91 /* RDSModuleConfiguratorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSModuleConfiguratorProtocol.h; sourceTree = "<group>"; };
-		636F8E0B1BCC163600552B91 /* RDSModuleTransitionHandlerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSModuleTransitionHandlerProtocol.h; sourceTree = "<group>"; };
-		636F8E0C1BCC163600552B91 /* RDSModuleTransitionSegueInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSModuleTransitionSegueInfo.h; sourceTree = "<group>"; };
-		636F8E0D1BCC163600552B91 /* RDSModuleTransitionSegueInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDSModuleTransitionSegueInfo.m; sourceTree = "<group>"; };
+		636F8E011BCC163600552B91 /* EmbedModuleSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmbedModuleSegue.h; sourceTree = "<group>"; };
+		636F8E021BCC163600552B91 /* EmbedModuleSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmbedModuleSegue.m; sourceTree = "<group>"; };
+		636F8E031BCC163600552B91 /* EmbedModuleTransitionSegueInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmbedModuleTransitionSegueInfo.h; sourceTree = "<group>"; };
+		636F8E041BCC163600552B91 /* EmbedModuleTransitionSegueInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmbedModuleTransitionSegueInfo.m; sourceTree = "<group>"; };
+		636F8E051BCC163600552B91 /* IntermoduleDataTransfer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntermoduleDataTransfer.h; sourceTree = "<group>"; };
+		636F8E061BCC163600552B91 /* ModuleConfigurationPromise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleConfigurationPromise.h; sourceTree = "<group>"; };
+		636F8E071BCC163600552B91 /* ModuleConfigurationPromise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModuleConfigurationPromise.m; sourceTree = "<group>"; };
+		636F8E081BCC163600552B91 /* ModuleConfigurationPromiseProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleConfigurationPromiseProtocol.h; sourceTree = "<group>"; };
+		636F8E091BCC163600552B91 /* ModuleConfiguratorHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleConfiguratorHolder.h; sourceTree = "<group>"; };
+		636F8E0A1BCC163600552B91 /* ModuleConfiguratorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleConfiguratorProtocol.h; sourceTree = "<group>"; };
+		636F8E0B1BCC163600552B91 /* ModuleTransitionHandlerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleTransitionHandlerProtocol.h; sourceTree = "<group>"; };
+		636F8E0C1BCC163600552B91 /* ModuleTransitionSegueInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleTransitionSegueInfo.h; sourceTree = "<group>"; };
+		636F8E0D1BCC163600552B91 /* ModuleTransitionSegueInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModuleTransitionSegueInfo.m; sourceTree = "<group>"; };
 		636F8E0E1BCC163600552B91 /* UIViewController+DefaultTransitionHandling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DefaultTransitionHandling.h"; sourceTree = "<group>"; };
 		636F8E0F1BCC163600552B91 /* UIViewController+DefaultTransitionHandling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DefaultTransitionHandling.m"; sourceTree = "<group>"; };
 		6373A3E61BBDBFDC00DF67FF /* EventService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventService.h; sourceTree = "<group>"; };
@@ -677,8 +677,8 @@
 		636F8D0F1BCB869500552B91 /* Assembly */ = {
 			isa = PBXGroup;
 			children = (
-				636F8D101BCB869500552B91 /* RootModuleAssembly.h */,
-				636F8D111BCB869500552B91 /* RootModuleAssembly.m */,
+				636F8D101BCB869500552B91 /* TabBarModuleAssembly.h */,
+				636F8D111BCB869500552B91 /* TabBarModuleAssembly.m */,
 			);
 			path = Assembly;
 			sourceTree = "<group>";
@@ -686,9 +686,9 @@
 		636F8D121BCB869500552B91 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				636F8D131BCB869500552B91 /* RootInteractor.h */,
-				636F8D141BCB869500552B91 /* RootInteractor.m */,
-				636F8D151BCB869500552B91 /* RootInteractorInput.h */,
+				636F8D131BCB869500552B91 /* TabBarInteractor.h */,
+				636F8D141BCB869500552B91 /* TabBarInteractor.m */,
+				636F8D151BCB869500552B91 /* TabBarInteractorInput.h */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -696,11 +696,11 @@
 		636F8D161BCB869500552B91 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				636F8D171BCB869500552B91 /* RootInteractorOutput.h */,
-				636F8D181BCB869500552B91 /* RootModuleConfigurator.h */,
-				636F8D191BCB869500552B91 /* RootPresenter.h */,
-				636F8D1A1BCB869500552B91 /* RootPresenter.m */,
-				636F8D1B1BCB869500552B91 /* RootViewOutput.h */,
+				636F8D171BCB869500552B91 /* TabBarInteractorOutput.h */,
+				636F8D181BCB869500552B91 /* TabBarModuleConfigurator.h */,
+				636F8D191BCB869500552B91 /* TabBarPresenter.h */,
+				636F8D1A1BCB869500552B91 /* TabBarPresenter.m */,
+				636F8D1B1BCB869500552B91 /* TabBarViewOutput.h */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -708,10 +708,10 @@
 		636F8D1C1BCB869500552B91 /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				636F8D1D1BCB869500552B91 /* RootRouter.h */,
-				636F8D1E1BCB869500552B91 /* RootRouter.m */,
-				636F8D1F1BCB869500552B91 /* RootRouterInput.h */,
-				636F8D201BCB869500552B91 /* RootTabFactory.h */,
+				636F8D1D1BCB869500552B91 /* TabBarRouter.h */,
+				636F8D1E1BCB869500552B91 /* TabBarRouter.m */,
+				636F8D1F1BCB869500552B91 /* TabBarRouterInput.h */,
+				636F8D201BCB869500552B91 /* TabBarTabFactory.h */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -721,9 +721,9 @@
 			children = (
 				636F8D221BCB869500552B91 /* CollectionViewDataDisplayManager */,
 				636F8D2D1BCB869500552B91 /* Entities */,
-				636F8D361BCB869500552B91 /* RootViewController.h */,
-				636F8D371BCB869500552B91 /* RootViewController.m */,
-				636F8D381BCB869500552B91 /* RootViewInput.h */,
+				636F8D361BCB869500552B91 /* TabBarViewController.h */,
+				636F8D371BCB869500552B91 /* TabBarViewController.m */,
+				636F8D381BCB869500552B91 /* TabBarViewInput.h */,
 				636F8D391BCB869500552B91 /* TabBarButtonCell */,
 			);
 			path = View;
@@ -732,16 +732,16 @@
 		636F8D221BCB869500552B91 /* CollectionViewDataDisplayManager */ = {
 			isa = PBXGroup;
 			children = (
-				636F8D231BCB869500552B91 /* RDSCollectionViewCellObjectProtocol.h */,
-				636F8D241BCB869500552B91 /* RDSCollectionViewCellProtocol.h */,
-				636F8D251BCB869500552B91 /* RDSCollectionViewDataDisplayManager.h */,
-				636F8D261BCB869500552B91 /* RDSCollectionViewDataDisplayManager.m */,
-				636F8D271BCB869500552B91 /* RDSCollectionViewSectionInfo.h */,
-				636F8D281BCB869500552B91 /* RDSCollectionViewSectionInfo.m */,
-				636F8D291BCB869500552B91 /* RDSCollectionViewSupplementaryViewObject.h */,
-				636F8D2A1BCB869500552B91 /* RDSCollectionViewSupplementaryViewObject.m */,
-				636F8D2B1BCB869500552B91 /* RDSCollectionViewSupplementaryViewObjectProtocol.h */,
-				636F8D2C1BCB869500552B91 /* RDSCollectionViewSupplementaryViewProtocol.h */,
+				636F8D231BCB869500552B91 /* CollectionViewCellObjectProtocol.h */,
+				636F8D241BCB869500552B91 /* CollectionViewCellProtocol.h */,
+				636F8D251BCB869500552B91 /* CollectionViewDataDisplayManager.h */,
+				636F8D261BCB869500552B91 /* CollectionViewDataDisplayManager.m */,
+				636F8D271BCB869500552B91 /* CollectionViewSectionInfo.h */,
+				636F8D281BCB869500552B91 /* CollectionViewSectionInfo.m */,
+				636F8D291BCB869500552B91 /* CollectionViewSupplementaryViewObject.h */,
+				636F8D2A1BCB869500552B91 /* CollectionViewSupplementaryViewObject.m */,
+				636F8D2B1BCB869500552B91 /* CollectionViewSupplementaryViewObjectProtocol.h */,
+				636F8D2C1BCB869500552B91 /* CollectionViewSupplementaryViewProtocol.h */,
 			);
 			path = CollectionViewDataDisplayManager;
 			sourceTree = "<group>";
@@ -956,19 +956,19 @@
 		636F8E001BCC163600552B91 /* IntermoduleDataTransfer */ = {
 			isa = PBXGroup;
 			children = (
-				636F8E011BCC163600552B91 /* RDSEmbedModuleSegue.h */,
-				636F8E021BCC163600552B91 /* RDSEmbedModuleSegue.m */,
-				636F8E031BCC163600552B91 /* RDSEmbedModuleTransitionSegueInfo.h */,
-				636F8E041BCC163600552B91 /* RDSEmbedModuleTransitionSegueInfo.m */,
-				636F8E051BCC163600552B91 /* RDSIntermoduleDataTransfer.h */,
-				636F8E061BCC163600552B91 /* RDSModuleConfigurationPromise.h */,
-				636F8E071BCC163600552B91 /* RDSModuleConfigurationPromise.m */,
-				636F8E081BCC163600552B91 /* RDSModuleConfigurationPromiseProtocol.h */,
-				636F8E091BCC163600552B91 /* RDSModuleConfiguratorHolder.h */,
-				636F8E0A1BCC163600552B91 /* RDSModuleConfiguratorProtocol.h */,
-				636F8E0B1BCC163600552B91 /* RDSModuleTransitionHandlerProtocol.h */,
-				636F8E0C1BCC163600552B91 /* RDSModuleTransitionSegueInfo.h */,
-				636F8E0D1BCC163600552B91 /* RDSModuleTransitionSegueInfo.m */,
+				636F8E011BCC163600552B91 /* EmbedModuleSegue.h */,
+				636F8E021BCC163600552B91 /* EmbedModuleSegue.m */,
+				636F8E031BCC163600552B91 /* EmbedModuleTransitionSegueInfo.h */,
+				636F8E041BCC163600552B91 /* EmbedModuleTransitionSegueInfo.m */,
+				636F8E051BCC163600552B91 /* IntermoduleDataTransfer.h */,
+				636F8E061BCC163600552B91 /* ModuleConfigurationPromise.h */,
+				636F8E071BCC163600552B91 /* ModuleConfigurationPromise.m */,
+				636F8E081BCC163600552B91 /* ModuleConfigurationPromiseProtocol.h */,
+				636F8E091BCC163600552B91 /* ModuleConfiguratorHolder.h */,
+				636F8E0A1BCC163600552B91 /* ModuleConfiguratorProtocol.h */,
+				636F8E0B1BCC163600552B91 /* ModuleTransitionHandlerProtocol.h */,
+				636F8E0C1BCC163600552B91 /* ModuleTransitionSegueInfo.h */,
+				636F8E0D1BCC163600552B91 /* ModuleTransitionSegueInfo.m */,
 				636F8E0E1BCC163600552B91 /* UIViewController+DefaultTransitionHandling.h */,
 				636F8E0F1BCC163600552B91 /* UIViewController+DefaultTransitionHandling.m */,
 			);
@@ -2733,7 +2733,7 @@
 			files = (
 				636B64101BBDD6260053E38F /* SpeakerServiceImplementation.m in Sources */,
 				636A37C51BC142BB00B49C3D /* ApplicationAssembly.m in Sources */,
-				636F8D4A1BCB869500552B91 /* RootInteractor.m in Sources */,
+				636F8D4A1BCB869500552B91 /* TabBarInteractor.m in Sources */,
 				636F8DDE1BCB8FE800552B91 /* RamblerLocationViewController.m in Sources */,
 				9F8E5F941BC269EA00DC10DB /* OperationFactoriesAssembly.m in Sources */,
 				9F18311D1BC1615C000E21A5 /* SingleResponseObjectFormatter.m in Sources */,
@@ -2747,27 +2747,27 @@
 				636F8DF71BCB90E500552B91 /* EventListModuleAssembly.m in Sources */,
 				9F1830BF1BC11D26000E21A5 /* JSONResponseDeserializer.m in Sources */,
 				9F1830931BC02293000E21A5 /* RESTRequestConfigurator.m in Sources */,
-				636F8D4C1BCB869500552B91 /* RootRouter.m in Sources */,
+				636F8D4C1BCB869500552B91 /* TabBarRouter.m in Sources */,
 				636F8DDA1BCB8FE800552B91 /* RamblerLocationModuleAssembly.m in Sources */,
 				9F1830A71BC032CF000E21A5 /* ParseRequestSigner.m in Sources */,
 				636F8DDD1BCB8FE800552B91 /* RamblerLocationRouter.m in Sources */,
 				636F8E141BCC163600552B91 /* UIViewController+DefaultTransitionHandling.m in Sources */,
-				636F8D4F1BCB869500552B91 /* RDSCollectionViewSupplementaryViewObject.m in Sources */,
+				636F8D4F1BCB869500552B91 /* CollectionViewSupplementaryViewObject.m in Sources */,
 				9F0A84FA1BC1698B006F79FB /* OperationBuffer.m in Sources */,
 				636F8D511BCB869500552B91 /* UIViewController+TabBarControllerContent.m in Sources */,
 				636F8CB61BC97E7F00552B91 /* Lecture.m in Sources */,
 				9F1830D71BC125C3000E21A5 /* ParseResponseValidator.m in Sources */,
 				9F1830D11BC12492000E21A5 /* ResponseValidatorBase.m in Sources */,
-				636F8D491BCB869500552B91 /* RootModuleAssembly.m in Sources */,
+				636F8D491BCB869500552B91 /* TabBarModuleAssembly.m in Sources */,
 				9F0A85371BC18A3C006F79FB /* NetworkCompoundOperationBuilder.m in Sources */,
 				636F8CBD1BC97E7F00552B91 /* Event+CoreDataProperties.m in Sources */,
 				9F18309F1BC024A9000E21A5 /* RequestDataModel.m in Sources */,
 				9F0A852D1BC188B0006F79FB /* EventOperationFactory.m in Sources */,
-				636F8E101BCC163600552B91 /* RDSEmbedModuleSegue.m in Sources */,
-				636F8E121BCC163600552B91 /* RDSModuleConfigurationPromise.m in Sources */,
+				636F8E101BCC163600552B91 /* EmbedModuleSegue.m in Sources */,
+				636F8E121BCC163600552B91 /* ModuleConfigurationPromise.m in Sources */,
 				636F8CB81BC97E7F00552B91 /* LectureMaterials.m in Sources */,
 				63FDCE061BBDBA2A00A43B60 /* AppDelegate.m in Sources */,
-				636F8D521BCB869500552B91 /* RootViewController.m in Sources */,
+				636F8D521BCB869500552B91 /* TabBarViewController.m in Sources */,
 				636B64041BBDD19A0053E38F /* LectureServiceImplementation.m in Sources */,
 				63F54D9B1BC5AB3C00DB1746 /* ServiceComponentsAssembly.m in Sources */,
 				636A37B31BC1356400B49C3D /* ApplicationConfiguratorImplementation.m in Sources */,
@@ -2806,7 +2806,7 @@
 				9F0A6C1D1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m in Sources */,
 				9F0A85001BC1698B006F79FB /* ResponseDeserializationOperation.m in Sources */,
 				9F0A853B1BC1908B006F79FB /* OperationChainer.m in Sources */,
-				636F8D4D1BCB869500552B91 /* RDSCollectionViewDataDisplayManager.m in Sources */,
+				636F8D4D1BCB869500552B91 /* CollectionViewDataDisplayManager.m in Sources */,
 				636F8CC01BC97E7F00552B91 /* RegistrationQuestion.m in Sources */,
 				63EF15BB1BC4559900480CAF /* PushNotificationCenterImplementation.m in Sources */,
 				636F8DDB1BCB8FE800552B91 /* RamblerLocationInteractor.m in Sources */,
@@ -2820,13 +2820,13 @@
 				636F8D0C1BCB825F00552B91 /* ModuleAssemblyBase.m in Sources */,
 				636A37C21BC1413A00B49C3D /* SystemInfrastructureAssembly.m in Sources */,
 				9F0A6C2E1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m in Sources */,
-				636F8E131BCC163600552B91 /* RDSModuleTransitionSegueInfo.m in Sources */,
+				636F8E131BCC163600552B91 /* ModuleTransitionSegueInfo.m in Sources */,
 				636F8CB91BC97E7F00552B91 /* Speaker+CoreDataProperties.m in Sources */,
-				636F8D4E1BCB869500552B91 /* RDSCollectionViewSectionInfo.m in Sources */,
+				636F8D4E1BCB869500552B91 /* CollectionViewSectionInfo.m in Sources */,
 				9F1830ED1BC14293000E21A5 /* ManagedObjectMapper.m in Sources */,
 				9F1830E61BC13F9F000E21A5 /* ManagedObjectMappingProvider.m in Sources */,
-				636F8D4B1BCB869500552B91 /* RootPresenter.m in Sources */,
-				636F8E111BCC163600552B91 /* RDSEmbedModuleTransitionSegueInfo.m in Sources */,
+				636F8D4B1BCB869500552B91 /* TabBarPresenter.m in Sources */,
+				636F8E111BCC163600552B91 /* EmbedModuleTransitionSegueInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

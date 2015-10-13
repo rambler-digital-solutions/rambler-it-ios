@@ -1,19 +1,12 @@
-//
-//  UIViewController+DefaultTransitionHandling.m
-//  Championat
-//
-//  Created by Andrey Zarembo-Godzyatsky on 03/08/15.
-//  Copyright (c) 2015 Rambler DS. All rights reserved.
-//
 
 #import "UIViewController+DefaultTransitionHandling.h"
-#import "RDSModuleConfigurationPromise.h"
-#import "RDSModuleConfiguratorHolder.h"
+#import "ModuleConfigurationPromise.h"
+#import "ModuleConfiguratorHolder.h"
 
 @implementation UIViewController (DefaultTransitionHandling)
 
-- (id<RDSModuleConfigurationPromiseProtocol>)default_performPromiseSegue:(NSString*)segueIdentifier withSender:(id)sender {
-    RDSModuleConfigurationPromise *promise = [[RDSModuleConfigurationPromise alloc] init];
+- (id<ModuleConfigurationPromiseProtocol>)default_performPromiseSegue:(NSString*)segueIdentifier withSender:(id)sender {
+    ModuleConfigurationPromise *promise = [[ModuleConfigurationPromise alloc] init];
     [self performSegueWithIdentifier:segueIdentifier sender:@{
                                                               @"sender":sender,
                                                               @"promise":promise
@@ -22,9 +15,9 @@
 }
 
 - (void)default_prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([sender isKindOfClass:[NSDictionary class]] && [segue.destinationViewController conformsToProtocol:@protocol(RDSModuleConfiguratorHolder)]) {
-        RDSModuleConfigurationPromise * promise = sender[@"promise"];
-        [promise setModuleConfigurator:[(id<RDSModuleConfiguratorHolder>)segue.destinationViewController moduleConfigurator]];
+    if ([sender isKindOfClass:[NSDictionary class]] && [segue.destinationViewController conformsToProtocol:@protocol(ModuleConfiguratorHolder)]) {
+        ModuleConfigurationPromise * promise = sender[@"promise"];
+        [promise setModuleConfigurator:[(id<ModuleConfiguratorHolder>)segue.destinationViewController moduleConfigurator]];
     }
 }
 
