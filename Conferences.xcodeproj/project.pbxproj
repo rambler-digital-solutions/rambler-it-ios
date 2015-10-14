@@ -41,6 +41,11 @@
 		636F8CBF1BC97E7F00552B91 /* RegistrationQuestion+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8CB21BC97E7F00552B91 /* RegistrationQuestion+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
 		636F8CC01BC97E7F00552B91 /* RegistrationQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8CB41BC97E7F00552B91 /* RegistrationQuestion.m */; settings = {ASSET_TAGS = (); }; };
 		6373A4101BBDC5EA00DF67FF /* Conference.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6373A40E1BBDC5EA00DF67FF /* Conference.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
+		63EF15BB1BC4559900480CAF /* PushNotificationCenterImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF15BA1BC4559900480CAF /* PushNotificationCenterImplementation.m */; settings = {ASSET_TAGS = (); }; };
+		63EF15C01BC461DD00480CAF /* PushNotificationServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF15BF1BC461DD00480CAF /* PushNotificationServiceImplementation.m */; settings = {ASSET_TAGS = (); }; };
+		63F54D951BC5A79900DB1746 /* EXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F54D931BC5A79900DB1746 /* EXTScope.m */; settings = {ASSET_TAGS = (); }; };
+		63F54D9B1BC5AB3C00DB1746 /* ServiceComponentsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F54D9A1BC5AB3C00DB1746 /* ServiceComponentsAssembly.m */; settings = {ASSET_TAGS = (); }; };
+		63F54DA01BC5BB2800DB1746 /* ThirdPartiesConfiguratorImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F54D9F1BC5BB2800DB1746 /* ThirdPartiesConfiguratorImplementation.m */; settings = {ASSET_TAGS = (); }; };
 		63FDCE061BBDBA2A00A43B60 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FDCDDC1BBDBA2A00A43B60 /* AppDelegate.m */; settings = {ASSET_TAGS = (); }; };
 		63FDCE141BBDBA2A00A43B60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63FDCE021BBDBA2A00A43B60 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
 		63FDCE151BBDBA2A00A43B60 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63FDCE041BBDBA2A00A43B60 /* Info.plist */; settings = {ASSET_TAGS = (); }; };
@@ -191,6 +196,21 @@
 		6373A3E71BBDC02100DF67FF /* RegistrationQuestionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationQuestionService.h; sourceTree = "<group>"; };
 		6373A3E91BBDC05900DF67FF /* SpeakerService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerService.h; sourceTree = "<group>"; };
 		6373A40F1BBDC5EA00DF67FF /* Conference.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Conference.xcdatamodel; sourceTree = "<group>"; };
+		63EF15B81BC4557600480CAF /* PushNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNotificationCenter.h; sourceTree = "<group>"; };
+		63EF15B91BC4559900480CAF /* PushNotificationCenterImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNotificationCenterImplementation.h; sourceTree = "<group>"; };
+		63EF15BA1BC4559900480CAF /* PushNotificationCenterImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushNotificationCenterImplementation.m; sourceTree = "<group>"; };
+		63EF15BD1BC461B700480CAF /* PushNotificationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNotificationService.h; sourceTree = "<group>"; };
+		63EF15BE1BC461DD00480CAF /* PushNotificationServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNotificationServiceImplementation.h; sourceTree = "<group>"; };
+		63EF15BF1BC461DD00480CAF /* PushNotificationServiceImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushNotificationServiceImplementation.m; sourceTree = "<group>"; };
+		63F54D921BC5A79900DB1746 /* EXTScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTScope.h; sourceTree = "<group>"; };
+		63F54D931BC5A79900DB1746 /* EXTScope.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTScope.m; sourceTree = "<group>"; };
+		63F54D941BC5A79900DB1746 /* metamacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = metamacros.h; sourceTree = "<group>"; };
+		63F54D981BC5AA8600DB1746 /* ServiceComponents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceComponents.h; sourceTree = "<group>"; };
+		63F54D991BC5AB3C00DB1746 /* ServiceComponentsAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceComponentsAssembly.h; sourceTree = "<group>"; };
+		63F54D9A1BC5AB3C00DB1746 /* ServiceComponentsAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceComponentsAssembly.m; sourceTree = "<group>"; };
+		63F54D9D1BC5BAB000DB1746 /* ThirdPartiesConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdPartiesConfigurator.h; sourceTree = "<group>"; };
+		63F54D9E1BC5BB2800DB1746 /* ThirdPartiesConfiguratorImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdPartiesConfiguratorImplementation.h; sourceTree = "<group>"; };
+		63F54D9F1BC5BB2800DB1746 /* ThirdPartiesConfiguratorImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdPartiesConfiguratorImplementation.m; sourceTree = "<group>"; };
 		63FDCDDB1BBDBA2A00A43B60 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		63FDCDDC1BBDBA2A00A43B60 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		63FDCE021BBDBA2A00A43B60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -515,6 +535,7 @@
 		6373A3DF1BBDBDF700DF67FF /* ConcreteServices */ = {
 			isa = PBXGroup;
 			children = (
+				63EF15BC1BC4617000480CAF /* PushNotificationSrvice */,
 				6373A3E01BBDBDF700DF67FF /* EventService */,
 				636B63C61BBDCC060053E38F /* LectureService */,
 				636B63C51BBDCC060053E38F /* LectureMaterialsService */,
@@ -555,6 +576,65 @@
 			path = SpeakerService;
 			sourceTree = "<group>";
 		};
+		63EF15B71BC4546400480CAF /* PushNotificationCenter */ = {
+			isa = PBXGroup;
+			children = (
+				63EF15B81BC4557600480CAF /* PushNotificationCenter.h */,
+				63EF15B91BC4559900480CAF /* PushNotificationCenterImplementation.h */,
+				63EF15BA1BC4559900480CAF /* PushNotificationCenterImplementation.m */,
+			);
+			path = PushNotificationCenter;
+			sourceTree = "<group>";
+		};
+		63EF15BC1BC4617000480CAF /* PushNotificationSrvice */ = {
+			isa = PBXGroup;
+			children = (
+				63EF15BD1BC461B700480CAF /* PushNotificationService.h */,
+				63EF15BE1BC461DD00480CAF /* PushNotificationServiceImplementation.h */,
+				63EF15BF1BC461DD00480CAF /* PushNotificationServiceImplementation.m */,
+			);
+			path = PushNotificationSrvice;
+			sourceTree = "<group>";
+		};
+		63F54D911BC5A79900DB1746 /* EXTScope */ = {
+			isa = PBXGroup;
+			children = (
+				63F54D921BC5A79900DB1746 /* EXTScope.h */,
+				63F54D931BC5A79900DB1746 /* EXTScope.m */,
+				63F54D941BC5A79900DB1746 /* metamacros.h */,
+			);
+			name = EXTScope;
+			path = Macros/EXTScope;
+			sourceTree = "<group>";
+		};
+		63F54D961BC5A91800DB1746 /* Assemblies */ = {
+			isa = PBXGroup;
+			children = (
+				63F54D971BC5A91800DB1746 /* ServiceComponentsAssembly */,
+			);
+			path = Assemblies;
+			sourceTree = "<group>";
+		};
+		63F54D971BC5A91800DB1746 /* ServiceComponentsAssembly */ = {
+			isa = PBXGroup;
+			children = (
+				63F54D981BC5AA8600DB1746 /* ServiceComponents.h */,
+				63F54D991BC5AB3C00DB1746 /* ServiceComponentsAssembly.h */,
+				63F54D9A1BC5AB3C00DB1746 /* ServiceComponentsAssembly.m */,
+			);
+			path = ServiceComponentsAssembly;
+			sourceTree = "<group>";
+		};
+		63F54D9C1BC5BA8F00DB1746 /* ThirdPartiesConfigurator */ = {
+			isa = PBXGroup;
+			children = (
+				63F54D9D1BC5BAB000DB1746 /* ThirdPartiesConfigurator.h */,
+				63F54D9E1BC5BB2800DB1746 /* ThirdPartiesConfiguratorImplementation.h */,
+				63F54D9F1BC5BB2800DB1746 /* ThirdPartiesConfiguratorImplementation.m */,
+			);
+			path = ThirdPartiesConfigurator;
+			sourceTree = "<group>";
+		};
 		63FDCDD81BBDBA2A00A43B60 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -574,6 +654,8 @@
 		63FDCDD91BBDBA2A00A43B60 /* ApplicationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				63F54D9C1BC5BA8F00DB1746 /* ThirdPartiesConfigurator */,
+				63EF15B71BC4546400480CAF /* PushNotificationCenter */,
 				636A37BC1BC13FA200B49C3D /* Assemblies */,
 				636A37B01BC1354100B49C3D /* ApplicationConfigurator */,
 				63FDCDDA1BBDBA2A00A43B60 /* AppDelegate */,
@@ -593,6 +675,7 @@
 		63FDCDDD1BBDBA2A00A43B60 /* BusinessLogicLayer */ = {
 			isa = PBXGroup;
 			children = (
+				63F54D961BC5A91800DB1746 /* Assemblies */,
 				6373A3DE1BBDBDF700DF67FF /* Services */,
 			);
 			path = BusinessLogicLayer;
@@ -714,6 +797,7 @@
 		63FDCE031BBDBA2A00A43B60 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				63F54D911BC5A79900DB1746 /* EXTScope */,
 				63FDCE041BBDBA2A00A43B60 /* Info.plist */,
 				63FDCE051BBDBA2A00A43B60 /* main.m */,
 			);
@@ -1904,6 +1988,12 @@
 				TargetAttributes = {
 					9F1F37E31BBBB80D00C7797D = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = UM246WFXVS;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					9F1F37FF1BBBB80D00C7797D = {
 						CreatedOnToolsVersion = 7.0;
@@ -2076,6 +2166,9 @@
 				636F8CB81BC97E7F00552B91 /* LectureMaterials.m in Sources */,
 				63FDCE061BBDBA2A00A43B60 /* AppDelegate.m in Sources */,
 				636B64041BBDD19A0053E38F /* LectureServiceImplementation.m in Sources */,
+				636B64361BBFE4740053E38F /* LectureMaterials+CoreDataProperties.m in Sources */,
+				63F54D9B1BC5AB3C00DB1746 /* ServiceComponentsAssembly.m in Sources */,
+				636B64311BBFE4740053E38F /* RegistrationQuestion.m in Sources */,
 				636A37B31BC1356400B49C3D /* ApplicationConfiguratorImplementation.m in Sources */,
 				9F8E5FA91BC27D0D00DC10DB /* ServiceNameConstants.m in Sources */,
 				636F8CB51BC97E7F00552B91 /* Lecture+CoreDataProperties.m in Sources */,
@@ -2087,6 +2180,14 @@
 				9F0A85011BC1698B006F79FB /* ResponseMappingOperation.m in Sources */,
 				63FDCE161BBDBA2A00A43B60 /* main.m in Sources */,
 				636B64071BBDD2A40053E38F /* LectureMaterialsServiceImplementation.m in Sources */,
+				636B64391BBFE4740053E38F /* Speaker.m in Sources */,
+				636B64331BBFE4740053E38F /* Lecture.m in Sources */,
+				636B64371BBFE4740053E38F /* LectureMaterials.m in Sources */,
+				636B642E1BBFE4740053E38F /* Event+CoreDataProperties.m in Sources */,
+				636B63FF1BBDD0C70053E38F /* EventServiceEmplementation.m in Sources */,
+				636B64301BBFE4740053E38F /* RegistrationQuestion+CoreDataProperties.m in Sources */,
+				63EF15C01BC461DD00480CAF /* PushNotificationServiceImplementation.m in Sources */,
+				636B64351BBFE4740053E38F /* SocialNetworkAccount.m in Sources */,
 				636B64151BBFE3420053E38F /* ViewController.m in Sources */,
 				9F8E5F741BC255AA00DC10DB /* RequestSignersAssembly.m in Sources */,
 				9FF99E511BC42FF6006F15AF /* OperationSchedulerImplementation.m in Sources */,
@@ -2108,8 +2209,11 @@
 				9F0A85001BC1698B006F79FB /* ResponseDeserializationOperation.m in Sources */,
 				9F0A853B1BC1908B006F79FB /* OperationChainer.m in Sources */,
 				636F8CC01BC97E7F00552B91 /* RegistrationQuestion.m in Sources */,
+				63EF15BB1BC4559900480CAF /* PushNotificationCenterImplementation.m in Sources */,
 				6373A4101BBDC5EA00DF67FF /* Conference.xcdatamodeld in Sources */,
+				63F54D951BC5A79900DB1746 /* EXTScope.m in Sources */,
 				636B640D1BBDD5000053E38F /* SocialNetworkAccountServiceImplementation.m in Sources */,
+				63F54DA01BC5BB2800DB1746 /* ThirdPartiesConfiguratorImplementation.m in Sources */,
 				636B640A1BBDD3FA0053E38F /* RegistrationQuestionServiceImplementation.m in Sources */,
 				636F8CBA1BC97E7F00552B91 /* Speaker.m in Sources */,
 				636A37C21BC1413A00B49C3D /* SystemInfrastructureAssembly.m in Sources */,
@@ -2259,6 +2363,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Conferences/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.rambler.Conferences;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2271,6 +2376,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Conferences/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.rambler.Conferences;
 				PRODUCT_NAME = "$(TARGET_NAME)";

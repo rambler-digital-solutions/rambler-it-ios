@@ -41,6 +41,7 @@
 	</array>
 	<key>TyphoonInitialAssemblies</key>
 	<array>
+		<string>ServiceComponentsAssembly</string>
 		<string>ApplicationAssembly</string>
 		<string>SystemInfrastructureAssembly</string>
 	</array>
