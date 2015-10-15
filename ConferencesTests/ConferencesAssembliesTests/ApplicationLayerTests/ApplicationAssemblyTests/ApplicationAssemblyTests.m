@@ -7,8 +7,20 @@
 //
 
 #import <XCTest/XCTest.h>
+#import <RamblerMcFlurry/Testing.h>
 
-@interface ApplicationAssemblyTests : XCTestCase
+#import "ApplicationAssembly.h"
+#import "ApplicationAssembly_Testable.h"
+#import "ServiceComponentsAssembly.h"
+
+#import "AppDelegate.h"
+#import "ApplicationConfiguratorImplementation.h"
+#import "PushNotificationCenterImplementation.h"
+#import "ThirdPartiesConfiguratorImplementation.h"
+
+@interface ApplicationAssemblyTests : RamblerTyphoonAssemblyTests
+
+@property (strong, nonatomic) ApplicationAssembly *assembly;
 
 @end
 
@@ -16,24 +28,69 @@
 
 - (void)setUp {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    self.assembly = [ApplicationAssembly new];
+    [self.assembly activateWithCollaboratingAssemblies:@[
+                                                         [ServiceComponentsAssembly new]
+                                                         ]];
 }
 
 - (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
+    self.assembly = nil;
+    
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+- (void)testThatAssemblyCreatesAppDelegate {
+    // given
+    Class targetClass = [AppDelegate class];
+    NSArray *dependencies = @[
+                              RamblerSelector(applicationConfigurator),
+                              RamblerSelector(pushNotificationCenter),
+                              RamblerSelector(thirdPartiesConfigurator)
+                              ];
+    
+    // when
+    id result = [self.assembly appDelegate];
+    
+    // then
+    [self verifyTargetDependency:result withClass:targetClass dependencies:dependencies];
 }
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+- (void)testThatAssemblyCreatesApplicationConfigurator {
+    // given
+    Class targetClass = [ApplicationConfiguratorImplementation class];
+    
+    // when
+    id result = [self.assembly applicationConfigurator];
+    
+    // then
+    [self verifyTargetDependency:result withClass:targetClass];
+}
+
+- (void)testThatAssemblyCreatesPushNotificationCenter {
+    // given
+    Class targetClass = [PushNotificationCenterImplementation class];
+    NSArray *dependencies = @[
+                              RamblerSelector(pushNotificationCenter)
+                              ];
+    
+    // when
+    id result = [self.assembly pushNotificationCenter];
+    
+    // then
+    [self verifyTargetDependency:result withClass:targetClass dependencies:dependencies];
+}
+
+- (void)testThatAssemblyCreates {
+    // given
+    Class targetClass = [ThirdPartiesConfiguratorImplementation class];
+    
+    // when
+    id result = [self.assembly thirdPartiesConfigurator];
+    
+    // then
+    [self verifyTargetDependency:result withClass:targetClass];
 }
 
 @end

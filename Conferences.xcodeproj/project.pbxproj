@@ -13,7 +13,6 @@
 		636A37C21BC1413A00B49C3D /* SystemInfrastructureAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37C11BC1413A00B49C3D /* SystemInfrastructureAssembly.m */; settings = {ASSET_TAGS = (); }; };
 		636A37C51BC142BB00B49C3D /* ApplicationAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37C41BC142BB00B49C3D /* ApplicationAssembly.m */; settings = {ASSET_TAGS = (); }; };
 		636A37CA1BC147FD00B49C3D /* ApplicationAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37C91BC147FD00B49C3D /* ApplicationAssemblyTests.m */; settings = {ASSET_TAGS = (); }; };
-		636A37CC1BC1481300B49C3D /* SystemInfrastructureAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37CB1BC1481300B49C3D /* SystemInfrastructureAssemblyTests.m */; settings = {ASSET_TAGS = (); }; };
 		636A37CF1BC1500700B49C3D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 636A37CE1BC1500700B49C3D /* Info.plist */; settings = {ASSET_TAGS = (); }; };
 		636B64041BBDD19A0053E38F /* LectureServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64031BBDD19A0053E38F /* LectureServiceImplementation.m */; settings = {ASSET_TAGS = (); }; };
 		636B64071BBDD2A40053E38F /* LectureMaterialsServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64061BBDD2A40053E38F /* LectureMaterialsServiceImplementation.m */; settings = {ASSET_TAGS = (); }; };
@@ -148,7 +147,6 @@
 		636A37C31BC142BB00B49C3D /* ApplicationAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationAssembly.h; sourceTree = "<group>"; };
 		636A37C41BC142BB00B49C3D /* ApplicationAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationAssembly.m; sourceTree = "<group>"; };
 		636A37C91BC147FD00B49C3D /* ApplicationAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationAssemblyTests.m; sourceTree = "<group>"; };
-		636A37CB1BC1481300B49C3D /* SystemInfrastructureAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemInfrastructureAssemblyTests.m; sourceTree = "<group>"; };
 		636A37CE1BC1500700B49C3D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		636B63C91BBDCC550053E38F /* LectureMaterialsService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectureMaterialsService.h; sourceTree = "<group>"; };
 		636B63CA1BBDCC720053E38F /* LectureService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectureService.h; sourceTree = "<group>"; };
@@ -196,6 +194,7 @@
 		6373A3E71BBDC02100DF67FF /* RegistrationQuestionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationQuestionService.h; sourceTree = "<group>"; };
 		6373A3E91BBDC05900DF67FF /* SpeakerService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerService.h; sourceTree = "<group>"; };
 		6373A40F1BBDC5EA00DF67FF /* Conference.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Conference.xcdatamodel; sourceTree = "<group>"; };
+		6391DA981BCE32A800B6D034 /* ApplicationAssembly_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplicationAssembly_Testable.h; sourceTree = "<group>"; };
 		63EF15B81BC4557600480CAF /* PushNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNotificationCenter.h; sourceTree = "<group>"; };
 		63EF15B91BC4559900480CAF /* PushNotificationCenterImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNotificationCenterImplementation.h; sourceTree = "<group>"; };
 		63EF15BA1BC4559900480CAF /* PushNotificationCenterImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushNotificationCenterImplementation.m; sourceTree = "<group>"; };
@@ -465,7 +464,6 @@
 			isa = PBXGroup;
 			children = (
 				636A37C71BC1466900B49C3D /* ApplicationAssemblyTests */,
-				636A37C81BC1466900B49C3D /* SystemInfrastructureAssemblyTests */,
 			);
 			path = ApplicationLayerTests;
 			sourceTree = "<group>";
@@ -473,17 +471,10 @@
 		636A37C71BC1466900B49C3D /* ApplicationAssemblyTests */ = {
 			isa = PBXGroup;
 			children = (
+				6391DA981BCE32A800B6D034 /* ApplicationAssembly_Testable.h */,
 				636A37C91BC147FD00B49C3D /* ApplicationAssemblyTests.m */,
 			);
 			path = ApplicationAssemblyTests;
-			sourceTree = "<group>";
-		};
-		636A37C81BC1466900B49C3D /* SystemInfrastructureAssemblyTests */ = {
-			isa = PBXGroup;
-			children = (
-				636A37CB1BC1481300B49C3D /* SystemInfrastructureAssemblyTests.m */,
-			);
-			path = SystemInfrastructureAssemblyTests;
 			sourceTree = "<group>";
 		};
 		636A37CD1BC1500700B49C3D /* Supporting Files */ = {
@@ -2166,9 +2157,7 @@
 				636F8CB81BC97E7F00552B91 /* LectureMaterials.m in Sources */,
 				63FDCE061BBDBA2A00A43B60 /* AppDelegate.m in Sources */,
 				636B64041BBDD19A0053E38F /* LectureServiceImplementation.m in Sources */,
-				636B64361BBFE4740053E38F /* LectureMaterials+CoreDataProperties.m in Sources */,
 				63F54D9B1BC5AB3C00DB1746 /* ServiceComponentsAssembly.m in Sources */,
-				636B64311BBFE4740053E38F /* RegistrationQuestion.m in Sources */,
 				636A37B31BC1356400B49C3D /* ApplicationConfiguratorImplementation.m in Sources */,
 				9F8E5FA91BC27D0D00DC10DB /* ServiceNameConstants.m in Sources */,
 				636F8CB51BC97E7F00552B91 /* Lecture+CoreDataProperties.m in Sources */,
@@ -2180,14 +2169,7 @@
 				9F0A85011BC1698B006F79FB /* ResponseMappingOperation.m in Sources */,
 				63FDCE161BBDBA2A00A43B60 /* main.m in Sources */,
 				636B64071BBDD2A40053E38F /* LectureMaterialsServiceImplementation.m in Sources */,
-				636B64391BBFE4740053E38F /* Speaker.m in Sources */,
-				636B64331BBFE4740053E38F /* Lecture.m in Sources */,
-				636B64371BBFE4740053E38F /* LectureMaterials.m in Sources */,
-				636B642E1BBFE4740053E38F /* Event+CoreDataProperties.m in Sources */,
-				636B63FF1BBDD0C70053E38F /* EventServiceEmplementation.m in Sources */,
-				636B64301BBFE4740053E38F /* RegistrationQuestion+CoreDataProperties.m in Sources */,
 				63EF15C01BC461DD00480CAF /* PushNotificationServiceImplementation.m in Sources */,
-				636B64351BBFE4740053E38F /* SocialNetworkAccount.m in Sources */,
 				636B64151BBFE3420053E38F /* ViewController.m in Sources */,
 				9F8E5F741BC255AA00DC10DB /* RequestSignersAssembly.m in Sources */,
 				9FF99E511BC42FF6006F15AF /* OperationSchedulerImplementation.m in Sources */,
@@ -2235,7 +2217,6 @@
 				636F8C981BC97C1700552B91 /* SpeakerServiceImplementation.m in Sources */,
 				636A37BB1BC13B9800B49C3D /* ApplicationConfiguratorTests.m in Sources */,
 				636A37CA1BC147FD00B49C3D /* ApplicationAssemblyTests.m in Sources */,
-				636A37CC1BC1481300B49C3D /* SystemInfrastructureAssemblyTests.m in Sources */,
 				9F0A853F1BC192F0006F79FB /* OperationChainerTests.m in Sources */,
 				9F0A85211BC185AA006F79FB /* TestChainableOperationWithValidationBlock.m in Sources */,
 				9F1830DB1BC126D7000E21A5 /* RCFParseResponseValidatorTests.m in Sources */,
@@ -2388,6 +2369,22 @@
 			baseConfigurationReference = 2C01BA17D4018DCA62CC6C3B /* Pods-ConferencesTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/Bolts\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaLumberjack\"",
+					"\"${PODS_ROOT}/Headers/Public/EasyMapping\"",
+					"\"${PODS_ROOT}/Headers/Public/MMBarricade\"",
+					"\"${PODS_ROOT}/Headers/Public/MagicalRecord\"",
+					"\"${PODS_ROOT}/Headers/Public/OCMock\"",
+					"\"${PODS_ROOT}/Headers/Public/Parse\"",
+					"\"${PODS_ROOT}/Headers/Public/RamblerMcFlurry\"/**",
+					"\"${PODS_ROOT}/Headers/Public/Typhoon\"",
+					"\"${PODS_ROOT}/Headers/Public/libextobjc\"",
+					"\"${PODS_ROOT}/Headers/Public/RamblerMcFlurry/Testing/TyphoonAssemblyTests\"",
+				);
 				INFOPLIST_FILE = "ConferencesTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.rambler.ConferencesTests;
@@ -2401,6 +2398,22 @@
 			baseConfigurationReference = 5FED76184BAB5478101AC945 /* Pods-ConferencesTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/Bolts\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaLumberjack\"",
+					"\"${PODS_ROOT}/Headers/Public/EasyMapping\"",
+					"\"${PODS_ROOT}/Headers/Public/MMBarricade\"",
+					"\"${PODS_ROOT}/Headers/Public/MagicalRecord\"",
+					"\"${PODS_ROOT}/Headers/Public/OCMock\"",
+					"\"${PODS_ROOT}/Headers/Public/Parse\"",
+					"\"${PODS_ROOT}/Headers/Public/RamblerMcFlurry\"/**",
+					"\"${PODS_ROOT}/Headers/Public/Typhoon\"",
+					"\"${PODS_ROOT}/Headers/Public/libextobjc\"",
+					"\"${PODS_ROOT}/Headers/Public/RamblerMcFlurry/Testing/TyphoonAssemblyTests\"",
+				);
 				INFOPLIST_FILE = "ConferencesTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.rambler.ConferencesTests;
