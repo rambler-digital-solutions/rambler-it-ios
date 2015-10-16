@@ -12,7 +12,6 @@
 		636A37BB1BC13B9800B49C3D /* ApplicationConfiguratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37BA1BC13B9800B49C3D /* ApplicationConfiguratorTests.m */; settings = {ASSET_TAGS = (); }; };
 		636A37C21BC1413A00B49C3D /* SystemInfrastructureAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37C11BC1413A00B49C3D /* SystemInfrastructureAssembly.m */; settings = {ASSET_TAGS = (); }; };
 		636A37C51BC142BB00B49C3D /* ApplicationAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37C41BC142BB00B49C3D /* ApplicationAssembly.m */; settings = {ASSET_TAGS = (); }; };
-		636A37CA1BC147FD00B49C3D /* ApplicationAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37C91BC147FD00B49C3D /* ApplicationAssemblyTests.m */; settings = {ASSET_TAGS = (); }; };
 		636A37CF1BC1500700B49C3D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 636A37CE1BC1500700B49C3D /* Info.plist */; settings = {ASSET_TAGS = (); }; };
 		636B64041BBDD19A0053E38F /* LectureServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64031BBDD19A0053E38F /* LectureServiceImplementation.m */; settings = {ASSET_TAGS = (); }; };
 		636B64071BBDD2A40053E38F /* LectureMaterialsServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64061BBDD2A40053E38F /* LectureMaterialsServiceImplementation.m */; settings = {ASSET_TAGS = (); }; };
@@ -42,7 +41,15 @@
 		6373A4101BBDC5EA00DF67FF /* Conference.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6373A40E1BBDC5EA00DF67FF /* Conference.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
 		63EF15BB1BC4559900480CAF /* PushNotificationCenterImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF15BA1BC4559900480CAF /* PushNotificationCenterImplementation.m */; settings = {ASSET_TAGS = (); }; };
 		63EF15C01BC461DD00480CAF /* PushNotificationServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF15BF1BC461DD00480CAF /* PushNotificationServiceImplementation.m */; settings = {ASSET_TAGS = (); }; };
-		63F402E91BCF72E30086D030 /* ServiceComponentsAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F402E81BCF72E30086D030 /* ServiceComponentsAssemblyTests.m */; settings = {ASSET_TAGS = (); }; };
+		63F402F01BCF77CB0086D030 /* ApplicationAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F402ED1BCF77CB0086D030 /* ApplicationAssemblyTests.m */; settings = {ASSET_TAGS = (); }; };
+		63F402F11BCF77CB0086D030 /* ServiceComponentsAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F402EF1BCF77CB0086D030 /* ServiceComponentsAssemblyTests.m */; settings = {ASSET_TAGS = (); }; };
+		63F402FB1BCF79390086D030 /* OperationFactoriesAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F402FA1BCF79390086D030 /* OperationFactoriesAssemblyTests.m */; settings = {ASSET_TAGS = (); }; };
+		63F402FE1BCF840A0086D030 /* NetworkClientsAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F402FD1BCF840A0086D030 /* NetworkClientsAssemblyTests.m */; settings = {ASSET_TAGS = (); }; };
+		63F403001BCF85EE0086D030 /* RequestConfiguratorsAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F402FF1BCF85EE0086D030 /* RequestConfiguratorsAssemblyTests.m */; settings = {ASSET_TAGS = (); }; };
+		63F403AA1BD0CB190086D030 /* RequestSignersAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F403A91BD0CB190086D030 /* RequestSignersAssemblyTests.m */; settings = {ASSET_TAGS = (); }; };
+		63F403AC1BD0CD460086D030 /* ResponseDeserializersAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F403AB1BD0CD460086D030 /* ResponseDeserializersAssemblyTests.m */; settings = {ASSET_TAGS = (); }; };
+		63F403AF1BD0D0690086D030 /* ResponseMappersAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F403AE1BD0D0690086D030 /* ResponseMappersAssemblyTests.m */; settings = {ASSET_TAGS = (); }; };
+		63F403B21BD0D4B40086D030 /* ResponseValidatorsAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F403B11BD0D4B40086D030 /* ResponseValidatorsAssemblyTests.m */; settings = {ASSET_TAGS = (); }; };
 		63F54D951BC5A79900DB1746 /* EXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F54D931BC5A79900DB1746 /* EXTScope.m */; settings = {ASSET_TAGS = (); }; };
 		63F54D9B1BC5AB3C00DB1746 /* ServiceComponentsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F54D9A1BC5AB3C00DB1746 /* ServiceComponentsAssembly.m */; settings = {ASSET_TAGS = (); }; };
 		63F54DA01BC5BB2800DB1746 /* ThirdPartiesConfiguratorImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F54D9F1BC5BB2800DB1746 /* ThirdPartiesConfiguratorImplementation.m */; settings = {ASSET_TAGS = (); }; };
@@ -147,7 +154,6 @@
 		636A37C11BC1413A00B49C3D /* SystemInfrastructureAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemInfrastructureAssembly.m; sourceTree = "<group>"; };
 		636A37C31BC142BB00B49C3D /* ApplicationAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationAssembly.h; sourceTree = "<group>"; };
 		636A37C41BC142BB00B49C3D /* ApplicationAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationAssembly.m; sourceTree = "<group>"; };
-		636A37C91BC147FD00B49C3D /* ApplicationAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationAssemblyTests.m; sourceTree = "<group>"; };
 		636A37CE1BC1500700B49C3D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		636B63C91BBDCC550053E38F /* LectureMaterialsService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectureMaterialsService.h; sourceTree = "<group>"; };
 		636B63CA1BBDCC720053E38F /* LectureService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectureService.h; sourceTree = "<group>"; };
@@ -195,14 +201,26 @@
 		6373A3E71BBDC02100DF67FF /* RegistrationQuestionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationQuestionService.h; sourceTree = "<group>"; };
 		6373A3E91BBDC05900DF67FF /* SpeakerService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerService.h; sourceTree = "<group>"; };
 		6373A40F1BBDC5EA00DF67FF /* Conference.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Conference.xcdatamodel; sourceTree = "<group>"; };
-		6391DA981BCE32A800B6D034 /* ApplicationAssembly_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplicationAssembly_Testable.h; sourceTree = "<group>"; };
 		63EF15B81BC4557600480CAF /* PushNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNotificationCenter.h; sourceTree = "<group>"; };
 		63EF15B91BC4559900480CAF /* PushNotificationCenterImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNotificationCenterImplementation.h; sourceTree = "<group>"; };
 		63EF15BA1BC4559900480CAF /* PushNotificationCenterImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushNotificationCenterImplementation.m; sourceTree = "<group>"; };
 		63EF15BD1BC461B700480CAF /* PushNotificationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNotificationService.h; sourceTree = "<group>"; };
 		63EF15BE1BC461DD00480CAF /* PushNotificationServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNotificationServiceImplementation.h; sourceTree = "<group>"; };
 		63EF15BF1BC461DD00480CAF /* PushNotificationServiceImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushNotificationServiceImplementation.m; sourceTree = "<group>"; };
-		63F402E81BCF72E30086D030 /* ServiceComponentsAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceComponentsAssemblyTests.m; sourceTree = "<group>"; };
+		63F402EC1BCF77CB0086D030 /* ApplicationAssembly_Testable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationAssembly_Testable.h; sourceTree = "<group>"; };
+		63F402ED1BCF77CB0086D030 /* ApplicationAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationAssemblyTests.m; sourceTree = "<group>"; };
+		63F402EF1BCF77CB0086D030 /* ServiceComponentsAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceComponentsAssemblyTests.m; sourceTree = "<group>"; };
+		63F402FA1BCF79390086D030 /* OperationFactoriesAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationFactoriesAssemblyTests.m; sourceTree = "<group>"; };
+		63F402FC1BCF799F0086D030 /* OperationFactoriesAssembly_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OperationFactoriesAssembly_Testable.h; sourceTree = "<group>"; };
+		63F402FD1BCF840A0086D030 /* NetworkClientsAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkClientsAssemblyTests.m; sourceTree = "<group>"; };
+		63F402FF1BCF85EE0086D030 /* RequestConfiguratorsAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestConfiguratorsAssemblyTests.m; sourceTree = "<group>"; };
+		63F403A91BD0CB190086D030 /* RequestSignersAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestSignersAssemblyTests.m; sourceTree = "<group>"; };
+		63F403AB1BD0CD460086D030 /* ResponseDeserializersAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseDeserializersAssemblyTests.m; sourceTree = "<group>"; };
+		63F403AD1BD0CD970086D030 /* ResponseDeserializersAssembly_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResponseDeserializersAssembly_Testable.h; sourceTree = "<group>"; };
+		63F403AE1BD0D0690086D030 /* ResponseMappersAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseMappersAssemblyTests.m; sourceTree = "<group>"; };
+		63F403B01BD0D1070086D030 /* ResponseMappersAssembly_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResponseMappersAssembly_Testable.h; sourceTree = "<group>"; };
+		63F403B11BD0D4B40086D030 /* ResponseValidatorsAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseValidatorsAssemblyTests.m; sourceTree = "<group>"; };
+		63F403B31BD0D52A0086D030 /* ResponseValidatorsAssembly_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResponseValidatorsAssembly_Testable.h; sourceTree = "<group>"; };
 		63F54D921BC5A79900DB1746 /* EXTScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTScope.h; sourceTree = "<group>"; };
 		63F54D931BC5A79900DB1746 /* EXTScope.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTScope.m; sourceTree = "<group>"; };
 		63F54D941BC5A79900DB1746 /* metamacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = metamacros.h; sourceTree = "<group>"; };
@@ -399,8 +417,8 @@
 		636A37B51BC13B4B00B49C3D /* ConferencesAssembliesTests */ = {
 			isa = PBXGroup;
 			children = (
-				63F402E71BCF72BD0086D030 /* ServiceComponentsAssemblyTests */,
-				636A37C61BC1466900B49C3D /* ApplicationLayerTests */,
+				63F402EA1BCF77CB0086D030 /* ApplicationLayerAssemblyTests */,
+				63F402F21BCF79040086D030 /* CoreLayerAssemblyTests */,
 			);
 			path = ConferencesAssembliesTests;
 			sourceTree = "<group>";
@@ -461,23 +479,6 @@
 				636A37C11BC1413A00B49C3D /* SystemInfrastructureAssembly.m */,
 			);
 			path = SystemInfrastructureAssembly;
-			sourceTree = "<group>";
-		};
-		636A37C61BC1466900B49C3D /* ApplicationLayerTests */ = {
-			isa = PBXGroup;
-			children = (
-				636A37C71BC1466900B49C3D /* ApplicationAssemblyTests */,
-			);
-			path = ApplicationLayerTests;
-			sourceTree = "<group>";
-		};
-		636A37C71BC1466900B49C3D /* ApplicationAssemblyTests */ = {
-			isa = PBXGroup;
-			children = (
-				6391DA981BCE32A800B6D034 /* ApplicationAssembly_Testable.h */,
-				636A37C91BC147FD00B49C3D /* ApplicationAssemblyTests.m */,
-			);
-			path = ApplicationAssemblyTests;
 			sourceTree = "<group>";
 		};
 		636A37CD1BC1500700B49C3D /* Supporting Files */ = {
@@ -590,12 +591,104 @@
 			path = PushNotificationSrvice;
 			sourceTree = "<group>";
 		};
-		63F402E71BCF72BD0086D030 /* ServiceComponentsAssemblyTests */ = {
+		63F402EA1BCF77CB0086D030 /* ApplicationLayerAssemblyTests */ = {
 			isa = PBXGroup;
 			children = (
-				63F402E81BCF72E30086D030 /* ServiceComponentsAssemblyTests.m */,
+				63F402EB1BCF77CB0086D030 /* ApplicationAssemblyTests */,
+				63F402EE1BCF77CB0086D030 /* ServiceComponentsAssemblyTests */,
+			);
+			path = ApplicationLayerAssemblyTests;
+			sourceTree = "<group>";
+		};
+		63F402EB1BCF77CB0086D030 /* ApplicationAssemblyTests */ = {
+			isa = PBXGroup;
+			children = (
+				63F402EC1BCF77CB0086D030 /* ApplicationAssembly_Testable.h */,
+				63F402ED1BCF77CB0086D030 /* ApplicationAssemblyTests.m */,
+			);
+			path = ApplicationAssemblyTests;
+			sourceTree = "<group>";
+		};
+		63F402EE1BCF77CB0086D030 /* ServiceComponentsAssemblyTests */ = {
+			isa = PBXGroup;
+			children = (
+				63F402EF1BCF77CB0086D030 /* ServiceComponentsAssemblyTests.m */,
 			);
 			path = ServiceComponentsAssemblyTests;
+			sourceTree = "<group>";
+		};
+		63F402F21BCF79040086D030 /* CoreLayerAssemblyTests */ = {
+			isa = PBXGroup;
+			children = (
+				63F402F31BCF79040086D030 /* NetworkClientsAssemblyTests */,
+				63F402F41BCF79040086D030 /* OperationFactoriesAssemblyTests */,
+				63F402F51BCF79040086D030 /* RequestConfiguratorsAssemblyTests */,
+				63F402F61BCF79040086D030 /* RequestSignersAssemblyTests */,
+				63F402F71BCF79040086D030 /* ResponseDeserializersAssemblyTests */,
+				63F402F81BCF79040086D030 /* ResponseMappersAssemblyTests */,
+				63F402F91BCF79040086D030 /* ResponseValidatorsAssemblyTests */,
+			);
+			path = CoreLayerAssemblyTests;
+			sourceTree = "<group>";
+		};
+		63F402F31BCF79040086D030 /* NetworkClientsAssemblyTests */ = {
+			isa = PBXGroup;
+			children = (
+				63F402FD1BCF840A0086D030 /* NetworkClientsAssemblyTests.m */,
+			);
+			path = NetworkClientsAssemblyTests;
+			sourceTree = "<group>";
+		};
+		63F402F41BCF79040086D030 /* OperationFactoriesAssemblyTests */ = {
+			isa = PBXGroup;
+			children = (
+				63F402FC1BCF799F0086D030 /* OperationFactoriesAssembly_Testable.h */,
+				63F402FA1BCF79390086D030 /* OperationFactoriesAssemblyTests.m */,
+			);
+			path = OperationFactoriesAssemblyTests;
+			sourceTree = "<group>";
+		};
+		63F402F51BCF79040086D030 /* RequestConfiguratorsAssemblyTests */ = {
+			isa = PBXGroup;
+			children = (
+				63F402FF1BCF85EE0086D030 /* RequestConfiguratorsAssemblyTests.m */,
+			);
+			path = RequestConfiguratorsAssemblyTests;
+			sourceTree = "<group>";
+		};
+		63F402F61BCF79040086D030 /* RequestSignersAssemblyTests */ = {
+			isa = PBXGroup;
+			children = (
+				63F403A91BD0CB190086D030 /* RequestSignersAssemblyTests.m */,
+			);
+			path = RequestSignersAssemblyTests;
+			sourceTree = "<group>";
+		};
+		63F402F71BCF79040086D030 /* ResponseDeserializersAssemblyTests */ = {
+			isa = PBXGroup;
+			children = (
+				63F403AD1BD0CD970086D030 /* ResponseDeserializersAssembly_Testable.h */,
+				63F403AB1BD0CD460086D030 /* ResponseDeserializersAssemblyTests.m */,
+			);
+			path = ResponseDeserializersAssemblyTests;
+			sourceTree = "<group>";
+		};
+		63F402F81BCF79040086D030 /* ResponseMappersAssemblyTests */ = {
+			isa = PBXGroup;
+			children = (
+				63F403AE1BD0D0690086D030 /* ResponseMappersAssemblyTests.m */,
+				63F403B01BD0D1070086D030 /* ResponseMappersAssembly_Testable.h */,
+			);
+			path = ResponseMappersAssemblyTests;
+			sourceTree = "<group>";
+		};
+		63F402F91BCF79040086D030 /* ResponseValidatorsAssemblyTests */ = {
+			isa = PBXGroup;
+			children = (
+				63F403B11BD0D4B40086D030 /* ResponseValidatorsAssemblyTests.m */,
+				63F403B31BD0D52A0086D030 /* ResponseValidatorsAssembly_Testable.h */,
+			);
+			path = ResponseValidatorsAssemblyTests;
 			sourceTree = "<group>";
 		};
 		63F54D911BC5A79900DB1746 /* EXTScope */ = {
@@ -2224,30 +2317,37 @@
 				636F8C991BC97CD300552B91 /* EventServiceImplementation.m in Sources */,
 				636F8C9A1BC97CD300552B91 /* LectureMaterialsServiceImplementation.m in Sources */,
 				636F8C9B1BC97CD300552B91 /* RegistrationQuestionServiceImplementation.m in Sources */,
+				63F402FE1BCF840A0086D030 /* NetworkClientsAssemblyTests.m in Sources */,
 				636F8C9C1BC97CD300552B91 /* SocialNetworkAccountServiceImplementation.m in Sources */,
 				636F8C981BC97C1700552B91 /* SpeakerServiceImplementation.m in Sources */,
 				636A37BB1BC13B9800B49C3D /* ApplicationConfiguratorTests.m in Sources */,
-				636A37CA1BC147FD00B49C3D /* ApplicationAssemblyTests.m in Sources */,
 				9F0A853F1BC192F0006F79FB /* OperationChainerTests.m in Sources */,
-				63F402E91BCF72E30086D030 /* ServiceComponentsAssemblyTests.m in Sources */,
 				9F0A85211BC185AA006F79FB /* TestChainableOperationWithValidationBlock.m in Sources */,
+				63F402F11BCF77CB0086D030 /* ServiceComponentsAssemblyTests.m in Sources */,
 				9F1830DB1BC126D7000E21A5 /* RCFParseResponseValidatorTests.m in Sources */,
 				9F0A85201BC185AA006F79FB /* TestChainableOperation.m in Sources */,
 				9F18309A1BC022EA000E21A5 /* RCFRESTRequestConfiguratorTests.m in Sources */,
 				9F8E5FA21BC27B5B00DC10DB /* EventOperationFactoryTests.m in Sources */,
+				63F402F01BCF77CB0086D030 /* ApplicationAssemblyTests.m in Sources */,
 				9F0A85261BC185AA006F79FB /* ResponseDeserializationOperationTests.m in Sources */,
+				63F403001BCF85EE0086D030 /* RequestConfiguratorsAssemblyTests.m in Sources */,
 				9F0A85231BC185AA006F79FB /* ChainableOperationTestsBase.m in Sources */,
+				63F402FB1BCF79390086D030 /* OperationFactoriesAssemblyTests.m in Sources */,
 				9F0A85251BC185AA006F79FB /* RequestSigningOperationTests.m in Sources */,
 				9F0A85241BC185AA006F79FB /* RequestConfigurationOperationTests.m in Sources */,
 				9F8E5F9B1BC2753100DC10DB /* CompoundOperationFactoryTestsBase.m in Sources */,
 				9F0A851F1BC185AA006F79FB /* TestCancellableOperation.m in Sources */,
 				9F0A85271BC185AA006F79FB /* ResponseMappingOperationTests.m in Sources */,
 				9F1830F91BC1464C000E21A5 /* RCFManagedObjectMappingProviderTests.m in Sources */,
+				63F403AA1BD0CB190086D030 /* RequestSignersAssemblyTests.m in Sources */,
 				9F1830C81BC11EE6000E21A5 /* XCTestCase+RCFHelpers.m in Sources */,
+				63F403B21BD0D4B40086D030 /* ResponseValidatorsAssemblyTests.m in Sources */,
 				9F0A84C31BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m in Sources */,
 				9F1831211BC16195000E21A5 /* RCFResultResponseObjectFormatterTests.m in Sources */,
 				9F1830AB1BC1139B000E21A5 /* RCFParseRequestSignerTests.m in Sources */,
+				63F403AF1BD0D0690086D030 /* ResponseMappersAssemblyTests.m in Sources */,
 				9F1830DF1BC12749000E21A5 /* RCFResponseValidatorTestsBase.m in Sources */,
+				63F403AC1BD0CD460086D030 /* ResponseDeserializersAssemblyTests.m in Sources */,
 				9FF99E541BC4317E006F15AF /* OperationSchedulerTests.m in Sources */,
 				9F1830B81BC119A5000E21A5 /* CommonNetworkClientTests.m in Sources */,
 				9F1830C31BC11DE7000E21A5 /* RCFJSONResponseDeserializerTests.m in Sources */,

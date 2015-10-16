@@ -51,6 +51,7 @@
 @property (strong, nonatomic) id<ResponseDeserializersFactory> responseDeserializersFactory;
 @property (strong, nonatomic) id<ResponseValidatorsFactory> responseValidatorsFactory;
 @property (strong, nonatomic) id<ResponseMappersFactory> responseMappersFactory;
+@property (strong, nonatomic, readonly) OperationChainer *chainer;
 
 /**
  @author Egor Tolstoy

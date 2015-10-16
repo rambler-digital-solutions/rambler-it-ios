@@ -20,6 +20,9 @@
  */
 @interface ManagedObjectMapper : NSObject <ResponseMapper>
 
+@property (strong, nonatomic, readonly) ManagedObjectMappingProvider *provider;
+@property (strong, nonatomic, readonly) id<ResponseObjectFormatter> responseFormatter;
+
 /**
  @author Egor Tolstoy
  

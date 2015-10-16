@@ -17,6 +17,8 @@
  */
 @interface CommonNetworkClient : NSObject <NetworkClient>
 
+@property (strong, nonatomic, readonly) NSURLSession *session;
+
 /**
  @author Egor Tolstoy
  
