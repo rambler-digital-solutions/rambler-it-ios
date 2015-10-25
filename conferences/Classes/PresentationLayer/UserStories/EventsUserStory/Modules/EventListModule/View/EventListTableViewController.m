@@ -6,10 +6,10 @@
 //  Copyright 2015 Rambler. All rights reserved.
 //
 
-#import "EventListViewController.h"
+#import "EventListTableViewController.h"
 #import "EventListViewOutput.h"
 
-@interface EventListViewController()
+@interface EventListTableViewController()
 
 @end
 
@@ -18,7 +18,7 @@
  *
  *  
  */
-@implementation EventListViewController
+@implementation EventListTableViewController
 
 - (void)viewDidLoad {
 	[super viewDidLoad];

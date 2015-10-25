@@ -11,7 +11,7 @@
 
 @protocol EventListViewOutput;
 
-@interface EventListViewController : UIViewController<EventListViewInput>
+@interface EventListTableViewController : UITableViewController <EventListViewInput>
 
 @property (nonatomic, strong) id<EventListViewOutput> output;
 
