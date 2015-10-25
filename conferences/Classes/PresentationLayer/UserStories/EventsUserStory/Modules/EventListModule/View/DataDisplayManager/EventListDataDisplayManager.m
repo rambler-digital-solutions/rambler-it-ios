@@ -10,4 +10,7 @@
 
 @implementation EventListDataDisplayManager
 
+#pragma mark - DataDisplayManager methods
+
+
 @end

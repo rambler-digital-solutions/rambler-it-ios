@@ -10,10 +10,12 @@
 #import "EventListViewInput.h"
 
 @protocol EventListViewOutput;
+@class EventListDataDisplayManager;
 
 @interface EventListTableViewController : UITableViewController <EventListViewInput>
 
 @property (nonatomic, strong) id<EventListViewOutput> output;
+@property (strong, nonatomic) EventListDataDisplayManager *dataDisplayManager;
 
 @end
 

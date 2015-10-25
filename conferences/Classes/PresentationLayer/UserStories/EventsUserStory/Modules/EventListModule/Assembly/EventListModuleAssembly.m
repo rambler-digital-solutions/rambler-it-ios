@@ -7,10 +7,11 @@
 //
 
 #import "EventListModuleAssembly.h"
-#import "EventListViewController.h"
+#import "EventListTableViewController.h"
 #import "EventListInteractor.h"
 #import "EventListPresenter.h"
 #import "EventListRouter.h"
+#import "EventListDataDisplayManager.h"
 
 #import "TabBarButtonPrototype.h"
 
@@ -18,11 +19,13 @@ static NSString * const kEventListStoryboardName = @"EventsUserStory";
 
 @implementation  EventListModuleAssembly
 
-- (EventListViewController *)viewEventList {
-    return [TyphoonDefinition withClass:[EventListViewController class]
+- (EventListTableViewController *)viewEventList {
+    return [TyphoonDefinition withClass:[EventListTableViewController class]
                           configuration:^(TyphoonDefinition *definition) {
                             [definition injectProperty:@selector(output) 
                                                   with:[self presenterEventList]];
+                              [definition injectProperty:@selector(dataDisplayManager)
+                                                    with:[self dataDisplayManagerEventList]];
              }];
 }
 
@@ -53,6 +56,10 @@ static NSString * const kEventListStoryboardName = @"EventsUserStory";
            }];
 }
 
+- (EventListDataDisplayManager *)dataDisplayManagerEventList {
+    return [TyphoonDefinition withClass:[EventListDataDisplayManager class]];
+}
+
 #pragma mark - TabBarButtonPrototypeProtocol
 
 // добавить картинки
@@ -64,7 +71,7 @@ static NSString * const kEventListStoryboardName = @"EventsUserStory";
                               [definition injectProperty:@selector(tabBarButtonSelectedStateImage)
                                                     with:[UIImage imageNamed:@"umbrella"]];
                               [definition injectProperty:@selector(tabBarButtonTitle)
-                                                    with:@"Конференции"];
+                                                    with:@"Анонсы"];
                               [definition injectProperty:@selector(tabbarButtonId)
                                                     with:@"events_tab"];
                               [definition injectProperty:@selector(tabBarControllercontent)
@@ -76,7 +83,7 @@ static NSString * const kEventListStoryboardName = @"EventsUserStory";
     return [TyphoonFactoryDefinition withFactory:[self newsListStoryboard]
                                         selector:@selector(instantiateViewControllerWithIdentifier:)
                                       parameters:^(TyphoonMethod *factoryMethod) {
-                                          [factoryMethod injectParameterWith:@"EventListViewController"];
+                                          [factoryMethod injectParameterWith:@"EventListTableViewController"];
                                       } configuration:^(TyphoonFactoryDefinition *definition) {
                                       }];
 }

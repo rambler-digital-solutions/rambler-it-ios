@@ -13,6 +13,7 @@ pod 'EasyMapping', '~> 0.15'
 pod 'CocoaLumberjack', '~> 2.0'
 pod 'UIViewController+Routing', '~> 0.1.0'
 pod 'PureLayout', '~> 3.0'
+pod 'Nimbus/Models', '1.2.2'
 
 target 'ConferencesTests', :exclusive => true do
     pod 'OCMock', '~> 3.1'

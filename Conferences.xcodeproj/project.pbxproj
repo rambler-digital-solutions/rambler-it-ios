@@ -8,6 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		5A5668508B92FC833070BA13 /* libPods-ConferencesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E72B1E234365770B87BDC6D /* libPods-ConferencesTests.a */; };
+<<<<<<< HEAD
+=======
+		63136F931BDCD8B600994356 /* EventListDataDisplayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136F921BDCD8B600994356 /* EventListDataDisplayManager.m */; };
+		63136FD31BDCDB2700994356 /* EmbedModuleSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136F971BDCDB2600994356 /* EmbedModuleSegue.m */; };
+		63136FD41BDCDB2700994356 /* EmbedModuleTransitionSegueInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136F991BDCDB2600994356 /* EmbedModuleTransitionSegueInfo.m */; };
+		63136FD51BDCDB2700994356 /* ModuleConfigurationPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136F9C1BDCDB2600994356 /* ModuleConfigurationPromise.m */; };
+		63136FD61BDCDB2700994356 /* ModuleTransitionSegueInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136FA21BDCDB2600994356 /* ModuleTransitionSegueInfo.m */; };
+		63136FD71BDCDB2700994356 /* UIViewController+DefaultTransitionHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136FA41BDCDB2600994356 /* UIViewController+DefaultTransitionHandling.m */; };
+		63136FD81BDCDB2700994356 /* TabBarModuleAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136FA81BDCDB2600994356 /* TabBarModuleAssembly.m */; };
+		63136FD91BDCDB2700994356 /* TabBarInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136FAB1BDCDB2700994356 /* TabBarInteractor.m */; };
+		63136FDA1BDCDB2700994356 /* TabBarPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136FB11BDCDB2700994356 /* TabBarPresenter.m */; };
+		63136FDB1BDCDB2700994356 /* TabBarRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136FB51BDCDB2700994356 /* TabBarRouter.m */; };
+		63136FDC1BDCDB2700994356 /* CollectionViewDataDisplayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136FBD1BDCDB2700994356 /* CollectionViewDataDisplayManager.m */; };
+		63136FDD1BDCDB2700994356 /* CollectionViewSectionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136FBF1BDCDB2700994356 /* CollectionViewSectionInfo.m */; };
+		63136FDE1BDCDB2700994356 /* CollectionViewSupplementaryViewObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136FC11BDCDB2700994356 /* CollectionViewSupplementaryViewObject.m */; };
+		63136FDF1BDCDB2700994356 /* TabBarButtonPrototype.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136FC61BDCDB2700994356 /* TabBarButtonPrototype.m */; };
+		63136FE01BDCDB2700994356 /* UIViewController+TabBarControllerContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136FCC1BDCDB2700994356 /* UIViewController+TabBarControllerContent.m */; };
+		63136FE11BDCDB2700994356 /* TabBarButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136FCF1BDCDB2700994356 /* TabBarButtonCell.m */; };
+		63136FE21BDCDB2700994356 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136FD11BDCDB2700994356 /* TabBarViewController.m */; };
+>>>>>>> Установлен Nimbus
 		636A37B31BC1356400B49C3D /* ApplicationConfiguratorImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37B21BC1356400B49C3D /* ApplicationConfiguratorImplementation.m */; };
 		636A37BB1BC13B9800B49C3D /* ApplicationConfiguratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37BA1BC13B9800B49C3D /* ApplicationConfiguratorTests.m */; };
 		636A37C21BC1413A00B49C3D /* SystemInfrastructureAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37C11BC1413A00B49C3D /* SystemInfrastructureAssembly.m */; };
@@ -21,7 +41,10 @@
 		636B640D1BBDD5000053E38F /* SocialNetworkAccountServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B640C1BBDD5000053E38F /* SocialNetworkAccountServiceImplementation.m */; };
 		636B64101BBDD6260053E38F /* SpeakerServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B640F1BBDD6260053E38F /* SpeakerServiceImplementation.m */; };
 		636B64121BBFE2C20053E38F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 636B64111BBFE2C20053E38F /* Main.storyboard */; };
+<<<<<<< HEAD
 		636B64151BBFE3420053E38F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64141BBFE3420053E38F /* ViewController.m */; };
+=======
+>>>>>>> Установлен Nimbus
 		636F8C971BC97B3100552B91 /* EventServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8C961BC97B3100552B91 /* EventServiceImplementation.m */; };
 		636F8C981BC97C1700552B91 /* SpeakerServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B640F1BBDD6260053E38F /* SpeakerServiceImplementation.m */; };
 		636F8C991BC97CD300552B91 /* EventServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8C961BC97B3100552B91 /* EventServiceImplementation.m */; };
@@ -177,6 +200,61 @@
 		559ED4EDBC100544852E4E6A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		5E72B1E234365770B87BDC6D /* libPods-ConferencesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ConferencesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FED76184BAB5478101AC945 /* Pods-ConferencesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConferencesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConferencesTests/Pods-ConferencesTests.release.xcconfig"; sourceTree = "<group>"; };
+		63136F911BDCD8B600994356 /* EventListDataDisplayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListDataDisplayManager.h; sourceTree = "<group>"; };
+		63136F921BDCD8B600994356 /* EventListDataDisplayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListDataDisplayManager.m; sourceTree = "<group>"; };
+		63136F961BDCDB2600994356 /* EmbedModuleSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmbedModuleSegue.h; sourceTree = "<group>"; };
+		63136F971BDCDB2600994356 /* EmbedModuleSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmbedModuleSegue.m; sourceTree = "<group>"; };
+		63136F981BDCDB2600994356 /* EmbedModuleTransitionSegueInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmbedModuleTransitionSegueInfo.h; sourceTree = "<group>"; };
+		63136F991BDCDB2600994356 /* EmbedModuleTransitionSegueInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmbedModuleTransitionSegueInfo.m; sourceTree = "<group>"; };
+		63136F9A1BDCDB2600994356 /* IntermoduleDataTransfer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntermoduleDataTransfer.h; sourceTree = "<group>"; };
+		63136F9B1BDCDB2600994356 /* ModuleConfigurationPromise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleConfigurationPromise.h; sourceTree = "<group>"; };
+		63136F9C1BDCDB2600994356 /* ModuleConfigurationPromise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModuleConfigurationPromise.m; sourceTree = "<group>"; };
+		63136F9D1BDCDB2600994356 /* ModuleConfigurationPromiseProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleConfigurationPromiseProtocol.h; sourceTree = "<group>"; };
+		63136F9E1BDCDB2600994356 /* ModuleConfiguratorHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleConfiguratorHolder.h; sourceTree = "<group>"; };
+		63136F9F1BDCDB2600994356 /* ModuleConfiguratorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleConfiguratorProtocol.h; sourceTree = "<group>"; };
+		63136FA01BDCDB2600994356 /* ModuleTransitionHandlerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleTransitionHandlerProtocol.h; sourceTree = "<group>"; };
+		63136FA11BDCDB2600994356 /* ModuleTransitionSegueInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleTransitionSegueInfo.h; sourceTree = "<group>"; };
+		63136FA21BDCDB2600994356 /* ModuleTransitionSegueInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModuleTransitionSegueInfo.m; sourceTree = "<group>"; };
+		63136FA31BDCDB2600994356 /* UIViewController+DefaultTransitionHandling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DefaultTransitionHandling.h"; sourceTree = "<group>"; };
+		63136FA41BDCDB2600994356 /* UIViewController+DefaultTransitionHandling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DefaultTransitionHandling.m"; sourceTree = "<group>"; };
+		63136FA71BDCDB2600994356 /* TabBarModuleAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarModuleAssembly.h; sourceTree = "<group>"; };
+		63136FA81BDCDB2600994356 /* TabBarModuleAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarModuleAssembly.m; sourceTree = "<group>"; };
+		63136FAA1BDCDB2600994356 /* TabBarInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarInteractor.h; sourceTree = "<group>"; };
+		63136FAB1BDCDB2700994356 /* TabBarInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarInteractor.m; sourceTree = "<group>"; };
+		63136FAC1BDCDB2700994356 /* TabBarInteractorInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarInteractorInput.h; sourceTree = "<group>"; };
+		63136FAE1BDCDB2700994356 /* TabBarInteractorOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarInteractorOutput.h; sourceTree = "<group>"; };
+		63136FAF1BDCDB2700994356 /* TabBarModuleConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarModuleConfigurator.h; sourceTree = "<group>"; };
+		63136FB01BDCDB2700994356 /* TabBarPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarPresenter.h; sourceTree = "<group>"; };
+		63136FB11BDCDB2700994356 /* TabBarPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarPresenter.m; sourceTree = "<group>"; };
+		63136FB21BDCDB2700994356 /* TabBarViewOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewOutput.h; sourceTree = "<group>"; };
+		63136FB41BDCDB2700994356 /* TabBarRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarRouter.h; sourceTree = "<group>"; };
+		63136FB51BDCDB2700994356 /* TabBarRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarRouter.m; sourceTree = "<group>"; };
+		63136FB61BDCDB2700994356 /* TabBarRouterInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarRouterInput.h; sourceTree = "<group>"; };
+		63136FB71BDCDB2700994356 /* TabBarTabFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarTabFactory.h; sourceTree = "<group>"; };
+		63136FBA1BDCDB2700994356 /* CollectionViewCellObjectProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCellObjectProtocol.h; sourceTree = "<group>"; };
+		63136FBB1BDCDB2700994356 /* CollectionViewCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCellProtocol.h; sourceTree = "<group>"; };
+		63136FBC1BDCDB2700994356 /* CollectionViewDataDisplayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewDataDisplayManager.h; sourceTree = "<group>"; };
+		63136FBD1BDCDB2700994356 /* CollectionViewDataDisplayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewDataDisplayManager.m; sourceTree = "<group>"; };
+		63136FBE1BDCDB2700994356 /* CollectionViewSectionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewSectionInfo.h; sourceTree = "<group>"; };
+		63136FBF1BDCDB2700994356 /* CollectionViewSectionInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewSectionInfo.m; sourceTree = "<group>"; };
+		63136FC01BDCDB2700994356 /* CollectionViewSupplementaryViewObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewSupplementaryViewObject.h; sourceTree = "<group>"; };
+		63136FC11BDCDB2700994356 /* CollectionViewSupplementaryViewObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewSupplementaryViewObject.m; sourceTree = "<group>"; };
+		63136FC21BDCDB2700994356 /* CollectionViewSupplementaryViewObjectProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewSupplementaryViewObjectProtocol.h; sourceTree = "<group>"; };
+		63136FC31BDCDB2700994356 /* CollectionViewSupplementaryViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewSupplementaryViewProtocol.h; sourceTree = "<group>"; };
+		63136FC51BDCDB2700994356 /* TabBarButtonPrototype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarButtonPrototype.h; sourceTree = "<group>"; };
+		63136FC61BDCDB2700994356 /* TabBarButtonPrototype.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarButtonPrototype.m; sourceTree = "<group>"; };
+		63136FC71BDCDB2700994356 /* TabBarButtonPrototypeProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarButtonPrototypeProtocol.h; sourceTree = "<group>"; };
+		63136FC81BDCDB2700994356 /* TabBarControllerContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarControllerContent.h; sourceTree = "<group>"; };
+		63136FC91BDCDB2700994356 /* TabBarControllerContentEmbedder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarControllerContentEmbedder.h; sourceTree = "<group>"; };
+		63136FCA1BDCDB2700994356 /* TabBarControllerEmbeddedContentConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarControllerEmbeddedContentConfigurator.h; sourceTree = "<group>"; };
+		63136FCB1BDCDB2700994356 /* UIViewController+TabBarControllerContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TabBarControllerContent.h"; sourceTree = "<group>"; };
+		63136FCC1BDCDB2700994356 /* UIViewController+TabBarControllerContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TabBarControllerContent.m"; sourceTree = "<group>"; };
+		63136FCE1BDCDB2700994356 /* TabBarButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarButtonCell.h; sourceTree = "<group>"; };
+		63136FCF1BDCDB2700994356 /* TabBarButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarButtonCell.m; sourceTree = "<group>"; };
+		63136FD01BDCDB2700994356 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
+		63136FD11BDCDB2700994356 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
+		63136FD21BDCDB2700994356 /* TabBarViewInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewInput.h; sourceTree = "<group>"; };
+		63136FE51BDCDB9E00994356 /* DataDisplayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataDisplayManager.h; sourceTree = "<group>"; };
 		636A37B11BC1356400B49C3D /* ApplicationConfiguratorImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationConfiguratorImplementation.h; sourceTree = "<group>"; };
 		636A37B21BC1356400B49C3D /* ApplicationConfiguratorImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationConfiguratorImplementation.m; sourceTree = "<group>"; };
 		636A37B41BC1361000B49C3D /* ApplicationConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationConfigurator.h; sourceTree = "<group>"; };
@@ -228,43 +306,6 @@
 		636F8CB41BC97E7F00552B91 /* RegistrationQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationQuestion.m; sourceTree = "<group>"; };
 		636F8D0A1BCB825F00552B91 /* ModuleAssemblyBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleAssemblyBase.h; sourceTree = "<group>"; };
 		636F8D0B1BCB825F00552B91 /* ModuleAssemblyBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModuleAssemblyBase.m; sourceTree = "<group>"; };
-		636F8D101BCB869500552B91 /* TabBarModuleAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarModuleAssembly.h; sourceTree = "<group>"; };
-		636F8D111BCB869500552B91 /* TabBarModuleAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarModuleAssembly.m; sourceTree = "<group>"; };
-		636F8D131BCB869500552B91 /* TabBarInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarInteractor.h; sourceTree = "<group>"; };
-		636F8D141BCB869500552B91 /* TabBarInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarInteractor.m; sourceTree = "<group>"; };
-		636F8D151BCB869500552B91 /* TabBarInteractorInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarInteractorInput.h; sourceTree = "<group>"; };
-		636F8D171BCB869500552B91 /* TabBarInteractorOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarInteractorOutput.h; sourceTree = "<group>"; };
-		636F8D181BCB869500552B91 /* TabBarModuleConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarModuleConfigurator.h; sourceTree = "<group>"; };
-		636F8D191BCB869500552B91 /* TabBarPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarPresenter.h; sourceTree = "<group>"; };
-		636F8D1A1BCB869500552B91 /* TabBarPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarPresenter.m; sourceTree = "<group>"; };
-		636F8D1B1BCB869500552B91 /* TabBarViewOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewOutput.h; sourceTree = "<group>"; };
-		636F8D1D1BCB869500552B91 /* TabBarRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarRouter.h; sourceTree = "<group>"; };
-		636F8D1E1BCB869500552B91 /* TabBarRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarRouter.m; sourceTree = "<group>"; };
-		636F8D1F1BCB869500552B91 /* TabBarRouterInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarRouterInput.h; sourceTree = "<group>"; };
-		636F8D201BCB869500552B91 /* TabBarTabFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarTabFactory.h; sourceTree = "<group>"; };
-		636F8D231BCB869500552B91 /* CollectionViewCellObjectProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCellObjectProtocol.h; sourceTree = "<group>"; };
-		636F8D241BCB869500552B91 /* CollectionViewCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCellProtocol.h; sourceTree = "<group>"; };
-		636F8D251BCB869500552B91 /* CollectionViewDataDisplayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewDataDisplayManager.h; sourceTree = "<group>"; };
-		636F8D261BCB869500552B91 /* CollectionViewDataDisplayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewDataDisplayManager.m; sourceTree = "<group>"; };
-		636F8D271BCB869500552B91 /* CollectionViewSectionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewSectionInfo.h; sourceTree = "<group>"; };
-		636F8D281BCB869500552B91 /* CollectionViewSectionInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewSectionInfo.m; sourceTree = "<group>"; };
-		636F8D291BCB869500552B91 /* CollectionViewSupplementaryViewObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewSupplementaryViewObject.h; sourceTree = "<group>"; };
-		636F8D2A1BCB869500552B91 /* CollectionViewSupplementaryViewObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewSupplementaryViewObject.m; sourceTree = "<group>"; };
-		636F8D2B1BCB869500552B91 /* CollectionViewSupplementaryViewObjectProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewSupplementaryViewObjectProtocol.h; sourceTree = "<group>"; };
-		636F8D2C1BCB869500552B91 /* CollectionViewSupplementaryViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewSupplementaryViewProtocol.h; sourceTree = "<group>"; };
-		636F8D2E1BCB869500552B91 /* TabBarButtonPrototype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarButtonPrototype.h; sourceTree = "<group>"; };
-		636F8D2F1BCB869500552B91 /* TabBarButtonPrototype.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarButtonPrototype.m; sourceTree = "<group>"; };
-		636F8D301BCB869500552B91 /* TabBarButtonPrototypeProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarButtonPrototypeProtocol.h; sourceTree = "<group>"; };
-		636F8D311BCB869500552B91 /* TabBarControllerContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarControllerContent.h; sourceTree = "<group>"; };
-		636F8D321BCB869500552B91 /* TabBarControllerContentEmbedder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarControllerContentEmbedder.h; sourceTree = "<group>"; };
-		636F8D331BCB869500552B91 /* TabBarControllerEmbeddedContentConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarControllerEmbeddedContentConfigurator.h; sourceTree = "<group>"; };
-		636F8D341BCB869500552B91 /* UIViewController+TabBarControllerContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TabBarControllerContent.h"; sourceTree = "<group>"; };
-		636F8D351BCB869500552B91 /* UIViewController+TabBarControllerContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TabBarControllerContent.m"; sourceTree = "<group>"; };
-		636F8D361BCB869500552B91 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
-		636F8D371BCB869500552B91 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
-		636F8D381BCB869500552B91 /* TabBarViewInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewInput.h; sourceTree = "<group>"; };
-		636F8D3A1BCB869500552B91 /* TabBarButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarButtonCell.h; sourceTree = "<group>"; };
-		636F8D3B1BCB869500552B91 /* TabBarButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarButtonCell.m; sourceTree = "<group>"; };
 		636F8DC11BCB8FE800552B91 /* RamblerLocationModuleAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RamblerLocationModuleAssembly.h; sourceTree = "<group>"; };
 		636F8DC21BCB8FE800552B91 /* RamblerLocationModuleAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RamblerLocationModuleAssembly.m; sourceTree = "<group>"; };
 		636F8DC41BCB8FE800552B91 /* RamblerLocationInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RamblerLocationInteractor.h; sourceTree = "<group>"; };
@@ -291,27 +332,12 @@
 		636F8DEE1BCB90E500552B91 /* EventListRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListRouter.h; sourceTree = "<group>"; };
 		636F8DEF1BCB90E500552B91 /* EventListRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListRouter.m; sourceTree = "<group>"; };
 		636F8DF01BCB90E500552B91 /* EventListRouterInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListRouterInput.h; sourceTree = "<group>"; };
-		636F8DF21BCB90E500552B91 /* EventListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListViewController.h; sourceTree = "<group>"; };
-		636F8DF31BCB90E500552B91 /* EventListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListViewController.m; sourceTree = "<group>"; };
+		636F8DF21BCB90E500552B91 /* EventListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListTableViewController.h; sourceTree = "<group>"; };
+		636F8DF31BCB90E500552B91 /* EventListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListTableViewController.m; sourceTree = "<group>"; };
 		636F8DF41BCB90E500552B91 /* EventListViewInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListViewInput.h; sourceTree = "<group>"; };
 		636F8DF51BCB90E500552B91 /* EventListViewOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListViewOutput.h; sourceTree = "<group>"; };
 		636F8DFC1BCB914100552B91 /* EventsUserStory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventsUserStory.storyboard; sourceTree = "<group>"; };
 		636F8DFE1BCB91A900552B91 /* RamblerLocationUserStory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RamblerLocationUserStory.storyboard; sourceTree = "<group>"; };
-		636F8E011BCC163600552B91 /* EmbedModuleSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmbedModuleSegue.h; sourceTree = "<group>"; };
-		636F8E021BCC163600552B91 /* EmbedModuleSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmbedModuleSegue.m; sourceTree = "<group>"; };
-		636F8E031BCC163600552B91 /* EmbedModuleTransitionSegueInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmbedModuleTransitionSegueInfo.h; sourceTree = "<group>"; };
-		636F8E041BCC163600552B91 /* EmbedModuleTransitionSegueInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmbedModuleTransitionSegueInfo.m; sourceTree = "<group>"; };
-		636F8E051BCC163600552B91 /* IntermoduleDataTransfer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntermoduleDataTransfer.h; sourceTree = "<group>"; };
-		636F8E061BCC163600552B91 /* ModuleConfigurationPromise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleConfigurationPromise.h; sourceTree = "<group>"; };
-		636F8E071BCC163600552B91 /* ModuleConfigurationPromise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModuleConfigurationPromise.m; sourceTree = "<group>"; };
-		636F8E081BCC163600552B91 /* ModuleConfigurationPromiseProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleConfigurationPromiseProtocol.h; sourceTree = "<group>"; };
-		636F8E091BCC163600552B91 /* ModuleConfiguratorHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleConfiguratorHolder.h; sourceTree = "<group>"; };
-		636F8E0A1BCC163600552B91 /* ModuleConfiguratorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleConfiguratorProtocol.h; sourceTree = "<group>"; };
-		636F8E0B1BCC163600552B91 /* ModuleTransitionHandlerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleTransitionHandlerProtocol.h; sourceTree = "<group>"; };
-		636F8E0C1BCC163600552B91 /* ModuleTransitionSegueInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleTransitionSegueInfo.h; sourceTree = "<group>"; };
-		636F8E0D1BCC163600552B91 /* ModuleTransitionSegueInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModuleTransitionSegueInfo.m; sourceTree = "<group>"; };
-		636F8E0E1BCC163600552B91 /* UIViewController+DefaultTransitionHandling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DefaultTransitionHandling.h"; sourceTree = "<group>"; };
-		636F8E0F1BCC163600552B91 /* UIViewController+DefaultTransitionHandling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DefaultTransitionHandling.m"; sourceTree = "<group>"; };
 		6373A3E61BBDBFDC00DF67FF /* EventService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventService.h; sourceTree = "<group>"; };
 		6373A3E71BBDC02100DF67FF /* RegistrationQuestionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationQuestionService.h; sourceTree = "<group>"; };
 		6373A3E91BBDC05900DF67FF /* SpeakerService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerService.h; sourceTree = "<group>"; };
@@ -521,6 +547,171 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		63136F901BDCD87C00994356 /* DataDisplayManager */ = {
+			isa = PBXGroup;
+			children = (
+				63136F911BDCD8B600994356 /* EventListDataDisplayManager.h */,
+				63136F921BDCD8B600994356 /* EventListDataDisplayManager.m */,
+			);
+			path = DataDisplayManager;
+			sourceTree = "<group>";
+		};
+		63136F941BDCDB2600994356 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				63136FE31BDCDB7200994356 /* Protocols */,
+				63136F951BDCDB2600994356 /* IntermoduleDataTransfer */,
+				63136FA51BDCDB2600994356 /* TabBarModule */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		63136F951BDCDB2600994356 /* IntermoduleDataTransfer */ = {
+			isa = PBXGroup;
+			children = (
+				63136F961BDCDB2600994356 /* EmbedModuleSegue.h */,
+				63136F971BDCDB2600994356 /* EmbedModuleSegue.m */,
+				63136F981BDCDB2600994356 /* EmbedModuleTransitionSegueInfo.h */,
+				63136F991BDCDB2600994356 /* EmbedModuleTransitionSegueInfo.m */,
+				63136F9A1BDCDB2600994356 /* IntermoduleDataTransfer.h */,
+				63136F9B1BDCDB2600994356 /* ModuleConfigurationPromise.h */,
+				63136F9C1BDCDB2600994356 /* ModuleConfigurationPromise.m */,
+				63136F9D1BDCDB2600994356 /* ModuleConfigurationPromiseProtocol.h */,
+				63136F9E1BDCDB2600994356 /* ModuleConfiguratorHolder.h */,
+				63136F9F1BDCDB2600994356 /* ModuleConfiguratorProtocol.h */,
+				63136FA01BDCDB2600994356 /* ModuleTransitionHandlerProtocol.h */,
+				63136FA11BDCDB2600994356 /* ModuleTransitionSegueInfo.h */,
+				63136FA21BDCDB2600994356 /* ModuleTransitionSegueInfo.m */,
+				63136FA31BDCDB2600994356 /* UIViewController+DefaultTransitionHandling.h */,
+				63136FA41BDCDB2600994356 /* UIViewController+DefaultTransitionHandling.m */,
+			);
+			path = IntermoduleDataTransfer;
+			sourceTree = "<group>";
+		};
+		63136FA51BDCDB2600994356 /* TabBarModule */ = {
+			isa = PBXGroup;
+			children = (
+				63136FA61BDCDB2600994356 /* Assembly */,
+				63136FA91BDCDB2600994356 /* Interactor */,
+				63136FAD1BDCDB2700994356 /* Presenter */,
+				63136FB31BDCDB2700994356 /* Router */,
+				63136FB81BDCDB2700994356 /* View */,
+			);
+			path = TabBarModule;
+			sourceTree = "<group>";
+		};
+		63136FA61BDCDB2600994356 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				63136FA71BDCDB2600994356 /* TabBarModuleAssembly.h */,
+				63136FA81BDCDB2600994356 /* TabBarModuleAssembly.m */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		63136FA91BDCDB2600994356 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				63136FAA1BDCDB2600994356 /* TabBarInteractor.h */,
+				63136FAB1BDCDB2700994356 /* TabBarInteractor.m */,
+				63136FAC1BDCDB2700994356 /* TabBarInteractorInput.h */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		63136FAD1BDCDB2700994356 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				63136FAE1BDCDB2700994356 /* TabBarInteractorOutput.h */,
+				63136FAF1BDCDB2700994356 /* TabBarModuleConfigurator.h */,
+				63136FB01BDCDB2700994356 /* TabBarPresenter.h */,
+				63136FB11BDCDB2700994356 /* TabBarPresenter.m */,
+				63136FB21BDCDB2700994356 /* TabBarViewOutput.h */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		63136FB31BDCDB2700994356 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				63136FB41BDCDB2700994356 /* TabBarRouter.h */,
+				63136FB51BDCDB2700994356 /* TabBarRouter.m */,
+				63136FB61BDCDB2700994356 /* TabBarRouterInput.h */,
+				63136FB71BDCDB2700994356 /* TabBarTabFactory.h */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		63136FB81BDCDB2700994356 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				63136FB91BDCDB2700994356 /* CollectionViewDataDisplayManager */,
+				63136FC41BDCDB2700994356 /* Entities */,
+				63136FCD1BDCDB2700994356 /* TabBarButtonCell */,
+				63136FD01BDCDB2700994356 /* TabBarViewController.h */,
+				63136FD11BDCDB2700994356 /* TabBarViewController.m */,
+				63136FD21BDCDB2700994356 /* TabBarViewInput.h */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		63136FB91BDCDB2700994356 /* CollectionViewDataDisplayManager */ = {
+			isa = PBXGroup;
+			children = (
+				63136FBA1BDCDB2700994356 /* CollectionViewCellObjectProtocol.h */,
+				63136FBB1BDCDB2700994356 /* CollectionViewCellProtocol.h */,
+				63136FBC1BDCDB2700994356 /* CollectionViewDataDisplayManager.h */,
+				63136FBD1BDCDB2700994356 /* CollectionViewDataDisplayManager.m */,
+				63136FBE1BDCDB2700994356 /* CollectionViewSectionInfo.h */,
+				63136FBF1BDCDB2700994356 /* CollectionViewSectionInfo.m */,
+				63136FC01BDCDB2700994356 /* CollectionViewSupplementaryViewObject.h */,
+				63136FC11BDCDB2700994356 /* CollectionViewSupplementaryViewObject.m */,
+				63136FC21BDCDB2700994356 /* CollectionViewSupplementaryViewObjectProtocol.h */,
+				63136FC31BDCDB2700994356 /* CollectionViewSupplementaryViewProtocol.h */,
+			);
+			path = CollectionViewDataDisplayManager;
+			sourceTree = "<group>";
+		};
+		63136FC41BDCDB2700994356 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				63136FC51BDCDB2700994356 /* TabBarButtonPrototype.h */,
+				63136FC61BDCDB2700994356 /* TabBarButtonPrototype.m */,
+				63136FC71BDCDB2700994356 /* TabBarButtonPrototypeProtocol.h */,
+				63136FC81BDCDB2700994356 /* TabBarControllerContent.h */,
+				63136FC91BDCDB2700994356 /* TabBarControllerContentEmbedder.h */,
+				63136FCA1BDCDB2700994356 /* TabBarControllerEmbeddedContentConfigurator.h */,
+				63136FCB1BDCDB2700994356 /* UIViewController+TabBarControllerContent.h */,
+				63136FCC1BDCDB2700994356 /* UIViewController+TabBarControllerContent.m */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		63136FCD1BDCDB2700994356 /* TabBarButtonCell */ = {
+			isa = PBXGroup;
+			children = (
+				63136FCE1BDCDB2700994356 /* TabBarButtonCell.h */,
+				63136FCF1BDCDB2700994356 /* TabBarButtonCell.m */,
+			);
+			path = TabBarButtonCell;
+			sourceTree = "<group>";
+		};
+		63136FE31BDCDB7200994356 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				63136FE41BDCDB7200994356 /* DataDisplayManager */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		63136FE41BDCDB7200994356 /* DataDisplayManager */ = {
+			isa = PBXGroup;
+			children = (
+				63136FE51BDCDB9E00994356 /* DataDisplayManager.h */,
+			);
+			path = DataDisplayManager;
+			sourceTree = "<group>";
+		};
 		636A37B01BC1354100B49C3D /* ApplicationConfigurator */ = {
 			isa = PBXGroup;
 			children = (
@@ -651,123 +842,6 @@
 				636F8D0B1BCB825F00552B91 /* ModuleAssemblyBase.m */,
 			);
 			path = ModuleAssemblyBase;
-			sourceTree = "<group>";
-		};
-		636F8D0D1BCB869500552B91 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				636F8E001BCC163600552B91 /* IntermoduleDataTransfer */,
-				636F8D0E1BCB869500552B91 /* TabBarModule */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
-		636F8D0E1BCB869500552B91 /* TabBarModule */ = {
-			isa = PBXGroup;
-			children = (
-				636F8D0F1BCB869500552B91 /* Assembly */,
-				636F8D121BCB869500552B91 /* Interactor */,
-				636F8D161BCB869500552B91 /* Presenter */,
-				636F8D1C1BCB869500552B91 /* Router */,
-				636F8D211BCB869500552B91 /* View */,
-			);
-			path = TabBarModule;
-			sourceTree = "<group>";
-		};
-		636F8D0F1BCB869500552B91 /* Assembly */ = {
-			isa = PBXGroup;
-			children = (
-				636F8D101BCB869500552B91 /* TabBarModuleAssembly.h */,
-				636F8D111BCB869500552B91 /* TabBarModuleAssembly.m */,
-			);
-			path = Assembly;
-			sourceTree = "<group>";
-		};
-		636F8D121BCB869500552B91 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				636F8D131BCB869500552B91 /* TabBarInteractor.h */,
-				636F8D141BCB869500552B91 /* TabBarInteractor.m */,
-				636F8D151BCB869500552B91 /* TabBarInteractorInput.h */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		636F8D161BCB869500552B91 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				636F8D171BCB869500552B91 /* TabBarInteractorOutput.h */,
-				636F8D181BCB869500552B91 /* TabBarModuleConfigurator.h */,
-				636F8D191BCB869500552B91 /* TabBarPresenter.h */,
-				636F8D1A1BCB869500552B91 /* TabBarPresenter.m */,
-				636F8D1B1BCB869500552B91 /* TabBarViewOutput.h */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		636F8D1C1BCB869500552B91 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				636F8D1D1BCB869500552B91 /* TabBarRouter.h */,
-				636F8D1E1BCB869500552B91 /* TabBarRouter.m */,
-				636F8D1F1BCB869500552B91 /* TabBarRouterInput.h */,
-				636F8D201BCB869500552B91 /* TabBarTabFactory.h */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		636F8D211BCB869500552B91 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				636F8D221BCB869500552B91 /* CollectionViewDataDisplayManager */,
-				636F8D2D1BCB869500552B91 /* Entities */,
-				636F8D361BCB869500552B91 /* TabBarViewController.h */,
-				636F8D371BCB869500552B91 /* TabBarViewController.m */,
-				636F8D381BCB869500552B91 /* TabBarViewInput.h */,
-				636F8D391BCB869500552B91 /* TabBarButtonCell */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		636F8D221BCB869500552B91 /* CollectionViewDataDisplayManager */ = {
-			isa = PBXGroup;
-			children = (
-				636F8D231BCB869500552B91 /* CollectionViewCellObjectProtocol.h */,
-				636F8D241BCB869500552B91 /* CollectionViewCellProtocol.h */,
-				636F8D251BCB869500552B91 /* CollectionViewDataDisplayManager.h */,
-				636F8D261BCB869500552B91 /* CollectionViewDataDisplayManager.m */,
-				636F8D271BCB869500552B91 /* CollectionViewSectionInfo.h */,
-				636F8D281BCB869500552B91 /* CollectionViewSectionInfo.m */,
-				636F8D291BCB869500552B91 /* CollectionViewSupplementaryViewObject.h */,
-				636F8D2A1BCB869500552B91 /* CollectionViewSupplementaryViewObject.m */,
-				636F8D2B1BCB869500552B91 /* CollectionViewSupplementaryViewObjectProtocol.h */,
-				636F8D2C1BCB869500552B91 /* CollectionViewSupplementaryViewProtocol.h */,
-			);
-			path = CollectionViewDataDisplayManager;
-			sourceTree = "<group>";
-		};
-		636F8D2D1BCB869500552B91 /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				636F8D2E1BCB869500552B91 /* TabBarButtonPrototype.h */,
-				636F8D2F1BCB869500552B91 /* TabBarButtonPrototype.m */,
-				636F8D301BCB869500552B91 /* TabBarButtonPrototypeProtocol.h */,
-				636F8D311BCB869500552B91 /* TabBarControllerContent.h */,
-				636F8D321BCB869500552B91 /* TabBarControllerContentEmbedder.h */,
-				636F8D331BCB869500552B91 /* TabBarControllerEmbeddedContentConfigurator.h */,
-				636F8D341BCB869500552B91 /* UIViewController+TabBarControllerContent.h */,
-				636F8D351BCB869500552B91 /* UIViewController+TabBarControllerContent.m */,
-			);
-			path = Entities;
-			sourceTree = "<group>";
-		};
-		636F8D391BCB869500552B91 /* TabBarButtonCell */ = {
-			isa = PBXGroup;
-			children = (
-				636F8D3A1BCB869500552B91 /* TabBarButtonCell.h */,
-				636F8D3B1BCB869500552B91 /* TabBarButtonCell.m */,
-			);
-			path = TabBarButtonCell;
 			sourceTree = "<group>";
 		};
 		636F8DA41BCB8FE800552B91 /* UserStories */ = {
@@ -937,8 +1011,9 @@
 		636F8DF11BCB90E500552B91 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				636F8DF21BCB90E500552B91 /* EventListViewController.h */,
-				636F8DF31BCB90E500552B91 /* EventListViewController.m */,
+				63136F901BDCD87C00994356 /* DataDisplayManager */,
+				636F8DF21BCB90E500552B91 /* EventListTableViewController.h */,
+				636F8DF31BCB90E500552B91 /* EventListTableViewController.m */,
 				636F8DF41BCB90E500552B91 /* EventListViewInput.h */,
 				636F8DF51BCB90E500552B91 /* EventListViewOutput.h */,
 			);
@@ -951,28 +1026,6 @@
 				636F8DFC1BCB914100552B91 /* EventsUserStory.storyboard */,
 			);
 			path = Storyboard;
-			sourceTree = "<group>";
-		};
-		636F8E001BCC163600552B91 /* IntermoduleDataTransfer */ = {
-			isa = PBXGroup;
-			children = (
-				636F8E011BCC163600552B91 /* EmbedModuleSegue.h */,
-				636F8E021BCC163600552B91 /* EmbedModuleSegue.m */,
-				636F8E031BCC163600552B91 /* EmbedModuleTransitionSegueInfo.h */,
-				636F8E041BCC163600552B91 /* EmbedModuleTransitionSegueInfo.m */,
-				636F8E051BCC163600552B91 /* IntermoduleDataTransfer.h */,
-				636F8E061BCC163600552B91 /* ModuleConfigurationPromise.h */,
-				636F8E071BCC163600552B91 /* ModuleConfigurationPromise.m */,
-				636F8E081BCC163600552B91 /* ModuleConfigurationPromiseProtocol.h */,
-				636F8E091BCC163600552B91 /* ModuleConfiguratorHolder.h */,
-				636F8E0A1BCC163600552B91 /* ModuleConfiguratorProtocol.h */,
-				636F8E0B1BCC163600552B91 /* ModuleTransitionHandlerProtocol.h */,
-				636F8E0C1BCC163600552B91 /* ModuleTransitionSegueInfo.h */,
-				636F8E0D1BCC163600552B91 /* ModuleTransitionSegueInfo.m */,
-				636F8E0E1BCC163600552B91 /* UIViewController+DefaultTransitionHandling.h */,
-				636F8E0F1BCC163600552B91 /* UIViewController+DefaultTransitionHandling.m */,
-			);
-			path = IntermoduleDataTransfer;
 			sourceTree = "<group>";
 		};
 		6373A3DE1BBDBDF700DF67FF /* Services */ = {
@@ -1321,9 +1374,9 @@
 		63FDCDFF1BBDBA2A00A43B60 /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				63136F941BDCDB2600994356 /* Common */,
 				636F8D081BCB822F00552B91 /* Assemblies */,
 				636F8DA41BCB8FE800552B91 /* UserStories */,
-				636F8D0D1BCB869500552B91 /* Helpers */,
 				636B64111BBFE2C20053E38F /* Main.storyboard */,
 				636B64131BBFE3420053E38F /* ViewController.h */,
 				636B64141BBFE3420053E38F /* ViewController.m */,
@@ -2733,50 +2786,51 @@
 			files = (
 				636B64101BBDD6260053E38F /* SpeakerServiceImplementation.m in Sources */,
 				636A37C51BC142BB00B49C3D /* ApplicationAssembly.m in Sources */,
-				636F8D4A1BCB869500552B91 /* TabBarInteractor.m in Sources */,
+				63136FD41BDCDB2700994356 /* EmbedModuleTransitionSegueInfo.m in Sources */,
 				636F8DDE1BCB8FE800552B91 /* RamblerLocationViewController.m in Sources */,
 				9F8E5F941BC269EA00DC10DB /* OperationFactoriesAssembly.m in Sources */,
+				63136FDB1BDCDB2700994356 /* TabBarRouter.m in Sources */,
+				63136FD51BDCDB2700994356 /* ModuleConfigurationPromise.m in Sources */,
 				9F18311D1BC1615C000E21A5 /* SingleResponseObjectFormatter.m in Sources */,
 				636F8CBC1BC97E7F00552B91 /* SocialNetworkAccount.m in Sources */,
 				9F1830B31BC11879000E21A5 /* CommonNetworkClient.m in Sources */,
+				63136FE01BDCDB2700994356 /* UIViewController+TabBarControllerContent.m in Sources */,
 				9F0A84FD1BC1698B006F79FB /* NetworkOperation.m in Sources */,
-				636F8D501BCB869500552B91 /* TabBarButtonPrototype.m in Sources */,
-				636F8DFB1BCB90E500552B91 /* EventListViewController.m in Sources */,
+				636F8DFB1BCB90E500552B91 /* EventListTableViewController.m in Sources */,
 				9F8E5FA61BC27CCE00DC10DB /* MappingConstants.m in Sources */,
 				9F8E5F801BC2592600DC10DB /* ResponseValidatorsAssembly.m in Sources */,
 				636F8DF71BCB90E500552B91 /* EventListModuleAssembly.m in Sources */,
 				9F1830BF1BC11D26000E21A5 /* JSONResponseDeserializer.m in Sources */,
 				9F1830931BC02293000E21A5 /* RESTRequestConfigurator.m in Sources */,
-				636F8D4C1BCB869500552B91 /* TabBarRouter.m in Sources */,
 				636F8DDA1BCB8FE800552B91 /* RamblerLocationModuleAssembly.m in Sources */,
 				9F1830A71BC032CF000E21A5 /* ParseRequestSigner.m in Sources */,
 				636F8DDD1BCB8FE800552B91 /* RamblerLocationRouter.m in Sources */,
-				636F8E141BCC163600552B91 /* UIViewController+DefaultTransitionHandling.m in Sources */,
-				636F8D4F1BCB869500552B91 /* CollectionViewSupplementaryViewObject.m in Sources */,
 				9F0A84FA1BC1698B006F79FB /* OperationBuffer.m in Sources */,
-				636F8D511BCB869500552B91 /* UIViewController+TabBarControllerContent.m in Sources */,
+				63136FE21BDCDB2700994356 /* TabBarViewController.m in Sources */,
 				636F8CB61BC97E7F00552B91 /* Lecture.m in Sources */,
 				9F1830D71BC125C3000E21A5 /* ParseResponseValidator.m in Sources */,
 				9F1830D11BC12492000E21A5 /* ResponseValidatorBase.m in Sources */,
-				636F8D491BCB869500552B91 /* TabBarModuleAssembly.m in Sources */,
 				9F0A85371BC18A3C006F79FB /* NetworkCompoundOperationBuilder.m in Sources */,
 				636F8CBD1BC97E7F00552B91 /* Event+CoreDataProperties.m in Sources */,
 				9F18309F1BC024A9000E21A5 /* RequestDataModel.m in Sources */,
 				9F0A852D1BC188B0006F79FB /* EventOperationFactory.m in Sources */,
-				636F8E101BCC163600552B91 /* EmbedModuleSegue.m in Sources */,
-				636F8E121BCC163600552B91 /* ModuleConfigurationPromise.m in Sources */,
 				636F8CB81BC97E7F00552B91 /* LectureMaterials.m in Sources */,
+				63136FD61BDCDB2700994356 /* ModuleTransitionSegueInfo.m in Sources */,
 				63FDCE061BBDBA2A00A43B60 /* AppDelegate.m in Sources */,
-				636F8D521BCB869500552B91 /* TabBarViewController.m in Sources */,
+				63136FDF1BDCDB2700994356 /* TabBarButtonPrototype.m in Sources */,
 				636B64041BBDD19A0053E38F /* LectureServiceImplementation.m in Sources */,
 				63F54D9B1BC5AB3C00DB1746 /* ServiceComponentsAssembly.m in Sources */,
+				63136FDE1BDCDB2700994356 /* CollectionViewSupplementaryViewObject.m in Sources */,
 				636A37B31BC1356400B49C3D /* ApplicationConfiguratorImplementation.m in Sources */,
 				9F8E5FA91BC27D0D00DC10DB /* ServiceNameConstants.m in Sources */,
 				636F8CB51BC97E7F00552B91 /* Lecture+CoreDataProperties.m in Sources */,
 				636F8C971BC97B3100552B91 /* EventServiceImplementation.m in Sources */,
+				63136FE11BDCDB2700994356 /* TabBarButtonCell.m in Sources */,
 				636F8CB71BC97E7F00552B91 /* LectureMaterials+CoreDataProperties.m in Sources */,
 				636F8DDC1BCB8FE800552B91 /* RamblerLocationPresenter.m in Sources */,
 				9F8E5F841BC25A0700DC10DB /* ResponseMappersAssembly.m in Sources */,
+				63136FD91BDCDB2700994356 /* TabBarInteractor.m in Sources */,
+				63136FDD1BDCDB2700994356 /* CollectionViewSectionInfo.m in Sources */,
 				9F18311C1BC1615C000E21A5 /* ResultsResponseObjectFormatter.m in Sources */,
 				636F8CBB1BC97E7F00552B91 /* SocialNetworkAccount+CoreDataProperties.m in Sources */,
 				9F0A85011BC1698B006F79FB /* ResponseMappingOperation.m in Sources */,
@@ -2786,7 +2840,7 @@
 				636B64151BBFE3420053E38F /* ViewController.m in Sources */,
 				9F8E5F741BC255AA00DC10DB /* RequestSignersAssembly.m in Sources */,
 				9FF99E511BC42FF6006F15AF /* OperationSchedulerImplementation.m in Sources */,
-				636F8D531BCB869500552B91 /* TabBarButtonCell.m in Sources */,
+				63136FD31BDCDB2700994356 /* EmbedModuleSegue.m in Sources */,
 				636F8DF81BCB90E500552B91 /* EventListInteractor.m in Sources */,
 				9F0A85031BC1698B006F79FB /* OperationDebugDescriptionFormatter.m in Sources */,
 				9F0A84FC1BC1698B006F79FB /* CompoundOperationDebugDescriptionFormatter.m in Sources */,
@@ -2797,7 +2851,9 @@
 				9F8E5FAD1BC27E7F00DC10DB /* HTTPMethodConstants.m in Sources */,
 				636F8DF91BCB90E500552B91 /* EventListPresenter.m in Sources */,
 				9F0A85021BC1698B006F79FB /* ResponseValidationOperation.m in Sources */,
+				63136FDC1BDCDB2700994356 /* CollectionViewDataDisplayManager.m in Sources */,
 				9F0A84FB1BC1698B006F79FB /* CompoundOperationBase.m in Sources */,
+				63136FD71BDCDB2700994356 /* UIViewController+DefaultTransitionHandling.m in Sources */,
 				9F0A84F91BC1698B006F79FB /* AsyncOperation.m in Sources */,
 				9F0A85321BC18906006F79FB /* EventQuery.m in Sources */,
 				9F0A84FF1BC1698B006F79FB /* RequestSigningOperation.m in Sources */,
@@ -2806,11 +2862,13 @@
 				9F0A6C1D1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m in Sources */,
 				9F0A85001BC1698B006F79FB /* ResponseDeserializationOperation.m in Sources */,
 				9F0A853B1BC1908B006F79FB /* OperationChainer.m in Sources */,
-				636F8D4D1BCB869500552B91 /* CollectionViewDataDisplayManager.m in Sources */,
 				636F8CC01BC97E7F00552B91 /* RegistrationQuestion.m in Sources */,
 				63EF15BB1BC4559900480CAF /* PushNotificationCenterImplementation.m in Sources */,
 				636F8DDB1BCB8FE800552B91 /* RamblerLocationInteractor.m in Sources */,
+				63136F931BDCD8B600994356 /* EventListDataDisplayManager.m in Sources */,
+				63136FDA1BDCDB2700994356 /* TabBarPresenter.m in Sources */,
 				636F8DFA1BCB90E500552B91 /* EventListRouter.m in Sources */,
+				63136FD81BDCDB2700994356 /* TabBarModuleAssembly.m in Sources */,
 				6373A4101BBDC5EA00DF67FF /* Conference.xcdatamodeld in Sources */,
 				63F54D951BC5A79900DB1746 /* EXTScope.m in Sources */,
 				636B640D1BBDD5000053E38F /* SocialNetworkAccountServiceImplementation.m in Sources */,
@@ -2820,13 +2878,9 @@
 				636F8D0C1BCB825F00552B91 /* ModuleAssemblyBase.m in Sources */,
 				636A37C21BC1413A00B49C3D /* SystemInfrastructureAssembly.m in Sources */,
 				9F0A6C2E1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m in Sources */,
-				636F8E131BCC163600552B91 /* ModuleTransitionSegueInfo.m in Sources */,
 				636F8CB91BC97E7F00552B91 /* Speaker+CoreDataProperties.m in Sources */,
-				636F8D4E1BCB869500552B91 /* CollectionViewSectionInfo.m in Sources */,
 				9F1830ED1BC14293000E21A5 /* ManagedObjectMapper.m in Sources */,
 				9F1830E61BC13F9F000E21A5 /* ManagedObjectMappingProvider.m in Sources */,
-				636F8D4B1BCB869500552B91 /* TabBarPresenter.m in Sources */,
-				636F8E111BCC163600552B91 /* EmbedModuleTransitionSegueInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

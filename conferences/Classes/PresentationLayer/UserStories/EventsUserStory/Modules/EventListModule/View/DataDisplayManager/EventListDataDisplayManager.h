@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface EventListDataDisplayManager : NSObject
+
+#import "DataDisplayManager.h"
+
+@interface EventListDataDisplayManager : NSObject <DataDisplayManager>
 
 @end

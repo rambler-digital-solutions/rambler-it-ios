@@ -34,6 +34,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Nimbus.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>OCMock.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -192,12 +197,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>95BACB277E7A98FE9F1324DDCEF90FEC</key>
+		<key>AEE49D512DB841509BB37E6EF3DD097D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AD32B9854CA06CDA080967D42DEEDC08</key>
+		<key>D4EF0A01B55A60DC8D8CE63F1BBD13E7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -242,32 +247,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E12718DC5AE8C1FA65CE664AB2AACF53</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E1633A851D7942AEB36A5A5AB5CC19E9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F15811E173C3AA38941A1E0923B293DA</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F2410205DB8D4F181C97EB93D2175A9D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F49E810F72FC7F9675F0A64FCE5090FC</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FB45DAB95C996BC6F9527FC71074CFD8</key>
+		<key>FD1509E3592CF2D48B0C25B0475975CE</key>
 		<dict>
 			<key>primary</key>
 			<true/>

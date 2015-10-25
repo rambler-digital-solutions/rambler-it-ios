@@ -64,7 +64,7 @@ static NSString * const kRamblerLocationStoryboardName = @"RamblerLocationUserSt
                               [definition injectProperty:@selector(tabBarButtonSelectedStateImage)
                                                     with:[UIImage imageNamed:@"update"]];
                               [definition injectProperty:@selector(tabBarButtonTitle)
-                                                    with:@"Схема проезда"];
+                                                    with:@"Как проехать"];
                               [definition injectProperty:@selector(tabbarButtonId)
                                                     with:@"location_tab"];
                               [definition injectProperty:@selector(tabBarControllercontent)
