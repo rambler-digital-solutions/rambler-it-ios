@@ -10,6 +10,8 @@
 #import <CoreData/CoreData.h>
 
 @protocol ApplicationConfigurator;
+@protocol PushNotificationCenter;
+@protocol ThirdPartiesConfigurator;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -20,6 +22,8 @@
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 @property (strong, nonatomic) id <ApplicationConfigurator> applicationConfigurator;
+@property (strong, nonatomic) id <PushNotificationCenter> pushNotificationCenter;
+@property (strong, nonatomic) id <ThirdPartiesConfigurator> thirdPartiesConfigurator;
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;

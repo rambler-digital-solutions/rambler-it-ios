@@ -21,6 +21,9 @@
  */
 @interface ParseRequestSigner : NSObject <RequestSigner>
 
+@property (strong, nonatomic, readonly) NSString *applicationId;
+@property (strong, nonatomic, readonly) NSString *apiKey;
+
 /**
  @author Egor Tolstoy
  

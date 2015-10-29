@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 
 #import "ApplicationConfigurator.h"
+#import "PushNotificationCenter.h"
+#import "ThirdPartiesConfigurator.h"
 
 @interface AppDelegate ()
 
@@ -18,10 +20,32 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [self.thirdPartiesConfigurator configurate];
     [self.applicationConfigurator setupCoreDataStack];
+    [self.pushNotificationCenter registerApplicationForPushNotificationsIfNeeded:application];
+    
+    NSDictionary *notification = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+    if (notification) {
+        [self.pushNotificationCenter processPushNotificationWithUserInfo:notification
+                                                        applicationState:application.applicationState];
+    }
     
     return YES;
 }
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    [self.pushNotificationCenter didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    [self.pushNotificationCenter processPushNotificationWithUserInfo:userInfo
+                                                    applicationState:application.applicationState];
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    NSLog(@"");
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

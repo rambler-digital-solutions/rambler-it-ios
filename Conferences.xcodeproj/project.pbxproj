@@ -12,8 +12,6 @@
 		636A37BB1BC13B9800B49C3D /* ApplicationConfiguratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37BA1BC13B9800B49C3D /* ApplicationConfiguratorTests.m */; settings = {ASSET_TAGS = (); }; };
 		636A37C21BC1413A00B49C3D /* SystemInfrastructureAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37C11BC1413A00B49C3D /* SystemInfrastructureAssembly.m */; settings = {ASSET_TAGS = (); }; };
 		636A37C51BC142BB00B49C3D /* ApplicationAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37C41BC142BB00B49C3D /* ApplicationAssembly.m */; settings = {ASSET_TAGS = (); }; };
-		636A37CA1BC147FD00B49C3D /* ApplicationAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37C91BC147FD00B49C3D /* ApplicationAssemblyTests.m */; settings = {ASSET_TAGS = (); }; };
-		636A37CC1BC1481300B49C3D /* SystemInfrastructureAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37CB1BC1481300B49C3D /* SystemInfrastructureAssemblyTests.m */; settings = {ASSET_TAGS = (); }; };
 		636A37CF1BC1500700B49C3D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 636A37CE1BC1500700B49C3D /* Info.plist */; settings = {ASSET_TAGS = (); }; };
 		636B64041BBDD19A0053E38F /* LectureServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64031BBDD19A0053E38F /* LectureServiceImplementation.m */; settings = {ASSET_TAGS = (); }; };
 		636B64071BBDD2A40053E38F /* LectureMaterialsServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64061BBDD2A40053E38F /* LectureMaterialsServiceImplementation.m */; settings = {ASSET_TAGS = (); }; };
@@ -41,6 +39,20 @@
 		636F8CBF1BC97E7F00552B91 /* RegistrationQuestion+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8CB21BC97E7F00552B91 /* RegistrationQuestion+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
 		636F8CC01BC97E7F00552B91 /* RegistrationQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8CB41BC97E7F00552B91 /* RegistrationQuestion.m */; settings = {ASSET_TAGS = (); }; };
 		6373A4101BBDC5EA00DF67FF /* Conference.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6373A40E1BBDC5EA00DF67FF /* Conference.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
+		63EF15BB1BC4559900480CAF /* PushNotificationCenterImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF15BA1BC4559900480CAF /* PushNotificationCenterImplementation.m */; settings = {ASSET_TAGS = (); }; };
+		63EF15C01BC461DD00480CAF /* PushNotificationServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF15BF1BC461DD00480CAF /* PushNotificationServiceImplementation.m */; settings = {ASSET_TAGS = (); }; };
+		63F402F01BCF77CB0086D030 /* ApplicationAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F402ED1BCF77CB0086D030 /* ApplicationAssemblyTests.m */; settings = {ASSET_TAGS = (); }; };
+		63F402F11BCF77CB0086D030 /* ServiceComponentsAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F402EF1BCF77CB0086D030 /* ServiceComponentsAssemblyTests.m */; settings = {ASSET_TAGS = (); }; };
+		63F402FB1BCF79390086D030 /* OperationFactoriesAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F402FA1BCF79390086D030 /* OperationFactoriesAssemblyTests.m */; settings = {ASSET_TAGS = (); }; };
+		63F402FE1BCF840A0086D030 /* NetworkClientsAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F402FD1BCF840A0086D030 /* NetworkClientsAssemblyTests.m */; settings = {ASSET_TAGS = (); }; };
+		63F403001BCF85EE0086D030 /* RequestConfiguratorsAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F402FF1BCF85EE0086D030 /* RequestConfiguratorsAssemblyTests.m */; settings = {ASSET_TAGS = (); }; };
+		63F403AA1BD0CB190086D030 /* RequestSignersAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F403A91BD0CB190086D030 /* RequestSignersAssemblyTests.m */; settings = {ASSET_TAGS = (); }; };
+		63F403AC1BD0CD460086D030 /* ResponseDeserializersAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F403AB1BD0CD460086D030 /* ResponseDeserializersAssemblyTests.m */; settings = {ASSET_TAGS = (); }; };
+		63F403AF1BD0D0690086D030 /* ResponseMappersAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F403AE1BD0D0690086D030 /* ResponseMappersAssemblyTests.m */; settings = {ASSET_TAGS = (); }; };
+		63F403B21BD0D4B40086D030 /* ResponseValidatorsAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F403B11BD0D4B40086D030 /* ResponseValidatorsAssemblyTests.m */; settings = {ASSET_TAGS = (); }; };
+		63F54D951BC5A79900DB1746 /* EXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F54D931BC5A79900DB1746 /* EXTScope.m */; settings = {ASSET_TAGS = (); }; };
+		63F54D9B1BC5AB3C00DB1746 /* ServiceComponentsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F54D9A1BC5AB3C00DB1746 /* ServiceComponentsAssembly.m */; settings = {ASSET_TAGS = (); }; };
+		63F54DA01BC5BB2800DB1746 /* ThirdPartiesConfiguratorImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F54D9F1BC5BB2800DB1746 /* ThirdPartiesConfiguratorImplementation.m */; settings = {ASSET_TAGS = (); }; };
 		63FDCE061BBDBA2A00A43B60 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FDCDDC1BBDBA2A00A43B60 /* AppDelegate.m */; settings = {ASSET_TAGS = (); }; };
 		63FDCE141BBDBA2A00A43B60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63FDCE021BBDBA2A00A43B60 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
 		63FDCE151BBDBA2A00A43B60 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63FDCE041BBDBA2A00A43B60 /* Info.plist */; settings = {ASSET_TAGS = (); }; };
@@ -142,8 +154,6 @@
 		636A37C11BC1413A00B49C3D /* SystemInfrastructureAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemInfrastructureAssembly.m; sourceTree = "<group>"; };
 		636A37C31BC142BB00B49C3D /* ApplicationAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationAssembly.h; sourceTree = "<group>"; };
 		636A37C41BC142BB00B49C3D /* ApplicationAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationAssembly.m; sourceTree = "<group>"; };
-		636A37C91BC147FD00B49C3D /* ApplicationAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationAssemblyTests.m; sourceTree = "<group>"; };
-		636A37CB1BC1481300B49C3D /* SystemInfrastructureAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemInfrastructureAssemblyTests.m; sourceTree = "<group>"; };
 		636A37CE1BC1500700B49C3D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		636B63C91BBDCC550053E38F /* LectureMaterialsService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectureMaterialsService.h; sourceTree = "<group>"; };
 		636B63CA1BBDCC720053E38F /* LectureService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectureService.h; sourceTree = "<group>"; };
@@ -191,6 +201,35 @@
 		6373A3E71BBDC02100DF67FF /* RegistrationQuestionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationQuestionService.h; sourceTree = "<group>"; };
 		6373A3E91BBDC05900DF67FF /* SpeakerService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerService.h; sourceTree = "<group>"; };
 		6373A40F1BBDC5EA00DF67FF /* Conference.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Conference.xcdatamodel; sourceTree = "<group>"; };
+		63EF15B81BC4557600480CAF /* PushNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNotificationCenter.h; sourceTree = "<group>"; };
+		63EF15B91BC4559900480CAF /* PushNotificationCenterImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNotificationCenterImplementation.h; sourceTree = "<group>"; };
+		63EF15BA1BC4559900480CAF /* PushNotificationCenterImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushNotificationCenterImplementation.m; sourceTree = "<group>"; };
+		63EF15BD1BC461B700480CAF /* PushNotificationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNotificationService.h; sourceTree = "<group>"; };
+		63EF15BE1BC461DD00480CAF /* PushNotificationServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNotificationServiceImplementation.h; sourceTree = "<group>"; };
+		63EF15BF1BC461DD00480CAF /* PushNotificationServiceImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushNotificationServiceImplementation.m; sourceTree = "<group>"; };
+		63F402EC1BCF77CB0086D030 /* ApplicationAssembly_Testable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationAssembly_Testable.h; sourceTree = "<group>"; };
+		63F402ED1BCF77CB0086D030 /* ApplicationAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationAssemblyTests.m; sourceTree = "<group>"; };
+		63F402EF1BCF77CB0086D030 /* ServiceComponentsAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceComponentsAssemblyTests.m; sourceTree = "<group>"; };
+		63F402FA1BCF79390086D030 /* OperationFactoriesAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationFactoriesAssemblyTests.m; sourceTree = "<group>"; };
+		63F402FC1BCF799F0086D030 /* OperationFactoriesAssembly_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OperationFactoriesAssembly_Testable.h; sourceTree = "<group>"; };
+		63F402FD1BCF840A0086D030 /* NetworkClientsAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkClientsAssemblyTests.m; sourceTree = "<group>"; };
+		63F402FF1BCF85EE0086D030 /* RequestConfiguratorsAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestConfiguratorsAssemblyTests.m; sourceTree = "<group>"; };
+		63F403A91BD0CB190086D030 /* RequestSignersAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestSignersAssemblyTests.m; sourceTree = "<group>"; };
+		63F403AB1BD0CD460086D030 /* ResponseDeserializersAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseDeserializersAssemblyTests.m; sourceTree = "<group>"; };
+		63F403AD1BD0CD970086D030 /* ResponseDeserializersAssembly_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResponseDeserializersAssembly_Testable.h; sourceTree = "<group>"; };
+		63F403AE1BD0D0690086D030 /* ResponseMappersAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseMappersAssemblyTests.m; sourceTree = "<group>"; };
+		63F403B01BD0D1070086D030 /* ResponseMappersAssembly_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResponseMappersAssembly_Testable.h; sourceTree = "<group>"; };
+		63F403B11BD0D4B40086D030 /* ResponseValidatorsAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseValidatorsAssemblyTests.m; sourceTree = "<group>"; };
+		63F403B31BD0D52A0086D030 /* ResponseValidatorsAssembly_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResponseValidatorsAssembly_Testable.h; sourceTree = "<group>"; };
+		63F54D921BC5A79900DB1746 /* EXTScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTScope.h; sourceTree = "<group>"; };
+		63F54D931BC5A79900DB1746 /* EXTScope.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTScope.m; sourceTree = "<group>"; };
+		63F54D941BC5A79900DB1746 /* metamacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = metamacros.h; sourceTree = "<group>"; };
+		63F54D981BC5AA8600DB1746 /* ServiceComponents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceComponents.h; sourceTree = "<group>"; };
+		63F54D991BC5AB3C00DB1746 /* ServiceComponentsAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceComponentsAssembly.h; sourceTree = "<group>"; };
+		63F54D9A1BC5AB3C00DB1746 /* ServiceComponentsAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceComponentsAssembly.m; sourceTree = "<group>"; };
+		63F54D9D1BC5BAB000DB1746 /* ThirdPartiesConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdPartiesConfigurator.h; sourceTree = "<group>"; };
+		63F54D9E1BC5BB2800DB1746 /* ThirdPartiesConfiguratorImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdPartiesConfiguratorImplementation.h; sourceTree = "<group>"; };
+		63F54D9F1BC5BB2800DB1746 /* ThirdPartiesConfiguratorImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdPartiesConfiguratorImplementation.m; sourceTree = "<group>"; };
 		63FDCDDB1BBDBA2A00A43B60 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		63FDCDDC1BBDBA2A00A43B60 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		63FDCE021BBDBA2A00A43B60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -378,7 +417,8 @@
 		636A37B51BC13B4B00B49C3D /* ConferencesAssembliesTests */ = {
 			isa = PBXGroup;
 			children = (
-				636A37C61BC1466900B49C3D /* ApplicationLayerTests */,
+				63F402EA1BCF77CB0086D030 /* ApplicationLayerAssemblyTests */,
+				63F402F21BCF79040086D030 /* CoreLayerAssemblyTests */,
 			);
 			path = ConferencesAssembliesTests;
 			sourceTree = "<group>";
@@ -441,31 +481,6 @@
 			path = SystemInfrastructureAssembly;
 			sourceTree = "<group>";
 		};
-		636A37C61BC1466900B49C3D /* ApplicationLayerTests */ = {
-			isa = PBXGroup;
-			children = (
-				636A37C71BC1466900B49C3D /* ApplicationAssemblyTests */,
-				636A37C81BC1466900B49C3D /* SystemInfrastructureAssemblyTests */,
-			);
-			path = ApplicationLayerTests;
-			sourceTree = "<group>";
-		};
-		636A37C71BC1466900B49C3D /* ApplicationAssemblyTests */ = {
-			isa = PBXGroup;
-			children = (
-				636A37C91BC147FD00B49C3D /* ApplicationAssemblyTests.m */,
-			);
-			path = ApplicationAssemblyTests;
-			sourceTree = "<group>";
-		};
-		636A37C81BC1466900B49C3D /* SystemInfrastructureAssemblyTests */ = {
-			isa = PBXGroup;
-			children = (
-				636A37CB1BC1481300B49C3D /* SystemInfrastructureAssemblyTests.m */,
-			);
-			path = SystemInfrastructureAssemblyTests;
-			sourceTree = "<group>";
-		};
 		636A37CD1BC1500700B49C3D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -515,6 +530,7 @@
 		6373A3DF1BBDBDF700DF67FF /* ConcreteServices */ = {
 			isa = PBXGroup;
 			children = (
+				63EF15BC1BC4617000480CAF /* PushNotificationSrvice */,
 				6373A3E01BBDBDF700DF67FF /* EventService */,
 				636B63C61BBDCC060053E38F /* LectureService */,
 				636B63C51BBDCC060053E38F /* LectureMaterialsService */,
@@ -555,6 +571,165 @@
 			path = SpeakerService;
 			sourceTree = "<group>";
 		};
+		63EF15B71BC4546400480CAF /* PushNotificationCenter */ = {
+			isa = PBXGroup;
+			children = (
+				63EF15B81BC4557600480CAF /* PushNotificationCenter.h */,
+				63EF15B91BC4559900480CAF /* PushNotificationCenterImplementation.h */,
+				63EF15BA1BC4559900480CAF /* PushNotificationCenterImplementation.m */,
+			);
+			path = PushNotificationCenter;
+			sourceTree = "<group>";
+		};
+		63EF15BC1BC4617000480CAF /* PushNotificationSrvice */ = {
+			isa = PBXGroup;
+			children = (
+				63EF15BD1BC461B700480CAF /* PushNotificationService.h */,
+				63EF15BE1BC461DD00480CAF /* PushNotificationServiceImplementation.h */,
+				63EF15BF1BC461DD00480CAF /* PushNotificationServiceImplementation.m */,
+			);
+			path = PushNotificationSrvice;
+			sourceTree = "<group>";
+		};
+		63F402EA1BCF77CB0086D030 /* ApplicationLayerAssemblyTests */ = {
+			isa = PBXGroup;
+			children = (
+				63F402EB1BCF77CB0086D030 /* ApplicationAssemblyTests */,
+				63F402EE1BCF77CB0086D030 /* ServiceComponentsAssemblyTests */,
+			);
+			path = ApplicationLayerAssemblyTests;
+			sourceTree = "<group>";
+		};
+		63F402EB1BCF77CB0086D030 /* ApplicationAssemblyTests */ = {
+			isa = PBXGroup;
+			children = (
+				63F402EC1BCF77CB0086D030 /* ApplicationAssembly_Testable.h */,
+				63F402ED1BCF77CB0086D030 /* ApplicationAssemblyTests.m */,
+			);
+			path = ApplicationAssemblyTests;
+			sourceTree = "<group>";
+		};
+		63F402EE1BCF77CB0086D030 /* ServiceComponentsAssemblyTests */ = {
+			isa = PBXGroup;
+			children = (
+				63F402EF1BCF77CB0086D030 /* ServiceComponentsAssemblyTests.m */,
+			);
+			path = ServiceComponentsAssemblyTests;
+			sourceTree = "<group>";
+		};
+		63F402F21BCF79040086D030 /* CoreLayerAssemblyTests */ = {
+			isa = PBXGroup;
+			children = (
+				63F402F31BCF79040086D030 /* NetworkClientsAssemblyTests */,
+				63F402F41BCF79040086D030 /* OperationFactoriesAssemblyTests */,
+				63F402F51BCF79040086D030 /* RequestConfiguratorsAssemblyTests */,
+				63F402F61BCF79040086D030 /* RequestSignersAssemblyTests */,
+				63F402F71BCF79040086D030 /* ResponseDeserializersAssemblyTests */,
+				63F402F81BCF79040086D030 /* ResponseMappersAssemblyTests */,
+				63F402F91BCF79040086D030 /* ResponseValidatorsAssemblyTests */,
+			);
+			path = CoreLayerAssemblyTests;
+			sourceTree = "<group>";
+		};
+		63F402F31BCF79040086D030 /* NetworkClientsAssemblyTests */ = {
+			isa = PBXGroup;
+			children = (
+				63F402FD1BCF840A0086D030 /* NetworkClientsAssemblyTests.m */,
+			);
+			path = NetworkClientsAssemblyTests;
+			sourceTree = "<group>";
+		};
+		63F402F41BCF79040086D030 /* OperationFactoriesAssemblyTests */ = {
+			isa = PBXGroup;
+			children = (
+				63F402FC1BCF799F0086D030 /* OperationFactoriesAssembly_Testable.h */,
+				63F402FA1BCF79390086D030 /* OperationFactoriesAssemblyTests.m */,
+			);
+			path = OperationFactoriesAssemblyTests;
+			sourceTree = "<group>";
+		};
+		63F402F51BCF79040086D030 /* RequestConfiguratorsAssemblyTests */ = {
+			isa = PBXGroup;
+			children = (
+				63F402FF1BCF85EE0086D030 /* RequestConfiguratorsAssemblyTests.m */,
+			);
+			path = RequestConfiguratorsAssemblyTests;
+			sourceTree = "<group>";
+		};
+		63F402F61BCF79040086D030 /* RequestSignersAssemblyTests */ = {
+			isa = PBXGroup;
+			children = (
+				63F403A91BD0CB190086D030 /* RequestSignersAssemblyTests.m */,
+			);
+			path = RequestSignersAssemblyTests;
+			sourceTree = "<group>";
+		};
+		63F402F71BCF79040086D030 /* ResponseDeserializersAssemblyTests */ = {
+			isa = PBXGroup;
+			children = (
+				63F403AD1BD0CD970086D030 /* ResponseDeserializersAssembly_Testable.h */,
+				63F403AB1BD0CD460086D030 /* ResponseDeserializersAssemblyTests.m */,
+			);
+			path = ResponseDeserializersAssemblyTests;
+			sourceTree = "<group>";
+		};
+		63F402F81BCF79040086D030 /* ResponseMappersAssemblyTests */ = {
+			isa = PBXGroup;
+			children = (
+				63F403AE1BD0D0690086D030 /* ResponseMappersAssemblyTests.m */,
+				63F403B01BD0D1070086D030 /* ResponseMappersAssembly_Testable.h */,
+			);
+			path = ResponseMappersAssemblyTests;
+			sourceTree = "<group>";
+		};
+		63F402F91BCF79040086D030 /* ResponseValidatorsAssemblyTests */ = {
+			isa = PBXGroup;
+			children = (
+				63F403B11BD0D4B40086D030 /* ResponseValidatorsAssemblyTests.m */,
+				63F403B31BD0D52A0086D030 /* ResponseValidatorsAssembly_Testable.h */,
+			);
+			path = ResponseValidatorsAssemblyTests;
+			sourceTree = "<group>";
+		};
+		63F54D911BC5A79900DB1746 /* EXTScope */ = {
+			isa = PBXGroup;
+			children = (
+				63F54D921BC5A79900DB1746 /* EXTScope.h */,
+				63F54D931BC5A79900DB1746 /* EXTScope.m */,
+				63F54D941BC5A79900DB1746 /* metamacros.h */,
+			);
+			name = EXTScope;
+			path = Macros/EXTScope;
+			sourceTree = "<group>";
+		};
+		63F54D961BC5A91800DB1746 /* Assemblies */ = {
+			isa = PBXGroup;
+			children = (
+				63F54D971BC5A91800DB1746 /* ServiceComponentsAssembly */,
+			);
+			path = Assemblies;
+			sourceTree = "<group>";
+		};
+		63F54D971BC5A91800DB1746 /* ServiceComponentsAssembly */ = {
+			isa = PBXGroup;
+			children = (
+				63F54D981BC5AA8600DB1746 /* ServiceComponents.h */,
+				63F54D991BC5AB3C00DB1746 /* ServiceComponentsAssembly.h */,
+				63F54D9A1BC5AB3C00DB1746 /* ServiceComponentsAssembly.m */,
+			);
+			path = ServiceComponentsAssembly;
+			sourceTree = "<group>";
+		};
+		63F54D9C1BC5BA8F00DB1746 /* ThirdPartiesConfigurator */ = {
+			isa = PBXGroup;
+			children = (
+				63F54D9D1BC5BAB000DB1746 /* ThirdPartiesConfigurator.h */,
+				63F54D9E1BC5BB2800DB1746 /* ThirdPartiesConfiguratorImplementation.h */,
+				63F54D9F1BC5BB2800DB1746 /* ThirdPartiesConfiguratorImplementation.m */,
+			);
+			path = ThirdPartiesConfigurator;
+			sourceTree = "<group>";
+		};
 		63FDCDD81BBDBA2A00A43B60 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -574,6 +749,8 @@
 		63FDCDD91BBDBA2A00A43B60 /* ApplicationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				63F54D9C1BC5BA8F00DB1746 /* ThirdPartiesConfigurator */,
+				63EF15B71BC4546400480CAF /* PushNotificationCenter */,
 				636A37BC1BC13FA200B49C3D /* Assemblies */,
 				636A37B01BC1354100B49C3D /* ApplicationConfigurator */,
 				63FDCDDA1BBDBA2A00A43B60 /* AppDelegate */,
@@ -593,6 +770,7 @@
 		63FDCDDD1BBDBA2A00A43B60 /* BusinessLogicLayer */ = {
 			isa = PBXGroup;
 			children = (
+				63F54D961BC5A91800DB1746 /* Assemblies */,
 				6373A3DE1BBDBDF700DF67FF /* Services */,
 			);
 			path = BusinessLogicLayer;
@@ -714,6 +892,7 @@
 		63FDCE031BBDBA2A00A43B60 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				63F54D911BC5A79900DB1746 /* EXTScope */,
 				63FDCE041BBDBA2A00A43B60 /* Info.plist */,
 				63FDCE051BBDBA2A00A43B60 /* main.m */,
 			);
@@ -1904,6 +2083,12 @@
 				TargetAttributes = {
 					9F1F37E31BBBB80D00C7797D = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = UM246WFXVS;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					9F1F37FF1BBBB80D00C7797D = {
 						CreatedOnToolsVersion = 7.0;
@@ -2076,6 +2261,7 @@
 				636F8CB81BC97E7F00552B91 /* LectureMaterials.m in Sources */,
 				63FDCE061BBDBA2A00A43B60 /* AppDelegate.m in Sources */,
 				636B64041BBDD19A0053E38F /* LectureServiceImplementation.m in Sources */,
+				63F54D9B1BC5AB3C00DB1746 /* ServiceComponentsAssembly.m in Sources */,
 				636A37B31BC1356400B49C3D /* ApplicationConfiguratorImplementation.m in Sources */,
 				9F8E5FA91BC27D0D00DC10DB /* ServiceNameConstants.m in Sources */,
 				636F8CB51BC97E7F00552B91 /* Lecture+CoreDataProperties.m in Sources */,
@@ -2087,6 +2273,7 @@
 				9F0A85011BC1698B006F79FB /* ResponseMappingOperation.m in Sources */,
 				63FDCE161BBDBA2A00A43B60 /* main.m in Sources */,
 				636B64071BBDD2A40053E38F /* LectureMaterialsServiceImplementation.m in Sources */,
+				63EF15C01BC461DD00480CAF /* PushNotificationServiceImplementation.m in Sources */,
 				636B64151BBFE3420053E38F /* ViewController.m in Sources */,
 				9F8E5F741BC255AA00DC10DB /* RequestSignersAssembly.m in Sources */,
 				9FF99E511BC42FF6006F15AF /* OperationSchedulerImplementation.m in Sources */,
@@ -2108,8 +2295,11 @@
 				9F0A85001BC1698B006F79FB /* ResponseDeserializationOperation.m in Sources */,
 				9F0A853B1BC1908B006F79FB /* OperationChainer.m in Sources */,
 				636F8CC01BC97E7F00552B91 /* RegistrationQuestion.m in Sources */,
+				63EF15BB1BC4559900480CAF /* PushNotificationCenterImplementation.m in Sources */,
 				6373A4101BBDC5EA00DF67FF /* Conference.xcdatamodeld in Sources */,
+				63F54D951BC5A79900DB1746 /* EXTScope.m in Sources */,
 				636B640D1BBDD5000053E38F /* SocialNetworkAccountServiceImplementation.m in Sources */,
+				63F54DA01BC5BB2800DB1746 /* ThirdPartiesConfiguratorImplementation.m in Sources */,
 				636B640A1BBDD3FA0053E38F /* RegistrationQuestionServiceImplementation.m in Sources */,
 				636F8CBA1BC97E7F00552B91 /* Speaker.m in Sources */,
 				636A37C21BC1413A00B49C3D /* SystemInfrastructureAssembly.m in Sources */,
@@ -2127,30 +2317,37 @@
 				636F8C991BC97CD300552B91 /* EventServiceImplementation.m in Sources */,
 				636F8C9A1BC97CD300552B91 /* LectureMaterialsServiceImplementation.m in Sources */,
 				636F8C9B1BC97CD300552B91 /* RegistrationQuestionServiceImplementation.m in Sources */,
+				63F402FE1BCF840A0086D030 /* NetworkClientsAssemblyTests.m in Sources */,
 				636F8C9C1BC97CD300552B91 /* SocialNetworkAccountServiceImplementation.m in Sources */,
 				636F8C981BC97C1700552B91 /* SpeakerServiceImplementation.m in Sources */,
 				636A37BB1BC13B9800B49C3D /* ApplicationConfiguratorTests.m in Sources */,
-				636A37CA1BC147FD00B49C3D /* ApplicationAssemblyTests.m in Sources */,
-				636A37CC1BC1481300B49C3D /* SystemInfrastructureAssemblyTests.m in Sources */,
 				9F0A853F1BC192F0006F79FB /* OperationChainerTests.m in Sources */,
 				9F0A85211BC185AA006F79FB /* TestChainableOperationWithValidationBlock.m in Sources */,
+				63F402F11BCF77CB0086D030 /* ServiceComponentsAssemblyTests.m in Sources */,
 				9F1830DB1BC126D7000E21A5 /* RCFParseResponseValidatorTests.m in Sources */,
 				9F0A85201BC185AA006F79FB /* TestChainableOperation.m in Sources */,
 				9F18309A1BC022EA000E21A5 /* RCFRESTRequestConfiguratorTests.m in Sources */,
 				9F8E5FA21BC27B5B00DC10DB /* EventOperationFactoryTests.m in Sources */,
+				63F402F01BCF77CB0086D030 /* ApplicationAssemblyTests.m in Sources */,
 				9F0A85261BC185AA006F79FB /* ResponseDeserializationOperationTests.m in Sources */,
+				63F403001BCF85EE0086D030 /* RequestConfiguratorsAssemblyTests.m in Sources */,
 				9F0A85231BC185AA006F79FB /* ChainableOperationTestsBase.m in Sources */,
+				63F402FB1BCF79390086D030 /* OperationFactoriesAssemblyTests.m in Sources */,
 				9F0A85251BC185AA006F79FB /* RequestSigningOperationTests.m in Sources */,
 				9F0A85241BC185AA006F79FB /* RequestConfigurationOperationTests.m in Sources */,
 				9F8E5F9B1BC2753100DC10DB /* CompoundOperationFactoryTestsBase.m in Sources */,
 				9F0A851F1BC185AA006F79FB /* TestCancellableOperation.m in Sources */,
 				9F0A85271BC185AA006F79FB /* ResponseMappingOperationTests.m in Sources */,
 				9F1830F91BC1464C000E21A5 /* RCFManagedObjectMappingProviderTests.m in Sources */,
+				63F403AA1BD0CB190086D030 /* RequestSignersAssemblyTests.m in Sources */,
 				9F1830C81BC11EE6000E21A5 /* XCTestCase+RCFHelpers.m in Sources */,
+				63F403B21BD0D4B40086D030 /* ResponseValidatorsAssemblyTests.m in Sources */,
 				9F0A84C31BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m in Sources */,
 				9F1831211BC16195000E21A5 /* RCFResultResponseObjectFormatterTests.m in Sources */,
 				9F1830AB1BC1139B000E21A5 /* RCFParseRequestSignerTests.m in Sources */,
+				63F403AF1BD0D0690086D030 /* ResponseMappersAssemblyTests.m in Sources */,
 				9F1830DF1BC12749000E21A5 /* RCFResponseValidatorTestsBase.m in Sources */,
+				63F403AC1BD0CD460086D030 /* ResponseDeserializersAssemblyTests.m in Sources */,
 				9FF99E541BC4317E006F15AF /* OperationSchedulerTests.m in Sources */,
 				9F1830B81BC119A5000E21A5 /* CommonNetworkClientTests.m in Sources */,
 				9F1830C31BC11DE7000E21A5 /* RCFJSONResponseDeserializerTests.m in Sources */,
@@ -2259,6 +2456,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Conferences/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.rambler.Conferences;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2271,6 +2469,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Conferences/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.rambler.Conferences;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2282,6 +2481,22 @@
 			baseConfigurationReference = 2C01BA17D4018DCA62CC6C3B /* Pods-ConferencesTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/Bolts\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaLumberjack\"",
+					"\"${PODS_ROOT}/Headers/Public/EasyMapping\"",
+					"\"${PODS_ROOT}/Headers/Public/MMBarricade\"",
+					"\"${PODS_ROOT}/Headers/Public/MagicalRecord\"",
+					"\"${PODS_ROOT}/Headers/Public/OCMock\"",
+					"\"${PODS_ROOT}/Headers/Public/Parse\"",
+					"\"${PODS_ROOT}/Headers/Public/RamblerMcFlurry\"/**",
+					"\"${PODS_ROOT}/Headers/Public/Typhoon\"",
+					"\"${PODS_ROOT}/Headers/Public/libextobjc\"",
+					"\"${PODS_ROOT}/Headers/Public/RamblerMcFlurry/Testing/TyphoonAssemblyTests\"",
+				);
 				INFOPLIST_FILE = "ConferencesTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.rambler.ConferencesTests;
@@ -2295,6 +2510,22 @@
 			baseConfigurationReference = 5FED76184BAB5478101AC945 /* Pods-ConferencesTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/Bolts\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaLumberjack\"",
+					"\"${PODS_ROOT}/Headers/Public/EasyMapping\"",
+					"\"${PODS_ROOT}/Headers/Public/MMBarricade\"",
+					"\"${PODS_ROOT}/Headers/Public/MagicalRecord\"",
+					"\"${PODS_ROOT}/Headers/Public/OCMock\"",
+					"\"${PODS_ROOT}/Headers/Public/Parse\"",
+					"\"${PODS_ROOT}/Headers/Public/RamblerMcFlurry\"/**",
+					"\"${PODS_ROOT}/Headers/Public/Typhoon\"",
+					"\"${PODS_ROOT}/Headers/Public/libextobjc\"",
+					"\"${PODS_ROOT}/Headers/Public/RamblerMcFlurry/Testing/TyphoonAssemblyTests\"",
+				);
 				INFOPLIST_FILE = "ConferencesTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.rambler.ConferencesTests;

@@ -17,6 +17,9 @@
  */
 @interface RESTRequestConfigurator : AFHTTPRequestSerializer <RequestConfigurator>
 
+@property (copy, nonatomic, readonly) NSURL *baseURL;
+@property (copy, nonatomic, readonly) NSString *apiPath;
+
 /**
  @author Egor Tolstoy
  
