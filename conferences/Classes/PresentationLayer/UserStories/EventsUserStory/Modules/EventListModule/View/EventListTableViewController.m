@@ -8,21 +8,28 @@
 
 #import "EventListTableViewController.h"
 #import "EventListViewOutput.h"
+#import "DataDisplayManager.h"
+#import "EventListDataDisplayManager.h"
 
-@interface EventListTableViewController()
+@interface EventListTableViewController() <UITableViewDelegate>
 
 @end
 
-/**
- *	View модуля, который 1
- *
- *  
- */
 @implementation EventListTableViewController
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	[self.output setupView];
+    
+    self.tableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.tableView];
+    self.tableView.delegate = [self.dataDisplayManager delegateForTableView:self.tableView withBaseDelegate:self];
+    [self.tableView setTableFooterView:[UIView new]];
+}
+
+#pragma mark - UITableViewDelegate methods
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 64;
 }
 
 #pragma mark - EventListViewInput

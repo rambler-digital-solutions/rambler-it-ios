@@ -8,6 +8,8 @@
 
 #import "EventServiceImplementation.h"
 
+#import "CompoundOperationBase.h"
+
 @implementation EventServiceImplementation
 
 - (void)updateEventWithPredicate:(NSPredicate *)predicate

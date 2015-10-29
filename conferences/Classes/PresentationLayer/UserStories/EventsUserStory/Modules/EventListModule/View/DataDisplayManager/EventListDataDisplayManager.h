@@ -7,10 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <UIKit/UIKit.h>
 
 #import "DataDisplayManager.h"
 
 @interface EventListDataDisplayManager : NSObject <DataDisplayManager>
+
+- (void)configureDataDisplayManagerWithEvents:(NSArray *)events;
+- (void)updateDataDisplayManagerWithEvents:(NSArray *)events;
 
 @end
