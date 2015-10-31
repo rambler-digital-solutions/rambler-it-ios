@@ -9,11 +9,12 @@
 #import "EventServiceImplementation.h"
 
 #import "CompoundOperationBase.h"
+#import "EventOperationFactory.h"
+#import "OperationScheduler.h"
 
 @implementation EventServiceImplementation
 
-- (void)updateEventWithPredicate:(NSPredicate *)predicate
-                 completionBlock:(EventCompletionBlock)completionBlock {
+- (void)updateEventWithPredicate:(NSPredicate *)predicate completionBlock:(EventCompletionBlock)completionBlock {
     
 }
 

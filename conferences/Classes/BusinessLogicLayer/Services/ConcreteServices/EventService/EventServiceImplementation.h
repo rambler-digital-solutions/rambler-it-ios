@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "EventService.h"
 
-#import "EventOperationFactory.h"
-#import "OperationScheduler.h"
+@class EventOperationFactory;
+@protocol OperationScheduler;
 
 @interface EventServiceImplementation : NSObject <EventService>
 

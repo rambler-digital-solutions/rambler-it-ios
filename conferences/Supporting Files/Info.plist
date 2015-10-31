@@ -6,12 +6,9 @@
 	<array>
 		<string>ServiceComponentsAssembly</string>
 		<string>ApplicationAssembly</string>
-		<string>SystemInfrastructureAssembly</string>
-		<string>RootModuleAssembly</string>
 		<string>TabBarModuleAssembly</string>
 		<string>RamblerLocationModuleAssembly</string>
 		<string>EventListModuleAssembly</string>
-		<string>ApplicationAssembly</string>
 		<string>SystemInfrastructureAssembly</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
