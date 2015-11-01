@@ -12,6 +12,7 @@
 #import "EventListPresenter.h"
 #import "EventListRouter.h"
 #import "EventListDataDisplayManager.h"
+#import "ServiceComponents.h"
 
 #import "TabBarButtonPrototype.h"
 
@@ -31,9 +32,13 @@ static NSString * const kEventListStoryboardName = @"EventsUserStory";
 
 - (EventListInteractor *)interactorEventList {
     return [TyphoonDefinition withClass:[EventListInteractor class]
-                          configuration:^(TyphoonDefinition *definition) {
-                            [definition injectProperty:@selector(output) 
-                                                  with:[self presenterEventList]];
+                            configuration:^(TyphoonDefinition *definition) {
+                                [definition injectProperty:@selector(output)
+                                                        with:[self presenterEventList]];
+                                [definition injectProperty:@selector(eventService)
+                                                    with:[self.serviceComponents eventService]];
+                                [definition injectProperty:@selector(eventPrototypeMapper)
+                                                      with:[self.serviceComponents eventPrototypeMapper]];
              }];
 }
 

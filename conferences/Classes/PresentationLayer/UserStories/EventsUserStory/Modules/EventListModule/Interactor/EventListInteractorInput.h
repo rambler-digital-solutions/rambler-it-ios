@@ -8,7 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+@class PlainEvent;
+
 @protocol EventListInteractorInput <NSObject>
+
+- (void)updateEventList;
+- (NSArray *)obtainEventList;
+- (void)obtainImageForEvent:(PlainEvent *)event;
 
 @end
 

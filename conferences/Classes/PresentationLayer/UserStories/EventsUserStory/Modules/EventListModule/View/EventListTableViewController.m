@@ -11,7 +11,7 @@
 #import "DataDisplayManager.h"
 #import "EventListDataDisplayManager.h"
 
-@interface EventListTableViewController() <UITableViewDelegate>
+@interface EventListTableViewController() <EventLIstDataDisplayManagerDelegate>
 
 @end
 
@@ -20,18 +20,35 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	[self.output setupView];
-    
-    self.tableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.tableView];
-    self.tableView.delegate = [self.dataDisplayManager delegateForTableView:self.tableView withBaseDelegate:self];
-    [self.tableView setTableFooterView:[UIView new]];
-}
-
-#pragma mark - UITableViewDelegate methods
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 64;
 }
 
 #pragma mark - EventListViewInput
+
+- (void)setupViewWithEventList:(NSArray *)events {
+    [((EventListDataDisplayManager *)self.dataDisplayManager) updateTableViewModelWithEvents:events];
+    ((EventListDataDisplayManager *)self.dataDisplayManager).delegate = self;
+    
+    self.tableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.tableView];
+    self.tableView.delegate = [self.dataDisplayManager delegateForTableView:self.tableView withBaseDelegate:nil];
+}
+
+- (void)updateViewWithEventList:(NSArray *)events {
+    [((EventListDataDisplayManager *)self.dataDisplayManager) updateTableViewModelWithEvents:events];
+}
+
+- (void)updateCellWithEvent:(PlainEvent *)event {
+    
+}
+
+#pragma mark - EventLIstDataDisplayManagerDelegate methods
+
+- (void)didUpdateTableViewModel {
+    self.tableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.tableView];
+    [self.tableView reloadData];
+}
+
+- (void)obtainImageForEvent:(PlainEvent *)event {
+    [self.output didTriggerObtainImageForEvent:event];
+}
 
 @end

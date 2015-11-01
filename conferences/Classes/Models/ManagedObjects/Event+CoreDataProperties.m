@@ -2,7 +2,7 @@
 //  Event+CoreDataProperties.m
 //  Conferences
 //
-//  Created by Karpushin Artem on 10/10/15.
+//  Created by Karpushin Artem on 01/11/15.
 //  Copyright © 2015 Rambler. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -13,14 +13,18 @@
 
 @implementation Event (CoreDataProperties)
 
+@dynamic backgroundColor;
 @dynamic endDate;
 @dynamic eventDescription;
 @dynamic liveStreamLink;
 @dynamic name;
 @dynamic objectId;
 @dynamic startDate;
+@dynamic tags;
 @dynamic timePadID;
 @dynamic twitterLink;
+@dynamic image;
+@dynamic imageUrl;
 @dynamic lectures;
 @dynamic registrationQuestions;
 

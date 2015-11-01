@@ -13,6 +13,8 @@
 #import "PushNotificationServiceImplementation.h"
 #import "OperationScheduler.h"
 #import "OperationSchedulerImplementation.h"
+#import "PrototypeMapper.h"
+#import "EventPrototypeMapper.h"
 
 @implementation ServiceComponentsAssembly
 
@@ -33,6 +35,10 @@
 
 - (id <OperationScheduler>)operationScheduler {
     return [TyphoonDefinition withClass:[OperationSchedulerImplementation class]];
+}
+
+- (id<PrototypeMapper>)eventPrototypeMapper {
+    return [TyphoonDefinition withClass:[EventPrototypeMapper class]];
 }
 
 @end

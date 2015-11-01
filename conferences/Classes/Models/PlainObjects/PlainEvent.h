@@ -25,8 +25,9 @@
 @property (nonatomic, strong, readwrite) NSString *twitterLink;
 @property (nonatomic, strong, readwrite) NSArray *lectures;
 @property (nonatomic, strong, readwrite) NSArray *registrationQuestions;
-@property (nonatomic, strong, readwrite) NSString *eventTags;
+@property (nonatomic, strong, readwrite) NSString *tags;
 @property (nonatomic, strong, readwrite) UIColor *backgroundColor;
-@property (nonatomic, strong, readwrite) UIImageView *eventImage;
+@property (nonatomic, strong, readwrite) UIImage *image;
+@property (nonatomic, strong, readwrite) NSURL *imageUrl;
 
 @end

@@ -26,7 +26,7 @@
     if (self) {
         self.elementID = elementID;
         
-        // переделать
+        // вынести в форматтер
         NSDateFormatter *dayDateFormatter = [NSDateFormatter new];
         [dayDateFormatter setDateFormat:@"dd"];
         NSDateFormatter *monthDateFormatter = [NSDateFormatter new];
@@ -35,7 +35,7 @@
         _day = [dayDateFormatter stringFromDate:event.startDate];
         _month = [monthDateFormatter stringFromDate:event.startDate];
         _eventTitle = event.name;
-        _eventTags = event.eventTags;
+        _eventTags = event.tags;
     }
     return self;
 }

@@ -13,4 +13,12 @@
 
 @interface FutureEventTableViewCellObject : NIFormElement <NICellObject>
 
+@property (strong, nonatomic, readonly) UIImage *image;
+@property (strong, nonatomic, readonly) NSString *day;
+@property (strong, nonatomic, readonly) NSString *month;
+@property (strong, nonatomic, readonly) NSString *eventTitle;
+@property (strong, nonatomic, readonly) UIColor *backgroundColor;
+
++ (instancetype)objectWithElementID:(NSInteger)elementID event:(PlainEvent *)event;
+
 @end

@@ -6,16 +6,31 @@
 //  Copyright © 2015 Rambler. All rights reserved.
 //
 
+#import <MagicalRecord/MagicalRecord.h>
+
 #import "EventServiceImplementation.h"
 
 #import "CompoundOperationBase.h"
 #import "EventOperationFactory.h"
 #import "OperationScheduler.h"
+#import "Event.h"
 
 @implementation EventServiceImplementation
 
 - (void)updateEventWithPredicate:(NSPredicate *)predicate completionBlock:(EventCompletionBlock)completionBlock {
+    CompoundOperationBase *compoundOperation = [self.eventOperationFactory getEventsOperationWithQuery:nil];
+    compoundOperation.resultBlock = ^void(id data, NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completionBlock(data, error);
+        });
+    };
     
+    [self.operationScheduler addOperation:compoundOperation];
+}
+
+- (id)obtainEventWithPredicate:(NSPredicate *)predicate {
+    NSArray *events = [Event MR_findAll];
+    return events;
 }
 
 @end

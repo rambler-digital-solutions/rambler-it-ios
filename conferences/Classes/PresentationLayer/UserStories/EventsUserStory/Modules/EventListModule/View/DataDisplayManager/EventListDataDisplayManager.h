@@ -11,9 +11,22 @@
 
 #import "DataDisplayManager.h"
 
-@interface EventListDataDisplayManager : NSObject <DataDisplayManager>
+@class PlainEvent;
 
-- (void)configureDataDisplayManagerWithEvents:(NSArray *)events;
-- (void)updateDataDisplayManagerWithEvents:(NSArray *)events;
+@protocol EventLIstDataDisplayManagerDelegate
+
+- (void)didUpdateTableViewModel;
+- (void)obtainImageForEvent:(PlainEvent *)event;
 
 @end
+
+@interface EventListDataDisplayManager : NSObject <DataDisplayManager>
+
+@property (weak, nonatomic) id <EventLIstDataDisplayManagerDelegate> delegate;
+
+- (void)configureDataDisplayManagerWithEvents:(NSArray *)events;
+- (void)updateTableViewModelWithEvents:(NSArray *)events;
+- (void)updateCellWithEvent:(PlainEvent *)event;
+
+@end
+

@@ -7,9 +7,12 @@
 //
 #import <Foundation/Foundation.h>
 
+@class PlainEvent;
+
 @protocol EventListViewOutput <NSObject>
 
 - (void)setupView;
+- (void)didTriggerObtainImageForEvent:(PlainEvent *)event;
 
 @end
 
