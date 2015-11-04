@@ -21,18 +21,10 @@
     [self.view setupViewWithEventList:events];
 }
 
-- (void)didTriggerObtainImageForEvent:(PlainEvent *)event {
-    [self.interactor obtainImageForEvent:event];
-}
-
 #pragma mark - EventListInteractorOutput
 
 - (void)didUpdateEventList:(NSArray *)events {
     [self.view updateViewWithEventList:events];
-}
-
-- (void)didObtainImageForEvent:(PlainEvent *)event {
-    [self.view updateCellWithEvent:event];
 }
 
 @end

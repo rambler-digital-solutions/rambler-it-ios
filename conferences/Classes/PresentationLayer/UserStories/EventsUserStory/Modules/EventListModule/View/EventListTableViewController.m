@@ -36,19 +36,11 @@
     [((EventListDataDisplayManager *)self.dataDisplayManager) updateTableViewModelWithEvents:events];
 }
 
-- (void)updateCellWithEvent:(PlainEvent *)event {
-    
-}
-
 #pragma mark - EventLIstDataDisplayManagerDelegate methods
 
 - (void)didUpdateTableViewModel {
     self.tableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.tableView];
     [self.tableView reloadData];
-}
-
-- (void)obtainImageForEvent:(PlainEvent *)event {
-    [self.output didTriggerObtainImageForEvent:event];
 }
 
 @end

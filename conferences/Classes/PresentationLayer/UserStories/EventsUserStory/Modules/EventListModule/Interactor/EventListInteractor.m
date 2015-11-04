@@ -45,24 +45,6 @@
     return events;
 }
 
-- (void)obtainImageForEvent:(PlainEvent *)event {
-    // сохранить image в базу
-    NSLog(@"%@", event.imageUrl);
-    
-    SDWebImageDownloader *downloader = [SDWebImageDownloader sharedDownloader];
-    [downloader downloadImageWithURL:event.imageUrl
-                             options:0
-                            progress:^(NSInteger receivedSize, NSInteger expectedSize) {
-                                NSLog(@"receivedSize: %ld expectedSize: %ld", (long)receivedSize, (long)expectedSize);
-                            }
-                           completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
-                               if (image && finished) {
-                                   event.image = image;
-                                   [self.output didObtainImageForEvent:event];
-                               }
-                           }];
-}
-
 #pragma mark - Private methods
 
 - (NSMutableArray *)mapEvents:(NSArray *)manajedObjectEvents {

@@ -16,7 +16,6 @@
 @protocol EventLIstDataDisplayManagerDelegate
 
 - (void)didUpdateTableViewModel;
-- (void)obtainImageForEvent:(PlainEvent *)event;
 
 @end
 

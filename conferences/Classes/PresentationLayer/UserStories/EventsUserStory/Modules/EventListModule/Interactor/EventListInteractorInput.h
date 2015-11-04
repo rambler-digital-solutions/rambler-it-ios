@@ -14,7 +14,6 @@
 
 - (void)updateEventList;
 - (NSArray *)obtainEventList;
-- (void)obtainImageForEvent:(PlainEvent *)event;
 
 @end
 

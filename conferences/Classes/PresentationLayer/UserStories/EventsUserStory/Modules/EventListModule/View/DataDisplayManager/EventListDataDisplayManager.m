@@ -76,10 +76,6 @@ typedef NS_ENUM(NSUInteger, CellObjectID){
     if (self.events.count > 0) {
         PlainEvent *futureEvent = [self.events firstObject];
         
-        if (!futureEvent.image) {
-            [self.delegate obtainImageForEvent:futureEvent];
-        }
-        
         FutureEventTableViewCellObject *futureEventTableViewCellObject = [FutureEventTableViewCellObject objectWithElementID:FutureEventTableViewCellObjectID event:futureEvent];
         [cellObjects addObject:futureEventTableViewCellObject];
         

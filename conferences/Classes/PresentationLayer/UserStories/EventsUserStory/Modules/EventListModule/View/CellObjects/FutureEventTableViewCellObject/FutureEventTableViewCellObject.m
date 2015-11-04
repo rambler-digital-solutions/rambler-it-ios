@@ -17,6 +17,7 @@
 @property (strong, nonatomic, readwrite) NSString *month;
 @property (strong, nonatomic, readwrite) NSString *eventTitle;
 @property (strong, nonatomic, readwrite) UIColor *backgroundColor;
+@property (strong, nonatomic, readwrite) NSURL *imageUrl;
 
 @end
 
@@ -37,6 +38,7 @@
         _month = [monthDateFormatter stringFromDate:event.startDate];
         _eventTitle = event.name;
         _image = event.image;
+        _imageUrl = event.imageUrl;
         _backgroundColor = event.backgroundColor;
     }
     return self;

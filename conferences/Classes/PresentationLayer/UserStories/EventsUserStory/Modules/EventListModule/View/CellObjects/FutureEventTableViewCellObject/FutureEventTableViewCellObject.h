@@ -18,6 +18,7 @@
 @property (strong, nonatomic, readonly) NSString *month;
 @property (strong, nonatomic, readonly) NSString *eventTitle;
 @property (strong, nonatomic, readonly) UIColor *backgroundColor;
+@property (strong, nonatomic, readonly) NSURL *imageUrl;
 
 + (instancetype)objectWithElementID:(NSInteger)elementID event:(PlainEvent *)event;
 

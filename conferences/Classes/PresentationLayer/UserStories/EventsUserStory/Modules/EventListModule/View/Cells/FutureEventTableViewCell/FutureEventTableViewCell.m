@@ -9,6 +9,10 @@
 #import "FutureEventTableViewCell.h"
 #import "FutureEventTableViewCellObject.h"
 
+#import <SDWebImage/UIImageView+WebCache.h>
+
+#import "EXTScope.h"
+
 static NSString *const kPlaceholderImageName = @"placeholder";
 
 @interface FutureEventTableViewCell ()
@@ -24,8 +28,17 @@ static NSString *const kPlaceholderImageName = @"placeholder";
     self.day.text = object.day;
     self.month.text = object.month;
     self.imageView.image = object.image;
-    
     [self.cellView setBackgroundColor:object.backgroundColor];
+    self.imageView.image = [UIImage imageNamed:kPlaceholderImageName];
+//    if (object.image) {
+//        self.imageView.image = object.image;
+//    } else {
+//        @weakify(self);
+//        [self obtainImageWithUrl:object.imageUrl completionBlock:^(UIImage *image) {
+//            @strongify(self);
+//            self.imageView.image = image;
+//        }];
+//    }
     
     return YES;
 }
@@ -36,10 +49,20 @@ static NSString *const kPlaceholderImageName = @"placeholder";
 
 #pragma mark - Private methods
 
-- (void)setPlaceholderForImageIfNeded:(UIImage *)image {
-    if (!image) {
-        image = [UIImage imageNamed:kPlaceholderImageName];
-    }
+- (void)obtainImageWithUrl:(NSURL *)url completionBlock:(void(^)(UIImage *image))completionBlock {
+    SDWebImageDownloader *downloader = [SDWebImageDownloader sharedDownloader];
+    [downloader downloadImageWithURL:url
+                             options:0
+                            progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+                                NSLog(@"receivedSize: %ld expectedSize: %ld", (long)receivedSize, (long)expectedSize);
+                            }
+                           completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
+                               if (image && finished) {
+                                   dispatch_async(dispatch_get_main_queue(), ^{
+                                       completionBlock(image);
+                                   });
+                               }
+                           }];
 }
 
 @end
