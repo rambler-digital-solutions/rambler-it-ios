@@ -45,6 +45,7 @@
 		63FDCE141BBDBA2A00A43B60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63FDCE021BBDBA2A00A43B60 /* Assets.xcassets */; };
 		63FDCE151BBDBA2A00A43B60 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63FDCE041BBDBA2A00A43B60 /* Info.plist */; };
 		63FDCE161BBDBA2A00A43B60 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FDCE051BBDBA2A00A43B60 /* main.m */; };
+		892D07F71BEB619A00825704 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 892D07F61BEB619A00825704 /* LaunchScreen.xib */; };
 		9F0A6C1D1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */; };
 		9F0A6C2E1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C2D1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m */; };
 		9F0A84C31BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A84C21BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m */; };
@@ -197,6 +198,7 @@
 		63FDCE041BBDBA2A00A43B60 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63FDCE051BBDBA2A00A43B60 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		84D2CBEF6E088EFC9A139E49 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		892D07F61BEB619A00825704 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		9F0A6C1B1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CompoundOperationBuilderConfig.h; path = OperationBuilders/CompoundOperationBuilderConfig/CompoundOperationBuilderConfig.h; sourceTree = "<group>"; };
 		9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CompoundOperationBuilderConfig.m; path = OperationBuilders/CompoundOperationBuilderConfig/CompoundOperationBuilderConfig.m; sourceTree = "<group>"; };
 		9F0A6C1E1BC1B53F00A25417 /* RequestConfigurationType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RequestConfigurationType.h; path = CoreComponents/RequestConfigurators/RequestConfigurationType.h; sourceTree = "<group>"; };
@@ -690,6 +692,7 @@
 				636B64111BBFE2C20053E38F /* Main.storyboard */,
 				636B64131BBFE3420053E38F /* ViewController.h */,
 				636B64141BBFE3420053E38F /* ViewController.m */,
+				892D07F61BEB619A00825704 /* LaunchScreen.xib */,
 			);
 			path = PresentationLayer;
 			sourceTree = "<group>";
@@ -1904,6 +1907,7 @@
 				TargetAttributes = {
 					9F1F37E31BBBB80D00C7797D = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = UM246WFXVS;
 					};
 					9F1F37FF1BBBB80D00C7797D = {
 						CreatedOnToolsVersion = 7.0;
@@ -1939,6 +1943,7 @@
 				63FDCE151BBDBA2A00A43B60 /* Info.plist in Resources */,
 				9F8E5F9D1BC2777100DC10DB /* Conferences.Parse.plist in Resources */,
 				63FDCE141BBDBA2A00A43B60 /* Assets.xcassets in Resources */,
+				892D07F71BEB619A00825704 /* LaunchScreen.xib in Resources */,
 				9F8E5F701BC2552600DC10DB /* Conferences.API.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2258,6 +2263,7 @@
 			baseConfigurationReference = 559ED4EDBC100544852E4E6A /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Conferences/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.ramblerco.rambler.conferences;
@@ -2270,10 +2276,12 @@
 			baseConfigurationReference = 84D2CBEF6E088EFC9A139E49 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Conferences/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.ramblerco.rambler.conferences;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "$(PROFILE_UDID)";
 			};
 			name = Release;
 		};
