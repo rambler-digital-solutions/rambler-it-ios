@@ -8,7 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+@class PlainEvent;
+
 @protocol EventViewInput <NSObject>
+
+- (void)configureViewWithEvent:(PlainEvent *)event;
 
 @end
 

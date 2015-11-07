@@ -10,21 +10,22 @@
 #import "EventViewInput.h"
 #import "EventInteractorInput.h"
 #import "EventRouterInput.h"
+#import "PlainEvent.h"
 
 @interface EventPresenter()
+
+@property (strong, nonatomic) PlainEvent *event;
+
 @end
 
-/**
- *	Presenter модуля, который 1
- *
- *  
- */
 @implementation EventPresenter
 
 #pragma mark - EventViewOutput
 
 - (void)setupView {
-
+    PlainEvent *event = [PlainEvent new];
+    event.name = @"Rambler.iOS #5";
+    [self.view configureViewWithEvent:event];
 }
 
 #pragma mark - EventInteractorOutput

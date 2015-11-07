@@ -7,18 +7,21 @@
 //
 
 #import "EventModuleAssembly.h"
-#import "EventTableViewController.h"
+#import "EventViewController.h"
 #import "EventInteractor.h"
 #import "EventPresenter.h"
 #import "EventRouter.h"
+#import "EventDataDisplayManager.h"
 
 @implementation  EventModuleAssembly
 
-- (EventTableViewController *)viewEvent {
-    return [TyphoonDefinition withClass:[EventTableViewController class]
+- (EventViewController *)viewEvent {
+    return [TyphoonDefinition withClass:[EventViewController class]
                             configuration:^(TyphoonDefinition *definition) {
-                            [   definition injectProperty:@selector(output)
-                                                     with:[self presenterEvent]];
+                                [definition injectProperty:@selector(output)
+                                                      with:[self presenterEvent]];
+                                [definition injectProperty:@selector(dataDisplayManager)
+                                                      with:[self dataDisplayManagerEvent]];
              }];
 }
 
@@ -47,6 +50,10 @@
                             configuration:^(TyphoonDefinition *definition) {
 
            }];
+}
+
+- (EventDataDisplayManager *)dataDisplayManagerEvent {
+    return [TyphoonDefinition withClass:[EventDataDisplayManager class]];
 }
 
 @end

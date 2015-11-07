@@ -67,7 +67,6 @@ static NSString * const kEventListStoryboardName = @"EventsUserStory";
 
 #pragma mark - TabBarButtonPrototypeProtocol
 
-// добавить картинки
 - (id<TabBarButtonPrototypeProtocol>)eventListTabBarButtonPrototype {
     return [TyphoonDefinition withClass:[TabBarButtonPrototype class]
                           configuration:^(TyphoonDefinition *definition) {
