@@ -28,6 +28,12 @@
 		631FFE091BEF2B5800749DB8 /* PresenterCredentialsStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FFE081BEF2B5800749DB8 /* PresenterCredentialsStorage.m */; };
 		631FFE191BEF451400749DB8 /* CDResponderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FFE141BEF451400749DB8 /* CDResponderTableViewCell.m */; };
 		631FFE1A1BEF451400749DB8 /* UIView+CDResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FFE181BEF451400749DB8 /* UIView+CDResponder.m */; };
+		631FFE531BEF930200749DB8 /* ReportListModuleAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FFE411BEF930200749DB8 /* ReportListModuleAssembly.m */; };
+		631FFE541BEF930200749DB8 /* ReportListInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FFE441BEF930200749DB8 /* ReportListInteractor.m */; };
+		631FFE551BEF930200749DB8 /* ReportListPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FFE491BEF930200749DB8 /* ReportListPresenter.m */; };
+		631FFE561BEF930200749DB8 /* ReportListRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FFE4C1BEF930200749DB8 /* ReportListRouter.m */; };
+		631FFE571BEF930200749DB8 /* ReportListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FFE501BEF930200749DB8 /* ReportListTableViewController.m */; };
+		631FFE591BEF937D00749DB8 /* ReportsUserStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 631FFE581BEF937D00749DB8 /* ReportsUserStory.storyboard */; };
 		632887B11BDFE0AB00701AF0 /* PastEventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 632887AF1BDFE0AB00701AF0 /* PastEventTableViewCell.m */; };
 		632887B21BDFE0AB00701AF0 /* PastEventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 632887B01BDFE0AB00701AF0 /* PastEventTableViewCell.xib */; };
 		632887B61BDFE16200701AF0 /* FutureEventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 632887B41BDFE16200701AF0 /* FutureEventTableViewCell.m */; };
@@ -280,6 +286,22 @@
 		631FFE151BEF451400749DB8 /* RCMResignFirstResponderHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCMResignFirstResponderHandler.h; sourceTree = "<group>"; };
 		631FFE171BEF451400749DB8 /* UIView+CDResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CDResponder.h"; sourceTree = "<group>"; };
 		631FFE181BEF451400749DB8 /* UIView+CDResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CDResponder.m"; sourceTree = "<group>"; };
+		631FFE401BEF930200749DB8 /* ReportListModuleAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportListModuleAssembly.h; sourceTree = "<group>"; };
+		631FFE411BEF930200749DB8 /* ReportListModuleAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportListModuleAssembly.m; sourceTree = "<group>"; };
+		631FFE431BEF930200749DB8 /* ReportListInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportListInteractor.h; sourceTree = "<group>"; };
+		631FFE441BEF930200749DB8 /* ReportListInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportListInteractor.m; sourceTree = "<group>"; };
+		631FFE451BEF930200749DB8 /* ReportListInteractorInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportListInteractorInput.h; sourceTree = "<group>"; };
+		631FFE461BEF930200749DB8 /* ReportListInteractorOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportListInteractorOutput.h; sourceTree = "<group>"; };
+		631FFE481BEF930200749DB8 /* ReportListPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportListPresenter.h; sourceTree = "<group>"; };
+		631FFE491BEF930200749DB8 /* ReportListPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportListPresenter.m; sourceTree = "<group>"; };
+		631FFE4B1BEF930200749DB8 /* ReportListRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportListRouter.h; sourceTree = "<group>"; };
+		631FFE4C1BEF930200749DB8 /* ReportListRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportListRouter.m; sourceTree = "<group>"; };
+		631FFE4D1BEF930200749DB8 /* ReportListRouterInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportListRouterInput.h; sourceTree = "<group>"; };
+		631FFE4F1BEF930200749DB8 /* ReportListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportListTableViewController.h; sourceTree = "<group>"; };
+		631FFE501BEF930200749DB8 /* ReportListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportListTableViewController.m; sourceTree = "<group>"; };
+		631FFE511BEF930200749DB8 /* ReportListViewInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportListViewInput.h; sourceTree = "<group>"; };
+		631FFE521BEF930200749DB8 /* ReportListViewOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportListViewOutput.h; sourceTree = "<group>"; };
+		631FFE581BEF937D00749DB8 /* ReportsUserStory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ReportsUserStory.storyboard; sourceTree = "<group>"; };
 		632887AE1BDFE0AB00701AF0 /* PastEventTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PastEventTableViewCell.h; sourceTree = "<group>"; };
 		632887AF1BDFE0AB00701AF0 /* PastEventTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PastEventTableViewCell.m; sourceTree = "<group>"; };
 		632887B01BDFE0AB00701AF0 /* PastEventTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PastEventTableViewCell.xib; sourceTree = "<group>"; };
@@ -852,6 +874,93 @@
 			path = "UIView+CDResponder";
 			sourceTree = "<group>";
 		};
+		631FFE1B1BEF91C500749DB8 /* ReportsUserStory */ = {
+			isa = PBXGroup;
+			children = (
+				631FFE241BEF928C00749DB8 /* Modules */,
+				631FFE231BEF91C500749DB8 /* Storyboard */,
+			);
+			path = ReportsUserStory;
+			sourceTree = "<group>";
+		};
+		631FFE231BEF91C500749DB8 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				631FFE581BEF937D00749DB8 /* ReportsUserStory.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		631FFE241BEF928C00749DB8 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				631FFE251BEF928C00749DB8 /* ReportListModule */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		631FFE251BEF928C00749DB8 /* ReportListModule */ = {
+			isa = PBXGroup;
+			children = (
+				631FFE3F1BEF930200749DB8 /* Assembly */,
+				631FFE421BEF930200749DB8 /* Interactor */,
+				631FFE471BEF930200749DB8 /* Presenter */,
+				631FFE4A1BEF930200749DB8 /* Router */,
+				631FFE4E1BEF930200749DB8 /* View */,
+			);
+			path = ReportListModule;
+			sourceTree = "<group>";
+		};
+		631FFE3F1BEF930200749DB8 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				631FFE401BEF930200749DB8 /* ReportListModuleAssembly.h */,
+				631FFE411BEF930200749DB8 /* ReportListModuleAssembly.m */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		631FFE421BEF930200749DB8 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				631FFE431BEF930200749DB8 /* ReportListInteractor.h */,
+				631FFE441BEF930200749DB8 /* ReportListInteractor.m */,
+				631FFE451BEF930200749DB8 /* ReportListInteractorInput.h */,
+				631FFE461BEF930200749DB8 /* ReportListInteractorOutput.h */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		631FFE471BEF930200749DB8 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				631FFE481BEF930200749DB8 /* ReportListPresenter.h */,
+				631FFE491BEF930200749DB8 /* ReportListPresenter.m */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		631FFE4A1BEF930200749DB8 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				631FFE4B1BEF930200749DB8 /* ReportListRouter.h */,
+				631FFE4C1BEF930200749DB8 /* ReportListRouter.m */,
+				631FFE4D1BEF930200749DB8 /* ReportListRouterInput.h */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		631FFE4E1BEF930200749DB8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				631FFE4F1BEF930200749DB8 /* ReportListTableViewController.h */,
+				631FFE501BEF930200749DB8 /* ReportListTableViewController.m */,
+				631FFE511BEF930200749DB8 /* ReportListViewInput.h */,
+				631FFE521BEF930200749DB8 /* ReportListViewOutput.h */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		632887AC1BDFE0AB00701AF0 /* FutureEventTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1027,6 +1136,7 @@
 			children = (
 				636F8DDF1BCB90E500552B91 /* EventsUserStory */,
 				636F8DBD1BCB8FE800552B91 /* RamblerLocationUserStory */,
+				631FFE1B1BEF91C500749DB8 /* ReportsUserStory */,
 			);
 			path = UserStories;
 			sourceTree = "<group>";
@@ -3009,6 +3119,7 @@
 				638DBD5A1BEE2B1000B4B208 /* EventInfoTableViewCell.xib in Resources */,
 				632887B71BDFE16200701AF0 /* FutureEventTableViewCell.xib in Resources */,
 				636F8DFD1BCB914100552B91 /* EventsUserStory.storyboard in Resources */,
+				631FFE591BEF937D00749DB8 /* ReportsUserStory.storyboard in Resources */,
 				632887B21BDFE0AB00701AF0 /* PastEventTableViewCell.xib in Resources */,
 				9F8E5F701BC2552600DC10DB /* Conferences.API.plist in Resources */,
 			);
@@ -3153,6 +3264,7 @@
 				9F8E5FA61BC27CCE00DC10DB /* MappingConstants.m in Sources */,
 				9F8E5F801BC2592600DC10DB /* ResponseValidatorsAssembly.m in Sources */,
 				636F8DF71BCB90E500552B91 /* EventListModuleAssembly.m in Sources */,
+				631FFE551BEF930200749DB8 /* ReportListPresenter.m in Sources */,
 				632887B11BDFE0AB00701AF0 /* PastEventTableViewCell.m in Sources */,
 				638DBD481BEA385400B4B208 /* EventViewController.m in Sources */,
 				632887BC1BDFE21300701AF0 /* PastEventTableViewCellObject.m in Sources */,
@@ -3166,6 +3278,7 @@
 				9F0A84FA1BC1698B006F79FB /* OperationBuffer.m in Sources */,
 				63136FE21BDCDB2700994356 /* TabBarViewController.m in Sources */,
 				631FFE091BEF2B5800749DB8 /* PresenterCredentialsStorage.m in Sources */,
+				631FFE561BEF930200749DB8 /* ReportListRouter.m in Sources */,
 				636F8CB61BC97E7F00552B91 /* Lecture.m in Sources */,
 				63D628EB1BE4C741004AF98F /* PlainEvent.m in Sources */,
 				9F1830D71BC125C3000E21A5 /* ParseResponseValidator.m in Sources */,
@@ -3217,7 +3330,9 @@
 				638DBD591BEE2B1000B4B208 /* EventInfoTableViewCell.m in Sources */,
 				9F0A85021BC1698B006F79FB /* ResponseValidationOperation.m in Sources */,
 				63136FDC1BDCDB2700994356 /* CollectionViewDataDisplayManager.m in Sources */,
+				631FFE541BEF930200749DB8 /* ReportListInteractor.m in Sources */,
 				9F0A84FB1BC1698B006F79FB /* CompoundOperationBase.m in Sources */,
+				631FFE531BEF930200749DB8 /* ReportListModuleAssembly.m in Sources */,
 				63136FD71BDCDB2700994356 /* UIViewController+DefaultTransitionHandling.m in Sources */,
 				9F0A84F91BC1698B006F79FB /* AsyncOperation.m in Sources */,
 				638DBD641BEE2C0100B4B208 /* EventInfoTableViewCellObject.m in Sources */,
@@ -3250,6 +3365,7 @@
 				636A37C21BC1413A00B49C3D /* SystemInfrastructureAssembly.m in Sources */,
 				9F0A6C2E1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m in Sources */,
 				631FFE1A1BEF451400749DB8 /* UIView+CDResponder.m in Sources */,
+				631FFE571BEF930200749DB8 /* ReportListTableViewController.m in Sources */,
 				636F8CB91BC97E7F00552B91 /* Speaker+CoreDataProperties.m in Sources */,
 				9F1830ED1BC14293000E21A5 /* ManagedObjectMapper.m in Sources */,
 				9F1830E61BC13F9F000E21A5 /* ManagedObjectMappingProvider.m in Sources */,

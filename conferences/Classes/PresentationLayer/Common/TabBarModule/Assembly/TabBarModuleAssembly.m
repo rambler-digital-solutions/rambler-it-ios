@@ -9,11 +9,13 @@
 
 #import "RamblerLocationModuleAssembly.h"
 #import "EventListModuleAssembly.h"
+#import "ReportListModuleAssembly.h"
 
 @interface  TabBarModuleAssembly()
 
-@property (nonatomic,strong,readonly) EventListModuleAssembly *eventListModuleAssembly;
-@property (nonatomic,strong,readonly) RamblerLocationModuleAssembly *ramblerLocationModuleAssembly;
+@property (nonatomic, strong, readonly) EventListModuleAssembly *eventListModuleAssembly;
+@property (nonatomic, strong, readonly) RamblerLocationModuleAssembly *ramblerLocationModuleAssembly;
+@property (nonatomic, strong, readonly) ReportListModuleAssembly *reportListModuleAssembly;
 
 @end
 
@@ -68,6 +70,7 @@
     return @[
              [self.eventListModuleAssembly eventListTabBarButtonPrototype],
              [self.ramblerLocationModuleAssembly ramblerLocationTabBarButtonPrototype],
+             [self.reportListModuleAssembly reportListTabBarButtonPrototype]
              ];
 }
 
