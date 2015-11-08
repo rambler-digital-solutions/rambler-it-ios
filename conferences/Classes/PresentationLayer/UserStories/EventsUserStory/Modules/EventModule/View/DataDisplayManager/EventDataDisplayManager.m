@@ -59,7 +59,7 @@
     NSMutableArray *cellObjects = [NSMutableArray array];
     NITableViewModel *tableViewModel;
     
-    EventInfoTableViewCellObject *event = [EventInfoTableViewCellObject new];
+    EventInfoTableViewCellObject *event = [EventInfoTableViewCellObject objectWithElementID:0 event:self.event];
     LectionInfoTableViewCellObject *lection1 = [LectionInfoTableViewCellObject new];
     LectionInfoTableViewCellObject *lection2 = [LectionInfoTableViewCellObject new];
     

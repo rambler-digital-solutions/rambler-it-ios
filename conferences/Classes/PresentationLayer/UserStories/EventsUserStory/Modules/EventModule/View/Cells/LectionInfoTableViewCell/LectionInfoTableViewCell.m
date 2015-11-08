@@ -8,6 +8,9 @@
 
 #import "LectionInfoTableViewCell.h"
 #import "LectionInfoTableViewCellObject.h"
+#import "LectionInfoTableViewCellActionProtocol.h"
+#import "EventTableViewCellActionProtocol.h"
+#import "Proxying/Extensions/UIResponder+CDProxying/UIResponder+CDProxying.h"
 
 static CGFloat const LectionInfoTableViewCellHeight = 340.0f;
 
@@ -20,9 +23,16 @@ static CGFloat const LectionInfoTableViewCellHeight = 340.0f;
 @property (weak, nonatomic) IBOutlet UILabel *lectureTitle;
 @property (weak, nonatomic) IBOutlet UIButton *readMoreButton;
 
+@property (weak, nonatomic) id <LectionInfoTableViewCellActionProtocol> actionProxy;
+
 @end
 
 @implementation LectionInfoTableViewCell
+
+- (void)didMoveToSuperview {
+    [super didMoveToSuperview];
+    self.actionProxy = (id<LectionInfoTableViewCellActionProtocol>)[self cd_proxyForProtocol:@protocol(EventTableViewCellActionProtocol)];
+}
 
 - (BOOL)shouldUpdateCellWithObject:(LectionInfoTableViewCellObject *)object {
     return YES;
@@ -30,6 +40,12 @@ static CGFloat const LectionInfoTableViewCellHeight = 340.0f;
 
 + (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
     return LectionInfoTableViewCellHeight;
+}
+
+#pragma mark - IBActions
+
+- (IBAction)didTapReadMoreButton:(UIButton *)sender {
+    [self.actionProxy didTapReadMoreLectionDescriptionButton:sender];
 }
 
 @end

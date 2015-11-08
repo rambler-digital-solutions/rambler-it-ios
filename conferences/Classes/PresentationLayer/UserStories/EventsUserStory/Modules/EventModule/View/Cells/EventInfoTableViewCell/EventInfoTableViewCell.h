@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <NICellFactory.h>
+#import "CDResponderTableViewCell.h"
 
-@interface EventInfoTableViewCell : UITableViewCell <NICell>
+@interface EventInfoTableViewCell : CDResponderTableViewCell <NICell>
 
 @end

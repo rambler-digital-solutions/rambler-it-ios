@@ -10,10 +10,11 @@
 #import "EventViewOutput.h"
 #import "EventDataDisplayManager.h"
 #import "DataDisplayManager.h"
+#import "EventTableViewCellActionProtocol.h"
 
-static CGFloat kMinHedareHeight = 64.0;
+#import <CrutchKit/Proxying/Extensions/UIViewController+CDObserver/UIViewController+CDObserver.h>
 
-@interface EventViewController() 
+@interface EventViewController() <EventTableViewCellActionProtocol>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topSpaceToTableViewConstraint;
@@ -25,6 +26,7 @@ static CGFloat kMinHedareHeight = 64.0;
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+    [self cd_startObserveProtocol:@protocol(EventTableViewCellActionProtocol)];
 	[self.output setupView];
 }
 
@@ -35,6 +37,24 @@ static CGFloat kMinHedareHeight = 64.0;
     
     self.tableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.tableView];
     self.tableView.delegate = [self.dataDisplayManager delegateForTableView:self.tableView withBaseDelegate:nil];
+}
+
+#pragma mark - EventTableViewCellActionProtocol
+
+- (void)didTapSignUpButton:(UIButton *)button {
+    [self.output didTriggerSignUpButtonTappedEvent:button];
+}
+
+- (void)didTapSaveToCalendarButton:(UIButton *)button {
+    [self.output didTriggerSaveToCalendarButtonTappedEvent:button];
+}
+
+- (void)didTapReadMoreEventDescriptionButton:(UIButton *)button {
+    [self.output didTriggerReadMoreEventDescriptionButtonTappedEvent:button];
+}
+
+- (void)didTapReadMoreLectionDescriptionButton:(UIButton *)button {
+    [self.output didTriggerReadMoreLectionDescriptionButtonTappedEvent:button];
 }
 
 @end

@@ -28,7 +28,7 @@
         NSMutableArray *events = [NSMutableArray array];
         
         if ([data isKindOfClass:[NSArray class]]) {
-            events = [self mapEvents:data];
+            events = [self mapEventsManagedObjectsToPlainObjects:data];
         }
         [self.output didUpdateEventList:events];
     }];
@@ -40,14 +40,14 @@
     NSMutableArray *events = [NSMutableArray array];
     
     if ([managedObjectEvents isKindOfClass:[NSArray class]]) {
-        events = [self mapEvents:managedObjectEvents];
+        events = [self mapEventsManagedObjectsToPlainObjects:managedObjectEvents];
     }
     return events;
 }
 
 #pragma mark - Private methods
 
-- (NSMutableArray *)mapEvents:(NSArray *)manajedObjectEvents {
+- (NSMutableArray *)mapEventsManagedObjectsToPlainObjects:(NSArray *)manajedObjectEvents {
     NSMutableArray *plainEvents = [NSMutableArray array];
     for (Event *managedObjectEvent in manajedObjectEvents) {
         PlainEvent *plainEvent = [PlainEvent new];
@@ -56,10 +56,10 @@
         
         [plainEvents addObject:plainEvent];
     }
-    return [self sortEvents:plainEvents];
+    return [self sortEventsByDate:plainEvents];
 }
 
-- (NSMutableArray *)sortEvents:(NSMutableArray *)events {
+- (NSMutableArray *)sortEventsByDate:(NSMutableArray *)events {
     NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"startDate" ascending:NO];
     events = [[events sortedArrayUsingDescriptors:@[sortDescriptor]] mutableCopy];
     

@@ -12,9 +12,7 @@
 @interface PlainEvent : NSObject
 
 // пока окончательно не сформировалась модель, проперти оставил в таком виде
-// добавить в модель цвет фона ивента
-// добавить в модель eventTags
-// добавить в модель изображение ивента
+// добавить в модель subtitle;
 @property (nonatomic, strong, readwrite) NSString *eventDescription;
 @property (nonatomic, strong, readwrite) NSString *liveStreamLink;
 @property (nonatomic, strong, readwrite) NSString *name;
@@ -29,5 +27,6 @@
 @property (nonatomic, strong, readwrite) UIColor *backgroundColor;
 @property (nonatomic, strong, readwrite) UIImage *image;
 @property (nonatomic, strong, readwrite) NSURL *imageUrl;
+@property (nonatomic, strong, readwrite) NSString *eventSubtitle;
 
 @end

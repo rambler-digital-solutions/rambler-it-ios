@@ -9,16 +9,19 @@
 #import <Foundation/Foundation.h>
 #import "EventViewOutput.h"
 #import "EventInteractorOutput.h"
+#import "EventModuleInput.h"
 
 @protocol EventViewInput;
 @protocol EventInteractorInput;
 @protocol EventRouterInput;
+@class PresenterCredentialsStorage;
 
-@interface EventPresenter : NSObject<EventViewOutput,EventInteractorOutput>
+@interface EventPresenter : NSObject<EventModuleInput, EventViewOutput,EventInteractorOutput>
 
 @property (nonatomic, weak) id<EventViewInput> view;
 @property (nonatomic, strong) id<EventInteractorInput>  interactor;
 @property (nonatomic, strong) id<EventRouterInput> router;
+@property (nonatomic, strong) PresenterCredentialsStorage *presenterCredentialsStorage;
 
 @end
 

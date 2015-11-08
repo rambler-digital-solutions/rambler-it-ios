@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
-        <!--Новости-->
+        <!--Конференции-->
         <scene sceneID="pzU-az-f1u">
             <objects>
-                <viewController title="Новости" id="7eD-hN-QLN" customClass="TabBarViewController" sceneMemberID="viewController">
+                <viewController id="7eD-hN-QLN" customClass="TabBarViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8oZ-z0-NbI"/>
                         <viewControllerLayoutGuide type="bottom" id="FIO-gB-glH"/>

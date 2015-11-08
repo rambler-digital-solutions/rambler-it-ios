@@ -8,6 +8,15 @@
 
 #import <Nimbus/NimbusModels.h>
 
+@class PlainEvent;
+
 @interface EventInfoTableViewCellObject : NIFormElement <NICellObject>
+
+@property (strong, nonatomic, readonly) NSString *date;
+@property (strong, nonatomic, readonly) NSString *eventTitle;
+@property (strong, nonatomic, readonly) NSString *eventSubTitle;
+@property (strong, nonatomic, readonly) NSString *eventDescription;
+
++ (instancetype)objectWithElementID:(NSInteger)elementID event:(PlainEvent *)event;
 
 @end

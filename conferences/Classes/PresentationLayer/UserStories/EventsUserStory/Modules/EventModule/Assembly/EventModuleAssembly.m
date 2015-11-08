@@ -12,6 +12,7 @@
 #import "EventPresenter.h"
 #import "EventRouter.h"
 #import "EventDataDisplayManager.h"
+#import "PresenterCredentialsStorage.h"
 
 @implementation  EventModuleAssembly
 
@@ -42,6 +43,8 @@
                                                       with:[self interactorEvent]];
                                 [definition injectProperty:@selector(router)
                                                       with:[self routerEvent]];
+                                [definition injectProperty:@selector(presenterCredentialsStorage)
+                                                      with:[self presenterCredentialsStorage]];
             }];
 }
 
@@ -54,6 +57,10 @@
 
 - (EventDataDisplayManager *)dataDisplayManagerEvent {
     return [TyphoonDefinition withClass:[EventDataDisplayManager class]];
+}
+
+- (PresenterCredentialsStorage *)presenterCredentialsStorage {
+    return [TyphoonDefinition withClass:[PresenterCredentialsStorage class]];
 }
 
 @end
