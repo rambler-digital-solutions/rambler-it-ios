@@ -35,7 +35,15 @@ platform :ios do
     
     gym(scheme: 'Conferences',
      configuration: 'Nightly')
+
     pilot(skip_submission: 'true')
+
+    clean_build_artifacts
+    
+    build_number = get_build_number
+    commit_version_bump
+    add_git_tag tag: "nightly/#{build_number}"
+    push_to_git_remote
   end
 
   after_all do |lane|
