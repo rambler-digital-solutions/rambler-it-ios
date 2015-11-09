@@ -19,6 +19,7 @@
 fastlane_version "1.37.0"
 
 default_platform :ios
+NIGHTLY_TAG_FORMAT="nightly/%d"
 
 platform :ios do
   before_all do
@@ -30,19 +31,30 @@ platform :ios do
     sigh
     
     ENV["PROFILE_UDID"] = lane_context[SharedValues::SIGH_UDID]
-    
+
+    build_number = get_build_number
+    prev_tag = NIGHTLY_TAG_FORMAT % build_number
+
     increment_build_number
     
     gym(scheme: 'Conferences',
      configuration: 'Nightly')
 
-    pilot(skip_submission: 'true')
+    changelog = sh("git shortlog #{prev_tag}..HEAD")
+
+    return if changelog.empty?
+
+    pilot(skip_submission: 'true',
+          changelog: changelog
+    )
 
     clean_build_artifacts
     
     build_number = get_build_number
     commit_version_bump
-    add_git_tag tag: "nightly/#{build_number}"
+
+    current_tag = NIGHTLY_TAG_FORMAT % build_number
+    add_git_tag tag: current_tag
     push_to_git_remote
   end
 
