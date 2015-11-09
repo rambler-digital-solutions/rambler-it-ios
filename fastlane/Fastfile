@@ -1,0 +1,52 @@
+# Customise this file, documentation can be found here:
+# https://github.com/KrauseFx/fastlane/tree/master/docs
+# All available actions: https://github.com/KrauseFx/fastlane/blob/master/docs/Actions.md
+# can also be listed using the `fastlane actions` command
+
+# Change the syntax highlighting to Ruby
+# All lines starting with a # are ignored when running `fastlane`
+
+# By default, fastlane will send which actions are used
+# No personal data is shared, more information on https://github.com/fastlane/enhancer
+# Uncomment the following line to opt out
+# opt_out_usage
+
+# If you want to automatically update fastlane if a new version is available:
+# update_fastlane
+
+# This is the minimum version number required.
+# Update this, if you use features of a newer version
+fastlane_version "1.37.0"
+
+default_platform :ios
+
+platform :ios do
+  before_all do
+  end
+
+  desc "Submit a new Beta Build to Apple TestFlight"
+  desc "This will also make sure the profile is up to date"
+  lane :nightly do
+    sigh
+    
+    ENV["PROFILE_UDID"] = lane_context[SharedValues::SIGH_UDID]
+    
+    increment_build_number
+    
+    gym(scheme: 'Conferences',
+     configuration: 'Nightly')
+    pilot(skip_submission: 'true')
+  end
+
+  after_all do |lane|
+  end
+
+  error do |lane, exception|
+  end
+end
+
+
+
+
+# More information about multiple platforms in fastlane: https://github.com/KrauseFx/fastlane/blob/master/docs/Platforms.md
+# All available actions: https://github.com/KrauseFx/fastlane/blob/master/docs/Actions.md
