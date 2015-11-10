@@ -23,26 +23,35 @@ NIGHTLY_TAG_FORMAT="nightly/%d"
 
 platform :ios do
   before_all do
+    ensure_git_status_clean
   end
 
-  desc "Submit a new Beta Build to Apple TestFlight"
-  desc "This will also make sure the profile is up to date"
   lane :nightly do
+
+    ensure_git_branch(
+        branch: 'develop'
+    )
+
+    begin
+      build_number = get_build_number
+      prev_tag = NIGHTLY_TAG_FORMAT % build_number
+
+      changelog = sh("git shortlog #{prev_tag}..HEAD")
+
+      # We don't build without new commits.
+      exit(0) if changelog.empty?
+    rescue
+      changelog = 'Initial version'
+    end
+
     sigh
     
     ENV["PROFILE_UDID"] = lane_context[SharedValues::SIGH_UDID]
 
-    build_number = get_build_number
-    prev_tag = NIGHTLY_TAG_FORMAT % build_number
-
     increment_build_number
-    
+
     gym(scheme: 'Conferences',
      configuration: 'Nightly')
-
-    changelog = sh("git shortlog #{prev_tag}..HEAD")
-
-    return if changelog.empty?
 
     pilot(skip_submission: 'true',
           changelog: changelog
@@ -59,6 +68,7 @@ platform :ios do
   end
 
   after_all do |lane|
+    reset_git_repo
   end
 
   error do |lane, exception|
