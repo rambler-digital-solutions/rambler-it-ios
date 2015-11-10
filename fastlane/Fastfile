@@ -23,14 +23,14 @@ NIGHTLY_TAG_FORMAT="nightly/%d"
 
 platform :ios do
   before_all do
-    ensure_git_status_clean
+    # ensure_git_status_clean
   end
 
   lane :nightly do
 
-    ensure_git_branch(
-        branch: 'develop'
-    )
+    # ensure_git_branch(
+    #     branch: 'develop'
+    # )
 
     begin
       build_number = get_build_number
@@ -53,20 +53,25 @@ platform :ios do
     gym(scheme: 'Conferences',
      configuration: 'Nightly')
 
-    pilot(skip_submission: 'true')
+    build_number = get_build_number
+    version_number = get_version_number
+
+    pilot(build_full_version: "#{version_number}(#{build_number})",
+          changelog: changelog)
 
     clean_build_artifacts
-    
-    build_number = get_build_number
+
     commit_version_bump
 
     current_tag = NIGHTLY_TAG_FORMAT % build_number
     add_git_tag tag: current_tag
     push_to_git_remote
+
+
   end
 
   after_all do |lane|
-    reset_git_repo
+    # reset_git_repo
   end
 
   error do |lane, exception|
