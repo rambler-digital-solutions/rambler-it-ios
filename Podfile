@@ -15,4 +15,5 @@ pod 'CocoaLumberjack', '~> 2.0'
 target 'ConferencesTests', :exclusive => true do
     pod 'OCMock', '~> 3.1'
     pod 'MMBarricade', '~> 1.0.1'
+    pod 'RamblerMcFlurry/Testing', '0.0.2'
 end

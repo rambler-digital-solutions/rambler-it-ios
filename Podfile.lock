@@ -74,6 +74,9 @@ PODS:
   - OCMock (3.1.5)
   - Parse (1.8.5):
     - Bolts/Tasks (>= 1.2.2)
+  - RamblerMcFlurry/Core (0.0.2)
+  - RamblerMcFlurry/Testing (0.0.2):
+    - RamblerMcFlurry/Core
   - Typhoon (3.3.2):
     - Typhoon/no-arc (= 3.3.2)
   - Typhoon/no-arc (3.3.2)
@@ -87,6 +90,7 @@ DEPENDENCIES:
   - MMBarricade (~> 1.0.1)
   - OCMock (~> 3.1)
   - Parse (~> 1.8)
+  - RamblerMcFlurry/Testing (= 0.0.2)
   - Typhoon (~> 3.3)
 
 SPEC CHECKSUMS:
@@ -99,6 +103,7 @@ SPEC CHECKSUMS:
   MMBarricade: 61e17f747baa1a33cd7f8a9c75d520ca958508dd
   OCMock: 4c2925291f80407c3738dd1db14d21d0cc278864
   Parse: 17ad8e0677ed682f7f00503860fcda0f4eb74168
+  RamblerMcFlurry: b7cd02526648000ef0b87c17d632bb53bf886206
   Typhoon: d0f4b40120b7011ac41748c3ca141cb12aac3737
 
-COCOAPODS: 0.38.2
+COCOAPODS: 0.39.0

@@ -2,15 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>TyphoonInitialAssemblies</key>
-	<array>
-		<string>ResponseMappersAssembly</string>
-		<string>ResponseValidatorsAssembly</string>
-		<string>ResponseDeserializersAssembly</string>
-		<string>NetworkClientsAssembly</string>
-		<string>RequestConfiguratorsAssembly</string>
-		<string>RequestSignersAssembly</string>
-	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -24,13 +15,20 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.0.2</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>17</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>TyphoonAutoInjectionEnabled</key>
+	<true/>
+	<key>TyphoonInitialAssemblies</key>
+	<array>
+		<string>ApplicationAssembly</string>
+		<string>SystemInfrastructureAssembly</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -39,13 +37,6 @@
 	<array>
 		<string>armv7</string>
 	</array>
-	<key>TyphoonInitialAssemblies</key>
-	<array>
-		<string>ApplicationAssembly</string>
-		<string>SystemInfrastructureAssembly</string>
-	</array>
-	<key>TyphoonAutoInjectionEnabled</key>
-	<true/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
