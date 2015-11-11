@@ -13,8 +13,6 @@
 #import "EventPrototypeMapper.h"
 #import "PlainEvent.h"
 
-#import <SDWebImage/SDWebImageDownloader.h>
-
 #import "EXTScope.h"
 
 @implementation EventListInteractor

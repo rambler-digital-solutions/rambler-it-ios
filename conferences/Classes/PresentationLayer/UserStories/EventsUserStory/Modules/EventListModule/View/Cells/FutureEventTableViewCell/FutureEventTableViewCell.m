@@ -29,17 +29,10 @@ static NSString *const kPlaceholderImageName = @"placeholder";
     self.month.text = object.month;
     self.imageView.image = object.image;
     [self.cellView setBackgroundColor:object.backgroundColor];
-    self.imageView.image = [UIImage imageNamed:kPlaceholderImageName];
-//    if (object.image) {
-//        self.imageView.image = object.image;
-//    } else {
-//        @weakify(self);
-//        [self obtainImageWithUrl:object.imageUrl completionBlock:^(UIImage *image) {
-//            @strongify(self);
-//            self.imageView.image = image;
-//        }];
-//    }
     
+    [self.imageView sd_setImageWithURL:object.imageUrl
+                      placeholderImage:[UIImage imageNamed:kPlaceholderImageName]];
+
     return YES;
 }
 
@@ -47,22 +40,5 @@ static NSString *const kPlaceholderImageName = @"placeholder";
     return tableView.frame.size.height - 64;
 }
 
-#pragma mark - Private methods
-
-- (void)obtainImageWithUrl:(NSURL *)url completionBlock:(void(^)(UIImage *image))completionBlock {
-    SDWebImageDownloader *downloader = [SDWebImageDownloader sharedDownloader];
-    [downloader downloadImageWithURL:url
-                             options:0
-                            progress:^(NSInteger receivedSize, NSInteger expectedSize) {
-                                NSLog(@"receivedSize: %ld expectedSize: %ld", (long)receivedSize, (long)expectedSize);
-                            }
-                           completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
-                               if (image && finished) {
-                                   dispatch_async(dispatch_get_main_queue(), ^{
-                                       completionBlock(image);
-                                   });
-                               }
-                           }];
-}
 
 @end

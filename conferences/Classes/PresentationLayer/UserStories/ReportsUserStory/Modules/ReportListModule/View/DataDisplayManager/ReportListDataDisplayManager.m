@@ -1,26 +1,18 @@
 //
-//  EventListDataDisplayManager.m
+//  ReportListDataDisplayManager.m
 //  Conferences
 //
-//  Created by Karpushin Artem on 25/10/15.
+//  Created by Karpushin Artem on 08/11/15.
 //  Copyright © 2015 Rambler. All rights reserved.
 //
 
-#import "EventListDataDisplayManager.h"
+#import "ReportListDataDisplayManager.h"
 
 #import <Nimbus/NimbusModels.h>
 
-#import "PastEventTableViewCellObject.h"
-#import "FutureEventTableViewCellObject.h"
+#import "ReportListTableViewCellObject.h"
 
-#import "PlainEvent.h"
-
-typedef NS_ENUM(NSUInteger, CellObjectID){
-    
-    FutureEventTableViewCellObjectID = 0
-};
-
-@interface EventListDataDisplayManager () <UITableViewDelegate>
+@interface ReportListDataDisplayManager () <UITableViewDelegate>
 
 @property (strong, nonatomic) NIMutableTableViewModel *tableViewModel;
 @property (strong, nonatomic) NITableViewActions *tableViewActions;
@@ -28,7 +20,7 @@ typedef NS_ENUM(NSUInteger, CellObjectID){
 
 @end
 
-@implementation EventListDataDisplayManager
+@implementation ReportListDataDisplayManager
 
 - (void)updateTableViewModelWithEvents:(NSArray *)events {
     self.events = events;
@@ -41,7 +33,6 @@ typedef NS_ENUM(NSUInteger, CellObjectID){
 - (id<UITableViewDataSource>)dataSourceForTableView:(UITableView *)tableView {
     if (!self.tableViewModel) {
         self.tableViewModel = [self updateTableViewModel];
-        //self.tableViewModel = [self initialTableViewModel];
     }
     return self.tableViewModel;
 }
@@ -59,11 +50,6 @@ typedef NS_ENUM(NSUInteger, CellObjectID){
     return [NICellFactory tableView:tableView heightForRowAtIndexPath:indexPath model:self.tableViewModel];
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    PlainEvent *event = [self.events objectAtIndex:indexPath.row];
-    [self.delegate didTapCellWithEvent:event];
-}
-
 #pragma mark - Private methods
 
 - (void)setupActionBlocks {
@@ -73,23 +59,19 @@ typedef NS_ENUM(NSUInteger, CellObjectID){
 - (NIMutableTableViewModel *)updateTableViewModel {
     NSMutableArray *cellObjects = [NSMutableArray array];
     NIMutableTableViewModel *tableViewModel;
+    
     if (self.events.count > 0) {
-        PlainEvent *futureEvent = [self.events firstObject];
         
-        FutureEventTableViewCellObject *futureEventTableViewCellObject = [FutureEventTableViewCellObject objectWithElementID:FutureEventTableViewCellObjectID event:futureEvent];
-        [cellObjects addObject:futureEventTableViewCellObject];
-        
-        for (int i = 1; i < self.events.count; i++) {
-            PastEventTableViewCellObject *cellObject = [PastEventTableViewCellObject objectWithElementID:i event:self.events[i]];
+        for (int i = 0; i < self.events.count; i++) {
+            ReportListTableViewCellObject *cellObject = [ReportListTableViewCellObject objectWithElementID:i event:self.events[i]];
             [cellObjects addObject:cellObject];
         }
-        
-        tableViewModel = [[NIMutableTableViewModel alloc] initWithSectionedArray:cellObjects
-                                                                      delegate:(id)[NICellFactory class]];
-    } else {
-        // ???
     }
+    
+    tableViewModel = [[NIMutableTableViewModel alloc] initWithSectionedArray:cellObjects
+                                                                        delegate:(id)[NICellFactory class]];
     return tableViewModel;
 }
+
 
 @end

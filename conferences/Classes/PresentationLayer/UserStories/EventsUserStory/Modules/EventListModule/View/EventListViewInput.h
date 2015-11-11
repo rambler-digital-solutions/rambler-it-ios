@@ -14,7 +14,6 @@
 
 - (void)setupViewWithEventList:(NSArray *)events;
 - (void)updateViewWithEventList:(NSArray *)events;
-- (void)updateCellWithEvent:(PlainEvent *)event;
 
 @end
 

@@ -55,7 +55,6 @@ static NSString * const kRamblerLocationStoryboardName = @"RamblerLocationUserSt
 
 #pragma mark - TabBarButtonPrototypeProtocol
 
-// добавить картинки
 - (id<TabBarButtonPrototypeProtocol>)ramblerLocationTabBarButtonPrototype {
     return [TyphoonDefinition withClass:[TabBarButtonPrototype class]
                           configuration:^(TyphoonDefinition *definition) {

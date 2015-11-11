@@ -8,8 +8,10 @@
 
 #import "ReportListTableViewController.h"
 #import "ReportListViewOutput.h"
+#import "DataDisplayManager.h"
+#import "ReportListDataDisplayManager.h"
 
-@interface ReportListTableViewController()
+@interface ReportListTableViewController() <ReportListDataDisplayManagerDelegate>
 
 @end
 
@@ -21,5 +23,27 @@
 }
 
 #pragma mark - ReportListViewInput
+
+- (void)setupViewWithEventList:(NSArray *)events {
+    [self.tableView setTableFooterView:[UIView new]];
+    
+    [self.dataDisplayManager updateTableViewModelWithEvents:events];
+    self.dataDisplayManager.delegate = self;
+    
+    self.tableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.tableView];
+    self.tableView.delegate = [self.dataDisplayManager delegateForTableView:self.tableView withBaseDelegate:nil];
+}
+
+- (void)updateViewWithEventList:(NSArray *)events {
+    [self.dataDisplayManager updateTableViewModelWithEvents:events];
+}
+
+#pragma mark - ReportListDataDisplayManagerDelegate methods
+
+- (void)didUpdateTableViewModel {
+    self.tableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.tableView];
+    [self.tableView reloadData];
+}
+
 
 @end

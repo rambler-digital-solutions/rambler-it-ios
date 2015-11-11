@@ -8,6 +8,10 @@
 
 #import <Typhoon/Typhoon.h>
 
+@protocol ServiceComponents;
+
 @interface ModuleAssemblyBase : TyphoonAssembly
+
+@property (strong, nonatomic, readonly) TyphoonAssembly <ServiceComponents> *serviceComponents;
 
 @end

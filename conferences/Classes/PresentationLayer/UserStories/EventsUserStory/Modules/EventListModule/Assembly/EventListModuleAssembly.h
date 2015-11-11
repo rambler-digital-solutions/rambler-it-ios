@@ -9,11 +9,8 @@
 #import "ModuleAssemblyBase.h"
 
 @protocol TabBarButtonPrototypeProtocol;
-@protocol ServiceComponents;
 
 @interface EventListModuleAssembly : ModuleAssemblyBase
-
-@property (strong, nonatomic, readonly) TyphoonAssembly <ServiceComponents> *serviceComponents;
 
 - (id<TabBarButtonPrototypeProtocol>)eventListTabBarButtonPrototype;
 

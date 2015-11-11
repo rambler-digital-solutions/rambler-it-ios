@@ -10,5 +10,7 @@
 
 @protocol ReportListInteractorOutput <NSObject>
 
+- (void)didUpdateEventList:(NSArray *)events;
+
 @end
 

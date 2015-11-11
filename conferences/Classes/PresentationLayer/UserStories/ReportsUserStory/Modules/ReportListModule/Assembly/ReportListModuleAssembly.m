@@ -11,6 +11,8 @@
 #import "ReportListInteractor.h"
 #import "ReportListPresenter.h"
 #import "ReportListRouter.h"
+#import "ReportListDataDisplayManager.h"
+#import "ServiceComponents.h"
 
 #import "TabBarButtonPrototype.h"
 
@@ -23,39 +25,48 @@ static NSString * const kReportsUserStoryName = @"ReportsUserStory";
                             configuration:^(TyphoonDefinition *definition) {
                                 [definition injectProperty:@selector(output)
                                                       with:[self presenterReportList]];
+                                [definition injectProperty:@selector(dataDisplayManager)
+                                                      with:[self dataDisplayManagerReportList]];
              }];
 }
 
 - (ReportListInteractor *)interactorReportList {
     return [TyphoonDefinition withClass:[ReportListInteractor class]
-                          configuration:^(TyphoonDefinition *definition) {
-                            [definition injectProperty:@selector(output) 
-                                                  with:[self presenterReportList]];
+                            configuration:^(TyphoonDefinition *definition) {
+                                [definition injectProperty:@selector(output)
+                                                      with:[self presenterReportList]];
+                                [definition injectProperty:@selector(eventService)
+                                                      with:[self.serviceComponents eventService]];
+                                [definition injectProperty:@selector(eventPrototypeMapper)
+                                                      with:[self.serviceComponents eventPrototypeMapper]];
              }];
 }
 
 - (ReportListPresenter *)presenterReportList {
     return [TyphoonDefinition withClass:[ReportListPresenter class]
-                          configuration:^(TyphoonDefinition *definition) {
-                            [definition injectProperty:@selector(view) 
-                                                  with:[self viewReportList]];                                            
-                            [definition injectProperty:@selector(interactor) 
-                                                  with:[self interactorReportList]];
-                            [definition injectProperty:@selector(router) 
-                                                  with:[self routerReportList]];
+                            configuration:^(TyphoonDefinition *definition) {
+                                [definition injectProperty:@selector(view)
+                                                      with:[self viewReportList]];
+                                [definition injectProperty:@selector(interactor)
+                                                      with:[self interactorReportList]];
+                                [definition injectProperty:@selector(router)
+                                                      with:[self routerReportList]];
             }];
 }
 
 - (ReportListRouter *)routerReportList {
     return [TyphoonDefinition withClass:[ReportListRouter class]
-                          configuration:^(TyphoonDefinition *definition) {
+                            configuration:^(TyphoonDefinition *definition) {
 
            }];
 }
 
+- (ReportListDataDisplayManager *)dataDisplayManagerReportList {
+    return [TyphoonDefinition withClass:[ReportListDataDisplayManager class]];
+}
+
 #pragma mark - TabBarButtonPrototypeProtocol
 
-// добавить картинки
 - (id<TabBarButtonPrototypeProtocol>)reportListTabBarButtonPrototype {
     return [TyphoonDefinition withClass:[TabBarButtonPrototype class]
                           configuration:^(TyphoonDefinition *definition) {

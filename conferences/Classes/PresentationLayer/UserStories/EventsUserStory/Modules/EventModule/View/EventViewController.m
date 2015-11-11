@@ -33,10 +33,15 @@
 #pragma mark - EventViewInput
 
 - (void)configureViewWithEvent:(PlainEvent *)event {
-    [((EventDataDisplayManager *) self.dataDisplayManager) configureDataDisplayManagerWithEvent:event];
+    [self.dataDisplayManager configureDataDisplayManagerWithEvent:event];
     
     self.tableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.tableView];
     self.tableView.delegate = [self.dataDisplayManager delegateForTableView:self.tableView withBaseDelegate:nil];
+    
+    // обновление высоты ячейки
+//    [self.view updateConstraintsIfNeeded];
+//    [self.tableView beginUpdates];
+//    [self.tableView endUpdates];
 }
 
 #pragma mark - EventTableViewCellActionProtocol

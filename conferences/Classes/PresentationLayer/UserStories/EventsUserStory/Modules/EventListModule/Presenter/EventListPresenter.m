@@ -21,6 +21,10 @@
     [self.view setupViewWithEventList:events];
 }
 
+- (void)didTriggerTapCellWithEvent:(PlainEvent *)event {
+    
+}
+
 #pragma mark - EventListInteractorOutput
 
 - (void)didUpdateEventList:(NSArray *)events {

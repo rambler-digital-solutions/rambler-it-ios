@@ -11,22 +11,20 @@
 #import "ReportListInteractorInput.h"
 #import "ReportListRouterInput.h"
 
-@interface ReportListPresenter()
-@end
-
-/**
- *	Presenter модуля, который 1
- *
- *  
- */
 @implementation ReportListPresenter
 
 #pragma mark - ReportListViewOutput
 
 - (void)setupView {
-
+    NSArray *events = [self.interactor obtainEventList];
+    [self.interactor updateEventList];
+    [self.view setupViewWithEventList:events];
 }
 
-#pragma mark - ReportListInteractorOutput
+#pragma mark - EventListInteractorOutput
+
+- (void)didUpdateEventList:(NSArray *)events {
+    [self.view updateViewWithEventList:events];
+}
 
 @end

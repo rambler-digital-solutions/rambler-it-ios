@@ -10,5 +10,8 @@
 
 @protocol ReportListViewInput <NSObject>
 
+- (void)setupViewWithEventList:(NSArray *)events;
+- (void)updateViewWithEventList:(NSArray *)events;
+
 @end
 

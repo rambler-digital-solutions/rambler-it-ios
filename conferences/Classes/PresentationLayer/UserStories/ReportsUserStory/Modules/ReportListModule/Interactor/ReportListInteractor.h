@@ -10,14 +10,14 @@
 #import "ReportListInteractorInput.h"
 
 @protocol ReportListInteractorOutput;
+@protocol EventService;
+@protocol PrototypeMapper;
 
-/**
- *  Interactor модуля, который 1
- *	
- */
 @interface ReportListInteractor : NSObject<ReportListInteractorInput>
 
 @property (nonatomic, weak) id<ReportListInteractorOutput> output;
+@property (strong, nonatomic) id <EventService> eventService;
+@property (strong, nonatomic) id <PrototypeMapper> eventPrototypeMapper;
 
 @end
 

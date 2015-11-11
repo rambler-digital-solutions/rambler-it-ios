@@ -12,7 +12,7 @@
 @protocol EventListViewOutput <NSObject>
 
 - (void)setupView;
-- (void)didTriggerObtainImageForEvent:(PlainEvent *)event;
+- (void)didTriggerTapCellWithEvent:(PlainEvent *)event;
 
 @end
 

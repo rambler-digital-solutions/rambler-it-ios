@@ -16,6 +16,7 @@
 @protocol EventLIstDataDisplayManagerDelegate
 
 - (void)didUpdateTableViewModel;
+- (void)didTapCellWithEvent:(PlainEvent *)event;
 
 @end
 
@@ -25,7 +26,6 @@
 
 - (void)configureDataDisplayManagerWithEvents:(NSArray *)events;
 - (void)updateTableViewModelWithEvents:(NSArray *)events;
-- (void)updateCellWithEvent:(PlainEvent *)event;
 
 @end
 

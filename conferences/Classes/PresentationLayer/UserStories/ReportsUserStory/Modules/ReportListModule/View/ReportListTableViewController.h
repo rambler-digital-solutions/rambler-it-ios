@@ -10,10 +10,12 @@
 #import "ReportListViewInput.h"
 
 @protocol ReportListViewOutput;
+@class  ReportListDataDisplayManager;
 
 @interface ReportListTableViewController : UITableViewController <ReportListViewInput>
 
 @property (nonatomic, strong) id<ReportListViewOutput> output;
+@property (strong, nonatomic) ReportListDataDisplayManager *dataDisplayManager;
 
 @end
 
