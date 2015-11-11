@@ -55,7 +55,20 @@
         
         [plainEvents addObject:plainEvent];
     }
-    return [self sortEventsByDate:plainEvents];
+    return [self obtainPastEvents:plainEvents];
+}
+
+- (NSMutableArray *)obtainPastEvents:(NSMutableArray *)events {
+    NSMutableArray *pastEvents = [NSMutableArray array];
+    
+    for (PlainEvent *event in events) {
+        NSDate *currentDate = [NSDate date];
+        if ([event.endDate timeIntervalSinceReferenceDate] < [currentDate timeIntervalSinceReferenceDate]) {
+            [pastEvents addObject:event];
+        }
+    }
+    
+    return [self sortEventsByDate:pastEvents];
 }
 
 - (NSMutableArray *)sortEventsByDate:(NSMutableArray *)events {
@@ -64,6 +77,8 @@
     
     return events;
 }
+
+
 
 
 @end
