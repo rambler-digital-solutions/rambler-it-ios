@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -15,42 +15,42 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8r-4t-xgO">
-                        <rect key="frame" x="8" y="8" width="41" height="30"/>
+                        <rect key="frame" x="16" y="8" width="41" height="30"/>
                         <animations/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="30" id="p6X-Zm-iWH"/>
-                            <constraint firstAttribute="width" constant="41" id="yha-5E-8Hm"/>
+                            <constraint firstAttribute="height" constant="30" id="fwj-XF-0UP"/>
+                            <constraint firstAttribute="width" constant="41" id="u4M-mm-Uit"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ноября" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yd4-0T-iAb">
-                        <rect key="frame" x="8" y="38" width="41" height="17"/>
-                        <animations/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="41" id="6hu-9Q-wNW"/>
-                            <constraint firstAttribute="height" constant="17" id="ShF-fo-lh5"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS, Viper, XCode 7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iNA-RT-HT8">
-                        <rect key="frame" x="57" y="41" width="255" height="17"/>
+                        <rect key="frame" x="65" y="15" width="247" height="17"/>
                         <animations/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="17" id="rf1-9a-fqE"/>
+                            <constraint firstAttribute="height" constant="17" id="kqZ-EM-HKb"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rambler.iOS #4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0pV-Zi-5j0">
-                        <rect key="frame" x="57" y="12" width="255" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ноября" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yd4-0T-iAb">
+                        <rect key="frame" x="8" y="38" width="56" height="17"/>
                         <animations/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="21" id="1f2-Bd-drD"/>
+                            <constraint firstAttribute="height" constant="17" id="cgv-xn-8QM"/>
+                            <constraint firstAttribute="width" constant="56" id="xo1-n3-VhA"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rambler.iOS #4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0pV-Zi-5j0">
+                        <rect key="frame" x="65" y="36" width="247" height="21"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="lQ0-yf-Mcy"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -59,16 +59,16 @@
                 </subviews>
                 <animations/>
                 <constraints>
-                    <constraint firstItem="0pV-Zi-5j0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="310-Sc-Z4m"/>
-                    <constraint firstItem="x8r-4t-xgO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="9Qi-jU-v5I"/>
-                    <constraint firstItem="iNA-RT-HT8" firstAttribute="leading" secondItem="yd4-0T-iAb" secondAttribute="trailing" constant="8" id="9lP-O8-lMF"/>
-                    <constraint firstItem="x8r-4t-xgO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="DuE-Jd-QTo"/>
-                    <constraint firstAttribute="trailing" secondItem="iNA-RT-HT8" secondAttribute="trailing" constant="8" id="Iok-cC-bdC"/>
-                    <constraint firstItem="yd4-0T-iAb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="N2z-5R-5DB"/>
-                    <constraint firstItem="0pV-Zi-5j0" firstAttribute="leading" secondItem="x8r-4t-xgO" secondAttribute="trailing" constant="8" id="X7D-Hz-ftp"/>
-                    <constraint firstAttribute="trailing" secondItem="0pV-Zi-5j0" secondAttribute="trailing" constant="8" id="gWS-lc-4QY"/>
-                    <constraint firstItem="iNA-RT-HT8" firstAttribute="top" secondItem="0pV-Zi-5j0" secondAttribute="bottom" constant="8" id="tzO-UE-nhs"/>
-                    <constraint firstItem="yd4-0T-iAb" firstAttribute="top" secondItem="x8r-4t-xgO" secondAttribute="bottom" id="zM1-8D-4iX"/>
+                    <constraint firstItem="x8r-4t-xgO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="1MU-lh-yfX"/>
+                    <constraint firstItem="0pV-Zi-5j0" firstAttribute="top" secondItem="iNA-RT-HT8" secondAttribute="bottom" constant="4" id="7DL-ld-UO5"/>
+                    <constraint firstAttribute="trailing" secondItem="0pV-Zi-5j0" secondAttribute="trailing" constant="8" id="7wI-cj-ULQ"/>
+                    <constraint firstItem="yd4-0T-iAb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="BTH-GC-0wW"/>
+                    <constraint firstItem="yd4-0T-iAb" firstAttribute="top" secondItem="x8r-4t-xgO" secondAttribute="bottom" id="PRz-TX-uhb"/>
+                    <constraint firstItem="x8r-4t-xgO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="TdL-Eq-KM6"/>
+                    <constraint firstItem="0pV-Zi-5j0" firstAttribute="leading" secondItem="yd4-0T-iAb" secondAttribute="trailing" constant="1" id="XEK-XW-Zyg"/>
+                    <constraint firstItem="iNA-RT-HT8" firstAttribute="leading" secondItem="x8r-4t-xgO" secondAttribute="trailing" constant="8" id="nJu-qs-lg2"/>
+                    <constraint firstAttribute="trailing" secondItem="iNA-RT-HT8" secondAttribute="trailing" constant="8" id="teM-aW-bOm"/>
+                    <constraint firstItem="iNA-RT-HT8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="wfE-9u-trn"/>
                 </constraints>
             </tableViewCellContentView>
             <animations/>
