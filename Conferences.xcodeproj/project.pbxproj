@@ -8,19 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		5A5668508B92FC833070BA13 /* libPods-ConferencesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E72B1E234365770B87BDC6D /* libPods-ConferencesTests.a */; };
-		636A37B31BC1356400B49C3D /* ApplicationConfiguratorImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37B21BC1356400B49C3D /* ApplicationConfiguratorImplementation.m */; settings = {ASSET_TAGS = (); }; };
-		636A37BB1BC13B9800B49C3D /* ApplicationConfiguratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37BA1BC13B9800B49C3D /* ApplicationConfiguratorTests.m */; settings = {ASSET_TAGS = (); }; };
-		636A37C21BC1413A00B49C3D /* SystemInfrastructureAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37C11BC1413A00B49C3D /* SystemInfrastructureAssembly.m */; settings = {ASSET_TAGS = (); }; };
-		636A37C51BC142BB00B49C3D /* ApplicationAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37C41BC142BB00B49C3D /* ApplicationAssembly.m */; settings = {ASSET_TAGS = (); }; };
-		636A37CF1BC1500700B49C3D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 636A37CE1BC1500700B49C3D /* Info.plist */; settings = {ASSET_TAGS = (); }; };
-		636B64041BBDD19A0053E38F /* LectureServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64031BBDD19A0053E38F /* LectureServiceImplementation.m */; settings = {ASSET_TAGS = (); }; };
-		636B64071BBDD2A40053E38F /* LectureMaterialsServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64061BBDD2A40053E38F /* LectureMaterialsServiceImplementation.m */; settings = {ASSET_TAGS = (); }; };
-		636B640A1BBDD3FA0053E38F /* RegistrationQuestionServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64091BBDD3FA0053E38F /* RegistrationQuestionServiceImplementation.m */; settings = {ASSET_TAGS = (); }; };
-		636B640D1BBDD5000053E38F /* SocialNetworkAccountServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B640C1BBDD5000053E38F /* SocialNetworkAccountServiceImplementation.m */; settings = {ASSET_TAGS = (); }; };
-		636B64101BBDD6260053E38F /* SpeakerServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B640F1BBDD6260053E38F /* SpeakerServiceImplementation.m */; settings = {ASSET_TAGS = (); }; };
-		636B64121BBFE2C20053E38F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 636B64111BBFE2C20053E38F /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
-		636B64151BBFE3420053E38F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64141BBFE3420053E38F /* ViewController.m */; settings = {ASSET_TAGS = (); }; };
-		636F8C971BC97B3100552B91 /* EventServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8C961BC97B3100552B91 /* EventServiceImplementation.m */; settings = {ASSET_TAGS = (); }; };
+		636A37B31BC1356400B49C3D /* ApplicationConfiguratorImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37B21BC1356400B49C3D /* ApplicationConfiguratorImplementation.m */; };
+		636A37BB1BC13B9800B49C3D /* ApplicationConfiguratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37BA1BC13B9800B49C3D /* ApplicationConfiguratorTests.m */; };
+		636A37C21BC1413A00B49C3D /* SystemInfrastructureAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37C11BC1413A00B49C3D /* SystemInfrastructureAssembly.m */; };
+		636A37C51BC142BB00B49C3D /* ApplicationAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37C41BC142BB00B49C3D /* ApplicationAssembly.m */; };
+		636A37CA1BC147FD00B49C3D /* ApplicationAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37C91BC147FD00B49C3D /* ApplicationAssemblyTests.m */; };
+		636A37CC1BC1481300B49C3D /* SystemInfrastructureAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37CB1BC1481300B49C3D /* SystemInfrastructureAssemblyTests.m */; };
+		636A37CF1BC1500700B49C3D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 636A37CE1BC1500700B49C3D /* Info.plist */; };
+		636B64041BBDD19A0053E38F /* LectureServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64031BBDD19A0053E38F /* LectureServiceImplementation.m */; };
+		636B64071BBDD2A40053E38F /* LectureMaterialsServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64061BBDD2A40053E38F /* LectureMaterialsServiceImplementation.m */; };
+		636B640A1BBDD3FA0053E38F /* RegistrationQuestionServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64091BBDD3FA0053E38F /* RegistrationQuestionServiceImplementation.m */; };
+		636B640D1BBDD5000053E38F /* SocialNetworkAccountServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B640C1BBDD5000053E38F /* SocialNetworkAccountServiceImplementation.m */; };
+		636B64101BBDD6260053E38F /* SpeakerServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B640F1BBDD6260053E38F /* SpeakerServiceImplementation.m */; };
+		636B64121BBFE2C20053E38F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 636B64111BBFE2C20053E38F /* Main.storyboard */; };
+		636B64151BBFE3420053E38F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64141BBFE3420053E38F /* ViewController.m */; };
+		636F8C971BC97B3100552B91 /* EventServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8C961BC97B3100552B91 /* EventServiceImplementation.m */; };
 		636F8C981BC97C1700552B91 /* SpeakerServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B640F1BBDD6260053E38F /* SpeakerServiceImplementation.m */; };
 		636F8C991BC97CD300552B91 /* EventServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8C961BC97B3100552B91 /* EventServiceImplementation.m */; };
 		636F8C9A1BC97CD300552B91 /* LectureMaterialsServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64061BBDD2A40053E38F /* LectureMaterialsServiceImplementation.m */; };
@@ -236,6 +238,8 @@
 		63FDCE041BBDBA2A00A43B60 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63FDCE051BBDBA2A00A43B60 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		84D2CBEF6E088EFC9A139E49 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		892D07F61BEB619A00825704 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		892D07FB1BED008000825704 /* NightlyRibbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NightlyRibbon.png; sourceTree = "<group>"; };
 		9F0A6C1B1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CompoundOperationBuilderConfig.h; path = OperationBuilders/CompoundOperationBuilderConfig/CompoundOperationBuilderConfig.h; sourceTree = "<group>"; };
 		9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CompoundOperationBuilderConfig.m; path = OperationBuilders/CompoundOperationBuilderConfig/CompoundOperationBuilderConfig.m; sourceTree = "<group>"; };
 		9F0A6C1E1BC1B53F00A25417 /* RequestConfigurationType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RequestConfigurationType.h; path = CoreComponents/RequestConfigurators/RequestConfigurationType.h; sourceTree = "<group>"; };
@@ -868,6 +872,7 @@
 				636B64111BBFE2C20053E38F /* Main.storyboard */,
 				636B64131BBFE3420053E38F /* ViewController.h */,
 				636B64141BBFE3420053E38F /* ViewController.m */,
+				892D07F61BEB619A00825704 /* LaunchScreen.xib */,
 			);
 			path = PresentationLayer;
 			sourceTree = "<group>";
@@ -1909,6 +1914,7 @@
 		9F1F37DB1BBBB80D00C7797D = {
 			isa = PBXGroup;
 			children = (
+				892D07FB1BED008000825704 /* NightlyRibbon.png */,
 				9F1F37E61BBBB80D00C7797D /* Conferences */,
 				9F1F38031BBBB80D00C7797D /* ConferencesTests */,
 				9F1F37E51BBBB80D00C7797D /* Products */,
@@ -2041,6 +2047,7 @@
 				9F1F37E21BBBB80D00C7797D /* Resources */,
 				AC57B147A39D9B475E98FAA1 /* Copy Pods Resources */,
 				98E8F62F8473562795B255F8 /* Embed Pods Frameworks */,
+				892D07FA1BECFE6500825704 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -2124,6 +2131,7 @@
 				63FDCE151BBDBA2A00A43B60 /* Info.plist in Resources */,
 				9F8E5F9D1BC2777100DC10DB /* Conferences.Parse.plist in Resources */,
 				63FDCE141BBDBA2A00A43B60 /* Assets.xcassets in Resources */,
+				892D07F71BEB619A00825704 /* LaunchScreen.xib in Resources */,
 				9F8E5F701BC2552600DC10DB /* Conferences.API.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2155,6 +2163,19 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		892D07FA1BECFE6500825704 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "IFS=$'\\n'\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nversionNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nPATH=${PATH}:/usr/local/bin\n\nfunction generateIcon () {\n    BASE_IMAGE_NAME=$1\n    TARGET_IMAGE_NAME=$2\n    \n    TARGET_PATH=\"${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/${TARGET_IMAGE_NAME}\"\n\n    BASE_IMAGE_PATH=$(find ${SRCROOT} -name ${BASE_IMAGE_NAME})\n    WIDTH=$(identify -format %w ${BASE_IMAGE_PATH})\n    FONT_SIZE=$(echo \"$WIDTH * .15\" | bc -l)\n    \n    if [ \"${CONFIGURATION}\" == \"Nightly\" ]; then\n    \n    convert \"NightlyRibbon.png\" -resize ${WIDTH}x${WIDTH} resizedRibbon.png\n    \n    convert ${BASE_IMAGE_PATH} -background '#0008' -fill white \\\n    -font Times-Bold -size ${WIDTH}x40 -pointsize ${FONT_SIZE} \\\n    -gravity south -annotate 0 \"$buildNumber\" - | composite resizedRibbon.png - ${TARGET_PATH}\n    \n    convert -background '#0008' -fill white -gravity center \\\n    -size ${WIDTH}x40 -pointsize ${FONT_SIZE}\\\n    caption:\"${versionNumber} (${buildNumber})\"\\\n    \"${BASE_IMAGE_PATH}\" +swap -gravity south -composite \"${TARGET_PATH}\" - | composite resizedRibbon.png - ${TARGET_PATH}\n    fi\n    rm resizedRibbon.png\n}\n\ngenerateIcon \"Icon-60@2x.png\" \"AppIcon60x60@2x.png\"\ngenerateIcon \"Icon-60@3x.png\" \"AppIcon60x60@3x.png\"\ngenerateIcon \"Icon-40@2x.png\" \"AppIcon40x40@2x.png\"\ngenerateIcon \"Icon-40@3x.png\" \"AppIcon40x40@3x.png\"\ngenerateIcon \"Icon-29@2x.png\" \"AppIcon29x29@2x.png\"\ngenerateIcon \"Icon-29@3x.png\" \"AppIcon29x29@3x.png\"";
 		};
 		98E8F62F8473562795B255F8 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2370,6 +2391,73 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		892D07FC1BED037200825704 /* Nightly */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Nightly;
+		};
+		892D07FD1BED037200825704 /* Nightly */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84D2CBEF6E088EFC9A139E49 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CURRENT_PROJECT_VERSION = 23;
+				INFOPLIST_FILE = "conferences/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.ramblerco.rambler.conferences;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "$(PROFILE_UDID)";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Nightly;
+		};
+		892D07FE1BED037200825704 /* Nightly */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FED76184BAB5478101AC945 /* Pods-ConferencesTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "ConferencesTests/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.rambler.ConferencesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Conferences.app/Conferences";
+			};
+			name = Nightly;
+		};
 		9F1F38071BBBB80D00C7797D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2457,9 +2545,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Conferences/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 23;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ru.rambler.Conferences;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.ramblerco.rambler.conferences;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -2470,9 +2561,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Conferences/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CURRENT_PROJECT_VERSION = 23;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ru.rambler.Conferences;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.ramblerco.rambler.conferences;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "$(PROFILE_UDID)";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
@@ -2542,6 +2638,7 @@
 			buildConfigurations = (
 				9F1F38071BBBB80D00C7797D /* Debug */,
 				9F1F38081BBBB80D00C7797D /* Release */,
+				892D07FC1BED037200825704 /* Nightly */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2551,6 +2648,7 @@
 			buildConfigurations = (
 				9F1F380A1BBBB80D00C7797D /* Debug */,
 				9F1F380B1BBBB80D00C7797D /* Release */,
+				892D07FD1BED037200825704 /* Nightly */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2560,6 +2658,7 @@
 			buildConfigurations = (
 				9F1F380D1BBBB80D00C7797D /* Debug */,
 				9F1F380E1BBBB80D00C7797D /* Release */,
+				892D07FE1BED037200825704 /* Nightly */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

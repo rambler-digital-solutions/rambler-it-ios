@@ -1,0 +1,85 @@
+# Customise this file, documentation can be found here:
+# https://github.com/KrauseFx/fastlane/tree/master/docs
+# All available actions: https://github.com/KrauseFx/fastlane/blob/master/docs/Actions.md
+# can also be listed using the `fastlane actions` command
+
+# Change the syntax highlighting to Ruby
+# All lines starting with a # are ignored when running `fastlane`
+
+# By default, fastlane will send which actions are used
+# No personal data is shared, more information on https://github.com/fastlane/enhancer
+# Uncomment the following line to opt out
+# opt_out_usage
+
+# If you want to automatically update fastlane if a new version is available:
+# update_fastlane
+
+# This is the minimum version number required.
+# Update this, if you use features of a newer version
+fastlane_version "1.37.0"
+
+default_platform :ios
+NIGHTLY_TAG_FORMAT="nightly/%d"
+
+platform :ios do
+  before_all do
+    # ensure_git_status_clean
+  end
+
+  lane :nightly do
+
+    # ensure_git_branch(
+    #     branch: 'develop'
+    # )
+
+    begin
+      build_number = get_build_number
+      prev_tag = NIGHTLY_TAG_FORMAT % build_number
+
+      changelog = sh("git shortlog #{prev_tag}..HEAD")
+
+      # We don't build without new commits.
+      exit(0) if changelog.empty?
+    rescue
+      changelog = 'Initial version'
+    end
+
+    sigh
+    
+    ENV["PROFILE_UDID"] = lane_context[SharedValues::SIGH_UDID]
+
+    increment_build_number
+
+    gym(scheme: 'Conferences',
+     configuration: 'Nightly')
+
+    build_number = get_build_number
+    version_number = get_version_number
+
+    pilot(build_full_version: "#{version_number}(#{build_number})",
+          changelog: changelog)
+
+    clean_build_artifacts
+
+    commit_version_bump
+
+    current_tag = NIGHTLY_TAG_FORMAT % build_number
+    add_git_tag tag: current_tag
+    push_to_git_remote
+
+
+  end
+
+  after_all do |lane|
+    # reset_git_repo
+  end
+
+  error do |lane, exception|
+  end
+end
+
+
+
+
+# More information about multiple platforms in fastlane: https://github.com/KrauseFx/fastlane/blob/master/docs/Platforms.md
+# All available actions: https://github.com/KrauseFx/fastlane/blob/master/docs/Actions.md
