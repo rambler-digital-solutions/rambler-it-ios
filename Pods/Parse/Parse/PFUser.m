@@ -650,23 +650,23 @@ static BOOL revocableSessionEnabled_;
 - (NSDictionary *)RESTDictionaryWithObjectEncoder:(PFEncoder *)objectEncoder
                                 operationSetUUIDs:(NSArray **)operationSetUUIDs
                                             state:(PFObjectState *)state
-                                operationSetQueue:(NSArray *)queue {
-    @synchronized (self.lock) {
-        NSMutableArray *cleanQueue = [queue mutableCopy];
-        [queue enumerateObjectsUsingBlock:^(PFOperationSet *operationSet, NSUInteger idx, BOOL *stop) {
-            // Remove operations for `password` field, to not let it persist to LDS.
-            if (operationSet[PFUserPasswordRESTKey]) {
-                operationSet = [operationSet copy];
-                [operationSet removeObjectForKey:PFUserPasswordRESTKey];
+                                operationSetQueue:(NSArray *)queue
+                          deletingEventuallyCount:(NSUInteger)deletingEventuallyCount {
+    NSMutableArray *cleanQueue = [queue mutableCopy];
+    [queue enumerateObjectsUsingBlock:^(PFOperationSet *operationSet, NSUInteger idx, BOOL *stop) {
+        // Remove operations for `password` field, to not let it persist to LDS.
+        if (operationSet[PFUserPasswordRESTKey]) {
+            operationSet = [operationSet copy];
+            [operationSet removeObjectForKey:PFUserPasswordRESTKey];
 
-                cleanQueue[idx] = operationSet;
-            }
-        }];
-        return [super RESTDictionaryWithObjectEncoder:objectEncoder
-                                    operationSetUUIDs:operationSetUUIDs
-                                                state:state
-                                    operationSetQueue:cleanQueue];
-    }
+            cleanQueue[idx] = operationSet;
+        }
+    }];
+    return [super RESTDictionaryWithObjectEncoder:objectEncoder
+                                operationSetUUIDs:operationSetUUIDs
+                                            state:state
+                                operationSetQueue:cleanQueue
+                          deletingEventuallyCount:deletingEventuallyCount];
 }
 
 ///--------------------------------------

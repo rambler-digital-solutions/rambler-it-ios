@@ -16,13 +16,15 @@
 #import "PFDataProvider.h"
 #import "PFMacros.h"
 
+PF_WATCH_UNAVAILABLE_WARNING
+
 extern NSString *const PFCurrentInstallationFileName;
 extern NSString *const PFCurrentInstallationPinName;
 
 @class BFTask PF_GENERIC(__covariant BFGenericType);
 @class PFInstallation;
 
-@interface PFCurrentInstallationController : NSObject <PFCurrentObjectControlling>
+PF_TV_UNAVAILABLE PF_WATCH_UNAVAILABLE @interface PFCurrentInstallationController : NSObject <PFCurrentObjectControlling>
 
 @property (nonatomic, weak, readonly) id<PFFileManagerProvider, PFInstallationIdentifierStoreProvider> commonDataSource;
 @property (nonatomic, weak, readonly) id<PFObjectFilePersistenceControllerProvider> coreDataSource;

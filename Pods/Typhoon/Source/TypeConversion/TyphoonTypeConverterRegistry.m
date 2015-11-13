@@ -13,58 +13,20 @@
 #import <objc/runtime.h>
 #import "TyphoonTypeConverterRegistry.h"
 #import "TyphoonTypeConverter.h"
-#import "TyphoonTypeDescriptor.h"
 #import "TyphoonPrimitiveTypeConverter.h"
 #import "TyphoonPassThroughTypeConverter.h"
 #import "TyphoonNSURLTypeConverter.h"
 #import "TyphoonIntrospectionUtils.h"
 #import "TyphoonNSNumberTypeConverter.h"
 
+@interface TyphoonTypeConverterRegistry ()
+
+@property (strong, nonatomic) TyphoonPrimitiveTypeConverter *primitiveTypeConverter;
+@property (strong, nonatomic) NSMutableDictionary *typeConverters;
+
+@end
 
 @implementation TyphoonTypeConverterRegistry
-
-//-------------------------------------------------------------------------------------------
-#pragma mark - Class Methods
-
-+ (TyphoonTypeConverterRegistry *)shared
-{
-    static dispatch_once_t onceToken;
-    static TyphoonTypeConverterRegistry *instance;
-
-    dispatch_once(&onceToken, ^{
-        instance = [[[self class] alloc] init];
-    });
-    return instance;
-}
-
-+ (NSString *)typeFromTextValue:(NSString *)textValue
-{
-    NSString *type = nil;
-
-    NSRange openBraceRange = [textValue rangeOfString:@"("];
-    BOOL hasBraces = [textValue hasSuffix:@")"] && openBraceRange.location != NSNotFound;
-    if (hasBraces) {
-        type = [textValue substringToIndex:openBraceRange.location];
-    }
-
-    return type;
-}
-
-+ (NSString *)textWithoutTypeFromTextValue:(NSString *)textValue
-{
-    NSString *result = textValue;
-
-    NSRange openBraceRange = [textValue rangeOfString:@"("];
-    BOOL hasBraces = [textValue hasSuffix:@")"] && openBraceRange.location != NSNotFound;
-
-    if (hasBraces) {
-        NSRange range = NSMakeRange(openBraceRange.location + openBraceRange.length, 0);
-        range.length = [textValue length] - range.location - 1;
-        result = [textValue substringWithRange:range];
-    }
-
-    return result;
-}
 
 //-------------------------------------------------------------------------------------------
 #pragma mark - Initialization & Destruction
@@ -78,8 +40,6 @@
 
         [self registerSharedConverters];
         [self registerPlatformConverters];
-
-
     }
     return self;
 }
@@ -90,7 +50,7 @@
 
 - (id <TyphoonTypeConverter>)converterForType:(NSString *)type
 {
-    return [_typeConverters objectForKey:type];
+    return _typeConverters[type];
 }
 
 - (TyphoonPrimitiveTypeConverter *)primitiveTypeConverter
@@ -101,8 +61,8 @@
 - (void)registerTypeConverter:(id <TyphoonTypeConverter>)converter
 {
     NSString *type = [converter supportedType];
-    if (!([_typeConverters objectForKey:type])) {
-        [_typeConverters setObject:converter forKey:type];
+    if (!(_typeConverters[type])) {
+        _typeConverters[type] = converter;
     }
     else {
         [NSException raise:NSInvalidArgumentException format:@"Converter for '%@' already registered.", type];
@@ -135,7 +95,7 @@
     }
 #else
     {
-
+        [self registerTypeConverter:[[TyphoonClassFromString(@"TyphoonNSColorTypeConverter") alloc] init]];
     }
 #endif
 }

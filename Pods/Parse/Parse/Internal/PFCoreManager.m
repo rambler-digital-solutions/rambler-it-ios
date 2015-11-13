@@ -13,10 +13,8 @@
 #import "PFCachedQueryController.h"
 #import "PFCloudCodeController.h"
 #import "PFConfigController.h"
-#import "PFCurrentInstallationController.h"
 #import "PFCurrentUserController.h"
 #import "PFFileController.h"
-#import "PFInstallationController.h"
 #import "PFLocationManager.h"
 #import "PFMacros.h"
 #import "PFObjectBatchController.h"
@@ -30,6 +28,11 @@
 #import "PFSessionController.h"
 #import "PFUserAuthenticationController.h"
 #import "PFUserController.h"
+
+#if !TARGET_OS_WATCH
+#import "PFCurrentInstallationController.h"
+#import "PFInstallationController.h"
+#endif
 
 @interface PFCoreManager () {
     dispatch_queue_t _locationManagerAccessQueue;
@@ -305,7 +308,7 @@
     __block PFUserAuthenticationController *controller = nil;
     dispatch_sync(_controllerAccessQueue, ^{
         if (!_userAuthenticationController) {
-            _userAuthenticationController = [[PFUserAuthenticationController alloc] init];
+            _userAuthenticationController = [PFUserAuthenticationController controllerWithDataSource:self];
         }
         controller = _userAuthenticationController;
     });
@@ -339,6 +342,8 @@
     });
 }
 
+#if !TARGET_OS_WATCH && !TARGET_OS_TV
+
 ///--------------------------------------
 #pragma mark - Current Installation Controller
 ///--------------------------------------
@@ -365,6 +370,8 @@
         _currentInstallationController = controller;
     });
 }
+
+#endif
 
 ///--------------------------------------
 #pragma mark - Current User Controller
@@ -393,6 +400,8 @@
     });
 }
 
+#if !TARGET_OS_WATCH && !TARGET_OS_TV
+
 ///--------------------------------------
 #pragma mark - Installation Controller
 ///--------------------------------------
@@ -414,6 +423,8 @@
     });
 }
 
+#endif
+
 ///--------------------------------------
 #pragma mark - User Controller
 ///--------------------------------------
@@ -421,7 +432,7 @@
 - (PFUserController *)userController {
     __block PFUserController *controller = nil;
     dispatch_sync(_controllerAccessQueue, ^{
-        if (!_installationController) {
+        if (!_userController) {
             _userController = [PFUserController controllerWithCommonDataSource:self.dataSource
                                                                 coreDataSource:self];
         }

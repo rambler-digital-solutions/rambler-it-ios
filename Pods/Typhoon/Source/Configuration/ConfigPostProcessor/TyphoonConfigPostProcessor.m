@@ -127,9 +127,6 @@ static NSMutableDictionary *propertyPlaceholderRegistry;
 
 - (void)useResource:(id<TyphoonResource>)resource withExtension:(NSString *)typeExtension
 {
-    LogInfo("======================================================================================================");
-    LogInfo(@"CONFIG: %@", resource.description);
-    LogInfo("======================================================================================================");
     id<TyphoonConfiguration> config = _configs[typeExtension];
     [config appendResource:resource];
 }
@@ -198,7 +195,7 @@ static NSMutableDictionary *propertyPlaceholderRegistry;
         options:TyphoonInjectionsEnumerationOptionAll
         usingBlock:^(TyphoonInjectionByReference *injection, id *injectionToReplace, BOOL *stop) {
             [injection.referenceArguments enumerateArgumentsUsingBlock:^(TyphoonInjectionByConfig *argument,
-                NSUInteger index, BOOL *stop) {
+                NSUInteger index, BOOL *innerStop) {
                 if ([argument isKindOfClass:[TyphoonInjectionByConfig class]]) {
                     id configuredInjection = [self injectionForConfigInjection:argument];
                     if (configuredInjection) {

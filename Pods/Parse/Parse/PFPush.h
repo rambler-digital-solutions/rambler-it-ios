@@ -12,8 +12,12 @@
 #import <Bolts/BFTask.h>
 
 #import <Parse/PFConstants.h>
+#import <Parse/PFInstallation.h>
 
-@class PFQuery;
+PF_TV_UNAVAILABLE_WARNING
+PF_WATCH_UNAVAILABLE_WARNING
+
+@class PFQuery PF_GENERIC(PFGenericObject : PFObject *);
 
 PF_ASSUME_NONNULL_BEGIN
 
@@ -23,7 +27,7 @@ PF_ASSUME_NONNULL_BEGIN
  The preferred way of modifying or retrieving channel subscriptions is to use
  the <PFInstallation> class, instead of the class methods in `PFPush`.
  */
-@interface PFPush : NSObject <NSCopying>
+PF_TV_UNAVAILABLE PF_WATCH_UNAVAILABLE @interface PFPush : NSObject <NSCopying>
 
 ///--------------------------------------
 /// @name Creating a Push Notification
@@ -49,7 +53,7 @@ PF_ASSUME_NONNULL_BEGIN
  @param channels The array of channels to set for this push.
  Each channel name must start with a letter and contain only letters, numbers, dashes, and underscores.
  */
-- (void)setChannels:(PF_NULLABLE NSArray *)channels;
+- (void)setChannels:(PF_NULLABLE NSArray PF_GENERIC(NSString *) *)channels;
 
 /*!
  @abstract Sets an installation query to which this push notification will be sent.
@@ -58,7 +62,7 @@ PF_ASSUME_NONNULL_BEGIN
 
  @param query The installation query to set for this push.
  */
-- (void)setQuery:(PF_NULLABLE PFQuery *)query;
+- (void)setQuery:(PF_NULLABLE PFQuery PF_GENERIC(PFInstallation *) *)query;
 
 /*!
  @abstract Sets an alert message for this push notification.
@@ -199,7 +203,7 @@ PF_ASSUME_NONNULL_BEGIN
 
  @returns Returns whether the send succeeded.
  */
-+ (BOOL)sendPushMessageToQuery:(PFQuery *)query
++ (BOOL)sendPushMessageToQuery:(PFQuery PF_GENERIC(PFInstallation *) *)query
                    withMessage:(NSString *)message
                          error:(NSError **)error;
 
@@ -211,7 +215,7 @@ PF_ASSUME_NONNULL_BEGIN
 
  @returns The task, that encapsulates the work being done.
  */
-+ (BFTask PF_GENERIC(NSNumber *)*)sendPushMessageToQueryInBackground:(PFQuery *)query
++ (BFTask PF_GENERIC(NSNumber *)*)sendPushMessageToQueryInBackground:(PFQuery PF_GENERIC(PFInstallation *) *)query
                                                          withMessage:(NSString *)message;
 
 /*!
@@ -223,7 +227,7 @@ PF_ASSUME_NONNULL_BEGIN
  @param block The block to execute.
  It should have the following argument signature: `^(BOOL succeeded, NSError *error)`
  */
-+ (void)sendPushMessageToQueryInBackground:(PFQuery *)query
++ (void)sendPushMessageToQueryInBackground:(PFQuery PF_GENERIC(PFInstallation *) *)query
                                withMessage:(NSString *)message
                                      block:(PF_NULLABLE PFBooleanResultBlock)block;
 
@@ -337,7 +341,7 @@ PF_ASSUME_NONNULL_BEGIN
 
  @returns Returns whether the send succeeded.
  */
-+ (BOOL)sendPushDataToQuery:(PFQuery *)query
++ (BOOL)sendPushDataToQuery:(PFQuery PF_GENERIC(PFInstallation *) *)query
                    withData:(NSDictionary *)data
                       error:(NSError **)error;
 
@@ -352,7 +356,7 @@ PF_ASSUME_NONNULL_BEGIN
 
  @returns The task, that encapsulates the work being done.
  */
-+ (BFTask PF_GENERIC(NSNumber *)*)sendPushDataToQueryInBackground:(PFQuery *)query
++ (BFTask PF_GENERIC(NSNumber *)*)sendPushDataToQueryInBackground:(PFQuery PF_GENERIC(PFInstallation *) *)query
                                                          withData:(NSDictionary *)data;
 
 /*!
@@ -366,7 +370,7 @@ PF_ASSUME_NONNULL_BEGIN
  @param block The block to execute.
  It should have the following argument signature: `^(BOOL succeeded, NSError *error)`.
  */
-+ (void)sendPushDataToQueryInBackground:(PFQuery *)query
++ (void)sendPushDataToQueryInBackground:(PFQuery PF_GENERIC(PFInstallation *) *)query
                                withData:(NSDictionary *)data
                                   block:(PF_NULLABLE PFBooleanResultBlock)block;
 

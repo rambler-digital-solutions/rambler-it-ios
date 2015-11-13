@@ -16,28 +16,12 @@
 
 #import <Foundation/Foundation.h>
 
-@class OCMLocation;
-@class OCClassMockObject;
-@class OCPartialMockObject;
+
+#if defined(__cplusplus)
+#define OCMOCK_EXTERN extern "C"
+#else
+#define OCMOCK_EXTERN extern
+#endif
 
 
-BOOL OCMIsObjectType(const char *objCType);
-const char *OCMTypeWithoutQualifiers(const char *objCType);
-BOOL OCMEqualTypesAllowingOpaqueStructs(const char *type1, const char *type2);
-
-Class OCMCreateSubclass(Class class, void *ref);
-
-void OCMSetIsa(id object, Class class);
-Class OCMGetIsa(id object);
-
-BOOL OCMIsAliasSelector(SEL selector);
-SEL OCMAliasForOriginalSelector(SEL selector);
-SEL OCMOriginalSelectorForAlias(SEL selector);
-
-void OCMSetAssociatedMockForClass(OCClassMockObject *mock, Class aClass);
-OCClassMockObject *OCMGetAssociatedMockForClass(Class aClass, BOOL includeSuperclasses);
-
-void OCMSetAssociatedMockForObject(OCClassMockObject *mock, id anObject);
-OCPartialMockObject *OCMGetAssociatedMockForObject(id anObject);
-
-void OCMReportFailure(OCMLocation *loc, NSString *description);
+OCMOCK_EXTERN BOOL OCMIsObjectType(const char *objCType);

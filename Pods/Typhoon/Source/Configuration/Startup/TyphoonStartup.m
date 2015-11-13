@@ -129,10 +129,10 @@ static BOOL initialFactoryWasCreated = NO;
         if (initialFactory) {
             id<TyphoonDefinitionPostProcessor> processor = [self configPostProcessor];
             if (processor) {
-                [initialFactory attachPostProcessor:processor];
+                [initialFactory attachDefinitionPostProcessor:processor];
             }
             [self injectInitialFactoryIntoDelegate:delegate];
-            [TyphoonComponentFactory setFactoryForResolvingFromXibs:initialFactory];
+            [TyphoonComponentFactory setFactoryForResolvingUI:initialFactory];
         }
         [self releaseInitialFactoryWhenApplicationDidFinishLaunching];
 

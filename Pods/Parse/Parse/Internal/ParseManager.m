@@ -18,18 +18,21 @@
 #import "PFConfig.h"
 #import "PFCoreManager.h"
 #import "PFFileManager.h"
-#import "PFInstallation.h"
 #import "PFInstallationIdentifierStore.h"
 #import "PFKeyValueCache.h"
 #import "PFKeychainStore.h"
 #import "PFLogging.h"
 #import "PFMultiProcessFileLockController.h"
 #import "PFPinningEventuallyQueue.h"
-#import "PFPushManager.h"
 #import "PFUser.h"
 #import "PFURLSessionCommandRunner.h"
 
-#if TARGET_OS_IPHONE
+#if !TARGET_OS_WATCH && !TARGET_OS_TV
+#import "PFPushManager.h"
+#import "PFInstallation.h"
+#endif
+
+#if TARGET_OS_IOS
 #import "PFPurchaseController.h"
 #import "PFProduct.h"
 #endif
@@ -65,8 +68,10 @@ static NSString *const _ParseApplicationIdFileName = @"applicationId";
 @synthesize keyValueCache = _keyValueCache;
 @synthesize coreManager = _coreManager;
 @synthesize analyticsController = _analyticsController;
+#if !TARGET_OS_WATCH && !TARGET_OS_TV
 @synthesize pushManager = _pushManager;
-#if TARGET_OS_IPHONE
+#endif
+#if TARGET_OS_IOS
 @synthesize purchaseController = _purchaseController;
 #endif
 
@@ -293,6 +298,8 @@ static NSString *const _ParseApplicationIdFileName = @"applicationId";
     });
 }
 
+#if !TARGET_OS_WATCH && !TARGET_OS_TV
+
 #pragma mark PushManager
 
 - (PFPushManager *)pushManager {
@@ -311,6 +318,8 @@ static NSString *const _ParseApplicationIdFileName = @"applicationId";
         _pushManager = pushManager;
     });
 }
+
+#endif
 
 #pragma mark AnalyticsController
 
@@ -333,7 +342,7 @@ static NSString *const _ParseApplicationIdFileName = @"applicationId";
     });
 }
 
-#if TARGET_OS_IPHONE
+#if TARGET_OS_IOS
 
 #pragma mark PurchaseController
 
@@ -368,8 +377,10 @@ static NSString *const _ParseApplicationIdFileName = @"applicationId";
         @strongify(self);
         [PFUser currentUser];
         [PFConfig currentConfig];
+#if !TARGET_OS_WATCH && !TARGET_OS_TV
         [PFInstallation currentInstallation];
-
+#endif
+        
         [self eventuallyQueue];
 
         return nil;
@@ -428,7 +439,7 @@ static NSString *const _ParseApplicationIdFileName = @"applicationId";
 
 - (void)_migrateSandboxDataToApplicationGroupContainerIfNeeded {
     // There is no need to migrate anything on OSX, since we are using globally available folder.
-#if TARGET_OS_IPHONE
+#if TARGET_OS_IOS
     // Do nothing if there is no application group container or containing application is specified.
     if (!self.applicationGroupIdentifier || self.containingApplicationIdentifier) {
         return;

@@ -13,6 +13,8 @@
 
 #import "PFMacros.h"
 
+PF_WATCH_UNAVAILABLE_WARNING
+
 @class BFTask PF_GENERIC(__covariant BFGenericType);
 @class PFFileManager;
 @class PFPaymentTransactionObserver;
@@ -22,7 +24,7 @@
 @class SKPaymentQueue;
 @class SKPaymentTransaction;
 
-@interface PFPurchaseController : NSObject
+PF_WATCH_UNAVAILABLE @interface PFPurchaseController : NSObject
 
 @property (nonatomic, strong, readonly) id<PFCommandRunning> commandRunner;
 @property (nonatomic, strong, readonly) PFFileManager *fileManager;

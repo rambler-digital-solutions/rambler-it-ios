@@ -16,15 +16,13 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSMethodSignature(PrivateAPI)
-
-+ (id)signatureWithObjCTypes:(const char *)types;
-
-@end
-
 @interface NSMethodSignature(OCMAdditions)
 
++ (NSMethodSignature *)signatureForDynamicPropertyAccessedWithSelector:(SEL)selector inClass:(Class)aClass;
++ (NSMethodSignature *)signatureForBlock:(id)block;
+
 - (BOOL)usesSpecialStructureReturn;
+
 - (NSString *)fullTypeString;
 - (const char *)fullObjCTypes;
 

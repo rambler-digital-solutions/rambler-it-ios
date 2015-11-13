@@ -43,4 +43,30 @@
     return [self JSONObjectFromData:[string dataUsingEncoding:NSUTF8StringEncoding]];
 }
 
++ (id)JSONObjectFromFileAtPath:(NSString *)filePath {
+    NSInputStream *stream = [NSInputStream inputStreamWithFileAtPath:filePath];
+    if (!stream) {
+        return nil;
+    }
+
+    [stream open];
+
+    NSError *streamError = stream.streamError;
+    // Check if stream failed to open, because there is no such file.
+    if (streamError && [streamError.domain isEqualToString:NSPOSIXErrorDomain] && streamError.code == ENOENT) {
+        [stream close]; // Still close the stream.
+        return nil;
+    }
+
+    NSError *error = nil;
+    id object = [NSJSONSerialization JSONObjectWithStream:stream options:0 error:&error];
+    if (!object || error) {
+        PFLogError(PFLoggingTagCommon, @"JSON deserialization failed with error: %@", error.description);
+    }
+
+    [stream close];
+
+    return object;
+}
+
 @end

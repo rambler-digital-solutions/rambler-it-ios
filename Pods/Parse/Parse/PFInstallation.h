@@ -13,6 +13,8 @@
 #import <Parse/PFObject.h>
 #import <Parse/PFSubclassing.h>
 
+PF_WATCH_UNAVAILABLE_WARNING
+
 PF_ASSUME_NONNULL_BEGIN
 
 /*!
@@ -33,7 +35,7 @@ PF_ASSUME_NONNULL_BEGIN
  the Parse cloud can be used to target push notifications.
  */
 
-@interface PFInstallation : PFObject<PFSubclassing>
+PF_TV_UNAVAILABLE PF_WATCH_UNAVAILABLE @interface PFInstallation : PFObject<PFSubclassing>
 
 ///--------------------------------------
 /// @name Accessing the Current Installation

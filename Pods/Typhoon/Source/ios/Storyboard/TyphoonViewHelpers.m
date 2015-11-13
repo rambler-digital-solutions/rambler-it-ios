@@ -1,24 +1,28 @@
+////////////////////////////////////////////////////////////////////////////////
 //
-//  TyphoonLoadedViewHelpers.m
-//  Typhoon
+//  TYPHOON FRAMEWORK
+//  Copyright 2015, Typhoon Framework Contributors
+//  All Rights Reserved.
 //
-//  Created by Herman Saprykin on 26/08/15.
-//  Copyright © 2015 typhoonframework.org. All rights reserved.
+//  NOTICE: The authors permit you to use, modify, and distribute this file
+//  in accordance with the terms of the license agreement accompanying it.
 //
+////////////////////////////////////////////////////////////////////////////////
 
 #import "TyphoonViewHelpers.h"
 #import "TyphoonStoryboard.h"
+#import "OCLogTemplate.h"
 
 @implementation TyphoonViewHelpers
 
 + (id)viewFromDefinition:(NSString *)definitionKey originalView:(UIView *)original
 {
     if ([[original subviews] count] > 0) {
-        NSLog(@"Warning: placeholder view contains (%d) subviews. They will be replaced by typhoon definition '%@'", (int)[[original subviews] count], definitionKey);
+        LogInfo(@"Warning: placeholder view contains (%d) subviews. They will be replaced by typhoon definition '%@'", (int)[[original subviews] count], definitionKey);
     }
-    TyphoonComponentFactory *currentFactory = [TyphoonComponentFactory factoryForResolvingFromXibs];
+    TyphoonComponentFactory *currentFactory = [TyphoonComponentFactory factoryForResolvingUI];
     if (!currentFactory) {
-        [NSException raise:NSInternalInconsistencyException format:@"Can't find Typhoon factory to resolve definition from xib. Check [TyphoonComponentFactory setFactoryForResolvingFromXibs:] method."];
+        [NSException raise:NSInternalInconsistencyException format:@"Can't find Typhoon factory to resolve definition from xib. Check [TyphoonComponentFactory setFactoryForResolvingUI:] method."];
     }
     id result = [currentFactory componentForKey:definitionKey];
     if (![result isKindOfClass:[UIView class]]) {

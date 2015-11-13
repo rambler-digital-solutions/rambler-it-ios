@@ -26,13 +26,23 @@
 #import <Parse/PFSubclassing.h>
 #import <Parse/PFUser.h>
 #import <Parse/PFUserAuthenticationDelegate.h>
-#import <Parse/PFInstallation.h>
 #import <Parse/PFNullability.h>
+
+#if TARGET_OS_IOS
+
+#import <Parse/PFInstallation.h>
+#import <Parse/PFNetworkActivityIndicatorManager.h>
+#import <Parse/PFPush.h>
+#import <Parse/PFProduct.h>
+#import <Parse/PFPurchase.h>
+
+#elif PF_TARGET_OS_OSX
+
+#import <Parse/PFInstallation.h>
 #import <Parse/PFPush.h>
 
-#if TARGET_OS_IPHONE
+#elif TARGET_OS_TV
 
-#import <Parse/PFNetworkActivityIndicatorManager.h>
 #import <Parse/PFProduct.h>
 #import <Parse/PFPurchase.h>
 
@@ -98,7 +108,7 @@ PF_ASSUME_NONNULL_BEGIN
 
  @param groupIdentifier Application Group Identifier to share data with.
  */
-+ (void)enableDataSharingWithApplicationGroupIdentifier:(NSString *)groupIdentifier PF_EXTENSION_UNAVAILABLE("Use `enableDataSharingWithApplicationGroupIdentifier:containingApplication:`.");
++ (void)enableDataSharingWithApplicationGroupIdentifier:(NSString *)groupIdentifier PF_EXTENSION_UNAVAILABLE("Use `enableDataSharingWithApplicationGroupIdentifier:containingApplication:`.") PF_WATCH_UNAVAILABLE PF_TV_UNAVAILABLE;
 
 /*!
  @abstract Enables data sharing with an application group identifier.
@@ -113,21 +123,21 @@ PF_ASSUME_NONNULL_BEGIN
  @param bundleIdentifier Bundle identifier of the containing application.
  */
 + (void)enableDataSharingWithApplicationGroupIdentifier:(NSString *)groupIdentifier
-                                  containingApplication:(NSString *)bundleIdentifier;
+                                  containingApplication:(NSString *)bundleIdentifier PF_WATCH_UNAVAILABLE PF_TV_UNAVAILABLE;
 
 /*!
  @abstract Application Group Identifier for Data Sharing
 
  @returns `NSString` value if data sharing is enabled, otherwise `nil`.
  */
-+ (NSString *)applicationGroupIdentifierForDataSharing;
++ (NSString *)applicationGroupIdentifierForDataSharing PF_WATCH_UNAVAILABLE PF_TV_UNAVAILABLE;
 
 /*!
  @abstract Containing application bundle identifier.
 
  @returns `NSString` value if data sharing is enabled, otherwise `nil`.
  */
-+ (NSString *)containingApplicationBundleIdentifierForDataSharing;
++ (NSString *)containingApplicationBundleIdentifierForDataSharing PF_WATCH_UNAVAILABLE PF_TV_UNAVAILABLE;
 
 #if PARSE_IOS_ONLY
 

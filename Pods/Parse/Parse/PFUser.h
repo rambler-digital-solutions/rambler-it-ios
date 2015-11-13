@@ -20,7 +20,7 @@ PF_ASSUME_NONNULL_BEGIN
 typedef void(^PFUserSessionUpgradeResultBlock)(NSError *PF_NULLABLE_S error);
 typedef void(^PFUserLogoutResultBlock)(NSError *PF_NULLABLE_S error);
 
-@class PFQuery;
+@class PFQuery PF_GENERIC(PFGenericObject : PFObject *);
 @protocol PFUserAuthenticationDelegate;
 
 /*!
@@ -57,7 +57,7 @@ typedef void(^PFUserLogoutResultBlock)(NSError *PF_NULLABLE_S error);
 
  @discussion This is only set after a Facebook or Twitter login.
  */
-@property (assign, readonly) BOOL isNew;
+@property (nonatomic, assign, readonly) BOOL isNew;
 
 /*!
  @abstract Whether the user is an authenticated object for the device.
@@ -332,13 +332,13 @@ typedef void(^PFUserLogoutResultBlock)(NSError *PF_NULLABLE_S error);
  @abstract Enables revocable sessions and migrates the currentUser session token to use revocable session if needed.
 
  @discussion This method is required if you want to use <PFSession> APIs
- and you application's 'Require Revocable Session' setting is turned off on `http://parse.com` app settings.
+ and your application's 'Require Revocable Session' setting is turned off on `http://parse.com` app settings.
  After returned `BFTask` completes - <PFSession> class and APIs will be available for use.
 
- @returns An instance of `BFTask` that is completed when
- revocable sessions are enabled and currentUser token is migrated.
+ @returns An instance of `BFTask` that is completed when revocable
+ sessions are enabled and currentUser token is migrated.
  */
-+ (BFTask PF_GENERIC(NSNull *)*)enableRevocableSessionInBackground;
++ (BFTask *)enableRevocableSessionInBackground;
 
 /*!
  @abstract Enables revocable sessions and upgrades the currentUser session token to use revocable session if needed.
@@ -369,7 +369,7 @@ typedef void(^PFUserLogoutResultBlock)(NSError *PF_NULLABLE_S error);
 
  @returns An instance of `BFTask`, that is resolved with `nil` result when logging out completes.
  */
-+ (BFTask PF_GENERIC(NSNull *)*)logOutInBackground;
++ (BFTask *)logOutInBackground;
 
 /*!
  @abstract *Asynchronously* logs out the currently logged in user.

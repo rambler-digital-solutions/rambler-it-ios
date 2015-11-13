@@ -1,33 +1,33 @@
 PODS:
-  - AFNetworking (2.6.0):
-    - AFNetworking/NSURLConnection (= 2.6.0)
-    - AFNetworking/NSURLSession (= 2.6.0)
-    - AFNetworking/Reachability (= 2.6.0)
-    - AFNetworking/Security (= 2.6.0)
-    - AFNetworking/Serialization (= 2.6.0)
-    - AFNetworking/UIKit (= 2.6.0)
-  - AFNetworking/NSURLConnection (2.6.0):
+  - AFNetworking (2.6.3):
+    - AFNetworking/NSURLConnection (= 2.6.3)
+    - AFNetworking/NSURLSession (= 2.6.3)
+    - AFNetworking/Reachability (= 2.6.3)
+    - AFNetworking/Security (= 2.6.3)
+    - AFNetworking/Serialization (= 2.6.3)
+    - AFNetworking/UIKit (= 2.6.3)
+  - AFNetworking/NSURLConnection (2.6.3):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.6.0):
+  - AFNetworking/NSURLSession (2.6.3):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.6.0)
-  - AFNetworking/Security (2.6.0)
-  - AFNetworking/Serialization (2.6.0)
-  - AFNetworking/UIKit (2.6.0):
+  - AFNetworking/Reachability (2.6.3)
+  - AFNetworking/Security (2.6.3)
+  - AFNetworking/Serialization (2.6.3)
+  - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - Bolts/Tasks (1.3.0)
-  - CocoaLumberjack (2.0.1):
-    - CocoaLumberjack/Default (= 2.0.1)
-    - CocoaLumberjack/Extensions (= 2.0.1)
-  - CocoaLumberjack/Core (2.0.1)
-  - CocoaLumberjack/Default (2.0.1):
+  - Bolts/Tasks (1.4.0)
+  - CocoaLumberjack (2.2.0):
+    - CocoaLumberjack/Default (= 2.2.0)
+    - CocoaLumberjack/Extensions (= 2.2.0)
+  - CocoaLumberjack/Core (2.2.0)
+  - CocoaLumberjack/Default (2.2.0):
     - CocoaLumberjack/Core
-  - CocoaLumberjack/Extensions (2.0.1):
+  - CocoaLumberjack/Extensions (2.2.0):
     - CocoaLumberjack/Default
   - EasyMapping (0.15.3):
     - EasyMapping/Core (= 0.15.3)
@@ -71,15 +71,15 @@ PODS:
   - MMBarricade (1.0.1):
     - MMBarricade/Core (= 1.0.1)
   - MMBarricade/Core (1.0.1)
-  - OCMock (3.1.5)
-  - Parse (1.8.5):
-    - Bolts/Tasks (>= 1.2.2)
+  - OCMock (3.2)
+  - Parse (1.9.1):
+    - Bolts/Tasks (>= 1.4.0)
   - RamblerMcFlurry/Core (0.0.2)
   - RamblerMcFlurry/Testing (0.0.2):
     - RamblerMcFlurry/Core
-  - Typhoon (3.3.2):
-    - Typhoon/no-arc (= 3.3.2)
-  - Typhoon/no-arc (3.3.2)
+  - Typhoon (3.4.2):
+    - Typhoon/no-arc (= 3.4.2)
+  - Typhoon/no-arc (3.4.2)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.6)
@@ -94,16 +94,16 @@ DEPENDENCIES:
   - Typhoon (~> 3.3)
 
 SPEC CHECKSUMS:
-  AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
-  Bolts: 805a4a87413e49d4a0c2b7d469084cbc46b09342
-  CocoaLumberjack: 019d1361244274a6138c788c6cb80baabc13fb8f
+  AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  Bolts: 0e9bce58b9b9f5e8a7a4d47b16d2fabec289072b
+  CocoaLumberjack: 17fe8581f84914d5d7e6360f7c70022b173c3ae0
   EasyMapping: 5baf5a9a814538fdac4859cf56270ae761dd904a
   libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
   MagicalRecord: 89eb7d7ead39fb37f01c3d010665ee94d17f8dba
   MMBarricade: 61e17f747baa1a33cd7f8a9c75d520ca958508dd
-  OCMock: 4c2925291f80407c3738dd1db14d21d0cc278864
-  Parse: 17ad8e0677ed682f7f00503860fcda0f4eb74168
+  OCMock: 28def049ef47f996b515a8eeea958be7ccab2dbb
+  Parse: 54a965c8c19a6dde90284ab654dbcc77ef8c001b
   RamblerMcFlurry: b7cd02526648000ef0b87c17d632bb53bf886206
-  Typhoon: d0f4b40120b7011ac41748c3ca141cb12aac3737
+  Typhoon: 7888288534355491b8295373029d8713cd6386da
 
 COCOAPODS: 0.39.0
