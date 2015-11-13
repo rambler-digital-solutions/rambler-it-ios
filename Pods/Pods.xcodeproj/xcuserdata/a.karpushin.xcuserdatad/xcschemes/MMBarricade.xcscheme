@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '1EFFF95C02D325593C6F9D1D'
+               BlueprintIdentifier = '86AD5971953E470B329EEB4E'
                BlueprintName = 'MMBarricade'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libMMBarricade.a'>
