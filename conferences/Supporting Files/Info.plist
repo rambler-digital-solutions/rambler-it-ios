@@ -4,13 +4,6 @@
 <dict>
 	<key>TyphoonInitialAssemblies</key>
 	<array>
-		<string>OperationFactoriesAssembly</string>
-		<string>ResponseMappersAssembly</string>
-		<string>ResponseValidatorsAssembly</string>
-		<string>NetworkClientsAssembly</string>
-		<string>ResponseDeserializersAssembly</string>
-		<string>RequestSignersAssembly</string>
-		<string>RequestConfiguratorsAssembly</string>
 		<string>ServiceComponentsAssembly</string>
 		<string>ApplicationAssembly</string>
 		<string>SystemInfrastructureAssembly</string>
@@ -37,11 +30,6 @@
 	<true/>
 	<key>TyphoonAutoInjectionEnabled</key>
 	<true/>
-	<key>TyphoonInitialAssemblies</key>
-	<array>
-		<string>ApplicationAssembly</string>
-		<string>SystemInfrastructureAssembly</string>
-	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -50,8 +38,6 @@
 	<array>
 		<string>armv7</string>
 	</array>
-	<key>TyphoonAutoInjectionEnabled</key>
-	<true/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
