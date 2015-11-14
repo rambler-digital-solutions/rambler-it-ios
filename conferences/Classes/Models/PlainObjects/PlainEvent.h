@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "EventType.h"
 
 @interface PlainEvent : NSObject
 
@@ -28,5 +29,6 @@
 @property (nonatomic, strong, readwrite) UIImage *image;
 @property (nonatomic, strong, readwrite) NSURL *imageUrl;
 @property (nonatomic, strong, readwrite) NSString *eventSubtitle;
+@property (nonatomic, assign) EventType eventType;
 
 @end

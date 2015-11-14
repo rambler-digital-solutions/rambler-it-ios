@@ -497,6 +497,7 @@
 		63F8F2761BF76A49000017F3 /* SignUpAndSaveToCalendarEventTableViewCellActionProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpAndSaveToCalendarEventTableViewCellActionProtocol.h; sourceTree = "<group>"; };
 		63F8F2771BF76A74000017F3 /* CurrentVideoTranslationTableViewCellActionProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentVideoTranslationTableViewCellActionProtocol.h; sourceTree = "<group>"; };
 		63F8F2781BF76ACF000017F3 /* EventDescriptionTableViewCellActionProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDescriptionTableViewCellActionProtocol.h; sourceTree = "<group>"; };
+		63F8F2791BF77CD1000017F3 /* EventType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventType.h; sourceTree = "<group>"; };
 		63FA398D1BDD46E500CE6249 /* PlainEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlainEvent.h; sourceTree = "<group>"; };
 		63FA398E1BDD46E500CE6249 /* PlainEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlainEvent.m; sourceTree = "<group>"; };
 		63FD4DF81BE4F9D00046378E /* PrototypeMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrototypeMapper.h; sourceTree = "<group>"; };
@@ -699,6 +700,7 @@
 				63136FE31BDCDB7200994356 /* Protocols */,
 				63136F951BDCDB2600994356 /* IntermoduleDataTransfer */,
 				63136FA51BDCDB2600994356 /* TabBarModule */,
+				63F8F2791BF77CD1000017F3 /* EventType.h */,
 			);
 			path = Common;
 			sourceTree = "<group>";
