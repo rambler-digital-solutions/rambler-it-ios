@@ -16,6 +16,7 @@ pod 'PureLayout', '~> 3.0'
 pod 'Nimbus/Models', '1.2.2'
 pod 'SDWebImage', '~> 3.7'
 pod 'CrutchKit/Proxying', :git => 'https://github.com/CognitiveDisson/CrutchKit', :tag => '0.0.3'
+pod 'ViperMcFlurry', '~> 1.1'
 
 target 'ConferencesTests', :exclusive => true do
     pod 'OCMock', '~> 3.1'

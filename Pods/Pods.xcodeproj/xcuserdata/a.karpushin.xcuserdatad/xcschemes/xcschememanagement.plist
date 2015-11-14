@@ -89,6 +89,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ViperMcFlurry.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>libextobjc.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -107,11 +112,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>308DD64DF8992481D141A26CD876DE2B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>393D64AEB7D93CBB0BA5AEC1B87BA893</key>
 		<dict>
 			<key>primary</key>
@@ -122,12 +122,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4E50C8322F638C732DCA27E03F743045</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6C9BFC30E0BC03EDD88FF9537AA3A6FF</key>
+		<key>591C9CCBA424675439E69A2C186ECBC3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -142,11 +137,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7B638547B26DAB0517F1B9AD971E2BE7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>81FCDAD07EE76AFC36483925FCD57FA2</key>
 		<dict>
 			<key>primary</key>
@@ -157,7 +147,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>8B2A725BB873CC8518879FC83E72C1AD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>9B3DD6382248C31EC4D9D94F3F6ABAF7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A02D9D50C3BA15FF93421F068407D77E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -167,17 +167,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>A59DA36D796BE53E4AB1A583E3B39740</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>AE5D010648AFD83F59A5ABF346B13E5B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E0B6E142BA7CAFBABCA753E23944417E</key>
+		<key>B3B027D65953606418215F59A8351CB5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E7DCF2AEA0B70E2CC2A1BD1DDC8081B7</key>
+		<key>D1D57579CD94D5150E00AF6B58BFC7A6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E0B6E142BA7CAFBABCA753E23944417E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
