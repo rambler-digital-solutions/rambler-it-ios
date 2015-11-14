@@ -139,6 +139,8 @@
 		63F8F26E1BF74732000017F3 /* SignUpAndSaveToCalendarEventTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F26D1BF74732000017F3 /* SignUpAndSaveToCalendarEventTableViewCellObject.m */; };
 		63F8F2741BF7474C000017F3 /* SignUpAndSaveToCalendarEventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F2721BF7474C000017F3 /* SignUpAndSaveToCalendarEventTableViewCell.m */; };
 		63F8F2751BF7474C000017F3 /* SignUpAndSaveToCalendarEventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63F8F2731BF7474C000017F3 /* SignUpAndSaveToCalendarEventTableViewCell.xib */; };
+		63F8F27F1BF790D9000017F3 /* EventTypeSetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F27E1BF790D9000017F3 /* EventTypeSetter.m */; };
+		63F8F2821BF7925F000017F3 /* PresentationLayerHelpersAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F2811BF7925F000017F3 /* PresentationLayerHelpersAssembly.m */; };
 		63FD4DFB1BE4FA340046378E /* EventPrototypeMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FD4DFA1BE4FA340046378E /* EventPrototypeMapper.m */; };
 		63FD4E061BE5038D0046378E /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FD4E051BE5038D0046378E /* UIColor+Hex.m */; };
 		63FD4E0B1BE621750046378E /* Event+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FD4E081BE621750046378E /* Event+CoreDataProperties.m */; };
@@ -497,7 +499,11 @@
 		63F8F2761BF76A49000017F3 /* SignUpAndSaveToCalendarEventTableViewCellActionProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpAndSaveToCalendarEventTableViewCellActionProtocol.h; sourceTree = "<group>"; };
 		63F8F2771BF76A74000017F3 /* CurrentVideoTranslationTableViewCellActionProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentVideoTranslationTableViewCellActionProtocol.h; sourceTree = "<group>"; };
 		63F8F2781BF76ACF000017F3 /* EventDescriptionTableViewCellActionProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDescriptionTableViewCellActionProtocol.h; sourceTree = "<group>"; };
-		63F8F2791BF77CD1000017F3 /* EventType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventType.h; sourceTree = "<group>"; };
+		63F8F2791BF77CD1000017F3 /* EventType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EventType.h; path = ../../Common/EventType.h; sourceTree = "<group>"; };
+		63F8F27D1BF790D9000017F3 /* EventTypeSetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTypeSetter.h; sourceTree = "<group>"; };
+		63F8F27E1BF790D9000017F3 /* EventTypeSetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTypeSetter.m; sourceTree = "<group>"; };
+		63F8F2801BF7925F000017F3 /* PresentationLayerHelpersAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentationLayerHelpersAssembly.h; sourceTree = "<group>"; };
+		63F8F2811BF7925F000017F3 /* PresentationLayerHelpersAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentationLayerHelpersAssembly.m; sourceTree = "<group>"; };
 		63FA398D1BDD46E500CE6249 /* PlainEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlainEvent.h; sourceTree = "<group>"; };
 		63FA398E1BDD46E500CE6249 /* PlainEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlainEvent.m; sourceTree = "<group>"; };
 		63FD4DF81BE4F9D00046378E /* PrototypeMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrototypeMapper.h; sourceTree = "<group>"; };
@@ -700,7 +706,6 @@
 				63136FE31BDCDB7200994356 /* Protocols */,
 				63136F951BDCDB2600994356 /* IntermoduleDataTransfer */,
 				63136FA51BDCDB2600994356 /* TabBarModule */,
-				63F8F2791BF77CD1000017F3 /* EventType.h */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1863,6 +1868,34 @@
 			path = ActionProtocol;
 			sourceTree = "<group>";
 		};
+		63F8F27A1BF79090000017F3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				63F8F27C1BF790B4000017F3 /* Assembly */,
+				63F8F27B1BF79090000017F3 /* EventTypeSetter */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		63F8F27B1BF79090000017F3 /* EventTypeSetter */ = {
+			isa = PBXGroup;
+			children = (
+				63F8F2791BF77CD1000017F3 /* EventType.h */,
+				63F8F27D1BF790D9000017F3 /* EventTypeSetter.h */,
+				63F8F27E1BF790D9000017F3 /* EventTypeSetter.m */,
+			);
+			path = EventTypeSetter;
+			sourceTree = "<group>";
+		};
+		63F8F27C1BF790B4000017F3 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				63F8F2801BF7925F000017F3 /* PresentationLayerHelpersAssembly.h */,
+				63F8F2811BF7925F000017F3 /* PresentationLayerHelpersAssembly.m */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
 		63FA398C1BDD46C800CE6249 /* PlainObjects */ = {
 			isa = PBXGroup;
 			children = (
@@ -2046,6 +2079,7 @@
 		63FDCDFF1BBDBA2A00A43B60 /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				63F8F27A1BF79090000017F3 /* Helpers */,
 				63136F941BDCDB2600994356 /* Common */,
 				636F8D081BCB822F00552B91 /* Assemblies */,
 				636F8DA41BCB8FE800552B91 /* UserStories */,
@@ -3461,6 +3495,7 @@
 				63136FE01BDCDB2700994356 /* UIViewController+TabBarControllerContent.m in Sources */,
 				9F0A84FD1BC1698B006F79FB /* NetworkOperation.m in Sources */,
 				636F8DFB1BCB90E500552B91 /* EventListTableViewController.m in Sources */,
+				63F8F2821BF7925F000017F3 /* PresentationLayerHelpersAssembly.m in Sources */,
 				9F8E5FA61BC27CCE00DC10DB /* MappingConstants.m in Sources */,
 				9F8E5F801BC2592600DC10DB /* ResponseValidatorsAssembly.m in Sources */,
 				636F8DF71BCB90E500552B91 /* EventListModuleAssembly.m in Sources */,
@@ -3574,6 +3609,7 @@
 				636F8D0C1BCB825F00552B91 /* ModuleAssemblyBase.m in Sources */,
 				636A37C21BC1413A00B49C3D /* SystemInfrastructureAssembly.m in Sources */,
 				9F0A6C2E1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m in Sources */,
+				63F8F27F1BF790D9000017F3 /* EventTypeSetter.m in Sources */,
 				631FFE1A1BEF451400749DB8 /* UIView+CDResponder.m in Sources */,
 				631FFE571BEF930200749DB8 /* ReportListTableViewController.m in Sources */,
 				636F8CB91BC97E7F00552B91 /* Speaker+CoreDataProperties.m in Sources */,

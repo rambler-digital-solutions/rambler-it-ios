@@ -28,9 +28,14 @@
     [self.operationScheduler addOperation:compoundOperation];
 }
 
-- (id)obtainEventWithPredicate:(NSPredicate *)predicate {
-    NSArray *events = [Event MR_findAll];
+- (NSArray *)obtainEventWithPredicate:(NSPredicate *)predicate {
+    NSManagedObjectContext *context = [NSManagedObjectContext MR_defaultContext];
+    
+    NSArray *events = [Event MR_findAllWithPredicate:predicate inContext:context];
+    
     return events;
 }
+
+
 
 @end

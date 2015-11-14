@@ -13,6 +13,8 @@
 #import "EventRouter.h"
 #import "EventDataDisplayManager.h"
 #import "PresenterStateStorage.h"
+#import "ServiceComponents.h"
+#import "PresentationLayerHelpersAssembly.h"
 
 @implementation  EventModuleAssembly
 
@@ -31,6 +33,12 @@
                             configuration:^(TyphoonDefinition *definition) {
                                 [definition injectProperty:@selector(output)
                                                       with:[self presenterEvent]];
+                                [definition injectProperty:@selector(eventService)
+                                                      with:[self.serviceComponents eventService]];
+                                [definition injectProperty:@selector(eventPrototypeMapper)
+                                                      with:[self.serviceComponents eventPrototypeMapper]];
+                                [definition injectProperty:@selector(eventTypeSetter)
+                                                      with:[self.presentationLayerHelpersAssembly eventTypeSetter]];
              }];
 }
 

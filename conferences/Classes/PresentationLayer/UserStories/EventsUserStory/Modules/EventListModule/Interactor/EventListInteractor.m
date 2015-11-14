@@ -23,8 +23,7 @@
     @weakify(self)
     [self.eventService updateEventWithPredicate:nil completionBlock:^(id data, NSError *error) {
         @strongify(self);
-        NSMutableArray *events = [NSMutableArray array];
-        events = [self mapEventsManagedObjectsToPlainObjects:data];
+        NSArray *events = [self getPlainEventsFromManagedObjects:data];
         
         [self.output didUpdateEventList:events];
     }];
@@ -33,18 +32,14 @@
 - (NSArray *)obtainEventList {
     id managedObjectEvents = [self.eventService obtainEventWithPredicate:nil];
     
-    NSMutableArray *events = [NSMutableArray array];
-    
-    if ([managedObjectEvents isKindOfClass:[NSArray class]]) {
-        events = [self mapEventsManagedObjectsToPlainObjects:managedObjectEvents];
-    }
+    NSArray *events = [self getPlainEventsFromManagedObjects:managedObjectEvents];
     
     return events;
 }
 
 #pragma mark - Private methods
 
-- (NSMutableArray *)mapEventsManagedObjectsToPlainObjects:(NSArray *)manajedObjectEvents {
+- (NSArray *)getPlainEventsFromManagedObjects:(NSArray *)manajedObjectEvents {
     NSMutableArray *plainEvents = [NSMutableArray array];
     for (Event *managedObjectEvent in manajedObjectEvents) {
         PlainEvent *plainEvent = [PlainEvent new];
@@ -57,7 +52,7 @@
     return [self sortEventsByDate:plainEvents];
 }
 
-- (NSMutableArray *)sortEventsByDate:(NSMutableArray *)events {
+- (NSArray *)sortEventsByDate:(NSMutableArray *)events {
     NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:NSStringFromSelector(@selector(startDate)) ascending:NO];
     events = [[events sortedArrayUsingDescriptors:@[sortDescriptor]] mutableCopy];
     

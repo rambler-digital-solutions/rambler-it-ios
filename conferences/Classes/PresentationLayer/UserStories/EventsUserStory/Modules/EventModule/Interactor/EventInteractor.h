@@ -10,10 +10,16 @@
 #import "EventInteractorInput.h"
 
 @protocol EventInteractorOutput;
+@protocol EventService;
+@protocol PrototypeMapper;
+@class EventTypeSetter;
 
 @interface EventInteractor : NSObject<EventInteractorInput>
 
 @property (nonatomic, weak) id<EventInteractorOutput> output;
+@property (strong, nonatomic) id <EventService> eventService;
+@property (strong, nonatomic) id <PrototypeMapper> eventPrototypeMapper;
+@property (strong, nonatomic) EventTypeSetter *eventTypeSetter;
 
 @end
 

@@ -15,9 +15,9 @@
  Enum represents event type
  */
 typedef  NS_ENUM(NSUInteger, EventType) {
-    FutureEvent = 0;
-    CurrentEvent = 1;
-    PastEvent = 2;
+    FutureEvent = 0,
+    CurrentEvent = 1,
+    PastEvent = 2
 };
 
 #endif

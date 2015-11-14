@@ -9,9 +9,11 @@
 #import <Typhoon/Typhoon.h>
 
 @protocol ServiceComponents;
+@class PresentationLayerHelpersAssembly;
 
 @interface ModuleAssemblyBase : TyphoonAssembly
 
 @property (strong, nonatomic, readonly) TyphoonAssembly <ServiceComponents> *serviceComponents;
+@property (strong, nonatomic, readonly) PresentationLayerHelpersAssembly *presentationLayerHelpersAssembly;
 
 @end
