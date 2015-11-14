@@ -10,8 +10,8 @@
 
 @class PlainEvent;
 
-@interface PresenterCredentialsStorage : NSObject
+@interface PresenterStateStorage : NSObject
 
-@property (strong, nonatomic) PlainEvent *event;
+@property (strong, nonatomic) NSString *eventObjectId;
 
 @end

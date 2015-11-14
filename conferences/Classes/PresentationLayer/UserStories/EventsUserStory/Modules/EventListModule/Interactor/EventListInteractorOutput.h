@@ -12,6 +12,13 @@
 
 @protocol EventListInteractorOutput <NSObject>
 
+/**
+ @author Artem Karpushin
+ 
+ Method is used to inform presenter that list of events has been updated
+ 
+ @param events Array of PlainEvent objects
+ */
 - (void)didUpdateEventList:(NSArray *)events;
 
 @end

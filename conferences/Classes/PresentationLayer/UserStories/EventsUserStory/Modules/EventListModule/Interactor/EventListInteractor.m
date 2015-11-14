@@ -24,10 +24,8 @@
     [self.eventService updateEventWithPredicate:nil completionBlock:^(id data, NSError *error) {
         @strongify(self);
         NSMutableArray *events = [NSMutableArray array];
+        events = [self mapEventsManagedObjectsToPlainObjects:data];
         
-        if ([data isKindOfClass:[NSArray class]]) {
-            events = [self mapEventsManagedObjectsToPlainObjects:data];
-        }
         [self.output didUpdateEventList:events];
     }];
 }
@@ -40,6 +38,7 @@
     if ([managedObjectEvents isKindOfClass:[NSArray class]]) {
         events = [self mapEventsManagedObjectsToPlainObjects:managedObjectEvents];
     }
+    
     return events;
 }
 
@@ -54,11 +53,12 @@
         
         [plainEvents addObject:plainEvent];
     }
+    
     return [self sortEventsByDate:plainEvents];
 }
 
 - (NSMutableArray *)sortEventsByDate:(NSMutableArray *)events {
-    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"startDate" ascending:NO];
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:NSStringFromSelector(@selector(startDate)) ascending:NO];
     events = [[events sortedArrayUsingDescriptors:@[sortDescriptor]] mutableCopy];
     
     return events;

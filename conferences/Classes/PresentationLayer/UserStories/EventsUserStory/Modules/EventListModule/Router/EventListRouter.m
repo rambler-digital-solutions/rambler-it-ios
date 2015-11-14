@@ -12,11 +12,6 @@
 
 @end
 
-/**
- *	Router модуля, который 1
- *
- *  
- */
 @implementation EventListRouter
 
 #pragma mark - EventListRouterInput

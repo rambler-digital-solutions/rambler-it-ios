@@ -12,7 +12,22 @@
 
 @protocol EventListViewInput <NSObject>
 
+/**
+ @author Artem Karpushin
+ 
+ Method is used to set up current view with events
+ 
+ @param events Array of PlainEvent objects
+ */
 - (void)setupViewWithEventList:(NSArray *)events;
+
+/**
+ @author Artem Karpushin
+ 
+ Method is used to update current view with events
+ 
+ @param events Array of PlainEvent objects
+ */
 - (void)updateViewWithEventList:(NSArray *)events;
 
 @end

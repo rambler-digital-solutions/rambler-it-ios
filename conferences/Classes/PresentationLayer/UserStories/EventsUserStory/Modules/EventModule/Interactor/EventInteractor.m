@@ -9,17 +9,14 @@
 #import "EventInteractor.h"
 #import "EventInteractorOutput.h"
 
-@interface EventInteractor()
-
-@end
-
-/**
- *	Interactor модуля, который 1
- *
- *  
- */
 @implementation EventInteractor
 
-#pragma mark - EventInteractorInput
+- (PlainEvent *)obtainEventByObjectId:(NSString *)objectId {
+    return nil;
+}
+
+- (void)updateEventByObjectId:(NSString *)objectId {
+    [self.output didUpdateEvent:nil];
+}
 
 @end

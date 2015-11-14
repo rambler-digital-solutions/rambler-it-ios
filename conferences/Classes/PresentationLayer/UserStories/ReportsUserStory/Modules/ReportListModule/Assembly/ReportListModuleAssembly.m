@@ -16,7 +16,9 @@
 
 #import "TabBarButtonPrototype.h"
 
-static NSString * const kReportsUserStoryName = @"ReportsUserStory";
+static NSString *const kReportsUserStoryName = @"ReportsUserStory";
+static NSString *const kTabBarButtonTitle = @"Отчеты";
+static NSString *const kTabbarButtonId = @"reports_tab";
 
 @implementation  ReportListModuleAssembly
 
@@ -75,9 +77,9 @@ static NSString * const kReportsUserStoryName = @"ReportsUserStory";
                               [definition injectProperty:@selector(tabBarButtonSelectedStateImage)
                                                     with:[UIImage imageNamed:@""]];
                               [definition injectProperty:@selector(tabBarButtonTitle)
-                                                    with:@"Отчеты"];
+                                                    with:kTabBarButtonTitle];
                               [definition injectProperty:@selector(tabbarButtonId)
-                                                    with:@"reports_tab"];
+                                                    with:kTabbarButtonId];
                               [definition injectProperty:@selector(tabBarControllercontent)
                                                     with:[self reportListTabBarControllerContent]];
                           }];
@@ -87,7 +89,7 @@ static NSString * const kReportsUserStoryName = @"ReportsUserStory";
     return [TyphoonFactoryDefinition withFactory:[self reportListStoryboard]
                                         selector:@selector(instantiateViewControllerWithIdentifier:)
                                       parameters:^(TyphoonMethod *factoryMethod) {
-                                          [factoryMethod injectParameterWith:@"ReportListTableViewController"];
+                                          [factoryMethod injectParameterWith:NSStringFromClass([ReportListTableViewController class])];
                                       } configuration:^(TyphoonFactoryDefinition *definition) {
                                       }];
 }

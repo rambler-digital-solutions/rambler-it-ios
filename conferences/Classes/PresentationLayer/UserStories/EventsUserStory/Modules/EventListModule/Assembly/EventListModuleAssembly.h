@@ -10,6 +10,11 @@
 
 @protocol TabBarButtonPrototypeProtocol;
 
+/**
+ @author Artem Karpushin
+ 
+ A TyphoonAssembly which is responsible for creating EventListModule
+ */
 @interface EventListModuleAssembly : ModuleAssemblyBase
 
 - (id<TabBarButtonPrototypeProtocol>)eventListTabBarButtonPrototype;

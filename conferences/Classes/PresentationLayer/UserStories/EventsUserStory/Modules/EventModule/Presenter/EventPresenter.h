@@ -14,14 +14,14 @@
 @protocol EventViewInput;
 @protocol EventInteractorInput;
 @protocol EventRouterInput;
-@class PresenterCredentialsStorage;
+@class PresenterStateStorage;
 
 @interface EventPresenter : NSObject<EventModuleInput, EventViewOutput,EventInteractorOutput>
 
 @property (nonatomic, weak) id<EventViewInput> view;
 @property (nonatomic, strong) id<EventInteractorInput>  interactor;
 @property (nonatomic, strong) id<EventRouterInput> router;
-@property (nonatomic, strong) PresenterCredentialsStorage *presenterCredentialsStorage;
+@property (nonatomic, strong) PresenterStateStorage *presenterStateStorage;
 
 @end
 

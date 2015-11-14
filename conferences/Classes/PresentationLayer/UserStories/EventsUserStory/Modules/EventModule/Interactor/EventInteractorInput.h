@@ -8,7 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+@class PlainEvent;
+
 @protocol EventInteractorInput <NSObject>
+
+- (PlainEvent *)obtainEventByObjectId:(NSString *)objectId;
+- (void)updateEventByObjectId:(NSString *)objectId;
 
 @end
 

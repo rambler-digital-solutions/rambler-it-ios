@@ -12,6 +12,6 @@
 
 @protocol EventModuleInput <NSObject>
 
-- (void)configureCurrentModuleVithEvent:(PlainEvent *)event;
+- (void)configureCurrentModuleWithEventObjectId:(NSString *)objectId;
 
 @end
