@@ -25,16 +25,15 @@
 @property (strong, nonatomic) NITableViewModel *tableViewModel;
 @property (strong, nonatomic) NITableViewActions *tableViewActions;
 @property (strong, nonatomic) id <CellObjectBuilder> cellObjectBuilder;
-@property (strong, nonatomic) PlainEvent *event;
+@property (strong, nonatomic) NSArray *cellObjects;
 
 @end
 
 @implementation EventDataDisplayManager
 
 - (void)configureDataDisplayManagerWithEvent:(PlainEvent *)event {
-    self.event = event;
     self.cellObjectBuilder = [self.cellObjectBuilderFactory builderForEventType:@(event.eventType)];
-    NSLog(@"");
+    self.cellObjects = [self.cellObjectBuilder cellObjectsForEvent:event];
 }
 
 #pragma mark DataDisplayManager methods
@@ -66,29 +65,7 @@
 }
 
 - (NITableViewModel *)configureTableViewModel {
-    NSMutableArray *cellObjects = [NSMutableArray array];
-    NITableViewModel *tableViewModel;
-    
-    EventInfoTableViewCellObject *event = [EventInfoTableViewCellObject objectWithElementID:0 event:self.event];
-    SignUpAndSaveToCalendarEventTableViewCellObject *signUpObject = [SignUpAndSaveToCalendarEventTableViewCellObject new];
-    CurrentVideoTranslationTableViewCellObject *cVideoObject = [CurrentVideoTranslationTableViewCellObject new];
-    PastVideoTranslationTableViewCellObject *pVideoObject = [PastVideoTranslationTableViewCellObject new];
-    EventDescriptionTableViewCellObject *eventDescription = [EventDescriptionTableViewCellObject objectWithElementID:0 event:self.event];
-    
-    LectionInfoTableViewCellObject *lection1 = [LectionInfoTableViewCellObject new];
-    LectionInfoTableViewCellObject *lection2 = [LectionInfoTableViewCellObject new];
-    
-    [cellObjects addObject:event];
-    
-    [cellObjects addObject:signUpObject];
-    [cellObjects addObject:cVideoObject];
-    [cellObjects addObject:pVideoObject];
-    [cellObjects addObject:eventDescription];
-    
-    [cellObjects addObject:lection1];
-    [cellObjects addObject:lection2];
-    
-    tableViewModel = [[NITableViewModel alloc] initWithSectionedArray:cellObjects
+    NITableViewModel *tableViewModel = [[NITableViewModel alloc] initWithSectionedArray:self.cellObjects
                                                                     delegate:(id)[NICellFactory class]];
     
     return tableViewModel;
