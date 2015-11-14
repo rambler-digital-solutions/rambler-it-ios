@@ -10,6 +10,7 @@
 #import "EventListViewInput.h"
 #import "EventListInteractorInput.h"
 #import "EventListRouterInput.h"
+#import "PlainEvent.h"
 
 @implementation EventListPresenter
 
@@ -22,7 +23,7 @@
 }
 
 - (void)didTriggerTapCellWithEvent:(PlainEvent *)event {
-    
+    [self.router openEventModuleWithEventObjectId:event.objectId];
 }
 
 #pragma mark - EventListInteractorOutput

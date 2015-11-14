@@ -7,13 +7,19 @@
 //
 
 #import "EventListRouter.h"
+#import "EventModuleInput.h"
 
-@interface EventListRouter()
-
-@end
+static NSString *const kEventListModuleToEventModuleSegue = @"EventListModuleToEventModuleSegue";
 
 @implementation EventListRouter
 
 #pragma mark - EventListRouterInput
+
+- (void)openEventModuleWithEventObjectId:(NSString *)objectId {
+    [[self.transitionHandler openModuleUsingSegue:kEventListModuleToEventModuleSegue] thenChainUsingBlock:^id<RamblerViperModuleOutput>(id<EventModuleInput> moduleInput) {
+        [moduleInput configureCurrentModuleWithEventObjectId:objectId];
+        return nil;
+    }];
+}
 
 @end

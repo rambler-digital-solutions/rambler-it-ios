@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <ViperMcFlurry/ViperMcFlurry.h>
 
 @class PlainEvent;
 
-@protocol EventModuleInput <NSObject>
+@protocol EventModuleInput <RamblerViperModuleInput>
 
 - (void)configureCurrentModuleWithEventObjectId:(NSString *)objectId;
 

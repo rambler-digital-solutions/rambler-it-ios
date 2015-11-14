@@ -59,7 +59,8 @@ static NSString *const kTabbarButtonId = @"events_tab";
 - (EventListRouter *)routerEventList {
     return [TyphoonDefinition withClass:[EventListRouter class]
                           configuration:^(TyphoonDefinition *definition) {
-
+                              [definition injectProperty:@selector(transitionHandler)
+                                                    with:[self viewEventList]];
            }];
 }
 

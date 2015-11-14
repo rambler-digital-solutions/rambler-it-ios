@@ -1273,8 +1273,8 @@
 		636F8DE01BCB90E500552B91 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				63DD63911BE670A000874DE5 /* EventModule */,
 				636F8DE11BCB90E500552B91 /* EventListModule */,
+				63DD63911BE670A000874DE5 /* EventModule */,
 			);
 			path = Modules;
 			sourceTree = "<group>";

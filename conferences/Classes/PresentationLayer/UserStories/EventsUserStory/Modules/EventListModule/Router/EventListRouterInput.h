@@ -10,5 +10,7 @@
 
 @protocol EventListRouterInput <NSObject>
 
+- (void)openEventModuleWithEventObjectId:(NSString *)objectId;
+
 @end
 
