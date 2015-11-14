@@ -10,8 +10,4 @@
 
 @protocol EventInfoTableViewCellActionProtocol <NSObject>
 
-- (void)didTapSignUpButton:(UIButton *)button;
-- (void)didTapSaveToCalendarButton:(UIButton *)button;
-- (void)didTapReadMoreEventDescriptionButton:(UIButton *)button;
-
 @end

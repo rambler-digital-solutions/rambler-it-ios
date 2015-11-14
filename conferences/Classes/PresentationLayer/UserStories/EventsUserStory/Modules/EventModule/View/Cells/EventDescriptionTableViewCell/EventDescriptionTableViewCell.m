@@ -8,6 +8,9 @@
 
 #import "EventDescriptionTableViewCell.h"
 #import "EventDescriptionTableViewCellObject.h"
+#import "EventTableViewCellActionProtocol.h"
+#import "EventDescriptionTableViewCellActionProtocol.h"
+#import "Proxying/Extensions/UIResponder+CDProxying/UIResponder+CDProxying.h"
 
 static CGFloat const kEventDescriptionTableViewCellHeight = 190.0f;
 
@@ -15,9 +18,16 @@ static CGFloat const kEventDescriptionTableViewCellHeight = 190.0f;
 
 @property (weak, nonatomic) IBOutlet UITextView *eventDescription;
 
+@property (weak, nonatomic) id <EventDescriptionTableViewCellActionProtocol> actionProxy;
+
 @end
 
 @implementation EventDescriptionTableViewCell
+
+- (void)didMoveToSuperview {
+    [super didMoveToSuperview];
+    self.actionProxy = (id<EventDescriptionTableViewCellActionProtocol>)[self cd_proxyForProtocol:@protocol(EventTableViewCellActionProtocol)];
+}
 
 #pragma mark - NICell methods
 
@@ -34,6 +44,7 @@ static CGFloat const kEventDescriptionTableViewCellHeight = 190.0f;
 #pragma mark - IBActions
 
 - (IBAction)didTapReadMoreButton:(UIButton *)sender {
+    [self.actionProxy didTapReadMoreEventDescriptionButton:sender];
 }
 
 @end

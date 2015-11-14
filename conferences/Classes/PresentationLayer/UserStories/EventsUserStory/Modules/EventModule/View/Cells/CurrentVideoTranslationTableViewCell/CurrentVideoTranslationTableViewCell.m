@@ -8,10 +8,24 @@
 
 #import "CurrentVideoTranslationTableViewCell.h"
 #import "CurrentVideoTranslationTableViewCellObject.h"
+#import "CurrentVideoTranslationTableViewCellActionProtocol.h"
+#import "EventTableViewCellActionProtocol.h"
+#import "Proxying/Extensions/UIResponder+CDProxying/UIResponder+CDProxying.h"
 
 static CGFloat const kCurrentVideoTranslationTableViewCellHeight = 60.0f;
 
+@interface CurrentVideoTranslationTableViewCell ()
+
+@property (weak, nonatomic) id <CurrentVideoTranslationTableViewCellActionProtocol> actionProxy;
+
+@end
+
 @implementation CurrentVideoTranslationTableViewCell
+
+- (void)didMoveToSuperview {
+    [super didMoveToSuperview];
+    self.actionProxy = (id<CurrentVideoTranslationTableViewCellActionProtocol>)[self cd_proxyForProtocol:@protocol(EventTableViewCellActionProtocol)];
+}
 
 #pragma mark - NICell methods
 
@@ -26,6 +40,7 @@ static CGFloat const kCurrentVideoTranslationTableViewCellHeight = 60.0f;
 #pragma mark - IBActions
 
 - (IBAction)didTapCurrentTranslationButton:(UIButton *)sender {
+    [self.actionProxy didTapCurrentTranslationButton:sender];
 }
 
 @end

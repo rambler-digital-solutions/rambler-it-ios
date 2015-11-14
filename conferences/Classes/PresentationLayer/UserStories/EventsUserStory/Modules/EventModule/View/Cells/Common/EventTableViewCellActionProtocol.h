@@ -8,7 +8,10 @@
 
 #import "EventInfoTableViewCellActionProtocol.h"
 #import "LectionInfoTableViewCellActionProtocol.h"
+#import "SignUpAndSaveToCalendarEventTableViewCellActionProtocol.h"
+#import "CurrentVideoTranslationTableViewCellActionProtocol.h"
+#import "EventDescriptionTableViewCellActionProtocol.h"
 
-@protocol EventTableViewCellActionProtocol <EventInfoTableViewCellActionProtocol, LectionInfoTableViewCellActionProtocol>
+@protocol EventTableViewCellActionProtocol <EventInfoTableViewCellActionProtocol, LectionInfoTableViewCellActionProtocol, SignUpAndSaveToCalendarEventTableViewCellActionProtocol, CurrentVideoTranslationTableViewCellActionProtocol, EventDescriptionTableViewCellActionProtocol>
 
 @end

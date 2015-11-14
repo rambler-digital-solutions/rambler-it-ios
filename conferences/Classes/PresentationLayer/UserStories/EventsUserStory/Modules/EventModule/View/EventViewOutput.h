@@ -16,6 +16,7 @@
 - (void)didTriggerSaveToCalendarButtonTappedEvent:(UIButton *)button;
 - (void)didTriggerReadMoreEventDescriptionButtonTappedEvent:(UIButton *)button;
 - (void)didTriggerReadMoreLectionDescriptionButtonTappedEvent:(UIButton *)button;
+- (void)didTriggerCurrentTranslationButtonTapEvent:(UIButton *)button;
 
 @end
 

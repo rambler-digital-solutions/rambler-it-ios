@@ -8,9 +8,6 @@
 
 #import "EventInfoTableViewCell.h"
 #import "EventInfoTableViewCellObject.h"
-#import "EventTableViewCellActionProtocol.h"
-#import "EventInfoTableViewCellActionProtocol.h"
-#import "Proxying/Extensions/UIResponder+CDProxying/UIResponder+CDProxying.h"
 
 static CGFloat const EventInfoTableViewCellHeight = 150.0f;
 
@@ -20,16 +17,9 @@ static CGFloat const EventInfoTableViewCellHeight = 150.0f;
 @property (weak, nonatomic) IBOutlet UILabel *eventTitle;
 @property (weak, nonatomic) IBOutlet UILabel *eventSubTitle;
 
-@property (weak, nonatomic) id <EventInfoTableViewCellActionProtocol> actionProxy;
-
 @end
 
 @implementation EventInfoTableViewCell
-
-- (void)didMoveToSuperview {
-    [super didMoveToSuperview];
-    self.actionProxy = (id<EventInfoTableViewCellActionProtocol>)[self cd_proxyForProtocol:@protocol(EventTableViewCellActionProtocol)];
-}
 
 #pragma mark - NICell methods
 

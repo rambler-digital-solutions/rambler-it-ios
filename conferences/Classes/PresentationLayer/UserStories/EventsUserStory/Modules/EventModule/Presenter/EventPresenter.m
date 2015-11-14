@@ -52,6 +52,10 @@
     
 }
 
+- (void)didTriggerCurrentTranslationButtonTapEvent:(UIButton *)button {
+    
+}
+
 #pragma mark - EventInteractorOutput
 
 - (void)didUpdateEvent:(PlainEvent *)event {
