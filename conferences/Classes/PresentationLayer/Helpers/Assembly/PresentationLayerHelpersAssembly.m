@@ -7,12 +7,12 @@
 //
 
 #import "PresentationLayerHelpersAssembly.h"
-#import "EventTypeSetter.h"
+#import "EventTypeDeterminator.h"
 
 @implementation PresentationLayerHelpersAssembly
 
-- (EventTypeSetter *)eventTypeSetter {
-    return [TyphoonDefinition withClass:[EventTypeSetter class]];
+- (EventTypeDeterminator *)eventTypeDeterminator {
+    return [TyphoonDefinition withClass:[EventTypeDeterminator class]];
 }
 
 @end

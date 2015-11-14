@@ -8,7 +8,7 @@
 
 #import <Typhoon/Typhoon.h>
 
-@class EventTypeSetter;
+@class EventTypeDeterminator;
 
 /**
  @author Artem Karpushin
@@ -17,6 +17,6 @@
  */
 @interface PresentationLayerHelpersAssembly : TyphoonAssembly
 
-- (EventTypeSetter *)eventTypeSetter;
+- (EventTypeDeterminator *)eventTypeDeterminator;
 
 @end

@@ -11,7 +11,7 @@
 #import "EventService.h"
 #import "PlainEvent.h"
 #import "PrototypeMapper.h"
-#import "EventTypeSetter.h"
+#import "EventTypeDeterminator.h"
 
 static NSString *const kEventByObjectIdPredicateFormat = @"objectId = %@";
 
@@ -41,7 +41,8 @@ static NSString *const kEventByObjectIdPredicateFormat = @"objectId = %@";
     PlainEvent *plainEvent = [PlainEvent new];
     [self.eventPrototypeMapper fillObject:plainEvent withObject:managedObjectEvent];
     
-    [self.eventTypeSetter setTypeForEvent:plainEvent];
+    EventType eventType = [self.eventTypeDeterminator determinateTypeForEvent:plainEvent];
+    plainEvent.eventType = eventType;
     
     return plainEvent;
 }

@@ -44,8 +44,8 @@
                                                       with:[self.serviceComponents eventService]];
                                 [definition injectProperty:@selector(eventPrototypeMapper)
                                                       with:[self.serviceComponents eventPrototypeMapper]];
-                                [definition injectProperty:@selector(eventTypeSetter)
-                                                      with:[self.presentationLayerHelpersAssembly eventTypeSetter]];
+                                [definition injectProperty:@selector(eventTypeDeterminator)
+                                                      with:[self.presentationLayerHelpersAssembly eventTypeDeterminator]];
              }];
 }
 

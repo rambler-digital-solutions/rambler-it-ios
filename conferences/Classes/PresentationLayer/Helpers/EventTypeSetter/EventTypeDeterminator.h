@@ -7,23 +7,24 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "EventType.h"
 
 @class PlainEvent;
 
 /**
  @author Artem Karpushin
  
- Helper class is designed to set event type
+ Helper class is designed to determinate event type
  */
-@interface EventTypeSetter : NSObject
+@interface EventTypeDeterminator : NSObject
 
 /**
  @author Artem Karpushin
  
- Method is used to set event type (future, current or past) depending on current time
+ Method is used to determinate event type (future, current or past) depending on current time
  
  @param event PlainEvent object
  */
-- (void)setTypeForEvent:(PlainEvent *)event;
+- (EventType)determinateTypeForEvent:(PlainEvent *)event;
 
 @end
