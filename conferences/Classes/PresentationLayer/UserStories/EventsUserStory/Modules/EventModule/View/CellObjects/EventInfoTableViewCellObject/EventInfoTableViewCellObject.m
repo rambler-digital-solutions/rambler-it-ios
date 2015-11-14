@@ -15,18 +15,18 @@
 @property (strong, nonatomic, readwrite) NSString *date;
 @property (strong, nonatomic, readwrite) NSString *eventTitle;
 @property (strong, nonatomic, readwrite) NSString *eventSubTitle;
-@property (strong, nonatomic, readwrite) NSString *eventDescription;
 
 @end
 
 @implementation EventInfoTableViewCellObject
+
+#pragma mark - Initialization
 
 - (instancetype)initWithElementID:(NSInteger)elementID event:(PlainEvent *)event {
     self = [super init];
     if (self) {
         _eventTitle = event.name;
         _eventSubTitle = event.eventSubtitle;
-        _eventDescription = event.eventDescription;
         
         // вынести в форматтер
         NSDateFormatter *dayDateFormatter = [NSDateFormatter new];

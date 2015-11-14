@@ -12,16 +12,13 @@
 #import "EventInfoTableViewCellActionProtocol.h"
 #import "Proxying/Extensions/UIResponder+CDProxying/UIResponder+CDProxying.h"
 
-static CGFloat const EventInfoTableViewCellHeight = 520.0f;
+static CGFloat const EventInfoTableViewCellHeight = 150.0f;
 
 @interface EventInfoTableViewCell ()
-
- //eventSubTitle ограничить количество символов?
 
 @property (weak, nonatomic) IBOutlet UILabel *date;
 @property (weak, nonatomic) IBOutlet UILabel *eventTitle;
 @property (weak, nonatomic) IBOutlet UILabel *eventSubTitle;
-@property (weak, nonatomic) IBOutlet UITextView *eventDescription;
 
 @property (weak, nonatomic) id <EventInfoTableViewCellActionProtocol> actionProxy;
 
@@ -34,31 +31,18 @@ static CGFloat const EventInfoTableViewCellHeight = 520.0f;
     self.actionProxy = (id<EventInfoTableViewCellActionProtocol>)[self cd_proxyForProtocol:@protocol(EventTableViewCellActionProtocol)];
 }
 
+#pragma mark - NICell methods
+
 - (BOOL)shouldUpdateCellWithObject:(EventInfoTableViewCellObject *)object {
     self.date.text = object.date;
     self.eventTitle.text = object.eventTitle;
     self.eventSubTitle.text = object.eventSubTitle;
-    self.eventDescription.text = object.eventDescription;
     
     return  YES;
 }
 
 + (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
     return EventInfoTableViewCellHeight;
-}
-
-#pragma mark - IBActions
-
-- (IBAction)didTapSignUpButton:(UIButton *)sender {
-    [self.actionProxy didTapSignUpButton:sender];
-}
-
-- (IBAction)didTapSaveToCalendarButton:(UIButton *)sender {
-    [self.actionProxy didTapSaveToCalendarButton:sender];
-}
-
-- (IBAction)didTapReadMoreButton:(UIButton *)sender {
-    [self.actionProxy didTapReadMoreEventDescriptionButton:sender];
 }
 
 @end

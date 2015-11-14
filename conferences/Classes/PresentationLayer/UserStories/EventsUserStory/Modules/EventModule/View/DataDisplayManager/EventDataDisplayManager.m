@@ -12,6 +12,10 @@
 
 #import "EventInfoTableViewCellObject.h"
 #import "LectionInfoTableViewCellObject.h"
+#import "SignUpAndSaveToCalendarEventTableViewCellObject.h"
+#import "CurrentVideoTranslationTableViewCellObject.h"
+#import "PastVideoTranslationTableViewCellObject.h"
+#import "EventDescriptionTableViewCellObject.h"
 
 @interface EventDataDisplayManager () <UITableViewDelegate>
 
@@ -60,10 +64,21 @@
     NITableViewModel *tableViewModel;
     
     EventInfoTableViewCellObject *event = [EventInfoTableViewCellObject objectWithElementID:0 event:self.event];
+    SignUpAndSaveToCalendarEventTableViewCellObject *signUpObject = [SignUpAndSaveToCalendarEventTableViewCellObject new];
+    CurrentVideoTranslationTableViewCellObject *cVideoObject = [CurrentVideoTranslationTableViewCellObject new];
+    PastVideoTranslationTableViewCellObject *pVideoObject = [PastVideoTranslationTableViewCellObject new];
+    EventDescriptionTableViewCellObject *eventDescription = [EventDescriptionTableViewCellObject objectWithElementID:0 event:self.event];
+    
     LectionInfoTableViewCellObject *lection1 = [LectionInfoTableViewCellObject new];
     LectionInfoTableViewCellObject *lection2 = [LectionInfoTableViewCellObject new];
     
     [cellObjects addObject:event];
+    
+    [cellObjects addObject:signUpObject];
+    [cellObjects addObject:cVideoObject];
+    [cellObjects addObject:pVideoObject];
+    [cellObjects addObject:eventDescription];
+    
     [cellObjects addObject:lection1];
     [cellObjects addObject:lection2];
     

@@ -127,6 +127,18 @@
 		63F54D9B1BC5AB3C00DB1746 /* ServiceComponentsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F54D9A1BC5AB3C00DB1746 /* ServiceComponentsAssembly.m */; };
 		63F54DA01BC5BB2800DB1746 /* ThirdPartiesConfiguratorImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F54D9F1BC5BB2800DB1746 /* ThirdPartiesConfiguratorImplementation.m */; };
 		63F8F23E1BF66743000017F3 /* PresenterStateStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F23D1BF66743000017F3 /* PresenterStateStorage.m */; };
+		63F8F24E1BF74302000017F3 /* CurrentVideoTranslationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F24C1BF74302000017F3 /* CurrentVideoTranslationTableViewCell.m */; };
+		63F8F24F1BF74302000017F3 /* CurrentVideoTranslationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63F8F24D1BF74302000017F3 /* CurrentVideoTranslationTableViewCell.xib */; };
+		63F8F2531BF74351000017F3 /* EventDescriptionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F2511BF74351000017F3 /* EventDescriptionTableViewCell.m */; };
+		63F8F2541BF74351000017F3 /* EventDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63F8F2521BF74351000017F3 /* EventDescriptionTableViewCell.xib */; };
+		63F8F25D1BF743A0000017F3 /* PastVideoTranslationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F25B1BF743A0000017F3 /* PastVideoTranslationTableViewCell.m */; };
+		63F8F25E1BF743A0000017F3 /* PastVideoTranslationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63F8F25C1BF743A0000017F3 /* PastVideoTranslationTableViewCell.xib */; };
+		63F8F2611BF743C1000017F3 /* CurrentVideoTranslationTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F2601BF743C1000017F3 /* CurrentVideoTranslationTableViewCellObject.m */; };
+		63F8F2641BF743D2000017F3 /* EventDescriptionTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F2631BF743D2000017F3 /* EventDescriptionTableViewCellObject.m */; };
+		63F8F26A1BF74421000017F3 /* PastVideoTranslationTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F2691BF74421000017F3 /* PastVideoTranslationTableViewCellObject.m */; };
+		63F8F26E1BF74732000017F3 /* SignUpAndSaveToCalendarEventTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F26D1BF74732000017F3 /* SignUpAndSaveToCalendarEventTableViewCellObject.m */; };
+		63F8F2741BF7474C000017F3 /* SignUpAndSaveToCalendarEventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F2721BF7474C000017F3 /* SignUpAndSaveToCalendarEventTableViewCell.m */; };
+		63F8F2751BF7474C000017F3 /* SignUpAndSaveToCalendarEventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63F8F2731BF7474C000017F3 /* SignUpAndSaveToCalendarEventTableViewCell.xib */; };
 		63FD4DFB1BE4FA340046378E /* EventPrototypeMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FD4DFA1BE4FA340046378E /* EventPrototypeMapper.m */; };
 		63FD4E061BE5038D0046378E /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FD4E051BE5038D0046378E /* UIColor+Hex.m */; };
 		63FD4E0B1BE621750046378E /* Event+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FD4E081BE621750046378E /* Event+CoreDataProperties.m */; };
@@ -462,6 +474,26 @@
 		63F54D9F1BC5BB2800DB1746 /* ThirdPartiesConfiguratorImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdPartiesConfiguratorImplementation.m; sourceTree = "<group>"; };
 		63F8F23C1BF66743000017F3 /* PresenterStateStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresenterStateStorage.h; sourceTree = "<group>"; };
 		63F8F23D1BF66743000017F3 /* PresenterStateStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresenterStateStorage.m; sourceTree = "<group>"; };
+		63F8F24B1BF74302000017F3 /* CurrentVideoTranslationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentVideoTranslationTableViewCell.h; sourceTree = "<group>"; };
+		63F8F24C1BF74302000017F3 /* CurrentVideoTranslationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentVideoTranslationTableViewCell.m; sourceTree = "<group>"; };
+		63F8F24D1BF74302000017F3 /* CurrentVideoTranslationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CurrentVideoTranslationTableViewCell.xib; sourceTree = "<group>"; };
+		63F8F2501BF74351000017F3 /* EventDescriptionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDescriptionTableViewCell.h; sourceTree = "<group>"; };
+		63F8F2511BF74351000017F3 /* EventDescriptionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDescriptionTableViewCell.m; sourceTree = "<group>"; };
+		63F8F2521BF74351000017F3 /* EventDescriptionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventDescriptionTableViewCell.xib; sourceTree = "<group>"; };
+		63F8F25A1BF743A0000017F3 /* PastVideoTranslationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PastVideoTranslationTableViewCell.h; sourceTree = "<group>"; };
+		63F8F25B1BF743A0000017F3 /* PastVideoTranslationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PastVideoTranslationTableViewCell.m; sourceTree = "<group>"; };
+		63F8F25C1BF743A0000017F3 /* PastVideoTranslationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PastVideoTranslationTableViewCell.xib; sourceTree = "<group>"; };
+		63F8F25F1BF743C1000017F3 /* CurrentVideoTranslationTableViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentVideoTranslationTableViewCellObject.h; sourceTree = "<group>"; };
+		63F8F2601BF743C1000017F3 /* CurrentVideoTranslationTableViewCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentVideoTranslationTableViewCellObject.m; sourceTree = "<group>"; };
+		63F8F2621BF743D2000017F3 /* EventDescriptionTableViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDescriptionTableViewCellObject.h; sourceTree = "<group>"; };
+		63F8F2631BF743D2000017F3 /* EventDescriptionTableViewCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDescriptionTableViewCellObject.m; sourceTree = "<group>"; };
+		63F8F2681BF74421000017F3 /* PastVideoTranslationTableViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PastVideoTranslationTableViewCellObject.h; sourceTree = "<group>"; };
+		63F8F2691BF74421000017F3 /* PastVideoTranslationTableViewCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PastVideoTranslationTableViewCellObject.m; sourceTree = "<group>"; };
+		63F8F26C1BF74732000017F3 /* SignUpAndSaveToCalendarEventTableViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpAndSaveToCalendarEventTableViewCellObject.h; sourceTree = "<group>"; };
+		63F8F26D1BF74732000017F3 /* SignUpAndSaveToCalendarEventTableViewCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpAndSaveToCalendarEventTableViewCellObject.m; sourceTree = "<group>"; };
+		63F8F2711BF7474C000017F3 /* SignUpAndSaveToCalendarEventTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpAndSaveToCalendarEventTableViewCell.h; sourceTree = "<group>"; };
+		63F8F2721BF7474C000017F3 /* SignUpAndSaveToCalendarEventTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpAndSaveToCalendarEventTableViewCell.m; sourceTree = "<group>"; };
+		63F8F2731BF7474C000017F3 /* SignUpAndSaveToCalendarEventTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpAndSaveToCalendarEventTableViewCell.xib; sourceTree = "<group>"; };
 		63FA398D1BDD46E500CE6249 /* PlainEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlainEvent.h; sourceTree = "<group>"; };
 		63FA398E1BDD46E500CE6249 /* PlainEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlainEvent.m; sourceTree = "<group>"; };
 		63FD4DF81BE4F9D00046378E /* PrototypeMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrototypeMapper.h; sourceTree = "<group>"; };
@@ -1462,6 +1494,10 @@
 		638DBD491BEA396A00B4B208 /* CellObjects */ = {
 			isa = PBXGroup;
 			children = (
+				63F8F26B1BF74732000017F3 /* SignUpAndSaveToCalendarEventTableViewCellObject */,
+				63F8F2471BF74260000017F3 /* CurrentVideoTranslationTableViewCellObject */,
+				63F8F2481BF74260000017F3 /* EventDescriptionTableViewCellObject */,
+				63F8F24A1BF74260000017F3 /* PastVideoTranslationTableViewCellObject */,
 				638DBD601BEE2BDC00B4B208 /* EventInfoTableViewCellObject */,
 				638DBD681BEE2CEF00B4B208 /* LectionInfoTableViewCellObject */,
 			);
@@ -1472,6 +1508,10 @@
 			isa = PBXGroup;
 			children = (
 				631FFE0A1BEF3D4000749DB8 /* Common */,
+				63F8F26F1BF7474C000017F3 /* SignUpAndSaveToCalendarEventTableViewCell */,
+				63F8F23F1BF741D7000017F3 /* CurrentVideoTranslationTableViewCell */,
+				63F8F2411BF741D7000017F3 /* EventDescriptionTableViewCell */,
+				63F8F2451BF741D7000017F3 /* PastVideoTranslationTableViewCell */,
 				638DBD541BEE2B1000B4B208 /* EventInfoTableViewCell */,
 				638DBD6C1BEE2CF900B4B208 /* LectionInfoTableViewCell */,
 			);
@@ -1705,6 +1745,114 @@
 				63F8F23D1BF66743000017F3 /* PresenterStateStorage.m */,
 			);
 			path = PresenterStateStorage;
+			sourceTree = "<group>";
+		};
+		63F8F23F1BF741D7000017F3 /* CurrentVideoTranslationTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				63F8F2401BF741D7000017F3 /* ActionProtocol */,
+				63F8F24B1BF74302000017F3 /* CurrentVideoTranslationTableViewCell.h */,
+				63F8F24C1BF74302000017F3 /* CurrentVideoTranslationTableViewCell.m */,
+				63F8F24D1BF74302000017F3 /* CurrentVideoTranslationTableViewCell.xib */,
+			);
+			path = CurrentVideoTranslationTableViewCell;
+			sourceTree = "<group>";
+		};
+		63F8F2401BF741D7000017F3 /* ActionProtocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ActionProtocol;
+			sourceTree = "<group>";
+		};
+		63F8F2411BF741D7000017F3 /* EventDescriptionTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				63F8F2421BF741D7000017F3 /* ActionProtocol */,
+				63F8F2501BF74351000017F3 /* EventDescriptionTableViewCell.h */,
+				63F8F2511BF74351000017F3 /* EventDescriptionTableViewCell.m */,
+				63F8F2521BF74351000017F3 /* EventDescriptionTableViewCell.xib */,
+			);
+			path = EventDescriptionTableViewCell;
+			sourceTree = "<group>";
+		};
+		63F8F2421BF741D7000017F3 /* ActionProtocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ActionProtocol;
+			sourceTree = "<group>";
+		};
+		63F8F2451BF741D7000017F3 /* PastVideoTranslationTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				63F8F2461BF741D7000017F3 /* ActionProtocol */,
+				63F8F25A1BF743A0000017F3 /* PastVideoTranslationTableViewCell.h */,
+				63F8F25B1BF743A0000017F3 /* PastVideoTranslationTableViewCell.m */,
+				63F8F25C1BF743A0000017F3 /* PastVideoTranslationTableViewCell.xib */,
+			);
+			path = PastVideoTranslationTableViewCell;
+			sourceTree = "<group>";
+		};
+		63F8F2461BF741D7000017F3 /* ActionProtocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ActionProtocol;
+			sourceTree = "<group>";
+		};
+		63F8F2471BF74260000017F3 /* CurrentVideoTranslationTableViewCellObject */ = {
+			isa = PBXGroup;
+			children = (
+				63F8F25F1BF743C1000017F3 /* CurrentVideoTranslationTableViewCellObject.h */,
+				63F8F2601BF743C1000017F3 /* CurrentVideoTranslationTableViewCellObject.m */,
+			);
+			path = CurrentVideoTranslationTableViewCellObject;
+			sourceTree = "<group>";
+		};
+		63F8F2481BF74260000017F3 /* EventDescriptionTableViewCellObject */ = {
+			isa = PBXGroup;
+			children = (
+				63F8F2621BF743D2000017F3 /* EventDescriptionTableViewCellObject.h */,
+				63F8F2631BF743D2000017F3 /* EventDescriptionTableViewCellObject.m */,
+			);
+			path = EventDescriptionTableViewCellObject;
+			sourceTree = "<group>";
+		};
+		63F8F24A1BF74260000017F3 /* PastVideoTranslationTableViewCellObject */ = {
+			isa = PBXGroup;
+			children = (
+				63F8F2681BF74421000017F3 /* PastVideoTranslationTableViewCellObject.h */,
+				63F8F2691BF74421000017F3 /* PastVideoTranslationTableViewCellObject.m */,
+			);
+			path = PastVideoTranslationTableViewCellObject;
+			sourceTree = "<group>";
+		};
+		63F8F26B1BF74732000017F3 /* SignUpAndSaveToCalendarEventTableViewCellObject */ = {
+			isa = PBXGroup;
+			children = (
+				63F8F26C1BF74732000017F3 /* SignUpAndSaveToCalendarEventTableViewCellObject.h */,
+				63F8F26D1BF74732000017F3 /* SignUpAndSaveToCalendarEventTableViewCellObject.m */,
+			);
+			path = SignUpAndSaveToCalendarEventTableViewCellObject;
+			sourceTree = "<group>";
+		};
+		63F8F26F1BF7474C000017F3 /* SignUpAndSaveToCalendarEventTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				63F8F2701BF7474C000017F3 /* ActionProtocol */,
+				63F8F2711BF7474C000017F3 /* SignUpAndSaveToCalendarEventTableViewCell.h */,
+				63F8F2721BF7474C000017F3 /* SignUpAndSaveToCalendarEventTableViewCell.m */,
+				63F8F2731BF7474C000017F3 /* SignUpAndSaveToCalendarEventTableViewCell.xib */,
+			);
+			path = SignUpAndSaveToCalendarEventTableViewCell;
+			sourceTree = "<group>";
+		};
+		63F8F2701BF7474C000017F3 /* ActionProtocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ActionProtocol;
 			sourceTree = "<group>";
 		};
 		63FA398C1BDD46C800CE6249 /* PlainObjects */ = {
@@ -3158,10 +3306,14 @@
 				63FDCE141BBDBA2A00A43B60 /* Assets.xcassets in Resources */,
 				638DBD5A1BEE2B1000B4B208 /* EventInfoTableViewCell.xib in Resources */,
 				632887B71BDFE16200701AF0 /* FutureEventTableViewCell.xib in Resources */,
+				63F8F25E1BF743A0000017F3 /* PastVideoTranslationTableViewCell.xib in Resources */,
 				636F8DFD1BCB914100552B91 /* EventsUserStory.storyboard in Resources */,
 				631FFE591BEF937D00749DB8 /* ReportsUserStory.storyboard in Resources */,
+				63F8F24F1BF74302000017F3 /* CurrentVideoTranslationTableViewCell.xib in Resources */,
+				63F8F2751BF7474C000017F3 /* SignUpAndSaveToCalendarEventTableViewCell.xib in Resources */,
 				632887B21BDFE0AB00701AF0 /* PastEventTableViewCell.xib in Resources */,
 				9F8E5F701BC2552600DC10DB /* Conferences.API.plist in Resources */,
+				63F8F2541BF74351000017F3 /* EventDescriptionTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3308,6 +3460,7 @@
 				632887B11BDFE0AB00701AF0 /* PastEventTableViewCell.m in Sources */,
 				638DBD481BEA385400B4B208 /* EventViewController.m in Sources */,
 				632887BC1BDFE21300701AF0 /* PastEventTableViewCellObject.m in Sources */,
+				63F8F26A1BF74421000017F3 /* PastVideoTranslationTableViewCellObject.m in Sources */,
 				9F1830BF1BC11D26000E21A5 /* JSONResponseDeserializer.m in Sources */,
 				631FFE191BEF451400749DB8 /* CDResponderTableViewCell.m in Sources */,
 				9F1830931BC02293000E21A5 /* RESTRequestConfigurator.m in Sources */,
@@ -3319,10 +3472,12 @@
 				63136FE21BDCDB2700994356 /* TabBarViewController.m in Sources */,
 				631FFE561BEF930200749DB8 /* ReportListRouter.m in Sources */,
 				636F8CB61BC97E7F00552B91 /* Lecture.m in Sources */,
+				63F8F24E1BF74302000017F3 /* CurrentVideoTranslationTableViewCell.m in Sources */,
 				63D628EB1BE4C741004AF98F /* PlainEvent.m in Sources */,
 				9F1830D71BC125C3000E21A5 /* ParseResponseValidator.m in Sources */,
 				9F1830D11BC12492000E21A5 /* ResponseValidatorBase.m in Sources */,
 				638DBD471BEA385400B4B208 /* EventRouter.m in Sources */,
+				63F8F2641BF743D2000017F3 /* EventDescriptionTableViewCellObject.m in Sources */,
 				9F0A85371BC18A3C006F79FB /* NetworkCompoundOperationBuilder.m in Sources */,
 				9F18309F1BC024A9000E21A5 /* RequestDataModel.m in Sources */,
 				631FFE5F1BEF991000749DB8 /* ReportListDataDisplayManager.m in Sources */,
@@ -3350,6 +3505,7 @@
 				9F8E5F841BC25A0700DC10DB /* ResponseMappersAssembly.m in Sources */,
 				63136FD91BDCDB2700994356 /* TabBarInteractor.m in Sources */,
 				63136FDD1BDCDB2700994356 /* CollectionViewSectionInfo.m in Sources */,
+				63F8F2531BF74351000017F3 /* EventDescriptionTableViewCell.m in Sources */,
 				9F18311C1BC1615C000E21A5 /* ResultsResponseObjectFormatter.m in Sources */,
 				631FFE671BEFA09400749DB8 /* ReportListTableViewCellObject.m in Sources */,
 				636F8CBB1BC97E7F00552B91 /* SocialNetworkAccount+CoreDataProperties.m in Sources */,
@@ -3357,7 +3513,9 @@
 				63FDCE161BBDBA2A00A43B60 /* main.m in Sources */,
 				636B64071BBDD2A40053E38F /* LectureMaterialsServiceImplementation.m in Sources */,
 				63EF15C01BC461DD00480CAF /* PushNotificationServiceImplementation.m in Sources */,
+				63F8F2611BF743C1000017F3 /* CurrentVideoTranslationTableViewCellObject.m in Sources */,
 				9F8E5F741BC255AA00DC10DB /* RequestSignersAssembly.m in Sources */,
+				63F8F26E1BF74732000017F3 /* SignUpAndSaveToCalendarEventTableViewCellObject.m in Sources */,
 				9FF99E511BC42FF6006F15AF /* OperationSchedulerImplementation.m in Sources */,
 				63136FD31BDCDB2700994356 /* EmbedModuleSegue.m in Sources */,
 				636F8DF81BCB90E500552B91 /* EventListInteractor.m in Sources */,
@@ -3372,6 +3530,7 @@
 				638DBD591BEE2B1000B4B208 /* EventInfoTableViewCell.m in Sources */,
 				9F0A85021BC1698B006F79FB /* ResponseValidationOperation.m in Sources */,
 				63136FDC1BDCDB2700994356 /* CollectionViewDataDisplayManager.m in Sources */,
+				63F8F25D1BF743A0000017F3 /* PastVideoTranslationTableViewCell.m in Sources */,
 				631FFE541BEF930200749DB8 /* ReportListInteractor.m in Sources */,
 				9F0A84FB1BC1698B006F79FB /* CompoundOperationBase.m in Sources */,
 				631FFE531BEF930200749DB8 /* ReportListModuleAssembly.m in Sources */,
@@ -3412,6 +3571,7 @@
 				636F8CB91BC97E7F00552B91 /* Speaker+CoreDataProperties.m in Sources */,
 				9F1830ED1BC14293000E21A5 /* ManagedObjectMapper.m in Sources */,
 				9F1830E61BC13F9F000E21A5 /* ManagedObjectMappingProvider.m in Sources */,
+				63F8F2741BF7474C000017F3 /* SignUpAndSaveToCalendarEventTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

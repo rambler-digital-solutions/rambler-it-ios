@@ -12,7 +12,7 @@
 #import "EventTableViewCellActionProtocol.h"
 #import "Proxying/Extensions/UIResponder+CDProxying/UIResponder+CDProxying.h"
 
-static CGFloat const LectionInfoTableViewCellHeight = 340.0f;
+static CGFloat const kLectionInfoTableViewCellHeight = 340.0f;
 
 @interface LectionInfoTableViewCell ()
 
@@ -34,12 +34,14 @@ static CGFloat const LectionInfoTableViewCellHeight = 340.0f;
     self.actionProxy = (id<LectionInfoTableViewCellActionProtocol>)[self cd_proxyForProtocol:@protocol(EventTableViewCellActionProtocol)];
 }
 
+#pragma mark - NICell methods
+
 - (BOOL)shouldUpdateCellWithObject:(LectionInfoTableViewCellObject *)object {
     return YES;
 }
 
 + (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
-    return LectionInfoTableViewCellHeight;
+    return kLectionInfoTableViewCellHeight;
 }
 
 #pragma mark - IBActions
