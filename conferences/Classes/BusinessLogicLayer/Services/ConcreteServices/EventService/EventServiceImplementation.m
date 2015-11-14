@@ -36,6 +36,4 @@
     return events;
 }
 
-
-
 @end

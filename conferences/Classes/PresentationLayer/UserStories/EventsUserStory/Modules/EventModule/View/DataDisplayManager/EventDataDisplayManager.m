@@ -16,11 +16,15 @@
 #import "CurrentVideoTranslationTableViewCellObject.h"
 #import "PastVideoTranslationTableViewCellObject.h"
 #import "EventDescriptionTableViewCellObject.h"
+#import "CellObjectBuilder.h"
+#import "EventCellObjectBuilderFactory.h"
+#import "PlainEvent.h"
 
 @interface EventDataDisplayManager () <UITableViewDelegate>
 
 @property (strong, nonatomic) NITableViewModel *tableViewModel;
 @property (strong, nonatomic) NITableViewActions *tableViewActions;
+@property (strong, nonatomic) id <CellObjectBuilder> cellObjectBuilder;
 @property (strong, nonatomic) PlainEvent *event;
 
 @end
@@ -29,6 +33,8 @@
 
 - (void)configureDataDisplayManagerWithEvent:(PlainEvent *)event {
     self.event = event;
+    self.cellObjectBuilder = [self.cellObjectBuilderFactory builderForEventType:@(event.eventType)];
+    NSLog(@"");
 }
 
 #pragma mark DataDisplayManager methods

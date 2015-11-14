@@ -13,6 +13,7 @@
 	<true/>
 	<key>TyphoonInitialAssemblies</key>
 	<array>
+		<string>EventCellObjectBuilderFactory</string>
 		<string>PresentationLayerHelpersAssembly</string>
 		<string>ReportListModuleAssembly</string>
 		<string>EventModuleAssembly</string>
