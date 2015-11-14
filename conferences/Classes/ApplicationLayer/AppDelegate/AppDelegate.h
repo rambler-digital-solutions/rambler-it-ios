@@ -17,17 +17,9 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
-@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
-
 @property (strong, nonatomic) id <ApplicationConfigurator> applicationConfigurator;
 @property (strong, nonatomic) id <PushNotificationCenter> pushNotificationCenter;
 @property (strong, nonatomic) id <ThirdPartiesConfigurator> thirdPartiesConfigurator;
-
-- (void)saveContext;
-- (NSURL *)applicationDocumentsDirectory;
-
 
 @end
 

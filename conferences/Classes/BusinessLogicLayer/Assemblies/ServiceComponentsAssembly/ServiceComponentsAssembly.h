@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "ServiceComponents.h"
 
+#import "OperationFactoriesAssembly.h"
+
 @interface ServiceComponentsAssembly : TyphoonAssembly <ServiceComponents>
+
+@property (strong, nonatomic, readonly) OperationFactoriesAssembly *operationFactoriesAssemlby;
 
 @end

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="96" id="KGk-i7-Jjw" customClass="ReportListTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="96"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="95.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="wIe-8X-JWX">
+                        <rect key="frame" x="20" y="21" width="54" height="54"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="54" id="1A8-h9-P7h"/>
+                            <constraint firstAttribute="height" constant="54" id="yob-kK-CZI"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rambler.iOS #5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7Z-ZX-ITZ">
+                        <rect key="frame" x="94" y="54" width="206" height="24"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="ppj-T4-Loy"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="31 октября" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAL-vA-pYr">
+                        <rect key="frame" x="94" y="21" width="206" height="21"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="Z6k-LT-1AW"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstItem="DAL-vA-pYr" firstAttribute="leading" secondItem="wIe-8X-JWX" secondAttribute="trailing" constant="20" id="8Bb-BI-C0k"/>
+                    <constraint firstAttribute="trailing" secondItem="H7Z-ZX-ITZ" secondAttribute="trailing" constant="20" id="9SS-l5-AMO"/>
+                    <constraint firstItem="H7Z-ZX-ITZ" firstAttribute="leading" secondItem="wIe-8X-JWX" secondAttribute="trailing" constant="20" id="Nm1-H6-l1X"/>
+                    <constraint firstItem="H7Z-ZX-ITZ" firstAttribute="top" secondItem="DAL-vA-pYr" secondAttribute="bottom" constant="12" id="Yfa-dU-dlL"/>
+                    <constraint firstItem="DAL-vA-pYr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="21" id="bWc-Jx-0n7"/>
+                    <constraint firstAttribute="trailing" secondItem="DAL-vA-pYr" secondAttribute="trailing" constant="20" id="esH-U6-GNW"/>
+                    <constraint firstItem="wIe-8X-JWX" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="fwW-Pg-hAJ"/>
+                    <constraint firstItem="wIe-8X-JWX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="noT-3D-Kr0"/>
+                </constraints>
+            </tableViewCellContentView>
+            <animations/>
+            <connections>
+                <outlet property="date" destination="DAL-vA-pYr" id="bSY-VD-PFF"/>
+                <outlet property="eventImageView" destination="wIe-8X-JWX" id="GYI-hH-vhg"/>
+                <outlet property="eventTitle" destination="H7Z-ZX-ITZ" id="VPh-b9-WAy"/>
+            </connections>
+            <point key="canvasLocation" x="463" y="335"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="placeholder" width="256" height="256"/>
+    </resources>
+</document>

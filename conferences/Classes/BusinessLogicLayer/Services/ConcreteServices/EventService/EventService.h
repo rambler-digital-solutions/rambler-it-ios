@@ -9,9 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @class NSPredicate;
-@class Event;
 
-typedef void (^EventCompletionBlock)(Event *event, NSError *error);
+typedef void (^EventCompletionBlock)(id data, NSError *error);
 
 /**
  @author Artem Karpushin
@@ -29,7 +28,7 @@ typedef void (^EventCompletionBlock)(Event *event, NSError *error);
  
  @return Event object
  */
-- (Event *)obtainEventWithPredicate:(NSPredicate *)predicate;
+- (id)obtainEventWithPredicate:(NSPredicate *)predicate;
 
 /**
  @author Artem Karpushin

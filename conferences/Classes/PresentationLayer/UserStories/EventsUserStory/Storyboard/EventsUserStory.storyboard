@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <scenes>
+        <!--Event List Table View Controller-->
+        <scene sceneID="nOx-C3-ZAu">
+            <objects>
+                <tableViewController storyboardIdentifier="EventListTableViewController" id="nCN-ol-buU" customClass="EventListTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="LWI-Zc-aHz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="xkU-eC-DgW">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xkU-eC-DgW" id="fT3-OQ-TLu">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="nCN-ol-buU" id="LLe-nF-pJ7"/>
+                            <outlet property="delegate" destination="nCN-ol-buU" id="Li9-M4-ulR"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nFg-Tn-fxr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="656" y="233"/>
+        </scene>
+        <!--Event View Controller-->
+        <scene sceneID="9SB-zP-L2d">
+            <objects>
+                <viewController id="lPZ-z8-z2H" customClass="EventViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="q51-wo-2NC"/>
+                        <viewControllerLayoutGuide type="bottom" id="SJ1-15-sm5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9DS-Lo-aXY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2f2-MS-k81">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="lPZ-z8-z2H" id="pmS-1S-3ot"/>
+                                    <outlet property="delegate" destination="lPZ-z8-z2H" id="4tx-te-78d"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2f2-MS-k81" firstAttribute="top" secondItem="q51-wo-2NC" secondAttribute="bottom" id="10c-uS-GtE"/>
+                            <constraint firstItem="SJ1-15-sm5" firstAttribute="top" secondItem="2f2-MS-k81" secondAttribute="bottom" id="Ae8-KM-8zE"/>
+                            <constraint firstItem="2f2-MS-k81" firstAttribute="leading" secondItem="9DS-Lo-aXY" secondAttribute="leading" id="Uq5-wZ-0xQ"/>
+                            <constraint firstAttribute="trailing" secondItem="2f2-MS-k81" secondAttribute="trailing" id="ad2-qB-6PH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="2f2-MS-k81" id="pVQ-Gv-juG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UZP-hJ-8Tb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1247" y="233"/>
+        </scene>
+    </scenes>
+</document>

@@ -53,6 +53,8 @@
 - (CompoundOperationBase *)buildCompoundOperationWithConfig:(CompoundOperationBuilderConfig *)config {
     NSAssert(config, @"Config shouldn't be nil");
     
+    [self.operationsArray removeAllObjects];
+    
     [self buildRequestConfigurationOperationWithConfig:config];
     [self buildRequestSigningOperationWithConfig:config];
     [self buildNetworkOperationWithConfig:config];

@@ -2,7 +2,7 @@
 //  Event.m
 //  Conferences
 //
-//  Created by Karpushin Artem on 10/10/15.
+//  Created by Karpushin Artem on 01/11/15.
 //  Copyright © 2015 Rambler. All rights reserved.
 //
 

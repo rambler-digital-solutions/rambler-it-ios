@@ -55,6 +55,7 @@
                                                                                   withMapping:mapping
                                                                                  fetchRequest:request
                                                                        inManagedObjectContext:rootSavingContext];
+        [rootSavingContext MR_saveToPersistentStoreAndWait];
     }];
     
     return result;

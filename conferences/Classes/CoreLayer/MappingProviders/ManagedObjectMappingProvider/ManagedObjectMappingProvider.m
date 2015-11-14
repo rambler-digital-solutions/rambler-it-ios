@@ -47,14 +47,42 @@
 // TODO: It's just an example, the mapping is not finished yet
 - (EKManagedObjectMapping *)eventMapping {
     NSArray *properties = @[
+                            NSStringFromSelector(@selector(backgroundColor)),
+                            NSStringFromSelector(@selector(eventDescription)),
+                            NSStringFromSelector(@selector(liveStreamLink)),
+                            NSStringFromSelector(@selector(name)),
                             NSStringFromSelector(@selector(objectId)),
-                            NSStringFromSelector(@selector(name))
+                            NSStringFromSelector(@selector(tags)),
+                            NSStringFromSelector(@selector(timePadID)),
+                            NSStringFromSelector(@selector(twitterLink)),
                             ];
     NSString *entityName = NSStringFromClass([Event class]);
     return [EKManagedObjectMapping mappingForEntityName:entityName
                                               withBlock:^(EKManagedObjectMapping *mapping) {
                                                   mapping.primaryKey = NSStringFromSelector(@selector(objectId));
                                                   [mapping mapPropertiesFromArray:properties];
+                                                  [mapping mapKeyPath:@"image" toProperty:@"imageUrl" withValueBlock:^id(NSString *key, id value, NSManagedObjectContext *context) {
+                                                      NSString *imageUrl;
+                                                      if ([value isKindOfClass:[NSDictionary class]]) {
+                                                          imageUrl = [value valueForKey:@"url"];
+                                                      }
+                                                      return imageUrl;
+                                                  }];
+                                                  EKManagedMappingValueBlock dateValueBlock = ^id(NSString *key, id value, NSManagedObjectContext *context) {
+                                                      NSDate *date;
+                                                      if ([value isKindOfClass:[NSDictionary class]]) {
+                                                          NSString *dateString = [value objectForKey:@"iso"];
+                                                          
+                                                          NSDateFormatter *dateFormatter = [NSDateFormatter new];
+                                                          [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSSz"];
+                                                          
+                                                          date = [dateFormatter dateFromString:dateString];
+                                                      }
+                                                      return date;
+                                                  };
+                                                  
+                                                  [mapping mapKeyPath:@"startDate" toProperty:@"startDate" withValueBlock:dateValueBlock];
+                                                  [mapping mapKeyPath:@"endDate" toProperty:@"endDate" withValueBlock:dateValueBlock];
                                               }];
 }
 

@@ -2,7 +2,7 @@
 //  Event+CoreDataProperties.h
 //  Conferences
 //
-//  Created by Karpushin Artem on 10/10/15.
+//  Created by Karpushin Artem on 01/11/15.
 //  Copyright © 2015 Rambler. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -15,14 +15,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Event (CoreDataProperties)
 
+@property (nullable, nonatomic, retain) NSString *backgroundColor;
 @property (nullable, nonatomic, retain) NSDate *endDate;
 @property (nullable, nonatomic, retain) NSString *eventDescription;
 @property (nullable, nonatomic, retain) NSString *liveStreamLink;
 @property (nullable, nonatomic, retain) NSString *name;
 @property (nullable, nonatomic, retain) NSString *objectId;
 @property (nullable, nonatomic, retain) NSDate *startDate;
+@property (nullable, nonatomic, retain) NSString *tags;
 @property (nullable, nonatomic, retain) NSString *timePadID;
 @property (nullable, nonatomic, retain) NSString *twitterLink;
+@property (nullable, nonatomic, retain) NSData *image;
+@property (nullable, nonatomic, retain) NSString *imageUrl;
 @property (nullable, nonatomic, retain) NSSet<Lecture *> *lectures;
 @property (nullable, nonatomic, retain) NSSet<RegistrationQuestion *> *registrationQuestions;
 
