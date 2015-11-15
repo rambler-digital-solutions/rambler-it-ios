@@ -6,9 +6,9 @@
 //  Copyright © 2015 Rambler. All rights reserved.
 //
 
-#import "LectionInfoTableViewCell.h"
-#import "LectionInfoTableViewCellObject.h"
-#import "LectionInfoTableViewCellActionProtocol.h"
+#import "LectureInfoTableViewCell.h"
+#import "LectureInfoTableViewCellObject.h"
+#import "LectureInfoTableViewCellActionProtocol.h"
 #import "EventTableViewCellActionProtocol.h"
 #import "Proxying/Extensions/UIResponder+CDProxying/UIResponder+CDProxying.h"
 
@@ -18,7 +18,7 @@ static NSString *const kPlaceholderImageName = @"placeholder";
 
 static CGFloat const kLectionInfoTableViewCellHeight = 340.0f;
 
-@interface LectionInfoTableViewCell ()
+@interface LectureInfoTableViewCell ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *speakerImageView;
 @property (weak, nonatomic) IBOutlet UILabel *speakerName;
@@ -26,20 +26,20 @@ static CGFloat const kLectionInfoTableViewCellHeight = 340.0f;
 @property (weak, nonatomic) IBOutlet UITextView *lectureDescription;
 @property (weak, nonatomic) IBOutlet UILabel *lectureTitle;
 
-@property (weak, nonatomic) id <LectionInfoTableViewCellActionProtocol> actionProxy;
+@property (weak, nonatomic) id <LectureInfoTableViewCellActionProtocol> actionProxy;
 
 @end
 
-@implementation LectionInfoTableViewCell
+@implementation LectureInfoTableViewCell
 
 - (void)didMoveToSuperview {
     [super didMoveToSuperview];
-    self.actionProxy = (id<LectionInfoTableViewCellActionProtocol>)[self cd_proxyForProtocol:@protocol(EventTableViewCellActionProtocol)];
+    self.actionProxy = (id<LectureInfoTableViewCellActionProtocol>)[self cd_proxyForProtocol:@protocol(EventTableViewCellActionProtocol)];
 }
 
 #pragma mark - NICell methods
 
-- (BOOL)shouldUpdateCellWithObject:(LectionInfoTableViewCellObject *)object {
+- (BOOL)shouldUpdateCellWithObject:(LectureInfoTableViewCellObject *)object {
     self.speakerName.text = object.speakerName;
     self.speakerCompanyName.text = object.speakerCompanyName;
     self.lectureDescription.text = object.lectureDescription;

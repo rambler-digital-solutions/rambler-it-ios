@@ -9,6 +9,6 @@
 #import <NICellFactory.h>
 #import "CDResponderTableViewCell.h"
 
-@interface LectionInfoTableViewCell : CDResponderTableViewCell <NICell>
+@interface LectureInfoTableViewCell : CDResponderTableViewCell <NICell>
 
 @end

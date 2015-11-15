@@ -10,13 +10,7 @@
 
 #import <Nimbus/NimbusModels.h>
 
-#import "EventInfoTableViewCellObject.h"
-#import "LectionInfoTableViewCellObject.h"
-#import "SignUpAndSaveToCalendarEventTableViewCellObject.h"
-#import "CurrentVideoTranslationTableViewCellObject.h"
-#import "PastVideoTranslationTableViewCellObject.h"
-#import "EventDescriptionTableViewCellObject.h"
-#import "CellObjectBuilder.h"
+#import "CellObjectBuilderProtocol.h"
 #import "EventCellObjectBuilderFactory.h"
 #import "PlainEvent.h"
 

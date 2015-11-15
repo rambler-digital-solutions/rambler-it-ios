@@ -6,12 +6,12 @@
 //  Copyright © 2015 Rambler. All rights reserved.
 //
 
-#import "LectionInfoTableViewCellObject.h"
-#import "LectionInfoTableViewCell.h"
+#import "LectureInfoTableViewCellObject.h"
+#import "LectureInfoTableViewCell.h"
 #import "PlainLecture.h"
 #import "PlainSpeaker.h"
 
-@interface LectionInfoTableViewCellObject ()
+@interface LectureInfoTableViewCellObject ()
 
 @property (strong, nonatomic, readwrite) NSString *speakerName;
 @property (strong, nonatomic, readwrite) NSString *speakerCompanyName;
@@ -21,7 +21,7 @@
 
 @end
 
-@implementation LectionInfoTableViewCellObject
+@implementation LectureInfoTableViewCellObject
 
 #pragma mark - Initialization
 
@@ -47,11 +47,11 @@
 #pragma mark - NICellObject methods
 
 - (Class)cellClass {
-    return [LectionInfoTableViewCell class];
+    return [LectureInfoTableViewCell class];
 }
 
 - (UINib *)cellNib {
-    return [UINib nibWithNibName:NSStringFromClass([LectionInfoTableViewCell class]) bundle:[NSBundle mainBundle]];
+    return [UINib nibWithNibName:NSStringFromClass([LectureInfoTableViewCell class]) bundle:[NSBundle mainBundle]];
 }
 
 @end
