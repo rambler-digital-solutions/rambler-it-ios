@@ -15,7 +15,7 @@
 - (void)didTriggerSignUpButtonTappedEvent:(UIButton *)button;
 - (void)didTriggerSaveToCalendarButtonTappedEvent:(UIButton *)button;
 - (void)didTriggerReadMoreEventDescriptionButtonTappedEvent:(UIButton *)button;
-- (void)didTriggerReadMoreLectionDescriptionButtonTappedEvent:(UIButton *)button;
+- (void)didTriggerReadMoreLectureDescriptionButtonTappedEvent:(UIButton *)button;
 - (void)didTriggerCurrentTranslationButtonTapEvent:(UIButton *)button;
 
 @end

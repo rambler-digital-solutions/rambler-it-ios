@@ -42,7 +42,7 @@
     
 }
 
-- (void)didTriggerReadMoreLectionDescriptionButtonTappedEvent:(id)button {
+- (void)didTriggerReadMoreLectureDescriptionButtonTappedEvent:(id)button {
     
 }
 

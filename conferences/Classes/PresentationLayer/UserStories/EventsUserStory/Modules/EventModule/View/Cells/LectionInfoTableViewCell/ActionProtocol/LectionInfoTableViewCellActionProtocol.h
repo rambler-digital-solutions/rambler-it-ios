@@ -10,6 +10,6 @@
 
 @protocol LectionInfoTableViewCellActionProtocol <NSObject>
 
-- (void)didTapReadMoreLectionDescriptionButton:(UIButton *)button;
+- (void)didTapReadMoreLectureDescriptionButton:(UIButton *)button;
 
 @end

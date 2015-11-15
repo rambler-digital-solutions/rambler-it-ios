@@ -16,13 +16,14 @@
 
 @interface EventViewController() <EventTableViewCellActionProtocol>
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topSpaceToTableViewConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewToHeaderConstraint;
 
 @end
 
 @implementation EventViewController
+
+#pragma mark - Lifecycle
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
@@ -53,8 +54,8 @@
     [self.output didTriggerReadMoreEventDescriptionButtonTappedEvent:button];
 }
 
-- (void)didTapReadMoreLectionDescriptionButton:(UIButton *)button {
-    [self.output didTriggerReadMoreLectionDescriptionButtonTappedEvent:button];
+- (void)didTapReadMoreLectureDescriptionButton:(UIButton *)button {
+    [self.output didTriggerReadMoreLectureDescriptionButtonTappedEvent:button];
 }
 
 - (void)didTapCurrentTranslationButton:(UIButton *)button {
