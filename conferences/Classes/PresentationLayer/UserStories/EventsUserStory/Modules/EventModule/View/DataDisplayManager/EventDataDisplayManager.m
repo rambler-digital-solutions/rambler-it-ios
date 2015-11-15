@@ -24,7 +24,7 @@
 
 @property (strong, nonatomic) NITableViewModel *tableViewModel;
 @property (strong, nonatomic) NITableViewActions *tableViewActions;
-@property (strong, nonatomic) id <CellObjectBuilder> cellObjectBuilder;
+@property (strong, nonatomic) id <CellObjectBuilderProtocol> cellObjectBuilder;
 @property (strong, nonatomic) NSArray *cellObjects;
 
 @end

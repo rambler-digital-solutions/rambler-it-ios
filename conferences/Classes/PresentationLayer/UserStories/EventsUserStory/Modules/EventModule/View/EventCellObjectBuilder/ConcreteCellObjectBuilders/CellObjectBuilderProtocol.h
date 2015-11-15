@@ -10,7 +10,7 @@
 
 @class PlainEvent;
 
-@protocol CellObjectBuilder <NSObject>
+@protocol CellObjectBuilderProtocol <NSObject>
 
 - (NSArray *)cellObjectsForEvent:(PlainEvent *)event;
 

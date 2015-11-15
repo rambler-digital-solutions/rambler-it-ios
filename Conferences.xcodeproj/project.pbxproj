@@ -517,7 +517,7 @@
 		63F8F29E1BF7A4F5000017F3 /* PastEventCellObjectBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PastEventCellObjectBuilder.m; sourceTree = "<group>"; };
 		63F8F29F1BF7A4F5000017F3 /* EventCellObjectBuilderFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventCellObjectBuilderFactory.h; sourceTree = "<group>"; };
 		63F8F2A01BF7A4F5000017F3 /* EventCellObjectBuilderFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventCellObjectBuilderFactory.m; sourceTree = "<group>"; };
-		63F8F2A51BF7A62A000017F3 /* CellObjectBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellObjectBuilder.h; sourceTree = "<group>"; };
+		63F8F2A51BF7A62A000017F3 /* CellObjectBuilderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellObjectBuilderProtocol.h; sourceTree = "<group>"; };
 		63F8F2A61BF870A1000017F3 /* PlainLecture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlainLecture.h; sourceTree = "<group>"; };
 		63F8F2A71BF870A1000017F3 /* PlainLecture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlainLecture.m; sourceTree = "<group>"; };
 		63F8F2AF1BF87C30000017F3 /* PlainSpeaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlainSpeaker.h; sourceTree = "<group>"; };
@@ -1941,7 +1941,7 @@
 		63F8F2951BF7A4F5000017F3 /* ConcreteCellObjectBuilders */ = {
 			isa = PBXGroup;
 			children = (
-				63F8F2A51BF7A62A000017F3 /* CellObjectBuilder.h */,
+				63F8F2A51BF7A62A000017F3 /* CellObjectBuilderProtocol.h */,
 				63F8F2961BF7A4F5000017F3 /* CurrentEventCellObjectBuilder */,
 				63F8F2991BF7A4F5000017F3 /* FutureEventCellObjectBuilder */,
 				63F8F29C1BF7A4F5000017F3 /* PastEventCellObjectBuilder */,
