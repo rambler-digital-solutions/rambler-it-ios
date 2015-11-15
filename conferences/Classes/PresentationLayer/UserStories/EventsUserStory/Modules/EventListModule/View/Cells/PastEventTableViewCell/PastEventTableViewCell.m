@@ -13,6 +13,8 @@ static CGFloat const EventListTableViewCellHeight = 64.0f;
 
 @implementation PastEventTableViewCell
 
+#pragma mark - NICell methods
+
 - (BOOL)shouldUpdateCellWithObject:(PastEventTableViewCellObject *)object {
     self.day.text = object.day;
     self.month.text = object.month;

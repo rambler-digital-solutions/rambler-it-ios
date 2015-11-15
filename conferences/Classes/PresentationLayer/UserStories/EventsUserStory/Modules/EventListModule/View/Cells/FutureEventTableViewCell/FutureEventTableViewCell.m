@@ -11,9 +11,8 @@
 
 #import <SDWebImage/UIImageView+WebCache.h>
 
-#import "EXTScope.h"
-
 static NSString *const kPlaceholderImageName = @"placeholder";
+static CGFloat const kPastEventTableViewCellHeight = 64.0f;
 
 @interface FutureEventTableViewCell ()
 
@@ -22,6 +21,8 @@ static NSString *const kPlaceholderImageName = @"placeholder";
 @end
 
 @implementation FutureEventTableViewCell
+
+#pragma mark - NICell methods
 
 - (BOOL)shouldUpdateCellWithObject:(FutureEventTableViewCellObject *)object {
     self.eventTitle.text = object.eventTitle;
@@ -37,8 +38,7 @@ static NSString *const kPlaceholderImageName = @"placeholder";
 }
 
 + (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
-    return tableView.frame.size.height - 64;
+    return tableView.frame.size.height - kPastEventTableViewCellHeight;
 }
-
 
 @end

@@ -101,7 +101,6 @@
             <connections>
                 <outlet property="lectureDescription" destination="5IQ-k4-QP7" id="Dmb-4h-HuI"/>
                 <outlet property="lectureTitle" destination="OhN-Uz-0cE" id="t9V-sc-jur"/>
-                <outlet property="readMoreButton" destination="Kal-6g-N0T" id="fE2-3A-pMh"/>
                 <outlet property="speakerCompanyName" destination="iwS-kB-Yhp" id="vf1-C1-4T8"/>
                 <outlet property="speakerImageView" destination="Yqb-Gn-1kT" id="07o-IB-Fz2"/>
                 <outlet property="speakerName" destination="WOX-dJ-dhF" id="kGM-Oi-Gli"/>
