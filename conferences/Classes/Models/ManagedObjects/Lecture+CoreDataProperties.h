@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface Lecture (CoreDataProperties)
 
 @property (nullable, nonatomic, retain) NSNumber *favourite;
-@property (nullable, nonatomic, retain) NSNumber *name;
+@property (nullable, nonatomic, retain) NSString *name;
 @property (nullable, nonatomic, retain) NSNumber *orderID;
 @property (nullable, nonatomic, retain) NSString *slideLink;
 @property (nullable, nonatomic, retain) NSString *lectureDescription;

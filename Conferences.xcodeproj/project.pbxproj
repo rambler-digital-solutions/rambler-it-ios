@@ -144,8 +144,9 @@
 		63F8F2A31BF7A4F5000017F3 /* PastEventCellObjectBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F29E1BF7A4F5000017F3 /* PastEventCellObjectBuilder.m */; };
 		63F8F2A41BF7A4F5000017F3 /* EventCellObjectBuilderFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F2A01BF7A4F5000017F3 /* EventCellObjectBuilderFactory.m */; };
 		63F8F2A81BF870A1000017F3 /* PlainLecture.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F2A71BF870A1000017F3 /* PlainLecture.m */; };
-		63F8F2AD1BF8715C000017F3 /* Lecture+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F2AA1BF8715C000017F3 /* Lecture+CoreDataProperties.m */; };
-		63F8F2AE1BF8715C000017F3 /* Lecture.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F2AC1BF8715C000017F3 /* Lecture.m */; };
+		63F8F2B11BF87C30000017F3 /* PlainSpeaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F2B01BF87C30000017F3 /* PlainSpeaker.m */; };
+		63F8F2B61BF87E2F000017F3 /* Lecture+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F2B31BF87E2F000017F3 /* Lecture+CoreDataProperties.m */; };
+		63F8F2B71BF87E2F000017F3 /* Lecture.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F2B51BF87E2F000017F3 /* Lecture.m */; };
 		63FD4DFB1BE4FA340046378E /* EventPrototypeMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FD4DFA1BE4FA340046378E /* EventPrototypeMapper.m */; };
 		63FD4E061BE5038D0046378E /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FD4E051BE5038D0046378E /* UIColor+Hex.m */; };
 		63FD4E0B1BE621750046378E /* Event+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FD4E081BE621750046378E /* Event+CoreDataProperties.m */; };
@@ -516,10 +517,12 @@
 		63F8F2A51BF7A62A000017F3 /* CellObjectBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellObjectBuilder.h; sourceTree = "<group>"; };
 		63F8F2A61BF870A1000017F3 /* PlainLecture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlainLecture.h; sourceTree = "<group>"; };
 		63F8F2A71BF870A1000017F3 /* PlainLecture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlainLecture.m; sourceTree = "<group>"; };
-		63F8F2A91BF8715C000017F3 /* Lecture+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Lecture+CoreDataProperties.h"; sourceTree = "<group>"; };
-		63F8F2AA1BF8715C000017F3 /* Lecture+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Lecture+CoreDataProperties.m"; sourceTree = "<group>"; };
-		63F8F2AB1BF8715C000017F3 /* Lecture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lecture.h; sourceTree = "<group>"; };
-		63F8F2AC1BF8715C000017F3 /* Lecture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lecture.m; sourceTree = "<group>"; };
+		63F8F2AF1BF87C30000017F3 /* PlainSpeaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlainSpeaker.h; sourceTree = "<group>"; };
+		63F8F2B01BF87C30000017F3 /* PlainSpeaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlainSpeaker.m; sourceTree = "<group>"; };
+		63F8F2B21BF87E2F000017F3 /* Lecture+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Lecture+CoreDataProperties.h"; sourceTree = "<group>"; };
+		63F8F2B31BF87E2F000017F3 /* Lecture+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Lecture+CoreDataProperties.m"; sourceTree = "<group>"; };
+		63F8F2B41BF87E2F000017F3 /* Lecture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lecture.h; sourceTree = "<group>"; };
+		63F8F2B51BF87E2F000017F3 /* Lecture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lecture.m; sourceTree = "<group>"; };
 		63FA398D1BDD46E500CE6249 /* PlainEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlainEvent.h; sourceTree = "<group>"; };
 		63FA398E1BDD46E500CE6249 /* PlainEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlainEvent.m; sourceTree = "<group>"; };
 		63FD4DF81BE4F9D00046378E /* PrototypeMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrototypeMapper.h; sourceTree = "<group>"; };
@@ -1968,6 +1971,8 @@
 				63FA398E1BDD46E500CE6249 /* PlainEvent.m */,
 				63F8F2A61BF870A1000017F3 /* PlainLecture.h */,
 				63F8F2A71BF870A1000017F3 /* PlainLecture.m */,
+				63F8F2AF1BF87C30000017F3 /* PlainSpeaker.h */,
+				63F8F2B01BF87C30000017F3 /* PlainSpeaker.m */,
 			);
 			path = PlainObjects;
 			sourceTree = "<group>";
@@ -2115,10 +2120,10 @@
 		63FDCDE61BBDBA2A00A43B60 /* ManagedObjects */ = {
 			isa = PBXGroup;
 			children = (
-				63F8F2A91BF8715C000017F3 /* Lecture+CoreDataProperties.h */,
-				63F8F2AA1BF8715C000017F3 /* Lecture+CoreDataProperties.m */,
-				63F8F2AB1BF8715C000017F3 /* Lecture.h */,
-				63F8F2AC1BF8715C000017F3 /* Lecture.m */,
+				63F8F2B21BF87E2F000017F3 /* Lecture+CoreDataProperties.h */,
+				63F8F2B31BF87E2F000017F3 /* Lecture+CoreDataProperties.m */,
+				63F8F2B41BF87E2F000017F3 /* Lecture.h */,
+				63F8F2B51BF87E2F000017F3 /* Lecture.m */,
 				63FD4E071BE621750046378E /* Event+CoreDataProperties.h */,
 				63FD4E081BE621750046378E /* Event+CoreDataProperties.m */,
 				63FD4E091BE621750046378E /* Event.h */,
@@ -3588,6 +3593,7 @@
 				9F1830D71BC125C3000E21A5 /* ParseResponseValidator.m in Sources */,
 				9F1830D11BC12492000E21A5 /* ResponseValidatorBase.m in Sources */,
 				638DBD471BEA385400B4B208 /* EventRouter.m in Sources */,
+				63F8F2B61BF87E2F000017F3 /* Lecture+CoreDataProperties.m in Sources */,
 				63F8F2641BF743D2000017F3 /* EventDescriptionTableViewCellObject.m in Sources */,
 				9F0A85371BC18A3C006F79FB /* NetworkCompoundOperationBuilder.m in Sources */,
 				9F18309F1BC024A9000E21A5 /* RequestDataModel.m in Sources */,
@@ -3629,6 +3635,7 @@
 				9FF99E511BC42FF6006F15AF /* OperationSchedulerImplementation.m in Sources */,
 				63136FD31BDCDB2700994356 /* EmbedModuleSegue.m in Sources */,
 				636F8DF81BCB90E500552B91 /* EventListInteractor.m in Sources */,
+				63F8F2B11BF87C30000017F3 /* PlainSpeaker.m in Sources */,
 				9F0A85031BC1698B006F79FB /* OperationDebugDescriptionFormatter.m in Sources */,
 				632887B61BDFE16200701AF0 /* FutureEventTableViewCell.m in Sources */,
 				9F0A84FC1BC1698B006F79FB /* CompoundOperationDebugDescriptionFormatter.m in Sources */,
@@ -3651,8 +3658,7 @@
 				9F0A85321BC18906006F79FB /* EventQuery.m in Sources */,
 				63FD4E061BE5038D0046378E /* UIColor+Hex.m in Sources */,
 				9F0A84FF1BC1698B006F79FB /* RequestSigningOperation.m in Sources */,
-				63F8F2AD1BF8715C000017F3 /* Lecture+CoreDataProperties.m in Sources */,
-				63F8F2AE1BF8715C000017F3 /* Lecture.m in Sources */,
+				63F8F2B71BF87E2F000017F3 /* Lecture.m in Sources */,
 				9F1830F51BC14444000E21A5 /* NSString+RCFCapitalization.m in Sources */,
 				63FD4DFB1BE4FA340046378E /* EventPrototypeMapper.m in Sources */,
 				9F8E5F7C1BC2584500DC10DB /* ResponseDeserializersAssembly.m in Sources */,

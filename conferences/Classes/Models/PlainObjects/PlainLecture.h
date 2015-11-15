@@ -13,7 +13,7 @@
 // пока окончательно не сформирована модель данных - все проперти readwrite
 
 @property (strong, nonatomic, readwrite) NSNumber *favourite;
-@property (strong, nonatomic, readwrite) NSNumber *name;
+@property (strong, nonatomic, readwrite) NSString *name;
 @property (strong, nonatomic, readwrite) NSNumber *orderID;
 @property (strong, nonatomic, readwrite) NSString *slideLink;
 @property (strong, nonatomic, readwrite) NSString *lectureDescription;
