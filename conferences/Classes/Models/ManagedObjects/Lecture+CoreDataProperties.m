@@ -2,7 +2,7 @@
 //  Lecture+CoreDataProperties.m
 //  Conferences
 //
-//  Created by Karpushin Artem on 10/10/15.
+//  Created by Karpushin Artem on 15/11/15.
 //  Copyright © 2015 Rambler. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -17,7 +17,7 @@
 @dynamic name;
 @dynamic orderID;
 @dynamic slideLink;
-@dynamic talkDescription;
+@dynamic lectureDescription;
 @dynamic videoLink;
 @dynamic event;
 @dynamic lectureMaterials;

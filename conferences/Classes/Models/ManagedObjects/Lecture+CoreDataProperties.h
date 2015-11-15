@@ -2,7 +2,7 @@
 //  Lecture+CoreDataProperties.h
 //  Conferences
 //
-//  Created by Karpushin Artem on 10/10/15.
+//  Created by Karpushin Artem on 15/11/15.
 //  Copyright © 2015 Rambler. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSNumber *name;
 @property (nullable, nonatomic, retain) NSNumber *orderID;
 @property (nullable, nonatomic, retain) NSString *slideLink;
-@property (nullable, nonatomic, retain) NSString *talkDescription;
+@property (nullable, nonatomic, retain) NSString *lectureDescription;
 @property (nullable, nonatomic, retain) NSString *videoLink;
 @property (nullable, nonatomic, retain) Event *event;
 @property (nullable, nonatomic, retain) NSSet<LectureMaterials *> *lectureMaterials;
