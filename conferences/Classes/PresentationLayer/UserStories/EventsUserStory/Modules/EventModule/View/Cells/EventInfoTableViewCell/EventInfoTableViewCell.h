@@ -6,7 +6,6 @@
 //  Copyright © 2015 Rambler. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import <NICellFactory.h>
 #import "CDResponderTableViewCell.h"
 

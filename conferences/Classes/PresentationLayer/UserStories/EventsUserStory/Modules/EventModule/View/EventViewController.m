@@ -62,4 +62,8 @@
     [self.output didTriggerReadMoreLectionDescriptionButtonTappedEvent:button];
 }
 
+- (void)didTapCurrentTranslationButton:(UIButton *)button {
+    [self.output didTriggerCurrentTranslationButtonTapEvent:button];
+}
+
 @end

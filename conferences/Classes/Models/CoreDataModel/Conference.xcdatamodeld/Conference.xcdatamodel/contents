@@ -18,10 +18,10 @@
     </entity>
     <entity name="Lecture" representedClassName="Lecture" syncable="YES">
         <attribute name="favourite" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="name" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="lectureDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="orderID" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="slideLink" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="talkDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="videoLink" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="lectures" inverseEntity="Event" syncable="YES"/>
         <relationship name="lectureMaterials" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LectureMaterials" inverseName="lecture" inverseEntity="LectureMaterials" syncable="YES"/>

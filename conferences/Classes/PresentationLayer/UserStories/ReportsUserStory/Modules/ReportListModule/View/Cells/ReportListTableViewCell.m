@@ -21,6 +21,8 @@ static CGFloat const kReportListTableViewCellHeight = 96.0f;
 
 @implementation ReportListTableViewCell
 
+#pragma mark - NICell methods
+
 - (BOOL)shouldUpdateCellWithObject:(ReportListTableViewCellObject *)object {
     self.date.text = object.date;
     self.eventTitle.text = object.eventTitle;

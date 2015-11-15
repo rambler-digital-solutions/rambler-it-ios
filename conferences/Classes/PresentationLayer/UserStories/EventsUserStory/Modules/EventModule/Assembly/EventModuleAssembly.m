@@ -13,6 +13,15 @@
 #import "EventRouter.h"
 #import "EventDataDisplayManager.h"
 #import "PresenterStateStorage.h"
+#import "ServiceComponents.h"
+#import "PresentationLayerHelpersAssembly.h"
+#import "EventCellObjectBuilderFactory.h"
+
+@interface EventModuleAssembly ()
+
+@property (strong, nonatomic, readonly) EventCellObjectBuilderFactory *eventCellObjectBuilderFactory;
+
+@end
 
 @implementation  EventModuleAssembly
 
@@ -31,6 +40,12 @@
                             configuration:^(TyphoonDefinition *definition) {
                                 [definition injectProperty:@selector(output)
                                                       with:[self presenterEvent]];
+                                [definition injectProperty:@selector(eventService)
+                                                      with:[self.serviceComponents eventService]];
+                                [definition injectProperty:@selector(eventPrototypeMapper)
+                                                      with:[self.serviceComponents eventPrototypeMapper]];
+                                [definition injectProperty:@selector(eventTypeDeterminator)
+                                                      with:[self.presentationLayerHelpersAssembly eventTypeDeterminator]];
              }];
 }
 
@@ -56,7 +71,11 @@
 }
 
 - (EventDataDisplayManager *)dataDisplayManagerEvent {
-    return [TyphoonDefinition withClass:[EventDataDisplayManager class]];
+    return [TyphoonDefinition withClass:[EventDataDisplayManager class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(cellObjectBuilderFactory)
+                                                    with:self.eventCellObjectBuilderFactory];
+    }];
 }
 
 - (PresenterStateStorage *)presenterStateStorage {

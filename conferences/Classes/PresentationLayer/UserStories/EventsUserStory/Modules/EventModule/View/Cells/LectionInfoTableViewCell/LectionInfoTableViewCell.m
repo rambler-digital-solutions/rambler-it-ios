@@ -12,7 +12,11 @@
 #import "EventTableViewCellActionProtocol.h"
 #import "Proxying/Extensions/UIResponder+CDProxying/UIResponder+CDProxying.h"
 
-static CGFloat const LectionInfoTableViewCellHeight = 340.0f;
+#import <SDWebImage/UIImageView+WebCache.h>
+
+static NSString *const kPlaceholderImageName = @"placeholder";
+
+static CGFloat const kLectionInfoTableViewCellHeight = 340.0f;
 
 @interface LectionInfoTableViewCell ()
 
@@ -21,7 +25,6 @@ static CGFloat const LectionInfoTableViewCellHeight = 340.0f;
 @property (weak, nonatomic) IBOutlet UILabel *speakerCompanyName;
 @property (weak, nonatomic) IBOutlet UITextView *lectureDescription;
 @property (weak, nonatomic) IBOutlet UILabel *lectureTitle;
-@property (weak, nonatomic) IBOutlet UIButton *readMoreButton;
 
 @property (weak, nonatomic) id <LectionInfoTableViewCellActionProtocol> actionProxy;
 
@@ -34,12 +37,21 @@ static CGFloat const LectionInfoTableViewCellHeight = 340.0f;
     self.actionProxy = (id<LectionInfoTableViewCellActionProtocol>)[self cd_proxyForProtocol:@protocol(EventTableViewCellActionProtocol)];
 }
 
+#pragma mark - NICell methods
+
 - (BOOL)shouldUpdateCellWithObject:(LectionInfoTableViewCellObject *)object {
+    self.speakerName.text = object.speakerName;
+    self.speakerCompanyName.text = object.speakerCompanyName;
+    self.lectureDescription.text = object.lectureDescription;
+    self.lectureTitle.text = object.lectureTitle;
+    [self.speakerImageView sd_setImageWithURL:object.speakerImageLink
+                             placeholderImage:[UIImage imageNamed:kPlaceholderImageName]];
+    
     return YES;
 }
 
 + (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
-    return LectionInfoTableViewCellHeight;
+    return kLectionInfoTableViewCellHeight;
 }
 
 #pragma mark - IBActions

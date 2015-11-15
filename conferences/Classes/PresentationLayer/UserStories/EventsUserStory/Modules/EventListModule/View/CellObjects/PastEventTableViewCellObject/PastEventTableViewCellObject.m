@@ -21,6 +21,8 @@
 
 @implementation PastEventTableViewCellObject
 
+#pragma mark - Initialization
+
 - (instancetype)initWithElementID:(NSInteger)elementID event:(PlainEvent *)event {
     self = [super init];
     if (self) {

@@ -6,9 +6,9 @@
 //  Copyright 2015 Rambler. All rights reserved.
 //
 
-#import <Typhoon/Typhoon.h>
+#import "ModuleAssemblyBase.h"
 
-@interface EventModuleAssembly : TyphoonAssembly
+@interface EventModuleAssembly : ModuleAssemblyBase
 
 @end
 

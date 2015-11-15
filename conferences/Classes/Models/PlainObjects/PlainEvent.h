@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "EventType.h"
 
 @interface PlainEvent : NSObject
 
-// пока окончательно не сформировалась модель, проперти оставил в таком виде
+// пока окончательно не сформирована модель данных - все проперти readwrite
 // добавить в модель subtitle;
 @property (nonatomic, strong, readwrite) NSString *eventDescription;
 @property (nonatomic, strong, readwrite) NSString *liveStreamLink;
@@ -28,5 +29,6 @@
 @property (nonatomic, strong, readwrite) UIImage *image;
 @property (nonatomic, strong, readwrite) NSURL *imageUrl;
 @property (nonatomic, strong, readwrite) NSString *eventSubtitle;
+@property (nonatomic, assign, readwrite) EventType eventType;
 
 @end
