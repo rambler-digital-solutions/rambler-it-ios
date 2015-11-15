@@ -50,6 +50,11 @@
     return [NICellFactory tableView:tableView heightForRowAtIndexPath:indexPath model:self.tableViewModel];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    PlainEvent *event = [self.events objectAtIndex:indexPath.row];
+    [self.delegate didTapCellWithEvent:event];
+}
+
 #pragma mark - Private methods
 
 - (void)setupActionBlocks {

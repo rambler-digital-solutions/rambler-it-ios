@@ -7,9 +7,12 @@
 //
 #import <Foundation/Foundation.h>
 
+@class PlainEvent;
+
 @protocol ReportListViewOutput <NSObject>
 
 - (void)setupView;
+- (void)didTriggerTapCellWithEvent:(PlainEvent *)event;
 
 @end
 

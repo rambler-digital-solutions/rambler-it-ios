@@ -10,5 +10,7 @@
 
 @protocol ReportListRouterInput <NSObject>
 
+- (void)openEventModuleWithEventObjectId:(NSString *)objectId;
+
 @end
 

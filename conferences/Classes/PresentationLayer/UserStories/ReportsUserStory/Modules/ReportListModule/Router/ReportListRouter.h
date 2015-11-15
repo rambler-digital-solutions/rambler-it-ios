@@ -7,8 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <ViperMcFlurry/ViperMcFlurry.h>
 #import "ReportListRouterInput.h"
 
 @interface ReportListRouter : NSObject<ReportListRouterInput>
+
+@property (strong, nonatomic) id <RamblerViperModuleTransitionHandlerProtocol> transitionHandler;
 
 @end

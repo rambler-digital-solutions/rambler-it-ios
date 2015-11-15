@@ -16,7 +16,7 @@
 
 #import "TabBarButtonPrototype.h"
 
-static NSString *const kReportsUserStoryName = @"ReportsUserStory";
+static NSString *const kReportsUserStoryName = @"EventsUserStory";
 static NSString *const kTabBarButtonTitle = @"Отчеты";
 static NSString *const kTabbarButtonId = @"reports_tab";
 
@@ -59,7 +59,8 @@ static NSString *const kTabbarButtonId = @"reports_tab";
 - (ReportListRouter *)routerReportList {
     return [TyphoonDefinition withClass:[ReportListRouter class]
                             configuration:^(TyphoonDefinition *definition) {
-
+                                [definition injectProperty:@selector(transitionHandler)
+                                                      with:[self viewReportList]];
            }];
 }
 

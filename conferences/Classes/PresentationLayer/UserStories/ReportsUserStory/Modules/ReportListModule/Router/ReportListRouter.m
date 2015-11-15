@@ -7,18 +7,19 @@
 //
 
 #import "ReportListRouter.h"
+#import "EventModuleInput.h"
 
-@interface ReportListRouter()
+static NSString *const kReportListModuleToEventModuleSegue = @"ReportListModuleToEventModuleSegue";
 
-@end
-
-/**
- *	Router модуля, который 1
- *
- *  
- */
 @implementation ReportListRouter
 
 #pragma mark - ReportListRouterInput
+
+- (void)openEventModuleWithEventObjectId:(NSString *)objectId {
+    [[self.transitionHandler openModuleUsingSegue:kReportListModuleToEventModuleSegue] thenChainUsingBlock:^id<RamblerViperModuleOutput>(id<EventModuleInput> moduleInput) {
+        [moduleInput configureCurrentModuleWithEventObjectId:objectId];
+        return nil;
+    }];
+}
 
 @end

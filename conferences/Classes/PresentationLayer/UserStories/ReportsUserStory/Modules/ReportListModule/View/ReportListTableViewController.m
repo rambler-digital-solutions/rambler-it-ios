@@ -45,5 +45,9 @@
     [self.tableView reloadData];
 }
 
+- (void)didTapCellWithEvent:(PlainEvent *)event {
+    [self.output didTriggerTapCellWithEvent:event];
+}
+
 
 @end

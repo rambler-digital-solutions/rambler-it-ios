@@ -11,9 +11,12 @@
 
 #import "DataDisplayManager.h"
 
+@class PlainEvent;
+
 @protocol ReportListDataDisplayManagerDelegate
 
 - (void)didUpdateTableViewModel;
+- (void)didTapCellWithEvent:(PlainEvent *)event;
 
 @end
 

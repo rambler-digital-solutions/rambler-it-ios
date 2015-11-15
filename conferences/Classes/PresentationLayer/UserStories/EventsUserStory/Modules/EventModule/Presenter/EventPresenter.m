@@ -25,7 +25,7 @@
 
 - (void)setupView {
     // по непонятной причине configureCurrentModuleWithEventObjectId вызывется после setupView
-    PlainEvent *event = [self.interactor obtainEventByObjectId:@"aa02cRQdpw"];
+    PlainEvent *event = [self.interactor obtainEventByObjectId:@"B18Ub0HfGU"];
 
     [self.view configureViewWithEvent:event];
 }

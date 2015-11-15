@@ -38,6 +38,40 @@
             </objects>
             <point key="canvasLocation" x="656" y="233"/>
         </scene>
+        <!--Report List Table View Controller-->
+        <scene sceneID="P39-WW-104">
+            <objects>
+                <tableViewController storyboardIdentifier="ReportListTableViewController" id="gEd-9g-HPd" customClass="ReportListTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="zIp-Bn-T6h">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ujQ-SR-y1C">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ujQ-SR-y1C" id="LQl-Mc-jcl">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <connections>
+                                    <segue destination="lPZ-z8-z2H" kind="modal" identifier="ReportListModuleToEventModuleSegue" modalTransitionStyle="flipHorizontal" id="DQH-UE-Xg2"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="gEd-9g-HPd" id="VE2-gS-LkD"/>
+                            <outlet property="delegate" destination="gEd-9g-HPd" id="YSJ-ZM-ani"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mYS-6U-5r4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="656" y="896"/>
+        </scene>
         <!--Event View Controller-->
         <scene sceneID="9SB-zP-L2d">
             <objects>
@@ -76,7 +110,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UZP-hJ-8Tb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1142" y="233"/>
+            <point key="canvasLocation" x="1177" y="675"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="DQH-UE-Xg2"/>
+    </inferredMetricsTieBreakers>
 </document>

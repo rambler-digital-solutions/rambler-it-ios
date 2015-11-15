@@ -10,6 +10,7 @@
 #import "ReportListViewInput.h"
 #import "ReportListInteractorInput.h"
 #import "ReportListRouterInput.h"
+#import "PlainEvent.h"
 
 @implementation ReportListPresenter
 
@@ -19,6 +20,10 @@
     NSArray *events = [self.interactor obtainEventList];
     [self.interactor updateEventList];
     [self.view setupViewWithEventList:events];
+}
+
+- (void)didTriggerTapCellWithEvent:(PlainEvent *)event {
+    [self.router openEventModuleWithEventObjectId:event.objectId];
 }
 
 #pragma mark - EventListInteractorOutput
