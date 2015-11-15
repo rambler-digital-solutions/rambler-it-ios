@@ -41,7 +41,6 @@ typedef NS_ENUM(NSUInteger, CellObjectID){
 - (id<UITableViewDataSource>)dataSourceForTableView:(UITableView *)tableView {
     if (!self.tableViewModel) {
         self.tableViewModel = [self updateTableViewModel];
-        //self.tableViewModel = [self initialTableViewModel];
     }
     return self.tableViewModel;
 }
