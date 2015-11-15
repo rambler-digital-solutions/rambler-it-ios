@@ -13,7 +13,6 @@
 @protocol EventInteractorInput <NSObject>
 
 - (PlainEvent *)obtainEventByObjectId:(NSString *)objectId;
-- (void)updateEventByObjectId:(NSString *)objectId;
 
 @end
 

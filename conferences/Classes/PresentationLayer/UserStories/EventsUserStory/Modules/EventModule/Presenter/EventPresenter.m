@@ -24,6 +24,7 @@
 #pragma mark - EventViewOutput
 
 - (void)setupView {
+    // по непонятной причине configureCurrentModuleWithEventObjectId вызывется после setupView
     PlainEvent *event = [self.interactor obtainEventByObjectId:@"aa02cRQdpw"];
 
     [self.view configureViewWithEvent:event];
@@ -46,12 +47,6 @@
 }
 
 - (void)didTriggerCurrentTranslationButtonTapEvent:(UIButton *)button {
-    
-}
-
-#pragma mark - EventInteractorOutput
-
-- (void)didUpdateEvent:(PlainEvent *)event {
     
 }
 

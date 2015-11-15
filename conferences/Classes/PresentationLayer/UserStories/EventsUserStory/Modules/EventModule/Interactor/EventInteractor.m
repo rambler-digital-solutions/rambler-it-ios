@@ -30,11 +30,6 @@ static NSString *const kEventByObjectIdPredicateFormat = @"objectId = %@";
     return plainEvent;
 }
 
-- (void)updateEventByObjectId:(NSString *)objectId {
-    // TODO: implement method
-    [self.output didUpdateEvent:nil];
-}
-
 #pragma mark - Private methods
 
 - (PlainEvent *)getPlainEventFromManagedObject:(NSManagedObjectModel *)managedObjectEvent {
