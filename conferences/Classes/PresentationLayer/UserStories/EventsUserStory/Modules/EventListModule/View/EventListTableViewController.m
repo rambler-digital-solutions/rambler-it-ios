@@ -17,6 +17,8 @@
 
 @implementation EventListTableViewController
 
+#pragma mark - Lifecycle
+
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	[self.output setupView];
@@ -36,7 +38,7 @@
     [self.dataDisplayManager updateTableViewModelWithEvents:events];
 }
 
-#pragma mark - EventLIstDataDisplayManagerDelegate methods
+#pragma mark - EventLIstDataDisplayManagerDelegate
 
 - (void)didUpdateTableViewModel {
     self.tableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.tableView];
