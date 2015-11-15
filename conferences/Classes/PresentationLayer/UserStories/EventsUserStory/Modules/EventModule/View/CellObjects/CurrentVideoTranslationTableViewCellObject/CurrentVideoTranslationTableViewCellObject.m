@@ -22,6 +22,7 @@
 - (instancetype)initWithElementID:(NSInteger)elementID event:(PlainEvent *)event {
     self = [super init];
     if (self) {
+        self.elementID = elementID;
         // set button color
     }
     return self;

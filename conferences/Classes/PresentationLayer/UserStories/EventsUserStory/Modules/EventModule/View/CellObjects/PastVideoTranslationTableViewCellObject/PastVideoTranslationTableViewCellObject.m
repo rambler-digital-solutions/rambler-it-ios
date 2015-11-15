@@ -8,8 +8,23 @@
 
 #import "PastVideoTranslationTableViewCellObject.h"
 #import "PastVideoTranslationTableViewCell.h"
+#import "PlainEvent.h"
 
 @implementation PastVideoTranslationTableViewCellObject
+
+#pragma mark - Initialization
+
+- (instancetype)initWithElementID:(NSInteger)elementID event:(PlainEvent *)event {
+    self = [super init];
+    if (self) {
+        self.elementID = elementID;
+    }
+    return self;
+}
+
++ (instancetype)objectWithElementID:(NSInteger)elementID event:(PlainEvent *)event {
+    return [[self alloc] initWithElementID:elementID event:event];
+}
 
 #pragma mark - NICellObject methods
 

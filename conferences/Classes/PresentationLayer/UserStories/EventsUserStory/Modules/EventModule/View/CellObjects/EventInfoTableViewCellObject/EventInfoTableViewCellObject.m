@@ -25,6 +25,7 @@
 - (instancetype)initWithElementID:(NSInteger)elementID event:(PlainEvent *)event {
     self = [super init];
     if (self) {
+        self.elementID = elementID;
         _eventTitle = event.name;
         _eventSubTitle = event.eventSubtitle;
         

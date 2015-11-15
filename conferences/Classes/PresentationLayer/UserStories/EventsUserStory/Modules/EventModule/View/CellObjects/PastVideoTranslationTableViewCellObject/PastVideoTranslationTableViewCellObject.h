@@ -12,4 +12,6 @@
 
 @interface PastVideoTranslationTableViewCellObject : NIFormElement <NICellObject>
 
++ (instancetype)objectWithElementID:(NSInteger)elementID event:(PlainEvent *)event;
+
 @end
