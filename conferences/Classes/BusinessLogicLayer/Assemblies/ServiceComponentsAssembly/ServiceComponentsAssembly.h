@@ -13,6 +13,6 @@
 
 @interface ServiceComponentsAssembly : TyphoonAssembly <ServiceComponents>
 
-@property (strong, nonatomic, readonly) OperationFactoriesAssembly *operationFactoriesAssemlby;
+@property (strong, nonatomic, readonly) OperationFactoriesAssembly *operationFactoriesAssembly;
 
 @end
