@@ -170,7 +170,6 @@
 		9F0A85011BC1698B006F79FB /* ResponseMappingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A84E81BC1698B006F79FB /* ResponseMappingOperation.m */; };
 		9F0A85021BC1698B006F79FB /* ResponseValidationOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A84EB1BC1698B006F79FB /* ResponseValidationOperation.m */; };
 		9F0A85031BC1698B006F79FB /* OperationDebugDescriptionFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A84EF1BC1698B006F79FB /* OperationDebugDescriptionFormatter.m */; };
-		9F0A851E1BC185AA006F79FB /* CompoundOperationBaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A85071BC185AA006F79FB /* CompoundOperationBaseTests.m */; };
 		9F0A851F1BC185AA006F79FB /* TestCancellableOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A85091BC185AA006F79FB /* TestCancellableOperation.m */; };
 		9F0A85201BC185AA006F79FB /* TestChainableOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A850B1BC185AA006F79FB /* TestChainableOperation.m */; };
 		9F0A85211BC185AA006F79FB /* TestChainableOperationWithValidationBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A850D1BC185AA006F79FB /* TestChainableOperationWithValidationBlock.m */; };
@@ -187,7 +186,6 @@
 		9F0A853B1BC1908B006F79FB /* OperationChainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A853A1BC1908B006F79FB /* OperationChainer.m */; };
 		9F0A853F1BC192F0006F79FB /* OperationChainerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A853E1BC192F0006F79FB /* OperationChainerTests.m */; };
 		9F1830931BC02293000E21A5 /* RESTRequestConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830921BC02293000E21A5 /* RESTRequestConfigurator.m */; };
-		9F18309A1BC022EA000E21A5 /* RCFRESTRequestConfiguratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830991BC022EA000E21A5 /* RCFRESTRequestConfiguratorTests.m */; };
 		9F18309F1BC024A9000E21A5 /* RequestDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F18309E1BC024A9000E21A5 /* RequestDataModel.m */; };
 		9F1830A71BC032CF000E21A5 /* ParseRequestSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830A61BC032CF000E21A5 /* ParseRequestSigner.m */; };
 		9F1830AB1BC1139B000E21A5 /* RCFParseRequestSignerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830AA1BC1139B000E21A5 /* RCFParseRequestSignerTests.m */; };
@@ -3727,7 +3725,6 @@
 				63F402F11BCF77CB0086D030 /* ServiceComponentsAssemblyTests.m in Sources */,
 				9F1830DB1BC126D7000E21A5 /* RCFParseResponseValidatorTests.m in Sources */,
 				9F0A85201BC185AA006F79FB /* TestChainableOperation.m in Sources */,
-				9F18309A1BC022EA000E21A5 /* RCFRESTRequestConfiguratorTests.m in Sources */,
 				9F8E5FA21BC27B5B00DC10DB /* EventOperationFactoryTests.m in Sources */,
 				63F402F01BCF77CB0086D030 /* ApplicationAssemblyTests.m in Sources */,
 				9F0A85261BC185AA006F79FB /* ResponseDeserializationOperationTests.m in Sources */,
@@ -3755,7 +3752,6 @@
 				9F0A85221BC185AA006F79FB /* TestErrorChainableOperation.m in Sources */,
 				9F1830FD1BC14C37000E21A5 /* RCFManagedObjectMapperTests.m in Sources */,
 				9F1830FE1BC14E64000E21A5 /* Conference.xcdatamodeld in Sources */,
-				9F0A851E1BC185AA006F79FB /* CompoundOperationBaseTests.m in Sources */,
 				63D628EC1BE4C744004AF98F /* PlainEvent.m in Sources */,
 				9F0A85281BC185AA006F79FB /* ResponseValidationOperationTests.m in Sources */,
 			);
