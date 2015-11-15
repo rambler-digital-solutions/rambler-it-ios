@@ -6,8 +6,8 @@
 //  Copyright © 2015 Rambler. All rights reserved.
 //
 
-#import "PresenterStateStorage.h"
+#import "EventPresenterStateStorage.h"
 
-@implementation PresenterStateStorage
+@implementation EventPresenterStateStorage
 
 @end

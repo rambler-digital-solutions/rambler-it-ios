@@ -124,7 +124,7 @@
 		63F54D951BC5A79900DB1746 /* EXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F54D931BC5A79900DB1746 /* EXTScope.m */; };
 		63F54D9B1BC5AB3C00DB1746 /* ServiceComponentsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F54D9A1BC5AB3C00DB1746 /* ServiceComponentsAssembly.m */; };
 		63F54DA01BC5BB2800DB1746 /* ThirdPartiesConfiguratorImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F54D9F1BC5BB2800DB1746 /* ThirdPartiesConfiguratorImplementation.m */; };
-		63F8F23E1BF66743000017F3 /* PresenterStateStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F23D1BF66743000017F3 /* PresenterStateStorage.m */; };
+		63F8F23E1BF66743000017F3 /* EventPresenterStateStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F23D1BF66743000017F3 /* EventPresenterStateStorage.m */; };
 		63F8F24E1BF74302000017F3 /* CurrentVideoTranslationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F24C1BF74302000017F3 /* CurrentVideoTranslationTableViewCell.m */; };
 		63F8F24F1BF74302000017F3 /* CurrentVideoTranslationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63F8F24D1BF74302000017F3 /* CurrentVideoTranslationTableViewCell.xib */; };
 		63F8F2531BF74351000017F3 /* EventDescriptionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F2511BF74351000017F3 /* EventDescriptionTableViewCell.m */; };
@@ -152,6 +152,7 @@
 		63F8F2CC1BF8BE6A000017F3 /* EventListDataDisplayManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F2CB1BF8BE6A000017F3 /* EventListDataDisplayManagerTests.m */; };
 		63F8F2CE1BF8CAEB000017F3 /* EventListPresenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F2CD1BF8CAEB000017F3 /* EventListPresenterTests.m */; };
 		63F8F2D61BF8D54C000017F3 /* EventListModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F2D51BF8D54C000017F3 /* EventListModuleAssemblyTests.m */; };
+		63F8F2DC1BF8FCB7000017F3 /* EventModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F2DB1BF8FCB7000017F3 /* EventModuleAssemblyTests.m */; };
 		63FD4DFB1BE4FA340046378E /* EventPrototypeMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FD4DFA1BE4FA340046378E /* EventPrototypeMapper.m */; };
 		63FD4E061BE5038D0046378E /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FD4E051BE5038D0046378E /* UIColor+Hex.m */; };
 		63FD4E0B1BE621750046378E /* Event+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FD4E081BE621750046378E /* Event+CoreDataProperties.m */; };
@@ -479,8 +480,8 @@
 		63F54D9D1BC5BAB000DB1746 /* ThirdPartiesConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdPartiesConfigurator.h; sourceTree = "<group>"; };
 		63F54D9E1BC5BB2800DB1746 /* ThirdPartiesConfiguratorImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdPartiesConfiguratorImplementation.h; sourceTree = "<group>"; };
 		63F54D9F1BC5BB2800DB1746 /* ThirdPartiesConfiguratorImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdPartiesConfiguratorImplementation.m; sourceTree = "<group>"; };
-		63F8F23C1BF66743000017F3 /* PresenterStateStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresenterStateStorage.h; sourceTree = "<group>"; };
-		63F8F23D1BF66743000017F3 /* PresenterStateStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresenterStateStorage.m; sourceTree = "<group>"; };
+		63F8F23C1BF66743000017F3 /* EventPresenterStateStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventPresenterStateStorage.h; sourceTree = "<group>"; };
+		63F8F23D1BF66743000017F3 /* EventPresenterStateStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventPresenterStateStorage.m; sourceTree = "<group>"; };
 		63F8F24B1BF74302000017F3 /* CurrentVideoTranslationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentVideoTranslationTableViewCell.h; sourceTree = "<group>"; };
 		63F8F24C1BF74302000017F3 /* CurrentVideoTranslationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentVideoTranslationTableViewCell.m; sourceTree = "<group>"; };
 		63F8F24D1BF74302000017F3 /* CurrentVideoTranslationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CurrentVideoTranslationTableViewCell.xib; sourceTree = "<group>"; };
@@ -533,6 +534,8 @@
 		63F8F2D51BF8D54C000017F3 /* EventListModuleAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListModuleAssemblyTests.m; sourceTree = "<group>"; };
 		63F8F2D71BF8D5A9000017F3 /* EventListModuleAssembly_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventListModuleAssembly_Testable.h; sourceTree = "<group>"; };
 		63F8F2D81BF8F7F0000017F3 /* ServiceComponentsAssembly_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServiceComponentsAssembly_Testable.h; sourceTree = "<group>"; };
+		63F8F2DA1BF8FBD0000017F3 /* EventModuleAssembly_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventModuleAssembly_Testable.h; sourceTree = "<group>"; };
+		63F8F2DB1BF8FCB7000017F3 /* EventModuleAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventModuleAssemblyTests.m; sourceTree = "<group>"; };
 		63FA398D1BDD46E500CE6249 /* PlainEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlainEvent.h; sourceTree = "<group>"; };
 		63FA398E1BDD46E500CE6249 /* PlainEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlainEvent.m; sourceTree = "<group>"; };
 		63FD4DF81BE4F9D00046378E /* PrototypeMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrototypeMapper.h; sourceTree = "<group>"; };
@@ -1786,8 +1789,8 @@
 		63F8F23B1BF66743000017F3 /* PresenterStateStorage */ = {
 			isa = PBXGroup;
 			children = (
-				63F8F23C1BF66743000017F3 /* PresenterStateStorage.h */,
-				63F8F23D1BF66743000017F3 /* PresenterStateStorage.m */,
+				63F8F23C1BF66743000017F3 /* EventPresenterStateStorage.h */,
+				63F8F23D1BF66743000017F3 /* EventPresenterStateStorage.m */,
 			);
 			path = PresenterStateStorage;
 			sourceTree = "<group>";
@@ -2064,6 +2067,7 @@
 			isa = PBXGroup;
 			children = (
 				63F8F2D41BF8D50F000017F3 /* EventListModuleAssemblyTests */,
+				63F8F2D91BF8FBA6000017F3 /* EventModuleAssemblyTests */,
 			);
 			path = EventsUserStory;
 			sourceTree = "<group>";
@@ -2075,6 +2079,15 @@
 				63F8F2D71BF8D5A9000017F3 /* EventListModuleAssembly_Testable.h */,
 			);
 			path = EventListModuleAssemblyTests;
+			sourceTree = "<group>";
+		};
+		63F8F2D91BF8FBA6000017F3 /* EventModuleAssemblyTests */ = {
+			isa = PBXGroup;
+			children = (
+				63F8F2DA1BF8FBD0000017F3 /* EventModuleAssembly_Testable.h */,
+				63F8F2DB1BF8FCB7000017F3 /* EventModuleAssemblyTests.m */,
+			);
+			path = EventModuleAssemblyTests;
 			sourceTree = "<group>";
 		};
 		63FA398C1BDD46C800CE6249 /* PlainObjects */ = {
@@ -3787,7 +3800,7 @@
 				636F8DDB1BCB8FE800552B91 /* RamblerLocationInteractor.m in Sources */,
 				63136F931BDCD8B600994356 /* EventListDataDisplayManager.m in Sources */,
 				63136FDA1BDCDB2700994356 /* TabBarPresenter.m in Sources */,
-				63F8F23E1BF66743000017F3 /* PresenterStateStorage.m in Sources */,
+				63F8F23E1BF66743000017F3 /* EventPresenterStateStorage.m in Sources */,
 				636F8DFA1BCB90E500552B91 /* EventListRouter.m in Sources */,
 				63136FD81BDCDB2700994356 /* TabBarModuleAssembly.m in Sources */,
 				6373A4101BBDC5EA00DF67FF /* Conference.xcdatamodeld in Sources */,
@@ -3821,6 +3834,7 @@
 				63D628F11BE4CE09004AF98F /* EventListModuleAssembly.m in Sources */,
 				63D628F21BE4CE09004AF98F /* RamblerLocationModuleAssembly.m in Sources */,
 				63D628F31BE4CE09004AF98F /* ServiceComponentsAssembly.m in Sources */,
+				63F8F2DC1BF8FCB7000017F3 /* EventModuleAssemblyTests.m in Sources */,
 				63D628F41BE4CE09004AF98F /* OperationFactoriesAssembly.m in Sources */,
 				63D628F51BE4CE09004AF98F /* ResponseMappersAssembly.m in Sources */,
 				63D628F61BE4CE09004AF98F /* ResponseValidatorsAssembly.m in Sources */,

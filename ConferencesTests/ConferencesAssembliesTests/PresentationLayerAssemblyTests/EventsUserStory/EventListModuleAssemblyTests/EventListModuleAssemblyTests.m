@@ -46,7 +46,7 @@
     [super tearDown];
 }
 
-- (void)testThatAssemblyCreatesViewEventList {
+- (void)testThatAssemblyCreatesView {
     // given
     Class targetClass = [EventListTableViewController class];
     NSArray *dependencies = @[
@@ -60,7 +60,7 @@
     [self verifyTargetDependency:result withClass:targetClass dependencies:dependencies];
 }
 
-- (void)testThatAssemblyCreatesInteractorEventList {
+- (void)testThatAssemblyCreatesInteractor {
     // given
     Class targetClass = [EventListInteractor class];
     NSArray *dependencies = @[
@@ -75,7 +75,7 @@
     [self verifyTargetDependency:result withClass:targetClass dependencies:dependencies];
 }
 
-- (void)testThatAssemblyCreatesPresenterEventList {
+- (void)testThatAssemblyCreatesPresenter {
     // given
     Class targetClass = [EventListPresenter class];
     NSArray *dependencies = @[
@@ -90,7 +90,7 @@
     [self verifyTargetDependency:result withClass:targetClass dependencies:dependencies];
 }
 
-- (void)testThatAssemblyCreatesRouterEventList {
+- (void)testThatAssemblyCreatesRouter {
     // given
     Class targetClass = [EventListRouter class  ];
     NSArray *dependencies = @[
@@ -103,7 +103,7 @@
     [self verifyTargetDependency:result withClass:targetClass dependencies:dependencies];
 }
 
-- (void)testThatAssemblyCreatesDataDisplayManagerEventList {
+- (void)testThatAssemblyCreatesDataDisplayManager {
     // given
     Class targetClass = [EventListDataDisplayManager class];
 

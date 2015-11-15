@@ -11,7 +11,7 @@
 #import "EventInteractorInput.h"
 #import "EventRouterInput.h"
 #import "PlainEvent.h"
-#import "PresenterStateStorage.h"
+#import "EventPresenterStateStorage.h"
 
 @implementation EventPresenter
 
