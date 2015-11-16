@@ -42,13 +42,15 @@
     NSMutableURLRequest *mutableRequest = [NSMutableURLRequest requestWithURL:finalURL];
     [mutableRequest setHTTPMethod:method];
     
+    NSURLRequest *request;
     if (requestDataModel.bodyData) {
         [mutableRequest setHTTPBody:requestDataModel.bodyData];
+        request = [mutableRequest copy];
+    } else {
+        request = [self requestBySerializingRequest:[mutableRequest copy]
+                                     withParameters:requestDataModel.queryParameters
+                                              error:nil];
     }
-    
-    NSURLRequest *request = [self requestBySerializingRequest:[mutableRequest copy]
-                                               withParameters:requestDataModel.queryParameters
-                                                        error:nil];
     
     return request;
 }
