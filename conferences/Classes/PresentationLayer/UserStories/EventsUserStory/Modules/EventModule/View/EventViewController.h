@@ -14,6 +14,8 @@
 
 @interface EventViewController : UIViewController <EventViewInput>
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 @property (nonatomic, strong) id<EventViewOutput> output;
 @property (strong, nonatomic) EventDataDisplayManager *dataDisplayManager;
 

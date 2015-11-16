@@ -10,7 +10,7 @@
 #import "EventInfoTableViewCellObject.h"
 #import "SignUpAndSaveToCalendarEventTableViewCellObject.h"
 #import "EventDescriptionTableViewCellObject.h"
-#import "LectionInfoTableViewCellObject.h"
+#import "LectureInfoTableViewCellObject.h"
 #import "PlainEvent.h"
 #import "PlainLecture.h"
 
@@ -38,13 +38,14 @@ typedef NS_ENUM(NSUInteger, EventTableViewFormElementID) {
     [cellObjects addObject:eventDescriptionCellObject];
     
     for (PlainLecture *lecture in event.lectures) {
-        LectionInfoTableViewCellObject *lectionCellobject = [LectionInfoTableViewCellObject objectWithLecture:lecture];
-        [cellObjects addObject:lectionCellobject];
+        LectureInfoTableViewCellObject *lectureCellobject = [LectureInfoTableViewCellObject objectWithLecture:lecture];
+        [cellObjects addObject:lectureCellobject];
     }
     
-    LectionInfoTableViewCellObject *lection1 = [LectionInfoTableViewCellObject new];
-    LectionInfoTableViewCellObject *lection2 = [LectionInfoTableViewCellObject new];
-    LectionInfoTableViewCellObject *lection3 = [LectionInfoTableViewCellObject new];
+    // пока не реализовано получение докладов с сервера, имитируем их наличие
+    LectureInfoTableViewCellObject *lection1 = [LectureInfoTableViewCellObject new];
+    LectureInfoTableViewCellObject *lection2 = [LectureInfoTableViewCellObject new];
+    LectureInfoTableViewCellObject *lection3 = [LectureInfoTableViewCellObject new];
     
     [cellObjects addObject:lection1];
     [cellObjects addObject:lection2];

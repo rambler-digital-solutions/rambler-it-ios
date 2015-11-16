@@ -82,7 +82,7 @@
     [self verifyTargetDependency:result withClass:targetClass dependencies:dependencies];
 }
 
-- (void)testThatAssemblyCreates {
+- (void)testThatAssemblyCreatesThirdPartiesConfigurator {
     // given
     Class targetClass = [ThirdPartiesConfiguratorImplementation class];
     

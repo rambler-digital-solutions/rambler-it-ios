@@ -11,7 +11,7 @@
 #import "EventInteractorInput.h"
 #import "EventRouterInput.h"
 #import "PlainEvent.h"
-#import "PresenterStateStorage.h"
+#import "EventPresenterStateStorage.h"
 
 @implementation EventPresenter
 
@@ -24,7 +24,7 @@
 #pragma mark - EventViewOutput
 
 - (void)setupView {
-    // по непонятной причине configureCurrentModuleWithEventObjectId вызывется после setupView
+    // по непонятной причине configureCurrentModuleWithEventObjectId вызывется после setupView, пока objectId передаем вручную
     PlainEvent *event = [self.interactor obtainEventByObjectId:@"B18Ub0HfGU"];
 
     [self.view configureViewWithEvent:event];
@@ -42,7 +42,7 @@
     
 }
 
-- (void)didTriggerReadMoreLectionDescriptionButtonTappedEvent:(id)button {
+- (void)didTriggerReadMoreLectureDescriptionButtonTappedEvent:(id)button {
     
 }
 

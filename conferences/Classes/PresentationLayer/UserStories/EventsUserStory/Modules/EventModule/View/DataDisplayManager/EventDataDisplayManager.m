@@ -10,13 +10,7 @@
 
 #import <Nimbus/NimbusModels.h>
 
-#import "EventInfoTableViewCellObject.h"
-#import "LectionInfoTableViewCellObject.h"
-#import "SignUpAndSaveToCalendarEventTableViewCellObject.h"
-#import "CurrentVideoTranslationTableViewCellObject.h"
-#import "PastVideoTranslationTableViewCellObject.h"
-#import "EventDescriptionTableViewCellObject.h"
-#import "CellObjectBuilder.h"
+#import "CellObjectBuilderProtocol.h"
 #import "EventCellObjectBuilderFactory.h"
 #import "PlainEvent.h"
 
@@ -24,7 +18,7 @@
 
 @property (strong, nonatomic) NITableViewModel *tableViewModel;
 @property (strong, nonatomic) NITableViewActions *tableViewActions;
-@property (strong, nonatomic) id <CellObjectBuilder> cellObjectBuilder;
+@property (strong, nonatomic) id <CellObjectBuilderProtocol> cellObjectBuilder;
 @property (strong, nonatomic) NSArray *cellObjects;
 
 @end

@@ -87,7 +87,7 @@ static NSString *const kTabbarButtonId = @"events_tab";
 }
 
 - (id<TabBarControllerContent>)eventListTabBarControllerContent {
-    return [TyphoonFactoryDefinition withFactory:[self newsListStoryboard]
+    return [TyphoonFactoryDefinition withFactory:[self eventListStoryboard]
                                         selector:@selector(instantiateViewControllerWithIdentifier:)
                                       parameters:^(TyphoonMethod *factoryMethod) {
                                           [factoryMethod injectParameterWith:NSStringFromClass([EventListTableViewController class])];
@@ -95,7 +95,7 @@ static NSString *const kTabbarButtonId = @"events_tab";
                                       }];
 }
 
-- (UIStoryboard*)newsListStoryboard {
+- (UIStoryboard*)eventListStoryboard {
     return [TyphoonDefinition withClass:[TyphoonStoryboard class]
                           configuration:^(TyphoonDefinition *definition) {
                               [definition useInitializer:@selector(storyboardWithName:factory:bundle:)

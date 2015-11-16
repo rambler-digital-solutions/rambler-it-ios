@@ -26,7 +26,7 @@
     return [TyphoonDefinition withClass:[EventServiceImplementation class]
                           configuration:^(TyphoonDefinition *definition) {
                               [definition injectProperty:@selector(eventOperationFactory)
-                                                    with:[self.operationFactoriesAssemlby eventOperationFactory]];
+                                                    with:[self.operationFactoriesAssembly eventOperationFactory]];
                               [definition injectProperty:@selector(operationScheduler)
                                                     with:[self operationScheduler]];
         

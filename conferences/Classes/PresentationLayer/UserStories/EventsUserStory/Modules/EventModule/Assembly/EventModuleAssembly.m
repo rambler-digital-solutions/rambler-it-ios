@@ -12,7 +12,7 @@
 #import "EventPresenter.h"
 #import "EventRouter.h"
 #import "EventDataDisplayManager.h"
-#import "PresenterStateStorage.h"
+#import "EventPresenterStateStorage.h"
 #import "ServiceComponents.h"
 #import "PresentationLayerHelpersAssembly.h"
 #import "EventCellObjectBuilderFactory.h"
@@ -78,8 +78,8 @@
     }];
 }
 
-- (PresenterStateStorage *)presenterStateStorage {
-    return [TyphoonDefinition withClass:[PresenterStateStorage class]];
+- (EventPresenterStateStorage *)presenterStateStorage {
+    return [TyphoonDefinition withClass:[EventPresenterStateStorage class]];
 }
 
 @end

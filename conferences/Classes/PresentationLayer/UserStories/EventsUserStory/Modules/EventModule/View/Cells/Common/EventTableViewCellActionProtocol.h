@@ -7,11 +7,11 @@
 //
 
 #import "EventInfoTableViewCellActionProtocol.h"
-#import "LectionInfoTableViewCellActionProtocol.h"
+#import "LectureInfoTableViewCellActionProtocol.h"
 #import "SignUpAndSaveToCalendarEventTableViewCellActionProtocol.h"
 #import "CurrentVideoTranslationTableViewCellActionProtocol.h"
 #import "EventDescriptionTableViewCellActionProtocol.h"
 
-@protocol EventTableViewCellActionProtocol <EventInfoTableViewCellActionProtocol, LectionInfoTableViewCellActionProtocol, SignUpAndSaveToCalendarEventTableViewCellActionProtocol, CurrentVideoTranslationTableViewCellActionProtocol, EventDescriptionTableViewCellActionProtocol>
+@protocol EventTableViewCellActionProtocol <EventInfoTableViewCellActionProtocol, LectureInfoTableViewCellActionProtocol, SignUpAndSaveToCalendarEventTableViewCellActionProtocol, CurrentVideoTranslationTableViewCellActionProtocol, EventDescriptionTableViewCellActionProtocol>
 
 @end

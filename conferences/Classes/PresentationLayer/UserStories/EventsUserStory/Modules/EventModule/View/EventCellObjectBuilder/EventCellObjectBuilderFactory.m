@@ -15,7 +15,7 @@
 
 @implementation EventCellObjectBuilderFactory
 
-- (id<CellObjectBuilder>)builderForEventType:(NSNumber *)eventType {
+- (id<CellObjectBuilderProtocol>)builderForEventType:(NSNumber *)eventType {
     return [TyphoonDefinition withOption:eventType matcher:^(TyphoonOptionMatcher *matcher) {
         [matcher caseEqual:@(FutureEvent)
                        use:[self futureEventCellObjectBuilder]];
@@ -26,15 +26,15 @@
     }];
 }
 
-- (id <CellObjectBuilder>)currentEventCellObjectBuilder {
+- (id <CellObjectBuilderProtocol>)currentEventCellObjectBuilder {
     return [TyphoonDefinition withClass:[CurrentEventCellObjectBuilder class]];
 }
 
-- (id <CellObjectBuilder>)futureEventCellObjectBuilder {
+- (id <CellObjectBuilderProtocol>)futureEventCellObjectBuilder {
     return [TyphoonDefinition withClass:[FutureEventCellObjectBuilder class]];
 }
 
-- (id <CellObjectBuilder>)pastEventCellObjectBuilder {
+- (id <CellObjectBuilderProtocol>)pastEventCellObjectBuilder {
     return [TyphoonDefinition withClass:[PastEventCellObjectBuilder class]];
 }
 

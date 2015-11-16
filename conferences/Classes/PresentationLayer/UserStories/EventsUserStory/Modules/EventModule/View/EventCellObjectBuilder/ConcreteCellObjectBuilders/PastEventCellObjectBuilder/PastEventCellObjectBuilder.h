@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CellObjectBuilder.h"
+#import "CellObjectBuilderProtocol.h"
 
-@interface PastEventCellObjectBuilder : NSObject <CellObjectBuilder>
+@interface PastEventCellObjectBuilder : NSObject <CellObjectBuilderProtocol>
 
 @end

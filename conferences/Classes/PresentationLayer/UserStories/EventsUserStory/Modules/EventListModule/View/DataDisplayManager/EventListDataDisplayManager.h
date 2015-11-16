@@ -24,7 +24,6 @@
 
 @property (weak, nonatomic) id <EventLIstDataDisplayManagerDelegate> delegate;
 
-- (void)configureDataDisplayManagerWithEvents:(NSArray *)events;
 - (void)updateTableViewModelWithEvents:(NSArray *)events;
 
 @end

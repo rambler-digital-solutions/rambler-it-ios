@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol LectionInfoTableViewCellActionProtocol <NSObject>
+@protocol LectureInfoTableViewCellActionProtocol <NSObject>
 
-- (void)didTapReadMoreLectionDescriptionButton:(UIButton *)button;
+- (void)didTapReadMoreLectureDescriptionButton:(UIButton *)button;
 
 @end
