@@ -25,6 +25,7 @@
 		63136FE01BDCDB2700994356 /* UIViewController+TabBarControllerContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136FCC1BDCDB2700994356 /* UIViewController+TabBarControllerContent.m */; };
 		63136FE11BDCDB2700994356 /* TabBarButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136FCF1BDCDB2700994356 /* TabBarButtonCell.m */; };
 		63136FE21BDCDB2700994356 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136FD11BDCDB2700994356 /* TabBarViewController.m */; };
+		631CBA1E1BFE30A100E3EBA8 /* EventDataDisplayManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA1D1BFE30A100E3EBA8 /* EventDataDisplayManagerTests.m */; };
 		631FFE191BEF451400749DB8 /* CDResponderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FFE141BEF451400749DB8 /* CDResponderTableViewCell.m */; };
 		631FFE1A1BEF451400749DB8 /* UIView+CDResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FFE181BEF451400749DB8 /* UIView+CDResponder.m */; };
 		631FFE531BEF930200749DB8 /* ReportListModuleAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FFE411BEF930200749DB8 /* ReportListModuleAssembly.m */; };
@@ -307,6 +308,7 @@
 		63136FD11BDCDB2700994356 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
 		63136FD21BDCDB2700994356 /* TabBarViewInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewInput.h; sourceTree = "<group>"; };
 		63136FE51BDCDB9E00994356 /* DataDisplayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataDisplayManager.h; sourceTree = "<group>"; };
+		631CBA1D1BFE30A100E3EBA8 /* EventDataDisplayManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDataDisplayManagerTests.m; sourceTree = "<group>"; };
 		631FFE051BEF29FE00749DB8 /* EventModuleInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventModuleInput.h; sourceTree = "<group>"; };
 		631FFE0B1BEF3E5E00749DB8 /* EventTableViewCellActionProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTableViewCellActionProtocol.h; sourceTree = "<group>"; };
 		631FFE111BEF3FBF00749DB8 /* EventInfoTableViewCellActionProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventInfoTableViewCellActionProtocol.h; sourceTree = "<group>"; };
@@ -2031,6 +2033,7 @@
 			children = (
 				63F8F2DD1BF902AB000017F3 /* EventInteractorTests.m */,
 				63F8F2DF1BF90711000017F3 /* EventViewControllerTests.m */,
+				631CBA1D1BFE30A100E3EBA8 /* EventDataDisplayManagerTests.m */,
 			);
 			path = EventModuleTest;
 			sourceTree = "<group>";
@@ -3842,6 +3845,7 @@
 				63D628F11BE4CE09004AF98F /* EventListModuleAssembly.m in Sources */,
 				63D628F21BE4CE09004AF98F /* RamblerLocationModuleAssembly.m in Sources */,
 				63D628F31BE4CE09004AF98F /* ServiceComponentsAssembly.m in Sources */,
+				631CBA1E1BFE30A100E3EBA8 /* EventDataDisplayManagerTests.m in Sources */,
 				63F8F2DC1BF8FCB7000017F3 /* EventModuleAssemblyTests.m in Sources */,
 				63D628F41BE4CE09004AF98F /* OperationFactoriesAssembly.m in Sources */,
 				63D628F51BE4CE09004AF98F /* ResponseMappersAssembly.m in Sources */,
