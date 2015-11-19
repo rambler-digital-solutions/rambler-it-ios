@@ -18,8 +18,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#ifndef Championat_RDSIntermoduleDataTransfer_h
-#define Championat_RDSIntermoduleDataTransfer_h
+#ifndef IntermoduleDataTransfer_h
+#define IntermoduleDataTransfer_h
 
 #import "RDSEmbedModuleSegue.h"
 #import "RDSEmbedModuleTransitionSegueInfo.h"

@@ -18,19 +18,14 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-//
-//  UIView+CDResponder.h
-//  Категория UIView для поиска
-//  UIResponser'ов
-//
-//  Created by Smal Vadim on 23.04.15.
-//  Copyright (c) 2015 Smal Vadim. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
 
 typedef BOOL (^CDExpectedBlock)(void * value);
 
+/**
+ Категория UIView для поиска
+ UIResponser'ов
+ */
 @interface UIView (CDResponder)
 
 /**

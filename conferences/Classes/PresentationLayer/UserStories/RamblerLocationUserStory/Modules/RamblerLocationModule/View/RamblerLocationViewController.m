@@ -25,11 +25,6 @@
 
 @end
 
-/**
- *	View модуля, который 1
- *
- *  
- */
 @implementation RamblerLocationViewController
 
 - (void)viewDidLoad {

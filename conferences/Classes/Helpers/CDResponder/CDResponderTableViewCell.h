@@ -18,17 +18,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-//
-//  CDResponderTableViewCell.h
-//  Класс ячейки, которая по тапу находит ближайшую
-//  view способную стать респондером.
-//
-//  Created by Smal Vadim on 23.04.15.
-//  Copyright (c) 2015 Smal Vadim. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
 
+/**
+ Класс ячейки, которая по тапу находит ближайшую
+ view, способную стать респондером.
+ */
 @interface CDResponderTableViewCell : UITableViewCell
 
 
