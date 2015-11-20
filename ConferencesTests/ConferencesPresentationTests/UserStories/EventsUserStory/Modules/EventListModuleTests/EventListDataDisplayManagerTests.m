@@ -16,6 +16,10 @@
 #import <OCMock/OCMock.h>
 #import "EventListTableViewController.h"
 
+typedef NS_ENUM(NSUInteger, TableViewSectionIndex){
+    EventsSection = 0
+};
+
 @interface EventListDataDisplayManagerTests : XCTestCase
 
 @property (strong, nonatomic) EventListDataDisplayManager *dataDisplayManager;
@@ -65,12 +69,13 @@
 - (void)testThatDataDisplayManagerReturnsCorrectNumberOfSections {
     // given
     NSUInteger const kExpectedNumberOfSections = 1;
+    NSUInteger actualNumberOfSections = 0;
     
     // when
     [self.dataDisplayManager updateTableViewModelWithEvents:self.events];
     id <UITableViewDataSource> dataSource = [self.dataDisplayManager dataSourceForTableView:nil];
     
-    NSUInteger actualNumberOfSections = [dataSource numberOfSectionsInTableView:nil];
+     actualNumberOfSections = [dataSource numberOfSectionsInTableView:nil];
     
     // then
     XCTAssertEqual(actualNumberOfSections, kExpectedNumberOfSections);
@@ -81,17 +86,11 @@
     NSUInteger const kExpectedNumberOfRows = self.events.count;
     NSUInteger actualNumberOfRows = 0;
     
-    
     // when
     [self.dataDisplayManager updateTableViewModelWithEvents:self.events];
     id <UITableViewDataSource> dataSource = [self.dataDisplayManager dataSourceForTableView:nil];
-    
-    NSUInteger overallNumberOfSections = [dataSource numberOfSectionsInTableView:nil];
-    
-    for (int sectionNumber = 0; sectionNumber < overallNumberOfSections; sectionNumber++) {
-        actualNumberOfRows += [dataSource tableView:nil numberOfRowsInSection:sectionNumber];
-    }
-    
+    actualNumberOfRows = [dataSource tableView:nil numberOfRowsInSection:EventsSection];
+
     // then
     XCTAssertEqual(kExpectedNumberOfRows, actualNumberOfRows);
 }
@@ -105,21 +104,16 @@
     [self.dataDisplayManager updateTableViewModelWithEvents:self.events];
     id <UITableViewDataSource> dataSource = [self.dataDisplayManager dataSourceForTableView:nil];
     
-    NSUInteger overallNumberOfSections = [dataSource numberOfSectionsInTableView:nil];
-    NSUInteger overallNumberOfCells = 0;
+    NSUInteger numberOfRows = [dataSource tableView:nil numberOfRowsInSection:EventsSection];
     
-    for (int sectionNumber = 0; sectionNumber < overallNumberOfSections; sectionNumber++) {
-        overallNumberOfCells += [dataSource tableView:nil numberOfRowsInSection:sectionNumber];
-    }
-    
-    for (int i = 0; i < overallNumberOfCells; i++) {
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
-        id tableViewCell = [dataSource tableView:nil cellForRowAtIndexPath:indexPath];
+    for (int i = 0; i < numberOfRows; i++) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:EventsSection];
+        UITableViewCell *cell = [dataSource tableView:nil cellForRowAtIndexPath:indexPath];
         
-        if ([tableViewCell isKindOfClass:[FutureEventTableViewCell class]]) {
+        if ([cell isKindOfClass:[FutureEventTableViewCell class]]) {
             actualNumberOfCellForCorrespondingClass++;
         }
-        if ([tableViewCell isKindOfClass:[PastEventTableViewCell class]]) {
+        if ([cell isKindOfClass:[PastEventTableViewCell class]]) {
             actualNumberOfCellForCorrespondingClass++;
         }
     }

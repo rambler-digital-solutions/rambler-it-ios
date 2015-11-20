@@ -65,18 +65,12 @@
     // given
     NSArray *events = @[];
     
-    id dataSource = OCMProtocolMock(@protocol(UITableViewDataSource));
-    id delegate = OCMProtocolMock(@protocol(UITableViewDelegate));
-    
-    OCMStub([self.mockDataDisplayManager dataSourceForTableView:self.mockTableView]).andReturn(dataSource);
-    OCMStub([self.mockDataDisplayManager delegateForTableView:self.mockTableView withBaseDelegate:nil]).andReturn(delegate);
-    
     // when
     [self.viewController setupViewWithEventList:events];
     
     // then
-    OCMVerify([self.mockTableView setDataSource:dataSource]);
-    OCMVerify([self.mockTableView setDelegate:delegate]);
+    OCMVerify([self.mockDataDisplayManager dataSourceForTableView:self.mockTableView]);
+    OCMVerify([self.mockDataDisplayManager delegateForTableView:self.mockTableView withBaseDelegate:nil]);
     OCMVerify([self.mockDataDisplayManager updateTableViewModelWithEvents:events]);
 }
 
@@ -95,14 +89,12 @@
 
 - (void)testSuccessDidUpdateTableViewModel {
     // given
-    id dataSource = OCMProtocolMock(@protocol(UITableViewDataSource));
-    OCMStub([self.mockDataDisplayManager dataSourceForTableView:self.mockTableView]).andReturn(dataSource);
-    
+
     // when
     [self.viewController didUpdateTableViewModel];
     
     // then
-    OCMVerify([self.mockTableView setDataSource:dataSource]);
+    OCMVerify([self.mockDataDisplayManager dataSourceForTableView:self.mockTableView]);
     OCMVerify([self.mockTableView reloadData]);
 }
 
