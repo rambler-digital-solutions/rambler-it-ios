@@ -44,14 +44,14 @@ typedef NS_ENUM(NSUInteger, EventTableViewFormElementID){
     }
     
     // пока не реализовано получение докладов с сервера, имитируем их наличие
-    LectureInfoTableViewCellObject *lection1 = [LectureInfoTableViewCellObject new];
-    LectureInfoTableViewCellObject *lection2 = [LectureInfoTableViewCellObject new];
-    LectureInfoTableViewCellObject *lection3 = [LectureInfoTableViewCellObject new];
-    
-    [cellObjects addObject:lection1];
-    [cellObjects addObject:lection2];
-    [cellObjects addObject:lection3];
-    [cellObjects addObject:lection3];
+//    LectureInfoTableViewCellObject *lection1 = [LectureInfoTableViewCellObject new];
+//    LectureInfoTableViewCellObject *lection2 = [LectureInfoTableViewCellObject new];
+//    LectureInfoTableViewCellObject *lection3 = [LectureInfoTableViewCellObject new];
+//    
+//    [cellObjects addObject:lection1];
+//    [cellObjects addObject:lection2];
+//    [cellObjects addObject:lection3];
+//    [cellObjects addObject:lection3];
     
     return cellObjects;
 }
