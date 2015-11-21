@@ -28,6 +28,7 @@
 		631CBA1E1BFE30A100E3EBA8 /* EventDataDisplayManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA1D1BFE30A100E3EBA8 /* EventDataDisplayManagerTests.m */; };
 		631CBA2D1C006A5400E3EBA8 /* EventCellObjectBuilderFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA2C1C006A5400E3EBA8 /* EventCellObjectBuilderFactoryTests.m */; };
 		631CBA311C00720E00E3EBA8 /* CurrentEventCellObjectBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA301C00720E00E3EBA8 /* CurrentEventCellObjectBuilderTests.m */; };
+		631CBA331C00780A00E3EBA8 /* FutureEventCellObjectBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA321C00780A00E3EBA8 /* FutureEventCellObjectBuilderTests.m */; };
 		631FFE191BEF451400749DB8 /* CDResponderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FFE141BEF451400749DB8 /* CDResponderTableViewCell.m */; };
 		631FFE1A1BEF451400749DB8 /* UIView+CDResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FFE181BEF451400749DB8 /* UIView+CDResponder.m */; };
 		631FFE531BEF930200749DB8 /* ReportListModuleAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FFE411BEF930200749DB8 /* ReportListModuleAssembly.m */; };
@@ -314,6 +315,7 @@
 		631CBA2C1C006A5400E3EBA8 /* EventCellObjectBuilderFactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventCellObjectBuilderFactoryTests.m; sourceTree = "<group>"; };
 		631CBA2E1C006A7300E3EBA8 /* EventCellObjectBuilderFactory_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventCellObjectBuilderFactory_Testable.h; sourceTree = "<group>"; };
 		631CBA301C00720E00E3EBA8 /* CurrentEventCellObjectBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentEventCellObjectBuilderTests.m; sourceTree = "<group>"; };
+		631CBA321C00780A00E3EBA8 /* FutureEventCellObjectBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FutureEventCellObjectBuilderTests.m; sourceTree = "<group>"; };
 		631FFE051BEF29FE00749DB8 /* EventModuleInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventModuleInput.h; sourceTree = "<group>"; };
 		631FFE0B1BEF3E5E00749DB8 /* EventTableViewCellActionProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTableViewCellActionProtocol.h; sourceTree = "<group>"; };
 		631FFE111BEF3FBF00749DB8 /* EventInfoTableViewCellActionProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventInfoTableViewCellActionProtocol.h; sourceTree = "<group>"; };
@@ -932,6 +934,7 @@
 			isa = PBXGroup;
 			children = (
 				631CBA301C00720E00E3EBA8 /* CurrentEventCellObjectBuilderTests.m */,
+				631CBA321C00780A00E3EBA8 /* FutureEventCellObjectBuilderTests.m */,
 			);
 			path = EventCellObjectBuilderTests;
 			sourceTree = "<group>";
@@ -3872,6 +3875,7 @@
 				631CBA1E1BFE30A100E3EBA8 /* EventDataDisplayManagerTests.m in Sources */,
 				631CBA2D1C006A5400E3EBA8 /* EventCellObjectBuilderFactoryTests.m in Sources */,
 				63F8F2DC1BF8FCB7000017F3 /* EventModuleAssemblyTests.m in Sources */,
+				631CBA331C00780A00E3EBA8 /* FutureEventCellObjectBuilderTests.m in Sources */,
 				63D628F41BE4CE09004AF98F /* OperationFactoriesAssembly.m in Sources */,
 				63D628F51BE4CE09004AF98F /* ResponseMappersAssembly.m in Sources */,
 				63D628F61BE4CE09004AF98F /* ResponseValidatorsAssembly.m in Sources */,
