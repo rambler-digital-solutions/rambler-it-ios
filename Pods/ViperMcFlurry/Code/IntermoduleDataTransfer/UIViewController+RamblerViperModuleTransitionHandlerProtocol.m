@@ -52,7 +52,7 @@ static IMP originalPrepareForSegueMethodImp;
     if ([destinationModuleTransitionHandler respondsToSelector:@selector(moduleInput)]) {
         moduleInput = [destinationModuleTransitionHandler moduleInput];
     }
-    
+
     openModulePromise.moduleInput = moduleInput;
     if (transitionBlock != nil) {
         openModulePromise.postLinkActionBlock = ^{
@@ -63,12 +63,15 @@ static IMP originalPrepareForSegueMethodImp;
 }
 // Method removes/closes module
 - (void)closeCurrentModule {
-    if (self.presentingViewController) {
-        [self dismissViewControllerAnimated:YES completion:nil];
-    }
-    else if ([self.parentViewController isKindOfClass:[UINavigationController class]]) {
+    BOOL isInNavigationStack = [self.parentViewController isKindOfClass:[UINavigationController class]];
+    BOOL hasManyControllersInStack = isInNavigationStack ? ((UINavigationController *)self.parentViewController).childViewControllers.count > 1 : NO;
+
+    if (isInNavigationStack && hasManyControllersInStack) {
         UINavigationController *navigationController = (UINavigationController*)self.parentViewController;
         [navigationController popViewControllerAnimated:YES];
+    }
+    else if (self.presentingViewController) {
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
     else if (self.view.superview != nil){
         [self removeFromParentViewController];
@@ -82,26 +85,33 @@ static IMP originalPrepareForSegueMethodImp;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         IMP reamplerPrepareForSegueImp = (IMP)RamblerViperPrepareForSegueSender;
-        
+
         Method prepareForSegueMethod = class_getInstanceMethod([self class], @selector(prepareForSegue:sender:));
         originalPrepareForSegueMethodImp = method_setImplementation(prepareForSegueMethod, reamplerPrepareForSegueImp);
     });
 }
 
 void RamblerViperPrepareForSegueSender(id self, SEL selector, UIStoryboardSegue * segue, id sender) {
-    
+
     ((void(*)(id,SEL,UIStoryboardSegue*,id))originalPrepareForSegueMethodImp)(self,selector,segue,sender);
-    
+
     if (![sender isKindOfClass:[RamblerViperOpenModulePromise class]]) {
         return;
     }
 
     id<RamblerViperModuleInput> moduleInput = nil;
-    id<RamblerViperModuleTransitionHandlerProtocol> targetModuleTransitionHandler = segue.destinationViewController;
+
+    UIViewController *destinationViewController = segue.destinationViewController;
+    if ([destinationViewController isKindOfClass:[UINavigationController class]]) {
+      UINavigationController *navigationController = segue.destinationViewController;
+      destinationViewController = navigationController.topViewController;
+    }
+
+    id<RamblerViperModuleTransitionHandlerProtocol> targetModuleTransitionHandler = destinationViewController;
     if ([targetModuleTransitionHandler respondsToSelector:@selector(moduleInput)]) {
         moduleInput = [targetModuleTransitionHandler moduleInput];
     }
-    
+
     RamblerViperOpenModulePromise *openModulePromise = sender;
     openModulePromise.moduleInput = moduleInput;
 }

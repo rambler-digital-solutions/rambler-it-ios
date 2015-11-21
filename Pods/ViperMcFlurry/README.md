@@ -4,7 +4,7 @@
 
 **VIPER McFlurry** is a modern framework for implementing VIPER architecture in iOS application. It offers several tools and components that helps either start new projects with VIPER or move from MVC.
 
-Also it icludes **Templates** folder with XCode templates for VIPER modules.
+Also it icludes **Templates** folder with Xcode templates for VIPER modules.
 
 ## Install
 
@@ -35,11 +35,11 @@ Copy contents of *Templates/File Templates* folder into `~/Library/Developer/Xco
 
 - Forked VIPER components from internal projects
 
-### v0.2 
+### v0.2
 - Added nil configurator/block support
 - Module instantiation improvements
 
-### v1.0 
+### v1.0
 
 - Added support of module input/output
 - Module communication was simplified
@@ -60,13 +60,13 @@ This works only for Module with ViewController as View.
 @protocol SomeModuleInput <RamblerViperModuleInput>
 
 - (void)moduleConfigurationMethod;
-		
+
 @end
 ```    
 
 - Make Presenter of target module conform to this protocol
 - Inject Presenter as moduleInput property of the view. You can skip this step if presenter is a view property with name "output"
-- Add Segue from source module ViewController to target module ViewController. 
+- Add Segue from source module ViewController to target module ViewController.
 - Inject Source ViewController into Source Router as property "transition handler"
 - In Router method call transition handler to open target module with configuration during segue.
 
@@ -87,11 +87,11 @@ This works only for Module with ViewController as View.
 @protocol SomeModuleOutput <RamblerViperModuleOutput>
 
 - (void)moduleConfigurationMethod;
-		
+
 @end
 ```    
 - Make source module presenter to conform to this protocol
-- Add to target module presenter method 
+- Add to target module presenter method
 
 ```
 - (void)setModuleOutput:(id<RamblerViperModuleOutput>)moduleOutput;
