@@ -12,6 +12,6 @@
 
 @interface EventListRouter : NSObject<EventListRouterInput>
 
-@property (strong, nonatomic) id <RamblerViperModuleTransitionHandlerProtocol> transitionHandler;
+@property (weak, nonatomic) id <RamblerViperModuleTransitionHandlerProtocol> transitionHandler;
 
 @end
