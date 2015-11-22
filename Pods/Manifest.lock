@@ -81,9 +81,7 @@ PODS:
   - Parse (1.9.1):
     - Bolts/Tasks (>= 1.4.0)
   - PureLayout (3.0.1)
-  - RamblerMcFlurry/Core (0.0.2)
-  - RamblerMcFlurry/Testing (0.0.2):
-    - RamblerMcFlurry/Core
+  - RamblerTyphoonUtils/AssemblyTesting (1.0.0)
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
@@ -106,11 +104,11 @@ DEPENDENCIES:
   - libextobjc (~> 0.4)
   - MagicalRecord (~> 2.3)
   - MMBarricade (~> 1.0.1)
-  - Nimbus/Models (= 1.2.2)
+  - Nimbus/Models (from `https://github.com/rambler-ios/nimbus`)
   - OCMock (~> 3.1)
   - Parse (~> 1.8)
   - PureLayout (~> 3.0)
-  - RamblerMcFlurry/Testing (= 0.0.2)
+  - RamblerTyphoonUtils/AssemblyTesting (= 1.0.0)
   - SDWebImage (~> 3.7)
   - Typhoon (~> 3.3)
   - UIViewController+Routing (~> 0.1.0)
@@ -120,11 +118,16 @@ EXTERNAL SOURCES:
   CrutchKit:
     :git: https://github.com/CognitiveDisson/CrutchKit
     :tag: 0.0.3
+  Nimbus:
+    :git: https://github.com/rambler-ios/nimbus
 
 CHECKOUT OPTIONS:
   CrutchKit:
     :git: https://github.com/CognitiveDisson/CrutchKit
     :tag: 0.0.3
+  Nimbus:
+    :commit: dbe381217100e68c22d6fdf8780f493d57d9f5d2
+    :git: https://github.com/rambler-ios/nimbus
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
@@ -139,7 +142,7 @@ SPEC CHECKSUMS:
   OCMock: 28def049ef47f996b515a8eeea958be7ccab2dbb
   Parse: 54a965c8c19a6dde90284ab654dbcc77ef8c001b
   PureLayout: f35f5384c9c4e4479df041dbe33ad7577b71ddfb
-  RamblerMcFlurry: b7cd02526648000ef0b87c17d632bb53bf886206
+  RamblerTyphoonUtils: bafad8fd42ca7df9239d2ccb68021ba21d81d741
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   Typhoon: 382b918b31d5d19a82922448af65f01f08102dc6
   UIViewController+Routing: 6d34de88e5a30250d453f49ddd5993212f279b9a

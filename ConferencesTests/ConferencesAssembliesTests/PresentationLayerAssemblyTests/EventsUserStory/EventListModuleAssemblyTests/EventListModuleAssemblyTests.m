@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import <RamblerMcFlurry/Testing.h>
+#import <RamblerTyphoonUtils/AssemblyTesting.h>
 
 #import "EventListModuleAssembly_Testable.h"
 #import "EventListModuleAssembly.h"

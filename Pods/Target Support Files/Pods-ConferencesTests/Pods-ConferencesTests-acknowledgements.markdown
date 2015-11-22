@@ -207,7 +207,7 @@ SOFTWARE.
    END OF TERMS AND CONDITIONS
 
 
-## RamblerMcFlurry
+## RamblerTyphoonUtils
 
 Copyright (c) 2015 Egor Tolstoy <e.tolstoy@rambler-co.ru>
 

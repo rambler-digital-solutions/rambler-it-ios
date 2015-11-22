@@ -1,9 +1,9 @@
 //
 //  RamblerTyphoonAssemblyTests.m
-//  Pods
+//  RamblerTyphoonUtils
 //
-//  Created by Egor Tolstoy on 29/07/15.
-//
+//  Created by Egor Tolstoy on 12/09/15.
+//  Copyright © 2015 Rambler&Co. All rights reserved.
 //
 
 #import "RamblerTyphoonAssemblyTests.h"
@@ -27,11 +27,11 @@ typedef NS_ENUM(NSInteger, RamblerPropertyType) {
 - (void)verifyTargetDependency:(id)targetObject
                      withClass:(Class)targetClass
                   dependencies:(NSArray *)dependencies {
-    // Проверка класса объекта
+    // Verifying the object class
     [self verifyTargetDependency:targetObject
                        withClass:targetClass];
     
-    // Получаем все свойства объекта и оставляем только те, которые нужно проверить
+    // Filtering the properties of the class
     NSMutableDictionary *allProperties = [[RamblerTyphoonAssemblyTestUtilities propertiesForHierarchyOfClass:targetClass] mutableCopy];
     for (NSString *propertyName in [allProperties allKeys]) {
         if (![dependencies containsObject:propertyName] ) {
@@ -46,8 +46,6 @@ typedef NS_ENUM(NSInteger, RamblerPropertyType) {
 - (void)verifyTargetObject:(id)targetObject
               dependencies:(NSDictionary *)dependencies {
     for (NSString *propertyName in dependencies) {
-        
-        //Ожидаемый тип объекта
         NSString *dependencyExpectedType = dependencies[propertyName];
         RamblerPropertyType propertyType = [self propertyTypeByString:dependencyExpectedType];
         
@@ -75,7 +73,7 @@ typedef NS_ENUM(NSInteger, RamblerPropertyType) {
                 break;
             }
                 
-                // Значения примитивных типов и блоков не проверяются
+                // We don't verify blocks and primitive types
             default:
                 break;
         }

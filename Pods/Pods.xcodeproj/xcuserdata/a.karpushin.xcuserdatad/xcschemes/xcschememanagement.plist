@@ -69,7 +69,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>RamblerMcFlurry.xcscheme</key>
+		<key>RamblerTyphoonUtils.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -127,6 +127,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>5E8918CF173C2254B52A90EC697BFE11</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>6D1534782DB94B44DE6C702F24B2D2D1</key>
 		<dict>
 			<key>primary</key>
@@ -137,17 +142,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>81FCDAD07EE76AFC36483925FCD57FA2</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>83B41514F5076F47860E874235D46435</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>8B2A725BB873CC8518879FC83E72C1AD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8CEF7A74ABACF34CC2CDA5580CDF4B1D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -183,11 +188,6 @@
 			<true/>
 		</dict>
 		<key>D1D57579CD94D5150E00AF6B58BFC7A6</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E0B6E142BA7CAFBABCA753E23944417E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

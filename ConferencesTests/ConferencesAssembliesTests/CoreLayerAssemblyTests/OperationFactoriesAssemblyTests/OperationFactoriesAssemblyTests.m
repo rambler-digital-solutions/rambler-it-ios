@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import <RamblerMcFlurry/Testing.h>
+#import <RamblerTyphoonUtils/AssemblyTesting.h>
 
 #import "OperationFactoriesAssembly_Testable.h"
 #import "OperationFactoriesAssembly.h"

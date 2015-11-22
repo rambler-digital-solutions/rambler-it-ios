@@ -1,9 +1,9 @@
 //
 //  RamblerTyphoonAssemblyTestUtilities.m
-//  Pods
+//  RamblerTyphoonUtils
 //
-//  Created by Egor Tolstoy on 29/07/15.
-//
+//  Created by Egor Tolstoy on 12/09/15.
+//  Copyright © 2015 Rambler&Co. All rights reserved.
 //
 
 #import "RamblerTyphoonAssemblyTestUtilities.h"
@@ -31,10 +31,8 @@
         return properties;
     }
     
-    // Получаем свойтва текущего класса
     [self propertiesForSubclass:class onDictionary:properties];
     
-    // Получаем свойтва родительского класса
     return [self propertiesForHierarchyOfClass:[class superclass] onDictionary:properties];
 }
 
@@ -64,20 +62,20 @@ static const char *getPropertyType(objc_property_t property) {
     char *state = buffer, *attribute;
     while ((attribute = strsep(&state, ",")) != NULL) {
         if (attribute[0] == 'T' && attribute[1] != '@') {
-            // Примитивные типы
+            // Primitive types
             return "";
         }
         else if (attribute[0] == 'T' && attribute[1] == '@' && strlen(attribute) == 2) {
-            // Тип id
+            // id type
             return "id";
         }
         else if (attribute[0] == 'T' && attribute[1] == '@') {
             NSString *name;
             if (attribute[2] == '?') {
-                // Блоки
+                // Blocks
                 name = [[NSString alloc] initWithBytes:attribute + 2 length:1 encoding:NSASCIIStringEncoding];
             } else {
-                // Другие классы
+                // Other classes
                 name = [[NSString alloc] initWithBytes:attribute + 3 length:strlen(attribute) - 4 encoding:NSASCIIStringEncoding];
             }
             return (const char *)[name cStringUsingEncoding:NSASCIIStringEncoding];
