@@ -33,7 +33,7 @@ typedef NS_ENUM(NSUInteger, TableViewSectionIndex){
     [super setUp];
     
     self.dataDisplayManager = [EventListDataDisplayManager new];
-    self.events = [self generateEvents];
+    self.events = @[[PlainEvent new], [PlainEvent new], [PlainEvent new]];
 }
 
 - (void)tearDown {
@@ -120,19 +120,6 @@ typedef NS_ENUM(NSUInteger, TableViewSectionIndex){
     
     // then
     XCTAssertEqual(expectedNumberOfCellForCorrespondingClass, actualNumberOfCellForCorrespondingClass);
-}
-
-#pragma mark - Helpers
-
-- (NSArray *)generateEvents {
-    NSMutableArray *events = [NSMutableArray array];
-    
-    for (int i = 0; i < 2; i++) {
-        PlainEvent *event = [PlainEvent new];
-        [events addObject:event];
-    }
-    
-    return events;
 }
 
 @end
