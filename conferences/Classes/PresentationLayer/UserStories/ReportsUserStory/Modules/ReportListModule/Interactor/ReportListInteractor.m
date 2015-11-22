@@ -42,9 +42,9 @@
 
 #pragma mark - Private methods
 
-- (NSArray *)getPlainEventsFromManagedObjects:(NSArray *)manajedObjectEvents {
+- (NSArray *)getPlainEventsFromManagedObjects:(NSArray *)managedObjectEvents {
     NSMutableArray *plainEvents = [NSMutableArray array];
-    for (Event *managedObjectEvent in manajedObjectEvents) {
+    for (Event *managedObjectEvent in managedObjectEvents) {
         PlainEvent *plainEvent = [PlainEvent new];
         
         [self.eventPrototypeMapper fillObject:plainEvent withObject:managedObjectEvent];
