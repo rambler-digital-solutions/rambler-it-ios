@@ -46,6 +46,7 @@
 		631CBA741C020CCD00E3EBA8 /* EventModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA6F1C020CCD00E3EBA8 /* EventModuleAssemblyTests.m */; };
 		631CBA771C020F2D00E3EBA8 /* ReportListModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA761C020F2D00E3EBA8 /* ReportListModuleAssemblyTests.m */; };
 		631CBA7E1C02140600E3EBA8 /* RamblerLocationModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA7D1C02140600E3EBA8 /* RamblerLocationModuleAssemblyTests.m */; };
+		631CBA811C021A5300E3EBA8 /* PresentationLayerHelpersAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA801C021A5200E3EBA8 /* PresentationLayerHelpersAssemblyTests.m */; };
 		631FFE191BEF451400749DB8 /* CDResponderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FFE141BEF451400749DB8 /* CDResponderTableViewCell.m */; };
 		631FFE1A1BEF451400749DB8 /* UIView+CDResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FFE181BEF451400749DB8 /* UIView+CDResponder.m */; };
 		631FFE531BEF930200749DB8 /* ReportListModuleAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FFE411BEF930200749DB8 /* ReportListModuleAssembly.m */; };
@@ -345,6 +346,7 @@
 		631CBA761C020F2D00E3EBA8 /* ReportListModuleAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportListModuleAssemblyTests.m; sourceTree = "<group>"; };
 		631CBA7C1C02118900E3EBA8 /* RamblerLocationModuleAssembly_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RamblerLocationModuleAssembly_Testable.h; sourceTree = "<group>"; };
 		631CBA7D1C02140600E3EBA8 /* RamblerLocationModuleAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RamblerLocationModuleAssemblyTests.m; sourceTree = "<group>"; };
+		631CBA801C021A5200E3EBA8 /* PresentationLayerHelpersAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentationLayerHelpersAssemblyTests.m; sourceTree = "<group>"; };
 		631FFE051BEF29FE00749DB8 /* EventModuleInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventModuleInput.h; sourceTree = "<group>"; };
 		631FFE0B1BEF3E5E00749DB8 /* EventTableViewCellActionProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTableViewCellActionProtocol.h; sourceTree = "<group>"; };
 		631FFE111BEF3FBF00749DB8 /* EventInfoTableViewCellActionProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventInfoTableViewCellActionProtocol.h; sourceTree = "<group>"; };
@@ -1084,6 +1086,14 @@
 				631CBA7D1C02140600E3EBA8 /* RamblerLocationModuleAssemblyTests.m */,
 			);
 			path = RamblerLocationModuleAssemblyTests;
+			sourceTree = "<group>";
+		};
+		631CBA7F1C021A3600E3EBA8 /* HelpersTests */ = {
+			isa = PBXGroup;
+			children = (
+				631CBA801C021A5200E3EBA8 /* PresentationLayerHelpersAssemblyTests.m */,
+			);
+			path = HelpersTests;
 			sourceTree = "<group>";
 		};
 		631FFE0A1BEF3D4000749DB8 /* Common */ = {
@@ -2169,6 +2179,7 @@
 		63F8F2D11BF8D4C0000017F3 /* PresentationLayerAssemblyTests */ = {
 			isa = PBXGroup;
 			children = (
+				631CBA7F1C021A3600E3EBA8 /* HelpersTests */,
 				631CBA661C020CCD00E3EBA8 /* EventsUserStoryTests */,
 				631CBA781C02114300E3EBA8 /* RamblerLocationUserStoryTests */,
 				631CBA701C020CCD00E3EBA8 /* ReportsUserStoryTests */,
@@ -3962,6 +3973,7 @@
 				63D628FA1BE4CE09004AF98F /* RequestConfiguratorsAssembly.m in Sources */,
 				63D628ED1BE4CD69004AF98F /* ApplicationAssembly.m in Sources */,
 				636F8C991BC97CD300552B91 /* EventServiceImplementation.m in Sources */,
+				631CBA811C021A5300E3EBA8 /* PresentationLayerHelpersAssemblyTests.m in Sources */,
 				636F8C9A1BC97CD300552B91 /* LectureMaterialsServiceImplementation.m in Sources */,
 				636F8C9B1BC97CD300552B91 /* RegistrationQuestionServiceImplementation.m in Sources */,
 				63F402FE1BCF840A0086D030 /* NetworkClientsAssemblyTests.m in Sources */,
