@@ -22,7 +22,7 @@
 
 #pragma mark - Initialization
 
-- (instancetype)initWithElementID:(NSInteger)elementID event:(PlainEvent *)event {
+- (instancetype)initWithEvent:(PlainEvent *)event {
     self = [super init];
     if (self) {
         _eventTitle = event.name;
@@ -36,8 +36,8 @@
     return self;
 }
 
-+ (instancetype)objectWithElementID:(NSInteger)elementID event:(PlainEvent *)event {
-    return [[self alloc] initWithElementID:elementID event:event];
++ (instancetype)objectWithEvent:(PlainEvent *)event {
+    return [[self alloc] initWithEvent:event];
 }
 
 #pragma mark - NICellObject methods

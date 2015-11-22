@@ -17,6 +17,6 @@
 @property (strong, nonatomic, readonly) NSString *eventTitle;
 @property (strong, nonatomic, readonly) UIImage *eventImage;
 
-+ (instancetype)objectWithElementID:(NSInteger)elementID event:(PlainEvent *)event;
++ (instancetype)objectWithEvent:(PlainEvent *)event;
 
 @end
