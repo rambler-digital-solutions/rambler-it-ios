@@ -27,26 +27,27 @@
 		63136FE21BDCDB2700994356 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136FD11BDCDB2700994356 /* TabBarViewController.m */; };
 		631CBA381C0092C100E3EBA8 /* ApplicationConfiguratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA371C0092C100E3EBA8 /* ApplicationConfiguratorTests.m */; };
 		631CBA3B1C00935300E3EBA8 /* EventServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA3A1C00935300E3EBA8 /* EventServiceTests.m */; };
-		631CBA541C01FD1D00E3EBA8 /* EventListDataDisplayManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA461C01FD1D00E3EBA8 /* EventListDataDisplayManagerTests.m */; };
-		631CBA551C01FD1D00E3EBA8 /* EventListInteractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA471C01FD1D00E3EBA8 /* EventListInteractorTests.m */; };
-		631CBA561C01FD1D00E3EBA8 /* EventListPresenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA481C01FD1D00E3EBA8 /* EventListPresenterTests.m */; };
-		631CBA571C01FD1D00E3EBA8 /* EventListTableViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA491C01FD1D00E3EBA8 /* EventListTableViewControllerTests.m */; };
-		631CBA581C01FD1D00E3EBA8 /* CurrentEventCellObjectBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA4C1C01FD1D00E3EBA8 /* CurrentEventCellObjectBuilderTests.m */; };
-		631CBA591C01FD1D00E3EBA8 /* FutureEventCellObjectBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA4D1C01FD1D00E3EBA8 /* FutureEventCellObjectBuilderTests.m */; };
-		631CBA5A1C01FD1D00E3EBA8 /* PastEventCellObjectBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA4E1C01FD1D00E3EBA8 /* PastEventCellObjectBuilderTests.m */; };
-		631CBA5B1C01FD1D00E3EBA8 /* EventDataDisplayManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA4F1C01FD1D00E3EBA8 /* EventDataDisplayManagerTests.m */; };
-		631CBA5C1C01FD1D00E3EBA8 /* EventInteractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA501C01FD1D00E3EBA8 /* EventInteractorTests.m */; };
-		631CBA5D1C01FD1D00E3EBA8 /* EventViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA511C01FD1D00E3EBA8 /* EventViewControllerTests.m */; };
-		631CBA5F1C01FD6100E3EBA8 /* ReportListInteractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA5E1C01FD6100E3EBA8 /* ReportListInteractorTests.m */; };
-		631CBA611C02021800E3EBA8 /* ReportListPresenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA601C02021800E3EBA8 /* ReportListPresenterTests.m */; };
-		631CBA631C02047200E3EBA8 /* ReportListTableViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA621C02047200E3EBA8 /* ReportListTableViewControllerTests.m */; };
-		631CBA651C0206F100E3EBA8 /* ReportListDataDisplayManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA641C0206F100E3EBA8 /* ReportListDataDisplayManagerTests.m */; };
 		631CBA721C020CCD00E3EBA8 /* EventListModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA691C020CCD00E3EBA8 /* EventListModuleAssemblyTests.m */; };
 		631CBA731C020CCD00E3EBA8 /* EventCellObjectBuilderFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA6D1C020CCD00E3EBA8 /* EventCellObjectBuilderFactoryTests.m */; };
 		631CBA741C020CCD00E3EBA8 /* EventModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA6F1C020CCD00E3EBA8 /* EventModuleAssemblyTests.m */; };
 		631CBA771C020F2D00E3EBA8 /* ReportListModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA761C020F2D00E3EBA8 /* ReportListModuleAssemblyTests.m */; };
 		631CBA7E1C02140600E3EBA8 /* RamblerLocationModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA7D1C02140600E3EBA8 /* RamblerLocationModuleAssemblyTests.m */; };
 		631CBA811C021A5300E3EBA8 /* PresentationLayerHelpersAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA801C021A5200E3EBA8 /* PresentationLayerHelpersAssemblyTests.m */; };
+		631CBA981C021C3900E3EBA8 /* EventListDataDisplayManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA841C021C3900E3EBA8 /* EventListDataDisplayManagerTests.m */; };
+		631CBA991C021C3900E3EBA8 /* EventListInteractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA851C021C3900E3EBA8 /* EventListInteractorTests.m */; };
+		631CBA9A1C021C3900E3EBA8 /* EventListPresenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA861C021C3900E3EBA8 /* EventListPresenterTests.m */; };
+		631CBA9B1C021C3900E3EBA8 /* EventListTableViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA871C021C3900E3EBA8 /* EventListTableViewControllerTests.m */; };
+		631CBA9C1C021C3900E3EBA8 /* CurrentEventCellObjectBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA8A1C021C3900E3EBA8 /* CurrentEventCellObjectBuilderTests.m */; };
+		631CBA9D1C021C3900E3EBA8 /* FutureEventCellObjectBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA8B1C021C3900E3EBA8 /* FutureEventCellObjectBuilderTests.m */; };
+		631CBA9E1C021C3900E3EBA8 /* PastEventCellObjectBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA8C1C021C3900E3EBA8 /* PastEventCellObjectBuilderTests.m */; };
+		631CBA9F1C021C3900E3EBA8 /* EventDataDisplayManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA8D1C021C3900E3EBA8 /* EventDataDisplayManagerTests.m */; };
+		631CBAA01C021C3900E3EBA8 /* EventInteractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA8E1C021C3900E3EBA8 /* EventInteractorTests.m */; };
+		631CBAA11C021C3900E3EBA8 /* EventViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA8F1C021C3900E3EBA8 /* EventViewControllerTests.m */; };
+		631CBAA21C021C3900E3EBA8 /* ReportListDataDisplayManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA941C021C3900E3EBA8 /* ReportListDataDisplayManagerTests.m */; };
+		631CBAA31C021C3900E3EBA8 /* ReportListInteractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA951C021C3900E3EBA8 /* ReportListInteractorTests.m */; };
+		631CBAA41C021C3900E3EBA8 /* ReportListPresenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA961C021C3900E3EBA8 /* ReportListPresenterTests.m */; };
+		631CBAA51C021C3900E3EBA8 /* ReportListTableViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA971C021C3900E3EBA8 /* ReportListTableViewControllerTests.m */; };
+		631CBAA71C021C6900E3EBA8 /* EventTypeDeterminatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBAA61C021C6900E3EBA8 /* EventTypeDeterminatorTests.m */; };
 		631FFE191BEF451400749DB8 /* CDResponderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FFE141BEF451400749DB8 /* CDResponderTableViewCell.m */; };
 		631FFE1A1BEF451400749DB8 /* UIView+CDResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FFE181BEF451400749DB8 /* UIView+CDResponder.m */; };
 		631FFE531BEF930200749DB8 /* ReportListModuleAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FFE411BEF930200749DB8 /* ReportListModuleAssembly.m */; };
@@ -322,20 +323,6 @@
 		63136FE51BDCDB9E00994356 /* DataDisplayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataDisplayManager.h; sourceTree = "<group>"; };
 		631CBA371C0092C100E3EBA8 /* ApplicationConfiguratorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationConfiguratorTests.m; sourceTree = "<group>"; };
 		631CBA3A1C00935300E3EBA8 /* EventServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventServiceTests.m; sourceTree = "<group>"; };
-		631CBA461C01FD1D00E3EBA8 /* EventListDataDisplayManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListDataDisplayManagerTests.m; sourceTree = "<group>"; };
-		631CBA471C01FD1D00E3EBA8 /* EventListInteractorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListInteractorTests.m; sourceTree = "<group>"; };
-		631CBA481C01FD1D00E3EBA8 /* EventListPresenterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListPresenterTests.m; sourceTree = "<group>"; };
-		631CBA491C01FD1D00E3EBA8 /* EventListTableViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListTableViewControllerTests.m; sourceTree = "<group>"; };
-		631CBA4C1C01FD1D00E3EBA8 /* CurrentEventCellObjectBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentEventCellObjectBuilderTests.m; sourceTree = "<group>"; };
-		631CBA4D1C01FD1D00E3EBA8 /* FutureEventCellObjectBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FutureEventCellObjectBuilderTests.m; sourceTree = "<group>"; };
-		631CBA4E1C01FD1D00E3EBA8 /* PastEventCellObjectBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PastEventCellObjectBuilderTests.m; sourceTree = "<group>"; };
-		631CBA4F1C01FD1D00E3EBA8 /* EventDataDisplayManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDataDisplayManagerTests.m; sourceTree = "<group>"; };
-		631CBA501C01FD1D00E3EBA8 /* EventInteractorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventInteractorTests.m; sourceTree = "<group>"; };
-		631CBA511C01FD1D00E3EBA8 /* EventViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventViewControllerTests.m; sourceTree = "<group>"; };
-		631CBA5E1C01FD6100E3EBA8 /* ReportListInteractorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportListInteractorTests.m; sourceTree = "<group>"; };
-		631CBA601C02021800E3EBA8 /* ReportListPresenterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportListPresenterTests.m; sourceTree = "<group>"; };
-		631CBA621C02047200E3EBA8 /* ReportListTableViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportListTableViewControllerTests.m; sourceTree = "<group>"; };
-		631CBA641C0206F100E3EBA8 /* ReportListDataDisplayManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportListDataDisplayManagerTests.m; sourceTree = "<group>"; };
 		631CBA681C020CCD00E3EBA8 /* EventListModuleAssembly_Testable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListModuleAssembly_Testable.h; sourceTree = "<group>"; };
 		631CBA691C020CCD00E3EBA8 /* EventListModuleAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListModuleAssemblyTests.m; sourceTree = "<group>"; };
 		631CBA6C1C020CCD00E3EBA8 /* EventCellObjectBuilderFactory_Testable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventCellObjectBuilderFactory_Testable.h; sourceTree = "<group>"; };
@@ -347,6 +334,21 @@
 		631CBA7C1C02118900E3EBA8 /* RamblerLocationModuleAssembly_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RamblerLocationModuleAssembly_Testable.h; sourceTree = "<group>"; };
 		631CBA7D1C02140600E3EBA8 /* RamblerLocationModuleAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RamblerLocationModuleAssemblyTests.m; sourceTree = "<group>"; };
 		631CBA801C021A5200E3EBA8 /* PresentationLayerHelpersAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentationLayerHelpersAssemblyTests.m; sourceTree = "<group>"; };
+		631CBA841C021C3900E3EBA8 /* EventListDataDisplayManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListDataDisplayManagerTests.m; sourceTree = "<group>"; };
+		631CBA851C021C3900E3EBA8 /* EventListInteractorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListInteractorTests.m; sourceTree = "<group>"; };
+		631CBA861C021C3900E3EBA8 /* EventListPresenterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListPresenterTests.m; sourceTree = "<group>"; };
+		631CBA871C021C3900E3EBA8 /* EventListTableViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListTableViewControllerTests.m; sourceTree = "<group>"; };
+		631CBA8A1C021C3900E3EBA8 /* CurrentEventCellObjectBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentEventCellObjectBuilderTests.m; sourceTree = "<group>"; };
+		631CBA8B1C021C3900E3EBA8 /* FutureEventCellObjectBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FutureEventCellObjectBuilderTests.m; sourceTree = "<group>"; };
+		631CBA8C1C021C3900E3EBA8 /* PastEventCellObjectBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PastEventCellObjectBuilderTests.m; sourceTree = "<group>"; };
+		631CBA8D1C021C3900E3EBA8 /* EventDataDisplayManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDataDisplayManagerTests.m; sourceTree = "<group>"; };
+		631CBA8E1C021C3900E3EBA8 /* EventInteractorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventInteractorTests.m; sourceTree = "<group>"; };
+		631CBA8F1C021C3900E3EBA8 /* EventViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventViewControllerTests.m; sourceTree = "<group>"; };
+		631CBA941C021C3900E3EBA8 /* ReportListDataDisplayManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportListDataDisplayManagerTests.m; sourceTree = "<group>"; };
+		631CBA951C021C3900E3EBA8 /* ReportListInteractorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportListInteractorTests.m; sourceTree = "<group>"; };
+		631CBA961C021C3900E3EBA8 /* ReportListPresenterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportListPresenterTests.m; sourceTree = "<group>"; };
+		631CBA971C021C3900E3EBA8 /* ReportListTableViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportListTableViewControllerTests.m; sourceTree = "<group>"; };
+		631CBAA61C021C6900E3EBA8 /* EventTypeDeterminatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTypeDeterminatorTests.m; sourceTree = "<group>"; };
 		631FFE051BEF29FE00749DB8 /* EventModuleInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventModuleInput.h; sourceTree = "<group>"; };
 		631FFE0B1BEF3E5E00749DB8 /* EventTableViewCellActionProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTableViewCellActionProtocol.h; sourceTree = "<group>"; };
 		631FFE111BEF3FBF00749DB8 /* EventInfoTableViewCellActionProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventInfoTableViewCellActionProtocol.h; sourceTree = "<group>"; };
@@ -957,66 +959,6 @@
 			path = EventServiceTests;
 			sourceTree = "<group>";
 		};
-		631CBA441C01FD1D00E3EBA8 /* EventsUserStoryTests */ = {
-			isa = PBXGroup;
-			children = (
-				631CBA451C01FD1D00E3EBA8 /* EventListModuleTests */,
-				631CBA4A1C01FD1D00E3EBA8 /* EventModuleTests */,
-			);
-			path = EventsUserStoryTests;
-			sourceTree = "<group>";
-		};
-		631CBA451C01FD1D00E3EBA8 /* EventListModuleTests */ = {
-			isa = PBXGroup;
-			children = (
-				631CBA461C01FD1D00E3EBA8 /* EventListDataDisplayManagerTests.m */,
-				631CBA471C01FD1D00E3EBA8 /* EventListInteractorTests.m */,
-				631CBA481C01FD1D00E3EBA8 /* EventListPresenterTests.m */,
-				631CBA491C01FD1D00E3EBA8 /* EventListTableViewControllerTests.m */,
-			);
-			path = EventListModuleTests;
-			sourceTree = "<group>";
-		};
-		631CBA4A1C01FD1D00E3EBA8 /* EventModuleTests */ = {
-			isa = PBXGroup;
-			children = (
-				631CBA4B1C01FD1D00E3EBA8 /* EventCellObjectBuilderTests */,
-				631CBA4F1C01FD1D00E3EBA8 /* EventDataDisplayManagerTests.m */,
-				631CBA501C01FD1D00E3EBA8 /* EventInteractorTests.m */,
-				631CBA511C01FD1D00E3EBA8 /* EventViewControllerTests.m */,
-			);
-			path = EventModuleTests;
-			sourceTree = "<group>";
-		};
-		631CBA4B1C01FD1D00E3EBA8 /* EventCellObjectBuilderTests */ = {
-			isa = PBXGroup;
-			children = (
-				631CBA4C1C01FD1D00E3EBA8 /* CurrentEventCellObjectBuilderTests.m */,
-				631CBA4D1C01FD1D00E3EBA8 /* FutureEventCellObjectBuilderTests.m */,
-				631CBA4E1C01FD1D00E3EBA8 /* PastEventCellObjectBuilderTests.m */,
-			);
-			path = EventCellObjectBuilderTests;
-			sourceTree = "<group>";
-		};
-		631CBA521C01FD1D00E3EBA8 /* ReportsUserStoryTests */ = {
-			isa = PBXGroup;
-			children = (
-				631CBA531C01FD1D00E3EBA8 /* ReportListModuleTests */,
-			);
-			path = ReportsUserStoryTests;
-			sourceTree = "<group>";
-		};
-		631CBA531C01FD1D00E3EBA8 /* ReportListModuleTests */ = {
-			isa = PBXGroup;
-			children = (
-				631CBA5E1C01FD6100E3EBA8 /* ReportListInteractorTests.m */,
-				631CBA601C02021800E3EBA8 /* ReportListPresenterTests.m */,
-				631CBA621C02047200E3EBA8 /* ReportListTableViewControllerTests.m */,
-				631CBA641C0206F100E3EBA8 /* ReportListDataDisplayManagerTests.m */,
-			);
-			path = ReportListModuleTests;
-			sourceTree = "<group>";
-		};
 		631CBA661C020CCD00E3EBA8 /* EventsUserStoryTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -1094,6 +1036,82 @@
 				631CBA801C021A5200E3EBA8 /* PresentationLayerHelpersAssemblyTests.m */,
 			);
 			path = HelpersTests;
+			sourceTree = "<group>";
+		};
+		631CBA821C021C3900E3EBA8 /* EventsUserStoryTests */ = {
+			isa = PBXGroup;
+			children = (
+				631CBA831C021C3900E3EBA8 /* EventListModuleTests */,
+				631CBA881C021C3900E3EBA8 /* EventModuleTests */,
+			);
+			path = EventsUserStoryTests;
+			sourceTree = "<group>";
+		};
+		631CBA831C021C3900E3EBA8 /* EventListModuleTests */ = {
+			isa = PBXGroup;
+			children = (
+				631CBA841C021C3900E3EBA8 /* EventListDataDisplayManagerTests.m */,
+				631CBA851C021C3900E3EBA8 /* EventListInteractorTests.m */,
+				631CBA861C021C3900E3EBA8 /* EventListPresenterTests.m */,
+				631CBA871C021C3900E3EBA8 /* EventListTableViewControllerTests.m */,
+			);
+			path = EventListModuleTests;
+			sourceTree = "<group>";
+		};
+		631CBA881C021C3900E3EBA8 /* EventModuleTests */ = {
+			isa = PBXGroup;
+			children = (
+				631CBA891C021C3900E3EBA8 /* EventCellObjectBuilderTests */,
+				631CBA8D1C021C3900E3EBA8 /* EventDataDisplayManagerTests.m */,
+				631CBA8E1C021C3900E3EBA8 /* EventInteractorTests.m */,
+				631CBA8F1C021C3900E3EBA8 /* EventViewControllerTests.m */,
+			);
+			path = EventModuleTests;
+			sourceTree = "<group>";
+		};
+		631CBA891C021C3900E3EBA8 /* EventCellObjectBuilderTests */ = {
+			isa = PBXGroup;
+			children = (
+				631CBA8A1C021C3900E3EBA8 /* CurrentEventCellObjectBuilderTests.m */,
+				631CBA8B1C021C3900E3EBA8 /* FutureEventCellObjectBuilderTests.m */,
+				631CBA8C1C021C3900E3EBA8 /* PastEventCellObjectBuilderTests.m */,
+			);
+			path = EventCellObjectBuilderTests;
+			sourceTree = "<group>";
+		};
+		631CBA901C021C3900E3EBA8 /* HelpersTests */ = {
+			isa = PBXGroup;
+			children = (
+				631CBA911C021C3900E3EBA8 /* EventTypeDeterminatorTests */,
+			);
+			path = HelpersTests;
+			sourceTree = "<group>";
+		};
+		631CBA911C021C3900E3EBA8 /* EventTypeDeterminatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				631CBAA61C021C6900E3EBA8 /* EventTypeDeterminatorTests.m */,
+			);
+			path = EventTypeDeterminatorTests;
+			sourceTree = "<group>";
+		};
+		631CBA921C021C3900E3EBA8 /* ReportsUserStoryTests */ = {
+			isa = PBXGroup;
+			children = (
+				631CBA931C021C3900E3EBA8 /* ReportListModuleTests */,
+			);
+			path = ReportsUserStoryTests;
+			sourceTree = "<group>";
+		};
+		631CBA931C021C3900E3EBA8 /* ReportListModuleTests */ = {
+			isa = PBXGroup;
+			children = (
+				631CBA941C021C3900E3EBA8 /* ReportListDataDisplayManagerTests.m */,
+				631CBA951C021C3900E3EBA8 /* ReportListInteractorTests.m */,
+				631CBA961C021C3900E3EBA8 /* ReportListPresenterTests.m */,
+				631CBA971C021C3900E3EBA8 /* ReportListTableViewControllerTests.m */,
+			);
+			path = ReportListModuleTests;
 			sourceTree = "<group>";
 		};
 		631FFE0A1BEF3D4000749DB8 /* Common */ = {
@@ -1328,9 +1346,9 @@
 		636A37B91BC13B4B00B49C3D /* ConferencesPresentationTests */ = {
 			isa = PBXGroup;
 			children = (
-				63F8F2BE1BF8A942000017F3 /* Common */,
-				63F8F2C01BF8A942000017F3 /* Helpers */,
-				63F8F2C21BF8A942000017F3 /* UserStories */,
+				631CBA821C021C3900E3EBA8 /* EventsUserStoryTests */,
+				631CBA921C021C3900E3EBA8 /* ReportsUserStoryTests */,
+				631CBA901C021C3900E3EBA8 /* HelpersTests */,
 			);
 			path = ConferencesPresentationTests;
 			sourceTree = "<group>";
@@ -2135,45 +2153,6 @@
 				63F8F2BB1BF8A713000017F3 /* EventTypeDeterminator.m */,
 			);
 			path = EventTypeDeterminator;
-			sourceTree = "<group>";
-		};
-		63F8F2BE1BF8A942000017F3 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				63F8F2BF1BF8A942000017F3 /* TabBarModule */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		63F8F2BF1BF8A942000017F3 /* TabBarModule */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TabBarModule;
-			sourceTree = "<group>";
-		};
-		63F8F2C01BF8A942000017F3 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				63F8F2C11BF8A942000017F3 /* EventTypeDeterminatorTests */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
-		63F8F2C11BF8A942000017F3 /* EventTypeDeterminatorTests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = EventTypeDeterminatorTests;
-			sourceTree = "<group>";
-		};
-		63F8F2C21BF8A942000017F3 /* UserStories */ = {
-			isa = PBXGroup;
-			children = (
-				631CBA441C01FD1D00E3EBA8 /* EventsUserStoryTests */,
-				631CBA521C01FD1D00E3EBA8 /* ReportsUserStoryTests */,
-			);
-			path = UserStories;
 			sourceTree = "<group>";
 		};
 		63F8F2D11BF8D4C0000017F3 /* PresentationLayerAssemblyTests */ = {
@@ -3953,80 +3932,81 @@
 			buildActionMask = 2147483647;
 			files = (
 				63D628EE1BE4CE09004AF98F /* SystemInfrastructureAssembly.m in Sources */,
-				631CBA5A1C01FD1D00E3EBA8 /* PastEventCellObjectBuilderTests.m in Sources */,
-				631CBA541C01FD1D00E3EBA8 /* EventListDataDisplayManagerTests.m in Sources */,
 				63D628EF1BE4CE09004AF98F /* TabBarModuleAssembly.m in Sources */,
 				63D628F01BE4CE09004AF98F /* ModuleAssemblyBase.m in Sources */,
 				63D628F11BE4CE09004AF98F /* EventListModuleAssembly.m in Sources */,
 				63D628F21BE4CE09004AF98F /* RamblerLocationModuleAssembly.m in Sources */,
 				63D628F31BE4CE09004AF98F /* ServiceComponentsAssembly.m in Sources */,
-				631CBA611C02021800E3EBA8 /* ReportListPresenterTests.m in Sources */,
-				631CBA591C01FD1D00E3EBA8 /* FutureEventCellObjectBuilderTests.m in Sources */,
 				63D628F41BE4CE09004AF98F /* OperationFactoriesAssembly.m in Sources */,
 				63D628F51BE4CE09004AF98F /* ResponseMappersAssembly.m in Sources */,
 				63D628F61BE4CE09004AF98F /* ResponseValidatorsAssembly.m in Sources */,
+				631CBAA21C021C3900E3EBA8 /* ReportListDataDisplayManagerTests.m in Sources */,
+				631CBA9F1C021C3900E3EBA8 /* EventDataDisplayManagerTests.m in Sources */,
 				63D628F71BE4CE09004AF98F /* ResponseDeserializersAssembly.m in Sources */,
 				63D628F81BE4CE09004AF98F /* NetworkClientsAssembly.m in Sources */,
 				63D628F91BE4CE09004AF98F /* RequestSignersAssembly.m in Sources */,
 				631CBA741C020CCD00E3EBA8 /* EventModuleAssemblyTests.m in Sources */,
+				631CBA991C021C3900E3EBA8 /* EventListInteractorTests.m in Sources */,
 				63F8F2F61BF9FE7D000017F3 /* RCFRESTRequestConfiguratorTests.m in Sources */,
 				63D628FA1BE4CE09004AF98F /* RequestConfiguratorsAssembly.m in Sources */,
 				63D628ED1BE4CD69004AF98F /* ApplicationAssembly.m in Sources */,
 				636F8C991BC97CD300552B91 /* EventServiceImplementation.m in Sources */,
 				631CBA811C021A5300E3EBA8 /* PresentationLayerHelpersAssemblyTests.m in Sources */,
+				631CBAA71C021C6900E3EBA8 /* EventTypeDeterminatorTests.m in Sources */,
 				636F8C9A1BC97CD300552B91 /* LectureMaterialsServiceImplementation.m in Sources */,
 				636F8C9B1BC97CD300552B91 /* RegistrationQuestionServiceImplementation.m in Sources */,
 				63F402FE1BCF840A0086D030 /* NetworkClientsAssemblyTests.m in Sources */,
 				636F8C9C1BC97CD300552B91 /* SocialNetworkAccountServiceImplementation.m in Sources */,
-				631CBA5B1C01FD1D00E3EBA8 /* EventDataDisplayManagerTests.m in Sources */,
 				636F8C981BC97C1700552B91 /* SpeakerServiceImplementation.m in Sources */,
 				9F0A853F1BC192F0006F79FB /* OperationChainerTests.m in Sources */,
-				631CBA5D1C01FD1D00E3EBA8 /* EventViewControllerTests.m in Sources */,
 				9F0A85211BC185AA006F79FB /* TestChainableOperationWithValidationBlock.m in Sources */,
 				63F402F11BCF77CB0086D030 /* ServiceComponentsAssemblyTests.m in Sources */,
 				9F1830DB1BC126D7000E21A5 /* RCFParseResponseValidatorTests.m in Sources */,
 				9F0A85201BC185AA006F79FB /* TestChainableOperation.m in Sources */,
-				631CBA571C01FD1D00E3EBA8 /* EventListTableViewControllerTests.m in Sources */,
-				631CBA561C01FD1D00E3EBA8 /* EventListPresenterTests.m in Sources */,
+				631CBA9E1C021C3900E3EBA8 /* PastEventCellObjectBuilderTests.m in Sources */,
 				9F8E5FA21BC27B5B00DC10DB /* EventOperationFactoryTests.m in Sources */,
 				63F402F01BCF77CB0086D030 /* ApplicationAssemblyTests.m in Sources */,
 				9F0A85261BC185AA006F79FB /* ResponseDeserializationOperationTests.m in Sources */,
 				63F403001BCF85EE0086D030 /* RequestConfiguratorsAssemblyTests.m in Sources */,
 				9F0A85231BC185AA006F79FB /* ChainableOperationTestsBase.m in Sources */,
 				63F402FB1BCF79390086D030 /* OperationFactoriesAssemblyTests.m in Sources */,
+				631CBAA01C021C3900E3EBA8 /* EventInteractorTests.m in Sources */,
 				9F0A85251BC185AA006F79FB /* RequestSigningOperationTests.m in Sources */,
-				631CBA5C1C01FD1D00E3EBA8 /* EventInteractorTests.m in Sources */,
 				9F0A85241BC185AA006F79FB /* RequestConfigurationOperationTests.m in Sources */,
+				631CBA9B1C021C3900E3EBA8 /* EventListTableViewControllerTests.m in Sources */,
 				9F8E5F9B1BC2753100DC10DB /* CompoundOperationFactoryTestsBase.m in Sources */,
+				631CBAA31C021C3900E3EBA8 /* ReportListInteractorTests.m in Sources */,
 				631CBA721C020CCD00E3EBA8 /* EventListModuleAssemblyTests.m in Sources */,
 				9F0A851F1BC185AA006F79FB /* TestCancellableOperation.m in Sources */,
 				9F0A85271BC185AA006F79FB /* ResponseMappingOperationTests.m in Sources */,
 				9F1830F91BC1464C000E21A5 /* RCFManagedObjectMappingProviderTests.m in Sources */,
+				631CBA981C021C3900E3EBA8 /* EventListDataDisplayManagerTests.m in Sources */,
+				631CBA9C1C021C3900E3EBA8 /* CurrentEventCellObjectBuilderTests.m in Sources */,
 				63F403AA1BD0CB190086D030 /* RequestSignersAssemblyTests.m in Sources */,
 				9F1830C81BC11EE6000E21A5 /* XCTestCase+RCFHelpers.m in Sources */,
 				631CBA771C020F2D00E3EBA8 /* ReportListModuleAssemblyTests.m in Sources */,
 				631CBA3B1C00935300E3EBA8 /* EventServiceTests.m in Sources */,
-				631CBA5F1C01FD6100E3EBA8 /* ReportListInteractorTests.m in Sources */,
 				63F403B21BD0D4B40086D030 /* ResponseValidatorsAssemblyTests.m in Sources */,
 				9F0A84C31BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m in Sources */,
+				631CBAA41C021C3900E3EBA8 /* ReportListPresenterTests.m in Sources */,
 				9F1831211BC16195000E21A5 /* RCFResultResponseObjectFormatterTests.m in Sources */,
-				631CBA651C0206F100E3EBA8 /* ReportListDataDisplayManagerTests.m in Sources */,
-				631CBA631C02047200E3EBA8 /* ReportListTableViewControllerTests.m in Sources */,
 				631CBA381C0092C100E3EBA8 /* ApplicationConfiguratorTests.m in Sources */,
 				9F1830AB1BC1139B000E21A5 /* RCFParseRequestSignerTests.m in Sources */,
 				63F403AF1BD0D0690086D030 /* ResponseMappersAssemblyTests.m in Sources */,
+				631CBA9A1C021C3900E3EBA8 /* EventListPresenterTests.m in Sources */,
 				9F1830DF1BC12749000E21A5 /* RCFResponseValidatorTestsBase.m in Sources */,
 				63F403AC1BD0CD460086D030 /* ResponseDeserializersAssemblyTests.m in Sources */,
+				631CBAA11C021C3900E3EBA8 /* EventViewControllerTests.m in Sources */,
+				631CBAA51C021C3900E3EBA8 /* ReportListTableViewControllerTests.m in Sources */,
 				9FF99E541BC4317E006F15AF /* OperationSchedulerTests.m in Sources */,
 				9F1830B81BC119A5000E21A5 /* CommonNetworkClientTests.m in Sources */,
 				631CBA7E1C02140600E3EBA8 /* RamblerLocationModuleAssemblyTests.m in Sources */,
 				9F1830C31BC11DE7000E21A5 /* RCFJSONResponseDeserializerTests.m in Sources */,
 				9F0A85221BC185AA006F79FB /* TestErrorChainableOperation.m in Sources */,
-				631CBA581C01FD1D00E3EBA8 /* CurrentEventCellObjectBuilderTests.m in Sources */,
+				631CBA9D1C021C3900E3EBA8 /* FutureEventCellObjectBuilderTests.m in Sources */,
 				9F1830FD1BC14C37000E21A5 /* RCFManagedObjectMapperTests.m in Sources */,
 				631CBA731C020CCD00E3EBA8 /* EventCellObjectBuilderFactoryTests.m in Sources */,
 				63F8F2F51BF9FDBF000017F3 /* CompoundOperationBaseTests.m in Sources */,
-				631CBA551C01FD1D00E3EBA8 /* EventListInteractorTests.m in Sources */,
 				9F1830FE1BC14E64000E21A5 /* Conference.xcdatamodeld in Sources */,
 				63D628EC1BE4C744004AF98F /* PlainEvent.m in Sources */,
 				9F0A85281BC185AA006F79FB /* ResponseValidationOperationTests.m in Sources */,
