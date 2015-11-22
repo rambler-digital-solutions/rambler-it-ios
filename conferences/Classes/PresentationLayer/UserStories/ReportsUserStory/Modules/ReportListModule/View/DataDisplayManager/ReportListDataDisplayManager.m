@@ -63,17 +63,13 @@
 
 - (NIMutableTableViewModel *)updateTableViewModel {
     NSMutableArray *cellObjects = [NSMutableArray array];
-    NIMutableTableViewModel *tableViewModel;
-    
-    if (self.events.count > 0) {
-        
-        for (int i = 0; i < self.events.count; i++) {
-            ReportListTableViewCellObject *cellObject = [ReportListTableViewCellObject objectWithElementID:i event:self.events[i]];
-            [cellObjects addObject:cellObject];
-        }
+
+    for (PlainEvent *event in self.events) {
+        ReportListTableViewCellObject *cellObject = [ReportListTableViewCellObject objectWithEvent:event];
+        [cellObjects addObject:cellObject];
     }
     
-    tableViewModel = [[NIMutableTableViewModel alloc] initWithSectionedArray:cellObjects
+    NIMutableTableViewModel *tableViewModel = [[NIMutableTableViewModel alloc] initWithSectionedArray:cellObjects
                                                                         delegate:(id)[NICellFactory class]];
     return tableViewModel;
 }
