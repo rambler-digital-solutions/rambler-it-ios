@@ -38,7 +38,7 @@
     [self.dataDisplayManager updateTableViewModelWithEvents:events];
 }
 
-#pragma mark - EventLIstDataDisplayManagerDelegate
+#pragma mark - EventListDataDisplayManagerDelegate
 
 - (void)didUpdateTableViewModel {
     self.tableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.tableView];

@@ -49,5 +49,4 @@
     [self.output didTriggerTapCellWithEvent:event];
 }
 
-
 @end

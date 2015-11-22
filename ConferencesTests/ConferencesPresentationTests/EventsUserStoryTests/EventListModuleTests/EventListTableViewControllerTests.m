@@ -19,7 +19,7 @@
 @property (strong, nonatomic) EventListTableViewController <EventLIstDataDisplayManagerDelegate> *viewController;
 @property (strong, nonatomic) EventListDataDisplayManager *mockDataDisplayManager;
 @property (strong, nonatomic) id <EventListViewOutput> mockOutput;
-@property (nonatomic, strong) UITableView *mockTableView;
+@property (strong, nonatomic) UITableView *mockTableView;
 
 @end
 
@@ -85,7 +85,7 @@
     OCMVerify([self.mockDataDisplayManager updateTableViewModelWithEvents:events]);
 }
 
-#pragma mark - EventLIstDataDisplayManagerDelegate
+#pragma mark - EventListDataDisplayManagerDelegate
 
 - (void)testSuccessDidUpdateTableViewModel {
     // given

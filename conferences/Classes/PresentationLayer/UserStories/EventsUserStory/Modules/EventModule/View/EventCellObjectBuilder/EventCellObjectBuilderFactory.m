@@ -7,7 +7,6 @@
 //
 
 #import "EventCellObjectBuilderFactory.h"
-#import "PlainEvent.h"
 #import "EventType.h"
 #import "CurrentEventCellObjectBuilder.h"
 #import "FutureEventCellObjectBuilder.h"
