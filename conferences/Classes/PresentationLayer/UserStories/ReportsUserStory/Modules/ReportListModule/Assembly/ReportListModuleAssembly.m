@@ -13,6 +13,7 @@
 #import "ReportListRouter.h"
 #import "ReportListDataDisplayManager.h"
 #import "ServiceComponents.h"
+#import "PresentationLayerHelpersAssembly.h"
 
 #import "TabBarButtonPrototype.h"
 
@@ -41,6 +42,8 @@ static NSString *const kTabbarButtonId = @"reports_tab";
                                                       with:[self.serviceComponents eventService]];
                                 [definition injectProperty:@selector(eventPrototypeMapper)
                                                       with:[self.serviceComponents eventPrototypeMapper]];
+                                [definition injectProperty:@selector(eventTypeDeterminator)
+                                                      with:[self.presentationLayerHelpersAssembly eventTypeDeterminator]];
              }];
 }
 

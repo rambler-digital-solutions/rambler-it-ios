@@ -12,12 +12,14 @@
 @protocol ReportListInteractorOutput;
 @protocol EventService;
 @protocol PrototypeMapper;
+@class EventTypeDeterminator;
 
 @interface ReportListInteractor : NSObject<ReportListInteractorInput>
 
-@property (nonatomic, weak) id<ReportListInteractorOutput> output;
+@property (weak, nonatomic) id <ReportListInteractorOutput> output;
 @property (strong, nonatomic) id <EventService> eventService;
 @property (strong, nonatomic) id <PrototypeMapper> eventPrototypeMapper;
+@property (strong, nonatomic) EventTypeDeterminator *eventTypeDeterminator;
 
 @end
 

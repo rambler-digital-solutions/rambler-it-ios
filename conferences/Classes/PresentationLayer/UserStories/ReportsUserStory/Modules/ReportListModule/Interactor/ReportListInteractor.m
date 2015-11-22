@@ -13,6 +13,8 @@
 #import "Event.h"
 #import "EventPrototypeMapper.h"
 #import "PlainEvent.h"
+#import "EventType.h"
+#import "EventTypeDeterminator.h"
 
 #import "EXTScope.h"
 
@@ -24,8 +26,7 @@
     @weakify(self)
     [self.eventService updateEventWithPredicate:nil completionBlock:^(id data, NSError *error) {
         @strongify(self);
-        NSMutableArray *events = [NSMutableArray array];
-        events = [self mapEventsManagedObjectsToPlainObjects:data];
+        NSArray *events  = [self getPlainEventsFromManagedObjects:data];
         
         [self.output didUpdateEventList:events];
     }];
@@ -34,17 +35,14 @@
 - (NSArray *)obtainEventList {
     id managedObjectEvents = [self.eventService obtainEventWithPredicate:nil];
     
-    NSMutableArray *events = [NSMutableArray array];
+    NSArray *events = [self getPlainEventsFromManagedObjects:managedObjectEvents];
     
-    if ([managedObjectEvents isKindOfClass:[NSArray class]]) {
-        events = [self mapEventsManagedObjectsToPlainObjects:managedObjectEvents];
-    }
     return events;
 }
 
 #pragma mark - Private methods
 
-- (NSMutableArray *)mapEventsManagedObjectsToPlainObjects:(NSArray *)manajedObjectEvents {
+- (NSArray *)getPlainEventsFromManagedObjects:(NSArray *)manajedObjectEvents {
     NSMutableArray *plainEvents = [NSMutableArray array];
     for (Event *managedObjectEvent in manajedObjectEvents) {
         PlainEvent *plainEvent = [PlainEvent new];
@@ -56,12 +54,13 @@
     return [self obtainPastEvents:plainEvents];
 }
 
-- (NSMutableArray *)obtainPastEvents:(NSMutableArray *)events {
+- (NSArray *)obtainPastEvents:(NSArray *)events {
     NSMutableArray *pastEvents = [NSMutableArray array];
     
     for (PlainEvent *event in events) {
-        NSDate *currentDate = [NSDate date];
-        if ([event.endDate timeIntervalSinceReferenceDate] < [currentDate timeIntervalSinceReferenceDate]) {
+        EventType eventType = [self.eventTypeDeterminator determinateTypeForEvent:event];
+        
+        if (eventType == PastEvent) {
             [pastEvents addObject:event];
         }
     }
@@ -69,14 +68,11 @@
     return [self sortEventsByDate:pastEvents];
 }
 
-- (NSMutableArray *)sortEventsByDate:(NSMutableArray *)events {
+- (NSArray *)sortEventsByDate:(NSMutableArray *)events {
     NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:NSStringFromSelector(@selector(startDate)) ascending:NO];
     events = [[events sortedArrayUsingDescriptors:@[sortDescriptor]] mutableCopy];
     
     return events;
 }
-
-
-
 
 @end
