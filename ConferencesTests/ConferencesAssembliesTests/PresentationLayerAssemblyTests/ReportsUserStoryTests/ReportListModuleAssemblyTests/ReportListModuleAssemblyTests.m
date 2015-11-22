@@ -67,7 +67,8 @@
     NSArray *dependencies = @[
                               RamblerSelector(output),
                               RamblerSelector(eventService),
-                              RamblerSelector(eventPrototypeMapper)
+                              RamblerSelector(eventPrototypeMapper),
+                              RamblerSelector(eventTypeDeterminator)
                               ];
     // when
     id result = [self.assembly interactorReportList];
