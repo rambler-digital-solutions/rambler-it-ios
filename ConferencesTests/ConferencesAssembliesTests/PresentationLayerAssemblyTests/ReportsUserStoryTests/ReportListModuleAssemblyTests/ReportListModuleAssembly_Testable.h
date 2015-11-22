@@ -13,8 +13,6 @@
 @class ReportListPresenter;
 @class ReportListRouter;
 @class ReportListDataDisplayManager;
-@class UIStoryboard;
-@protocol TabBarControllerContent;
 
 @interface ReportListModuleAssembly ()
 
@@ -23,7 +21,5 @@
 - (ReportListPresenter *)presenterReportList;
 - (ReportListRouter *)routerReportList;
 - (ReportListDataDisplayManager *)dataDisplayManagerReportList;
-- (id<TabBarControllerContent>)reportListTabBarControllerContent;
-- (UIStoryboard*)reportListStoryboard;
 
 @end

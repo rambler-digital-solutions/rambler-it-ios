@@ -45,6 +45,7 @@
 		631CBA731C020CCD00E3EBA8 /* EventCellObjectBuilderFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA6D1C020CCD00E3EBA8 /* EventCellObjectBuilderFactoryTests.m */; };
 		631CBA741C020CCD00E3EBA8 /* EventModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA6F1C020CCD00E3EBA8 /* EventModuleAssemblyTests.m */; };
 		631CBA771C020F2D00E3EBA8 /* ReportListModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA761C020F2D00E3EBA8 /* ReportListModuleAssemblyTests.m */; };
+		631CBA7E1C02140600E3EBA8 /* RamblerLocationModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA7D1C02140600E3EBA8 /* RamblerLocationModuleAssemblyTests.m */; };
 		631FFE191BEF451400749DB8 /* CDResponderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FFE141BEF451400749DB8 /* CDResponderTableViewCell.m */; };
 		631FFE1A1BEF451400749DB8 /* UIView+CDResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FFE181BEF451400749DB8 /* UIView+CDResponder.m */; };
 		631FFE531BEF930200749DB8 /* ReportListModuleAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FFE411BEF930200749DB8 /* ReportListModuleAssembly.m */; };
@@ -342,6 +343,8 @@
 		631CBA6F1C020CCD00E3EBA8 /* EventModuleAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventModuleAssemblyTests.m; sourceTree = "<group>"; };
 		631CBA751C020DFC00E3EBA8 /* ReportListModuleAssembly_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReportListModuleAssembly_Testable.h; sourceTree = "<group>"; };
 		631CBA761C020F2D00E3EBA8 /* ReportListModuleAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportListModuleAssemblyTests.m; sourceTree = "<group>"; };
+		631CBA7C1C02118900E3EBA8 /* RamblerLocationModuleAssembly_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RamblerLocationModuleAssembly_Testable.h; sourceTree = "<group>"; };
+		631CBA7D1C02140600E3EBA8 /* RamblerLocationModuleAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RamblerLocationModuleAssemblyTests.m; sourceTree = "<group>"; };
 		631FFE051BEF29FE00749DB8 /* EventModuleInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventModuleInput.h; sourceTree = "<group>"; };
 		631FFE0B1BEF3E5E00749DB8 /* EventTableViewCellActionProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTableViewCellActionProtocol.h; sourceTree = "<group>"; };
 		631FFE111BEF3FBF00749DB8 /* EventInfoTableViewCellActionProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventInfoTableViewCellActionProtocol.h; sourceTree = "<group>"; };
@@ -1064,6 +1067,23 @@
 				631CBA761C020F2D00E3EBA8 /* ReportListModuleAssemblyTests.m */,
 			);
 			path = ReportListModuleAssemblyTests;
+			sourceTree = "<group>";
+		};
+		631CBA781C02114300E3EBA8 /* RamblerLocationUserStoryTests */ = {
+			isa = PBXGroup;
+			children = (
+				631CBA791C02114300E3EBA8 /* RamblerLocationModuleAssemblyTests */,
+			);
+			path = RamblerLocationUserStoryTests;
+			sourceTree = "<group>";
+		};
+		631CBA791C02114300E3EBA8 /* RamblerLocationModuleAssemblyTests */ = {
+			isa = PBXGroup;
+			children = (
+				631CBA7C1C02118900E3EBA8 /* RamblerLocationModuleAssembly_Testable.h */,
+				631CBA7D1C02140600E3EBA8 /* RamblerLocationModuleAssemblyTests.m */,
+			);
+			path = RamblerLocationModuleAssemblyTests;
 			sourceTree = "<group>";
 		};
 		631FFE0A1BEF3D4000749DB8 /* Common */ = {
@@ -2150,6 +2170,7 @@
 			isa = PBXGroup;
 			children = (
 				631CBA661C020CCD00E3EBA8 /* EventsUserStoryTests */,
+				631CBA781C02114300E3EBA8 /* RamblerLocationUserStoryTests */,
 				631CBA701C020CCD00E3EBA8 /* ReportsUserStoryTests */,
 			);
 			path = PresentationLayerAssemblyTests;
@@ -3986,6 +4007,7 @@
 				63F403AC1BD0CD460086D030 /* ResponseDeserializersAssemblyTests.m in Sources */,
 				9FF99E541BC4317E006F15AF /* OperationSchedulerTests.m in Sources */,
 				9F1830B81BC119A5000E21A5 /* CommonNetworkClientTests.m in Sources */,
+				631CBA7E1C02140600E3EBA8 /* RamblerLocationModuleAssemblyTests.m in Sources */,
 				9F1830C31BC11DE7000E21A5 /* RCFJSONResponseDeserializerTests.m in Sources */,
 				9F0A85221BC185AA006F79FB /* TestErrorChainableOperation.m in Sources */,
 				631CBA581C01FD1D00E3EBA8 /* CurrentEventCellObjectBuilderTests.m in Sources */,

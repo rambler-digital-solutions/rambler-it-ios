@@ -13,8 +13,6 @@
 @class EventListPresenter;
 @class EventListRouter;
 @class EventListDataDisplayManager;
-@class UIStoryboard;
-@protocol TabBarControllerContent;
 
 @interface EventListModuleAssembly ()
 
@@ -23,7 +21,5 @@
 - (EventListPresenter *)presenterEventList;
 - (EventListRouter *)routerEventList;
 - (EventListDataDisplayManager *)dataDisplayManagerEventList;
-- (id<TabBarControllerContent>)eventListTabBarControllerContent;
-- (UIStoryboard*)eventListStoryboard;
 
 @end
