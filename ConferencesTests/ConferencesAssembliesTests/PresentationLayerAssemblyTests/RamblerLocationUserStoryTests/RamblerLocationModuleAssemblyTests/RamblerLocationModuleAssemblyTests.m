@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import <RamblerMcFlurry/Testing.h>
+#import <RamblerTyphoonUtils/AssemblyTesting.h>
 
 #import "RamblerLocationModuleAssembly.h"
 #import "RamblerLocationModuleAssembly_Testable.h"
