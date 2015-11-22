@@ -10,8 +10,8 @@
 
 #import "EventListDataDisplayManager.h"
 #import "PlainEvent.h"
-#import "FutureEventTableViewCell.h"
-#import "PastEventTableViewCell.h"
+#import "NearestEventTableViewCell.h"
+#import "EventListTableViewCell.h"
 
 #import <OCMock/OCMock.h>
 #import "EventListTableViewController.h"
@@ -110,10 +110,10 @@ typedef NS_ENUM(NSUInteger, TableViewSectionIndex){
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:EventsSection];
         UITableViewCell *cell = [dataSource tableView:nil cellForRowAtIndexPath:indexPath];
         
-        if ([cell isKindOfClass:[FutureEventTableViewCell class]]) {
+        if ([cell isKindOfClass:[NearestEventTableViewCell class]]) {
             actualNumberOfCellForCorrespondingClass++;
         }
-        if ([cell isKindOfClass:[PastEventTableViewCell class]]) {
+        if ([cell isKindOfClass:[EventListTableViewCell class]]) {
             actualNumberOfCellForCorrespondingClass++;
         }
     }

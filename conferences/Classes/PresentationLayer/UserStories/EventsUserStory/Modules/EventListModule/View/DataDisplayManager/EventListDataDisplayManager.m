@@ -10,8 +10,8 @@
 
 #import <Nimbus/NimbusModels.h>
 
-#import "PastEventTableViewCellObject.h"
-#import "FutureEventTableViewCellObject.h"
+#import "EventListTableViewCellObject.h"
+#import "NearestEventTableViewCellObject.h"
 
 #import "PlainEvent.h"
 
@@ -75,18 +75,18 @@ typedef NS_ENUM(NSUInteger, CellObjectID){
     if (self.events.count > 0) {
         PlainEvent *futureEvent = [self.events firstObject];
         
-        FutureEventTableViewCellObject *futureEventTableViewCellObject = [FutureEventTableViewCellObject objectWithElementID:FutureEventTableViewCellObjectID event:futureEvent];
+        NearestEventTableViewCellObject *futureEventTableViewCellObject = [NearestEventTableViewCellObject objectWithElementID:FutureEventTableViewCellObjectID event:futureEvent];
         [cellObjects addObject:futureEventTableViewCellObject];
         
         for (int i = 1; i < self.events.count; i++) {
-            PastEventTableViewCellObject *cellObject = [PastEventTableViewCellObject objectWithElementID:i event:self.events[i]];
+            EventListTableViewCellObject *cellObject = [EventListTableViewCellObject objectWithElementID:i event:self.events[i]];
             [cellObjects addObject:cellObject];
         }
         
         tableViewModel = [[NIMutableTableViewModel alloc] initWithSectionedArray:cellObjects
                                                                       delegate:(id)[NICellFactory class]];
     } else {
-        // ???
+        
     }
     return tableViewModel;
 }

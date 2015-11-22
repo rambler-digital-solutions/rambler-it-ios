@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "NICellFactory.h"
 
-@interface PastEventTableViewCell : UITableViewCell <NICell>
+@interface EventListTableViewCell : UITableViewCell <NICell>
 
 @property (weak, nonatomic) IBOutlet UILabel *day;
 @property (weak, nonatomic) IBOutlet UILabel *month;

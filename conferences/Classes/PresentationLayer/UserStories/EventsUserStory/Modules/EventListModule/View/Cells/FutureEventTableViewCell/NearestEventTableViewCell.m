@@ -6,25 +6,25 @@
 //  Copyright © 2015 Rambler. All rights reserved.
 //
 
-#import "FutureEventTableViewCell.h"
-#import "FutureEventTableViewCellObject.h"
+#import "NearestEventTableViewCell.h"
+#import "NearestEventTableViewCellObject.h"
 
 #import <SDWebImage/UIImageView+WebCache.h>
 
 static NSString *const kPlaceholderImageName = @"placeholder";
-static CGFloat const kPastEventTableViewCellHeight = 64.0f;
+static CGFloat const kEventListTableViewCellHeight = 64.0f;
 
-@interface FutureEventTableViewCell ()
+@interface NearestEventTableViewCell ()
 
 @property (assign, nonatomic) CGFloat FutureEventTableViewCellHeight;
 
 @end
 
-@implementation FutureEventTableViewCell
+@implementation NearestEventTableViewCell
 
 #pragma mark - NICell methods
 
-- (BOOL)shouldUpdateCellWithObject:(FutureEventTableViewCellObject *)object {
+- (BOOL)shouldUpdateCellWithObject:(NearestEventTableViewCellObject *)object {
     self.eventTitle.text = object.eventTitle;
     self.day.text = object.day;
     self.month.text = object.month;
@@ -38,7 +38,7 @@ static CGFloat const kPastEventTableViewCellHeight = 64.0f;
 }
 
 + (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
-    return tableView.frame.size.height - kPastEventTableViewCellHeight;
+    return tableView.frame.size.height - kEventListTableViewCellHeight;
 }
 
 @end

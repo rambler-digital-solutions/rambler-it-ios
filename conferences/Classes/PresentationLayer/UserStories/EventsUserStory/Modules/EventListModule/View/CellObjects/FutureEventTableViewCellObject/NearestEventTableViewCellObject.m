@@ -6,11 +6,11 @@
 //  Copyright © 2015 Rambler. All rights reserved.
 //
 
-#import "FutureEventTableViewCellObject.h"
-#import "FutureEventTableViewCell.h"
+#import "NearestEventTableViewCellObject.h"
+#import "NearestEventTableViewCell.h"
 #import "PlainEvent.h"
 
-@interface FutureEventTableViewCellObject ()
+@interface NearestEventTableViewCellObject ()
 
 @property (strong, nonatomic, readwrite) UIImage *image;
 @property (strong, nonatomic, readwrite) NSString *day;
@@ -21,7 +21,7 @@
 
 @end
 
-@implementation FutureEventTableViewCellObject
+@implementation NearestEventTableViewCellObject
 
 #pragma mark - Initialization
 
@@ -53,11 +53,11 @@
 #pragma mark - NICellObject methods
 
 - (Class)cellClass {
-    return [FutureEventTableViewCell class];
+    return [NearestEventTableViewCell class];
 }
 
 - (UINib *)cellNib {
-    return [UINib nibWithNibName:NSStringFromClass([FutureEventTableViewCell class]) bundle:[NSBundle mainBundle]];
+    return [UINib nibWithNibName:NSStringFromClass([NearestEventTableViewCell class]) bundle:[NSBundle mainBundle]];
 }
 
 @end

@@ -1,8 +1,8 @@
 //
-//  FutureEventTableViewCellObject.h
+//  EventListTableViewCellObject.h
 //  Conferences
 //
-//  Created by Karpushin Artem on 27/10/15.
+//  Created by Karpushin Artem on 25/10/15.
 //  Copyright © 2015 Rambler. All rights reserved.
 //
 
@@ -11,14 +11,12 @@
 
 @class PlainEvent;
 
-@interface FutureEventTableViewCellObject : NIFormElement <NICellObject>
+@interface EventListTableViewCellObject : NIFormElement <NICellObject>
 
-@property (strong, nonatomic, readonly) UIImage *image;
 @property (strong, nonatomic, readonly) NSString *day;
 @property (strong, nonatomic, readonly) NSString *month;
 @property (strong, nonatomic, readonly) NSString *eventTitle;
-@property (strong, nonatomic, readonly) UIColor *backgroundColor;
-@property (strong, nonatomic, readonly) NSURL *imageUrl;
+@property (strong, nonatomic, readonly) NSString *eventTags;
 
 + (instancetype)objectWithElementID:(NSInteger)elementID event:(PlainEvent *)event;
 

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "NICellFactory.h"
 
-@interface FutureEventTableViewCell : UITableViewCell <NICell>
+@interface NearestEventTableViewCell : UITableViewCell <NICell>
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *day;

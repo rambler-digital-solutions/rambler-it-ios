@@ -6,11 +6,11 @@
 //  Copyright © 2015 Rambler. All rights reserved.
 //
 
-#import "PastEventTableViewCellObject.h"
-#import "PastEventTableViewCell.h"
+#import "EventListTableViewCellObject.h"
+#import "EventListTableViewCell.h"
 #import "PlainEvent.h"
 
-@interface PastEventTableViewCellObject ()
+@interface EventListTableViewCellObject ()
 
 @property (strong, nonatomic, readwrite) NSString *day;
 @property (strong, nonatomic, readwrite) NSString *month;
@@ -19,7 +19,7 @@
 
 @end
 
-@implementation PastEventTableViewCellObject
+@implementation EventListTableViewCellObject
 
 #pragma mark - Initialization
 
@@ -49,11 +49,11 @@
 #pragma mark - NICellObject methods
 
 - (Class)cellClass {
-    return [PastEventTableViewCell class];
+    return [EventListTableViewCell class];
 }
 
 - (UINib *)cellNib {
-    return [UINib nibWithNibName:NSStringFromClass([PastEventTableViewCell class]) bundle:[NSBundle mainBundle]];
+    return [UINib nibWithNibName:NSStringFromClass([EventListTableViewCell class]) bundle:[NSBundle mainBundle]];
 }
 
 @end

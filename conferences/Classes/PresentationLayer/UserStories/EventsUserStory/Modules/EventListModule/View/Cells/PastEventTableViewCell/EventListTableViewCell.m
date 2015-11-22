@@ -6,16 +6,16 @@
 //  Copyright © 2015 Rambler. All rights reserved.
 //
 
-#import "PastEventTableViewCell.h"
-#import "PastEventTableViewCellObject.h"
+#import "EventListTableViewCell.h"
+#import "EventListTableViewCellObject.h"
 
 static CGFloat const EventListTableViewCellHeight = 64.0f;
 
-@implementation PastEventTableViewCell
+@implementation EventListTableViewCell
 
 #pragma mark - NICell methods
 
-- (BOOL)shouldUpdateCellWithObject:(PastEventTableViewCellObject *)object {
+- (BOOL)shouldUpdateCellWithObject:(EventListTableViewCellObject *)object {
     self.day.text = object.day;
     self.month.text = object.month;
     self.eventTitle.text = object.eventTitle;
