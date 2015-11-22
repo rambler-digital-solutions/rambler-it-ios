@@ -15,18 +15,18 @@
 - (EventType)determinateTypeForEvent:(PlainEvent *)event {
     NSDate *currentDate = [NSDate date];
     
-    NSComparisonResult result1 = [event.startDate compare:currentDate];
-    NSComparisonResult result2 = [event.endDate compare:currentDate];
+    NSComparisonResult startDateComparisonResult = [event.startDate compare:currentDate];
+    NSComparisonResult endDateComparisonResult = [event.endDate compare:currentDate];
     
-    if ((result1 == NSOrderedAscending) && (result2 == NSOrderedDescending)) {
+    if ((startDateComparisonResult == NSOrderedAscending) && (endDateComparisonResult == NSOrderedDescending)) {
         return CurrentEvent;
     }
     
-    if (result1 == NSOrderedDescending) {
+    if (startDateComparisonResult == NSOrderedDescending) {
         return FutureEvent;
     }
     
-    if (result2 == NSOrderedAscending) {
+    if (endDateComparisonResult == NSOrderedAscending) {
         return PastEvent;
     } else {
         return PastEvent;
