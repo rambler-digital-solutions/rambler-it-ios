@@ -1,36 +1,37 @@
 //
-//  EventListTableViewControllerTests.m
+//  ReportListTableViewControllerTests.m
 //  Conferences
 //
-//  Created by Karpushin Artem on 15/11/15.
+//  Created by Karpushin Artem on 22/11/15.
 //  Copyright © 2015 Rambler. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 #import <OCMock/OCMock.h>
 
-#import "EventListTableViewController.h"
-#import "EventListDataDisplayManager.h"
-#import "EventListViewOutput.h"
+#import "ReportListTableViewController.h"
+#import "ReportListViewOutput.h"
+#import "DataDisplayManager.h"
+#import "ReportListDataDisplayManager.h"
 #import "PlainEvent.h"
 
-@interface EventListTableViewControllerTests : XCTestCase
+@interface ReportListTableViewControllerTests : XCTestCase
 
-@property (strong, nonatomic) EventListTableViewController <EventLIstDataDisplayManagerDelegate> *viewController;
-@property (strong, nonatomic) EventListDataDisplayManager *mockDataDisplayManager;
-@property (strong, nonatomic) id <EventListViewOutput> mockOutput;
+@property (strong, nonatomic) ReportListTableViewController <ReportListDataDisplayManagerDelegate> *viewController;
+@property (strong, nonatomic) ReportListDataDisplayManager *mockDataDisplayManager;
+@property (strong, nonatomic) id <ReportListViewOutput> mockOutput;
 @property (strong, nonatomic) UITableView *mockTableView;
 
 @end
 
-@implementation EventListTableViewControllerTests
+@implementation ReportListTableViewControllerTests
 
 - (void)setUp {
     [super setUp];
     
-    self.viewController = [EventListTableViewController new];
-    self.mockDataDisplayManager = OCMClassMock([EventListDataDisplayManager class]);
-    self.mockOutput = OCMProtocolMock(@protocol(EventListViewOutput));
+    self.viewController = [ReportListTableViewController new];
+    self.mockDataDisplayManager = OCMClassMock([ReportListDataDisplayManager class]);
+    self.mockOutput = OCMProtocolMock(@protocol(ReportListViewOutput));
     self.mockTableView = OCMClassMock([UITableView class]);
     
     self.viewController.dataDisplayManager = self.mockDataDisplayManager;
@@ -43,7 +44,7 @@
     self.mockDataDisplayManager = nil;
     self.mockOutput = nil;
     self.mockTableView = nil;
-    
+
     [super tearDown];
 }
 
@@ -59,7 +60,7 @@
     OCMVerify([self.mockOutput setupView]);
 }
 
-#pragma mark - EventListViewInput
+#pragma mark - ReportListViewInput
 
 - (void)testSuccessSetupViewWithEventList {
     // given
@@ -91,7 +92,7 @@
     OCMVerify([self.mockDataDisplayManager updateTableViewModelWithEvents:events]);
 }
 
-#pragma mark - EventListDataDisplayManagerDelegate
+#pragma mark - ReportListDataDisplayManagerDelegate
 
 - (void)testSuccessDidUpdateTableViewModel {
     // given
