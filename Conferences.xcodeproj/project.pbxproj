@@ -25,7 +25,6 @@
 		63136FE01BDCDB2700994356 /* UIViewController+TabBarControllerContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136FCC1BDCDB2700994356 /* UIViewController+TabBarControllerContent.m */; };
 		63136FE11BDCDB2700994356 /* TabBarButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136FCF1BDCDB2700994356 /* TabBarButtonCell.m */; };
 		63136FE21BDCDB2700994356 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136FD11BDCDB2700994356 /* TabBarViewController.m */; };
-		631CBA2D1C006A5400E3EBA8 /* EventCellObjectBuilderFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA2C1C006A5400E3EBA8 /* EventCellObjectBuilderFactoryTests.m */; };
 		631CBA381C0092C100E3EBA8 /* ApplicationConfiguratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA371C0092C100E3EBA8 /* ApplicationConfiguratorTests.m */; };
 		631CBA3B1C00935300E3EBA8 /* EventServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA3A1C00935300E3EBA8 /* EventServiceTests.m */; };
 		631CBA541C01FD1D00E3EBA8 /* EventListDataDisplayManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA461C01FD1D00E3EBA8 /* EventListDataDisplayManagerTests.m */; };
@@ -42,6 +41,10 @@
 		631CBA611C02021800E3EBA8 /* ReportListPresenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA601C02021800E3EBA8 /* ReportListPresenterTests.m */; };
 		631CBA631C02047200E3EBA8 /* ReportListTableViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA621C02047200E3EBA8 /* ReportListTableViewControllerTests.m */; };
 		631CBA651C0206F100E3EBA8 /* ReportListDataDisplayManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA641C0206F100E3EBA8 /* ReportListDataDisplayManagerTests.m */; };
+		631CBA721C020CCD00E3EBA8 /* EventListModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA691C020CCD00E3EBA8 /* EventListModuleAssemblyTests.m */; };
+		631CBA731C020CCD00E3EBA8 /* EventCellObjectBuilderFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA6D1C020CCD00E3EBA8 /* EventCellObjectBuilderFactoryTests.m */; };
+		631CBA741C020CCD00E3EBA8 /* EventModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA6F1C020CCD00E3EBA8 /* EventModuleAssemblyTests.m */; };
+		631CBA771C020F2D00E3EBA8 /* ReportListModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA761C020F2D00E3EBA8 /* ReportListModuleAssemblyTests.m */; };
 		631FFE191BEF451400749DB8 /* CDResponderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FFE141BEF451400749DB8 /* CDResponderTableViewCell.m */; };
 		631FFE1A1BEF451400749DB8 /* UIView+CDResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FFE181BEF451400749DB8 /* UIView+CDResponder.m */; };
 		631FFE531BEF930200749DB8 /* ReportListModuleAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FFE411BEF930200749DB8 /* ReportListModuleAssembly.m */; };
@@ -160,8 +163,6 @@
 		63F8F2B61BF87E2F000017F3 /* Lecture+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F2B31BF87E2F000017F3 /* Lecture+CoreDataProperties.m */; };
 		63F8F2B71BF87E2F000017F3 /* Lecture.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F2B51BF87E2F000017F3 /* Lecture.m */; };
 		63F8F2BC1BF8A713000017F3 /* EventTypeDeterminator.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F2BB1BF8A713000017F3 /* EventTypeDeterminator.m */; };
-		63F8F2D61BF8D54C000017F3 /* EventListModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F2D51BF8D54C000017F3 /* EventListModuleAssemblyTests.m */; };
-		63F8F2DC1BF8FCB7000017F3 /* EventModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F2DB1BF8FCB7000017F3 /* EventModuleAssemblyTests.m */; };
 		63F8F2E71BF9126B000017F3 /* LectureInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F2E51BF9126B000017F3 /* LectureInfoTableViewCell.m */; };
 		63F8F2E81BF9126B000017F3 /* LectureInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63F8F2E61BF9126B000017F3 /* LectureInfoTableViewCell.xib */; };
 		63F8F2EC1BF91350000017F3 /* LectureInfoTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F2EB1BF91350000017F3 /* LectureInfoTableViewCellObject.m */; };
@@ -317,8 +318,6 @@
 		63136FD11BDCDB2700994356 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
 		63136FD21BDCDB2700994356 /* TabBarViewInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewInput.h; sourceTree = "<group>"; };
 		63136FE51BDCDB9E00994356 /* DataDisplayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataDisplayManager.h; sourceTree = "<group>"; };
-		631CBA2C1C006A5400E3EBA8 /* EventCellObjectBuilderFactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventCellObjectBuilderFactoryTests.m; sourceTree = "<group>"; };
-		631CBA2E1C006A7300E3EBA8 /* EventCellObjectBuilderFactory_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventCellObjectBuilderFactory_Testable.h; sourceTree = "<group>"; };
 		631CBA371C0092C100E3EBA8 /* ApplicationConfiguratorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationConfiguratorTests.m; sourceTree = "<group>"; };
 		631CBA3A1C00935300E3EBA8 /* EventServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventServiceTests.m; sourceTree = "<group>"; };
 		631CBA461C01FD1D00E3EBA8 /* EventListDataDisplayManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListDataDisplayManagerTests.m; sourceTree = "<group>"; };
@@ -335,6 +334,14 @@
 		631CBA601C02021800E3EBA8 /* ReportListPresenterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportListPresenterTests.m; sourceTree = "<group>"; };
 		631CBA621C02047200E3EBA8 /* ReportListTableViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportListTableViewControllerTests.m; sourceTree = "<group>"; };
 		631CBA641C0206F100E3EBA8 /* ReportListDataDisplayManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportListDataDisplayManagerTests.m; sourceTree = "<group>"; };
+		631CBA681C020CCD00E3EBA8 /* EventListModuleAssembly_Testable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListModuleAssembly_Testable.h; sourceTree = "<group>"; };
+		631CBA691C020CCD00E3EBA8 /* EventListModuleAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListModuleAssemblyTests.m; sourceTree = "<group>"; };
+		631CBA6C1C020CCD00E3EBA8 /* EventCellObjectBuilderFactory_Testable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventCellObjectBuilderFactory_Testable.h; sourceTree = "<group>"; };
+		631CBA6D1C020CCD00E3EBA8 /* EventCellObjectBuilderFactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventCellObjectBuilderFactoryTests.m; sourceTree = "<group>"; };
+		631CBA6E1C020CCD00E3EBA8 /* EventModuleAssembly_Testable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventModuleAssembly_Testable.h; sourceTree = "<group>"; };
+		631CBA6F1C020CCD00E3EBA8 /* EventModuleAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventModuleAssemblyTests.m; sourceTree = "<group>"; };
+		631CBA751C020DFC00E3EBA8 /* ReportListModuleAssembly_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReportListModuleAssembly_Testable.h; sourceTree = "<group>"; };
+		631CBA761C020F2D00E3EBA8 /* ReportListModuleAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportListModuleAssemblyTests.m; sourceTree = "<group>"; };
 		631FFE051BEF29FE00749DB8 /* EventModuleInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventModuleInput.h; sourceTree = "<group>"; };
 		631FFE0B1BEF3E5E00749DB8 /* EventTableViewCellActionProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTableViewCellActionProtocol.h; sourceTree = "<group>"; };
 		631FFE111BEF3FBF00749DB8 /* EventInfoTableViewCellActionProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventInfoTableViewCellActionProtocol.h; sourceTree = "<group>"; };
@@ -552,11 +559,7 @@
 		63F8F2BA1BF8A713000017F3 /* EventTypeDeterminator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTypeDeterminator.h; sourceTree = "<group>"; };
 		63F8F2BB1BF8A713000017F3 /* EventTypeDeterminator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTypeDeterminator.m; sourceTree = "<group>"; };
 		63F8F2BD1BF8A756000017F3 /* EventType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventType.h; sourceTree = "<group>"; };
-		63F8F2D51BF8D54C000017F3 /* EventListModuleAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListModuleAssemblyTests.m; sourceTree = "<group>"; };
-		63F8F2D71BF8D5A9000017F3 /* EventListModuleAssembly_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventListModuleAssembly_Testable.h; sourceTree = "<group>"; };
 		63F8F2D81BF8F7F0000017F3 /* ServiceComponentsAssembly_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServiceComponentsAssembly_Testable.h; sourceTree = "<group>"; };
-		63F8F2DA1BF8FBD0000017F3 /* EventModuleAssembly_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventModuleAssembly_Testable.h; sourceTree = "<group>"; };
-		63F8F2DB1BF8FCB7000017F3 /* EventModuleAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventModuleAssemblyTests.m; sourceTree = "<group>"; };
 		63F8F2E31BF9126B000017F3 /* LectureInfoTableViewCellActionProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectureInfoTableViewCellActionProtocol.h; sourceTree = "<group>"; };
 		63F8F2E41BF9126B000017F3 /* LectureInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectureInfoTableViewCell.h; sourceTree = "<group>"; };
 		63F8F2E51BF9126B000017F3 /* LectureInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LectureInfoTableViewCell.m; sourceTree = "<group>"; };
@@ -933,15 +936,6 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		631CBA2B1C006A1C00E3EBA8 /* EventCellObjectBuilderFactoryTests */ = {
-			isa = PBXGroup;
-			children = (
-				631CBA2E1C006A7300E3EBA8 /* EventCellObjectBuilderFactory_Testable.h */,
-				631CBA2C1C006A5400E3EBA8 /* EventCellObjectBuilderFactoryTests.m */,
-			);
-			path = EventCellObjectBuilderFactoryTests;
-			sourceTree = "<group>";
-		};
 		631CBA361C0092C100E3EBA8 /* ApplicationConfiguratorTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -1016,6 +1010,60 @@
 				631CBA641C0206F100E3EBA8 /* ReportListDataDisplayManagerTests.m */,
 			);
 			path = ReportListModuleTests;
+			sourceTree = "<group>";
+		};
+		631CBA661C020CCD00E3EBA8 /* EventsUserStoryTests */ = {
+			isa = PBXGroup;
+			children = (
+				631CBA671C020CCD00E3EBA8 /* EventListModuleAssemblyTests */,
+				631CBA6A1C020CCD00E3EBA8 /* EventModuleAssemblyTests */,
+			);
+			path = EventsUserStoryTests;
+			sourceTree = "<group>";
+		};
+		631CBA671C020CCD00E3EBA8 /* EventListModuleAssemblyTests */ = {
+			isa = PBXGroup;
+			children = (
+				631CBA681C020CCD00E3EBA8 /* EventListModuleAssembly_Testable.h */,
+				631CBA691C020CCD00E3EBA8 /* EventListModuleAssemblyTests.m */,
+			);
+			path = EventListModuleAssemblyTests;
+			sourceTree = "<group>";
+		};
+		631CBA6A1C020CCD00E3EBA8 /* EventModuleAssemblyTests */ = {
+			isa = PBXGroup;
+			children = (
+				631CBA6B1C020CCD00E3EBA8 /* EventCellObjectBuilderFactoryTests */,
+				631CBA6E1C020CCD00E3EBA8 /* EventModuleAssembly_Testable.h */,
+				631CBA6F1C020CCD00E3EBA8 /* EventModuleAssemblyTests.m */,
+			);
+			path = EventModuleAssemblyTests;
+			sourceTree = "<group>";
+		};
+		631CBA6B1C020CCD00E3EBA8 /* EventCellObjectBuilderFactoryTests */ = {
+			isa = PBXGroup;
+			children = (
+				631CBA6C1C020CCD00E3EBA8 /* EventCellObjectBuilderFactory_Testable.h */,
+				631CBA6D1C020CCD00E3EBA8 /* EventCellObjectBuilderFactoryTests.m */,
+			);
+			path = EventCellObjectBuilderFactoryTests;
+			sourceTree = "<group>";
+		};
+		631CBA701C020CCD00E3EBA8 /* ReportsUserStoryTests */ = {
+			isa = PBXGroup;
+			children = (
+				631CBA711C020CCD00E3EBA8 /* ReportListModuleAssemblyTests */,
+			);
+			path = ReportsUserStoryTests;
+			sourceTree = "<group>";
+		};
+		631CBA711C020CCD00E3EBA8 /* ReportListModuleAssemblyTests */ = {
+			isa = PBXGroup;
+			children = (
+				631CBA751C020DFC00E3EBA8 /* ReportListModuleAssembly_Testable.h */,
+				631CBA761C020F2D00E3EBA8 /* ReportListModuleAssemblyTests.m */,
+			);
+			path = ReportListModuleAssemblyTests;
 			sourceTree = "<group>";
 		};
 		631FFE0A1BEF3D4000749DB8 /* Common */ = {
@@ -2101,37 +2149,10 @@
 		63F8F2D11BF8D4C0000017F3 /* PresentationLayerAssemblyTests */ = {
 			isa = PBXGroup;
 			children = (
-				63F8F2D21BF8D4C0000017F3 /* EventsUserStory */,
+				631CBA661C020CCD00E3EBA8 /* EventsUserStoryTests */,
+				631CBA701C020CCD00E3EBA8 /* ReportsUserStoryTests */,
 			);
 			path = PresentationLayerAssemblyTests;
-			sourceTree = "<group>";
-		};
-		63F8F2D21BF8D4C0000017F3 /* EventsUserStory */ = {
-			isa = PBXGroup;
-			children = (
-				63F8F2D41BF8D50F000017F3 /* EventListModuleAssemblyTests */,
-				63F8F2D91BF8FBA6000017F3 /* EventModuleAssemblyTests */,
-			);
-			path = EventsUserStory;
-			sourceTree = "<group>";
-		};
-		63F8F2D41BF8D50F000017F3 /* EventListModuleAssemblyTests */ = {
-			isa = PBXGroup;
-			children = (
-				63F8F2D51BF8D54C000017F3 /* EventListModuleAssemblyTests.m */,
-				63F8F2D71BF8D5A9000017F3 /* EventListModuleAssembly_Testable.h */,
-			);
-			path = EventListModuleAssemblyTests;
-			sourceTree = "<group>";
-		};
-		63F8F2D91BF8FBA6000017F3 /* EventModuleAssemblyTests */ = {
-			isa = PBXGroup;
-			children = (
-				631CBA2B1C006A1C00E3EBA8 /* EventCellObjectBuilderFactoryTests */,
-				63F8F2DA1BF8FBD0000017F3 /* EventModuleAssembly_Testable.h */,
-				63F8F2DB1BF8FCB7000017F3 /* EventModuleAssemblyTests.m */,
-			);
-			path = EventModuleAssemblyTests;
 			sourceTree = "<group>";
 		};
 		63F8F2E11BF9126B000017F3 /* LectureInfoTableViewCell */ = {
@@ -3908,15 +3929,14 @@
 				63D628F21BE4CE09004AF98F /* RamblerLocationModuleAssembly.m in Sources */,
 				63D628F31BE4CE09004AF98F /* ServiceComponentsAssembly.m in Sources */,
 				631CBA611C02021800E3EBA8 /* ReportListPresenterTests.m in Sources */,
-				631CBA2D1C006A5400E3EBA8 /* EventCellObjectBuilderFactoryTests.m in Sources */,
 				631CBA591C01FD1D00E3EBA8 /* FutureEventCellObjectBuilderTests.m in Sources */,
-				63F8F2DC1BF8FCB7000017F3 /* EventModuleAssemblyTests.m in Sources */,
 				63D628F41BE4CE09004AF98F /* OperationFactoriesAssembly.m in Sources */,
 				63D628F51BE4CE09004AF98F /* ResponseMappersAssembly.m in Sources */,
 				63D628F61BE4CE09004AF98F /* ResponseValidatorsAssembly.m in Sources */,
 				63D628F71BE4CE09004AF98F /* ResponseDeserializersAssembly.m in Sources */,
 				63D628F81BE4CE09004AF98F /* NetworkClientsAssembly.m in Sources */,
 				63D628F91BE4CE09004AF98F /* RequestSignersAssembly.m in Sources */,
+				631CBA741C020CCD00E3EBA8 /* EventModuleAssemblyTests.m in Sources */,
 				63F8F2F61BF9FE7D000017F3 /* RCFRESTRequestConfiguratorTests.m in Sources */,
 				63D628FA1BE4CE09004AF98F /* RequestConfiguratorsAssembly.m in Sources */,
 				63D628ED1BE4CD69004AF98F /* ApplicationAssembly.m in Sources */,
@@ -3945,12 +3965,13 @@
 				631CBA5C1C01FD1D00E3EBA8 /* EventInteractorTests.m in Sources */,
 				9F0A85241BC185AA006F79FB /* RequestConfigurationOperationTests.m in Sources */,
 				9F8E5F9B1BC2753100DC10DB /* CompoundOperationFactoryTestsBase.m in Sources */,
+				631CBA721C020CCD00E3EBA8 /* EventListModuleAssemblyTests.m in Sources */,
 				9F0A851F1BC185AA006F79FB /* TestCancellableOperation.m in Sources */,
 				9F0A85271BC185AA006F79FB /* ResponseMappingOperationTests.m in Sources */,
-				63F8F2D61BF8D54C000017F3 /* EventListModuleAssemblyTests.m in Sources */,
 				9F1830F91BC1464C000E21A5 /* RCFManagedObjectMappingProviderTests.m in Sources */,
 				63F403AA1BD0CB190086D030 /* RequestSignersAssemblyTests.m in Sources */,
 				9F1830C81BC11EE6000E21A5 /* XCTestCase+RCFHelpers.m in Sources */,
+				631CBA771C020F2D00E3EBA8 /* ReportListModuleAssemblyTests.m in Sources */,
 				631CBA3B1C00935300E3EBA8 /* EventServiceTests.m in Sources */,
 				631CBA5F1C01FD6100E3EBA8 /* ReportListInteractorTests.m in Sources */,
 				63F403B21BD0D4B40086D030 /* ResponseValidatorsAssemblyTests.m in Sources */,
@@ -3969,6 +3990,7 @@
 				9F0A85221BC185AA006F79FB /* TestErrorChainableOperation.m in Sources */,
 				631CBA581C01FD1D00E3EBA8 /* CurrentEventCellObjectBuilderTests.m in Sources */,
 				9F1830FD1BC14C37000E21A5 /* RCFManagedObjectMapperTests.m in Sources */,
+				631CBA731C020CCD00E3EBA8 /* EventCellObjectBuilderFactoryTests.m in Sources */,
 				63F8F2F51BF9FDBF000017F3 /* CompoundOperationBaseTests.m in Sources */,
 				631CBA551C01FD1D00E3EBA8 /* EventListInteractorTests.m in Sources */,
 				9F1830FE1BC14E64000E21A5 /* Conference.xcdatamodeld in Sources */,
