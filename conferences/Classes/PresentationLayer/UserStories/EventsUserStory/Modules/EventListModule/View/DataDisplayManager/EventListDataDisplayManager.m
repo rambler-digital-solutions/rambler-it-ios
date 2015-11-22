@@ -17,7 +17,7 @@
 
 typedef NS_ENUM(NSUInteger, CellObjectID){
     
-    FutureEventTableViewCellObjectID = 0
+    NearestEventTableViewCellObjectID = 0
 };
 
 @interface EventListDataDisplayManager () <UITableViewDelegate>
@@ -71,23 +71,20 @@ typedef NS_ENUM(NSUInteger, CellObjectID){
 
 - (NIMutableTableViewModel *)updateTableViewModel {
     NSMutableArray *cellObjects = [NSMutableArray array];
-    NIMutableTableViewModel *tableViewModel;
-    if (self.events.count > 0) {
-        PlainEvent *futureEvent = [self.events firstObject];
+
+    PlainEvent *nearestEvent = [self.events firstObject];
         
-        NearestEventTableViewCellObject *futureEventTableViewCellObject = [NearestEventTableViewCellObject objectWithElementID:FutureEventTableViewCellObjectID event:futureEvent];
-        [cellObjects addObject:futureEventTableViewCellObject];
+    NearestEventTableViewCellObject *nearestEventTableViewCellObject = [NearestEventTableViewCellObject objectWithElementID:NearestEventTableViewCellObjectID event:nearestEvent];
+    [cellObjects addObject:nearestEventTableViewCellObject];
         
-        for (int i = 1; i < self.events.count; i++) {
-            EventListTableViewCellObject *cellObject = [EventListTableViewCellObject objectWithElementID:i event:self.events[i]];
-            [cellObjects addObject:cellObject];
-        }
-        
-        tableViewModel = [[NIMutableTableViewModel alloc] initWithSectionedArray:cellObjects
-                                                                      delegate:(id)[NICellFactory class]];
-    } else {
-        
+    for (int i = 1; i < self.events.count; i++) {
+        EventListTableViewCellObject *cellObject = [EventListTableViewCellObject objectWithElementID:i event:self.events[i]];
+        [cellObjects addObject:cellObject];
     }
+        
+    NIMutableTableViewModel *tableViewModel = [[NIMutableTableViewModel alloc] initWithSectionedArray:cellObjects
+                                                                      delegate:(id)[NICellFactory class]];
+
     return tableViewModel;
 }
 
