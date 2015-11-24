@@ -24,9 +24,7 @@
 #pragma mark - EventViewOutput
 
 - (void)setupView {
-    // по неустановленной причине configureCurrentModuleWithEventObjectId вызывется после setupView, пока objectId передаем вручную
-    PlainEvent *event = [self.interactor obtainEventByObjectId:@"B18Ub0HfGU"];
-
+    PlainEvent *event = [self.interactor obtainEventByObjectId:self.presenterStateStorage.eventObjectId];
     [self.view configureViewWithEvent:event];
 }
 
