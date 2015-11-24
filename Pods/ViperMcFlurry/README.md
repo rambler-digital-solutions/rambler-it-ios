@@ -1,8 +1,10 @@
 # VIPER McFlurry
 
+[![Pod version](https://badge.fury.io/co/ViperMcFlurry.svg)](https://badge.fury.io/co/ViperMcFlurry)
+
 ## Description
 
-**VIPER McFlurry** is a modern framework for implementing VIPER architecture in iOS application. It offers several tools and components that helps either start new projects with VIPER or move from MVC.
+**VIPER McFlurry** is a modern framework for implementing VIPER architecture in iOS application. It offers several tools and components that help either start new projects with VIPER or move from MVC.
 
 Also it icludes **Templates** folder with Xcode templates for VIPER modules.
 
@@ -54,9 +56,9 @@ Copy contents of *Templates/File Templates* folder into `~/Library/Developer/Xco
 
 This works only for Module with ViewController as View.
 
-- Create Module input protocol for target module inherited from 'RamblerViperModuleInput'
+- Create Module input protocol for target module inherited from ```RamblerViperModuleInput```
 
-```
+```objective-c
 @protocol SomeModuleInput <RamblerViperModuleInput>
 
 - (void)moduleConfigurationMethod;
@@ -70,7 +72,7 @@ This works only for Module with ViewController as View.
 - Inject Source ViewController into Source Router as property "transition handler"
 - In Router method call transition handler to open target module with configuration during segue.
 
-```
+```objective-c
 [[self.transitionHandler openModuleUsingSegue:SegueIdentifier]
 	thenChainUsingBlock:^id<RamblerViperModuleOutput>(id<SomeModuleInput> moduleInput) {
 		[moduleInput moduleConfigurationMethod];
@@ -81,9 +83,9 @@ This works only for Module with ViewController as View.
 
 ## Working with Module output ##
 
-- Create Module output protocol for target module inherited from 'RamblerViperModuleOutput'
+- Create Module output protocol for target module inherited from ```RamblerViperModuleOutput```
 
-```
+```objective-c
 @protocol SomeModuleOutput <RamblerViperModuleOutput>
 
 - (void)moduleConfigurationMethod;
@@ -93,13 +95,13 @@ This works only for Module with ViewController as View.
 - Make source module presenter to conform to this protocol
 - Add to target module presenter method
 
-```
+```objective-c
 - (void)setModuleOutput:(id<RamblerViperModuleOutput>)moduleOutput;
 ```
 
 - Return source module presenter from configuration block in router
 
-```
+```objective-c
 [[self.transitionHandler openModuleUsingSegue:SegueIdentifier]
 	thenChainUsingBlock:^id<RamblerViperModuleOutput>(id<SomeModuleInput> moduleInput) {
 		[moduleInput moduleConfigurationMethod];
@@ -112,15 +114,15 @@ This works only for Module with ViewController as View.
 
 Module factory can be replaced with segues for most cases. Except you need to create complex module or nontrivial module instantiation logic.
 
-- Use **RamblerViperModuleFactory** object as module fabric with Typhoon.
-- Set definition Initializer to **initWithStoryboard:andRestorationId:**
+- Use ```RamblerViperModuleFactory``` object as module fabric with Typhoon.
+- Set definition Initializer to ```initWithStoryboard:andRestorationId:```
     - First parameter is UIStoryboard instance
     - Second parameter is RestorationID of ViewController
 - Typhoon will initialize module from ViewController.
 - Inject this Factory into router
-- Call Transition Handler's method **openModuleUsingFactory:withTransitionBlock:**
+- Call Transition Handler's method ```openModuleUsingFactory:withTransitionBlock:```
 - Second block is place where transition from one to another viewController/transitionHandler should be performed
-```
+```objective-c
     [[self.transitionHandler openModuleUsingFactory:self.betaModuleFactory
                                 withTransitionBlock:^(id <RamblerViperModuleTransitionHandlerProtocol> sourceModuleTransitionHandler,
                                         id <RamblerViperModuleTransitionHandlerProtocol> destinationModuleTransitionHandler) {

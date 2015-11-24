@@ -89,11 +89,11 @@ PODS:
     - Typhoon/no-arc (= 3.4.3)
   - Typhoon/no-arc (3.4.3)
   - UIViewController+Routing (0.1.1)
-  - ViperMcFlurry (1.1.4):
-    - ViperMcFlurry/Core (= 1.1.4)
-    - ViperMcFlurry/IntermoduleDataTransfer (= 1.1.4)
-  - ViperMcFlurry/Core (1.1.4)
-  - ViperMcFlurry/IntermoduleDataTransfer (1.1.4):
+  - ViperMcFlurry (1.1.5):
+    - ViperMcFlurry/Core (= 1.1.5)
+    - ViperMcFlurry/IntermoduleDataTransfer (= 1.1.5)
+  - ViperMcFlurry/Core (1.1.5)
+  - ViperMcFlurry/IntermoduleDataTransfer (1.1.5):
     - ViperMcFlurry/Core
 
 DEPENDENCIES:
@@ -146,6 +146,6 @@ SPEC CHECKSUMS:
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   Typhoon: 382b918b31d5d19a82922448af65f01f08102dc6
   UIViewController+Routing: 6d34de88e5a30250d453f49ddd5993212f279b9a
-  ViperMcFlurry: c6a352e81487cadecdf710f24772fc1dd03eacd5
+  ViperMcFlurry: 74116ba3fcb0add7b9432e81cd3accc784694305
 
 COCOAPODS: 0.39.0

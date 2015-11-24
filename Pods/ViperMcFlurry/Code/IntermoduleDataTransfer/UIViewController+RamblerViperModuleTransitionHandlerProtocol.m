@@ -40,7 +40,9 @@ static IMP originalPrepareForSegueMethodImp;
 // Method opens module using segue
 - (RamblerViperOpenModulePromise*)openModuleUsingSegue:(NSString*)segueIdentifier {
     RamblerViperOpenModulePromise *openModulePromise = [[RamblerViperOpenModulePromise alloc] init];
-    [self performSegueWithIdentifier:segueIdentifier sender:openModulePromise];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self performSegueWithIdentifier:segueIdentifier sender:openModulePromise];
+    });
     return openModulePromise;
 }
 
