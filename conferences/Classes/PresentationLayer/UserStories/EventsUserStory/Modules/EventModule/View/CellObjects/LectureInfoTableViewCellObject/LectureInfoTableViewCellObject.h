@@ -10,7 +10,7 @@
 
 @class PlainLecture;
 
-@interface LectureInfoTableViewCellObject : NIFormElement <NICellObject>
+@interface LectureInfoTableViewCellObject : NSObject <NICellObject>
 
 @property (strong, nonatomic, readonly) NSString *speakerName;
 @property (strong, nonatomic, readonly) NSString *speakerCompanyName;

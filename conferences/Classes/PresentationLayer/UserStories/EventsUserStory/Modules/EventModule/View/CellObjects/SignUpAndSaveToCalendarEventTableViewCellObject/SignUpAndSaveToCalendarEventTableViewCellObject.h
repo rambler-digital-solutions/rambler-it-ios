@@ -10,10 +10,10 @@
 
 @class PlainEvent;
 
-@interface SignUpAndSaveToCalendarEventTableViewCellObject : NIFormElement <NICellObject>
+@interface SignUpAndSaveToCalendarEventTableViewCellObject : NSObject <NICellObject>
 
 @property (strong, nonatomic, readonly) UIColor *buttonColol;
 
-+ (instancetype)objectWithElementID:(NSInteger)elementID event:(PlainEvent *)event;
++ (instancetype)objectWithEvent:(PlainEvent *)event;
 
 @end
