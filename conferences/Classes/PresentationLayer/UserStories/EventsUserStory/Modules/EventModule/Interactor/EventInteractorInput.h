@@ -12,7 +12,14 @@
 
 @protocol EventInteractorInput <NSObject>
 
-- (PlainEvent *)obtainEventByObjectId:(NSString *)objectId;
+/**
+ @author Artem Karpushin
+ 
+ Method is used to inform interactor that need to obtain event with specified object id
+ 
+ @param objectId Event object id
+ */
+- (void)obtainEventByObjectId:(NSString *)objectId;
 
 @end
 

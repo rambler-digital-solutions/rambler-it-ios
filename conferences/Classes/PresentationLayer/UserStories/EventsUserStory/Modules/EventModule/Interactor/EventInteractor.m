@@ -19,7 +19,7 @@ static NSString *const kEventByObjectIdPredicateFormat = @"objectId = %@";
 
 #pragma mark - EventListInteractorInput
 
-- (PlainEvent *)obtainEventByObjectId:(NSString *)objectId {
+- (void)obtainEventByObjectId:(NSString *)objectId {
     NSPredicate *predicate = [NSPredicate predicateWithFormat:kEventByObjectIdPredicateFormat, objectId];
     
     NSArray *events = [self.eventService obtainEventWithPredicate:predicate];
@@ -27,7 +27,7 @@ static NSString *const kEventByObjectIdPredicateFormat = @"objectId = %@";
     
     PlainEvent *plainEvent = [self getPlainEventFromManagedObject:managedObjectEvent];
     
-    return plainEvent;
+    [self.output didObtainEvent:plainEvent];
 }
 
 #pragma mark - Private methods
