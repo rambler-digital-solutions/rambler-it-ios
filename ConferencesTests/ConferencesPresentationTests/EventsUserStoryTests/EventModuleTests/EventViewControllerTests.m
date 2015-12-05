@@ -94,7 +94,7 @@
     [self.viewController didTapSignUpButton:OCMOCK_ANY];
     
     // then
-    OCMVerify([self.mockOutput didTriggerSignUpButtonTappedEvent:OCMOCK_ANY]);
+    OCMVerify([self.mockOutput didTriggerSignUpButtonTappedEvent]);
 }
 
 - (void)testSuccessdidTapSaveToCalendarButton {
@@ -104,7 +104,7 @@
     [self.viewController didTapSaveToCalendarButton:OCMOCK_ANY];
     
     // then
-    OCMVerify([self.mockOutput didTriggerSaveToCalendarButtonTappedEvent:OCMOCK_ANY]);
+    OCMVerify([self.mockOutput didTriggerSaveToCalendarButtonTappedEvent]);
 }
 
 - (void)testSuccessDidTapReadMoreEventDescriptionButton {
@@ -114,7 +114,7 @@
     [self.viewController didTapReadMoreEventDescriptionButton:OCMOCK_ANY];
     
     // then
-    OCMVerify([self.mockOutput didTriggerReadMoreEventDescriptionButtonTappedEvent:OCMOCK_ANY]);
+    OCMVerify([self.mockOutput didTriggerReadMoreEventDescriptionButtonTappedEvent]);
 }
 
 - (void)testSuccessDidTapReadMoreLectureDescriptionButton {
@@ -124,7 +124,7 @@
     [self.viewController didTapReadMoreLectureDescriptionButton:OCMOCK_ANY];
     
     // then
-    OCMVerify([self.mockOutput didTriggerReadMoreLectureDescriptionButtonTappedEvent:OCMOCK_ANY]);
+    OCMVerify([self.mockOutput didTriggerReadMoreLectureDescriptionButtonTappedEvent]);
 }
 
 - (void)testSuccessDidTapCurrentTranslationButton {
@@ -134,7 +134,7 @@
     [self.viewController didTapCurrentTranslationButton:OCMOCK_ANY];
     
     // then
-    OCMVerify([self.mockOutput didTriggerCurrentTranslationButtonTapEvent:OCMOCK_ANY]);
+    OCMVerify([self.mockOutput didTriggerCurrentTranslationButtonTapEvent]);
 }
 
 @end

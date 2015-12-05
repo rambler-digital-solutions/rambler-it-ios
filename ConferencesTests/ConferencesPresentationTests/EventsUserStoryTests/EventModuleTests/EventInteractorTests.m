@@ -14,6 +14,7 @@
 #import "PlainEvent.h"
 #import "PrototypeMapper.h"
 #import "EventTypeDeterminator.h"
+#import "EventInteractorOutput.h"
 
 @interface EventInteractorTests : XCTestCase
 
@@ -21,6 +22,7 @@
 @property (strong, nonatomic) id <EventService> mockEventService;
 @property (strong, nonatomic) id <PrototypeMapper> mockPrototypeMapper;
 @property (strong, nonatomic) EventTypeDeterminator *mockEventTypeDeterminator;
+@property (strong, nonatomic) id <EventInteractorOutput> mockOutput;
 
 @end
 
@@ -33,10 +35,12 @@
     self.mockEventService = OCMProtocolMock(@protocol(EventService));
     self.mockPrototypeMapper = OCMProtocolMock(@protocol(PrototypeMapper));
     self.mockEventTypeDeterminator = OCMClassMock([EventTypeDeterminator class]);
+    self.mockOutput = OCMProtocolMock(@protocol(EventInteractorOutput));
     
     self.interactor.eventService = self.mockEventService;
     self.interactor.eventPrototypeMapper = self.mockPrototypeMapper;
     self.interactor.eventTypeDeterminator = self.mockEventTypeDeterminator;
+    self.interactor.output = self.mockOutput;
 }
 
 - (void)tearDown {
@@ -44,6 +48,7 @@
     self.mockEventService = nil;
     self.mockPrototypeMapper = nil;
     self.mockEventTypeDeterminator = nil;
+    self.mockOutput = nil;
     
     [super tearDown];
 }
@@ -61,6 +66,7 @@
     // then
     OCMVerify([self.mockPrototypeMapper fillObject:OCMOCK_ANY withObject:event]);
     OCMVerify([self.mockEventTypeDeterminator determinateTypeForEvent:OCMOCK_ANY]);
+    OCMVerify([self.mockOutput didObtainEvent:OCMOCK_ANY]);
 }
 
 @end

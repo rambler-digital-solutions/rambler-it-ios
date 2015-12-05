@@ -10,8 +10,8 @@
 
 @class PlainEvent;
 
-@interface PastVideoTranslationTableViewCellObject : NIFormElement <NICellObject>
+@interface PastVideoTranslationTableViewCellObject : NSObject <NICellObject>
 
-+ (instancetype)objectWithElementID:(NSInteger)elementID event:(PlainEvent *)event;
++ (instancetype)objectWithEvent:(PlainEvent *)event;
 
 @end

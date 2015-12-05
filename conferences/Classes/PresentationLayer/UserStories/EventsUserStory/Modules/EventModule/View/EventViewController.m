@@ -43,23 +43,23 @@
 #pragma mark - EventTableViewCellActionProtocol
 
 - (void)didTapSignUpButton:(UIButton *)button {
-    [self.output didTriggerSignUpButtonTappedEvent:button];
+    [self.output didTriggerSignUpButtonTappedEvent];
 }
 
 - (void)didTapSaveToCalendarButton:(UIButton *)button {
-    [self.output didTriggerSaveToCalendarButtonTappedEvent:button];
+    [self.output didTriggerSaveToCalendarButtonTappedEvent];
 }
 
 - (void)didTapReadMoreEventDescriptionButton:(UIButton *)button {
-    [self.output didTriggerReadMoreEventDescriptionButtonTappedEvent:button];
+    [self.output didTriggerReadMoreEventDescriptionButtonTappedEvent];
 }
 
 - (void)didTapReadMoreLectureDescriptionButton:(UIButton *)button {
-    [self.output didTriggerReadMoreLectureDescriptionButtonTappedEvent:button];
+    [self.output didTriggerReadMoreLectureDescriptionButtonTappedEvent];
 }
 
 - (void)didTapCurrentTranslationButton:(UIButton *)button {
-    [self.output didTriggerCurrentTranslationButtonTapEvent:button];
+    [self.output didTriggerCurrentTranslationButtonTapEvent];
 }
 
 @end

@@ -10,10 +10,10 @@
 
 @class PlainEvent;
 
-@interface EventDescriptionTableViewCellObject : NIFormElement <NICellObject>
+@interface EventDescriptionTableViewCellObject : NSObject <NICellObject>
 
 @property (strong, nonatomic) NSString *eventDescription;
 
-+ (instancetype)objectWithElementID:(NSInteger)elementID event:(PlainEvent *)event;
++ (instancetype)objectWithEvent:(PlainEvent *)event;
 
 @end

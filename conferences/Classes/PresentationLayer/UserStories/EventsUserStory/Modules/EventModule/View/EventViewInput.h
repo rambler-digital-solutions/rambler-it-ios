@@ -12,6 +12,13 @@
 
 @protocol EventViewInput <NSObject>
 
+/**
+ @author Artem Karpushin
+ 
+ Method is used to configure view
+ 
+ @param event PlainEvent object
+ */
 - (void)configureViewWithEvent:(PlainEvent *)event;
 
 @end

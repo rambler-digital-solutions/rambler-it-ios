@@ -8,6 +8,11 @@
 
 #import "ModuleAssemblyBase.h"
 
+/**
+ @author Artem Karpushin
+ 
+ A TyphoonAssembly which is responsible for creating EventModule
+ */
 @interface EventModuleAssembly : ModuleAssemblyBase
 
 @end

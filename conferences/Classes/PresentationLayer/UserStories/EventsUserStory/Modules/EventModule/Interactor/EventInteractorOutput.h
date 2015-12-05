@@ -12,5 +12,14 @@
 
 @protocol EventInteractorOutput <NSObject>
 
+/**
+ @author Artem Karpushin
+ 
+ Method is used to inform presenter that Event object was obtained
+ 
+ @param event PlainEvent object
+ */
+- (void)didObtainEvent:(PlainEvent *)event;
+
 @end
 

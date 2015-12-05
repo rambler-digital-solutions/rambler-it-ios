@@ -10,10 +10,10 @@
 
 @class PlainEvent;
 
-@interface CurrentVideoTranslationTableViewCellObject : NIFormElement <NICellObject>
+@interface CurrentVideoTranslationTableViewCellObject : NSObject <NICellObject>
 
 @property (strong, nonatomic, readonly) UIColor *buttonColol;
 
-+ (instancetype)objectWithElementID:(NSInteger)elementID event:(PlainEvent *)event;
++ (instancetype)objectWithEvent:(PlainEvent *)event;
 
 @end
