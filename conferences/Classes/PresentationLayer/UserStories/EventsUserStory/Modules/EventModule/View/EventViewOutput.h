@@ -11,12 +11,47 @@
 
 @protocol EventViewOutput <NSObject>
 
+/**
+ @author Artem Karpushin
+ 
+ Method is used to inform presenter that view needs to be configuered
+ */
 - (void)setupView;
-- (void)didTriggerSignUpButtonTappedEvent:(UIButton *)button;
-- (void)didTriggerSaveToCalendarButtonTappedEvent:(UIButton *)button;
-- (void)didTriggerReadMoreEventDescriptionButtonTappedEvent:(UIButton *)button;
-- (void)didTriggerReadMoreLectureDescriptionButtonTappedEvent:(UIButton *)button;
-- (void)didTriggerCurrentTranslationButtonTapEvent:(UIButton *)button;
+
+/**
+ @author Artem Karpushin
+ 
+ Method is used to inform presenter that "sign up" button was tapped
+ */
+- (void)didTriggerSignUpButtonTappedEvent;
+
+/**
+ @author Artem Karpushin
+ 
+ Method is used to inform presenter that "save to calendar" button was tapped
+ */
+- (void)didTriggerSaveToCalendarButtonTappedEvent;
+
+/**
+ @author Artem Karpushin
+ 
+ Method is used to inform presenter that "read more" button of event description was tapped
+ */
+- (void)didTriggerReadMoreEventDescriptionButtonTappedEvent;
+
+/**
+ @author Artem Karpushin
+ 
+ Method is used to inform presenter that "read more" button of lecture description was tapped
+ */
+- (void)didTriggerReadMoreLectureDescriptionButtonTappedEvent;
+
+/**
+ @author Artem Karpushin
+ 
+ Method is used to inform presenter that "current translation" button was tapped
+ */
+- (void)didTriggerCurrentTranslationButtonTapEvent;
 
 @end
 
