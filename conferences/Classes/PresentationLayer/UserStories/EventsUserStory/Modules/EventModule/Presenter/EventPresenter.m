@@ -24,28 +24,33 @@
 #pragma mark - EventViewOutput
 
 - (void)setupView {
-    PlainEvent *event = [self.interactor obtainEventByObjectId:self.presenterStateStorage.eventObjectId];
+    [self.interactor obtainEventByObjectId:self.presenterStateStorage.eventObjectId];
+}
+
+- (void)didTriggerSignUpButtonTappedEvent {
+    
+}
+
+- (void)didTriggerSaveToCalendarButtonTappedEvent {
+    
+}
+
+- (void)didTriggerReadMoreEventDescriptionButtonTappedEvent {
+    
+}
+
+- (void)didTriggerReadMoreLectureDescriptionButtonTappedEvent {
+    
+}
+
+- (void)didTriggerCurrentTranslationButtonTapEvent {
+    
+}
+
+#pragma mark - EventInteractorOutput
+
+- (void)didObtainEvent:(PlainEvent *)event {
     [self.view configureViewWithEvent:event];
-}
-
-- (void)didTriggerSignUpButtonTappedEvent:(id)button {
-    
-}
-
-- (void)didTriggerSaveToCalendarButtonTappedEvent:(id)button {
-    
-}
-
-- (void)didTriggerReadMoreEventDescriptionButtonTappedEvent:(id)button {
-    
-}
-
-- (void)didTriggerReadMoreLectureDescriptionButtonTappedEvent:(id)button {
-    
-}
-
-- (void)didTriggerCurrentTranslationButtonTapEvent:(UIButton *)button {
-    
 }
 
 @end
