@@ -13,6 +13,13 @@
 
 @protocol EventModuleInput <RamblerViperModuleInput>
 
+/**
+ @author Artem Karpushin
+ 
+ Method is used to cunfigure event module
+ 
+ @param objectId Event object id
+ */
 - (void)configureCurrentModuleWithEventObjectId:(NSString *)objectId;
 
 @end
