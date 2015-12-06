@@ -11,6 +11,8 @@
 #import <Nimbus/NimbusModels.h>
 
 #import "ReportListTableViewCellObject.h"
+#import "DateFormatter.h"
+#import "PlainEvent.h"
 
 @interface ReportListDataDisplayManager () <UITableViewDelegate>
 
@@ -65,7 +67,9 @@
     NSMutableArray *cellObjects = [NSMutableArray array];
 
     for (PlainEvent *event in self.events) {
-        ReportListTableViewCellObject *cellObject = [ReportListTableViewCellObject objectWithEvent:event];
+        NSString *eventDate = [self.dateFormatter obtainDateWithDayMonthYearFormat:event.startDate];
+        
+        ReportListTableViewCellObject *cellObject = [ReportListTableViewCellObject objectWithEvent:event andDate:eventDate];
         [cellObjects addObject:cellObject];
     }
     

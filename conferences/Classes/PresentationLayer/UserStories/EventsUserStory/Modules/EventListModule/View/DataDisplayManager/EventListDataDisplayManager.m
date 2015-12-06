@@ -12,13 +12,8 @@
 
 #import "EventListTableViewCellObject.h"
 #import "NearestEventTableViewCellObject.h"
-
 #import "PlainEvent.h"
-
-typedef NS_ENUM(NSUInteger, CellObjectID){
-    
-    NearestEventTableViewCellObjectID = 0
-};
+#import "DateFormatter.h"
 
 @interface EventListDataDisplayManager () <UITableViewDelegate>
 
@@ -73,15 +68,21 @@ typedef NS_ENUM(NSUInteger, CellObjectID){
     NSMutableArray *cellObjects = [NSMutableArray array];
 
     PlainEvent *nearestEvent = [self.events firstObject];
+    
+    NSString *eventDay = [self.dateFormatter obtainDateWithDayFormat:nearestEvent.startDate];
+    NSString *eventMonth = [self.dateFormatter obtainDateWithMonthFormat:nearestEvent.startDate];
         
-    NearestEventTableViewCellObject *nearestEventTableViewCellObject = [NearestEventTableViewCellObject objectWithElementID:NearestEventTableViewCellObjectID event:nearestEvent];
+    NearestEventTableViewCellObject *nearestEventTableViewCellObject = [NearestEventTableViewCellObject objectWithEvent:nearestEvent eventDay:eventDay eventMonth:eventMonth];
     [cellObjects addObject:nearestEventTableViewCellObject];
+    
+    for (PlainEvent *event in self.events) {
+        eventDay = [self.dateFormatter obtainDateWithDayFormat:event.startDate];
+        eventMonth = [self.dateFormatter obtainDateWithMonthFormat:event.startDate];
         
-    for (int i = 1; i < self.events.count; i++) {
-        EventListTableViewCellObject *cellObject = [EventListTableViewCellObject objectWithElementID:i event:self.events[i]];
-        [cellObjects addObject:cellObject];
+        EventListTableViewCellObject *eventListCellObject = [EventListTableViewCellObject objectWithEvent:event eventDay:eventDay eventMonth:eventMonth];
+        [cellObjects addObject:eventListCellObject];
     }
-        
+    
     NIMutableTableViewModel *tableViewModel = [[NIMutableTableViewModel alloc] initWithSectionedArray:cellObjects
                                                                       delegate:(id)[NICellFactory class]];
 

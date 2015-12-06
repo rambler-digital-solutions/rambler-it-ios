@@ -68,7 +68,11 @@ static NSString *const kTabbarButtonId = @"reports_tab";
 }
 
 - (ReportListDataDisplayManager *)dataDisplayManagerReportList {
-    return [TyphoonDefinition withClass:[ReportListDataDisplayManager class]];
+    return [TyphoonDefinition withClass:[ReportListDataDisplayManager class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(dateFormatter)
+                                                    with:[self.presentationLayerHelpersAssembly dateFormatter]];
+    }];
 }
 
 #pragma mark - TabBarButtonPrototypeProtocol

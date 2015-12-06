@@ -12,6 +12,7 @@
 #import "DataDisplayManager.h"
 
 @class PlainEvent;
+@class DateFormatter;
 
 @protocol ReportListDataDisplayManagerDelegate
 
@@ -23,6 +24,7 @@
 @interface ReportListDataDisplayManager : NSObject <DataDisplayManager>
 
 @property (weak, nonatomic) id <ReportListDataDisplayManagerDelegate> delegate;
+@property (strong, nonatomic) DateFormatter *dateFormatter;
 
 - (void)configureDataDisplayManagerWithEvents:(NSArray *)events;
 - (void)updateTableViewModelWithEvents:(NSArray *)events;

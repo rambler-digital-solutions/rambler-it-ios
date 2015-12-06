@@ -13,6 +13,7 @@
 #import "EventListRouter.h"
 #import "EventListDataDisplayManager.h"
 #import "ServiceComponents.h"
+#import "PresentationLayerHelpersAssembly.h"
 
 #import "TabBarButtonPrototype.h"
 
@@ -65,7 +66,11 @@ static NSString *const kTabbarButtonId = @"events_tab";
 }
 
 - (EventListDataDisplayManager *)dataDisplayManagerEventList {
-    return [TyphoonDefinition withClass:[EventListDataDisplayManager class]];
+    return [TyphoonDefinition withClass:[EventListDataDisplayManager class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(dateFormatter)
+                                                    with:[self.presentationLayerHelpersAssembly dateFormatter]];
+    }];
 }
 
 #pragma mark - TabBarButtonPrototypeProtocol
