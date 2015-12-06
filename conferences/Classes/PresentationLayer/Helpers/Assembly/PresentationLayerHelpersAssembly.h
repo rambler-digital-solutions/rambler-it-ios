@@ -9,6 +9,7 @@
 #import <Typhoon/Typhoon.h>
 
 @class EventTypeDeterminator;
+@class DateFormatter;
 
 /**
  @author Artem Karpushin
@@ -18,5 +19,6 @@
 @interface PresentationLayerHelpersAssembly : TyphoonAssembly
 
 - (EventTypeDeterminator *)eventTypeDeterminator;
+- (DateFormatter *)dateFormatter;
 
 @end
