@@ -130,6 +130,8 @@
 		63D628F91BE4CE09004AF98F /* RequestSignersAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5F731BC255AA00DC10DB /* RequestSignersAssembly.m */; };
 		63D628FA1BE4CE09004AF98F /* RequestConfiguratorsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C2D1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m */; };
 		63D86BD61C1313D000986536 /* EventPresenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D86BD51C1313D000986536 /* EventPresenterTests.m */; };
+		63D86BDA1C1439D800986536 /* DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D86BD91C1439D800986536 /* DateFormatter.m */; };
+		63D86BDD1C143FCE00986536 /* DateFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D86BDC1C143FCE00986536 /* DateFormatterTests.m */; };
 		63EF15BB1BC4559900480CAF /* PushNotificationCenterImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF15BA1BC4559900480CAF /* PushNotificationCenterImplementation.m */; };
 		63EF15C01BC461DD00480CAF /* PushNotificationServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF15BF1BC461DD00480CAF /* PushNotificationServiceImplementation.m */; };
 		63F402F01BCF77CB0086D030 /* ApplicationAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F402ED1BCF77CB0086D030 /* ApplicationAssemblyTests.m */; };
@@ -492,6 +494,9 @@
 		638DBD621BEE2C0100B4B208 /* EventInfoTableViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventInfoTableViewCellObject.h; sourceTree = "<group>"; };
 		638DBD631BEE2C0100B4B208 /* EventInfoTableViewCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventInfoTableViewCellObject.m; sourceTree = "<group>"; };
 		63D86BD51C1313D000986536 /* EventPresenterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventPresenterTests.m; sourceTree = "<group>"; };
+		63D86BD81C1439D800986536 /* DateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateFormatter.h; sourceTree = "<group>"; };
+		63D86BD91C1439D800986536 /* DateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateFormatter.m; sourceTree = "<group>"; };
+		63D86BDC1C143FCE00986536 /* DateFormatterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateFormatterTests.m; sourceTree = "<group>"; };
 		63EF15B81BC4557600480CAF /* PushNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNotificationCenter.h; sourceTree = "<group>"; };
 		63EF15B91BC4559900480CAF /* PushNotificationCenterImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNotificationCenterImplementation.h; sourceTree = "<group>"; };
 		63EF15BA1BC4559900480CAF /* PushNotificationCenterImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushNotificationCenterImplementation.m; sourceTree = "<group>"; };
@@ -1085,6 +1090,7 @@
 		631CBA901C021C3900E3EBA8 /* HelpersTests */ = {
 			isa = PBXGroup;
 			children = (
+				63D86BDB1C143FAE00986536 /* DateFormatterTests */,
 				631CBA911C021C3900E3EBA8 /* EventTypeDeterminatorTests */,
 			);
 			path = HelpersTests;
@@ -1790,6 +1796,23 @@
 			path = EventInfoTableViewCellObject;
 			sourceTree = "<group>";
 		};
+		63D86BD71C1439C300986536 /* DateFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				63D86BD81C1439D800986536 /* DateFormatter.h */,
+				63D86BD91C1439D800986536 /* DateFormatter.m */,
+			);
+			path = DateFormatter;
+			sourceTree = "<group>";
+		};
+		63D86BDB1C143FAE00986536 /* DateFormatterTests */ = {
+			isa = PBXGroup;
+			children = (
+				63D86BDC1C143FCE00986536 /* DateFormatterTests.m */,
+			);
+			path = DateFormatterTests;
+			sourceTree = "<group>";
+		};
 		63DD63911BE670A000874DE5 /* EventModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -2085,6 +2108,7 @@
 		63F8F27A1BF79090000017F3 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				63D86BD71C1439C300986536 /* DateFormatter */,
 				63F8F2B91BF8A713000017F3 /* EventTypeDeterminator */,
 				63F8F27C1BF790B4000017F3 /* Assembly */,
 			);
@@ -3791,6 +3815,7 @@
 				636B64101BBDD6260053E38F /* SpeakerServiceImplementation.m in Sources */,
 				636A37C51BC142BB00B49C3D /* ApplicationAssembly.m in Sources */,
 				63136FD41BDCDB2700994356 /* EmbedModuleTransitionSegueInfo.m in Sources */,
+				63D86BDA1C1439D800986536 /* DateFormatter.m in Sources */,
 				636F8DDE1BCB8FE800552B91 /* RamblerLocationViewController.m in Sources */,
 				9F8E5F941BC269EA00DC10DB /* OperationFactoriesAssembly.m in Sources */,
 				63F8F2A21BF7A4F5000017F3 /* FutureEventCellObjectBuilder.m in Sources */,
@@ -3949,6 +3974,7 @@
 				63D628F81BE4CE09004AF98F /* NetworkClientsAssembly.m in Sources */,
 				63D628F91BE4CE09004AF98F /* RequestSignersAssembly.m in Sources */,
 				631CBA741C020CCD00E3EBA8 /* EventModuleAssemblyTests.m in Sources */,
+				63D86BDD1C143FCE00986536 /* DateFormatterTests.m in Sources */,
 				631CBA991C021C3900E3EBA8 /* EventListInteractorTests.m in Sources */,
 				63F8F2F61BF9FE7D000017F3 /* RCFRESTRequestConfiguratorTests.m in Sources */,
 				63D628FA1BE4CE09004AF98F /* RequestConfiguratorsAssembly.m in Sources */,
