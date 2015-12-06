@@ -13,6 +13,7 @@
 @interface DateFormatterTests : XCTestCase
 
 @property (strong, nonatomic) DateFormatter *dateFormatter;
+@property (strong, nonatomic) NSDate *date;
 
 @end
 
@@ -22,23 +23,66 @@
     [super setUp];
 
     self.dateFormatter = [DateFormatter new];
+    
+    NSString *stringDate = @"2015-12-06 12:39:05";
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    self.date = [dateFormatter dateFromString:stringDate];
 }
 
 - (void)tearDown {
     self.dateFormatter = nil;
+    self.date = nil;
     
     [super tearDown];
 }
 
 - (void)testSuccessObtainDateWithDayMonthTimeFormat {
     // given
-    NSDate *date = [NSDate date];
+    NSString *expectedFormattedDateString = @"6 December в 12:39";
+    NSString *actualFormattedDateString = nil;
     
     // when
-    NSString *formattedDate = [self.dateFormatter obtainDateWithDayMonthTimeFormat:date];
-    NSLog(@"%@", formattedDate);
-    NSLog(@"");
+    actualFormattedDateString = [self.dateFormatter obtainDateWithDayMonthTimeFormat:self.date];
+
     // then
+    XCTAssertEqualObjects(expectedFormattedDateString, actualFormattedDateString);
+}
+
+- (void)testSuccessObtainDateWithDayMonthYearFormat {
+    // given
+    NSString *expectedFormattedDateString = @"6 December 2015";
+    NSString *actualFormattedDateString = nil;
+    
+    // when
+    actualFormattedDateString = [self.dateFormatter obtainDateWithDayMonthYearFormat:self.date];
+    
+    // then
+    XCTAssertEqualObjects(expectedFormattedDateString, actualFormattedDateString);
+}
+
+- (void)testSuccessObtainDateWithMonthFormat {
+    // given
+    NSString *expectedFormattedDateString = @"December";
+    NSString *actualFormattedDateString = nil;
+    
+    // when
+    actualFormattedDateString = [self.dateFormatter obtainDateWithMonthFormat:self.date];
+    
+    // then
+    XCTAssertEqualObjects(expectedFormattedDateString, actualFormattedDateString);
+}
+
+- (void)testSuccessObtainDateWithDayFormat {
+    // given
+    NSString *expectedFormattedDateString = @"6";
+    NSString *actualFormattedDateString = nil;
+    
+    // when
+    actualFormattedDateString = [self.dateFormatter obtainDateWithDayFormat:self.date];
+    
+    // then
+    XCTAssertEqualObjects(expectedFormattedDateString, actualFormattedDateString);
 }
 
 @end
