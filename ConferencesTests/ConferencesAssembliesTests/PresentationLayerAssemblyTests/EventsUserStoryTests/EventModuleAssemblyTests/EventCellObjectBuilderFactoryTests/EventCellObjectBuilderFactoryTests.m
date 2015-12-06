@@ -39,34 +39,40 @@
 - (void)testThatAssemblyCreatesCurrentEventCellObjectBuilder {
     // given
     Class targetClass = [CurrentEventCellObjectBuilder class];
-    
+    NSArray *dependincies = @[
+                              RamblerSelector(dateFormatter)
+                              ];
     // when
     id result = [self.factory currentEventCellObjectBuilder];
     
     // then
-    [self verifyTargetDependency:result withClass:targetClass];
+    [self verifyTargetDependency:result withClass:targetClass dependencies:dependincies];
 }
 
 - (void)testThatAssemblyCreatesFutureEventCellObjectBuilder {
     // given
     Class targetClass = [FutureEventCellObjectBuilder class];
-    
+    NSArray *dependincies = @[
+                              RamblerSelector(dateFormatter)
+                              ];
     // when
     id result = [self.factory futureEventCellObjectBuilder];
     
     // then
-    [self verifyTargetDependency:result withClass:targetClass];
+    [self verifyTargetDependency:result withClass:targetClass dependencies:dependincies];
 }
 
 - (void)testThatAssemblyCreatesPastEventCellObjectBuilder {
     // given
     Class targetClass = [PastEventCellObjectBuilder class];
-    
+    NSArray *dependincies = @[
+                              RamblerSelector(dateFormatter)
+                              ];
     // when
     id result = [self.factory pastEventCellObjectBuilder];
     
     // then
-    [self verifyTargetDependency:result withClass:targetClass];
+    [self verifyTargetDependency:result withClass:targetClass dependencies:dependincies];
 }
 
 @end

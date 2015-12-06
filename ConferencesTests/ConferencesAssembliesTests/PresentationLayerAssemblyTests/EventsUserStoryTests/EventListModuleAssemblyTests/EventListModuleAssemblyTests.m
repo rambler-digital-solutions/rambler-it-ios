@@ -19,6 +19,7 @@
 #import "EventListDataDisplayManager.h"
 #import "ServiceComponentsAssembly.h"
 #import "OperationFactoriesAssembly.h"
+#import "PresentationLayerHelpersAssembly.h"
 
 #import "TabBarButtonPrototype.h"
 
@@ -36,7 +37,8 @@
     self.assembly = [EventListModuleAssembly new];
     [self.assembly activateWithCollaboratingAssemblies:@[
                                                          [ServiceComponentsAssembly new],
-                                                         [OperationFactoriesAssembly new]
+                                                         [OperationFactoriesAssembly new],
+                                                         [PresentationLayerHelpersAssembly new]
                                                          ]];
 }
 
@@ -106,12 +108,14 @@
 - (void)testThatAssemblyCreatesDataDisplayManager {
     // given
     Class targetClass = [EventListDataDisplayManager class];
-
+    NSArray *dependencies = @[
+                              RamblerSelector(dateFormatter)
+                              ];
     // when
     id result = [self.assembly dataDisplayManagerEventList];
     
     // then
-    [self verifyTargetDependency:result withClass:targetClass];
+    [self verifyTargetDependency:result withClass:targetClass dependencies:dependencies];
 }
 
 - (void)testThatAssemblyCreatesEventListTabBarButtonPrototype {

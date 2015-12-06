@@ -7,15 +7,18 @@
 //
 
 #import <XCTest/XCTest.h>
+#import <OCMock/OCMock.h>
 
 #import "CurrentEventCellObjectBuilder.h"
 #import "EventInfoTableViewCellObject.h"
 #import "CurrentVideoTranslationTableViewCellObject.h"
 #import "PlainEvent.h"
+#import "DateFormatter.h"
 
 @interface CurrentEventCellObjectBuilderTests : XCTestCase
 
 @property (strong, nonatomic) CurrentEventCellObjectBuilder *cellObjectBuilder;
+@property (strong, nonatomic) DateFormatter *mockDateFormatter;
 
 @end
 
@@ -25,10 +28,14 @@
     [super setUp];
     
     self.cellObjectBuilder = [CurrentEventCellObjectBuilder new];
+    self.mockDateFormatter = OCMClassMock([DateFormatter class]);
+    
+    self.cellObjectBuilder.dateFormatter = self.mockDateFormatter;
 }
 
 - (void)tearDown {
     self.cellObjectBuilder = nil;
+    self.mockDateFormatter = nil;
 
     [super tearDown];
 }
@@ -40,7 +47,10 @@
     NSUInteger actualNumberOfEventInfoTableViewCellObjects = 0;
     NSUInteger actualNumberOfCurrentVideoTranslationTableViewCellObjects = 0;
     
+    NSDate *eventStartDate = [NSDate date];
+    
     PlainEvent *event = [PlainEvent new];
+    event.startDate = eventStartDate;
     
     // when
     NSArray *cellObjects = [self.cellObjectBuilder cellObjectsForEvent:event];
@@ -57,6 +67,7 @@
     // then
     XCTAssertEqual(expectedNumberOfEventInfoTableViewCellObjects, actualNumberOfEventInfoTableViewCellObjects);
     XCTAssertEqual(expectedNumberOfCurrentVideoTranslationTableViewCellObjects, actualNumberOfCurrentVideoTranslationTableViewCellObjects);
+    OCMVerify([self.mockDateFormatter obtainDateWithDayMonthTimeFormat:eventStartDate]);
 }
 
 @end

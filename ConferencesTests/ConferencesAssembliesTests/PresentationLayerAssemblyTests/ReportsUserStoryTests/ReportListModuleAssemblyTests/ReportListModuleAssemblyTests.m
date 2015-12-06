@@ -20,6 +20,7 @@
 #import "PresentationLayerHelpersAssembly.h"
 #import "ServiceComponentsAssembly.h"
 #import "OperationFactoriesAssembly.h"
+#import "PresentationLayerHelpersAssembly.h"
 
 #import "TabBarButtonPrototype.h"
 
@@ -37,7 +38,8 @@
     self.assembly = [ReportListModuleAssembly new];
     [self.assembly activateWithCollaboratingAssemblies:@[
                                                          [ServiceComponentsAssembly new],
-                                                         [OperationFactoriesAssembly new]
+                                                         [OperationFactoriesAssembly new],
+                                                         [PresentationLayerHelpersAssembly new]
                                                          ]];
 }
 
@@ -108,12 +110,15 @@
 - (void)testThatAssemblyCreatesDataDisplayManager {
     // given
     Class targetClass = [ReportListDataDisplayManager class];
+    NSArray *dependencies = @[
+                              RamblerSelector(dateFormatter)
+                              ];
     
     // when
     id result = [self.assembly dataDisplayManagerReportList];
     
     // then
-    [self verifyTargetDependency:result withClass:targetClass];
+    [self verifyTargetDependency:result withClass:targetClass dependencies:dependencies];
 }
 
 - (void)testThatAssemblyCreatesReportListTabBarButtonPrototype {

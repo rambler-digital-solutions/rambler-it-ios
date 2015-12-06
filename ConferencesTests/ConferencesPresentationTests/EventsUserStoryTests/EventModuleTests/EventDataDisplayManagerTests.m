@@ -11,9 +11,9 @@
 
 #import "EventDataDisplayManager.h"
 #import "EventCellObjectBuilderFactory.h"
-#import "CellObjectBuilderProtocol.h"
 #import "PlainEvent.h"
 #import "EventType.h"
+#import "EventCellObjectBuilderBase.h"
 
 @interface EventDataDisplayManagerTests : XCTestCase
 
@@ -39,7 +39,7 @@
     // given
     PlainEvent *event = [PlainEvent new];
     
-    id <CellObjectBuilderProtocol> mockCellObjectBuilder = OCMProtocolMock(@protocol(CellObjectBuilderProtocol));
+    EventCellObjectBuilderBase *mockCellObjectBuilder = OCMClassMock([EventCellObjectBuilderBase class]);
     EventCellObjectBuilderFactory *mockFactory = OCMClassMock([EventCellObjectBuilderFactory class]);
     OCMStub([mockFactory builderForEventType:OCMOCK_ANY]).andReturn(mockCellObjectBuilder);
     

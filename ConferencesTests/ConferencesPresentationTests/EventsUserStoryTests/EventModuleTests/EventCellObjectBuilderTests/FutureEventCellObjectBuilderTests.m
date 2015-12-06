@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import <OCMock/OCMock.h>
 
 #import "FutureEventCellObjectBuilder.h"
 #import "EventInfoTableViewCellObject.h"
@@ -15,10 +16,12 @@
 #import "LectureInfoTableViewCellObject.h"
 #import "PlainEvent.h"
 #import "PlainLecture.h"
+#import "DateFormatter.h"
 
 @interface FutureEventCellObjectBuilderTests : XCTestCase
 
 @property (strong, nonatomic) FutureEventCellObjectBuilder *cellObjectBuilder;
+@property (strong, nonatomic) DateFormatter *mockDateFormatter;
 
 @end
 
@@ -28,17 +31,24 @@
     [super setUp];
     
     self.cellObjectBuilder = [FutureEventCellObjectBuilder new];
+    self.mockDateFormatter = OCMClassMock([DateFormatter class]);
+    
+    self.cellObjectBuilder.dateFormatter = self.mockDateFormatter;
 }
 
 - (void)tearDown {
     self.cellObjectBuilder = nil;
+    self.mockDateFormatter = nil;
 
     [super tearDown];
 }
 
 - (void)testThatBuilderCreatesCorrectCellObjects {
     // given
+    NSDate *eventStartDate = [NSDate date];
+    
     PlainEvent *event = [PlainEvent new];
+    event.startDate = eventStartDate;
     event.lectures = @[
                        [PlainLecture new],
                        [PlainLecture new],
@@ -77,6 +87,7 @@
     XCTAssertEqual(expectedNumberOfSignUpAndSaveToCalendarEventTableViewCellObjects, actualNumberOfSignUpAndSaveToCalendarEventTableViewCellObjects);
     XCTAssertEqual(expectedNumberOfEventDescriptionTableViewCellObjects, actualNumberOfEventDescriptionTableViewCellObjects);
     XCTAssertEqual(expectedNumberOfLectureInfoTableViewCellObjects, actualNumberOfLectureInfoTableViewCellObjects);
+    OCMVerify([self.mockDateFormatter obtainDateWithDayMonthTimeFormat:eventStartDate]);
 }
 
 @end

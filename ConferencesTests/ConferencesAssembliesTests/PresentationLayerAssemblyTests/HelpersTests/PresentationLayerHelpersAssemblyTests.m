@@ -12,6 +12,7 @@
 #import "PresentationLayerHelpersAssembly.h"
 
 #import "EventTypeDeterminator.h"
+#import "DateFormatter.h"
 
 @interface PresentationLayerHelpersAssemblyTests : RamblerTyphoonAssemblyTests
 
@@ -34,12 +35,23 @@
     [super tearDown];
 }
 
-- (void)testThatAssemblyCreates {
+- (void)testThatAssemblyCreatesEventTypeDeterminator {
     // given
     Class targetClass = [EventTypeDeterminator class];
     
     // when
     id result = [self.assembly eventTypeDeterminator];
+    
+    // then
+    [self verifyTargetDependency:result withClass:targetClass];
+}
+
+- (void)testThatAssemblyCreatesDateFormatter {
+    // given
+    Class targetClass = [DateFormatter class];
+    
+    // when
+    id result = [self.assembly dateFormatter];
     
     // then
     [self verifyTargetDependency:result withClass:targetClass];

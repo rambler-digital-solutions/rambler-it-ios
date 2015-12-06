@@ -75,7 +75,8 @@
     NearestEventTableViewCellObject *nearestEventTableViewCellObject = [NearestEventTableViewCellObject objectWithEvent:nearestEvent eventDay:eventDay eventMonth:eventMonth];
     [cellObjects addObject:nearestEventTableViewCellObject];
     
-    for (PlainEvent *event in self.events) {
+    for (int i = 1; i < self.events.count; i++) {
+        PlainEvent *event = [self.events objectAtIndex:i];
         eventDay = [self.dateFormatter obtainDateWithDayFormat:event.startDate];
         eventMonth = [self.dateFormatter obtainDateWithMonthFormat:event.startDate];
         
