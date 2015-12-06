@@ -13,13 +13,16 @@
 #import "LectureInfoTableViewCellObject.h"
 #import "PlainEvent.h"
 #import "PlainLecture.h"
+#import "DateFormatter.h"
 
 @implementation FutureEventCellObjectBuilder
 
 - (NSArray *)cellObjectsForEvent:(PlainEvent *)event {
     NSMutableArray *cellObjects = [NSMutableArray array];
     
-    EventInfoTableViewCellObject *eventInfoCellObject = [EventInfoTableViewCellObject objectWithEvent:event];
+    NSString *formattedDate = [self.dateFormatter obtainDateWithDayMonthTimeFormat:event.startDate];
+    
+    EventInfoTableViewCellObject *eventInfoCellObject = [EventInfoTableViewCellObject objectWithEvent:event andDate:formattedDate];
     [cellObjects addObject:eventInfoCellObject];
     
     SignUpAndSaveToCalendarEventTableViewCellObject *signUpCellObject = [SignUpAndSaveToCalendarEventTableViewCellObject objectWithEvent:event];

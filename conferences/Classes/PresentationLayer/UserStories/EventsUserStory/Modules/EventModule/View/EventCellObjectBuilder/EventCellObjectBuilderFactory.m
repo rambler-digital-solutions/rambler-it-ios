@@ -36,6 +36,7 @@
 - (EventCellObjectBuilderBase *)eventCellObjectBuilderBase {
     return [TyphoonDefinition withClass:[EventCellObjectBuilderBase class]
                           configuration:^(TyphoonDefinition *definition) {
+                              definition.abstract = YES;
                               [definition injectProperty:@selector(dateFormatter)
                           with:[self.presentationLayerHelpersAssembly dateFormatter]];
     }];

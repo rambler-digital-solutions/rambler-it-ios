@@ -9,13 +9,17 @@
 #import "CurrentEventCellObjectBuilder.h"
 #import "EventInfoTableViewCellObject.h"
 #import "CurrentVideoTranslationTableViewCellObject.h"
+#import "DateFormatter.h"
+#import "PlainEvent.h"
 
 @implementation CurrentEventCellObjectBuilder
 
 - (NSArray *)cellObjectsForEvent:(PlainEvent *)event {
     NSMutableArray *cellObjects = [NSMutableArray array];
     
-    EventInfoTableViewCellObject *eventInfoCellObject = [EventInfoTableViewCellObject objectWithEvent:event];
+    NSString *formattedDate = [self.dateFormatter obtainDateWithDayMonthTimeFormat:event.startDate];
+    
+    EventInfoTableViewCellObject *eventInfoCellObject = [EventInfoTableViewCellObject objectWithEvent:event andDate:formattedDate];
     [cellObjects addObject:eventInfoCellObject];
     
     CurrentVideoTranslationTableViewCellObject *videoTranslationCellObject = [CurrentVideoTranslationTableViewCellObject objectWithEvent:event];
