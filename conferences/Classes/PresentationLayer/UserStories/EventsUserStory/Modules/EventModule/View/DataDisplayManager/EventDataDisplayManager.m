@@ -10,7 +10,7 @@
 
 #import <Nimbus/NimbusModels.h>
 
-#import "CellObjectBuilderProtocol.h"
+#import "EventCellObjectBuilderBase.h"
 #import "EventCellObjectBuilderFactory.h"
 #import "PlainEvent.h"
 
@@ -18,7 +18,7 @@
 
 @property (strong, nonatomic) NITableViewModel *tableViewModel;
 @property (strong, nonatomic) NITableViewActions *tableViewActions;
-@property (strong, nonatomic) id <CellObjectBuilderProtocol> cellObjectBuilder;
+@property (strong, nonatomic) EventCellObjectBuilderBase *cellObjectBuilder;
 @property (strong, nonatomic) NSArray *cellObjects;
 
 @end

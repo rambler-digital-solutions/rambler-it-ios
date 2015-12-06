@@ -10,10 +10,10 @@
 #import "EventType.h"
 
 @class PlainEvent;
-@protocol CellObjectBuilderProtocol;
+@class EventCellObjectBuilderBase;
 
 @interface EventCellObjectBuilderFactory : TyphoonAssembly
 
-- (id <CellObjectBuilderProtocol>)builderForEventType:(NSNumber *)eventType;
+- (EventCellObjectBuilderBase *)builderForEventType:(NSNumber *)eventType;
 
 @end

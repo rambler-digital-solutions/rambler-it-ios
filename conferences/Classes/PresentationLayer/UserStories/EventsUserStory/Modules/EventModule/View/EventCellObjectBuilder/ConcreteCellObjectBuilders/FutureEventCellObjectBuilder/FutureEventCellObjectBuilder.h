@@ -6,9 +6,8 @@
 //  Copyright © 2015 Rambler. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "CellObjectBuilderProtocol.h"
+#import "EventCellObjectBuilderBase.h"
 
-@interface FutureEventCellObjectBuilder : NSObject <CellObjectBuilderProtocol>
+@interface FutureEventCellObjectBuilder : EventCellObjectBuilderBase
 
 @end
