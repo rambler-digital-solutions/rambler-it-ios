@@ -11,7 +11,7 @@
 
 @class PlainEvent;
 
-@interface NearestEventTableViewCellObject : NIFormElement <NICellObject>
+@interface NearestEventTableViewCellObject : NSObject <NICellObject>
 
 @property (strong, nonatomic, readonly) UIImage *image;
 @property (strong, nonatomic, readonly) NSString *day;
@@ -20,6 +20,6 @@
 @property (strong, nonatomic, readonly) UIColor *backgroundColor;
 @property (strong, nonatomic, readonly) NSURL *imageUrl;
 
-+ (instancetype)objectWithElementID:(NSInteger)elementID event:(PlainEvent *)event;
++ (instancetype)objectWithEvent:(PlainEvent *)event eventDay:(NSString *)day eventMonth:(NSString *)month;
 
 @end

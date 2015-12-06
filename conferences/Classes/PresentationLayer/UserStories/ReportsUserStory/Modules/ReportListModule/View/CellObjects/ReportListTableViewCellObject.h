@@ -11,12 +11,12 @@
 
 @class PlainEvent;
 
-@interface ReportListTableViewCellObject : NIFormElement <NICellObject>
+@interface ReportListTableViewCellObject : NSObject <NICellObject>
 
 @property (strong, nonatomic, readonly) NSString *date;
 @property (strong, nonatomic, readonly) NSString *eventTitle;
 @property (strong, nonatomic, readonly) UIImage *eventImage;
 
-+ (instancetype)objectWithEvent:(PlainEvent *)event;
++ (instancetype)objectWithEvent:(PlainEvent *)event andDate:(NSString *)date;
 
 @end

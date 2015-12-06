@@ -22,22 +22,18 @@
 
 #pragma mark - Initialization
 
-- (instancetype)initWithEvent:(PlainEvent *)event {
+- (instancetype)initWithEvent:(PlainEvent *)event andDate:(NSString *)date {
     self = [super init];
     if (self) {
         _eventTitle = event.name;
         _eventImage = event.image;
-        
-        // вынести в форматтер
-        NSDateFormatter *dayDateFormatter = [NSDateFormatter new];
-        [dayDateFormatter setDateFormat:@"dd MMMM"];
-        _date = [dayDateFormatter stringFromDate:event.endDate];
+        _date = date;
     }
     return self;
 }
 
-+ (instancetype)objectWithEvent:(PlainEvent *)event {
-    return [[self alloc] initWithEvent:event];
++ (instancetype)objectWithEvent:(PlainEvent *)event andDate:(NSString *)date {
+    return [[self alloc] initWithEvent:event andDate:date];
 }
 
 #pragma mark - NICellObject methods

@@ -16,6 +16,6 @@
 @property (strong, nonatomic, readonly) NSString *eventTitle;
 @property (strong, nonatomic, readonly) NSString *eventSubTitle;
 
-+ (instancetype)objectWithEvent:(PlainEvent *)event;
++ (instancetype)objectWithEvent:(PlainEvent *)event andDate:(NSString *)date;
 
 @end

@@ -25,19 +25,11 @@
 
 #pragma mark - Initialization
 
-- (instancetype)initWithElementID:(NSInteger)elementID event:(PlainEvent *)event {
+- (instancetype)initWithEvent:(PlainEvent *)event eventDay:(NSString *)day eventMonth:(NSString *)month {
     self = [super init];
     if (self) {
-        self.elementID = elementID;
-        
-        // вынести в форматтер
-        NSDateFormatter *dayDateFormatter = [NSDateFormatter new];
-        [dayDateFormatter setDateFormat:@"dd"];
-        NSDateFormatter *monthDateFormatter = [NSDateFormatter new];
-        [monthDateFormatter setDateFormat:@"MMMM"];
-        
-        _day = [dayDateFormatter stringFromDate:event.startDate];
-        _month = [monthDateFormatter stringFromDate:event.startDate];
+        _day = day;
+        _month = month;
         _eventTitle = event.name;
         _image = event.image;
         _imageUrl = event.imageUrl;
@@ -46,8 +38,8 @@
     return self;
 }
 
-+ (instancetype)objectWithElementID:(NSInteger)elementID event:(PlainEvent *)event {
-    return [[self alloc] initWithElementID:elementID event:event];
++ (instancetype)objectWithEvent:(PlainEvent *)event eventDay:(NSString *)day eventMonth:(NSString *)month {
+    return [[self alloc] initWithEvent:event eventDay:day eventMonth:month];
 }
 
 #pragma mark - NICellObject methods
