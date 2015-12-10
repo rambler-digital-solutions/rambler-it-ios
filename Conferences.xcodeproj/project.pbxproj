@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		5A5668508B92FC833070BA13 /* libPods-ConferencesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E72B1E234365770B87BDC6D /* libPods-ConferencesTests.a */; };
+		6305103F1C19ED8200D7A653 /* EventHeaderModuleAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 6305102D1C19ED8200D7A653 /* EventHeaderModuleAssembly.m */; };
+		630510401C19ED8200D7A653 /* EventHeaderInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 630510301C19ED8200D7A653 /* EventHeaderInteractor.m */; };
+		630510411C19ED8200D7A653 /* EventHeaderPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 630510351C19ED8200D7A653 /* EventHeaderPresenter.m */; };
+		630510421C19ED8200D7A653 /* EventHeaderRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 630510381C19ED8200D7A653 /* EventHeaderRouter.m */; };
+		630510431C19ED8200D7A653 /* EventHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6305103C1C19ED8200D7A653 /* EventHeaderView.m */; };
 		63136F931BDCD8B600994356 /* EventListDataDisplayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136F921BDCD8B600994356 /* EventListDataDisplayManager.m */; };
 		63136FD31BDCDB2700994356 /* EmbedModuleSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136F971BDCDB2600994356 /* EmbedModuleSegue.m */; };
 		63136FD41BDCDB2700994356 /* EmbedModuleTransitionSegueInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136F991BDCDB2600994356 /* EmbedModuleTransitionSegueInfo.m */; };
@@ -282,6 +287,21 @@
 		559ED4EDBC100544852E4E6A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		5E72B1E234365770B87BDC6D /* libPods-ConferencesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ConferencesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FED76184BAB5478101AC945 /* Pods-ConferencesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConferencesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConferencesTests/Pods-ConferencesTests.release.xcconfig"; sourceTree = "<group>"; };
+		6305102C1C19ED8200D7A653 /* EventHeaderModuleAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventHeaderModuleAssembly.h; sourceTree = "<group>"; };
+		6305102D1C19ED8200D7A653 /* EventHeaderModuleAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventHeaderModuleAssembly.m; sourceTree = "<group>"; };
+		6305102F1C19ED8200D7A653 /* EventHeaderInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventHeaderInteractor.h; sourceTree = "<group>"; };
+		630510301C19ED8200D7A653 /* EventHeaderInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventHeaderInteractor.m; sourceTree = "<group>"; };
+		630510311C19ED8200D7A653 /* EventHeaderInteractorInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventHeaderInteractorInput.h; sourceTree = "<group>"; };
+		630510321C19ED8200D7A653 /* EventHeaderInteractorOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventHeaderInteractorOutput.h; sourceTree = "<group>"; };
+		630510341C19ED8200D7A653 /* EventHeaderPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventHeaderPresenter.h; sourceTree = "<group>"; };
+		630510351C19ED8200D7A653 /* EventHeaderPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventHeaderPresenter.m; sourceTree = "<group>"; };
+		630510371C19ED8200D7A653 /* EventHeaderRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventHeaderRouter.h; sourceTree = "<group>"; };
+		630510381C19ED8200D7A653 /* EventHeaderRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventHeaderRouter.m; sourceTree = "<group>"; };
+		630510391C19ED8200D7A653 /* EventHeaderRouterInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventHeaderRouterInput.h; sourceTree = "<group>"; };
+		6305103B1C19ED8200D7A653 /* EventHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventHeaderView.h; sourceTree = "<group>"; };
+		6305103C1C19ED8200D7A653 /* EventHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventHeaderView.m; sourceTree = "<group>"; };
+		6305103D1C19ED8200D7A653 /* EventHeaderViewInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventHeaderViewInput.h; sourceTree = "<group>"; };
+		6305103E1C19ED8200D7A653 /* EventHeaderViewOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventHeaderViewOutput.h; sourceTree = "<group>"; };
 		63136F911BDCD8B600994356 /* EventListDataDisplayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListDataDisplayManager.h; sourceTree = "<group>"; };
 		63136F921BDCD8B600994356 /* EventListDataDisplayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListDataDisplayManager.m; sourceTree = "<group>"; };
 		63136F961BDCDB2600994356 /* EmbedModuleSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmbedModuleSegue.h; sourceTree = "<group>"; };
@@ -801,6 +821,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		630510161C19EBF600D7A653 /* EventHeaderModule */ = {
+			isa = PBXGroup;
+			children = (
+				6305102B1C19ED8200D7A653 /* Assembly */,
+				6305102E1C19ED8200D7A653 /* Interactor */,
+				630510331C19ED8200D7A653 /* Presenter */,
+				630510361C19ED8200D7A653 /* Router */,
+				6305103A1C19ED8200D7A653 /* View */,
+			);
+			path = EventHeaderModule;
+			sourceTree = "<group>";
+		};
+		6305102B1C19ED8200D7A653 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				6305102C1C19ED8200D7A653 /* EventHeaderModuleAssembly.h */,
+				6305102D1C19ED8200D7A653 /* EventHeaderModuleAssembly.m */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		6305102E1C19ED8200D7A653 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				6305102F1C19ED8200D7A653 /* EventHeaderInteractor.h */,
+				630510301C19ED8200D7A653 /* EventHeaderInteractor.m */,
+				630510311C19ED8200D7A653 /* EventHeaderInteractorInput.h */,
+				630510321C19ED8200D7A653 /* EventHeaderInteractorOutput.h */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		630510331C19ED8200D7A653 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				630510341C19ED8200D7A653 /* EventHeaderPresenter.h */,
+				630510351C19ED8200D7A653 /* EventHeaderPresenter.m */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		630510361C19ED8200D7A653 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				630510371C19ED8200D7A653 /* EventHeaderRouter.h */,
+				630510381C19ED8200D7A653 /* EventHeaderRouter.m */,
+				630510391C19ED8200D7A653 /* EventHeaderRouterInput.h */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		6305103A1C19ED8200D7A653 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6305103B1C19ED8200D7A653 /* EventHeaderView.h */,
+				6305103C1C19ED8200D7A653 /* EventHeaderView.m */,
+				6305103D1C19ED8200D7A653 /* EventHeaderViewInput.h */,
+				6305103E1C19ED8200D7A653 /* EventHeaderViewOutput.h */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		63136F901BDCD87C00994356 /* DataDisplayManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -1647,6 +1729,7 @@
 		636F8DE01BCB90E500552B91 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				630510161C19EBF600D7A653 /* EventHeaderModule */,
 				636F8DE11BCB90E500552B91 /* EventListModule */,
 				63DD63911BE670A000874DE5 /* EventModule */,
 			);
@@ -3974,6 +4057,7 @@
 				631FFE191BEF451400749DB8 /* CDResponderTableViewCell.m in Sources */,
 				9F1830931BC02293000E21A5 /* RESTRequestConfigurator.m in Sources */,
 				63D86BE11C14490000986536 /* EventCellObjectBuilderBase.m in Sources */,
+				630510401C19ED8200D7A653 /* EventHeaderInteractor.m in Sources */,
 				63FD4E0B1BE621750046378E /* Event+CoreDataProperties.m in Sources */,
 				636F8DDA1BCB8FE800552B91 /* RamblerLocationModuleAssembly.m in Sources */,
 				9F1830A71BC032CF000E21A5 /* ParseRequestSigner.m in Sources */,
@@ -4003,6 +4087,7 @@
 				636B64041BBDD19A0053E38F /* LectureServiceImplementation.m in Sources */,
 				63FD4E0C1BE621750046378E /* Event.m in Sources */,
 				631FFE631BEFA07300749DB8 /* ReportListTableViewCell.m in Sources */,
+				630510431C19ED8200D7A653 /* EventHeaderView.m in Sources */,
 				63D86BE81C14572C00986536 /* EventListTableViewCellObject.m in Sources */,
 				638DBCFD1BEA385400B4B208 /* EventModuleAssembly.m in Sources */,
 				63F54D9B1BC5AB3C00DB1746 /* ServiceComponentsAssembly.m in Sources */,
@@ -4013,6 +4098,7 @@
 				636F8C971BC97B3100552B91 /* EventServiceImplementation.m in Sources */,
 				63136FE11BDCDB2700994356 /* TabBarButtonCell.m in Sources */,
 				636F8CB71BC97E7F00552B91 /* LectureMaterials+CoreDataProperties.m in Sources */,
+				630510411C19ED8200D7A653 /* EventHeaderPresenter.m in Sources */,
 				636F8DDC1BCB8FE800552B91 /* RamblerLocationPresenter.m in Sources */,
 				9F8E5F841BC25A0700DC10DB /* ResponseMappersAssembly.m in Sources */,
 				63136FD91BDCDB2700994356 /* TabBarInteractor.m in Sources */,
@@ -4057,6 +4143,7 @@
 				9F0A84F91BC1698B006F79FB /* AsyncOperation.m in Sources */,
 				638DBD641BEE2C0100B4B208 /* EventInfoTableViewCellObject.m in Sources */,
 				9F0A85321BC18906006F79FB /* EventQuery.m in Sources */,
+				630510421C19ED8200D7A653 /* EventHeaderRouter.m in Sources */,
 				63FD4E061BE5038D0046378E /* UIColor+Hex.m in Sources */,
 				9F0A84FF1BC1698B006F79FB /* RequestSigningOperation.m in Sources */,
 				63F8F2B71BF87E2F000017F3 /* Lecture.m in Sources */,
@@ -4071,6 +4158,7 @@
 				63F8F2A31BF7A4F5000017F3 /* PastEventCellObjectBuilder.m in Sources */,
 				63EF15BB1BC4559900480CAF /* PushNotificationCenterImplementation.m in Sources */,
 				636F8DDB1BCB8FE800552B91 /* RamblerLocationInteractor.m in Sources */,
+				6305103F1C19ED8200D7A653 /* EventHeaderModuleAssembly.m in Sources */,
 				63136F931BDCD8B600994356 /* EventListDataDisplayManager.m in Sources */,
 				63136FDA1BDCDB2700994356 /* TabBarPresenter.m in Sources */,
 				63F8F23E1BF66743000017F3 /* EventPresenterStateStorage.m in Sources */,
