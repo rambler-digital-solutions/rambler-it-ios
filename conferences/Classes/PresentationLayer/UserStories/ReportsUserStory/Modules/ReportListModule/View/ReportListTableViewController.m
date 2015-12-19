@@ -29,9 +29,17 @@
 
 @implementation ReportListTableViewController
 
+#pragma mark - Lifecycle
+
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	[self.output setupView];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+    [[UIScrollView appearance] setBackgroundColor:[UIColor whiteColor]];
 }
 
 #pragma mark - ReportListViewInput

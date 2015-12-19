@@ -22,8 +22,11 @@
 #import "EventListViewOutput.h"
 #import "DataDisplayManager.h"
 #import "EventListDataDisplayManager.h"
+#import "PlainEvent.h"
 
 @interface EventListTableViewController() <EventLIstDataDisplayManagerDelegate>
+
+@property (strong, nonatomic) UIColor *viewBackgroundColor;
 
 @end
 
@@ -36,10 +39,16 @@
 	[self.output setupView];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self setScrollViewColor];
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+}
+
 #pragma mark - EventListViewInput
 
 - (void)setupViewWithEventList:(NSArray *)events {
-    [self.dataDisplayManager updateTableViewModelWithEvents:events];
+    [self updateViewWithEventList:events];
     self.dataDisplayManager.delegate = self;
     
     self.tableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.tableView];
@@ -47,6 +56,12 @@
 }
 
 - (void)updateViewWithEventList:(NSArray *)events {
+    PlainEvent *event = [events firstObject];
+    self.viewBackgroundColor = event.backgroundColor;
+    
+    [self configureNavigationBarWithColor];
+    [self setScrollViewColor];
+    
     [self.dataDisplayManager updateTableViewModelWithEvents:events];
 }
 
@@ -59,6 +74,19 @@
 
 - (void)didTapCellWithEvent:(PlainEvent *)event {
     [self.output didTriggerTapCellWithEvent:event];
+}
+
+#pragma mark - Private methods
+
+- (void)configureNavigationBarWithColor {
+    [self.navigationController.navigationBar setBarTintColor:self.viewBackgroundColor];
+    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+    [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc]init]
+                                                  forBarMetrics:UIBarMetricsDefault];
+}
+
+- (void)setScrollViewColor {
+    [[UIScrollView appearance] setBackgroundColor:self.viewBackgroundColor];
 }
 
 @end

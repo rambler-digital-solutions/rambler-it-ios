@@ -43,6 +43,11 @@
 	[self.output setupView];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+}
+
 #pragma mark - EventViewInput
 
 - (void)configureViewWithEvent:(PlainEvent *)event {
