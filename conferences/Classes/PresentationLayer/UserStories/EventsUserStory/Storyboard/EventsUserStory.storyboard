@@ -43,9 +43,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Событие, выступление или докладчик" id="hNv-gR-rcy">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="gEd-9g-HPd" id="lik-eJ-7CY"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="ujQ-SR-y1C">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="72" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ujQ-SR-y1C" id="LQl-Mc-jcl">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
@@ -61,8 +69,20 @@
                             <outlet property="delegate" destination="gEd-9g-HPd" id="YSJ-ZM-ani"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="mca-6u-5td" id="tgD-QD-U6v"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mYS-6U-5r4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="mca-6u-5td">
+                    <connections>
+                        <outlet property="delegate" destination="gEd-9g-HPd" id="ixy-YO-I7p"/>
+                        <outlet property="searchBar" destination="hNv-gR-rcy" id="BUs-Iz-005"/>
+                        <outlet property="searchContentsController" destination="gEd-9g-HPd" id="o9z-MO-eF6"/>
+                        <outlet property="searchResultsDataSource" destination="gEd-9g-HPd" id="qW9-tH-qfp"/>
+                        <outlet property="searchResultsDelegate" destination="gEd-9g-HPd" id="f2P-dp-8St"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="656" y="896"/>
         </scene>
