@@ -40,6 +40,7 @@
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     [[UIScrollView appearance] setBackgroundColor:[UIColor whiteColor]];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 #pragma mark - ReportListViewInput

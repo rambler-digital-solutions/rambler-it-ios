@@ -946,8 +946,8 @@
 		63136FE71BDCE67600994356 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				632887AC1BDFE0AB00701AF0 /* FutureEventTableViewCell */,
-				632887AD1BDFE0AB00701AF0 /* PastEventTableViewCell */,
+				632887AC1BDFE0AB00701AF0 /* NearestEventTableViewCell */,
+				632887AD1BDFE0AB00701AF0 /* EventListTableViewCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1279,23 +1279,25 @@
 			path = DataDisplayManager;
 			sourceTree = "<group>";
 		};
-		632887AC1BDFE0AB00701AF0 /* FutureEventTableViewCell */ = {
+		632887AC1BDFE0AB00701AF0 /* NearestEventTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
 				632887B31BDFE16200701AF0 /* NearestEventTableViewCell.h */,
 				632887B41BDFE16200701AF0 /* NearestEventTableViewCell.m */,
 				632887B51BDFE16200701AF0 /* NearestEventTableViewCell.xib */,
 			);
+			name = NearestEventTableViewCell;
 			path = FutureEventTableViewCell;
 			sourceTree = "<group>";
 		};
-		632887AD1BDFE0AB00701AF0 /* PastEventTableViewCell */ = {
+		632887AD1BDFE0AB00701AF0 /* EventListTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
 				632887AE1BDFE0AB00701AF0 /* EventListTableViewCell.h */,
 				632887AF1BDFE0AB00701AF0 /* EventListTableViewCell.m */,
 				632887B01BDFE0AB00701AF0 /* EventListTableViewCell.xib */,
 			);
+			name = EventListTableViewCell;
 			path = PastEventTableViewCell;
 			sourceTree = "<group>";
 		};
