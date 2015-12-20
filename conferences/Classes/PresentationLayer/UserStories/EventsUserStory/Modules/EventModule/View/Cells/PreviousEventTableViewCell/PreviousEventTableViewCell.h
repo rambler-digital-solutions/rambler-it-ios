@@ -18,29 +18,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "PreviousEventSectionHeaderTableViewCell.h"
-#import "PreviousEventSectionHeaderTableViewCellObject.h"
+#import <UIKit/UIKit.h>
+#import <NICellFactory.h>
 
-static CGFloat const kPreviousEventSectionHeaderTableViewCellHeight = 51.0f;
-
-@interface PreviousEventSectionHeaderTableViewCell ()
-
-@property (weak, nonatomic) IBOutlet UIView *contentView;
-
-@end
-
-@implementation PreviousEventSectionHeaderTableViewCell
-
-#pragma mark - NICell methods
-
-- (BOOL)shouldUpdateCellWithObject:(PreviousEventSectionHeaderTableViewCellObject *)object {
-    self.contentView.backgroundColor = object.contentViewColor;
-    
-    return YES;
-}
-
-+ (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
-    return kPreviousEventSectionHeaderTableViewCellHeight;
-}
+@interface PreviousEventTableViewCell : UITableViewCell <NICell>
 
 @end

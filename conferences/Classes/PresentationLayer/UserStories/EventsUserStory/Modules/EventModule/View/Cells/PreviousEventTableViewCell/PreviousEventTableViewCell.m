@@ -18,29 +18,35 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "PreviousEventSectionHeaderTableViewCell.h"
-#import "PreviousEventSectionHeaderTableViewCellObject.h"
+#import "PreviousEventTableViewCell.h"
+#import "PreviousEventTableViewCellObject.h"
 
-static CGFloat const kPreviousEventSectionHeaderTableViewCellHeight = 51.0f;
+static CGFloat const kPreviousEventTableViewCellHeight = 106.0f;
 
-@interface PreviousEventSectionHeaderTableViewCell ()
+@interface PreviousEventTableViewCell ()
 
-@property (weak, nonatomic) IBOutlet UIView *contentView;
+@property (weak, nonatomic) IBOutlet UIImageView *eventImageView;
+@property (weak, nonatomic) IBOutlet UILabel *dateTextLabel;
+@property (weak, nonatomic) IBOutlet UILabel *titleTextLabel;
+@property (weak, nonatomic) IBOutlet UIView *eventContentView;
 
 @end
 
-@implementation PreviousEventSectionHeaderTableViewCell
+@implementation PreviousEventTableViewCell
 
 #pragma mark - NICell methods
 
-- (BOOL)shouldUpdateCellWithObject:(PreviousEventSectionHeaderTableViewCellObject *)object {
-    self.contentView.backgroundColor = object.contentViewColor;
+- (BOOL)shouldUpdateCellWithObject:(PreviousEventTableViewCellObject *)object {
+    self.eventImageView.image = [UIImage imageNamed:@"logo-js"];
+    self.dateTextLabel.text = object.date;
+    self.titleTextLabel.text = object.title;
+    self.eventContentView.backgroundColor = object.backgroundColor;
     
     return YES;
 }
 
 + (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
-    return kPreviousEventSectionHeaderTableViewCellHeight;
+    return kPreviousEventTableViewCellHeight;
 }
 
 @end

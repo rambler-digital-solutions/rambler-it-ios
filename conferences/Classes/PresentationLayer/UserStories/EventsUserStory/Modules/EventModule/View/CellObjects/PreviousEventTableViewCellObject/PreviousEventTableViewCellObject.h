@@ -18,29 +18,17 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "PreviousEventSectionHeaderTableViewCell.h"
-#import "PreviousEventSectionHeaderTableViewCellObject.h"
+#import <Foundation/Foundation.h>
+#import <Nimbus/NimbusModels.h>
 
-static CGFloat const kPreviousEventSectionHeaderTableViewCellHeight = 51.0f;
+@class PlainEvent;
 
-@interface PreviousEventSectionHeaderTableViewCell ()
+@interface PreviousEventTableViewCellObject : NSObject <NICellObject>
 
-@property (weak, nonatomic) IBOutlet UIView *contentView;
+@property (strong, nonatomic, readonly) NSString *date;
+@property (strong, nonatomic, readonly) NSString *title;
+@property (strong, nonatomic, readonly) UIColor *backgroundColor;
 
-@end
-
-@implementation PreviousEventSectionHeaderTableViewCell
-
-#pragma mark - NICell methods
-
-- (BOOL)shouldUpdateCellWithObject:(PreviousEventSectionHeaderTableViewCellObject *)object {
-    self.contentView.backgroundColor = object.contentViewColor;
-    
-    return YES;
-}
-
-+ (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
-    return kPreviousEventSectionHeaderTableViewCellHeight;
-}
++ (instancetype)objectWithEvent:(PlainEvent *)event andDate:(NSString *)date;
 
 @end

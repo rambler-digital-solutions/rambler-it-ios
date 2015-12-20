@@ -18,29 +18,44 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "PreviousEventSectionHeaderTableViewCell.h"
-#import "PreviousEventSectionHeaderTableViewCellObject.h"
+#import "PreviousEventTableViewCellObject.h"
+#import "PreviousEventTableViewCell.h"
+#import "PlainEvent.h"
 
-static CGFloat const kPreviousEventSectionHeaderTableViewCellHeight = 51.0f;
+@interface PreviousEventTableViewCellObject ()
 
-@interface PreviousEventSectionHeaderTableViewCell ()
-
-@property (weak, nonatomic) IBOutlet UIView *contentView;
+@property (strong, nonatomic, readwrite) NSString *date;
+@property (strong, nonatomic, readwrite) NSString *title;
+@property (strong, nonatomic, readwrite) UIColor *backgroundColor;
 
 @end
 
-@implementation PreviousEventSectionHeaderTableViewCell
+@implementation PreviousEventTableViewCellObject
 
-#pragma mark - NICell methods
+#pragma mark - Initialization
 
-- (BOOL)shouldUpdateCellWithObject:(PreviousEventSectionHeaderTableViewCellObject *)object {
-    self.contentView.backgroundColor = object.contentViewColor;
-    
-    return YES;
+- (instancetype)initWithEvent:(PlainEvent *)event andDate:(NSString *)date {
+    self = [super init];
+    if (self) {
+        _date = date;
+        _title = event.name;
+        _backgroundColor = event.backgroundColor;
+    }
+    return self;
 }
 
-+ (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
-    return kPreviousEventSectionHeaderTableViewCellHeight;
++ (instancetype)objectWithEvent:(PlainEvent *)event andDate:(NSString *)date {
+    return [[self alloc] initWithEvent:event andDate:date];
+}
+
+#pragma mark - NICellObject methods
+
+- (Class)cellClass {
+    return [PreviousEventTableViewCell class];
+}
+
+- (UINib *)cellNib {
+    return [UINib nibWithNibName:NSStringFromClass([PreviousEventTableViewCell class]) bundle:[NSBundle mainBundle]];
 }
 
 @end
