@@ -23,6 +23,7 @@
 #import "EventDataDisplayManager.h"
 #import "DataDisplayManager.h"
 #import "EventTableViewCellActionProtocol.h"
+#import "PlainEvent.h"
 
 #import <CrutchKit/Proxying/Extensions/UIViewController+CDObserver/UIViewController+CDObserver.h>
 
@@ -51,6 +52,9 @@
 #pragma mark - EventViewInput
 
 - (void)configureViewWithEvent:(PlainEvent *)event {
+    [self configureNavigationBarWithColor:event.backgroundColor];
+    [self setScrollViewColor:event.backgroundColor];
+    
     [self.dataDisplayManager configureDataDisplayManagerWithEvent:event];
     
     self.tableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.tableView];
@@ -77,6 +81,19 @@
 
 - (void)didTapCurrentTranslationButton:(UIButton *)button {
     [self.output didTriggerCurrentTranslationButtonTapEvent];
+}
+
+#pragma mark - Private methods
+
+- (void)configureNavigationBarWithColor:(UIColor *)color {
+    [self.navigationController.navigationBar setBarTintColor:color];
+    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+    [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc]init]
+                                                  forBarMetrics:UIBarMetricsDefault];
+}
+
+- (void)setScrollViewColor:(UIColor *)color {
+    [[UIScrollView appearance] setBackgroundColor:color];
 }
 
 @end

@@ -42,7 +42,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self setScrollViewColor];
-    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
 }
 
 #pragma mark - EventListViewInput
@@ -58,8 +58,6 @@
 - (void)updateViewWithEventList:(NSArray *)events {
     PlainEvent *event = [events firstObject];
     self.viewBackgroundColor = event.backgroundColor;
-    
-    [self configureNavigationBarWithColor];
     [self setScrollViewColor];
     
     [self.dataDisplayManager updateTableViewModelWithEvents:events];
@@ -77,13 +75,6 @@
 }
 
 #pragma mark - Private methods
-
-- (void)configureNavigationBarWithColor {
-    [self.navigationController.navigationBar setBarTintColor:self.viewBackgroundColor];
-    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
-    [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc]init]
-                                                  forBarMetrics:UIBarMetricsDefault];
-}
 
 - (void)setScrollViewColor {
     [[UIScrollView appearance] setBackgroundColor:self.viewBackgroundColor];

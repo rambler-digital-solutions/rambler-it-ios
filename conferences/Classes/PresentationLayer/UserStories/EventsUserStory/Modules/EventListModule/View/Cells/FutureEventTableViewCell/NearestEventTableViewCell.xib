@@ -15,7 +15,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i1C-Q9-lxO">
-                        <rect key="frame" x="81" y="46" width="217" height="217"/>
+                        <rect key="frame" x="81" y="90" width="217" height="217"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="217" id="Wpf-be-NOi"/>
                             <constraint firstAttribute="height" constant="217" id="mxr-Ut-ujt"/>
@@ -53,7 +53,7 @@
                 </subviews>
                 <color key="backgroundColor" red="0.9115644097328186" green="0.81660324335098267" blue="0.95281177759170532" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
-                    <constraint firstItem="i1C-Q9-lxO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="46" id="Aer-Wp-sXx"/>
+                    <constraint firstItem="i1C-Q9-lxO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="90" id="Aer-Wp-sXx"/>
                     <constraint firstItem="CMT-vM-TjU" firstAttribute="top" secondItem="0gY-yS-Ff0" secondAttribute="bottom" constant="20" id="LIg-eF-oNT"/>
                     <constraint firstAttribute="bottom" secondItem="CMT-vM-TjU" secondAttribute="bottom" constant="24" id="O6v-G1-aAD"/>
                     <constraint firstItem="0gY-yS-Ff0" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Pan-vn-GKK"/>
