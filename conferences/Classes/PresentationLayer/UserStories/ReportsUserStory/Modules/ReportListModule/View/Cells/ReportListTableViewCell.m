@@ -21,7 +21,7 @@
 #import "ReportListTableViewCell.h"
 #import "ReportListTableViewCellObject.h"
 
-static CGFloat const kReportListTableViewCellHeight = 96.0f;
+static CGFloat const kReportListTableViewCellHeight = 116.0f;
 
 @interface ReportListTableViewCell ()
 
