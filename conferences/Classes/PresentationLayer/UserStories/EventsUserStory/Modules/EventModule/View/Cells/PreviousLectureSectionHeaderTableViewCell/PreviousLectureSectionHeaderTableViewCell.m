@@ -21,13 +21,21 @@
 #import "PreviousLectureSectionHeaderTableViewCell.h"
 #import "PreviousLectureSectionHeaderTableViewCellObject.h"
 
-static CGFloat const kPreviousLectureSectionHeaderTableViewCellHeight = 65.0f;
+static CGFloat const kPreviousLectureSectionHeaderTableViewCellHeight = 80.0f;
+
+@interface PreviousLectureSectionHeaderTableViewCell ()
+
+@property (weak, nonatomic) IBOutlet UIView *headerContentView;
+
+@end
 
 @implementation PreviousLectureSectionHeaderTableViewCell
 
 #pragma mark - NICell methods
 
 - (BOOL)shouldUpdateCellWithObject:(PreviousLectureSectionHeaderTableViewCellObject *)object {
+    self.headerContentView.backgroundColor = object.contentViewColor;
+    
     return YES;
 }
 

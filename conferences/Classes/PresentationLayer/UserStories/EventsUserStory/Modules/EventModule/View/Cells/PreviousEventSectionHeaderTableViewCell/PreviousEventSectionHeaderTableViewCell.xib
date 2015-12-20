@@ -15,8 +15,8 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Как это бывало" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xC0-yW-gQr">
-                        <rect key="frame" x="30" y="17" width="260" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="19" y="17" width="271" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -25,7 +25,7 @@
                 <constraints>
                     <constraint firstAttribute="bottomMargin" secondItem="xC0-yW-gQr" secondAttribute="bottom" constant="4.5" id="OQE-IZ-stp"/>
                     <constraint firstAttribute="trailingMargin" secondItem="xC0-yW-gQr" secondAttribute="trailing" constant="22" id="kMa-R5-VAg"/>
-                    <constraint firstItem="xC0-yW-gQr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="22" id="ocS-ao-vTL"/>
+                    <constraint firstItem="xC0-yW-gQr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="11" id="ocS-ao-vTL"/>
                     <constraint firstItem="xC0-yW-gQr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="9" id="v8H-a4-M9x"/>
                 </constraints>
             </tableViewCellContentView>

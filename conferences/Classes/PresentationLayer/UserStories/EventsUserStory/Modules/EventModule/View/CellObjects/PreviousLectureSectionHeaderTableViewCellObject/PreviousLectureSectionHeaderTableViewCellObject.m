@@ -21,7 +21,27 @@
 #import "PreviousLectureSectionHeaderTableViewCellObject.h"
 #import "PreviousLectureSectionHeaderTableViewCell.h"
 
+@interface PreviousLectureSectionHeaderTableViewCellObject ()
+
+@property (strong, nonatomic, readwrite) UIColor *contentViewColor;
+
+@end
+
 @implementation PreviousLectureSectionHeaderTableViewCellObject
+
+#pragma mark - Initialization
+
+- (instancetype)initWithEvent:(PlainEvent *)event {
+    self = [super init];
+    if (self) {
+        _contentViewColor = event.backgroundColor;
+    }
+    return self;
+}
+
++ (instancetype)objectWithEvent:(PlainEvent *)event {
+    return [[self alloc] initWithEvent:event];
+}
 
 #pragma mark - NICellObject methods
 
