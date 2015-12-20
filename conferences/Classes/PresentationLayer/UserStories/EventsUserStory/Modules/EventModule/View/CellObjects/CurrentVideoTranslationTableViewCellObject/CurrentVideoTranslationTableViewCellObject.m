@@ -20,10 +20,11 @@
 
 #import "CurrentVideoTranslationTableViewCellObject.h"
 #import "CurrentVideoTranslationTableViewCell.h"
+#import "PlainEvent.h"
 
 @interface CurrentVideoTranslationTableViewCellObject ()
 
-@property (strong, nonatomic, readwrite) UIColor *buttonColol;
+@property (strong, nonatomic, readwrite) UIColor *buttonColor;
 
 @end
 
@@ -34,7 +35,7 @@
 - (instancetype)initWithEvent:(PlainEvent *)event {
     self = [super init];
     if (self) {
-        // set button color
+        self.buttonColor = event.backgroundColor;
     }
     return self;
 }

@@ -28,6 +28,8 @@ static CGFloat const kCurrentVideoTranslationTableViewCellHeight = 60.0f;
 
 @interface CurrentVideoTranslationTableViewCell ()
 
+@property (weak, nonatomic) IBOutlet UIButton *currentTranslationButton;
+
 @property (weak, nonatomic) id <CurrentVideoTranslationTableViewCellActionProtocol> actionProxy;
 
 @end
@@ -42,6 +44,8 @@ static CGFloat const kCurrentVideoTranslationTableViewCellHeight = 60.0f;
 #pragma mark - NICell methods
 
 - (BOOL)shouldUpdateCellWithObject:(CurrentVideoTranslationTableViewCellObject *)object {
+    self.currentTranslationButton.backgroundColor = object.buttonColor;
+    
     return YES;
 }
 
