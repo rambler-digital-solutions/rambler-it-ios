@@ -29,9 +29,6 @@
 
 @interface EventViewController() <EventTableViewCellActionProtocol>
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topSpaceToTableViewConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewToHeaderConstraint;
-
 @end
 
 @implementation EventViewController
@@ -89,7 +86,7 @@
 - (void)configureNavigationBarWithColor:(UIColor *)color {
     [self.navigationController.navigationBar setBarTintColor:color];
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
-    [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc]init]
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
                                                   forBarMetrics:UIBarMetricsDefault];
 }
 
