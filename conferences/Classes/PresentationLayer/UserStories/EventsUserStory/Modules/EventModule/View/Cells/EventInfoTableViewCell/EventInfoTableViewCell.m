@@ -21,7 +21,7 @@
 #import "EventInfoTableViewCell.h"
 #import "EventInfoTableViewCellObject.h"
 
-static CGFloat const EventInfoTableViewCellHeight = 150.0f;
+static CGFloat const EventInfoTableViewCellHeight = 200.0f;
 
 @interface EventInfoTableViewCell ()
 

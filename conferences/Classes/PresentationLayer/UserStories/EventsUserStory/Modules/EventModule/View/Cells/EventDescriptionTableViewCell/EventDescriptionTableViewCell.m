@@ -45,6 +45,7 @@ static CGFloat const kEventDescriptionTableViewCellHeight = 190.0f;
 
 - (BOOL)shouldUpdateCellWithObject:(EventDescriptionTableViewCellObject *)object {
     self.eventDescription.text = object.eventDescription;
+    [self.eventDescription setBackgroundColor:[UIColor whiteColor]];
     
     return YES;
 }

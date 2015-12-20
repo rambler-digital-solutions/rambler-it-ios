@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -15,25 +15,27 @@
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RuK-m0-VwL">
                         <rect key="frame" x="20" y="10" width="280" height="40"/>
-                        <animations/>
                         <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="EIi-CZ-g9f"/>
                         </constraints>
-                        <state key="normal" title="Прямая трансляция"/>
+                        <state key="normal" title="Прямая трансляция">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
                         <connections>
                             <action selector="didTapCurrentTranslationButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="9gT-pK-TJq"/>
                         </connections>
                     </button>
                 </subviews>
-                <animations/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="RuK-m0-VwL" secondAttribute="trailing" constant="20" id="aKN-69-UQK"/>
                     <constraint firstItem="RuK-m0-VwL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="lM0-22-oTf"/>
                     <constraint firstItem="RuK-m0-VwL" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="o7O-xx-XUI"/>
                 </constraints>
             </tableViewCellContentView>
-            <animations/>
+            <connections>
+                <outlet property="currentTranslationButton" destination="RuK-m0-VwL" id="EAW-9t-5bH"/>
+            </connections>
             <point key="canvasLocation" x="348" y="398"/>
         </tableViewCell>
     </objects>

@@ -28,6 +28,9 @@ static CGFloat const kSignUpAndSaveToCalendarEventTableViewCellHeight = 120.0f;
 
 @interface SignUpAndSaveToCalendarEventTableViewCell ()
 
+@property (weak, nonatomic) IBOutlet UIButton *signUpButton;
+@property (weak, nonatomic) IBOutlet UIButton *saveToCalendarButton;
+
 @property (weak, nonatomic) id <SignUpAndSaveToCalendarEventTableViewCellActionProtocol> actionProxy;
 
 @end
@@ -42,6 +45,9 @@ static CGFloat const kSignUpAndSaveToCalendarEventTableViewCellHeight = 120.0f;
 #pragma mark - NICell methods
 
 - (BOOL)shouldUpdateCellWithObject:(SignUpAndSaveToCalendarEventTableViewCellObject *)object {
+    self.signUpButton.backgroundColor = object.buttonColor;
+    self.saveToCalendarButton.backgroundColor = object.buttonColor;
+    
     return YES;
 }
 

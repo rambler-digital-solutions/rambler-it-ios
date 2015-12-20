@@ -21,7 +21,7 @@
 #import "ReportListTableViewCell.h"
 #import "ReportListTableViewCellObject.h"
 
-static CGFloat const kReportListTableViewCellHeight = 96.0f;
+static CGFloat const kReportListTableViewCellHeight = 116.0f;
 
 @interface ReportListTableViewCell ()
 
@@ -38,7 +38,8 @@ static CGFloat const kReportListTableViewCellHeight = 96.0f;
 - (BOOL)shouldUpdateCellWithObject:(ReportListTableViewCellObject *)object {
     self.date.text = object.date;
     self.eventTitle.text = object.eventTitle;
-    self.eventImageView.image = [UIImage imageNamed:@"placeholder"];
+    self.eventImageView.image = [UIImage imageNamed:@"logo-js"];
+    self.separatorInset = UIEdgeInsetsMake(0.f, self.bounds.size.width, 0.f, 0.0f);
     
     return YES;
 }

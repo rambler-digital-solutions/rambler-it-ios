@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="KGk-i7-Jjw" customClass="PreviousLectureSectionHeaderTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i9B-Ka-lOH">
+                        <rect key="frame" x="0.0" y="15" width="320" height="64.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="В предыдущих сериях" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YrI-rt-sfg">
+                        <rect key="frame" x="19" y="43" width="273" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="e03-6q-iMa"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstItem="YrI-rt-sfg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="35" id="7m1-uK-RyX"/>
+                    <constraint firstItem="YrI-rt-sfg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="11" id="EIS-Y0-63q"/>
+                    <constraint firstAttribute="bottom" secondItem="i9B-Ka-lOH" secondAttribute="bottom" id="X8r-pg-aLA"/>
+                    <constraint firstItem="i9B-Ka-lOH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="XyJ-Wi-5Mn"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="YrI-rt-sfg" secondAttribute="trailing" constant="20" id="eLA-g7-Gbw"/>
+                    <constraint firstItem="i9B-Ka-lOH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="fJv-gr-hwu"/>
+                    <constraint firstAttribute="trailing" secondItem="i9B-Ka-lOH" secondAttribute="trailing" id="hDc-w6-eeS"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="headerContentView" destination="H2p-sc-9uM" id="m3M-dF-hkv"/>
+            </connections>
+            <point key="canvasLocation" x="422" y="338"/>
+        </tableViewCell>
+    </objects>
+</document>

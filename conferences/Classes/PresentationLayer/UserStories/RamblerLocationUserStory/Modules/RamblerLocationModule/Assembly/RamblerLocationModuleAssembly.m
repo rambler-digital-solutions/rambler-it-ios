@@ -71,9 +71,9 @@ static NSString * const kRamblerLocationStoryboardName = @"RamblerLocationUserSt
     return [TyphoonDefinition withClass:[TabBarButtonPrototype class]
                           configuration:^(TyphoonDefinition *definition) {
                               [definition injectProperty:@selector(tabBarButtonIdleStateImage)
-                                                    with:[UIImage imageNamed:@""]];
+                                                    with:[UIImage imageNamed:@"light-grey-square"]];
                               [definition injectProperty:@selector(tabBarButtonSelectedStateImage)
-                                                    with:[UIImage imageNamed:@""]];
+                                                    with:[UIImage imageNamed:@"light-grey-square"]];
                               [definition injectProperty:@selector(tabBarButtonTitle)
                                                     with:@"Как проехать"];
                               [definition injectProperty:@selector(tabbarButtonId)

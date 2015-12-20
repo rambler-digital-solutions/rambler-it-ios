@@ -23,13 +23,11 @@
 #import "EventDataDisplayManager.h"
 #import "DataDisplayManager.h"
 #import "EventTableViewCellActionProtocol.h"
+#import "PlainEvent.h"
 
 #import <CrutchKit/Proxying/Extensions/UIViewController+CDObserver/UIViewController+CDObserver.h>
 
 @interface EventViewController() <EventTableViewCellActionProtocol>
-
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topSpaceToTableViewConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewToHeaderConstraint;
 
 @end
 
@@ -43,9 +41,18 @@
 	[self.output setupView];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+}
+
 #pragma mark - EventViewInput
 
 - (void)configureViewWithEvent:(PlainEvent *)event {
+    [self configureNavigationBarWithColor:event.backgroundColor];
+    [self setScrollViewColor:event.backgroundColor];
+    
     [self.dataDisplayManager configureDataDisplayManagerWithEvent:event];
     
     self.tableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.tableView];
@@ -72,6 +79,19 @@
 
 - (void)didTapCurrentTranslationButton:(UIButton *)button {
     [self.output didTriggerCurrentTranslationButtonTapEvent];
+}
+
+#pragma mark - Private methods
+
+- (void)configureNavigationBarWithColor:(UIColor *)color {
+    [self.navigationController.navigationBar setBarTintColor:color];
+    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+                                                  forBarMetrics:UIBarMetricsDefault];
+}
+
+- (void)setScrollViewColor:(UIColor *)color {
+    [[UIScrollView appearance] setBackgroundColor:color];
 }
 
 @end
