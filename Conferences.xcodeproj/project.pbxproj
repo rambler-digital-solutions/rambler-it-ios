@@ -57,9 +57,6 @@
 		631FFE571BEF930200749DB8 /* ReportListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FFE501BEF930200749DB8 /* ReportListTableViewController.m */; };
 		631FFE591BEF937D00749DB8 /* ReportsUserStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 631FFE581BEF937D00749DB8 /* ReportsUserStory.storyboard */; };
 		631FFE5F1BEF991000749DB8 /* ReportListDataDisplayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FFE5E1BEF991000749DB8 /* ReportListDataDisplayManager.m */; };
-		631FFE631BEFA07300749DB8 /* ReportListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FFE611BEFA07300749DB8 /* ReportListTableViewCell.m */; };
-		631FFE641BEFA07300749DB8 /* ReportListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 631FFE621BEFA07300749DB8 /* ReportListTableViewCell.xib */; };
-		631FFE671BEFA09400749DB8 /* ReportListTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FFE661BEFA09400749DB8 /* ReportListTableViewCellObject.m */; };
 		632887B11BDFE0AB00701AF0 /* EventListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 632887AF1BDFE0AB00701AF0 /* EventListTableViewCell.m */; };
 		632887B21BDFE0AB00701AF0 /* EventListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 632887B01BDFE0AB00701AF0 /* EventListTableViewCell.xib */; };
 		632887B61BDFE16200701AF0 /* NearestEventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 632887B41BDFE16200701AF0 /* NearestEventTableViewCell.m */; };
@@ -86,6 +83,12 @@
 		636DD7EE1C26B93900436201 /* PreviousEventTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 636DD7ED1C26B93900436201 /* PreviousEventTableViewCellObject.m */; };
 		636DD7F11C26B94700436201 /* PreviousLectureSectionHeaderTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 636DD7F01C26B94700436201 /* PreviousLectureSectionHeaderTableViewCellObject.m */; };
 		636DD7F41C26B95800436201 /* PreviousLectureTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 636DD7F31C26B95800436201 /* PreviousLectureTableViewCellObject.m */; };
+		636DD83D1C285FC000436201 /* ReportListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 636DD83A1C285FC000436201 /* ReportListTableViewCell.m */; };
+		636DD83E1C285FC000436201 /* ReportListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636DD83B1C285FC000436201 /* ReportListTableViewCell.xib */; };
+		636DD8421C285FF700436201 /* ReportListTableViewHeaderAndFooterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 636DD8401C285FF700436201 /* ReportListTableViewHeaderAndFooterCell.m */; };
+		636DD8431C285FF700436201 /* ReportListTableViewHeaderAndFooterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636DD8411C285FF700436201 /* ReportListTableViewHeaderAndFooterCell.xib */; };
+		636DD8481C28604400436201 /* ReportListTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 636DD8461C28604400436201 /* ReportListTableViewCellObject.m */; };
+		636DD84B1C28606200436201 /* ReportListTableViewHeaderAndFooterCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 636DD84A1C28606200436201 /* ReportListTableViewHeaderAndFooterCellObject.m */; };
 		636F8C971BC97B3100552B91 /* EventServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8C961BC97B3100552B91 /* EventServiceImplementation.m */; };
 		636F8C981BC97C1700552B91 /* SpeakerServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B640F1BBDD6260053E38F /* SpeakerServiceImplementation.m */; };
 		636F8C991BC97CD300552B91 /* EventServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8C961BC97B3100552B91 /* EventServiceImplementation.m */; };
@@ -391,11 +394,6 @@
 		631FFE581BEF937D00749DB8 /* ReportsUserStory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ReportsUserStory.storyboard; sourceTree = "<group>"; };
 		631FFE5D1BEF991000749DB8 /* ReportListDataDisplayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportListDataDisplayManager.h; sourceTree = "<group>"; };
 		631FFE5E1BEF991000749DB8 /* ReportListDataDisplayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportListDataDisplayManager.m; sourceTree = "<group>"; };
-		631FFE601BEFA07300749DB8 /* ReportListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportListTableViewCell.h; sourceTree = "<group>"; };
-		631FFE611BEFA07300749DB8 /* ReportListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportListTableViewCell.m; sourceTree = "<group>"; };
-		631FFE621BEFA07300749DB8 /* ReportListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReportListTableViewCell.xib; sourceTree = "<group>"; };
-		631FFE651BEFA09400749DB8 /* ReportListTableViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportListTableViewCellObject.h; sourceTree = "<group>"; };
-		631FFE661BEFA09400749DB8 /* ReportListTableViewCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportListTableViewCellObject.m; sourceTree = "<group>"; };
 		632887AE1BDFE0AB00701AF0 /* EventListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListTableViewCell.h; sourceTree = "<group>"; };
 		632887AF1BDFE0AB00701AF0 /* EventListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListTableViewCell.m; sourceTree = "<group>"; };
 		632887B01BDFE0AB00701AF0 /* EventListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventListTableViewCell.xib; sourceTree = "<group>"; };
@@ -444,6 +442,16 @@
 		636DD7F01C26B94700436201 /* PreviousLectureSectionHeaderTableViewCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreviousLectureSectionHeaderTableViewCellObject.m; sourceTree = "<group>"; };
 		636DD7F21C26B95800436201 /* PreviousLectureTableViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreviousLectureTableViewCellObject.h; sourceTree = "<group>"; };
 		636DD7F31C26B95800436201 /* PreviousLectureTableViewCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreviousLectureTableViewCellObject.m; sourceTree = "<group>"; };
+		636DD8391C285FC000436201 /* ReportListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportListTableViewCell.h; sourceTree = "<group>"; };
+		636DD83A1C285FC000436201 /* ReportListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportListTableViewCell.m; sourceTree = "<group>"; };
+		636DD83B1C285FC000436201 /* ReportListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReportListTableViewCell.xib; sourceTree = "<group>"; };
+		636DD83F1C285FF700436201 /* ReportListTableViewHeaderAndFooterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportListTableViewHeaderAndFooterCell.h; sourceTree = "<group>"; };
+		636DD8401C285FF700436201 /* ReportListTableViewHeaderAndFooterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportListTableViewHeaderAndFooterCell.m; sourceTree = "<group>"; };
+		636DD8411C285FF700436201 /* ReportListTableViewHeaderAndFooterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReportListTableViewHeaderAndFooterCell.xib; sourceTree = "<group>"; };
+		636DD8451C28604400436201 /* ReportListTableViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportListTableViewCellObject.h; sourceTree = "<group>"; };
+		636DD8461C28604400436201 /* ReportListTableViewCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportListTableViewCellObject.m; sourceTree = "<group>"; };
+		636DD8491C28606200436201 /* ReportListTableViewHeaderAndFooterCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportListTableViewHeaderAndFooterCellObject.h; sourceTree = "<group>"; };
+		636DD84A1C28606200436201 /* ReportListTableViewHeaderAndFooterCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportListTableViewHeaderAndFooterCellObject.m; sourceTree = "<group>"; };
 		636F8C951BC97B3100552B91 /* EventServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventServiceImplementation.h; sourceTree = "<group>"; };
 		636F8C961BC97B3100552B91 /* EventServiceImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventServiceImplementation.m; sourceTree = "<group>"; };
 		636F8CA11BC97E7F00552B91 /* LectureMaterials+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LectureMaterials+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -1286,8 +1294,8 @@
 		631FFE5A1BEF98E600749DB8 /* CellObjects */ = {
 			isa = PBXGroup;
 			children = (
-				631FFE651BEFA09400749DB8 /* ReportListTableViewCellObject.h */,
-				631FFE661BEFA09400749DB8 /* ReportListTableViewCellObject.m */,
+				636DD8441C28604400436201 /* ReportListTableViewCellObject */,
+				636DD8471C28604400436201 /* ReportListTableViewHeaderAndFooterCellObject */,
 			);
 			path = CellObjects;
 			sourceTree = "<group>";
@@ -1295,9 +1303,8 @@
 		631FFE5B1BEF98E600749DB8 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				631FFE601BEFA07300749DB8 /* ReportListTableViewCell.h */,
-				631FFE611BEFA07300749DB8 /* ReportListTableViewCell.m */,
-				631FFE621BEFA07300749DB8 /* ReportListTableViewCell.xib */,
+				636DD8381C285FC000436201 /* ReportListTableViewCell */,
+				636DD83C1C285FC000436201 /* ReportListTableViewHeaderAndFooterCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1519,6 +1526,44 @@
 				636DD7F31C26B95800436201 /* PreviousLectureTableViewCellObject.m */,
 			);
 			path = PreviousLectureTableViewCellObject;
+			sourceTree = "<group>";
+		};
+		636DD8381C285FC000436201 /* ReportListTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				636DD8391C285FC000436201 /* ReportListTableViewCell.h */,
+				636DD83A1C285FC000436201 /* ReportListTableViewCell.m */,
+				636DD83B1C285FC000436201 /* ReportListTableViewCell.xib */,
+			);
+			path = ReportListTableViewCell;
+			sourceTree = "<group>";
+		};
+		636DD83C1C285FC000436201 /* ReportListTableViewHeaderAndFooterCell */ = {
+			isa = PBXGroup;
+			children = (
+				636DD83F1C285FF700436201 /* ReportListTableViewHeaderAndFooterCell.h */,
+				636DD8401C285FF700436201 /* ReportListTableViewHeaderAndFooterCell.m */,
+				636DD8411C285FF700436201 /* ReportListTableViewHeaderAndFooterCell.xib */,
+			);
+			path = ReportListTableViewHeaderAndFooterCell;
+			sourceTree = "<group>";
+		};
+		636DD8441C28604400436201 /* ReportListTableViewCellObject */ = {
+			isa = PBXGroup;
+			children = (
+				636DD8451C28604400436201 /* ReportListTableViewCellObject.h */,
+				636DD8461C28604400436201 /* ReportListTableViewCellObject.m */,
+			);
+			path = ReportListTableViewCellObject;
+			sourceTree = "<group>";
+		};
+		636DD8471C28604400436201 /* ReportListTableViewHeaderAndFooterCellObject */ = {
+			isa = PBXGroup;
+			children = (
+				636DD8491C28606200436201 /* ReportListTableViewHeaderAndFooterCellObject.h */,
+				636DD84A1C28606200436201 /* ReportListTableViewHeaderAndFooterCellObject.m */,
+			);
+			path = ReportListTableViewHeaderAndFooterCellObject;
 			sourceTree = "<group>";
 		};
 		636F8D081BCB822F00552B91 /* Assemblies */ = {
@@ -3802,8 +3847,8 @@
 				636B64121BBFE2C20053E38F /* Main.storyboard in Resources */,
 				63FDCE151BBDBA2A00A43B60 /* Info.plist in Resources */,
 				63F8F2E81BF9126B000017F3 /* LectureInfoTableViewCell.xib in Resources */,
+				636DD8431C285FF700436201 /* ReportListTableViewHeaderAndFooterCell.xib in Resources */,
 				9F8E5F9D1BC2777100DC10DB /* Conferences.Parse.plist in Resources */,
-				631FFE641BEFA07300749DB8 /* ReportListTableViewCell.xib in Resources */,
 				63FDCE141BBDBA2A00A43B60 /* Assets.xcassets in Resources */,
 				638DBD5A1BEE2B1000B4B208 /* EventInfoTableViewCell.xib in Resources */,
 				632887B71BDFE16200701AF0 /* NearestEventTableViewCell.xib in Resources */,
@@ -3816,6 +3861,7 @@
 				63F8F24F1BF74302000017F3 /* CurrentVideoTranslationTableViewCell.xib in Resources */,
 				63F8F2751BF7474C000017F3 /* SignUpAndSaveToCalendarEventTableViewCell.xib in Resources */,
 				632887B21BDFE0AB00701AF0 /* EventListTableViewCell.xib in Resources */,
+				636DD83E1C285FC000436201 /* ReportListTableViewCell.xib in Resources */,
 				9F8E5F701BC2552600DC10DB /* Conferences.API.plist in Resources */,
 				63F8F2541BF74351000017F3 /* EventDescriptionTableViewCell.xib in Resources */,
 			);
@@ -3969,10 +4015,12 @@
 				632887B11BDFE0AB00701AF0 /* EventListTableViewCell.m in Sources */,
 				638DBD481BEA385400B4B208 /* EventViewController.m in Sources */,
 				63F8F26A1BF74421000017F3 /* PastVideoTranslationTableViewCellObject.m in Sources */,
+				636DD83D1C285FC000436201 /* ReportListTableViewCell.m in Sources */,
 				636DD7D41C26B84900436201 /* PreviousEventSectionHeaderTableViewCell.m in Sources */,
 				9F1830BF1BC11D26000E21A5 /* JSONResponseDeserializer.m in Sources */,
 				631FFE191BEF451400749DB8 /* CDResponderTableViewCell.m in Sources */,
 				9F1830931BC02293000E21A5 /* RESTRequestConfigurator.m in Sources */,
+				636DD84B1C28606200436201 /* ReportListTableViewHeaderAndFooterCellObject.m in Sources */,
 				63D86BE11C14490000986536 /* EventCellObjectBuilderBase.m in Sources */,
 				63FD4E0B1BE621750046378E /* Event+CoreDataProperties.m in Sources */,
 				636F8DDA1BCB8FE800552B91 /* RamblerLocationModuleAssembly.m in Sources */,
@@ -3997,12 +4045,12 @@
 				9F0A852D1BC188B0006F79FB /* EventOperationFactory.m in Sources */,
 				636F8CB81BC97E7F00552B91 /* LectureMaterials.m in Sources */,
 				63136FD61BDCDB2700994356 /* ModuleTransitionSegueInfo.m in Sources */,
+				636DD8421C285FF700436201 /* ReportListTableViewHeaderAndFooterCell.m in Sources */,
 				63FDCE061BBDBA2A00A43B60 /* AppDelegate.m in Sources */,
 				63136FDF1BDCDB2700994356 /* TabBarButtonPrototype.m in Sources */,
 				638DBD461BEA385400B4B208 /* EventPresenter.m in Sources */,
 				636B64041BBDD19A0053E38F /* LectureServiceImplementation.m in Sources */,
 				63FD4E0C1BE621750046378E /* Event.m in Sources */,
-				631FFE631BEFA07300749DB8 /* ReportListTableViewCell.m in Sources */,
 				63D86BE81C14572C00986536 /* EventListTableViewCellObject.m in Sources */,
 				638DBCFD1BEA385400B4B208 /* EventModuleAssembly.m in Sources */,
 				63F54D9B1BC5AB3C00DB1746 /* ServiceComponentsAssembly.m in Sources */,
@@ -4021,7 +4069,6 @@
 				63F8F2531BF74351000017F3 /* EventDescriptionTableViewCell.m in Sources */,
 				9F18311C1BC1615C000E21A5 /* ResultsResponseObjectFormatter.m in Sources */,
 				636DD7DD1C26B8D900436201 /* PreviousEventTableViewCell.m in Sources */,
-				631FFE671BEFA09400749DB8 /* ReportListTableViewCellObject.m in Sources */,
 				636F8CBB1BC97E7F00552B91 /* SocialNetworkAccount+CoreDataProperties.m in Sources */,
 				9F0A85011BC1698B006F79FB /* ResponseMappingOperation.m in Sources */,
 				63FDCE161BBDBA2A00A43B60 /* main.m in Sources */,
@@ -4067,6 +4114,7 @@
 				9F0A6C1D1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m in Sources */,
 				9F0A85001BC1698B006F79FB /* ResponseDeserializationOperation.m in Sources */,
 				9F0A853B1BC1908B006F79FB /* OperationChainer.m in Sources */,
+				636DD8481C28604400436201 /* ReportListTableViewCellObject.m in Sources */,
 				636F8CC01BC97E7F00552B91 /* RegistrationQuestion.m in Sources */,
 				63F8F2A31BF7A4F5000017F3 /* PastEventCellObjectBuilder.m in Sources */,
 				63EF15BB1BC4559900480CAF /* PushNotificationCenterImplementation.m in Sources */,
