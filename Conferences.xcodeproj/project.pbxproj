@@ -522,6 +522,7 @@
 		6373A3E91BBDC05900DF67FF /* SpeakerService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerService.h; sourceTree = "<group>"; };
 		6373A40F1BBDC5EA00DF67FF /* Conference.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Conference.xcdatamodel; sourceTree = "<group>"; };
 		638CC94E1C2C549800D8ADB7 /* EventHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventHeaderView.xib; sourceTree = "<group>"; };
+		638CC9501C2C5A0900D8ADB7 /* EventHeaderModuleInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventHeaderModuleInput.h; sourceTree = "<group>"; };
 		638DBBCF1BEA385300B4B208 /* EventModuleAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventModuleAssembly.h; sourceTree = "<group>"; };
 		638DBBD01BEA385300B4B208 /* EventModuleAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventModuleAssembly.m; sourceTree = "<group>"; };
 		638DBCED1BEA385400B4B208 /* EventInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventInteractor.h; sourceTree = "<group>"; };
@@ -860,6 +861,7 @@
 			children = (
 				630510341C19ED8200D7A653 /* EventHeaderPresenter.h */,
 				630510351C19ED8200D7A653 /* EventHeaderPresenter.m */,
+				638CC9501C2C5A0900D8ADB7 /* EventHeaderModuleInput.h */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";

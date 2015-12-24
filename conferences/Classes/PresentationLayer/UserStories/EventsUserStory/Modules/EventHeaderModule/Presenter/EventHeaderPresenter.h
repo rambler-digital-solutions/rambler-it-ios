@@ -9,12 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "EventHeaderViewOutput.h"
 #import "EventHeaderInteractorOutput.h"
+#import "EventHeaderModuleInput.h"
 
 @protocol EventHeaderViewInput;
 @protocol EventHeaderInteractorInput;
 @protocol EventHeaderRouterInput;
 
-@interface EventHeaderPresenter : NSObject<EventHeaderViewOutput,EventHeaderInteractorOutput>
+@interface EventHeaderPresenter : NSObject<EventHeaderViewOutput,EventHeaderInteractorOutput,EventHeaderModuleInput>
 
 @property (nonatomic, weak) id<EventHeaderViewInput> view;
 @property (nonatomic, strong) id<EventHeaderInteractorInput>  interactor;

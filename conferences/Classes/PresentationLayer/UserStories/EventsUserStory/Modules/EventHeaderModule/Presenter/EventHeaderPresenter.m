@@ -22,6 +22,10 @@
 
 }
 
-#pragma mark - EventHeaderInteractorOutput
+#pragma mark - EventHeaderModuleInput
+
+- (void)configureModuleWithEvent:(PlainEvent *)event {
+    
+}
 
 @end
