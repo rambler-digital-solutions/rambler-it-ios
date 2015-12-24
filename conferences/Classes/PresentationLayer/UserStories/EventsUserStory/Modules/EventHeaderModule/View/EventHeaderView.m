@@ -15,11 +15,6 @@
 
 @implementation EventHeaderView
 
-- (void)viewDidLoad {
-	[super viewDidLoad];
-	[self.output setupView];
-}
-
 #pragma mark - EventHeaderViewInput
 
 @end

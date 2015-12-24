@@ -11,7 +11,9 @@
 
 @protocol EventHeaderViewOutput;
 
-@interface EventHeaderView : UIViewController<EventHeaderViewInput>
+@interface EventHeaderView : UIView <EventHeaderViewInput>
+
+@property (weak, nonatomic) IBOutlet UIImageView *eventImageView;
 
 @property (nonatomic, strong) id<EventHeaderViewOutput> output;
 
