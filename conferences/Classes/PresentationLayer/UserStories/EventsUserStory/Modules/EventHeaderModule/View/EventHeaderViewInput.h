@@ -8,7 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
+@class PlainEvent;
+
 @protocol EventHeaderViewInput <NSObject>
+
+/**
+ @author Artem Karpushin
+ 
+ Method is used to configure view with event data
+ 
+ @param event PlainEvent object
+ */
+- (void)configureViewWithEvent:(PlainEvent *)event;
 
 @end
 

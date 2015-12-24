@@ -8,13 +8,26 @@
 
 #import "EventHeaderView.h"
 #import "EventHeaderViewOutput.h"
+#import "PlainEvent.h"
 
-@interface EventHeaderView()
+#import <SDWebImage/UIImageView+WebCache.h>
 
-@end
+static NSString *const kPlaceholderImageName = @"placeholder";
 
 @implementation EventHeaderView
 
++ (EventHeaderView *)eventHeaderView {
+    return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class])
+                                          owner:self
+                                        options:NULL] firstObject];
+}
+
 #pragma mark - EventHeaderViewInput
+
+- (void)configureViewWithEvent:(PlainEvent *)event {
+    self.backgroundColor = event.backgroundColor;
+    [self.eventImageView sd_setImageWithURL:event.imageUrl
+                           placeholderImage:[UIImage imageNamed:kPlaceholderImageName]];
+}
 
 @end

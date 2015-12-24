@@ -9,7 +9,5 @@
 
 @protocol EventHeaderViewOutput <NSObject>
 
-- (void)setupView;
-
 @end
 

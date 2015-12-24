@@ -16,16 +16,10 @@
 
 @implementation EventHeaderPresenter
 
-#pragma mark - EventHeaderViewOutput
-
-- (void)setupView {
-
-}
-
 #pragma mark - EventHeaderModuleInput
 
 - (void)configureModuleWithEvent:(PlainEvent *)event {
-    
+    [self.view configureViewWithEvent:event];
 }
 
 @end

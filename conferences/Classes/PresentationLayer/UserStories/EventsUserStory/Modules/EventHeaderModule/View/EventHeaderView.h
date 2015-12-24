@@ -17,5 +17,7 @@
 
 @property (nonatomic, strong) id<EventHeaderViewOutput> output;
 
++ (EventHeaderView *)eventHeaderView;
+
 @end
 
