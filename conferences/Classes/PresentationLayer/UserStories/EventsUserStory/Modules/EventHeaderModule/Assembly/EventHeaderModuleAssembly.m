@@ -20,6 +20,7 @@
 - (EventHeaderView *)viewEventHeader {
     return [TyphoonDefinition withClass:[EventHeaderView class]
                             configuration:^(TyphoonDefinition *definition) {
+                                [definition useInitializer:@selector(eventHeaderView)];
                                 [definition injectProperty:@selector(output)
                                                       with:[self presenterEventHeader]];
              }];
