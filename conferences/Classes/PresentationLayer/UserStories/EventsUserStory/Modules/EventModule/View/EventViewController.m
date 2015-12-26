@@ -44,16 +44,13 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:NO animated:animated];
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self setupViewInitialState];
 }
 
 #pragma mark - EventViewInput
 
 - (void)configureViewWithEvent:(PlainEvent *)event {
     [self configureNavigationBarWithColor:event.backgroundColor];
-    // refactor
-    [self setScrollViewColor:event.backgroundColor];
     
     [self.dataDisplayManager configureDataDisplayManagerWithEvent:event];
     
@@ -87,6 +84,12 @@
 
 #pragma mark - Private methods
 
+- (void)setupViewInitialState {
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [[UIScrollView appearance] setBackgroundColor:[UIColor clearColor]];
+}
+
 - (void)setupHeaderViewWithEvent:(PlainEvent *)event {
     [self.headerView configureModuleWithEvent:event];
     
@@ -104,10 +107,6 @@
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
                                                   forBarMetrics:UIBarMetricsDefault];
-}
-
-- (void)setScrollViewColor:(UIColor *)color {
-    [[UIScrollView appearance] setBackgroundColor:color];
 }
 
 @end
