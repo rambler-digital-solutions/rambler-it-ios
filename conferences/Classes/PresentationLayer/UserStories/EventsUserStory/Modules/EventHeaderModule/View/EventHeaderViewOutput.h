@@ -7,7 +7,18 @@
 //
 #import <Foundation/Foundation.h>
 
+@class PlainEvent;
+
 @protocol EventHeaderViewOutput <NSObject>
+
+/**
+ @author Artem Karpushin
+ 
+ Method is used to inform presenter that module was cofigured with PlainEvent object
+ 
+ @param event PlainEvent object
+ */
+- (void)moduleReadyWithEvent:(PlainEvent *)event;
 
 @end
 

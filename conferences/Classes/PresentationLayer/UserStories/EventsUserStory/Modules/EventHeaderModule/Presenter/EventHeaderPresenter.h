@@ -15,7 +15,7 @@
 @protocol EventHeaderInteractorInput;
 @protocol EventHeaderRouterInput;
 
-@interface EventHeaderPresenter : NSObject<EventHeaderViewOutput,EventHeaderInteractorOutput,EventHeaderModuleInput>
+@interface EventHeaderPresenter : NSObject<EventHeaderViewOutput,EventHeaderInteractorOutput>
 
 @property (nonatomic, weak) id<EventHeaderViewInput> view;
 @property (nonatomic, strong) id<EventHeaderInteractorInput>  interactor;

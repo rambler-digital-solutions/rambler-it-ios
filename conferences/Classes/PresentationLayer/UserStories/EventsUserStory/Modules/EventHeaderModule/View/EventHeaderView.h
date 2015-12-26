@@ -10,8 +10,9 @@
 #import "EventHeaderViewInput.h"
 
 @protocol EventHeaderViewOutput;
+@protocol EventHeaderModuleInput;
 
-@interface EventHeaderView : UIView <EventHeaderViewInput>
+@interface EventHeaderView : UIView <EventHeaderViewInput, EventHeaderModuleInput>
 
 @property (weak, nonatomic) IBOutlet UIImageView *eventImageView;
 

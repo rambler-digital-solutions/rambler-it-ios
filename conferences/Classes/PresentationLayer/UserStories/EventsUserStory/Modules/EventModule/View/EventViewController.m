@@ -24,6 +24,7 @@
 #import "DataDisplayManager.h"
 #import "EventTableViewCellActionProtocol.h"
 #import "PlainEvent.h"
+#import "EventHeaderModuleInput.h"
 
 #import <CrutchKit/Proxying/Extensions/UIViewController+CDObserver/UIViewController+CDObserver.h>
 
@@ -51,12 +52,15 @@
 
 - (void)configureViewWithEvent:(PlainEvent *)event {
     [self configureNavigationBarWithColor:event.backgroundColor];
+    // refactor
     [self setScrollViewColor:event.backgroundColor];
     
     [self.dataDisplayManager configureDataDisplayManagerWithEvent:event];
     
     self.tableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.tableView];
     self.tableView.delegate = [self.dataDisplayManager delegateForTableView:self.tableView withBaseDelegate:nil];
+    
+    [self setupHeaderViewWithEvent:event];
 }
 
 #pragma mark - EventTableViewCellActionProtocol
@@ -82,6 +86,18 @@
 }
 
 #pragma mark - Private methods
+
+- (void)setupHeaderViewWithEvent:(PlainEvent *)event {
+    [self.headerView configureModuleWithEvent:event];
+    
+    CGFloat tableViewHeaderHeight = self.headerView.frame.size.height;
+    UIView *tableViewHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0,
+                                                                  0,
+                                                                  self.view.frame.size.width,
+                                                                  tableViewHeaderHeight)];
+    tableViewHeaderView.backgroundColor = [UIColor clearColor];
+    [self.tableView setTableHeaderView:tableViewHeaderView];
+}
 
 - (void)configureNavigationBarWithColor:(UIColor *)color {
     [self.navigationController.navigationBar setBarTintColor:color];

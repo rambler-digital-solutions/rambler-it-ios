@@ -16,9 +16,9 @@
 
 @implementation EventHeaderPresenter
 
-#pragma mark - EventHeaderModuleInput
+#pragma mark - EventHeaderViewOutput
 
-- (void)configureModuleWithEvent:(PlainEvent *)event {
+- (void)moduleReadyWithEvent:(PlainEvent *)event {
     [self.view configureViewWithEvent:event];
 }
 
