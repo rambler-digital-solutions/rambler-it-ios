@@ -24,6 +24,7 @@
 #import "DataDisplayManager.h"
 #import "EventTableViewCellActionProtocol.h"
 #import "PlainEvent.h"
+#import "EventHeaderModuleInput.h"
 
 #import <CrutchKit/Proxying/Extensions/UIViewController+CDObserver/UIViewController+CDObserver.h>
 
@@ -43,20 +44,20 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:NO animated:animated];
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self setupViewInitialState];
 }
 
 #pragma mark - EventViewInput
 
 - (void)configureViewWithEvent:(PlainEvent *)event {
     [self configureNavigationBarWithColor:event.backgroundColor];
-    [self setScrollViewColor:event.backgroundColor];
     
     [self.dataDisplayManager configureDataDisplayManagerWithEvent:event];
     
     self.tableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.tableView];
     self.tableView.delegate = [self.dataDisplayManager delegateForTableView:self.tableView withBaseDelegate:nil];
+    
+    [self setupHeaderViewWithEvent:event];
 }
 
 #pragma mark - EventTableViewCellActionProtocol
@@ -83,15 +84,29 @@
 
 #pragma mark - Private methods
 
+- (void)setupViewInitialState {
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [[UIScrollView appearance] setBackgroundColor:[UIColor clearColor]];
+}
+
+- (void)setupHeaderViewWithEvent:(PlainEvent *)event {
+    [self.headerView configureModuleWithEvent:event];
+    
+    CGFloat tableViewHeaderHeight = self.headerView.frame.size.height;
+    UIView *tableViewHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0,
+                                                                  0,
+                                                                  self.view.frame.size.width,
+                                                                  tableViewHeaderHeight)];
+    tableViewHeaderView.backgroundColor = [UIColor clearColor];
+    [self.tableView setTableHeaderView:tableViewHeaderView];
+}
+
 - (void)configureNavigationBarWithColor:(UIColor *)color {
     [self.navigationController.navigationBar setBarTintColor:color];
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
                                                   forBarMetrics:UIBarMetricsDefault];
-}
-
-- (void)setScrollViewColor:(UIColor *)color {
-    [[UIScrollView appearance] setBackgroundColor:color];
 }
 
 @end

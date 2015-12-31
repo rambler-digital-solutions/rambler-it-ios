@@ -18,20 +18,14 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
-#import "EventViewInput.h"
+#import "EventHeaderRouter.h"
 
-@protocol EventViewOutput;
-@protocol EventHeaderModuleInput;
-@class EventDataDisplayManager;
-
-@interface EventViewController : UIViewController <EventViewInput>
-
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UIView <EventHeaderModuleInput> *headerView;
-
-@property (nonatomic, strong) id<EventViewOutput> output;
-@property (strong, nonatomic) EventDataDisplayManager *dataDisplayManager;
+@interface EventHeaderRouter()
 
 @end
 
+@implementation EventHeaderRouter
+
+#pragma mark - EventHeaderRouterInput
+
+@end

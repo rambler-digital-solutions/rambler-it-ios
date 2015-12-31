@@ -18,20 +18,14 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
-#import "EventViewInput.h"
+#import <Foundation/Foundation.h>
+#import "EventHeaderInteractorInput.h"
 
-@protocol EventViewOutput;
-@protocol EventHeaderModuleInput;
-@class EventDataDisplayManager;
+@protocol EventHeaderInteractorOutput;
 
-@interface EventViewController : UIViewController <EventViewInput>
+@interface EventHeaderInteractor : NSObject<EventHeaderInteractorInput>
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UIView <EventHeaderModuleInput> *headerView;
-
-@property (nonatomic, strong) id<EventViewOutput> output;
-@property (strong, nonatomic) EventDataDisplayManager *dataDisplayManager;
+@property (nonatomic, weak) id<EventHeaderInteractorOutput> output;
 
 @end
 

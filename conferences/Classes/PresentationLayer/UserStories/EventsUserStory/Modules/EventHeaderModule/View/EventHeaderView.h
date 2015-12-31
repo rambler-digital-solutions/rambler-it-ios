@@ -19,19 +19,18 @@
 // THE SOFTWARE.
 
 #import <UIKit/UIKit.h>
-#import "EventViewInput.h"
+#import "EventHeaderViewInput.h"
+#import "EventHeaderModuleInput.h"
 
-@protocol EventViewOutput;
-@protocol EventHeaderModuleInput;
-@class EventDataDisplayManager;
+@protocol EventHeaderViewOutput;
 
-@interface EventViewController : UIViewController <EventViewInput>
+@interface EventHeaderView : UIView <EventHeaderViewInput, EventHeaderModuleInput>
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UIView <EventHeaderModuleInput> *headerView;
+@property (weak, nonatomic) IBOutlet UIImageView *eventImageView;
 
-@property (nonatomic, strong) id<EventViewOutput> output;
-@property (strong, nonatomic) EventDataDisplayManager *dataDisplayManager;
+@property (nonatomic, strong) id<EventHeaderViewOutput> output;
+
++ (EventHeaderView *)eventHeaderView;
 
 @end
 

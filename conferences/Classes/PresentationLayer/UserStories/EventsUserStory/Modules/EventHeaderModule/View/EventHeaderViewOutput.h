@@ -18,20 +18,20 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
-#import "EventViewInput.h"
+#import <Foundation/Foundation.h>
 
-@protocol EventViewOutput;
-@protocol EventHeaderModuleInput;
-@class EventDataDisplayManager;
+@class PlainEvent;
 
-@interface EventViewController : UIViewController <EventViewInput>
+@protocol EventHeaderViewOutput <NSObject>
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UIView <EventHeaderModuleInput> *headerView;
-
-@property (nonatomic, strong) id<EventViewOutput> output;
-@property (strong, nonatomic) EventDataDisplayManager *dataDisplayManager;
+/**
+ @author Artem Karpushin
+ 
+ Method is used to inform presenter that module was cofigured with PlainEvent object
+ 
+ @param event PlainEvent object
+ */
+- (void)moduleReadyWithEvent:(PlainEvent *)event;
 
 @end
 

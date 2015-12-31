@@ -18,20 +18,13 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
-#import "EventViewInput.h"
-
-@protocol EventViewOutput;
-@protocol EventHeaderModuleInput;
-@class EventDataDisplayManager;
-
-@interface EventViewController : UIViewController <EventViewInput>
-
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UIView <EventHeaderModuleInput> *headerView;
-
-@property (nonatomic, strong) id<EventViewOutput> output;
-@property (strong, nonatomic) EventDataDisplayManager *dataDisplayManager;
+#import <Typhoon/Typhoon.h>
+/**
+ @author Artem Karpushin
+ 
+ A TyphoonAssembly which is responsible for creating EventHeaderModule
+ */
+@interface EventHeaderModuleAssembly : TyphoonAssembly
 
 @end
 

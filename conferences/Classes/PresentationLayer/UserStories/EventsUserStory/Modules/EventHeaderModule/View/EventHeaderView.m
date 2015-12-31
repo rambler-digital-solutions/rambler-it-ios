@@ -18,20 +18,35 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
-#import "EventViewInput.h"
+#import "EventHeaderView.h"
+#import "EventHeaderViewOutput.h"
+#import "PlainEvent.h"
+#import "EventHeaderModuleInput.h"
 
-@protocol EventViewOutput;
-@protocol EventHeaderModuleInput;
-@class EventDataDisplayManager;
+#import <SDWebImage/UIImageView+WebCache.h>
 
-@interface EventViewController : UIViewController <EventViewInput>
+static NSString *const kPlaceholderImageName = @"placeholder";
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UIView <EventHeaderModuleInput> *headerView;
+@implementation EventHeaderView
 
-@property (nonatomic, strong) id<EventViewOutput> output;
-@property (strong, nonatomic) EventDataDisplayManager *dataDisplayManager;
++ (EventHeaderView *)eventHeaderView {
+    return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class])
+                                          owner:self
+                                        options:NULL] firstObject];
+}
+
+#pragma mark - EventHeaderViewInput
+
+- (void)configureViewWithEvent:(PlainEvent *)event {
+    self.backgroundColor = event.backgroundColor;
+    [self.eventImageView sd_setImageWithURL:event.imageUrl
+                           placeholderImage:[UIImage imageNamed:kPlaceholderImageName]];
+}
+
+#pragma mark - EventHeaderModuleInput
+
+- (void)configureModuleWithEvent:(PlainEvent *)event {
+    [self.output moduleReadyWithEvent:event];
+}
 
 @end
-
