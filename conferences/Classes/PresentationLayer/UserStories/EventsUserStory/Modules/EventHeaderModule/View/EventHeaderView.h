@@ -20,9 +20,9 @@
 
 #import <UIKit/UIKit.h>
 #import "EventHeaderViewInput.h"
+#import "EventHeaderModuleInput.h"
 
 @protocol EventHeaderViewOutput;
-@protocol EventHeaderModuleInput;
 
 @interface EventHeaderView : UIView <EventHeaderViewInput, EventHeaderModuleInput>
 
