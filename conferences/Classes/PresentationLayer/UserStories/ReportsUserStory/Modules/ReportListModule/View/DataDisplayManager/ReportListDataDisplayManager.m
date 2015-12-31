@@ -23,6 +23,7 @@
 #import <Nimbus/NimbusModels.h>
 
 #import "ReportListTableViewCellObject.h"
+#import "ReportListTableViewHeaderAndFooterCellObject.h"
 #import "DateFormatter.h"
 #import "PlainEvent.h"
 
@@ -77,13 +78,19 @@
 
 - (NIMutableTableViewModel *)updateTableViewModel {
     NSMutableArray *cellObjects = [NSMutableArray array];
-
+    
+    ReportListTableViewHeaderAndFooterCellObject *headerCellObject = [ReportListTableViewHeaderAndFooterCellObject new];
+    [cellObjects addObject:headerCellObject];
+    
     for (PlainEvent *event in self.events) {
         NSString *eventDate = [self.dateFormatter obtainDateWithDayMonthYearFormat:event.startDate];
         
         ReportListTableViewCellObject *cellObject = [ReportListTableViewCellObject objectWithEvent:event andDate:eventDate];
         [cellObjects addObject:cellObject];
     }
+    
+    ReportListTableViewHeaderAndFooterCellObject *footerCellObject = [ReportListTableViewHeaderAndFooterCellObject new];
+    [cellObjects addObject:footerCellObject];
     
     NIMutableTableViewModel *tableViewModel = [[NIMutableTableViewModel alloc] initWithSectionedArray:cellObjects
                                                                         delegate:(id)[NICellFactory class]];
