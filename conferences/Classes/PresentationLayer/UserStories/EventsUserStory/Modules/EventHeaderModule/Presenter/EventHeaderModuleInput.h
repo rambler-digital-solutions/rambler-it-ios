@@ -20,7 +20,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class PlainEvent;
+@class EventPlainObject;
 
 @protocol EventHeaderModuleInput <NSObject>
 
@@ -31,6 +31,6 @@
  
  @param event PlainEvent object
  */
-- (void)configureModuleWithEvent:(PlainEvent *)event;
+- (void)configureModuleWithEvent:(EventPlainObject *)event;
 
 @end

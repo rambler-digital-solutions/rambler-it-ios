@@ -22,7 +22,7 @@
 #import "EventListViewOutput.h"
 #import "DataDisplayManager.h"
 #import "EventListDataDisplayManager.h"
-#import "PlainEvent.h"
+#import "EventPlainObject.h"
 
 @interface EventListTableViewController() <EventLIstDataDisplayManagerDelegate>
 
@@ -56,7 +56,7 @@
 }
 
 - (void)updateViewWithEventList:(NSArray *)events {
-    PlainEvent *event = [events firstObject];
+    EventPlainObject *event = [events firstObject];
     self.viewBackgroundColor = event.backgroundColor;
     [self setScrollViewColor];
     
@@ -70,7 +70,7 @@
     [self.tableView reloadData];
 }
 
-- (void)didTapCellWithEvent:(PlainEvent *)event {
+- (void)didTapCellWithEvent:(EventPlainObject *)event {
     [self.output didTriggerTapCellWithEvent:event];
 }
 

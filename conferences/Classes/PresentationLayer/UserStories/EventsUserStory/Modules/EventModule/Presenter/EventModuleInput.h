@@ -21,7 +21,7 @@
 #import <Foundation/Foundation.h>
 #import <ViperMcFlurry/ViperMcFlurry.h>
 
-@class PlainEvent;
+@class EventPlainObject;
 
 @protocol EventModuleInput <RamblerViperModuleInput>
 

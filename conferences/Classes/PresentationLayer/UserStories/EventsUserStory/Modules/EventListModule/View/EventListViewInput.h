@@ -20,7 +20,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class PlainEvent;
+@class EventPlainObject;
 
 @protocol EventListViewInput <NSObject>
 

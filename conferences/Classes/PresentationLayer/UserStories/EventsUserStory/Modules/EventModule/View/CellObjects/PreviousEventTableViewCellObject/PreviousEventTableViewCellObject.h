@@ -21,7 +21,7 @@
 #import <Foundation/Foundation.h>
 #import <Nimbus/NimbusModels.h>
 
-@class PlainEvent;
+@class EventPlainObject;
 
 @interface PreviousEventTableViewCellObject : NSObject <NICellObject>
 
@@ -29,6 +29,6 @@
 @property (strong, nonatomic, readonly) NSString *title;
 @property (strong, nonatomic, readonly) UIColor *backgroundColor;
 
-+ (instancetype)objectWithEvent:(PlainEvent *)event andDate:(NSString *)date;
++ (instancetype)objectWithEvent:(EventPlainObject *)event andDate:(NSString *)date;
 
 @end

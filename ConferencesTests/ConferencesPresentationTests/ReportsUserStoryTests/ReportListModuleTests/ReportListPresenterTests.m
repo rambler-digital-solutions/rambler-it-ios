@@ -13,7 +13,7 @@
 #import "ReportListViewInput.h"
 #import "ReportListInteractorInput.h"
 #import "ReportListRouterInput.h"
-#import "PlainEvent.h"
+#import "EventPlainObject.h"
 
 @interface ReportListPresenterTests : XCTestCase
 
@@ -63,7 +63,7 @@
 - (void)testSuccessDidTriggerTapCellWithEvent {
     // given
     NSString *objectId = @"123";
-    PlainEvent *event = [PlainEvent new];
+    EventPlainObject *event = [EventPlainObject new];
     event.objectId = objectId;
     
     // when

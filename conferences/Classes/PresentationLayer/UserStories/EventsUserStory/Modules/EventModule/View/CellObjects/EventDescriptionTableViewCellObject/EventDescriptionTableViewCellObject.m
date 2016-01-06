@@ -20,13 +20,13 @@
 
 #import "EventDescriptionTableViewCellObject.h"
 #import "EventDescriptionTableViewCell.h"
-#import "PlainEvent.h"
+#import "EventPlainObject.h"
 
 @implementation EventDescriptionTableViewCellObject
 
 #pragma mark - Initialization
 
-- (instancetype)initWithEvent:(PlainEvent *)event {
+- (instancetype)initWithEvent:(EventPlainObject *)event {
     self = [super init];
     if (self) {
         _eventDescription = event.eventDescription;
@@ -34,7 +34,7 @@
     return self;
 }
 
-+ (instancetype)objectWithEvent:(PlainEvent *)event {
++ (instancetype)objectWithEvent:(EventPlainObject *)event {
     return [[self alloc] initWithEvent:event];
 }
 

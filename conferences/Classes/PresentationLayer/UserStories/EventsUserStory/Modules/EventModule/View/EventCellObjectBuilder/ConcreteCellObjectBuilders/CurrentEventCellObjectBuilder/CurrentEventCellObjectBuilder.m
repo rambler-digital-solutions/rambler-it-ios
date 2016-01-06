@@ -22,11 +22,11 @@
 #import "EventInfoTableViewCellObject.h"
 #import "CurrentVideoTranslationTableViewCellObject.h"
 #import "DateFormatter.h"
-#import "PlainEvent.h"
+#import "EventPlainObject.h"
 
 @implementation CurrentEventCellObjectBuilder
 
-- (NSArray *)cellObjectsForEvent:(PlainEvent *)event {
+- (NSArray *)cellObjectsForEvent:(EventPlainObject *)event {
     NSMutableArray *cellObjects = [NSMutableArray array];
     
     NSString *formattedDate = [self.dateFormatter obtainDateWithDayMonthTimeFormat:event.startDate];

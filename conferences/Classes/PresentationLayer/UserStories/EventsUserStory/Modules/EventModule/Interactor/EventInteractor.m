@@ -21,7 +21,7 @@
 #import "EventInteractor.h"
 #import "EventInteractorOutput.h"
 #import "EventService.h"
-#import "PlainEvent.h"
+#import "EventPlainObject.h"
 #import "PrototypeMapper.h"
 #import "EventTypeDeterminator.h"
 
@@ -37,21 +37,21 @@ static NSString *const kEventByObjectIdPredicateFormat = @"objectId = %@";
     NSArray *events = [self.eventService obtainEventWithPredicate:predicate];
     id managedObjectEvent = [events firstObject];
     
-    PlainEvent *plainEvent = [self getPlainEventFromManagedObject:managedObjectEvent];
+    EventPlainObject *eventPlainObject = [self getPlainEventFromManagedObject:managedObjectEvent];
     
-    [self.output didObtainEvent:plainEvent];
+    [self.output didObtainEvent:eventPlainObject];
 }
 
 #pragma mark - Private methods
 
-- (PlainEvent *)getPlainEventFromManagedObject:(NSManagedObjectModel *)managedObjectEvent {
-    PlainEvent *plainEvent = [PlainEvent new];
-    [self.eventPrototypeMapper fillObject:plainEvent withObject:managedObjectEvent];
+- (EventPlainObject *)getPlainEventFromManagedObject:(NSManagedObjectModel *)managedObjectEvent {
+    EventPlainObject *eventPlainObject = [EventPlainObject new];
+    [self.eventPrototypeMapper fillObject:eventPlainObject withObject:managedObjectEvent];
     
-    EventType eventType = [self.eventTypeDeterminator determinateTypeForEvent:plainEvent];
-    plainEvent.eventType = eventType;
+    EventType eventType = [self.eventTypeDeterminator determinateTypeForEvent:eventPlainObject];
+    eventPlainObject.eventType = eventType;
     
-    return plainEvent;
+    return eventPlainObject;
 }
 
 @end

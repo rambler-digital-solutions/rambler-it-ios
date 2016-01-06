@@ -22,7 +22,7 @@
 #import "EventListViewInput.h"
 #import "EventListInteractorInput.h"
 #import "EventListRouterInput.h"
-#import "PlainEvent.h"
+#import "EventPlainObject.h"
 
 @implementation EventListPresenter
 
@@ -34,7 +34,7 @@
     [self.view setupViewWithEventList:events];
 }
 
-- (void)didTriggerTapCellWithEvent:(PlainEvent *)event {
+- (void)didTriggerTapCellWithEvent:(EventPlainObject *)event {
     [self.router openEventModuleWithEventObjectId:event.objectId];
 }
 

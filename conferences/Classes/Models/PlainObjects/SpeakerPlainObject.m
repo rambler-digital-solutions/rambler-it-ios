@@ -18,8 +18,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "PlainSpeaker.h"
+#import "SpeakerPlainObject.h"
 
-@implementation PlainSpeaker
+@implementation SpeakerPlainObject
 
 @end

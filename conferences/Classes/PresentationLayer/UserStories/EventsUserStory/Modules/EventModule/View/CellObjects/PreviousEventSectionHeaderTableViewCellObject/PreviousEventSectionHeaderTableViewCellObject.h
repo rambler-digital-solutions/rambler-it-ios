@@ -21,12 +21,12 @@
 #import <Foundation/Foundation.h>
 #import <Nimbus/NimbusModels.h>
 
-@class PlainEvent;
+@class EventPlainObject;
 
 @interface PreviousEventSectionHeaderTableViewCellObject : NSObject <NICellObject>
 
 @property (strong, nonatomic, readonly) UIColor *contentViewColor;
 
-+ (instancetype)objectWithEvent:(PlainEvent *)event;
++ (instancetype)objectWithEvent:(EventPlainObject *)event;
 
 @end

@@ -20,7 +20,7 @@
 
 #import <Nimbus/NimbusModels.h>
 
-@class PlainEvent;
+@class EventPlainObject;
 
 @interface EventInfoTableViewCellObject : NSObject <NICellObject>
 
@@ -28,6 +28,6 @@
 @property (strong, nonatomic, readonly) NSString *eventTitle;
 @property (strong, nonatomic, readonly) NSString *eventSubTitle;
 
-+ (instancetype)objectWithEvent:(PlainEvent *)event andDate:(NSString *)date;
++ (instancetype)objectWithEvent:(EventPlainObject *)event andDate:(NSString *)date;
 
 @end

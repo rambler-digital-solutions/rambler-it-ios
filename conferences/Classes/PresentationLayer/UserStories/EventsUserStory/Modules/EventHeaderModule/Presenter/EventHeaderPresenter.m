@@ -30,7 +30,7 @@
 
 #pragma mark - EventHeaderViewOutput
 
-- (void)moduleReadyWithEvent:(PlainEvent *)event {
+- (void)moduleReadyWithEvent:(EventPlainObject *)event {
     [self.view configureViewWithEvent:event];
 }
 

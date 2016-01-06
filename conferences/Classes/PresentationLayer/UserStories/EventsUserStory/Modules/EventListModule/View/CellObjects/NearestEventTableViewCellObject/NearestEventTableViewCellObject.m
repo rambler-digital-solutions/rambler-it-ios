@@ -8,7 +8,7 @@
 
 #import "NearestEventTableViewCellObject.h"
 #import "NearestEventTableViewCell.h"
-#import "PlainEvent.h"
+#import "EventPlainObject.h"
 
 @interface NearestEventTableViewCellObject ()
 
@@ -25,7 +25,7 @@
 
 #pragma mark - Initialization
 
-- (instancetype)initWithEvent:(PlainEvent *)event eventDay:(NSString *)day eventMonth:(NSString *)month {
+- (instancetype)initWithEvent:(EventPlainObject *)event eventDay:(NSString *)day eventMonth:(NSString *)month {
     self = [super init];
     if (self) {
         _day = day;
@@ -38,7 +38,7 @@
     return self;
 }
 
-+ (instancetype)objectWithEvent:(PlainEvent *)event eventDay:(NSString *)day eventMonth:(NSString *)month {
++ (instancetype)objectWithEvent:(EventPlainObject *)event eventDay:(NSString *)day eventMonth:(NSString *)month {
     return [[self alloc] initWithEvent:event eventDay:day eventMonth:month];
 }
 

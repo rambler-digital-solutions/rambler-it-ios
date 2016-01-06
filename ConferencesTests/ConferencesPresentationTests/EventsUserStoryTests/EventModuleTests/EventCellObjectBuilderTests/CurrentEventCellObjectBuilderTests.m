@@ -12,7 +12,7 @@
 #import "CurrentEventCellObjectBuilder.h"
 #import "EventInfoTableViewCellObject.h"
 #import "CurrentVideoTranslationTableViewCellObject.h"
-#import "PlainEvent.h"
+#import "EventPlainObject.h"
 #import "DateFormatter.h"
 
 @interface CurrentEventCellObjectBuilderTests : XCTestCase
@@ -49,7 +49,7 @@
     
     NSDate *eventStartDate = [NSDate date];
     
-    PlainEvent *event = [PlainEvent new];
+    EventPlainObject *event = [EventPlainObject new];
     event.startDate = eventStartDate;
     
     // when

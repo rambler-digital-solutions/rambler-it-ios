@@ -20,7 +20,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class PlainEvent;
+@class EventPlainObject;
 
 @protocol EventViewInput <NSObject>
 
@@ -31,7 +31,7 @@
  
  @param event PlainEvent object
  */
-- (void)configureViewWithEvent:(PlainEvent *)event;
+- (void)configureViewWithEvent:(EventPlainObject *)event;
 
 @end
 

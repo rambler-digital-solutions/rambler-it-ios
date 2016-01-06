@@ -21,13 +21,13 @@
 #import <Foundation/Foundation.h>
 #import <Nimbus/NimbusModels.h>
 
-@class PlainEvent;
+@class EventPlainObject;
 
 @interface PreviousLectureTableViewCellObject : NSObject <NICellObject>
 
 @property (strong, nonatomic, readonly) NSString *lectureTitle;
 @property (strong, nonatomic, readonly) NSString *speakerName;
 
-+ (instancetype)objectWithEvent:(PlainEvent *)event;
++ (instancetype)objectWithEvent:(EventPlainObject *)event;
 
 @end

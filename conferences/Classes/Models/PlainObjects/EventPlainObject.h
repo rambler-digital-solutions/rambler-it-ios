@@ -22,7 +22,7 @@
 #import <UIKit/UIKit.h>
 #import "EventType.h"
 
-@interface PlainEvent : NSObject
+@interface EventPlainObject : NSObject
 
 // пока окончательно не сформирована модель данных - все проперти readwrite
 // добавить в модель subtitle;

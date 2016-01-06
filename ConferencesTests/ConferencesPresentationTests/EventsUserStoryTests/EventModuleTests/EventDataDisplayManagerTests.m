@@ -11,7 +11,7 @@
 
 #import "EventDataDisplayManager.h"
 #import "EventCellObjectBuilderFactory.h"
-#import "PlainEvent.h"
+#import "EventPlainObject.h"
 #import "EventType.h"
 #import "EventCellObjectBuilderBase.h"
 
@@ -37,7 +37,7 @@
 
 - (void)testSuccessConfigureDataDisplayManagerWithEvent {
     // given
-    PlainEvent *event = [PlainEvent new];
+    EventPlainObject *event = [EventPlainObject new];
     
     EventCellObjectBuilderBase *mockCellObjectBuilder = OCMClassMock([EventCellObjectBuilderBase class]);
     EventCellObjectBuilderFactory *mockFactory = OCMClassMock([EventCellObjectBuilderFactory class]);

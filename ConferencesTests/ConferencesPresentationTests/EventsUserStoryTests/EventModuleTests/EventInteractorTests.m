@@ -23,7 +23,7 @@
 
 #import "EventInteractor.h"
 #import "EventService.h"
-#import "PlainEvent.h"
+#import "EventPlainObject.h"
 #import "PrototypeMapper.h"
 #import "EventTypeDeterminator.h"
 #import "EventInteractorOutput.h"

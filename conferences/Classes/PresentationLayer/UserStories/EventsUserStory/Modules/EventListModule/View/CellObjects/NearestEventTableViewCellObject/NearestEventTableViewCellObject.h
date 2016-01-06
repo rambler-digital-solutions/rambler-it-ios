@@ -21,7 +21,7 @@
 #import <Foundation/Foundation.h>
 #import <Nimbus/NimbusModels.h>
 
-@class PlainEvent;
+@class EventPlainObject;
 
 @interface NearestEventTableViewCellObject : NSObject <NICellObject>
 
@@ -32,6 +32,6 @@
 @property (strong, nonatomic, readonly) UIColor *backgroundColor;
 @property (strong, nonatomic, readonly) NSURL *imageUrl;
 
-+ (instancetype)objectWithEvent:(PlainEvent *)event eventDay:(NSString *)day eventMonth:(NSString *)month;
++ (instancetype)objectWithEvent:(EventPlainObject *)event eventDay:(NSString *)day eventMonth:(NSString *)month;
 
 @end

@@ -15,7 +15,7 @@
 #import "EventService.h"
 #import "EventTypeDeterminator.h"
 #import "EventPrototypeMapper.h"
-#import "PlainEvent.h"
+#import "EventPlainObject.h"
 #import "Event.h"
 
 typedef void (^ProxyBlock)(NSInvocation *);

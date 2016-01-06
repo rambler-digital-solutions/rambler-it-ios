@@ -8,13 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@class PlainEvent;
+@class EventPlainObject;
 @class DateFormatter;
 
 @interface EventCellObjectBuilderBase : NSObject
 
 @property (strong, nonatomic) DateFormatter *dateFormatter;
 
-- (NSArray *)cellObjectsForEvent:(PlainEvent *)event;
+- (NSArray *)cellObjectsForEvent:(EventPlainObject *)event;
 
 @end

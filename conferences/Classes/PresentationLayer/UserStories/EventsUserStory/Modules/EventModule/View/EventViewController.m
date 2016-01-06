@@ -23,7 +23,7 @@
 #import "EventDataDisplayManager.h"
 #import "DataDisplayManager.h"
 #import "EventTableViewCellActionProtocol.h"
-#import "PlainEvent.h"
+#import "EventPlainObject.h"
 #import "EventHeaderModuleInput.h"
 
 #import <CrutchKit/Proxying/Extensions/UIViewController+CDObserver/UIViewController+CDObserver.h>
@@ -49,7 +49,7 @@
 
 #pragma mark - EventViewInput
 
-- (void)configureViewWithEvent:(PlainEvent *)event {
+- (void)configureViewWithEvent:(EventPlainObject *)event {
     [self configureNavigationBarWithColor:event.backgroundColor];
     
     [self.dataDisplayManager configureDataDisplayManagerWithEvent:event];
@@ -90,7 +90,7 @@
     [[UIScrollView appearance] setBackgroundColor:[UIColor clearColor]];
 }
 
-- (void)setupHeaderViewWithEvent:(PlainEvent *)event {
+- (void)setupHeaderViewWithEvent:(EventPlainObject *)event {
     [self.headerView configureModuleWithEvent:event];
     
     CGFloat tableViewHeaderHeight = self.headerView.frame.size.height;

@@ -23,13 +23,13 @@
 
 #import "DataDisplayManager.h"
 
-@class PlainEvent;
+@class EventPlainObject;
 @class DateFormatter;
 
 @protocol ReportListDataDisplayManagerDelegate
 
 - (void)didUpdateTableViewModel;
-- (void)didTapCellWithEvent:(PlainEvent *)event;
+- (void)didTapCellWithEvent:(EventPlainObject *)event;
 
 @end
 

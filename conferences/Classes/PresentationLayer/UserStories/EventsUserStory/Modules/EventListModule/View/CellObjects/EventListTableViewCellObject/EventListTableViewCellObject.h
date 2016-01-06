@@ -21,7 +21,7 @@
 #import <Foundation/Foundation.h>
 #import <Nimbus/NimbusModels.h>
 
-@class PlainEvent;
+@class EventPlainObject;
 
 @interface EventListTableViewCellObject : NSObject <NICellObject>
 
@@ -30,6 +30,6 @@
 @property (strong, nonatomic, readonly) NSString *eventTitle;
 @property (strong, nonatomic, readonly) NSString *eventTags;
 
-+ (instancetype)objectWithEvent:(PlainEvent *)event eventDay:(NSString *)day eventMonth:(NSString *)month;
++ (instancetype)objectWithEvent:(EventPlainObject *)event eventDay:(NSString *)day eventMonth:(NSString *)month;
 
 @end

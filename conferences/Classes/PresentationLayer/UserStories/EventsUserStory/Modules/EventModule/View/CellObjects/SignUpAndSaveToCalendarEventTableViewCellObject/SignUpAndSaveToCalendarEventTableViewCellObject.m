@@ -20,7 +20,7 @@
 
 #import "SignUpAndSaveToCalendarEventTableViewCellObject.h"
 #import "SignUpAndSaveToCalendarEventTableViewCell.h"
-#import "PlainEvent.h"
+#import "EventPlainObject.h"
 
 @interface SignUpAndSaveToCalendarEventTableViewCellObject ()
 
@@ -32,7 +32,7 @@
 
 #pragma mark - Initialization
 
-- (instancetype)initWithEvent:(PlainEvent *)event {
+- (instancetype)initWithEvent:(EventPlainObject *)event {
     self = [super init];
     if (self) {
         self.buttonColor = event.backgroundColor;
@@ -40,7 +40,7 @@
     return self;
 }
 
-+ (instancetype)objectWithEvent:(PlainEvent *)event {
++ (instancetype)objectWithEvent:(EventPlainObject *)event {
     return [[self alloc] initWithEvent:event];
 }
 

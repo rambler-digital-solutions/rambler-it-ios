@@ -24,7 +24,7 @@
 #import "EventListTableViewController.h"
 #import "EventListDataDisplayManager.h"
 #import "EventListViewOutput.h"
-#import "PlainEvent.h"
+#import "EventPlainObject.h"
 
 @interface EventListTableViewControllerTests : XCTestCase
 
@@ -112,7 +112,7 @@
 
 - (void)testSuccessDidTapCellWithEvent {
     // given
-    PlainEvent *event = [PlainEvent new];
+    EventPlainObject *event = [EventPlainObject new];
     
     // when
     [self.viewController didTapCellWithEvent:event];

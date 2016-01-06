@@ -19,12 +19,12 @@
 // THE SOFTWARE.
 
 #import "EventTypeDeterminator.h"
-#import "PlainEvent.h"
+#import "EventPlainObject.h"
 #import "EventType.h"
 
 @implementation EventTypeDeterminator
 
-- (EventType)determinateTypeForEvent:(PlainEvent *)event {
+- (EventType)determinateTypeForEvent:(EventPlainObject *)event {
     NSDate *currentDate = [NSDate date];
     
     NSComparisonResult startDateComparisonResult = [event.startDate compare:currentDate];

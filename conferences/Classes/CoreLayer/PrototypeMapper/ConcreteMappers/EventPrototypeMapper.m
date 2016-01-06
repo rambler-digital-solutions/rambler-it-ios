@@ -21,14 +21,14 @@
 #import "EventPrototypeMapper.h"
 
 #import "Event.h"
-#import "PlainEvent.h"
+#import "EventPlainObject.h"
 
 #import "UIColor+Hex.h"
 
 @implementation EventPrototypeMapper
 
 // TODO: добавить маппинг лекций после того как будет создан класс PlainLecture, так же PlainRegistratinQuestions
-- (void)fillObject:(PlainEvent *)filledObject withObject:(Event *)object {
+- (void)fillObject:(EventPlainObject *)filledObject withObject:(Event *)object {
     filledObject.eventDescription = object.eventDescription;
     filledObject.liveStreamLink = object.liveStreamLink;
     filledObject.name = object.name;

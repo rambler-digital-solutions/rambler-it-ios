@@ -20,12 +20,12 @@
 
 #import <Nimbus/NimbusModels.h>
 
-@class PlainEvent;
+@class EventPlainObject;
 
 @interface CurrentVideoTranslationTableViewCellObject : NSObject <NICellObject>
 
 @property (strong, nonatomic, readonly) UIColor *buttonColor;
 
-+ (instancetype)objectWithEvent:(PlainEvent *)event;
++ (instancetype)objectWithEvent:(EventPlainObject *)event;
 
 @end

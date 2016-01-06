@@ -24,7 +24,7 @@
 
 #import "EventListTableViewCellObject.h"
 #import "NearestEventTableViewCellObject.h"
-#import "PlainEvent.h"
+#import "EventPlainObject.h"
 #import "DateFormatter.h"
 
 @interface EventListDataDisplayManager () <UITableViewDelegate>
@@ -66,7 +66,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    PlainEvent *event = [self.events objectAtIndex:indexPath.row];
+    EventPlainObject *event = [self.events objectAtIndex:indexPath.row];
     [self.delegate didTapCellWithEvent:event];
 }
 
@@ -79,7 +79,7 @@
 - (NIMutableTableViewModel *)updateTableViewModel {
     NSMutableArray *cellObjects = [NSMutableArray array];
 
-    PlainEvent *nearestEvent = [self.events firstObject];
+    EventPlainObject *nearestEvent = [self.events firstObject];
     
     NSString *eventDay = [self.dateFormatter obtainDateWithDayFormat:nearestEvent.startDate];
     NSString *eventMonth = [self.dateFormatter obtainDateWithMonthFormat:nearestEvent.startDate];
@@ -88,7 +88,7 @@
     [cellObjects addObject:nearestEventTableViewCellObject];
     
     for (int i = 1; i < self.events.count; i++) {
-        PlainEvent *event = [self.events objectAtIndex:i];
+        EventPlainObject *event = [self.events objectAtIndex:i];
         eventDay = [self.dateFormatter obtainDateWithDayFormat:event.startDate];
         eventMonth = [self.dateFormatter obtainDateWithMonthFormat:event.startDate];
         

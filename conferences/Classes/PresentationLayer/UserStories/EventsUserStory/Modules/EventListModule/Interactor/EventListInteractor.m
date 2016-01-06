@@ -23,7 +23,7 @@
 #import "EventService.h"
 #import "Event.h"
 #import "EventPrototypeMapper.h"
-#import "PlainEvent.h"
+#import "EventPlainObject.h"
 
 #import "EXTScope.h"
 
@@ -52,16 +52,16 @@
 #pragma mark - Private methods
 
 - (NSArray *)getPlainEventsFromManagedObjects:(NSArray *)manajedObjectEvents {
-    NSMutableArray *plainEvents = [NSMutableArray array];
+    NSMutableArray *eventPlainObjects = [NSMutableArray array];
     for (Event *managedObjectEvent in manajedObjectEvents) {
-        PlainEvent *plainEvent = [PlainEvent new];
+        EventPlainObject *eventPlainObject = [EventPlainObject new];
         
-        [self.eventPrototypeMapper fillObject:plainEvent withObject:managedObjectEvent];
+        [self.eventPrototypeMapper fillObject:eventPlainObject withObject:managedObjectEvent];
         
-        [plainEvents addObject:plainEvent];
+        [eventPlainObjects addObject:eventPlainObject];
     }
     
-    return [self sortEventsByDate:plainEvents];
+    return [self sortEventsByDate:eventPlainObjects];
 }
 
 - (NSArray *)sortEventsByDate:(NSMutableArray *)events {

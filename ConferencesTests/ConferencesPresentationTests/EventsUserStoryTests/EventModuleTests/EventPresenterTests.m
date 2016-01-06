@@ -13,7 +13,7 @@
 #import "EventInteractorInput.h"
 #import "EventViewInput.h"
 #import "EventPresenterStateStorage.h"
-#import "PlainEvent.h"
+#import "EventPlainObject.h"
 
 @interface EventPresenterTests : XCTestCase
 
@@ -122,7 +122,7 @@
 
 - (void)testSuccessDidObtainEvent {
     // given
-    PlainEvent *event = [PlainEvent new];
+    EventPlainObject *event = [EventPlainObject new];
     
     // when
     [self.presenter didObtainEvent:event];

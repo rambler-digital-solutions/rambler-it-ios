@@ -22,7 +22,7 @@
 #import "EventViewInput.h"
 #import "EventInteractorInput.h"
 #import "EventRouterInput.h"
-#import "PlainEvent.h"
+#import "EventPlainObject.h"
 #import "EventPresenterStateStorage.h"
 
 @implementation EventPresenter
@@ -61,7 +61,7 @@
 
 #pragma mark - EventInteractorOutput
 
-- (void)didObtainEvent:(PlainEvent *)event {
+- (void)didObtainEvent:(EventPlainObject *)event {
     [self.view configureViewWithEvent:event];
 }
 

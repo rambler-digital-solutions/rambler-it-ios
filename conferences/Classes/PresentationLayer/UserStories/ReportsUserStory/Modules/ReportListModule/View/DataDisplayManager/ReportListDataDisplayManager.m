@@ -25,7 +25,7 @@
 #import "ReportListTableViewCellObject.h"
 #import "ReportListTableViewHeaderAndFooterCellObject.h"
 #import "DateFormatter.h"
-#import "PlainEvent.h"
+#import "EventPlainObject.h"
 
 @interface ReportListDataDisplayManager () <UITableViewDelegate>
 
@@ -66,7 +66,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    PlainEvent *event = [self.events objectAtIndex:indexPath.row];
+    EventPlainObject *event = [self.events objectAtIndex:indexPath.row];
     [self.delegate didTapCellWithEvent:event];
 }
 
@@ -82,7 +82,7 @@
     ReportListTableViewHeaderAndFooterCellObject *headerCellObject = [ReportListTableViewHeaderAndFooterCellObject new];
     [cellObjects addObject:headerCellObject];
     
-    for (PlainEvent *event in self.events) {
+    for (EventPlainObject *event in self.events) {
         NSString *eventDate = [self.dateFormatter obtainDateWithDayMonthYearFormat:event.startDate];
         
         ReportListTableViewCellObject *cellObject = [ReportListTableViewCellObject objectWithEvent:event andDate:eventDate];

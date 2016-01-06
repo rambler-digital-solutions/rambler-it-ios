@@ -20,7 +20,7 @@
 
 #import "SpeakerShortInfoTableViewCellObject.h"
 #import "SpeakerShortInfoTableViewCell.h"
-#import "PlainSpeaker.h"
+#import "SpeakerPlainObject.h"
 
 @interface SpeakerShortInfoTableViewCellObject ()
 
@@ -35,7 +35,7 @@
 
 #pragma mark - Initialization
 
-- (instancetype)initWithSpeaker:(PlainSpeaker *)speaker cellSize:(SpeakerShortInfoTableViewCellSize)cellSize {
+- (instancetype)initWithSpeaker:(SpeakerPlainObject *)speaker cellSize:(SpeakerShortInfoTableViewCellSize)cellSize {
     self = [super init];
     if (self) {
         _speakerName = speaker.name;
@@ -46,7 +46,7 @@
     return self;
 }
 
-+ (instancetype)objectWithSpeaker:(PlainSpeaker *)speaker cellSize:(SpeakerShortInfoTableViewCellSize)cellSize {
++ (instancetype)objectWithSpeaker:(SpeakerPlainObject *)speaker cellSize:(SpeakerShortInfoTableViewCellSize)cellSize {
     return [[self alloc] initWithSpeaker:speaker cellSize:cellSize];
 }
 

@@ -26,13 +26,13 @@
 #import "LectureShortInfoTableViewCellObject.h"
 #import "SpeakerShortInfoTableViewCellObject.h"
 #import "SpeakerShortInfoTableViewCellSize.h"
-#import "PlainEvent.h"
-#import "PlainLecture.h"
+#import "EventPlainObject.h"
+#import "LecturePlainObject.h"
 #import "DateFormatter.h"
 
 @implementation PastEventCellObjectBuilder
 
-- (NSArray *)cellObjectsForEvent:(PlainEvent *)event {
+- (NSArray *)cellObjectsForEvent:(EventPlainObject *)event {
     NSMutableArray *cellObjects = [NSMutableArray array];
     
     NSString *formattedDate = [self.dateFormatter obtainDateWithDayMonthTimeFormat:event.startDate];
@@ -46,8 +46,8 @@
     EventDescriptionTableViewCellObject *eventDescriptionCellObject = [EventDescriptionTableViewCellObject objectWithEvent:event];
     [cellObjects addObject:eventDescriptionCellObject];
     
-    for (PlainLecture *lecture in event.lectures) {
-        PlainSpeaker *speaker = [lecture.speakers firstObject];
+    for (LecturePlainObject *lecture in event.lectures) {
+        SpeakerPlainObject *speaker = [lecture.speakers firstObject];
         SpeakerShortInfoTableViewCellObject *speakerCellObject = [SpeakerShortInfoTableViewCellObject objectWithSpeaker:speaker cellSize:SpeakerShortInfoTableViewCellDefaultSize];
         [cellObjects addObject:speakerCellObject];
         

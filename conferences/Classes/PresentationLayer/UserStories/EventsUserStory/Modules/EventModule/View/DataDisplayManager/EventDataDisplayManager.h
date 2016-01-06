@@ -22,13 +22,13 @@
 #import <UIKit/UIKit.h>
 #import "DataDisplayManager.h"
 
-@class PlainEvent;
+@class EventPlainObject;
 @class EventCellObjectBuilderFactory;
 
 @interface EventDataDisplayManager : NSObject <DataDisplayManager>
 
 @property (strong, nonatomic) EventCellObjectBuilderFactory *cellObjectBuilderFactory;
 
-- (void)configureDataDisplayManagerWithEvent:(PlainEvent *)event;
+- (void)configureDataDisplayManagerWithEvent:(EventPlainObject *)event;
 
 @end

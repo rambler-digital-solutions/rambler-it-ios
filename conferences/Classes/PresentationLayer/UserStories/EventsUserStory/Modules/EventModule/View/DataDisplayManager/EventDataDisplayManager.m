@@ -24,7 +24,7 @@
 
 #import "EventCellObjectBuilderBase.h"
 #import "EventCellObjectBuilderFactory.h"
-#import "PlainEvent.h"
+#import "EventPlainObject.h"
 
 @interface EventDataDisplayManager () <UITableViewDelegate>
 
@@ -37,7 +37,7 @@
 
 @implementation EventDataDisplayManager
 
-- (void)configureDataDisplayManagerWithEvent:(PlainEvent *)event {
+- (void)configureDataDisplayManagerWithEvent:(EventPlainObject *)event {
     self.cellObjectBuilder = [self.cellObjectBuilderFactory builderForEventType:@(event.eventType)];
     self.cellObjects = [self.cellObjectBuilder cellObjectsForEvent:event];
 }

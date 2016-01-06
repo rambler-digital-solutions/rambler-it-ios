@@ -21,7 +21,7 @@
 #import <Typhoon/Typhoon.h>
 #import "EventType.h"
 
-@class PlainEvent;
+@class EventPlainObject;
 @class EventCellObjectBuilderBase;
 
 @interface EventCellObjectBuilderFactory : TyphoonAssembly

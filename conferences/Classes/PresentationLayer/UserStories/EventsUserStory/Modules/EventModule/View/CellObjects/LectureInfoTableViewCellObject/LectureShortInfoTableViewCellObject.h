@@ -20,13 +20,13 @@
 
 #import <Nimbus/NimbusModels.h>
 
-@class PlainLecture;
+@class LecturePlainObject;
 
 @interface LectureShortInfoTableViewCellObject : NSObject <NICellObject>
 
 @property (strong, nonatomic, readonly) NSString *lectureDescription;
 @property (strong, nonatomic, readonly) NSString *lectureTitle;
 
-+ (instancetype)objectWithLecture:(PlainLecture *)lecture;
++ (instancetype)objectWithLecture:(LecturePlainObject *)lecture;
 
 @end

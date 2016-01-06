@@ -20,7 +20,7 @@
 
 #import "ReportListTableViewCellObject.h"
 #import "ReportListTableViewCell.h"
-#import "PlainEvent.h"
+#import "EventPlainObject.h"
 
 @interface ReportListTableViewCellObject ()
 
@@ -34,7 +34,7 @@
 
 #pragma mark - Initialization
 
-- (instancetype)initWithEvent:(PlainEvent *)event andDate:(NSString *)date {
+- (instancetype)initWithEvent:(EventPlainObject *)event andDate:(NSString *)date {
     self = [super init];
     if (self) {
         _eventTitle = event.name;
@@ -44,7 +44,7 @@
     return self;
 }
 
-+ (instancetype)objectWithEvent:(PlainEvent *)event andDate:(NSString *)date {
++ (instancetype)objectWithEvent:(EventPlainObject *)event andDate:(NSString *)date {
     return [[self alloc] initWithEvent:event andDate:date];
 }
 

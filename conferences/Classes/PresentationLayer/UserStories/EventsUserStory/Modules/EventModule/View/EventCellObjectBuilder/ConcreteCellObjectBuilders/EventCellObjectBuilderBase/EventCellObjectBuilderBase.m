@@ -10,7 +10,7 @@
 
 @implementation EventCellObjectBuilderBase
 
-- (NSArray *)cellObjectsForEvent:(PlainEvent *)event {
+- (NSArray *)cellObjectsForEvent:(EventPlainObject *)event {
     return nil;
 }
 

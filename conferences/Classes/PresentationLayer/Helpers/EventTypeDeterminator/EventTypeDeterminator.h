@@ -21,7 +21,7 @@
 #import <Foundation/Foundation.h>
 #import "EventType.h"
 
-@class PlainEvent;
+@class EventPlainObject;
 
 /**
  @author Artem Karpushin
@@ -37,6 +37,6 @@
  
  @param event PlainEvent object
  */
-- (EventType)determinateTypeForEvent:(PlainEvent *)event;
+- (EventType)determinateTypeForEvent:(EventPlainObject *)event;
 
 @end

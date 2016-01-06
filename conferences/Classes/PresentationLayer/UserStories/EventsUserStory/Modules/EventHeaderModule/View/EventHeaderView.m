@@ -20,7 +20,7 @@
 
 #import "EventHeaderView.h"
 #import "EventHeaderViewOutput.h"
-#import "PlainEvent.h"
+#import "EventPlainObject.h"
 #import "EventHeaderModuleInput.h"
 
 #import <SDWebImage/UIImageView+WebCache.h>
@@ -37,7 +37,7 @@ static NSString *const kPlaceholderImageName = @"placeholder";
 
 #pragma mark - EventHeaderViewInput
 
-- (void)configureViewWithEvent:(PlainEvent *)event {
+- (void)configureViewWithEvent:(EventPlainObject *)event {
     self.backgroundColor = event.backgroundColor;
     [self.eventImageView sd_setImageWithURL:event.imageUrl
                            placeholderImage:[UIImage imageNamed:kPlaceholderImageName]];
@@ -45,7 +45,7 @@ static NSString *const kPlaceholderImageName = @"placeholder";
 
 #pragma mark - EventHeaderModuleInput
 
-- (void)configureModuleWithEvent:(PlainEvent *)event {
+- (void)configureModuleWithEvent:(EventPlainObject *)event {
     [self.output moduleReadyWithEvent:event];
 }
 

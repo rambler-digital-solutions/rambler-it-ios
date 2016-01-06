@@ -20,12 +20,12 @@
 
 #import <Foundation/Foundation.h>
 
-@class PlainEvent;
+@class EventPlainObject;
 
 @protocol EventListViewOutput <NSObject>
 
 - (void)setupView;
-- (void)didTriggerTapCellWithEvent:(PlainEvent *)event;
+- (void)didTriggerTapCellWithEvent:(EventPlainObject *)event;
 
 @end
 

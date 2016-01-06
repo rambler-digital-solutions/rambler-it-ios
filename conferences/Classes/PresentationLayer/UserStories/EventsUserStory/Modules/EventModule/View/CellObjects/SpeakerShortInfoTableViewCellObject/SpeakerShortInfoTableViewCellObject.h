@@ -21,7 +21,7 @@
 #import <Nimbus/NimbusModels.h>
 #import "SpeakerShortInfoTableViewCellSize.h"
 
-@class PlainSpeaker;
+@class SpeakerPlainObject;
 
 @interface SpeakerShortInfoTableViewCellObject : NSObject <NICellObject>
 
@@ -30,6 +30,6 @@
 @property (strong, nonatomic, readonly) NSURL *speakerImageLink;
 @property (assign, nonatomic, readonly) SpeakerShortInfoTableViewCellSize cellSize;
 
-+ (instancetype)objectWithSpeaker:(PlainSpeaker *)speaker cellSize:(SpeakerShortInfoTableViewCellSize)cellSize;
++ (instancetype)objectWithSpeaker:(SpeakerPlainObject *)speaker cellSize:(SpeakerShortInfoTableViewCellSize)cellSize;
 
 @end

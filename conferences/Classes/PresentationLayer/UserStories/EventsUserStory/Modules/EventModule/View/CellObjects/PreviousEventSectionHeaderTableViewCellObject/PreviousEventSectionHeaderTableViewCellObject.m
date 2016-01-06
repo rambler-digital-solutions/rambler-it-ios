@@ -20,7 +20,7 @@
 
 #import "PreviousEventSectionHeaderTableViewCellObject.h"
 #import "PreviousEventSectionHeaderTableViewCell.h"
-#import "PlainEvent.h"
+#import "EventPlainObject.h"
 
 @interface PreviousEventSectionHeaderTableViewCellObject ()
 
@@ -32,7 +32,7 @@
 
 #pragma mark - Initialization
 
-- (instancetype)initWithEvent:(PlainEvent *)event {
+- (instancetype)initWithEvent:(EventPlainObject *)event {
     self = [super init];
     if (self) {
         _contentViewColor = event.backgroundColor;
@@ -40,7 +40,7 @@
     return self;
 }
 
-+ (instancetype)objectWithEvent:(PlainEvent *)event {
++ (instancetype)objectWithEvent:(EventPlainObject *)event {
     return [[self alloc] initWithEvent:event];
 }
 

@@ -25,7 +25,7 @@
 #import "EventListViewInput.h"
 #import "EventListInteractorInput.h"
 #import "EventListRouterInput.h"
-#import "PlainEvent.h"
+#import "EventPlainObject.h"
 
 @interface EventListPresenterTests : XCTestCase
 
@@ -75,7 +75,7 @@
 - (void)testSuccessDidTriggerTapCellWithEvent {
     // given
     NSString *objectId = @"123";
-    PlainEvent *event = [PlainEvent new];
+    EventPlainObject *event = [EventPlainObject new];
     event.objectId = objectId;
     
     // when

@@ -20,13 +20,13 @@
 
 #import "PastVideoTranslationTableViewCellObject.h"
 #import "PastVideoTranslationTableViewCell.h"
-#import "PlainEvent.h"
+#import "EventPlainObject.h"
 
 @implementation PastVideoTranslationTableViewCellObject
 
 #pragma mark - Initialization
 
-- (instancetype)initWithEvent:(PlainEvent *)event {
+- (instancetype)initWithEvent:(EventPlainObject *)event {
     self = [super init];
     if (self) {
         // 
@@ -34,7 +34,7 @@
     return self;
 }
 
-+ (instancetype)objectWithEvent:(PlainEvent *)event {
++ (instancetype)objectWithEvent:(EventPlainObject *)event {
     return [[self alloc] initWithEvent:event];
 }
 

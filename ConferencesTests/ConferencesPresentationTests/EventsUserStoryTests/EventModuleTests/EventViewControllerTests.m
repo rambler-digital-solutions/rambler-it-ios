@@ -27,7 +27,7 @@
 #import "EventDataDisplayManager.h"
 #import "DataDisplayManager.h"
 #import "EventTableViewCellActionProtocol.h"
-#import "PlainEvent.h"
+#import "EventPlainObject.h"
 #import "EventHeaderView.h"
 
 @interface EventViewControllerTests : XCTestCase
@@ -81,7 +81,7 @@
 
 - (void)testSuccessConfigureViewWithEvent {
     // given
-    PlainEvent *event = [PlainEvent new];
+    EventPlainObject *event = [EventPlainObject new];
     
     id dataSource = OCMProtocolMock(@protocol(UITableViewDataSource));
     id delegate = OCMProtocolMock(@protocol(UITableViewDelegate));
@@ -100,7 +100,7 @@
 
 - (void)testSuccesConfigureHeaderModule {
     // given
-    PlainEvent *event = [PlainEvent new];
+    EventPlainObject *event = [EventPlainObject new];
     
     EventHeaderView *mockHeaderView = OCMClassMock([EventHeaderView class]);
     self.viewController.headerView = mockHeaderView;

@@ -20,8 +20,8 @@
 
 #import "LectureShortInfoTableViewCellObject.h"
 #import "LectureShortInfoTableViewCell.h"
-#import "PlainLecture.h"
-#import "PlainSpeaker.h"
+#import "LecturePlainObject.h"
+#import "SpeakerPlainObject.h"
 
 @interface LectureShortInfoTableViewCellObject ()
 
@@ -34,7 +34,7 @@
 
 #pragma mark - Initialization
 
-- (instancetype)initWithLecture:(PlainLecture *)lecture {
+- (instancetype)initWithLecture:(LecturePlainObject *)lecture {
     self = [super init];
     if (self) {
         _lectureDescription = lecture.lectureDescription;
@@ -43,7 +43,7 @@
     return self;
 }
 
-+ (instancetype)objectWithLecture:(PlainLecture *)lecture {
++ (instancetype)objectWithLecture:(LecturePlainObject *)lecture {
     return [[self alloc] initWithLecture:lecture];
 }
 

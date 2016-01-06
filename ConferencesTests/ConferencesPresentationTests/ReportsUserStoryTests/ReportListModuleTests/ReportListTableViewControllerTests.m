@@ -13,7 +13,7 @@
 #import "ReportListViewOutput.h"
 #import "DataDisplayManager.h"
 #import "ReportListDataDisplayManager.h"
-#import "PlainEvent.h"
+#import "EventPlainObject.h"
 
 @interface ReportListTableViewControllerTests : XCTestCase
 
@@ -112,7 +112,7 @@
 
 - (void)testSuccessDidTapCellWithEvent {
     // given
-    PlainEvent *event = [PlainEvent new];
+    EventPlainObject *event = [EventPlainObject new];
     
     // when
     [self.viewController didTapCellWithEvent:event];

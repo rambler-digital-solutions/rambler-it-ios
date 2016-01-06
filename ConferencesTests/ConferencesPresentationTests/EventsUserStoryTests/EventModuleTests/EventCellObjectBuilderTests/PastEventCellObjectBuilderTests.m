@@ -14,8 +14,8 @@
 #import "PastVideoTranslationTableViewCellObject.h"
 #import "EventDescriptionTableViewCellObject.h"
 #import "LectureShortInfoTableViewCellObject.h"
-#import "PlainEvent.h"
-#import "PlainLecture.h"
+#import "EventPlainObject.h"
+#import "LecturePlainObject.h"
 #import "DateFormatter.h"
 
 @interface PastEventCellObjectBuilderTests : XCTestCase
@@ -47,12 +47,12 @@
     // given
     NSDate *eventStartDate = [NSDate date];
     
-    PlainEvent *event = [PlainEvent new];
+    EventPlainObject *event = [EventPlainObject new];
     event.startDate = eventStartDate;
     event.lectures = @[
-                       [PlainLecture new],
-                       [PlainLecture new],
-                       [PlainLecture new]
+                       [LecturePlainObject new],
+                       [LecturePlainObject new],
+                       [LecturePlainObject new]
                        ];
     
     NSUInteger const expectedNumberOfEventInfoTableViewCellObjects = 1;

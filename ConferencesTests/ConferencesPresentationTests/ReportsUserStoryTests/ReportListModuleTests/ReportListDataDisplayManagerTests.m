@@ -11,7 +11,7 @@
 
 #import "ReportListDataDisplayManager.h"
 #import "ReportListTableViewCell.h"
-#import "PlainEvent.h"
+#import "EventPlainObject.h"
 #import "ReportListTableViewController.h"
 
 typedef NS_ENUM(NSUInteger, TableViewSectionIndex){
@@ -31,7 +31,7 @@ typedef NS_ENUM(NSUInteger, TableViewSectionIndex){
     [super setUp];
     
     self.dataDisplayManager = [ReportListDataDisplayManager new];
-    self.events = @[[PlainEvent new], [PlainEvent new], [PlainEvent new]];
+    self.events = @[[EventPlainObject new], [EventPlainObject new], [EventPlainObject new]];
 }
 
 - (void)tearDown {

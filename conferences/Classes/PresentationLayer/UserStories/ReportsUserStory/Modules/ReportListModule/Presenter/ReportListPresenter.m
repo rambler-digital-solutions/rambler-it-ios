@@ -22,7 +22,7 @@
 #import "ReportListViewInput.h"
 #import "ReportListInteractorInput.h"
 #import "ReportListRouterInput.h"
-#import "PlainEvent.h"
+#import "EventPlainObject.h"
 
 @implementation ReportListPresenter
 
@@ -34,7 +34,7 @@
     [self.view setupViewWithEventList:events];
 }
 
-- (void)didTriggerTapCellWithEvent:(PlainEvent *)event {
+- (void)didTriggerTapCellWithEvent:(EventPlainObject *)event {
     [self.router openEventModuleWithEventObjectId:event.objectId];
 }
 

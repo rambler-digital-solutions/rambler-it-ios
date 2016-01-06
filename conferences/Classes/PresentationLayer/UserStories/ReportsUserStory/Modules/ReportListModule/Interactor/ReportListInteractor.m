@@ -24,7 +24,7 @@
 #import "EventService.h"
 #import "Event.h"
 #import "EventPrototypeMapper.h"
-#import "PlainEvent.h"
+#import "EventPlainObject.h"
 #import "EventType.h"
 #import "EventTypeDeterminator.h"
 
@@ -55,21 +55,21 @@
 #pragma mark - Private methods
 
 - (NSArray *)getPlainEventsFromManagedObjects:(NSArray *)managedObjectEvents {
-    NSMutableArray *plainEvents = [NSMutableArray array];
+    NSMutableArray *eventPlainObjects = [NSMutableArray array];
     for (Event *managedObjectEvent in managedObjectEvents) {
-        PlainEvent *plainEvent = [PlainEvent new];
+        EventPlainObject *eventPlainObject = [EventPlainObject new];
         
-        [self.eventPrototypeMapper fillObject:plainEvent withObject:managedObjectEvent];
+        [self.eventPrototypeMapper fillObject:eventPlainObject withObject:managedObjectEvent];
         
-        [plainEvents addObject:plainEvent];
+        [eventPlainObjects addObject:eventPlainObject];
     }
-    return [self obtainPastEvents:plainEvents];
+    return [self obtainPastEvents:eventPlainObjects];
 }
 
 - (NSArray *)obtainPastEvents:(NSArray *)events {
     NSMutableArray *pastEvents = [NSMutableArray array];
     
-    for (PlainEvent *event in events) {
+    for (EventPlainObject *event in events) {
         EventType eventType = [self.eventTypeDeterminator determinateTypeForEvent:event];
         
         if (eventType == PastEvent) {

@@ -9,7 +9,7 @@
 #import <XCTest/XCTest.h>
 
 #import "EventTypeDeterminator.h"
-#import "PlainEvent.h"
+#import "EventPlainObject.h"
 #import "EventType.h"
 
 static NSUInteger const DefaultEventTestType = 111;
@@ -44,7 +44,7 @@ static NSUInteger const DefaultEventTestType = 111;
     NSDate *eventStartDate = [[NSDate date] dateByAddingTimeInterval: - hour];
     NSDate *eventEndDate = [[NSDate date] dateByAddingTimeInterval:hour];
     
-    PlainEvent *event = [PlainEvent new];
+    EventPlainObject *event = [EventPlainObject new];
     event.startDate = eventStartDate;
     event.endDate = eventEndDate;
     
@@ -65,7 +65,7 @@ static NSUInteger const DefaultEventTestType = 111;
     NSDate *eventStartDate = [[NSDate date] dateByAddingTimeInterval:hour];
     NSDate *eventEndDate = [[NSDate date] dateByAddingTimeInterval:hour + hour];
     
-    PlainEvent *event = [PlainEvent new];
+    EventPlainObject *event = [EventPlainObject new];
     event.startDate = eventStartDate;
     event.endDate = eventEndDate;
     
@@ -86,7 +86,7 @@ static NSUInteger const DefaultEventTestType = 111;
     NSDate *eventStartDate = [[NSDate date] dateByAddingTimeInterval: - hour - hour];
     NSDate *eventEndDate = [[NSDate date] dateByAddingTimeInterval: - hour];
     
-    PlainEvent *event = [PlainEvent new];
+    EventPlainObject *event = [EventPlainObject new];
     event.startDate = eventStartDate;
     event.endDate = eventEndDate;
     
