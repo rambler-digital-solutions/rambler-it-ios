@@ -8,11 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5A5668508B92FC833070BA13 /* libPods-ConferencesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E72B1E234365770B87BDC6D /* libPods-ConferencesTests.a */; };
-		6305103F1C19ED8200D7A653 /* EventHeaderModuleAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 6305102D1C19ED8200D7A653 /* EventHeaderModuleAssembly.m */; };
-		630510401C19ED8200D7A653 /* EventHeaderInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 630510301C19ED8200D7A653 /* EventHeaderInteractor.m */; };
-		630510411C19ED8200D7A653 /* EventHeaderPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 630510351C19ED8200D7A653 /* EventHeaderPresenter.m */; };
-		630510421C19ED8200D7A653 /* EventHeaderRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 630510381C19ED8200D7A653 /* EventHeaderRouter.m */; };
-		630510431C19ED8200D7A653 /* EventHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6305103C1C19ED8200D7A653 /* EventHeaderView.m */; };
 		63136F931BDCD8B600994356 /* EventListDataDisplayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136F921BDCD8B600994356 /* EventListDataDisplayManager.m */; };
 		63136FD31BDCDB2700994356 /* EmbedModuleSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136F971BDCDB2600994356 /* EmbedModuleSegue.m */; };
 		63136FD41BDCDB2700994356 /* EmbedModuleTransitionSegueInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136F991BDCDB2600994356 /* EmbedModuleTransitionSegueInfo.m */; };
@@ -122,7 +117,6 @@
 		636F8DFD1BCB914100552B91 /* EventsUserStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 636F8DFC1BCB914100552B91 /* EventsUserStory.storyboard */; };
 		636F8DFF1BCB91A900552B91 /* RamblerLocationUserStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 636F8DFE1BCB91A900552B91 /* RamblerLocationUserStory.storyboard */; };
 		6373A4101BBDC5EA00DF67FF /* Conference.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6373A40E1BBDC5EA00DF67FF /* Conference.xcdatamodeld */; };
-		638CC94F1C2C549800D8ADB7 /* EventHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 638CC94E1C2C549800D8ADB7 /* EventHeaderView.xib */; };
 		638DBCFD1BEA385400B4B208 /* EventModuleAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 638DBBD01BEA385300B4B208 /* EventModuleAssembly.m */; };
 		638DBD451BEA385400B4B208 /* EventInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 638DBCEE1BEA385400B4B208 /* EventInteractor.m */; };
 		638DBD461BEA385400B4B208 /* EventPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 638DBCF31BEA385400B4B208 /* EventPresenter.m */; };
@@ -168,6 +162,12 @@
 		63F51C411C3D0E6B00AFB9D2 /* SpeakerShortInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F51C3F1C3D0E6B00AFB9D2 /* SpeakerShortInfoTableViewCell.m */; };
 		63F51C421C3D0E6B00AFB9D2 /* SpeakerShortInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63F51C401C3D0E6B00AFB9D2 /* SpeakerShortInfoTableViewCell.xib */; };
 		63F51C451C3D0EA200AFB9D2 /* SpeakerShortInfoTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F51C441C3D0EA200AFB9D2 /* SpeakerShortInfoTableViewCellObject.m */; };
+		63F51C5E1C3D409200AFB9D2 /* EventHeaderModuleAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F51C4A1C3D409200AFB9D2 /* EventHeaderModuleAssembly.m */; };
+		63F51C5F1C3D409200AFB9D2 /* EventHeaderInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F51C4D1C3D409200AFB9D2 /* EventHeaderInteractor.m */; };
+		63F51C601C3D409200AFB9D2 /* EventHeaderPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F51C531C3D409200AFB9D2 /* EventHeaderPresenter.m */; };
+		63F51C611C3D409200AFB9D2 /* EventHeaderRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F51C561C3D409200AFB9D2 /* EventHeaderRouter.m */; };
+		63F51C621C3D409200AFB9D2 /* EventHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F51C5A1C3D409200AFB9D2 /* EventHeaderView.m */; };
+		63F51C631C3D409200AFB9D2 /* EventHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63F51C5B1C3D409200AFB9D2 /* EventHeaderView.xib */; };
 		63F54D951BC5A79900DB1746 /* EXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F54D931BC5A79900DB1746 /* EXTScope.m */; };
 		63F54D9B1BC5AB3C00DB1746 /* ServiceComponentsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F54D9A1BC5AB3C00DB1746 /* ServiceComponentsAssembly.m */; };
 		63F54DA01BC5BB2800DB1746 /* ThirdPartiesConfiguratorImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F54D9F1BC5BB2800DB1746 /* ThirdPartiesConfiguratorImplementation.m */; };
@@ -294,21 +294,6 @@
 		559ED4EDBC100544852E4E6A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		5E72B1E234365770B87BDC6D /* libPods-ConferencesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ConferencesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FED76184BAB5478101AC945 /* Pods-ConferencesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConferencesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConferencesTests/Pods-ConferencesTests.release.xcconfig"; sourceTree = "<group>"; };
-		6305102C1C19ED8200D7A653 /* EventHeaderModuleAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventHeaderModuleAssembly.h; sourceTree = "<group>"; };
-		6305102D1C19ED8200D7A653 /* EventHeaderModuleAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventHeaderModuleAssembly.m; sourceTree = "<group>"; };
-		6305102F1C19ED8200D7A653 /* EventHeaderInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventHeaderInteractor.h; sourceTree = "<group>"; };
-		630510301C19ED8200D7A653 /* EventHeaderInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventHeaderInteractor.m; sourceTree = "<group>"; };
-		630510311C19ED8200D7A653 /* EventHeaderInteractorInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventHeaderInteractorInput.h; sourceTree = "<group>"; };
-		630510321C19ED8200D7A653 /* EventHeaderInteractorOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventHeaderInteractorOutput.h; sourceTree = "<group>"; };
-		630510341C19ED8200D7A653 /* EventHeaderPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventHeaderPresenter.h; sourceTree = "<group>"; };
-		630510351C19ED8200D7A653 /* EventHeaderPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventHeaderPresenter.m; sourceTree = "<group>"; };
-		630510371C19ED8200D7A653 /* EventHeaderRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventHeaderRouter.h; sourceTree = "<group>"; };
-		630510381C19ED8200D7A653 /* EventHeaderRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventHeaderRouter.m; sourceTree = "<group>"; };
-		630510391C19ED8200D7A653 /* EventHeaderRouterInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventHeaderRouterInput.h; sourceTree = "<group>"; };
-		6305103B1C19ED8200D7A653 /* EventHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventHeaderView.h; sourceTree = "<group>"; };
-		6305103C1C19ED8200D7A653 /* EventHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventHeaderView.m; sourceTree = "<group>"; };
-		6305103D1C19ED8200D7A653 /* EventHeaderViewInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventHeaderViewInput.h; sourceTree = "<group>"; };
-		6305103E1C19ED8200D7A653 /* EventHeaderViewOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventHeaderViewOutput.h; sourceTree = "<group>"; };
 		63136F911BDCD8B600994356 /* EventListDataDisplayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListDataDisplayManager.h; sourceTree = "<group>"; };
 		63136F921BDCD8B600994356 /* EventListDataDisplayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListDataDisplayManager.m; sourceTree = "<group>"; };
 		63136F961BDCDB2600994356 /* EmbedModuleSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmbedModuleSegue.h; sourceTree = "<group>"; };
@@ -532,8 +517,6 @@
 		6373A3E71BBDC02100DF67FF /* RegistrationQuestionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationQuestionService.h; sourceTree = "<group>"; };
 		6373A3E91BBDC05900DF67FF /* SpeakerService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerService.h; sourceTree = "<group>"; };
 		6373A40F1BBDC5EA00DF67FF /* Conference.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Conference.xcdatamodel; sourceTree = "<group>"; };
-		638CC94E1C2C549800D8ADB7 /* EventHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventHeaderView.xib; sourceTree = "<group>"; };
-		638CC9501C2C5A0900D8ADB7 /* EventHeaderModuleInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventHeaderModuleInput.h; sourceTree = "<group>"; };
 		638DBBCF1BEA385300B4B208 /* EventModuleAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventModuleAssembly.h; sourceTree = "<group>"; };
 		638DBBD01BEA385300B4B208 /* EventModuleAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventModuleAssembly.m; sourceTree = "<group>"; };
 		638DBCED1BEA385400B4B208 /* EventInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventInteractor.h; sourceTree = "<group>"; };
@@ -592,6 +575,23 @@
 		63F51C431C3D0EA200AFB9D2 /* SpeakerShortInfoTableViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerShortInfoTableViewCellObject.h; sourceTree = "<group>"; };
 		63F51C441C3D0EA200AFB9D2 /* SpeakerShortInfoTableViewCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerShortInfoTableViewCellObject.m; sourceTree = "<group>"; };
 		63F51C461C3D1A1200AFB9D2 /* SpeakerShortInfoTableViewCellSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpeakerShortInfoTableViewCellSize.h; sourceTree = "<group>"; };
+		63F51C491C3D409200AFB9D2 /* EventHeaderModuleAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventHeaderModuleAssembly.h; sourceTree = "<group>"; };
+		63F51C4A1C3D409200AFB9D2 /* EventHeaderModuleAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventHeaderModuleAssembly.m; sourceTree = "<group>"; };
+		63F51C4C1C3D409200AFB9D2 /* EventHeaderInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventHeaderInteractor.h; sourceTree = "<group>"; };
+		63F51C4D1C3D409200AFB9D2 /* EventHeaderInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventHeaderInteractor.m; sourceTree = "<group>"; };
+		63F51C4E1C3D409200AFB9D2 /* EventHeaderInteractorInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventHeaderInteractorInput.h; sourceTree = "<group>"; };
+		63F51C4F1C3D409200AFB9D2 /* EventHeaderInteractorOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventHeaderInteractorOutput.h; sourceTree = "<group>"; };
+		63F51C511C3D409200AFB9D2 /* EventHeaderModuleInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventHeaderModuleInput.h; sourceTree = "<group>"; };
+		63F51C521C3D409200AFB9D2 /* EventHeaderPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventHeaderPresenter.h; sourceTree = "<group>"; };
+		63F51C531C3D409200AFB9D2 /* EventHeaderPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventHeaderPresenter.m; sourceTree = "<group>"; };
+		63F51C551C3D409200AFB9D2 /* EventHeaderRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventHeaderRouter.h; sourceTree = "<group>"; };
+		63F51C561C3D409200AFB9D2 /* EventHeaderRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventHeaderRouter.m; sourceTree = "<group>"; };
+		63F51C571C3D409200AFB9D2 /* EventHeaderRouterInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventHeaderRouterInput.h; sourceTree = "<group>"; };
+		63F51C591C3D409200AFB9D2 /* EventHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventHeaderView.h; sourceTree = "<group>"; };
+		63F51C5A1C3D409200AFB9D2 /* EventHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventHeaderView.m; sourceTree = "<group>"; };
+		63F51C5B1C3D409200AFB9D2 /* EventHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventHeaderView.xib; sourceTree = "<group>"; };
+		63F51C5C1C3D409200AFB9D2 /* EventHeaderViewInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventHeaderViewInput.h; sourceTree = "<group>"; };
+		63F51C5D1C3D409200AFB9D2 /* EventHeaderViewOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventHeaderViewOutput.h; sourceTree = "<group>"; };
 		63F54D921BC5A79900DB1746 /* EXTScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTScope.h; sourceTree = "<group>"; };
 		63F54D931BC5A79900DB1746 /* EXTScope.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTScope.m; sourceTree = "<group>"; };
 		63F54D941BC5A79900DB1746 /* metamacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = metamacros.h; sourceTree = "<group>"; };
@@ -841,70 +841,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		630510161C19EBF600D7A653 /* EventHeaderModule */ = {
-			isa = PBXGroup;
-			children = (
-				6305102B1C19ED8200D7A653 /* Assembly */,
-				6305102E1C19ED8200D7A653 /* Interactor */,
-				630510331C19ED8200D7A653 /* Presenter */,
-				630510361C19ED8200D7A653 /* Router */,
-				6305103A1C19ED8200D7A653 /* View */,
-			);
-			path = EventHeaderModule;
-			sourceTree = "<group>";
-		};
-		6305102B1C19ED8200D7A653 /* Assembly */ = {
-			isa = PBXGroup;
-			children = (
-				6305102C1C19ED8200D7A653 /* EventHeaderModuleAssembly.h */,
-				6305102D1C19ED8200D7A653 /* EventHeaderModuleAssembly.m */,
-			);
-			path = Assembly;
-			sourceTree = "<group>";
-		};
-		6305102E1C19ED8200D7A653 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				6305102F1C19ED8200D7A653 /* EventHeaderInteractor.h */,
-				630510301C19ED8200D7A653 /* EventHeaderInteractor.m */,
-				630510311C19ED8200D7A653 /* EventHeaderInteractorInput.h */,
-				630510321C19ED8200D7A653 /* EventHeaderInteractorOutput.h */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		630510331C19ED8200D7A653 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				630510341C19ED8200D7A653 /* EventHeaderPresenter.h */,
-				630510351C19ED8200D7A653 /* EventHeaderPresenter.m */,
-				638CC9501C2C5A0900D8ADB7 /* EventHeaderModuleInput.h */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		630510361C19ED8200D7A653 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				630510371C19ED8200D7A653 /* EventHeaderRouter.h */,
-				630510381C19ED8200D7A653 /* EventHeaderRouter.m */,
-				630510391C19ED8200D7A653 /* EventHeaderRouterInput.h */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		6305103A1C19ED8200D7A653 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				6305103D1C19ED8200D7A653 /* EventHeaderViewInput.h */,
-				6305103E1C19ED8200D7A653 /* EventHeaderViewOutput.h */,
-				6305103B1C19ED8200D7A653 /* EventHeaderView.h */,
-				6305103C1C19ED8200D7A653 /* EventHeaderView.m */,
-				638CC94E1C2C549800D8ADB7 /* EventHeaderView.xib */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		63136F901BDCD87C00994356 /* DataDisplayManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -1788,7 +1724,6 @@
 		636F8DE01BCB90E500552B91 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				630510161C19EBF600D7A653 /* EventHeaderModule */,
 				636F8DE11BCB90E500552B91 /* EventListModule */,
 				63DD63911BE670A000874DE5 /* EventModule */,
 			);
@@ -2089,6 +2024,7 @@
 		63DD63911BE670A000874DE5 /* EventModule */ = {
 			isa = PBXGroup;
 			children = (
+				63F51C471C3D409200AFB9D2 /* EventHeaderModule */,
 				638DBBCE1BEA385300B4B208 /* Assembly */,
 				638DBCEC1BEA385400B4B208 /* Interactor */,
 				638DBCF11BEA385400B4B208 /* Presenter */,
@@ -2237,6 +2173,70 @@
 				63F51C441C3D0EA200AFB9D2 /* SpeakerShortInfoTableViewCellObject.m */,
 			);
 			path = SpeakerShortInfoTableViewCellObject;
+			sourceTree = "<group>";
+		};
+		63F51C471C3D409200AFB9D2 /* EventHeaderModule */ = {
+			isa = PBXGroup;
+			children = (
+				63F51C481C3D409200AFB9D2 /* Assembly */,
+				63F51C4B1C3D409200AFB9D2 /* Interactor */,
+				63F51C501C3D409200AFB9D2 /* Presenter */,
+				63F51C541C3D409200AFB9D2 /* Router */,
+				63F51C581C3D409200AFB9D2 /* View */,
+			);
+			path = EventHeaderModule;
+			sourceTree = "<group>";
+		};
+		63F51C481C3D409200AFB9D2 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				63F51C491C3D409200AFB9D2 /* EventHeaderModuleAssembly.h */,
+				63F51C4A1C3D409200AFB9D2 /* EventHeaderModuleAssembly.m */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		63F51C4B1C3D409200AFB9D2 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				63F51C4C1C3D409200AFB9D2 /* EventHeaderInteractor.h */,
+				63F51C4D1C3D409200AFB9D2 /* EventHeaderInteractor.m */,
+				63F51C4E1C3D409200AFB9D2 /* EventHeaderInteractorInput.h */,
+				63F51C4F1C3D409200AFB9D2 /* EventHeaderInteractorOutput.h */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		63F51C501C3D409200AFB9D2 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				63F51C511C3D409200AFB9D2 /* EventHeaderModuleInput.h */,
+				63F51C521C3D409200AFB9D2 /* EventHeaderPresenter.h */,
+				63F51C531C3D409200AFB9D2 /* EventHeaderPresenter.m */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		63F51C541C3D409200AFB9D2 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				63F51C551C3D409200AFB9D2 /* EventHeaderRouter.h */,
+				63F51C561C3D409200AFB9D2 /* EventHeaderRouter.m */,
+				63F51C571C3D409200AFB9D2 /* EventHeaderRouterInput.h */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		63F51C581C3D409200AFB9D2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				63F51C591C3D409200AFB9D2 /* EventHeaderView.h */,
+				63F51C5A1C3D409200AFB9D2 /* EventHeaderView.m */,
+				63F51C5B1C3D409200AFB9D2 /* EventHeaderView.xib */,
+				63F51C5C1C3D409200AFB9D2 /* EventHeaderViewInput.h */,
+				63F51C5D1C3D409200AFB9D2 /* EventHeaderViewOutput.h */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		63F54D911BC5A79900DB1746 /* EXTScope */ = {
@@ -3967,7 +3967,6 @@
 				636DD7DE1C26B8D900436201 /* PreviousEventTableViewCell.xib in Resources */,
 				636B64121BBFE2C20053E38F /* Main.storyboard in Resources */,
 				63FDCE151BBDBA2A00A43B60 /* Info.plist in Resources */,
-				638CC94F1C2C549800D8ADB7 /* EventHeaderView.xib in Resources */,
 				63F8F2E81BF9126B000017F3 /* LectureShortInfoTableViewCell.xib in Resources */,
 				636DD8431C285FF700436201 /* ReportListTableViewHeaderAndFooterCell.xib in Resources */,
 				9F8E5F9D1BC2777100DC10DB /* Conferences.Parse.plist in Resources */,
@@ -3982,6 +3981,7 @@
 				636F8DFD1BCB914100552B91 /* EventsUserStory.storyboard in Resources */,
 				631FFE591BEF937D00749DB8 /* ReportsUserStory.storyboard in Resources */,
 				63F8F24F1BF74302000017F3 /* CurrentVideoTranslationTableViewCell.xib in Resources */,
+				63F51C631C3D409200AFB9D2 /* EventHeaderView.xib in Resources */,
 				63F8F2751BF7474C000017F3 /* SignUpAndSaveToCalendarEventTableViewCell.xib in Resources */,
 				632887B21BDFE0AB00701AF0 /* EventListTableViewCell.xib in Resources */,
 				636DD83E1C285FC000436201 /* ReportListTableViewCell.xib in Resources */,
@@ -4125,6 +4125,7 @@
 				63136FD51BDCDB2700994356 /* ModuleConfigurationPromise.m in Sources */,
 				9F18311D1BC1615C000E21A5 /* SingleResponseObjectFormatter.m in Sources */,
 				636F8CBC1BC97E7F00552B91 /* SocialNetworkAccount.m in Sources */,
+				63F51C5F1C3D409200AFB9D2 /* EventHeaderInteractor.m in Sources */,
 				9F1830B31BC11879000E21A5 /* CommonNetworkClient.m in Sources */,
 				63136FE01BDCDB2700994356 /* UIViewController+TabBarControllerContent.m in Sources */,
 				636DD7E21C26B8F000436201 /* PreviousLectureSectionHeaderTableViewCell.m in Sources */,
@@ -4145,12 +4146,12 @@
 				9F1830931BC02293000E21A5 /* RESTRequestConfigurator.m in Sources */,
 				636DD84B1C28606200436201 /* ReportListTableViewHeaderAndFooterCellObject.m in Sources */,
 				63D86BE11C14490000986536 /* EventCellObjectBuilderBase.m in Sources */,
-				630510401C19ED8200D7A653 /* EventHeaderInteractor.m in Sources */,
 				63FD4E0B1BE621750046378E /* Event+CoreDataProperties.m in Sources */,
 				636F8DDA1BCB8FE800552B91 /* RamblerLocationModuleAssembly.m in Sources */,
 				9F1830A71BC032CF000E21A5 /* ParseRequestSigner.m in Sources */,
 				636F8DDD1BCB8FE800552B91 /* RamblerLocationRouter.m in Sources */,
 				9F0A84FA1BC1698B006F79FB /* OperationBuffer.m in Sources */,
+				63F51C611C3D409200AFB9D2 /* EventHeaderRouter.m in Sources */,
 				63136FE21BDCDB2700994356 /* TabBarViewController.m in Sources */,
 				631FFE561BEF930200749DB8 /* ReportListRouter.m in Sources */,
 				636DD7E71C26B90200436201 /* PreviousLectureTableViewCell.m in Sources */,
@@ -4159,6 +4160,7 @@
 				63D628EB1BE4C741004AF98F /* EventPlainObject.m in Sources */,
 				9F1830D71BC125C3000E21A5 /* ParseResponseValidator.m in Sources */,
 				63F8F2EC1BF91350000017F3 /* LectureShortInfoTableViewCellObject.m in Sources */,
+				63F51C601C3D409200AFB9D2 /* EventHeaderPresenter.m in Sources */,
 				9F1830D11BC12492000E21A5 /* ResponseValidatorBase.m in Sources */,
 				638DBD471BEA385400B4B208 /* EventRouter.m in Sources */,
 				63F8F2B61BF87E2F000017F3 /* Lecture+CoreDataProperties.m in Sources */,
@@ -4175,7 +4177,6 @@
 				638DBD461BEA385400B4B208 /* EventPresenter.m in Sources */,
 				636B64041BBDD19A0053E38F /* LectureServiceImplementation.m in Sources */,
 				63FD4E0C1BE621750046378E /* Event.m in Sources */,
-				630510431C19ED8200D7A653 /* EventHeaderView.m in Sources */,
 				63D86BE81C14572C00986536 /* EventListTableViewCellObject.m in Sources */,
 				638DBCFD1BEA385400B4B208 /* EventModuleAssembly.m in Sources */,
 				63F54D9B1BC5AB3C00DB1746 /* ServiceComponentsAssembly.m in Sources */,
@@ -4186,7 +4187,6 @@
 				636F8C971BC97B3100552B91 /* EventServiceImplementation.m in Sources */,
 				63136FE11BDCDB2700994356 /* TabBarButtonCell.m in Sources */,
 				636F8CB71BC97E7F00552B91 /* LectureMaterials+CoreDataProperties.m in Sources */,
-				630510411C19ED8200D7A653 /* EventHeaderPresenter.m in Sources */,
 				636F8DDC1BCB8FE800552B91 /* RamblerLocationPresenter.m in Sources */,
 				9F8E5F841BC25A0700DC10DB /* ResponseMappersAssembly.m in Sources */,
 				63136FD91BDCDB2700994356 /* TabBarInteractor.m in Sources */,
@@ -4200,6 +4200,7 @@
 				63FDCE161BBDBA2A00A43B60 /* main.m in Sources */,
 				636B64071BBDD2A40053E38F /* LectureMaterialsServiceImplementation.m in Sources */,
 				63EF15C01BC461DD00480CAF /* PushNotificationServiceImplementation.m in Sources */,
+				63F51C5E1C3D409200AFB9D2 /* EventHeaderModuleAssembly.m in Sources */,
 				63F8F2611BF743C1000017F3 /* CurrentVideoTranslationTableViewCellObject.m in Sources */,
 				9F8E5F741BC255AA00DC10DB /* RequestSignersAssembly.m in Sources */,
 				63F8F26E1BF74732000017F3 /* SignUpAndSaveToCalendarEventTableViewCellObject.m in Sources */,
@@ -4230,7 +4231,6 @@
 				9F0A84F91BC1698B006F79FB /* AsyncOperation.m in Sources */,
 				638DBD641BEE2C0100B4B208 /* EventInfoTableViewCellObject.m in Sources */,
 				9F0A85321BC18906006F79FB /* EventQuery.m in Sources */,
-				630510421C19ED8200D7A653 /* EventHeaderRouter.m in Sources */,
 				63FD4E061BE5038D0046378E /* UIColor+Hex.m in Sources */,
 				9F0A84FF1BC1698B006F79FB /* RequestSigningOperation.m in Sources */,
 				63F8F2B71BF87E2F000017F3 /* Lecture.m in Sources */,
@@ -4246,7 +4246,6 @@
 				63F8F2A31BF7A4F5000017F3 /* PastEventCellObjectBuilder.m in Sources */,
 				63EF15BB1BC4559900480CAF /* PushNotificationCenterImplementation.m in Sources */,
 				636F8DDB1BCB8FE800552B91 /* RamblerLocationInteractor.m in Sources */,
-				6305103F1C19ED8200D7A653 /* EventHeaderModuleAssembly.m in Sources */,
 				63136F931BDCD8B600994356 /* EventListDataDisplayManager.m in Sources */,
 				63136FDA1BDCDB2700994356 /* TabBarPresenter.m in Sources */,
 				63F8F23E1BF66743000017F3 /* EventPresenterStateStorage.m in Sources */,
@@ -4264,6 +4263,7 @@
 				636F8D0C1BCB825F00552B91 /* ModuleAssemblyBase.m in Sources */,
 				636A37C21BC1413A00B49C3D /* SystemInfrastructureAssembly.m in Sources */,
 				9F0A6C2E1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m in Sources */,
+				63F51C621C3D409200AFB9D2 /* EventHeaderView.m in Sources */,
 				631FFE1A1BEF451400749DB8 /* UIView+CDResponder.m in Sources */,
 				63F8F2E71BF9126B000017F3 /* LectureShortInfoTableViewCell.m in Sources */,
 				631FFE571BEF930200749DB8 /* ReportListTableViewController.m in Sources */,
