@@ -130,11 +130,31 @@
                     <connections>
                         <outlet property="headerView" destination="tAj-fc-JAG" id="F1D-x1-qdL"/>
                         <outlet property="tableView" destination="2f2-MS-k81" id="pVQ-Gv-juG"/>
+                        <segue destination="JLc-iV-GVs" kind="push" identifier="EventModuleToLectureModuleSegue" id="k0t-w6-Xgx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UZP-hJ-8Tb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1177" y="675"/>
+        </scene>
+        <!--Lecture View Controller-->
+        <scene sceneID="yMb-rJ-n2g">
+            <objects>
+                <viewController id="JLc-iV-GVs" customClass="LectureViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EvR-v3-elB"/>
+                        <viewControllerLayoutGuide type="bottom" id="saL-R1-koD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="l1P-3G-ghg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ttN-8R-ojU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DF2-UC-Jdq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1673" y="675"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
