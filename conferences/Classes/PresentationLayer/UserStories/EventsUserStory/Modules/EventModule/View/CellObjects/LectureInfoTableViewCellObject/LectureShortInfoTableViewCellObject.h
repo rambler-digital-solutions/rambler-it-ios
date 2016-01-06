@@ -18,12 +18,15 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "EventInfoTableViewCellActionProtocol.h"
-#import "LectureShortInfoTableViewCellActionProtocol.h"
-#import "SignUpAndSaveToCalendarEventTableViewCellActionProtocol.h"
-#import "CurrentVideoTranslationTableViewCellActionProtocol.h"
-#import "EventDescriptionTableViewCellActionProtocol.h"
+#import <Nimbus/NimbusModels.h>
 
-@protocol EventTableViewCellActionProtocol <EventInfoTableViewCellActionProtocol, LectureShortInfoTableViewCellActionProtocol, SignUpAndSaveToCalendarEventTableViewCellActionProtocol, CurrentVideoTranslationTableViewCellActionProtocol, EventDescriptionTableViewCellActionProtocol>
+@class PlainLecture;
+
+@interface LectureShortInfoTableViewCellObject : NSObject <NICellObject>
+
+@property (strong, nonatomic, readonly) NSString *lectureDescription;
+@property (strong, nonatomic, readonly) NSString *lectureTitle;
+
++ (instancetype)objectWithLecture:(PlainLecture *)lecture;
 
 @end

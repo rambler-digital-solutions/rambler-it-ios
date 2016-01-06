@@ -22,7 +22,9 @@
 #import "EventInfoTableViewCellObject.h"
 #import "SignUpAndSaveToCalendarEventTableViewCellObject.h"
 #import "EventDescriptionTableViewCellObject.h"
-#import "LectureInfoTableViewCellObject.h"
+#import "LectureShortInfoTableViewCellObject.h"
+#import "SpeakerShortInfoTableViewCellObject.h"
+#import "SpeakerShortInfoTableViewCellSize.h"
 #import "PlainEvent.h"
 #import "PlainLecture.h"
 #import "DateFormatter.h"
@@ -44,7 +46,11 @@
     [cellObjects addObject:eventDescriptionCellObject];
     
     for (PlainLecture *lecture in event.lectures) {
-        LectureInfoTableViewCellObject *lectureCellobject = [LectureInfoTableViewCellObject objectWithLecture:lecture];
+        PlainSpeaker *speaker = [lecture.speakers firstObject];
+        SpeakerShortInfoTableViewCellObject *speakerCellObject = [SpeakerShortInfoTableViewCellObject objectWithSpeaker:speaker cellSize:SpeakerShortInfoTableViewCellDefaultSize];
+        [cellObjects addObject:speakerCellObject];
+        
+        LectureShortInfoTableViewCellObject *lectureCellobject = [LectureShortInfoTableViewCellObject objectWithLecture:lecture];
         [cellObjects addObject:lectureCellobject];
     }
     

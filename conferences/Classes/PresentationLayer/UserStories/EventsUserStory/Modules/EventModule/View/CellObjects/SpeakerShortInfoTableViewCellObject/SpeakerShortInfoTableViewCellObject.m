@@ -1,4 +1,4 @@
-// Copyright (c) 2015 RAMBLER&Co
+// Copyright (c) 2016 RAMBLER&Co
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -18,52 +18,46 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "LectureInfoTableViewCellObject.h"
-#import "LectureInfoTableViewCell.h"
-#import "PlainLecture.h"
+#import "SpeakerShortInfoTableViewCellObject.h"
+#import "SpeakerShortInfoTableViewCell.h"
 #import "PlainSpeaker.h"
 
-@interface LectureInfoTableViewCellObject ()
+@interface SpeakerShortInfoTableViewCellObject ()
 
 @property (strong, nonatomic, readwrite) NSString *speakerName;
 @property (strong, nonatomic, readwrite) NSString *speakerCompanyName;
-@property (strong, nonatomic, readwrite) NSString *lectureDescription;
-@property (strong, nonatomic, readwrite) NSString *lectureTitle;
 @property (strong, nonatomic, readwrite) NSURL *speakerImageLink;
+@property (assign, nonatomic, readwrite) SpeakerShortInfoTableViewCellSize cellSize;
 
 @end
 
-@implementation LectureInfoTableViewCellObject
+@implementation SpeakerShortInfoTableViewCellObject
 
 #pragma mark - Initialization
 
-- (instancetype)initWithLecture:(PlainLecture *)lecture {
+- (instancetype)initWithSpeaker:(PlainSpeaker *)speaker cellSize:(SpeakerShortInfoTableViewCellSize)cellSize {
     self = [super init];
     if (self) {
-        _lectureDescription = lecture.lectureDescription;
-        _lectureTitle = lecture.name;
-        
-        // TODO: реализовать отображение нескольких докладчиков у одного доклада
-        PlainSpeaker *speaker = [lecture.speakers firstObject];
         _speakerName = speaker.name;
         _speakerCompanyName = speaker.companyName;
         _speakerImageLink = speaker.pictureLink;
+        _cellSize = cellSize;
     }
     return self;
 }
 
-+ (instancetype)objectWithLecture:(PlainLecture *)lecture {
-    return [[self alloc] initWithLecture:lecture];
++ (instancetype)objectWithSpeaker:(PlainSpeaker *)speaker cellSize:(SpeakerShortInfoTableViewCellSize)cellSize {
+    return [[self alloc] initWithSpeaker:speaker cellSize:cellSize];
 }
 
 #pragma mark - NICellObject methods
 
 - (Class)cellClass {
-    return [LectureInfoTableViewCell class];
+    return [SpeakerShortInfoTableViewCell class];
 }
 
 - (UINib *)cellNib {
-    return [UINib nibWithNibName:NSStringFromClass([LectureInfoTableViewCell class]) bundle:[NSBundle mainBundle]];
+    return [UINib nibWithNibName:NSStringFromClass([SpeakerShortInfoTableViewCell class]) bundle:[NSBundle mainBundle]];
 }
 
 @end

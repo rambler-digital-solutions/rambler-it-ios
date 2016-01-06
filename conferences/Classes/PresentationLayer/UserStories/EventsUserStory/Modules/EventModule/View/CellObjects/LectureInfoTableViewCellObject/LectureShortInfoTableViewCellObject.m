@@ -18,12 +18,43 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "EventInfoTableViewCellActionProtocol.h"
-#import "LectureShortInfoTableViewCellActionProtocol.h"
-#import "SignUpAndSaveToCalendarEventTableViewCellActionProtocol.h"
-#import "CurrentVideoTranslationTableViewCellActionProtocol.h"
-#import "EventDescriptionTableViewCellActionProtocol.h"
+#import "LectureShortInfoTableViewCellObject.h"
+#import "LectureShortInfoTableViewCell.h"
+#import "PlainLecture.h"
+#import "PlainSpeaker.h"
 
-@protocol EventTableViewCellActionProtocol <EventInfoTableViewCellActionProtocol, LectureShortInfoTableViewCellActionProtocol, SignUpAndSaveToCalendarEventTableViewCellActionProtocol, CurrentVideoTranslationTableViewCellActionProtocol, EventDescriptionTableViewCellActionProtocol>
+@interface LectureShortInfoTableViewCellObject ()
+
+@property (strong, nonatomic, readwrite) NSString *lectureDescription;
+@property (strong, nonatomic, readwrite) NSString *lectureTitle;
+
+@end
+
+@implementation LectureShortInfoTableViewCellObject
+
+#pragma mark - Initialization
+
+- (instancetype)initWithLecture:(PlainLecture *)lecture {
+    self = [super init];
+    if (self) {
+        _lectureDescription = lecture.lectureDescription;
+        _lectureTitle = lecture.name;
+    }
+    return self;
+}
+
++ (instancetype)objectWithLecture:(PlainLecture *)lecture {
+    return [[self alloc] initWithLecture:lecture];
+}
+
+#pragma mark - NICellObject methods
+
+- (Class)cellClass {
+    return [LectureShortInfoTableViewCell class];
+}
+
+- (UINib *)cellNib {
+    return [UINib nibWithNibName:NSStringFromClass([LectureShortInfoTableViewCell class]) bundle:[NSBundle mainBundle]];
+}
 
 @end

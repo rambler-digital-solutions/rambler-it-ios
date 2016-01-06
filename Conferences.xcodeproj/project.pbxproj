@@ -165,6 +165,9 @@
 		63F403AC1BD0CD460086D030 /* ResponseDeserializersAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F403AB1BD0CD460086D030 /* ResponseDeserializersAssemblyTests.m */; };
 		63F403AF1BD0D0690086D030 /* ResponseMappersAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F403AE1BD0D0690086D030 /* ResponseMappersAssemblyTests.m */; };
 		63F403B21BD0D4B40086D030 /* ResponseValidatorsAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F403B11BD0D4B40086D030 /* ResponseValidatorsAssemblyTests.m */; };
+		63F51C411C3D0E6B00AFB9D2 /* SpeakerShortInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F51C3F1C3D0E6B00AFB9D2 /* SpeakerShortInfoTableViewCell.m */; };
+		63F51C421C3D0E6B00AFB9D2 /* SpeakerShortInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63F51C401C3D0E6B00AFB9D2 /* SpeakerShortInfoTableViewCell.xib */; };
+		63F51C451C3D0EA200AFB9D2 /* SpeakerShortInfoTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F51C441C3D0EA200AFB9D2 /* SpeakerShortInfoTableViewCellObject.m */; };
 		63F54D951BC5A79900DB1746 /* EXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F54D931BC5A79900DB1746 /* EXTScope.m */; };
 		63F54D9B1BC5AB3C00DB1746 /* ServiceComponentsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F54D9A1BC5AB3C00DB1746 /* ServiceComponentsAssembly.m */; };
 		63F54DA01BC5BB2800DB1746 /* ThirdPartiesConfiguratorImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F54D9F1BC5BB2800DB1746 /* ThirdPartiesConfiguratorImplementation.m */; };
@@ -191,9 +194,9 @@
 		63F8F2B61BF87E2F000017F3 /* Lecture+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F2B31BF87E2F000017F3 /* Lecture+CoreDataProperties.m */; };
 		63F8F2B71BF87E2F000017F3 /* Lecture.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F2B51BF87E2F000017F3 /* Lecture.m */; };
 		63F8F2BC1BF8A713000017F3 /* EventTypeDeterminator.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F2BB1BF8A713000017F3 /* EventTypeDeterminator.m */; };
-		63F8F2E71BF9126B000017F3 /* LectureInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F2E51BF9126B000017F3 /* LectureInfoTableViewCell.m */; };
-		63F8F2E81BF9126B000017F3 /* LectureInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63F8F2E61BF9126B000017F3 /* LectureInfoTableViewCell.xib */; };
-		63F8F2EC1BF91350000017F3 /* LectureInfoTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F2EB1BF91350000017F3 /* LectureInfoTableViewCellObject.m */; };
+		63F8F2E71BF9126B000017F3 /* LectureShortInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F2E51BF9126B000017F3 /* LectureShortInfoTableViewCell.m */; };
+		63F8F2E81BF9126B000017F3 /* LectureShortInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63F8F2E61BF9126B000017F3 /* LectureShortInfoTableViewCell.xib */; };
+		63F8F2EC1BF91350000017F3 /* LectureShortInfoTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F2EB1BF91350000017F3 /* LectureShortInfoTableViewCellObject.m */; };
 		63F8F2F51BF9FDBF000017F3 /* CompoundOperationBaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A85071BC185AA006F79FB /* CompoundOperationBaseTests.m */; };
 		63F8F2F61BF9FE7D000017F3 /* RCFRESTRequestConfiguratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830991BC022EA000E21A5 /* RCFRESTRequestConfiguratorTests.m */; };
 		63FD4DFB1BE4FA340046378E /* EventPrototypeMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FD4DFA1BE4FA340046378E /* EventPrototypeMapper.m */; };
@@ -583,6 +586,12 @@
 		63F403B01BD0D1070086D030 /* ResponseMappersAssembly_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResponseMappersAssembly_Testable.h; sourceTree = "<group>"; };
 		63F403B11BD0D4B40086D030 /* ResponseValidatorsAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseValidatorsAssemblyTests.m; sourceTree = "<group>"; };
 		63F403B31BD0D52A0086D030 /* ResponseValidatorsAssembly_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResponseValidatorsAssembly_Testable.h; sourceTree = "<group>"; };
+		63F51C3E1C3D0E6B00AFB9D2 /* SpeakerShortInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerShortInfoTableViewCell.h; sourceTree = "<group>"; };
+		63F51C3F1C3D0E6B00AFB9D2 /* SpeakerShortInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerShortInfoTableViewCell.m; sourceTree = "<group>"; };
+		63F51C401C3D0E6B00AFB9D2 /* SpeakerShortInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeakerShortInfoTableViewCell.xib; sourceTree = "<group>"; };
+		63F51C431C3D0EA200AFB9D2 /* SpeakerShortInfoTableViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerShortInfoTableViewCellObject.h; sourceTree = "<group>"; };
+		63F51C441C3D0EA200AFB9D2 /* SpeakerShortInfoTableViewCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerShortInfoTableViewCellObject.m; sourceTree = "<group>"; };
+		63F51C461C3D1A1200AFB9D2 /* SpeakerShortInfoTableViewCellSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpeakerShortInfoTableViewCellSize.h; sourceTree = "<group>"; };
 		63F54D921BC5A79900DB1746 /* EXTScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTScope.h; sourceTree = "<group>"; };
 		63F54D931BC5A79900DB1746 /* EXTScope.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTScope.m; sourceTree = "<group>"; };
 		63F54D941BC5A79900DB1746 /* metamacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = metamacros.h; sourceTree = "<group>"; };
@@ -639,12 +648,12 @@
 		63F8F2BB1BF8A713000017F3 /* EventTypeDeterminator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTypeDeterminator.m; sourceTree = "<group>"; };
 		63F8F2BD1BF8A756000017F3 /* EventType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventType.h; sourceTree = "<group>"; };
 		63F8F2D81BF8F7F0000017F3 /* ServiceComponentsAssembly_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServiceComponentsAssembly_Testable.h; sourceTree = "<group>"; };
-		63F8F2E31BF9126B000017F3 /* LectureInfoTableViewCellActionProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectureInfoTableViewCellActionProtocol.h; sourceTree = "<group>"; };
-		63F8F2E41BF9126B000017F3 /* LectureInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectureInfoTableViewCell.h; sourceTree = "<group>"; };
-		63F8F2E51BF9126B000017F3 /* LectureInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LectureInfoTableViewCell.m; sourceTree = "<group>"; };
-		63F8F2E61BF9126B000017F3 /* LectureInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LectureInfoTableViewCell.xib; sourceTree = "<group>"; };
-		63F8F2EA1BF91350000017F3 /* LectureInfoTableViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectureInfoTableViewCellObject.h; sourceTree = "<group>"; };
-		63F8F2EB1BF91350000017F3 /* LectureInfoTableViewCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LectureInfoTableViewCellObject.m; sourceTree = "<group>"; };
+		63F8F2E31BF9126B000017F3 /* LectureShortInfoTableViewCellActionProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectureShortInfoTableViewCellActionProtocol.h; sourceTree = "<group>"; };
+		63F8F2E41BF9126B000017F3 /* LectureShortInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectureShortInfoTableViewCell.h; sourceTree = "<group>"; };
+		63F8F2E51BF9126B000017F3 /* LectureShortInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LectureShortInfoTableViewCell.m; sourceTree = "<group>"; };
+		63F8F2E61BF9126B000017F3 /* LectureShortInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LectureShortInfoTableViewCell.xib; sourceTree = "<group>"; };
+		63F8F2EA1BF91350000017F3 /* LectureShortInfoTableViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectureShortInfoTableViewCellObject.h; sourceTree = "<group>"; };
+		63F8F2EB1BF91350000017F3 /* LectureShortInfoTableViewCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LectureShortInfoTableViewCellObject.m; sourceTree = "<group>"; };
 		63FA398D1BDD46E500CE6249 /* PlainEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlainEvent.h; sourceTree = "<group>"; };
 		63FA398E1BDD46E500CE6249 /* PlainEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlainEvent.m; sourceTree = "<group>"; };
 		63FD4DF81BE4F9D00046378E /* PrototypeMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrototypeMapper.h; sourceTree = "<group>"; };
@@ -1975,7 +1984,8 @@
 				63F8F2481BF74260000017F3 /* EventDescriptionTableViewCellObject */,
 				63F8F24A1BF74260000017F3 /* PastVideoTranslationTableViewCellObject */,
 				638DBD601BEE2BDC00B4B208 /* EventInfoTableViewCellObject */,
-				63F8F2E91BF91350000017F3 /* LectureInfoTableViewCellObject */,
+				63F51C3D1C3D0E2E00AFB9D2 /* SpeakerShortInfoTableViewCellObject */,
+				63F8F2E91BF91350000017F3 /* LectureShortInfoTableViewCellObject */,
 				636DD7D61C26B8AE00436201 /* PreviousEventSectionHeaderTableViewCellObject */,
 				636DD7D71C26B8AE00436201 /* PreviousEventTableViewCellObject */,
 				636DD7D81C26B8AE00436201 /* PreviousLectureSectionHeaderTableViewCellObject */,
@@ -1993,7 +2003,8 @@
 				63F8F2411BF741D7000017F3 /* EventDescriptionTableViewCell */,
 				63F8F2451BF741D7000017F3 /* PastVideoTranslationTableViewCell */,
 				638DBD541BEE2B1000B4B208 /* EventInfoTableViewCell */,
-				63F8F2E11BF9126B000017F3 /* LectureInfoTableViewCell */,
+				63F51C3C1C3D0DF200AFB9D2 /* SpeakerShortInfoTableViewCell */,
+				63F8F2E11BF9126B000017F3 /* LectureShortInfoTableViewCell */,
 				636DD7CD1C26B80500436201 /* PreviousEventSectionHeaderTableViewCell */,
 				636DD7CE1C26B80500436201 /* PreviousEventTableViewCell */,
 				636DD7CF1C26B80500436201 /* PreviousLectureSectionHeaderTableViewCell */,
@@ -2206,6 +2217,26 @@
 				63F403B31BD0D52A0086D030 /* ResponseValidatorsAssembly_Testable.h */,
 			);
 			path = ResponseValidatorsAssemblyTests;
+			sourceTree = "<group>";
+		};
+		63F51C3C1C3D0DF200AFB9D2 /* SpeakerShortInfoTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				63F51C3E1C3D0E6B00AFB9D2 /* SpeakerShortInfoTableViewCell.h */,
+				63F51C3F1C3D0E6B00AFB9D2 /* SpeakerShortInfoTableViewCell.m */,
+				63F51C401C3D0E6B00AFB9D2 /* SpeakerShortInfoTableViewCell.xib */,
+				63F51C461C3D1A1200AFB9D2 /* SpeakerShortInfoTableViewCellSize.h */,
+			);
+			path = SpeakerShortInfoTableViewCell;
+			sourceTree = "<group>";
+		};
+		63F51C3D1C3D0E2E00AFB9D2 /* SpeakerShortInfoTableViewCellObject */ = {
+			isa = PBXGroup;
+			children = (
+				63F51C431C3D0EA200AFB9D2 /* SpeakerShortInfoTableViewCellObject.h */,
+				63F51C441C3D0EA200AFB9D2 /* SpeakerShortInfoTableViewCellObject.m */,
+			);
+			path = SpeakerShortInfoTableViewCellObject;
 			sourceTree = "<group>";
 		};
 		63F54D911BC5A79900DB1746 /* EXTScope */ = {
@@ -2455,31 +2486,33 @@
 			path = PresentationLayerAssemblyTests;
 			sourceTree = "<group>";
 		};
-		63F8F2E11BF9126B000017F3 /* LectureInfoTableViewCell */ = {
+		63F8F2E11BF9126B000017F3 /* LectureShortInfoTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
 				63F8F2E21BF9126B000017F3 /* ActionProtocol */,
-				63F8F2E41BF9126B000017F3 /* LectureInfoTableViewCell.h */,
-				63F8F2E51BF9126B000017F3 /* LectureInfoTableViewCell.m */,
-				63F8F2E61BF9126B000017F3 /* LectureInfoTableViewCell.xib */,
+				63F8F2E41BF9126B000017F3 /* LectureShortInfoTableViewCell.h */,
+				63F8F2E51BF9126B000017F3 /* LectureShortInfoTableViewCell.m */,
+				63F8F2E61BF9126B000017F3 /* LectureShortInfoTableViewCell.xib */,
 			);
+			name = LectureShortInfoTableViewCell;
 			path = LectureInfoTableViewCell;
 			sourceTree = "<group>";
 		};
 		63F8F2E21BF9126B000017F3 /* ActionProtocol */ = {
 			isa = PBXGroup;
 			children = (
-				63F8F2E31BF9126B000017F3 /* LectureInfoTableViewCellActionProtocol.h */,
+				63F8F2E31BF9126B000017F3 /* LectureShortInfoTableViewCellActionProtocol.h */,
 			);
 			path = ActionProtocol;
 			sourceTree = "<group>";
 		};
-		63F8F2E91BF91350000017F3 /* LectureInfoTableViewCellObject */ = {
+		63F8F2E91BF91350000017F3 /* LectureShortInfoTableViewCellObject */ = {
 			isa = PBXGroup;
 			children = (
-				63F8F2EA1BF91350000017F3 /* LectureInfoTableViewCellObject.h */,
-				63F8F2EB1BF91350000017F3 /* LectureInfoTableViewCellObject.m */,
+				63F8F2EA1BF91350000017F3 /* LectureShortInfoTableViewCellObject.h */,
+				63F8F2EB1BF91350000017F3 /* LectureShortInfoTableViewCellObject.m */,
 			);
+			name = LectureShortInfoTableViewCellObject;
 			path = LectureInfoTableViewCellObject;
 			sourceTree = "<group>";
 		};
@@ -3935,13 +3968,14 @@
 				636B64121BBFE2C20053E38F /* Main.storyboard in Resources */,
 				63FDCE151BBDBA2A00A43B60 /* Info.plist in Resources */,
 				638CC94F1C2C549800D8ADB7 /* EventHeaderView.xib in Resources */,
-				63F8F2E81BF9126B000017F3 /* LectureInfoTableViewCell.xib in Resources */,
+				63F8F2E81BF9126B000017F3 /* LectureShortInfoTableViewCell.xib in Resources */,
 				636DD8431C285FF700436201 /* ReportListTableViewHeaderAndFooterCell.xib in Resources */,
 				9F8E5F9D1BC2777100DC10DB /* Conferences.Parse.plist in Resources */,
 				63FDCE141BBDBA2A00A43B60 /* Assets.xcassets in Resources */,
 				638DBD5A1BEE2B1000B4B208 /* EventInfoTableViewCell.xib in Resources */,
 				632887B71BDFE16200701AF0 /* NearestEventTableViewCell.xib in Resources */,
 				63F8F25E1BF743A0000017F3 /* PastVideoTranslationTableViewCell.xib in Resources */,
+				63F51C421C3D0E6B00AFB9D2 /* SpeakerShortInfoTableViewCell.xib in Resources */,
 				636DD7E81C26B90200436201 /* PreviousLectureTableViewCell.xib in Resources */,
 				636DD7D51C26B84900436201 /* PreviousEventSectionHeaderTableViewCell.xib in Resources */,
 				636DD7E31C26B8F000436201 /* PreviousLectureSectionHeaderTableViewCell.xib in Resources */,
@@ -4124,7 +4158,7 @@
 				63F8F2A81BF870A1000017F3 /* PlainLecture.m in Sources */,
 				63D628EB1BE4C741004AF98F /* PlainEvent.m in Sources */,
 				9F1830D71BC125C3000E21A5 /* ParseResponseValidator.m in Sources */,
-				63F8F2EC1BF91350000017F3 /* LectureInfoTableViewCellObject.m in Sources */,
+				63F8F2EC1BF91350000017F3 /* LectureShortInfoTableViewCellObject.m in Sources */,
 				9F1830D11BC12492000E21A5 /* ResponseValidatorBase.m in Sources */,
 				638DBD471BEA385400B4B208 /* EventRouter.m in Sources */,
 				63F8F2B61BF87E2F000017F3 /* Lecture+CoreDataProperties.m in Sources */,
@@ -4141,7 +4175,6 @@
 				638DBD461BEA385400B4B208 /* EventPresenter.m in Sources */,
 				636B64041BBDD19A0053E38F /* LectureServiceImplementation.m in Sources */,
 				63FD4E0C1BE621750046378E /* Event.m in Sources */,
-				631FFE631BEFA07300749DB8 /* ReportListTableViewCell.m in Sources */,
 				630510431C19ED8200D7A653 /* EventHeaderView.m in Sources */,
 				63D86BE81C14572C00986536 /* EventListTableViewCellObject.m in Sources */,
 				638DBCFD1BEA385400B4B208 /* EventModuleAssembly.m in Sources */,
@@ -4223,6 +4256,7 @@
 				6373A4101BBDC5EA00DF67FF /* Conference.xcdatamodeld in Sources */,
 				63F54D951BC5A79900DB1746 /* EXTScope.m in Sources */,
 				63F8F2A41BF7A4F5000017F3 /* EventCellObjectBuilderFactory.m in Sources */,
+				63F51C451C3D0EA200AFB9D2 /* SpeakerShortInfoTableViewCellObject.m in Sources */,
 				636B640D1BBDD5000053E38F /* SocialNetworkAccountServiceImplementation.m in Sources */,
 				63F54DA01BC5BB2800DB1746 /* ThirdPartiesConfiguratorImplementation.m in Sources */,
 				636B640A1BBDD3FA0053E38F /* RegistrationQuestionServiceImplementation.m in Sources */,
@@ -4231,11 +4265,12 @@
 				636A37C21BC1413A00B49C3D /* SystemInfrastructureAssembly.m in Sources */,
 				9F0A6C2E1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m in Sources */,
 				631FFE1A1BEF451400749DB8 /* UIView+CDResponder.m in Sources */,
-				63F8F2E71BF9126B000017F3 /* LectureInfoTableViewCell.m in Sources */,
+				63F8F2E71BF9126B000017F3 /* LectureShortInfoTableViewCell.m in Sources */,
 				631FFE571BEF930200749DB8 /* ReportListTableViewController.m in Sources */,
 				636F8CB91BC97E7F00552B91 /* Speaker+CoreDataProperties.m in Sources */,
 				9F1830ED1BC14293000E21A5 /* ManagedObjectMapper.m in Sources */,
 				9F1830E61BC13F9F000E21A5 /* ManagedObjectMappingProvider.m in Sources */,
+				63F51C411C3D0E6B00AFB9D2 /* SpeakerShortInfoTableViewCell.m in Sources */,
 				63F8F2741BF7474C000017F3 /* SignUpAndSaveToCalendarEventTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

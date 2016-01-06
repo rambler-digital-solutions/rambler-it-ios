@@ -18,18 +18,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Nimbus/NimbusModels.h>
+#import <Foundation/Foundation.h>
 
-@class PlainLecture;
+@protocol LectureShortInfoTableViewCellActionProtocol <NSObject>
 
-@interface LectureInfoTableViewCellObject : NSObject <NICellObject>
-
-@property (strong, nonatomic, readonly) NSString *speakerName;
-@property (strong, nonatomic, readonly) NSString *speakerCompanyName;
-@property (strong, nonatomic, readonly) NSString *lectureDescription;
-@property (strong, nonatomic, readonly) NSString *lectureTitle;
-@property (strong, nonatomic, readonly) NSURL *speakerImageLink;
-
-+ (instancetype)objectWithLecture:(PlainLecture *)lecture;
+- (void)didTapReadMoreLectureDescriptionButton:(UIButton *)button;
 
 @end

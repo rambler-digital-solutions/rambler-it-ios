@@ -1,4 +1,4 @@
-// Copyright (c) 2015 RAMBLER&Co
+// Copyright (c) 2016 RAMBLER&Co
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -18,12 +18,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "EventInfoTableViewCellActionProtocol.h"
-#import "LectureShortInfoTableViewCellActionProtocol.h"
-#import "SignUpAndSaveToCalendarEventTableViewCellActionProtocol.h"
-#import "CurrentVideoTranslationTableViewCellActionProtocol.h"
-#import "EventDescriptionTableViewCellActionProtocol.h"
+#import <UIKit/UIKit.h>
+#import <NICellFactory.h>
 
-@protocol EventTableViewCellActionProtocol <EventInfoTableViewCellActionProtocol, LectureShortInfoTableViewCellActionProtocol, SignUpAndSaveToCalendarEventTableViewCellActionProtocol, CurrentVideoTranslationTableViewCellActionProtocol, EventDescriptionTableViewCellActionProtocol>
+@interface SpeakerShortInfoTableViewCell : UITableViewCell <NICell>
 
 @end
