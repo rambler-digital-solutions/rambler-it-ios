@@ -1,4 +1,4 @@
-// Copyright (c) 2016 RAMBLER&Co
+// Copyright (c) 2015 RAMBLER&Co
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -18,12 +18,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#ifndef SpeakerShortInfoTableViewCellSize_h
-#define SpeakerShortInfoTableViewCellSize_h
+#import <NICellFactory.h>
+#import "CDResponderTableViewCell.h"
 
-typedef NS_ENUM(NSUInteger, SpeakerShortInfoTableViewCellSize) {
-    SpeakerShortInfoTableViewCellDefaultSize,
-    SpeakerShortInfoTableViewCellBigSize
-};
+@interface LectureInfoTableViewCell : CDResponderTableViewCell <NICell>
 
-#endif /* SpeakerShortInfoTableViewCellSize_h */
+@end

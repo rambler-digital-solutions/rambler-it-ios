@@ -18,9 +18,18 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <NICellFactory.h>
-#import "CDResponderTableViewCell.h"
+#import <Nimbus/NimbusModels.h>
 
-@interface LectureShortInfoTableViewCell : CDResponderTableViewCell <NICell>
+@class LecturePlainObject;
+
+@interface LectureInfoTableViewCellObject : NSObject <NICellObject>
+
+@property (strong, nonatomic, readonly) NSString *speakerName;
+@property (strong, nonatomic, readonly) NSString *speakerCompanyName;
+@property (strong, nonatomic, readonly) NSString *lectureDescription;
+@property (strong, nonatomic, readonly) NSString *lectureTitle;
+@property (strong, nonatomic, readonly) NSURL *speakerImageLink;
+
++ (instancetype)objectWithLecture:(LecturePlainObject *)lecture;
 
 @end

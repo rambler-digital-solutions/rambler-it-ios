@@ -22,12 +22,14 @@
 #import "EventInfoTableViewCellObject.h"
 #import "SignUpAndSaveToCalendarEventTableViewCellObject.h"
 #import "EventDescriptionTableViewCellObject.h"
-#import "LectureShortInfoTableViewCellObject.h"
-#import "SpeakerShortInfoTableViewCellObject.h"
-#import "SpeakerShortInfoTableViewCellSize.h"
+#import "LectureInfoTableViewCellObject.h"
 #import "EventPlainObject.h"
 #import "LecturePlainObject.h"
 #import "DateFormatter.h"
+#import "PreviousLectureSectionHeaderTableViewCellObject.h"
+#import "PreviousLectureTableViewCellObject.h"
+#import "PreviousEventSectionHeaderTableViewCellObject.h"
+#import "PreviousEventTableViewCellObject.h"
 
 @implementation FutureEventCellObjectBuilder
 
@@ -46,14 +48,10 @@
     [cellObjects addObject:eventDescriptionCellObject];
     
     for (LecturePlainObject *lecture in event.lectures) {
-        SpeakerPlainObject *speaker = [lecture.speakers firstObject];
-        SpeakerShortInfoTableViewCellObject *speakerCellObject = [SpeakerShortInfoTableViewCellObject objectWithSpeaker:speaker cellSize:SpeakerShortInfoTableViewCellDefaultSize];
-        [cellObjects addObject:speakerCellObject];
-        
-        LectureShortInfoTableViewCellObject *lectureCellobject = [LectureShortInfoTableViewCellObject objectWithLecture:lecture];
+        LectureInfoTableViewCellObject *lectureCellobject = [LectureInfoTableViewCellObject objectWithLecture:lecture];
         [cellObjects addObject:lectureCellobject];
     }
-    
+
     return cellObjects;
 }
 

@@ -23,9 +23,7 @@
 #import "EventInfoTableViewCellObject.h"
 #import "PastVideoTranslationTableViewCellObject.h"
 #import "EventDescriptionTableViewCellObject.h"
-#import "LectureShortInfoTableViewCellObject.h"
-#import "SpeakerShortInfoTableViewCellObject.h"
-#import "SpeakerShortInfoTableViewCellSize.h"
+#import "LectureInfoTableViewCellObject.h"
 #import "EventPlainObject.h"
 #import "LecturePlainObject.h"
 #import "DateFormatter.h"
@@ -47,11 +45,7 @@
     [cellObjects addObject:eventDescriptionCellObject];
     
     for (LecturePlainObject *lecture in event.lectures) {
-        SpeakerPlainObject *speaker = [lecture.speakers firstObject];
-        SpeakerShortInfoTableViewCellObject *speakerCellObject = [SpeakerShortInfoTableViewCellObject objectWithSpeaker:speaker cellSize:SpeakerShortInfoTableViewCellDefaultSize];
-        [cellObjects addObject:speakerCellObject];
-        
-        LectureShortInfoTableViewCellObject *lectionCellobject = [LectureShortInfoTableViewCellObject objectWithLecture:lecture];
+        LectureInfoTableViewCellObject *lectionCellobject = [LectureInfoTableViewCellObject objectWithLecture:lecture];
         [cellObjects addObject:lectionCellobject];
     }
     

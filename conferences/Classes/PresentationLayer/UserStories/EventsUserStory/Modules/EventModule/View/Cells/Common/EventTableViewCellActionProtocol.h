@@ -19,11 +19,11 @@
 // THE SOFTWARE.
 
 #import "EventInfoTableViewCellActionProtocol.h"
-#import "LectureShortInfoTableViewCellActionProtocol.h"
+#import "LectureInfoTableViewCellActionProtocol.h"
 #import "SignUpAndSaveToCalendarEventTableViewCellActionProtocol.h"
 #import "CurrentVideoTranslationTableViewCellActionProtocol.h"
 #import "EventDescriptionTableViewCellActionProtocol.h"
 
-@protocol EventTableViewCellActionProtocol <EventInfoTableViewCellActionProtocol, LectureShortInfoTableViewCellActionProtocol, SignUpAndSaveToCalendarEventTableViewCellActionProtocol, CurrentVideoTranslationTableViewCellActionProtocol, EventDescriptionTableViewCellActionProtocol>
+@protocol EventTableViewCellActionProtocol <EventInfoTableViewCellActionProtocol, LectureInfoTableViewCellActionProtocol, SignUpAndSaveToCalendarEventTableViewCellActionProtocol, CurrentVideoTranslationTableViewCellActionProtocol, EventDescriptionTableViewCellActionProtocol>
 
 @end

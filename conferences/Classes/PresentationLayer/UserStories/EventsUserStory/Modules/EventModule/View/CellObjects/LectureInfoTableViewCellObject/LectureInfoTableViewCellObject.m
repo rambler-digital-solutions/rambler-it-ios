@@ -18,19 +18,22 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "LectureShortInfoTableViewCellObject.h"
-#import "LectureShortInfoTableViewCell.h"
+#import "LectureInfoTableViewCellObject.h"
+#import "LectureInfoTableViewCell.h"
 #import "LecturePlainObject.h"
 #import "SpeakerPlainObject.h"
 
-@interface LectureShortInfoTableViewCellObject ()
+@interface LectureInfoTableViewCellObject ()
 
+@property (strong, nonatomic, readwrite) NSString *speakerName;
+@property (strong, nonatomic, readwrite) NSString *speakerCompanyName;
 @property (strong, nonatomic, readwrite) NSString *lectureDescription;
 @property (strong, nonatomic, readwrite) NSString *lectureTitle;
+@property (strong, nonatomic, readwrite) NSURL *speakerImageLink;
 
 @end
 
-@implementation LectureShortInfoTableViewCellObject
+@implementation LectureInfoTableViewCellObject
 
 #pragma mark - Initialization
 
@@ -39,6 +42,12 @@
     if (self) {
         _lectureDescription = lecture.lectureDescription;
         _lectureTitle = lecture.name;
+        
+        // TODO: реализовать отображение нескольких докладчиков у одного доклада
+        SpeakerPlainObject *speaker = [lecture.speakers firstObject];
+        _speakerName = speaker.name;
+        _speakerCompanyName = speaker.companyName;
+        _speakerImageLink = speaker.pictureLink;
     }
     return self;
 }
@@ -50,11 +59,11 @@
 #pragma mark - NICellObject methods
 
 - (Class)cellClass {
-    return [LectureShortInfoTableViewCell class];
+    return [LectureInfoTableViewCell class];
 }
 
 - (UINib *)cellNib {
-    return [UINib nibWithNibName:NSStringFromClass([LectureShortInfoTableViewCell class]) bundle:[NSBundle mainBundle]];
+    return [UINib nibWithNibName:NSStringFromClass([LectureInfoTableViewCell class]) bundle:[NSBundle mainBundle]];
 }
 
 @end

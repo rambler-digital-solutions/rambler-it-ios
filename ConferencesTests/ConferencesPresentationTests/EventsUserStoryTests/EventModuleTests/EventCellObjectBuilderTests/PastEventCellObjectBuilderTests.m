@@ -13,7 +13,7 @@
 #import "EventInfoTableViewCellObject.h"
 #import "PastVideoTranslationTableViewCellObject.h"
 #import "EventDescriptionTableViewCellObject.h"
-#import "LectureShortInfoTableViewCellObject.h"
+#import "LectureInfoTableViewCellObject.h"
 #import "EventPlainObject.h"
 #import "LecturePlainObject.h"
 #import "DateFormatter.h"
@@ -77,7 +77,7 @@
         if ([cellObject isKindOfClass:[EventDescriptionTableViewCellObject class]]) {
             actualNumberOfEventDescriptionTableViewCellObjects++;
         }
-        if ([cellObject isKindOfClass:[LectureShortInfoTableViewCellObject class]]) {
+        if ([cellObject isKindOfClass:[LectureInfoTableViewCellObject class]]) {
             actualNumberOfLectureInfoTableViewCellObjects++;
         }
     }
