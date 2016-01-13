@@ -20,7 +20,18 @@
 
 #import <Foundation/Foundation.h>
 
+@class LecturePlainObject;
+
 @protocol LectureViewInput <NSObject>
+
+/**
+ @author Artem Karpushin
+ 
+ Method is used to configure view with Lecture object
+ 
+ @param lecture LecturePlainObject object
+ */
+- (void)configureViewWithLecture:(LecturePlainObject *)lecture;
 
 @end
 

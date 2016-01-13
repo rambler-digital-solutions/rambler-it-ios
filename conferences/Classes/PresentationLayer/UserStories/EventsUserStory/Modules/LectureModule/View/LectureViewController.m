@@ -20,8 +20,11 @@
 
 #import "LectureViewController.h"
 #import "LectureViewOutput.h"
+#import "LectureDataDisplayManager.h"
 
 @interface LectureViewController()
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -33,5 +36,11 @@
 }
 
 #pragma mark - LectureViewInput
+
+- (void)configureViewWithLecture:(LecturePlainObject *)lecture {
+    [self.dataDisplayManager configureDataDisplayManagerWithLecture:lecture];
+    self.tableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.tableView];
+    self.tableView.delegate = [self.dataDisplayManager delegateForTableView:self.tableView withBaseDelegate:nil];
+}
 
 @end
