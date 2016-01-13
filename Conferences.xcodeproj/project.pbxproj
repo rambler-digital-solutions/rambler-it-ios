@@ -172,6 +172,9 @@
 		63F51C9C1C3D421700AFB9D2 /* LectureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F51C951C3D421700AFB9D2 /* LectureViewController.m */; };
 		63F51CA11C3D42E200AFB9D2 /* LecturePresenterStateStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F51CA01C3D42E200AFB9D2 /* LecturePresenterStateStorage.m */; };
 		63F51CA41C3D430C00AFB9D2 /* LectureDataDisplayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F51CA31C3D430C00AFB9D2 /* LectureDataDisplayManager.m */; };
+		63F51CAC1C42AD2100AFB9D2 /* DescriptionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F51CAA1C42AD2100AFB9D2 /* DescriptionTableViewCell.m */; };
+		63F51CAD1C42AD2100AFB9D2 /* DescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63F51CAB1C42AD2100AFB9D2 /* DescriptionTableViewCell.xib */; };
+		63F51CB01C42AD3A00AFB9D2 /* DescriptionTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F51CAF1C42AD3A00AFB9D2 /* DescriptionTableViewCellObject.m */; };
 		63F54D951BC5A79900DB1746 /* EXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F54D931BC5A79900DB1746 /* EXTScope.m */; };
 		63F54D9B1BC5AB3C00DB1746 /* ServiceComponentsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F54D9A1BC5AB3C00DB1746 /* ServiceComponentsAssembly.m */; };
 		63F54DA01BC5BB2800DB1746 /* ThirdPartiesConfiguratorImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F54D9F1BC5BB2800DB1746 /* ThirdPartiesConfiguratorImplementation.m */; };
@@ -611,6 +614,11 @@
 		63F51CA01C3D42E200AFB9D2 /* LecturePresenterStateStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LecturePresenterStateStorage.m; sourceTree = "<group>"; };
 		63F51CA21C3D430C00AFB9D2 /* LectureDataDisplayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectureDataDisplayManager.h; sourceTree = "<group>"; };
 		63F51CA31C3D430C00AFB9D2 /* LectureDataDisplayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LectureDataDisplayManager.m; sourceTree = "<group>"; };
+		63F51CA91C42AD2100AFB9D2 /* DescriptionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DescriptionTableViewCell.h; sourceTree = "<group>"; };
+		63F51CAA1C42AD2100AFB9D2 /* DescriptionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescriptionTableViewCell.m; sourceTree = "<group>"; };
+		63F51CAB1C42AD2100AFB9D2 /* DescriptionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DescriptionTableViewCell.xib; sourceTree = "<group>"; };
+		63F51CAE1C42AD3A00AFB9D2 /* DescriptionTableViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DescriptionTableViewCellObject.h; sourceTree = "<group>"; };
+		63F51CAF1C42AD3A00AFB9D2 /* DescriptionTableViewCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescriptionTableViewCellObject.m; sourceTree = "<group>"; };
 		63F54D921BC5A79900DB1746 /* EXTScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTScope.h; sourceTree = "<group>"; };
 		63F54D931BC5A79900DB1746 /* EXTScope.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTScope.m; sourceTree = "<group>"; };
 		63F54D941BC5A79900DB1746 /* metamacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = metamacros.h; sourceTree = "<group>"; };
@@ -871,6 +879,8 @@
 		63136F941BDCDB2600994356 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				63F51CA71C42ACE600AFB9D2 /* Cells */,
+				63F51CA51C42ACE600AFB9D2 /* CellObjects */,
 				63136FE31BDCDB7200994356 /* Protocols */,
 				63136F951BDCDB2600994356 /* IntermoduleDataTransfer */,
 				63136FA51BDCDB2600994356 /* TabBarModule */,
@@ -2333,6 +2343,41 @@
 				63F51CA01C3D42E200AFB9D2 /* LecturePresenterStateStorage.m */,
 			);
 			path = PresenterStateStorage;
+			sourceTree = "<group>";
+		};
+		63F51CA51C42ACE600AFB9D2 /* CellObjects */ = {
+			isa = PBXGroup;
+			children = (
+				63F51CA61C42ACE600AFB9D2 /* DescriptionTableViewCellObject */,
+			);
+			path = CellObjects;
+			sourceTree = "<group>";
+		};
+		63F51CA61C42ACE600AFB9D2 /* DescriptionTableViewCellObject */ = {
+			isa = PBXGroup;
+			children = (
+				63F51CAE1C42AD3A00AFB9D2 /* DescriptionTableViewCellObject.h */,
+				63F51CAF1C42AD3A00AFB9D2 /* DescriptionTableViewCellObject.m */,
+			);
+			path = DescriptionTableViewCellObject;
+			sourceTree = "<group>";
+		};
+		63F51CA71C42ACE600AFB9D2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				63F51CA81C42ACE600AFB9D2 /* DescriptionTableViewCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		63F51CA81C42ACE600AFB9D2 /* DescriptionTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				63F51CA91C42AD2100AFB9D2 /* DescriptionTableViewCell.h */,
+				63F51CAA1C42AD2100AFB9D2 /* DescriptionTableViewCell.m */,
+				63F51CAB1C42AD2100AFB9D2 /* DescriptionTableViewCell.xib */,
+			);
+			path = DescriptionTableViewCell;
 			sourceTree = "<group>";
 		};
 		63F54D911BC5A79900DB1746 /* EXTScope */ = {
@@ -4072,6 +4117,7 @@
 				636DD7D51C26B84900436201 /* PreviousEventSectionHeaderTableViewCell.xib in Resources */,
 				636DD7E31C26B8F000436201 /* PreviousLectureSectionHeaderTableViewCell.xib in Resources */,
 				636F8DFD1BCB914100552B91 /* EventsUserStory.storyboard in Resources */,
+				63F51CAD1C42AD2100AFB9D2 /* DescriptionTableViewCell.xib in Resources */,
 				631FFE591BEF937D00749DB8 /* ReportsUserStory.storyboard in Resources */,
 				63F8F24F1BF74302000017F3 /* CurrentVideoTranslationTableViewCell.xib in Resources */,
 				63F51C631C3D409200AFB9D2 /* EventHeaderView.xib in Resources */,
@@ -4328,6 +4374,7 @@
 				63136FD71BDCDB2700994356 /* UIViewController+DefaultTransitionHandling.m in Sources */,
 				9F0A84F91BC1698B006F79FB /* AsyncOperation.m in Sources */,
 				638DBD641BEE2C0100B4B208 /* EventInfoTableViewCellObject.m in Sources */,
+				63F51CB01C42AD3A00AFB9D2 /* DescriptionTableViewCellObject.m in Sources */,
 				9F0A85321BC18906006F79FB /* EventQuery.m in Sources */,
 				63FD4E061BE5038D0046378E /* UIColor+Hex.m in Sources */,
 				9F0A84FF1BC1698B006F79FB /* RequestSigningOperation.m in Sources */,
@@ -4366,6 +4413,7 @@
 				631FFE1A1BEF451400749DB8 /* UIView+CDResponder.m in Sources */,
 				63F8F2E71BF9126B000017F3 /* LectureInfoTableViewCell.m in Sources */,
 				631FFE571BEF930200749DB8 /* ReportListTableViewController.m in Sources */,
+				63F51CAC1C42AD2100AFB9D2 /* DescriptionTableViewCell.m in Sources */,
 				636F8CB91BC97E7F00552B91 /* Speaker+CoreDataProperties.m in Sources */,
 				9F1830ED1BC14293000E21A5 /* ManagedObjectMapper.m in Sources */,
 				9F1830E61BC13F9F000E21A5 /* ManagedObjectMappingProvider.m in Sources */,
