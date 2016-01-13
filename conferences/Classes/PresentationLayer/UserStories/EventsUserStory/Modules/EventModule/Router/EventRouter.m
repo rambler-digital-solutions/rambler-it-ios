@@ -19,13 +19,20 @@
 // THE SOFTWARE.
 
 #import "EventRouter.h"
+#import "LectureModuleInput.h"
 
-@interface EventRouter()
-
-@end
+static NSString * const kEventModuleToLectureModuleSegue = @"EventModuleToLectureModuleSegue";
 
 @implementation EventRouter
 
 #pragma mark - EventRouterInput
+
+- (void)openLectureModuleWithLectureObjectId:(NSString *)lectureObjectId {
+    [[self.transitionHandler openModuleUsingSegue: kEventModuleToLectureModuleSegue] thenChainUsingBlock:^id<RamblerViperModuleOutput>(id<LectureModuleInput> moduleInput) {
+        [moduleInput configureCurrentModuleWithLectureObjectId:lectureObjectId];
+        
+        return nil;
+    }];
+}
 
 @end

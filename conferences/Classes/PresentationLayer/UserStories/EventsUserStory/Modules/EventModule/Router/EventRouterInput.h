@@ -22,5 +22,7 @@
 
 @protocol EventRouterInput <NSObject>
 
+- (void)openLectureModuleWithLectureObjectId:(NSString *)lectureObjectId;
+
 @end
 

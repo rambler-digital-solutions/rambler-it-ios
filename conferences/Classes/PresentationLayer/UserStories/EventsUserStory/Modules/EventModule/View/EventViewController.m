@@ -28,7 +28,7 @@
 
 #import <CrutchKit/Proxying/Extensions/UIViewController+CDObserver/UIViewController+CDObserver.h>
 
-@interface EventViewController() <EventTableViewCellActionProtocol>
+@interface EventViewController() <EventTableViewCellActionProtocol, EventDataDisplayManagerDelegate>
 
 @end
 
@@ -52,6 +52,7 @@
 - (void)configureViewWithEvent:(EventPlainObject *)event {
     [self configureNavigationBarWithColor:event.backgroundColor];
     
+    self.dataDisplayManager.delegate = self;
     [self.dataDisplayManager configureDataDisplayManagerWithEvent:event];
     
     self.tableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.tableView];
@@ -80,6 +81,12 @@
 
 - (void)didTapCurrentTranslationButton:(UIButton *)button {
     [self.output didTriggerCurrentTranslationButtonTapEvent];
+}
+
+#pragma mark - EventDataDisplayManagerDelegate
+
+- (void)didTapLectureInfoCellWithLectureObjectId:(NSString *)lectureObjectId {
+    [self.output didTapLectureInfoCellWithLectureObjectIdEvent:lectureObjectId];
 }
 
 #pragma mark - Private methods

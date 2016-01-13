@@ -25,10 +25,19 @@
 @class EventPlainObject;
 @class EventCellObjectBuilderFactory;
 
+@protocol EventDataDisplayManagerDelegate <NSObject>
+
+- (void)didTapLectureInfoCellWithLectureObjectId:(NSString *)lectureObjectId;
+
+@end
+
 @interface EventDataDisplayManager : NSObject <DataDisplayManager>
 
 @property (strong, nonatomic) EventCellObjectBuilderFactory *cellObjectBuilderFactory;
+@property (weak, nonatomic) id <EventDataDisplayManagerDelegate> delegate;
 
 - (void)configureDataDisplayManagerWithEvent:(EventPlainObject *)event;
 
 @end
+
+

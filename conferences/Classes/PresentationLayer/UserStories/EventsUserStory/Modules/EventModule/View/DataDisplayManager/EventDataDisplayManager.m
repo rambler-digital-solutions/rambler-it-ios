@@ -25,6 +25,8 @@
 #import "EventCellObjectBuilderBase.h"
 #import "EventCellObjectBuilderFactory.h"
 #import "EventPlainObject.h"
+#import "EXTScope.h"
+#import "LectureInfoTableViewCellObject.h"
 
 @interface EventDataDisplayManager () <UITableViewDelegate>
 
@@ -68,6 +70,19 @@
 
 - (void)setupActionBlocks {
     self.tableViewActions = [[NITableViewActions alloc] initWithTarget:self];
+    
+    @weakify(self);
+    NIActionBlock lectureInfoActionBlock = ^BOOL(id object, UIViewController *controller, NSIndexPath* indexPath) {
+        @strongify(self);
+        
+        LectureInfoTableViewCellObject *cellObject = (LectureInfoTableViewCellObject *)object;
+        NSString *lectureObjectId = cellObject.lectureObjectId;
+        
+        [self.delegate didTapLectureInfoCellWithLectureObjectId:lectureObjectId];
+
+        return YES;
+    };
+    [self.tableViewActions attachToClass:[LectureInfoTableViewCellObject class] tapBlock:lectureInfoActionBlock];
 }
 
 - (NITableViewModel *)configureTableViewModel {

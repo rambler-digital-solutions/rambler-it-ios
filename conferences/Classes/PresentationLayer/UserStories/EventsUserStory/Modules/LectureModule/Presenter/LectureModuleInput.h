@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <ViperMcFlurry/ViperMcFlurry.h>
 
-@protocol LectureModuleInput <NSObject>
+@protocol LectureModuleInput <RamblerViperModuleInput>
 
 /**
  @author Artem Karpushin

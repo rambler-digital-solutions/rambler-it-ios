@@ -66,5 +66,14 @@
  */
 - (void)didTriggerCurrentTranslationButtonTapEvent;
 
+/**
+ @author Artem Karpushin
+ 
+ Method is used to inform presenter that cell with lecture info was tapped
+ 
+ @param lectureObjectId Lecture objectId
+ */
+- (void)didTapLectureInfoCellWithLectureObjectIdEvent:(NSString *)lectureObjectId;
+
 @end
 
