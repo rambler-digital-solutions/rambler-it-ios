@@ -18,8 +18,64 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+#import <Nimbus/NimbusModels.h>
 #import "LectureDataDisplayManager.h"
+#import "LecturePlainObject.h"
+#import "DescriptionTableViewCellObject.h"
+
+@interface LectureDataDisplayManager ()
+
+@property (strong, nonatomic) NITableViewModel *tableViewModel;
+@property (strong, nonatomic) NITableViewActions *tableViewActions;
+@property (strong, nonatomic) LecturePlainObject *lecture;
+
+@end
 
 @implementation LectureDataDisplayManager
+
+#pragma mark - Public methods
+
+- (void)configureDataDisplayManagerWithLecture:(LecturePlainObject *)lecture {
+    self.lecture = lecture;
+}
+
+#pragma mark - UITableViewDelegate methods
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [NICellFactory tableView:tableView heightForRowAtIndexPath:indexPath model:self.tableViewModel];
+}
+
+#pragma mark - DataDisplayManager methods
+
+- (id<UITableViewDataSource>)dataSourceForTableView:(UITableView *)tableView {
+    if (!self.tableViewModel) {
+        self.tableViewModel = [self configureTableViewModel];
+    }
+    return self.tableViewModel;
+}
+
+- (id<UITableViewDelegate>)delegateForTableView:(UITableView *)tableView withBaseDelegate:(id<UITableViewDelegate>)baseTableViewDelegate {
+    if (!self.tableViewActions) {
+        [self setupActionBlocks];
+    }
+    return [self.tableViewActions forwardingTo:self];
+}
+
+#pragma mark - Private methods
+
+- (NITableViewModel *)configureTableViewModel {
+    NSMutableArray *cellObjects = [@[] mutableCopy];
+    
+    DescriptionTableViewCellObject *descriptionCellObject = [DescriptionTableViewCellObject objectWithText:@"Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."];
+    [cellObjects addObject:descriptionCellObject];
+    
+    NITableViewModel *tableViewModel = [[NITableViewModel alloc] initWithSectionedArray:cellObjects
+                                                                                             delegate:(id)[NICellFactory class]];
+    return tableViewModel;
+}
+
+- (void)setupActionBlocks {
+    self.tableViewActions = [[NITableViewActions alloc] initWithTarget:self];
+}
 
 @end

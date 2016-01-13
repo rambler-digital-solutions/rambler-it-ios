@@ -19,7 +19,12 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
+#import "DataDisplayManager.h"
 
-@interface LectureDataDisplayManager : NSObject
+@class LecturePlainObject;
+
+@interface LectureDataDisplayManager : NSObject <DataDisplayManager, UITableViewDelegate>
+
+- (void)configureDataDisplayManagerWithLecture:(LecturePlainObject *)lecture;
 
 @end
