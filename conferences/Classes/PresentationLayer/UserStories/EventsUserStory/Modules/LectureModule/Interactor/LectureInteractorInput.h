@@ -22,5 +22,14 @@
 
 @protocol LectureInteractorInput <NSObject>
 
+/**
+ @author Artem Karpushin
+ 
+ Method is used to obtain Lecture object
+ 
+ @param objectId LecturePlainObject object
+ */
+- (void)obtainLectureWithObjectId:(NSString *)objectId;
+
 @end
 

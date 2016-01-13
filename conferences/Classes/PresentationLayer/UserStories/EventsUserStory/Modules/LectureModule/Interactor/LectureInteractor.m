@@ -20,6 +20,7 @@
 
 #import "LectureInteractor.h"
 #import "LectureInteractorOutput.h"
+#import "LecturePlainObject.h"
 
 @interface LectureInteractor()
 
@@ -28,5 +29,15 @@
 @implementation LectureInteractor
 
 #pragma mark - LectureInteractorInput
+
+- (void)obtainLectureWithObjectId:(NSString *)objectId {
+    /**
+     @author Artem Karpushin
+     
+     There is no service to fetch lecture yet
+     */
+    LecturePlainObject *lecture = [LecturePlainObject new];
+    [self.output didObtainLecture:lecture];
+}
 
 @end

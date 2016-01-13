@@ -20,7 +20,18 @@
 
 #import <Foundation/Foundation.h>
 
+@class LecturePlainObject;
+
 @protocol LectureInteractorOutput <NSObject>
+
+/**
+ @author Artem Karpushin
+ 
+ Method is used to inform presenter that Lecture object was obtained
+ 
+ @param lecture LecturePlainObject object
+ */
+- (void)didObtainLecture:(LecturePlainObject *)lecture;
 
 @end
 
