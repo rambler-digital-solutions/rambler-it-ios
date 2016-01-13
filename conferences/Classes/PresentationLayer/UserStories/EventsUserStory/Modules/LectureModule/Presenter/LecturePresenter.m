@@ -22,15 +22,26 @@
 #import "LectureViewInput.h"
 #import "LectureInteractorInput.h"
 #import "LectureRouterInput.h"
+#import "LecturePresenterStateStorage.h"
 
 @implementation LecturePresenter
 
 #pragma mark - LectureViewOutput
 
 - (void)setupView {
-
+    [self.interactor obtainLectureWithObjectId:self.stateStorage.lectureObjectId];
 }
 
 #pragma mark - LectureInteractorOutput
+
+- (void)didObtainLecture:(LecturePlainObject *)lecture {
+    [self.view configureViewWithLecture:lecture];
+}
+
+#pragma mark - LectureModuleInput
+
+- (void)configureCurrentModuleWithLectureObjectId:(NSString *)objectId {
+    self.stateStorage.lectureObjectId = objectId;
+}
 
 @end
