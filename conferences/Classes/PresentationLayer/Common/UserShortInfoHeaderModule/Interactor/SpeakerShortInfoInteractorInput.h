@@ -20,9 +20,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol SpeakerShortInfoHeaderViewOutput <NSObject>
-
-- (void)setupView;
+@protocol SpeakerShortInfoInteractorInput <NSObject>
 
 @end
 

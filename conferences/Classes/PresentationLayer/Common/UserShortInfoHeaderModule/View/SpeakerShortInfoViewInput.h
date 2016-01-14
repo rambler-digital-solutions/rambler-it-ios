@@ -18,20 +18,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "SpeakerShortInfoHeaderView.h"
-#import "SpeakerShortInfoHeaderViewOutput.h"
+#import <Foundation/Foundation.h>
 
-@interface SpeakerShortInfoHeaderView()
-
-@end
-
-@implementation SpeakerShortInfoHeaderView
-
-- (void)viewDidLoad {
-	[super viewDidLoad];
-	[self.output setupView];
-}
-
-#pragma mark - UserShortInfoHeaderViewInput
+@protocol SpeakerShortInfoViewInput <NSObject>
 
 @end
+

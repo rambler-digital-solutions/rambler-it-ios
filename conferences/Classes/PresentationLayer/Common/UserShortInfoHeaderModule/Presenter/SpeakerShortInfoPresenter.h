@@ -18,22 +18,19 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "SpeakerShortInfoHeaderPresenter.h"
-#import "SpeakerShortInfoHeaderViewInput.h"
-#import "SpeakerShortInfoHeaderInteractorInput.h"
-#import "SpeakerShortInfoHeaderRouterInput.h"
+#import <Foundation/Foundation.h>
+#import "SpeakerShortInfoViewOutput.h"
+#import "SpeakerShortInfoInteractorOutput.h"
 
-@interface SpeakerShortInfoHeaderPresenter()
-@end
+@protocol SpeakerShortInfoViewInput;
+@protocol SpeakerShortInfoInteractorInput;
+@protocol SpeakerShortInfoRouterInput;
 
-@implementation SpeakerShortInfoHeaderPresenter
+@interface SpeakerShortInfoPresenter : NSObject <SpeakerShortInfoViewOutput, SpeakerShortInfoInteractorOutput>
 
-#pragma mark - UserShortInfoHeaderViewOutput
-
-- (void)setupView {
-
-}
-
-#pragma mark - UserShortInfoHeaderInteractorOutput
+@property (weak, nonatomic) id <SpeakerShortInfoViewInput> view;
+@property (strong, nonatomic) id <SpeakerShortInfoInteractorInput> interactor;
+@property (strong, nonatomic) id <SpeakerShortInfoRouterInput> router;
 
 @end
+

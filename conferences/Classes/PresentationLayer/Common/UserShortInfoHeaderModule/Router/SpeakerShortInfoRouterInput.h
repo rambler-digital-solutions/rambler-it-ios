@@ -20,7 +20,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol SpeakerShortInfoHeaderViewInput <NSObject>
+@protocol SpeakerShortInfoRouterInput <NSObject>
 
 @end
 

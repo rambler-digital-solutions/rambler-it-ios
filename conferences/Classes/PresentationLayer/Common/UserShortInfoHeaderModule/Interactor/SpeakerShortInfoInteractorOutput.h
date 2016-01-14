@@ -19,8 +19,8 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-#import "SpeakerShortInfoHeaderRouterInput.h"
 
-@interface SpeakerShortInfoHeaderRouter : NSObject <SpeakerShortInfoHeaderRouterInput>
+@protocol SpeakerShortInfoInteractorOutput <NSObject>
 
 @end
+

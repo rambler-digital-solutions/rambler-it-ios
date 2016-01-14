@@ -18,14 +18,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Typhoon/Typhoon.h>
+#import <Foundation/Foundation.h>
+#import "SpeakerShortInfoRouterInput.h"
 
-/**
- @author Artem Karpushin
- 
- A TyphoonAssembly which is responsible for creating SpeakerShortInfoHeaderModule
- */
-@interface SpeakerShortInfoHeaderModuleAssembly : TyphoonAssembly
+@interface SpeakerShortInfoRouter : NSObject <SpeakerShortInfoRouterInput>
 
 @end
-

@@ -18,32 +18,32 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "SpeakerShortInfoHeaderModuleAssembly.h"
-#import "SpeakerShortInfoHeaderView.h"
-#import "SpeakerShortInfoHeaderInteractor.h"
-#import "SpeakerShortInfoHeaderPresenter.h"
-#import "SpeakerShortInfoHeaderRouter.h"
+#import "SpeakerShortInfoModuleAssembly.h"
+#import "SpeakerShortInfoView.h"
+#import "SpeakerShortInfoInteractor.h"
+#import "SpeakerShortInfoPresenter.h"
+#import "SpeakerShortInfoRouter.h"
 
-@implementation  SpeakerShortInfoHeaderModuleAssembly
+@implementation  SpeakerShortInfoModuleAssembly
 
-- (SpeakerShortInfoHeaderView *)viewUserShortInfoHeader {
-    return [TyphoonDefinition withClass:[SpeakerShortInfoHeaderView class]
+- (SpeakerShortInfoView *)viewUserShortInfoHeader {
+    return [TyphoonDefinition withClass:[SpeakerShortInfoView class]
                             configuration:^(TyphoonDefinition *definition) {
                                 [definition injectProperty:@selector(output)
                                                       with:[self presenterUserShortInfoHeader]];
              }];
 }
 
-- (SpeakerShortInfoHeaderInteractor *)interactorUserShortInfoHeader {
-    return [TyphoonDefinition withClass:[SpeakerShortInfoHeaderInteractor class]
+- (SpeakerShortInfoInteractor *)interactorUserShortInfoHeader {
+    return [TyphoonDefinition withClass:[SpeakerShortInfoInteractor class]
                             configuration:^(TyphoonDefinition *definition) {
                                 [definition injectProperty:@selector(output)
                                                       with:[self presenterUserShortInfoHeader]];
              }];
 }
 
-- (SpeakerShortInfoHeaderPresenter *)presenterUserShortInfoHeader {
-    return [TyphoonDefinition withClass:[SpeakerShortInfoHeaderPresenter class]
+- (SpeakerShortInfoPresenter *)presenterUserShortInfoHeader {
+    return [TyphoonDefinition withClass:[SpeakerShortInfoPresenter class]
                             configuration:^(TyphoonDefinition *definition) {
                                 [definition injectProperty:@selector(view)
                                                       with:[self viewUserShortInfoHeader]];
@@ -54,8 +54,8 @@
             }];
 }
 
-- (SpeakerShortInfoHeaderRouter *)routerUserShortInfoHeader {
-    return [TyphoonDefinition withClass:[SpeakerShortInfoHeaderRouter class]];
+- (SpeakerShortInfoRouter *)routerUserShortInfoHeader {
+    return [TyphoonDefinition withClass:[SpeakerShortInfoRouter class]];
 }
 
 @end

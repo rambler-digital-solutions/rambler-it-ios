@@ -18,14 +18,14 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
-#import "SpeakerShortInfoHeaderViewInput.h"
+#import <Foundation/Foundation.h>
+#import "SpeakerShortInfoInteractorInput.h"
 
-@protocol SpeakerShortInfoHeaderViewOutput;
+@protocol SpeakerShortInfoInteractorOutput;
 
-@interface SpeakerShortInfoHeaderView : UIViewController <SpeakerShortInfoHeaderViewInput>
+@interface SpeakerShortInfoInteractor : NSObject<SpeakerShortInfoInteractorInput>
 
-@property (strong, nonatomic) id <SpeakerShortInfoHeaderViewOutput> output;
+@property (weak, nonatomic) id<SpeakerShortInfoInteractorOutput> output;
 
 @end
 

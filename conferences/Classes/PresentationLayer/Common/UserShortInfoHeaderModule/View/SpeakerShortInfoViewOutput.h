@@ -18,14 +18,11 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "SpeakerShortInfoHeaderRouter.h"
+#import <Foundation/Foundation.h>
 
-@interface SpeakerShortInfoHeaderRouter()
+@protocol SpeakerShortInfoViewOutput <NSObject>
 
-@end
-
-@implementation SpeakerShortInfoHeaderRouter
-
-#pragma mark - UserShortInfoHeaderRouterInput
+- (void)setupView;
 
 @end
+

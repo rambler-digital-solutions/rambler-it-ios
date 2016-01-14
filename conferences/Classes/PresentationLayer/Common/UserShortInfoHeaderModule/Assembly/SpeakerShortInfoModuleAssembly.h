@@ -18,15 +18,14 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "SpeakerShortInfoHeaderInteractor.h"
-#import "SpeakerShortInfoHeaderInteractorOutput.h"
+#import <Typhoon/Typhoon.h>
 
-@interface SpeakerShortInfoHeaderInteractor()
-
-@end
-
-@implementation SpeakerShortInfoHeaderInteractor
-
-#pragma mark - UserShortInfoHeaderInteractorInput
+/**
+ @author Artem Karpushin
+ 
+ A TyphoonAssembly which is responsible for creating SpeakerShortInfoModule
+ */
+@interface SpeakerShortInfoModuleAssembly : TyphoonAssembly
 
 @end
+

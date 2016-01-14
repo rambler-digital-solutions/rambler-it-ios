@@ -18,9 +18,14 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import "SpeakerShortInfoViewInput.h"
 
-@protocol SpeakerShortInfoHeaderRouterInput <NSObject>
+@protocol SpeakerShortInfoViewOutput;
+
+@interface SpeakerShortInfoView : UIViewController <SpeakerShortInfoViewInput>
+
+@property (strong, nonatomic) id <SpeakerShortInfoViewOutput> output;
 
 @end
 

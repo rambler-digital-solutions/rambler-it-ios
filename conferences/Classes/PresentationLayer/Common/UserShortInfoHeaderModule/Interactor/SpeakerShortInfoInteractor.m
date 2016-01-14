@@ -18,9 +18,15 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import "SpeakerShortInfoInteractor.h"
+#import "SpeakerShortInfoInteractorOutput.h"
 
-@protocol SpeakerShortInfoHeaderInteractorOutput <NSObject>
+@interface SpeakerShortInfoInteractor()
 
 @end
 
+@implementation SpeakerShortInfoInteractor
+
+#pragma mark - SpeakerShortInfoInteractorInput
+
+@end
