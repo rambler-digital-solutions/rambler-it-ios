@@ -20,12 +20,19 @@
 
 #import <UIKit/UIKit.h>
 #import "SpeakerShortInfoViewInput.h"
+#import "SpeakerShortInfoModuleInput.h"
 
 @protocol SpeakerShortInfoViewOutput;
 
-@interface SpeakerShortInfoView : UIViewController <SpeakerShortInfoViewInput>
+@interface SpeakerShortInfoView : UIView <SpeakerShortInfoViewInput, SpeakerShortInfoModuleInput>
 
 @property (strong, nonatomic) id <SpeakerShortInfoViewOutput> output;
+
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UILabel *nameTextLabel;
+@property (weak, nonatomic) IBOutlet UILabel *companyTextLabel;
+
++ (SpeakerShortInfoView *)eventHeaderView;
 
 @end
 

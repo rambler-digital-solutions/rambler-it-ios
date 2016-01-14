@@ -21,7 +21,6 @@
 #import <Foundation/Foundation.h>
 #import "SpeakerShortInfoViewSize.h"
 
-
 @class SpeakerPlainObject;
 
 @protocol SpeakerShortInfoModuleInput <NSObject>

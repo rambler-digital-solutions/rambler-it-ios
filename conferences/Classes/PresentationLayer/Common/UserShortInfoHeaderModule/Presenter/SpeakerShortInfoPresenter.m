@@ -30,10 +30,8 @@
 
 #pragma mark - SpeakerShortInfoViewOutput
 
-- (void)setupView {
-
+- (void)moduleReadyWithSpeaker:(SpeakerPlainObject *)speaker andViewSize:(SpeakerShortInfoViewSize)viewSize {
+    [self.view configureViewWithSpeaker:speaker andViewSize:viewSize];
 }
-
-#pragma mark - SpeakerShortInfoInteractorOutput
 
 @end

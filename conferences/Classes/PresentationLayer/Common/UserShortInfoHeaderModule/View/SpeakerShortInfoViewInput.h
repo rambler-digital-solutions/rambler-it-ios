@@ -19,8 +19,13 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
+#import "SpeakerShortInfoViewSize.h"
+
+@class SpeakerPlainObject;
 
 @protocol SpeakerShortInfoViewInput <NSObject>
+
+- (void)configureViewWithSpeaker:(SpeakerPlainObject *)speaker andViewSize:(SpeakerShortInfoViewSize)viewSize;
 
 @end
 

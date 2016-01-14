@@ -20,18 +20,40 @@
 
 #import "SpeakerShortInfoView.h"
 #import "SpeakerShortInfoViewOutput.h"
+#import "SpeakerPlainObject.h"
+#import "SpeakerShortInfoViewSize.h"
 
-@interface SpeakerShortInfoView()
+#import <SDWebImage/UIImageView+WebCache.h>
 
-@end
+static NSString *const kPlaceholderImageName = @"placeholder";
 
 @implementation SpeakerShortInfoView
 
-- (void)viewDidLoad {
-	[super viewDidLoad];
-	[self.output setupView];
++ (SpeakerShortInfoView *)eventHeaderView {
+    return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class])
+                                          owner:self
+                                        options:NULL] firstObject];
 }
 
 #pragma mark - SpeakerShortInfoViewInput
+
+- (void)configureViewWithSpeaker:(SpeakerPlainObject *)speaker andViewSize:(SpeakerShortInfoViewSize)viewSize {
+    switch (viewSize) {
+        case SpeakerShortInfoViewSizeForLectureModule:
+            break;
+            
+        case SpeakerShortInfoViewSizeForSpeakerModule:
+            break;
+            
+        default:
+            break;
+    }
+}
+
+#pragma mark - SpeakerShortInfoModuleInput
+
+- (void)configureModuleWithSpeaker:(SpeakerPlainObject *)speaker andViewSize:(SpeakerShortInfoViewSize)viewSize {
+    [self.output moduleReadyWithSpeaker:speaker andViewSize:viewSize];
+}
 
 @end

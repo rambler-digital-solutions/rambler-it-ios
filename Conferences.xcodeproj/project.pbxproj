@@ -30,6 +30,7 @@
 		631808411C482B1300A61E7D /* SpeakerShortInfoPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 631808351C482B1300A61E7D /* SpeakerShortInfoPresenter.m */; };
 		631808421C482B1300A61E7D /* SpeakerShortInfoRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 631808381C482B1300A61E7D /* SpeakerShortInfoRouter.m */; };
 		631808431C482B1300A61E7D /* SpeakerShortInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6318083C1C482B1300A61E7D /* SpeakerShortInfoView.m */; };
+		631808451C48324000A61E7D /* SpeakerShortInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 631808441C48324000A61E7D /* SpeakerShortInfoView.xib */; };
 		631CBA381C0092C100E3EBA8 /* ApplicationConfiguratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA371C0092C100E3EBA8 /* ApplicationConfiguratorTests.m */; };
 		631CBA3B1C00935300E3EBA8 /* EventServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA3A1C00935300E3EBA8 /* EventServiceTests.m */; };
 		631CBA721C020CCD00E3EBA8 /* EventListModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA691C020CCD00E3EBA8 /* EventListModuleAssemblyTests.m */; };
@@ -376,6 +377,9 @@
 		6318083C1C482B1300A61E7D /* SpeakerShortInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerShortInfoView.m; sourceTree = "<group>"; };
 		6318083D1C482B1300A61E7D /* SpeakerShortInfoViewInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerShortInfoViewInput.h; sourceTree = "<group>"; };
 		6318083E1C482B1300A61E7D /* SpeakerShortInfoViewOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerShortInfoViewOutput.h; sourceTree = "<group>"; };
+		631808441C48324000A61E7D /* SpeakerShortInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeakerShortInfoView.xib; sourceTree = "<group>"; };
+		631808461C48398300A61E7D /* SpeakerShortInfoModuleInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerShortInfoModuleInput.h; sourceTree = "<group>"; };
+		631808481C483DE700A61E7D /* SpeakerShortInfoViewSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpeakerShortInfoViewSize.h; sourceTree = "<group>"; };
 		631CBA371C0092C100E3EBA8 /* ApplicationConfiguratorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationConfiguratorTests.m; sourceTree = "<group>"; };
 		631CBA3A1C00935300E3EBA8 /* EventServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventServiceTests.m; sourceTree = "<group>"; };
 		631CBA681C020CCD00E3EBA8 /* EventListModuleAssembly_Testable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListModuleAssembly_Testable.h; sourceTree = "<group>"; };
@@ -1076,6 +1080,7 @@
 		631808111C482ABC00A61E7D /* SpeakerShortInfoModule */ = {
 			isa = PBXGroup;
 			children = (
+				631808471C483D9900A61E7D /* Headers */,
 				6318082B1C482B1300A61E7D /* Assembly */,
 				6318082E1C482B1300A61E7D /* Interactor */,
 				631808331C482B1300A61E7D /* Presenter */,
@@ -1111,6 +1116,7 @@
 			children = (
 				631808341C482B1300A61E7D /* SpeakerShortInfoPresenter.h */,
 				631808351C482B1300A61E7D /* SpeakerShortInfoPresenter.m */,
+				631808461C48398300A61E7D /* SpeakerShortInfoModuleInput.h */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -1132,8 +1138,17 @@
 				6318083C1C482B1300A61E7D /* SpeakerShortInfoView.m */,
 				6318083D1C482B1300A61E7D /* SpeakerShortInfoViewInput.h */,
 				6318083E1C482B1300A61E7D /* SpeakerShortInfoViewOutput.h */,
+				631808441C48324000A61E7D /* SpeakerShortInfoView.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		631808471C483D9900A61E7D /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				631808481C483DE700A61E7D /* SpeakerShortInfoViewSize.h */,
+			);
+			path = Headers;
 			sourceTree = "<group>";
 		};
 		631CBA361C0092C100E3EBA8 /* ApplicationConfiguratorTests */ = {
@@ -4194,6 +4209,7 @@
 				636DD8431C285FF700436201 /* ReportListTableViewHeaderAndFooterCell.xib in Resources */,
 				9F8E5F9D1BC2777100DC10DB /* Conferences.Parse.plist in Resources */,
 				63FDCE141BBDBA2A00A43B60 /* Assets.xcassets in Resources */,
+				631808451C48324000A61E7D /* SpeakerShortInfoView.xib in Resources */,
 				638DBD5A1BEE2B1000B4B208 /* EventInfoTableViewCell.xib in Resources */,
 				632887B71BDFE16200701AF0 /* NearestEventTableViewCell.xib in Resources */,
 				63F8F25E1BF743A0000017F3 /* PastVideoTranslationTableViewCell.xib in Resources */,
