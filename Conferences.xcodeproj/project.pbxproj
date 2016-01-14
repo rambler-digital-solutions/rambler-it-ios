@@ -25,6 +25,11 @@
 		63136FE01BDCDB2700994356 /* UIViewController+TabBarControllerContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136FCC1BDCDB2700994356 /* UIViewController+TabBarControllerContent.m */; };
 		63136FE11BDCDB2700994356 /* TabBarButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136FCF1BDCDB2700994356 /* TabBarButtonCell.m */; };
 		63136FE21BDCDB2700994356 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136FD11BDCDB2700994356 /* TabBarViewController.m */; };
+		6318083F1C482B1300A61E7D /* SpeakerShortInfoHeaderModuleAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 6318082D1C482B1300A61E7D /* SpeakerShortInfoHeaderModuleAssembly.m */; };
+		631808401C482B1300A61E7D /* SpeakerShortInfoHeaderInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 631808301C482B1300A61E7D /* SpeakerShortInfoHeaderInteractor.m */; };
+		631808411C482B1300A61E7D /* SpeakerShortInfoHeaderPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 631808351C482B1300A61E7D /* SpeakerShortInfoHeaderPresenter.m */; };
+		631808421C482B1300A61E7D /* SpeakerShortInfoHeaderRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 631808381C482B1300A61E7D /* SpeakerShortInfoHeaderRouter.m */; };
+		631808431C482B1300A61E7D /* SpeakerShortInfoHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6318083C1C482B1300A61E7D /* SpeakerShortInfoHeaderView.m */; };
 		631CBA381C0092C100E3EBA8 /* ApplicationConfiguratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA371C0092C100E3EBA8 /* ApplicationConfiguratorTests.m */; };
 		631CBA3B1C00935300E3EBA8 /* EventServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA3A1C00935300E3EBA8 /* EventServiceTests.m */; };
 		631CBA721C020CCD00E3EBA8 /* EventListModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA691C020CCD00E3EBA8 /* EventListModuleAssemblyTests.m */; };
@@ -356,6 +361,21 @@
 		63136FD11BDCDB2700994356 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
 		63136FD21BDCDB2700994356 /* TabBarViewInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewInput.h; sourceTree = "<group>"; };
 		63136FE51BDCDB9E00994356 /* DataDisplayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataDisplayManager.h; sourceTree = "<group>"; };
+		6318082C1C482B1300A61E7D /* SpeakerShortInfoHeaderModuleAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerShortInfoHeaderModuleAssembly.h; sourceTree = "<group>"; };
+		6318082D1C482B1300A61E7D /* SpeakerShortInfoHeaderModuleAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerShortInfoHeaderModuleAssembly.m; sourceTree = "<group>"; };
+		6318082F1C482B1300A61E7D /* SpeakerShortInfoHeaderInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerShortInfoHeaderInteractor.h; sourceTree = "<group>"; };
+		631808301C482B1300A61E7D /* SpeakerShortInfoHeaderInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerShortInfoHeaderInteractor.m; sourceTree = "<group>"; };
+		631808311C482B1300A61E7D /* SpeakerShortInfoHeaderInteractorInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerShortInfoHeaderInteractorInput.h; sourceTree = "<group>"; };
+		631808321C482B1300A61E7D /* SpeakerShortInfoHeaderInteractorOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerShortInfoHeaderInteractorOutput.h; sourceTree = "<group>"; };
+		631808341C482B1300A61E7D /* SpeakerShortInfoHeaderPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerShortInfoHeaderPresenter.h; sourceTree = "<group>"; };
+		631808351C482B1300A61E7D /* SpeakerShortInfoHeaderPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerShortInfoHeaderPresenter.m; sourceTree = "<group>"; };
+		631808371C482B1300A61E7D /* SpeakerShortInfoHeaderRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerShortInfoHeaderRouter.h; sourceTree = "<group>"; };
+		631808381C482B1300A61E7D /* SpeakerShortInfoHeaderRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerShortInfoHeaderRouter.m; sourceTree = "<group>"; };
+		631808391C482B1300A61E7D /* SpeakerShortInfoHeaderRouterInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerShortInfoHeaderRouterInput.h; sourceTree = "<group>"; };
+		6318083B1C482B1300A61E7D /* SpeakerShortInfoHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerShortInfoHeaderView.h; sourceTree = "<group>"; };
+		6318083C1C482B1300A61E7D /* SpeakerShortInfoHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerShortInfoHeaderView.m; sourceTree = "<group>"; };
+		6318083D1C482B1300A61E7D /* SpeakerShortInfoHeaderViewInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerShortInfoHeaderViewInput.h; sourceTree = "<group>"; };
+		6318083E1C482B1300A61E7D /* SpeakerShortInfoHeaderViewOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerShortInfoHeaderViewOutput.h; sourceTree = "<group>"; };
 		631CBA371C0092C100E3EBA8 /* ApplicationConfiguratorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationConfiguratorTests.m; sourceTree = "<group>"; };
 		631CBA3A1C00935300E3EBA8 /* EventServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventServiceTests.m; sourceTree = "<group>"; };
 		631CBA681C020CCD00E3EBA8 /* EventListModuleAssembly_Testable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListModuleAssembly_Testable.h; sourceTree = "<group>"; };
@@ -879,6 +899,7 @@
 		63136F941BDCDB2600994356 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				631808111C482ABC00A61E7D /* UserShortInfoHeaderModule */,
 				63F51CA71C42ACE600AFB9D2 /* Cells */,
 				63F51CA51C42ACE600AFB9D2 /* CellObjects */,
 				63136FE31BDCDB7200994356 /* Protocols */,
@@ -1050,6 +1071,68 @@
 				632887AD1BDFE0AB00701AF0 /* EventListTableViewCell */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		631808111C482ABC00A61E7D /* UserShortInfoHeaderModule */ = {
+			isa = PBXGroup;
+			children = (
+				6318082B1C482B1300A61E7D /* Assembly */,
+				6318082E1C482B1300A61E7D /* Interactor */,
+				631808331C482B1300A61E7D /* Presenter */,
+				631808361C482B1300A61E7D /* Router */,
+				6318083A1C482B1300A61E7D /* View */,
+			);
+			path = UserShortInfoHeaderModule;
+			sourceTree = "<group>";
+		};
+		6318082B1C482B1300A61E7D /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				6318082C1C482B1300A61E7D /* SpeakerShortInfoHeaderModuleAssembly.h */,
+				6318082D1C482B1300A61E7D /* SpeakerShortInfoHeaderModuleAssembly.m */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		6318082E1C482B1300A61E7D /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				6318082F1C482B1300A61E7D /* SpeakerShortInfoHeaderInteractor.h */,
+				631808301C482B1300A61E7D /* SpeakerShortInfoHeaderInteractor.m */,
+				631808311C482B1300A61E7D /* SpeakerShortInfoHeaderInteractorInput.h */,
+				631808321C482B1300A61E7D /* SpeakerShortInfoHeaderInteractorOutput.h */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		631808331C482B1300A61E7D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				631808341C482B1300A61E7D /* SpeakerShortInfoHeaderPresenter.h */,
+				631808351C482B1300A61E7D /* SpeakerShortInfoHeaderPresenter.m */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		631808361C482B1300A61E7D /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				631808371C482B1300A61E7D /* SpeakerShortInfoHeaderRouter.h */,
+				631808381C482B1300A61E7D /* SpeakerShortInfoHeaderRouter.m */,
+				631808391C482B1300A61E7D /* SpeakerShortInfoHeaderRouterInput.h */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		6318083A1C482B1300A61E7D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6318083B1C482B1300A61E7D /* SpeakerShortInfoHeaderView.h */,
+				6318083C1C482B1300A61E7D /* SpeakerShortInfoHeaderView.m */,
+				6318083D1C482B1300A61E7D /* SpeakerShortInfoHeaderViewInput.h */,
+				6318083E1C482B1300A61E7D /* SpeakerShortInfoHeaderViewOutput.h */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		631CBA361C0092C100E3EBA8 /* ApplicationConfiguratorTests */ = {
@@ -4296,10 +4379,12 @@
 				63136FE21BDCDB2700994356 /* TabBarViewController.m in Sources */,
 				631FFE561BEF930200749DB8 /* ReportListRouter.m in Sources */,
 				636DD7E71C26B90200436201 /* PreviousLectureTableViewCell.m in Sources */,
+				631808411C482B1300A61E7D /* SpeakerShortInfoHeaderPresenter.m in Sources */,
 				63F8F24E1BF74302000017F3 /* CurrentVideoTranslationTableViewCell.m in Sources */,
 				63F8F2A81BF870A1000017F3 /* LecturePlainObject.m in Sources */,
 				63D628EB1BE4C741004AF98F /* EventPlainObject.m in Sources */,
 				9F1830D71BC125C3000E21A5 /* ParseResponseValidator.m in Sources */,
+				631808421C482B1300A61E7D /* SpeakerShortInfoHeaderRouter.m in Sources */,
 				63F8F2EC1BF91350000017F3 /* LectureInfoTableViewCellObject.m in Sources */,
 				63F51C601C3D409200AFB9D2 /* EventHeaderPresenter.m in Sources */,
 				9F1830D11BC12492000E21A5 /* ResponseValidatorBase.m in Sources */,
@@ -4317,6 +4402,7 @@
 				63FDCE061BBDBA2A00A43B60 /* AppDelegate.m in Sources */,
 				63136FDF1BDCDB2700994356 /* TabBarButtonPrototype.m in Sources */,
 				638DBD461BEA385400B4B208 /* EventPresenter.m in Sources */,
+				631808401C482B1300A61E7D /* SpeakerShortInfoHeaderInteractor.m in Sources */,
 				636B64041BBDD19A0053E38F /* LectureServiceImplementation.m in Sources */,
 				63FD4E0C1BE621750046378E /* Event.m in Sources */,
 				63D86BE81C14572C00986536 /* EventListTableViewCellObject.m in Sources */,
@@ -4327,6 +4413,7 @@
 				636A37B31BC1356400B49C3D /* ApplicationConfiguratorImplementation.m in Sources */,
 				9F8E5FA91BC27D0D00DC10DB /* ServiceNameConstants.m in Sources */,
 				636F8C971BC97B3100552B91 /* EventServiceImplementation.m in Sources */,
+				6318083F1C482B1300A61E7D /* SpeakerShortInfoHeaderModuleAssembly.m in Sources */,
 				63136FE11BDCDB2700994356 /* TabBarButtonCell.m in Sources */,
 				636F8CB71BC97E7F00552B91 /* LectureMaterials+CoreDataProperties.m in Sources */,
 				636F8DDC1BCB8FE800552B91 /* RamblerLocationPresenter.m in Sources */,
@@ -4334,6 +4421,7 @@
 				63F51CA41C3D430C00AFB9D2 /* LectureDataDisplayManager.m in Sources */,
 				63136FD91BDCDB2700994356 /* TabBarInteractor.m in Sources */,
 				636DD7F41C26B95800436201 /* PreviousLectureTableViewCellObject.m in Sources */,
+				631808431C482B1300A61E7D /* SpeakerShortInfoHeaderView.m in Sources */,
 				63136FDD1BDCDB2700994356 /* CollectionViewSectionInfo.m in Sources */,
 				63F8F2531BF74351000017F3 /* EventDescriptionTableViewCell.m in Sources */,
 				9F18311C1BC1615C000E21A5 /* ResultsResponseObjectFormatter.m in Sources */,

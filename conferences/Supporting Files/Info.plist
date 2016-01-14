@@ -31,6 +31,7 @@
 	<true/>
 	<key>TyphoonInitialAssemblies</key>
 	<array>
+		<string>SpeakerShortInfoHeaderModuleAssembly</string>
 		<string>LectureModuleAssembly</string>
 		<string>EventHeaderModuleAssembly</string>
 		<string>EventCellObjectBuilderFactory</string>
