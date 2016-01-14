@@ -59,6 +59,7 @@ static CGFloat const kLectionInfoTableViewCellHeight = 340.0f;
     self.lectureTitle.text = object.lectureTitle;
     [self.speakerImageView sd_setImageWithURL:object.speakerImageLink
                              placeholderImage:[UIImage imageNamed:kPlaceholderImageName]];
+    [self.tapRecognizer setCancelsTouchesInView:NO];
     
     return YES;
 }
