@@ -57,7 +57,7 @@ static CGFloat const kLectionInfoTableViewCellHeight = 340.0f;
     self.lectureDescription.text = object.lectureDescription;
     [self.lectureDescription setBackgroundColor:[UIColor whiteColor]];
     self.lectureTitle.text = object.lectureTitle;
-    [self.speakerImageView sd_setImageWithURL:object.speakerImageLink
+    [self.speakerImageView sd_setImageWithURL:object.speakerImageUrl
                              placeholderImage:[UIImage imageNamed:kPlaceholderImageName]];
     [self.tapRecognizer setCancelsTouchesInView:NO];
     

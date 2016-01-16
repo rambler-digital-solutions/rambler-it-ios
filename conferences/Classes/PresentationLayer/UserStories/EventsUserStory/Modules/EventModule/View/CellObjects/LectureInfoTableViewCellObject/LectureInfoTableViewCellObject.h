@@ -28,7 +28,7 @@
 @property (strong, nonatomic, readonly) NSString *speakerCompanyName;
 @property (strong, nonatomic, readonly) NSString *lectureDescription;
 @property (strong, nonatomic, readonly) NSString *lectureTitle;
-@property (strong, nonatomic, readonly) NSURL *speakerImageLink;
+@property (strong, nonatomic, readonly) NSURL *speakerImageUrl;
 @property (strong, nonatomic, readonly) NSString *lectureObjectId;
 
 + (instancetype)objectWithLecture:(LecturePlainObject *)lecture;

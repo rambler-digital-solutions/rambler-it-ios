@@ -29,7 +29,7 @@
 @property (strong, nonatomic, readwrite) NSString *speakerCompanyName;
 @property (strong, nonatomic, readwrite) NSString *lectureDescription;
 @property (strong, nonatomic, readwrite) NSString *lectureTitle;
-@property (strong, nonatomic, readwrite) NSURL *speakerImageLink;
+@property (strong, nonatomic, readwrite) NSURL *speakerImageUrl;
 @property (strong, nonatomic, readwrite) NSString *lectureObjectId;
 
 @end
@@ -49,7 +49,7 @@
         SpeakerPlainObject *speaker = [lecture.speakers firstObject];
         _speakerName = speaker.name;
         _speakerCompanyName = speaker.companyName;
-        _speakerImageLink = speaker.pictureLink;
+        _speakerImageUrl = speaker.imageUrl;
     }
     return self;
 }
