@@ -37,13 +37,13 @@ static NSString *const kPlaceholderImageName = @"placeholder";
 
 #pragma mark - SpeakerShortInfoViewInput
 
-- (void)configureViewForLectureModuleWithSpeaker:(SpeakerPlainObject *)speaker {
+- (void)configureViewWithDefaultSizeWithSpeaker:(SpeakerPlainObject *)speaker {
     [self setupOutletsWithSpeaker:speaker];
 }
 
-- (void)configureViewForSpeakerModuleWithSpeaker:(SpeakerPlainObject *)speaker {
+- (void)configureViewWithBigSizeWithSpeaker:(SpeakerPlainObject *)speaker {
     [self setupOutletsWithSpeaker:speaker];
-    [self setupConstraintsForSpeakerModule];
+    [self setupConstraintsForBigViewSize];
 }
 
 #pragma mark - SpeakerShortInfoModuleInput
@@ -61,7 +61,7 @@ static NSString *const kPlaceholderImageName = @"placeholder";
                       placeholderImage:[UIImage imageNamed:kPlaceholderImageName]];
 }
 
-- (void)setupConstraintsForSpeakerModule {
+- (void)setupConstraintsForBigViewSize {
     
 }
 

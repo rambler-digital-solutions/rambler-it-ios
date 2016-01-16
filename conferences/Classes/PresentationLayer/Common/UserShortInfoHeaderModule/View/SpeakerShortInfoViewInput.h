@@ -25,8 +25,8 @@
 
 @protocol SpeakerShortInfoViewInput <NSObject>
 
-- (void)configureViewForLectureModuleWithSpeaker:(SpeakerPlainObject *)speaker;
-- (void)configureViewForSpeakerModuleWithSpeaker:(SpeakerPlainObject *)speaker;
+- (void)configureViewWithDefaultSizeWithSpeaker:(SpeakerPlainObject *)speaker;
+- (void)configureViewWithBigSizeWithSpeaker:(SpeakerPlainObject *)speaker;
 
 @end
 

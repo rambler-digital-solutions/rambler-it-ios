@@ -32,12 +32,12 @@
 
 - (void)moduleReadyWithSpeaker:(SpeakerPlainObject *)speaker andViewSize:(SpeakerShortInfoViewSize)viewSize {
     switch (viewSize) {
-        case SpeakerShortInfoViewSizeForLectureModule:
-            [self.view configureViewForLectureModuleWithSpeaker:speaker];
+        case SpeakerShortInfoViewDefaultSize:
+            [self.view configureViewWithDefaultSizeWithSpeaker:speaker];
             break;
             
-        case SpeakerShortInfoViewSizeForSpeakerModule:
-            [self.view configureViewForSpeakerModuleWithSpeaker:speaker];
+        case SpeakerShortInfoViewBigSize:
+            [self.view configureViewWithBigSizeWithSpeaker:speaker];
             break;
             
         default:

@@ -22,8 +22,8 @@
 #define SpeakerShortInfoViewSize_h
 
 typedef NS_ENUM (NSUInteger, SpeakerShortInfoViewSize) {
-    SpeakerShortInfoViewSizeForLectureModule,
-    SpeakerShortInfoViewSizeForSpeakerModule
+    SpeakerShortInfoViewDefaultSize,
+    SpeakerShortInfoViewBigSize
 };
 
 #endif 
