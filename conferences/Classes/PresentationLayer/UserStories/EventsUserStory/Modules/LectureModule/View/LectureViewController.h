@@ -22,9 +22,12 @@
 #import "LectureViewInput.h"
 
 @protocol LectureViewOutput;
+@protocol SpeakerShortInfoModuleInput;
 @class LectureDataDisplayManager;
 
 @interface LectureViewController : UIViewController<LectureViewInput>
+
+@property (weak, nonatomic) IBOutlet UIView <SpeakerShortInfoModuleInput> *speakerShortInfoView;
 
 @property (strong, nonatomic) id<LectureViewOutput> output;
 @property (strong, nonatomic) LectureDataDisplayManager *dataDisplayManager;

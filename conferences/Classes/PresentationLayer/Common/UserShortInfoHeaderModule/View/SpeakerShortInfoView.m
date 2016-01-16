@@ -29,7 +29,7 @@ static NSString *const kPlaceholderImageName = @"placeholder";
 
 @implementation SpeakerShortInfoView
 
-+ (SpeakerShortInfoView *)eventHeaderView {
++ (SpeakerShortInfoView *)speakerShortInfoView {
     return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class])
                                           owner:self
                                         options:NULL] firstObject];
