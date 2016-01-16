@@ -23,12 +23,13 @@
 @interface SpeakerPlainObject : NSObject
 
 // пока окончательно не сформирована модель данных - все проперти readwrite
-// добавить companyName в модель
+// добавить companyName, objectId в модель
 
 @property (strong, nonatomic, readwrite) NSString *biography;
 @property (strong, nonatomic, readwrite) NSString *name;
 @property (strong, nonatomic, readwrite) NSURL *imageUrl;
 @property (strong, nonatomic, readwrite) NSArray *socialNetworkAccounts;
 @property (strong, nonatomic, readwrite) NSString *companyName;
+@property (strong, nonatomic, readwrite) NSString *objectId;
 
 @end
