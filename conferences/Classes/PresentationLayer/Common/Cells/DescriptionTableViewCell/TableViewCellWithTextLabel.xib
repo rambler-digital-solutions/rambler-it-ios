@@ -14,7 +14,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Веб-сайт" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Thf-XV-f3N">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                        <rect key="frame" x="20" y="0.0" width="280" height="43.5"/>
                         <constraints>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="jIo-s4-IxV"/>
                         </constraints>
@@ -24,8 +24,8 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Thf-XV-f3N" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="DVv-so-K4q"/>
-                    <constraint firstAttribute="trailing" secondItem="Thf-XV-f3N" secondAttribute="trailing" id="YK1-hL-OTF"/>
+                    <constraint firstItem="Thf-XV-f3N" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="DVv-so-K4q"/>
+                    <constraint firstAttribute="trailing" secondItem="Thf-XV-f3N" secondAttribute="trailing" constant="20" id="YK1-hL-OTF"/>
                     <constraint firstItem="Thf-XV-f3N" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="jyB-5Z-YMu"/>
                 </constraints>
             </tableViewCellContentView>

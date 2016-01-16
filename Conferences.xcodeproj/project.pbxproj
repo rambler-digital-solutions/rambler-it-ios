@@ -32,6 +32,9 @@
 		631808431C482B1300A61E7D /* SpeakerShortInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6318083C1C482B1300A61E7D /* SpeakerShortInfoView.m */; };
 		631808451C48324000A61E7D /* SpeakerShortInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 631808441C48324000A61E7D /* SpeakerShortInfoView.xib */; };
 		631808631C4A66FA00A61E7D /* StringConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 631808621C4A66FA00A61E7D /* StringConstants.m */; };
+		631808691C4A870C00A61E7D /* TableViewCellWithTextLabelAndImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 631808671C4A870C00A61E7D /* TableViewCellWithTextLabelAndImageView.m */; };
+		6318086A1C4A870C00A61E7D /* TableViewCellWithTextLabelAndImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 631808681C4A870C00A61E7D /* TableViewCellWithTextLabelAndImageView.xib */; };
+		6318086D1C4A872600A61E7D /* TableViewCellWithTextLabelAndImageViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6318086C1C4A872600A61E7D /* TableViewCellWithTextLabelAndImageViewCellObject.m */; };
 		631CBA381C0092C100E3EBA8 /* ApplicationConfiguratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA371C0092C100E3EBA8 /* ApplicationConfiguratorTests.m */; };
 		631CBA3B1C00935300E3EBA8 /* EventServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA3A1C00935300E3EBA8 /* EventServiceTests.m */; };
 		631CBA721C020CCD00E3EBA8 /* EventListModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA691C020CCD00E3EBA8 /* EventListModuleAssemblyTests.m */; };
@@ -383,6 +386,11 @@
 		631808481C483DE700A61E7D /* SpeakerShortInfoViewSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpeakerShortInfoViewSize.h; sourceTree = "<group>"; };
 		631808611C4A66FA00A61E7D /* StringConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringConstants.h; sourceTree = "<group>"; };
 		631808621C4A66FA00A61E7D /* StringConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringConstants.m; sourceTree = "<group>"; };
+		631808661C4A870C00A61E7D /* TableViewCellWithTextLabelAndImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCellWithTextLabelAndImageView.h; sourceTree = "<group>"; };
+		631808671C4A870C00A61E7D /* TableViewCellWithTextLabelAndImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCellWithTextLabelAndImageView.m; sourceTree = "<group>"; };
+		631808681C4A870C00A61E7D /* TableViewCellWithTextLabelAndImageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCellWithTextLabelAndImageView.xib; sourceTree = "<group>"; };
+		6318086B1C4A872600A61E7D /* TableViewCellWithTextLabelAndImageViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCellWithTextLabelAndImageViewCellObject.h; sourceTree = "<group>"; };
+		6318086C1C4A872600A61E7D /* TableViewCellWithTextLabelAndImageViewCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCellWithTextLabelAndImageViewCellObject.m; sourceTree = "<group>"; };
 		631CBA371C0092C100E3EBA8 /* ApplicationConfiguratorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationConfiguratorTests.m; sourceTree = "<group>"; };
 		631CBA3A1C00935300E3EBA8 /* EventServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventServiceTests.m; sourceTree = "<group>"; };
 		631CBA681C020CCD00E3EBA8 /* EventListModuleAssembly_Testable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListModuleAssembly_Testable.h; sourceTree = "<group>"; };
@@ -1161,6 +1169,25 @@
 				631808621C4A66FA00A61E7D /* StringConstants.m */,
 			);
 			path = StringConstants;
+			sourceTree = "<group>";
+		};
+		631808641C4A86CA00A61E7D /* TableViewCellWithTextLabelAndImageViewCellObject */ = {
+			isa = PBXGroup;
+			children = (
+				6318086B1C4A872600A61E7D /* TableViewCellWithTextLabelAndImageViewCellObject.h */,
+				6318086C1C4A872600A61E7D /* TableViewCellWithTextLabelAndImageViewCellObject.m */,
+			);
+			path = TableViewCellWithTextLabelAndImageViewCellObject;
+			sourceTree = "<group>";
+		};
+		631808651C4A86E200A61E7D /* TableViewCellWithTextLabelAndImageView */ = {
+			isa = PBXGroup;
+			children = (
+				631808661C4A870C00A61E7D /* TableViewCellWithTextLabelAndImageView.h */,
+				631808671C4A870C00A61E7D /* TableViewCellWithTextLabelAndImageView.m */,
+				631808681C4A870C00A61E7D /* TableViewCellWithTextLabelAndImageView.xib */,
+			);
+			path = TableViewCellWithTextLabelAndImageView;
 			sourceTree = "<group>";
 		};
 		631CBA361C0092C100E3EBA8 /* ApplicationConfiguratorTests */ = {
@@ -2459,6 +2486,7 @@
 		63F51CA51C42ACE600AFB9D2 /* CellObjects */ = {
 			isa = PBXGroup;
 			children = (
+				631808641C4A86CA00A61E7D /* TableViewCellWithTextLabelAndImageViewCellObject */,
 				63F51CA61C42ACE600AFB9D2 /* TableViewCellWithTextLabelCellObject */,
 			);
 			path = CellObjects;
@@ -2477,6 +2505,7 @@
 		63F51CA71C42ACE600AFB9D2 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				631808651C4A86E200A61E7D /* TableViewCellWithTextLabelAndImageView */,
 				63F51CA81C42ACE600AFB9D2 /* TableViewCellWithTextLabel */,
 			);
 			path = Cells;
@@ -4218,6 +4247,7 @@
 			files = (
 				636F8DFF1BCB91A900552B91 /* RamblerLocationUserStory.storyboard in Resources */,
 				636DD7DE1C26B8D900436201 /* PreviousEventTableViewCell.xib in Resources */,
+				6318086A1C4A870C00A61E7D /* TableViewCellWithTextLabelAndImageView.xib in Resources */,
 				636B64121BBFE2C20053E38F /* Main.storyboard in Resources */,
 				63FDCE151BBDBA2A00A43B60 /* Info.plist in Resources */,
 				63F8F2E81BF9126B000017F3 /* LectureInfoTableViewCell.xib in Resources */,
@@ -4375,6 +4405,7 @@
 				63D86BDA1C1439D800986536 /* DateFormatter.m in Sources */,
 				636F8DDE1BCB8FE800552B91 /* RamblerLocationViewController.m in Sources */,
 				9F8E5F941BC269EA00DC10DB /* OperationFactoriesAssembly.m in Sources */,
+				631808691C4A870C00A61E7D /* TableViewCellWithTextLabelAndImageView.m in Sources */,
 				63F8F2A21BF7A4F5000017F3 /* FutureEventCellObjectBuilder.m in Sources */,
 				63136FDB1BDCDB2700994356 /* TabBarRouter.m in Sources */,
 				63136FD51BDCDB2700994356 /* ModuleConfigurationPromise.m in Sources */,
@@ -4415,6 +4446,7 @@
 				631808411C482B1300A61E7D /* SpeakerShortInfoPresenter.m in Sources */,
 				63F8F24E1BF74302000017F3 /* CurrentVideoTranslationTableViewCell.m in Sources */,
 				63F8F2A81BF870A1000017F3 /* LecturePlainObject.m in Sources */,
+				6318086D1C4A872600A61E7D /* TableViewCellWithTextLabelAndImageViewCellObject.m in Sources */,
 				63D628EB1BE4C741004AF98F /* EventPlainObject.m in Sources */,
 				9F1830D71BC125C3000E21A5 /* ParseResponseValidator.m in Sources */,
 				631808421C482B1300A61E7D /* SpeakerShortInfoRouter.m in Sources */,
