@@ -37,23 +37,32 @@ static NSString *const kPlaceholderImageName = @"placeholder";
 
 #pragma mark - SpeakerShortInfoViewInput
 
-- (void)configureViewWithSpeaker:(SpeakerPlainObject *)speaker andViewSize:(SpeakerShortInfoViewSize)viewSize {
-    switch (viewSize) {
-        case SpeakerShortInfoViewSizeForLectureModule:
-            break;
-            
-        case SpeakerShortInfoViewSizeForSpeakerModule:
-            break;
-            
-        default:
-            break;
-    }
+- (void)configureViewForLectureModuleWithSpeaker:(SpeakerPlainObject *)speaker {
+    [self setupOutletsWithSpeaker:speaker];
+}
+
+- (void)configureViewForSpeakerModuleWithSpeaker:(SpeakerPlainObject *)speaker {
+    [self setupOutletsWithSpeaker:speaker];
+    [self setupConstraintsForSpeakerModule];
 }
 
 #pragma mark - SpeakerShortInfoModuleInput
 
 - (void)configureModuleWithSpeaker:(SpeakerPlainObject *)speaker andViewSize:(SpeakerShortInfoViewSize)viewSize {
     [self.output moduleReadyWithSpeaker:speaker andViewSize:viewSize];
+}
+
+#pragma mark - Private methods
+
+- (void)setupOutletsWithSpeaker:(SpeakerPlainObject *)speaker {
+    self.nameTextLabel.text = speaker.name;
+    self.companyTextLabel.text = speaker.companyName;
+    [self.imageView sd_setImageWithURL:speaker.imageUrl
+                      placeholderImage:[UIImage imageNamed:kPlaceholderImageName]];
+}
+
+- (void)setupConstraintsForSpeakerModule {
+    
 }
 
 @end

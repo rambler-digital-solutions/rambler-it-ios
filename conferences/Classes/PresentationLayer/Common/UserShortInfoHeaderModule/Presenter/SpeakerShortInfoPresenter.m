@@ -31,7 +31,18 @@
 #pragma mark - SpeakerShortInfoViewOutput
 
 - (void)moduleReadyWithSpeaker:(SpeakerPlainObject *)speaker andViewSize:(SpeakerShortInfoViewSize)viewSize {
-    [self.view configureViewWithSpeaker:speaker andViewSize:viewSize];
+    switch (viewSize) {
+        case SpeakerShortInfoViewSizeForLectureModule:
+            [self.view configureViewForLectureModuleWithSpeaker:speaker];
+            break;
+            
+        case SpeakerShortInfoViewSizeForSpeakerModule:
+            [self.view configureViewForSpeakerModuleWithSpeaker:speaker];
+            break;
+            
+        default:
+            return;
+    }
 }
 
 @end
