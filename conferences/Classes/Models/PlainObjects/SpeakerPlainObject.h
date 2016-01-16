@@ -27,7 +27,7 @@
 
 @property (strong, nonatomic, readwrite) NSString *biography;
 @property (strong, nonatomic, readwrite) NSString *name;
-@property (strong, nonatomic, readwrite) NSURL *pictureLink;
+@property (strong, nonatomic, readwrite) NSURL *imageUrl;
 @property (strong, nonatomic, readwrite) NSArray *socialNetworkAccounts;
 @property (strong, nonatomic, readwrite) NSString *companyName;
 
