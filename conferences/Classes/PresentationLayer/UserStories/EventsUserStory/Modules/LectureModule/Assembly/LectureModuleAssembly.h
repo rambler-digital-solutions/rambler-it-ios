@@ -19,13 +19,14 @@
 // THE SOFTWARE.
 
 #import <Typhoon/Typhoon.h>
+#import "ModuleAssemblyBase.h"
 
 /**
  @author Artem Karpushin
  
  A TyphoonAssembly which is responsible for creating LectureModule
  */
-@interface LectureModuleAssembly : TyphoonAssembly
+@interface LectureModuleAssembly : ModuleAssemblyBase
 
 @end
 

@@ -22,8 +22,11 @@
 #import "DataDisplayManager.h"
 
 @class LecturePlainObject;
+@class DateFormatter;
 
 @interface LectureDataDisplayManager : NSObject <DataDisplayManager, UITableViewDelegate>
+
+@property (strong, nonatomic) DateFormatter *dateFormatter;
 
 - (void)configureDataDisplayManagerWithLecture:(LecturePlainObject *)lecture;
 
