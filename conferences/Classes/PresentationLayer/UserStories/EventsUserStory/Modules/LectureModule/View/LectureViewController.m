@@ -21,10 +21,11 @@
 #import "LectureViewController.h"
 #import "LectureViewOutput.h"
 #import "LectureDataDisplayManager.h"
+#import "SpeakerPlainObject.h"
+#import "LecturePlainObject.h"
+#import "SpeakerShortInfoModuleInput.h"
 
 @interface LectureViewController()
-
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -41,6 +42,23 @@
     [self.dataDisplayManager configureDataDisplayManagerWithLecture:lecture];
     self.tableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.tableView];
     self.tableView.delegate = [self.dataDisplayManager delegateForTableView:self.tableView withBaseDelegate:nil];
+    
+    SpeakerPlainObject *speaker = lecture.speakers.firstObject;
+    [self setupHeaderViewWithSpeaker:speaker];
+}
+
+#pragma mark - Private methods
+
+- (void)setupHeaderViewWithSpeaker:(SpeakerPlainObject *)speaker {
+    [self.speakerShortInfoView configureModuleWithSpeaker:speaker andViewSize:SpeakerShortInfoViewDefaultSize];
+    
+    CGFloat tableViewHeaderHeight = self.speakerShortInfoView.frame.size.height;
+    UIView *tableViewHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0,
+                                                                           0,
+                                                                           self.view.frame.size.width,
+                                                                           tableViewHeaderHeight)];
+    tableViewHeaderView.backgroundColor = [UIColor clearColor];
+    [self.tableView setTableHeaderView:tableViewHeaderView];
 }
 
 @end
