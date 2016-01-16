@@ -422,6 +422,7 @@
 		631808A31C4AD26000A61E7D /* SpeakerInfoViewOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerInfoViewOutput.h; sourceTree = "<group>"; };
 		631808AB1C4AD66600A61E7D /* SpeakerInfoPresenterStateStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerInfoPresenterStateStorage.h; sourceTree = "<group>"; };
 		631808AC1C4AD66600A61E7D /* SpeakerInfoPresenterStateStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerInfoPresenterStateStorage.m; sourceTree = "<group>"; };
+		631808AE1C4AD79800A61E7D /* SpeakerInfoModuleInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerInfoModuleInput.h; sourceTree = "<group>"; };
 		631CBA371C0092C100E3EBA8 /* ApplicationConfiguratorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationConfiguratorTests.m; sourceTree = "<group>"; };
 		631CBA3A1C00935300E3EBA8 /* EventServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventServiceTests.m; sourceTree = "<group>"; };
 		631CBA681C020CCD00E3EBA8 /* EventListModuleAssembly_Testable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListModuleAssembly_Testable.h; sourceTree = "<group>"; };
@@ -1278,6 +1279,7 @@
 				631808AA1C4AD64C00A61E7D /* PresenterStateStorage */,
 				631808961C4AD26000A61E7D /* SpeakerInfoPresenter.h */,
 				631808971C4AD26000A61E7D /* SpeakerInfoPresenter.m */,
+				631808AE1C4AD79800A61E7D /* SpeakerInfoModuleInput.h */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";

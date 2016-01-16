@@ -10,15 +10,8 @@
 #import "SpeakerInfoViewInput.h"
 #import "SpeakerInfoInteractorInput.h"
 #import "SpeakerInfoRouterInput.h"
+#import "SpeakerInfoPresenterStateStorage.h"
 
-@interface SpeakerInfoPresenter()
-@end
-
-/**
- *	Presenter модуля, который 1
- *
- *  
- */
 @implementation SpeakerInfoPresenter
 
 #pragma mark - SpeakerInfoViewOutput
@@ -28,5 +21,11 @@
 }
 
 #pragma mark - SpeakerInfoInteractorOutput
+
+#pragma mark - SpeakerInfoModuleInput
+
+- (void)configureCurrentModuleWithSpeakerObjectId:(NSString *)objectId {
+    self.stateStorage.speakerObjectId = objectId;
+}
 
 @end
