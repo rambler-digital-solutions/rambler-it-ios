@@ -44,6 +44,7 @@
 		631808A71C4AD26000A61E7D /* SpeakerInfoRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6318089A1C4AD26000A61E7D /* SpeakerInfoRouter.m */; };
 		631808A81C4AD26000A61E7D /* SpeakerInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631808A11C4AD26000A61E7D /* SpeakerInfoViewController.m */; };
 		631808AD1C4AD66600A61E7D /* SpeakerInfoPresenterStateStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 631808AC1C4AD66600A61E7D /* SpeakerInfoPresenterStateStorage.m */; };
+		631808B11C4AD9D800A61E7D /* SpeakerInfoDataDisplayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 631808B01C4AD9D800A61E7D /* SpeakerInfoDataDisplayManager.m */; };
 		631CBA381C0092C100E3EBA8 /* ApplicationConfiguratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA371C0092C100E3EBA8 /* ApplicationConfiguratorTests.m */; };
 		631CBA3B1C00935300E3EBA8 /* EventServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA3A1C00935300E3EBA8 /* EventServiceTests.m */; };
 		631CBA721C020CCD00E3EBA8 /* EventListModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA691C020CCD00E3EBA8 /* EventListModuleAssemblyTests.m */; };
@@ -423,6 +424,8 @@
 		631808AB1C4AD66600A61E7D /* SpeakerInfoPresenterStateStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerInfoPresenterStateStorage.h; sourceTree = "<group>"; };
 		631808AC1C4AD66600A61E7D /* SpeakerInfoPresenterStateStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerInfoPresenterStateStorage.m; sourceTree = "<group>"; };
 		631808AE1C4AD79800A61E7D /* SpeakerInfoModuleInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerInfoModuleInput.h; sourceTree = "<group>"; };
+		631808AF1C4AD9D800A61E7D /* SpeakerInfoDataDisplayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerInfoDataDisplayManager.h; sourceTree = "<group>"; };
+		631808B01C4AD9D800A61E7D /* SpeakerInfoDataDisplayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerInfoDataDisplayManager.m; sourceTree = "<group>"; };
 		631CBA371C0092C100E3EBA8 /* ApplicationConfiguratorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationConfiguratorTests.m; sourceTree = "<group>"; };
 		631CBA3A1C00935300E3EBA8 /* EventServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventServiceTests.m; sourceTree = "<group>"; };
 		631CBA681C020CCD00E3EBA8 /* EventListModuleAssembly_Testable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListModuleAssembly_Testable.h; sourceTree = "<group>"; };
@@ -1325,6 +1328,8 @@
 		6318089F1C4AD26000A61E7D /* DataDisplayManager */ = {
 			isa = PBXGroup;
 			children = (
+				631808AF1C4AD9D800A61E7D /* SpeakerInfoDataDisplayManager.h */,
+				631808B01C4AD9D800A61E7D /* SpeakerInfoDataDisplayManager.m */,
 			);
 			path = DataDisplayManager;
 			sourceTree = "<group>";
@@ -4721,6 +4726,7 @@
 				636F8CBA1BC97E7F00552B91 /* Speaker.m in Sources */,
 				636F8D0C1BCB825F00552B91 /* ModuleAssemblyBase.m in Sources */,
 				636A37C21BC1413A00B49C3D /* SystemInfrastructureAssembly.m in Sources */,
+				631808B11C4AD9D800A61E7D /* SpeakerInfoDataDisplayManager.m in Sources */,
 				9F0A6C2E1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m in Sources */,
 				63F51C621C3D409200AFB9D2 /* EventHeaderView.m in Sources */,
 				631FFE1A1BEF451400749DB8 /* UIView+CDResponder.m in Sources */,

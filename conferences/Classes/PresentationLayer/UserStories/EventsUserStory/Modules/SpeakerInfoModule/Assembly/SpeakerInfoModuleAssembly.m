@@ -12,6 +12,7 @@
 #import "SpeakerInfoPresenter.h"
 #import "SpeakerInfoRouter.h"
 #import "SpeakerInfoPresenterStateStorage.h"
+#import "SpeakerInfoDataDisplayManager.h"
 
 @implementation  SpeakerInfoModuleAssembly
 
@@ -20,6 +21,8 @@
                             configuration:^(TyphoonDefinition *definition) {
                                 [definition injectProperty:@selector(output)
                                                       with:[self presenterSpeakerInfo]];
+                                [definition injectProperty:@selector(dataDisplayManager)
+                                                      with:[self dataDisplayManagerSpeakerInfo]];
              }];
 }
 
@@ -53,6 +56,10 @@
 
 - (SpeakerInfoPresenterStateStorage *)presenterStateStorageSpeakerInfo {
     return [TyphoonDefinition withClass:[SpeakerInfoPresenterStateStorage class]];
+}
+
+- (SpeakerInfoDataDisplayManager *)dataDisplayManagerSpeakerInfo {
+    return [TyphoonDefinition withClass:[SpeakerInfoDataDisplayManager class]];
 }
 
 @end

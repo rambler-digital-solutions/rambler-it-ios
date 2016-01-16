@@ -8,6 +8,7 @@
 
 #import "SpeakerInfoViewController.h"
 #import "SpeakerInfoViewOutput.h"
+#import "SpeakerInfoDataDisplayManager.h"
 
 @interface SpeakerInfoViewController()
 

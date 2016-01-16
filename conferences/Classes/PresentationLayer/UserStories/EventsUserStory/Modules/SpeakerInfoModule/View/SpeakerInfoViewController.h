@@ -10,10 +10,12 @@
 #import "SpeakerInfoViewInput.h"
 
 @protocol SpeakerInfoViewOutput;
+@class SpeakerInfoDataDisplayManager;
 
 @interface SpeakerInfoViewController : UIViewController <SpeakerInfoViewInput>
 
 @property (strong, nonatomic) id <SpeakerInfoViewOutput> output;
+@property (strong, nonatomic) SpeakerInfoDataDisplayManager *dataDisplayManager;
 
 @end
 
