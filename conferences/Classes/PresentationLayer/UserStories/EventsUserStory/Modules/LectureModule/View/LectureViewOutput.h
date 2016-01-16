@@ -23,6 +23,7 @@
 @protocol LectureViewOutput <NSObject>
 
 - (void)setupView;
+- (void)didTapTableViewHeader;
 
 @end
 

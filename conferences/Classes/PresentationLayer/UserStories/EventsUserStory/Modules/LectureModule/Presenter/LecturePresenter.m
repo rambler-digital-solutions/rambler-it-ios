@@ -23,6 +23,8 @@
 #import "LectureInteractorInput.h"
 #import "LectureRouterInput.h"
 #import "LecturePresenterStateStorage.h"
+#import "LecturePlainObject.h"
+#import "SpeakerPlainObject.h"
 
 @implementation LecturePresenter
 
@@ -32,9 +34,16 @@
     [self.interactor obtainLectureWithObjectId:self.stateStorage.lectureObjectId];
 }
 
+- (void)didTapTableViewHeader {
+    [self.router openSpeakerInfoModuleWithSpeakerObjectId:self.stateStorage.speakerObjectId];
+}
+
 #pragma mark - LectureInteractorOutput
 
 - (void)didObtainLecture:(LecturePlainObject *)lecture {
+    SpeakerPlainObject *speaker = lecture.speakers.firstObject;
+    self.stateStorage.speakerObjectId = speaker.objectId;
+    
     [self.view configureViewWithLecture:lecture];
 }
 

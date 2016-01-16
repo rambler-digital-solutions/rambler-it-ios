@@ -22,5 +22,7 @@
 
 @protocol LectureRouterInput <NSObject>
 
+- (void)openSpeakerInfoModuleWithSpeakerObjectId:(NSString *)objectId;
+
 @end
 

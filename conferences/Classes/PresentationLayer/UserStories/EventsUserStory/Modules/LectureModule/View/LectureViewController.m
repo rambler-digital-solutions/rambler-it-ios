@@ -25,7 +25,7 @@
 #import "LecturePlainObject.h"
 #import "SpeakerShortInfoModuleInput.h"
 
-@interface LectureViewController()
+@interface LectureViewController() <UIGestureRecognizerDelegate>
 
 @end
 
@@ -59,6 +59,22 @@
                                                                            tableViewHeaderHeight)];
     tableViewHeaderView.backgroundColor = [UIColor clearColor];
     [self.tableView setTableHeaderView:tableViewHeaderView];
+    
+    [self addGestureRecognizerForTableViewHeader:tableViewHeaderView];
+}
+
+- (void)addGestureRecognizerForTableViewHeader:(UIView *)headerView {
+    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                                    action:@selector(didTapTableViewHeader)];
+    gestureRecognizer.delegate = self;
+    
+    [headerView addGestureRecognizer:gestureRecognizer];
+}
+
+#pragma mark - Actions
+
+- (void)didTapTableViewHeader {
+    [self.output didTapTableViewHeader];
 }
 
 @end
