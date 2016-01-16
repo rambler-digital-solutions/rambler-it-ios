@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9057" systemVersion="15A284" minimumToolsVersion="Xcode 7.0">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15C50" minimumToolsVersion="Xcode 7.0">
     <entity name="Event" representedClassName="Event" syncable="YES">
         <attribute name="backgroundColor" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="endDate" attributeType="Date" syncable="YES"/>
@@ -51,11 +51,11 @@
         <relationship name="socialNetworkAccounts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SocialNetworkAccount" inverseName="speaker" inverseEntity="SocialNetworkAccount" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="0" positionY="0" width="128" height="255"/>
-        <element name="Lecture" positionX="0" positionY="0" width="128" height="180"/>
-        <element name="LectureMaterials" positionX="0" positionY="0" width="128" height="90"/>
-        <element name="RegistrationQuestion" positionX="0" positionY="0" width="128" height="90"/>
-        <element name="SocialNetworkAccount" positionX="0" positionY="0" width="128" height="105"/>
-        <element name="Speaker" positionX="0" positionY="0" width="128" height="120"/>
+        <element name="Event" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Lecture" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="LectureMaterials" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="RegistrationQuestion" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="SocialNetworkAccount" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Speaker" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>
