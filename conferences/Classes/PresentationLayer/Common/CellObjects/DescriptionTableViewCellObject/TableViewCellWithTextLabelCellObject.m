@@ -18,29 +18,39 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "DescriptionTableViewCell.h"
-#import "DescriptionTableViewCellObject.h"
+#import "TableViewCellWithTextLabelCellObject.h"
+#import "TableViewCellWithTextLabel.h"
 
-static CGFloat const DescriptionTableViewDefaultCellHeight = 44.0f;
+@interface TableViewCellWithTextLabelCellObject ()
 
-@interface DescriptionTableViewCell ()
-
-@property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *descriptionTextViewHieghtConstraint;
+@property (strong, nonatomic, readwrite) NSString *text;
 
 @end
 
-@implementation DescriptionTableViewCell
+@implementation TableViewCellWithTextLabelCellObject
 
-#pragma mark - NICell methods
+#pragma mark - Initialization
 
-- (BOOL)shouldUpdateCellWithObject:(DescriptionTableViewCellObject *)object {
-    self.descriptionTextView.text = object.text;
-    return YES;
+- (instancetype)initWithText:(NSString *)text {
+    self = [super init];
+    if (self) {
+        _text = text;
+    }
+    return self;
 }
 
-+ (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
-    return DescriptionTableViewDefaultCellHeight;
++ (instancetype)objectWithText:(NSString *)text {
+    return [[self alloc] initWithText:text];
+}
+
+# pragma mark - NICellObject methods
+
+- (Class)cellClass {
+    return [TableViewCellWithTextLabel class];
+}
+
+- (UINib *)cellNib {
+    return [UINib nibWithNibName:NSStringFromClass([TableViewCellWithTextLabel class]) bundle:[NSBundle mainBundle]];
 }
 
 @end

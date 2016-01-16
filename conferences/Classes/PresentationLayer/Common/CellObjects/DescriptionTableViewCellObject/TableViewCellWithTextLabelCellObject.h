@@ -21,7 +21,7 @@
 #import <Foundation/Foundation.h>
 #import <Nimbus/NimbusModels.h>
 
-@interface DescriptionTableViewCellObject : NSObject <NICellObject>
+@interface TableViewCellWithTextLabelCellObject : NSObject <NICellObject>
 
 @property (strong, nonatomic, readonly) NSString *text;
 

@@ -18,39 +18,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "DescriptionTableViewCellObject.h"
-#import "DescriptionTableViewCell.h"
+#import <UIKit/UIKit.h>
+#import <NICellFactory.h>
 
-@interface DescriptionTableViewCellObject ()
-
-@property (strong, nonatomic, readwrite) NSString *text;
-
-@end
-
-@implementation DescriptionTableViewCellObject
-
-#pragma mark - Initialization
-
-- (instancetype)initWithText:(NSString *)text {
-    self = [super init];
-    if (self) {
-        _text = text;
-    }
-    return self;
-}
-
-+ (instancetype)objectWithText:(NSString *)text {
-    return [[self alloc] initWithText:text];
-}
-
-# pragma mark - NICellObject methods
-
-- (Class)cellClass {
-    return [DescriptionTableViewCell class];
-}
-
-- (UINib *)cellNib {
-    return [UINib nibWithNibName:NSStringFromClass([DescriptionTableViewCell class]) bundle:[NSBundle mainBundle]];
-}
+@interface TableViewCellWithTextLabel : UITableViewCell <NICell>
 
 @end
