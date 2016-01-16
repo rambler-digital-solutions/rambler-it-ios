@@ -29,6 +29,7 @@
 - (SpeakerShortInfoView *)viewUserShortInfoHeader {
     return [TyphoonDefinition withClass:[SpeakerShortInfoView class]
                             configuration:^(TyphoonDefinition *definition) {
+                                [definition useInitializer:@selector(speakerShortInfoView)];
                                 [definition injectProperty:@selector(output)
                                                       with:[self presenterUserShortInfoHeader]];
              }];

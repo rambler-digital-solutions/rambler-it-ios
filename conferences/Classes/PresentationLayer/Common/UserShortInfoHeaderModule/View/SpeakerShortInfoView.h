@@ -32,7 +32,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameTextLabel;
 @property (weak, nonatomic) IBOutlet UILabel *companyTextLabel;
 
-+ (SpeakerShortInfoView *)eventHeaderView;
++ (SpeakerShortInfoView *)speakerShortInfoView;
 
 @end
 
