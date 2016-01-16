@@ -130,11 +130,61 @@
                     <connections>
                         <outlet property="headerView" destination="tAj-fc-JAG" id="F1D-x1-qdL"/>
                         <outlet property="tableView" destination="2f2-MS-k81" id="pVQ-Gv-juG"/>
+                        <segue destination="JLc-iV-GVs" kind="push" identifier="EventModuleToLectureModuleSegue" id="k0t-w6-Xgx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UZP-hJ-8Tb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1177" y="675"/>
+        </scene>
+        <!--Lecture View Controller-->
+        <scene sceneID="yMb-rJ-n2g">
+            <objects>
+                <viewController id="JLc-iV-GVs" customClass="LectureViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EvR-v3-elB"/>
+                        <viewControllerLayoutGuide type="bottom" id="saL-R1-koD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="l1P-3G-ghg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" restorationIdentifier="viewSpeakerShortInfo" translatesAutoresizingMaskIntoConstraints="NO" id="DzG-XP-O5w" customClass="TyphoonLoadedView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="7Xu-h7-Pn6"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5kv-X3-9eX">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="JLc-iV-GVs" id="Xpk-CI-3CJ"/>
+                                    <outlet property="delegate" destination="JLc-iV-GVs" id="FuO-iO-bdF"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DzG-XP-O5w" firstAttribute="top" secondItem="l1P-3G-ghg" secondAttribute="top" id="MTi-nq-3ba"/>
+                            <constraint firstItem="saL-R1-koD" firstAttribute="top" secondItem="5kv-X3-9eX" secondAttribute="bottom" id="RQS-ie-BZB"/>
+                            <constraint firstItem="5kv-X3-9eX" firstAttribute="leading" secondItem="l1P-3G-ghg" secondAttribute="leading" id="SBX-l8-PbA"/>
+                            <constraint firstItem="DzG-XP-O5w" firstAttribute="leading" secondItem="l1P-3G-ghg" secondAttribute="leading" id="VLJ-fF-I6R"/>
+                            <constraint firstAttribute="trailing" secondItem="5kv-X3-9eX" secondAttribute="trailing" id="ZV1-od-cL5"/>
+                            <constraint firstAttribute="trailing" secondItem="DzG-XP-O5w" secondAttribute="trailing" id="hki-GT-Jfh"/>
+                            <constraint firstItem="5kv-X3-9eX" firstAttribute="top" secondItem="l1P-3G-ghg" secondAttribute="top" id="u1J-0g-Kro"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ttN-8R-ojU"/>
+                    <connections>
+                        <outlet property="speakerShortInfoView" destination="DzG-XP-O5w" id="XJx-tz-bAa"/>
+                        <outlet property="tableView" destination="5kv-X3-9eX" id="aRd-NN-7o7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DF2-UC-Jdq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1673" y="675"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

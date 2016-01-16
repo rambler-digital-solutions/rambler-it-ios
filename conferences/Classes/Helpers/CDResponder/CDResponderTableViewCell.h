@@ -26,6 +26,7 @@
  */
 @interface CDResponderTableViewCell : UITableViewCell
 
+@property (strong, nonatomic) UITapGestureRecognizer *tapRecognizer;
 
 /**
  *  @author Vadim Smal

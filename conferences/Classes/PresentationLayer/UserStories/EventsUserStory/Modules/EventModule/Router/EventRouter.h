@@ -19,8 +19,11 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
+#import <ViperMcFlurry/ViperMcFlurry.h>
 #import "EventRouterInput.h"
 
 @interface EventRouter : NSObject<EventRouterInput>
+
+@property (weak, nonatomic) id <RamblerViperModuleTransitionHandlerProtocol> transitionHandler;
 
 @end

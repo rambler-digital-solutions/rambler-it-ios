@@ -32,5 +32,7 @@
 @property (strong, nonatomic, readwrite) NSString *videoLink;
 @property (strong, nonatomic, readwrite) NSArray *lectureMaterials;
 @property (strong, nonatomic, readwrite) NSArray *speakers;
+// add to model
+@property (strong, nonatomic, readwrite) NSString *objectId;
 
 @end

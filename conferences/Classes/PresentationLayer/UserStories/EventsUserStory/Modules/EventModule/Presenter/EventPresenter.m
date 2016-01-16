@@ -59,6 +59,10 @@
     
 }
 
+- (void)didTapLectureInfoCellWithLectureObjectIdEvent:(NSString *)lectureObjectId {
+    [self.router openLectureModuleWithLectureObjectId:lectureObjectId];
+}
+
 #pragma mark - EventInteractorOutput
 
 - (void)didObtainEvent:(EventPlainObject *)event {

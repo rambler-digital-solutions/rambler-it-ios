@@ -78,7 +78,8 @@
 - (EventRouter *)routerEvent {
     return [TyphoonDefinition withClass:[EventRouter class]
                             configuration:^(TyphoonDefinition *definition) {
-
+                                [definition injectProperty:@selector(transitionHandler)
+                                                      with:[self viewEvent]];
            }];
 }
 
