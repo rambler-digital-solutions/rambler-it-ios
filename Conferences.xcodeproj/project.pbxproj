@@ -43,6 +43,7 @@
 		631808A61C4AD26000A61E7D /* SpeakerInfoPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 631808971C4AD26000A61E7D /* SpeakerInfoPresenter.m */; };
 		631808A71C4AD26000A61E7D /* SpeakerInfoRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6318089A1C4AD26000A61E7D /* SpeakerInfoRouter.m */; };
 		631808A81C4AD26000A61E7D /* SpeakerInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631808A11C4AD26000A61E7D /* SpeakerInfoViewController.m */; };
+		631808AD1C4AD66600A61E7D /* SpeakerInfoPresenterStateStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 631808AC1C4AD66600A61E7D /* SpeakerInfoPresenterStateStorage.m */; };
 		631CBA381C0092C100E3EBA8 /* ApplicationConfiguratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA371C0092C100E3EBA8 /* ApplicationConfiguratorTests.m */; };
 		631CBA3B1C00935300E3EBA8 /* EventServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA3A1C00935300E3EBA8 /* EventServiceTests.m */; };
 		631CBA721C020CCD00E3EBA8 /* EventListModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA691C020CCD00E3EBA8 /* EventListModuleAssemblyTests.m */; };
@@ -419,6 +420,8 @@
 		631808A11C4AD26000A61E7D /* SpeakerInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerInfoViewController.m; sourceTree = "<group>"; };
 		631808A21C4AD26000A61E7D /* SpeakerInfoViewInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerInfoViewInput.h; sourceTree = "<group>"; };
 		631808A31C4AD26000A61E7D /* SpeakerInfoViewOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerInfoViewOutput.h; sourceTree = "<group>"; };
+		631808AB1C4AD66600A61E7D /* SpeakerInfoPresenterStateStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerInfoPresenterStateStorage.h; sourceTree = "<group>"; };
+		631808AC1C4AD66600A61E7D /* SpeakerInfoPresenterStateStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerInfoPresenterStateStorage.m; sourceTree = "<group>"; };
 		631CBA371C0092C100E3EBA8 /* ApplicationConfiguratorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationConfiguratorTests.m; sourceTree = "<group>"; };
 		631CBA3A1C00935300E3EBA8 /* EventServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventServiceTests.m; sourceTree = "<group>"; };
 		631CBA681C020CCD00E3EBA8 /* EventListModuleAssembly_Testable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListModuleAssembly_Testable.h; sourceTree = "<group>"; };
@@ -1272,6 +1275,7 @@
 		631808951C4AD26000A61E7D /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				631808AA1C4AD64C00A61E7D /* PresenterStateStorage */,
 				631808961C4AD26000A61E7D /* SpeakerInfoPresenter.h */,
 				631808971C4AD26000A61E7D /* SpeakerInfoPresenter.m */,
 			);
@@ -1321,6 +1325,15 @@
 			children = (
 			);
 			path = DataDisplayManager;
+			sourceTree = "<group>";
+		};
+		631808AA1C4AD64C00A61E7D /* PresenterStateStorage */ = {
+			isa = PBXGroup;
+			children = (
+				631808AB1C4AD66600A61E7D /* SpeakerInfoPresenterStateStorage.h */,
+				631808AC1C4AD66600A61E7D /* SpeakerInfoPresenterStateStorage.m */,
+			);
+			path = PresenterStateStorage;
 			sourceTree = "<group>";
 		};
 		631CBA361C0092C100E3EBA8 /* ApplicationConfiguratorTests */ = {
@@ -4696,6 +4709,7 @@
 				63D86BE91C14572C00986536 /* NearestEventTableViewCellObject.m in Sources */,
 				6373A4101BBDC5EA00DF67FF /* Conference.xcdatamodeld in Sources */,
 				63F51C9A1C3D421700AFB9D2 /* LecturePresenter.m in Sources */,
+				631808AD1C4AD66600A61E7D /* SpeakerInfoPresenterStateStorage.m in Sources */,
 				63F51C981C3D421700AFB9D2 /* LectureModuleAssembly.m in Sources */,
 				63F54D951BC5A79900DB1746 /* EXTScope.m in Sources */,
 				63F8F2A41BF7A4F5000017F3 /* EventCellObjectBuilderFactory.m in Sources */,

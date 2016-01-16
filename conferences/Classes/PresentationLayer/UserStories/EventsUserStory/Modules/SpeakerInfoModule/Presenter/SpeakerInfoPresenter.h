@@ -13,12 +13,14 @@
 @protocol SpeakerInfoViewInput;
 @protocol SpeakerInfoInteractorInput;
 @protocol SpeakerInfoRouterInput;
+@class SpeakerInfoPresenterStateStorage;
 
 @interface SpeakerInfoPresenter : NSObject  <SpeakerInfoViewOutput, SpeakerInfoInteractorOutput>
 
 @property (weak, nonatomic) id <SpeakerInfoViewInput> view;
 @property (strong, nonatomic) id <SpeakerInfoInteractorInput> interactor;
 @property (strong, nonatomic) id <SpeakerInfoRouterInput> router;
+@property (strong, nonatomic) SpeakerInfoPresenterStateStorage *stateStorage;
 
 @end
 

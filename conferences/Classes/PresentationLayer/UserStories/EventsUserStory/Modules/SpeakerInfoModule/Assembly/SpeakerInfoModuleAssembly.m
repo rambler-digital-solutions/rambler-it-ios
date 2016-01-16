@@ -11,6 +11,7 @@
 #import "SpeakerInfoInteractor.h"
 #import "SpeakerInfoPresenter.h"
 #import "SpeakerInfoRouter.h"
+#import "SpeakerInfoPresenterStateStorage.h"
 
 @implementation  SpeakerInfoModuleAssembly
 
@@ -39,6 +40,8 @@
                                                       with:[self interactorSpeakerInfo]];
                                 [definition injectProperty:@selector(router)
                                                       with:[self routerSpeakerInfo]];
+                                [definition injectProperty:@selector(stateStorage)
+                                                      with:[self presenterStateStorageSpeakerInfo]];
             }];
 }
 
@@ -46,6 +49,10 @@
     return [TyphoonDefinition withClass:[SpeakerInfoRouter class]
                             configuration:^(TyphoonDefinition *definition) {
            }];
+}
+
+- (SpeakerInfoPresenterStateStorage *)presenterStateStorageSpeakerInfo {
+    return [TyphoonDefinition withClass:[SpeakerInfoPresenterStateStorage class]];
 }
 
 @end
