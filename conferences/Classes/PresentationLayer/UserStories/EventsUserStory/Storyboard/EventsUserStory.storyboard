@@ -180,11 +180,31 @@
                     <connections>
                         <outlet property="speakerShortInfoView" destination="DzG-XP-O5w" id="XJx-tz-bAa"/>
                         <outlet property="tableView" destination="5kv-X3-9eX" id="aRd-NN-7o7"/>
+                        <segue destination="mwt-bL-fmW" kind="push" identifier="LectureModuleToSpeakerInfoModuleSegue" id="XaW-hB-fJG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DF2-UC-Jdq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1673" y="675"/>
+        </scene>
+        <!--Speaker Info View Controller-->
+        <scene sceneID="SfL-VR-c8q">
+            <objects>
+                <viewController id="mwt-bL-fmW" customClass="SpeakerInfoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VEl-uh-q9F"/>
+                        <viewControllerLayoutGuide type="bottom" id="P5s-5A-poX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nxD-Il-s5p">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="adq-Wh-qrY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ita-kl-7HN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2135" y="675"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
