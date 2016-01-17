@@ -17,4 +17,8 @@
 
 #pragma mark - SpeakerInfoInteractorInput
 
+- (void)obtainSpeakerWithObjectId:(NSString *)objectId {
+    [self.output didObtainSpeaker:nil];
+}
+
 @end

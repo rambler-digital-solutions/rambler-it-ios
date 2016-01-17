@@ -10,5 +10,14 @@
 
 @protocol SpeakerInfoInteractorInput <NSObject>
 
+/**
+ @author Artem Karpushin
+ 
+ Method is used to obtain Speaker object
+ 
+ @param objectId NString object
+ */
+- (void)obtainSpeakerWithObjectId:(NSString *)objectId;
+
 @end
 
