@@ -10,6 +10,7 @@
 #import "SpeakerInfoViewInput.h"
 
 @protocol SpeakerInfoViewOutput;
+@protocol SpeakerShortInfoModuleInput;
 @class SpeakerInfoDataDisplayManager;
 
 @interface SpeakerInfoViewController : UIViewController <SpeakerInfoViewInput>
@@ -18,6 +19,7 @@
 @property (strong, nonatomic) SpeakerInfoDataDisplayManager *dataDisplayManager;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIView <SpeakerShortInfoModuleInput> *speakerShortInfoView;
 
 @end
 
