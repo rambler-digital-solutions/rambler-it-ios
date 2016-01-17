@@ -198,9 +198,24 @@
                     <view key="view" contentMode="scaleToFill" id="nxD-Il-s5p">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rrv-wF-P8N">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rrv-wF-P8N" firstAttribute="leading" secondItem="nxD-Il-s5p" secondAttribute="leading" id="JUM-PO-HWs"/>
+                            <constraint firstItem="P5s-5A-poX" firstAttribute="top" secondItem="rrv-wF-P8N" secondAttribute="bottom" id="S7k-ay-i9a"/>
+                            <constraint firstAttribute="trailing" secondItem="rrv-wF-P8N" secondAttribute="trailing" id="Ux9-IF-F25"/>
+                            <constraint firstItem="rrv-wF-P8N" firstAttribute="top" secondItem="nxD-Il-s5p" secondAttribute="top" id="sbf-C6-BQx"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="adq-Wh-qrY"/>
+                    <connections>
+                        <outlet property="tableView" destination="rrv-wF-P8N" id="flm-ls-QVf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ita-kl-7HN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

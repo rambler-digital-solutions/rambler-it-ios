@@ -17,10 +17,14 @@
 #pragma mark - SpeakerInfoViewOutput
 
 - (void)setupView {
-
+    [self.interactor obtainSpeakerWithObjectId:self.stateStorage.speakerObjectId];
 }
 
 #pragma mark - SpeakerInfoInteractorOutput
+
+- (void)didObtainSpeaker:(SpeakerPlainObject *)speaker {
+    [self.view setupViewWithSpeaker:speaker];
+}
 
 #pragma mark - SpeakerInfoModuleInput
 

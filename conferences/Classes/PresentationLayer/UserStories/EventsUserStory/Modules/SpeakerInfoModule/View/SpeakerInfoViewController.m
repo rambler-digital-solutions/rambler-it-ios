@@ -23,4 +23,11 @@
 
 #pragma mark - SpeakerInfoViewInput
 
+- (void)setupViewWithSpeaker:(SpeakerPlainObject *)speaker {
+    [self.dataDisplayManager configureDataDisplayManagerWithSpeaker:speaker];
+    
+    self.tableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.tableView];
+    self.tableView.delegate = [self.dataDisplayManager delegateForTableView:self.tableView withBaseDelegate:nil];
+}
+
 @end

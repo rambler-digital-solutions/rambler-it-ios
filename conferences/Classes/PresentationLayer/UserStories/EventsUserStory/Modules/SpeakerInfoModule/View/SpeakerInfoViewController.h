@@ -17,5 +17,7 @@
 @property (strong, nonatomic) id <SpeakerInfoViewOutput> output;
 @property (strong, nonatomic) SpeakerInfoDataDisplayManager *dataDisplayManager;
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 @end
 

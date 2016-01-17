@@ -8,7 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
+@class SpeakerPlainObject;
+
 @protocol SpeakerInfoViewInput <NSObject>
+
+/**
+ @author Artem Karpushin
+ 
+ Method is used to setup view with Speaker object
+ 
+ @param speaker SpeakerPlainObject object
+ */
+- (void)setupViewWithSpeaker:(SpeakerPlainObject *)speaker;
 
 @end
 
