@@ -19,8 +19,11 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
+#import <ViperMcFlurry/ViperMcFlurry.h>
 #import "LectureRouterInput.h"
 
-@interface LectureRouter : NSObject<LectureRouterInput>
+@interface LectureRouter : NSObject <LectureRouterInput>
+
+@property (weak, nonatomic) id <RamblerViperModuleTransitionHandlerProtocol> transitionHandler;
 
 @end

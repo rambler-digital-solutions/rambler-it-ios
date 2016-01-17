@@ -64,6 +64,8 @@
 - (LectureRouter *)routerLecture {
     return [TyphoonDefinition withClass:[LectureRouter class]
                             configuration:^(TyphoonDefinition *definition) {
+                                [definition injectProperty:@selector(transitionHandler)
+                                                      with:[self viewLecture]];
            }];
 }
 
