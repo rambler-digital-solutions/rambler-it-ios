@@ -180,11 +180,57 @@
                     <connections>
                         <outlet property="speakerShortInfoView" destination="DzG-XP-O5w" id="XJx-tz-bAa"/>
                         <outlet property="tableView" destination="5kv-X3-9eX" id="aRd-NN-7o7"/>
+                        <segue destination="mwt-bL-fmW" kind="push" identifier="LectureModuleToSpeakerInfoModuleSegue" id="XaW-hB-fJG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DF2-UC-Jdq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1673" y="675"/>
+        </scene>
+        <!--Speaker Info View Controller-->
+        <scene sceneID="SfL-VR-c8q">
+            <objects>
+                <viewController id="mwt-bL-fmW" customClass="SpeakerInfoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VEl-uh-q9F"/>
+                        <viewControllerLayoutGuide type="bottom" id="P5s-5A-poX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nxD-Il-s5p">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" restorationIdentifier="viewSpeakerShortInfo" translatesAutoresizingMaskIntoConstraints="NO" id="7dX-Eb-ltY" customClass="TyphoonLoadedView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="515-OX-Xab"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rrv-wF-P8N">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rrv-wF-P8N" firstAttribute="leading" secondItem="nxD-Il-s5p" secondAttribute="leading" id="JUM-PO-HWs"/>
+                            <constraint firstItem="P5s-5A-poX" firstAttribute="top" secondItem="rrv-wF-P8N" secondAttribute="bottom" id="S7k-ay-i9a"/>
+                            <constraint firstAttribute="trailing" secondItem="7dX-Eb-ltY" secondAttribute="trailing" id="SUI-uQ-AZD"/>
+                            <constraint firstAttribute="trailing" secondItem="rrv-wF-P8N" secondAttribute="trailing" id="Ux9-IF-F25"/>
+                            <constraint firstItem="7dX-Eb-ltY" firstAttribute="leading" secondItem="nxD-Il-s5p" secondAttribute="leading" id="jFw-aP-p5K"/>
+                            <constraint firstItem="rrv-wF-P8N" firstAttribute="top" secondItem="nxD-Il-s5p" secondAttribute="top" id="sbf-C6-BQx"/>
+                            <constraint firstItem="7dX-Eb-ltY" firstAttribute="top" secondItem="nxD-Il-s5p" secondAttribute="top" id="vDN-3j-9b4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="adq-Wh-qrY"/>
+                    <connections>
+                        <outlet property="speakerShortInfoView" destination="7dX-Eb-ltY" id="tCh-9W-pcl"/>
+                        <outlet property="tableView" destination="rrv-wF-P8N" id="flm-ls-QVf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ita-kl-7HN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2135" y="675"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

@@ -19,13 +19,20 @@
 // THE SOFTWARE.
 
 #import "LectureRouter.h"
+#import "SpeakerInfoModuleInput.h"
 
-@interface LectureRouter()
-
-@end
+static NSString *const LectureModuleToSpeakerInfoModuleSegue = @"LectureModuleToSpeakerInfoModuleSegue";
 
 @implementation LectureRouter
 
 #pragma mark - LectureRouterInput
+
+- (void)openSpeakerInfoModuleWithSpeakerObjectId:(NSString *)objectId {
+    [[self.transitionHandler openModuleUsingSegue:LectureModuleToSpeakerInfoModuleSegue] thenChainUsingBlock:^id<RamblerViperModuleOutput>(id<SpeakerInfoModuleInput> moduleInput) {
+        [moduleInput configureCurrentModuleWithSpeakerObjectId:objectId];
+        
+        return  nil;
+    }];
+}
 
 @end
