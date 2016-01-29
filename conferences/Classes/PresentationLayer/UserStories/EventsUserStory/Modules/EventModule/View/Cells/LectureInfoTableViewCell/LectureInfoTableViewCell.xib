@@ -14,7 +14,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="339.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="light-gray-circle" translatesAutoresizingMaskIntoConstraints="NO" id="Yqb-Gn-1kT">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="light-gray-square" translatesAutoresizingMaskIntoConstraints="NO" id="Yqb-Gn-1kT">
                         <rect key="frame" x="124" y="18" width="72" height="72"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="72" id="g97-qo-Edh"/>
@@ -101,6 +101,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="light-gray-circle" width="150" height="150"/>
+        <image name="light-gray-square" width="256" height="256"/>
     </resources>
 </document>
