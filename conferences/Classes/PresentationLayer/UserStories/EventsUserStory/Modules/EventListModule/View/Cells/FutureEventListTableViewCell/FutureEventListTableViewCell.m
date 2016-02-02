@@ -18,14 +18,29 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
-#import "NICellFactory.h"
+#import "FutureEventListTableViewCell.h"
+#import "FutureEventListTableViewCellObject.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
-@interface EventListTableViewCell : UITableViewCell <NICell>
+static NSString *const kPlaceholderImageName = @"placeholder";
+static CGFloat const FutureEventListTableViewCellHeight = 116.0f;
 
-@property (weak, nonatomic) IBOutlet UILabel *day;
-@property (weak, nonatomic) IBOutlet UILabel *month;
-@property (weak, nonatomic) IBOutlet UILabel *eventTitle;
-@property (weak, nonatomic) IBOutlet UILabel *eventTags;
+@implementation FutureEventListTableViewCell
+
+#pragma mark - NICell methods
+
+- (BOOL)shouldUpdateCellWithObject:(FutureEventListTableViewCellObject *)object {
+    self.eventTitle.text = object.eventTitle;
+    self.eventTags.text = object.eventTags;
+    self.date.text = object.date;
+    [self.eventImageView sd_setImageWithURL:object.imageUrl
+                           placeholderImage:[UIImage imageNamed:kPlaceholderImageName]];
+    
+    return YES;
+}
+
++ (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
+    return FutureEventListTableViewCellHeight;
+}
 
 @end

@@ -22,7 +22,7 @@
 
 #import <Nimbus/NimbusModels.h>
 
-#import "EventListTableViewCellObject.h"
+#import "FutureEventListTableViewCellObject.h"
 #import "NearestEventTableViewCellObject.h"
 #import "EventPlainObject.h"
 #import "DateFormatter.h"
@@ -89,10 +89,10 @@
     
     for (int i = 1; i < self.events.count; i++) {
         EventPlainObject *event = [self.events objectAtIndex:i];
-        eventDay = [self.dateFormatter obtainDateWithDayFormat:event.startDate];
-        eventMonth = [self.dateFormatter obtainDateWithMonthFormat:event.startDate];
         
-        EventListTableViewCellObject *eventListCellObject = [EventListTableViewCellObject objectWithEvent:event eventDay:eventDay eventMonth:eventMonth];
+        NSString *date = [self.dateFormatter obtainDateWithDayMonthFormat:event.startDate];
+        
+        FutureEventListTableViewCellObject *eventListCellObject = [FutureEventListTableViewCellObject objectWithEvent:event eventDate:date];
         [cellObjects addObject:eventListCellObject];
     }
     

@@ -23,13 +23,13 @@
 
 @class EventPlainObject;
 
-@interface EventListTableViewCellObject : NSObject <NICellObject>
+@interface FutureEventListTableViewCellObject : NSObject <NICellObject>
 
-@property (strong, nonatomic, readonly) NSString *day;
-@property (strong, nonatomic, readonly) NSString *month;
 @property (strong, nonatomic, readonly) NSString *eventTitle;
 @property (strong, nonatomic, readonly) NSString *eventTags;
+@property (strong, nonatomic, readonly) NSURL *imageUrl;
+@property (strong, nonatomic, readonly) NSString *date;
 
-+ (instancetype)objectWithEvent:(EventPlainObject *)event eventDay:(NSString *)day eventMonth:(NSString *)month;
++ (instancetype)objectWithEvent:(EventPlainObject *)event eventDate:(NSString *)date;
 
 @end
