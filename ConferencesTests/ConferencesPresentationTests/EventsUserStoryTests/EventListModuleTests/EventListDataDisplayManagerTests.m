@@ -23,7 +23,7 @@
 #import "EventListDataDisplayManager.h"
 #import "EventPlainObject.h"
 #import "NearestEventTableViewCell.h"
-#import "EventListTableViewCell.h"
+#import "FutureEventListTableViewCell.h"
 
 #import <OCMock/OCMock.h>
 #import "EventListTableViewController.h"
@@ -125,7 +125,7 @@ typedef NS_ENUM(NSUInteger, TableViewSectionIndex){
         if ([cell isKindOfClass:[NearestEventTableViewCell class]]) {
             actualNumberOfCellForCorrespondingClass++;
         }
-        if ([cell isKindOfClass:[EventListTableViewCell class]]) {
+        if ([cell isKindOfClass:[FutureEventListTableViewCell class]]) {
             actualNumberOfCellForCorrespondingClass++;
         }
     }
