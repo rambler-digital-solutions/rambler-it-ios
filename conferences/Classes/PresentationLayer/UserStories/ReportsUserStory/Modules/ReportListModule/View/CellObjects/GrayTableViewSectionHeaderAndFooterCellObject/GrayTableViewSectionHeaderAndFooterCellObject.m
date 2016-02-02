@@ -18,9 +18,19 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import <Nimbus/NimbusModels.h>
+#import "GrayTableViewSectionHeaderAndFooterCellObject.h"
+#import "GrayTableViewSectionHeaderAndFooterCell.h"
 
-@interface ReportListTableViewHeaderAndFooterCellObject : NSObject <NICellObject>
+@implementation GrayTableViewSectionHeaderAndFooterCellObject
+
+#pragma mark - NICellObject methods
+
+- (Class)cellClass {
+    return [GrayTableViewSectionHeaderAndFooterCell class];
+}
+
+- (UINib *)cellNib {
+    return [UINib nibWithNibName:NSStringFromClass([GrayTableViewSectionHeaderAndFooterCell class]) bundle:[NSBundle mainBundle]];
+}
 
 @end

@@ -18,21 +18,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "ReportListTableViewHeaderAndFooterCell.h"
-#import "ReportListTableViewHeaderAndFooterCellObject.h"
+#import <UIKit/UIKit.h>
+#import <NICellFactory.h>
 
-static CGFloat const kReportListTableViewHeaderAndFooterCellHeight = 5.0f;
-
-@implementation ReportListTableViewHeaderAndFooterCell
-
-#pragma mark - NICell methods
-
-- (BOOL)shouldUpdateCellWithObject:(ReportListTableViewHeaderAndFooterCellObject *)object {
-    return YES;
-}
-
-+ (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
-    return kReportListTableViewHeaderAndFooterCellHeight;
-}
+@interface GrayTableViewSectionHeaderAndFooterCell : UITableViewCell <NICell>
 
 @end

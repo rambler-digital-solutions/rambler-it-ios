@@ -21,6 +21,6 @@
 #import <UIKit/UIKit.h>
 #import <NICellFactory.h>
 
-@interface ReportListTableViewHeaderAndFooterCell : UITableViewCell <NICell>
+@interface GrayTableViewSectionHeaderAndFooterCell : UITableViewCell <NICell>
 
 @end
