@@ -11,7 +11,7 @@
 /**
  @author Artem Karpushin
  
- Class is designed to cast a date to a specific format
+ Class is designed to cast a date to a string with specific format
  */
 @interface DateFormatter : NSObject
 
@@ -40,6 +40,17 @@
 /**
  @author Artem Karpushin
  
+ Method is used to obtain string from date with format "d MMMM"
+ 
+ @param date NSDate object
+ 
+ @return NSString object
+ */
+- (NSString *)obtainDateWithDayMonthFormat:(NSDate *)date;
+
+/**
+ @author Artem Karpushin
+ 
  Method is used to obtain string from date with format "MMMM"
  
  @param date NSDate object
@@ -58,5 +69,16 @@
  @return NSString object
  */
 - (NSString *)obtainDateWithDayFormat:(NSDate *)date;
+
+/**
+ @author Artem Karpushin
+ 
+ Method is used to obtain string from date with format "HH:mm"
+ 
+ @param date NSDate object
+ 
+ @return NSString object
+ */
+- (NSString *)obtainDateWithTimeFormat:(NSDate *)date;
 
 @end

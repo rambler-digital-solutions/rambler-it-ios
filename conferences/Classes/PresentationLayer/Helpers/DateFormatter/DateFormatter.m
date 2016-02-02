@@ -10,8 +10,10 @@
 
 static NSString *const DayMonthTimeDateFormat = @"d MMMM в HH:mm";
 static NSString *const DayMonthYearDateFormat = @"d MMMM yyyy";
+static NSString *const DayMonthDateFormat = @"d MMMM";
 static NSString *const MonthDateFormat = @"MMMM";
 static NSString *const DayDateFormat = @"d";
+static NSString *const TimeDateFormat = @"HH:mm";
 
 @implementation DateFormatter
 
@@ -25,12 +27,20 @@ static NSString *const DayDateFormat = @"d";
     return [self obtainDateWithFormat:DayMonthYearDateFormat date:date];
 }
 
+- (NSString *)obtainDateWithDayMonthFormat:(NSDate *)date {
+    return [self obtainDateWithFormat:DayMonthDateFormat date:date];
+}
+
 - (NSString *)obtainDateWithMonthFormat:(NSDate *)date {
     return [self obtainDateWithFormat:MonthDateFormat date:date];
 }
 
 - (NSString *)obtainDateWithDayFormat:(NSDate *)date {
     return [self obtainDateWithFormat:DayDateFormat date:date];
+}
+
+- (NSString *)obtainDateWithTimeFormat:(NSDate *)date {
+    return [self obtainDateWithFormat:TimeDateFormat date:date];
 }
 
 #pragma mark - Private methods

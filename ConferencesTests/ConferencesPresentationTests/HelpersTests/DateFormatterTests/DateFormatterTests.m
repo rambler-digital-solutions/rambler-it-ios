@@ -61,6 +61,18 @@
     XCTAssertEqualObjects(expectedFormattedDateString, actualFormattedDateString);
 }
 
+- (void)testSuccessObtainDateWithDayMonthFormat {
+    // given
+    NSString *expectedFormattedDateString = @"6 December";
+    NSString *actualFormattedDateString = nil;
+    
+    // when
+    actualFormattedDateString = [self.dateFormatter obtainDateWithDayMonthFormat:self.date];
+    
+    // then
+    XCTAssertEqualObjects(expectedFormattedDateString, actualFormattedDateString);
+}
+
 - (void)testSuccessObtainDateWithMonthFormat {
     // given
     NSString *expectedFormattedDateString = @"December";
@@ -80,6 +92,18 @@
     
     // when
     actualFormattedDateString = [self.dateFormatter obtainDateWithDayFormat:self.date];
+    
+    // then
+    XCTAssertEqualObjects(expectedFormattedDateString, actualFormattedDateString);
+}
+
+- (void)testSuccessObtainDateWithTimeFormat {
+    // given
+    NSString *expectedFormattedDateString = @"12:39";
+    NSString *actualFormattedDateString = nil;
+    
+    // when
+    actualFormattedDateString = [self.dateFormatter obtainDateWithTimeFormat:self.date];
     
     // then
     XCTAssertEqualObjects(expectedFormattedDateString, actualFormattedDateString);
