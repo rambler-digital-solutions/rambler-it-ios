@@ -82,10 +82,10 @@
 
     EventPlainObject *nearestEvent = [self.events firstObject];
     
-    NSString *eventDay = [self.dateFormatter obtainDateWithDayFormat:nearestEvent.startDate];
-    NSString *eventMonth = [self.dateFormatter obtainDateWithMonthFormat:nearestEvent.startDate];
+    NSString *eventDate = [self.dateFormatter obtainDateWithDayMonthFormat:nearestEvent.startDate];
+    NSString *eventStartTime = [self.dateFormatter obtainDateWithTimeFormat:nearestEvent.startDate];
         
-    NearestEventTableViewCellObject *nearestEventTableViewCellObject = [NearestEventTableViewCellObject objectWithEvent:nearestEvent eventDay:eventDay eventMonth:eventMonth];
+    NearestEventTableViewCellObject *nearestEventTableViewCellObject = [NearestEventTableViewCellObject objectWithEvent:nearestEvent eventDate:eventDate eventStartTime:eventStartTime];
     [cellObjects addObject:nearestEventTableViewCellObject];
     
     if (self.events.count > 1) {

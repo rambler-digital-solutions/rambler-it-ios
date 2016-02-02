@@ -13,8 +13,8 @@
 @interface NearestEventTableViewCellObject ()
 
 @property (strong, nonatomic, readwrite) UIImage *image;
-@property (strong, nonatomic, readwrite) NSString *day;
-@property (strong, nonatomic, readwrite) NSString *month;
+@property (strong, nonatomic, readwrite) NSString *date;
+@property (strong, nonatomic, readwrite) NSString *time;
 @property (strong, nonatomic, readwrite) NSString *eventTitle;
 @property (strong, nonatomic, readwrite) UIColor *backgroundColor;
 @property (strong, nonatomic, readwrite) NSURL *imageUrl;
@@ -25,11 +25,11 @@
 
 #pragma mark - Initialization
 
-- (instancetype)initWithEvent:(EventPlainObject *)event eventDay:(NSString *)day eventMonth:(NSString *)month {
+- (instancetype)initWithEvent:(EventPlainObject *)event eventDate:(NSString *)date eventStartTime:(NSString *)time {
     self = [super init];
     if (self) {
-        _day = day;
-        _month = month;
+        _date = date;
+        _time = time;
         _eventTitle = event.name;
         _image = event.image;
         _imageUrl = event.imageUrl;
@@ -38,8 +38,8 @@
     return self;
 }
 
-+ (instancetype)objectWithEvent:(EventPlainObject *)event eventDay:(NSString *)day eventMonth:(NSString *)month {
-    return [[self alloc] initWithEvent:event eventDay:day eventMonth:month];
++ (instancetype)objectWithEvent:(EventPlainObject *)event eventDate:(NSString *)date eventStartTime:(NSString *)time {
+    return [[self alloc] initWithEvent:event eventDate:date eventStartTime:time];
 }
 
 #pragma mark - NICellObject methods

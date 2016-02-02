@@ -38,8 +38,8 @@ static CGFloat const kEventListTableViewCellHeight = 64.0f;
 
 - (BOOL)shouldUpdateCellWithObject:(NearestEventTableViewCellObject *)object {
     self.eventTitle.text = object.eventTitle;
-    self.day.text = object.day;
-    self.month.text = object.month;
+    self.date.text = object.date;
+    self.time.text = object.time;
     self.imageView.image = object.image;
     [self.cellView setBackgroundColor:object.backgroundColor];
     
