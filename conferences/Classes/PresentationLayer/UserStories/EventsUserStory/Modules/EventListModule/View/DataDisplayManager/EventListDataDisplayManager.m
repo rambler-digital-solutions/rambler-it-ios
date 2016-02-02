@@ -24,6 +24,7 @@
 
 #import "FutureEventListTableViewCellObject.h"
 #import "NearestEventTableViewCellObject.h"
+#import "GrayTableViewSectionHeaderAndFooterCellObject.h"
 #import "EventPlainObject.h"
 #import "DateFormatter.h"
 
@@ -87,13 +88,19 @@
     NearestEventTableViewCellObject *nearestEventTableViewCellObject = [NearestEventTableViewCellObject objectWithEvent:nearestEvent eventDay:eventDay eventMonth:eventMonth];
     [cellObjects addObject:nearestEventTableViewCellObject];
     
-    for (int i = 1; i < self.events.count; i++) {
-        EventPlainObject *event = [self.events objectAtIndex:i];
+    if (self.events.count > 1) {
+        GrayTableViewSectionHeaderAndFooterCellObject *futureEventListSectionHeaderAndFooter = [GrayTableViewSectionHeaderAndFooterCellObject new];
+        [cellObjects addObject:futureEventListSectionHeaderAndFooter];
         
-        NSString *date = [self.dateFormatter obtainDateWithDayMonthFormat:event.startDate];
-        
-        FutureEventListTableViewCellObject *eventListCellObject = [FutureEventListTableViewCellObject objectWithEvent:event eventDate:date];
-        [cellObjects addObject:eventListCellObject];
+        for (int i = 1; i < self.events.count; i++) {
+            EventPlainObject *event = [self.events objectAtIndex:i];
+            
+            NSString *eventDate = [self.dateFormatter obtainDateWithDayMonthFormat:event.startDate];
+            
+            FutureEventListTableViewCellObject *eventListCellObject = [FutureEventListTableViewCellObject objectWithEvent:event eventDate:eventDate];
+            [cellObjects addObject:eventListCellObject];
+        }
+        [cellObjects addObject:futureEventListSectionHeaderAndFooter];
     }
     
     NIMutableTableViewModel *tableViewModel = [[NIMutableTableViewModel alloc] initWithSectionedArray:cellObjects
