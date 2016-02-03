@@ -40,7 +40,7 @@
 
 - (void)updateTableViewModelWithEvents:(NSArray *)events {
     self.events = events;
-    self.tableViewModel = [self updateTableViewModel];
+    [self updateTableViewModel];
     [self.delegate didUpdateTableViewModel];
 }
 
@@ -48,14 +48,14 @@
 
 - (id<UITableViewDataSource>)dataSourceForTableView:(UITableView *)tableView {
     if (!self.tableViewModel) {
-        self.tableViewModel = [self updateTableViewModel];
+        [self updateTableViewModel];
     }
     return self.tableViewModel;
 }
 
 - (id<UITableViewDelegate>)delegateForTableView:(UITableView *)tableView withBaseDelegate:(id<UITableViewDelegate>)baseTableViewDelegate {
     if (!self.tableViewActions) {
-        [self setupActionBlocks];
+        [self setupTableViewActions];
     }
     return [self.tableViewActions forwardingTo:self];
 }
@@ -73,18 +73,18 @@
 
 #pragma mark - Private methods
 
-- (void)setupActionBlocks {
+- (void)setupTableViewActions {
     self.tableViewActions = [[NITableViewActions alloc] initWithTarget:self];
 }
 
-- (NIMutableTableViewModel *)updateTableViewModel {
+- (NSArray *)generateCellObjects {
     NSMutableArray *cellObjects = [NSMutableArray array];
-
+    
     EventPlainObject *nearestEvent = [self.events firstObject];
     
     NSString *eventDate = [self.dateFormatter obtainDateWithDayMonthFormat:nearestEvent.startDate];
     NSString *eventStartTime = [self.dateFormatter obtainDateWithTimeFormat:nearestEvent.startDate];
-        
+    
     NearestEventTableViewCellObject *nearestEventTableViewCellObject = [NearestEventTableViewCellObject objectWithEvent:nearestEvent eventDate:eventDate eventStartTime:eventStartTime];
     [cellObjects addObject:nearestEventTableViewCellObject];
     
@@ -102,11 +102,14 @@
         }
         [cellObjects addObject:futureEventListSectionHeaderAndFooter];
     }
-    
-    NIMutableTableViewModel *tableViewModel = [[NIMutableTableViewModel alloc] initWithSectionedArray:cellObjects
-                                                                      delegate:(id)[NICellFactory class]];
+    return cellObjects;
+}
 
-    return tableViewModel;
+- (void)updateTableViewModel {
+    NSArray *cellObjects = [self generateCellObjects];
+    
+    self.tableViewModel = [[NIMutableTableViewModel alloc] initWithSectionedArray:cellObjects
+                                                                                             delegate:(id)[NICellFactory class]];
 }
 
 @end
