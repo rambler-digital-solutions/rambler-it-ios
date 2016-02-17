@@ -66,8 +66,11 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    EventPlainObject *event = [self.events objectAtIndex:indexPath.row];
-    [self.delegate didTapCellWithEvent:event];
+    // ignore header & footer
+    if (indexPath.row > 0 && indexPath.row <= self.events.count) {
+        EventPlainObject *event = [self.events objectAtIndex:indexPath.row - 1];
+        [self.delegate didTapCellWithEvent:event];
+    }
 }
 
 #pragma mark - Private methods
