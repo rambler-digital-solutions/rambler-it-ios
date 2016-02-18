@@ -27,6 +27,7 @@
 @property (strong, nonatomic, readwrite) NSString *date;
 @property (strong, nonatomic, readwrite) NSString *eventTitle;
 @property (strong, nonatomic, readwrite) UIImage *eventImage;
+@property (strong, nonatomic, readwrite) EventPlainObject *event;
 
 @end
 
@@ -40,6 +41,7 @@
         _eventTitle = event.name;
         _eventImage = event.image;
         _date = date;
+        _event = event;
     }
     return self;
 }

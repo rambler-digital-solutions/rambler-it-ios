@@ -26,6 +26,7 @@
 #import "GrayTableViewSectionHeaderAndFooterCellObject.h"
 #import "DateFormatter.h"
 #import "EventPlainObject.h"
+#import "EXTScope.h"
 
 @interface ReportListDataDisplayManager () <UITableViewDelegate>
 
@@ -65,15 +66,18 @@
     return [NICellFactory tableView:tableView heightForRowAtIndexPath:indexPath model:self.tableViewModel];
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    EventPlainObject *event = [self.events objectAtIndex:indexPath.row];
-    [self.delegate didTapCellWithEvent:event];
-}
-
 #pragma mark - Private methods
 
 - (void)setupTableViewActions {
     self.tableViewActions = [[NITableViewActions alloc] initWithTarget:self];
+    
+    @weakify(self);
+    NIActionBlock reportTapActionBlock = ^BOOL(ReportListTableViewCellObject *object, id target, NSIndexPath *indexPath) {
+        @strongify(self);
+        [self.delegate didTapCellWithEvent:object.event];
+        return YES;
+    };
+    [self.tableViewActions attachToClass:[ReportListTableViewCellObject class] tapBlock:reportTapActionBlock];
 }
 
 - (NSArray *)generateCellObjects {

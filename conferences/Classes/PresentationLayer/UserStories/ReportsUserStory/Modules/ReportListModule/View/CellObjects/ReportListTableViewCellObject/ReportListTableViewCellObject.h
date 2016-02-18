@@ -28,6 +28,7 @@
 @property (strong, nonatomic, readonly) NSString *date;
 @property (strong, nonatomic, readonly) NSString *eventTitle;
 @property (strong, nonatomic, readonly) UIImage *eventImage;
+@property (strong, nonatomic, readonly) EventPlainObject *event;
 
 + (instancetype)objectWithEvent:(EventPlainObject *)event andDate:(NSString *)date;
 
