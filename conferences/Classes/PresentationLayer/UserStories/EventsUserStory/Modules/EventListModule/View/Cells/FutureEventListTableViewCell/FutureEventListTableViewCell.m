@@ -18,21 +18,29 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "ReportListTableViewHeaderAndFooterCell.h"
-#import "ReportListTableViewHeaderAndFooterCellObject.h"
+#import "FutureEventListTableViewCell.h"
+#import "FutureEventListTableViewCellObject.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
-static CGFloat const kReportListTableViewHeaderAndFooterCellHeight = 5.0f;
+static NSString *const kPlaceholderImageName = @"placeholder";
+static CGFloat const FutureEventListTableViewCellHeight = 116.0f;
 
-@implementation ReportListTableViewHeaderAndFooterCell
+@implementation FutureEventListTableViewCell
 
 #pragma mark - NICell methods
 
-- (BOOL)shouldUpdateCellWithObject:(ReportListTableViewHeaderAndFooterCellObject *)object {
+- (BOOL)shouldUpdateCellWithObject:(FutureEventListTableViewCellObject *)object {
+    self.eventTitle.text = object.eventTitle;
+    self.eventTags.text = object.eventTags;
+    self.date.text = object.date;
+    [self.eventImageView sd_setImageWithURL:object.imageUrl
+                           placeholderImage:[UIImage imageNamed:kPlaceholderImageName]];
+    
     return YES;
 }
 
 + (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
-    return kReportListTableViewHeaderAndFooterCellHeight;
+    return FutureEventListTableViewCellHeight;
 }
 
 @end

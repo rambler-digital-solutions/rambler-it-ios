@@ -43,6 +43,7 @@
     [super viewWillAppear:animated];
     [self setScrollViewColor];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 #pragma mark - EventListViewInput

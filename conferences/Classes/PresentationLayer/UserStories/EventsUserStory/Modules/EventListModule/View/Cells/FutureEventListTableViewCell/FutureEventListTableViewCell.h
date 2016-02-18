@@ -19,8 +19,13 @@
 // THE SOFTWARE.
 
 #import <UIKit/UIKit.h>
-#import <NICellFactory.h>
+#import "NICellFactory.h"
 
-@interface ReportListTableViewHeaderAndFooterCell : UITableViewCell <NICell>
+@interface FutureEventListTableViewCell : UITableViewCell <NICell>
+
+@property (weak, nonatomic) IBOutlet UILabel *eventTitle;
+@property (weak, nonatomic) IBOutlet UILabel *eventTags;
+@property (weak, nonatomic) IBOutlet UILabel *date;
+@property (weak, nonatomic) IBOutlet UIImageView *eventImageView;
 
 @end

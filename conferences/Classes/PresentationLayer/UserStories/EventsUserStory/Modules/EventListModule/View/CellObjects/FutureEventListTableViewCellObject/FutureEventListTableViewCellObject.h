@@ -18,39 +18,18 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "NearestEventTableViewCell.h"
-#import "NearestEventTableViewCellObject.h"
+#import <Foundation/Foundation.h>
+#import <Nimbus/NimbusModels.h>
 
-#import <SDWebImage/UIImageView+WebCache.h>
+@class EventPlainObject;
 
-static NSString *const kPlaceholderImageName = @"placeholder";
-static CGFloat const kEventListTableViewCellHeight = 64.0f;
+@interface FutureEventListTableViewCellObject : NSObject <NICellObject>
 
-@interface NearestEventTableViewCell ()
+@property (strong, nonatomic, readonly) NSString *eventTitle;
+@property (strong, nonatomic, readonly) NSString *eventTags;
+@property (strong, nonatomic, readonly) NSURL *imageUrl;
+@property (strong, nonatomic, readonly) NSString *date;
 
-@property (assign, nonatomic) CGFloat FutureEventTableViewCellHeight;
-
-@end
-
-@implementation NearestEventTableViewCell
-
-#pragma mark - NICell methods
-
-- (BOOL)shouldUpdateCellWithObject:(NearestEventTableViewCellObject *)object {
-    self.eventTitle.text = object.eventTitle;
-    self.day.text = object.day;
-    self.month.text = object.month;
-    self.imageView.image = object.image;
-    [self.cellView setBackgroundColor:object.backgroundColor];
-    
-    [self.imageView sd_setImageWithURL:object.imageUrl
-                      placeholderImage:[UIImage imageNamed:kPlaceholderImageName]];
-
-    return YES;
-}
-
-+ (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
-    return tableView.frame.size.height - kEventListTableViewCellHeight;
-}
++ (instancetype)objectWithEvent:(EventPlainObject *)event eventDate:(NSString *)date;
 
 @end

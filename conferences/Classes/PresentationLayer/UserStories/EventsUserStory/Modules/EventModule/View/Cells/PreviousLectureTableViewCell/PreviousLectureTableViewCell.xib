@@ -13,7 +13,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="light-gray-circle" translatesAutoresizingMaskIntoConstraints="NO" id="udz-Bd-i6k">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="light-gray-square" translatesAutoresizingMaskIntoConstraints="NO" id="udz-Bd-i6k">
                         <rect key="frame" x="20" y="11" width="48" height="48"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="48" id="f9G-Z3-pcP"/>
@@ -79,6 +79,6 @@
     </objects>
     <resources>
         <image name="disclosure-indicator" width="8" height="14"/>
-        <image name="light-gray-circle" width="150" height="150"/>
+        <image name="light-gray-square" width="256" height="256"/>
     </resources>
 </document>

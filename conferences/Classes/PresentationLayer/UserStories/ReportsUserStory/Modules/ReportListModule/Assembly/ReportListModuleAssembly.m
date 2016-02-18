@@ -93,9 +93,9 @@ static NSString *const kTabbarButtonId = @"reports_tab";
     return [TyphoonDefinition withClass:[TabBarButtonPrototype class]
                           configuration:^(TyphoonDefinition *definition) {
                               [definition injectProperty:@selector(tabBarButtonIdleStateImage)
-                                                    with:[UIImage imageNamed:@"light-grey-square"]];
+                                                    with:[UIImage imageNamed:@"light-gray-square"]];
                               [definition injectProperty:@selector(tabBarButtonSelectedStateImage)
-                                                    with:[UIImage imageNamed:@"light-grey-square"]];
+                                                    with:[UIImage imageNamed:@"light-gray-square"]];
                               [definition injectProperty:@selector(tabBarButtonTitle)
                                                     with:kTabBarButtonTitle];
                               [definition injectProperty:@selector(tabbarButtonId)

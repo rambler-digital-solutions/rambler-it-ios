@@ -19,14 +19,8 @@
 // THE SOFTWARE.
 
 #import <UIKit/UIKit.h>
-#import "NICellFactory.h"
+#import <NICellFactory.h>
 
-@interface NearestEventTableViewCell : UITableViewCell <NICell>
-
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (weak, nonatomic) IBOutlet UILabel *day;
-@property (weak, nonatomic) IBOutlet UILabel *month;
-@property (weak, nonatomic) IBOutlet UILabel *eventTitle;
-@property (weak, nonatomic) IBOutlet UIView *cellView;
+@interface GrayTableViewSectionHeaderAndFooterCell : UITableViewCell <NICell>
 
 @end

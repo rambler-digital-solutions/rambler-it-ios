@@ -21,17 +21,6 @@
 #import <Foundation/Foundation.h>
 #import <Nimbus/NimbusModels.h>
 
-@class EventPlainObject;
-
-@interface NearestEventTableViewCellObject : NSObject <NICellObject>
-
-@property (strong, nonatomic, readonly) UIImage *image;
-@property (strong, nonatomic, readonly) NSString *date;
-@property (strong, nonatomic, readonly) NSString *time;
-@property (strong, nonatomic, readonly) NSString *eventTitle;
-@property (strong, nonatomic, readonly) UIColor *backgroundColor;
-@property (strong, nonatomic, readonly) NSURL *imageUrl;
-
-+ (instancetype)objectWithEvent:(EventPlainObject *)event eventDate:(NSString *)date eventStartTime:(NSString *)time;
+@interface GrayTableViewSectionHeaderAndFooterCellObject : NSObject <NICellObject>
 
 @end

@@ -18,26 +18,15 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "EventListTableViewCell.h"
-#import "EventListTableViewCellObject.h"
+#import <UIKit/UIKit.h>
+#import "NICellFactory.h"
 
-static CGFloat const EventListTableViewCellHeight = 64.0f;
+@interface NearestEventTableViewCell : UITableViewCell <NICell>
 
-@implementation EventListTableViewCell
-
-#pragma mark - NICell methods
-
-- (BOOL)shouldUpdateCellWithObject:(EventListTableViewCellObject *)object {
-    self.day.text = object.day;
-    self.month.text = object.month;
-    self.eventTitle.text = object.eventTitle;
-    self.eventTags.text = object.eventTags;
-    
-    return YES;
-}
-
-+ (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
-    return EventListTableViewCellHeight;
-}
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UILabel *date;
+@property (weak, nonatomic) IBOutlet UILabel *time;
+@property (weak, nonatomic) IBOutlet UILabel *eventTitle;
+@property (weak, nonatomic) IBOutlet UIView *cellView;
 
 @end

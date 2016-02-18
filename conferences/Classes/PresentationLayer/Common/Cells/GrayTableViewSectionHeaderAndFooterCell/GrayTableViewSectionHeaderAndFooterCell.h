@@ -18,19 +18,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "ReportListTableViewHeaderAndFooterCellObject.h"
-#import "ReportListTableViewHeaderAndFooterCell.h"
+#import <UIKit/UIKit.h>
+#import <NICellFactory.h>
 
-@implementation ReportListTableViewHeaderAndFooterCellObject
-
-#pragma mark - NICellObject methods
-
-- (Class)cellClass {
-    return [ReportListTableViewHeaderAndFooterCell class];
-}
-
-- (UINib *)cellNib {
-    return [UINib nibWithNibName:NSStringFromClass([ReportListTableViewHeaderAndFooterCell class]) bundle:[NSBundle mainBundle]];
-}
+@interface GrayTableViewSectionHeaderAndFooterCell : UITableViewCell <NICell>
 
 @end

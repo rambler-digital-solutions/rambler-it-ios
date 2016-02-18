@@ -36,6 +36,8 @@ static CGFloat const kPreviousLectureTableViewCellHeight = 70.0f;
 #pragma mark - NICell methods
 
 - (BOOL)shouldUpdateCellWithObject:(PreviousLectureTableViewCellObject *)object {
+    self.lectureImageView.layer.cornerRadius = self.lectureImageView.frame.size.height / 2;
+    self.lectureImageView.clipsToBounds = YES;
     return YES;
 }
 

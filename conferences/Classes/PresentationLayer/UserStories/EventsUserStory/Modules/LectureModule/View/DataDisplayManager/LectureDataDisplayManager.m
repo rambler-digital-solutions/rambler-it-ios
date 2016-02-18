@@ -49,29 +49,33 @@
 
 - (id<UITableViewDataSource>)dataSourceForTableView:(UITableView *)tableView {
     if (!self.tableViewModel) {
-        self.tableViewModel = [self configureTableViewModel];
+        [self updateTableViewModel];
     }
     return self.tableViewModel;
 }
 
 - (id<UITableViewDelegate>)delegateForTableView:(UITableView *)tableView withBaseDelegate:(id<UITableViewDelegate>)baseTableViewDelegate {
     if (!self.tableViewActions) {
-        [self setupActionBlocks];
+        [self setupTableViewActions];
     }
     return [self.tableViewActions forwardingTo:self];
 }
 
 #pragma mark - Private methods
 
-- (NITableViewModel *)configureTableViewModel {
+- (NSArray *)generateCellObjects {
     NSMutableArray *cellObjects = [@[] mutableCopy];
     
-    NITableViewModel *tableViewModel = [[NITableViewModel alloc] initWithSectionedArray:cellObjects
-                                                                                             delegate:(id)[NICellFactory class]];
-    return tableViewModel;
+    return cellObjects;
 }
 
-- (void)setupActionBlocks {
+- (void)updateTableViewModel {
+    NSArray *cellObjects = [self generateCellObjects];
+    
+    self.tableViewModel = [[NITableViewModel alloc] initWithSectionedArray:cellObjects delegate:(id)[NICellFactory class]];
+}
+
+- (void)setupTableViewActions {
     self.tableViewActions = [[NITableViewActions alloc] initWithTarget:self];
 }
 

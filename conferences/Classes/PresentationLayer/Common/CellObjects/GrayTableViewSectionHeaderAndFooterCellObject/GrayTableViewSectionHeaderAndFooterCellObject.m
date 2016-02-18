@@ -18,18 +18,19 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import <Nimbus/NimbusModels.h>
+#import "GrayTableViewSectionHeaderAndFooterCellObject.h"
+#import "GrayTableViewSectionHeaderAndFooterCell.h"
 
-@class EventPlainObject;
+@implementation GrayTableViewSectionHeaderAndFooterCellObject
 
-@interface EventListTableViewCellObject : NSObject <NICellObject>
+#pragma mark - NICellObject methods
 
-@property (strong, nonatomic, readonly) NSString *day;
-@property (strong, nonatomic, readonly) NSString *month;
-@property (strong, nonatomic, readonly) NSString *eventTitle;
-@property (strong, nonatomic, readonly) NSString *eventTags;
+- (Class)cellClass {
+    return [GrayTableViewSectionHeaderAndFooterCell class];
+}
 
-+ (instancetype)objectWithEvent:(EventPlainObject *)event eventDay:(NSString *)day eventMonth:(NSString *)month;
+- (UINib *)cellNib {
+    return [UINib nibWithNibName:NSStringFromClass([GrayTableViewSectionHeaderAndFooterCell class]) bundle:[NSBundle mainBundle]];
+}
 
 @end

@@ -23,7 +23,7 @@
 #import <Nimbus/NimbusModels.h>
 
 #import "ReportListTableViewCellObject.h"
-#import "ReportListTableViewHeaderAndFooterCellObject.h"
+#import "GrayTableViewSectionHeaderAndFooterCellObject.h"
 #import "DateFormatter.h"
 #import "EventPlainObject.h"
 
@@ -39,7 +39,7 @@
 
 - (void)updateTableViewModelWithEvents:(NSArray *)events {
     self.events = events;
-    self.tableViewModel = [self updateTableViewModel];
+    [self updateTableViewModel];
     [self.delegate didUpdateTableViewModel];
 }
 
@@ -47,14 +47,14 @@
 
 - (id<UITableViewDataSource>)dataSourceForTableView:(UITableView *)tableView {
     if (!self.tableViewModel) {
-        self.tableViewModel = [self updateTableViewModel];
+        [self updateTableViewModel];
     }
     return self.tableViewModel;
 }
 
 - (id<UITableViewDelegate>)delegateForTableView:(UITableView *)tableView withBaseDelegate:(id<UITableViewDelegate>)baseTableViewDelegate {
     if (!self.tableViewActions) {
-        [self setupActionBlocks];
+        [self setupTableViewActions];
     }
     return [self.tableViewActions forwardingTo:self];
 }
@@ -72,14 +72,14 @@
 
 #pragma mark - Private methods
 
-- (void)setupActionBlocks {
+- (void)setupTableViewActions {
     self.tableViewActions = [[NITableViewActions alloc] initWithTarget:self];
 }
 
-- (NIMutableTableViewModel *)updateTableViewModel {
+- (NSArray *)generateCellObjects {
     NSMutableArray *cellObjects = [NSMutableArray array];
     
-    ReportListTableViewHeaderAndFooterCellObject *headerCellObject = [ReportListTableViewHeaderAndFooterCellObject new];
+    GrayTableViewSectionHeaderAndFooterCellObject *headerCellObject = [GrayTableViewSectionHeaderAndFooterCellObject new];
     [cellObjects addObject:headerCellObject];
     
     for (EventPlainObject *event in self.events) {
@@ -89,13 +89,17 @@
         [cellObjects addObject:cellObject];
     }
     
-    ReportListTableViewHeaderAndFooterCellObject *footerCellObject = [ReportListTableViewHeaderAndFooterCellObject new];
+    GrayTableViewSectionHeaderAndFooterCellObject *footerCellObject = [GrayTableViewSectionHeaderAndFooterCellObject new];
     [cellObjects addObject:footerCellObject];
     
-    NIMutableTableViewModel *tableViewModel = [[NIMutableTableViewModel alloc] initWithSectionedArray:cellObjects
-                                                                        delegate:(id)[NICellFactory class]];
-    return tableViewModel;
+    return cellObjects;
 }
 
+- (void)updateTableViewModel {
+    NSArray *cellObjects = [self generateCellObjects];
+    
+    self.tableViewModel = [[NIMutableTableViewModel alloc] initWithSectionedArray:cellObjects
+                                                                        delegate:(id)[NICellFactory class]];
+}
 
 @end

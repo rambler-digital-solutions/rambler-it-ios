@@ -18,20 +18,21 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import <Nimbus/NimbusModels.h>
+#import "GrayTableViewSectionHeaderAndFooterCell.h"
+#import "GrayTableViewSectionHeaderAndFooterCellObject.h"
 
-@class EventPlainObject;
+static CGFloat const kReportListTableViewHeaderAndFooterCellHeight = 5.0f;
 
-@interface NearestEventTableViewCellObject : NSObject <NICellObject>
+@implementation GrayTableViewSectionHeaderAndFooterCell
 
-@property (strong, nonatomic, readonly) UIImage *image;
-@property (strong, nonatomic, readonly) NSString *date;
-@property (strong, nonatomic, readonly) NSString *time;
-@property (strong, nonatomic, readonly) NSString *eventTitle;
-@property (strong, nonatomic, readonly) UIColor *backgroundColor;
-@property (strong, nonatomic, readonly) NSURL *imageUrl;
+#pragma mark - NICell methods
 
-+ (instancetype)objectWithEvent:(EventPlainObject *)event eventDate:(NSString *)date eventStartTime:(NSString *)time;
+- (BOOL)shouldUpdateCellWithObject:(GrayTableViewSectionHeaderAndFooterCellObject *)object {
+    return YES;
+}
+
++ (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
+    return kReportListTableViewHeaderAndFooterCellHeight;
+}
 
 @end
