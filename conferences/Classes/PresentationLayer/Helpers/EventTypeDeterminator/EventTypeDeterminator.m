@@ -37,12 +37,7 @@
     if (startDateComparisonResult == NSOrderedDescending) {
         return FutureEvent;
     }
-    
-    if (endDateComparisonResult == NSOrderedAscending) {
-        return PastEvent;
-    } else {
-        return PastEvent;
-    }
+    return PastEvent;
 }
 
 @end
