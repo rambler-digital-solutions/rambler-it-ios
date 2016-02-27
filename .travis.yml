@@ -1,4 +1,4 @@
 language: objective-c
 osx_image: xcode7.2
 script:
-  - xctool test -workspace Conferences.xcworkspace -scheme ConferencesTests -configuration Debug -test-sdk iphonesimulator9.2 ONLY_ACTIVE_ARCH=YES
+  - xctool test -workspace Conferences.xcworkspace -scheme ConferencesTests -configuration Debug -sdk iphonesimulator9.2 ONLY_ACTIVE_ARCH=YES
