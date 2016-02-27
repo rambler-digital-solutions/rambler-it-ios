@@ -75,6 +75,8 @@
     // then
     OCMVerify([partialMockViewController cd_startObserveProtocol:@protocol(EventTableViewCellActionProtocol)]);
     OCMVerify([self.mockOutput setupView]);
+    [(id)partialMockViewController stopMocking];
+    partialMockViewController = nil;
 }
 
 #pragma mark - EventViewInput

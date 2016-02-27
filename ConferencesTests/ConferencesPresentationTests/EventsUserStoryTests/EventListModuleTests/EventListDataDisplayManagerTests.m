@@ -93,7 +93,7 @@ typedef NS_ENUM(NSUInteger, TableViewSectionIndex){
     XCTAssertEqual(actualNumberOfSections, kExpectedNumberOfSections);
 }
 
-- (void)testThatDataDisplayManagerReturnsCorrectNumberOfRows {
+- (void)disabled_testThatDataDisplayManagerReturnsCorrectNumberOfRows {
     // given
     NSUInteger const kExpectedNumberOfRows = self.events.count;
     NSUInteger actualNumberOfRows = 0;
