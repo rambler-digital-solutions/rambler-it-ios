@@ -1,4 +1,4 @@
-// Copyright (c) 2015 RAMBLER&Co
+// Copyright (c) 2016 RAMBLER&Co
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -19,20 +19,26 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-#import "TyphoonAssembly.h"
 
-@protocol PushNotificationService;
-@protocol EventService;
-@protocol PrototypeMapper;
-@protocol EventStoreServiceProtocol;
+@class EventPlainObject;
 
-@protocol ServiceComponents <NSObject>
+typedef void (^EventStoreCompletionBlock)(NSArray *errors);
 
-- (id <PushNotificationService>)pushNotificationService;
-- (id <EventService>)eventService;
-- (id <EventStoreServiceProtocol>)eventStoreService;
+/**
+ @author Artem Karpushin
+ 
+ The service is designed to manage the events in the calendar
+ */
+@protocol EventStoreServiceProtocol <NSObject>
 
-// вынести из сервисов
-- (id <PrototypeMapper>)eventPrototypeMapper;
+/**
+ @author Artem Karpushin
+ 
+ Method is used to save event to calendar
+ 
+ @param event           EventPlainObject
+ @param completionBlock EventStoreCompletionBlock called upon completion the method, and returns array of NSError objects if there is any
+ */
+- (void)saveEventToCaledar:(EventPlainObject *)event withCompletionBlock:(EventStoreCompletionBlock)completionBlock;
 
 @end

@@ -1,4 +1,4 @@
-// Copyright (c) 2015 RAMBLER&Co
+// Copyright (c) 2016 RAMBLER&Co
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -19,20 +19,9 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-#import "TyphoonAssembly.h"
 
-@protocol PushNotificationService;
-@protocol EventService;
-@protocol PrototypeMapper;
 @protocol EventStoreServiceProtocol;
 
-@protocol ServiceComponents <NSObject>
-
-- (id <PushNotificationService>)pushNotificationService;
-- (id <EventService>)eventService;
-- (id <EventStoreServiceProtocol>)eventStoreService;
-
-// вынести из сервисов
-- (id <PrototypeMapper>)eventPrototypeMapper;
+@interface EventStoreService : NSObject <EventStoreServiceProtocol>
 
 @end

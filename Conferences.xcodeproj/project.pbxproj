@@ -170,6 +170,7 @@
 		63D86BE91C14572C00986536 /* NearestAnnouncementTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D86BE71C14572C00986536 /* NearestAnnouncementTableViewCellObject.m */; };
 		63EF15BB1BC4559900480CAF /* PushNotificationCenterImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF15BA1BC4559900480CAF /* PushNotificationCenterImplementation.m */; };
 		63EF15C01BC461DD00480CAF /* PushNotificationServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF15BF1BC461DD00480CAF /* PushNotificationServiceImplementation.m */; };
+		63F342B01C8B20AB002AF7CD /* EventStoreService.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D7460E1C8B0D5200E3A381 /* EventStoreService.m */; };
 		63F402F01BCF77CB0086D030 /* ApplicationAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F402ED1BCF77CB0086D030 /* ApplicationAssemblyTests.m */; };
 		63F402F11BCF77CB0086D030 /* ServiceComponentsAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F402EF1BCF77CB0086D030 /* ServiceComponentsAssemblyTests.m */; };
 		63F402FB1BCF79390086D030 /* OperationFactoriesAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F402FA1BCF79390086D030 /* OperationFactoriesAssemblyTests.m */; };
@@ -597,6 +598,7 @@
 		6373A3E71BBDC02100DF67FF /* RegistrationQuestionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationQuestionService.h; sourceTree = "<group>"; };
 		6373A3E91BBDC05900DF67FF /* SpeakerService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerService.h; sourceTree = "<group>"; };
 		6373A40F1BBDC5EA00DF67FF /* Conference.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Conference.xcdatamodel; sourceTree = "<group>"; };
+		638172081C8B118D0094F19A /* EventStoreServiceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventStoreServiceProtocol.h; sourceTree = "<group>"; };
 		638DBBCF1BEA385300B4B208 /* EventModuleAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventModuleAssembly.h; sourceTree = "<group>"; };
 		638DBBD01BEA385300B4B208 /* EventModuleAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventModuleAssembly.m; sourceTree = "<group>"; };
 		638DBCED1BEA385400B4B208 /* EventInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventInteractor.h; sourceTree = "<group>"; };
@@ -619,6 +621,8 @@
 		638DBD571BEE2B1000B4B208 /* EventInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventInfoTableViewCell.xib; sourceTree = "<group>"; };
 		638DBD621BEE2C0100B4B208 /* EventInfoTableViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventInfoTableViewCellObject.h; sourceTree = "<group>"; };
 		638DBD631BEE2C0100B4B208 /* EventInfoTableViewCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventInfoTableViewCellObject.m; sourceTree = "<group>"; };
+		63D7460D1C8B0D5200E3A381 /* EventStoreService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventStoreService.h; sourceTree = "<group>"; };
+		63D7460E1C8B0D5200E3A381 /* EventStoreService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventStoreService.m; sourceTree = "<group>"; };
 		63D86BD51C1313D000986536 /* EventPresenterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventPresenterTests.m; sourceTree = "<group>"; };
 		63D86BD81C1439D800986536 /* DateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateFormatter.h; sourceTree = "<group>"; };
 		63D86BD91C1439D800986536 /* DateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateFormatter.m; sourceTree = "<group>"; };
@@ -2146,6 +2150,7 @@
 		6373A3DF1BBDBDF700DF67FF /* ConcreteServices */ = {
 			isa = PBXGroup;
 			children = (
+				63D7460B1C8B0CF600E3A381 /* EventStoreService */,
 				63EF15BC1BC4617000480CAF /* PushNotificationSrvice */,
 				6373A3E01BBDBDF700DF67FF /* EventService */,
 				636B63C61BBDCC060053E38F /* LectureService */,
@@ -2305,6 +2310,16 @@
 				638DBD631BEE2C0100B4B208 /* EventInfoTableViewCellObject.m */,
 			);
 			path = EventInfoTableViewCellObject;
+			sourceTree = "<group>";
+		};
+		63D7460B1C8B0CF600E3A381 /* EventStoreService */ = {
+			isa = PBXGroup;
+			children = (
+				638172081C8B118D0094F19A /* EventStoreServiceProtocol.h */,
+				63D7460D1C8B0D5200E3A381 /* EventStoreService.h */,
+				63D7460E1C8B0D5200E3A381 /* EventStoreService.m */,
+			);
+			path = EventStoreService;
 			sourceTree = "<group>";
 		};
 		63D86BD71C1439C300986536 /* DateFormatter */ = {
@@ -4596,6 +4611,7 @@
 				9F1830931BC02293000E21A5 /* RESTRequestConfigurator.m in Sources */,
 				63D86BE11C14490000986536 /* EventCellObjectBuilderBase.m in Sources */,
 				63FD4E0B1BE621750046378E /* Event+CoreDataProperties.m in Sources */,
+				63F342B01C8B20AB002AF7CD /* EventStoreService.m in Sources */,
 				636F8DDA1BCB8FE800552B91 /* RamblerLocationModuleAssembly.m in Sources */,
 				63F51CA11C3D42E200AFB9D2 /* LecturePresenterStateStorage.m in Sources */,
 				9F1830A71BC032CF000E21A5 /* ParseRequestSigner.m in Sources */,
