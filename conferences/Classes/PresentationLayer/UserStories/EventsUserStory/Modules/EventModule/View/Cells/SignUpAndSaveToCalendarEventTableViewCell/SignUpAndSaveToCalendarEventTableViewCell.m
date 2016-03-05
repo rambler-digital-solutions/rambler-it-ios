@@ -25,6 +25,7 @@
 #import "Proxying/Extensions/UIResponder+CDProxying/UIResponder+CDProxying.h"
 
 static CGFloat const kSignUpAndSaveToCalendarEventTableViewCellHeight = 120.0f;
+static CGFloat const kSaveToCalendarButtonBorderWidth = 1.0f;
 
 @interface SignUpAndSaveToCalendarEventTableViewCell ()
 
@@ -46,7 +47,10 @@ static CGFloat const kSignUpAndSaveToCalendarEventTableViewCellHeight = 120.0f;
 
 - (BOOL)shouldUpdateCellWithObject:(SignUpAndSaveToCalendarEventTableViewCellObject *)object {
     self.signUpButton.backgroundColor = object.buttonColor;
-    self.saveToCalendarButton.backgroundColor = object.buttonColor;
+    
+    [self.saveToCalendarButton setTitleColor:object.buttonColor forState:UIControlStateNormal];
+    self.saveToCalendarButton.layer.borderColor = object.buttonColor.CGColor;
+    self.saveToCalendarButton.layer.borderWidth = kSaveToCalendarButtonBorderWidth;
     
     return YES;
 }
