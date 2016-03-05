@@ -26,6 +26,10 @@
 @implementation EventStoreService
 
 - (void)saveEventToCaledar:(EventPlainObject *)event withCompletionBlock:(EventStoreCompletionBlock)completionBlock{
+    if (![self needToSaveEvent:event]) {
+        return;
+    }
+    
     EKEventStore *eventStore = [EKEventStore new];
     NSMutableArray *errors = [@[] mutableCopy];
     
@@ -54,6 +58,26 @@
         
         completionBlock(errors);
     }];
+}
+
+#pragma mark - Private methods
+
+- (BOOL)needToSaveEvent:(EventPlainObject *)event {
+    EKEventStore *eventStore = [EKEventStore new];
+    
+    NSPredicate *eventPredicate = [eventStore predicateForEventsWithStartDate:event.startDate endDate:event.endDate calendars:nil];
+    
+    NSArray *events = [eventStore eventsMatchingPredicate:eventPredicate];
+    
+    BOOL needToSaveEvent = YES;
+    
+    for (EKEvent *calendarEvent in events) {
+        if ([calendarEvent.title isEqualToString:event.name]) {
+            needToSaveEvent = NO;
+        }
+    }
+    
+    return  needToSaveEvent;
 }
 
 @end
