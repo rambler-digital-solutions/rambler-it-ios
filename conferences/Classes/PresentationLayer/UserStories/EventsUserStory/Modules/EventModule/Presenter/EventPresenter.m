@@ -44,7 +44,7 @@
 }
 
 - (void)didTapSaveToCalendarButtonWithEvent:(EventPlainObject *)event {
-    
+    [self.interactor saveEventToCalendar:event];
 }
 
 - (void)didTapReadMoreEventDescriptionButton {
@@ -67,6 +67,10 @@
 
 - (void)didObtainEvent:(EventPlainObject *)event {
     [self.view configureViewWithEvent:event];
+}
+
+- (void)didSuccessfullySaveEventToCalendar {
+    [self.view displayEventSavedToCalendarAlert];
 }
 
 @end
