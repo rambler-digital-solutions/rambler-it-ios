@@ -56,7 +56,7 @@ static CGFloat const kCurrentVideoTranslationTableViewCellHeight = 60.0f;
 #pragma mark - IBActions
 
 - (IBAction)didTapCurrentTranslationButton:(UIButton *)sender {
-    [self.actionProxy didTapCurrentTranslationButton:sender];
+    [self.actionProxy didTapCurrentTranslationButton];
 }
 
 @end

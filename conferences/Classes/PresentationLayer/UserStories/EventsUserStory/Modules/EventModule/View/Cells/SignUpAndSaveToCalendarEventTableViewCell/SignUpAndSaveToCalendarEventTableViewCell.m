@@ -34,6 +34,8 @@ static CGFloat const kSaveToCalendarButtonBorderWidth = 1.0f;
 
 @property (weak, nonatomic) id <SignUpAndSaveToCalendarEventTableViewCellActionProtocol> actionProxy;
 
+@property (strong, nonatomic) SignUpAndSaveToCalendarEventTableViewCellObject *cellObject;
+
 @end
 
 @implementation SignUpAndSaveToCalendarEventTableViewCell
@@ -46,6 +48,7 @@ static CGFloat const kSaveToCalendarButtonBorderWidth = 1.0f;
 #pragma mark - NICell methods
 
 - (BOOL)shouldUpdateCellWithObject:(SignUpAndSaveToCalendarEventTableViewCellObject *)object {
+    self.cellObject = object;
     self.signUpButton.backgroundColor = object.buttonColor;
     
     [self.saveToCalendarButton setTitleColor:object.buttonColor forState:UIControlStateNormal];
@@ -62,11 +65,11 @@ static CGFloat const kSaveToCalendarButtonBorderWidth = 1.0f;
 #pragma mark - IBActions
 
 - (IBAction)didTapSignUpButton:(UIButton *)sender {
-    [self.actionProxy didTapSignUpButton:sender];
+    [self.actionProxy didTapSignUpButtonWithEvent:self.cellObject.event];
 }
 
 - (IBAction)didTapSaveToCalendarButton:(UIButton *)sender {
-    [self.actionProxy didTapSaveToCalendarButton:sender];
+    [self.actionProxy didTapSaveToCalendarButtonWithEvent:self.cellObject.event];
 }
 
 @end

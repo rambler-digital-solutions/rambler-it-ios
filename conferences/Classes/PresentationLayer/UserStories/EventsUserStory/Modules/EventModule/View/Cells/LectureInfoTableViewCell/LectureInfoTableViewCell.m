@@ -74,7 +74,7 @@ static CGFloat const kLectionInfoTableViewCellHeight = 340.0f;
 #pragma mark - IBActions
 
 - (IBAction)didTapReadMoreButton:(UIButton *)sender {
-    [self.actionProxy didTapReadMoreLectureDescriptionButton:sender];
+    [self.actionProxy didTapReadMoreLectureDescriptionButton];
 }
 
 @end

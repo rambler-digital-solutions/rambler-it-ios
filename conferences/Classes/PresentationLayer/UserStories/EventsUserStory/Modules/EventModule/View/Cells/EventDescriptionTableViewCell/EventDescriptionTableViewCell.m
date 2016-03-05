@@ -57,7 +57,7 @@ static CGFloat const kEventDescriptionTableViewCellHeight = 190.0f;
 #pragma mark - IBActions
 
 - (IBAction)didTapReadMoreButton:(UIButton *)sender {
-    [self.actionProxy didTapReadMoreEventDescriptionButton:sender];
+    [self.actionProxy didTapReadMoreEventDescriptionButton];
 }
 
 @end

@@ -25,6 +25,7 @@
 @interface SignUpAndSaveToCalendarEventTableViewCellObject ()
 
 @property (strong, nonatomic, readwrite) UIColor *buttonColor;
+@property (strong, nonatomic, readwrite) EventPlainObject *event;
 
 @end
 
@@ -35,6 +36,7 @@
 - (instancetype)initWithEvent:(EventPlainObject *)event {
     self = [super init];
     if (self) {
+        self.event = event;
         self.buttonColor = event.backgroundColor;
     }
     return self;
