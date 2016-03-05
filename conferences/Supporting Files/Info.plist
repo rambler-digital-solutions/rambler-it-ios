@@ -50,7 +50,7 @@
 		<string>ApplicationAssembly</string>
 		<string>TabBarModuleAssembly</string>
 		<string>RamblerLocationModuleAssembly</string>
-		<string>EventListModuleAssembly</string>
+		<string>AnnouncementListModuleAssembly</string>
 		<string>SystemInfrastructureAssembly</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
