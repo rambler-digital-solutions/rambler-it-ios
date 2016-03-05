@@ -39,23 +39,23 @@
     [self.interactor obtainEventByObjectId:self.presenterStateStorage.eventObjectId];
 }
 
-- (void)didTriggerSignUpButtonTappedEvent {
+- (void)didTapSignUpButtonWithEvent:(EventPlainObject *)event {
+
+}
+
+- (void)didTapSaveToCalendarButtonWithEvent:(EventPlainObject *)event {
     
 }
 
-- (void)didTriggerSaveToCalendarButtonTappedEvent {
+- (void)didTapReadMoreEventDescriptionButton {
     
 }
 
-- (void)didTriggerReadMoreEventDescriptionButtonTappedEvent {
+- (void)didTapReadMoreLectureDescriptionButton {
     
 }
 
-- (void)didTriggerReadMoreLectureDescriptionButtonTappedEvent {
-    
-}
-
-- (void)didTriggerCurrentTranslationButtonTapEvent {
+- (void)didTapCurrentTranslationButton {
     
 }
 
