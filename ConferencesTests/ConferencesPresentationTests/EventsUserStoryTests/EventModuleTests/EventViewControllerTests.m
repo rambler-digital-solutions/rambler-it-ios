@@ -118,52 +118,54 @@
 
 - (void)testSuccessDidTapSignUpButton {
     // given
+    EventPlainObject *event = [EventPlainObject new];
     
     // when
-    [self.viewController didTapSignUpButton:OCMOCK_ANY];
+    [self.viewController didTapSignUpButtonWithEvent:event];
     
     // then
-    OCMVerify([self.mockOutput didTriggerSignUpButtonTappedEvent]);
+    OCMVerify([self.mockOutput didTapSignUpButtonWithEvent:event]);
 }
 
 - (void)testSuccessdidTapSaveToCalendarButton {
     // given
+    EventPlainObject *event = [EventPlainObject new];
     
     // when
-    [self.viewController didTapSaveToCalendarButton:OCMOCK_ANY];
+    [self.viewController didTapSaveToCalendarButtonWithEvent:event];
     
     // then
-    OCMVerify([self.mockOutput didTriggerSaveToCalendarButtonTappedEvent]);
+    OCMVerify([self.mockOutput didTapSaveToCalendarButtonWithEvent:event]);
 }
 
 - (void)testSuccessDidTapReadMoreEventDescriptionButton {
     // given
     
     // when
-    [self.viewController didTapReadMoreEventDescriptionButton:OCMOCK_ANY];
+    [self.viewController didTapReadMoreEventDescriptionButton];
     
     // then
-    OCMVerify([self.mockOutput didTriggerReadMoreEventDescriptionButtonTappedEvent]);
+    OCMVerify([self.mockOutput didTapReadMoreEventDescriptionButton]);
 }
 
 - (void)testSuccessDidTapReadMoreLectureDescriptionButton {
     // given
     
     // when
-    [self.viewController didTapReadMoreLectureDescriptionButton:OCMOCK_ANY];
+    [self.viewController didTapReadMoreLectureDescriptionButton];
     
     // then
-    OCMVerify([self.mockOutput didTriggerReadMoreLectureDescriptionButtonTappedEvent]);
+    OCMVerify([self.mockOutput didTapReadMoreLectureDescriptionButton]);
 }
 
 - (void)testSuccessDidTapCurrentTranslationButton {
     // given
     
     // when
-    [self.viewController didTapCurrentTranslationButton:OCMOCK_ANY];
+    [self.viewController didTapCurrentTranslationButton];
     
     // then
-    OCMVerify([self.mockOutput didTriggerCurrentTranslationButtonTapEvent]);
+    OCMVerify([self.mockOutput didTapCurrentTranslationButton]);
 }
 
 @end
