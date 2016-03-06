@@ -20,9 +20,11 @@
 
 #import <Foundation/Foundation.h>
 
+@class EventPlainObject;
+
 @protocol SignUpAndSaveToCalendarEventTableViewCellActionProtocol <NSObject>
 
-- (void)didTapSignUpButton:(UIButton *)button;
-- (void)didTapSaveToCalendarButton:(UIButton *)button;
+- (void)didTapSignUpButtonWithEvent:(EventPlainObject *)event;
+- (void)didTapSaveToCalendarButtonWithEvent:(EventPlainObject *)event;
 
 @end

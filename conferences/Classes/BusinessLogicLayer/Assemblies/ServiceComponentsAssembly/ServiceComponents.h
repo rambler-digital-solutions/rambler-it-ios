@@ -24,11 +24,13 @@
 @protocol PushNotificationService;
 @protocol EventService;
 @protocol PrototypeMapper;
+@protocol EventStoreServiceProtocol;
 
 @protocol ServiceComponents <NSObject>
 
 - (id <PushNotificationService>)pushNotificationService;
 - (id <EventService>)eventService;
+- (id <EventStoreServiceProtocol>)eventStoreService;
 
 // вынести из сервисов
 - (id <PrototypeMapper>)eventPrototypeMapper;

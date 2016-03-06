@@ -33,5 +33,7 @@
  */
 - (void)didObtainEvent:(EventPlainObject *)event;
 
+- (void)didSuccessfullySaveEventToCalendar;
+
 @end
 

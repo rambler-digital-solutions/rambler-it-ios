@@ -28,12 +28,11 @@
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8q4-GU-u8o">
                         <rect key="frame" x="20" y="70" width="280" height="40"/>
-                        <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="dmN-g3-y2A"/>
                         </constraints>
                         <state key="normal" title="Сохранить в календарь">
-                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                         <connections>
                             <action selector="didTapSaveToCalendarButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="e8F-ik-XBa"/>

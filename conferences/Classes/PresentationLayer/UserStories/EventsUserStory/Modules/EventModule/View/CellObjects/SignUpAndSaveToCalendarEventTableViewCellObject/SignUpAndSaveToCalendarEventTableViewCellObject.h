@@ -25,6 +25,7 @@
 @interface SignUpAndSaveToCalendarEventTableViewCellObject : NSObject <NICellObject>
 
 @property (strong, nonatomic, readonly) UIColor *buttonColor;
+@property (strong, nonatomic, readonly) EventPlainObject *event;
 
 + (instancetype)objectWithEvent:(EventPlainObject *)event;
 

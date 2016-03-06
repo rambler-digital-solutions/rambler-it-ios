@@ -71,50 +71,53 @@
     OCMVerify([self.mockInteractor obtainEventByObjectId:eventObjectId]);
 }
 
-- (void)testSuccessDidTriggerSignUpButtonTappedEvent {
+- (void)testSuccesDidTapSignUpButtonWithEvent {
     // given
+    EventPlainObject *event = [EventPlainObject new];
     
     // when
-    [self.presenter didTriggerSignUpButtonTappedEvent];
+    [self.presenter didTapSignUpButtonWithEvent:event];
     
     // then
     #warning Complete test after method get implemented
 }
 
-- (void)testSuccessDidTriggerSaveToCalendarButtonTappedEvent {
+- (void)testSuccessDidTapSaveToCalendarButtonWithEvent {
     // given
+    EventPlainObject *event = [EventPlainObject new];
     
     // when
-    [self.presenter didTriggerSaveToCalendarButtonTappedEvent];
+    [self.presenter didTapSaveToCalendarButtonWithEvent:event];
     
     // then
+    OCMVerify([self.mockInteractor saveEventToCalendar:event]);
 }
 
-- (void)testSuccessDidTriggerReadMoreEventDescriptionButtonTappedEvent {
+- (void)testSuccessDidTapReadMoreEventDescriptionButton {
     // given
     
     // when
-    [self.presenter didTriggerReadMoreEventDescriptionButtonTappedEvent];
-    
-    // then
-    #warning Complete test after method get implemented
-}
-
-- (void)testSuccessDidTriggerReadMoreLectureDescriptionButtonTappedEvent {
-    // given
-    
-    // when
-    [self.presenter didTriggerReadMoreLectureDescriptionButtonTappedEvent];
+    [self.presenter didTapReadMoreEventDescriptionButton];
     
     // then
     #warning Complete test after method get implemented
 }
 
-- (void)testSuccessDidTriggerCurrentTranslationButtonTapEvent {
+- (void)testSuccessDidTapReadMoreLectureDescriptionButton {
     // given
     
     // when
-    [self.presenter didTriggerCurrentTranslationButtonTapEvent];
+    [self.presenter didTapReadMoreLectureDescriptionButton];
+    
+    // then
+    #warning Complete test after method get implemented
+}
+
+- (void)testSuccessDidTapCurrentTranslationButton {
+    // given
+    
+    // when
+    [self.presenter didTapCurrentTranslationButton];
     
     // then
     #warning Complete test after method get implemented

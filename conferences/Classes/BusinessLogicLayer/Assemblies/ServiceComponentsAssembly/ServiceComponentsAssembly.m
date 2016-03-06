@@ -27,6 +27,8 @@
 #import "OperationSchedulerImplementation.h"
 #import "PrototypeMapper.h"
 #import "EventPrototypeMapper.h"
+#import "EventStoreServiceProtocol.h"
+#import "EventStoreService.h"
 
 @implementation ServiceComponentsAssembly
 
@@ -51,6 +53,10 @@
 
 - (id<PrototypeMapper>)eventPrototypeMapper {
     return [TyphoonDefinition withClass:[EventPrototypeMapper class]];
+}
+
+- (id <EventStoreServiceProtocol>)eventStoreService {
+    return [TyphoonDefinition withClass:[EventStoreService class]];
 }
 
 @end

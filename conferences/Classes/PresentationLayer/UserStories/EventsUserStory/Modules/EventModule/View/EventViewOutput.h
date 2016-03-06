@@ -21,6 +21,7 @@
 #import <Foundation/Foundation.h>
 
 @class UIButton;
+@class EventPlainObject;
 
 @protocol EventViewOutput <NSObject>
 
@@ -36,35 +37,35 @@
  
  Method is used to inform presenter that "sign up" button was tapped
  */
-- (void)didTriggerSignUpButtonTappedEvent;
+- (void)didTapSignUpButtonWithEvent:(EventPlainObject *)event;
 
 /**
  @author Artem Karpushin
  
  Method is used to inform presenter that "save to calendar" button was tapped
  */
-- (void)didTriggerSaveToCalendarButtonTappedEvent;
+- (void)didTapSaveToCalendarButtonWithEvent:(EventPlainObject *)event;
 
 /**
  @author Artem Karpushin
  
  Method is used to inform presenter that "read more" button of event description was tapped
  */
-- (void)didTriggerReadMoreEventDescriptionButtonTappedEvent;
+- (void)didTapReadMoreEventDescriptionButton;
 
 /**
  @author Artem Karpushin
  
  Method is used to inform presenter that "read more" button of lecture description was tapped
  */
-- (void)didTriggerReadMoreLectureDescriptionButtonTappedEvent;
+- (void)didTapReadMoreLectureDescriptionButton;
 
 /**
  @author Artem Karpushin
  
  Method is used to inform presenter that "current translation" button was tapped
  */
-- (void)didTriggerCurrentTranslationButtonTapEvent;
+- (void)didTapCurrentTranslationButton;
 
 /**
  @author Artem Karpushin

@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--Event List Table View Controller-->
+        <!--Announcement List Table View Controller-->
         <scene sceneID="nOx-C3-ZAu">
             <objects>
-                <tableViewController storyboardIdentifier="EventListTableViewController" id="nCN-ol-buU" customClass="EventListTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="AnnouncementListTableViewController" id="nCN-ol-buU" customClass="AnnouncementListTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="LWI-Zc-aHz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

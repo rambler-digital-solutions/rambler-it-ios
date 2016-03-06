@@ -22,6 +22,6 @@
 
 @protocol CurrentVideoTranslationTableViewCellActionProtocol <NSObject>
 
-- (void)didTapCurrentTranslationButton:(UIButton *)button;
+- (void)didTapCurrentTranslationButton;
 
 @end

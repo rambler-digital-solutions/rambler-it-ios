@@ -33,5 +33,7 @@
  */
 - (void)obtainEventByObjectId:(NSString *)objectId;
 
+- (void)saveEventToCalendar:(EventPlainObject *)event;
+
 @end
 

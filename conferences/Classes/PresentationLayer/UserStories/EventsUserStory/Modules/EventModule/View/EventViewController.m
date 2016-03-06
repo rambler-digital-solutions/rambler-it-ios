@@ -50,7 +50,7 @@
 #pragma mark - EventViewInput
 
 - (void)configureViewWithEvent:(EventPlainObject *)event {
-    [self configureNavigationBarWithColor:event.backgroundColor];
+    [self setupNavigationBarColor:event.backgroundColor];
     
     self.dataDisplayManager.delegate = self;
     [self.dataDisplayManager configureDataDisplayManagerWithEvent:event];
@@ -61,26 +61,44 @@
     [self setupHeaderViewWithEvent:event];
 }
 
+- (void)displayEventSavedToCalendarAlert {
+    /**
+     @author Artem Karpushin
+     
+     TODO: move to localized strings
+     */
+    NSString *EventSavedToCalendarAlertMessage = @"Событие сохранено в календарь.";
+    NSString *EmptyAlertTitle = @"";
+    NSString *OKAlertActionTitle = @"OK";
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:EmptyAlertTitle message:EventSavedToCalendarAlertMessage preferredStyle: UIAlertControllerStyleAlert];
+
+    UIAlertAction *closeAction = [UIAlertAction actionWithTitle:OKAlertActionTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {}];
+    
+    [alert addAction:closeAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 #pragma mark - EventTableViewCellActionProtocol
 
-- (void)didTapSignUpButton:(UIButton *)button {
-    [self.output didTriggerSignUpButtonTappedEvent];
+- (void)didTapSignUpButtonWithEvent:(EventPlainObject *)event {
+    [self.output didTapSignUpButtonWithEvent:event];
 }
 
-- (void)didTapSaveToCalendarButton:(UIButton *)button {
-    [self.output didTriggerSaveToCalendarButtonTappedEvent];
+- (void)didTapSaveToCalendarButtonWithEvent:(EventPlainObject *)event {
+    [self.output didTapSaveToCalendarButtonWithEvent:event];
 }
 
-- (void)didTapReadMoreEventDescriptionButton:(UIButton *)button {
-    [self.output didTriggerReadMoreEventDescriptionButtonTappedEvent];
+- (void)didTapReadMoreEventDescriptionButton {
+    [self.output didTapReadMoreEventDescriptionButton];
 }
 
-- (void)didTapReadMoreLectureDescriptionButton:(UIButton *)button {
-    [self.output didTriggerReadMoreLectureDescriptionButtonTappedEvent];
+- (void)didTapReadMoreLectureDescriptionButton {
+    [self.output didTapReadMoreLectureDescriptionButton];
 }
 
-- (void)didTapCurrentTranslationButton:(UIButton *)button {
-    [self.output didTriggerCurrentTranslationButtonTapEvent];
+- (void)didTapCurrentTranslationButton {
+    [self.output didTapCurrentTranslationButton];
 }
 
 #pragma mark - EventDataDisplayManagerDelegate
@@ -109,7 +127,7 @@
     [self.tableView setTableHeaderView:tableViewHeaderView];
 }
 
-- (void)configureNavigationBarWithColor:(UIColor *)color {
+- (void)setupNavigationBarColor:(UIColor *)color {
     [self.navigationController.navigationBar setBarTintColor:color];
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new]

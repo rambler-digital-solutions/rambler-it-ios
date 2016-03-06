@@ -24,6 +24,7 @@
 #import "EventPlainObject.h"
 #import "PrototypeMapper.h"
 #import "EventTypeDeterminator.h"
+#import "EventStoreServiceProtocol.h"
 
 static NSString *const kEventByObjectIdPredicateFormat = @"objectId = %@";
 
@@ -40,6 +41,17 @@ static NSString *const kEventByObjectIdPredicateFormat = @"objectId = %@";
     EventPlainObject *eventPlainObject = [self getPlainEventFromManagedObject:managedObjectEvent];
     
     [self.output didObtainEvent:eventPlainObject];
+}
+
+- (void)saveEventToCalendar:(EventPlainObject *)event {
+    [self.eventStoreService saveEventToCaledar:event withCompletionBlock:^(NSArray *errors) {
+        if (errors.count > 0) {
+            // process errors
+        }
+        else {
+            [self.output didSuccessfullySaveEventToCalendar];
+        }
+    }];
 }
 
 #pragma mark - Private methods

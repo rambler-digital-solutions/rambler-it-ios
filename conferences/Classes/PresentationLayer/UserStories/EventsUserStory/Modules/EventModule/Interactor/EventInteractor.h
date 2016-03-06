@@ -24,6 +24,7 @@
 @protocol EventInteractorOutput;
 @protocol EventService;
 @protocol PrototypeMapper;
+@protocol EventStoreServiceProtocol;
 @class EventTypeDeterminator;
 
 @interface EventInteractor : NSObject<EventInteractorInput>
@@ -32,6 +33,7 @@
 @property (strong, nonatomic) id <EventService> eventService;
 @property (strong, nonatomic) id <PrototypeMapper> eventPrototypeMapper;
 @property (strong, nonatomic) EventTypeDeterminator *eventTypeDeterminator;
+@property (strong, nonatomic) id <EventStoreServiceProtocol> eventStoreService;
 
 @end
 

@@ -33,5 +33,7 @@
  */
 - (void)configureViewWithEvent:(EventPlainObject *)event;
 
+- (void)displayEventSavedToCalendarAlert;
+
 @end
 

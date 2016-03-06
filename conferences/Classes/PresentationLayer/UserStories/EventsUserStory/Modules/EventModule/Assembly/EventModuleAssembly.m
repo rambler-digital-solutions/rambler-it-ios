@@ -58,6 +58,8 @@
                                                       with:[self.serviceComponents eventPrototypeMapper]];
                                 [definition injectProperty:@selector(eventTypeDeterminator)
                                                       with:[self.presentationLayerHelpersAssembly eventTypeDeterminator]];
+                                [definition injectProperty:@selector(eventStoreService)
+                                                      with:[self.serviceComponents eventStoreService]];
              }];
 }
 

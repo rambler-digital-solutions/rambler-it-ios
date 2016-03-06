@@ -39,23 +39,23 @@
     [self.interactor obtainEventByObjectId:self.presenterStateStorage.eventObjectId];
 }
 
-- (void)didTriggerSignUpButtonTappedEvent {
+- (void)didTapSignUpButtonWithEvent:(EventPlainObject *)event {
+
+}
+
+- (void)didTapSaveToCalendarButtonWithEvent:(EventPlainObject *)event {
+    [self.interactor saveEventToCalendar:event];
+}
+
+- (void)didTapReadMoreEventDescriptionButton {
     
 }
 
-- (void)didTriggerSaveToCalendarButtonTappedEvent {
+- (void)didTapReadMoreLectureDescriptionButton {
     
 }
 
-- (void)didTriggerReadMoreEventDescriptionButtonTappedEvent {
-    
-}
-
-- (void)didTriggerReadMoreLectureDescriptionButtonTappedEvent {
-    
-}
-
-- (void)didTriggerCurrentTranslationButtonTapEvent {
+- (void)didTapCurrentTranslationButton {
     
 }
 
@@ -67,6 +67,10 @@
 
 - (void)didObtainEvent:(EventPlainObject *)event {
     [self.view configureViewWithEvent:event];
+}
+
+- (void)didSuccessfullySaveEventToCalendar {
+    [self.view displayEventSavedToCalendarAlert];
 }
 
 @end
