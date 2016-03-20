@@ -14,8 +14,8 @@
 		6302EE8B1C60BA0900B65C04 /* NearestAnnouncementTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6302EE871C60BA0900B65C04 /* NearestAnnouncementTableViewCell.m */; };
 		6302EE8C1C60BA0900B65C04 /* NearestAnnouncementTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6302EE881C60BA0900B65C04 /* NearestAnnouncementTableViewCell.xib */; };
 		6302EE901C60BC6900B65C04 /* GrayTableViewSectionHeaderAndFooterCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6302EE8F1C60BC6900B65C04 /* GrayTableViewSectionHeaderAndFooterCellObject.m */; };
-		6302EE951C60BC8D00B65C04 /* GrayTableViewSectionHeaderAndFooterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6302EE931C60BC8D00B65C04 /* GrayTableViewSectionHeaderAndFooterCell.m */; };
-		6302EE961C60BC8D00B65C04 /* GrayTableViewSectionHeaderAndFooterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6302EE941C60BC8D00B65C04 /* GrayTableViewSectionHeaderAndFooterCell.xib */; };
+		6302EE951C60BC8D00B65C04 /* TableViewSectionHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6302EE931C60BC8D00B65C04 /* TableViewSectionHeaderCell.m */; };
+		6302EE961C60BC8D00B65C04 /* TableViewSectionHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6302EE941C60BC8D00B65C04 /* TableViewSectionHeaderCell.xib */; };
 		63136F931BDCD8B600994356 /* AnnouncementListDataDisplayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136F921BDCD8B600994356 /* AnnouncementListDataDisplayManager.m */; };
 		63136FD31BDCDB2700994356 /* EmbedModuleSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136F971BDCDB2600994356 /* EmbedModuleSegue.m */; };
 		63136FD41BDCDB2700994356 /* EmbedModuleTransitionSegueInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136F991BDCDB2600994356 /* EmbedModuleTransitionSegueInfo.m */; };
@@ -332,9 +332,9 @@
 		6302EE881C60BA0900B65C04 /* NearestAnnouncementTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NearestAnnouncementTableViewCell.xib; sourceTree = "<group>"; };
 		6302EE8E1C60BC6800B65C04 /* GrayTableViewSectionHeaderAndFooterCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrayTableViewSectionHeaderAndFooterCellObject.h; sourceTree = "<group>"; };
 		6302EE8F1C60BC6900B65C04 /* GrayTableViewSectionHeaderAndFooterCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrayTableViewSectionHeaderAndFooterCellObject.m; sourceTree = "<group>"; };
-		6302EE921C60BC8D00B65C04 /* GrayTableViewSectionHeaderAndFooterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrayTableViewSectionHeaderAndFooterCell.h; sourceTree = "<group>"; };
-		6302EE931C60BC8D00B65C04 /* GrayTableViewSectionHeaderAndFooterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrayTableViewSectionHeaderAndFooterCell.m; sourceTree = "<group>"; };
-		6302EE941C60BC8D00B65C04 /* GrayTableViewSectionHeaderAndFooterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GrayTableViewSectionHeaderAndFooterCell.xib; sourceTree = "<group>"; };
+		6302EE921C60BC8D00B65C04 /* TableViewSectionHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewSectionHeaderCell.h; sourceTree = "<group>"; };
+		6302EE931C60BC8D00B65C04 /* TableViewSectionHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewSectionHeaderCell.m; sourceTree = "<group>"; };
+		6302EE941C60BC8D00B65C04 /* TableViewSectionHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewSectionHeaderCell.xib; sourceTree = "<group>"; };
 		63136F911BDCD8B600994356 /* AnnouncementListDataDisplayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnouncementListDataDisplayManager.h; sourceTree = "<group>"; };
 		63136F921BDCD8B600994356 /* AnnouncementListDataDisplayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnouncementListDataDisplayManager.m; sourceTree = "<group>"; };
 		63136F961BDCDB2600994356 /* EmbedModuleSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmbedModuleSegue.h; sourceTree = "<group>"; };
@@ -984,13 +984,14 @@
 			path = GrayTableViewSectionHeaderAndFooterCellObject;
 			sourceTree = "<group>";
 		};
-		6302EE911C60BC8D00B65C04 /* GrayTableViewSectionHeaderAndFooterCell */ = {
+		6302EE911C60BC8D00B65C04 /* TableViewSectionHeaderCell */ = {
 			isa = PBXGroup;
 			children = (
-				6302EE921C60BC8D00B65C04 /* GrayTableViewSectionHeaderAndFooterCell.h */,
-				6302EE931C60BC8D00B65C04 /* GrayTableViewSectionHeaderAndFooterCell.m */,
-				6302EE941C60BC8D00B65C04 /* GrayTableViewSectionHeaderAndFooterCell.xib */,
+				6302EE921C60BC8D00B65C04 /* TableViewSectionHeaderCell.h */,
+				6302EE931C60BC8D00B65C04 /* TableViewSectionHeaderCell.m */,
+				6302EE941C60BC8D00B65C04 /* TableViewSectionHeaderCell.xib */,
 			);
+			name = TableViewSectionHeaderCell;
 			path = GrayTableViewSectionHeaderAndFooterCell;
 			sourceTree = "<group>";
 		};
@@ -2682,7 +2683,7 @@
 		63F51CA71C42ACE600AFB9D2 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				6302EE911C60BC8D00B65C04 /* GrayTableViewSectionHeaderAndFooterCell */,
+				6302EE911C60BC8D00B65C04 /* TableViewSectionHeaderCell */,
 				631808651C4A86E200A61E7D /* TableViewCellWithTextLabelAndImageView */,
 				63F51CA81C42ACE600AFB9D2 /* TableViewCellWithTextLabel */,
 			);
@@ -4447,7 +4448,7 @@
 				63F8F2751BF7474C000017F3 /* SignUpAndSaveToCalendarEventTableViewCell.xib in Resources */,
 				636DD83E1C285FC000436201 /* ReportListTableViewCell.xib in Resources */,
 				9F8E5F701BC2552600DC10DB /* Conferences.API.plist in Resources */,
-				6302EE961C60BC8D00B65C04 /* GrayTableViewSectionHeaderAndFooterCell.xib in Resources */,
+				6302EE961C60BC8D00B65C04 /* TableViewSectionHeaderCell.xib in Resources */,
 				63F8F2541BF74351000017F3 /* EventDescriptionTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4721,7 +4722,7 @@
 				638DBD4E1BEA398D00B4B208 /* EventDataDisplayManager.m in Sources */,
 				9F0A6C1D1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m in Sources */,
 				9F0A85001BC1698B006F79FB /* ResponseDeserializationOperation.m in Sources */,
-				6302EE951C60BC8D00B65C04 /* GrayTableViewSectionHeaderAndFooterCell.m in Sources */,
+				6302EE951C60BC8D00B65C04 /* TableViewSectionHeaderCell.m in Sources */,
 				9F0A853B1BC1908B006F79FB /* OperationChainer.m in Sources */,
 				636DD8481C28604400436201 /* ReportListTableViewCellObject.m in Sources */,
 				636F8CC01BC97E7F00552B91 /* RegistrationQuestion.m in Sources */,

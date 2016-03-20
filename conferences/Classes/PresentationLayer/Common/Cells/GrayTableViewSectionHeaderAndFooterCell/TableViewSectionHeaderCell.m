@@ -18,12 +18,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "GrayTableViewSectionHeaderAndFooterCell.h"
+#import "TableViewSectionHeaderCell.h"
 #import "GrayTableViewSectionHeaderAndFooterCellObject.h"
 
 static CGFloat const kReportListTableViewHeaderAndFooterCellHeight = 5.0f;
 
-@implementation GrayTableViewSectionHeaderAndFooterCell
+@implementation TableViewSectionHeaderCell
 
 #pragma mark - NICell methods
 

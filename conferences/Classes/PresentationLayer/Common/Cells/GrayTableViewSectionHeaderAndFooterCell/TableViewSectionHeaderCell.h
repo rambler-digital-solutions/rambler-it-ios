@@ -21,6 +21,6 @@
 #import <UIKit/UIKit.h>
 #import <NICellFactory.h>
 
-@interface GrayTableViewSectionHeaderAndFooterCell : UITableViewCell <NICell>
+@interface TableViewSectionHeaderCell : UITableViewCell <NICell>
 
 @end

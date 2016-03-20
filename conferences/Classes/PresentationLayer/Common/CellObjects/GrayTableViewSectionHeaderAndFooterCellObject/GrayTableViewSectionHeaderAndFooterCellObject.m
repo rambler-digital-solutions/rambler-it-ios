@@ -19,18 +19,18 @@
 // THE SOFTWARE.
 
 #import "GrayTableViewSectionHeaderAndFooterCellObject.h"
-#import "GrayTableViewSectionHeaderAndFooterCell.h"
+#import "TableViewSectionHeaderCell.h"
 
 @implementation GrayTableViewSectionHeaderAndFooterCellObject
 
 #pragma mark - NICellObject methods
 
 - (Class)cellClass {
-    return [GrayTableViewSectionHeaderAndFooterCell class];
+    return [TableViewSectionHeaderCell class];
 }
 
 - (UINib *)cellNib {
-    return [UINib nibWithNibName:NSStringFromClass([GrayTableViewSectionHeaderAndFooterCell class]) bundle:[NSBundle mainBundle]];
+    return [UINib nibWithNibName:NSStringFromClass([TableViewSectionHeaderCell class]) bundle:[NSBundle mainBundle]];
 }
 
 @end
