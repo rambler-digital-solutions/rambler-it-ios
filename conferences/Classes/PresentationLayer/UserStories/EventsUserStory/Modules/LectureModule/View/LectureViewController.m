@@ -25,6 +25,8 @@
 #import "LecturePlainObject.h"
 #import "SpeakerShortInfoModuleInput.h"
 
+static CGFloat tableViewEstimatedRowHeight = 44.0f;
+
 @interface LectureViewController() <UIGestureRecognizerDelegate>
 
 @end
@@ -40,8 +42,12 @@
 
 - (void)configureViewWithLecture:(LecturePlainObject *)lecture {
     [self.dataDisplayManager configureDataDisplayManagerWithLecture:lecture];
+    
     self.tableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.tableView];
     self.tableView.delegate = [self.dataDisplayManager delegateForTableView:self.tableView withBaseDelegate:nil];
+    self.tableView.tableFooterView = [UIView new];
+    self.tableView.estimatedRowHeight = tableViewEstimatedRowHeight;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
     
     SpeakerPlainObject *speaker = lecture.speakers.firstObject;
     [self setupHeaderViewWithSpeaker:speaker];
