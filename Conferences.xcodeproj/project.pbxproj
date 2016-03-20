@@ -36,6 +36,9 @@
 		6315BA0F1C9EC2D400999877 /* TableViewSectionHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6315BA0D1C9EC2D400999877 /* TableViewSectionHeaderCell.m */; };
 		6315BA101C9EC2D400999877 /* TableViewSectionHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6315BA0E1C9EC2D400999877 /* TableViewSectionHeaderCell.xib */; };
 		6315BA141C9EC32300999877 /* VideoRecordTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6315BA131C9EC32300999877 /* VideoRecordTableViewCellObject.m */; };
+		6315BAAF1C9ED23200999877 /* SpeakerInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6315BAAD1C9ED23200999877 /* SpeakerInfoTableViewCell.m */; };
+		6315BAB01C9ED23200999877 /* SpeakerInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6315BAAE1C9ED23200999877 /* SpeakerInfoTableViewCell.xib */; };
+		6315BAB31C9ED24E00999877 /* SpeakerInfoTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6315BAB21C9ED24E00999877 /* SpeakerInfoTableViewCellObject.m */; };
 		6318083F1C482B1300A61E7D /* SpeakerShortInfoModuleAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 6318082D1C482B1300A61E7D /* SpeakerShortInfoModuleAssembly.m */; };
 		631808401C482B1300A61E7D /* SpeakerShortInfoInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 631808301C482B1300A61E7D /* SpeakerShortInfoInteractor.m */; };
 		631808411C482B1300A61E7D /* SpeakerShortInfoPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 631808351C482B1300A61E7D /* SpeakerShortInfoPresenter.m */; };
@@ -396,6 +399,11 @@
 		6315BA0E1C9EC2D400999877 /* TableViewSectionHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewSectionHeaderCell.xib; sourceTree = "<group>"; };
 		6315BA121C9EC32300999877 /* VideoRecordTableViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoRecordTableViewCellObject.h; sourceTree = "<group>"; };
 		6315BA131C9EC32300999877 /* VideoRecordTableViewCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoRecordTableViewCellObject.m; sourceTree = "<group>"; };
+		6315BAAC1C9ED23200999877 /* SpeakerInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerInfoTableViewCell.h; sourceTree = "<group>"; };
+		6315BAAD1C9ED23200999877 /* SpeakerInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerInfoTableViewCell.m; sourceTree = "<group>"; };
+		6315BAAE1C9ED23200999877 /* SpeakerInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeakerInfoTableViewCell.xib; sourceTree = "<group>"; };
+		6315BAB11C9ED24E00999877 /* SpeakerInfoTableViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerInfoTableViewCellObject.h; sourceTree = "<group>"; };
+		6315BAB21C9ED24E00999877 /* SpeakerInfoTableViewCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerInfoTableViewCellObject.m; sourceTree = "<group>"; };
 		6318082C1C482B1300A61E7D /* SpeakerShortInfoModuleAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerShortInfoModuleAssembly.h; sourceTree = "<group>"; };
 		6318082D1C482B1300A61E7D /* SpeakerShortInfoModuleAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerShortInfoModuleAssembly.m; sourceTree = "<group>"; };
 		6318082F1C482B1300A61E7D /* SpeakerShortInfoInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerShortInfoInteractor.h; sourceTree = "<group>"; };
@@ -1199,6 +1207,25 @@
 			path = VideoRecordTableViewCellObject;
 			sourceTree = "<group>";
 		};
+		6315BAAA1C9ED20600999877 /* SpeakerInfoTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				6315BAAC1C9ED23200999877 /* SpeakerInfoTableViewCell.h */,
+				6315BAAD1C9ED23200999877 /* SpeakerInfoTableViewCell.m */,
+				6315BAAE1C9ED23200999877 /* SpeakerInfoTableViewCell.xib */,
+			);
+			path = SpeakerInfoTableViewCell;
+			sourceTree = "<group>";
+		};
+		6315BAAB1C9ED20D00999877 /* SpeakerInfoTableViewCellObject */ = {
+			isa = PBXGroup;
+			children = (
+				6315BAB11C9ED24E00999877 /* SpeakerInfoTableViewCellObject.h */,
+				6315BAB21C9ED24E00999877 /* SpeakerInfoTableViewCellObject.m */,
+			);
+			path = SpeakerInfoTableViewCellObject;
+			sourceTree = "<group>";
+		};
 		631808111C482ABC00A61E7D /* SpeakerShortInfoModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -1390,6 +1417,7 @@
 		6318089D1C4AD26000A61E7D /* CellObjects */ = {
 			isa = PBXGroup;
 			children = (
+				6315BAAB1C9ED20D00999877 /* SpeakerInfoTableViewCellObject */,
 			);
 			path = CellObjects;
 			sourceTree = "<group>";
@@ -1397,6 +1425,7 @@
 		6318089E1C4AD26000A61E7D /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				6315BAAA1C9ED20600999877 /* SpeakerInfoTableViewCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -4437,6 +4466,7 @@
 				63F8F24F1BF74302000017F3 /* CurrentVideoTranslationTableViewCell.xib in Resources */,
 				631808741C4AA54B00A61E7D /* LectureDescriptionTableViewCell.xib in Resources */,
 				63F51C631C3D409200AFB9D2 /* EventHeaderView.xib in Resources */,
+				6315BAB01C9ED23200999877 /* SpeakerInfoTableViewCell.xib in Resources */,
 				63F8F2751BF7474C000017F3 /* SignUpAndSaveToCalendarEventTableViewCell.xib in Resources */,
 				636DD83E1C285FC000436201 /* ReportListTableViewCell.xib in Resources */,
 				9F8E5F701BC2552600DC10DB /* Conferences.API.plist in Resources */,
@@ -4691,6 +4721,7 @@
 				636F8DF91BCB90E500552B91 /* AnnouncementListPresenter.m in Sources */,
 				638DBD591BEE2B1000B4B208 /* EventInfoTableViewCell.m in Sources */,
 				9F0A85021BC1698B006F79FB /* ResponseValidationOperation.m in Sources */,
+				6315BAAF1C9ED23200999877 /* SpeakerInfoTableViewCell.m in Sources */,
 				63136FDC1BDCDB2700994356 /* CollectionViewDataDisplayManager.m in Sources */,
 				636DD7EE1C26B93900436201 /* PreviousEventTableViewCellObject.m in Sources */,
 				631FFE541BEF930200749DB8 /* ReportListInteractor.m in Sources */,
@@ -4742,6 +4773,7 @@
 				6315BA0A1C9EC2A200999877 /* TableViewSectionHeaderCellObject.m in Sources */,
 				63F51C621C3D409200AFB9D2 /* EventHeaderView.m in Sources */,
 				631FFE1A1BEF451400749DB8 /* UIView+CDResponder.m in Sources */,
+				6315BAB31C9ED24E00999877 /* SpeakerInfoTableViewCellObject.m in Sources */,
 				6302EE8B1C60BA0900B65C04 /* NearestAnnouncementTableViewCell.m in Sources */,
 				63F8F2E71BF9126B000017F3 /* LectureInfoTableViewCell.m in Sources */,
 				631FFE571BEF930200749DB8 /* ReportListTableViewController.m in Sources */,
