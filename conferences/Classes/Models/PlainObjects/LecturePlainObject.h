@@ -34,5 +34,6 @@
 @property (strong, nonatomic, readwrite) NSArray *speakers;
 // add to model
 @property (strong, nonatomic, readwrite) NSString *objectId;
+@property (strong, nonatomic, readwrite) NSDate *startDate;
 
 @end
