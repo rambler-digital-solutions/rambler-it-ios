@@ -24,7 +24,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 
 static NSString *const kPlaceholderImageName = @"placeholder";
-static CGFloat const kEventListTableViewCellHeight = 64.0f;
+static CGFloat const ValueToCutForShortcutDisplayMode = 64.0f;
 
 @interface NearestAnnouncementTableViewCell ()
 
@@ -50,7 +50,14 @@ static CGFloat const kEventListTableViewCellHeight = 64.0f;
 }
 
 + (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
-    return tableView.frame.size.height - kEventListTableViewCellHeight;
+    NearestAnnouncementTableViewCellDisplayMode displayMode = ((NearestAnnouncementTableViewCellObject *)object).displayMode;
+        
+    if (displayMode == NearestAnnouncementTableViewCellDisplayModeDefault) {
+        return tableView.frame.size.height;
+    }
+    else {
+        return tableView.frame.size.height - ValueToCutForShortcutDisplayMode;
+    }
 }
 
 @end

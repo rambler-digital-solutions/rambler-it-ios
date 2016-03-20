@@ -89,6 +89,8 @@
     [cellObjects addObject:nearestEventTableViewCellObject];
     
     if (self.events.count > 1) {
+        nearestEventTableViewCellObject.displayMode = NearestAnnouncementTableViewCellDisplayModeShortcut;
+        
         GrayTableViewSectionHeaderAndFooterCellObject *futureEventListSectionHeaderAndFooter = [GrayTableViewSectionHeaderAndFooterCellObject new];
         [cellObjects addObject:futureEventListSectionHeaderAndFooter];
         
@@ -101,6 +103,9 @@
             [cellObjects addObject:eventListCellObject];
         }
         [cellObjects addObject:futureEventListSectionHeaderAndFooter];
+    }
+    else {
+        nearestEventTableViewCellObject.displayMode = NearestAnnouncementTableViewCellDisplayModeDefault;
     }
     return cellObjects;
 }
