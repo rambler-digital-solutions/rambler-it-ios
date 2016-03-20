@@ -10,6 +10,7 @@
 #import <Nimbus/NimbusModels.h>
 
 #import "SpeakerPlainObject.h"
+#import "SpeakerInfoTableViewCellObject.h"
 
 @interface SpeakerInfoDataDisplayManager ()
 
@@ -53,6 +54,9 @@
 
 - (NSArray *)generateCellObjects {
     NSMutableArray *cellObjects = [@[] mutableCopy];
+    
+    SpeakerInfoTableViewCellObject *speakerInfoCellObject = [SpeakerInfoTableViewCellObject objectWithText:self.speaker.biography];
+    [cellObjects addObject:speakerInfoCellObject];
     
     return cellObjects;
 }
