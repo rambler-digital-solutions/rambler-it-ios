@@ -390,6 +390,7 @@
 		63136FD11BDCDB2700994356 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
 		63136FD21BDCDB2700994356 /* TabBarViewInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewInput.h; sourceTree = "<group>"; };
 		63136FE51BDCDB9E00994356 /* DataDisplayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataDisplayManager.h; sourceTree = "<group>"; };
+		6315BA001C9E9F6B00999877 /* NearestAnnouncementTableViewCellDisplayMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NearestAnnouncementTableViewCellDisplayMode.h; sourceTree = "<group>"; };
 		6318082C1C482B1300A61E7D /* SpeakerShortInfoModuleAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerShortInfoModuleAssembly.h; sourceTree = "<group>"; };
 		6318082D1C482B1300A61E7D /* SpeakerShortInfoModuleAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerShortInfoModuleAssembly.m; sourceTree = "<group>"; };
 		6318082F1C482B1300A61E7D /* SpeakerShortInfoInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerShortInfoInteractor.h; sourceTree = "<group>"; };
@@ -968,6 +969,7 @@
 				6302EE861C60BA0900B65C04 /* NearestAnnouncementTableViewCell.h */,
 				6302EE871C60BA0900B65C04 /* NearestAnnouncementTableViewCell.m */,
 				6302EE881C60BA0900B65C04 /* NearestAnnouncementTableViewCell.xib */,
+				6315BA001C9E9F6B00999877 /* NearestAnnouncementTableViewCellDisplayMode.h */,
 			);
 			name = NearestAnnouncementTableViewCell;
 			path = NearestEventTableViewCell;
