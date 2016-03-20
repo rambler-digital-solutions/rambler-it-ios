@@ -18,21 +18,21 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "PastVideoTranslationTableViewCell.h"
-#import "PastVideoTranslationTableViewCellObject.h"
+#import "VideoRecordTableViewCell.h"
+#import "VideoRecordTableViewCellObject.h"
 
-static CGFloat const kPastVideoTranslationTableViewCellHeight = 100.0f;
+static CGFloat const VideoRecordTableViewCellHeight = 100.0f;
 
-@implementation PastVideoTranslationTableViewCell
+@implementation VideoRecordTableViewCell
 
 #pragma mark - NICell methods
 
-- (BOOL)shouldUpdateCellWithObject:(PastVideoTranslationTableViewCellObject *)object {
+- (BOOL)shouldUpdateCellWithObject:(VideoRecordTableViewCellObject *)object {
     return YES;
 }
 
 + (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
-    return kPastVideoTranslationTableViewCellHeight;
+    return VideoRecordTableViewCellHeight;
 }
 
 @end

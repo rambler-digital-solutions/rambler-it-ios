@@ -19,21 +19,8 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
+#import <Nimbus/NimbusModels.h>
 
-@interface LecturePlainObject : NSObject
-
-// пока окончательно не сформирована модель данных - все проперти readwrite
-
-@property (strong, nonatomic, readwrite) NSNumber *favourite;
-@property (strong, nonatomic, readwrite) NSString *name;
-@property (strong, nonatomic, readwrite) NSNumber *orderID;
-@property (strong, nonatomic, readwrite) NSString *slideLink;
-@property (strong, nonatomic, readwrite) NSString *lectureDescription;
-@property (strong, nonatomic, readwrite) NSString *videoLink;
-@property (strong, nonatomic, readwrite) NSArray *lectureMaterials;
-@property (strong, nonatomic, readwrite) NSArray *speakers;
-// add to model
-@property (strong, nonatomic, readwrite) NSString *objectId;
-@property (strong, nonatomic, readwrite) NSDate *startDate;
+@interface TableViewSectionHeaderCellObject : NSObject <NICellObject>
 
 @end

@@ -18,34 +18,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "PastVideoTranslationTableViewCellObject.h"
-#import "PastVideoTranslationTableViewCell.h"
-#import "EventPlainObject.h"
+#import <Nimbus/NimbusModels.h>
 
-@implementation PastVideoTranslationTableViewCellObject
+@class EventPlainObject;
 
-#pragma mark - Initialization
+@interface VideoRecordTableViewCellObject : NSObject <NICellObject>
 
-- (instancetype)initWithEvent:(EventPlainObject *)event {
-    self = [super init];
-    if (self) {
-        // 
-    }
-    return self;
-}
-
-+ (instancetype)objectWithEvent:(EventPlainObject *)event {
-    return [[self alloc] initWithEvent:event];
-}
-
-#pragma mark - NICellObject methods
-
-- (Class)cellClass {
-    return [PastVideoTranslationTableViewCell class];
-}
-
-- (UINib *)cellNib {
-    return [UINib nibWithNibName:NSStringFromClass([PastVideoTranslationTableViewCell class]) bundle:[NSBundle mainBundle]];
-}
++ (instancetype)objectWithEvent:(EventPlainObject *)event;
 
 @end

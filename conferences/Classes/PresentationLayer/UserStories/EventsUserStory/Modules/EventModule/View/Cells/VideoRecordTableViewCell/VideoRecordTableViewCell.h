@@ -21,6 +21,6 @@
 #import <NICellFactory.h>
 #import "CDResponderTableViewCell.h"
 
-@interface PastVideoTranslationTableViewCell : CDResponderTableViewCell <NICell>
+@interface VideoRecordTableViewCell : CDResponderTableViewCell <NICell>
 
 @end

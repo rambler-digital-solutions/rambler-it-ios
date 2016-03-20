@@ -13,9 +13,6 @@
 		6302EE8A1C60BA0900B65C04 /* AnnouncementListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6302EE841C60BA0900B65C04 /* AnnouncementListTableViewCell.xib */; };
 		6302EE8B1C60BA0900B65C04 /* NearestAnnouncementTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6302EE871C60BA0900B65C04 /* NearestAnnouncementTableViewCell.m */; };
 		6302EE8C1C60BA0900B65C04 /* NearestAnnouncementTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6302EE881C60BA0900B65C04 /* NearestAnnouncementTableViewCell.xib */; };
-		6302EE901C60BC6900B65C04 /* GrayTableViewSectionHeaderAndFooterCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6302EE8F1C60BC6900B65C04 /* GrayTableViewSectionHeaderAndFooterCellObject.m */; };
-		6302EE951C60BC8D00B65C04 /* GrayTableViewSectionHeaderAndFooterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6302EE931C60BC8D00B65C04 /* GrayTableViewSectionHeaderAndFooterCell.m */; };
-		6302EE961C60BC8D00B65C04 /* GrayTableViewSectionHeaderAndFooterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6302EE941C60BC8D00B65C04 /* GrayTableViewSectionHeaderAndFooterCell.xib */; };
 		63136F931BDCD8B600994356 /* AnnouncementListDataDisplayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136F921BDCD8B600994356 /* AnnouncementListDataDisplayManager.m */; };
 		63136FD31BDCDB2700994356 /* EmbedModuleSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136F971BDCDB2600994356 /* EmbedModuleSegue.m */; };
 		63136FD41BDCDB2700994356 /* EmbedModuleTransitionSegueInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136F991BDCDB2600994356 /* EmbedModuleTransitionSegueInfo.m */; };
@@ -33,6 +30,15 @@
 		63136FE01BDCDB2700994356 /* UIViewController+TabBarControllerContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136FCC1BDCDB2700994356 /* UIViewController+TabBarControllerContent.m */; };
 		63136FE11BDCDB2700994356 /* TabBarButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136FCF1BDCDB2700994356 /* TabBarButtonCell.m */; };
 		63136FE21BDCDB2700994356 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136FD11BDCDB2700994356 /* TabBarViewController.m */; };
+		6315BA051C9EC23600999877 /* VideoRecordTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6315BA031C9EC23600999877 /* VideoRecordTableViewCell.m */; };
+		6315BA061C9EC23600999877 /* VideoRecordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6315BA041C9EC23600999877 /* VideoRecordTableViewCell.xib */; };
+		6315BA0A1C9EC2A200999877 /* TableViewSectionHeaderCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6315BA091C9EC2A200999877 /* TableViewSectionHeaderCellObject.m */; };
+		6315BA0F1C9EC2D400999877 /* TableViewSectionHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6315BA0D1C9EC2D400999877 /* TableViewSectionHeaderCell.m */; };
+		6315BA101C9EC2D400999877 /* TableViewSectionHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6315BA0E1C9EC2D400999877 /* TableViewSectionHeaderCell.xib */; };
+		6315BA141C9EC32300999877 /* VideoRecordTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6315BA131C9EC32300999877 /* VideoRecordTableViewCellObject.m */; };
+		6315BAAF1C9ED23200999877 /* SpeakerInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6315BAAD1C9ED23200999877 /* SpeakerInfoTableViewCell.m */; };
+		6315BAB01C9ED23200999877 /* SpeakerInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6315BAAE1C9ED23200999877 /* SpeakerInfoTableViewCell.xib */; };
+		6315BAB31C9ED24E00999877 /* SpeakerInfoTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6315BAB21C9ED24E00999877 /* SpeakerInfoTableViewCellObject.m */; };
 		6318083F1C482B1300A61E7D /* SpeakerShortInfoModuleAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 6318082D1C482B1300A61E7D /* SpeakerShortInfoModuleAssembly.m */; };
 		631808401C482B1300A61E7D /* SpeakerShortInfoInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 631808301C482B1300A61E7D /* SpeakerShortInfoInteractor.m */; };
 		631808411C482B1300A61E7D /* SpeakerShortInfoPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 631808351C482B1300A61E7D /* SpeakerShortInfoPresenter.m */; };
@@ -204,11 +210,8 @@
 		63F8F24F1BF74302000017F3 /* CurrentVideoTranslationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63F8F24D1BF74302000017F3 /* CurrentVideoTranslationTableViewCell.xib */; };
 		63F8F2531BF74351000017F3 /* EventDescriptionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F2511BF74351000017F3 /* EventDescriptionTableViewCell.m */; };
 		63F8F2541BF74351000017F3 /* EventDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63F8F2521BF74351000017F3 /* EventDescriptionTableViewCell.xib */; };
-		63F8F25D1BF743A0000017F3 /* PastVideoTranslationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F25B1BF743A0000017F3 /* PastVideoTranslationTableViewCell.m */; };
-		63F8F25E1BF743A0000017F3 /* PastVideoTranslationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63F8F25C1BF743A0000017F3 /* PastVideoTranslationTableViewCell.xib */; };
 		63F8F2611BF743C1000017F3 /* CurrentVideoTranslationTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F2601BF743C1000017F3 /* CurrentVideoTranslationTableViewCellObject.m */; };
 		63F8F2641BF743D2000017F3 /* EventDescriptionTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F2631BF743D2000017F3 /* EventDescriptionTableViewCellObject.m */; };
-		63F8F26A1BF74421000017F3 /* PastVideoTranslationTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F2691BF74421000017F3 /* PastVideoTranslationTableViewCellObject.m */; };
 		63F8F26E1BF74732000017F3 /* SignUpAndSaveToCalendarEventTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F26D1BF74732000017F3 /* SignUpAndSaveToCalendarEventTableViewCellObject.m */; };
 		63F8F2741BF7474C000017F3 /* SignUpAndSaveToCalendarEventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F2721BF7474C000017F3 /* SignUpAndSaveToCalendarEventTableViewCell.m */; };
 		63F8F2751BF7474C000017F3 /* SignUpAndSaveToCalendarEventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63F8F2731BF7474C000017F3 /* SignUpAndSaveToCalendarEventTableViewCell.xib */; };
@@ -330,11 +333,6 @@
 		6302EE861C60BA0900B65C04 /* NearestAnnouncementTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearestAnnouncementTableViewCell.h; sourceTree = "<group>"; };
 		6302EE871C60BA0900B65C04 /* NearestAnnouncementTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearestAnnouncementTableViewCell.m; sourceTree = "<group>"; };
 		6302EE881C60BA0900B65C04 /* NearestAnnouncementTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NearestAnnouncementTableViewCell.xib; sourceTree = "<group>"; };
-		6302EE8E1C60BC6800B65C04 /* GrayTableViewSectionHeaderAndFooterCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrayTableViewSectionHeaderAndFooterCellObject.h; sourceTree = "<group>"; };
-		6302EE8F1C60BC6900B65C04 /* GrayTableViewSectionHeaderAndFooterCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrayTableViewSectionHeaderAndFooterCellObject.m; sourceTree = "<group>"; };
-		6302EE921C60BC8D00B65C04 /* GrayTableViewSectionHeaderAndFooterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrayTableViewSectionHeaderAndFooterCell.h; sourceTree = "<group>"; };
-		6302EE931C60BC8D00B65C04 /* GrayTableViewSectionHeaderAndFooterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrayTableViewSectionHeaderAndFooterCell.m; sourceTree = "<group>"; };
-		6302EE941C60BC8D00B65C04 /* GrayTableViewSectionHeaderAndFooterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GrayTableViewSectionHeaderAndFooterCell.xib; sourceTree = "<group>"; };
 		63136F911BDCD8B600994356 /* AnnouncementListDataDisplayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnouncementListDataDisplayManager.h; sourceTree = "<group>"; };
 		63136F921BDCD8B600994356 /* AnnouncementListDataDisplayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnouncementListDataDisplayManager.m; sourceTree = "<group>"; };
 		63136F961BDCDB2600994356 /* EmbedModuleSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmbedModuleSegue.h; sourceTree = "<group>"; };
@@ -390,6 +388,22 @@
 		63136FD11BDCDB2700994356 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
 		63136FD21BDCDB2700994356 /* TabBarViewInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewInput.h; sourceTree = "<group>"; };
 		63136FE51BDCDB9E00994356 /* DataDisplayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataDisplayManager.h; sourceTree = "<group>"; };
+		6315BA001C9E9F6B00999877 /* NearestAnnouncementTableViewCellDisplayMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NearestAnnouncementTableViewCellDisplayMode.h; sourceTree = "<group>"; };
+		6315BA021C9EC23600999877 /* VideoRecordTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoRecordTableViewCell.h; sourceTree = "<group>"; };
+		6315BA031C9EC23600999877 /* VideoRecordTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoRecordTableViewCell.m; sourceTree = "<group>"; };
+		6315BA041C9EC23600999877 /* VideoRecordTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoRecordTableViewCell.xib; sourceTree = "<group>"; };
+		6315BA081C9EC2A200999877 /* TableViewSectionHeaderCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewSectionHeaderCellObject.h; sourceTree = "<group>"; };
+		6315BA091C9EC2A200999877 /* TableViewSectionHeaderCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewSectionHeaderCellObject.m; sourceTree = "<group>"; };
+		6315BA0C1C9EC2D400999877 /* TableViewSectionHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewSectionHeaderCell.h; sourceTree = "<group>"; };
+		6315BA0D1C9EC2D400999877 /* TableViewSectionHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewSectionHeaderCell.m; sourceTree = "<group>"; };
+		6315BA0E1C9EC2D400999877 /* TableViewSectionHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewSectionHeaderCell.xib; sourceTree = "<group>"; };
+		6315BA121C9EC32300999877 /* VideoRecordTableViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoRecordTableViewCellObject.h; sourceTree = "<group>"; };
+		6315BA131C9EC32300999877 /* VideoRecordTableViewCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoRecordTableViewCellObject.m; sourceTree = "<group>"; };
+		6315BAAC1C9ED23200999877 /* SpeakerInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerInfoTableViewCell.h; sourceTree = "<group>"; };
+		6315BAAD1C9ED23200999877 /* SpeakerInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerInfoTableViewCell.m; sourceTree = "<group>"; };
+		6315BAAE1C9ED23200999877 /* SpeakerInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeakerInfoTableViewCell.xib; sourceTree = "<group>"; };
+		6315BAB11C9ED24E00999877 /* SpeakerInfoTableViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerInfoTableViewCellObject.h; sourceTree = "<group>"; };
+		6315BAB21C9ED24E00999877 /* SpeakerInfoTableViewCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerInfoTableViewCellObject.m; sourceTree = "<group>"; };
 		6318082C1C482B1300A61E7D /* SpeakerShortInfoModuleAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerShortInfoModuleAssembly.h; sourceTree = "<group>"; };
 		6318082D1C482B1300A61E7D /* SpeakerShortInfoModuleAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerShortInfoModuleAssembly.m; sourceTree = "<group>"; };
 		6318082F1C482B1300A61E7D /* SpeakerShortInfoInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerShortInfoInteractor.h; sourceTree = "<group>"; };
@@ -710,15 +724,10 @@
 		63F8F2501BF74351000017F3 /* EventDescriptionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDescriptionTableViewCell.h; sourceTree = "<group>"; };
 		63F8F2511BF74351000017F3 /* EventDescriptionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDescriptionTableViewCell.m; sourceTree = "<group>"; };
 		63F8F2521BF74351000017F3 /* EventDescriptionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventDescriptionTableViewCell.xib; sourceTree = "<group>"; };
-		63F8F25A1BF743A0000017F3 /* PastVideoTranslationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PastVideoTranslationTableViewCell.h; sourceTree = "<group>"; };
-		63F8F25B1BF743A0000017F3 /* PastVideoTranslationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PastVideoTranslationTableViewCell.m; sourceTree = "<group>"; };
-		63F8F25C1BF743A0000017F3 /* PastVideoTranslationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PastVideoTranslationTableViewCell.xib; sourceTree = "<group>"; };
 		63F8F25F1BF743C1000017F3 /* CurrentVideoTranslationTableViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentVideoTranslationTableViewCellObject.h; sourceTree = "<group>"; };
 		63F8F2601BF743C1000017F3 /* CurrentVideoTranslationTableViewCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentVideoTranslationTableViewCellObject.m; sourceTree = "<group>"; };
 		63F8F2621BF743D2000017F3 /* EventDescriptionTableViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDescriptionTableViewCellObject.h; sourceTree = "<group>"; };
 		63F8F2631BF743D2000017F3 /* EventDescriptionTableViewCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDescriptionTableViewCellObject.m; sourceTree = "<group>"; };
-		63F8F2681BF74421000017F3 /* PastVideoTranslationTableViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PastVideoTranslationTableViewCellObject.h; sourceTree = "<group>"; };
-		63F8F2691BF74421000017F3 /* PastVideoTranslationTableViewCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PastVideoTranslationTableViewCellObject.m; sourceTree = "<group>"; };
 		63F8F26C1BF74732000017F3 /* SignUpAndSaveToCalendarEventTableViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpAndSaveToCalendarEventTableViewCellObject.h; sourceTree = "<group>"; };
 		63F8F26D1BF74732000017F3 /* SignUpAndSaveToCalendarEventTableViewCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpAndSaveToCalendarEventTableViewCellObject.m; sourceTree = "<group>"; };
 		63F8F2711BF7474C000017F3 /* SignUpAndSaveToCalendarEventTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpAndSaveToCalendarEventTableViewCell.h; sourceTree = "<group>"; };
@@ -968,28 +977,10 @@
 				6302EE861C60BA0900B65C04 /* NearestAnnouncementTableViewCell.h */,
 				6302EE871C60BA0900B65C04 /* NearestAnnouncementTableViewCell.m */,
 				6302EE881C60BA0900B65C04 /* NearestAnnouncementTableViewCell.xib */,
+				6315BA001C9E9F6B00999877 /* NearestAnnouncementTableViewCellDisplayMode.h */,
 			);
 			name = NearestAnnouncementTableViewCell;
 			path = NearestEventTableViewCell;
-			sourceTree = "<group>";
-		};
-		6302EE8D1C60BC6800B65C04 /* GrayTableViewSectionHeaderAndFooterCellObject */ = {
-			isa = PBXGroup;
-			children = (
-				6302EE8E1C60BC6800B65C04 /* GrayTableViewSectionHeaderAndFooterCellObject.h */,
-				6302EE8F1C60BC6900B65C04 /* GrayTableViewSectionHeaderAndFooterCellObject.m */,
-			);
-			path = GrayTableViewSectionHeaderAndFooterCellObject;
-			sourceTree = "<group>";
-		};
-		6302EE911C60BC8D00B65C04 /* GrayTableViewSectionHeaderAndFooterCell */ = {
-			isa = PBXGroup;
-			children = (
-				6302EE921C60BC8D00B65C04 /* GrayTableViewSectionHeaderAndFooterCell.h */,
-				6302EE931C60BC8D00B65C04 /* GrayTableViewSectionHeaderAndFooterCell.m */,
-				6302EE941C60BC8D00B65C04 /* GrayTableViewSectionHeaderAndFooterCell.xib */,
-			);
-			path = GrayTableViewSectionHeaderAndFooterCell;
 			sourceTree = "<group>";
 		};
 		63136F901BDCD87C00994356 /* DataDisplayManager */ = {
@@ -1176,6 +1167,63 @@
 				6302EE851C60BA0900B65C04 /* NearestAnnouncementTableViewCell */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		6315BA011C9EC23600999877 /* VideoRecordTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				6315BA021C9EC23600999877 /* VideoRecordTableViewCell.h */,
+				6315BA031C9EC23600999877 /* VideoRecordTableViewCell.m */,
+				6315BA041C9EC23600999877 /* VideoRecordTableViewCell.xib */,
+			);
+			path = VideoRecordTableViewCell;
+			sourceTree = "<group>";
+		};
+		6315BA071C9EC2A200999877 /* TableViewSectionHeaderCellObject */ = {
+			isa = PBXGroup;
+			children = (
+				6315BA081C9EC2A200999877 /* TableViewSectionHeaderCellObject.h */,
+				6315BA091C9EC2A200999877 /* TableViewSectionHeaderCellObject.m */,
+			);
+			path = TableViewSectionHeaderCellObject;
+			sourceTree = "<group>";
+		};
+		6315BA0B1C9EC2D400999877 /* TableViewSectionHeaderCell */ = {
+			isa = PBXGroup;
+			children = (
+				6315BA0C1C9EC2D400999877 /* TableViewSectionHeaderCell.h */,
+				6315BA0D1C9EC2D400999877 /* TableViewSectionHeaderCell.m */,
+				6315BA0E1C9EC2D400999877 /* TableViewSectionHeaderCell.xib */,
+			);
+			path = TableViewSectionHeaderCell;
+			sourceTree = "<group>";
+		};
+		6315BA111C9EC32300999877 /* VideoRecordTableViewCellObject */ = {
+			isa = PBXGroup;
+			children = (
+				6315BA121C9EC32300999877 /* VideoRecordTableViewCellObject.h */,
+				6315BA131C9EC32300999877 /* VideoRecordTableViewCellObject.m */,
+			);
+			path = VideoRecordTableViewCellObject;
+			sourceTree = "<group>";
+		};
+		6315BAAA1C9ED20600999877 /* SpeakerInfoTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				6315BAAC1C9ED23200999877 /* SpeakerInfoTableViewCell.h */,
+				6315BAAD1C9ED23200999877 /* SpeakerInfoTableViewCell.m */,
+				6315BAAE1C9ED23200999877 /* SpeakerInfoTableViewCell.xib */,
+			);
+			path = SpeakerInfoTableViewCell;
+			sourceTree = "<group>";
+		};
+		6315BAAB1C9ED20D00999877 /* SpeakerInfoTableViewCellObject */ = {
+			isa = PBXGroup;
+			children = (
+				6315BAB11C9ED24E00999877 /* SpeakerInfoTableViewCellObject.h */,
+				6315BAB21C9ED24E00999877 /* SpeakerInfoTableViewCellObject.m */,
+			);
+			path = SpeakerInfoTableViewCellObject;
 			sourceTree = "<group>";
 		};
 		631808111C482ABC00A61E7D /* SpeakerShortInfoModule */ = {
@@ -1369,6 +1417,7 @@
 		6318089D1C4AD26000A61E7D /* CellObjects */ = {
 			isa = PBXGroup;
 			children = (
+				6315BAAB1C9ED20D00999877 /* SpeakerInfoTableViewCellObject */,
 			);
 			path = CellObjects;
 			sourceTree = "<group>";
@@ -1376,6 +1425,7 @@
 		6318089E1C4AD26000A61E7D /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				6315BAAA1C9ED20600999877 /* SpeakerInfoTableViewCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -2254,7 +2304,6 @@
 				63F8F26B1BF74732000017F3 /* SignUpAndSaveToCalendarEventTableViewCellObject */,
 				63F8F2471BF74260000017F3 /* CurrentVideoTranslationTableViewCellObject */,
 				63F8F2481BF74260000017F3 /* EventDescriptionTableViewCellObject */,
-				63F8F24A1BF74260000017F3 /* PastVideoTranslationTableViewCellObject */,
 				638DBD601BEE2BDC00B4B208 /* EventInfoTableViewCellObject */,
 				63F8F2E91BF91350000017F3 /* LectureInfoTableViewCellObject */,
 				636DD7D61C26B8AE00436201 /* PreviousEventSectionHeaderTableViewCellObject */,
@@ -2272,7 +2321,6 @@
 				63F8F26F1BF7474C000017F3 /* SignUpAndSaveToCalendarEventTableViewCell */,
 				63F8F23F1BF741D7000017F3 /* CurrentVideoTranslationTableViewCell */,
 				63F8F2411BF741D7000017F3 /* EventDescriptionTableViewCell */,
-				63F8F2451BF741D7000017F3 /* PastVideoTranslationTableViewCell */,
 				638DBD541BEE2B1000B4B208 /* EventInfoTableViewCell */,
 				63F8F2E11BF9126B000017F3 /* LectureInfoTableViewCell */,
 				636DD7CD1C26B80500436201 /* PreviousEventSectionHeaderTableViewCell */,
@@ -2660,7 +2708,8 @@
 		63F51CA51C42ACE600AFB9D2 /* CellObjects */ = {
 			isa = PBXGroup;
 			children = (
-				6302EE8D1C60BC6800B65C04 /* GrayTableViewSectionHeaderAndFooterCellObject */,
+				6315BA111C9EC32300999877 /* VideoRecordTableViewCellObject */,
+				6315BA071C9EC2A200999877 /* TableViewSectionHeaderCellObject */,
 				631808641C4A86CA00A61E7D /* TableViewCellWithTextLabelAndImageViewCellObject */,
 				63F51CA61C42ACE600AFB9D2 /* TableViewCellWithTextLabelCellObject */,
 			);
@@ -2680,7 +2729,8 @@
 		63F51CA71C42ACE600AFB9D2 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				6302EE911C60BC8D00B65C04 /* GrayTableViewSectionHeaderAndFooterCell */,
+				6315BA011C9EC23600999877 /* VideoRecordTableViewCell */,
+				6315BA0B1C9EC2D400999877 /* TableViewSectionHeaderCell */,
 				631808651C4A86E200A61E7D /* TableViewCellWithTextLabelAndImageView */,
 				63F51CA81C42ACE600AFB9D2 /* TableViewCellWithTextLabel */,
 			);
@@ -2784,24 +2834,6 @@
 			path = ActionProtocol;
 			sourceTree = "<group>";
 		};
-		63F8F2451BF741D7000017F3 /* PastVideoTranslationTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				63F8F2461BF741D7000017F3 /* ActionProtocol */,
-				63F8F25A1BF743A0000017F3 /* PastVideoTranslationTableViewCell.h */,
-				63F8F25B1BF743A0000017F3 /* PastVideoTranslationTableViewCell.m */,
-				63F8F25C1BF743A0000017F3 /* PastVideoTranslationTableViewCell.xib */,
-			);
-			path = PastVideoTranslationTableViewCell;
-			sourceTree = "<group>";
-		};
-		63F8F2461BF741D7000017F3 /* ActionProtocol */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ActionProtocol;
-			sourceTree = "<group>";
-		};
 		63F8F2471BF74260000017F3 /* CurrentVideoTranslationTableViewCellObject */ = {
 			isa = PBXGroup;
 			children = (
@@ -2818,15 +2850,6 @@
 				63F8F2631BF743D2000017F3 /* EventDescriptionTableViewCellObject.m */,
 			);
 			path = EventDescriptionTableViewCellObject;
-			sourceTree = "<group>";
-		};
-		63F8F24A1BF74260000017F3 /* PastVideoTranslationTableViewCellObject */ = {
-			isa = PBXGroup;
-			children = (
-				63F8F2681BF74421000017F3 /* PastVideoTranslationTableViewCellObject.h */,
-				63F8F2691BF74421000017F3 /* PastVideoTranslationTableViewCellObject.m */,
-			);
-			path = PastVideoTranslationTableViewCellObject;
 			sourceTree = "<group>";
 		};
 		63F8F26B1BF74732000017F3 /* SignUpAndSaveToCalendarEventTableViewCellObject */ = {
@@ -4420,6 +4443,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6315BA101C9EC2D400999877 /* TableViewSectionHeaderCell.xib in Resources */,
 				636F8DFF1BCB91A900552B91 /* RamblerLocationUserStory.storyboard in Resources */,
 				636DD7DE1C26B8D900436201 /* PreviousEventTableViewCell.xib in Resources */,
 				6302EE8A1C60BA0900B65C04 /* AnnouncementListTableViewCell.xib in Resources */,
@@ -4429,10 +4453,10 @@
 				63F8F2E81BF9126B000017F3 /* LectureInfoTableViewCell.xib in Resources */,
 				6302EE8C1C60BA0900B65C04 /* NearestAnnouncementTableViewCell.xib in Resources */,
 				9F8E5F9D1BC2777100DC10DB /* Conferences.Parse.plist in Resources */,
+				6315BA061C9EC23600999877 /* VideoRecordTableViewCell.xib in Resources */,
 				63FDCE141BBDBA2A00A43B60 /* Assets.xcassets in Resources */,
 				631808451C48324000A61E7D /* SpeakerShortInfoView.xib in Resources */,
 				638DBD5A1BEE2B1000B4B208 /* EventInfoTableViewCell.xib in Resources */,
-				63F8F25E1BF743A0000017F3 /* PastVideoTranslationTableViewCell.xib in Resources */,
 				636DD7E81C26B90200436201 /* PreviousLectureTableViewCell.xib in Resources */,
 				636DD7D51C26B84900436201 /* PreviousEventSectionHeaderTableViewCell.xib in Resources */,
 				636DD7E31C26B8F000436201 /* PreviousLectureSectionHeaderTableViewCell.xib in Resources */,
@@ -4442,10 +4466,10 @@
 				63F8F24F1BF74302000017F3 /* CurrentVideoTranslationTableViewCell.xib in Resources */,
 				631808741C4AA54B00A61E7D /* LectureDescriptionTableViewCell.xib in Resources */,
 				63F51C631C3D409200AFB9D2 /* EventHeaderView.xib in Resources */,
+				6315BAB01C9ED23200999877 /* SpeakerInfoTableViewCell.xib in Resources */,
 				63F8F2751BF7474C000017F3 /* SignUpAndSaveToCalendarEventTableViewCell.xib in Resources */,
 				636DD83E1C285FC000436201 /* ReportListTableViewCell.xib in Resources */,
 				9F8E5F701BC2552600DC10DB /* Conferences.API.plist in Resources */,
-				6302EE961C60BC8D00B65C04 /* GrayTableViewSectionHeaderAndFooterCell.xib in Resources */,
 				63F8F2541BF74351000017F3 /* EventDescriptionTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4603,7 +4627,7 @@
 				631FFE551BEF930200749DB8 /* ReportListPresenter.m in Sources */,
 				6302EE891C60BA0900B65C04 /* AnnouncementListTableViewCell.m in Sources */,
 				638DBD481BEA385400B4B208 /* EventViewController.m in Sources */,
-				63F8F26A1BF74421000017F3 /* PastVideoTranslationTableViewCellObject.m in Sources */,
+				6315BA051C9EC23600999877 /* VideoRecordTableViewCell.m in Sources */,
 				636DD83D1C285FC000436201 /* ReportListTableViewCell.m in Sources */,
 				636DD7D41C26B84900436201 /* PreviousEventSectionHeaderTableViewCell.m in Sources */,
 				9F1830BF1BC11D26000E21A5 /* JSONResponseDeserializer.m in Sources */,
@@ -4690,15 +4714,15 @@
 				9F0A84FC1BC1698B006F79FB /* CompoundOperationDebugDescriptionFormatter.m in Sources */,
 				9F0A84FE1BC1698B006F79FB /* RequestConfigurationOperation.m in Sources */,
 				636F8CBF1BC97E7F00552B91 /* RegistrationQuestion+CoreDataProperties.m in Sources */,
+				6315BA0F1C9EC2D400999877 /* TableViewSectionHeaderCell.m in Sources */,
 				9F8E5F781BC2571B00DC10DB /* NetworkClientsAssembly.m in Sources */,
-				6302EE901C60BC6900B65C04 /* GrayTableViewSectionHeaderAndFooterCellObject.m in Sources */,
 				9F8E5FAD1BC27E7F00DC10DB /* HTTPMethodConstants.m in Sources */,
 				63F8F2A11BF7A4F5000017F3 /* CurrentEventCellObjectBuilder.m in Sources */,
 				636F8DF91BCB90E500552B91 /* AnnouncementListPresenter.m in Sources */,
 				638DBD591BEE2B1000B4B208 /* EventInfoTableViewCell.m in Sources */,
 				9F0A85021BC1698B006F79FB /* ResponseValidationOperation.m in Sources */,
+				6315BAAF1C9ED23200999877 /* SpeakerInfoTableViewCell.m in Sources */,
 				63136FDC1BDCDB2700994356 /* CollectionViewDataDisplayManager.m in Sources */,
-				63F8F25D1BF743A0000017F3 /* PastVideoTranslationTableViewCell.m in Sources */,
 				636DD7EE1C26B93900436201 /* PreviousEventTableViewCellObject.m in Sources */,
 				631FFE541BEF930200749DB8 /* ReportListInteractor.m in Sources */,
 				9F0A84FB1BC1698B006F79FB /* CompoundOperationBase.m in Sources */,
@@ -4719,7 +4743,6 @@
 				638DBD4E1BEA398D00B4B208 /* EventDataDisplayManager.m in Sources */,
 				9F0A6C1D1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m in Sources */,
 				9F0A85001BC1698B006F79FB /* ResponseDeserializationOperation.m in Sources */,
-				6302EE951C60BC8D00B65C04 /* GrayTableViewSectionHeaderAndFooterCell.m in Sources */,
 				9F0A853B1BC1908B006F79FB /* OperationChainer.m in Sources */,
 				636DD8481C28604400436201 /* ReportListTableViewCellObject.m in Sources */,
 				636F8CC01BC97E7F00552B91 /* RegistrationQuestion.m in Sources */,
@@ -4747,8 +4770,10 @@
 				636A37C21BC1413A00B49C3D /* SystemInfrastructureAssembly.m in Sources */,
 				631808B11C4AD9D800A61E7D /* SpeakerInfoDataDisplayManager.m in Sources */,
 				9F0A6C2E1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m in Sources */,
+				6315BA0A1C9EC2A200999877 /* TableViewSectionHeaderCellObject.m in Sources */,
 				63F51C621C3D409200AFB9D2 /* EventHeaderView.m in Sources */,
 				631FFE1A1BEF451400749DB8 /* UIView+CDResponder.m in Sources */,
+				6315BAB31C9ED24E00999877 /* SpeakerInfoTableViewCellObject.m in Sources */,
 				6302EE8B1C60BA0900B65C04 /* NearestAnnouncementTableViewCell.m in Sources */,
 				63F8F2E71BF9126B000017F3 /* LectureInfoTableViewCell.m in Sources */,
 				631FFE571BEF930200749DB8 /* ReportListTableViewController.m in Sources */,
@@ -4756,6 +4781,7 @@
 				636F8CB91BC97E7F00552B91 /* Speaker+CoreDataProperties.m in Sources */,
 				9F1830ED1BC14293000E21A5 /* ManagedObjectMapper.m in Sources */,
 				9F1830E61BC13F9F000E21A5 /* ManagedObjectMappingProvider.m in Sources */,
+				6315BA141C9EC32300999877 /* VideoRecordTableViewCellObject.m in Sources */,
 				63F8F2741BF7474C000017F3 /* SignUpAndSaveToCalendarEventTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

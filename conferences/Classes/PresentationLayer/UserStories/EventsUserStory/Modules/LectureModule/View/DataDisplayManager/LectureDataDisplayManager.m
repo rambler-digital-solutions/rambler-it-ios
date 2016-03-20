@@ -22,6 +22,14 @@
 #import "LectureDataDisplayManager.h"
 #import "LecturePlainObject.h"
 #import "TableViewCellWithTextLabelCellObject.h"
+#import "LectureDescriptionTableViewCellObject.h"
+#import "DateFormatter.h"
+#import "TableViewCellWithTextLabelCellObject.h"
+#import "VideoRecordTableViewCellObject.h"
+
+// move to localized strings
+static NSString *LectureVideoRecord = @"Запись выступления";
+static NSString *LectureMaterials = @"Материалы";
 
 @interface LectureDataDisplayManager ()
 
@@ -64,9 +72,16 @@
 #pragma mark - Private methods
 
 - (NSArray *)generateCellObjects {
-    NSMutableArray *cellObjects = [@[] mutableCopy];
+    NSString * date = [self.dateFormatter obtainDateWithDayMonthTimeFormat:self.lecture.startDate];
+    LectureDescriptionTableViewCellObject * lectureDescriptionCellObject = [LectureDescriptionTableViewCellObject objectWithLecture:self.lecture andDate:date];
+
+    TableViewCellWithTextLabelCellObject *videoRecordTextLabelCellObject = [TableViewCellWithTextLabelCellObject objectWithText:LectureVideoRecord];
     
-    return cellObjects;
+    VideoRecordTableViewCellObject *videoRecorTableViewCellObject = [VideoRecordTableViewCellObject new];
+    
+    TableViewCellWithTextLabelCellObject *materialsTextLabelCellObject = [TableViewCellWithTextLabelCellObject objectWithText:LectureMaterials];
+    
+    return @[lectureDescriptionCellObject, videoRecordTextLabelCellObject, videoRecorTableViewCellObject, materialsTextLabelCellObject];
 }
 
 - (void)updateTableViewModel {

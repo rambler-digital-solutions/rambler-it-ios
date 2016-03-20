@@ -18,46 +18,21 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "NearestAnnouncementTableViewCell.h"
-#import "NearestAnnouncementTableViewCellObject.h"
+#import "VideoRecordTableViewCell.h"
+#import "PastVideoTranslationTableViewCellObject.h"
 
-#import <SDWebImage/UIImageView+WebCache.h>
+static CGFloat const VideoRecordTableViewCellHeight = 100.0f;
 
-static NSString *const kPlaceholderImageName = @"placeholder";
-static CGFloat const ValueToCutForShortcutDisplayMode = 64.0f;
-
-@interface NearestAnnouncementTableViewCell ()
-
-@property (assign, nonatomic) CGFloat FutureEventTableViewCellHeight;
-
-@end
-
-@implementation NearestAnnouncementTableViewCell
+@implementation VideoRecordTableViewCell
 
 #pragma mark - NICell methods
 
-- (BOOL)shouldUpdateCellWithObject:(NearestAnnouncementTableViewCellObject *)object {
-    self.eventTitle.text = object.eventTitle;
-    self.date.text = object.date;
-    self.time.text = object.time;
-    self.imageView.image = object.image;
-    [self.cellView setBackgroundColor:object.backgroundColor];
-    
-    [self.imageView sd_setImageWithURL:object.imageUrl
-                      placeholderImage:[UIImage imageNamed:kPlaceholderImageName]];
-
+- (BOOL)shouldUpdateCellWithObject:(PastVideoTranslationTableViewCellObject *)object {
     return YES;
 }
 
 + (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
-    NearestAnnouncementTableViewCellDisplayMode displayMode = ((NearestAnnouncementTableViewCellObject *)object).displayMode;
-        
-    if (displayMode == NearestAnnouncementTableViewCellDisplayModeDefault) {
-        return tableView.frame.size.height;
-    }
-    else {
-        return tableView.frame.size.height - ValueToCutForShortcutDisplayMode;
-    }
+    return VideoRecordTableViewCellHeight;
 }
 
 @end

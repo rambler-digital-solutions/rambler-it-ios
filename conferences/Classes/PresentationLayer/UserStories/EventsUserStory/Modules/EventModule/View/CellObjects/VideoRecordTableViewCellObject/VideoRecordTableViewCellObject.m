@@ -18,21 +18,34 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "GrayTableViewSectionHeaderAndFooterCell.h"
-#import "GrayTableViewSectionHeaderAndFooterCellObject.h"
+#import "VideoRecordTableViewCellObject.h"
+#import "VideoRecordTableViewCell.h"
+#import "EventPlainObject.h"
 
-static CGFloat const kReportListTableViewHeaderAndFooterCellHeight = 5.0f;
+@implementation VideoRecordTableViewCellObject
 
-@implementation GrayTableViewSectionHeaderAndFooterCell
+#pragma mark - Initialization
 
-#pragma mark - NICell methods
-
-- (BOOL)shouldUpdateCellWithObject:(GrayTableViewSectionHeaderAndFooterCellObject *)object {
-    return YES;
+- (instancetype)initWithEvent:(EventPlainObject *)event {
+    self = [super init];
+    if (self) {
+        // 
+    }
+    return self;
 }
 
-+ (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
-    return kReportListTableViewHeaderAndFooterCellHeight;
++ (instancetype)objectWithEvent:(EventPlainObject *)event {
+    return [[self alloc] initWithEvent:event];
+}
+
+#pragma mark - NICellObject methods
+
+- (Class)cellClass {
+    return [VideoRecordTableViewCell class];
+}
+
+- (UINib *)cellNib {
+    return [UINib nibWithNibName:NSStringFromClass([VideoRecordTableViewCell class]) bundle:[NSBundle mainBundle]];
 }
 
 @end

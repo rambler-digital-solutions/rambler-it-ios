@@ -18,9 +18,34 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import <Nimbus/NimbusModels.h>
+#import "VideoRecordTableViewCellObject.h"
+#import "VideoRecordTableViewCell.h"
+#import "EventPlainObject.h"
 
-@interface GrayTableViewSectionHeaderAndFooterCellObject : NSObject <NICellObject>
+@implementation VideoRecordTableViewCellObject
+
+#pragma mark - Initialization
+
+- (instancetype)initWithEvent:(EventPlainObject *)event {
+    self = [super init];
+    if (self) {
+        // 
+    }
+    return self;
+}
+
++ (instancetype)objectWithEvent:(EventPlainObject *)event {
+    return [[self alloc] initWithEvent:event];
+}
+
+#pragma mark - NICellObject methods
+
+- (Class)cellClass {
+    return [VideoRecordTableViewCell class];
+}
+
+- (UINib *)cellNib {
+    return [UINib nibWithNibName:NSStringFromClass([VideoRecordTableViewCell class]) bundle:[NSBundle mainBundle]];
+}
 
 @end

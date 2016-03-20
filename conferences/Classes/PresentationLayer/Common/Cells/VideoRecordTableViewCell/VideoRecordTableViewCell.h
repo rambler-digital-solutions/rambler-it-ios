@@ -18,19 +18,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "GrayTableViewSectionHeaderAndFooterCellObject.h"
-#import "GrayTableViewSectionHeaderAndFooterCell.h"
+#import <NICellFactory.h>
+#import "CDResponderTableViewCell.h"
 
-@implementation GrayTableViewSectionHeaderAndFooterCellObject
-
-#pragma mark - NICellObject methods
-
-- (Class)cellClass {
-    return [GrayTableViewSectionHeaderAndFooterCell class];
-}
-
-- (UINib *)cellNib {
-    return [UINib nibWithNibName:NSStringFromClass([GrayTableViewSectionHeaderAndFooterCell class]) bundle:[NSBundle mainBundle]];
-}
+@interface VideoRecordTableViewCell : CDResponderTableViewCell <NICell>
 
 @end

@@ -18,22 +18,19 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import "TableViewSectionHeaderCellObject.h"
+#import "TableViewSectionHeaderCell.h"
 
-@interface LecturePlainObject : NSObject
+@implementation TableViewSectionHeaderCellObject
 
-// пока окончательно не сформирована модель данных - все проперти readwrite
+#pragma mark - NICellObject methods
 
-@property (strong, nonatomic, readwrite) NSNumber *favourite;
-@property (strong, nonatomic, readwrite) NSString *name;
-@property (strong, nonatomic, readwrite) NSNumber *orderID;
-@property (strong, nonatomic, readwrite) NSString *slideLink;
-@property (strong, nonatomic, readwrite) NSString *lectureDescription;
-@property (strong, nonatomic, readwrite) NSString *videoLink;
-@property (strong, nonatomic, readwrite) NSArray *lectureMaterials;
-@property (strong, nonatomic, readwrite) NSArray *speakers;
-// add to model
-@property (strong, nonatomic, readwrite) NSString *objectId;
-@property (strong, nonatomic, readwrite) NSDate *startDate;
+- (Class)cellClass {
+    return [TableViewSectionHeaderCell class];
+}
+
+- (UINib *)cellNib {
+    return [UINib nibWithNibName:NSStringFromClass([TableViewSectionHeaderCell class]) bundle:[NSBundle mainBundle]];
+}
 
 @end

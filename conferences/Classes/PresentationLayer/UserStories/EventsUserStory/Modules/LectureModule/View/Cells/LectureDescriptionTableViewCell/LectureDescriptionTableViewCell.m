@@ -31,8 +31,4 @@ static CGFloat const LectureDescriptionTableViewCellHeight = 135.0f;
     return YES;
 }
 
-+ (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
-    return LectureDescriptionTableViewCellHeight;
-}
-
 @end

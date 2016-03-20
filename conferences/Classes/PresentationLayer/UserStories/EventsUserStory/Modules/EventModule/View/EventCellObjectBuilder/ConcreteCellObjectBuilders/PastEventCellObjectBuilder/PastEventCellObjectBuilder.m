@@ -21,7 +21,7 @@
 #import "PastEventCellObjectBuilder.h"
 
 #import "EventInfoTableViewCellObject.h"
-#import "PastVideoTranslationTableViewCellObject.h"
+#import "VideoRecordTableViewCellObject.h"
 #import "EventDescriptionTableViewCellObject.h"
 #import "LectureInfoTableViewCellObject.h"
 #import "EventPlainObject.h"
@@ -38,7 +38,7 @@
     EventInfoTableViewCellObject *eventInfoCellObject = [EventInfoTableViewCellObject objectWithEvent:event andDate:formattedDate];
     [cellObjects addObject:eventInfoCellObject];
     
-    PastVideoTranslationTableViewCellObject *videoCellObject = [PastVideoTranslationTableViewCellObject objectWithEvent:event];
+    VideoRecordTableViewCellObject *videoCellObject = [VideoRecordTableViewCellObject objectWithEvent:event];
     [cellObjects addObject:videoCellObject];
     
     EventDescriptionTableViewCellObject *eventDescriptionCellObject = [EventDescriptionTableViewCellObject objectWithEvent:event];
