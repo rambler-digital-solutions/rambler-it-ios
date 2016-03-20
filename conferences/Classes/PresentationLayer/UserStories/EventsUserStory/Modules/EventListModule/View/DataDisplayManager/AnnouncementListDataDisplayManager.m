@@ -24,7 +24,7 @@
 
 #import "AnnouncementListTableViewCellObject.h"
 #import "NearestAnnouncementTableViewCellObject.h"
-#import "GrayTableViewSectionHeaderAndFooterCellObject.h"
+#import "TableViewSectionHeaderCellObject.h"
 #import "EventPlainObject.h"
 #import "DateFormatter.h"
 
@@ -91,7 +91,7 @@
     if (self.events.count > 1) {
         nearestEventTableViewCellObject.displayMode = NearestAnnouncementTableViewCellDisplayModeShortcut;
         
-        GrayTableViewSectionHeaderAndFooterCellObject *futureEventListSectionHeaderAndFooter = [GrayTableViewSectionHeaderAndFooterCellObject new];
+        TableViewSectionHeaderCellObject *futureEventListSectionHeaderAndFooter = [TableViewSectionHeaderCellObject new];
         [cellObjects addObject:futureEventListSectionHeaderAndFooter];
         
         for (int i = 1; i < self.events.count; i++) {

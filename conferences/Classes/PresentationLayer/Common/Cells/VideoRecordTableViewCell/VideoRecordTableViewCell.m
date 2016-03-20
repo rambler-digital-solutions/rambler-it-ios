@@ -18,19 +18,21 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "GrayTableViewSectionHeaderAndFooterCellObject.h"
-#import "TableViewSectionHeaderCell.h"
+#import "VideoRecordTableViewCell.h"
+#import "VideoRecordTableViewCellObject.h"
 
-@implementation GrayTableViewSectionHeaderAndFooterCellObject
+static CGFloat const VideoRecordTableViewCellHeight = 100.0f;
 
-#pragma mark - NICellObject methods
+@implementation VideoRecordTableViewCell
 
-- (Class)cellClass {
-    return [TableViewSectionHeaderCell class];
+#pragma mark - NICell methods
+
+- (BOOL)shouldUpdateCellWithObject:(VideoRecordTableViewCellObject *)object {
+    return YES;
 }
 
-- (UINib *)cellNib {
-    return [UINib nibWithNibName:NSStringFromClass([TableViewSectionHeaderCell class]) bundle:[NSBundle mainBundle]];
++ (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
+    return VideoRecordTableViewCellHeight;
 }
 
 @end

@@ -23,7 +23,7 @@
 #import <Nimbus/NimbusModels.h>
 
 #import "ReportListTableViewCellObject.h"
-#import "GrayTableViewSectionHeaderAndFooterCellObject.h"
+#import "TableViewSectionHeaderCellObject.h"
 #import "DateFormatter.h"
 #import "EventPlainObject.h"
 #import "EXTScope.h"
@@ -83,7 +83,7 @@
 - (NSArray *)generateCellObjects {
     NSMutableArray *cellObjects = [NSMutableArray array];
     
-    GrayTableViewSectionHeaderAndFooterCellObject *headerCellObject = [GrayTableViewSectionHeaderAndFooterCellObject new];
+    TableViewSectionHeaderCellObject *headerCellObject = [TableViewSectionHeaderCellObject new];
     [cellObjects addObject:headerCellObject];
     
     for (EventPlainObject *event in self.events) {
@@ -93,7 +93,7 @@
         [cellObjects addObject:cellObject];
     }
     
-    GrayTableViewSectionHeaderAndFooterCellObject *footerCellObject = [GrayTableViewSectionHeaderAndFooterCellObject new];
+    TableViewSectionHeaderCellObject *footerCellObject = [TableViewSectionHeaderCellObject new];
     [cellObjects addObject:footerCellObject];
     
     return cellObjects;

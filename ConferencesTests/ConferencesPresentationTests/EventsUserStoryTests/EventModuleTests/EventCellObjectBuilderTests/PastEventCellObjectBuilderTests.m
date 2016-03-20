@@ -11,7 +11,7 @@
 
 #import "PastEventCellObjectBuilder.h"
 #import "EventInfoTableViewCellObject.h"
-#import "PastVideoTranslationTableViewCellObject.h"
+#import "VideoRecordTableViewCellObject.h"
 #import "EventDescriptionTableViewCellObject.h"
 #import "LectureInfoTableViewCellObject.h"
 #import "EventPlainObject.h"
@@ -71,7 +71,7 @@
         if ([cellObject isKindOfClass:[EventInfoTableViewCellObject class]]) {
             actualNumberOfEventInfoTableViewCellObjects++;
         }
-        if ([cellObject isKindOfClass:[PastVideoTranslationTableViewCellObject class]]) {
+        if ([cellObject isKindOfClass:[VideoRecordTableViewCellObject class]]) {
             actualNumberOfPastVideoTranslationTableViewCellObjects++;
         }
         if ([cellObject isKindOfClass:[EventDescriptionTableViewCellObject class]]) {

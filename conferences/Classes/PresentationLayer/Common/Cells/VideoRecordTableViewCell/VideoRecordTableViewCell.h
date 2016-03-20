@@ -18,21 +18,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "TableViewSectionHeaderCell.h"
-#import "GrayTableViewSectionHeaderAndFooterCellObject.h"
+#import <NICellFactory.h>
+#import "CDResponderTableViewCell.h"
 
-static CGFloat const kReportListTableViewHeaderAndFooterCellHeight = 5.0f;
-
-@implementation TableViewSectionHeaderCell
-
-#pragma mark - NICell methods
-
-- (BOOL)shouldUpdateCellWithObject:(GrayTableViewSectionHeaderAndFooterCellObject *)object {
-    return YES;
-}
-
-+ (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
-    return kReportListTableViewHeaderAndFooterCellHeight;
-}
+@interface VideoRecordTableViewCell : CDResponderTableViewCell <NICell>
 
 @end

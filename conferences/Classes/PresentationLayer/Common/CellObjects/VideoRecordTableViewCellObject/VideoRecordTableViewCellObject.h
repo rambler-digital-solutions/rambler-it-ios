@@ -22,7 +22,7 @@
 
 @class EventPlainObject;
 
-@interface PastVideoTranslationTableViewCellObject : NSObject <NICellObject>
+@interface VideoRecordTableViewCellObject : NSObject <NICellObject>
 
 + (instancetype)objectWithEvent:(EventPlainObject *)event;
 

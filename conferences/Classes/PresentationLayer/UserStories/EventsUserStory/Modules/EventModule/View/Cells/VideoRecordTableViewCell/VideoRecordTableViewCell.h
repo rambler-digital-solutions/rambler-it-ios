@@ -18,21 +18,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "PastVideoTranslationTableViewCell.h"
-#import "PastVideoTranslationTableViewCellObject.h"
+#import <NICellFactory.h>
+#import "CDResponderTableViewCell.h"
 
-static CGFloat const kPastVideoTranslationTableViewCellHeight = 100.0f;
-
-@implementation PastVideoTranslationTableViewCell
-
-#pragma mark - NICell methods
-
-- (BOOL)shouldUpdateCellWithObject:(PastVideoTranslationTableViewCellObject *)object {
-    return YES;
-}
-
-+ (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
-    return kPastVideoTranslationTableViewCellHeight;
-}
+@interface VideoRecordTableViewCell : CDResponderTableViewCell <NICell>
 
 @end
