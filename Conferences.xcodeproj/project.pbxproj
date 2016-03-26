@@ -515,6 +515,7 @@
 		635E18BE1CA6A0A9005B8439 /* SpeakerInfoModuleAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerInfoModuleAssemblyTests.m; sourceTree = "<group>"; };
 		635E18C01CA6A3E3005B8439 /* LectureModuleAssembly_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LectureModuleAssembly_Testable.h; sourceTree = "<group>"; };
 		635E18C11CA6A496005B8439 /* LectureModuleAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LectureModuleAssemblyTests.m; sourceTree = "<group>"; };
+		635E18C51CA6B7E6005B8439 /* SpeakerShortInfoModuleAssembly_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpeakerShortInfoModuleAssembly_Testable.h; sourceTree = "<group>"; };
 		636A37B11BC1356400B49C3D /* ApplicationConfiguratorImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationConfiguratorImplementation.h; sourceTree = "<group>"; };
 		636A37B21BC1356400B49C3D /* ApplicationConfiguratorImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationConfiguratorImplementation.m; sourceTree = "<group>"; };
 		636A37B41BC1361000B49C3D /* ApplicationConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationConfigurator.h; sourceTree = "<group>"; };
@@ -1802,6 +1803,22 @@
 			path = SpeakerInfoModuleAssemblyTests;
 			sourceTree = "<group>";
 		};
+		635E18C31CA6B7A4005B8439 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				635E18C41CA6B7C7005B8439 /* SpeakerShortInfoModuleAssemblyTests */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		635E18C41CA6B7C7005B8439 /* SpeakerShortInfoModuleAssemblyTests */ = {
+			isa = PBXGroup;
+			children = (
+				635E18C51CA6B7E6005B8439 /* SpeakerShortInfoModuleAssembly_Testable.h */,
+			);
+			path = SpeakerShortInfoModuleAssemblyTests;
+			sourceTree = "<group>";
+		};
 		636A37B01BC1354100B49C3D /* ApplicationConfigurator */ = {
 			isa = PBXGroup;
 			children = (
@@ -2996,6 +3013,7 @@
 		63F8F2D11BF8D4C0000017F3 /* PresentationLayerAssemblyTests */ = {
 			isa = PBXGroup;
 			children = (
+				635E18C31CA6B7A4005B8439 /* Common */,
 				631CBA7F1C021A3600E3EBA8 /* HelpersTests */,
 				631CBA661C020CCD00E3EBA8 /* EventsUserStoryTests */,
 				631CBA781C02114300E3EBA8 /* RamblerLocationUserStoryTests */,
