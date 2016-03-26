@@ -12,6 +12,7 @@
 
 #import "AnnouncementListRouter.h"
 #import "EventModuleInput.h"
+#import "StubTestHelper.h"
 
 typedef void (^ProxyBlock)(NSInvocation *);
 
@@ -49,30 +50,15 @@ typedef void (^ProxyBlock)(NSInvocation *);
     NSString *objectId = @"3k3523";
     
     id <EventModuleInput> moduleInputMock = OCMProtocolMock(@protocol(EventModuleInput));
-        
-    [self stubTransitionHandler:self.transitionHandlerMock withModuleInputMock:moduleInputMock];
+    
+    StubTestHelper *stubTestHelper = [StubTestHelper new];
+    [stubTestHelper stubTransitionHandler:self.transitionHandlerMock withModuleInputMock:moduleInputMock];
     
     // when
     [self.router openEventModuleWithEventObjectId:objectId];
     
     // then
     OCMVerify([moduleInputMock configureCurrentModuleWithEventObjectId:objectId]);
-}
-
-#pragma mark - Helpers
-
-- (void)stubTransitionHandler:(id)transitionHandler withModuleInputMock:(id)moduleInputMock {
-    id promiseMock = OCMClassMock([RamblerViperOpenModulePromise class]);
-    
-    ProxyBlock proxyBlock = ^(NSInvocation *invocation) {
-        RamblerViperModuleLinkBlock completionBlock;
-        [invocation getArgument:&completionBlock atIndex:2];
-        
-        completionBlock(moduleInputMock);
-    };
-    
-    OCMStub([promiseMock thenChainUsingBlock:OCMOCK_ANY]).andDo(proxyBlock);
-    OCMStub([transitionHandler openModuleUsingSegue:OCMOCK_ANY]).andReturn(promiseMock);
 }
 
 @end
