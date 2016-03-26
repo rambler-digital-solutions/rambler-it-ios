@@ -45,7 +45,7 @@
 		631808421C482B1300A61E7D /* SpeakerShortInfoRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 631808381C482B1300A61E7D /* SpeakerShortInfoRouter.m */; };
 		631808431C482B1300A61E7D /* SpeakerShortInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6318083C1C482B1300A61E7D /* SpeakerShortInfoView.m */; };
 		631808451C48324000A61E7D /* SpeakerShortInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 631808441C48324000A61E7D /* SpeakerShortInfoView.xib */; };
-		631808631C4A66FA00A61E7D /* StringConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 631808621C4A66FA00A61E7D /* StringConstants.m */; };
+		631808631C4A66FA00A61E7D /* LocalizedStrings.m in Sources */ = {isa = PBXBuildFile; fileRef = 631808621C4A66FA00A61E7D /* LocalizedStrings.m */; };
 		631808691C4A870C00A61E7D /* TableViewCellWithTextLabelAndImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 631808671C4A870C00A61E7D /* TableViewCellWithTextLabelAndImageView.m */; };
 		6318086A1C4A870C00A61E7D /* TableViewCellWithTextLabelAndImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 631808681C4A870C00A61E7D /* TableViewCellWithTextLabelAndImageView.xib */; };
 		6318086D1C4A872600A61E7D /* TableViewCellWithTextLabelAndImageViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6318086C1C4A872600A61E7D /* TableViewCellWithTextLabelAndImageViewCellObject.m */; };
@@ -153,6 +153,7 @@
 		638DBD591BEE2B1000B4B208 /* EventInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 638DBD561BEE2B1000B4B208 /* EventInfoTableViewCell.m */; };
 		638DBD5A1BEE2B1000B4B208 /* EventInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 638DBD571BEE2B1000B4B208 /* EventInfoTableViewCell.xib */; };
 		638DBD641BEE2C0100B4B208 /* EventInfoTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 638DBD631BEE2C0100B4B208 /* EventInfoTableViewCellObject.m */; };
+		63C01AB51CA68EA5008BCB0D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 63C01AB41CA68EA5008BCB0D /* Localizable.strings */; };
 		63D628EB1BE4C741004AF98F /* EventPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FA398E1BDD46E500CE6249 /* EventPlainObject.m */; };
 		63D628EC1BE4C744004AF98F /* EventPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FA398E1BDD46E500CE6249 /* EventPlainObject.m */; };
 		63D628ED1BE4CD69004AF98F /* ApplicationAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37C41BC142BB00B49C3D /* ApplicationAssembly.m */; };
@@ -422,8 +423,8 @@
 		631808441C48324000A61E7D /* SpeakerShortInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeakerShortInfoView.xib; sourceTree = "<group>"; };
 		631808461C48398300A61E7D /* SpeakerShortInfoModuleInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerShortInfoModuleInput.h; sourceTree = "<group>"; };
 		631808481C483DE700A61E7D /* SpeakerShortInfoViewSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpeakerShortInfoViewSize.h; sourceTree = "<group>"; };
-		631808611C4A66FA00A61E7D /* StringConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringConstants.h; sourceTree = "<group>"; };
-		631808621C4A66FA00A61E7D /* StringConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringConstants.m; sourceTree = "<group>"; };
+		631808611C4A66FA00A61E7D /* LocalizedStrings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalizedStrings.h; sourceTree = "<group>"; };
+		631808621C4A66FA00A61E7D /* LocalizedStrings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalizedStrings.m; sourceTree = "<group>"; };
 		631808661C4A870C00A61E7D /* TableViewCellWithTextLabelAndImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCellWithTextLabelAndImageView.h; sourceTree = "<group>"; };
 		631808671C4A870C00A61E7D /* TableViewCellWithTextLabelAndImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCellWithTextLabelAndImageView.m; sourceTree = "<group>"; };
 		631808681C4A870C00A61E7D /* TableViewCellWithTextLabelAndImageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCellWithTextLabelAndImageView.xib; sourceTree = "<group>"; };
@@ -635,6 +636,7 @@
 		638DBD571BEE2B1000B4B208 /* EventInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventInfoTableViewCell.xib; sourceTree = "<group>"; };
 		638DBD621BEE2C0100B4B208 /* EventInfoTableViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventInfoTableViewCellObject.h; sourceTree = "<group>"; };
 		638DBD631BEE2C0100B4B208 /* EventInfoTableViewCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventInfoTableViewCellObject.m; sourceTree = "<group>"; };
+		63C01AB41CA68EA5008BCB0D /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		63D7460D1C8B0D5200E3A381 /* EventStoreService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventStoreService.h; sourceTree = "<group>"; };
 		63D7460E1C8B0D5200E3A381 /* EventStoreService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventStoreService.m; sourceTree = "<group>"; };
 		63D86BD51C1313D000986536 /* EventPresenterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventPresenterTests.m; sourceTree = "<group>"; };
@@ -1303,8 +1305,8 @@
 		631808601C4A66E900A61E7D /* StringConstants */ = {
 			isa = PBXGroup;
 			children = (
-				631808611C4A66FA00A61E7D /* StringConstants.h */,
-				631808621C4A66FA00A61E7D /* StringConstants.m */,
+				631808611C4A66FA00A61E7D /* LocalizedStrings.h */,
+				631808621C4A66FA00A61E7D /* LocalizedStrings.m */,
 			);
 			path = StringConstants;
 			sourceTree = "<group>";
@@ -2360,6 +2362,14 @@
 			path = EventInfoTableViewCellObject;
 			sourceTree = "<group>";
 		};
+		63C01AB31CA68E9B008BCB0D /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				63C01AB41CA68EA5008BCB0D /* Localizable.strings */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
 		63D7460B1C8B0CF600E3A381 /* EventStoreService */ = {
 			isa = PBXGroup;
 			children = (
@@ -3214,6 +3224,7 @@
 		63FDCE031BBDBA2A00A43B60 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				63C01AB31CA68E9B008BCB0D /* Strings */,
 				63F54D911BC5A79900DB1746 /* EXTScope */,
 				63FDCE041BBDBA2A00A43B60 /* Info.plist */,
 				63FDCE051BBDBA2A00A43B60 /* main.m */,
@@ -4465,6 +4476,7 @@
 				631FFE591BEF937D00749DB8 /* ReportsUserStory.storyboard in Resources */,
 				63F8F24F1BF74302000017F3 /* CurrentVideoTranslationTableViewCell.xib in Resources */,
 				631808741C4AA54B00A61E7D /* LectureDescriptionTableViewCell.xib in Resources */,
+				63C01AB51CA68EA5008BCB0D /* Localizable.strings in Resources */,
 				63F51C631C3D409200AFB9D2 /* EventHeaderView.xib in Resources */,
 				6315BAB01C9ED23200999877 /* SpeakerInfoTableViewCell.xib in Resources */,
 				63F8F2751BF7474C000017F3 /* SignUpAndSaveToCalendarEventTableViewCell.xib in Resources */,
@@ -4618,7 +4630,7 @@
 				636DD7E21C26B8F000436201 /* PreviousLectureSectionHeaderTableViewCell.m in Sources */,
 				9F0A84FD1BC1698B006F79FB /* NetworkOperation.m in Sources */,
 				636F8DFB1BCB90E500552B91 /* AnnouncementListTableViewController.m in Sources */,
-				631808631C4A66FA00A61E7D /* StringConstants.m in Sources */,
+				631808631C4A66FA00A61E7D /* LocalizedStrings.m in Sources */,
 				63F8F2821BF7925F000017F3 /* PresentationLayerHelpersAssembly.m in Sources */,
 				9F8E5FA61BC27CCE00DC10DB /* MappingConstants.m in Sources */,
 				9F8E5F801BC2592600DC10DB /* ResponseValidatorsAssembly.m in Sources */,

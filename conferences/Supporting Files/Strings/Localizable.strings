@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  Conferences
+
+  Created by Karpushin Artem on 26/03/16.
+  Copyright © 2016 Rambler. All rights reserved.
+*/
+
+"VideoRecordTableViewCellTitle" = "Запись выступления";
+"LectureMaterialsTableViewCellTitle" = "Материалы";
+"AdditionInformationTableViewCellTitle" = "Дополнительно";
+"SpeakerWebSiteTableViewCellTitle" = "Веб-сайт";
+"SpeakerContactsTableViewCellTitle" = "Контакты";
