@@ -527,6 +527,7 @@
 		635E18CC1CA6C5E5005B8439 /* StubTestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StubTestHelper.m; sourceTree = "<group>"; };
 		635E18CE1CA6C8CF005B8439 /* EventRouterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventRouterTests.m; sourceTree = "<group>"; };
 		635E18D01CA6CA6D005B8439 /* ReportListRouterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportListRouterTests.m; sourceTree = "<group>"; };
+		635E18D31CA6CDF1005B8439 /* EventHeaderModuleAssembly_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventHeaderModuleAssembly_Testable.h; sourceTree = "<group>"; };
 		636A37B11BC1356400B49C3D /* ApplicationConfiguratorImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationConfiguratorImplementation.h; sourceTree = "<group>"; };
 		636A37B21BC1356400B49C3D /* ApplicationConfiguratorImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationConfiguratorImplementation.m; sourceTree = "<group>"; };
 		636A37B41BC1361000B49C3D /* ApplicationConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationConfigurator.h; sourceTree = "<group>"; };
@@ -1487,6 +1488,7 @@
 		631CBA661C020CCD00E3EBA8 /* EventsUserStoryTests */ = {
 			isa = PBXGroup;
 			children = (
+				635E18D21CA6CDD8005B8439 /* EventHeaderModuleAssemblyTests */,
 				635E18BB1CA69EF2005B8439 /* LectureModuleAssemblyTests */,
 				635E18BC1CA69EF2005B8439 /* SpeakerInfoModuleAssemblyTests */,
 				631CBA671C020CCD00E3EBA8 /* AnnouncementListModuleAssemblyTests */,
@@ -1841,6 +1843,14 @@
 				635E18CC1CA6C5E5005B8439 /* StubTestHelper.m */,
 			);
 			path = ConferencesTestHelpers;
+			sourceTree = "<group>";
+		};
+		635E18D21CA6CDD8005B8439 /* EventHeaderModuleAssemblyTests */ = {
+			isa = PBXGroup;
+			children = (
+				635E18D31CA6CDF1005B8439 /* EventHeaderModuleAssembly_Testable.h */,
+			);
+			path = EventHeaderModuleAssemblyTests;
 			sourceTree = "<group>";
 		};
 		636A37B01BC1354100B49C3D /* ApplicationConfigurator */ = {
