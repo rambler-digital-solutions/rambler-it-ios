@@ -17,6 +17,7 @@
 #import "SpeakerShortInfoRouter.h"
 #import "PresentationLayerHelpersAssembly.h"
 #import "ServiceComponentsAssembly.h"
+#import "OperationFactoriesAssembly.h"
 
 @interface SpeakerShortInfoModuleAssemblyTests : RamblerTyphoonAssemblyTests
 
@@ -31,6 +32,7 @@
     
     self.assembly = [SpeakerShortInfoModuleAssembly new];
     [self.assembly activateWithCollaboratingAssemblies:@[[ServiceComponentsAssembly new],
+                                                         [OperationFactoriesAssembly new],
                                                          [PresentationLayerHelpersAssembly new]]];
 }
 
