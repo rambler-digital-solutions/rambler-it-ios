@@ -14,8 +14,6 @@
 #import "EventModuleInput.h"
 #import "StubTestHelper.h"
 
-typedef void (^ProxyBlock)(NSInvocation *);
-
 @interface AnnouncementListRouterTests : XCTestCase
 
 @property (nonatomic, strong) AnnouncementListRouter *router;
