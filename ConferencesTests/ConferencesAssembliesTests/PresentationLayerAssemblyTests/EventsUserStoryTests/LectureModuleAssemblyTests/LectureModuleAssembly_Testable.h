@@ -6,7 +6,7 @@
 //  Copyright © 2016 Rambler. All rights reserved.
 //
 
-#import "LectureModuleAssembly.h'
+#import "LectureModuleAssembly.h"
 
 @class LectureViewController;
 @class LectureInteractor;
@@ -22,6 +22,6 @@
 - (LecturePresenter *)presenterLecture;
 - (LectureRouter *)routerLecture;
 - (LecturePresenterStateStorage *)presenterStateStorageLecture;
-- (LectureDataDisplayManager *)dataDisplayManagerLecture
+- (LectureDataDisplayManager *)dataDisplayManagerLecture;
 
 @end

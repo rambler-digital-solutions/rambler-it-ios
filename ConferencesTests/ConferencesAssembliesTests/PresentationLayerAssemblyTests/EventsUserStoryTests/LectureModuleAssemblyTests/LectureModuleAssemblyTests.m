@@ -1,5 +1,5 @@
 //
-//  SpeakerInfoModuleAssemblyTests.m
+//  LectureModuleAssemblyTests.m
 //  Conferences
 //
 //  Created by Karpushin Artem on 26/03/16.
@@ -8,31 +8,30 @@
 
 #import <RamblerTyphoonUtils/AssemblyTesting.h>
 
-#import "SpeakerInfoModuleAssembly_Testable.h"
+#import "LectureModuleAssembly_Testable.h"
 
-#import "SpeakerInfoModuleAssembly.h"
-#import "ServiceComponentsAssembly.h"
+#import "LectureModuleAssembly.h"
+#import "LectureViewController.h"
+#import "LectureInteractor.h"
+#import "LecturePresenter.h"
+#import "LectureRouter.h"
+#import "LectureDataDisplayManager.h"
+#import "LecturePresenterStateStorage.h"
 #import "PresentationLayerHelpersAssembly.h"
+#import "ServiceComponentsAssembly.h"
 
-#import "SpeakerInfoViewController.h"
-#import "SpeakerInfoInteractor.h"
-#import "SpeakerInfoPresenter.h"
-#import "SpeakerInfoRouter.h"
-#import "SpeakerInfoPresenterStateStorage.h"
-#import "SpeakerInfoDataDisplayManager.h"
+@interface LectureModuleAssemblyTests : RamblerTyphoonAssemblyTests
 
-@interface SpeakerInfoModuleAssemblyTests : RamblerTyphoonAssemblyTests
-
-@property (nonatomic, strong) SpeakerInfoModuleAssembly *assembly;
+@property (nonatomic, strong) LectureModuleAssembly *assembly;
 
 @end
 
-@implementation SpeakerInfoModuleAssemblyTests
+@implementation LectureModuleAssemblyTests
 
 - (void)setUp {
     [super setUp];
     
-    self.assembly = [SpeakerInfoModuleAssembly new];
+    self.assembly = [LectureModuleAssembly new];
     [self.assembly activateWithCollaboratingAssemblies:@[[ServiceComponentsAssembly new],
                                                          [PresentationLayerHelpersAssembly new]]];
 }
@@ -45,13 +44,13 @@
 
 - (void)testThatAssemblyCreatesView {
     // given
-    Class targetClass = [SpeakerInfoViewController class];
+    Class targetClass = [LectureViewController class];
     NSArray *dependencies = @[
                               RamblerSelector(output),
                               RamblerSelector(dataDisplayManager)
                               ];
     // when
-    id result = [self.assembly viewSpeakerInfo];
+    id result = [self.assembly viewLecture];
     
     // then
     [self verifyTargetDependency:result withClass:targetClass dependencies:dependencies];
@@ -59,12 +58,12 @@
 
 - (void)testThatAssemblyCreatesInteractor {
     // given
-    Class targetClass = [SpeakerInfoInteractor class];
+    Class targetClass = [LectureInteractor class];
     NSArray *dependencies = @[
                               RamblerSelector(output),
                               ];
     // when
-    id result = [self.assembly interactorSpeakerInfo];
+    id result = [self.assembly interactorLecture];
     
     // then
     [self verifyTargetDependency:result withClass:targetClass dependencies:dependencies];
@@ -72,7 +71,7 @@
 
 - (void)testThatAssemblyCreatesPresenter {
     // given
-    Class targetClass = [SpeakerInfoPresenter class];
+    Class targetClass = [LecturePresenter class];
     NSArray *dependencies = @[
                               RamblerSelector(view),
                               RamblerSelector(interactor),
@@ -80,7 +79,7 @@
                               RamblerSelector(stateStorage)
                               ];
     // when
-    id result = [self.assembly presenterSpeakerInfo];
+    id result = [self.assembly presenterLecture];
     
     // then
     [self verifyTargetDependency:result withClass:targetClass dependencies:dependencies];
@@ -88,11 +87,12 @@
 
 - (void)testThatAssemblyCreatesRouter {
     // given
-    Class targetClass = [SpeakerInfoRouter class  ];
+    Class targetClass = [LectureRouter class];
     NSArray *dependencies = @[
+                              RamblerSelector(transitionHandler)
                               ];
     // when
-    id result = [self.assembly routerSpeakerInfo];
+    id result = [self.assembly routerLecture];
     
     // then
     [self verifyTargetDependency:result withClass:targetClass dependencies:dependencies];
@@ -100,11 +100,12 @@
 
 - (void)testThatAssemblyCreatesDataDisplayManager {
     // given
-    Class targetClass = [SpeakerInfoDataDisplayManager class];
+    Class targetClass = [LectureDataDisplayManager class];
     NSArray *dependencies = @[
+                              RamblerSelector(dateFormatter)
                               ];
     // when
-    id result = [self.assembly dataDisplayManagerSpeakerInfo];
+    id result = [self.assembly dataDisplayManagerLecture];
     
     // then
     [self verifyTargetDependency:result withClass:targetClass dependencies:dependencies];
@@ -112,10 +113,10 @@
 
 - (void)testThatAssemblyCreatesPresenterStateStorage {
     // given
-    Class targetClass = [SpeakerInfoPresenterStateStorage class];
+    Class targetClass = [LecturePresenterStateStorage class];
     
     // when
-    id result = [self.assembly presenterStateStorageSpeakerInfo];
+    id result = [self.assembly presenterStateStorageLecture];
     
     // then
     [self verifyTargetDependency:result withClass:targetClass];
