@@ -25,6 +25,7 @@
 #import "EventTableViewCellActionProtocol.h"
 #import "EventPlainObject.h"
 #import "EventHeaderModuleInput.h"
+#import "LocalizedStrings.h"
 
 #import <CrutchKit/Proxying/Extensions/UIViewController+CDObserver/UIViewController+CDObserver.h>
 
@@ -62,18 +63,9 @@
 }
 
 - (void)displayEventSavedToCalendarAlert {
-    /**
-     @author Artem Karpushin
-     
-     TODO: move to localized strings
-     */
-    NSString *EventSavedToCalendarAlertMessage = @"Событие сохранено в календарь.";
-    NSString *EmptyAlertTitle = @"";
-    NSString *OKAlertActionTitle = @"OK";
-    
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:EmptyAlertTitle message:EventSavedToCalendarAlertMessage preferredStyle: UIAlertControllerStyleAlert];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(EmptyAlertTitle, nil) message:NSLocalizedString(EventSavedToCalendarAlertMessage, nil) preferredStyle: UIAlertControllerStyleAlert];
 
-    UIAlertAction *closeAction = [UIAlertAction actionWithTitle:OKAlertActionTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {}];
+    UIAlertAction *closeAction = [UIAlertAction actionWithTitle:NSLocalizedString(OKAlertActionTitle, nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {}];
     
     [alert addAction:closeAction];
     [self presentViewController:alert animated:YES completion:nil];

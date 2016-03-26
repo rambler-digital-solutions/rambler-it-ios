@@ -11,3 +11,7 @@
 "AdditionInformationTableViewCellTitle" = "Дополнительно";
 "SpeakerWebSiteTableViewCellTitle" = "Веб-сайт";
 "SpeakerContactsTableViewCellTitle" = "Контакты";
+
+"EventSavedToCalendarAlertMessage" = "Событие сохранено в календарь.";
+"EmptyAlertTitle" = "";
+"OKAlertActionTitle" = "OK";

@@ -26,10 +26,7 @@
 #import "DateFormatter.h"
 #import "TableViewCellWithTextLabelCellObject.h"
 #import "VideoRecordTableViewCellObject.h"
-
-// move to localized strings
-static NSString *LectureVideoRecord = @"Запись выступления";
-static NSString *LectureMaterials = @"Материалы";
+#import "LocalizedStrings.h"
 
 @interface LectureDataDisplayManager ()
 
@@ -75,11 +72,11 @@ static NSString *LectureMaterials = @"Материалы";
     NSString * date = [self.dateFormatter obtainDateWithDayMonthTimeFormat:self.lecture.startDate];
     LectureDescriptionTableViewCellObject * lectureDescriptionCellObject = [LectureDescriptionTableViewCellObject objectWithLecture:self.lecture andDate:date];
 
-    TableViewCellWithTextLabelCellObject *videoRecordTextLabelCellObject = [TableViewCellWithTextLabelCellObject objectWithText:LectureVideoRecord];
+    TableViewCellWithTextLabelCellObject *videoRecordTextLabelCellObject = [TableViewCellWithTextLabelCellObject objectWithText:NSLocalizedString(VideoRecordTableViewCellTitle, nil)];
     
     VideoRecordTableViewCellObject *videoRecorTableViewCellObject = [VideoRecordTableViewCellObject new];
     
-    TableViewCellWithTextLabelCellObject *materialsTextLabelCellObject = [TableViewCellWithTextLabelCellObject objectWithText:LectureMaterials];
+    TableViewCellWithTextLabelCellObject *materialsTextLabelCellObject = [TableViewCellWithTextLabelCellObject objectWithText:NSLocalizedString(LectureMaterialsTableViewCellTitle, nil)];
     
     return @[lectureDescriptionCellObject, videoRecordTextLabelCellObject, videoRecorTableViewCellObject, materialsTextLabelCellObject];
 }
