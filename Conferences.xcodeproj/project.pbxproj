@@ -509,6 +509,7 @@
 		631FFE581BEF937D00749DB8 /* ReportsUserStory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ReportsUserStory.storyboard; sourceTree = "<group>"; };
 		631FFE5D1BEF991000749DB8 /* ReportListDataDisplayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportListDataDisplayManager.h; sourceTree = "<group>"; };
 		631FFE5E1BEF991000749DB8 /* ReportListDataDisplayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportListDataDisplayManager.m; sourceTree = "<group>"; };
+		635E18BD1CA69F4A005B8439 /* SpeakerInfoModuleAssembly_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpeakerInfoModuleAssembly_Testable.h; sourceTree = "<group>"; };
 		636A37B11BC1356400B49C3D /* ApplicationConfiguratorImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationConfiguratorImplementation.h; sourceTree = "<group>"; };
 		636A37B21BC1356400B49C3D /* ApplicationConfiguratorImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationConfiguratorImplementation.m; sourceTree = "<group>"; };
 		636A37B41BC1361000B49C3D /* ApplicationConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationConfigurator.h; sourceTree = "<group>"; };
@@ -1469,6 +1470,8 @@
 		631CBA661C020CCD00E3EBA8 /* EventsUserStoryTests */ = {
 			isa = PBXGroup;
 			children = (
+				635E18BB1CA69EF2005B8439 /* LectureModuleAssemblyTests */,
+				635E18BC1CA69EF2005B8439 /* SpeakerInfoModuleAssemblyTests */,
 				631CBA671C020CCD00E3EBA8 /* AnnouncementListModuleAssemblyTests */,
 				631CBA6A1C020CCD00E3EBA8 /* EventModuleAssemblyTests */,
 			);
@@ -1774,6 +1777,21 @@
 				631FFE5E1BEF991000749DB8 /* ReportListDataDisplayManager.m */,
 			);
 			path = DataDisplayManager;
+			sourceTree = "<group>";
+		};
+		635E18BB1CA69EF2005B8439 /* LectureModuleAssemblyTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LectureModuleAssemblyTests;
+			sourceTree = "<group>";
+		};
+		635E18BC1CA69EF2005B8439 /* SpeakerInfoModuleAssemblyTests */ = {
+			isa = PBXGroup;
+			children = (
+				635E18BD1CA69F4A005B8439 /* SpeakerInfoModuleAssembly_Testable.h */,
+			);
+			path = SpeakerInfoModuleAssemblyTests;
 			sourceTree = "<group>";
 		};
 		636A37B01BC1354100B49C3D /* ApplicationConfigurator */ = {
