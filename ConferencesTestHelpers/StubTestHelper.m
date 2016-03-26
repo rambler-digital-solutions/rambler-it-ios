@@ -15,7 +15,7 @@ typedef void (^ProxyBlock)(NSInvocation *);
 
 @implementation StubTestHelper
 
-- (void)stubTransitionHandler:(id)transitionHandler withModuleInputMock:(id)moduleInputMock {
+- (void)stubTransitionHandler:(id)transitionHandlerMock withModuleInputMock:(id)moduleInputMock {
     id promiseMock = OCMClassMock([RamblerViperOpenModulePromise class]);
     
     ProxyBlock proxyBlock = ^(NSInvocation *invocation) {
@@ -26,7 +26,7 @@ typedef void (^ProxyBlock)(NSInvocation *);
     };
     
     OCMStub([promiseMock thenChainUsingBlock:OCMOCK_ANY]).andDo(proxyBlock);
-    OCMStub([transitionHandler openModuleUsingSegue:OCMOCK_ANY]).andReturn(promiseMock);
+    OCMStub([transitionHandlerMock openModuleUsingSegue:OCMOCK_ANY]).andReturn(promiseMock);
 }
 
 @end

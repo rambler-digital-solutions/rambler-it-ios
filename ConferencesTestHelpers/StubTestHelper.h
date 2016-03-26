@@ -20,6 +20,6 @@
  
  Method is used to perform stub of transition handler call
  */
-- (void)stubTransitionHandler:(id)transitionHandler withModuleInputMock:(id)moduleInputMock;
+- (void)stubTransitionHandler:(id)transitionHandlerMock withModuleInputMock:(id)moduleInputMock;
 
 @end
