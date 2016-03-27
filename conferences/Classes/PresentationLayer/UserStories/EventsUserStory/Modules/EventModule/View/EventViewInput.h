@@ -33,7 +33,7 @@
  */
 - (void)configureViewWithEvent:(EventPlainObject *)event;
 
-- (void)displayEventSavedToCalendarAlert;
+- (void)displayAlertWithTitle:(NSString *)title andMessage:(NSString *)message;
 
 @end
 
