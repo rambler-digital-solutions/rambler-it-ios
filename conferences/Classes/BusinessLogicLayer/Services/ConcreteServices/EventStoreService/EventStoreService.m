@@ -22,16 +22,22 @@
 #import "EventStoreServiceProtocol.h"
 #import "EventPlainObject.h"
 #import <EventKit/EventKit.h>
+#import "ErrorConstants.h"
 
 @implementation EventStoreService
 
 - (void)saveEventToCaledar:(EventPlainObject *)event withCompletionBlock:(EventStoreCompletionBlock)completionBlock{
+    NSMutableArray *errors = [@[] mutableCopy];
+    
     if (![self needToSaveEvent:event]) {
+        NSError *eventAlredyStoredError = [NSError errorWithDomain:ErrorDomain code:ErrorEventAlreadyStoredInCalendar userInfo:nil];
+        [errors addObject:eventAlredyStoredError];
+        
+        completionBlock(errors);
         return;
     }
     
     EKEventStore *eventStore = [EKEventStore new];
-    NSMutableArray *errors = [@[] mutableCopy];
     
     [eventStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError * _Nullable error) {
         if (!granted) {
@@ -56,7 +62,9 @@
             [errors addObject:savingEventError];
         }
         
-        completionBlock(errors);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completionBlock(errors);
+        });
     }];
 }
 
@@ -76,7 +84,6 @@
             needToSaveEvent = NO;
         }
     }
-    
     return  needToSaveEvent;
 }
 
