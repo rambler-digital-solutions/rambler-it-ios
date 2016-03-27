@@ -16,6 +16,7 @@
 @property (strong, nonatomic, readwrite) NSString *eventTags;
 @property (strong, nonatomic, readwrite) NSURL *imageUrl;
 @property (strong, nonatomic, readwrite) NSString *date;
+@property (strong, nonatomic, readwrite) EventPlainObject *event;
 
 @end
 
@@ -30,6 +31,7 @@
         _eventTitle = event.name;
         _eventTags = event.tags;
         _imageUrl = event.imageUrl;
+        _event = event;
     }
     return self;
 }

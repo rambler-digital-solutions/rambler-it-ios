@@ -33,6 +33,7 @@
 @property (strong, nonatomic, readonly) UIColor *backgroundColor;
 @property (strong, nonatomic, readonly) NSURL *imageUrl;
 @property (assign, nonatomic) NearestAnnouncementTableViewCellDisplayMode displayMode;
+@property (strong, nonatomic, readonly) EventPlainObject *event;
 
 + (instancetype)objectWithEvent:(EventPlainObject *)event eventDate:(NSString *)date eventStartTime:(NSString *)time;
 

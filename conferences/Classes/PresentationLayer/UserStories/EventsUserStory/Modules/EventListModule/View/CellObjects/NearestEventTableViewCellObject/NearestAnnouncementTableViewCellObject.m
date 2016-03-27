@@ -18,6 +18,7 @@
 @property (strong, nonatomic, readwrite) NSString *eventTitle;
 @property (strong, nonatomic, readwrite) UIColor *backgroundColor;
 @property (strong, nonatomic, readwrite) NSURL *imageUrl;
+@property (strong, nonatomic, readwrite) EventPlainObject *event;
 
 @end
 
@@ -34,6 +35,7 @@
         _image = event.image;
         _imageUrl = event.imageUrl;
         _backgroundColor = event.backgroundColor;
+        _event = event;
     }
     return self;
 }

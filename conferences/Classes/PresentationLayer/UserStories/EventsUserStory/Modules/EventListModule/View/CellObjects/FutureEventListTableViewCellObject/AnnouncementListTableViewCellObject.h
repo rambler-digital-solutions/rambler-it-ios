@@ -29,6 +29,7 @@
 @property (strong, nonatomic, readonly) NSString *eventTags;
 @property (strong, nonatomic, readonly) NSURL *imageUrl;
 @property (strong, nonatomic, readonly) NSString *date;
+@property (strong, nonatomic, readonly) EventPlainObject *event;
 
 + (instancetype)objectWithEvent:(EventPlainObject *)event eventDate:(NSString *)date;
 
