@@ -71,6 +71,7 @@
 
 - (void)setupTableViewActions {
     self.tableViewActions = [[NITableViewActions alloc] initWithTarget:self];
+    self.tableViewActions.tableViewCellSelectionStyle = UITableViewCellSelectionStyleNone;
     
     @weakify(self);
     NIActionBlock announcementListTapActionBlock = ^BOOL(AnnouncementListTableViewCellObject *object, id target, NSIndexPath *indexPath) {

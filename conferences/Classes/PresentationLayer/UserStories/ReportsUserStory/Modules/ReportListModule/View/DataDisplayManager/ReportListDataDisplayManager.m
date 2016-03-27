@@ -70,6 +70,7 @@
 
 - (void)setupTableViewActions {
     self.tableViewActions = [[NITableViewActions alloc] initWithTarget:self];
+    self.tableViewActions.tableViewCellSelectionStyle = UITableViewCellSelectionStyleNone;
     
     @weakify(self);
     NIActionBlock reportTapActionBlock = ^BOOL(ReportListTableViewCellObject *object, id target, NSIndexPath *indexPath) {
