@@ -14,13 +14,16 @@
 #import "EventViewInput.h"
 #import "EventPresenterStateStorage.h"
 #import "EventPlainObject.h"
+#import "EventRouterInput.h"
+#import "LocalizedStrings.h"
 
 @interface EventPresenterTests : XCTestCase
 
 @property (strong, nonatomic) EventPresenter *presenter;
-@property (strong, nonatomic) id <EventInteractorInput> mockInteractor;
-@property (strong, nonatomic) id <EventViewInput> mockView;
+@property (strong, nonatomic) id <EventInteractorInput> interactorMock;
+@property (strong, nonatomic) id <EventViewInput> viewMock;
 @property (strong, nonatomic) EventPresenterStateStorage *presenterStateStorage;
+@property (strong, nonatomic) id routerMock;
 
 @end
 
@@ -30,23 +33,31 @@
     [super setUp];
     
     self.presenter = [EventPresenter new];
-    self.mockInteractor = OCMProtocolMock(@protocol(EventInteractorInput));
-    self.mockView = OCMProtocolMock(@protocol(EventViewInput));
+    self.interactorMock = OCMProtocolMock(@protocol(EventInteractorInput));
+    self.viewMock = OCMProtocolMock(@protocol(EventViewInput));
     self.presenterStateStorage = [EventPresenterStateStorage new];
+    self.routerMock = OCMProtocolMock(@protocol(EventRouterInput));
     
-    self.presenter.interactor = self.mockInteractor;
-    self.presenter.view = self.mockView;
+    self.presenter.interactor = self.interactorMock;
+    self.presenter.view = self.viewMock;
     self.presenter.presenterStateStorage = self.presenterStateStorage;
+    self.presenter.router = self.routerMock;
 }
 
 - (void)tearDown {
     self.presenter = nil;
-    self.mockInteractor = nil;
-    self.mockView = nil;
     self.presenterStateStorage = nil;
-
+    [(id)self.interactorMock stopMocking];
+    self.interactorMock = nil;
+    [(id)self.viewMock stopMocking];
+    self.viewMock = nil;
+    [self.routerMock stopMocking];
+    self.routerMock = nil;
+    
     [super tearDown];
 }
+
+#pragma mark - EventModuleInput
 
 - (void)testSuccessConfigureCurrentModuleWithEventObjectId {
     // given
@@ -59,6 +70,8 @@
     XCTAssertEqualObjects(eventObjectId, self.presenterStateStorage.eventObjectId);
 }
 
+#pragma mark - EventViewOutput
+
 - (void)testSuccessSetupView {
     // given
     NSString *eventObjectId = @"Ds312k7";
@@ -68,7 +81,7 @@
     [self.presenter setupView];
     
     // then
-    OCMVerify([self.mockInteractor obtainEventByObjectId:eventObjectId]);
+    OCMVerify([self.interactorMock obtainEventByObjectId:eventObjectId]);
 }
 
 - (void)testSuccesDidTapSignUpButtonWithEvent {
@@ -90,7 +103,7 @@
     [self.presenter didTapSaveToCalendarButtonWithEvent:event];
     
     // then
-    OCMVerify([self.mockInteractor saveEventToCalendar:event]);
+    OCMVerify([self.interactorMock saveEventToCalendar:event]);
 }
 
 - (void)testSuccessDidTapReadMoreEventDescriptionButton {
@@ -123,6 +136,19 @@
     #warning Complete test after method get implemented
 }
 
+- (void)testSuccessDidTapLectureInfoCellWithLectureObjectIdEvent {
+    // given
+    NSString *objectId = @"8hefw8";
+    
+    // when
+    [self.presenter didTapLectureInfoCellWithLectureObjectIdEvent:objectId];
+    
+    // then
+    OCMVerify([self.routerMock openLectureModuleWithLectureObjectId:objectId]);
+}
+
+#pragma mark - EventInteractorOutput
+
 - (void)testSuccessDidObtainEvent {
     // given
     EventPlainObject *event = [EventPlainObject new];
@@ -131,7 +157,33 @@
     [self.presenter didObtainEvent:event];
     
     // then
-    OCMVerify([self.mockView configureViewWithEvent:event]);
+    OCMVerify([self.viewMock configureViewWithEvent:event]);
+}
+
+- (void)testSuccessDidSaveEventToCalendarWithError {
+    // given
+    NSError *error = [NSError errorWithDomain:@"" code:0 userInfo:nil];
+    NSString *alertTitle = NSLocalizedString(ErrorAlertTitle, nil);
+    NSString *alertMessage = NSLocalizedString(EventAlreadyStoredInCalendarErrorDescription, nil);
+    
+    // when
+    [self.presenter didSaveEventToCalendarWithError:error];
+    
+    // then
+    OCMVerify([self.viewMock displayAlertWithTitle:alertTitle andMessage:alertMessage]);
+}
+
+- (void)testSuccessDidSaveEventToCalendarWithoutError {
+    // given
+    NSError *error = nil;
+    NSString *alertTitle = NSLocalizedString(EmptyAlertTitle, nil);
+    NSString *alertMessage = NSLocalizedString(EventSavedToCalendarAlertMessage, nil);
+    
+    // when
+    [self.presenter didSaveEventToCalendarWithError:error];
+    
+    // then
+    OCMVerify([self.viewMock displayAlertWithTitle:alertTitle andMessage:alertMessage]);
 }
 
 @end

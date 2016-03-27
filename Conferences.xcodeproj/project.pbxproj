@@ -91,6 +91,14 @@
 		631FFE571BEF930200749DB8 /* ReportListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FFE501BEF930200749DB8 /* ReportListTableViewController.m */; };
 		631FFE591BEF937D00749DB8 /* ReportsUserStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 631FFE581BEF937D00749DB8 /* ReportsUserStory.storyboard */; };
 		631FFE5F1BEF991000749DB8 /* ReportListDataDisplayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FFE5E1BEF991000749DB8 /* ReportListDataDisplayManager.m */; };
+		635E18BF1CA6A0A9005B8439 /* SpeakerInfoModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 635E18BE1CA6A0A9005B8439 /* SpeakerInfoModuleAssemblyTests.m */; };
+		635E18C21CA6A496005B8439 /* LectureModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 635E18C11CA6A496005B8439 /* LectureModuleAssemblyTests.m */; };
+		635E18C71CA6B8CE005B8439 /* SpeakerShortInfoModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 635E18C61CA6B8CE005B8439 /* SpeakerShortInfoModuleAssemblyTests.m */; };
+		635E18C91CA6BAF4005B8439 /* AnnouncementListRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 635E18C81CA6BAF4005B8439 /* AnnouncementListRouterTests.m */; };
+		635E18CD1CA6C5E5005B8439 /* StubTestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 635E18CC1CA6C5E5005B8439 /* StubTestHelper.m */; };
+		635E18CF1CA6C8CF005B8439 /* EventRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 635E18CE1CA6C8CF005B8439 /* EventRouterTests.m */; };
+		635E18D11CA6CA6D005B8439 /* ReportListRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 635E18D01CA6CA6D005B8439 /* ReportListRouterTests.m */; };
+		635E18D51CA6CECB005B8439 /* EventHeaderModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 635E18D41CA6CECB005B8439 /* EventHeaderModuleAssemblyTests.m */; };
 		636A37B31BC1356400B49C3D /* ApplicationConfiguratorImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37B21BC1356400B49C3D /* ApplicationConfiguratorImplementation.m */; };
 		636A37C21BC1413A00B49C3D /* SystemInfrastructureAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37C11BC1413A00B49C3D /* SystemInfrastructureAssembly.m */; };
 		636A37C51BC142BB00B49C3D /* ApplicationAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37C41BC142BB00B49C3D /* ApplicationAssembly.m */; };
@@ -153,7 +161,6 @@
 		638DBD591BEE2B1000B4B208 /* EventInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 638DBD561BEE2B1000B4B208 /* EventInfoTableViewCell.m */; };
 		638DBD5A1BEE2B1000B4B208 /* EventInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 638DBD571BEE2B1000B4B208 /* EventInfoTableViewCell.xib */; };
 		638DBD641BEE2C0100B4B208 /* EventInfoTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 638DBD631BEE2C0100B4B208 /* EventInfoTableViewCellObject.m */; };
-		63C01AB51CA68EA5008BCB0D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 63C01AB41CA68EA5008BCB0D /* Localizable.strings */; };
 		63D628EB1BE4C741004AF98F /* EventPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FA398E1BDD46E500CE6249 /* EventPlainObject.m */; };
 		63D628EC1BE4C744004AF98F /* EventPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FA398E1BDD46E500CE6249 /* EventPlainObject.m */; };
 		63D628ED1BE4CD69004AF98F /* ApplicationAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37C41BC142BB00B49C3D /* ApplicationAssembly.m */; };
@@ -175,6 +182,15 @@
 		63D86BDD1C143FCE00986536 /* DateFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D86BDC1C143FCE00986536 /* DateFormatterTests.m */; };
 		63D86BE11C14490000986536 /* EventCellObjectBuilderBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D86BE01C14490000986536 /* EventCellObjectBuilderBase.m */; };
 		63D86BE91C14572C00986536 /* NearestAnnouncementTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D86BE71C14572C00986536 /* NearestAnnouncementTableViewCellObject.m */; };
+		63ECC4051CA7E41100439A01 /* SpeakerInfoViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ECC4041CA7E41100439A01 /* SpeakerInfoViewControllerTests.m */; };
+		63ECC4071CA7F42F00439A01 /* SpeakerInfoPresenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ECC4061CA7F42F00439A01 /* SpeakerInfoPresenterTests.m */; };
+		63ECC4091CA7F7AB00439A01 /* SpeakerInfoInteractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ECC4081CA7F7AB00439A01 /* SpeakerInfoInteractorTests.m */; };
+		63ECC40C1CA7FC2C00439A01 /* LectureViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ECC40B1CA7FC2C00439A01 /* LectureViewControllerTests.m */; };
+		63ECC40E1CA810F900439A01 /* LectureRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ECC40D1CA810F900439A01 /* LectureRouterTests.m */; };
+		63ECC4101CA8138000439A01 /* LecturePresenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ECC40F1CA8138000439A01 /* LecturePresenterTests.m */; };
+		63ECC4121CA8188300439A01 /* LectureInteractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ECC4111CA8188300439A01 /* LectureInteractorTests.m */; };
+		63ECC4161CA81E5300439A01 /* ErrorConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ECC4151CA81E5300439A01 /* ErrorConstants.m */; };
+		63ECC4191CA8373400439A01 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 63ECC4181CA8373400439A01 /* Localizable.strings */; };
 		63EF15BB1BC4559900480CAF /* PushNotificationCenterImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF15BA1BC4559900480CAF /* PushNotificationCenterImplementation.m */; };
 		63EF15C01BC461DD00480CAF /* PushNotificationServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF15BF1BC461DD00480CAF /* PushNotificationServiceImplementation.m */; };
 		63F342B01C8B20AB002AF7CD /* EventStoreService.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D7460E1C8B0D5200E3A381 /* EventStoreService.m */; };
@@ -509,6 +525,19 @@
 		631FFE581BEF937D00749DB8 /* ReportsUserStory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ReportsUserStory.storyboard; sourceTree = "<group>"; };
 		631FFE5D1BEF991000749DB8 /* ReportListDataDisplayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportListDataDisplayManager.h; sourceTree = "<group>"; };
 		631FFE5E1BEF991000749DB8 /* ReportListDataDisplayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportListDataDisplayManager.m; sourceTree = "<group>"; };
+		635E18BD1CA69F4A005B8439 /* SpeakerInfoModuleAssembly_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpeakerInfoModuleAssembly_Testable.h; sourceTree = "<group>"; };
+		635E18BE1CA6A0A9005B8439 /* SpeakerInfoModuleAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerInfoModuleAssemblyTests.m; sourceTree = "<group>"; };
+		635E18C01CA6A3E3005B8439 /* LectureModuleAssembly_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LectureModuleAssembly_Testable.h; sourceTree = "<group>"; };
+		635E18C11CA6A496005B8439 /* LectureModuleAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LectureModuleAssemblyTests.m; sourceTree = "<group>"; };
+		635E18C51CA6B7E6005B8439 /* SpeakerShortInfoModuleAssembly_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpeakerShortInfoModuleAssembly_Testable.h; sourceTree = "<group>"; };
+		635E18C61CA6B8CE005B8439 /* SpeakerShortInfoModuleAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerShortInfoModuleAssemblyTests.m; sourceTree = "<group>"; };
+		635E18C81CA6BAF4005B8439 /* AnnouncementListRouterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnouncementListRouterTests.m; sourceTree = "<group>"; };
+		635E18CB1CA6C5E5005B8439 /* StubTestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StubTestHelper.h; sourceTree = "<group>"; };
+		635E18CC1CA6C5E5005B8439 /* StubTestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StubTestHelper.m; sourceTree = "<group>"; };
+		635E18CE1CA6C8CF005B8439 /* EventRouterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventRouterTests.m; sourceTree = "<group>"; };
+		635E18D01CA6CA6D005B8439 /* ReportListRouterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportListRouterTests.m; sourceTree = "<group>"; };
+		635E18D31CA6CDF1005B8439 /* EventHeaderModuleAssembly_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventHeaderModuleAssembly_Testable.h; sourceTree = "<group>"; };
+		635E18D41CA6CECB005B8439 /* EventHeaderModuleAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventHeaderModuleAssemblyTests.m; sourceTree = "<group>"; };
 		636A37B11BC1356400B49C3D /* ApplicationConfiguratorImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationConfiguratorImplementation.h; sourceTree = "<group>"; };
 		636A37B21BC1356400B49C3D /* ApplicationConfiguratorImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationConfiguratorImplementation.m; sourceTree = "<group>"; };
 		636A37B41BC1361000B49C3D /* ApplicationConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationConfigurator.h; sourceTree = "<group>"; };
@@ -636,7 +665,6 @@
 		638DBD571BEE2B1000B4B208 /* EventInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventInfoTableViewCell.xib; sourceTree = "<group>"; };
 		638DBD621BEE2C0100B4B208 /* EventInfoTableViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventInfoTableViewCellObject.h; sourceTree = "<group>"; };
 		638DBD631BEE2C0100B4B208 /* EventInfoTableViewCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventInfoTableViewCellObject.m; sourceTree = "<group>"; };
-		63C01AB41CA68EA5008BCB0D /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		63D7460D1C8B0D5200E3A381 /* EventStoreService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventStoreService.h; sourceTree = "<group>"; };
 		63D7460E1C8B0D5200E3A381 /* EventStoreService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventStoreService.m; sourceTree = "<group>"; };
 		63D86BD51C1313D000986536 /* EventPresenterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventPresenterTests.m; sourceTree = "<group>"; };
@@ -647,6 +675,16 @@
 		63D86BE01C14490000986536 /* EventCellObjectBuilderBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventCellObjectBuilderBase.m; sourceTree = "<group>"; };
 		63D86BE61C14572C00986536 /* NearestAnnouncementTableViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearestAnnouncementTableViewCellObject.h; sourceTree = "<group>"; };
 		63D86BE71C14572C00986536 /* NearestAnnouncementTableViewCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearestAnnouncementTableViewCellObject.m; sourceTree = "<group>"; };
+		63ECC4041CA7E41100439A01 /* SpeakerInfoViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerInfoViewControllerTests.m; sourceTree = "<group>"; };
+		63ECC4061CA7F42F00439A01 /* SpeakerInfoPresenterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerInfoPresenterTests.m; sourceTree = "<group>"; };
+		63ECC4081CA7F7AB00439A01 /* SpeakerInfoInteractorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerInfoInteractorTests.m; sourceTree = "<group>"; };
+		63ECC40B1CA7FC2C00439A01 /* LectureViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LectureViewControllerTests.m; sourceTree = "<group>"; };
+		63ECC40D1CA810F900439A01 /* LectureRouterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LectureRouterTests.m; sourceTree = "<group>"; };
+		63ECC40F1CA8138000439A01 /* LecturePresenterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LecturePresenterTests.m; sourceTree = "<group>"; };
+		63ECC4111CA8188300439A01 /* LectureInteractorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LectureInteractorTests.m; sourceTree = "<group>"; };
+		63ECC4141CA81E5300439A01 /* ErrorConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorConstants.h; sourceTree = "<group>"; };
+		63ECC4151CA81E5300439A01 /* ErrorConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorConstants.m; sourceTree = "<group>"; };
+		63ECC4181CA8373400439A01 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		63EF15B81BC4557600480CAF /* PushNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNotificationCenter.h; sourceTree = "<group>"; };
 		63EF15B91BC4559900480CAF /* PushNotificationCenterImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNotificationCenterImplementation.h; sourceTree = "<group>"; };
 		63EF15BA1BC4559900480CAF /* PushNotificationCenterImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushNotificationCenterImplementation.m; sourceTree = "<group>"; };
@@ -1469,6 +1507,9 @@
 		631CBA661C020CCD00E3EBA8 /* EventsUserStoryTests */ = {
 			isa = PBXGroup;
 			children = (
+				635E18D21CA6CDD8005B8439 /* EventHeaderModuleAssemblyTests */,
+				635E18BB1CA69EF2005B8439 /* LectureModuleAssemblyTests */,
+				635E18BC1CA69EF2005B8439 /* SpeakerInfoModuleAssemblyTests */,
 				631CBA671C020CCD00E3EBA8 /* AnnouncementListModuleAssemblyTests */,
 				631CBA6A1C020CCD00E3EBA8 /* EventModuleAssemblyTests */,
 			);
@@ -1549,6 +1590,8 @@
 		631CBA821C021C3900E3EBA8 /* EventsUserStoryTests */ = {
 			isa = PBXGroup;
 			children = (
+				63ECC40A1CA7FC2000439A01 /* LectureModuleTests */,
+				63ECC4031CA7E3F900439A01 /* SpeakerInfoModuleTests */,
 				631CBA831C021C3900E3EBA8 /* AnnouncementListModuleTests */,
 				631CBA881C021C3900E3EBA8 /* EventModuleTests */,
 			);
@@ -1562,6 +1605,7 @@
 				631CBA851C021C3900E3EBA8 /* AnnouncementListInteractorTests.m */,
 				631CBA861C021C3900E3EBA8 /* AnnouncementListPresenterTests.m */,
 				631CBA871C021C3900E3EBA8 /* AnnouncementListTableViewControllerTests.m */,
+				635E18C81CA6BAF4005B8439 /* AnnouncementListRouterTests.m */,
 			);
 			name = AnnouncementListModuleTests;
 			path = EventListModuleTests;
@@ -1575,6 +1619,7 @@
 				631CBA8E1C021C3900E3EBA8 /* EventInteractorTests.m */,
 				631CBA8F1C021C3900E3EBA8 /* EventViewControllerTests.m */,
 				63D86BD51C1313D000986536 /* EventPresenterTests.m */,
+				635E18CE1CA6C8CF005B8439 /* EventRouterTests.m */,
 			);
 			path = EventModuleTests;
 			sourceTree = "<group>";
@@ -1621,6 +1666,7 @@
 				631CBA951C021C3900E3EBA8 /* ReportListInteractorTests.m */,
 				631CBA961C021C3900E3EBA8 /* ReportListPresenterTests.m */,
 				631CBA971C021C3900E3EBA8 /* ReportListTableViewControllerTests.m */,
+				635E18D01CA6CA6D005B8439 /* ReportListRouterTests.m */,
 			);
 			path = ReportListModuleTests;
 			sourceTree = "<group>";
@@ -1774,6 +1820,59 @@
 				631FFE5E1BEF991000749DB8 /* ReportListDataDisplayManager.m */,
 			);
 			path = DataDisplayManager;
+			sourceTree = "<group>";
+		};
+		635E18BB1CA69EF2005B8439 /* LectureModuleAssemblyTests */ = {
+			isa = PBXGroup;
+			children = (
+				635E18C01CA6A3E3005B8439 /* LectureModuleAssembly_Testable.h */,
+				635E18C11CA6A496005B8439 /* LectureModuleAssemblyTests.m */,
+			);
+			path = LectureModuleAssemblyTests;
+			sourceTree = "<group>";
+		};
+		635E18BC1CA69EF2005B8439 /* SpeakerInfoModuleAssemblyTests */ = {
+			isa = PBXGroup;
+			children = (
+				635E18BD1CA69F4A005B8439 /* SpeakerInfoModuleAssembly_Testable.h */,
+				635E18BE1CA6A0A9005B8439 /* SpeakerInfoModuleAssemblyTests.m */,
+			);
+			path = SpeakerInfoModuleAssemblyTests;
+			sourceTree = "<group>";
+		};
+		635E18C31CA6B7A4005B8439 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				635E18C41CA6B7C7005B8439 /* SpeakerShortInfoModuleAssemblyTests */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		635E18C41CA6B7C7005B8439 /* SpeakerShortInfoModuleAssemblyTests */ = {
+			isa = PBXGroup;
+			children = (
+				635E18C51CA6B7E6005B8439 /* SpeakerShortInfoModuleAssembly_Testable.h */,
+				635E18C61CA6B8CE005B8439 /* SpeakerShortInfoModuleAssemblyTests.m */,
+			);
+			path = SpeakerShortInfoModuleAssemblyTests;
+			sourceTree = "<group>";
+		};
+		635E18CA1CA6C572005B8439 /* ConferencesTestHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				635E18CB1CA6C5E5005B8439 /* StubTestHelper.h */,
+				635E18CC1CA6C5E5005B8439 /* StubTestHelper.m */,
+			);
+			path = ConferencesTestHelpers;
+			sourceTree = "<group>";
+		};
+		635E18D21CA6CDD8005B8439 /* EventHeaderModuleAssemblyTests */ = {
+			isa = PBXGroup;
+			children = (
+				635E18D31CA6CDF1005B8439 /* EventHeaderModuleAssembly_Testable.h */,
+				635E18D41CA6CECB005B8439 /* EventHeaderModuleAssemblyTests.m */,
+			);
+			path = EventHeaderModuleAssemblyTests;
 			sourceTree = "<group>";
 		};
 		636A37B01BC1354100B49C3D /* ApplicationConfigurator */ = {
@@ -2362,14 +2461,6 @@
 			path = EventInfoTableViewCellObject;
 			sourceTree = "<group>";
 		};
-		63C01AB31CA68E9B008BCB0D /* Strings */ = {
-			isa = PBXGroup;
-			children = (
-				63C01AB41CA68EA5008BCB0D /* Localizable.strings */,
-			);
-			path = Strings;
-			sourceTree = "<group>";
-		};
 		63D7460B1C8B0CF600E3A381 /* EventStoreService */ = {
 			isa = PBXGroup;
 			children = (
@@ -2427,6 +2518,44 @@
 				638DBCF81BEA385400B4B208 /* View */,
 			);
 			path = EventModule;
+			sourceTree = "<group>";
+		};
+		63ECC4031CA7E3F900439A01 /* SpeakerInfoModuleTests */ = {
+			isa = PBXGroup;
+			children = (
+				63ECC4041CA7E41100439A01 /* SpeakerInfoViewControllerTests.m */,
+				63ECC4061CA7F42F00439A01 /* SpeakerInfoPresenterTests.m */,
+				63ECC4081CA7F7AB00439A01 /* SpeakerInfoInteractorTests.m */,
+			);
+			path = SpeakerInfoModuleTests;
+			sourceTree = "<group>";
+		};
+		63ECC40A1CA7FC2000439A01 /* LectureModuleTests */ = {
+			isa = PBXGroup;
+			children = (
+				63ECC40B1CA7FC2C00439A01 /* LectureViewControllerTests.m */,
+				63ECC40D1CA810F900439A01 /* LectureRouterTests.m */,
+				63ECC40F1CA8138000439A01 /* LecturePresenterTests.m */,
+				63ECC4111CA8188300439A01 /* LectureInteractorTests.m */,
+			);
+			path = LectureModuleTests;
+			sourceTree = "<group>";
+		};
+		63ECC4131CA81E4000439A01 /* ErrorConstants */ = {
+			isa = PBXGroup;
+			children = (
+				63ECC4141CA81E5300439A01 /* ErrorConstants.h */,
+				63ECC4151CA81E5300439A01 /* ErrorConstants.m */,
+			);
+			path = ErrorConstants;
+			sourceTree = "<group>";
+		};
+		63ECC4171CA8373400439A01 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				63ECC4181CA8373400439A01 /* Localizable.strings */,
+			);
+			path = Strings;
 			sourceTree = "<group>";
 		};
 		63EF15B71BC4546400480CAF /* PushNotificationCenter */ = {
@@ -2970,6 +3099,7 @@
 		63F8F2D11BF8D4C0000017F3 /* PresentationLayerAssemblyTests */ = {
 			isa = PBXGroup;
 			children = (
+				635E18C31CA6B7A4005B8439 /* Common */,
 				631CBA7F1C021A3600E3EBA8 /* HelpersTests */,
 				631CBA661C020CCD00E3EBA8 /* EventsUserStoryTests */,
 				631CBA781C02114300E3EBA8 /* RamblerLocationUserStoryTests */,
@@ -3103,6 +3233,7 @@
 		63FDCDDE1BBDBA2A00A43B60 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				63ECC4131CA81E4000439A01 /* ErrorConstants */,
 				631808601C4A66E900A61E7D /* StringConstants */,
 			);
 			path = Constants;
@@ -3207,6 +3338,7 @@
 		63FDCE001BBDBA2A00A43B60 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				63ECC4171CA8373400439A01 /* Strings */,
 				63FDCE011BBDBA2A00A43B60 /* Images */,
 			);
 			name = Resources;
@@ -3224,7 +3356,6 @@
 		63FDCE031BBDBA2A00A43B60 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				63C01AB31CA68E9B008BCB0D /* Strings */,
 				63F54D911BC5A79900DB1746 /* EXTScope */,
 				63FDCE041BBDBA2A00A43B60 /* Info.plist */,
 				63FDCE051BBDBA2A00A43B60 /* main.m */,
@@ -4245,6 +4376,7 @@
 				892D07FB1BED008000825704 /* NightlyRibbon.png */,
 				9F1F37E61BBBB80D00C7797D /* Conferences */,
 				9F1F38031BBBB80D00C7797D /* ConferencesTests */,
+				635E18CA1CA6C572005B8439 /* ConferencesTestHelpers */,
 				9F1F37E51BBBB80D00C7797D /* Products */,
 				9879306505819DD768BE2239 /* Pods */,
 				D1799435EABEFA40D1849E2A /* Frameworks */,
@@ -4476,7 +4608,7 @@
 				631FFE591BEF937D00749DB8 /* ReportsUserStory.storyboard in Resources */,
 				63F8F24F1BF74302000017F3 /* CurrentVideoTranslationTableViewCell.xib in Resources */,
 				631808741C4AA54B00A61E7D /* LectureDescriptionTableViewCell.xib in Resources */,
-				63C01AB51CA68EA5008BCB0D /* Localizable.strings in Resources */,
+				63ECC4191CA8373400439A01 /* Localizable.strings in Resources */,
 				63F51C631C3D409200AFB9D2 /* EventHeaderView.xib in Resources */,
 				6315BAB01C9ED23200999877 /* SpeakerInfoTableViewCell.xib in Resources */,
 				63F8F2751BF7474C000017F3 /* SignUpAndSaveToCalendarEventTableViewCell.xib in Resources */,
@@ -4756,6 +4888,7 @@
 				9F0A6C1D1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m in Sources */,
 				9F0A85001BC1698B006F79FB /* ResponseDeserializationOperation.m in Sources */,
 				9F0A853B1BC1908B006F79FB /* OperationChainer.m in Sources */,
+				63ECC4161CA81E5300439A01 /* ErrorConstants.m in Sources */,
 				636DD8481C28604400436201 /* ReportListTableViewCellObject.m in Sources */,
 				636F8CC01BC97E7F00552B91 /* RegistrationQuestion.m in Sources */,
 				63F8F2A31BF7A4F5000017F3 /* PastEventCellObjectBuilder.m in Sources */,
@@ -4807,6 +4940,7 @@
 				63D628F01BE4CE09004AF98F /* ModuleAssemblyBase.m in Sources */,
 				63D628F11BE4CE09004AF98F /* AnnouncementListModuleAssembly.m in Sources */,
 				63D628F21BE4CE09004AF98F /* RamblerLocationModuleAssembly.m in Sources */,
+				635E18D51CA6CECB005B8439 /* EventHeaderModuleAssemblyTests.m in Sources */,
 				63D628F31BE4CE09004AF98F /* ServiceComponentsAssembly.m in Sources */,
 				63D628F41BE4CE09004AF98F /* OperationFactoriesAssembly.m in Sources */,
 				63D628F51BE4CE09004AF98F /* ResponseMappersAssembly.m in Sources */,
@@ -4815,8 +4949,11 @@
 				631CBA9F1C021C3900E3EBA8 /* EventDataDisplayManagerTests.m in Sources */,
 				63D628F71BE4CE09004AF98F /* ResponseDeserializersAssembly.m in Sources */,
 				63D628F81BE4CE09004AF98F /* NetworkClientsAssembly.m in Sources */,
+				635E18C21CA6A496005B8439 /* LectureModuleAssemblyTests.m in Sources */,
 				63D628F91BE4CE09004AF98F /* RequestSignersAssembly.m in Sources */,
+				63ECC4091CA7F7AB00439A01 /* SpeakerInfoInteractorTests.m in Sources */,
 				631CBA741C020CCD00E3EBA8 /* EventModuleAssemblyTests.m in Sources */,
+				63ECC4101CA8138000439A01 /* LecturePresenterTests.m in Sources */,
 				63D86BDD1C143FCE00986536 /* DateFormatterTests.m in Sources */,
 				631CBA991C021C3900E3EBA8 /* AnnouncementListInteractorTests.m in Sources */,
 				63F8F2F61BF9FE7D000017F3 /* RCFRESTRequestConfiguratorTests.m in Sources */,
@@ -4830,25 +4967,31 @@
 				63F402FE1BCF840A0086D030 /* NetworkClientsAssemblyTests.m in Sources */,
 				636F8C9C1BC97CD300552B91 /* SocialNetworkAccountServiceImplementation.m in Sources */,
 				636F8C981BC97C1700552B91 /* SpeakerServiceImplementation.m in Sources */,
+				63ECC4071CA7F42F00439A01 /* SpeakerInfoPresenterTests.m in Sources */,
 				9F0A853F1BC192F0006F79FB /* OperationChainerTests.m in Sources */,
 				9F0A85211BC185AA006F79FB /* TestChainableOperationWithValidationBlock.m in Sources */,
 				63F402F11BCF77CB0086D030 /* ServiceComponentsAssemblyTests.m in Sources */,
 				9F1830DB1BC126D7000E21A5 /* RCFParseResponseValidatorTests.m in Sources */,
+				63ECC40C1CA7FC2C00439A01 /* LectureViewControllerTests.m in Sources */,
 				9F0A85201BC185AA006F79FB /* TestChainableOperation.m in Sources */,
 				631CBA9E1C021C3900E3EBA8 /* PastEventCellObjectBuilderTests.m in Sources */,
 				9F8E5FA21BC27B5B00DC10DB /* EventOperationFactoryTests.m in Sources */,
 				63F402F01BCF77CB0086D030 /* ApplicationAssemblyTests.m in Sources */,
 				9F0A85261BC185AA006F79FB /* ResponseDeserializationOperationTests.m in Sources */,
+				635E18D11CA6CA6D005B8439 /* ReportListRouterTests.m in Sources */,
 				63F403001BCF85EE0086D030 /* RequestConfiguratorsAssemblyTests.m in Sources */,
 				9F0A85231BC185AA006F79FB /* ChainableOperationTestsBase.m in Sources */,
+				63ECC40E1CA810F900439A01 /* LectureRouterTests.m in Sources */,
 				63F402FB1BCF79390086D030 /* OperationFactoriesAssemblyTests.m in Sources */,
 				631CBAA01C021C3900E3EBA8 /* EventInteractorTests.m in Sources */,
 				9F0A85251BC185AA006F79FB /* RequestSigningOperationTests.m in Sources */,
 				9F0A85241BC185AA006F79FB /* RequestConfigurationOperationTests.m in Sources */,
 				631CBA9B1C021C3900E3EBA8 /* AnnouncementListTableViewControllerTests.m in Sources */,
 				9F8E5F9B1BC2753100DC10DB /* CompoundOperationFactoryTestsBase.m in Sources */,
+				63ECC4121CA8188300439A01 /* LectureInteractorTests.m in Sources */,
 				631CBAA31C021C3900E3EBA8 /* ReportListInteractorTests.m in Sources */,
 				631CBA721C020CCD00E3EBA8 /* AnnouncementListModuleAssemblyTests.m in Sources */,
+				635E18C71CA6B8CE005B8439 /* SpeakerShortInfoModuleAssemblyTests.m in Sources */,
 				9F0A851F1BC185AA006F79FB /* TestCancellableOperation.m in Sources */,
 				9F0A85271BC185AA006F79FB /* ResponseMappingOperationTests.m in Sources */,
 				9F1830F91BC1464C000E21A5 /* RCFManagedObjectMappingProviderTests.m in Sources */,
@@ -4858,10 +5001,12 @@
 				9F1830C81BC11EE6000E21A5 /* XCTestCase+RCFHelpers.m in Sources */,
 				631CBA771C020F2D00E3EBA8 /* ReportListModuleAssemblyTests.m in Sources */,
 				631CBA3B1C00935300E3EBA8 /* EventServiceTests.m in Sources */,
+				63ECC4051CA7E41100439A01 /* SpeakerInfoViewControllerTests.m in Sources */,
 				63F403B21BD0D4B40086D030 /* ResponseValidatorsAssemblyTests.m in Sources */,
 				9F0A84C31BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m in Sources */,
 				631CBAA41C021C3900E3EBA8 /* ReportListPresenterTests.m in Sources */,
 				9F1831211BC16195000E21A5 /* RCFResultResponseObjectFormatterTests.m in Sources */,
+				635E18CF1CA6C8CF005B8439 /* EventRouterTests.m in Sources */,
 				631CBA381C0092C100E3EBA8 /* ApplicationConfiguratorTests.m in Sources */,
 				9F1830AB1BC1139B000E21A5 /* RCFParseRequestSignerTests.m in Sources */,
 				63F403AF1BD0D0690086D030 /* ResponseMappersAssemblyTests.m in Sources */,
@@ -4872,6 +5017,8 @@
 				631CBAA51C021C3900E3EBA8 /* ReportListTableViewControllerTests.m in Sources */,
 				9FF99E541BC4317E006F15AF /* OperationSchedulerTests.m in Sources */,
 				9F1830B81BC119A5000E21A5 /* CommonNetworkClientTests.m in Sources */,
+				635E18BF1CA6A0A9005B8439 /* SpeakerInfoModuleAssemblyTests.m in Sources */,
+				635E18CD1CA6C5E5005B8439 /* StubTestHelper.m in Sources */,
 				631CBA7E1C02140600E3EBA8 /* RamblerLocationModuleAssemblyTests.m in Sources */,
 				9F1830C31BC11DE7000E21A5 /* RCFJSONResponseDeserializerTests.m in Sources */,
 				9F0A85221BC185AA006F79FB /* TestErrorChainableOperation.m in Sources */,
@@ -4883,6 +5030,7 @@
 				63D86BD61C1313D000986536 /* EventPresenterTests.m in Sources */,
 				63D628EC1BE4C744004AF98F /* EventPlainObject.m in Sources */,
 				9F0A85281BC185AA006F79FB /* ResponseValidationOperationTests.m in Sources */,
+				635E18C91CA6BAF4005B8439 /* AnnouncementListRouterTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

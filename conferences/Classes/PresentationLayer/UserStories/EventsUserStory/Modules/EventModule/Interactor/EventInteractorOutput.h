@@ -33,7 +33,7 @@
  */
 - (void)didObtainEvent:(EventPlainObject *)event;
 
-- (void)didSuccessfullySaveEventToCalendar;
+- (void)didSaveEventToCalendarWithError:(NSError *)error;
 
 @end
 

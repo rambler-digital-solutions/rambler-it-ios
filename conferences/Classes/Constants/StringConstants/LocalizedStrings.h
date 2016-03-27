@@ -20,5 +20,10 @@ extern NSString * const SpeakerContactsTableViewCellTitle;
 
 extern NSString * const EventSavedToCalendarAlertMessage;
 extern NSString * const EmptyAlertTitle;
+extern NSString * const ErrorAlertTitle;
 extern NSString * const OKAlertActionTitle;
+
+#pragma mark - Error
+
+extern NSString * const EventAlreadyStoredInCalendarErrorDescription;
 

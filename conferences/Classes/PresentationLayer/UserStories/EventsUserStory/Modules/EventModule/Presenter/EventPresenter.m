@@ -24,6 +24,7 @@
 #import "EventRouterInput.h"
 #import "EventPlainObject.h"
 #import "EventPresenterStateStorage.h"
+#import "LocalizedStrings.h"
 
 @implementation EventPresenter
 
@@ -69,8 +70,15 @@
     [self.view configureViewWithEvent:event];
 }
 
-- (void)didSuccessfullySaveEventToCalendar {
-    [self.view displayEventSavedToCalendarAlert];
+- (void)didSaveEventToCalendarWithError:(NSError *)error {
+    if (error) {
+        [self.view displayAlertWithTitle:NSLocalizedString(ErrorAlertTitle, nil)
+                              andMessage:NSLocalizedString(EventAlreadyStoredInCalendarErrorDescription, nil)];
+    }
+    else {
+        [self.view displayAlertWithTitle:NSLocalizedString(EmptyAlertTitle, nil)
+                              andMessage:NSLocalizedString(EventSavedToCalendarAlertMessage, nil)];
+    }
 }
 
 @end

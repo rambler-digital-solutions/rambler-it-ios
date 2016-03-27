@@ -11,7 +11,7 @@
 #import "SpeakerInfoDataDisplayManager.h"
 #import "SpeakerShortInfoModuleInput.h"
 
-static CGFloat tableViewEstimatedRowHeight = 44.0f;
+static CGFloat TableViewEstimatedRowHeight = 44.0f;
 
 @interface SpeakerInfoViewController()
 
@@ -32,7 +32,7 @@ static CGFloat tableViewEstimatedRowHeight = 44.0f;
     self.tableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.tableView];
     self.tableView.delegate = [self.dataDisplayManager delegateForTableView:self.tableView withBaseDelegate:nil];
     self.tableView.tableFooterView = [UIView new];
-    self.tableView.estimatedRowHeight = tableViewEstimatedRowHeight;
+    self.tableView.estimatedRowHeight = TableViewEstimatedRowHeight;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     
     [self setupHeaderViewWithSpeaker:speaker];

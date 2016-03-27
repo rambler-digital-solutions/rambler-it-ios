@@ -52,8 +52,11 @@
 
 - (void)tearDown {
     self.viewController = nil;
+    [(id)self.mockDataDisplayManager stopMocking];
     self.mockDataDisplayManager = nil;
+    [(id)self.mockOutput stopMocking];
     self.mockOutput = nil;
+    [(id)self.mockTableView stopMocking];
     self.mockTableView = nil;
     
     [super tearDown];
@@ -73,17 +76,49 @@
 
 #pragma mark - EventListViewInput
 
-- (void)testSuccessSetupViewWithEventList {
+- (void)testSuccessSetupTableViewDataSource {
     // given
     NSArray *events = @[];
+    
+    id mockDataSource = OCMProtocolMock(@protocol(UITableViewDataSource));
+    
+    OCMStub([self.mockDataDisplayManager dataSourceForTableView:OCMOCK_ANY]).andReturn(mockDataSource);
     
     // when
     [self.viewController setupViewWithEventList:events];
     
     // then
-    OCMVerify([self.mockDataDisplayManager dataSourceForTableView:self.mockTableView]);
-    OCMVerify([self.mockDataDisplayManager delegateForTableView:self.mockTableView withBaseDelegate:nil]);
-    OCMVerify([self.mockDataDisplayManager updateTableViewModelWithEvents:events]);
+    OCMVerify([self.mockTableView setDataSource:mockDataSource]);
+}
+
+- (void)testSuccessSetupTableViewDelegate {
+    // given
+    NSArray *events = @[];
+    
+    id mockDelegate = OCMProtocolMock(@protocol(UITableViewDelegate));
+    
+    OCMStub([self.mockDataDisplayManager delegateForTableView:OCMOCK_ANY withBaseDelegate:OCMOCK_ANY]).andReturn(mockDelegate);
+    
+    // when
+    [self.viewController setupViewWithEventList:events];
+    
+    // then
+    OCMVerify([self.mockTableView setDelegate:mockDelegate]);
+}
+
+- (void)testSuccessSetupViewWithEventList {
+    // given
+    NSArray *events = @[];
+    
+    id viewControllerPartialMock = OCMPartialMock(self.viewController);
+    
+    // when
+    [self.viewController setupViewWithEventList:events];
+    
+    // then
+    OCMVerify([viewControllerPartialMock updateViewWithEventList:events]);
+    [(id)viewControllerPartialMock stopMocking];
+    viewControllerPartialMock = nil;
 }
 
 - (void)testSuccessUpdateViewWithEventList {

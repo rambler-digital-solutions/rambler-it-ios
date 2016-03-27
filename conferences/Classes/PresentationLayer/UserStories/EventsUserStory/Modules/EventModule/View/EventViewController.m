@@ -62,8 +62,8 @@
     [self setupHeaderViewWithEvent:event];
 }
 
-- (void)displayEventSavedToCalendarAlert {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(EmptyAlertTitle, nil) message:NSLocalizedString(EventSavedToCalendarAlertMessage, nil) preferredStyle: UIAlertControllerStyleAlert];
+- (void)displayAlertWithTitle:(NSString *)title andMessage:(NSString *)message {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle: UIAlertControllerStyleAlert];
 
     UIAlertAction *closeAction = [UIAlertAction actionWithTitle:NSLocalizedString(OKAlertActionTitle, nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {}];
     

@@ -25,6 +25,7 @@
 #import "PrototypeMapper.h"
 #import "EventTypeDeterminator.h"
 #import "EventStoreServiceProtocol.h"
+#import "ErrorConstants.h"
 
 static NSString *const kEventByObjectIdPredicateFormat = @"objectId = %@";
 
@@ -46,10 +47,14 @@ static NSString *const kEventByObjectIdPredicateFormat = @"objectId = %@";
 - (void)saveEventToCalendar:(EventPlainObject *)event {
     [self.eventStoreService saveEventToCaledar:event withCompletionBlock:^(NSArray *errors) {
         if (errors.count > 0) {
-            // process errors
+            for (NSError *error in errors) {
+                if (error.code == ErrorEventAlreadyStoredInCalendar) {
+                    [self.output didSaveEventToCalendarWithError:error];
+                }
+            }
         }
         else {
-            [self.output didSuccessfullySaveEventToCalendar];
+            [self.output didSaveEventToCalendarWithError:nil];
         }
     }];
 }
