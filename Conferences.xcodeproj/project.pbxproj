@@ -186,6 +186,7 @@
 		63ECC4051CA7E41100439A01 /* SpeakerInfoViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ECC4041CA7E41100439A01 /* SpeakerInfoViewControllerTests.m */; };
 		63ECC4071CA7F42F00439A01 /* SpeakerInfoPresenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ECC4061CA7F42F00439A01 /* SpeakerInfoPresenterTests.m */; };
 		63ECC4091CA7F7AB00439A01 /* SpeakerInfoInteractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ECC4081CA7F7AB00439A01 /* SpeakerInfoInteractorTests.m */; };
+		63ECC40C1CA7FC2C00439A01 /* LectureViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ECC40B1CA7FC2C00439A01 /* LectureViewControllerTests.m */; };
 		63EF15BB1BC4559900480CAF /* PushNotificationCenterImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF15BA1BC4559900480CAF /* PushNotificationCenterImplementation.m */; };
 		63EF15C01BC461DD00480CAF /* PushNotificationServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF15BF1BC461DD00480CAF /* PushNotificationServiceImplementation.m */; };
 		63F342B01C8B20AB002AF7CD /* EventStoreService.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D7460E1C8B0D5200E3A381 /* EventStoreService.m */; };
@@ -674,6 +675,7 @@
 		63ECC4041CA7E41100439A01 /* SpeakerInfoViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerInfoViewControllerTests.m; sourceTree = "<group>"; };
 		63ECC4061CA7F42F00439A01 /* SpeakerInfoPresenterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerInfoPresenterTests.m; sourceTree = "<group>"; };
 		63ECC4081CA7F7AB00439A01 /* SpeakerInfoInteractorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerInfoInteractorTests.m; sourceTree = "<group>"; };
+		63ECC40B1CA7FC2C00439A01 /* LectureViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LectureViewControllerTests.m; sourceTree = "<group>"; };
 		63EF15B81BC4557600480CAF /* PushNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNotificationCenter.h; sourceTree = "<group>"; };
 		63EF15B91BC4559900480CAF /* PushNotificationCenterImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNotificationCenterImplementation.h; sourceTree = "<group>"; };
 		63EF15BA1BC4559900480CAF /* PushNotificationCenterImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushNotificationCenterImplementation.m; sourceTree = "<group>"; };
@@ -1579,6 +1581,7 @@
 		631CBA821C021C3900E3EBA8 /* EventsUserStoryTests */ = {
 			isa = PBXGroup;
 			children = (
+				63ECC40A1CA7FC2000439A01 /* LectureModuleTests */,
 				63ECC4031CA7E3F900439A01 /* SpeakerInfoModuleTests */,
 				631CBA831C021C3900E3EBA8 /* AnnouncementListModuleTests */,
 				631CBA881C021C3900E3EBA8 /* EventModuleTests */,
@@ -2524,6 +2527,14 @@
 				63ECC4081CA7F7AB00439A01 /* SpeakerInfoInteractorTests.m */,
 			);
 			path = SpeakerInfoModuleTests;
+			sourceTree = "<group>";
+		};
+		63ECC40A1CA7FC2000439A01 /* LectureModuleTests */ = {
+			isa = PBXGroup;
+			children = (
+				63ECC40B1CA7FC2C00439A01 /* LectureViewControllerTests.m */,
+			);
+			path = LectureModuleTests;
 			sourceTree = "<group>";
 		};
 		63EF15B71BC4546400480CAF /* PushNotificationCenter */ = {
@@ -4937,6 +4948,7 @@
 				9F0A85211BC185AA006F79FB /* TestChainableOperationWithValidationBlock.m in Sources */,
 				63F402F11BCF77CB0086D030 /* ServiceComponentsAssemblyTests.m in Sources */,
 				9F1830DB1BC126D7000E21A5 /* RCFParseResponseValidatorTests.m in Sources */,
+				63ECC40C1CA7FC2C00439A01 /* LectureViewControllerTests.m in Sources */,
 				9F0A85201BC185AA006F79FB /* TestChainableOperation.m in Sources */,
 				631CBA9E1C021C3900E3EBA8 /* PastEventCellObjectBuilderTests.m in Sources */,
 				9F8E5FA21BC27B5B00DC10DB /* EventOperationFactoryTests.m in Sources */,
