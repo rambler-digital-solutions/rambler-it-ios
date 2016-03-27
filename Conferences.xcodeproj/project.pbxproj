@@ -183,6 +183,7 @@
 		63D86BDD1C143FCE00986536 /* DateFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D86BDC1C143FCE00986536 /* DateFormatterTests.m */; };
 		63D86BE11C14490000986536 /* EventCellObjectBuilderBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D86BE01C14490000986536 /* EventCellObjectBuilderBase.m */; };
 		63D86BE91C14572C00986536 /* NearestAnnouncementTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D86BE71C14572C00986536 /* NearestAnnouncementTableViewCellObject.m */; };
+		63ECC4051CA7E41100439A01 /* SpeakerInfoViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ECC4041CA7E41100439A01 /* SpeakerInfoViewControllerTests.m */; };
 		63EF15BB1BC4559900480CAF /* PushNotificationCenterImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF15BA1BC4559900480CAF /* PushNotificationCenterImplementation.m */; };
 		63EF15C01BC461DD00480CAF /* PushNotificationServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF15BF1BC461DD00480CAF /* PushNotificationServiceImplementation.m */; };
 		63F342B01C8B20AB002AF7CD /* EventStoreService.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D7460E1C8B0D5200E3A381 /* EventStoreService.m */; };
@@ -668,6 +669,7 @@
 		63D86BE01C14490000986536 /* EventCellObjectBuilderBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventCellObjectBuilderBase.m; sourceTree = "<group>"; };
 		63D86BE61C14572C00986536 /* NearestAnnouncementTableViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearestAnnouncementTableViewCellObject.h; sourceTree = "<group>"; };
 		63D86BE71C14572C00986536 /* NearestAnnouncementTableViewCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearestAnnouncementTableViewCellObject.m; sourceTree = "<group>"; };
+		63ECC4041CA7E41100439A01 /* SpeakerInfoViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerInfoViewControllerTests.m; sourceTree = "<group>"; };
 		63EF15B81BC4557600480CAF /* PushNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNotificationCenter.h; sourceTree = "<group>"; };
 		63EF15B91BC4559900480CAF /* PushNotificationCenterImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNotificationCenterImplementation.h; sourceTree = "<group>"; };
 		63EF15BA1BC4559900480CAF /* PushNotificationCenterImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushNotificationCenterImplementation.m; sourceTree = "<group>"; };
@@ -1573,6 +1575,7 @@
 		631CBA821C021C3900E3EBA8 /* EventsUserStoryTests */ = {
 			isa = PBXGroup;
 			children = (
+				63ECC4031CA7E3F900439A01 /* SpeakerInfoModuleTests */,
 				631CBA831C021C3900E3EBA8 /* AnnouncementListModuleTests */,
 				631CBA881C021C3900E3EBA8 /* EventModuleTests */,
 			);
@@ -2507,6 +2510,14 @@
 				638DBCF81BEA385400B4B208 /* View */,
 			);
 			path = EventModule;
+			sourceTree = "<group>";
+		};
+		63ECC4031CA7E3F900439A01 /* SpeakerInfoModuleTests */ = {
+			isa = PBXGroup;
+			children = (
+				63ECC4041CA7E41100439A01 /* SpeakerInfoViewControllerTests.m */,
+			);
+			path = SpeakerInfoModuleTests;
 			sourceTree = "<group>";
 		};
 		63EF15B71BC4546400480CAF /* PushNotificationCenter */ = {
@@ -4944,6 +4955,7 @@
 				9F1830C81BC11EE6000E21A5 /* XCTestCase+RCFHelpers.m in Sources */,
 				631CBA771C020F2D00E3EBA8 /* ReportListModuleAssemblyTests.m in Sources */,
 				631CBA3B1C00935300E3EBA8 /* EventServiceTests.m in Sources */,
+				63ECC4051CA7E41100439A01 /* SpeakerInfoViewControllerTests.m in Sources */,
 				63F403B21BD0D4B40086D030 /* ResponseValidatorsAssemblyTests.m in Sources */,
 				9F0A84C31BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m in Sources */,
 				631CBAA41C021C3900E3EBA8 /* ReportListPresenterTests.m in Sources */,
