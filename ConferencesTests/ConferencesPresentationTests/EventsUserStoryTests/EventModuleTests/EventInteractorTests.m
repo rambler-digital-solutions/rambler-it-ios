@@ -27,14 +27,19 @@
 #import "PrototypeMapper.h"
 #import "EventTypeDeterminator.h"
 #import "EventInteractorOutput.h"
+#import "EventStoreServiceProtocol.h"
+#import "ErrorConstants.h"
+
+typedef void (^ProxyBlock)(NSInvocation *);
 
 @interface EventInteractorTests : XCTestCase
 
 @property (strong, nonatomic) EventInteractor *interactor;
-@property (strong, nonatomic) id <EventService> mockEventService;
-@property (strong, nonatomic) id <PrototypeMapper> mockPrototypeMapper;
-@property (strong, nonatomic) EventTypeDeterminator *mockEventTypeDeterminator;
-@property (strong, nonatomic) id <EventInteractorOutput> mockOutput;
+@property (strong, nonatomic) id <EventService> eventServiceMock;
+@property (strong, nonatomic) id <PrototypeMapper> prototypeMapperMock;
+@property (strong, nonatomic) EventTypeDeterminator *eventTypeDeterminatorMock;
+@property (strong, nonatomic) id <EventInteractorOutput> presenterMock;
+@property (strong, nonatomic) id eventStoreServiceMock;
 
 @end
 
@@ -44,23 +49,31 @@
     [super setUp];
 
     self.interactor = [EventInteractor new];
-    self.mockEventService = OCMProtocolMock(@protocol(EventService));
-    self.mockPrototypeMapper = OCMProtocolMock(@protocol(PrototypeMapper));
-    self.mockEventTypeDeterminator = OCMClassMock([EventTypeDeterminator class]);
-    self.mockOutput = OCMProtocolMock(@protocol(EventInteractorOutput));
+    self.eventServiceMock = OCMProtocolMock(@protocol(EventService));
+    self.prototypeMapperMock = OCMProtocolMock(@protocol(PrototypeMapper));
+    self.eventTypeDeterminatorMock = OCMClassMock([EventTypeDeterminator class]);
+    self.presenterMock = OCMProtocolMock(@protocol(EventInteractorOutput));
+    self.eventStoreServiceMock = OCMProtocolMock(@protocol(EventStoreServiceProtocol));
     
-    self.interactor.eventService = self.mockEventService;
-    self.interactor.eventPrototypeMapper = self.mockPrototypeMapper;
-    self.interactor.eventTypeDeterminator = self.mockEventTypeDeterminator;
-    self.interactor.output = self.mockOutput;
+    self.interactor.eventService = self.eventServiceMock;
+    self.interactor.eventPrototypeMapper = self.prototypeMapperMock;
+    self.interactor.eventTypeDeterminator = self.eventTypeDeterminatorMock;
+    self.interactor.output = self.presenterMock;
+    self.interactor.eventStoreService = self.eventStoreServiceMock;
 }
 
 - (void)tearDown {
     self.interactor = nil;
-    self.mockEventService = nil;
-    self.mockPrototypeMapper = nil;
-    self.mockEventTypeDeterminator = nil;
-    self.mockOutput = nil;
+    [(id)self.eventServiceMock stopMocking];
+    self.eventServiceMock = nil;
+    [(id)self.prototypeMapperMock stopMocking];
+    self.prototypeMapperMock = nil;
+    [(id)self.eventTypeDeterminatorMock stopMocking];
+    self.eventTypeDeterminatorMock = nil;
+    [(id)self.presenterMock stopMocking];
+    self.presenterMock = nil;
+    [self.eventStoreServiceMock stopMocking];
+    self.eventStoreServiceMock = nil;
     
     [super tearDown];
 }
@@ -70,15 +83,60 @@
     NSObject *event = [NSObject new];
     NSArray *events = @[event];
     
-    OCMStub([self.mockEventService obtainEventWithPredicate:OCMOCK_ANY]).andReturn(events);
+    OCMStub([self.eventServiceMock obtainEventWithPredicate:OCMOCK_ANY]).andReturn(events);
     
     // when
     [self.interactor obtainEventByObjectId:OCMOCK_ANY];
     
     // then
-    OCMVerify([self.mockPrototypeMapper fillObject:OCMOCK_ANY withObject:event]);
-    OCMVerify([self.mockEventTypeDeterminator determinateTypeForEvent:OCMOCK_ANY]);
-    OCMVerify([self.mockOutput didObtainEvent:OCMOCK_ANY]);
+    OCMVerify([self.prototypeMapperMock fillObject:OCMOCK_ANY withObject:event]);
+    OCMVerify([self.eventTypeDeterminatorMock determinateTypeForEvent:OCMOCK_ANY]);
+    OCMVerify([self.presenterMock didObtainEvent:OCMOCK_ANY]);
+}
+
+- (void)testSuccessSaveEventToCalendar {
+    // given
+    EventPlainObject *event = [EventPlainObject new];
+    
+    ProxyBlock proxyBlock = ^(NSInvocation *invocation) {
+        void(^completioinBlock)(NSArray *errors);
+        
+        [invocation getArgument:&completioinBlock atIndex:3];
+        
+        completioinBlock(nil);
+    };
+    
+    OCMStub([self.eventStoreServiceMock saveEventToCaledar:event withCompletionBlock:OCMOCK_ANY]).andDo(proxyBlock);
+    
+    // when
+    [self.interactor saveEventToCalendar:event];
+    
+    // then
+    OCMVerify([self.presenterMock didSaveEventToCalendarWithError:nil]);
+}
+
+- (void)testSuccessSaveEventToCalendarWithError {
+    // given
+    NSError *error = [NSError errorWithDomain:ErrorDomain code:ErrorEventAlreadyStoredInCalendar userInfo:nil];
+    NSArray *errors = @[error];
+    
+    EventPlainObject *event = [EventPlainObject new];
+    
+    ProxyBlock proxyBlock = ^(NSInvocation *invocation) {
+        void(^completioinBlock)(NSArray *errors);
+        
+        [invocation getArgument:&completioinBlock atIndex:3];
+        
+        completioinBlock(errors);
+    };
+    
+    OCMStub([self.eventStoreServiceMock saveEventToCaledar:event withCompletionBlock:OCMOCK_ANY]).andDo(proxyBlock);
+    
+    // when
+    [self.interactor saveEventToCalendar:event];
+    
+    // then
+    OCMVerify([self.presenterMock didSaveEventToCalendarWithError:error]);
 }
 
 @end
