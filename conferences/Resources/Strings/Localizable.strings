@@ -15,3 +15,6 @@
 "EventSavedToCalendarAlertMessage" = "Событие сохранено в календарь.";
 "EmptyAlertTitle" = "";
 "OKAlertActionTitle" = "OK";
+"ErrorAlertTitle" = "Ошибка";
+
+"EventAlreadyStoredInCalendarErrorDescription" = "Событие уже существует в каледнаре.";

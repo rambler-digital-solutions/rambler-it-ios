@@ -161,7 +161,6 @@
 		638DBD591BEE2B1000B4B208 /* EventInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 638DBD561BEE2B1000B4B208 /* EventInfoTableViewCell.m */; };
 		638DBD5A1BEE2B1000B4B208 /* EventInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 638DBD571BEE2B1000B4B208 /* EventInfoTableViewCell.xib */; };
 		638DBD641BEE2C0100B4B208 /* EventInfoTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 638DBD631BEE2C0100B4B208 /* EventInfoTableViewCellObject.m */; };
-		63C01AB51CA68EA5008BCB0D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 63C01AB41CA68EA5008BCB0D /* Localizable.strings */; };
 		63D628EB1BE4C741004AF98F /* EventPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FA398E1BDD46E500CE6249 /* EventPlainObject.m */; };
 		63D628EC1BE4C744004AF98F /* EventPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FA398E1BDD46E500CE6249 /* EventPlainObject.m */; };
 		63D628ED1BE4CD69004AF98F /* ApplicationAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37C41BC142BB00B49C3D /* ApplicationAssembly.m */; };
@@ -191,6 +190,7 @@
 		63ECC4101CA8138000439A01 /* LecturePresenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ECC40F1CA8138000439A01 /* LecturePresenterTests.m */; };
 		63ECC4121CA8188300439A01 /* LectureInteractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ECC4111CA8188300439A01 /* LectureInteractorTests.m */; };
 		63ECC4161CA81E5300439A01 /* ErrorConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ECC4151CA81E5300439A01 /* ErrorConstants.m */; };
+		63ECC4191CA8373400439A01 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 63ECC4181CA8373400439A01 /* Localizable.strings */; };
 		63EF15BB1BC4559900480CAF /* PushNotificationCenterImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF15BA1BC4559900480CAF /* PushNotificationCenterImplementation.m */; };
 		63EF15C01BC461DD00480CAF /* PushNotificationServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF15BF1BC461DD00480CAF /* PushNotificationServiceImplementation.m */; };
 		63F342B01C8B20AB002AF7CD /* EventStoreService.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D7460E1C8B0D5200E3A381 /* EventStoreService.m */; };
@@ -665,7 +665,6 @@
 		638DBD571BEE2B1000B4B208 /* EventInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventInfoTableViewCell.xib; sourceTree = "<group>"; };
 		638DBD621BEE2C0100B4B208 /* EventInfoTableViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventInfoTableViewCellObject.h; sourceTree = "<group>"; };
 		638DBD631BEE2C0100B4B208 /* EventInfoTableViewCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventInfoTableViewCellObject.m; sourceTree = "<group>"; };
-		63C01AB41CA68EA5008BCB0D /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		63D7460D1C8B0D5200E3A381 /* EventStoreService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventStoreService.h; sourceTree = "<group>"; };
 		63D7460E1C8B0D5200E3A381 /* EventStoreService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventStoreService.m; sourceTree = "<group>"; };
 		63D86BD51C1313D000986536 /* EventPresenterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventPresenterTests.m; sourceTree = "<group>"; };
@@ -685,6 +684,7 @@
 		63ECC4111CA8188300439A01 /* LectureInteractorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LectureInteractorTests.m; sourceTree = "<group>"; };
 		63ECC4141CA81E5300439A01 /* ErrorConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorConstants.h; sourceTree = "<group>"; };
 		63ECC4151CA81E5300439A01 /* ErrorConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorConstants.m; sourceTree = "<group>"; };
+		63ECC4181CA8373400439A01 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		63EF15B81BC4557600480CAF /* PushNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNotificationCenter.h; sourceTree = "<group>"; };
 		63EF15B91BC4559900480CAF /* PushNotificationCenterImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNotificationCenterImplementation.h; sourceTree = "<group>"; };
 		63EF15BA1BC4559900480CAF /* PushNotificationCenterImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushNotificationCenterImplementation.m; sourceTree = "<group>"; };
@@ -2461,14 +2461,6 @@
 			path = EventInfoTableViewCellObject;
 			sourceTree = "<group>";
 		};
-		63C01AB31CA68E9B008BCB0D /* Strings */ = {
-			isa = PBXGroup;
-			children = (
-				63C01AB41CA68EA5008BCB0D /* Localizable.strings */,
-			);
-			path = Strings;
-			sourceTree = "<group>";
-		};
 		63D7460B1C8B0CF600E3A381 /* EventStoreService */ = {
 			isa = PBXGroup;
 			children = (
@@ -2556,6 +2548,14 @@
 				63ECC4151CA81E5300439A01 /* ErrorConstants.m */,
 			);
 			path = ErrorConstants;
+			sourceTree = "<group>";
+		};
+		63ECC4171CA8373400439A01 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				63ECC4181CA8373400439A01 /* Localizable.strings */,
+			);
+			path = Strings;
 			sourceTree = "<group>";
 		};
 		63EF15B71BC4546400480CAF /* PushNotificationCenter */ = {
@@ -3338,6 +3338,7 @@
 		63FDCE001BBDBA2A00A43B60 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				63ECC4171CA8373400439A01 /* Strings */,
 				63FDCE011BBDBA2A00A43B60 /* Images */,
 			);
 			name = Resources;
@@ -3355,7 +3356,6 @@
 		63FDCE031BBDBA2A00A43B60 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				63C01AB31CA68E9B008BCB0D /* Strings */,
 				63F54D911BC5A79900DB1746 /* EXTScope */,
 				63FDCE041BBDBA2A00A43B60 /* Info.plist */,
 				63FDCE051BBDBA2A00A43B60 /* main.m */,
@@ -4608,7 +4608,7 @@
 				631FFE591BEF937D00749DB8 /* ReportsUserStory.storyboard in Resources */,
 				63F8F24F1BF74302000017F3 /* CurrentVideoTranslationTableViewCell.xib in Resources */,
 				631808741C4AA54B00A61E7D /* LectureDescriptionTableViewCell.xib in Resources */,
-				63C01AB51CA68EA5008BCB0D /* Localizable.strings in Resources */,
+				63ECC4191CA8373400439A01 /* Localizable.strings in Resources */,
 				63F51C631C3D409200AFB9D2 /* EventHeaderView.xib in Resources */,
 				6315BAB01C9ED23200999877 /* SpeakerInfoTableViewCell.xib in Resources */,
 				63F8F2751BF7474C000017F3 /* SignUpAndSaveToCalendarEventTableViewCell.xib in Resources */,

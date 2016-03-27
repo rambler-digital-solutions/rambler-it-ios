@@ -20,4 +20,9 @@ NSString * const SpeakerContactsTableViewCellTitle = @"SpeakerContactsTableViewC
 
 NSString * const EventSavedToCalendarAlertMessage = @"EventSavedToCalendarAlertMessage";
 NSString * const EmptyAlertTitle = @"EmptyAlertTitle";
+NSString * const ErrorAlertTitle = @"ErrorAlertTitle";
 NSString * const OKAlertActionTitle = @"OKAlertActionTitle";
+
+#pragma mark - Error
+
+NSString * const EventAlreadyStoredInCalendarErrorDescription = @"EventAlreadyStoredInCalendarErrorDescription";
