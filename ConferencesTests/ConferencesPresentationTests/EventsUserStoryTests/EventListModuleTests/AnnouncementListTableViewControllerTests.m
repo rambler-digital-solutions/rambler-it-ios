@@ -114,6 +114,8 @@
     
     // then
     OCMVerify([viewControllerPartialMock updateViewWithEventList:events]);
+    [(id)viewControllerPartialMock stopMocking];
+    viewControllerPartialMock = nil;
 }
 
 - (void)testSuccessUpdateViewWithEventList {
