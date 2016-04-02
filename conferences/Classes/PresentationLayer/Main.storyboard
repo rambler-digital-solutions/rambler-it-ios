@@ -4,15 +4,15 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--Announcement-->
+        <!--AnnouncementListTableViewController-->
         <scene sceneID="iyp-3w-99h">
             <objects>
-                <viewControllerPlaceholder storyboardName="Announcement" id="Lum-qY-GHL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Анонсы" id="toR-Yz-X4q"/>
+                <viewControllerPlaceholder storyboardName="Announcement" referencedIdentifier="AnnouncementListTableViewController" id="Lum-qY-GHL" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="MVm-KZ-g5U"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rh4-4F-X5I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2493.5" y="108"/>
+            <point key="canvasLocation" x="2970" y="-59"/>
         </scene>
         <!--RamblerLocationViewController-->
         <scene sceneID="umH-x8-iBI">
@@ -22,17 +22,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yUG-41-N1B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2543" y="327"/>
+            <point key="canvasLocation" x="2487" y="327"/>
         </scene>
-        <!--Reports-->
+        <!--ReportListTableViewController-->
         <scene sceneID="8Z2-PA-vwp">
             <objects>
-                <viewControllerPlaceholder storyboardName="Reports" id="Nj5-yg-I3V" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="YQW-lF-LbB"/>
+                <viewControllerPlaceholder storyboardName="Reports" referencedIdentifier="ReportListTableViewController" id="Nj5-yg-I3V" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="ZKK-XE-V4o"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aAK-nC-eVv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2471" y="535"/>
+            <point key="canvasLocation" x="2945" y="714"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="T2G-Zq-Mi3">
@@ -44,14 +44,52 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <segue destination="JLd-bL-bGb" kind="relationship" relationship="viewControllers" id="cv9-Tv-vaS"/>
                         <segue destination="N0F-Xl-Wdc" kind="relationship" relationship="viewControllers" id="ll0-mJ-Hnu"/>
-                        <segue destination="Lum-qY-GHL" kind="relationship" relationship="viewControllers" id="cv9-Tv-vaS"/>
-                        <segue destination="Nj5-yg-I3V" kind="relationship" relationship="viewControllers" id="Yqu-iV-Oce"/>
+                        <segue destination="24b-F2-UUq" kind="relationship" relationship="viewControllers" id="Yqu-iV-Oce"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h0W-ix-m5Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1991" y="327"/>
+        </scene>
+        <!--Анонсы-->
+        <scene sceneID="Mpn-Tk-RCv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JLd-bL-bGb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Анонсы" id="toR-Yz-X4q"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rtz-ho-0Rr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Lum-qY-GHL" kind="relationship" relationship="rootViewController" id="zuv-uJ-Y7d"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KYO-f8-F0u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2487" y="-59"/>
+        </scene>
+        <!--Отчеты-->
+        <scene sceneID="kNR-4e-dMq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="24b-F2-UUq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Отчеты" id="YQW-lF-LbB"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EGp-eR-BLf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Nj5-yg-I3V" kind="relationship" relationship="rootViewController" id="MAI-bF-rtS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z2T-sU-pWT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2487" y="714"/>
         </scene>
     </scenes>
 </document>
