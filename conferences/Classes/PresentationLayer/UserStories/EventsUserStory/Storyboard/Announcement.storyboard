@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Z1b-vB-5Rv">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--Announcement List Table View Controller-->
+        <!--Анонсы-->
         <scene sceneID="nOx-C3-ZAu">
             <objects>
                 <tableViewController storyboardIdentifier="AnnouncementListTableViewController" id="nCN-ol-buU" customClass="AnnouncementListTableViewController" sceneMemberID="viewController">
@@ -15,7 +15,7 @@
                         <inset key="separatorInset" minX="12" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="xkU-eC-DgW">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xkU-eC-DgW" id="fT3-OQ-TLu">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
@@ -31,10 +31,13 @@
                             <outlet property="delegate" destination="nCN-ol-buU" id="Li9-M4-ulR"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="Анонсы" id="eUF-P4-wvY"/>
+                    <navigationItem key="navigationItem" id="bnq-gD-ykW"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nFg-Tn-fxr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="656" y="233"/>
+            <point key="canvasLocation" x="1188" y="233"/>
         </scene>
         <!--Report List Table View Controller-->
         <scene sceneID="P39-WW-104">
@@ -135,7 +138,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UZP-hJ-8Tb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1177" y="675"/>
+            <point key="canvasLocation" x="1713" y="258"/>
         </scene>
         <!--Lecture View Controller-->
         <scene sceneID="yMb-rJ-n2g">
@@ -185,7 +188,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DF2-UC-Jdq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1673" y="675"/>
+            <point key="canvasLocation" x="2205" y="675"/>
         </scene>
         <!--Speaker Info View Controller-->
         <scene sceneID="SfL-VR-c8q">
@@ -230,7 +233,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ita-kl-7HN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2135" y="675"/>
+            <point key="canvasLocation" x="2667" y="675"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ivM-hQ-fN1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Z1b-vB-5Rv" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1rh-j3-YP2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="nCN-ol-buU" kind="relationship" relationship="rootViewController" id="ItT-Zk-2z2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="agv-Z9-cIQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="656" y="233"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
