@@ -57,7 +57,7 @@
         <!--UIViewController-mwt-bL-fmW-->
         <scene sceneID="ARJ-aI-mmf">
             <objects>
-                <viewControllerPlaceholder storyboardName="Announcement" referencedIdentifier="UIViewController-mwt-bL-fmW" id="p1O-q9-0wo" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="SpeakerInfo" referencedIdentifier="UIViewController-mwt-bL-fmW" id="p1O-q9-0wo" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J2x-xj-0EH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2719" y="258"/>

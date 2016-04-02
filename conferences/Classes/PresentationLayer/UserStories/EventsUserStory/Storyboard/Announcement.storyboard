@@ -57,14 +57,6 @@
             </objects>
             <point key="canvasLocation" x="656" y="233"/>
         </scene>
-        <!--ReportListTableViewController-->
-        <scene sceneID="7iR-YM-r6m">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="ReportListTableViewController" storyboardName="Reports" referencedIdentifier="ReportListTableViewController" id="dho-aR-rIF" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7Hc-sb-7bi" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="656" y="896"/>
-        </scene>
         <!--UIViewController-lPZ-z8-z2H-->
         <scene sceneID="QPx-Am-3PJ">
             <objects>
@@ -74,22 +66,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fUT-iL-kEZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1646.5" y="233"/>
-        </scene>
-        <!--UIViewController-JLc-iV-GVs-->
-        <scene sceneID="PeZ-1o-YbW">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="UIViewController-JLc-iV-GVs" storyboardName="Lecture" referencedIdentifier="UIViewController-JLc-iV-GVs" id="GiT-Gu-tBa" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6NA-yN-Gnd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2232" y="258"/>
-        </scene>
-        <!--UIViewController-mwt-bL-fmW-->
-        <scene sceneID="4YB-mi-lTS">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="UIViewController-mwt-bL-fmW" storyboardName="SpeakerInfo" referencedIdentifier="UIViewController-mwt-bL-fmW" id="t5e-dS-iGO" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="svx-iq-UwQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2719" y="258"/>
         </scene>
     </scenes>
 </document>

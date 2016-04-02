@@ -59,7 +59,7 @@
         <!--UIViewController-JLc-iV-GVs-->
         <scene sceneID="U1R-b5-hEw">
             <objects>
-                <viewControllerPlaceholder storyboardName="Announcement" referencedIdentifier="UIViewController-JLc-iV-GVs" id="ApB-G0-QuI" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Lecture" referencedIdentifier="UIViewController-JLc-iV-GVs" id="ApB-G0-QuI" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2qi-A7-HYW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2232" y="258"/>
