@@ -20,11 +20,7 @@
 
 #import "ModuleAssemblyBase.h"
 
-@protocol TabBarButtonPrototypeProtocol;
-
 @interface ReportListModuleAssembly : ModuleAssemblyBase
-
-- (id<TabBarButtonPrototypeProtocol>)reportListTabBarButtonPrototype;
 
 @end
 

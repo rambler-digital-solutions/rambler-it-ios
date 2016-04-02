@@ -8,22 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5A5668508B92FC833070BA13 /* libPods-ConferencesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E72B1E234365770B87BDC6D /* libPods-ConferencesTests.a */; };
-		63136FD31BDCDB2700994356 /* EmbedModuleSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136F971BDCDB2600994356 /* EmbedModuleSegue.m */; };
-		63136FD41BDCDB2700994356 /* EmbedModuleTransitionSegueInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136F991BDCDB2600994356 /* EmbedModuleTransitionSegueInfo.m */; };
-		63136FD51BDCDB2700994356 /* ModuleConfigurationPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136F9C1BDCDB2600994356 /* ModuleConfigurationPromise.m */; };
-		63136FD61BDCDB2700994356 /* ModuleTransitionSegueInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136FA21BDCDB2600994356 /* ModuleTransitionSegueInfo.m */; };
-		63136FD71BDCDB2700994356 /* UIViewController+DefaultTransitionHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136FA41BDCDB2600994356 /* UIViewController+DefaultTransitionHandling.m */; };
-		63136FD81BDCDB2700994356 /* TabBarModuleAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136FA81BDCDB2600994356 /* TabBarModuleAssembly.m */; };
-		63136FD91BDCDB2700994356 /* TabBarInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136FAB1BDCDB2700994356 /* TabBarInteractor.m */; };
-		63136FDA1BDCDB2700994356 /* TabBarPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136FB11BDCDB2700994356 /* TabBarPresenter.m */; };
-		63136FDB1BDCDB2700994356 /* TabBarRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136FB51BDCDB2700994356 /* TabBarRouter.m */; };
-		63136FDC1BDCDB2700994356 /* CollectionViewDataDisplayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136FBD1BDCDB2700994356 /* CollectionViewDataDisplayManager.m */; };
-		63136FDD1BDCDB2700994356 /* CollectionViewSectionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136FBF1BDCDB2700994356 /* CollectionViewSectionInfo.m */; };
-		63136FDE1BDCDB2700994356 /* CollectionViewSupplementaryViewObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136FC11BDCDB2700994356 /* CollectionViewSupplementaryViewObject.m */; };
-		63136FDF1BDCDB2700994356 /* TabBarButtonPrototype.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136FC61BDCDB2700994356 /* TabBarButtonPrototype.m */; };
-		63136FE01BDCDB2700994356 /* UIViewController+TabBarControllerContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136FCC1BDCDB2700994356 /* UIViewController+TabBarControllerContent.m */; };
-		63136FE11BDCDB2700994356 /* TabBarButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136FCF1BDCDB2700994356 /* TabBarButtonCell.m */; };
-		63136FE21BDCDB2700994356 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136FD11BDCDB2700994356 /* TabBarViewController.m */; };
 		6315BA051C9EC23600999877 /* VideoRecordTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6315BA031C9EC23600999877 /* VideoRecordTableViewCell.m */; };
 		6315BA061C9EC23600999877 /* VideoRecordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6315BA041C9EC23600999877 /* VideoRecordTableViewCell.xib */; };
 		6315BA0A1C9EC2A200999877 /* TableViewSectionHeaderCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6315BA091C9EC2A200999877 /* TableViewSectionHeaderCellObject.m */; };
@@ -118,7 +102,6 @@
 		63D628EC1BE4C744004AF98F /* EventPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FA398E1BDD46E500CE6249 /* EventPlainObject.m */; };
 		63D628ED1BE4CD69004AF98F /* ApplicationAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37C41BC142BB00B49C3D /* ApplicationAssembly.m */; };
 		63D628EE1BE4CE09004AF98F /* SystemInfrastructureAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37C11BC1413A00B49C3D /* SystemInfrastructureAssembly.m */; };
-		63D628EF1BE4CE09004AF98F /* TabBarModuleAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 63136FA81BDCDB2600994356 /* TabBarModuleAssembly.m */; };
 		63D628F01BE4CE09004AF98F /* ModuleAssemblyBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D0B1BCB825F00552B91 /* ModuleAssemblyBase.m */; };
 		63D628F21BE4CE09004AF98F /* RamblerLocationModuleAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8DC21BCB8FE800552B91 /* RamblerLocationModuleAssembly.m */; };
 		63D628F31BE4CE09004AF98F /* ServiceComponentsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F54D9A1BC5AB3C00DB1746 /* ServiceComponentsAssembly.m */; };
@@ -344,58 +327,6 @@
 		559ED4EDBC100544852E4E6A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		5E72B1E234365770B87BDC6D /* libPods-ConferencesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ConferencesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FED76184BAB5478101AC945 /* Pods-ConferencesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConferencesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConferencesTests/Pods-ConferencesTests.release.xcconfig"; sourceTree = "<group>"; };
-		63136F961BDCDB2600994356 /* EmbedModuleSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmbedModuleSegue.h; sourceTree = "<group>"; };
-		63136F971BDCDB2600994356 /* EmbedModuleSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmbedModuleSegue.m; sourceTree = "<group>"; };
-		63136F981BDCDB2600994356 /* EmbedModuleTransitionSegueInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmbedModuleTransitionSegueInfo.h; sourceTree = "<group>"; };
-		63136F991BDCDB2600994356 /* EmbedModuleTransitionSegueInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmbedModuleTransitionSegueInfo.m; sourceTree = "<group>"; };
-		63136F9A1BDCDB2600994356 /* IntermoduleDataTransfer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntermoduleDataTransfer.h; sourceTree = "<group>"; };
-		63136F9B1BDCDB2600994356 /* ModuleConfigurationPromise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleConfigurationPromise.h; sourceTree = "<group>"; };
-		63136F9C1BDCDB2600994356 /* ModuleConfigurationPromise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModuleConfigurationPromise.m; sourceTree = "<group>"; };
-		63136F9D1BDCDB2600994356 /* ModuleConfigurationPromiseProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleConfigurationPromiseProtocol.h; sourceTree = "<group>"; };
-		63136F9E1BDCDB2600994356 /* ModuleConfiguratorHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleConfiguratorHolder.h; sourceTree = "<group>"; };
-		63136F9F1BDCDB2600994356 /* ModuleConfiguratorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleConfiguratorProtocol.h; sourceTree = "<group>"; };
-		63136FA01BDCDB2600994356 /* ModuleTransitionHandlerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleTransitionHandlerProtocol.h; sourceTree = "<group>"; };
-		63136FA11BDCDB2600994356 /* ModuleTransitionSegueInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleTransitionSegueInfo.h; sourceTree = "<group>"; };
-		63136FA21BDCDB2600994356 /* ModuleTransitionSegueInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModuleTransitionSegueInfo.m; sourceTree = "<group>"; };
-		63136FA31BDCDB2600994356 /* UIViewController+DefaultTransitionHandling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DefaultTransitionHandling.h"; sourceTree = "<group>"; };
-		63136FA41BDCDB2600994356 /* UIViewController+DefaultTransitionHandling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DefaultTransitionHandling.m"; sourceTree = "<group>"; };
-		63136FA71BDCDB2600994356 /* TabBarModuleAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarModuleAssembly.h; sourceTree = "<group>"; };
-		63136FA81BDCDB2600994356 /* TabBarModuleAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarModuleAssembly.m; sourceTree = "<group>"; };
-		63136FAA1BDCDB2600994356 /* TabBarInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarInteractor.h; sourceTree = "<group>"; };
-		63136FAB1BDCDB2700994356 /* TabBarInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarInteractor.m; sourceTree = "<group>"; };
-		63136FAC1BDCDB2700994356 /* TabBarInteractorInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarInteractorInput.h; sourceTree = "<group>"; };
-		63136FAE1BDCDB2700994356 /* TabBarInteractorOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarInteractorOutput.h; sourceTree = "<group>"; };
-		63136FAF1BDCDB2700994356 /* TabBarModuleConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarModuleConfigurator.h; sourceTree = "<group>"; };
-		63136FB01BDCDB2700994356 /* TabBarPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarPresenter.h; sourceTree = "<group>"; };
-		63136FB11BDCDB2700994356 /* TabBarPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarPresenter.m; sourceTree = "<group>"; };
-		63136FB21BDCDB2700994356 /* TabBarViewOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewOutput.h; sourceTree = "<group>"; };
-		63136FB41BDCDB2700994356 /* TabBarRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarRouter.h; sourceTree = "<group>"; };
-		63136FB51BDCDB2700994356 /* TabBarRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarRouter.m; sourceTree = "<group>"; };
-		63136FB61BDCDB2700994356 /* TabBarRouterInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarRouterInput.h; sourceTree = "<group>"; };
-		63136FB71BDCDB2700994356 /* TabBarTabFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarTabFactory.h; sourceTree = "<group>"; };
-		63136FBA1BDCDB2700994356 /* CollectionViewCellObjectProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCellObjectProtocol.h; sourceTree = "<group>"; };
-		63136FBB1BDCDB2700994356 /* CollectionViewCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCellProtocol.h; sourceTree = "<group>"; };
-		63136FBC1BDCDB2700994356 /* CollectionViewDataDisplayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewDataDisplayManager.h; sourceTree = "<group>"; };
-		63136FBD1BDCDB2700994356 /* CollectionViewDataDisplayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewDataDisplayManager.m; sourceTree = "<group>"; };
-		63136FBE1BDCDB2700994356 /* CollectionViewSectionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewSectionInfo.h; sourceTree = "<group>"; };
-		63136FBF1BDCDB2700994356 /* CollectionViewSectionInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewSectionInfo.m; sourceTree = "<group>"; };
-		63136FC01BDCDB2700994356 /* CollectionViewSupplementaryViewObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewSupplementaryViewObject.h; sourceTree = "<group>"; };
-		63136FC11BDCDB2700994356 /* CollectionViewSupplementaryViewObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewSupplementaryViewObject.m; sourceTree = "<group>"; };
-		63136FC21BDCDB2700994356 /* CollectionViewSupplementaryViewObjectProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewSupplementaryViewObjectProtocol.h; sourceTree = "<group>"; };
-		63136FC31BDCDB2700994356 /* CollectionViewSupplementaryViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewSupplementaryViewProtocol.h; sourceTree = "<group>"; };
-		63136FC51BDCDB2700994356 /* TabBarButtonPrototype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarButtonPrototype.h; sourceTree = "<group>"; };
-		63136FC61BDCDB2700994356 /* TabBarButtonPrototype.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarButtonPrototype.m; sourceTree = "<group>"; };
-		63136FC71BDCDB2700994356 /* TabBarButtonPrototypeProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarButtonPrototypeProtocol.h; sourceTree = "<group>"; };
-		63136FC81BDCDB2700994356 /* TabBarControllerContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarControllerContent.h; sourceTree = "<group>"; };
-		63136FC91BDCDB2700994356 /* TabBarControllerContentEmbedder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarControllerContentEmbedder.h; sourceTree = "<group>"; };
-		63136FCA1BDCDB2700994356 /* TabBarControllerEmbeddedContentConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarControllerEmbeddedContentConfigurator.h; sourceTree = "<group>"; };
-		63136FCB1BDCDB2700994356 /* UIViewController+TabBarControllerContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TabBarControllerContent.h"; sourceTree = "<group>"; };
-		63136FCC1BDCDB2700994356 /* UIViewController+TabBarControllerContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TabBarControllerContent.m"; sourceTree = "<group>"; };
-		63136FCE1BDCDB2700994356 /* TabBarButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarButtonCell.h; sourceTree = "<group>"; };
-		63136FCF1BDCDB2700994356 /* TabBarButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarButtonCell.m; sourceTree = "<group>"; };
-		63136FD01BDCDB2700994356 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
-		63136FD11BDCDB2700994356 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
-		63136FD21BDCDB2700994356 /* TabBarViewInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewInput.h; sourceTree = "<group>"; };
 		63136FE51BDCDB9E00994356 /* DataDisplayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataDisplayManager.h; sourceTree = "<group>"; };
 		6315BA021C9EC23600999877 /* VideoRecordTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoRecordTableViewCell.h; sourceTree = "<group>"; };
 		6315BA031C9EC23600999877 /* VideoRecordTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoRecordTableViewCell.m; sourceTree = "<group>"; };
@@ -1003,140 +934,8 @@
 				63F51CA71C42ACE600AFB9D2 /* Cells */,
 				63F51CA51C42ACE600AFB9D2 /* CellObjects */,
 				63136FE31BDCDB7200994356 /* Protocols */,
-				63136F951BDCDB2600994356 /* IntermoduleDataTransfer */,
-				63136FA51BDCDB2600994356 /* TabBarModule */,
 			);
 			path = Common;
-			sourceTree = "<group>";
-		};
-		63136F951BDCDB2600994356 /* IntermoduleDataTransfer */ = {
-			isa = PBXGroup;
-			children = (
-				63136F961BDCDB2600994356 /* EmbedModuleSegue.h */,
-				63136F971BDCDB2600994356 /* EmbedModuleSegue.m */,
-				63136F981BDCDB2600994356 /* EmbedModuleTransitionSegueInfo.h */,
-				63136F991BDCDB2600994356 /* EmbedModuleTransitionSegueInfo.m */,
-				63136F9A1BDCDB2600994356 /* IntermoduleDataTransfer.h */,
-				63136F9B1BDCDB2600994356 /* ModuleConfigurationPromise.h */,
-				63136F9C1BDCDB2600994356 /* ModuleConfigurationPromise.m */,
-				63136F9D1BDCDB2600994356 /* ModuleConfigurationPromiseProtocol.h */,
-				63136F9E1BDCDB2600994356 /* ModuleConfiguratorHolder.h */,
-				63136F9F1BDCDB2600994356 /* ModuleConfiguratorProtocol.h */,
-				63136FA01BDCDB2600994356 /* ModuleTransitionHandlerProtocol.h */,
-				63136FA11BDCDB2600994356 /* ModuleTransitionSegueInfo.h */,
-				63136FA21BDCDB2600994356 /* ModuleTransitionSegueInfo.m */,
-				63136FA31BDCDB2600994356 /* UIViewController+DefaultTransitionHandling.h */,
-				63136FA41BDCDB2600994356 /* UIViewController+DefaultTransitionHandling.m */,
-			);
-			path = IntermoduleDataTransfer;
-			sourceTree = "<group>";
-		};
-		63136FA51BDCDB2600994356 /* TabBarModule */ = {
-			isa = PBXGroup;
-			children = (
-				63136FA61BDCDB2600994356 /* Assembly */,
-				63136FA91BDCDB2600994356 /* Interactor */,
-				63136FAD1BDCDB2700994356 /* Presenter */,
-				63136FB31BDCDB2700994356 /* Router */,
-				63136FB81BDCDB2700994356 /* View */,
-			);
-			path = TabBarModule;
-			sourceTree = "<group>";
-		};
-		63136FA61BDCDB2600994356 /* Assembly */ = {
-			isa = PBXGroup;
-			children = (
-				63136FA71BDCDB2600994356 /* TabBarModuleAssembly.h */,
-				63136FA81BDCDB2600994356 /* TabBarModuleAssembly.m */,
-			);
-			path = Assembly;
-			sourceTree = "<group>";
-		};
-		63136FA91BDCDB2600994356 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				63136FAA1BDCDB2600994356 /* TabBarInteractor.h */,
-				63136FAB1BDCDB2700994356 /* TabBarInteractor.m */,
-				63136FAC1BDCDB2700994356 /* TabBarInteractorInput.h */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		63136FAD1BDCDB2700994356 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				63136FAE1BDCDB2700994356 /* TabBarInteractorOutput.h */,
-				63136FAF1BDCDB2700994356 /* TabBarModuleConfigurator.h */,
-				63136FB01BDCDB2700994356 /* TabBarPresenter.h */,
-				63136FB11BDCDB2700994356 /* TabBarPresenter.m */,
-				63136FB21BDCDB2700994356 /* TabBarViewOutput.h */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		63136FB31BDCDB2700994356 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				63136FB41BDCDB2700994356 /* TabBarRouter.h */,
-				63136FB51BDCDB2700994356 /* TabBarRouter.m */,
-				63136FB61BDCDB2700994356 /* TabBarRouterInput.h */,
-				63136FB71BDCDB2700994356 /* TabBarTabFactory.h */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		63136FB81BDCDB2700994356 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				63136FB91BDCDB2700994356 /* CollectionViewDataDisplayManager */,
-				63136FC41BDCDB2700994356 /* Entities */,
-				63136FCD1BDCDB2700994356 /* TabBarButtonCell */,
-				63136FD01BDCDB2700994356 /* TabBarViewController.h */,
-				63136FD11BDCDB2700994356 /* TabBarViewController.m */,
-				63136FD21BDCDB2700994356 /* TabBarViewInput.h */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		63136FB91BDCDB2700994356 /* CollectionViewDataDisplayManager */ = {
-			isa = PBXGroup;
-			children = (
-				63136FBA1BDCDB2700994356 /* CollectionViewCellObjectProtocol.h */,
-				63136FBB1BDCDB2700994356 /* CollectionViewCellProtocol.h */,
-				63136FBC1BDCDB2700994356 /* CollectionViewDataDisplayManager.h */,
-				63136FBD1BDCDB2700994356 /* CollectionViewDataDisplayManager.m */,
-				63136FBE1BDCDB2700994356 /* CollectionViewSectionInfo.h */,
-				63136FBF1BDCDB2700994356 /* CollectionViewSectionInfo.m */,
-				63136FC01BDCDB2700994356 /* CollectionViewSupplementaryViewObject.h */,
-				63136FC11BDCDB2700994356 /* CollectionViewSupplementaryViewObject.m */,
-				63136FC21BDCDB2700994356 /* CollectionViewSupplementaryViewObjectProtocol.h */,
-				63136FC31BDCDB2700994356 /* CollectionViewSupplementaryViewProtocol.h */,
-			);
-			path = CollectionViewDataDisplayManager;
-			sourceTree = "<group>";
-		};
-		63136FC41BDCDB2700994356 /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				63136FC51BDCDB2700994356 /* TabBarButtonPrototype.h */,
-				63136FC61BDCDB2700994356 /* TabBarButtonPrototype.m */,
-				63136FC71BDCDB2700994356 /* TabBarButtonPrototypeProtocol.h */,
-				63136FC81BDCDB2700994356 /* TabBarControllerContent.h */,
-				63136FC91BDCDB2700994356 /* TabBarControllerContentEmbedder.h */,
-				63136FCA1BDCDB2700994356 /* TabBarControllerEmbeddedContentConfigurator.h */,
-				63136FCB1BDCDB2700994356 /* UIViewController+TabBarControllerContent.h */,
-				63136FCC1BDCDB2700994356 /* UIViewController+TabBarControllerContent.m */,
-			);
-			path = Entities;
-			sourceTree = "<group>";
-		};
-		63136FCD1BDCDB2700994356 /* TabBarButtonCell */ = {
-			isa = PBXGroup;
-			children = (
-				63136FCE1BDCDB2700994356 /* TabBarButtonCell.h */,
-				63136FCF1BDCDB2700994356 /* TabBarButtonCell.m */,
-			);
-			path = TabBarButtonCell;
 			sourceTree = "<group>";
 		};
 		63136FE31BDCDB7200994356 /* Protocols */ = {
@@ -4835,7 +4634,6 @@
 				63F613641CB00A220002AEF0 /* CurrentVideoTranslationTableViewCellObject.m in Sources */,
 				63F613621CB00A220002AEF0 /* EventPresenterStateStorage.m in Sources */,
 				636A37C51BC142BB00B49C3D /* ApplicationAssembly.m in Sources */,
-				63136FD41BDCDB2700994356 /* EmbedModuleTransitionSegueInfo.m in Sources */,
 				63D86BDA1C1439D800986536 /* DateFormatter.m in Sources */,
 				63F613871CB00A220002AEF0 /* EventCellObjectBuilderFactory.m in Sources */,
 				636F8DDE1BCB8FE800552B91 /* RamblerLocationViewController.m in Sources */,
@@ -4845,14 +4643,11 @@
 				63F613721CB00A220002AEF0 /* EventInfoTableViewCell.m in Sources */,
 				63F613671CB00A220002AEF0 /* LectureInfoTableViewCellObject.m in Sources */,
 				63F6139B1CB00A220002AEF0 /* SpeakerInfoTableViewCell.m in Sources */,
-				63136FDB1BDCDB2700994356 /* TabBarRouter.m in Sources */,
-				63136FD51BDCDB2700994356 /* ModuleConfigurationPromise.m in Sources */,
 				63F613631CB00A220002AEF0 /* EventRouter.m in Sources */,
 				9F18311D1BC1615C000E21A5 /* SingleResponseObjectFormatter.m in Sources */,
 				636F8CBC1BC97E7F00552B91 /* SocialNetworkAccount.m in Sources */,
 				63F613991CB00A220002AEF0 /* SpeakerInfoRouter.m in Sources */,
 				9F1830B31BC11879000E21A5 /* CommonNetworkClient.m in Sources */,
-				63136FE01BDCDB2700994356 /* UIViewController+TabBarControllerContent.m in Sources */,
 				9F0A84FD1BC1698B006F79FB /* NetworkOperation.m in Sources */,
 				63F613661CB00A220002AEF0 /* EventInfoTableViewCellObject.m in Sources */,
 				63F613981CB00A220002AEF0 /* SpeakerInfoPresenter.m in Sources */,
@@ -4874,7 +4669,6 @@
 				9F1830A71BC032CF000E21A5 /* ParseRequestSigner.m in Sources */,
 				636F8DDD1BCB8FE800552B91 /* RamblerLocationRouter.m in Sources */,
 				9F0A84FA1BC1698B006F79FB /* OperationBuffer.m in Sources */,
-				63136FE21BDCDB2700994356 /* TabBarViewController.m in Sources */,
 				631FFE561BEF930200749DB8 /* ReportListRouter.m in Sources */,
 				631808411C482B1300A61E7D /* SpeakerShortInfoPresenter.m in Sources */,
 				63F6135D1CB00A220002AEF0 /* EventHeaderRouter.m in Sources */,
@@ -4897,17 +4691,14 @@
 				9F0A852D1BC188B0006F79FB /* EventOperationFactory.m in Sources */,
 				63F6139D1CB00A220002AEF0 /* SpeakerInfoDataDisplayManager.m in Sources */,
 				636F8CB81BC97E7F00552B91 /* LectureMaterials.m in Sources */,
-				63136FD61BDCDB2700994356 /* ModuleTransitionSegueInfo.m in Sources */,
 				63F613961CB00A220002AEF0 /* SpeakerInfoInteractor.m in Sources */,
 				63FDCE061BBDBA2A00A43B60 /* AppDelegate.m in Sources */,
 				63F6134E1CB00A220002AEF0 /* AnnouncementListPresenter.m in Sources */,
-				63136FDF1BDCDB2700994356 /* TabBarButtonPrototype.m in Sources */,
 				631808401C482B1300A61E7D /* SpeakerShortInfoInteractor.m in Sources */,
 				63F613701CB00A220002AEF0 /* EventDescriptionTableViewCell.m in Sources */,
 				636B64041BBDD19A0053E38F /* LectureServiceImplementation.m in Sources */,
 				63FD4E0C1BE621750046378E /* Event.m in Sources */,
 				63F54D9B1BC5AB3C00DB1746 /* ServiceComponentsAssembly.m in Sources */,
-				63136FDE1BDCDB2700994356 /* CollectionViewSupplementaryViewObject.m in Sources */,
 				636A37B31BC1356400B49C3D /* ApplicationConfiguratorImplementation.m in Sources */,
 				9F8E5FA91BC27D0D00DC10DB /* ServiceNameConstants.m in Sources */,
 				63F6134D1CB00A220002AEF0 /* AnnouncementListInteractor.m in Sources */,
@@ -4915,16 +4706,13 @@
 				636F8C971BC97B3100552B91 /* EventServiceImplementation.m in Sources */,
 				6318083F1C482B1300A61E7D /* SpeakerShortInfoModuleAssembly.m in Sources */,
 				63F6138E1CB00A220002AEF0 /* LectureRouter.m in Sources */,
-				63136FE11BDCDB2700994356 /* TabBarButtonCell.m in Sources */,
 				636F8CB71BC97E7F00552B91 /* LectureMaterials+CoreDataProperties.m in Sources */,
 				63F6138C1CB00A220002AEF0 /* LecturePresenter.m in Sources */,
 				63F613841CB00A220002AEF0 /* EventCellObjectBuilderBase.m in Sources */,
 				636F8DDC1BCB8FE800552B91 /* RamblerLocationPresenter.m in Sources */,
 				9F8E5F841BC25A0700DC10DB /* ResponseMappersAssembly.m in Sources */,
-				63136FD91BDCDB2700994356 /* TabBarInteractor.m in Sources */,
 				631808431C482B1300A61E7D /* SpeakerShortInfoView.m in Sources */,
 				63F613681CB00A220002AEF0 /* PreviousEventSectionHeaderTableViewCellObject.m in Sources */,
-				63136FDD1BDCDB2700994356 /* CollectionViewSectionInfo.m in Sources */,
 				9F18311C1BC1615C000E21A5 /* ResultsResponseObjectFormatter.m in Sources */,
 				63F613921CB00A220002AEF0 /* LectureDataDisplayManager.m in Sources */,
 				636F8CBB1BC97E7F00552B91 /* SocialNetworkAccount+CoreDataProperties.m in Sources */,
@@ -4936,7 +4724,6 @@
 				9F8E5F741BC255AA00DC10DB /* RequestSignersAssembly.m in Sources */,
 				63F6138A1CB00A220002AEF0 /* LectureModuleAssembly.m in Sources */,
 				9FF99E511BC42FF6006F15AF /* OperationSchedulerImplementation.m in Sources */,
-				63136FD31BDCDB2700994356 /* EmbedModuleSegue.m in Sources */,
 				63F6136E1CB00A220002AEF0 /* CurrentVideoTranslationTableViewCell.m in Sources */,
 				63F6137C1CB00A220002AEF0 /* PreviousLectureTableViewCell.m in Sources */,
 				63F6135C1CB00A220002AEF0 /* EventHeaderPresenter.m in Sources */,
@@ -4953,12 +4740,10 @@
 				63F613741CB00A220002AEF0 /* LectureInfoTableViewCell.m in Sources */,
 				9F0A85021BC1698B006F79FB /* ResponseValidationOperation.m in Sources */,
 				63F6135B1CB00A220002AEF0 /* EventHeaderInteractor.m in Sources */,
-				63136FDC1BDCDB2700994356 /* CollectionViewDataDisplayManager.m in Sources */,
 				631FFE541BEF930200749DB8 /* ReportListInteractor.m in Sources */,
 				9F0A84FB1BC1698B006F79FB /* CompoundOperationBase.m in Sources */,
 				631FFE531BEF930200749DB8 /* ReportListModuleAssembly.m in Sources */,
 				63F613611CB00A220002AEF0 /* EventPresenter.m in Sources */,
-				63136FD71BDCDB2700994356 /* UIViewController+DefaultTransitionHandling.m in Sources */,
 				63F613501CB00A220002AEF0 /* AnnouncementListTableViewController.m in Sources */,
 				63F6135A1CB00A220002AEF0 /* EventHeaderModuleAssembly.m in Sources */,
 				63F613551CB00A220002AEF0 /* NearestAnnouncementTableViewCell.m in Sources */,
@@ -4987,9 +4772,7 @@
 				63F613571CB00A220002AEF0 /* AnnouncementListDataDisplayManager.m in Sources */,
 				636F8DDB1BCB8FE800552B91 /* RamblerLocationInteractor.m in Sources */,
 				63F613761CB00A220002AEF0 /* PreviousEventSectionHeaderTableViewCell.m in Sources */,
-				63136FDA1BDCDB2700994356 /* TabBarPresenter.m in Sources */,
 				63F613601CB00A220002AEF0 /* EventInteractor.m in Sources */,
-				63136FD81BDCDB2700994356 /* TabBarModuleAssembly.m in Sources */,
 				6373A4101BBDC5EA00DF67FF /* Conference.xcdatamodeld in Sources */,
 				63F54D951BC5A79900DB1746 /* EXTScope.m in Sources */,
 				636B640D1BBDD5000053E38F /* SocialNetworkAccountServiceImplementation.m in Sources */,
@@ -5024,7 +4807,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				63D628EE1BE4CE09004AF98F /* SystemInfrastructureAssembly.m in Sources */,
-				63D628EF1BE4CE09004AF98F /* TabBarModuleAssembly.m in Sources */,
 				63D628F01BE4CE09004AF98F /* ModuleAssemblyBase.m in Sources */,
 				63D628F21BE4CE09004AF98F /* RamblerLocationModuleAssembly.m in Sources */,
 				635E18D51CA6CECB005B8439 /* EventHeaderModuleAssemblyTests.m in Sources */,

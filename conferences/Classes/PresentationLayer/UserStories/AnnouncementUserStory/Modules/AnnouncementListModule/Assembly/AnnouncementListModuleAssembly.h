@@ -20,16 +20,12 @@
 
 #import "ModuleAssemblyBase.h"
 
-@protocol TabBarButtonPrototypeProtocol;
-
 /**
  @author Artem Karpushin
  
  A TyphoonAssembly which is responsible for creating AnnouncementListModule
  */
 @interface AnnouncementListModuleAssembly : ModuleAssemblyBase
-
-- (id<TabBarButtonPrototypeProtocol>)announcementListTabBarButtonPrototype;
 
 @end
 

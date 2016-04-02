@@ -24,10 +24,6 @@
 #import "RamblerLocationPresenter.h"
 #import "RamblerLocationRouter.h"
 
-#import "TabBarButtonPrototype.h"
-
-static NSString * const kRamblerLocationStoryboardName = @"RamblerLocationUserStory";
-
 @implementation  RamblerLocationModuleAssembly
 
 - (RamblerLocationViewController *)viewRamblerLocation {
@@ -63,45 +59,6 @@ static NSString * const kRamblerLocationStoryboardName = @"RamblerLocationUserSt
                           configuration:^(TyphoonDefinition *definition) {
 
            }];
-}
-
-#pragma mark - TabBarButtonPrototypeProtocol
-
-- (id<TabBarButtonPrototypeProtocol>)ramblerLocationTabBarButtonPrototype {
-    return [TyphoonDefinition withClass:[TabBarButtonPrototype class]
-                          configuration:^(TyphoonDefinition *definition) {
-                              [definition injectProperty:@selector(tabBarButtonIdleStateImage)
-                                                    with:[UIImage imageNamed:@"light-gray-square"]];
-                              [definition injectProperty:@selector(tabBarButtonSelectedStateImage)
-                                                    with:[UIImage imageNamed:@"light-gray-square"]];
-                              [definition injectProperty:@selector(tabBarButtonTitle)
-                                                    with:@"Как проехать"];
-                              [definition injectProperty:@selector(tabbarButtonId)
-                                                    with:@"location_tab"];
-                              [definition injectProperty:@selector(tabBarControllercontent)
-                                                    with:[self ramblerLocationTabBarControllerContent]];
-                          }];
-}
-
-- (id<TabBarControllerContent>)ramblerLocationTabBarControllerContent {
-    return [TyphoonFactoryDefinition withFactory:[self ramblerLocationStoryboard]
-                                        selector:@selector(instantiateViewControllerWithIdentifier:)
-                                      parameters:^(TyphoonMethod *factoryMethod) {
-                                          [factoryMethod injectParameterWith:@"RamblerLocationViewController"];
-                                      } configuration:^(TyphoonFactoryDefinition *definition) {
-                                      }];
-}
-
-- (UIStoryboard*)ramblerLocationStoryboard {
-    return [TyphoonDefinition withClass:[TyphoonStoryboard class]
-                          configuration:^(TyphoonDefinition *definition) {
-                              [definition useInitializer:@selector(storyboardWithName:factory:bundle:)
-                                              parameters:^(TyphoonMethod *initializer) {
-                                                  [initializer injectParameterWith:kRamblerLocationStoryboardName];
-                                                  [initializer injectParameterWith:self];
-                                                  [initializer injectParameterWith:nil];
-                                              }];
-                          }];
 }
 
 @end
