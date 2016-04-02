@@ -96,23 +96,4 @@
     [self verifyTargetDependency:result withClass:targetClass dependencies:dependencies];
 }
 
-- (void)testThatAssemblyCreatesReportListTabBarButtonPrototype {
-    // given
-    Class targetClass = [TabBarButtonPrototype class];
-    NSArray *dependencies = @[
-                              // TODO: разкомментить после добавления изображений
-                              
-                              //RamblerSelector(tabBarButtonIdleStateImage),
-                              //RamblerSelector(tabBarButtonSelectedStateImage),
-                              RamblerSelector(tabBarButtonTitle),
-                              RamblerSelector(tabbarButtonId),
-                              RamblerSelector(tabBarControllercontent)
-                              ];
-    // when
-    id result = [self.assembly ramblerLocationTabBarButtonPrototype];
-    
-    // then
-    [self verifyTargetDependency:result withClass:targetClass dependencies:dependencies];
-}
-
 @end
