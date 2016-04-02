@@ -39,61 +39,10 @@
             </objects>
             <point key="canvasLocation" x="1188" y="233"/>
         </scene>
-        <!--Report List Table View Controller-->
-        <scene sceneID="P39-WW-104">
-            <objects>
-                <tableViewController storyboardIdentifier="ReportListTableViewController" id="gEd-9g-HPd" customClass="ReportListTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="zIp-Bn-T6h">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Событие, выступление или докладчик" id="hNv-gR-rcy">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                            <connections>
-                                <outlet property="delegate" destination="gEd-9g-HPd" id="lik-eJ-7CY"/>
-                            </connections>
-                        </searchBar>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="ujQ-SR-y1C">
-                                <rect key="frame" x="0.0" y="72" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ujQ-SR-y1C" id="LQl-Mc-jcl">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="lPZ-z8-z2H" kind="push" identifier="ReportListModuleToEventModuleSegue" id="DQH-UE-Xg2"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="gEd-9g-HPd" id="VE2-gS-LkD"/>
-                            <outlet property="delegate" destination="gEd-9g-HPd" id="YSJ-ZM-ani"/>
-                        </connections>
-                    </tableView>
-                    <connections>
-                        <outlet property="searchDisplayController" destination="mca-6u-5td" id="tgD-QD-U6v"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mYS-6U-5r4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="mca-6u-5td">
-                    <connections>
-                        <outlet property="delegate" destination="gEd-9g-HPd" id="ixy-YO-I7p"/>
-                        <outlet property="searchBar" destination="hNv-gR-rcy" id="BUs-Iz-005"/>
-                        <outlet property="searchContentsController" destination="gEd-9g-HPd" id="o9z-MO-eF6"/>
-                        <outlet property="searchResultsDataSource" destination="gEd-9g-HPd" id="qW9-tH-qfp"/>
-                        <outlet property="searchResultsDelegate" destination="gEd-9g-HPd" id="f2P-dp-8St"/>
-                    </connections>
-                </searchDisplayController>
-            </objects>
-            <point key="canvasLocation" x="656" y="896"/>
-        </scene>
         <!--Event View Controller-->
         <scene sceneID="9SB-zP-L2d">
             <objects>
-                <viewController id="lPZ-z8-z2H" customClass="EventViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UIViewController-lPZ-z8-z2H" id="lPZ-z8-z2H" customClass="EventViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="q51-wo-2NC"/>
                         <viewControllerLayoutGuide type="bottom" id="SJ1-15-sm5"/>
@@ -102,14 +51,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" restorationIdentifier="viewEventHeader" translatesAutoresizingMaskIntoConstraints="NO" id="tAj-fc-JAG" customClass="TyphoonLoadedView">
+                            <view contentMode="scaleToFill" misplaced="YES" restorationIdentifier="viewEventHeader" translatesAutoresizingMaskIntoConstraints="NO" id="tAj-fc-JAG" customClass="TyphoonLoadedView">
                                 <rect key="frame" x="0.0" y="20" width="320" height="196"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="196" id="ds5-by-tKf"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2f2-MS-k81">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2f2-MS-k81">
                                 <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -253,8 +202,13 @@
             </objects>
             <point key="canvasLocation" x="656" y="233"/>
         </scene>
+        <!--ReportListTableViewController-->
+        <scene sceneID="7iR-YM-r6m">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="ReportListTableViewController" storyboardName="Reports" referencedIdentifier="ReportListTableViewController" id="dho-aR-rIF" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Hc-sb-7bi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="656" y="896"/>
+        </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="gMM-BT-9c6"/>
-    </inferredMetricsTieBreakers>
 </document>
