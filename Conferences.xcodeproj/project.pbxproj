@@ -89,7 +89,6 @@
 		631FFE551BEF930200749DB8 /* ReportListPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FFE491BEF930200749DB8 /* ReportListPresenter.m */; };
 		631FFE561BEF930200749DB8 /* ReportListRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FFE4C1BEF930200749DB8 /* ReportListRouter.m */; };
 		631FFE571BEF930200749DB8 /* ReportListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FFE501BEF930200749DB8 /* ReportListTableViewController.m */; };
-		631FFE591BEF937D00749DB8 /* ReportsUserStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 631FFE581BEF937D00749DB8 /* ReportsUserStory.storyboard */; };
 		631FFE5F1BEF991000749DB8 /* ReportListDataDisplayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FFE5E1BEF991000749DB8 /* ReportListDataDisplayManager.m */; };
 		635E18BF1CA6A0A9005B8439 /* SpeakerInfoModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 635E18BE1CA6A0A9005B8439 /* SpeakerInfoModuleAssemblyTests.m */; };
 		635E18C21CA6A496005B8439 /* LectureModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 635E18C11CA6A496005B8439 /* LectureModuleAssemblyTests.m */; };
@@ -522,7 +521,6 @@
 		631FFE501BEF930200749DB8 /* ReportListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportListTableViewController.m; sourceTree = "<group>"; };
 		631FFE511BEF930200749DB8 /* ReportListViewInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportListViewInput.h; sourceTree = "<group>"; };
 		631FFE521BEF930200749DB8 /* ReportListViewOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportListViewOutput.h; sourceTree = "<group>"; };
-		631FFE581BEF937D00749DB8 /* ReportsUserStory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ReportsUserStory.storyboard; sourceTree = "<group>"; };
 		631FFE5D1BEF991000749DB8 /* ReportListDataDisplayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportListDataDisplayManager.h; sourceTree = "<group>"; };
 		631FFE5E1BEF991000749DB8 /* ReportListDataDisplayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportListDataDisplayManager.m; sourceTree = "<group>"; };
 		635E18BD1CA69F4A005B8439 /* SpeakerInfoModuleAssembly_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpeakerInfoModuleAssembly_Testable.h; sourceTree = "<group>"; };
@@ -1719,7 +1717,6 @@
 		631FFE231BEF91C500749DB8 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				631FFE581BEF937D00749DB8 /* ReportsUserStory.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -4605,7 +4602,6 @@
 				636DD7E31C26B8F000436201 /* PreviousLectureSectionHeaderTableViewCell.xib in Resources */,
 				636F8DFD1BCB914100552B91 /* Announcement.storyboard in Resources */,
 				63F51CAD1C42AD2100AFB9D2 /* TableViewCellWithTextLabel.xib in Resources */,
-				631FFE591BEF937D00749DB8 /* ReportsUserStory.storyboard in Resources */,
 				63F8F24F1BF74302000017F3 /* CurrentVideoTranslationTableViewCell.xib in Resources */,
 				631808741C4AA54B00A61E7D /* LectureDescriptionTableViewCell.xib in Resources */,
 				63ECC4191CA8373400439A01 /* Localizable.strings in Resources */,
