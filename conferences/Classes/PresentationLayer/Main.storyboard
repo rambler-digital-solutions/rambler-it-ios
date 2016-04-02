@@ -22,7 +22,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yUG-41-N1B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2493" y="327"/>
+            <point key="canvasLocation" x="2543" y="327"/>
+        </scene>
+        <!--Reports-->
+        <scene sceneID="8Z2-PA-vwp">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Reports" id="Nj5-yg-I3V" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="YQW-lF-LbB"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aAK-nC-eVv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2471" y="535"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="T2G-Zq-Mi3">
@@ -36,6 +46,7 @@
                     <connections>
                         <segue destination="N0F-Xl-Wdc" kind="relationship" relationship="viewControllers" id="ll0-mJ-Hnu"/>
                         <segue destination="Lum-qY-GHL" kind="relationship" relationship="viewControllers" id="cv9-Tv-vaS"/>
+                        <segue destination="Nj5-yg-I3V" kind="relationship" relationship="viewControllers" id="Yqu-iV-Oce"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h0W-ix-m5Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
