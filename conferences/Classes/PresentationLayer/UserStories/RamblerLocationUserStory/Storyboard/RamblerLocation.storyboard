@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="kbg-lh-1lE">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--Rambler Location View Controller-->
+        <!--Как проехать-->
         <scene sceneID="gwa-bU-8oJ">
             <objects>
                 <viewController storyboardIdentifier="RamblerLocationViewController" id="kbg-lh-1lE" customClass="RamblerLocationViewController" sceneMemberID="viewController">
@@ -18,20 +18,20 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyv-db-5VM">
                                 <rect key="frame" x="127.5" y="274" width="65.5" height="20.5"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="iyv-db-5VM" firstAttribute="centerX" secondItem="SLa-UW-cIm" secondAttribute="centerX" id="YiU-pw-KCC"/>
                             <constraint firstItem="iyv-db-5VM" firstAttribute="centerY" secondItem="SLa-UW-cIm" secondAttribute="centerY" id="bgh-hK-RDd"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Как проехать" id="DZy-Ug-hKQ"/>
                     <navigationItem key="navigationItem" id="eWj-pQ-ha1"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h56-b4-Lai" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
