@@ -24,7 +24,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 
 static NSString *const kPlaceholderImageName = @"placeholder";
-static CGFloat const ValueToCutForShortcutDisplayMode = 64.0f;
+static CGFloat const ValueToCutForShortcutDisplayMode = 114.0f;
 
 @interface NearestAnnouncementTableViewCell ()
 
