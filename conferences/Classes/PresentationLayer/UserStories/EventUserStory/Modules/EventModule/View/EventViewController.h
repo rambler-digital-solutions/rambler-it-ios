@@ -33,5 +33,9 @@
 @property (nonatomic, strong) id<EventViewOutput> output;
 @property (strong, nonatomic) EventDataDisplayManager *dataDisplayManager;
 
+#pragma mark - IBActions
+
+- (IBAction)didTapShareButton:(UIBarButtonItem *)sender;
+
 @end
 

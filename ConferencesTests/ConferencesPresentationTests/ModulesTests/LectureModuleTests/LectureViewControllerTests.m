@@ -16,6 +16,7 @@
 #import "LectureDataDisplayManager.h"
 #import "LecturePlainObject.h"
 #import "SpeakerPlainObject.h"
+#import "LectureViewController_Testable.h"
 
 static CGFloat TableViewEstimatedRowHeight = 44.0f;
 
@@ -141,6 +142,28 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
     
     // then
     OCMVerify([speakerShortInfoViewMock configureModuleWithSpeaker:speaker andViewSize:SpeakerShortInfoViewDefaultSize]);
+}
+
+#pragma mark - Actions
+
+- (void)testSuccessDidTapTableViewHeader {
+    // given
+    
+    // when
+    [self.viewController didTapTableViewHeader];
+    
+    // then
+    OCMVerify([self.presenterMock didTapTableViewHeader]);
+}
+
+- (void)testSuccessDidTapShareButton {
+    // given
+    
+    // when
+    [self.viewController didTapShareButton];
+    
+    // then
+    OCMVerify([self.presenterMock didTapShareButton]);
 }
 
 @end

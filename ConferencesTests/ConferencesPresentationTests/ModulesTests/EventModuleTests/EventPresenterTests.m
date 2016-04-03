@@ -74,14 +74,15 @@
 
 - (void)testSuccessSetupView {
     // given
-    NSString *eventObjectId = @"Ds312k7";
+    EventPlainObject *event = [EventPlainObject new];
+    
+    OCMStub([self.interactorMock obtainEventWithObjectId:OCMOCK_ANY]).andReturn(event);
     
     // when
-    [self.presenter configureCurrentModuleWithEventObjectId:eventObjectId];
     [self.presenter setupView];
     
     // then
-    OCMVerify([self.interactorMock obtainEventWithObjectId:eventObjectId]);
+    OCMVerify([self.viewMock configureViewWithEvent:event]);
 }
 
 - (void)testSuccesDidTapSignUpButtonWithEvent {

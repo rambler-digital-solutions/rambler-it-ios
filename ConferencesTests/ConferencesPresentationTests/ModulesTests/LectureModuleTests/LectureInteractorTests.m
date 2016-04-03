@@ -52,7 +52,7 @@
     [self.interactor obtainLectureWithObjectId:OCMOCK_ANY];
     
     // then
-    OCMVerify([self.presenterMock didObtainLecture:OCMOCK_ANY]);
+    
 }
 
 @end

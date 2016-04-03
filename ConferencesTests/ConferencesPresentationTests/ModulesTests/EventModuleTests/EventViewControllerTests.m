@@ -171,4 +171,16 @@
     OCMVerify([self.mockOutput didTapCurrentTranslationButton]);
 }
 
+#pragma mark - Actions
+
+- (void)testSuccessDidTapShareButton {
+    // given
+    
+    // when
+    [self.viewController didTapShareButton:OCMOCK_ANY];
+    
+    // then
+    OCMVerify([self.mockOutput didTapShareButton]);
+}
+
 @end
