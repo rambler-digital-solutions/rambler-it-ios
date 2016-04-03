@@ -28,29 +28,31 @@
 
 @implementation LecturePresenter
 
+#pragma mark - LectureModuleInput
+
+- (void)configureCurrentModuleWithLectureObjectId:(NSString *)objectId {
+    self.stateStorage.lectureObjectId = objectId;
+}
+
 #pragma mark - LectureViewOutput
 
 - (void)setupView {
-    [self.interactor obtainLectureWithObjectId:self.stateStorage.lectureObjectId];
-}
-
-- (void)didTapTableViewHeader {
-    [self.router openSpeakerInfoModuleWithSpeakerObjectId:self.stateStorage.speakerObjectId];
-}
-
-#pragma mark - LectureInteractorOutput
-
-- (void)didObtainLecture:(LecturePlainObject *)lecture {
+    LecturePlainObject *lecture = [self.interactor obtainLectureWithObjectId:self.stateStorage.lectureObjectId];
     SpeakerPlainObject *speaker = lecture.speakers.firstObject;
     self.stateStorage.speakerObjectId = speaker.objectId;
     
     [self.view configureViewWithLecture:lecture];
 }
 
-#pragma mark - LectureModuleInput
+- (void)didTapTableViewHeader {
+    [self.router openSpeakerInfoModuleWithSpeakerObjectId:self.stateStorage.speakerObjectId];
+}
 
-- (void)configureCurrentModuleWithLectureObjectId:(NSString *)objectId {
-    self.stateStorage.lectureObjectId = objectId;
+- (void)didTapShareButton {
+    LecturePlainObject *lecture = [self.interactor obtainLectureWithObjectId:self.stateStorage.lectureObjectId];
+    NSArray *activitiyItems = [self.interactor obtainActivityItemsForLecture:lecture];
+    
+    [self.router openShareModuleWithActivityItems:activitiyItems];
 }
 
 @end

@@ -20,6 +20,7 @@
 
 #import "LectureRouter.h"
 #import "SpeakerInfoModuleInput.h"
+#import "LectureViewController.h"
 
 static NSString *const LectureModuleToSpeakerInfoModuleSegue = @"LectureModuleToSpeakerInfoModuleSegue";
 
@@ -33,6 +34,12 @@ static NSString *const LectureModuleToSpeakerInfoModuleSegue = @"LectureModuleTo
         
         return  nil;
     }];
+}
+
+- (void)openShareModuleWithActivityItems:(NSArray *)activityItems {
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
+    
+    [((LectureViewController *)self.transitionHandler).navigationController presentViewController:activityViewController animated:true completion:nil];
 }
 
 @end

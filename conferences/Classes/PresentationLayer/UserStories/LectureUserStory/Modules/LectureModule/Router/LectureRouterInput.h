@@ -22,7 +22,23 @@
 
 @protocol LectureRouterInput <NSObject>
 
+/**
+ @author Artem Karpushin
+ 
+ Method is used to initiate transition to the SpeakerInfo module
+ 
+ @param objectId NSString object id
+ */
 - (void)openSpeakerInfoModuleWithSpeakerObjectId:(NSString *)objectId;
+
+/**
+ @author Artem Karpushin
+ 
+ Method is used to initiate transition to the module of the event sharing
+ 
+ @param activityItems Array of activity items for sharing
+ */
+- (void)openShareModuleWithActivityItems:(NSArray *)activityItems;
 
 @end
 

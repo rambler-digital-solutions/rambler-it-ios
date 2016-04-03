@@ -22,8 +22,26 @@
 
 @protocol LectureViewOutput <NSObject>
 
+/**
+ @author Artem Karpushin
+ 
+ Method is used to inform presenter that view needs to be configured
+ */
 - (void)setupView;
+
+/**
+ @author Artem Karpushin
+ 
+ Method is used to inform presenter that table view header was tapped
+ */
 - (void)didTapTableViewHeader;
+
+/**
+ @author Artem Karpushin
+ 
+ Method is used to inform presenter that share button was tapped
+ */
+- (void)didTapShareButton;
 
 @end
 

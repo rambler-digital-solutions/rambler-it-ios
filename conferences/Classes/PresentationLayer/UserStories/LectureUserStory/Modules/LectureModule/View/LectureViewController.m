@@ -94,7 +94,7 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
 }
 
 - (void)didTapShareButton {
-    
+    [self.output didTapShareButton];
 }
 
 @end

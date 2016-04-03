@@ -31,7 +31,7 @@
 
 #pragma mark - LectureInteractorInput
 
-- (void)obtainLectureWithObjectId:(NSString *)objectId {
+- (LecturePlainObject *)obtainLectureWithObjectId:(NSString *)objectId {
     /**
      @author Artem Karpushin
      
@@ -48,7 +48,17 @@
     
     mockLecture.speakers = @[mockSpeaker];
     
-    [self.output didObtainLecture:mockLecture];
+    return mockLecture;
+}
+
+- (NSArray *)obtainActivityItemsForLecture:(LecturePlainObject *)lecture {
+    /**
+     @author Artem Karpushin
+     
+     // TODO: fill the array
+     */
+    NSArray *activityItems = @[];
+    return activityItems;
 }
 
 @end
