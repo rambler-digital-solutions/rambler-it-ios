@@ -27,12 +27,10 @@
 /**
  @author Artem Karpushin
  
- Method is used to inform presenter that Event object was obtained
+ Method is used to inform presenter that event is saved to the calendar
  
- @param event PlainEvent object
+ @param error NSError object
  */
-- (void)didObtainEvent:(EventPlainObject *)event;
-
 - (void)didSaveEventToCalendarWithError:(NSError *)error;
 
 @end

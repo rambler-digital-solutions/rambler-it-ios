@@ -81,7 +81,7 @@
     [self.presenter setupView];
     
     // then
-    OCMVerify([self.interactorMock obtainEventByObjectId:eventObjectId]);
+    OCMVerify([self.interactorMock obtainEventWithObjectId:eventObjectId]);
 }
 
 - (void)testSuccesDidTapSignUpButtonWithEvent {

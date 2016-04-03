@@ -86,7 +86,7 @@ typedef void (^ProxyBlock)(NSInvocation *);
     OCMStub([self.eventServiceMock obtainEventWithPredicate:OCMOCK_ANY]).andReturn(events);
     
     // when
-    [self.interactor obtainEventByObjectId:OCMOCK_ANY];
+    [self.interactor obtainEventWithObjectId:OCMOCK_ANY];
     
     // then
     OCMVerify([self.prototypeMapperMock fillObject:OCMOCK_ANY withObject:event]);
