@@ -22,7 +22,23 @@
 
 @protocol EventRouterInput <NSObject>
 
+/**
+ @author Artem Karpushin
+ 
+ Method is used to initiate transition to the LectureModule
+ 
+ @param lectureObjectId NSString lecture object id
+ */
 - (void)openLectureModuleWithLectureObjectId:(NSString *)lectureObjectId;
+
+/**
+ @author Artem Karpushin
+ 
+ Method is used to initiate transition to the module of the event sharing
+ 
+ @param activityItems Array of activity items for sharing
+ */
+- (void)openShareModuleWithActivityItems:(NSArray *)activityItems;
 
 @end
 

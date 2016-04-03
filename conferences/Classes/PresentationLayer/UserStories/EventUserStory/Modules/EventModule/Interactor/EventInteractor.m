@@ -62,6 +62,16 @@ static NSString *const kEventByObjectIdPredicateFormat = @"objectId = %@";
     }];
 }
 
+- (NSArray *)obtainActivityItemsForEvent:(EventPlainObject *)event {
+    /**
+     @author Artem Karpushin
+     
+     // TODO: fill the array
+     */
+    NSArray *activityItems = @[];
+    return activityItems;
+}
+
 #pragma mark - Private methods
 
 - (EventPlainObject *)mapEvent:(NSManagedObjectModel *)managedObjectEvent {

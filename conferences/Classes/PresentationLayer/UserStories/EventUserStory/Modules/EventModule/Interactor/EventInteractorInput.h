@@ -44,5 +44,16 @@
  */
 - (void)saveEventToCalendar:(EventPlainObject *)event;
 
+/**
+ @author Artem Karpushin
+ 
+ Method is used to obtain activity items for UIActivityController
+ 
+ @param event EventPlainObject
+ 
+ @return Activity items
+ */
+- (NSArray *)obtainActivityItemsForEvent:(EventPlainObject *)event;
+
 @end
 

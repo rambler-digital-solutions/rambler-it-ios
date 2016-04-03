@@ -76,5 +76,12 @@
  */
 - (void)didTapLectureInfoCellWithLectureObjectIdEvent:(NSString *)lectureObjectId;
 
+/**
+ @author Artem Karpushin
+ 
+ Method is used to inform presenter that share button was tapped
+ */
+- (void)didTapShareButton;
+
 @end
 

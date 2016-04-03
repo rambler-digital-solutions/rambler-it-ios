@@ -102,6 +102,7 @@
 #pragma mark - IBActions
 
 - (IBAction)didTapShareButton:(UIBarButtonItem *)sender {
+    [self.output didTapShareButton];
 }
 
 #pragma mark - Private methods

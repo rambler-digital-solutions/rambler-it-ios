@@ -65,6 +65,13 @@
     [self.router openLectureModuleWithLectureObjectId:lectureObjectId];
 }
 
+- (void)didTapShareButton {
+    EventPlainObject *event = [self.interactor obtainEventWithObjectId:self.presenterStateStorage.eventObjectId];
+    NSArray *activityItems = [self.interactor obtainActivityItemsForEvent:event];
+    
+    [self.router openShareModuleWithActivityItems:activityItems];
+}
+
 #pragma mark - EventInteractorOutput
 
 - (void)didSaveEventToCalendarWithError:(NSError *)error {
