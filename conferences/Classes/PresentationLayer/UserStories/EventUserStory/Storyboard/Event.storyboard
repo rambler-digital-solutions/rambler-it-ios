@@ -43,7 +43,13 @@
                             <constraint firstItem="tAj-fc-JAG" firstAttribute="leading" secondItem="9DS-Lo-aXY" secondAttribute="leading" id="v6t-6V-r0d"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="L3B-Ki-SxE"/>
+                    <navigationItem key="navigationItem" id="L3B-Ki-SxE">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="gLx-sY-Sd3">
+                            <connections>
+                                <action selector="didTapShareButton:" destination="lPZ-z8-z2H" id="eGd-Hp-izU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>

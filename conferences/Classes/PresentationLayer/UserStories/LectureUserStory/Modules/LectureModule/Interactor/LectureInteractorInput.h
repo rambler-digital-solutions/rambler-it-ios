@@ -20,6 +20,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class LecturePlainObject;
+
 @protocol LectureInteractorInput <NSObject>
 
 /**
@@ -29,7 +31,18 @@
  
  @param objectId LecturePlainObject object
  */
-- (void)obtainLectureWithObjectId:(NSString *)objectId;
+- (LecturePlainObject *)obtainLectureWithObjectId:(NSString *)objectId;
+
+/**
+ @author Artem Karpushin
+ 
+ Method is used to obtain activity items for UIActivityController
+ 
+ @param event EventPlainObject
+ 
+ @return Activity items
+ */
+- (NSArray *)obtainActivityItemsForLecture:(LecturePlainObject *)lecture;
 
 @end
 

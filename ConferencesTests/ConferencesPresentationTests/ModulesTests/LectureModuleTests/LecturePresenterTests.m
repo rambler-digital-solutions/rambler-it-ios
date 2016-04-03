@@ -61,14 +61,22 @@
 
 - (void)testSuccessSetupView {
     // given
-    NSString *objectId = @"3rj3332w";
-    self.stateStorage.lectureObjectId = objectId;
+    NSString *speakerObjectId = @"3rj3332w";
+    
+    SpeakerPlainObject *speaker = [SpeakerPlainObject new];
+    speaker.objectId = speakerObjectId;
+    
+    LecturePlainObject *lecture = [LecturePlainObject new];
+    lecture.speakers = @[speaker];
+    
+    OCMStub([self.interactorMock obtainLectureWithObjectId:OCMOCK_ANY]).andReturn(lecture);
     
     // when
     [self.presenter setupView];
     
     // then
-    OCMVerify([self.interactorMock obtainLectureWithObjectId:objectId]);
+    XCTAssert(self.stateStorage.speakerObjectId == speakerObjectId);
+    OCMVerify([self.viewMock configureViewWithLecture:lecture]);
 }
 
 - (void)testSuccessDidTapTableViewHeader {
@@ -83,24 +91,19 @@
     OCMVerify([self.routerMock openSpeakerInfoModuleWithSpeakerObjectId:objectId]);
 }
 
-#pragma mark - LectureInteractorOutput
-
-- (void)testSuccessDidObtainLecture {
+- (void)testSuccessDidTapShareButton {
     // given
-    NSString *objectId = @"3rj3332w";
-    
-    SpeakerPlainObject *speaker = [SpeakerPlainObject new];
-    speaker.objectId = objectId;
-    
+    NSArray *activityItems = @[];
     LecturePlainObject *lecture = [LecturePlainObject new];
-    lecture.speakers = @[speaker];
+    
+    OCMStub([self.interactorMock obtainLectureWithObjectId:OCMOCK_ANY]).andReturn(lecture);
+    OCMStub([self.interactorMock obtainActivityItemsForLecture:lecture]).andReturn(activityItems);
     
     // when
-    [self.presenter didObtainLecture:lecture];
+    [self.presenter didTapShareButton];
     
     // then
-    XCTAssert(self.stateStorage.speakerObjectId == objectId);
-    OCMVerify([self.viewMock configureViewWithLecture:lecture]);
+    OCMVerify([self.routerMock openShareModuleWithActivityItems:activityItems]);
 }
 
 #pragma mark - LectureModuleInput

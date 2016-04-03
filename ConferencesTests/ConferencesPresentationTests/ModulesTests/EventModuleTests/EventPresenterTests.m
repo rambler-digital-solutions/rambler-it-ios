@@ -74,14 +74,15 @@
 
 - (void)testSuccessSetupView {
     // given
-    NSString *eventObjectId = @"Ds312k7";
+    EventPlainObject *event = [EventPlainObject new];
+    
+    OCMStub([self.interactorMock obtainEventWithObjectId:OCMOCK_ANY]).andReturn(event);
     
     // when
-    [self.presenter configureCurrentModuleWithEventObjectId:eventObjectId];
     [self.presenter setupView];
     
     // then
-    OCMVerify([self.interactorMock obtainEventByObjectId:eventObjectId]);
+    OCMVerify([self.viewMock configureViewWithEvent:event]);
 }
 
 - (void)testSuccesDidTapSignUpButtonWithEvent {
@@ -92,7 +93,7 @@
     [self.presenter didTapSignUpButtonWithEvent:event];
     
     // then
-    #warning Complete test after method get implemented
+    // TODO: Complete test after method get implemented
 }
 
 - (void)testSuccessDidTapSaveToCalendarButtonWithEvent {
@@ -113,7 +114,7 @@
     [self.presenter didTapReadMoreEventDescriptionButton];
     
     // then
-    #warning Complete test after method get implemented
+    // TODO: Complete test after method get implemented
 }
 
 - (void)testSuccessDidTapReadMoreLectureDescriptionButton {
@@ -123,7 +124,7 @@
     [self.presenter didTapReadMoreLectureDescriptionButton];
     
     // then
-    #warning Complete test after method get implemented
+    // TODO: Complete test after method get implemented
 }
 
 - (void)testSuccessDidTapCurrentTranslationButton {
@@ -133,7 +134,7 @@
     [self.presenter didTapCurrentTranslationButton];
     
     // then
-    #warning Complete test after method get implemented
+    // TODO: Complete test after method get implemented
 }
 
 - (void)testSuccessDidTapLectureInfoCellWithLectureObjectIdEvent {
@@ -147,18 +148,22 @@
     OCMVerify([self.routerMock openLectureModuleWithLectureObjectId:objectId]);
 }
 
-#pragma mark - EventInteractorOutput
-
-- (void)testSuccessDidObtainEvent {
+- (void)testSuccessDidTapShareButton {
     // given
+    NSArray *activityItems = @[];
     EventPlainObject *event = [EventPlainObject new];
     
+    OCMStub([self.interactorMock obtainEventWithObjectId:OCMOCK_ANY]).andReturn(event);
+    OCMStub([self.interactorMock obtainActivityItemsForEvent:event]).andReturn(activityItems);
+    
     // when
-    [self.presenter didObtainEvent:event];
+    [self.presenter didTapShareButton];
     
     // then
-    OCMVerify([self.viewMock configureViewWithEvent:event]);
+    OCMVerify([self.routerMock openShareModuleWithActivityItems:activityItems]);
 }
+
+#pragma mark - EventInteractorOutput
 
 - (void)testSuccessDidSaveEventToCalendarWithError {
     // given

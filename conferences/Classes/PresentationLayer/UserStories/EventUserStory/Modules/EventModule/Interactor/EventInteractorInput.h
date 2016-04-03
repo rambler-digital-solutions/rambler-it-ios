@@ -27,13 +27,33 @@
 /**
  @author Artem Karpushin
  
- Method is used to inform interactor that need to obtain event with specified object id
+ Method is used to obtain event plain object with particular object id
  
- @param objectId Event object id
+ @param objectId NSString object id
+ 
+ @return EventPlainObject
  */
-- (void)obtainEventByObjectId:(NSString *)objectId;
+- (EventPlainObject *)obtainEventWithObjectId:(NSString *)objectId;
 
+/**
+ @author Artem Karpushin
+ 
+ Method is used to save an event to the calendar
+ 
+ @param event EventPlainObject
+ */
 - (void)saveEventToCalendar:(EventPlainObject *)event;
+
+/**
+ @author Artem Karpushin
+ 
+ Method is used to obtain activity items for UIActivityController
+ 
+ @param event EventPlainObject
+ 
+ @return Activity items
+ */
+- (NSArray *)obtainActivityItemsForEvent:(EventPlainObject *)event;
 
 @end
 

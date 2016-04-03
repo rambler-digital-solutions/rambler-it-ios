@@ -57,6 +57,7 @@
     
     // then
     OCMVerify([moduleInputMock configureCurrentModuleWithLectureObjectId:objectId]);
+    [(id)moduleInputMock stopMocking];
 }
 
 @end

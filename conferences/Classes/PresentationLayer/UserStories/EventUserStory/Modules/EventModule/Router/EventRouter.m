@@ -20,6 +20,7 @@
 
 #import "EventRouter.h"
 #import "LectureModuleInput.h"
+#import "EventViewController.h"
 
 static NSString * const kEventModuleToLectureModuleSegue = @"EventModuleToLectureModuleSegue";
 
@@ -33,6 +34,12 @@ static NSString * const kEventModuleToLectureModuleSegue = @"EventModuleToLectur
         
         return nil;
     }];
+}
+
+- (void)openShareModuleWithActivityItems:(NSArray *)activityItems {
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
+
+    [((EventViewController *)self.transitionHandler).navigationController presentViewController:activityViewController animated:true completion:nil];
 }
 
 @end

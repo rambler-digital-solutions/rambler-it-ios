@@ -37,7 +37,8 @@
 #pragma mark - EventViewOutput
 
 - (void)setupView {
-    [self.interactor obtainEventByObjectId:self.presenterStateStorage.eventObjectId];
+    EventPlainObject *event = [self.interactor obtainEventWithObjectId:self.presenterStateStorage.eventObjectId];
+    [self.view configureViewWithEvent:event];
 }
 
 - (void)didTapSignUpButtonWithEvent:(EventPlainObject *)event {
@@ -64,11 +65,14 @@
     [self.router openLectureModuleWithLectureObjectId:lectureObjectId];
 }
 
-#pragma mark - EventInteractorOutput
-
-- (void)didObtainEvent:(EventPlainObject *)event {
-    [self.view configureViewWithEvent:event];
+- (void)didTapShareButton {
+    EventPlainObject *event = [self.interactor obtainEventWithObjectId:self.presenterStateStorage.eventObjectId];
+    NSArray *activityItems = [self.interactor obtainActivityItemsForEvent:event];
+    
+    [self.router openShareModuleWithActivityItems:activityItems];
 }
+
+#pragma mark - EventInteractorOutput
 
 - (void)didSaveEventToCalendarWithError:(NSError *)error {
     if (error) {

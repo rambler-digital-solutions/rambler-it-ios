@@ -34,15 +34,15 @@ static NSString *const kEventByObjectIdPredicateFormat = @"objectId = %@";
 
 #pragma mark - EventListInteractorInput
 
-- (void)obtainEventByObjectId:(NSString *)objectId {
+- (EventPlainObject *)obtainEventWithObjectId:(NSString *)objectId {
     NSPredicate *predicate = [NSPredicate predicateWithFormat:kEventByObjectIdPredicateFormat, objectId];
     
     NSArray *events = [self.eventService obtainEventWithPredicate:predicate];
     id managedObjectEvent = [events firstObject];
     
-    EventPlainObject *eventPlainObject = [self getPlainEventFromManagedObject:managedObjectEvent];
+    EventPlainObject *eventPlainObject = [self mapEvent:managedObjectEvent];
     
-    [self.output didObtainEvent:eventPlainObject];
+    return eventPlainObject;
 }
 
 - (void)saveEventToCalendar:(EventPlainObject *)event {
@@ -62,9 +62,19 @@ static NSString *const kEventByObjectIdPredicateFormat = @"objectId = %@";
     }];
 }
 
+- (NSArray *)obtainActivityItemsForEvent:(EventPlainObject *)event {
+    /**
+     @author Artem Karpushin
+     
+     // TODO: fill the array
+     */
+    NSArray *activityItems = @[];
+    return activityItems;
+}
+
 #pragma mark - Private methods
 
-- (EventPlainObject *)getPlainEventFromManagedObject:(NSManagedObjectModel *)managedObjectEvent {
+- (EventPlainObject *)mapEvent:(NSManagedObjectModel *)managedObjectEvent {
     EventPlainObject *eventPlainObject = [EventPlainObject new];
     [self.eventPrototypeMapper fillObject:eventPlainObject withObject:managedObjectEvent];
     
