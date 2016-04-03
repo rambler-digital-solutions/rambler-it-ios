@@ -33,8 +33,6 @@
 #import "OperationFactoriesAssembly.h"
 #import "PresentationLayerHelpersAssembly.h"
 
-#import "TabBarButtonPrototype.h"
-
 @interface AnnouncementListModuleAssemblyTests : RamblerTyphoonAssemblyTests
 
 @property (strong, nonatomic) AnnouncementListModuleAssembly *assembly;

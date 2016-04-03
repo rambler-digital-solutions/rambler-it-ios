@@ -18,8 +18,6 @@
 #import "ServiceComponentsAssembly.h"
 #import "OperationFactoriesAssembly.h"
 
-#import "TabBarButtonPrototype.h"
-
 @interface RamblerLocationModuleAssemblyTests : RamblerTyphoonAssemblyTests
 
 @property (strong, nonatomic) RamblerLocationModuleAssembly *assembly;

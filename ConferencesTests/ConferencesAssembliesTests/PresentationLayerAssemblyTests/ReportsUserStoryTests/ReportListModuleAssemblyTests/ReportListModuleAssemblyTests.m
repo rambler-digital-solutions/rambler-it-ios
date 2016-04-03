@@ -22,8 +22,6 @@
 #import "OperationFactoriesAssembly.h"
 #import "PresentationLayerHelpersAssembly.h"
 
-#import "TabBarButtonPrototype.h"
-
 @interface ReportListModuleAssemblyTests : RamblerTyphoonAssemblyTests
 
 @property (strong, nonatomic) ReportListModuleAssembly *assembly;
