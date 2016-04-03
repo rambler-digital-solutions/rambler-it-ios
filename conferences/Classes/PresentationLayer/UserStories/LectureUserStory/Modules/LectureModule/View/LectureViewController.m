@@ -38,6 +38,11 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
 	[self.output setupView];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self setupShareButton];
+}
+
 #pragma mark - LectureViewInput
 
 - (void)configureViewWithLecture:(LecturePlainObject *)lecture {
@@ -77,10 +82,19 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
     [headerView addGestureRecognizer:gestureRecognizer];
 }
 
+- (void)setupShareButton {
+    UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(didTapShareButton)];
+    self.navigationItem.rightBarButtonItem = shareButton;
+}
+
 #pragma mark - Actions
 
 - (void)didTapTableViewHeader {
     [self.output didTapTableViewHeader];
+}
+
+- (void)didTapShareButton {
+    
 }
 
 @end
