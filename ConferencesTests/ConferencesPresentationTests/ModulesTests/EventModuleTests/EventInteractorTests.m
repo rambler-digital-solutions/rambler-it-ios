@@ -78,20 +78,20 @@ typedef void (^ProxyBlock)(NSInvocation *);
     [super tearDown];
 }
 
-- (void)testSuccessObtainEventByObjectId {
+- (void)testSuccessObtainEventWithObjectId {
     // given
-    NSObject *event = [NSObject new];
+    NSObject *event = [EventPlainObject new];
     NSArray *events = @[event];
     
     OCMStub([self.eventServiceMock obtainEventWithPredicate:OCMOCK_ANY]).andReturn(events);
     
     // when
-    [self.interactor obtainEventWithObjectId:OCMOCK_ANY];
+    EventPlainObject *obtainedEvent = [self.interactor obtainEventWithObjectId:OCMOCK_ANY];
     
     // then
     OCMVerify([self.prototypeMapperMock fillObject:OCMOCK_ANY withObject:event]);
     OCMVerify([self.eventTypeDeterminatorMock determinateTypeForEvent:OCMOCK_ANY]);
-    OCMVerify([self.presenterMock didObtainEvent:OCMOCK_ANY]);
+    XCTAssertNotNil(obtainedEvent);
 }
 
 - (void)testSuccessSaveEventToCalendar {
@@ -137,6 +137,17 @@ typedef void (^ProxyBlock)(NSInvocation *);
     
     // then
     OCMVerify([self.presenterMock didSaveEventToCalendarWithError:error]);
+}
+
+- (void)testSuccessObtainActivityItemsForEvent {
+    // given
+    
+    // when
+    NSArray *obtainedItems = [self.interactor obtainActivityItemsForEvent:OCMOCK_ANY];
+    
+    // then
+    XCTAssertNotNil(obtainedItems);
+    // TODO: Complete test after method get implemented
 }
 
 @end
