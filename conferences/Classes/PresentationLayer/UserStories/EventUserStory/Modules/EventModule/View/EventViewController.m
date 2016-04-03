@@ -99,6 +99,11 @@
     [self.output didTapLectureInfoCellWithLectureObjectIdEvent:lectureObjectId];
 }
 
+#pragma mark - IBActions
+
+- (IBAction)didTapShareButton:(UIBarButtonItem *)sender {
+}
+
 #pragma mark - Private methods
 
 - (void)setupViewInitialState {
