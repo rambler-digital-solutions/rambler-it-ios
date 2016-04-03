@@ -27,12 +27,6 @@
 #import "ServiceComponents.h"
 #import "PresentationLayerHelpersAssembly.h"
 
-#import "TabBarButtonPrototype.h"
-
-static NSString *const kReportsUserStoryName = @"EventsUserStory";
-static NSString *const kTabBarButtonTitle = @"Отчеты";
-static NSString *const kTabbarButtonId = @"reports_tab";
-
 @implementation  ReportListModuleAssembly
 
 - (ReportListTableViewController *)viewReportList {
@@ -86,45 +80,5 @@ static NSString *const kTabbarButtonId = @"reports_tab";
                                                     with:[self.presentationLayerHelpersAssembly dateFormatter]];
     }];
 }
-
-#pragma mark - TabBarButtonPrototypeProtocol
-
-- (id<TabBarButtonPrototypeProtocol>)reportListTabBarButtonPrototype {
-    return [TyphoonDefinition withClass:[TabBarButtonPrototype class]
-                          configuration:^(TyphoonDefinition *definition) {
-                              [definition injectProperty:@selector(tabBarButtonIdleStateImage)
-                                                    with:[UIImage imageNamed:@"light-gray-square"]];
-                              [definition injectProperty:@selector(tabBarButtonSelectedStateImage)
-                                                    with:[UIImage imageNamed:@"light-gray-square"]];
-                              [definition injectProperty:@selector(tabBarButtonTitle)
-                                                    with:kTabBarButtonTitle];
-                              [definition injectProperty:@selector(tabbarButtonId)
-                                                    with:kTabbarButtonId];
-                              [definition injectProperty:@selector(tabBarControllercontent)
-                                                    with:[self reportListTabBarControllerContent]];
-                          }];
-}
-
-- (id<TabBarControllerContent>)reportListTabBarControllerContent {
-    return [TyphoonFactoryDefinition withFactory:[self reportListStoryboard]
-                                        selector:@selector(instantiateViewControllerWithIdentifier:)
-                                      parameters:^(TyphoonMethod *factoryMethod) {
-                                          [factoryMethod injectParameterWith:NSStringFromClass([ReportListTableViewController class])];
-                                      } configuration:^(TyphoonFactoryDefinition *definition) {
-                                      }];
-}
-
-- (UIStoryboard*)reportListStoryboard {
-    return [TyphoonDefinition withClass:[TyphoonStoryboard class]
-                          configuration:^(TyphoonDefinition *definition) {
-                              [definition useInitializer:@selector(storyboardWithName:factory:bundle:)
-                                              parameters:^(TyphoonMethod *initializer) {
-                                                  [initializer injectParameterWith:kReportsUserStoryName];
-                                                  [initializer injectParameterWith:self];
-                                                  [initializer injectParameterWith:nil];
-                                              }];
-                          }];
-}
-
 
 @end

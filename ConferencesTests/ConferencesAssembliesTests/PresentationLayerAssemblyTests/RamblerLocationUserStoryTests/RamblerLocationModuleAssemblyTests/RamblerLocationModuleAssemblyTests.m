@@ -18,8 +18,6 @@
 #import "ServiceComponentsAssembly.h"
 #import "OperationFactoriesAssembly.h"
 
-#import "TabBarButtonPrototype.h"
-
 @interface RamblerLocationModuleAssemblyTests : RamblerTyphoonAssemblyTests
 
 @property (strong, nonatomic) RamblerLocationModuleAssembly *assembly;
@@ -91,25 +89,6 @@
     NSArray *dependencies = @[];
     // when
     id result = [self.assembly routerRamblerLocation];
-    
-    // then
-    [self verifyTargetDependency:result withClass:targetClass dependencies:dependencies];
-}
-
-- (void)testThatAssemblyCreatesReportListTabBarButtonPrototype {
-    // given
-    Class targetClass = [TabBarButtonPrototype class];
-    NSArray *dependencies = @[
-                              // TODO: разкомментить после добавления изображений
-                              
-                              //RamblerSelector(tabBarButtonIdleStateImage),
-                              //RamblerSelector(tabBarButtonSelectedStateImage),
-                              RamblerSelector(tabBarButtonTitle),
-                              RamblerSelector(tabbarButtonId),
-                              RamblerSelector(tabBarControllercontent)
-                              ];
-    // when
-    id result = [self.assembly ramblerLocationTabBarButtonPrototype];
     
     // then
     [self verifyTargetDependency:result withClass:targetClass dependencies:dependencies];

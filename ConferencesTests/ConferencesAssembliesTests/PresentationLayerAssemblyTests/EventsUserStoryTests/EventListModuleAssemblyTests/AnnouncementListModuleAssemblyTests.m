@@ -33,8 +33,6 @@
 #import "OperationFactoriesAssembly.h"
 #import "PresentationLayerHelpersAssembly.h"
 
-#import "TabBarButtonPrototype.h"
-
 @interface AnnouncementListModuleAssemblyTests : RamblerTyphoonAssemblyTests
 
 @property (strong, nonatomic) AnnouncementListModuleAssembly *assembly;
@@ -125,25 +123,6 @@
                               ];
     // when
     id result = [self.assembly dataDisplayManagerAnnouncementList];
-    
-    // then
-    [self verifyTargetDependency:result withClass:targetClass dependencies:dependencies];
-}
-
-- (void)testThatAssemblyCreatesAnnouncementListTabBarButtonPrototype {
-    // given
-    Class targetClass = [TabBarButtonPrototype class];
-    NSArray *dependencies = @[
-                              // TODO: разкомментить после добавления изображений
-                              
-                              //RamblerSelector(tabBarButtonIdleStateImage),
-                              //RamblerSelector(tabBarButtonSelectedStateImage),
-                              RamblerSelector(tabBarButtonTitle),
-                              RamblerSelector(tabbarButtonId),
-                              RamblerSelector(tabBarControllercontent)
-                              ];
-    // when
-    id result = [self.assembly announcementListTabBarButtonPrototype];
     
     // then
     [self verifyTargetDependency:result withClass:targetClass dependencies:dependencies];

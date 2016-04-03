@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Announcement List Table View Controller-->
+        <scene sceneID="nOx-C3-ZAu">
+            <objects>
+                <tableViewController storyboardIdentifier="AnnouncementListTableViewController" id="nCN-ol-buU" customClass="AnnouncementListTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="LWI-Zc-aHz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <inset key="separatorInset" minX="12" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="xkU-eC-DgW">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xkU-eC-DgW" id="fT3-OQ-TLu">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="VXB-v3-PPF" kind="push" identifier="EventListModuleToEventModuleSegue" id="gMM-BT-9c6"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="nCN-ol-buU" id="LLe-nF-pJ7"/>
+                            <outlet property="delegate" destination="nCN-ol-buU" id="Li9-M4-ulR"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="bnq-gD-ykW"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nFg-Tn-fxr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1188" y="233"/>
+        </scene>
+        <!--UIViewController-lPZ-z8-z2H-->
+        <scene sceneID="QPx-Am-3PJ">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="UIViewController-lPZ-z8-z2H" storyboardName="Event" referencedIdentifier="UIViewController-lPZ-z8-z2H" id="VXB-v3-PPF" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="5dO-Tm-G1N"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fUT-iL-kEZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1646.5" y="233"/>
+        </scene>
+    </scenes>
+</document>

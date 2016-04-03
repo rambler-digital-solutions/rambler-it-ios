@@ -20,7 +20,12 @@
 
 #import "ModuleAssemblyBase.h"
 
-@interface ReportListModuleAssembly : ModuleAssemblyBase
+/**
+ @author Artem Karpushin
+ 
+ A TyphoonAssembly which is responsible for creating AnnouncementListModule
+ */
+@interface AnnouncementListModuleAssembly : ModuleAssemblyBase
 
 @end
 

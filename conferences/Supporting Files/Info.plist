@@ -48,7 +48,6 @@
 		<string>RequestConfiguratorsAssembly</string>
 		<string>ServiceComponentsAssembly</string>
 		<string>ApplicationAssembly</string>
-		<string>TabBarModuleAssembly</string>
 		<string>RamblerLocationModuleAssembly</string>
 		<string>AnnouncementListModuleAssembly</string>
 		<string>SystemInfrastructureAssembly</string>
