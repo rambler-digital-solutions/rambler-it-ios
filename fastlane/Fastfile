@@ -31,14 +31,14 @@ private_lane :fabric do |options|
     increment_version_number(version_number: version_number)
 
     # Runs all tests, stops deployment if there are any failures
-    scan(
-      workspace: "Conferences.xcworkspace",
-      scheme: "Conferences",
-      clean: true
-  )
+    #scan(
+      #workspace: "Conferences.xcworkspace",
+      #scheme: "Conferences",
+      #clean: true
+    #)
 
     # Here we'll somehow collect a full changelog
-    jira_changelog = "Список изменений:\n#{jira_only_changelog}"
+    #jira_changelog = "Список изменений:\n#{jira_only_changelog}"
 
     gym(
       scheme: "Conferences",

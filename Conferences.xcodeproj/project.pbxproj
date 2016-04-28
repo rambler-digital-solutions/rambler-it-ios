@@ -4419,9 +4419,10 @@
 				TargetAttributes = {
 					9F1F37E31BBBB80D00C7797D = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = UM246WFXVS;
 						SystemCapabilities = {
 							com.apple.Push = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
