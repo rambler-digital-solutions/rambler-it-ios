@@ -8,14 +8,12 @@ end
 ########################## PRE ACTIONS ##########################
 
 before_all do
-
+  import_from_git(url: 'git@gitlab.rambler.ru/ramblerco-ios/fastlane-flows.git',
+                path: 'fastlane/Fastfile')
 end
 
 ######################### PRIVATE LANES #########################
 #---------------------------- Fabric ---------------------------#
-
-import_from_git(url: 'git@gitlab.rambler.ru:ramblerco-ios/fastfile-nightly.git',
-                path: 'fastlane/Fastfile')
 
 private_lane :fabric do |options|
   # This lane can run only on specific branches
