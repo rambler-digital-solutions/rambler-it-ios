@@ -1,6 +1,6 @@
 
   for_lane :staging do
-    app_identifier 'com.sup.livejournal'
+    app_identifier 'ru.ramblerco.rambler.conferences'
     apple_id "jenkins.ci@rambler-co.ru"
 
     team_name 'Rambler Internet Holdings LLC'
@@ -8,7 +8,7 @@
   end
 
   for_lane :fabric do
-    app_identifier 'com.sup.livejournal'
+    app_identifier 'ru.ramblerco.rambler.conferences'
     apple_id "jenkins.ci@rambler-co.ru"
     
     team_name 'Rambler Internet Holdings LLC'
@@ -16,7 +16,7 @@
   end
 
   for_lane :nightly do
-    app_identifier 'com.sup.livejournal.enterprise'
+    app_identifier 'ru.ramblerco.rambler.conferences.enterprise'
 
     apple_id "jenkins.ci@rambler-co.ru"
     team_name 'RAMBLER INTERNET KHOLDING, OOO'

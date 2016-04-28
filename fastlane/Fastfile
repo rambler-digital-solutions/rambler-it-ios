@@ -41,7 +41,7 @@ private_lane :fabric do |options|
     jira_changelog = "Список изменений:\n#{jira_only_changelog}"
 
     gym(
-      scheme: "LiveJournal",
+      scheme: "Conferences",
       configuration: "Release",
       clean: true,
       provisioning_profile_path: 'fastlane/RamblerConferencesDevelopment.mobileprovision'
