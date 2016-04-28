@@ -1,85 +1,109 @@
-# Customise this file, documentation can be found here:
-# https://github.com/KrauseFx/fastlane/tree/master/docs
-# All available actions: https://github.com/KrauseFx/fastlane/blob/master/docs/Actions.md
-# can also be listed using the `fastlane actions` command
+######################### PUBLIC LANES ##########################
 
-# Change the syntax highlighting to Ruby
-# All lines starting with a # are ignored when running `fastlane`
-
-# By default, fastlane will send which actions are used
-# No personal data is shared, more information on https://github.com/fastlane/enhancer
-# Uncomment the following line to opt out
-# opt_out_usage
-
-# If you want to automatically update fastlane if a new version is available:
-# update_fastlane
-
-# This is the minimum version number required.
-# Update this, if you use features of a newer version
-fastlane_version "1.37.0"
-
-default_platform :ios
-NIGHTLY_TAG_FORMAT="nightly/%d"
-
-platform :ios do
-  before_all do
-    # ensure_git_status_clean
-  end
-
-  lane :nightly do
-
-    # ensure_git_branch(
-    #     branch: 'develop'
-    # )
-
-    begin
-      build_number = get_build_number
-      prev_tag = NIGHTLY_TAG_FORMAT % build_number
-
-      changelog = sh("git shortlog #{prev_tag}..HEAD")
-
-      # We don't build without new commits.
-      exit(0) if changelog.empty?
-    rescue
-      changelog = 'Initial version'
-    end
-
-    sigh
-    
-    ENV["PROFILE_UDID"] = lane_context[SharedValues::SIGH_UDID]
-
-    increment_build_number
-
-    gym(scheme: 'Conferences',
-     configuration: 'Nightly')
-
-    build_number = get_build_number
-    version_number = get_version_number
-
-    pilot(build_full_version: "#{version_number}(#{build_number})",
-          changelog: changelog)
-
-    clean_build_artifacts
-
-    commit_version_bump
-
-    current_tag = NIGHTLY_TAG_FORMAT % build_number
-    add_git_tag tag: current_tag
-    push_to_git_remote
-
-
-  end
-
-  after_all do |lane|
-    # reset_git_repo
-  end
-
-  error do |lane, exception|
-  end
+desc "Submit a new Beta Build to Crashlytics"
+lane :staging do |options|
+  fabric(options)
 end
 
+########################## PRE ACTIONS ##########################
 
+before_all do
+  
+end
 
+######################### PRIVATE LANES #########################
+#---------------------------- Fabric ---------------------------#
 
-# More information about multiple platforms in fastlane: https://github.com/KrauseFx/fastlane/blob/master/docs/Platforms.md
-# All available actions: https://github.com/KrauseFx/fastlane/blob/master/docs/Actions.md
+private_lane :fabric do |options|
+  # This lane can run only on specific branches
+  ensure_git_branch(
+    # branch: "(develop|master|release\\S+|hotfix\\S+)"
+    branch: "cd"
+    )
+
+    # New version number has to be specified explicitly
+    version_number = options[:version_number]
+    raise "Missing version number: use version_number parameter" unless version_number != nil
+    Actions.lane_context[SharedValues::VERSION_NUMBER] = version_number
+    Actions.lane_context[SharedValues::BUILD_NUMBER] = increment_build_number
+
+    # Automatically updates version number and updates xcodeproj
+    increment_version_number(version_number: version_number)
+
+    # Runs all tests, stops deployment if there are any failures
+    scan(
+      workspace: "Conferences.xcworkspace",
+      scheme: "Conferences",
+      clean: true
+  )
+
+    # Here we'll somehow collect a full changelog
+    jira_changelog = "Список изменений:\n#{jira_only_changelog}"
+
+    sigh(
+      development: true,
+      username: 'jenkins.ci@rambler-co.ru'
+    )
+    gym(
+      scheme: "LiveJournal",
+      configuration: "Release",
+      clean: true,
+      provisioning_profile_path: 'fastlane/RamblerConferencesDevelopment.mobileprovision'
+    )
+
+    # Uploads the final IPA file to Fabric
+  crashlytics(
+      crashlytics_path: "Pods/Crashlytics",
+      api_token: ENV['CRASHLYTICS_API_TOKEN'],
+      build_secret: ENV['CRASHLYTICS_BUILD_SECRET'],
+      notifications: "NO",
+      notes: jira_changelog,
+      ipa_path: "Conferences.ipa"
+    )
+end
+
+lane :nightly do
+  import_from_git(url: 'git@gitlab.rambler.ru:ramblerco-ios/fastfile-nightly.git',
+                path: 'fastlane/Fastfile')
+end
+
+######################### POST ACTIONS ##########################
+
+# This lane is called, only if the executed lane was successful
+after_all do |lane|
+  # Some cleaning
+    clean_build_artifacts
+    clear_derived_data
+
+  # Makes a bump version commit
+    complete_version_number = version_string(
+      Actions.lane_context[SharedValues::VERSION_NUMBER], 
+      Actions.lane_context[SharedValues::BUILD_NUMBER]
+    )
+    commit_version_bump(
+    message: "Увеличен номер версии до #{complete_version_number}",
+    xcodeproj: ENV['XCODEPROJ_NAME'],
+    force: true
+    )
+end
+
+############################# UTIL ##############################
+
+def version_string(version_number, build_number)
+  "#{version_number}(#{build_number})"
+end
+
+def jira_only_changelog
+  raw_changelog = changelog_from_git_commits(
+      tag_match_pattern: 'dev/*', # Optional, lets you search for a tag name that matches a glob(7) pattern
+      merge_commit_filtering: "exclude_merges" # Optional, lets you filter out merge commits
+  )
+  regexp = Regexp.new('(LJIOS-[0-9]*)').freeze
+
+    messages = raw_changelog.split("\n").select { |message|
+      message.match(regexp)
+    }.map { |message|
+      "https://jira.rambler.ru/browse/#{message.match(regexp)[1]}"
+    }
+    messages.count > 0 ? messages.join("\n") : "Нет закрытых JIRA-тасков"
+end
