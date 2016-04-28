@@ -95,7 +95,7 @@ end
 
 def jira_only_changelog
   raw_changelog = changelog_from_git_commits(
-      tag_match_pattern: 'dev/*', # Optional, lets you search for a tag name that matches a glob(7) pattern
+      # tag_match_pattern: 'dev/*', # Optional, lets you search for a tag name that matches a glob(7) pattern
       merge_commit_filtering: "exclude_merges" # Optional, lets you filter out merge commits
   )
   regexp = Regexp.new('(LJIOS-[0-9]*)').freeze
