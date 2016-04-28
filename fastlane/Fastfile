@@ -38,7 +38,7 @@ private_lane :fabric do |options|
     #)
 
     # Here we'll somehow collect a full changelog
-    #jira_changelog = "Список изменений:\n#{jira_only_changelog}"
+    jira_changelog = "Список изменений:\n#{jira_only_changelog}"
 
     gym(
       scheme: "Conferences",
