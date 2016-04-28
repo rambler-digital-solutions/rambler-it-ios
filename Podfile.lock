@@ -29,12 +29,15 @@ PODS:
     - CocoaLumberjack/Core
   - CocoaLumberjack/Extensions (2.2.0):
     - CocoaLumberjack/Default
+  - Crashlytics (3.7.0):
+    - Fabric (~> 1.6.3)
   - CrutchKit/Proxying (0.0.3):
     - CrutchKit/Runtime
   - CrutchKit/Runtime (0.0.3)
   - EasyMapping (0.15.3):
     - EasyMapping/Core (= 0.15.3)
   - EasyMapping/Core (0.15.3)
+  - Fabric (1.6.7)
   - libextobjc (0.4.1):
     - libextobjc/EXTADT (= 0.4.1)
     - libextobjc/EXTConcreteProtocol (= 0.4.1)
@@ -99,8 +102,10 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 2.6)
   - CocoaLumberjack (~> 2.0)
+  - Crashlytics
   - CrutchKit/Proxying (from `https://github.com/CognitiveDisson/CrutchKit`, tag `0.0.3`)
   - EasyMapping (~> 0.15)
+  - Fabric
   - libextobjc (~> 0.4)
   - MagicalRecord (~> 2.3)
   - MMBarricade (~> 1.0.1)
@@ -133,8 +138,10 @@ SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   Bolts: 0e9bce58b9b9f5e8a7a4d47b16d2fabec289072b
   CocoaLumberjack: 17fe8581f84914d5d7e6360f7c70022b173c3ae0
+  Crashlytics: c3a2333dea9e2733d2777f730910321fc9e25c0d
   CrutchKit: 32f7fc708ce823010b27f5fa7bc11fc22d0e09bb
   EasyMapping: 5baf5a9a814538fdac4859cf56270ae761dd904a
+  Fabric: caf7580c725e64db144f610ac65cd60956911dc7
   libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
   MagicalRecord: 89eb7d7ead39fb37f01c3d010665ee94d17f8dba
   MMBarricade: 61e17f747baa1a33cd7f8a9c75d520ca958508dd

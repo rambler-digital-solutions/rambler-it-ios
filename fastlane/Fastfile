@@ -8,7 +8,7 @@ end
 ########################## PRE ACTIONS ##########################
 
 before_all do
-  
+
 end
 
 ######################### PRIVATE LANES #########################
@@ -40,6 +40,10 @@ private_lane :fabric do |options|
     # Here we'll somehow collect a full changelog
     jira_changelog = "Список изменений:\n#{jira_only_changelog}"
 
+    sigh(
+      development: true,
+      username: 'jenkins.ci@rambler-co.ru'
+    )
     gym(
       scheme: "Conferences",
       configuration: "Release",

@@ -16,6 +16,8 @@ pod 'Nimbus/Models', :git => 'https://github.com/rambler-ios/nimbus'
 pod 'SDWebImage', '~> 3.7'
 pod 'CrutchKit/Proxying', :git => 'https://github.com/CognitiveDisson/CrutchKit', :tag => '0.0.3'
 pod 'ViperMcFlurry', '~> 1.1'
+pod 'Fabric'
+pod 'Crashlytics'
 
 target 'ConferencesTests', :exclusive => true do
     pod 'OCMock', '~> 3.1'
