@@ -2,7 +2,7 @@
 
 desc "Submit a new Beta Build to Crashlytics"
 lane :staging do |options|
-  fabric(options)
+  ftp(options)
 end
 
 ########################## PRE ACTIONS ##########################
@@ -13,6 +13,9 @@ end
 
 ######################### PRIVATE LANES #########################
 #---------------------------- Fabric ---------------------------#
+
+import_from_git(url: 'git@gitlab.rambler.ru:ramblerco-ios/fastfile-nightly.git',
+                path: 'fastlane/Fastfile')
 
 private_lane :fabric do |options|
   # This lane can run only on specific branches
@@ -52,14 +55,14 @@ private_lane :fabric do |options|
     )
 
     # Uploads the final IPA file to Fabric
-  crashlytics(
-      crashlytics_path: "Pods/Crashlytics",
-      api_token: ENV['CRASHLYTICS_API_TOKEN'],
-      build_secret: ENV['CRASHLYTICS_BUILD_SECRET'],
-      notifications: "NO",
-      notes: "123123",
-      ipa_path: "Conferences.ipa"
-    )
+    crashlytics(
+        crashlytics_path: "Pods/Crashlytics",
+        api_token: ENV['CRASHLYTICS_API_TOKEN'],
+        build_secret: ENV['CRASHLYTICS_BUILD_SECRET'],
+        notifications: "NO",
+        notes: "123123",
+        ipa_path: "Conferences.ipa"
+      )
 end
 
 lane :nightly do
