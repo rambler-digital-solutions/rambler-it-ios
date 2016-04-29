@@ -17,6 +17,8 @@ end
 
 private_lane :fabric do |options|
   # This lane can run only on specific branches
+  git_checkout(options[:branch])
+
   ensure_git_branch(
     # branch: "(develop|master|release\\S+|hotfix\\S+)"
     branch: "cd"
