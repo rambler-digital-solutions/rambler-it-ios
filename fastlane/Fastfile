@@ -2,7 +2,7 @@
 
 desc "Submit a new Beta Build to Crashlytics"
 lane :staging do |options|
-  ftp(options)
+  fabric(options)
 end
 
 ########################## PRE ACTIONS ##########################
@@ -16,13 +16,9 @@ end
 #---------------------------- Fabric ---------------------------#
 
 private_lane :fabric do |options|
-  # This lane can run only on specific branches
+
   git_checkout(options[:branch])
 
-  ensure_git_branch(
-    # branch: "(develop|master|release\\S+|hotfix\\S+)"
-    branch: "cd"
-    )
 
     # New version number has to be specified explicitly
     version_number = options[:version_number]
