@@ -21,6 +21,8 @@
 #import "ThirdPartiesConfiguratorImplementation.h"
 
 #import <Parse/Parse.h>
+#import <Crashlytics/Crashlytics.h>
+#import <Fabric/Fabric.h>
 
 @implementation ThirdPartiesConfiguratorImplementation
 
@@ -28,6 +30,9 @@
 
 - (void)configurate {
     [self setupParse];
+    
+    NSArray *instances = @[[Crashlytics class]];
+    [Fabric with:instances];
 }
 
 #pragma mark - Private methods
