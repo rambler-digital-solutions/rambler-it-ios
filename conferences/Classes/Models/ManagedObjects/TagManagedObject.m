@@ -17,17 +17,11 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
-//
-// Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
-// to delete and recreate this implementation file for your updated model.
-//
 
-#import "LectureMaterials+CoreDataProperties.h"
+#import "TagManagedObject.h"
 
-@implementation LectureMaterials (CoreDataProperties)
+@implementation TagManagedObject
 
-@dynamic link;
-@dynamic name;
-@dynamic lecture;
+// Insert code here to add functionality to your managed object subclass
 
 @end

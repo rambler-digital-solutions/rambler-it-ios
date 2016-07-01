@@ -17,40 +17,36 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
-//
-// Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
-// to delete and recreate this implementation file for your updated model.
-//
 
-#import "Lecture.h"
+#import "LectureManagedObject.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Lecture (CoreDataProperties)
+@interface LectureManagedObject (CoreDataProperties)
 
 @property (nullable, nonatomic, retain) NSNumber *favourite;
-@property (nullable, nonatomic, retain) NSString *name;
-@property (nullable, nonatomic, retain) NSNumber *orderID;
-@property (nullable, nonatomic, retain) NSString *slideLink;
 @property (nullable, nonatomic, retain) NSString *lectureDescription;
+@property (nullable, nonatomic, retain) NSString *name;
+@property (nullable, nonatomic, retain) NSString *slideLink;
 @property (nullable, nonatomic, retain) NSString *videoLink;
-@property (nullable, nonatomic, retain) Event *event;
-@property (nullable, nonatomic, retain) NSSet<LectureMaterials *> *lectureMaterials;
-@property (nullable, nonatomic, retain) NSSet<Speaker *> *speakers;
+@property (nullable, nonatomic, retain) NSNumber *lectureId;
+@property (nullable, nonatomic, retain) EventManagedObject *event;
+@property (nullable, nonatomic, retain) NSSet<LectureMaterialManagedObject *> *lectureMaterials;
+@property (nullable, nonatomic, retain) NSSet<SpeakerManagedObject *> *speakers;
 
 @end
 
-@interface Lecture (CoreDataGeneratedAccessors)
+@interface LectureManagedObject (CoreDataGeneratedAccessors)
 
-- (void)addLectureMaterialsObject:(LectureMaterials *)value;
-- (void)removeLectureMaterialsObject:(LectureMaterials *)value;
-- (void)addLectureMaterials:(NSSet<LectureMaterials *> *)values;
-- (void)removeLectureMaterials:(NSSet<LectureMaterials *> *)values;
+- (void)addLectureMaterialsObject:(LectureMaterialManagedObject *)value;
+- (void)removeLectureMaterialsObject:(LectureMaterialManagedObject *)value;
+- (void)addLectureMaterials:(NSSet<LectureMaterialManagedObject *> *)values;
+- (void)removeLectureMaterials:(NSSet<LectureMaterialManagedObject *> *)values;
 
-- (void)addSpeakersObject:(Speaker *)value;
-- (void)removeSpeakersObject:(Speaker *)value;
-- (void)addSpeakers:(NSSet<Speaker *> *)values;
-- (void)removeSpeakers:(NSSet<Speaker *> *)values;
+- (void)addSpeakersObject:(SpeakerManagedObject *)value;
+- (void)removeSpeakersObject:(SpeakerManagedObject *)value;
+- (void)addSpeakers:(NSSet<SpeakerManagedObject *> *)values;
+- (void)removeSpeakers:(NSSet<SpeakerManagedObject *> *)values;
 
 @end
 

@@ -18,19 +18,26 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
-
-@class Lecture;
+#import "TechManagedObject.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LectureMaterials : NSManagedObject
+@interface TechManagedObject (CoreDataProperties)
 
-// Insert code here to declare functionality of your managed object subclass
+@property (nullable, nonatomic, retain) NSNumber *techId;
+@property (nullable, nonatomic, retain) NSString *name;
+@property (nullable, nonatomic, retain) NSString *color;
+@property (nullable, nonatomic, retain) NSSet<EventManagedObject *> *events;
+
+@end
+
+@interface TechManagedObject (CoreDataGeneratedAccessors)
+
+- (void)addEventsObject:(EventManagedObject *)value;
+- (void)removeEventsObject:(EventManagedObject *)value;
+- (void)addEvents:(NSSet<EventManagedObject *> *)values;
+- (void)removeEvents:(NSSet<EventManagedObject *> *)values;
 
 @end
 
 NS_ASSUME_NONNULL_END
-
-#import "LectureMaterials+CoreDataProperties.h"

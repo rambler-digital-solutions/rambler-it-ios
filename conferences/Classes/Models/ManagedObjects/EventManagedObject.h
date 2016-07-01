@@ -18,31 +18,19 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "EventPrototypeMapper.h"
+#import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
-#import "EventManagedObject.h"
-#import "EventPlainObject.h"
+@class LectureManagedObject, MetaEventManagedObject, RegistrationQuestionManagedObject;
 
-#import "UIColor+Hex.h"
+NS_ASSUME_NONNULL_BEGIN
 
-@implementation EventPrototypeMapper
+@interface EventManagedObject : NSManagedObject
 
-// TODO: добавить маппинг лекций после того как будет создан класс PlainLecture, так же PlainRegistratinQuestions
-- (void)fillObject:(EventPlainObject *)filledObject withObject:(EventManagedObject *)object {
-    filledObject.eventDescription = object.eventDescription;
-    filledObject.liveStreamLink = object.liveStreamLink;
-    filledObject.name = object.name;
-    filledObject.objectId = object.objectId;
-    filledObject.startDate = object.startDate;
-    filledObject.endDate = object.endDate;
-    filledObject.timePadID = object.timePadID;
-    filledObject.twitterLink = object.twitterLink;
-    filledObject.tags = object.tags;
-    // починить категорию
-    filledObject.backgroundColor = [UIColor colorFromHexString:object.backgroundColor];
-    filledObject.imageUrl = [NSURL URLWithString:object.imageUrl];
-}
-
-
+// Insert code here to declare functionality of your managed object subclass
 
 @end
+
+NS_ASSUME_NONNULL_END
+
+#import "EventManagedObject+CoreDataProperties.h"

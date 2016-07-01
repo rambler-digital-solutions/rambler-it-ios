@@ -17,36 +17,35 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
-//
-// Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
-// to delete and recreate this implementation file for your updated model.
-//
 
-#import "Speaker.h"
+#import "SpeakerManagedObject.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Speaker (CoreDataProperties)
+@interface SpeakerManagedObject (CoreDataProperties)
 
 @property (nullable, nonatomic, retain) NSString *biography;
 @property (nullable, nonatomic, retain) NSString *name;
-@property (nullable, nonatomic, retain) NSString *pictureLink;
-@property (nullable, nonatomic, retain) NSSet<Lecture *> *lectures;
-@property (nullable, nonatomic, retain) NSSet<SocialNetworkAccount *> *socialNetworkAccounts;
+@property (nullable, nonatomic, retain) NSString *imageLink;
+@property (nullable, nonatomic, retain) NSNumber *speakerId;
+@property (nullable, nonatomic, retain) NSString *company;
+@property (nullable, nonatomic, retain) NSString *job;
+@property (nullable, nonatomic, retain) NSSet<LectureManagedObject *> *lectures;
+@property (nullable, nonatomic, retain) NSSet<SocialNetworkAccountManagedObject *> *socialNetworkAccounts;
 
 @end
 
-@interface Speaker (CoreDataGeneratedAccessors)
+@interface SpeakerManagedObject (CoreDataGeneratedAccessors)
 
-- (void)addLecturesObject:(Lecture *)value;
-- (void)removeLecturesObject:(Lecture *)value;
-- (void)addLectures:(NSSet<Lecture *> *)values;
-- (void)removeLectures:(NSSet<Lecture *> *)values;
+- (void)addLecturesObject:(LectureManagedObject *)value;
+- (void)removeLecturesObject:(LectureManagedObject *)value;
+- (void)addLectures:(NSSet<LectureManagedObject *> *)values;
+- (void)removeLectures:(NSSet<LectureManagedObject *> *)values;
 
-- (void)addSocialNetworkAccountsObject:(SocialNetworkAccount *)value;
-- (void)removeSocialNetworkAccountsObject:(SocialNetworkAccount *)value;
-- (void)addSocialNetworkAccounts:(NSSet<SocialNetworkAccount *> *)values;
-- (void)removeSocialNetworkAccounts:(NSSet<SocialNetworkAccount *> *)values;
+- (void)addSocialNetworkAccountsObject:(SocialNetworkAccountManagedObject *)value;
+- (void)removeSocialNetworkAccountsObject:(SocialNetworkAccountManagedObject *)value;
+- (void)addSocialNetworkAccounts:(NSSet<SocialNetworkAccountManagedObject *> *)values;
+- (void)removeSocialNetworkAccounts:(NSSet<SocialNetworkAccountManagedObject *> *)values;
 
 @end
 

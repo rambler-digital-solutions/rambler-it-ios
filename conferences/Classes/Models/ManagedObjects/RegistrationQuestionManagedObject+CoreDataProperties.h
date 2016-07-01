@@ -18,19 +18,16 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
-
-@class Lecture, RegistrationQuestion;
+#import "RegistrationQuestionManagedObject.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Event : NSManagedObject
+@interface RegistrationQuestionManagedObject (CoreDataProperties)
 
-// Insert code here to declare functionality of your managed object subclass
+@property (nullable, nonatomic, retain) NSString *name;
+@property (nullable, nonatomic, retain) NSString *orderID;
+@property (nullable, nonatomic, retain) EventManagedObject *event;
 
 @end
 
 NS_ASSUME_NONNULL_END
-
-#import "Event+CoreDataProperties.h"

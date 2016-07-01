@@ -18,31 +18,11 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "EventPrototypeMapper.h"
+#import "LectureMaterialManagedObject.h"
+#import "LectureManagedObject.h"
 
-#import "EventManagedObject.h"
-#import "EventPlainObject.h"
+@implementation LectureMaterialManagedObject
 
-#import "UIColor+Hex.h"
-
-@implementation EventPrototypeMapper
-
-// TODO: добавить маппинг лекций после того как будет создан класс PlainLecture, так же PlainRegistratinQuestions
-- (void)fillObject:(EventPlainObject *)filledObject withObject:(EventManagedObject *)object {
-    filledObject.eventDescription = object.eventDescription;
-    filledObject.liveStreamLink = object.liveStreamLink;
-    filledObject.name = object.name;
-    filledObject.objectId = object.objectId;
-    filledObject.startDate = object.startDate;
-    filledObject.endDate = object.endDate;
-    filledObject.timePadID = object.timePadID;
-    filledObject.twitterLink = object.twitterLink;
-    filledObject.tags = object.tags;
-    // починить категорию
-    filledObject.backgroundColor = [UIColor colorFromHexString:object.backgroundColor];
-    filledObject.imageUrl = [NSURL URLWithString:object.imageUrl];
-}
-
-
+// Insert code here to add functionality to your managed object subclass
 
 @end

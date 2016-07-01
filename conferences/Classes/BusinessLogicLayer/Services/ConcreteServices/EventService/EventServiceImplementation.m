@@ -25,7 +25,7 @@
 #import "CompoundOperationBase.h"
 #import "EventOperationFactory.h"
 #import "OperationScheduler.h"
-#import "Event.h"
+#import "EventManagedObject.h"
 
 @implementation EventServiceImplementation
 
@@ -43,7 +43,7 @@
 - (NSArray *)obtainEventWithPredicate:(NSPredicate *)predicate {
     NSManagedObjectContext *context = [NSManagedObjectContext MR_defaultContext];
     
-    NSArray *events = [Event MR_findAllWithPredicate:predicate inContext:context];
+    NSArray *events = [EventManagedObject MR_findAllWithPredicate:predicate inContext:context];
     
     return events;
 }

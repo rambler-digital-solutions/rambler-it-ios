@@ -18,19 +18,11 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
+#import "TechManagedObject.h"
+#import "EventManagedObject.h"
 
-@class Event;
+@implementation TechManagedObject
 
-NS_ASSUME_NONNULL_BEGIN
-
-@interface RegistrationQuestion : NSManagedObject
-
-// Insert code here to declare functionality of your managed object subclass
+// Insert code here to add functionality to your managed object subclass
 
 @end
-
-NS_ASSUME_NONNULL_END
-
-#import "RegistrationQuestion+CoreDataProperties.h"

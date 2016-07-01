@@ -18,11 +18,28 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "RegistrationQuestion.h"
-#import "Event.h"
+#import "MetaEventManagedObject.h"
 
-@implementation RegistrationQuestion
+NS_ASSUME_NONNULL_BEGIN
 
-// Insert code here to add functionality to your managed object subclass
+@interface MetaEventManagedObject (CoreDataProperties)
+
+@property (nullable, nonatomic, retain) NSNumber *metaEventId;
+@property (nullable, nonatomic, retain) NSString *imageUrlPath;
+@property (nullable, nonatomic, retain) NSString *name;
+@property (nullable, nonatomic, retain) NSString *metaEventDescription;
+@property (nullable, nonatomic, retain) NSString *websiteUrlPath;
+@property (nullable, nonatomic, retain) NSSet<EventManagedObject *> *events;
 
 @end
+
+@interface MetaEventManagedObject (CoreDataGeneratedAccessors)
+
+- (void)addEventsObject:(EventManagedObject *)value;
+- (void)removeEventsObject:(EventManagedObject *)value;
+- (void)addEvents:(NSSet<EventManagedObject *> *)values;
+- (void)removeEvents:(NSSet<EventManagedObject *> *)values;
+
+@end
+
+NS_ASSUME_NONNULL_END

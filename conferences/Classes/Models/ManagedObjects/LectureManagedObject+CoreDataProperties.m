@@ -17,21 +17,19 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
-//
-// Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
-// to delete and recreate this implementation file for your updated model.
-//
 
-#import "LectureMaterials.h"
+#import "LectureManagedObject+CoreDataProperties.h"
 
-NS_ASSUME_NONNULL_BEGIN
+@implementation LectureManagedObject (CoreDataProperties)
 
-@interface LectureMaterials (CoreDataProperties)
-
-@property (nullable, nonatomic, retain) NSString *link;
-@property (nullable, nonatomic, retain) NSString *name;
-@property (nullable, nonatomic, retain) Lecture *lecture;
+@dynamic favourite;
+@dynamic lectureDescription;
+@dynamic name;
+@dynamic slideLink;
+@dynamic videoLink;
+@dynamic lectureId;
+@dynamic event;
+@dynamic lectureMaterials;
+@dynamic speakers;
 
 @end
-
-NS_ASSUME_NONNULL_END

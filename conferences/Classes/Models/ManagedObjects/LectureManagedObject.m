@@ -18,19 +18,13 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
+#import "LectureManagedObject.h"
+#import "EventManagedObject.h"
+#import "LectureMaterialManagedObject.h"
+#import "SpeakerManagedObject.h"
 
-@class Event, LectureMaterials, Speaker;
+@implementation LectureManagedObject
 
-NS_ASSUME_NONNULL_BEGIN
-
-@interface Lecture : NSManagedObject
-
-// Insert code here to declare functionality of your managed object subclass
+// Insert code here to add functionality to your managed object subclass
 
 @end
-
-NS_ASSUME_NONNULL_END
-
-#import "Lecture+CoreDataProperties.h"

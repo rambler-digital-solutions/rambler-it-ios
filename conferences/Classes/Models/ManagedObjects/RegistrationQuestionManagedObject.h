@@ -17,23 +17,20 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
-//
-// Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
-// to delete and recreate this implementation file for your updated model.
-//
 
-#import "Lecture+CoreDataProperties.h"
+#import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
-@implementation Lecture (CoreDataProperties)
+@class EventManagedObject;
 
-@dynamic favourite;
-@dynamic name;
-@dynamic orderID;
-@dynamic slideLink;
-@dynamic lectureDescription;
-@dynamic videoLink;
-@dynamic event;
-@dynamic lectureMaterials;
-@dynamic speakers;
+NS_ASSUME_NONNULL_BEGIN
+
+@interface RegistrationQuestionManagedObject : NSManagedObject
+
+// Insert code here to declare functionality of your managed object subclass
 
 @end
+
+NS_ASSUME_NONNULL_END
+
+#import "RegistrationQuestionManagedObject+CoreDataProperties.h"

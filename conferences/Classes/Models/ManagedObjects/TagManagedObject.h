@@ -21,11 +21,9 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Lecture, SocialNetworkAccount;
-
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Speaker : NSManagedObject
+@interface TagManagedObject : NSManagedObject
 
 // Insert code here to declare functionality of your managed object subclass
 
@@ -33,4 +31,4 @@ NS_ASSUME_NONNULL_BEGIN
 
 NS_ASSUME_NONNULL_END
 
-#import "Speaker+CoreDataProperties.h"
+#import "TagManagedObject+CoreDataProperties.h"

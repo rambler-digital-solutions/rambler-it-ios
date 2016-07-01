@@ -17,18 +17,17 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
-//
-// Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
-// to delete and recreate this implementation file for your updated model.
-//
 
-#import "Speaker+CoreDataProperties.h"
+#import "SpeakerManagedObject+CoreDataProperties.h"
 
-@implementation Speaker (CoreDataProperties)
+@implementation SpeakerManagedObject (CoreDataProperties)
 
 @dynamic biography;
 @dynamic name;
-@dynamic pictureLink;
+@dynamic imageLink;
+@dynamic speakerId;
+@dynamic company;
+@dynamic job;
 @dynamic lectures;
 @dynamic socialNetworkAccounts;
 

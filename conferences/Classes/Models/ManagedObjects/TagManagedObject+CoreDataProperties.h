@@ -17,18 +17,17 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
-//
-// Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
-// to delete and recreate this implementation file for your updated model.
-//
 
-#import "SocialNetworkAccount+CoreDataProperties.h"
+#import "TagManagedObject.h"
 
-@implementation SocialNetworkAccount (CoreDataProperties)
+NS_ASSUME_NONNULL_BEGIN
 
-@dynamic name;
-@dynamic objectId;
-@dynamic profileLink;
-@dynamic speaker;
+@interface TagManagedObject (CoreDataProperties)
+
+@property (nullable, nonatomic, retain) NSString *name;
+@property (nullable, nonatomic, retain) NSString *slug;
+@property (nullable, nonatomic, retain) NSNumber *tagId;
 
 @end
+
+NS_ASSUME_NONNULL_END

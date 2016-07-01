@@ -17,22 +17,25 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
-//
-// Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
-// to delete and recreate this implementation file for your updated model.
-//
 
-#import "SocialNetworkAccount.h"
+#import "EventManagedObject+CoreDataProperties.h"
 
-NS_ASSUME_NONNULL_BEGIN
+@implementation EventManagedObject (CoreDataProperties)
 
-@interface SocialNetworkAccount (CoreDataProperties)
-
-@property (nullable, nonatomic, retain) NSString *name;
-@property (nullable, nonatomic, retain) NSString *objectId;
-@property (nullable, nonatomic, retain) NSString *profileLink;
-@property (nullable, nonatomic, retain) Speaker *speaker;
+@dynamic backgroundColor;
+@dynamic endDate;
+@dynamic eventDescription;
+@dynamic image;
+@dynamic imageUrl;
+@dynamic liveStreamLink;
+@dynamic name;
+@dynamic objectId;
+@dynamic startDate;
+@dynamic tags;
+@dynamic timePadID;
+@dynamic twitterLink;
+@dynamic lectures;
+@dynamic registrationQuestions;
+@dynamic metaEvent;
 
 @end
-
-NS_ASSUME_NONNULL_END

@@ -17,20 +17,18 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
-//
-// Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
-// to delete and recreate this implementation file for your updated model.
-//
 
-#import "Event.h"
+#import "EventManagedObject.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Event (CoreDataProperties)
+@interface EventManagedObject (CoreDataProperties)
 
 @property (nullable, nonatomic, retain) NSString *backgroundColor;
 @property (nullable, nonatomic, retain) NSDate *endDate;
 @property (nullable, nonatomic, retain) NSString *eventDescription;
+@property (nullable, nonatomic, retain) NSData *image;
+@property (nullable, nonatomic, retain) NSString *imageUrl;
 @property (nullable, nonatomic, retain) NSString *liveStreamLink;
 @property (nullable, nonatomic, retain) NSString *name;
 @property (nullable, nonatomic, retain) NSString *objectId;
@@ -38,24 +36,23 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *tags;
 @property (nullable, nonatomic, retain) NSString *timePadID;
 @property (nullable, nonatomic, retain) NSString *twitterLink;
-@property (nullable, nonatomic, retain) NSData *image;
-@property (nullable, nonatomic, retain) NSString *imageUrl;
-@property (nullable, nonatomic, retain) NSSet<Lecture *> *lectures;
-@property (nullable, nonatomic, retain) NSSet<RegistrationQuestion *> *registrationQuestions;
+@property (nullable, nonatomic, retain) NSSet<LectureManagedObject *> *lectures;
+@property (nullable, nonatomic, retain) NSSet<RegistrationQuestionManagedObject *> *registrationQuestions;
+@property (nullable, nonatomic, retain) MetaEventManagedObject *metaEvent;
 
 @end
 
-@interface Event (CoreDataGeneratedAccessors)
+@interface EventManagedObject (CoreDataGeneratedAccessors)
 
-- (void)addLecturesObject:(Lecture *)value;
-- (void)removeLecturesObject:(Lecture *)value;
-- (void)addLectures:(NSSet<Lecture *> *)values;
-- (void)removeLectures:(NSSet<Lecture *> *)values;
+- (void)addLecturesObject:(LectureManagedObject *)value;
+- (void)removeLecturesObject:(LectureManagedObject *)value;
+- (void)addLectures:(NSSet<LectureManagedObject *> *)values;
+- (void)removeLectures:(NSSet<LectureManagedObject *> *)values;
 
-- (void)addRegistrationQuestionsObject:(RegistrationQuestion *)value;
-- (void)removeRegistrationQuestionsObject:(RegistrationQuestion *)value;
-- (void)addRegistrationQuestions:(NSSet<RegistrationQuestion *> *)values;
-- (void)removeRegistrationQuestions:(NSSet<RegistrationQuestion *> *)values;
+- (void)addRegistrationQuestionsObject:(RegistrationQuestionManagedObject *)value;
+- (void)removeRegistrationQuestionsObject:(RegistrationQuestionManagedObject *)value;
+- (void)addRegistrationQuestions:(NSSet<RegistrationQuestionManagedObject *> *)values;
+- (void)removeRegistrationQuestions:(NSSet<RegistrationQuestionManagedObject *> *)values;
 
 @end
 

@@ -18,12 +18,14 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "Speaker.h"
-#import "Lecture.h"
-#import "SocialNetworkAccount.h"
+#import "SocialNetworkAccountManagedObject+CoreDataProperties.h"
 
-@implementation Speaker
+@implementation SocialNetworkAccountManagedObject (CoreDataProperties)
 
-// Insert code here to add functionality to your managed object subclass
+@dynamic name;
+@dynamic objectId;
+@dynamic profileLink;
+@dynamic type;
+@dynamic speaker;
 
 @end

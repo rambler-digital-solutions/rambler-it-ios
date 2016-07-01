@@ -17,21 +17,12 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
-//
-// Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
-// to delete and recreate this implementation file for your updated model.
-//
 
-#import "RegistrationQuestion.h"
+#import "MetaEventManagedObject.h"
+#import "EventManagedObject.h"
 
-NS_ASSUME_NONNULL_BEGIN
+@implementation MetaEventManagedObject
 
-@interface RegistrationQuestion (CoreDataProperties)
-
-@property (nullable, nonatomic, retain) NSString *name;
-@property (nullable, nonatomic, retain) NSString *orderID;
-@property (nullable, nonatomic, retain) Event *event;
+// Insert code here to add functionality to your managed object subclass
 
 @end
-
-NS_ASSUME_NONNULL_END

@@ -18,10 +18,11 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "SocialNetworkAccount.h"
-#import "Speaker.h"
+#import "SpeakerManagedObject.h"
+#import "LectureManagedObject.h"
+#import "SocialNetworkAccountManagedObject.h"
 
-@implementation SocialNetworkAccount
+@implementation SpeakerManagedObject
 
 // Insert code here to add functionality to your managed object subclass
 
