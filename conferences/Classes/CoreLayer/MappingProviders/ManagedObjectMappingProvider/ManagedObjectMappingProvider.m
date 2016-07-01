@@ -24,8 +24,8 @@
 
 #import "NSString+RCFCapitalization.h"
 
-#import "SocialNetworkAccount.h"
-#import "Event.h"
+#import "SocialNetworkAccountManagedObject.h"
+#import "EventManagedObject.h"
 
 @implementation ManagedObjectMappingProvider
 
@@ -48,7 +48,7 @@
                             NSStringFromSelector(@selector(name)),
                             NSStringFromSelector(@selector(profileLink))
                             ];
-    NSString *entityName = NSStringFromClass([SocialNetworkAccount class]);
+    NSString *entityName = NSStringFromClass([SocialNetworkAccountManagedObject class]);
     return [EKManagedObjectMapping mappingForEntityName:entityName
                                               withBlock:^(EKManagedObjectMapping *mapping) {
                                                   mapping.primaryKey = NSStringFromSelector(@selector(objectId));
@@ -68,34 +68,8 @@
                             NSStringFromSelector(@selector(timePadID)),
                             NSStringFromSelector(@selector(twitterLink)),
                             ];
-    NSString *entityName = NSStringFromClass([Event class]);
-    return [EKManagedObjectMapping mappingForEntityName:entityName
-                                              withBlock:^(EKManagedObjectMapping *mapping) {
-                                                  mapping.primaryKey = NSStringFromSelector(@selector(objectId));
-                                                  [mapping mapPropertiesFromArray:properties];
-                                                  [mapping mapKeyPath:@"image" toProperty:@"imageUrl" withValueBlock:^id(NSString *key, id value, NSManagedObjectContext *context) {
-                                                      NSString *imageUrl;
-                                                      if ([value isKindOfClass:[NSDictionary class]]) {
-                                                          imageUrl = [value valueForKey:@"url"];
-                                                      }
-                                                      return imageUrl;
-                                                  }];
-                                                  EKManagedMappingValueBlock dateValueBlock = ^id(NSString *key, id value, NSManagedObjectContext *context) {
-                                                      NSDate *date;
-                                                      if ([value isKindOfClass:[NSDictionary class]]) {
-                                                          NSString *dateString = [value objectForKey:@"iso"];
-                                                          
-                                                          NSDateFormatter *dateFormatter = [NSDateFormatter new];
-                                                          [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSSz"];
-                                                          
-                                                          date = [dateFormatter dateFromString:dateString];
-                                                      }
-                                                      return date;
-                                                  };
-                                                  
-                                                  [mapping mapKeyPath:@"startDate" toProperty:@"startDate" withValueBlock:dateValueBlock];
-                                                  [mapping mapKeyPath:@"endDate" toProperty:@"endDate" withValueBlock:dateValueBlock];
-                                              }];
+    NSString *entityName = NSStringFromClass([EventManagedObject class]);
+    return nil;
 }
 
 @end

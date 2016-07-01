@@ -18,12 +18,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "TagmanagedObject+CoreDataProperties.h"
+#import "TagManagedObject+CoreDataProperties.h"
 
 @implementation TagManagedObject (CoreDataProperties)
 
-@dynamic tagId;
 @dynamic name;
 @dynamic slug;
+@dynamic tagId;
 
 @end

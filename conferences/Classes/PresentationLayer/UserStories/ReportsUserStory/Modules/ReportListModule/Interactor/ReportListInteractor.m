@@ -22,7 +22,7 @@
 #import "ReportListInteractorOutput.h"
 
 #import "EventService.h"
-#import "Event.h"
+#import "EventManagedObject.h"
 #import "EventPrototypeMapper.h"
 #import "EventPlainObject.h"
 #import "EventType.h"
@@ -56,7 +56,7 @@
 
 - (NSArray *)getPlainEventsFromManagedObjects:(NSArray *)managedObjectEvents {
     NSMutableArray *eventPlainObjects = [NSMutableArray array];
-    for (Event *managedObjectEvent in managedObjectEvents) {
+    for (EventManagedObject *managedObjectEvent in managedObjectEvents) {
         EventPlainObject *eventPlainObject = [EventPlainObject new];
         
         [self.eventPrototypeMapper fillObject:eventPlainObject withObject:managedObjectEvent];

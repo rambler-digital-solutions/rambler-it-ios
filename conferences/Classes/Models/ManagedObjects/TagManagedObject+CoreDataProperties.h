@@ -24,9 +24,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TagManagedObject (CoreDataProperties)
 
-@property (nullable, nonatomic, retain) NSNumber *tagId;
 @property (nullable, nonatomic, retain) NSString *name;
 @property (nullable, nonatomic, retain) NSString *slug;
+@property (nullable, nonatomic, retain) NSNumber *tagId;
 
 @end
 
