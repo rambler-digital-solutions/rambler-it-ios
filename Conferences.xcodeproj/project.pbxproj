@@ -313,6 +313,8 @@
 		9FF74FF01D269B2E000D208D /* TagManagedObject+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF74FEF1D269B2E000D208D /* TagManagedObject+CoreDataProperties.m */; };
 		9FF74FF51D269C8F000D208D /* TechManagedObject+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF74FF21D269C8F000D208D /* TechManagedObject+CoreDataProperties.m */; };
 		9FF74FF61D269C8F000D208D /* TechManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF74FF41D269C8F000D208D /* TechManagedObject.m */; };
+		9FF74FFA1D26C448000D208D /* EventListQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF74FF91D26C448000D208D /* EventListQuery.m */; };
+		9FF74FFF1D26C62A000D208D /* EventListServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF74FFE1D26C62A000D208D /* EventListServiceImplementation.m */; };
 		9FF99E511BC42FF6006F15AF /* OperationSchedulerImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF99E501BC42FF6006F15AF /* OperationSchedulerImplementation.m */; };
 		9FF99E541BC4317E006F15AF /* OperationSchedulerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF99E531BC4317E006F15AF /* OperationSchedulerTests.m */; };
 		F826C56E7FA67515D33573A9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A4F504A716A8833A7A01A5D /* libPods.a */; };
@@ -921,6 +923,11 @@
 		9FF74FF21D269C8F000D208D /* TechManagedObject+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TechManagedObject+CoreDataProperties.m"; sourceTree = "<group>"; };
 		9FF74FF31D269C8F000D208D /* TechManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TechManagedObject.h; sourceTree = "<group>"; };
 		9FF74FF41D269C8F000D208D /* TechManagedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TechManagedObject.m; sourceTree = "<group>"; };
+		9FF74FF81D26C448000D208D /* EventListQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventListQuery.h; path = ObjectQueries/EventListQUery/EventListQuery.h; sourceTree = "<group>"; };
+		9FF74FF91D26C448000D208D /* EventListQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListQuery.m; path = ObjectQueries/EventListQUery/EventListQuery.m; sourceTree = "<group>"; };
+		9FF74FFC1D26C61F000D208D /* EventListService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventListService.h; path = EventListService/EventListService.h; sourceTree = "<group>"; };
+		9FF74FFD1D26C62A000D208D /* EventListServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventListServiceImplementation.h; path = EventListService/EventListServiceImplementation.h; sourceTree = "<group>"; };
+		9FF74FFE1D26C62A000D208D /* EventListServiceImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListServiceImplementation.m; path = EventListService/EventListServiceImplementation.m; sourceTree = "<group>"; };
 		9FF99E4E1BC42FDE006F15AF /* OperationScheduler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OperationScheduler.h; path = OperationScheduler/OperationScheduler.h; sourceTree = "<group>"; };
 		9FF99E4F1BC42FF5006F15AF /* OperationSchedulerImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OperationSchedulerImplementation.h; path = OperationScheduler/OperationSchedulerImplementation.h; sourceTree = "<group>"; };
 		9FF99E501BC42FF6006F15AF /* OperationSchedulerImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OperationSchedulerImplementation.m; path = OperationScheduler/OperationSchedulerImplementation.m; sourceTree = "<group>"; };
@@ -1676,6 +1683,7 @@
 		6373A3DF1BBDBDF700DF67FF /* ConcreteServices */ = {
 			isa = PBXGroup;
 			children = (
+				9FF74FFB1D26C60E000D208D /* EventListService */,
 				63D7460B1C8B0CF600E3A381 /* EventStoreService */,
 				63EF15BC1BC4617000480CAF /* PushNotificationSrvice */,
 				6373A3E01BBDBDF700DF67FF /* EventService */,
@@ -3695,6 +3703,7 @@
 		9F0A852E1BC188E0006F79FB /* ObjectQueries */ = {
 			isa = PBXGroup;
 			children = (
+				9FF74FF71D26C41C000D208D /* EventListQuery */,
 				9F0A852F1BC188EA006F79FB /* EventQuery */,
 			);
 			name = ObjectQueries;
@@ -4367,6 +4376,25 @@
 			name = Constants;
 			sourceTree = "<group>";
 		};
+		9FF74FF71D26C41C000D208D /* EventListQuery */ = {
+			isa = PBXGroup;
+			children = (
+				9FF74FF81D26C448000D208D /* EventListQuery.h */,
+				9FF74FF91D26C448000D208D /* EventListQuery.m */,
+			);
+			name = EventListQuery;
+			sourceTree = "<group>";
+		};
+		9FF74FFB1D26C60E000D208D /* EventListService */ = {
+			isa = PBXGroup;
+			children = (
+				9FF74FFC1D26C61F000D208D /* EventListService.h */,
+				9FF74FFD1D26C62A000D208D /* EventListServiceImplementation.h */,
+				9FF74FFE1D26C62A000D208D /* EventListServiceImplementation.m */,
+			);
+			name = EventListService;
+			sourceTree = "<group>";
+		};
 		9FF99E4D1BC42FBA006F15AF /* OperationScheduler */ = {
 			isa = PBXGroup;
 			children = (
@@ -4696,6 +4724,7 @@
 				63F8F2A81BF870A1000017F3 /* LecturePlainObject.m in Sources */,
 				6318086D1C4A872600A61E7D /* TableViewCellWithTextLabelAndImageViewCellObject.m in Sources */,
 				63F6135E1CB00A220002AEF0 /* EventHeaderView.m in Sources */,
+				9FF74FFA1D26C448000D208D /* EventListQuery.m in Sources */,
 				63F6134C1CB00A220002AEF0 /* AnnouncementListModuleAssembly.m in Sources */,
 				63D628EB1BE4C741004AF98F /* EventPlainObject.m in Sources */,
 				9F1830D71BC125C3000E21A5 /* ParseResponseValidator.m in Sources */,
@@ -4784,6 +4813,7 @@
 				9F8E5F7C1BC2584500DC10DB /* ResponseDeserializersAssembly.m in Sources */,
 				9F0A6C1D1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m in Sources */,
 				9F0A85001BC1698B006F79FB /* ResponseDeserializationOperation.m in Sources */,
+				9FF74FFF1D26C62A000D208D /* EventListServiceImplementation.m in Sources */,
 				9F0A853B1BC1908B006F79FB /* OperationChainer.m in Sources */,
 				63ECC4161CA81E5300439A01 /* ErrorConstants.m in Sources */,
 				636DD8481C28604400436201 /* ReportListTableViewCellObject.m in Sources */,
