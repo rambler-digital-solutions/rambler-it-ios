@@ -16,6 +16,7 @@
         <relationship name="lectures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lecture" inverseName="event" inverseEntity="Lecture" syncable="YES"/>
         <relationship name="metaEvent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MetaEvent" inverseName="events" inverseEntity="MetaEvent" syncable="YES"/>
         <relationship name="registrationQuestions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RegistrationQuestion" inverseName="event" inverseEntity="RegistrationQuestion" syncable="YES"/>
+        <relationship name="tech" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tech" inverseName="events" inverseEntity="Tech" syncable="YES"/>
     </entity>
     <entity name="Lecture" representedClassName="LectureManagedObject" syncable="YES">
         <attribute name="favourite" optional="YES" attributeType="Boolean" syncable="YES"/>
@@ -69,14 +70,21 @@
         <attribute name="slug" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tagId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
     </entity>
+    <entity name="Tech" representedClassName="TechManagedObject" syncable="YES">
+        <attribute name="color" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="techId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="events" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event" inverseName="tech" inverseEntity="Event" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="Event" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Lecture" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="LectureMaterial" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="MetaEvent" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="RegistrationQuestion" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="SocialNetworkAccount" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Speaker" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Tag" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Event" positionX="0" positionY="0" width="128" height="285"/>
+        <element name="Lecture" positionX="0" positionY="0" width="128" height="180"/>
+        <element name="LectureMaterial" positionX="0" positionY="0" width="128" height="105"/>
+        <element name="MetaEvent" positionX="0" positionY="0" width="128" height="135"/>
+        <element name="RegistrationQuestion" positionX="0" positionY="0" width="128" height="90"/>
+        <element name="SocialNetworkAccount" positionX="0" positionY="0" width="128" height="120"/>
+        <element name="Speaker" positionX="0" positionY="0" width="128" height="165"/>
+        <element name="Tag" positionX="0" positionY="0" width="128" height="90"/>
+        <element name="Tech" positionX="36" positionY="144" width="128" height="105"/>
     </elements>
 </model>
