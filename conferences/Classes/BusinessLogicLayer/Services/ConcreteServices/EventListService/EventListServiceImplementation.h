@@ -22,6 +22,17 @@
 
 #import "EventListService.h"
 
+@class EventListOperationFactory;
+@protocol OperationScheduler;
+
+/**
+ @author Egor Tolstoy
+ 
+ The basic implementation of EventListService protocol
+ */
 @interface EventListServiceImplementation : NSObject <EventListService>
+
+@property (strong, nonatomic) EventListOperationFactory *eventListOperationFactory;
+@property (strong, nonatomic) id <OperationScheduler> operationScheduler;
 
 @end

@@ -23,6 +23,7 @@
 
 @protocol PushNotificationService;
 @protocol EventService;
+@protocol EventListService;
 @protocol PrototypeMapper;
 @protocol EventStoreServiceProtocol;
 
@@ -30,6 +31,7 @@
 
 - (id <PushNotificationService>)pushNotificationService;
 - (id <EventService>)eventService;
+- (id <EventListService>)eventListService;
 - (id <EventStoreServiceProtocol>)eventStoreService;
 
 // вынести из сервисов

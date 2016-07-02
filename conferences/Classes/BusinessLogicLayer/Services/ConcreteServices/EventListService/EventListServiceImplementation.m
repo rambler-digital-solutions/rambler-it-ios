@@ -21,12 +21,23 @@
 #import "EventListServiceImplementation.h"
 
 #import "EventListQuery.h"
+#import "EventListOperationFactory.h"
+#import "OperationScheduler.h"
+
+#import "CompoundOperationBase.h"
 
 @implementation EventListServiceImplementation
 
 - (void)updateEventListWithQuery:(EventListQuery *)query
                  completionBlock:(EventListUpdateCompletionBlock)completionBlock {
+    CompoundOperationBase *compoundOperation = [self.eventListOperationFactory getEventsOperationWithQuery:query];
+    compoundOperation.resultBlock = ^void(id data, NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completionBlock(error);
+        });
+    };
     
+    [self.operationScheduler addOperation:compoundOperation];
 }
 
 @end

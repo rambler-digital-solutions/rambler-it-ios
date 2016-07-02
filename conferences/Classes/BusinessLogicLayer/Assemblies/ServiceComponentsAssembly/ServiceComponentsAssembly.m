@@ -20,7 +20,7 @@
 
 #import "ServiceComponentsAssembly.h"
 #import "PushNotificationService.h"
-#import "EventService.h"
+#import "EventListServiceImplementation.h"
 #import "EventServiceImplementation.h"
 #import "PushNotificationServiceImplementation.h"
 #import "OperationScheduler.h"
@@ -45,6 +45,17 @@
                                                     with:[self operationScheduler]];
         
     }];
+}
+
+- (id <EventListService>)eventListService {
+    return [TyphoonDefinition withClass:[EventListServiceImplementation class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(eventListOperationFactory)
+                                                    with:[self.operationFactoriesAssembly eventListOperationFactory]];
+                              [definition injectProperty:@selector(operationScheduler)
+                                                    with:[self operationScheduler]];
+                              
+                          }];
 }
 
 - (id <OperationScheduler>)operationScheduler {
