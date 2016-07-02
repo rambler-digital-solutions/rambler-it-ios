@@ -315,6 +315,8 @@
 		9FF750031D26C74B000D208D /* EventListOperationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF750021D26C74B000D208D /* EventListOperationFactory.m */; };
 		9FF750071D26C8EB000D208D /* EventListOperationFactoryTests.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9FF750051D26C8EB000D208D /* EventListOperationFactoryTests.bundle */; };
 		9FF750081D26C8EB000D208D /* EventListOperationFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF750061D26C8EB000D208D /* EventListOperationFactoryTests.m */; };
+		9FF750121D27DB99000D208D /* EntityNameFormatterImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF750111D27DB99000D208D /* EntityNameFormatterImplementation.m */; };
+		9FF750171D27DCBE000D208D /* EntityNameFormatterImplementationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF750161D27DCBE000D208D /* EntityNameFormatterImplementationTests.m */; };
 		9FF99E511BC42FF6006F15AF /* OperationSchedulerImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF99E501BC42FF6006F15AF /* OperationSchedulerImplementation.m */; };
 		9FF99E541BC4317E006F15AF /* OperationSchedulerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF99E531BC4317E006F15AF /* OperationSchedulerTests.m */; };
 		F826C56E7FA67515D33573A9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A4F504A716A8833A7A01A5D /* libPods.a */; };
@@ -928,6 +930,10 @@
 		9FF750021D26C74B000D208D /* EventListOperationFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListOperationFactory.m; path = OperationFactories/EventListOperationFactory/EventListOperationFactory.m; sourceTree = "<group>"; };
 		9FF750051D26C8EB000D208D /* EventListOperationFactoryTests.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = EventListOperationFactoryTests.bundle; sourceTree = "<group>"; };
 		9FF750061D26C8EB000D208D /* EventListOperationFactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListOperationFactoryTests.m; sourceTree = "<group>"; };
+		9FF750101D27DB99000D208D /* EntityNameFormatterImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EntityNameFormatterImplementation.h; path = CoreComponents/Helpers/EntityNameFormatter/EntityNameFormatterImplementation.h; sourceTree = "<group>"; };
+		9FF750111D27DB99000D208D /* EntityNameFormatterImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EntityNameFormatterImplementation.m; path = CoreComponents/Helpers/EntityNameFormatter/EntityNameFormatterImplementation.m; sourceTree = "<group>"; };
+		9FF750131D27DBA6000D208D /* EntityNameFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EntityNameFormatter.h; path = CoreComponents/Helpers/EntityNameFormatter/EntityNameFormatter.h; sourceTree = "<group>"; };
+		9FF750161D27DCBE000D208D /* EntityNameFormatterImplementationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EntityNameFormatterImplementationTests.m; path = CoreLayer/CoreComponents/Helpers/EntityNameFormatter/EntityNameFormatterImplementationTests.m; sourceTree = "<group>"; };
 		9FF99E4E1BC42FDE006F15AF /* OperationScheduler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OperationScheduler.h; path = OperationScheduler/OperationScheduler.h; sourceTree = "<group>"; };
 		9FF99E4F1BC42FF5006F15AF /* OperationSchedulerImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OperationSchedulerImplementation.h; path = OperationScheduler/OperationSchedulerImplementation.h; sourceTree = "<group>"; };
 		9FF99E501BC42FF6006F15AF /* OperationSchedulerImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OperationSchedulerImplementation.m; path = OperationScheduler/OperationSchedulerImplementation.m; sourceTree = "<group>"; };
@@ -3756,6 +3762,7 @@
 		9F18308B1BC01E65000E21A5 /* CoreComponents */ = {
 			isa = PBXGroup;
 			children = (
+				9FF7500E1D27DB71000D208D /* Helpers */,
 				9F18310A1BC16141000E21A5 /* ResponseObjectFormatters */,
 				9F1830E01BC12837000E21A5 /* ResponseMappers */,
 				9F1830CB1BC123C7000E21A5 /* ResponseValidators */,
@@ -3819,6 +3826,7 @@
 		9F1830951BC022A6000E21A5 /* CoreComponents */ = {
 			isa = PBXGroup;
 			children = (
+				9FF750141D27DC96000D208D /* Helpers */,
 				9F18311E1BC16162000E21A5 /* ResponseObjectFormatters */,
 				9F1830FA1BC14C0F000E21A5 /* ResponseMappers */,
 				9F1830D81BC126B0000E21A5 /* ResponseValidators */,
@@ -4395,6 +4403,40 @@
 			path = CoreLayer/OperationFactories/EventListOperationFactory;
 			sourceTree = "<group>";
 		};
+		9FF7500E1D27DB71000D208D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9FF7500F1D27DB7A000D208D /* EntityNameFormatter */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		9FF7500F1D27DB7A000D208D /* EntityNameFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				9FF750131D27DBA6000D208D /* EntityNameFormatter.h */,
+				9FF750101D27DB99000D208D /* EntityNameFormatterImplementation.h */,
+				9FF750111D27DB99000D208D /* EntityNameFormatterImplementation.m */,
+			);
+			name = EntityNameFormatter;
+			sourceTree = "<group>";
+		};
+		9FF750141D27DC96000D208D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9FF750151D27DCA5000D208D /* EntityNameFormatter */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		9FF750151D27DCA5000D208D /* EntityNameFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				9FF750161D27DCBE000D208D /* EntityNameFormatterImplementationTests.m */,
+			);
+			name = EntityNameFormatter;
+			sourceTree = "<group>";
+		};
 		9FF99E4D1BC42FBA006F15AF /* OperationScheduler */ = {
 			isa = PBXGroup;
 			children = (
@@ -4766,6 +4808,7 @@
 				63F6136C1CB00A220002AEF0 /* SignUpAndSaveToCalendarEventTableViewCellObject.m in Sources */,
 				9FF74FE61D2699A3000D208D /* LectureMaterialManagedObject.m in Sources */,
 				63FDCE161BBDBA2A00A43B60 /* main.m in Sources */,
+				9FF750121D27DB99000D208D /* EntityNameFormatterImplementation.m in Sources */,
 				9FF74FDF1D2699A3000D208D /* RegistrationQuestionManagedObject+CoreDataProperties.m in Sources */,
 				636B64071BBDD2A40053E38F /* LectureMaterialsServiceImplementation.m in Sources */,
 				63EF15C01BC461DD00480CAF /* PushNotificationServiceImplementation.m in Sources */,
@@ -4901,6 +4944,7 @@
 				9F1830DB1BC126D7000E21A5 /* RCFParseResponseValidatorTests.m in Sources */,
 				9F0A85201BC185AA006F79FB /* TestChainableOperation.m in Sources */,
 				63F402F01BCF77CB0086D030 /* ApplicationAssemblyTests.m in Sources */,
+				9FF750171D27DCBE000D208D /* EntityNameFormatterImplementationTests.m in Sources */,
 				63F613E51CB111070002AEF0 /* LecturePresenterTests.m in Sources */,
 				9F0A85261BC185AA006F79FB /* ResponseDeserializationOperationTests.m in Sources */,
 				9FF750081D26C8EB000D208D /* EventListOperationFactoryTests.m in Sources */,
