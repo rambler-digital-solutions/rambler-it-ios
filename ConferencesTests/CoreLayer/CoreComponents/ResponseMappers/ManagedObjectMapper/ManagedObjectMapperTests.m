@@ -28,6 +28,7 @@
 
 #import "SocialNetworkAccountManagedObject.h"
 #import "EventManagedObject.h"
+#import "MetaEventManagedObject.h"
 #import "NetworkingConstantsHeader.h"
 
 @interface ManagedObjectMapperTests : XCTestCase
@@ -72,11 +73,37 @@
     NSArray *result = [self.mapper mapServerResponse:serverResponse
                                   withMappingContext:mappingContext
                                                error:nil];
-    id firstObject = [result firstObject];
+    EventManagedObject *firstObject = [result firstObject];
     
     // then
     XCTAssertEqual(result.count, 1);
     XCTAssertTrue([firstObject isKindOfClass:targetClass]);
+    XCTAssertNotNil(firstObject.eventId);
+    XCTAssertNotNil(firstObject.name);
+    XCTAssertNotNil(firstObject.startDate);
+    XCTAssertNotNil(firstObject.endDate);
+}
+
+- (void)testThatMapperMapsMetaEvent {
+    // given
+    Class targetClass = [MetaEventManagedObject class];
+    NSDictionary *serverResponse = [self generateServerResponseForModelClass:targetClass];
+    NSDictionary *mappingContext = [self generateMappingContextForModelClass:targetClass];
+    
+    // when
+    NSArray *result = [self.mapper mapServerResponse:serverResponse
+                                  withMappingContext:mappingContext
+                                               error:nil];
+    MetaEventManagedObject *firstObject = [result firstObject];
+    
+    // then
+    XCTAssertEqual(result.count, 1);
+    XCTAssertTrue([firstObject isKindOfClass:targetClass]);
+    XCTAssertNotNil(firstObject.metaEventId);
+    XCTAssertNotNil(firstObject.metaEventDescription);
+    XCTAssertNotNil(firstObject.name);
+    XCTAssertNotNil(firstObject.websiteUrlPath);
+    XCTAssertNotNil(firstObject.imageUrlPath);
 }
 
 - (void)testThatMapperMapsSocialNetworkAccount {

@@ -22,6 +22,7 @@
 
 #import "SocialNetworkAccountManagedObject.h"
 #import "EventManagedObject.h"
+#import "MetaEventManagedObject.h"
 
 #import "EntityNameFormatter.h"
 
@@ -60,13 +61,14 @@
 
 - (EKManagedObjectMapping *)eventManagedObjectMapping {
     NSDictionary *properties = @{
+                                 @"id" : NSStringFromSelector(@selector(eventId)),
                                  @"attributes.name" : NSStringFromSelector(@selector(name)),
                                  };
     Class entityClass = [EventManagedObject class];
     NSString *entityName = [self.entityNameFormatter transformToEntityNameClass:entityClass];
     return [EKManagedObjectMapping mappingForEntityName:entityName
                                               withBlock:^(EKManagedObjectMapping *mapping) {
-                                                  mapping.primaryKey = NSStringFromSelector(@selector(name));
+                                                  mapping.primaryKey = NSStringFromSelector(@selector(eventId));
                                                   [mapping mapPropertiesFromDictionary:properties];
                                                   
                                                   [mapping mapKeyPath:@"attributes.starts_at"
@@ -75,9 +77,30 @@
                                                   [mapping mapKeyPath:@"attributes.ends_at"
                                                            toProperty:NSStringFromSelector(@selector(endDate))
                                                     withDateFormatter:self.dateFormatter];
+                                                  
+                                                  [mapping hasOne:[MetaEventManagedObject class]
+                                                       forKeyPath:@"attributes.brand"
+                                                      forProperty:NSStringFromSelector(@selector(metaEvent))
+                                                withObjectMapping:[self metaEventManagedObjectMapping]];
 
                                               }];
 }
 
+- (EKManagedObjectMapping *)metaEventManagedObjectMapping {
+    NSDictionary *properties = @{
+                                 @"id" : NSStringFromSelector(@selector(metaEventId)),
+                                 @"name" : NSStringFromSelector(@selector(name)),
+                                 @"description" : NSStringFromSelector(@selector(metaEventDescription)),
+                                 @"home_page" : NSStringFromSelector(@selector(websiteUrlPath)),
+                                 @"logo" : NSStringFromSelector(@selector(imageUrlPath))
+                                 };
+    Class entityClass = [MetaEventManagedObject class];
+    NSString *entityName = [self.entityNameFormatter transformToEntityNameClass:entityClass];
+    return [EKManagedObjectMapping mappingForEntityName:entityName
+                                              withBlock:^(EKManagedObjectMapping *mapping) {
+                                                  mapping.primaryKey = NSStringFromSelector(@selector(metaEventId));
+                                                  [mapping mapPropertiesFromDictionary:properties];
+                                              }];
+}
 
 @end

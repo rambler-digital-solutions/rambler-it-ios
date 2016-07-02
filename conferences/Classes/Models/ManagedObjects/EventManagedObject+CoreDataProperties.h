@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface EventManagedObject (CoreDataProperties)
 
 @property (nullable, nonatomic, retain) NSDate *endDate;
-@property (nullable, nonatomic, retain) NSNumber *eventId;
+@property (nullable, nonatomic, retain) NSString *eventId;
 @property (nullable, nonatomic, retain) NSString *liveStreamLink;
 @property (nullable, nonatomic, retain) NSString *name;
 @property (nullable, nonatomic, retain) NSDate *startDate;

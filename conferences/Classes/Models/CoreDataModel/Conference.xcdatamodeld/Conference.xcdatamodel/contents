@@ -2,7 +2,7 @@
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15E49a" minimumToolsVersion="Xcode 7.0">
     <entity name="Event" representedClassName="EventManagedObject" syncable="YES">
         <attribute name="endDate" attributeType="Date" syncable="YES"/>
-        <attribute name="eventId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="eventId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="liveStreamLink" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="startDate" attributeType="Date" syncable="YES"/>
@@ -34,7 +34,7 @@
     <entity name="MetaEvent" representedClassName="MetaEventManagedObject" syncable="YES">
         <attribute name="imageUrlPath" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="metaEventDescription" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="metaEventId" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="metaEventId" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="websiteUrlPath" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="events" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event" inverseName="metaEvent" inverseEntity="Event" syncable="YES"/>

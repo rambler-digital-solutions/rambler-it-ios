@@ -9,7 +9,7 @@
     "ends_at": "2016-06-16T20:00:00.000Z",
     "updated_at": "2016-06-27T09:11:24.462Z",
     "brand": {
-        "id": 11,
+        "id": "11",
         "name": "stopListening",
         "description": "Указывает объекту object перестать слушать события.",
         "home_page": "",
