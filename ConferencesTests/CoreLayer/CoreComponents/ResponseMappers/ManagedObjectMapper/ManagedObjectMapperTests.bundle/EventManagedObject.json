@@ -15,7 +15,11 @@
         "home_page": "",
         "logo": ""
     },
-    "tech": [],
+ "tech": {
+ "id": "2",
+ "name": "JS",
+ "color": "#ebdb00"
+ },
     "lectures": [
                  {
                  "id": 4,

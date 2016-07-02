@@ -23,6 +23,7 @@
 #import "SocialNetworkAccountManagedObject.h"
 #import "EventManagedObject.h"
 #import "MetaEventManagedObject.h"
+#import "TechManagedObject.h"
 
 #import "EntityNameFormatter.h"
 
@@ -99,6 +100,21 @@
     return [EKManagedObjectMapping mappingForEntityName:entityName
                                               withBlock:^(EKManagedObjectMapping *mapping) {
                                                   mapping.primaryKey = NSStringFromSelector(@selector(metaEventId));
+                                                  [mapping mapPropertiesFromDictionary:properties];
+                                              }];
+}
+
+- (EKManagedObjectMapping *)techManagedObjectMapping {
+    NSDictionary *properties = @{
+                                 @"id" : NSStringFromSelector(@selector(techId)),
+                                 @"name" : NSStringFromSelector(@selector(name)),
+                                 @"color" : NSStringFromSelector(@selector(color))
+                                 };
+    Class entityClass = [TechManagedObject class];
+    NSString *entityName = [self.entityNameFormatter transformToEntityNameClass:entityClass];
+    return [EKManagedObjectMapping mappingForEntityName:entityName
+                                              withBlock:^(EKManagedObjectMapping *mapping) {
+                                                  mapping.primaryKey = NSStringFromSelector(@selector(techId));
                                                   [mapping mapPropertiesFromDictionary:properties];
                                               }];
 }

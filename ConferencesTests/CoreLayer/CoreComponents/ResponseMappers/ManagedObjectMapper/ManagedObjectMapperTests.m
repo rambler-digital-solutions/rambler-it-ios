@@ -29,6 +29,7 @@
 #import "SocialNetworkAccountManagedObject.h"
 #import "EventManagedObject.h"
 #import "MetaEventManagedObject.h"
+#import "TechManagedObject.h"
 #import "NetworkingConstantsHeader.h"
 
 @interface ManagedObjectMapperTests : XCTestCase
@@ -64,53 +65,45 @@
 }
 
 - (void)testThatMapperMapsEvent {
-    // given
     Class targetClass = [EventManagedObject class];
-    NSDictionary *serverResponse = [self generateServerResponseForModelClass:targetClass];
-    NSDictionary *mappingContext = [self generateMappingContextForModelClass:targetClass];
-    
-    // when
-    NSArray *result = [self.mapper mapServerResponse:serverResponse
-                                  withMappingContext:mappingContext
-                                               error:nil];
-    EventManagedObject *firstObject = [result firstObject];
-    
-    // then
-    XCTAssertEqual(result.count, 1);
-    XCTAssertTrue([firstObject isKindOfClass:targetClass]);
-    XCTAssertNotNil(firstObject.eventId);
-    XCTAssertNotNil(firstObject.name);
-    XCTAssertNotNil(firstObject.startDate);
-    XCTAssertNotNil(firstObject.endDate);
+    NSArray *testProperties = @[
+                                NSStringFromSelector(@selector(eventId)),
+                                NSStringFromSelector(@selector(name)),
+                                NSStringFromSelector(@selector(startDate)),
+                                NSStringFromSelector(@selector(endDate)),
+                                NSStringFromSelector(@selector(metaEvent))
+                                ];
+    [self verifyMappingOfClass:targetClass withNonNilChecksForProperties:testProperties];
 }
 
 - (void)testThatMapperMapsMetaEvent {
-    // given
     Class targetClass = [MetaEventManagedObject class];
-    NSDictionary *serverResponse = [self generateServerResponseForModelClass:targetClass];
-    NSDictionary *mappingContext = [self generateMappingContextForModelClass:targetClass];
-    
-    // when
-    NSArray *result = [self.mapper mapServerResponse:serverResponse
-                                  withMappingContext:mappingContext
-                                               error:nil];
-    MetaEventManagedObject *firstObject = [result firstObject];
-    
-    // then
-    XCTAssertEqual(result.count, 1);
-    XCTAssertTrue([firstObject isKindOfClass:targetClass]);
-    XCTAssertNotNil(firstObject.metaEventId);
-    XCTAssertNotNil(firstObject.metaEventDescription);
-    XCTAssertNotNil(firstObject.name);
-    XCTAssertNotNil(firstObject.websiteUrlPath);
-    XCTAssertNotNil(firstObject.imageUrlPath);
+    NSArray *testProperties = @[
+                                NSStringFromSelector(@selector(metaEventId)),
+                                NSStringFromSelector(@selector(metaEventDescription)),
+                                NSStringFromSelector(@selector(name)),
+                                NSStringFromSelector(@selector(websiteUrlPath)),
+                                NSStringFromSelector(@selector(imageUrlPath))
+                                ];
+    [self verifyMappingOfClass:targetClass withNonNilChecksForProperties:testProperties];
 }
 
-- (void)testThatMapperMapsSocialNetworkAccount {
+- (void)testThatMapperMapsTech {
+    Class targetClass = [TechManagedObject class];
+    NSArray *testProperties = @[
+                                NSStringFromSelector(@selector(techId)),
+                                NSStringFromSelector(@selector(name)),
+                                NSStringFromSelector(@selector(color))
+                                ];
+    [self verifyMappingOfClass:targetClass withNonNilChecksForProperties:testProperties];
+}
+
+#pragma mark - Helper Methods
+
+- (void)verifyMappingOfClass:(Class)objectClass withNonNilChecksForProperties:(NSArray *)properties {
     // given
-    Class targetClass = [SocialNetworkAccountManagedObject class];
-    NSDictionary *serverResponse = [self generateServerResponseForModelClass:targetClass];
-    NSDictionary *mappingContext = [self generateMappingContextForModelClass:targetClass];
+    NSDictionary *serverResponse = [self generateServerResponseForModelClass:objectClass];
+    NSDictionary *mappingContext = [self generateMappingContextForModelClass:objectClass];
     
     // when
     NSArray *result = [self.mapper mapServerResponse:serverResponse
@@ -120,13 +113,15 @@
     
     // then
     XCTAssertEqual(result.count, 1);
-    XCTAssertTrue([firstObject isKindOfClass:targetClass]);
-    XCTAssertNotNil([firstObject objectId]);
-    XCTAssertNotNil([firstObject name]);
-    XCTAssertNotNil([firstObject profileLink]);
+    XCTAssertTrue([firstObject isKindOfClass:objectClass]);
+    for (NSString *property in properties) {
+        SEL propertySelector = NSSelectorFromString(property);
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+        XCTAssertNotNil([firstObject performSelector:propertySelector]);
+#pragma clang diagnostic pop
+    }
 }
-
-#pragma mark - Helper Methods
 
 - (NSDictionary *)generateMappingContextForModelClass:(Class)modelClass {
     NSString *className = NSStringFromClass(modelClass);
