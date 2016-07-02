@@ -24,6 +24,8 @@
 #import "EventManagedObject.h"
 #import "MetaEventManagedObject.h"
 #import "TechManagedObject.h"
+#import "LectureManagedObject.h"
+#import "SpeakerManagedObject.h"
 
 #import "EntityNameFormatter.h"
 
@@ -117,6 +119,53 @@
                                                   mapping.primaryKey = NSStringFromSelector(@selector(techId));
                                                   [mapping mapPropertiesFromDictionary:properties];
                                               }];
+}
+
+- (EKManagedObjectMapping *)lectureManagedObjectMapping {
+    NSDictionary *properties = @{
+                                 @"id" : NSStringFromSelector(@selector(lectureId)),
+                                 @"title" : NSStringFromSelector(@selector(name)),
+                                 @"description" : NSStringFromSelector(@selector(lectureDescription))
+                                 };
+    Class entityClass = [LectureManagedObject class];
+    NSString *entityName = [self.entityNameFormatter transformToEntityNameClass:entityClass];
+    return [EKManagedObjectMapping mappingForEntityName:entityName
+                                              withBlock:^(EKManagedObjectMapping *mapping) {
+                                                  mapping.primaryKey = NSStringFromSelector(@selector(lectureId));
+                                                  [mapping mapPropertiesFromDictionary:properties];
+                                                  [mapping hasOne:[SpeakerManagedObject class]
+                                                       forKeyPath:@"speaker"
+                                                      forProperty:NSStringFromSelector(@selector(speaker))
+                                                withObjectMapping:[self speakerManagedObjectMapping]];
+                                              }];
+}
+
+- (EKManagedObjectMapping *)speakerManagedObjectMapping {
+    NSDictionary *properties = @{
+                                 @"id" : NSStringFromSelector(@selector(speakerId)),
+                                 @"bio" : NSStringFromSelector(@selector(biography)),
+                                 @"job" : NSStringFromSelector(@selector(job)),
+                                 @"company" : NSStringFromSelector(@selector(company)),
+                                 @"image" : NSStringFromSelector(@selector(imageLink))
+                                 };
+    Class entityClass = [SpeakerManagedObject class];
+    NSString *entityName = [self.entityNameFormatter transformToEntityNameClass:entityClass];
+    return [EKManagedObjectMapping mappingForEntityName:entityName
+                                              withBlock:^(EKManagedObjectMapping *mapping) {
+                                                  mapping.primaryKey = NSStringFromSelector(@selector(speakerId));
+                                                  [mapping mapPropertiesFromDictionary:properties];
+                                                  [mapping mapKeyPath:@"@self" toProperty:NSStringFromSelector(@selector(name)) withValueBlock:[self compoundNameValueBlock]];
+                                              }];
+}
+
+#pragma mark - Value Blocks
+
+- (EKManagedMappingValueBlock)compoundNameValueBlock {
+    return ^id(NSString *key, NSDictionary *value, NSManagedObjectContext *context) {
+        NSString *firstName = value[@"first_name"];
+        NSString *lastName = value[@"last_name"];
+        return [NSString stringWithFormat:@"%@ %@", firstName, lastName];
+    };
 }
 
 @end

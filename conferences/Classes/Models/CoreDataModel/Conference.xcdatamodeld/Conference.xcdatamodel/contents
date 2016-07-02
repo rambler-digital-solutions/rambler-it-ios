@@ -17,13 +17,11 @@
     <entity name="Lecture" representedClassName="LectureManagedObject" syncable="YES">
         <attribute name="favourite" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="lectureDescription" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="lectureId" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="lectureId" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
-        <attribute name="slideLink" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="videoLink" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="lectures" inverseEntity="Event" syncable="YES"/>
         <relationship name="lectureMaterials" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LectureMaterial" inverseName="lecture" inverseEntity="LectureMaterial" syncable="YES"/>
-        <relationship name="speakers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Speaker" inverseName="lectures" inverseEntity="Speaker" syncable="YES"/>
+        <relationship name="speaker" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Speaker" inverseName="lectures" inverseEntity="Speaker" syncable="YES"/>
     </entity>
     <entity name="LectureMaterial" representedClassName="LectureMaterialManagedObject" syncable="YES">
         <attribute name="lectureMaterialId" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
@@ -57,8 +55,8 @@
         <attribute name="imageLink" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="job" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
-        <attribute name="speakerId" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <relationship name="lectures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lecture" inverseName="speakers" inverseEntity="Lecture" syncable="YES"/>
+        <attribute name="speakerId" attributeType="String" syncable="YES"/>
+        <relationship name="lectures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lecture" inverseName="speaker" inverseEntity="Lecture" syncable="YES"/>
         <relationship name="socialNetworkAccounts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SocialNetworkAccount" inverseName="speaker" inverseEntity="SocialNetworkAccount" syncable="YES"/>
     </entity>
     <entity name="Tag" representedClassName="TagManagedObject" syncable="YES">
@@ -75,7 +73,7 @@
     </entity>
     <elements>
         <element name="Event" positionX="0" positionY="0" width="128" height="225"/>
-        <element name="Lecture" positionX="0" positionY="0" width="128" height="180"/>
+        <element name="Lecture" positionX="0" positionY="0" width="128" height="150"/>
         <element name="LectureMaterial" positionX="0" positionY="0" width="128" height="105"/>
         <element name="MetaEvent" positionX="0" positionY="0" width="128" height="135"/>
         <element name="RegistrationQuestion" positionX="0" positionY="0" width="128" height="90"/>

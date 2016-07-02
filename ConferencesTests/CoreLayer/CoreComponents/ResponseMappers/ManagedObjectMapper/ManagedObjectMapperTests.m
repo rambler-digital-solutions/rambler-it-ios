@@ -30,6 +30,8 @@
 #import "EventManagedObject.h"
 #import "MetaEventManagedObject.h"
 #import "TechManagedObject.h"
+#import "LectureManagedObject.h"
+#import "SpeakerManagedObject.h"
 #import "NetworkingConstantsHeader.h"
 
 @interface ManagedObjectMapperTests : XCTestCase
@@ -94,6 +96,30 @@
                                 NSStringFromSelector(@selector(techId)),
                                 NSStringFromSelector(@selector(name)),
                                 NSStringFromSelector(@selector(color))
+                                ];
+    [self verifyMappingOfClass:targetClass withNonNilChecksForProperties:testProperties];
+}
+
+- (void)testThatMapperMapsLecture {
+    Class targetClass = [LectureManagedObject class];
+    NSArray *testProperties = @[
+                                NSStringFromSelector(@selector(lectureId)),
+                                NSStringFromSelector(@selector(name)),
+                                NSStringFromSelector(@selector(lectureDescription)),
+                                NSStringFromSelector(@selector(speaker))
+                                ];
+    [self verifyMappingOfClass:targetClass withNonNilChecksForProperties:testProperties];
+}
+
+- (void)testThatMapperMapsSpeaker {
+    Class targetClass = [SpeakerManagedObject class];
+    NSArray *testProperties = @[
+                                NSStringFromSelector(@selector(speakerId)),
+                                NSStringFromSelector(@selector(name)),
+                                NSStringFromSelector(@selector(biography)),
+                                NSStringFromSelector(@selector(job)),
+                                NSStringFromSelector(@selector(company)),
+                                NSStringFromSelector(@selector(imageLink))
                                 ];
     [self verifyMappingOfClass:targetClass withNonNilChecksForProperties:testProperties];
 }
