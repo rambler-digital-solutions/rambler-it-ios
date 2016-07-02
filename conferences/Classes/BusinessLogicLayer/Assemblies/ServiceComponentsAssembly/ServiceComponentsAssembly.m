@@ -40,7 +40,7 @@
     return [TyphoonDefinition withClass:[EventServiceImplementation class]
                           configuration:^(TyphoonDefinition *definition) {
                               [definition injectProperty:@selector(eventOperationFactory)
-                                                    with:[self.operationFactoriesAssembly eventOperationFactory]];
+                                                    with:[self.operationFactoriesAssembly eventListOperationFactory]];
                               [definition injectProperty:@selector(operationScheduler)
                                                     with:[self operationScheduler]];
         

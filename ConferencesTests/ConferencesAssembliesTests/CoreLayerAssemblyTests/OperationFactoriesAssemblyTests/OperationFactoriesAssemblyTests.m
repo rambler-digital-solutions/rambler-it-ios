@@ -57,7 +57,7 @@
                               ];
     
     // when
-    id result = [self.assembly eventOperationFactory];
+    id result = [self.assembly eventListOperationFactory];
     
     // then
     [self verifyTargetDependency:result withClass:targetClass dependencies:dependencies];

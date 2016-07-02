@@ -25,7 +25,7 @@
 #import "ManagedObjectMappingProvider.h"
 #import "ResultsResponseObjectFormatter.h"
 
-#import "SocialNetworkAccount.h"
+#import "SocialNetworkAccountManagedObject.h"
 #import "NetworkingConstantsHeader.h"
 
 @interface RCFManagedObjectMapperTests : XCTestCase
@@ -57,7 +57,7 @@
 
 - (void)testThatMapperMapsSocialNetworkAccount {
     // given
-    Class targetClass = [SocialNetworkAccount class];
+    Class targetClass = [SocialNetworkAccountManagedObject class];
     NSDictionary *serverResponse = [self generateServerResponseForModelClass:targetClass];
     NSDictionary *mappingContext = [self generateMappingContextForModelClass:targetClass];
     

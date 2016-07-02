@@ -18,22 +18,22 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "EventOperationFactory.h"
+#import "EventListOperationFactory.h"
 
 #import "NetworkCompoundOperationBuilder.h"
 #import "CompoundOperationBuilderConfig.h"
 #import "CompoundOperationBase.h"
-#import "EventQuery.h"
+#import "EventListQuery.h"
 #import "EventManagedObject.h"
 #import "NetworkingConstantsHeader.h"
 
-@interface EventOperationFactory ()
+@interface EventListOperationFactory ()
 
-@property (strong, nonatomic) NetworkCompoundOperationBuilder *builder;
+@property (nonatomic, strong) NetworkCompoundOperationBuilder *builder;
 
 @end
 
-@implementation EventOperationFactory
+@implementation EventListOperationFactory
 
 #pragma mark - Initialization
 
@@ -47,7 +47,7 @@
 
 #pragma mark - Operations creation
 
-- (CompoundOperationBase *)getEventsOperationWithQuery:(EventQuery *)query {
+- (CompoundOperationBase *)getEventsOperationWithQuery:(EventListQuery *)query {
     CompoundOperationBuilderConfig *config = [CompoundOperationBuilderConfig new];
     
     config.requestConfigurationType = RequestConfigurationRESTType;
@@ -55,7 +55,7 @@
     config.serviceName = kEventServiceName;
     config.urlParameters = @[];
     
-    config.requestSigningType = RequestSigningParseType;
+    config.requestSigningType = RequestSigningDisabledType;
     
     config.responseDeserializationType = ResponseDeserializationJSONType;
     

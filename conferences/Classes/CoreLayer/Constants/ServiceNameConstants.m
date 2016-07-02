@@ -20,4 +20,4 @@
 
 #import "ServiceNameConstants.h"
 
-NSString *const kEventServiceName = @"Event";
+NSString *const kEventServiceName = @"events";

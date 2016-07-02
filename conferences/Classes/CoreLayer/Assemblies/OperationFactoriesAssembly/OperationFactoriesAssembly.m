@@ -23,14 +23,14 @@
 #import "NetworkCompoundOperationBuilder.h"
 #import "OperationChainer.h"
 
-#import "EventOperationFactory.h"
+#import "EventListOperationFactory.h"
 
 @implementation OperationFactoriesAssembly
 
 #pragma mark - Operation factories
 
-- (EventOperationFactory *)eventOperationFactory {
-    return [TyphoonDefinition withClass:[EventOperationFactory class] configuration:^(TyphoonDefinition *definition) {
+- (EventListOperationFactory *)eventListOperationFactory {
+    return [TyphoonDefinition withClass:[EventListOperationFactory class] configuration:^(TyphoonDefinition *definition) {
         [definition useInitializer:@selector(initWithBuilder:)
                         parameters:^(TyphoonMethod *initializer) {
                             [initializer injectParameterWith:[self networkOperationBuilder]];

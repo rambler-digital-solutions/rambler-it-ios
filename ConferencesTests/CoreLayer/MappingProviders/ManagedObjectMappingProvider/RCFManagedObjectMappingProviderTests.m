@@ -22,7 +22,7 @@
 #import <EasyMapping/EasyMapping.h>
 
 #import "ManagedObjectMappingProvider.h"
-#import "SocialNetworkAccount.h"
+#import "SocialNetworkAccountManagedObject.h"
 
 @interface RCFManagedObjectMappingProviderTests : XCTestCase
 
@@ -46,7 +46,7 @@
 
 - (void)testThatProviderReturnsProperMappingForOneOfModels {
     // given
-    Class targetClass = [SocialNetworkAccount class];
+    Class targetClass = [SocialNetworkAccountManagedObject class];
     NSString *const kExpectedEntityName = NSStringFromClass(targetClass);
     
     // when

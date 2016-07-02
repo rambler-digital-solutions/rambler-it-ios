@@ -20,22 +20,22 @@
 
 #import "CompoundOperationFactoryTestsBase.h"
 
-#import "EventOperationFactory.h"
-#import "Event.h"
+#import "EventListOperationFactory.h"
+#import "EventManagedObject.h"
 
-@interface EventOperationFactoryTests : CompoundOperationFactoryTestsBase
+@interface EventListOperationFactoryTests : CompoundOperationFactoryTestsBase
 
-@property (strong, nonatomic) InjectedClass(EventOperationFactory) factory;
+@property (strong, nonatomic) InjectedClass(EventListOperationFactory) factory;
 
 @end
 
-@implementation EventOperationFactoryTests
+@implementation EventListOperationFactoryTests
 
 - (void)setUp {
     [super setUp];
     
     self.requestName = @"Event";
-    self.requestSuffix = @"/Event";
+    self.requestSuffix = @"/events";
 }
 
 - (void)tearDown {
@@ -59,7 +59,7 @@
         XCTAssertNotNil(resultData);
         XCTAssertNil(resultError);
         XCTAssertEqual(resultData.count, 2);
-        XCTAssertTrue([firstObject isKindOfClass:[Event class]]);
+        XCTAssertTrue([firstObject isKindOfClass:[EventManagedObject class]]);
     }];
     
 }

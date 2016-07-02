@@ -14,7 +14,7 @@
 #import "EventOperationFactory.h"
 #import "OperationScheduler.h"
 #import "CompoundOperationBase.h"
-#import "Event.h"
+#import "EventManagedObject.h"
 
 @interface EventServiceTests : XCTestCase
 
@@ -57,26 +57,6 @@
     
     // then
     OCMVerify([mockOperationScheduler addOperation:compoundOperation]);
-}
-
-- (void)testSuccessObtainEventWithPredicate {
-    // given
-    NSString *eventObjectId = @"8dk2da";
-    
-    NSManagedObjectContext *managedObjectContext = [NSManagedObjectContext MR_rootSavingContext];
-    [managedObjectContext MR_saveWithBlockAndWait:^(NSManagedObjectContext *localContext) {
-        Event *event = [Event MR_createEntity];
-        event.objectId = eventObjectId;
-    }];
-    
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"objectId = %@", eventObjectId];
-    
-    // when
-    NSArray *events = [self.eventService obtainEventWithPredicate:predicate];
-    Event *event = [events firstObject];
-    
-    // then
-    XCTAssertNotNil(event);
 }
 
 @end

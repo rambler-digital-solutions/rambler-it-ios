@@ -23,8 +23,8 @@
 #import "RESTRequestConfigurator.h"
 
 static  NSString *const kConfigFileName  = @"Conferences.API.plist";
-static  NSString *const kParseRootURLKey = @"API.Parse.RootURL";
-static  NSString *const kParseRESTPathKey = @"API.Parse.RESTPath";
+static  NSString *const kParseRootURLKey = @"API.RootURL";
+static  NSString *const kParseRESTPathKey = @"API.RESTPath";
 
 @implementation RequestConfiguratorsAssembly
 

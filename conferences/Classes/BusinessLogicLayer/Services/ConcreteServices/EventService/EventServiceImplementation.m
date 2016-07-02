@@ -23,7 +23,7 @@
 #import "EventServiceImplementation.h"
 
 #import "CompoundOperationBase.h"
-#import "EventOperationFactory.h"
+#import "EventListOperationFactory.h"
 #import "OperationScheduler.h"
 #import "EventManagedObject.h"
 

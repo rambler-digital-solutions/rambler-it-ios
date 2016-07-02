@@ -22,14 +22,14 @@
 
 @class NetworkCompoundOperationBuilder;
 @class CompoundOperationBase;
-@class EventQuery;
+@class EventListQuery;
 
 /**
  @author Egor Tolstoy
  
- The operation factory for building Event operations
+ The operation factory for building Event List operations
  */
-@interface EventOperationFactory : NSObject
+@interface EventListOperationFactory : NSObject
 
 /**
  @author Egor Tolstoy
@@ -38,19 +38,19 @@
  
  @param builder Compound operation builder
  
- @return EventOperationFactory
+ @return EventListOperationFactory
  */
 - (instancetype)initWithBuilder:(NetworkCompoundOperationBuilder *)builder;
 
 /**
  @author Egor Tolstoy
  
- The method returns a compound operation for obtaining all events
+ The method returns a compound operation for obtaining event list
  
  @param query The query object
  
  @return CompoundOperationBase
  */
-- (CompoundOperationBase *)getEventsOperationWithQuery:(EventQuery *)query;
+- (CompoundOperationBase *)getEventsOperationWithQuery:(EventListQuery *)query;
 
 @end
