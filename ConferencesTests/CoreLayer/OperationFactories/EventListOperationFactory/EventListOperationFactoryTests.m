@@ -60,8 +60,8 @@
         XCTAssertNil(resultError);
         XCTAssertEqual(resultData.count, 2);
         XCTAssertTrue([firstObject isKindOfClass:[EventManagedObject class]]);
+        XCTAssertTrue([firstObject lectures].count > 0);
     }];
-    
 }
 
 #pragma mark - Network stubs setup

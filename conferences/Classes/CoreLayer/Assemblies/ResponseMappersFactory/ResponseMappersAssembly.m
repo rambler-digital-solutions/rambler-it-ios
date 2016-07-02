@@ -82,7 +82,7 @@
                               [definition injectProperty:@selector(entityNameFormatter)
                                                     with:[self entityNameFormatter]];
                               [definition injectProperty:@selector(dateFormatter)
-                                                    with:[self mappingProvider]];
+                                                    with:[self mappingDateFormatter]];
                           }];
 }
 
