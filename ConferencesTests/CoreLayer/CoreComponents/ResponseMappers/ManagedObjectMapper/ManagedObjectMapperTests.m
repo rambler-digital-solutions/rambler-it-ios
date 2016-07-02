@@ -76,9 +76,13 @@
                                 NSStringFromSelector(@selector(name)),
                                 NSStringFromSelector(@selector(startDate)),
                                 NSStringFromSelector(@selector(endDate)),
-                                NSStringFromSelector(@selector(metaEvent))
+                                NSStringFromSelector(@selector(metaEvent)),
+                                NSStringFromSelector(@selector(tech))
                                 ];
-    [self verifyMappingOfClass:targetClass withNonNilChecksForProperties:testProperties];
+    NSArray *testArrays = @[
+                            NSStringFromSelector(@selector(lectures))
+                            ];
+    [self verifyMappingOfClass:targetClass withNonNilChecksForProperties:testProperties nonEmptyArrayProperties:testArrays];
 }
 
 - (void)testThatMapperMapsMetaEvent {

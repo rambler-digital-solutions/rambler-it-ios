@@ -73,6 +73,14 @@
                                                        forKeyPath:@"attributes.brand"
                                                       forProperty:NSStringFromSelector(@selector(metaEvent))
                                                 withObjectMapping:[self metaEventManagedObjectMapping]];
+                                                  [mapping hasOne:[TechManagedObject class]
+                                                       forKeyPath:@"attributes.tech"
+                                                      forProperty:NSStringFromSelector(@selector(tech))
+                                                withObjectMapping:[self techManagedObjectMapping]];
+                                                  [mapping hasMany:[LectureManagedObject class]
+                                                        forKeyPath:@"attributes.lectures"
+                                                       forProperty:NSStringFromSelector(@selector(lectures))
+                                                 withObjectMapping:[self lectureManagedObjectMapping]];
                                               }];
 }
 
