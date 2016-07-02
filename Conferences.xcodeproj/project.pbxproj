@@ -270,7 +270,6 @@
 		9F1830D71BC125C3000E21A5 /* ParseResponseValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830D61BC125C3000E21A5 /* ParseResponseValidator.m */; };
 		9F1830DB1BC126D7000E21A5 /* RCFParseResponseValidatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830DA1BC126D7000E21A5 /* RCFParseResponseValidatorTests.m */; };
 		9F1830DF1BC12749000E21A5 /* RCFResponseValidatorTestsBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830DE1BC12749000E21A5 /* RCFResponseValidatorTestsBase.m */; };
-		9F1830E61BC13F9F000E21A5 /* ManagedObjectMappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830E51BC13F9F000E21A5 /* ManagedObjectMappingProvider.m */; };
 		9F1830ED1BC14293000E21A5 /* ManagedObjectMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830EC1BC14293000E21A5 /* ManagedObjectMapper.m */; };
 		9F1830F51BC14444000E21A5 /* NSString+RCFCapitalization.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830F41BC14444000E21A5 /* NSString+RCFCapitalization.m */; };
 		9F1830F91BC1464C000E21A5 /* RCFManagedObjectMappingProviderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830F81BC1464C000E21A5 /* RCFManagedObjectMappingProviderTests.m */; };
@@ -315,6 +314,7 @@
 		9FF750031D26C74B000D208D /* EventListOperationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF750021D26C74B000D208D /* EventListOperationFactory.m */; };
 		9FF750071D26C8EB000D208D /* EventListOperationFactoryTests.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9FF750051D26C8EB000D208D /* EventListOperationFactoryTests.bundle */; };
 		9FF750081D26C8EB000D208D /* EventListOperationFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF750061D26C8EB000D208D /* EventListOperationFactoryTests.m */; };
+		9FF7500D1D27DB5F000D208D /* ManagedObjectMappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF7500C1D27DB5F000D208D /* ManagedObjectMappingProvider.m */; };
 		9FF750121D27DB99000D208D /* EntityNameFormatterImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF750111D27DB99000D208D /* EntityNameFormatterImplementation.m */; };
 		9FF750171D27DCBE000D208D /* EntityNameFormatterImplementationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF750161D27DCBE000D208D /* EntityNameFormatterImplementationTests.m */; };
 		9FF99E511BC42FF6006F15AF /* OperationSchedulerImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF99E501BC42FF6006F15AF /* OperationSchedulerImplementation.m */; };
@@ -839,8 +839,6 @@
 		9F1830DA1BC126D7000E21A5 /* RCFParseResponseValidatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCFParseResponseValidatorTests.m; path = CoreLayer/CoreComponents/ResponseValidators/ParseResponseValidator/RCFParseResponseValidatorTests.m; sourceTree = "<group>"; };
 		9F1830DD1BC12749000E21A5 /* RCFResponseValidatorTestsBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCFResponseValidatorTestsBase.h; sourceTree = "<group>"; };
 		9F1830DE1BC12749000E21A5 /* RCFResponseValidatorTestsBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCFResponseValidatorTestsBase.m; sourceTree = "<group>"; };
-		9F1830E41BC13F9F000E21A5 /* ManagedObjectMappingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ManagedObjectMappingProvider.h; path = MappingProviders/ManagedObjectMappingProvider/ManagedObjectMappingProvider.h; sourceTree = "<group>"; };
-		9F1830E51BC13F9F000E21A5 /* ManagedObjectMappingProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ManagedObjectMappingProvider.m; path = MappingProviders/ManagedObjectMappingProvider/ManagedObjectMappingProvider.m; sourceTree = "<group>"; };
 		9F1830E81BC141D6000E21A5 /* ResponseMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResponseMapper.h; path = CoreComponents/ResponseMappers/Protocols/ResponseMapper.h; sourceTree = "<group>"; };
 		9F1830EB1BC14293000E21A5 /* ManagedObjectMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ManagedObjectMapper.h; path = CoreComponents/ResponseMappers/BaseClasses/ManagedObjectMapper/ManagedObjectMapper.h; sourceTree = "<group>"; };
 		9F1830EC1BC14293000E21A5 /* ManagedObjectMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ManagedObjectMapper.m; path = CoreComponents/ResponseMappers/BaseClasses/ManagedObjectMapper/ManagedObjectMapper.m; sourceTree = "<group>"; };
@@ -930,6 +928,8 @@
 		9FF750021D26C74B000D208D /* EventListOperationFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListOperationFactory.m; path = OperationFactories/EventListOperationFactory/EventListOperationFactory.m; sourceTree = "<group>"; };
 		9FF750051D26C8EB000D208D /* EventListOperationFactoryTests.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = EventListOperationFactoryTests.bundle; sourceTree = "<group>"; };
 		9FF750061D26C8EB000D208D /* EventListOperationFactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListOperationFactoryTests.m; sourceTree = "<group>"; };
+		9FF7500B1D27DB5F000D208D /* ManagedObjectMappingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagedObjectMappingProvider.h; sourceTree = "<group>"; };
+		9FF7500C1D27DB5F000D208D /* ManagedObjectMappingProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagedObjectMappingProvider.m; sourceTree = "<group>"; };
 		9FF750101D27DB99000D208D /* EntityNameFormatterImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EntityNameFormatterImplementation.h; path = CoreComponents/Helpers/EntityNameFormatter/EntityNameFormatterImplementation.h; sourceTree = "<group>"; };
 		9FF750111D27DB99000D208D /* EntityNameFormatterImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EntityNameFormatterImplementation.m; path = CoreComponents/Helpers/EntityNameFormatter/EntityNameFormatterImplementation.m; sourceTree = "<group>"; };
 		9FF750131D27DBA6000D208D /* EntityNameFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EntityNameFormatter.h; path = CoreComponents/Helpers/EntityNameFormatter/EntityNameFormatter.h; sourceTree = "<group>"; };
@@ -3152,7 +3152,6 @@
 				9F0A85331BC18A10006F79FB /* OperationBuilders */,
 				9F0A85291BC18853006F79FB /* OperationFactories */,
 				9F0A84C61BC1698B006F79FB /* Operations */,
-				9F1830E21BC13F6A000E21A5 /* MappingProviders */,
 			);
 			path = CoreLayer;
 			sourceTree = "<group>";
@@ -3763,6 +3762,7 @@
 			isa = PBXGroup;
 			children = (
 				9FF7500E1D27DB71000D208D /* Helpers */,
+				9FF750091D27DB5F000D208D /* MappingProviders */,
 				9F18310A1BC16141000E21A5 /* ResponseObjectFormatters */,
 				9F1830E01BC12837000E21A5 /* ResponseMappers */,
 				9F1830CB1BC123C7000E21A5 /* ResponseValidators */,
@@ -4132,23 +4132,6 @@
 			name = ResponseMappers;
 			sourceTree = "<group>";
 		};
-		9F1830E21BC13F6A000E21A5 /* MappingProviders */ = {
-			isa = PBXGroup;
-			children = (
-				9F1830E31BC13F73000E21A5 /* ManagedObjectMappingProvider */,
-			);
-			name = MappingProviders;
-			sourceTree = "<group>";
-		};
-		9F1830E31BC13F73000E21A5 /* ManagedObjectMappingProvider */ = {
-			isa = PBXGroup;
-			children = (
-				9F1830E41BC13F9F000E21A5 /* ManagedObjectMappingProvider.h */,
-				9F1830E51BC13F9F000E21A5 /* ManagedObjectMappingProvider.m */,
-			);
-			name = ManagedObjectMappingProvider;
-			sourceTree = "<group>";
-		};
 		9F1830E71BC141B9000E21A5 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -4401,6 +4384,24 @@
 			);
 			name = EventListOperationFactory;
 			path = CoreLayer/OperationFactories/EventListOperationFactory;
+			sourceTree = "<group>";
+		};
+		9FF750091D27DB5F000D208D /* MappingProviders */ = {
+			isa = PBXGroup;
+			children = (
+				9FF7500A1D27DB5F000D208D /* ManagedObjectMappingProvider */,
+			);
+			name = MappingProviders;
+			path = CoreComponents/MappingProviders;
+			sourceTree = "<group>";
+		};
+		9FF7500A1D27DB5F000D208D /* ManagedObjectMappingProvider */ = {
+			isa = PBXGroup;
+			children = (
+				9FF7500B1D27DB5F000D208D /* ManagedObjectMappingProvider.h */,
+				9FF7500C1D27DB5F000D208D /* ManagedObjectMappingProvider.m */,
+			);
+			path = ManagedObjectMappingProvider;
 			sourceTree = "<group>";
 		};
 		9FF7500E1D27DB71000D208D /* Helpers */ = {
@@ -4750,6 +4751,7 @@
 				9FF74FE11D2699A3000D208D /* LectureManagedObject+CoreDataProperties.m in Sources */,
 				636DD83D1C285FC000436201 /* ReportListTableViewCell.m in Sources */,
 				9F1830BF1BC11D26000E21A5 /* JSONResponseDeserializer.m in Sources */,
+				9FF7500D1D27DB5F000D208D /* ManagedObjectMappingProvider.m in Sources */,
 				631FFE191BEF451400749DB8 /* CDResponderTableViewCell.m in Sources */,
 				9F1830931BC02293000E21A5 /* RESTRequestConfigurator.m in Sources */,
 				63F342B01C8B20AB002AF7CD /* EventStoreService.m in Sources */,
@@ -4892,7 +4894,6 @@
 				9FF74FDE1D2699A3000D208D /* SocialNetworkAccountManagedObject.m in Sources */,
 				9F1830ED1BC14293000E21A5 /* ManagedObjectMapper.m in Sources */,
 				63F6139E1CB00A220002AEF0 /* SpeakerInfoViewController.m in Sources */,
-				9F1830E61BC13F9F000E21A5 /* ManagedObjectMappingProvider.m in Sources */,
 				6315BA141C9EC32300999877 /* VideoRecordTableViewCellObject.m in Sources */,
 				9FF74FE01D2699A3000D208D /* RegistrationQuestionManagedObject.m in Sources */,
 			);

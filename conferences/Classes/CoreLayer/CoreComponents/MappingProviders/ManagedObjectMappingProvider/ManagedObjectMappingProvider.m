@@ -20,12 +20,13 @@
 
 #import "ManagedObjectMappingProvider.h"
 
-#import <EasyMapping/EasyMapping.h>
-
-#import "NSString+RCFCapitalization.h"
-
 #import "SocialNetworkAccountManagedObject.h"
 #import "EventManagedObject.h"
+
+#import "EntityNameFormatter.h"
+
+#import <EasyMapping/EasyMapping.h>
+#import "NSString+RCFCapitalization.h"
 
 @implementation ManagedObjectMappingProvider
 
@@ -48,7 +49,8 @@
                             NSStringFromSelector(@selector(name)),
                             NSStringFromSelector(@selector(profileLink))
                             ];
-    NSString *entityName = NSStringFromClass([SocialNetworkAccountManagedObject class]);
+    Class entityClass = [SocialNetworkAccountManagedObject class];
+    NSString *entityName = [self.entityNameFormatter transformToEntityNameClass:entityClass];
     return [EKManagedObjectMapping mappingForEntityName:entityName
                                               withBlock:^(EKManagedObjectMapping *mapping) {
                                                   mapping.primaryKey = NSStringFromSelector(@selector(objectId));
@@ -57,19 +59,18 @@
 }
 
 // TODO: It's just an example, the mapping is not finished yet
-- (EKManagedObjectMapping *)eventMapping {
-    NSArray *properties = @[
-                            NSStringFromSelector(@selector(backgroundColor)),
-                            NSStringFromSelector(@selector(eventDescription)),
-                            NSStringFromSelector(@selector(liveStreamLink)),
-                            NSStringFromSelector(@selector(name)),
-                            NSStringFromSelector(@selector(objectId)),
-                            NSStringFromSelector(@selector(tags)),
-                            NSStringFromSelector(@selector(timePadID)),
-                            NSStringFromSelector(@selector(twitterLink)),
-                            ];
-    NSString *entityName = NSStringFromClass([EventManagedObject class]);
-    return nil;
+- (EKManagedObjectMapping *)eventManagedObjectMapping {
+    NSDictionary *properties = @{
+                                 @"attributes.name" : NSStringFromSelector(@selector(name))
+                                 };
+    Class entityClass = [EventManagedObject class];
+    NSString *entityName = [self.entityNameFormatter transformToEntityNameClass:entityClass];
+    
+    return [EKManagedObjectMapping mappingForEntityName:entityName
+                                              withBlock:^(EKManagedObjectMapping *mapping) {
+                                                  mapping.primaryKey = NSStringFromSelector(@selector(objectId));
+                                                  [mapping mapPropertiesFromDictionary:properties];
+                                              }];
 }
 
 @end

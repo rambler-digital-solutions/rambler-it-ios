@@ -24,6 +24,7 @@
 #import "ManagedObjectMapper.h"
 #import "ManagedObjectMappingProvider.h"
 #import "ResultsResponseObjectFormatter.h"
+#import "EntityNameFormatterImplementation.h"
 
 #import "SocialNetworkAccountManagedObject.h"
 #import "NetworkingConstantsHeader.h"
@@ -43,8 +44,10 @@
     
     ManagedObjectMappingProvider *provider = [[ManagedObjectMappingProvider alloc] init];
     ResultsResponseObjectFormatter *formatter = [[ResultsResponseObjectFormatter alloc] init];
+    EntityNameFormatterImplementation *entityFormatter = [[EntityNameFormatterImplementation alloc] init];
     self.mapper = [[ManagedObjectMapper alloc] initWithMappingProvider:provider
-                                                  responseObjectFormatter:formatter];
+                                                  responseObjectFormatter:formatter
+                                                   entityNameFormatter:entityFormatter];
 }
 
 - (void)tearDown {

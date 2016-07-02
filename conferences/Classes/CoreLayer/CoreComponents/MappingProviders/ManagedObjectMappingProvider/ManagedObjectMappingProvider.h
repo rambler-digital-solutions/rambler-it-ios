@@ -21,6 +21,7 @@
 #import <Foundation/Foundation.h>
 
 @class EKManagedObjectMapping;
+@protocol EntityNameFormatter;
 
 /**
  @author Egor Tolstoy
@@ -28,6 +29,8 @@
  This class is used for storing EasyMapping mappings for all of NSManagedObjects
  */
 @interface ManagedObjectMappingProvider : NSObject
+
+@property (nonatomic, strong) id<EntityNameFormatter> entityNameFormatter;
 
 /**
  @author Egor Tolstoy

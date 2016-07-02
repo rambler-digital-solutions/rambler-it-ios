@@ -25,12 +25,14 @@
 
 #import "ManagedObjectMappingProvider.h"
 #import "ResponseObjectFormatter.h"
+#import "EntityNameFormatter.h"
 #import "NetworkingConstantsHeader.h"
 
 @interface ManagedObjectMapper ()
 
 @property (strong, nonatomic) ManagedObjectMappingProvider *provider;
 @property (strong, nonatomic) id<ResponseObjectFormatter> responseFormatter;
+@property (strong, nonatomic) id<EntityNameFormatter> entityNameFormatter;
 
 @end
 
@@ -39,11 +41,13 @@
 #pragma mark - Initialization
 
 - (instancetype)initWithMappingProvider:(ManagedObjectMappingProvider *)mappingProvider
-                responseObjectFormatter:(id<ResponseObjectFormatter>)formatter {
+                responseObjectFormatter:(id<ResponseObjectFormatter>)responseFormatter
+                    entityNameFormatter:(id<EntityNameFormatter>)entityNameFormatter {
     self = [super init];
     if (self) {
         _provider = mappingProvider;
-        _responseFormatter = formatter;
+        _responseFormatter = responseFormatter;
+        _entityNameFormatter = entityNameFormatter;
     }
     return self;
 }
@@ -84,7 +88,9 @@
 - (NSFetchRequest *)createFetchRequestForMappingContext:(NSDictionary *)mappingContext
                                          managedContext:(NSManagedObjectContext *)managedContext {
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    [request setEntity:[NSEntityDescription entityForName:mappingContext[kMappingContextModelClassKey]
+    NSString *managedObjectClassName = mappingContext[kMappingContextModelClassKey];
+    NSString *entityName = [self.entityNameFormatter transformToEntityNameClass:NSClassFromString(managedObjectClassName)];
+    [request setEntity:[NSEntityDescription entityForName:entityName
                                    inManagedObjectContext:managedContext]];
     return request;
 }
