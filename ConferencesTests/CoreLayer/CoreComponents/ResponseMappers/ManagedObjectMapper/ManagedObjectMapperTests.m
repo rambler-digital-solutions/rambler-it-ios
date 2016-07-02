@@ -121,12 +121,28 @@
                                 NSStringFromSelector(@selector(company)),
                                 NSStringFromSelector(@selector(imageLink))
                                 ];
+    NSArray *testArrays = @[
+                            NSStringFromSelector(@selector(socialNetworkAccounts))
+                            ];
+    [self verifyMappingOfClass:targetClass withNonNilChecksForProperties:testProperties nonEmptyArrayProperties:testArrays];
+}
+
+- (void)testThatMapperMapsSocialNetworkAccount {
+    Class targetClass = [SocialNetworkAccountManagedObject class];
+    NSArray *testProperties = @[
+                                NSStringFromSelector(@selector(profileLink)),
+                                NSStringFromSelector(@selector(type))
+                                ];
     [self verifyMappingOfClass:targetClass withNonNilChecksForProperties:testProperties];
 }
 
 #pragma mark - Helper Methods
 
-- (void)verifyMappingOfClass:(Class)objectClass withNonNilChecksForProperties:(NSArray *)properties {
+- (void)verifyMappingOfClass:(Class)objectClass withNonNilChecksForProperties:(NSArray *)nonNilProperties {
+    [self verifyMappingOfClass:objectClass withNonNilChecksForProperties:nonNilProperties nonEmptyArrayProperties:nil];
+}
+
+- (void)verifyMappingOfClass:(Class)objectClass withNonNilChecksForProperties:(NSArray *)nonNilProperties nonEmptyArrayProperties:(NSArray *)nonEmptyArrayProperties {
     // given
     NSDictionary *serverResponse = [self generateServerResponseForModelClass:objectClass];
     NSDictionary *mappingContext = [self generateMappingContextForModelClass:objectClass];
@@ -140,11 +156,19 @@
     // then
     XCTAssertEqual(result.count, 1);
     XCTAssertTrue([firstObject isKindOfClass:objectClass]);
-    for (NSString *property in properties) {
+    for (NSString *property in nonNilProperties) {
         SEL propertySelector = NSSelectorFromString(property);
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
         XCTAssertNotNil([firstObject performSelector:propertySelector]);
+#pragma clang diagnostic pop
+    }
+    
+    for (NSString *property in nonEmptyArrayProperties) {
+        SEL propertySelector = NSSelectorFromString(property);
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+        XCTAssertGreaterThan([[firstObject performSelector:propertySelector] count], 0);
 #pragma clang diagnostic pop
     }
 }

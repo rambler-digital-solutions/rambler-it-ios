@@ -27,6 +27,8 @@
 #import "LectureManagedObject.h"
 #import "SpeakerManagedObject.h"
 
+#import "SocialNetworkType.h"
+
 #import "EntityNameFormatter.h"
 
 #import <EasyMapping/EasyMapping.h>
@@ -47,21 +49,6 @@
     return selectedMapping;
 }
 
-- (EKManagedObjectMapping *)socialNetworkAccountManagedObjectMapping {
-    NSArray *properties = @[
-                            NSStringFromSelector(@selector(objectId)),
-                            NSStringFromSelector(@selector(name)),
-                            NSStringFromSelector(@selector(profileLink))
-                            ];
-    Class entityClass = [SocialNetworkAccountManagedObject class];
-    NSString *entityName = [self.entityNameFormatter transformToEntityNameClass:entityClass];
-    return [EKManagedObjectMapping mappingForEntityName:entityName
-                                              withBlock:^(EKManagedObjectMapping *mapping) {
-                                                  mapping.primaryKey = NSStringFromSelector(@selector(objectId));
-                                                  [mapping mapPropertiesFromArray:properties];
-                                              }];
-}
-
 - (EKManagedObjectMapping *)eventManagedObjectMapping {
     NSDictionary *properties = @{
                                  @"id" : NSStringFromSelector(@selector(eventId)),
@@ -80,12 +67,10 @@
                                                   [mapping mapKeyPath:@"attributes.ends_at"
                                                            toProperty:NSStringFromSelector(@selector(endDate))
                                                     withDateFormatter:self.dateFormatter];
-                                                  
                                                   [mapping hasOne:[MetaEventManagedObject class]
                                                        forKeyPath:@"attributes.brand"
                                                       forProperty:NSStringFromSelector(@selector(metaEvent))
                                                 withObjectMapping:[self metaEventManagedObjectMapping]];
-
                                               }];
 }
 
@@ -154,7 +139,29 @@
                                               withBlock:^(EKManagedObjectMapping *mapping) {
                                                   mapping.primaryKey = NSStringFromSelector(@selector(speakerId));
                                                   [mapping mapPropertiesFromDictionary:properties];
-                                                  [mapping mapKeyPath:@"@self" toProperty:NSStringFromSelector(@selector(name)) withValueBlock:[self compoundNameValueBlock]];
+                                                  [mapping mapKeyPath:@"@self"
+                                                           toProperty:NSStringFromSelector(@selector(name))
+                                                       withValueBlock:[self compoundNameValueBlock]];
+                                                  [mapping hasMany:[SocialNetworkAccountManagedObject class]
+                                                        forKeyPath:@"social_profiles"
+                                                       forProperty:NSStringFromSelector(@selector(socialNetworkAccounts))
+                                                 withObjectMapping:[self socialNetworkAccountManagedObjectMapping]];
+                                              }];
+}
+
+- (EKManagedObjectMapping *)socialNetworkAccountManagedObjectMapping {
+    NSDictionary *properties = @{
+                                 @"link" : NSStringFromSelector(@selector(profileLink))
+                                 };
+    Class entityClass = [SocialNetworkAccountManagedObject class];
+    NSString *entityName = [self.entityNameFormatter transformToEntityNameClass:entityClass];
+    return [EKManagedObjectMapping mappingForEntityName:entityName
+                                              withBlock:^(EKManagedObjectMapping *mapping) {
+                                                  mapping.primaryKey = NSStringFromSelector(@selector(profileLink));
+                                                  [mapping mapPropertiesFromDictionary:properties];
+                                                  [mapping mapKeyPath:@"network"
+                                                           toProperty:NSStringFromSelector(@selector(type))
+                                                       withValueBlock:[self socialNetworkTypeValueBlock]];
                                               }];
 }
 
@@ -165,6 +172,23 @@
         NSString *firstName = value[@"first_name"];
         NSString *lastName = value[@"last_name"];
         return [NSString stringWithFormat:@"%@ %@", firstName, lastName];
+    };
+}
+
+- (EKManagedMappingValueBlock)socialNetworkTypeValueBlock {
+    static NSDictionary *socialNetworkTypes;
+    if (!socialNetworkTypes) {
+        socialNetworkTypes = @{
+                               @"Facebook" : @(SocialNetworkFacebookType),
+                               @"Twitter" : @(SocialNetworkTwitterType),
+                               @"GitHub" : @(SocialNetworkGitHubType),
+                               @"LinkedIn" : @(SocialNetworkLinkedInType),
+                               @"Vkontakte" : @(SocialNetworkVkontakteType)
+                               };
+    }
+    return ^id(NSString *key, NSString *value, NSManagedObjectContext *context) {
+        NSNumber *type = socialNetworkTypes[value] ?: @(SocialNetworkUndefinedType);
+        return type;
     };
 }
 

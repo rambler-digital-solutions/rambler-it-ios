@@ -7,6 +7,11 @@
  "job": "Известный русский драматург, публицист и прозаик",
  "company": "Rambler&CO",
  "image": "http://stage01.it.rambler-co.ru/uploads/assets/speaker_image/attachment/15/thumbnail_98be46265df41a85.jpg",
- "social_profiles": []
+ "social_profiles": [
+                     {
+                     "network": "Facebook",
+                     "link": "http://facebook.com/n.maclay"
+                     }
+                     ]
  }
 ]

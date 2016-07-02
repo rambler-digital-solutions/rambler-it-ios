@@ -809,6 +809,7 @@
 		9F0A85391BC1908B006F79FB /* OperationChainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OperationChainer.h; path = OperationBuilders/OperationChainer/OperationChainer.h; sourceTree = "<group>"; };
 		9F0A853A1BC1908B006F79FB /* OperationChainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OperationChainer.m; path = OperationBuilders/OperationChainer/OperationChainer.m; sourceTree = "<group>"; };
 		9F0A853E1BC192F0006F79FB /* OperationChainerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OperationChainerTests.m; path = CoreLayer/OperationBuilder/OperationChainer/OperationChainerTests.m; sourceTree = "<group>"; };
+		9F16665C1D2812E500D31588 /* SocialNetworkType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SocialNetworkType.h; path = Enumerations/SocialNetworkType.h; sourceTree = "<group>"; };
 		9F18308E1BC01F1E000E21A5 /* RequestConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequestConfigurator.h; path = CoreComponents/RequestConfigurators/Protocols/RequestConfigurator.h; sourceTree = "<group>"; };
 		9F1830911BC02293000E21A5 /* RESTRequestConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RESTRequestConfigurator.h; path = CoreComponents/RequestConfigurators/ConcreteClasses/RESTRequestConfigurator/RESTRequestConfigurator.h; sourceTree = "<group>"; };
 		9F1830921BC02293000E21A5 /* RESTRequestConfigurator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RESTRequestConfigurator.m; path = CoreComponents/RequestConfigurators/ConcreteClasses/RESTRequestConfigurator/RESTRequestConfigurator.m; sourceTree = "<group>"; };
@@ -3176,6 +3177,7 @@
 		63FDCDE21BBDBA2A00A43B60 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9F16665B1D2812CA00D31588 /* Enumerations */,
 				63FA398C1BDD46C800CE6249 /* PlainObjects */,
 				9F0A852E1BC188E0006F79FB /* ObjectQueries */,
 				63FDCDE31BBDBA2A00A43B60 /* CoreDataModel */,
@@ -3756,6 +3758,14 @@
 				9F0A853E1BC192F0006F79FB /* OperationChainerTests.m */,
 			);
 			name = OperationChainer;
+			sourceTree = "<group>";
+		};
+		9F16665B1D2812CA00D31588 /* Enumerations */ = {
+			isa = PBXGroup;
+			children = (
+				9F16665C1D2812E500D31588 /* SocialNetworkType.h */,
+			);
+			name = Enumerations;
 			sourceTree = "<group>";
 		};
 		9F18308B1BC01E65000E21A5 /* CoreComponents */ = {

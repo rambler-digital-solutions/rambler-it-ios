@@ -1,15 +1,6 @@
+[
 {
-    "results": [
-                {
-                "createdAt": "2015-10-04T12:01:59.391Z",
-                "name": "Twitter",
-                "objectId": "5aU1er9TO6",
-                "profileLink": "https://twitter.com/igrekde",
-                "speaker": {
-                "__type": "Relation",
-                "className": "Speaker"
-                },
-                "updatedAt": "2015-10-04T12:02:09.462Z"
-                }
-                ]
+    "network": "Facebook",
+    "link": "http://facebook.com/n.maclay"
 }
+]

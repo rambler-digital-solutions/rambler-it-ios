@@ -43,8 +43,6 @@
         <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="registrationQuestions" inverseEntity="Event" syncable="YES"/>
     </entity>
     <entity name="SocialNetworkAccount" representedClassName="SocialNetworkAccountManagedObject" syncable="YES">
-        <attribute name="name" attributeType="String" syncable="YES"/>
-        <attribute name="objectId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="profileLink" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="speaker" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Speaker" inverseName="socialNetworkAccounts" inverseEntity="Speaker" syncable="YES"/>
@@ -77,7 +75,7 @@
         <element name="LectureMaterial" positionX="0" positionY="0" width="128" height="105"/>
         <element name="MetaEvent" positionX="0" positionY="0" width="128" height="135"/>
         <element name="RegistrationQuestion" positionX="0" positionY="0" width="128" height="90"/>
-        <element name="SocialNetworkAccount" positionX="0" positionY="0" width="128" height="120"/>
+        <element name="SocialNetworkAccount" positionX="0" positionY="0" width="128" height="90"/>
         <element name="Speaker" positionX="0" positionY="0" width="128" height="165"/>
         <element name="Tag" positionX="0" positionY="0" width="128" height="105"/>
         <element name="Tech" positionX="36" positionY="144" width="128" height="105"/>
