@@ -24,7 +24,7 @@
 #import "OperationFactoriesAssembly_Testable.h"
 #import "OperationFactoriesAssembly.h"
 
-#import "EventOperationFactory.h"
+#import "EventListOperationFactory.h"
 #import "NetworkCompoundOperationBuilder.h"
 #import "OperationChainer.h"
 
@@ -51,7 +51,7 @@
 
 - (void)testThatAssmeblyCreatesEventOperationFactory {
     // given
-    Class targetClass = [EventOperationFactory class];
+    Class targetClass = [EventListOperationFactory class];
     NSArray *dependencies = @[
                               RamblerSelector(networkOperationBuilder)
                               ];

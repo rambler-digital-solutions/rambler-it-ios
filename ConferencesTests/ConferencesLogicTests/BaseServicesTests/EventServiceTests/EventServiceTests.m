@@ -11,7 +11,7 @@
 #import <OCMock/OCMock.h>
 
 #import "EventServiceImplementation.h"
-#import "EventOperationFactory.h"
+#import "EventListOperationFactory.h"
 #import "OperationScheduler.h"
 #import "CompoundOperationBase.h"
 #import "EventManagedObject.h"
@@ -45,7 +45,7 @@
     // given
     CompoundOperationBase *compoundOperation = [CompoundOperationBase new];
     
-    EventOperationFactory *mockEventOperationFactory = OCMClassMock([EventOperationFactory class]);
+    EventListOperationFactory *mockEventOperationFactory = OCMClassMock([EventListOperationFactory class]);
     OCMStub([mockEventOperationFactory getEventsOperationWithQuery:nil]).andReturn(compoundOperation);
     id <OperationScheduler> mockOperationScheduler = OCMProtocolMock(@protocol(OperationScheduler));
     
