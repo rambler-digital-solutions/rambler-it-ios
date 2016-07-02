@@ -31,6 +31,7 @@
 @interface ManagedObjectMappingProvider : NSObject
 
 @property (nonatomic, strong) id<EntityNameFormatter> entityNameFormatter;
+@property (nonatomic, strong) NSDateFormatter *dateFormatter;
 
 /**
  @author Egor Tolstoy

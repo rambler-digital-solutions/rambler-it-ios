@@ -58,19 +58,26 @@
                                               }];
 }
 
-// TODO: It's just an example, the mapping is not finished yet
 - (EKManagedObjectMapping *)eventManagedObjectMapping {
     NSDictionary *properties = @{
-                                 @"attributes.name" : NSStringFromSelector(@selector(name))
+                                 @"attributes.name" : NSStringFromSelector(@selector(name)),
                                  };
     Class entityClass = [EventManagedObject class];
     NSString *entityName = [self.entityNameFormatter transformToEntityNameClass:entityClass];
-    
     return [EKManagedObjectMapping mappingForEntityName:entityName
                                               withBlock:^(EKManagedObjectMapping *mapping) {
-                                                  mapping.primaryKey = NSStringFromSelector(@selector(objectId));
+                                                  mapping.primaryKey = NSStringFromSelector(@selector(name));
                                                   [mapping mapPropertiesFromDictionary:properties];
+                                                  
+                                                  [mapping mapKeyPath:@"attributes.starts_at"
+                                                           toProperty:NSStringFromSelector(@selector(startDate))
+                                                    withDateFormatter:self.dateFormatter];
+                                                  [mapping mapKeyPath:@"attributes.ends_at"
+                                                           toProperty:NSStringFromSelector(@selector(endDate))
+                                                    withDateFormatter:self.dateFormatter];
+
                                               }];
 }
+
 
 @end

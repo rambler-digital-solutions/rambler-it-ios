@@ -81,6 +81,8 @@
                           configuration:^(TyphoonDefinition *definition) {
                               [definition injectProperty:@selector(entityNameFormatter)
                                                     with:[self entityNameFormatter]];
+                              [definition injectProperty:@selector(dateFormatter)
+                                                    with:[self mappingProvider]];
                           }];
 }
 
@@ -88,6 +90,16 @@
 
 - (id<EntityNameFormatter>)entityNameFormatter {
     return [TyphoonDefinition withClass:[EntityNameFormatterImplementation class]];
+}
+
+- (NSDateFormatter *)mappingDateFormatter {
+    return [TyphoonDefinition withClass:[NSDateFormatter class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectMethod:@selector(setDateFormat:)
+                                            parameters:^(TyphoonMethod *method) {
+                                                [method injectParameterWith:@"yyyy-MM-dd'T'HH:mm:ss.SSSz"];
+                                            }];
+                          }];
 }
 
 @end

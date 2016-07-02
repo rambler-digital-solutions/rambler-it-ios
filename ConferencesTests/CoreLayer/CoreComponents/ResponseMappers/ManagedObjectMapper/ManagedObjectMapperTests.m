@@ -27,6 +27,7 @@
 #import "EntityNameFormatterImplementation.h"
 
 #import "SocialNetworkAccountManagedObject.h"
+#import "EventManagedObject.h"
 #import "NetworkingConstantsHeader.h"
 
 @interface ManagedObjectMapperTests : XCTestCase
@@ -43,10 +44,13 @@
     [MagicalRecord setupCoreDataStackWithInMemoryStore];
     
     ManagedObjectMappingProvider *provider = [[ManagedObjectMappingProvider alloc] init];
-    ResultsResponseObjectFormatter *formatter = [[ResultsResponseObjectFormatter alloc] init];
     EntityNameFormatterImplementation *entityFormatter = [[EntityNameFormatterImplementation alloc] init];
+    NSDateFormatter *formatter = [NSDateFormatter new];
+    [formatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSSz"];
+    provider.entityNameFormatter = entityFormatter;
+    provider.dateFormatter = formatter;
     self.mapper = [[ManagedObjectMapper alloc] initWithMappingProvider:provider
-                                                  responseObjectFormatter:formatter
+                                                  responseObjectFormatter:nil
                                                    entityNameFormatter:entityFormatter];
 }
 
@@ -56,6 +60,23 @@
     [MagicalRecord cleanUp];
     
     [super tearDown];
+}
+
+- (void)testThatMapperMapsEvent {
+    // given
+    Class targetClass = [EventManagedObject class];
+    NSDictionary *serverResponse = [self generateServerResponseForModelClass:targetClass];
+    NSDictionary *mappingContext = [self generateMappingContextForModelClass:targetClass];
+    
+    // when
+    NSArray *result = [self.mapper mapServerResponse:serverResponse
+                                  withMappingContext:mappingContext
+                                               error:nil];
+    id firstObject = [result firstObject];
+    
+    // then
+    XCTAssertEqual(result.count, 1);
+    XCTAssertTrue([firstObject isKindOfClass:targetClass]);
 }
 
 - (void)testThatMapperMapsSocialNetworkAccount {
