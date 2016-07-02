@@ -26,10 +26,12 @@
 #import "EventListQuery.h"
 #import "EventManagedObject.h"
 #import "NetworkingConstantsHeader.h"
+#import "QueryTransformer.h"
 
 @interface EventListOperationFactory ()
 
 @property (nonatomic, strong) NetworkCompoundOperationBuilder *builder;
+@property (nonatomic, strong) id<QueryTransformer> queryTransformer;
 
 @end
 
@@ -37,10 +39,12 @@
 
 #pragma mark - Initialization
 
-- (instancetype)initWithBuilder:(NetworkCompoundOperationBuilder *)builder {
+- (instancetype)initWithBuilder:(NetworkCompoundOperationBuilder *)builder
+               queryTransformer:(id<QueryTransformer>)queryTransformer {
     self = [super init];
     if (self) {
         _builder = builder;
+        _queryTransformer = queryTransformer;
     }
     return self;
 }
@@ -53,7 +57,8 @@
     config.requestConfigurationType = RequestConfigurationRESTType;
     config.requestMethod = kHTTPMethodGET;
     config.serviceName = kEventServiceName;
-    config.urlParameters = @[];
+    NSArray *urlParameters = [self.queryTransformer deriveUrlParametersFromQuery:query];
+    config.urlParameters = urlParameters;
     
     config.requestSigningType = RequestSigningDisabledType;
     

@@ -20,40 +20,13 @@
 
 #import <Foundation/Foundation.h>
 
-@class NetworkCompoundOperationBuilder;
-@class CompoundOperationBase;
-@class EventListQuery;
-@protocol QueryTransformer;
+#import "QueryTransformer.h"
 
 /**
  @author Egor Tolstoy
  
- The operation factory for building Event List operations
+ The object derives URL parameters from an EventListQuery object.
  */
-@interface EventListOperationFactory : NSObject
-
-/**
- @author Egor Tolstoy
- 
- The main initializer of the current operation factory
- 
- @param builder          Compound operation builder
- @param queryTransformer Incoming query objects transformer to URL parameters
- 
- @return EventListOperationFactory
- */
-- (instancetype)initWithBuilder:(NetworkCompoundOperationBuilder *)builder
-               queryTransformer:(id<QueryTransformer>)queryTransformer;
-
-/**
- @author Egor Tolstoy
- 
- The method returns a compound operation for obtaining event list
- 
- @param query The query object
- 
- @return CompoundOperationBase
- */
-- (CompoundOperationBase *)getEventsOperationWithQuery:(EventListQuery *)query;
+@interface EventListQueryTransformer : NSObject <QueryTransformer>
 
 @end

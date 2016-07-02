@@ -290,6 +290,8 @@
 		9F8E5FA91BC27D0D00DC10DB /* ServiceNameConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5FA81BC27D0D00DC10DB /* ServiceNameConstants.m */; };
 		9F8E5FAD1BC27E7F00DC10DB /* HTTPMethodConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5FAC1BC27E7F00DC10DB /* HTTPMethodConstants.m */; };
 		9FC1F6761D2824000070D9B5 /* EventListServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */; };
+		9FC1F6801D2838FA0070D9B5 /* EventListQueryTransformerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */; };
+		9FC1F6841D28391E0070D9B5 /* EventListQueryTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6831D28391E0070D9B5 /* EventListQueryTransformer.m */; };
 		9FD740381CDC98010071BD71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FD740371CDC98010071BD71 /* LaunchScreen.storyboard */; };
 		9FF74FDB1D2699A3000D208D /* EventManagedObject+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF74FBC1D2699A3000D208D /* EventManagedObject+CoreDataProperties.m */; };
 		9FF74FDC1D2699A3000D208D /* EventManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF74FBE1D2699A3000D208D /* EventManagedObject.m */; };
@@ -884,6 +886,10 @@
 		9F8E5FAB1BC27E7F00DC10DB /* HTTPMethodConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTTPMethodConstants.h; path = Constants/HTTPMethodConstants.h; sourceTree = "<group>"; };
 		9F8E5FAC1BC27E7F00DC10DB /* HTTPMethodConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTTPMethodConstants.m; path = Constants/HTTPMethodConstants.m; sourceTree = "<group>"; };
 		9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListServiceTests.m; path = EventListServiceTests/EventListServiceTests.m; sourceTree = "<group>"; };
+		9FC1F6781D2826D10070D9B5 /* QueryTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QueryTransformer.h; path = CoreComponents/QueryTransformers/QueryTransformer.h; sourceTree = "<group>"; };
+		9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListQueryTransformerTests.m; path = CoreLayer/CoreComponents/QueryTransformers/EventListQueryTransformer/EventListQueryTransformerTests.m; sourceTree = "<group>"; };
+		9FC1F6821D28391E0070D9B5 /* EventListQueryTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListQueryTransformer.h; sourceTree = "<group>"; };
+		9FC1F6831D28391E0070D9B5 /* EventListQueryTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListQueryTransformer.m; sourceTree = "<group>"; };
 		9FD740371CDC98010071BD71 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9FF74FBB1D2699A3000D208D /* EventManagedObject+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EventManagedObject+CoreDataProperties.h"; sourceTree = "<group>"; };
 		9FF74FBC1D2699A3000D208D /* EventManagedObject+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EventManagedObject+CoreDataProperties.m"; sourceTree = "<group>"; };
@@ -3774,6 +3780,7 @@
 		9F18308B1BC01E65000E21A5 /* CoreComponents */ = {
 			isa = PBXGroup;
 			children = (
+				9FC1F6771D2826B70070D9B5 /* QueryTransformers */,
 				9FF7500E1D27DB71000D208D /* Helpers */,
 				9FF750091D27DB5F000D208D /* MappingProviders */,
 				9F18310A1BC16141000E21A5 /* ResponseObjectFormatters */,
@@ -3839,6 +3846,7 @@
 		9F1830951BC022A6000E21A5 /* CoreComponents */ = {
 			isa = PBXGroup;
 			children = (
+				9FC1F67D1D2838CD0070D9B5 /* QueryTransformers */,
 				9FF750141D27DC96000D208D /* Helpers */,
 				9F18311E1BC16162000E21A5 /* ResponseObjectFormatters */,
 				9F1830FA1BC14C0F000E21A5 /* ResponseMappers */,
@@ -4369,6 +4377,41 @@
 			name = EventListServiceTests;
 			sourceTree = "<group>";
 		};
+		9FC1F6771D2826B70070D9B5 /* QueryTransformers */ = {
+			isa = PBXGroup;
+			children = (
+				9FC1F6811D28391E0070D9B5 /* EventListQueryTransformer */,
+				9FC1F6781D2826D10070D9B5 /* QueryTransformer.h */,
+			);
+			name = QueryTransformers;
+			sourceTree = "<group>";
+		};
+		9FC1F67D1D2838CD0070D9B5 /* QueryTransformers */ = {
+			isa = PBXGroup;
+			children = (
+				9FC1F67E1D2838D50070D9B5 /* EventListQueryTransformer */,
+			);
+			name = QueryTransformers;
+			sourceTree = "<group>";
+		};
+		9FC1F67E1D2838D50070D9B5 /* EventListQueryTransformer */ = {
+			isa = PBXGroup;
+			children = (
+				9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */,
+			);
+			name = EventListQueryTransformer;
+			sourceTree = "<group>";
+		};
+		9FC1F6811D28391E0070D9B5 /* EventListQueryTransformer */ = {
+			isa = PBXGroup;
+			children = (
+				9FC1F6821D28391E0070D9B5 /* EventListQueryTransformer.h */,
+				9FC1F6831D28391E0070D9B5 /* EventListQueryTransformer.m */,
+			);
+			name = EventListQueryTransformer;
+			path = CoreComponents/QueryTransformers/EventListQueryTransformer;
+			sourceTree = "<group>";
+		};
 		9FF74FF71D26C41C000D208D /* EventListQuery */ = {
 			isa = PBXGroup;
 			children = (
@@ -4779,6 +4822,7 @@
 				636F8DDA1BCB8FE800552B91 /* RamblerLocationModuleAssembly.m in Sources */,
 				9F1830A71BC032CF000E21A5 /* ParseRequestSigner.m in Sources */,
 				636F8DDD1BCB8FE800552B91 /* RamblerLocationRouter.m in Sources */,
+				9FC1F6841D28391E0070D9B5 /* EventListQueryTransformer.m in Sources */,
 				9F0A84FA1BC1698B006F79FB /* OperationBuffer.m in Sources */,
 				631FFE561BEF930200749DB8 /* ReportListRouter.m in Sources */,
 				631808411C482B1300A61E7D /* SpeakerShortInfoPresenter.m in Sources */,
@@ -4972,6 +5016,7 @@
 				9F0A85261BC185AA006F79FB /* ResponseDeserializationOperationTests.m in Sources */,
 				9FF750081D26C8EB000D208D /* EventListOperationFactoryTests.m in Sources */,
 				63F403001BCF85EE0086D030 /* RequestConfiguratorsAssemblyTests.m in Sources */,
+				9FC1F6801D2838FA0070D9B5 /* EventListQueryTransformerTests.m in Sources */,
 				63F613DA1CB111070002AEF0 /* AnnouncementListRouterTests.m in Sources */,
 				9F0A85231BC185AA006F79FB /* ChainableOperationTestsBase.m in Sources */,
 				63F402FB1BCF79390086D030 /* OperationFactoriesAssemblyTests.m in Sources */,
