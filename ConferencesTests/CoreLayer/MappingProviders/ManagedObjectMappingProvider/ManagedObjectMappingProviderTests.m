@@ -19,27 +19,33 @@
 // THE SOFTWARE.
 
 #import <XCTest/XCTest.h>
+#import <OCMock/OCMock.h>
 #import <EasyMapping/EasyMapping.h>
 
 #import "ManagedObjectMappingProvider.h"
+#import "EntityNameFormatter.h"
 #import "SocialNetworkAccountManagedObject.h"
 
-@interface RCFManagedObjectMappingProviderTests : XCTestCase
+@interface ManagedObjectMappingProviderTests : XCTestCase
 
 @property (strong, nonatomic) ManagedObjectMappingProvider *provider;
+@property (strong, nonatomic) id mockEntityNameFormatter;
 
 @end
 
-@implementation RCFManagedObjectMappingProviderTests
+@implementation ManagedObjectMappingProviderTests
 
 - (void)setUp {
     [super setUp];
     
     self.provider = [[ManagedObjectMappingProvider alloc] init];
+    self.mockEntityNameFormatter = OCMProtocolMock(@protocol(EntityNameFormatter));
+    self.provider.entityNameFormatter = self.mockEntityNameFormatter;
 }
 
 - (void)tearDown {
     self.provider = nil;
+    self.mockEntityNameFormatter = nil;
     
     [super tearDown];
 }
@@ -47,7 +53,8 @@
 - (void)testThatProviderReturnsProperMappingForOneOfModels {
     // given
     Class targetClass = [SocialNetworkAccountManagedObject class];
-    NSString *const kExpectedEntityName = NSStringFromClass(targetClass);
+    NSString *const kExpectedEntityName = @"SocialNetworkAccount";
+    OCMStub([self.mockEntityNameFormatter transformToEntityNameClass:targetClass]).andReturn(kExpectedEntityName);
     
     // when
     EKManagedObjectMapping *mapping = [self.provider mappingForManagedObjectModelClass:targetClass];

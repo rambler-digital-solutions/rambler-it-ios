@@ -43,7 +43,7 @@
     return selectedMapping;
 }
 
-- (EKManagedObjectMapping *)socialNetworkAccountMapping {
+- (EKManagedObjectMapping *)socialNetworkAccountManagedObjectMapping {
     NSArray *properties = @[
                             NSStringFromSelector(@selector(objectId)),
                             NSStringFromSelector(@selector(name)),

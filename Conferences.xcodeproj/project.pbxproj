@@ -231,7 +231,6 @@
 		9F0A6C1D1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */; };
 		9F0A6C2E1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C2D1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m */; };
 		9F0A84C31BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A84C21BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m */; };
-		9F0A84C51BC166F6006F79FB /* RCFManagedObjectMapperTests.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9F0A84C41BC166F6006F79FB /* RCFManagedObjectMapperTests.bundle */; };
 		9F0A84F91BC1698B006F79FB /* AsyncOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A84CA1BC1698B006F79FB /* AsyncOperation.m */; };
 		9F0A84FA1BC1698B006F79FB /* OperationBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A84CE1BC1698B006F79FB /* OperationBuffer.m */; };
 		9F0A84FB1BC1698B006F79FB /* CompoundOperationBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A84D21BC1698B006F79FB /* CompoundOperationBase.m */; };
@@ -272,8 +271,8 @@
 		9F1830DF1BC12749000E21A5 /* RCFResponseValidatorTestsBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830DE1BC12749000E21A5 /* RCFResponseValidatorTestsBase.m */; };
 		9F1830ED1BC14293000E21A5 /* ManagedObjectMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830EC1BC14293000E21A5 /* ManagedObjectMapper.m */; };
 		9F1830F51BC14444000E21A5 /* NSString+RCFCapitalization.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830F41BC14444000E21A5 /* NSString+RCFCapitalization.m */; };
-		9F1830F91BC1464C000E21A5 /* RCFManagedObjectMappingProviderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830F81BC1464C000E21A5 /* RCFManagedObjectMappingProviderTests.m */; };
-		9F1830FD1BC14C37000E21A5 /* RCFManagedObjectMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830FC1BC14C37000E21A5 /* RCFManagedObjectMapperTests.m */; };
+		9F1830F91BC1464C000E21A5 /* ManagedObjectMappingProviderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830F81BC1464C000E21A5 /* ManagedObjectMappingProviderTests.m */; };
+		9F1830FD1BC14C37000E21A5 /* ManagedObjectMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830FC1BC14C37000E21A5 /* ManagedObjectMapperTests.m */; };
 		9F1830FE1BC14E64000E21A5 /* Conference.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6373A40E1BBDC5EA00DF67FF /* Conference.xcdatamodeld */; };
 		9F18311C1BC1615C000E21A5 /* ResultsResponseObjectFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1831181BC1615C000E21A5 /* ResultsResponseObjectFormatter.m */; };
 		9F18311D1BC1615C000E21A5 /* SingleResponseObjectFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F18311B1BC1615C000E21A5 /* SingleResponseObjectFormatter.m */; };
@@ -317,6 +316,7 @@
 		9FF7500D1D27DB5F000D208D /* ManagedObjectMappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF7500C1D27DB5F000D208D /* ManagedObjectMappingProvider.m */; };
 		9FF750121D27DB99000D208D /* EntityNameFormatterImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF750111D27DB99000D208D /* EntityNameFormatterImplementation.m */; };
 		9FF750171D27DCBE000D208D /* EntityNameFormatterImplementationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF750161D27DCBE000D208D /* EntityNameFormatterImplementationTests.m */; };
+		9FF750191D27E6EE000D208D /* ManagedObjectMapperTests.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9FF750181D27E6EE000D208D /* ManagedObjectMapperTests.bundle */; };
 		9FF99E511BC42FF6006F15AF /* OperationSchedulerImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF99E501BC42FF6006F15AF /* OperationSchedulerImplementation.m */; };
 		9FF99E541BC4317E006F15AF /* OperationSchedulerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF99E531BC4317E006F15AF /* OperationSchedulerTests.m */; };
 		F826C56E7FA67515D33573A9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A4F504A716A8833A7A01A5D /* libPods.a */; };
@@ -758,7 +758,6 @@
 		9F0A6C2C1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequestConfiguratorsAssembly.h; path = Assemblies/RequestConfiguratorsFactory/RequestConfiguratorsAssembly.h; sourceTree = "<group>"; };
 		9F0A6C2D1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RequestConfiguratorsAssembly.m; path = Assemblies/RequestConfiguratorsFactory/RequestConfiguratorsAssembly.m; sourceTree = "<group>"; };
 		9F0A84C21BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCFSingleResponseObjectFormatterTests.m; path = CoreLayer/CoreComponents/ResponseObjectFormatters/SingleResponseObjectFormatter/RCFSingleResponseObjectFormatterTests.m; sourceTree = "<group>"; };
-		9F0A84C41BC166F6006F79FB /* RCFManagedObjectMapperTests.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = RCFManagedObjectMapperTests.bundle; path = CoreLayer/CoreComponents/ResponseMappers/ManagedObjectMapper/RCFManagedObjectMapperTests.bundle; sourceTree = "<group>"; };
 		9F0A84C91BC1698B006F79FB /* AsyncOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncOperation.h; sourceTree = "<group>"; };
 		9F0A84CA1BC1698B006F79FB /* AsyncOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncOperation.m; sourceTree = "<group>"; };
 		9F0A84CD1BC1698B006F79FB /* OperationBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationBuffer.h; sourceTree = "<group>"; };
@@ -844,8 +843,8 @@
 		9F1830EC1BC14293000E21A5 /* ManagedObjectMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ManagedObjectMapper.m; path = CoreComponents/ResponseMappers/BaseClasses/ManagedObjectMapper/ManagedObjectMapper.m; sourceTree = "<group>"; };
 		9F1830F31BC14444000E21A5 /* NSString+RCFCapitalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+RCFCapitalization.h"; sourceTree = "<group>"; };
 		9F1830F41BC14444000E21A5 /* NSString+RCFCapitalization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+RCFCapitalization.m"; sourceTree = "<group>"; };
-		9F1830F81BC1464C000E21A5 /* RCFManagedObjectMappingProviderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCFManagedObjectMappingProviderTests.m; path = CoreLayer/MappingProviders/ManagedObjectMappingProvider/RCFManagedObjectMappingProviderTests.m; sourceTree = "<group>"; };
-		9F1830FC1BC14C37000E21A5 /* RCFManagedObjectMapperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCFManagedObjectMapperTests.m; path = CoreLayer/CoreComponents/ResponseMappers/ManagedObjectMapper/RCFManagedObjectMapperTests.m; sourceTree = "<group>"; };
+		9F1830F81BC1464C000E21A5 /* ManagedObjectMappingProviderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ManagedObjectMappingProviderTests.m; path = CoreLayer/MappingProviders/ManagedObjectMappingProvider/ManagedObjectMappingProviderTests.m; sourceTree = "<group>"; };
+		9F1830FC1BC14C37000E21A5 /* ManagedObjectMapperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ManagedObjectMapperTests.m; path = CoreLayer/CoreComponents/ResponseMappers/ManagedObjectMapper/ManagedObjectMapperTests.m; sourceTree = "<group>"; };
 		9F18310C1BC16141000E21A5 /* ResponseObjectFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseObjectFormatter.h; sourceTree = "<group>"; };
 		9F1831171BC1615C000E21A5 /* ResultsResponseObjectFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsResponseObjectFormatter.h; sourceTree = "<group>"; };
 		9F1831181BC1615C000E21A5 /* ResultsResponseObjectFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsResponseObjectFormatter.m; sourceTree = "<group>"; };
@@ -934,6 +933,7 @@
 		9FF750111D27DB99000D208D /* EntityNameFormatterImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EntityNameFormatterImplementation.m; path = CoreComponents/Helpers/EntityNameFormatter/EntityNameFormatterImplementation.m; sourceTree = "<group>"; };
 		9FF750131D27DBA6000D208D /* EntityNameFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EntityNameFormatter.h; path = CoreComponents/Helpers/EntityNameFormatter/EntityNameFormatter.h; sourceTree = "<group>"; };
 		9FF750161D27DCBE000D208D /* EntityNameFormatterImplementationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EntityNameFormatterImplementationTests.m; path = CoreLayer/CoreComponents/Helpers/EntityNameFormatter/EntityNameFormatterImplementationTests.m; sourceTree = "<group>"; };
+		9FF750181D27E6EE000D208D /* ManagedObjectMapperTests.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = ManagedObjectMapperTests.bundle; path = CoreLayer/CoreComponents/ResponseMappers/ManagedObjectMapper/ManagedObjectMapperTests.bundle; sourceTree = "<group>"; };
 		9FF99E4E1BC42FDE006F15AF /* OperationScheduler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OperationScheduler.h; path = OperationScheduler/OperationScheduler.h; sourceTree = "<group>"; };
 		9FF99E4F1BC42FF5006F15AF /* OperationSchedulerImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OperationSchedulerImplementation.h; path = OperationScheduler/OperationSchedulerImplementation.h; sourceTree = "<group>"; };
 		9FF99E501BC42FF6006F15AF /* OperationSchedulerImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OperationSchedulerImplementation.m; path = OperationScheduler/OperationSchedulerImplementation.m; sourceTree = "<group>"; };
@@ -4177,7 +4177,7 @@
 		9F1830F71BC1462F000E21A5 /* ManagedObjectMappingProvider */ = {
 			isa = PBXGroup;
 			children = (
-				9F1830F81BC1464C000E21A5 /* RCFManagedObjectMappingProviderTests.m */,
+				9F1830F81BC1464C000E21A5 /* ManagedObjectMappingProviderTests.m */,
 			);
 			name = ManagedObjectMappingProvider;
 			sourceTree = "<group>";
@@ -4193,8 +4193,8 @@
 		9F1830FB1BC14C15000E21A5 /* ManagedObjectMapper */ = {
 			isa = PBXGroup;
 			children = (
-				9F0A84C41BC166F6006F79FB /* RCFManagedObjectMapperTests.bundle */,
-				9F1830FC1BC14C37000E21A5 /* RCFManagedObjectMapperTests.m */,
+				9FF750181D27E6EE000D208D /* ManagedObjectMapperTests.bundle */,
+				9F1830FC1BC14C37000E21A5 /* ManagedObjectMapperTests.m */,
 			);
 			name = ManagedObjectMapper;
 			sourceTree = "<group>";
@@ -4598,8 +4598,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				636A37CF1BC1500700B49C3D /* Info.plist in Resources */,
-				9F0A84C51BC166F6006F79FB /* RCFManagedObjectMapperTests.bundle in Resources */,
 				9FF750071D26C8EB000D208D /* EventListOperationFactoryTests.bundle in Resources */,
+				9FF750191D27E6EE000D208D /* ManagedObjectMapperTests.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4962,7 +4962,7 @@
 				635E18C71CA6B8CE005B8439 /* SpeakerShortInfoModuleAssemblyTests.m in Sources */,
 				9F0A851F1BC185AA006F79FB /* TestCancellableOperation.m in Sources */,
 				9F0A85271BC185AA006F79FB /* ResponseMappingOperationTests.m in Sources */,
-				9F1830F91BC1464C000E21A5 /* RCFManagedObjectMappingProviderTests.m in Sources */,
+				9F1830F91BC1464C000E21A5 /* ManagedObjectMappingProviderTests.m in Sources */,
 				63F403AA1BD0CB190086D030 /* RequestSignersAssemblyTests.m in Sources */,
 				63F613E21CB111070002AEF0 /* EventRouterTests.m in Sources */,
 				63F613EE1CB111070002AEF0 /* SpeakerInfoPresenterTests.m in Sources */,
@@ -4988,7 +4988,7 @@
 				63F613E81CB111070002AEF0 /* ReportListDataDisplayManagerTests.m in Sources */,
 				9F1830C31BC11DE7000E21A5 /* RCFJSONResponseDeserializerTests.m in Sources */,
 				9F0A85221BC185AA006F79FB /* TestErrorChainableOperation.m in Sources */,
-				9F1830FD1BC14C37000E21A5 /* RCFManagedObjectMapperTests.m in Sources */,
+				9F1830FD1BC14C37000E21A5 /* ManagedObjectMapperTests.m in Sources */,
 				63F613D91CB111070002AEF0 /* AnnouncementListPresenterTests.m in Sources */,
 				631CBA731C020CCD00E3EBA8 /* EventCellObjectBuilderFactoryTests.m in Sources */,
 				63F8F2F51BF9FDBF000017F3 /* CompoundOperationBaseTests.m in Sources */,

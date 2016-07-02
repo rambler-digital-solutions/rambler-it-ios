@@ -29,13 +29,13 @@
 #import "SocialNetworkAccountManagedObject.h"
 #import "NetworkingConstantsHeader.h"
 
-@interface RCFManagedObjectMapperTests : XCTestCase
+@interface ManagedObjectMapperTests : XCTestCase
 
 @property (strong, nonatomic) ManagedObjectMapper *mapper;
 
 @end
 
-@implementation RCFManagedObjectMapperTests
+@implementation ManagedObjectMapperTests
 
 - (void)setUp {
     [super setUp];

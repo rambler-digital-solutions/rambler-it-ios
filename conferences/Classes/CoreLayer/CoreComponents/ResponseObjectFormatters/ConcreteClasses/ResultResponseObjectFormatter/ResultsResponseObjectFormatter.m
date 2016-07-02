@@ -20,7 +20,7 @@
 
 #import "ResultsResponseObjectFormatter.h"
 
-static NSString *const kServerResponseResultsKey = @"results";
+static NSString *const kServerResponseResultsKey = @"data";
 
 @implementation ResultsResponseObjectFormatter
 

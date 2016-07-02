@@ -44,7 +44,7 @@
     // given
     NSArray *resultsArray = @[@"1", @"2", @"3"];
     NSDictionary *response = @{
-                               @"results" : resultsArray
+                               @"data" : resultsArray
                                };
     NSUInteger const kExpectedNumberOfItems = resultsArray.count;
     
