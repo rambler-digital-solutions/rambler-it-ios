@@ -32,6 +32,9 @@
 #import "TechManagedObject.h"
 #import "LectureManagedObject.h"
 #import "SpeakerManagedObject.h"
+#import "TagManagedObject.h"
+#import "LectureMaterialManagedObject.h"
+
 #import "NetworkingConstantsHeader.h"
 
 @interface ManagedObjectMapperTests : XCTestCase
@@ -108,7 +111,11 @@
                                 NSStringFromSelector(@selector(lectureDescription)),
                                 NSStringFromSelector(@selector(speaker))
                                 ];
-    [self verifyMappingOfClass:targetClass withNonNilChecksForProperties:testProperties];
+    NSArray *testArrays = @[
+                            NSStringFromSelector(@selector(tags)),
+                            NSStringFromSelector(@selector(lectureMaterials))
+                            ];
+    [self verifyMappingOfClass:targetClass withNonNilChecksForProperties:testProperties nonEmptyArrayProperties:testArrays];
 }
 
 - (void)testThatMapperMapsSpeaker {
@@ -132,6 +139,26 @@
     NSArray *testProperties = @[
                                 NSStringFromSelector(@selector(profileLink)),
                                 NSStringFromSelector(@selector(type))
+                                ];
+    [self verifyMappingOfClass:targetClass withNonNilChecksForProperties:testProperties];
+}
+
+- (void)testThatMapperMapsTag {
+    Class targetClass = [TagManagedObject class];
+    NSArray *testProperties = @[
+                                NSStringFromSelector(@selector(tagId)),
+                                NSStringFromSelector(@selector(name)),
+                                NSStringFromSelector(@selector(slug))
+                                ];
+    [self verifyMappingOfClass:targetClass withNonNilChecksForProperties:testProperties];
+}
+
+- (void)testThatMapperMapsLectureMaterial {
+    Class targetClass = [LectureMaterialManagedObject class];
+    NSArray *testProperties = @[
+                                NSStringFromSelector(@selector(lectureMaterialId)),
+                                NSStringFromSelector(@selector(link)),
+                                NSStringFromSelector(@selector(name))
                                 ];
     [self verifyMappingOfClass:targetClass withNonNilChecksForProperties:testProperties];
 }

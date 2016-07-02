@@ -16,6 +16,6 @@
 @dynamic name;
 @dynamic slug;
 @dynamic tagId;
-@dynamic events;
+@dynamic lectures;
 
 @end

@@ -17,17 +17,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nullable, nonatomic, retain) NSString *name;
 @property (nullable, nonatomic, retain) NSString *slug;
-@property (nullable, nonatomic, retain) NSNumber *tagId;
-@property (nullable, nonatomic, retain) NSSet<EventManagedObject *> *events;
+@property (nullable, nonatomic, retain) NSString *tagId;
+@property (nullable, nonatomic, retain) NSSet<LectureManagedObject *> *lectures;
 
 @end
 
 @interface TagManagedObject (CoreDataGeneratedAccessors)
 
-- (void)addEventsObject:(EventManagedObject *)value;
-- (void)removeEventsObject:(EventManagedObject *)value;
-- (void)addEvents:(NSSet<EventManagedObject *> *)values;
-- (void)removeEvents:(NSSet<EventManagedObject *> *)values;
+- (void)addLecturesObject:(LectureManagedObject *)value;
+- (void)removeLecturesObject:(LectureManagedObject *)value;
+- (void)addLectures:(NSSet<LectureManagedObject *> *)values;
+- (void)removeLectures:(NSSet<LectureManagedObject *> *)values;
 
 @end
 

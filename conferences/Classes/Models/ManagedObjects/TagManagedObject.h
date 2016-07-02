@@ -21,7 +21,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class EventManagedObject;
+@class LectureManagedObject;
 
 NS_ASSUME_NONNULL_BEGIN
 

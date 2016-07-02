@@ -26,6 +26,8 @@
 #import "TechManagedObject.h"
 #import "LectureManagedObject.h"
 #import "SpeakerManagedObject.h"
+#import "TagManagedObject.h"
+#import "LectureMaterialManagedObject.h"
 
 #import "SocialNetworkType.h"
 
@@ -122,6 +124,14 @@
                                                        forKeyPath:@"speaker"
                                                       forProperty:NSStringFromSelector(@selector(speaker))
                                                 withObjectMapping:[self speakerManagedObjectMapping]];
+                                                  [mapping hasMany:[TagManagedObject class]
+                                                        forKeyPath:@"tags"
+                                                       forProperty:NSStringFromSelector(@selector(tags))
+                                                 withObjectMapping:[self tagManagedObjectMapping]];
+                                                  [mapping hasMany:[LectureMaterialManagedObject class]
+                                                        forKeyPath:@"materials"
+                                                       forProperty:NSStringFromSelector(@selector(lectureMaterials))
+                                                 withObjectMapping:[self lectureMaterialManagedObjectMapping]];
                                               }];
 }
 
@@ -162,6 +172,36 @@
                                                   [mapping mapKeyPath:@"network"
                                                            toProperty:NSStringFromSelector(@selector(type))
                                                        withValueBlock:[self socialNetworkTypeValueBlock]];
+                                              }];
+}
+
+- (EKManagedObjectMapping *)tagManagedObjectMapping {
+    NSDictionary *properties = @{
+                                 @"id" : NSStringFromSelector(@selector(tagId)),
+                                 @"name" : NSStringFromSelector(@selector(name)),
+                                 @"slug" : NSStringFromSelector(@selector(slug))
+                                 };
+    Class entityClass = [TagManagedObject class];
+    NSString *entityName = [self.entityNameFormatter transformToEntityNameClass:entityClass];
+    return [EKManagedObjectMapping mappingForEntityName:entityName
+                                              withBlock:^(EKManagedObjectMapping *mapping) {
+                                                  mapping.primaryKey = NSStringFromSelector(@selector(tagId));
+                                                  [mapping mapPropertiesFromDictionary:properties];
+                                              }];
+}
+
+- (EKManagedObjectMapping *)lectureMaterialManagedObjectMapping {
+    NSDictionary *properties = @{
+                                 @"id" : NSStringFromSelector(@selector(lectureMaterialId)),
+                                 @"link" : NSStringFromSelector(@selector(link)),
+                                 @"name" : NSStringFromSelector(@selector(name))
+                                 };
+    Class entityClass = [LectureMaterialManagedObject class];
+    NSString *entityName = [self.entityNameFormatter transformToEntityNameClass:entityClass];
+    return [EKManagedObjectMapping mappingForEntityName:entityName
+                                              withBlock:^(EKManagedObjectMapping *mapping) {
+                                                  mapping.primaryKey = NSStringFromSelector(@selector(lectureMaterialId));
+                                                  [mapping mapPropertiesFromDictionary:properties];
                                               }];
 }
 

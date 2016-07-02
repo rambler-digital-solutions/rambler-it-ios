@@ -21,7 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *name;
 @property (nullable, nonatomic, retain) EventManagedObject *event;
 @property (nullable, nonatomic, retain) NSSet<LectureMaterialManagedObject *> *lectureMaterials;
-@property (nullable, nonatomic, retain) NSSet<SpeakerManagedObject *> *speakers;
+@property (nullable, nonatomic, retain) SpeakerManagedObject *speaker;
+@property (nullable, nonatomic, retain) NSSet<TagManagedObject *> *tags;
 
 @end
 
@@ -32,10 +33,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)addLectureMaterials:(NSSet<LectureMaterialManagedObject *> *)values;
 - (void)removeLectureMaterials:(NSSet<LectureMaterialManagedObject *> *)values;
 
-- (void)addSpeakersObject:(SpeakerManagedObject *)value;
-- (void)removeSpeakersObject:(SpeakerManagedObject *)value;
-- (void)addSpeakers:(NSSet<SpeakerManagedObject *> *)values;
-- (void)removeSpeakers:(NSSet<SpeakerManagedObject *> *)values;
+- (void)addTagsObject:(TagManagedObject *)value;
+- (void)removeTagsObject:(TagManagedObject *)value;
+- (void)addTags:(NSSet<TagManagedObject *> *)values;
+- (void)removeTags:(NSSet<TagManagedObject *> *)values;
 
 @end
 

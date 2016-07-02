@@ -19,6 +19,7 @@
 @dynamic name;
 @dynamic event;
 @dynamic lectureMaterials;
-@dynamic speakers;
+@dynamic speaker;
+@dynamic tags;
 
 @end

@@ -25,7 +25,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSSet<LectureManagedObject *> *lectures;
 @property (nullable, nonatomic, retain) MetaEventManagedObject *metaEvent;
 @property (nullable, nonatomic, retain) NSSet<RegistrationQuestionManagedObject *> *registrationQuestions;
-@property (nullable, nonatomic, retain) NSSet<TagManagedObject *> *tags;
 @property (nullable, nonatomic, retain) TechManagedObject *tech;
 
 @end
@@ -41,11 +40,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)removeRegistrationQuestionsObject:(RegistrationQuestionManagedObject *)value;
 - (void)addRegistrationQuestions:(NSSet<RegistrationQuestionManagedObject *> *)values;
 - (void)removeRegistrationQuestions:(NSSet<RegistrationQuestionManagedObject *> *)values;
-
-- (void)addTagsObject:(TagManagedObject *)value;
-- (void)removeTagsObject:(TagManagedObject *)value;
-- (void)addTags:(NSSet<TagManagedObject *> *)values;
-- (void)removeTags:(NSSet<TagManagedObject *> *)values;
 
 @end
 

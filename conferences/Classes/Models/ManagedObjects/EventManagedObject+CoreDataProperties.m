@@ -23,7 +23,6 @@
 @dynamic lectures;
 @dynamic metaEvent;
 @dynamic registrationQuestions;
-@dynamic tags;
 @dynamic tech;
 
 @end
