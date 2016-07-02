@@ -29,18 +29,11 @@
 
 // TODO: добавить маппинг лекций после того как будет создан класс PlainLecture, так же PlainRegistratinQuestions
 - (void)fillObject:(EventPlainObject *)filledObject withObject:(EventManagedObject *)object {
-    filledObject.eventDescription = object.eventDescription;
     filledObject.liveStreamLink = object.liveStreamLink;
     filledObject.name = object.name;
-    filledObject.objectId = object.objectId;
     filledObject.startDate = object.startDate;
     filledObject.endDate = object.endDate;
     filledObject.timePadID = object.timePadID;
-    filledObject.twitterLink = object.twitterLink;
-    filledObject.tags = object.tags;
-    // починить категорию
-    filledObject.backgroundColor = [UIColor colorFromHexString:object.backgroundColor];
-    filledObject.imageUrl = [NSURL URLWithString:object.imageUrl];
 }
 
 

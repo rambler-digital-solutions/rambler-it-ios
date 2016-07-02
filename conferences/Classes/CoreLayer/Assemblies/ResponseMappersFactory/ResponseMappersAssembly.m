@@ -26,6 +26,7 @@
 #import "SingleResponseObjectFormatter.h"
 
 #import "ManagedObjectMappingProvider.h"
+#import "EntityNameFormatterImplementation.h"
 
 @implementation ResponseMappersAssembly
 
@@ -45,18 +46,20 @@
 
 - (id<ResponseMapper>)resultsResponseMapper {
     return [TyphoonDefinition withClass:[ManagedObjectMapper class] configuration:^(TyphoonDefinition *definition) {
-        [definition useInitializer:@selector(initWithMappingProvider:responseObjectFormatter:) parameters:^(TyphoonMethod *initializer) {
+        [definition useInitializer:@selector(initWithMappingProvider:responseObjectFormatter:entityNameFormatter:) parameters:^(TyphoonMethod *initializer) {
             [initializer injectParameterWith:[self mappingProvider]];
             [initializer injectParameterWith:[self resultsObjectFormatter]];
+            [initializer injectParameterWith:[self entityNameFormatter]];
         }];
     }];
 }
 
 - (id<ResponseMapper>)singleResponseMapper {
     return [TyphoonDefinition withClass:[ManagedObjectMapper class] configuration:^(TyphoonDefinition *definition) {
-        [definition useInitializer:@selector(initWithMappingProvider:responseObjectFormatter:) parameters:^(TyphoonMethod *initializer) {
+        [definition useInitializer:@selector(initWithMappingProvider:responseObjectFormatter:entityNameFormatter:) parameters:^(TyphoonMethod *initializer) {
             [initializer injectParameterWith:[self mappingProvider]];
             [initializer injectParameterWith:[self singleObjectFormatter]];
+            [initializer injectParameterWith:[self entityNameFormatter]];
         }];
     }];
 }
@@ -74,7 +77,29 @@
 #pragma mark - Mapping provider
 
 - (ManagedObjectMappingProvider *)mappingProvider {
-    return [TyphoonDefinition withClass:[ManagedObjectMappingProvider class]];
+    return [TyphoonDefinition withClass:[ManagedObjectMappingProvider class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(entityNameFormatter)
+                                                    with:[self entityNameFormatter]];
+                              [definition injectProperty:@selector(dateFormatter)
+                                                    with:[self mappingDateFormatter]];
+                          }];
+}
+
+#pragma mark - Helpers
+
+- (id<EntityNameFormatter>)entityNameFormatter {
+    return [TyphoonDefinition withClass:[EntityNameFormatterImplementation class]];
+}
+
+- (NSDateFormatter *)mappingDateFormatter {
+    return [TyphoonDefinition withClass:[NSDateFormatter class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectMethod:@selector(setDateFormat:)
+                                            parameters:^(TyphoonMethod *method) {
+                                                [method injectParameterWith:@"yyyy-MM-dd'T'HH:mm:ss.SSSz"];
+                                            }];
+                          }];
 }
 
 @end

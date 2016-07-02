@@ -36,7 +36,7 @@
  */
 @interface OperationFactoriesAssembly : TyphoonAssembly
 
-- (EventOperationFactory *)eventOperationFactory;
+- (EventOperationFactory *)eventListOperationFactory;
 
 @property (strong, nonatomic, readonly) TyphoonAssembly <RequestConfiguratorsFactory> *requestConfiguratorsFactory;
 @property (strong, nonatomic, readonly) TyphoonAssembly <RequestSignersFactory> *requestSignersFactory;

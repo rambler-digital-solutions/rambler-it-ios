@@ -20,24 +20,26 @@
 
 #import <Foundation/Foundation.h>
 
-@class EKManagedObjectMapping;
+typedef void (^EventListUpdateCompletionBlock)(NSError *error);
+
+@class EventListQuery;
 
 /**
  @author Egor Tolstoy
  
- This class is used for storing EasyMapping mappings for all of NSManagedObjects
+ The service is designed to obtain event list from server or cache
  */
-@interface ManagedObjectMappingProvider : NSObject
+@protocol EventListService <NSObject>
 
 /**
  @author Egor Tolstoy
  
- This method processes the provided NSManagedObject class to a specific mapping
+ Method is used to update a list of Event objects by sending request to server
  
- @param managedObjectModelClass The class for mapping
- 
- @return EKManagedObjectMapping object
+ @param query           The model describing request parameters
+ @param completionBlock Block called upon completion the method, and returns NSError if there is any
  */
-- (EKManagedObjectMapping *)mappingForManagedObjectModelClass:(Class)managedObjectModelClass;
+- (void)updateEventListWithQuery:(EventListQuery *)query
+                 completionBlock:(EventListUpdateCompletionBlock)completionBlock;
 
 @end

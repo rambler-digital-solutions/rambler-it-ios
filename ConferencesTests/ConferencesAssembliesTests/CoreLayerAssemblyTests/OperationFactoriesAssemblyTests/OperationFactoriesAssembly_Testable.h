@@ -26,7 +26,7 @@
 
 @interface OperationFactoriesAssembly ()
 
-- (EventOperationFactory *)eventOperationFactory;
+- (EventOperationFactory *)eventListOperationFactory;
 - (NetworkCompoundOperationBuilder *)networkOperationBuilder;
 - (OperationChainer *)operationChainer;
 

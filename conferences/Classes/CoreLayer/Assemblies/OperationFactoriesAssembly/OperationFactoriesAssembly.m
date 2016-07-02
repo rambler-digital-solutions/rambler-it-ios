@@ -22,20 +22,27 @@
 
 #import "NetworkCompoundOperationBuilder.h"
 #import "OperationChainer.h"
+#import "EventListQueryTransformer.h"
 
-#import "EventOperationFactory.h"
+#import "EventListOperationFactory.h"
 
 @implementation OperationFactoriesAssembly
 
 #pragma mark - Operation factories
 
-- (EventOperationFactory *)eventOperationFactory {
-    return [TyphoonDefinition withClass:[EventOperationFactory class] configuration:^(TyphoonDefinition *definition) {
-        [definition useInitializer:@selector(initWithBuilder:)
-                        parameters:^(TyphoonMethod *initializer) {
-                            [initializer injectParameterWith:[self networkOperationBuilder]];
-                        }];
-    }];
+- (EventListOperationFactory *)eventListOperationFactory {
+    return [TyphoonDefinition withClass:[EventListOperationFactory class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition useInitializer:@selector(initWithBuilder:queryTransformer:)
+                                              parameters:^(TyphoonMethod *initializer) {
+                                                  [initializer injectParameterWith:[self networkOperationBuilder]];
+                                                  [initializer injectParameterWith:[self eventListQueryTransformer]];
+                                              }];
+                          }];
+}
+
+- (EventListQueryTransformer *)eventListQueryTransformer {
+    return [TyphoonDefinition withClass:[EventListQueryTransformer class]];
 }
 
 #pragma mark - Builders

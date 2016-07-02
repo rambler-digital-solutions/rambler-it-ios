@@ -4,13 +4,10 @@
 <dict>
 	<key>API</key>
 	<dict>
-		<key>Parse</key>
-		<dict>
-			<key>RootURL</key>
-			<string>NSURL(https://api.parse.com)</string>
-			<key>RESTPath</key>
-			<string>/1/classes</string>
-		</dict>
+		<key>RESTPath</key>
+		<string>api</string>
+		<key>RootURL</key>
+		<string>NSURL(http://stage01.it.rambler-co.ru)</string>
 	</dict>
 </dict>
 </plist>

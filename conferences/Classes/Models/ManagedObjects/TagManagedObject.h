@@ -21,6 +21,8 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@class LectureManagedObject;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TagManagedObject : NSManagedObject

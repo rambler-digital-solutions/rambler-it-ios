@@ -24,6 +24,7 @@
 
 @class ManagedObjectMappingProvider;
 @protocol ResponseObjectFormatter;
+@protocol EntityNameFormatter;
 
 /**
  @author Egor Tolstoy
@@ -34,18 +35,21 @@
 
 @property (strong, nonatomic, readonly) ManagedObjectMappingProvider *provider;
 @property (strong, nonatomic, readonly) id<ResponseObjectFormatter> responseFormatter;
+@property (strong, nonatomic, readonly) id<EntityNameFormatter> entityNameFormatter;
 
 /**
  @author Egor Tolstoy
  
  The main initializer of ManagedObjectMapper
  
- @param mappingProvider This provider is used to retrieve a mapping for a given NSManagedObject class name
- @param formatter       This object is used to format the concrete server response in such a way that this mapper can process them (e.g. the formatter can extract an array of objects from a @{results : @[]} dictionary.
+ @param mappingProvider      This provider is used to retrieve a mapping for a given NSManagedObject class name
+ @param responseFormatter    This object is used to format the concrete server response in such a way that this mapper can process them (e.g. the formatter can extract an array of objects from a @{results : @[]} dictionary.
+ @param entityNameFormatter  This object is used to convert Core Data entity names to classes and backwards.
  
  @return RCFManagedObjectMapper
  */
 - (instancetype)initWithMappingProvider:(ManagedObjectMappingProvider *)mappingProvider
-                responseObjectFormatter:(id <ResponseObjectFormatter>)formatter;
+                responseObjectFormatter:(id <ResponseObjectFormatter>)responseFormatter
+                    entityNameFormatter:(id<EntityNameFormatter>)entityNameFormatter;
 
 @end

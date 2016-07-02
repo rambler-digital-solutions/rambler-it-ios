@@ -21,7 +21,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class EventManagedObject, LectureMaterialManagedObject, SpeakerManagedObject;
+@class EventManagedObject, LectureMaterialManagedObject, SpeakerManagedObject, TagManagedObject;
 
 NS_ASSUME_NONNULL_BEGIN
 

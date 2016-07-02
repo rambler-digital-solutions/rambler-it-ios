@@ -18,42 +18,24 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <XCTest/XCTest.h>
-#import <EasyMapping/EasyMapping.h>
+#import <Foundation/Foundation.h>
 
-#import "ManagedObjectMappingProvider.h"
-#import "SocialNetworkAccount.h"
+/**
+ @author Egor Tolstoy
+ 
+ This protocol describes an object responsible for transforming Query model objects, obtained from the presentation layer to an array of url parameters.
+ */
+@protocol QueryTransformer <NSObject>
 
-@interface RCFManagedObjectMappingProviderTests : XCTestCase
-
-@property (strong, nonatomic) ManagedObjectMappingProvider *provider;
-
-@end
-
-@implementation RCFManagedObjectMappingProviderTests
-
-- (void)setUp {
-    [super setUp];
-    
-    self.provider = [[ManagedObjectMappingProvider alloc] init];
-}
-
-- (void)tearDown {
-    self.provider = nil;
-    
-    [super tearDown];
-}
-
-- (void)testThatProviderReturnsProperMappingForOneOfModels {
-    // given
-    Class targetClass = [SocialNetworkAccount class];
-    NSString *const kExpectedEntityName = NSStringFromClass(targetClass);
-    
-    // when
-    EKManagedObjectMapping *mapping = [self.provider mappingForManagedObjectModelClass:targetClass];
-    
-    // then
-    XCTAssertEqualObjects(mapping.entityName, kExpectedEntityName);
-}
+/**
+ @author Egor Tolstoy
+ 
+ The method returns an array of URL parameters from query object
+ 
+ @param query The query object obtained from the presentation layer
+ 
+ @return An array of URL parameters
+ */
+- (NSArray *)deriveUrlParametersFromQuery:(id)query;
 
 @end

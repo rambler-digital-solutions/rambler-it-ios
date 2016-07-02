@@ -1,22 +1,13 @@
-// Copyright (c) 2015 RAMBLER&Co
 //
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
+//  LectureManagedObject+CoreDataProperties.h
+//  Conferences
 //
-// The above copyright notice and this permission notice shall be included in
-// all copies or substantial portions of the Software.
+//  Created by Egor Tolstoy on 02/07/16.
+//  Copyright © 2016 Rambler. All rights reserved.
 //
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-// THE SOFTWARE.
+//  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
+//  to delete and recreate this implementation file for your updated model.
+//
 
 #import "LectureManagedObject.h"
 
@@ -26,13 +17,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nullable, nonatomic, retain) NSNumber *favourite;
 @property (nullable, nonatomic, retain) NSString *lectureDescription;
+@property (nullable, nonatomic, retain) NSString *lectureId;
 @property (nullable, nonatomic, retain) NSString *name;
-@property (nullable, nonatomic, retain) NSString *slideLink;
-@property (nullable, nonatomic, retain) NSString *videoLink;
-@property (nullable, nonatomic, retain) NSNumber *lectureId;
 @property (nullable, nonatomic, retain) EventManagedObject *event;
 @property (nullable, nonatomic, retain) NSSet<LectureMaterialManagedObject *> *lectureMaterials;
-@property (nullable, nonatomic, retain) NSSet<SpeakerManagedObject *> *speakers;
+@property (nullable, nonatomic, retain) SpeakerManagedObject *speaker;
+@property (nullable, nonatomic, retain) NSSet<TagManagedObject *> *tags;
 
 @end
 
@@ -43,10 +33,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)addLectureMaterials:(NSSet<LectureMaterialManagedObject *> *)values;
 - (void)removeLectureMaterials:(NSSet<LectureMaterialManagedObject *> *)values;
 
-- (void)addSpeakersObject:(SpeakerManagedObject *)value;
-- (void)removeSpeakersObject:(SpeakerManagedObject *)value;
-- (void)addSpeakers:(NSSet<SpeakerManagedObject *> *)values;
-- (void)removeSpeakers:(NSSet<SpeakerManagedObject *> *)values;
+- (void)addTagsObject:(TagManagedObject *)value;
+- (void)removeTagsObject:(TagManagedObject *)value;
+- (void)addTags:(NSSet<TagManagedObject *> *)values;
+- (void)removeTags:(NSSet<TagManagedObject *> *)values;
 
 @end
 

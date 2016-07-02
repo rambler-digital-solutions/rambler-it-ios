@@ -18,44 +18,49 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "EventOperationFactory.h"
+#import "EventListOperationFactory.h"
 
 #import "NetworkCompoundOperationBuilder.h"
 #import "CompoundOperationBuilderConfig.h"
 #import "CompoundOperationBase.h"
-#import "EventQuery.h"
+#import "EventListQuery.h"
 #import "EventManagedObject.h"
 #import "NetworkingConstantsHeader.h"
+#import "QueryTransformer.h"
 
-@interface EventOperationFactory ()
+@interface EventListOperationFactory ()
 
-@property (strong, nonatomic) NetworkCompoundOperationBuilder *builder;
+@property (nonatomic, strong) NetworkCompoundOperationBuilder *builder;
+@property (nonatomic, strong) id<QueryTransformer> queryTransformer;
 
 @end
 
-@implementation EventOperationFactory
+@implementation EventListOperationFactory
 
 #pragma mark - Initialization
 
-- (instancetype)initWithBuilder:(NetworkCompoundOperationBuilder *)builder {
+- (instancetype)initWithBuilder:(NetworkCompoundOperationBuilder *)builder
+               queryTransformer:(id<QueryTransformer>)queryTransformer {
     self = [super init];
     if (self) {
         _builder = builder;
+        _queryTransformer = queryTransformer;
     }
     return self;
 }
 
 #pragma mark - Operations creation
 
-- (CompoundOperationBase *)getEventsOperationWithQuery:(EventQuery *)query {
+- (CompoundOperationBase *)getEventsOperationWithQuery:(EventListQuery *)query {
     CompoundOperationBuilderConfig *config = [CompoundOperationBuilderConfig new];
     
     config.requestConfigurationType = RequestConfigurationRESTType;
     config.requestMethod = kHTTPMethodGET;
     config.serviceName = kEventServiceName;
-    config.urlParameters = @[];
+    NSArray *urlParameters = [self.queryTransformer deriveUrlParametersFromQuery:query];
+    config.urlParameters = urlParameters;
     
-    config.requestSigningType = RequestSigningParseType;
+    config.requestSigningType = RequestSigningDisabledType;
     
     config.responseDeserializationType = ResponseDeserializationJSONType;
     

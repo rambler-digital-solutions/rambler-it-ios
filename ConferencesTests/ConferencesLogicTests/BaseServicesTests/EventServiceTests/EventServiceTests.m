@@ -11,10 +11,10 @@
 #import <OCMock/OCMock.h>
 
 #import "EventServiceImplementation.h"
-#import "EventOperationFactory.h"
+#import "EventListOperationFactory.h"
 #import "OperationScheduler.h"
 #import "CompoundOperationBase.h"
-#import "Event.h"
+#import "EventManagedObject.h"
 
 @interface EventServiceTests : XCTestCase
 
@@ -45,7 +45,7 @@
     // given
     CompoundOperationBase *compoundOperation = [CompoundOperationBase new];
     
-    EventOperationFactory *mockEventOperationFactory = OCMClassMock([EventOperationFactory class]);
+    EventListOperationFactory *mockEventOperationFactory = OCMClassMock([EventListOperationFactory class]);
     OCMStub([mockEventOperationFactory getEventsOperationWithQuery:nil]).andReturn(compoundOperation);
     id <OperationScheduler> mockOperationScheduler = OCMProtocolMock(@protocol(OperationScheduler));
     
@@ -57,26 +57,6 @@
     
     // then
     OCMVerify([mockOperationScheduler addOperation:compoundOperation]);
-}
-
-- (void)testSuccessObtainEventWithPredicate {
-    // given
-    NSString *eventObjectId = @"8dk2da";
-    
-    NSManagedObjectContext *managedObjectContext = [NSManagedObjectContext MR_rootSavingContext];
-    [managedObjectContext MR_saveWithBlockAndWait:^(NSManagedObjectContext *localContext) {
-        Event *event = [Event MR_createEntity];
-        event.objectId = eventObjectId;
-    }];
-    
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"objectId = %@", eventObjectId];
-    
-    // when
-    NSArray *events = [self.eventService obtainEventWithPredicate:predicate];
-    Event *event = [events firstObject];
-    
-    // then
-    XCTAssertNotNil(event);
 }
 
 @end

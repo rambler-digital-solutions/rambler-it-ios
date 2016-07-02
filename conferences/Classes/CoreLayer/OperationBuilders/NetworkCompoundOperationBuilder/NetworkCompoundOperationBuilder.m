@@ -91,6 +91,9 @@
 }
 
 - (void)buildRequestSigningOperationWithConfig:(CompoundOperationBuilderConfig *)config {
+    if (config.requestSigningType == RequestSigningDisabledType) {
+        return;
+    }
     id<RequestSigner> signer = [self.requestSignersFactory requestSignerWithType:@(config.requestSigningType)];
     RequestSigningOperation *operation = [RequestSigningOperation operationWithRequestSigner:signer];
     [self addOperation:operation];
