@@ -22,6 +22,8 @@
 
 @implementation TagManagedObject
 
-// Insert code here to add functionality to your managed object subclass
++ (NSString *)entityName {
+    return @"Tag";
+}
 
 @end

@@ -27,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SocialNetworkAccountManagedObject : NSManagedObject
 
-// Insert code here to declare functionality of your managed object subclass
++ (NSString *)entityName;
 
 @end
 

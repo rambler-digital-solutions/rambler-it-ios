@@ -25,6 +25,8 @@
 
 @implementation LectureManagedObject
 
-// Insert code here to add functionality to your managed object subclass
++ (NSString *)entityName {
+    return @"Lecture";
+}
 
 @end

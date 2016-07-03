@@ -25,6 +25,8 @@
 
 @implementation EventManagedObject
 
-// Insert code here to add functionality to your managed object subclass
++ (NSString *)entityName {
+    return @"Event";
+}
 
 @end

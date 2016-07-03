@@ -23,6 +23,8 @@
 
 @implementation MetaEventManagedObject
 
-// Insert code here to add functionality to your managed object subclass
++ (NSString *)entityName {
+    return @"MetaEvent";
+}
 
 @end
