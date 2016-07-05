@@ -18,15 +18,36 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
-#import "RamblerLocationViewInput.h"
+#import "RamblerLocationDataDisplayManager.h"
 
-@protocol RamblerLocationViewOutput;
+@interface RamblerLocationDataDisplayManager () <UICollectionViewDataSource, UICollectionViewDelegate>
 
-@interface RamblerLocationViewController : UIViewController<RamblerLocationViewInput>
 
-@property (nonatomic, strong) id<RamblerLocationViewOutput> output;
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end
 
+@implementation RamblerLocationDataDisplayManager
+
+#pragma mark - Interface methods
+
+- (id<UICollectionViewDataSource>)dataSourceForCollectionView:(UICollectionView *)collectionView {
+    return self;
+}
+
+- (id<UICollectionViewDelegate>)delegateForCollectionView:(UICollectionView *)collectionView {
+    return self;
+}
+
+#pragma mark - <UICollectionViewDataSource>
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return 4;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return nil;
+}
+
+#pragma mark - <UICollectionViewDelegate>
+
+@end

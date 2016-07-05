@@ -18,15 +18,36 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "RamblerLocationViewInput.h"
 
-@protocol RamblerLocationViewOutput;
+/**
+ @author Egor Tolstoy
+ 
+ This object incapsulates the logic of providing data to UICollectionView with directions
+ */
+@interface RamblerLocationDataDisplayManager : NSObject
 
-@interface RamblerLocationViewController : UIViewController<RamblerLocationViewInput>
+/**
+ @author Egor Tolstoy
+ 
+ Returns a data source object for UICollectionView with directions
+ 
+ @param collectionView UICollectionView with directions
+ 
+ @return Data source
+ */
+- (id<UICollectionViewDataSource>)dataSourceForCollectionView:(UICollectionView *)collectionView;
 
-@property (nonatomic, strong) id<RamblerLocationViewOutput> output;
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+/**
+ @author Egor Tolstoy
+ 
+ Returns a delegate object for UICollectionView with directions
+ 
+ @param collectionView UICollectionView with directions
+ 
+ @return Delegate
+ */
+- (id<UICollectionViewDelegate>)delegateForCollectionView:(UICollectionView *)collectionView;
 
 @end
-
