@@ -21,15 +21,15 @@
 #import <Foundation/Foundation.h>
 #import "RamblerLocationInteractorInput.h"
 
+#import "RamblerLocationService.h"
+
 @protocol RamblerLocationInteractorOutput;
 
-/**
- *  Interactor модуля, который 1
- *	
- */
 @interface RamblerLocationInteractor : NSObject<RamblerLocationInteractorInput>
 
 @property (nonatomic, weak) id<RamblerLocationInteractorOutput> output;
+
+@property (nonatomic, strong) id<RamblerLocationService> locationService;
 
 @end
 

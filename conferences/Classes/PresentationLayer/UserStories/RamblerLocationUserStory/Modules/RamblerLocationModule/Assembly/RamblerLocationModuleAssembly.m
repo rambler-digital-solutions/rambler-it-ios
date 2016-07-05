@@ -19,6 +19,9 @@
 // THE SOFTWARE.
 
 #import "RamblerLocationModuleAssembly.h"
+
+#import "ServiceComponents.h"
+
 #import "RamblerLocationViewController.h"
 #import "RamblerLocationInteractor.h"
 #import "RamblerLocationPresenter.h"
@@ -37,9 +40,11 @@
 - (RamblerLocationInteractor *)interactorRamblerLocation {
     return [TyphoonDefinition withClass:[RamblerLocationInteractor class]
                           configuration:^(TyphoonDefinition *definition) {
-                            [definition injectProperty:@selector(output) 
-                                                  with:[self presenterRamblerLocation]];
-             }];
+                              [definition injectProperty:@selector(output)
+                                                    with:[self presenterRamblerLocation]];
+                              [definition injectProperty:@selector(ramblerLocationService)
+                                                    with:[self.serviceComponents ramblerLocationService]];
+                          }];
 }
 
 - (RamblerLocationPresenter *)presenterRamblerLocation {

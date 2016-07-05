@@ -18,18 +18,14 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import "ServiceComponents.h"
+#import "ResourceMapperAssembly.h"
 
-#import "OperationFactoriesAssembly.h"
+#import "DirectionObjectMapper.h"
 
-@class ResourceClientAssembly;
-@class ResourceMapperAssembly;
+@implementation ResourceMapperAssembly
 
-@interface ServiceComponentsAssembly : TyphoonAssembly <ServiceComponents>
-
-@property (strong, nonatomic) OperationFactoriesAssembly *operationFactoriesAssembly;
-@property (strong, nonatomic) ResourceClientAssembly *resourceClientAssembly;
-@property (strong, nonatomic) ResourceMapperAssembly *resourceMapperAssembly;
+- (id<ResourceMapper>)directionObjectMapper {
+    return [TyphoonDefinition withClass:[DirectionObjectMapper class]];
+}
 
 @end

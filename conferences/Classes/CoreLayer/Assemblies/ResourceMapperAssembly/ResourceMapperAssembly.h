@@ -18,18 +18,24 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import "ServiceComponents.h"
+#import <Typhoon/Typhoon.h>
 
-#import "OperationFactoriesAssembly.h"
+@protocol ResourceMapper;
 
-@class ResourceClientAssembly;
-@class ResourceMapperAssembly;
+/**
+ @author Egor Tolstoy
+ 
+ Assembly with definitions of resource mappers
+ */
+@interface ResourceMapperAssembly : TyphoonAssembly
 
-@interface ServiceComponentsAssembly : TyphoonAssembly <ServiceComponents>
-
-@property (strong, nonatomic) OperationFactoriesAssembly *operationFactoriesAssembly;
-@property (strong, nonatomic) ResourceClientAssembly *resourceClientAssembly;
-@property (strong, nonatomic) ResourceMapperAssembly *resourceMapperAssembly;
+/**
+ @author Egor Tolstoy
+ 
+ Resource mapper capable of mapping NSDictionary to DirectionObjects
+ 
+ @return id<ResourceMapper>
+ */
+- (id<ResourceMapper>)directionObjectMapper;
 
 @end

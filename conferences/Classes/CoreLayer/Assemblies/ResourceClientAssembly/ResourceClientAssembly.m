@@ -18,18 +18,18 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import "ServiceComponents.h"
+#import "ResourceClientAssembly.h"
 
-#import "OperationFactoriesAssembly.h"
+#import "CommonResourceClient.h"
 
-@class ResourceClientAssembly;
-@class ResourceMapperAssembly;
+@implementation ResourceClientAssembly
 
-@interface ServiceComponentsAssembly : TyphoonAssembly <ServiceComponents>
-
-@property (strong, nonatomic) OperationFactoriesAssembly *operationFactoriesAssembly;
-@property (strong, nonatomic) ResourceClientAssembly *resourceClientAssembly;
-@property (strong, nonatomic) ResourceMapperAssembly *resourceMapperAssembly;
+- (id<ResourceClient>)commonResourceClient {
+    return [TyphoonDefinition withClass:[CommonResourceClient class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(bundle)
+                                                    with:[NSBundle mainBundle]];
+                          }];
+}
 
 @end

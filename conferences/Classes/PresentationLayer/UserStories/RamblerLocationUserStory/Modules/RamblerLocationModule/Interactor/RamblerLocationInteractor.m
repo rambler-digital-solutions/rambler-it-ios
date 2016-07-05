@@ -21,17 +21,13 @@
 #import "RamblerLocationInteractor.h"
 #import "RamblerLocationInteractorOutput.h"
 
-@interface RamblerLocationInteractor()
-
-@end
-
-/**
- *	Interactor модуля, который 1
- *
- *  
- */
 @implementation RamblerLocationInteractor
 
 #pragma mark - RamblerLocationInteractorInput
+
+- (NSArray<DirectionObject *> *)obtainDirections {
+    NSArray *directions = [self.locationService obtainDirections];
+    return directions;
+}
 
 @end

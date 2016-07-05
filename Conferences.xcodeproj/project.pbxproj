@@ -286,6 +286,8 @@
 		9F4077941D2BFA7100D47EF6 /* CommonResourceClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4077931D2BFA7100D47EF6 /* CommonResourceClientTests.m */; };
 		9F40779C1D2C109200D47EF6 /* DirectionObjectMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F40779B1D2C109200D47EF6 /* DirectionObjectMapper.m */; };
 		9F4077A01D2C11A700D47EF6 /* DirectionObjectMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F40779F1D2C11A700D47EF6 /* DirectionObjectMapperTests.m */; };
+		9F4077A41D2C15C600D47EF6 /* ResourceClientAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4077A31D2C15C600D47EF6 /* ResourceClientAssembly.m */; };
+		9F4077A81D2C164800D47EF6 /* ResourceMapperAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4077A71D2C164800D47EF6 /* ResourceMapperAssembly.m */; };
 		9F8E5F701BC2552600DC10DB /* Conferences.API.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F8E5F6F1BC2552600DC10DB /* Conferences.API.plist */; };
 		9F8E5F741BC255AA00DC10DB /* RequestSignersAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5F731BC255AA00DC10DB /* RequestSignersAssembly.m */; };
 		9F8E5F781BC2571B00DC10DB /* NetworkClientsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5F771BC2571B00DC10DB /* NetworkClientsAssembly.m */; };
@@ -883,6 +885,10 @@
 		9F40779A1D2C109200D47EF6 /* DirectionObjectMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DirectionObjectMapper.h; path = CoreComponents/ResourceMappers/ConcreteClasses/DirectionObjectMapper/DirectionObjectMapper.h; sourceTree = "<group>"; };
 		9F40779B1D2C109200D47EF6 /* DirectionObjectMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DirectionObjectMapper.m; path = CoreComponents/ResourceMappers/ConcreteClasses/DirectionObjectMapper/DirectionObjectMapper.m; sourceTree = "<group>"; };
 		9F40779F1D2C11A700D47EF6 /* DirectionObjectMapperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DirectionObjectMapperTests.m; path = CoreLayer/CoreComponents/ResourceMappers/DirectionObjectMapper/DirectionObjectMapperTests.m; sourceTree = "<group>"; };
+		9F4077A21D2C15C600D47EF6 /* ResourceClientAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResourceClientAssembly.h; path = Assemblies/ResourceClientAssembly/ResourceClientAssembly.h; sourceTree = "<group>"; };
+		9F4077A31D2C15C600D47EF6 /* ResourceClientAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResourceClientAssembly.m; path = Assemblies/ResourceClientAssembly/ResourceClientAssembly.m; sourceTree = "<group>"; };
+		9F4077A61D2C164800D47EF6 /* ResourceMapperAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResourceMapperAssembly.h; path = Assemblies/ResourceMapperAssembly/ResourceMapperAssembly.h; sourceTree = "<group>"; };
+		9F4077A71D2C164800D47EF6 /* ResourceMapperAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResourceMapperAssembly.m; path = Assemblies/ResourceMapperAssembly/ResourceMapperAssembly.m; sourceTree = "<group>"; };
 		9F8E5F6F1BC2552600DC10DB /* Conferences.API.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Conferences.API.plist; path = Assemblies/RequestConfiguratorsFactory/Conferences.API.plist; sourceTree = "<group>"; };
 		9F8E5F711BC2559B00DC10DB /* RequestSignersFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequestSignersFactory.h; path = Assemblies/RequestSignersFactory/RequestSignersFactory.h; sourceTree = "<group>"; };
 		9F8E5F721BC255AA00DC10DB /* RequestSignersAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequestSignersAssembly.h; path = Assemblies/RequestSignersFactory/RequestSignersAssembly.h; sourceTree = "<group>"; };
@@ -3343,6 +3349,8 @@
 		9F0A6C241BC1B85A00A25417 /* Assemblies */ = {
 			isa = PBXGroup;
 			children = (
+				9F4077A51D2C163C00D47EF6 /* ResourceMapperAssembly */,
+				9F4077A11D2C159A00D47EF6 /* ResourceClientAssembly */,
 				9F8E5F911BC269D000DC10DB /* OperationFactoriesAssembly */,
 				9F0A6C2A1BC1B8AA00A25417 /* ResponseMappersFactory */,
 				9F0A6C291BC1B8A000A25417 /* ResponseValidatorsFactory */,
@@ -4498,6 +4506,24 @@
 			name = DirectionObjectMapper;
 			sourceTree = "<group>";
 		};
+		9F4077A11D2C159A00D47EF6 /* ResourceClientAssembly */ = {
+			isa = PBXGroup;
+			children = (
+				9F4077A21D2C15C600D47EF6 /* ResourceClientAssembly.h */,
+				9F4077A31D2C15C600D47EF6 /* ResourceClientAssembly.m */,
+			);
+			name = ResourceClientAssembly;
+			sourceTree = "<group>";
+		};
+		9F4077A51D2C163C00D47EF6 /* ResourceMapperAssembly */ = {
+			isa = PBXGroup;
+			children = (
+				9F4077A61D2C164800D47EF6 /* ResourceMapperAssembly.h */,
+				9F4077A71D2C164800D47EF6 /* ResourceMapperAssembly.m */,
+			);
+			name = ResourceMapperAssembly;
+			sourceTree = "<group>";
+		};
 		9F8E5F911BC269D000DC10DB /* OperationFactoriesAssembly */ = {
 			isa = PBXGroup;
 			children = (
@@ -5081,6 +5107,7 @@
 				631FFE541BEF930200749DB8 /* ReportListInteractor.m in Sources */,
 				9F0A84FB1BC1698B006F79FB /* CompoundOperationBase.m in Sources */,
 				631FFE531BEF930200749DB8 /* ReportListModuleAssembly.m in Sources */,
+				9F4077A41D2C15C600D47EF6 /* ResourceClientAssembly.m in Sources */,
 				63F613611CB00A220002AEF0 /* EventPresenter.m in Sources */,
 				63F613501CB00A220002AEF0 /* AnnouncementListTableViewController.m in Sources */,
 				63F6135A1CB00A220002AEF0 /* EventHeaderModuleAssembly.m in Sources */,
@@ -5131,6 +5158,7 @@
 				63F6138D1CB00A220002AEF0 /* LecturePresenterStateStorage.m in Sources */,
 				631FFE571BEF930200749DB8 /* ReportListTableViewController.m in Sources */,
 				63F51CAC1C42AD2100AFB9D2 /* TableViewCellWithTextLabel.m in Sources */,
+				9F4077A81D2C164800D47EF6 /* ResourceMapperAssembly.m in Sources */,
 				63F613881CB00A220002AEF0 /* EventViewController.m in Sources */,
 				63F613831CB00A220002AEF0 /* CurrentEventCellObjectBuilder.m in Sources */,
 				9FF74FDE1D2699A3000D208D /* SocialNetworkAccountManagedObject.m in Sources */,
