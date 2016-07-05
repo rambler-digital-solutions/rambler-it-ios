@@ -48,16 +48,21 @@
     NSString *const kTestTitle = @"test-title";
     NSString *const kTestDescription = @"test-description";
     NSDictionary *const kTestDictionary = @{
-                                            @"title" : kTestTitle,
-                                            @"description" : kTestDescription
+                                            @"root" : @[
+                                                        @{
+                                                            @"title" : kTestTitle,
+                                                            @"description" : kTestDescription
+                                                            }
+                                                    ]
                                             };
     
     // when
-    DirectionObject *result = [self.mapper mapResource:kTestDictionary];
+    NSArray *result = [self.mapper mapResource:kTestDictionary];
+    DirectionObject *firstObject = [result firstObject];
     
     // then
-    XCTAssertEqualObjects(result.directionTitle, kTestTitle);
-    XCTAssertEqualObjects(result.directionDescription, kTestDescription);
+    XCTAssertEqualObjects(firstObject.directionTitle, kTestTitle);
+    XCTAssertEqualObjects(firstObject.directionDescription, kTestDescription);
 }
 
 @end

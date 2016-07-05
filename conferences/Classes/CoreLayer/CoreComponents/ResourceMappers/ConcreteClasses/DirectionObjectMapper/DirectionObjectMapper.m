@@ -22,20 +22,27 @@
 
 #import "DirectionObject.h"
 
+static NSString *const kRootKey = @"root";
 static NSString *const kTitleKey = @"title";
 static NSString *const kDescriptionKey = @"description";
 
 @implementation DirectionObjectMapper
 
 - (DirectionObject *)mapResource:(NSDictionary *)dictionary {
-    NSString *title = dictionary[kTitleKey];
-    NSString *description = dictionary[kDescriptionKey];
+    NSArray *items = dictionary[kRootKey];
+    NSMutableArray *directions = [NSMutableArray new];
     
-    DirectionObject *result = [DirectionObject new];
-    result.directionTitle = title;
-    result.directionDescription = description;
+    for (NSDictionary *item in items) {
+        NSString *title = item[kTitleKey];
+        NSString *description = item[kDescriptionKey];
+        
+        DirectionObject *result = [DirectionObject new];
+        result.directionTitle = title;
+        result.directionDescription = description;
+        [directions addObject:result];
+    }
     
-    return result;
+    return [directions copy];
 }
 
 @end
