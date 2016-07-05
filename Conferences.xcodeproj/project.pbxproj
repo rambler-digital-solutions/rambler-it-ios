@@ -278,6 +278,14 @@
 		9F18311D1BC1615C000E21A5 /* SingleResponseObjectFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F18311B1BC1615C000E21A5 /* SingleResponseObjectFormatter.m */; };
 		9F1831211BC16195000E21A5 /* RCFResultResponseObjectFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1831201BC16195000E21A5 /* RCFResultResponseObjectFormatterTests.m */; };
 		9F40777A1D2BF33800D47EF6 /* RamblerLocationDataDisplayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4077791D2BF33800D47EF6 /* RamblerLocationDataDisplayManager.m */; };
+		9F40777F1D2BF4F300D47EF6 /* RamblerLocationServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F40777E1D2BF4F300D47EF6 /* RamblerLocationServiceImplementation.m */; };
+		9F4077821D2BF56E00D47EF6 /* DirectionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4077811D2BF56E00D47EF6 /* DirectionObject.m */; };
+		9F4077851D2BF6A700D47EF6 /* directions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F4077841D2BF6A700D47EF6 /* directions.plist */; };
+		9F4077881D2BF84000D47EF6 /* RamblerLocationServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4077871D2BF84000D47EF6 /* RamblerLocationServiceTests.m */; };
+		9F4077901D2BF95200D47EF6 /* CommonResourceClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F40778F1D2BF95200D47EF6 /* CommonResourceClient.m */; };
+		9F4077941D2BFA7100D47EF6 /* CommonResourceClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4077931D2BFA7100D47EF6 /* CommonResourceClientTests.m */; };
+		9F40779C1D2C109200D47EF6 /* DirectionObjectMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F40779B1D2C109200D47EF6 /* DirectionObjectMapper.m */; };
+		9F4077A01D2C11A700D47EF6 /* DirectionObjectMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F40779F1D2C11A700D47EF6 /* DirectionObjectMapperTests.m */; };
 		9F8E5F701BC2552600DC10DB /* Conferences.API.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F8E5F6F1BC2552600DC10DB /* Conferences.API.plist */; };
 		9F8E5F741BC255AA00DC10DB /* RequestSignersAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5F731BC255AA00DC10DB /* RequestSignersAssembly.m */; };
 		9F8E5F781BC2571B00DC10DB /* NetworkClientsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5F771BC2571B00DC10DB /* NetworkClientsAssembly.m */; };
@@ -860,6 +868,21 @@
 		9F1F38001BBBB80D00C7797D /* ConferencesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConferencesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F4077781D2BF33800D47EF6 /* RamblerLocationDataDisplayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RamblerLocationDataDisplayManager.h; path = DataDisplayManager/RamblerLocationDataDisplayManager.h; sourceTree = "<group>"; };
 		9F4077791D2BF33800D47EF6 /* RamblerLocationDataDisplayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RamblerLocationDataDisplayManager.m; path = DataDisplayManager/RamblerLocationDataDisplayManager.m; sourceTree = "<group>"; };
+		9F40777C1D2BF4E500D47EF6 /* RamblerLocationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RamblerLocationService.h; path = RamblerLocationService/RamblerLocationService.h; sourceTree = "<group>"; };
+		9F40777D1D2BF4F300D47EF6 /* RamblerLocationServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RamblerLocationServiceImplementation.h; path = RamblerLocationService/RamblerLocationServiceImplementation.h; sourceTree = "<group>"; };
+		9F40777E1D2BF4F300D47EF6 /* RamblerLocationServiceImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RamblerLocationServiceImplementation.m; path = RamblerLocationService/RamblerLocationServiceImplementation.m; sourceTree = "<group>"; };
+		9F4077801D2BF56E00D47EF6 /* DirectionObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectionObject.h; sourceTree = "<group>"; };
+		9F4077811D2BF56E00D47EF6 /* DirectionObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectionObject.m; sourceTree = "<group>"; };
+		9F4077841D2BF6A700D47EF6 /* directions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = directions.plist; path = Plists/directions.plist; sourceTree = "<group>"; };
+		9F4077871D2BF84000D47EF6 /* RamblerLocationServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RamblerLocationServiceTests.m; path = RamblerLocationServiceTests/RamblerLocationServiceTests.m; sourceTree = "<group>"; };
+		9F40778B1D2BF8F900D47EF6 /* ResourceClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResourceClient.h; path = CoreComponents/ResourceClients/Protocols/ResourceClient.h; sourceTree = "<group>"; };
+		9F40778E1D2BF95200D47EF6 /* CommonResourceClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonResourceClient.h; path = CoreComponents/ResourceClients/ConcreteClasses/CommonResourceClient/CommonResourceClient.h; sourceTree = "<group>"; };
+		9F40778F1D2BF95200D47EF6 /* CommonResourceClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommonResourceClient.m; path = CoreComponents/ResourceClients/ConcreteClasses/CommonResourceClient/CommonResourceClient.m; sourceTree = "<group>"; };
+		9F4077931D2BFA7100D47EF6 /* CommonResourceClientTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommonResourceClientTests.m; path = CoreLayer/CoreComponents/ResourceClients/CommonResourceClient/CommonResourceClientTests.m; sourceTree = "<group>"; };
+		9F4077981D2C107700D47EF6 /* ResourceMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResourceMapper.h; path = CoreComponents/ResourceMappers/Protocols/ResourceMapper.h; sourceTree = "<group>"; };
+		9F40779A1D2C109200D47EF6 /* DirectionObjectMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DirectionObjectMapper.h; path = CoreComponents/ResourceMappers/ConcreteClasses/DirectionObjectMapper/DirectionObjectMapper.h; sourceTree = "<group>"; };
+		9F40779B1D2C109200D47EF6 /* DirectionObjectMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DirectionObjectMapper.m; path = CoreComponents/ResourceMappers/ConcreteClasses/DirectionObjectMapper/DirectionObjectMapper.m; sourceTree = "<group>"; };
+		9F40779F1D2C11A700D47EF6 /* DirectionObjectMapperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DirectionObjectMapperTests.m; path = CoreLayer/CoreComponents/ResourceMappers/DirectionObjectMapper/DirectionObjectMapperTests.m; sourceTree = "<group>"; };
 		9F8E5F6F1BC2552600DC10DB /* Conferences.API.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Conferences.API.plist; path = Assemblies/RequestConfiguratorsFactory/Conferences.API.plist; sourceTree = "<group>"; };
 		9F8E5F711BC2559B00DC10DB /* RequestSignersFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequestSignersFactory.h; path = Assemblies/RequestSignersFactory/RequestSignersFactory.h; sourceTree = "<group>"; };
 		9F8E5F721BC255AA00DC10DB /* RequestSignersAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequestSignersAssembly.h; path = Assemblies/RequestSignersFactory/RequestSignersAssembly.h; sourceTree = "<group>"; };
@@ -1474,6 +1497,7 @@
 		636A37B71BC13B4B00B49C3D /* BaseServicesTests */ = {
 			isa = PBXGroup;
 			children = (
+				9F4077861D2BF82D00D47EF6 /* RamblerLocationServiceTests */,
 				9FC1F6741D2823E40070D9B5 /* EventListServiceTests */,
 				631CBA391C0092C900E3EBA8 /* EventServiceTests */,
 				631CBA361C0092C100E3EBA8 /* ApplicationConfiguratorTests */,
@@ -1703,6 +1727,7 @@
 		6373A3DF1BBDBDF700DF67FF /* ConcreteServices */ = {
 			isa = PBXGroup;
 			children = (
+				9F40777B1D2BF4C400D47EF6 /* RamblerLocationService */,
 				9FF74FFB1D26C60E000D208D /* EventListService */,
 				63D7460B1C8B0CF600E3A381 /* EventStoreService */,
 				63EF15BC1BC4617000480CAF /* PushNotificationSrvice */,
@@ -3061,6 +3086,8 @@
 				63F8F2A71BF870A1000017F3 /* LecturePlainObject.m */,
 				63F8F2AF1BF87C30000017F3 /* SpeakerPlainObject.h */,
 				63F8F2B01BF87C30000017F3 /* SpeakerPlainObject.m */,
+				9F4077801D2BF56E00D47EF6 /* DirectionObject.h */,
+				9F4077811D2BF56E00D47EF6 /* DirectionObject.m */,
 			);
 			path = PlainObjects;
 			sourceTree = "<group>";
@@ -3266,6 +3293,7 @@
 		63FDCE001BBDBA2A00A43B60 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9F4077831D2BF68900D47EF6 /* Plists */,
 				63ECC4171CA8373400439A01 /* Strings */,
 				63FDCE011BBDBA2A00A43B60 /* Images */,
 			);
@@ -3784,6 +3812,8 @@
 		9F18308B1BC01E65000E21A5 /* CoreComponents */ = {
 			isa = PBXGroup;
 			children = (
+				9F4077951D2C105100D47EF6 /* ResourceMappers */,
+				9F4077891D2BF8DB00D47EF6 /* ResourceClients */,
 				9FC1F6771D2826B70070D9B5 /* QueryTransformers */,
 				9FF7500E1D27DB71000D208D /* Helpers */,
 				9FF750091D27DB5F000D208D /* MappingProviders */,
@@ -3850,6 +3880,8 @@
 		9F1830951BC022A6000E21A5 /* CoreComponents */ = {
 			isa = PBXGroup;
 			children = (
+				9F40779D1D2C118A00D47EF6 /* ResourceMappers */,
+				9F4077911D2BFA5800D47EF6 /* ResourceClients */,
 				9FC1F67D1D2838CD0070D9B5 /* QueryTransformers */,
 				9FF750141D27DC96000D208D /* Helpers */,
 				9F18311E1BC16162000E21A5 /* ResponseObjectFormatters */,
@@ -4340,6 +4372,132 @@
 			name = DataDisplayManager;
 			sourceTree = "<group>";
 		};
+		9F40777B1D2BF4C400D47EF6 /* RamblerLocationService */ = {
+			isa = PBXGroup;
+			children = (
+				9F40777C1D2BF4E500D47EF6 /* RamblerLocationService.h */,
+				9F40777D1D2BF4F300D47EF6 /* RamblerLocationServiceImplementation.h */,
+				9F40777E1D2BF4F300D47EF6 /* RamblerLocationServiceImplementation.m */,
+			);
+			name = RamblerLocationService;
+			sourceTree = "<group>";
+		};
+		9F4077831D2BF68900D47EF6 /* Plists */ = {
+			isa = PBXGroup;
+			children = (
+				9F4077841D2BF6A700D47EF6 /* directions.plist */,
+			);
+			name = Plists;
+			sourceTree = "<group>";
+		};
+		9F4077861D2BF82D00D47EF6 /* RamblerLocationServiceTests */ = {
+			isa = PBXGroup;
+			children = (
+				9F4077871D2BF84000D47EF6 /* RamblerLocationServiceTests.m */,
+			);
+			name = RamblerLocationServiceTests;
+			sourceTree = "<group>";
+		};
+		9F4077891D2BF8DB00D47EF6 /* ResourceClients */ = {
+			isa = PBXGroup;
+			children = (
+				9F40778C1D2BF90000D47EF6 /* ConcreteClasses */,
+				9F40778A1D2BF8E700D47EF6 /* Protocols */,
+			);
+			name = ResourceClients;
+			sourceTree = "<group>";
+		};
+		9F40778A1D2BF8E700D47EF6 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9F40778B1D2BF8F900D47EF6 /* ResourceClient.h */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		9F40778C1D2BF90000D47EF6 /* ConcreteClasses */ = {
+			isa = PBXGroup;
+			children = (
+				9F40778D1D2BF93400D47EF6 /* CommonResourceClient */,
+			);
+			name = ConcreteClasses;
+			sourceTree = "<group>";
+		};
+		9F40778D1D2BF93400D47EF6 /* CommonResourceClient */ = {
+			isa = PBXGroup;
+			children = (
+				9F40778E1D2BF95200D47EF6 /* CommonResourceClient.h */,
+				9F40778F1D2BF95200D47EF6 /* CommonResourceClient.m */,
+			);
+			name = CommonResourceClient;
+			sourceTree = "<group>";
+		};
+		9F4077911D2BFA5800D47EF6 /* ResourceClients */ = {
+			isa = PBXGroup;
+			children = (
+				9F4077921D2BFA6000D47EF6 /* CommonResourceClient */,
+			);
+			name = ResourceClients;
+			sourceTree = "<group>";
+		};
+		9F4077921D2BFA6000D47EF6 /* CommonResourceClient */ = {
+			isa = PBXGroup;
+			children = (
+				9F4077931D2BFA7100D47EF6 /* CommonResourceClientTests.m */,
+			);
+			name = CommonResourceClient;
+			sourceTree = "<group>";
+		};
+		9F4077951D2C105100D47EF6 /* ResourceMappers */ = {
+			isa = PBXGroup;
+			children = (
+				9F4077971D2C106500D47EF6 /* ConcreteClasses */,
+				9F4077961D2C106000D47EF6 /* Protocols */,
+			);
+			name = ResourceMappers;
+			sourceTree = "<group>";
+		};
+		9F4077961D2C106000D47EF6 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9F4077981D2C107700D47EF6 /* ResourceMapper.h */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		9F4077971D2C106500D47EF6 /* ConcreteClasses */ = {
+			isa = PBXGroup;
+			children = (
+				9F4077991D2C107B00D47EF6 /* DirectionObjectMapper */,
+			);
+			name = ConcreteClasses;
+			sourceTree = "<group>";
+		};
+		9F4077991D2C107B00D47EF6 /* DirectionObjectMapper */ = {
+			isa = PBXGroup;
+			children = (
+				9F40779A1D2C109200D47EF6 /* DirectionObjectMapper.h */,
+				9F40779B1D2C109200D47EF6 /* DirectionObjectMapper.m */,
+			);
+			name = DirectionObjectMapper;
+			sourceTree = "<group>";
+		};
+		9F40779D1D2C118A00D47EF6 /* ResourceMappers */ = {
+			isa = PBXGroup;
+			children = (
+				9F40779E1D2C119000D47EF6 /* DirectionObjectMapper */,
+			);
+			name = ResourceMappers;
+			sourceTree = "<group>";
+		};
+		9F40779E1D2C119000D47EF6 /* DirectionObjectMapper */ = {
+			isa = PBXGroup;
+			children = (
+				9F40779F1D2C11A700D47EF6 /* DirectionObjectMapperTests.m */,
+			);
+			name = DirectionObjectMapper;
+			sourceTree = "<group>";
+		};
 		9F8E5F911BC269D000DC10DB /* OperationFactoriesAssembly */ = {
 			isa = PBXGroup;
 			children = (
@@ -4660,6 +4818,7 @@
 				63F612291CAFF8530002AEF0 /* Reports.storyboard in Resources */,
 				63F6137B1CB00A220002AEF0 /* PreviousLectureSectionHeaderTableViewCell.xib in Resources */,
 				63F613791CB00A220002AEF0 /* PreviousEventTableViewCell.xib in Resources */,
+				9F4077851D2BF6A700D47EF6 /* directions.plist in Resources */,
 				63F51CAD1C42AD2100AFB9D2 /* TableViewCellWithTextLabel.xib in Resources */,
 				63ECC4191CA8373400439A01 /* Localizable.strings in Resources */,
 				63F613891CB00A220002AEF0 /* Event.storyboard in Resources */,
@@ -4861,6 +5020,7 @@
 				631FFE5F1BEF991000749DB8 /* ReportListDataDisplayManager.m in Sources */,
 				63F6139D1CB00A220002AEF0 /* SpeakerInfoDataDisplayManager.m in Sources */,
 				63F613961CB00A220002AEF0 /* SpeakerInfoInteractor.m in Sources */,
+				9F4077901D2BF95200D47EF6 /* CommonResourceClient.m in Sources */,
 				63FDCE061BBDBA2A00A43B60 /* AppDelegate.m in Sources */,
 				63F6134E1CB00A220002AEF0 /* AnnouncementListPresenter.m in Sources */,
 				631808401C482B1300A61E7D /* SpeakerShortInfoInteractor.m in Sources */,
@@ -4875,7 +5035,9 @@
 				63F6134D1CB00A220002AEF0 /* AnnouncementListInteractor.m in Sources */,
 				63F6134F1CB00A220002AEF0 /* AnnouncementListRouter.m in Sources */,
 				636F8C971BC97B3100552B91 /* EventServiceImplementation.m in Sources */,
+				9F40777F1D2BF4F300D47EF6 /* RamblerLocationServiceImplementation.m in Sources */,
 				6318083F1C482B1300A61E7D /* SpeakerShortInfoModuleAssembly.m in Sources */,
+				9F4077821D2BF56E00D47EF6 /* DirectionObject.m in Sources */,
 				63F6138E1CB00A220002AEF0 /* LectureRouter.m in Sources */,
 				63F6138C1CB00A220002AEF0 /* LecturePresenter.m in Sources */,
 				63F613841CB00A220002AEF0 /* EventCellObjectBuilderBase.m in Sources */,
@@ -4901,6 +5063,7 @@
 				63F6136E1CB00A220002AEF0 /* CurrentVideoTranslationTableViewCell.m in Sources */,
 				63F6137C1CB00A220002AEF0 /* PreviousLectureTableViewCell.m in Sources */,
 				63F6135C1CB00A220002AEF0 /* EventHeaderPresenter.m in Sources */,
+				9F40779C1D2C109200D47EF6 /* DirectionObjectMapper.m in Sources */,
 				63F8F2B11BF87C30000017F3 /* SpeakerPlainObject.m in Sources */,
 				9F0A85031BC1698B006F79FB /* OperationDebugDescriptionFormatter.m in Sources */,
 				63F613861CB00A220002AEF0 /* PastEventCellObjectBuilder.m in Sources */,
@@ -4982,8 +5145,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F4077941D2BFA7100D47EF6 /* CommonResourceClientTests.m in Sources */,
 				63D628EE1BE4CE09004AF98F /* SystemInfrastructureAssembly.m in Sources */,
 				63D628F01BE4CE09004AF98F /* ModuleAssemblyBase.m in Sources */,
+				9F4077A01D2C11A700D47EF6 /* DirectionObjectMapperTests.m in Sources */,
 				63D628F21BE4CE09004AF98F /* RamblerLocationModuleAssembly.m in Sources */,
 				63F613EA1CB111070002AEF0 /* ReportListPresenterTests.m in Sources */,
 				635E18D51CA6CECB005B8439 /* EventHeaderModuleAssemblyTests.m in Sources */,
@@ -5038,6 +5203,7 @@
 				9F0A85251BC185AA006F79FB /* RequestSigningOperationTests.m in Sources */,
 				63F613DD1CB111070002AEF0 /* FutureEventCellObjectBuilderTests.m in Sources */,
 				9F0A85241BC185AA006F79FB /* RequestConfigurationOperationTests.m in Sources */,
+				9F4077881D2BF84000D47EF6 /* RamblerLocationServiceTests.m in Sources */,
 				9F8E5F9B1BC2753100DC10DB /* CompoundOperationFactoryTestsBase.m in Sources */,
 				631CBA721C020CCD00E3EBA8 /* AnnouncementListModuleAssemblyTests.m in Sources */,
 				635E18C71CA6B8CE005B8439 /* SpeakerShortInfoModuleAssemblyTests.m in Sources */,
