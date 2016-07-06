@@ -23,20 +23,13 @@
 #import "RamblerLocationInteractorInput.h"
 #import "RamblerLocationRouterInput.h"
 
-@interface RamblerLocationPresenter()
-@end
-
-/**
- *	Presenter модуля, который 1
- *
- *  
- */
 @implementation RamblerLocationPresenter
 
 #pragma mark - RamblerLocationViewOutput
 
-- (void)setupView {
-
+- (void)didTriggerViewReadyEvent {
+    NSArray *directions = [self.interactor obtainDirections];
+    [self.view setupViewWithDirections:directions];
 }
 
 #pragma mark - RamblerLocationInteractorOutput

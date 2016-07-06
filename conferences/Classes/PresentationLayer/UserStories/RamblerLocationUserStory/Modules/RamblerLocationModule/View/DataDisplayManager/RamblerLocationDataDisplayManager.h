@@ -21,6 +21,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+@class DirectionObject;
+
 /**
  @author Egor Tolstoy
  
@@ -34,10 +36,12 @@
  Returns a data source object for UICollectionView with directions
  
  @param collectionView UICollectionView with directions
+ @param directions     Directions data
  
  @return Data source
  */
-- (id<UICollectionViewDataSource>)dataSourceForCollectionView:(UICollectionView *)collectionView;
+- (id<UICollectionViewDataSource>)dataSourceForCollectionView:(UICollectionView *)collectionView
+                                               withDirections:(NSArray <DirectionObject *> *)directions;
 
 /**
  @author Egor Tolstoy

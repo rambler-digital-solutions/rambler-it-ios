@@ -22,11 +22,14 @@
 #import "RamblerLocationViewInput.h"
 
 @protocol RamblerLocationViewOutput;
+@class RamblerLocationDataDisplayManager;
 
 @interface RamblerLocationViewController : UIViewController<RamblerLocationViewInput>
 
 @property (nonatomic, strong) id<RamblerLocationViewOutput> output;
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (nonatomic, strong) RamblerLocationDataDisplayManager *dataDisplayManager;
+
+@property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
 
 @end
 

@@ -26,15 +26,18 @@
 #import "RamblerLocationInteractor.h"
 #import "RamblerLocationPresenter.h"
 #import "RamblerLocationRouter.h"
+#import "RamblerLocationDataDisplayManager.h"
 
 @implementation  RamblerLocationModuleAssembly
 
 - (RamblerLocationViewController *)viewRamblerLocation {
     return [TyphoonDefinition withClass:[RamblerLocationViewController class]
                           configuration:^(TyphoonDefinition *definition) {
-                            [definition injectProperty:@selector(output) 
-                                                  with:[self presenterRamblerLocation]];
-             }];
+                              [definition injectProperty:@selector(output)
+                                                    with:[self presenterRamblerLocation]];
+                              [definition injectProperty:@selector(dataDisplayManager)
+                                                    with:[self dataDisplayManagerRamblerLocation]];
+                          }];
 }
 
 - (RamblerLocationInteractor *)interactorRamblerLocation {
@@ -42,7 +45,7 @@
                           configuration:^(TyphoonDefinition *definition) {
                               [definition injectProperty:@selector(output)
                                                     with:[self presenterRamblerLocation]];
-                              [definition injectProperty:@selector(ramblerLocationService)
+                              [definition injectProperty:@selector(locationService)
                                                     with:[self.serviceComponents ramblerLocationService]];
                           }];
 }
@@ -64,6 +67,10 @@
                           configuration:^(TyphoonDefinition *definition) {
 
            }];
+}
+
+- (RamblerLocationDataDisplayManager *)dataDisplayManagerRamblerLocation {
+    return [TyphoonDefinition withClass:[RamblerLocationDataDisplayManager class]];
 }
 
 @end

@@ -30,7 +30,8 @@
 
 #pragma mark - Interface methods
 
-- (id<UICollectionViewDataSource>)dataSourceForCollectionView:(UICollectionView *)collectionView {
+- (id<UICollectionViewDataSource>)dataSourceForCollectionView:(UICollectionView *)collectionView
+                                               withDirections:(NSArray<DirectionObject *> *)directions {
     return self;
 }
 
