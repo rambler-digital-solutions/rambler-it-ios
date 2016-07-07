@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="cow-pd-70F">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E49a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="cow-pd-70F">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--AnnouncementListTableViewController-->
@@ -12,17 +12,35 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rh4-4F-X5I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2970" y="-59"/>
+            <point key="canvasLocation" x="3270" y="-395"/>
         </scene>
         <!--RamblerLocationViewController-->
         <scene sceneID="umH-x8-iBI">
             <objects>
                 <viewControllerPlaceholder storyboardName="RamblerLocation" referencedIdentifier="RamblerLocationViewController" id="N0F-Xl-Wdc" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="fwf-Bh-7Vb"/>
+                    <navigationItem key="navigationItem" id="Fye-og-Owd"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yUG-41-N1B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2487" y="327"/>
+            <point key="canvasLocation" x="3248" y="229"/>
+        </scene>
+        <!--Как добраться-->
+        <scene sceneID="3eL-eY-bY4">
+            <objects>
+                <navigationController title="Как добраться" id="jQF-k4-Vet" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Как добраться" id="spG-Da-Y0v"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lT1-Hz-AIW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="N0F-Xl-Wdc" kind="relationship" relationship="rootViewController" id="nqt-kh-N0m"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gge-ju-ein" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2787" y="229"/>
         </scene>
         <!--ReportListTableViewController-->
         <scene sceneID="8Z2-PA-vwp">
@@ -32,7 +50,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aAK-nC-eVv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2945" y="714"/>
+            <point key="canvasLocation" x="3245" y="857"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="T2G-Zq-Mi3">
@@ -45,7 +63,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="JLd-bL-bGb" kind="relationship" relationship="viewControllers" id="cv9-Tv-vaS"/>
-                        <segue destination="N0F-Xl-Wdc" kind="relationship" relationship="viewControllers" id="ll0-mJ-Hnu"/>
+                        <segue destination="jQF-k4-Vet" kind="relationship" relationship="viewControllers" id="fQg-cg-LuC"/>
                         <segue destination="24b-F2-UUq" kind="relationship" relationship="viewControllers" id="Yqu-iV-Oce"/>
                     </connections>
                 </tabBarController>
@@ -70,7 +88,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KYO-f8-F0u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2487" y="-59"/>
+            <point key="canvasLocation" x="2787" y="-395"/>
         </scene>
         <!--Отчеты-->
         <scene sceneID="kNR-4e-dMq">
@@ -89,7 +107,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z2T-sU-pWT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2487" y="714"/>
+            <point key="canvasLocation" x="2787" y="857"/>
         </scene>
     </scenes>
 </document>
