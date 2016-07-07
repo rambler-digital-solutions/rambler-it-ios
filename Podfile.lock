@@ -77,6 +77,8 @@ PODS:
   - MMBarricade (1.0.1):
     - MMBarricade/Core (= 1.0.1)
   - MMBarricade/Core (1.0.1)
+  - Nimbus/Collections (1.2.2):
+    - Nimbus/Core
   - Nimbus/Core (1.2.2)
   - Nimbus/Models (1.2.2):
     - Nimbus/Core
@@ -109,6 +111,7 @@ DEPENDENCIES:
   - libextobjc (~> 0.4)
   - MagicalRecord (~> 2.3)
   - MMBarricade (~> 1.0.1)
+  - Nimbus/Collections (from `https://github.com/rambler-ios/nimbus`)
   - Nimbus/Models (from `https://github.com/rambler-ios/nimbus`)
   - OCMock (~> 3.1)
   - Parse (~> 1.8)
