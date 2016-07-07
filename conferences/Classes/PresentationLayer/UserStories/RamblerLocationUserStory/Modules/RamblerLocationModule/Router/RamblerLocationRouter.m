@@ -20,12 +20,14 @@
 
 #import "RamblerLocationRouter.h"
 
-@interface RamblerLocationRouter()
-
-@end
+#import <UIKit/UIKit.h>
 
 @implementation RamblerLocationRouter
 
 #pragma mark - RamblerLocationRouterInput
+
+- (void)openMapsWithUrl:(NSURL *)mapUrl {
+    [self.application openURL:mapUrl];
+}
 
 @end

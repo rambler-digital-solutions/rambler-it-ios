@@ -23,6 +23,9 @@
 #import "RamblerLocationInteractorInput.h"
 #import "RamblerLocationRouterInput.h"
 
+#import <CoreLocation/CoreLocation.h>
+#import <UIKit/UIKit.h>
+
 @implementation RamblerLocationPresenter
 
 #pragma mark - RamblerLocationViewOutput
@@ -30,6 +33,11 @@
 - (void)didTriggerViewReadyEvent {
     NSArray *directions = [self.interactor obtainDirections];
     [self.view setupViewWithDirections:directions];
+}
+
+- (void)didTriggerShareButtonTapEvent {
+    NSURL *locationUrl = [self.interactor obtainRamblerLocationUrl];
+    [self.router openMapsWithUrl:locationUrl];
 }
 
 #pragma mark - RamblerLocationInteractorOutput

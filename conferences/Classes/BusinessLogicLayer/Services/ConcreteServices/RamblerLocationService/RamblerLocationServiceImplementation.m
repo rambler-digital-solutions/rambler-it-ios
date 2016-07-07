@@ -22,8 +22,13 @@
 
 #import "DirectionObject.h"
 
+#import <CoreGraphics/CoreGraphics.h>
+
 static NSString *kDirectionsFileName = @"directions";
 static NSString *kDirectionsFileType = @"plist";
+
+static CGFloat const kRamblerLatitude = 55.70288;
+static CGFloat const kRamblerLongitude = 37.621011;
 
 @implementation RamblerLocationServiceImplementation
 
@@ -32,6 +37,12 @@ static NSString *kDirectionsFileType = @"plist";
                                                           type:kDirectionsFileType];
     NSArray *result = [self.mapper mapResource:resource];
     return result;
+}
+
+- (CLLocationCoordinate2D)obtainRamblerCoordinates {
+    CLLocationCoordinate2D coordinates = CLLocationCoordinate2DMake(kRamblerLatitude,
+                                                                    kRamblerLongitude);
+    return coordinates;
 }
 
 @end

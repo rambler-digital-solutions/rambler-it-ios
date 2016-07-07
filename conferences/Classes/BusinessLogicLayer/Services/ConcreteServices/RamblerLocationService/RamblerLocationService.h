@@ -19,6 +19,7 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 
 @class DirectionObject;
 
@@ -37,5 +38,14 @@
  @return All directions
  */
 - (NSArray <DirectionObject *> *)obtainDirections;
+
+/**
+ @author Egor Tolstoy
+ 
+ The method returns Rambler&Co HQ coordinates
+ 
+ @return CLLocationCoordinate2D
+ */
+- (CLLocationCoordinate2D)obtainRamblerCoordinates;
 
 @end

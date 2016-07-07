@@ -73,4 +73,16 @@
     XCTAssertEqualObjects(result, testMappingResult);
 }
 
+- (void)testThatServiceReturnsCoordinate {
+    // given
+    
+    
+    // when
+    CLLocationCoordinate2D result = [self.service obtainRamblerCoordinates];
+    
+    // then
+    XCTAssertTrue(result.latitude != NSNotFound);
+    XCTAssertTrue(result.longitude != NSNotFound);
+}
+
 @end

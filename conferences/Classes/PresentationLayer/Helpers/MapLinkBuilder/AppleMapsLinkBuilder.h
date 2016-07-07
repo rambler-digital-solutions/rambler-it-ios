@@ -18,25 +18,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "RamblerLocationInteractor.h"
-
-#import "RamblerLocationInteractorOutput.h"
+#import <Foundation/Foundation.h>
 
 #import "MapLinkBuilder.h"
 
-@implementation RamblerLocationInteractor
-
-#pragma mark - RamblerLocationInteractorInput
-
-- (NSArray<DirectionObject *> *)obtainDirections {
-    NSArray *directions = [self.locationService obtainDirections];
-    return directions;
-}
-
-- (NSURL *)obtainRamblerLocationUrl {
-    CLLocationCoordinate2D coordinates = [self.locationService obtainRamblerCoordinates];
-    NSURL *mapUrl = [self.mapLinkBuilder buildUrlWithCoordinates:coordinates];
-    return mapUrl;
-}
+@interface AppleMapsLinkBuilder : NSObject <MapLinkBuilder>
 
 @end

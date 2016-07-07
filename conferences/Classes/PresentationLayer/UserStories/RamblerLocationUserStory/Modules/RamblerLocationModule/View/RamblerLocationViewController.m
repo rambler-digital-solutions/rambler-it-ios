@@ -45,4 +45,10 @@
     [self.collectionView reloadData];
 }
 
+#pragma mark - IBOutlets
+
+- (IBAction)didTapShareButton:(id)sender {
+    [self.output didTriggerShareButtonTapEvent];
+}
+
 @end

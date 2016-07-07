@@ -29,5 +29,12 @@
  */
 - (void)didTriggerViewReadyEvent;
 
+/**
+ @author Egor Tolstoy
+ 
+ Method tells presenter that share button was tapped
+ */
+- (void)didTriggerShareButtonTapEvent;
+
 @end
 

@@ -18,25 +18,23 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "RamblerLocationInteractor.h"
+#import "AppleMapsLinkBuilder.h"
 
-#import "RamblerLocationInteractorOutput.h"
+#import <CoreLocation/CoreLocation.h>
 
-#import "MapLinkBuilder.h"
+static NSString *const kAppleMapsURLString = @"http://maps.apple.com/maps";
+static NSString *const kAppleMapsLocationKey = @"ll";
+static NSString *const kAppleMapsZoomKey = @"z";
+static NSUInteger const kDesiredZoomLevel = 16;
 
-@implementation RamblerLocationInteractor
+@implementation AppleMapsLinkBuilder
 
-#pragma mark - RamblerLocationInteractorInput
+#pragma mark - <MapLinkBuilder>
 
-- (NSArray<DirectionObject *> *)obtainDirections {
-    NSArray *directions = [self.locationService obtainDirections];
-    return directions;
-}
-
-- (NSURL *)obtainRamblerLocationUrl {
-    CLLocationCoordinate2D coordinates = [self.locationService obtainRamblerCoordinates];
-    NSURL *mapUrl = [self.mapLinkBuilder buildUrlWithCoordinates:coordinates];
-    return mapUrl;
+- (NSURL *)buildUrlWithCoordinates:(CLLocationCoordinate2D)coordinates {
+    NSString *urlString = [NSString stringWithFormat:@"%@?%@=%f,%f&%@=%lu", kAppleMapsURLString, kAppleMapsLocationKey, coordinates.latitude, coordinates.longitude, kAppleMapsZoomKey, kDesiredZoomLevel];
+    NSURL *url = [NSURL URLWithString:urlString];
+    return url;
 }
 
 @end

@@ -24,12 +24,14 @@
 #import "RamblerLocationService.h"
 
 @protocol RamblerLocationInteractorOutput;
+@protocol MapLinkBuilder;
 
 @interface RamblerLocationInteractor : NSObject<RamblerLocationInteractorInput>
 
 @property (nonatomic, weak) id<RamblerLocationInteractorOutput> output;
 
 @property (nonatomic, strong) id<RamblerLocationService> locationService;
+@property (nonatomic, strong) id<MapLinkBuilder> mapLinkBuilder;
 
 @end
 

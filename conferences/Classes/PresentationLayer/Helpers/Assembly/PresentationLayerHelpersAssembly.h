@@ -22,6 +22,7 @@
 
 @class EventTypeDeterminator;
 @class DateFormatter;
+@protocol MapLinkBuilder;
 
 /**
  @author Artem Karpushin
@@ -32,5 +33,6 @@
 
 - (EventTypeDeterminator *)eventTypeDeterminator;
 - (DateFormatter *)dateFormatter;
+- (id<MapLinkBuilder>)appleMapsLinkBuilder;
 
 @end

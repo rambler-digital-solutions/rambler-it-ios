@@ -33,5 +33,14 @@
  */
 - (NSArray <DirectionObject *> *)obtainDirections;
 
+/**
+ @author Egor Tolstoy
+ 
+ The method returns an url constructed to open Apple Maps with Rambler location
+ 
+ @return NSURL
+ */
+- (NSURL *)obtainRamblerLocationUrl;
+
 @end
 

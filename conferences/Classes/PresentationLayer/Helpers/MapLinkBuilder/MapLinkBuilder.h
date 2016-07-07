@@ -18,25 +18,25 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "RamblerLocationInteractor.h"
+#import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 
-#import "RamblerLocationInteractorOutput.h"
+/**
+ @author Egor Tolstoy
+ 
+ The protocol describes an object capable of building NSURLs for opening location point in different maps applications
+ */
+@protocol MapLinkBuilder <NSObject>
 
-#import "MapLinkBuilder.h"
-
-@implementation RamblerLocationInteractor
-
-#pragma mark - RamblerLocationInteractorInput
-
-- (NSArray<DirectionObject *> *)obtainDirections {
-    NSArray *directions = [self.locationService obtainDirections];
-    return directions;
-}
-
-- (NSURL *)obtainRamblerLocationUrl {
-    CLLocationCoordinate2D coordinates = [self.locationService obtainRamblerCoordinates];
-    NSURL *mapUrl = [self.mapLinkBuilder buildUrlWithCoordinates:coordinates];
-    return mapUrl;
-}
+/**
+ @author Egor Tolstoy
+ 
+ The method returns a complete URL for opening it in Maps application
+ 
+ @param coordinates Target coordinates
+ 
+ @return NSURL
+ */
+- (NSURL *)buildUrlWithCoordinates:(CLLocationCoordinate2D)coordinates;
 
 @end

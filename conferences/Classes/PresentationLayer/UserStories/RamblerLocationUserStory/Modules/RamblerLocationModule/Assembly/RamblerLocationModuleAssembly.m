@@ -21,6 +21,7 @@
 #import "RamblerLocationModuleAssembly.h"
 
 #import "ServiceComponents.h"
+#import "PresentationLayerHelpersAssembly.h"
 
 #import "RamblerLocationViewController.h"
 #import "RamblerLocationInteractor.h"
@@ -48,6 +49,8 @@
                                                     with:[self presenterRamblerLocation]];
                               [definition injectProperty:@selector(locationService)
                                                     with:[self.serviceComponents ramblerLocationService]];
+                              [definition injectProperty:@selector(mapLinkBuilder)
+                                                    with:[self.presentationLayerHelpersAssembly appleMapsLinkBuilder]];
                           }];
 }
 
@@ -64,7 +67,11 @@
 }
 
 - (RamblerLocationRouter *)routerRamblerLocation {
-    return [TyphoonDefinition withClass:[RamblerLocationRouter class]];
+    return [TyphoonDefinition withClass:[RamblerLocationRouter class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(application)
+                                                    with:[UIApplication sharedApplication]];
+                          }];
 }
 
 - (RamblerLocationDataDisplayManager *)dataDisplayManagerRamblerLocation {

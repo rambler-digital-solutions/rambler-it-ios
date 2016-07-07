@@ -45,7 +45,13 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Как добраться" id="DZy-Ug-hKQ"/>
-                    <navigationItem key="navigationItem" title="Как добраться" id="eWj-pQ-ha1"/>
+                    <navigationItem key="navigationItem" title="Как добраться" id="eWj-pQ-ha1">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="jKS-Vz-0ym">
+                            <connections>
+                                <action selector="didTapShareButton:" destination="kbg-lh-1lE" id="vFh-A1-dTa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
