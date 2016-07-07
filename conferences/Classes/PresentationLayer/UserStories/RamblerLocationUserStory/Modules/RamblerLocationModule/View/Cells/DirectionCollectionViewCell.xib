@@ -83,6 +83,7 @@
             </constraints>
             <connections>
                 <outlet property="descriptionLabel" destination="2iX-Xe-zrd" id="CUm-Hm-jhb"/>
+                <outlet property="scrollView" destination="sew-wL-ELY" id="yCh-ne-paz"/>
                 <outlet property="titleLabel" destination="TXi-Lj-0P9" id="aiQ-3f-3of"/>
             </connections>
         </collectionViewCell>

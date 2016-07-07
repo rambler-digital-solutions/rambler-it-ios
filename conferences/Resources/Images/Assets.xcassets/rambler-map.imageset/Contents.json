@@ -7,12 +7,10 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "rambler-map@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "rambler-map@3x.png",
       "scale" : "3x"
     }
   ],

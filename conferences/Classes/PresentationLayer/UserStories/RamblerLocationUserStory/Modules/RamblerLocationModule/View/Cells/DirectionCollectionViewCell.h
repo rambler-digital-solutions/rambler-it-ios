@@ -27,6 +27,7 @@
  */
 @interface DirectionCollectionViewCell : UICollectionViewCell <NICollectionViewCell>
 
+@property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, weak) IBOutlet UILabel *titleLabel;
 @property (nonatomic, weak) IBOutlet UILabel *descriptionLabel;
 

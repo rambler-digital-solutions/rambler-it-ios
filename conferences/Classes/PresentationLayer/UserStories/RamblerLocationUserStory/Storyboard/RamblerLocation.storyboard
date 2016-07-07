@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rambler-map" translatesAutoresizingMaskIntoConstraints="NO" id="oZO-Be-Sfh">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rambler-map" translatesAutoresizingMaskIntoConstraints="NO" id="oZO-Be-Sfh">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eD1-qt-dDe">
@@ -57,6 +57,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="rambler-map" width="414" height="264"/>
+        <image name="rambler-map" width="1294" height="1462"/>
     </resources>
 </document>

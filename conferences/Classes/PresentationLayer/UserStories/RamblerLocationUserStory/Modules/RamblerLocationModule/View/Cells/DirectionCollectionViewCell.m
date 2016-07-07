@@ -24,6 +24,10 @@
 
 @implementation DirectionCollectionViewCell
 
+- (void)prepareForReuse {
+    [self.scrollView setContentOffset:CGPointZero];
+}
+
 #pragma mark - <NICollectionViewCell>
 
 - (BOOL)shouldUpdateCellWithObject:(DirectionCellObject *)object {
