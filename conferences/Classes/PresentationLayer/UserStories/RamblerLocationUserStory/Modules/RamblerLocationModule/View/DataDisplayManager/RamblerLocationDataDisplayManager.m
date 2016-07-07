@@ -20,9 +20,14 @@
 
 #import "RamblerLocationDataDisplayManager.h"
 
-@interface RamblerLocationDataDisplayManager () <UICollectionViewDataSource, UICollectionViewDelegate>
+#import "DirectionCellObject.h"
+#import "DirectionCellObjectFactory.h"
 
+#import <Nimbus/NimbusCollections.h>
 
+@interface RamblerLocationDataDisplayManager () <UICollectionViewDelegate>
+
+@property (nonatomic, strong) NICollectionViewModel *collectionModel;
 
 @end
 
@@ -32,23 +37,27 @@
 
 - (id<UICollectionViewDataSource>)dataSourceForCollectionView:(UICollectionView *)collectionView
                                                withDirections:(NSArray<DirectionObject *> *)directions {
-    return self;
+    NSArray *cellObjects = [self generateCellObjectsFromDirections:directions];
+    self.collectionModel = [[NICollectionViewModel alloc] initWithListArray:cellObjects
+                                                                   delegate:(id)[NICollectionViewCellFactory class]];
+    return self.collectionModel;
 }
 
 - (id<UICollectionViewDelegate>)delegateForCollectionView:(UICollectionView *)collectionView {
     return self;
 }
 
-#pragma mark - <UICollectionViewDataSource>
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 4;
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return nil;
-}
-
 #pragma mark - <UICollectionViewDelegate>
+
+#pragma mark - Private Methods
+
+- (NSArray *)generateCellObjectsFromDirections:(NSArray <DirectionObject *> *)directions {
+    NSMutableArray *mutableCellObjects = [NSMutableArray new];
+    for (DirectionObject *direction in directions) {
+        DirectionCellObject *cellObject = [self.cellObjectFactory createCellObjectWithObject:direction];
+        [mutableCellObjects addObject:cellObject];
+    }
+    return [mutableCellObjects copy];
+}
 
 @end

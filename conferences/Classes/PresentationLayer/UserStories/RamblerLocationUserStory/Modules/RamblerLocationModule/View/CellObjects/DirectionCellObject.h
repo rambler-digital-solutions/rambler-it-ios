@@ -18,43 +18,40 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+#import <Nimbus/NimbusCollections.h>
 
-@class DirectionCellObjectFactory;
 @class DirectionObject;
 
 /**
  @author Egor Tolstoy
  
- This object incapsulates the logic of providing data to UICollectionView with directions
+ CellObject for UICollectionView with directions to Rambler&Co HQ
  */
-@interface RamblerLocationDataDisplayManager : NSObject
-
-@property (nonatomic, strong) DirectionCellObjectFactory *cellObjectFactory;
+@interface DirectionCellObject : NSObject <NICollectionViewCellObject>
 
 /**
  @author Egor Tolstoy
  
- Returns a data source object for UICollectionView with directions
+ Basic constructor for cell object, which uses a DirectionObject to populate it with data
  
- @param collectionView UICollectionView with directions
- @param directions     Directions data
+ @param direction DirectionObject model
  
- @return Data source
+ @return DirectionCellObject
  */
-- (id<UICollectionViewDataSource>)dataSourceForCollectionView:(UICollectionView *)collectionView
-                                               withDirections:(NSArray <DirectionObject *> *)directions;
++ (instancetype)objectWithDirection:(DirectionObject *)direction;
 
 /**
  @author Egor Tolstoy
  
- Returns a delegate object for UICollectionView with directions
- 
- @param collectionView UICollectionView with directions
- 
- @return Delegate
+ The direction title
  */
-- (id<UICollectionViewDelegate>)delegateForCollectionView:(UICollectionView *)collectionView;
+@property (nonatomic, copy, readonly) NSString *directionTitle;
+
+/**
+ @author Egor Tolstoy
+ 
+ The direction description
+ */
+@property (nonatomic, copy, readonly) NSString *directionDescription;
 
 @end

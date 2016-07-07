@@ -18,43 +18,13 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
-
-@class DirectionCellObjectFactory;
-@class DirectionObject;
+#import <Nimbus/NimbusCollections.h>
 
 /**
  @author Egor Tolstoy
  
- This object incapsulates the logic of providing data to UICollectionView with directions
+ Cell for UICollectionView with directions to Rambler&Co HQ
  */
-@interface RamblerLocationDataDisplayManager : NSObject
-
-@property (nonatomic, strong) DirectionCellObjectFactory *cellObjectFactory;
-
-/**
- @author Egor Tolstoy
- 
- Returns a data source object for UICollectionView with directions
- 
- @param collectionView UICollectionView with directions
- @param directions     Directions data
- 
- @return Data source
- */
-- (id<UICollectionViewDataSource>)dataSourceForCollectionView:(UICollectionView *)collectionView
-                                               withDirections:(NSArray <DirectionObject *> *)directions;
-
-/**
- @author Egor Tolstoy
- 
- Returns a delegate object for UICollectionView with directions
- 
- @param collectionView UICollectionView with directions
- 
- @return Delegate
- */
-- (id<UICollectionViewDelegate>)delegateForCollectionView:(UICollectionView *)collectionView;
+@interface DirectionCollectionViewCell : UICollectionViewCell <NICollectionViewCell>
 
 @end

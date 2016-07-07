@@ -288,6 +288,9 @@
 		9F4077A01D2C11A700D47EF6 /* DirectionObjectMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F40779F1D2C11A700D47EF6 /* DirectionObjectMapperTests.m */; };
 		9F4077A41D2C15C600D47EF6 /* ResourceClientAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4077A31D2C15C600D47EF6 /* ResourceClientAssembly.m */; };
 		9F4077A81D2C164800D47EF6 /* ResourceMapperAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4077A71D2C164800D47EF6 /* ResourceMapperAssembly.m */; };
+		9F4077AC1D2D619400D47EF6 /* DirectionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4077AB1D2D619400D47EF6 /* DirectionCollectionViewCell.m */; };
+		9F4077B01D2E371C00D47EF6 /* DirectionCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4077AF1D2E371C00D47EF6 /* DirectionCellObject.m */; };
+		9F4077B41D2E38AB00D47EF6 /* DirectionCellObjectFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4077B31D2E38AB00D47EF6 /* DirectionCellObjectFactory.m */; };
 		9F8E5F701BC2552600DC10DB /* Conferences.API.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F8E5F6F1BC2552600DC10DB /* Conferences.API.plist */; };
 		9F8E5F741BC255AA00DC10DB /* RequestSignersAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5F731BC255AA00DC10DB /* RequestSignersAssembly.m */; };
 		9F8E5F781BC2571B00DC10DB /* NetworkClientsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5F771BC2571B00DC10DB /* NetworkClientsAssembly.m */; };
@@ -889,6 +892,12 @@
 		9F4077A31D2C15C600D47EF6 /* ResourceClientAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResourceClientAssembly.m; path = Assemblies/ResourceClientAssembly/ResourceClientAssembly.m; sourceTree = "<group>"; };
 		9F4077A61D2C164800D47EF6 /* ResourceMapperAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResourceMapperAssembly.h; path = Assemblies/ResourceMapperAssembly/ResourceMapperAssembly.h; sourceTree = "<group>"; };
 		9F4077A71D2C164800D47EF6 /* ResourceMapperAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResourceMapperAssembly.m; path = Assemblies/ResourceMapperAssembly/ResourceMapperAssembly.m; sourceTree = "<group>"; };
+		9F4077AA1D2D619400D47EF6 /* DirectionCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DirectionCollectionViewCell.h; path = Cells/DirectionCollectionViewCell.h; sourceTree = "<group>"; };
+		9F4077AB1D2D619400D47EF6 /* DirectionCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DirectionCollectionViewCell.m; path = Cells/DirectionCollectionViewCell.m; sourceTree = "<group>"; };
+		9F4077AE1D2E371C00D47EF6 /* DirectionCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DirectionCellObject.h; path = CellObjects/DirectionCellObject.h; sourceTree = "<group>"; };
+		9F4077AF1D2E371C00D47EF6 /* DirectionCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DirectionCellObject.m; path = CellObjects/DirectionCellObject.m; sourceTree = "<group>"; };
+		9F4077B21D2E38AB00D47EF6 /* DirectionCellObjectFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DirectionCellObjectFactory.h; path = CellObjectFactory/DirectionCellObjectFactory.h; sourceTree = "<group>"; };
+		9F4077B31D2E38AB00D47EF6 /* DirectionCellObjectFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DirectionCellObjectFactory.m; path = CellObjectFactory/DirectionCellObjectFactory.m; sourceTree = "<group>"; };
 		9F8E5F6F1BC2552600DC10DB /* Conferences.API.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Conferences.API.plist; path = Assemblies/RequestConfiguratorsFactory/Conferences.API.plist; sourceTree = "<group>"; };
 		9F8E5F711BC2559B00DC10DB /* RequestSignersFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequestSignersFactory.h; path = Assemblies/RequestSignersFactory/RequestSignersFactory.h; sourceTree = "<group>"; };
 		9F8E5F721BC255AA00DC10DB /* RequestSignersAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequestSignersAssembly.h; path = Assemblies/RequestSignersFactory/RequestSignersAssembly.h; sourceTree = "<group>"; };
@@ -1705,6 +1714,9 @@
 		636F8DCF1BCB8FE800552B91 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9F4077B11D2E389700D47EF6 /* CellObjectFactory */,
+				9F4077AD1D2E370100D47EF6 /* CellObjects */,
+				9F4077A91D2D617800D47EF6 /* Cells */,
 				9F4077771D2BF32600D47EF6 /* DataDisplayManager */,
 				636F8DD01BCB8FE800552B91 /* RamblerLocationViewController.h */,
 				636F8DD11BCB8FE800552B91 /* RamblerLocationViewController.m */,
@@ -4524,6 +4536,33 @@
 			name = ResourceMapperAssembly;
 			sourceTree = "<group>";
 		};
+		9F4077A91D2D617800D47EF6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9F4077AA1D2D619400D47EF6 /* DirectionCollectionViewCell.h */,
+				9F4077AB1D2D619400D47EF6 /* DirectionCollectionViewCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		9F4077AD1D2E370100D47EF6 /* CellObjects */ = {
+			isa = PBXGroup;
+			children = (
+				9F4077AE1D2E371C00D47EF6 /* DirectionCellObject.h */,
+				9F4077AF1D2E371C00D47EF6 /* DirectionCellObject.m */,
+			);
+			name = CellObjects;
+			sourceTree = "<group>";
+		};
+		9F4077B11D2E389700D47EF6 /* CellObjectFactory */ = {
+			isa = PBXGroup;
+			children = (
+				9F4077B21D2E38AB00D47EF6 /* DirectionCellObjectFactory.h */,
+				9F4077B31D2E38AB00D47EF6 /* DirectionCellObjectFactory.m */,
+			);
+			name = CellObjectFactory;
+			sourceTree = "<group>";
+		};
 		9F8E5F911BC269D000DC10DB /* OperationFactoriesAssembly */ = {
 			isa = PBXGroup;
 			children = (
@@ -5001,6 +5040,7 @@
 				9FF74FEA1D2699A3000D208D /* SpeakerManagedObject.m in Sources */,
 				9F1830B31BC11879000E21A5 /* CommonNetworkClient.m in Sources */,
 				9F0A84FD1BC1698B006F79FB /* NetworkOperation.m in Sources */,
+				9F4077AC1D2D619400D47EF6 /* DirectionCollectionViewCell.m in Sources */,
 				63F613661CB00A220002AEF0 /* EventInfoTableViewCellObject.m in Sources */,
 				63F613981CB00A220002AEF0 /* SpeakerInfoPresenter.m in Sources */,
 				631808631C4A66FA00A61E7D /* LocalizedStrings.m in Sources */,
@@ -5029,6 +5069,7 @@
 				63F613851CB00A220002AEF0 /* FutureEventCellObjectBuilder.m in Sources */,
 				9FF74FE91D2699A3000D208D /* SpeakerManagedObject+CoreDataProperties.m in Sources */,
 				63F8F2A81BF870A1000017F3 /* LecturePlainObject.m in Sources */,
+				9F4077B41D2E38AB00D47EF6 /* DirectionCellObjectFactory.m in Sources */,
 				6318086D1C4A872600A61E7D /* TableViewCellWithTextLabelAndImageViewCellObject.m in Sources */,
 				63F6135E1CB00A220002AEF0 /* EventHeaderView.m in Sources */,
 				9FF74FFA1D26C448000D208D /* EventListQuery.m in Sources */,
@@ -5065,6 +5106,7 @@
 				6318083F1C482B1300A61E7D /* SpeakerShortInfoModuleAssembly.m in Sources */,
 				9F4077821D2BF56E00D47EF6 /* DirectionObject.m in Sources */,
 				63F6138E1CB00A220002AEF0 /* LectureRouter.m in Sources */,
+				9F4077B01D2E371C00D47EF6 /* DirectionCellObject.m in Sources */,
 				63F6138C1CB00A220002AEF0 /* LecturePresenter.m in Sources */,
 				63F613841CB00A220002AEF0 /* EventCellObjectBuilderBase.m in Sources */,
 				636F8DDC1BCB8FE800552B91 /* RamblerLocationPresenter.m in Sources */,

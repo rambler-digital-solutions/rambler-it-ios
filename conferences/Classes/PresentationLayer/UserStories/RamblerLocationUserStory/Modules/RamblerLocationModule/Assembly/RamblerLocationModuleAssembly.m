@@ -27,6 +27,7 @@
 #import "RamblerLocationPresenter.h"
 #import "RamblerLocationRouter.h"
 #import "RamblerLocationDataDisplayManager.h"
+#import "DirectionCellObjectFactory.h"
 
 @implementation  RamblerLocationModuleAssembly
 
@@ -63,14 +64,19 @@
 }
 
 - (RamblerLocationRouter *)routerRamblerLocation {
-    return [TyphoonDefinition withClass:[RamblerLocationRouter class]
-                          configuration:^(TyphoonDefinition *definition) {
-
-           }];
+    return [TyphoonDefinition withClass:[RamblerLocationRouter class]];
 }
 
 - (RamblerLocationDataDisplayManager *)dataDisplayManagerRamblerLocation {
-    return [TyphoonDefinition withClass:[RamblerLocationDataDisplayManager class]];
+    return [TyphoonDefinition withClass:[RamblerLocationDataDisplayManager class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(cellObjectFactory)
+                                                    with:[self directionCellObjectFactory]];
+                          }];
+}
+
+- (DirectionCellObjectFactory *)directionCellObjectFactory {
+    return [TyphoonDefinition withClass:[DirectionCellObjectFactory class]];
 }
 
 @end

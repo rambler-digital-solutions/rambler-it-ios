@@ -18,43 +18,39 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+#import "DirectionCellObject.h"
 
-@class DirectionCellObjectFactory;
-@class DirectionObject;
+#import "DirectionObject.h"
+#import "DirectionCollectionViewCell.h"
 
-/**
- @author Egor Tolstoy
- 
- This object incapsulates the logic of providing data to UICollectionView with directions
- */
-@interface RamblerLocationDataDisplayManager : NSObject
+@interface DirectionCellObject ()
 
-@property (nonatomic, strong) DirectionCellObjectFactory *cellObjectFactory;
+@property (nonatomic, copy, readwrite) NSString *directionTitle;
+@property (nonatomic, copy, readwrite) NSString *directionDescription;
 
-/**
- @author Egor Tolstoy
- 
- Returns a data source object for UICollectionView with directions
- 
- @param collectionView UICollectionView with directions
- @param directions     Directions data
- 
- @return Data source
- */
-- (id<UICollectionViewDataSource>)dataSourceForCollectionView:(UICollectionView *)collectionView
-                                               withDirections:(NSArray <DirectionObject *> *)directions;
+@end
 
-/**
- @author Egor Tolstoy
- 
- Returns a delegate object for UICollectionView with directions
- 
- @param collectionView UICollectionView with directions
- 
- @return Delegate
- */
-- (id<UICollectionViewDelegate>)delegateForCollectionView:(UICollectionView *)collectionView;
+@implementation DirectionCellObject
+
+#pragma mark - Initialization
+
++ (instancetype)objectWithDirection:(DirectionObject *)direction {
+    return [[[self class] alloc] initWithDirection:direction];
+}
+
+- (instancetype)initWithDirection:(DirectionObject *)direction {
+    self = [super init];
+    if (self) {
+        _directionTitle = direction.directionTitle;
+        _directionDescription = direction.directionDescription;
+    }
+    return self;
+}
+
+#pragma mark - <NICollectionViewCellObject>
+
+- (Class)collectionViewCellClass {
+    return [DirectionCollectionViewCell class];
+}
 
 @end

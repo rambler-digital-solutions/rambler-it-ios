@@ -18,43 +18,16 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+#import "DirectionCellObjectFactory.h"
 
-@class DirectionCellObjectFactory;
-@class DirectionObject;
+#import "DirectionCellObject.h"
+#import "DirectionObject.h"
 
-/**
- @author Egor Tolstoy
- 
- This object incapsulates the logic of providing data to UICollectionView with directions
- */
-@interface RamblerLocationDataDisplayManager : NSObject
+@implementation DirectionCellObjectFactory
 
-@property (nonatomic, strong) DirectionCellObjectFactory *cellObjectFactory;
-
-/**
- @author Egor Tolstoy
- 
- Returns a data source object for UICollectionView with directions
- 
- @param collectionView UICollectionView with directions
- @param directions     Directions data
- 
- @return Data source
- */
-- (id<UICollectionViewDataSource>)dataSourceForCollectionView:(UICollectionView *)collectionView
-                                               withDirections:(NSArray <DirectionObject *> *)directions;
-
-/**
- @author Egor Tolstoy
- 
- Returns a delegate object for UICollectionView with directions
- 
- @param collectionView UICollectionView with directions
- 
- @return Delegate
- */
-- (id<UICollectionViewDelegate>)delegateForCollectionView:(UICollectionView *)collectionView;
+- (DirectionCellObject *)createCellObjectWithObject:(DirectionObject *)direction {
+    DirectionCellObject *cellObject = [DirectionCellObject objectWithDirection:direction];
+    return cellObject;
+}
 
 @end
