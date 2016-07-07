@@ -47,7 +47,12 @@
     return self;
 }
 
-#pragma mark - <NICollectionViewCellObject>
+#pragma mark - <NICollectionViewNibCellObject>
+
+- (UINib *)collectionViewCellNib {
+    return [UINib nibWithNibName:NSStringFromClass([DirectionCollectionViewCell class])
+                          bundle:nil];
+}
 
 - (Class)collectionViewCellClass {
     return [DirectionCollectionViewCell class];

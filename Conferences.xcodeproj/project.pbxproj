@@ -288,7 +288,6 @@
 		9F4077A01D2C11A700D47EF6 /* DirectionObjectMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F40779F1D2C11A700D47EF6 /* DirectionObjectMapperTests.m */; };
 		9F4077A41D2C15C600D47EF6 /* ResourceClientAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4077A31D2C15C600D47EF6 /* ResourceClientAssembly.m */; };
 		9F4077A81D2C164800D47EF6 /* ResourceMapperAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4077A71D2C164800D47EF6 /* ResourceMapperAssembly.m */; };
-		9F4077AC1D2D619400D47EF6 /* DirectionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4077AB1D2D619400D47EF6 /* DirectionCollectionViewCell.m */; };
 		9F4077B01D2E371C00D47EF6 /* DirectionCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4077AF1D2E371C00D47EF6 /* DirectionCellObject.m */; };
 		9F4077B41D2E38AB00D47EF6 /* DirectionCellObjectFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4077B31D2E38AB00D47EF6 /* DirectionCellObjectFactory.m */; };
 		9F8E5F701BC2552600DC10DB /* Conferences.API.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F8E5F6F1BC2552600DC10DB /* Conferences.API.plist */; };
@@ -336,6 +335,8 @@
 		9FF750191D27E6EE000D208D /* ManagedObjectMapperTests.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9FF750181D27E6EE000D208D /* ManagedObjectMapperTests.bundle */; };
 		9FF99E511BC42FF6006F15AF /* OperationSchedulerImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF99E501BC42FF6006F15AF /* OperationSchedulerImplementation.m */; };
 		9FF99E541BC4317E006F15AF /* OperationSchedulerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF99E531BC4317E006F15AF /* OperationSchedulerTests.m */; };
+		9FFEAF051D2E41B4006E9649 /* DirectionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFEAF031D2E41B4006E9649 /* DirectionCollectionViewCell.m */; };
+		9FFEAF061D2E41B4006E9649 /* DirectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FFEAF041D2E41B4006E9649 /* DirectionCollectionViewCell.xib */; };
 		F826C56E7FA67515D33573A9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A4F504A716A8833A7A01A5D /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -892,8 +893,6 @@
 		9F4077A31D2C15C600D47EF6 /* ResourceClientAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResourceClientAssembly.m; path = Assemblies/ResourceClientAssembly/ResourceClientAssembly.m; sourceTree = "<group>"; };
 		9F4077A61D2C164800D47EF6 /* ResourceMapperAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResourceMapperAssembly.h; path = Assemblies/ResourceMapperAssembly/ResourceMapperAssembly.h; sourceTree = "<group>"; };
 		9F4077A71D2C164800D47EF6 /* ResourceMapperAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResourceMapperAssembly.m; path = Assemblies/ResourceMapperAssembly/ResourceMapperAssembly.m; sourceTree = "<group>"; };
-		9F4077AA1D2D619400D47EF6 /* DirectionCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DirectionCollectionViewCell.h; path = Cells/DirectionCollectionViewCell.h; sourceTree = "<group>"; };
-		9F4077AB1D2D619400D47EF6 /* DirectionCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DirectionCollectionViewCell.m; path = Cells/DirectionCollectionViewCell.m; sourceTree = "<group>"; };
 		9F4077AE1D2E371C00D47EF6 /* DirectionCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DirectionCellObject.h; path = CellObjects/DirectionCellObject.h; sourceTree = "<group>"; };
 		9F4077AF1D2E371C00D47EF6 /* DirectionCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DirectionCellObject.m; path = CellObjects/DirectionCellObject.m; sourceTree = "<group>"; };
 		9F4077B21D2E38AB00D47EF6 /* DirectionCellObjectFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DirectionCellObjectFactory.h; path = CellObjectFactory/DirectionCellObjectFactory.h; sourceTree = "<group>"; };
@@ -988,6 +987,9 @@
 		9FF99E4F1BC42FF5006F15AF /* OperationSchedulerImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OperationSchedulerImplementation.h; path = OperationScheduler/OperationSchedulerImplementation.h; sourceTree = "<group>"; };
 		9FF99E501BC42FF6006F15AF /* OperationSchedulerImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OperationSchedulerImplementation.m; path = OperationScheduler/OperationSchedulerImplementation.m; sourceTree = "<group>"; };
 		9FF99E531BC4317E006F15AF /* OperationSchedulerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OperationSchedulerTests.m; path = CoreLayer/OperationScheduler/OperationSchedulerTests.m; sourceTree = "<group>"; };
+		9FFEAF021D2E41B4006E9649 /* DirectionCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DirectionCollectionViewCell.h; path = Cells/DirectionCollectionViewCell.h; sourceTree = "<group>"; };
+		9FFEAF031D2E41B4006E9649 /* DirectionCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DirectionCollectionViewCell.m; path = Cells/DirectionCollectionViewCell.m; sourceTree = "<group>"; };
+		9FFEAF041D2E41B4006E9649 /* DirectionCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DirectionCollectionViewCell.xib; path = Cells/DirectionCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -4539,8 +4541,9 @@
 		9F4077A91D2D617800D47EF6 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				9F4077AA1D2D619400D47EF6 /* DirectionCollectionViewCell.h */,
-				9F4077AB1D2D619400D47EF6 /* DirectionCollectionViewCell.m */,
+				9FFEAF021D2E41B4006E9649 /* DirectionCollectionViewCell.h */,
+				9FFEAF031D2E41B4006E9649 /* DirectionCollectionViewCell.m */,
+				9FFEAF041D2E41B4006E9649 /* DirectionCollectionViewCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -4872,6 +4875,7 @@
 				63FDCE151BBDBA2A00A43B60 /* Info.plist in Resources */,
 				9F8E5F9D1BC2777100DC10DB /* Conferences.Parse.plist in Resources */,
 				6315BA061C9EC23600999877 /* VideoRecordTableViewCell.xib in Resources */,
+				9FFEAF061D2E41B4006E9649 /* DirectionCollectionViewCell.xib in Resources */,
 				63F613711CB00A220002AEF0 /* EventDescriptionTableViewCell.xib in Resources */,
 				63F613B41CB10FC80002AEF0 /* AnnouncementListTableViewCell.xib in Resources */,
 				63FDCE141BBDBA2A00A43B60 /* Assets.xcassets in Resources */,
@@ -5040,7 +5044,6 @@
 				9FF74FEA1D2699A3000D208D /* SpeakerManagedObject.m in Sources */,
 				9F1830B31BC11879000E21A5 /* CommonNetworkClient.m in Sources */,
 				9F0A84FD1BC1698B006F79FB /* NetworkOperation.m in Sources */,
-				9F4077AC1D2D619400D47EF6 /* DirectionCollectionViewCell.m in Sources */,
 				63F613661CB00A220002AEF0 /* EventInfoTableViewCellObject.m in Sources */,
 				63F613981CB00A220002AEF0 /* SpeakerInfoPresenter.m in Sources */,
 				631808631C4A66FA00A61E7D /* LocalizedStrings.m in Sources */,
@@ -5108,6 +5111,7 @@
 				63F6138E1CB00A220002AEF0 /* LectureRouter.m in Sources */,
 				9F4077B01D2E371C00D47EF6 /* DirectionCellObject.m in Sources */,
 				63F6138C1CB00A220002AEF0 /* LecturePresenter.m in Sources */,
+				9FFEAF051D2E41B4006E9649 /* DirectionCollectionViewCell.m in Sources */,
 				63F613841CB00A220002AEF0 /* EventCellObjectBuilderBase.m in Sources */,
 				636F8DDC1BCB8FE800552B91 /* RamblerLocationPresenter.m in Sources */,
 				9F8E5F841BC25A0700DC10DB /* ResponseMappersAssembly.m in Sources */,

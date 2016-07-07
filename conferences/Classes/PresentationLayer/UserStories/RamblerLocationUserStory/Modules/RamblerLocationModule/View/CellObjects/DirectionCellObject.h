@@ -27,7 +27,7 @@
  
  CellObject for UICollectionView with directions to Rambler&Co HQ
  */
-@interface DirectionCellObject : NSObject <NICollectionViewCellObject>
+@interface DirectionCellObject : NSObject <NICollectionViewNibCellObject>
 
 /**
  @author Egor Tolstoy

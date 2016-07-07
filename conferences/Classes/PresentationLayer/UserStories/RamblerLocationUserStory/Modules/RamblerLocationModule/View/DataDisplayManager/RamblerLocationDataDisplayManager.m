@@ -25,7 +25,7 @@
 
 #import <Nimbus/NimbusCollections.h>
 
-@interface RamblerLocationDataDisplayManager () <UICollectionViewDelegate>
+@interface RamblerLocationDataDisplayManager () <UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, strong) NICollectionViewModel *collectionModel;
 
@@ -47,7 +47,19 @@
     return self;
 }
 
-#pragma mark - <UICollectionViewDelegate>
+#pragma mark - <UICollectionViewDelegateFlowLayout>
+
+- (CGSize)collectionView:(UICollectionView *)collectionView
+                  layout:(UICollectionViewLayout *)collectionViewLayout
+  sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return collectionView.frame.size;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView
+                   layout:(UICollectionViewLayout *)collectionViewLayout
+minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+    return 0.0f;
+}
 
 #pragma mark - Private Methods
 

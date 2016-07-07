@@ -27,7 +27,9 @@
 #pragma mark - <NICollectionViewCell>
 
 - (BOOL)shouldUpdateCellWithObject:(DirectionCellObject *)object {
-    self.backgroundColor = [UIColor blueColor];
+    self.titleLabel.text = object.directionTitle;
+    self.descriptionLabel.text = object.directionDescription;
+    
     return YES;
 }
 
