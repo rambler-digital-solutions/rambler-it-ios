@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E49a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="kbg-lh-1lE">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Как проехать-->
@@ -18,39 +18,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rambler-map" translatesAutoresizingMaskIntoConstraints="NO" id="oZO-Be-Sfh">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="204"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="oZO-Be-Sfh" secondAttribute="height" multiplier="80:51" id="df4-ke-lNQ"/>
-                                </constraints>
-                            </imageView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eD1-qt-dDe">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eD1-qt-dDe">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EA7-al-GmX">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EA7-al-GmX">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DirectionCollectionViewCell" id="2eT-32-Iii" customClass="DirectionCollectionViewCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="eD1-qt-dDe" firstAttribute="top" secondItem="SLa-UW-cIm" secondAttribute="top" id="I2y-w6-gGS"/>
                             <constraint firstAttribute="trailing" secondItem="oZO-Be-Sfh" secondAttribute="trailing" id="Off-I4-lry"/>
-                            <constraint firstAttribute="bottom" secondItem="eD1-qt-dDe" secondAttribute="bottom" id="Q39-EU-yuo"/>
+                            <constraint firstAttribute="bottom" secondItem="eD1-qt-dDe" secondAttribute="bottom" constant="49" id="Q39-EU-yuo"/>
+                            <constraint firstItem="oZO-Be-Sfh" firstAttribute="bottom" secondItem="SLa-UW-cIm" secondAttribute="bottomMargin" id="UMA-ob-wZ2"/>
                             <constraint firstAttribute="trailing" secondItem="eD1-qt-dDe" secondAttribute="trailing" id="VAA-AE-qgT"/>
                             <constraint firstItem="eD1-qt-dDe" firstAttribute="leading" secondItem="SLa-UW-cIm" secondAttribute="leading" id="aSG-u4-med"/>
                             <constraint firstItem="oZO-Be-Sfh" firstAttribute="top" secondItem="SLa-UW-cIm" secondAttribute="top" id="mhH-kx-6MP"/>
