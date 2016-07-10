@@ -18,26 +18,46 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "RamblerLocationPresenter.h"
-#import "RamblerLocationViewInput.h"
-#import "RamblerLocationInteractorInput.h"
-#import "RamblerLocationRouterInput.h"
+#import <XCTest/XCTest.h>
+#import <OCMock/OCMock.h>
 
-#import <CoreLocation/CoreLocation.h>
-#import <UIKit/UIKit.h>
+#import "RamblerLocationRouter.h"
 
-@implementation RamblerLocationPresenter
+@interface RamblerLocationRouterTests : XCTestCase
 
-#pragma mark - RamblerLocationViewOutput
+@property (nonatomic, strong) RamblerLocationRouter *router;
+@property (nonatomic, strong) id mockApplication;
 
-- (void)didTriggerViewReadyEvent {
-    NSArray *directions = [self.interactor obtainDirections];
-    [self.view setupViewWithDirections:directions];
+@end
+
+@implementation RamblerLocationRouterTests
+
+- (void)setUp {
+    [super setUp];
+    
+    self.router = [RamblerLocationRouter new];
+    self.mockApplication = OCMClassMock([UIApplication class]);
+    self.router.application = self.mockApplication;
 }
 
-- (void)didTriggerShareButtonTapEvent {
-    NSURL *locationUrl = [self.interactor obtainRamblerLocationUrl];
-    [self.router openMapsWithUrl:locationUrl];
+- (void)tearDown {
+    self.router = nil;
+    
+    [self.mockApplication stopMocking];
+    self.mockApplication = nil;
+    
+    [super tearDown];
+}
+
+- (void)testThatRouterOpensMapsWithUrl {
+    // given
+    NSURL *testUrl = [NSURL URLWithString:@"rambler.ru"];
+    
+    // when
+    [self.router openMapsWithUrl:testUrl];
+    
+    // then
+    OCMVerify([self.mockApplication openURL:testUrl]);
 }
 
 @end

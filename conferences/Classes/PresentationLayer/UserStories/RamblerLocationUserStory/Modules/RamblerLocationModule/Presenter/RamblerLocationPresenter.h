@@ -29,7 +29,7 @@
 @interface RamblerLocationPresenter : NSObject<RamblerLocationViewOutput,RamblerLocationInteractorOutput>
 
 @property (nonatomic, weak) id<RamblerLocationViewInput> view;
-@property (nonatomic, strong) id<RamblerLocationInteractorInput>  interactor;
+@property (nonatomic, strong) id<RamblerLocationInteractorInput> interactor;
 @property (nonatomic, strong) id<RamblerLocationRouterInput> router;
 
 @end

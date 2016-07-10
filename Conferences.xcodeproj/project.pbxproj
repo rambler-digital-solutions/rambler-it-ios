@@ -307,6 +307,9 @@
 		9FC1F6841D28391E0070D9B5 /* EventListQueryTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6831D28391E0070D9B5 /* EventListQueryTransformer.m */; };
 		9FD740381CDC98010071BD71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FD740371CDC98010071BD71 /* LaunchScreen.storyboard */; };
 		9FF37E111D3235BB00471B4E /* AppleMapsLinkBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF37E101D3235BB00471B4E /* AppleMapsLinkBuilderTests.m */; };
+		9FF37E151D32373500471B4E /* RamblerLocationInteractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF37E141D32373500471B4E /* RamblerLocationInteractorTests.m */; };
+		9FF37E181D32397900471B4E /* RamblerLocationPresenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF37E171D32397900471B4E /* RamblerLocationPresenterTests.m */; };
+		9FF37E1B1D323B0200471B4E /* RamblerLocationRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF37E1A1D323B0200471B4E /* RamblerLocationRouterTests.m */; };
 		9FF74FDB1D2699A3000D208D /* EventManagedObject+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF74FBC1D2699A3000D208D /* EventManagedObject+CoreDataProperties.m */; };
 		9FF74FDC1D2699A3000D208D /* EventManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF74FBE1D2699A3000D208D /* EventManagedObject.m */; };
 		9FF74FDD1D2699A3000D208D /* SocialNetworkAccountManagedObject+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF74FC01D2699A3000D208D /* SocialNetworkAccountManagedObject+CoreDataProperties.m */; };
@@ -934,6 +937,9 @@
 		9FC1F6831D28391E0070D9B5 /* EventListQueryTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListQueryTransformer.m; sourceTree = "<group>"; };
 		9FD740371CDC98010071BD71 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9FF37E101D3235BB00471B4E /* AppleMapsLinkBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppleMapsLinkBuilderTests.m; path = MapLinkBuildersTests/AppleMapsLinkBuilderTests.m; sourceTree = "<group>"; };
+		9FF37E141D32373500471B4E /* RamblerLocationInteractorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RamblerLocationInteractorTests.m; path = RamblerLocationModuleTests/RamblerLocationInteractorTests.m; sourceTree = "<group>"; };
+		9FF37E171D32397900471B4E /* RamblerLocationPresenterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RamblerLocationPresenterTests.m; path = RamblerLocationModuleTests/RamblerLocationPresenterTests.m; sourceTree = "<group>"; };
+		9FF37E1A1D323B0200471B4E /* RamblerLocationRouterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RamblerLocationRouterTests.m; path = RamblerLocationModuleTests/RamblerLocationRouterTests.m; sourceTree = "<group>"; };
 		9FF74FBB1D2699A3000D208D /* EventManagedObject+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EventManagedObject+CoreDataProperties.h"; sourceTree = "<group>"; };
 		9FF74FBC1D2699A3000D208D /* EventManagedObject+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EventManagedObject+CoreDataProperties.m"; sourceTree = "<group>"; };
 		9FF74FBD1D2699A3000D208D /* EventManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventManagedObject.h; sourceTree = "<group>"; };
@@ -4671,8 +4677,35 @@
 		9FF37E121D3236AE00471B4E /* RamblerLocationModuleTests */ = {
 			isa = PBXGroup;
 			children = (
+				9FF37E191D323AF600471B4E /* Router */,
+				9FF37E161D32396900471B4E /* Presenter */,
+				9FF37E131D32370A00471B4E /* Interactor */,
 			);
 			name = RamblerLocationModuleTests;
+			sourceTree = "<group>";
+		};
+		9FF37E131D32370A00471B4E /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				9FF37E141D32373500471B4E /* RamblerLocationInteractorTests.m */,
+			);
+			name = Interactor;
+			sourceTree = "<group>";
+		};
+		9FF37E161D32396900471B4E /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				9FF37E171D32397900471B4E /* RamblerLocationPresenterTests.m */,
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
+		9FF37E191D323AF600471B4E /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				9FF37E1A1D323B0200471B4E /* RamblerLocationRouterTests.m */,
+			);
+			name = Router;
 			sourceTree = "<group>";
 		};
 		9FF74FF71D26C41C000D208D /* EventListQuery */ = {
@@ -5255,6 +5288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F4077941D2BFA7100D47EF6 /* CommonResourceClientTests.m in Sources */,
+				9FF37E1B1D323B0200471B4E /* RamblerLocationRouterTests.m in Sources */,
 				63D628EE1BE4CE09004AF98F /* SystemInfrastructureAssembly.m in Sources */,
 				9FF37E111D3235BB00471B4E /* AppleMapsLinkBuilderTests.m in Sources */,
 				63D628F01BE4CE09004AF98F /* ModuleAssemblyBase.m in Sources */,
@@ -5273,6 +5307,7 @@
 				63D628F81BE4CE09004AF98F /* NetworkClientsAssembly.m in Sources */,
 				63F613EF1CB111070002AEF0 /* SpeakerInfoViewControllerTests.m in Sources */,
 				635E18C21CA6A496005B8439 /* LectureModuleAssemblyTests.m in Sources */,
+				9FF37E181D32397900471B4E /* RamblerLocationPresenterTests.m in Sources */,
 				63D628F91BE4CE09004AF98F /* RequestSignersAssembly.m in Sources */,
 				63F613ED1CB111070002AEF0 /* SpeakerInfoInteractorTests.m in Sources */,
 				631CBA741C020CCD00E3EBA8 /* EventModuleAssemblyTests.m in Sources */,
@@ -5336,6 +5371,7 @@
 				63F403AF1BD0D0690086D030 /* ResponseMappersAssemblyTests.m in Sources */,
 				9F1830DF1BC12749000E21A5 /* RCFResponseValidatorTestsBase.m in Sources */,
 				63F403AC1BD0CD460086D030 /* ResponseDeserializersAssemblyTests.m in Sources */,
+				9FF37E151D32373500471B4E /* RamblerLocationInteractorTests.m in Sources */,
 				9FF99E541BC4317E006F15AF /* OperationSchedulerTests.m in Sources */,
 				9F1830B81BC119A5000E21A5 /* CommonNetworkClientTests.m in Sources */,
 				635E18BF1CA6A0A9005B8439 /* SpeakerInfoModuleAssemblyTests.m in Sources */,
