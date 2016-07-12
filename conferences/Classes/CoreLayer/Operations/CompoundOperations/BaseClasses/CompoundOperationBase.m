@@ -51,6 +51,7 @@ static NSUInteger const DefaultMaxConcurrentOperationsCount = 3;
 - (void)cancel {
     [super cancel];
     
+    [self.queue setSuspended:YES];
     [self.queue cancelAllOperations];
     [self completeOperationWithData:nil error:nil];
 }
@@ -79,6 +80,7 @@ static NSUInteger const DefaultMaxConcurrentOperationsCount = 3;
 #pragma mark - Private methods
 
 - (void)completeOperationWithData:(id)data error:(NSError *)error {
+    [self.queue setSuspended:YES];
     [self.queue cancelAllOperations];
     [self complete];
     
