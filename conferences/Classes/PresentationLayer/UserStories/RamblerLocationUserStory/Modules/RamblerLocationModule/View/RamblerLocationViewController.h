@@ -22,10 +22,22 @@
 #import "RamblerLocationViewInput.h"
 
 @protocol RamblerLocationViewOutput;
+@class RamblerLocationDataDisplayManager;
 
 @interface RamblerLocationViewController : UIViewController<RamblerLocationViewInput>
 
+#pragma mark - Dependencies
+
 @property (nonatomic, strong) id<RamblerLocationViewOutput> output;
+@property (nonatomic, strong) RamblerLocationDataDisplayManager *dataDisplayManager;
+
+#pragma mark - Outlets
+
+@property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
+
+#pragma mark - IBActions
+
+- (IBAction)didTapShareButton:(id)sender;
 
 @end
 

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="kbg-lh-1lE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E49a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="kbg-lh-1lE">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Как проехать-->
+        <!--Как добраться-->
         <scene sceneID="gwa-bU-8oJ">
             <objects>
                 <viewController storyboardIdentifier="RamblerLocationViewController" id="kbg-lh-1lE" customClass="RamblerLocationViewController" sceneMemberID="viewController">
@@ -16,26 +17,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyv-db-5VM">
-                                <rect key="frame" x="127.5" y="274" width="65.5" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rambler-map" translatesAutoresizingMaskIntoConstraints="NO" id="oZO-Be-Sfh">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eD1-qt-dDe">
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EA7-al-GmX">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="iyv-db-5VM" firstAttribute="centerX" secondItem="SLa-UW-cIm" secondAttribute="centerX" id="YiU-pw-KCC"/>
-                            <constraint firstItem="iyv-db-5VM" firstAttribute="centerY" secondItem="SLa-UW-cIm" secondAttribute="centerY" id="bgh-hK-RDd"/>
+                            <constraint firstItem="eD1-qt-dDe" firstAttribute="top" secondItem="SLa-UW-cIm" secondAttribute="top" constant="64" id="I2y-w6-gGS"/>
+                            <constraint firstAttribute="trailing" secondItem="oZO-Be-Sfh" secondAttribute="trailing" id="Off-I4-lry"/>
+                            <constraint firstAttribute="bottom" secondItem="eD1-qt-dDe" secondAttribute="bottom" constant="49" id="Q39-EU-yuo"/>
+                            <constraint firstItem="oZO-Be-Sfh" firstAttribute="bottom" secondItem="SLa-UW-cIm" secondAttribute="bottomMargin" id="UMA-ob-wZ2"/>
+                            <constraint firstAttribute="trailing" secondItem="eD1-qt-dDe" secondAttribute="trailing" id="VAA-AE-qgT"/>
+                            <constraint firstItem="eD1-qt-dDe" firstAttribute="leading" secondItem="SLa-UW-cIm" secondAttribute="leading" id="aSG-u4-med"/>
+                            <constraint firstItem="oZO-Be-Sfh" firstAttribute="top" secondItem="SLa-UW-cIm" secondAttribute="top" constant="64" id="mhH-kx-6MP"/>
+                            <constraint firstItem="oZO-Be-Sfh" firstAttribute="leading" secondItem="SLa-UW-cIm" secondAttribute="leading" id="uzh-LX-NRv"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Как проехать" id="DZy-Ug-hKQ"/>
-                    <navigationItem key="navigationItem" id="eWj-pQ-ha1"/>
+                    <tabBarItem key="tabBarItem" title="Как добраться" id="DZy-Ug-hKQ"/>
+                    <navigationItem key="navigationItem" title="Как добраться" id="eWj-pQ-ha1">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="jKS-Vz-0ym">
+                            <connections>
+                                <action selector="didTapShareButton:" destination="kbg-lh-1lE" id="vFh-A1-dTa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="collectionView" destination="eD1-qt-dDe" id="DOe-x5-0QU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h56-b4-Lai" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="771" y="269"/>
+            <point key="canvasLocation" x="674" y="171"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="rambler-map" width="1294" height="1462"/>
+    </resources>
 </document>

@@ -26,6 +26,7 @@
 @protocol EventListService;
 @protocol PrototypeMapper;
 @protocol EventStoreServiceProtocol;
+@protocol RamblerLocationService;
 
 @protocol ServiceComponents <NSObject>
 
@@ -33,6 +34,7 @@
 - (id <EventService>)eventService;
 - (id <EventListService>)eventListService;
 - (id <EventStoreServiceProtocol>)eventStoreService;
+- (id <RamblerLocationService>)ramblerLocationService;
 
 // вынести из сервисов
 - (id <PrototypeMapper>)eventPrototypeMapper;

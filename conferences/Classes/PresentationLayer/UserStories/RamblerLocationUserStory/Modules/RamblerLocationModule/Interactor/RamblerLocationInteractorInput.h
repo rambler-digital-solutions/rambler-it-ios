@@ -20,7 +20,27 @@
 
 #import <Foundation/Foundation.h>
 
+@class DirectionObject;
+
 @protocol RamblerLocationInteractorInput <NSObject>
+
+/**
+ @author Egor Tolstoy
+ 
+ The method returns all of the available directions to Rambler&Co HQ
+ 
+ @return NSArray <DirectionObject *>
+ */
+- (NSArray <DirectionObject *> *)obtainDirections;
+
+/**
+ @author Egor Tolstoy
+ 
+ The method returns an url constructed to open Apple Maps with Rambler location
+ 
+ @return NSURL
+ */
+- (NSURL *)obtainRamblerLocationUrl;
 
 @end
 

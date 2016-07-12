@@ -22,5 +22,14 @@
 
 @protocol RamblerLocationRouterInput <NSObject>
 
+/**
+ @author Egor Tolstoy
+ 
+ The method opens Maps application using given URL
+ 
+ @param mapUrl URL for deeplinking in Maps
+ */
+- (void)openMapsWithUrl:(NSURL *)mapUrl;
+
 @end
 

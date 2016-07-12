@@ -19,8 +19,10 @@
 // THE SOFTWARE.
 
 #import "PresentationLayerHelpersAssembly.h"
+
 #import "EventTypeDeterminator.h"
 #import "DateFormatter.h"
+#import "AppleMapsLinkBuilder.h"
 
 @implementation PresentationLayerHelpersAssembly
 
@@ -30,6 +32,10 @@
 
 - (DateFormatter *)dateFormatter {
     return [TyphoonDefinition withClass:[DateFormatter class]];
+}
+
+- (id<MapLinkBuilder>)appleMapsLinkBuilder {
+    return [TyphoonDefinition withClass:[AppleMapsLinkBuilder class]];
 }
 
 @end

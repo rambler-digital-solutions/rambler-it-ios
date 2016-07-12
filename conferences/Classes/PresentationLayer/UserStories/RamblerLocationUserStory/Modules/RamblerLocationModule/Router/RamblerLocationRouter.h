@@ -21,6 +21,10 @@
 #import <Foundation/Foundation.h>
 #import "RamblerLocationRouterInput.h"
 
+@class UIApplication;
+
 @interface RamblerLocationRouter : NSObject<RamblerLocationRouterInput>
+
+@property (nonatomic, strong) UIApplication *application;
 
 @end

@@ -22,7 +22,19 @@
 
 @protocol RamblerLocationViewOutput <NSObject>
 
-- (void)setupView;
+/**
+ @author Egor Tolstoy
+ 
+ Method tells presenter that view is ready for work
+ */
+- (void)didTriggerViewReadyEvent;
+
+/**
+ @author Egor Tolstoy
+ 
+ Method tells presenter that share button was tapped
+ */
+- (void)didTriggerShareButtonTapEvent;
 
 @end
 

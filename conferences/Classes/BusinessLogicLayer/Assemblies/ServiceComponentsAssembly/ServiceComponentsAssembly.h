@@ -23,8 +23,13 @@
 
 #import "OperationFactoriesAssembly.h"
 
+@class ResourceClientAssembly;
+@class ResourceMapperAssembly;
+
 @interface ServiceComponentsAssembly : TyphoonAssembly <ServiceComponents>
 
-@property (strong, nonatomic, readonly) OperationFactoriesAssembly *operationFactoriesAssembly;
+@property (strong, nonatomic) OperationFactoriesAssembly *operationFactoriesAssembly;
+@property (strong, nonatomic) ResourceClientAssembly *resourceClientAssembly;
+@property (strong, nonatomic) ResourceMapperAssembly *resourceMapperAssembly;
 
 @end

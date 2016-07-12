@@ -20,6 +20,7 @@
 
 #import "RamblerLocationViewController.h"
 #import "RamblerLocationViewOutput.h"
+#import "RamblerLocationDataDisplayManager.h"
 
 @interface RamblerLocationViewController()
 
@@ -29,9 +30,25 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	[self.output setupView];
+	[self.output didTriggerViewReadyEvent];
 }
 
 #pragma mark - RamblerLocationViewInput
+
+- (void)setupViewWithDirections:(NSArray<DirectionObject *> *)directions {
+    id<UICollectionViewDataSource> dataSource = [self.dataDisplayManager dataSourceForCollectionView:self.collectionView
+                                                                                      withDirections:directions];
+    id<UICollectionViewDelegate> delegate = [self.dataDisplayManager delegateForCollectionView:self.collectionView];
+    self.collectionView.dataSource = dataSource;
+    self.collectionView.delegate = delegate;
+    
+    [self.collectionView reloadData];
+}
+
+#pragma mark - IBOutlets
+
+- (IBAction)didTapShareButton:(id)sender {
+    [self.output didTriggerShareButtonTapEvent];
+}
 
 @end

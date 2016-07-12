@@ -19,27 +19,39 @@
 // THE SOFTWARE.
 
 #import "RamblerLocationModuleAssembly.h"
+
+#import "ServiceComponents.h"
+#import "PresentationLayerHelpersAssembly.h"
+
 #import "RamblerLocationViewController.h"
 #import "RamblerLocationInteractor.h"
 #import "RamblerLocationPresenter.h"
 #import "RamblerLocationRouter.h"
+#import "RamblerLocationDataDisplayManager.h"
+#import "DirectionCellObjectFactory.h"
 
 @implementation  RamblerLocationModuleAssembly
 
 - (RamblerLocationViewController *)viewRamblerLocation {
     return [TyphoonDefinition withClass:[RamblerLocationViewController class]
                           configuration:^(TyphoonDefinition *definition) {
-                            [definition injectProperty:@selector(output) 
-                                                  with:[self presenterRamblerLocation]];
-             }];
+                              [definition injectProperty:@selector(output)
+                                                    with:[self presenterRamblerLocation]];
+                              [definition injectProperty:@selector(dataDisplayManager)
+                                                    with:[self dataDisplayManagerRamblerLocation]];
+                          }];
 }
 
 - (RamblerLocationInteractor *)interactorRamblerLocation {
     return [TyphoonDefinition withClass:[RamblerLocationInteractor class]
                           configuration:^(TyphoonDefinition *definition) {
-                            [definition injectProperty:@selector(output) 
-                                                  with:[self presenterRamblerLocation]];
-             }];
+                              [definition injectProperty:@selector(output)
+                                                    with:[self presenterRamblerLocation]];
+                              [definition injectProperty:@selector(locationService)
+                                                    with:[self.serviceComponents ramblerLocationService]];
+                              [definition injectProperty:@selector(mapLinkBuilder)
+                                                    with:[self.presentationLayerHelpersAssembly appleMapsLinkBuilder]];
+                          }];
 }
 
 - (RamblerLocationPresenter *)presenterRamblerLocation {
@@ -57,8 +69,21 @@
 - (RamblerLocationRouter *)routerRamblerLocation {
     return [TyphoonDefinition withClass:[RamblerLocationRouter class]
                           configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(application)
+                                                    with:[UIApplication sharedApplication]];
+                          }];
+}
 
-           }];
+- (RamblerLocationDataDisplayManager *)dataDisplayManagerRamblerLocation {
+    return [TyphoonDefinition withClass:[RamblerLocationDataDisplayManager class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(cellObjectFactory)
+                                                    with:[self directionCellObjectFactory]];
+                          }];
+}
+
+- (DirectionCellObjectFactory *)directionCellObjectFactory {
+    return [TyphoonDefinition withClass:[DirectionCellObjectFactory class]];
 }
 
 @end

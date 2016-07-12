@@ -19,19 +19,24 @@
 // THE SOFTWARE.
 
 #import "RamblerLocationInteractor.h"
+
 #import "RamblerLocationInteractorOutput.h"
 
-@interface RamblerLocationInteractor()
+#import "MapLinkBuilder.h"
 
-@end
-
-/**
- *	Interactor модуля, который 1
- *
- *  
- */
 @implementation RamblerLocationInteractor
 
 #pragma mark - RamblerLocationInteractorInput
+
+- (NSArray<DirectionObject *> *)obtainDirections {
+    NSArray *directions = [self.locationService obtainDirections];
+    return directions;
+}
+
+- (NSURL *)obtainRamblerLocationUrl {
+    CLLocationCoordinate2D coordinates = [self.locationService obtainRamblerCoordinates];
+    NSURL *mapUrl = [self.mapLinkBuilder buildUrlWithCoordinates:coordinates];
+    return mapUrl;
+}
 
 @end

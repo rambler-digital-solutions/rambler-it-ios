@@ -20,7 +20,18 @@
 
 #import <Foundation/Foundation.h>
 
+@class DirectionObject;
+
 @protocol RamblerLocationViewInput <NSObject>
+
+/**
+ @author Egor Tolstoy
+ 
+ Method setups view appearance using directions data
+ 
+ @param directions <#directions description#>
+ */
+- (void)setupViewWithDirections:(NSArray <DirectionObject *> *)directions;
 
 @end
 

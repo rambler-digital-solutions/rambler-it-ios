@@ -19,6 +19,10 @@
 // THE SOFTWARE.
 
 #import "ServiceComponentsAssembly.h"
+
+#import "ResourceClientAssembly.h"
+#import "ResourceMapperAssembly.h"
+
 #import "PushNotificationService.h"
 #import "EventListServiceImplementation.h"
 #import "EventServiceImplementation.h"
@@ -29,6 +33,7 @@
 #import "EventPrototypeMapper.h"
 #import "EventStoreServiceProtocol.h"
 #import "EventStoreService.h"
+#import "RamblerLocationServiceImplementation.h"
 
 @implementation ServiceComponentsAssembly
 
@@ -68,6 +73,16 @@
 
 - (id <EventStoreServiceProtocol>)eventStoreService {
     return [TyphoonDefinition withClass:[EventStoreService class]];
+}
+
+- (id<RamblerLocationService>)ramblerLocationService {
+    return [TyphoonDefinition withClass:[RamblerLocationServiceImplementation class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(client)
+                                                    with:[self.resourceClientAssembly commonResourceClient]];
+                              [definition injectProperty:@selector(mapper)
+                                                    with:[self.resourceMapperAssembly directionObjectMapper]];
+                          }];
 }
 
 @end
