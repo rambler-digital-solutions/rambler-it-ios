@@ -22,8 +22,30 @@
 
 @protocol ReportListInteractorInput <NSObject>
 
+/**
+ @author Zinovyev Konstantin
+ 
+ Метод, который обновляет закешерованные события, полученными с сервера
+ */
 - (void)updateEventList;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ Метод получения всех прошедших событий из кеша, отсортированных по дате
+
+ @return Массив событий
+ */
 - (NSArray *)obtainEventList;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ Методполучения список всех прошедших событий, отсортированных по дате и по предикату
+ 
+ @return Массив событий
+ */
+- (NSArray *)obtainEventListWithPredicate:(NSPredicate *)predicate;
 
 @end
 

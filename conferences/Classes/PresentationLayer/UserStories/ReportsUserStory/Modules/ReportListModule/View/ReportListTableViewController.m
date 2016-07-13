@@ -70,4 +70,11 @@
     [self.output didTriggerTapCellWithEvent:event];
 }
 
+
+#pragma mark - UISearchBarDelegate methods
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    [self.output didSearchBarChangedWithText:searchText];
+}
+
 @end
