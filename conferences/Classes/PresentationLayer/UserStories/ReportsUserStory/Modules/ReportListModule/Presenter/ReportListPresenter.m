@@ -44,4 +44,17 @@
     [self.view updateViewWithEventList:events];
 }
 
+- (void)didSearchBarChangedWithText:(NSString *)text {
+    NSPredicate *predicate;
+    
+    if ([text length] == 0) {
+        predicate = nil;
+    } else {
+        predicate = [NSPredicate predicateWithFormat:@"name CONTAINS[c] %@",text];
+    }
+    
+    NSArray *events = [self.interactor obtainEventListWithPredicate:predicate];
+    [self.view updateViewWithEventList:events];
+}
+
 @end

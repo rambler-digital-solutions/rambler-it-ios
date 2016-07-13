@@ -52,6 +52,13 @@
     return events;
 }
 
+- (NSArray *)obtainEventListWithPredicate:(NSPredicate *)predicate {
+    id managedObjectEvents = [self.eventService obtainEventWithPredicate:predicate];
+    NSArray *events = [self getPlainEventsFromManagedObjects:managedObjectEvents];
+    
+    return events;
+}
+
 #pragma mark - Private methods
 
 - (NSArray *)getPlainEventsFromManagedObjects:(NSArray *)managedObjectEvents {

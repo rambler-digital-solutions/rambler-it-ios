@@ -25,7 +25,24 @@
 @protocol ReportListViewOutput <NSObject>
 
 - (void)setupView;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ Метод сообщает о том, что была нажата ячейка
+ 
+ @param event Событие в нажатой ячейке
+ */
 - (void)didTriggerTapCellWithEvent:(EventPlainObject *)event;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ Обрабатывает текст в веденный в поиске
+ 
+ @param text Введенный в поиск
+ */
+- (void)didSearchBarChangedWithText:(NSString *)text;
 
 @end
 
