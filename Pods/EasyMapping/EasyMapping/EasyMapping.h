@@ -31,4 +31,5 @@
 #import <EasyMapping/EKManagedObjectModel.h>
 #import <EasyMapping/EKMappingProtocol.h>
 #import <EasyMapping/EKPropertyMapping.h>
+#import <EasyMapping/EKRelationshipMapping.h>
 #import <EasyMapping/NSDateFormatter+EasyMappingAdditions.h>

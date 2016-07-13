@@ -96,9 +96,9 @@ static const char scalarTypes[] = {
 #pragma mark Property accessor methods 
 
 + (void)setProperty:(EKPropertyMapping *)propertyMapping onObject:(id)object
- fromRepresentation:(NSDictionary *)representation respectPropertyType:(BOOL)respectPropertyType
+ fromRepresentation:(NSDictionary *)representation respectPropertyType:(BOOL)respectPropertyType ignoreMissingFields:(BOOL)ignoreMIssingFields
 {
-    id value = [self getValueOfProperty:propertyMapping fromRepresentation:representation];
+    id value = [self getValueOfProperty:propertyMapping fromRepresentation:representation ignoreMissingFields:ignoreMIssingFields];
     if (value == (id)[NSNull null]) {
         if (![self propertyNameIsScalar:propertyMapping.property fromObject:object]) {
             [self setValue:nil onObject:object forKeyPath:propertyMapping.property];
@@ -118,6 +118,7 @@ static const char scalarTypes[] = {
   fromRepresentation:(NSDictionary *)representation
            inContext:(NSManagedObjectContext *)context
  respectPropertyType:(BOOL)respectPropertyType
+ignoreMissingFields:(BOOL)ignoreMissingFields
 {
     id value = [self getValueOfManagedProperty:propertyMapping
                             fromRepresentation:representation
@@ -174,12 +175,16 @@ static const char scalarTypes[] = {
     }
 }
 
-+ (id)getValueOfProperty:(EKPropertyMapping *)propertyMapping fromRepresentation:(NSDictionary *)representation
++ (id)getValueOfProperty:(EKPropertyMapping *)propertyMapping fromRepresentation:(NSDictionary *)representation ignoreMissingFields:(BOOL)ignoreMissingFields
 {
+    if (propertyMapping == nil) return nil;
     id value = nil;
     
     if (propertyMapping.valueBlock) {
-        value = propertyMapping.valueBlock(propertyMapping.keyPath, [representation valueForKeyPath:propertyMapping.keyPath]);
+        value = [representation valueForKeyPath:propertyMapping.keyPath];
+        if (value != nil || !ignoreMissingFields) {
+            value = propertyMapping.valueBlock(propertyMapping.keyPath, value);
+        }
     }
     else {
         value = [representation valueForKeyPath:propertyMapping.keyPath];
@@ -192,6 +197,7 @@ static const char scalarTypes[] = {
             fromRepresentation:(NSDictionary *)representation
                      inContext:(NSManagedObjectContext *)context
 {
+    if (mapping == nil) return nil;
     id value = nil;
     
     if (mapping.managedValueBlock) {
@@ -209,8 +215,25 @@ static const char scalarTypes[] = {
                                                 withMapping:(EKObjectMapping *)mapping
 {
     if (mapping.rootPath) {
-        return [externalRepresentation objectForKey:mapping.rootPath];
+        return [externalRepresentation valueForKeyPath:mapping.rootPath];
     }
     return externalRepresentation;
+}
+
++ (NSString *)convertStringFromUnderScoreToCamelCase:(NSString *)string {
+    NSMutableString *output = [NSMutableString string];
+    BOOL makeNextCharacterUpperCase = NO;
+    for (NSInteger idx = 0; idx < [string length]; idx += 1) {
+        unichar c = [string characterAtIndex:idx];
+        if (c == '_') {
+            makeNextCharacterUpperCase = YES;
+        } else if (makeNextCharacterUpperCase) {
+            [output appendString:[[NSString stringWithCharacters:&c length:1] uppercaseString]];
+            makeNextCharacterUpperCase = NO;
+        } else {
+            [output appendFormat:@"%C", c];
+        }
+    }
+    return output;
 }
 @end

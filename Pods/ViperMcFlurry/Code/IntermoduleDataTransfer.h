@@ -8,7 +8,7 @@
 #ifndef _ViperMcFlurry_IntermoduleDataTransfer_h_
 #define _ViperMcFlurry_IntermoduleDataTransfer_h_
 
-#import "IntermoduleDataTransfer/RamblerViperModuleFaсtoryProtocol.h"
+#import "IntermoduleDataTransfer/RamblerViperModuleFactoryProtocol.h"
 #import "IntermoduleDataTransfer/RamblerViperModuleInput.h"
 #import "IntermoduleDataTransfer/RamblerViperModuleOutput.h"
 #import "IntermoduleDataTransfer/RamblerViperModuleTransitionHandlerProtocol.h"

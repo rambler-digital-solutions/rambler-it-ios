@@ -19,9 +19,10 @@ pod 'CrutchKit/Proxying', :git => 'https://github.com/CognitiveDisson/CrutchKit'
 pod 'ViperMcFlurry', '~> 1.1'
 pod 'Fabric'
 pod 'Crashlytics'
+pod 'RamblerTyphoonUtils/AssemblyCollector'
 
 target 'ConferencesTests', :exclusive => true do
     pod 'OCMock', '~> 3.1'
     pod 'MMBarricade', '~> 1.0.1'
-    pod 'RamblerTyphoonUtils/AssemblyTesting', '1.0.0'
+    pod 'RamblerTyphoonUtils/AssemblyTesting'
 end

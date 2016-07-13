@@ -9,6 +9,8 @@
 
 #import "PFUser.h"
 #import "PFUserPrivate.h"
+#import "PFUser+Synchronous.h"
+#import "PFObject+Synchronous.h"
 
 #import <Bolts/BFExecutor.h>
 #import <Bolts/BFTaskCompletionSource.h>
@@ -68,7 +70,7 @@ static BOOL revocableSessionEnabled_;
 
 - (void)setDefaultValues {
     [super setDefaultValues];
-    self.isCurrentUser = NO;
+    self._current = NO;
 }
 
 - (BOOL)needsDefaultACL {
@@ -94,9 +96,9 @@ static BOOL revocableSessionEnabled_;
 
 #pragma mark Validation
 
-- (BFTask PF_GENERIC(PFVoid) *)_validateDeleteAsync {
-    return [[super _validateDeleteAsync] continueWithSuccessBlock:^id(BFTask PF_GENERIC(PFVoid) *task) {
-        if (!self.isAuthenticated) {
+- (BFTask<PFVoid> *)_validateDeleteAsync {
+    return [[super _validateDeleteAsync] continueWithSuccessBlock:^id(BFTask<PFVoid> *task) {
+        if (!self.authenticated) {
             NSError *error = [PFErrorUtilities errorWithCode:kPFErrorUserCannotBeAlteredWithoutSession
                                                      message:@"User cannot be deleted unless they have been authenticated."];
             return [BFTask taskWithError:error];
@@ -105,8 +107,8 @@ static BOOL revocableSessionEnabled_;
     }];
 }
 
-- (BFTask PF_GENERIC(PFVoid) *)_validateSaveEventuallyAsync {
-    return [[super _validateSaveEventuallyAsync] continueWithSuccessBlock:^id(BFTask PF_GENERIC(PFVoid) *task) {
+- (BFTask<PFVoid> *)_validateSaveEventuallyAsync {
+    return [[super _validateSaveEventuallyAsync] continueWithSuccessBlock:^id(BFTask<PFVoid> *task) {
         if ([self isDirtyForKey:PFUserPasswordRESTKey]) {
             NSError *error = [PFErrorUtilities errorWithCode:kPFErrorOperationForbidden
                                                      message:@"Unable to saveEventually a PFUser with dirty password."];
@@ -133,8 +135,8 @@ static BOOL revocableSessionEnabled_;
 
 // Checks the properties on the object before saving.
 - (void)_checkSaveParametersWithCurrentUser:(PFUser *)currentUser {
-    @synchronized ([self lock]) {
-        PFConsistencyAssert(self.objectId || self.isLazy,
+    @synchronized([self lock]) {
+        PFConsistencyAssert(self.objectId || self._lazy,
                             @"User cannot be saved unless they are already signed up. Call signUp first.");
 
         PFConsistencyAssert([self _isAuthenticatedWithCurrentUser:currentUser] ||
@@ -145,7 +147,7 @@ static BOOL revocableSessionEnabled_;
 
 // Checks the properties on the object before signUp.
 - (BFTask *)_validateSignUpAsync {
-    return [BFTask taskFromExecutor:[BFExecutor defaultExecutor] withBlock:^id{
+    return [BFTask taskFromExecutor:[BFExecutor defaultExecutor] withBlock:^id {
         NSError *error = nil;
         @synchronized (self.lock) {
             if (!self.username) {
@@ -168,9 +170,9 @@ static BOOL revocableSessionEnabled_;
 
 - (NSMutableDictionary *)_convertToDictionaryForSaving:(PFOperationSet *)changes
                                      withObjectEncoder:(PFEncoder *)encoder {
-    @synchronized ([self lock]) {
+    @synchronized([self lock]) {
         NSMutableDictionary *serialized = [super _convertToDictionaryForSaving:changes withObjectEncoder:encoder];
-        if ([self.authData count] > 0) {
+        if (self.authData.count > 0) {
             serialized[PFUserAuthDataRESTKey] = [self.authData copy];
         }
         return serialized;
@@ -179,7 +181,7 @@ static BOOL revocableSessionEnabled_;
 
 - (BFTask *)handleSaveResultAsync:(NSDictionary *)result {
     return [[super handleSaveResultAsync:result] continueWithSuccessBlock:^id(BFTask *saveTask) {
-        if (self.isCurrentUser) {
+        if (self._current) {
             [self cleanUpAuthData];
             PFCurrentUserController *controller = [[self class] currentUserController];
             return [[controller saveCurrentObjectAsync:self] continueWithBlock:^id(BFTask *task) {
@@ -195,7 +197,7 @@ static BOOL revocableSessionEnabled_;
 ///--------------------------------------
 
 - (PFRESTCommand *)_currentSignUpCommandForChanges:(PFOperationSet *)changes {
-    @synchronized ([self lock]) {
+    @synchronized([self lock]) {
         NSDictionary *parameters = [self _convertToDictionaryForSaving:changes
                                                      withObjectEncoder:[PFPointerObjectEncoder objectEncoder]];
         return [PFRESTUserCommand signUpUserCommandWithParameters:parameters
@@ -210,7 +212,7 @@ static BOOL revocableSessionEnabled_;
 
 // Constructs the command for user_signup_or_login. This is used for Facebook, Twitter, and other linking services.
 - (PFRESTCommand *)_currentServiceLoginCommandForChanges:(PFOperationSet *)changes {
-    @synchronized ([self lock]) {
+    @synchronized([self lock]) {
         NSDictionary *parameters = [self _convertToDictionaryForSaving:changes
                                                      withObjectEncoder:[PFPointerObjectEncoder objectEncoder]];
         return [PFRESTUserCommand serviceLoginUserCommandWithParameters:parameters
@@ -220,18 +222,18 @@ static BOOL revocableSessionEnabled_;
 }
 
 - (BFTask *)_handleServiceLoginCommandResult:(PFCommandResult *)result {
-    return [BFTask taskFromExecutor:[BFExecutor defaultExecutor] withBlock:^id{
+    return [BFTask taskFromExecutor:[BFExecutor defaultExecutor] withBlock:^id {
         NSDictionary *resultDictionary = result.result;
         return [[self handleSaveResultAsync:resultDictionary] continueWithBlock:^id(BFTask *task) {
             BOOL new = (result.httpResponse.statusCode == 201); // 201 means Created
             @synchronized (self.lock) {
                 if (self._state.isNew != new) {
-                    PFMutableUserState *state = [self._state mutableCopy];
-                    state.isNew = new;
-                    self._state = state;
+                    self._state = [self._state copyByMutatingWithBlock:^(PFMutableUserState *state) {
+                        state.isNew = new;
+                    }];
                 }
                 if (resultDictionary) {
-                    self.isLazy = NO;
+                    self._lazy = NO;
 
                     // Serialize the object to disk so we can later access it via currentUser
                     PFCurrentUserController *controller = [[self class] currentUserController];
@@ -240,7 +242,7 @@ static BOOL revocableSessionEnabled_;
                         return self;
                     }];
                 }
-                return [BFTask taskWithResult:self];
+                return self;
             }
         }];
     }];
@@ -248,7 +250,7 @@ static BOOL revocableSessionEnabled_;
 
 // Override the save result handling with custom user functionality
 - (BFTask *)handleSignUpResultAsync:(BFTask *)task {
-    @synchronized ([self lock]) {
+    @synchronized([self lock]) {
         PFCommandResult *commandResult = task.result;
         NSDictionary *result = commandResult.result;
         BFTask *signUpTask = task;
@@ -265,11 +267,11 @@ static BOOL revocableSessionEnabled_;
             if (saveResult) {
                 @synchronized (self.lock) {
                     // Save the session information
-                    PFMutableUserState *state = [self._state mutableCopy];
-                    state.sessionToken = result[PFUserSessionTokenRESTKey];
-                    state.isNew = YES;
-                    self._state = state;
-                    self.isLazy = NO;
+                    self._state = [self._state copyByMutatingWithBlock:^(PFMutableUserState *state) {
+                        state.sessionToken = result[PFUserSessionTokenRESTKey];
+                        state.isNew = YES;
+                    }];
+                    self._lazy = NO;
                 }
             }
             return signUpTask;
@@ -281,9 +283,9 @@ static BOOL revocableSessionEnabled_;
 }
 
 - (void)cleanUpAuthData {
-    @synchronized ([self lock]) {
+    @synchronized([self lock]) {
         for (NSString *key in [self.authData copy]) {
-            id linkData = [self.authData objectForKey:key];
+            id linkData = self.authData[key];
             if (!linkData || linkData == [NSNull null]) {
                 [self.authData removeObjectForKey:key];
                 [self.linkedServiceNames removeObject:key];
@@ -295,11 +297,11 @@ static BOOL revocableSessionEnabled_;
     }
 }
 
-/*!
+/**
  Copies special PFUser fields from another user.
  */
 - (PFObject *)mergeFromObject:(PFUser *)other {
-    @synchronized ([self lock]) {
+    @synchronized([self lock]) {
         [super mergeFromObject:other];
 
         if (self == other) {
@@ -307,10 +309,10 @@ static BOOL revocableSessionEnabled_;
             return self;
         }
 
-        PFMutableUserState *state = [self._state mutableCopy];
-        state.sessionToken = other.sessionToken;
-        state.isNew = other._state.isNew;
-        self._state = state;
+        self._state = [self._state copyByMutatingWithBlock:^(PFMutableUserState *state) {
+            state.sessionToken = other.sessionToken;
+            state.isNew = other._state.isNew;
+        }];
 
         [self.authData removeAllObjects];
         [self.authData addEntriesFromDictionary:other.authData];
@@ -337,18 +339,16 @@ static BOOL revocableSessionEnabled_;
  }
  */
 - (void)_mergeFromServerWithResult:(NSDictionary *)result decoder:(PFDecoder *)decoder completeData:(BOOL)completeData {
-    @synchronized ([self lock]) {
+    @synchronized([self lock]) {
         // save the session token
-
-        PFMutableUserState *state = [self._state mutableCopy];
 
         NSString *newSessionToken = result[PFUserSessionTokenRESTKey];
         if (newSessionToken) {
             // Save the session token
-            state.sessionToken = newSessionToken;
+            self._state = [self._state copyByMutatingWithBlock:^(PFMutableUserState *state) {
+                state.sessionToken = newSessionToken;
+            }];
         }
-
-        self._state = state;
 
         // Merge the linked service metadata
         NSDictionary *newAuthData = [decoder decodeObject:result[PFUserAuthDataRESTKey]];
@@ -357,7 +357,7 @@ static BOOL revocableSessionEnabled_;
             [self.linkedServiceNames removeAllObjects];
             [newAuthData enumerateKeysAndObjectsUsingBlock:^(id key, id linkData, BOOL *stop) {
                 if (linkData != [NSNull null]) {
-                    [self.authData setObject:linkData forKey:key];
+                    self.authData[key] = linkData;
                     [self.linkedServiceNames addObject:key];
                     [self synchronizeAuthDataWithAuthType:key];
                 } else {
@@ -379,8 +379,8 @@ static BOOL revocableSessionEnabled_;
 }
 
 - (void)synchronizeAuthDataWithAuthType:(NSString *)authType {
-    @synchronized ([self lock]) {
-        if (!self.isCurrentUser) {
+    @synchronized([self lock]) {
+        if (!self._current) {
             return;
         }
 
@@ -395,7 +395,7 @@ static BOOL revocableSessionEnabled_;
 }
 
 - (void)synchronizeAllAuthData {
-    @synchronized ([self lock]) {
+    @synchronized([self lock]) {
         // Ensures that all auth providers have auth data (e.g. access tokens, etc.) that matches this user.
         if (self.authData) {
             [self.authData enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
@@ -406,14 +406,14 @@ static BOOL revocableSessionEnabled_;
 }
 
 - (BFTask *)resolveLazinessAsync:(BFTask *)toAwait {
-    @synchronized ([self lock]) {
-        if (!self.isLazy) {
+    @synchronized([self lock]) {
+        if (!self._lazy) {
             return [BFTask taskWithResult:self];
         }
         if (self.linkedServiceNames.count == 0) {
             // If there are no linked services, treat this like a sign-up.
             return [[self signUpAsync:toAwait] continueAsyncWithSuccessBlock:^id(BFTask *task) {
-                self.isLazy = NO;
+                self._lazy = NO;
                 return self;
             }];
         }
@@ -435,12 +435,12 @@ static BOOL revocableSessionEnabled_;
                 }];
             }
 
-            if ([result.httpResponse statusCode] == 201) {
+            if (result.httpResponse.statusCode == 201) {
                 return [self _handleServiceLoginCommandResult:result];
             } else {
                 // Otherwise, treat this as a fresh login, and switch the current user to the new user.
                 PFUser *newUser = [[self class] _objectFromDictionary:result.result
-                                                     defaultClassName:[self parseClassName]
+                                                     defaultClassName:self.parseClassName
                                                          completeData:YES];
                 @synchronized ([newUser lock]) {
                     [newUser startSave];
@@ -457,10 +457,10 @@ static BOOL revocableSessionEnabled_;
 
 + (instancetype)logInLazyUserWithAuthType:(NSString *)authType authData:(NSDictionary *)authData {
     PFUser *user = [self user];
-    @synchronized ([user lock]) {
-        [user setIsCurrentUser:YES];
-        user.isLazy = YES;
-        [user.authData setObject:authData forKey:authType];
+    @synchronized([user lock]) {
+        user._current = YES;
+        user._lazy = YES;
+        user.authData[authType] = authData;
         [user.linkedServiceNames addObject:authType];
     }
     return user;
@@ -469,7 +469,7 @@ static BOOL revocableSessionEnabled_;
 - (BFTask *)signUpAsync:(BFTask *)toAwait {
     PFUser *currentUser = [[self class] currentUser];
     NSString *token = currentUser.sessionToken;
-    @synchronized ([self lock]) {
+    @synchronized([self lock]) {
         if (self.objectId) {
             // For anonymous users, there may be an objectId.  Setting the userName
             // will have removed the anonymous link and set the value in the authData
@@ -497,22 +497,19 @@ static BOOL revocableSessionEnabled_;
                 // self doesn't have any outstanding saves, so we can safely merge its operations
                 // into the current user.
 
-                PFConsistencyAssert(!isCurrentUser, @"Attempt to merge currentUser with itself.");
+                PFConsistencyAssert(!self._current, @"Attempt to merge currentUser with itself.");
 
-                [self checkForChangesToMutableContainers];
                 @synchronized ([currentUser lock]) {
                     NSString *oldUsername = [currentUser.username copy];
                     NSString *oldPassword = [currentUser.password copy];
                     NSArray *oldAnonymousData = currentUser.authData[PFAnonymousUserAuthenticationType];
-
-                    [currentUser checkForChangesToMutableContainers];
 
                     // Move the changes to this object over to the currentUser object.
                     PFOperationSet *selfOperations = operationSetQueue[0];
                     [operationSetQueue removeAllObjects];
                     [operationSetQueue addObject:[[PFOperationSet alloc] init]];
                     for (NSString *key in selfOperations) {
-                        [currentUser setObject:[selfOperations objectForKey:key] forKey:key];
+                        currentUser[key] = selfOperations[key];
                     }
 
                     currentUser->dirty = YES;
@@ -533,7 +530,7 @@ static BOOL revocableSessionEnabled_;
                             }
 
                             @synchronized(self.lock) {
-                                [operationSetQueue replaceObjectAtIndex:0 withObject:selfOperations];
+                                operationSetQueue[0] = selfOperations;
                                 [self rebuildEstimatedData];
                             }
                         }
@@ -571,7 +568,7 @@ static BOOL revocableSessionEnabled_;
 }
 
 - (void)stripAnonymity {
-    @synchronized ([self lock]) {
+    @synchronized([self lock]) {
         if ([PFAnonymousUtils isLinkedWithUser:self]) {
             NSString *authType = PFAnonymousUserAuthenticationType;
 
@@ -588,7 +585,7 @@ static BOOL revocableSessionEnabled_;
 }
 
 - (void)restoreAnonymity:(id)anonymousData {
-    @synchronized ([self lock]) {
+    @synchronized([self lock]) {
         if (anonymousData && anonymousData != [NSNull null]) {
             NSString *authType = PFAnonymousUserAuthenticationType;
             [self.linkedServiceNames addObject:authType];
@@ -606,7 +603,7 @@ static BOOL revocableSessionEnabled_;
                                      objectEncoder:(PFEncoder *)encoder {
     // If we are curent user - use the latest available session token, as it might have been changed since
     // this command was enqueued.
-    if ([self isCurrentUser]) {
+    if (self._current) {
         token = self.sessionToken;
     }
     return [super _constructSaveCommandForChanges:changes
@@ -619,7 +616,7 @@ static BOOL revocableSessionEnabled_;
 ///--------------------------------------
 
 - (void)mergeFromRESTDictionary:(NSDictionary *)object withDecoder:(PFDecoder *)decoder {
-    @synchronized ([self lock]) {
+    @synchronized([self lock]) {
         NSMutableDictionary *restDictionary = [object mutableCopy];
 
         PFMutableUserState *state = [self._state mutableCopy];
@@ -704,7 +701,7 @@ static BOOL revocableSessionEnabled_;
 
         // Bail-out early if session token is already revocable.
         if ([PFSessionUtilities isSessionTokenRevocable:sessionToken]) {
-            return [BFTask taskWithResult:currentUser];
+            return currentUser;
         }
         return [currentUser _upgradeToRevocableSessionInBackground];
     }];
@@ -723,7 +720,7 @@ static BOOL revocableSessionEnabled_;
 
             // Check session token here as well, to make sure we didn't upgrade the token in between.
             if ([PFSessionUtilities isSessionTokenRevocable:token]) {
-                return [BFTask taskWithResult:self];
+                return self;
             }
 
             PFRESTCommand *command = [PFRESTUserCommand upgradeToRevocableSessionCommandWithSessionToken:token];
@@ -734,9 +731,9 @@ static BOOL revocableSessionEnabled_;
                                                      defaultClassName:[PFSession parseClassName]
                                                          completeData:YES];
                 @synchronized(self.lock) {
-                    PFMutableUserState *state = [self._state mutableCopy];
-                    state.sessionToken = session.sessionToken;
-                    self._state = state;
+                    self._state = [self._state copyByMutatingWithBlock:^(PFMutableUserState *state) {
+                        state.sessionToken = session.sessionToken;
+                    }];
                 }
                 PFCurrentUserController *controller = [[self class] currentUserController];
                 return [controller saveCurrentObjectAsync:self];
@@ -773,9 +770,10 @@ static BOOL revocableSessionEnabled_;
 @dynamic password;
 
 // PFUser (Private):
-@dynamic authData;
-@dynamic linkedServiceNames;
-@dynamic isLazy;
+@synthesize authData = _authData;
+@synthesize linkedServiceNames = _linkedServiceNames;
+@synthesize _current = _current;
+@synthesize _lazy = _lazy;
 
 + (NSString *)parseClassName {
     return @"_User";
@@ -786,29 +784,21 @@ static BOOL revocableSessionEnabled_;
     return [[controller getCurrentObjectAsync] waitForResult:nil withMainThreadWarning:NO];
 }
 
-- (BOOL)isCurrentUser {
-    @synchronized (self.lock) {
-        return isCurrentUser;
+- (BOOL)_current {
+    @synchronized(self.lock) {
+        return _current;
     }
 }
 
-- (void)setIsCurrentUser:(BOOL)aBool {
-    @synchronized (self.lock) {
-        isCurrentUser = aBool;
+- (void)set_current:(BOOL)current {
+    @synchronized(self.lock) {
+        _current = current;
     }
 }
 
 ///--------------------------------------
 #pragma mark - Log In
 ///--------------------------------------
-
-+ (instancetype)logInWithUsername:(NSString *)username password:(NSString *)password {
-    return [self logInWithUsername:username password:password error:nil];
-}
-
-+ (instancetype)logInWithUsername:(NSString *)username password:(NSString *)password error:(NSError **)error {
-    return [[self logInWithUsernameInBackground:username password:password] waitForResult:error];
-}
 
 + (BFTask *)logInWithUsernameInBackground:(NSString *)username password:(NSString *)password {
     return [[self userController] logInCurrentUserAsyncWithUsername:username
@@ -822,15 +812,6 @@ static BOOL revocableSessionEnabled_;
     [[self logInWithUsernameInBackground:username password:password] thenCallBackOnMainThreadAsync:block];
 }
 
-+ (void)logInWithUsernameInBackground:(NSString *)username
-                             password:(NSString *)password
-                               target:(id)target
-                             selector:(SEL)selector {
-    [self logInWithUsernameInBackground:username password:password block:^(PFUser *user, NSError *error) {
-        [PFInternalUtils safePerformSelector:selector withTarget:target object:user object:error];
-    }];
-}
-
 ///--------------------------------------
 #pragma mark - Third-party Authentication
 ///--------------------------------------
@@ -841,25 +822,29 @@ static BOOL revocableSessionEnabled_;
 
 #pragma mark Log In
 
-+ (BFTask *)logInWithAuthTypeInBackground:(NSString *)authType authData:(NSDictionary *)authData {
++ (BFTask<__kindof PFUser *> *)logInWithAuthTypeInBackground:(NSString *)authType
+                                           authData:(NSDictionary<NSString *, NSString *> *)authData {
     PFParameterAssert(authType, @"Can't log in without `authType`.");
     PFParameterAssert(authData, @"Can't log in without `authData`.");
     PFUserAuthenticationController *controller = [self authenticationController];
     PFConsistencyAssert([controller authenticationDelegateForAuthType:authType],
                         @"No registered authentication delegate found for `%@` authentication type. "
-                        @"Register a delegate first via PFUser.registerAuthenticationDelegate(delegate, forAuthType:)", authType);
+                        @"Register a delegate first via PFUser.registerAuthenticationDelegate(delegate, forAuthType:)",
+                        authType);
     return [[self authenticationController] logInUserAsyncWithAuthType:authType authData:authData];
 }
 
 #pragma mark Link
 
-- (BFTask *)linkWithAuthTypeInBackground:(NSString *)authType authData:(NSDictionary *)newAuthData {
+- (BFTask<NSNumber *> *)linkWithAuthTypeInBackground:(NSString *)authType
+                                            authData:(NSDictionary<NSString *, NSString *> *)newAuthData {
     PFParameterAssert(authType, @"Can't link without `authType`.");
-    PFParameterAssert(authData, @"Can't link without `authData`.");
+    PFParameterAssert(newAuthData, @"Can't link without `authData`.");
     PFUserAuthenticationController *controller = [[self class] authenticationController];
     PFConsistencyAssert([controller authenticationDelegateForAuthType:authType],
                         @"No registered authentication delegate found for `%@` authentication type. "
-                        @"Register a delegate first via PFUser.registerAuthenticationDelegate(delegate, forAuthType:)", authType);
+                        @"Register a delegate first via PFUser.registerAuthenticationDelegate(delegate, forAuthType:)",
+                        authType);
 
     @weakify(self);
     return [self.taskQueue enqueue:^BFTask *(BFTask *toAwait) {
@@ -881,14 +866,19 @@ static BOOL revocableSessionEnabled_;
             return [[self saveAsync:nil] continueAsyncWithBlock:^id(BFTask *task) {
                 if (task.result) {
                     [self synchronizeAuthDataWithAuthType:authType];
-                } else {
-                    @synchronized (self.lock) {
-                        [self.authData removeObjectForKey:authType];
-                        [self.linkedServiceNames removeObject:authType];
-                        [self restoreAnonymity:oldAnonymousData];
-                    }
+                    return task;
                 }
-                return task;
+
+                @synchronized (self.lock) {
+                    [self.authData removeObjectForKey:authType];
+                    [self.linkedServiceNames removeObject:authType];
+                    [self restoreAnonymity:oldAnonymousData];
+                }
+                // Save the user to disk in case of failure, since we want the latest succeeded data persistent.
+                PFCurrentUserController *controller = [[self class] currentUserController];
+                return [[controller saveCurrentObjectAsync:self] continueWithBlock:^id(BFTask *_) {
+                    return task; // Roll-forward the result of a save to network, not local save.
+                }];
             }];
         }];
     }];
@@ -897,7 +887,7 @@ static BOOL revocableSessionEnabled_;
 #pragma mark Unlink
 
 - (BFTask *)unlinkWithAuthTypeInBackground:(NSString *)authType {
-    return [BFTask taskFromExecutor:[BFExecutor defaultPriorityBackgroundExecutor] withBlock:^id{
+    return [BFTask taskFromExecutor:[BFExecutor defaultPriorityBackgroundExecutor] withBlock:^id {
         @synchronized (self.lock) {
             if (self.authData[authType]) {
                 self.authData[authType] = [NSNull null];
@@ -928,14 +918,6 @@ static BOOL revocableSessionEnabled_;
 #pragma mark - Become
 ///--------------------------------------
 
-+ (instancetype)become:(NSString *)sessionToken {
-    return [self become:sessionToken error:nil];
-}
-
-+ (instancetype)become:(NSString *)sessionToken error:(NSError **)error {
-    return [[self becomeInBackground:sessionToken] waitForResult:error];
-}
-
 + (BFTask *)becomeInBackground:(NSString *)sessionToken {
     PFParameterAssert(sessionToken, @"Session Token must be provided for login.");
     return [[self userController] logInCurrentUserAsyncWithSessionToken:sessionToken];
@@ -943,12 +925,6 @@ static BOOL revocableSessionEnabled_;
 
 + (void)becomeInBackground:(NSString *)sessionToken block:(PFUserResultBlock)block {
     [[self becomeInBackground:sessionToken] thenCallBackOnMainThreadAsync:block];
-}
-
-+ (void)becomeInBackground:(NSString *)sessionToken target:(id)target selector:(SEL)selector {
-    [self becomeInBackground:sessionToken block:^(PFUser *user, NSError *error) {
-        [PFInternalUtils safePerformSelector:selector withTarget:target object:user object:error];
-    }];
 }
 
 ///--------------------------------------
@@ -974,14 +950,6 @@ static BOOL revocableSessionEnabled_;
 #pragma mark - Request Password Reset
 ///--------------------------------------
 
-+ (BOOL)requestPasswordResetForEmail:(NSString *)email {
-    return [self requestPasswordResetForEmail:email error:nil];
-}
-
-+ (BOOL)requestPasswordResetForEmail:(NSString *)email error:(NSError **)error {
-    return [[[self requestPasswordResetForEmailInBackground:email] waitForResult:error] boolValue];
-}
-
 + (BFTask *)requestPasswordResetForEmailInBackground:(NSString *)email {
     PFParameterAssert(email, @"Email should be provided to request password reset.");
     return [[[self userController] requestPasswordResetAsyncForEmail:email] continueWithSuccessResult:@YES];
@@ -991,19 +959,9 @@ static BOOL revocableSessionEnabled_;
     [[self requestPasswordResetForEmailInBackground:email] thenCallBackOnMainThreadWithBoolValueAsync:block];
 }
 
-+ (void)requestPasswordResetForEmailInBackground:(NSString *)email target:(id)target selector:(SEL)selector {
-    [self requestPasswordResetForEmailInBackground:email block:^(BOOL succeeded, NSError *error) {
-        [PFInternalUtils safePerformSelector:selector withTarget:target object:@(succeeded) object:error];
-    }];
-}
-
 ///--------------------------------------
 #pragma mark - Logging out
 ///--------------------------------------
-
-+ (void)logOut {
-    [[self logOutInBackground] waitForResult:nil withMainThreadWarning:NO];
-}
 
 + (BFTask *)logOutInBackground {
     PFCurrentUserController *controller = [[self class] currentUserController];
@@ -1028,13 +986,13 @@ static BOOL revocableSessionEnabled_;
             [tasks addObject:task];
         }];
 
-        self.isCurrentUser = NO;
+        self._current = NO;
 
         token = [self.sessionToken copy];
 
-        PFMutableUserState *state = [self._state mutableCopy];
-        state.sessionToken = nil;
-        self._state = state;
+        self._state = [self._state copyByMutatingWithBlock:^(PFMutableUserState *state) {
+            state.sessionToken = nil;
+        }];
     }
 
     BFTask *task = [BFTask taskForCompletionOfAllTasks:tasks];
@@ -1067,21 +1025,21 @@ static BOOL revocableSessionEnabled_;
 }
 
 - (NSMutableDictionary *)authData {
-    @synchronized ([self lock]) {
-        if (!authData) {
-            authData = [[NSMutableDictionary alloc] init];
+    @synchronized([self lock]) {
+        if (!_authData) {
+            _authData = [[NSMutableDictionary alloc] init];
         }
     }
-    return authData;
+    return _authData;
 }
 
 - (NSMutableSet *)linkedServiceNames {
-    @synchronized ([self lock]) {
-        if (!linkedServiceNames) {
-            linkedServiceNames = [[NSMutableSet alloc] init];
+    @synchronized([self lock]) {
+        if (!_linkedServiceNames) {
+            _linkedServiceNames = [[NSMutableSet alloc] init];
         }
     }
-    return linkedServiceNames;
+    return _linkedServiceNames;
 }
 
 + (instancetype)user {
@@ -1097,7 +1055,7 @@ static BOOL revocableSessionEnabled_;
     // but not always. Using continueAsyncWithBlock unlocks from the taskQueue, and solves the proplem.
     return [toAwait continueAsyncWithBlock:^id(BFTask *task) {
         @synchronized ([self lock]) {
-            if (self.isLazy) {
+            if (self._lazy) {
                 return [[self resolveLazinessAsync:toAwait] continueAsyncWithSuccessBlock:^id(BFTask *task) {
                     return @(!!task.result);
                 }];
@@ -1109,12 +1067,12 @@ static BOOL revocableSessionEnabled_;
 }
 
 - (BFTask *)fetchAsync:(BFTask *)toAwait {
-    if ([self isLazy]) {
+    if (self._lazy) {
         return [BFTask taskWithResult:@YES];
     }
 
     return [[super fetchAsync:toAwait] continueAsyncWithSuccessBlock:^id(BFTask *fetchAsyncTask) {
-        if ([self isCurrentUser]) {
+        if (self._current) {
             [self cleanUpAuthData];
             PFCurrentUserController *controller = [[self class] currentUserController];
             return [[controller saveCurrentObjectAsync:self] continueAsyncWithBlock:^id(BFTask *task) {
@@ -1126,14 +1084,14 @@ static BOOL revocableSessionEnabled_;
 }
 
 - (instancetype)fetch:(NSError **)error {
-    if (self.isLazy) {
+    if (self._lazy) {
         return self;
     }
     return [super fetch:error];
 }
 
 - (void)fetchInBackgroundWithBlock:(PFObjectResultBlock)block {
-    if (self.isLazy) {
+    if (self._lazy) {
         if (block) {
             block(self, nil);
             return;
@@ -1146,23 +1104,9 @@ static BOOL revocableSessionEnabled_;
     }];
 }
 
-- (BOOL)signUp {
-    return [self signUp:nil];
-}
-
-- (BOOL)signUp:(NSError **)error {
-    return [[[self signUpInBackground] waitForResult:error] boolValue];
-}
-
 - (BFTask *)signUpInBackground {
     return [self.taskQueue enqueue:^BFTask *(BFTask *toAwait) {
         return [self signUpAsync:toAwait];
-    }];
-}
-
-- (void)signUpInBackgroundWithTarget:(id)target selector:(SEL)selector {
-    [self signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        [PFInternalUtils safePerformSelector:selector withTarget:target object:@(succeeded) object:error];
     }];
 }
 
@@ -1172,12 +1116,12 @@ static BOOL revocableSessionEnabled_;
 }
 
 - (BOOL)_isAuthenticatedWithCurrentUser:(PFUser *)currentUser {
-    @synchronized ([self lock]) {
-        BOOL authenticated = self.isLazy || self.sessionToken;
+    @synchronized([self lock]) {
+        BOOL authenticated = self._lazy || self.sessionToken;
         if (!authenticated && currentUser != nil) {
             authenticated = [self.objectId isEqualToString:currentUser.objectId];
         } else {
-            authenticated = self.isCurrentUser;
+            authenticated = self._current;
         }
         return authenticated;
     }
@@ -1192,12 +1136,12 @@ static BOOL revocableSessionEnabled_;
 }
 
 - (void)signUpInBackgroundWithBlock:(PFBooleanResultBlock)block {
-    @synchronized ([self lock]) {
+    @synchronized([self lock]) {
         if (self.objectId) {
             // For anonymous users, there may be an objectId.  Setting the userName
             // will have removed the anonymous link and set the value in the authData
             // object to [NSNull null], so we can just treat it like a save operation.
-            if (authData[PFAnonymousUserAuthenticationType] == [NSNull null]) {
+            if (self.authData[PFAnonymousUserAuthenticationType] == [NSNull null]) {
                 [self saveInBackgroundWithBlock:block];
                 return;
             }
@@ -1220,6 +1164,103 @@ static BOOL revocableSessionEnabled_;
                                             objectId:(NSString *)objectId
                                           isComplete:(BOOL)complete {
     return [PFUserState stateWithParseClassName:className objectId:objectId isComplete:complete];
+}
+
+@end
+
+///--------------------------------------
+#pragma mark - Synchronous
+///--------------------------------------
+
+@implementation PFUser (Synchronous)
+
+#pragma mark Creating a New User
+
+- (BOOL)signUp {
+    return [self signUp:nil];
+}
+
+- (BOOL)signUp:(NSError **)error {
+    return [[[self signUpInBackground] waitForResult:error] boolValue];
+}
+
+#pragma mark Logging In
+
++ (nullable instancetype)logInWithUsername:(NSString *)username password:(NSString *)password {
+    return [self logInWithUsername:username password:password error:nil];
+}
+
++ (nullable instancetype)logInWithUsername:(NSString *)username password:(NSString *)password error:(NSError **)error {
+    return [[self logInWithUsernameInBackground:username password:password] waitForResult:error];
+}
+
+#pragma mark Becoming a User
+
++ (nullable instancetype)become:(NSString *)sessionToken {
+    return [self become:sessionToken error:nil];
+}
+
++ (nullable instancetype)become:(NSString *)sessionToken error:(NSError **)error {
+    return [[self becomeInBackground:sessionToken] waitForResult:error];
+}
+
+#pragma mark Logging Out
+
++ (void)logOut {
+    [[self logOutInBackground] waitForResult:nil withMainThreadWarning:NO];
+}
+
+#pragma mark Requesting a Password Reset
+
++ (BOOL)requestPasswordResetForEmail:(NSString *)email {
+    return [self requestPasswordResetForEmail:email error:nil];
+}
+
++ (BOOL)requestPasswordResetForEmail:(NSString *)email error:(NSError **)error {
+    return [[[self requestPasswordResetForEmailInBackground:email] waitForResult:error] boolValue];
+}
+
+@end
+
+///--------------------------------------
+#pragma mark - Deprecated
+///--------------------------------------
+
+@implementation PFUser (Deprecated)
+
+#pragma mark Creating a new User
+
+- (void)signUpInBackgroundWithTarget:(nullable id)target selector:(nullable SEL)selector {
+    [self signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        [PFInternalUtils safePerformSelector:selector withTarget:target object:@(succeeded) object:error];
+    }];
+}
+
+#pragma mark Logging In
+
++ (void)logInWithUsernameInBackground:(NSString *)username
+                             password:(NSString *)password
+                               target:(nullable id)target
+                             selector:(nullable SEL)selector {
+    [self logInWithUsernameInBackground:username password:password block:^(PFUser *user, NSError *error) {
+        [PFInternalUtils safePerformSelector:selector withTarget:target object:user object:error];
+    }];
+}
+
+#pragma mark Becoming a User
+
++ (void)becomeInBackground:(NSString *)sessionToken target:(nullable id)target selector:(nullable SEL)selector {
+    [self becomeInBackground:sessionToken block:^(PFUser *user, NSError *error) {
+        [PFInternalUtils safePerformSelector:selector withTarget:target object:user object:error];
+    }];
+}
+
+#pragma mark Requesting a Password Reset
+
++ (void)requestPasswordResetForEmailInBackground:(NSString *)email target:(nullable id)target selector:(nullable SEL)selector {
+    [self requestPasswordResetForEmailInBackground:email block:^(BOOL succeeded, NSError *error) {
+        [PFInternalUtils safePerformSelector:selector withTarget:target object:@(succeeded) object:error];
+    }];
 }
 
 @end

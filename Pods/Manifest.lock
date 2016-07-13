@@ -20,23 +20,23 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - Bolts/Tasks (1.4.0)
-  - CocoaLumberjack (2.2.0):
-    - CocoaLumberjack/Default (= 2.2.0)
-    - CocoaLumberjack/Extensions (= 2.2.0)
-  - CocoaLumberjack/Core (2.2.0)
-  - CocoaLumberjack/Default (2.2.0):
+  - Bolts/Tasks (1.8.3)
+  - CocoaLumberjack (2.3.0):
+    - CocoaLumberjack/Default (= 2.3.0)
+    - CocoaLumberjack/Extensions (= 2.3.0)
+  - CocoaLumberjack/Core (2.3.0)
+  - CocoaLumberjack/Default (2.3.0):
     - CocoaLumberjack/Core
-  - CocoaLumberjack/Extensions (2.2.0):
+  - CocoaLumberjack/Extensions (2.3.0):
     - CocoaLumberjack/Default
-  - Crashlytics (3.7.0):
+  - Crashlytics (3.7.2):
     - Fabric (~> 1.6.3)
   - CrutchKit/Proxying (0.0.3):
     - CrutchKit/Runtime
   - CrutchKit/Runtime (0.0.3)
-  - EasyMapping (0.15.3):
-    - EasyMapping/Core (= 0.15.3)
-  - EasyMapping/Core (0.15.3)
+  - EasyMapping (0.18.1):
+    - EasyMapping/Core (= 0.18.1)
+  - EasyMapping/Core (0.18.1)
   - Fabric (1.6.7)
   - libextobjc (0.4.1):
     - libextobjc/EXTADT (= 0.4.1)
@@ -73,7 +73,9 @@ PODS:
     - libextobjc/RuntimeExtensions
   - libextobjc/RuntimeExtensions (0.4.1)
   - libextobjc/UmbrellaHeader (0.4.1)
-  - MagicalRecord (2.3.0)
+  - MagicalRecord (2.3.2):
+    - MagicalRecord/Core (= 2.3.2)
+  - MagicalRecord/Core (2.3.2)
   - MMBarricade (1.0.1):
     - MMBarricade/Core (= 1.0.1)
   - MMBarricade/Core (1.0.1)
@@ -82,23 +84,24 @@ PODS:
   - Nimbus/Core (1.2.2)
   - Nimbus/Models (1.2.2):
     - Nimbus/Core
-  - OCMock (3.2)
-  - Parse (1.9.1):
-    - Bolts/Tasks (>= 1.4.0)
-  - PureLayout (3.0.1)
-  - RamblerTyphoonUtils/AssemblyTesting (1.0.0)
-  - SDWebImage (3.7.3):
-    - SDWebImage/Core (= 3.7.3)
-  - SDWebImage/Core (3.7.3)
-  - Typhoon (3.4.3):
-    - Typhoon/no-arc (= 3.4.3)
-  - Typhoon/no-arc (3.4.3)
+  - OCMock (3.3.1)
+  - Parse (1.13.0):
+    - Bolts/Tasks (~> 1.6)
+  - PureLayout (3.0.2)
+  - RamblerTyphoonUtils/AssemblyCollector (1.2.0)
+  - RamblerTyphoonUtils/AssemblyTesting (1.2.0)
+  - SDWebImage (3.8.1):
+    - SDWebImage/Core (= 3.8.1)
+  - SDWebImage/Core (3.8.1)
+  - Typhoon (3.5.0):
+    - Typhoon/no-arc (= 3.5.0)
+  - Typhoon/no-arc (3.5.0)
   - UIViewController+Routing (0.1.1)
-  - ViperMcFlurry (1.1.5):
-    - ViperMcFlurry/Core (= 1.1.5)
-    - ViperMcFlurry/IntermoduleDataTransfer (= 1.1.5)
-  - ViperMcFlurry/Core (1.1.5)
-  - ViperMcFlurry/IntermoduleDataTransfer (1.1.5):
+  - ViperMcFlurry (1.2.0):
+    - ViperMcFlurry/Core (= 1.2.0)
+    - ViperMcFlurry/IntermoduleDataTransfer (= 1.2.0)
+  - ViperMcFlurry/Core (1.2.0)
+  - ViperMcFlurry/IntermoduleDataTransfer (1.2.0):
     - ViperMcFlurry/Core
 
 DEPENDENCIES:
@@ -116,7 +119,8 @@ DEPENDENCIES:
   - OCMock (~> 3.1)
   - Parse (~> 1.8)
   - PureLayout (~> 3.0)
-  - RamblerTyphoonUtils/AssemblyTesting (= 1.0.0)
+  - RamblerTyphoonUtils/AssemblyCollector
+  - RamblerTyphoonUtils/AssemblyTesting
   - SDWebImage (~> 3.7)
   - Typhoon (~> 3.3)
   - UIViewController+Routing (~> 0.1.0)
@@ -139,23 +143,23 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
-  Bolts: 0e9bce58b9b9f5e8a7a4d47b16d2fabec289072b
-  CocoaLumberjack: 17fe8581f84914d5d7e6360f7c70022b173c3ae0
-  Crashlytics: c3a2333dea9e2733d2777f730910321fc9e25c0d
+  Bolts: 52551f96df2f8aac6b4414347f3f8353a39f1966
+  CocoaLumberjack: 97fab7ee5f507fe54445cca7ea80f926729cfd15
+  Crashlytics: 130ab943f8c78cda7a814b434f270b2e2c8a3cba
   CrutchKit: 32f7fc708ce823010b27f5fa7bc11fc22d0e09bb
-  EasyMapping: 5baf5a9a814538fdac4859cf56270ae761dd904a
+  EasyMapping: 2637b5bac13b6450bc799c28791a419e58c946b0
   Fabric: caf7580c725e64db144f610ac65cd60956911dc7
   libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
-  MagicalRecord: 89eb7d7ead39fb37f01c3d010665ee94d17f8dba
+  MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
   MMBarricade: 61e17f747baa1a33cd7f8a9c75d520ca958508dd
   Nimbus: 355131d4656498bf072fecc142752a9f343eb59b
-  OCMock: 28def049ef47f996b515a8eeea958be7ccab2dbb
-  Parse: 54a965c8c19a6dde90284ab654dbcc77ef8c001b
-  PureLayout: f35f5384c9c4e4479df041dbe33ad7577b71ddfb
-  RamblerTyphoonUtils: bafad8fd42ca7df9239d2ccb68021ba21d81d741
-  SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
-  Typhoon: 382b918b31d5d19a82922448af65f01f08102dc6
+  OCMock: f3f61e6eaa16038c30caa5798c5e49d3307b6f22
+  Parse: f51c24d2feb412e4b2d6cc73d37cb24e8d0089bc
+  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
+  RamblerTyphoonUtils: 814c02d7a0136a164efaae1133f47db1e4579cd0
+  SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+  Typhoon: 6def9f3abad5be6b2c035103c7dde1c887c48e45
   UIViewController+Routing: 6d34de88e5a30250d453f49ddd5993212f279b9a
-  ViperMcFlurry: 74116ba3fcb0add7b9432e81cd3accc784694305
+  ViperMcFlurry: dc0aed190c3485fc6c95a50375d2e9812c9adb7e
 
 COCOAPODS: 0.39.0

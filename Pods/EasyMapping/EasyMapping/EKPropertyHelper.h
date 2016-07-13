@@ -26,6 +26,8 @@
 #import "EKPropertyMapping.h"
 #import "EKObjectMapping.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  `EKPropertyHelper` is internal EasyMapping class, that works with objective-c runtime to get and set values of properties.
  */
@@ -33,31 +35,38 @@
 
 + (BOOL)propertyNameIsScalar:(NSString *)propertyName fromObject:(id)object;
 
-+ (id)propertyRepresentation:(NSArray *)array forObject:(id)object withPropertyName:(NSString *)propertyName;
++ (nullable id)propertyRepresentation:(NSArray *)array forObject:(id)object withPropertyName:(NSString *)propertyName;
 
 + (void)  setProperty:(EKPropertyMapping *)propertyMapping
              onObject:(id)object
    fromRepresentation:(NSDictionary *)representation
-  respectPropertyType:(BOOL)respectPropertyType;
+  respectPropertyType:(BOOL)respectPropertyType
+ ignoreMissingFields:(BOOL)ignoreMissingFields;
 
 + (void) setProperty:(EKPropertyMapping *)propertyMapping
             onObject:(id)object
   fromRepresentation:(NSDictionary *)representation
            inContext:(NSManagedObjectContext *)context
- respectPropertyType:(BOOL)respectPropertyType;
+ respectPropertyType:(BOOL)respectPropertyType
+ ignoreMissingFields:(BOOL)ignoreMissingFields;
 
-+ (id)getValueOfProperty:(EKPropertyMapping *)propertyMapping
-      fromRepresentation:(NSDictionary *)representation;
++ (nullable id)getValueOfProperty:(EKPropertyMapping *)propertyMapping
+               fromRepresentation:(NSDictionary *)representation
+              ignoreMissingFields:(BOOL)ignoreMissingFields;
 
-+ (id)getValueOfManagedProperty:(EKPropertyMapping *)mapping
-             fromRepresentation:(NSDictionary *)representation
-                      inContext:(NSManagedObjectContext *)context;
++ (nullable id)getValueOfManagedProperty:(EKPropertyMapping *)mapping
+                      fromRepresentation:(NSDictionary *)representation
+                               inContext:(NSManagedObjectContext *)context;
 
-+ (void)setValue:(id)value onObject:(id)object forKeyPath:(NSString *)keyPath;
++ (void)setValue:(nullable id)value onObject:(id)object forKeyPath:(NSString *)keyPath;
 
 + (void)addValue:(id)value onObject:(id)object forKeyPath:(NSString *)keyPath;
 
-+ (NSDictionary *)extractRootPathFromExternalRepresentation:(NSDictionary *)externalRepresentation
-                                                withMapping:(EKObjectMapping *)mapping;
++ (nullable NSDictionary *)extractRootPathFromExternalRepresentation:(NSDictionary *)externalRepresentation
+                                                         withMapping:(EKObjectMapping *)mapping;
+
++ (NSString *)convertStringFromUnderScoreToCamelCase:(NSString *)string;
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -13,6 +13,9 @@
 
 #import "PFMacros.h"
 
+PF_TV_UNAVAILABLE_WARNING
+PF_WATCH_UNAVAILABLE_WARNING
+
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol PFPushInternalUtils <NSObject>
@@ -22,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (nullable NSString *)getDeviceTokenFromKeychain;
 + (void)clearDeviceToken;
 
-#if TARGET_OS_IPHONE
+#if TARGET_OS_IOS
 
 + (void)showAlertViewWithTitle:(nullable NSString *)title message:(nullable NSString *)message NS_EXTENSION_UNAVAILABLE_IOS("");
 + (void)playVibrate;
