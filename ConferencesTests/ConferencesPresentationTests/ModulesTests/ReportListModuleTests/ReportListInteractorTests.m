@@ -97,4 +97,22 @@ typedef void (^ProxyBlock)(NSInvocation *);
     OCMVerify([self.mockEventTypeDeterminator determinateTypeForEvent:OCMOCK_ANY]);
 }
 
+- (void)testSuccessObtainEventListWithPredicate {
+    // given
+    EventPlainObject *event = [EventPlainObject new];
+    event.name = @"Test PrediCate";
+    
+    NSArray *events = @[event];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name CONTAINS[c] %@", @"Test"];
+    OCMStub([self.mockEventTypeDeterminator determinateTypeForEvent:OCMOCK_ANY]).andReturn(PastEvent);
+    OCMStub([self.mockEventService obtainEventWithPredicate:predicate]).andReturn(events);
+    
+    // when
+    id result = [self.interactor obtainEventListWithPredicate:predicate];
+    
+    // then
+    XCTAssertNotNil(result);
+    OCMVerify([self.mockPrototypeMapper fillObject:OCMOCK_ANY withObject:event]);
+    OCMVerify([self.mockEventTypeDeterminator determinateTypeForEvent:OCMOCK_ANY]);
+}
 @end

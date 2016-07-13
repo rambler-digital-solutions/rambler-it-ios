@@ -17,7 +17,7 @@
 
 @interface ReportListTableViewControllerTests : XCTestCase
 
-@property (strong, nonatomic) ReportListTableViewController <ReportListDataDisplayManagerDelegate> *viewController;
+@property (strong, nonatomic) ReportListTableViewController <ReportListDataDisplayManagerDelegate, UISearchBarDelegate> *viewController;
 @property (strong, nonatomic) ReportListDataDisplayManager *mockDataDisplayManager;
 @property (strong, nonatomic) id <ReportListViewOutput> mockOutput;
 @property (strong, nonatomic) UITableView *mockTableView;
@@ -119,6 +119,17 @@
     
     // then
     OCMVerify([self.mockOutput didTriggerTapCellWithEvent:event]);
+}
+
+- (void)testSuccessSearchTextChange {
+    // given
+    UISearchBar *searchBar = [UISearchBar new];
+    NSString *searchString = @"search string";
+    // when
+    [self.viewController searchBar:searchBar textDidChange:searchString];
+
+    // then
+    OCMVerify([self.mockOutput didSearchBarChangedWithText:searchString]);
 }
 
 @end

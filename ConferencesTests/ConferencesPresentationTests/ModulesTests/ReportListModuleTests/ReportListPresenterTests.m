@@ -73,15 +73,40 @@
     OCMVerify([self.mockRouter openEventModuleWithEventObjectId:eventId]);
 }
 
-- (void)testSuccessDidUpdateEventList {
+- (void)testCorrectSearchBarChangedWithNilText {
     // given
     NSArray *events = @[];
-    
+    OCMStub([self.mockInteractor obtainEventListWithPredicate:nil]).andReturn(events);
     // when
-    [self.presenter didUpdateEventList:events];
+    [self.presenter didSearchBarChangedWithText:nil];
     
     // then
+    OCMVerify([self.mockInteractor obtainEventListWithPredicate:nil]);
     OCMVerify([self.mockView updateViewWithEventList:events]);
+}
+
+- (void)testCorrectSearchBarChangedWithEmptyText {
+    // given
+    NSArray *events = @[];
+    OCMStub([self.mockInteractor obtainEventListWithPredicate:nil]).andReturn(events);
+    // when
+    [self.presenter didSearchBarChangedWithText:@""];
+    
+    // then
+    OCMVerify([self.mockInteractor obtainEventListWithPredicate:nil]);
+    OCMVerify([self.mockView updateViewWithEventList:events]);
+}
+
+- (void)testCorrectSearchBarChangedWithText {
+    // given
+//    NSArray *events = @[];
+    OCMStub([self.mockInteractor obtainEventListWithPredicate:nil]).andReturn(nil);
+    // when
+    [self.presenter didSearchBarChangedWithText:@"ext"];
+    
+    // then
+    OCMVerify([self.mockInteractor obtainEventListWithPredicate:OCMOCK_ANY]);
+    OCMVerify([self.mockView updateViewWithEventList:nil]);
 }
 
 @end
