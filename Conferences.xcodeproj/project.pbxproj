@@ -40,6 +40,7 @@
 		2BDDAB4E1D363C6A007FD547 /* SpeakerManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDDAB3A1D363C6A007FD547 /* SpeakerManagedObject.m */; };
 		2BDDAB4F1D363C6A007FD547 /* TagManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDDAB3C1D363C6A007FD547 /* TagManagedObject.m */; };
 		2BDDAB501D363C6A007FD547 /* TechManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDDAB3E1D363C6A007FD547 /* TechManagedObject.m */; };
+		2BDDAB551D363D34007FD547 /* ROSPonsomizerImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDDAB541D363D34007FD547 /* ROSPonsomizerImplementation.m */; };
 		5A5668508B92FC833070BA13 /* libPods-ConferencesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E72B1E234365770B87BDC6D /* libPods-ConferencesTests.a */; };
 		6315BA051C9EC23600999877 /* VideoRecordTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6315BA031C9EC23600999877 /* VideoRecordTableViewCell.m */; };
 		6315BA061C9EC23600999877 /* VideoRecordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6315BA041C9EC23600999877 /* VideoRecordTableViewCell.xib */; };
@@ -407,6 +408,9 @@
 		2BDDAB3C1D363C6A007FD547 /* TagManagedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagManagedObject.m; sourceTree = "<group>"; };
 		2BDDAB3D1D363C6A007FD547 /* TechManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TechManagedObject.h; sourceTree = "<group>"; };
 		2BDDAB3E1D363C6A007FD547 /* TechManagedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TechManagedObject.m; sourceTree = "<group>"; };
+		2BDDAB521D363D34007FD547 /* ROSPonsomizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ROSPonsomizer.h; sourceTree = "<group>"; };
+		2BDDAB531D363D34007FD547 /* ROSPonsomizerImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ROSPonsomizerImplementation.h; sourceTree = "<group>"; };
+		2BDDAB541D363D34007FD547 /* ROSPonsomizerImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ROSPonsomizerImplementation.m; sourceTree = "<group>"; };
 		2C01BA17D4018DCA62CC6C3B /* Pods-ConferencesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConferencesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConferencesTests/Pods-ConferencesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		559ED4EDBC100544852E4E6A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		5E72B1E234365770B87BDC6D /* libPods-ConferencesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ConferencesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1038,6 +1042,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2BDDAB511D363D34007FD547 /* Ponsomizer */ = {
+			isa = PBXGroup;
+			children = (
+				2BDDAB521D363D34007FD547 /* ROSPonsomizer.h */,
+				2BDDAB531D363D34007FD547 /* ROSPonsomizerImplementation.h */,
+				2BDDAB541D363D34007FD547 /* ROSPonsomizerImplementation.m */,
+			);
+			path = Ponsomizer;
+			sourceTree = "<group>";
+		};
 		63136F941BDCDB2600994356 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -3266,6 +3280,7 @@
 		63FDCDE21BBDBA2A00A43B60 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2BDDAB511D363D34007FD547 /* Ponsomizer */,
 				9F16665B1D2812CA00D31588 /* Enumerations */,
 				63FA398C1BDD46C800CE6249 /* PlainObjects */,
 				9F0A852E1BC188E0006F79FB /* ObjectQueries */,
@@ -5267,6 +5282,7 @@
 				63FD4E061BE5038D0046378E /* UIColor+Hex.m in Sources */,
 				9F0A84FF1BC1698B006F79FB /* RequestSigningOperation.m in Sources */,
 				9F1830F51BC14444000E21A5 /* NSString+RCFCapitalization.m in Sources */,
+				2BDDAB551D363D34007FD547 /* ROSPonsomizerImplementation.m in Sources */,
 				63F613821CB00A220002AEF0 /* EventDataDisplayManager.m in Sources */,
 				63FD4DFB1BE4FA340046378E /* EventPrototypeMapper.m in Sources */,
 				63F6138B1CB00A220002AEF0 /* LectureInteractor.m in Sources */,
