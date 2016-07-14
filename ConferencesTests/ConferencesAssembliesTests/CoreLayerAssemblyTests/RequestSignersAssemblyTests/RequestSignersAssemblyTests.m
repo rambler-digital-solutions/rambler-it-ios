@@ -24,6 +24,7 @@
 #import "RequestSignersFactory.h"
 #import "RequestSignersAssembly.h"
 #import "ParseRequestSigner.h"
+#import "RamblerInitialAssemblyCollector+Activate.h"
 
 @interface RequestSignersAssemblyTests : RamblerTyphoonAssemblyTests
 
@@ -36,8 +37,8 @@
 - (void)setUp {
     [super setUp];
     
-    self.assembly = [RequestSignersAssembly new];
-    [self.assembly activate];
+    Class class = [RequestSignersAssembly class];
+    self.assembly = [RamblerInitialAssemblyCollector activateAssemblyWithClass:class];
 }
 
 - (void)tearDown {

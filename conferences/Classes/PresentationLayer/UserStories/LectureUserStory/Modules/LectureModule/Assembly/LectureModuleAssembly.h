@@ -20,13 +20,14 @@
 
 #import <Typhoon/Typhoon.h>
 #import "ModuleAssemblyBase.h"
+#import "AssemblyCollector/RamblerInitialAssembly.h"
 
 /**
  @author Artem Karpushin
  
  A TyphoonAssembly which is responsible for creating LectureModule
  */
-@interface LectureModuleAssembly : ModuleAssemblyBase
+@interface LectureModuleAssembly : ModuleAssemblyBase <RamblerInitialAssembly>
 
 @end
 

@@ -41,33 +41,6 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
-	<key>TyphoonAutoInjectionEnabled</key>
-	<true/>
-	<key>TyphoonInitialAssemblies</key>
-	<array>
-		<string>SpeakerInfoModuleAssembly</string>
-		<string>SpeakerShortInfoModuleAssembly</string>
-		<string>LectureModuleAssembly</string>
-		<string>EventHeaderModuleAssembly</string>
-		<string>EventCellObjectBuilderFactory</string>
-		<string>PresentationLayerHelpersAssembly</string>
-		<string>ReportListModuleAssembly</string>
-		<string>EventModuleAssembly</string>
-		<string>OperationFactoriesAssembly</string>
-		<string>ResponseMappersAssembly</string>
-		<string>ResponseValidatorsAssembly</string>
-		<string>NetworkClientsAssembly</string>
-		<string>ResponseDeserializersAssembly</string>
-		<string>RequestSignersAssembly</string>
-		<string>RequestConfiguratorsAssembly</string>
-		<string>ServiceComponentsAssembly</string>
-		<string>ApplicationAssembly</string>
-		<string>RamblerLocationModuleAssembly</string>
-		<string>AnnouncementListModuleAssembly</string>
-		<string>SystemInfrastructureAssembly</string>
-		<string>ResourceClientAssembly</string>
-		<string>ResourceMapperAssembly</string>
-	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

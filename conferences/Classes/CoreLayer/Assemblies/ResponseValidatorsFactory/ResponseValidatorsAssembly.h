@@ -21,12 +21,13 @@
 #import <Typhoon/Typhoon.h>
 
 #import "ResponseValidatorsFactory.h"
+#import "AssemblyCollector/RamblerInitialAssembly.h"
 
 /**
  @author Egor Tolstoy
  
  The implementation of the ResponseValidatorsFactory protocol, based on TyphoonAssembly
  */
-@interface ResponseValidatorsAssembly : TyphoonAssembly <ResponseValidatorsFactory>
+@interface ResponseValidatorsAssembly : TyphoonAssembly <ResponseValidatorsFactory, RamblerInitialAssembly>
 
 @end

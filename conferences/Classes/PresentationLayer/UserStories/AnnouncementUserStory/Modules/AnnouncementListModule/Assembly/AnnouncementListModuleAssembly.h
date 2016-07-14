@@ -19,13 +19,14 @@
 // THE SOFTWARE.
 
 #import "ModuleAssemblyBase.h"
+#import "AssemblyCollector/RamblerInitialAssembly.h"
 
 /**
  @author Artem Karpushin
  
  A TyphoonAssembly which is responsible for creating AnnouncementListModule
  */
-@interface AnnouncementListModuleAssembly : ModuleAssemblyBase
+@interface AnnouncementListModuleAssembly : ModuleAssemblyBase <RamblerInitialAssembly>
 
 @end
 

@@ -21,13 +21,14 @@
 #import <UIKit/UIKit.h>
 
 #import "TyphoonAssembly.h"
+#import "AssemblyCollector/RamblerInitialAssembly.h"
 
 /**
  @author Artem Karpushin
  
  This Assembly is responsible for configuration of the system singletons: NSUserDefaults, NSHTTPCookieStorage, NSNotificationCenter, UIApplication, NSFileManager
  */
-@interface SystemInfrastructureAssembly : TyphoonAssembly
+@interface SystemInfrastructureAssembly : TyphoonAssembly <RamblerInitialAssembly>
 
 - (NSUserDefaults *)userDefaults;
 - (NSHTTPCookieStorage *)httpCookieStorage;

@@ -13,6 +13,7 @@
 
 #import "EventTypeDeterminator.h"
 #import "DateFormatter.h"
+#import "RamblerInitialAssemblyCollector+Activate.h"
 
 @interface PresentationLayerHelpersAssemblyTests : RamblerTyphoonAssemblyTests
 
@@ -25,8 +26,8 @@
 - (void)setUp {
     [super setUp];
     
-    self.assembly = [PresentationLayerHelpersAssembly new];
-    [self.assembly activate];
+    Class class = [PresentationLayerHelpersAssembly class];
+    self.assembly = [RamblerInitialAssemblyCollector activateAssemblyWithClass:class];
 }
 
 - (void)tearDown {

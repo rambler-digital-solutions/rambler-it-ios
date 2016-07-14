@@ -25,6 +25,7 @@
 #import "NetworkClientsFactory.h"
 
 #import "CommonNetworkClient.h"
+#import "RamblerInitialAssemblyCollector+Activate.h"
 
 @interface NetworkClientsAssemblyTests : RamblerTyphoonAssemblyTests
 
@@ -37,8 +38,8 @@
 - (void)setUp {
     [super setUp];
     
-    self.assembly = [NetworkClientsAssembly new];
-    [self.assembly activate];
+    Class class = [NetworkClientsAssembly class];
+    self.assembly = [RamblerInitialAssemblyCollector activateAssemblyWithClass:class];
 }
 
 - (void)tearDown {

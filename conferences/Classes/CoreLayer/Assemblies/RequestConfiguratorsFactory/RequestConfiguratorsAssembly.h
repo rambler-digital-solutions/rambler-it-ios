@@ -21,12 +21,13 @@
 #import <Typhoon/Typhoon.h>
 
 #import "RequestConfiguratorsFactory.h"
+#import "AssemblyCollector/RamblerInitialAssembly.h"
 
 /**
  @author Egor Tolstoy
  
  The implementation of the RequestConfiguratorsFactory protocol, based on TyphoonAssembly
  */
-@interface RequestConfiguratorsAssembly : TyphoonAssembly <RequestConfiguratorsFactory>
+@interface RequestConfiguratorsAssembly : TyphoonAssembly <RequestConfiguratorsFactory, RamblerInitialAssembly>
 
 @end

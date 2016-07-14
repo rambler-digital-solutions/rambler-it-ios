@@ -21,12 +21,13 @@
 #import <Typhoon/Typhoon.h>
 
 #import "ResponseMappersFactory.h"
+#import "AssemblyCollector/RamblerInitialAssembly.h"
 
 /**
  @author Egor Tolstoy
  
  The implementation of the ResponseMappersFactory protocol, based on TyphoonAssembly
  */
-@interface ResponseMappersAssembly : TyphoonAssembly <ResponseMappersFactory>
+@interface ResponseMappersAssembly : TyphoonAssembly <ResponseMappersFactory, RamblerInitialAssembly>
 
 @end

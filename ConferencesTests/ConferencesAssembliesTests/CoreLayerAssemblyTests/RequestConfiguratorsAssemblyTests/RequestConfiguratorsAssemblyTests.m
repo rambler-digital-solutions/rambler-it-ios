@@ -24,6 +24,7 @@
 #import "RequestConfiguratorsAssembly.h"
 #import "RequestConfiguratorsFactory.h"
 #import "RESTRequestConfigurator.h"
+#import "RamblerInitialAssemblyCollector+Activate.h"
 
 @interface RequestConfiguratorsAssemblyTests : RamblerTyphoonAssemblyTests
 
@@ -36,8 +37,8 @@
 - (void)setUp {
     [super setUp];
     
-    self.assembly = [RequestConfiguratorsAssembly new];
-    [self.assembly activate];
+    Class class = [RequestConfiguratorsAssembly class];
+    self.assembly = [RamblerInitialAssemblyCollector activateAssemblyWithClass:class];
 }
 
 - (void)tearDown {

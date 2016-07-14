@@ -19,8 +19,9 @@
 // THE SOFTWARE.
 
 #import "ModuleAssemblyBase.h"
+#import "AssemblyCollector/RamblerInitialAssembly.h"
 
-@interface ReportListModuleAssembly : ModuleAssemblyBase
+@interface ReportListModuleAssembly : ModuleAssemblyBase <RamblerInitialAssembly>
 
 @end
 

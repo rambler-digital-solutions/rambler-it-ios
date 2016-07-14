@@ -27,6 +27,7 @@
 #import "EventListOperationFactory.h"
 #import "NetworkCompoundOperationBuilder.h"
 #import "OperationChainer.h"
+#import "RamblerInitialAssemblyCollector+Activate.h"
 
 @interface OperationFactoriesAssemblyTests : RamblerTyphoonAssemblyTests
 
@@ -39,8 +40,8 @@
 - (void)setUp {
     [super setUp];
     
-    self.assembly = [OperationFactoriesAssembly new];
-    [self.assembly activate];
+    Class class = [OperationFactoriesAssembly class];
+    self.assembly = [RamblerInitialAssemblyCollector activateAssemblyWithClass:class];
 }
 
 - (void)tearDown {

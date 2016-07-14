@@ -19,13 +19,14 @@
 // THE SOFTWARE.
 
 #import <Typhoon/Typhoon.h>
+#import "AssemblyCollector/RamblerInitialAssembly.h"
 
 /**
  @author Artem Karpushin
  
  A TyphoonAssembly which is responsible for creating SpeakerShortInfoModule
  */
-@interface SpeakerShortInfoModuleAssembly : TyphoonAssembly
+@interface SpeakerShortInfoModuleAssembly : TyphoonAssembly <RamblerInitialAssembly>
 
 @end
 
