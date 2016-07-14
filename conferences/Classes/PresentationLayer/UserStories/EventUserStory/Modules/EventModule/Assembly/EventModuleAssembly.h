@@ -19,13 +19,14 @@
 // THE SOFTWARE.
 
 #import "ModuleAssemblyBase.h"
+#import "AssemblyCollector/RamblerInitialAssembly.h"
 
 /**
  @author Artem Karpushin
  
  A TyphoonAssembly which is responsible for creating EventModule
  */
-@interface EventModuleAssembly : ModuleAssemblyBase
+@interface EventModuleAssembly : ModuleAssemblyBase <RamblerInitialAssembly>
 
 @end
 

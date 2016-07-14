@@ -26,6 +26,7 @@
 #import "ResponseValidatorsFactory.h"
 
 #import "ParseResponseValidator.h"
+#import "RamblerInitialAssemblyCollector+Activate.h"
 
 @interface ResponseValidatorsAssemblyTests : RamblerTyphoonAssemblyTests
 
@@ -38,8 +39,8 @@
 - (void)setUp {
     [super setUp];
     
-    self.assembly = [ResponseValidatorsAssembly new];
-    [self.assembly activate];
+    Class class = [ResponseValidatorsAssembly class];
+    self.assembly = [RamblerInitialAssemblyCollector activateAssemblyWithClass:class];
 }
 
 - (void)tearDown {

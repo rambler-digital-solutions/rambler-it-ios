@@ -21,12 +21,13 @@
 #import <Typhoon/Typhoon.h>
 
 #import "NetworkClientsFactory.h"
+#import "AssemblyCollector/RamblerInitialAssembly.h"
 
 /**
  @author Egor Tolstoy
  
  The implementation of the NetworkClientsFactory protocol, based on TyphoonAssembly
  */
-@interface NetworkClientsAssembly : TyphoonAssembly <NetworkClientsFactory>
+@interface NetworkClientsAssembly : TyphoonAssembly <NetworkClientsFactory, RamblerInitialAssembly>
 
 @end

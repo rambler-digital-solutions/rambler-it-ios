@@ -32,6 +32,8 @@
 #import "OperationSchedulerImplementation.h"
 #import "PrototypeMapper.h"
 #import "EventPrototypeMapper.h"
+#import "RamblerLocationServiceImplementation.h"
+#import "RamblerInitialAssemblyCollector+Activate.h"
 
 @interface ServiceComponentsAssemblyTests : RamblerTyphoonAssemblyTests
 
@@ -44,8 +46,8 @@
 - (void)setUp {
     [super setUp];
     
-    self.assembly = [ServiceComponentsAssembly new];
-    [self.assembly activate];
+    Class class = [ServiceComponentsAssembly class];
+    self.assembly = [RamblerInitialAssemblyCollector activateAssemblyWithClass:class];
 }
 
 - (void)tearDown {

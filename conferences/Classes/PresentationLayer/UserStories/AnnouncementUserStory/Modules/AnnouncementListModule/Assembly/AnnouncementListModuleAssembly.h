@@ -19,6 +19,7 @@
 // THE SOFTWARE.
 
 #import "ModuleAssemblyBase.h"
+#import "AssemblyCollector/RamblerInitialAssembly.h"
 
 @class CoreAssembly;
 
@@ -27,7 +28,7 @@
  
  A TyphoonAssembly which is responsible for creating AnnouncementListModule
  */
-@interface AnnouncementListModuleAssembly : ModuleAssemblyBase
+@interface AnnouncementListModuleAssembly : ModuleAssemblyBase <RamblerInitialAssembly>
 
 @property (strong, nonatomic) CoreAssembly *coreAssembly;
 

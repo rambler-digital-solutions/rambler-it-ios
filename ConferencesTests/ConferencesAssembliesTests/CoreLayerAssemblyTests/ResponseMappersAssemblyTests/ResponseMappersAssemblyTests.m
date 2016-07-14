@@ -29,6 +29,7 @@
 #import "SingleResponseObjectFormatter.h"
 #import "ManagedObjectMappingProvider.h"
 #import "ManagedObjectMapper.h"
+#import "RamblerInitialAssemblyCollector+Activate.h"
 
 @interface ResponseMappersAssemblyTests : RamblerTyphoonAssemblyTests
 
@@ -41,8 +42,8 @@
 - (void)setUp {
     [super setUp];
     
-    self.assembly = [ResponseMappersAssembly new];
-    [self.assembly activate];
+    Class class = [ResponseMappersAssembly class];
+    self.assembly = [RamblerInitialAssemblyCollector activateAssemblyWithClass:class];
 }
 
 - (void)tearDown {

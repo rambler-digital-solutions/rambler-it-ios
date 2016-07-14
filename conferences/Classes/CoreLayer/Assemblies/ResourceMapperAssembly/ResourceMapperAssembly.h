@@ -19,6 +19,7 @@
 // THE SOFTWARE.
 
 #import <Typhoon/Typhoon.h>
+#import "AssemblyCollector/RamblerInitialAssembly.h"
 
 @protocol ResourceMapper;
 
@@ -27,7 +28,7 @@
  
  Assembly with definitions of resource mappers
  */
-@interface ResourceMapperAssembly : TyphoonAssembly
+@interface ResourceMapperAssembly : TyphoonAssembly <RamblerInitialAssembly>
 
 /**
  @author Egor Tolstoy

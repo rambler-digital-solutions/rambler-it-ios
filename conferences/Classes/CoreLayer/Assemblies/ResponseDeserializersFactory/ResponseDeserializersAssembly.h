@@ -21,12 +21,13 @@
 #import <Typhoon/Typhoon.h>
 
 #import "ResponseDeserializersFactory.h"
+#import "AssemblyCollector/RamblerInitialAssembly.h"
 
 /**
  @author Egor Tolstoy
  
  The implementation of the ResponseDeserializersFactory protocol, based on TyphoonAssembly
  */
-@interface ResponseDeserializersAssembly : TyphoonAssembly <ResponseDeserializersFactory>
+@interface ResponseDeserializersAssembly : TyphoonAssembly <ResponseDeserializersFactory, RamblerInitialAssembly>
 
 @end

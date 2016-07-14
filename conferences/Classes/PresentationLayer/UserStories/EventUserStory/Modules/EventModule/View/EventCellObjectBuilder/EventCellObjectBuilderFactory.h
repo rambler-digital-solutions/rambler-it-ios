@@ -19,12 +19,13 @@
 // THE SOFTWARE.
 
 #import <Typhoon/Typhoon.h>
+#import "AssemblyCollector/RamblerInitialAssembly.h"
 #import "EventType.h"
 
 @class EventPlainObject;
 @class EventCellObjectBuilderBase;
 
-@interface EventCellObjectBuilderFactory : TyphoonAssembly
+@interface EventCellObjectBuilderFactory : TyphoonAssembly <RamblerInitialAssembly>
 
 - (EventCellObjectBuilderBase *)builderForEventType:(NSNumber *)eventType;
 

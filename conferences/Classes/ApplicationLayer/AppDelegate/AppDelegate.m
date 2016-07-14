@@ -24,6 +24,9 @@
 #import "PushNotificationCenter.h"
 #import "ThirdPartiesConfigurator.h"
 
+#import <RamblerTyphoonUtils/AssemblyCollector.h>
+#import <Typhoon/Typhoon.h>
+
 @interface AppDelegate ()
 
 @end
@@ -32,7 +35,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+    [self activateAssemblies];
     [self.thirdPartiesConfigurator configurate];
     [self.applicationConfigurator setupCoreDataStack];
     [self.pushNotificationCenter registerApplicationForPushNotificationsIfNeeded:application];
@@ -44,6 +47,24 @@
     }
     
     return YES;
+}
+
+- (void)activateAssemblies {
+    RamblerInitialAssemblyCollector *collector = [RamblerInitialAssemblyCollector new];
+    NSMutableArray *classes = [[collector collectInitialAssemblyClasses] mutableCopy];
+    NSMutableArray *assemblies = [NSMutableArray arrayWithCapacity:classes.count];
+    TyphoonAssembly *assembly = [classes.firstObject new];
+    [classes removeObjectAtIndex:0];
+    
+    for (Class assemblyClass in classes) {
+        id assembly = [assemblyClass new];
+        [assemblies addObject:assembly];
+    }
+    
+    //В текущей реализации глобальные TyphoonConfig не работают
+    TyphoonComponentFactory *factory = (TyphoonComponentFactory *)[assembly activateWithCollaboratingAssemblies:assemblies];
+    [TyphoonComponentFactory setFactoryForResolvingUI:factory];
+    [factory inject:self];
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {

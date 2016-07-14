@@ -10,6 +10,7 @@
 
 #import "EventHeaderModuleAssembly.h"
 #import "EventHeaderModuleAssembly_Testable.h"
+#import "RamblerInitialAssemblyCollector+Activate.h"
 
 #import "EventHeaderView.h"
 #import "EventHeaderInteractor.h"
@@ -30,9 +31,8 @@
 - (void)setUp {
     [super setUp];
     
-    self.assembly = [EventHeaderModuleAssembly new];
-    [self.assembly activateWithCollaboratingAssemblies:@[[ServiceComponentsAssembly new],
-                                                         [PresentationLayerHelpersAssembly new]]];
+    Class classAssembly = [EventHeaderModuleAssembly class];
+    self.assembly = [RamblerInitialAssemblyCollector activateAssemblyWithClass:classAssembly];
 }
 
 - (void)tearDown {

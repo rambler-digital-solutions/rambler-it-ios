@@ -19,6 +19,7 @@
 // THE SOFTWARE.
 
 #import "TyphoonAssembly.h"
+#import "AssemblyCollector/RamblerInitialAssembly.h"
 
 @protocol RequestConfiguratorsFactory;
 @protocol RequestSignersFactory;
@@ -34,7 +35,7 @@
  
  A TyphoonAssembly which is responsible for creating operation factories for different services
  */
-@interface OperationFactoriesAssembly : TyphoonAssembly
+@interface OperationFactoriesAssembly : TyphoonAssembly <RamblerInitialAssembly>
 
 - (EventOperationFactory *)eventListOperationFactory;
 
