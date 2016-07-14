@@ -45,8 +45,7 @@
     // given
     Class targetClass = [EventHeaderView class];
     NSArray *dependencies = @[
-                              RamblerSelector(output),
-                              RamblerSelector(eventHeaderView)
+                              RamblerSelector(output)
                               ];
     // when
     id result = [self.assembly viewEventHeader];
