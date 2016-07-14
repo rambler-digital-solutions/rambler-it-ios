@@ -107,4 +107,7 @@
                                                                         delegate:(id)[NICellFactory class]];
 }
 
+- (void)configureDataDisplayManagerWithEvents:(NSArray *)events {
+}
+
 @end

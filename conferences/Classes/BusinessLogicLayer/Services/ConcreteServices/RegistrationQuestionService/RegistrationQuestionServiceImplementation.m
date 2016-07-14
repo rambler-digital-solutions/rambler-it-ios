@@ -22,4 +22,13 @@
 
 @implementation RegistrationQuestionServiceImplementation
 
+- (RegistrationQuestion *)obtainRegistrationQuestionWithPredicate:(NSPredicate *)predicate {
+    return nil;
+}
+
+- (void)updateRegistrationQuestionWithPredicate:(NSPredicate *)predicate completionBlock:(RegistrationQuestionCompletionBlock)completionBlock {
+    
+}
+
+
 @end

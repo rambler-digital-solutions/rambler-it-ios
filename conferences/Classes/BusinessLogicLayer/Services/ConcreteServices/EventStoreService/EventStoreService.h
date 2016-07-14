@@ -19,8 +19,7 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-
-@protocol EventStoreServiceProtocol;
+#import "EventStoreServiceProtocol.h"
 
 @interface EventStoreService : NSObject <EventStoreServiceProtocol>
 

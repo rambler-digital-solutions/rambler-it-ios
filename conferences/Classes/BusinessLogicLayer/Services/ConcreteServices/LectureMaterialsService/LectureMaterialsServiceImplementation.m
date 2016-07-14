@@ -22,4 +22,13 @@
 
 @implementation LectureMaterialsServiceImplementation
 
+- (LectureMaterials *)obtainLectureMaterialsWithPredicate:(NSPredicate *)predicate {
+    return nil;
+}
+
+- (void)updateLectureMaterialsWithPredicate:(NSPredicate *)predicate completionBlock:(LectureMaterialsCompletionBlock)completionBlock {
+    
+}
+
+
 @end

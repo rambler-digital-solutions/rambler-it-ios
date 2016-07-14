@@ -34,8 +34,8 @@
     [debugDescription appendString:@"General Information:\n"];
     [debugDescription appendString:[NSString stringWithFormat:@"- The operation class: %@\n", NSStringFromClass([compoundOperation class])]];
     [debugDescription appendString:[NSString stringWithFormat:@"- The inner operation queue name: %@\n", internalQueue.name]];
-    [debugDescription appendString:[NSString stringWithFormat:@"- Count of operations in the inner queue: %li\n", internalQueue.operationCount]];
-    [debugDescription appendString:[NSString stringWithFormat:@"- maxConcurrentOperationCount: %li\n", compoundOperation.maxConcurrentOperationsCount]];
+    [debugDescription appendString:[NSString stringWithFormat:@"- Count of operations in the inner queue: %li\n", (unsigned long)internalQueue.operationCount]];
+    [debugDescription appendString:[NSString stringWithFormat:@"- maxConcurrentOperationCount: %li\n", (unsigned long)compoundOperation.maxConcurrentOperationsCount]];
     [debugDescription appendString:@"====================================\n"];
     
     // Buffers
@@ -62,7 +62,7 @@
     if (compoundOperation.dependencies.count > 0) {
         [debugDescription appendString:@"Depends on:\n"];
         [compoundOperation.dependencies enumerateObjectsUsingBlock:^(NSOperation *obj, NSUInteger idx, BOOL *stop) {
-            NSString *dependencyDescription = [NSString stringWithFormat:@"%li: %@, isExecuting: %i\n", idx, NSStringFromClass([obj class]), obj.isExecuting];
+            NSString *dependencyDescription = [NSString stringWithFormat:@"%li: %@, isExecuting: %i\n", (unsigned long)idx, NSStringFromClass([obj class]), obj.isExecuting];
             [debugDescription appendString:dependencyDescription];
         }];
     } else {
@@ -96,11 +96,11 @@
             executingOperationsCount += 1;
         }
     }
-    [debugDescription appendString:[NSString stringWithFormat:@"%li operations are executing right now\n", executingOperationsCount]];
+    [debugDescription appendString:[NSString stringWithFormat:@"%li operations are executing right now\n", (unsigned long)executingOperationsCount]];
     if (executingOperationsCount > 0) {
         [internalQueue.operations enumerateObjectsUsingBlock:^(NSOperation *obj, NSUInteger idx, BOOL *stop) {
             if (obj.isExecuting) {
-                [debugDescription appendString:[NSString stringWithFormat:@"- Operation %li\n", idx]];
+                [debugDescription appendString:[NSString stringWithFormat:@"- Operation %li\n", (unsigned long)idx]];
                 [debugDescription appendString:[NSString stringWithFormat:@"  - Class: %@\n", NSStringFromClass([obj class])]];
                 [debugDescription appendString:@"  - Description: \n"];
                 [debugDescription appendString:@"\n{{{START OF EXECUTING OPERATION DESCRIPTION}}}\n"];
