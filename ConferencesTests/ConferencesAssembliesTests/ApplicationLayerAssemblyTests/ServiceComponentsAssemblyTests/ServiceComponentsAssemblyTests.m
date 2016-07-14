@@ -103,4 +103,20 @@
     [self verifyTargetDependency:result withClass:targetClass];
 }
 
+- (void)testThatAssemblyCreatesRamblerLocationService {
+    // given
+    Class targetClass = [RamblerLocationServiceImplementation class];
+    
+    NSArray *dependencies = @[
+                              RamblerSelector(client),
+                              RamblerSelector(mapper)
+                              ];
+    
+    // when
+    id result = [self.assembly ramblerLocationService];
+    
+    // then
+    [self verifyTargetDependency:result withClass:targetClass dependencies:dependencies];
+}
+
 @end

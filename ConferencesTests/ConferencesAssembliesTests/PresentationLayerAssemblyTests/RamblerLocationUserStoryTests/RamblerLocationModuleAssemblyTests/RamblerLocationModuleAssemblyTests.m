@@ -49,6 +49,7 @@
     Class targetClass = [RamblerLocationViewController class];
     NSArray *dependencies = @[
                               RamblerSelector(output),
+                              RamblerSelector(dataDisplayManager)
                               ];
     // when
     id result = [self.assembly viewRamblerLocation];
@@ -62,6 +63,8 @@
     Class targetClass = [RamblerLocationInteractor class];
     NSArray *dependencies = @[
                               RamblerSelector(output),
+                              RamblerSelector(locationService),
+                              RamblerSelector(mapLinkBuilder)
                               ];
     // when
     id result = [self.assembly interactorRamblerLocation];

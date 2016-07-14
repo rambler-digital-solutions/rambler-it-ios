@@ -30,7 +30,7 @@
 
 @interface EventListOperationFactory ()
 
-@property (nonatomic, strong) NetworkCompoundOperationBuilder *builder;
+@property (nonatomic, strong) NetworkCompoundOperationBuilder *networkOperationBuilder;
 @property (nonatomic, strong) id<QueryTransformer> queryTransformer;
 
 @end
@@ -43,7 +43,7 @@
                queryTransformer:(id<QueryTransformer>)queryTransformer {
     self = [super init];
     if (self) {
-        _builder = builder;
+        _networkOperationBuilder = builder;
         _queryTransformer = queryTransformer;
     }
     return self;
@@ -71,7 +71,7 @@
                               kMappingContextModelClassKey : NSStringFromClass([EventManagedObject class])
                               };
     
-    return [self.builder buildCompoundOperationWithConfig:config];
+    return [self.networkOperationBuilder buildCompoundOperationWithConfig:config];
 }
 
 @end
