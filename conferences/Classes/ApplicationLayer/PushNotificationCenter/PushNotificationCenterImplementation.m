@@ -34,7 +34,6 @@
         [application registerForRemoteNotifications];
     } else {
         [application registerForRemoteNotifications];
-        //???: registerForRemoteNotificationTypes depricated
     }
 }
 
