@@ -213,10 +213,11 @@
 		63F8F2F61BF9FE7D000017F3 /* RCFRESTRequestConfiguratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830991BC022EA000E21A5 /* RCFRESTRequestConfiguratorTests.m */; };
 		63FD4DFB1BE4FA340046378E /* EventPrototypeMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FD4DFA1BE4FA340046378E /* EventPrototypeMapper.m */; };
 		63FD4E061BE5038D0046378E /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FD4E051BE5038D0046378E /* UIColor+Hex.m */; };
-		63FDCE061BBDBA2A00A43B60 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FDCDDC1BBDBA2A00A43B60 /* AppDelegate.m */; };
 		63FDCE141BBDBA2A00A43B60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63FDCE021BBDBA2A00A43B60 /* Assets.xcassets */; };
 		63FDCE151BBDBA2A00A43B60 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63FDCE041BBDBA2A00A43B60 /* Info.plist */; };
 		63FDCE161BBDBA2A00A43B60 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FDCE051BBDBA2A00A43B60 /* main.m */; };
+		661138841D38DBBB0032075D /* RootControllerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 661138831D38DBBB0032075D /* RootControllerAppDelegate.m */; };
+		661138871D38DBDE0032075D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 661138861D38DBDE0032075D /* AppDelegate.m */; };
 		664FEE141D366B66001B9C95 /* RamblerInitialAssemblyCollector+Activate.m in Sources */ = {isa = PBXBuildFile; fileRef = 664FEE131D366B66001B9C95 /* RamblerInitialAssemblyCollector+Activate.m */; };
 		9F0A6C1D1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */; };
 		9F0A6C2E1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C2D1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m */; };
@@ -750,11 +751,13 @@
 		63FD4DFA1BE4FA340046378E /* EventPrototypeMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventPrototypeMapper.m; sourceTree = "<group>"; };
 		63FD4E041BE5038D0046378E /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
 		63FD4E051BE5038D0046378E /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
-		63FDCDDB1BBDBA2A00A43B60 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		63FDCDDC1BBDBA2A00A43B60 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		63FDCE021BBDBA2A00A43B60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63FDCE041BBDBA2A00A43B60 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63FDCE051BBDBA2A00A43B60 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		661138821D38DBBB0032075D /* RootControllerAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootControllerAppDelegate.h; path = RootControllerAppDelegate/RootControllerAppDelegate.h; sourceTree = "<group>"; };
+		661138831D38DBBB0032075D /* RootControllerAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootControllerAppDelegate.m; path = RootControllerAppDelegate/RootControllerAppDelegate.m; sourceTree = "<group>"; };
+		661138851D38DBDE0032075D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = DefaultAppDelegate/AppDelegate.h; sourceTree = "<group>"; };
+		661138861D38DBDE0032075D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = DefaultAppDelegate/AppDelegate.m; sourceTree = "<group>"; };
 		664FEE121D366B66001B9C95 /* RamblerInitialAssemblyCollector+Activate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "RamblerInitialAssemblyCollector+Activate.h"; path = "RamblerInitialAssemblyCollector+Activate/RamblerInitialAssemblyCollector+Activate.h"; sourceTree = "<group>"; };
 		664FEE131D366B66001B9C95 /* RamblerInitialAssemblyCollector+Activate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "RamblerInitialAssemblyCollector+Activate.m"; path = "RamblerInitialAssemblyCollector+Activate/RamblerInitialAssemblyCollector+Activate.m"; sourceTree = "<group>"; };
 		73B0D884032BD961309C5DEC /* Pods-ConferencesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConferencesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConferencesTests/Pods-ConferencesTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -3187,17 +3190,18 @@
 				63EF15B71BC4546400480CAF /* PushNotificationCenter */,
 				636A37BC1BC13FA200B49C3D /* Assemblies */,
 				636A37B01BC1354100B49C3D /* ApplicationConfigurator */,
-				63FDCDDA1BBDBA2A00A43B60 /* AppDelegate */,
+				63FDCDDA1BBDBA2A00A43B60 /* AppDelegates */,
 			);
 			path = ApplicationLayer;
 			sourceTree = "<group>";
 		};
-		63FDCDDA1BBDBA2A00A43B60 /* AppDelegate */ = {
+		63FDCDDA1BBDBA2A00A43B60 /* AppDelegates */ = {
 			isa = PBXGroup;
 			children = (
-				63FDCDDB1BBDBA2A00A43B60 /* AppDelegate.h */,
-				63FDCDDC1BBDBA2A00A43B60 /* AppDelegate.m */,
+				661138811D38DB590032075D /* StartRootViewController */,
+				661138801D38DB4D0032075D /* DefaultAppDelegate */,
 			);
+			name = AppDelegates;
 			path = AppDelegate;
 			sourceTree = "<group>";
 		};
@@ -3357,6 +3361,24 @@
 			name = "Supporting Files";
 			path = "conferences/Supporting Files";
 			sourceTree = SOURCE_ROOT;
+		};
+		661138801D38DB4D0032075D /* DefaultAppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				661138851D38DBDE0032075D /* AppDelegate.h */,
+				661138861D38DBDE0032075D /* AppDelegate.m */,
+			);
+			name = DefaultAppDelegate;
+			sourceTree = "<group>";
+		};
+		661138811D38DB590032075D /* StartRootViewController */ = {
+			isa = PBXGroup;
+			children = (
+				661138821D38DBBB0032075D /* RootControllerAppDelegate.h */,
+				661138831D38DBBB0032075D /* RootControllerAppDelegate.m */,
+			);
+			name = StartRootViewController;
+			sourceTree = "<group>";
 		};
 		664FEE0F1D366B4F001B9C95 /* RamblerInitialAssemblyCollector+Activate */ = {
 			isa = PBXGroup;
@@ -5121,6 +5143,7 @@
 				9FFEAF0C1D2E5CE0006E9649 /* AppleMapsLinkBuilder.m in Sources */,
 				636F8DDE1BCB8FE800552B91 /* RamblerLocationViewController.m in Sources */,
 				63F613B11CB10FC80002AEF0 /* AnnouncementListTableViewCellObject.m in Sources */,
+				661138871D38DBDE0032075D /* AppDelegate.m in Sources */,
 				9F8E5F941BC269EA00DC10DB /* OperationFactoriesAssembly.m in Sources */,
 				63F613971CB00A220002AEF0 /* SpeakerInfoPresenterStateStorage.m in Sources */,
 				631808691C4A870C00A61E7D /* TableViewCellWithTextLabelAndImageView.m in Sources */,
@@ -5180,7 +5203,6 @@
 				63F6139D1CB00A220002AEF0 /* SpeakerInfoDataDisplayManager.m in Sources */,
 				63F613961CB00A220002AEF0 /* SpeakerInfoInteractor.m in Sources */,
 				9F4077901D2BF95200D47EF6 /* CommonResourceClient.m in Sources */,
-				63FDCE061BBDBA2A00A43B60 /* AppDelegate.m in Sources */,
 				63F6134E1CB00A220002AEF0 /* AnnouncementListPresenter.m in Sources */,
 				631808401C482B1300A61E7D /* SpeakerShortInfoInteractor.m in Sources */,
 				9FF74FF51D269C8F000D208D /* TechManagedObject+CoreDataProperties.m in Sources */,
@@ -5251,6 +5273,7 @@
 				63F51CB01C42AD3A00AFB9D2 /* TableViewCellWithTextLabelCellObject.m in Sources */,
 				9F0A85321BC18906006F79FB /* EventQuery.m in Sources */,
 				63F6136A1CB00A220002AEF0 /* PreviousLectureSectionHeaderTableViewCellObject.m in Sources */,
+				661138841D38DBBB0032075D /* RootControllerAppDelegate.m in Sources */,
 				9FF74FE51D2699A3000D208D /* LectureMaterialManagedObject+CoreDataProperties.m in Sources */,
 				63FD4E061BE5038D0046378E /* UIColor+Hex.m in Sources */,
 				9F0A84FF1BC1698B006F79FB /* RequestSigningOperation.m in Sources */,

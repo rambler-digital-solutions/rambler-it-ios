@@ -20,9 +20,15 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
+#import "RamblerAppDelegateProxy.h"
+#import "RootControllerAppDelegate.h"
 
 int main(int argc, char * argv[]) {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+        AppDelegate *defaultAppDelegate = [AppDelegate new];
+        [[RamblerAppDelegateProxy injector] setDefaultAppDelegate:defaultAppDelegate];
+        NSArray<UIApplicationDelegate> *appDelegates = @[defaultAppDelegate, [RootControllerAppDelegate new]];
+        [[RamblerAppDelegateProxy injector] addAppDelegates:appDelegates];
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([RamblerAppDelegateProxy class]));
     }
 }

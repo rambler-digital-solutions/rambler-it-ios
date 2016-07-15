@@ -46,6 +46,13 @@
                                                         applicationState:application.applicationState];
     }
     
+    
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"StartTabBarController"];
+//    self.window.rootViewController = vc;
+//    [self.window makeKeyAndVisible];
+    
+    
     return YES;
 }
 
