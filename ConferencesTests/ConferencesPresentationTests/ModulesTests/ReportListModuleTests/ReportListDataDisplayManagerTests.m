@@ -12,7 +12,7 @@
 #import "ReportListDataDisplayManager.h"
 #import "ReportListTableViewCell.h"
 #import "EventPlainObject.h"
-#import "ReportListTableViewController.h"
+#import "ReportListViewController.h"
 
 typedef NS_ENUM(NSUInteger, TableViewSectionIndex){
     ReportsSection = 0
@@ -54,7 +54,7 @@ typedef NS_ENUM(NSUInteger, TableViewSectionIndex){
 
 - (void)testSuccessUpdateTableViewModelWithEvents {
     // given
-    id mockViewController = OCMClassMock([ReportListTableViewController class]);
+    id mockViewController = OCMClassMock([ReportListViewController class]);
     self.dataDisplayManager.delegate = mockViewController;
     
     // when

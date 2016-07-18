@@ -42,10 +42,10 @@
             </objects>
             <point key="canvasLocation" x="2787" y="229"/>
         </scene>
-        <!--ReportListTableViewController-->
+        <!--ReportListViewController-->
         <scene sceneID="8Z2-PA-vwp">
             <objects>
-                <viewControllerPlaceholder storyboardName="Reports" referencedIdentifier="ReportListTableViewController" id="Nj5-yg-I3V" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Reports" referencedIdentifier="ReportListViewController" id="Nj5-yg-I3V" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="ZKK-XE-V4o"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aAK-nC-eVv" userLabel="First Responder" sceneMemberID="firstResponder"/>

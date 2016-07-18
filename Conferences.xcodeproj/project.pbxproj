@@ -416,8 +416,8 @@
 		631FFE4B1BEF930200749DB8 /* ReportListRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportListRouter.h; sourceTree = "<group>"; };
 		631FFE4C1BEF930200749DB8 /* ReportListRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportListRouter.m; sourceTree = "<group>"; };
 		631FFE4D1BEF930200749DB8 /* ReportListRouterInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportListRouterInput.h; sourceTree = "<group>"; };
-		631FFE4F1BEF930200749DB8 /* ReportListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportListTableViewController.h; sourceTree = "<group>"; };
-		631FFE501BEF930200749DB8 /* ReportListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportListTableViewController.m; sourceTree = "<group>"; };
+		631FFE4F1BEF930200749DB8 /* ReportListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportListViewController.h; sourceTree = "<group>"; };
+		631FFE501BEF930200749DB8 /* ReportListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportListViewController.m; sourceTree = "<group>"; };
 		631FFE511BEF930200749DB8 /* ReportListViewInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportListViewInput.h; sourceTree = "<group>"; };
 		631FFE521BEF930200749DB8 /* ReportListViewOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportListViewOutput.h; sourceTree = "<group>"; };
 		631FFE5D1BEF991000749DB8 /* ReportListDataDisplayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportListDataDisplayManager.h; sourceTree = "<group>"; };
@@ -1415,8 +1415,8 @@
 				631FFE5A1BEF98E600749DB8 /* CellObjects */,
 				631FFE5B1BEF98E600749DB8 /* Cells */,
 				631FFE5C1BEF98E600749DB8 /* DataDisplayManager */,
-				631FFE4F1BEF930200749DB8 /* ReportListTableViewController.h */,
-				631FFE501BEF930200749DB8 /* ReportListTableViewController.m */,
+				631FFE4F1BEF930200749DB8 /* ReportListViewController.h */,
+				631FFE501BEF930200749DB8 /* ReportListViewController.m */,
 				631FFE511BEF930200749DB8 /* ReportListViewInput.h */,
 				631FFE521BEF930200749DB8 /* ReportListViewOutput.h */,
 			);
@@ -5315,7 +5315,7 @@
 				63F613781CB00A220002AEF0 /* PreviousEventTableViewCell.m in Sources */,
 				63F6139A1CB00A220002AEF0 /* SpeakerInfoTableViewCellObject.m in Sources */,
 				63F6138D1CB00A220002AEF0 /* LecturePresenterStateStorage.m in Sources */,
-				631FFE571BEF930200749DB8 /* ReportListTableViewController.m in Sources */,
+				631FFE571BEF930200749DB8 /* ReportListViewController.m in Sources */,
 				63F51CAC1C42AD2100AFB9D2 /* TableViewCellWithTextLabel.m in Sources */,
 				9F4077A81D2C164800D47EF6 /* ResourceMapperAssembly.m in Sources */,
 				63F613881CB00A220002AEF0 /* EventViewController.m in Sources */,

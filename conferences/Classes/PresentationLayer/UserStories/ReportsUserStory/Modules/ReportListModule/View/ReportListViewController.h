@@ -24,7 +24,7 @@
 @protocol ReportListViewOutput;
 @class  ReportListDataDisplayManager;
 
-@interface ReportListTableViewController : UITableViewController <ReportListViewInput>
+@interface ReportListViewController : UIViewController <ReportListViewInput>
 
 @property (nonatomic, strong) id<ReportListViewOutput> output;
 @property (strong, nonatomic) ReportListDataDisplayManager *dataDisplayManager;
