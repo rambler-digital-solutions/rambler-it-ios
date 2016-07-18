@@ -11,7 +11,7 @@
 
 #import "ReportListModuleAssembly.h"
 #import "ReportListModuleAssembly_Testable.h"
-#import "ReportListTableViewController.h"
+#import "ReportListViewController.h"
 #import "ReportListInteractor.h"
 #import "ReportListPresenter.h"
 #import "ReportListRouter.h"
@@ -51,7 +51,7 @@
 
 - (void)testThatAssemblyCreatesView {
     // given
-    Class targetClass = [ReportListTableViewController class];
+    Class targetClass = [ReportListViewController class];
     NSArray *dependencies = @[
                               RamblerSelector(output),
                               RamblerSelector(dataDisplayManager)

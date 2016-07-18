@@ -18,16 +18,18 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "ReportListTableViewController.h"
+#import "ReportListViewController.h"
 #import "ReportListViewOutput.h"
 #import "DataDisplayManager.h"
 #import "ReportListDataDisplayManager.h"
 
-@interface ReportListTableViewController() <ReportListDataDisplayManagerDelegate>
+@interface ReportListViewController() <ReportListDataDisplayManagerDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *reportsTableView;
 
 @end
 
-@implementation ReportListTableViewController
+@implementation ReportListViewController
 
 #pragma mark - Lifecycle
 
@@ -40,19 +42,19 @@
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     [[UIScrollView appearance] setBackgroundColor:[UIColor whiteColor]];
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.reportsTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 #pragma mark - ReportListViewInput
 
 - (void)setupViewWithEventList:(NSArray *)events {
-    [self.tableView setTableFooterView:[UIView new]];
+    [self.reportsTableView setTableFooterView:[UIView new]];
     
     [self.dataDisplayManager updateTableViewModelWithEvents:events];
     self.dataDisplayManager.delegate = self;
     
-    self.tableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.tableView];
-    self.tableView.delegate = [self.dataDisplayManager delegateForTableView:self.tableView withBaseDelegate:nil];
+    self.reportsTableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.reportsTableView];
+    self.reportsTableView.delegate = [self.dataDisplayManager delegateForTableView:self.reportsTableView withBaseDelegate:nil];
 }
 
 - (void)updateViewWithEventList:(NSArray *)events {
@@ -62,19 +64,12 @@
 #pragma mark - ReportListDataDisplayManagerDelegate methods
 
 - (void)didUpdateTableViewModel {
-    self.tableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.tableView];
-    [self.tableView reloadData];
+    self.reportsTableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.reportsTableView];
+    [self.reportsTableView reloadData];
 }
 
 - (void)didTapCellWithEvent:(EventPlainObject *)event {
     [self.output didTriggerTapCellWithEvent:event];
-}
-
-
-#pragma mark - UISearchBarDelegate methods
-
-- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
-    [self.output didSearchBarChangedWithText:searchText];
 }
 
 @end

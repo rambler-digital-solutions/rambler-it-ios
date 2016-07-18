@@ -9,7 +9,7 @@
 #import <XCTest/XCTest.h>
 #import <OCMock/OCMock.h>
 
-#import "ReportListTableViewController.h"
+#import "ReportListViewController.h"
 #import "ReportListViewOutput.h"
 #import "DataDisplayManager.h"
 #import "ReportListDataDisplayManager.h"
@@ -17,7 +17,7 @@
 
 @interface ReportListTableViewControllerTests : XCTestCase
 
-@property (strong, nonatomic) ReportListTableViewController <ReportListDataDisplayManagerDelegate, UISearchBarDelegate> *viewController;
+@property (strong, nonatomic) ReportListViewController <ReportListDataDisplayManagerDelegate, UISearchBarDelegate> *viewController;
 @property (strong, nonatomic) ReportListDataDisplayManager *mockDataDisplayManager;
 @property (strong, nonatomic) id <ReportListViewOutput> mockOutput;
 @property (strong, nonatomic) UITableView *mockTableView;
