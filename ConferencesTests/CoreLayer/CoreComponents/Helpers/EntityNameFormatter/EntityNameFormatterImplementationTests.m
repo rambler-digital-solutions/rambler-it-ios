@@ -21,7 +21,7 @@
 #import <XCTest/XCTest.h>
 
 #import "EntityNameFormatterImplementation.h"
-#import "EventManagedObject.h"
+#import "EventModelObject.h"
 
 @interface EntityNameFormatterImplementationTests : XCTestCase
 
@@ -46,7 +46,7 @@
 - (void)testThatFormatterTransformsEntityNameToClass {
     // given
     NSString *testEntityName = @"Event";
-    Class const kExpectedEntityClass = [EventManagedObject class];
+    Class const kExpectedEntityClass = [EventModelObject class];
     
     // when
     Class result = [self.formatter transformToClassEntityName:testEntityName];
@@ -57,7 +57,7 @@
 
 - (void)testThatFormatterTransformsEntityClassToName {
     // given
-    Class testEntityClass = [EventManagedObject class];
+    Class testEntityClass = [EventModelObject class];
     NSString *const kExpectedEntityName = @"Event";
     
     // when

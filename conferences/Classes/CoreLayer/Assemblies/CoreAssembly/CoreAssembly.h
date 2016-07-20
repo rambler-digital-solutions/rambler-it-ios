@@ -6,11 +6,16 @@
 //  Copyright © 2016 Rambler. All rights reserved.
 //
 
-#import <Typhoon/Typhoon.h>
+#import "ModuleAssemblyBase.h"
 
 @protocol ROSPonsomizer;
 
-@interface CoreAssembly : TyphoonAssembly
+/**
+ @author Vasyura Anastasiya
+ 
+ Assembly with core components
+ */
+@interface CoreAssembly : ModuleAssemblyBase
 
 - (id <ROSPonsomizer>)ponsomizer;
 

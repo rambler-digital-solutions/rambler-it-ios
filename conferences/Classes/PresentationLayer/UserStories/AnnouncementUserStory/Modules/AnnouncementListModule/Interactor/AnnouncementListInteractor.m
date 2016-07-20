@@ -35,7 +35,7 @@
     @weakify(self)
     [self.eventService updateEventWithPredicate:nil completionBlock:^(id data, NSError *error) {
         @strongify(self);
-        NSArray *events = [self.eventService obtainEventWithPredicate:nil];
+        NSArray *events = [self obtainEventList];
         
         [self.output didUpdateEventList:events];
     }];
@@ -43,24 +43,10 @@
 
 - (NSArray *)obtainEventList {
     NSArray *events = [self.eventService obtainEventWithPredicate:nil];
-    
     return events;
 }
 
 #pragma mark - Private methods
-
-- (NSArray *)getPlainEventsFromManagedObjects:(NSArray *)manajedObjectEvents {
-    NSMutableArray *eventPlainObjects = [NSMutableArray array];
-    for (EventModelObject *managedObjectEvent in manajedObjectEvents) {
-        EventPlainObject *eventPlainObject = [EventPlainObject new];
-        
-        [self.eventPrototypeMapper fillObject:eventPlainObject withObject:managedObjectEvent];
-        
-        [eventPlainObjects addObject:eventPlainObject];
-    }
-    
-    return [self sortEventsByDate:eventPlainObjects];
-}
 
 - (NSArray *)sortEventsByDate:(NSMutableArray *)events {
     NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:NSStringFromSelector(@selector(startDate)) ascending:NO];

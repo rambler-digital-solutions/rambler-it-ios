@@ -132,7 +132,7 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
     // given
     SpeakerPlainObject *speaker = [SpeakerPlainObject new];
     LecturePlainObject *lecture = [LecturePlainObject new];
-    lecture.speakers  = @[speaker];
+    lecture.speaker = speaker;
     
     id speakerShortInfoViewMock = OCMClassMock([SpeakerShortInfoView class]);
     self.viewController.speakerShortInfoView = speakerShortInfoViewMock;
@@ -141,7 +141,8 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
     [self.viewController configureViewWithLecture:lecture];
     
     // then
-    OCMVerify([speakerShortInfoViewMock configureModuleWithSpeaker:speaker andViewSize:SpeakerShortInfoViewDefaultSize]);
+    OCMVerify([speakerShortInfoViewMock configureModuleWithSpeaker:OCMOCK_ANY
+                                                       andViewSize:SpeakerShortInfoViewDefaultSize]);
 }
 
 #pragma mark - Actions

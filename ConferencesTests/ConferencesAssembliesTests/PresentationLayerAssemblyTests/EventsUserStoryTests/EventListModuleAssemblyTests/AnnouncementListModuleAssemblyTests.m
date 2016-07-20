@@ -32,6 +32,7 @@
 #import "ServiceComponentsAssembly.h"
 #import "OperationFactoriesAssembly.h"
 #import "PresentationLayerHelpersAssembly.h"
+#import "CoreAssembly.h"
 
 @interface AnnouncementListModuleAssemblyTests : RamblerTyphoonAssemblyTests
 
@@ -48,7 +49,8 @@
     [self.assembly activateWithCollaboratingAssemblies:@[
                                                          [ServiceComponentsAssembly new],
                                                          [OperationFactoriesAssembly new],
-                                                         [PresentationLayerHelpersAssembly new]
+                                                         [PresentationLayerHelpersAssembly new],
+                                                         [CoreAssembly new]
                                                          ]];
 }
 

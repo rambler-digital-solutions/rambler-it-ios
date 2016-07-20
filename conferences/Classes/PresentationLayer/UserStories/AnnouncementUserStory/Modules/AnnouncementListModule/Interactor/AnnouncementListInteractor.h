@@ -28,8 +28,7 @@
 @interface AnnouncementListInteractor : NSObject<AnnouncementListInteractorInput>
 
 @property (nonatomic, weak) id<AnnouncementListInteractorOutput> output;
-@property (strong, nonatomic) id <EventService> eventService;
-@property (strong, nonatomic) id <PrototypeMapper> eventPrototypeMapper;
+@property (nonatomic, strong) id <EventService> eventService;
 
 @end
 

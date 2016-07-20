@@ -46,8 +46,6 @@
                                                         with:[self presenterAnnouncementList]];
                                 [definition injectProperty:@selector(eventService)
                                                     with:[self.serviceComponents eventService]];
-                                [definition injectProperty:@selector(eventPrototypeMapper)
-                                                      with:[self.serviceComponents eventPrototypeMapper]];
              }];
 }
 

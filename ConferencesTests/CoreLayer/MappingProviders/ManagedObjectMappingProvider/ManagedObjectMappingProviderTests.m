@@ -24,7 +24,7 @@
 
 #import "ManagedObjectMappingProvider.h"
 #import "EntityNameFormatter.h"
-#import "SocialNetworkAccountManagedObject.h"
+#import "SocialNetworkAccountModelObject.h"
 
 @interface ManagedObjectMappingProviderTests : XCTestCase
 
@@ -52,7 +52,7 @@
 
 - (void)testThatProviderReturnsProperMappingForOneOfModels {
     // given
-    Class targetClass = [SocialNetworkAccountManagedObject class];
+    Class targetClass = [SocialNetworkAccountModelObject class];
     NSString *const kExpectedEntityName = @"SocialNetworkAccount";
     OCMStub([self.mockEntityNameFormatter transformToEntityNameClass:targetClass]).andReturn(kExpectedEntityName);
     
