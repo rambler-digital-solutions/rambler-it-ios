@@ -22,6 +22,11 @@
 
 #import "PrototypeMapper.h"
 
+/**
+ @author Zinovyev Konstantin
+ 
+ Маппер из EventManagedObject в EventPlainObject
+ */
 @interface EventPrototypeMapper : NSObject <PrototypeMapper>
 
 @end

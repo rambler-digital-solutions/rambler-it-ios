@@ -24,6 +24,11 @@
 
 @protocol ReportListViewOutput <NSObject>
 
+/**
+ @author Zinovyev Konstantin
+ 
+ Метод сообщает презентеру о том, что требуется настроить view
+ */
 - (void)setupView;
 
 /**

@@ -21,6 +21,12 @@
 #import <Foundation/Foundation.h>
 #import <Nimbus/NimbusModels.h>
 
+/**
+ @author Zinovyev Konstantin
+ 
+ Объект, представляющий SpeakerPlainObject для отображения.
+ По этому объекту создается ReportSpeakerTableViewCell
+ */
 @class SpeakerPlainObject;
 
 @interface ReportSpeakerTableViewCellObject : NSObject <NICellObject>

@@ -10,6 +10,11 @@
 
 #import "PrototypeMapper.h"
 
+/**
+ @author Zinovyev Konstantin
+ 
+ Маппер из SpeakerManagedObject в SpeakerPlainObject
+ */
 @interface SpeakerPrototypeMapper : NSObject <PrototypeMapper>
 
 @end

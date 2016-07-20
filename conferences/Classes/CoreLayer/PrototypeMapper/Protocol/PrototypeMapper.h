@@ -22,6 +22,15 @@
 
 @protocol PrototypeMapper <NSObject>
 
+/**
+ @author Zinovyev Konstantin
+ 
+ Заполнение данных одного объекта по данным другого объекта
+ filledObject должен быть создан заранее
+ 
+ @param filledObject Заполняемый объект (out)
+ @param object       Объект из которого получаем данные (in)
+ */
 - (void)fillObject:(id)filledObject
         withObject:(id)object;
 

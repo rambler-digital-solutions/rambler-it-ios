@@ -26,8 +26,18 @@
  */
 - (void)updateViewWithObjectList:(NSArray *)foundObjects searchText:(NSString *)searchText;
 
+/**
+ @author Zinovyev Konstantin
+ 
+ Метод отвечает за показ прозрачного экрана, при пустой строке поиска
+ */
 - (void)showClearPlaceholder;
 
+/**
+ @author Zinovyev Konstantin
+ 
+ Метод отвечает за скрытие поиска с экрана 
+ */
 - (void)closeSearchView;
 
 @end

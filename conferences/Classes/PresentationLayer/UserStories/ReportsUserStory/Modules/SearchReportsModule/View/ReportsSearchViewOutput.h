@@ -15,17 +15,38 @@
 
 @protocol ReportsSearchViewOutput <NSObject>
 
+/**
+ @author Zinovyev Konstantin
+ 
+ Метод сообщает презентеру о том что, требуется провести первоначальную настройку view
+ */
 - (void)setupView;
 
 /**
  @author Zinovyev Konstantin
  
- Метод сообщает о том, что была нажата ячейка
+ Метод сообщает презентеру о том, что была нажата ячейка с событием
  
- @param event Событие в нажатой ячейке
+ @param event Объект событие в нажатой ячейке
  */
 - (void)didTriggerTapCellWithEvent:(EventPlainObject *)event;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ Метод сообщает презентеру о том, что была нажата ячейка с докладом
+ 
+ @param event Объект доклад в нажатой ячейке
+ */
 - (void)didTriggerTapCellWithLecture:(LecturePlainObject *)lecture;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ Метод сообщает презентеру о том, что была нажата ячейка с докладчиком
+ 
+ @param event Объект докладчика в нажатой ячейке
+ */
 - (void)didTriggerTapCellWithSpeaker:(SpeakerPlainObject *)speaker;
 
 /**
@@ -37,6 +58,11 @@
  */
 - (void)didSearchBarChangedWithText:(NSString *)text;
 
+/**
+ @author Zinovyev Konstantin
+ 
+ Сообщает презентеру о нажатии на прозрачный экран
+ */
 - (void)didTapClearPlaceholderView;
 @end
 

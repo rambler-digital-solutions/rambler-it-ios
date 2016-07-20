@@ -10,6 +10,11 @@
 
 #import "PrototypeMapper.h"
 
+/**
+ @author Zinovyev Konstantin
+ 
+ Маппер из LectureManagedObject в LecturePlainObject
+ */
 @interface LecturePrototypeMapper : NSObject <PrototypeMapper>
 
 @end

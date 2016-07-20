@@ -28,7 +28,20 @@
 
 @protocol ReportListDataDisplayManagerDelegate
 
+/**
+ @author Zinovyev Konstantin
+ 
+ Метод сообщает делегату о законечнном обновлении tableViewModel
+ */
 - (void)didUpdateTableViewModel;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ Метод сообщает делегату о нажатии на ячейку, содержащую объект event
+ 
+ @param event Событие, которое находится в нажатой ячейке
+ */
 - (void)didTapCellWithEvent:(EventPlainObject *)event;
 
 @end
@@ -38,7 +51,22 @@
 @property (weak, nonatomic) id <ReportListDataDisplayManagerDelegate> delegate;
 @property (strong, nonatomic) DateFormatter *dateFormatter;
 
+/**
+ @author Zinovyev Konstantin
+ 
+ Метод отвечающий за первоначальную конфигурацию DDM
+ 
+ @param events Список событий
+ */
 - (void)configureDataDisplayManagerWithEvents:(NSArray *)events;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ Метод обновляющий TableViewModel новыми событиями
+ 
+ @param events Список событий
+ */
 - (void)updateTableViewModelWithEvents:(NSArray *)events;
 
 @end

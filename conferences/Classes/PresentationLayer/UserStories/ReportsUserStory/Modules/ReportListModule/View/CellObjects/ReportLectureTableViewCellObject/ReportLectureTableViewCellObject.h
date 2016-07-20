@@ -21,6 +21,12 @@
 #import <Foundation/Foundation.h>
 #import <Nimbus/NimbusModels.h>
 
+/**
+ @author Zinovyev Konstantin
+ 
+ Объект, представляющий LecturePlainObject для отображения.
+ По этому объекту создается ReportLectureTableViewCell
+ */
 @class LecturePlainObject;
 
 @interface ReportLectureTableViewCellObject : NSObject <NICellObject>
