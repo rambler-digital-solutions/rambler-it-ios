@@ -29,7 +29,7 @@
 #import "ErrorConstants.h"
 #import "EXTScope.h"
 
-static NSString *const kEventByObjectIdPredicateFormat = @"objectId = %@";
+static NSString *const kEventByObjectIdPredicateFormat = @"eventId = %@";
 
 @implementation EventInteractor
 
