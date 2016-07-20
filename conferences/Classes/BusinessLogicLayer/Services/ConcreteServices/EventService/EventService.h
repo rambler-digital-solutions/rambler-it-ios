@@ -40,7 +40,7 @@ typedef void (^EventCompletionBlock)(id data, NSError *error);
  
  @return Event object
  */
-- (id)obtainEventWithPredicate:(NSPredicate *)predicate;
+- (NSArray *)obtainEventWithPredicate:(NSPredicate *)predicate;
 
 /**
  @author Artem Karpushin

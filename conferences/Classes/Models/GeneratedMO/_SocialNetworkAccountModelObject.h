@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class Speaker;
+@class SpeakerModelObject;
 
 @interface SocialNetworkAccountModelObjectID : NSManagedObjectID {}
 @end
@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface _SocialNetworkAccountModelObject : NSManagedObject
 + (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_;
 + (NSString*)entityName;
-+ (nullable NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
++ (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
 @property (nonatomic, readonly, strong) SocialNetworkAccountModelObjectID *objectID;
 
 @property (nonatomic, strong) NSString* profileLink;
@@ -30,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (int16_t)typeValue;
 - (void)setTypeValue:(int16_t)value_;
 
-@property (nonatomic, strong, nullable) Speaker *speaker;
+@property (nonatomic, strong, nullable) SpeakerModelObject *speaker;
 
 @end
 
@@ -39,8 +39,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString*)primitiveProfileLink;
 - (void)setPrimitiveProfileLink:(NSString*)value;
 
-- (Speaker*)primitiveSpeaker;
-- (void)setPrimitiveSpeaker:(Speaker*)value;
+- (SpeakerModelObject*)primitiveSpeaker;
+- (void)setPrimitiveSpeaker:(SpeakerModelObject*)value;
 
 @end
 

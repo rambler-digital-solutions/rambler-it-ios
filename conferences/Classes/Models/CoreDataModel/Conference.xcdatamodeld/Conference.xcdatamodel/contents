@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15F34" minimumToolsVersion="Xcode 4.2">
-    <entity name="Event" representedClassName="Event" syncable="YES">
+    <entity name="Event" representedClassName="EventModelObject" syncable="YES">
         <attribute name="endDate" attributeType="Date" syncable="YES"/>
         <attribute name="eventDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="eventId" optional="YES" attributeType="String" syncable="YES"/>
@@ -18,7 +18,7 @@
         <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="event" inverseEntity="Tag" syncable="YES"/>
         <relationship name="tech" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tech" inverseName="events" inverseEntity="Tech" syncable="YES"/>
     </entity>
-    <entity name="Lecture" representedClassName="Lecture" syncable="YES">
+    <entity name="Lecture" representedClassName="LectureModelObject" syncable="YES">
         <attribute name="favourite" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="lectureDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lectureId" attributeType="String" syncable="YES"/>
@@ -28,13 +28,13 @@
         <relationship name="speaker" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Speaker" inverseName="lectures" inverseEntity="Speaker" syncable="YES"/>
         <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="lectures" inverseEntity="Tag" syncable="YES"/>
     </entity>
-    <entity name="LectureMaterial" representedClassName="LectureMaterial" syncable="YES">
+    <entity name="LectureMaterial" representedClassName="LectureMaterialModelObject" syncable="YES">
         <attribute name="lectureMaterialId" attributeType="String" syncable="YES"/>
         <attribute name="link" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <relationship name="lecture" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lecture" inverseName="lectureMaterials" inverseEntity="Lecture" syncable="YES"/>
     </entity>
-    <entity name="MetaEvent" representedClassName="MetaEvent" syncable="YES">
+    <entity name="MetaEvent" representedClassName="MetaEventModelObject" syncable="YES">
         <attribute name="imageUrlPath" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="metaEventDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="metaEventId" attributeType="String" syncable="YES"/>
@@ -42,17 +42,17 @@
         <attribute name="websiteUrlPath" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="events" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event" inverseName="metaEvent" inverseEntity="Event" syncable="YES"/>
     </entity>
-    <entity name="RegistrationQuestion" representedClassName="RegistrationQuestion" syncable="YES">
+    <entity name="RegistrationQuestion" representedClassName="RegistrationQuestionModelObject" syncable="YES">
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="orderID" attributeType="String" syncable="YES"/>
         <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="registrationQuestions" inverseEntity="Event" syncable="YES"/>
     </entity>
-    <entity name="SocialNetworkAccount" representedClassName="SocialNetworkAccount" syncable="YES">
+    <entity name="SocialNetworkAccount" representedClassName="SocialNetworkAccountModelObject" syncable="YES">
         <attribute name="profileLink" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="speaker" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Speaker" inverseName="socialNetworkAccounts" inverseEntity="Speaker" syncable="YES"/>
     </entity>
-    <entity name="Speaker" representedClassName="Speaker" syncable="YES">
+    <entity name="Speaker" representedClassName="SpeakerModelObject" syncable="YES">
         <attribute name="biography" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="company" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="imageUrl" optional="YES" attributeType="String" syncable="YES"/>
@@ -62,14 +62,14 @@
         <relationship name="lectures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lecture" inverseName="speaker" inverseEntity="Lecture" syncable="YES"/>
         <relationship name="socialNetworkAccounts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SocialNetworkAccount" inverseName="speaker" inverseEntity="SocialNetworkAccount" syncable="YES"/>
     </entity>
-    <entity name="Tag" representedClassName="Tag" syncable="YES">
+    <entity name="Tag" representedClassName="TagModelObject" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="slug" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tagId" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="tags" inverseEntity="Event" syncable="YES"/>
         <relationship name="lectures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lecture" inverseName="tags" inverseEntity="Lecture" syncable="YES"/>
     </entity>
-    <entity name="Tech" representedClassName="Tech" syncable="YES">
+    <entity name="Tech" representedClassName="TechModelObject" syncable="YES">
         <attribute name="color" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="techId" optional="YES" attributeType="String" syncable="YES"/>

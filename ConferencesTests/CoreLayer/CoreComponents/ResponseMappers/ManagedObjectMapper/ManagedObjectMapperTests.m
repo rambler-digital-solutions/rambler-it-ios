@@ -130,7 +130,7 @@
                                 NSStringFromSelector(@selector(biography)),
                                 NSStringFromSelector(@selector(job)),
                                 NSStringFromSelector(@selector(company)),
-                                NSStringFromSelector(@selector(imageLink))
+                                NSStringFromSelector(@selector(imageUrl))
                                 ];
     NSArray *testArrays = @[
                             NSStringFromSelector(@selector(socialNetworkAccounts))

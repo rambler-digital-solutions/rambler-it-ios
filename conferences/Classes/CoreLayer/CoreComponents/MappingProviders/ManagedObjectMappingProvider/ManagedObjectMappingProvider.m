@@ -51,7 +51,7 @@
     return selectedMapping;
 }
 
-- (EKManagedObjectMapping *)eventManagedObjectMapping {
+- (EKManagedObjectMapping *)eventModelObjectMapping {
     NSDictionary *properties = @{
                                  @"id" : NSStringFromSelector(@selector(eventId)),
                                  @"attributes.name" : NSStringFromSelector(@selector(name)),
@@ -72,19 +72,19 @@
                                                   [mapping hasOne:[MetaEventModelObject class]
                                                        forKeyPath:@"attributes.brand"
                                                       forProperty:NSStringFromSelector(@selector(metaEvent))
-                                                withObjectMapping:[self metaEventManagedObjectMapping]];
+                                                withObjectMapping:[self metaEventModelObjectMapping]];
                                                   [mapping hasOne:[TechModelObject class]
                                                        forKeyPath:@"attributes.tech"
                                                       forProperty:NSStringFromSelector(@selector(tech))
-                                                withObjectMapping:[self techManagedObjectMapping]];
+                                                withObjectMapping:[self techModelObjectMapping]];
                                                   [mapping hasMany:[LectureModelObject class]
                                                         forKeyPath:@"attributes.lectures"
                                                        forProperty:NSStringFromSelector(@selector(lectures))
-                                                 withObjectMapping:[self lectureManagedObjectMapping]];
+                                                 withObjectMapping:[self lectureModelObjectMapping]];
                                               }];
 }
 
-- (EKManagedObjectMapping *)metaEventManagedObjectMapping {
+- (EKManagedObjectMapping *)metaEventModelObjectMapping {
     NSDictionary *properties = @{
                                  @"id" : NSStringFromSelector(@selector(metaEventId)),
                                  @"name" : NSStringFromSelector(@selector(name)),
@@ -101,7 +101,7 @@
                                               }];
 }
 
-- (EKManagedObjectMapping *)techManagedObjectMapping {
+- (EKManagedObjectMapping *)techModelObjectMapping {
     NSDictionary *properties = @{
                                  @"id" : NSStringFromSelector(@selector(techId)),
                                  @"name" : NSStringFromSelector(@selector(name)),
@@ -116,7 +116,7 @@
                                               }];
 }
 
-- (EKManagedObjectMapping *)lectureManagedObjectMapping {
+- (EKManagedObjectMapping *)lectureModelObjectMapping {
     NSDictionary *properties = @{
                                  @"id" : NSStringFromSelector(@selector(lectureId)),
                                  @"title" : NSStringFromSelector(@selector(name)),
@@ -131,25 +131,25 @@
                                                   [mapping hasOne:[SpeakerModelObject class]
                                                        forKeyPath:@"speaker"
                                                       forProperty:NSStringFromSelector(@selector(speaker))
-                                                withObjectMapping:[self speakerManagedObjectMapping]];
+                                                withObjectMapping:[self speakerModelObjectMapping]];
                                                   [mapping hasMany:[TagModelObject class]
                                                         forKeyPath:@"tags"
                                                        forProperty:NSStringFromSelector(@selector(tags))
-                                                 withObjectMapping:[self tagManagedObjectMapping]];
+                                                 withObjectMapping:[self tagModelObjectMapping]];
                                                   [mapping hasMany:[LectureMaterialModelObject class]
                                                         forKeyPath:@"materials"
                                                        forProperty:NSStringFromSelector(@selector(lectureMaterials))
-                                                 withObjectMapping:[self lectureMaterialManagedObjectMapping]];
+                                                 withObjectMapping:[self lectureMaterialModelObjectMapping]];
                                               }];
 }
 
-- (EKManagedObjectMapping *)speakerManagedObjectMapping {
+- (EKManagedObjectMapping *)speakerModelObjectMapping {
     NSDictionary *properties = @{
                                  @"id" : NSStringFromSelector(@selector(speakerId)),
                                  @"bio" : NSStringFromSelector(@selector(biography)),
                                  @"job" : NSStringFromSelector(@selector(job)),
                                  @"company" : NSStringFromSelector(@selector(company)),
-                                 @"image" : NSStringFromSelector(@selector(imageLink))
+                                 @"image" : NSStringFromSelector(@selector(imageUrl))
                                  };
     Class entityClass = [SpeakerModelObject class];
     NSString *entityName = [self.entityNameFormatter transformToEntityNameClass:entityClass];
@@ -163,11 +163,11 @@
                                                   [mapping hasMany:[SocialNetworkAccountModelObject class]
                                                         forKeyPath:@"social_profiles"
                                                        forProperty:NSStringFromSelector(@selector(socialNetworkAccounts))
-                                                 withObjectMapping:[self socialNetworkAccountManagedObjectMapping]];
+                                                 withObjectMapping:[self socialNetworkAccountModelObjectMapping]];
                                               }];
 }
 
-- (EKManagedObjectMapping *)socialNetworkAccountManagedObjectMapping {
+- (EKManagedObjectMapping *)socialNetworkAccountModelObjectMapping {
     NSDictionary *properties = @{
                                  @"link" : NSStringFromSelector(@selector(profileLink))
                                  };
@@ -183,7 +183,7 @@
                                               }];
 }
 
-- (EKManagedObjectMapping *)tagManagedObjectMapping {
+- (EKManagedObjectMapping *)tagModelObjectMapping {
     NSDictionary *properties = @{
                                  @"id" : NSStringFromSelector(@selector(tagId)),
                                  @"name" : NSStringFromSelector(@selector(name)),
@@ -198,7 +198,7 @@
                                               }];
 }
 
-- (EKManagedObjectMapping *)lectureMaterialManagedObjectMapping {
+- (EKManagedObjectMapping *)lectureMaterialModelObjectMapping {
     NSDictionary *properties = @{
                                  @"id" : NSStringFromSelector(@selector(lectureMaterialId)),
                                  @"link" : NSStringFromSelector(@selector(link)),

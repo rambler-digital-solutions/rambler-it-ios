@@ -11,8 +11,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class Event;
-@class Lecture;
+@class EventModelObject;
+@class LectureModelObject;
 
 @interface TagModelObjectID : NSManagedObjectID {}
 @end
@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface _TagModelObject : NSManagedObject
 + (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_;
 + (NSString*)entityName;
-+ (nullable NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
++ (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
 @property (nonatomic, readonly, strong) TagModelObjectID *objectID;
 
 @property (nonatomic, strong, nullable) NSString* name;
@@ -29,18 +29,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong, nullable) NSString* tagId;
 
-@property (nonatomic, strong, nullable) Event *event;
+@property (nonatomic, strong, nullable) EventModelObject *event;
 
-@property (nonatomic, strong, nullable) NSSet<Lecture*> *lectures;
-- (nullable NSMutableSet<Lecture*>*)lecturesSet;
+@property (nonatomic, strong, nullable) NSSet<LectureModelObject*> *lectures;
+- (nullable NSMutableSet<LectureModelObject*>*)lecturesSet;
 
 @end
 
 @interface _TagModelObject (LecturesCoreDataGeneratedAccessors)
-- (void)addLectures:(NSSet<Lecture*>*)value_;
-- (void)removeLectures:(NSSet<Lecture*>*)value_;
-- (void)addLecturesObject:(Lecture*)value_;
-- (void)removeLecturesObject:(Lecture*)value_;
+- (void)addLectures:(NSSet<LectureModelObject*>*)value_;
+- (void)removeLectures:(NSSet<LectureModelObject*>*)value_;
+- (void)addLecturesObject:(LectureModelObject*)value_;
+- (void)removeLecturesObject:(LectureModelObject*)value_;
 
 @end
 
@@ -55,11 +55,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString*)primitiveTagId;
 - (void)setPrimitiveTagId:(NSString*)value;
 
-- (Event*)primitiveEvent;
-- (void)setPrimitiveEvent:(Event*)value;
+- (EventModelObject*)primitiveEvent;
+- (void)setPrimitiveEvent:(EventModelObject*)value;
 
-- (NSMutableSet<Lecture*>*)primitiveLectures;
-- (void)setPrimitiveLectures:(NSMutableSet<Lecture*>*)value;
+- (NSMutableSet<LectureModelObject*>*)primitiveLectures;
+- (void)setPrimitiveLectures:(NSMutableSet<LectureModelObject*>*)value;
 
 @end
 

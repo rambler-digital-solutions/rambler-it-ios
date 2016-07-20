@@ -68,10 +68,10 @@
 
 @dynamic lectureMaterials;
 
-- (NSMutableSet<LectureMaterial*>*)lectureMaterialsSet {
+- (NSMutableSet<LectureMaterialModelObject*>*)lectureMaterialsSet {
 	[self willAccessValueForKey:@"lectureMaterials"];
 
-	NSMutableSet<LectureMaterial*> *result = (NSMutableSet<LectureMaterial*>*)[self mutableSetValueForKey:@"lectureMaterials"];
+	NSMutableSet<LectureMaterialModelObject*> *result = (NSMutableSet<LectureMaterialModelObject*>*)[self mutableSetValueForKey:@"lectureMaterials"];
 
 	[self didAccessValueForKey:@"lectureMaterials"];
 	return result;
@@ -81,10 +81,10 @@
 
 @dynamic tags;
 
-- (NSMutableSet<Tag*>*)tagsSet {
+- (NSMutableSet<TagModelObject*>*)tagsSet {
 	[self willAccessValueForKey:@"tags"];
 
-	NSMutableSet<Tag*> *result = (NSMutableSet<Tag*>*)[self mutableSetValueForKey:@"tags"];
+	NSMutableSet<TagModelObject*> *result = (NSMutableSet<TagModelObject*>*)[self mutableSetValueForKey:@"tags"];
 
 	[self didAccessValueForKey:@"tags"];
 	return result;

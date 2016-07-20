@@ -35,16 +35,14 @@
     @weakify(self)
     [self.eventService updateEventWithPredicate:nil completionBlock:^(id data, NSError *error) {
         @strongify(self);
-        NSArray *events = [self getPlainEventsFromManagedObjects:data];
+        NSArray *events = [self.eventService obtainEventWithPredicate:nil];
         
         [self.output didUpdateEventList:events];
     }];
 }
 
 - (NSArray *)obtainEventList {
-    id managedObjectEvents = [self.eventService obtainEventWithPredicate:nil];
-    
-    NSArray *events = [self getPlainEventsFromManagedObjects:managedObjectEvents];
+    NSArray *events = [self.eventService obtainEventWithPredicate:nil];
     
     return events;
 }

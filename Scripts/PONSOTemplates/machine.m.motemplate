@@ -1,11 +1,11 @@
 //
-//  _<$managedObjectClassName$>PlainObject.m
+//  _<$name$>PlainObject.m
 //
 // DO NOT EDIT. This file is machine-generated and constantly overwritten.
 //
 
-#import "_<$managedObjectClassName$>PlainObject.h"
+#import "_<$name$>PlainObject.h"
 
-@implementation _<$managedObjectClassName$>PlainObject
+@implementation _<$name$>PlainObject
 
 @end

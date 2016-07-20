@@ -32,7 +32,7 @@
         _date = date;
         _time = time;
         _eventTitle = event.name;
-        _imageUrl = event.imageUrl;
+        _imageUrl = [NSURL URLWithString:event.imageUrl];
         _event = event;
     }
     return self;

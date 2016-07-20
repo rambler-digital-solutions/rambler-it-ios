@@ -11,10 +11,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class Event;
-@class LectureMaterial;
-@class Speaker;
-@class Tag;
+@class EventModelObject;
+@class LectureMaterialModelObject;
+@class SpeakerModelObject;
+@class TagModelObject;
 
 @interface LectureModelObjectID : NSManagedObjectID {}
 @end
@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface _LectureModelObject : NSManagedObject
 + (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_;
 + (NSString*)entityName;
-+ (nullable NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
++ (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
 @property (nonatomic, readonly, strong) LectureModelObjectID *objectID;
 
 @property (nonatomic, strong, nullable) NSNumber* favourite;
@@ -37,31 +37,31 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSString* name;
 
-@property (nonatomic, strong, nullable) Event *event;
+@property (nonatomic, strong, nullable) EventModelObject *event;
 
-@property (nonatomic, strong, nullable) NSSet<LectureMaterial*> *lectureMaterials;
-- (nullable NSMutableSet<LectureMaterial*>*)lectureMaterialsSet;
+@property (nonatomic, strong, nullable) NSSet<LectureMaterialModelObject*> *lectureMaterials;
+- (nullable NSMutableSet<LectureMaterialModelObject*>*)lectureMaterialsSet;
 
-@property (nonatomic, strong, nullable) Speaker *speaker;
+@property (nonatomic, strong, nullable) SpeakerModelObject *speaker;
 
-@property (nonatomic, strong, nullable) NSSet<Tag*> *tags;
-- (nullable NSMutableSet<Tag*>*)tagsSet;
+@property (nonatomic, strong, nullable) NSSet<TagModelObject*> *tags;
+- (nullable NSMutableSet<TagModelObject*>*)tagsSet;
 
 @end
 
 @interface _LectureModelObject (LectureMaterialsCoreDataGeneratedAccessors)
-- (void)addLectureMaterials:(NSSet<LectureMaterial*>*)value_;
-- (void)removeLectureMaterials:(NSSet<LectureMaterial*>*)value_;
-- (void)addLectureMaterialsObject:(LectureMaterial*)value_;
-- (void)removeLectureMaterialsObject:(LectureMaterial*)value_;
+- (void)addLectureMaterials:(NSSet<LectureMaterialModelObject*>*)value_;
+- (void)removeLectureMaterials:(NSSet<LectureMaterialModelObject*>*)value_;
+- (void)addLectureMaterialsObject:(LectureMaterialModelObject*)value_;
+- (void)removeLectureMaterialsObject:(LectureMaterialModelObject*)value_;
 
 @end
 
 @interface _LectureModelObject (TagsCoreDataGeneratedAccessors)
-- (void)addTags:(NSSet<Tag*>*)value_;
-- (void)removeTags:(NSSet<Tag*>*)value_;
-- (void)addTagsObject:(Tag*)value_;
-- (void)removeTagsObject:(Tag*)value_;
+- (void)addTags:(NSSet<TagModelObject*>*)value_;
+- (void)removeTags:(NSSet<TagModelObject*>*)value_;
+- (void)addTagsObject:(TagModelObject*)value_;
+- (void)removeTagsObject:(TagModelObject*)value_;
 
 @end
 
@@ -82,17 +82,17 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString*)primitiveName;
 - (void)setPrimitiveName:(NSString*)value;
 
-- (Event*)primitiveEvent;
-- (void)setPrimitiveEvent:(Event*)value;
+- (EventModelObject*)primitiveEvent;
+- (void)setPrimitiveEvent:(EventModelObject*)value;
 
-- (NSMutableSet<LectureMaterial*>*)primitiveLectureMaterials;
-- (void)setPrimitiveLectureMaterials:(NSMutableSet<LectureMaterial*>*)value;
+- (NSMutableSet<LectureMaterialModelObject*>*)primitiveLectureMaterials;
+- (void)setPrimitiveLectureMaterials:(NSMutableSet<LectureMaterialModelObject*>*)value;
 
-- (Speaker*)primitiveSpeaker;
-- (void)setPrimitiveSpeaker:(Speaker*)value;
+- (SpeakerModelObject*)primitiveSpeaker;
+- (void)setPrimitiveSpeaker:(SpeakerModelObject*)value;
 
-- (NSMutableSet<Tag*>*)primitiveTags;
-- (void)setPrimitiveTags:(NSMutableSet<Tag*>*)value;
+- (NSMutableSet<TagModelObject*>*)primitiveTags;
+- (void)setPrimitiveTags:(NSMutableSet<TagModelObject*>*)value;
 
 @end
 

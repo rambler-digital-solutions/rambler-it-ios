@@ -42,10 +42,10 @@
 
 @dynamic lectures;
 
-- (NSMutableSet<Lecture*>*)lecturesSet {
+- (NSMutableSet<LectureModelObject*>*)lecturesSet {
 	[self willAccessValueForKey:@"lectures"];
 
-	NSMutableSet<Lecture*> *result = (NSMutableSet<Lecture*>*)[self mutableSetValueForKey:@"lectures"];
+	NSMutableSet<LectureModelObject*> *result = (NSMutableSet<LectureModelObject*>*)[self mutableSetValueForKey:@"lectures"];
 
 	[self didAccessValueForKey:@"lectures"];
 	return result;

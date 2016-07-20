@@ -23,10 +23,12 @@
 
 @class EventListOperationFactory;
 @protocol OperationScheduler;
+@protocol ROSPonsomizer;
 
 @interface EventServiceImplementation : NSObject <EventService>
 
 @property (strong, nonatomic) EventListOperationFactory *eventOperationFactory;
 @property (strong, nonatomic) id <OperationScheduler> operationScheduler;
+@property (strong, nonatomic) id <ROSPonsomizer> ponsomizer;
 
 @end

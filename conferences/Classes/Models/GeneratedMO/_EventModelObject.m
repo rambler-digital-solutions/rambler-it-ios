@@ -80,10 +80,10 @@
 
 @dynamic lectures;
 
-- (NSMutableSet<Lecture*>*)lecturesSet {
+- (NSMutableSet<LectureModelObject*>*)lecturesSet {
 	[self willAccessValueForKey:@"lectures"];
 
-	NSMutableSet<Lecture*> *result = (NSMutableSet<Lecture*>*)[self mutableSetValueForKey:@"lectures"];
+	NSMutableSet<LectureModelObject*> *result = (NSMutableSet<LectureModelObject*>*)[self mutableSetValueForKey:@"lectures"];
 
 	[self didAccessValueForKey:@"lectures"];
 	return result;
@@ -93,10 +93,10 @@
 
 @dynamic registrationQuestions;
 
-- (NSMutableSet<RegistrationQuestion*>*)registrationQuestionsSet {
+- (NSMutableSet<RegistrationQuestionModelObject*>*)registrationQuestionsSet {
 	[self willAccessValueForKey:@"registrationQuestions"];
 
-	NSMutableSet<RegistrationQuestion*> *result = (NSMutableSet<RegistrationQuestion*>*)[self mutableSetValueForKey:@"registrationQuestions"];
+	NSMutableSet<RegistrationQuestionModelObject*> *result = (NSMutableSet<RegistrationQuestionModelObject*>*)[self mutableSetValueForKey:@"registrationQuestions"];
 
 	[self didAccessValueForKey:@"registrationQuestions"];
 	return result;
@@ -104,10 +104,10 @@
 
 @dynamic tags;
 
-- (NSMutableSet<Tag*>*)tagsSet {
+- (NSMutableSet<TagModelObject*>*)tagsSet {
 	[self willAccessValueForKey:@"tags"];
 
-	NSMutableSet<Tag*> *result = (NSMutableSet<Tag*>*)[self mutableSetValueForKey:@"tags"];
+	NSMutableSet<TagModelObject*> *result = (NSMutableSet<TagModelObject*>*)[self mutableSetValueForKey:@"tags"];
 
 	[self didAccessValueForKey:@"tags"];
 	return result;

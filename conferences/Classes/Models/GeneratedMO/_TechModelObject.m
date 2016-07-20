@@ -40,10 +40,10 @@
 
 @dynamic events;
 
-- (NSMutableSet<Event*>*)eventsSet {
+- (NSMutableSet<EventModelObject*>*)eventsSet {
 	[self willAccessValueForKey:@"events"];
 
-	NSMutableSet<Event*> *result = (NSMutableSet<Event*>*)[self mutableSetValueForKey:@"events"];
+	NSMutableSet<EventModelObject*> *result = (NSMutableSet<EventModelObject*>*)[self mutableSetValueForKey:@"events"];
 
 	[self didAccessValueForKey:@"events"];
 	return result;

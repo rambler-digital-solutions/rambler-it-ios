@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class Event;
+@class EventModelObject;
 
 @interface TechModelObjectID : NSManagedObjectID {}
 @end
@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface _TechModelObject : NSManagedObject
 + (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_;
 + (NSString*)entityName;
-+ (nullable NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
++ (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
 @property (nonatomic, readonly, strong) TechModelObjectID *objectID;
 
 @property (nonatomic, strong, nullable) NSString* color;
@@ -28,16 +28,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong, nullable) NSString* techId;
 
-@property (nonatomic, strong, nullable) NSSet<Event*> *events;
-- (nullable NSMutableSet<Event*>*)eventsSet;
+@property (nonatomic, strong, nullable) NSSet<EventModelObject*> *events;
+- (nullable NSMutableSet<EventModelObject*>*)eventsSet;
 
 @end
 
 @interface _TechModelObject (EventsCoreDataGeneratedAccessors)
-- (void)addEvents:(NSSet<Event*>*)value_;
-- (void)removeEvents:(NSSet<Event*>*)value_;
-- (void)addEventsObject:(Event*)value_;
-- (void)removeEventsObject:(Event*)value_;
+- (void)addEvents:(NSSet<EventModelObject*>*)value_;
+- (void)removeEvents:(NSSet<EventModelObject*>*)value_;
+- (void)addEventsObject:(EventModelObject*)value_;
+- (void)removeEventsObject:(EventModelObject*)value_;
 
 @end
 
@@ -52,8 +52,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString*)primitiveTechId;
 - (void)setPrimitiveTechId:(NSString*)value;
 
-- (NSMutableSet<Event*>*)primitiveEvents;
-- (void)setPrimitiveEvents:(NSMutableSet<Event*>*)value;
+- (NSMutableSet<EventModelObject*>*)primitiveEvents;
+- (void)setPrimitiveEvents:(NSMutableSet<EventModelObject*>*)value;
 
 @end
 

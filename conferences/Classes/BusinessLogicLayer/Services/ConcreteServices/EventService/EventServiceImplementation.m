@@ -26,6 +26,7 @@
 #import "EventListOperationFactory.h"
 #import "OperationScheduler.h"
 #import "EventModelObject.h"
+#import "ROSPonsomizer.h"
 
 @implementation EventServiceImplementation
 
@@ -43,9 +44,10 @@
 - (NSArray *)obtainEventWithPredicate:(NSPredicate *)predicate {
     NSManagedObjectContext *context = [NSManagedObjectContext MR_defaultContext];
     
-    NSArray *events = [EventModelObject MR_findAllWithPredicate:predicate inContext:context];
+    NSArray *events = [EventModelObject MR_findAllInContext:context];
+    NSArray *ponsoEvents = [self.ponsomizer convertObject:events];
     
-    return events;
+    return ponsoEvents;
 }
 
 @end

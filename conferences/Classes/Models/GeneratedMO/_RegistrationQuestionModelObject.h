@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class Event;
+@class EventModelObject;
 
 @interface RegistrationQuestionModelObjectID : NSManagedObjectID {}
 @end
@@ -19,14 +19,14 @@ NS_ASSUME_NONNULL_BEGIN
 @interface _RegistrationQuestionModelObject : NSManagedObject
 + (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_;
 + (NSString*)entityName;
-+ (nullable NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
++ (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
 @property (nonatomic, readonly, strong) RegistrationQuestionModelObjectID *objectID;
 
 @property (nonatomic, strong) NSString* name;
 
 @property (nonatomic, strong) NSString* orderID;
 
-@property (nonatomic, strong, nullable) Event *event;
+@property (nonatomic, strong, nullable) EventModelObject *event;
 
 @end
 
@@ -38,8 +38,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString*)primitiveOrderID;
 - (void)setPrimitiveOrderID:(NSString*)value;
 
-- (Event*)primitiveEvent;
-- (void)setPrimitiveEvent:(Event*)value;
+- (EventModelObject*)primitiveEvent;
+- (void)setPrimitiveEvent:(EventModelObject*)value;
 
 @end
 

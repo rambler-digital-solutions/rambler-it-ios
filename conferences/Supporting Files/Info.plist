@@ -46,6 +46,7 @@
 	<key>TyphoonInitialAssemblies</key>
 	<array>
 		<string>SpeakerInfoModuleAssembly</string>
+		<string>CoreAssembly</string>
 		<string>SpeakerShortInfoModuleAssembly</string>
 		<string>LectureModuleAssembly</string>
 		<string>EventHeaderModuleAssembly</string>

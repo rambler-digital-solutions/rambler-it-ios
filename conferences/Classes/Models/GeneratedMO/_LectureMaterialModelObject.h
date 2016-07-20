@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class Lecture;
+@class LectureModelObject;
 
 @interface LectureMaterialModelObjectID : NSManagedObjectID {}
 @end
@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface _LectureMaterialModelObject : NSManagedObject
 + (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_;
 + (NSString*)entityName;
-+ (nullable NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
++ (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
 @property (nonatomic, readonly, strong) LectureMaterialModelObjectID *objectID;
 
 @property (nonatomic, strong) NSString* lectureMaterialId;
@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSString* name;
 
-@property (nonatomic, strong, nullable) Lecture *lecture;
+@property (nonatomic, strong, nullable) LectureModelObject *lecture;
 
 @end
 
@@ -43,8 +43,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString*)primitiveName;
 - (void)setPrimitiveName:(NSString*)value;
 
-- (Lecture*)primitiveLecture;
-- (void)setPrimitiveLecture:(Lecture*)value;
+- (LectureModelObject*)primitiveLecture;
+- (void)setPrimitiveLecture:(LectureModelObject*)value;
 
 @end
 

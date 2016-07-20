@@ -20,7 +20,7 @@
 
 #import "EntityNameFormatterImplementation.h"
 
-static NSString *const kEntityClassSuffix = @"ManagedObject";
+static NSString *const kEntityClassSuffix = @"ModelObject";
 
 @implementation EntityNameFormatterImplementation
 

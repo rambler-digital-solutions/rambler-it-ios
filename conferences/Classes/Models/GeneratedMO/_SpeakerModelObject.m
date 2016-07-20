@@ -46,10 +46,10 @@
 
 @dynamic lectures;
 
-- (NSMutableSet<Lecture*>*)lecturesSet {
+- (NSMutableSet<LectureModelObject*>*)lecturesSet {
 	[self willAccessValueForKey:@"lectures"];
 
-	NSMutableSet<Lecture*> *result = (NSMutableSet<Lecture*>*)[self mutableSetValueForKey:@"lectures"];
+	NSMutableSet<LectureModelObject*> *result = (NSMutableSet<LectureModelObject*>*)[self mutableSetValueForKey:@"lectures"];
 
 	[self didAccessValueForKey:@"lectures"];
 	return result;
@@ -57,10 +57,10 @@
 
 @dynamic socialNetworkAccounts;
 
-- (NSMutableSet<SocialNetworkAccount*>*)socialNetworkAccountsSet {
+- (NSMutableSet<SocialNetworkAccountModelObject*>*)socialNetworkAccountsSet {
 	[self willAccessValueForKey:@"socialNetworkAccounts"];
 
-	NSMutableSet<SocialNetworkAccount*> *result = (NSMutableSet<SocialNetworkAccount*>*)[self mutableSetValueForKey:@"socialNetworkAccounts"];
+	NSMutableSet<SocialNetworkAccountModelObject*> *result = (NSMutableSet<SocialNetworkAccountModelObject*>*)[self mutableSetValueForKey:@"socialNetworkAccounts"];
 
 	[self didAccessValueForKey:@"socialNetworkAccounts"];
 	return result;

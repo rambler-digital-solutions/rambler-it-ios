@@ -11,11 +11,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class Lecture;
-@class MetaEvent;
-@class RegistrationQuestion;
-@class Tag;
-@class Tech;
+@class LectureModelObject;
+@class MetaEventModelObject;
+@class RegistrationQuestionModelObject;
+@class TagModelObject;
+@class TechModelObject;
 
 @interface EventModelObjectID : NSManagedObjectID {}
 @end
@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface _EventModelObject : NSManagedObject
 + (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_;
 + (NSString*)entityName;
-+ (nullable NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
++ (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
 @property (nonatomic, readonly, strong) EventModelObjectID *objectID;
 
 @property (nonatomic, strong) NSDate* endDate;
@@ -52,42 +52,42 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong, nullable) NSString* twitterTag;
 
-@property (nonatomic, strong, nullable) NSSet<Lecture*> *lectures;
-- (nullable NSMutableSet<Lecture*>*)lecturesSet;
+@property (nonatomic, strong, nullable) NSSet<LectureModelObject*> *lectures;
+- (nullable NSMutableSet<LectureModelObject*>*)lecturesSet;
 
-@property (nonatomic, strong, nullable) MetaEvent *metaEvent;
+@property (nonatomic, strong, nullable) MetaEventModelObject *metaEvent;
 
-@property (nonatomic, strong, nullable) NSSet<RegistrationQuestion*> *registrationQuestions;
-- (nullable NSMutableSet<RegistrationQuestion*>*)registrationQuestionsSet;
+@property (nonatomic, strong, nullable) NSSet<RegistrationQuestionModelObject*> *registrationQuestions;
+- (nullable NSMutableSet<RegistrationQuestionModelObject*>*)registrationQuestionsSet;
 
-@property (nonatomic, strong, nullable) NSSet<Tag*> *tags;
-- (nullable NSMutableSet<Tag*>*)tagsSet;
+@property (nonatomic, strong, nullable) NSSet<TagModelObject*> *tags;
+- (nullable NSMutableSet<TagModelObject*>*)tagsSet;
 
-@property (nonatomic, strong, nullable) Tech *tech;
+@property (nonatomic, strong, nullable) TechModelObject *tech;
 
 @end
 
 @interface _EventModelObject (LecturesCoreDataGeneratedAccessors)
-- (void)addLectures:(NSSet<Lecture*>*)value_;
-- (void)removeLectures:(NSSet<Lecture*>*)value_;
-- (void)addLecturesObject:(Lecture*)value_;
-- (void)removeLecturesObject:(Lecture*)value_;
+- (void)addLectures:(NSSet<LectureModelObject*>*)value_;
+- (void)removeLectures:(NSSet<LectureModelObject*>*)value_;
+- (void)addLecturesObject:(LectureModelObject*)value_;
+- (void)removeLecturesObject:(LectureModelObject*)value_;
 
 @end
 
 @interface _EventModelObject (RegistrationQuestionsCoreDataGeneratedAccessors)
-- (void)addRegistrationQuestions:(NSSet<RegistrationQuestion*>*)value_;
-- (void)removeRegistrationQuestions:(NSSet<RegistrationQuestion*>*)value_;
-- (void)addRegistrationQuestionsObject:(RegistrationQuestion*)value_;
-- (void)removeRegistrationQuestionsObject:(RegistrationQuestion*)value_;
+- (void)addRegistrationQuestions:(NSSet<RegistrationQuestionModelObject*>*)value_;
+- (void)removeRegistrationQuestions:(NSSet<RegistrationQuestionModelObject*>*)value_;
+- (void)addRegistrationQuestionsObject:(RegistrationQuestionModelObject*)value_;
+- (void)removeRegistrationQuestionsObject:(RegistrationQuestionModelObject*)value_;
 
 @end
 
 @interface _EventModelObject (TagsCoreDataGeneratedAccessors)
-- (void)addTags:(NSSet<Tag*>*)value_;
-- (void)removeTags:(NSSet<Tag*>*)value_;
-- (void)addTagsObject:(Tag*)value_;
-- (void)removeTagsObject:(Tag*)value_;
+- (void)addTags:(NSSet<TagModelObject*>*)value_;
+- (void)removeTags:(NSSet<TagModelObject*>*)value_;
+- (void)addTagsObject:(TagModelObject*)value_;
+- (void)removeTagsObject:(TagModelObject*)value_;
 
 @end
 
@@ -129,20 +129,20 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString*)primitiveTwitterTag;
 - (void)setPrimitiveTwitterTag:(NSString*)value;
 
-- (NSMutableSet<Lecture*>*)primitiveLectures;
-- (void)setPrimitiveLectures:(NSMutableSet<Lecture*>*)value;
+- (NSMutableSet<LectureModelObject*>*)primitiveLectures;
+- (void)setPrimitiveLectures:(NSMutableSet<LectureModelObject*>*)value;
 
-- (MetaEvent*)primitiveMetaEvent;
-- (void)setPrimitiveMetaEvent:(MetaEvent*)value;
+- (MetaEventModelObject*)primitiveMetaEvent;
+- (void)setPrimitiveMetaEvent:(MetaEventModelObject*)value;
 
-- (NSMutableSet<RegistrationQuestion*>*)primitiveRegistrationQuestions;
-- (void)setPrimitiveRegistrationQuestions:(NSMutableSet<RegistrationQuestion*>*)value;
+- (NSMutableSet<RegistrationQuestionModelObject*>*)primitiveRegistrationQuestions;
+- (void)setPrimitiveRegistrationQuestions:(NSMutableSet<RegistrationQuestionModelObject*>*)value;
 
-- (NSMutableSet<Tag*>*)primitiveTags;
-- (void)setPrimitiveTags:(NSMutableSet<Tag*>*)value;
+- (NSMutableSet<TagModelObject*>*)primitiveTags;
+- (void)setPrimitiveTags:(NSMutableSet<TagModelObject*>*)value;
 
-- (Tech*)primitiveTech;
-- (void)setPrimitiveTech:(Tech*)value;
+- (TechModelObject*)primitiveTech;
+- (void)setPrimitiveTech:(TechModelObject*)value;
 
 @end
 

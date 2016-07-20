@@ -11,8 +11,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class Lecture;
-@class SocialNetworkAccount;
+@class LectureModelObject;
+@class SocialNetworkAccountModelObject;
 
 @interface SpeakerModelObjectID : NSManagedObjectID {}
 @end
@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface _SpeakerModelObject : NSManagedObject
 + (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_;
 + (NSString*)entityName;
-+ (nullable NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
++ (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
 @property (nonatomic, readonly, strong) SpeakerModelObjectID *objectID;
 
 @property (nonatomic, strong, nullable) NSString* biography;
@@ -35,27 +35,27 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSString* speakerId;
 
-@property (nonatomic, strong, nullable) NSSet<Lecture*> *lectures;
-- (nullable NSMutableSet<Lecture*>*)lecturesSet;
+@property (nonatomic, strong, nullable) NSSet<LectureModelObject*> *lectures;
+- (nullable NSMutableSet<LectureModelObject*>*)lecturesSet;
 
-@property (nonatomic, strong, nullable) NSSet<SocialNetworkAccount*> *socialNetworkAccounts;
-- (nullable NSMutableSet<SocialNetworkAccount*>*)socialNetworkAccountsSet;
+@property (nonatomic, strong, nullable) NSSet<SocialNetworkAccountModelObject*> *socialNetworkAccounts;
+- (nullable NSMutableSet<SocialNetworkAccountModelObject*>*)socialNetworkAccountsSet;
 
 @end
 
 @interface _SpeakerModelObject (LecturesCoreDataGeneratedAccessors)
-- (void)addLectures:(NSSet<Lecture*>*)value_;
-- (void)removeLectures:(NSSet<Lecture*>*)value_;
-- (void)addLecturesObject:(Lecture*)value_;
-- (void)removeLecturesObject:(Lecture*)value_;
+- (void)addLectures:(NSSet<LectureModelObject*>*)value_;
+- (void)removeLectures:(NSSet<LectureModelObject*>*)value_;
+- (void)addLecturesObject:(LectureModelObject*)value_;
+- (void)removeLecturesObject:(LectureModelObject*)value_;
 
 @end
 
 @interface _SpeakerModelObject (SocialNetworkAccountsCoreDataGeneratedAccessors)
-- (void)addSocialNetworkAccounts:(NSSet<SocialNetworkAccount*>*)value_;
-- (void)removeSocialNetworkAccounts:(NSSet<SocialNetworkAccount*>*)value_;
-- (void)addSocialNetworkAccountsObject:(SocialNetworkAccount*)value_;
-- (void)removeSocialNetworkAccountsObject:(SocialNetworkAccount*)value_;
+- (void)addSocialNetworkAccounts:(NSSet<SocialNetworkAccountModelObject*>*)value_;
+- (void)removeSocialNetworkAccounts:(NSSet<SocialNetworkAccountModelObject*>*)value_;
+- (void)addSocialNetworkAccountsObject:(SocialNetworkAccountModelObject*)value_;
+- (void)removeSocialNetworkAccountsObject:(SocialNetworkAccountModelObject*)value_;
 
 @end
 
@@ -79,11 +79,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString*)primitiveSpeakerId;
 - (void)setPrimitiveSpeakerId:(NSString*)value;
 
-- (NSMutableSet<Lecture*>*)primitiveLectures;
-- (void)setPrimitiveLectures:(NSMutableSet<Lecture*>*)value;
+- (NSMutableSet<LectureModelObject*>*)primitiveLectures;
+- (void)setPrimitiveLectures:(NSMutableSet<LectureModelObject*>*)value;
 
-- (NSMutableSet<SocialNetworkAccount*>*)primitiveSocialNetworkAccounts;
-- (void)setPrimitiveSocialNetworkAccounts:(NSMutableSet<SocialNetworkAccount*>*)value;
+- (NSMutableSet<SocialNetworkAccountModelObject*>*)primitiveSocialNetworkAccounts;
+- (void)setPrimitiveSocialNetworkAccounts:(NSMutableSet<SocialNetworkAccountModelObject*>*)value;
 
 @end
 
