@@ -23,6 +23,8 @@
 
 @protocol PushNotificationService;
 @protocol EventService;
+@protocol LectureService;
+@protocol SpeakerService;
 @protocol EventListService;
 @protocol PrototypeMapper;
 @protocol EventStoreServiceProtocol;
@@ -32,11 +34,15 @@
 
 - (id <PushNotificationService>)pushNotificationService;
 - (id <EventService>)eventService;
+- (id <EventService>)lectureService;
+- (id <EventService>)speakerService;
 - (id <EventListService>)eventListService;
 - (id <EventStoreServiceProtocol>)eventStoreService;
 - (id <RamblerLocationService>)ramblerLocationService;
 
 // вынести из сервисов
 - (id <PrototypeMapper>)eventPrototypeMapper;
+- (id <PrototypeMapper>)speakerPrototypeMapper;
+- (id <PrototypeMapper>)lecturePrototypeMapper;
 
 @end
