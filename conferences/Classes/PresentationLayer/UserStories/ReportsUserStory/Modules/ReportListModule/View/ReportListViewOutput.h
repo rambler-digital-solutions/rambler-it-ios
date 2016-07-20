@@ -29,7 +29,7 @@
 /**
  @author Zinovyev Konstantin
  
- Метод сообщает о том, что была нажата ячейка
+ Метод сообщает презентеру о том, что была нажата ячейка
  
  @param event Событие в нажатой ячейке
  */
@@ -38,11 +38,27 @@
 /**
  @author Zinovyev Konstantin
  
- Обрабатывает текст в веденный в поиске
+ Метод сообщает презентеру, о том что пользователь изменил текст поиска
  
  @param text Введенный в поиск
  */
 - (void)didSearchBarChangedWithText:(NSString *)text;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ Метод сообщает презентеру, о том что пользователь нажал на поле поиска
+ 
+ @param text Текст в поле поиска
+ */
+- (void)didSearchBarBeginWithText:(NSString *)text;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ Метод сообщает презентеру, о том что пользователь нажал на кнопку Cancel в поиске
+ */
+- (void)didSearchBarTapCancelButton;
 
 @end
 

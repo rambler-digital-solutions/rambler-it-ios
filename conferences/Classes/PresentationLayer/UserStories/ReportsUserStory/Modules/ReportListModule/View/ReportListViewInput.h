@@ -24,6 +24,7 @@
 
 - (void)setupViewWithEventList:(NSArray *)events;
 - (void)updateViewWithEventList:(NSArray *)events;
+- (void)hideSearchModuleView;
 
 @end
 

@@ -20,8 +20,12 @@
 
 #import "ReportListRouter.h"
 #import "EventModuleInput.h"
+#import "ReportsSearchModuleInput.h"
+
+@protocol ReportsSearchModuleOutput;
 
 static NSString *const kReportListModuleToEventModuleSegue = @"ReportListModuleToEventModuleSegue";
+static NSString *const kReportListModuleToReportsSearchModuleSegue = @"ReportListModuleToReportsSearchModuleSegue";
 
 @implementation ReportListRouter
 
@@ -31,6 +35,12 @@ static NSString *const kReportListModuleToEventModuleSegue = @"ReportListModuleT
     [[self.transitionHandler openModuleUsingSegue:kReportListModuleToEventModuleSegue] thenChainUsingBlock:^id<RamblerViperModuleOutput>(id<EventModuleInput> moduleInput) {
         [moduleInput configureCurrentModuleWithEventObjectId:objectId];
         return nil;
+    }];
+}
+
+- (void)configureReportsSearchModuleWithModuleOutput:(id<ReportsSearchModuleOutput>)moduleOutput {
+    [[self.transitionHandler openModuleUsingSegue: kReportListModuleToReportsSearchModuleSegue] thenChainUsingBlock:^id<ReportsSearchModuleOutput>(id<ReportsSearchModuleInput> moduleInput) {
+        return moduleOutput;
     }];
 }
 

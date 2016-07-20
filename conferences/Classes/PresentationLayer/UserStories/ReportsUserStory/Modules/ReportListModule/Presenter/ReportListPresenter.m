@@ -23,6 +23,7 @@
 #import "ReportListInteractorInput.h"
 #import "ReportListRouterInput.h"
 #import "EventPlainObject.h"
+#import "ReportsSearchModuleInput.h"
 
 @implementation ReportListPresenter
 
@@ -31,8 +32,10 @@
 - (void)setupView {
     NSArray *events = [self.interactor obtainEventList];
     [self.interactor updateEventList];
+    [self.router configureReportsSearchModuleWithModuleOutput:self];
     [self.view setupViewWithEventList:events];
 }
+
 
 - (void)didTriggerTapCellWithEvent:(EventPlainObject *)event {
     [self.router openEventModuleWithEventObjectId:event.objectId];
@@ -44,17 +47,25 @@
     [self.view updateViewWithEventList:events];
 }
 
+- (void)didSearchBarTapCancelButton {
+    [self.reportsSearchModule closeSearchModule];
+}
+#pragma mark - SearchBar Delegate
 - (void)didSearchBarChangedWithText:(NSString *)text {
-    NSPredicate *predicate;
+    [self.reportsSearchModule updateModuleWithText:text];
+}
+
+- (void)didTapClearScreenSearchModule {
+    [self.view hideSearchModuleView];
+}
+
+- (void)didSearchBarBeginWithText:(NSString *)text {
     
-    if ([text length] == 0) {
-        predicate = nil;
-    } else {
-        predicate = [NSPredicate predicateWithFormat:@"name CONTAINS[c] %@",text];
-    }
-    
-    NSArray *events = [self.interactor obtainEventListWithPredicate:predicate];
-    [self.view updateViewWithEventList:events];
+}
+#pragma mark - ReportsSearchModuleOuput
+
+- (void)didLoadReportsSearchModule:(id<ReportsSearchModuleInput>)reportsSearchModule {
+    self.reportsSearchModule = reportsSearchModule;
 }
 
 @end
