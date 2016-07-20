@@ -18,34 +18,19 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "ReportListTableViewCell.h"
-#import "ReportListTableViewCellObject.h"
+#import <Foundation/Foundation.h>
+#import <Nimbus/NimbusModels.h>
 
-static CGFloat const kReportListTableViewCellHeight = 116.0f;
+@class LecturePlainObject;
 
-@interface ReportListTableViewCell ()
+@interface ReportLectureTableViewCellObject : NSObject <NICellObject>
 
-@property (weak, nonatomic) IBOutlet UILabel *date;
-@property (weak, nonatomic) IBOutlet UILabel *eventTitle;
-@property (weak, nonatomic) IBOutlet UIImageView *eventImageView;
+@property (strong, nonatomic, readonly) NSString *date;
+@property (strong, nonatomic, readonly) NSAttributedString *lectureTitle;
+@property (strong, nonatomic, readonly) UIImage *lectureImage;
+@property (strong, nonatomic, readonly) LecturePlainObject *lecture;
+@property (strong, nonatomic, readonly) NSString *speakerName;
 
-@end
-
-@implementation ReportListTableViewCell
-
-#pragma mark - NICell methods
-
-- (BOOL)shouldUpdateCellWithObject:(ReportListTableViewCellObject *)object {
-    self.date.text = object.date;
-    self.eventTitle.text = object.eventTitle;
-    self.eventImageView.image = [UIImage imageNamed:@"logo-js"];
-    self.separatorInset = UIEdgeInsetsMake(0.f, self.bounds.size.width, 0.f, 0.0f);
-    
-    return YES;
-}
-
-+ (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
-    return kReportListTableViewCellHeight;
-}
++ (instancetype)objectWithLecture:(LecturePlainObject *)lecture selectedText:(NSString *)selectedText;
 
 @end

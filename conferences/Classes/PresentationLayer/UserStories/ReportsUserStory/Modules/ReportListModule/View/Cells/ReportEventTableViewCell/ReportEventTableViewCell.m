@@ -18,18 +18,36 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import <Nimbus/NimbusModels.h>
+#import "ReportEventTableViewCell.h"
+#import "ReportEventTableViewCellObject.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
-@class EventPlainObject;
+static CGFloat const kReportEventTableViewCellHeight = 116.0f;
 
-@interface ReportListTableViewCellObject : NSObject <NICellObject>
+@interface ReportEventTableViewCell ()
 
-@property (strong, nonatomic, readonly) NSString *date;
-@property (strong, nonatomic, readonly) NSString *eventTitle;
-@property (strong, nonatomic, readonly) UIImage *eventImage;
-@property (strong, nonatomic, readonly) EventPlainObject *event;
+@property (weak, nonatomic) IBOutlet UILabel *date;
+@property (weak, nonatomic) IBOutlet UILabel *eventTitle;
+@property (weak, nonatomic) IBOutlet UIImageView *eventImageView;
 
-+ (instancetype)objectWithEvent:(EventPlainObject *)event andDate:(NSString *)date;
+@end
+
+@implementation ReportEventTableViewCell
+
+#pragma mark - NICell methods
+
+- (BOOL)shouldUpdateCellWithObject:(ReportEventTableViewCellObject *)object {
+    self.date.text = object.date;
+    self.eventTitle.attributedText = object.eventTitle;
+    UIImage *placeholder = [UIImage imageNamed:@"logo-js"];
+    [self.eventImageView sd_setImageWithURL:object.imageURL placeholderImage:placeholder];
+    self.separatorInset = UIEdgeInsetsMake(0.f, self.bounds.size.width, 0.f, 0.0f);
+    
+    return YES;
+}
+
++ (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
+    return kReportEventTableViewCellHeight;
+}
 
 @end

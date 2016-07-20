@@ -18,9 +18,21 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
-#import <NICellFactory.h>
+#import <Foundation/Foundation.h>
+#import <Nimbus/NimbusModels.h>
 
-@interface ReportListTableViewCell : UITableViewCell <NICell>
+@class EventPlainObject;
+@class SpeakerPlainObject;
+@class LecturePlainObject;
+
+@interface ReportEventTableViewCellObject : NSObject <NICellObject>
+
+@property (strong, nonatomic, readonly) NSString *date;
+@property (strong, nonatomic, readonly) NSAttributedString *eventTitle;
+@property (strong, nonatomic, readonly) UIImage *eventImage;
+@property (strong, nonatomic, readonly) NSURL *imageURL;
+@property (strong, nonatomic, readonly) EventPlainObject *event;
+
++ (instancetype)objectWithEvent:(EventPlainObject *)event andDate:(NSString *)date selectedText:(NSString *)selectedText;;
 
 @end

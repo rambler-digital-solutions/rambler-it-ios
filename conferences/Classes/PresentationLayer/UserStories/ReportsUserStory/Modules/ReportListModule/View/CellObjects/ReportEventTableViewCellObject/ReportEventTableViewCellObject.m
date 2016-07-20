@@ -18,46 +18,54 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "ReportListTableViewCellObject.h"
-#import "ReportListTableViewCell.h"
+#import "ReportEventTableViewCellObject.h"
+#import "ReportEventTableViewCell.h"
 #import "EventPlainObject.h"
+#import "UIColor+ConferencesPallete.h"
 
-@interface ReportListTableViewCellObject ()
+@interface ReportEventTableViewCellObject ()
 
 @property (strong, nonatomic, readwrite) NSString *date;
-@property (strong, nonatomic, readwrite) NSString *eventTitle;
+@property (strong, nonatomic, readwrite) NSAttributedString *eventTitle;
 @property (strong, nonatomic, readwrite) UIImage *eventImage;
+@property (strong, nonatomic, readwrite) NSURL *imageURL;
 @property (strong, nonatomic, readwrite) EventPlainObject *event;
 
 @end
 
-@implementation ReportListTableViewCellObject
+@implementation ReportEventTableViewCellObject
 
 #pragma mark - Initialization
 
-- (instancetype)initWithEvent:(EventPlainObject *)event andDate:(NSString *)date {
+- (instancetype)initWithEvent:(EventPlainObject *)event andDate:(NSString *)date attributedName:(NSAttributedString *)attributedName{
     self = [super init];
     if (self) {
-        _eventTitle = event.name;
+        _eventTitle = attributedName;
         _eventImage = event.image;
+        _imageURL = event.imageUrl;
         _date = date;
         _event = event;
     }
     return self;
 }
 
-+ (instancetype)objectWithEvent:(EventPlainObject *)event andDate:(NSString *)date {
-    return [[self alloc] initWithEvent:event andDate:date];
++ (instancetype)objectWithEvent:(EventPlainObject *)event andDate:(NSString *)date selectedText:(NSString *)selectedText {
+    NSMutableAttributedString *attributedName = [[NSMutableAttributedString alloc] initWithString:event.name];
+    if ([selectedText length] != 0) {
+        NSRange range = [[event.name lowercaseString] rangeOfString:selectedText];
+        [attributedName addAttribute:NSForegroundColorAttributeName value:[UIColor colorForSelectedTextEventCellObject] range:range];
+    }
+    return [[self alloc] initWithEvent:event andDate:date attributedName:attributedName];
 }
 
 #pragma mark - NICellObject methods
 
 - (Class)cellClass {
-    return [ReportListTableViewCell class];
+    return [ReportEventTableViewCell class];
 }
 
 - (UINib *)cellNib {
-    return [UINib nibWithNibName:NSStringFromClass([ReportListTableViewCell class]) bundle:[NSBundle mainBundle]];
+    return [UINib nibWithNibName:NSStringFromClass([ReportEventTableViewCell class]) bundle:[NSBundle mainBundle]];
 }
 
 @end

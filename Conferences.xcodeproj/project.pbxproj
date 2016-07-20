@@ -56,9 +56,6 @@
 		636B640D1BBDD5000053E38F /* SocialNetworkAccountServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B640C1BBDD5000053E38F /* SocialNetworkAccountServiceImplementation.m */; };
 		636B64101BBDD6260053E38F /* SpeakerServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B640F1BBDD6260053E38F /* SpeakerServiceImplementation.m */; };
 		636B64121BBFE2C20053E38F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 636B64111BBFE2C20053E38F /* Main.storyboard */; };
-		636DD83D1C285FC000436201 /* ReportListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 636DD83A1C285FC000436201 /* ReportListTableViewCell.m */; };
-		636DD83E1C285FC000436201 /* ReportListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636DD83B1C285FC000436201 /* ReportListTableViewCell.xib */; };
-		636DD8481C28604400436201 /* ReportListTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 636DD8461C28604400436201 /* ReportListTableViewCellObject.m */; };
 		636F8C971BC97B3100552B91 /* EventServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8C961BC97B3100552B91 /* EventServiceImplementation.m */; };
 		636F8C981BC97C1700552B91 /* SpeakerServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B640F1BBDD6260053E38F /* SpeakerServiceImplementation.m */; };
 		636F8C9A1BC97CD300552B91 /* LectureMaterialsServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64061BBDD2A40053E38F /* LectureMaterialsServiceImplementation.m */; };
@@ -211,7 +208,6 @@
 		63F8F2BC1BF8A713000017F3 /* EventTypeDeterminator.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F2BB1BF8A713000017F3 /* EventTypeDeterminator.m */; };
 		63F8F2F51BF9FDBF000017F3 /* CompoundOperationBaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A85071BC185AA006F79FB /* CompoundOperationBaseTests.m */; };
 		63F8F2F61BF9FE7D000017F3 /* RCFRESTRequestConfiguratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830991BC022EA000E21A5 /* RCFRESTRequestConfiguratorTests.m */; };
-		63FD4DFB1BE4FA340046378E /* EventPrototypeMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FD4DFA1BE4FA340046378E /* EventPrototypeMapper.m */; };
 		63FD4E061BE5038D0046378E /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FD4E051BE5038D0046378E /* UIColor+Hex.m */; };
 		63FDCE141BBDBA2A00A43B60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63FDCE021BBDBA2A00A43B60 /* Assets.xcassets */; };
 		63FDCE151BBDBA2A00A43B60 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63FDCE041BBDBA2A00A43B60 /* Info.plist */; };
@@ -219,6 +215,19 @@
 		661138841D38DBBB0032075D /* RootControllerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 661138831D38DBBB0032075D /* RootControllerAppDelegate.m */; };
 		661138871D38DBDE0032075D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 661138861D38DBDE0032075D /* AppDelegate.m */; };
 		664FEE141D366B66001B9C95 /* RamblerInitialAssemblyCollector+Activate.m in Sources */ = {isa = PBXBuildFile; fileRef = 664FEE131D366B66001B9C95 /* RamblerInitialAssemblyCollector+Activate.m */; };
+		66A2084C1D3E6E7E00D62F56 /* ReportEventTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A2084B1D3E6E7E00D62F56 /* ReportEventTableViewCellObject.m */; };
+		66A208551D3E6EBA00D62F56 /* ReportSpeakerTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A208541D3E6EBA00D62F56 /* ReportSpeakerTableViewCellObject.m */; };
+		66A208581D3E6EC400D62F56 /* ReportLectureTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A208571D3E6EC400D62F56 /* ReportLectureTableViewCellObject.m */; };
+		66A2085E1D3E772000D62F56 /* ReportSpeakerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A2085C1D3E772000D62F56 /* ReportSpeakerTableViewCell.m */; };
+		66A2085F1D3E772000D62F56 /* ReportSpeakerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66A2085D1D3E772000D62F56 /* ReportSpeakerTableViewCell.xib */; };
+		66A208631D3E772800D62F56 /* ReportLectureTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A208611D3E772800D62F56 /* ReportLectureTableViewCell.m */; };
+		66A208641D3E772800D62F56 /* ReportLectureTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66A208621D3E772800D62F56 /* ReportLectureTableViewCell.xib */; };
+		66A208681D3E786F00D62F56 /* ReportEventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A208661D3E786F00D62F56 /* ReportEventTableViewCell.m */; };
+		66A208691D3E786F00D62F56 /* ReportEventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66A208671D3E786F00D62F56 /* ReportEventTableViewCell.xib */; };
+		66A208701D3E7D9900D62F56 /* SpeakerPrototypeMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A2086F1D3E7D9900D62F56 /* SpeakerPrototypeMapper.m */; };
+		66A208741D3E7DB100D62F56 /* LecturePrototypeMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A208731D3E7DB100D62F56 /* LecturePrototypeMapper.m */; };
+		66A208771D3E7DC600D62F56 /* EventPrototypeMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A208761D3E7DC600D62F56 /* EventPrototypeMapper.m */; };
+		66A2087B1D3E897A00D62F56 /* UIColor+ConferencesPallete.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A2087A1D3E897A00D62F56 /* UIColor+ConferencesPallete.m */; };
 		9F0A6C1D1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */; };
 		9F0A6C2E1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C2D1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m */; };
 		9F0A84C31BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A84C21BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m */; };
@@ -454,11 +463,6 @@
 		636B640E1BBDD6260053E38F /* SpeakerServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerServiceImplementation.h; sourceTree = "<group>"; };
 		636B640F1BBDD6260053E38F /* SpeakerServiceImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerServiceImplementation.m; sourceTree = "<group>"; };
 		636B64111BBFE2C20053E38F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		636DD8391C285FC000436201 /* ReportListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportListTableViewCell.h; sourceTree = "<group>"; };
-		636DD83A1C285FC000436201 /* ReportListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportListTableViewCell.m; sourceTree = "<group>"; };
-		636DD83B1C285FC000436201 /* ReportListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReportListTableViewCell.xib; sourceTree = "<group>"; };
-		636DD8451C28604400436201 /* ReportListTableViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportListTableViewCellObject.h; sourceTree = "<group>"; };
-		636DD8461C28604400436201 /* ReportListTableViewCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportListTableViewCellObject.m; sourceTree = "<group>"; };
 		636F8C951BC97B3100552B91 /* EventServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventServiceImplementation.h; sourceTree = "<group>"; };
 		636F8C961BC97B3100552B91 /* EventServiceImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventServiceImplementation.m; sourceTree = "<group>"; };
 		636F8D0A1BCB825F00552B91 /* ModuleAssemblyBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleAssemblyBase.h; sourceTree = "<group>"; };
@@ -747,8 +751,6 @@
 		63FA398D1BDD46E500CE6249 /* EventPlainObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventPlainObject.h; sourceTree = "<group>"; };
 		63FA398E1BDD46E500CE6249 /* EventPlainObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventPlainObject.m; sourceTree = "<group>"; };
 		63FD4DF81BE4F9D00046378E /* PrototypeMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrototypeMapper.h; sourceTree = "<group>"; };
-		63FD4DF91BE4FA340046378E /* EventPrototypeMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventPrototypeMapper.h; sourceTree = "<group>"; };
-		63FD4DFA1BE4FA340046378E /* EventPrototypeMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventPrototypeMapper.m; sourceTree = "<group>"; };
 		63FD4E041BE5038D0046378E /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
 		63FD4E051BE5038D0046378E /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
 		63FDCE021BBDBA2A00A43B60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -760,6 +762,27 @@
 		661138861D38DBDE0032075D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = DefaultAppDelegate/AppDelegate.m; sourceTree = "<group>"; };
 		664FEE121D366B66001B9C95 /* RamblerInitialAssemblyCollector+Activate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "RamblerInitialAssemblyCollector+Activate.h"; path = "RamblerInitialAssemblyCollector+Activate/RamblerInitialAssemblyCollector+Activate.h"; sourceTree = "<group>"; };
 		664FEE131D366B66001B9C95 /* RamblerInitialAssemblyCollector+Activate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "RamblerInitialAssemblyCollector+Activate.m"; path = "RamblerInitialAssemblyCollector+Activate/RamblerInitialAssemblyCollector+Activate.m"; sourceTree = "<group>"; };
+		66A2084A1D3E6E7E00D62F56 /* ReportEventTableViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportEventTableViewCellObject.h; path = conferences/Classes/PresentationLayer/UserStories/ReportsUserStory/Modules/ReportListModule/View/CellObjects/ReportEventTableViewCellObject/ReportEventTableViewCellObject.h; sourceTree = SOURCE_ROOT; };
+		66A2084B1D3E6E7E00D62F56 /* ReportEventTableViewCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportEventTableViewCellObject.m; path = conferences/Classes/PresentationLayer/UserStories/ReportsUserStory/Modules/ReportListModule/View/CellObjects/ReportEventTableViewCellObject/ReportEventTableViewCellObject.m; sourceTree = SOURCE_ROOT; };
+		66A208531D3E6EBA00D62F56 /* ReportSpeakerTableViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportSpeakerTableViewCellObject.h; path = ReportSpeakerTableViewCellObject/ReportSpeakerTableViewCellObject.h; sourceTree = "<group>"; };
+		66A208541D3E6EBA00D62F56 /* ReportSpeakerTableViewCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportSpeakerTableViewCellObject.m; path = ReportSpeakerTableViewCellObject/ReportSpeakerTableViewCellObject.m; sourceTree = "<group>"; };
+		66A208561D3E6EC400D62F56 /* ReportLectureTableViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportLectureTableViewCellObject.h; path = ReportLectureTableViewCellObject/ReportLectureTableViewCellObject.h; sourceTree = "<group>"; };
+		66A208571D3E6EC400D62F56 /* ReportLectureTableViewCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportLectureTableViewCellObject.m; path = ReportLectureTableViewCellObject/ReportLectureTableViewCellObject.m; sourceTree = "<group>"; };
+		66A2085B1D3E772000D62F56 /* ReportSpeakerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportSpeakerTableViewCell.h; path = ReportSpeakerTableViewCell/ReportSpeakerTableViewCell.h; sourceTree = "<group>"; };
+		66A2085C1D3E772000D62F56 /* ReportSpeakerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportSpeakerTableViewCell.m; path = ReportSpeakerTableViewCell/ReportSpeakerTableViewCell.m; sourceTree = "<group>"; };
+		66A2085D1D3E772000D62F56 /* ReportSpeakerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ReportSpeakerTableViewCell.xib; path = ReportSpeakerTableViewCell/ReportSpeakerTableViewCell.xib; sourceTree = "<group>"; };
+		66A208601D3E772800D62F56 /* ReportLectureTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportLectureTableViewCell.h; path = ReportLectureTableViewCell/ReportLectureTableViewCell.h; sourceTree = "<group>"; };
+		66A208611D3E772800D62F56 /* ReportLectureTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportLectureTableViewCell.m; path = ReportLectureTableViewCell/ReportLectureTableViewCell.m; sourceTree = "<group>"; };
+		66A208621D3E772800D62F56 /* ReportLectureTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ReportLectureTableViewCell.xib; path = ReportLectureTableViewCell/ReportLectureTableViewCell.xib; sourceTree = "<group>"; };
+		66A208651D3E786F00D62F56 /* ReportEventTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportEventTableViewCell.h; path = conferences/Classes/PresentationLayer/UserStories/ReportsUserStory/Modules/ReportListModule/View/Cells/ReportEventTableViewCell/ReportEventTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		66A208661D3E786F00D62F56 /* ReportEventTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportEventTableViewCell.m; path = conferences/Classes/PresentationLayer/UserStories/ReportsUserStory/Modules/ReportListModule/View/Cells/ReportEventTableViewCell/ReportEventTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		66A208671D3E786F00D62F56 /* ReportEventTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ReportEventTableViewCell.xib; path = conferences/Classes/PresentationLayer/UserStories/ReportsUserStory/Modules/ReportListModule/View/Cells/ReportEventTableViewCell/ReportEventTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		66A2086E1D3E7D9900D62F56 /* SpeakerPrototypeMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeakerPrototypeMapper.h; path = SpeakerPrototypeMapper/SpeakerPrototypeMapper.h; sourceTree = "<group>"; };
+		66A2086F1D3E7D9900D62F56 /* SpeakerPrototypeMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeakerPrototypeMapper.m; path = SpeakerPrototypeMapper/SpeakerPrototypeMapper.m; sourceTree = "<group>"; };
+		66A208721D3E7DB100D62F56 /* LecturePrototypeMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LecturePrototypeMapper.h; path = LecturePrototypeMapper/LecturePrototypeMapper.h; sourceTree = "<group>"; };
+		66A208731D3E7DB100D62F56 /* LecturePrototypeMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LecturePrototypeMapper.m; path = LecturePrototypeMapper/LecturePrototypeMapper.m; sourceTree = "<group>"; };
+		66A208751D3E7DC600D62F56 /* EventPrototypeMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventPrototypeMapper.h; path = EventPrototypeMapper/EventPrototypeMapper.h; sourceTree = "<group>"; };
+		66A208761D3E7DC600D62F56 /* EventPrototypeMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventPrototypeMapper.m; path = EventPrototypeMapper/EventPrototypeMapper.m; sourceTree = "<group>"; };
 		66A208791D3E897A00D62F56 /* UIColor+ConferencesPallete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+ConferencesPallete.h"; path = "UIColor+ConferencesPallete/UIColor+ConferencesPallete.h"; sourceTree = "<group>"; };
 		66A2087A1D3E897A00D62F56 /* UIColor+ConferencesPallete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+ConferencesPallete.m"; path = "UIColor+ConferencesPallete/UIColor+ConferencesPallete.m"; sourceTree = "<group>"; };
 		73B0D884032BD961309C5DEC /* Pods-ConferencesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConferencesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConferencesTests/Pods-ConferencesTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1428,7 +1451,9 @@
 		631FFE5A1BEF98E600749DB8 /* CellObjects */ = {
 			isa = PBXGroup;
 			children = (
-				636DD8441C28604400436201 /* ReportListTableViewCellObject */,
+				66A208471D3E6E6100D62F56 /* ReportSpeakerTableViewCellObject */,
+				66A208461D3E6E5800D62F56 /* ReportLectureTableViewCellObject */,
+				636DD8441C28604400436201 /* ReportEventTableViewCellObject */,
 			);
 			path = CellObjects;
 			sourceTree = "<group>";
@@ -1436,7 +1461,9 @@
 		631FFE5B1BEF98E600749DB8 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				636DD8381C285FC000436201 /* ReportListTableViewCell */,
+				66A2085A1D3E771200D62F56 /* ReportLectureTableViewCell */,
+				66A208591D3E770C00D62F56 /* ReportSpeakerTableViewCell */,
+				636DD8381C285FC000436201 /* ReportEventTableViewCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -3146,8 +3173,9 @@
 		63FD4DF61BE4F9B50046378E /* ConcreteMappers */ = {
 			isa = PBXGroup;
 			children = (
-				63FD4DF91BE4FA340046378E /* EventPrototypeMapper.h */,
-				63FD4DFA1BE4FA340046378E /* EventPrototypeMapper.m */,
+				66A2086C1D3E7D6D00D62F56 /* SpeakerMapper */,
+				66A2086B1D3E7D6700D62F56 /* LectureMapper */,
+				66A2086A1D3E7D5900D62F56 /* EventMapper */,
 			);
 			path = ConcreteMappers;
 			sourceTree = "<group>";
@@ -3243,6 +3271,7 @@
 		63FDCDE01BBDBA2A00A43B60 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				66A2087C1D3E898E00D62F56 /* UIColor+ConferencesPallete */,
 				63FD4E021BE503440046378E /* UIColor+Hex */,
 				9F1830F21BC14444000E21A5 /* NSString+RCFCapitalization */,
 			);
