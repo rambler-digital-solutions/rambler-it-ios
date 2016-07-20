@@ -44,7 +44,7 @@
 - (NSArray *)obtainEventWithPredicate:(NSPredicate *)predicate {
     NSManagedObjectContext *context = [NSManagedObjectContext MR_defaultContext];
     
-    NSArray *events = [EventModelObject MR_findAllInContext:context];
+    NSArray *events = [EventModelObject MR_findAllWithPredicate:predicate inContext:context];
     NSArray *ponsoEvents = [self.ponsomizer convertObject:events];
     
     return ponsoEvents;

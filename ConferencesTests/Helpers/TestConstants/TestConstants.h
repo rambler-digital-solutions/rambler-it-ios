@@ -21,5 +21,6 @@
 #define TestConstants_h
 
 static NSTimeInterval const kTestExpectationTimeout = 0.25f;
+static NSTimeInterval const kTestCompoundOperationExpectationTimeout = 100.0f;
 
 #endif /* TestConstants_h */
