@@ -51,7 +51,8 @@
 }
 
 + (instancetype)objectWithLecture:(LecturePlainObject *)lecture selectedText:(NSString *)selectedText {
-    NSMutableAttributedString *attributedName = [[NSMutableAttributedString alloc] initWithString:lecture.name];
+    NSString *lectureName = lecture.name ? lecture.name : @"";
+    NSMutableAttributedString *attributedName = [[NSMutableAttributedString alloc] initWithString:lectureName];
     SpeakerPlainObject *speaker = [[lecture speakers] firstObject];
     NSString *speakerName = speaker.name;
     if ([selectedText length] != 0) {

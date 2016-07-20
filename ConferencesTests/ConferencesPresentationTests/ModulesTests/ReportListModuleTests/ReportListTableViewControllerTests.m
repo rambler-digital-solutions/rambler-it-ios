@@ -29,14 +29,14 @@
 - (void)setUp {
     [super setUp];
     
-    self.viewController = [ReportListTableViewController<ReportListDataDisplayManagerDelegate, UISearchBarDelegate> new];
+    self.viewController = [ReportListViewController<ReportListDataDisplayManagerDelegate, UISearchBarDelegate> new];
     self.mockDataDisplayManager = OCMClassMock([ReportListDataDisplayManager class]);
     self.mockOutput = OCMProtocolMock(@protocol(ReportListViewOutput));
     self.mockTableView = OCMClassMock([UITableView class]);
     
     self.viewController.dataDisplayManager = self.mockDataDisplayManager;
     self.viewController.output = self.mockOutput;
-    self.viewController.tableView = self.mockTableView;
+    self.viewController.reportsTableView = self.mockTableView;
 }
 
 - (void)tearDown {

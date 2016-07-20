@@ -10,7 +10,7 @@
 #import <OCMock/OCMock.h>
 
 #import "ReportListDataDisplayManager.h"
-#import "ReportListTableViewCell.h"
+#import "ReportEventTableViewCell.h"
 #import "EventPlainObject.h"
 #import "ReportListViewController.h"
 
@@ -111,7 +111,7 @@ typedef NS_ENUM(NSUInteger, TableViewSectionIndex){
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:ReportsSection];
         UITableViewCell *cell = [dataSource tableView:nil cellForRowAtIndexPath:indexPath];
         
-        if ([cell isKindOfClass:[ReportListTableViewCell class]]) {
+        if ([cell isKindOfClass:[ReportEventTableViewCell class]]) {
             actualNumberOfCellForCorrespondingClass++;
         }
     }

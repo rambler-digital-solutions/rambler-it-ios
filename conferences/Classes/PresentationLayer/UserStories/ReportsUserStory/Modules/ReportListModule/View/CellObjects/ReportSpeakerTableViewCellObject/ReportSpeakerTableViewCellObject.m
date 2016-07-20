@@ -47,7 +47,8 @@
 }
 
 + (instancetype)objectWithSpeaker:(SpeakerPlainObject *)speaker selectedText:(NSString *)selectedText {
-    NSMutableAttributedString *attributedName = [[NSMutableAttributedString alloc] initWithString:speaker.name];
+    NSString *speakerName = speaker.name ? speaker.name : @"";
+    NSMutableAttributedString *attributedName = [[NSMutableAttributedString alloc] initWithString:speakerName];
     if ([selectedText length] != 0) {
         NSRange range = [[speaker.name lowercaseString] rangeOfString:selectedText];
         [attributedName addAttribute:NSForegroundColorAttributeName value:[UIColor colorForSelectedTextSpeakerCellObject] range:range];
