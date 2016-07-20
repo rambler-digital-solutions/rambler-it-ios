@@ -89,6 +89,13 @@ PODS:
     - Bolts/Tasks (~> 1.6)
   - PureLayout (3.0.2)
   - RamblerAppDelegateProxy (0.0.1)
+  - RamblerSegues (1.1.0):
+    - RamblerSegues/Core (= 1.1.0)
+    - RamblerSegues/CrossStoryboardSegue (= 1.1.0)
+    - RamblerSegues/EmbedSegue (= 1.1.0)
+  - RamblerSegues/Core (1.1.0)
+  - RamblerSegues/CrossStoryboardSegue (1.1.0)
+  - RamblerSegues/EmbedSegue (1.1.0)
   - RamblerTyphoonUtils/AssemblyCollector (1.2.0)
   - RamblerTyphoonUtils/AssemblyTesting (1.2.0)
   - SDWebImage (3.8.1):
@@ -121,6 +128,7 @@ DEPENDENCIES:
   - Parse (~> 1.8)
   - PureLayout (~> 3.0)
   - RamblerAppDelegateProxy
+  - RamblerSegues
   - RamblerTyphoonUtils/AssemblyCollector
   - RamblerTyphoonUtils/AssemblyTesting
   - SDWebImage (~> 3.7)
@@ -159,6 +167,7 @@ SPEC CHECKSUMS:
   Parse: f51c24d2feb412e4b2d6cc73d37cb24e8d0089bc
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   RamblerAppDelegateProxy: 8926ec7e066d4f4aabf965a32126c747d32498a7
+  RamblerSegues: e4b34295ede5203115b53f6b749c14d9ba6b9e5e
   RamblerTyphoonUtils: 814c02d7a0136a164efaae1133f47db1e4579cd0
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
   Typhoon: 6def9f3abad5be6b2c035103c7dde1c887c48e45
