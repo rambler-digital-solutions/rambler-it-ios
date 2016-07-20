@@ -18,9 +18,19 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
-#import <NICellFactory.h>
+#import <Foundation/Foundation.h>
+#import <Nimbus/NimbusModels.h>
 
-@interface ReportListTableViewCell : UITableViewCell <NICell>
+@class LecturePlainObject;
+
+@interface ReportLectureTableViewCellObject : NSObject <NICellObject>
+
+@property (strong, nonatomic, readonly) NSString *date;
+@property (strong, nonatomic, readonly) NSAttributedString *lectureTitle;
+@property (strong, nonatomic, readonly) UIImage *lectureImage;
+@property (strong, nonatomic, readonly) LecturePlainObject *lecture;
+@property (strong, nonatomic, readonly) NSString *speakerName;
+
++ (instancetype)objectWithLecture:(LecturePlainObject *)lecture selectedText:(NSString *)selectedText;
 
 @end

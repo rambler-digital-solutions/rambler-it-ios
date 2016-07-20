@@ -18,45 +18,21 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "ReportListTableViewCellObject.h"
-#import "ReportListTableViewCell.h"
-#import "EventPlainObject.h"
+#import <Foundation/Foundation.h>
+#import <Nimbus/NimbusModels.h>
 
-@interface ReportListTableViewCellObject ()
+@class EventPlainObject;
+@class SpeakerPlainObject;
+@class LecturePlainObject;
 
-@property (strong, nonatomic, readwrite) NSString *date;
-@property (strong, nonatomic, readwrite) NSString *eventTitle;
-@property (strong, nonatomic, readwrite) UIImage *eventImage;
-@property (strong, nonatomic, readwrite) EventPlainObject *event;
+@interface ReportEventTableViewCellObject : NSObject <NICellObject>
 
-@end
+@property (strong, nonatomic, readonly) NSString *date;
+@property (strong, nonatomic, readonly) NSAttributedString *eventTitle;
+@property (strong, nonatomic, readonly) UIImage *eventImage;
+@property (strong, nonatomic, readonly) NSURL *imageURL;
+@property (strong, nonatomic, readonly) EventPlainObject *event;
 
-@implementation ReportListTableViewCellObject
-
-#pragma mark - Initialization
-
-- (instancetype)initWithEvent:(EventPlainObject *)event andDate:(NSString *)date {
-    self = [super init];
-    if (self) {
-        _eventTitle = event.name;
-        _date = date;
-        _event = event;
-    }
-    return self;
-}
-
-+ (instancetype)objectWithEvent:(EventPlainObject *)event andDate:(NSString *)date {
-    return [[self alloc] initWithEvent:event andDate:date];
-}
-
-#pragma mark - NICellObject methods
-
-- (Class)cellClass {
-    return [ReportListTableViewCell class];
-}
-
-- (UINib *)cellNib {
-    return [UINib nibWithNibName:NSStringFromClass([ReportListTableViewCell class]) bundle:[NSBundle mainBundle]];
-}
++ (instancetype)objectWithEvent:(EventPlainObject *)event andDate:(NSString *)date selectedText:(NSString *)selectedText;;
 
 @end

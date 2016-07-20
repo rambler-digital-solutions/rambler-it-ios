@@ -18,34 +18,36 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "ReportListTableViewCell.h"
-#import "ReportListTableViewCellObject.h"
+#import "ReportLectureTableViewCell.h"
+#import "ReportLectureTableViewCellObject.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
-static CGFloat const kReportListTableViewCellHeight = 116.0f;
+static CGFloat const kReportLectureTableViewCellHeight = 116.0f;
 
-@interface ReportListTableViewCell ()
+@interface ReportLectureTableViewCell ()
 
-@property (weak, nonatomic) IBOutlet UILabel *date;
-@property (weak, nonatomic) IBOutlet UILabel *eventTitle;
-@property (weak, nonatomic) IBOutlet UIImageView *eventImageView;
+@property (weak, nonatomic) IBOutlet UILabel *lectureTitle;
+@property (weak, nonatomic) IBOutlet UILabel *speakerName;
+@property (weak, nonatomic) IBOutlet UIImageView *lectureImageView;
 
 @end
 
-@implementation ReportListTableViewCell
+@implementation ReportLectureTableViewCell
 
 #pragma mark - NICell methods
 
-- (BOOL)shouldUpdateCellWithObject:(ReportListTableViewCellObject *)object {
-    self.date.text = object.date;
-    self.eventTitle.text = object.eventTitle;
-    self.eventImageView.image = [UIImage imageNamed:@"logo-js"];
+- (BOOL)shouldUpdateCellWithObject:(ReportLectureTableViewCellObject *)object {
+    self.lectureTitle.attributedText = object.lectureTitle;
+    self.lectureImageView.image = [UIImage imageNamed:@"sleep"];
+    self.lectureImageView.layer.cornerRadius = self.lectureImageView.frame.size.height/2.0;
+    self.speakerName.text = object.speakerName;
     self.separatorInset = UIEdgeInsetsMake(0.f, self.bounds.size.width, 0.f, 0.0f);
     
     return YES;
 }
 
 + (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
-    return kReportListTableViewCellHeight;
+    return kReportLectureTableViewCellHeight;
 }
 
 @end
