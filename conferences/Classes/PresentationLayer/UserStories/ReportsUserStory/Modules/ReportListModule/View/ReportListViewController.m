@@ -22,10 +22,13 @@
 #import "ReportListViewOutput.h"
 #import "DataDisplayManager.h"
 #import "ReportListDataDisplayManager.h"
+#import <RamblerSegues/RamblerSegues.h>
 
-@interface ReportListViewController() <ReportListDataDisplayManagerDelegate>
+@interface ReportListViewController() <ReportListDataDisplayManagerDelegate, RamblerEmbedSegueViewContainer>
 
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *reportsTableView;
+@property (weak, nonatomic) IBOutlet UIView *searchEmbedContainer;
 
 @end
 
@@ -61,6 +64,13 @@
     [self.dataDisplayManager updateTableViewModelWithEvents:events];
 }
 
+- (void)hideSearchModuleView {
+    [self.searchBar resignFirstResponder];
+    [self.searchEmbedContainer setHidden:YES];
+}
+
+
+
 #pragma mark - ReportListDataDisplayManagerDelegate methods
 
 - (void)didUpdateTableViewModel {
@@ -72,4 +82,33 @@
     [self.output didTriggerTapCellWithEvent:event];
 }
 
+#pragma mark - SearchBarDelegate
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+    [self.searchEmbedContainer setHidden:NO];
+    [self.searchBar setShowsCancelButton:YES animated:YES];
+    [self.output didSearchBarChangedWithText:searchBar.text];
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    [self.output didSearchBarChangedWithText:searchText];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    [self.output didSearchBarTapCancelButton];
+}
+
+- (BOOL)searchBarShouldEndEditing:(UISearchBar *)searchBar {
+    [self hideCancelButtonSearchBar];
+    return YES;
+}
+- (UIView *)viewForEmbedIdentifier:(NSString *)embedIdentifier {
+    return self.searchEmbedContainer;
+}
+
+#pragma mark - Helpers
+
+- (void)hideCancelButtonSearchBar {
+    [self.searchBar setShowsCancelButton:NO animated:YES];
+}
 @end

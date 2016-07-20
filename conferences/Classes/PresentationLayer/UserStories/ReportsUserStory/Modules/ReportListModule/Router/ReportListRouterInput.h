@@ -19,10 +19,13 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
+#import "ReportsSearchModuleOutput.h"
 
 @protocol ReportListRouterInput <NSObject>
 
 - (void)openEventModuleWithEventObjectId:(NSString *)objectId;
+
+- (void)configureReportsSearchModuleWithModuleOutput:(id<ReportsSearchModuleOutput>)moduleOutput;
 
 @end
 
