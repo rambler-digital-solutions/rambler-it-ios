@@ -35,7 +35,7 @@ typedef void (^LectureCompletionBlock)(Lecture *lecture, NSError *error);
 /**
  @author Artem Karpushin
  
- Method is used to obtain Lecture object from cache
+ Method is used to obtain Lectures object from cache
  
  @param predicate NSPredicate for specifying the filtering parameters
  

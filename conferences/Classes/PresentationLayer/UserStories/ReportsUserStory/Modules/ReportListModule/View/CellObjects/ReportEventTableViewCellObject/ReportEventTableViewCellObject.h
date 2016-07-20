@@ -25,6 +25,12 @@
 @class SpeakerPlainObject;
 @class LecturePlainObject;
 
+/**
+ @author Zinovyev Konstantin
+ 
+ Объект, представляющий EventPlainObject для отображения.
+ По этому объекту создается ReportEventTableViewCell
+ */
 @interface ReportEventTableViewCellObject : NSObject <NICellObject>
 
 @property (strong, nonatomic, readonly) NSString *date;

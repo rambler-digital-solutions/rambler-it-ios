@@ -22,6 +22,13 @@
 
 @protocol ReportListInteractorOutput <NSObject>
 
+/**
+ @author Zinovyev Konstantin
+ 
+ Сообщается презентеру об обновлении закешированного списка событий, полученных с сервера
+ 
+ @param events События
+ */
 - (void)didUpdateEventList:(NSArray *)events;
 
 @end

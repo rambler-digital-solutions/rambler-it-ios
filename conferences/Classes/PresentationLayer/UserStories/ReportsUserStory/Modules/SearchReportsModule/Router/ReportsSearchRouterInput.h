@@ -10,6 +10,14 @@
 
 @protocol ReportsSearchRouterInput <NSObject>
 
+/**
+ @author Zinovyev Konstantin
+ 
+ Method is used to initiate transition to the LectureModule
+ 
+ @param objectId NSString event object id
+ */
+
 - (void)openEventModuleWithEventObjectId:(NSString *)objectId;
 
 @end

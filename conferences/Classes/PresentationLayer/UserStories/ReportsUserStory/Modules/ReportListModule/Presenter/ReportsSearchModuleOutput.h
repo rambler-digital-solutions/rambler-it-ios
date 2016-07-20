@@ -16,12 +16,17 @@
 /**
  @author Zinovyev Konstantin
  
- Метод первоначально настраивающий модуль при нажатии на поле поиска
+ Метод сообщает презентеру, о том что был загружен модуль ReportsSearchModule
  
- @param searchText текст в поле поиска
+ @param reportsSearchModule Ссылка на модуль
  */
 - (void)didLoadReportsSearchModule:(id<ReportsSearchModuleInput>)reportsSearchModule;
 
+/**
+ @author Zinovyev Konstantin
+ 
+ Метод сообщает презентеру, о том что было совершенно нажатие на прозрачный экран в модуле поиска
+ */
 - (void)didTapClearScreenSearchModule;
 
 @end
