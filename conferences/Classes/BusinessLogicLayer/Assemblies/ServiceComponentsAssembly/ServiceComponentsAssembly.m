@@ -31,9 +31,15 @@
 #import "OperationSchedulerImplementation.h"
 #import "PrototypeMapper.h"
 #import "EventPrototypeMapper.h"
+#import "LecturePrototypeMapper.h"
+#import "SpeakerPrototypeMapper.h"
 #import "EventStoreServiceProtocol.h"
 #import "EventStoreService.h"
 #import "RamblerLocationServiceImplementation.h"
+#import "LectureService.h"
+#import "LectureServiceImplementation.h"
+#import "SpeakerService.h"
+#import "SpeakerServiceImplementation.h"
 
 @implementation ServiceComponentsAssembly
 
@@ -50,6 +56,18 @@
                                                     with:[self operationScheduler]];
         
     }];
+}
+
+- (id <LectureService>)lectureService {
+    return [TyphoonDefinition withClass:[LectureServiceImplementation class]
+                          configuration:^(TyphoonDefinition *definition) {
+                          }];
+}
+
+- (id <SpeakerService>)speakerService {
+    return [TyphoonDefinition withClass:[SpeakerServiceImplementation class]
+                          configuration:^(TyphoonDefinition *definition) {
+                          }];
 }
 
 - (id <EventListService>)eventListService {
@@ -69,6 +87,12 @@
 
 - (id<PrototypeMapper>)eventPrototypeMapper {
     return [TyphoonDefinition withClass:[EventPrototypeMapper class]];
+}
+- (id<PrototypeMapper>)lecturePrototypeMapper {
+    return [TyphoonDefinition withClass:[LecturePrototypeMapper class]];
+}
+- (id<PrototypeMapper>)speakerPrototypeMapper {
+    return [TyphoonDefinition withClass:[SpeakerPrototypeMapper class]];
 }
 
 - (id <EventStoreServiceProtocol>)eventStoreService {
