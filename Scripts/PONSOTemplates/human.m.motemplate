@@ -1,0 +1,10 @@
+//
+//  <$managedObjectClassName$>PlainObject.m
+//
+//
+
+#import "<$managedObjectClassName$>PlainObject.h"
+
+@implementation <$managedObjectClassName$>PlainObject
+
+@end

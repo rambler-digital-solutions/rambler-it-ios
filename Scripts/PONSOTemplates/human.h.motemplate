@@ -1,0 +1,10 @@
+//
+//  <$managedObjectClassName$>PlainObject.h
+//
+//
+
+#import "_<$managedObjectClassName$>PlainObject.h"
+
+@interface <$managedObjectClassName$>PlainObject : _<$managedObjectClassName$>PlainObject
+// Custom logic goes here.
+@end
