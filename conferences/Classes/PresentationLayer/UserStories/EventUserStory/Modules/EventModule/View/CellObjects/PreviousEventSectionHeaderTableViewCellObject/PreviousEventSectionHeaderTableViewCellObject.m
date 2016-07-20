@@ -35,7 +35,6 @@
 - (instancetype)initWithEvent:(EventPlainObject *)event {
     self = [super init];
     if (self) {
-        _contentViewColor = event.backgroundColor;
     }
     return self;
 }

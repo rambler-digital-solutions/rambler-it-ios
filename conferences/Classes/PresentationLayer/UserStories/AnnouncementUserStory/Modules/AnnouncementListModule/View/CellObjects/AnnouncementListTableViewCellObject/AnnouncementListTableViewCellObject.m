@@ -13,7 +13,7 @@
 @interface AnnouncementListTableViewCellObject ()
 
 @property (strong, nonatomic, readwrite) NSString *eventTitle;
-@property (strong, nonatomic, readwrite) NSString *eventTags;
+@property (strong, nonatomic, readwrite) NSArray *eventTags;
 @property (strong, nonatomic, readwrite) NSURL *imageUrl;
 @property (strong, nonatomic, readwrite) NSString *date;
 @property (strong, nonatomic, readwrite) EventPlainObject *event;
@@ -29,8 +29,8 @@
     if (self) {
         _date = date;
         _eventTitle = event.name;
-        _eventTags = event.tags;
-        _imageUrl = event.imageUrl;
+        _eventTags = event.tags.allObjects;
+        _imageUrl = [NSURL URLWithString:event.imageUrl];
         _event = event;
     }
     return self;

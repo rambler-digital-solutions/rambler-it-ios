@@ -56,7 +56,7 @@ static NSString *const kPlaceholderImageName = @"placeholder";
 
 - (void)setupOutletsWithSpeaker:(SpeakerPlainObject *)speaker {
     self.nameTextLabel.text = speaker.name;
-    self.companyTextLabel.text = speaker.companyName;
+    self.companyTextLabel.text = speaker.company;
     
     self.imageView.layer.cornerRadius = self.imageView.frame.size.height / 2;
     self.imageView.clipsToBounds = YES;

@@ -57,8 +57,6 @@
 }
 
 - (void)updateViewWithEventList:(NSArray *)events {
-    EventPlainObject *event = [events firstObject];
-    self.viewBackgroundColor = event.backgroundColor;
     [self setScrollViewColor];
     
     [self.dataDisplayManager updateTableViewModelWithEvents:events];

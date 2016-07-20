@@ -43,13 +43,12 @@
     if (self) {
         _lectureDescription = lecture.lectureDescription;
         _lectureTitle = lecture.name;
-        _lectureObjectId = lecture.objectId;
         
         // TODO: реализовать отображение нескольких докладчиков у одного доклада
-        SpeakerPlainObject *speaker = [lecture.speakers firstObject];
+        SpeakerPlainObject *speaker = lecture.speaker;
         _speakerName = speaker.name;
-        _speakerCompanyName = speaker.companyName;
-        _speakerImageUrl = speaker.imageUrl;
+        _speakerCompanyName = speaker.company;
+        _speakerImageUrl = [NSURL URLWithString:speaker.imageUrl];
     }
     return self;
 }

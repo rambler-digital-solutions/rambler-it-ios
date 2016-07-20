@@ -38,8 +38,8 @@
 
 - (void)setupView {
     LecturePlainObject *lecture = [self.interactor obtainLectureWithObjectId:self.stateStorage.lectureObjectId];
-    SpeakerPlainObject *speaker = lecture.speakers.firstObject;
-    self.stateStorage.speakerObjectId = speaker.objectId;
+    SpeakerPlainObject *speaker = lecture.speaker;
+    self.stateStorage.speakerObjectId = speaker.speakerId;
     
     [self.view configureViewWithLecture:lecture];
 }

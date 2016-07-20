@@ -24,7 +24,7 @@
 #import "CompoundOperationBuilderConfig.h"
 #import "CompoundOperationBase.h"
 #import "EventListQuery.h"
-#import "EventManagedObject.h"
+#import "EventModelObject.h"
 #import "NetworkingConstantsHeader.h"
 #import "QueryTransformer.h"
 
@@ -68,7 +68,7 @@
     
     config.responseMappingType = ResponseMappingResultsType;
     config.mappingContext = @{
-                              kMappingContextModelClassKey : NSStringFromClass([EventManagedObject class])
+                              kMappingContextModelClassKey : NSStringFromClass([EventModelObject class])
                               };
     
     return [self.builder buildCompoundOperationWithConfig:config];

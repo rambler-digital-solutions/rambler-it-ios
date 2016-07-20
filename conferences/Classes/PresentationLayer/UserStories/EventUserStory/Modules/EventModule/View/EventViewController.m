@@ -51,7 +51,6 @@
 #pragma mark - EventViewInput
 
 - (void)configureViewWithEvent:(EventPlainObject *)event {
-    [self setupNavigationBarColor:event.backgroundColor];
     
     self.dataDisplayManager.delegate = self;
     [self.dataDisplayManager configureDataDisplayManagerWithEvent:event];

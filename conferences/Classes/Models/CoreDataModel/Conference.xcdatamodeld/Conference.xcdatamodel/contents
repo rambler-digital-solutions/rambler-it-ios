@@ -2,7 +2,11 @@
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15F34" minimumToolsVersion="Xcode 4.2">
     <entity name="Event" representedClassName="Event" syncable="YES">
         <attribute name="endDate" attributeType="Date" syncable="YES"/>
+        <attribute name="eventDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="eventId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eventSubtitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eventType" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="imageUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="liveStreamLink" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="startDate" attributeType="Date" syncable="YES"/>
@@ -11,6 +15,7 @@
         <relationship name="lectures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lecture" inverseName="event" inverseEntity="Lecture" syncable="YES"/>
         <relationship name="metaEvent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MetaEvent" inverseName="events" inverseEntity="MetaEvent" syncable="YES"/>
         <relationship name="registrationQuestions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RegistrationQuestion" inverseName="event" inverseEntity="RegistrationQuestion" syncable="YES"/>
+        <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="event" inverseEntity="Tag" syncable="YES"/>
         <relationship name="tech" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tech" inverseName="events" inverseEntity="Tech" syncable="YES"/>
     </entity>
     <entity name="Lecture" representedClassName="Lecture" syncable="YES">
@@ -50,7 +55,7 @@
     <entity name="Speaker" representedClassName="Speaker" syncable="YES">
         <attribute name="biography" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="company" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="imageLink" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="job" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="speakerId" attributeType="String" syncable="YES"/>
@@ -61,6 +66,7 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="slug" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tagId" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="tags" inverseEntity="Event" syncable="YES"/>
         <relationship name="lectures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lecture" inverseName="tags" inverseEntity="Lecture" syncable="YES"/>
     </entity>
     <entity name="Tech" representedClassName="Tech" syncable="YES">
@@ -70,14 +76,14 @@
         <relationship name="events" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event" inverseName="tech" inverseEntity="Event" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="0" positionY="0" width="128" height="210"/>
+        <element name="Event" positionX="0" positionY="0" width="128" height="285"/>
         <element name="Lecture" positionX="0" positionY="0" width="128" height="165"/>
         <element name="LectureMaterial" positionX="0" positionY="0" width="128" height="105"/>
         <element name="MetaEvent" positionX="0" positionY="0" width="128" height="135"/>
         <element name="RegistrationQuestion" positionX="0" positionY="0" width="128" height="90"/>
         <element name="SocialNetworkAccount" positionX="0" positionY="0" width="128" height="90"/>
         <element name="Speaker" positionX="0" positionY="0" width="128" height="165"/>
-        <element name="Tag" positionX="0" positionY="0" width="128" height="105"/>
+        <element name="Tag" positionX="0" positionY="0" width="128" height="120"/>
         <element name="Tech" positionX="36" positionY="144" width="128" height="105"/>
     </elements>
 </model>

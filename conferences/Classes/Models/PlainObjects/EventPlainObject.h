@@ -1,46 +1,10 @@
-// Copyright (c) 2015 RAMBLER&Co
 //
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
+//  EventPlainObject.h
 //
-// The above copyright notice and this permission notice shall be included in
-// all copies or substantial portions of the Software.
 //
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-// THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
-#import "EventType.h"
+#import "_EventPlainObject.h"
 
-@interface EventPlainObject : NSObject
-
-// пока окончательно не сформирована модель данных - все проперти readwrite
-// добавить в модель subtitle;
-@property (nonatomic, strong, readwrite) NSString *eventDescription;
-@property (nonatomic, strong, readwrite) NSString *liveStreamLink;
-@property (nonatomic, strong, readwrite) NSString *name;
-@property (nonatomic, strong, readwrite) NSString *objectId;
-@property (nonatomic, strong, readwrite) NSDate *startDate;
-@property (nonatomic, strong, readwrite) NSDate *endDate;
-@property (nonatomic, strong, readwrite) NSString *timePadID;
-@property (nonatomic, strong, readwrite) NSString *twitterLink;
-@property (nonatomic, strong, readwrite) NSArray *lectures;
-@property (nonatomic, strong, readwrite) NSArray *registrationQuestions;
-@property (nonatomic, strong, readwrite) NSString *tags;
-@property (nonatomic, strong, readwrite) UIColor *backgroundColor;
-@property (nonatomic, strong, readwrite) UIImage *image;
-@property (nonatomic, strong, readwrite) NSURL *imageUrl;
-@property (nonatomic, strong, readwrite) NSString *eventSubtitle;
-@property (nonatomic, assign, readwrite) EventType eventType;
-
+@interface EventPlainObject : _EventPlainObject
+// Custom logic goes here.
 @end

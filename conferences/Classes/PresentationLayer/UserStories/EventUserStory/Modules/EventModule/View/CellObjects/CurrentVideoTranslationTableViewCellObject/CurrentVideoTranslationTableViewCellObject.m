@@ -35,7 +35,7 @@
 - (instancetype)initWithEvent:(EventPlainObject *)event {
     self = [super init];
     if (self) {
-        self.buttonColor = event.backgroundColor;
+
     }
     return self;
 }

@@ -35,7 +35,7 @@
 }
 
 - (void)didTriggerTapCellWithEvent:(EventPlainObject *)event {
-    [self.router openEventModuleWithEventObjectId:event.objectId];
+    [self.router openEventModuleWithEventObjectId:event.eventId];
 }
 
 #pragma mark - EventListInteractorOutput

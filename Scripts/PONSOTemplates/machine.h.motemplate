@@ -26,9 +26,9 @@
 <$endif$>
 <$endif$>
 <$if Relationship.isToMany$>
-@property (nonatomic, copy, readonly) NSSet<<$Relationship.destinationEntity.managedObjectClassName$>PlainObject *> *<$Relationship.name$>;
+@property (nonatomic, copy, readwrite) NSSet<<$Relationship.destinationEntity.managedObjectClassName$>PlainObject *> *<$Relationship.name$>;
 <$else$>
-@property (nonatomic, copy, readonly) <$Relationship.destinationEntity.managedObjectClassName$>PlainObject *<$Relationship.name$>;
+@property (nonatomic, copy, readwrite) <$Relationship.destinationEntity.managedObjectClassName$>PlainObject *<$Relationship.name$>;
 <$endif$>
 <$endforeach do$>
 

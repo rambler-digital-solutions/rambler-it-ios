@@ -21,6 +21,7 @@
 #import "EventInteractor.h"
 #import "EventInteractorOutput.h"
 #import "EventService.h"
+#import "EventModelObject.h"
 #import "EventPlainObject.h"
 #import "PrototypeMapper.h"
 #import "EventTypeDeterminator.h"
@@ -74,12 +75,12 @@ static NSString *const kEventByObjectIdPredicateFormat = @"objectId = %@";
 
 #pragma mark - Private methods
 
-- (EventPlainObject *)mapEvent:(NSManagedObjectModel *)managedObjectEvent {
+- (EventPlainObject *)mapEvent:(EventModelObject *)managedObjectEvent {
     EventPlainObject *eventPlainObject = [EventPlainObject new];
     [self.eventPrototypeMapper fillObject:eventPlainObject withObject:managedObjectEvent];
     
     EventType eventType = [self.eventTypeDeterminator determinateTypeForEvent:eventPlainObject];
-    eventPlainObject.eventType = eventType;
+    eventPlainObject.eventType = @(eventType);
     
     return eventPlainObject;
 }

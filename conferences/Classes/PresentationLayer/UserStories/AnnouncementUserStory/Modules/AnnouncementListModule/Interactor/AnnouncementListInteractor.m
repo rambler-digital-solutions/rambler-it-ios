@@ -21,7 +21,7 @@
 #import "AnnouncementListInteractor.h"
 #import "AnnouncementListInteractorOutput.h"
 #import "EventService.h"
-#import "EventManagedObject.h"
+#import "EventModelObject.h"
 #import "EventPrototypeMapper.h"
 #import "EventPlainObject.h"
 
@@ -53,7 +53,7 @@
 
 - (NSArray *)getPlainEventsFromManagedObjects:(NSArray *)manajedObjectEvents {
     NSMutableArray *eventPlainObjects = [NSMutableArray array];
-    for (EventManagedObject *managedObjectEvent in manajedObjectEvents) {
+    for (EventModelObject *managedObjectEvent in manajedObjectEvents) {
         EventPlainObject *eventPlainObject = [EventPlainObject new];
         
         [self.eventPrototypeMapper fillObject:eventPlainObject withObject:managedObjectEvent];
