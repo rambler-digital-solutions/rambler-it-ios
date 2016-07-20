@@ -50,7 +50,8 @@
 }
 
 + (instancetype)objectWithEvent:(EventPlainObject *)event andDate:(NSString *)date selectedText:(NSString *)selectedText {
-    NSMutableAttributedString *attributedName = [[NSMutableAttributedString alloc] initWithString:event.name];
+    NSString *eventName = event.name ? event.name : @"";
+    NSMutableAttributedString *attributedName = [[NSMutableAttributedString alloc] initWithString:eventName];
     if ([selectedText length] != 0) {
         NSRange range = [[event.name lowercaseString] rangeOfString:selectedText];
         [attributedName addAttribute:NSForegroundColorAttributeName value:[UIColor colorForSelectedTextEventCellObject] range:range];

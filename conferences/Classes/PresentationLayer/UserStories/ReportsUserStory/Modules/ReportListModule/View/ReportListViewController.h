@@ -26,6 +26,11 @@
 
 @interface ReportListViewController : UIViewController <ReportListViewInput>
 
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UITableView *reportsTableView;
+@property (weak, nonatomic) IBOutlet UIView *searchEmbedContainer;
+
+
 @property (nonatomic, strong) id<ReportListViewOutput> output;
 @property (strong, nonatomic) ReportListDataDisplayManager *dataDisplayManager;
 

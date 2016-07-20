@@ -26,10 +26,6 @@
 
 @interface ReportListViewController() <ReportListDataDisplayManagerDelegate, RamblerEmbedSegueViewContainer>
 
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
-@property (weak, nonatomic) IBOutlet UITableView *reportsTableView;
-@property (weak, nonatomic) IBOutlet UIView *searchEmbedContainer;
-
 @end
 
 @implementation ReportListViewController
