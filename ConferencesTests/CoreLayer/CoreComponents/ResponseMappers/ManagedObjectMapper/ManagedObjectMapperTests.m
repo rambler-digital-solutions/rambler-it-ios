@@ -26,14 +26,14 @@
 #import "ResultsResponseObjectFormatter.h"
 #import "EntityNameFormatterImplementation.h"
 
-#import "SocialNetworkAccountManagedObject.h"
-#import "EventManagedObject.h"
-#import "MetaEventManagedObject.h"
-#import "TechManagedObject.h"
-#import "LectureManagedObject.h"
-#import "SpeakerManagedObject.h"
-#import "TagManagedObject.h"
-#import "LectureMaterialManagedObject.h"
+#import "SocialNetworkAccountModelObject.h"
+#import "EventModelObject.h"
+#import "MetaEventModelObject.h"
+#import "TechModelObject.h"
+#import "LectureModelObject.h"
+#import "SpeakerModelObject.h"
+#import "TagModelObject.h"
+#import "LectureMaterialModelObject.h"
 
 #import "NetworkingConstantsHeader.h"
 
@@ -70,7 +70,7 @@
 }
 
 - (void)testThatMapperMapsEvent {
-    Class targetClass = [EventManagedObject class];
+    Class targetClass = [EventModelObject class];
     NSArray *testProperties = @[
                                 NSStringFromSelector(@selector(eventId)),
                                 NSStringFromSelector(@selector(name)),
@@ -86,7 +86,7 @@
 }
 
 - (void)testThatMapperMapsMetaEvent {
-    Class targetClass = [MetaEventManagedObject class];
+    Class targetClass = [MetaEventModelObject class];
     NSArray *testProperties = @[
                                 NSStringFromSelector(@selector(metaEventId)),
                                 NSStringFromSelector(@selector(metaEventDescription)),
@@ -98,7 +98,7 @@
 }
 
 - (void)testThatMapperMapsTech {
-    Class targetClass = [TechManagedObject class];
+    Class targetClass = [TechModelObject class];
     NSArray *testProperties = @[
                                 NSStringFromSelector(@selector(techId)),
                                 NSStringFromSelector(@selector(name)),
@@ -108,7 +108,7 @@
 }
 
 - (void)testThatMapperMapsLecture {
-    Class targetClass = [LectureManagedObject class];
+    Class targetClass = [LectureModelObject class];
     NSArray *testProperties = @[
                                 NSStringFromSelector(@selector(lectureId)),
                                 NSStringFromSelector(@selector(name)),
@@ -123,7 +123,7 @@
 }
 
 - (void)testThatMapperMapsSpeaker {
-    Class targetClass = [SpeakerManagedObject class];
+    Class targetClass = [SpeakerModelObject class];
     NSArray *testProperties = @[
                                 NSStringFromSelector(@selector(speakerId)),
                                 NSStringFromSelector(@selector(name)),
@@ -139,7 +139,7 @@
 }
 
 - (void)testThatMapperMapsSocialNetworkAccount {
-    Class targetClass = [SocialNetworkAccountManagedObject class];
+    Class targetClass = [SocialNetworkAccountModelObject class];
     NSArray *testProperties = @[
                                 NSStringFromSelector(@selector(profileLink)),
                                 NSStringFromSelector(@selector(type))
@@ -148,7 +148,7 @@
 }
 
 - (void)testThatMapperMapsTag {
-    Class targetClass = [TagManagedObject class];
+    Class targetClass = [TagModelObject class];
     NSArray *testProperties = @[
                                 NSStringFromSelector(@selector(tagId)),
                                 NSStringFromSelector(@selector(name)),
@@ -158,7 +158,7 @@
 }
 
 - (void)testThatMapperMapsLectureMaterial {
-    Class targetClass = [LectureMaterialManagedObject class];
+    Class targetClass = [LectureMaterialModelObject class];
     NSArray *testProperties = @[
                                 NSStringFromSelector(@selector(lectureMaterialId)),
                                 NSStringFromSelector(@selector(link)),

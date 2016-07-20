@@ -8,8 +8,9 @@ echo "Переименование ponso c нашей логикой для то
 cd "${SRCROOT}/conferences/Classes/Models/PlainObjects/"
 for file in *.*
 do
-filename="${file/PlainObject/}"
-mv $file ${filename}
+filename="${file/PlainObject.*/}"
+ext="${file##*.}"
+mv $file ${filename}ModelObject.${ext}
 done
 echo " "
 
