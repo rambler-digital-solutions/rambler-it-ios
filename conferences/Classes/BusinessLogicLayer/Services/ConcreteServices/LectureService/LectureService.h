@@ -41,7 +41,7 @@ typedef void (^LectureCompletionBlock)(Lecture *lecture, NSError *error);
  
  @return Lecture object
  */
-- (Lecture *)obtainLectureWithPredicate:(NSPredicate *)predicate;
+- (id)obtainLectureWithPredicate:(NSPredicate *)predicate;
 
 /**
  @author Artem Karpushin
