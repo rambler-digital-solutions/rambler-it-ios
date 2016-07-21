@@ -86,7 +86,16 @@ PODS:
   - Parse (1.9.1):
     - Bolts/Tasks (>= 1.4.0)
   - PureLayout (3.0.1)
-  - RamblerTyphoonUtils/AssemblyTesting (1.0.0)
+  - RamblerAppDelegateProxy (0.0.1)
+  - RamblerSegues (1.1.0):
+    - RamblerSegues/Core (= 1.1.0)
+    - RamblerSegues/CrossStoryboardSegue (= 1.1.0)
+    - RamblerSegues/EmbedSegue (= 1.1.0)
+  - RamblerSegues/Core (1.1.0)
+  - RamblerSegues/CrossStoryboardSegue (1.1.0)
+  - RamblerSegues/EmbedSegue (1.1.0)
+  - RamblerTyphoonUtils/AssemblyCollector (1.1.0)
+  - RamblerTyphoonUtils/AssemblyTesting (1.1.0)
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
@@ -116,7 +125,10 @@ DEPENDENCIES:
   - OCMock (~> 3.1)
   - Parse (~> 1.8)
   - PureLayout (~> 3.0)
-  - RamblerTyphoonUtils/AssemblyTesting (= 1.0.0)
+  - RamblerAppDelegateProxy
+  - RamblerSegues
+  - RamblerTyphoonUtils/AssemblyCollector
+  - RamblerTyphoonUtils/AssemblyTesting (= 1.1.0)
   - SDWebImage (~> 3.7)
   - Typhoon (~> 3.3)
   - UIViewController+Routing (~> 0.1.0)
@@ -152,7 +164,9 @@ SPEC CHECKSUMS:
   OCMock: 28def049ef47f996b515a8eeea958be7ccab2dbb
   Parse: 54a965c8c19a6dde90284ab654dbcc77ef8c001b
   PureLayout: f35f5384c9c4e4479df041dbe33ad7577b71ddfb
-  RamblerTyphoonUtils: bafad8fd42ca7df9239d2ccb68021ba21d81d741
+  RamblerAppDelegateProxy: 8926ec7e066d4f4aabf965a32126c747d32498a7
+  RamblerSegues: e4b34295ede5203115b53f6b749c14d9ba6b9e5e
+  RamblerTyphoonUtils: c799c606d7406002bf56f376443763b15947be8c
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   Typhoon: 382b918b31d5d19a82922448af65f01f08102dc6
   UIViewController+Routing: 6d34de88e5a30250d453f49ddd5993212f279b9a

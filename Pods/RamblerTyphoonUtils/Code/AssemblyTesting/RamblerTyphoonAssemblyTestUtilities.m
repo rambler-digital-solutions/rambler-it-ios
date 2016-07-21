@@ -12,32 +12,38 @@
 
 @implementation RamblerTyphoonAssemblyTestUtilities
 
-+ (NSDictionary *) propertiesForHierarchyOfClass:(Class)objectClass {
-    NSMutableDictionary * properties = [NSMutableDictionary dictionary];
+#pragma mark - Public
+
++ (NSDictionary *)propertiesForHierarchyOfClass:(Class)objectClass {
+    NSMutableDictionary *properties = [NSMutableDictionary dictionary];
     [self propertiesForHierarchyOfClass:objectClass
                            onDictionary:properties];
     return [NSDictionary dictionaryWithDictionary:properties];
 }
 
-+ (NSDictionary *) propertiesOfClass:(Class)objectClass {
++ (NSDictionary *)propertiesOfClass:(Class)objectClass {
     NSMutableDictionary *properties = [NSMutableDictionary dictionary];
     return [self propertiesForSubclass:objectClass
                           onDictionary:properties];
 }
+
+#pragma mark - Helpers
 
 + (NSMutableDictionary *)propertiesForHierarchyOfClass:(Class)class
                                           onDictionary:(NSMutableDictionary *)properties {
     if (class == [NSObject class]) {
         return properties;
     }
-    
-    [self propertiesForSubclass:class onDictionary:properties];
-    
-    return [self propertiesForHierarchyOfClass:[class superclass] onDictionary:properties];
+
+    [self propertiesForSubclass:class
+                   onDictionary:properties];
+
+    return [self propertiesForHierarchyOfClass:[class superclass]
+                                  onDictionary:properties];
 }
 
-+ (NSMutableDictionary *) propertiesForSubclass:(Class)class
-                                   onDictionary:(NSMutableDictionary *)properties {
++ (NSMutableDictionary *)propertiesForSubclass:(Class)class
+                                  onDictionary:(NSMutableDictionary *)properties {
     unsigned int outCount, i;
     objc_property_t *objcProperties = class_copyPropertyList(class, &outCount);
     for (i = 0; i < outCount; i++) {
