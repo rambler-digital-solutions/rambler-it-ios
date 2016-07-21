@@ -37,7 +37,7 @@ static CGFloat const kReportSpeakerTableViewCellHeight = 92.0f;
 
 - (BOOL)shouldUpdateCellWithObject:(ReportSpeakerTableViewCellObject *)object {
     self.speakerTitle.attributedText = object.speakerName;
-    UIImage *placeholder = [UIImage imageNamed:@"photo"];
+    UIImage *placeholder = [UIImage imageNamed:@"logo-js"];
     [self.speakerImageView sd_setImageWithURL:object.imageURL placeholderImage:placeholder];
     self.separatorInset = UIEdgeInsetsMake(0.f, self.bounds.size.width, 0.f, 0.0f);
     self.speakerImageView.layer.cornerRadius = self.speakerImageView.frame.size.height/2.0;

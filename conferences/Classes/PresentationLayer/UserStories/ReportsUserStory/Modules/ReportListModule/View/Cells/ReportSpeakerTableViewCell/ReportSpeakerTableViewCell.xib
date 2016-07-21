@@ -17,7 +17,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rxs-k3-aJ4">
                         <rect key="frame" x="10" y="5" width="300" height="81.5"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" translatesAutoresizingMaskIntoConstraints="NO" id="M4a-kq-6ct">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-js" translatesAutoresizingMaskIntoConstraints="NO" id="M4a-kq-6ct">
                                 <rect key="frame" x="18" y="14" width="54" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="PjQ-cP-adb"/>
@@ -60,6 +60,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="photo" width="1080" height="720"/>
+        <image name="logo-js" width="152" height="171"/>
     </resources>
 </document>

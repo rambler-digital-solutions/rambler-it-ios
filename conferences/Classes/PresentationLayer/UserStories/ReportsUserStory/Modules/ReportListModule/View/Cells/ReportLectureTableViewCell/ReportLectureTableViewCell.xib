@@ -17,7 +17,7 @@
                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rxs-k3-aJ4">
                         <rect key="frame" x="10" y="5" width="300" height="85.5"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="sleep" translatesAutoresizingMaskIntoConstraints="NO" id="M4a-kq-6ct">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="logo-js" translatesAutoresizingMaskIntoConstraints="NO" id="M4a-kq-6ct">
                                 <rect key="frame" x="18" y="21" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="PjQ-cP-adb"/>
@@ -91,6 +91,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="sleep" width="3373" height="3024"/>
+        <image name="logo-js" width="152" height="171"/>
     </resources>
 </document>

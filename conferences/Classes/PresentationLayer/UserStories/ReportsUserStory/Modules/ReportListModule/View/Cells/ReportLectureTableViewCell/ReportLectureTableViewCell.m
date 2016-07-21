@@ -38,7 +38,7 @@ static CGFloat const kReportLectureTableViewCellHeight = 116.0f;
 
 - (BOOL)shouldUpdateCellWithObject:(ReportLectureTableViewCellObject *)object {
     self.lectureTitle.attributedText = object.lectureTitle;
-    self.lectureImageView.image = [UIImage imageNamed:@"sleep"];
+    self.lectureImageView.image = [UIImage imageNamed:@"logo-js"];
     self.lectureImageView.layer.cornerRadius = self.lectureImageView.frame.size.height/2.0;
     self.speakerName.text = object.speakerName;
     self.separatorInset = UIEdgeInsetsMake(0.f, self.bounds.size.width, 0.f, 0.0f);
