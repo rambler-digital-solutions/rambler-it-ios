@@ -19,6 +19,7 @@
 // THE SOFTWARE.
 
 #import "TyphoonAssembly.h"
+#import "AssemblyCollector/RamblerInitialAssembly.h"
 
 @protocol ServiceComponents;
 
@@ -27,7 +28,7 @@
  
  This Assembly is responsible for configuration of the objects in charge of the general logic of the application. Such as: applicationConfigurator, appDelegate
  */
-@interface ApplicationAssembly : TyphoonAssembly
+@interface ApplicationAssembly : TyphoonAssembly <RamblerInitialAssembly>
 
 @property (strong, nonatomic, readonly) TyphoonAssembly<ServiceComponents>* serviceComponents;
 

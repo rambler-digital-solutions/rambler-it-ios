@@ -6,12 +6,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RamblerViperModuleFaсtoryProtocol.h"
+#import "RamblerViperModuleFactoryProtocol.h"
 
 /**
  Universal Viper module factory.
  */
-@interface RamblerViperModuleFactory : NSObject<RamblerViperModuleFaсtoryProtocol>
+@interface RamblerViperModuleFactory : NSObject<RamblerViperModuleFactoryProtocol>
 
 - (instancetype)initWithStoryboard:(UIStoryboard*)storyboard andRestorationId:(NSString*)restorationId;
 @property (nonatomic,strong,readonly) UIStoryboard *storyboard;

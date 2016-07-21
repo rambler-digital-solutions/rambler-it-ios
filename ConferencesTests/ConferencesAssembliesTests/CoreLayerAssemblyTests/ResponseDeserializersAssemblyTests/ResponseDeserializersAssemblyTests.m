@@ -25,6 +25,7 @@
 #import "ResponseDeserializersAssembly_Testable.h"
 #import "ResponseDeserializersFactory.h"
 #import "JSONResponseDeserializer.h"
+#import "RamblerInitialAssemblyCollector+Activate.h"
 
 @interface ResponseDeserializersAssemblyTests : RamblerTyphoonAssemblyTests
 
@@ -37,8 +38,8 @@
 - (void)setUp {
     [super setUp];
 
-    self.assembly = [ResponseDeserializersAssembly new];
-    [self.assembly activate];
+    Class class = [ResponseDeserializersAssembly class];
+    self.assembly = [RamblerInitialAssemblyCollector activateAssemblyWithClass:class];
 }
 
 - (void)tearDown {

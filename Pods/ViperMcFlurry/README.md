@@ -6,7 +6,7 @@
 
 **VIPER McFlurry** is a modern framework for implementing VIPER architecture in iOS application. It offers several tools and components that help either start new projects with VIPER or move from MVC.
 
-Also it icludes **Templates** folder with Xcode templates for VIPER modules.
+Also it includes **Templates** folder with Xcode templates for VIPER modules.
 
 ## Install
 

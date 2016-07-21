@@ -84,7 +84,7 @@
     // given
     Class targetClass = [PushNotificationCenterImplementation class];
     NSArray *dependencies = @[
-                              RamblerSelector(pushNotificationCenter)
+                              RamblerSelector(pushNotificationService)
                               ];
     
     // when

@@ -37,6 +37,13 @@ static IMP originalPrepareForSegueMethodImp;
     objc_setAssociatedObject(self, @selector(moduleInput), moduleInput, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
+// Performs segue without any actions, useful for unwind segues
+- (void)performSegue:(NSString *)segueIdentifier {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self performSegueWithIdentifier:segueIdentifier sender:nil];
+    });
+}
+
 // Method opens module using segue
 - (RamblerViperOpenModulePromise*)openModuleUsingSegue:(NSString*)segueIdentifier {
     RamblerViperOpenModulePromise *openModulePromise = [[RamblerViperOpenModulePromise alloc] init];
@@ -64,16 +71,16 @@ static IMP originalPrepareForSegueMethodImp;
     return openModulePromise;
 }
 // Method removes/closes module
-- (void)closeCurrentModule {
+- (void)closeCurrentModule:(BOOL)animated {
     BOOL isInNavigationStack = [self.parentViewController isKindOfClass:[UINavigationController class]];
     BOOL hasManyControllersInStack = isInNavigationStack ? ((UINavigationController *)self.parentViewController).childViewControllers.count > 1 : NO;
 
     if (isInNavigationStack && hasManyControllersInStack) {
         UINavigationController *navigationController = (UINavigationController*)self.parentViewController;
-        [navigationController popViewControllerAnimated:YES];
+        [navigationController popViewControllerAnimated:animated];
     }
     else if (self.presentingViewController) {
-        [self dismissViewControllerAnimated:YES completion:nil];
+        [self dismissViewControllerAnimated:animated completion:nil];
     }
     else if (self.view.superview != nil){
         [self removeFromParentViewController];

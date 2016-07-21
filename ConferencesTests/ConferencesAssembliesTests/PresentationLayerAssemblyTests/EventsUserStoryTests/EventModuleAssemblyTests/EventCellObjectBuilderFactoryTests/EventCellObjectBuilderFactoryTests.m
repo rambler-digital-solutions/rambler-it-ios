@@ -14,6 +14,7 @@
 #import "CurrentEventCellObjectBuilder.h"
 #import "FutureEventCellObjectBuilder.h"
 #import "PastEventCellObjectBuilder.h"
+#import "RamblerInitialAssemblyCollector+Activate.h"
 
 @interface EventCellObjectBuilderFactoryTests : RamblerTyphoonAssemblyTests
 
@@ -25,9 +26,8 @@
 
 - (void)setUp {
     [super setUp];
-    
-    self.factory = [EventCellObjectBuilderFactory new];
-    [self.factory activate];
+    Class class = [EventCellObjectBuilderFactory class];
+    self.factory = [RamblerInitialAssemblyCollector activateAssemblyWithClass:class];
 }
 
 - (void)tearDown {

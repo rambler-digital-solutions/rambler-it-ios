@@ -9,7 +9,7 @@
 #import <XCTest/XCTest.h>
 #import <OCMock/OCMock.h>
 
-#import "ReportListTableViewController.h"
+#import "ReportListViewController.h"
 #import "ReportListViewOutput.h"
 #import "DataDisplayManager.h"
 #import "ReportListDataDisplayManager.h"
@@ -17,7 +17,7 @@
 
 @interface ReportListTableViewControllerTests : XCTestCase
 
-@property (strong, nonatomic) ReportListTableViewController <ReportListDataDisplayManagerDelegate> *viewController;
+@property (strong, nonatomic) ReportListViewController <ReportListDataDisplayManagerDelegate, UISearchBarDelegate> *viewController;
 @property (strong, nonatomic) ReportListDataDisplayManager *mockDataDisplayManager;
 @property (strong, nonatomic) id <ReportListViewOutput> mockOutput;
 @property (strong, nonatomic) UITableView *mockTableView;
@@ -29,14 +29,14 @@
 - (void)setUp {
     [super setUp];
     
-    self.viewController = [ReportListTableViewController new];
+    self.viewController = [ReportListViewController<ReportListDataDisplayManagerDelegate, UISearchBarDelegate> new];
     self.mockDataDisplayManager = OCMClassMock([ReportListDataDisplayManager class]);
     self.mockOutput = OCMProtocolMock(@protocol(ReportListViewOutput));
     self.mockTableView = OCMClassMock([UITableView class]);
     
     self.viewController.dataDisplayManager = self.mockDataDisplayManager;
     self.viewController.output = self.mockOutput;
-    self.viewController.tableView = self.mockTableView;
+    self.viewController.reportsTableView = self.mockTableView;
 }
 
 - (void)tearDown {
@@ -119,6 +119,17 @@
     
     // then
     OCMVerify([self.mockOutput didTriggerTapCellWithEvent:event]);
+}
+
+- (void)testSuccessSearchTextChange {
+    // given
+    UISearchBar *searchBar = [UISearchBar new];
+    NSString *searchString = @"search string";
+    // when
+    [self.viewController searchBar:searchBar textDidChange:searchString];
+
+    // then
+    OCMVerify([self.mockOutput didSearchBarChangedWithText:searchString]);
 }
 
 @end

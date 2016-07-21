@@ -11,6 +11,11 @@
 
 #import "RamblerLocationModuleAssembly.h"
 #import "RamblerLocationModuleAssembly_Testable.h"
+
+#import <RamblerTyphoonUtils/AssemblyCollector.h>
+#import "RamblerInitialAssemblyCollector+Activate.h"
+
+
 #import "RamblerLocationViewController.h"
 #import "RamblerLocationInteractor.h"
 #import "RamblerLocationPresenter.h"
@@ -29,11 +34,8 @@
 - (void)setUp {
     [super setUp];
     
-    self.assembly = [RamblerLocationModuleAssembly new];
-    [self.assembly activateWithCollaboratingAssemblies:@[
-                                                         [ServiceComponentsAssembly new],
-                                                         [OperationFactoriesAssembly new],
-                                                         ]];
+    Class classAssembly = [RamblerLocationModuleAssembly class];
+    self.assembly = [RamblerInitialAssemblyCollector activateAssemblyWithClass:classAssembly];
 }
 
 - (void)tearDown {
@@ -47,6 +49,7 @@
     Class targetClass = [RamblerLocationViewController class];
     NSArray *dependencies = @[
                               RamblerSelector(output),
+                              RamblerSelector(dataDisplayManager)
                               ];
     // when
     id result = [self.assembly viewRamblerLocation];
@@ -60,6 +63,8 @@
     Class targetClass = [RamblerLocationInteractor class];
     NSArray *dependencies = @[
                               RamblerSelector(output),
+                              RamblerSelector(locationService),
+                              RamblerSelector(mapLinkBuilder)
                               ];
     // when
     id result = [self.assembly interactorRamblerLocation];

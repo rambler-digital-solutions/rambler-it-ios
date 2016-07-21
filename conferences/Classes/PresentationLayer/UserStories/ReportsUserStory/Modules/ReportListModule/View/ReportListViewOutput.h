@@ -24,8 +24,46 @@
 
 @protocol ReportListViewOutput <NSObject>
 
+/**
+ @author Zinovyev Konstantin
+ 
+ Метод сообщает презентеру о том, что требуется настроить view
+ */
 - (void)setupView;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ Метод сообщает презентеру о том, что была нажата ячейка
+ 
+ @param event Событие в нажатой ячейке
+ */
 - (void)didTriggerTapCellWithEvent:(EventPlainObject *)event;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ Метод сообщает презентеру, о том что пользователь изменил текст поиска
+ 
+ @param text Введенный в поиск
+ */
+- (void)didSearchBarChangedWithText:(NSString *)text;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ Метод сообщает презентеру, о том что пользователь нажал на поле поиска
+ 
+ @param text Текст в поле поиска
+ */
+- (void)didSearchBarBeginWithText:(NSString *)text;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ Метод сообщает презентеру, о том что пользователь нажал на кнопку Cancel в поиске
+ */
+- (void)didSearchBarTapCancelButton;
 
 @end
 

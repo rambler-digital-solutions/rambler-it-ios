@@ -24,20 +24,32 @@
 #include <dirent.h>
 
 static NSString *PFDeviceSysctlByName(NSString *name) {
-    const char *charName = [name UTF8String];
+    const char *charName = name.UTF8String;
+    NSString *string = nil;
+    size_t size = 0;
+    char *answer = NULL;
 
-    size_t size;
-    sysctlbyname(charName, NULL, &size, NULL, 0);
-    char *answer = (char*)malloc(size);
+    do {
+        if (sysctlbyname(charName, NULL, &size, NULL, 0) != 0) {
+            break;
+        }
+        answer = (char*)malloc(size);
 
-    if (answer == NULL) {
-        return nil;
-    }
+        if (answer == NULL) {
+            break;
+        }
 
-    sysctlbyname(charName, answer, &size, NULL, 0);
-    NSString *string = [NSString stringWithUTF8String:answer];
+        if (sysctlbyname(charName, answer, &size, NULL, 0) != 0) {
+            break;
+        }
+
+        // We need to check if the string is null-terminated or not.
+        // Documentation is silent on this fact, but in practice it actually is usually null-terminated.
+        size_t length = size - (answer[size - 1] == '\0');
+        string = [[NSString alloc] initWithBytes:answer length:length encoding:NSASCIIStringEncoding];
+    } while(0);
+
     free(answer);
-
     return string;
 }
 
@@ -121,7 +133,7 @@ static NSString *PFDeviceSysctlByName(NSString *name) {
 
 - (BOOL)isJailbroken {
     BOOL jailbroken = NO;
-#if TARGET_OS_IPHONE && !TARGET_IPHONE_SIMULATOR
+#if TARGET_OS_IOS && !TARGET_IPHONE_SIMULATOR
     DIR *dir = opendir("/");
     if (dir != NULL) {
         jailbroken = YES;

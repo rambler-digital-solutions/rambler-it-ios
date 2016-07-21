@@ -19,7 +19,7 @@
 // THE SOFTWARE.
 
 #import "ReportListModuleAssembly.h"
-#import "ReportListTableViewController.h"
+#import "ReportListViewController.h"
 #import "ReportListInteractor.h"
 #import "ReportListPresenter.h"
 #import "ReportListRouter.h"
@@ -29,8 +29,8 @@
 
 @implementation  ReportListModuleAssembly
 
-- (ReportListTableViewController *)viewReportList {
-    return [TyphoonDefinition withClass:[ReportListTableViewController class]
+- (ReportListViewController *)viewReportList {
+    return [TyphoonDefinition withClass:[ReportListViewController class]
                             configuration:^(TyphoonDefinition *definition) {
                                 [definition injectProperty:@selector(output)
                                                       with:[self presenterReportList]];

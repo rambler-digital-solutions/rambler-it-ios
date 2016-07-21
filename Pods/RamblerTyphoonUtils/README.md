@@ -9,6 +9,77 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+#### AssemblyCollector
+
+At first, make your assemblies conform the `RamblerInitialAssembly` protocol:
+
+```objc
+@interface ApplicationAssembly : TyphoonAssembly <RamblerInitialAssembly>
+
+@end
+```
+
+Then, instead of adding this assembly in the `Info.plist` file, add the following code in the `AppDelegate`:
+
+```objc
+@implementation AppDelegate
+
+- (NSArray *)initialAssemblies {
+    RamblerInitialAssemblyCollector *collector = [RamblerInitialAssemblyCollector new];
+    return [collector collectInitialAssemblyClasses];
+}
+
+@end
+```
+
+The `RamblerInitialAssemblyCollector` will find your assembly in the runtime and automatically activate it.
+
+#### AssemblyTesting
+
+Inherit your test from the `RamblerTyphoonAssemblyTests`:
+
+```objc
+@interface RamblerApplicationAssemblyTests : RamblerTyphoonAssemblyTests
+
+@property (nonatomic, strong) RamblerApplicationAssembly *assembly;
+
+@end
+```
+
+Write new tests: one per your assembly method. To describe the type of a test object use `RamblerTyphoonAssemblyTestsTypeDescriptor`. Don't forget that we don't verify blocks and primitive types: just only classes and protocols.
+
+```objc
+- (void)testThatAssemblyCreatesAppDelegateWithDependencies {
+    // given
+    Class expectedClass = [RamblerAppDelegate class];
+    NSArray *expectedProtocols = @[
+                                   @protocol(UIApplicationDelegate),
+                                   @protocol(RamblerFooProtocol)
+                                   ];
+    RamblerTyphoonAssemblyTestsTypeDescriptor *resultTypeDescriptor =
+        [RamblerTyphoonAssemblyTestsTypeDescriptor descriptorWithClass:expectedClass
+                                                          andProtocols:expectedProtocols];
+    NSArray *dependencies = @[
+                              RamblerSelector(injectedString),
+                              RamblerSelector(injectedPropertyWithProtocols)
+                              ];
+
+    // when
+    id result = [self.assembly appDelegate];
+
+    // then
+    [self verifyTargetDependency:result
+                  withDescriptor:resultTypeDescriptor
+                    dependencies:dependencies];
+}
+```
+
+You are testing the following things:
+- The target object is created
+- The result is of the required class and conforms to the required protocols
+- The result has all of the listed dependencies
+- Dependencies are of the right classes and conform to the required protocols
+
 ## Requirements
 
 ## Installation
@@ -20,8 +91,11 @@ pod "RamblerTyphoonUtils/AssemblyCollector"
 ```
 
 To use the `AssemblyTesting`:
+
 ```ruby
-pod "RamblerTyphoonUtils/AssemblyTesting"
+target 'ProjectNameTargetTests', :exclusive => true do
+    pod "RamblerTyphoonUtils/AssemblyTesting"
+end 
 ```
 
 **Warning:** do not include `AssemblyTesting` subspec in the main target!

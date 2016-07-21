@@ -22,11 +22,13 @@
 #import "ServiceComponents.h"
 
 #import "OperationFactoriesAssembly.h"
+#import "AssemblyCollector/RamblerInitialAssembly.h"
 
 @class ResourceClientAssembly;
 @class ResourceMapperAssembly;
 
-@interface ServiceComponentsAssembly : TyphoonAssembly <ServiceComponents>
+
+@interface ServiceComponentsAssembly : TyphoonAssembly <ServiceComponents, RamblerInitialAssembly>
 
 @property (strong, nonatomic) OperationFactoriesAssembly *operationFactoriesAssembly;
 @property (strong, nonatomic) ResourceClientAssembly *resourceClientAssembly;

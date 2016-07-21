@@ -22,8 +22,31 @@
 
 @protocol ReportListViewInput <NSObject>
 
+/**
+ @author Zinovyev Konstantin
+ 
+ Сообщает View, о том что требуется первоначальная настройка view
+ 
+ @param events Список событий
+ */
 - (void)setupViewWithEventList:(NSArray *)events;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ Сообщает View, о том что требуется обновление view новыми событиями
+ 
+ @param events Список событий
+ */
 - (void)updateViewWithEventList:(NSArray *)events;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ Сообщает View, о том что требуется скрыть модуль SearchModule
+ 
+ */
+- (void)hideSearchModuleView;
 
 @end
 

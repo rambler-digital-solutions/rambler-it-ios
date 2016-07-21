@@ -46,8 +46,7 @@
     // given
     Class targetClass = [SpeakerShortInfoView class];
     NSArray *dependencies = @[
-                              RamblerSelector(output),
-                              RamblerSelector(speakerShortInfoView)
+                              RamblerSelector(output)
                               ];
     // when
     id result = [self.assembly viewSpeakerShortInfo];

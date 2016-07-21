@@ -11,5 +11,6 @@
 
 #import "AssemblyTesting/RamblerTyphoonAssemblyTests.h"
 #import "AssemblyTesting/RamblerTyphoonAssemblyTestUtilities.h"
+#import "AssemblyTesting/RamblerTyphoonAssemblyTestsTypeDescriptor.h"
 
 #endif

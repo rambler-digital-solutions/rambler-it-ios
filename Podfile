@@ -13,15 +13,19 @@ pod 'CocoaLumberjack', '~> 2.0'
 pod 'UIViewController+Routing', '~> 0.1.0'
 pod 'PureLayout', '~> 3.0'
 pod 'Nimbus/Models', :git => 'https://github.com/rambler-ios/nimbus'
+
 pod 'Nimbus/Collections', :git => 'https://github.com/rambler-ios/nimbus'
 pod 'SDWebImage', '~> 3.7'
 pod 'CrutchKit/Proxying', :git => 'https://github.com/CognitiveDisson/CrutchKit', :tag => '0.0.3'
 pod 'ViperMcFlurry', '~> 1.1'
 pod 'Fabric'
 pod 'Crashlytics'
+pod 'RamblerTyphoonUtils/AssemblyCollector'
+pod 'RamblerAppDelegateProxy'
+pod 'RamblerSegues'
 
 target 'ConferencesTests', :exclusive => true do
     pod 'OCMock', '~> 3.1'
     pod 'MMBarricade', '~> 1.0.1'
-    pod 'RamblerTyphoonUtils/AssemblyTesting', '1.0.0'
+    pod 'RamblerTyphoonUtils/AssemblyTesting'
 end

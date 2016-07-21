@@ -19,6 +19,7 @@
 // THE SOFTWARE.
 
 #import <Typhoon/Typhoon.h>
+#import "AssemblyCollector/RamblerInitialAssembly.h"
 
 @protocol ResourceClient;
 
@@ -27,7 +28,7 @@
  
  Assembly with definitions of resource clients
  */
-@interface ResourceClientAssembly : TyphoonAssembly
+@interface ResourceClientAssembly : TyphoonAssembly <RamblerInitialAssembly>
 
 /**
  @author Egor Tolstoy
