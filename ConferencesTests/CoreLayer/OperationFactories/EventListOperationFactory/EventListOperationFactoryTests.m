@@ -21,7 +21,7 @@
 #import "CompoundOperationFactoryTestsBase.h"
 
 #import "EventListOperationFactory.h"
-#import "EventManagedObject.h"
+#import "EventModelObject.h"
 
 @interface EventListOperationFactoryTests : CompoundOperationFactoryTestsBase
 
@@ -59,7 +59,7 @@
         XCTAssertNotNil(resultData);
         XCTAssertNil(resultError);
         XCTAssertEqual(resultData.count, 2);
-        XCTAssertTrue([firstObject isKindOfClass:[EventManagedObject class]]);
+        XCTAssertTrue([firstObject isKindOfClass:[EventModelObject class]]);
         XCTAssertTrue([firstObject lectures].count > 0);
     }];
 }

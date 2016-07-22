@@ -23,6 +23,7 @@
 
 @class EventListOperationFactory;
 @protocol OperationScheduler;
+@protocol ROSPonsomizer;
 
 @interface EventServiceImplementation : NSObject <EventService>
 

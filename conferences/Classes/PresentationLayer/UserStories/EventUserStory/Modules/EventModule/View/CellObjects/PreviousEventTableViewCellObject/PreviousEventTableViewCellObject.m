@@ -39,7 +39,6 @@
     if (self) {
         _date = date;
         _title = event.name;
-        _backgroundColor = event.backgroundColor;
     }
     return self;
 }

@@ -62,15 +62,15 @@
 
 - (void)testSuccessDidTriggerTapCellWithEvent {
     // given
-    NSString *objectId = @"123";
+    NSString *eventId = @"123";
     EventPlainObject *event = [EventPlainObject new];
-    event.objectId = objectId;
+    event.eventId = eventId;
     
     // when
     [self.presenter didTriggerTapCellWithEvent:event];
     
     // then
-    OCMVerify([self.mockRouter openEventModuleWithEventObjectId:objectId]);
+    OCMVerify([self.mockRouter openEventModuleWithEventObjectId:eventId]);
 }
 
 - (void)testSuccessDidUpdateEventList {

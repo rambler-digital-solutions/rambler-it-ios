@@ -20,14 +20,14 @@
 
 #import "ManagedObjectMappingProvider.h"
 
-#import "SocialNetworkAccountManagedObject.h"
-#import "EventManagedObject.h"
-#import "MetaEventManagedObject.h"
-#import "TechManagedObject.h"
-#import "LectureManagedObject.h"
-#import "SpeakerManagedObject.h"
-#import "TagManagedObject.h"
-#import "LectureMaterialManagedObject.h"
+#import "SocialNetworkAccountModelObject.h"
+#import "EventModelObject.h"
+#import "MetaEventModelObject.h"
+#import "TechModelObject.h"
+#import "LectureModelObject.h"
+#import "SpeakerModelObject.h"
+#import "TagModelObject.h"
+#import "LectureMaterialModelObject.h"
 
 #import "SocialNetworkType.h"
 
@@ -51,12 +51,12 @@
     return selectedMapping;
 }
 
-- (EKManagedObjectMapping *)eventManagedObjectMapping {
+- (EKManagedObjectMapping *)eventModelObjectMapping {
     NSDictionary *properties = @{
                                  @"id" : NSStringFromSelector(@selector(eventId)),
                                  @"attributes.name" : NSStringFromSelector(@selector(name)),
                                  };
-    Class entityClass = [EventManagedObject class];
+    Class entityClass = [EventModelObject class];
     NSString *entityName = [self.entityNameFormatter transformToEntityNameClass:entityClass];
     return [EKManagedObjectMapping mappingForEntityName:entityName
                                               withBlock:^(EKManagedObjectMapping *mapping) {
@@ -69,22 +69,22 @@
                                                   [mapping mapKeyPath:@"attributes.ends_at"
                                                            toProperty:NSStringFromSelector(@selector(endDate))
                                                     withDateFormatter:self.dateFormatter];
-                                                  [mapping hasOne:[MetaEventManagedObject class]
+                                                  [mapping hasOne:[MetaEventModelObject class]
                                                        forKeyPath:@"attributes.brand"
                                                       forProperty:NSStringFromSelector(@selector(metaEvent))
-                                                withObjectMapping:[self metaEventManagedObjectMapping]];
-                                                  [mapping hasOne:[TechManagedObject class]
+                                                withObjectMapping:[self metaEventModelObjectMapping]];
+                                                  [mapping hasOne:[TechModelObject class]
                                                        forKeyPath:@"attributes.tech"
                                                       forProperty:NSStringFromSelector(@selector(tech))
-                                                withObjectMapping:[self techManagedObjectMapping]];
-                                                  [mapping hasMany:[LectureManagedObject class]
+                                                withObjectMapping:[self techModelObjectMapping]];
+                                                  [mapping hasMany:[LectureModelObject class]
                                                         forKeyPath:@"attributes.lectures"
                                                        forProperty:NSStringFromSelector(@selector(lectures))
-                                                 withObjectMapping:[self lectureManagedObjectMapping]];
+                                                 withObjectMapping:[self lectureModelObjectMapping]];
                                               }];
 }
 
-- (EKManagedObjectMapping *)metaEventManagedObjectMapping {
+- (EKManagedObjectMapping *)metaEventModelObjectMapping {
     NSDictionary *properties = @{
                                  @"id" : NSStringFromSelector(@selector(metaEventId)),
                                  @"name" : NSStringFromSelector(@selector(name)),
@@ -92,7 +92,7 @@
                                  @"home_page" : NSStringFromSelector(@selector(websiteUrlPath)),
                                  @"logo" : NSStringFromSelector(@selector(imageUrlPath))
                                  };
-    Class entityClass = [MetaEventManagedObject class];
+    Class entityClass = [MetaEventModelObject class];
     NSString *entityName = [self.entityNameFormatter transformToEntityNameClass:entityClass];
     return [EKManagedObjectMapping mappingForEntityName:entityName
                                               withBlock:^(EKManagedObjectMapping *mapping) {
@@ -101,13 +101,13 @@
                                               }];
 }
 
-- (EKManagedObjectMapping *)techManagedObjectMapping {
+- (EKManagedObjectMapping *)techModelObjectMapping {
     NSDictionary *properties = @{
                                  @"id" : NSStringFromSelector(@selector(techId)),
                                  @"name" : NSStringFromSelector(@selector(name)),
                                  @"color" : NSStringFromSelector(@selector(color))
                                  };
-    Class entityClass = [TechManagedObject class];
+    Class entityClass = [TechModelObject class];
     NSString *entityName = [self.entityNameFormatter transformToEntityNameClass:entityClass];
     return [EKManagedObjectMapping mappingForEntityName:entityName
                                               withBlock:^(EKManagedObjectMapping *mapping) {
@@ -116,42 +116,42 @@
                                               }];
 }
 
-- (EKManagedObjectMapping *)lectureManagedObjectMapping {
+- (EKManagedObjectMapping *)lectureModelObjectMapping {
     NSDictionary *properties = @{
                                  @"id" : NSStringFromSelector(@selector(lectureId)),
                                  @"title" : NSStringFromSelector(@selector(name)),
                                  @"description" : NSStringFromSelector(@selector(lectureDescription))
                                  };
-    Class entityClass = [LectureManagedObject class];
+    Class entityClass = [LectureModelObject class];
     NSString *entityName = [self.entityNameFormatter transformToEntityNameClass:entityClass];
     return [EKManagedObjectMapping mappingForEntityName:entityName
                                               withBlock:^(EKManagedObjectMapping *mapping) {
                                                   mapping.primaryKey = NSStringFromSelector(@selector(lectureId));
                                                   [mapping mapPropertiesFromDictionary:properties];
-                                                  [mapping hasOne:[SpeakerManagedObject class]
+                                                  [mapping hasOne:[SpeakerModelObject class]
                                                        forKeyPath:@"speaker"
                                                       forProperty:NSStringFromSelector(@selector(speaker))
-                                                withObjectMapping:[self speakerManagedObjectMapping]];
-                                                  [mapping hasMany:[TagManagedObject class]
+                                                withObjectMapping:[self speakerModelObjectMapping]];
+                                                  [mapping hasMany:[TagModelObject class]
                                                         forKeyPath:@"tags"
                                                        forProperty:NSStringFromSelector(@selector(tags))
-                                                 withObjectMapping:[self tagManagedObjectMapping]];
-                                                  [mapping hasMany:[LectureMaterialManagedObject class]
+                                                 withObjectMapping:[self tagModelObjectMapping]];
+                                                  [mapping hasMany:[LectureMaterialModelObject class]
                                                         forKeyPath:@"materials"
                                                        forProperty:NSStringFromSelector(@selector(lectureMaterials))
-                                                 withObjectMapping:[self lectureMaterialManagedObjectMapping]];
+                                                 withObjectMapping:[self lectureMaterialModelObjectMapping]];
                                               }];
 }
 
-- (EKManagedObjectMapping *)speakerManagedObjectMapping {
+- (EKManagedObjectMapping *)speakerModelObjectMapping {
     NSDictionary *properties = @{
                                  @"id" : NSStringFromSelector(@selector(speakerId)),
                                  @"bio" : NSStringFromSelector(@selector(biography)),
                                  @"job" : NSStringFromSelector(@selector(job)),
                                  @"company" : NSStringFromSelector(@selector(company)),
-                                 @"image" : NSStringFromSelector(@selector(imageLink))
+                                 @"image" : NSStringFromSelector(@selector(imageUrl))
                                  };
-    Class entityClass = [SpeakerManagedObject class];
+    Class entityClass = [SpeakerModelObject class];
     NSString *entityName = [self.entityNameFormatter transformToEntityNameClass:entityClass];
     return [EKManagedObjectMapping mappingForEntityName:entityName
                                               withBlock:^(EKManagedObjectMapping *mapping) {
@@ -160,18 +160,18 @@
                                                   [mapping mapKeyPath:@"@self"
                                                            toProperty:NSStringFromSelector(@selector(name))
                                                        withValueBlock:[self compoundNameValueBlock]];
-                                                  [mapping hasMany:[SocialNetworkAccountManagedObject class]
+                                                  [mapping hasMany:[SocialNetworkAccountModelObject class]
                                                         forKeyPath:@"social_profiles"
                                                        forProperty:NSStringFromSelector(@selector(socialNetworkAccounts))
-                                                 withObjectMapping:[self socialNetworkAccountManagedObjectMapping]];
+                                                 withObjectMapping:[self socialNetworkAccountModelObjectMapping]];
                                               }];
 }
 
-- (EKManagedObjectMapping *)socialNetworkAccountManagedObjectMapping {
+- (EKManagedObjectMapping *)socialNetworkAccountModelObjectMapping {
     NSDictionary *properties = @{
                                  @"link" : NSStringFromSelector(@selector(profileLink))
                                  };
-    Class entityClass = [SocialNetworkAccountManagedObject class];
+    Class entityClass = [SocialNetworkAccountModelObject class];
     NSString *entityName = [self.entityNameFormatter transformToEntityNameClass:entityClass];
     return [EKManagedObjectMapping mappingForEntityName:entityName
                                               withBlock:^(EKManagedObjectMapping *mapping) {
@@ -183,13 +183,13 @@
                                               }];
 }
 
-- (EKManagedObjectMapping *)tagManagedObjectMapping {
+- (EKManagedObjectMapping *)tagModelObjectMapping {
     NSDictionary *properties = @{
                                  @"id" : NSStringFromSelector(@selector(tagId)),
                                  @"name" : NSStringFromSelector(@selector(name)),
                                  @"slug" : NSStringFromSelector(@selector(slug))
                                  };
-    Class entityClass = [TagManagedObject class];
+    Class entityClass = [TagModelObject class];
     NSString *entityName = [self.entityNameFormatter transformToEntityNameClass:entityClass];
     return [EKManagedObjectMapping mappingForEntityName:entityName
                                               withBlock:^(EKManagedObjectMapping *mapping) {
@@ -198,13 +198,13 @@
                                               }];
 }
 
-- (EKManagedObjectMapping *)lectureMaterialManagedObjectMapping {
+- (EKManagedObjectMapping *)lectureMaterialModelObjectMapping {
     NSDictionary *properties = @{
                                  @"id" : NSStringFromSelector(@selector(lectureMaterialId)),
                                  @"link" : NSStringFromSelector(@selector(link)),
                                  @"name" : NSStringFromSelector(@selector(name))
                                  };
-    Class entityClass = [LectureMaterialManagedObject class];
+    Class entityClass = [LectureMaterialModelObject class];
     NSString *entityName = [self.entityNameFormatter transformToEntityNameClass:entityClass];
     return [EKManagedObjectMapping mappingForEntityName:entityName
                                               withBlock:^(EKManagedObjectMapping *mapping) {

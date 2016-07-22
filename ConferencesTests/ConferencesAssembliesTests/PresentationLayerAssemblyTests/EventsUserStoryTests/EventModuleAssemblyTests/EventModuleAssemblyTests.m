@@ -33,6 +33,7 @@
 #import "PresentationLayerHelpersAssembly.h"
 #import "EventCellObjectBuilderFactory.h"
 #import "OperationFactoriesAssembly.h"
+#import "CoreAssembly.h"
 
 @interface EventModuleAssemblyTests : RamblerTyphoonAssemblyTests
 
@@ -48,7 +49,8 @@
     self.assembly = [EventModuleAssembly new];
     [self.assembly activateWithCollaboratingAssemblies:@[
                                                          [ServiceComponentsAssembly new],
-                                                         [OperationFactoriesAssembly new]
+                                                         [OperationFactoriesAssembly new],
+                                                         [CoreAssembly new]
                                                          ]];
 }
 

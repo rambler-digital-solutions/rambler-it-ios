@@ -21,9 +21,10 @@
 #import "AnnouncementListInteractor.h"
 #import "AnnouncementListInteractorOutput.h"
 #import "EventService.h"
-#import "EventManagedObject.h"
+#import "EventModelObject.h"
 #import "EventPrototypeMapper.h"
 #import "EventPlainObject.h"
+#import "ROSPonsomizer.h"
 
 #import "EXTScope.h"
 
@@ -35,34 +36,20 @@
     @weakify(self)
     [self.eventService updateEventWithPredicate:nil completionBlock:^(id data, NSError *error) {
         @strongify(self);
-        NSArray *events = [self getPlainEventsFromManagedObjects:data];
+        NSArray *events = [self obtainEventList];
         
         [self.output didUpdateEventList:events];
     }];
 }
 
 - (NSArray *)obtainEventList {
-    id managedObjectEvents = [self.eventService obtainEventWithPredicate:nil];
+    NSArray *events = [self.eventService obtainEventWithPredicate:nil];
+    NSArray *plainObjects = [self.ponsomizer convertObject:events];
     
-    NSArray *events = [self getPlainEventsFromManagedObjects:managedObjectEvents];
-    
-    return events;
+    return plainObjects;
 }
 
 #pragma mark - Private methods
-
-- (NSArray *)getPlainEventsFromManagedObjects:(NSArray *)manajedObjectEvents {
-    NSMutableArray *eventPlainObjects = [NSMutableArray array];
-    for (EventManagedObject *managedObjectEvent in manajedObjectEvents) {
-        EventPlainObject *eventPlainObject = [EventPlainObject new];
-        
-        [self.eventPrototypeMapper fillObject:eventPlainObject withObject:managedObjectEvent];
-        
-        [eventPlainObjects addObject:eventPlainObject];
-    }
-    
-    return [self sortEventsByDate:eventPlainObjects];
-}
 
 - (NSArray *)sortEventsByDate:(NSMutableArray *)events {
     NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:NSStringFromSelector(@selector(startDate)) ascending:NO];

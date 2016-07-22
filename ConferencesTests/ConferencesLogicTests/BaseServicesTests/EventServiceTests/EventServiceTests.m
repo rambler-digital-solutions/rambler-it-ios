@@ -14,7 +14,7 @@
 #import "EventListOperationFactory.h"
 #import "OperationScheduler.h"
 #import "CompoundOperationBase.h"
-#import "EventManagedObject.h"
+#import "EventModelObject.h"
 
 @interface EventServiceTests : XCTestCase
 

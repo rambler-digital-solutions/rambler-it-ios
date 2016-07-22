@@ -40,7 +40,7 @@
 @implementation EventDataDisplayManager
 
 - (void)configureDataDisplayManagerWithEvent:(EventPlainObject *)event {
-    self.cellObjectBuilder = [self.cellObjectBuilderFactory builderForEventType:@(event.eventType)];
+    self.cellObjectBuilder = [self.cellObjectBuilderFactory builderForEventType:event.eventType];
     self.cellObjects = [self.cellObjectBuilder cellObjectsForEvent:event];
 }
 

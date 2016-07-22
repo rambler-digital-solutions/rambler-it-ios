@@ -27,7 +27,7 @@
     
     SpeakerPlainObject * mockSpeaker = [SpeakerPlainObject new];
     mockSpeaker.name = @"Ray Wenderlich";
-    mockSpeaker.companyName = @"Rambler&Co";
+    mockSpeaker.company = @"Rambler&Co";
     mockSpeaker.biography = @"Method swizzling is the process of changing the implementation of an existing selector. It’s a technique made possible by the fact that method invocations in Objective-C can be changed at runtime, by changing how selectors are mapped to underlying functions in a class’s dispatch table.";
     
     [self.output didObtainSpeaker:mockSpeaker];

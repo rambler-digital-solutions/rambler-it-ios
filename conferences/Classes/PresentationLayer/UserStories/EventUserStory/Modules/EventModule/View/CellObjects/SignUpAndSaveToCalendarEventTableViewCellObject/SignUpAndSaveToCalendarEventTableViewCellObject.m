@@ -37,7 +37,6 @@
     self = [super init];
     if (self) {
         self.event = event;
-        self.buttonColor = event.backgroundColor;
     }
     return self;
 }

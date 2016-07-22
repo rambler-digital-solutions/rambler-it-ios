@@ -20,12 +20,16 @@
 
 #import "ModuleAssemblyBase.h"
 
+@class CoreAssembly;
+
 /**
  @author Artem Karpushin
  
  A TyphoonAssembly which is responsible for creating AnnouncementListModule
  */
 @interface AnnouncementListModuleAssembly : ModuleAssemblyBase
+
+@property (strong, nonatomic) CoreAssembly *coreAssembly;
 
 @end
 

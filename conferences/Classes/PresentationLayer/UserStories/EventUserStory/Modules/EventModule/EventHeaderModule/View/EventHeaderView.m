@@ -38,8 +38,7 @@ static NSString *const kPlaceholderImageName = @"placeholder";
 #pragma mark - EventHeaderViewInput
 
 - (void)configureViewWithEvent:(EventPlainObject *)event {
-    self.backgroundColor = event.backgroundColor;
-    [self.eventImageView sd_setImageWithURL:event.imageUrl
+    [self.eventImageView sd_setImageWithURL:[NSURL URLWithString:event.imageUrl]
                            placeholderImage:[UIImage imageNamed:kPlaceholderImageName]];
 }
 

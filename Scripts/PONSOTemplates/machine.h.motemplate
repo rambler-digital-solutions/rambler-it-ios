@@ -1,0 +1,35 @@
+//
+//  _<$name$>.h
+//
+//
+// DO NOT EDIT. This file is machine-generated and constantly overwritten.
+//
+
+
+#import <Foundation/Foundation.h>
+
+<$foreach Relationship noninheritedRelationships do$>@class <$Relationship.destinationEntity.name$>PlainObject;
+<$endforeach do$>
+
+@interface _<$name$>PlainObject : <$customSuperentity$> <NSCoding, NSCopying>
+
+<$foreach Attribute noninheritedAttributes do$><$if Attribute.hasDefinedAttributeType$>@property (nonatomic, copy, readwrite) <$Attribute.objectAttributeClassName$> *<$Attribute.name$>;
+<$endif$><$endif$><$endforeach do$>
+
+<$foreach Relationship noninheritedRelationships do$>
+<$if Relationship.userInfo.documentation$>
+/**
+* <$Relationship.userInfo.documentation$>
+*
+* <$Relationship.userInfo.discussion$>
+*/
+<$endif$>
+<$endif$>
+<$if Relationship.isToMany$>
+@property (nonatomic, copy, readwrite) NSSet<<$Relationship.destinationEntity.name$>PlainObject *> *<$Relationship.name$>;
+<$else$>
+@property (nonatomic, copy, readwrite) <$Relationship.destinationEntity.name$>PlainObject *<$Relationship.name$>;
+<$endif$>
+<$endforeach do$>
+
+@end

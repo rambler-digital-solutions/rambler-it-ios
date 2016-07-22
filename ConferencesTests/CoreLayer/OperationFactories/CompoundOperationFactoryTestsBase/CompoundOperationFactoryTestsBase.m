@@ -79,7 +79,7 @@
     [compoundOperation start];
     
     // then
-    [self waitForExpectationsWithTimeout:kTestExpectationTimeout
+    [self waitForExpectationsWithTimeout:kTestCompoundOperationExpectationTimeout
                                  handler:^(NSError *error) {
         block(resultData, resultError);
     }];

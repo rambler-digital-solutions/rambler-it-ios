@@ -76,7 +76,7 @@
     // given
     NSString *objectId = @"123";
     EventPlainObject *event = [EventPlainObject new];
-    event.objectId = objectId;
+    event.eventId = objectId;
     
     // when
     [self.presenter didTriggerTapCellWithEvent:event];

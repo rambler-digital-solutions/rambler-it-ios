@@ -17,6 +17,10 @@
 #import "RamblerLocationRouter.h"
 #import "ServiceComponentsAssembly.h"
 #import "OperationFactoriesAssembly.h"
+#import "CoreAssembly.h"
+#import "RequestSignersAssembly.h"
+#import "ResourceMapperAssembly.h"
+#import "ResourceClientAssembly.h"
 
 @interface RamblerLocationModuleAssemblyTests : RamblerTyphoonAssemblyTests
 
@@ -33,6 +37,10 @@
     [self.assembly activateWithCollaboratingAssemblies:@[
                                                          [ServiceComponentsAssembly new],
                                                          [OperationFactoriesAssembly new],
+                                                         [CoreAssembly new],
+                                                         [RequestSignersAssembly new],
+                                                         [ResourceMapperAssembly new],
+                                                         [ResourceClientAssembly new]
                                                          ]];
 }
 

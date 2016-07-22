@@ -25,6 +25,7 @@
 
 @class ResourceClientAssembly;
 @class ResourceMapperAssembly;
+@class CoreAssembly;
 
 @interface ServiceComponentsAssembly : TyphoonAssembly <ServiceComponents>
 

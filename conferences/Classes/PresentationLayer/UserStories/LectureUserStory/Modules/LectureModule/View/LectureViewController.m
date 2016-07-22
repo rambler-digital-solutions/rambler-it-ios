@@ -54,7 +54,7 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
     self.tableView.estimatedRowHeight = TableViewEstimatedRowHeight;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     
-    SpeakerPlainObject *speaker = lecture.speakers.firstObject;
+    SpeakerPlainObject *speaker = lecture.speaker;
     [self setupHeaderViewWithSpeaker:speaker];
 }
 

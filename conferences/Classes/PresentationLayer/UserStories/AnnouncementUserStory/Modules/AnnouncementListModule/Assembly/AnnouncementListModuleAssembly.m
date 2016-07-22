@@ -26,6 +26,7 @@
 #import "AnnouncementListDataDisplayManager.h"
 #import "ServiceComponents.h"
 #import "PresentationLayerHelpersAssembly.h"
+#import "CoreAssembly.h"
 
 @implementation  AnnouncementListModuleAssembly
 
@@ -46,8 +47,8 @@
                                                         with:[self presenterAnnouncementList]];
                                 [definition injectProperty:@selector(eventService)
                                                     with:[self.serviceComponents eventService]];
-                                [definition injectProperty:@selector(eventPrototypeMapper)
-                                                      with:[self.serviceComponents eventPrototypeMapper]];
+                                [definition injectProperty:@selector(ponsomizer)
+                                                      with:[self.coreAssembly ponsomizer]];
              }];
 }
 

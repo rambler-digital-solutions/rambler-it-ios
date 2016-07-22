@@ -39,7 +39,6 @@
     self = [super init];
     if (self) {
         _eventTitle = event.name;
-        _eventImage = event.image;
         _date = date;
         _event = event;
     }

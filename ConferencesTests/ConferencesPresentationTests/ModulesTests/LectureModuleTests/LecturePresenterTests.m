@@ -64,10 +64,10 @@
     NSString *speakerObjectId = @"3rj3332w";
     
     SpeakerPlainObject *speaker = [SpeakerPlainObject new];
-    speaker.objectId = speakerObjectId;
+    speaker.speakerId = speakerObjectId;
     
     LecturePlainObject *lecture = [LecturePlainObject new];
-    lecture.speakers = @[speaker];
+    lecture.speaker = speaker;
     
     OCMStub([self.interactorMock obtainLectureWithObjectId:OCMOCK_ANY]).andReturn(lecture);
     

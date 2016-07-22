@@ -34,6 +34,7 @@
 #import "EventStoreServiceProtocol.h"
 #import "EventStoreService.h"
 #import "RamblerLocationServiceImplementation.h"
+#import "CoreAssembly.h"
 
 @implementation ServiceComponentsAssembly
 
@@ -48,7 +49,6 @@
                                                     with:[self.operationFactoriesAssembly eventListOperationFactory]];
                               [definition injectProperty:@selector(operationScheduler)
                                                     with:[self operationScheduler]];
-        
     }];
 }
 

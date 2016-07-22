@@ -21,6 +21,7 @@
 #import <Nimbus/NimbusModels.h>
 #import "LectureDataDisplayManager.h"
 #import "LecturePlainObject.h"
+#import "EventPlainObject.h"
 #import "TableViewCellWithTextLabelCellObject.h"
 #import "LectureDescriptionTableViewCellObject.h"
 #import "DateFormatter.h"
@@ -69,7 +70,7 @@
 #pragma mark - Private methods
 
 - (NSArray *)generateCellObjects {
-    NSString * date = [self.dateFormatter obtainDateWithDayMonthTimeFormat:self.lecture.startDate];
+    NSString * date = [self.dateFormatter obtainDateWithDayMonthTimeFormat:self.lecture.event.startDate];
     LectureDescriptionTableViewCellObject * lectureDescriptionCellObject = [LectureDescriptionTableViewCellObject objectWithLecture:self.lecture andDate:date];
 
     TableViewCellWithTextLabelCellObject *videoRecordTextLabelCellObject = [TableViewCellWithTextLabelCellObject objectWithText:NSLocalizedString(VideoRecordTableViewCellTitle, nil)];

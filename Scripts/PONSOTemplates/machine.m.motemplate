@@ -1,0 +1,43 @@
+//
+//  _<$name$>PlainObject.m
+//
+// DO NOT EDIT. This file is machine-generated and constantly overwritten.
+//
+
+#import "_<$name$>PlainObject.h"
+#import "<$name$>PlainObject.h"
+
+@implementation _<$name$>PlainObject
+
+#pragma mark - NSCoding
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+<$foreach Attribute noninheritedAttributes do$>
+    [aCoder encodeObject:self.<$Attribute.name$> forKey:@"<$Attribute.name$>"];<$endforeach do$><$foreach Relationship noninheritedRelationships do$>
+    [aCoder encodeObject:self.<$Relationship.name$> forKey:@"<$Relationship.name$>"];<$endforeach do$>
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super init];
+    if (self != nil) {
+<$foreach Attribute noninheritedAttributes do$>
+        _<$Attribute.name$> = [[aDecoder decodeObjectForKey:@"<$Attribute.name$>"] copy];<$endforeach do$><$foreach Relationship noninheritedRelationships do$>
+        _<$Relationship.name$> = [[aDecoder decodeObjectForKey:@"<$Relationship.name$>"] copy];<$endforeach do$>
+    }
+
+    return self;
+}
+
+#pragma mark NSCopying
+
+- (id)copyWithZone:(NSZone *)zone {
+    <$name$>PlainObject *replica = [[[self class] allocWithZone:zone] init];
+
+<$foreach Attribute noninheritedAttributes do$>    replica.<$Attribute.name$> = self.<$Attribute.name$>;
+<$endforeach do$>
+<$foreach Relationship noninheritedRelationships do$>    replica.<$Relationship.name$> = self.<$Relationship.name$>;
+<$endforeach do$>
+    return replica;
+}
+
+@end
