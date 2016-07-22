@@ -32,6 +32,5 @@
 @property (strong, nonatomic) OperationFactoriesAssembly *operationFactoriesAssembly;
 @property (strong, nonatomic) ResourceClientAssembly *resourceClientAssembly;
 @property (strong, nonatomic) ResourceMapperAssembly *resourceMapperAssembly;
-@property (strong, nonatomic) CoreAssembly *coreAssembly;
 
 @end

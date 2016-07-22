@@ -23,12 +23,13 @@
 
 @protocol AnnouncementListInteractorOutput;
 @protocol EventService;
-@protocol PrototypeMapper;
+@protocol ROSPonsomizer;
 
 @interface AnnouncementListInteractor : NSObject<AnnouncementListInteractorInput>
 
 @property (nonatomic, weak) id<AnnouncementListInteractorOutput> output;
 @property (nonatomic, strong) id <EventService> eventService;
+@property (strong, nonatomic) id <ROSPonsomizer> ponsomizer;
 
 @end
 

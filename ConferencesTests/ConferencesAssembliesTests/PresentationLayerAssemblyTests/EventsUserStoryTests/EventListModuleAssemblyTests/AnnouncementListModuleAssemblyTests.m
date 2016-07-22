@@ -79,8 +79,7 @@
     Class targetClass = [AnnouncementListInteractor class];
     NSArray *dependencies = @[
                               RamblerSelector(output),
-                              RamblerSelector(eventService),
-                              RamblerSelector(eventPrototypeMapper)
+                              RamblerSelector(eventService)
                               ];
     // when
     id result = [self.assembly interactorAnnouncementList];

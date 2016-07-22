@@ -49,9 +49,6 @@
                                                     with:[self.operationFactoriesAssembly eventListOperationFactory]];
                               [definition injectProperty:@selector(operationScheduler)
                                                     with:[self operationScheduler]];
-                              [definition injectProperty:@selector(ponsomizer)
-                                                    with:[self.coreAssembly ponsomizer]];
-        
     }];
 }
 

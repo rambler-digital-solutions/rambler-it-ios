@@ -24,6 +24,7 @@
 #import "EventModelObject.h"
 #import "EventPrototypeMapper.h"
 #import "EventPlainObject.h"
+#import "ROSPonsomizer.h"
 
 #import "EXTScope.h"
 
@@ -43,7 +44,9 @@
 
 - (NSArray *)obtainEventList {
     NSArray *events = [self.eventService obtainEventWithPredicate:nil];
-    return events;
+    NSArray *plainObjects = [self.ponsomizer convertObject:events];
+    
+    return plainObjects;
 }
 
 #pragma mark - Private methods

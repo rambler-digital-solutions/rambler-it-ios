@@ -29,6 +29,5 @@
 
 @property (strong, nonatomic) EventListOperationFactory *eventOperationFactory;
 @property (strong, nonatomic) id <OperationScheduler> operationScheduler;
-@property (strong, nonatomic) id <ROSPonsomizer> ponsomizer;
 
 @end
