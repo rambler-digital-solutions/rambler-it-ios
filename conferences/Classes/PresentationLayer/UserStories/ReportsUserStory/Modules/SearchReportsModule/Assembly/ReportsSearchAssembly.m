@@ -11,6 +11,8 @@
 #import "ReportsSearchPresenter.h"
 #import "ReportsSearchViewController.h"
 #import "ReportsSearchRouter.h"
+#import "ReportsSearchCellObjectsBuilderImplementation.h"
+#import "ReportsSearchCellObjectsDirectorImplementation.h"
 
 #import <Typhoon/Typhoon.h>
 #import "ServiceComponents.h"
@@ -69,10 +71,28 @@
 - (ReportsSearchDataDisplayManager *)dataDisplayManagerReportsSearch {
     return [TyphoonDefinition withClass:[ReportsSearchDataDisplayManager class]
                           configuration:^(TyphoonDefinition *definition) {
-                              [definition injectProperty:@selector(dateFormatter)
-                                                    with:[self.presentationLayerHelpersAssembly dateFormatter]];
+                              [definition useInitializer:@selector(initWithCellObjectDirector:) parameters:^(TyphoonMethod *initializer) {
+                                  [initializer injectParameterWith:[self cellObjectsDirector]];
+                              }];
                           }];
 }
 
+- (ReportsSearchCellObjectsDirectorImplementation *)cellObjectsDirector {
+    return [TyphoonDefinition withClass:[ReportsSearchCellObjectsDirectorImplementation class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition useInitializer:@selector(initWithBuilder:) parameters:^(TyphoonMethod *initializer) {
+                                  [initializer injectParameterWith:[self cellObjectsBuilder]];
+                              }];
+                          }];
+}
+
+- (ReportsSearchCellObjectsBuilderImplementation *)cellObjectsBuilder {
+    return [TyphoonDefinition withClass:[ReportsSearchCellObjectsBuilderImplementation class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition useInitializer:@selector(initWithDateFormatter:) parameters:^(TyphoonMethod *initializer) {
+                                  [initializer injectParameterWith:[self.presentationLayerHelpersAssembly dateFormatter]];
+                              }];
+                          }];
+}
 
 @end

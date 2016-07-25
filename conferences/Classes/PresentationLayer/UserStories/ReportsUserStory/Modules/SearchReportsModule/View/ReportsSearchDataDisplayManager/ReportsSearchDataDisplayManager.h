@@ -15,6 +15,7 @@
 @class LecturePlainObject;
 @class SpeakerPlainObject;
 @class DateFormatter;
+@protocol ReportsSearchCellObjectsDirector;
 
 @protocol ReportSearchDataDisplayManagerDelegate
 
@@ -57,9 +58,8 @@
 @interface ReportsSearchDataDisplayManager : NSObject <DataDisplayManager>
 
 
-@property (weak, nonatomic) id <ReportSearchDataDisplayManagerDelegate> delegate;
-@property (strong, nonatomic) DateFormatter *dateFormatter;
-
+@property (nonatomic, weak) id <ReportSearchDataDisplayManagerDelegate> delegate;
+@property (nonatomic, strong) id<ReportsSearchCellObjectsDirector> director;
 /**
  @author Zinovyev Konstantin
  
@@ -78,5 +78,6 @@
  */
 - (void)updateTableViewModelWithObjects:(NSArray *)foundObjects searchText:(NSString *)searchText;
 
+- (instancetype)initWithCellObjectDirector:(id <ReportsSearchCellObjectsDirector>)director;
 
 @end

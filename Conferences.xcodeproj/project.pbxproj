@@ -274,6 +274,8 @@
 		667050481D4615B600DD9D6E /* ReportLectureTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 667050471D4615B600DD9D6E /* ReportLectureTableViewCellObject.m */; };
 		6670504B1D4615BC00DD9D6E /* ReportEventTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6670504A1D4615BC00DD9D6E /* ReportEventTableViewCellObject.m */; };
 		6670504E1D4615C200DD9D6E /* GrayTableViewSectionHeaderAndFooterCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6670504D1D4615C200DD9D6E /* GrayTableViewSectionHeaderAndFooterCellObject.m */; };
+		667050531D46332200DD9D6E /* ReportsSearchCellObjectsBuilderImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 667050521D46332200DD9D6E /* ReportsSearchCellObjectsBuilderImplementation.m */; };
+		667050561D46369100DD9D6E /* ReportsSearchCellObjectsDirectorImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 667050551D46369100DD9D6E /* ReportsSearchCellObjectsDirectorImplementation.m */; };
 		9F0A6C1D1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */; };
 		9F0A6C2E1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C2D1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m */; };
 		9F0A84C31BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A84C21BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m */; };
@@ -902,6 +904,12 @@
 		6670504C1D4615C200DD9D6E /* GrayTableViewSectionHeaderAndFooterCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GrayTableViewSectionHeaderAndFooterCellObject.h; path = GrayTableViewSectionHeaderAndFooterCellObject/GrayTableViewSectionHeaderAndFooterCellObject.h; sourceTree = "<group>"; };
 		6670504D1D4615C200DD9D6E /* GrayTableViewSectionHeaderAndFooterCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GrayTableViewSectionHeaderAndFooterCellObject.m; path = GrayTableViewSectionHeaderAndFooterCellObject/GrayTableViewSectionHeaderAndFooterCellObject.m; sourceTree = "<group>"; };
 		6670504F1D46161D00DD9D6E /* ReportsSearchModuleOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportsSearchModuleOutput.h; path = SearchReportsModule/Presenter/ReportsSearchModuleOutput.h; sourceTree = "<group>"; };
+		667050511D46332200DD9D6E /* ReportsSearchCellObjectsBuilderImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportsSearchCellObjectsBuilderImplementation.h; path = SearchReportsModule/View/ReportsSearchDataDisplayManager/ReportsSearchCellObjectsBuilder/ReportsSearchCellObjectsBuilderImplementation.h; sourceTree = "<group>"; };
+		667050521D46332200DD9D6E /* ReportsSearchCellObjectsBuilderImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportsSearchCellObjectsBuilderImplementation.m; path = SearchReportsModule/View/ReportsSearchDataDisplayManager/ReportsSearchCellObjectsBuilder/ReportsSearchCellObjectsBuilderImplementation.m; sourceTree = "<group>"; };
+		667050541D46369100DD9D6E /* ReportsSearchCellObjectsDirectorImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportsSearchCellObjectsDirectorImplementation.h; path = SearchReportsModule/View/ReportsSearchDataDisplayManager/ReportsSearchCellObjectsBuilder/ReportsSearchCellObjectsDirectorImplementation.h; sourceTree = "<group>"; };
+		667050551D46369100DD9D6E /* ReportsSearchCellObjectsDirectorImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportsSearchCellObjectsDirectorImplementation.m; path = SearchReportsModule/View/ReportsSearchDataDisplayManager/ReportsSearchCellObjectsBuilder/ReportsSearchCellObjectsDirectorImplementation.m; sourceTree = "<group>"; };
+		667050571D464BC700DD9D6E /* ReportsSearchCellObjectsBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportsSearchCellObjectsBuilder.h; path = SearchReportsModule/View/ReportsSearchDataDisplayManager/ReportsSearchCellObjectsBuilder/ReportsSearchCellObjectsBuilder.h; sourceTree = "<group>"; };
+		667050591D464BF200DD9D6E /* ReportsSearchCellObjectsDirector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportsSearchCellObjectsDirector.h; path = SearchReportsModule/View/ReportsSearchDataDisplayManager/ReportsSearchCellObjectsBuilder/ReportsSearchCellObjectsDirector.h; sourceTree = "<group>"; };
 		84D2CBEF6E088EFC9A139E49 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		892D07FB1BED008000825704 /* NightlyRibbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NightlyRibbon.png; sourceTree = "<group>"; };
 		9F0A6C1B1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CompoundOperationBuilderConfig.h; path = OperationBuilders/CompoundOperationBuilderConfig/CompoundOperationBuilderConfig.h; sourceTree = "<group>"; };
@@ -3578,6 +3586,7 @@
 		6670501E1D46146100DD9D6E /* ReportsSearchDataDisplayManager */ = {
 			isa = PBXGroup;
 			children = (
+				667050501D4632D600DD9D6E /* ReportsSearchCellObjectsBuilder */,
 				6670501F1D46146B00DD9D6E /* ReportsSearchDataDisplayManager.h */,
 				667050201D46146B00DD9D6E /* ReportsSearchDataDisplayManager.m */,
 			);
@@ -3648,6 +3657,19 @@
 				6670504D1D4615C200DD9D6E /* GrayTableViewSectionHeaderAndFooterCellObject.m */,
 			);
 			name = GrayTableViewSectionHeaderAndFooterCellObject;
+			sourceTree = "<group>";
+		};
+		667050501D4632D600DD9D6E /* ReportsSearchCellObjectsBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				667050511D46332200DD9D6E /* ReportsSearchCellObjectsBuilderImplementation.h */,
+				667050521D46332200DD9D6E /* ReportsSearchCellObjectsBuilderImplementation.m */,
+				667050541D46369100DD9D6E /* ReportsSearchCellObjectsDirectorImplementation.h */,
+				667050551D46369100DD9D6E /* ReportsSearchCellObjectsDirectorImplementation.m */,
+				667050571D464BC700DD9D6E /* ReportsSearchCellObjectsBuilder.h */,
+				667050591D464BF200DD9D6E /* ReportsSearchCellObjectsDirector.h */,
+			);
+			name = ReportsSearchCellObjectsBuilder;
 			sourceTree = "<group>";
 		};
 		9879306505819DD768BE2239 /* Pods */ = {
@@ -5497,6 +5519,7 @@
 				63FDCE061BBDBA2A00A43B60 /* AppDelegate.m in Sources */,
 				63F6134E1CB00A220002AEF0 /* AnnouncementListPresenter.m in Sources */,
 				631808401C482B1300A61E7D /* SpeakerShortInfoInteractor.m in Sources */,
+				667050531D46332200DD9D6E /* ReportsSearchCellObjectsBuilderImplementation.m in Sources */,
 				63F613701CB00A220002AEF0 /* EventDescriptionTableViewCell.m in Sources */,
 				2B20647C1D3F9CE900246C8D /* _SocialNetworkAccountModelObject.m in Sources */,
 				636B64041BBDD19A0053E38F /* LectureServiceImplementation.m in Sources */,
@@ -5580,6 +5603,7 @@
 				63F6138B1CB00A220002AEF0 /* LectureInteractor.m in Sources */,
 				9F8E5F7C1BC2584500DC10DB /* ResponseDeserializersAssembly.m in Sources */,
 				2B2064791D3F9CE900246C8D /* _LectureModelObject.m in Sources */,
+				667050561D46369100DD9D6E /* ReportsSearchCellObjectsDirectorImplementation.m in Sources */,
 				9F0A6C1D1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m in Sources */,
 				9F0A85001BC1698B006F79FB /* ResponseDeserializationOperation.m in Sources */,
 				9FF74FFF1D26C62A000D208D /* EventListServiceImplementation.m in Sources */,
