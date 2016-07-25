@@ -8,13 +8,14 @@
 
 #import <Typhoon/Typhoon.h>
 #import "ModuleAssemblyBase.h"
+#import "AssemblyCollector/RamblerInitialAssembly.h"
 
 /**
  @author Artem Karpushin
  
  A TyphoonAssembly which is responsible for creating SpeakerInfoModule
  */
-@interface SpeakerInfoModuleAssembly : ModuleAssemblyBase
+@interface SpeakerInfoModuleAssembly : ModuleAssemblyBase <RamblerInitialAssembly>
 
 @end
 

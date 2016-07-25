@@ -19,6 +19,7 @@
 // THE SOFTWARE.
 
 #import <Typhoon/Typhoon.h>
+#import "AssemblyCollector/RamblerInitialAssembly.h"
 
 @class EventTypeDeterminator;
 @class DateFormatter;
@@ -29,7 +30,7 @@
  
  A TyphoonAssembly which is responsible for creating helper objects for presentation layer
  */
-@interface PresentationLayerHelpersAssembly : TyphoonAssembly
+@interface PresentationLayerHelpersAssembly : TyphoonAssembly <RamblerInitialAssembly>
 
 - (EventTypeDeterminator *)eventTypeDeterminator;
 - (DateFormatter *)dateFormatter;

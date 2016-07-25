@@ -24,6 +24,9 @@
 #import "PushNotificationCenter.h"
 #import "ThirdPartiesConfigurator.h"
 
+#import <RamblerTyphoonUtils/AssemblyCollector.h>
+#import <Typhoon/Typhoon.h>
+
 @interface AppDelegate ()
 
 @end
@@ -32,7 +35,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
     [self.thirdPartiesConfigurator configurate];
     [self.applicationConfigurator setupCoreDataStack];
     [self.pushNotificationCenter registerApplicationForPushNotificationsIfNeeded:application];
@@ -44,6 +46,11 @@
     }
     
     return YES;
+}
+
+- (NSArray *)initialAssemblies {
+    RamblerInitialAssemblyCollector *collector = [RamblerInitialAssemblyCollector new];
+    return [collector collectInitialAssemblyClasses];
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {

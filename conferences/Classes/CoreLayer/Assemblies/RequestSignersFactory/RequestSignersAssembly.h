@@ -21,12 +21,13 @@
 #import <Typhoon/Typhoon.h>
 
 #import "RequestSignersFactory.h"
+#import "AssemblyCollector/RamblerInitialAssembly.h"
 
 /**
  @author Egor Tolstoy
  
  The implementation of the RequestSignersFactory protocol, based on TyphoonAssembly
  */
-@interface RequestSignersAssembly : TyphoonAssembly <RequestSignersFactory>
+@interface RequestSignersAssembly : TyphoonAssembly <RequestSignersFactory, RamblerInitialAssembly>
 
 @end

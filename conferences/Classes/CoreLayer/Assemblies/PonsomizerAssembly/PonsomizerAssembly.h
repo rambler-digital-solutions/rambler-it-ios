@@ -7,6 +7,7 @@
 //
 
 #import "ModuleAssemblyBase.h"
+#import "AssemblyCollector/RamblerInitialAssembly.h"
 
 @protocol ROSPonsomizer;
 
@@ -15,7 +16,7 @@
  
  Assembly with core components
  */
-@interface CoreAssembly : ModuleAssemblyBase
+@interface PonsomizerAssembly : TyphoonAssembly <RamblerInitialAssembly>
 
 - (id <ROSPonsomizer>)ponsomizer;
 

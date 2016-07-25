@@ -11,16 +11,17 @@
 
 #import "RamblerLocationModuleAssembly.h"
 #import "RamblerLocationModuleAssembly_Testable.h"
+
+#import <RamblerTyphoonUtils/AssemblyCollector.h>
+#import "RamblerInitialAssemblyCollector+Activate.h"
+
+
 #import "RamblerLocationViewController.h"
 #import "RamblerLocationInteractor.h"
 #import "RamblerLocationPresenter.h"
 #import "RamblerLocationRouter.h"
 #import "ServiceComponentsAssembly.h"
 #import "OperationFactoriesAssembly.h"
-#import "CoreAssembly.h"
-#import "RequestSignersAssembly.h"
-#import "ResourceMapperAssembly.h"
-#import "ResourceClientAssembly.h"
 
 @interface RamblerLocationModuleAssemblyTests : RamblerTyphoonAssemblyTests
 
@@ -33,15 +34,8 @@
 - (void)setUp {
     [super setUp];
     
-    self.assembly = [RamblerLocationModuleAssembly new];
-    [self.assembly activateWithCollaboratingAssemblies:@[
-                                                         [ServiceComponentsAssembly new],
-                                                         [OperationFactoriesAssembly new],
-                                                         [CoreAssembly new],
-                                                         [RequestSignersAssembly new],
-                                                         [ResourceMapperAssembly new],
-                                                         [ResourceClientAssembly new]
-                                                         ]];
+    Class classAssembly = [RamblerLocationModuleAssembly class];
+    self.assembly = [RamblerInitialAssemblyCollector rds_activateAssemblyWithClass:classAssembly];
 }
 
 - (void)tearDown {
@@ -55,6 +49,7 @@
     Class targetClass = [RamblerLocationViewController class];
     NSArray *dependencies = @[
                               RamblerSelector(output),
+                              RamblerSelector(dataDisplayManager)
                               ];
     // when
     id result = [self.assembly viewRamblerLocation];
@@ -68,6 +63,8 @@
     Class targetClass = [RamblerLocationInteractor class];
     NSArray *dependencies = @[
                               RamblerSelector(output),
+                              RamblerSelector(locationService),
+                              RamblerSelector(mapLinkBuilder)
                               ];
     // when
     id result = [self.assembly interactorRamblerLocation];

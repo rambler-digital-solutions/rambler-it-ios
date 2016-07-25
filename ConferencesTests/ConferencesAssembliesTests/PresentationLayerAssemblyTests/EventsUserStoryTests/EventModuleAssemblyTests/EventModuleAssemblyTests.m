@@ -33,7 +33,7 @@
 #import "PresentationLayerHelpersAssembly.h"
 #import "EventCellObjectBuilderFactory.h"
 #import "OperationFactoriesAssembly.h"
-#import "CoreAssembly.h"
+#import "PonsomizerAssembly.h"
 
 @interface EventModuleAssemblyTests : RamblerTyphoonAssemblyTests
 
@@ -50,7 +50,7 @@
     [self.assembly activateWithCollaboratingAssemblies:@[
                                                          [ServiceComponentsAssembly new],
                                                          [OperationFactoriesAssembly new],
-                                                         [CoreAssembly new]
+                                                         [PonsomizerAssembly new]
                                                          ]];
 }
 

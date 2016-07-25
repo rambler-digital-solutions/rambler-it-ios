@@ -32,6 +32,8 @@
 #import "OperationSchedulerImplementation.h"
 #import "PrototypeMapper.h"
 #import "EventPrototypeMapper.h"
+#import "RamblerLocationServiceImplementation.h"
+#import "RamblerInitialAssemblyCollector+Activate.h"
 
 @interface ServiceComponentsAssemblyTests : RamblerTyphoonAssemblyTests
 
@@ -44,8 +46,8 @@
 - (void)setUp {
     [super setUp];
     
-    self.assembly = [ServiceComponentsAssembly new];
-    [self.assembly activate];
+    Class class = [ServiceComponentsAssembly class];
+    self.assembly = [RamblerInitialAssemblyCollector rds_activateAssemblyWithClass:class];
 }
 
 - (void)tearDown {
@@ -99,6 +101,22 @@
     
     // then
     [self verifyTargetDependency:result withClass:targetClass];
+}
+
+- (void)testThatAssemblyCreatesRamblerLocationService {
+    // given
+    Class targetClass = [RamblerLocationServiceImplementation class];
+    
+    NSArray *dependencies = @[
+                              RamblerSelector(client),
+                              RamblerSelector(mapper)
+                              ];
+    
+    // when
+    id result = [self.assembly ramblerLocationService];
+    
+    // then
+    [self verifyTargetDependency:result withClass:targetClass dependencies:dependencies];
 }
 
 @end

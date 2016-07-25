@@ -26,7 +26,7 @@
 #import "AnnouncementListDataDisplayManager.h"
 #import "ServiceComponents.h"
 #import "PresentationLayerHelpersAssembly.h"
-#import "CoreAssembly.h"
+#import "PonsomizerAssembly.h"
 
 @implementation  AnnouncementListModuleAssembly
 

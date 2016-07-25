@@ -34,7 +34,7 @@
 #import "EventStoreServiceProtocol.h"
 #import "EventStoreService.h"
 #import "RamblerLocationServiceImplementation.h"
-#import "CoreAssembly.h"
+#import "PonsomizerAssembly.h"
 
 @implementation ServiceComponentsAssembly
 

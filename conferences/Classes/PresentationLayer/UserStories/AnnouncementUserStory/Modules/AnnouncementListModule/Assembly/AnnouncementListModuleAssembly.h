@@ -19,17 +19,18 @@
 // THE SOFTWARE.
 
 #import "ModuleAssemblyBase.h"
+#import "AssemblyCollector/RamblerInitialAssembly.h"
 
-@class CoreAssembly;
+@class PonsomizerAssembly;
 
 /**
  @author Artem Karpushin
  
  A TyphoonAssembly which is responsible for creating AnnouncementListModule
  */
-@interface AnnouncementListModuleAssembly : ModuleAssemblyBase
+@interface AnnouncementListModuleAssembly : ModuleAssemblyBase <RamblerInitialAssembly>
 
-@property (strong, nonatomic) CoreAssembly *coreAssembly;
+@property (strong, nonatomic) PonsomizerAssembly *coreAssembly;
 
 @end
 
