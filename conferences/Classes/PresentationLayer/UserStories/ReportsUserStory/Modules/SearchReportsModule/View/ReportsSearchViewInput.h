@@ -13,16 +13,17 @@
 /**
  @author Zinovyev Konstantin
  
- Первоначальная настройка view
+ Initial setup view
  */
 - (void)setupView;
 
 /**
  @author Zinovyev Konstantin
  
- Метод обновляющий список найденных событий
+ Method updates objects in module by found object after search
  
- @param events Список событий
+ @param foundObjects list found objects
+ @param searchText   text in search bar
  */
 - (void)updateViewWithObjectList:(NSArray *)foundObjects searchText:(NSString *)searchText;
 

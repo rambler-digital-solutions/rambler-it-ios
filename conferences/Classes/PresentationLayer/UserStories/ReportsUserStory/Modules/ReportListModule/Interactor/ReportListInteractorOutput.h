@@ -25,9 +25,9 @@
 /**
  @author Zinovyev Konstantin
  
- Сообщается презентеру об обновлении закешированного списка событий, полученных с сервера
+ Method informs the presenter about updating a cached list of events thar received from the server
  
- @param events События
+ @param events Managed Objects
  */
 - (void)didUpdateEventList:(NSArray *)events;
 

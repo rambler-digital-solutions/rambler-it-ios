@@ -11,34 +11,34 @@
 /**
  @author Zinovyev Konstantin
  
- Категория, в которой зашиты дефолтные цвета
+ Category contains custom colors
  */
 @interface UIColor (ConferencesPallete)
 
 /**
  @author Zinovyev Konstantin
  
- Цвет выделенного текста при поиске событий в разделе Отчеты
+ The color of the selected text in the search events in the Reports section
  
- @return Цвет
+ @return color
  */
 + (UIColor *)colorForSelectedTextEventCellObject;
 
 /**
  @author Zinovyev Konstantin
  
- Цвет выделенного текста при поиске докладов в разделе Отчеты
+ The color of the selected text in the search lectures in the Reports section
  
- @return Цвет
+ @return color
  */
 + (UIColor *)colorForSelectedTextLectureCellObject;
 
 /**
  @author Zinovyev Konstantin
  
- Цвет выделенного текста при поиске докладчиков в разделе Отчеты
+ The color of the selected text in the search speakers in the Reports section
  
- @return Цвет
+ @return color
  */
 + (UIColor *)colorForSelectedTextSpeakerCellObject;
 
