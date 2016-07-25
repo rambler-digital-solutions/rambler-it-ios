@@ -23,6 +23,7 @@
 
 #import "AnnouncementListInteractor.h"
 #import "EventService.h"
+#import "ROSPonsomizer.h"
 #import "AnnouncementListInteractorOutput.h"
 
 typedef void (^ProxyBlock)(NSInvocation *);
@@ -31,6 +32,7 @@ typedef void (^ProxyBlock)(NSInvocation *);
 
 @property (strong, nonatomic) AnnouncementListInteractor *interactor;
 @property (strong, nonatomic) id <EventService> mockEventService;
+@property (strong, nonatomic) id <ROSPonsomizer> mockPonsomizer;
 @property (strong, nonatomic) id <AnnouncementListInteractorOutput> mockOutput;
 
 @end
@@ -42,16 +44,19 @@ typedef void (^ProxyBlock)(NSInvocation *);
     
     self.interactor = [AnnouncementListInteractor new];
     self.mockEventService = OCMProtocolMock(@protocol(EventService));
+    self.mockPonsomizer = OCMProtocolMock(@protocol(ROSPonsomizer));
     self.mockOutput = OCMProtocolMock(@protocol(AnnouncementListInteractorOutput));
     
     self.interactor.eventService = self.mockEventService;
     self.interactor.output = self.mockOutput;
+    self.interactor.ponsomizer = self.mockPonsomizer;
 }
 
 - (void)tearDown {
     self.interactor = nil;
     self.mockEventService = nil;
     self.mockOutput = nil;
+    self.mockPonsomizer = nil;
     
     [super tearDown];
 }
@@ -60,6 +65,7 @@ typedef void (^ProxyBlock)(NSInvocation *);
     // given
     NSObject *event = [NSObject new];
     NSArray *data = @[event];
+    NSArray *eventsPlainObjects = @[@1];
     
     ProxyBlock proxyBlock = ^(NSInvocation *invocation){
         void(^completionBlock)(id data, NSError *error);
@@ -71,26 +77,29 @@ typedef void (^ProxyBlock)(NSInvocation *);
     
     OCMStub([self.mockEventService updateEventWithPredicate:OCMOCK_ANY completionBlock:OCMOCK_ANY]).andDo(proxyBlock);
     OCMStub([self.mockEventService obtainEventWithPredicate:nil]).andReturn(data);
+    OCMStub([self.mockPonsomizer convertObject:data]).andReturn(eventsPlainObjects);
    
     // when
     [self.interactor updateEventList];
     
     // then
-    OCMVerify([self.mockOutput didUpdateEventList:data]);
+    OCMVerify([self.mockOutput didUpdateEventList:eventsPlainObjects]);
 }
 
 - (void)testSuccessObtainEventList {
     // given
     NSObject *event = [NSObject new];
-    NSArray *events = @[event];
+    NSArray *eventsManagedObjects = @[event];
+    NSArray *eventsPlainObjects = @[@1];
     
-    OCMStub([self.mockEventService obtainEventWithPredicate:nil]).andReturn(events);
+    OCMStub([self.mockEventService obtainEventWithPredicate:nil]).andReturn(eventsManagedObjects);
+    OCMStub([self.mockPonsomizer convertObject:eventsManagedObjects]).andReturn(eventsPlainObjects);
     
     // when
     id result = [self.interactor obtainEventList];
     
     // then
-    XCTAssertEqualObjects(result, events);
+    XCTAssertEqualObjects(result, eventsPlainObjects);
 }
 
 @end
