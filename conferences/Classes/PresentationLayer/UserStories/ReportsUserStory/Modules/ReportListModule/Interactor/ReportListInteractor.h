@@ -23,14 +23,14 @@
 
 @protocol ReportListInteractorOutput;
 @protocol EventService;
-@protocol PrototypeMapper;
+@protocol ROSPonsomizer;
 @class EventTypeDeterminator;
 
 @interface ReportListInteractor : NSObject<ReportListInteractorInput>
 
 @property (weak, nonatomic) id <ReportListInteractorOutput> output;
 @property (strong, nonatomic) id <EventService> eventService;
-@property (strong, nonatomic) id <PrototypeMapper> eventPrototypeMapper;
+@property (strong, nonatomic) id <ROSPonsomizer> ponsomizer;
 @property (strong, nonatomic) EventTypeDeterminator *eventTypeDeterminator;
 
 @end

@@ -20,14 +20,14 @@
 
 #import "SpeakerServiceImplementation.h"
 #import <MagicalRecord/MagicalRecord.h>
-#import "SpeakerManagedObject.h"
+#import "SpeakerModelObject.h"
 
 @implementation SpeakerServiceImplementation
 
 - (NSArray *)obtainSpeakerWithPredicate:(NSPredicate *)predicate {
     NSManagedObjectContext *context = [NSManagedObjectContext MR_defaultContext];
     
-    NSArray *speakers = [SpeakerManagedObject MR_findAllWithPredicate:predicate inContext:context];
+    NSArray *speakers = [SpeakerModelObject MR_findAllWithPredicate:predicate inContext:context];
     
     return speakers;
 }

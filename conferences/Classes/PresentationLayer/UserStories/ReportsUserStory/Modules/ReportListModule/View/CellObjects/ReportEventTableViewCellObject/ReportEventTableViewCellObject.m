@@ -41,8 +41,7 @@
     self = [super init];
     if (self) {
         _eventTitle = attributedName;
-        _eventImage = event.image;
-        _imageURL = event.imageUrl;
+        _imageURL = [NSURL URLWithString:event.imageUrl];
         _date = date;
         _event = event;
     }

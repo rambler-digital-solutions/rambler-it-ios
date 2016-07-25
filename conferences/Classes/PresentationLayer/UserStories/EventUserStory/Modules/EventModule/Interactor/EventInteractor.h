@@ -23,7 +23,7 @@
 
 @protocol EventInteractorOutput;
 @protocol EventService;
-@protocol PrototypeMapper;
+@protocol ROSPonsomizer;
 @protocol EventStoreServiceProtocol;
 @class EventTypeDeterminator;
 
@@ -31,7 +31,7 @@
 
 @property (nonatomic, weak) id<EventInteractorOutput> output;
 @property (strong, nonatomic) id <EventService> eventService;
-@property (strong, nonatomic) id <PrototypeMapper> eventPrototypeMapper;
+@property (strong, nonatomic) id <ROSPonsomizer> ponsomizer;
 @property (strong, nonatomic) EventTypeDeterminator *eventTypeDeterminator;
 @property (strong, nonatomic) id <EventStoreServiceProtocol> eventStoreService;
 

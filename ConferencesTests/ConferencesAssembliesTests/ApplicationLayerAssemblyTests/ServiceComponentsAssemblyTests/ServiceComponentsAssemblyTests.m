@@ -30,7 +30,7 @@
 #import "PushNotificationServiceImplementation.h"
 #import "OperationScheduler.h"
 #import "OperationSchedulerImplementation.h"
-#import "PrototypeMapper.h"
+
 #import "EventPrototypeMapper.h"
 #import "RamblerLocationServiceImplementation.h"
 #import "RamblerInitialAssemblyCollector+Activate.h"

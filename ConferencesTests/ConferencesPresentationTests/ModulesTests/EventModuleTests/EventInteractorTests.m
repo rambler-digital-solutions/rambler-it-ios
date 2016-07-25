@@ -24,7 +24,7 @@
 #import "EventInteractor.h"
 #import "EventService.h"
 #import "EventPlainObject.h"
-#import "PrototypeMapper.h"
+
 #import "EventTypeDeterminator.h"
 #import "EventInteractorOutput.h"
 #import "EventStoreServiceProtocol.h"
@@ -36,7 +36,7 @@ typedef void (^ProxyBlock)(NSInvocation *);
 
 @property (strong, nonatomic) EventInteractor *interactor;
 @property (strong, nonatomic) id <EventService> eventServiceMock;
-@property (strong, nonatomic) id <PrototypeMapper> prototypeMapperMock;
+@property (strong, nonatomic) id <> prototypeMapperMock;
 @property (strong, nonatomic) EventTypeDeterminator *eventTypeDeterminatorMock;
 @property (strong, nonatomic) id <EventInteractorOutput> presenterMock;
 @property (strong, nonatomic) id eventStoreServiceMock;

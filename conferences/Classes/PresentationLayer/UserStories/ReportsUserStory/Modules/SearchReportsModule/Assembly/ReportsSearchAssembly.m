@@ -39,12 +39,8 @@
                                                     with:[self.serviceComponents speakerService]];
                               [definition injectProperty:@selector(lectureService)
                                                     with:[self.serviceComponents lectureService]];
-                              [definition injectProperty:@selector(eventPrototypeMapper)
-                                                    with:[self.serviceComponents eventPrototypeMapper]];
-                              [definition injectProperty:@selector(lecturePrototypeMapper)
-                                                    with:[self.serviceComponents lecturePrototypeMapper]];
-                              [definition injectProperty:@selector(speakerPrototypeMapper)
-                                                    with:[self.serviceComponents speakerPrototypeMapper]];
+                              [definition injectProperty:@selector(ponsomizer)
+                                                    with:[self.ponsomizerAssembly ponsomizer]];
                               [definition injectProperty:@selector(eventTypeDeterminator)
                                                     with:[self.presentationLayerHelpersAssembly eventTypeDeterminator]];
                           }];

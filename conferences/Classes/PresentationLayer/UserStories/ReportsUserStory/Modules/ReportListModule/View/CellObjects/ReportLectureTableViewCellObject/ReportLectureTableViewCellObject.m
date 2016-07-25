@@ -53,7 +53,7 @@
 + (instancetype)objectWithLecture:(LecturePlainObject *)lecture selectedText:(NSString *)selectedText {
     NSString *lectureName = lecture.name ? lecture.name : @"";
     NSMutableAttributedString *attributedName = [[NSMutableAttributedString alloc] initWithString:lectureName];
-    SpeakerPlainObject *speaker = [[lecture speakers] firstObject];
+    SpeakerPlainObject *speaker = [lecture speaker];
     NSString *speakerName = speaker.name;
     if ([selectedText length] != 0) {
         NSRange range = [[lecture.name lowercaseString] rangeOfString:selectedText];

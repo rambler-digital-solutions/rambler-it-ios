@@ -29,10 +29,6 @@
 #import "PushNotificationServiceImplementation.h"
 #import "OperationScheduler.h"
 #import "OperationSchedulerImplementation.h"
-#import "PrototypeMapper.h"
-#import "EventPrototypeMapper.h"
-#import "LecturePrototypeMapper.h"
-#import "SpeakerPrototypeMapper.h"
 #import "EventStoreServiceProtocol.h"
 #import "EventStoreService.h"
 #import "RamblerLocationServiceImplementation.h"
@@ -84,16 +80,6 @@
 
 - (id <OperationScheduler>)operationScheduler {
     return [TyphoonDefinition withClass:[OperationSchedulerImplementation class]];
-}
-
-- (id<PrototypeMapper>)eventPrototypeMapper {
-    return [TyphoonDefinition withClass:[EventPrototypeMapper class]];
-}
-- (id<PrototypeMapper>)lecturePrototypeMapper {
-    return [TyphoonDefinition withClass:[LecturePrototypeMapper class]];
-}
-- (id<PrototypeMapper>)speakerPrototypeMapper {
-    return [TyphoonDefinition withClass:[SpeakerPrototypeMapper class]];
 }
 
 - (id <EventStoreServiceProtocol>)eventStoreService {

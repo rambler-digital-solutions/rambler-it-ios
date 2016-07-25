@@ -30,7 +30,7 @@
 }
 
 - (void)didTriggerTapCellWithEvent:(EventPlainObject *)event {
-    [self.router openEventModuleWithEventObjectId:event.objectId];
+    [self.router openEventModuleWithEventObjectId:event.eventId];
 }
 - (void)didTriggerTapCellWithLecture:(LecturePlainObject *)lecture {
     

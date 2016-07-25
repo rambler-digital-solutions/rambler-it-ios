@@ -8,9 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "ModuleAssemblyBase.h"
+#import "PonsomizerAssembly.h"
 
 @protocol RamblerInitialAssembly;
 
 @interface ReportsSearchAssembly : ModuleAssemblyBase <RamblerInitialAssembly>
+
+@property (nonatomic, strong) PonsomizerAssembly *ponsomizerAssembly;
 
 @end

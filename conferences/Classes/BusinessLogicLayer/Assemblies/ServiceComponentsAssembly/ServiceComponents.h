@@ -26,7 +26,7 @@
 @protocol LectureService;
 @protocol SpeakerService;
 @protocol EventListService;
-@protocol PrototypeMapper;
+
 @protocol EventStoreServiceProtocol;
 @protocol RamblerLocationService;
 
@@ -39,10 +39,5 @@
 - (id <EventListService>)eventListService;
 - (id <EventStoreServiceProtocol>)eventStoreService;
 - (id <RamblerLocationService>)ramblerLocationService;
-
-// вынести из сервисов
-- (id <PrototypeMapper>)eventPrototypeMapper;
-- (id <PrototypeMapper>)speakerPrototypeMapper;
-- (id <PrototypeMapper>)lecturePrototypeMapper;
 
 @end

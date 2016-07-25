@@ -23,11 +23,10 @@
 
 #import "EventService.h"
 #import "EventModelObject.h"
-#import "EventPrototypeMapper.h"
 #import "EventPlainObject.h"
 #import "EventType.h"
 #import "EventTypeDeterminator.h"
-
+#import "ROSPonsomizer.h"
 #import "EXTScope.h"
 
 @implementation ReportListInteractor
@@ -62,14 +61,7 @@
 #pragma mark - Private methods
 
 - (NSArray *)getPlainEventsFromManagedObjects:(NSArray *)managedObjectEvents {
-    NSMutableArray *eventPlainObjects = [NSMutableArray array];
-    for (EventModelObject *managedObjectEvent in managedObjectEvents) {
-        EventPlainObject *eventPlainObject = [EventPlainObject new];
-        
-        [self.eventPrototypeMapper fillObject:eventPlainObject withObject:managedObjectEvent];
-        
-        [eventPlainObjects addObject:eventPlainObject];
-    }
+    NSMutableArray *eventPlainObjects = [self.ponsomizer convertObject:managedObjectEvents];
     return [self obtainPastEvents:eventPlainObjects];
 }
 

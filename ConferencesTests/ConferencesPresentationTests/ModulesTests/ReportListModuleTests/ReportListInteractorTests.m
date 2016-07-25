@@ -26,7 +26,7 @@ typedef void (^ProxyBlock)(NSInvocation *);
 @property (strong, nonatomic) EventTypeDeterminator *mockEventTypeDeterminator;
 @property (strong, nonatomic) id <ReportListInteractorOutput> mockOutput;
 @property (strong, nonatomic) id <EventService> mockEventService;
-@property (strong, nonatomic) id <PrototypeMapper> mockPrototypeMapper;
+@property (strong, nonatomic) id <> mockPrototypeMapper;
 
 @end
 

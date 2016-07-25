@@ -23,7 +23,8 @@
 #import "EventService.h"
 #import "EventModelObject.h"
 #import "EventPlainObject.h"
-#import "PrototypeMapper.h"
+
+#import "ROSPonsomizer.h"
 #import "EventTypeDeterminator.h"
 #import "EventStoreServiceProtocol.h"
 #import "ErrorConstants.h"
@@ -76,8 +77,7 @@ static NSString *const kEventByObjectIdPredicateFormat = @"eventId = %@";
 #pragma mark - Private methods
 
 - (EventPlainObject *)mapEvent:(EventModelObject *)managedObjectEvent {
-    EventPlainObject *eventPlainObject = [EventPlainObject new];
-    [self.eventPrototypeMapper fillObject:eventPlainObject withObject:managedObjectEvent];
+    EventPlainObject *eventPlainObject = [self.ponsomizer convertObject:managedObjectEvent];
     
     EventType eventType = [self.eventTypeDeterminator determinateTypeForEvent:eventPlainObject];
     eventPlainObject.eventType = @(eventType);
