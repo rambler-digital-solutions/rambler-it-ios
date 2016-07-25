@@ -24,6 +24,8 @@
 #import "AnnouncementListDataDisplayManager.h"
 #import "EventPlainObject.h"
 
+static CGFloat const kAnnouncementTableViewEstimatedRowHeight = 44.0f;
+
 @interface AnnouncementListTableViewController() <AnnouncementLIstDataDisplayManagerDelegate>
 
 @property (strong, nonatomic) UIColor *viewBackgroundColor;
@@ -43,7 +45,6 @@
     [super viewWillAppear:animated];
     [self setScrollViewColor];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 #pragma mark - AnnouncementListViewInput
@@ -52,6 +53,9 @@
     [self updateViewWithEventList:events];
     self.dataDisplayManager.delegate = self;
     
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.estimatedRowHeight = kAnnouncementTableViewEstimatedRowHeight;
+    self.tableView.contentInset = UIEdgeInsetsMake(-20, 0, 0, 0);
     self.tableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.tableView];
     self.tableView.delegate = [self.dataDisplayManager delegateForTableView:self.tableView withBaseDelegate:nil];
 }

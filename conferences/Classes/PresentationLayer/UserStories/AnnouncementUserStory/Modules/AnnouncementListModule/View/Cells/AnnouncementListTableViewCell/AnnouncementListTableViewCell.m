@@ -23,7 +23,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 
 static NSString *const kPlaceholderImageName = @"placeholder";
-static CGFloat const FutureEventListTableViewCellHeight = 116.0f;
+static CGFloat const FutureEventListTableViewCellHeight = 96.0f;
 
 @implementation AnnouncementListTableViewCell
 
@@ -31,7 +31,6 @@ static CGFloat const FutureEventListTableViewCellHeight = 116.0f;
 
 - (BOOL)shouldUpdateCellWithObject:(AnnouncementListTableViewCellObject *)object {
     self.eventTitle.text = object.eventTitle;
-    self.eventTags.text = object.eventTags;
     self.date.text = object.date;
     [self.eventImageView sd_setImageWithURL:object.imageUrl
                            placeholderImage:[UIImage imageNamed:kPlaceholderImageName]];

@@ -9,6 +9,7 @@
 #import "NearestAnnouncementTableViewCellObject.h"
 #import "NearestAnnouncementTableViewCell.h"
 #import "EventPlainObject.h"
+#import "MetaEventPlainObject.h"
 
 @interface NearestAnnouncementTableViewCellObject ()
 
@@ -32,7 +33,7 @@
         _date = date;
         _time = time;
         _eventTitle = event.name;
-        _imageUrl = [NSURL URLWithString:event.imageUrl];
+        _imageUrl = [NSURL URLWithString:event.metaEvent.imageUrlPath];
         _event = event;
     }
     return self;

@@ -91,7 +91,9 @@
 
 - (NSArray *)generateCellObjects {
     NSMutableArray *cellObjects = [NSMutableArray array];
-    
+    if (!self.events.count) {
+        return nil;
+    }
     EventPlainObject *nearestEvent = [self.events firstObject];
     
     NSString *eventDate = [self.dateFormatter obtainDateWithDayMonthFormat:nearestEvent.startDate];

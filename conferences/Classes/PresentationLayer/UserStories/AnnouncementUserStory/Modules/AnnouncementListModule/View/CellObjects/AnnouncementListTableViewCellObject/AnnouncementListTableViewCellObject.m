@@ -9,6 +9,7 @@
 #import "AnnouncementListTableViewCellObject.h"
 #import "AnnouncementListTableViewCell.h"
 #import "EventPlainObject.h"
+#import "MetaEventPlainObject.h"
 
 @interface AnnouncementListTableViewCellObject ()
 
@@ -30,7 +31,7 @@
         _date = date;
         _eventTitle = event.name;
         _eventTags = event.tags.allObjects;
-        _imageUrl = [NSURL URLWithString:event.imageUrl];
+        _imageUrl = [NSURL URLWithString:event.metaEvent.imageUrlPath];
         _event = event;
     }
     return self;

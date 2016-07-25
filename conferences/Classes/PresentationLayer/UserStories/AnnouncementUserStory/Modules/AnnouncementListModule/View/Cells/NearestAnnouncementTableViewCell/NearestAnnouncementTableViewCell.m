@@ -24,7 +24,6 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 
 static NSString *const kPlaceholderImageName = @"placeholder";
-static CGFloat const ValueToCutForShortcutDisplayMode = 114.0f;
 
 @interface NearestAnnouncementTableViewCell ()
 
@@ -40,11 +39,13 @@ static CGFloat const ValueToCutForShortcutDisplayMode = 114.0f;
     self.eventTitle.text = object.eventTitle;
     self.date.text = object.date;
     self.time.text = object.time;
-    self.imageView.image = object.image;
-    [self.cellView setBackgroundColor:object.backgroundColor];
+    self.eventImageView.image = object.image;
+    if (object.backgroundColor) {
+        [self.cellView setBackgroundColor:object.backgroundColor];
+    }
     
-    [self.imageView sd_setImageWithURL:object.imageUrl
-                      placeholderImage:[UIImage imageNamed:kPlaceholderImageName]];
+    [self.eventImageView sd_setImageWithURL:object.imageUrl
+                           placeholderImage:[UIImage imageNamed:kPlaceholderImageName]];
 
     return YES;
 }
@@ -56,7 +57,7 @@ static CGFloat const ValueToCutForShortcutDisplayMode = 114.0f;
         return tableView.frame.size.height;
     }
     else {
-        return tableView.frame.size.height - ValueToCutForShortcutDisplayMode;
+        return UITableViewAutomaticDimension;
     }
 }
 
