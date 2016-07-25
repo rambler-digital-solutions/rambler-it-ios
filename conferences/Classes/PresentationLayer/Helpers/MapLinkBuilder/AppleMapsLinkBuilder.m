@@ -32,7 +32,7 @@ static NSUInteger const kDesiredZoomLevel = 16;
 #pragma mark - <MapLinkBuilder>
 
 - (NSURL *)buildUrlWithCoordinates:(CLLocationCoordinate2D)coordinates {
-    NSString *urlString = [NSString stringWithFormat:@"%@?%@=%f,%f&%@=%lu", kAppleMapsURLString, kAppleMapsLocationKey, coordinates.latitude, coordinates.longitude, kAppleMapsZoomKey, kDesiredZoomLevel];
+    NSString *urlString = [NSString stringWithFormat:@"%@?%@=%f,%f&%@=%lu", kAppleMapsURLString, kAppleMapsLocationKey, coordinates.latitude, coordinates.longitude, kAppleMapsZoomKey, (unsigned long)kDesiredZoomLevel];
     NSURL *url = [NSURL URLWithString:urlString];
     return url;
 }

@@ -22,4 +22,13 @@
 
 @implementation SocialNetworkAccountServiceImplementation
 
+- (SocialNetworkAccount *)obtainSocialNetworkAccountWithPredicate:(NSPredicate *)predicate {
+    return nil;
+}
+
+- (void)updateSocialNetworkAccountWithPredicate:(NSPredicate *)predicate completionBlock:(SocialNetworkAccountCompletionBlock)completionBlock {
+    
+}
+
+
 @end

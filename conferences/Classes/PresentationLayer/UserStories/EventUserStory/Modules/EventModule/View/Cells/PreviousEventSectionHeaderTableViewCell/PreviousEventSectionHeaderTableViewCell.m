@@ -25,7 +25,7 @@ static CGFloat const kPreviousEventSectionHeaderTableViewCellHeight = 51.0f;
 
 @interface PreviousEventSectionHeaderTableViewCell ()
 
-@property (weak, nonatomic) IBOutlet UIView *contentView;
+@property (weak, nonatomic) IBOutlet UIView *contentViewCell;
 
 @end
 

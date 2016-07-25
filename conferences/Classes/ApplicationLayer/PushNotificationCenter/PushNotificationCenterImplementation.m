@@ -33,9 +33,7 @@
         [application registerUserNotificationSettings:settings];
         [application registerForRemoteNotifications];
     } else {
-        [application registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |
-                                                         UIRemoteNotificationTypeAlert |
-                                                         UIRemoteNotificationTypeSound)];
+        [application registerForRemoteNotifications];
     }
 }
 
@@ -43,7 +41,7 @@
     @weakify(self);
     [self.pushNotificationService registerForPushNotificationsWithToken:token completionBlock:^(NSError *error) {
         @strongify(self);
-        
+        [self isKindOfClass:[self class]];
     }];
     
 }
@@ -52,7 +50,7 @@
     @weakify(self);
     [self.pushNotificationService processPushNotificationWithUserInfo:userInfo completionBlock:^(PushNotification *pushNotification) {
         @strongify(self);
-        
+        [self isKindOfClass:[self class]];
     }];
 }
 

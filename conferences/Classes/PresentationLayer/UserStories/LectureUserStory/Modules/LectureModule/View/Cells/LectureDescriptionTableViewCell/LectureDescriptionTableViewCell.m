@@ -9,7 +9,7 @@
 #import "LectureDescriptionTableViewCell.h"
 #import "LectureDescriptionTableViewCellObject.h"
 
-static CGFloat const LectureDescriptionTableViewCellHeight = 135.0f;
+static CGFloat const kLectureDescriptionTableViewCellHeight = 135.0f;
 
 @interface LectureDescriptionTableViewCell ()
 
@@ -31,4 +31,7 @@ static CGFloat const LectureDescriptionTableViewCellHeight = 135.0f;
     return YES;
 }
 
+- (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
+    return kLectureDescriptionTableViewCellHeight;
+}
 @end

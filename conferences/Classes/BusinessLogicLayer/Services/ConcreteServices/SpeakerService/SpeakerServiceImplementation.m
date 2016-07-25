@@ -22,4 +22,12 @@
 
 @implementation SpeakerServiceImplementation
 
+- (Speaker *)obtainSpeakerWithPredicate:(NSPredicate *)predicate {
+    return nil;
+}
+
+- (void)updateSpeakerWithPredicate:(NSPredicate *)predicate completionBlock:(SpeakerCompletionBlock)completionBlock {
+    return;
+}
+
 @end

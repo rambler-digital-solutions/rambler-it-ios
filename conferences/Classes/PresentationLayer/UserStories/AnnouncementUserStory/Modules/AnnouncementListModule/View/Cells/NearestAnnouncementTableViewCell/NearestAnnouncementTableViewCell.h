@@ -23,7 +23,7 @@
 
 @interface NearestAnnouncementTableViewCell : UITableViewCell <NICell>
 
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIImageView *image;
 @property (weak, nonatomic) IBOutlet UILabel *date;
 @property (weak, nonatomic) IBOutlet UILabel *time;
 @property (weak, nonatomic) IBOutlet UILabel *eventTitle;
