@@ -21,8 +21,7 @@
 #import <XCTest/XCTest.h>
 
 #import "AnnouncementListDataDisplayManager.h"
-#import "EventPlainObject.h"
-#import "NearestAnnouncementTableViewCell.h"
+#import "AnnouncementViewModel.h"
 #import "AnnouncementListTableViewCell.h"
 
 #import <OCMock/OCMock.h>
@@ -45,7 +44,7 @@ typedef NS_ENUM(NSUInteger, TableViewSectionIndex){
     [super setUp];
     
     self.dataDisplayManager = [AnnouncementListDataDisplayManager new];
-    self.events = @[[EventPlainObject new], [EventPlainObject new], [EventPlainObject new]];
+    self.events = [self generateViewModels];
 }
 
 - (void)tearDown {
@@ -55,7 +54,7 @@ typedef NS_ENUM(NSUInteger, TableViewSectionIndex){
     [super tearDown];
 }
 
-- (void)testThatDataDisplayManagerReturnsTableViewDataSource{
+- (void)testThatDataDisplayManagerReturnsTableViewDataSource {
     // given
     
     // when
@@ -76,18 +75,20 @@ typedef NS_ENUM(NSUInteger, TableViewSectionIndex){
     
     // then
     OCMVerify([mockViewController didUpdateTableViewModel]);
+    [mockViewController stopMocking];
 }
 
 - (void)testThatDataDisplayManagerReturnsCorrectNumberOfSections {
     // given
     NSUInteger const kExpectedNumberOfSections = 1;
     NSUInteger actualNumberOfSections = 0;
+    UITableView *tableView = [UITableView new];
+
+    [self.dataDisplayManager updateTableViewModelWithEvents:self.events];
+    id <UITableViewDataSource> dataSource = [self.dataDisplayManager dataSourceForTableView:tableView];
     
     // when
-    [self.dataDisplayManager updateTableViewModelWithEvents:self.events];
-    id <UITableViewDataSource> dataSource = [self.dataDisplayManager dataSourceForTableView:nil];
-    
-     actualNumberOfSections = [dataSource numberOfSectionsInTableView:nil];
+     actualNumberOfSections = [dataSource numberOfSectionsInTableView:tableView];
     
     // then
     XCTAssertEqual(actualNumberOfSections, kExpectedNumberOfSections);
@@ -95,15 +96,14 @@ typedef NS_ENUM(NSUInteger, TableViewSectionIndex){
 
 - (void)testThatDataDisplayManagerReturnsCorrectNumberOfRows {
     // given
-    NSUInteger tableViewHeaderRow = 1;
-    NSUInteger tableViewFooterRow = 1;
-    NSUInteger const kExpectedNumberOfRows = self.events.count + tableViewHeaderRow + tableViewFooterRow;
+    NSUInteger const kExpectedNumberOfRows = self.events.count;
     NSUInteger actualNumberOfRows = 0;
-    
-    // when
+    UITableView *tableView = [UITableView new];
+    id <UITableViewDataSource> dataSource = [self.dataDisplayManager dataSourceForTableView:tableView];
     [self.dataDisplayManager updateTableViewModelWithEvents:self.events];
-    id <UITableViewDataSource> dataSource = [self.dataDisplayManager dataSourceForTableView:nil];
-    actualNumberOfRows = [dataSource tableView:nil numberOfRowsInSection:EventsSection];
+
+    // when
+    actualNumberOfRows = [dataSource tableView:tableView numberOfRowsInSection:EventsSection];
 
     // then
     XCTAssertEqual(kExpectedNumberOfRows, actualNumberOfRows);
@@ -113,20 +113,18 @@ typedef NS_ENUM(NSUInteger, TableViewSectionIndex){
     // given
     NSUInteger expectedNumberOfCellForCorrespondingClass = self.events.count;
     NSUInteger actualNumberOfCellForCorrespondingClass = 0;
-    
+    UITableView *tableView = [UITableView new];
+
     // when
+    id <UITableViewDataSource> dataSource = [self.dataDisplayManager dataSourceForTableView:tableView];
     [self.dataDisplayManager updateTableViewModelWithEvents:self.events];
-    id <UITableViewDataSource> dataSource = [self.dataDisplayManager dataSourceForTableView:nil];
-    
-    NSUInteger numberOfRows = [dataSource tableView:nil numberOfRowsInSection:EventsSection];
+
+    NSUInteger numberOfRows = [dataSource tableView:tableView numberOfRowsInSection:EventsSection];
     
     for (int i = 0; i < numberOfRows; i++) {
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:EventsSection];
-        UITableViewCell *cell = [dataSource tableView:nil cellForRowAtIndexPath:indexPath];
+        UITableViewCell *cell = [dataSource tableView:tableView cellForRowAtIndexPath:indexPath];
         
-        if ([cell isKindOfClass:[NearestAnnouncementTableViewCell class]]) {
-            actualNumberOfCellForCorrespondingClass++;
-        }
         if ([cell isKindOfClass:[AnnouncementListTableViewCell class]]) {
             actualNumberOfCellForCorrespondingClass++;
         }
@@ -134,6 +132,17 @@ typedef NS_ENUM(NSUInteger, TableViewSectionIndex){
     
     // then
     XCTAssertEqual(expectedNumberOfCellForCorrespondingClass, actualNumberOfCellForCorrespondingClass);
+}
+
+#pragma mark - Вспомогательные методы
+
+- (NSArray *)generateViewModels {
+    NSMutableArray *viewModels = [NSMutableArray new];
+    for (NSInteger index = 0; index < 3; index++) {
+        [viewModels addObject:[AnnouncementViewModel new]];
+    }
+    
+    return viewModels;
 }
 
 @end

@@ -21,14 +21,13 @@
 #import "AnnouncementListTableViewController.h"
 #import "AnnouncementListViewOutput.h"
 #import "DataDisplayManager.h"
-#import "AnnouncementListDataDisplayManager.h"
 #import "NearestAnnouncementTableHeaderView.h"
 #import "AnnouncementViewModel.h"
 #import "AnnouncementListAnimator.h"
 
 static CGFloat const kAnnouncementTableViewEstimatedRowHeight = 44.0f;
 
-@interface AnnouncementListTableViewController() <AnnouncementLIstDataDisplayManagerDelegate, UITableViewDelegate>
+@interface AnnouncementListTableViewController() <UITableViewDelegate>
 
 @property (strong, nonatomic) UIColor *viewBackgroundColor;
 
@@ -68,7 +67,8 @@ static CGFloat const kAnnouncementTableViewEstimatedRowHeight = 44.0f;
     [self setScrollViewColor];
     
     AnnouncementViewModel *announce = events.firstObject;
-    [self updateTableViewHeaderWithAnnounce:announce];
+    [self updateTableViewHeaderWithAnnounce:announce
+                                     events:events];
     
     NSMutableArray *futureEvents = events.mutableCopy;
     [futureEvents removeObject:announce];
@@ -96,7 +96,8 @@ static CGFloat const kAnnouncementTableViewEstimatedRowHeight = 44.0f;
     [[UIScrollView appearance] setBackgroundColor:self.viewBackgroundColor];
 }
 
-- (void)updateTableViewHeaderWithAnnounce:(AnnouncementViewModel *)announce {
+- (void)updateTableViewHeaderWithAnnounce:(AnnouncementViewModel *)announce
+                                   events:(NSArray *)events {
     self.tableView.tableHeaderView = nil;
     if (!announce) {
         return;
@@ -105,8 +106,11 @@ static CGFloat const kAnnouncementTableViewEstimatedRowHeight = 44.0f;
     CGRect frame = self.nearestAnnouncmentHeaderView.frame;
     frame.size.width = self.view.bounds.size.width;
     frame.size = [self.nearestAnnouncmentHeaderView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    CGFloat fullSizeHeight = self.tableView.bounds.size.height - self.tabBarController.tabBar.bounds.size.height;
+    frame.size.height = events.count > 1 ? frame.size.height : fullSizeHeight;
     self.nearestAnnouncmentHeaderView.frame = frame;
     self.tableView.tableHeaderView = self.nearestAnnouncmentHeaderView;
+    
 }
 
 @end

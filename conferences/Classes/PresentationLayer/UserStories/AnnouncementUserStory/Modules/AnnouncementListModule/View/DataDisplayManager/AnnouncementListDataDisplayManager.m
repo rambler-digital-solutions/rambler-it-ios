@@ -52,7 +52,11 @@
         UINib *nib = [UINib nibWithNibName:identifier
                                     bundle:[NSBundle mainBundle]];
         [tableView registerNib:nib forCellReuseIdentifier:identifier];
-        [self updateTableViewModel:nil];
+        self.cellFactory = [NICellFactory new];
+        [self.cellFactory mapObjectClass:[AnnouncementViewModel class]
+                             toCellClass:[AnnouncementListTableViewCell class]];
+        self.tableViewModel = [[NIMutableTableViewModel alloc] initWithSectionedArray:@[@""]
+                                                                             delegate:self.cellFactory];
     }
     return self.tableViewModel;
 }
@@ -64,22 +68,10 @@
     return [self.tableViewActions forwardingTo:baseTableViewDelegate];
 }
 
-//#pragma mark - UITableViewDelegate methods
-//
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    return [self.cellFactory tableView:tableView
-//               heightForRowAtIndexPath:indexPath
-//                                 model:self.tableViewModel];
-//}
-
 #pragma mark - Private methods
 
 - (void)setupTableViewActions {
     self.tableViewActions = [[NITableViewActions alloc] initWithTarget:self];
-    self.cellFactory = [NICellFactory new];
-    [self.cellFactory mapObjectClass:[AnnouncementViewModel class]
-                         toCellClass:[AnnouncementListTableViewCell class]];
-    
     self.tableViewActions.tableViewCellSelectionStyle = UITableViewCellSelectionStyleNone;
     
     @weakify(self);
@@ -94,8 +86,10 @@
 }
 
 - (void)updateTableViewModel:(NSArray *)events {
-    self.tableViewModel = [[NIMutableTableViewModel alloc] initWithSectionedArray:events
-                                                                         delegate:self.cellFactory];
+    [self.tableViewModel removeSectionAtIndex:0];
+    [self.tableViewModel addSectionWithTitle:@""];
+    [self.tableViewModel addObjectsFromArray:events];
+    
 }
 
 @end

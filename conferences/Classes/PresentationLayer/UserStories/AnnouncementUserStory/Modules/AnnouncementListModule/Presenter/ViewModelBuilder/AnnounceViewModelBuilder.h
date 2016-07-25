@@ -10,6 +10,11 @@
 
 @class DateFormatter;
 
+/**
+ @author Vasyura Anastasiya
+ 
+ Builder for announce view models
+ */
 @interface AnnounceViewModelBuilder : NSObject
 
 @property (nonatomic, strong) DateFormatter *dateFormatter;

@@ -26,6 +26,7 @@
 #import "AnnouncementListInteractorInput.h"
 #import "AnnouncementListRouterInput.h"
 #import "EventPlainObject.h"
+#import "AnnounceViewModelBuilder.h"
 
 @interface AnnouncementListPresenterTests : XCTestCase
 
@@ -33,6 +34,7 @@
 @property (strong, nonatomic) id <AnnouncementListInteractorInput> mockInteractor;
 @property (strong, nonatomic) id <AnnouncementListViewInput> mockView;
 @property (strong, nonatomic) id <AnnouncementListRouterInput> mockRouter;
+@property (strong, nonatomic) id mockViewModelBuilder;
 
 @end
 
@@ -45,10 +47,12 @@
     self.mockInteractor = OCMProtocolMock(@protocol(AnnouncementListInteractorInput));
     self.mockView = OCMProtocolMock(@protocol(AnnouncementListViewInput));
     self.mockRouter = OCMProtocolMock(@protocol(AnnouncementListRouterInput));
+    self.mockViewModelBuilder = OCMClassMock([AnnounceViewModelBuilder class]);
     
     self.presenter.view = self.mockView;
     self.presenter.interactor = self.mockInteractor;
     self.presenter.router = self.mockRouter;
+    self.presenter.viewModelBuilder = self.mockViewModelBuilder;
 }
 
 - (void)tearDown {
@@ -88,12 +92,14 @@
 - (void)testSuccessDidUpdateEventList {
     // given
     NSArray *events = @[];
-    
+    NSArray *viewModels = @[@1, @2, @3];
+    OCMStub([self.mockViewModelBuilder buildWithEvents:events]).andReturn(viewModels);
+   
     // when
     [self.presenter didUpdateEventList:events];
     
     // then
-    OCMVerify([self.mockView updateViewWithEventList:events]);
+    OCMVerify([self.mockView updateViewWithEventList:viewModels]);
 }
 
 @end

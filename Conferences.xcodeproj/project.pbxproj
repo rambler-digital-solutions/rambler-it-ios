@@ -2330,6 +2330,7 @@
 				2B429A581D464ADF004C005F /* Animator */,
 				63F612581CB00A220002AEF0 /* DataDisplayManager */,
 				63F613A01CB10FC80002AEF0 /* ViewModels */,
+				63F613AC1CB10FC80002AEF0 /* NearestAnnouncementTableHeaderView */,
 				63F613A71CB10FC80002AEF0 /* Cells */,
 				63F612431CB00A220002AEF0 /* AnnouncementListTableViewController.h */,
 				63F612441CB00A220002AEF0 /* AnnouncementListTableViewController.m */,
@@ -3160,7 +3161,6 @@
 			isa = PBXGroup;
 			children = (
 				63F613A81CB10FC80002AEF0 /* AnnouncementListTableViewCell */,
-				63F613AC1CB10FC80002AEF0 /* NearestAnnouncementTableViewCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -3175,7 +3175,7 @@
 			path = AnnouncementListTableViewCell;
 			sourceTree = "<group>";
 		};
-		63F613AC1CB10FC80002AEF0 /* NearestAnnouncementTableViewCell */ = {
+		63F613AC1CB10FC80002AEF0 /* NearestAnnouncementTableHeaderView */ = {
 			isa = PBXGroup;
 			children = (
 				63F613AD1CB10FC80002AEF0 /* NearestAnnouncementTableHeaderView.h */,
@@ -3183,7 +3183,8 @@
 				63F613B01CB10FC80002AEF0 /* NearestAnnouncementTableViewCellDisplayMode.h */,
 				2B429A4E1D460CF4004C005F /* NearestAnnouncementTableHeaderView.xib */,
 			);
-			path = NearestAnnouncementTableViewCell;
+			name = NearestAnnouncementTableHeaderView;
+			path = Cells/NearestAnnouncementTableViewCell;
 			sourceTree = "<group>";
 		};
 		63F613B71CB111070002AEF0 /* ModulesTests */ = {

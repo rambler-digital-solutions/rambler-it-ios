@@ -10,6 +10,11 @@
 
 @class NearestAnnouncementTableHeaderView;
 
+/**
+ @author Vasyura Anastasiya
+ 
+ Animator for announce table view scrolling
+ */
 @interface AnnouncementListAnimator : NSObject
 
 @property (weak, nonatomic) IBOutlet NearestAnnouncementTableHeaderView *headerView;

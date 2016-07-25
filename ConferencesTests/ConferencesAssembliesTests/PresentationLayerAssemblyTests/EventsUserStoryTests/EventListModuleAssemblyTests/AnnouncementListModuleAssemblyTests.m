@@ -119,9 +119,7 @@
 - (void)testThatAssemblyCreatesDataDisplayManager {
     // given
     Class targetClass = [AnnouncementListDataDisplayManager class];
-    NSArray *dependencies = @[
-                              RamblerSelector(dateFormatter)
-                              ];
+    NSArray *dependencies = @[];
     // when
     id result = [self.assembly dataDisplayManagerAnnouncementList];
     

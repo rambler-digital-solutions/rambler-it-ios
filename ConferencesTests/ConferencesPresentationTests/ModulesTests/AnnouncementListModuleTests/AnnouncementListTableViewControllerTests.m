@@ -29,7 +29,7 @@
 @interface AnnouncementListTableViewControllerTests : XCTestCase
 
 @property (strong, nonatomic) AnnouncementListTableViewController <AnnouncementLIstDataDisplayManagerDelegate> *viewController;
-@property (strong, nonatomic) AnnouncementListDataDisplayManager *mockDataDisplayManager;
+@property (strong, nonatomic) id mockDataDisplayManager;
 @property (strong, nonatomic) id <AnnouncementListViewOutput> mockOutput;
 @property (strong, nonatomic) UITableView *mockTableView;
 
@@ -123,13 +123,31 @@
 
 - (void)testSuccessUpdateViewWithEventList {
     // given
-    NSArray *events = @[];
+    NSArray *events = @[@1, @2, @3, @4, @5];
+    OCMExpect([self.mockDataDisplayManager updateTableViewModelWithEvents:[OCMArg checkWithBlock:^BOOL(NSArray *futureEvents) {
+        return [self verifyViewControllerConfigureRightEvents:events
+                                                 futureEvents:futureEvents];
+    }]]);
     
     // when
     [self.viewController updateViewWithEventList:events];
     
     // then
-    OCMVerify([self.mockDataDisplayManager updateTableViewModelWithEvents:events]);
+    OCMVerifyAll(self.mockDataDisplayManager);
+}
+
+- (BOOL)verifyViewControllerConfigureRightEvents:(NSArray *)events
+                                    futureEvents:(NSArray *)futureEvents {
+    for (id object in futureEvents) {
+        if (![events containsObject:object]) {
+            return NO;
+        }
+    }
+    if ([futureEvents containsObject:events.firstObject]) {
+        return NO;
+    }
+    
+    return YES;
 }
 
 #pragma mark - EventListDataDisplayManagerDelegate
