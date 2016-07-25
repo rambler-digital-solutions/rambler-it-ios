@@ -10,6 +10,16 @@
 
 @protocol ReportsSearchCellObjectsDirector <NSObject>
 
+/**
+ @author Zinovyev Konstantin
+ 
+ Method generates array cell objects from arrays plain object
+ 
+ @param plainObjects        plain objects
+ @param selectedText text, that need select by custom color
+ 
+ @return cell objects
+ */
 - (NSArray *)generateCellObjectsFromPlainObjects:(NSArray *)plainObjects selectedText:(NSString *)selectedText;
 
 @end

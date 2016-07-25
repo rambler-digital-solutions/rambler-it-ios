@@ -18,8 +18,40 @@
 
 @protocol ReportsSearchCellObjectsBuilder <NSObject>
 
+/**
+ @author Zinovyev Konstantin
+ 
+ Method generates event cell object from event plain object
+ 
+ @param event        plain object
+ @param selectedText text, that need select by custom color
+ 
+ @return event cell object
+ */
 - (ReportEventTableViewCellObject *)eventCellObjectFromPlainObject:(EventPlainObject *)event selectedText:(NSString *)selectedText;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ Method generates lecture cell object from event plain object
+ 
+ @param event        plain object
+ @param selectedText text, that need select by custom color
+ 
+ @return lecture cell object
+ */
 - (ReportLectureTableViewCellObject *)lectureCellObjectFromPlainObject:(LecturePlainObject *)lecture selectedText:(NSString *)selectedText;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ Method generates speaker cell object from event plain object
+ 
+ @param event        plain object
+ @param selectedText text, that need select by custom color
+ 
+ @return speaker cell object
+ */
 - (ReportSpeakerTableViewCellObject *)speakerCellObjectFromPlainObject:(SpeakerPlainObject *)speaker selectedText:(NSString *)selectedText;
 
 @end
