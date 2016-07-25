@@ -27,7 +27,7 @@
 - (void)setUp {
     [super setUp];
     Class class = [EventCellObjectBuilderFactory class];
-    self.factory = [RamblerInitialAssemblyCollector activateAssemblyWithClass:class];
+    self.factory = [RamblerInitialAssemblyCollector rds_activateAssemblyWithClass:class];
 }
 
 - (void)tearDown {

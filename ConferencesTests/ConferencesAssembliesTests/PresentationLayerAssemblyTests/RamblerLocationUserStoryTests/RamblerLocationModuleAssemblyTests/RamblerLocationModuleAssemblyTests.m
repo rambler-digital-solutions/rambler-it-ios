@@ -35,7 +35,7 @@
     [super setUp];
     
     Class classAssembly = [RamblerLocationModuleAssembly class];
-    self.assembly = [RamblerInitialAssemblyCollector activateAssemblyWithClass:classAssembly];
+    self.assembly = [RamblerInitialAssemblyCollector rds_activateAssemblyWithClass:classAssembly];
 }
 
 - (void)tearDown {

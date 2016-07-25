@@ -12,7 +12,7 @@
 
 @implementation RamblerInitialAssemblyCollector (Activate)
 
-+ (id)activateAssemblyWithClass:(Class)class {
++ (id)rds_activateAssemblyWithClass:(Class)class {
     RamblerInitialAssemblyCollector *collector = [RamblerInitialAssemblyCollector new];
     NSArray *assemblyClasses = [collector collectInitialAssemblyClasses];
     NSMutableArray *collaboratingAssemblies = [NSMutableArray array];

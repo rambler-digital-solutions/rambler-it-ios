@@ -40,7 +40,7 @@
     [super setUp];
     
     Class class = [ResponseValidatorsAssembly class];
-    self.assembly = [RamblerInitialAssemblyCollector activateAssemblyWithClass:class];
+    self.assembly = [RamblerInitialAssemblyCollector rds_activateAssemblyWithClass:class];
 }
 
 - (void)tearDown {

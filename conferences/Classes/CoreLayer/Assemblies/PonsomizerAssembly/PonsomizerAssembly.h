@@ -16,7 +16,7 @@
  
  Assembly with core components
  */
-@interface PonsomizerAssembly : NSObject  <RamblerInitialAssembly>
+@interface PonsomizerAssembly : TyphoonAssembly <RamblerInitialAssembly>
 
 - (id <ROSPonsomizer>)ponsomizer;
 

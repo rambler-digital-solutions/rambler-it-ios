@@ -43,7 +43,7 @@
     [super setUp];
     
     Class class = [ResponseMappersAssembly class];
-    self.assembly = [RamblerInitialAssemblyCollector activateAssemblyWithClass:class];
+    self.assembly = [RamblerInitialAssemblyCollector rds_activateAssemblyWithClass:class];
 }
 
 - (void)tearDown {

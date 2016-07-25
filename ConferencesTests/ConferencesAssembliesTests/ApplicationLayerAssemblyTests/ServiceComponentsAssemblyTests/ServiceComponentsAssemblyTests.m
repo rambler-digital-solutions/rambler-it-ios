@@ -47,7 +47,7 @@
     [super setUp];
     
     Class class = [ServiceComponentsAssembly class];
-    self.assembly = [RamblerInitialAssemblyCollector activateAssemblyWithClass:class];
+    self.assembly = [RamblerInitialAssemblyCollector rds_activateAssemblyWithClass:class];
 }
 
 - (void)tearDown {

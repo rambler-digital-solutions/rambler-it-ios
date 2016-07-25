@@ -39,7 +39,7 @@
     [super setUp];
 
     Class class = [ResponseDeserializersAssembly class];
-    self.assembly = [RamblerInitialAssemblyCollector activateAssemblyWithClass:class];
+    self.assembly = [RamblerInitialAssemblyCollector rds_activateAssemblyWithClass:class];
 }
 
 - (void)tearDown {

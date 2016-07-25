@@ -32,7 +32,7 @@
     [super setUp];
     
     Class classAssembly = [EventHeaderModuleAssembly class];
-    self.assembly = [RamblerInitialAssemblyCollector activateAssemblyWithClass:classAssembly];
+    self.assembly = [RamblerInitialAssemblyCollector rds_activateAssemblyWithClass:classAssembly];
 }
 
 - (void)tearDown {

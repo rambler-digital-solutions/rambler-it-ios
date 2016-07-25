@@ -10,6 +10,6 @@
 
 @interface RamblerInitialAssemblyCollector (Activate)
 
-+ (id)activateAssemblyWithClass:(Class)assemblyClass;
++ (id)rds_activateAssemblyWithClass:(Class)assemblyClass;
 
 @end
