@@ -22,9 +22,9 @@
 
 #import <Nimbus/NimbusModels.h>
 
-#import "AnnouncementListTableViewCellObject.h"
-#import "NearestAnnouncementTableViewCellObject.h"
+#import "AnnouncementViewModel.h"
 #import "TableViewSectionHeaderCellObject.h"
+#import "AnnouncementListTableViewCell.h"
 #import "EventPlainObject.h"
 #import "DateFormatter.h"
 #import "EXTScope.h"
@@ -33,15 +33,14 @@
 
 @property (strong, nonatomic) NIMutableTableViewModel *tableViewModel;
 @property (strong, nonatomic) NITableViewActions *tableViewActions;
-@property (strong, nonatomic) NSArray *events;
+@property (strong, nonatomic) NICellFactory *cellFactory;
 
 @end
 
 @implementation AnnouncementListDataDisplayManager
 
 - (void)updateTableViewModelWithEvents:(NSArray *)events {
-    self.events = events;
-    [self updateTableViewModel];
+    [self updateTableViewModel:events];
     [self.delegate didUpdateTableViewModel];
 }
 
@@ -49,7 +48,11 @@
 
 - (id<UITableViewDataSource>)dataSourceForTableView:(UITableView *)tableView {
     if (!self.tableViewModel) {
-        [self updateTableViewModel];
+        NSString *identifier = NSStringFromClass([AnnouncementListTableViewCell class]);
+        UINib *nib = [UINib nibWithNibName:identifier
+                                    bundle:[NSBundle mainBundle]];
+        [tableView registerNib:nib forCellReuseIdentifier:identifier];
+        [self updateTableViewModel:nil];
     }
     return self.tableViewModel;
 }
@@ -58,77 +61,41 @@
     if (!self.tableViewActions) {
         [self setupTableViewActions];
     }
-    return [self.tableViewActions forwardingTo:self];
+    return [self.tableViewActions forwardingTo:baseTableViewDelegate];
 }
 
-#pragma mark - UITableViewDelegate methods
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [NICellFactory tableView:tableView heightForRowAtIndexPath:indexPath model:self.tableViewModel];
-}
+//#pragma mark - UITableViewDelegate methods
+//
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    return [self.cellFactory tableView:tableView
+//               heightForRowAtIndexPath:indexPath
+//                                 model:self.tableViewModel];
+//}
 
 #pragma mark - Private methods
 
 - (void)setupTableViewActions {
     self.tableViewActions = [[NITableViewActions alloc] initWithTarget:self];
+    self.cellFactory = [NICellFactory new];
+    [self.cellFactory mapObjectClass:[AnnouncementViewModel class]
+                         toCellClass:[AnnouncementListTableViewCell class]];
+    
     self.tableViewActions.tableViewCellSelectionStyle = UITableViewCellSelectionStyleNone;
     
     @weakify(self);
-    NIActionBlock announcementListTapActionBlock = ^BOOL(AnnouncementListTableViewCellObject *object, id target, NSIndexPath *indexPath) {
+    NIActionBlock announcementListTapActionBlock = ^BOOL(AnnouncementViewModel *object, id target, NSIndexPath *indexPath) {
         @strongify(self);
         [self.delegate didTapCellWithEvent:object.event];
         return YES;
     };
-    [self.tableViewActions attachToClass:[AnnouncementListTableViewCellObject class] tapBlock:announcementListTapActionBlock];
     
-    NIActionBlock nearestAnnouncementTapActionBlock = ^BOOL(NearestAnnouncementTableViewCellObject *object, id target, NSIndexPath *indexPath) {
-        @strongify(self);
-        [self.delegate didTapCellWithEvent:object.event];
-        return YES;
-    };
-    [self.tableViewActions attachToClass:[NearestAnnouncementTableViewCellObject class] tapBlock:nearestAnnouncementTapActionBlock];
+    [self.tableViewActions attachToClass:[AnnouncementViewModel class]
+                                tapBlock:announcementListTapActionBlock];
 }
 
-- (NSArray *)generateCellObjects {
-    NSMutableArray *cellObjects = [NSMutableArray array];
-    if (!self.events.count) {
-        return nil;
-    }
-    EventPlainObject *nearestEvent = [self.events firstObject];
-    
-    NSString *eventDate = [self.dateFormatter obtainDateWithDayMonthFormat:nearestEvent.startDate];
-    NSString *eventStartTime = [self.dateFormatter obtainDateWithTimeFormat:nearestEvent.startDate];
-    
-    NearestAnnouncementTableViewCellObject *nearestEventTableViewCellObject = [NearestAnnouncementTableViewCellObject objectWithEvent:nearestEvent eventDate:eventDate eventStartTime:eventStartTime];
-    [cellObjects addObject:nearestEventTableViewCellObject];
-    
-    if (self.events.count > 1) {
-        nearestEventTableViewCellObject.displayMode = NearestAnnouncementTableViewCellDisplayModeShortcut;
-        
-        TableViewSectionHeaderCellObject *futureEventListSectionHeaderAndFooter = [TableViewSectionHeaderCellObject new];
-        [cellObjects addObject:futureEventListSectionHeaderAndFooter];
-        
-        for (int i = 1; i < self.events.count; i++) {
-            EventPlainObject *event = [self.events objectAtIndex:i];
-            
-            NSString *eventDate = [self.dateFormatter obtainDateWithDayMonthFormat:event.startDate];
-            
-            AnnouncementListTableViewCellObject *eventListCellObject = [AnnouncementListTableViewCellObject objectWithEvent:event eventDate:eventDate];
-            [cellObjects addObject:eventListCellObject];
-        }
-        [cellObjects addObject:futureEventListSectionHeaderAndFooter];
-    }
-    else {
-        nearestEventTableViewCellObject.displayMode = NearestAnnouncementTableViewCellDisplayModeDefault;
-    }
-    return cellObjects;
-}
-
-- (void)updateTableViewModel {
-    NSArray *cellObjects = [self generateCellObjects];
-    
-    self.tableViewModel = [[NIMutableTableViewModel alloc] initWithSectionedArray:cellObjects
-                                                                                             delegate:(id)[NICellFactory class]];
+- (void)updateTableViewModel:(NSArray *)events {
+    self.tableViewModel = [[NIMutableTableViewModel alloc] initWithSectionedArray:events
+                                                                         delegate:self.cellFactory];
 }
 
 @end

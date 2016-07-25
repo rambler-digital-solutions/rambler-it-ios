@@ -8,22 +8,22 @@
         <scene sceneID="nOx-C3-ZAu">
             <objects>
                 <tableViewController storyboardIdentifier="AnnouncementListTableViewController" id="nCN-ol-buU" customClass="AnnouncementListTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="LWI-Zc-aHz">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="96" sectionHeaderHeight="28" sectionFooterHeight="28" id="LWI-Zc-aHz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <inset key="separatorInset" minX="12" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        <view key="tableFooterView" contentMode="scaleToFill" id="hf2-CT-BWG">
-                            <rect key="frame" x="0.0" y="72" width="320" height="1"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" restorationIdentifier="nearestAnnouncementTableHeaderViewAnnouncementList" id="hf2-CT-BWG" customClass="TyphoonLoadedView">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="xkU-eC-DgW">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="29" width="320" height="96"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xkU-eC-DgW" id="fT3-OQ-TLu">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="95.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -38,8 +38,17 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="bnq-gD-ykW"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="animator" destination="ZMC-Oq-EAi" id="KXM-Gn-Pyb"/>
+                        <outlet property="nearestAnnouncmentHeaderView" destination="hf2-CT-BWG" id="OhF-6r-Pz3"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nFg-Tn-fxr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="ZMC-Oq-EAi" customClass="AnnouncementListAnimator">
+                    <connections>
+                        <outlet property="headerView" destination="hf2-CT-BWG" id="TZC-Sb-taG"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="1188" y="233"/>
         </scene>

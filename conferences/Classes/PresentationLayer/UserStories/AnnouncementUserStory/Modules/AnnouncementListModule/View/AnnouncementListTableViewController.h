@@ -23,11 +23,16 @@
 
 @protocol AnnouncementListViewOutput;
 @class AnnouncementListDataDisplayManager;
+@class NearestAnnouncementTableHeaderView;
+@class AnnouncementListAnimator;
 
 @interface AnnouncementListTableViewController : UITableViewController <AnnouncementListViewInput>
 
 @property (nonatomic, strong) id<AnnouncementListViewOutput> output;
-@property (strong, nonatomic) AnnouncementListDataDisplayManager *dataDisplayManager;
+@property (nonatomic, strong) AnnouncementListDataDisplayManager *dataDisplayManager;
+@property (strong, nonatomic) IBOutlet AnnouncementListAnimator *animator;
+
+@property (nonatomic, strong) IBOutlet NearestAnnouncementTableHeaderView *nearestAnnouncmentHeaderView;
 
 @end
 

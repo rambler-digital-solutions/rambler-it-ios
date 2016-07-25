@@ -36,7 +36,6 @@
 @interface AnnouncementListDataDisplayManager : NSObject <DataDisplayManager>
 
 @property (weak, nonatomic) id <AnnouncementLIstDataDisplayManagerDelegate> delegate;
-@property (strong, nonatomic) DateFormatter *dateFormatter;
 
 - (void)updateTableViewModelWithEvents:(NSArray *)events;
 

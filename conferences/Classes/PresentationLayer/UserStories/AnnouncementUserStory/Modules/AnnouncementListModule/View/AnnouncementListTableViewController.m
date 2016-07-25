@@ -22,11 +22,13 @@
 #import "AnnouncementListViewOutput.h"
 #import "DataDisplayManager.h"
 #import "AnnouncementListDataDisplayManager.h"
-#import "EventPlainObject.h"
+#import "NearestAnnouncementTableHeaderView.h"
+#import "AnnouncementViewModel.h"
+#import "AnnouncementListAnimator.h"
 
 static CGFloat const kAnnouncementTableViewEstimatedRowHeight = 44.0f;
 
-@interface AnnouncementListTableViewController() <AnnouncementLIstDataDisplayManagerDelegate>
+@interface AnnouncementListTableViewController() <AnnouncementLIstDataDisplayManagerDelegate, UITableViewDelegate>
 
 @property (strong, nonatomic) UIColor *viewBackgroundColor;
 
@@ -50,20 +52,27 @@ static CGFloat const kAnnouncementTableViewEstimatedRowHeight = 44.0f;
 #pragma mark - AnnouncementListViewInput
 
 - (void)setupViewWithEventList:(NSArray *)events {
-    [self updateViewWithEventList:events];
     self.dataDisplayManager.delegate = self;
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.estimatedRowHeight = kAnnouncementTableViewEstimatedRowHeight;
-    self.tableView.contentInset = UIEdgeInsetsMake(-20, 0, 0, 0);
+    
     self.tableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.tableView];
-    self.tableView.delegate = [self.dataDisplayManager delegateForTableView:self.tableView withBaseDelegate:nil];
+    self.tableView.delegate = [self.dataDisplayManager delegateForTableView:self.tableView
+                                                           withBaseDelegate:self];
+    
+    [self updateViewWithEventList:events];
 }
 
 - (void)updateViewWithEventList:(NSArray *)events {
     [self setScrollViewColor];
     
-    [self.dataDisplayManager updateTableViewModelWithEvents:events];
+    AnnouncementViewModel *announce = events.firstObject;
+    [self updateTableViewHeaderWithAnnounce:announce];
+    
+    NSMutableArray *futureEvents = events.mutableCopy;
+    [futureEvents removeObject:announce];
+    [self.dataDisplayManager updateTableViewModelWithEvents:futureEvents];
 }
 
 #pragma mark - AnnouncementListDataDisplayManagerDelegate
@@ -77,10 +86,27 @@ static CGFloat const kAnnouncementTableViewEstimatedRowHeight = 44.0f;
     [self.output didTriggerTapCellWithEvent:event];
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [self.animator animateWithContentOffset:scrollView.contentOffset];
+}
+
 #pragma mark - Private methods
 
 - (void)setScrollViewColor {
     [[UIScrollView appearance] setBackgroundColor:self.viewBackgroundColor];
+}
+
+- (void)updateTableViewHeaderWithAnnounce:(AnnouncementViewModel *)announce {
+    self.tableView.tableHeaderView = nil;
+    if (!announce) {
+        return;
+    }
+    [self.nearestAnnouncmentHeaderView updateWithViewModel:announce];
+    CGRect frame = self.nearestAnnouncmentHeaderView.frame;
+    frame.size.width = self.view.bounds.size.width;
+    frame.size = [self.nearestAnnouncmentHeaderView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    self.nearestAnnouncmentHeaderView.frame = frame;
+    self.tableView.tableHeaderView = self.nearestAnnouncmentHeaderView;
 }
 
 @end

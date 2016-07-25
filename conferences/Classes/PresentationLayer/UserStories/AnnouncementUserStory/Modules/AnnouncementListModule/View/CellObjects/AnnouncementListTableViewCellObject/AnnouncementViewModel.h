@@ -20,21 +20,20 @@
 
 #import <Foundation/Foundation.h>
 #import <Nimbus/NimbusModels.h>
-#import "NearestAnnouncementTableViewCellDisplayMode.h"
 
 @class EventPlainObject;
 
-@interface NearestAnnouncementTableViewCellObject : NSObject <NICellObject>
+@interface AnnouncementViewModel : NSObject
 
-@property (strong, nonatomic, readonly) UIImage *image;
+@property (strong, nonatomic, readonly) NSString *eventTitle;
+@property (strong, nonatomic, readonly) NSArray *eventTags;
+@property (strong, nonatomic, readonly) NSURL *imageUrl;
 @property (strong, nonatomic, readonly) NSString *date;
 @property (strong, nonatomic, readonly) NSString *time;
-@property (strong, nonatomic, readonly) NSString *eventTitle;
-@property (strong, nonatomic, readonly) UIColor *backgroundColor;
-@property (strong, nonatomic, readonly) NSURL *imageUrl;
-@property (assign, nonatomic) NearestAnnouncementTableViewCellDisplayMode displayMode;
 @property (strong, nonatomic, readonly) EventPlainObject *event;
 
-+ (instancetype)objectWithEvent:(EventPlainObject *)event eventDate:(NSString *)date eventStartTime:(NSString *)time;
++ (instancetype)objectWithEvent:(EventPlainObject *)event
+                      eventDate:(NSString *)date
+                           time:(NSString *)time;
 
 @end
