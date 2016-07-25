@@ -6,10 +6,10 @@
 //  Copyright © 2016 Rambler. All rights reserved.
 //
 
-#import "CoreAssembly.h"
+#import "PonsomizerAssembly.h"
 #import "ROSPonsomizerImplementation.h"
 
-@implementation CoreAssembly
+@implementation PonsomizerAssembly
 
 - (id <ROSPonsomizer>)ponsomizer {
     return [TyphoonDefinition withClass:[ROSPonsomizerImplementation class]];

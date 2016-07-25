@@ -60,7 +60,6 @@
 		2B750D171D362EE600EACE98 /* Conference.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6373A40E1BBDC5EA00DF67FF /* Conference.xcdatamodeld */; };
 		2BDDAB551D363D34007FD547 /* ROSPonsomizerImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDDAB541D363D34007FD547 /* ROSPonsomizerImplementation.m */; };
 		2BDDB1D31D3F7235007FD547 /* DirectionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDDB1D21D3F7235007FD547 /* DirectionObject.m */; };
-		2BDDB2481D3F81BD007FD547 /* CoreAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDDB2471D3F81BD007FD547 /* CoreAssembly.m */; };
 		5A5668508B92FC833070BA13 /* libPods-ConferencesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E72B1E234365770B87BDC6D /* libPods-ConferencesTests.a */; };
 		6315BA051C9EC23600999877 /* VideoRecordTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6315BA031C9EC23600999877 /* VideoRecordTableViewCell.m */; };
 		6315BA061C9EC23600999877 /* VideoRecordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6315BA041C9EC23600999877 /* VideoRecordTableViewCell.xib */; };
@@ -261,6 +260,7 @@
 		63FDCE151BBDBA2A00A43B60 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63FDCE041BBDBA2A00A43B60 /* Info.plist */; };
 		63FDCE161BBDBA2A00A43B60 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FDCE051BBDBA2A00A43B60 /* main.m */; };
 		66704FF61D45F69300DD9D6E /* RamblerInitialAssemblyCollector+Activate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66704FF51D45F69300DD9D6E /* RamblerInitialAssemblyCollector+Activate.m */; };
+		66704FF91D4606D800DD9D6E /* PonsomizerAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 66704FF81D4606D800DD9D6E /* PonsomizerAssembly.m */; };
 		9F0A6C1D1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */; };
 		9F0A6C2E1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C2D1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m */; };
 		9F0A84C31BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A84C21BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m */; };
@@ -448,8 +448,6 @@
 		2BDDAB541D363D34007FD547 /* ROSPonsomizerImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ROSPonsomizerImplementation.m; sourceTree = "<group>"; };
 		2BDDB1D11D3F7235007FD547 /* DirectionObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectionObject.h; sourceTree = "<group>"; };
 		2BDDB1D21D3F7235007FD547 /* DirectionObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectionObject.m; sourceTree = "<group>"; };
-		2BDDB2461D3F81BD007FD547 /* CoreAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreAssembly.h; sourceTree = "<group>"; };
-		2BDDB2471D3F81BD007FD547 /* CoreAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreAssembly.m; sourceTree = "<group>"; };
 		2C01BA17D4018DCA62CC6C3B /* Pods-ConferencesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConferencesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConferencesTests/Pods-ConferencesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		559ED4EDBC100544852E4E6A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		5E72B1E234365770B87BDC6D /* libPods-ConferencesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ConferencesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -856,6 +854,8 @@
 		63FDCE051BBDBA2A00A43B60 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		66704FF41D45F69300DD9D6E /* RamblerInitialAssemblyCollector+Activate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "RamblerInitialAssemblyCollector+Activate.h"; path = "Helpers/RamblerInitialAssemblyCollector+Activate/RamblerInitialAssemblyCollector+Activate.h"; sourceTree = "<group>"; };
 		66704FF51D45F69300DD9D6E /* RamblerInitialAssemblyCollector+Activate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "RamblerInitialAssemblyCollector+Activate.m"; path = "Helpers/RamblerInitialAssemblyCollector+Activate/RamblerInitialAssemblyCollector+Activate.m"; sourceTree = "<group>"; };
+		66704FF71D4606D800DD9D6E /* PonsomizerAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PonsomizerAssembly.h; path = conferences/Classes/CoreLayer/Assemblies/PonsomizerAssembly/PonsomizerAssembly.h; sourceTree = SOURCE_ROOT; };
+		66704FF81D4606D800DD9D6E /* PonsomizerAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PonsomizerAssembly.m; path = conferences/Classes/CoreLayer/Assemblies/PonsomizerAssembly/PonsomizerAssembly.m; sourceTree = SOURCE_ROOT; };
 		84D2CBEF6E088EFC9A139E49 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		892D07FB1BED008000825704 /* NightlyRibbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NightlyRibbon.png; sourceTree = "<group>"; };
 		9F0A6C1B1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CompoundOperationBuilderConfig.h; path = OperationBuilders/CompoundOperationBuilderConfig/CompoundOperationBuilderConfig.h; sourceTree = "<group>"; };
@@ -1185,13 +1185,13 @@
 			path = Ponsomizer;
 			sourceTree = "<group>";
 		};
-		2BDDB2441D3F817C007FD547 /* CoreAssembly */ = {
+		2BDDB2441D3F817C007FD547 /* PonsomizerAssembly */ = {
 			isa = PBXGroup;
 			children = (
-				2BDDB2461D3F81BD007FD547 /* CoreAssembly.h */,
-				2BDDB2471D3F81BD007FD547 /* CoreAssembly.m */,
+				66704FF71D4606D800DD9D6E /* PonsomizerAssembly.h */,
+				66704FF81D4606D800DD9D6E /* PonsomizerAssembly.m */,
 			);
-			name = CoreAssembly;
+			name = PonsomizerAssembly;
 			path = Assemblies/CoreAssembly;
 			sourceTree = "<group>";
 		};
@@ -3505,7 +3505,7 @@
 		9F0A6C241BC1B85A00A25417 /* Assemblies */ = {
 			isa = PBXGroup;
 			children = (
-				2BDDB2441D3F817C007FD547 /* CoreAssembly */,
+				2BDDB2441D3F817C007FD547 /* PonsomizerAssembly */,
 				9F4077A51D2C163C00D47EF6 /* ResourceMapperAssembly */,
 				9F4077A11D2C159A00D47EF6 /* ResourceClientAssembly */,
 				9F8E5F911BC269D000DC10DB /* OperationFactoriesAssembly */,
@@ -5343,7 +5343,6 @@
 				636F8DDC1BCB8FE800552B91 /* RamblerLocationPresenter.m in Sources */,
 				9F8E5F841BC25A0700DC10DB /* ResponseMappersAssembly.m in Sources */,
 				631808431C482B1300A61E7D /* SpeakerShortInfoView.m in Sources */,
-				2BDDB2481D3F81BD007FD547 /* CoreAssembly.m in Sources */,
 				63F613681CB00A220002AEF0 /* PreviousEventSectionHeaderTableViewCellObject.m in Sources */,
 				9F18311C1BC1615C000E21A5 /* ResultsResponseObjectFormatter.m in Sources */,
 				2B20647A1D3F9CE900246C8D /* _MetaEventModelObject.m in Sources */,
@@ -5391,6 +5390,7 @@
 				9F0A85321BC18906006F79FB /* EventQuery.m in Sources */,
 				63F6136A1CB00A220002AEF0 /* PreviousLectureSectionHeaderTableViewCellObject.m in Sources */,
 				63FD4E061BE5038D0046378E /* UIColor+Hex.m in Sources */,
+				66704FF91D4606D800DD9D6E /* PonsomizerAssembly.m in Sources */,
 				9F0A84FF1BC1698B006F79FB /* RequestSigningOperation.m in Sources */,
 				9F1830F51BC14444000E21A5 /* NSString+RCFCapitalization.m in Sources */,
 				2BDDAB551D363D34007FD547 /* ROSPonsomizerImplementation.m in Sources */,

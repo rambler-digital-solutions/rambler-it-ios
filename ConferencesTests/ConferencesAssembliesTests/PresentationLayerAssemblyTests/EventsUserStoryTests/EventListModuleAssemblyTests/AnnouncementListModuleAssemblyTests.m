@@ -32,7 +32,7 @@
 #import "ServiceComponentsAssembly.h"
 #import "OperationFactoriesAssembly.h"
 #import "PresentationLayerHelpersAssembly.h"
-#import "CoreAssembly.h"
+#import "PonsomizerAssembly.h"
 
 @interface AnnouncementListModuleAssemblyTests : RamblerTyphoonAssemblyTests
 
@@ -50,7 +50,7 @@
                                                          [ServiceComponentsAssembly new],
                                                          [OperationFactoriesAssembly new],
                                                          [PresentationLayerHelpersAssembly new],
-                                                         [CoreAssembly new]
+                                                         [PonsomizerAssembly new]
                                                          ]];
 }
 

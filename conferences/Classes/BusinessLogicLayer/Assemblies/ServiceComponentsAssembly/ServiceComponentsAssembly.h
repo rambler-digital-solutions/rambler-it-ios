@@ -26,7 +26,7 @@
 
 @class ResourceClientAssembly;
 @class ResourceMapperAssembly;
-@class CoreAssembly;
+@class PonsomizerAssembly;
 
 
 @interface ServiceComponentsAssembly : TyphoonAssembly <ServiceComponents, RamblerInitialAssembly>
