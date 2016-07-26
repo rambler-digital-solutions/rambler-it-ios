@@ -28,6 +28,7 @@
 #import "ServiceComponents.h"
 #import "PresentationLayerHelpersAssembly.h"
 #import "EventCellObjectBuilderFactory.h"
+#import "PonsomizerAssembly.h"
 
 @interface EventModuleAssembly ()
 
@@ -54,8 +55,8 @@
                                                       with:[self presenterEvent]];
                                 [definition injectProperty:@selector(eventService)
                                                       with:[self.serviceComponents eventService]];
-                                [definition injectProperty:@selector(eventPrototypeMapper)
-                                                      with:[self.serviceComponents eventPrototypeMapper]];
+                                [definition injectProperty:@selector(ponsomizer)
+                                                      with:[self.ponsomizerAssembly ponsomizer]];
                                 [definition injectProperty:@selector(eventTypeDeterminator)
                                                       with:[self.presentationLayerHelpersAssembly eventTypeDeterminator]];
                                 [definition injectProperty:@selector(eventStoreService)

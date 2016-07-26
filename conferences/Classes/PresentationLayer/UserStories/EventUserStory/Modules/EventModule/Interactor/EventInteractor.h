@@ -23,17 +23,17 @@
 
 @protocol EventInteractorOutput;
 @protocol EventService;
-@protocol PrototypeMapper;
+@protocol ROSPonsomizer;
 @protocol EventStoreServiceProtocol;
 @class EventTypeDeterminator;
 
 @interface EventInteractor : NSObject<EventInteractorInput>
 
 @property (nonatomic, weak) id<EventInteractorOutput> output;
-@property (strong, nonatomic) id <EventService> eventService;
-@property (strong, nonatomic) id <PrototypeMapper> eventPrototypeMapper;
-@property (strong, nonatomic) EventTypeDeterminator *eventTypeDeterminator;
-@property (strong, nonatomic) id <EventStoreServiceProtocol> eventStoreService;
+@property (nonatomic, strong) id <EventService> eventService;
+@property (nonatomic, strong) EventTypeDeterminator *eventTypeDeterminator;
+@property (nonatomic, strong) id <EventStoreServiceProtocol> eventStoreService;
+@property (nonatomic, strong) id <ROSPonsomizer> ponsomizer;
 
 @end
 

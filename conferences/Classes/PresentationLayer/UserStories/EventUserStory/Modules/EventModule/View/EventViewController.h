@@ -24,11 +24,13 @@
 @protocol EventViewOutput;
 @protocol EventHeaderModuleInput;
 @class EventDataDisplayManager;
+@class EventViewAnimator;
 
 @interface EventViewController : UIViewController <EventViewInput>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView <EventHeaderModuleInput> *headerView;
+@property (strong, nonatomic) IBOutlet EventViewAnimator *eventViewAnimator;
 
 @property (nonatomic, strong) id<EventViewOutput> output;
 @property (strong, nonatomic) EventDataDisplayManager *dataDisplayManager;

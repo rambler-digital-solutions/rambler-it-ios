@@ -27,6 +27,7 @@
 #import "EventPlainObject.h"
 #import "EXTScope.h"
 #import "LectureInfoTableViewCellObject.h"
+#import "EventViewAnimator.h"
 
 @interface EventDataDisplayManager () <UITableViewDelegate>
 
@@ -64,6 +65,10 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return [NICellFactory tableView:tableView heightForRowAtIndexPath:indexPath model:self.tableViewModel];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [self.eventViewAnimator animateWithContentOffset:scrollView.contentOffset];
 }
 
 #pragma mark - Private methods

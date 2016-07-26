@@ -57,6 +57,8 @@
 		2B2064981D3F9CE900246C8D /* SpeakerPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064721D3F9CE900246C8D /* SpeakerPlainObject.m */; };
 		2B2064991D3F9CE900246C8D /* TagPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064741D3F9CE900246C8D /* TagPlainObject.m */; };
 		2B20649A1D3F9CE900246C8D /* TechPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064761D3F9CE900246C8D /* TechPlainObject.m */; };
+		2B429A5F1D478A2F004C005F /* UINavigationBar+States.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B429A5E1D478A2F004C005F /* UINavigationBar+States.m */; };
+		2B429A631D4798D4004C005F /* EventViewAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B429A621D4798D4004C005F /* EventViewAnimator.m */; };
 		2B750D171D362EE600EACE98 /* Conference.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6373A40E1BBDC5EA00DF67FF /* Conference.xcdatamodeld */; };
 		2BDDAB551D363D34007FD547 /* ROSPonsomizerImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDDAB541D363D34007FD547 /* ROSPonsomizerImplementation.m */; };
 		2BDDB1D31D3F7235007FD547 /* DirectionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDDB1D21D3F7235007FD547 /* DirectionObject.m */; };
@@ -443,6 +445,10 @@
 		2B2064741D3F9CE900246C8D /* TagPlainObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagPlainObject.m; sourceTree = "<group>"; };
 		2B2064751D3F9CE900246C8D /* TechPlainObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TechPlainObject.h; sourceTree = "<group>"; };
 		2B2064761D3F9CE900246C8D /* TechPlainObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TechPlainObject.m; sourceTree = "<group>"; };
+		2B429A5D1D478A2F004C005F /* UINavigationBar+States.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+States.h"; sourceTree = "<group>"; };
+		2B429A5E1D478A2F004C005F /* UINavigationBar+States.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+States.m"; sourceTree = "<group>"; };
+		2B429A611D4798D4004C005F /* EventViewAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventViewAnimator.h; sourceTree = "<group>"; };
+		2B429A621D4798D4004C005F /* EventViewAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventViewAnimator.m; sourceTree = "<group>"; };
 		2BDDAB521D363D34007FD547 /* ROSPonsomizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ROSPonsomizer.h; sourceTree = "<group>"; };
 		2BDDAB531D363D34007FD547 /* ROSPonsomizerImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ROSPonsomizerImplementation.h; sourceTree = "<group>"; };
 		2BDDAB541D363D34007FD547 /* ROSPonsomizerImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ROSPonsomizerImplementation.m; sourceTree = "<group>"; };
@@ -1173,6 +1179,24 @@
 				2B2064761D3F9CE900246C8D /* TechPlainObject.m */,
 			);
 			path = PlainObjects;
+			sourceTree = "<group>";
+		};
+		2B429A5C1D4789FA004C005F /* UINavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				2B429A5D1D478A2F004C005F /* UINavigationBar+States.h */,
+				2B429A5E1D478A2F004C005F /* UINavigationBar+States.m */,
+			);
+			path = UINavigationBar;
+			sourceTree = "<group>";
+		};
+		2B429A601D4798B9004C005F /* Animator */ = {
+			isa = PBXGroup;
+			children = (
+				2B429A611D4798D4004C005F /* EventViewAnimator.h */,
+				2B429A621D4798D4004C005F /* EventViewAnimator.m */,
+			);
+			path = Animator;
 			sourceTree = "<group>";
 		};
 		2BDDAB511D363D34007FD547 /* Ponsomizer */ = {
@@ -2468,6 +2492,7 @@
 		63F6128A1CB00A220002AEF0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2B429A601D4798B9004C005F /* Animator */,
 				63F6128B1CB00A220002AEF0 /* CellObjects */,
 				63F612AA1CB00A220002AEF0 /* Cells */,
 				63F612E01CB00A220002AEF0 /* DataDisplayManager */,
@@ -3400,6 +3425,7 @@
 		63FDCDE11BBDBA2A00A43B60 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				2B429A5C1D4789FA004C005F /* UINavigationBar */,
 				631FFE121BEF451400749DB8 /* CDResponder */,
 			);
 			path = Helpers;
@@ -5259,6 +5285,7 @@
 				63F6139B1CB00A220002AEF0 /* SpeakerInfoTableViewCell.m in Sources */,
 				63F613631CB00A220002AEF0 /* EventRouter.m in Sources */,
 				2B750D171D362EE600EACE98 /* Conference.xcdatamodeld in Sources */,
+				2B429A5F1D478A2F004C005F /* UINavigationBar+States.m in Sources */,
 				9F18311D1BC1615C000E21A5 /* SingleResponseObjectFormatter.m in Sources */,
 				63F613991CB00A220002AEF0 /* SpeakerInfoRouter.m in Sources */,
 				2B20647B1D3F9CE900246C8D /* _RegistrationQuestionModelObject.m in Sources */,
@@ -5375,6 +5402,7 @@
 				9F8E5F781BC2571B00DC10DB /* NetworkClientsAssembly.m in Sources */,
 				9F8E5FAD1BC27E7F00DC10DB /* HTTPMethodConstants.m in Sources */,
 				63F613741CB00A220002AEF0 /* LectureInfoTableViewCell.m in Sources */,
+				2B429A631D4798D4004C005F /* EventViewAnimator.m in Sources */,
 				9F0A85021BC1698B006F79FB /* ResponseValidationOperation.m in Sources */,
 				63F6135B1CB00A220002AEF0 /* EventHeaderInteractor.m in Sources */,
 				631FFE541BEF930200749DB8 /* ReportListInteractor.m in Sources */,

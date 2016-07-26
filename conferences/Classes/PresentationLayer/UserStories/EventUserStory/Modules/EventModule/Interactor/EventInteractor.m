@@ -23,13 +23,13 @@
 #import "EventService.h"
 #import "EventModelObject.h"
 #import "EventPlainObject.h"
-#import "PrototypeMapper.h"
+#import "ROSPonsomizer.h"
 #import "EventTypeDeterminator.h"
 #import "EventStoreServiceProtocol.h"
 #import "ErrorConstants.h"
 #import "EXTScope.h"
 
-static NSString *const kEventByObjectIdPredicateFormat = @"objectId = %@";
+static NSString *const kEventByObjectIdPredicateFormat = @"eventId = %@";
 
 @implementation EventInteractor
 
@@ -41,7 +41,7 @@ static NSString *const kEventByObjectIdPredicateFormat = @"objectId = %@";
     NSArray *events = [self.eventService obtainEventWithPredicate:predicate];
     id managedObjectEvent = [events firstObject];
     
-    EventPlainObject *eventPlainObject = [self mapEvent:managedObjectEvent];
+    EventPlainObject *eventPlainObject = [self.ponsomizer convertObject:managedObjectEvent];
     
     return eventPlainObject;
 }
@@ -71,18 +71,6 @@ static NSString *const kEventByObjectIdPredicateFormat = @"objectId = %@";
      */
     NSArray *activityItems = @[];
     return activityItems;
-}
-
-#pragma mark - Private methods
-
-- (EventPlainObject *)mapEvent:(EventModelObject *)managedObjectEvent {
-    EventPlainObject *eventPlainObject = [EventPlainObject new];
-    [self.eventPrototypeMapper fillObject:eventPlainObject withObject:managedObjectEvent];
-    
-    EventType eventType = [self.eventTypeDeterminator determinateTypeForEvent:eventPlainObject];
-    eventPlainObject.eventType = @(eventType);
-    
-    return eventPlainObject;
 }
 
 @end

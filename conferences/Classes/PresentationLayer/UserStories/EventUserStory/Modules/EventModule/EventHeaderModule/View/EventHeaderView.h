@@ -27,6 +27,8 @@
 @interface EventHeaderView : UIView <EventHeaderViewInput, EventHeaderModuleInput>
 
 @property (weak, nonatomic) IBOutlet UIImageView *eventImageView;
+@property (weak, nonatomic) IBOutlet UIView *backgroundView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topConstraint;
 
 @property (nonatomic, strong) id<EventHeaderViewOutput> output;
 
