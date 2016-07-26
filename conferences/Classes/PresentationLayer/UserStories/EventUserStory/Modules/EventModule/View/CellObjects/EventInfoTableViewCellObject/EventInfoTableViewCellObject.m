@@ -21,6 +21,7 @@
 #import "EventInfoTableViewCellObject.h"
 #import "EventInfoTableViewCell.h"
 #import "EventPlainObject.h"
+#import "MetaEventPlainObject.h"
 
 @interface EventInfoTableViewCellObject ()
 
@@ -38,7 +39,7 @@
     self = [super init];
     if (self) {
         _eventTitle = event.name;
-        _eventSubTitle = event.eventSubtitle;
+        _eventSubTitle = event.metaEvent.metaEventDescription;
         _date = date;
     }
     return self;

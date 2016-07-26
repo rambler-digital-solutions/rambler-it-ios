@@ -21,6 +21,8 @@
 #import "SignUpAndSaveToCalendarEventTableViewCellObject.h"
 #import "SignUpAndSaveToCalendarEventTableViewCell.h"
 #import "EventPlainObject.h"
+#import "TechPlainObject.h"
+#import "UIColor+Hex.h"
 
 @interface SignUpAndSaveToCalendarEventTableViewCellObject ()
 
@@ -36,7 +38,8 @@
 - (instancetype)initWithEvent:(EventPlainObject *)event {
     self = [super init];
     if (self) {
-        self.event = event;
+        _event = event;
+        _buttonColor = [UIColor colorFromHexString:event.tech.color];
     }
     return self;
 }

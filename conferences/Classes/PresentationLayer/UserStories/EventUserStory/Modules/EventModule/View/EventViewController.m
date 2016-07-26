@@ -57,6 +57,7 @@
     self.dataDisplayManager.delegate = self;
     [self.dataDisplayManager configureDataDisplayManagerWithEvent:event];
     
+    self.tableView.estimatedRowHeight = 44.0;
     self.tableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.tableView];
     self.tableView.delegate = [self.dataDisplayManager delegateForTableView:self.tableView
                                                            withBaseDelegate:nil];

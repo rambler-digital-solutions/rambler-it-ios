@@ -21,11 +21,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" restorationIdentifier="viewEventHeader" id="tAj-fc-JAG" customClass="TyphoonLoadedView">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="196"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="240"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="196" id="ds5-by-tKf"/>
+                                        <constraint firstAttribute="height" constant="240" id="ds5-by-tKf"/>
                                     </constraints>
                                 </view>
                                 <connections>
