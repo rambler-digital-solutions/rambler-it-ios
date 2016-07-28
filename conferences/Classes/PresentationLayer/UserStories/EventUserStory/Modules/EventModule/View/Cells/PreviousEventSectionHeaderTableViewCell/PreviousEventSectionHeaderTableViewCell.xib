@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -21,7 +21,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
-                <color key="backgroundColor" red="0.59451943274700281" green="0.66355944221669982" blue="0.80741005774700281" alpha="0.24649939903846155" colorSpace="calibratedRGB"/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstAttribute="bottomMargin" secondItem="xC0-yW-gQr" secondAttribute="bottom" constant="4.5" id="OQE-IZ-stp"/>
                     <constraint firstAttribute="trailingMargin" secondItem="xC0-yW-gQr" secondAttribute="trailing" constant="22" id="kMa-R5-VAg"/>
@@ -29,9 +29,6 @@
                     <constraint firstItem="xC0-yW-gQr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="9" id="v8H-a4-M9x"/>
                 </constraints>
             </tableViewCellContentView>
-            <connections>
-                <outlet property="contentView" destination="H2p-sc-9uM" id="Jz3-Lp-YOO"/>
-            </connections>
             <point key="canvasLocation" x="303" y="345.5"/>
         </tableViewCell>
     </objects>

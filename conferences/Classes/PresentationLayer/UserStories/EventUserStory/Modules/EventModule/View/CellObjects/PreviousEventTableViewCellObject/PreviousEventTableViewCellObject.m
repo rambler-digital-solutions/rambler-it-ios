@@ -21,6 +21,8 @@
 #import "PreviousEventTableViewCellObject.h"
 #import "PreviousEventTableViewCell.h"
 #import "EventPlainObject.h"
+#import "TechPlainObject.h"
+#import "UIColor+Hex.h"
 
 @interface PreviousEventTableViewCellObject ()
 
@@ -39,6 +41,7 @@
     if (self) {
         _date = date;
         _title = event.name;
+        _backgroundColor = [UIColor colorFromHexString:event.tech.color];
     }
     return self;
 }

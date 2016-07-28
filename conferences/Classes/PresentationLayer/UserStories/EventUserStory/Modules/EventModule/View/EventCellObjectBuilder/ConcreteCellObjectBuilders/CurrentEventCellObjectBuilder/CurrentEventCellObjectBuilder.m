@@ -26,7 +26,8 @@
 
 @implementation CurrentEventCellObjectBuilder
 
-- (NSArray *)cellObjectsForEvent:(EventPlainObject *)event {
+- (NSArray *)cellObjectsForEvent:(EventPlainObject *)event
+                      pastEvents:(NSArray *)pastEvents {
     NSMutableArray *cellObjects = [NSMutableArray array];
     
     NSString *formattedDate = [self.dateFormatter obtainDateWithDayMonthTimeFormat:event.startDate];

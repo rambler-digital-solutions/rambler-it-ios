@@ -27,9 +27,13 @@
 #import "EventTypeDeterminator.h"
 #import "EventStoreServiceProtocol.h"
 #import "ErrorConstants.h"
+#import <MagicalRecord/MagicalRecord.h>
+#import "MetaEventModelObject.h"
+#import "MetaEventPlainObject.h"
 #import "EXTScope.h"
 
 static NSString *const kEventByObjectIdPredicateFormat = @"eventId = %@";
+static NSString *const kMetaEventByObjectIdPredicateFormat = @"metaEventId = %@";
 
 @implementation EventInteractor
 
@@ -44,6 +48,15 @@ static NSString *const kEventByObjectIdPredicateFormat = @"eventId = %@";
     EventPlainObject *eventPlainObject = [self.ponsomizer convertObject:managedObjectEvent];
     
     return eventPlainObject;
+}
+
+- (NSArray *)obtainPastEventsForMetaEvent:(NSString *)metaEventId {
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:kMetaEventByObjectIdPredicateFormat, metaEventId];
+    
+    MetaEventModelObject *metaEvent = [MetaEventModelObject MR_findFirstWithPredicate:predicate];
+    NSSet *events = [self.ponsomizer convertObject:metaEvent.events];
+    
+    return [events allObjects];
 }
 
 - (void)saveEventToCalendar:(EventPlainObject *)event {

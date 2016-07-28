@@ -21,8 +21,6 @@
 #import "PreviousEventTableViewCell.h"
 #import "PreviousEventTableViewCellObject.h"
 
-static CGFloat const kPreviousEventTableViewCellHeight = 106.0f;
-
 @interface PreviousEventTableViewCell ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *eventImageView;
@@ -46,7 +44,7 @@ static CGFloat const kPreviousEventTableViewCellHeight = 106.0f;
 }
 
 + (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
-    return kPreviousEventTableViewCellHeight;
+    return UITableViewAutomaticDimension;
 }
 
 @end

@@ -30,10 +30,15 @@
 #import "PreviousLectureTableViewCellObject.h"
 #import "PreviousEventSectionHeaderTableViewCellObject.h"
 #import "PreviousEventTableViewCellObject.h"
+#import "TechPlainObject.h"
+
+static NSInteger const kEventPastEventsCount = 2;
+static NSInteger const kEventPastEventLecturesCount = 5;
 
 @implementation FutureEventCellObjectBuilder
 
-- (NSArray *)cellObjectsForEvent:(EventPlainObject *)event {
+- (NSArray *)cellObjectsForEvent:(EventPlainObject *)event
+                      pastEvents:(NSArray *)pastEvents {
     NSMutableArray *cellObjects = [NSMutableArray array];
     
     NSString *formattedDate = [self.dateFormatter obtainDateWithDayMonthTimeFormat:event.startDate];
@@ -44,15 +49,63 @@
     SignUpAndSaveToCalendarEventTableViewCellObject *signUpCellObject = [SignUpAndSaveToCalendarEventTableViewCellObject objectWithEvent:event];
     [cellObjects addObject:signUpCellObject];
     
-    EventDescriptionTableViewCellObject *eventDescriptionCellObject = [EventDescriptionTableViewCellObject objectWithEvent:event];
-    [cellObjects addObject:eventDescriptionCellObject];
-    
     for (LecturePlainObject *lecture in event.lectures) {
         LectureInfoTableViewCellObject *lectureCellobject = [LectureInfoTableViewCellObject objectWithLecture:lecture];
         [cellObjects addObject:lectureCellobject];
     }
+    
+    //Adding previous events section
+    NSArray *filteredPastEvents = [self filterPastEvents:pastEvents];
+    if (filteredPastEvents.count) {
+        PreviousEventSectionHeaderTableViewCellObject *cellObject = [PreviousEventSectionHeaderTableViewCellObject objectWithEvent:event];
+        [cellObjects addObject:cellObject];
+    }
+    
+    for (EventPlainObject *pastEvent in filteredPastEvents) {
+        NSString *date = [self.dateFormatter obtainDateWithDayMonthFormat:pastEvent.startDate];
+        PreviousEventTableViewCellObject *lectureCellobject = [PreviousEventTableViewCellObject objectWithEvent:pastEvent
+                                                                                                        andDate:date];
+        [cellObjects addObject:lectureCellobject];
+    }
+    
+    //Adding previous lectures section
+    NSArray *pastLectures = [self filterPastLectures:pastEvents];
+    
+    if (pastLectures.count) {
+        PreviousLectureSectionHeaderTableViewCellObject *cellObject = [PreviousLectureSectionHeaderTableViewCellObject objectWithEvent:event];
+        [cellObjects addObject:cellObject];
+    }
+    
+    for (LecturePlainObject *pastLecture in pastLectures) {
+        PreviousLectureTableViewCellObject *lectureCellobject = [PreviousLectureTableViewCellObject objectWithLecture:pastLecture];
+        [cellObjects addObject:lectureCellobject];
+    }
 
     return cellObjects;
+}
+
+- (NSArray *)filterPastEvents:(NSArray *)events {
+    if (!events.count) {
+        return nil;
+    }
+    NSInteger eventCount = MIN(events.count, kEventPastEventsCount);
+    NSArray *pastEvents = [events subarrayWithRange:NSMakeRange(0, eventCount)];
+    
+    return pastEvents;
+}
+
+- (NSArray *)filterPastLectures:(NSArray *)events {
+    NSMutableArray *lectures = [NSMutableArray new];
+    for (EventPlainObject *event in events) {
+        [lectures addObjectsFromArray:[event.lectures allObjects]];
+    }
+    if (!lectures.count) {
+        return nil;
+    }
+    NSInteger lectureCount = MIN(lectures.count, kEventPastEventLecturesCount);
+    NSArray *pastLectures = [lectures subarrayWithRange:NSMakeRange(0, lectureCount)];
+    
+    return pastLectures;
 }
 
 @end

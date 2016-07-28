@@ -21,6 +21,7 @@
 #import <Foundation/Foundation.h>
 
 @class EventPlainObject;
+@class TechPlainObject;
 
 @protocol EventViewInput <NSObject>
 
@@ -31,7 +32,7 @@
  
  @param event PlainEvent object
  */
-- (void)configureViewWithEvent:(EventPlainObject *)event;
+- (void)configureViewWithEvent:(EventPlainObject *)event pastEvents:(NSArray *)pastEvents;
 
 - (void)displayAlertWithTitle:(NSString *)title andMessage:(NSString *)message;
 

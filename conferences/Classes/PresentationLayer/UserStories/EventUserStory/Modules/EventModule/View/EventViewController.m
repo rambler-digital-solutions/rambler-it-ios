@@ -21,6 +21,8 @@
 #import "EventViewController.h"
 #import "EventViewOutput.h"
 #import "EventDataDisplayManager.h"
+#import "EventPlainObject.h"
+#import "TechPlainObject.h"
 #import "DataDisplayManager.h"
 #import "EventTableViewCellActionProtocol.h"
 #import "EventPlainObject.h"
@@ -29,6 +31,7 @@
 #import "UINavigationBar+States.h"
 #import "EventViewAnimator.h"
 #import <CrutchKit/Proxying/Extensions/UIViewController+CDObserver/UIViewController+CDObserver.h>
+#import "UIColor+Hex.h"
 
 @interface EventViewController() <EventTableViewCellActionProtocol, EventDataDisplayManagerDelegate>
 
@@ -51,11 +54,11 @@
 
 #pragma mark - EventViewInput
 
-- (void)configureViewWithEvent:(EventPlainObject *)event {
+- (void)configureViewWithEvent:(EventPlainObject *)event pastEvents:(NSArray *)pastEvents {
     
     self.dataDisplayManager.eventViewAnimator = self.eventViewAnimator;
     self.dataDisplayManager.delegate = self;
-    [self.dataDisplayManager configureDataDisplayManagerWithEvent:event];
+    [self.dataDisplayManager configureDataDisplayManagerWithEvent:event pastEvents:pastEvents];
     
     self.tableView.estimatedRowHeight = 44.0;
     self.tableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.tableView];
@@ -119,7 +122,6 @@
 
 - (void)setupHeaderViewWithEvent:(EventPlainObject *)event {
     [self.headerView configureModuleWithEvent:event];
-    
     CGRect frame = self.headerView.frame;
     frame.size.width = self.view.bounds.size.width;
     frame.size = [self.headerView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];

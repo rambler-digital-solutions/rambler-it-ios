@@ -25,6 +25,7 @@
 #import "EventPlainObject.h"
 #import "EventPresenterStateStorage.h"
 #import "LocalizedStrings.h"
+#import "MetaEventPlainObject.h"
 
 @implementation EventPresenter
 
@@ -38,7 +39,9 @@
 
 - (void)setupView {
     EventPlainObject *event = [self.interactor obtainEventWithObjectId:self.presenterStateStorage.eventObjectId];
-    [self.view configureViewWithEvent:event];
+    NSArray *pastEvents = [self.interactor obtainPastEventsForMetaEvent:event.metaEvent.metaEventId];
+    [self.view configureViewWithEvent:event
+                           pastEvents:pastEvents];
 }
 
 - (void)didTapSignUpButtonWithEvent:(EventPlainObject *)event {

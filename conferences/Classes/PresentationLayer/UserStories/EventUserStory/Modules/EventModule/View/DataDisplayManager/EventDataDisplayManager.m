@@ -28,6 +28,7 @@
 #import "EXTScope.h"
 #import "LectureInfoTableViewCellObject.h"
 #import "EventViewAnimator.h"
+#import "TechPlainObject.h"
 
 @interface EventDataDisplayManager () <UITableViewDelegate>
 
@@ -40,9 +41,11 @@
 
 @implementation EventDataDisplayManager
 
-- (void)configureDataDisplayManagerWithEvent:(EventPlainObject *)event {
+- (void)configureDataDisplayManagerWithEvent:(EventPlainObject *)event
+                                  pastEvents:(NSArray *)pastEvents {
     self.cellObjectBuilder = [self.cellObjectBuilderFactory builderForEventType:event.eventType];
-    self.cellObjects = [self.cellObjectBuilder cellObjectsForEvent:event];
+    self.cellObjects = [self.cellObjectBuilder cellObjectsForEvent:event
+                                                        pastEvents:pastEvents];
 }
 
 #pragma mark DataDisplayManager methods

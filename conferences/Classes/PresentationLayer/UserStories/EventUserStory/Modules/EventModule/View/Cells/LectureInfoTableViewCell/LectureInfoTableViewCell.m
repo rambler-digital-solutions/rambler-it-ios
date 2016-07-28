@@ -28,14 +28,12 @@
 
 static NSString *const kPlaceholderImageName = @"placeholder";
 
-static CGFloat const kLectionInfoTableViewCellHeight = 340.0f;
-
 @interface LectureInfoTableViewCell ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *speakerImageView;
 @property (weak, nonatomic) IBOutlet UILabel *speakerName;
 @property (weak, nonatomic) IBOutlet UILabel *speakerCompanyName;
-@property (weak, nonatomic) IBOutlet UITextView *lectureDescription;
+@property (weak, nonatomic) IBOutlet UILabel *lectureDescription;
 @property (weak, nonatomic) IBOutlet UILabel *lectureTitle;
 
 @property (weak, nonatomic) id <LectureInfoTableViewCellActionProtocol> actionProxy;
@@ -55,7 +53,6 @@ static CGFloat const kLectionInfoTableViewCellHeight = 340.0f;
     self.speakerName.text = object.speakerName;
     self.speakerCompanyName.text = object.speakerCompanyName;
     self.lectureDescription.text = object.lectureDescription;
-    [self.lectureDescription setBackgroundColor:[UIColor whiteColor]];
     self.lectureTitle.text = object.lectureTitle;
     
     self.speakerImageView.layer.cornerRadius = self.speakerImageView.frame.size.height / 2;
@@ -68,7 +65,7 @@ static CGFloat const kLectionInfoTableViewCellHeight = 340.0f;
 }
 
 + (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
-    return kLectionInfoTableViewCellHeight;
+    return UITableViewAutomaticDimension;
 }
 
 #pragma mark - IBActions

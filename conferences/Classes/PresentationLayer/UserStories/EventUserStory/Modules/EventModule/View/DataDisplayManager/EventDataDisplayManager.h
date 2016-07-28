@@ -25,6 +25,8 @@
 @class EventPlainObject;
 @class EventCellObjectBuilderFactory;
 @class EventViewAnimator;
+@class TechPlainObject;
+
 @protocol EventDataDisplayManagerDelegate <NSObject>
 
 - (void)didTapLectureInfoCellWithLectureObjectId:(NSString *)lectureObjectId;
@@ -37,7 +39,8 @@
 @property (weak, nonatomic) id <EventDataDisplayManagerDelegate> delegate;
 @property (strong, nonatomic) EventViewAnimator *eventViewAnimator;
 
-- (void)configureDataDisplayManagerWithEvent:(EventPlainObject *)event;
+- (void)configureDataDisplayManagerWithEvent:(EventPlainObject *)event
+                                  pastEvents:(NSArray *)pastEvents;
 
 @end
 
