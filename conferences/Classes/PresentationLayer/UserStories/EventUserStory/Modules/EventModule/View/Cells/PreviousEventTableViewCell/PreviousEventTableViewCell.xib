@@ -27,8 +27,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9P0-Ad-vp1">
                                 <rect key="frame" x="63" y="27" width="227" height="41"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="31 октября" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eBz-9O-3S7">
-                                        <rect key="frame" x="0.0" y="0.0" width="227" height="22"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="31 октября" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eBz-9O-3S7">
+                                        <rect key="frame" x="0.0" y="0.0" width="227" height="17"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="NEY-Qc-cyD"/>
                                         </constraints>
@@ -41,8 +41,8 @@
                                             </mask>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Rambler.iOS #5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Uk-35-XA1">
-                                        <rect key="frame" x="0.0" y="22" width="227" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rambler.iOS #5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Uk-35-XA1">
+                                        <rect key="frame" x="0.0" y="17" width="227" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="B1X-bH-enC"/>
                                         </constraints>
@@ -78,6 +78,11 @@
                             <constraint firstItem="9P0-Ad-vp1" firstAttribute="centerY" secondItem="Prr-CA-Ioq" secondAttribute="centerY" id="gho-Z1-bJs"/>
                             <constraint firstItem="9P0-Ad-vp1" firstAttribute="leading" secondItem="QJD-OP-FtO" secondAttribute="trailing" constant="10" id="sl1-J4-0YG"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="gho-Z1-bJs"/>
+                            </mask>
+                        </variation>
                     </view>
                 </subviews>
                 <color key="backgroundColor" white="0.66666666666666663" alpha="0.27944711538461536" colorSpace="calibratedWhite"/>

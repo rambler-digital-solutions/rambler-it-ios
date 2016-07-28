@@ -2785,8 +2785,8 @@
 			isa = PBXGroup;
 			children = (
 				63F612E51CB00A220002AEF0 /* CellObjectBuilderProtocol.h */,
-				63F612E61CB00A220002AEF0 /* CurrentEventCellObjectBuilder */,
 				63F612E91CB00A220002AEF0 /* EventCellObjectBuilderBase */,
+				63F612E61CB00A220002AEF0 /* CurrentEventCellObjectBuilder */,
 				63F612EC1CB00A220002AEF0 /* FutureEventCellObjectBuilder */,
 				63F612EF1CB00A220002AEF0 /* PastEventCellObjectBuilder */,
 			);

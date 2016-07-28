@@ -44,13 +44,13 @@
     id managedObjectEvent = [events firstObject];
     
     EventPlainObject *eventPlainObject = [self.ponsomizer convertObject:managedObjectEvent];
-    EventType type = [self.eventTypeDeterminator determinateTypeForEvent:eventPlainObject];
+    EventType type = CurrentEvent;//[self.eventTypeDeterminator determinateTypeForEvent:eventPlainObject];
     eventPlainObject.eventType = @(type);
     return eventPlainObject;
 }
 
 - (NSArray *)obtainPastEventsForMetaEvent:(NSString *)metaEventId {
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%@ = %@", MetaEventModelObjectAttributes.metaEventId, metaEventId];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K = %@", MetaEventModelObjectAttributes.metaEventId, metaEventId];
     
     MetaEventModelObject *metaEvent = [MetaEventModelObject MR_findFirstWithPredicate:predicate];
     
@@ -87,7 +87,7 @@
 }
 
 - (NSArray *)filterEventsWithPastEventType:(NSSet *)events {
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%@ = %@", EventModelObjectAttributes.eventType, @(PastEvent)];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K = %@", EventModelObjectAttributes.eventType, @(PastEvent)];
     NSArray *filteredEvents = [[events allObjects] filteredArrayUsingPredicate:predicate];
     
     return filteredEvents;

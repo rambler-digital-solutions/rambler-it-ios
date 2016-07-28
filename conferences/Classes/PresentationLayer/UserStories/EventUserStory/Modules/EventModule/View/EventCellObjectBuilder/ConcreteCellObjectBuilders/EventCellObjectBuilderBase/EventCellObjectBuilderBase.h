@@ -11,6 +11,7 @@
 @class EventPlainObject;
 @class DateFormatter;
 @class TechPlainObject;
+@class EventPlainObject;
 
 @interface EventCellObjectBuilderBase : NSObject
 
@@ -19,4 +20,11 @@
 - (NSArray *)cellObjectsForEvent:(EventPlainObject *)event
                       pastEvents:(NSArray *)pastEvents;
 
+- (NSArray *)cellObjectsForLectureSectionWithEvent:(EventPlainObject *)event;
+
+- (NSArray *)cellObjectsForPastEventsSectionWithCurrentEvent:(EventPlainObject *)event
+                                                  pastEvents:(NSArray *)pastEvents;
+
+- (NSArray *)cellObjectsForPastLecturesSectionWithCurrentEvent:(EventPlainObject *)event
+                                                    pastEvents:(NSArray *)pastEvents;
 @end

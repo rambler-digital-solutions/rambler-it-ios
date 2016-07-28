@@ -13,53 +13,30 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="189.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="VK8-9k-dJU">
-                        <rect key="frame" x="15" y="13" width="290" height="100"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="100" id="220-uB-AzL"/>
-                        </constraints>
-                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                    </textView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Программа" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFI-GO-iSD">
-                        <rect key="frame" x="20" y="159" width="93" height="21"/>
+                        <rect key="frame" x="20" y="20" width="280" height="164.5"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="0rF-kv-exe"/>
                             <constraint firstAttribute="width" constant="93" id="q1k-n8-Nf6"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="0rF-kv-exe"/>
+                                <exclude reference="q1k-n8-Nf6"/>
+                            </mask>
+                        </variation>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GDI-fF-8Mc">
-                        <rect key="frame" x="17" y="113" width="96" height="30"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="96" id="AOP-rQ-vMI"/>
-                            <constraint firstAttribute="height" constant="30" id="sVG-cf-KKU"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <state key="normal" title="Читать далее"/>
-                        <connections>
-                            <action selector="didTapReadMoreButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="xao-8H-F1D"/>
-                        </connections>
-                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="FFI-GO-iSD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="2p1-98-QSj"/>
-                    <constraint firstItem="GDI-fF-8Mc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="17" id="5HA-Rc-59C"/>
-                    <constraint firstItem="GDI-fF-8Mc" firstAttribute="top" secondItem="VK8-9k-dJU" secondAttribute="bottom" id="9Nq-LJ-MKP"/>
-                    <constraint firstItem="VK8-9k-dJU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="13" id="EKJ-Vf-kbe"/>
-                    <constraint firstItem="VK8-9k-dJU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="MO6-f2-XD5"/>
-                    <constraint firstItem="GDI-fF-8Mc" firstAttribute="top" secondItem="VK8-9k-dJU" secondAttribute="bottom" id="UZz-ns-I8X"/>
-                    <constraint firstItem="FFI-GO-iSD" firstAttribute="top" secondItem="GDI-fF-8Mc" secondAttribute="bottom" constant="16" id="bob-yX-zgF"/>
-                    <constraint firstAttribute="trailing" secondItem="VK8-9k-dJU" secondAttribute="trailing" constant="15" id="jXS-uk-86D"/>
+                    <constraint firstItem="FFI-GO-iSD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="DA3-zR-YgN"/>
+                    <constraint firstAttribute="bottom" secondItem="FFI-GO-iSD" secondAttribute="bottom" constant="5" id="Rwc-dq-VOC"/>
+                    <constraint firstAttribute="trailing" secondItem="FFI-GO-iSD" secondAttribute="trailing" constant="20" id="jQT-wG-bwt"/>
                 </constraints>
             </tableViewCellContentView>
-            <connections>
-                <outlet property="eventDescription" destination="VK8-9k-dJU" id="wKQ-1k-8ZK"/>
-            </connections>
             <point key="canvasLocation" x="348" y="463"/>
         </tableViewCell>
     </objects>
