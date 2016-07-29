@@ -18,7 +18,7 @@
 @interface CurrentEventCellObjectBuilderTests : XCTestCase
 
 @property (strong, nonatomic) CurrentEventCellObjectBuilder *cellObjectBuilder;
-@property (strong, nonatomic) DateFormatter *mockDateFormatter;
+@property (strong, nonatomic) id mockDateFormatter;
 
 @end
 
@@ -35,6 +35,8 @@
 
 - (void)tearDown {
     self.cellObjectBuilder = nil;
+    
+    [self.mockDateFormatter stopMocking];
     self.mockDateFormatter = nil;
 
     [super tearDown];
@@ -53,7 +55,7 @@
     event.startDate = eventStartDate;
     
     // when
-    NSArray *cellObjects = [self.cellObjectBuilder cellObjectsForEvent:event];
+    NSArray *cellObjects = [self.cellObjectBuilder cellObjectsForEvent:event pastEvents:nil];
     
     for (id cellObject in cellObjects) {
         if ([cellObject isKindOfClass:[EventInfoTableViewCellObject class]]) {

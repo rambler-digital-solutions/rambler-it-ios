@@ -16,6 +16,7 @@
 #import "EventPlainObject.h"
 #import "EventRouterInput.h"
 #import "LocalizedStrings.h"
+#import "ModelObjectGenerator.h"
 
 @interface EventPresenterTests : XCTestCase
 
@@ -74,15 +75,16 @@
 
 - (void)testSuccessSetupView {
     // given
-    EventPlainObject *event = [EventPlainObject new];
-    
+    EventPlainObject *event = [ModelObjectGenerator generateEventObjects:1].firstObject;
+    NSArray *pastEvents = [ModelObjectGenerator generateEventObjects:3];
     OCMStub([self.interactorMock obtainEventWithObjectId:OCMOCK_ANY]).andReturn(event);
+    OCMStub([self.interactorMock obtainPastEventsForMetaEvent:OCMOCK_ANY]).andReturn(pastEvents);
     
     // when
     [self.presenter setupView];
     
     // then
-    OCMVerify([self.viewMock configureViewWithEvent:event]);
+    OCMVerify([self.viewMock configureViewWithEvent:event pastEvents:pastEvents]);
 }
 
 - (void)testSuccesDidTapSignUpButtonWithEvent {

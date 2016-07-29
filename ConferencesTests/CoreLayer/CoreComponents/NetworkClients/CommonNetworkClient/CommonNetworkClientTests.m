@@ -46,6 +46,8 @@ static NSString *const kTestURLPath = @"https://myapi.com/v1/rest";
 
 - (void)tearDown {
     self.client = nil;
+    
+    [self.mockSession stopMocking];
     self.mockSession = nil;
     
     [super tearDown];

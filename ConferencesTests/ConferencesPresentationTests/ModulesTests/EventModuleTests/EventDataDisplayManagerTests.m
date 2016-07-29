@@ -14,6 +14,7 @@
 #import "EventPlainObject.h"
 #import "EventType.h"
 #import "EventCellObjectBuilderBase.h"
+#import "ModelObjectGenerator.h"
 
 @interface EventDataDisplayManagerTests : XCTestCase
 
@@ -37,19 +38,22 @@
 
 - (void)testSuccessConfigureDataDisplayManagerWithEvent {
     // given
-    EventPlainObject *event = [EventPlainObject new];
+    EventPlainObject *event = [ModelObjectGenerator generateEventObjects:1].firstObject;
+    NSArray *pastEvents = [ModelObjectGenerator generateEventObjects:3];
     
-    EventCellObjectBuilderBase *mockCellObjectBuilder = OCMClassMock([EventCellObjectBuilderBase class]);
-    EventCellObjectBuilderFactory *mockFactory = OCMClassMock([EventCellObjectBuilderFactory class]);
+    id mockCellObjectBuilder = OCMClassMock([EventCellObjectBuilderBase class]);
+    id mockFactory = OCMClassMock([EventCellObjectBuilderFactory class]);
     OCMStub([mockFactory builderForEventType:OCMOCK_ANY]).andReturn(mockCellObjectBuilder);
     
     self.dataDisplayManager.cellObjectBuilderFactory = mockFactory;
     
     // when
-    [self.dataDisplayManager configureDataDisplayManagerWithEvent:event];
+    [self.dataDisplayManager configureDataDisplayManagerWithEvent:event pastEvents:pastEvents];
     
     // then
-    OCMVerify([mockCellObjectBuilder cellObjectsForEvent:event]);
+    OCMVerify([mockCellObjectBuilder cellObjectsForEvent:event pastEvents:pastEvents]);
+    [mockFactory stopMocking];
+    [mockCellObjectBuilder stopMocking];
 }
 
 - (void)testThatDataDisplayManagerReturnsTableViewDataSource{

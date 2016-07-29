@@ -23,7 +23,7 @@ typedef void (^ProxyBlock)(NSInvocation *);
 @interface ReportListInteractorTests : XCTestCase
 
 @property (strong, nonatomic) ReportListInteractor *interactor;
-@property (strong, nonatomic) EventTypeDeterminator *mockEventTypeDeterminator;
+@property (strong, nonatomic) id mockEventTypeDeterminator;
 @property (strong, nonatomic) id <ReportListInteractorOutput> mockOutput;
 @property (strong, nonatomic) id <EventService> mockEventService;
 @property (strong, nonatomic) id <PrototypeMapper> mockPrototypeMapper;
@@ -51,7 +51,10 @@ typedef void (^ProxyBlock)(NSInvocation *);
     self.interactor = nil;
     self.mockOutput = nil;
     self.mockEventService = nil;
+    
+    [self.mockEventTypeDeterminator stopMocking];
     self.mockEventTypeDeterminator = nil;
+    
     self.mockPrototypeMapper = nil;
 
     [super tearDown];

@@ -27,6 +27,7 @@ typedef void (^ProxyBlock)(NSInvocation *);
     
     OCMStub([promiseMock thenChainUsingBlock:OCMOCK_ANY]).andDo(proxyBlock);
     OCMStub([transitionHandlerMock openModuleUsingSegue:OCMOCK_ANY]).andReturn(promiseMock);
+    [promiseMock stopMocking];
 }
 
 @end

@@ -20,13 +20,15 @@
 
 #import <UIKit/UIKit.h>
 #import "EventViewInput.h"
+#import "EventTableViewCellActionProtocol.h"
+#import "EventDataDisplayManager.h"
 
 @protocol EventViewOutput;
 @protocol EventHeaderModuleInput;
 @class EventDataDisplayManager;
 @class EventViewAnimator;
 
-@interface EventViewController : UIViewController <EventViewInput>
+@interface EventViewController : UIViewController <EventViewInput, EventTableViewCellActionProtocol, EventDataDisplayManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView <EventHeaderModuleInput> *headerView;

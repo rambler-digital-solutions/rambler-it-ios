@@ -76,6 +76,7 @@ typedef NS_ENUM(NSUInteger, TableViewSectionIndex){
     
     // then
     OCMVerify([mockViewController didUpdateTableViewModel]);
+    [mockViewController stopMocking];
 }
 
 - (void)testThatDataDisplayManagerReturnsCorrectNumberOfSections {

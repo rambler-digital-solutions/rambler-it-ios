@@ -55,6 +55,7 @@
     
     // then
     OCMVerify([mockMagicalRecord setupCoreDataStackWithStoreNamed:OCMOCK_ANY]);
+    [mockMagicalRecord stopMocking];
 }
 
 @end

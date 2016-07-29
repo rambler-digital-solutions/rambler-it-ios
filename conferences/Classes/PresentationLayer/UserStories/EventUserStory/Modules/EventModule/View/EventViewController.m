@@ -20,7 +20,6 @@
 
 #import "EventViewController.h"
 #import "EventViewOutput.h"
-#import "EventDataDisplayManager.h"
 #import "EventPlainObject.h"
 #import "TechPlainObject.h"
 #import "DataDisplayManager.h"
@@ -33,7 +32,7 @@
 #import <CrutchKit/Proxying/Extensions/UIViewController+CDObserver/UIViewController+CDObserver.h>
 #import "UIColor+Hex.h"
 
-@interface EventViewController() <EventTableViewCellActionProtocol, EventDataDisplayManagerDelegate>
+@interface EventViewController()
 
 @end
 

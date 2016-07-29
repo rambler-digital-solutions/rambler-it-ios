@@ -143,6 +143,7 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
     // then
     OCMVerify([speakerShortInfoViewMock configureModuleWithSpeaker:OCMOCK_ANY
                                                        andViewSize:SpeakerShortInfoViewDefaultSize]);
+    [speakerShortInfoViewMock stopMocking];
 }
 
 #pragma mark - Actions

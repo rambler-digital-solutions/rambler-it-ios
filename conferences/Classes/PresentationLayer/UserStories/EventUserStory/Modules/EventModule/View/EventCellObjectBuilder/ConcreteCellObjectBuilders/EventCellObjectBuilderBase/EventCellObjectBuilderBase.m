@@ -15,9 +15,7 @@
 #import "PreviousLectureTableViewCellObject.h"
 #import "EventPlainObject.h"
 #import "DateFormatter.h"
-
-static NSInteger const kEventPastEventsCount = 2;
-static NSInteger const kEventPastEventLecturesCount = 5;
+#import "EventCellObjectBuilderConstants.h"
 
 @implementation EventCellObjectBuilderBase
 

@@ -44,7 +44,7 @@
     id managedObjectEvent = [events firstObject];
     
     EventPlainObject *eventPlainObject = [self.ponsomizer convertObject:managedObjectEvent];
-    EventType type = CurrentEvent;//[self.eventTypeDeterminator determinateTypeForEvent:eventPlainObject];
+    EventType type = [self.eventTypeDeterminator determinateTypeForEvent:eventPlainObject];
     eventPlainObject.eventType = @(type);
     return eventPlainObject;
 }
@@ -60,7 +60,7 @@
         event.eventType = @(type);
     }
 
-    NSArray *pastEvents = [self filterEventsWithPastEventType:events];
+    NSArray *pastEvents = [self filterEventsWithPastEventType:[events allObjects]];
     
     NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:EventModelObjectAttributes.startDate
                                                                  ascending:NO];
@@ -86,9 +86,9 @@
     }];
 }
 
-- (NSArray *)filterEventsWithPastEventType:(NSSet *)events {
+- (NSArray *)filterEventsWithPastEventType:(NSArray *)events {
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K = %@", EventModelObjectAttributes.eventType, @(PastEvent)];
-    NSArray *filteredEvents = [[events allObjects] filteredArrayUsingPredicate:predicate];
+    NSArray *filteredEvents = [events filteredArrayUsingPredicate:predicate];
     
     return filteredEvents;
 }
