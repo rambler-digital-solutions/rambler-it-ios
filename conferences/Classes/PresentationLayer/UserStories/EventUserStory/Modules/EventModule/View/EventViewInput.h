@@ -26,14 +26,23 @@
 @protocol EventViewInput <NSObject>
 
 /**
- @author Artem Karpushin
+ @author Vasyura Anastasiya
  
  Method is used to configure view
  
- @param event PlainEvent object
+ @param event      current event
+ @param pastEvents past events
  */
 - (void)configureViewWithEvent:(EventPlainObject *)event pastEvents:(NSArray *)pastEvents;
 
+/**
+ @author Vasyura Anastasiya
+ 
+ Method shows alert with title and message
+ 
+ @param title
+ @param message 
+ */
 - (void)displayAlertWithTitle:(NSString *)title andMessage:(NSString *)message;
 
 @end

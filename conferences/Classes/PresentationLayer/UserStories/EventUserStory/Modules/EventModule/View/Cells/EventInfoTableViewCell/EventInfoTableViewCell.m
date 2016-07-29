@@ -21,8 +21,6 @@
 #import "EventInfoTableViewCell.h"
 #import "EventInfoTableViewCellObject.h"
 
-static CGFloat const EventInfoTableViewCellHeight = 200.0f;
-
 @interface EventInfoTableViewCell ()
 
 @property (weak, nonatomic) IBOutlet UILabel *date;
