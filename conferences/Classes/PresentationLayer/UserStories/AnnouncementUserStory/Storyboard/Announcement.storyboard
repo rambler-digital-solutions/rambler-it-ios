@@ -40,7 +40,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="animator" destination="ZMC-Oq-EAi" id="KXM-Gn-Pyb"/>
-                        <outlet property="nearestAnnouncmentHeaderView" destination="hf2-CT-BWG" id="OhF-6r-Pz3"/>
+                        <outlet property="nearestAnnouncementHeaderView" destination="hf2-CT-BWG" id="zeh-AO-7LP"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nFg-Tn-fxr" userLabel="First Responder" sceneMemberID="firstResponder"/>

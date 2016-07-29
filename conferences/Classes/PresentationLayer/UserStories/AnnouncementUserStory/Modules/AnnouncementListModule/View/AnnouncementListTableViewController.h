@@ -33,7 +33,7 @@
 @property (nonatomic, strong) AnnouncementListDataDisplayManager *dataDisplayManager;
 @property (nonatomic, strong) IBOutlet AnnouncementListAnimator *animator;
 
-@property (nonatomic, strong) IBOutlet NearestAnnouncementTableHeaderView *nearestAnnouncmentHeaderView;
+@property (weak, nonatomic) IBOutlet NearestAnnouncementTableHeaderView *nearestAnnouncementHeaderView;
 
 @end
 

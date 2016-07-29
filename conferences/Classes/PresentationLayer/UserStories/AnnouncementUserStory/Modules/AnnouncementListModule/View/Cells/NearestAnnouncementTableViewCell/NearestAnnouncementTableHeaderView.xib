@@ -28,16 +28,16 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Event #1" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SfU-6N-cdU">
-                    <rect key="frame" x="20" y="431" width="280" height="105"/>
+                    <rect key="frame" x="20" y="384" width="280" height="152"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RWl-tI-ooH">
-                    <rect key="frame" x="51" y="137" width="217" height="217"/>
+                    <rect key="frame" x="74.5" y="137" width="170" height="170"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="RWl-tI-ooH" secondAttribute="height" multiplier="1:1" id="97H-lv-RjA"/>
-                        <constraint firstAttribute="width" constant="217" id="aQZ-Wt-HZ0"/>
+                        <constraint firstAttribute="width" constant="170" id="aQZ-Wt-HZ0"/>
                     </constraints>
                 </imageView>
             </subviews>

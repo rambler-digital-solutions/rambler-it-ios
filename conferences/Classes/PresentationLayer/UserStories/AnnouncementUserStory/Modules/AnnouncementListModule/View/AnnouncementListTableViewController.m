@@ -29,8 +29,6 @@ static CGFloat const kAnnouncementTableViewEstimatedRowHeight = 44.0f;
 
 @interface AnnouncementListTableViewController() <UITableViewDelegate>
 
-@property (strong, nonatomic) UIColor *viewBackgroundColor;
-
 @end
 
 @implementation AnnouncementListTableViewController
@@ -44,7 +42,6 @@ static CGFloat const kAnnouncementTableViewEstimatedRowHeight = 44.0f;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self setScrollViewColor];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
 }
 
@@ -64,8 +61,6 @@ static CGFloat const kAnnouncementTableViewEstimatedRowHeight = 44.0f;
 }
 
 - (void)updateViewWithEventList:(NSArray *)events {
-    [self setScrollViewColor];
-    
     AnnouncementViewModel *announce = events.firstObject;
     [self updateTableViewHeaderWithAnnounce:announce
                                      events:events];
@@ -90,27 +85,27 @@ static CGFloat const kAnnouncementTableViewEstimatedRowHeight = 44.0f;
     [self.animator animateWithContentOffset:scrollView.contentOffset];
 }
 
-#pragma mark - Private methods
-
-- (void)setScrollViewColor {
-    [[UIScrollView appearance] setBackgroundColor:self.viewBackgroundColor];
-}
-
 - (void)updateTableViewHeaderWithAnnounce:(AnnouncementViewModel *)announce
                                    events:(NSArray *)events {
-    self.tableView.tableHeaderView = nil;
     if (!announce) {
         return;
     }
-    [self.nearestAnnouncmentHeaderView updateWithViewModel:announce];
-    CGRect frame = self.nearestAnnouncmentHeaderView.frame;
-    frame.size.width = self.view.bounds.size.width;
-    frame.size = [self.nearestAnnouncmentHeaderView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
-    CGFloat fullSizeHeight = self.tableView.bounds.size.height - self.tabBarController.tabBar.bounds.size.height;
-    frame.size.height = events.count > 1 ? frame.size.height : fullSizeHeight;
-    self.nearestAnnouncmentHeaderView.frame = frame;
-    self.tableView.tableHeaderView = self.nearestAnnouncmentHeaderView;
+    [self.nearestAnnouncementHeaderView updateWithViewModel:announce];
     
+    self.tableView.tableHeaderView = nil;
+    CGRect frame = [self calculateFrameForHeaderView:events.count];
+    self.nearestAnnouncementHeaderView.frame = frame;
+    self.tableView.tableHeaderView = self.nearestAnnouncementHeaderView;
+}
+
+- (CGRect)calculateFrameForHeaderView:(NSInteger)eventCount {
+    CGRect frame = self.nearestAnnouncementHeaderView.frame;
+    frame.size.width = self.view.bounds.size.width;
+    frame.size = [self.nearestAnnouncementHeaderView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    CGFloat fullSizeHeight = self.tableView.bounds.size.height - self.tabBarController.tabBar.bounds.size.height;
+    frame.size.height = eventCount > 1 ? frame.size.height : fullSizeHeight;
+    
+    return frame;
 }
 
 @end
