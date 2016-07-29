@@ -31,16 +31,16 @@
 /**
  @author Zinovyev Konstantin
  
- Метод сообщает делегату о законечнном обновлении tableViewModel
+ Method informs delegate, that table view model was updated
  */
 - (void)didUpdateTableViewModel;
 
 /**
  @author Zinovyev Konstantin
  
- Метод сообщает делегату о нажатии на ячейку, содержащую объект event
+ Method informs delegate, that cell was tapped
  
- @param event Событие, которое находится в нажатой ячейке
+ @param event Event in tapped cell
  */
 - (void)didTapCellWithEvent:(EventPlainObject *)event;
 
@@ -54,18 +54,18 @@
 /**
  @author Zinovyev Konstantin
  
- Метод отвечающий за первоначальную конфигурацию DDM
- 
- @param events Список событий
+ Method is used to configure DDM
+
+ @param events Event list
  */
 - (void)configureDataDisplayManagerWithEvents:(NSArray *)events;
 
 /**
  @author Zinovyev Konstantin
  
- Метод обновляющий TableViewModel новыми событиями
+ Method is used to update TableViewModel with new events
  
- @param events Список событий
+ @param events Event list
  */
 - (void)updateTableViewModelWithEvents:(NSArray *)events;
 

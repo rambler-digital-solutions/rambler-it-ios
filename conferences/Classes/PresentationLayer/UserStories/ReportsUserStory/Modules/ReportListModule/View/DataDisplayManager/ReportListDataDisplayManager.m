@@ -90,8 +90,12 @@
     
     for (EventPlainObject *event in self.events) {
         NSString *eventDate = [self.dateFormatter obtainDateWithDayMonthYearFormat:event.startDate];
-        
-        ReportEventTableViewCellObject *cellObject = [ReportEventTableViewCellObject objectWithEvent:event andDate:eventDate selectedText:nil];
+        NSString *eventName = event.name ? event.name : @"";
+        NSAttributedString *eventAttributedName = [[NSAttributedString alloc] initWithString:eventName];
+
+        ReportEventTableViewCellObject *cellObject = [ReportEventTableViewCellObject objectWithEvent:event
+                                                                                             andDate:eventDate
+                                                                                     highlightedText:eventAttributedName];
         [cellObjects addObject:cellObject];
     }
     

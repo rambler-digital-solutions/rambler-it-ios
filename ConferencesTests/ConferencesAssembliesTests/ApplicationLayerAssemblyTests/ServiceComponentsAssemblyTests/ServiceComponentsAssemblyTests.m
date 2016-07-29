@@ -31,7 +31,6 @@
 #import "OperationScheduler.h"
 #import "OperationSchedulerImplementation.h"
 
-#import "EventPrototypeMapper.h"
 #import "RamblerLocationServiceImplementation.h"
 #import "RamblerInitialAssemblyCollector+Activate.h"
 
@@ -87,17 +86,6 @@
 
     // when
     id result = [self.assembly operationScheduler];
-    
-    // then
-    [self verifyTargetDependency:result withClass:targetClass];
-}
-
-- (void)testThatAssemblyCreatesEventPrototypeMapper {
-    // given
-    Class targetClass = [EventPrototypeMapper class];
-
-    // when
-    id result = [self.assembly eventPrototypeMapper];
     
     // then
     [self verifyTargetDependency:result withClass:targetClass];

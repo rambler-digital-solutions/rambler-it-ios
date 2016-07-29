@@ -24,8 +24,7 @@
 /**
  @author Zinovyev Konstantin
  
- Объект, представляющий LecturePlainObject для отображения.
- По этому объекту создается ReportLectureTableViewCell
+ Object is used to create EventTableViewCell.
  */
 @class LecturePlainObject;
 
@@ -33,10 +32,10 @@
 
 @property (strong, nonatomic, readonly) NSString *date;
 @property (strong, nonatomic, readonly) NSAttributedString *lectureTitle;
-@property (strong, nonatomic, readonly) UIImage *lectureImage;
+@property (strong, nonatomic, readonly) NSURL *imageURL;
 @property (strong, nonatomic, readonly) LecturePlainObject *lecture;
 @property (strong, nonatomic, readonly) NSString *speakerName;
 
-+ (instancetype)objectWithLecture:(LecturePlainObject *)lecture selectedText:(NSString *)selectedText;
++ (instancetype)objectWithLecture:(LecturePlainObject *)lecture highlightedText:(NSAttributedString *)highlightedText;
 
 @end

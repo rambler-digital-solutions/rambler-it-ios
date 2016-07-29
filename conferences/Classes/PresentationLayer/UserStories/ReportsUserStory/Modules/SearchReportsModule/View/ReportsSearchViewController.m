@@ -1,21 +1,34 @@
+// Copyright (c) 2015 RAMBLER&Co
 //
-//  ReportsSearchDisplayController.m
-//  Conferences
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
 //
-//  Created by k.zinovyev on 16.07.16.
-//  Copyright © 2016 Rambler. All rights reserved.
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
 //
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
 
 #import "ReportsSearchViewController.h"
+#import "ReportsSearchViewAnimator.h"
 
 @class LecturePlainObject;
 @class SpeakerPlainObject;
 
 @interface ReportsSearchViewController ()
 
-@property (weak, nonatomic) IBOutlet UITableView *reportsListSearchTableView;
-@property (weak, nonatomic) IBOutlet UIView *emptyPlaceholderView;
-@property (weak, nonatomic) IBOutlet UIView *clearPlaceholderView;
+@property (nonatomic, weak) IBOutlet UITableView *reportsListSearchTableView;
+@property (nonatomic, weak) IBOutlet UIView *emptyPlaceholderView;
+@property (nonatomic, weak) IBOutlet UIView *clearPlaceholderView;
 
 @end
 
@@ -25,8 +38,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(closeClearPlaceholder)];
-    [self.clearPlaceholderView addGestureRecognizer:tapGestureRecognizer];
     [self.output setupView];
 }
 
@@ -39,11 +50,17 @@
 #pragma mark - ReportsSearchViewInput
 
 - (void)showClearPlaceholder {
-    [self showClearPlaceholderWithAnimation];
+    [self.animatorReportsSearchView showClearPlaceholderWithAnimation];
 }
+
+- (void)closeSearchView {
+    [self.animatorReportsSearchView closeSearchViewWithAnimation];
+}
+
 - (void)setupView {
     [self.reportsListSearchTableView setTableFooterView:[UIView new]];
     
+    self.animatorReportsSearchView.delegate = self;
     self.dataDisplayManager.delegate = self;
     
     self.reportsListSearchTableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.reportsListSearchTableView];
@@ -83,42 +100,15 @@
     [self.output didTriggerTapCellWithSpeaker:speaker];
 }
 
-#pragma mark - Animations
+#pragma mark - 
 
-- (void)showClearPlaceholderWithAnimation {
-    [self.clearPlaceholderView setHidden:NO];
-    [self.reportsListSearchTableView setHidden:YES];
-    [self.emptyPlaceholderView setHidden:YES];
-    
-    self.clearPlaceholderView.alpha = 0;
-
-    [UIView animateWithDuration:0.2 animations:^{
-        self.clearPlaceholderView.alpha = 0.4;
-    }];
+- (void)didTapClearPlaceholderView {
+    [self.output didTapClearPlaceholderView];
 }
+#pragma mark - Gesture Recognizer
 
-- (void)closeClearPlaceholder {
-    [self closeSearchViewWithAnimation];
-}
-
-- (void)closeSearchView {
-    [self closeSearchViewWithAnimation];
-}
-
-- (void)closeSearchViewWithAnimation {
-    if (self.view.alpha != 1) {
-        return;
-    }
-    
-    [UIView animateWithDuration:0.2 animations:^{
-        self.view.alpha = 0;
-    } completion:^(BOOL finished) {
-        self.view.alpha = 1;
-        [self.reportsListSearchTableView setHidden:YES];
-        [self.emptyPlaceholderView setHidden:YES];
-        [self.clearPlaceholderView setHidden:YES];
-        [self.output didTapClearPlaceholderView];
-    }];
+- (IBAction)handleTapClearPlaceholder:(id)sender {
+    [self closeSearchView];
 }
 
 @end

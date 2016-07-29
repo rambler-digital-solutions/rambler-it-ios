@@ -24,8 +24,7 @@
 /**
  @author Zinovyev Konstantin
  
- Объект, представляющий SpeakerPlainObject для отображения.
- По этому объекту создается ReportSpeakerTableViewCell
+ Object is used to create EventTableViewCell.
  */
 @class SpeakerPlainObject;
 
@@ -36,6 +35,6 @@
 @property (strong, nonatomic, readonly) NSURL *imageURL;
 @property (strong, nonatomic, readonly) SpeakerPlainObject *speaker;
 
-+ (instancetype)objectWithSpeaker:(SpeakerPlainObject *)speaker selectedText:(NSString *)selectedText;;
++ (instancetype)objectWithSpeaker:(SpeakerPlainObject *)speaker highlightedText:(NSAttributedString *)highlightedText;;
 
 @end

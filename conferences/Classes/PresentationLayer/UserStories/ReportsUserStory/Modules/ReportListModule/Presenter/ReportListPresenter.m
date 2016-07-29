@@ -47,24 +47,21 @@
     [self.view updateViewWithEventList:events];
 }
 
-- (void)didSearchBarTapCancelButton {
+- (void)didTapSearchBarCancelButton {
     [self.reportsSearchModule closeSearchModule];
 }
 #pragma mark - SearchBar Delegate
-- (void)didSearchBarChangedWithText:(NSString *)text {
-    [self.reportsSearchModule updateModuleWithText:text];
+- (void)didChangeSearchBarWithSearchTerm:(NSString *)text {
+    [self.reportsSearchModule updateModuleWithSearchTerm:text];
 }
 
 - (void)didTapClearScreenSearchModule {
     [self.view hideSearchModuleView];
 }
 
-- (void)didSearchBarBeginWithText:(NSString *)text {
-    
-}
 #pragma mark - ReportsSearchModuleOuput
 
-- (void)didLoadReportsSearchModule:(id<ReportsSearchModuleInput>)reportsSearchModule {
+- (void)didLoadReportsSearchModuleInput:(id<ReportsSearchModuleInput>)reportsSearchModule {
     self.reportsSearchModule = reportsSearchModule;
 }
 

@@ -56,15 +56,11 @@
 }
 
 - (id <LectureService>)lectureService {
-    return [TyphoonDefinition withClass:[LectureServiceImplementation class]
-                          configuration:^(TyphoonDefinition *definition) {
-                          }];
+    return [TyphoonDefinition withClass:[LectureServiceImplementation class]];
 }
 
 - (id <SpeakerService>)speakerService {
-    return [TyphoonDefinition withClass:[SpeakerServiceImplementation class]
-                          configuration:^(TyphoonDefinition *definition) {
-                          }];
+    return [TyphoonDefinition withClass:[SpeakerServiceImplementation class]];
 }
 
 - (id <EventListService>)eventListService {

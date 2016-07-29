@@ -1,10 +1,22 @@
+// Copyright (c) 2015 RAMBLER&Co
 //
-//  ReportsSearchDataDisplayManager.m
-//  Conferences
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
 //
-//  Created by k.zinovyev on 16.07.16.
-//  Copyright © 2016 Rambler. All rights reserved.
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
 //
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
 
 #import "ReportsSearchDataDisplayManager.h"
 
@@ -25,7 +37,6 @@
 
 @property (strong, nonatomic) NIMutableTableViewModel *tableViewModel;
 @property (strong, nonatomic) NITableViewActions *tableViewActions;
-@property (strong, nonatomic) NSArray *foundObjects;
 
 @end
 
@@ -40,8 +51,7 @@
 }
 
 - (void)updateTableViewModelWithObjects:(NSArray *)foundObjects searchText:(NSString *)searchText{
-    self.foundObjects = foundObjects;
-    [self updateTableViewModelWithSelectedText:searchText];
+    [self updateTableViewModelWithObjects:foundObjects selectedText:searchText ];
     [self.delegate didUpdateTableViewModel];
 }
 
@@ -49,7 +59,7 @@
 
 - (id<UITableViewDataSource>)dataSourceForTableView:(UITableView *)tableView {
     if (!self.tableViewModel) {
-        [self updateTableViewModelWithSelectedText:nil];
+        [self updateTableViewModelWithObjects:nil searchText:nil];
     }
     return self.tableViewModel;
 }
@@ -96,18 +106,18 @@
     [self.tableViewActions attachToClass:[ReportSpeakerTableViewCellObject class] tapBlock:reportTapActionSpeakerBlock];
 }
 
-- (NSArray *)generateCellObjectsWithSelectedText:(NSString *)selectedText {
-    
-    NSArray *cellObjects = [self.director generateCellObjectsFromPlainObjects:self.foundObjects selectedText:selectedText];
-    
-    return cellObjects;
-}
-
-- (void)updateTableViewModelWithSelectedText:(NSString *)selectedText {
-    NSArray *cellObjects = [self generateCellObjectsWithSelectedText:selectedText];
+- (void)updateTableViewModelWithObjects:(NSArray *)foundObjects selectedText:(NSString *)selectedText {
+    NSArray *cellObjects = [self generateCellObjectsWithObjects:foundObjects selectedText:selectedText];
     
     self.tableViewModel = [[NIMutableTableViewModel alloc] initWithSectionedArray:cellObjects
                                                                          delegate:(id)[NICellFactory class]];
+}
+
+- (NSArray *)generateCellObjectsWithObjects:(NSArray *)foundObjects selectedText:(NSString *)selectedText {
+    
+    NSArray *cellObjects = [self.director generateCellObjectsFromPlainObjects:foundObjects selectedText:selectedText];
+    
+    return cellObjects;
 }
 
 @end

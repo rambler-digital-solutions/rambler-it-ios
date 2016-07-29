@@ -80,8 +80,8 @@
     NSArray *dependencies = @[
                               RamblerSelector(output),
                               RamblerSelector(eventService),
-                              RamblerSelector(eventPrototypeMapper),
-                              RamblerSelector(eventTypeDeterminator)
+                              RamblerSelector(eventTypeDeterminator),
+                              RamblerSelector(ponsomizer)
                               ];
     // when
     id result = [self.assembly interactorEvent];

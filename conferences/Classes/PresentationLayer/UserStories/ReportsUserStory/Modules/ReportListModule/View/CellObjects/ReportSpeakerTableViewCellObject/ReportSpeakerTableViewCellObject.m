@@ -41,19 +41,14 @@
         _speakerName = attributedName;
         _speakerImage = nil;
         _speaker = speaker;
-        _imageURL = speaker.imageUrl;
+        _imageURL = [NSURL URLWithString:speaker.imageUrl];
     }
     return self;
 }
 
-+ (instancetype)objectWithSpeaker:(SpeakerPlainObject *)speaker selectedText:(NSString *)selectedText {
-    NSString *speakerName = speaker.name ? speaker.name : @"";
-    NSMutableAttributedString *attributedName = [[NSMutableAttributedString alloc] initWithString:speakerName];
-    if ([selectedText length] != 0) {
-        NSRange range = [[speaker.name lowercaseString] rangeOfString:selectedText];
-        [attributedName addAttribute:NSForegroundColorAttributeName value:[UIColor colorForSelectedTextSpeakerCellObject] range:range];
-    }
-    return [[self alloc] initWithSpeaker:speaker attributedName:attributedName];
++ (instancetype)objectWithSpeaker:(SpeakerPlainObject *)speaker highlightedText:(NSAttributedString *)highlightedText {
+
+    return [[self alloc] initWithSpeaker:speaker attributedName:highlightedText];
 }
 
 #pragma mark - NICellObject methods

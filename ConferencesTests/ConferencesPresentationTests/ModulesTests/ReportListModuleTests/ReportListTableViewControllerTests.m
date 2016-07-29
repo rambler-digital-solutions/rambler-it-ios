@@ -129,7 +129,7 @@
     [self.viewController searchBar:searchBar textDidChange:searchString];
 
     // then
-    OCMVerify([self.mockOutput didSearchBarChangedWithText:searchString]);
+    OCMVerify([self.mockOutput didChangeSearchBarWithSearchTerm:searchString]);
 }
 
 @end

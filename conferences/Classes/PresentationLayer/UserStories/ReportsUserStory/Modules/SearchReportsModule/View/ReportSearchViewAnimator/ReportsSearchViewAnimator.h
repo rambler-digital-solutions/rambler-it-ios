@@ -18,9 +18,25 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "HTTPMethodConstants.h"
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-NSString *const kHTTPMethodGET= @"GET";
-NSString *const kHTTPMethodPOST = @"POST";
-NSString *const kHTTPMethodPUT = @"PUT";
-NSString *const kHTTPMethodDELETE = @"DELETE";
+@protocol ReportsSearchViewAnimatorOutput <NSObject>
+
+- (void)didTapClearPlaceholderView;
+
+@end
+
+@interface ReportsSearchViewAnimator : NSObject
+
+@property (nonatomic, weak) IBOutlet UITableView *reportsListSearchTableView;
+@property (nonatomic, weak) IBOutlet UIView *emptyPlaceholderView;
+@property (nonatomic, weak) IBOutlet UIView *containerView;
+@property (nonatomic, weak) IBOutlet UIView *clearPlaceholderView;
+@property (nonatomic, weak) id<ReportsSearchViewAnimatorOutput> delegate;
+
+- (void)showClearPlaceholderWithAnimation;
+
+- (void)closeSearchViewWithAnimation;
+
+@end

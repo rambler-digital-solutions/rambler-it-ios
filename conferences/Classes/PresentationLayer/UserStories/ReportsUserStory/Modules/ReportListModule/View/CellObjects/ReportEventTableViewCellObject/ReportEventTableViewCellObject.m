@@ -25,11 +25,11 @@
 
 @interface ReportEventTableViewCellObject ()
 
-@property (strong, nonatomic, readwrite) NSString *date;
-@property (strong, nonatomic, readwrite) NSAttributedString *eventTitle;
-@property (strong, nonatomic, readwrite) UIImage *eventImage;
-@property (strong, nonatomic, readwrite) NSURL *imageURL;
-@property (strong, nonatomic, readwrite) EventPlainObject *event;
+@property (nonatomic, strong, readwrite) NSString *date;
+@property (nonatomic, strong, readwrite) NSAttributedString *eventTitle;
+@property (nonatomic, strong, readwrite) UIImage *eventImage;
+@property (nonatomic, strong, readwrite) NSURL *imageURL;
+@property (nonatomic, strong, readwrite) EventPlainObject *event;
 
 @end
 
@@ -48,14 +48,9 @@
     return self;
 }
 
-+ (instancetype)objectWithEvent:(EventPlainObject *)event andDate:(NSString *)date selectedText:(NSString *)selectedText {
-    NSString *eventName = event.name ? event.name : @"";
-    NSMutableAttributedString *attributedName = [[NSMutableAttributedString alloc] initWithString:eventName];
-    if ([selectedText length] != 0) {
-        NSRange range = [[event.name lowercaseString] rangeOfString:selectedText];
-        [attributedName addAttribute:NSForegroundColorAttributeName value:[UIColor colorForSelectedTextEventCellObject] range:range];
-    }
-    return [[self alloc] initWithEvent:event andDate:date attributedName:attributedName];
++ (instancetype)objectWithEvent:(EventPlainObject *)event andDate:(NSString *)date highlightedText:(NSAttributedString *)highlightedText {
+    
+    return [[self alloc] initWithEvent:event andDate:date attributedName:highlightedText];
 }
 
 #pragma mark - NICellObject methods

@@ -83,15 +83,15 @@
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
     [self.searchEmbedContainer setHidden:NO];
     [self.searchBar setShowsCancelButton:YES animated:YES];
-    [self.output didSearchBarChangedWithText:searchBar.text];
+    [self.output didChangeSearchBarWithSearchTerm:searchBar.text];
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
-    [self.output didSearchBarChangedWithText:searchText];
+    [self.output didChangeSearchBarWithSearchTerm:searchText];
 }
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
-    [self.output didSearchBarTapCancelButton];
+    [self.output didTapSearchBarCancelButton];
 }
 
 - (BOOL)searchBarShouldEndEditing:(UISearchBar *)searchBar {

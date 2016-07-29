@@ -1,3 +1,4 @@
+
 // Copyright (c) 2015 RAMBLER&Co
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -20,7 +21,7 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSString *const kHTTPMethodGET;
-extern NSString *const kHTTPMethodPOST;
-extern NSString *const kHTTPMethodPUT;
-extern NSString *const kHTTPMethodDELETE;
+static NSString *const kHTTPMethodGET= @"GET";
+static NSString *const kHTTPMethodPOST = @"POST";
+static NSString *const kHTTPMethodPUT = @"PUT";
+static NSString *const kHTTPMethodDELETE = @"DELETE";

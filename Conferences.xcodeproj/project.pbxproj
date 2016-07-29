@@ -276,6 +276,7 @@
 		6670504E1D4615C200DD9D6E /* GrayTableViewSectionHeaderAndFooterCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6670504D1D4615C200DD9D6E /* GrayTableViewSectionHeaderAndFooterCellObject.m */; };
 		667050531D46332200DD9D6E /* ReportsSearchCellObjectsBuilderImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 667050521D46332200DD9D6E /* ReportsSearchCellObjectsBuilderImplementation.m */; };
 		667050561D46369100DD9D6E /* ReportsSearchCellObjectsDirectorImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 667050551D46369100DD9D6E /* ReportsSearchCellObjectsDirectorImplementation.m */; };
+		66764D041D4B636B00EF9D58 /* ReportsSearchViewAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 66764D031D4B636B00EF9D58 /* ReportsSearchViewAnimator.m */; };
 		9F0A6C1D1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */; };
 		9F0A6C2E1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C2D1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m */; };
 		9F0A84C31BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A84C21BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m */; };
@@ -348,7 +349,6 @@
 		9F8E5F9D1BC2777100DC10DB /* Conferences.Parse.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F8E5F9C1BC2777100DC10DB /* Conferences.Parse.plist */; };
 		9F8E5FA61BC27CCE00DC10DB /* MappingConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5FA51BC27CCE00DC10DB /* MappingConstants.m */; };
 		9F8E5FA91BC27D0D00DC10DB /* ServiceNameConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5FA81BC27D0D00DC10DB /* ServiceNameConstants.m */; };
-		9F8E5FAD1BC27E7F00DC10DB /* HTTPMethodConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5FAC1BC27E7F00DC10DB /* HTTPMethodConstants.m */; };
 		9FC1F6761D2824000070D9B5 /* EventListServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */; };
 		9FC1F6801D2838FA0070D9B5 /* EventListQueryTransformerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */; };
 		9FC1F6841D28391E0070D9B5 /* EventListQueryTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6831D28391E0070D9B5 /* EventListQueryTransformer.m */; };
@@ -910,6 +910,8 @@
 		667050551D46369100DD9D6E /* ReportsSearchCellObjectsDirectorImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportsSearchCellObjectsDirectorImplementation.m; path = SearchReportsModule/View/ReportsSearchDataDisplayManager/ReportsSearchCellObjectsBuilder/ReportsSearchCellObjectsDirectorImplementation.m; sourceTree = "<group>"; };
 		667050571D464BC700DD9D6E /* ReportsSearchCellObjectsBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportsSearchCellObjectsBuilder.h; path = SearchReportsModule/View/ReportsSearchDataDisplayManager/ReportsSearchCellObjectsBuilder/ReportsSearchCellObjectsBuilder.h; sourceTree = "<group>"; };
 		667050591D464BF200DD9D6E /* ReportsSearchCellObjectsDirector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportsSearchCellObjectsDirector.h; path = SearchReportsModule/View/ReportsSearchDataDisplayManager/ReportsSearchCellObjectsBuilder/ReportsSearchCellObjectsDirector.h; sourceTree = "<group>"; };
+		66764D021D4B636B00EF9D58 /* ReportsSearchViewAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportsSearchViewAnimator.h; path = SearchReportsModule/View/ReportSearchViewAnimator/ReportsSearchViewAnimator.h; sourceTree = "<group>"; };
+		66764D031D4B636B00EF9D58 /* ReportsSearchViewAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportsSearchViewAnimator.m; path = SearchReportsModule/View/ReportSearchViewAnimator/ReportsSearchViewAnimator.m; sourceTree = "<group>"; };
 		84D2CBEF6E088EFC9A139E49 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		892D07FB1BED008000825704 /* NightlyRibbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NightlyRibbon.png; sourceTree = "<group>"; };
 		9F0A6C1B1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CompoundOperationBuilderConfig.h; path = OperationBuilders/CompoundOperationBuilderConfig/CompoundOperationBuilderConfig.h; sourceTree = "<group>"; };
@@ -1070,7 +1072,6 @@
 		9F8E5FA81BC27D0D00DC10DB /* ServiceNameConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServiceNameConstants.m; path = Constants/ServiceNameConstants.m; sourceTree = "<group>"; };
 		9F8E5FAA1BC27D1D00DC10DB /* NetworkingConstantsHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NetworkingConstantsHeader.h; path = Constants/NetworkingConstantsHeader.h; sourceTree = "<group>"; };
 		9F8E5FAB1BC27E7F00DC10DB /* HTTPMethodConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTTPMethodConstants.h; path = Constants/HTTPMethodConstants.h; sourceTree = "<group>"; };
-		9F8E5FAC1BC27E7F00DC10DB /* HTTPMethodConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTTPMethodConstants.m; path = Constants/HTTPMethodConstants.m; sourceTree = "<group>"; };
 		9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListServiceTests.m; path = EventListServiceTests/EventListServiceTests.m; sourceTree = "<group>"; };
 		9FC1F6781D2826D10070D9B5 /* QueryTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QueryTransformer.h; path = CoreComponents/QueryTransformers/QueryTransformer.h; sourceTree = "<group>"; };
 		9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListQueryTransformerTests.m; path = CoreLayer/CoreComponents/QueryTransformers/EventListQueryTransformer/EventListQueryTransformerTests.m; sourceTree = "<group>"; };
@@ -3574,6 +3575,7 @@
 		667050081D4613EA00DD9D6E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				66764D011D4B633F00EF9D58 /* ReportSearchViewAnimator */,
 				6670501E1D46146100DD9D6E /* ReportsSearchDataDisplayManager */,
 				667050191D46145300DD9D6E /* ReportsSearchViewController.h */,
 				6670501A1D46145300DD9D6E /* ReportsSearchViewController.m */,
@@ -3670,6 +3672,15 @@
 				667050591D464BF200DD9D6E /* ReportsSearchCellObjectsDirector.h */,
 			);
 			name = ReportsSearchCellObjectsBuilder;
+			sourceTree = "<group>";
+		};
+		66764D011D4B633F00EF9D58 /* ReportSearchViewAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				66764D021D4B636B00EF9D58 /* ReportsSearchViewAnimator.h */,
+				66764D031D4B636B00EF9D58 /* ReportsSearchViewAnimator.m */,
+			);
+			name = ReportSearchViewAnimator;
 			sourceTree = "<group>";
 		};
 		9879306505819DD768BE2239 /* Pods */ = {
@@ -4937,7 +4948,6 @@
 				9F8E5FA71BC27D0D00DC10DB /* ServiceNameConstants.h */,
 				9F8E5FA81BC27D0D00DC10DB /* ServiceNameConstants.m */,
 				9F8E5FAB1BC27E7F00DC10DB /* HTTPMethodConstants.h */,
-				9F8E5FAC1BC27E7F00DC10DB /* HTTPMethodConstants.m */,
 			);
 			name = Constants;
 			sourceTree = "<group>";
@@ -5486,6 +5496,7 @@
 				6670504B1D4615BC00DD9D6E /* ReportEventTableViewCellObject.m in Sources */,
 				2B2064821D3F9CE900246C8D /* _LecturePlainObject.m in Sources */,
 				2B2064841D3F9CE900246C8D /* _RegistrationQuestionPlainObject.m in Sources */,
+				66764D041D4B636B00EF9D58 /* ReportsSearchViewAnimator.m in Sources */,
 				631FFE561BEF930200749DB8 /* ReportListRouter.m in Sources */,
 				631808411C482B1300A61E7D /* SpeakerShortInfoPresenter.m in Sources */,
 				63F6135D1CB00A220002AEF0 /* EventHeaderRouter.m in Sources */,
@@ -5575,7 +5586,6 @@
 				6670503C1D4615A100DD9D6E /* ReportLectureTableViewCell.m in Sources */,
 				6670504E1D4615C200DD9D6E /* GrayTableViewSectionHeaderAndFooterCellObject.m in Sources */,
 				9F8E5F781BC2571B00DC10DB /* NetworkClientsAssembly.m in Sources */,
-				9F8E5FAD1BC27E7F00DC10DB /* HTTPMethodConstants.m in Sources */,
 				63F613741CB00A220002AEF0 /* LectureInfoTableViewCell.m in Sources */,
 				9F0A85021BC1698B006F79FB /* ResponseValidationOperation.m in Sources */,
 				63F6135B1CB00A220002AEF0 /* EventHeaderInteractor.m in Sources */,

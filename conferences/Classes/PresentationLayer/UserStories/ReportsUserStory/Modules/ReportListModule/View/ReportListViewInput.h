@@ -25,25 +25,25 @@
 /**
  @author Zinovyev Konstantin
  
- Сообщает View, о том что требуется первоначальная настройка view
- 
- @param events Список событий
+ Method is used to inform View about initial setup
+
+ @param events Event list
  */
 - (void)setupViewWithEventList:(NSArray *)events;
 
 /**
  @author Zinovyev Konstantin
  
- Сообщает View, о том что требуется обновление view новыми событиями
+ Method is used to inform View that events should be updated
  
- @param events Список событий
+ @param eventsEvent list
  */
 - (void)updateViewWithEventList:(NSArray *)events;
 
 /**
  @author Zinovyev Konstantin
  
- Сообщает View, о том что требуется скрыть модуль SearchModule
+ Method is used to inform View that SearchModuleView should be hidden
  
  */
 - (void)hideSearchModuleView;

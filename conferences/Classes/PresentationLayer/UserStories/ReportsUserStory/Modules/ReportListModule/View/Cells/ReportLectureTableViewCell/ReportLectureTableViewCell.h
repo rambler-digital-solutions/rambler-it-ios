@@ -21,6 +21,11 @@
 #import <UIKit/UIKit.h>
 #import <NICellFactory.h>
 
+/**
+ @author Zinovyev Konstantin
+ 
+ Object is used to showing cell with lecture in table view
+ */
 @interface ReportLectureTableViewCell : UITableViewCell <NICell>
 
 @end

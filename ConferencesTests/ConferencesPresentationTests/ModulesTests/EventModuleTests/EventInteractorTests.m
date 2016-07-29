@@ -29,18 +29,18 @@
 #import "EventInteractorOutput.h"
 #import "EventStoreServiceProtocol.h"
 #import "ErrorConstants.h"
+#import "ROSPonsomizer.h"
 
 typedef void (^ProxyBlock)(NSInvocation *);
 
 @interface EventInteractorTests : XCTestCase
 
-@property (strong, nonatomic) EventInteractor *interactor;
-@property (strong, nonatomic) id <EventService> eventServiceMock;
-@property (strong, nonatomic) id <> prototypeMapperMock;
-@property (strong, nonatomic) EventTypeDeterminator *eventTypeDeterminatorMock;
-@property (strong, nonatomic) id <EventInteractorOutput> presenterMock;
-@property (strong, nonatomic) id eventStoreServiceMock;
-
+@property (nonatomic, strong) EventInteractor *interactor;
+@property (nonatomic, strong) id <EventService> eventServiceMock;
+@property (nonatomic, strong) EventTypeDeterminator *eventTypeDeterminatorMock;
+@property (nonatomic, strong) id <EventInteractorOutput> presenterMock;
+@property (nonatomic, strong) id eventStoreServiceMock;
+@property (nonatomic, strong) id <ROSPonsomizer>mockPonsomizer;
 @end
 
 @implementation EventInteractorTests
@@ -50,30 +50,29 @@ typedef void (^ProxyBlock)(NSInvocation *);
 
     self.interactor = [EventInteractor new];
     self.eventServiceMock = OCMProtocolMock(@protocol(EventService));
-    self.prototypeMapperMock = OCMProtocolMock(@protocol(PrototypeMapper));
     self.eventTypeDeterminatorMock = OCMClassMock([EventTypeDeterminator class]);
     self.presenterMock = OCMProtocolMock(@protocol(EventInteractorOutput));
     self.eventStoreServiceMock = OCMProtocolMock(@protocol(EventStoreServiceProtocol));
+    self.mockPonsomizer = OCMProtocolMock(@protocol(ROSPonsomizer));
     
     self.interactor.eventService = self.eventServiceMock;
-    self.interactor.eventPrototypeMapper = self.prototypeMapperMock;
     self.interactor.eventTypeDeterminator = self.eventTypeDeterminatorMock;
     self.interactor.output = self.presenterMock;
     self.interactor.eventStoreService = self.eventStoreServiceMock;
+    self.interactor.ponsomizer = self.mockPonsomizer;
 }
 
 - (void)tearDown {
     self.interactor = nil;
     [(id)self.eventServiceMock stopMocking];
     self.eventServiceMock = nil;
-    [(id)self.prototypeMapperMock stopMocking];
-    self.prototypeMapperMock = nil;
     [(id)self.eventTypeDeterminatorMock stopMocking];
     self.eventTypeDeterminatorMock = nil;
     [(id)self.presenterMock stopMocking];
     self.presenterMock = nil;
     [self.eventStoreServiceMock stopMocking];
     self.eventStoreServiceMock = nil;
+    self.mockPonsomizer = nil;
     
     [super tearDown];
 }
@@ -84,14 +83,15 @@ typedef void (^ProxyBlock)(NSInvocation *);
     NSArray *events = @[event];
     
     OCMStub([self.eventServiceMock obtainEventWithPredicate:OCMOCK_ANY]).andReturn(events);
-    
+    OCMStub([self.mockPonsomizer convertObject:OCMOCK_ANY]).andReturn(event);
     // when
     EventPlainObject *obtainedEvent = [self.interactor obtainEventWithObjectId:OCMOCK_ANY];
     
     // then
-    OCMVerify([self.prototypeMapperMock fillObject:OCMOCK_ANY withObject:event]);
     OCMVerify([self.eventTypeDeterminatorMock determinateTypeForEvent:OCMOCK_ANY]);
-    XCTAssertNotNil(obtainedEvent);
+    OCMVerify([self.mockPonsomizer convertObject:OCMOCK_ANY]);
+    OCMVerify([self.eventServiceMock obtainEventWithPredicate:OCMOCK_ANY]);
+    XCTAssertEqual(obtainedEvent, event);
 }
 
 - (void)testSuccessSaveEventToCalendar {

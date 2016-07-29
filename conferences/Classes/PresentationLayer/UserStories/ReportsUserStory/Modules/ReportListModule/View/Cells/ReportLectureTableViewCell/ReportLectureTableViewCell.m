@@ -26,9 +26,9 @@ static CGFloat const kReportLectureTableViewCellHeight = 116.0f;
 
 @interface ReportLectureTableViewCell ()
 
-@property (weak, nonatomic) IBOutlet UILabel *lectureTitle;
-@property (weak, nonatomic) IBOutlet UILabel *speakerName;
-@property (weak, nonatomic) IBOutlet UIImageView *lectureImageView;
+@property (nonatomic, weak) IBOutlet UILabel *lectureTitle;
+@property (nonatomic, weak) IBOutlet UILabel *speakerName;
+@property (nonatomic, weak) IBOutlet UIImageView *lectureImageView;
 
 @end
 
@@ -38,15 +38,18 @@ static CGFloat const kReportLectureTableViewCellHeight = 116.0f;
 
 - (BOOL)shouldUpdateCellWithObject:(ReportLectureTableViewCellObject *)object {
     self.lectureTitle.attributedText = object.lectureTitle;
-    self.lectureImageView.image = [UIImage imageNamed:@"sleep"];
-    self.lectureImageView.layer.cornerRadius = self.lectureImageView.frame.size.height/2.0;
+    [self.lectureImageView sd_setImageWithURL:object.imageURL
+                             placeholderImage:nil];
     self.speakerName.text = object.speakerName;
     self.separatorInset = UIEdgeInsetsMake(0.f, self.bounds.size.width, 0.f, 0.0f);
-    
+    self.lectureImageView.layer.cornerRadius = self.lectureImageView.frame.size.height/2.0;
+    CGFloat a = self.lectureImageView.frame.size.height/2.0;
     return YES;
 }
 
-+ (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
++ (CGFloat)heightForObject:(id)object
+               atIndexPath:(NSIndexPath *)indexPath
+                 tableView:(UITableView *)tableView {
     return kReportLectureTableViewCellHeight;
 }
 

@@ -26,7 +26,7 @@
 /**
  @author Zinovyev Konstantin
  
- Метод открывающий EventModule с событием имеющий идентификатор objectId
+ Method is used to open EventModule and configure with event Id
  
  @param objectId Идентификатор события
  */
@@ -35,9 +35,9 @@
 /**
  @author Zinovyev Konstantin
  
- Метод отвечает за конфигурацию ReportsSearchModule
+ Method is used to configure ReportsSearchModule
  
- @param moduleOutput Презентер ReportListModule
+ @param moduleOutput Report list presenter
  */
 - (void)configureReportsSearchModuleWithModuleOutput:(id<ReportsSearchModuleOutput>)moduleOutput;
 

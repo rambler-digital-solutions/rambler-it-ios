@@ -39,14 +39,16 @@ static CGFloat const kReportEventTableViewCellHeight = 116.0f;
 - (BOOL)shouldUpdateCellWithObject:(ReportEventTableViewCellObject *)object {
     self.date.text = object.date;
     self.eventTitle.attributedText = object.eventTitle;
-    UIImage *placeholder = [UIImage imageNamed:@"logo-js"];
-    [self.eventImageView sd_setImageWithURL:object.imageURL placeholderImage:placeholder];
+    [self.eventImageView sd_setImageWithURL:object.imageURL
+                           placeholderImage:nil];
     self.separatorInset = UIEdgeInsetsMake(0.f, self.bounds.size.width, 0.f, 0.0f);
     
     return YES;
 }
 
-+ (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
++ (CGFloat)heightForObject:(id)object
+               atIndexPath:(NSIndexPath *)indexPath
+                 tableView:(UITableView *)tableView {
     return kReportEventTableViewCellHeight;
 }
 

@@ -27,8 +27,8 @@
 - (NSArray *)obtainLectureWithPredicate:(NSPredicate *)predicate {
     NSManagedObjectContext *context = [NSManagedObjectContext MR_defaultContext];
     
-    NSArray *lectures = [LectureModelObject MR_findAllWithPredicate:predicate inContext:context];
-    
+    NSArray *lectures = [LectureModelObject MR_findAllWithPredicate:predicate
+                                                          inContext:context];
     return lectures;
 }
 

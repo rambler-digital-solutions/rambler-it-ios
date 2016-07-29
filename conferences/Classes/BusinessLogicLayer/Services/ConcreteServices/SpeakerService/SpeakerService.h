@@ -41,7 +41,7 @@ typedef void (^SpeakerCompletionBlock)(Speaker *speaker, NSError *error);
  
  @return Speaker object
  */
-- (id)obtainSpeakerWithPredicate:(NSPredicate *)predicate;
+- (NSArray *)obtainSpeakerWithPredicate:(NSPredicate *)predicate;
 
 /**
  @author Artem Karpushin

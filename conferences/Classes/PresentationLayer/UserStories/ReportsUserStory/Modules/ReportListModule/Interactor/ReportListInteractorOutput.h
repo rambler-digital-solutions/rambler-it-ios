@@ -25,7 +25,7 @@
 /**
  @author Zinovyev Konstantin
  
- Method informs the presenter about updating a cached list of events thar received from the server
+ Method is used to inform the presenter about updating a cached list of events that has received from the server
  
  @param events Managed Objects
  */

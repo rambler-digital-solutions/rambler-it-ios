@@ -18,26 +18,38 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import <Nimbus/NimbusModels.h>
+#import "ReportsSearchViewAnimator.h"
 
-@class EventPlainObject;
-@class SpeakerPlainObject;
-@class LecturePlainObject;
+static const CGFloat kTimeAnimationDuration = 0.2;
 
-/**
- @author Zinovyev Konstantin
- 
- Object is used to create EventTableViewCell.
- */
-@interface ReportEventTableViewCellObject : NSObject <NICellObject>
+@implementation ReportsSearchViewAnimator
 
-@property (nonatomic, strong, readonly) NSString *date;
-@property (nonatomic, strong, readonly) NSAttributedString *eventTitle;
-@property (nonatomic, strong, readonly) UIImage *eventImage;
-@property (nonatomic, strong, readonly) NSURL *imageURL;
-@property (nonatomic, strong, readonly) EventPlainObject *event;
+- (void)showClearPlaceholderWithAnimation {
+    [self.clearPlaceholderView setHidden:NO];
+    [self.reportsListSearchTableView setHidden:YES];
+    [self.emptyPlaceholderView setHidden:YES];
+    
+    self.clearPlaceholderView.alpha = 0;
+    
+    [UIView animateWithDuration:kTimeAnimationDuration animations:^{
+        self.clearPlaceholderView.alpha = 1;
+    }];
+}
 
-+ (instancetype)objectWithEvent:(EventPlainObject *)event andDate:(NSString *)date highlightedText:(NSAttributedString *)highlightedText;
+- (void)closeSearchViewWithAnimation {
+    if (self.containerView.alpha != 1) {
+        return;
+    }
+    
+    [UIView animateWithDuration:kTimeAnimationDuration animations:^{
+        self.containerView.alpha = 0;
+    } completion:^(BOOL finished) {
+        self.containerView.alpha = 1;
+        [self.reportsListSearchTableView setHidden:YES];
+        [self.emptyPlaceholderView setHidden:YES];
+        [self.clearPlaceholderView setHidden:YES];
+        [self.delegate didTapClearPlaceholderView];
+    }];
+}
 
 @end

@@ -26,10 +26,10 @@
 
 @interface ReportLectureTableViewCellObject ()
 
-@property (strong, nonatomic, readwrite) NSAttributedString *lectureTitle;
-@property (strong, nonatomic, readwrite) UIImage *lectureImage;
-@property (strong, nonatomic, readwrite) LecturePlainObject *lecture;
-@property (strong, nonatomic, readwrite) NSString *speakerName;
+@property (nonatomic, strong, readwrite) NSAttributedString *lectureTitle;
+@property (nonatomic, strong, readwrite) NSURL *imageURL;
+@property (nonatomic, strong, readwrite) LecturePlainObject *lecture;
+@property (nonatomic, strong, readwrite) NSString *speakerName;
 
 @end
 
@@ -37,29 +37,30 @@
 
 #pragma mark - Initialization
 
-- (instancetype)initWithLecture:(LecturePlainObject *)lecture attributedName:(NSAttributedString *)attributedName speakerName:(NSString *)speakerName{
+- (instancetype)initWithLecture:(LecturePlainObject *)lecture
+                 attributedName:(NSAttributedString *)attributedName
+                    speakerName:(NSString *)speakerName
+                       imageURL:(NSURL *)imageURL {
     self = [super init];
     if (self) {
         _lectureTitle = attributedName;
-        _lectureImage = nil;
+        _imageURL = imageURL;
         _lecture = lecture;
-        
         _speakerName = speakerName;
         
     }
     return self;
 }
 
-+ (instancetype)objectWithLecture:(LecturePlainObject *)lecture selectedText:(NSString *)selectedText {
-    NSString *lectureName = lecture.name ? lecture.name : @"";
-    NSMutableAttributedString *attributedName = [[NSMutableAttributedString alloc] initWithString:lectureName];
-    SpeakerPlainObject *speaker = [lecture speaker];
-    NSString *speakerName = speaker.name;
-    if ([selectedText length] != 0) {
-        NSRange range = [[lecture.name lowercaseString] rangeOfString:selectedText];
-        [attributedName addAttribute:NSForegroundColorAttributeName value:[UIColor colorForSelectedTextLectureCellObject] range:range];
-    }
-    return [[self alloc] initWithLecture:lecture attributedName:attributedName speakerName:speakerName];
++ (instancetype)objectWithLecture:(LecturePlainObject *)lecture
+                  highlightedText:(NSAttributedString *)highlightedText {
+    
+    NSString *speakerName = [lecture speaker].name;
+    NSURL *lectureImageURL = [NSURL URLWithString:[lecture speaker].imageUrl];
+    return [[self alloc] initWithLecture:lecture
+                          attributedName:highlightedText
+                             speakerName:speakerName
+                                imageURL:(NSURL *)lectureImageURL];
 }
 
 #pragma mark - NICellObject methods

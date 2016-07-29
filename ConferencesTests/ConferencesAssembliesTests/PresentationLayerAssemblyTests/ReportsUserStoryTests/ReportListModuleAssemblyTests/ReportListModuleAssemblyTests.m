@@ -69,7 +69,7 @@
     NSArray *dependencies = @[
                               RamblerSelector(output),
                               RamblerSelector(eventService),
-                              RamblerSelector(eventPrototypeMapper),
+                              RamblerSelector(ponsomizer),
                               RamblerSelector(eventTypeDeterminator)
                               ];
     // when

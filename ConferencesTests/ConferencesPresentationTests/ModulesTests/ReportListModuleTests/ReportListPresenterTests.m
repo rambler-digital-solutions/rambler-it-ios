@@ -81,30 +81,30 @@
     // given
     NSArray *searchString = nil;
     // when
-    [self.presenter didSearchBarChangedWithText:searchString];
+    [self.presenter didChangeSearchBarWithSearchTerm:searchString];
     
     // then
-    OCMVerify([self.mockReportsSearchModule updateModuleWithText:searchString]);
+    OCMVerify([self.mockReportsSearchModule updateModuleWithSearchTerm:searchString]);
 }
 
 - (void)testCorrectSearchBarChangedWithEmptyText {
     // given
     NSArray *searchString = @"";
     // when
-    [self.presenter didSearchBarChangedWithText:searchString];
+    [self.presenter didChangeSearchBarWithSearchTerm:searchString];
     
     // then
-    OCMVerify([self.mockReportsSearchModule updateModuleWithText:searchString]);
+    OCMVerify([self.mockReportsSearchModule updateModuleWithSearchTerm:searchString]);
 }
 
 - (void)testCorrectSearchBarChangedWithText {
     // given
     NSArray *searchString = @"test";
     // when
-    [self.presenter didSearchBarChangedWithText:searchString];
+    [self.presenter didChangeSearchBarWithSearchTerm:searchString];
     
     // then
-    OCMVerify([self.mockReportsSearchModule updateModuleWithText:searchString]);
+    OCMVerify([self.mockReportsSearchModule updateModuleWithSearchTerm:searchString]);
 }
 
 @end

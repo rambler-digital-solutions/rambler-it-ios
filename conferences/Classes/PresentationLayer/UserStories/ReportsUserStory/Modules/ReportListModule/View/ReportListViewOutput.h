@@ -27,43 +27,34 @@
 /**
  @author Zinovyev Konstantin
  
- Метод сообщает презентеру о том, что требуется настроить view
+ Method is used to inform presenter that need setup the view
  */
 - (void)setupView;
 
 /**
  @author Zinovyev Konstantin
  
- Метод сообщает презентеру о том, что была нажата ячейка
+ Method is used to inform presenter that cell was tapped
  
- @param event Событие в нажатой ячейке
+ @param event Event in tapped cell
  */
 - (void)didTriggerTapCellWithEvent:(EventPlainObject *)event;
 
 /**
  @author Zinovyev Konstantin
  
- Метод сообщает презентеру, о том что пользователь изменил текст поиска
+ Method is used to inform presenter that user has change the search text
  
- @param text Введенный в поиск
+ @param text Text in search bar
  */
-- (void)didSearchBarChangedWithText:(NSString *)text;
+- (void)didChangeSearchBarWithSearchTerm:(NSString *)text;
 
 /**
  @author Zinovyev Konstantin
  
- Метод сообщает презентеру, о том что пользователь нажал на поле поиска
- 
- @param text Текст в поле поиска
+ Method is used to inform presenter that user has tapped the cancel button
  */
-- (void)didSearchBarBeginWithText:(NSString *)text;
-
-/**
- @author Zinovyev Konstantin
- 
- Метод сообщает презентеру, о том что пользователь нажал на кнопку Cancel в поиске
- */
-- (void)didSearchBarTapCancelButton;
+- (void)didTapSearchBarCancelButton;
 
 @end
 

@@ -91,9 +91,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view hidden="YES" alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="39z-7p-f7K" userLabel="ClearPlaceholder">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="39z-7p-f7K" userLabel="ClearPlaceholder">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="wEp-zY-b0M" appends="YES" id="Gbc-bF-Hm0"/>
+                                </connections>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ef0-fI-DXD" userLabel="EmptyPlaceholder">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -131,27 +135,41 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ymM-1E-AlH" firstAttribute="top" secondItem="Aqa-0h-oMZ" secondAttribute="top" id="34R-oP-xdr"/>
-                            <constraint firstAttribute="trailing" secondItem="ymM-1E-AlH" secondAttribute="trailing" id="571-GR-dhV"/>
-                            <constraint firstItem="ymM-1E-AlH" firstAttribute="leading" secondItem="Aqa-0h-oMZ" secondAttribute="leading" id="8BT-pX-4UW"/>
                             <constraint firstItem="ef0-fI-DXD" firstAttribute="top" secondItem="Aqa-0h-oMZ" secondAttribute="top" id="Ecq-y4-TnE"/>
+                            <constraint firstItem="ymM-1E-AlH" firstAttribute="leading" secondItem="Aqa-0h-oMZ" secondAttribute="leading" id="H2q-ih-ycf"/>
+                            <constraint firstAttribute="bottom" secondItem="ymM-1E-AlH" secondAttribute="bottom" id="K4M-6y-zA2"/>
                             <constraint firstAttribute="bottom" secondItem="39z-7p-f7K" secondAttribute="bottom" id="UbA-M4-osN"/>
-                            <constraint firstAttribute="bottom" secondItem="ymM-1E-AlH" secondAttribute="bottom" id="ZU1-XP-86E"/>
+                            <constraint firstItem="ymM-1E-AlH" firstAttribute="top" secondItem="Aqa-0h-oMZ" secondAttribute="top" id="Xln-S8-C6S"/>
                             <constraint firstItem="39z-7p-f7K" firstAttribute="leading" secondItem="Aqa-0h-oMZ" secondAttribute="leading" id="dcc-q9-gXU"/>
                             <constraint firstAttribute="bottom" secondItem="ef0-fI-DXD" secondAttribute="bottom" id="ezL-kk-HyZ"/>
                             <constraint firstItem="ef0-fI-DXD" firstAttribute="leading" secondItem="Aqa-0h-oMZ" secondAttribute="leading" id="hnO-1s-2LW"/>
                             <constraint firstItem="39z-7p-f7K" firstAttribute="top" secondItem="Aqa-0h-oMZ" secondAttribute="top" id="mLA-rD-Uez"/>
                             <constraint firstAttribute="trailing" secondItem="ef0-fI-DXD" secondAttribute="trailing" id="tG9-Ky-f9M"/>
                             <constraint firstAttribute="trailing" secondItem="39z-7p-f7K" secondAttribute="trailing" id="utN-dQ-xay"/>
+                            <constraint firstAttribute="trailing" secondItem="ymM-1E-AlH" secondAttribute="trailing" id="x13-Pa-hau"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="animatorReportsSearchView" destination="WVH-53-MID" id="jRP-CI-LuA"/>
                         <outlet property="clearPlaceholderView" destination="39z-7p-f7K" id="ob4-C1-Bwf"/>
                         <outlet property="emptyPlaceholderView" destination="ef0-fI-DXD" id="3Wj-3u-Nhe"/>
                         <outlet property="reportsListSearchTableView" destination="ymM-1E-AlH" id="fWt-OP-4Fi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iMU-4N-SSR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="wEp-zY-b0M">
+                    <connections>
+                        <action selector="handleTapClearPlaceholder:" destination="oc7-Lc-F2T" id="k5L-jW-QMO"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <customObject id="WVH-53-MID" customClass="ReportsSearchViewAnimator">
+                    <connections>
+                        <outlet property="clearPlaceholderView" destination="39z-7p-f7K" id="7HA-Zs-fqA"/>
+                        <outlet property="containerView" destination="Aqa-0h-oMZ" id="rrA-88-q1U"/>
+                        <outlet property="emptyPlaceholderView" destination="ef0-fI-DXD" id="E9D-lL-eVO"/>
+                        <outlet property="reportsListSearchTableView" destination="ymM-1E-AlH" id="G0n-KC-DaO"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="1696" y="1439"/>
         </scene>
