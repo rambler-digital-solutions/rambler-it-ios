@@ -18,15 +18,22 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
-#import "NICellFactory.h"
+#import <Foundation/Foundation.h>
+#import <Nimbus/NimbusModels.h>
 
-@interface NearestAnnouncementTableViewCell : UITableViewCell <NICell>
+@class EventPlainObject;
 
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (weak, nonatomic) IBOutlet UILabel *date;
-@property (weak, nonatomic) IBOutlet UILabel *time;
-@property (weak, nonatomic) IBOutlet UILabel *eventTitle;
-@property (weak, nonatomic) IBOutlet UIView *cellView;
+@interface AnnouncementViewModel : NSObject
+
+@property (strong, nonatomic, readonly) NSString *eventTitle;
+@property (strong, nonatomic, readonly) NSArray *eventTags;
+@property (strong, nonatomic, readonly) NSURL *imageUrl;
+@property (strong, nonatomic, readonly) NSString *date;
+@property (strong, nonatomic, readonly) NSString *time;
+@property (strong, nonatomic, readonly) EventPlainObject *event;
+
++ (instancetype)objectWithEvent:(EventPlainObject *)event
+                      eventDate:(NSString *)date
+                           time:(NSString *)time;
 
 @end

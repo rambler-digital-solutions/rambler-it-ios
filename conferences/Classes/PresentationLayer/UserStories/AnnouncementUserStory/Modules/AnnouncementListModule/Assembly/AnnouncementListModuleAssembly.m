@@ -27,8 +27,11 @@
 #import "ServiceComponents.h"
 #import "PresentationLayerHelpersAssembly.h"
 #import "PonsomizerAssembly.h"
+#import "NearestAnnouncementTableHeaderView.h"
+#import "AnnounceViewModelBuilder.h"
+#import "UIView+LJLoadFromNib.h"
 
-@implementation  AnnouncementListModuleAssembly
+@implementation AnnouncementListModuleAssembly
 
 - (AnnouncementListTableViewController *)viewAnnouncementList {
     return [TyphoonDefinition withClass:[AnnouncementListTableViewController class]
@@ -55,12 +58,14 @@
 - (AnnouncementListPresenter *)presenterAnnouncementList {
     return [TyphoonDefinition withClass:[AnnouncementListPresenter class]
                           configuration:^(TyphoonDefinition *definition) {
-                            [definition injectProperty:@selector(view) 
-                                                  with:[self viewAnnouncementList]];                                            
-                            [definition injectProperty:@selector(interactor) 
-                                                  with:[self interactorAnnouncementList]];
-                            [definition injectProperty:@selector(router) 
-                                                  with:[self routerAnnouncementList]];
+                              [definition injectProperty:@selector(view)
+                                                    with:[self viewAnnouncementList]];
+                              [definition injectProperty:@selector(interactor)
+                                                    with:[self interactorAnnouncementList]];
+                              [definition injectProperty:@selector(router)
+                                                    with:[self routerAnnouncementList]];
+                              [definition injectProperty:@selector(viewModelBuilder)
+                                                    with:[self viewModelBuilderAnnouncementList]];
             }];
 }
 
@@ -73,11 +78,22 @@
 }
 
 - (AnnouncementListDataDisplayManager *)dataDisplayManagerAnnouncementList {
-    return [TyphoonDefinition withClass:[AnnouncementListDataDisplayManager class]
+    return [TyphoonDefinition withClass:[AnnouncementListDataDisplayManager class]];
+}
+
+- (AnnounceViewModelBuilder *)viewModelBuilderAnnouncementList {
+    return [TyphoonDefinition withClass:[AnnounceViewModelBuilder class]
                           configuration:^(TyphoonDefinition *definition) {
                               [definition injectProperty:@selector(dateFormatter)
                                                     with:[self.presentationLayerHelpersAssembly dateFormatter]];
-    }];
+                          }];
+}
+
+- (NearestAnnouncementTableHeaderView *)nearestAnnouncementTableHeaderViewAnnouncementList {
+    return [TyphoonDefinition withClass:[NearestAnnouncementTableHeaderView class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition useInitializer:@selector(loadFromNib)];
+                          }];
 }
 
 @end

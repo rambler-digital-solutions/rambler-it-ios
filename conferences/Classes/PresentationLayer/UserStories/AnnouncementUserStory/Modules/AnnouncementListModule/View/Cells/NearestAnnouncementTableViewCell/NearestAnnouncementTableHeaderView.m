@@ -18,46 +18,29 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "NearestAnnouncementTableViewCell.h"
-#import "NearestAnnouncementTableViewCellObject.h"
+#import "NearestAnnouncementTableHeaderView.h"
+#import "MetaEventPlainObject.h"
 
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "AnnouncementViewModel.h"
 
 static NSString *const kPlaceholderImageName = @"placeholder";
-static CGFloat const ValueToCutForShortcutDisplayMode = 114.0f;
 
-@interface NearestAnnouncementTableViewCell ()
+@interface NearestAnnouncementTableHeaderView ()
 
 @property (assign, nonatomic) CGFloat FutureEventTableViewCellHeight;
 
 @end
 
-@implementation NearestAnnouncementTableViewCell
+@implementation NearestAnnouncementTableHeaderView
 
-#pragma mark - NICell methods
+- (void)updateWithViewModel:(AnnouncementViewModel *)viewModel {
+    self.eventTitle.text = viewModel.eventTitle;
+    self.date.text = viewModel.date;
+    self.time.text = viewModel.time;
 
-- (BOOL)shouldUpdateCellWithObject:(NearestAnnouncementTableViewCellObject *)object {
-    self.eventTitle.text = object.eventTitle;
-    self.date.text = object.date;
-    self.time.text = object.time;
-    self.imageView.image = object.image;
-    [self.cellView setBackgroundColor:object.backgroundColor];
-    
-    [self.imageView sd_setImageWithURL:object.imageUrl
-                      placeholderImage:[UIImage imageNamed:kPlaceholderImageName]];
-
-    return YES;
-}
-
-+ (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
-    NearestAnnouncementTableViewCellDisplayMode displayMode = ((NearestAnnouncementTableViewCellObject *)object).displayMode;
-        
-    if (displayMode == NearestAnnouncementTableViewCellDisplayModeDefault) {
-        return tableView.frame.size.height;
-    }
-    else {
-        return tableView.frame.size.height - ValueToCutForShortcutDisplayMode;
-    }
+    [self.eventImageView sd_setImageWithURL:viewModel.imageUrl
+                           placeholderImage:[UIImage imageNamed:kPlaceholderImageName]];
 }
 
 @end

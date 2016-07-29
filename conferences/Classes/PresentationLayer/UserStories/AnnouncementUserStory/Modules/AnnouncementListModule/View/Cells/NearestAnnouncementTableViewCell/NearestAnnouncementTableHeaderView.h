@@ -18,19 +18,20 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import <Nimbus/NimbusModels.h>
+#import <UIKit/UIKit.h>
+#import "NICellFactory.h"
 
-@class EventPlainObject;
+@class AnnouncementViewModel;
 
-@interface AnnouncementListTableViewCellObject : NSObject <NICellObject>
+@interface NearestAnnouncementTableHeaderView : UIView
 
-@property (strong, nonatomic, readonly) NSString *eventTitle;
-@property (strong, nonatomic, readonly) NSArray *eventTags;
-@property (strong, nonatomic, readonly) NSURL *imageUrl;
-@property (strong, nonatomic, readonly) NSString *date;
-@property (strong, nonatomic, readonly) EventPlainObject *event;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageViewWidthConstraint;
+@property (weak, nonatomic) IBOutlet UIImageView *eventImageView;
+@property (weak, nonatomic) IBOutlet UILabel *date;
+@property (weak, nonatomic) IBOutlet UILabel *time;
+@property (weak, nonatomic) IBOutlet UILabel *eventTitle;
 
-+ (instancetype)objectWithEvent:(EventPlainObject *)event eventDate:(NSString *)date;
+- (void)updateWithViewModel:(AnnouncementViewModel *)viewModel;
 
 @end

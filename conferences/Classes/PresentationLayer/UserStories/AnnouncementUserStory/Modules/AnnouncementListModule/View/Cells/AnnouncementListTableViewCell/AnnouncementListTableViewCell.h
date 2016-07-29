@@ -24,7 +24,6 @@
 @interface AnnouncementListTableViewCell : UITableViewCell <NICell>
 
 @property (weak, nonatomic) IBOutlet UILabel *eventTitle;
-@property (weak, nonatomic) IBOutlet UILabel *eventTags;
 @property (weak, nonatomic) IBOutlet UILabel *date;
 @property (weak, nonatomic) IBOutlet UIImageView *eventImageView;
 

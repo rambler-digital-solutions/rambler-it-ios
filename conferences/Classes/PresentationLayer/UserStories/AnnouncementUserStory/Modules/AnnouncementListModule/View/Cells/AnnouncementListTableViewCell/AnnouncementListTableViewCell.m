@@ -19,19 +19,18 @@
 // THE SOFTWARE.
 
 #import "AnnouncementListTableViewCell.h"
-#import "AnnouncementListTableViewCellObject.h"
+#import "AnnouncementViewModel.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 static NSString *const kPlaceholderImageName = @"placeholder";
-static CGFloat const FutureEventListTableViewCellHeight = 116.0f;
+static CGFloat const FutureEventListTableViewCellHeight = 96.0f;
 
 @implementation AnnouncementListTableViewCell
 
 #pragma mark - NICell methods
 
-- (BOOL)shouldUpdateCellWithObject:(AnnouncementListTableViewCellObject *)object {
+- (BOOL)shouldUpdateCellWithObject:(AnnouncementViewModel *)object {
     self.eventTitle.text = object.eventTitle;
-    self.eventTags.text = object.eventTags;
     self.date.text = object.date;
     [self.eventImageView sd_setImageWithURL:object.imageUrl
                            placeholderImage:[UIImage imageNamed:kPlaceholderImageName]];
@@ -39,7 +38,9 @@ static CGFloat const FutureEventListTableViewCellHeight = 116.0f;
     return YES;
 }
 
-+ (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
++ (CGFloat)heightForObject:(id)object
+               atIndexPath:(NSIndexPath *)indexPath
+                 tableView:(UITableView *)tableView {
     return FutureEventListTableViewCellHeight;
 }
 

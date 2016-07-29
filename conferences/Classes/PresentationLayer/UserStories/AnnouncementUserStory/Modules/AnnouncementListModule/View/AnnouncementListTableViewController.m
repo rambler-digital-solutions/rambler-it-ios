@@ -21,12 +21,13 @@
 #import "AnnouncementListTableViewController.h"
 #import "AnnouncementListViewOutput.h"
 #import "DataDisplayManager.h"
-#import "AnnouncementListDataDisplayManager.h"
-#import "EventPlainObject.h"
+#import "NearestAnnouncementTableHeaderView.h"
+#import "AnnouncementViewModel.h"
+#import "AnnouncementListAnimator.h"
 
-@interface AnnouncementListTableViewController() <AnnouncementLIstDataDisplayManagerDelegate>
+static CGFloat const kAnnouncementTableViewEstimatedRowHeight = 44.0f;
 
-@property (strong, nonatomic) UIColor *viewBackgroundColor;
+@interface AnnouncementListTableViewController() <UITableViewDelegate>
 
 @end
 
@@ -41,25 +42,32 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self setScrollViewColor];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 #pragma mark - AnnouncementListViewInput
 
 - (void)setupViewWithEventList:(NSArray *)events {
-    [self updateViewWithEventList:events];
     self.dataDisplayManager.delegate = self;
     
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.estimatedRowHeight = kAnnouncementTableViewEstimatedRowHeight;
+    
     self.tableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.tableView];
-    self.tableView.delegate = [self.dataDisplayManager delegateForTableView:self.tableView withBaseDelegate:nil];
+    self.tableView.delegate = [self.dataDisplayManager delegateForTableView:self.tableView
+                                                           withBaseDelegate:self];
+    
+    [self updateViewWithEventList:events];
 }
 
 - (void)updateViewWithEventList:(NSArray *)events {
-    [self setScrollViewColor];
+    AnnouncementViewModel *announce = events.firstObject;
+    [self updateTableViewHeaderWithAnnounce:announce
+                                     events:events];
     
-    [self.dataDisplayManager updateTableViewModelWithEvents:events];
+    NSMutableArray *futureEvents = events.mutableCopy;
+    [futureEvents removeObject:announce];
+    [self.dataDisplayManager updateTableViewModelWithEvents:futureEvents];
 }
 
 #pragma mark - AnnouncementListDataDisplayManagerDelegate
@@ -73,10 +81,31 @@
     [self.output didTriggerTapCellWithEvent:event];
 }
 
-#pragma mark - Private methods
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [self.animator animateWithContentOffset:scrollView.contentOffset];
+}
 
-- (void)setScrollViewColor {
-    [[UIScrollView appearance] setBackgroundColor:self.viewBackgroundColor];
+- (void)updateTableViewHeaderWithAnnounce:(AnnouncementViewModel *)announce
+                                   events:(NSArray *)events {
+    if (!announce) {
+        return;
+    }
+    [self.nearestAnnouncementHeaderView updateWithViewModel:announce];
+    
+    self.tableView.tableHeaderView = nil;
+    CGRect frame = [self calculateFrameForHeaderView:events.count];
+    self.nearestAnnouncementHeaderView.frame = frame;
+    self.tableView.tableHeaderView = self.nearestAnnouncementHeaderView;
+}
+
+- (CGRect)calculateFrameForHeaderView:(NSInteger)eventCount {
+    CGRect frame = self.nearestAnnouncementHeaderView.frame;
+    frame.size.width = self.view.bounds.size.width;
+    frame.size = [self.nearestAnnouncementHeaderView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    CGFloat fullSizeHeight = self.tableView.bounds.size.height - self.tabBarController.tabBar.bounds.size.height;
+    frame.size.height = eventCount > 1 ? frame.size.height : fullSizeHeight;
+    
+    return frame;
 }
 
 @end

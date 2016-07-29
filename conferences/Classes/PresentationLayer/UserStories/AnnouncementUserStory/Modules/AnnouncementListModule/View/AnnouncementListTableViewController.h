@@ -20,14 +20,20 @@
 
 #import <UIKit/UIKit.h>
 #import "AnnouncementListViewInput.h"
+#import "AnnouncementListDataDisplayManager.h"
 
 @protocol AnnouncementListViewOutput;
 @class AnnouncementListDataDisplayManager;
+@class NearestAnnouncementTableHeaderView;
+@class AnnouncementListAnimator;
 
-@interface AnnouncementListTableViewController : UITableViewController <AnnouncementListViewInput>
+@interface AnnouncementListTableViewController : UITableViewController <AnnouncementListViewInput, AnnouncementLIstDataDisplayManagerDelegate>
 
 @property (nonatomic, strong) id<AnnouncementListViewOutput> output;
-@property (strong, nonatomic) AnnouncementListDataDisplayManager *dataDisplayManager;
+@property (nonatomic, strong) AnnouncementListDataDisplayManager *dataDisplayManager;
+@property (nonatomic, strong) IBOutlet AnnouncementListAnimator *animator;
+
+@property (weak, nonatomic) IBOutlet NearestAnnouncementTableHeaderView *nearestAnnouncementHeaderView;
 
 @end
 
