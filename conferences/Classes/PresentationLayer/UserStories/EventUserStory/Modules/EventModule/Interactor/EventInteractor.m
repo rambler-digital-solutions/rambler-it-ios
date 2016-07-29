@@ -32,31 +32,41 @@
 #import "MetaEventPlainObject.h"
 #import "EXTScope.h"
 
-static NSString *const kEventByObjectIdPredicateFormat = @"eventId = %@";
-static NSString *const kMetaEventByObjectIdPredicateFormat = @"metaEventId = %@";
 
 @implementation EventInteractor
 
 #pragma mark - EventListInteractorInput
 
 - (EventPlainObject *)obtainEventWithObjectId:(NSString *)objectId {
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:kEventByObjectIdPredicateFormat, objectId];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K = %@", EventModelObjectAttributes.eventId, objectId];
     
     NSArray *events = [self.eventService obtainEventWithPredicate:predicate];
     id managedObjectEvent = [events firstObject];
     
     EventPlainObject *eventPlainObject = [self.ponsomizer convertObject:managedObjectEvent];
-    
+    EventType type = [self.eventTypeDeterminator determinateTypeForEvent:eventPlainObject];
+    eventPlainObject.eventType = @(type);
     return eventPlainObject;
 }
 
 - (NSArray *)obtainPastEventsForMetaEvent:(NSString *)metaEventId {
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:kMetaEventByObjectIdPredicateFormat, metaEventId];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%@ = %@", MetaEventModelObjectAttributes.metaEventId, metaEventId];
     
     MetaEventModelObject *metaEvent = [MetaEventModelObject MR_findFirstWithPredicate:predicate];
-    NSSet *events = [self.ponsomizer convertObject:metaEvent.events];
     
-    return [events allObjects];
+    NSSet *events = [self.ponsomizer convertObject:metaEvent.events];
+    for (EventPlainObject *event in events) {
+        EventType type = [self.eventTypeDeterminator determinateTypeForEvent:event];
+        event.eventType = @(type);
+    }
+
+    NSArray *pastEvents = [self filterEventsWithPastEventType:events];
+    
+    NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:EventModelObjectAttributes.startDate
+                                                                 ascending:NO];
+    NSArray *sortedEvents = [pastEvents sortedArrayUsingDescriptors:@[descriptor]];
+    
+    return sortedEvents;
 }
 
 - (void)saveEventToCalendar:(EventPlainObject *)event {
@@ -74,6 +84,13 @@ static NSString *const kMetaEventByObjectIdPredicateFormat = @"metaEventId = %@"
             [self.output didSaveEventToCalendarWithError:nil];
         }
     }];
+}
+
+- (NSArray *)filterEventsWithPastEventType:(NSSet *)events {
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%@ = %@", EventModelObjectAttributes.eventType, @(PastEvent)];
+    NSArray *filteredEvents = [[events allObjects] filteredArrayUsingPredicate:predicate];
+    
+    return filteredEvents;
 }
 
 - (NSArray *)obtainActivityItemsForEvent:(EventPlainObject *)event {
