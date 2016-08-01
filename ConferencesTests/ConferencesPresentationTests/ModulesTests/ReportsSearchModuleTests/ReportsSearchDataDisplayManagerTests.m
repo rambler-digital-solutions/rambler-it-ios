@@ -21,28 +21,28 @@
 #import <XCTest/XCTest.h>
 #import <OCMock/OCMock.h>
 
-#import "ReportListDataDisplayManager.h"
+#import "ReportsSearchDataDisplayManager.h"
 #import "ReportEventTableViewCell.h"
 #import "EventPlainObject.h"
-#import "ReportListViewController.h"
+#import "ReportsSearchViewController.h"
 
 typedef NS_ENUM(NSUInteger, TableViewSectionIndex){
     ReportsSection = 0
 };
 
-@interface ReportListDataDisplayManagerTests : XCTestCase
+@interface ReportsSearchDataDisplayManagerTests : XCTestCase
 
-@property (strong, nonatomic) ReportListDataDisplayManager *dataDisplayManager;
+@property (strong, nonatomic) ReportsSearchDataDisplayManager *dataDisplayManager;
 @property (strong, nonatomic) NSArray *events;
 
 @end
 
-@implementation ReportListDataDisplayManagerTests
+@implementation ReportsSearchDataDisplayManagerTests
 
 - (void)setUp {
     [super setUp];
     
-    self.dataDisplayManager = [ReportListDataDisplayManager new];
+    self.dataDisplayManager = [ReportsSearchDataDisplayManager new];
     self.events = @[[EventPlainObject new], [EventPlainObject new], [EventPlainObject new]];
 }
 
@@ -57,7 +57,7 @@ typedef NS_ENUM(NSUInteger, TableViewSectionIndex){
     // given
     
     // when
-    [self.dataDisplayManager updateTableViewModelWithEvents:self.events];
+    [self.dataDisplayManager updateTableViewModelWithObjects:self.events searchText:@""];
     id <UITableViewDataSource> dataSource = [self.dataDisplayManager dataSourceForTableView:nil];
     
     // then
@@ -66,11 +66,11 @@ typedef NS_ENUM(NSUInteger, TableViewSectionIndex){
 
 - (void)testSuccessUpdateTableViewModelWithEvents {
     // given
-    id mockViewController = OCMClassMock([ReportListViewController class]);
+    id mockViewController = OCMClassMock([ReportsSearchViewController class]);
     self.dataDisplayManager.delegate = mockViewController;
     
     // when
-    [self.dataDisplayManager updateTableViewModelWithEvents:self.events];
+    [self.dataDisplayManager updateTableViewModelWithObjects:self.events searchText:@""];
     
     // then
     OCMVerify([mockViewController didUpdateTableViewModel]);
@@ -82,7 +82,7 @@ typedef NS_ENUM(NSUInteger, TableViewSectionIndex){
     NSUInteger actualNumberOfSections = 0;
     
     // when
-    [self.dataDisplayManager updateTableViewModelWithEvents:self.events];
+    [self.dataDisplayManager updateTableViewModelWithObjects:self.events searchText:@""];
     id <UITableViewDataSource> dataSource = [self.dataDisplayManager dataSourceForTableView:nil];
     
     actualNumberOfSections = [dataSource numberOfSectionsInTableView:nil];
@@ -100,7 +100,7 @@ typedef NS_ENUM(NSUInteger, TableViewSectionIndex){
     NSUInteger actualNumberOfRows = 0;
     
     // when
-    [self.dataDisplayManager updateTableViewModelWithEvents:self.events];
+    [self.dataDisplayManager updateTableViewModelWithObjects:self.events searchText:@""];
     id <UITableViewDataSource> dataSource = [self.dataDisplayManager dataSourceForTableView:nil];
     actualNumberOfRows = [dataSource tableView:nil numberOfRowsInSection:ReportsSection];
     
@@ -114,7 +114,7 @@ typedef NS_ENUM(NSUInteger, TableViewSectionIndex){
     NSUInteger actualNumberOfCellForCorrespondingClass = 0;
     
     // when
-    [self.dataDisplayManager updateTableViewModelWithEvents:self.events];
+    [self.dataDisplayManager updateTableViewModelWithObjects:self.events searchText:@""];
     id <UITableViewDataSource> dataSource = [self.dataDisplayManager dataSourceForTableView:nil];
     
     NSUInteger numberOfRows = [dataSource tableView:nil numberOfRowsInSection:ReportsSection];

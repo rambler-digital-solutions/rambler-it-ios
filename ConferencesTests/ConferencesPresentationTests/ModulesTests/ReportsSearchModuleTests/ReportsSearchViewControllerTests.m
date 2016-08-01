@@ -21,34 +21,40 @@
 #import <XCTest/XCTest.h>
 #import <OCMock/OCMock.h>
 
-#import "ReportListViewController.h"
-#import "ReportListViewOutput.h"
+#import "ReportsSearchViewController.h"
+#import "ReportsSearchViewOutput.h"
 #import "DataDisplayManager.h"
-#import "ReportListDataDisplayManager.h"
+#import "ReportsSearchDataDisplayManager.h"
+
 #import "EventPlainObject.h"
+#import "LecturePlainObject.h"
+#import "SpeakerPlainObject.h"
 
-@interface ReportListTableViewControllerTests : XCTestCase
+@interface ReportsSearchTableViewControllerTests : XCTestCase
 
-@property (strong, nonatomic) ReportListViewController <ReportListDataDisplayManagerDelegate, UISearchBarDelegate> *viewController;
-@property (strong, nonatomic) ReportListDataDisplayManager *mockDataDisplayManager;
-@property (strong, nonatomic) id <ReportListViewOutput> mockOutput;
-@property (strong, nonatomic) UITableView *mockTableView;
+@property (nonatomic, strong) ReportsSearchViewController *viewController;
+@property (nonatomic, strong) ReportsSearchDataDisplayManager *mockDataDisplayManager;
+@property (nonatomic, strong) ReportsSearchViewAnimator *mockAnimator;
+@property (nonatomic, strong) id <ReportsSearchViewOutput> mockOutput;
+@property (nonatomic, strong) UITableView *mockTableView;
 
 @end
 
-@implementation ReportListTableViewControllerTests
+@implementation ReportsSearchTableViewControllerTests
 
 - (void)setUp {
     [super setUp];
     
-    self.viewController = [ReportListViewController<ReportListDataDisplayManagerDelegate, UISearchBarDelegate> new];
-    self.mockDataDisplayManager = OCMClassMock([ReportListDataDisplayManager class]);
-    self.mockOutput = OCMProtocolMock(@protocol(ReportListViewOutput));
+    self.viewController = [ReportsSearchViewController new];
+    self.mockDataDisplayManager = OCMClassMock([ReportsSearchDataDisplayManager class]);
+    self.mockOutput = OCMProtocolMock(@protocol(ReportsSearchViewOutput));
     self.mockTableView = OCMClassMock([UITableView class]);
+    self.mockAnimator = OCMClassMock([ReportsSearchViewAnimator class]);
     
     self.viewController.dataDisplayManager = self.mockDataDisplayManager;
     self.viewController.output = self.mockOutput;
-    self.viewController.reportsTableView = self.mockTableView;
+    self.viewController.reportsListSearchTableView = self.mockTableView;
+    self.viewController.animatorReportsSearchView = self.mockAnimator;
 }
 
 - (void)tearDown {
@@ -59,6 +65,7 @@
     self.mockOutput = nil;
     [(id)self.mockTableView stopMocking];
     self.mockTableView = nil;
+    self.mockAnimator = nil;
 
     [super tearDown];
 }
@@ -75,11 +82,31 @@
     OCMVerify([self.mockOutput setupView]);
 }
 
-#pragma mark - ReportListViewInput
+#pragma mark - ReportsSearchViewInput
 
-- (void)testSuccessSetupViewWithEventList {
+
+- (void)testSuccessShowClearPlaceholder {
     // given
-    NSArray *events = @[];
+    
+    // when
+    [self.viewController showClearPlaceholder];
+    
+    // then
+    OCMVerify([self.mockAnimator showClearPlaceholderWithAnimation]);
+}
+
+- (void)testSuccessCloseSearchView {
+    // given
+    
+    // when
+    [self.viewController closeSearchView];
+    
+    // then
+    OCMVerify([self.mockAnimator closeSearchViewWithAnimation]);
+}
+
+- (void)testSuccessSetupView {
+    // given
     
     id dataSource = OCMProtocolMock(@protocol(UITableViewDataSource));
     id delegate = OCMProtocolMock(@protocol(UITableViewDelegate));
@@ -88,26 +115,26 @@
     OCMStub([self.mockDataDisplayManager delegateForTableView:self.mockTableView withBaseDelegate:nil]).andReturn(delegate);
     
     // when
-    [self.viewController setupViewWithEventList:events];
+    [self.viewController setupView];
     
     // then
     OCMVerify([self.mockTableView setDataSource:dataSource]);
     OCMVerify([self.mockTableView setDelegate:delegate]);
-    OCMVerify([self.mockDataDisplayManager updateTableViewModelWithEvents:events]);
 }
 
 - (void)testSuccessUpdateViewWithEventList {
     // given
-    NSArray *events = @[];
-    
+    NSArray *events = @[@1];
+    NSString *text = @"SEARCHTEXT";
+    NSString *lowercaseText = [text lowercaseString];
     // when
-    [self.viewController updateViewWithEventList:events];
+    [self.viewController updateViewWithObjectList:events searchText:text];
     
     // then
-    OCMVerify([self.mockDataDisplayManager updateTableViewModelWithEvents:events]);
+    OCMVerify([self.mockDataDisplayManager updateTableViewModelWithObjects:events searchText:lowercaseText]);
 }
 
-#pragma mark - ReportListDataDisplayManagerDelegate
+#pragma mark - ReportsSearchDataDisplayManagerDelegate
 
 - (void)testSuccessDidUpdateTableViewModel {
     // given
@@ -133,15 +160,40 @@
     OCMVerify([self.mockOutput didTriggerTapCellWithEvent:event]);
 }
 
-- (void)testSuccessSearchTextChange {
+- (void)testSuccessDidTapCellWithLecture {
     // given
-    UISearchBar *searchBar = [UISearchBar new];
-    NSString *searchString = @"search string";
+    LecturePlainObject *lecture = [LecturePlainObject new];
+    
     // when
-    [self.viewController searchBar:searchBar textDidChange:searchString];
-
+    [self.viewController didTapCellWithLecture:lecture];
+    
     // then
-    OCMVerify([self.mockOutput didChangeSearchBarWithSearchTerm:searchString]);
+    OCMVerify([self.mockOutput didTriggerTapCellWithLecture:lecture]);
 }
+
+- (void)testSuccessDidTapCellWithSpeaker {
+    // given
+    SpeakerPlainObject *speaker = [SpeakerPlainObject new];
+    
+    // when
+    [self.viewController didTapCellWithSpeaker:speaker];
+    
+    // then
+    OCMVerify([self.mockOutput didTriggerTapCellWithSpeaker:speaker]);
+}
+
+#pragma mark - ReportsSearchViewAnimatorOutput
+
+- (void)testSuccessDidTapClearPlaceholderView{
+    // given
+    
+    // when
+    [self.viewController didTapClearPlaceholderView];
+    
+    // then
+    OCMVerify([self.mockOutput didTapClearPlaceholderView]);
+}
+
+
 
 @end

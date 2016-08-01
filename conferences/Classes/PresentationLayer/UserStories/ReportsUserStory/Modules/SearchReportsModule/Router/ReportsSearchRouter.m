@@ -28,7 +28,7 @@ static NSString *const kReportsSearchModuleToEventModuleSegue = @"ReportsSearchM
 
 @implementation ReportsSearchRouter
 
-#pragma mark - ReportListRouterInput
+#pragma mark - ReportsSearchRouterInput
 
 - (void)openEventModuleWithEventObjectId:(NSString *)objectId {
     [[self.transitionHandler openModuleUsingSegue:kReportsSearchModuleToEventModuleSegue] thenChainUsingBlock:^id<RamblerViperModuleOutput>(id<EventModuleInput> moduleInput) {

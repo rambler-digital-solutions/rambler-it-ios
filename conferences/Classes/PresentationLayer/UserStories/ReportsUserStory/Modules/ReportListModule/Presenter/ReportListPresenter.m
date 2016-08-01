@@ -51,6 +51,7 @@
     [self.reportsSearchModule closeSearchModule];
 }
 #pragma mark - SearchBar Delegate
+
 - (void)didChangeSearchBarWithSearchTerm:(NSString *)text {
     [self.reportsSearchModule updateModuleWithSearchTerm:text];
 }

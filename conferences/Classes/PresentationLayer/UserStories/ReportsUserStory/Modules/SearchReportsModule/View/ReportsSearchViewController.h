@@ -27,8 +27,11 @@
 @interface ReportsSearchViewController : UIViewController <ReportsSearchViewInput, ReportSearchDataDisplayManagerDelegate, ReportsSearchViewAnimatorOutput>
 
 @property (nonatomic, strong) id<ReportsSearchViewOutput> output;
-@property (strong, nonatomic) ReportsSearchDataDisplayManager *dataDisplayManager;
-@property (strong, nonatomic) IBOutlet ReportsSearchViewAnimator *animatorReportsSearchView;
+@property (nonatomic, strong) ReportsSearchDataDisplayManager *dataDisplayManager;
+@property (nonatomic, strong) IBOutlet ReportsSearchViewAnimator *animatorReportsSearchView;
 
+@property (nonatomic, weak) IBOutlet UITableView *reportsListSearchTableView;
+@property (nonatomic, weak) IBOutlet UIView *emptyPlaceholderView;
+@property (nonatomic, weak) IBOutlet UIView *clearPlaceholderView;
 
 @end

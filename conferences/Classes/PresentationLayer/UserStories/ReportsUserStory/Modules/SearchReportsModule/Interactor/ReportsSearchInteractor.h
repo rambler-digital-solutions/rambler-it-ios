@@ -20,6 +20,7 @@
 
 #import <Foundation/Foundation.h>
 #import "ReportsSearchInteractorInput.h"
+#import "ReportsSearchInteractorOutput.h"
 
 @protocol ReportSearchInteractorOutput;
 @protocol EventService;
@@ -29,9 +30,9 @@
 
 @class EventTypeDeterminator;
 
-@interface ReportsSearchInteractor : NSObject
+@interface ReportsSearchInteractor : NSObject <ReportsSearchInteractorInput>
 
-@property (weak, nonatomic) id <ReportsSearchInteractorInput> output;
+@property (weak, nonatomic) id <ReportsSearchInteractorOutput> output;
 @property (strong, nonatomic) id <EventService> eventService;
 @property (strong, nonatomic) id <SpeakerService> speakerService;
 @property (strong, nonatomic) id <LectureService> lectureService;

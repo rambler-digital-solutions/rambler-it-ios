@@ -21,10 +21,12 @@
 #import <Foundation/Foundation.h>
 #import "ReportsSearchViewInput.h"
 #import "ReportsSearchInteractorInput.h"
+#import "ReportsSearchViewOutput.h"
 #import "ReportsSearchModuleInput.h"
+#import "ReportsSearchModuleOutput.h"
 #import "ReportsSearchRouterInput.h"
 
-@interface ReportsSearchPresenter <ReportsSearchModuleInput> : NSObject
+@interface ReportsSearchPresenter : NSObject <ReportsSearchViewOutput, ReportsSearchModuleInput, ReportsSearchViewInput>
 
 @property (nonatomic, weak) id<ReportsSearchViewInput> view;
 @property (nonatomic, strong) id<ReportsSearchInteractorInput>  interactor;

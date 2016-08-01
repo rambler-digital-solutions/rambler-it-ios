@@ -107,4 +107,5 @@
 - (void)hideCancelButtonSearchBar {
     [self.searchBar setShowsCancelButton:NO animated:YES];
 }
+
 @end

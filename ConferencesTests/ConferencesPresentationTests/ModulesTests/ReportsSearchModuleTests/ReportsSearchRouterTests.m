@@ -23,22 +23,22 @@
 #import <OCMock/OCMock.h>
 
 #import "StubTestHelper.h"
-#import "ReportListRouter.h"
+#import "ReportsSearchRouter.h"
 #import "EventModuleInput.h"
 
-@interface ReportListRouterTests : XCTestCase
+@interface ReportsSearchRouterTests : XCTestCase
 
-@property (nonatomic, strong) ReportListRouter *router;
+@property (nonatomic, strong) ReportsSearchRouter *router;
 @property (nonatomic, strong) id transitionHandlerMock;
 
 @end
 
-@implementation ReportListRouterTests
+@implementation ReportsSearchRouterTests
 
 - (void)setUp {
     [super setUp];
     
-    self.router = [ReportListRouter new];
+    self.router = [ReportsSearchRouter new];
     self.transitionHandlerMock = OCMProtocolMock(@protocol(RamblerViperModuleTransitionHandlerProtocol));
     
     self.router.transitionHandler = self.transitionHandlerMock;
@@ -53,7 +53,7 @@
     [super tearDown];
 }
 
-#pragma mark - ReportListRouter
+#pragma mark - ReportsSearchRouter
 
 - (void)testSuccessOpenEventModuleWithEventObjectId {
     // given

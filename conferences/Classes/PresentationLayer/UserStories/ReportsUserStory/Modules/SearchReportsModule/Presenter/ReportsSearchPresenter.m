@@ -25,16 +25,7 @@
 
 @implementation ReportsSearchPresenter
 
-
-- (void)updateModuleWithSearchTerm:(NSString *)searchText {
-    if ([searchText isEqualToString:@""]) {
-        [self.view showClearPlaceholder];
-    }
-    else {
-        NSArray *foundObjects = [self.interactor obtainFoundObjectListWithSearchText:searchText];
-        [self.view updateViewWithObjectList:foundObjects searchText:searchText];
-    }
-}
+#pragma mark - ReportsSearchViewOutput
 
 - (void)setupView {
     [self.moduleOutput didLoadReportsSearchModuleInput:self];
@@ -53,14 +44,23 @@
     //TODO: Добавить действие при нажатии на ячейку с докладчиком
 }
 
-#pragma mark - EventListInteractorOutput
-
 - (void)didTapClearPlaceholderView {
     [self.moduleOutput didTapClearScreenSearchModule];
+}
+
+#pragma mark - ReportsSearchModuleInput
+
+- (void)updateModuleWithSearchTerm:(NSString *)searchText {
+    if ([searchText length] == 0) {
+        [self.view showClearPlaceholder];
+    }
+    else {
+        NSArray *foundObjects = [self.interactor obtainFoundObjectListWithSearchText:searchText];
+        [self.view updateViewWithObjectList:foundObjects searchText:searchText];
+    }
 }
 
 - (void)closeSearchModule {
     [self.view closeSearchView];
 }
-
 @end

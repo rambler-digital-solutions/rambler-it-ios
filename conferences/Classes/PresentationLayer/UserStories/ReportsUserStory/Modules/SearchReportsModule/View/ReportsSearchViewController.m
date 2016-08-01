@@ -24,14 +24,6 @@
 @class LecturePlainObject;
 @class SpeakerPlainObject;
 
-@interface ReportsSearchViewController ()
-
-@property (nonatomic, weak) IBOutlet UITableView *reportsListSearchTableView;
-@property (nonatomic, weak) IBOutlet UIView *emptyPlaceholderView;
-@property (nonatomic, weak) IBOutlet UIView *clearPlaceholderView;
-
-@end
-
 @implementation ReportsSearchViewController
 
 #pragma mark - Lifecycle
@@ -78,10 +70,10 @@
     [self.emptyPlaceholderView setHidden:willHideEmptyPlaceHolder];
     
     searchText = [searchText lowercaseString];
-    [self.dataDisplayManager updateTableViewModelWithObjects:foundObjects searchText:(NSString *)searchText];
+    [self.dataDisplayManager updateTableViewModelWithObjects:foundObjects searchText:searchText];
 }
 
-#pragma mark - ReportListDataDisplayManagerDelegate methods
+#pragma mark - ReportsSearchDataDisplayManagerDelegate methods
 
 - (void)didUpdateTableViewModel {
     self.reportsListSearchTableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.reportsListSearchTableView];
@@ -100,7 +92,7 @@
     [self.output didTriggerTapCellWithSpeaker:speaker];
 }
 
-#pragma mark - 
+#pragma mark - ReportsSearchViewAnimatorOutput
 
 - (void)didTapClearPlaceholderView {
     [self.output didTapClearPlaceholderView];

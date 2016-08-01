@@ -20,7 +20,6 @@
 
 #import <Foundation/Foundation.h>
 #import <ViperMcFlurry/ViperMcFlurry.h>
-#import "ReportsSearchModuleOutput.h"
 
 @protocol ReportsSearchModuleInput <RamblerViperModuleInput>
 
