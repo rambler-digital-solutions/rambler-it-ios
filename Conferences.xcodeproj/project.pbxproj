@@ -353,6 +353,9 @@
 		9F4077A81D2C164800D47EF6 /* ResourceMapperAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4077A71D2C164800D47EF6 /* ResourceMapperAssembly.m */; };
 		9F4077B01D2E371C00D47EF6 /* DirectionCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4077AF1D2E371C00D47EF6 /* DirectionCellObject.m */; };
 		9F4077B41D2E38AB00D47EF6 /* DirectionCellObjectFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4077B31D2E38AB00D47EF6 /* DirectionCellObjectFactory.m */; };
+		9F48FF3B1D50F83D00E1EC6A /* IndexState+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F48FF381D50F83D00E1EC6A /* IndexState+CoreDataProperties.m */; };
+		9F48FF3C1D50F83D00E1EC6A /* IndexState.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F48FF3A1D50F83D00E1EC6A /* IndexState.m */; };
+		9F5316A91D50F56900F13931 /* IndexerStateStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5316A81D50F56900F13931 /* IndexerStateStorage.m */; };
 		9F533A7B1D50D459004F8E82 /* HTTPMethodConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5FAC1BC27E7F00DC10DB /* HTTPMethodConstants.m */; };
 		9F533A891D50DE84004F8E82 /* FetchedResultsControllerChangeProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F533A881D50DE84004F8E82 /* FetchedResultsControllerChangeProvider.m */; };
 		9F533A8E1D50EC10004F8E82 /* IndexerMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F533A8D1D50EC10004F8E82 /* IndexerMonitor.m */; };
@@ -1089,7 +1092,13 @@
 		9F4077AF1D2E371C00D47EF6 /* DirectionCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DirectionCellObject.m; path = CellObjects/DirectionCellObject.m; sourceTree = "<group>"; };
 		9F4077B21D2E38AB00D47EF6 /* DirectionCellObjectFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DirectionCellObjectFactory.h; path = CellObjectFactory/DirectionCellObjectFactory.h; sourceTree = "<group>"; };
 		9F4077B31D2E38AB00D47EF6 /* DirectionCellObjectFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DirectionCellObjectFactory.m; path = CellObjectFactory/DirectionCellObjectFactory.m; sourceTree = "<group>"; };
+		9F48FF371D50F83D00E1EC6A /* IndexState+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "IndexState+CoreDataProperties.h"; path = "SpotlightIndexer/IndexerStateStorage/IndexState+CoreDataProperties.h"; sourceTree = "<group>"; };
+		9F48FF381D50F83D00E1EC6A /* IndexState+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "IndexState+CoreDataProperties.m"; path = "SpotlightIndexer/IndexerStateStorage/IndexState+CoreDataProperties.m"; sourceTree = "<group>"; };
+		9F48FF391D50F83D00E1EC6A /* IndexState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndexState.h; path = SpotlightIndexer/IndexerStateStorage/IndexState.h; sourceTree = "<group>"; };
+		9F48FF3A1D50F83D00E1EC6A /* IndexState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IndexState.m; path = SpotlightIndexer/IndexerStateStorage/IndexState.m; sourceTree = "<group>"; };
 		9F5316A51D50F29000F13931 /* ChangeProviderChangeType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ChangeProviderChangeType.h; path = SpotlightIndexer/Transactions/Headers/ChangeProviderChangeType.h; sourceTree = "<group>"; };
+		9F5316A71D50F56900F13931 /* IndexerStateStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndexerStateStorage.h; path = SpotlightIndexer/IndexerStateStorage/IndexerStateStorage.h; sourceTree = "<group>"; };
+		9F5316A81D50F56900F13931 /* IndexerStateStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IndexerStateStorage.m; path = SpotlightIndexer/IndexerStateStorage/IndexerStateStorage.m; sourceTree = "<group>"; };
 		9F533A7F1D50D794004F8E82 /* ChangeProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChangeProvider.h; path = SpotlightIndexer/ChangeProviders/Protocols/ChangeProvider.h; sourceTree = "<group>"; };
 		9F533A801D50DC8F004F8E82 /* ChangeProviderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChangeProviderDelegate.h; path = SpotlightIndexer/ChangeProviders/Protocols/ChangeProviderDelegate.h; sourceTree = "<group>"; };
 		9F533A871D50DE84004F8E82 /* FetchedResultsControllerChangeProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchedResultsControllerChangeProvider.h; sourceTree = "<group>"; };
@@ -5070,9 +5079,23 @@
 			name = Headers;
 			sourceTree = "<group>";
 		};
+		9F5316A61D50F54000F13931 /* IndexerStateStorage */ = {
+			isa = PBXGroup;
+			children = (
+				9F5316A71D50F56900F13931 /* IndexerStateStorage.h */,
+				9F5316A81D50F56900F13931 /* IndexerStateStorage.m */,
+				9F48FF371D50F83D00E1EC6A /* IndexState+CoreDataProperties.h */,
+				9F48FF381D50F83D00E1EC6A /* IndexState+CoreDataProperties.m */,
+				9F48FF391D50F83D00E1EC6A /* IndexState.h */,
+				9F48FF3A1D50F83D00E1EC6A /* IndexState.m */,
+			);
+			name = IndexerStateStorage;
+			sourceTree = "<group>";
+		};
 		9F533A7C1D50D6E7004F8E82 /* SpotlightIndexer */ = {
 			isa = PBXGroup;
 			children = (
+				9F5316A61D50F54000F13931 /* IndexerStateStorage */,
 				9F533A9C1D50F131004F8E82 /* Transactions */,
 				9F533A8F1D50EE65004F8E82 /* ObjectIndexers */,
 				9F533A8A1D50EBE6004F8E82 /* IndexerMonitor */,
@@ -5745,6 +5768,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F48FF3C1D50F83D00E1EC6A /* IndexState.m in Sources */,
 				2B2064851D3F9CE900246C8D /* _SocialNetworkAccountPlainObject.m in Sources */,
 				63F8F2BC1BF8A713000017F3 /* EventTypeDeterminator.m in Sources */,
 				2B20648C1D3F9CE900246C8D /* MetaEventModelObject.m in Sources */,
@@ -5814,6 +5838,7 @@
 				631FFE561BEF930200749DB8 /* ReportListRouter.m in Sources */,
 				631808411C482B1300A61E7D /* SpeakerShortInfoPresenter.m in Sources */,
 				63F6135D1CB00A220002AEF0 /* EventHeaderRouter.m in Sources */,
+				9F5316A91D50F56900F13931 /* IndexerStateStorage.m in Sources */,
 				9F533A8E1D50EC10004F8E82 /* IndexerMonitor.m in Sources */,
 				2B2064981D3F9CE900246C8D /* SpeakerPlainObject.m in Sources */,
 				63F613851CB00A220002AEF0 /* FutureEventCellObjectBuilder.m in Sources */,
@@ -5967,6 +5992,7 @@
 				6315BA0A1C9EC2A200999877 /* TableViewSectionHeaderCellObject.m in Sources */,
 				631FFE1A1BEF451400749DB8 /* UIView+CDResponder.m in Sources */,
 				63F613781CB00A220002AEF0 /* PreviousEventTableViewCell.m in Sources */,
+				9F48FF3B1D50F83D00E1EC6A /* IndexState+CoreDataProperties.m in Sources */,
 				63F6139A1CB00A220002AEF0 /* SpeakerInfoTableViewCellObject.m in Sources */,
 				9F533AA01D50F181004F8E82 /* IndexTransaction.m in Sources */,
 				63F6138D1CB00A220002AEF0 /* LecturePresenterStateStorage.m in Sources */,

@@ -38,7 +38,7 @@
     self = [super init];
     if (self) {
         _identifier = identifier;
-        -objectType = objectType;
+        _objectType = objectType;
         _changeType = changeType;
     }
     return self;

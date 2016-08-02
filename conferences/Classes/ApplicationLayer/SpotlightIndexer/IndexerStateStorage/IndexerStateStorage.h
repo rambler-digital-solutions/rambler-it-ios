@@ -18,45 +18,25 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "ObjectIndexerBase.h"
+#import <Foundation/Foundation.h>
 
-#import "IndexIdentifierFormatter.h"
+#import "ChangeProviderChangeType.h"
 
-@interface ObjectIndexerBase ()
+@class IndexTransaction;
+@class IndexTransactionBatch;
 
-@property (nonatomic, strong) id<IndexIdentifierFormatter> indexIdentifierFormatter;
+/**
+ @author Egor Tolstoy
+ 
+ This object is responsible for saving pending changes to process them later.
+ */
+@interface IndexerStateStorage : NSObject
 
-@end
-
-@implementation ObjectIndexerBase
-
-#pragma mark - Initialization
-
-- (instancetype)initWithIndexIdentifierFormatter:(id<IndexIdentifierFormatter>)indexIdentifierFormatter {
-    self = [super init];
-    if (self) {
-        _indexIdentifierFormatter = indexIdentifierFormatter;
-    }
-    return self;
-}
-
-#pragma mark - <ObjectIndexer>
-
-- (NSOperation *)operationForIndexBatch:(IndexTransactionBatch *)batch
-                    withCompletionBlock:(IndexerErrorBlock)block {
-    return nil;
-}
-
-- (BOOL)canIndexObjectWithIdentifier:(NSString *)identifier {
-    return NO;
-}
-
-- (NSString *)identifierForObject:(id)object {
-    return [self.indexIdentifierFormatter identifierForObject:object];
-}
-
-- (id)objectForIdentifier:(NSString *)object {
-    return nil;
-}
+- (void)insertTransaction:(IndexTransaction *)transaction;
+- (void)insertTransactionsArray:(NSArray<NSArray *> *)transactionsArray
+                     changeType:(ChangeProviderChangeType)changeType;
+- (IndexTransactionBatch *)obtainTransactionBatch;
+- (void)removeProcessedBatch:(IndexTransactionBatch *)batch;
+- (BOOL)shouldPerformInitialIndexing;
 
 @end

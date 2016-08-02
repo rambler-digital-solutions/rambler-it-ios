@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15F34" minimumToolsVersion="Xcode 4.2">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15G26a" minimumToolsVersion="Xcode 4.2">
     <entity name="Event" representedClassName="EventModelObject" syncable="YES">
         <attribute name="endDate" attributeType="Date" syncable="YES"/>
         <attribute name="eventDescription" optional="YES" attributeType="String" syncable="YES"/>
@@ -17,6 +17,31 @@
         <relationship name="registrationQuestions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RegistrationQuestion" inverseName="event" inverseEntity="RegistrationQuestion" syncable="YES"/>
         <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="event" inverseEntity="Tag" syncable="YES"/>
         <relationship name="tech" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tech" inverseName="events" inverseEntity="Tech" syncable="YES"/>
+    </entity>
+    <entity name="IndexState" representedClassName="IndexState" syncable="YES">
+        <attribute name="deleteIdentifiers" optional="YES" attributeType="Transformable" syncable="YES">
+            <userInfo>
+                <entry key="attributeValueClassName" value="NSMutableOrderedSet"/>
+            </userInfo>
+        </attribute>
+        <attribute name="insertIdentifiers" optional="YES" attributeType="Transformable" syncable="YES">
+            <userInfo>
+                <entry key="attributeValueClassName" value="NSMutableOrderedSet"/>
+            </userInfo>
+        </attribute>
+        <attribute name="lastChangeDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="moveIdentifiers" optional="YES" attributeType="Transformable" syncable="YES">
+            <userInfo>
+                <entry key="attributeValueClassName" value="NSMutableOrderedSet"/>
+            </userInfo>
+        </attribute>
+        <attribute name="numberOfIdentifiers" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="objectType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updateIdentifiers" optional="YES" attributeType="Transformable" syncable="YES">
+            <userInfo>
+                <entry key="attributeValueClassName" value="NSMutableOrderedSet"/>
+            </userInfo>
+        </attribute>
     </entity>
     <entity name="Lecture" representedClassName="LectureModelObject" syncable="YES">
         <attribute name="favourite" optional="YES" attributeType="Boolean" syncable="YES"/>
@@ -85,5 +110,6 @@
         <element name="Speaker" positionX="0" positionY="0" width="128" height="165"/>
         <element name="Tag" positionX="0" positionY="0" width="128" height="120"/>
         <element name="Tech" positionX="36" positionY="144" width="128" height="105"/>
+        <element name="IndexState" positionX="27" positionY="135" width="128" height="150"/>
     </elements>
 </model>

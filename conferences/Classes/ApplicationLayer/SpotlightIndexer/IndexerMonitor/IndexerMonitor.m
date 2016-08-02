@@ -23,8 +23,12 @@
 #import "ChangeProvider.h"
 #import "ChangeProviderDelegate.h"
 #import "ObjectIndexer.h"
+#import "IndexTransaction.h"
+#import "IndexerStateStorage.h"
 
 @interface IndexerMonitor () <ChangeProviderDelegate>
+
+@property (nonatomic, strong) IndexerStateStorage *stateStorage;
 
 @property (nonatomic, strong) NSDictionary *indexers;
 @property (nonatomic, strong) NSDictionary *changeProviders;
@@ -64,7 +68,13 @@
     id<ObjectIndexer> indexer = self.indexers[indexerIdentifier];
     
     NSString *objectIdentifier = [indexer identifierForObject:object];
+    NSString *objectType = NSStringFromClass([object class]);
     
+    IndexTransaction *transaction = [IndexTransaction transactionWithIdentifier:objectIdentifier
+                                                                     objectType:objectType
+                                                                     changeType:changeType];
+    
+    [self.stateStorage insertTransaction:transaction];
 }
 
 - (void)processChanges {
@@ -72,7 +82,7 @@
 }
 
 - (NSArray *)obtainObjectsForInitialIndexing {
-    
+    return nil;
 }
 
 #pragma mark - Private methods
