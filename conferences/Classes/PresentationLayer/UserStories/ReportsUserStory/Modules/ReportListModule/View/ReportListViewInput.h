@@ -22,8 +22,31 @@
 
 @protocol ReportListViewInput <NSObject>
 
+/**
+ @author Zinovyev Konstantin
+ 
+ Method is used to inform View about initial setup
+
+ @param events Event list
+ */
 - (void)setupViewWithEventList:(NSArray *)events;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ Method is used to inform View that events should be updated
+ 
+ @param eventsEvent list
+ */
 - (void)updateViewWithEventList:(NSArray *)events;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ Method is used to inform View that SearchModuleView should be hidden
+ 
+ */
+- (void)hideSearchModuleView;
 
 @end
 

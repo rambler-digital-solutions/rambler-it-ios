@@ -22,7 +22,6 @@
 #import "AnnouncementListInteractorOutput.h"
 #import "EventService.h"
 #import "EventModelObject.h"
-#import "EventPrototypeMapper.h"
 #import "EventPlainObject.h"
 #import "ROSPonsomizer.h"
 

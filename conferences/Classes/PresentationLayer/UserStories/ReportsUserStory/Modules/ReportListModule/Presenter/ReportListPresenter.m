@@ -23,6 +23,7 @@
 #import "ReportListInteractorInput.h"
 #import "ReportListRouterInput.h"
 #import "EventPlainObject.h"
+#import "ReportsSearchModuleInput.h"
 
 @implementation ReportListPresenter
 
@@ -31,8 +32,10 @@
 - (void)setupView {
     NSArray *events = [self.interactor obtainEventList];
     [self.interactor updateEventList];
+    [self.router configureReportsSearchModuleWithModuleOutput:self];
     [self.view setupViewWithEventList:events];
 }
+
 
 - (void)didTriggerTapCellWithEvent:(EventPlainObject *)event {
     [self.router openEventModuleWithEventObjectId:event.eventId];
@@ -42,6 +45,25 @@
 
 - (void)didUpdateEventList:(NSArray *)events {
     [self.view updateViewWithEventList:events];
+}
+
+- (void)didTapSearchBarCancelButton {
+    [self.reportsSearchModule closeSearchModule];
+}
+#pragma mark - SearchBar Delegate
+
+- (void)didChangeSearchBarWithSearchTerm:(NSString *)text {
+    [self.reportsSearchModule updateModuleWithSearchTerm:text];
+}
+
+- (void)didTapClearScreenSearchModule {
+    [self.view hideSearchModuleView];
+}
+
+#pragma mark - ReportsSearchModuleOuput
+
+- (void)didLoadReportsSearchModuleInput:(id<ReportsSearchModuleInput>)reportsSearchModule {
+    self.reportsSearchModule = reportsSearchModule;
 }
 
 @end

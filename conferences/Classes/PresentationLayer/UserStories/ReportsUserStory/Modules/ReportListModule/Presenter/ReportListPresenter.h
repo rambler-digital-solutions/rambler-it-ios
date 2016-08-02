@@ -21,16 +21,19 @@
 #import <Foundation/Foundation.h>
 #import "ReportListViewOutput.h"
 #import "ReportListInteractorOutput.h"
+#import "ReportsSearchModuleOutput.h"
+#import "ReportsSearchModuleInput.h"
 
 @protocol ReportListViewInput;
 @protocol ReportListInteractorInput;
 @protocol ReportListRouterInput;
 
-@interface ReportListPresenter : NSObject<ReportListViewOutput,ReportListInteractorOutput>
+@interface ReportListPresenter : NSObject<ReportListViewOutput,ReportListInteractorOutput, ReportsSearchModuleOutput>
 
 @property (nonatomic, weak) id<ReportListViewInput> view;
 @property (nonatomic, strong) id<ReportListInteractorInput>  interactor;
 @property (nonatomic, strong) id<ReportListRouterInput> router;
+@property (nonatomic, strong) id<ReportsSearchModuleInput> reportsSearchModule;
 
 @end
 

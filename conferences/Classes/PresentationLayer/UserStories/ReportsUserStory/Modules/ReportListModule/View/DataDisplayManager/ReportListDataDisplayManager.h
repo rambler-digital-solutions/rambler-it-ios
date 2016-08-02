@@ -28,7 +28,20 @@
 
 @protocol ReportListDataDisplayManagerDelegate
 
+/**
+ @author Zinovyev Konstantin
+ 
+ Method informs delegate, that table view model was updated
+ */
 - (void)didUpdateTableViewModel;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ Method informs delegate, that cell was tapped
+ 
+ @param event Event in tapped cell
+ */
 - (void)didTapCellWithEvent:(EventPlainObject *)event;
 
 @end
@@ -38,7 +51,22 @@
 @property (weak, nonatomic) id <ReportListDataDisplayManagerDelegate> delegate;
 @property (strong, nonatomic) DateFormatter *dateFormatter;
 
+/**
+ @author Zinovyev Konstantin
+ 
+ Method is used to configure DDM
+
+ @param events Event list
+ */
 - (void)configureDataDisplayManagerWithEvents:(NSArray *)events;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ Method is used to update TableViewModel with new events
+ 
+ @param events Event list
+ */
 - (void)updateTableViewModelWithEvents:(NSArray *)events;
 
 @end

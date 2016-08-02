@@ -24,8 +24,37 @@
 
 @protocol ReportListViewOutput <NSObject>
 
+/**
+ @author Zinovyev Konstantin
+ 
+ Method is used to inform presenter that need setup the view
+ */
 - (void)setupView;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ Method is used to inform presenter that cell was tapped
+ 
+ @param event Event in tapped cell
+ */
 - (void)didTriggerTapCellWithEvent:(EventPlainObject *)event;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ Method is used to inform presenter that user has change the search text
+ 
+ @param text Text in search bar
+ */
+- (void)didChangeSearchBarWithSearchTerm:(NSString *)text;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ Method is used to inform presenter that user has tapped the cancel button
+ */
+- (void)didTapSearchBarCancelButton;
 
 @end
 

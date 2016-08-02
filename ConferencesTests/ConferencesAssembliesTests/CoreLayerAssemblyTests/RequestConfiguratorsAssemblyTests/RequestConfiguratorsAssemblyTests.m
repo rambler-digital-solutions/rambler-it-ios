@@ -25,6 +25,7 @@
 #import "RequestConfiguratorsFactory.h"
 #import "RESTRequestConfigurator.h"
 #import "RamblerInitialAssemblyCollector+Activate.h"
+#import "HTTPMethodConstants.h"
 
 @interface RequestConfiguratorsAssemblyTests : RamblerTyphoonAssemblyTests
 

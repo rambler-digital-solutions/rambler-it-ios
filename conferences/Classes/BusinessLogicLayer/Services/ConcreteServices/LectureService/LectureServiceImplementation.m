@@ -19,7 +19,17 @@
 // THE SOFTWARE.
 
 #import "LectureServiceImplementation.h"
+#import "LectureModelObject.h"
+#import <MagicalRecord/MagicalRecord.h>
 
 @implementation LectureServiceImplementation
+
+- (NSArray *)obtainLectureWithPredicate:(NSPredicate *)predicate {
+    NSManagedObjectContext *context = [NSManagedObjectContext MR_defaultContext];
+    
+    NSArray *lectures = [LectureModelObject MR_findAllWithPredicate:predicate
+                                                          inContext:context];
+    return lectures;
+}
 
 @end

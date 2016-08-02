@@ -22,6 +22,13 @@
 
 @protocol ReportListInteractorOutput <NSObject>
 
+/**
+ @author Zinovyev Konstantin
+ 
+ Method is used to inform the presenter about updating a cached list of events that has received from the server
+ 
+ @param events Managed Objects
+ */
 - (void)didUpdateEventList:(NSArray *)events;
 
 @end

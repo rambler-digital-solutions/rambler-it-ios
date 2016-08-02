@@ -16,6 +16,8 @@
 #import "PastEventCellObjectBuilder.h"
 #import "RamblerInitialAssemblyCollector+Activate.h"
 
+#import "HTTPMethodConstants.h"
+
 @interface EventCellObjectBuilderFactoryTests : RamblerTyphoonAssemblyTests
 
 @property (strong, nonatomic) EventCellObjectBuilderFactory *factory;

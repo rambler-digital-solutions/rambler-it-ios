@@ -1,10 +1,22 @@
+// Copyright (c) 2015 RAMBLER&Co
 //
-//  ReportListPresenterTests.m
-//  Conferences
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
 //
-//  Created by Karpushin Artem on 22/11/15.
-//  Copyright © 2015 Rambler. All rights reserved.
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
 //
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
 
 #import <XCTest/XCTest.h>
 #import <OCMock/OCMock.h>
@@ -17,10 +29,11 @@
 
 @interface ReportListPresenterTests : XCTestCase
 
-@property (strong, nonatomic) ReportListPresenter *presenter;
-@property (strong, nonatomic) id <ReportListInteractorInput> mockInteractor;
-@property (strong, nonatomic) id <ReportListViewInput> mockView;
-@property (strong, nonatomic) id <ReportListRouterInput> mockRouter;
+@property (nonatomic, strong) ReportListPresenter *presenter;
+@property (nonatomic, strong) id <ReportListInteractorInput> mockInteractor;
+@property (nonatomic, strong) id <ReportListViewInput> mockView;
+@property (nonatomic, strong) id <ReportListRouterInput> mockRouter;
+@property (nonatomic, strong) id<ReportsSearchModuleInput> mockReportsSearchModule;
 
 @end
 
@@ -33,10 +46,12 @@
     self.mockInteractor = OCMProtocolMock(@protocol(ReportListInteractorInput));
     self.mockView = OCMProtocolMock(@protocol(ReportListViewInput));
     self.mockRouter = OCMProtocolMock(@protocol(ReportListRouterInput));
+    self.mockReportsSearchModule = OCMProtocolMock(@protocol(ReportsSearchModuleInput));
     
     self.presenter.view = self.mockView;
     self.presenter.interactor = self.mockInteractor;
     self.presenter.router = self.mockRouter;
+    self.presenter.reportsSearchModule = self.mockReportsSearchModule;
 }
 
 - (void)tearDown {
@@ -44,9 +59,12 @@
     self.mockInteractor = nil;
     self.mockView = nil;
     self.mockRouter = nil;
-
+    self.mockReportsSearchModule = nil;
+    
     [super tearDown];
 }
+
+#pragma mark - ReportListViewOutput
 
 - (void)testSuccessSetupView {
     // given
@@ -73,10 +91,11 @@
     OCMVerify([self.mockRouter openEventModuleWithEventObjectId:eventId]);
 }
 
-- (void)testSuccessDidUpdateEventList {
+#pragma mark - EventListInteractorOutput
+
+- (void)testCorrectDidUpdateEventList {
     // given
     NSArray *events = @[];
-    
     // when
     [self.presenter didUpdateEventList:events];
     
@@ -84,4 +103,68 @@
     OCMVerify([self.mockView updateViewWithEventList:events]);
 }
 
+- (void)testCorrectDidTapSearchBarCancelButton {
+    // given
+    
+    // when
+    [self.presenter didTapSearchBarCancelButton];
+    
+    // then
+    OCMVerify([self.mockReportsSearchModule closeSearchModule]);
+}
+
+#pragma mark - SearchBar Delegate
+
+- (void)testCorrectSearchBarChangedWithNilText {
+    // given
+    NSString *searchString = nil;
+    // when
+    [self.presenter didChangeSearchBarWithSearchTerm:searchString];
+    
+    // then
+    OCMVerify([self.mockReportsSearchModule updateModuleWithSearchTerm:searchString]);
+}
+
+- (void)testCorrectSearchBarChangedWithEmptyText {
+    // given
+    NSString *searchString = @"";
+    // when
+    [self.presenter didChangeSearchBarWithSearchTerm:searchString];
+    
+    // then
+    OCMVerify([self.mockReportsSearchModule updateModuleWithSearchTerm:searchString]);
+}
+
+- (void)testCorrectSearchBarChangedWithText {
+    // given
+    NSString *searchString = @"test";
+    // when
+    [self.presenter didChangeSearchBarWithSearchTerm:searchString];
+    
+    // then
+    OCMVerify([self.mockReportsSearchModule updateModuleWithSearchTerm:searchString]);
+}
+
+- (void)testCorrectDidTapClearScreenSearchModule {
+    // given
+    
+    // when
+    [self.presenter didTapClearScreenSearchModule];
+    
+    // then
+    OCMVerify([self.mockView hideSearchModuleView]);
+}
+
+#pragma mark - ReportsSearchModuleOuput
+
+- (void)testSuccessDidLoadReportsSearchModuleInput {
+    // given
+    id<ReportsSearchModuleInput> reportsSearchModule = OCMProtocolMock(@protocol(ReportsSearchModuleInput));
+    
+    // when
+    [self.presenter didLoadReportsSearchModuleInput:reportsSearchModule];
+    
+    // then
+    XCTAssertEqual(self.presenter.reportsSearchModule, reportsSearchModule);
+}
 @end

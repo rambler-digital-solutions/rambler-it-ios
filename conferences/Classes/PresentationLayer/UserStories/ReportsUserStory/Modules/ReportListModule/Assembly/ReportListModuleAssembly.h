@@ -20,8 +20,11 @@
 
 #import "ModuleAssemblyBase.h"
 #import "AssemblyCollector/RamblerInitialAssembly.h"
+#import "PonsomizerAssembly.h"
 
 @interface ReportListModuleAssembly : ModuleAssemblyBase <RamblerInitialAssembly>
+
+@property (nonatomic, strong) PonsomizerAssembly *ponsomizerAssembly;
 
 @end
 

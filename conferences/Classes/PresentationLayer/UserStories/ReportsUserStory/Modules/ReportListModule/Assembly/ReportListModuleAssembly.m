@@ -19,7 +19,7 @@
 // THE SOFTWARE.
 
 #import "ReportListModuleAssembly.h"
-#import "ReportListTableViewController.h"
+#import "ReportListViewController.h"
 #import "ReportListInteractor.h"
 #import "ReportListPresenter.h"
 #import "ReportListRouter.h"
@@ -29,8 +29,8 @@
 
 @implementation  ReportListModuleAssembly
 
-- (ReportListTableViewController *)viewReportList {
-    return [TyphoonDefinition withClass:[ReportListTableViewController class]
+- (ReportListViewController *)viewReportList {
+    return [TyphoonDefinition withClass:[ReportListViewController class]
                             configuration:^(TyphoonDefinition *definition) {
                                 [definition injectProperty:@selector(output)
                                                       with:[self presenterReportList]];
@@ -46,8 +46,8 @@
                                                       with:[self presenterReportList]];
                                 [definition injectProperty:@selector(eventService)
                                                       with:[self.serviceComponents eventService]];
-                                [definition injectProperty:@selector(eventPrototypeMapper)
-                                                      with:[self.serviceComponents eventPrototypeMapper]];
+                                [definition injectProperty:@selector(ponsomizer)
+                                                      with:[self.ponsomizerAssembly ponsomizer]];
                                 [definition injectProperty:@selector(eventTypeDeterminator)
                                                       with:[self.presentationLayerHelpersAssembly eventTypeDeterminator]];
              }];

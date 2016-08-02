@@ -8,7 +8,7 @@
 
 #import "ReportListModuleAssembly.h"
 
-@class ReportListTableViewController;
+@class ReportListViewController;
 @class ReportListInteractor;
 @class ReportListPresenter;
 @class ReportListRouter;
@@ -16,7 +16,7 @@
 
 @interface ReportListModuleAssembly ()
 
-- (ReportListTableViewController *)viewReportList;
+- (ReportListViewController *)viewReportList;
 - (ReportListInteractor *)interactorReportList;
 - (ReportListPresenter *)presenterReportList;
 - (ReportListRouter *)routerReportList;

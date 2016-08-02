@@ -23,6 +23,8 @@
 
 @protocol PushNotificationService;
 @protocol EventService;
+@protocol LectureService;
+@protocol SpeakerService;
 @protocol EventListService;
 @protocol MetaEventService;
 @protocol PrototypeMapper;
@@ -33,6 +35,8 @@
 
 - (id <PushNotificationService>)pushNotificationService;
 - (id <EventService>)eventService;
+- (id <LectureService>)lectureService;
+- (id <SpeakerService>)speakerService;
 - (id <EventListService>)eventListService;
 - (id <MetaEventService>)metaEventService;
 - (id <EventStoreServiceProtocol>)eventStoreService;

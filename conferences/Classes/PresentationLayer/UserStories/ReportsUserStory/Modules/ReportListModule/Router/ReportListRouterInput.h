@@ -19,10 +19,27 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
+#import "ReportsSearchModuleOutput.h"
 
 @protocol ReportListRouterInput <NSObject>
 
+/**
+ @author Zinovyev Konstantin
+ 
+ Method is used to open EventModule and configure with event Id
+ 
+ @param objectId Идентификатор события
+ */
 - (void)openEventModuleWithEventObjectId:(NSString *)objectId;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ Method is used to configure ReportsSearchModule
+ 
+ @param moduleOutput Report list presenter
+ */
+- (void)configureReportsSearchModuleWithModuleOutput:(id<ReportsSearchModuleOutput>)moduleOutput;
 
 @end
 

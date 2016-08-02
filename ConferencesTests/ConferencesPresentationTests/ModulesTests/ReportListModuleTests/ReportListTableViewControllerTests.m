@@ -1,15 +1,27 @@
+// Copyright (c) 2015 RAMBLER&Co
 //
-//  ReportListTableViewControllerTests.m
-//  Conferences
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
 //
-//  Created by Karpushin Artem on 22/11/15.
-//  Copyright © 2015 Rambler. All rights reserved.
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
 //
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
 
 #import <XCTest/XCTest.h>
 #import <OCMock/OCMock.h>
 
-#import "ReportListTableViewController.h"
+#import "ReportListViewController.h"
 #import "ReportListViewOutput.h"
 #import "DataDisplayManager.h"
 #import "ReportListDataDisplayManager.h"
@@ -17,7 +29,7 @@
 
 @interface ReportListTableViewControllerTests : XCTestCase
 
-@property (strong, nonatomic) ReportListTableViewController <ReportListDataDisplayManagerDelegate> *viewController;
+@property (strong, nonatomic) ReportListViewController <ReportListDataDisplayManagerDelegate, UISearchBarDelegate> *viewController;
 @property (strong, nonatomic) ReportListDataDisplayManager *mockDataDisplayManager;
 @property (strong, nonatomic) id <ReportListViewOutput> mockOutput;
 @property (strong, nonatomic) UITableView *mockTableView;
@@ -29,14 +41,14 @@
 - (void)setUp {
     [super setUp];
     
-    self.viewController = [ReportListTableViewController<ReportListDataDisplayManagerDelegate, UISearchBarDelegate> new];
+    self.viewController = [ReportListViewController<ReportListDataDisplayManagerDelegate, UISearchBarDelegate> new];
     self.mockDataDisplayManager = OCMClassMock([ReportListDataDisplayManager class]);
     self.mockOutput = OCMProtocolMock(@protocol(ReportListViewOutput));
     self.mockTableView = OCMClassMock([UITableView class]);
     
     self.viewController.dataDisplayManager = self.mockDataDisplayManager;
     self.viewController.output = self.mockOutput;
-    self.viewController.tableView = self.mockTableView;
+    self.viewController.reportsTableView = self.mockTableView;
 }
 
 - (void)tearDown {
@@ -119,6 +131,17 @@
     
     // then
     OCMVerify([self.mockOutput didTriggerTapCellWithEvent:event]);
+}
+
+- (void)testSuccessSearchTextChange {
+    // given
+    UISearchBar *searchBar = [UISearchBar new];
+    NSString *searchString = @"search string";
+    // when
+    [self.viewController searchBar:searchBar textDidChange:searchString];
+
+    // then
+    OCMVerify([self.mockOutput didChangeSearchBarWithSearchTerm:searchString]);
 }
 
 @end

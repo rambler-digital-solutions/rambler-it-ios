@@ -34,7 +34,6 @@
 #import "EventCellObjectBuilderFactory.h"
 #import "OperationFactoriesAssembly.h"
 #import "PonsomizerAssembly.h"
-#import "RamblerInitialAssemblyCollector+Activate.h"
 
 @interface EventModuleAssemblyTests : RamblerTyphoonAssemblyTests
 
@@ -47,7 +46,12 @@
 - (void)setUp {
     [super setUp];
     
-    self.assembly = [RamblerInitialAssemblyCollector rds_activateAssemblyWithClass:[EventModuleAssembly class]];
+    self.assembly = [EventModuleAssembly new];
+    [self.assembly activateWithCollaboratingAssemblies:@[
+                                                         [ServiceComponentsAssembly new],
+                                                         [OperationFactoriesAssembly new],
+                                                         [PonsomizerAssembly new]
+                                                         ]];
 }
 
 - (void)tearDown {
@@ -67,11 +71,7 @@
     id result = [self.assembly viewEvent];
     
     // then
-    RamblerTyphoonAssemblyTestsTypeDescriptor *typeDescriptor = [RamblerTyphoonAssemblyTestsTypeDescriptor descriptorWithClass:targetClass];
-    
-    [self verifyTargetDependency:result
-                  withDescriptor:typeDescriptor
-                    dependencies:dependencies];
+    [self verifyTargetDependency:result withClass:targetClass dependencies:dependencies];
 }
 
 - (void)testThatAssemblyCreatesInteractor {
@@ -80,19 +80,14 @@
     NSArray *dependencies = @[
                               RamblerSelector(output),
                               RamblerSelector(eventService),
-                              RamblerSelector(ponsomizer),
-                              RamblerSelector(eventTypeDeterminator)
+                              RamblerSelector(eventTypeDeterminator),
+                              RamblerSelector(ponsomizer)
                               ];
     // when
     id result = [self.assembly interactorEvent];
     
     // then
-    RamblerTyphoonAssemblyTestsTypeDescriptor *typeDescriptor = [RamblerTyphoonAssemblyTestsTypeDescriptor descriptorWithClass:targetClass];
-    
-    [self verifyTargetDependency:result
-                  withDescriptor:typeDescriptor
-                    dependencies:dependencies];
-
+    [self verifyTargetDependency:result withClass:targetClass dependencies:dependencies];
 }
 
 - (void)testThatAssemblyCreatesPresenter {
@@ -108,12 +103,7 @@
     id result = [self.assembly presenterEvent];
     
     // then
-    RamblerTyphoonAssemblyTestsTypeDescriptor *typeDescriptor = [RamblerTyphoonAssemblyTestsTypeDescriptor descriptorWithClass:targetClass];
-    
-    [self verifyTargetDependency:result
-                  withDescriptor:typeDescriptor
-                    dependencies:dependencies];
-
+    [self verifyTargetDependency:result withClass:targetClass dependencies:dependencies];
 }
 
 - (void)testThatAssemblyCreatesRouter {
@@ -126,12 +116,7 @@
     id result = [self.assembly routerEvent];
     
     // then
-    RamblerTyphoonAssemblyTestsTypeDescriptor *typeDescriptor = [RamblerTyphoonAssemblyTestsTypeDescriptor descriptorWithClass:targetClass];
-    
-    [self verifyTargetDependency:result
-                  withDescriptor:typeDescriptor
-                    dependencies:dependencies];
-
+    [self verifyTargetDependency:result withClass:targetClass dependencies:dependencies];
 }
 
 - (void)testThatAssemblyCreatesdataDisplayManager {
@@ -142,11 +127,7 @@
     id result = [self.assembly dataDisplayManagerEvent];
     
     // then
-    RamblerTyphoonAssemblyTestsTypeDescriptor *typeDescriptor = [RamblerTyphoonAssemblyTestsTypeDescriptor descriptorWithClass:targetClass];
-    
-    [self verifyTargetDependency:result
-                  withDescriptor:typeDescriptor];
-
+    [self verifyTargetDependency:result withClass:targetClass];
 }
 
 - (void)testThatAssemblyCreatesPresenterStateStorage {
@@ -157,11 +138,7 @@
     id result = [self.assembly presenterStateStorage];
     
     // then
-    RamblerTyphoonAssemblyTestsTypeDescriptor *typeDescriptor = [RamblerTyphoonAssemblyTestsTypeDescriptor descriptorWithClass:targetClass];
-    
-    [self verifyTargetDependency:result
-                  withDescriptor:typeDescriptor];
-
+    [self verifyTargetDependency:result withClass:targetClass];
 }
 
 @end

@@ -29,13 +29,15 @@
 #import "PushNotificationServiceImplementation.h"
 #import "OperationScheduler.h"
 #import "OperationSchedulerImplementation.h"
-#import "PrototypeMapper.h"
-#import "EventPrototypeMapper.h"
 #import "EventStoreServiceProtocol.h"
 #import "EventStoreService.h"
 #import "MetaEventServiceImpementation.h"
 #import "RamblerLocationServiceImplementation.h"
 #import "PonsomizerAssembly.h"
+#import "LectureService.h"
+#import "LectureServiceImplementation.h"
+#import "SpeakerService.h"
+#import "SpeakerServiceImplementation.h"
 
 @implementation ServiceComponentsAssembly
 
@@ -50,7 +52,16 @@
                                                     with:[self.operationFactoriesAssembly eventListOperationFactory]];
                               [definition injectProperty:@selector(operationScheduler)
                                                     with:[self operationScheduler]];
+        
     }];
+}
+
+- (id <LectureService>)lectureService {
+    return [TyphoonDefinition withClass:[LectureServiceImplementation class]];
+}
+
+- (id <SpeakerService>)speakerService {
+    return [TyphoonDefinition withClass:[SpeakerServiceImplementation class]];
 }
 
 - (id <EventListService>)eventListService {
@@ -70,10 +81,6 @@
 
 - (id <OperationScheduler>)operationScheduler {
     return [TyphoonDefinition withClass:[OperationSchedulerImplementation class]];
-}
-
-- (id<PrototypeMapper>)eventPrototypeMapper {
-    return [TyphoonDefinition withClass:[EventPrototypeMapper class]];
 }
 
 - (id <EventStoreServiceProtocol>)eventStoreService {

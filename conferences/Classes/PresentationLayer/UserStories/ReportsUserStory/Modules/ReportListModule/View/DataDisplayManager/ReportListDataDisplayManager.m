@@ -22,7 +22,7 @@
 
 #import <Nimbus/NimbusModels.h>
 
-#import "ReportListTableViewCellObject.h"
+#import "ReportEventTableViewCellObject.h"
 #import "TableViewSectionHeaderCellObject.h"
 #import "DateFormatter.h"
 #import "EventPlainObject.h"
@@ -68,17 +68,18 @@
 
 #pragma mark - Private methods
 
+
 - (void)setupTableViewActions {
     self.tableViewActions = [[NITableViewActions alloc] initWithTarget:self];
     self.tableViewActions.tableViewCellSelectionStyle = UITableViewCellSelectionStyleNone;
     
     @weakify(self);
-    NIActionBlock reportTapActionBlock = ^BOOL(ReportListTableViewCellObject *object, id target, NSIndexPath *indexPath) {
+    NIActionBlock reportTapActionBlock = ^BOOL(ReportEventTableViewCellObject *object, id target, NSIndexPath *indexPath) {
         @strongify(self);
         [self.delegate didTapCellWithEvent:object.event];
         return YES;
     };
-    [self.tableViewActions attachToClass:[ReportListTableViewCellObject class] tapBlock:reportTapActionBlock];
+    [self.tableViewActions attachToClass:[ReportEventTableViewCellObject class] tapBlock:reportTapActionBlock];
 }
 
 - (NSArray *)generateCellObjects {
@@ -89,8 +90,12 @@
     
     for (EventPlainObject *event in self.events) {
         NSString *eventDate = [self.dateFormatter obtainDateWithDayMonthYearFormat:event.startDate];
-        
-        ReportListTableViewCellObject *cellObject = [ReportListTableViewCellObject objectWithEvent:event andDate:eventDate];
+        NSString *eventName = event.name ? event.name : @"";
+        NSAttributedString *eventAttributedName = [[NSAttributedString alloc] initWithString:eventName];
+
+        ReportEventTableViewCellObject *cellObject = [ReportEventTableViewCellObject objectWithEvent:event
+                                                                                             andDate:eventDate
+                                                                                     highlightedText:eventAttributedName];
         [cellObjects addObject:cellObject];
     }
     

@@ -35,13 +35,13 @@ typedef void (^SpeakerCompletionBlock)(Speaker *speaker, NSError *error);
 /**
  @author Artem Karpushin
  
- Method is used to obtain Speaker object from cache
+ Method is used to obtain Speakers object from cache
  
  @param predicate NSPredicate for specifying the filtering parameters
  
  @return Speaker object
  */
-- (Speaker *)obtainSpeakerWithPredicate:(NSPredicate *)predicate;
+- (NSArray *)obtainSpeakerWithPredicate:(NSPredicate *)predicate;
 
 /**
  @author Artem Karpushin

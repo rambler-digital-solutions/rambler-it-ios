@@ -23,49 +23,28 @@
 #import "EventService.h"
 #import "EventModelObject.h"
 #import "EventPlainObject.h"
+
 #import "ROSPonsomizer.h"
 #import "EventTypeDeterminator.h"
 #import "EventStoreServiceProtocol.h"
 #import "ErrorConstants.h"
-#import <MagicalRecord/MagicalRecord.h>
-#import "MetaEventModelObject.h"
-#import "MetaEventPlainObject.h"
-#import "MetaEventService.h"
 #import "EXTScope.h"
 
+static NSString *const kEventByObjectIdPredicateFormat = @"eventId = %@";
 
 @implementation EventInteractor
 
 #pragma mark - EventListInteractorInput
 
 - (EventPlainObject *)obtainEventWithObjectId:(NSString *)objectId {
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K = %@", EventModelObjectAttributes.eventId, objectId];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:kEventByObjectIdPredicateFormat, objectId];
     
     NSArray *events = [self.eventService obtainEventWithPredicate:predicate];
     id managedObjectEvent = [events firstObject];
     
-    EventPlainObject *eventPlainObject = [self.ponsomizer convertObject:managedObjectEvent];
-    EventType type = [self.eventTypeDeterminator determinateTypeForEvent:eventPlainObject];
-    eventPlainObject.eventType = @(type);
+    EventPlainObject *eventPlainObject = [self mapEvent:managedObjectEvent];
+    
     return eventPlainObject;
-}
-
-- (NSArray *)obtainPastEventsForMetaEvent:(NSString *)metaEventId {
-    
-    MetaEventModelObject *metaEvent = [self.metaEventService obtainMetaEventByMetaEventId:metaEventId];
-    NSSet *events = [self.ponsomizer convertObject:metaEvent.events];
-    for (EventPlainObject *event in events) {
-        EventType type = [self.eventTypeDeterminator determinateTypeForEvent:event];
-        event.eventType = @(type);
-    }
-
-    NSArray *pastEvents = [self filterEventsWithPastEventType:[events allObjects]];
-    
-    NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:EventModelObjectAttributes.startDate
-                                                                 ascending:NO];
-    NSArray *sortedEvents = [pastEvents sortedArrayUsingDescriptors:@[descriptor]];
-    
-    return sortedEvents;
 }
 
 - (void)saveEventToCalendar:(EventPlainObject *)event {
@@ -85,13 +64,6 @@
     }];
 }
 
-- (NSArray *)filterEventsWithPastEventType:(NSArray *)events {
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K = %@", EventModelObjectAttributes.eventType, @(PastEvent)];
-    NSArray *filteredEvents = [events filteredArrayUsingPredicate:predicate];
-    
-    return filteredEvents;
-}
-
 - (NSArray *)obtainActivityItemsForEvent:(EventPlainObject *)event {
     /**
      @author Artem Karpushin
@@ -100,6 +72,17 @@
      */
     NSArray *activityItems = @[];
     return activityItems;
+}
+
+#pragma mark - Private methods
+
+- (EventPlainObject *)mapEvent:(EventModelObject *)managedObjectEvent {
+    EventPlainObject *eventPlainObject = [self.ponsomizer convertObject:managedObjectEvent];
+    
+    EventType eventType = [self.eventTypeDeterminator determinateTypeForEvent:eventPlainObject];
+    eventPlainObject.eventType = @(eventType);
+    
+    return eventPlainObject;
 }
 
 @end
