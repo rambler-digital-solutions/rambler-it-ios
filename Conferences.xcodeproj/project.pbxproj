@@ -331,6 +331,7 @@
 		9F4077A81D2C164800D47EF6 /* ResourceMapperAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4077A71D2C164800D47EF6 /* ResourceMapperAssembly.m */; };
 		9F4077B01D2E371C00D47EF6 /* DirectionCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4077AF1D2E371C00D47EF6 /* DirectionCellObject.m */; };
 		9F4077B41D2E38AB00D47EF6 /* DirectionCellObjectFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4077B31D2E38AB00D47EF6 /* DirectionCellObjectFactory.m */; };
+		9F533A7B1D50D459004F8E82 /* HTTPMethodConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5FAC1BC27E7F00DC10DB /* HTTPMethodConstants.m */; };
 		9F8E5F701BC2552600DC10DB /* Conferences.API.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F8E5F6F1BC2552600DC10DB /* Conferences.API.plist */; };
 		9F8E5F741BC255AA00DC10DB /* RequestSignersAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5F731BC255AA00DC10DB /* RequestSignersAssembly.m */; };
 		9F8E5F781BC2571B00DC10DB /* NetworkClientsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5F771BC2571B00DC10DB /* NetworkClientsAssembly.m */; };
@@ -885,7 +886,6 @@
 		66704FF71D4606D800DD9D6E /* PonsomizerAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PonsomizerAssembly.h; path = conferences/Classes/CoreLayer/Assemblies/PonsomizerAssembly/PonsomizerAssembly.h; sourceTree = SOURCE_ROOT; };
 		66704FF81D4606D800DD9D6E /* PonsomizerAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PonsomizerAssembly.m; path = conferences/Classes/CoreLayer/Assemblies/PonsomizerAssembly/PonsomizerAssembly.m; sourceTree = SOURCE_ROOT; };
 		84D2CBEF6E088EFC9A139E49 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		892D07FB1BED008000825704 /* NightlyRibbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NightlyRibbon.png; sourceTree = "<group>"; };
 		9F0A6C1B1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CompoundOperationBuilderConfig.h; path = OperationBuilders/CompoundOperationBuilderConfig/CompoundOperationBuilderConfig.h; sourceTree = "<group>"; };
 		9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CompoundOperationBuilderConfig.m; path = OperationBuilders/CompoundOperationBuilderConfig/CompoundOperationBuilderConfig.m; sourceTree = "<group>"; };
 		9F0A6C1E1BC1B53F00A25417 /* RequestConfigurationType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RequestConfigurationType.h; path = CoreComponents/RequestConfigurators/RequestConfigurationType.h; sourceTree = "<group>"; };
@@ -1236,8 +1236,8 @@
 				2B429A5A1D464AF5004C005F /* AnnouncementListAnimator.m */,
 			);
 			path = Animator;
-sourceTree = "<group>";
-};
+			sourceTree = "<group>";
+		};
 		2B429A5C1D4789FA004C005F /* UINavigationBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -4594,7 +4594,6 @@ sourceTree = "<group>";
 		9F1F37DB1BBBB80D00C7797D = {
 			isa = PBXGroup;
 			children = (
-				892D07FB1BED008000825704 /* NightlyRibbon.png */,
 				9F1F37E61BBBB80D00C7797D /* Conferences */,
 				9F1F38031BBBB80D00C7797D /* ConferencesTests */,
 				635E18CA1CA6C572005B8439 /* ConferencesTestHelpers */,
@@ -5576,6 +5575,7 @@ sourceTree = "<group>";
 				63F613EF1CB111070002AEF0 /* SpeakerInfoViewControllerTests.m in Sources */,
 				635E18C21CA6A496005B8439 /* LectureModuleAssemblyTests.m in Sources */,
 				9FF37E181D32397900471B4E /* RamblerLocationPresenterTests.m in Sources */,
+				9F533A7B1D50D459004F8E82 /* HTTPMethodConstants.m in Sources */,
 				63F613ED1CB111070002AEF0 /* SpeakerInfoInteractorTests.m in Sources */,
 				631CBA741C020CCD00E3EBA8 /* EventModuleAssemblyTests.m in Sources */,
 				63D86BDD1C143FCE00986536 /* DateFormatterTests.m in Sources */,
