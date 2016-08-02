@@ -11,6 +11,7 @@
 
 #import "SpeakerPlainObject.h"
 #import "SpeakerInfoTableViewCellObject.h"
+#import "SpeakerInfoCellObjectsBuilder.h"
 
 @interface SpeakerInfoDataDisplayManager ()
 
@@ -38,12 +39,13 @@
 
 - (id<UITableViewDataSource>)dataSourceForTableView:(UITableView *)tableView {
     if (!self.tableViewModel) {
-        [self updateTableViewModel];
+        [self updateTableViewModelWithSpeaker:self.speaker];
     }
     return self.tableViewModel;
 }
 
-- (id<UITableViewDelegate>)delegateForTableView:(UITableView *)tableView withBaseDelegate:(id<UITableViewDelegate>)baseTableViewDelegate {
+- (id<UITableViewDelegate>)delegateForTableView:(UITableView *)tableView
+                               withBaseDelegate:(id<UITableViewDelegate>)baseTableViewDelegate {
     if (!self.tableViewActions) {
         [self setupTableViewActions];
     }
@@ -52,17 +54,8 @@
 
 #pragma mark - Private methods
 
-- (NSArray *)generateCellObjects {
-    NSMutableArray *cellObjects = [@[] mutableCopy];
-    
-    SpeakerInfoTableViewCellObject *speakerInfoCellObject = [SpeakerInfoTableViewCellObject objectWithText:self.speaker.biography];
-    [cellObjects addObject:speakerInfoCellObject];
-    
-    return cellObjects;
-}
-
-- (void)updateTableViewModel {
-    NSArray *cellObjects = [self generateCellObjects];
+- (void)updateTableViewModelWithSpeaker:(SpeakerPlainObject *)speaker {
+    NSArray *cellObjects = [self.cellObjectBuilder buildObjectsWithSpeaker:speaker];
     
     self.tableViewModel = [[NITableViewModel alloc] initWithSectionedArray:cellObjects delegate:(id)[NICellFactory class]];
 }

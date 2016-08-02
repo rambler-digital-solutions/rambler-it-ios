@@ -9,10 +9,14 @@
 #import <Foundation/Foundation.h>
 #import <Nimbus/NimbusModels.h>
 
+@class SpeakerPlainObject;
+
 @interface SpeakerInfoTableViewCellObject : NSObject <NICellObject>
 
-@property (strong, nonatomic, readonly) NSString *text;
+@property (nonatomic, strong, readonly) NSString *speakerName;
+@property (nonatomic, strong, readonly) NSString *companyName;
+@property (nonatomic, strong, readonly) NSString *speakerDescription;
 
-+ (instancetype)objectWithText:(NSString *)text;
++ (instancetype)objectWithSpeaker:(SpeakerPlainObject *)speaker;
 
 @end

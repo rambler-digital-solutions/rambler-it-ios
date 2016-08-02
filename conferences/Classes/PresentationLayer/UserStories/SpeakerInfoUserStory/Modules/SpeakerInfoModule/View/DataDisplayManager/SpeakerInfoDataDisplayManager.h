@@ -10,8 +10,11 @@
 #import "DataDisplayManager.h"
 
 @class SpeakerPlainObject;
+@class SpeakerInfoCellObjectsBuilder;
 
 @interface SpeakerInfoDataDisplayManager : NSObject <DataDisplayManager, UITableViewDelegate>
+
+@property (nonatomic, strong) SpeakerInfoCellObjectsBuilder *cellObjectBuilder;
 
 - (void)configureDataDisplayManagerWithSpeaker:(SpeakerPlainObject *)speaker;
 

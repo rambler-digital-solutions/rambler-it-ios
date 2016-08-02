@@ -11,7 +11,10 @@
 
 @interface SpeakerInfoTableViewCell ()
 
-@property (weak, nonatomic) IBOutlet UILabel *label;
+@property (weak, nonatomic) IBOutlet UIImageView *speakerImageView;
+@property (weak, nonatomic) IBOutlet UILabel *speakerNameTitle;
+@property (weak, nonatomic) IBOutlet UILabel *companyNameTitle;
+@property (weak, nonatomic) IBOutlet UILabel *speakerDescription;
 
 @end
 
@@ -20,7 +23,9 @@
 #pragma mark NICell methods
 
 - (BOOL)shouldUpdateCellWithObject:(SpeakerInfoTableViewCellObject *)object {
-    self.label.text = object.text;
+    self.speakerNameTitle.text = object.speakerName;
+    self.companyNameTitle.text = object.companyName;
+    self.speakerDescription.text = object.speakerDescription;
     
     return  true;
 }

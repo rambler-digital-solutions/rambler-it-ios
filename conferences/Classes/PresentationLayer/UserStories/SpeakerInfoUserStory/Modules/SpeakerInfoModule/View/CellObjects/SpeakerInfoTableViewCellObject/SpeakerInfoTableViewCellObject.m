@@ -8,10 +8,13 @@
 
 #import "SpeakerInfoTableViewCellObject.h"
 #import "SpeakerInfoTableViewCell.h"
+#import "SpeakerPlainObject.h"
 
 @interface SpeakerInfoTableViewCellObject ()
 
-@property (strong, nonatomic, readwrite) NSString *text;
+@property (nonatomic, strong, readwrite) NSString *speakerName;
+@property (nonatomic, strong, readwrite) NSString *companyName;
+@property (nonatomic, strong, readwrite) NSString *speakerDescription;
 
 @end
 
@@ -19,16 +22,19 @@
 
 #pragma mark - Initialization
 
-- (instancetype)initWithText:(NSString *)text {
+- (instancetype)initWithSpeaker:(SpeakerPlainObject *)speaker {
     self = [super init];
     if (self) {
-        _text = text;
+        _speakerName = speaker.name;
+        _companyName = speaker.company;
+        _speakerDescription = speaker.biography;
     }
+    
     return self;
 }
 
-+ (instancetype)objectWithText:(NSString *)text {
-    return [[self alloc] initWithText:text];
++ (instancetype)objectWithSpeaker:(SpeakerPlainObject *)speaker {
+    return [[self alloc] initWithSpeaker:speaker];
 }
 
 # pragma mark - NICellObject methods
