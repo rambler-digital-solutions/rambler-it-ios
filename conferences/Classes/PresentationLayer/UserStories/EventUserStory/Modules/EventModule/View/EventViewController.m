@@ -98,6 +98,10 @@
     [self.output didTapCurrentTranslationButton];
 }
 
+- (void)didSpeakerViewWithSpeakerId:(NSString *)speakerId {
+    [self.output didTapSpeakerViewWithSpeakerId:speakerId];
+}
+
 #pragma mark - EventDataDisplayManagerDelegate
 
 - (void)didTapLectureInfoCellWithLectureObjectId:(NSString *)lectureObjectId {

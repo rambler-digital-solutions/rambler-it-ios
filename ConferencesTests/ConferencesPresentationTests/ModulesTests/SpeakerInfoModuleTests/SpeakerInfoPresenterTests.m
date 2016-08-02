@@ -87,7 +87,7 @@
     self.presenter.stateStorage = stateStorage;
     
     // when
-    [self.presenter configureCurrentModuleWithSpeakerObjectId:speakerObjectId];
+    [self.presenter configureCurrentModuleWithSpeakerId:speakerObjectId];
     
     // then
     XCTAssert(stateStorage.speakerObjectId == speakerObjectId);

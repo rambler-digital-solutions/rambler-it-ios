@@ -30,13 +30,15 @@ static NSString *const kPlaceholderImageName = @"placeholder";
 
 @interface LectureInfoTableViewCell ()
 
-@property (weak, nonatomic) IBOutlet UIImageView *speakerImageView;
-@property (weak, nonatomic) IBOutlet UILabel *speakerName;
-@property (weak, nonatomic) IBOutlet UILabel *speakerCompanyName;
-@property (weak, nonatomic) IBOutlet UILabel *lectureDescription;
-@property (weak, nonatomic) IBOutlet UILabel *lectureTitle;
+@property (nonatomic, weak) IBOutlet UIImageView *speakerImageView;
+@property (nonatomic, weak) IBOutlet UILabel *speakerName;
+@property (nonatomic, weak) IBOutlet UILabel *speakerCompanyName;
+@property (nonatomic, weak) IBOutlet UILabel *lectureDescription;
+@property (nonatomic, weak) IBOutlet UILabel *lectureTitle;
+@property (nonatomic, weak) IBOutlet UIView *speakerView;
 
-@property (weak, nonatomic) id <LectureInfoTableViewCellActionProtocol> actionProxy;
+@property (nonatomic, weak) id <LectureInfoTableViewCellActionProtocol> actionProxy;
+@property (nonatomic, strong) LectureInfoTableViewCellObject *cellObject;
 
 @end
 
@@ -45,11 +47,14 @@ static NSString *const kPlaceholderImageName = @"placeholder";
 - (void)didMoveToSuperview {
     [super didMoveToSuperview];
     self.actionProxy = (id<LectureInfoTableViewCellActionProtocol>)[self cd_proxyForProtocol:@protocol(EventTableViewCellActionProtocol)];
+    UITapGestureRecognizer *speakerViewTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapSpeakerView:)];
+    [self.speakerView addGestureRecognizer:speakerViewTapRecognizer];
 }
 
 #pragma mark - NICell methods
 
 - (BOOL)shouldUpdateCellWithObject:(LectureInfoTableViewCellObject *)object {
+    self.cellObject = object;
     self.speakerName.text = object.speakerName;
     self.speakerCompanyName.text = object.speakerCompanyName;
     self.lectureDescription.text = object.lectureDescription;
@@ -72,6 +77,10 @@ static NSString *const kPlaceholderImageName = @"placeholder";
 
 - (IBAction)didTapReadMoreButton:(UIButton *)sender {
     [self.actionProxy didTapReadMoreLectureDescriptionButton];
+}
+
+- (void)didTapSpeakerView:(id)sender {
+    [self.actionProxy didSpeakerViewWithSpeakerId:self.cellObject.speakerId];
 }
 
 @end

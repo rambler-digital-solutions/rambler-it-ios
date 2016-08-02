@@ -28,8 +28,8 @@
 
 #pragma mark - SpeakerInfoModuleInput
 
-- (void)configureCurrentModuleWithSpeakerObjectId:(NSString *)objectId {
-    self.stateStorage.speakerObjectId = objectId;
+- (void)configureCurrentModuleWithSpeakerId:(NSString *)speakerId {
+    self.stateStorage.speakerObjectId = speakerId;
 }
 
 @end

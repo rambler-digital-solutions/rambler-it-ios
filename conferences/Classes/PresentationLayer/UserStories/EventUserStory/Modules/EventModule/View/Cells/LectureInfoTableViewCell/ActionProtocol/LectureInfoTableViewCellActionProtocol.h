@@ -22,6 +22,18 @@
 
 @protocol LectureInfoTableViewCellActionProtocol <NSObject>
 
+/**
+ @author Vasyura Anastasiya
+ 
+ Method is used to inform delegate that ReadMore button was tapped
+ */
 - (void)didTapReadMoreLectureDescriptionButton;
+
+/**
+ @author Vasyura Anastasiya
+ 
+ Method is used to inform delegate that speaker view was tapped
+ */
+- (void)didSpeakerViewWithSpeakerId:(NSString *)speakerId;
 
 @end

@@ -30,7 +30,7 @@
 @property (strong, nonatomic, readwrite) NSString *lectureDescription;
 @property (strong, nonatomic, readwrite) NSString *lectureTitle;
 @property (strong, nonatomic, readwrite) NSURL *speakerImageUrl;
-@property (strong, nonatomic, readwrite) NSString *lectureObjectId;
+@property (strong, nonatomic, readwrite) NSString *lectureId;
 
 @end
 
@@ -43,9 +43,11 @@
     if (self) {
         _lectureDescription = lecture.lectureDescription;
         _lectureTitle = lecture.name;
+        _lectureId = lecture.lectureId;
         
         // TODO: реализовать отображение нескольких докладчиков у одного доклада
         SpeakerPlainObject *speaker = lecture.speaker;
+        _speakerId = speaker.speakerId;
         _speakerName = speaker.name;
         _speakerCompanyName = speaker.company;
         _speakerImageUrl = [NSURL URLWithString:speaker.imageUrl];

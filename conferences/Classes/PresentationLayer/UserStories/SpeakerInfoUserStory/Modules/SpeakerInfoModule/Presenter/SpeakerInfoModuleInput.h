@@ -18,6 +18,6 @@
  
  @param objectId Speaker object id
  */
-- (void)configureCurrentModuleWithSpeakerObjectId:(NSString *)objectId;
+- (void)configureCurrentModuleWithSpeakerId:(NSString *)speakerId;
 
 @end

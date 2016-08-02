@@ -40,5 +40,14 @@
  */
 - (void)openShareModuleWithActivityItems:(NSArray *)activityItems;
 
+/**
+ @author Vasyura Anastasiya
+ 
+ Method is used to initiate transition to the speaker info module
+ 
+ @param speakerId 
+ */
+- (void)openSpeakerInfoModuleWithSpeakerId:(NSString *)speakerId;
+
 @end
 
