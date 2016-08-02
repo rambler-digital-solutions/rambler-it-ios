@@ -20,49 +20,38 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSUInteger, ChangeProviderChangeType) {
-    ChangeProviderChangeInsert = 1,
-    ChangeProviderChangeDelete = 2,
-    ChangeProviderChangeMove = 3,
-    ChangeProviderChangeUpdate = 4
-};
-
+@protocol ObjectIndexer;
 @protocol ChangeProvider;
 
 /**
  @author Egor Tolstoy
  
- The protocol of object capable of processing tracked objects changes.
+ The main object in SpotlightIndexer ecosystem. It's responsible for chaining all the parts together.
  */
-@protocol ChangeProviderDelegate <NSObject>
+@interface IndexerMonitor : NSObject
 
 /**
  @author Egor Tolstoy
  
- Notifies about object change event
- 
- @param changeProvider ChangeProvider itself
- @param object         Changed object
- @param changeType     Type of change
+ Initiates monitoring start
  */
-- (void)changeProvider:(id<ChangeProvider>)changeProvider
-       didChangeObject:(id)object
-            changeType:(ChangeProviderChangeType)changeType;
+- (void)startMonitoring;
 
 /**
  @author Egor Tolstoy
  
- TODO: 
+ Initiates monitoring end
  */
-- (void)processChanges;
+- (void)stopMonitoring;
 
 /**
  @author Egor Tolstoy
  
- Returns objects for initial indexing
+ Adds new indexer and change provider
  
- @return Objects for initial indexing
+ @param indexer        Indexer for specific class
+ @param changeProvider Change provider for specific class
  */
-- (NSArray *)obtainObjectsForInitialIndexing;
+- (void)addIndexer:(id<ObjectIndexer>)indexer withChangeProvider:(id<ChangeProvider>)changeProvider;
 
 @end
