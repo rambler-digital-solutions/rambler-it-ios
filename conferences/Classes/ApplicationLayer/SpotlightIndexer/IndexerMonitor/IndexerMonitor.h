@@ -30,6 +30,9 @@
  */
 @interface IndexerMonitor : NSObject
 
++ (instancetype)monitorWithIndexers:(NSArray <id<ObjectIndexer>> *)indexers
+                    changeProviders:(NSArray <id<ChangeProvider>> *)changeProviders;
+
 /**
  @author Egor Tolstoy
  
@@ -43,15 +46,5 @@
  Initiates monitoring end
  */
 - (void)stopMonitoring;
-
-/**
- @author Egor Tolstoy
- 
- Adds new indexer and change provider
- 
- @param indexer        Indexer for specific class
- @param changeProvider Change provider for specific class
- */
-- (void)addIndexer:(id<ObjectIndexer>)indexer withChangeProvider:(id<ChangeProvider>)changeProvider;
 
 @end

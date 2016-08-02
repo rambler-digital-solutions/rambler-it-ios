@@ -34,7 +34,7 @@ typedef void(^IndexerErrorBlock)(NSError *error);
 - (NSOperation *)operationForIndexBatch:(IndexTransactionBatch *)batch
                     withCompletionBlock:(IndexerErrorBlock)block;
 
-- (BOOL)canIndexObjectWithIdentifier:(NSString *)identifier;
+- (BOOL)canIndexObjectWithType:(NSString *)objectType;
 - (NSString *)identifierForObject:(id)object;
 - (id)objectForIdentifier:(NSString *)object;
 
