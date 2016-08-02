@@ -76,6 +76,6 @@ typedef NS_ENUM(NSUInteger, TableViewSectionIndex){
     OCMVerify([mockViewController didUpdateTableViewModel]);
 }
 
-//TODO: Добавить тесты проверяющий количество секций и ячеек
+    //TODO: Добавить тесты проверяющий количество секций и ячеек
 
 @end
