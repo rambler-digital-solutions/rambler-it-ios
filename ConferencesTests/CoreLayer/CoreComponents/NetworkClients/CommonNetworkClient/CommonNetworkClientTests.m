@@ -24,6 +24,7 @@
 #import "XCTestCase+RCFHelpers.h"
 #import "TestConstants.h"
 
+#import "ServerResponseModel.h"
 #import "CommonNetworkClient.h"
 
 static NSString *const kTestURLPath = @"https://myapi.com/v1/rest";
@@ -80,8 +81,8 @@ static NSString *const kTestURLPath = @"https://myapi.com/v1/rest";
     
     // when
     [self.client sendRequest:request
-             completionBlock:^(NSData *data, NSError *error) {
-        resultData = data;
+             completionBlock:^(ServerResponseModel *data, NSError *error) {
+        resultData = data.data;
         [expectation fulfill];
     }];
     
@@ -108,7 +109,7 @@ static NSString *const kTestURLPath = @"https://myapi.com/v1/rest";
     
     // when
     [self.client sendRequest:request
-             completionBlock:^(NSData *data, NSError *error) {
+             completionBlock:^(ServerResponseModel *data, NSError *error) {
                  resultError = error;
                  [expectation fulfill];
              }];

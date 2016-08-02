@@ -19,6 +19,7 @@
 // THE SOFTWARE.
 
 #import "CommonNetworkClient.h"
+#import "ServerResponseModel.h"
 
 @interface CommonNetworkClient ()
 
@@ -43,12 +44,19 @@
 - (void)sendRequest:(NSURLRequest *)request
     completionBlock:(RCFNetworkClientCompletionBlock)block {
     NSAssert(request != nil, @"NSURLRequest should not be nil");
-    
+
     NSURLSessionDataTask *dataTask = [self.session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (block) {
-            block(data, error);
+            NSHTTPURLResponse *serverResponse = nil;
+            if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
+                serverResponse = (NSHTTPURLResponse *)response;
+            }
+            ServerResponseModel *model = [[ServerResponseModel alloc] initWithResponse:serverResponse
+                                                                                  data:data];
+            block(model, error);
         }
     }];
+
     
     [dataTask resume];
 }

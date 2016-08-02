@@ -20,7 +20,9 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void(^RCFNetworkClientCompletionBlock)(NSData *data, NSError *error);
+@class ServerResponseModel;
+
+typedef void(^RCFNetworkClientCompletionBlock)(ServerResponseModel *respodeModel, NSError *error);
 
 /**
  @author Egor Tolstoy
