@@ -22,6 +22,7 @@
 
 #import "ChangeProvider.h"
 #import "ChangeProviderDelegate.h"
+#import "ObjectIndexer.h"
 
 @interface IndexerMonitor () <ChangeProviderDelegate>
 
@@ -61,6 +62,9 @@
             changeType:(ChangeProviderChangeType)changeType {
     NSString *indexerIdentifier = [[self.changeProviders allKeysForObject:changeProvider] firstObject];
     id<ObjectIndexer> indexer = self.indexers[indexerIdentifier];
+    
+    NSString *objectIdentifier = [indexer identifierForObject:object];
+    
 }
 
 - (void)processChanges {
