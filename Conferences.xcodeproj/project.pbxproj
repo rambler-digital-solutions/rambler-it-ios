@@ -353,7 +353,8 @@
 		9F4077A81D2C164800D47EF6 /* ResourceMapperAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4077A71D2C164800D47EF6 /* ResourceMapperAssembly.m */; };
 		9F4077B01D2E371C00D47EF6 /* DirectionCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4077AF1D2E371C00D47EF6 /* DirectionCellObject.m */; };
 		9F4077B41D2E38AB00D47EF6 /* DirectionCellObjectFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4077B31D2E38AB00D47EF6 /* DirectionCellObjectFactory.m */; };
-		9F533A7B1D50D459004F8E82 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		9F533A7B1D50D459004F8E82 /* HTTPMethodConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5FAC1BC27E7F00DC10DB /* HTTPMethodConstants.m */; };
+		9F533A891D50DE84004F8E82 /* FetchedResultsControllerChangeProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F533A881D50DE84004F8E82 /* FetchedResultsControllerChangeProvider.m */; };
 		9F8E5F701BC2552600DC10DB /* Conferences.API.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F8E5F6F1BC2552600DC10DB /* Conferences.API.plist */; };
 		9F8E5F741BC255AA00DC10DB /* RequestSignersAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5F731BC255AA00DC10DB /* RequestSignersAssembly.m */; };
 		9F8E5F781BC2571B00DC10DB /* NetworkClientsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5F771BC2571B00DC10DB /* NetworkClientsAssembly.m */; };
@@ -1084,6 +1085,10 @@
 		9F4077AF1D2E371C00D47EF6 /* DirectionCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DirectionCellObject.m; path = CellObjects/DirectionCellObject.m; sourceTree = "<group>"; };
 		9F4077B21D2E38AB00D47EF6 /* DirectionCellObjectFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DirectionCellObjectFactory.h; path = CellObjectFactory/DirectionCellObjectFactory.h; sourceTree = "<group>"; };
 		9F4077B31D2E38AB00D47EF6 /* DirectionCellObjectFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DirectionCellObjectFactory.m; path = CellObjectFactory/DirectionCellObjectFactory.m; sourceTree = "<group>"; };
+		9F533A7F1D50D794004F8E82 /* ChangeProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChangeProvider.h; path = SpotlightIndexer/ChangeProviders/Protocols/ChangeProvider.h; sourceTree = "<group>"; };
+		9F533A801D50DC8F004F8E82 /* ChangeProviderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChangeProviderDelegate.h; path = SpotlightIndexer/ChangeProviders/Protocols/ChangeProviderDelegate.h; sourceTree = "<group>"; };
+		9F533A871D50DE84004F8E82 /* FetchedResultsControllerChangeProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchedResultsControllerChangeProvider.h; sourceTree = "<group>"; };
+		9F533A881D50DE84004F8E82 /* FetchedResultsControllerChangeProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchedResultsControllerChangeProvider.m; sourceTree = "<group>"; };
 		9F8E5F6F1BC2552600DC10DB /* Conferences.API.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Conferences.API.plist; path = Assemblies/RequestConfiguratorsFactory/Conferences.API.plist; sourceTree = "<group>"; };
 		9F8E5F711BC2559B00DC10DB /* RequestSignersFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequestSignersFactory.h; path = Assemblies/RequestSignersFactory/RequestSignersFactory.h; sourceTree = "<group>"; };
 		9F8E5F721BC255AA00DC10DB /* RequestSignersAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequestSignersAssembly.h; path = Assemblies/RequestSignersFactory/RequestSignersAssembly.h; sourceTree = "<group>"; };
@@ -3481,6 +3486,7 @@
 		63FDCDD91BBDBA2A00A43B60 /* ApplicationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				9F533A7C1D50D6E7004F8E82 /* SpotlightIndexer */,
 				63F54D9C1BC5BA8F00DB1746 /* ThirdPartiesConfigurator */,
 				63EF15B71BC4546400480CAF /* PushNotificationCenter */,
 				636A37BC1BC13FA200B49C3D /* Assemblies */,
@@ -5041,6 +5047,50 @@
 			name = CellObjectFactory;
 			sourceTree = "<group>";
 		};
+		9F533A7C1D50D6E7004F8E82 /* SpotlightIndexer */ = {
+			isa = PBXGroup;
+			children = (
+				9F533A7D1D50D6F8004F8E82 /* ChangeProviders */,
+			);
+			name = SpotlightIndexer;
+			sourceTree = "<group>";
+		};
+		9F533A7D1D50D6F8004F8E82 /* ChangeProviders */ = {
+			isa = PBXGroup;
+			children = (
+				9F533A811D50DDF7004F8E82 /* BaseClasses */,
+				9F533A7E1D50D702004F8E82 /* Protocols */,
+			);
+			name = ChangeProviders;
+			sourceTree = "<group>";
+		};
+		9F533A7E1D50D702004F8E82 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9F533A7F1D50D794004F8E82 /* ChangeProvider.h */,
+				9F533A801D50DC8F004F8E82 /* ChangeProviderDelegate.h */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		9F533A811D50DDF7004F8E82 /* BaseClasses */ = {
+			isa = PBXGroup;
+			children = (
+				9F533A861D50DE84004F8E82 /* FetchedResultsControllerChangeProvider */,
+			);
+			name = BaseClasses;
+			sourceTree = "<group>";
+		};
+		9F533A861D50DE84004F8E82 /* FetchedResultsControllerChangeProvider */ = {
+			isa = PBXGroup;
+			children = (
+				9F533A871D50DE84004F8E82 /* FetchedResultsControllerChangeProvider.h */,
+				9F533A881D50DE84004F8E82 /* FetchedResultsControllerChangeProvider.m */,
+			);
+			name = FetchedResultsControllerChangeProvider;
+			path = SpotlightIndexer/ChangeProviders/BaseClasses/FetchedResultsControllerChangeProvider;
+			sourceTree = "<group>";
+		};
 		9F8E5F911BC269D000DC10DB /* OperationFactoriesAssembly */ = {
 			isa = PBXGroup;
 			children = (
@@ -5721,6 +5771,7 @@
 				9F8E5F781BC2571B00DC10DB /* NetworkClientsAssembly.m in Sources */,
 				63F613741CB00A220002AEF0 /* LectureInfoTableViewCell.m in Sources */,
 				2B429A631D4798D4004C005F /* EventViewAnimator.m in Sources */,
+				9F533A891D50DE84004F8E82 /* FetchedResultsControllerChangeProvider.m in Sources */,
 				9F0A85021BC1698B006F79FB /* ResponseValidationOperation.m in Sources */,
 				63F6135B1CB00A220002AEF0 /* EventHeaderInteractor.m in Sources */,
 				667050141D46143900DD9D6E /* ReportsSearchRouter.m in Sources */,
