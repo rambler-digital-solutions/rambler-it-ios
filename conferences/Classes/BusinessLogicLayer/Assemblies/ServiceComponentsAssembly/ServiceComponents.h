@@ -24,6 +24,7 @@
 @protocol PushNotificationService;
 @protocol EventService;
 @protocol EventListService;
+@protocol MetaEventService;
 @protocol PrototypeMapper;
 @protocol EventStoreServiceProtocol;
 @protocol RamblerLocationService;
@@ -33,6 +34,7 @@
 - (id <PushNotificationService>)pushNotificationService;
 - (id <EventService>)eventService;
 - (id <EventListService>)eventListService;
+- (id <MetaEventService>)metaEventService;
 - (id <EventStoreServiceProtocol>)eventStoreService;
 - (id <RamblerLocationService>)ramblerLocationService;
 

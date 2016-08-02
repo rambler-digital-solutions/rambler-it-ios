@@ -70,7 +70,7 @@
     lecture.speaker = speaker;
     
     OCMStub([self.interactorMock obtainLectureWithObjectId:OCMOCK_ANY]).andReturn(lecture);
-    
+
     // when
     [self.presenter setupView];
     

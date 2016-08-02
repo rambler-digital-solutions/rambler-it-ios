@@ -1,33 +1,43 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="KGk-i7-Jjw" customClass="VideoRecordTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="162" id="KGk-i7-Jjw" customClass="VideoRecordTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="162"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="161.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Видео" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELo-Uk-S5K">
-                        <rect key="frame" x="135" y="39.5" width="50.5" height="20.5"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ypb-QJ-BP6">
+                        <rect key="frame" x="0.0" y="20" width="320" height="141.5"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Видео будет позднее" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELo-Uk-S5K">
+                        <rect key="frame" x="74" y="80.5" width="172" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
-                <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
-                    <constraint firstItem="ELo-Uk-S5K" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="MQ9-n1-E3O"/>
-                    <constraint firstItem="ELo-Uk-S5K" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="tKz-0i-0tN"/>
+                    <constraint firstItem="Ypb-QJ-BP6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="5M6-CA-icy"/>
+                    <constraint firstItem="ELo-Uk-S5K" firstAttribute="centerY" secondItem="Ypb-QJ-BP6" secondAttribute="centerY" id="5Ux-j9-bcF"/>
+                    <constraint firstAttribute="bottom" secondItem="Ypb-QJ-BP6" secondAttribute="bottom" id="7KQ-D2-82d"/>
+                    <constraint firstAttribute="trailing" secondItem="Ypb-QJ-BP6" secondAttribute="trailing" id="OA6-dS-ubl"/>
+                    <constraint firstItem="ELo-Uk-S5K" firstAttribute="centerX" secondItem="Ypb-QJ-BP6" secondAttribute="centerX" id="PKR-Ae-g9c"/>
+                    <constraint firstItem="Ypb-QJ-BP6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="ojs-Jc-V8U"/>
                 </constraints>
             </tableViewCellContentView>
             <inset key="separatorInset" minX="9999" minY="0.0" maxX="0.0" maxY="0.0"/>
-            <point key="canvasLocation" x="348" y="418"/>
+            <connections>
+                <outlet property="previewImageView" destination="Ypb-QJ-BP6" id="XGw-AQ-QXN"/>
+                <outlet property="titleLabel" destination="ELo-Uk-S5K" id="pRG-vh-4EK"/>
+            </connections>
+            <point key="canvasLocation" x="348" y="387"/>
         </tableViewCell>
     </objects>
 </document>

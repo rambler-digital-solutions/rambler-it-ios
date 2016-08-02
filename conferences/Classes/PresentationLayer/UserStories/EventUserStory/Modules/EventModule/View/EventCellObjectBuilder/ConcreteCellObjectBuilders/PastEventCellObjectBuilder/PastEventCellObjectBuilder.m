@@ -30,7 +30,8 @@
 
 @implementation PastEventCellObjectBuilder
 
-- (NSArray *)cellObjectsForEvent:(EventPlainObject *)event {
+- (NSArray *)cellObjectsForEvent:(EventPlainObject *)event
+                      pastEvents:(NSArray *)pastEvents {
     NSMutableArray *cellObjects = [NSMutableArray array];
     
     NSString *formattedDate = [self.dateFormatter obtainDateWithDayMonthTimeFormat:event.startDate];
@@ -41,14 +42,20 @@
     VideoRecordTableViewCellObject *videoCellObject = [VideoRecordTableViewCellObject objectWithEvent:event];
     [cellObjects addObject:videoCellObject];
     
-    EventDescriptionTableViewCellObject *eventDescriptionCellObject = [EventDescriptionTableViewCellObject objectWithEvent:event];
-    [cellObjects addObject:eventDescriptionCellObject];
+    //Adding current event lectures section
+    NSArray *lectureCellObjects = [self cellObjectsForLectureSectionWithEvent:event];
+    [cellObjects addObjectsFromArray:lectureCellObjects];
     
-    for (LecturePlainObject *lecture in event.lectures) {
-        LectureInfoTableViewCellObject *lectionCellobject = [LectureInfoTableViewCellObject objectWithLecture:lecture];
-        [cellObjects addObject:lectionCellobject];
-    }
+    //Adding previous events section
+    NSArray *pastEventCellObjects = [self cellObjectsForPastEventsSectionWithCurrentEvent:event
+                                                                               pastEvents:pastEvents];
+    [cellObjects addObjectsFromArray:pastEventCellObjects];
     
+    //Adding previous lectures section
+    NSArray *pastLectureCellObjects = [self cellObjectsForPastLecturesSectionWithCurrentEvent:event
+                                                                                   pastEvents:pastEvents];
+    [cellObjects addObjectsFromArray:pastLectureCellObjects];
+
     return cellObjects;
 }
 

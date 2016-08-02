@@ -24,6 +24,8 @@
 
 @class EventPlainObject;
 @class EventCellObjectBuilderFactory;
+@class EventViewAnimator;
+@class TechPlainObject;
 
 @protocol EventDataDisplayManagerDelegate <NSObject>
 
@@ -35,8 +37,10 @@
 
 @property (strong, nonatomic) EventCellObjectBuilderFactory *cellObjectBuilderFactory;
 @property (weak, nonatomic) id <EventDataDisplayManagerDelegate> delegate;
+@property (strong, nonatomic) EventViewAnimator *eventViewAnimator;
 
-- (void)configureDataDisplayManagerWithEvent:(EventPlainObject *)event;
+- (void)configureDataDisplayManagerWithEvent:(EventPlainObject *)event
+                                  pastEvents:(NSArray *)pastEvents;
 
 @end
 

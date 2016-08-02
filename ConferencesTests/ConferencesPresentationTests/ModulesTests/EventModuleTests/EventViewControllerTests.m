@@ -87,6 +87,7 @@
 - (void)testSuccessConfigureViewWithEvent {
     // given
     EventPlainObject *event = [EventPlainObject new];
+    NSArray *pastEvents = @[@1, @2, @3];
     
     id dataSource = OCMProtocolMock(@protocol(UITableViewDataSource));
     id delegate = OCMProtocolMock(@protocol(UITableViewDelegate));
@@ -95,26 +96,27 @@
     OCMStub([self.mockDataDisplayManager delegateForTableView:self.mockTableView withBaseDelegate:nil]).andReturn(delegate);
     
     // when
-    [self.viewController configureViewWithEvent:event];
+    [self.viewController configureViewWithEvent:event pastEvents:pastEvents];
     
     // then
     OCMVerify([self.mockTableView setDataSource:dataSource]);
     OCMVerify([self.mockTableView setDelegate:delegate]);
-    OCMVerify([self.mockDataDisplayManager configureDataDisplayManagerWithEvent:event]);
+    OCMVerify([self.mockDataDisplayManager configureDataDisplayManagerWithEvent:event pastEvents:pastEvents]);
 }
 
 - (void)testSuccesConfigureHeaderModule {
     // given
     EventPlainObject *event = [EventPlainObject new];
     
-    EventHeaderView *mockHeaderView = OCMClassMock([EventHeaderView class]);
+    id mockHeaderView = OCMClassMock([EventHeaderView class]);
     self.viewController.headerView = mockHeaderView;
     
     // when
-    [self.viewController configureViewWithEvent:event];
+    [self.viewController configureViewWithEvent:event pastEvents:nil];
     
     // then
     OCMVerify([mockHeaderView configureModuleWithEvent:event]);
+    [mockHeaderView stopMocking];
 }
 
 #pragma mark - EventTableViewCellActionProtocol

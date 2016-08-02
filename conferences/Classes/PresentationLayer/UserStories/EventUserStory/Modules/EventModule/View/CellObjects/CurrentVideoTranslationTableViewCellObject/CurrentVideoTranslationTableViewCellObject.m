@@ -21,6 +21,8 @@
 #import "CurrentVideoTranslationTableViewCellObject.h"
 #import "CurrentVideoTranslationTableViewCell.h"
 #import "EventPlainObject.h"
+#import "TechPlainObject.h"
+#import "UIColor+Hex.h"
 
 @interface CurrentVideoTranslationTableViewCellObject ()
 
@@ -35,7 +37,7 @@
 - (instancetype)initWithEvent:(EventPlainObject *)event {
     self = [super init];
     if (self) {
-
+        _buttonColor = [UIColor colorFromHexString:event.tech.color];
     }
     return self;
 }

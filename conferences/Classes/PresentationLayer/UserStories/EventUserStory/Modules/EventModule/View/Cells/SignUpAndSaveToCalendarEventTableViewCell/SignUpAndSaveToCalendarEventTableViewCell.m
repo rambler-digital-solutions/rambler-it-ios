@@ -24,7 +24,7 @@
 #import "EventTableViewCellActionProtocol.h"
 #import "Proxying/Extensions/UIResponder+CDProxying/UIResponder+CDProxying.h"
 
-static CGFloat const kSignUpAndSaveToCalendarEventTableViewCellHeight = 120.0f;
+static CGFloat const kSignUpAndSaveToCalendarEventTableViewCellHeight = 128.0f;
 static CGFloat const kSaveToCalendarButtonBorderWidth = 1.0f;
 
 @interface SignUpAndSaveToCalendarEventTableViewCell ()

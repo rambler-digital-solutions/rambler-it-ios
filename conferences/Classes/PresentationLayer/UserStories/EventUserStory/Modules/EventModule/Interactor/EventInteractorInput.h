@@ -21,6 +21,7 @@
 #import <Foundation/Foundation.h>
 
 @class EventPlainObject;
+@class TechPlainObject;
 
 @protocol EventInteractorInput <NSObject>
 
@@ -34,6 +35,17 @@
  @return EventPlainObject
  */
 - (EventPlainObject *)obtainEventWithObjectId:(NSString *)objectId;
+
+/**
+ @author Vasyura Anastasiya
+ 
+ Method is used to obtain past events plain objects with particular object id
+ 
+ @param metaEventId NSString object id
+ 
+ @return NSArray
+ */
+- (NSArray *)obtainPastEventsForMetaEvent:(NSString *)metaEventId;
 
 /**
  @author Artem Karpushin

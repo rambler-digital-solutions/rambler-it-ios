@@ -20,8 +20,9 @@
 
 #import "PreviousLectureTableViewCell.h"
 #import "PreviousLectureTableViewCellObject.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
-static CGFloat const kPreviousLectureTableViewCellHeight = 70.0f;
+static NSString *const kPlaceholderImageName = @"placeholder";
 
 @interface PreviousLectureTableViewCell ()
 
@@ -38,11 +39,19 @@ static CGFloat const kPreviousLectureTableViewCellHeight = 70.0f;
 - (BOOL)shouldUpdateCellWithObject:(PreviousLectureTableViewCellObject *)object {
     self.lectureImageView.layer.cornerRadius = self.lectureImageView.frame.size.height / 2;
     self.lectureImageView.clipsToBounds = YES;
+    
+    self.speakerNameTextLabel.text = object.speakerName;
+    self.titleTextLabel.text = object.lectureTitle;
+
+    NSURL *url = [NSURL URLWithString:object.spickerImageUrl];
+    [self.lectureImageView sd_setImageWithURL:url
+                             placeholderImage:[UIImage imageNamed:kPlaceholderImageName]];
+    
     return YES;
 }
 
 + (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
-    return kPreviousLectureTableViewCellHeight;
+    return UITableViewAutomaticDimension;
 }
 
 @end

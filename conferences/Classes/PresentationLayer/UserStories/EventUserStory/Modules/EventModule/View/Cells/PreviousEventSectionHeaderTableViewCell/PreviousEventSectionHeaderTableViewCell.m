@@ -21,11 +21,7 @@
 #import "PreviousEventSectionHeaderTableViewCell.h"
 #import "PreviousEventSectionHeaderTableViewCellObject.h"
 
-static CGFloat const kPreviousEventSectionHeaderTableViewCellHeight = 51.0f;
-
 @interface PreviousEventSectionHeaderTableViewCell ()
-
-@property (weak, nonatomic) IBOutlet UIView *contentView;
 
 @end
 
@@ -34,13 +30,13 @@ static CGFloat const kPreviousEventSectionHeaderTableViewCellHeight = 51.0f;
 #pragma mark - NICell methods
 
 - (BOOL)shouldUpdateCellWithObject:(PreviousEventSectionHeaderTableViewCellObject *)object {
-    self.contentView.backgroundColor = object.contentViewColor;
+    self.backgroundColor = object.contentViewColor;
     
     return YES;
 }
 
 + (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
-    return kPreviousEventSectionHeaderTableViewCellHeight;
+    return UITableViewAutomaticDimension;
 }
 
 @end

@@ -24,8 +24,6 @@
 #import "EventDescriptionTableViewCellActionProtocol.h"
 #import "Proxying/Extensions/UIResponder+CDProxying/UIResponder+CDProxying.h"
 
-static CGFloat const kEventDescriptionTableViewCellHeight = 190.0f;
-
 @interface EventDescriptionTableViewCell ()
 
 @property (weak, nonatomic) IBOutlet UITextView *eventDescription;
@@ -51,7 +49,7 @@ static CGFloat const kEventDescriptionTableViewCellHeight = 190.0f;
 }
 
 + (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
-    return kEventDescriptionTableViewCellHeight;
+    return UITableViewAutomaticDimension;
 }
 
 #pragma mark - IBActions

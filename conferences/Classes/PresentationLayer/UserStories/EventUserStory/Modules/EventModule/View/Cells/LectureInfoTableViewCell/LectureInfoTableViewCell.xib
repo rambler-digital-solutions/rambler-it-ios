@@ -1,97 +1,115 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="340" id="KGk-i7-Jjw" customClass="LectureInfoTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="340"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="238" id="KGk-i7-Jjw" customClass="LectureInfoTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="238"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="339.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="237.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="light-gray-square" translatesAutoresizingMaskIntoConstraints="NO" id="Yqb-Gn-1kT">
-                        <rect key="frame" x="124" y="18" width="72" height="72"/>
+                        <rect key="frame" x="20" y="18" width="40" height="40"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="72" id="g97-qo-Edh"/>
-                            <constraint firstAttribute="height" constant="72" id="qCL-QS-hPU"/>
+                            <constraint firstAttribute="width" secondItem="Yqb-Gn-1kT" secondAttribute="height" multiplier="1:1" id="fQB-0e-qYa"/>
+                            <constraint firstAttribute="width" constant="40" id="g97-qo-Edh"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Герман Сапрыкин" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOX-dJ-dhF">
-                        <rect key="frame" x="20" y="104" width="280" height="21"/>
-                        <constraints>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="BZg-Aa-Db0"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rambler&amp;Co" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwS-kB-Yhp">
-                        <rect key="frame" x="20" y="129" width="280" height="21"/>
-                        <constraints>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="71A-Aq-3QT"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="5IQ-k4-QP7">
-                        <rect key="frame" x="15" y="220" width="290" height="83"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nzY-KM-eGO">
+                        <rect key="frame" x="72" y="19" width="228" height="36.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Герман Сапрыкин" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOX-dJ-dhF">
+                                <rect key="frame" x="0.0" y="0.0" width="228" height="19.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="BZg-Aa-Db0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="BZg-Aa-Db0"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rambler&amp;Co" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwS-kB-Yhp">
+                                <rect key="frame" x="0.0" y="19" width="228" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="71A-Aq-3QT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="71A-Aq-3QT"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="83" id="E9I-Pm-b7h"/>
+                            <constraint firstItem="iwS-kB-Yhp" firstAttribute="top" secondItem="WOX-dJ-dhF" secondAttribute="bottom" id="Cam-ci-t85"/>
+                            <constraint firstAttribute="trailing" secondItem="WOX-dJ-dhF" secondAttribute="trailing" id="R1b-1l-O3A"/>
+                            <constraint firstItem="WOX-dJ-dhF" firstAttribute="top" secondItem="nzY-KM-eGO" secondAttribute="top" id="bdm-EW-dP1"/>
+                            <constraint firstItem="WOX-dJ-dhF" firstAttribute="leading" secondItem="nzY-KM-eGO" secondAttribute="leading" id="icO-1q-2Ib"/>
+                            <constraint firstItem="iwS-kB-Yhp" firstAttribute="leading" secondItem="nzY-KM-eGO" secondAttribute="leading" id="k4i-jo-XXR"/>
+                            <constraint firstAttribute="bottom" secondItem="iwS-kB-Yhp" secondAttribute="bottom" id="mhj-Wj-UNM"/>
+                            <constraint firstAttribute="trailing" secondItem="iwS-kB-Yhp" secondAttribute="trailing" id="olO-HK-CQH"/>
                         </constraints>
-                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                    </textView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JSDoc3 in Depth" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OhN-Uz-0cE">
-                        <rect key="frame" x="20" y="172" width="280" height="33.5"/>
-                        <constraints>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="0uP-h0-rvJ"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kal-6g-N0T">
-                        <rect key="frame" x="18" y="303" width="96" height="30"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="96" id="kvG-gg-F8M"/>
-                            <constraint firstAttribute="height" constant="30" id="q6t-2h-Rzz"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <state key="normal" title="Читать далее"/>
+                        <rect key="frame" x="20" y="202" width="102" height="35"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <state key="normal" title="Читать далее">
+                            <color key="titleColor" red="0.0" green="0.66274509803921566" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
                         <connections>
                             <action selector="didTapReadMoreButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="nKV-0C-dyN"/>
                         </connections>
                     </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="JSDoc3 in Depth" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OhN-Uz-0cE">
+                        <rect key="frame" x="20" y="70" width="280" height="29"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="0uP-h0-rvJ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fsu-uk-D5T">
+                        <rect key="frame" x="20" y="107" width="280" height="95.5"/>
+                        <string key="text">Я уверен что все любят писать JSDoc☺ Он вкусный, полезный, помогает нашим IDE находить ошибки, то все любят писать JSD вообще делает жизнь лучше.</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="5IQ-k4-QP7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="1CY-eP-Szr"/>
-                    <constraint firstItem="iwS-kB-Yhp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="12" id="5Af-jB-ONN"/>
-                    <constraint firstItem="iwS-kB-Yhp" firstAttribute="top" secondItem="WOX-dJ-dhF" secondAttribute="bottom" constant="4" id="JGK-sP-v6O"/>
-                    <constraint firstItem="WOX-dJ-dhF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="NPy-2C-x6p"/>
+                    <constraint firstItem="nzY-KM-eGO" firstAttribute="leading" secondItem="Yqb-Gn-1kT" secondAttribute="trailing" constant="12" id="0gQ-9h-a6i"/>
+                    <constraint firstAttribute="trailing" secondItem="Fsu-uk-D5T" secondAttribute="trailing" constant="20" id="1Qr-z7-BIa"/>
+                    <constraint firstItem="Fsu-uk-D5T" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="1UQ-Hi-NHN"/>
+                    <constraint firstItem="Yqb-Gn-1kT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="4dC-e1-OKb"/>
+                    <constraint firstAttribute="trailing" secondItem="nzY-KM-eGO" secondAttribute="trailing" constant="20" id="6lP-cc-YFC"/>
+                    <constraint firstItem="OhN-Uz-0cE" firstAttribute="top" secondItem="Yqb-Gn-1kT" secondAttribute="bottom" constant="12" id="Eo1-vf-D7R"/>
+                    <constraint firstItem="Fsu-uk-D5T" firstAttribute="top" secondItem="OhN-Uz-0cE" secondAttribute="bottom" constant="8" id="JfX-eD-rym"/>
                     <constraint firstAttribute="trailing" secondItem="OhN-Uz-0cE" secondAttribute="trailing" constant="20" id="NyB-LB-BQJ"/>
+                    <constraint firstItem="nzY-KM-eGO" firstAttribute="centerY" secondItem="Yqb-Gn-1kT" secondAttribute="centerY" id="Olb-Ys-tbq"/>
                     <constraint firstItem="Yqb-Gn-1kT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="18" id="UEa-sw-m7l"/>
-                    <constraint firstItem="Kal-6g-N0T" firstAttribute="top" secondItem="5IQ-k4-QP7" secondAttribute="bottom" id="Vws-NA-bgX"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="iwS-kB-Yhp" secondAttribute="trailing" constant="12" id="XVe-tE-sRh"/>
-                    <constraint firstAttribute="trailing" secondItem="5IQ-k4-QP7" secondAttribute="trailing" constant="15" id="ZQx-3w-nSJ"/>
                     <constraint firstItem="OhN-Uz-0cE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="b8s-T9-HgM"/>
-                    <constraint firstItem="Kal-6g-N0T" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="bhr-YL-Qqi"/>
-                    <constraint firstItem="5IQ-k4-QP7" firstAttribute="top" secondItem="OhN-Uz-0cE" secondAttribute="bottom" constant="14.5" id="ftI-f0-5nX"/>
-                    <constraint firstItem="Yqb-Gn-1kT" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="iQY-Yp-oOv"/>
-                    <constraint firstItem="WOX-dJ-dhF" firstAttribute="top" secondItem="Yqb-Gn-1kT" secondAttribute="bottom" constant="14" id="n99-zz-9DI"/>
-                    <constraint firstAttribute="trailing" secondItem="WOX-dJ-dhF" secondAttribute="trailing" constant="20" id="xPZ-U8-M54"/>
-                    <constraint firstItem="OhN-Uz-0cE" firstAttribute="top" secondItem="iwS-kB-Yhp" secondAttribute="bottom" constant="22" id="ynI-DR-hy8"/>
+                    <constraint firstAttribute="bottom" secondItem="Kal-6g-N0T" secondAttribute="bottom" id="e0H-tZ-KHN"/>
+                    <constraint firstItem="Kal-6g-N0T" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="oYO-wW-htn"/>
+                    <constraint firstItem="Kal-6g-N0T" firstAttribute="top" secondItem="Fsu-uk-D5T" secondAttribute="bottom" id="xuL-z9-gTh"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="lectureDescription" destination="5IQ-k4-QP7" id="Dmb-4h-HuI"/>
+                <outlet property="lectureDescription" destination="Fsu-uk-D5T" id="PGb-IB-XY7"/>
                 <outlet property="lectureTitle" destination="OhN-Uz-0cE" id="t9V-sc-jur"/>
                 <outlet property="speakerCompanyName" destination="iwS-kB-Yhp" id="vf1-C1-4T8"/>
                 <outlet property="speakerImageView" destination="Yqb-Gn-1kT" id="07o-IB-Fz2"/>

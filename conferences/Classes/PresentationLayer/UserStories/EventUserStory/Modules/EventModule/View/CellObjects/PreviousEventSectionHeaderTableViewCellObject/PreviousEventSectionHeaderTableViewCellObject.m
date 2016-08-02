@@ -21,6 +21,8 @@
 #import "PreviousEventSectionHeaderTableViewCellObject.h"
 #import "PreviousEventSectionHeaderTableViewCell.h"
 #import "EventPlainObject.h"
+#import "TechPlainObject.h"
+#import "UIColor+Hex.h"
 
 @interface PreviousEventSectionHeaderTableViewCellObject ()
 
@@ -35,6 +37,7 @@
 - (instancetype)initWithEvent:(EventPlainObject *)event {
     self = [super init];
     if (self) {
+        _contentViewColor = [UIColor colorFromHexString:event.tech.color];
     }
     return self;
 }

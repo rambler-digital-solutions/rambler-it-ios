@@ -27,6 +27,8 @@
 #import "EventPlainObject.h"
 #import "EXTScope.h"
 #import "LectureInfoTableViewCellObject.h"
+#import "EventViewAnimator.h"
+#import "TechPlainObject.h"
 
 @interface EventDataDisplayManager () <UITableViewDelegate>
 
@@ -39,9 +41,11 @@
 
 @implementation EventDataDisplayManager
 
-- (void)configureDataDisplayManagerWithEvent:(EventPlainObject *)event {
+- (void)configureDataDisplayManagerWithEvent:(EventPlainObject *)event
+                                  pastEvents:(NSArray *)pastEvents {
     self.cellObjectBuilder = [self.cellObjectBuilderFactory builderForEventType:event.eventType];
-    self.cellObjects = [self.cellObjectBuilder cellObjectsForEvent:event];
+    self.cellObjects = [self.cellObjectBuilder cellObjectsForEvent:event
+                                                        pastEvents:pastEvents];
 }
 
 #pragma mark DataDisplayManager methods
@@ -64,6 +68,10 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return [NICellFactory tableView:tableView heightForRowAtIndexPath:indexPath model:self.tableViewModel];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [self.eventViewAnimator animateWithContentOffset:scrollView.contentOffset];
 }
 
 #pragma mark - Private methods

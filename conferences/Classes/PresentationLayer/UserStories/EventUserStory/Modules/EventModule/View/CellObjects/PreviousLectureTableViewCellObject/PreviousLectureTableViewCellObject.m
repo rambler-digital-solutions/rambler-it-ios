@@ -20,11 +20,14 @@
 
 #import "PreviousLectureTableViewCellObject.h"
 #import "PreviousLectureTableViewCell.h"
+#import "LecturePlainObject.h"
+#import "SpeakerPlainObject.h"
 
 @interface PreviousLectureTableViewCellObject ()
 
 @property (strong, nonatomic, readwrite) NSString *lectureTitle;
 @property (strong, nonatomic, readwrite) NSString *speakerName;
+@property (strong, nonatomic, readwrite) NSString *spickerImageUrl;
 
 @end
 
@@ -32,16 +35,19 @@
 
 #pragma mark - Initialization
 
-- (instancetype)initWithEvent:(EventPlainObject *)event {
+- (instancetype)initWithLecture:(LecturePlainObject *)lecture {
     self = [super init];
     if (self) {
-        //
+        _lectureTitle = lecture.name;
+        _speakerName = lecture.speaker.name;
+        _spickerImageUrl = lecture.speaker.imageUrl;
     }
+    
     return self;
 }
 
-+ (instancetype)objectWithEvent:(EventPlainObject *)event {
-    return [[self alloc] initWithEvent:event];
++ (instancetype)objectWithLecture:(LecturePlainObject *)lecture {
+    return [[self alloc] initWithLecture:lecture];
 }
 
 #pragma mark - NICellObject methods

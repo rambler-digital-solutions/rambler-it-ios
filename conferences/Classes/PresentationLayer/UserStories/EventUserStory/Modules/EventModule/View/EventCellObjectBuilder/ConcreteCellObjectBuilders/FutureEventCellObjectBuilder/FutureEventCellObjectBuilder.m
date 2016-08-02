@@ -30,10 +30,13 @@
 #import "PreviousLectureTableViewCellObject.h"
 #import "PreviousEventSectionHeaderTableViewCellObject.h"
 #import "PreviousEventTableViewCellObject.h"
+#import "TechPlainObject.h"
+
 
 @implementation FutureEventCellObjectBuilder
 
-- (NSArray *)cellObjectsForEvent:(EventPlainObject *)event {
+- (NSArray *)cellObjectsForEvent:(EventPlainObject *)event
+                      pastEvents:(NSArray *)pastEvents {
     NSMutableArray *cellObjects = [NSMutableArray array];
     
     NSString *formattedDate = [self.dateFormatter obtainDateWithDayMonthTimeFormat:event.startDate];
@@ -44,15 +47,22 @@
     SignUpAndSaveToCalendarEventTableViewCellObject *signUpCellObject = [SignUpAndSaveToCalendarEventTableViewCellObject objectWithEvent:event];
     [cellObjects addObject:signUpCellObject];
     
-    EventDescriptionTableViewCellObject *eventDescriptionCellObject = [EventDescriptionTableViewCellObject objectWithEvent:event];
-    [cellObjects addObject:eventDescriptionCellObject];
+    //Adding current event lectures section
+    NSArray *lectureCellObjects = [self cellObjectsForLectureSectionWithEvent:event];
+    [cellObjects addObjectsFromArray:lectureCellObjects];
     
-    for (LecturePlainObject *lecture in event.lectures) {
-        LectureInfoTableViewCellObject *lectureCellobject = [LectureInfoTableViewCellObject objectWithLecture:lecture];
-        [cellObjects addObject:lectureCellobject];
-    }
-
+    //Adding previous events section
+    NSArray *pastEventCellObjects = [self cellObjectsForPastEventsSectionWithCurrentEvent:event
+                                                                               pastEvents:pastEvents];
+    [cellObjects addObjectsFromArray:pastEventCellObjects];
+    
+    //Adding previous lectures section
+    NSArray *pastLectureCellObjects = [self cellObjectsForPastLecturesSectionWithCurrentEvent:event
+                                                                                   pastEvents:pastEvents];
+    [cellObjects addObjectsFromArray:pastLectureCellObjects];
+    
     return cellObjects;
 }
+
 
 @end

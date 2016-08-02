@@ -20,19 +20,37 @@
 
 #import "VideoRecordTableViewCell.h"
 #import "VideoRecordTableViewCellObject.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
-static CGFloat const VideoRecordTableViewCellHeight = 100.0f;
+static CGFloat const kVideoRecordTableViewCellHeight = 168.0f;
+static NSString *const kPlaceholderImageName = @"placeholder";
+
+@interface VideoRecordTableViewCell ()
+
+@property (nonatomic, strong) IBOutlet UIImageView *previewImageView;
+@property (nonatomic, weak) IBOutlet UILabel *titleLabel;
+
+@end
 
 @implementation VideoRecordTableViewCell
 
 #pragma mark - NICell methods
 
 - (BOOL)shouldUpdateCellWithObject:(VideoRecordTableViewCellObject *)object {
+    if (object.previewImageUrl) {
+        self.titleLabel.hidden = YES;
+        NSURL *url = [NSURL URLWithString:object.previewImageUrl];
+        [self.previewImageView sd_setImageWithURL:url
+                                 placeholderImage:[UIImage imageNamed:kPlaceholderImageName]];
+    } else {
+        self.titleLabel.hidden = NO;
+        self.previewImageView.image = [UIImage imageNamed:kPlaceholderImageName];
+    }
     return YES;
 }
 
 + (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
-    return VideoRecordTableViewCellHeight;
+    return kVideoRecordTableViewCellHeight;
 }
 
 @end

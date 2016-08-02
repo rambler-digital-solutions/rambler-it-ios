@@ -21,12 +21,16 @@
 #import "ModuleAssemblyBase.h"
 #import "AssemblyCollector/RamblerInitialAssembly.h"
 
+@class PonsomizerAssembly;
+
 /**
  @author Artem Karpushin
  
  A TyphoonAssembly which is responsible for creating EventModule
  */
 @interface EventModuleAssembly : ModuleAssemblyBase <RamblerInitialAssembly>
+
+@property (nonatomic, strong) PonsomizerAssembly *ponsomizerAssembly;
 
 @end
 
