@@ -18,46 +18,14 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#ifndef Header_h
+#define Header_h
 
-#import "ChangeProviderChangeType.h"
+typedef NS_ENUM(NSUInteger, ChangeProviderChangeType) {
+    ChangeProviderChangeInsert = 1,
+    ChangeProviderChangeDelete = 2,
+    ChangeProviderChangeMove = 3,
+    ChangeProviderChangeUpdate = 4
+};
 
-@protocol ChangeProvider;
-
-/**
- @author Egor Tolstoy
- 
- The protocol of object capable of processing tracked objects changes.
- */
-@protocol ChangeProviderDelegate <NSObject>
-
-/**
- @author Egor Tolstoy
- 
- Notifies about object change event
- 
- @param changeProvider ChangeProvider itself
- @param object         Changed object
- @param changeType     Type of change
- */
-- (void)changeProvider:(id<ChangeProvider>)changeProvider
-       didChangeObject:(id)object
-            changeType:(ChangeProviderChangeType)changeType;
-
-/**
- @author Egor Tolstoy
- 
- TODO: 
- */
-- (void)processChanges;
-
-/**
- @author Egor Tolstoy
- 
- Returns objects for initial indexing
- 
- @return Objects for initial indexing
- */
-- (NSArray *)obtainObjectsForInitialIndexing;
-
-@end
+#endif /* Header_h */

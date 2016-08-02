@@ -22,42 +22,36 @@
 
 #import "ChangeProviderChangeType.h"
 
-@protocol ChangeProvider;
+/**
+ @author Egor Tolstoy
+ 
+ Model describes a single change in the database
+ */
+@interface IndexTransaction : NSObject
+
++ (instancetype)transactionWithIdentifier:(NSString *)identifier
+                               objectType:(NSString *)objectType
+                               changeType:(NSUInteger)changeType;
 
 /**
  @author Egor Tolstoy
  
- The protocol of object capable of processing tracked objects changes.
+ Changed object identifier
  */
-@protocol ChangeProviderDelegate <NSObject>
+@property (strong, nonatomic, readonly) NSString *identifier;
 
 /**
  @author Egor Tolstoy
  
- Notifies about object change event
- 
- @param changeProvider ChangeProvider itself
- @param object         Changed object
- @param changeType     Type of change
+ Changed object type
  */
-- (void)changeProvider:(id<ChangeProvider>)changeProvider
-       didChangeObject:(id)object
-            changeType:(ChangeProviderChangeType)changeType;
+@property (assign, nonatomic, readonly) NSString *objectType;
 
 /**
  @author Egor Tolstoy
  
- TODO: 
+ Object change type
  */
-- (void)processChanges;
-
-/**
- @author Egor Tolstoy
- 
- Returns objects for initial indexing
- 
- @return Objects for initial indexing
- */
-- (NSArray *)obtainObjectsForInitialIndexing;
+@property (assign, nonatomic, readonly) ChangeProviderChangeType changeType;
 
 @end

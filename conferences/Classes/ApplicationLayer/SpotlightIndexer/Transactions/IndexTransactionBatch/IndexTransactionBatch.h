@@ -20,44 +20,59 @@
 
 #import <Foundation/Foundation.h>
 
-#import "ChangeProviderChangeType.h"
-
-@protocol ChangeProvider;
+/**
+ @author Egor Tolstoy
+ 
+ Model describes a set of changes. Has transactions for only one objectType.
+ */
+@interface IndexTransactionBatch : NSObject
 
 /**
  @author Egor Tolstoy
  
- The protocol of object capable of processing tracked objects changes.
+ Inserted objects identifiers
  */
-@protocol ChangeProviderDelegate <NSObject>
+@property (nonatomic, strong, readonly) NSOrderedSet *insertIdentifiers;
 
 /**
  @author Egor Tolstoy
  
- Notifies about object change event
- 
- @param changeProvider ChangeProvider itself
- @param object         Changed object
- @param changeType     Type of change
+ Updated objects identifiers
  */
-- (void)changeProvider:(id<ChangeProvider>)changeProvider
-       didChangeObject:(id)object
-            changeType:(ChangeProviderChangeType)changeType;
+@property (nonatomic, strong, readonly) NSOrderedSet *updateIdentifiers;
 
 /**
  @author Egor Tolstoy
  
- TODO: 
+ Deleted objects identifiers
  */
-- (void)processChanges;
+@property (nonatomic, strong, readonly) NSOrderedSet *deleteIdentifiers;
 
 /**
  @author Egor Tolstoy
  
- Returns objects for initial indexing
- 
- @return Objects for initial indexing
+ Moved objects identifiers
  */
-- (NSArray *)obtainObjectsForInitialIndexing;
+@property (nonatomic, strong, readonly) NSOrderedSet *moveIdentifiers;
+
+/**
+ @author Egor Tolstoy
+ 
+ The single object type of the trasaction batch
+ */
+@property (nonatomic, strong, readonly) NSString *objectType;
+
+/**
+ @author Egor Tolstoy
+ 
+ This method tells if the batch is empty. It checks all the identifiers sets.
+ */
+@property (nonatomic, assign, readonly, getter=isEmpty) BOOL empty;
+
++ (instancetype)batchWithObjectType:(NSString *)objectType
+                  insertIdentifiers:(NSOrderedSet *)insertIdentifiers
+                  updateIdentifiers:(NSOrderedSet *)updateIdentifiers
+                  deleteIdentifiers:(NSOrderedSet *)deleteIdentifiers
+                    moveIdentifiers:(NSOrderedSet *)moveIdentifiers;
 
 @end

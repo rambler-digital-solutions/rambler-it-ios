@@ -357,6 +357,8 @@
 		9F533A891D50DE84004F8E82 /* FetchedResultsControllerChangeProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F533A881D50DE84004F8E82 /* FetchedResultsControllerChangeProvider.m */; };
 		9F533A8E1D50EC10004F8E82 /* IndexerMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F533A8D1D50EC10004F8E82 /* IndexerMonitor.m */; };
 		9F533A961D50EEE0004F8E82 /* ObjectIndexerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F533A951D50EEE0004F8E82 /* ObjectIndexerBase.m */; };
+		9F533AA01D50F181004F8E82 /* IndexTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F533A9F1D50F181004F8E82 /* IndexTransaction.m */; };
+		9F533AA41D50F195004F8E82 /* IndexTransactionBatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F533AA31D50F195004F8E82 /* IndexTransactionBatch.m */; };
 		9F8E5F701BC2552600DC10DB /* Conferences.API.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F8E5F6F1BC2552600DC10DB /* Conferences.API.plist */; };
 		9F8E5F741BC255AA00DC10DB /* RequestSignersAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5F731BC255AA00DC10DB /* RequestSignersAssembly.m */; };
 		9F8E5F781BC2571B00DC10DB /* NetworkClientsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5F771BC2571B00DC10DB /* NetworkClientsAssembly.m */; };
@@ -1087,6 +1089,7 @@
 		9F4077AF1D2E371C00D47EF6 /* DirectionCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DirectionCellObject.m; path = CellObjects/DirectionCellObject.m; sourceTree = "<group>"; };
 		9F4077B21D2E38AB00D47EF6 /* DirectionCellObjectFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DirectionCellObjectFactory.h; path = CellObjectFactory/DirectionCellObjectFactory.h; sourceTree = "<group>"; };
 		9F4077B31D2E38AB00D47EF6 /* DirectionCellObjectFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DirectionCellObjectFactory.m; path = CellObjectFactory/DirectionCellObjectFactory.m; sourceTree = "<group>"; };
+		9F5316A51D50F29000F13931 /* ChangeProviderChangeType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ChangeProviderChangeType.h; path = SpotlightIndexer/Transactions/Headers/ChangeProviderChangeType.h; sourceTree = "<group>"; };
 		9F533A7F1D50D794004F8E82 /* ChangeProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChangeProvider.h; path = SpotlightIndexer/ChangeProviders/Protocols/ChangeProvider.h; sourceTree = "<group>"; };
 		9F533A801D50DC8F004F8E82 /* ChangeProviderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChangeProviderDelegate.h; path = SpotlightIndexer/ChangeProviders/Protocols/ChangeProviderDelegate.h; sourceTree = "<group>"; };
 		9F533A871D50DE84004F8E82 /* FetchedResultsControllerChangeProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchedResultsControllerChangeProvider.h; sourceTree = "<group>"; };
@@ -1097,6 +1100,10 @@
 		9F533A941D50EEE0004F8E82 /* ObjectIndexerBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectIndexerBase.h; path = SpotlightIndexer/ObjectIndexers/BaseClasses/ObjectIndexerBase/ObjectIndexerBase.h; sourceTree = "<group>"; };
 		9F533A951D50EEE0004F8E82 /* ObjectIndexerBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjectIndexerBase.m; path = SpotlightIndexer/ObjectIndexers/BaseClasses/ObjectIndexerBase/ObjectIndexerBase.m; sourceTree = "<group>"; };
 		9F533A9A1D50EFC4004F8E82 /* IndexIdentifierFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndexIdentifierFormatter.h; path = SpotlightIndexer/ObjectIndexers/Helpers/IndexIdentifierFormatters/Protocols/IndexIdentifierFormatter.h; sourceTree = "<group>"; };
+		9F533A9E1D50F181004F8E82 /* IndexTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndexTransaction.h; path = SpotlightIndexer/Transactions/IndexTransaction/IndexTransaction.h; sourceTree = "<group>"; };
+		9F533A9F1D50F181004F8E82 /* IndexTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IndexTransaction.m; path = SpotlightIndexer/Transactions/IndexTransaction/IndexTransaction.m; sourceTree = "<group>"; };
+		9F533AA21D50F195004F8E82 /* IndexTransactionBatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndexTransactionBatch.h; path = SpotlightIndexer/Transactions/IndexTransactionBatch/IndexTransactionBatch.h; sourceTree = "<group>"; };
+		9F533AA31D50F195004F8E82 /* IndexTransactionBatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IndexTransactionBatch.m; path = SpotlightIndexer/Transactions/IndexTransactionBatch/IndexTransactionBatch.m; sourceTree = "<group>"; };
 		9F8E5F6F1BC2552600DC10DB /* Conferences.API.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Conferences.API.plist; path = Assemblies/RequestConfiguratorsFactory/Conferences.API.plist; sourceTree = "<group>"; };
 		9F8E5F711BC2559B00DC10DB /* RequestSignersFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequestSignersFactory.h; path = Assemblies/RequestSignersFactory/RequestSignersFactory.h; sourceTree = "<group>"; };
 		9F8E5F721BC255AA00DC10DB /* RequestSignersAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequestSignersAssembly.h; path = Assemblies/RequestSignersFactory/RequestSignersAssembly.h; sourceTree = "<group>"; };
@@ -5055,6 +5062,14 @@
 			name = CellObjectFactory;
 			sourceTree = "<group>";
 		};
+		9F5316A41D50F27100F13931 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				9F5316A51D50F29000F13931 /* ChangeProviderChangeType.h */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
 		9F533A7C1D50D6E7004F8E82 /* SpotlightIndexer */ = {
 			isa = PBXGroup;
 			children = (
@@ -5181,6 +5196,8 @@
 		9F533A9C1D50F131004F8E82 /* Transactions */ = {
 			isa = PBXGroup;
 			children = (
+				9F5316A41D50F27100F13931 /* Headers */,
+				9F533AA11D50F18A004F8E82 /* IndexTransactionBatch */,
 				9F533A9D1D50F149004F8E82 /* IndexTransaction */,
 			);
 			name = Transactions;
@@ -5189,8 +5206,19 @@
 		9F533A9D1D50F149004F8E82 /* IndexTransaction */ = {
 			isa = PBXGroup;
 			children = (
+				9F533A9E1D50F181004F8E82 /* IndexTransaction.h */,
+				9F533A9F1D50F181004F8E82 /* IndexTransaction.m */,
 			);
 			name = IndexTransaction;
+			sourceTree = "<group>";
+		};
+		9F533AA11D50F18A004F8E82 /* IndexTransactionBatch */ = {
+			isa = PBXGroup;
+			children = (
+				9F533AA21D50F195004F8E82 /* IndexTransactionBatch.h */,
+				9F533AA31D50F195004F8E82 /* IndexTransactionBatch.m */,
+			);
+			name = IndexTransactionBatch;
 			sourceTree = "<group>";
 		};
 		9F8E5F911BC269D000DC10DB /* OperationFactoriesAssembly */ = {
@@ -5731,6 +5759,7 @@
 				9FFEAF0C1D2E5CE0006E9649 /* AppleMapsLinkBuilder.m in Sources */,
 				636F8DDE1BCB8FE800552B91 /* RamblerLocationViewController.m in Sources */,
 				2B2064831D3F9CE900246C8D /* _MetaEventPlainObject.m in Sources */,
+				9F533AA41D50F195004F8E82 /* IndexTransactionBatch.m in Sources */,
 				63F613B11CB10FC80002AEF0 /* AnnouncementViewModel.m in Sources */,
 				9F8E5F941BC269EA00DC10DB /* OperationFactoriesAssembly.m in Sources */,
 				63F613971CB00A220002AEF0 /* SpeakerInfoPresenterStateStorage.m in Sources */,
@@ -5939,6 +5968,7 @@
 				631FFE1A1BEF451400749DB8 /* UIView+CDResponder.m in Sources */,
 				63F613781CB00A220002AEF0 /* PreviousEventTableViewCell.m in Sources */,
 				63F6139A1CB00A220002AEF0 /* SpeakerInfoTableViewCellObject.m in Sources */,
+				9F533AA01D50F181004F8E82 /* IndexTransaction.m in Sources */,
 				63F6138D1CB00A220002AEF0 /* LecturePresenterStateStorage.m in Sources */,
 				2B2064891D3F9CE900246C8D /* EventModelObject.m in Sources */,
 				2B20647F1D3F9CE900246C8D /* _TechModelObject.m in Sources */,

@@ -18,46 +18,38 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import "IndexTransaction.h"
 
-#import "ChangeProviderChangeType.h"
+@interface IndexTransaction ()
 
-@protocol ChangeProvider;
+@property (strong, nonatomic, readwrite) NSString *identifier;
+@property (assign, nonatomic, readwrite) NSString *objectType;
+@property (assign, nonatomic, readwrite) ChangeProviderChangeType changeType;
 
-/**
- @author Egor Tolstoy
- 
- The protocol of object capable of processing tracked objects changes.
- */
-@protocol ChangeProviderDelegate <NSObject>
+@end
 
-/**
- @author Egor Tolstoy
- 
- Notifies about object change event
- 
- @param changeProvider ChangeProvider itself
- @param object         Changed object
- @param changeType     Type of change
- */
-- (void)changeProvider:(id<ChangeProvider>)changeProvider
-       didChangeObject:(id)object
-            changeType:(ChangeProviderChangeType)changeType;
+@implementation IndexTransaction
 
-/**
- @author Egor Tolstoy
- 
- TODO: 
- */
-- (void)processChanges;
+#pragma mark - Initialization
 
-/**
- @author Egor Tolstoy
- 
- Returns objects for initial indexing
- 
- @return Objects for initial indexing
- */
-- (NSArray *)obtainObjectsForInitialIndexing;
+- (instancetype)initWithIdentifier:(NSString *)identifier
+                        objectType:(NSString *)objectType
+                        changeType:(ChangeProviderChangeType)changeType {
+    self = [super init];
+    if (self) {
+        _identifier = identifier;
+        -objectType = objectType;
+        _changeType = changeType;
+    }
+    return self;
+}
+
++ (instancetype)transactionWithIdentifier:(NSString *)identifier
+                               objectType:(NSString *)objectType
+                               changeType:(NSUInteger)changeType {
+    return [[self alloc] initWithIdentifier:identifier
+                                 objectType:objectType
+                                 changeType:changeType];
+}
 
 @end
