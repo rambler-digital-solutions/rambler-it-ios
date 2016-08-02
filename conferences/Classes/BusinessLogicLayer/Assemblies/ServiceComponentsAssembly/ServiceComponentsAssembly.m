@@ -33,6 +33,7 @@
 #import "EventPrototypeMapper.h"
 #import "EventStoreServiceProtocol.h"
 #import "EventStoreService.h"
+#import "MetaEventServiceImpementation.h"
 #import "RamblerLocationServiceImplementation.h"
 #import "PonsomizerAssembly.h"
 
@@ -61,6 +62,10 @@
                                                     with:[self operationScheduler]];
                               
                           }];
+}
+
+- (id <MetaEventService>)metaEventService {
+    return [TyphoonDefinition withClass:[MetaEventServiceImpementation class]];
 }
 
 - (id <OperationScheduler>)operationScheduler {

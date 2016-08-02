@@ -121,6 +121,7 @@
 
 - (void)setupHeaderViewWithEvent:(EventPlainObject *)event {
     [self.headerView configureModuleWithEvent:event];
+    self.headerBackgroundView.backgroundColor = [UIColor colorFromHexString:event.tech.color];
     CGRect frame = self.headerView.frame;
     frame.size.width = self.view.bounds.size.width;
     frame.size = [self.headerView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];

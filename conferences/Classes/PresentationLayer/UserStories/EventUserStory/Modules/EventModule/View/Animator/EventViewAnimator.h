@@ -17,8 +17,16 @@
  */
 @interface EventViewAnimator : NSObject
 
-@property (weak, nonatomic) IBOutlet EventHeaderView *headerView;
+@property (nonatomic, weak) IBOutlet EventHeaderView *headerView;
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
 
+/**
+ @author Vasyura Anastasiya
+ 
+ Method updates header scrolling animation
+ 
+ @param contentOffset tableViewOffset
+ */
 - (void)animateWithContentOffset:(CGPoint)contentOffset;
 
 @end

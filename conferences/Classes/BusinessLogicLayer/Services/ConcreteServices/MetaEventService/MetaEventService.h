@@ -19,23 +19,25 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-#import "EventInteractorInput.h"
 
-@protocol EventInteractorOutput;
-@protocol EventService;
-@protocol MetaEventService;
-@protocol ROSPonsomizer;
-@protocol EventStoreServiceProtocol;
-@class EventTypeDeterminator;
+@class MetaEventModelObject;
 
-@interface EventInteractor : NSObject<EventInteractorInput>
+/**
+ @author Vasyura Anastasiya
+ 
+ The service is designed to obtain meta events from cache
+ */
+@protocol MetaEventService <NSObject>
 
-@property (nonatomic, weak) id<EventInteractorOutput> output;
-@property (nonatomic, strong) id <EventService> eventService;
-@property (nonatomic, strong) EventTypeDeterminator *eventTypeDeterminator;
-@property (nonatomic, strong) id <EventStoreServiceProtocol> eventStoreService;
-@property (nonatomic, strong) id <ROSPonsomizer> ponsomizer;
-@property (nonatomic, strong) id <MetaEventService> metaEventService;
+/**
+ @author Vasyura Anastasiya
+ 
+ Method returns meta event object by id
+ 
+ @param metaEventId
+ 
+ @return MetaEventModelObject
+ */
+- (MetaEventModelObject *)obtainMetaEventByMetaEventId:(NSString *)metaEventId;
 
 @end
-

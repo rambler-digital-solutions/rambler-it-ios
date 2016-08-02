@@ -18,24 +18,15 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import "EventInteractorInput.h"
+#import <UIKit/UIKit.h>
 
-@protocol EventInteractorOutput;
-@protocol EventService;
-@protocol MetaEventService;
-@protocol ROSPonsomizer;
-@protocol EventStoreServiceProtocol;
-@class EventTypeDeterminator;
+/**
+ @author Egor Tolstoy
+ 
+ Фейковый AppDelegate, подставляемый в случае прогона тестов
+ */
+@interface VerySpecialAppDelegateForTesting : UIResponder <UIApplicationDelegate>
 
-@interface EventInteractor : NSObject<EventInteractorInput>
-
-@property (nonatomic, weak) id<EventInteractorOutput> output;
-@property (nonatomic, strong) id <EventService> eventService;
-@property (nonatomic, strong) EventTypeDeterminator *eventTypeDeterminator;
-@property (nonatomic, strong) id <EventStoreServiceProtocol> eventStoreService;
-@property (nonatomic, strong) id <ROSPonsomizer> ponsomizer;
-@property (nonatomic, strong) id <MetaEventService> metaEventService;
+@property (nonatomic, strong) UIWindow *window;
 
 @end
-

@@ -17,8 +17,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rfD-hU-F1j">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="ADV-iz-j3t"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2f2-MS-k81">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" restorationIdentifier="viewEventHeader" id="tAj-fc-JAG" customClass="TyphoonLoadedView">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="240"/>
@@ -36,14 +43,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="rfD-hU-F1j" firstAttribute="leading" secondItem="9DS-Lo-aXY" secondAttribute="leading" id="1P8-X7-dki"/>
+                            <constraint firstItem="rfD-hU-F1j" firstAttribute="top" secondItem="9DS-Lo-aXY" secondAttribute="topMargin" id="ACf-sz-EEZ"/>
                             <constraint firstItem="SJ1-15-sm5" firstAttribute="top" secondItem="2f2-MS-k81" secondAttribute="bottom" id="Ae8-KM-8zE"/>
+                            <constraint firstItem="2f2-MS-k81" firstAttribute="top" secondItem="q51-wo-2NC" secondAttribute="bottom" id="Npd-d8-8Yr"/>
                             <constraint firstItem="2f2-MS-k81" firstAttribute="leading" secondItem="9DS-Lo-aXY" secondAttribute="leading" id="Uq5-wZ-0xQ"/>
-                            <constraint firstItem="2f2-MS-k81" firstAttribute="top" secondItem="9DS-Lo-aXY" secondAttribute="topMargin" id="Vhb-mv-7ZG"/>
                             <constraint firstAttribute="trailing" secondItem="2f2-MS-k81" secondAttribute="trailing" id="ad2-qB-6PH"/>
+                            <constraint firstAttribute="trailing" secondItem="rfD-hU-F1j" secondAttribute="trailing" id="asu-G8-wcj"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="L3B-Ki-SxE">
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="gLx-sY-Sd3">
+                        <barButtonItem key="rightBarButtonItem" image="ic-share" id="gLx-sY-Sd3">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="didTapShareButton:" destination="lPZ-z8-z2H" id="eGd-Hp-izU"/>
@@ -54,6 +64,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="eventViewAnimator" destination="7zG-VT-CgC" id="NDv-Bh-use"/>
+                        <outlet property="headerBackgroundView" destination="rfD-hU-F1j" id="kHO-Yw-SZd"/>
                         <outlet property="headerView" destination="tAj-fc-JAG" id="F1D-x1-qdL"/>
                         <outlet property="tableView" destination="2f2-MS-k81" id="pVQ-Gv-juG"/>
                         <segue destination="ApB-G0-QuI" kind="push" identifier="EventModuleToLectureModuleSegue" id="k0t-w6-Xgx"/>
@@ -63,6 +74,7 @@
                 <customObject id="7zG-VT-CgC" customClass="EventViewAnimator">
                     <connections>
                         <outlet property="headerView" destination="tAj-fc-JAG" id="VI3-4e-bNy"/>
+                        <outlet property="tableView" destination="2f2-MS-k81" id="X3j-Rp-zZY"/>
                     </connections>
                 </customObject>
             </objects>
@@ -77,4 +89,7 @@
             <point key="canvasLocation" x="2232" y="258"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic-share" width="24" height="24"/>
+    </resources>
 </document>

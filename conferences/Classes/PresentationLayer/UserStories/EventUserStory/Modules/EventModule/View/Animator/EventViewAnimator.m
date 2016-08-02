@@ -24,7 +24,8 @@ static CGFloat const kAnnouncementImageMinScaleConstant = 1.0;
         CGFloat normalizeScale = MIN(scale, kAnnouncementImageMaxScaleConstant);
         self.headerView.eventImageView.transform = CGAffineTransformMakeScale(normalizeScale, normalizeScale);
     }
-
+    
+    self.tableView.clipsToBounds = offset > self.headerView.bounds.size.height;
 }
 
 @end

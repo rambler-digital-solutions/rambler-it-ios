@@ -30,6 +30,7 @@
 #import <MagicalRecord/MagicalRecord.h>
 #import "MetaEventModelObject.h"
 #import "MetaEventPlainObject.h"
+#import "MetaEventService.h"
 #import "EXTScope.h"
 
 
@@ -50,10 +51,8 @@
 }
 
 - (NSArray *)obtainPastEventsForMetaEvent:(NSString *)metaEventId {
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K = %@", MetaEventModelObjectAttributes.metaEventId, metaEventId];
     
-    MetaEventModelObject *metaEvent = [MetaEventModelObject MR_findFirstWithPredicate:predicate];
-    
+    MetaEventModelObject *metaEvent = [self.metaEventService obtainMetaEventByMetaEventId:metaEventId];
     NSSet *events = [self.ponsomizer convertObject:metaEvent.events];
     for (EventPlainObject *event in events) {
         EventType type = [self.eventTypeDeterminator determinateTypeForEvent:event];

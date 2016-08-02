@@ -22,13 +22,13 @@
 #import "VideoRecordTableViewCellObject.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
-static CGFloat const VideoRecordTableViewCellHeight = 168.0f;
+static CGFloat const kVideoRecordTableViewCellHeight = 168.0f;
 static NSString *const kPlaceholderImageName = @"placeholder";
 
 @interface VideoRecordTableViewCell ()
 
 @property (nonatomic, strong) IBOutlet UIImageView *previewImageView;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (nonatomic, weak) IBOutlet UILabel *titleLabel;
 
 @end
 
@@ -50,7 +50,7 @@ static NSString *const kPlaceholderImageName = @"placeholder";
 }
 
 + (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
-    return VideoRecordTableViewCellHeight;
+    return kVideoRecordTableViewCellHeight;
 }
 
 @end

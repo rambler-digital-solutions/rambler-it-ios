@@ -18,24 +18,18 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import "EventInteractorInput.h"
+#import "MetaEventServiceImpementation.h"
+#import "MetaEventModelObject.h"
+#import <MagicalRecord/MagicalRecord.h>
 
-@protocol EventInteractorOutput;
-@protocol EventService;
-@protocol MetaEventService;
-@protocol ROSPonsomizer;
-@protocol EventStoreServiceProtocol;
-@class EventTypeDeterminator;
+@implementation MetaEventServiceImpementation
 
-@interface EventInteractor : NSObject<EventInteractorInput>
-
-@property (nonatomic, weak) id<EventInteractorOutput> output;
-@property (nonatomic, strong) id <EventService> eventService;
-@property (nonatomic, strong) EventTypeDeterminator *eventTypeDeterminator;
-@property (nonatomic, strong) id <EventStoreServiceProtocol> eventStoreService;
-@property (nonatomic, strong) id <ROSPonsomizer> ponsomizer;
-@property (nonatomic, strong) id <MetaEventService> metaEventService;
+- (MetaEventModelObject *)obtainMetaEventByMetaEventId:(NSString *)metaEventId {
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K = %@", MetaEventModelObjectAttributes.metaEventId, metaEventId];
+    
+    MetaEventModelObject *metaEvent = [MetaEventModelObject MR_findFirstWithPredicate:predicate];
+    
+    return metaEvent;
+}
 
 @end
-

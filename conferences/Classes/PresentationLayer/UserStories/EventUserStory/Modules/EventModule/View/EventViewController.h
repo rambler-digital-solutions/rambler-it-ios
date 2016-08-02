@@ -30,12 +30,13 @@
 
 @interface EventViewController : UIViewController <EventViewInput, EventTableViewCellActionProtocol, EventDataDisplayManagerDelegate>
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UIView <EventHeaderModuleInput> *headerView;
-@property (strong, nonatomic) IBOutlet EventViewAnimator *eventViewAnimator;
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
+@property (nonatomic, weak) IBOutlet UIView <EventHeaderModuleInput> *headerView;
+@property (nonatomic, weak) IBOutlet UIView *headerBackgroundView;
+@property (nonatomic, strong) IBOutlet EventViewAnimator *eventViewAnimator;
 
 @property (nonatomic, strong) id<EventViewOutput> output;
-@property (strong, nonatomic) EventDataDisplayManager *dataDisplayManager;
+@property (nonatomic, strong) EventDataDisplayManager *dataDisplayManager;
 
 #pragma mark - IBActions
 
