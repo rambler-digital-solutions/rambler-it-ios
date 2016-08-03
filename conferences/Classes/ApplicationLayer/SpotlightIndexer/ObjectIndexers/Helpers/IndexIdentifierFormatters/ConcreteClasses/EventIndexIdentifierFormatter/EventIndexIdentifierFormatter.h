@@ -18,31 +18,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "XCTestCase+RCFHelpers.h"
+#import <Foundation/Foundation.h>
 
-#import <MagicalRecord/MagicalRecord.h>
+#import "IndexIdentifierFormatter.h"
 
-@implementation XCTestCase (RCFHelpers)
-
-- (XCTestExpectation *)expectationForCurrentTest {
-    SEL testSelector = self.invocation.selector;
-    NSString *selectorString = NSStringFromSelector(testSelector);
-    NSString *expectationDescription = [NSString stringWithFormat:@"Expectation for %@ test", selectorString];
-    return [self expectationWithDescription:expectationDescription];
-}
-
-- (void)fulfillExpectationInMainThread:(XCTestExpectation *)expectation {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [expectation fulfill];
-    });
-}
-
-- (void)setupCoreDataStackForTests {
-    [MagicalRecord setupCoreDataStackWithStoreNamed:@"Conference Tests"];
-}
-
-- (void)tearDownCoreDataStack {
-    [MagicalRecord cleanUp];
-}
+@interface EventIndexIdentifierFormatter : NSObject <IndexIdentifierFormatter>
 
 @end

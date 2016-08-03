@@ -18,31 +18,33 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "XCTestCase+RCFHelpers.h"
+#import "EventIndexIdentifierFormatter.h"
 
-#import <MagicalRecord/MagicalRecord.h>
+#import "EventModelObject.h"
 
-@implementation XCTestCase (RCFHelpers)
+@implementation EventIndexIdentifierFormatter
 
-- (XCTestExpectation *)expectationForCurrentTest {
-    SEL testSelector = self.invocation.selector;
-    NSString *selectorString = NSStringFromSelector(testSelector);
-    NSString *expectationDescription = [NSString stringWithFormat:@"Expectation for %@ test", selectorString];
-    return [self expectationWithDescription:expectationDescription];
+#pragma mark - <IndexIdentifierFormatter>
+
+- (NSString *)identifierForObject:(EventModelObject *)object {
+    NSString *objectType = NSStringFromClass([EventModelObject class]);
+    NSString *eventId = object.eventId;
+    NSString *identifier = [NSString stringWithFormat:@"%@_%@", objectType, eventId];
+    return identifier;
 }
 
-- (void)fulfillExpectationInMainThread:(XCTestExpectation *)expectation {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [expectation fulfill];
-    });
-}
-
-- (void)setupCoreDataStackForTests {
-    [MagicalRecord setupCoreDataStackWithStoreNamed:@"Conference Tests"];
-}
-
-- (void)tearDownCoreDataStack {
-    [MagicalRecord cleanUp];
+- (BOOL)isCorrectIdentifier:(NSString *)identifier {
+    NSString *objectType = NSStringFromClass([EventModelObject class]);
+    
+    BOOL hasCorrectObjectType = [identifier rangeOfString:objectType].location != NSNotFound;
+    
+    BOOL hasSeparator = [identifier rangeOfString:@"_"].location != NSNotFound;
+    
+    NSUInteger eventIdLocation = objectType.length + 1; // 1 for _ symbol
+    NSUInteger eventIdLength = identifier.length - eventIdLocation;
+    BOOL hasEventId = eventIdLength > 0;
+    
+    return hasCorrectObjectType != NO && hasSeparator != NO && hasEventId != NO;
 }
 
 @end

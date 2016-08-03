@@ -47,4 +47,18 @@ typedef void (^ProxyBlock)(NSInvocation *);
  */
 - (void)fulfillExpectationInMainThread:(XCTestExpectation *)expectation;
 
+/**
+ @author Egor Tolstoy
+ 
+ Method correctly setups CoreData stack for tests
+ */
+- (void)setupCoreDataStackForTests;
+
+/**
+ @author Egor Tolstoy
+ 
+ Method clears CoreData stack
+ */
+- (void)tearDownCoreDataStack;
+
 @end
