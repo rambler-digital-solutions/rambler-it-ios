@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class SpeakerPlainObject;
+
 @protocol SpeakerInfoInteractorInput <NSObject>
 
 /**
@@ -17,7 +19,7 @@
  
  @param objectId NString object
  */
-- (void)obtainSpeakerWithObjectId:(NSString *)objectId;
+- (SpeakerPlainObject *)obtainSpeakerWithSpeakerId:(NSString *)speakerId;
 
 @end
 

@@ -50,10 +50,10 @@
     // given
     
     // when
-    [self.interactor obtainSpeakerWithObjectId:OCMOCK_ANY];
+    id result = [self.interactor obtainSpeakerWithSpeakerId:OCMOCK_ANY];
     
     // then
-    OCMVerify([self.presenterMock didObtainSpeaker:OCMOCK_ANY]);
+    XCTAssertNotNil(result);
 }
 
 @end

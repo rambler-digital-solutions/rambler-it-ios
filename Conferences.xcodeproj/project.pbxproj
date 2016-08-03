@@ -24,6 +24,9 @@
 		2B01CEBE1D50A55900DA8E66 /* MetaEventServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B01CEBD1D50A55900DA8E66 /* MetaEventServiceTests.m */; };
 		2B01CEC11D50AAC300DA8E66 /* VerySpecialAppDelegateForTesting.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B01CEC01D50AAC300DA8E66 /* VerySpecialAppDelegateForTesting.m */; };
 		2B05E1611D50FEFC00E017AB /* SpeakerInfoCellObjectsBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B05E1601D50FEFC00E017AB /* SpeakerInfoCellObjectsBuilder.m */; };
+		2B05E1691D51D7A100E017AB /* SpeakerInfoSocialContactsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B05E1671D51D7A100E017AB /* SpeakerInfoSocialContactsTableViewCell.m */; };
+		2B05E16A1D51D7A100E017AB /* SpeakerInfoSocialContactsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B05E1681D51D7A100E017AB /* SpeakerInfoSocialContactsTableViewCell.xib */; };
+		2B05E16E1D51D80100E017AB /* SpeakerInfoSocialContactsCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B05E16D1D51D80100E017AB /* SpeakerInfoSocialContactsCellObject.m */; };
 		2B2064771D3F9CE900246C8D /* _EventModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B20642D1D3F9CE900246C8D /* _EventModelObject.m */; };
 		2B2064781D3F9CE900246C8D /* _LectureMaterialModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B20642F1D3F9CE900246C8D /* _LectureMaterialModelObject.m */; };
 		2B2064791D3F9CE900246C8D /* _LectureModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064311D3F9CE900246C8D /* _LectureModelObject.m */; };
@@ -409,6 +412,11 @@
 		2B05E15B1D50EDB900E017AB /* EventModuleSegueIdentifiersConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventModuleSegueIdentifiersConstants.h; sourceTree = "<group>"; };
 		2B05E15F1D50FEFC00E017AB /* SpeakerInfoCellObjectsBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerInfoCellObjectsBuilder.h; sourceTree = "<group>"; };
 		2B05E1601D50FEFC00E017AB /* SpeakerInfoCellObjectsBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerInfoCellObjectsBuilder.m; sourceTree = "<group>"; };
+		2B05E1661D51D7A100E017AB /* SpeakerInfoSocialContactsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerInfoSocialContactsTableViewCell.h; sourceTree = "<group>"; };
+		2B05E1671D51D7A100E017AB /* SpeakerInfoSocialContactsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerInfoSocialContactsTableViewCell.m; sourceTree = "<group>"; };
+		2B05E1681D51D7A100E017AB /* SpeakerInfoSocialContactsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeakerInfoSocialContactsTableViewCell.xib; sourceTree = "<group>"; };
+		2B05E16C1D51D80100E017AB /* SpeakerInfoSocialContactsCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerInfoSocialContactsCellObject.h; sourceTree = "<group>"; };
+		2B05E16D1D51D80100E017AB /* SpeakerInfoSocialContactsCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerInfoSocialContactsCellObject.m; sourceTree = "<group>"; };
 		2B20642C1D3F9CE900246C8D /* _EventModelObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _EventModelObject.h; sourceTree = "<group>"; };
 		2B20642D1D3F9CE900246C8D /* _EventModelObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _EventModelObject.m; sourceTree = "<group>"; };
 		2B20642E1D3F9CE900246C8D /* _LectureMaterialModelObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _LectureMaterialModelObject.h; sourceTree = "<group>"; };
@@ -1188,6 +1196,25 @@
 				2B05E1601D50FEFC00E017AB /* SpeakerInfoCellObjectsBuilder.m */,
 			);
 			path = CellObjectsBuilder;
+			sourceTree = "<group>";
+		};
+		2B05E1621D51D71100E017AB /* SpeakerInfoSocialContactsTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2B05E1661D51D7A100E017AB /* SpeakerInfoSocialContactsTableViewCell.h */,
+				2B05E1671D51D7A100E017AB /* SpeakerInfoSocialContactsTableViewCell.m */,
+				2B05E1681D51D7A100E017AB /* SpeakerInfoSocialContactsTableViewCell.xib */,
+			);
+			path = SpeakerInfoSocialContactsTableViewCell;
+			sourceTree = "<group>";
+		};
+		2B05E16B1D51D7F000E017AB /* SpeakerInfoSocialContactsCellObject */ = {
+			isa = PBXGroup;
+			children = (
+				2B05E16C1D51D80100E017AB /* SpeakerInfoSocialContactsCellObject.h */,
+				2B05E16D1D51D80100E017AB /* SpeakerInfoSocialContactsCellObject.m */,
+			);
+			path = SpeakerInfoSocialContactsCellObject;
 			sourceTree = "<group>";
 		};
 		2B20642B1D3F9CE900246C8D /* GeneratedMO */ = {
@@ -3244,6 +3271,7 @@
 		63F6133A1CB00A220002AEF0 /* CellObjects */ = {
 			isa = PBXGroup;
 			children = (
+				2B05E16B1D51D7F000E017AB /* SpeakerInfoSocialContactsCellObject */,
 				63F6133B1CB00A220002AEF0 /* SpeakerInfoTableViewCellObject */,
 			);
 			path = CellObjects;
@@ -3261,6 +3289,7 @@
 		63F6133E1CB00A220002AEF0 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				2B05E1621D51D71100E017AB /* SpeakerInfoSocialContactsTableViewCell */,
 				63F6133F1CB00A220002AEF0 /* SpeakerInfoTableViewCell */,
 			);
 			path = Cells;
@@ -5426,6 +5455,7 @@
 				63FDCE141BBDBA2A00A43B60 /* Assets.xcassets in Resources */,
 				63F6137F1CB00A220002AEF0 /* SignUpAndSaveToCalendarEventTableViewCell.xib in Resources */,
 				667050421D4615A700DD9D6E /* GrayTableViewSectionHeaderAndFooterCell.xib in Resources */,
+				2B05E16A1D51D7A100E017AB /* SpeakerInfoSocialContactsTableViewCell.xib in Resources */,
 				63F6136F1CB00A220002AEF0 /* CurrentVideoTranslationTableViewCell.xib in Resources */,
 				63F613911CB00A220002AEF0 /* LectureDescriptionTableViewCell.xib in Resources */,
 				631808451C48324000A61E7D /* SpeakerShortInfoView.xib in Resources */,
@@ -5611,6 +5641,7 @@
 				63F613631CB00A220002AEF0 /* EventRouter.m in Sources */,
 				6670501D1D46145300DD9D6E /* ReportsSearchViewController.m in Sources */,
 				2B750D171D362EE600EACE98 /* Conference.xcdatamodeld in Sources */,
+				2B05E1691D51D7A100E017AB /* SpeakerInfoSocialContactsTableViewCell.m in Sources */,
 				2B429A5F1D478A2F004C005F /* UINavigationBar+States.m in Sources */,
 				9F18311D1BC1615C000E21A5 /* SingleResponseObjectFormatter.m in Sources */,
 				63F613991CB00A220002AEF0 /* SpeakerInfoRouter.m in Sources */,
@@ -5681,6 +5712,7 @@
 				631808401C482B1300A61E7D /* SpeakerShortInfoInteractor.m in Sources */,
 				667050531D46332200DD9D6E /* ReportsSearchCellObjectsBuilderImplementation.m in Sources */,
 				63F613701CB00A220002AEF0 /* EventDescriptionTableViewCell.m in Sources */,
+				2B05E16E1D51D80100E017AB /* SpeakerInfoSocialContactsCellObject.m in Sources */,
 				2B20647C1D3F9CE900246C8D /* _SocialNetworkAccountModelObject.m in Sources */,
 				636B64041BBDD19A0053E38F /* LectureServiceImplementation.m in Sources */,
 				63F54D9B1BC5AB3C00DB1746 /* ServiceComponentsAssembly.m in Sources */,

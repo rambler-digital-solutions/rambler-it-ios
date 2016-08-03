@@ -10,12 +10,16 @@
 #import "ModuleAssemblyBase.h"
 #import "AssemblyCollector/RamblerInitialAssembly.h"
 
+@class PonsomizerAssembly;
+
 /**
  @author Artem Karpushin
  
  A TyphoonAssembly which is responsible for creating SpeakerInfoModule
  */
 @interface SpeakerInfoModuleAssembly : ModuleAssemblyBase <RamblerInitialAssembly>
+
+@property (strong, nonatomic) PonsomizerAssembly *ponsomizerAssembly;
 
 @end
 

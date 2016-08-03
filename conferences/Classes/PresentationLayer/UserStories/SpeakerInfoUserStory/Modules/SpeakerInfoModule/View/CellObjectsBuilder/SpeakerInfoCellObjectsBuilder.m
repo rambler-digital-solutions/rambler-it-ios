@@ -8,6 +8,8 @@
 
 #import "SpeakerInfoCellObjectsBuilder.h"
 #import "SpeakerInfoTableViewCellObject.h"
+#import "SpeakerInfoSocialContactsCellObject.h"
+#import "SocialNetworkAccountPlainObject.h"
 
 @implementation SpeakerInfoCellObjectsBuilder
 

@@ -60,7 +60,8 @@ static NSString *const kPlaceholderImageName = @"placeholder";
     
     self.imageView.layer.cornerRadius = self.imageView.frame.size.height / 2;
     self.imageView.clipsToBounds = YES;
-    [self.imageView sd_setImageWithURL:speaker.imageUrl
+    NSURL *imageUrl = [NSURL URLWithString:speaker.imageUrl];
+    [self.imageView sd_setImageWithURL:imageUrl
                       placeholderImage:[UIImage imageNamed:kPlaceholderImageName]];
 }
 

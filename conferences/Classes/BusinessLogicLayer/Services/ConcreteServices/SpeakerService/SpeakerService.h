@@ -21,9 +21,9 @@
 #import <Foundation/Foundation.h>
 
 @class NSPredicate;
-@class Speaker;
+@class SpeakerModelObject;
 
-typedef void (^SpeakerCompletionBlock)(Speaker *speaker, NSError *error);
+typedef void (^SpeakerCompletionBlock)(SpeakerModelObject *speaker, NSError *error);
 
 /**
  @author Artem Karpushin
@@ -46,11 +46,23 @@ typedef void (^SpeakerCompletionBlock)(Speaker *speaker, NSError *error);
 /**
  @author Artem Karpushin
  
+ Method is used to obtain Speaker object from cache
+ 
+ @param speakerId
+ 
+ @return Speaker object
+ */
+- (SpeakerModelObject *)obtainSpeakerWithSpeakerId:(NSString *)speakerId;
+
+/**
+ @author Artem Karpushin
+ 
  Method is used to update Speaker object by sending request to server
  
  @param predicate NSPredicate for specifying the filtering parameters
  @param completionBlock SpeakerCompletionBlock called upon completion the method, and returns Speaker object and NSError object if there is any
  */
-- (void)updateSpeakerWithPredicate:(NSPredicate *)predicate completionBlock:(SpeakerCompletionBlock)completionBlock;
+- (void)updateSpeakerWithPredicate:(NSPredicate *)predicate
+                   completionBlock:(SpeakerCompletionBlock)completionBlock;
 
 @end

@@ -12,8 +12,6 @@
 
 @interface SpeakerInfoTableViewCellObject ()
 
-@property (nonatomic, strong, readwrite) NSString *speakerName;
-@property (nonatomic, strong, readwrite) NSString *companyName;
 @property (nonatomic, strong, readwrite) NSString *speakerDescription;
 
 @end
@@ -25,8 +23,6 @@
 - (instancetype)initWithSpeaker:(SpeakerPlainObject *)speaker {
     self = [super init];
     if (self) {
-        _speakerName = speaker.name;
-        _companyName = speaker.company;
         _speakerDescription = speaker.biography;
     }
     

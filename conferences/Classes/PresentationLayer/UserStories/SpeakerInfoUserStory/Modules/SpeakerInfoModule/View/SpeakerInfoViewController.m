@@ -10,6 +10,7 @@
 #import "SpeakerInfoViewOutput.h"
 #import "SpeakerInfoDataDisplayManager.h"
 #import "SpeakerShortInfoModuleInput.h"
+#import "UINavigationBar+States.h"
 
 static CGFloat TableViewEstimatedRowHeight = 44.0f;
 
@@ -21,6 +22,7 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+    [self.navigationController.navigationBar becomeTransparent];
 	[self.output setupView];
 }
 
@@ -41,15 +43,22 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
 #pragma mark - Private methods
 
 - (void)setupHeaderViewWithSpeaker:(SpeakerPlainObject *)speaker {
-    [self.speakerShortInfoView configureModuleWithSpeaker:speaker andViewSize:SpeakerShortInfoViewBigSize];
+    [self.speakerShortInfoView configureModuleWithSpeaker:speaker
+                                              andViewSize:SpeakerShortInfoViewBigSize];
     
-    CGFloat tableViewHeaderHeight = self.speakerShortInfoView.frame.size.height;
-    UIView *tableViewHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0,
-                                                                           0,
-                                                                           self.view.frame.size.width,
-                                                                           tableViewHeaderHeight)];
-    tableViewHeaderView.backgroundColor = [UIColor clearColor];
-    [self.tableView setTableHeaderView:tableViewHeaderView];
+    self.tableView.tableHeaderView = nil;
+    CGRect frame = [self calculateFrameForHeaderView];
+    self.speakerShortInfoView.frame = frame;
+    self.tableView.tableHeaderView = self.speakerShortInfoView;
 }
+
+- (CGRect)calculateFrameForHeaderView {
+    CGRect frame = self.speakerShortInfoView.frame;
+    frame.size.width = self.view.bounds.size.width;
+    frame.size = [self.speakerShortInfoView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    
+    return frame;
+}
+
 
 @end

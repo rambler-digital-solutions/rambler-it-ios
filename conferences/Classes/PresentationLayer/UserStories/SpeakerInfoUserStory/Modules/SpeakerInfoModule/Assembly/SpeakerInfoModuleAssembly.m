@@ -14,6 +14,8 @@
 #import "SpeakerInfoPresenterStateStorage.h"
 #import "SpeakerInfoDataDisplayManager.h"
 #import "SpeakerInfoCellObjectsBuilder.h"
+#import "ServiceComponents.h"
+#import "PonsomizerAssembly.h"
 
 @implementation  SpeakerInfoModuleAssembly
 
@@ -32,6 +34,10 @@
                             configuration:^(TyphoonDefinition *definition) {
                                 [definition injectProperty:@selector(output)
                                                       with:[self presenterSpeakerInfo]];
+                                [definition injectProperty:@selector(speakerService)
+                                                      with:[self.serviceComponents speakerService]];
+                                [definition injectProperty:@selector(ponsomizer)
+                                                      with:[self.ponsomizerAssembly ponsomizer]];
              }];
 }
 

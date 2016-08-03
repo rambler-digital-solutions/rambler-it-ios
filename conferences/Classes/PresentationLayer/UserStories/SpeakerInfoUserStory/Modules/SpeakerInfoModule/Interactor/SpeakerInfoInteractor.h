@@ -10,10 +10,14 @@
 #import "SpeakerInfoInteractorInput.h"
 
 @protocol SpeakerInfoInteractorOutput;
+@protocol ROSPonsomizer;
+@protocol SpeakerService;
 
 @interface SpeakerInfoInteractor : NSObject <SpeakerInfoInteractorInput>
 
-@property (weak, nonatomic) id <SpeakerInfoInteractorOutput> output;
+@property (nonatomic, weak) id <SpeakerInfoInteractorOutput> output;
+@property (nonatomic, strong) id<ROSPonsomizer> ponsomizer;
+@property (nonatomic, strong) id<SpeakerService> speakerService;
 
 @end
 

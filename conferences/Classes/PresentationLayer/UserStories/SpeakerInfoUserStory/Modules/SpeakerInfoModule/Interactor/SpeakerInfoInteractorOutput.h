@@ -12,14 +12,5 @@
 
 @protocol SpeakerInfoInteractorOutput <NSObject>
 
-/**
- @author Artem Karpushin
- 
- Method is used to inform presenter that Speaker object was obtained
- 
- @param speaker SpeakerPlainObject object
- */
-- (void)didObtainSpeaker:(SpeakerPlainObject *)speaker;
-
 @end
 

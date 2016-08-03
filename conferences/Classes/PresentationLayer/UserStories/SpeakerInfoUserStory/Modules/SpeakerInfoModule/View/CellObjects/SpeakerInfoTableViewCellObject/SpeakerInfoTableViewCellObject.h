@@ -13,8 +13,6 @@
 
 @interface SpeakerInfoTableViewCellObject : NSObject <NICellObject>
 
-@property (nonatomic, strong, readonly) NSString *speakerName;
-@property (nonatomic, strong, readonly) NSString *companyName;
 @property (nonatomic, strong, readonly) NSString *speakerDescription;
 
 + (instancetype)objectWithSpeaker:(SpeakerPlainObject *)speaker;

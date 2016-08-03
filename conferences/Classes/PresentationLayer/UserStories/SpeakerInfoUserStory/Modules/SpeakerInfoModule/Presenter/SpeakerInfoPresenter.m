@@ -17,19 +17,16 @@
 #pragma mark - SpeakerInfoViewOutput
 
 - (void)setupView {
-    [self.interactor obtainSpeakerWithObjectId:self.stateStorage.speakerObjectId];
+    SpeakerPlainObject *speaker = [self.interactor obtainSpeakerWithSpeakerId:self.stateStorage.speakerId];
+    [self.view setupViewWithSpeaker:speaker];
 }
 
 #pragma mark - SpeakerInfoInteractorOutput
 
-- (void)didObtainSpeaker:(SpeakerPlainObject *)speaker {
-    [self.view setupViewWithSpeaker:speaker];
-}
-
 #pragma mark - SpeakerInfoModuleInput
 
 - (void)configureCurrentModuleWithSpeakerId:(NSString *)speakerId {
-    self.stateStorage.speakerObjectId = speakerId;
+    self.stateStorage.speakerId = speakerId;
 }
 
 @end
