@@ -36,6 +36,5 @@ typedef void(^IndexerErrorBlock)(NSError *error);
 
 - (BOOL)canIndexObjectWithType:(NSString *)objectType;
 - (NSString *)identifierForObject:(id)object;
-- (id)objectForIdentifier:(NSString *)object;
 
 @end

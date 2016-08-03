@@ -21,10 +21,16 @@
 #import "ObjectIndexerBase.h"
 
 #import "IndexIdentifierFormatter.h"
+#import "IndexTransactionBatch.h"
+
+#import "EXTScope.h"
+
+#import <CoreSpotlight/CoreSpotlight.h>
 
 @interface ObjectIndexerBase ()
 
 @property (nonatomic, strong) id<IndexIdentifierFormatter> indexIdentifierFormatter;
+@property (nonatomic, strong) CSSearchableIndex *searchableIndex;
 
 @end
 
@@ -32,10 +38,12 @@
 
 #pragma mark - Initialization
 
-- (instancetype)initWithIndexIdentifierFormatter:(id<IndexIdentifierFormatter>)indexIdentifierFormatter {
+- (instancetype)initWithIndexIdentifierFormatter:(id<IndexIdentifierFormatter>)indexIdentifierFormatter
+                                 searchableIndex:(CSSearchableIndex *)searchableIndex {
     self = [super init];
     if (self) {
         _indexIdentifierFormatter = indexIdentifierFormatter;
+        _searchableIndex = searchableIndex;
     }
     return self;
 }
@@ -44,18 +52,64 @@
 
 - (NSOperation *)operationForIndexBatch:(IndexTransactionBatch *)batch
                     withCompletionBlock:(IndexerErrorBlock)block {
-    return nil;
-}
-
-- (BOOL)canIndexObjectWithIdentifier:(NSString *)identifier {
-    return NO;
+    NSBlockOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
+        NSMutableArray *items = [NSMutableArray array];
+        
+        NSMutableOrderedSet *indexSet = [NSMutableOrderedSet new];
+        [indexSet addObjectsFromArray:[batch.insertIdentifiers array]];
+        [indexSet addObjectsFromArray:[batch.updateIdentifiers array]];
+        
+        NSArray *deleteIdentifiers = [batch.deleteIdentifiers array];
+        [indexSet removeObjectsInArray:deleteIdentifiers];
+        
+        for (NSString *identifier in indexSet) {
+            id object = [self objectForIdentifier:identifier];
+            if (object) {
+                CSSearchableItem *item = [self searchableItemForObject:object];
+                if (item) {
+                    [items addObject:item];
+                }
+            }
+        }
+        
+        @weakify(self);
+        [self.searchableIndex indexSearchableItems:items
+                                 completionHandler:^(NSError * _Nullable error) {
+                                     @strongify(self);
+                                     if (error) {
+                                         block(error);
+                                         return;
+                                     }
+                                     [self.searchableIndex deleteSearchableItemsWithIdentifiers:deleteIdentifiers
+                                                                              completionHandler:^(NSError * _Nullable error) {
+                                                                                  block(error);
+                                                                              }];
+                                 }];
+    }];
+    return operation;
 }
 
 - (NSString *)identifierForObject:(id)object {
     return [self.indexIdentifierFormatter identifierForObject:object];
 }
 
+#pragma mark - Abstract methods
+
+- (BOOL)canIndexObjectWithType:(NSString *)objectType {
+    [NSException raise:NSInternalInconsistencyException
+                format:@"You should override this method in a custom subclass"];
+    return NO;
+}
+
 - (id)objectForIdentifier:(NSString *)object {
+    [NSException raise:NSInternalInconsistencyException
+                format:@"You should override this method in a custom subclass"];
+    return nil;
+}
+
+- (CSSearchableItem *)searchableItemForObject:(id)object {
+    [NSException raise:NSInternalInconsistencyException
+                format:@"You should override this method in a custom subclass"];
     return nil;
 }
 

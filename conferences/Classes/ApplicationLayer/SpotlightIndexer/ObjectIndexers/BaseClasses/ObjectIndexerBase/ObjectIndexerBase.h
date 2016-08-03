@@ -22,10 +22,41 @@
 
 #import "ObjectIndexer.h"
 
+@class CSSearchableIndex;
+@class CSSearchableItem;
 @protocol IndexIdentifierFormatter;
 
+/**
+ @autor Egor Tolstoy
+ 
+ Base indexer class with some abstract methods that needs to be overriden
+ */
 @interface ObjectIndexerBase : NSObject <ObjectIndexer>
 
-- (instancetype)initWithIndexIdentifierFormatter:(id<IndexIdentifierFormatter>)indexIdentifierFormatter;
+- (instancetype)initWithIndexIdentifierFormatter:(id<IndexIdentifierFormatter>)indexIdentifierFormatter
+                                 searchableIndex:(CSSearchableIndex *)searchableIndex;
+
+/**
+ @author Egor Tolstoy
+ 
+ This method should return an object using the provided identifier. If this method returns nil, changed object won't be indexed.
+ This method should be overridden in your custom subclass.
+ 
+ @param identifier Changed object identifier
+ 
+ @return An object for indexing
+ */
+- (id)objectForIdentifier:(NSString *)identifier;
+
+/**
+ @author Egor Tolstoy
+ 
+ This method should return a CSSearchableItem for a certain object.
+ 
+ @param object An object for indexing
+ 
+ @return CSSearchableItem
+ */
+- (CSSearchableItem *)searchableItemForObject:(id)object;
 
 @end
