@@ -75,17 +75,12 @@
 #pragma mark - <ChangeProviderDelegate>
 
 - (void)changeProvider:(id<ChangeProvider>)changeProvider
-       didChangeObject:(id)object
-            changeType:(ChangeProviderChangeType)changeType {
-    
-    NSString *objectType = NSStringFromClass([object class]);
-    id<ObjectIndexer> indexer = [self obtainIndexerForObjectType:objectType];
-    NSString *objectIdentifier = [indexer identifierForObject:object];
-    
+  didGetChangeWithType:(ChangeProviderChangeType)changeType
+         forObjectType:(NSString *)objectType
+      objectIdentifier:(NSString *)objectIdentifier {
     IndexTransaction *transaction = [IndexTransaction transactionWithIdentifier:objectIdentifier
                                                                      objectType:objectType
                                                                      changeType:changeType];
-    
     [self.stateStorage insertTransaction:transaction];
 }
 

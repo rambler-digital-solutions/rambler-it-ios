@@ -21,12 +21,15 @@
 #import "FetchedResultsControllerChangeProvider.h"
 
 #import "ChangeProviderDelegate.h"
+#import "ObjectTransformer.h"
+#import "ChangeProviderChangeType.h"
 
 #import <MagicalRecord/MagicalRecord.h>
 
 @interface FetchedResultsControllerChangeProvider () <NSFetchedResultsControllerDelegate>
 
-@property (nonatomic, strong) NSFetchedRequest *request;
+@property (nonatomic, strong) NSFetchRequest *request;
+@property (nonatomic, strong) id<ObjectTransformer> transformer;
 @property (nonatomic, strong) NSFetchedResultsController *controller;
 
 @end
@@ -35,16 +38,20 @@
 
 #pragma mark - Initialization
 
-- (instancetype)initWithFetchedRequest:(NSFetchedRequest *)request {
+- (instancetype)initWithFetchedRequest:(NSFetchRequest *)request
+                     objectTransformer:(id<ObjectTransformer>)objectTransformer {
     self = [super init];
     if (self) {
         _request = request;
+        _transformer = objectTransformer;
     }
     return self;
 }
 
-+ (instancetype)changeProviderWithFetchedRequest:(NSFetchedRequest *)request {
-    return [[self alloc] initWithFetchRequest:request];
++ (instancetype)changeProviderWithFetchedRequest:(NSFetchRequest *)request
+                               objectTransformer:(id<ObjectTransformer>)objectTransformer {
+    return [[self alloc] initWithFetchedRequest:request
+                              objectTransformer:objectTransformer];
 }
 
 #pragma mark - Public methods
@@ -66,9 +73,29 @@
        atIndexPath:(NSIndexPath *)indexPath
      forChangeType:(NSFetchedResultsChangeType)type
       newIndexPath:(NSIndexPath *)newIndexPath {
+    NSString *objectType = NSStringFromClass([anObject class]);
+    NSString *objectIdentifier = [self.transformer identifierForObject:anObject];
+    ChangeProviderChangeType changeType = [self changeTypeFromCoreDataChangeType:type];
+    
     [self.delegate changeProvider:self
-                  didChangeObject:anObject
-                       changeType:type];
+             didGetChangeWithType:changeType
+                    forObjectType:objectType
+                 objectIdentifier:objectIdentifier];
+}
+
+#pragma mark - Private methods
+
+- (ChangeProviderChangeType)changeTypeFromCoreDataChangeType:(NSFetchedResultsChangeType)type {
+    static NSDictionary *mappingDictionary;
+    if (!mappingDictionary) {
+        mappingDictionary = @{
+                              @(NSFetchedResultsChangeInsert) : @(ChangeProviderChangeInsert),
+                              @(NSFetchedResultsChangeDelete) : @(ChangeProviderChangeDelete),
+                              @(NSFetchedResultsChangeMove) : @(ChangeProviderChangeMove),
+                              @(NSFetchedResultsChangeUpdate) : @(ChangeProviderChangeUpdate)
+                              };
+    }
+    return [mappingDictionary[@(type)] integerValue];
 }
 
 @end

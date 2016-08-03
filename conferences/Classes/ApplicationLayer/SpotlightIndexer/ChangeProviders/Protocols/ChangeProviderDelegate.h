@@ -36,13 +36,15 @@
  
  Notifies about object change event
  
- @param changeProvider ChangeProvider itself
- @param object         Changed object
- @param changeType     Type of change
+ @param changeProvider   ChangeProvider itself
+ @param changeType       Type of change
+ @param objectType       The type of changed object
+ @param objectIdentifier The type of object identifier
  */
 - (void)changeProvider:(id<ChangeProvider>)changeProvider
-       didChangeObject:(id)object
-            changeType:(ChangeProviderChangeType)changeType;
+  didGetChangeWithType:(ChangeProviderChangeType)changeType
+         forObjectType:(NSString *)objectType
+      objectIdentifier:(NSString *)objectIdentifier;
 
 /**
  @author Egor Tolstoy

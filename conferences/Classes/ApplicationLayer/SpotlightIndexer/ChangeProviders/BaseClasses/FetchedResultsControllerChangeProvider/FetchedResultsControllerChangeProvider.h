@@ -22,7 +22,8 @@
 
 #import "ChangeProvider.h"
 
-@class NSFetchedRequest;
+@class NSFetchRequest;
+@protocol ObjectTransformer;
 
 /**
  @author Egor Tolstoy
@@ -31,7 +32,8 @@
  */
 @interface FetchedResultsControllerChangeProvider : NSObject <ChangeProvider>
 
-+ (instancetype)changeProviderWithFetchedRequest:(NSFetchedRequest *)request;
++ (instancetype)changeProviderWithFetchedRequest:(NSFetchRequest *)request
+                               objectTransformer:(id<ObjectTransformer>)objectTransformer;
 
 /**
  @author Egor Tolstoy
