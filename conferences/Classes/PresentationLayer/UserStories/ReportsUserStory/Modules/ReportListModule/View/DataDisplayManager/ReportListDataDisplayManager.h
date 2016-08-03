@@ -54,15 +54,6 @@
 /**
  @author Zinovyev Konstantin
  
- Method is used to configure DDM
-
- @param events Event list
- */
-- (void)configureDataDisplayManagerWithEvents:(NSArray *)events;
-
-/**
- @author Zinovyev Konstantin
- 
  Method is used to update TableViewModel with new events
  
  @param events Event list

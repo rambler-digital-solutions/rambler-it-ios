@@ -9,8 +9,6 @@
 #import "LectureDescriptionTableViewCell.h"
 #import "LectureDescriptionTableViewCellObject.h"
 
-static CGFloat const LectureDescriptionTableViewCellHeight = 135.0f;
-
 @interface LectureDescriptionTableViewCell ()
 
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;

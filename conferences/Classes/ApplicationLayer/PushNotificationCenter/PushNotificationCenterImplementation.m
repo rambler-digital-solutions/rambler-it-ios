@@ -33,25 +33,19 @@
         [application registerUserNotificationSettings:settings];
         [application registerForRemoteNotifications];
     } else {
-        [application registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |
-                                                         UIRemoteNotificationTypeAlert |
-                                                         UIRemoteNotificationTypeSound)];
+        [application registerForRemoteNotifications];
     }
 }
 
 - (void)didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)token {
-    @weakify(self);
     [self.pushNotificationService registerForPushNotificationsWithToken:token completionBlock:^(NSError *error) {
-        @strongify(self);
         
     }];
     
 }
 
 - (void)processPushNotificationWithUserInfo:(NSDictionary *)userInfo applicationState:(UIApplicationState)applicationState {
-    @weakify(self);
     [self.pushNotificationService processPushNotificationWithUserInfo:userInfo completionBlock:^(PushNotification *pushNotification) {
-        @strongify(self);
         
     }];
 }

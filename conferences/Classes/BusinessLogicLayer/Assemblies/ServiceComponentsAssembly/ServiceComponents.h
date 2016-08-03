@@ -27,7 +27,6 @@
 @protocol SpeakerService;
 @protocol EventListService;
 @protocol MetaEventService;
-@protocol PrototypeMapper;
 @protocol EventStoreServiceProtocol;
 @protocol RamblerLocationService;
 
@@ -41,8 +40,5 @@
 - (id <MetaEventService>)metaEventService;
 - (id <EventStoreServiceProtocol>)eventStoreService;
 - (id <RamblerLocationService>)ramblerLocationService;
-
-// вынести из сервисов
-- (id <PrototypeMapper>)eventPrototypeMapper;
 
 @end

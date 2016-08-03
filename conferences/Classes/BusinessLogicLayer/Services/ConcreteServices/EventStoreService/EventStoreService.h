@@ -22,6 +22,6 @@
 
 @protocol EventStoreServiceProtocol;
 
-@interface EventStoreService : NSObject <EventStoreServiceProtocol>
+@interface EventStoreService : NSObject
 
 @end
