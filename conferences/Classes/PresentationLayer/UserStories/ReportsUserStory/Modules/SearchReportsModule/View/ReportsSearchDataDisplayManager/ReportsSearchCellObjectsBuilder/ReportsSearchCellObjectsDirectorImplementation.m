@@ -62,7 +62,10 @@
         for (id plainObject in sectionPlainObjects) {
             SEL selector = NSSelectorFromString(selectorsBuilderByClassName[nameClass]);
             if ([self.builder respondsToSelector:selector]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
                  cellObject = [self.builder performSelector:selector withObject:plainObject withObject:selectedText];
+#pragma clang diagnostic pop
             }
             [resultCellObjects addObject:cellObject];
         }

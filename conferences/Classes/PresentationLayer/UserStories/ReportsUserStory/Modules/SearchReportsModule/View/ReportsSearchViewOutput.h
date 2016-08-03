@@ -64,15 +64,6 @@
 /**
  @author Zinovyev Konstantin
  
- Method is used to inform presenter that search text was changed
- 
- @param text Text in search bar
- */
-- (void)didChangeSearchBarWithSearchTerm:(NSString *)text;
-
-/**
- @author Zinovyev Konstantin
- 
  Method is used to inform presenter that user has tapped clear placeholder
  */
 - (void)didTapClearPlaceholderView;

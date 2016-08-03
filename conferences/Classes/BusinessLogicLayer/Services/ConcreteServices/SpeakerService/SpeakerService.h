@@ -43,14 +43,4 @@ typedef void (^SpeakerCompletionBlock)(Speaker *speaker, NSError *error);
  */
 - (NSArray *)obtainSpeakerWithPredicate:(NSPredicate *)predicate;
 
-/**
- @author Artem Karpushin
- 
- Method is used to update Speaker object by sending request to server
- 
- @param predicate NSPredicate for specifying the filtering parameters
- @param completionBlock SpeakerCompletionBlock called upon completion the method, and returns Speaker object and NSError object if there is any
- */
-- (void)updateSpeakerWithPredicate:(NSPredicate *)predicate completionBlock:(SpeakerCompletionBlock)completionBlock;
-
 @end

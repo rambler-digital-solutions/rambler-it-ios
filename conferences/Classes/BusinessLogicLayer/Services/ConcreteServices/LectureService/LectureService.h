@@ -43,14 +43,4 @@ typedef void (^LectureCompletionBlock)(Lecture *lecture, NSError *error);
  */
 - (NSArray *)obtainLectureWithPredicate:(NSPredicate *)predicate;
 
-/**
- @author Artem Karpushin
- 
- Method is used to update Lecture object by sending request to server
- 
- @param predicate NSPredicate for specifying the filtering parameters
- @param completionBlock LectureCompletionBlock called upon completion the method, and returns Lecture object and NSError object if there is any
- */
-- (void)updateLectureWithPredicate:(NSPredicate *)predicate completionBlock:(LectureCompletionBlock)completionBlock;
-
 @end

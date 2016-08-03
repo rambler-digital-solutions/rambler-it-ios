@@ -49,7 +49,7 @@
     if (operation.dependencies.count > 0) {
         [debugDescription appendString:@"Depends on:\n"];
         [operation.dependencies enumerateObjectsUsingBlock:^(NSOperation *obj, NSUInteger idx, BOOL *stop) {
-            NSString *dependencyDescription = [NSString stringWithFormat:@"%li: %@, isExecuting: %i\n", idx, NSStringFromClass([obj class]), obj.isExecuting];
+            NSString *dependencyDescription = [NSString stringWithFormat:@"%li: %@, isExecuting: %i\n", (unsigned long)idx, NSStringFromClass([obj class]), obj.isExecuting];
             [debugDescription appendString:dependencyDescription];
         }];
     } else {

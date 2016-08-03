@@ -76,7 +76,7 @@ static const int ddLogLevel = DDLogFlagVerbose;
             DDLogError(@"NetworkClient in operation %@ has produced an error: %@", NSStringFromClass([self class]), error);
         }
         if (data) {
-            DDLogVerbose(@"Server returned data with length: %li", [(NSData *)data length]);
+            DDLogVerbose(@"Server returned data with length: %li", (unsigned long)[(NSData *)data length]);
         }
         
         [self completeOperationWithData:data error:error];

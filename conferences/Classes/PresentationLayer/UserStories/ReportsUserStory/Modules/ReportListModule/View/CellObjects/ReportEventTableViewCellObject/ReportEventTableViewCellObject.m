@@ -22,6 +22,7 @@
 #import "ReportEventTableViewCell.h"
 #import "EventPlainObject.h"
 #import "UIColor+ConferencesPallete.h"
+#import "MetaEventPlainObject.h"
 
 @interface ReportEventTableViewCellObject ()
 
@@ -41,7 +42,7 @@
     self = [super init];
     if (self) {
         _eventTitle = attributedName;
-        _imageURL = [NSURL URLWithString:event.imageUrl];
+        _imageURL = [NSURL URLWithString:event.metaEvent.imageUrlPath];
         _date = date;
         _event = event;
     }

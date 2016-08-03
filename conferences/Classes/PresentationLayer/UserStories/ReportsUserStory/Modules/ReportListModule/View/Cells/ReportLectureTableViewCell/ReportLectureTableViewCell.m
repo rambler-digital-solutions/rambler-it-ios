@@ -43,7 +43,6 @@ static CGFloat const kReportLectureTableViewCellHeight = 116.0f;
     self.speakerName.text = object.speakerName;
     self.separatorInset = UIEdgeInsetsMake(0.f, self.bounds.size.width, 0.f, 0.0f);
     self.lectureImageView.layer.cornerRadius = self.lectureImageView.frame.size.height/2.0;
-    CGFloat a = self.lectureImageView.frame.size.height/2.0;
     return YES;
 }
 

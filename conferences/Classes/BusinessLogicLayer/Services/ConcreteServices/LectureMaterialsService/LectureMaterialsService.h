@@ -32,25 +32,4 @@ typedef void (^LectureMaterialsCompletionBlock)(LectureMaterials *lectureMateria
  */
 @protocol LectureMaterialsService <NSObject>
 
-/**
- @author Artem Karpushin
- 
- Method is used to obtain LectureMaterials object from cache
- 
- @param predicate NSPredicate for specifying the filtering parameters
- 
- @return LectureMaterials object
- */
-- (LectureMaterials *)obtainLectureMaterialsWithPredicate:(NSPredicate *)predicate;
-
-/**
- @author Artem Karpushin
- 
- Method is used to update LectureMaterials object by sending request to server
- 
- @param predicate NSPredicate for specifying the filtering parameters
- @param completionBlock LectureMaterialsCompletionBlock called upon completion the method, and returns LectureMaterials object and NSError object if there is any
- */
-- (void)updateLectureMaterialsWithPredicate:(NSPredicate *)predicate completionBlock:(LectureMaterialsCompletionBlock)completionBlock;
-
 @end
