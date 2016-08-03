@@ -15,10 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface IndexState (CoreDataProperties)
 
-@property (nullable, nonatomic, retain) id deleteIdentifiers;
-@property (nullable, nonatomic, retain) id insertIdentifiers;
-@property (nullable, nonatomic, retain) id updateIdentifiers;
-@property (nullable, nonatomic, retain) id moveIdentifiers;
+@property (nullable, nonatomic, retain) NSMutableOrderedSet *deleteIdentifiers;
+@property (nullable, nonatomic, retain) NSMutableOrderedSet *insertIdentifiers;
+@property (nullable, nonatomic, retain) NSMutableOrderedSet *updateIdentifiers;
+@property (nullable, nonatomic, retain) NSMutableOrderedSet *moveIdentifiers;
 @property (nullable, nonatomic, retain) NSDate *lastChangeDate;
 @property (nullable, nonatomic, retain) NSNumber *numberOfIdentifiers;
 @property (nullable, nonatomic, retain) NSString *objectType;

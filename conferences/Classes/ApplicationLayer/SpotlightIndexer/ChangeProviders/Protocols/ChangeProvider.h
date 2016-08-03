@@ -22,6 +22,8 @@
 
 @protocol ChangeProviderDelegate;
 
+typedef void(^ChangeProviderInitialIndexingBlock)(NSString *objectType, NSString *objectIdentifier);
+
 /**
  @author Egor Tolstoy
  
@@ -30,5 +32,21 @@
 @protocol ChangeProvider <NSObject>
 
 @property (nonatomic, weak) id<ChangeProviderDelegate> delegate;
+
+/**
+ @author Egor Tolstoy
+ 
+ Method initiates monitoring start
+ */
+- (void)startMonitoringForChanges;
+
+/**
+ @author Egor Tolstoy
+ 
+ Method allows to perform processing initial objects fetched by change provider
+ 
+ @param block Processing block
+ */
+- (void)processObjectsForInitialIndexingWithBlock:(ChangeProviderInitialIndexingBlock)block;
 
 @end

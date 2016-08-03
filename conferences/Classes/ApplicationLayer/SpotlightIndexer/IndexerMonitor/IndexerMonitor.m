@@ -65,7 +65,7 @@
 #pragma mark - Public methods
 
 - (void)startMonitoring {
-    [self processIndexing];
+    [self performInitialIndexingIfNeeded];
 }
 
 - (void)stopMonitoring {
@@ -84,15 +84,27 @@
     [self.stateStorage insertTransaction:transaction];
 }
 
-- (void)processChanges {
-    
-}
-
-- (NSArray *)obtainObjectsForInitialIndexing {
-    return nil;
-}
-
 #pragma mark - Private methods
+
+- (void)performInitialIndexingIfNeeded {
+    BOOL needed = [self.stateStorage shouldPerformInitialIndexing];
+    if (needed) {
+        NSMutableArray *allTransactions = [NSMutableArray new];
+        for (id<ChangeProvider> changeProvider in self.changeProviders) {
+            __block NSMutableArray *providerTransactions = [NSMutableArray new];
+            [changeProvider processObjectsForInitialIndexingWithBlock:^(NSString *objectType, NSString *objectIdentifier) {
+                IndexTransaction *transaction = [IndexTransaction transactionWithIdentifier:objectIdentifier
+                                                                                 objectType:objectType
+                                                                                 changeType:ChangeProviderChangeInsert];
+                [providerTransactions addObject:transaction];
+            }];
+            [allTransactions addObject:providerTransactions];
+        }
+        [self.stateStorage insertTransactionsArray:[allTransactions copy]
+                                        changeType:ChangeProviderChangeInsert];
+        [self processIndexing];
+    }
+}
 
 - (void)processIndexing {
     IndexTransactionBatch *batch = [self.stateStorage obtainTransactionBatch];

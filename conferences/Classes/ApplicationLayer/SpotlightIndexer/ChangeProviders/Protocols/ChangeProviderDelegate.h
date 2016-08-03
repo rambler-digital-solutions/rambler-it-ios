@@ -46,20 +46,4 @@
          forObjectType:(NSString *)objectType
       objectIdentifier:(NSString *)objectIdentifier;
 
-/**
- @author Egor Tolstoy
- 
- TODO: 
- */
-- (void)processChanges;
-
-/**
- @author Egor Tolstoy
- 
- Returns objects for initial indexing
- 
- @return Objects for initial indexing
- */
-- (NSArray *)obtainObjectsForInitialIndexing;
-
 @end

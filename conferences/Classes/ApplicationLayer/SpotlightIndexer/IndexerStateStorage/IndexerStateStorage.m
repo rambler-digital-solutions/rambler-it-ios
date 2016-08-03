@@ -26,6 +26,8 @@
 
 #import <MagicalRecord/MagicalRecord.h>
 
+static NSUInteger const kTransactionBatchSize = 1000;
+
 @implementation IndexerStateStorage
 
 #pragma mark - Public methods
@@ -59,6 +61,86 @@
             }
         }
     }];
+}
+
+- (IndexTransactionBatch *)obtainTransactionBatch {
+    NSManagedObjectContext *rootSavingContext = [NSManagedObjectContext MR_rootSavingContext];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"numberOfIdentifiers > 0"];
+    
+    __block IndexState *state;
+    [rootSavingContext performBlockAndWait:^{
+        state = [IndexState MR_findFirstWithPredicate:predicate
+                                             sortedBy:NSStringFromSelector(@selector(lastChangeDate))
+                                            ascending:YES
+                                            inContext:rootSavingContext];
+    }];
+    
+    if (state.insertIdentifiers.count == 0 &&
+        state.updateIdentifiers.count == 0 &&
+        state.deleteIdentifiers.count == 0 &&
+        state.moveIdentifiers.count == 0) {
+        return nil;
+    }
+    
+    NSArray *setArray = @[state.insertIdentifiers ?: [NSOrderedSet new],
+                          state.updateIdentifiers ?: [NSOrderedSet new],
+                          state.deleteIdentifiers ?: [NSOrderedSet new],
+                          state.moveIdentifiers ?: [NSOrderedSet new]];
+    
+    NSMutableArray *sliceSetsArray = [NSMutableArray new];
+    
+    for (NSOrderedSet *set in setArray) {
+        NSArray *array = [set array];
+        NSUInteger length = MIN(array.count, kTransactionBatchSize);
+        NSRange range = NSMakeRange(0, length);
+        NSArray *sliceArray = [array subarrayWithRange:range];
+        NSOrderedSet *sliceSet = [[NSOrderedSet alloc] initWithArray:sliceArray];
+        [sliceSetsArray addObject:sliceSet];
+    }
+    
+    return [IndexTransactionBatch batchWithObjectType:state.objectType
+                                    insertIdentifiers:sliceSetsArray[0]
+                                    updateIdentifiers:sliceSetsArray[1]
+                                    deleteIdentifiers:sliceSetsArray[2]
+                                      moveIdentifiers:sliceSetsArray[3]];
+}
+
+- (void)removeProcessedBatch:(IndexTransactionBatch *)batch {
+    NSManagedObjectContext *rootSavingContext = [NSManagedObjectContext MR_rootSavingContext];
+    [rootSavingContext MR_saveWithBlockAndWait:^(NSManagedObjectContext *localContext) {
+        
+        IndexState *state = [IndexState MR_findFirstOrCreateByAttribute:NSStringFromSelector(@selector(objectType))
+                                                              withValue:batch.objectType
+                                                              inContext:localContext];
+        
+        NSArray *changeTypes = @[@(NSFetchedResultsChangeInsert),
+                                 @(NSFetchedResultsChangeUpdate),
+                                 @(NSFetchedResultsChangeMove),
+                                 @(NSFetchedResultsChangeDelete)];
+        
+        NSArray *batchChanges = @[batch.insertIdentifiers,
+                                  batch.updateIdentifiers,
+                                  batch.moveIdentifiers,
+                                  batch.deleteIdentifiers];
+        
+        for (int i = 0; i < changeTypes.count; i++) {
+            NSNumber *changeTypeNumber = changeTypes[i];
+            NSFetchedResultsChangeType changeType = [changeTypeNumber unsignedIntegerValue];
+            NSOrderedSet *identifiers = batchChanges[i];
+            NSArray *identifierArray = [identifiers array];
+            [state removeIdentifiers:identifierArray
+                             forType:changeType];
+        }
+        
+        state.lastChangeDate = [NSDate date];
+        
+    }];
+}
+
+- (BOOL)shouldPerformInitialIndexing {
+    NSManagedObjectContext *rootSavingContext = [NSManagedObjectContext MR_rootSavingContext];
+    IndexState *state = [IndexState MR_findFirstInContext:rootSavingContext];
+    return state == nil;
 }
 
 @end

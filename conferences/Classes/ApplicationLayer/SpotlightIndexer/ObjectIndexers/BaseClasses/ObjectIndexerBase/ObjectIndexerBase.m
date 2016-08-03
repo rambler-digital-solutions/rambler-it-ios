@@ -27,7 +27,7 @@
 
 #import <CoreSpotlight/CoreSpotlight.h>
 
-@interface ObjectIndexerBase ()
+@interface ObjectIndexerBase () <CSSearchableIndexDelegate>
 
 @property (nonatomic, strong) id<ObjectTransformer> objectTransformer;
 @property (nonatomic, strong) CSSearchableIndex *searchableIndex;
@@ -44,6 +44,7 @@
     if (self) {
         _objectTransformer = objectTransformer;
         _searchableIndex = searchableIndex;
+        _searchableIndex.indexDelegate = self;
     }
     return self;
 }
@@ -91,6 +92,16 @@
 
 - (NSString *)identifierForObject:(id)object {
     return [self.objectTransformer identifierForObject:object];
+}
+
+#pragma mark - <CSSearchableIndexDelegate>
+
+- (void)searchableIndex:(CSSearchableIndex *)searchableIndex reindexAllSearchableItemsWithAcknowledgementHandler:(void (^)(void))acknowledgementHandler {
+    NSLog(@"%s needed reindex all searchable items", __PRETTY_FUNCTION__);
+}
+
+- (void)searchableIndex:(CSSearchableIndex *)searchableIndex reindexSearchableItemsWithIdentifiers:(NSArray<NSString *> *)identifiers acknowledgementHandler:(void (^)(void))acknowledgementHandler {
+    NSLog(@"%s needed reindex searchable item with identifiers : %@", __PRETTY_FUNCTION__, identifiers);
 }
 
 #pragma mark - Abstract methods

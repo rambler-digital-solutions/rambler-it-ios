@@ -35,11 +35,4 @@
 + (instancetype)changeProviderWithFetchedRequest:(NSFetchRequest *)request
                                objectTransformer:(id<ObjectTransformer>)objectTransformer;
 
-/**
- @author Egor Tolstoy
- 
- Method initiates monitoring start
- */
-- (void)startMonitoringForChanges;
-
 @end

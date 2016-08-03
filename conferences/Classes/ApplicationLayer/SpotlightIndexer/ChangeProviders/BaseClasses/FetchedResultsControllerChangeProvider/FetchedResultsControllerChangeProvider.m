@@ -54,7 +54,7 @@
                               objectTransformer:objectTransformer];
 }
 
-#pragma mark - Public methods
+#pragma mark - <ChangeProvider>
 
 - (void)startMonitoringForChanges {
     NSManagedObjectContext *defaultContext = [NSManagedObjectContext MR_defaultContext];
@@ -64,6 +64,17 @@
                                                             sectionNameKeyPath:nil
                                                                      cacheName:nil];
     self.controller.delegate = self;
+}
+
+- (void)processObjectsForInitialIndexingWithBlock:(ChangeProviderInitialIndexingBlock)block {
+    NSArray *objects = self.controller.fetchedObjects;
+    
+    for (NSManagedObject *object in objects) {
+        NSString *objectType = NSStringFromClass([object class]);
+        NSString *objectIdentifier = [self.transformer identifierForObject:object];
+        
+        block(objectType, objectIdentifier);
+    }
 }
 
 #pragma mark - NSFetchedResultsControllerDelegate
