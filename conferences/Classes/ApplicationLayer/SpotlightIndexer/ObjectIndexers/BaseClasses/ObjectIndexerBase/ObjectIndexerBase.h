@@ -24,7 +24,7 @@
 
 @class CSSearchableIndex;
 @class CSSearchableItem;
-@protocol IndexIdentifierFormatter;
+@protocol ObjectTransformer;
 
 /**
  @autor Egor Tolstoy
@@ -33,20 +33,8 @@
  */
 @interface ObjectIndexerBase : NSObject <ObjectIndexer>
 
-- (instancetype)initWithIndexIdentifierFormatter:(id<IndexIdentifierFormatter>)indexIdentifierFormatter
-                                 searchableIndex:(CSSearchableIndex *)searchableIndex;
-
-/**
- @author Egor Tolstoy
- 
- This method should return an object using the provided identifier. If this method returns nil, changed object won't be indexed.
- This method should be overridden in your custom subclass.
- 
- @param identifier Changed object identifier
- 
- @return An object for indexing
- */
-- (id)objectForIdentifier:(NSString *)identifier;
+- (instancetype)initWithObjectTransformer:(id<ObjectTransformer>)objectTransformer
+                          searchableIndex:(CSSearchableIndex *)searchableIndex;
 
 /**
  @author Egor Tolstoy

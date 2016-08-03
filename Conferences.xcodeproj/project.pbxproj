@@ -353,10 +353,12 @@
 		9F4077A81D2C164800D47EF6 /* ResourceMapperAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4077A71D2C164800D47EF6 /* ResourceMapperAssembly.m */; };
 		9F4077B01D2E371C00D47EF6 /* DirectionCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4077AF1D2E371C00D47EF6 /* DirectionCellObject.m */; };
 		9F4077B41D2E38AB00D47EF6 /* DirectionCellObjectFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4077B31D2E38AB00D47EF6 /* DirectionCellObjectFactory.m */; };
+		9F4097841D51F658008BFE42 /* EventObjectTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4097831D51F658008BFE42 /* EventObjectTransformer.m */; };
+		9F4097891D51F8FD008BFE42 /* EventObjectTransformerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4097881D51F8FD008BFE42 /* EventObjectTransformerTests.m */; };
 		9F48FF3B1D50F83D00E1EC6A /* IndexState+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F48FF381D50F83D00E1EC6A /* IndexState+CoreDataProperties.m */; };
 		9F48FF3C1D50F83D00E1EC6A /* IndexState.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F48FF3A1D50F83D00E1EC6A /* IndexState.m */; };
 		9F5316A91D50F56900F13931 /* IndexerStateStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5316A81D50F56900F13931 /* IndexerStateStorage.m */; };
-		9F533A7B1D50D459004F8E82 /* HTTPMethodConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5FAC1BC27E7F00DC10DB /* HTTPMethodConstants.m */; };
+		9F533A7B1D50D459004F8E82 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		9F533A891D50DE84004F8E82 /* FetchedResultsControllerChangeProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F533A881D50DE84004F8E82 /* FetchedResultsControllerChangeProvider.m */; };
 		9F533A8E1D50EC10004F8E82 /* IndexerMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F533A8D1D50EC10004F8E82 /* IndexerMonitor.m */; };
 		9F533A961D50EEE0004F8E82 /* ObjectIndexerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F533A951D50EEE0004F8E82 /* ObjectIndexerBase.m */; };
@@ -377,6 +379,7 @@
 		9FC1F6801D2838FA0070D9B5 /* EventListQueryTransformerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */; };
 		9FC1F6841D28391E0070D9B5 /* EventListQueryTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6831D28391E0070D9B5 /* EventListQueryTransformer.m */; };
 		9FD740381CDC98010071BD71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FD740371CDC98010071BD71 /* LaunchScreen.storyboard */; };
+		9FF1251E1D51DF460098625F /* EventObjectIndexer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF1251D1D51DF460098625F /* EventObjectIndexer.m */; };
 		9FF37E111D3235BB00471B4E /* AppleMapsLinkBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF37E101D3235BB00471B4E /* AppleMapsLinkBuilderTests.m */; };
 		9FF37E151D32373500471B4E /* RamblerLocationInteractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF37E141D32373500471B4E /* RamblerLocationInteractorTests.m */; };
 		9FF37E181D32397900471B4E /* RamblerLocationPresenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF37E171D32397900471B4E /* RamblerLocationPresenterTests.m */; };
@@ -1092,6 +1095,10 @@
 		9F4077AF1D2E371C00D47EF6 /* DirectionCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DirectionCellObject.m; path = CellObjects/DirectionCellObject.m; sourceTree = "<group>"; };
 		9F4077B21D2E38AB00D47EF6 /* DirectionCellObjectFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DirectionCellObjectFactory.h; path = CellObjectFactory/DirectionCellObjectFactory.h; sourceTree = "<group>"; };
 		9F4077B31D2E38AB00D47EF6 /* DirectionCellObjectFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DirectionCellObjectFactory.m; path = CellObjectFactory/DirectionCellObjectFactory.m; sourceTree = "<group>"; };
+		9F40977F1D51F63C008BFE42 /* ObjectTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectTransformer.h; path = SpotlightIndexer/ObjectTransformers/Protocols/ObjectTransformer.h; sourceTree = "<group>"; };
+		9F4097821D51F658008BFE42 /* EventObjectTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventObjectTransformer.h; path = SpotlightIndexer/ObjectTransformers/ConcreteClasses/EventObjectTransformer/EventObjectTransformer.h; sourceTree = "<group>"; };
+		9F4097831D51F658008BFE42 /* EventObjectTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventObjectTransformer.m; path = SpotlightIndexer/ObjectTransformers/ConcreteClasses/EventObjectTransformer/EventObjectTransformer.m; sourceTree = "<group>"; };
+		9F4097881D51F8FD008BFE42 /* EventObjectTransformerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventObjectTransformerTests.m; path = ApplicationLayerTests/SpotlightIndexer/ObjectTransformers/ConcreteClasses/EventObjectTransformer/EventObjectTransformerTests.m; sourceTree = "<group>"; };
 		9F48FF371D50F83D00E1EC6A /* IndexState+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "IndexState+CoreDataProperties.h"; path = "SpotlightIndexer/IndexerStateStorage/IndexState+CoreDataProperties.h"; sourceTree = "<group>"; };
 		9F48FF381D50F83D00E1EC6A /* IndexState+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "IndexState+CoreDataProperties.m"; path = "SpotlightIndexer/IndexerStateStorage/IndexState+CoreDataProperties.m"; sourceTree = "<group>"; };
 		9F48FF391D50F83D00E1EC6A /* IndexState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndexState.h; path = SpotlightIndexer/IndexerStateStorage/IndexState.h; sourceTree = "<group>"; };
@@ -1108,7 +1115,6 @@
 		9F533A911D50EEBC004F8E82 /* ObjectIndexer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectIndexer.h; path = SpotlightIndexer/ObjectIndexers/Protocols/ObjectIndexer.h; sourceTree = "<group>"; };
 		9F533A941D50EEE0004F8E82 /* ObjectIndexerBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectIndexerBase.h; path = SpotlightIndexer/ObjectIndexers/BaseClasses/ObjectIndexerBase/ObjectIndexerBase.h; sourceTree = "<group>"; };
 		9F533A951D50EEE0004F8E82 /* ObjectIndexerBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjectIndexerBase.m; path = SpotlightIndexer/ObjectIndexers/BaseClasses/ObjectIndexerBase/ObjectIndexerBase.m; sourceTree = "<group>"; };
-		9F533A9A1D50EFC4004F8E82 /* IndexIdentifierFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndexIdentifierFormatter.h; path = SpotlightIndexer/ObjectIndexers/Helpers/IndexIdentifierFormatters/Protocols/IndexIdentifierFormatter.h; sourceTree = "<group>"; };
 		9F533A9E1D50F181004F8E82 /* IndexTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndexTransaction.h; path = SpotlightIndexer/Transactions/IndexTransaction/IndexTransaction.h; sourceTree = "<group>"; };
 		9F533A9F1D50F181004F8E82 /* IndexTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IndexTransaction.m; path = SpotlightIndexer/Transactions/IndexTransaction/IndexTransaction.m; sourceTree = "<group>"; };
 		9F533AA21D50F195004F8E82 /* IndexTransactionBatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndexTransactionBatch.h; path = SpotlightIndexer/Transactions/IndexTransactionBatch/IndexTransactionBatch.h; sourceTree = "<group>"; };
@@ -1146,6 +1152,8 @@
 		9FC1F6821D28391E0070D9B5 /* EventListQueryTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListQueryTransformer.h; sourceTree = "<group>"; };
 		9FC1F6831D28391E0070D9B5 /* EventListQueryTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListQueryTransformer.m; sourceTree = "<group>"; };
 		9FD740371CDC98010071BD71 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9FF1251C1D51DF460098625F /* EventObjectIndexer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventObjectIndexer.h; path = SpotlightIndexer/ObjectIndexers/ConcreteClasses/EventObjectIndexer/EventObjectIndexer.h; sourceTree = "<group>"; };
+		9FF1251D1D51DF460098625F /* EventObjectIndexer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventObjectIndexer.m; path = SpotlightIndexer/ObjectIndexers/ConcreteClasses/EventObjectIndexer/EventObjectIndexer.m; sourceTree = "<group>"; };
 		9FF37E101D3235BB00471B4E /* AppleMapsLinkBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppleMapsLinkBuilderTests.m; path = MapLinkBuildersTests/AppleMapsLinkBuilderTests.m; sourceTree = "<group>"; };
 		9FF37E141D32373500471B4E /* RamblerLocationInteractorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RamblerLocationInteractorTests.m; path = RamblerLocationModuleTests/RamblerLocationInteractorTests.m; sourceTree = "<group>"; };
 		9FF37E171D32397900471B4E /* RamblerLocationPresenterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RamblerLocationPresenterTests.m; path = RamblerLocationModuleTests/RamblerLocationPresenterTests.m; sourceTree = "<group>"; };
@@ -4880,6 +4888,7 @@
 		9F1F38031BBBB80D00C7797D /* ConferencesTests */ = {
 			isa = PBXGroup;
 			children = (
+				9FF125231D51E6120098625F /* ApplicationLayerTests */,
 				636A37B51BC13B4B00B49C3D /* ConferencesAssembliesTests */,
 				636A37B91BC13B4B00B49C3D /* ConferencesPresentationTests */,
 				636A37B61BC13B4B00B49C3D /* ConferencesLogicTests */,
@@ -5071,6 +5080,64 @@
 			name = CellObjectFactory;
 			sourceTree = "<group>";
 		};
+		9F40977D1D51F619008BFE42 /* ObjectTransformers */ = {
+			isa = PBXGroup;
+			children = (
+				9F4097801D51F63F008BFE42 /* ConcreteClasses */,
+				9F40977E1D51F626008BFE42 /* Protocols */,
+			);
+			name = ObjectTransformers;
+			sourceTree = "<group>";
+		};
+		9F40977E1D51F626008BFE42 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9F40977F1D51F63C008BFE42 /* ObjectTransformer.h */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		9F4097801D51F63F008BFE42 /* ConcreteClasses */ = {
+			isa = PBXGroup;
+			children = (
+				9F4097811D51F644008BFE42 /* EventObjectTransformer */,
+			);
+			name = ConcreteClasses;
+			sourceTree = "<group>";
+		};
+		9F4097811D51F644008BFE42 /* EventObjectTransformer */ = {
+			isa = PBXGroup;
+			children = (
+				9F4097821D51F658008BFE42 /* EventObjectTransformer.h */,
+				9F4097831D51F658008BFE42 /* EventObjectTransformer.m */,
+			);
+			name = EventObjectTransformer;
+			sourceTree = "<group>";
+		};
+		9F4097851D51F8D2008BFE42 /* ObjectTransformers */ = {
+			isa = PBXGroup;
+			children = (
+				9F4097861D51F8DC008BFE42 /* ConcreteClasses */,
+			);
+			name = ObjectTransformers;
+			sourceTree = "<group>";
+		};
+		9F4097861D51F8DC008BFE42 /* ConcreteClasses */ = {
+			isa = PBXGroup;
+			children = (
+				9F4097871D51F8E5008BFE42 /* EventObjectTransformer */,
+			);
+			name = ConcreteClasses;
+			sourceTree = "<group>";
+		};
+		9F4097871D51F8E5008BFE42 /* EventObjectTransformer */ = {
+			isa = PBXGroup;
+			children = (
+				9F4097881D51F8FD008BFE42 /* EventObjectTransformerTests.m */,
+			);
+			name = EventObjectTransformer;
+			sourceTree = "<group>";
+		};
 		9F5316A41D50F27100F13931 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
@@ -5095,6 +5162,7 @@
 		9F533A7C1D50D6E7004F8E82 /* SpotlightIndexer */ = {
 			isa = PBXGroup;
 			children = (
+				9F40977D1D51F619008BFE42 /* ObjectTransformers */,
 				9F5316A61D50F54000F13931 /* IndexerStateStorage */,
 				9F533A9C1D50F131004F8E82 /* Transactions */,
 				9F533A8F1D50EE65004F8E82 /* ObjectIndexers */,
@@ -5152,7 +5220,7 @@
 		9F533A8F1D50EE65004F8E82 /* ObjectIndexers */ = {
 			isa = PBXGroup;
 			children = (
-				9F533A971D50EF9C004F8E82 /* Helpers */,
+				9FF1251A1D51DF130098625F /* ConcreteClasses */,
 				9F533A921D50EEC9004F8E82 /* BaseClasses */,
 				9F533A901D50EEA8004F8E82 /* Protocols */,
 			);
@@ -5182,38 +5250,6 @@
 				9F533A951D50EEE0004F8E82 /* ObjectIndexerBase.m */,
 			);
 			name = ObjectIndexerBase;
-			sourceTree = "<group>";
-		};
-		9F533A971D50EF9C004F8E82 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				9F533A981D50EFA1004F8E82 /* IndexIdentifierFormatters */,
-			);
-			name = Helpers;
-			sourceTree = "<group>";
-		};
-		9F533A981D50EFA1004F8E82 /* IndexIdentifierFormatters */ = {
-			isa = PBXGroup;
-			children = (
-				9F533A9B1D50EFC8004F8E82 /* ConcreteClasses */,
-				9F533A991D50EFAE004F8E82 /* Protocols */,
-			);
-			name = IndexIdentifierFormatters;
-			sourceTree = "<group>";
-		};
-		9F533A991D50EFAE004F8E82 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				9F533A9A1D50EFC4004F8E82 /* IndexIdentifierFormatter.h */,
-			);
-			name = Protocols;
-			sourceTree = "<group>";
-		};
-		9F533A9B1D50EFC8004F8E82 /* ConcreteClasses */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = ConcreteClasses;
 			sourceTree = "<group>";
 		};
 		9F533A9C1D50F131004F8E82 /* Transactions */ = {
@@ -5326,6 +5362,39 @@
 			);
 			name = EventListQueryTransformer;
 			path = CoreComponents/QueryTransformers/EventListQueryTransformer;
+			sourceTree = "<group>";
+		};
+		9FF1251A1D51DF130098625F /* ConcreteClasses */ = {
+			isa = PBXGroup;
+			children = (
+				9FF1251B1D51DF1F0098625F /* EventObjectIndexer */,
+			);
+			name = ConcreteClasses;
+			sourceTree = "<group>";
+		};
+		9FF1251B1D51DF1F0098625F /* EventObjectIndexer */ = {
+			isa = PBXGroup;
+			children = (
+				9FF1251C1D51DF460098625F /* EventObjectIndexer.h */,
+				9FF1251D1D51DF460098625F /* EventObjectIndexer.m */,
+			);
+			name = EventObjectIndexer;
+			sourceTree = "<group>";
+		};
+		9FF125231D51E6120098625F /* ApplicationLayerTests */ = {
+			isa = PBXGroup;
+			children = (
+				9FF125241D51E61B0098625F /* SpotlightIndexer */,
+			);
+			name = ApplicationLayerTests;
+			sourceTree = "<group>";
+		};
+		9FF125241D51E61B0098625F /* SpotlightIndexer */ = {
+			isa = PBXGroup;
+			children = (
+				9F4097851D51F8D2008BFE42 /* ObjectTransformers */,
+			);
+			name = SpotlightIndexer;
 			sourceTree = "<group>";
 		};
 		9FF37E0F1D32359D00471B4E /* MapLinkBuildersTests */ = {
@@ -5785,6 +5854,7 @@
 				2B2064831D3F9CE900246C8D /* _MetaEventPlainObject.m in Sources */,
 				9F533AA41D50F195004F8E82 /* IndexTransactionBatch.m in Sources */,
 				63F613B11CB10FC80002AEF0 /* AnnouncementViewModel.m in Sources */,
+				9F4097841D51F658008BFE42 /* EventObjectTransformer.m in Sources */,
 				9F8E5F941BC269EA00DC10DB /* OperationFactoriesAssembly.m in Sources */,
 				63F613971CB00A220002AEF0 /* SpeakerInfoPresenterStateStorage.m in Sources */,
 				2B2064781D3F9CE900246C8D /* _LectureMaterialModelObject.m in Sources */,
@@ -5805,6 +5875,7 @@
 				63F613991CB00A220002AEF0 /* SpeakerInfoRouter.m in Sources */,
 				2B20647B1D3F9CE900246C8D /* _RegistrationQuestionModelObject.m in Sources */,
 				9F1830B31BC11879000E21A5 /* CommonNetworkClient.m in Sources */,
+				9FF1251E1D51DF460098625F /* EventObjectIndexer.m in Sources */,
 				2B2064881D3F9CE900246C8D /* _TechPlainObject.m in Sources */,
 				9F0A84FD1BC1698B006F79FB /* NetworkOperation.m in Sources */,
 				63F613661CB00A220002AEF0 /* EventInfoTableViewCellObject.m in Sources */,
@@ -6061,6 +6132,7 @@
 				63F402FB1BCF79390086D030 /* OperationFactoriesAssemblyTests.m in Sources */,
 				63F613EC1CB111070002AEF0 /* ReportListTableViewControllerTests.m in Sources */,
 				9F0A85251BC185AA006F79FB /* RequestSigningOperationTests.m in Sources */,
+				9F4097891D51F8FD008BFE42 /* EventObjectTransformerTests.m in Sources */,
 				63F613DD1CB111070002AEF0 /* FutureEventCellObjectBuilderTests.m in Sources */,
 				9F0A85241BC185AA006F79FB /* RequestConfigurationOperationTests.m in Sources */,
 				9F4077881D2BF84000D47EF6 /* RamblerLocationServiceTests.m in Sources */,

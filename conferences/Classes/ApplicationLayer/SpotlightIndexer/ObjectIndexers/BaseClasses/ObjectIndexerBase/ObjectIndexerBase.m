@@ -20,7 +20,7 @@
 
 #import "ObjectIndexerBase.h"
 
-#import "IndexIdentifierFormatter.h"
+#import "ObjectTransformer.h"
 #import "IndexTransactionBatch.h"
 
 #import "EXTScope.h"
@@ -29,7 +29,7 @@
 
 @interface ObjectIndexerBase ()
 
-@property (nonatomic, strong) id<IndexIdentifierFormatter> indexIdentifierFormatter;
+@property (nonatomic, strong) id<ObjectTransformer> objectTransformer;
 @property (nonatomic, strong) CSSearchableIndex *searchableIndex;
 
 @end
@@ -38,11 +38,11 @@
 
 #pragma mark - Initialization
 
-- (instancetype)initWithIndexIdentifierFormatter:(id<IndexIdentifierFormatter>)indexIdentifierFormatter
-                                 searchableIndex:(CSSearchableIndex *)searchableIndex {
+- (instancetype)initWithObjectTransformer:(id<ObjectTransformer>)objectTransformer
+                          searchableIndex:(CSSearchableIndex *)searchableIndex {
     self = [super init];
     if (self) {
-        _indexIdentifierFormatter = indexIdentifierFormatter;
+        _objectTransformer = objectTransformer;
         _searchableIndex = searchableIndex;
     }
     return self;
@@ -63,7 +63,7 @@
         [indexSet removeObjectsInArray:deleteIdentifiers];
         
         for (NSString *identifier in indexSet) {
-            id object = [self objectForIdentifier:identifier];
+            id object = [self.objectTransformer objectForIdentifier:identifier];
             if (object) {
                 CSSearchableItem *item = [self searchableItemForObject:object];
                 if (item) {
@@ -90,7 +90,7 @@
 }
 
 - (NSString *)identifierForObject:(id)object {
-    return [self.indexIdentifierFormatter identifierForObject:object];
+    return [self.objectTransformer identifierForObject:object];
 }
 
 #pragma mark - Abstract methods
@@ -99,12 +99,6 @@
     [NSException raise:NSInternalInconsistencyException
                 format:@"You should override this method in a custom subclass"];
     return NO;
-}
-
-- (id)objectForIdentifier:(NSString *)object {
-    [NSException raise:NSInternalInconsistencyException
-                format:@"You should override this method in a custom subclass"];
-    return nil;
 }
 
 - (CSSearchableItem *)searchableItemForObject:(id)object {

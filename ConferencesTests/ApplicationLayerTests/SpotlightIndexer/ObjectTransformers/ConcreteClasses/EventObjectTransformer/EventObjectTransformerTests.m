@@ -23,41 +23,40 @@
 
 #import "XCTestCase+RCFHelpers.h"
 
-#import "EventIndexIdentifierFormatter.h"
-
+#import "EventObjectTransformer.h"
 #import "EventModelObject.h"
 
-@interface EventIndexIdentifierFormatterTests : XCTestCase
+@interface EventObjectTransformerTests : XCTestCase
 
-@property (nonatomic, strong) EventIndexIdentifierFormatter *formatter;
+@property (nonatomic, strong) EventObjectTransformer *transformer;
 
 @end
 
-@implementation EventIndexIdentifierFormatterTests
+@implementation EventObjectTransformerTests
 
 - (void)setUp {
     [super setUp];
     
     [self setupCoreDataStackForTests];
     
-    self.formatter = [EventIndexIdentifierFormatter new];
+    self.transformer = [EventObjectTransformer new];
 }
 
 - (void)tearDown {
-    self.formatter = nil;
+    self.transformer = nil;
     
     [self tearDownCoreDataStack];
     
     [super tearDown];
 }
 
-- (void)testThatFormatterReturnsIdentifierForEvent {
+- (void)testThatTransformerReturnsIdentifierForEvent {
     // given
     NSString *const kTestEventId = @"1234";
     EventModelObject *event = [self generateEventForTestPurposesWithId:kTestEventId];
     
     // when
-    NSString *identifier = [self.formatter identifierForObject:event];
+    NSString *identifier = [self.transformer identifierForObject:event];
     
     // then
     BOOL hasEventId = [identifier rangeOfString:kTestEventId].location != NSNotFound;
@@ -68,23 +67,36 @@
     XCTAssertTrue(hasObjectType);
 }
 
-- (void)testThatFormatterDetectsCorrectIdentifier {
+- (void)testThatTransformerReturnsEventForIdentifier {
+    // given
+    NSString *const kTestEventId = @"1234";
+    NSString *const kTestIdentifier = @"EventModelObject_1234";
+    [self generateEventForTestPurposesWithId:kTestEventId];
+    
+    // when
+    EventModelObject *event = [self.transformer objectForIdentifier:kTestIdentifier];
+    
+    // then
+    XCTAssertEqualObjects(event.eventId, kTestEventId);
+}
+
+- (void)testThatTransfornerDetectsCorrectIdentifier {
     // given
     NSString *const kTestIdentifier = @"EventModelObject_1234";
     
     // when
-    BOOL result = [self.formatter isCorrectIdentifier:kTestIdentifier];
+    BOOL result = [self.transformer isCorrectIdentifier:kTestIdentifier];
     
     // then
     XCTAssertTrue(result);
 }
 
-- (void)testThatFormatterDetectsIncorrectIdentifier {
+- (void)testThatTransformerDetectsIncorrectIdentifier {
     // given
     NSString *const kTestIdentifier = @"1234";
     
     // when
-    BOOL result = [self.formatter isCorrectIdentifier:kTestIdentifier];
+    BOOL result = [self.transformer isCorrectIdentifier:kTestIdentifier];
     
     // then
     XCTAssertFalse(result);

@@ -20,8 +20,13 @@
 
 #import <Foundation/Foundation.h>
 
-#import "IndexIdentifierFormatter.h"
+#import "ObjectTransformer.h"
 
-@interface EventIndexIdentifierFormatter : NSObject <IndexIdentifierFormatter>
+/**
+ @author Egor Tolstoy
+ 
+ An <ObjectTransformer> for EventModelObject
+ */
+@interface EventObjectTransformer : NSObject <ObjectTransformer>
 
 @end

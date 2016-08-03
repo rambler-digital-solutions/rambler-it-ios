@@ -18,19 +18,33 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "EventIndexIdentifierFormatter.h"
+#import "EventObjectTransformer.h"
 
 #import "EventModelObject.h"
 
-@implementation EventIndexIdentifierFormatter
+#import <MagicalRecord/MagicalRecord.h>
 
-#pragma mark - <IndexIdentifierFormatter>
+static NSString *const kIdentifierSeparator = @"_";
+
+@implementation EventObjectTransformer
+
+#pragma mark - <ObjectTransformer>
 
 - (NSString *)identifierForObject:(EventModelObject *)object {
     NSString *objectType = NSStringFromClass([EventModelObject class]);
     NSString *eventId = object.eventId;
-    NSString *identifier = [NSString stringWithFormat:@"%@_%@", objectType, eventId];
+    NSString *identifier = [NSString stringWithFormat:@"%@%@%@", objectType, kIdentifierSeparator, eventId];
     return identifier;
+}
+
+- (EventModelObject *)objectForIdentifier:(NSString *)identifier {
+    NSString *eventId = [[identifier componentsSeparatedByString:kIdentifierSeparator] lastObject];
+    
+    NSManagedObjectContext *defaultContext = [NSManagedObjectContext MR_defaultContext];
+    EventModelObject *event = [EventModelObject MR_findFirstByAttribute:NSStringFromSelector(@selector(eventId))
+                                                              withValue:eventId
+                                                              inContext:defaultContext];
+    return event;
 }
 
 - (BOOL)isCorrectIdentifier:(NSString *)identifier {
@@ -38,7 +52,7 @@
     
     BOOL hasCorrectObjectType = [identifier rangeOfString:objectType].location != NSNotFound;
     
-    BOOL hasSeparator = [identifier rangeOfString:@"_"].location != NSNotFound;
+    BOOL hasSeparator = [identifier rangeOfString:kIdentifierSeparator].location != NSNotFound;
     
     NSUInteger eventIdLocation = objectType.length + 1; // 1 for _ symbol
     NSUInteger eventIdLength = identifier.length - eventIdLocation;
