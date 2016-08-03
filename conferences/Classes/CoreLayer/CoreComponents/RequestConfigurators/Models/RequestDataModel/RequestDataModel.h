@@ -31,4 +31,7 @@
 @property (strong, nonatomic) NSDictionary *queryParameters;
 @property (strong, nonatomic) NSData *bodyData;
 
+- (instancetype)initWithHttpHeaderFields:(NSDictionary *)httpHeaderFields
+                 queryParameters:(NSDictionary *)queryParameters
+                        bodyData:(NSData *)bodyData;
 @end

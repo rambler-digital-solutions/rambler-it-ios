@@ -27,6 +27,7 @@
 #import "EventModelObject.h"
 #import "NetworkingConstantsHeader.h"
 #import "QueryTransformer.h"
+#import "RequestDataModel.h"
 
 @interface EventListOperationFactory ()
 
@@ -58,8 +59,6 @@
     config.requestConfigurationType = RequestConfigurationRESTType;
     config.requestMethod = kHTTPMethodGET;
     config.serviceName = kEventServiceName;
-    NSArray *urlParameters = [self.queryTransformer deriveUrlParametersFromQuery:query];
-    config.urlParameters = urlParameters;
     
     config.requestSigningType = RequestSigningDisabledType;
     
@@ -71,7 +70,11 @@
     config.mappingContext = @{
                               kMappingContextModelClassKey : NSStringFromClass([EventModelObject class])
                               };
-    
+    NSDictionary *queryParameters = [self.queryTransformer deriveUrlParametersFromQuery:query];
+    RequestDataModel *inputData = [[RequestDataModel alloc] initWithHttpHeaderFields:nil
+                                                                     queryParameters:queryParameters
+                                                                            bodyData:nil];
+    config.inputQueueData = inputData;
     return [self.networkOperationBuilder buildCompoundOperationWithConfig:config
                                                             modelObjectId:(NSString *)modelObjectId];
 }
