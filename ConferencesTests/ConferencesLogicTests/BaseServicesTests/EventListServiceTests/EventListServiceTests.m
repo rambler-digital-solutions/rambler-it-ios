@@ -27,7 +27,7 @@
 #import "CompoundOperationBase.h"
 #import "XCTestCase+RCFHelpers.h"
 #import "TestConstants.h"
-
+#import <MagicalRecord/MagicalRecord.h>
 @interface EventListServiceTests : XCTestCase
 
 @property (nonatomic, strong) EventListServiceImplementation *service;
@@ -57,11 +57,12 @@
         operation.resultBlock(nil, nil);
     };
     OCMStub([self.mockScheduler addOperation:OCMOCK_ANY]).andDo(block);
+    [MagicalRecord setupCoreDataStackWithInMemoryStore];
 }
 
 - (void)tearDown {
     self.service = nil;
-    
+    [MagicalRecord cleanUp];
     [self.mockOperationFactory stopMocking];
     self.mockOperationFactory = nil;
     

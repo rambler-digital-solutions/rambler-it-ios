@@ -29,6 +29,7 @@
 #import "ApplicationConfiguratorImplementation.h"
 #import "PushNotificationCenterImplementation.h"
 #import "ThirdPartiesConfiguratorImplementation.h"
+#import "RamblerInitialAssemblyCollector+Activate.h"
 
 @interface ApplicationAssemblyTests : RamblerTyphoonAssemblyTests
 
@@ -41,10 +42,9 @@
 - (void)setUp {
     [super setUp];
     
-    self.assembly = [ApplicationAssembly new];
-    [self.assembly activateWithCollaboratingAssemblies:@[
-                                                         [ServiceComponentsAssembly new]
-                                                         ]];
+    Class class = [ApplicationAssembly class];
+    self.assembly = [RamblerInitialAssemblyCollector rds_activateAssemblyWithClass:class];
+
 }
 
 - (void)tearDown {
