@@ -17,6 +17,6 @@
  */
 @interface LastModifiedMapperOperation : AsyncOperation <ChainableOperation>
 
-+ (instancetype)operationWithCategoryObjectId:(NSString *)categoryObjectId;
++ (instancetype)operationWithDateFormatter:(NSDateFormatter *)dateFormatter modelObjectId:(NSString *)modelObjectId;
 
 @end

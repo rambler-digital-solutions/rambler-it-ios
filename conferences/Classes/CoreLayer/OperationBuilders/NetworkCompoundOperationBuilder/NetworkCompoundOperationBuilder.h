@@ -57,13 +57,14 @@
  */
 - (instancetype)initWithOperationChainer:(OperationChainer *)chainer;
 
-@property (strong, nonatomic) id<RequestConfiguratorsFactory> requestConfiguratorsFactory;
-@property (strong, nonatomic) id<RequestSignersFactory> requestSignersFactory;
-@property (strong, nonatomic) id<NetworkClientsFactory> networkClientsFactory;
-@property (strong, nonatomic) id<ResponseDeserializersFactory> responseDeserializersFactory;
-@property (strong, nonatomic) id<ResponseValidatorsFactory> responseValidatorsFactory;
-@property (strong, nonatomic) id<ResponseMappersFactory> responseMappersFactory;
-@property (strong, nonatomic, readonly) OperationChainer *chainer;
+@property (nonatomic, strong) id<RequestConfiguratorsFactory> requestConfiguratorsFactory;
+@property (nonatomic, strong) id<RequestSignersFactory> requestSignersFactory;
+@property (nonatomic, strong) id<NetworkClientsFactory> networkClientsFactory;
+@property (nonatomic, strong) id<ResponseDeserializersFactory> responseDeserializersFactory;
+@property (nonatomic, strong) id<ResponseValidatorsFactory> responseValidatorsFactory;
+@property (nonatomic, strong) id<ResponseMappersFactory> responseMappersFactory;
+@property (nonatomic, strong, readonly) OperationChainer *chainer;
+@property (nonatomic, strong) NSDateFormatter *lastModifiedDateFormatter;
 
 /**
  @author Egor Tolstoy
@@ -74,6 +75,7 @@
  
  @return CompoundOperationBase
  */
-- (CompoundOperationBase *)buildCompoundOperationWithConfig:(CompoundOperationBuilderConfig *)config;
+- (CompoundOperationBase *)buildCompoundOperationWithConfig:(CompoundOperationBuilderConfig *)config
+                                              modelObjectId:(NSString *)modelObjectId;
 
 @end

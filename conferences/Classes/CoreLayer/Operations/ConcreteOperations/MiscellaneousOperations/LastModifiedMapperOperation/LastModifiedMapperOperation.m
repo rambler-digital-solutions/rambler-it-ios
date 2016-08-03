@@ -9,12 +9,22 @@
 #import "LastModifiedMapperOperation.h"
 
 #import <CocoalumberJack/CocoaLumberjack.h>
+#import <MagicalRecord/MagicalRecord.h>
 
-static NSString *const kLastModifiedHeaderKey = @"X-Last-Modified";
+#import "NSManagedObjectID+LJStringConversion.h"
+
+#import "ServerResponseModel.h"
+#import "EventListModelObject.h"
+
+#import "DateFormatter.h"
+
+static const int ddLogLevel = DDLogFlagVerbose;
+static NSString *const kLastModifiedHeaderKey = @"Date";
 
 @interface LastModifiedMapperOperation ()
 
-@property (nonatomic, strong) NSString *categoryObjectId;
+@property (nonatomic, strong) NSString *modelObjectId;
+@property (nonatomic, strong) NSDateFormatter *dateFormatter;
 
 @end
 
@@ -26,63 +36,77 @@ static NSString *const kLastModifiedHeaderKey = @"X-Last-Modified";
 
 #pragma mark - Инициализация
 
-- (instancetype)initWithCategoryObjectId:(NSString *)categoryObjectId {
+- (instancetype)initWithDateFormatter:(NSDateFormatter *)dateFormatter modelObjectId:(NSString *)modelObjectId {
     self = [super init];
     if (self) {
-        _categoryObjectId = categoryObjectId;
+        _modelObjectId = modelObjectId;
+        _dateFormatter = dateFormatter;
     }
     return self;
 }
 
-+ (instancetype)operationWithCategoryObjectId:(NSString *)categoryObjectId {
-    return [[[self class] alloc] initWithCategoryObjectId:categoryObjectId];
++ (instancetype)operationWithDateFormatter:(NSDateFormatter *)dateFormatter modelObjectId:(NSString *)modelObjectId {
+    return [[[self class] alloc] initWithDateFormatter:dateFormatter modelObjectId:modelObjectId];
 }
 
 #pragma mark - Выполнение операции
 
 - (void)main {
-//    ServerResponseModel *inputData = [self.input obtainInputDataWithTypeValidationBlock:^BOOL(id data) {
-//        if ([data isKindOfClass:[ServerResponseModel class]]) {
-//            DDLogVerbose(@"Входные данные операции %@ прошли валидацию", NSStringFromClass([self class]));
-//            return YES;
-//        }
-//        DDLogVerbose(@"Входные данные операции %@ не прошли валидацию, класс данных: %@",
-//                     NSStringFromClass([self class]),
-//                     NSStringFromClass([data class]));
-//        return NO;
-//    }];
-//    
-//    __block NSError *error = nil;
-//    NSHTTPURLResponse *serverResponse = inputData.response;
-//    NSString *lastModifiedString = serverResponse.allHeaderFields[kLastModifiedHeaderKey];
-//    NSManagedObjectContext *rootSavingContext = [NSManagedObjectContext MR_rootSavingContext];
-//    [rootSavingContext performBlock:^{
-//        NSManagedObjectID *categoryMOID = [NSManagedObjectID managedObjectIDFromString:self.categoryObjectId inContext:rootSavingContext];
-//        PostCategoryModelObject *category = [rootSavingContext existingObjectWithID:categoryMOID
-//                                                                              error:&error];
-//        category.lastModified = lastModifiedString;
-//        [rootSavingContext MR_saveToPersistentStoreWithCompletion:^(BOOL contextDidSave, NSError *error) {
-//            if (error) {
-//                DDLogError(@"Операция %@ вернула ошибку: %@", NSStringFromClass([self class]), error);
-//            }
-//            [self completeOperationWithData:inputData
-//                                      error:error];
-//        }];
-//    }];
+    ServerResponseModel *inputData = [self.input obtainInputDataWithTypeValidationBlock:^BOOL(id data) {
+        if ([data isKindOfClass:[ServerResponseModel class]]) {
+            DDLogVerbose(@"Входные данные операции %@ прошли валидацию", NSStringFromClass([self class]));
+            return YES;
+        }
+        DDLogVerbose(@"Входные данные операции %@ не прошли валидацию, класс данных: %@",
+                     NSStringFromClass([self class]),
+                     NSStringFromClass([data class]));
+        return NO;
+    }];
     
+    __block NSError *error = nil;
+    if ([self.modelObjectId length] == 0) {
+        [self completeOperationWithData:inputData
+                                  error:error];
+        return;
+    }
+    
+    NSHTTPURLResponse *serverResponse = inputData.response;
+    NSString *lastModifiedString = serverResponse.allHeaderFields[kLastModifiedHeaderKey];
+    NSDate *lastModifiedDate = [self.dateFormatter dateFromString:lastModifiedString];
+    
+    NSManagedObjectContext *rootSavingContext = [NSManagedObjectContext MR_rootSavingContext];
+    [rootSavingContext performBlock:^{
+        
+        
+        NSManagedObjectID *categoryMOID = [NSManagedObjectID managedObjectIDFromString:self.modelObjectId inContext:rootSavingContext];
+        EventListModelObject *modelObject = [rootSavingContext existingObjectWithID:categoryMOID
+                                                                              error:&error];
+        modelObject.lastModified = lastModifiedDate;
+        
+        [rootSavingContext MR_saveToPersistentStoreWithCompletion:^(BOOL contextDidSave, NSError *error) {
+    
+    
+            if (error) {
+                DDLogError(@"Операция %@ вернула ошибку: %@", NSStringFromClass([self class]), error);
+            }
+            [self completeOperationWithData:inputData
+                                      error:error];
+        }];
+    }];
+
 }
 
-//- (void)completeOperationWithData:(ServerResponseModel *)data
-//                            error:(NSError *)error {
-//    if (data && data.data) {
-//        [self.output didCompleteChainableOperationWithOutputData:data.data];
-//        DDLogVerbose(@"Выходные данные операции %@ переданы буферу", NSStringFromClass([self class]));
-//    }
-//    
-//    [self.delegate didCompleteChainableOperationWithError:error];
-//    DDLogVerbose(@"Операция %@ завершена", NSStringFromClass([self class]));
-//    [self complete];
-//}
+- (void)completeOperationWithData:(ServerResponseModel *)data
+                            error:(NSError *)error {
+    if (data && data.data) {
+        [self.output didCompleteChainableOperationWithOutputData:data.data];
+        DDLogVerbose(@"Выходные данные операции %@ переданы буферу", NSStringFromClass([self class]));
+    }
+    
+    [self.delegate didCompleteChainableOperationWithError:error];
+    DDLogVerbose(@"Операция %@ завершена", NSStringFromClass([self class]));
+    [self complete];
+}
 
 #pragma mark - Debug
 

@@ -51,7 +51,8 @@
 
 #pragma mark - Operations creation
 
-- (CompoundOperationBase *)getEventsOperationWithQuery:(EventListQuery *)query {
+- (CompoundOperationBase *)getEventsOperationWithQuery:(EventListQuery *)query
+                                         modelObjectId:(NSString *)modelObjectId {
     CompoundOperationBuilderConfig *config = [CompoundOperationBuilderConfig new];
     
     config.requestConfigurationType = RequestConfigurationRESTType;
@@ -71,7 +72,8 @@
                               kMappingContextModelClassKey : NSStringFromClass([EventModelObject class])
                               };
     
-    return [self.networkOperationBuilder buildCompoundOperationWithConfig:config];
+    return [self.networkOperationBuilder buildCompoundOperationWithConfig:config
+                                                            modelObjectId:(NSString *)modelObjectId];
 }
 
 @end

@@ -39,6 +39,7 @@
 #import "OperationChainer.h"
 #import "CompoundOperationBase.h"
 #import "CompoundOperationBuilderConfig.h"
+#import "LastModifiedMapperOperation.h"
 
 @interface NetworkCompoundOperationBuilder ()
 
@@ -62,7 +63,8 @@
 
 #pragma mark - Building Compound operation
 
-- (CompoundOperationBase *)buildCompoundOperationWithConfig:(CompoundOperationBuilderConfig *)config {
+- (CompoundOperationBase *)buildCompoundOperationWithConfig:(CompoundOperationBuilderConfig *)config
+                                              modelObjectId:(NSString *)modelObjectId{
     NSAssert(config, @"Config shouldn't be nil");
     
     [self.operationsArray removeAllObjects];
@@ -70,6 +72,7 @@
     [self buildRequestConfigurationOperationWithConfig:config];
     [self buildRequestSigningOperationWithConfig:config];
     [self buildNetworkOperationWithConfig:config];
+    [self buildLastModifiedMapperOperationWithModelObjectId:modelObjectId];
     [self buildResponseDeserializationOperationWithConfig:config];
     [self buildResponseValidationOperationWithConfig:config];
     [self buildResponseMappingOperationWithConfig:config];
@@ -120,6 +123,12 @@
 - (void)buildResponseMappingOperationWithConfig:(CompoundOperationBuilderConfig *)config {
     id <ResponseMapper> mapper = [self.responseMappersFactory mapperWithType:@(config.responseMappingType)];
     ResponseMappingOperation *operation = [ResponseMappingOperation operationWithResponseMapper:mapper mappingContext:config.mappingContext];
+    [self addOperation:operation];
+}
+
+- (void)buildLastModifiedMapperOperationWithModelObjectId:(NSString *)eventListObjectId {
+//    NSDateFormatter *dateFormatter 
+    LastModifiedMapperOperation *operation = [LastModifiedMapperOperation operationWithDateFormatter:self.lastModifiedDateFormatter modelObjectId:eventListObjectId];
     [self addOperation:operation];
 }
 

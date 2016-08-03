@@ -54,6 +54,7 @@
  
  @return CompoundOperationBase
  */
-- (CompoundOperationBase *)getEventsOperationWithQuery:(EventListQuery *)query;
+- (CompoundOperationBase *)getEventsOperationWithQuery:(EventListQuery *)query
+                                         modelObjectId:(NSString *)modelObjectId;
 
 @end

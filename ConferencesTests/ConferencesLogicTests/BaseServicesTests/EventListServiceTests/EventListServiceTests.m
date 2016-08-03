@@ -25,6 +25,8 @@
 #import "EventListOperationFactory.h"
 #import "OperationScheduler.h"
 #import "CompoundOperationBase.h"
+#import "XCTestCase+RCFHelpers.h"
+#import "TestConstants.h"
 
 @interface EventListServiceTests : XCTestCase
 
@@ -70,17 +72,22 @@
 
 - (void)testThatServiceUpdatesEventList {
     // given
+    XCTestExpectation *expectation = [self expectationForCurrentTest];
     CompoundOperationBase *mockOperation = [CompoundOperationBase new];
-    OCMStub([self.mockOperationFactory getEventsOperationWithQuery:OCMOCK_ANY]).andReturn(mockOperation);
+    OCMStub([self.mockOperationFactory getEventsOperationWithQuery:OCMOCK_ANY modelObjectId:OCMOCK_ANY]).andReturn(mockOperation);
     
     id mockQuery = [NSObject new];
     
     // when
-    [self.service updateEventListWithQuery:mockQuery completionBlock:^(NSError *error) {}];
+    [self.service updateEventListWithQuery:mockQuery completionBlock:^(NSError *error) {
+        [expectation fulfill];
+    }];
     
     // then
-    OCMVerify([self.mockOperationFactory getEventsOperationWithQuery:mockQuery]);
-    OCMVerify([self.mockScheduler addOperation:mockOperation]);
+    [self waitForExpectationsWithTimeout:kTestExpectationTimeout handler:^(NSError *error) {
+        OCMVerify([self.mockOperationFactory getEventsOperationWithQuery:mockQuery modelObjectId:OCMOCK_ANY]);
+        OCMVerify([self.mockScheduler addOperation:mockOperation]);
+    }];
 }
 
 @end

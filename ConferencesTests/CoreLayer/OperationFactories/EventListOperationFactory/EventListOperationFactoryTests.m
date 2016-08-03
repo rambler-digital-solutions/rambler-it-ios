@@ -50,7 +50,7 @@
     [self setupTestOperation];
     
     // when
-    CompoundOperationBase *operation = [self.factory getEventsOperationWithQuery:nil];
+    CompoundOperationBase *operation = [self.factory getEventsOperationWithQuery:nil modelObjectId:nil];
     
     // then
     [self testCompoundOperation:operation expectation:expectation expectationBlock:^(NSArray *resultData, NSError *resultError) {

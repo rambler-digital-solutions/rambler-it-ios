@@ -33,4 +33,11 @@
  */
 - (void)setupCoreDataStack;
 
+/**
+ @author Konstantin Zinovyev
+ 
+ Method is used to setup services
+ */
+- (void)configureInitialSettings;
+
 @end

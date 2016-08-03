@@ -24,8 +24,8 @@
 #import "XCTestCase+RCFHelpers.h"
 #import "TestConstants.h"
 
-#import "ServerResponseModel.h"
 #import "CommonNetworkClient.h"
+#import "ServerResponseModel.h"
 
 static NSString *const kTestURLPath = @"https://myapi.com/v1/rest";
 
@@ -47,8 +47,6 @@ static NSString *const kTestURLPath = @"https://myapi.com/v1/rest";
 
 - (void)tearDown {
     self.client = nil;
-    
-    [self.mockSession stopMocking];
     self.mockSession = nil;
     
     [super tearDown];
@@ -81,8 +79,8 @@ static NSString *const kTestURLPath = @"https://myapi.com/v1/rest";
     
     // when
     [self.client sendRequest:request
-             completionBlock:^(ServerResponseModel *data, NSError *error) {
-        resultData = data.data;
+             completionBlock:^(ServerResponseModel *responseModel, NSError *error) {
+        resultData = responseModel.data;
         [expectation fulfill];
     }];
     
@@ -109,7 +107,7 @@ static NSString *const kTestURLPath = @"https://myapi.com/v1/rest";
     
     // when
     [self.client sendRequest:request
-             completionBlock:^(ServerResponseModel *data, NSError *error) {
+             completionBlock:^(ServerResponseModel *responseModel, NSError *error) {
                  resultError = error;
                  [expectation fulfill];
              }];

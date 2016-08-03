@@ -45,8 +45,8 @@
     // given
     CompoundOperationBase *compoundOperation = [CompoundOperationBase new];
     
-    id mockEventOperationFactory = OCMClassMock([EventListOperationFactory class]);
-    OCMStub([mockEventOperationFactory getEventsOperationWithQuery:nil]).andReturn(compoundOperation);
+    EventListOperationFactory *mockEventOperationFactory = OCMClassMock([EventListOperationFactory class]);
+    OCMStub([mockEventOperationFactory getEventsOperationWithQuery:nil modelObjectId:OCMOCK_ANY]).andReturn(compoundOperation);
     id <OperationScheduler> mockOperationScheduler = OCMProtocolMock(@protocol(OperationScheduler));
     
     self.eventService.eventOperationFactory = mockEventOperationFactory;
@@ -57,7 +57,6 @@
     
     // then
     OCMVerify([mockOperationScheduler addOperation:compoundOperation]);
-    [mockEventOperationFactory stopMocking];
 }
 
 @end

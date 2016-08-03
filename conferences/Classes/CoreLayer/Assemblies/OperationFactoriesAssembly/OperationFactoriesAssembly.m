@@ -26,6 +26,8 @@
 
 #import "EventListOperationFactory.h"
 
+static NSString *const kLastModifiedDateFormat = @"EE, d MMM yyyy HH:mm:ss ZZZ";
+
 @implementation OperationFactoriesAssembly
 
 #pragma mark - Operation factories
@@ -66,6 +68,8 @@
                               with:self.responseValidatorsFactory];
         [definition injectProperty:@selector(responseMappersFactory)
                               with:self.responseMappersFactory];
+        [definition injectProperty:@selector(lastModifiedDateFormatter)
+                              with:[self lastModifiedDateFormatter]];
     }];
 }
 
@@ -73,6 +77,17 @@
 
 - (OperationChainer *)operationChainer {
     return [TyphoonDefinition withClass:[OperationChainer class]];
+}
+
+- (NSDateFormatter *)lastModifiedDateFormatter {
+    return [TyphoonDefinition withClass:[NSDateFormatter class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              definition.scope = TyphoonScopeSingleton;
+                              [definition injectMethod:@selector(setDateFormat:)
+                                            parameters:^(TyphoonMethod *method) {
+                                                [method injectParameterWith:kLastModifiedDateFormat];
+                                            }];
+                          }];
 }
 
 @end

@@ -80,7 +80,7 @@ static const int ddLogLevel = DDLogFlagVerbose;
             DDLogVerbose(@"Server returned data with length: %li", [(NSData *)responseModel.data length]);
         }
         
-        [self completeOperationWithData:responseModel.data error:error];
+        [self completeOperationWithData:responseModel error:error];
     }];
 }
 

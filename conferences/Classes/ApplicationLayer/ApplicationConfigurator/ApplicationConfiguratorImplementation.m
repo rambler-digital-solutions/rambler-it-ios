@@ -30,4 +30,7 @@ static NSString * const kRCFCoreDataStoreName = @"Conference";
     [MagicalRecord setupCoreDataStackWithStoreNamed:kRCFCoreDataStoreName];
 }
 
+- (void)configureInitialSettings {
+    [self.eventListService setupPredefinedEventListIfNeeded];
+}
 @end

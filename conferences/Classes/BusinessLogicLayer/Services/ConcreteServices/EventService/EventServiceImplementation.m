@@ -31,7 +31,8 @@
 @implementation EventServiceImplementation
 
 - (void)updateEventWithPredicate:(NSPredicate *)predicate completionBlock:(EventCompletionBlock)completionBlock {
-    CompoundOperationBase *compoundOperation = [self.eventOperationFactory getEventsOperationWithQuery:nil];
+    CompoundOperationBase *compoundOperation = [self.eventOperationFactory getEventsOperationWithQuery:nil
+                                                                                         modelObjectId:nil];
     compoundOperation.resultBlock = ^void(id data, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             completionBlock(data, error);
