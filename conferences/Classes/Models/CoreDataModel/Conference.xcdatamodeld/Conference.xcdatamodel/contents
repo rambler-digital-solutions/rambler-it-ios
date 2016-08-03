@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15F34" minimumToolsVersion="Xcode 4.2">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15G31" minimumToolsVersion="Xcode 4.2">
     <entity name="Event" representedClassName="EventModelObject" syncable="YES">
         <attribute name="endDate" attributeType="Date" syncable="YES"/>
         <attribute name="eventDescription" optional="YES" attributeType="String" syncable="YES"/>
@@ -18,6 +18,11 @@
         <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="event" inverseEntity="Tag" syncable="YES"/>
         <relationship name="tech" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tech" inverseName="events" inverseEntity="Tech" syncable="YES"/>
     </entity>
+    <entity name="EventList" representedClassName="EventListModelObject" syncable="YES">
+        <attribute name="eventListId" attributeType="String" syncable="YES"/>
+        <attribute name="lastModified" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Lecture" representedClassName="LectureModelObject" syncable="YES">
         <attribute name="favourite" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="lectureDescription" optional="YES" attributeType="String" syncable="YES"/>
@@ -31,7 +36,7 @@
     <entity name="LectureMaterial" representedClassName="LectureMaterialModelObject" syncable="YES">
         <attribute name="lectureMaterialId" attributeType="String" syncable="YES"/>
         <attribute name="link" attributeType="String" syncable="YES"/>
-        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="lecture" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lecture" inverseName="lectureMaterials" inverseEntity="Lecture" syncable="YES"/>
     </entity>
     <entity name="MetaEvent" representedClassName="MetaEventModelObject" syncable="YES">
@@ -77,6 +82,7 @@
     </entity>
     <elements>
         <element name="Event" positionX="0" positionY="0" width="128" height="285"/>
+        <element name="EventList" positionX="27" positionY="135" width="128" height="90"/>
         <element name="Lecture" positionX="0" positionY="0" width="128" height="165"/>
         <element name="LectureMaterial" positionX="0" positionY="0" width="128" height="105"/>
         <element name="MetaEvent" positionX="0" positionY="0" width="128" height="135"/>
