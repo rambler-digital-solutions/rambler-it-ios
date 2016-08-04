@@ -59,7 +59,7 @@
 
 #pragma mark - <ChangeProvider>
 
-- (void)startMonitoringForChanges {
+- (void)startMonitoring {
     NSManagedObjectContext *defaultContext = [NSManagedObjectContext MR_defaultContext];
     NSFetchRequest *request = [self.requestFactory obtainFetchRequestForIndexing];
     self.controller = [[NSFetchedResultsController alloc] initWithFetchRequest:request
@@ -68,6 +68,10 @@
                                                                      cacheName:nil];
     self.controller.delegate = self;
     [self.controller performFetch:nil];
+}
+
+- (void)stopMonitoring {
+    self.controller.delegate = nil;
 }
 
 - (void)processObjectsForInitialIndexingWithBlock:(ChangeProviderInitialIndexingBlock)block {

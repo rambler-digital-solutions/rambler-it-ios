@@ -38,7 +38,14 @@ typedef void(^ChangeProviderInitialIndexingBlock)(NSString *objectType, NSString
  
  Method initiates monitoring start
  */
-- (void)startMonitoringForChanges;
+- (void)startMonitoring;
+
+/**
+ @author Egor Tolstoy
+ 
+ Method initiates monitoring end
+ */
+- (void)stopMonitoring;
 
 /**
  @author Egor Tolstoy

@@ -69,13 +69,15 @@
 
 - (void)startMonitoring {
     for (id<ChangeProvider> changeProvider in self.changeProviders) {
-        [changeProvider startMonitoringForChanges];
+        [changeProvider startMonitoring];
     }
     [self performInitialIndexingIfNeeded];
 }
 
 - (void)stopMonitoring {
-    
+    for (id<ChangeProvider> changeProvider in self.changeProviders) {
+        [changeProvider stopMonitoring];
+    }
 }
 
 #pragma mark - <ChangeProviderDelegate>
