@@ -24,10 +24,16 @@
 #import "EventPlainObject.h"
 #import "TableViewCellWithTextLabelCellObject.h"
 #import "LectureDescriptionTableViewCellObject.h"
+#import "LectureInfoTableViewCellObject.h"
 #import "DateFormatter.h"
 #import "TableViewCellWithTextLabelCellObject.h"
+#import "TableViewCellWithTextLabelAndImageViewCellObject.h"
 #import "VideoRecordTableViewCellObject.h"
 #import "LocalizedStrings.h"
+
+static NSString *const kPresentationImageName = @"";
+static NSString *const kArticleImageName = @"";
+static NSString *const kCodeGithubImageName = @"";
 
 @interface LectureDataDisplayManager ()
 
@@ -70,8 +76,7 @@
 #pragma mark - Private methods
 
 - (NSArray *)generateCellObjects {
-    NSString * date = [self.dateFormatter obtainDateWithDayMonthTimeFormat:self.lecture.event.startDate];
-    LectureDescriptionTableViewCellObject * lectureDescriptionCellObject = [LectureDescriptionTableViewCellObject objectWithLecture:self.lecture andDate:date];
+    LectureInfoTableViewCellObject *lectureDescriptionCellObject = [LectureInfoTableViewCellObject objectWithLecture:self.lecture];
 
     TableViewCellWithTextLabelCellObject *videoRecordTextLabelCellObject = [TableViewCellWithTextLabelCellObject objectWithText:NSLocalizedString(VideoRecordTableViewCellTitle, nil)];
     
@@ -79,7 +84,18 @@
     
     TableViewCellWithTextLabelCellObject *materialsTextLabelCellObject = [TableViewCellWithTextLabelCellObject objectWithText:NSLocalizedString(LectureMaterialsTableViewCellTitle, nil)];
     
-    return @[lectureDescriptionCellObject, videoRecordTextLabelCellObject, videoRecorTableViewCellObject, materialsTextLabelCellObject];
+    TableViewCellWithTextLabelCellObject *additionalTextLabelCellObject = [TableViewCellWithTextLabelCellObject objectWithText:NSLocalizedString(AdditionInformationTableViewCellTitle, nil)];
+    
+    UIImage *presentationImage = [UIImage imageNamed:kPresentationImageName];
+    TableViewCellWithTextLabelAndImageViewCellObject *presentationTextImageLabelCellObject = [TableViewCellWithTextLabelAndImageViewCellObject objectWithText:NSLocalizedString(LecturePresentationTableViewCellTitle, nil) andImage:presentationImage];
+    
+    UIImage *articleImage = [UIImage imageNamed:kArticleImageName];
+    TableViewCellWithTextLabelAndImageViewCellObject *articlesTextImageLabelCellObject = [TableViewCellWithTextLabelAndImageViewCellObject objectWithText:NSLocalizedString(LectureArticlesTableViewCellTitle, nil) andImage:articleImage];
+    
+    UIImage *codeGithubImage = [UIImage imageNamed:kCodeGithubImageName];
+    TableViewCellWithTextLabelAndImageViewCellObject *codeGithubTextLabelCellObject = [TableViewCellWithTextLabelAndImageViewCellObject objectWithText:NSLocalizedString(LectureCodeGithubTableViewCellTitle, nil) andImage:codeGithubImage];
+    
+    return @[lectureDescriptionCellObject, videoRecordTextLabelCellObject, videoRecorTableViewCellObject, materialsTextLabelCellObject, presentationTextImageLabelCellObject, articlesTextImageLabelCellObject, additionalTextLabelCellObject, codeGithubTextLabelCellObject];
 }
 
 - (void)updateTableViewModel {

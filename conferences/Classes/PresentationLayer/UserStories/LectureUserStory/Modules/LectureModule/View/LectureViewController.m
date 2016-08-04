@@ -40,7 +40,6 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self setupShareButton];
 }
 
 #pragma mark - LectureViewInput
@@ -53,39 +52,9 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
     self.tableView.tableFooterView = [UIView new];
     self.tableView.estimatedRowHeight = TableViewEstimatedRowHeight;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
-    
-    SpeakerPlainObject *speaker = lecture.speaker;
-    [self setupHeaderViewWithSpeaker:speaker];
 }
 
 #pragma mark - Private methods
-
-- (void)setupHeaderViewWithSpeaker:(SpeakerPlainObject *)speaker {
-    [self.speakerShortInfoView configureModuleWithSpeaker:speaker andViewSize:SpeakerShortInfoViewDefaultSize];
-    
-    CGFloat tableViewHeaderHeight = self.speakerShortInfoView.frame.size.height;
-    UIView *tableViewHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0,
-                                                                           0,
-                                                                           self.view.frame.size.width,
-                                                                           tableViewHeaderHeight)];
-    tableViewHeaderView.backgroundColor = [UIColor clearColor];
-    [self.tableView setTableHeaderView:tableViewHeaderView];
-    
-    [self addGestureRecognizerForTableViewHeader:tableViewHeaderView];
-}
-
-- (void)addGestureRecognizerForTableViewHeader:(UIView *)headerView {
-    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self
-                                                                                    action:@selector(didTapTableViewHeader)];
-    gestureRecognizer.delegate = self;
-    
-    [headerView addGestureRecognizer:gestureRecognizer];
-}
-
-- (void)setupShareButton {
-    UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(didTapShareButton)];
-    self.navigationItem.rightBarButtonItem = shareButton;
-}
 
 #pragma mark - Actions
 
@@ -93,7 +62,7 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
     [self.output didTapTableViewHeader];
 }
 
-- (void)didTapShareButton {
+- (IBAction)didTapShareButton:(id)sender {
     [self.output didTapShareButton];
 }
 

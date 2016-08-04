@@ -21,11 +21,15 @@
 #import <Foundation/Foundation.h>
 #import "LectureInteractorInput.h"
 
+@protocol LectureService;
+@protocol ROSPonsomizer;
 @protocol LectureInteractorOutput;
 
 @interface LectureInteractor : NSObject<LectureInteractorInput>
 
-@property (weak, nonatomic) id<LectureInteractorOutput> output;
+@property (nonatomic, strong) id<LectureService> lectureService;
+@property (nonatomic, strong) id<ROSPonsomizer> ponsomizer;
+@property (nonatomic, weak) id<LectureInteractorOutput> output;
 
 @end
 
