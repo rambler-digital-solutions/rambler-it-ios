@@ -36,15 +36,14 @@
 - (IndexerMonitor *)indexerMonitor {
     return [TyphoonDefinition withClass:[IndexerMonitor class]
                           configuration:^(TyphoonDefinition *definition) {
-                              [definition useInitializer:@selector(monitorWithIndexers:changeProviders:)
+                              [definition useInitializer:@selector(monitorWithIndexers:changeProviders:stateStorage:)
                                               parameters:^(TyphoonMethod *initializer) {
                                                   [initializer injectParameterWith:@[
                                                                                      [self eventObjectIndexer]
                                                                                      ]];
                                                   [initializer injectParameterWith:@[[self eventChangeProvider]]];
+                                                  [initializer injectParameterWith:[self indexerStateStorage]];
                                               }];
-                              [definition injectProperty:@selector(stateStorage)
-                                                    with:[self indexerStateStorage]];
                           }];
 }
 

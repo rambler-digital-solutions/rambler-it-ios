@@ -33,6 +33,7 @@
 
 @property (nonatomic, strong) NSArray *indexers;
 @property (nonatomic, strong) NSArray *changeProviders;
+@property (nonatomic, strong) IndexerStateStorage *stateStorage;
 
 @end
 
@@ -41,11 +42,13 @@
 #pragma mark - Initialization
 
 - (instancetype)initWithIndexers:(NSArray<id<ObjectIndexer>> *)indexers
-                 changeProviders:(NSArray<id<ChangeProvider>> *)changeProviders {
+                 changeProviders:(NSArray<id<ChangeProvider>> *)changeProviders
+                    stateStorage:(IndexerStateStorage *)stateStorage {
     self = [super init];
     if (self) {
         _indexers = indexers;
         _changeProviders = changeProviders;
+        _stateStorage = stateStorage;
         
         for (id<ChangeProvider> changeProvider in _changeProviders) {
             changeProvider.delegate = self;
@@ -54,10 +57,12 @@
     return self;
 }
 
-+ (instancetype)monitorWithIndexers:(NSArray<id<ObjectIndexer>> *)indexers
-                    changeProviders:(NSArray<id<ChangeProvider>> *)changeProviders {
++ (instancetype)monitorWithIndexers:(NSArray <id<ObjectIndexer>> *)indexers
+                    changeProviders:(NSArray <id<ChangeProvider>> *)changeProviders
+                       stateStorage:(IndexerStateStorage *)stateStorage {
     return [[self alloc] initWithIndexers:indexers
-                          changeProviders:changeProviders];
+                          changeProviders:changeProviders
+                             stateStorage:stateStorage];
 }
 
 #pragma mark - Public methods

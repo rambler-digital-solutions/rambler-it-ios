@@ -31,10 +31,9 @@
  */
 @interface IndexerMonitor : NSObject
 
-@property (nonatomic, strong) IndexerStateStorage *stateStorage;
-
 + (instancetype)monitorWithIndexers:(NSArray <id<ObjectIndexer>> *)indexers
-                    changeProviders:(NSArray <id<ChangeProvider>> *)changeProviders;
+                    changeProviders:(NSArray <id<ChangeProvider>> *)changeProviders
+                       stateStorage:(IndexerStateStorage *)stateStorage;
 
 /**
  @author Egor Tolstoy
