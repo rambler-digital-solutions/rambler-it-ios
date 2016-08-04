@@ -355,6 +355,8 @@
 		9F4077B41D2E38AB00D47EF6 /* DirectionCellObjectFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4077B31D2E38AB00D47EF6 /* DirectionCellObjectFactory.m */; };
 		9F4097841D51F658008BFE42 /* EventObjectTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4097831D51F658008BFE42 /* EventObjectTransformer.m */; };
 		9F4097891D51F8FD008BFE42 /* EventObjectTransformerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4097881D51F8FD008BFE42 /* EventObjectTransformerTests.m */; };
+		9F40978D1D5210D9008BFE42 /* SpotlightIndexerAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F40978C1D5210D9008BFE42 /* SpotlightIndexerAssembly.m */; };
+		9F4097951D534F82008BFE42 /* EventChangeProviderFetchRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4097941D534F82008BFE42 /* EventChangeProviderFetchRequestFactory.m */; };
 		9F48FF3B1D50F83D00E1EC6A /* IndexState+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F48FF381D50F83D00E1EC6A /* IndexState+CoreDataProperties.m */; };
 		9F48FF3C1D50F83D00E1EC6A /* IndexState.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F48FF3A1D50F83D00E1EC6A /* IndexState.m */; };
 		9F5316A91D50F56900F13931 /* IndexerStateStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5316A81D50F56900F13931 /* IndexerStateStorage.m */; };
@@ -1099,6 +1101,11 @@
 		9F4097821D51F658008BFE42 /* EventObjectTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventObjectTransformer.h; path = SpotlightIndexer/ObjectTransformers/ConcreteClasses/EventObjectTransformer/EventObjectTransformer.h; sourceTree = "<group>"; };
 		9F4097831D51F658008BFE42 /* EventObjectTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventObjectTransformer.m; path = SpotlightIndexer/ObjectTransformers/ConcreteClasses/EventObjectTransformer/EventObjectTransformer.m; sourceTree = "<group>"; };
 		9F4097881D51F8FD008BFE42 /* EventObjectTransformerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventObjectTransformerTests.m; path = ApplicationLayerTests/SpotlightIndexer/ObjectTransformers/ConcreteClasses/EventObjectTransformer/EventObjectTransformerTests.m; sourceTree = "<group>"; };
+		9F40978B1D5210D9008BFE42 /* SpotlightIndexerAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpotlightIndexerAssembly.h; path = SpotlightIndexerAssembly/SpotlightIndexerAssembly.h; sourceTree = "<group>"; };
+		9F40978C1D5210D9008BFE42 /* SpotlightIndexerAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpotlightIndexerAssembly.m; path = SpotlightIndexerAssembly/SpotlightIndexerAssembly.m; sourceTree = "<group>"; };
+		9F4097901D534F1E008BFE42 /* ChangeProviderFetchRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChangeProviderFetchRequestFactory.h; path = ChangeProviderFetchRequestFactories/Protocols/ChangeProviderFetchRequestFactory.h; sourceTree = "<group>"; };
+		9F4097931D534F82008BFE42 /* EventChangeProviderFetchRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventChangeProviderFetchRequestFactory.h; path = ChangeProviderFetchRequestFactories/ConcreteClasses/EventChangeProviderFetchRequestFactory/EventChangeProviderFetchRequestFactory.h; sourceTree = "<group>"; };
+		9F4097941D534F82008BFE42 /* EventChangeProviderFetchRequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventChangeProviderFetchRequestFactory.m; path = ChangeProviderFetchRequestFactories/ConcreteClasses/EventChangeProviderFetchRequestFactory/EventChangeProviderFetchRequestFactory.m; sourceTree = "<group>"; };
 		9F48FF371D50F83D00E1EC6A /* IndexState+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "IndexState+CoreDataProperties.h"; path = "SpotlightIndexer/IndexerStateStorage/IndexState+CoreDataProperties.h"; sourceTree = "<group>"; };
 		9F48FF381D50F83D00E1EC6A /* IndexState+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "IndexState+CoreDataProperties.m"; path = "SpotlightIndexer/IndexerStateStorage/IndexState+CoreDataProperties.m"; sourceTree = "<group>"; };
 		9F48FF391D50F83D00E1EC6A /* IndexState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndexState.h; path = SpotlightIndexer/IndexerStateStorage/IndexState.h; sourceTree = "<group>"; };
@@ -1933,6 +1940,7 @@
 		636A37BC1BC13FA200B49C3D /* Assemblies */ = {
 			isa = PBXGroup;
 			children = (
+				9F40978A1D5210C4008BFE42 /* SpotlightIndexerAssembly */,
 				636A37BD1BC13FA200B49C3D /* ApplicationAssembly */,
 				636A37BF1BC1410800B49C3D /* SystemInfrastructureAssembly */,
 			);
@@ -5138,6 +5146,49 @@
 			name = EventObjectTransformer;
 			sourceTree = "<group>";
 		};
+		9F40978A1D5210C4008BFE42 /* SpotlightIndexerAssembly */ = {
+			isa = PBXGroup;
+			children = (
+				9F40978B1D5210D9008BFE42 /* SpotlightIndexerAssembly.h */,
+				9F40978C1D5210D9008BFE42 /* SpotlightIndexerAssembly.m */,
+			);
+			name = SpotlightIndexerAssembly;
+			sourceTree = "<group>";
+		};
+		9F40978E1D534EF3008BFE42 /* ChangeProviderFetchRequestFactories */ = {
+			isa = PBXGroup;
+			children = (
+				9F4097911D534F66008BFE42 /* ConcreteClasses */,
+				9F40978F1D534EFD008BFE42 /* Protocols */,
+			);
+			name = ChangeProviderFetchRequestFactories;
+			sourceTree = "<group>";
+		};
+		9F40978F1D534EFD008BFE42 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9F4097901D534F1E008BFE42 /* ChangeProviderFetchRequestFactory.h */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		9F4097911D534F66008BFE42 /* ConcreteClasses */ = {
+			isa = PBXGroup;
+			children = (
+				9F4097921D534F6B008BFE42 /* EventChangeProviderFetchRequestFactory */,
+			);
+			name = ConcreteClasses;
+			sourceTree = "<group>";
+		};
+		9F4097921D534F6B008BFE42 /* EventChangeProviderFetchRequestFactory */ = {
+			isa = PBXGroup;
+			children = (
+				9F4097931D534F82008BFE42 /* EventChangeProviderFetchRequestFactory.h */,
+				9F4097941D534F82008BFE42 /* EventChangeProviderFetchRequestFactory.m */,
+			);
+			name = EventChangeProviderFetchRequestFactory;
+			sourceTree = "<group>";
+		};
 		9F5316A41D50F27100F13931 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
@@ -5201,6 +5252,7 @@
 		9F533A861D50DE84004F8E82 /* FetchedResultsControllerChangeProvider */ = {
 			isa = PBXGroup;
 			children = (
+				9F40978E1D534EF3008BFE42 /* ChangeProviderFetchRequestFactories */,
 				9F533A871D50DE84004F8E82 /* FetchedResultsControllerChangeProvider.h */,
 				9F533A881D50DE84004F8E82 /* FetchedResultsControllerChangeProvider.m */,
 			);
@@ -5846,6 +5898,7 @@
 				63F613641CB00A220002AEF0 /* CurrentVideoTranslationTableViewCellObject.m in Sources */,
 				667050251D46149C00DD9D6E /* ReportEventTableViewCell.m in Sources */,
 				63F613621CB00A220002AEF0 /* EventPresenterStateStorage.m in Sources */,
+				9F4097951D534F82008BFE42 /* EventChangeProviderFetchRequestFactory.m in Sources */,
 				636A37C51BC142BB00B49C3D /* ApplicationAssembly.m in Sources */,
 				63D86BDA1C1439D800986536 /* DateFormatter.m in Sources */,
 				63F613871CB00A220002AEF0 /* EventCellObjectBuilderFactory.m in Sources */,
@@ -5975,6 +6028,7 @@
 				63FDCE161BBDBA2A00A43B60 /* main.m in Sources */,
 				9FF750121D27DB99000D208D /* EntityNameFormatterImplementation.m in Sources */,
 				2B20648A1D3F9CE900246C8D /* LectureMaterialModelObject.m in Sources */,
+				9F40978D1D5210D9008BFE42 /* SpotlightIndexerAssembly.m in Sources */,
 				2B2064931D3F9CE900246C8D /* LectureMaterialPlainObject.m in Sources */,
 				636B64071BBDD2A40053E38F /* LectureMaterialsServiceImplementation.m in Sources */,
 				2B2064801D3F9CE900246C8D /* _EventPlainObject.m in Sources */,

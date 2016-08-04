@@ -31,7 +31,7 @@
 
 @interface IndexerMonitor () <ChangeProviderDelegate>
 
-@property (nonatomic, strong) IndexerStateStorage *stateStorage;
+
 
 @property (nonatomic, strong) NSArray *indexers;
 @property (nonatomic, strong) NSArray *changeProviders;
@@ -65,6 +65,9 @@
 #pragma mark - Public methods
 
 - (void)startMonitoring {
+    for (id<ChangeProvider> changeProvider in self.changeProviders) {
+        [changeProvider startMonitoringForChanges];
+    }
     [self performInitialIndexingIfNeeded];
 }
 
@@ -82,6 +85,10 @@
                                                                      objectType:objectType
                                                                      changeType:changeType];
     [self.stateStorage insertTransaction:transaction];
+}
+
+- (void)didFinishChangingObjectsInChangeProvider:(id<ChangeProvider>)changeProvider {
+    [self processIndexing];
 }
 
 #pragma mark - Private methods

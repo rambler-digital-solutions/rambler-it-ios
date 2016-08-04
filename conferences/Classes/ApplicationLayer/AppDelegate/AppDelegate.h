@@ -24,6 +24,7 @@
 @protocol ApplicationConfigurator;
 @protocol PushNotificationCenter;
 @protocol ThirdPartiesConfigurator;
+@class IndexerMonitor;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -32,6 +33,7 @@
 @property (strong, nonatomic) id <ApplicationConfigurator> applicationConfigurator;
 @property (strong, nonatomic) id <PushNotificationCenter> pushNotificationCenter;
 @property (strong, nonatomic) id <ThirdPartiesConfigurator> thirdPartiesConfigurator;
+@property (strong, nonatomic) IndexerMonitor *indexerMonitor;
 
 @end
 

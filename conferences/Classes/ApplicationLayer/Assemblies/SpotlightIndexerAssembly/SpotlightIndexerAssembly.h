@@ -18,21 +18,13 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import <Typhoon/Typhoon.h>
+#import <RamblerTyphoonUtils/AssemblyCollector.h>
 
-#import "ChangeProvider.h"
+@class IndexerMonitor;
 
-@protocol ObjectTransformer;
-@protocol ChangeProviderFetchRequestFactory;
+@interface SpotlightIndexerAssembly : TyphoonAssembly <RamblerInitialAssembly>
 
-/**
- @author Egor Tolstoy
- 
- Default change provider build upon NSFetchedResultsController
- */
-@interface FetchedResultsControllerChangeProvider : NSObject <ChangeProvider>
-
-+ (instancetype)changeProviderWithFetchRequestFactory:(id<ChangeProviderFetchRequestFactory>)fetchRequestFactory
-                                    objectTransformer:(id<ObjectTransformer>)objectTransformer;
+- (IndexerMonitor *)indexerMonitor;
 
 @end

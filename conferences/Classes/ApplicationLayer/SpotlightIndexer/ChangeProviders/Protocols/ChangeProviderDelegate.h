@@ -46,4 +46,6 @@
          forObjectType:(NSString *)objectType
       objectIdentifier:(NSString *)objectIdentifier;
 
+- (void)didFinishChangingObjectsInChangeProvider:(id<ChangeProvider>)changeProvider;
+
 @end

@@ -202,7 +202,7 @@
     NSDictionary *properties = @{
                                  @"id" : NSStringFromSelector(@selector(lectureMaterialId)),
                                  @"link" : NSStringFromSelector(@selector(link)),
-                                 @"name" : NSStringFromSelector(@selector(name))
+                                 @"title" : NSStringFromSelector(@selector(name))
                                  };
     Class entityClass = [LectureMaterialModelObject class];
     NSString *entityName = [self.entityNameFormatter transformToEntityNameClass:entityClass];

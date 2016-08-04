@@ -22,6 +22,7 @@
 
 @protocol ObjectIndexer;
 @protocol ChangeProvider;
+@class IndexerStateStorage;
 
 /**
  @author Egor Tolstoy
@@ -29,6 +30,8 @@
  The main object in SpotlightIndexer ecosystem. It's responsible for chaining all the parts together.
  */
 @interface IndexerMonitor : NSObject
+
+@property (nonatomic, strong) IndexerStateStorage *stateStorage;
 
 + (instancetype)monitorWithIndexers:(NSArray <id<ObjectIndexer>> *)indexers
                     changeProviders:(NSArray <id<ChangeProvider>> *)changeProviders;

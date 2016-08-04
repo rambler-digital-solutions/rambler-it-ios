@@ -18,21 +18,23 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import "EventChangeProviderFetchRequestFactory.h"
 
-#import "ChangeProvider.h"
+#import "EventModelObject.h"
 
-@protocol ObjectTransformer;
-@protocol ChangeProviderFetchRequestFactory;
+@implementation EventChangeProviderFetchRequestFactory
 
-/**
- @author Egor Tolstoy
- 
- Default change provider build upon NSFetchedResultsController
- */
-@interface FetchedResultsControllerChangeProvider : NSObject <ChangeProvider>
+#pragma mark - <ChangeProviderFetchRequestFactory>
 
-+ (instancetype)changeProviderWithFetchRequestFactory:(id<ChangeProviderFetchRequestFactory>)fetchRequestFactory
-                                    objectTransformer:(id<ObjectTransformer>)objectTransformer;
+- (NSFetchRequest *)obtainFetchRequestForIndexing {
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Event"];
+    
+//    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"ANY name != nil"];
+//    request.predicate = predicate;
+    
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:NSStringFromSelector(@selector(startDate)) ascending:YES];
+    request.sortDescriptors = @[sortDescriptor];
+    return request;
+}
 
 @end

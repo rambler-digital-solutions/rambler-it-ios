@@ -23,6 +23,7 @@
 #import "ApplicationConfigurator.h"
 #import "PushNotificationCenter.h"
 #import "ThirdPartiesConfigurator.h"
+#import "IndexerMonitor.h"
 
 #import <RamblerTyphoonUtils/AssemblyCollector.h>
 #import <Typhoon/Typhoon.h>
@@ -38,6 +39,8 @@
     [self.thirdPartiesConfigurator configurate];
     [self.applicationConfigurator setupCoreDataStack];
     [self.pushNotificationCenter registerApplicationForPushNotificationsIfNeeded:application];
+    
+    [self.indexerMonitor startMonitoring];
     
     NSDictionary *notification = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
     if (notification) {

@@ -20,19 +20,22 @@
 
 #import <Foundation/Foundation.h>
 
-#import "ChangeProvider.h"
-
-@protocol ObjectTransformer;
-@protocol ChangeProviderFetchRequestFactory;
+@class NSFetchRequest;
 
 /**
  @author Egor Tolstoy
  
- Default change provider build upon NSFetchedResultsController
+ Protocol declares the functionality of factory providing fetch requests for ChangeProvider
  */
-@interface FetchedResultsControllerChangeProvider : NSObject <ChangeProvider>
+@protocol ChangeProviderFetchRequestFactory <NSObject>
 
-+ (instancetype)changeProviderWithFetchRequestFactory:(id<ChangeProviderFetchRequestFactory>)fetchRequestFactory
-                                    objectTransformer:(id<ObjectTransformer>)objectTransformer;
+/**
+ @author Egor Tolstoy
+ 
+ Factory returns a proper fetch request for indexing
+ 
+ @return NSFetchRequest
+ */
+- (NSFetchRequest *)obtainFetchRequestForIndexing;
 
 @end

@@ -20,19 +20,13 @@
 
 #import <Foundation/Foundation.h>
 
-#import "ChangeProvider.h"
-
-@protocol ObjectTransformer;
-@protocol ChangeProviderFetchRequestFactory;
+#import "ChangeProviderFetchRequestFactory.h"
 
 /**
  @author Egor Tolstoy
  
- Default change provider build upon NSFetchedResultsController
+ FetchRequestFactoru for EventModelObject
  */
-@interface FetchedResultsControllerChangeProvider : NSObject <ChangeProvider>
-
-+ (instancetype)changeProviderWithFetchRequestFactory:(id<ChangeProviderFetchRequestFactory>)fetchRequestFactory
-                                    objectTransformer:(id<ObjectTransformer>)objectTransformer;
+@interface EventChangeProviderFetchRequestFactory : NSObject <ChangeProviderFetchRequestFactory>
 
 @end

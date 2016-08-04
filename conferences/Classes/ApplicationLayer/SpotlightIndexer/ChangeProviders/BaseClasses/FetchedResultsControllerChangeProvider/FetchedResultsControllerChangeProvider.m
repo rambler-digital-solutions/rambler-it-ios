@@ -23,12 +23,13 @@
 #import "ChangeProviderDelegate.h"
 #import "ObjectTransformer.h"
 #import "ChangeProviderChangeType.h"
+#import "ChangeProviderFetchRequestFactory.h"
 
 #import <MagicalRecord/MagicalRecord.h>
 
 @interface FetchedResultsControllerChangeProvider () <NSFetchedResultsControllerDelegate>
 
-@property (nonatomic, strong) NSFetchRequest *request;
+@property (nonatomic, strong) id<ChangeProviderFetchRequestFactory> requestFactory;
 @property (nonatomic, strong) id<ObjectTransformer> transformer;
 @property (nonatomic, strong) NSFetchedResultsController *controller;
 
@@ -36,34 +37,37 @@
 
 @implementation FetchedResultsControllerChangeProvider
 
+@synthesize delegate = _delegate;
+
 #pragma mark - Initialization
 
-- (instancetype)initWithFetchedRequest:(NSFetchRequest *)request
-                     objectTransformer:(id<ObjectTransformer>)objectTransformer {
+- (instancetype)initWithFetchRequestFactory:(id<ChangeProviderFetchRequestFactory>)fetchRequestFactory
+                          objectTransformer:(id<ObjectTransformer>)objectTransformer {
     self = [super init];
     if (self) {
-        _request = request;
+        _requestFactory = fetchRequestFactory;
         _transformer = objectTransformer;
     }
     return self;
 }
 
-+ (instancetype)changeProviderWithFetchedRequest:(NSFetchRequest *)request
-                               objectTransformer:(id<ObjectTransformer>)objectTransformer {
-    return [[self alloc] initWithFetchedRequest:request
-                              objectTransformer:objectTransformer];
++ (instancetype)changeProviderWithFetchRequestFactory:(id<ChangeProviderFetchRequestFactory>)fetchRequestFactory
+                                    objectTransformer:(id<ObjectTransformer>)objectTransformer {
+    return [[self alloc] initWithFetchRequestFactory:fetchRequestFactory
+                                   objectTransformer:objectTransformer];
 }
 
 #pragma mark - <ChangeProvider>
 
 - (void)startMonitoringForChanges {
     NSManagedObjectContext *defaultContext = [NSManagedObjectContext MR_defaultContext];
-    
-    self.controller = [[NSFetchedResultsController alloc] initWithFetchRequest:self.request
+    NSFetchRequest *request = [self.requestFactory obtainFetchRequestForIndexing];
+    self.controller = [[NSFetchedResultsController alloc] initWithFetchRequest:request
                                                           managedObjectContext:defaultContext
                                                             sectionNameKeyPath:nil
                                                                      cacheName:nil];
     self.controller.delegate = self;
+    [self.controller performFetch:nil];
 }
 
 - (void)processObjectsForInitialIndexingWithBlock:(ChangeProviderInitialIndexingBlock)block {
@@ -92,6 +96,10 @@
              didGetChangeWithType:changeType
                     forObjectType:objectType
                  objectIdentifier:objectIdentifier];
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    [self.delegate didFinishChangingObjectsInChangeProvider:self];
 }
 
 #pragma mark - Private methods

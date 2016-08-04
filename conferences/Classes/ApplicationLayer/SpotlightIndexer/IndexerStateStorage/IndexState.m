@@ -72,14 +72,20 @@
     NSDictionary *mapReadSelectorDict = [self mapReadSelectorToChangeType];
     NSString *stringReadSelector = mapReadSelectorDict[@(type)];
     NSMutableOrderedSet *set;
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
     set = [self performSelector:NSSelectorFromString(stringReadSelector)];
+#pragma clang diagnostic pop
     return set ? [set mutableCopy] : [NSMutableOrderedSet new];
 }
 
 - (void)saveIdentifiers:(NSMutableOrderedSet *)identifiers withType:(NSUInteger)type {
     NSDictionary *mapWriteSelectorDict = [self mapWriteSelectorToChangeType];
     NSString *stringWriteSelector = mapWriteSelectorDict[@(type)];
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
     [self performSelector:NSSelectorFromString(stringWriteSelector) withObject:identifiers];
+#pragma clang diagnostic pop
 }
 
 - (NSDictionary *)mapTypeToSet {

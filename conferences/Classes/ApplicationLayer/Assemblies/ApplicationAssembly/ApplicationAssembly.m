@@ -17,6 +17,7 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
+
 #import "ApplicationAssembly.h"
 
 #import "ApplicationConfigurator.h"
@@ -27,6 +28,7 @@
 #import "ServiceComponents.h"
 #import "ThirdPartiesConfigurator.h"
 #import "ThirdPartiesConfiguratorImplementation.h"
+#import "SpotlightIndexerAssembly.h"
 
 @implementation ApplicationAssembly
 
@@ -39,6 +41,8 @@
                                                     with:[self pushNotificationCenter]];
                               [definition injectProperty:@selector(thirdPartiesConfigurator)
                                                     with:[self thirdPartiesConfigurator]];
+                              [definition injectProperty:@selector(indexerMonitor)
+                                                    with:[self.spotlightIndexerAssembly indexerMonitor]];
     }];
 }
 
