@@ -11,6 +11,9 @@
 "AdditionInformationTableViewCellTitle" = "Дополнительно";
 "SpeakerWebSiteTableViewCellTitle" = "Веб-сайт";
 "SpeakerContactsTableViewCellTitle" = "Контакты";
+"LecturePresentationTableViewCellTitle" = "презентация";
+"LectureArticlesTableViewCellTitle" = "cтатьи";
+"LectureCodeGithubTableViewCellTitle" = "код проекта на Гитхабе";
 
 "EventSavedToCalendarAlertMessage" = "Событие сохранено в календарь.";
 "EmptyAlertTitle" = "";

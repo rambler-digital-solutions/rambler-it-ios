@@ -13,6 +13,9 @@
 NSString * const VideoRecordTableViewCellTitle = @"VideoRecordTableViewCellTitle";
 NSString * const LectureMaterialsTableViewCellTitle = @"LectureMaterialsTableViewCellTitle";
 NSString * const AdditionInformationTableViewCellTitle = @"AdditionInformationTableViewCellTitle";
+NSString * const LecturePresentationTableViewCellTitle = @"LecturePresentationTableViewCellTitle";
+NSString * const LectureArticlesTableViewCellTitle = @"LectureArticlesTableViewCellTitle";
+NSString * const LectureCodeGithubTableViewCellTitle = @"LectureCodeGithubTableViewCellTitle";
 NSString * const SpeakerWebSiteTableViewCellTitle = @"SpeakerWebSiteTableViewCellTitle";
 NSString * const SpeakerContactsTableViewCellTitle = @"SpeakerContactsTableViewCellTitle";
 

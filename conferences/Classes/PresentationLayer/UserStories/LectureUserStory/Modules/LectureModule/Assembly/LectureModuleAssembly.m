@@ -26,6 +26,7 @@
 #import "LectureDataDisplayManager.h"
 #import "LecturePresenterStateStorage.h"
 #import "PresentationLayerHelpersAssembly.h"
+#import "ServiceComponents.h"
 
 @implementation  LectureModuleAssembly
 
@@ -44,6 +45,10 @@
                             configuration:^(TyphoonDefinition *definition) {
                                 [definition injectProperty:@selector(output)
                                                       with:[self presenterLecture]];
+                                [definition injectProperty:@selector(ponsomizer)
+                                                      with:[self.ponsomizerAssembly ponsomizer]];
+                                [definition injectProperty:@selector(lectureService)
+                                                      with:[self.serviceComponents lectureService]];
              }];
 }
 

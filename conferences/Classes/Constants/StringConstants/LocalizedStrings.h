@@ -13,6 +13,11 @@
 extern NSString * const VideoRecordTableViewCellTitle;
 extern NSString * const LectureMaterialsTableViewCellTitle;
 extern NSString * const AdditionInformationTableViewCellTitle;
+
+extern NSString * const LecturePresentationTableViewCellTitle;
+extern NSString * const LectureArticlesTableViewCellTitle;
+extern NSString * const LectureCodeGithubTableViewCellTitle;
+
 extern NSString * const SpeakerWebSiteTableViewCellTitle;
 extern NSString * const SpeakerContactsTableViewCellTitle;
 
