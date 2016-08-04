@@ -71,7 +71,6 @@
                                                     with:[self.operationFactoriesAssembly eventListOperationFactory]];
                               [definition injectProperty:@selector(operationScheduler)
                                                     with:[self operationScheduler]];
-                              
                           }];
 }
 

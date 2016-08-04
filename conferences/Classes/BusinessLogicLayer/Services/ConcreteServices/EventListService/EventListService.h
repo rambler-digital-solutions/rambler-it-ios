@@ -41,10 +41,20 @@ typedef void (^EventListUpdateCompletionBlock)(NSError *error);
  */
 - (void)updateEventListWithQuery:(EventListQuery *)query
                  completionBlock:(EventListUpdateCompletionBlock)completionBlock;
+
 /**
  @author Konstantin Zinovyev
  
-Method is used to configure EventList object
+ Method is used to obtain actual EventListQuery
+ 
+ @return EventListQuery object
+ */
+- (EventListQuery *)obtainActualEventListQuery;
+
+/**
+ @author Konstantin Zinovyev
+ 
+ Method is used to configure EventList object
 
  */
 - (void)setupPredefinedEventListIfNeeded;

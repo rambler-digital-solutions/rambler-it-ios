@@ -47,7 +47,16 @@ static NSString *const kEventListName = @"kEventListName";
         
         [self.operationScheduler addOperation:compoundOperation];
     }];
+}
+
+- (EventListQuery *)obtainActualEventListObject {
+    EventListModelObject *modelObject = [EventListModelObject MR_findFirst];
+    EventListQuery *eventListQuery = [EventListQuery new];
     
+    NSTimeInterval interval = [modelObject.lastModified timeIntervalSince1970];
+    eventListQuery.lastModifiedString = [NSString stringWithFormat:@"%d",(int)interval];
+    
+    return eventListQuery;
 }
 
 - (void)setupPredefinedEventListIfNeeded {
@@ -70,7 +79,7 @@ static NSString *const kEventListName = @"kEventListName";
             eventListObject = [EventListModelObject MR_createEntityInContext:rootSavingContext];
             eventListObject.name = eventListName;
             eventListObject.eventListId = [[NSUUID UUID] UUIDString];
-            eventListObject.lastModified = nil;
+            eventListObject.lastModified = [NSDate dateWithTimeIntervalSince1970:0];
         }
         
         [rootSavingContext MR_saveToPersistentStoreAndWait];

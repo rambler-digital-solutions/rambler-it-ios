@@ -20,13 +20,17 @@
 
 #import "ReportListInteractor.h"
 #import "ReportListInteractorOutput.h"
-
 #import "EventService.h"
+#import "EventListService.h"
 #import "EventModelObject.h"
 #import "EventPlainObject.h"
 #import "EventType.h"
 #import "EventTypeDeterminator.h"
 #import "ROSPonsomizer.h"
+#import "EventListModelObject.h"
+#import "EventListQuery.h"
+#import <MagicalRecord/MagicalRecord.h>
+
 #import "EXTScope.h"
 
 @implementation ReportListInteractor
@@ -35,15 +39,18 @@
 
 - (void)updateEventList {
     @weakify(self)
-    [self.eventService updateEventWithPredicate:nil completionBlock:^(id data, NSError *error) {
-        @strongify(self);
-        NSArray *events  = [self getPlainEventsFromManagedObjects:data];
-        
-        [self.output didUpdateEventList:events];
+    
+    EventListQuery *listQuery = [self.eventListService obtainActualEventListQuery];
+    [self.eventListService updateEventListWithQuery:listQuery completionBlock:^(NSError *error) {
+            @strongify(self);
+            NSArray *eventsManagedObjects = [self.eventService obtainEventWithPredicate:nil];
+            NSArray *events  = [self getPlainEventsFromManagedObjects:eventsManagedObjects];
+            [self.output didUpdateEventList:events];
     }];
 }
 
 - (NSArray *)obtainEventList {
+    
     id managedObjectEvents = [self.eventService obtainEventWithPredicate:nil];
     
     NSArray *events = [self getPlainEventsFromManagedObjects:managedObjectEvents];
