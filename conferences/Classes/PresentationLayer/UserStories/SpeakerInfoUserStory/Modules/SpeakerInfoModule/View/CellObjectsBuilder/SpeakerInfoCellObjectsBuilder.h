@@ -9,8 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @class SpeakerPlainObject;
+@class SocialContactsConfigurator;
 
 @interface SpeakerInfoCellObjectsBuilder : NSObject
+
+@property (nonatomic, strong) SocialContactsConfigurator *configurator;
 
 - (NSArray *)buildObjectsWithSpeaker:(SpeakerPlainObject *)speaker;
 

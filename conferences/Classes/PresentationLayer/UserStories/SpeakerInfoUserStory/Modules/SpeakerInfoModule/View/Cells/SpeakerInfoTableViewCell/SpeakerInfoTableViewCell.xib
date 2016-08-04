@@ -15,7 +15,7 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVj-Fw-P96" userLabel="Description">
                         <rect key="frame" x="20" y="16" width="280" height="405.5"/>
-                        <mutableString key="text">Я уверен что все любят писать JSDoc☺ Он вкусный, полезный, помогает нашим IDE находить ошибки, то все любят писать JSD вообще делает жизнь лучше. Я уверен что все любят писать JSDoc☺ Он вкусный, полезный, помогает нашим IDE находить ошибки, то все любят писать JSD вообще делает жизнь лучше.</mutableString>
+                        <string key="text">Я уверен что все любят писать JSDoc☺ Он вкусный, полезный, помогает нашим IDE находить ошибки, то все любят писать JSD вообще делает жизнь лучше. Я уверен что все любят писать JSDoc☺ Он вкусный, полезный, помогает нашим IDE находить ошибки, то все любят писать JSD вообще делает жизнь лучше.</string>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>

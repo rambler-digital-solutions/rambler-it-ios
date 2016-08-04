@@ -27,6 +27,7 @@
 		2B05E1691D51D7A100E017AB /* SpeakerInfoSocialContactsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B05E1671D51D7A100E017AB /* SpeakerInfoSocialContactsTableViewCell.m */; };
 		2B05E16A1D51D7A100E017AB /* SpeakerInfoSocialContactsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B05E1681D51D7A100E017AB /* SpeakerInfoSocialContactsTableViewCell.xib */; };
 		2B05E16E1D51D80100E017AB /* SpeakerInfoSocialContactsCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B05E16D1D51D80100E017AB /* SpeakerInfoSocialContactsCellObject.m */; };
+		2B05E1711D51E1B100E017AB /* SocialContactsConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B05E1701D51E1B100E017AB /* SocialContactsConfigurator.m */; };
 		2B2064771D3F9CE900246C8D /* _EventModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B20642D1D3F9CE900246C8D /* _EventModelObject.m */; };
 		2B2064781D3F9CE900246C8D /* _LectureMaterialModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B20642F1D3F9CE900246C8D /* _LectureMaterialModelObject.m */; };
 		2B2064791D3F9CE900246C8D /* _LectureModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064311D3F9CE900246C8D /* _LectureModelObject.m */; };
@@ -71,6 +72,9 @@
 		2B429A631D4798D4004C005F /* EventViewAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B429A621D4798D4004C005F /* EventViewAnimator.m */; };
 		2B429A711D4B5305004C005F /* ModelObjectGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B429A701D4B5305004C005F /* ModelObjectGenerator.m */; };
 		2B429A7C1D50987E004C005F /* MetaEventServiceImpementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B429A7B1D50987E004C005F /* MetaEventServiceImpementation.m */; };
+		2B4F201D1D5326FC00C9891E /* SpeakerInfoSectionHeaderCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4F201C1D5326FC00C9891E /* SpeakerInfoSectionHeaderCellObject.m */; };
+		2B4F20221D53273100C9891E /* SpeakerInfoSectionHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4F20201D53273100C9891E /* SpeakerInfoSectionHeaderTableViewCell.m */; };
+		2B4F20231D53273100C9891E /* SpeakerInfoSectionHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B4F20211D53273100C9891E /* SpeakerInfoSectionHeaderTableViewCell.xib */; };
 		2B750D171D362EE600EACE98 /* Conference.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6373A40E1BBDC5EA00DF67FF /* Conference.xcdatamodeld */; };
 		2BDDAB551D363D34007FD547 /* ROSPonsomizerImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDDAB541D363D34007FD547 /* ROSPonsomizerImplementation.m */; };
 		2BDDB1D31D3F7235007FD547 /* DirectionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDDB1D21D3F7235007FD547 /* DirectionObject.m */; };
@@ -417,6 +421,8 @@
 		2B05E1681D51D7A100E017AB /* SpeakerInfoSocialContactsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeakerInfoSocialContactsTableViewCell.xib; sourceTree = "<group>"; };
 		2B05E16C1D51D80100E017AB /* SpeakerInfoSocialContactsCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerInfoSocialContactsCellObject.h; sourceTree = "<group>"; };
 		2B05E16D1D51D80100E017AB /* SpeakerInfoSocialContactsCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerInfoSocialContactsCellObject.m; sourceTree = "<group>"; };
+		2B05E16F1D51E1B100E017AB /* SocialContactsConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialContactsConfigurator.h; sourceTree = "<group>"; };
+		2B05E1701D51E1B100E017AB /* SocialContactsConfigurator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialContactsConfigurator.m; sourceTree = "<group>"; };
 		2B20642C1D3F9CE900246C8D /* _EventModelObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _EventModelObject.h; sourceTree = "<group>"; };
 		2B20642D1D3F9CE900246C8D /* _EventModelObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _EventModelObject.m; sourceTree = "<group>"; };
 		2B20642E1D3F9CE900246C8D /* _LectureMaterialModelObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _LectureMaterialModelObject.h; sourceTree = "<group>"; };
@@ -506,6 +512,11 @@
 		2B429A791D50986A004C005F /* MetaEventService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetaEventService.h; sourceTree = "<group>"; };
 		2B429A7A1D50987E004C005F /* MetaEventServiceImpementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetaEventServiceImpementation.h; sourceTree = "<group>"; };
 		2B429A7B1D50987E004C005F /* MetaEventServiceImpementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetaEventServiceImpementation.m; sourceTree = "<group>"; };
+		2B4F201B1D5326FC00C9891E /* SpeakerInfoSectionHeaderCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerInfoSectionHeaderCellObject.h; sourceTree = "<group>"; };
+		2B4F201C1D5326FC00C9891E /* SpeakerInfoSectionHeaderCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerInfoSectionHeaderCellObject.m; sourceTree = "<group>"; };
+		2B4F201F1D53273100C9891E /* SpeakerInfoSectionHeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerInfoSectionHeaderTableViewCell.h; sourceTree = "<group>"; };
+		2B4F20201D53273100C9891E /* SpeakerInfoSectionHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerInfoSectionHeaderTableViewCell.m; sourceTree = "<group>"; };
+		2B4F20211D53273100C9891E /* SpeakerInfoSectionHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeakerInfoSectionHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		2BDDAB521D363D34007FD547 /* ROSPonsomizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ROSPonsomizer.h; sourceTree = "<group>"; };
 		2BDDAB531D363D34007FD547 /* ROSPonsomizerImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ROSPonsomizerImplementation.h; sourceTree = "<group>"; };
 		2BDDAB541D363D34007FD547 /* ROSPonsomizerImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ROSPonsomizerImplementation.m; sourceTree = "<group>"; };
@@ -1194,6 +1205,8 @@
 			children = (
 				2B05E15F1D50FEFC00E017AB /* SpeakerInfoCellObjectsBuilder.h */,
 				2B05E1601D50FEFC00E017AB /* SpeakerInfoCellObjectsBuilder.m */,
+				2B05E16F1D51E1B100E017AB /* SocialContactsConfigurator.h */,
+				2B05E1701D51E1B100E017AB /* SocialContactsConfigurator.m */,
 			);
 			path = CellObjectsBuilder;
 			sourceTree = "<group>";
@@ -1371,6 +1384,25 @@
 				2B429A7B1D50987E004C005F /* MetaEventServiceImpementation.m */,
 			);
 			path = MetaEventService;
+			sourceTree = "<group>";
+		};
+		2B4F201A1D5326E400C9891E /* SpeakerInfoSectionHeaderCellObject */ = {
+			isa = PBXGroup;
+			children = (
+				2B4F201B1D5326FC00C9891E /* SpeakerInfoSectionHeaderCellObject.h */,
+				2B4F201C1D5326FC00C9891E /* SpeakerInfoSectionHeaderCellObject.m */,
+			);
+			path = SpeakerInfoSectionHeaderCellObject;
+			sourceTree = "<group>";
+		};
+		2B4F201E1D53271600C9891E /* SpeakerInfoSectionHeaderTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2B4F201F1D53273100C9891E /* SpeakerInfoSectionHeaderTableViewCell.h */,
+				2B4F20201D53273100C9891E /* SpeakerInfoSectionHeaderTableViewCell.m */,
+				2B4F20211D53273100C9891E /* SpeakerInfoSectionHeaderTableViewCell.xib */,
+			);
+			path = SpeakerInfoSectionHeaderTableViewCell;
 			sourceTree = "<group>";
 		};
 		2BDDAB511D363D34007FD547 /* Ponsomizer */ = {
@@ -3271,6 +3303,7 @@
 		63F6133A1CB00A220002AEF0 /* CellObjects */ = {
 			isa = PBXGroup;
 			children = (
+				2B4F201A1D5326E400C9891E /* SpeakerInfoSectionHeaderCellObject */,
 				2B05E16B1D51D7F000E017AB /* SpeakerInfoSocialContactsCellObject */,
 				63F6133B1CB00A220002AEF0 /* SpeakerInfoTableViewCellObject */,
 			);
@@ -3289,6 +3322,7 @@
 		63F6133E1CB00A220002AEF0 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				2B4F201E1D53271600C9891E /* SpeakerInfoSectionHeaderTableViewCell */,
 				2B05E1621D51D71100E017AB /* SpeakerInfoSocialContactsTableViewCell */,
 				63F6133F1CB00A220002AEF0 /* SpeakerInfoTableViewCell */,
 			);
@@ -5439,6 +5473,7 @@
 				6670503D1D4615A100DD9D6E /* ReportLectureTableViewCell.xib in Resources */,
 				6318086A1C4A870C00A61E7D /* TableViewCellWithTextLabelAndImageView.xib in Resources */,
 				63F613731CB00A220002AEF0 /* EventInfoTableViewCell.xib in Resources */,
+				2B4F20231D53273100C9891E /* SpeakerInfoSectionHeaderTableViewCell.xib in Resources */,
 				2B429A4F1D460CF4004C005F /* NearestAnnouncementTableHeaderView.xib in Resources */,
 				636B64121BBFE2C20053E38F /* Main.storyboard in Resources */,
 				63F6139F1CB00A220002AEF0 /* SpeakerInfo.storyboard in Resources */,
@@ -5619,6 +5654,7 @@
 				667050251D46149C00DD9D6E /* ReportEventTableViewCell.m in Sources */,
 				63F613621CB00A220002AEF0 /* EventPresenterStateStorage.m in Sources */,
 				636A37C51BC142BB00B49C3D /* ApplicationAssembly.m in Sources */,
+				2B4F201D1D5326FC00C9891E /* SpeakerInfoSectionHeaderCellObject.m in Sources */,
 				63D86BDA1C1439D800986536 /* DateFormatter.m in Sources */,
 				2B05E1611D50FEFC00E017AB /* SpeakerInfoCellObjectsBuilder.m in Sources */,
 				63F613871CB00A220002AEF0 /* EventCellObjectBuilderFactory.m in Sources */,
@@ -5703,6 +5739,7 @@
 				9F18309F1BC024A9000E21A5 /* RequestDataModel.m in Sources */,
 				631FFE5F1BEF991000749DB8 /* ReportListDataDisplayManager.m in Sources */,
 				63F6139D1CB00A220002AEF0 /* SpeakerInfoDataDisplayManager.m in Sources */,
+				2B4F20221D53273100C9891E /* SpeakerInfoSectionHeaderTableViewCell.m in Sources */,
 				66704FFC1D460DC000DD9D6E /* ReportListViewController.m in Sources */,
 				63F613961CB00A220002AEF0 /* SpeakerInfoInteractor.m in Sources */,
 				9F4077901D2BF95200D47EF6 /* CommonResourceClient.m in Sources */,
@@ -5784,6 +5821,7 @@
 				63F51CB01C42AD3A00AFB9D2 /* TableViewCellWithTextLabelCellObject.m in Sources */,
 				9F0A85321BC18906006F79FB /* EventQuery.m in Sources */,
 				3784462F1D4E067A0016121E /* RCNavigationController.m in Sources */,
+				2B05E1711D51E1B100E017AB /* SocialContactsConfigurator.m in Sources */,
 				63F6136A1CB00A220002AEF0 /* PreviousLectureSectionHeaderTableViewCellObject.m in Sources */,
 				63FD4E061BE5038D0046378E /* UIColor+Hex.m in Sources */,
 				66704FF91D4606D800DD9D6E /* PonsomizerAssembly.m in Sources */,

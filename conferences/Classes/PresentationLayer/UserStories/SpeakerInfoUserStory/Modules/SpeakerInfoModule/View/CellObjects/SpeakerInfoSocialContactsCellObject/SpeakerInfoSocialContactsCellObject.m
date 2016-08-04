@@ -19,6 +19,7 @@
     if (self) {
         _image = image;
         _link = account.profileLink;
+        _name = text;
     }
     
     return self;

@@ -57,7 +57,8 @@
 - (void)updateTableViewModelWithSpeaker:(SpeakerPlainObject *)speaker {
     NSArray *cellObjects = [self.cellObjectBuilder buildObjectsWithSpeaker:speaker];
     
-    self.tableViewModel = [[NITableViewModel alloc] initWithSectionedArray:cellObjects delegate:(id)[NICellFactory class]];
+    self.tableViewModel = [[NITableViewModel alloc] initWithSectionedArray:cellObjects
+                                                                  delegate:(id)[NICellFactory class]];
 }
 
 - (void)setupTableViewActions {

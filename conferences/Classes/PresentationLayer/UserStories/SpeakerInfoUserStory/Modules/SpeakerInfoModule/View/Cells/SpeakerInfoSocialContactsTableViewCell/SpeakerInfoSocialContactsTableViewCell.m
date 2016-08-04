@@ -9,9 +9,21 @@
 #import "SpeakerInfoSocialContactsTableViewCell.h"
 #import "SpeakerInfoSocialContactsCellObject.h"
 
+@interface SpeakerInfoSocialContactsTableViewCell ()
+
+@property (weak, nonatomic) IBOutlet UIImageView *socailNetworkIcon;
+@property (weak, nonatomic) IBOutlet UILabel *socialNetworkName;
+
+
+@end
+
 @implementation SpeakerInfoSocialContactsTableViewCell
 
 - (BOOL)shouldUpdateCellWithObject:(SpeakerInfoSocialContactsCellObject *)object {
+    
+    self.socailNetworkIcon.image = [UIImage imageNamed:object.image];
+    self.socialNetworkName.text = object.name;
+    
     return YES;
 }
 
