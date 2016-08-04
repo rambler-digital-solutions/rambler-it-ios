@@ -9,7 +9,7 @@
 #import "TableViewCellWithTextLabelAndImageView.h"
 #import "TableViewCellWithTextLabelAndImageViewCellObject.h"
 
-static CGFloat const TableViewCellWithTextLabelAndImageViewHeight = 44.0f;
+static CGFloat const TableViewCellWithTextLabelAndImageViewHeight = 40.0f;
 
 @interface TableViewCellWithTextLabelAndImageView ()
 

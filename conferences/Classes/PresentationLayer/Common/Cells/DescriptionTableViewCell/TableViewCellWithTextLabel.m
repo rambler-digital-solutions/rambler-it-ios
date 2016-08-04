@@ -21,7 +21,7 @@
 #import "TableViewCellWithTextLabel.h"
 #import "TableViewCellWithTextLabelCellObject.h"
 
-static CGFloat const TableViewCellWithTextLabelHeight = 44.0f;
+static CGFloat const TableViewCellWithTextLabelHeight = 34.0f;
 
 @interface TableViewCellWithTextLabel ()
 
