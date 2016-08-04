@@ -46,6 +46,13 @@
          forObjectType:(NSString *)objectType
       objectIdentifier:(NSString *)objectIdentifier;
 
+/**
+ @author Egor Tolstoy
+ 
+ Method notifies delegate that a batch of changes is over
+ 
+ @param changeProvider ChangeProvider itself
+ */
 - (void)didFinishChangingObjectsInChangeProvider:(id<ChangeProvider>)changeProvider;
 
 @end
