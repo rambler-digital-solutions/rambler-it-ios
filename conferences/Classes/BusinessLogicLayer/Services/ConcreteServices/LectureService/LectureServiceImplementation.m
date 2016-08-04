@@ -22,7 +22,17 @@
 #import "LectureModelObject.h"
 #import <MagicalRecord/MagicalRecord.h>
 
+static NSString *const kLectureIdPropertyName = @"lectureId";
+
 @implementation LectureServiceImplementation
+
+- (LectureModelObject *)obtainLectureWithLectureId:(NSString *)lectureId {
+    NSManagedObjectContext *context = [NSManagedObjectContext MR_defaultContext];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K = %@", kLectureIdPropertyName, lectureId ];
+    LectureModelObject *lecture = [LectureModelObject MR_findFirstWithPredicate:predicate
+                                                            inContext:context];
+    return lecture;
+}
 
 - (NSArray *)obtainLectureWithPredicate:(NSPredicate *)predicate {
     NSManagedObjectContext *context = [NSManagedObjectContext MR_defaultContext];

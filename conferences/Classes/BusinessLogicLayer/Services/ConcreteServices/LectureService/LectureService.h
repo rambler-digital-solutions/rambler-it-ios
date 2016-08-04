@@ -43,4 +43,6 @@ typedef void (^LectureCompletionBlock)(Lecture *lecture, NSError *error);
  */
 - (NSArray *)obtainLectureWithPredicate:(NSPredicate *)predicate;
 
+- (NSArray *)obtainLectureWithLectureId:(NSString *)lectureId;
+
 @end
