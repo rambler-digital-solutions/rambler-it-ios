@@ -21,6 +21,9 @@
 #import "EventObjectIndexer.h"
 
 #import "EventModelObject.h"
+#import "LectureModelObject.h"
+#import "TagModelObject.h"
+#import "SpotlightIndexerConstants.h"
 
 #import <CoreSpotlight/CoreSpotlight.h>
 #import <MobileCoreServices/MobileCoreServices.h>
@@ -34,11 +37,15 @@
 }
 
 - (CSSearchableItem *)searchableItemForObject:(EventModelObject *)object {
-    CSSearchableItemAttributeSet *attributeSet = [[CSSearchableItemAttributeSet alloc] initWithItemContentType:(NSString *)kUTTypeData];
+    CSSearchableItemAttributeSet *attributeSet = [[CSSearchableItemAttributeSet alloc] initWithItemContentType:(NSString *)kUTTypeJSON];
     attributeSet.title = object.name;
-    attributeSet.contentDescription = object.eventDescription;
-    attributeSet.keywords = @[object.name];
     
+    NSString *eventDescription = [self generateEventDescriptionForEvent:object];
+    attributeSet.contentDescription = eventDescription;
+    
+    NSArray *keywords = [self generateKeywordsForEvent:object];
+    attributeSet.keywords = keywords;
+
     NSString *uniqueIdentifier = [self identifierForObject:object];
     NSString *domainIdentifier = NSStringFromClass([EventModelObject class]);
     CSSearchableItem *item = [[CSSearchableItem alloc] initWithUniqueIdentifier:uniqueIdentifier
@@ -46,6 +53,32 @@
                                                                    attributeSet:attributeSet];
     
     return item;
+}
+
+#pragma mark - Private methods
+
+- (NSString *)generateEventDescriptionForEvent:(EventModelObject *)event {
+    NSMutableArray *lectureTitles = [NSMutableArray new];
+    for (LectureModelObject *lecture in event.lectures) {
+        [lectureTitles addObject:lecture.name];
+    }
+    NSString *eventDescription = [lectureTitles componentsJoinedByString:@", "];
+    return eventDescription;
+}
+
+- (NSArray *)generateKeywordsForEvent:(EventModelObject *)event {
+    NSMutableArray *keywords = [NSMutableArray new];
+    [keywords addObject:event.name];
+    
+    for (LectureModelObject *lecture in event.lectures) {
+        for (TagModelObject *tag in lecture.tags) {
+            if (keywords.count <= kSearchableItemKeywordsMaximumCount) {
+                [keywords addObject:tag.name];
+            }
+        }
+    }
+
+    return [keywords copy];
 }
 
 @end

@@ -31,8 +31,6 @@
 
 @interface IndexerMonitor () <ChangeProviderDelegate>
 
-
-
 @property (nonatomic, strong) NSArray *indexers;
 @property (nonatomic, strong) NSArray *changeProviders;
 

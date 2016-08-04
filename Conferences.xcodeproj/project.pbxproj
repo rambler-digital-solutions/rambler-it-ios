@@ -377,6 +377,7 @@
 		9F8E5F9D1BC2777100DC10DB /* Conferences.Parse.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F8E5F9C1BC2777100DC10DB /* Conferences.Parse.plist */; };
 		9F8E5FA61BC27CCE00DC10DB /* MappingConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5FA51BC27CCE00DC10DB /* MappingConstants.m */; };
 		9F8E5FA91BC27D0D00DC10DB /* ServiceNameConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5FA81BC27D0D00DC10DB /* ServiceNameConstants.m */; };
+		9FAB6A6C1D5384F30061F333 /* SpotlightIndexerConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB6A6B1D5384F30061F333 /* SpotlightIndexerConstants.m */; };
 		9FC1F6761D2824000070D9B5 /* EventListServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */; };
 		9FC1F6801D2838FA0070D9B5 /* EventListQueryTransformerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */; };
 		9FC1F6841D28391E0070D9B5 /* EventListQueryTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6831D28391E0070D9B5 /* EventListQueryTransformer.m */; };
@@ -1153,6 +1154,8 @@
 		9F8E5FA81BC27D0D00DC10DB /* ServiceNameConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServiceNameConstants.m; path = Constants/ServiceNameConstants.m; sourceTree = "<group>"; };
 		9F8E5FAA1BC27D1D00DC10DB /* NetworkingConstantsHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NetworkingConstantsHeader.h; path = Constants/NetworkingConstantsHeader.h; sourceTree = "<group>"; };
 		9F8E5FAB1BC27E7F00DC10DB /* HTTPMethodConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTTPMethodConstants.h; path = Constants/HTTPMethodConstants.h; sourceTree = "<group>"; };
+		9FAB6A6A1D5384F30061F333 /* SpotlightIndexerConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpotlightIndexerConstants.h; path = SpotlightIndexer/Constants/SpotlightIndexerConstants.h; sourceTree = "<group>"; };
+		9FAB6A6B1D5384F30061F333 /* SpotlightIndexerConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpotlightIndexerConstants.m; path = SpotlightIndexer/Constants/SpotlightIndexerConstants.m; sourceTree = "<group>"; };
 		9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListServiceTests.m; path = EventListServiceTests/EventListServiceTests.m; sourceTree = "<group>"; };
 		9FC1F6781D2826D10070D9B5 /* QueryTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QueryTransformer.h; path = CoreComponents/QueryTransformers/QueryTransformer.h; sourceTree = "<group>"; };
 		9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListQueryTransformerTests.m; path = CoreLayer/CoreComponents/QueryTransformers/EventListQueryTransformer/EventListQueryTransformerTests.m; sourceTree = "<group>"; };
@@ -5213,6 +5216,7 @@
 		9F533A7C1D50D6E7004F8E82 /* SpotlightIndexer */ = {
 			isa = PBXGroup;
 			children = (
+				9FAB6A691D5384E30061F333 /* Constants */,
 				9F40977D1D51F619008BFE42 /* ObjectTransformers */,
 				9F5316A61D50F54000F13931 /* IndexerStateStorage */,
 				9F533A9C1D50F131004F8E82 /* Transactions */,
@@ -5369,6 +5373,15 @@
 				9F8E5FA71BC27D0D00DC10DB /* ServiceNameConstants.h */,
 				9F8E5FA81BC27D0D00DC10DB /* ServiceNameConstants.m */,
 				9F8E5FAB1BC27E7F00DC10DB /* HTTPMethodConstants.h */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
+		9FAB6A691D5384E30061F333 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				9FAB6A6A1D5384F30061F333 /* SpotlightIndexerConstants.h */,
+				9FAB6A6B1D5384F30061F333 /* SpotlightIndexerConstants.m */,
 			);
 			name = Constants;
 			sourceTree = "<group>";
@@ -6001,6 +6014,7 @@
 				63F54D9B1BC5AB3C00DB1746 /* ServiceComponentsAssembly.m in Sources */,
 				2B20648F1D3F9CE900246C8D /* SpeakerModelObject.m in Sources */,
 				9F40777A1D2BF33800D47EF6 /* RamblerLocationDataDisplayManager.m in Sources */,
+				9FAB6A6C1D5384F30061F333 /* SpotlightIndexerConstants.m in Sources */,
 				636A37B31BC1356400B49C3D /* ApplicationConfiguratorImplementation.m in Sources */,
 				9F8E5FA91BC27D0D00DC10DB /* ServiceNameConstants.m in Sources */,
 				2B2064871D3F9CE900246C8D /* _TagPlainObject.m in Sources */,
