@@ -20,35 +20,20 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol ObjectIndexer;
-@protocol ChangeProvider;
-@class IndexerStateStorage;
-@class IndexerMonitorOperationQueueFactory;
+/**
+ @author Egor Tolstoy
+ 
+ A factory responsible for creating NSOperationQueues for IndexerMonitor work
+ */
+@interface IndexerMonitorOperationQueueFactory : NSObject
 
 /**
  @author Egor Tolstoy
  
- The main object in SpotlightIndexer ecosystem. It's responsible for chaining all the parts together.
- */
-@interface IndexerMonitor : NSObject
-
-+ (instancetype)monitorWithIndexers:(NSArray <id<ObjectIndexer>> *)indexers
-                    changeProviders:(NSArray <id<ChangeProvider>> *)changeProviders
-                       stateStorage:(IndexerStateStorage *)stateStorage
-                       queueFactory:(IndexerMonitorOperationQueueFactory *)queueFactory;
-
-/**
- @author Egor Tolstoy
+ The method returns a NSOperationQueue configured for indexing operations
  
- Initiates monitoring start
+ @return NSOperationQueue
  */
-- (void)startMonitoring;
-
-/**
- @author Egor Tolstoy
- 
- Initiates monitoring end
- */
-- (void)stopMonitoring;
+- (NSOperationQueue *)createIndexerOperationQueue;
 
 @end

@@ -378,6 +378,7 @@
 		9F8E5FA61BC27CCE00DC10DB /* MappingConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5FA51BC27CCE00DC10DB /* MappingConstants.m */; };
 		9F8E5FA91BC27D0D00DC10DB /* ServiceNameConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5FA81BC27D0D00DC10DB /* ServiceNameConstants.m */; };
 		9FAB6A6C1D5384F30061F333 /* SpotlightIndexerConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB6A6B1D5384F30061F333 /* SpotlightIndexerConstants.m */; };
+		9FAB6A701D53896E0061F333 /* IndexerMonitorOperationQueueFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB6A6F1D53896E0061F333 /* IndexerMonitorOperationQueueFactory.m */; };
 		9FC1F6761D2824000070D9B5 /* EventListServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */; };
 		9FC1F6801D2838FA0070D9B5 /* EventListQueryTransformerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */; };
 		9FC1F6841D28391E0070D9B5 /* EventListQueryTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6831D28391E0070D9B5 /* EventListQueryTransformer.m */; };
@@ -1156,6 +1157,8 @@
 		9F8E5FAB1BC27E7F00DC10DB /* HTTPMethodConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTTPMethodConstants.h; path = Constants/HTTPMethodConstants.h; sourceTree = "<group>"; };
 		9FAB6A6A1D5384F30061F333 /* SpotlightIndexerConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpotlightIndexerConstants.h; path = SpotlightIndexer/Constants/SpotlightIndexerConstants.h; sourceTree = "<group>"; };
 		9FAB6A6B1D5384F30061F333 /* SpotlightIndexerConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpotlightIndexerConstants.m; path = SpotlightIndexer/Constants/SpotlightIndexerConstants.m; sourceTree = "<group>"; };
+		9FAB6A6E1D53896E0061F333 /* IndexerMonitorOperationQueueFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndexerMonitorOperationQueueFactory.h; path = SpotlightIndexer/IndexerMonitor/IndexerMonitorOperationQueueFactory/IndexerMonitorOperationQueueFactory.h; sourceTree = "<group>"; };
+		9FAB6A6F1D53896E0061F333 /* IndexerMonitorOperationQueueFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IndexerMonitorOperationQueueFactory.m; path = SpotlightIndexer/IndexerMonitor/IndexerMonitorOperationQueueFactory/IndexerMonitorOperationQueueFactory.m; sourceTree = "<group>"; };
 		9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListServiceTests.m; path = EventListServiceTests/EventListServiceTests.m; sourceTree = "<group>"; };
 		9FC1F6781D2826D10070D9B5 /* QueryTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QueryTransformer.h; path = CoreComponents/QueryTransformers/QueryTransformer.h; sourceTree = "<group>"; };
 		9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListQueryTransformerTests.m; path = CoreLayer/CoreComponents/QueryTransformers/EventListQueryTransformer/EventListQueryTransformerTests.m; sourceTree = "<group>"; };
@@ -5267,6 +5270,7 @@
 		9F533A8A1D50EBE6004F8E82 /* IndexerMonitor */ = {
 			isa = PBXGroup;
 			children = (
+				9FAB6A6D1D5389560061F333 /* IndexerMonitorOperationQueueFactory */,
 				9F533A8C1D50EC10004F8E82 /* IndexerMonitor.h */,
 				9F533A8D1D50EC10004F8E82 /* IndexerMonitor.m */,
 			);
@@ -5384,6 +5388,15 @@
 				9FAB6A6B1D5384F30061F333 /* SpotlightIndexerConstants.m */,
 			);
 			name = Constants;
+			sourceTree = "<group>";
+		};
+		9FAB6A6D1D5389560061F333 /* IndexerMonitorOperationQueueFactory */ = {
+			isa = PBXGroup;
+			children = (
+				9FAB6A6E1D53896E0061F333 /* IndexerMonitorOperationQueueFactory.h */,
+				9FAB6A6F1D53896E0061F333 /* IndexerMonitorOperationQueueFactory.m */,
+			);
+			name = IndexerMonitorOperationQueueFactory;
 			sourceTree = "<group>";
 		};
 		9FC1F6741D2823E40070D9B5 /* EventListServiceTests */ = {
@@ -6019,6 +6032,7 @@
 				9F8E5FA91BC27D0D00DC10DB /* ServiceNameConstants.m in Sources */,
 				2B2064871D3F9CE900246C8D /* _TagPlainObject.m in Sources */,
 				63F6134D1CB00A220002AEF0 /* AnnouncementListInteractor.m in Sources */,
+				9FAB6A701D53896E0061F333 /* IndexerMonitorOperationQueueFactory.m in Sources */,
 				63F6134F1CB00A220002AEF0 /* AnnouncementListRouter.m in Sources */,
 				636F8C971BC97B3100552B91 /* EventServiceImplementation.m in Sources */,
 				9F40777F1D2BF4F300D47EF6 /* RamblerLocationServiceImplementation.m in Sources */,

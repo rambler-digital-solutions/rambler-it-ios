@@ -18,37 +18,17 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import "IndexerMonitorOperationQueueFactory.h"
 
-@protocol ObjectIndexer;
-@protocol ChangeProvider;
-@class IndexerStateStorage;
-@class IndexerMonitorOperationQueueFactory;
+static NSString *const kIndexerMonitorOperationQueueName = @"ru.rambler.Conferences.IndexerMonitorOperationQueue";
 
-/**
- @author Egor Tolstoy
- 
- The main object in SpotlightIndexer ecosystem. It's responsible for chaining all the parts together.
- */
-@interface IndexerMonitor : NSObject
+@implementation IndexerMonitorOperationQueueFactory
 
-+ (instancetype)monitorWithIndexers:(NSArray <id<ObjectIndexer>> *)indexers
-                    changeProviders:(NSArray <id<ChangeProvider>> *)changeProviders
-                       stateStorage:(IndexerStateStorage *)stateStorage
-                       queueFactory:(IndexerMonitorOperationQueueFactory *)queueFactory;
-
-/**
- @author Egor Tolstoy
- 
- Initiates monitoring start
- */
-- (void)startMonitoring;
-
-/**
- @author Egor Tolstoy
- 
- Initiates monitoring end
- */
-- (void)stopMonitoring;
+- (NSOperationQueue *)createIndexerOperationQueue {
+    NSOperationQueue *queue = [NSOperationQueue new];
+    queue.name = kIndexerMonitorOperationQueueName;
+    [queue setMaxConcurrentOperationCount:1];
+    return queue;
+}
 
 @end

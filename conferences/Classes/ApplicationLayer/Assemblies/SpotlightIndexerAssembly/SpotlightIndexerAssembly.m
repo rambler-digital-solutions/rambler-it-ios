@@ -26,6 +26,7 @@
 #import "EventObjectTransformer.h"
 #import "EventChangeProviderFetchRequestFactory.h"
 #import "IndexerStateStorage.h"
+#import "IndexerMonitorOperationQueueFactory.h"
 
 #import <CoreSpotlight/CoreSpotlight.h>
 
@@ -36,19 +37,24 @@
 - (IndexerMonitor *)indexerMonitor {
     return [TyphoonDefinition withClass:[IndexerMonitor class]
                           configuration:^(TyphoonDefinition *definition) {
-                              [definition useInitializer:@selector(monitorWithIndexers:changeProviders:stateStorage:)
+                              [definition useInitializer:@selector(monitorWithIndexers:changeProviders:stateStorage:queueFactory:)
                                               parameters:^(TyphoonMethod *initializer) {
                                                   [initializer injectParameterWith:@[
                                                                                      [self eventObjectIndexer]
                                                                                      ]];
                                                   [initializer injectParameterWith:@[[self eventChangeProvider]]];
                                                   [initializer injectParameterWith:[self indexerStateStorage]];
+                                                  [initializer injectParameterWith:[self indexerMonitorOperationQueueFactory]];
                                               }];
                           }];
 }
 
 - (IndexerStateStorage *)indexerStateStorage {
     return [TyphoonDefinition withClass:[IndexerStateStorage class]];
+}
+
+- (IndexerMonitorOperationQueueFactory *)indexerMonitorOperationQueueFactory {
+    return [TyphoonDefinition withClass:[IndexerMonitorOperationQueueFactory class]];
 }
 
 #pragma mark - Indexers

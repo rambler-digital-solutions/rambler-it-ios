@@ -26,6 +26,7 @@
 #import "IndexTransaction.h"
 #import "IndexTransactionBatch.h"
 #import "IndexerStateStorage.h"
+#import "IndexerMonitorOperationQueueFactory.h"
 
 #import "EXTScope.h"
 
@@ -34,6 +35,8 @@
 @property (nonatomic, strong) NSArray *indexers;
 @property (nonatomic, strong) NSArray *changeProviders;
 @property (nonatomic, strong) IndexerStateStorage *stateStorage;
+@property (nonatomic, strong) IndexerMonitorOperationQueueFactory *queueFactory;
+@property (nonatomic, strong) NSOperationQueue *operationQueue;
 
 @end
 
@@ -43,31 +46,39 @@
 
 - (instancetype)initWithIndexers:(NSArray<id<ObjectIndexer>> *)indexers
                  changeProviders:(NSArray<id<ChangeProvider>> *)changeProviders
-                    stateStorage:(IndexerStateStorage *)stateStorage {
+                    stateStorage:(IndexerStateStorage *)stateStorage
+                    queueFactory:(IndexerMonitorOperationQueueFactory *)queueFactory {
     self = [super init];
     if (self) {
         _indexers = indexers;
         _changeProviders = changeProviders;
         _stateStorage = stateStorage;
-        
-        for (id<ChangeProvider> changeProvider in _changeProviders) {
-            changeProvider.delegate = self;
-        }
+        _queueFactory = queueFactory;
     }
     return self;
 }
 
 + (instancetype)monitorWithIndexers:(NSArray <id<ObjectIndexer>> *)indexers
                     changeProviders:(NSArray <id<ChangeProvider>> *)changeProviders
-                       stateStorage:(IndexerStateStorage *)stateStorage {
+                       stateStorage:(IndexerStateStorage *)stateStorage
+                       queueFactory:(IndexerMonitorOperationQueueFactory *)queueFactory {
     return [[self alloc] initWithIndexers:indexers
                           changeProviders:changeProviders
-                             stateStorage:stateStorage];
+                             stateStorage:stateStorage
+                             queueFactory:queueFactory];
 }
 
 #pragma mark - Public methods
 
 - (void)startMonitoring {
+    for (id<ChangeProvider> changeProvider in _changeProviders) {
+        changeProvider.delegate = self;
+    }
+    
+    if (!self.operationQueue) {
+        self.operationQueue = [self.queueFactory createIndexerOperationQueue];
+    }
+    
     for (id<ChangeProvider> changeProvider in self.changeProviders) {
         [changeProvider startMonitoring];
     }
@@ -78,6 +89,7 @@
     for (id<ChangeProvider> changeProvider in self.changeProviders) {
         [changeProvider stopMonitoring];
     }
+    [self.operationQueue cancelAllOperations];
 }
 
 #pragma mark - <ChangeProviderDelegate>
@@ -132,7 +144,7 @@
                                                   [self.stateStorage removeProcessedBatch:batch];
                                                   [self processIndexing];
                                               }];
-    [indexOperation start];
+    [self.operationQueue addOperation:indexOperation];
 }
 
 - (id<ObjectIndexer>)obtainIndexerForObjectType:(NSString *)objectType {
