@@ -33,7 +33,7 @@
 
 static NSString *const kPresentationImageName = @"ic-presentation";
 static NSString *const kArticleImageName = @"ic-article";
-static NSString *const kCodeGithubImageName = @"";
+static NSString *const kCodeGithubImageName = @"ic-github";
 
 @interface LectureDataDisplayManager ()
 
