@@ -13,9 +13,7 @@
 #import "SocialContactsConfigurator.h"
 #import "SpeakerInfoSectionHeaderCellObject.h"
 #import "SpeakerPlainObject.h"
-
-static NSString *const kSocialNetworksSectionName = @"Контакты";
-static NSString *const kWebsiteSectionName = @"Веб-сайт";
+#import "LocalizedStrings.h"
 
 @implementation SpeakerInfoCellObjectsBuilder
 
@@ -49,7 +47,7 @@ static NSString *const kWebsiteSectionName = @"Веб-сайт";
 
 - (NSArray *)buildWebsiteCellObjectsWithAccount:(SocialNetworkAccountPlainObject *)account {
     NSMutableArray *cellObjects = [NSMutableArray new];
-    SpeakerInfoSectionHeaderCellObject *headerCellObject = [SpeakerInfoSectionHeaderCellObject objectWithText:kWebsiteSectionName];
+    SpeakerInfoSectionHeaderCellObject *headerCellObject = [SpeakerInfoSectionHeaderCellObject objectWithText:RCLocalize(kSpeakerInfoWebsiteSectionName)];
     [cellObjects addObject:headerCellObject];
     
     NSString *image = [self.configurator configureImageForSocialAccount:account];
@@ -65,7 +63,7 @@ static NSString *const kWebsiteSectionName = @"Веб-сайт";
 - (NSArray *)buildSocialContactsCellObjectsWithAccounts:(NSArray *)socialAccounts {
     
     NSMutableArray *cellObjects = [NSMutableArray new];
-    SpeakerInfoSectionHeaderCellObject *cellObject = [SpeakerInfoSectionHeaderCellObject objectWithText:kSocialNetworksSectionName];
+    SpeakerInfoSectionHeaderCellObject *cellObject = [SpeakerInfoSectionHeaderCellObject objectWithText:RCLocalize(kSpeakerInfoSocialNetworksSectionName)];
     [cellObjects addObject:cellObject];
     
     for (SocialNetworkAccountPlainObject *account in socialAccounts) {

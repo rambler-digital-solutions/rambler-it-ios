@@ -1,0 +1,14 @@
+//
+//  Conferences-Prefix.pch
+//  Conferences
+//
+//  Created by Vasyura Anastasiya on 05/08/16.
+//  Copyright © 2016 Rambler. All rights reserved.
+//
+
+#ifndef Conferences_Prefix_pch
+#define Conferences_Prefix_pch
+
+#define RCLocalize(x) NSLocalizedString(x, nil)
+
+#endif /* Conferences_Prefix_pch */

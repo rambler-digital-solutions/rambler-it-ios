@@ -9,6 +9,7 @@
 #import "SocialContactsConfigurator.h"
 #import "SocialNetworkAccountPlainObject.h"
 #import "SocialNetworkType.h"
+#import "LocalizedStrings.h"
 
 @implementation SocialContactsConfigurator
 
@@ -43,13 +44,13 @@
 - (NSDictionary *)socialNetworkNameWithAccount:(SocialNetworkAccountPlainObject *)account {
     return @{
              @(SocialNetworkUndefinedType) : account.profileLink,
-             @(SocialNetworkFacebookType) : @"Facebook",
-             @(SocialNetworkTwitterType) : @"Twitter",
-             @(SocialNetworkGitHubType) : @"Github",
-             @(SocialNetworkLinkedInType) : @"LinkedIn",
-             @(SocialNetworkVkontakteType) : @"Vkontakte",
+             @(SocialNetworkFacebookType) : RCLocalize(kSpeakInfoFacebookAccountTitle),
+             @(SocialNetworkTwitterType) : RCLocalize(kSpeakInfoTwitterAccountTitle),
+             @(SocialNetworkGitHubType) : RCLocalize(kSpeakInfoGithubAccountTitle),
+             @(SocialNetworkLinkedInType) : RCLocalize(kSpeakInfoLinkedInAccountTitle),
+             @(SocialNetworkVkontakteType) : RCLocalize(kSpeakInfoVkontakteAccountTitle),
              @(SocialNetworkEmailType) : account.profileLink,
-             @(SocialNetworkInstagramType) : @"Instagram",
+             @(SocialNetworkInstagramType) : RCLocalize(kSpeakInfoInstagramAccountTitle),
              @(SocialNetworkWebsiteType) : account.profileLink
              };
 }

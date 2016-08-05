@@ -45,6 +45,9 @@ static NSString *const kBackButtonName = @"ic-back";
 - (void)navigationController:(UINavigationController *)navigationController
       willShowViewController:(UIViewController *)viewController
                     animated:(BOOL)animated {
+    if (self.viewControllers.count < 2) {
+        return;
+    }
     UIImage *backButton = [UIImage imageNamed:kBackButtonName];
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithImage:backButton
                                                                  style:UIBarButtonItemStylePlain

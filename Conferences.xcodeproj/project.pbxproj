@@ -517,6 +517,7 @@
 		2B4F201F1D53273100C9891E /* SpeakerInfoSectionHeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerInfoSectionHeaderTableViewCell.h; sourceTree = "<group>"; };
 		2B4F20201D53273100C9891E /* SpeakerInfoSectionHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerInfoSectionHeaderTableViewCell.m; sourceTree = "<group>"; };
 		2B4F20211D53273100C9891E /* SpeakerInfoSectionHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeakerInfoSectionHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		2B4F20261D54AD6E00C9891E /* Conferences-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Conferences-Prefix.pch"; sourceTree = "<group>"; };
 		2BDDAB521D363D34007FD547 /* ROSPonsomizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ROSPonsomizer.h; sourceTree = "<group>"; };
 		2BDDAB531D363D34007FD547 /* ROSPonsomizerImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ROSPonsomizerImplementation.h; sourceTree = "<group>"; };
 		2BDDAB541D363D34007FD547 /* ROSPonsomizerImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ROSPonsomizerImplementation.m; sourceTree = "<group>"; };
@@ -3693,6 +3694,7 @@
 				63F54D911BC5A79900DB1746 /* EXTScope */,
 				63FDCE041BBDBA2A00A43B60 /* Info.plist */,
 				63FDCE051BBDBA2A00A43B60 /* main.m */,
+				2B4F20261D54AD6E00C9891E /* Conferences-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			path = "conferences/Supporting Files";
@@ -6046,6 +6048,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Conferences/Supporting Files/Conferences-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -6116,6 +6119,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = "Conferences/Supporting Files/Conferences-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -6157,6 +6161,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Conferences/Supporting Files/Conferences-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
