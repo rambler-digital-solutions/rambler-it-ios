@@ -321,6 +321,7 @@
 		66E9999D1D54B31300161D98 /* TagServicePredicateBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E9999B1D54B31300161D98 /* TagServicePredicateBuilder.m */; };
 		66E999A31D54B40500161D98 /* NITyphoonCellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E999A01D54B40500161D98 /* NITyphoonCellFactory.m */; };
 		66E999A71D54B50500161D98 /* ContentSizeObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E999A61D54B50500161D98 /* ContentSizeObserver.m */; };
+		66EE4D2B1D54BCDF0011F94A /* CollectionViewAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EE4D2A1D54BCDF0011F94A /* CollectionViewAnimator.m */; };
 		9F0A6C1D1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */; };
 		9F0A6C2E1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C2D1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m */; };
 		9F0A84C31BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A84C21BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m */; };
@@ -1048,6 +1049,8 @@
 		66E999A21D54B40500161D98 /* TableViewCellAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TableViewCellAssembly.h; path = NITyphoonCellFactory/TableViewCellAssembly.h; sourceTree = "<group>"; };
 		66E999A51D54B50500161D98 /* ContentSizeObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContentSizeObserver.h; path = ContentSizeObserver/ContentSizeObserver.h; sourceTree = "<group>"; };
 		66E999A61D54B50500161D98 /* ContentSizeObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContentSizeObserver.m; path = ContentSizeObserver/ContentSizeObserver.m; sourceTree = "<group>"; };
+		66EE4D291D54BCDF0011F94A /* CollectionViewAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CollectionViewAnimator.h; path = CollectionViewAnimator/CollectionViewAnimator.h; sourceTree = "<group>"; };
+		66EE4D2A1D54BCDF0011F94A /* CollectionViewAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CollectionViewAnimator.m; path = CollectionViewAnimator/CollectionViewAnimator.m; sourceTree = "<group>"; };
 		84D2CBEF6E088EFC9A139E49 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9F0A6C1B1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CompoundOperationBuilderConfig.h; path = OperationBuilders/CompoundOperationBuilderConfig/CompoundOperationBuilderConfig.h; sourceTree = "<group>"; };
 		9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CompoundOperationBuilderConfig.m; path = OperationBuilders/CompoundOperationBuilderConfig/CompoundOperationBuilderConfig.m; sourceTree = "<group>"; };
@@ -1461,6 +1464,7 @@
 		63136F941BDCDB2600994356 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				66EE4D281D54BCD70011F94A /* CollectionViewAnimator */,
 				66E999A41D54B4FC00161D98 /* ContentSizeObserver */,
 				66E9999E1D54B3FD00161D98 /* NITyphoonCellFactory */,
 				3784462C1D4E06440016121E /* NavigationController */,
@@ -4195,6 +4199,15 @@
 			name = ContentSizeObserver;
 			sourceTree = "<group>";
 		};
+		66EE4D281D54BCD70011F94A /* CollectionViewAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				66EE4D291D54BCDF0011F94A /* CollectionViewAnimator.h */,
+				66EE4D2A1D54BCDF0011F94A /* CollectionViewAnimator.m */,
+			);
+			name = CollectionViewAnimator;
+			sourceTree = "<group>";
+		};
 		9879306505819DD768BE2239 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -6092,6 +6105,7 @@
 				2B2064801D3F9CE900246C8D /* _EventPlainObject.m in Sources */,
 				63EF15C01BC461DD00480CAF /* PushNotificationServiceImplementation.m in Sources */,
 				63F613B51CB10FC80002AEF0 /* NearestAnnouncementTableHeaderView.m in Sources */,
+				66EE4D2B1D54BCDF0011F94A /* CollectionViewAnimator.m in Sources */,
 				63F613B31CB10FC80002AEF0 /* AnnouncementListTableViewCell.m in Sources */,
 				9F8E5F741BC255AA00DC10DB /* RequestSignersAssembly.m in Sources */,
 				66E9995D1D54B03300161D98 /* TagTextFilter.m in Sources */,

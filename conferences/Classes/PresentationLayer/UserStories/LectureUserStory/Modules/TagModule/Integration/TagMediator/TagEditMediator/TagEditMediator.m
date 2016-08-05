@@ -52,11 +52,11 @@
 - (void)didTapAddButton {
     [self.tagInput hideAddButton];
     [self.output showChooseTagModule];
-    [self.tagChooseInput showModule];
+//    [self.tagChooseInput showModule];
 }
 
 - (void)didRemoveTagWithName:(NSString *)name {
-    [self.tagChooseInput invalidateData];
+//    [self.tagChooseInput invalidateData];
 }
 
 #pragma mark - Методы TagMediatorInput
@@ -96,10 +96,10 @@
         return;
     }
 
-    TagChooseModuleConfig *moduleConfig = [[TagChooseModuleConfig alloc] initWithEditedObjectDescriptor:self.editedObjectDescriptor
-                                                                                suggestObjectDescriptor:self.suggestObjectDescriptor];
-    [self.tagChooseInput configureModuleWithOutputModuleConfig:moduleConfig
-                                                  moduleOutput:self];
+//    TagChooseModuleConfig *moduleConfig = [[TagChooseModuleConfig alloc] initWithEditedObjectDescriptor:self.editedObjectDescriptor
+//                                                                                suggestObjectDescriptor:self.suggestObjectDescriptor];
+//    [self.tagChooseInput configureModuleWithOutputModuleConfig:moduleConfig
+//                                                  moduleOutput:self];
 }
 
 @end

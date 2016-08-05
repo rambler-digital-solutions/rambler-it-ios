@@ -7,12 +7,11 @@
 //
 
 #import "TagServiceImplementation.h"
-#import "PostModelObject.h"
 #import "TagModelObject.h"
-#import "UserModelObject.h"
 #import "TagServicePredicateBuilder.h"
 #import "TagObjectDescriptor.h"
-
+#import <MagicalRecord/MagicalRecord.h>
+#import "LectureModelObject.h"
 
 @implementation TagServiceImplementation
 
@@ -50,7 +49,7 @@
 
     [MagicalRecord saveWithBlockAndWait:^(NSManagedObjectContext *localContext) {
 
-        id object = [self obtainObjectWithObjectDescriptor:objectDescriptor
+        LectureModelObject *object = [self obtainObjectWithObjectDescriptor:objectDescriptor
                                                  inContext:localContext];
 
         // Проверяем, чтобы такого ката не было у объекта
@@ -81,7 +80,7 @@
 
 #pragma mark - Дополнительные методы
 
-- (NSManagedObject *)obtainObjectWithObjectDescriptor:(TagObjectDescriptor *)objectDescriptor
+- (id)obtainObjectWithObjectDescriptor:(TagObjectDescriptor *)objectDescriptor
                                             inContext:(NSManagedObjectContext *)context {
 
     NSPredicate *predicate = [self.predicateBuilder buildGetObjectPredicateFromObjectDescriptor:objectDescriptor];

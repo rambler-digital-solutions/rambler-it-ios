@@ -8,7 +8,6 @@
 
 #import "TagButtonCollectionViewCell.h"
 #import "TagButtonCollectionViewCellObject.h"
-#import "UIColor+LJPalette.h"
 
 
 @implementation TagButtonCollectionViewCell
@@ -17,7 +16,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.layer.borderColor = [UIColor lj_lightGrayColor].CGColor;
+    self.layer.borderColor = [UIColor lightGrayColor].CGColor;
 }
 
 
