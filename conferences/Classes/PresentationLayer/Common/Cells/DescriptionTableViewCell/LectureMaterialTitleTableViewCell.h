@@ -18,13 +18,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import <Nimbus/NimbusModels.h>
+#import <UIKit/UIKit.h>
+#import <NICellFactory.h>
 
-@interface TableViewCellWithTextLabelCellObject : NSObject <NICellObject>
-
-@property (strong, nonatomic, readonly) NSString *text;
-
-+ (instancetype)objectWithText:(NSString *)text;
+@interface LectureMaterialTitleTableViewCell : UITableViewCell <NICell>
 
 @end

@@ -18,39 +18,13 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "TableViewCellWithTextLabelCellObject.h"
-#import "TableViewCellWithTextLabel.h"
+#import <Foundation/Foundation.h>
+#import <Nimbus/NimbusModels.h>
 
-@interface TableViewCellWithTextLabelCellObject ()
+@interface LectureMaterialTitleTableViewCellObject : NSObject <NICellObject>
 
-@property (strong, nonatomic, readwrite) NSString *text;
+@property (strong, nonatomic, readonly) NSString *text;
 
-@end
-
-@implementation TableViewCellWithTextLabelCellObject
-
-#pragma mark - Initialization
-
-- (instancetype)initWithText:(NSString *)text {
-    self = [super init];
-    if (self) {
-        _text = text;
-    }
-    return self;
-}
-
-+ (instancetype)objectWithText:(NSString *)text {
-    return [[self alloc] initWithText:text];
-}
-
-# pragma mark - NICellObject methods
-
-- (Class)cellClass {
-    return [TableViewCellWithTextLabel class];
-}
-
-- (UINib *)cellNib {
-    return [UINib nibWithNibName:NSStringFromClass([TableViewCellWithTextLabel class]) bundle:[NSBundle mainBundle]];
-}
++ (instancetype)objectWithText:(NSString *)text;
 
 @end

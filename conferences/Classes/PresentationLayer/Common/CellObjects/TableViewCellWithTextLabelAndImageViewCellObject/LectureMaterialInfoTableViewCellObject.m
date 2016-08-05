@@ -6,17 +6,17 @@
 //  Copyright © 2016 Rambler. All rights reserved.
 //
 
-#import "TableViewCellWithTextLabelAndImageViewCellObject.h"
-#import "TableViewCellWithTextLabelAndImageView.h"
+#import "LectureMaterialInfoTableViewCellObject.h"
+#import "LectureMaterialInfoTableViewCell.h"
 
-@interface TableViewCellWithTextLabelAndImageViewCellObject ()
+@interface LectureMaterialInfoTableViewCellObject ()
 
 @property (strong, nonatomic, readwrite) UIImage *image;
 @property (strong, nonatomic, readwrite) NSString *text;
 
 @end
 
-@implementation TableViewCellWithTextLabelAndImageViewCellObject
+@implementation LectureMaterialInfoTableViewCellObject
 
 #pragma mark - Initialization
 
@@ -36,11 +36,11 @@
 # pragma mark - NICellObject methods
 
 - (Class)cellClass {
-    return [TableViewCellWithTextLabelAndImageView class];
+    return [LectureMaterialInfoTableViewCell class];
 }
 
 - (UINib *)cellNib {
-    return [UINib nibWithNibName:NSStringFromClass([TableViewCellWithTextLabelAndImageView class]) bundle:[NSBundle mainBundle]];
+    return [UINib nibWithNibName:NSStringFromClass([LectureMaterialInfoTableViewCell class]) bundle:[NSBundle mainBundle]];
 }
 
 @end

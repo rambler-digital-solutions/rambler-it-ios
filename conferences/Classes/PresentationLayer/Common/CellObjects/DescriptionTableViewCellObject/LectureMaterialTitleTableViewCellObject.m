@@ -18,9 +18,39 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
-#import <NICellFactory.h>
+#import "LectureMaterialTitleTableViewCellObject.h"
+#import "LectureMaterialTitleTableViewCell.h"
 
-@interface TableViewCellWithTextLabel : UITableViewCell <NICell>
+@interface LectureMaterialTitleTableViewCellObject ()
+
+@property (strong, nonatomic, readwrite) NSString *text;
+
+@end
+
+@implementation LectureMaterialTitleTableViewCellObject
+
+#pragma mark - Initialization
+
+- (instancetype)initWithText:(NSString *)text {
+    self = [super init];
+    if (self) {
+        _text = text;
+    }
+    return self;
+}
+
++ (instancetype)objectWithText:(NSString *)text {
+    return [[self alloc] initWithText:text];
+}
+
+# pragma mark - NICellObject methods
+
+- (Class)cellClass {
+    return [LectureMaterialTitleTableViewCell class];
+}
+
+- (UINib *)cellNib {
+    return [UINib nibWithNibName:NSStringFromClass([LectureMaterialTitleTableViewCell class]) bundle:[NSBundle mainBundle]];
+}
 
 @end

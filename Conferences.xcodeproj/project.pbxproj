@@ -85,9 +85,9 @@
 		631808431C482B1300A61E7D /* SpeakerShortInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6318083C1C482B1300A61E7D /* SpeakerShortInfoView.m */; };
 		631808451C48324000A61E7D /* SpeakerShortInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 631808441C48324000A61E7D /* SpeakerShortInfoView.xib */; };
 		631808631C4A66FA00A61E7D /* LocalizedStrings.m in Sources */ = {isa = PBXBuildFile; fileRef = 631808621C4A66FA00A61E7D /* LocalizedStrings.m */; };
-		631808691C4A870C00A61E7D /* TableViewCellWithTextLabelAndImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 631808671C4A870C00A61E7D /* TableViewCellWithTextLabelAndImageView.m */; };
-		6318086A1C4A870C00A61E7D /* TableViewCellWithTextLabelAndImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 631808681C4A870C00A61E7D /* TableViewCellWithTextLabelAndImageView.xib */; };
-		6318086D1C4A872600A61E7D /* TableViewCellWithTextLabelAndImageViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6318086C1C4A872600A61E7D /* TableViewCellWithTextLabelAndImageViewCellObject.m */; };
+		631808691C4A870C00A61E7D /* LectureMaterialInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 631808671C4A870C00A61E7D /* LectureMaterialInfoTableViewCell.m */; };
+		6318086A1C4A870C00A61E7D /* LectureMaterialInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 631808681C4A870C00A61E7D /* LectureMaterialInfoTableViewCell.xib */; };
+		6318086D1C4A872600A61E7D /* LectureMaterialInfoTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6318086C1C4A872600A61E7D /* LectureMaterialInfoTableViewCellObject.m */; };
 		631CBA381C0092C100E3EBA8 /* ApplicationConfiguratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA371C0092C100E3EBA8 /* ApplicationConfiguratorTests.m */; };
 		631CBA3B1C00935300E3EBA8 /* EventServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA3A1C00935300E3EBA8 /* EventServiceTests.m */; };
 		631CBA721C020CCD00E3EBA8 /* AnnouncementListModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA691C020CCD00E3EBA8 /* AnnouncementListModuleAssemblyTests.m */; };
@@ -142,9 +142,9 @@
 		63F403AC1BD0CD460086D030 /* ResponseDeserializersAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F403AB1BD0CD460086D030 /* ResponseDeserializersAssemblyTests.m */; };
 		63F403AF1BD0D0690086D030 /* ResponseMappersAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F403AE1BD0D0690086D030 /* ResponseMappersAssemblyTests.m */; };
 		63F403B21BD0D4B40086D030 /* ResponseValidatorsAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F403B11BD0D4B40086D030 /* ResponseValidatorsAssemblyTests.m */; };
-		63F51CAC1C42AD2100AFB9D2 /* TableViewCellWithTextLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F51CAA1C42AD2100AFB9D2 /* TableViewCellWithTextLabel.m */; };
-		63F51CAD1C42AD2100AFB9D2 /* TableViewCellWithTextLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63F51CAB1C42AD2100AFB9D2 /* TableViewCellWithTextLabel.xib */; };
-		63F51CB01C42AD3A00AFB9D2 /* TableViewCellWithTextLabelCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F51CAF1C42AD3A00AFB9D2 /* TableViewCellWithTextLabelCellObject.m */; };
+		63F51CAC1C42AD2100AFB9D2 /* LectureMaterialTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F51CAA1C42AD2100AFB9D2 /* LectureMaterialTitleTableViewCell.m */; };
+		63F51CAD1C42AD2100AFB9D2 /* LectureMaterialTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63F51CAB1C42AD2100AFB9D2 /* LectureMaterialTitleTableViewCell.xib */; };
+		63F51CB01C42AD3A00AFB9D2 /* LectureMaterialTitleTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F51CAF1C42AD3A00AFB9D2 /* LectureMaterialTitleTableViewCellObject.m */; };
 		63F54D951BC5A79900DB1746 /* EXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F54D931BC5A79900DB1746 /* EXTScope.m */; };
 		63F54D9B1BC5AB3C00DB1746 /* ServiceComponentsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F54D9A1BC5AB3C00DB1746 /* ServiceComponentsAssembly.m */; };
 		63F54DA01BC5BB2800DB1746 /* ThirdPartiesConfiguratorImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F54D9F1BC5BB2800DB1746 /* ThirdPartiesConfiguratorImplementation.m */; };
@@ -536,11 +536,11 @@
 		631808481C483DE700A61E7D /* SpeakerShortInfoViewSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpeakerShortInfoViewSize.h; sourceTree = "<group>"; };
 		631808611C4A66FA00A61E7D /* LocalizedStrings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalizedStrings.h; sourceTree = "<group>"; };
 		631808621C4A66FA00A61E7D /* LocalizedStrings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalizedStrings.m; sourceTree = "<group>"; };
-		631808661C4A870C00A61E7D /* TableViewCellWithTextLabelAndImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCellWithTextLabelAndImageView.h; sourceTree = "<group>"; };
-		631808671C4A870C00A61E7D /* TableViewCellWithTextLabelAndImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCellWithTextLabelAndImageView.m; sourceTree = "<group>"; };
-		631808681C4A870C00A61E7D /* TableViewCellWithTextLabelAndImageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCellWithTextLabelAndImageView.xib; sourceTree = "<group>"; };
-		6318086B1C4A872600A61E7D /* TableViewCellWithTextLabelAndImageViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCellWithTextLabelAndImageViewCellObject.h; sourceTree = "<group>"; };
-		6318086C1C4A872600A61E7D /* TableViewCellWithTextLabelAndImageViewCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCellWithTextLabelAndImageViewCellObject.m; sourceTree = "<group>"; };
+		631808661C4A870C00A61E7D /* LectureMaterialInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectureMaterialInfoTableViewCell.h; sourceTree = "<group>"; };
+		631808671C4A870C00A61E7D /* LectureMaterialInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LectureMaterialInfoTableViewCell.m; sourceTree = "<group>"; };
+		631808681C4A870C00A61E7D /* LectureMaterialInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LectureMaterialInfoTableViewCell.xib; sourceTree = "<group>"; };
+		6318086B1C4A872600A61E7D /* LectureMaterialInfoTableViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectureMaterialInfoTableViewCellObject.h; sourceTree = "<group>"; };
+		6318086C1C4A872600A61E7D /* LectureMaterialInfoTableViewCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LectureMaterialInfoTableViewCellObject.m; sourceTree = "<group>"; };
 		631CBA371C0092C100E3EBA8 /* ApplicationConfiguratorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationConfiguratorTests.m; sourceTree = "<group>"; };
 		631CBA3A1C00935300E3EBA8 /* EventServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventServiceTests.m; sourceTree = "<group>"; };
 		631CBA681C020CCD00E3EBA8 /* AnnouncementListModuleAssembly_Testable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnouncementListModuleAssembly_Testable.h; sourceTree = "<group>"; };
@@ -661,11 +661,11 @@
 		63F403B01BD0D1070086D030 /* ResponseMappersAssembly_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResponseMappersAssembly_Testable.h; sourceTree = "<group>"; };
 		63F403B11BD0D4B40086D030 /* ResponseValidatorsAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseValidatorsAssemblyTests.m; sourceTree = "<group>"; };
 		63F403B31BD0D52A0086D030 /* ResponseValidatorsAssembly_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResponseValidatorsAssembly_Testable.h; sourceTree = "<group>"; };
-		63F51CA91C42AD2100AFB9D2 /* TableViewCellWithTextLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCellWithTextLabel.h; sourceTree = "<group>"; };
-		63F51CAA1C42AD2100AFB9D2 /* TableViewCellWithTextLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCellWithTextLabel.m; sourceTree = "<group>"; };
-		63F51CAB1C42AD2100AFB9D2 /* TableViewCellWithTextLabel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCellWithTextLabel.xib; sourceTree = "<group>"; };
-		63F51CAE1C42AD3A00AFB9D2 /* TableViewCellWithTextLabelCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCellWithTextLabelCellObject.h; sourceTree = "<group>"; };
-		63F51CAF1C42AD3A00AFB9D2 /* TableViewCellWithTextLabelCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCellWithTextLabelCellObject.m; sourceTree = "<group>"; };
+		63F51CA91C42AD2100AFB9D2 /* LectureMaterialTitleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectureMaterialTitleTableViewCell.h; sourceTree = "<group>"; };
+		63F51CAA1C42AD2100AFB9D2 /* LectureMaterialTitleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LectureMaterialTitleTableViewCell.m; sourceTree = "<group>"; };
+		63F51CAB1C42AD2100AFB9D2 /* LectureMaterialTitleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LectureMaterialTitleTableViewCell.xib; sourceTree = "<group>"; };
+		63F51CAE1C42AD3A00AFB9D2 /* LectureMaterialTitleTableViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectureMaterialTitleTableViewCellObject.h; sourceTree = "<group>"; };
+		63F51CAF1C42AD3A00AFB9D2 /* LectureMaterialTitleTableViewCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LectureMaterialTitleTableViewCellObject.m; sourceTree = "<group>"; };
 		63F54D921BC5A79900DB1746 /* EXTScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTScope.h; sourceTree = "<group>"; };
 		63F54D931BC5A79900DB1746 /* EXTScope.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTScope.m; sourceTree = "<group>"; };
 		63F54D941BC5A79900DB1746 /* metamacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = metamacros.h; sourceTree = "<group>"; };
@@ -1511,23 +1511,25 @@
 			path = StringConstants;
 			sourceTree = "<group>";
 		};
-		631808641C4A86CA00A61E7D /* TableViewCellWithTextLabelAndImageViewCellObject */ = {
+		631808641C4A86CA00A61E7D /* LectureMaterialInfoTableViewCellObject */ = {
 			isa = PBXGroup;
 			children = (
-				6318086B1C4A872600A61E7D /* TableViewCellWithTextLabelAndImageViewCellObject.h */,
-				6318086C1C4A872600A61E7D /* TableViewCellWithTextLabelAndImageViewCellObject.m */,
+				6318086B1C4A872600A61E7D /* LectureMaterialInfoTableViewCellObject.h */,
+				6318086C1C4A872600A61E7D /* LectureMaterialInfoTableViewCellObject.m */,
 			);
-			path = TableViewCellWithTextLabelAndImageViewCellObject;
+			name = LectureMaterialInfoTableViewCellObject;
+			path = ../../../../../../Common/CellObjects/TableViewCellWithTextLabelAndImageViewCellObject;
 			sourceTree = "<group>";
 		};
-		631808651C4A86E200A61E7D /* TableViewCellWithTextLabelAndImageView */ = {
+		631808651C4A86E200A61E7D /* LectureMaterialInfoTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				631808661C4A870C00A61E7D /* TableViewCellWithTextLabelAndImageView.h */,
-				631808671C4A870C00A61E7D /* TableViewCellWithTextLabelAndImageView.m */,
-				631808681C4A870C00A61E7D /* TableViewCellWithTextLabelAndImageView.xib */,
+				631808661C4A870C00A61E7D /* LectureMaterialInfoTableViewCell.h */,
+				631808671C4A870C00A61E7D /* LectureMaterialInfoTableViewCell.m */,
+				631808681C4A870C00A61E7D /* LectureMaterialInfoTableViewCell.xib */,
 			);
-			path = TableViewCellWithTextLabelAndImageView;
+			name = LectureMaterialInfoTableViewCell;
+			path = ../../../../../../Common/Cells/TableViewCellWithTextLabelAndImageView;
 			sourceTree = "<group>";
 		};
 		631CBA361C0092C100E3EBA8 /* ApplicationConfiguratorTests */ = {
@@ -2316,20 +2318,18 @@
 			children = (
 				6315BA111C9EC32300999877 /* VideoRecordTableViewCellObject */,
 				6315BA071C9EC2A200999877 /* TableViewSectionHeaderCellObject */,
-				631808641C4A86CA00A61E7D /* TableViewCellWithTextLabelAndImageViewCellObject */,
-				63F51CA61C42ACE600AFB9D2 /* TableViewCellWithTextLabelCellObject */,
 			);
 			path = CellObjects;
 			sourceTree = "<group>";
 		};
-		63F51CA61C42ACE600AFB9D2 /* TableViewCellWithTextLabelCellObject */ = {
+		63F51CA61C42ACE600AFB9D2 /* LectureMaterialTitleTableViewCellObject */ = {
 			isa = PBXGroup;
 			children = (
-				63F51CAE1C42AD3A00AFB9D2 /* TableViewCellWithTextLabelCellObject.h */,
-				63F51CAF1C42AD3A00AFB9D2 /* TableViewCellWithTextLabelCellObject.m */,
+				63F51CAE1C42AD3A00AFB9D2 /* LectureMaterialTitleTableViewCellObject.h */,
+				63F51CAF1C42AD3A00AFB9D2 /* LectureMaterialTitleTableViewCellObject.m */,
 			);
-			name = TableViewCellWithTextLabelCellObject;
-			path = DescriptionTableViewCellObject;
+			name = LectureMaterialTitleTableViewCellObject;
+			path = ../../../../../../Common/CellObjects/DescriptionTableViewCellObject;
 			sourceTree = "<group>";
 		};
 		63F51CA71C42ACE600AFB9D2 /* Cells */ = {
@@ -2337,21 +2337,19 @@
 			children = (
 				6315BA011C9EC23600999877 /* VideoRecordTableViewCell */,
 				6315BA0B1C9EC2D400999877 /* TableViewSectionHeaderCell */,
-				631808651C4A86E200A61E7D /* TableViewCellWithTextLabelAndImageView */,
-				63F51CA81C42ACE600AFB9D2 /* TableViewCellWithTextLabel */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		63F51CA81C42ACE600AFB9D2 /* TableViewCellWithTextLabel */ = {
+		63F51CA81C42ACE600AFB9D2 /* LectureMaterialTitleTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				63F51CA91C42AD2100AFB9D2 /* TableViewCellWithTextLabel.h */,
-				63F51CAA1C42AD2100AFB9D2 /* TableViewCellWithTextLabel.m */,
-				63F51CAB1C42AD2100AFB9D2 /* TableViewCellWithTextLabel.xib */,
+				63F51CA91C42AD2100AFB9D2 /* LectureMaterialTitleTableViewCell.h */,
+				63F51CAA1C42AD2100AFB9D2 /* LectureMaterialTitleTableViewCell.m */,
+				63F51CAB1C42AD2100AFB9D2 /* LectureMaterialTitleTableViewCell.xib */,
 			);
-			name = TableViewCellWithTextLabel;
-			path = DescriptionTableViewCell;
+			name = LectureMaterialTitleTableViewCell;
+			path = ../../../../../../Common/Cells/DescriptionTableViewCell;
 			sourceTree = "<group>";
 		};
 		63F54D911BC5A79900DB1746 /* EXTScope */ = {
@@ -3084,6 +3082,8 @@
 		63F613111CB00A220002AEF0 /* CellObjects */ = {
 			isa = PBXGroup;
 			children = (
+				631808641C4A86CA00A61E7D /* LectureMaterialInfoTableViewCellObject */,
+				63F51CA61C42ACE600AFB9D2 /* LectureMaterialTitleTableViewCellObject */,
 				63F613121CB00A220002AEF0 /* LectureDescriptionTableViewCellObject */,
 			);
 			path = CellObjects;
@@ -3101,6 +3101,8 @@
 		63F613151CB00A220002AEF0 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				631808651C4A86E200A61E7D /* LectureMaterialInfoTableViewCell */,
+				63F51CA81C42ACE600AFB9D2 /* LectureMaterialTitleTableViewCell */,
 				63F613161CB00A220002AEF0 /* LectureDescriptionTableViewCell */,
 			);
 			path = Cells;
@@ -5393,7 +5395,7 @@
 				6315BA101C9EC2D400999877 /* TableViewSectionHeaderCell.xib in Resources */,
 				636F8DFF1BCB91A900552B91 /* RamblerLocation.storyboard in Resources */,
 				6670503D1D4615A100DD9D6E /* ReportLectureTableViewCell.xib in Resources */,
-				6318086A1C4A870C00A61E7D /* TableViewCellWithTextLabelAndImageView.xib in Resources */,
+				6318086A1C4A870C00A61E7D /* LectureMaterialInfoTableViewCell.xib in Resources */,
 				63F613731CB00A220002AEF0 /* EventInfoTableViewCell.xib in Resources */,
 				2B429A4F1D460CF4004C005F /* NearestAnnouncementTableHeaderView.xib in Resources */,
 				636B64121BBFE2C20053E38F /* Main.storyboard in Resources */,
@@ -5419,7 +5421,7 @@
 				63F6137B1CB00A220002AEF0 /* PreviousLectureSectionHeaderTableViewCell.xib in Resources */,
 				63F613791CB00A220002AEF0 /* PreviousEventTableViewCell.xib in Resources */,
 				9F4077851D2BF6A700D47EF6 /* directions.plist in Resources */,
-				63F51CAD1C42AD2100AFB9D2 /* TableViewCellWithTextLabel.xib in Resources */,
+				63F51CAD1C42AD2100AFB9D2 /* LectureMaterialTitleTableViewCell.xib in Resources */,
 				63ECC4191CA8373400439A01 /* Localizable.strings in Resources */,
 				63F613891CB00A220002AEF0 /* Event.storyboard in Resources */,
 				667050381D46159800DD9D6E /* ReportSpeakerTableViewCell.xib in Resources */,
@@ -5585,7 +5587,7 @@
 				2B2064781D3F9CE900246C8D /* _LectureMaterialModelObject.m in Sources */,
 				2B429A7C1D50987E004C005F /* MetaEventServiceImpementation.m in Sources */,
 				6670500B1D4613F800DD9D6E /* ReportsSearchAssembly.m in Sources */,
-				631808691C4A870C00A61E7D /* TableViewCellWithTextLabelAndImageView.m in Sources */,
+				631808691C4A870C00A61E7D /* LectureMaterialInfoTableViewCell.m in Sources */,
 				63F613721CB00A220002AEF0 /* EventInfoTableViewCell.m in Sources */,
 				2B429A571D461E29004C005F /* AnnounceViewModelBuilder.m in Sources */,
 				63F613671CB00A220002AEF0 /* LectureInfoTableViewCellObject.m in Sources */,
@@ -5638,7 +5640,7 @@
 				2B2064921D3F9CE900246C8D /* EventPlainObject.m in Sources */,
 				9F4077B41D2E38AB00D47EF6 /* DirectionCellObjectFactory.m in Sources */,
 				667050481D4615B600DD9D6E /* ReportLectureTableViewCellObject.m in Sources */,
-				6318086D1C4A872600A61E7D /* TableViewCellWithTextLabelAndImageViewCellObject.m in Sources */,
+				6318086D1C4A872600A61E7D /* LectureMaterialInfoTableViewCellObject.m in Sources */,
 				2B2064901D3F9CE900246C8D /* TagModelObject.m in Sources */,
 				63F6135E1CB00A220002AEF0 /* EventHeaderView.m in Sources */,
 				9FF74FFA1D26C448000D208D /* EventListQuery.m in Sources */,
@@ -5733,7 +5735,7 @@
 				63F6135A1CB00A220002AEF0 /* EventHeaderModuleAssembly.m in Sources */,
 				2B2064911D3F9CE900246C8D /* TechModelObject.m in Sources */,
 				9F0A84F91BC1698B006F79FB /* AsyncOperation.m in Sources */,
-				63F51CB01C42AD3A00AFB9D2 /* TableViewCellWithTextLabelCellObject.m in Sources */,
+				63F51CB01C42AD3A00AFB9D2 /* LectureMaterialTitleTableViewCellObject.m in Sources */,
 				9F0A85321BC18906006F79FB /* EventQuery.m in Sources */,
 				3784462F1D4E067A0016121E /* RCNavigationController.m in Sources */,
 				63F6136A1CB00A220002AEF0 /* PreviousLectureSectionHeaderTableViewCellObject.m in Sources */,
@@ -5787,7 +5789,7 @@
 				63F6138D1CB00A220002AEF0 /* LecturePresenterStateStorage.m in Sources */,
 				2B2064891D3F9CE900246C8D /* EventModelObject.m in Sources */,
 				2B20647F1D3F9CE900246C8D /* _TechModelObject.m in Sources */,
-				63F51CAC1C42AD2100AFB9D2 /* TableViewCellWithTextLabel.m in Sources */,
+				63F51CAC1C42AD2100AFB9D2 /* LectureMaterialTitleTableViewCell.m in Sources */,
 				9F4077A81D2C164800D47EF6 /* ResourceMapperAssembly.m in Sources */,
 				63F613881CB00A220002AEF0 /* EventViewController.m in Sources */,
 				63F613831CB00A220002AEF0 /* CurrentEventCellObjectBuilder.m in Sources */,

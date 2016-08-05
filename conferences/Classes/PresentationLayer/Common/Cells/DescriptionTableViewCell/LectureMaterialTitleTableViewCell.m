@@ -18,22 +18,22 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "TableViewCellWithTextLabel.h"
-#import "TableViewCellWithTextLabelCellObject.h"
+#import "LectureMaterialTitleTableViewCell.h"
+#import "LectureMaterialTitleTableViewCellObject.h"
 
-static CGFloat const TableViewCellWithTextLabelHeight = 34.0f;
+static CGFloat const TableViewCellWithTextLabelHeight = 44.0f;
 
-@interface TableViewCellWithTextLabel ()
+@interface LectureMaterialTitleTableViewCell ()
 
 @property (weak, nonatomic) IBOutlet UILabel *label;
 
 @end
 
-@implementation TableViewCellWithTextLabel
+@implementation LectureMaterialTitleTableViewCell
 
 #pragma mark - NICell methods
 
-- (BOOL)shouldUpdateCellWithObject:(TableViewCellWithTextLabelCellObject *)object {
+- (BOOL)shouldUpdateCellWithObject:(LectureMaterialTitleTableViewCellObject *)object {
     self.label.text = object.text;
     return YES;
 }

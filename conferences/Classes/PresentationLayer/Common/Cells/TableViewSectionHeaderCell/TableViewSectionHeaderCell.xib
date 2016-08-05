@@ -10,7 +10,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="5"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="4.5"/>
                 <autoresizingMask key="autoresizingMask"/>
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
