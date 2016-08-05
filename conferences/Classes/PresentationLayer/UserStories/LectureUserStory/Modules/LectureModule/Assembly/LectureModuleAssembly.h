@@ -21,6 +21,7 @@
 #import <Typhoon/Typhoon.h>
 #import "ModuleAssemblyBase.h"
 #import "AssemblyCollector/RamblerInitialAssembly.h"
+#import "PonsomizerAssembly.h"
 
 /**
  @author Artem Karpushin
@@ -28,6 +29,8 @@
  A TyphoonAssembly which is responsible for creating LectureModule
  */
 @interface LectureModuleAssembly : ModuleAssemblyBase <RamblerInitialAssembly>
+
+@property (strong, nonatomic) PonsomizerAssembly *ponsomizerAssembly;
 
 @end
 

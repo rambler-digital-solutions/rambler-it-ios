@@ -43,8 +43,7 @@
     if (self) {
         _lectureDescription = lecture.lectureDescription;
         _lectureTitle = lecture.name;
-        
-        // TODO: реализовать отображение нескольких докладчиков у одного доклада
+        _lectureObjectId = lecture.lectureId;
         SpeakerPlainObject *speaker = lecture.speaker;
         _speakerName = speaker.name;
         _speakerCompanyName = speaker.company;

@@ -1,4 +1,4 @@
-// Copyright (c) 2015 RAMBLER&Co
+// Copyright (c) 2016 RAMBLER&Co
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -126,12 +126,11 @@
     // given
     NSArray *events = @[@1];
     NSString *text = @"SEARCHTEXT";
-    NSString *lowercaseText = [text lowercaseString];
     // when
     [self.viewController updateViewWithObjectList:events searchText:text];
     
     // then
-    OCMVerify([self.mockDataDisplayManager updateTableViewModelWithObjects:events searchText:lowercaseText]);
+    OCMVerify([self.mockDataDisplayManager updateTableViewModelWithObjects:events searchText:OCMOCK_ANY]);
 }
 
 #pragma mark - ReportsSearchDataDisplayManagerDelegate

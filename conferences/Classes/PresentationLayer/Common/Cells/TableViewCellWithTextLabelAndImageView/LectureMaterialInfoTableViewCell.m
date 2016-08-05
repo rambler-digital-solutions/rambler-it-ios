@@ -6,23 +6,23 @@
 //  Copyright © 2016 Rambler. All rights reserved.
 //
 
-#import "TableViewCellWithTextLabelAndImageView.h"
-#import "TableViewCellWithTextLabelAndImageViewCellObject.h"
+#import "LectureMaterialInfoTableViewCell.h"
+#import "LectureMaterialInfoTableViewCellObject.h"
 
-static CGFloat const TableViewCellWithTextLabelAndImageViewHeight = 44.0f;
+static CGFloat const TableViewCellWithTextLabelAndImageViewHeight = 40.0f;
 
-@interface TableViewCellWithTextLabelAndImageView ()
+@interface LectureMaterialInfoTableViewCell ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
 @property (weak, nonatomic) IBOutlet UILabel *label;
 
 @end
 
-@implementation TableViewCellWithTextLabelAndImageView
+@implementation LectureMaterialInfoTableViewCell
 
 #pragma mark - NICell methods
 
-- (BOOL)shouldUpdateCellWithObject:(TableViewCellWithTextLabelAndImageViewCellObject *)object {
+- (BOOL)shouldUpdateCellWithObject:(LectureMaterialInfoTableViewCellObject *)object {
     self.iconImageView.image = object.image;
     self.label.text = object.text;
     

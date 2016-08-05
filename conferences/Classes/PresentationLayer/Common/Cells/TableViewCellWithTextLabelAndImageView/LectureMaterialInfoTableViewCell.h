@@ -10,6 +10,6 @@
 #import <NICellFactory.h>
 
 
-@interface TableViewCellWithTextLabelAndImageView : UITableViewCell <NICell>
+@interface LectureMaterialInfoTableViewCell : UITableViewCell <NICell>
 
 @end

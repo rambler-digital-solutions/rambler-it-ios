@@ -22,19 +22,18 @@
 #import <MagicalRecord/MagicalRecord.h>
 #import <OCMock/OCMock.h>
 
-#import "EventServiceImplementation.h"
-#import "EventListOperationFactory.h"
+#import "LectureServiceImplementation.h"
 #import "OperationScheduler.h"
 #import "CompoundOperationBase.h"
-#import "EventModelObject.h"
+#import "LectureModelObject.h"
 
-@interface EventServiceTests : XCTestCase
+@interface LectureServiceTests : XCTestCase
 
-@property (nonatomic, strong) EventServiceImplementation *eventService;
+@property (strong, nonatomic) LectureServiceImplementation *lectureService;
 
 @end
 
-@implementation EventServiceTests
+@implementation LectureServiceTests
 
 - (void)setUp {
     [super setUp];
@@ -42,34 +41,42 @@
     [MagicalRecord setDefaultModelFromClass:[self class]];
     [MagicalRecord setupCoreDataStackWithInMemoryStore];
     
-    self.eventService = [EventServiceImplementation new];
+    self.lectureService = [LectureServiceImplementation new];
 }
 
 - (void)tearDown {
     [MagicalRecord cleanUp];
     
-    self.eventService = nil;
-
+    self.lectureService = nil;
+    
     [super tearDown];
 }
 
-- (void)testSuccessUpdateEventWithPredicate {
+- (void)testSuccessUpdateLectureWithPredicate {
     // given
-    CompoundOperationBase *compoundOperation = [CompoundOperationBase new];
-    
-    id mockEventOperationFactory = OCMClassMock([EventListOperationFactory class]);
-    OCMStub([mockEventOperationFactory getEventsOperationWithQuery:nil]).andReturn(compoundOperation);
-    id <OperationScheduler> mockOperationScheduler = OCMProtocolMock(@protocol(OperationScheduler));
-    
-    self.eventService.eventOperationFactory = mockEventOperationFactory;
-    self.eventService.operationScheduler = mockOperationScheduler;
+    LectureModelObject *lecture = [LectureModelObject MR_createEntity];
+    [MagicalRecord saveWithBlockAndWait:nil];
+    NSArray *expectedLectures = @[lecture];
     
     // when
-    [self.eventService updateEventWithPredicate:OCMOCK_ANY completionBlock:nil];
+    NSArray *lectures = [self.lectureService obtainLectureWithPredicate:nil];
     
     // then
-    OCMVerify([mockOperationScheduler addOperation:compoundOperation]);
-    [mockEventOperationFactory stopMocking];
+    XCTAssertEqualObjects(expectedLectures, lectures);
+}
+
+- (void)testSuccessUpdateLectureWithObjectId {
+    // given
+    NSString *lectureId = @"0";
+    LectureModelObject *expectedLecture = [LectureModelObject MR_createEntity];
+    expectedLecture.lectureId = lectureId;
+    [MagicalRecord saveWithBlockAndWait:nil];
+    
+    // when
+    LectureModelObject *lecture = [self.lectureService obtainLectureWithLectureId:lectureId];
+    
+    // then
+    XCTAssertEqualObjects(expectedLecture, lecture);
 }
 
 @end

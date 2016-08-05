@@ -18,39 +18,28 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "TableViewCellWithTextLabelCellObject.h"
-#import "TableViewCellWithTextLabel.h"
+#import "LectureMaterialTitleTableViewCell.h"
+#import "LectureMaterialTitleTableViewCellObject.h"
 
-@interface TableViewCellWithTextLabelCellObject ()
+static CGFloat const TableViewCellWithTextLabelHeight = 44.0f;
 
-@property (strong, nonatomic, readwrite) NSString *text;
+@interface LectureMaterialTitleTableViewCell ()
+
+@property (weak, nonatomic) IBOutlet UILabel *label;
 
 @end
 
-@implementation TableViewCellWithTextLabelCellObject
+@implementation LectureMaterialTitleTableViewCell
 
-#pragma mark - Initialization
+#pragma mark - NICell methods
 
-- (instancetype)initWithText:(NSString *)text {
-    self = [super init];
-    if (self) {
-        _text = text;
-    }
-    return self;
+- (BOOL)shouldUpdateCellWithObject:(LectureMaterialTitleTableViewCellObject *)object {
+    self.label.text = object.text;
+    return YES;
 }
 
-+ (instancetype)objectWithText:(NSString *)text {
-    return [[self alloc] initWithText:text];
-}
-
-# pragma mark - NICellObject methods
-
-- (Class)cellClass {
-    return [TableViewCellWithTextLabel class];
-}
-
-- (UINib *)cellNib {
-    return [UINib nibWithNibName:NSStringFromClass([TableViewCellWithTextLabel class]) bundle:[NSBundle mainBundle]];
++ (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
+    return TableViewCellWithTextLabelHeight;
 }
 
 @end

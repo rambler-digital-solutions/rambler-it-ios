@@ -87,7 +87,7 @@
                         <rect key="frame" x="20" y="107" width="280" height="95.5"/>
                         <string key="text">Я уверен что все любят писать JSDoc☺ Он вкусный, полезный, помогает нашим IDE находить ошибки, то все любят писать JSD вообще делает жизнь лучше.</string>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>

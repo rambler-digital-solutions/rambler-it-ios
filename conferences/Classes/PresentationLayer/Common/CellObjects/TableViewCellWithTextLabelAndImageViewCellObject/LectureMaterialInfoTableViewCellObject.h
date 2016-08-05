@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <Nimbus/NimbusModels.h>
 
-@interface TableViewCellWithTextLabelAndImageViewCellObject : NSObject <NICellObject>
+@interface LectureMaterialInfoTableViewCellObject : NSObject <NICellObject>
 
 @property (strong, nonatomic, readonly) UIImage *image;
 @property (strong, nonatomic, readonly) NSString *text;

@@ -19,17 +19,20 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-#import "LectureInteractorInput.h"
 
-@protocol LectureService;
-@protocol ROSPonsomizer;
-@protocol LectureInteractorOutput;
+@class LecturePlainObject;
 
-@interface LectureInteractor : NSObject<LectureInteractorInput>
+@protocol LectureCellObjectsBuilder <NSObject>
 
-@property (nonatomic, strong) id<LectureService> lectureService;
-@property (nonatomic, strong) id<ROSPonsomizer> ponsomizer;
-@property (nonatomic, weak) id<LectureInteractorOutput> output;
+/**
+ @author Konstantin Zinovyev
+ 
+ Build cell objects for lecture detailed tableview model
+ 
+ @param lecture lecture object
+ 
+ @return CellObjects
+ */
+- (NSArray *)cellObjectsForLecture:(LecturePlainObject *)lecture;
 
 @end
-

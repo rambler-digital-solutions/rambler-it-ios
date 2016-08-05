@@ -21,13 +21,8 @@
 #import <Nimbus/NimbusModels.h>
 #import "LectureDataDisplayManager.h"
 #import "LecturePlainObject.h"
-#import "EventPlainObject.h"
-#import "TableViewCellWithTextLabelCellObject.h"
-#import "LectureDescriptionTableViewCellObject.h"
-#import "DateFormatter.h"
-#import "TableViewCellWithTextLabelCellObject.h"
-#import "VideoRecordTableViewCellObject.h"
 #import "LocalizedStrings.h"
+#import "LectureCellObjectsBuilder.h"
 
 @interface LectureDataDisplayManager ()
 
@@ -70,16 +65,8 @@
 #pragma mark - Private methods
 
 - (NSArray *)generateCellObjects {
-    NSString * date = [self.dateFormatter obtainDateWithDayMonthTimeFormat:self.lecture.event.startDate];
-    LectureDescriptionTableViewCellObject * lectureDescriptionCellObject = [LectureDescriptionTableViewCellObject objectWithLecture:self.lecture andDate:date];
-
-    TableViewCellWithTextLabelCellObject *videoRecordTextLabelCellObject = [TableViewCellWithTextLabelCellObject objectWithText:NSLocalizedString(VideoRecordTableViewCellTitle, nil)];
-    
-    VideoRecordTableViewCellObject *videoRecorTableViewCellObject = [VideoRecordTableViewCellObject new];
-    
-    TableViewCellWithTextLabelCellObject *materialsTextLabelCellObject = [TableViewCellWithTextLabelCellObject objectWithText:NSLocalizedString(LectureMaterialsTableViewCellTitle, nil)];
-    
-    return @[lectureDescriptionCellObject, videoRecordTextLabelCellObject, videoRecorTableViewCellObject, materialsTextLabelCellObject];
+    NSArray *cellObjects = [self.builderCellObjects cellObjectsForLecture:self.lecture];
+    return cellObjects;
 }
 
 - (void)updateTableViewModel {

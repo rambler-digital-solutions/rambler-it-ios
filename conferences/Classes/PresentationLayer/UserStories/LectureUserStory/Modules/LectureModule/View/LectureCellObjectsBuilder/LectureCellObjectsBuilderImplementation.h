@@ -19,17 +19,8 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-#import "LectureInteractorInput.h"
+#import "LectureCellObjectsBuilder.h"
 
-@protocol LectureService;
-@protocol ROSPonsomizer;
-@protocol LectureInteractorOutput;
-
-@interface LectureInteractor : NSObject<LectureInteractorInput>
-
-@property (nonatomic, strong) id<LectureService> lectureService;
-@property (nonatomic, strong) id<ROSPonsomizer> ponsomizer;
-@property (nonatomic, weak) id<LectureInteractorOutput> output;
+@interface LectureCellObjectsBuilderImplementation : NSObject <LectureCellObjectsBuilder>
 
 @end
-

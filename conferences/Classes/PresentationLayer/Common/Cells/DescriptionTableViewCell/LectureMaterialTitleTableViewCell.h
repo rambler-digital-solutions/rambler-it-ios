@@ -18,28 +18,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "TableViewCellWithTextLabel.h"
-#import "TableViewCellWithTextLabelCellObject.h"
+#import <UIKit/UIKit.h>
+#import <NICellFactory.h>
 
-static CGFloat const TableViewCellWithTextLabelHeight = 44.0f;
-
-@interface TableViewCellWithTextLabel ()
-
-@property (weak, nonatomic) IBOutlet UILabel *label;
-
-@end
-
-@implementation TableViewCellWithTextLabel
-
-#pragma mark - NICell methods
-
-- (BOOL)shouldUpdateCellWithObject:(TableViewCellWithTextLabelCellObject *)object {
-    self.label.text = object.text;
-    return YES;
-}
-
-+ (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
-    return TableViewCellWithTextLabelHeight;
-}
+@interface LectureMaterialTitleTableViewCell : UITableViewCell <NICell>
 
 @end

@@ -11,7 +11,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="74"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="73.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="74"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="light-gray-square" translatesAutoresizingMaskIntoConstraints="NO" id="udz-Bd-i6k">
@@ -22,10 +22,10 @@
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9gK-DD-r7c">
-                        <rect key="frame" x="72" y="12" width="228" height="47.5"/>
+                        <rect key="frame" x="72" y="12" width="228" height="48"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JSDoc3 in Depth" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i8f-pQ-RkK">
-                                <rect key="frame" x="0.0" y="0.0" width="228" height="19.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="228" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="1MY-oz-3bY"/>
                                 </constraints>
@@ -39,7 +39,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Bobby Knight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mOL-Ra-A7N">
-                                <rect key="frame" x="0.0" y="21.5" width="228" height="26"/>
+                                <rect key="frame" x="0.0" y="22" width="228" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="euC-en-l87"/>
                                 </constraints>
@@ -65,7 +65,7 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BlD-O9-ggX" userLabel="separator">
-                        <rect key="frame" x="84" y="72.5" width="236" height="1"/>
+                        <rect key="frame" x="84" y="73" width="236" height="1"/>
                         <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="UcJ-3s-rZy"/>

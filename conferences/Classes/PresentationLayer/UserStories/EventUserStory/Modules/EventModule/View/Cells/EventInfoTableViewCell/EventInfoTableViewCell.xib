@@ -7,14 +7,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="148" id="KGk-i7-Jjw" customClass="EventInfoTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="148"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="182" id="KGk-i7-Jjw" customClass="EventInfoTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="335" height="182"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="147.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="335" height="181.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25 октября в 19:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OAb-Py-5W3">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="25 октября в 19:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OAb-Py-5W3">
                         <rect key="frame" x="20" y="40" width="280" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="DHT-WB-VgX"/>
@@ -23,14 +23,14 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moscow JS #26" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3US-yz-j4B">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Moscow JS #26" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3US-yz-j4B">
                         <rect key="frame" x="8" y="68" width="304" height="43"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="36"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Очередная конференция" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Avh-HL-z7Z">
-                        <rect key="frame" x="20" y="131" width="280" height="17"/>
+                        <rect key="frame" x="20" y="131" width="295" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -46,13 +46,17 @@
                     <constraint firstItem="OAb-Py-5W3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="40" id="Pt0-dr-HBL"/>
                     <constraint firstItem="OAb-Py-5W3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="TmD-EL-sa4"/>
                     <constraint firstAttribute="trailing" secondItem="Avh-HL-z7Z" secondAttribute="trailing" constant="20" id="U60-7e-idU"/>
+                    <constraint firstAttribute="bottom" secondItem="Avh-HL-z7Z" secondAttribute="bottom" constant="0.35999999999999999" id="aGg-p2-KW5"/>
                     <constraint firstItem="Avh-HL-z7Z" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="fkI-DS-ABe"/>
                     <constraint firstItem="3US-yz-j4B" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="heo-5X-Par"/>
+                    <constraint firstAttribute="bottom" secondItem="Avh-HL-z7Z" secondAttribute="bottom" constant="34" id="qgL-ji-mZL"/>
                     <constraint firstItem="Avh-HL-z7Z" firstAttribute="top" secondItem="3US-yz-j4B" secondAttribute="bottom" constant="20" id="xO6-Vc-jgf"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
+                        <exclude reference="0yr-uj-lEF"/>
                         <exclude reference="6CG-5v-PH4"/>
+                        <exclude reference="aGg-p2-KW5"/>
                         <exclude reference="fkI-DS-ABe"/>
                     </mask>
                 </variation>
@@ -62,7 +66,7 @@
                 <outlet property="eventSubTitle" destination="Avh-HL-z7Z" id="7g0-4l-0JS"/>
                 <outlet property="eventTitle" destination="3US-yz-j4B" id="h57-Id-K6j"/>
             </connections>
-            <point key="canvasLocation" x="369" y="228"/>
+            <point key="canvasLocation" x="376.5" y="226"/>
         </tableViewCell>
     </objects>
 </document>

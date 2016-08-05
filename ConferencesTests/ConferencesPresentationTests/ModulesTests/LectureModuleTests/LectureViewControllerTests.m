@@ -1,10 +1,22 @@
+// Copyright (c) 2016 RAMBLER&Co
 //
-//  LectureViewControllerTests.m
-//  Conferences
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
 //
-//  Created by Karpushin Artem on 27/03/16.
-//  Copyright © 2016 Rambler. All rights reserved.
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
 //
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
 
 #import <XCTest/XCTest.h>
 #import <OCMock/OCMock.h>
@@ -114,7 +126,6 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
     XCTAssert(tableView.estimatedRowHeight == TableViewEstimatedRowHeight);
     XCTAssert(tableView.rowHeight == UITableViewAutomaticDimension);
     XCTAssertNotNil(tableView.tableFooterView);
-    XCTAssertNotNil(tableView.tableHeaderView.gestureRecognizers);
 }
 
 - (void)testSuccessConfigureViewWithLecture {
@@ -126,24 +137,6 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
     
     // then
     OCMVerify([self.dataDisplayManagerMock configureDataDisplayManagerWithLecture:lecture]);
-}
-
-- (void)testSuccessSetupHeaderViewWithSpeaker {
-    // given
-    SpeakerPlainObject *speaker = [SpeakerPlainObject new];
-    LecturePlainObject *lecture = [LecturePlainObject new];
-    lecture.speaker = speaker;
-    
-    id speakerShortInfoViewMock = OCMClassMock([SpeakerShortInfoView class]);
-    self.viewController.speakerShortInfoView = speakerShortInfoViewMock;
-    
-    // when
-    [self.viewController configureViewWithLecture:lecture];
-    
-    // then
-    OCMVerify([speakerShortInfoViewMock configureModuleWithSpeaker:OCMOCK_ANY
-                                                       andViewSize:SpeakerShortInfoViewDefaultSize]);
-    [speakerShortInfoViewMock stopMocking];
 }
 
 #pragma mark - Actions
@@ -162,7 +155,7 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
     // given
     
     // when
-    [self.viewController didTapShareButton];
+    [self.viewController didTapShareButton:nil];
     
     // then
     OCMVerify([self.presenterMock didTapShareButton]);
