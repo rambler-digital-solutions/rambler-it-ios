@@ -386,6 +386,7 @@
 		9FAB6A831D54965F0061F333 /* SearchableIndexMock.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB6A821D54965F0061F333 /* SearchableIndexMock.m */; };
 		9FAB6A871D54981B0061F333 /* IndexerMonitorOperationQueueFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB6A861D54981B0061F333 /* IndexerMonitorOperationQueueFactoryTests.m */; };
 		9FAB6A891D5499880061F333 /* IndexerMonitorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB6A881D5499880061F333 /* IndexerMonitorTests.m */; };
+		9FAB6A981D54BE990061F333 /* EventChangeProviderFetchRequestFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB6A971D54BE990061F333 /* EventChangeProviderFetchRequestFactoryTests.m */; };
 		9FC1F6761D2824000070D9B5 /* EventListServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */; };
 		9FC1F6801D2838FA0070D9B5 /* EventListQueryTransformerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */; };
 		9FC1F6841D28391E0070D9B5 /* EventListQueryTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6831D28391E0070D9B5 /* EventListQueryTransformer.m */; };
@@ -1174,6 +1175,7 @@
 		9FAB6A821D54965F0061F333 /* SearchableIndexMock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchableIndexMock.m; path = ApplicationLayerTests/SpotlightIndexer/ObjectIndexers/BaseClasses/ObjectIndexerBase/SearchableIndexMock.m; sourceTree = "<group>"; };
 		9FAB6A861D54981B0061F333 /* IndexerMonitorOperationQueueFactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IndexerMonitorOperationQueueFactoryTests.m; path = ApplicationLayerTests/SpotlightIndexer/IndexerMonitor/IndexerMonitorOperationQueueFactory/IndexerMonitorOperationQueueFactoryTests.m; sourceTree = "<group>"; };
 		9FAB6A881D5499880061F333 /* IndexerMonitorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IndexerMonitorTests.m; path = ApplicationLayerTests/SpotlightIndexer/IndexerMonitor/IndexerMonitorTests.m; sourceTree = "<group>"; };
+		9FAB6A971D54BE990061F333 /* EventChangeProviderFetchRequestFactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventChangeProviderFetchRequestFactoryTests.m; path = ApplicationLayerTests/SpotlightIndexer/ChangeProviders/BaseClasses/FetchedResultsControllerChangeProvider/ChangeProviderFetchRequestFactories/ConcreteClasses/EventChangeProviderFetchRequestFactory/EventChangeProviderFetchRequestFactoryTests.m; sourceTree = "<group>"; };
 		9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListServiceTests.m; path = EventListServiceTests/EventListServiceTests.m; sourceTree = "<group>"; };
 		9FC1F6781D2826D10070D9B5 /* QueryTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QueryTransformer.h; path = CoreComponents/QueryTransformers/QueryTransformer.h; sourceTree = "<group>"; };
 		9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListQueryTransformerTests.m; path = CoreLayer/CoreComponents/QueryTransformers/EventListQueryTransformer/EventListQueryTransformerTests.m; sourceTree = "<group>"; };
@@ -5498,6 +5500,54 @@
 			name = IndexerMonitorOperationQueueFactory;
 			sourceTree = "<group>";
 		};
+		9FAB6A911D54BE310061F333 /* ChangeProviders */ = {
+			isa = PBXGroup;
+			children = (
+				9FAB6A921D54BE370061F333 /* BaseClasses */,
+			);
+			name = ChangeProviders;
+			sourceTree = "<group>";
+		};
+		9FAB6A921D54BE370061F333 /* BaseClasses */ = {
+			isa = PBXGroup;
+			children = (
+				9FAB6A931D54BE4A0061F333 /* FetchedResultsControllerChangeProvider */,
+			);
+			name = BaseClasses;
+			sourceTree = "<group>";
+		};
+		9FAB6A931D54BE4A0061F333 /* FetchedResultsControllerChangeProvider */ = {
+			isa = PBXGroup;
+			children = (
+				9FAB6A941D54BE500061F333 /* ChangeProviderFetchRequestFactories */,
+			);
+			name = FetchedResultsControllerChangeProvider;
+			sourceTree = "<group>";
+		};
+		9FAB6A941D54BE500061F333 /* ChangeProviderFetchRequestFactories */ = {
+			isa = PBXGroup;
+			children = (
+				9FAB6A951D54BE580061F333 /* ConcreteClasses */,
+			);
+			name = ChangeProviderFetchRequestFactories;
+			sourceTree = "<group>";
+		};
+		9FAB6A951D54BE580061F333 /* ConcreteClasses */ = {
+			isa = PBXGroup;
+			children = (
+				9FAB6A961D54BE5E0061F333 /* EventChangeProviderFetchRequestFactory */,
+			);
+			name = ConcreteClasses;
+			sourceTree = "<group>";
+		};
+		9FAB6A961D54BE5E0061F333 /* EventChangeProviderFetchRequestFactory */ = {
+			isa = PBXGroup;
+			children = (
+				9FAB6A971D54BE990061F333 /* EventChangeProviderFetchRequestFactoryTests.m */,
+			);
+			name = EventChangeProviderFetchRequestFactory;
+			sourceTree = "<group>";
+		};
 		9FC1F6741D2823E40070D9B5 /* EventListServiceTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -5569,6 +5619,7 @@
 		9FF125241D51E61B0098625F /* SpotlightIndexer */ = {
 			isa = PBXGroup;
 			children = (
+				9FAB6A911D54BE310061F333 /* ChangeProviders */,
 				9FAB6A841D5498040061F333 /* IndexerMonitor */,
 				9FAB6A781D548D0C0061F333 /* ObjectIndexers */,
 				9FAB6A741D548C310061F333 /* Transactions */,
@@ -6363,6 +6414,7 @@
 				9F1830C31BC11DE7000E21A5 /* RCFJSONResponseDeserializerTests.m in Sources */,
 				9F0A85221BC185AA006F79FB /* TestErrorChainableOperation.m in Sources */,
 				9F1830FD1BC14C37000E21A5 /* ManagedObjectMapperTests.m in Sources */,
+				9FAB6A981D54BE990061F333 /* EventChangeProviderFetchRequestFactoryTests.m in Sources */,
 				63F613D91CB111070002AEF0 /* AnnouncementListPresenterTests.m in Sources */,
 				631CBA731C020CCD00E3EBA8 /* EventCellObjectBuilderFactoryTests.m in Sources */,
 				63F8F2F51BF9FDBF000017F3 /* CompoundOperationBaseTests.m in Sources */,

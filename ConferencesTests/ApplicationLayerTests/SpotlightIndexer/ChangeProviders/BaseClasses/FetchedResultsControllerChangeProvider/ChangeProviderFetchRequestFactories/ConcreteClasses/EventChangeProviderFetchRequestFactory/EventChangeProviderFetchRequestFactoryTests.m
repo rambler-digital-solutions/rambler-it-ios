@@ -18,20 +18,42 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "EventChangeProviderFetchRequestFactory.h"
+#import <XCTest/XCTest.h>
+#import <CoreData/CoreData.h>
 
+#import "EventChangeProviderFetchRequestFactory.h"
 #import "EventModelObject.h"
 
-@implementation EventChangeProviderFetchRequestFactory
+@interface EventChangeProviderFetchRequestFactoryTests : XCTestCase
 
-#pragma mark - <ChangeProviderFetchRequestFactory>
+@property (nonatomic, strong) EventChangeProviderFetchRequestFactory *factory;
 
-- (NSFetchRequest *)obtainFetchRequestForIndexing {
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Event"];
+@end
+
+@implementation EventChangeProviderFetchRequestFactoryTests
+
+- (void)setUp {
+    [super setUp];
     
-    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:NSStringFromSelector(@selector(startDate)) ascending:YES];
-    request.sortDescriptors = @[sortDescriptor];
-    return request;
+    self.factory = [EventChangeProviderFetchRequestFactory new];
+}
+
+- (void)tearDown {
+    self.factory = nil;
+    
+    [super tearDown];
+}
+
+- (void)testThatFactoryReturnsFetchRequestForIndexing {
+    // given
+    NSString *const kExpectedEntityName = @"Event";
+    
+    // when
+    NSFetchRequest *request = [self.factory obtainFetchRequestForIndexing];
+    
+    // then
+    XCTAssertNotNil(request);
+    XCTAssertEqualObjects(request.entityName, kExpectedEntityName);
 }
 
 @end
