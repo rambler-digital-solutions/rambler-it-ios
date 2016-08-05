@@ -380,6 +380,7 @@
 		9FAB6A6C1D5384F30061F333 /* SpotlightIndexerConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB6A6B1D5384F30061F333 /* SpotlightIndexerConstants.m */; };
 		9FAB6A701D53896E0061F333 /* IndexerMonitorOperationQueueFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB6A6F1D53896E0061F333 /* IndexerMonitorOperationQueueFactory.m */; };
 		9FAB6A731D53914C0061F333 /* IndexerStateStorageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB6A721D53914C0061F333 /* IndexerStateStorageTests.m */; };
+		9FAB6A771D548C480061F333 /* IndexTransactionBatchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB6A761D548C480061F333 /* IndexTransactionBatchTests.m */; };
 		9FC1F6761D2824000070D9B5 /* EventListServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */; };
 		9FC1F6801D2838FA0070D9B5 /* EventListQueryTransformerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */; };
 		9FC1F6841D28391E0070D9B5 /* EventListQueryTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6831D28391E0070D9B5 /* EventListQueryTransformer.m */; };
@@ -1161,6 +1162,7 @@
 		9FAB6A6E1D53896E0061F333 /* IndexerMonitorOperationQueueFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndexerMonitorOperationQueueFactory.h; path = SpotlightIndexer/IndexerMonitor/IndexerMonitorOperationQueueFactory/IndexerMonitorOperationQueueFactory.h; sourceTree = "<group>"; };
 		9FAB6A6F1D53896E0061F333 /* IndexerMonitorOperationQueueFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IndexerMonitorOperationQueueFactory.m; path = SpotlightIndexer/IndexerMonitor/IndexerMonitorOperationQueueFactory/IndexerMonitorOperationQueueFactory.m; sourceTree = "<group>"; };
 		9FAB6A721D53914C0061F333 /* IndexerStateStorageTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IndexerStateStorageTests.m; path = ApplicationLayerTests/SpotlightIndexer/IndexerStateStorage/IndexerStateStorageTests.m; sourceTree = "<group>"; };
+		9FAB6A761D548C480061F333 /* IndexTransactionBatchTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IndexTransactionBatchTests.m; path = ApplicationLayerTests/SpotlightIndexer/Transactions/IndexTransactionBatch/IndexTransactionBatchTests.m; sourceTree = "<group>"; };
 		9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListServiceTests.m; path = EventListServiceTests/EventListServiceTests.m; sourceTree = "<group>"; };
 		9FC1F6781D2826D10070D9B5 /* QueryTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QueryTransformer.h; path = CoreComponents/QueryTransformers/QueryTransformer.h; sourceTree = "<group>"; };
 		9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListQueryTransformerTests.m; path = CoreLayer/CoreComponents/QueryTransformers/EventListQueryTransformer/EventListQueryTransformerTests.m; sourceTree = "<group>"; };
@@ -5409,6 +5411,22 @@
 			name = IndexerStateStorage;
 			sourceTree = "<group>";
 		};
+		9FAB6A741D548C310061F333 /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				9FAB6A751D548C360061F333 /* IndexTransactionBatch */,
+			);
+			name = Transactions;
+			sourceTree = "<group>";
+		};
+		9FAB6A751D548C360061F333 /* IndexTransactionBatch */ = {
+			isa = PBXGroup;
+			children = (
+				9FAB6A761D548C480061F333 /* IndexTransactionBatchTests.m */,
+			);
+			name = IndexTransactionBatch;
+			sourceTree = "<group>";
+		};
 		9FC1F6741D2823E40070D9B5 /* EventListServiceTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -5480,6 +5498,7 @@
 		9FF125241D51E61B0098625F /* SpotlightIndexer */ = {
 			isa = PBXGroup;
 			children = (
+				9FAB6A741D548C310061F333 /* Transactions */,
 				9FAB6A711D5391370061F333 /* IndexerStateStorage */,
 				9F4097851D51F8D2008BFE42 /* ObjectTransformers */,
 			);
@@ -6258,6 +6277,7 @@
 				9FF99E541BC4317E006F15AF /* OperationSchedulerTests.m in Sources */,
 				9F1830B81BC119A5000E21A5 /* CommonNetworkClientTests.m in Sources */,
 				635E18BF1CA6A0A9005B8439 /* SpeakerInfoModuleAssemblyTests.m in Sources */,
+				9FAB6A771D548C480061F333 /* IndexTransactionBatchTests.m in Sources */,
 				635E18CD1CA6C5E5005B8439 /* StubTestHelper.m in Sources */,
 				631CBA7E1C02140600E3EBA8 /* RamblerLocationModuleAssemblyTests.m in Sources */,
 				63F613DF1CB111070002AEF0 /* EventDataDisplayManagerTests.m in Sources */,
