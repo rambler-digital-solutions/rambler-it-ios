@@ -38,6 +38,8 @@
 #import "LectureServiceImplementation.h"
 #import "SpeakerService.h"
 #import "SpeakerServiceImplementation.h"
+#import "TagServiceImplementation.h"
+#import "TagServicePredicateBuilder.h"
 
 @implementation ServiceComponentsAssembly
 
@@ -95,6 +97,19 @@
                               [definition injectProperty:@selector(mapper)
                                                     with:[self.resourceMapperAssembly directionObjectMapper]];
                           }];
+}
+
+- (id <TagService>)tagService {
+    return [TyphoonDefinition withClass:[TagServiceImplementation class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(predicateBuilder)
+                                                    with:[self tagServicePredicateBuilder]];
+                              definition.scope = TyphoonScopeSingleton;
+                          }];
+}
+
+- (id)tagServicePredicateBuilder {
+    return [TyphoonDefinition withClass:[TagServicePredicateBuilder class]];
 }
 
 @end

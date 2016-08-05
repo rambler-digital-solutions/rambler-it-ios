@@ -21,6 +21,7 @@
 #import "LectureCellObjectsBuilderImplementation.h"
 
 #import "LecturePlainObject.h"
+#import "LectureModelObject.h"
 #import "LocalizedStrings.h"
 
 #import "LectureMaterialTitleTableViewCellObject.h"
@@ -29,6 +30,10 @@
 #import "LectureMaterialTitleTableViewCellObject.h"
 #import "LectureMaterialInfoTableViewCellObject.h"
 #import "VideoRecordTableViewCellObject.h"
+
+#import "TagObjectDescriptor.h"
+#import "TagModuleTableViewCellObject.h"
+#import "TagShowMediator.h"
 
 static NSString *const kPresentationImageName = @"ic-presentation";
 static NSString *const kArticleImageName = @"ic-article";
@@ -56,8 +61,16 @@ static NSString *const kCodeGithubImageName = @"ic-github";
     
     UIImage *codeGithubImage = [UIImage imageNamed:kCodeGithubImageName];
     LectureMaterialInfoTableViewCellObject *codeGithubTextLabelCellObject = [LectureMaterialInfoTableViewCellObject objectWithText:NSLocalizedString(LectureCodeGithubTableViewCellTitle, nil) andImage:codeGithubImage];
-
-    return @[lectureDescriptionCellObject, videoRecordTextLabelCellObject, videoRecorTableViewCellObject, materialsTextLabelCellObject, presentationTextImageLabelCellObject, articlesTextImageLabelCellObject, additionalTextLabelCellObject, codeGithubTextLabelCellObject];
+    
+    TagModuleTableViewCellObject *tagCellObject;
+    if (lecture.tags.count > 0) {
+        TagObjectDescriptor *objectDescriptor = [[TagObjectDescriptor alloc] initWithObjectName:NSStringFromClass([LectureModelObject class])
+                                                                                        idValue:lecture.lectureId];
+        tagCellObject = [TagModuleTableViewCellObject objectWithObjectDescriptor:objectDescriptor
+                                                                   mediatorInput:[TagShowMediator new]];
+    }
+    
+    return @[lectureDescriptionCellObject, videoRecordTextLabelCellObject, videoRecorTableViewCellObject, materialsTextLabelCellObject, presentationTextImageLabelCellObject, articlesTextImageLabelCellObject, additionalTextLabelCellObject, codeGithubTextLabelCellObject, tagCellObject];
 }
 
 @end
