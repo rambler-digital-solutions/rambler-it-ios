@@ -20,6 +20,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "ChangeProviderDelegate.h"
+
 @protocol ObjectIndexer;
 @protocol ChangeProvider;
 @class IndexerStateStorage;
@@ -30,7 +32,7 @@
  
  The main object in SpotlightIndexer ecosystem. It's responsible for chaining all the parts together.
  */
-@interface IndexerMonitor : NSObject
+@interface IndexerMonitor : NSObject <ChangeProviderDelegate>
 
 + (instancetype)monitorWithIndexers:(NSArray <id<ObjectIndexer>> *)indexers
                     changeProviders:(NSArray <id<ChangeProvider>> *)changeProviders

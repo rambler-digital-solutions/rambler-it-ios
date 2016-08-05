@@ -385,6 +385,7 @@
 		9FAB6A801D54917F0061F333 /* ObjectIndexerBaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB6A7F1D54917F0061F333 /* ObjectIndexerBaseTests.m */; };
 		9FAB6A831D54965F0061F333 /* SearchableIndexMock.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB6A821D54965F0061F333 /* SearchableIndexMock.m */; };
 		9FAB6A871D54981B0061F333 /* IndexerMonitorOperationQueueFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB6A861D54981B0061F333 /* IndexerMonitorOperationQueueFactoryTests.m */; };
+		9FAB6A891D5499880061F333 /* IndexerMonitorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB6A881D5499880061F333 /* IndexerMonitorTests.m */; };
 		9FC1F6761D2824000070D9B5 /* EventListServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */; };
 		9FC1F6801D2838FA0070D9B5 /* EventListQueryTransformerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */; };
 		9FC1F6841D28391E0070D9B5 /* EventListQueryTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6831D28391E0070D9B5 /* EventListQueryTransformer.m */; };
@@ -1172,6 +1173,7 @@
 		9FAB6A811D54965F0061F333 /* SearchableIndexMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchableIndexMock.h; path = ApplicationLayerTests/SpotlightIndexer/ObjectIndexers/BaseClasses/ObjectIndexerBase/SearchableIndexMock.h; sourceTree = "<group>"; };
 		9FAB6A821D54965F0061F333 /* SearchableIndexMock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchableIndexMock.m; path = ApplicationLayerTests/SpotlightIndexer/ObjectIndexers/BaseClasses/ObjectIndexerBase/SearchableIndexMock.m; sourceTree = "<group>"; };
 		9FAB6A861D54981B0061F333 /* IndexerMonitorOperationQueueFactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IndexerMonitorOperationQueueFactoryTests.m; path = ApplicationLayerTests/SpotlightIndexer/IndexerMonitor/IndexerMonitorOperationQueueFactory/IndexerMonitorOperationQueueFactoryTests.m; sourceTree = "<group>"; };
+		9FAB6A881D5499880061F333 /* IndexerMonitorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IndexerMonitorTests.m; path = ApplicationLayerTests/SpotlightIndexer/IndexerMonitor/IndexerMonitorTests.m; sourceTree = "<group>"; };
 		9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListServiceTests.m; path = EventListServiceTests/EventListServiceTests.m; sourceTree = "<group>"; };
 		9FC1F6781D2826D10070D9B5 /* QueryTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QueryTransformer.h; path = CoreComponents/QueryTransformers/QueryTransformer.h; sourceTree = "<group>"; };
 		9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListQueryTransformerTests.m; path = CoreLayer/CoreComponents/QueryTransformers/EventListQueryTransformer/EventListQueryTransformerTests.m; sourceTree = "<group>"; };
@@ -5483,6 +5485,7 @@
 			isa = PBXGroup;
 			children = (
 				9FAB6A851D54980D0061F333 /* IndexerMonitorOperationQueueFactory */,
+				9FAB6A881D5499880061F333 /* IndexerMonitorTests.m */,
 			);
 			name = IndexerMonitor;
 			sourceTree = "<group>";
@@ -6284,6 +6287,7 @@
 				63F613ED1CB111070002AEF0 /* SpeakerInfoInteractorTests.m in Sources */,
 				631CBA741C020CCD00E3EBA8 /* EventModuleAssemblyTests.m in Sources */,
 				63D86BDD1C143FCE00986536 /* DateFormatterTests.m in Sources */,
+				9FAB6A891D5499880061F333 /* IndexerMonitorTests.m in Sources */,
 				9FC1F6761D2824000070D9B5 /* EventListServiceTests.m in Sources */,
 				63F8F2F61BF9FE7D000017F3 /* RCFRESTRequestConfiguratorTests.m in Sources */,
 				666C5C3F1D4F344B002D73D5 /* ReportsSearchPresenter.m in Sources */,

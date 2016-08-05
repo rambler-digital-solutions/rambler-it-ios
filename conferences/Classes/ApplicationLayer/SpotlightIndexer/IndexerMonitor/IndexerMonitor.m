@@ -21,7 +21,6 @@
 #import "IndexerMonitor.h"
 
 #import "ChangeProvider.h"
-#import "ChangeProviderDelegate.h"
 #import "ObjectIndexer.h"
 #import "IndexTransaction.h"
 #import "IndexTransactionBatch.h"
@@ -30,7 +29,7 @@
 
 #import "EXTScope.h"
 
-@interface IndexerMonitor () <ChangeProviderDelegate>
+@interface IndexerMonitor ()
 
 @property (nonatomic, strong) NSArray *indexers;
 @property (nonatomic, strong) NSArray *changeProviders;
@@ -71,17 +70,15 @@
 #pragma mark - Public methods
 
 - (void)startMonitoring {
-    for (id<ChangeProvider> changeProvider in _changeProviders) {
-        changeProvider.delegate = self;
-    }
-    
     if (!self.operationQueue) {
         self.operationQueue = [self.queueFactory createIndexerOperationQueue];
     }
     
     for (id<ChangeProvider> changeProvider in self.changeProviders) {
+        changeProvider.delegate = self;
         [changeProvider startMonitoring];
     }
+
     [self performInitialIndexingIfNeeded];
 }
 
