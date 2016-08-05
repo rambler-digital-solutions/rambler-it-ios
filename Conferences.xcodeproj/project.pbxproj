@@ -75,6 +75,8 @@
 		2B4F201D1D5326FC00C9891E /* SpeakerInfoSectionHeaderCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4F201C1D5326FC00C9891E /* SpeakerInfoSectionHeaderCellObject.m */; };
 		2B4F20221D53273100C9891E /* SpeakerInfoSectionHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4F20201D53273100C9891E /* SpeakerInfoSectionHeaderTableViewCell.m */; };
 		2B4F20231D53273100C9891E /* SpeakerInfoSectionHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B4F20211D53273100C9891E /* SpeakerInfoSectionHeaderTableViewCell.xib */; };
+		2B4F20281D54DBDF00C9891E /* SpeakerInfoDataDisplayManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4F20271D54DBDF00C9891E /* SpeakerInfoDataDisplayManagerTests.m */; };
+		2B4F202A1D54E11F00C9891E /* SpeakerInfoCellObjectsBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4F20291D54E11F00C9891E /* SpeakerInfoCellObjectsBuilderTests.m */; };
 		2B750D171D362EE600EACE98 /* Conference.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6373A40E1BBDC5EA00DF67FF /* Conference.xcdatamodeld */; };
 		2BDDAB551D363D34007FD547 /* ROSPonsomizerImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDDAB541D363D34007FD547 /* ROSPonsomizerImplementation.m */; };
 		2BDDB1D31D3F7235007FD547 /* DirectionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDDB1D21D3F7235007FD547 /* DirectionObject.m */; };
@@ -518,6 +520,8 @@
 		2B4F20201D53273100C9891E /* SpeakerInfoSectionHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerInfoSectionHeaderTableViewCell.m; sourceTree = "<group>"; };
 		2B4F20211D53273100C9891E /* SpeakerInfoSectionHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeakerInfoSectionHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		2B4F20261D54AD6E00C9891E /* Conferences-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Conferences-Prefix.pch"; sourceTree = "<group>"; };
+		2B4F20271D54DBDF00C9891E /* SpeakerInfoDataDisplayManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerInfoDataDisplayManagerTests.m; sourceTree = "<group>"; };
+		2B4F20291D54E11F00C9891E /* SpeakerInfoCellObjectsBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerInfoCellObjectsBuilderTests.m; sourceTree = "<group>"; };
 		2BDDAB521D363D34007FD547 /* ROSPonsomizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ROSPonsomizer.h; sourceTree = "<group>"; };
 		2BDDAB531D363D34007FD547 /* ROSPonsomizerImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ROSPonsomizerImplementation.h; sourceTree = "<group>"; };
 		2BDDAB541D363D34007FD547 /* ROSPonsomizerImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ROSPonsomizerImplementation.m; sourceTree = "<group>"; };
@@ -3485,6 +3489,8 @@
 				63F613D41CB111070002AEF0 /* SpeakerInfoInteractorTests.m */,
 				63F613D51CB111070002AEF0 /* SpeakerInfoPresenterTests.m */,
 				63F613D61CB111070002AEF0 /* SpeakerInfoViewControllerTests.m */,
+				2B4F20271D54DBDF00C9891E /* SpeakerInfoDataDisplayManagerTests.m */,
+				2B4F20291D54E11F00C9891E /* SpeakerInfoCellObjectsBuilderTests.m */,
 			);
 			path = SpeakerInfoModuleTests;
 			sourceTree = "<group>";
@@ -5969,6 +5975,7 @@
 				9FF37E151D32373500471B4E /* RamblerLocationInteractorTests.m in Sources */,
 				9FF99E541BC4317E006F15AF /* OperationSchedulerTests.m in Sources */,
 				9F1830B81BC119A5000E21A5 /* CommonNetworkClientTests.m in Sources */,
+				2B4F20281D54DBDF00C9891E /* SpeakerInfoDataDisplayManagerTests.m in Sources */,
 				635E18BF1CA6A0A9005B8439 /* SpeakerInfoModuleAssemblyTests.m in Sources */,
 				635E18CD1CA6C5E5005B8439 /* StubTestHelper.m in Sources */,
 				631CBA7E1C02140600E3EBA8 /* RamblerLocationModuleAssemblyTests.m in Sources */,
@@ -5981,6 +5988,7 @@
 				631CBA731C020CCD00E3EBA8 /* EventCellObjectBuilderFactoryTests.m in Sources */,
 				63F8F2F51BF9FDBF000017F3 /* CompoundOperationBaseTests.m in Sources */,
 				63F613DE1CB111070002AEF0 /* PastEventCellObjectBuilderTests.m in Sources */,
+				2B4F202A1D54E11F00C9891E /* SpeakerInfoCellObjectsBuilderTests.m in Sources */,
 				9F1830FE1BC14E64000E21A5 /* Conference.xcdatamodeld in Sources */,
 				63F613E91CB111070002AEF0 /* ReportListInteractorTests.m in Sources */,
 				63F613E11CB111070002AEF0 /* EventPresenterTests.m in Sources */,

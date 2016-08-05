@@ -103,7 +103,6 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
     // then
     XCTAssert(tableView.estimatedRowHeight == TableViewEstimatedRowHeight);
     XCTAssert(tableView.rowHeight == UITableViewAutomaticDimension);
-    XCTAssertNotNil(tableView.tableFooterView);
 }
 
 - (void)testSuccessSetupHeaderView {
