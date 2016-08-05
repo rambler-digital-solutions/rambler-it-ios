@@ -15,6 +15,7 @@
 #import "SpeakerPlainObject.h"
 
 static NSString *const kSocialNetworksSectionName = @"Контакты";
+static NSString *const kWebsiteSectionName = @"Веб-сайт";
 
 @implementation SpeakerInfoCellObjectsBuilder
 
@@ -25,13 +26,40 @@ static NSString *const kSocialNetworksSectionName = @"Контакты";
     
     [cellObjects addObject:speakerInfoCellObject];
     
-    if (speaker.socialNetworkAccounts.count) {
-        NSArray *socialAccounts = [self buildSocialContactsCellObjectsWithAccounts:[speaker.socialNetworkAccounts allObjects]];
+    NSMutableArray *accounts = [[speaker.socialNetworkAccounts allObjects] mutableCopy];
+    NSInteger websiteIndex = [accounts indexOfObjectPassingTest:^BOOL(SocialNetworkAccountPlainObject * _Nonnull object, NSUInteger idx, BOOL * _Nonnull stop) {
+        return object.type.integerValue == SocialNetworkWebsiteType;
+    }];
+    
+    if (websiteIndex != NSNotFound) {
+        SocialNetworkAccountPlainObject *website = accounts[websiteIndex];
+        NSArray *websiteCellObjects = [self buildWebsiteCellObjectsWithAccount:website];
+        [cellObjects addObjectsFromArray:websiteCellObjects];
+        [accounts removeObject:website];
+    }
+    
+    if (accounts.count) {
+        NSArray *socialAccounts = [self buildSocialContactsCellObjectsWithAccounts:accounts];
         [cellObjects addObjectsFromArray:socialAccounts];
     }
     
     return cellObjects;
 
+}
+
+- (NSArray *)buildWebsiteCellObjectsWithAccount:(SocialNetworkAccountPlainObject *)account {
+    NSMutableArray *cellObjects = [NSMutableArray new];
+    SpeakerInfoSectionHeaderCellObject *headerCellObject = [SpeakerInfoSectionHeaderCellObject objectWithText:kWebsiteSectionName];
+    [cellObjects addObject:headerCellObject];
+    
+    NSString *image = [self.configurator configureImageForSocialAccount:account];
+    NSString *text = [self.configurator configureNameForSocialAccount:account];
+    SpeakerInfoSocialContactsCellObject *cellObject = [SpeakerInfoSocialContactsCellObject objectWithSocialNetworkAccount:account
+                                                                                                                    image:image
+                                                                                                                     text:text];
+    [cellObjects addObject:cellObject];
+
+    return [cellObjects copy];
 }
 
 - (NSArray *)buildSocialContactsCellObjectsWithAccounts:(NSArray *)socialAccounts {
@@ -41,7 +69,7 @@ static NSString *const kSocialNetworksSectionName = @"Контакты";
     [cellObjects addObject:cellObject];
     
     for (SocialNetworkAccountPlainObject *account in socialAccounts) {
-        UIImage *image = [self.configurator configureImageForSocialAccount:account];
+        NSString *image = [self.configurator configureImageForSocialAccount:account];
         NSString *text = [self.configurator configureNameForSocialAccount:account];
         SpeakerInfoSocialContactsCellObject *cellObject = [SpeakerInfoSocialContactsCellObject objectWithSocialNetworkAccount:account
                                                                                                                         image:image

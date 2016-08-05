@@ -35,7 +35,8 @@
              @(SocialNetworkLinkedInType) : @"ic-linkedin",
              @(SocialNetworkVkontakteType) : @"ic-web",
              @(SocialNetworkEmailType) : @"ic-mail",
-             @(SocialNetworkInstagramType) : @"ic-instagram"
+             @(SocialNetworkInstagramType) : @"ic-instagram",
+             @(SocialNetworkWebsiteType) : @"ic-web"
              };
 }
 
@@ -48,7 +49,8 @@
              @(SocialNetworkLinkedInType) : @"LinkedIn",
              @(SocialNetworkVkontakteType) : @"Vkontakte",
              @(SocialNetworkEmailType) : account.profileLink,
-             @(SocialNetworkInstagramType) : @"Instagram"
+             @(SocialNetworkInstagramType) : @"Instagram",
+             @(SocialNetworkWebsiteType) : account.profileLink
              };
 }
 

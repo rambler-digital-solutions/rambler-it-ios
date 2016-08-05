@@ -58,12 +58,20 @@ typedef NS_ENUM(NSUInteger, SocialNetworkType) {
      Email
      */
     SocialNetworkEmailType = 6,
+    
     /**
      @author Egor Tolstoy
      
      Instagram
      */
-    SocialNetworkInstagramType = 7
+    SocialNetworkInstagramType = 7,
+    
+    /**
+     @author Egor Tolstoy
+     
+     Website
+     */
+    SocialNetworkWebsiteType = 8
 };
 
 #endif /* SocialNetworkType_h */

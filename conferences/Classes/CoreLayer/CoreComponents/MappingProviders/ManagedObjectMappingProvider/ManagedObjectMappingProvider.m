@@ -233,7 +233,8 @@
                                @"LinkedIn" : @(SocialNetworkLinkedInType),
                                @"Vkontakte" : @(SocialNetworkVkontakteType),
                                @"Instagram" : @(SocialNetworkInstagramType),
-                               @"Email" : @(SocialNetworkEmailType)
+                               @"Email" : @(SocialNetworkEmailType),
+                               @"Website" : @(SocialNetworkWebsiteType)
                                };
     }
     return ^id(NSString *key, NSString *value, NSManagedObjectContext *context) {
