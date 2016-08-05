@@ -26,7 +26,7 @@
 #import "SpeakerShortInfoModuleInput.h"
 
 static CGFloat kTableViewEstimatedRowHeight = 44.0f;
-static CGFloat kTableViewFooterHeight = 44.0f;
+static CGFloat kTableViewFooterHeight = 16.0f;
 
 @interface LectureViewController() <UIGestureRecognizerDelegate>
 
