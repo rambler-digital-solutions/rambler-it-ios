@@ -22,7 +22,7 @@
 #import "EventDescriptionTableViewCellObject.h"
 #import "EventTableViewCellActionProtocol.h"
 #import "EventDescriptionTableViewCellActionProtocol.h"
-#import "Proxying/Extensions/UIResponder+CDProxying/UIResponder+CDProxying.h"
+#import "Extensions/UIResponder+CDProxying/UIResponder+CDProxying.h"
 
 @interface EventDescriptionTableViewCell ()
 

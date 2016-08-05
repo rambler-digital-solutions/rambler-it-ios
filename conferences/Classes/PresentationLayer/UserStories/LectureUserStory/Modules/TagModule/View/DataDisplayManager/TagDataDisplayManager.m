@@ -302,7 +302,7 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 #pragma mark - Методы создания объектов ячеек
 
 - (TagButtonCollectionViewCellObject *)createAddButtonObject {
-    TagButtonCollectionViewCellObject *cellObject = [[TagButtonCollectionViewCellObject alloc] initWithTextButton:LJLocalize(kTagViewAddTagButton)
+    TagButtonCollectionViewCellObject *cellObject = [[TagButtonCollectionViewCellObject alloc] initWithTextButton:@"ИЗМЕНИТЬ !!!"
                                                                                                              type:TagButtonAddTagType];
     return cellObject;
 }
@@ -315,7 +315,7 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (TagButtonCollectionViewCellObject *)createMoreButtonWithCount:(NSInteger)count {
-    NSString *textButton = [[NSString alloc] initWithFormat:LJLocalize(kTagMoreButton), count];
+    NSString *textButton = [[NSString alloc] initWithFormat:@"ИЗМЕНИТЬ !!! %ld", (long)count];
     TagButtonCollectionViewCellObject *cellObject = [[TagButtonCollectionViewCellObject alloc] initWithTextButton:textButton
                                                                                                              type:TagButtonMoreType];
     return cellObject;

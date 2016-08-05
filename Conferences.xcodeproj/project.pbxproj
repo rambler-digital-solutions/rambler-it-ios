@@ -322,6 +322,9 @@
 		66E999A31D54B40500161D98 /* NITyphoonCellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E999A01D54B40500161D98 /* NITyphoonCellFactory.m */; };
 		66E999A71D54B50500161D98 /* ContentSizeObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E999A61D54B50500161D98 /* ContentSizeObserver.m */; };
 		66EE4D2B1D54BCDF0011F94A /* CollectionViewAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EE4D2A1D54BCDF0011F94A /* CollectionViewAnimator.m */; };
+		66EE4D341D54BFCD0011F94A /* NIMutableCollectionViewModel+LJAddObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EE4D2F1D54BFCD0011F94A /* NIMutableCollectionViewModel+LJAddObject.m */; };
+		66EE4D351D54BFCD0011F94A /* NITableViewModel+LJIndexOfObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EE4D311D54BFCD0011F94A /* NITableViewModel+LJIndexOfObject.m */; };
+		66EE4D361D54BFCD0011F94A /* NITableViewModel+NextInputResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EE4D331D54BFCD0011F94A /* NITableViewModel+NextInputResponder.m */; };
 		9F0A6C1D1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */; };
 		9F0A6C2E1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C2D1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m */; };
 		9F0A84C31BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A84C21BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m */; };
@@ -1051,6 +1054,13 @@
 		66E999A61D54B50500161D98 /* ContentSizeObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContentSizeObserver.m; path = ContentSizeObserver/ContentSizeObserver.m; sourceTree = "<group>"; };
 		66EE4D291D54BCDF0011F94A /* CollectionViewAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CollectionViewAnimator.h; path = CollectionViewAnimator/CollectionViewAnimator.h; sourceTree = "<group>"; };
 		66EE4D2A1D54BCDF0011F94A /* CollectionViewAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CollectionViewAnimator.m; path = CollectionViewAnimator/CollectionViewAnimator.m; sourceTree = "<group>"; };
+		66EE4D2D1D54BFCD0011F94A /* NextInputResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NextInputResponder.h; path = Nimbus/NextInputResponder.h; sourceTree = "<group>"; };
+		66EE4D2E1D54BFCD0011F94A /* NIMutableCollectionViewModel+LJAddObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NIMutableCollectionViewModel+LJAddObject.h"; path = "Nimbus/NIMutableCollectionViewModel+LJAddObject.h"; sourceTree = "<group>"; };
+		66EE4D2F1D54BFCD0011F94A /* NIMutableCollectionViewModel+LJAddObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NIMutableCollectionViewModel+LJAddObject.m"; path = "Nimbus/NIMutableCollectionViewModel+LJAddObject.m"; sourceTree = "<group>"; };
+		66EE4D301D54BFCD0011F94A /* NITableViewModel+LJIndexOfObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NITableViewModel+LJIndexOfObject.h"; path = "Nimbus/NITableViewModel+LJIndexOfObject.h"; sourceTree = "<group>"; };
+		66EE4D311D54BFCD0011F94A /* NITableViewModel+LJIndexOfObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NITableViewModel+LJIndexOfObject.m"; path = "Nimbus/NITableViewModel+LJIndexOfObject.m"; sourceTree = "<group>"; };
+		66EE4D321D54BFCD0011F94A /* NITableViewModel+NextInputResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NITableViewModel+NextInputResponder.h"; path = "Nimbus/NITableViewModel+NextInputResponder.h"; sourceTree = "<group>"; };
+		66EE4D331D54BFCD0011F94A /* NITableViewModel+NextInputResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NITableViewModel+NextInputResponder.m"; path = "Nimbus/NITableViewModel+NextInputResponder.m"; sourceTree = "<group>"; };
 		84D2CBEF6E088EFC9A139E49 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9F0A6C1B1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CompoundOperationBuilderConfig.h; path = OperationBuilders/CompoundOperationBuilderConfig/CompoundOperationBuilderConfig.h; sourceTree = "<group>"; };
 		9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CompoundOperationBuilderConfig.m; path = OperationBuilders/CompoundOperationBuilderConfig/CompoundOperationBuilderConfig.m; sourceTree = "<group>"; };
@@ -1464,6 +1474,7 @@
 		63136F941BDCDB2600994356 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				66EE4D2C1D54BFB90011F94A /* Nimbus */,
 				66EE4D281D54BCD70011F94A /* CollectionViewAnimator */,
 				66E999A41D54B4FC00161D98 /* ContentSizeObserver */,
 				66E9999E1D54B3FD00161D98 /* NITyphoonCellFactory */,
@@ -4208,6 +4219,20 @@
 			name = CollectionViewAnimator;
 			sourceTree = "<group>";
 		};
+		66EE4D2C1D54BFB90011F94A /* Nimbus */ = {
+			isa = PBXGroup;
+			children = (
+				66EE4D2D1D54BFCD0011F94A /* NextInputResponder.h */,
+				66EE4D2E1D54BFCD0011F94A /* NIMutableCollectionViewModel+LJAddObject.h */,
+				66EE4D2F1D54BFCD0011F94A /* NIMutableCollectionViewModel+LJAddObject.m */,
+				66EE4D301D54BFCD0011F94A /* NITableViewModel+LJIndexOfObject.h */,
+				66EE4D311D54BFCD0011F94A /* NITableViewModel+LJIndexOfObject.m */,
+				66EE4D321D54BFCD0011F94A /* NITableViewModel+NextInputResponder.h */,
+				66EE4D331D54BFCD0011F94A /* NITableViewModel+NextInputResponder.m */,
+			);
+			name = Nimbus;
+			sourceTree = "<group>";
+		};
 		9879306505819DD768BE2239 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -5992,6 +6017,7 @@
 				63F6139B1CB00A220002AEF0 /* SpeakerInfoTableViewCell.m in Sources */,
 				667050101D46140200DD9D6E /* ReportsSearchInteractor.m in Sources */,
 				63F613631CB00A220002AEF0 /* EventRouter.m in Sources */,
+				66EE4D361D54BFCD0011F94A /* NITableViewModel+NextInputResponder.m in Sources */,
 				6670501D1D46145300DD9D6E /* ReportsSearchViewController.m in Sources */,
 				2B750D171D362EE600EACE98 /* Conference.xcdatamodeld in Sources */,
 				2B429A5F1D478A2F004C005F /* UINavigationBar+States.m in Sources */,
@@ -6165,6 +6191,7 @@
 				9FF74FFF1D26C62A000D208D /* EventListServiceImplementation.m in Sources */,
 				2B20647D1D3F9CE900246C8D /* _SpeakerModelObject.m in Sources */,
 				9F0A853B1BC1908B006F79FB /* OperationChainer.m in Sources */,
+				66EE4D351D54BFCD0011F94A /* NITableViewModel+LJIndexOfObject.m in Sources */,
 				63ECC4161CA81E5300439A01 /* ErrorConstants.m in Sources */,
 				66E999A71D54B50500161D98 /* ContentSizeObserver.m in Sources */,
 				63F613901CB00A220002AEF0 /* LectureDescriptionTableViewCell.m in Sources */,
@@ -6186,6 +6213,7 @@
 				66E999621D54B04100161D98 /* TagModuleConfig.m in Sources */,
 				63F6137E1CB00A220002AEF0 /* SignUpAndSaveToCalendarEventTableViewCell.m in Sources */,
 				667050451D4615B000DD9D6E /* ReportSpeakerTableViewCellObject.m in Sources */,
+				66EE4D341D54BFCD0011F94A /* NIMutableCollectionViewModel+LJAddObject.m in Sources */,
 				2B2064961D3F9CE900246C8D /* RegistrationQuestionPlainObject.m in Sources */,
 				66E999A31D54B40500161D98 /* NITyphoonCellFactory.m in Sources */,
 				66E9999C1D54B31300161D98 /* TagServiceImplementation.m in Sources */,
