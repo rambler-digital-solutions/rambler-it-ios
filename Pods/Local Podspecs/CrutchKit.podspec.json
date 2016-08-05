@@ -1,6 +1,6 @@
 {
   "name": "CrutchKit",
-  "version": "0.0.3",
+  "version": "0.0.10",
   "summary": "CrutchKit is a set of crutches for IOS development.",
   "homepage": "https://github.com/CognitiveDisson/CrutchKit",
   "license": "MIT",
@@ -13,12 +13,13 @@
   },
   "source": {
     "git": "https://github.com/CognitiveDisson/CrutchKit.git",
-    "tag": "0.0.3"
+    "tag": "0.0.10"
   },
   "header_mappings_dir": "Classes",
   "subspecs": [
     {
       "name": "Proxying",
+      "header_mappings_dir": "Classes/Proxying",
       "source_files": "Classes/Proxying/**/*.{h,m}",
       "dependencies": {
         "CrutchKit/Runtime": [
@@ -28,10 +29,12 @@
     },
     {
       "name": "Runtime",
+      "header_mappings_dir": "Classes/Runtime",
       "source_files": "Classes/Runtime/**/*.{h,m}"
     },
     {
       "name": "Helpers",
+      "header_mappings_dir": "Classes/Helpers",
       "source_files": "Classes/Helpers/**/*.{h,m}"
     },
     {

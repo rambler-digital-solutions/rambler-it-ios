@@ -12,9 +12,18 @@
 
 @implementation UIApplication (CDProxying)
 
-- (id <CDProxy>)observersProxyForProtocol:(Protocol *)protocol
-                                       selector:(SEL)selector
-                                      forSender:(UIResponder *)sender {
+- (id<CDProxy>)observersProxyForProtocol:(Protocol *)protocol
+                               forSender:(UIResponder *)sender {
+    
+    return [self observersProxyForProtocol:protocol
+                                  selector:nil
+                                 forSender:sender];
+    
+}
+
+- (id<CDProxy>)observersProxyForProtocol:(Protocol *)protocol
+                                selector:(SEL)selector
+                               forSender:(UIResponder *)sender {
     
     NSArray *responderChain = [sender cd_responderChain];
     
@@ -22,7 +31,7 @@
         
         id<CDProxy> proxy = responder.cd_defaultProxy;
         
-        if (proxy && [proxy respondsToSelector:selector fromProtocol:protocol fromSender:sender]) {
+        if (proxy && (!selector || [proxy respondsToSelector:selector fromProtocol:protocol fromSender:sender])) {
             return proxy;
         }
         

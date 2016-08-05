@@ -14,6 +14,8 @@
               fromProtocol:(Protocol *)protocol
                 fromSender:(id)sender;
 
-- (Protocol *)proxyProtocol;
+- (NSArray *)proxyProtocols;
+
+- (id)unwrap;
 
 @end

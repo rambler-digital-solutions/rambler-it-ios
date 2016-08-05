@@ -10,6 +10,8 @@
 
 @interface UIViewController (CDObserver)
 
+- (void)cd_startObserveProtocols:(NSArray *)protocols;
+
 - (void)cd_startObserveProtocol:(Protocol *)protocol;
 
 - (void)cd_stopObserve;

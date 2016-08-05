@@ -51,4 +51,18 @@
     return sel_isEqual(selector, other);
 }
 
+- (BOOL)isEqual:(CDSelector *)object {
+    
+    if (![object isKindOfClass:[CDSelector class]]) {
+        return NO;
+    }
+    
+    BOOL equalSelector = sel_isEqual(self.objcSelector, object.objcSelector);
+    BOOL equalSignature = [self.signature isEqual:object.signature];
+    BOOL equalIsRequiredMethod = self.isRequiredMethod == object.isRequiredMethod;
+    BOOL equalIsInstanceMethod = self.isInstanceMethod == object.isInstanceMethod;
+    
+    return equalSelector && equalSignature && equalIsRequiredMethod && equalIsInstanceMethod;
+}
+
 @end

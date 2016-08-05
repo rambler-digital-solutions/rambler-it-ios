@@ -80,6 +80,8 @@
                                                              objCTypes:methods[i].types];
             [selectors addObject:selector];
         }
+        
+        free(methods);
     }
     
     return [selectors copy];
@@ -96,6 +98,21 @@
     
     return protocol_isEqual(protocol, other);
     
+}
+
++ (BOOL)protocol:(Protocol *)aProtocol isContainSelector:(SEL)aSelector recursively:(BOOL)recursively {
+    
+    if (recursively) {
+        return [self protocol:aProtocol isContainSelector:aSelector];
+    }
+    
+    CDProtocol *protocol = [CDProtocol protocolFromObjCProtocol:aProtocol];
+    for (CDSelector *selector in protocol.selectors) {
+        if ([CDSelector selector:selector.objcSelector isEqualToSelector:aSelector]) {
+            return YES;
+        }
+    }
+    return NO;
 }
 
 + (BOOL)protocol:(Protocol *)protocol isContainSelector:(SEL)selector {

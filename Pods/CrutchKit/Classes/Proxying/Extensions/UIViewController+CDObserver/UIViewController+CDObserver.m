@@ -13,8 +13,12 @@
 @implementation UIViewController (CDObserver)
 
 - (void)cd_startObserveProtocol:(Protocol *)protocol {
-    id<CDProxy> proxy = [CDObserversProxy observersProxyWithProtocol:protocol
-                                                           observers:@[self]];
+    [self cd_startObserveProtocols:@[protocol]];
+}
+
+- (void)cd_startObserveProtocols:(NSArray *)protocols {
+    id<CDProxy> proxy = [CDObserversProxy observersProxyWithProtocols:protocols
+                                                            observers:@[self]];
     [self cd_insertProxyInResponderChain:proxy];
 }
 

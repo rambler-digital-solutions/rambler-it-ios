@@ -20,6 +20,9 @@
 
 - (id<CDProxy>)cd_proxyForProtocol:(Protocol *)protocol;
 
+- (id<CDProxy>)cd_proxyForProtocol:(Protocol *)protocol
+                          selector:(SEL)selector;
+
 - (NSArray *)cd_responderChain;
 
 @end

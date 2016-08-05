@@ -8,12 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void (^CDInjectBlock)(id proxy);
+
 @protocol CDProxy;
 
 @interface UIApplication (CDProxying)
 
-- (id <CDProxy>)observersProxyForProtocol:(Protocol *)protocol
-                                       selector:(SEL)selector
-                                      forSender:(UIResponder *)sender;
+- (id<CDProxy>)observersProxyForProtocol:(Protocol *)protocol
+                               forSender:(UIResponder *)sender;
+
+- (id<CDProxy>)observersProxyForProtocol:(Protocol *)protocol
+                                selector:(SEL)selector
+                               forSender:(UIResponder *)sender;
 
 @end

@@ -28,6 +28,6 @@
 
 + (BOOL)protocol:(Protocol *)protocol isEqualToProtocol:(Protocol *)other;
 
-+ (BOOL)protocol:(Protocol *)protocol isContainSelector:(SEL)selector;
++ (BOOL)protocol:(Protocol *)protocol isContainSelector:(SEL)selector recursively:(BOOL)recursively;
 
 @end
