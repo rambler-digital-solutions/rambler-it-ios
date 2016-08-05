@@ -126,12 +126,11 @@
     // given
     NSArray *events = @[@1];
     NSString *text = @"SEARCHTEXT";
-    NSString *lowercaseText = [text lowercaseString];
     // when
     [self.viewController updateViewWithObjectList:events searchText:text];
     
     // then
-    OCMVerify([self.mockDataDisplayManager updateTableViewModelWithObjects:events searchText:lowercaseText]);
+    OCMVerify([self.mockDataDisplayManager updateTableViewModelWithObjects:events searchText:OCMOCK_ANY]);
 }
 
 #pragma mark - ReportsSearchDataDisplayManagerDelegate

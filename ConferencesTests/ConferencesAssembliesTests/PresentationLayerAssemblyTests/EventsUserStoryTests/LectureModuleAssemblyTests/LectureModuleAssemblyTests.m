@@ -61,6 +61,8 @@
     Class targetClass = [LectureInteractor class];
     NSArray *dependencies = @[
                               RamblerSelector(output),
+                              RamblerSelector(ponsomizer),
+                              RamblerSelector(lectureService)
                               ];
     // when
     id result = [self.assembly interactorLecture];

@@ -18,7 +18,7 @@
 
 @interface EventServiceTests : XCTestCase
 
-@property (strong, nonatomic) EventServiceImplementation *eventService;
+@property (nonatomic, strong) EventServiceImplementation *eventService;
 
 @end
 

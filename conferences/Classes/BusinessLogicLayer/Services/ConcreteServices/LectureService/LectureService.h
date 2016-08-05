@@ -22,6 +22,7 @@
 
 @class NSPredicate;
 @class Lecture;
+@class LectureModelObject;
 
 typedef void (^LectureCompletionBlock)(Lecture *lecture, NSError *error);
 
@@ -43,6 +44,15 @@ typedef void (^LectureCompletionBlock)(Lecture *lecture, NSError *error);
  */
 - (NSArray *)obtainLectureWithPredicate:(NSPredicate *)predicate;
 
-- (NSArray *)obtainLectureWithLectureId:(NSString *)lectureId;
+/**
+ @author Konstantin Zinovyev
+ 
+ Method is used to obtain Lectures object from cache with lecture Id
+ 
+ @param lectureId Id Lecture object
+ 
+ @return Lecture object
+ */
+- (LectureModelObject *)obtainLectureWithLectureId:(NSString *)lectureId;
 
 @end

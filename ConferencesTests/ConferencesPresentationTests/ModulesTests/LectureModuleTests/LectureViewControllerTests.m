@@ -114,7 +114,6 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
     XCTAssert(tableView.estimatedRowHeight == TableViewEstimatedRowHeight);
     XCTAssert(tableView.rowHeight == UITableViewAutomaticDimension);
     XCTAssertNotNil(tableView.tableFooterView);
-    XCTAssertNotNil(tableView.tableHeaderView.gestureRecognizers);
 }
 
 - (void)testSuccessConfigureViewWithLecture {
@@ -126,24 +125,6 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
     
     // then
     OCMVerify([self.dataDisplayManagerMock configureDataDisplayManagerWithLecture:lecture]);
-}
-
-- (void)testSuccessSetupHeaderViewWithSpeaker {
-    // given
-    SpeakerPlainObject *speaker = [SpeakerPlainObject new];
-    LecturePlainObject *lecture = [LecturePlainObject new];
-    lecture.speaker = speaker;
-    
-    id speakerShortInfoViewMock = OCMClassMock([SpeakerShortInfoView class]);
-    self.viewController.speakerShortInfoView = speakerShortInfoViewMock;
-    
-    // when
-    [self.viewController configureViewWithLecture:lecture];
-    
-    // then
-    OCMVerify([speakerShortInfoViewMock configureModuleWithSpeaker:OCMOCK_ANY
-                                                       andViewSize:SpeakerShortInfoViewDefaultSize]);
-    [speakerShortInfoViewMock stopMocking];
 }
 
 #pragma mark - Actions
@@ -162,7 +143,7 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
     // given
     
     // when
-    [self.viewController didTapShareButton];
+    [self.viewController didTapShareButton:nil];
     
     // then
     OCMVerify([self.presenterMock didTapShareButton]);

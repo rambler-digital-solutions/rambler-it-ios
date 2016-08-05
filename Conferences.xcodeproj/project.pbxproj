@@ -292,6 +292,7 @@
 		667050531D46332200DD9D6E /* ReportsSearchCellObjectsBuilderImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 667050521D46332200DD9D6E /* ReportsSearchCellObjectsBuilderImplementation.m */; };
 		667050561D46369100DD9D6E /* ReportsSearchCellObjectsDirectorImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 667050551D46369100DD9D6E /* ReportsSearchCellObjectsDirectorImplementation.m */; };
 		66764D041D4B636B00EF9D58 /* ReportsSearchViewAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 66764D031D4B636B00EF9D58 /* ReportsSearchViewAnimator.m */; };
+		66E9992C1D54899C00161D98 /* LectureServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E9992B1D54899C00161D98 /* LectureServiceTests.m */; };
 		9F0A6C1D1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */; };
 		9F0A6C2E1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C2D1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m */; };
 		9F0A84C31BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A84C21BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m */; };
@@ -952,6 +953,7 @@
 		667050591D464BF200DD9D6E /* ReportsSearchCellObjectsDirector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportsSearchCellObjectsDirector.h; path = SearchReportsModule/View/ReportsSearchDataDisplayManager/ReportsSearchCellObjectsBuilder/ReportsSearchCellObjectsDirector.h; sourceTree = "<group>"; };
 		66764D021D4B636B00EF9D58 /* ReportsSearchViewAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportsSearchViewAnimator.h; path = SearchReportsModule/View/ReportSearchViewAnimator/ReportsSearchViewAnimator.h; sourceTree = "<group>"; };
 		66764D031D4B636B00EF9D58 /* ReportsSearchViewAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportsSearchViewAnimator.m; path = SearchReportsModule/View/ReportSearchViewAnimator/ReportsSearchViewAnimator.m; sourceTree = "<group>"; };
+		66E9992B1D54899C00161D98 /* LectureServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LectureServiceTests.m; path = ConferencesTests/ConferencesLogicTests/BaseServicesTests/LectureServiceTests/LectureServiceTests.m; sourceTree = SOURCE_ROOT; };
 		84D2CBEF6E088EFC9A139E49 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9F0A6C1B1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CompoundOperationBuilderConfig.h; path = OperationBuilders/CompoundOperationBuilderConfig/CompoundOperationBuilderConfig.h; sourceTree = "<group>"; };
 		9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CompoundOperationBuilderConfig.m; path = OperationBuilders/CompoundOperationBuilderConfig/CompoundOperationBuilderConfig.m; sourceTree = "<group>"; };
@@ -1877,6 +1879,7 @@
 		636A37B71BC13B4B00B49C3D /* BaseServicesTests */ = {
 			isa = PBXGroup;
 			children = (
+				66E9992D1D5489A300161D98 /* LectureServiceTests */,
 				2B01CEBC1D50A54000DA8E66 /* MetaEventServiceTests */,
 				9F4077861D2BF82D00D47EF6 /* RamblerLocationServiceTests */,
 				9FC1F6741D2823E40070D9B5 /* EventListServiceTests */,
@@ -3814,6 +3817,14 @@
 				66764D031D4B636B00EF9D58 /* ReportsSearchViewAnimator.m */,
 			);
 			name = ReportSearchViewAnimator;
+			sourceTree = "<group>";
+		};
+		66E9992D1D5489A300161D98 /* LectureServiceTests */ = {
+			isa = PBXGroup;
+			children = (
+				66E9992B1D54899C00161D98 /* LectureServiceTests.m */,
+			);
+			name = LectureServiceTests;
 			sourceTree = "<group>";
 		};
 		9879306505819DD768BE2239 /* Pods */ = {
@@ -5836,6 +5847,7 @@
 				9F0A853F1BC192F0006F79FB /* OperationChainerTests.m in Sources */,
 				9F0A85211BC185AA006F79FB /* TestChainableOperationWithValidationBlock.m in Sources */,
 				63F402F11BCF77CB0086D030 /* ServiceComponentsAssemblyTests.m in Sources */,
+				66E9992C1D54899C00161D98 /* LectureServiceTests.m in Sources */,
 				9F1830DB1BC126D7000E21A5 /* RCFParseResponseValidatorTests.m in Sources */,
 				9F0A85201BC185AA006F79FB /* TestChainableOperation.m in Sources */,
 				63F402F01BCF77CB0086D030 /* ApplicationAssemblyTests.m in Sources */,

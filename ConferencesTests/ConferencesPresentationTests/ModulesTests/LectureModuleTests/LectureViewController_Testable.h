@@ -11,6 +11,6 @@
 #pragma mark - Actions
 
 - (void)didTapTableViewHeader;
-- (void)didTapShareButton;
+- (void)didTapShareButton:(id)sender;
 
 @end
