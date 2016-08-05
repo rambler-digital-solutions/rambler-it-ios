@@ -24,6 +24,15 @@
 
 @protocol LectureCellObjectsBuilder <NSObject>
 
+/**
+ @author Konstantin Zinovyev
+ 
+ Build cell objects for lecture detailed tableview model
+ 
+ @param lecture lecture object
+ 
+ @return CellObjects
+ */
 - (NSArray *)cellObjectsForLecture:(LecturePlainObject *)lecture;
 
 @end
