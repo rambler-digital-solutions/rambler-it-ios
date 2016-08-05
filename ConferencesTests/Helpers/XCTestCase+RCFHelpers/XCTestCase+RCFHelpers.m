@@ -38,7 +38,7 @@
 }
 
 - (void)setupCoreDataStackForTests {
-    [MagicalRecord setupCoreDataStackWithStoreNamed:@"Conference Tests"];
+    [MagicalRecord setupCoreDataStackWithInMemoryStore];
 }
 
 - (void)tearDownCoreDataStack {

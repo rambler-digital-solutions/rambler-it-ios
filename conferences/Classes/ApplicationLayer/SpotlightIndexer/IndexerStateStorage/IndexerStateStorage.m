@@ -67,13 +67,10 @@ static NSUInteger const kTransactionBatchSize = 1000;
     NSManagedObjectContext *rootSavingContext = [NSManagedObjectContext MR_rootSavingContext];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"numberOfIdentifiers > 0"];
     
-    __block IndexState *state;
-    [rootSavingContext performBlockAndWait:^{
-        state = [IndexState MR_findFirstWithPredicate:predicate
-                                             sortedBy:NSStringFromSelector(@selector(lastChangeDate))
-                                            ascending:YES
-                                            inContext:rootSavingContext];
-    }];
+    IndexState *state = [IndexState MR_findFirstWithPredicate:predicate
+                                                     sortedBy:NSStringFromSelector(@selector(lastChangeDate))
+                                                    ascending:YES
+                                                    inContext:rootSavingContext];
     
     if (state.insertIdentifiers.count == 0 &&
         state.updateIdentifiers.count == 0 &&
