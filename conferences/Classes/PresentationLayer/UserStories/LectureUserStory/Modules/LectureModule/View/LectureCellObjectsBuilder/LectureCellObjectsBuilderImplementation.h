@@ -19,14 +19,8 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-#import "DataDisplayManager.h"
+#import "LectureCellObjectsBuilder.h"
 
-@class LecturePlainObject;
-@protocol LectureCellObjectsBuilder;
-@interface LectureDataDisplayManager : NSObject <DataDisplayManager, UITableViewDelegate>
-
-@property (nonatomic, strong) id<LectureCellObjectsBuilder> builderCellObjects;
-
-- (void)configureDataDisplayManagerWithLecture:(LecturePlainObject *)lecture;
+@interface LectureCellObjectsBuilderImplementation : NSObject <LectureCellObjectsBuilder>
 
 @end

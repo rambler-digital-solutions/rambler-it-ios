@@ -293,6 +293,7 @@
 		667050561D46369100DD9D6E /* ReportsSearchCellObjectsDirectorImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 667050551D46369100DD9D6E /* ReportsSearchCellObjectsDirectorImplementation.m */; };
 		66764D041D4B636B00EF9D58 /* ReportsSearchViewAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 66764D031D4B636B00EF9D58 /* ReportsSearchViewAnimator.m */; };
 		66E9992C1D54899C00161D98 /* LectureServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E9992B1D54899C00161D98 /* LectureServiceTests.m */; };
+		66E999321D549E2100161D98 /* LectureCellObjectsBuilderImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E999311D549E2100161D98 /* LectureCellObjectsBuilderImplementation.m */; };
 		9F0A6C1D1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */; };
 		9F0A6C2E1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C2D1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m */; };
 		9F0A84C31BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A84C21BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m */; };
@@ -954,6 +955,9 @@
 		66764D021D4B636B00EF9D58 /* ReportsSearchViewAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportsSearchViewAnimator.h; path = SearchReportsModule/View/ReportSearchViewAnimator/ReportsSearchViewAnimator.h; sourceTree = "<group>"; };
 		66764D031D4B636B00EF9D58 /* ReportsSearchViewAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportsSearchViewAnimator.m; path = SearchReportsModule/View/ReportSearchViewAnimator/ReportsSearchViewAnimator.m; sourceTree = "<group>"; };
 		66E9992B1D54899C00161D98 /* LectureServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LectureServiceTests.m; path = ConferencesTests/ConferencesLogicTests/BaseServicesTests/LectureServiceTests/LectureServiceTests.m; sourceTree = SOURCE_ROOT; };
+		66E9992F1D549E0E00161D98 /* LectureCellObjectsBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LectureCellObjectsBuilder.h; path = LectureCellObjectsBuilder/LectureCellObjectsBuilder.h; sourceTree = "<group>"; };
+		66E999301D549E2100161D98 /* LectureCellObjectsBuilderImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LectureCellObjectsBuilderImplementation.h; path = LectureCellObjectsBuilder/LectureCellObjectsBuilderImplementation.h; sourceTree = "<group>"; };
+		66E999311D549E2100161D98 /* LectureCellObjectsBuilderImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LectureCellObjectsBuilderImplementation.m; path = LectureCellObjectsBuilder/LectureCellObjectsBuilderImplementation.m; sourceTree = "<group>"; };
 		84D2CBEF6E088EFC9A139E49 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9F0A6C1B1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CompoundOperationBuilderConfig.h; path = OperationBuilders/CompoundOperationBuilderConfig/CompoundOperationBuilderConfig.h; sourceTree = "<group>"; };
 		9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CompoundOperationBuilderConfig.m; path = OperationBuilders/CompoundOperationBuilderConfig/CompoundOperationBuilderConfig.m; sourceTree = "<group>"; };
@@ -3071,6 +3075,7 @@
 		63F613101CB00A220002AEF0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				66E9992E1D549DB600161D98 /* LectureCellObjectsBuilder */,
 				63F613111CB00A220002AEF0 /* CellObjects */,
 				63F613151CB00A220002AEF0 /* Cells */,
 				63F6131A1CB00A220002AEF0 /* DataDisplayManager */,
@@ -3825,6 +3830,16 @@
 				66E9992B1D54899C00161D98 /* LectureServiceTests.m */,
 			);
 			name = LectureServiceTests;
+			sourceTree = "<group>";
+		};
+		66E9992E1D549DB600161D98 /* LectureCellObjectsBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				66E9992F1D549E0E00161D98 /* LectureCellObjectsBuilder.h */,
+				66E999301D549E2100161D98 /* LectureCellObjectsBuilderImplementation.h */,
+				66E999311D549E2100161D98 /* LectureCellObjectsBuilderImplementation.m */,
+			);
+			name = LectureCellObjectsBuilder;
 			sourceTree = "<group>";
 		};
 		9879306505819DD768BE2239 /* Pods */ = {
@@ -5748,6 +5763,7 @@
 				9F0A84F91BC1698B006F79FB /* AsyncOperation.m in Sources */,
 				63F51CB01C42AD3A00AFB9D2 /* LectureMaterialTitleTableViewCellObject.m in Sources */,
 				9F0A85321BC18906006F79FB /* EventQuery.m in Sources */,
+				66E999321D549E2100161D98 /* LectureCellObjectsBuilderImplementation.m in Sources */,
 				3784462F1D4E067A0016121E /* RCNavigationController.m in Sources */,
 				63F6136A1CB00A220002AEF0 /* PreviousLectureSectionHeaderTableViewCellObject.m in Sources */,
 				63FD4E061BE5038D0046378E /* UIColor+Hex.m in Sources */,

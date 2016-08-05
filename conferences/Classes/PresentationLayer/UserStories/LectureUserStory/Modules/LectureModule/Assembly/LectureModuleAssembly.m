@@ -27,6 +27,7 @@
 #import "LecturePresenterStateStorage.h"
 #import "PresentationLayerHelpersAssembly.h"
 #import "ServiceComponents.h"
+#import "LectureCellObjectsBuilderImplementation.h"
 
 @implementation  LectureModuleAssembly
 
@@ -81,9 +82,13 @@
 - (LectureDataDisplayManager *)dataDisplayManagerLecture {
     return [TyphoonDefinition withClass:[LectureDataDisplayManager class]
                           configuration:^(TyphoonDefinition *definition) {
-                              [definition injectProperty:@selector(dateFormatter)
-                                                    with:[self.presentationLayerHelpersAssembly dateFormatter]];
+                              [definition injectProperty:@selector(builderCellObjects)
+                                                    with:[self builderCellObjects]];
             }];
+}
+
+- (LectureCellObjectsBuilderImplementation *)builderCellObjects {
+    return [TyphoonDefinition withClass:[LectureCellObjectsBuilderImplementation class]];
 }
 
 @end
