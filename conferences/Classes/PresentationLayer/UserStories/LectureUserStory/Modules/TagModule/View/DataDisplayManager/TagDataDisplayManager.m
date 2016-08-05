@@ -21,6 +21,9 @@ const NSInteger kUndefineSectionIndex = -1;
 const CGFloat kTagSectionTopInset = 5.0f;
 const NSInteger kMaxCountItemsCollapseFromCalculate = 99;
 
+static NSString *const kTagMoreButton = @"%lu ещё";
+static NSString *const kTagViewAddTagButton = @"Добавить метку";
+
 typedef NS_ENUM(NSInteger, TagSectionIndex) {
     TagItemSectionIndex = 0,
     TagAddButtonSectionIndex = 1
@@ -302,7 +305,7 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 #pragma mark - Методы создания объектов ячеек
 
 - (TagButtonCollectionViewCellObject *)createAddButtonObject {
-    TagButtonCollectionViewCellObject *cellObject = [[TagButtonCollectionViewCellObject alloc] initWithTextButton:@"ИЗМЕНИТЬ !!!"
+    TagButtonCollectionViewCellObject *cellObject = [[TagButtonCollectionViewCellObject alloc] initWithTextButton:kTagViewAddTagButton
                                                                                                              type:TagButtonAddTagType];
     return cellObject;
 }
@@ -315,7 +318,7 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (TagButtonCollectionViewCellObject *)createMoreButtonWithCount:(NSInteger)count {
-    NSString *textButton = [[NSString alloc] initWithFormat:@"ИЗМЕНИТЬ !!! %ld", (long)count];
+    NSString *textButton = [[NSString alloc] initWithFormat:kTagMoreButton, (long)count];
     TagButtonCollectionViewCellObject *cellObject = [[TagButtonCollectionViewCellObject alloc] initWithTextButton:textButton
                                                                                                              type:TagButtonMoreType];
     return cellObject;

@@ -11,11 +11,11 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q2R-nh-j42" id="Lyg-UV-Fdz">
-                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" restorationIdentifier="collectionViewTagModule" translatesAutoresizingMaskIntoConstraints="NO" id="K8q-1f-fkt" customClass="TyphoonLoadedView">
-                        <rect key="frame" x="15" y="8" width="570" height="28"/>
+                        <rect key="frame" x="20" y="8" width="570" height="28"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="27" id="3Dz-Qj-tVZ"/>
@@ -27,7 +27,7 @@
                     <constraint firstAttribute="trailing" secondItem="K8q-1f-fkt" secondAttribute="trailing" constant="15" id="7ER-6V-GI8"/>
                     <constraint firstItem="K8q-1f-fkt" firstAttribute="top" secondItem="Lyg-UV-Fdz" secondAttribute="topMargin" id="Y6l-AL-aUX"/>
                     <constraint firstAttribute="bottomMargin" secondItem="K8q-1f-fkt" secondAttribute="bottom" id="knz-Za-ZyC"/>
-                    <constraint firstItem="K8q-1f-fkt" firstAttribute="leading" secondItem="Lyg-UV-Fdz" secondAttribute="leading" constant="15" id="u8t-xC-QuR"/>
+                    <constraint firstItem="K8q-1f-fkt" firstAttribute="leading" secondItem="Lyg-UV-Fdz" secondAttribute="leading" constant="20" id="u8t-xC-QuR"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
