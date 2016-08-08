@@ -20,22 +20,12 @@
 
 #import <Foundation/Foundation.h>
 
-#import "ChangeProvider.h"
+@class NSManagedObjectContext;
 
-@protocol ObjectTransformer;
-@protocol ChangeProviderFetchRequestFactory;
-@class SpotlightCoreDataStackCoordinator;
+@interface SpotlightCoreDataStackCoordinator : NSObject
 
-/**
- @author Egor Tolstoy
- 
- Default change provider build upon NSFetchedResultsController
- */
-@interface FetchedResultsControllerChangeProvider : NSObject <ChangeProvider>
+- (void)setupCoreDataStack;
 
-@property (nonatomic, strong) SpotlightCoreDataStackCoordinator *coordinator;
-
-+ (instancetype)changeProviderWithFetchRequestFactory:(id<ChangeProviderFetchRequestFactory>)fetchRequestFactory
-                                    objectTransformer:(id<ObjectTransformer>)objectTransformer;
+- (NSManagedObjectContext *)obtainDefaultContext;
 
 @end

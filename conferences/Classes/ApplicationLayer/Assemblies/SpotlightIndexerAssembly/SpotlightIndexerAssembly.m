@@ -27,12 +27,17 @@
 #import "EventChangeProviderFetchRequestFactory.h"
 #import "IndexerStateStorage.h"
 #import "IndexerMonitorOperationQueueFactory.h"
+#import "SpotlightCoreDataStackCoordinator.h"
 
 #import <CoreSpotlight/CoreSpotlight.h>
 
 @implementation SpotlightIndexerAssembly
 
 #pragma mark - IndexMonitor
+
+- (SpotlightCoreDataStackCoordinator *)spotlightCoreDataStackCoordinator {
+    return [TyphoonDefinition withClass:[SpotlightCoreDataStackCoordinator class]];
+}
 
 - (IndexerMonitor *)indexerMonitor {
     return [TyphoonDefinition withClass:[IndexerMonitor class]
@@ -50,7 +55,10 @@
 }
 
 - (IndexerStateStorage *)indexerStateStorage {
-    return [TyphoonDefinition withClass:[IndexerStateStorage class]];
+    return [TyphoonDefinition withClass:[IndexerStateStorage class] configuration:^(TyphoonDefinition *definition) {
+        [definition injectProperty:@selector(coordinator)
+                              with:[self spotlightCoreDataStackCoordinator]];
+    }];
 }
 
 - (IndexerMonitorOperationQueueFactory *)indexerMonitorOperationQueueFactory {
@@ -82,6 +90,8 @@
                                               }];
                               [definition injectProperty:@selector(delegate)
                                                     with:[self indexerMonitor]];
+                              [definition injectProperty:@selector(coordinator)
+                                                    with:[self spotlightCoreDataStackCoordinator]];
                           }];
 }
 
@@ -94,7 +104,10 @@
 #pragma mark - ObjectTransformers
 
 - (id<ObjectTransformer>)eventObjectTransformer {
-    return [TyphoonDefinition withClass:[EventObjectTransformer class]];
+    return [TyphoonDefinition withClass:[EventObjectTransformer class] configuration:^(TyphoonDefinition *definition) {
+        [definition injectProperty:@selector(coordinator)
+                              with:[self spotlightCoreDataStackCoordinator]];
+    }];
 }
 
 #pragma mark - Other

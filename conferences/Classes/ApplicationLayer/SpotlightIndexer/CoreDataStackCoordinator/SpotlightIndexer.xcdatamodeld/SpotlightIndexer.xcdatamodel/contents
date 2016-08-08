@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15G26a" minimumToolsVersion="Xcode 7.0">
+    <entity name="IndexState" representedClassName="IndexState" syncable="YES">
+        <attribute name="deleteIdentifiers" optional="YES" attributeType="Transformable" syncable="YES">
+            <userInfo>
+                <entry key="attributeValueClassName" value="NSMutableOrderedSet"/>
+            </userInfo>
+        </attribute>
+        <attribute name="insertIdentifiers" optional="YES" attributeType="Transformable" syncable="YES">
+            <userInfo>
+                <entry key="attributeValueClassName" value="NSMutableOrderedSet"/>
+            </userInfo>
+        </attribute>
+        <attribute name="lastChangeDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="moveIdentifiers" optional="YES" attributeType="Transformable" syncable="YES">
+            <userInfo>
+                <entry key="attributeValueClassName" value="NSMutableOrderedSet"/>
+            </userInfo>
+        </attribute>
+        <attribute name="numberOfIdentifiers" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="objectType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updateIdentifiers" optional="YES" attributeType="Transformable" syncable="YES">
+            <userInfo>
+                <entry key="attributeValueClassName" value="NSMutableOrderedSet"/>
+            </userInfo>
+        </attribute>
+    </entity>
+    <elements>
+        <element name="IndexState" positionX="-63" positionY="-18" width="128" height="150"/>
+    </elements>
+</model>

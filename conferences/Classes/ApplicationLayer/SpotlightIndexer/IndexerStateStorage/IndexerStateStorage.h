@@ -24,6 +24,7 @@
 
 @class IndexTransaction;
 @class IndexTransactionBatch;
+@class SpotlightCoreDataStackCoordinator;
 
 /**
  @author Egor Tolstoy
@@ -31,6 +32,8 @@
  This object is responsible for saving pending changes to process them later.
  */
 @interface IndexerStateStorage : NSObject
+
+@property (nonatomic, strong) SpotlightCoreDataStackCoordinator *coordinator;
 
 /**
  @author Egor Tolstoy

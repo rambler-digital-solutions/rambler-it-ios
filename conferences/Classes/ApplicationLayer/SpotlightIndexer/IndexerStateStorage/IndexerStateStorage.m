@@ -23,6 +23,7 @@
 #import "IndexTransaction.h"
 #import "IndexTransactionBatch.h"
 #import "IndexState.h"
+#import "SpotlightCoreDataStackCoordinator.h"
 
 #import <MagicalRecord/MagicalRecord.h>
 
@@ -33,38 +34,40 @@ static NSUInteger const kTransactionBatchSize = 1000;
 #pragma mark - Public methods
 
 - (void)insertTransaction:(IndexTransaction *)transaction {
-    NSManagedObjectContext *rootSavingContext = [NSManagedObjectContext MR_rootSavingContext];
-    [rootSavingContext MR_saveWithBlockAndWait:^(NSManagedObjectContext *localContext) {
+    NSManagedObjectContext *rootSavingContext = [self.coordinator obtainDefaultContext];
+    [rootSavingContext performBlockAndWait:^{
         IndexState *state = [IndexState MR_findFirstOrCreateByAttribute:NSStringFromSelector(@selector(objectType))
-                                                                    withValue:transaction.objectType
-                                                                    inContext:localContext];
+                                                              withValue:transaction.objectType
+                                                              inContext:rootSavingContext];
         [state insertIdentifier:transaction.identifier
                         forType:transaction.changeType];
         state.lastChangeDate = [NSDate date];
+        [rootSavingContext save:nil];
     }];
 }
 
 - (void)insertTransactionsArray:(NSArray<NSArray *> *)transactionsArray
                      changeType:(ChangeProviderChangeType)changeType {
-    NSManagedObjectContext *rootSavingContext = [NSManagedObjectContext MR_rootSavingContext];
-    [rootSavingContext MR_saveWithBlockAndWait:^(NSManagedObjectContext *localContext) {
+    NSManagedObjectContext *rootSavingContext = [self.coordinator obtainDefaultContext];
+    [rootSavingContext performBlockAndWait:^{
         for (NSArray *transactions in transactionsArray) {
             if (transactions.count) {
                 NSString *objectType = [[transactions firstObject] objectType];
                 IndexState *state = [IndexState MR_findFirstOrCreateByAttribute:NSStringFromSelector(@selector(objectType))
                                                                       withValue:objectType
-                                                                      inContext:localContext];
+                                                                      inContext:rootSavingContext];
                 NSArray *identifiers = [transactions valueForKey:@"identifier"];
                 [state insertIdentifiers:identifiers
                                  forType:changeType];
                 state.lastChangeDate = [NSDate date];
             }
         }
+        [rootSavingContext save:nil];
     }];
 }
 
 - (IndexTransactionBatch *)obtainTransactionBatch {
-    NSManagedObjectContext *rootSavingContext = [NSManagedObjectContext MR_rootSavingContext];
+    NSManagedObjectContext *rootSavingContext = [self.coordinator obtainDefaultContext];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"numberOfIdentifiers > 0"];
     
     IndexState *state = [IndexState MR_findFirstWithPredicate:predicate
@@ -103,12 +106,11 @@ static NSUInteger const kTransactionBatchSize = 1000;
 }
 
 - (void)removeProcessedBatch:(IndexTransactionBatch *)batch {
-    NSManagedObjectContext *rootSavingContext = [NSManagedObjectContext MR_rootSavingContext];
-    [rootSavingContext MR_saveWithBlockAndWait:^(NSManagedObjectContext *localContext) {
-        
+    NSManagedObjectContext *rootSavingContext = [self.coordinator obtainDefaultContext];
+    [rootSavingContext performBlockAndWait:^{
         IndexState *state = [IndexState MR_findFirstOrCreateByAttribute:NSStringFromSelector(@selector(objectType))
                                                               withValue:batch.objectType
-                                                              inContext:localContext];
+                                                              inContext:rootSavingContext];
         
         NSArray *changeTypes = @[@(NSFetchedResultsChangeInsert),
                                  @(NSFetchedResultsChangeUpdate),
@@ -130,12 +132,11 @@ static NSUInteger const kTransactionBatchSize = 1000;
         }
         
         state.lastChangeDate = [NSDate date];
-        
     }];
 }
 
 - (BOOL)shouldPerformInitialIndexing {
-    NSManagedObjectContext *rootSavingContext = [NSManagedObjectContext MR_rootSavingContext];
+    NSManagedObjectContext *rootSavingContext = [self.coordinator obtainDefaultContext];
     IndexState *state = [IndexState MR_findFirstInContext:rootSavingContext];
     return state == nil;
 }

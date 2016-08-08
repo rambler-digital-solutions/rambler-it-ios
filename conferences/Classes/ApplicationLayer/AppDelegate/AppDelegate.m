@@ -27,10 +27,7 @@
 
 #import <RamblerTyphoonUtils/AssemblyCollector.h>
 #import <Typhoon/Typhoon.h>
-
-@interface AppDelegate ()
-
-@end
+#import "SpotlightCoreDataStackCoordinator.h"
 
 @implementation AppDelegate
 
@@ -38,6 +35,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self.thirdPartiesConfigurator configurate];
     [self.applicationConfigurator setupCoreDataStack];
+    [self.coordinator setupCoreDataStack];
     [self.pushNotificationCenter registerApplicationForPushNotificationsIfNeeded:application];
     
     [self.indexerMonitor startMonitoring];
