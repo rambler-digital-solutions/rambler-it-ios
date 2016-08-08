@@ -67,7 +67,7 @@
                         <outlet property="headerBackgroundView" destination="rfD-hU-F1j" id="kHO-Yw-SZd"/>
                         <outlet property="headerView" destination="tAj-fc-JAG" id="F1D-x1-qdL"/>
                         <outlet property="tableView" destination="2f2-MS-k81" id="pVQ-Gv-juG"/>
-                        <segue destination="ApB-G0-QuI" kind="push" identifier="EventModuleToLectureModuleSegue" id="k0t-w6-Xgx"/>
+                        <segue destination="ApB-G0-QuI" kind="push" identifier="kEventModuleToLectureModuleSegue" id="k0t-w6-Xgx"/>
                         <segue destination="Rfx-yA-6Vy" kind="push" identifier="kEventModuleToSpeakerModuleSegue" id="vPW-gs-mep"/>
                     </connections>
                 </viewController>

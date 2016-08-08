@@ -6,6 +6,6 @@
 //  Copyright © 2016 Rambler. All rights reserved.
 //
 
-static NSString * const kEventModuleToLectureModuleSegue = @"EventModuleToLectureModuleSegue";
+static NSString * const kEventModuleToLectureModuleSegue = @"kEventModuleToLectureModuleSegue";
 static NSString * const kEventModuleToSpeakerModuleSegue = @"kEventModuleToSpeakerModuleSegue";
 
