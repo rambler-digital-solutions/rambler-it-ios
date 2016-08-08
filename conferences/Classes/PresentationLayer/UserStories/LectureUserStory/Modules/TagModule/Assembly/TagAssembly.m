@@ -116,4 +116,5 @@
                                                     with:[self tagCellNewPostModule]];
                           }];
 }
+
 @end

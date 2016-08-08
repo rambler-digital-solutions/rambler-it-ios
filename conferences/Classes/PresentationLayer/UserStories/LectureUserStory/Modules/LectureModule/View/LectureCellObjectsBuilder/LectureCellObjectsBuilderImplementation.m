@@ -67,9 +67,6 @@ static NSString *const kTimeVideoText = @"(32:12)";
     LectureMaterialTitleTableViewCellObject *materialsTextLabelCellObject = [LectureMaterialTitleTableViewCellObject objectWithText:NSLocalizedString(LectureMaterialsTableViewCellTitle, nil)];
     [cellObjects addObject:materialsTextLabelCellObject];
     
-    LectureMaterialTitleTableViewCellObject *additionalTextLabelCellObject = [LectureMaterialTitleTableViewCellObject objectWithText:NSLocalizedString(AdditionInformationTableViewCellTitle, nil)];
-    [cellObjects addObject:additionalTextLabelCellObject];
-    
     UIImage *presentationImage = [UIImage imageNamed:kPresentationImageName];
     LectureMaterialInfoTableViewCellObject *presentationTextImageLabelCellObject = [LectureMaterialInfoTableViewCellObject objectWithText:NSLocalizedString(LecturePresentationTableViewCellTitle, nil) andImage:presentationImage];
     [cellObjects addObject:presentationTextImageLabelCellObject];
@@ -77,6 +74,9 @@ static NSString *const kTimeVideoText = @"(32:12)";
     UIImage *articleImage = [UIImage imageNamed:kArticleImageName];
     LectureMaterialInfoTableViewCellObject *articlesTextImageLabelCellObject = [LectureMaterialInfoTableViewCellObject objectWithText:NSLocalizedString(LectureArticlesTableViewCellTitle, nil) andImage:articleImage];
     [cellObjects addObject:articlesTextImageLabelCellObject];
+    
+    LectureMaterialTitleTableViewCellObject *additionalTextLabelCellObject = [LectureMaterialTitleTableViewCellObject objectWithText:NSLocalizedString(AdditionInformationTableViewCellTitle, nil)];
+    [cellObjects addObject:additionalTextLabelCellObject];
     
     UIImage *codeGithubImage = [UIImage imageNamed:kCodeGithubImageName];
     LectureMaterialInfoTableViewCellObject *codeGithubTextLabelCellObject = [LectureMaterialInfoTableViewCellObject objectWithText:NSLocalizedString(LectureCodeGithubTableViewCellTitle, nil) andImage:codeGithubImage];
