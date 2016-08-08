@@ -387,6 +387,7 @@
 		9FAB6A871D54981B0061F333 /* IndexerMonitorOperationQueueFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB6A861D54981B0061F333 /* IndexerMonitorOperationQueueFactoryTests.m */; };
 		9FAB6A891D5499880061F333 /* IndexerMonitorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB6A881D5499880061F333 /* IndexerMonitorTests.m */; };
 		9FAB6A981D54BE990061F333 /* EventChangeProviderFetchRequestFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB6A971D54BE990061F333 /* EventChangeProviderFetchRequestFactoryTests.m */; };
+		9FAB6A9A1D54BFA00061F333 /* FetchedResultsControllerChangeProviderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB6A991D54BFA00061F333 /* FetchedResultsControllerChangeProviderTests.m */; };
 		9FC1F6761D2824000070D9B5 /* EventListServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */; };
 		9FC1F6801D2838FA0070D9B5 /* EventListQueryTransformerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */; };
 		9FC1F6841D28391E0070D9B5 /* EventListQueryTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6831D28391E0070D9B5 /* EventListQueryTransformer.m */; };
@@ -1176,6 +1177,7 @@
 		9FAB6A861D54981B0061F333 /* IndexerMonitorOperationQueueFactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IndexerMonitorOperationQueueFactoryTests.m; path = ApplicationLayerTests/SpotlightIndexer/IndexerMonitor/IndexerMonitorOperationQueueFactory/IndexerMonitorOperationQueueFactoryTests.m; sourceTree = "<group>"; };
 		9FAB6A881D5499880061F333 /* IndexerMonitorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IndexerMonitorTests.m; path = ApplicationLayerTests/SpotlightIndexer/IndexerMonitor/IndexerMonitorTests.m; sourceTree = "<group>"; };
 		9FAB6A971D54BE990061F333 /* EventChangeProviderFetchRequestFactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventChangeProviderFetchRequestFactoryTests.m; path = ApplicationLayerTests/SpotlightIndexer/ChangeProviders/BaseClasses/FetchedResultsControllerChangeProvider/ChangeProviderFetchRequestFactories/ConcreteClasses/EventChangeProviderFetchRequestFactory/EventChangeProviderFetchRequestFactoryTests.m; sourceTree = "<group>"; };
+		9FAB6A991D54BFA00061F333 /* FetchedResultsControllerChangeProviderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FetchedResultsControllerChangeProviderTests.m; path = ApplicationLayerTests/SpotlightIndexer/ChangeProviders/BaseClasses/FetchedResultsControllerChangeProvider/FetchedResultsControllerChangeProviderTests.m; sourceTree = "<group>"; };
 		9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListServiceTests.m; path = EventListServiceTests/EventListServiceTests.m; sourceTree = "<group>"; };
 		9FC1F6781D2826D10070D9B5 /* QueryTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QueryTransformer.h; path = CoreComponents/QueryTransformers/QueryTransformer.h; sourceTree = "<group>"; };
 		9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListQueryTransformerTests.m; path = CoreLayer/CoreComponents/QueryTransformers/EventListQueryTransformer/EventListQueryTransformerTests.m; sourceTree = "<group>"; };
@@ -5520,6 +5522,7 @@
 			isa = PBXGroup;
 			children = (
 				9FAB6A941D54BE500061F333 /* ChangeProviderFetchRequestFactories */,
+				9FAB6A991D54BFA00061F333 /* FetchedResultsControllerChangeProviderTests.m */,
 			);
 			name = FetchedResultsControllerChangeProvider;
 			sourceTree = "<group>";
@@ -6377,6 +6380,7 @@
 				9F8E5F9B1BC2753100DC10DB /* CompoundOperationFactoryTestsBase.m in Sources */,
 				2B01CEBE1D50A55900DA8E66 /* MetaEventServiceTests.m in Sources */,
 				631CBA721C020CCD00E3EBA8 /* AnnouncementListModuleAssemblyTests.m in Sources */,
+				9FAB6A9A1D54BFA00061F333 /* FetchedResultsControllerChangeProviderTests.m in Sources */,
 				635E18C71CA6B8CE005B8439 /* SpeakerShortInfoModuleAssemblyTests.m in Sources */,
 				9F0A851F1BC185AA006F79FB /* TestCancellableOperation.m in Sources */,
 				9F0A85271BC185AA006F79FB /* ResponseMappingOperationTests.m in Sources */,
