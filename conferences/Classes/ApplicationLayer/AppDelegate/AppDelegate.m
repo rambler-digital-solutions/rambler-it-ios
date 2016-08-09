@@ -36,16 +36,8 @@
     [self.thirdPartiesConfigurator configurate];
     [self.applicationConfigurator setupCoreDataStack];
     [self.spotlightCoreDataStackCoordinator setupCoreDataStack];
-    [self.pushNotificationCenter registerApplicationForPushNotificationsIfNeeded:application];
-    
     [self.indexerMonitor startMonitoring];
-    
-    NSDictionary *notification = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
-    if (notification) {
-        [self.pushNotificationCenter processPushNotificationWithUserInfo:notification
-                                                        applicationState:application.applicationState];
-    }
-    
+
     [self.cleanStartRouter openInitialScreen];
     
     return YES;
@@ -54,15 +46,6 @@
 - (NSArray *)initialAssemblies {
     RamblerInitialAssemblyCollector *collector = [RamblerInitialAssemblyCollector new];
     return [collector collectInitialAssemblyClasses];
-}
-
-- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-    [self.pushNotificationCenter didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
-}
-
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-    [self.pushNotificationCenter processPushNotificationWithUserInfo:userInfo
-                                                    applicationState:application.applicationState];
 }
 
 @end
