@@ -22,9 +22,11 @@
 #import <RamblerTyphoonUtils/AssemblyCollector.h>
 
 @class IndexerMonitor;
+@protocol SpotlightCoreDataStackCoordinator;
 
 @interface SpotlightIndexerAssembly : TyphoonAssembly <RamblerInitialAssembly>
 
 - (IndexerMonitor *)indexerMonitor;
+- (id<SpotlightCoreDataStackCoordinator>)spotlightCoreDataStackCoordinator;
 
 @end
