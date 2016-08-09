@@ -24,13 +24,13 @@
 #import "PushNotificationCenter.h"
 #import "ThirdPartiesConfigurator.h"
 #import "IndexerMonitor.h"
+#import "SpotlightCoreDataStackCoordinator.h"
+#import "CleanStartRouter.h"
 
 #import <RamblerTyphoonUtils/AssemblyCollector.h>
 #import <Typhoon/Typhoon.h>
-#import "SpotlightCoreDataStackCoordinator.h"
 
 @implementation AppDelegate
-
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self.thirdPartiesConfigurator configurate];
@@ -45,6 +45,8 @@
         [self.pushNotificationCenter processPushNotificationWithUserInfo:notification
                                                         applicationState:application.applicationState];
     }
+    
+    [self.cleanStartRouter openInitialScreen];
     
     return YES;
 }

@@ -29,6 +29,8 @@
 #import "ThirdPartiesConfigurator.h"
 #import "ThirdPartiesConfiguratorImplementation.h"
 #import "SpotlightIndexerAssembly.h"
+#import "CleanStartRouter.h"
+#import "TabBarControllerFactoryImplementation.h"
 
 @implementation ApplicationAssembly
 
@@ -41,6 +43,8 @@
                                                     with:[self pushNotificationCenter]];
                               [definition injectProperty:@selector(thirdPartiesConfigurator)
                                                     with:[self thirdPartiesConfigurator]];
+                              [definition injectProperty:@selector(cleanStartRouter)
+                                                    with:[self cleanStartRouter]];
                               [definition injectProperty:@selector(indexerMonitor)
                                                     with:[self.spotlightIndexerAssembly indexerMonitor]];
                               [definition injectProperty:@selector(spotlightCoreDataStackCoordinator)
@@ -57,11 +61,56 @@
                           configuration:^(TyphoonDefinition *definition) {
                               [definition injectProperty:@selector(pushNotificationService)
                                                     with:[self.serviceComponents pushNotificationService]];
-    }];
+                          }];
 }
 
 - (id <ThirdPartiesConfigurator>)thirdPartiesConfigurator {
     return [TyphoonDefinition withClass:[ThirdPartiesConfiguratorImplementation class]];
+}
+
+#pragma mark - StartUpSystem
+
+- (CleanStartRouter *)cleanStartRouter {
+    return [TyphoonDefinition withClass:[CleanStartRouter class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition useInitializer:@selector(initWithTabBarControllerFactory:window:)
+                                              parameters:^(TyphoonMethod *initializer) {
+                                                  [initializer injectParameterWith:[self tabBarControllerFactory]];
+                                                  [initializer injectParameterWith:[self mainWindow]];
+                                              }];
+                          }];
+}
+
+- (TabBarControllerFactoryImplementation *)tabBarControllerFactory {
+    return [TyphoonDefinition withClass:[TabBarControllerFactoryImplementation class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition useInitializer:@selector(factoryWithStoryboard:)
+                                              parameters:^(TyphoonMethod *initializer) {
+                                                  [initializer injectParameterWith:[self mainStoryboard]];
+                                              }];
+                          }];
+}
+
+- (UIStoryboard *)mainStoryboard {
+    return [TyphoonDefinition withClass:[UIStoryboard class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition useInitializer:@selector(storyboardWithName:bundle:)
+                                              parameters:^(TyphoonMethod *initializer) {
+                                                  [initializer injectParameterWith:@"Main"];
+                                                  [initializer injectParameterWith:[NSBundle mainBundle]];
+                                              }];
+                          }];
+}
+
+- (UIWindow *)mainWindow {
+    return [TyphoonDefinition withClass:[UIWindow class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition useInitializer:@selector(initWithFrame:)
+                                              parameters:^(TyphoonMethod *initializer) {
+                                                  [initializer injectParameterWith:[NSValue valueWithCGRect:[[UIScreen mainScreen] bounds]]];
+                                              }];
+                              definition.scope = TyphoonScopeSingleton;
+                          }];
 }
 
 @end

@@ -1,5 +1,3 @@
-// Copyright (c) 2015 RAMBLER&Co
-//
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
@@ -18,26 +16,26 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
-#import <CoreData/CoreData.h>
+#import <Foundation/Foundation.h>
 
-@protocol ApplicationConfigurator;
-@protocol PushNotificationCenter;
-@protocol ThirdPartiesConfigurator;
-@protocol SpotlightCoreDataStackCoordinator;
-@class IndexerMonitor;
-@class CleanStartRouter;
+@class UIWindow;
+@protocol TabBarControllerFactory;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+/**
+ @author Egor Tolstoy
+ 
+ Router for clean application start
+ */
+@interface CleanStartRouter : NSObject
 
-@property (strong, nonatomic) UIWindow *window;
+- (instancetype)initWithTabBarControllerFactory:(id<TabBarControllerFactory>)tabBarControllerFactory
+                                         window:(UIWindow *)window;
 
-@property (strong, nonatomic) id <ApplicationConfigurator> applicationConfigurator;
-@property (strong, nonatomic) id <PushNotificationCenter> pushNotificationCenter;
-@property (strong, nonatomic) id <ThirdPartiesConfigurator> thirdPartiesConfigurator;
-@property (strong, nonatomic) IndexerMonitor *indexerMonitor;
-@property (strong, nonatomic) CleanStartRouter *cleanStartRouter;
-@property (strong, nonatomic) id<SpotlightCoreDataStackCoordinator> spotlightCoreDataStackCoordinator;
+/**
+ @author Egor Tolstoy
+ 
+ Methods opens initial application screen
+ */
+- (void)openInitialScreen;
 
 @end
-
