@@ -20,6 +20,8 @@
 
 #import "XCTestCase+RCFHelpers.h"
 
+#import <MagicalRecord/MagicalRecord.h>
+
 @implementation XCTestCase (RCFHelpers)
 
 - (XCTestExpectation *)expectationForCurrentTest {
@@ -33,6 +35,14 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         [expectation fulfill];
     });
+}
+
+- (void)setupCoreDataStackForTests {
+    [MagicalRecord setupCoreDataStackWithInMemoryStore];
+}
+
+- (void)tearDownCoreDataStack {
+    [MagicalRecord cleanUp];
 }
 
 @end

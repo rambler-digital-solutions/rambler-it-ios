@@ -27,7 +27,7 @@ static NSString * const kRCFCoreDataStoreName = @"Conference";
 @implementation ApplicationConfiguratorImplementation
 
 - (void)setupCoreDataStack {
-    [MagicalRecord setupCoreDataStackWithStoreNamed:kRCFCoreDataStoreName];
+    [MagicalRecord setupAutoMigratingCoreDataStack];
 }
 
 @end

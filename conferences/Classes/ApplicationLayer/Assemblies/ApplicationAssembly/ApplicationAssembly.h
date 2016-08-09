@@ -22,6 +22,7 @@
 #import "AssemblyCollector/RamblerInitialAssembly.h"
 
 @protocol ServiceComponents;
+@class SpotlightIndexerAssembly;
 
 /**
  @author Artem Karpushin
@@ -31,5 +32,6 @@
 @interface ApplicationAssembly : TyphoonAssembly <RamblerInitialAssembly>
 
 @property (strong, nonatomic, readonly) TyphoonAssembly<ServiceComponents>* serviceComponents;
+@property (strong, nonatomic, readonly) SpotlightIndexerAssembly* spotlightIndexerAssembly;
 
 @end

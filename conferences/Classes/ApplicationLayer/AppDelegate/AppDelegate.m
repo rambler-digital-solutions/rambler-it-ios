@@ -23,13 +23,11 @@
 #import "ApplicationConfigurator.h"
 #import "PushNotificationCenter.h"
 #import "ThirdPartiesConfigurator.h"
+#import "IndexerMonitor.h"
 
 #import <RamblerTyphoonUtils/AssemblyCollector.h>
 #import <Typhoon/Typhoon.h>
-
-@interface AppDelegate ()
-
-@end
+#import "SpotlightCoreDataStackCoordinator.h"
 
 @implementation AppDelegate
 
@@ -37,7 +35,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self.thirdPartiesConfigurator configurate];
     [self.applicationConfigurator setupCoreDataStack];
+    [self.spotlightCoreDataStackCoordinator setupCoreDataStack];
     [self.pushNotificationCenter registerApplicationForPushNotificationsIfNeeded:application];
+    
+    [self.indexerMonitor startMonitoring];
     
     NSDictionary *notification = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
     if (notification) {

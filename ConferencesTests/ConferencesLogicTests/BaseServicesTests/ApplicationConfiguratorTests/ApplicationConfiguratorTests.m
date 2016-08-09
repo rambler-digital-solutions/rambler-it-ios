@@ -54,7 +54,7 @@
     [self.applicationConfigurator setupCoreDataStack];
     
     // then
-    OCMVerify([mockMagicalRecord setupCoreDataStackWithStoreNamed:OCMOCK_ANY]);
+    OCMVerify([mockMagicalRecord setupAutoMigratingCoreDataStack]);
     [mockMagicalRecord stopMocking];
 }
 
