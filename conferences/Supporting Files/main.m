@@ -23,6 +23,12 @@
 
 int main(int argc, char * argv[]) {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+        Class appDelegateClass;
+        if (!NSClassFromString(@"XCTest")) {
+            appDelegateClass = [AppDelegate class];
+        } else {
+            appDelegateClass = NSClassFromString(@"VerySpecialAppDelegateForTesting");
+        }
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass(appDelegateClass));
     }
 }
