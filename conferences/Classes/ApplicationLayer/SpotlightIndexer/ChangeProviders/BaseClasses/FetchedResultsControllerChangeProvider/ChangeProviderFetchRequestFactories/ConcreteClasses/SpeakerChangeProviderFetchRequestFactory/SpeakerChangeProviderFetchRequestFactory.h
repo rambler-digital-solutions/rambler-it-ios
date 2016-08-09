@@ -25,8 +25,8 @@
 /**
  @author Egor Tolstoy
  
- FetchRequestFactory for EventModelObject
+ FetchRequestFactory for SpeakerModelObject
  */
-@interface EventChangeProviderFetchRequestFactory : NSObject <ChangeProviderFetchRequestFactory>
+@interface SpeakerChangeProviderFetchRequestFactory : NSObject <ChangeProviderFetchRequestFactory>
 
 @end

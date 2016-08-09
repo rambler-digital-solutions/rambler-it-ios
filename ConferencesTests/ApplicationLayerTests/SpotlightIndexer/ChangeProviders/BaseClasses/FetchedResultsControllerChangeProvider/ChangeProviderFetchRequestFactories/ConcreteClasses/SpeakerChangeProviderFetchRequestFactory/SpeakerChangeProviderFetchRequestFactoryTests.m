@@ -18,15 +18,42 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import <XCTest/XCTest.h>
+#import <CoreData/CoreData.h>
 
-#import "ChangeProviderFetchRequestFactory.h"
+#import "SpeakerChangeProviderFetchRequestFactory.h"
+#import "SpeakerModelObject.h"
 
-/**
- @author Egor Tolstoy
- 
- FetchRequestFactory for EventModelObject
- */
-@interface EventChangeProviderFetchRequestFactory : NSObject <ChangeProviderFetchRequestFactory>
+@interface SpeakerChangeProviderFetchRequestFactoryTests : XCTestCase
+
+@property (nonatomic, strong) SpeakerChangeProviderFetchRequestFactory *factory;
+
+@end
+
+@implementation SpeakerChangeProviderFetchRequestFactoryTests
+
+- (void)setUp {
+    [super setUp];
+    
+    self.factory = [SpeakerChangeProviderFetchRequestFactory new];
+}
+
+- (void)tearDown {
+    self.factory = nil;
+    
+    [super tearDown];
+}
+
+- (void)testThatFactoryReturnsFetchRequestForIndexing {
+    // given
+    NSString *const kExpectedEntityName = @"Speaker";
+    
+    // when
+    NSFetchRequest *request = [self.factory obtainFetchRequestForIndexing];
+    
+    // then
+    XCTAssertNotNil(request);
+    XCTAssertEqualObjects(request.entityName, kExpectedEntityName);
+}
 
 @end

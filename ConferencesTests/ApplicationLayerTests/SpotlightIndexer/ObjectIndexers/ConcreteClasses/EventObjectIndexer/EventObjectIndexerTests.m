@@ -117,6 +117,7 @@
         
         [lecture addTagsObject:tag];
         [event addLecturesObject:lecture];
+        [rootSavingContext MR_saveToPersistentStoreAndWait];
     }];
     return event;
 }

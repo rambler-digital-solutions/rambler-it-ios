@@ -18,15 +18,13 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-
-#import "ChangeProviderFetchRequestFactory.h"
+#import "ObjectIndexerBase.h"
 
 /**
  @author Egor Tolstoy
  
- FetchRequestFactory for EventModelObject
+ ObjectIndexer for Speaker model object
  */
-@interface EventChangeProviderFetchRequestFactory : NSObject <ChangeProviderFetchRequestFactory>
+@interface SpeakerObjectIndexer : ObjectIndexerBase
 
 @end

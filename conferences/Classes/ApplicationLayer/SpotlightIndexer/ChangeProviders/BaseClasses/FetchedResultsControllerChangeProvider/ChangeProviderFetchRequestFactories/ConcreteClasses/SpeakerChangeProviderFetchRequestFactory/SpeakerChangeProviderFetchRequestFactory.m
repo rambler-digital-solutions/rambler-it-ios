@@ -18,15 +18,20 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import "SpeakerChangeProviderFetchRequestFactory.h"
 
-#import "ChangeProviderFetchRequestFactory.h"
+#import "SpeakerModelObject.h"
 
-/**
- @author Egor Tolstoy
- 
- FetchRequestFactory for EventModelObject
- */
-@interface EventChangeProviderFetchRequestFactory : NSObject <ChangeProviderFetchRequestFactory>
+@implementation SpeakerChangeProviderFetchRequestFactory
+
+#pragma mark - <ChangeProviderFetchRequestFactory>
+
+- (NSFetchRequest *)obtainFetchRequestForIndexing {
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Speaker"];
+    
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:NSStringFromSelector(@selector(name)) ascending:YES];
+    request.sortDescriptors = @[sortDescriptor];
+    return request;
+}
 
 @end

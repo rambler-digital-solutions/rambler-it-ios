@@ -20,13 +20,13 @@
 
 #import <Foundation/Foundation.h>
 
-#import "ChangeProviderFetchRequestFactory.h"
+#import "ObjectTransformer.h"
 
 /**
  @author Egor Tolstoy
  
- FetchRequestFactory for EventModelObject
+ An <ObjectTransformer> for SpeakerModelObject
  */
-@interface EventChangeProviderFetchRequestFactory : NSObject <ChangeProviderFetchRequestFactory>
+@interface SpeakerObjectTransformer : NSObject <ObjectTransformer>
 
 @end

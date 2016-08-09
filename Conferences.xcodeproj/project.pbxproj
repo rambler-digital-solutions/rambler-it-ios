@@ -370,6 +370,12 @@
 		9F78D74B1D59D73E009DDCEA /* IndexState+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D7491D59D73E009DDCEA /* IndexState+CoreDataProperties.m */; };
 		9F78D74E1D59D755009DDCEA /* ContextStorageImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D74D1D59D755009DDCEA /* ContextStorageImplementation.m */; };
 		9F78D7551D59DB89009DDCEA /* ContextStorageImplementationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D7541D59DB89009DDCEA /* ContextStorageImplementationTests.m */; };
+		9F78D75A1D59E6CB009DDCEA /* SpeakerObjectTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D7591D59E6CB009DDCEA /* SpeakerObjectTransformer.m */; };
+		9F78D75D1D59E778009DDCEA /* SpeakerObjectTransformerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D75C1D59E778009DDCEA /* SpeakerObjectTransformerTests.m */; };
+		9F78D7611D59E8D2009DDCEA /* SpeakerChangeProviderFetchRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D7601D59E8D2009DDCEA /* SpeakerChangeProviderFetchRequestFactory.m */; };
+		9F78D7641D59E93B009DDCEA /* SpeakerChangeProviderFetchRequestFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D7631D59E93B009DDCEA /* SpeakerChangeProviderFetchRequestFactoryTests.m */; };
+		9F78D7681D59EA02009DDCEA /* SpeakerObjectIndexer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D7671D59EA02009DDCEA /* SpeakerObjectIndexer.m */; };
+		9F78D76B1D59EB52009DDCEA /* SpeakerObjectIndexerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D76A1D59EB52009DDCEA /* SpeakerObjectIndexerTests.m */; };
 		9F8E5F701BC2552600DC10DB /* Conferences.API.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F8E5F6F1BC2552600DC10DB /* Conferences.API.plist */; };
 		9F8E5F741BC255AA00DC10DB /* RequestSignersAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5F731BC255AA00DC10DB /* RequestSignersAssembly.m */; };
 		9F8E5F781BC2571B00DC10DB /* NetworkClientsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5F771BC2571B00DC10DB /* NetworkClientsAssembly.m */; };
@@ -1150,6 +1156,15 @@
 		9F78D7511D59DAB3009DDCEA /* ContextFiller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContextFiller.h; sourceTree = "<group>"; };
 		9F78D7541D59DB89009DDCEA /* ContextStorageImplementationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContextStorageImplementationTests.m; path = ApplicationLayerTests/SpotlightIndexer/CoreDataStack/ContextStorage/ContextStorageImplementationTests.m; sourceTree = "<group>"; };
 		9F78D7561D59DDC4009DDCEA /* SpotlightCoreDataStackCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotlightCoreDataStackCoordinator.h; sourceTree = "<group>"; };
+		9F78D7581D59E6CB009DDCEA /* SpeakerObjectTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeakerObjectTransformer.h; path = SpotlightIndexer/ObjectTransformers/ConcreteClasses/SpeakerObjectTransformer/SpeakerObjectTransformer.h; sourceTree = "<group>"; };
+		9F78D7591D59E6CB009DDCEA /* SpeakerObjectTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeakerObjectTransformer.m; path = SpotlightIndexer/ObjectTransformers/ConcreteClasses/SpeakerObjectTransformer/SpeakerObjectTransformer.m; sourceTree = "<group>"; };
+		9F78D75C1D59E778009DDCEA /* SpeakerObjectTransformerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeakerObjectTransformerTests.m; path = ApplicationLayerTests/SpotlightIndexer/ObjectTransformers/ConcreteClasses/SpeakerObjectTransformer/SpeakerObjectTransformerTests.m; sourceTree = "<group>"; };
+		9F78D75F1D59E8D2009DDCEA /* SpeakerChangeProviderFetchRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeakerChangeProviderFetchRequestFactory.h; path = ChangeProviderFetchRequestFactories/ConcreteClasses/SpeakerChangeProviderFetchRequestFactory/SpeakerChangeProviderFetchRequestFactory.h; sourceTree = "<group>"; };
+		9F78D7601D59E8D2009DDCEA /* SpeakerChangeProviderFetchRequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeakerChangeProviderFetchRequestFactory.m; path = ChangeProviderFetchRequestFactories/ConcreteClasses/SpeakerChangeProviderFetchRequestFactory/SpeakerChangeProviderFetchRequestFactory.m; sourceTree = "<group>"; };
+		9F78D7631D59E93B009DDCEA /* SpeakerChangeProviderFetchRequestFactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeakerChangeProviderFetchRequestFactoryTests.m; path = ApplicationLayerTests/SpotlightIndexer/ChangeProviders/BaseClasses/FetchedResultsControllerChangeProvider/ChangeProviderFetchRequestFactories/ConcreteClasses/SpeakerChangeProviderFetchRequestFactory/SpeakerChangeProviderFetchRequestFactoryTests.m; sourceTree = "<group>"; };
+		9F78D7661D59EA02009DDCEA /* SpeakerObjectIndexer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeakerObjectIndexer.h; path = SpotlightIndexer/ObjectIndexers/ConcreteClasses/SpeakerObjectIndexer/SpeakerObjectIndexer.h; sourceTree = "<group>"; };
+		9F78D7671D59EA02009DDCEA /* SpeakerObjectIndexer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeakerObjectIndexer.m; path = SpotlightIndexer/ObjectIndexers/ConcreteClasses/SpeakerObjectIndexer/SpeakerObjectIndexer.m; sourceTree = "<group>"; };
+		9F78D76A1D59EB52009DDCEA /* SpeakerObjectIndexerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeakerObjectIndexerTests.m; path = ApplicationLayerTests/SpotlightIndexer/ObjectIndexers/ConcreteClasses/SpeakerObjectIndexer/SpeakerObjectIndexerTests.m; sourceTree = "<group>"; };
 		9F8E5F6F1BC2552600DC10DB /* Conferences.API.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Conferences.API.plist; path = Assemblies/RequestConfiguratorsFactory/Conferences.API.plist; sourceTree = "<group>"; };
 		9F8E5F711BC2559B00DC10DB /* RequestSignersFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequestSignersFactory.h; path = Assemblies/RequestSignersFactory/RequestSignersFactory.h; sourceTree = "<group>"; };
 		9F8E5F721BC255AA00DC10DB /* RequestSignersAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequestSignersAssembly.h; path = Assemblies/RequestSignersFactory/RequestSignersAssembly.h; sourceTree = "<group>"; };
@@ -5146,6 +5161,7 @@
 		9F4097801D51F63F008BFE42 /* ConcreteClasses */ = {
 			isa = PBXGroup;
 			children = (
+				9F78D7571D59E6A8009DDCEA /* SpeakerObjectTransformer */,
 				9F4097811D51F644008BFE42 /* EventObjectTransformer */,
 			);
 			name = ConcreteClasses;
@@ -5171,6 +5187,7 @@
 		9F4097861D51F8DC008BFE42 /* ConcreteClasses */ = {
 			isa = PBXGroup;
 			children = (
+				9F78D75B1D59E76A009DDCEA /* SpeakerObjectTransformer */,
 				9F4097871D51F8E5008BFE42 /* EventObjectTransformer */,
 			);
 			name = ConcreteClasses;
@@ -5213,6 +5230,7 @@
 		9F4097911D534F66008BFE42 /* ConcreteClasses */ = {
 			isa = PBXGroup;
 			children = (
+				9F78D75E1D59E878009DDCEA /* SpeakerChangeProviderFetchRequestFactory */,
 				9F4097921D534F6B008BFE42 /* EventChangeProviderFetchRequestFactory */,
 			);
 			name = ConcreteClasses;
@@ -5448,6 +5466,57 @@
 			name = ContextStorage;
 			sourceTree = "<group>";
 		};
+		9F78D7571D59E6A8009DDCEA /* SpeakerObjectTransformer */ = {
+			isa = PBXGroup;
+			children = (
+				9F78D7581D59E6CB009DDCEA /* SpeakerObjectTransformer.h */,
+				9F78D7591D59E6CB009DDCEA /* SpeakerObjectTransformer.m */,
+			);
+			name = SpeakerObjectTransformer;
+			sourceTree = "<group>";
+		};
+		9F78D75B1D59E76A009DDCEA /* SpeakerObjectTransformer */ = {
+			isa = PBXGroup;
+			children = (
+				9F78D75C1D59E778009DDCEA /* SpeakerObjectTransformerTests.m */,
+			);
+			name = SpeakerObjectTransformer;
+			sourceTree = "<group>";
+		};
+		9F78D75E1D59E878009DDCEA /* SpeakerChangeProviderFetchRequestFactory */ = {
+			isa = PBXGroup;
+			children = (
+				9F78D75F1D59E8D2009DDCEA /* SpeakerChangeProviderFetchRequestFactory.h */,
+				9F78D7601D59E8D2009DDCEA /* SpeakerChangeProviderFetchRequestFactory.m */,
+			);
+			name = SpeakerChangeProviderFetchRequestFactory;
+			sourceTree = "<group>";
+		};
+		9F78D7621D59E92D009DDCEA /* SpeakerChangeProviderFetchRequestFactory */ = {
+			isa = PBXGroup;
+			children = (
+				9F78D7631D59E93B009DDCEA /* SpeakerChangeProviderFetchRequestFactoryTests.m */,
+			);
+			name = SpeakerChangeProviderFetchRequestFactory;
+			sourceTree = "<group>";
+		};
+		9F78D7651D59E9E8009DDCEA /* SpeakerObjectIndexer */ = {
+			isa = PBXGroup;
+			children = (
+				9F78D7661D59EA02009DDCEA /* SpeakerObjectIndexer.h */,
+				9F78D7671D59EA02009DDCEA /* SpeakerObjectIndexer.m */,
+			);
+			name = SpeakerObjectIndexer;
+			sourceTree = "<group>";
+		};
+		9F78D7691D59EB44009DDCEA /* SpeakerObjectIndexer */ = {
+			isa = PBXGroup;
+			children = (
+				9F78D76A1D59EB52009DDCEA /* SpeakerObjectIndexerTests.m */,
+			);
+			name = SpeakerObjectIndexer;
+			sourceTree = "<group>";
+		};
 		9F8E5F911BC269D000DC10DB /* OperationFactoriesAssembly */ = {
 			isa = PBXGroup;
 			children = (
@@ -5543,6 +5612,7 @@
 		9FAB6A791D548D120061F333 /* ConcreteClasses */ = {
 			isa = PBXGroup;
 			children = (
+				9F78D7691D59EB44009DDCEA /* SpeakerObjectIndexer */,
 				9FAB6A7A1D548D1C0061F333 /* EventObjectIndexer */,
 			);
 			name = ConcreteClasses;
@@ -5627,6 +5697,7 @@
 		9FAB6A951D54BE580061F333 /* ConcreteClasses */ = {
 			isa = PBXGroup;
 			children = (
+				9F78D7621D59E92D009DDCEA /* SpeakerChangeProviderFetchRequestFactory */,
 				9FAB6A961D54BE5E0061F333 /* EventChangeProviderFetchRequestFactory */,
 			);
 			name = ConcreteClasses;
@@ -5686,6 +5757,7 @@
 		9FF1251A1D51DF130098625F /* ConcreteClasses */ = {
 			isa = PBXGroup;
 			children = (
+				9F78D7651D59E9E8009DDCEA /* SpeakerObjectIndexer */,
 				9FF1251B1D51DF1F0098625F /* EventObjectIndexer */,
 			);
 			name = ConcreteClasses;
@@ -6200,6 +6272,7 @@
 				63F613991CB00A220002AEF0 /* SpeakerInfoRouter.m in Sources */,
 				2B20647B1D3F9CE900246C8D /* _RegistrationQuestionModelObject.m in Sources */,
 				9F1830B31BC11879000E21A5 /* CommonNetworkClient.m in Sources */,
+				9F78D7681D59EA02009DDCEA /* SpeakerObjectIndexer.m in Sources */,
 				9FF1251E1D51DF460098625F /* EventObjectIndexer.m in Sources */,
 				2B2064881D3F9CE900246C8D /* _TechPlainObject.m in Sources */,
 				9F0A84FD1BC1698B006F79FB /* NetworkOperation.m in Sources */,
@@ -6252,6 +6325,7 @@
 				631808421C482B1300A61E7D /* SpeakerShortInfoRouter.m in Sources */,
 				9F1830D11BC12492000E21A5 /* ResponseValidatorBase.m in Sources */,
 				63F613931CB00A220002AEF0 /* LectureViewController.m in Sources */,
+				9F78D75A1D59E6CB009DDCEA /* SpeakerObjectTransformer.m in Sources */,
 				2B2064941D3F9CE900246C8D /* LecturePlainObject.m in Sources */,
 				63F6136B1CB00A220002AEF0 /* PreviousLectureTableViewCellObject.m in Sources */,
 				63F613591CB00A220002AEF0 /* EventModuleAssembly.m in Sources */,
@@ -6406,6 +6480,7 @@
 				63F613881CB00A220002AEF0 /* EventViewController.m in Sources */,
 				63F613831CB00A220002AEF0 /* CurrentEventCellObjectBuilder.m in Sources */,
 				9F1830ED1BC14293000E21A5 /* ManagedObjectMapper.m in Sources */,
+				9F78D7611D59E8D2009DDCEA /* SpeakerChangeProviderFetchRequestFactory.m in Sources */,
 				2B2064951D3F9CE900246C8D /* MetaEventPlainObject.m in Sources */,
 				63F6139E1CB00A220002AEF0 /* SpeakerInfoViewController.m in Sources */,
 				6315BA141C9EC32300999877 /* VideoRecordTableViewCellObject.m in Sources */,
@@ -6432,8 +6507,10 @@
 				6621664F1D4F4507000A1D11 /* ReportsSearchDataDisplayManagerTests.m in Sources */,
 				9F533A7B1D50D459004F8E82 /* (null) in Sources */,
 				63F613ED1CB111070002AEF0 /* SpeakerInfoInteractorTests.m in Sources */,
+				9F78D76B1D59EB52009DDCEA /* SpeakerObjectIndexerTests.m in Sources */,
 				631CBA741C020CCD00E3EBA8 /* EventModuleAssemblyTests.m in Sources */,
 				63D86BDD1C143FCE00986536 /* DateFormatterTests.m in Sources */,
+				9F78D75D1D59E778009DDCEA /* SpeakerObjectTransformerTests.m in Sources */,
 				9FAB6A891D5499880061F333 /* IndexerMonitorTests.m in Sources */,
 				9FC1F6761D2824000070D9B5 /* EventListServiceTests.m in Sources */,
 				63F8F2F61BF9FE7D000017F3 /* RCFRESTRequestConfiguratorTests.m in Sources */,
@@ -6491,6 +6568,7 @@
 				9F1831211BC16195000E21A5 /* RCFResultResponseObjectFormatterTests.m in Sources */,
 				9FAB6A801D54917F0061F333 /* ObjectIndexerBaseTests.m in Sources */,
 				631CBA381C0092C100E3EBA8 /* ApplicationConfiguratorTests.m in Sources */,
+				9F78D7641D59E93B009DDCEA /* SpeakerChangeProviderFetchRequestFactoryTests.m in Sources */,
 				9F1830AB1BC1139B000E21A5 /* RCFParseRequestSignerTests.m in Sources */,
 				63F613D71CB111070002AEF0 /* AnnouncementListDataDisplayManagerTests.m in Sources */,
 				63F613DB1CB111070002AEF0 /* AnnouncementListTableViewControllerTests.m in Sources */,
