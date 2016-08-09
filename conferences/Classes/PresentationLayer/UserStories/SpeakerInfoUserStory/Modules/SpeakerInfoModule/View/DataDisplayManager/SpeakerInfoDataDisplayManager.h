@@ -20,11 +20,11 @@
 #import "DataDisplayManager.h"
 
 @class SpeakerPlainObject;
-@class SpeakerInfoCellObjectsBuilder;
+@class SpeakerInfoCellObjectBuilder;
 
 @interface SpeakerInfoDataDisplayManager : NSObject <DataDisplayManager, UITableViewDelegate>
 
-@property (nonatomic, strong) SpeakerInfoCellObjectsBuilder *cellObjectBuilder;
+@property (nonatomic, strong) SpeakerInfoCellObjectBuilder *cellObjectBuilder;
 
 /**
  @author Vasyura Anastasiya

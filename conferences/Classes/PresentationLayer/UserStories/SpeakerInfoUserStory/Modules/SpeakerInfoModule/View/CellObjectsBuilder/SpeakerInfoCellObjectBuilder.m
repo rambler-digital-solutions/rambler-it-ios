@@ -16,7 +16,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "SpeakerInfoCellObjectsBuilder.h"
+#import "SpeakerInfoCellObjectBuilder.h"
 #import "SpeakerInfoTableViewCellObject.h"
 #import "SpeakerInfoSocialContactsCellObject.h"
 #import "SocialNetworkAccountPlainObject.h"
@@ -25,7 +25,7 @@
 #import "SpeakerPlainObject.h"
 #import "LocalizedStrings.h"
 
-@implementation SpeakerInfoCellObjectsBuilder
+@implementation SpeakerInfoCellObjectBuilder
 
 - (NSArray *)buildObjectsWithSpeaker:(SpeakerPlainObject *)speaker {
     NSMutableArray *cellObjects = [NSMutableArray new];

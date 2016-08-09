@@ -10,14 +10,12 @@
 #import <OCMock/OCMock.h>
 
 #import "SpeakerInfoInteractor.h"
-#import "SpeakerInfoInteractorOutput.h"
 #import "ROSPonsomizer.h"
 #import "SpeakerService.h"
 
 @interface SpeakerInfoInteractorTests : XCTestCase
 
 @property (nonatomic, strong) SpeakerInfoInteractor *interactor;
-@property (nonatomic, strong) id presenterMock;
 @property (nonatomic, strong) id mockSpeakerService;
 @property (nonatomic, strong) id mockPonsomizer;
 
@@ -29,20 +27,15 @@
     [super setUp];
     
     self.interactor = [SpeakerInfoInteractor new];
-    self.presenterMock = OCMProtocolMock(@protocol(SpeakerInfoInteractorOutput));
     self.mockPonsomizer = OCMProtocolMock(@protocol(ROSPonsomizer));
     self.mockSpeakerService = OCMProtocolMock(@protocol(SpeakerService));
     
-    self.interactor.output = self.presenterMock;
     self.interactor.speakerService = self.mockSpeakerService;
     self.interactor.ponsomizer = self.mockPonsomizer;
 }
 
 - (void)tearDown {
     self.interactor = nil;
-    
-    [self.presenterMock stopMocking];
-    self.presenterMock = nil;
     
     self.mockPonsomizer = nil;
     self.mockSpeakerService = nil;

@@ -23,7 +23,7 @@
 #import "SpeakerInfoRouter.h"
 #import "SpeakerInfoPresenterStateStorage.h"
 #import "SpeakerInfoDataDisplayManager.h"
-#import "SpeakerInfoCellObjectsBuilder.h"
+#import "SpeakerInfoCellObjectBuilder.h"
 #import "SocialContactsConfigurator.h"
 #import "ServiceComponents.h"
 #import "PonsomizerAssembly.h"
@@ -83,8 +83,8 @@
     }];
 }
 
-- (SpeakerInfoCellObjectsBuilder *)cellObjectsBuilderSpeakerInfo {
-    return [TyphoonDefinition withClass:[SpeakerInfoCellObjectsBuilder class]
+- (SpeakerInfoCellObjectBuilder *)cellObjectsBuilderSpeakerInfo {
+    return [TyphoonDefinition withClass:[SpeakerInfoCellObjectBuilder class]
                           configuration:^(TyphoonDefinition *definition) {
         [definition injectProperty:@selector(configurator)
                               with:[self socialContactsConfiguratorSpeakerInfo]];

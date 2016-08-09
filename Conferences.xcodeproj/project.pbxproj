@@ -23,7 +23,7 @@
 /* Begin PBXBuildFile section */
 		2B01CEBE1D50A55900DA8E66 /* MetaEventServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B01CEBD1D50A55900DA8E66 /* MetaEventServiceTests.m */; };
 		2B01CEC11D50AAC300DA8E66 /* VerySpecialAppDelegateForTesting.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B01CEC01D50AAC300DA8E66 /* VerySpecialAppDelegateForTesting.m */; };
-		2B05E1611D50FEFC00E017AB /* SpeakerInfoCellObjectsBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B05E1601D50FEFC00E017AB /* SpeakerInfoCellObjectsBuilder.m */; };
+		2B05E1611D50FEFC00E017AB /* SpeakerInfoCellObjectBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B05E1601D50FEFC00E017AB /* SpeakerInfoCellObjectBuilder.m */; };
 		2B05E1691D51D7A100E017AB /* SpeakerInfoSocialContactsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B05E1671D51D7A100E017AB /* SpeakerInfoSocialContactsTableViewCell.m */; };
 		2B05E16A1D51D7A100E017AB /* SpeakerInfoSocialContactsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B05E1681D51D7A100E017AB /* SpeakerInfoSocialContactsTableViewCell.xib */; };
 		2B05E16E1D51D80100E017AB /* SpeakerInfoSocialContactsCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B05E16D1D51D80100E017AB /* SpeakerInfoSocialContactsCellObject.m */; };
@@ -416,8 +416,8 @@
 		2B01CEBF1D50AAC300DA8E66 /* VerySpecialAppDelegateForTesting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerySpecialAppDelegateForTesting.h; sourceTree = "<group>"; };
 		2B01CEC01D50AAC300DA8E66 /* VerySpecialAppDelegateForTesting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerySpecialAppDelegateForTesting.m; sourceTree = "<group>"; };
 		2B05E15B1D50EDB900E017AB /* EventModuleSegueIdentifiersConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventModuleSegueIdentifiersConstants.h; sourceTree = "<group>"; };
-		2B05E15F1D50FEFC00E017AB /* SpeakerInfoCellObjectsBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerInfoCellObjectsBuilder.h; sourceTree = "<group>"; };
-		2B05E1601D50FEFC00E017AB /* SpeakerInfoCellObjectsBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerInfoCellObjectsBuilder.m; sourceTree = "<group>"; };
+		2B05E15F1D50FEFC00E017AB /* SpeakerInfoCellObjectBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerInfoCellObjectBuilder.h; sourceTree = "<group>"; };
+		2B05E1601D50FEFC00E017AB /* SpeakerInfoCellObjectBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerInfoCellObjectBuilder.m; sourceTree = "<group>"; };
 		2B05E1661D51D7A100E017AB /* SpeakerInfoSocialContactsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerInfoSocialContactsTableViewCell.h; sourceTree = "<group>"; };
 		2B05E1671D51D7A100E017AB /* SpeakerInfoSocialContactsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerInfoSocialContactsTableViewCell.m; sourceTree = "<group>"; };
 		2B05E1681D51D7A100E017AB /* SpeakerInfoSocialContactsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeakerInfoSocialContactsTableViewCell.xib; sourceTree = "<group>"; };
@@ -853,7 +853,6 @@
 		63F6132A1CB00A220002AEF0 /* SpeakerInfoInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerInfoInteractor.h; sourceTree = "<group>"; };
 		63F6132B1CB00A220002AEF0 /* SpeakerInfoInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerInfoInteractor.m; sourceTree = "<group>"; };
 		63F6132C1CB00A220002AEF0 /* SpeakerInfoInteractorInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerInfoInteractorInput.h; sourceTree = "<group>"; };
-		63F6132D1CB00A220002AEF0 /* SpeakerInfoInteractorOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerInfoInteractorOutput.h; sourceTree = "<group>"; };
 		63F613301CB00A220002AEF0 /* SpeakerInfoPresenterStateStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerInfoPresenterStateStorage.h; sourceTree = "<group>"; };
 		63F613311CB00A220002AEF0 /* SpeakerInfoPresenterStateStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerInfoPresenterStateStorage.m; sourceTree = "<group>"; };
 		63F613321CB00A220002AEF0 /* SpeakerInfoModuleInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerInfoModuleInput.h; sourceTree = "<group>"; };
@@ -1208,8 +1207,8 @@
 		2B05E15E1D50FEEB00E017AB /* CellObjectsBuilder */ = {
 			isa = PBXGroup;
 			children = (
-				2B05E15F1D50FEFC00E017AB /* SpeakerInfoCellObjectsBuilder.h */,
-				2B05E1601D50FEFC00E017AB /* SpeakerInfoCellObjectsBuilder.m */,
+				2B05E15F1D50FEFC00E017AB /* SpeakerInfoCellObjectBuilder.h */,
+				2B05E1601D50FEFC00E017AB /* SpeakerInfoCellObjectBuilder.m */,
 				2B05E16F1D51E1B100E017AB /* SocialContactsConfigurator.h */,
 				2B05E1701D51E1B100E017AB /* SocialContactsConfigurator.m */,
 			);
@@ -3255,7 +3254,6 @@
 				63F6132A1CB00A220002AEF0 /* SpeakerInfoInteractor.h */,
 				63F6132B1CB00A220002AEF0 /* SpeakerInfoInteractor.m */,
 				63F6132C1CB00A220002AEF0 /* SpeakerInfoInteractorInput.h */,
-				63F6132D1CB00A220002AEF0 /* SpeakerInfoInteractorOutput.h */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -5664,7 +5662,7 @@
 				636A37C51BC142BB00B49C3D /* ApplicationAssembly.m in Sources */,
 				2B4F201D1D5326FC00C9891E /* SpeakerInfoSectionHeaderCellObject.m in Sources */,
 				63D86BDA1C1439D800986536 /* DateFormatter.m in Sources */,
-				2B05E1611D50FEFC00E017AB /* SpeakerInfoCellObjectsBuilder.m in Sources */,
+				2B05E1611D50FEFC00E017AB /* SpeakerInfoCellObjectBuilder.m in Sources */,
 				63F613871CB00A220002AEF0 /* EventCellObjectBuilderFactory.m in Sources */,
 				9FFEAF0C1D2E5CE0006E9649 /* AppleMapsLinkBuilder.m in Sources */,
 				636F8DDE1BCB8FE800552B91 /* RamblerLocationViewController.m in Sources */,

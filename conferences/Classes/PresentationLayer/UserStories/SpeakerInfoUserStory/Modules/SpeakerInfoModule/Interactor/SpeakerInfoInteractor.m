@@ -17,7 +17,6 @@
 // THE SOFTWARE.
 
 #import "SpeakerInfoInteractor.h"
-#import "SpeakerInfoInteractorOutput.h"
 #import "SpeakerPlainObject.h"
 #import "SpeakerModelObject.h"
 #import "ROSPonsomizer.h"

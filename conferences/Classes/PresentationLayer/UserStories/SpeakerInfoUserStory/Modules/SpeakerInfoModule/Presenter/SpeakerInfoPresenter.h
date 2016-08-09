@@ -18,7 +18,6 @@
 
 #import <Foundation/Foundation.h>
 #import "SpeakerInfoViewOutput.h"
-#import "SpeakerInfoInteractorOutput.h"
 #import "SpeakerInfoModuleInput.h"
 
 @protocol SpeakerInfoViewInput;
@@ -26,7 +25,7 @@
 @protocol SpeakerInfoRouterInput;
 @class SpeakerInfoPresenterStateStorage;
 
-@interface SpeakerInfoPresenter : NSObject  <SpeakerInfoViewOutput, SpeakerInfoInteractorOutput, SpeakerInfoModuleInput>
+@interface SpeakerInfoPresenter : NSObject  <SpeakerInfoViewOutput, SpeakerInfoModuleInput>
 
 @property (weak, nonatomic) id <SpeakerInfoViewInput> view;
 @property (strong, nonatomic) id <SpeakerInfoInteractorInput> interactor;

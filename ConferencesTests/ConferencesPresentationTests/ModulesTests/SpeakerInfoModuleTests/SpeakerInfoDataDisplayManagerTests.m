@@ -10,7 +10,7 @@
 #import <OCMock/OCMock.h>
 
 #import "SpeakerInfoDataDisplayManager.h"
-#import "SpeakerInfoCellObjectsBuilder.h"
+#import "SpeakerInfoCellObjectBuilder.h"
 #import "SpeakerInfoSectionHeaderCellObject.h"
 #import "SpeakerInfoTableViewCellObject.h"
 #import "SpeakerInfoSocialContactsCellObject.h"
@@ -31,7 +31,7 @@
     [super setUp];
     self.dataDisplayManager = [SpeakerInfoDataDisplayManager new];
     
-    self.mockCellObjectsBuilder = OCMClassMock([SpeakerInfoCellObjectsBuilder class]);
+    self.mockCellObjectsBuilder = OCMClassMock([SpeakerInfoCellObjectBuilder class]);
     
     self.dataDisplayManager.cellObjectBuilder = self.mockCellObjectsBuilder;
 }

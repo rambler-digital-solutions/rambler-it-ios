@@ -9,7 +9,7 @@
 #import <XCTest/XCTest.h>
 #import <OCMock/OCMock.h>
 
-#import "SpeakerInfoCellObjectsBuilder.h"
+#import "SpeakerInfoCellObjectBuilder.h"
 #import "SpeakerInfoSectionHeaderCellObject.h"
 #import "SpeakerInfoTableViewCellObject.h"
 #import "SpeakerInfoSocialContactsCellObject.h"
@@ -18,7 +18,7 @@
 
 @interface SpeakerInfoCellObjectsBuilderTests : XCTestCase
 
-@property (nonatomic, strong) SpeakerInfoCellObjectsBuilder *builder;
+@property (nonatomic, strong) SpeakerInfoCellObjectBuilder *builder;
 
 @end
 
@@ -27,7 +27,7 @@
 - (void)setUp {
     [super setUp];
     
-    self.builder = [SpeakerInfoCellObjectsBuilder new];
+    self.builder = [SpeakerInfoCellObjectBuilder new];
 }
 
 - (void)tearDown {

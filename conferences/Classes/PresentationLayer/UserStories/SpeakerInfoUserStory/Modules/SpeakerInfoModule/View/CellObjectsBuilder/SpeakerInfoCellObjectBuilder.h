@@ -19,8 +19,17 @@
 #import <Foundation/Foundation.h>
 
 @class SpeakerPlainObject;
+@class SocialContactsConfigurator;
 
-@protocol SpeakerInfoInteractorOutput <NSObject>
+/**
+ @author Vasyura Anastasiya
+ 
+ Builder for speakerInfo cellObjects
+ */
+@interface SpeakerInfoCellObjectBuilder : NSObject
+
+@property (nonatomic, strong) SocialContactsConfigurator *configurator;
+
+- (NSArray *)buildObjectsWithSpeaker:(SpeakerPlainObject *)speaker;
 
 @end
-

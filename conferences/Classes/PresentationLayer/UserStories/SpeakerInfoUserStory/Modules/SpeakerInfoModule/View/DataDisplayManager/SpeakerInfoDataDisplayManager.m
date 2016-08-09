@@ -21,7 +21,7 @@
 
 #import "SpeakerPlainObject.h"
 #import "SpeakerInfoTableViewCellObject.h"
-#import "SpeakerInfoCellObjectsBuilder.h"
+#import "SpeakerInfoCellObjectBuilder.h"
 
 @interface SpeakerInfoDataDisplayManager ()
 
