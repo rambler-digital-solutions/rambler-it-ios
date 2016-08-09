@@ -20,6 +20,7 @@
 
 #import <XCTest/XCTest.h>
 #import <MagicalRecord/MagicalRecord.h>
+#import <OCMock/OCMock.h>
 
 #import "XCTestCase+RCFHelpers.h"
 
@@ -28,10 +29,12 @@
 #import "IndexTransactionBatch.h"
 #import "ChangeProviderChangeType.h"
 #import "IndexState.h"
+#import "ContextProvider.h"
 
 @interface IndexerStateStorageTests : XCTestCase
 
 @property (nonatomic, strong) IndexerStateStorage *stateStorage;
+@property (nonatomic, strong) id mockContextProvider;
 
 @end
 
@@ -42,11 +45,16 @@
     [self tearDownCoreDataStack];
     [self setupCoreDataStackForTests];
     
-    self.stateStorage = [IndexerStateStorage new];
+    self.mockContextProvider = OCMProtocolMock(@protocol(ContextProvider));
+    OCMStub([self.mockContextProvider obtainPrimaryContext]).andReturn([NSManagedObjectContext MR_rootSavingContext]);
+    
+    self.stateStorage = [IndexerStateStorage stateStorageWithContextProvider:self.mockContextProvider];
 }
 
 - (void)tearDown {
     self.stateStorage = nil;
+    
+    self.mockContextProvider = nil;
     
     [self tearDownCoreDataStack];
     
