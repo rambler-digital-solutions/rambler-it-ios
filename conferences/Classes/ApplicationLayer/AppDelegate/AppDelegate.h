@@ -25,7 +25,7 @@
 @protocol PushNotificationCenter;
 @protocol ThirdPartiesConfigurator;
 @class IndexerMonitor;
-@class SpotlightCoreDataStackCoordinator;
+@protocol SpotlightCoreDataStackCoordinator;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -35,7 +35,7 @@
 @property (strong, nonatomic) id <PushNotificationCenter> pushNotificationCenter;
 @property (strong, nonatomic) id <ThirdPartiesConfigurator> thirdPartiesConfigurator;
 @property (strong, nonatomic) IndexerMonitor *indexerMonitor;
-@property (strong, nonatomic) SpotlightCoreDataStackCoordinator *coordinator;
+@property (strong, nonatomic) id<SpotlightCoreDataStackCoordinator> spotlightCoreDataStackCoordinator;
 
 @end
 

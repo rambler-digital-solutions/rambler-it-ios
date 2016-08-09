@@ -27,17 +27,14 @@
 #import "EventChangeProviderFetchRequestFactory.h"
 #import "IndexerStateStorage.h"
 #import "IndexerMonitorOperationQueueFactory.h"
-#import "SpotlightCoreDataStackCoordinator.h"
+#import "SpotlightCoreDataStackCoordinatorImplementation.h"
+#import "ContextStorageImplementation.h"
 
 #import <CoreSpotlight/CoreSpotlight.h>
 
 @implementation SpotlightIndexerAssembly
 
 #pragma mark - IndexMonitor
-
-- (SpotlightCoreDataStackCoordinator *)spotlightCoreDataStackCoordinator {
-    return [TyphoonDefinition withClass:[SpotlightCoreDataStackCoordinator class]];
-}
 
 - (IndexerMonitor *)indexerMonitor {
     return [TyphoonDefinition withClass:[IndexerMonitor class]
@@ -55,14 +52,33 @@
 }
 
 - (IndexerStateStorage *)indexerStateStorage {
-    return [TyphoonDefinition withClass:[IndexerStateStorage class] configuration:^(TyphoonDefinition *definition) {
-        [definition injectProperty:@selector(coordinator)
-                              with:[self spotlightCoreDataStackCoordinator]];
-    }];
+    return [TyphoonDefinition withClass:[IndexerStateStorage class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition useInitializer:@selector(stateStorageWithContextProvider:)
+                                              parameters:^(TyphoonMethod *initializer) {
+                                                  [initializer injectParameterWith:[self contextStorage]];
+                                              }];
+                          }];
 }
 
 - (IndexerMonitorOperationQueueFactory *)indexerMonitorOperationQueueFactory {
     return [TyphoonDefinition withClass:[IndexerMonitorOperationQueueFactory class]];
+}
+
+#pragma mark - CoreData objects
+
+- (SpotlightCoreDataStackCoordinatorImplementation *)spotlightCoreDataStackCoordinator {
+    return [TyphoonDefinition withClass:[SpotlightCoreDataStackCoordinatorImplementation class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition useInitializer:@selector(coordinatorWithContextFiller:)
+                                              parameters:^(TyphoonMethod *initializer) {
+                                                  [initializer injectParameterWith:[self contextStorage]];
+                                              }];
+                          }];
+}
+
+- (ContextStorageImplementation *)contextStorage {
+    return [TyphoonDefinition withClass:[ContextStorageImplementation class]];
 }
 
 #pragma mark - Indexers
@@ -90,8 +106,6 @@
                                               }];
                               [definition injectProperty:@selector(delegate)
                                                     with:[self indexerMonitor]];
-                              [definition injectProperty:@selector(coordinator)
-                                                    with:[self spotlightCoreDataStackCoordinator]];
                           }];
 }
 
@@ -104,10 +118,7 @@
 #pragma mark - ObjectTransformers
 
 - (id<ObjectTransformer>)eventObjectTransformer {
-    return [TyphoonDefinition withClass:[EventObjectTransformer class] configuration:^(TyphoonDefinition *definition) {
-        [definition injectProperty:@selector(coordinator)
-                              with:[self spotlightCoreDataStackCoordinator]];
-    }];
+    return [TyphoonDefinition withClass:[EventObjectTransformer class]];
 }
 
 #pragma mark - Other

@@ -23,57 +23,77 @@
 #import "IndexTransaction.h"
 #import "IndexTransactionBatch.h"
 #import "IndexState.h"
-#import "SpotlightCoreDataStackCoordinator.h"
+#import "ContextProvider.h"
 
 #import <MagicalRecord/MagicalRecord.h>
 
 static NSUInteger const kTransactionBatchSize = 1000;
 
+@interface IndexerStateStorage ()
+
+@property (nonatomic, strong) id<ContextProvider> contextProvider;
+
+@end
+
 @implementation IndexerStateStorage
+
+#pragma mark - Initialization
+
+- (instancetype)initWithContextProvider:(id<ContextProvider>)contextProvider {
+    self = [super init];
+    if (self) {
+        _contextProvider = contextProvider;
+    }
+    return self;
+}
+
++ (instancetype)stateStorageWithContextProvider:(id<ContextProvider>)contextProvider {
+    return [[self alloc] initWithContextProvider:contextProvider];
+}
 
 #pragma mark - Public methods
 
 - (void)insertTransaction:(IndexTransaction *)transaction {
-    NSManagedObjectContext *rootSavingContext = [self.coordinator obtainDefaultContext];
-    [rootSavingContext performBlockAndWait:^{
+    NSManagedObjectContext *context = [self.contextProvider obtainPrimaryContext];
+    [context performBlockAndWait:^{
         IndexState *state = [IndexState MR_findFirstOrCreateByAttribute:NSStringFromSelector(@selector(objectType))
                                                               withValue:transaction.objectType
-                                                              inContext:rootSavingContext];
+                                                              inContext:context];
         [state insertIdentifier:transaction.identifier
                         forType:transaction.changeType];
         state.lastChangeDate = [NSDate date];
-        [rootSavingContext save:nil];
+        [context save:nil];
     }];
 }
 
 - (void)insertTransactionsArray:(NSArray<NSArray *> *)transactionsArray
                      changeType:(ChangeProviderChangeType)changeType {
-    NSManagedObjectContext *rootSavingContext = [self.coordinator obtainDefaultContext];
-    [rootSavingContext performBlockAndWait:^{
+    NSManagedObjectContext *context = [self.contextProvider obtainPrimaryContext];
+    [context performBlockAndWait:^{
         for (NSArray *transactions in transactionsArray) {
             if (transactions.count) {
                 NSString *objectType = [[transactions firstObject] objectType];
                 IndexState *state = [IndexState MR_findFirstOrCreateByAttribute:NSStringFromSelector(@selector(objectType))
                                                                       withValue:objectType
-                                                                      inContext:rootSavingContext];
+                                                                      inContext:context];
                 NSArray *identifiers = [transactions valueForKey:@"identifier"];
                 [state insertIdentifiers:identifiers
                                  forType:changeType];
                 state.lastChangeDate = [NSDate date];
             }
         }
-        [rootSavingContext save:nil];
+        [context save:nil];
     }];
 }
 
 - (IndexTransactionBatch *)obtainTransactionBatch {
-    NSManagedObjectContext *rootSavingContext = [self.coordinator obtainDefaultContext];
+    NSManagedObjectContext *context = [self.contextProvider obtainPrimaryContext];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"numberOfIdentifiers > 0"];
     
     IndexState *state = [IndexState MR_findFirstWithPredicate:predicate
                                                      sortedBy:NSStringFromSelector(@selector(lastChangeDate))
                                                     ascending:YES
-                                                    inContext:rootSavingContext];
+                                                    inContext:context];
     
     if (state.insertIdentifiers.count == 0 &&
         state.updateIdentifiers.count == 0 &&
@@ -106,11 +126,11 @@ static NSUInteger const kTransactionBatchSize = 1000;
 }
 
 - (void)removeProcessedBatch:(IndexTransactionBatch *)batch {
-    NSManagedObjectContext *rootSavingContext = [self.coordinator obtainDefaultContext];
-    [rootSavingContext performBlockAndWait:^{
+    NSManagedObjectContext *context = [self.contextProvider obtainPrimaryContext];
+    [context performBlockAndWait:^{
         IndexState *state = [IndexState MR_findFirstOrCreateByAttribute:NSStringFromSelector(@selector(objectType))
                                                               withValue:batch.objectType
-                                                              inContext:rootSavingContext];
+                                                              inContext:context];
         
         NSArray *changeTypes = @[@(NSFetchedResultsChangeInsert),
                                  @(NSFetchedResultsChangeUpdate),
@@ -136,8 +156,8 @@ static NSUInteger const kTransactionBatchSize = 1000;
 }
 
 - (BOOL)shouldPerformInitialIndexing {
-    NSManagedObjectContext *rootSavingContext = [self.coordinator obtainDefaultContext];
-    IndexState *state = [IndexState MR_findFirstInContext:rootSavingContext];
+    NSManagedObjectContext *context = [self.contextProvider obtainPrimaryContext];
+    IndexState *state = [IndexState MR_findFirstInContext:context];
     return state == nil;
 }
 

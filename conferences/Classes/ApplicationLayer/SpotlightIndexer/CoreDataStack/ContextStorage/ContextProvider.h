@@ -20,19 +20,22 @@
 
 #import <Foundation/Foundation.h>
 
-#import "ChangeProvider.h"
-
-@protocol ObjectTransformer;
-@protocol ChangeProviderFetchRequestFactory;
+@class NSManagedObjectContext;
 
 /**
  @author Egor Tolstoy
  
- Default change provider build upon NSFetchedResultsController
+ Object is responsible for storing CoreData contexts for SpotlightIndexer own purposes
  */
-@interface FetchedResultsControllerChangeProvider : NSObject <ChangeProvider>
+@protocol ContextProvider <NSObject>
 
-+ (instancetype)changeProviderWithFetchRequestFactory:(id<ChangeProviderFetchRequestFactory>)fetchRequestFactory
-                                    objectTransformer:(id<ObjectTransformer>)objectTransformer;
+/**
+ @author Egor Tolstoy
+ 
+ Returns a CoreData context for all of SpotlightIndexer actions
+ 
+ @return NSManagedObjectContext
+ */
+- (NSManagedObjectContext *)obtainPrimaryContext;
 
 @end

@@ -18,21 +18,28 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import "ContextStorageImplementation.h"
 
-#import "ChangeProvider.h"
+#import <CoreData/CoreData.h>
 
-@protocol ObjectTransformer;
-@protocol ChangeProviderFetchRequestFactory;
+@interface ContextStorageImplementation ()
 
-/**
- @author Egor Tolstoy
- 
- Default change provider build upon NSFetchedResultsController
- */
-@interface FetchedResultsControllerChangeProvider : NSObject <ChangeProvider>
+@property (nonatomic, strong) NSManagedObjectContext *primaryContext;
 
-+ (instancetype)changeProviderWithFetchRequestFactory:(id<ChangeProviderFetchRequestFactory>)fetchRequestFactory
-                                    objectTransformer:(id<ObjectTransformer>)objectTransformer;
+@end
+
+@implementation ContextStorageImplementation
+
+#pragma mark - <ContextFiller>
+
+- (void)setupPrimaryContext:(NSManagedObjectContext *)context {
+    self.primaryContext = context;
+}
+
+#pragma mark - <ContextProvider>
+
+- (NSManagedObjectContext *)obtainPrimaryContext {
+    return self.primaryContext;
+}
 
 @end

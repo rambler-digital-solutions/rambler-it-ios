@@ -357,8 +357,6 @@
 		9F4097891D51F8FD008BFE42 /* EventObjectTransformerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4097881D51F8FD008BFE42 /* EventObjectTransformerTests.m */; };
 		9F40978D1D5210D9008BFE42 /* SpotlightIndexerAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F40978C1D5210D9008BFE42 /* SpotlightIndexerAssembly.m */; };
 		9F4097951D534F82008BFE42 /* EventChangeProviderFetchRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4097941D534F82008BFE42 /* EventChangeProviderFetchRequestFactory.m */; };
-		9F48FF3B1D50F83D00E1EC6A /* IndexState+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F48FF381D50F83D00E1EC6A /* IndexState+CoreDataProperties.m */; };
-		9F48FF3C1D50F83D00E1EC6A /* IndexState.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F48FF3A1D50F83D00E1EC6A /* IndexState.m */; };
 		9F5316A91D50F56900F13931 /* IndexerStateStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5316A81D50F56900F13931 /* IndexerStateStorage.m */; };
 		9F533A7B1D50D459004F8E82 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		9F533A891D50DE84004F8E82 /* FetchedResultsControllerChangeProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F533A881D50DE84004F8E82 /* FetchedResultsControllerChangeProvider.m */; };
@@ -366,8 +364,12 @@
 		9F533A961D50EEE0004F8E82 /* ObjectIndexerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F533A951D50EEE0004F8E82 /* ObjectIndexerBase.m */; };
 		9F533AA01D50F181004F8E82 /* IndexTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F533A9F1D50F181004F8E82 /* IndexTransaction.m */; };
 		9F533AA41D50F195004F8E82 /* IndexTransactionBatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F533AA31D50F195004F8E82 /* IndexTransactionBatch.m */; };
-		9F78D7361D589831009DDCEA /* SpotlightCoreDataStackCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D7351D589831009DDCEA /* SpotlightCoreDataStackCoordinator.m */; };
-		9F78D7391D589899009DDCEA /* SpotlightIndexer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D7371D589899009DDCEA /* SpotlightIndexer.xcdatamodeld */; };
+		9F78D7441D59D6EF009DDCEA /* SpotlightCoreDataStackCoordinatorImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D73E1D59D6EF009DDCEA /* SpotlightCoreDataStackCoordinatorImplementation.m */; };
+		9F78D7451D59D6EF009DDCEA /* SpotlightIndexer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D7401D59D6EF009DDCEA /* SpotlightIndexer.xcdatamodeld */; };
+		9F78D74A1D59D73E009DDCEA /* IndexState.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D7471D59D73E009DDCEA /* IndexState.m */; };
+		9F78D74B1D59D73E009DDCEA /* IndexState+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D7491D59D73E009DDCEA /* IndexState+CoreDataProperties.m */; };
+		9F78D74E1D59D755009DDCEA /* ContextStorageImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D74D1D59D755009DDCEA /* ContextStorageImplementation.m */; };
+		9F78D7551D59DB89009DDCEA /* ContextStorageImplementationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D7541D59DB89009DDCEA /* ContextStorageImplementationTests.m */; };
 		9F8E5F701BC2552600DC10DB /* Conferences.API.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F8E5F6F1BC2552600DC10DB /* Conferences.API.plist */; };
 		9F8E5F741BC255AA00DC10DB /* RequestSignersAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5F731BC255AA00DC10DB /* RequestSignersAssembly.m */; };
 		9F8E5F781BC2571B00DC10DB /* NetworkClientsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5F771BC2571B00DC10DB /* NetworkClientsAssembly.m */; };
@@ -1119,10 +1121,6 @@
 		9F4097901D534F1E008BFE42 /* ChangeProviderFetchRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChangeProviderFetchRequestFactory.h; path = ChangeProviderFetchRequestFactories/Protocols/ChangeProviderFetchRequestFactory.h; sourceTree = "<group>"; };
 		9F4097931D534F82008BFE42 /* EventChangeProviderFetchRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventChangeProviderFetchRequestFactory.h; path = ChangeProviderFetchRequestFactories/ConcreteClasses/EventChangeProviderFetchRequestFactory/EventChangeProviderFetchRequestFactory.h; sourceTree = "<group>"; };
 		9F4097941D534F82008BFE42 /* EventChangeProviderFetchRequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventChangeProviderFetchRequestFactory.m; path = ChangeProviderFetchRequestFactories/ConcreteClasses/EventChangeProviderFetchRequestFactory/EventChangeProviderFetchRequestFactory.m; sourceTree = "<group>"; };
-		9F48FF371D50F83D00E1EC6A /* IndexState+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "IndexState+CoreDataProperties.h"; path = "SpotlightIndexer/IndexerStateStorage/IndexState+CoreDataProperties.h"; sourceTree = "<group>"; };
-		9F48FF381D50F83D00E1EC6A /* IndexState+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "IndexState+CoreDataProperties.m"; path = "SpotlightIndexer/IndexerStateStorage/IndexState+CoreDataProperties.m"; sourceTree = "<group>"; };
-		9F48FF391D50F83D00E1EC6A /* IndexState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndexState.h; path = SpotlightIndexer/IndexerStateStorage/IndexState.h; sourceTree = "<group>"; };
-		9F48FF3A1D50F83D00E1EC6A /* IndexState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IndexState.m; path = SpotlightIndexer/IndexerStateStorage/IndexState.m; sourceTree = "<group>"; };
 		9F5316A51D50F29000F13931 /* ChangeProviderChangeType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ChangeProviderChangeType.h; path = SpotlightIndexer/Transactions/Headers/ChangeProviderChangeType.h; sourceTree = "<group>"; };
 		9F5316A71D50F56900F13931 /* IndexerStateStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndexerStateStorage.h; path = SpotlightIndexer/IndexerStateStorage/IndexerStateStorage.h; sourceTree = "<group>"; };
 		9F5316A81D50F56900F13931 /* IndexerStateStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IndexerStateStorage.m; path = SpotlightIndexer/IndexerStateStorage/IndexerStateStorage.m; sourceTree = "<group>"; };
@@ -1139,9 +1137,19 @@
 		9F533A9F1D50F181004F8E82 /* IndexTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IndexTransaction.m; path = SpotlightIndexer/Transactions/IndexTransaction/IndexTransaction.m; sourceTree = "<group>"; };
 		9F533AA21D50F195004F8E82 /* IndexTransactionBatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndexTransactionBatch.h; path = SpotlightIndexer/Transactions/IndexTransactionBatch/IndexTransactionBatch.h; sourceTree = "<group>"; };
 		9F533AA31D50F195004F8E82 /* IndexTransactionBatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IndexTransactionBatch.m; path = SpotlightIndexer/Transactions/IndexTransactionBatch/IndexTransactionBatch.m; sourceTree = "<group>"; };
-		9F78D7341D589831009DDCEA /* SpotlightCoreDataStackCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpotlightCoreDataStackCoordinator.h; path = SpotlightIndexer/CoreDataStackCoordinator/SpotlightCoreDataStackCoordinator.h; sourceTree = "<group>"; };
-		9F78D7351D589831009DDCEA /* SpotlightCoreDataStackCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpotlightCoreDataStackCoordinator.m; path = SpotlightIndexer/CoreDataStackCoordinator/SpotlightCoreDataStackCoordinator.m; sourceTree = "<group>"; };
-		9F78D7381D589899009DDCEA /* SpotlightIndexer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SpotlightIndexer.xcdatamodel; sourceTree = "<group>"; };
+		9F78D73D1D59D6EF009DDCEA /* SpotlightCoreDataStackCoordinatorImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotlightCoreDataStackCoordinatorImplementation.h; sourceTree = "<group>"; };
+		9F78D73E1D59D6EF009DDCEA /* SpotlightCoreDataStackCoordinatorImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotlightCoreDataStackCoordinatorImplementation.m; sourceTree = "<group>"; };
+		9F78D7411D59D6EF009DDCEA /* SpotlightIndexer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SpotlightIndexer.xcdatamodel; sourceTree = "<group>"; };
+		9F78D7461D59D73E009DDCEA /* IndexState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexState.h; sourceTree = "<group>"; };
+		9F78D7471D59D73E009DDCEA /* IndexState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexState.m; sourceTree = "<group>"; };
+		9F78D7481D59D73E009DDCEA /* IndexState+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IndexState+CoreDataProperties.h"; sourceTree = "<group>"; };
+		9F78D7491D59D73E009DDCEA /* IndexState+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IndexState+CoreDataProperties.m"; sourceTree = "<group>"; };
+		9F78D74C1D59D755009DDCEA /* ContextStorageImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContextStorageImplementation.h; sourceTree = "<group>"; };
+		9F78D74D1D59D755009DDCEA /* ContextStorageImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContextStorageImplementation.m; sourceTree = "<group>"; };
+		9F78D74F1D59D75D009DDCEA /* ContextProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContextProvider.h; sourceTree = "<group>"; };
+		9F78D7511D59DAB3009DDCEA /* ContextFiller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContextFiller.h; sourceTree = "<group>"; };
+		9F78D7541D59DB89009DDCEA /* ContextStorageImplementationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContextStorageImplementationTests.m; path = ApplicationLayerTests/SpotlightIndexer/CoreDataStack/ContextStorage/ContextStorageImplementationTests.m; sourceTree = "<group>"; };
+		9F78D7561D59DDC4009DDCEA /* SpotlightCoreDataStackCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotlightCoreDataStackCoordinator.h; sourceTree = "<group>"; };
 		9F8E5F6F1BC2552600DC10DB /* Conferences.API.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Conferences.API.plist; path = Assemblies/RequestConfiguratorsFactory/Conferences.API.plist; sourceTree = "<group>"; };
 		9F8E5F711BC2559B00DC10DB /* RequestSignersFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequestSignersFactory.h; path = Assemblies/RequestSignersFactory/RequestSignersFactory.h; sourceTree = "<group>"; };
 		9F8E5F721BC255AA00DC10DB /* RequestSignersAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequestSignersAssembly.h; path = Assemblies/RequestSignersFactory/RequestSignersAssembly.h; sourceTree = "<group>"; };
@@ -5232,10 +5240,6 @@
 			children = (
 				9F5316A71D50F56900F13931 /* IndexerStateStorage.h */,
 				9F5316A81D50F56900F13931 /* IndexerStateStorage.m */,
-				9F48FF371D50F83D00E1EC6A /* IndexState+CoreDataProperties.h */,
-				9F48FF381D50F83D00E1EC6A /* IndexState+CoreDataProperties.m */,
-				9F48FF391D50F83D00E1EC6A /* IndexState.h */,
-				9F48FF3A1D50F83D00E1EC6A /* IndexState.m */,
 			);
 			name = IndexerStateStorage;
 			sourceTree = "<group>";
@@ -5243,7 +5247,7 @@
 		9F533A7C1D50D6E7004F8E82 /* SpotlightIndexer */ = {
 			isa = PBXGroup;
 			children = (
-				9F78D7331D589810009DDCEA /* CoreDataStackCoordinator */,
+				9F78D73A1D59D61F009DDCEA /* CoreDataStack */,
 				9FAB6A691D5384E30061F333 /* Constants */,
 				9F40977D1D51F619008BFE42 /* ObjectTransformers */,
 				9F5316A61D50F54000F13931 /* IndexerStateStorage */,
@@ -5365,14 +5369,83 @@
 			name = IndexTransactionBatch;
 			sourceTree = "<group>";
 		};
-		9F78D7331D589810009DDCEA /* CoreDataStackCoordinator */ = {
+		9F78D73A1D59D61F009DDCEA /* CoreDataStack */ = {
 			isa = PBXGroup;
 			children = (
-				9F78D7341D589831009DDCEA /* SpotlightCoreDataStackCoordinator.h */,
-				9F78D7351D589831009DDCEA /* SpotlightCoreDataStackCoordinator.m */,
-				9F78D7371D589899009DDCEA /* SpotlightIndexer.xcdatamodeld */,
+				9F78D73B1D59D6EF009DDCEA /* ContextStorage */,
+				9F78D73C1D59D6EF009DDCEA /* CoreDataStackCoordinator */,
+				9F78D73F1D59D6EF009DDCEA /* DataModel */,
+				9F78D7421D59D6EF009DDCEA /* Entities */,
+			);
+			name = CoreDataStack;
+			sourceTree = "<group>";
+		};
+		9F78D73B1D59D6EF009DDCEA /* ContextStorage */ = {
+			isa = PBXGroup;
+			children = (
+				9F78D74F1D59D75D009DDCEA /* ContextProvider.h */,
+				9F78D7511D59DAB3009DDCEA /* ContextFiller.h */,
+				9F78D74C1D59D755009DDCEA /* ContextStorageImplementation.h */,
+				9F78D74D1D59D755009DDCEA /* ContextStorageImplementation.m */,
+			);
+			name = ContextStorage;
+			path = SpotlightIndexer/CoreDataStack/ContextStorage;
+			sourceTree = "<group>";
+		};
+		9F78D73C1D59D6EF009DDCEA /* CoreDataStackCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				9F78D7561D59DDC4009DDCEA /* SpotlightCoreDataStackCoordinator.h */,
+				9F78D73D1D59D6EF009DDCEA /* SpotlightCoreDataStackCoordinatorImplementation.h */,
+				9F78D73E1D59D6EF009DDCEA /* SpotlightCoreDataStackCoordinatorImplementation.m */,
 			);
 			name = CoreDataStackCoordinator;
+			path = SpotlightIndexer/CoreDataStack/CoreDataStackCoordinator;
+			sourceTree = "<group>";
+		};
+		9F78D73F1D59D6EF009DDCEA /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				9F78D7401D59D6EF009DDCEA /* SpotlightIndexer.xcdatamodeld */,
+			);
+			name = DataModel;
+			path = SpotlightIndexer/CoreDataStack/DataModel;
+			sourceTree = "<group>";
+		};
+		9F78D7421D59D6EF009DDCEA /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				9F78D7431D59D6EF009DDCEA /* IndexState */,
+			);
+			name = Entities;
+			path = SpotlightIndexer/CoreDataStack/Entities;
+			sourceTree = "<group>";
+		};
+		9F78D7431D59D6EF009DDCEA /* IndexState */ = {
+			isa = PBXGroup;
+			children = (
+				9F78D7461D59D73E009DDCEA /* IndexState.h */,
+				9F78D7471D59D73E009DDCEA /* IndexState.m */,
+				9F78D7481D59D73E009DDCEA /* IndexState+CoreDataProperties.h */,
+				9F78D7491D59D73E009DDCEA /* IndexState+CoreDataProperties.m */,
+			);
+			path = IndexState;
+			sourceTree = "<group>";
+		};
+		9F78D7521D59DB67009DDCEA /* CoreDataStack */ = {
+			isa = PBXGroup;
+			children = (
+				9F78D7531D59DB6C009DDCEA /* ContextStorage */,
+			);
+			name = CoreDataStack;
+			sourceTree = "<group>";
+		};
+		9F78D7531D59DB6C009DDCEA /* ContextStorage */ = {
+			isa = PBXGroup;
+			children = (
+				9F78D7541D59DB89009DDCEA /* ContextStorageImplementationTests.m */,
+			);
+			name = ContextStorage;
 			sourceTree = "<group>";
 		};
 		9F8E5F911BC269D000DC10DB /* OperationFactoriesAssembly */ = {
@@ -5638,6 +5711,7 @@
 		9FF125241D51E61B0098625F /* SpotlightIndexer */ = {
 			isa = PBXGroup;
 			children = (
+				9F78D7521D59DB67009DDCEA /* CoreDataStack */,
 				9FAB6A911D54BE310061F333 /* ChangeProviders */,
 				9FAB6A841D5498040061F333 /* IndexerMonitor */,
 				9FAB6A781D548D0C0061F333 /* ObjectIndexers */,
@@ -6088,7 +6162,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F48FF3C1D50F83D00E1EC6A /* IndexState.m in Sources */,
 				2B2064851D3F9CE900246C8D /* _SocialNetworkAccountPlainObject.m in Sources */,
 				63F8F2BC1BF8A713000017F3 /* EventTypeDeterminator.m in Sources */,
 				2B20648C1D3F9CE900246C8D /* MetaEventModelObject.m in Sources */,
@@ -6131,6 +6204,7 @@
 				2B2064881D3F9CE900246C8D /* _TechPlainObject.m in Sources */,
 				9F0A84FD1BC1698B006F79FB /* NetworkOperation.m in Sources */,
 				63F613661CB00A220002AEF0 /* EventInfoTableViewCellObject.m in Sources */,
+				9F78D74A1D59D73E009DDCEA /* IndexState.m in Sources */,
 				63F613981CB00A220002AEF0 /* SpeakerInfoPresenter.m in Sources */,
 				2B429A531D4616AD004C005F /* UIView+LJLoadFromNib.m in Sources */,
 				631808631C4A66FA00A61E7D /* LocalizedStrings.m in Sources */,
@@ -6170,6 +6244,7 @@
 				667050481D4615B600DD9D6E /* ReportLectureTableViewCellObject.m in Sources */,
 				6318086D1C4A872600A61E7D /* TableViewCellWithTextLabelAndImageViewCellObject.m in Sources */,
 				2B2064901D3F9CE900246C8D /* TagModelObject.m in Sources */,
+				9F78D74B1D59D73E009DDCEA /* IndexState+CoreDataProperties.m in Sources */,
 				63F6135E1CB00A220002AEF0 /* EventHeaderView.m in Sources */,
 				9FF74FFA1D26C448000D208D /* EventListQuery.m in Sources */,
 				63F6134C1CB00A220002AEF0 /* AnnouncementListModuleAssembly.m in Sources */,
@@ -6193,7 +6268,7 @@
 				63FDCE061BBDBA2A00A43B60 /* AppDelegate.m in Sources */,
 				63F6134E1CB00A220002AEF0 /* AnnouncementListPresenter.m in Sources */,
 				631808401C482B1300A61E7D /* SpeakerShortInfoInteractor.m in Sources */,
-				9F78D7361D589831009DDCEA /* SpotlightCoreDataStackCoordinator.m in Sources */,
+				9F78D7441D59D6EF009DDCEA /* SpotlightCoreDataStackCoordinatorImplementation.m in Sources */,
 				667050531D46332200DD9D6E /* ReportsSearchCellObjectsBuilderImplementation.m in Sources */,
 				63F613701CB00A220002AEF0 /* EventDescriptionTableViewCell.m in Sources */,
 				2B20647C1D3F9CE900246C8D /* _SocialNetworkAccountModelObject.m in Sources */,
@@ -6242,7 +6317,7 @@
 				9FF99E511BC42FF6006F15AF /* OperationSchedulerImplementation.m in Sources */,
 				63F6136E1CB00A220002AEF0 /* CurrentVideoTranslationTableViewCell.m in Sources */,
 				63F6137C1CB00A220002AEF0 /* PreviousLectureTableViewCell.m in Sources */,
-				9F78D7391D589899009DDCEA /* SpotlightIndexer.xcdatamodeld in Sources */,
+				9F78D7451D59D6EF009DDCEA /* SpotlightIndexer.xcdatamodeld in Sources */,
 				63F6135C1CB00A220002AEF0 /* EventHeaderPresenter.m in Sources */,
 				9F40779C1D2C109200D47EF6 /* DirectionObjectMapper.m in Sources */,
 				9F0A85031BC1698B006F79FB /* OperationDebugDescriptionFormatter.m in Sources */,
@@ -6287,6 +6362,7 @@
 				667050561D46369100DD9D6E /* ReportsSearchCellObjectsDirectorImplementation.m in Sources */,
 				9F0A6C1D1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m in Sources */,
 				9F0A85001BC1698B006F79FB /* ResponseDeserializationOperation.m in Sources */,
+				9F78D74E1D59D755009DDCEA /* ContextStorageImplementation.m in Sources */,
 				9FF74FFF1D26C62A000D208D /* EventListServiceImplementation.m in Sources */,
 				2B20647D1D3F9CE900246C8D /* _SpeakerModelObject.m in Sources */,
 				9F0A853B1BC1908B006F79FB /* OperationChainer.m in Sources */,
@@ -6320,7 +6396,6 @@
 				6315BA0A1C9EC2A200999877 /* TableViewSectionHeaderCellObject.m in Sources */,
 				631FFE1A1BEF451400749DB8 /* UIView+CDResponder.m in Sources */,
 				63F613781CB00A220002AEF0 /* PreviousEventTableViewCell.m in Sources */,
-				9F48FF3B1D50F83D00E1EC6A /* IndexState+CoreDataProperties.m in Sources */,
 				63F6139A1CB00A220002AEF0 /* SpeakerInfoTableViewCellObject.m in Sources */,
 				9F533AA01D50F181004F8E82 /* IndexTransaction.m in Sources */,
 				63F6138D1CB00A220002AEF0 /* LecturePresenterStateStorage.m in Sources */,
@@ -6439,6 +6514,7 @@
 				9FAB6A981D54BE990061F333 /* EventChangeProviderFetchRequestFactoryTests.m in Sources */,
 				63F613D91CB111070002AEF0 /* AnnouncementListPresenterTests.m in Sources */,
 				631CBA731C020CCD00E3EBA8 /* EventCellObjectBuilderFactoryTests.m in Sources */,
+				9F78D7551D59DB89009DDCEA /* ContextStorageImplementationTests.m in Sources */,
 				63F8F2F51BF9FDBF000017F3 /* CompoundOperationBaseTests.m in Sources */,
 				9FAB6A731D53914C0061F333 /* IndexerStateStorageTests.m in Sources */,
 				63F613DE1CB111070002AEF0 /* PastEventCellObjectBuilderTests.m in Sources */,
@@ -6784,14 +6860,13 @@
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
-		9F78D7371D589899009DDCEA /* SpotlightIndexer.xcdatamodeld */ = {
+		9F78D7401D59D6EF009DDCEA /* SpotlightIndexer.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				9F78D7381D589899009DDCEA /* SpotlightIndexer.xcdatamodel */,
+				9F78D7411D59D6EF009DDCEA /* SpotlightIndexer.xcdatamodel */,
 			);
-			currentVersion = 9F78D7381D589899009DDCEA /* SpotlightIndexer.xcdatamodel */;
-			name = SpotlightIndexer.xcdatamodeld;
-			path = SpotlightIndexer/CoreDataStackCoordinator/SpotlightIndexer.xcdatamodeld;
+			currentVersion = 9F78D7411D59D6EF009DDCEA /* SpotlightIndexer.xcdatamodel */;
+			path = SpotlightIndexer.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

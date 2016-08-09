@@ -20,19 +20,14 @@
 
 #import <Foundation/Foundation.h>
 
-#import "ChangeProvider.h"
-
-@protocol ObjectTransformer;
-@protocol ChangeProviderFetchRequestFactory;
+#import "ContextProvider.h"
+#import "ContextFiller.h"
 
 /**
  @author Egor Tolstoy
  
- Default change provider build upon NSFetchedResultsController
+ A storage which contains NSManagedObjectContexts
  */
-@interface FetchedResultsControllerChangeProvider : NSObject <ChangeProvider>
-
-+ (instancetype)changeProviderWithFetchRequestFactory:(id<ChangeProviderFetchRequestFactory>)fetchRequestFactory
-                                    objectTransformer:(id<ObjectTransformer>)objectTransformer;
+@interface ContextStorageImplementation : NSObject <ContextProvider, ContextFiller>
 
 @end

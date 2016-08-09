@@ -18,16 +18,37 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "SpotlightCoreDataStackCoordinator.h"
+#import "SpotlightCoreDataStackCoordinatorImplementation.h"
+
+#import "ContextFiller.h"
 
 #import <CoreData/CoreData.h>
 
 static NSString *const kDataModelName = @"SpotlightIndexer";
 
-static NSManagedObjectContext *kRootSavingContext;
-static NSManagedObjectContext *kDefaultContext;
+@interface SpotlightCoreDataStackCoordinatorImplementation ()
 
-@implementation SpotlightCoreDataStackCoordinator
+@property (nonatomic, strong) id<ContextFiller> contextFiller;
+
+@end
+
+@implementation SpotlightCoreDataStackCoordinatorImplementation
+
+#pragma mark - Initialization
+
+- (instancetype)initWithContextFiller:(id<ContextFiller>)contextFiller {
+    self = [super init];
+    if (self) {
+        _contextFiller = contextFiller;
+    }
+    return self;
+}
+
++ (instancetype)coordinatorWithContextFiller:(id<ContextFiller>)contextFiller {
+    return [[self alloc] initWithContextFiller:contextFiller];
+}
+
+#pragma mark - <SpotlightCoreDataStackCoordinator>
 
 - (void)setupCoreDataStack {
     NSURL *modelURL = [[NSBundle mainBundle] URLForResource:kDataModelName
@@ -37,22 +58,22 @@ static NSManagedObjectContext *kDefaultContext;
     NSPersistentStoreCoordinator *coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:managedObjectModel];
     NSManagedObjectContext *defaultContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
     [defaultContext setPersistentStoreCoordinator:coordinator];
-    kDefaultContext = defaultContext;
+    [self.contextFiller setupPrimaryContext:defaultContext];
 
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSURL *documentsURL = [[fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-    NSURL *storeURL = [documentsURL URLByAppendingPathComponent:@"SpotlightIndexer.sqlite"];
+    NSString *databaseFilename = [NSString stringWithFormat:@"%@.sqlite", kDataModelName];
+    NSURL *storeURL = [documentsURL URLByAppendingPathComponent:databaseFilename];
     
-    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
         NSError *error = nil;
-        NSPersistentStoreCoordinator *psc = [kDefaultContext persistentStoreCoordinator];
-        NSPersistentStore *store = [psc addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:0 error:&error];
-        NSAssert(store != nil, @"Error initializing PSC: %@\n%@", [error localizedDescription], [error userInfo]);
+        NSPersistentStoreCoordinator *persistentStoreCoordinator = [defaultContext persistentStoreCoordinator];
+        [persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType
+                                                 configuration:nil
+                                                           URL:storeURL
+                                                       options:0
+                                                         error:&error];
     });
-}
-
-- (NSManagedObjectContext *)obtainDefaultContext {
-    return kDefaultContext;
 }
 
 @end

@@ -24,7 +24,7 @@
 
 @class IndexTransaction;
 @class IndexTransactionBatch;
-@class SpotlightCoreDataStackCoordinator;
+@protocol ContextProvider;
 
 /**
  @author Egor Tolstoy
@@ -33,7 +33,7 @@
  */
 @interface IndexerStateStorage : NSObject
 
-@property (nonatomic, strong) SpotlightCoreDataStackCoordinator *coordinator;
++ (instancetype)stateStorageWithContextProvider:(id<ContextProvider>)contextProvider;
 
 /**
  @author Egor Tolstoy

@@ -24,7 +24,6 @@
 #import "ObjectTransformer.h"
 #import "ChangeProviderChangeType.h"
 #import "ChangeProviderFetchRequestFactory.h"
-#import "SpotlightCoreDataStackCoordinator.h"
 
 #import <MagicalRecord/MagicalRecord.h>
 

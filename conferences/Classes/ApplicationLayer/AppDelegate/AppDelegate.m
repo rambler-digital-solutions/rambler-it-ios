@@ -35,7 +35,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self.thirdPartiesConfigurator configurate];
     [self.applicationConfigurator setupCoreDataStack];
-    [self.coordinator setupCoreDataStack];
+    [self.spotlightCoreDataStackCoordinator setupCoreDataStack];
     [self.pushNotificationCenter registerApplicationForPushNotificationsIfNeeded:application];
     
     [self.indexerMonitor startMonitoring];

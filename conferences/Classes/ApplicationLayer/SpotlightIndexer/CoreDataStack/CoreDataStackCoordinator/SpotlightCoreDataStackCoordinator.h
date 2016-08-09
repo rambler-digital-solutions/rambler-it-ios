@@ -20,19 +20,18 @@
 
 #import <Foundation/Foundation.h>
 
-#import "ChangeProvider.h"
-
-@protocol ObjectTransformer;
-@protocol ChangeProviderFetchRequestFactory;
+/**
+ @author Egor Tolstoy
+ 
+ Describes an object responsible for setting up CoreData stack
+ */
+@protocol SpotlightCoreDataStackCoordinator <NSObject>
 
 /**
  @author Egor Tolstoy
  
- Default change provider build upon NSFetchedResultsController
+ Initiates CoreData stack setting up
  */
-@interface FetchedResultsControllerChangeProvider : NSObject <ChangeProvider>
-
-+ (instancetype)changeProviderWithFetchRequestFactory:(id<ChangeProviderFetchRequestFactory>)fetchRequestFactory
-                                    objectTransformer:(id<ObjectTransformer>)objectTransformer;
+- (void)setupCoreDataStack;
 
 @end

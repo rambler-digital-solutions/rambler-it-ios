@@ -22,10 +22,20 @@
 
 @class NSManagedObjectContext;
 
-@interface SpotlightCoreDataStackCoordinator : NSObject
+/**
+ @author Egor Tolstoy
+ 
+ Describes an object responsible for storing CoreData contexts during app lifecycle
+ */
+@protocol ContextFiller <NSObject>
 
-- (void)setupCoreDataStack;
-
-- (NSManagedObjectContext *)obtainDefaultContext;
+/**
+ @author Egor Tolstoy
+ 
+ This method retains a given context and stores it during the app lifecycle
+ 
+ @param context NSManagedObjectContext
+ */
+- (void)setupPrimaryContext:(NSManagedObjectContext *)context;
 
 @end

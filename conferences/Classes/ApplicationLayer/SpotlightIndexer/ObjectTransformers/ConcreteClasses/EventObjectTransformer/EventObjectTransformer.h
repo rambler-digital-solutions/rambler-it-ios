@@ -22,15 +22,11 @@
 
 #import "ObjectTransformer.h"
 
-@class SpotlightCoreDataStackCoordinator;
-
 /**
  @author Egor Tolstoy
  
  An <ObjectTransformer> for EventModelObject
  */
 @interface EventObjectTransformer : NSObject <ObjectTransformer>
-
-@property (nonatomic, strong) SpotlightCoreDataStackCoordinator *coordinator;
 
 @end

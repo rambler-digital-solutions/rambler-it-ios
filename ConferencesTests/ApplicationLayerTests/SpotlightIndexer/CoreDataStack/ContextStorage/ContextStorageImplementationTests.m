@@ -18,21 +18,51 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import <XCTest/XCTest.h>
 
-#import "ChangeProvider.h"
+#import "ContextStorageImplementation.h"
 
-@protocol ObjectTransformer;
-@protocol ChangeProviderFetchRequestFactory;
+@interface ContextStorageImplementationTests : XCTestCase
 
-/**
- @author Egor Tolstoy
- 
- Default change provider build upon NSFetchedResultsController
- */
-@interface FetchedResultsControllerChangeProvider : NSObject <ChangeProvider>
+@property (nonatomic, strong) ContextStorageImplementation *storage;
 
-+ (instancetype)changeProviderWithFetchRequestFactory:(id<ChangeProviderFetchRequestFactory>)fetchRequestFactory
-                                    objectTransformer:(id<ObjectTransformer>)objectTransformer;
+@end
+
+@implementation ContextStorageImplementationTests
+
+- (void)setUp {
+    [super setUp];
+    
+    self.storage = [ContextStorageImplementation new];
+}
+
+- (void)tearDown {
+    self.storage = nil;
+    
+    [super tearDown];
+}
+
+- (void)testThatStorageReturnsNilIfContextIsNotSetuped {
+    // given
+    
+    
+    // when
+    id result = [self.storage obtainPrimaryContext];
+    
+    // then
+    XCTAssertNil(result);
+}
+
+- (void)testThatStorageReturnsPreviouslySetupedContext {
+    // given
+    id mockContext = [NSObject new];
+    [self.storage setupPrimaryContext:mockContext];
+    
+    // when
+    id result = [self.storage obtainPrimaryContext];
+    
+    // then
+    XCTAssertEqualObjects(result, mockContext);
+}
 
 @end

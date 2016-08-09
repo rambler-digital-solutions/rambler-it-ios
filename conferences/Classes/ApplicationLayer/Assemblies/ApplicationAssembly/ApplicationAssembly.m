@@ -29,13 +29,8 @@
 #import "ThirdPartiesConfigurator.h"
 #import "ThirdPartiesConfiguratorImplementation.h"
 #import "SpotlightIndexerAssembly.h"
-#import "SpotlightCoreDataStackCoordinator.h"
 
 @implementation ApplicationAssembly
-
-- (SpotlightCoreDataStackCoordinator *)coreDataStackCoordinator {
-    return [TyphoonDefinition withClass:[SpotlightCoreDataStackCoordinator class]];
-}
 
 - (AppDelegate *)appDelegate {
     return [TyphoonDefinition withClass:[AppDelegate class]
@@ -48,8 +43,8 @@
                                                     with:[self thirdPartiesConfigurator]];
                               [definition injectProperty:@selector(indexerMonitor)
                                                     with:[self.spotlightIndexerAssembly indexerMonitor]];
-                              [definition injectProperty:@selector(coordinator)
-                                                    with:[self coreDataStackCoordinator]];
+                              [definition injectProperty:@selector(spotlightCoreDataStackCoordinator)
+                                                    with:[self.spotlightIndexerAssembly spotlightCoreDataStackCoordinator]];
     }];
 }
 
