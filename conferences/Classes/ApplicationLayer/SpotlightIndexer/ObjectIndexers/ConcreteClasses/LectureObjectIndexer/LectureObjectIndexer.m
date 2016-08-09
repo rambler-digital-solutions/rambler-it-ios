@@ -18,34 +18,33 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "SpeakerObjectIndexer.h"
+#import "LectureObjectIndexer.h"
 
-#import "SpeakerModelObject.h"
+#import "LectureModelObject.h"
+#import "TagModelObject.h"
 #import "SpotlightIndexerConstants.h"
 
 #import <CoreSpotlight/CoreSpotlight.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 
-@implementation SpeakerObjectIndexer
+@implementation LectureObjectIndexer
 
 #pragma mark - Overriden methods
 
 - (BOOL)canIndexObjectWithType:(NSString *)objectType {
-    return [objectType isEqualToString:NSStringFromClass([SpeakerModelObject class])];
+    return [objectType isEqualToString:NSStringFromClass([LectureModelObject class])];
 }
 
-- (CSSearchableItem *)searchableItemForObject:(SpeakerModelObject *)object {
+- (CSSearchableItem *)searchableItemForObject:(LectureModelObject *)object {
     CSSearchableItemAttributeSet *attributeSet = [[CSSearchableItemAttributeSet alloc] initWithItemContentType:(NSString *)kUTTypeJSON];
     attributeSet.title = object.name;
+    attributeSet.contentDescription = object.lectureDescription;
     
-    NSString *speakerDescription = [self generateSpeakerDescriptionForSpeaker:object];
-    attributeSet.contentDescription = speakerDescription;
-    
-    NSArray *keywords = [self generateKeywordsForSpeaker:object];
+    NSArray *keywords = [self generateKeywordsForLecture:object];
     attributeSet.keywords = keywords;
     
     NSString *uniqueIdentifier = [self identifierForObject:object];
-    NSString *domainIdentifier = NSStringFromClass([SpeakerModelObject class]);
+    NSString *domainIdentifier = NSStringFromClass([LectureModelObject class]);
     CSSearchableItem *item = [[CSSearchableItem alloc] initWithUniqueIdentifier:uniqueIdentifier
                                                                domainIdentifier:domainIdentifier
                                                                    attributeSet:attributeSet];
@@ -55,33 +54,15 @@
 
 #pragma mark - Private methods
 
-- (NSString *)generateSpeakerDescriptionForSpeaker:(SpeakerModelObject *)speaker {
-    NSMutableArray *speakerDescriptionParts = [NSMutableArray new];
-    
-    if (speaker.job && speaker.job.length > 0) {
-        [speakerDescriptionParts addObject:speaker.job];
-    }
-    
-    if (speaker.company && speaker.company.length > 0) {
-        [speakerDescriptionParts addObject:speaker.company];
-    }
-    
-    NSString *speakerDescription = [speakerDescriptionParts componentsJoinedByString:@" @ "];
-    if (speakerDescription.length == 0 && speaker.biography && speaker.biography.length > 0) {
-        speakerDescription = speaker.biography;
-    }
-
-    return speakerDescription;
-}
-
-- (NSArray *)generateKeywordsForSpeaker:(SpeakerModelObject *)speaker {
+- (NSArray *)generateKeywordsForLecture:(LectureModelObject *)lecture {
     NSMutableArray *keywords = [NSMutableArray new];
-    [keywords addObjectsFromArray:[speaker.name componentsSeparatedByString:@" "]];
     
-    if (speaker.company && speaker.company.length > 0) {
-        [keywords addObject:speaker.company];
+    for (TagModelObject *tag in lecture.tags) {
+        if (keywords.count <= kSearchableItemKeywordsMaximumCount) {
+            [keywords addObject:tag.name];
+        }
     }
-
+    
     return [keywords copy];
 }
 

@@ -32,6 +32,9 @@
 #import "SpeakerObjectIndexer.h"
 #import "SpeakerChangeProviderFetchRequestFactory.h"
 #import "SpeakerObjectTransformer.h"
+#import "LectureObjectIndexer.h"
+#import "LectureChangeProviderFetchRequestFactory.h"
+#import "LectureObjectTransformer.h"
 
 #import <CoreSpotlight/CoreSpotlight.h>
 
@@ -46,11 +49,13 @@
                                               parameters:^(TyphoonMethod *initializer) {
                                                   [initializer injectParameterWith:@[
                                                                                      [self eventObjectIndexer],
-                                                                                     [self speakerObjectIndexer]
+                                                                                     [self speakerObjectIndexer],
+                                                                                     [self lectureObjectIndexer]
                                                                                      ]];
                                                   [initializer injectParameterWith:@[
                                                                                      [self eventChangeProvider],
-                                                                                     [self speakerChangeProvider]
+                                                                                     [self speakerChangeProvider],
+                                                                                     [self lectureChangeProvider]
                                                                                      ]];
                                                   [initializer injectParameterWith:[self indexerStateStorage]];
                                                   [initializer injectParameterWith:[self indexerMonitorOperationQueueFactory]];
@@ -112,6 +117,17 @@
                           }];
 }
 
+- (id<ObjectIndexer>)lectureObjectIndexer {
+    return [TyphoonDefinition withClass:[LectureObjectIndexer class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition useInitializer:@selector(initWithObjectTransformer:searchableIndex:)
+                                              parameters:^(TyphoonMethod *initializer) {
+                                                  [initializer injectParameterWith:[self lectureObjectTransformer]];
+                                                  [initializer injectParameterWith:[self searchableIndex]];
+                                              }];
+                          }];
+}
+
 #pragma mark - ChangeProviders
 
 - (id<ChangeProvider>)eventChangeProvider {
@@ -140,6 +156,19 @@
                           }];
 }
 
+- (id<ChangeProvider>)lectureChangeProvider {
+    return [TyphoonDefinition withClass:[FetchedResultsControllerChangeProvider class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition useInitializer:@selector(changeProviderWithFetchRequestFactory:objectTransformer:)
+                                              parameters:^(TyphoonMethod *initializer) {
+                                                  [initializer injectParameterWith:[self lectureChangeProviderFetchRequestFactory]];
+                                                  [initializer injectParameterWith:[self lectureObjectTransformer]];
+                                              }];
+                              [definition injectProperty:@selector(delegate)
+                                                    with:[self indexerMonitor]];
+                          }];
+}
+
 #pragma mark - ChangeProviderRequestFactories
 
 - (id<ChangeProviderFetchRequestFactory>)eventChangeProviderFetchRequestFactory {
@@ -150,6 +179,10 @@
     return [TyphoonDefinition withClass:[SpeakerChangeProviderFetchRequestFactory class]];
 }
 
+- (id<ChangeProviderFetchRequestFactory>)lectureChangeProviderFetchRequestFactory {
+    return [TyphoonDefinition withClass:[LectureChangeProviderFetchRequestFactory class]];
+}
+
 #pragma mark - ObjectTransformers
 
 - (id<ObjectTransformer>)eventObjectTransformer {
@@ -158,6 +191,10 @@
 
 - (id<ObjectTransformer>)speakerObjectTransformer {
     return [TyphoonDefinition withClass:[SpeakerObjectTransformer class]];
+}
+
+- (id<ObjectTransformer>)lectureObjectTransformer {
+    return [TyphoonDefinition withClass:[LectureObjectTransformer class]];
 }
 
 #pragma mark - Other
