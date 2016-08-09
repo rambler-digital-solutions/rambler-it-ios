@@ -29,7 +29,7 @@
 #import "LocalizedStrings.h"
 #import "UINavigationBar+States.h"
 #import "EventViewAnimator.h"
-#import <CrutchKit/Proxying/Extensions/UIViewController+CDObserver/UIViewController+CDObserver.h>
+#import "Extensions/UIViewController+CDObserver/UIViewController+CDObserver.h"
 #import "UIColor+Hex.h"
 
 @interface EventViewController()

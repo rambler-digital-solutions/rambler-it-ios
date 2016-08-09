@@ -20,7 +20,7 @@
 
 #import <XCTest/XCTest.h>
 #import <OCMock/OCMock.h>
-#import <CrutchKit/Proxying/Extensions/UIViewController+CDObserver/UIViewController+CDObserver.h>
+#import "Extensions/UIViewController+CDObserver/UIViewController+CDObserver.h"
 
 #import "EventViewController.h"
 #import "EventViewOutput.h"

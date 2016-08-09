@@ -22,7 +22,7 @@
 #import "LectureInfoTableViewCellObject.h"
 #import "LectureInfoTableViewCellActionProtocol.h"
 #import "EventTableViewCellActionProtocol.h"
-#import "Proxying/Extensions/UIResponder+CDProxying/UIResponder+CDProxying.h"
+#import "Extensions/UIResponder+CDProxying/UIResponder+CDProxying.h"
 
 #import <SDWebImage/UIImageView+WebCache.h>
 

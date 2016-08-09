@@ -25,6 +25,7 @@
 @protocol EventService;
 @protocol LectureService;
 @protocol SpeakerService;
+@protocol TagService;
 @protocol EventListService;
 @protocol MetaEventService;
 @protocol EventStoreServiceProtocol;
@@ -40,5 +41,6 @@
 - (id <MetaEventService>)metaEventService;
 - (id <EventStoreServiceProtocol>)eventStoreService;
 - (id <RamblerLocationService>)ramblerLocationService;
+- (id <TagService>)tagService;
 
 @end

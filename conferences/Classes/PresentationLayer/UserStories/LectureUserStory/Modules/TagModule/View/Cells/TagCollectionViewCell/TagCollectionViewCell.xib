@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="ProximaNova-Reg.otf">
+            <string>ProximaNova-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TagCollectionViewCellObject" id="7Jx-CQ-02K" customClass="TagCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="227" height="22"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="227" height="22"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66t-cZ-KA0">
+                        <rect key="frame" x="10" y="0.0" width="207" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="fDS-Y8-dUx"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <color key="backgroundColor" red="0.078431372549019607" green="0.66666666666666663" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="66t-cZ-KA0" secondAttribute="bottom" constant="2" id="0ii-SO-Euq"/>
+                <constraint firstItem="66t-cZ-KA0" firstAttribute="top" secondItem="7Jx-CQ-02K" secondAttribute="top" id="HEu-A5-cs3"/>
+                <constraint firstItem="66t-cZ-KA0" firstAttribute="leading" secondItem="7Jx-CQ-02K" secondAttribute="leading" constant="10" id="jvn-vb-4Vd"/>
+                <constraint firstAttribute="trailing" secondItem="66t-cZ-KA0" secondAttribute="trailing" constant="10" id="vDi-M3-r9q"/>
+            </constraints>
+            <size key="customSize" width="227" height="22"/>
+            <connections>
+                <outlet property="tagLabel" destination="66t-cZ-KA0" id="4JO-We-36O"/>
+                <outlet property="trailingTagLabelConstraint" destination="vDi-M3-r9q" id="j2e-rg-ulp"/>
+            </connections>
+            <point key="canvasLocation" x="177.5" y="13"/>
+        </collectionViewCell>
+    </objects>
+</document>

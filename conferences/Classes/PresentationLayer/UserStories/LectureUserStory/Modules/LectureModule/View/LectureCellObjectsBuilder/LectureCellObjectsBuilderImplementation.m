@@ -21,6 +21,7 @@
 #import "LectureCellObjectsBuilderImplementation.h"
 
 #import "LecturePlainObject.h"
+#import "LectureModelObject.h"
 #import "LocalizedStrings.h"
 
 #import "LectureMaterialTitleTableViewCellObject.h"
@@ -30,34 +31,58 @@
 #import "LectureMaterialInfoTableViewCellObject.h"
 #import "VideoRecordTableViewCellObject.h"
 
+#import "TagObjectDescriptor.h"
+#import "TagModuleTableViewCellObject.h"
+#import "TagShowMediator.h"
+
 static NSString *const kPresentationImageName = @"ic-presentation";
 static NSString *const kArticleImageName = @"ic-article";
 static NSString *const kCodeGithubImageName = @"ic-github";
+static NSString *const kTimeVideoText = @"(32:12)";
 
 @implementation LectureCellObjectsBuilderImplementation
 
 - (NSArray *)cellObjectsForLecture:(LecturePlainObject *)lecture {
+    NSMutableArray *cellObjects = [NSMutableArray new];
+    
     LectureInfoTableViewCellObject *lectureDescriptionCellObject = [LectureInfoTableViewCellObject objectWithLecture:lecture];
+    [cellObjects addObject:lectureDescriptionCellObject];
     
-    NSString *videoRecordTextTitle = [NSString stringWithFormat:@"%@ %@", NSLocalizedString(VideoRecordTableViewCellTitle, nil), @"(32:12)"];
+    TagModuleTableViewCellObject *tagCellObject;
+    if (lecture.tags.count > 0) {
+        TagObjectDescriptor *objectDescriptor = [[TagObjectDescriptor alloc] initWithObjectName:NSStringFromClass([LectureModelObject class])
+                                                                                        idValue:lecture.lectureId];
+        tagCellObject = [TagModuleTableViewCellObject objectWithObjectDescriptor:objectDescriptor
+                                                                   mediatorInput:[TagShowMediator new]];
+        [cellObjects addObject:tagCellObject];
+    }
+    
+    NSString *videoRecordTextTitle = [NSString stringWithFormat:@"%@ %@", NSLocalizedString(VideoRecordTableViewCellTitle, nil), kTimeVideoText];
     LectureMaterialTitleTableViewCellObject *videoRecordTextLabelCellObject = [LectureMaterialTitleTableViewCellObject objectWithText:videoRecordTextTitle];
+    [cellObjects addObject:videoRecordTextLabelCellObject];
     
-    VideoRecordTableViewCellObject *videoRecorTableViewCellObject = [VideoRecordTableViewCellObject new];
+    VideoRecordTableViewCellObject *videoRecordTableViewCellObject = [VideoRecordTableViewCellObject new];
+    [cellObjects addObject:videoRecordTableViewCellObject];
     
     LectureMaterialTitleTableViewCellObject *materialsTextLabelCellObject = [LectureMaterialTitleTableViewCellObject objectWithText:NSLocalizedString(LectureMaterialsTableViewCellTitle, nil)];
-    
-    LectureMaterialTitleTableViewCellObject *additionalTextLabelCellObject = [LectureMaterialTitleTableViewCellObject objectWithText:NSLocalizedString(AdditionInformationTableViewCellTitle, nil)];
+    [cellObjects addObject:materialsTextLabelCellObject];
     
     UIImage *presentationImage = [UIImage imageNamed:kPresentationImageName];
     LectureMaterialInfoTableViewCellObject *presentationTextImageLabelCellObject = [LectureMaterialInfoTableViewCellObject objectWithText:NSLocalizedString(LecturePresentationTableViewCellTitle, nil) andImage:presentationImage];
+    [cellObjects addObject:presentationTextImageLabelCellObject];
     
     UIImage *articleImage = [UIImage imageNamed:kArticleImageName];
     LectureMaterialInfoTableViewCellObject *articlesTextImageLabelCellObject = [LectureMaterialInfoTableViewCellObject objectWithText:NSLocalizedString(LectureArticlesTableViewCellTitle, nil) andImage:articleImage];
+    [cellObjects addObject:articlesTextImageLabelCellObject];
+    
+    LectureMaterialTitleTableViewCellObject *additionalTextLabelCellObject = [LectureMaterialTitleTableViewCellObject objectWithText:NSLocalizedString(AdditionInformationTableViewCellTitle, nil)];
+    [cellObjects addObject:additionalTextLabelCellObject];
     
     UIImage *codeGithubImage = [UIImage imageNamed:kCodeGithubImageName];
     LectureMaterialInfoTableViewCellObject *codeGithubTextLabelCellObject = [LectureMaterialInfoTableViewCellObject objectWithText:NSLocalizedString(LectureCodeGithubTableViewCellTitle, nil) andImage:codeGithubImage];
-
-    return @[lectureDescriptionCellObject, videoRecordTextLabelCellObject, videoRecorTableViewCellObject, materialsTextLabelCellObject, presentationTextImageLabelCellObject, articlesTextImageLabelCellObject, additionalTextLabelCellObject, codeGithubTextLabelCellObject];
+    [cellObjects addObject:codeGithubTextLabelCellObject];
+    
+    return cellObjects;
 }
 
 @end
