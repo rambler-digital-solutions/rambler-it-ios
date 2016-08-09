@@ -425,6 +425,9 @@
 		9F78D7791D5A0330009DDCEA /* LectureObjectIndexerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D7781D5A0330009DDCEA /* LectureObjectIndexerTests.m */; };
 		9F78D77D1D5A075C009DDCEA /* LectureChangeProviderFetchRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D77C1D5A075C009DDCEA /* LectureChangeProviderFetchRequestFactory.m */; };
 		9F78D7801D5A078F009DDCEA /* LectureChangeProviderFetchRequestFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D77F1D5A078F009DDCEA /* LectureChangeProviderFetchRequestFactoryTests.m */; };
+		9F78D7841D5A24F3009DDCEA /* StartUpRouterImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D7831D5A24F3009DDCEA /* StartUpRouterImplementation.m */; };
+		9F78D78D1D5A2F72009DDCEA /* TabBarControllerFactoryImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D78C1D5A2F72009DDCEA /* TabBarControllerFactoryImplementation.m */; };
+		9F78D7941D5A3454009DDCEA /* TabBarControllerFactoryImplementationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D7931D5A3454009DDCEA /* TabBarControllerFactoryImplementationTests.m */; };
 		9F8E5F701BC2552600DC10DB /* Conferences.API.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F8E5F6F1BC2552600DC10DB /* Conferences.API.plist */; };
 		9F8E5F741BC255AA00DC10DB /* RequestSignersAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5F731BC255AA00DC10DB /* RequestSignersAssembly.m */; };
 		9F8E5F781BC2571B00DC10DB /* NetworkClientsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5F771BC2571B00DC10DB /* NetworkClientsAssembly.m */; };
@@ -1316,6 +1319,12 @@
 		9F78D77B1D5A075C009DDCEA /* LectureChangeProviderFetchRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LectureChangeProviderFetchRequestFactory.h; path = ChangeProviderFetchRequestFactories/ConcreteClasses/LectureChangeProviderFetchRequestFactory/LectureChangeProviderFetchRequestFactory.h; sourceTree = "<group>"; };
 		9F78D77C1D5A075C009DDCEA /* LectureChangeProviderFetchRequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LectureChangeProviderFetchRequestFactory.m; path = ChangeProviderFetchRequestFactories/ConcreteClasses/LectureChangeProviderFetchRequestFactory/LectureChangeProviderFetchRequestFactory.m; sourceTree = "<group>"; };
 		9F78D77F1D5A078F009DDCEA /* LectureChangeProviderFetchRequestFactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LectureChangeProviderFetchRequestFactoryTests.m; path = ApplicationLayerTests/SpotlightIndexer/ChangeProviders/BaseClasses/FetchedResultsControllerChangeProvider/ChangeProviderFetchRequestFactories/ConcreteClasses/LectureChangeProviderFetchRequestFactory/LectureChangeProviderFetchRequestFactoryTests.m; sourceTree = "<group>"; };
+		9F78D7821D5A24F3009DDCEA /* StartUpRouterImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StartUpRouterImplementation.h; path = StartUpRouter/StartUpRouterImplementation.h; sourceTree = "<group>"; };
+		9F78D7831D5A24F3009DDCEA /* StartUpRouterImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StartUpRouterImplementation.m; path = StartUpRouter/StartUpRouterImplementation.m; sourceTree = "<group>"; };
+		9F78D78B1D5A2F72009DDCEA /* TabBarControllerFactoryImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TabBarControllerFactoryImplementation.h; path = StartUpSystem/Routers/Helpers/TabBarControllerFactory/TabBarControllerFactoryImplementation.h; sourceTree = "<group>"; };
+		9F78D78C1D5A2F72009DDCEA /* TabBarControllerFactoryImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TabBarControllerFactoryImplementation.m; path = StartUpSystem/Routers/Helpers/TabBarControllerFactory/TabBarControllerFactoryImplementation.m; sourceTree = "<group>"; };
+		9F78D78E1D5A3035009DDCEA /* TabBarControllerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TabBarControllerFactory.h; path = StartUpSystem/Routers/Helpers/TabBarControllerFactory/TabBarControllerFactory.h; sourceTree = "<group>"; };
+		9F78D7931D5A3454009DDCEA /* TabBarControllerFactoryImplementationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TabBarControllerFactoryImplementationTests.m; path = ApplicationLayerTests/StartUpSystem/Routers/Helpers/TabBarControllerFactory/TabBarControllerFactoryImplementationTests.m; sourceTree = "<group>"; };
 		9F8E5F6F1BC2552600DC10DB /* Conferences.API.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Conferences.API.plist; path = Assemblies/RequestConfiguratorsFactory/Conferences.API.plist; sourceTree = "<group>"; };
 		9F8E5F711BC2559B00DC10DB /* RequestSignersFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequestSignersFactory.h; path = Assemblies/RequestSignersFactory/RequestSignersFactory.h; sourceTree = "<group>"; };
 		9F8E5F721BC255AA00DC10DB /* RequestSignersAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequestSignersAssembly.h; path = Assemblies/RequestSignersFactory/RequestSignersAssembly.h; sourceTree = "<group>"; };
@@ -3796,6 +3805,8 @@
 		63FDCDD91BBDBA2A00A43B60 /* ApplicationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				9F78D7851D5A2C88009DDCEA /* StartUpSystem */,
+				9F78D7811D5A24DE009DDCEA /* StartUpRouter */,
 				9F533A7C1D50D6E7004F8E82 /* SpotlightIndexer */,
 				63F54D9C1BC5BA8F00DB1746 /* ThirdPartiesConfigurator */,
 				63EF15B71BC4546400480CAF /* PushNotificationCenter */,
@@ -6089,6 +6100,89 @@
 			name = LectureChangeProviderFetchRequestFactory;
 			sourceTree = "<group>";
 		};
+		9F78D7811D5A24DE009DDCEA /* StartUpRouter */ = {
+			isa = PBXGroup;
+			children = (
+				9F78D7821D5A24F3009DDCEA /* StartUpRouterImplementation.h */,
+				9F78D7831D5A24F3009DDCEA /* StartUpRouterImplementation.m */,
+			);
+			name = StartUpRouter;
+			sourceTree = "<group>";
+		};
+		9F78D7851D5A2C88009DDCEA /* StartUpSystem */ = {
+			isa = PBXGroup;
+			children = (
+				9F78D7861D5A2C9C009DDCEA /* Routers */,
+			);
+			name = StartUpSystem;
+			sourceTree = "<group>";
+		};
+		9F78D7861D5A2C9C009DDCEA /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				9F78D7881D5A2CAD009DDCEA /* Helpers */,
+				9F78D7871D5A2CA7009DDCEA /* ConcreteClasses */,
+			);
+			name = Routers;
+			sourceTree = "<group>";
+		};
+		9F78D7871D5A2CA7009DDCEA /* ConcreteClasses */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ConcreteClasses;
+			sourceTree = "<group>";
+		};
+		9F78D7881D5A2CAD009DDCEA /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9F78D78A1D5A2F52009DDCEA /* TabBarControllerFactory */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		9F78D78A1D5A2F52009DDCEA /* TabBarControllerFactory */ = {
+			isa = PBXGroup;
+			children = (
+				9F78D78E1D5A3035009DDCEA /* TabBarControllerFactory.h */,
+				9F78D78B1D5A2F72009DDCEA /* TabBarControllerFactoryImplementation.h */,
+				9F78D78C1D5A2F72009DDCEA /* TabBarControllerFactoryImplementation.m */,
+			);
+			name = TabBarControllerFactory;
+			sourceTree = "<group>";
+		};
+		9F78D78F1D5A3425009DDCEA /* StartUpSystem */ = {
+			isa = PBXGroup;
+			children = (
+				9F78D7901D5A342C009DDCEA /* Routers */,
+			);
+			name = StartUpSystem;
+			sourceTree = "<group>";
+		};
+		9F78D7901D5A342C009DDCEA /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				9F78D7911D5A3432009DDCEA /* Helpers */,
+			);
+			name = Routers;
+			sourceTree = "<group>";
+		};
+		9F78D7911D5A3432009DDCEA /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9F78D7921D5A3439009DDCEA /* TabBarControllerFactory */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		9F78D7921D5A3439009DDCEA /* TabBarControllerFactory */ = {
+			isa = PBXGroup;
+			children = (
+				9F78D7931D5A3454009DDCEA /* TabBarControllerFactoryImplementationTests.m */,
+			);
+			name = TabBarControllerFactory;
+			sourceTree = "<group>";
+		};
 		9F8E5F911BC269D000DC10DB /* OperationFactoriesAssembly */ = {
 			isa = PBXGroup;
 			children = (
@@ -6350,6 +6444,7 @@
 		9FF125231D51E6120098625F /* ApplicationLayerTests */ = {
 			isa = PBXGroup;
 			children = (
+				9F78D78F1D5A3425009DDCEA /* StartUpSystem */,
 				9FF125241D51E61B0098625F /* SpotlightIndexer */,
 			);
 			name = ApplicationLayerTests;
@@ -6929,6 +7024,7 @@
 				66704FFC1D460DC000DD9D6E /* ReportListViewController.m in Sources */,
 				66E9999D1D54B31300161D98 /* TagServicePredicateBuilder.m in Sources */,
 				63F613961CB00A220002AEF0 /* SpeakerInfoInteractor.m in Sources */,
+				9F78D7841D5A24F3009DDCEA /* StartUpRouterImplementation.m in Sources */,
 				9F4077901D2BF95200D47EF6 /* CommonResourceClient.m in Sources */,
 				2B2064991D3F9CE900246C8D /* TagPlainObject.m in Sources */,
 				63FDCE061BBDBA2A00A43B60 /* AppDelegate.m in Sources */,
@@ -7065,6 +7161,7 @@
 				66E999681D54B04A00161D98 /* TagPresenter.m in Sources */,
 				667050211D46146B00DD9D6E /* ReportsSearchDataDisplayManager.m in Sources */,
 				66E999621D54B04100161D98 /* TagModuleConfig.m in Sources */,
+				9F78D78D1D5A2F72009DDCEA /* TabBarControllerFactoryImplementation.m in Sources */,
 				63F6137E1CB00A220002AEF0 /* SignUpAndSaveToCalendarEventTableViewCell.m in Sources */,
 				667050451D4615B000DD9D6E /* ReportSpeakerTableViewCellObject.m in Sources */,
 				66EE4D341D54BFCD0011F94A /* NIMutableCollectionViewModel+LJAddObject.m in Sources */,
@@ -7133,6 +7230,7 @@
 				9FC1F6761D2824000070D9B5 /* EventListServiceTests.m in Sources */,
 				63F8F2F61BF9FE7D000017F3 /* RCFRESTRequestConfiguratorTests.m in Sources */,
 				666C5C3F1D4F344B002D73D5 /* ReportsSearchPresenter.m in Sources */,
+				9F78D7941D5A3454009DDCEA /* TabBarControllerFactoryImplementationTests.m in Sources */,
 				63F613DC1CB111070002AEF0 /* CurrentEventCellObjectBuilderTests.m in Sources */,
 				63F613EB1CB111070002AEF0 /* ReportListRouterTests.m in Sources */,
 				631CBA811C021A5300E3EBA8 /* PresentationLayerHelpersAssemblyTests.m in Sources */,
