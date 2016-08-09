@@ -20,18 +20,17 @@
 
 #import "EventRouter.h"
 #import "LectureModuleInput.h"
+#import "SpeakerInfoModuleInput.h"
 #import "EventViewController.h"
-
-static NSString * const kEventModuleToLectureModuleSegue = @"EventModuleToLectureModuleSegue";
+#import "EventModuleSegueIdentifiersConstants.h"
 
 @implementation EventRouter
 
 #pragma mark - EventRouterInput
 
 - (void)openLectureModuleWithLectureObjectId:(NSString *)lectureObjectId {
-    [[self.transitionHandler openModuleUsingSegue: kEventModuleToLectureModuleSegue] thenChainUsingBlock:^id<RamblerViperModuleOutput>(id<LectureModuleInput> moduleInput) {
+    [[self.transitionHandler openModuleUsingSegue:kEventModuleToLectureModuleSegue] thenChainUsingBlock:^id<RamblerViperModuleOutput>(id<LectureModuleInput> moduleInput) {
         [moduleInput configureCurrentModuleWithLectureObjectId:lectureObjectId];
-        
         return nil;
     }];
 }
@@ -40,6 +39,13 @@ static NSString * const kEventModuleToLectureModuleSegue = @"EventModuleToLectur
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
 
     [((EventViewController *)self.transitionHandler).navigationController presentViewController:activityViewController animated:true completion:nil];
+}
+
+- (void)openSpeakerInfoModuleWithSpeakerId:(NSString *)speakerId {
+    [[self.transitionHandler openModuleUsingSegue:kEventModuleToSpeakerModuleSegue] thenChainUsingBlock:^id<RamblerViperModuleOutput>(id<SpeakerInfoModuleInput> moduleInput) {
+        [moduleInput configureCurrentModuleWithSpeakerId:speakerId];
+        return nil;
+    }];
 }
 
 @end

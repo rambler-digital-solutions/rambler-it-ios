@@ -67,7 +67,8 @@
                         <outlet property="headerBackgroundView" destination="rfD-hU-F1j" id="kHO-Yw-SZd"/>
                         <outlet property="headerView" destination="tAj-fc-JAG" id="F1D-x1-qdL"/>
                         <outlet property="tableView" destination="2f2-MS-k81" id="pVQ-Gv-juG"/>
-                        <segue destination="ApB-G0-QuI" kind="push" identifier="EventModuleToLectureModuleSegue" id="k0t-w6-Xgx"/>
+                        <segue destination="ApB-G0-QuI" kind="push" identifier="kEventModuleToLectureModuleSegue" id="k0t-w6-Xgx"/>
+                        <segue destination="Rfx-yA-6Vy" kind="push" identifier="kEventModuleToSpeakerModuleSegue" id="vPW-gs-mep"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UZP-hJ-8Tb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -78,7 +79,17 @@
                     </connections>
                 </customObject>
             </objects>
-            <point key="canvasLocation" x="1713" y="258"/>
+            <point key="canvasLocation" x="1599" y="238"/>
+        </scene>
+        <!--UIViewController-mwt-bL-fmW-->
+        <scene sceneID="WFn-eE-kxy">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SpeakerInfo" referencedIdentifier="UIViewController-mwt-bL-fmW" id="Rfx-yA-6Vy" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="yRy-Fh-WEs"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tjw-xA-VCI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2192.5" y="52"/>
         </scene>
         <!--UIViewController-JLc-iV-GVs-->
         <scene sceneID="U1R-b5-hEw">

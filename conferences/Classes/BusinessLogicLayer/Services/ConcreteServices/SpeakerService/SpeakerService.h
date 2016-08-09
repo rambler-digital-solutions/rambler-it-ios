@@ -21,9 +21,9 @@
 #import <Foundation/Foundation.h>
 
 @class NSPredicate;
-@class Speaker;
+@class SpeakerModelObject;
 
-typedef void (^SpeakerCompletionBlock)(Speaker *speaker, NSError *error);
+typedef void (^SpeakerCompletionBlock)(SpeakerModelObject *speaker, NSError *error);
 
 /**
  @author Artem Karpushin
@@ -42,5 +42,16 @@ typedef void (^SpeakerCompletionBlock)(Speaker *speaker, NSError *error);
  @return Speaker object
  */
 - (NSArray *)obtainSpeakerWithPredicate:(NSPredicate *)predicate;
+
+/**
+ @author Artem Karpushin
+ 
+ Method is used to obtain Speaker object from cache
+ 
+ @param speakerId
+ 
+ @return Speaker object
+ */
+- (SpeakerModelObject *)obtainSpeakerWithSpeakerId:(NSString *)speakerId;
 
 @end

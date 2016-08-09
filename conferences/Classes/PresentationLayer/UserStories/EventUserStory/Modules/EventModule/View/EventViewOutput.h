@@ -83,5 +83,12 @@
  */
 - (void)didTapShareButton;
 
+/**
+ @author Vasyura Anastasiya
+ 
+ Method is used to inform presenter that speaker view was tapped
+ */
+- (void)didTapSpeakerViewWithSpeakerId:(NSString *)speakerId;
+
 @end
 

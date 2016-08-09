@@ -1,5 +1,3 @@
-// Copyright (c) 2015 RAMBLER&Co
-//
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
@@ -21,11 +19,14 @@
 #import <Foundation/Foundation.h>
 #import "SpeakerInfoInteractorInput.h"
 
-@protocol SpeakerInfoInteractorOutput;
+@protocol ROSPonsomizer;
+@protocol SpeakerService;
 
 @interface SpeakerInfoInteractor : NSObject <SpeakerInfoInteractorInput>
 
-@property (weak, nonatomic) id <SpeakerInfoInteractorOutput> output;
+@property (nonatomic, weak) id  output;
+@property (nonatomic, strong) id<ROSPonsomizer> ponsomizer;
+@property (nonatomic, strong) id<SpeakerService> speakerService;
 
 @end
 

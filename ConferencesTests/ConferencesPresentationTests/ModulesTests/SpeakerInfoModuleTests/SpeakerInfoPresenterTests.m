@@ -62,10 +62,10 @@
 
 - (void)testSuccessSetupview {
     // gvien
-    NSString *speakerObjectId = @"23jk3";
+    NSString *speakerId = @"23jk3";
     
     SpeakerInfoPresenterStateStorage *stateStorage = [SpeakerInfoPresenterStateStorage new];
-    stateStorage.speakerObjectId = speakerObjectId;
+    stateStorage.speakerId = speakerId;
     
     self.presenter.stateStorage = stateStorage;
     
@@ -73,36 +73,23 @@
     [self.presenter setupView];
     
     // then
-    OCMVerify([self.interactorMock obtainSpeakerWithObjectId:speakerObjectId]);
-}
-
-#pragma mark - SpeakerInfoInteractorOutput
-
-- (void)testSuccessDidObtainSpeaker {
-    // given
-    SpeakerPlainObject *speaker = [SpeakerPlainObject new];
-    
-    // when
-    [self.presenter didObtainSpeaker:speaker];
-    
-    // then
-    OCMVerify([self.viewMock setupViewWithSpeaker:speaker]);
+    OCMVerify([self.interactorMock obtainSpeakerWithSpeakerId:speakerId]);
 }
 
 #pragma mark - SpeakerInfoModuleInput
 
 - (void)testSuccessConfigureCurrentModuleWithSpeakerObjectId {
     // given
-    NSString *speakerObjectId = @"23jk3";
+    NSString *speakerId = @"23jk3";
     
     SpeakerInfoPresenterStateStorage *stateStorage = [SpeakerInfoPresenterStateStorage new];
     self.presenter.stateStorage = stateStorage;
     
     // when
-    [self.presenter configureCurrentModuleWithSpeakerObjectId:speakerObjectId];
+    [self.presenter configureCurrentModuleWithSpeakerId:speakerId];
     
     // then
-    XCTAssert(stateStorage.speakerObjectId == speakerObjectId);
+    XCTAssert(stateStorage.speakerId == speakerId);
 }
 
 @end

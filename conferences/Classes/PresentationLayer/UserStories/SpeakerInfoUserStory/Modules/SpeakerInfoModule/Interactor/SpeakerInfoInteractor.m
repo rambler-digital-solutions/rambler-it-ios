@@ -1,5 +1,3 @@
-// Copyright (c) 2015 RAMBLER&Co
-//
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
@@ -19,8 +17,10 @@
 // THE SOFTWARE.
 
 #import "SpeakerInfoInteractor.h"
-#import "SpeakerInfoInteractorOutput.h"
 #import "SpeakerPlainObject.h"
+#import "SpeakerModelObject.h"
+#import "ROSPonsomizer.h"
+#import "SpeakerService.h"
 
 @interface SpeakerInfoInteractor()
 
@@ -30,19 +30,12 @@
 
 #pragma mark - SpeakerInfoInteractorInput
 
-- (void)obtainSpeakerWithObjectId:(NSString *)objectId {
-    /**
-     @author Artem Karpushin
-     
-     There is no service to fetch Speaker yet, so create mockSpeaker to simulate the operation of the service
-     */
+- (SpeakerPlainObject *)obtainSpeakerWithSpeakerId:(NSString *)speakerId {
     
-    SpeakerPlainObject * mockSpeaker = [SpeakerPlainObject new];
-    mockSpeaker.name = @"Ray Wenderlich";
-    mockSpeaker.company = @"Rambler&Co";
-    mockSpeaker.biography = @"Method swizzling is the process of changing the implementation of an existing selector. It’s a technique made possible by the fact that method invocations in Objective-C can be changed at runtime, by changing how selectors are mapped to underlying functions in a class’s dispatch table.";
+    SpeakerModelObject *speaker = [self.speakerService obtainSpeakerWithSpeakerId:speakerId];
+    SpeakerPlainObject *plainSpeaker = [self.ponsomizer convertObject:speaker];
     
-    [self.output didObtainSpeaker:mockSpeaker];
+    return plainSpeaker;
 }
 
 @end

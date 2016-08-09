@@ -7,6 +7,7 @@
 // copies of the Software, and to permit persons to whom the Software is
 // furnished to do so, subject to the following conditions:
 //
+
 // The above copyright notice and this permission notice shall be included in
 // all copies or substantial portions of the Software.
 //
@@ -22,12 +23,16 @@
 #import "ModuleAssemblyBase.h"
 #import "AssemblyCollector/RamblerInitialAssembly.h"
 
+@class PonsomizerAssembly;
+
 /**
  @author Artem Karpushin
  
  A TyphoonAssembly which is responsible for creating SpeakerInfoModule
  */
 @interface SpeakerInfoModuleAssembly : ModuleAssemblyBase <RamblerInitialAssembly>
+
+@property (nonatomic, strong) PonsomizerAssembly *ponsomizerAssembly;
 
 @end
 

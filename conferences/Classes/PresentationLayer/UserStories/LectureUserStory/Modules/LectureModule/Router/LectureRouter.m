@@ -30,7 +30,7 @@ static NSString *const LectureModuleToSpeakerInfoModuleSegue = @"LectureModuleTo
 
 - (void)openSpeakerInfoModuleWithSpeakerObjectId:(NSString *)objectId {
     [[self.transitionHandler openModuleUsingSegue:LectureModuleToSpeakerInfoModuleSegue] thenChainUsingBlock:^id<RamblerViperModuleOutput>(id<SpeakerInfoModuleInput> moduleInput) {
-        [moduleInput configureCurrentModuleWithSpeakerObjectId:objectId];
+        [moduleInput configureCurrentModuleWithSpeakerId:objectId];
         
         return  nil;
     }];

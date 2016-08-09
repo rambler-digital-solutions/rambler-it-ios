@@ -1,5 +1,3 @@
-// Copyright (c) 2015 RAMBLER&Co
-//
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
@@ -22,6 +20,7 @@
 #import "SpeakerInfoViewOutput.h"
 #import "SpeakerInfoDataDisplayManager.h"
 #import "SpeakerShortInfoModuleInput.h"
+#import "UINavigationBar+States.h"
 
 static CGFloat TableViewEstimatedRowHeight = 44.0f;
 
@@ -33,6 +32,7 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+    [self.navigationController.navigationBar becomeTransparent];
 	[self.output setupView];
 }
 
@@ -43,7 +43,6 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
     
     self.tableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.tableView];
     self.tableView.delegate = [self.dataDisplayManager delegateForTableView:self.tableView withBaseDelegate:nil];
-    self.tableView.tableFooterView = [UIView new];
     self.tableView.estimatedRowHeight = TableViewEstimatedRowHeight;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     
@@ -53,15 +52,22 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
 #pragma mark - Private methods
 
 - (void)setupHeaderViewWithSpeaker:(SpeakerPlainObject *)speaker {
-    [self.speakerShortInfoView configureModuleWithSpeaker:speaker andViewSize:SpeakerShortInfoViewBigSize];
+    [self.speakerShortInfoView configureModuleWithSpeaker:speaker
+                                              andViewSize:SpeakerShortInfoViewBigSize];
     
-    CGFloat tableViewHeaderHeight = self.speakerShortInfoView.frame.size.height;
-    UIView *tableViewHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0,
-                                                                           0,
-                                                                           self.view.frame.size.width,
-                                                                           tableViewHeaderHeight)];
-    tableViewHeaderView.backgroundColor = [UIColor clearColor];
-    [self.tableView setTableHeaderView:tableViewHeaderView];
+    self.tableView.tableHeaderView = nil;
+    CGRect frame = [self calculateFrameForHeaderView];
+    self.speakerShortInfoView.frame = frame;
+    self.tableView.tableHeaderView = self.speakerShortInfoView;
 }
+
+- (CGRect)calculateFrameForHeaderView {
+    CGRect frame = self.speakerShortInfoView.frame;
+    frame.size.width = self.view.bounds.size.width;
+    frame.size = [self.speakerShortInfoView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    
+    return frame;
+}
+
 
 @end

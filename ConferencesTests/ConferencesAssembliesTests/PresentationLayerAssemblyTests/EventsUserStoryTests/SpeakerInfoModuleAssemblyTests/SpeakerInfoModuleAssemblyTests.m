@@ -74,6 +74,8 @@
     Class targetClass = [SpeakerInfoInteractor class];
     NSArray *dependencies = @[
                               RamblerSelector(output),
+                              RamblerSelector(ponsomizer),
+                              RamblerSelector(speakerService)
                               ];
     // when
     id result = [self.assembly interactorSpeakerInfo];

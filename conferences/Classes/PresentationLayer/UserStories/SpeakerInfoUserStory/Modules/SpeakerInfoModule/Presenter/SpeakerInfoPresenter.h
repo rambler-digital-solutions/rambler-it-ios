@@ -1,5 +1,3 @@
-// Copyright (c) 2015 RAMBLER&Co
-//
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
@@ -20,7 +18,6 @@
 
 #import <Foundation/Foundation.h>
 #import "SpeakerInfoViewOutput.h"
-#import "SpeakerInfoInteractorOutput.h"
 #import "SpeakerInfoModuleInput.h"
 
 @protocol SpeakerInfoViewInput;
@@ -28,7 +25,7 @@
 @protocol SpeakerInfoRouterInput;
 @class SpeakerInfoPresenterStateStorage;
 
-@interface SpeakerInfoPresenter : NSObject  <SpeakerInfoViewOutput, SpeakerInfoInteractorOutput, SpeakerInfoModuleInput>
+@interface SpeakerInfoPresenter : NSObject  <SpeakerInfoViewOutput, SpeakerInfoModuleInput>
 
 @property (weak, nonatomic) id <SpeakerInfoViewInput> view;
 @property (strong, nonatomic) id <SpeakerInfoInteractorInput> interactor;

@@ -1,5 +1,3 @@
-// Copyright (c) 2015 RAMBLER&Co
-//
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
@@ -20,10 +18,11 @@
 
 #import "SpeakerInfoTableViewCellObject.h"
 #import "SpeakerInfoTableViewCell.h"
+#import "SpeakerPlainObject.h"
 
 @interface SpeakerInfoTableViewCellObject ()
 
-@property (strong, nonatomic, readwrite) NSString *text;
+@property (nonatomic, strong, readwrite) NSString *speakerDescription;
 
 @end
 
@@ -31,16 +30,17 @@
 
 #pragma mark - Initialization
 
-- (instancetype)initWithText:(NSString *)text {
+- (instancetype)initWithSpeaker:(SpeakerPlainObject *)speaker {
     self = [super init];
     if (self) {
-        _text = text;
+        _speakerDescription = speaker.biography;
     }
+    
     return self;
 }
 
-+ (instancetype)objectWithText:(NSString *)text {
-    return [[self alloc] initWithText:text];
++ (instancetype)objectWithSpeaker:(SpeakerPlainObject *)speaker {
+    return [[self alloc] initWithSpeaker:speaker];
 }
 
 # pragma mark - NICellObject methods

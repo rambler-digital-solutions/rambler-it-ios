@@ -68,7 +68,7 @@
     [self.router openSpeakerInfoModuleWithSpeakerObjectId:objectId];
     
     // then
-    OCMVerify([moduleInputMock configureCurrentModuleWithSpeakerObjectId:objectId]);
+    OCMVerify([moduleInputMock configureCurrentModuleWithSpeakerId:objectId]);
 }
 
 @end

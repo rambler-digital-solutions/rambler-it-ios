@@ -75,6 +75,10 @@
     [self.router openShareModuleWithActivityItems:activityItems];
 }
 
+- (void)didTapSpeakerViewWithSpeakerId:(NSString *)speakerId {
+    [self.router openSpeakerInfoModuleWithSpeakerId:speakerId];
+}
+
 #pragma mark - EventInteractorOutput
 
 - (void)didSaveEventToCalendarWithError:(NSError *)error {

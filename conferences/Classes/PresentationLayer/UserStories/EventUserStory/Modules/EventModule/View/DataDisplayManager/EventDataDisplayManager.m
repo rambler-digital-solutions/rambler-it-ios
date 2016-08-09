@@ -84,7 +84,7 @@
         @strongify(self);
         
         LectureInfoTableViewCellObject *cellObject = (LectureInfoTableViewCellObject *)object;
-        NSString *lectureObjectId = cellObject.lectureObjectId;
+        NSString *lectureObjectId = cellObject.lectureId;
         
         [self.delegate didTapLectureInfoCellWithLectureObjectId:lectureObjectId];
 

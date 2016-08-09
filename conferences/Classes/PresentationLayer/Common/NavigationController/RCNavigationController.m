@@ -45,14 +45,16 @@ static NSString *const kBackButtonName = @"ic-back";
 - (void)navigationController:(UINavigationController *)navigationController
       willShowViewController:(UIViewController *)viewController
                     animated:(BOOL)animated {
-    UIImage *backButton = [UIImage imageNamed:kBackButtonName];
-    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithImage:backButton
-                                                                 style:UIBarButtonItemStylePlain
-                                                                target:self
-                                                                action:@selector(didTriggerBackButtonEvent:)];
-    viewController.navigationItem.leftBarButtonItem = backItem;
-    
-    self.interactivePopGestureRecognizer.delegate = (id<UIGestureRecognizerDelegate>)viewController;
+    if (self.viewControllers.count > 1) {
+        UIImage *backButton = [UIImage imageNamed:kBackButtonName];
+        UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithImage:backButton
+                                                                     style:UIBarButtonItemStylePlain
+                                                                    target:self
+                                                                    action:@selector(didTriggerBackButtonEvent:)];
+        viewController.navigationItem.leftBarButtonItem = backItem;
+        
+        self.interactivePopGestureRecognizer.delegate = (id<UIGestureRecognizerDelegate>)viewController;
+    }
 }
 
 - (void)didTriggerBackButtonEvent:(id)sender {

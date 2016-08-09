@@ -1,5 +1,3 @@
-// Copyright (c) 2015 RAMBLER&Co
-//
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
@@ -23,6 +21,7 @@
 
 #import "SpeakerPlainObject.h"
 #import "SpeakerInfoTableViewCellObject.h"
+#import "SpeakerInfoCellObjectBuilder.h"
 
 @interface SpeakerInfoDataDisplayManager ()
 
@@ -50,12 +49,13 @@
 
 - (id<UITableViewDataSource>)dataSourceForTableView:(UITableView *)tableView {
     if (!self.tableViewModel) {
-        [self updateTableViewModel];
+        [self updateTableViewModelWithSpeaker:self.speaker];
     }
     return self.tableViewModel;
 }
 
-- (id<UITableViewDelegate>)delegateForTableView:(UITableView *)tableView withBaseDelegate:(id<UITableViewDelegate>)baseTableViewDelegate {
+- (id<UITableViewDelegate>)delegateForTableView:(UITableView *)tableView
+                               withBaseDelegate:(id<UITableViewDelegate>)baseTableViewDelegate {
     if (!self.tableViewActions) {
         [self setupTableViewActions];
     }
@@ -64,19 +64,11 @@
 
 #pragma mark - Private methods
 
-- (NSArray *)generateCellObjects {
-    NSMutableArray *cellObjects = [@[] mutableCopy];
+- (void)updateTableViewModelWithSpeaker:(SpeakerPlainObject *)speaker {
+    NSArray *cellObjects = [self.cellObjectBuilder buildObjectsWithSpeaker:speaker];
     
-    SpeakerInfoTableViewCellObject *speakerInfoCellObject = [SpeakerInfoTableViewCellObject objectWithText:self.speaker.biography];
-    [cellObjects addObject:speakerInfoCellObject];
-    
-    return cellObjects;
-}
-
-- (void)updateTableViewModel {
-    NSArray *cellObjects = [self generateCellObjects];
-    
-    self.tableViewModel = [[NITableViewModel alloc] initWithSectionedArray:cellObjects delegate:(id)[NICellFactory class]];
+    self.tableViewModel = [[NITableViewModel alloc] initWithSectionedArray:cellObjects
+                                                                  delegate:(id)[NICellFactory class]];
 }
 
 - (void)setupTableViewActions {

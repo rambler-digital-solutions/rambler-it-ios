@@ -1,5 +1,3 @@
-// Copyright (c) 2015 RAMBLER&Co
-//
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
@@ -23,7 +21,7 @@
 
 @interface SpeakerInfoTableViewCell ()
 
-@property (weak, nonatomic) IBOutlet UILabel *label;
+@property (weak, nonatomic) IBOutlet UILabel *speakerDescription;
 
 @end
 
@@ -32,7 +30,7 @@
 #pragma mark NICell methods
 
 - (BOOL)shouldUpdateCellWithObject:(SpeakerInfoTableViewCellObject *)object {
-    self.label.text = object.text;
+    self.speakerDescription.text = object.speakerDescription;
     
     return  true;
 }

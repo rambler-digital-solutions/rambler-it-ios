@@ -20,6 +20,17 @@
 
 #import <Foundation/Foundation.h>
 
+#pragma mark - Speaker module
+
+extern NSString *const kSpeakerInfoSocialNetworksSectionName;
+extern NSString *const kSpeakerInfoWebsiteSectionName;
+extern NSString *const kSpeakInfoFacebookAccountTitle;
+extern NSString *const kSpeakInfoVkontakteAccountTitle;
+extern NSString *const kSpeakInfoGithubAccountTitle;
+extern NSString *const kSpeakInfoLinkedInAccountTitle;
+extern NSString *const kSpeakInfoInstagramAccountTitle;
+extern NSString *const kSpeakInfoTwitterAccountTitle;
+
 #pragma mark - Cell title
 
 extern NSString * const VideoRecordTableViewCellTitle;

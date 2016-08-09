@@ -62,7 +62,28 @@ typedef NS_ENUM(NSUInteger, SocialNetworkType) {
      
      VKontakte
      */
-    SocialNetworkVkontakteType = 5
+    SocialNetworkVkontakteType = 5,
+    
+    /**
+     @author Egor Tolstoy
+     
+     Email
+     */
+    SocialNetworkEmailType = 6,
+    
+    /**
+     @author Egor Tolstoy
+     
+     Instagram
+     */
+    SocialNetworkInstagramType = 7,
+    
+    /**
+     @author Egor Tolstoy
+     
+     Website
+     */
+    SocialNetworkWebsiteType = 8
 };
 
 #endif /* SocialNetworkType_h */

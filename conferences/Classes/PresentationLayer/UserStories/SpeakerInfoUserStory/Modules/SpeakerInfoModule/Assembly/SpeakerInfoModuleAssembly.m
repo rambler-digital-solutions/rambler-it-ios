@@ -1,5 +1,3 @@
-// Copyright (c) 2015 RAMBLER&Co
-//
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
@@ -25,6 +23,10 @@
 #import "SpeakerInfoRouter.h"
 #import "SpeakerInfoPresenterStateStorage.h"
 #import "SpeakerInfoDataDisplayManager.h"
+#import "SpeakerInfoCellObjectBuilder.h"
+#import "SocialContactsConfigurator.h"
+#import "ServiceComponents.h"
+#import "PonsomizerAssembly.h"
 
 @implementation  SpeakerInfoModuleAssembly
 
@@ -43,6 +45,10 @@
                             configuration:^(TyphoonDefinition *definition) {
                                 [definition injectProperty:@selector(output)
                                                       with:[self presenterSpeakerInfo]];
+                                [definition injectProperty:@selector(speakerService)
+                                                      with:[self.serviceComponents speakerService]];
+                                [definition injectProperty:@selector(ponsomizer)
+                                                      with:[self.ponsomizerAssembly ponsomizer]];
              }];
 }
 
@@ -71,7 +77,22 @@
 }
 
 - (SpeakerInfoDataDisplayManager *)dataDisplayManagerSpeakerInfo {
-    return [TyphoonDefinition withClass:[SpeakerInfoDataDisplayManager class]];
+    return [TyphoonDefinition withClass:[SpeakerInfoDataDisplayManager class] configuration:^(TyphoonDefinition *definition) {
+        [definition injectProperty:@selector(cellObjectBuilder)
+                              with:[self cellObjectsBuilderSpeakerInfo]];
+    }];
+}
+
+- (SpeakerInfoCellObjectBuilder *)cellObjectsBuilderSpeakerInfo {
+    return [TyphoonDefinition withClass:[SpeakerInfoCellObjectBuilder class]
+                          configuration:^(TyphoonDefinition *definition) {
+        [definition injectProperty:@selector(configurator)
+                              with:[self socialContactsConfiguratorSpeakerInfo]];
+    }];
+}
+
+- (SocialContactsConfigurator *)socialContactsConfiguratorSpeakerInfo {
+    return [TyphoonDefinition withClass:[SocialContactsConfigurator class]];
 }
 
 @end

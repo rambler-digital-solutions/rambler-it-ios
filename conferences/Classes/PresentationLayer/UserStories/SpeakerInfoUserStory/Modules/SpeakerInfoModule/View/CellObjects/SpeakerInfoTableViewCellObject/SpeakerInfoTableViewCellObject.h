@@ -1,5 +1,3 @@
-// Copyright (c) 2015 RAMBLER&Co
-//
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
@@ -21,10 +19,12 @@
 #import <Foundation/Foundation.h>
 #import <Nimbus/NimbusModels.h>
 
+@class SpeakerPlainObject;
+
 @interface SpeakerInfoTableViewCellObject : NSObject <NICellObject>
 
-@property (strong, nonatomic, readonly) NSString *text;
+@property (nonatomic, strong, readonly) NSString *speakerDescription;
 
-+ (instancetype)objectWithText:(NSString *)text;
++ (instancetype)objectWithSpeaker:(SpeakerPlainObject *)speaker;
 
 @end

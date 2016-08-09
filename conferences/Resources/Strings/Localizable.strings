@@ -9,11 +9,17 @@
 "VideoRecordTableViewCellTitle" = "Запись выступления";
 "LectureMaterialsTableViewCellTitle" = "Материалы";
 "AdditionInformationTableViewCellTitle" = "Дополнительно";
-"SpeakerWebSiteTableViewCellTitle" = "Веб-сайт";
-"SpeakerContactsTableViewCellTitle" = "Контакты";
 "LecturePresentationTableViewCellTitle" = "презентация";
 "LectureArticlesTableViewCellTitle" = "cтатья";
 "LectureCodeGithubTableViewCellTitle" = "код проекта на Гитхабе";
+"kSpeakerInfoSocialNetworksSectionName" = "Контакты";
+"kSpeakerInfoWebsiteSectionName" = "Веб-сайт";
+"kSpeakInfoFacebookAccountTitle" = "Facebook";
+"kSpeakInfoVkontakteAccountTitle" = "Vkontakte";
+"kSpeakInfoGithubAccountTitle" = "Github";
+"kSpeakInfoLinkedInAccountTitle" = "LinkedIn";
+"kSpeakInfoInstagramAccountTitle" = "Instagram";
+"kSpeakInfoTwitterAccountTitle" = "Twitter";
 
 "EventSavedToCalendarAlertMessage" = "Событие сохранено в календарь.";
 "EmptyAlertTitle" = "";

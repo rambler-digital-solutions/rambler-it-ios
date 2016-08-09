@@ -22,12 +22,14 @@
 #import <OCMock/OCMock.h>
 
 #import "SpeakerInfoInteractor.h"
-#import "SpeakerInfoInteractorOutput.h"
+#import "ROSPonsomizer.h"
+#import "SpeakerService.h"
 
 @interface SpeakerInfoInteractorTests : XCTestCase
 
 @property (nonatomic, strong) SpeakerInfoInteractor *interactor;
-@property (nonatomic, strong) id presenterMock;
+@property (nonatomic, strong) id mockSpeakerService;
+@property (nonatomic, strong) id mockPonsomizer;
 
 @end
 
@@ -37,35 +39,38 @@
     [super setUp];
     
     self.interactor = [SpeakerInfoInteractor new];
-    self.presenterMock = OCMProtocolMock(@protocol(SpeakerInfoInteractorOutput));
+    self.mockPonsomizer = OCMProtocolMock(@protocol(ROSPonsomizer));
+    self.mockSpeakerService = OCMProtocolMock(@protocol(SpeakerService));
     
-    self.interactor.output = self.presenterMock;
+    self.interactor.speakerService = self.mockSpeakerService;
+    self.interactor.ponsomizer = self.mockPonsomizer;
 }
 
 - (void)tearDown {
     self.interactor = nil;
     
-    [self.presenterMock stopMocking];
-    self.presenterMock = nil;
+    self.mockPonsomizer = nil;
+    self.mockSpeakerService = nil;
     
     [super tearDown];
 }
 
 #pragma mark - SpeakerInfoInteractorInput
 
-/**
- @author Artem Karpushin
- 
- TODO: need to complete the test after service for speakers will get ready
- */
 - (void)testSuccessObtainSpeakerWithObjectId {
     // given
+    NSString *speakerId = @"test id";
+    id speaker = [NSObject new];
+    id plainSpeaker = [NSObject new];
+    
+    OCMStub([self.mockSpeakerService obtainSpeakerWithSpeakerId:speakerId]).andReturn(speaker);
+    OCMStub([self.mockPonsomizer convertObject:speaker]).andReturn(plainSpeaker);
     
     // when
-    [self.interactor obtainSpeakerWithObjectId:OCMOCK_ANY];
+    id result = [self.interactor obtainSpeakerWithSpeakerId:speakerId];
     
     // then
-    OCMVerify([self.presenterMock didObtainSpeaker:OCMOCK_ANY]);
+    XCTAssertEqualObjects(result, plainSpeaker);
 }
 
 @end

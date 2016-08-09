@@ -32,4 +32,13 @@
     return speakers;
 }
 
+- (SpeakerModelObject *)obtainSpeakerWithSpeakerId:(NSString *)speakerId {
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K = %@", SpeakerModelObjectAttributes.speakerId, speakerId];
+    NSManagedObjectContext *context = [NSManagedObjectContext MR_defaultContext];
+    
+    SpeakerModelObject *speaker = [SpeakerModelObject MR_findFirstWithPredicate:predicate inContext:context];
+    
+    return speaker;
+}
+
 @end

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Speaker Info View Controller-->
@@ -16,30 +17,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" restorationIdentifier="viewSpeakerShortInfo" translatesAutoresizingMaskIntoConstraints="NO" id="7dX-Eb-ltY" customClass="TyphoonLoadedView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="515-OX-Xab"/>
-                                </constraints>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rrv-wF-P8N">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" restorationIdentifier="viewSpeakerShortInfo" id="7dX-Eb-ltY" customClass="TyphoonLoadedView">
+                                    <rect key="frame" x="0.0" y="64" width="320" height="200"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="L6q-9b-XHu">
+                                    <rect key="frame" x="0.0" y="264" width="320" height="1"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="rrv-wF-P8N" firstAttribute="leading" secondItem="nxD-Il-s5p" secondAttribute="leading" id="JUM-PO-HWs"/>
-                            <constraint firstItem="P5s-5A-poX" firstAttribute="top" secondItem="rrv-wF-P8N" secondAttribute="bottom" id="S7k-ay-i9a"/>
-                            <constraint firstAttribute="trailing" secondItem="7dX-Eb-ltY" secondAttribute="trailing" id="SUI-uQ-AZD"/>
                             <constraint firstAttribute="trailing" secondItem="rrv-wF-P8N" secondAttribute="trailing" id="Ux9-IF-F25"/>
-                            <constraint firstItem="7dX-Eb-ltY" firstAttribute="leading" secondItem="nxD-Il-s5p" secondAttribute="leading" id="jFw-aP-p5K"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="rrv-wF-P8N" secondAttribute="bottom" id="hVO-FA-lqA"/>
                             <constraint firstItem="rrv-wF-P8N" firstAttribute="top" secondItem="nxD-Il-s5p" secondAttribute="top" id="sbf-C6-BQx"/>
-                            <constraint firstItem="7dX-Eb-ltY" firstAttribute="top" secondItem="nxD-Il-s5p" secondAttribute="top" id="vDN-3j-9b4"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="adq-Wh-qrY"/>
+                    <navigationItem key="navigationItem" id="adq-Wh-qrY">
+                        <barButtonItem key="rightBarButtonItem" image="ic-share" id="EO9-KQ-OxQ">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="speakerShortInfoView" destination="7dX-Eb-ltY" id="tCh-9W-pcl"/>
                         <outlet property="tableView" destination="rrv-wF-P8N" id="flm-ls-QVf"/>
@@ -50,4 +57,7 @@
             <point key="canvasLocation" x="2719" y="258"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic-share" width="24" height="24"/>
+    </resources>
 </document>

@@ -1,5 +1,3 @@
-// Copyright (c) 2015 RAMBLER&Co
-//
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
@@ -22,9 +20,19 @@
 #import "DataDisplayManager.h"
 
 @class SpeakerPlainObject;
+@class SpeakerInfoCellObjectBuilder;
 
 @interface SpeakerInfoDataDisplayManager : NSObject <DataDisplayManager, UITableViewDelegate>
 
+@property (nonatomic, strong) SpeakerInfoCellObjectBuilder *cellObjectBuilder;
+
+/**
+ @author Vasyura Anastasiya
+ 
+ Method is used to configure ddm with speaker object
+ 
+ @param speaker
+ */
 - (void)configureDataDisplayManagerWithSpeaker:(SpeakerPlainObject *)speaker;
 
 @end

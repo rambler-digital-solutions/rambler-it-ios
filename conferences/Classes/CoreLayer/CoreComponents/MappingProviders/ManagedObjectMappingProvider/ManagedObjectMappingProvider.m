@@ -231,7 +231,10 @@
                                @"Twitter" : @(SocialNetworkTwitterType),
                                @"GitHub" : @(SocialNetworkGitHubType),
                                @"LinkedIn" : @(SocialNetworkLinkedInType),
-                               @"Vkontakte" : @(SocialNetworkVkontakteType)
+                               @"Vkontakte" : @(SocialNetworkVkontakteType),
+                               @"Instagram" : @(SocialNetworkInstagramType),
+                               @"Email" : @(SocialNetworkEmailType),
+                               @"Website" : @(SocialNetworkWebsiteType)
                                };
     }
     return ^id(NSString *key, NSString *value, NSManagedObjectContext *context) {

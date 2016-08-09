@@ -26,8 +26,8 @@ static CGFloat const kReportSpeakerTableViewCellHeight = 92.0f;
 
 @interface ReportSpeakerTableViewCell ()
 
-@property (weak, nonatomic) IBOutlet UILabel *speakerTitle;
-@property (weak, nonatomic) IBOutlet UIImageView *speakerImageView;
+@property (nonatomic, weak) IBOutlet UILabel *speakerTitle;
+@property (nonatomic, weak) IBOutlet UIImageView *speakerImageView;
 
 @end
 
