@@ -338,6 +338,7 @@
 		9F06C1031D5B520500FE6888 /* CleanStartAppDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F06C1021D5B520500FE6888 /* CleanStartAppDelegateTests.m */; };
 		9F06C1061D5B711300FE6888 /* TyphoonAppDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F06C1051D5B711300FE6888 /* TyphoonAppDelegateTests.m */; };
 		9F06C10A1D5B735300FE6888 /* VerySpecialAppDelegateForTesting.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F06C1091D5B735300FE6888 /* VerySpecialAppDelegateForTesting.m */; };
+		9F06C10E1D5B74F800FE6888 /* SpotlightAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F06C10D1D5B74F800FE6888 /* SpotlightAppDelegate.m */; };
 		9F0A6C1D1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */; };
 		9F0A6C2E1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C2D1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m */; };
 		9F0A84C31BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A84C21BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m */; };
@@ -1140,6 +1141,8 @@
 		9F06C1051D5B711300FE6888 /* TyphoonAppDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TyphoonAppDelegateTests.m; path = ApplicationLayerTests/StartUpSystem/AppDelegates/TyphoonAppDelegate/TyphoonAppDelegateTests.m; sourceTree = "<group>"; };
 		9F06C1081D5B735300FE6888 /* VerySpecialAppDelegateForTesting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerySpecialAppDelegateForTesting.h; sourceTree = "<group>"; };
 		9F06C1091D5B735300FE6888 /* VerySpecialAppDelegateForTesting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerySpecialAppDelegateForTesting.m; sourceTree = "<group>"; };
+		9F06C10C1D5B74F800FE6888 /* SpotlightAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpotlightAppDelegate.h; path = StartUpSystem/AppDelegates/SpotlightAppDelegate/SpotlightAppDelegate.h; sourceTree = "<group>"; };
+		9F06C10D1D5B74F800FE6888 /* SpotlightAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpotlightAppDelegate.m; path = StartUpSystem/AppDelegates/SpotlightAppDelegate/SpotlightAppDelegate.m; sourceTree = "<group>"; };
 		9F0A6C1B1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CompoundOperationBuilderConfig.h; path = OperationBuilders/CompoundOperationBuilderConfig/CompoundOperationBuilderConfig.h; sourceTree = "<group>"; };
 		9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CompoundOperationBuilderConfig.m; path = OperationBuilders/CompoundOperationBuilderConfig/CompoundOperationBuilderConfig.m; sourceTree = "<group>"; };
 		9F0A6C1E1BC1B53F00A25417 /* RequestConfigurationType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RequestConfigurationType.h; path = CoreComponents/RequestConfigurators/RequestConfigurationType.h; sourceTree = "<group>"; };
@@ -4452,6 +4455,7 @@
 		9F06C0F71D5A7C8F00FE6888 /* AppDelegates */ = {
 			isa = PBXGroup;
 			children = (
+				9F06C10B1D5B745B00FE6888 /* SpotlightAppDelegate */,
 				9F06C1071D5B735300FE6888 /* VerySpecialAppDelegateForTesting */,
 				9F06C0FC1D5B4E3700FE6888 /* TyphoonAppDelegate */,
 				9F06C0F81D5A7CA700FE6888 /* CleanStartAppDelegate */,
@@ -4510,6 +4514,30 @@
 			);
 			name = VerySpecialAppDelegateForTesting;
 			path = StartUpSystem/AppDelegates/VerySpecialAppDelegateForTesting;
+			sourceTree = "<group>";
+		};
+		9F06C10B1D5B745B00FE6888 /* SpotlightAppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				9F06C10C1D5B74F800FE6888 /* SpotlightAppDelegate.h */,
+				9F06C10D1D5B74F800FE6888 /* SpotlightAppDelegate.m */,
+			);
+			name = SpotlightAppDelegate;
+			sourceTree = "<group>";
+		};
+		9F06C10F1D5BA4FF00FE6888 /* LaunchHandlers */ = {
+			isa = PBXGroup;
+			children = (
+				9F06C1101D5BA51B00FE6888 /* Protocols */,
+			);
+			name = LaunchHandlers;
+			sourceTree = "<group>";
+		};
+		9F06C1101D5BA51B00FE6888 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 		9F0A6C1A1BC1AFB200A25417 /* CompoundOperationBuilderConfig */ = {
@@ -6162,6 +6190,7 @@
 		9F78D7851D5A2C88009DDCEA /* StartUpSystem */ = {
 			isa = PBXGroup;
 			children = (
+				9F06C10F1D5BA4FF00FE6888 /* LaunchHandlers */,
 				9F06C0F71D5A7C8F00FE6888 /* AppDelegates */,
 				9F78D7861D5A2C9C009DDCEA /* Routers */,
 			);
@@ -7211,6 +7240,7 @@
 				667050411D4615A700DD9D6E /* GrayTableViewSectionHeaderAndFooterCell.m in Sources */,
 				63F613821CB00A220002AEF0 /* EventDataDisplayManager.m in Sources */,
 				63F6138B1CB00A220002AEF0 /* LectureInteractor.m in Sources */,
+				9F06C10E1D5B74F800FE6888 /* SpotlightAppDelegate.m in Sources */,
 				9F8E5F7C1BC2584500DC10DB /* ResponseDeserializersAssembly.m in Sources */,
 				2B2064791D3F9CE900246C8D /* _LectureModelObject.m in Sources */,
 				667050561D46369100DD9D6E /* ReportsSearchCellObjectsDirectorImplementation.m in Sources */,

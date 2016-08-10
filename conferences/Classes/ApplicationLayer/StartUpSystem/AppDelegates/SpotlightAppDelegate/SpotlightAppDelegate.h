@@ -19,19 +19,12 @@
 // THE SOFTWARE.
 
 #import <UIKit/UIKit.h>
-#import <RamblerAppDelegateProxy/RamblerAppDelegateProxy.h>
 
-#import "TyphoonAppDelegate.h"
+/**
+ @author Egor Tolstoy
+ 
+ This AppDelegate is responsible for handling application open from Spotlight
+ */
+@interface SpotlightAppDelegate : NSObject <UIApplicationDelegate>
 
-int main(int argc, char * argv[]) {
-    @autoreleasepool {
-        Class appDelegateClass;
-        if (!NSClassFromString(@"XCTest")) {
-            [[RamblerAppDelegateProxy injector] setDefaultAppDelegate:[TyphoonAppDelegate new]];
-            return UIApplicationMain(argc, argv, nil, NSStringFromClass([RamblerAppDelegateProxy class]));
-        } else {
-            appDelegateClass = NSClassFromString(@"VerySpecialAppDelegateForTesting");
-        }
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass(appDelegateClass));
-    }
-}
+@end

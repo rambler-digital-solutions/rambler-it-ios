@@ -30,6 +30,7 @@
 #import "SpotlightIndexerAssembly.h"
 #import "CleanStartRouter.h"
 #import "CleanStartAppDelegate.h"
+#import "SpotlightAppDelegate.h"
 #import "TabBarControllerFactoryImplementation.h"
 
 #import <RamblerAppDelegateProxy/RamblerAppDelegateProxy.h>
@@ -41,7 +42,10 @@
                           configuration:^(TyphoonDefinition *definition){
                               [definition injectMethod:@selector(addAppDelegates:)
                                             parameters:^(TyphoonMethod *method) {
-                                                [method injectParameterWith:@[[self cleanStartAppDelegate]]];
+                                                [method injectParameterWith:@[
+                                                                              [self cleanStartAppDelegate],
+                                                                              [self spotlightAppDelegate]
+                                                                              ]];
                                             }];
                               definition.scope = TyphoonScopeSingleton;
                           }];
@@ -52,8 +56,6 @@
                           configuration:^(TyphoonDefinition *definition) {
                               [definition injectProperty:@selector(applicationConfigurator)
                                                     with:[self applicationConfigurator]];
-                              [definition injectProperty:@selector(pushNotificationCenter)
-                                                    with:[self pushNotificationCenter]];
                               [definition injectProperty:@selector(thirdPartiesConfigurator)
                                                     with:[self thirdPartiesConfigurator]];
                               [definition injectProperty:@selector(cleanStartRouter)
@@ -63,6 +65,10 @@
                               [definition injectProperty:@selector(spotlightCoreDataStackCoordinator)
                                                     with:[self.spotlightIndexerAssembly spotlightCoreDataStackCoordinator]];
     }];
+}
+
+- (SpotlightAppDelegate *)spotlightAppDelegate {
+    return [TyphoonDefinition withClass:[SpotlightAppDelegate class]];
 }
 
 - (id <ApplicationConfigurator>)applicationConfigurator {

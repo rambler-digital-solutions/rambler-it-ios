@@ -18,20 +18,21 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
-#import <RamblerAppDelegateProxy/RamblerAppDelegateProxy.h>
+#import "SpotlightAppDelegate.h"
 
-#import "TyphoonAppDelegate.h"
+#import <CoreSpotlight/CoreSpotlight.h>
 
-int main(int argc, char * argv[]) {
-    @autoreleasepool {
-        Class appDelegateClass;
-        if (!NSClassFromString(@"XCTest")) {
-            [[RamblerAppDelegateProxy injector] setDefaultAppDelegate:[TyphoonAppDelegate new]];
-            return UIApplicationMain(argc, argv, nil, NSStringFromClass([RamblerAppDelegateProxy class]));
-        } else {
-            appDelegateClass = NSClassFromString(@"VerySpecialAppDelegateForTesting");
-        }
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass(appDelegateClass));
+@implementation SpotlightAppDelegate
+
+- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray * _Nullable))restorationHandler {
+    if (![userActivity.activityType isEqualToString:CSSearchableItemActionType]) {
+        return NO;
     }
+    
+    NSString *activityIdentifier = userActivity.userInfo[CSSearchableItemActivityIdentifier];
+    NSLog(@"%@", activityIdentifier);
+    
+    return NO;
 }
+
+@end
