@@ -1,5 +1,3 @@
-// Copyright (c) 2015 RAMBLER&Co
-//
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
@@ -18,34 +16,25 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "AppDelegate.h"
+#import "CleanStartAppDelegate.h"
 
 #import "ApplicationConfigurator.h"
-#import "PushNotificationCenter.h"
 #import "ThirdPartiesConfigurator.h"
 #import "IndexerMonitor.h"
 #import "SpotlightCoreDataStackCoordinator.h"
 #import "CleanStartRouter.h"
 
-#import <RamblerTyphoonUtils/AssemblyCollector.h>
-#import <Typhoon/Typhoon.h>
-
-@implementation AppDelegate
+@implementation CleanStartAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self.thirdPartiesConfigurator configurate];
     [self.applicationConfigurator setupCoreDataStack];
     [self.spotlightCoreDataStackCoordinator setupCoreDataStack];
     [self.indexerMonitor startMonitoring];
-
+    
     [self.cleanStartRouter openInitialScreen];
     
     return YES;
-}
-
-- (NSArray *)initialAssemblies {
-    RamblerInitialAssemblyCollector *collector = [RamblerInitialAssemblyCollector new];
-    return [collector collectInitialAssemblyClasses];
 }
 
 @end

@@ -22,7 +22,6 @@
 
 #import "ApplicationConfigurator.h"
 #import "ApplicationConfiguratorImplementation.h"
-#import "AppDelegate.h"
 #import "PushNotificationCenter.h"
 #import "PushNotificationCenterImplementation.h"
 #import "ServiceComponents.h"
@@ -30,12 +29,26 @@
 #import "ThirdPartiesConfiguratorImplementation.h"
 #import "SpotlightIndexerAssembly.h"
 #import "CleanStartRouter.h"
+#import "CleanStartAppDelegate.h"
 #import "TabBarControllerFactoryImplementation.h"
+
+#import <RamblerAppDelegateProxy/RamblerAppDelegateProxy.h>
 
 @implementation ApplicationAssembly
 
-- (AppDelegate *)appDelegate {
-    return [TyphoonDefinition withClass:[AppDelegate class]
+- (RamblerAppDelegateProxy *)applicationDelegateProxy {
+    return [TyphoonDefinition withClass:[RamblerAppDelegateProxy class]
+                          configuration:^(TyphoonDefinition *definition){
+                              [definition injectMethod:@selector(addAppDelegates:)
+                                            parameters:^(TyphoonMethod *method) {
+                                                [method injectParameterWith:@[[self cleanStartAppDelegate]]];
+                                            }];
+                              definition.scope = TyphoonScopeSingleton;
+                          }];
+}
+
+- (CleanStartAppDelegate *)cleanStartAppDelegate {
+    return [TyphoonDefinition withClass:[CleanStartAppDelegate class]
                           configuration:^(TyphoonDefinition *definition) {
                               [definition injectProperty:@selector(applicationConfigurator)
                                                     with:[self applicationConfigurator]];

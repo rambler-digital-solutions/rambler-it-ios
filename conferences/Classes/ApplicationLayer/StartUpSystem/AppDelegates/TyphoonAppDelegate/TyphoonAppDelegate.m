@@ -1,5 +1,3 @@
-// Copyright (c) 2015 RAMBLER&Co
-//
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
@@ -18,26 +16,15 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
-#import <CoreData/CoreData.h>
+#import "TyphoonAppDelegate.h"
 
-@protocol ApplicationConfigurator;
-@protocol PushNotificationCenter;
-@protocol ThirdPartiesConfigurator;
-@protocol SpotlightCoreDataStackCoordinator;
-@class IndexerMonitor;
-@class CleanStartRouter;
+#import <RamblerTyphoonUtils/AssemblyCollector.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@implementation TyphoonAppDelegate
 
-@property (strong, nonatomic) UIWindow *window;
-
-@property (strong, nonatomic) id <ApplicationConfigurator> applicationConfigurator;
-@property (strong, nonatomic) id <PushNotificationCenter> pushNotificationCenter;
-@property (strong, nonatomic) id <ThirdPartiesConfigurator> thirdPartiesConfigurator;
-@property (strong, nonatomic) IndexerMonitor *indexerMonitor;
-@property (strong, nonatomic) CleanStartRouter *cleanStartRouter;
-@property (strong, nonatomic) id<SpotlightCoreDataStackCoordinator> spotlightCoreDataStackCoordinator;
+- (NSArray *)initialAssemblies {
+    RamblerInitialAssemblyCollector *collector = [RamblerInitialAssemblyCollector new];
+    return [collector collectInitialAssemblyClasses];
+}
 
 @end
-

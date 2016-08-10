@@ -1,5 +1,3 @@
-// Copyright (c) 2015 RAMBLER&Co
-//
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
@@ -19,20 +17,24 @@
 // THE SOFTWARE.
 
 #import <UIKit/UIKit.h>
-#import <RamblerAppDelegateProxy/RamblerAppDelegateProxy.h>
 
-#import "CleanStartAppDelegate.h"
-#import "TyphoonAppDelegate.h"
+@protocol ApplicationConfigurator;
+@protocol ThirdPartiesConfigurator;
+@protocol SpotlightCoreDataStackCoordinator;
+@class IndexerMonitor;
+@class CleanStartRouter;
 
-int main(int argc, char * argv[]) {
-    @autoreleasepool {
-        Class appDelegateClass;
-        if (!NSClassFromString(@"XCTest")) {
-            [[RamblerAppDelegateProxy injector] setDefaultAppDelegate:[TyphoonAppDelegate new]];
-            return UIApplicationMain(argc, argv, nil, NSStringFromClass([RamblerAppDelegateProxy class]));
-        } else {
-            appDelegateClass = NSClassFromString(@"VerySpecialAppDelegateForTesting");
-        }
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass(appDelegateClass));
-    }
-}
+/**
+ @author Egor Tolstoy
+ 
+ This AppDelegate is responsible for clean application start
+ */
+@interface CleanStartAppDelegate : NSObject <UIApplicationDelegate>
+
+@property (strong, nonatomic) id <ApplicationConfigurator> applicationConfigurator;
+@property (strong, nonatomic) id <ThirdPartiesConfigurator> thirdPartiesConfigurator;
+@property (strong, nonatomic) IndexerMonitor *indexerMonitor;
+@property (strong, nonatomic) CleanStartRouter *cleanStartRouter;
+@property (strong, nonatomic) id<SpotlightCoreDataStackCoordinator> spotlightCoreDataStackCoordinator;
+
+@end

@@ -22,7 +22,6 @@
 
 /* Begin PBXBuildFile section */
 		2B01CEBE1D50A55900DA8E66 /* MetaEventServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B01CEBD1D50A55900DA8E66 /* MetaEventServiceTests.m */; };
-		2B01CEC11D50AAC300DA8E66 /* VerySpecialAppDelegateForTesting.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B01CEC01D50AAC300DA8E66 /* VerySpecialAppDelegateForTesting.m */; };
 		2B05E1611D50FEFC00E017AB /* SpeakerInfoCellObjectBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B05E1601D50FEFC00E017AB /* SpeakerInfoCellObjectBuilder.m */; };
 		2B05E1691D51D7A100E017AB /* SpeakerInfoSocialContactsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B05E1671D51D7A100E017AB /* SpeakerInfoSocialContactsTableViewCell.m */; };
 		2B05E16A1D51D7A100E017AB /* SpeakerInfoSocialContactsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B05E1681D51D7A100E017AB /* SpeakerInfoSocialContactsTableViewCell.xib */; };
@@ -268,7 +267,6 @@
 		63F8F2F51BF9FDBF000017F3 /* CompoundOperationBaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A85071BC185AA006F79FB /* CompoundOperationBaseTests.m */; };
 		63F8F2F61BF9FE7D000017F3 /* RCFRESTRequestConfiguratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830991BC022EA000E21A5 /* RCFRESTRequestConfiguratorTests.m */; };
 		63FD4E061BE5038D0046378E /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FD4E051BE5038D0046378E /* UIColor+Hex.m */; };
-		63FDCE061BBDBA2A00A43B60 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FDCDDC1BBDBA2A00A43B60 /* AppDelegate.m */; };
 		63FDCE141BBDBA2A00A43B60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63FDCE021BBDBA2A00A43B60 /* Assets.xcassets */; };
 		63FDCE161BBDBA2A00A43B60 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FDCE051BBDBA2A00A43B60 /* main.m */; };
 		6621664F1D4F4507000A1D11 /* ReportsSearchDataDisplayManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6621664B1D4F4507000A1D11 /* ReportsSearchDataDisplayManagerTests.m */; };
@@ -335,6 +333,11 @@
 		66EE4D341D54BFCD0011F94A /* NIMutableCollectionViewModel+LJAddObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EE4D2F1D54BFCD0011F94A /* NIMutableCollectionViewModel+LJAddObject.m */; };
 		66EE4D351D54BFCD0011F94A /* NITableViewModel+LJIndexOfObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EE4D311D54BFCD0011F94A /* NITableViewModel+LJIndexOfObject.m */; };
 		66EE4D361D54BFCD0011F94A /* NITableViewModel+NextInputResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EE4D331D54BFCD0011F94A /* NITableViewModel+NextInputResponder.m */; };
+		9F06C0FB1D5A7CC300FE6888 /* CleanStartAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F06C0FA1D5A7CC300FE6888 /* CleanStartAppDelegate.m */; };
+		9F06C0FF1D5B4E4700FE6888 /* TyphoonAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F06C0FE1D5B4E4700FE6888 /* TyphoonAppDelegate.m */; };
+		9F06C1031D5B520500FE6888 /* CleanStartAppDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F06C1021D5B520500FE6888 /* CleanStartAppDelegateTests.m */; };
+		9F06C1061D5B711300FE6888 /* TyphoonAppDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F06C1051D5B711300FE6888 /* TyphoonAppDelegateTests.m */; };
+		9F06C10A1D5B735300FE6888 /* VerySpecialAppDelegateForTesting.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F06C1091D5B735300FE6888 /* VerySpecialAppDelegateForTesting.m */; };
 		9F0A6C1D1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */; };
 		9F0A6C2E1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C2D1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m */; };
 		9F0A84C31BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A84C21BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m */; };
@@ -490,8 +493,6 @@
 /* Begin PBXFileReference section */
 		2A4F504A716A8833A7A01A5D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B01CEBD1D50A55900DA8E66 /* MetaEventServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetaEventServiceTests.m; sourceTree = "<group>"; };
-		2B01CEBF1D50AAC300DA8E66 /* VerySpecialAppDelegateForTesting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerySpecialAppDelegateForTesting.h; sourceTree = "<group>"; };
-		2B01CEC01D50AAC300DA8E66 /* VerySpecialAppDelegateForTesting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerySpecialAppDelegateForTesting.m; sourceTree = "<group>"; };
 		2B05E15B1D50EDB900E017AB /* EventModuleSegueIdentifiersConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventModuleSegueIdentifiersConstants.h; sourceTree = "<group>"; };
 		2B05E15F1D50FEFC00E017AB /* SpeakerInfoCellObjectBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerInfoCellObjectBuilder.h; sourceTree = "<group>"; };
 		2B05E1601D50FEFC00E017AB /* SpeakerInfoCellObjectBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerInfoCellObjectBuilder.m; sourceTree = "<group>"; };
@@ -991,8 +992,6 @@
 		63F8F2D81BF8F7F0000017F3 /* ServiceComponentsAssembly_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServiceComponentsAssembly_Testable.h; sourceTree = "<group>"; };
 		63FD4E041BE5038D0046378E /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
 		63FD4E051BE5038D0046378E /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
-		63FDCDDB1BBDBA2A00A43B60 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		63FDCDDC1BBDBA2A00A43B60 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		63FDCE021BBDBA2A00A43B60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63FDCE041BBDBA2A00A43B60 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63FDCE051BBDBA2A00A43B60 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -1133,6 +1132,14 @@
 		66EE4D321D54BFCD0011F94A /* NITableViewModel+NextInputResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NITableViewModel+NextInputResponder.h"; path = "Nimbus/NITableViewModel+NextInputResponder.h"; sourceTree = "<group>"; };
 		66EE4D331D54BFCD0011F94A /* NITableViewModel+NextInputResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NITableViewModel+NextInputResponder.m"; path = "Nimbus/NITableViewModel+NextInputResponder.m"; sourceTree = "<group>"; };
 		84D2CBEF6E088EFC9A139E49 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		9F06C0F91D5A7CC300FE6888 /* CleanStartAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CleanStartAppDelegate.h; path = StartUpSystem/AppDelegates/CleanStartAppDelegate/CleanStartAppDelegate.h; sourceTree = "<group>"; };
+		9F06C0FA1D5A7CC300FE6888 /* CleanStartAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CleanStartAppDelegate.m; path = StartUpSystem/AppDelegates/CleanStartAppDelegate/CleanStartAppDelegate.m; sourceTree = "<group>"; };
+		9F06C0FD1D5B4E4700FE6888 /* TyphoonAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TyphoonAppDelegate.h; path = StartUpSystem/AppDelegates/TyphoonAppDelegate/TyphoonAppDelegate.h; sourceTree = "<group>"; };
+		9F06C0FE1D5B4E4700FE6888 /* TyphoonAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TyphoonAppDelegate.m; path = StartUpSystem/AppDelegates/TyphoonAppDelegate/TyphoonAppDelegate.m; sourceTree = "<group>"; };
+		9F06C1021D5B520500FE6888 /* CleanStartAppDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CleanStartAppDelegateTests.m; path = ApplicationLayerTests/StartUpSystem/AppDelegates/CleanStartAppDelegate/CleanStartAppDelegateTests.m; sourceTree = "<group>"; };
+		9F06C1051D5B711300FE6888 /* TyphoonAppDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TyphoonAppDelegateTests.m; path = ApplicationLayerTests/StartUpSystem/AppDelegates/TyphoonAppDelegate/TyphoonAppDelegateTests.m; sourceTree = "<group>"; };
+		9F06C1081D5B735300FE6888 /* VerySpecialAppDelegateForTesting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerySpecialAppDelegateForTesting.h; sourceTree = "<group>"; };
+		9F06C1091D5B735300FE6888 /* VerySpecialAppDelegateForTesting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerySpecialAppDelegateForTesting.m; sourceTree = "<group>"; };
 		9F0A6C1B1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CompoundOperationBuilderConfig.h; path = OperationBuilders/CompoundOperationBuilderConfig/CompoundOperationBuilderConfig.h; sourceTree = "<group>"; };
 		9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CompoundOperationBuilderConfig.m; path = OperationBuilders/CompoundOperationBuilderConfig/CompoundOperationBuilderConfig.m; sourceTree = "<group>"; };
 		9F0A6C1E1BC1B53F00A25417 /* RequestConfigurationType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RequestConfigurationType.h; path = CoreComponents/RequestConfigurators/RequestConfigurationType.h; sourceTree = "<group>"; };
@@ -3813,20 +3820,8 @@
 				63EF15B71BC4546400480CAF /* PushNotificationCenter */,
 				636A37BC1BC13FA200B49C3D /* Assemblies */,
 				636A37B01BC1354100B49C3D /* ApplicationConfigurator */,
-				63FDCDDA1BBDBA2A00A43B60 /* AppDelegate */,
 			);
 			path = ApplicationLayer;
-			sourceTree = "<group>";
-		};
-		63FDCDDA1BBDBA2A00A43B60 /* AppDelegate */ = {
-			isa = PBXGroup;
-			children = (
-				63FDCDDB1BBDBA2A00A43B60 /* AppDelegate.h */,
-				63FDCDDC1BBDBA2A00A43B60 /* AppDelegate.m */,
-				2B01CEBF1D50AAC300DA8E66 /* VerySpecialAppDelegateForTesting.h */,
-				2B01CEC01D50AAC300DA8E66 /* VerySpecialAppDelegateForTesting.m */,
-			);
-			path = AppDelegate;
 			sourceTree = "<group>";
 		};
 		63FDCDDD1BBDBA2A00A43B60 /* BusinessLogicLayer */ = {
@@ -4452,6 +4447,69 @@
 				5FED76184BAB5478101AC945 /* Pods-ConferencesTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		9F06C0F71D5A7C8F00FE6888 /* AppDelegates */ = {
+			isa = PBXGroup;
+			children = (
+				9F06C1071D5B735300FE6888 /* VerySpecialAppDelegateForTesting */,
+				9F06C0FC1D5B4E3700FE6888 /* TyphoonAppDelegate */,
+				9F06C0F81D5A7CA700FE6888 /* CleanStartAppDelegate */,
+			);
+			name = AppDelegates;
+			sourceTree = "<group>";
+		};
+		9F06C0F81D5A7CA700FE6888 /* CleanStartAppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				9F06C0F91D5A7CC300FE6888 /* CleanStartAppDelegate.h */,
+				9F06C0FA1D5A7CC300FE6888 /* CleanStartAppDelegate.m */,
+			);
+			name = CleanStartAppDelegate;
+			sourceTree = "<group>";
+		};
+		9F06C0FC1D5B4E3700FE6888 /* TyphoonAppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				9F06C0FD1D5B4E4700FE6888 /* TyphoonAppDelegate.h */,
+				9F06C0FE1D5B4E4700FE6888 /* TyphoonAppDelegate.m */,
+			);
+			name = TyphoonAppDelegate;
+			sourceTree = "<group>";
+		};
+		9F06C1001D5B51EA00FE6888 /* AppDelegates */ = {
+			isa = PBXGroup;
+			children = (
+				9F06C1041D5B710600FE6888 /* TyphoonAppDelegate */,
+				9F06C1011D5B51F100FE6888 /* CleanStartAppDelegate */,
+			);
+			name = AppDelegates;
+			sourceTree = "<group>";
+		};
+		9F06C1011D5B51F100FE6888 /* CleanStartAppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				9F06C1021D5B520500FE6888 /* CleanStartAppDelegateTests.m */,
+			);
+			name = CleanStartAppDelegate;
+			sourceTree = "<group>";
+		};
+		9F06C1041D5B710600FE6888 /* TyphoonAppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				9F06C1051D5B711300FE6888 /* TyphoonAppDelegateTests.m */,
+			);
+			name = TyphoonAppDelegate;
+			sourceTree = "<group>";
+		};
+		9F06C1071D5B735300FE6888 /* VerySpecialAppDelegateForTesting */ = {
+			isa = PBXGroup;
+			children = (
+				9F06C1081D5B735300FE6888 /* VerySpecialAppDelegateForTesting.h */,
+				9F06C1091D5B735300FE6888 /* VerySpecialAppDelegateForTesting.m */,
+			);
+			name = VerySpecialAppDelegateForTesting;
+			path = StartUpSystem/AppDelegates/VerySpecialAppDelegateForTesting;
 			sourceTree = "<group>";
 		};
 		9F0A6C1A1BC1AFB200A25417 /* CompoundOperationBuilderConfig */ = {
@@ -6104,6 +6162,7 @@
 		9F78D7851D5A2C88009DDCEA /* StartUpSystem */ = {
 			isa = PBXGroup;
 			children = (
+				9F06C0F71D5A7C8F00FE6888 /* AppDelegates */,
 				9F78D7861D5A2C9C009DDCEA /* Routers */,
 			);
 			name = StartUpSystem;
@@ -6147,6 +6206,7 @@
 		9F78D78F1D5A3425009DDCEA /* StartUpSystem */ = {
 			isa = PBXGroup;
 			children = (
+				9F06C1001D5B51EA00FE6888 /* AppDelegates */,
 				9F78D7901D5A342C009DDCEA /* Routers */,
 			);
 			name = StartUpSystem;
@@ -6932,6 +6992,7 @@
 				2B2064851D3F9CE900246C8D /* _SocialNetworkAccountPlainObject.m in Sources */,
 				63F8F2BC1BF8A713000017F3 /* EventTypeDeterminator.m in Sources */,
 				2B20648C1D3F9CE900246C8D /* MetaEventModelObject.m in Sources */,
+				9F06C0FB1D5A7CC300FE6888 /* CleanStartAppDelegate.m in Sources */,
 				636B64101BBDD6260053E38F /* SpeakerServiceImplementation.m in Sources */,
 				63F6137A1CB00A220002AEF0 /* PreviousLectureSectionHeaderTableViewCell.m in Sources */,
 				63F613641CB00A220002AEF0 /* CurrentVideoTranslationTableViewCellObject.m in Sources */,
@@ -6994,6 +7055,7 @@
 				9F1830BF1BC11D26000E21A5 /* JSONResponseDeserializer.m in Sources */,
 				9FF7500D1D27DB5F000D208D /* ManagedObjectMappingProvider.m in Sources */,
 				631FFE191BEF451400749DB8 /* CDResponderTableViewCell.m in Sources */,
+				9F06C0FF1D5B4E4700FE6888 /* TyphoonAppDelegate.m in Sources */,
 				9F1830931BC02293000E21A5 /* RESTRequestConfigurator.m in Sources */,
 				2B20647E1D3F9CE900246C8D /* _TagModelObject.m in Sources */,
 				63F342B01C8B20AB002AF7CD /* EventStoreService.m in Sources */,
@@ -7044,8 +7106,8 @@
 				66E9999D1D54B31300161D98 /* TagServicePredicateBuilder.m in Sources */,
 				63F613961CB00A220002AEF0 /* SpeakerInfoInteractor.m in Sources */,
 				9F4077901D2BF95200D47EF6 /* CommonResourceClient.m in Sources */,
+				9F06C10A1D5B735300FE6888 /* VerySpecialAppDelegateForTesting.m in Sources */,
 				2B2064991D3F9CE900246C8D /* TagPlainObject.m in Sources */,
-				63FDCE061BBDBA2A00A43B60 /* AppDelegate.m in Sources */,
 				63F6134E1CB00A220002AEF0 /* AnnouncementListPresenter.m in Sources */,
 				631808401C482B1300A61E7D /* SpeakerShortInfoInteractor.m in Sources */,
 				9F78D7441D59D6EF009DDCEA /* SpotlightCoreDataStackCoordinatorImplementation.m in Sources */,
@@ -7164,7 +7226,6 @@
 				63ECC4161CA81E5300439A01 /* ErrorConstants.m in Sources */,
 				66E999A71D54B50500161D98 /* ContentSizeObserver.m in Sources */,
 				63F613901CB00A220002AEF0 /* LectureDescriptionTableViewCell.m in Sources */,
-				2B01CEC11D50AAC300DA8E66 /* VerySpecialAppDelegateForTesting.m in Sources */,
 				63EF15BB1BC4559900480CAF /* PushNotificationCenterImplementation.m in Sources */,
 				63F613571CB00A220002AEF0 /* AnnouncementListDataDisplayManager.m in Sources */,
 				636F8DDB1BCB8FE800552B91 /* RamblerLocationInteractor.m in Sources */,
@@ -7269,6 +7330,7 @@
 				9F0A85201BC185AA006F79FB /* TestChainableOperation.m in Sources */,
 				63F402F01BCF77CB0086D030 /* ApplicationAssemblyTests.m in Sources */,
 				9FF750171D27DCBE000D208D /* EntityNameFormatterImplementationTests.m in Sources */,
+				9F06C1061D5B711300FE6888 /* TyphoonAppDelegateTests.m in Sources */,
 				63F613E51CB111070002AEF0 /* LecturePresenterTests.m in Sources */,
 				9F0A85261BC185AA006F79FB /* ResponseDeserializationOperationTests.m in Sources */,
 				9FF750081D26C8EB000D208D /* EventListOperationFactoryTests.m in Sources */,
@@ -7321,6 +7383,7 @@
 				9FAB6A871D54981B0061F333 /* IndexerMonitorOperationQueueFactoryTests.m in Sources */,
 				9F1830B81BC119A5000E21A5 /* CommonNetworkClientTests.m in Sources */,
 				2B4F20281D54DBDF00C9891E /* SpeakerInfoDataDisplayManagerTests.m in Sources */,
+				9F06C1031D5B520500FE6888 /* CleanStartAppDelegateTests.m in Sources */,
 				635E18BF1CA6A0A9005B8439 /* SpeakerInfoModuleAssemblyTests.m in Sources */,
 				9FAB6A771D548C480061F333 /* IndexTransactionBatchTests.m in Sources */,
 				635E18CD1CA6C5E5005B8439 /* StubTestHelper.m in Sources */,

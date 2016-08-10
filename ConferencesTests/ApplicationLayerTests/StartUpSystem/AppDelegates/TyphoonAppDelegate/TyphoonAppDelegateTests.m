@@ -1,5 +1,3 @@
-// Copyright (c) 2015 RAMBLER&Co
-//
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
@@ -18,21 +16,47 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
-#import <RamblerAppDelegateProxy/RamblerAppDelegateProxy.h>
+#import <XCTest/XCTest.h>
+#import <OCMock/OCMock.h>
+#import <RamblerTyphoonUtils/AssemblyCollector.h>
 
-#import "CleanStartAppDelegate.h"
 #import "TyphoonAppDelegate.h"
 
-int main(int argc, char * argv[]) {
-    @autoreleasepool {
-        Class appDelegateClass;
-        if (!NSClassFromString(@"XCTest")) {
-            [[RamblerAppDelegateProxy injector] setDefaultAppDelegate:[TyphoonAppDelegate new]];
-            return UIApplicationMain(argc, argv, nil, NSStringFromClass([RamblerAppDelegateProxy class]));
-        } else {
-            appDelegateClass = NSClassFromString(@"VerySpecialAppDelegateForTesting");
-        }
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass(appDelegateClass));
-    }
+@interface TyphoonAppDelegateTests : XCTestCase
+
+@property (nonatomic, strong) TyphoonAppDelegate *appDelegate;
+
+@end
+
+@implementation TyphoonAppDelegateTests
+
+- (void)setUp {
+    [super setUp];
+    
+    self.appDelegate = [TyphoonAppDelegate new];
 }
+
+- (void)tearDown {
+    self.appDelegate = nil;
+    
+    [super tearDown];
+}
+
+- (void)testThatAssemblyCollectsInitialAssemblies {
+    // given
+    NSArray *testArray = @[@"1"];
+    
+    id mockCollector = OCMClassMock([RamblerInitialAssemblyCollector class]);
+    OCMStub([mockCollector new]).andReturn(mockCollector);
+    OCMStub([mockCollector collectInitialAssemblyClasses]).andReturn(testArray);
+    
+    // when
+    id result = [self.appDelegate performSelector:@selector(initialAssemblies)];
+    
+    // then
+    XCTAssertEqualObjects(result, testArray);
+    [mockCollector stopMocking];
+    mockCollector = nil;
+}
+
+@end
