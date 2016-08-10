@@ -18,17 +18,15 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
-@protocol LaunchHandler;
+#import "DataCardLaunchRouter.h"
 
 /**
  @author Egor Tolstoy
  
- This AppDelegate is responsible for handling application open from Spotlight
+ Launch router responsible for opening Event Card screen
  */
-@interface SpotlightAppDelegate : NSObject <UIApplicationDelegate>
-
-- (instancetype)initWithLaunchHandlers:(NSArray <id<LaunchHandler>> *)launchHandlers;
+@interface EventLaunchRouter : NSObject <DataCardLaunchRouter>
 
 @end

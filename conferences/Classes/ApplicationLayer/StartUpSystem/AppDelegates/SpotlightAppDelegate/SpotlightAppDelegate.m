@@ -20,17 +20,41 @@
 
 #import "SpotlightAppDelegate.h"
 
+#import "LaunchHandler.h"
+
 #import <CoreSpotlight/CoreSpotlight.h>
 
+@interface SpotlightAppDelegate ()
+
+@property (nonatomic, strong) NSArray<id<LaunchHandler>> *launchHandlers;
+
+@end
+
 @implementation SpotlightAppDelegate
+
+#pragma mark - Initialization
+
+- (instancetype)initWithLaunchHandlers:(NSArray<id<LaunchHandler>> *)launchHandlers {
+    self = [super init];
+    if (self) {
+        _launchHandlers = launchHandlers;
+    }
+    return self;
+}
+
+#pragma mark - <UIApplicationDelegate>
 
 - (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray * _Nullable))restorationHandler {
     if (![userActivity.activityType isEqualToString:CSSearchableItemActionType]) {
         return NO;
     }
     
-    NSString *activityIdentifier = userActivity.userInfo[CSSearchableItemActivityIdentifier];
-    NSLog(@"%@", activityIdentifier);
+    for (id<LaunchHandler> launchHandler in self.launchHandlers) {
+        if ([launchHandler canHandleLaunchWithActivity:userActivity]) {
+            [launchHandler handleLaunchWithActivity:userActivity];
+            return YES;
+        }
+    }
     
     return NO;
 }

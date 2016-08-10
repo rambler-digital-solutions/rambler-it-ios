@@ -18,17 +18,33 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
-
-@protocol LaunchHandler;
+#import <Foundation/Foundation.h>
 
 /**
  @author Egor Tolstoy
  
- This AppDelegate is responsible for handling application open from Spotlight
+ THe protocol describes an object handling specific application launch types
  */
-@interface SpotlightAppDelegate : NSObject <UIApplicationDelegate>
+@protocol LaunchHandler <NSObject>
 
-- (instancetype)initWithLaunchHandlers:(NSArray <id<LaunchHandler>> *)launchHandlers;
+/**
+ @author Egor Tolstoy
+ 
+ The method determines if a current launch handler can be used with specific NSUserActivity
+ 
+ @param activity NSUserActivity
+ 
+ @return YES/NO
+ */
+- (BOOL)canHandleLaunchWithActivity:(NSUserActivity *)activity;
+
+/**
+ @author Egor Tolstoy
+ 
+ The method passes the incoming NSUserActivity to the handler
+ 
+ @param activity NSUserActivity
+ */
+- (void)handleLaunchWithActivity:(NSUserActivity *)activity;
 
 @end

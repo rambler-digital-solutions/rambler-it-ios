@@ -18,17 +18,22 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
-
-@protocol LaunchHandler;
+#import <Foundation/Foundation.h>
 
 /**
  @author Egor Tolstoy
  
- This AppDelegate is responsible for handling application open from Spotlight
+ This protocol describes a router responsible for opening after the application launch one of the cards screens: Event, User or Lecture.
  */
-@interface SpotlightAppDelegate : NSObject <UIApplicationDelegate>
+@protocol DataCardLaunchRouter <NSObject>
 
-- (instancetype)initWithLaunchHandlers:(NSArray <id<LaunchHandler>> *)launchHandlers;
+/**
+ @author Egor Tolstoy
+ 
+ Method initiates opening of data card screen
+ 
+ @param dataId The identifier of data object
+ */
+- (void)openDataCardScreenWithDataId:(NSString *)dataId;
 
 @end

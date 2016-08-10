@@ -339,6 +339,9 @@
 		9F06C1061D5B711300FE6888 /* TyphoonAppDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F06C1051D5B711300FE6888 /* TyphoonAppDelegateTests.m */; };
 		9F06C10A1D5B735300FE6888 /* VerySpecialAppDelegateForTesting.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F06C1091D5B735300FE6888 /* VerySpecialAppDelegateForTesting.m */; };
 		9F06C10E1D5B74F800FE6888 /* SpotlightAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F06C10D1D5B74F800FE6888 /* SpotlightAppDelegate.m */; };
+		9F06C1161D5BA61600FE6888 /* SpotlightLaunchHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F06C1151D5BA61600FE6888 /* SpotlightLaunchHandler.m */; };
+		9F06C11C1D5BAD2700FE6888 /* EventLaunchRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F06C11B1D5BAD2700FE6888 /* EventLaunchRouter.m */; };
+		9F06C11F1D5BAE1800FE6888 /* SpotlightAppDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F06C11E1D5BAE1800FE6888 /* SpotlightAppDelegateTests.m */; };
 		9F0A6C1D1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */; };
 		9F0A6C2E1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C2D1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m */; };
 		9F0A84C31BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A84C21BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m */; };
@@ -1143,6 +1146,13 @@
 		9F06C1091D5B735300FE6888 /* VerySpecialAppDelegateForTesting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerySpecialAppDelegateForTesting.m; sourceTree = "<group>"; };
 		9F06C10C1D5B74F800FE6888 /* SpotlightAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpotlightAppDelegate.h; path = StartUpSystem/AppDelegates/SpotlightAppDelegate/SpotlightAppDelegate.h; sourceTree = "<group>"; };
 		9F06C10D1D5B74F800FE6888 /* SpotlightAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpotlightAppDelegate.m; path = StartUpSystem/AppDelegates/SpotlightAppDelegate/SpotlightAppDelegate.m; sourceTree = "<group>"; };
+		9F06C1111D5BA54100FE6888 /* LaunchHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LaunchHandler.h; path = StartUpSystem/LaunchHandlers/Protocols/LaunchHandler.h; sourceTree = "<group>"; };
+		9F06C1141D5BA61600FE6888 /* SpotlightLaunchHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpotlightLaunchHandler.h; path = StartUpSystem/LaunchHandlers/ConcreteClasses/SpotlightLaunchHandler/SpotlightLaunchHandler.h; sourceTree = "<group>"; };
+		9F06C1151D5BA61600FE6888 /* SpotlightLaunchHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpotlightLaunchHandler.m; path = StartUpSystem/LaunchHandlers/ConcreteClasses/SpotlightLaunchHandler/SpotlightLaunchHandler.m; sourceTree = "<group>"; };
+		9F06C1181D5BABFE00FE6888 /* DataCardLaunchRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataCardLaunchRouter.h; path = StartUpSystem/Routers/Protocols/DataCardLaunchRouter.h; sourceTree = "<group>"; };
+		9F06C11A1D5BAD2700FE6888 /* EventLaunchRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventLaunchRouter.h; path = StartUpSystem/Routers/ConcreteClasses/EventLaunchRouter/EventLaunchRouter.h; sourceTree = "<group>"; };
+		9F06C11B1D5BAD2700FE6888 /* EventLaunchRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventLaunchRouter.m; path = StartUpSystem/Routers/ConcreteClasses/EventLaunchRouter/EventLaunchRouter.m; sourceTree = "<group>"; };
+		9F06C11E1D5BAE1800FE6888 /* SpotlightAppDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpotlightAppDelegateTests.m; path = ApplicationLayerTests/StartUpSystem/AppDelegates/SpotlightAppDelegate/SpotlightAppDelegateTests.m; sourceTree = "<group>"; };
 		9F0A6C1B1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CompoundOperationBuilderConfig.h; path = OperationBuilders/CompoundOperationBuilderConfig/CompoundOperationBuilderConfig.h; sourceTree = "<group>"; };
 		9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CompoundOperationBuilderConfig.m; path = OperationBuilders/CompoundOperationBuilderConfig/CompoundOperationBuilderConfig.m; sourceTree = "<group>"; };
 		9F0A6C1E1BC1B53F00A25417 /* RequestConfigurationType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RequestConfigurationType.h; path = CoreComponents/RequestConfigurators/RequestConfigurationType.h; sourceTree = "<group>"; };
@@ -4484,6 +4494,7 @@
 		9F06C1001D5B51EA00FE6888 /* AppDelegates */ = {
 			isa = PBXGroup;
 			children = (
+				9F06C11D1D5BAE0400FE6888 /* SpotlightAppDelegate */,
 				9F06C1041D5B710600FE6888 /* TyphoonAppDelegate */,
 				9F06C1011D5B51F100FE6888 /* CleanStartAppDelegate */,
 			);
@@ -4528,6 +4539,7 @@
 		9F06C10F1D5BA4FF00FE6888 /* LaunchHandlers */ = {
 			isa = PBXGroup;
 			children = (
+				9F06C1121D5BA5EF00FE6888 /* ConcreteClasses */,
 				9F06C1101D5BA51B00FE6888 /* Protocols */,
 			);
 			name = LaunchHandlers;
@@ -4536,8 +4548,51 @@
 		9F06C1101D5BA51B00FE6888 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				9F06C1111D5BA54100FE6888 /* LaunchHandler.h */,
 			);
 			name = Protocols;
+			sourceTree = "<group>";
+		};
+		9F06C1121D5BA5EF00FE6888 /* ConcreteClasses */ = {
+			isa = PBXGroup;
+			children = (
+				9F06C1131D5BA5FE00FE6888 /* SpotlightLaunchHandler */,
+			);
+			name = ConcreteClasses;
+			sourceTree = "<group>";
+		};
+		9F06C1131D5BA5FE00FE6888 /* SpotlightLaunchHandler */ = {
+			isa = PBXGroup;
+			children = (
+				9F06C1141D5BA61600FE6888 /* SpotlightLaunchHandler.h */,
+				9F06C1151D5BA61600FE6888 /* SpotlightLaunchHandler.m */,
+			);
+			name = SpotlightLaunchHandler;
+			sourceTree = "<group>";
+		};
+		9F06C1171D5BABE900FE6888 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9F06C1181D5BABFE00FE6888 /* DataCardLaunchRouter.h */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		9F06C1191D5BACF800FE6888 /* EventLaunchRouter */ = {
+			isa = PBXGroup;
+			children = (
+				9F06C11A1D5BAD2700FE6888 /* EventLaunchRouter.h */,
+				9F06C11B1D5BAD2700FE6888 /* EventLaunchRouter.m */,
+			);
+			name = EventLaunchRouter;
+			sourceTree = "<group>";
+		};
+		9F06C11D1D5BAE0400FE6888 /* SpotlightAppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				9F06C11E1D5BAE1800FE6888 /* SpotlightAppDelegateTests.m */,
+			);
+			name = SpotlightAppDelegate;
 			sourceTree = "<group>";
 		};
 		9F0A6C1A1BC1AFB200A25417 /* CompoundOperationBuilderConfig */ = {
@@ -6200,6 +6255,7 @@
 		9F78D7861D5A2C9C009DDCEA /* Routers */ = {
 			isa = PBXGroup;
 			children = (
+				9F06C1171D5BABE900FE6888 /* Protocols */,
 				9F78D7881D5A2CAD009DDCEA /* Helpers */,
 				9F78D7871D5A2CA7009DDCEA /* ConcreteClasses */,
 			);
@@ -6209,6 +6265,7 @@
 		9F78D7871D5A2CA7009DDCEA /* ConcreteClasses */ = {
 			isa = PBXGroup;
 			children = (
+				9F06C1191D5BACF800FE6888 /* EventLaunchRouter */,
 				9F78D7951D5A3770009DDCEA /* CleanStartRouter */,
 			);
 			name = ConcreteClasses;
@@ -7224,6 +7281,7 @@
 				63F6135A1CB00A220002AEF0 /* EventHeaderModuleAssembly.m in Sources */,
 				2B2064911D3F9CE900246C8D /* TechModelObject.m in Sources */,
 				9F0A84F91BC1698B006F79FB /* AsyncOperation.m in Sources */,
+				9F06C1161D5BA61600FE6888 /* SpotlightLaunchHandler.m in Sources */,
 				66E9997E1D54B0A000161D98 /* TagCellSizeCalculator.m in Sources */,
 				66E999481D54AFA500161D98 /* TagModuleTableViewCellObject.m in Sources */,
 				63F51CB01C42AD3A00AFB9D2 /* LectureMaterialTitleTableViewCellObject.m in Sources */,
@@ -7235,6 +7293,7 @@
 				63FD4E061BE5038D0046378E /* UIColor+Hex.m in Sources */,
 				66704FF91D4606D800DD9D6E /* PonsomizerAssembly.m in Sources */,
 				9F0A84FF1BC1698B006F79FB /* RequestSigningOperation.m in Sources */,
+				9F06C11C1D5BAD2700FE6888 /* EventLaunchRouter.m in Sources */,
 				9F1830F51BC14444000E21A5 /* NSString+RCFCapitalization.m in Sources */,
 				2BDDAB551D363D34007FD547 /* ROSPonsomizerImplementation.m in Sources */,
 				667050411D4615A700DD9D6E /* GrayTableViewSectionHeaderAndFooterCell.m in Sources */,
@@ -7433,6 +7492,7 @@
 				2B4F202A1D54E11F00C9891E /* SpeakerInfoCellObjectsBuilderTests.m in Sources */,
 				9F1830FE1BC14E64000E21A5 /* Conference.xcdatamodeld in Sources */,
 				63F613E91CB111070002AEF0 /* ReportListInteractorTests.m in Sources */,
+				9F06C11F1D5BAE1800FE6888 /* SpotlightAppDelegateTests.m in Sources */,
 				63F613E11CB111070002AEF0 /* EventPresenterTests.m in Sources */,
 				9F0A85281BC185AA006F79FB /* ResponseValidationOperationTests.m in Sources */,
 				66704FF61D45F69300DD9D6E /* RamblerInitialAssemblyCollector+Activate.m in Sources */,
