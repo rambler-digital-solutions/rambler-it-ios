@@ -48,7 +48,7 @@
         [self.delegates addObject:delegate];
     } else {
         [NSException raise:NSInvalidArgumentException
-                    format:@"Делегат %@ не удолетворяет протоколу UIApplicationDelegate", delegate];
+                    format:@"Delegate %@ doesn't conform to protocol UIApplicationDelegate", delegate];
     }
 }
 

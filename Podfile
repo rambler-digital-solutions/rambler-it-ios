@@ -21,7 +21,7 @@ pod 'CrutchKit/Proxying', :git => 'https://github.com/CognitiveDisson/CrutchKit'
 pod 'Fabric'
 pod 'Crashlytics'
 pod 'RamblerTyphoonUtils/AssemblyCollector'
-pod 'RamblerAppDelegateProxy'
+pod 'RamblerAppDelegateProxy', :head
 pod 'RamblerSegues'
 pod 'UICollectionViewLeftAlignedLayout', '1.0.1'
 

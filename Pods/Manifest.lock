@@ -86,7 +86,7 @@ PODS:
   - Parse (1.9.1):
     - Bolts/Tasks (>= 1.4.0)
   - PureLayout (3.0.1)
-  - RamblerAppDelegateProxy (0.0.1)
+  - RamblerAppDelegateProxy (HEAD based on 0.0.1)
   - RamblerSegues (1.1.0):
     - RamblerSegues/Core (= 1.1.0)
     - RamblerSegues/CrossStoryboardSegue (= 1.1.0)
@@ -126,7 +126,7 @@ DEPENDENCIES:
   - OCMock (~> 3.1)
   - Parse (~> 1.8)
   - PureLayout (~> 3.0)
-  - RamblerAppDelegateProxy
+  - RamblerAppDelegateProxy (HEAD)
   - RamblerSegues
   - RamblerTyphoonUtils/AssemblyCollector
   - RamblerTyphoonUtils/AssemblyTesting (= 1.1.0)
