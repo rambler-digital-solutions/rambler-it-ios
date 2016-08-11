@@ -10,33 +10,19 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 
-#import "TyphoonLinkerCategoryBugFix.h"
-
-TYPHOON_LINK_CATEGORY(TyphoonDefinition_Infrastructure)
-
+#import "TyphoonDefinition+Config.h"
 #import "TyphoonDefinition+Infrastructure.h"
 #import "TyphoonConfigPostProcessor.h"
 #import "TyphoonResource.h"
-#import "TyphoonMethod.h"
-#import "TyphoonMethod+InstanceBuilder.h"
-#import "TyphoonReferenceDefinition.h"
-#import "TyphoonIntrospectionUtils.h"
-#import "TyphoonRuntimeArguments.h"
+#import "TyphoonLinkerCategoryBugFix.h"
 
-@implementation TyphoonDefinition (Infrastructure)
+TYPHOON_LINK_CATEGORY(TyphoonDefinition_Config)
 
-@dynamic initializer, initializerGenerated, currentRuntimeArguments, key;
+@implementation TyphoonDefinition (Config)
 
-//-------------------------------------------------------------------------------------------
 #pragma mark - Class Methods
 
-+ (instancetype)withClass:(Class)clazz key:(NSString *)key
-{
-    return [[TyphoonDefinition alloc] initWithClass:clazz key:key];
-}
-
-+ (instancetype)configDefinitionWithName:(NSString *)fileName
-{
++ (instancetype)withConfigName:(NSString *)fileName {
     return [self withClass:[TyphoonConfigPostProcessor class] configuration:^(TyphoonDefinition *definition) {
         [definition injectMethod:@selector(useResourceWithName:) parameters:^(TyphoonMethod *method) {
             [method injectParameterWith:fileName];
@@ -45,7 +31,7 @@ TYPHOON_LINK_CATEGORY(TyphoonDefinition_Infrastructure)
     }];
 }
 
-+ (instancetype)configDefinitionWithName:(NSString *)fileName bundle:(NSBundle *)fileBundle {
++ (instancetype)withConfigName:(NSString *)fileName bundle:(NSBundle *)fileBundle {
     return [self withClass:[TyphoonConfigPostProcessor class] configuration:^(TyphoonDefinition *definition) {
         [definition injectMethod:@selector(useResourceWithName:bundle:) parameters:^(TyphoonMethod *method) {
             [method injectParameterWith:fileName];
@@ -55,8 +41,7 @@ TYPHOON_LINK_CATEGORY(TyphoonDefinition_Infrastructure)
     }];
 }
 
-+ (instancetype)configDefinitionWithPath:(NSString *)filePath
-{
++ (instancetype)withConfigPath:(NSString *)filePath {
     return [self withClass:[TyphoonConfigPostProcessor class] configuration:^(TyphoonDefinition *definition) {
         [definition injectMethod:@selector(useResourceAtPath:) parameters:^(TyphoonMethod *method) {
             [method injectParameterWith:filePath];
@@ -65,36 +50,26 @@ TYPHOON_LINK_CATEGORY(TyphoonDefinition_Infrastructure)
     }];
 }
 
-- (BOOL)isCandidateForInjectedClass:(Class)clazz includeSubclasses:(BOOL)includeSubclasses
+#pragma mark - Deprecated methods
+
++ (instancetype)configDefinitionWithName:(NSString *)fileName
 {
-    BOOL result = NO;
-    if (self.autoInjectionVisibility & TyphoonAutoInjectVisibilityByClass) {
-        BOOL isSameClass = self.type == clazz;
-        BOOL isSubclass = includeSubclasses && [self.type isSubclassOfClass:clazz];
-        result = isSameClass || isSubclass;
-    }
-    return result;
+    TyphoonDefinition *configDefinition = [self withConfigName:fileName];
+    [configDefinition applyGlobalNamespace];
+    return configDefinition;
 }
 
-- (BOOL)isCandidateForInjectedProtocol:(Protocol *)aProtocol
-{
-    BOOL result = NO;
-    if (self.autoInjectionVisibility & TyphoonAutoInjectVisibilityByProtocol) {
-        result = [self.type conformsToProtocol:aProtocol];
-    }
-    return result;
-
++ (instancetype)configDefinitionWithName:(NSString *)fileName bundle:(NSBundle *)fileBundle {
+    TyphoonDefinition *configDefinition = [self withConfigName:fileName bundle:fileBundle];
+    [configDefinition applyGlobalNamespace];
+    return configDefinition;
 }
 
-
-- (void)setProcessed:(BOOL)processed
++ (instancetype)configDefinitionWithPath:(NSString *)filePath
 {
-    _processed = processed;
-}
-
-- (BOOL)processed
-{
-    return _processed;
+    TyphoonDefinition *configDefinition = [self withConfigPath:filePath];
+    [configDefinition applyGlobalNamespace];
+    return configDefinition;
 }
 
 @end

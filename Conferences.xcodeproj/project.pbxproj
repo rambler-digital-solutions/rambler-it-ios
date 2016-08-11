@@ -7609,6 +7609,33 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CURRENT_PROJECT_VERSION = 33;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/Bolts\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaLumberjack\"",
+					"\"${PODS_ROOT}/Headers/Public/Crashlytics\"",
+					"\"${PODS_ROOT}/Headers/Public/CrutchKit\"",
+					"\"${PODS_ROOT}/Headers/Public/EasyMapping\"",
+					"\"${PODS_ROOT}/Headers/Public/Fabric\"",
+					"\"${PODS_ROOT}/Headers/Public/MMBarricade\"",
+					"\"${PODS_ROOT}/Headers/Public/MagicalRecord\"",
+					"\"${PODS_ROOT}/Headers/Public/Nimbus\"",
+					"\"${PODS_ROOT}/Headers/Public/OCMock\"",
+					"\"${PODS_ROOT}/Headers/Public/Parse\"",
+					"\"${PODS_ROOT}/Headers/Public/PureLayout\"",
+					"\"${PODS_ROOT}/Headers/Public/RamblerAppDelegateProxy\"",
+					"\"${PODS_ROOT}/Headers/Public/RamblerSegues\"",
+					"\"${PODS_ROOT}/Headers/Public/RamblerTyphoonUtils\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"\"${PODS_ROOT}/Headers/Public/Typhoon\"",
+					"\"${PODS_ROOT}/Headers/Public/UICollectionViewLeftAlignedLayout\"",
+					"\"${PODS_ROOT}/Headers/Public/UIViewController+Routing\"",
+					"\"${PODS_ROOT}/Headers/Public/ViperMcFlurry/IntermoduleDataTransfer\"",
+					"\"${PODS_ROOT}/Headers/Public/ViperMcFlurry\"",
+					"\"${PODS_ROOT}/Headers/Public/libextobjc\"",
+				);
 				INFOPLIST_FILE = "conferences/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -7722,6 +7749,33 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 33;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/Bolts\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaLumberjack\"",
+					"\"${PODS_ROOT}/Headers/Public/Crashlytics\"",
+					"\"${PODS_ROOT}/Headers/Public/CrutchKit\"",
+					"\"${PODS_ROOT}/Headers/Public/EasyMapping\"",
+					"\"${PODS_ROOT}/Headers/Public/Fabric\"",
+					"\"${PODS_ROOT}/Headers/Public/MMBarricade\"",
+					"\"${PODS_ROOT}/Headers/Public/MagicalRecord\"",
+					"\"${PODS_ROOT}/Headers/Public/Nimbus\"",
+					"\"${PODS_ROOT}/Headers/Public/OCMock\"",
+					"\"${PODS_ROOT}/Headers/Public/Parse\"",
+					"\"${PODS_ROOT}/Headers/Public/PureLayout\"",
+					"\"${PODS_ROOT}/Headers/Public/RamblerAppDelegateProxy\"",
+					"\"${PODS_ROOT}/Headers/Public/RamblerSegues\"",
+					"\"${PODS_ROOT}/Headers/Public/RamblerTyphoonUtils\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"\"${PODS_ROOT}/Headers/Public/Typhoon\"",
+					"\"${PODS_ROOT}/Headers/Public/UICollectionViewLeftAlignedLayout\"",
+					"\"${PODS_ROOT}/Headers/Public/UIViewController+Routing\"",
+					"\"${PODS_ROOT}/Headers/Public/ViperMcFlurry/IntermoduleDataTransfer\"",
+					"\"${PODS_ROOT}/Headers/Public/ViperMcFlurry\"",
+					"\"${PODS_ROOT}/Headers/Public/libextobjc\"",
+				);
 				INFOPLIST_FILE = "Conferences/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -7740,6 +7794,33 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CURRENT_PROJECT_VERSION = 33;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/Bolts\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaLumberjack\"",
+					"\"${PODS_ROOT}/Headers/Public/Crashlytics\"",
+					"\"${PODS_ROOT}/Headers/Public/CrutchKit\"",
+					"\"${PODS_ROOT}/Headers/Public/EasyMapping\"",
+					"\"${PODS_ROOT}/Headers/Public/Fabric\"",
+					"\"${PODS_ROOT}/Headers/Public/MMBarricade\"",
+					"\"${PODS_ROOT}/Headers/Public/MagicalRecord\"",
+					"\"${PODS_ROOT}/Headers/Public/Nimbus\"",
+					"\"${PODS_ROOT}/Headers/Public/OCMock\"",
+					"\"${PODS_ROOT}/Headers/Public/Parse\"",
+					"\"${PODS_ROOT}/Headers/Public/PureLayout\"",
+					"\"${PODS_ROOT}/Headers/Public/RamblerAppDelegateProxy\"",
+					"\"${PODS_ROOT}/Headers/Public/RamblerSegues\"",
+					"\"${PODS_ROOT}/Headers/Public/RamblerTyphoonUtils\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"\"${PODS_ROOT}/Headers/Public/Typhoon\"",
+					"\"${PODS_ROOT}/Headers/Public/UICollectionViewLeftAlignedLayout\"",
+					"\"${PODS_ROOT}/Headers/Public/UIViewController+Routing\"",
+					"\"${PODS_ROOT}/Headers/Public/ViperMcFlurry/IntermoduleDataTransfer\"",
+					"\"${PODS_ROOT}/Headers/Public/ViperMcFlurry\"",
+					"\"${PODS_ROOT}/Headers/Public/libextobjc\"",
+				);
 				INFOPLIST_FILE = "Conferences/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
