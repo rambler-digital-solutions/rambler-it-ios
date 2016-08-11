@@ -35,7 +35,6 @@
 #pragma mark - LectureInteractorInput
 
 - (LecturePlainObject *)obtainLectureWithObjectId:(NSString *)objectId {
-    
     id lectureManagedObject = [self.lectureService obtainLectureWithLectureId:objectId];
     LecturePlainObject *lecture = [self.ponsomizer convertObject:lectureManagedObject];
     return lecture;

@@ -39,9 +39,6 @@
     EventInfoTableViewCellObject *eventInfoCellObject = [EventInfoTableViewCellObject objectWithEvent:event andDate:formattedDate];
     [cellObjects addObject:eventInfoCellObject];
     
-    VideoRecordTableViewCellObject *videoCellObject = [VideoRecordTableViewCellObject objectWithEvent:event];
-    [cellObjects addObject:videoCellObject];
-    
     //Adding current event lectures section
     NSArray *lectureCellObjects = [self cellObjectsForLectureSectionWithEvent:event];
     [cellObjects addObjectsFromArray:lectureCellObjects];
