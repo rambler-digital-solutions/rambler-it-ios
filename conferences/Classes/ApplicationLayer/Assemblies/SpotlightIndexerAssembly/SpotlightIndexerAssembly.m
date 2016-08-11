@@ -60,6 +60,7 @@
                                                   [initializer injectParameterWith:[self indexerStateStorage]];
                                                   [initializer injectParameterWith:[self indexerMonitorOperationQueueFactory]];
                                               }];
+                              definition.scope = TyphoonScopeSingleton;
                           }];
 }
 
@@ -70,6 +71,7 @@
                                               parameters:^(TyphoonMethod *initializer) {
                                                   [initializer injectParameterWith:[self contextStorage]];
                                               }];
+                              definition.scope = TyphoonScopeSingleton;
                           }];
 }
 
@@ -90,7 +92,10 @@
 }
 
 - (ContextStorageImplementation *)contextStorage {
-    return [TyphoonDefinition withClass:[ContextStorageImplementation class]];
+    return [TyphoonDefinition withClass:[ContextStorageImplementation class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              definition.scope = TyphoonScopeSingleton;
+                          }];
 }
 
 #pragma mark - Indexers
