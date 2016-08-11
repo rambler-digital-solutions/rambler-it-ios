@@ -51,7 +51,7 @@ static  NSString *const kParseRESTPathKey = @"API.RESTPath";
 #pragma mark - Config
 
 - (id)configurer {
-    return [TyphoonDefinition configDefinitionWithName:kConfigFileName];
+    return [TyphoonDefinition withConfigName:kConfigFileName];
 }
 
 @end
