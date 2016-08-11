@@ -20,22 +20,17 @@
 
 #import "ApplicationAssembly.h"
 
+#import "SystemInfrastructureAssembly.h"
+#import "ApplicationHelperAssembly.h"
+#import "LaunchSystemAssembly.h"
+#import "SpotlightIndexerAssembly.h"
+
 #import "ApplicationConfigurator.h"
 #import "ApplicationConfiguratorImplementation.h"
-#import "PushNotificationCenter.h"
-#import "PushNotificationCenterImplementation.h"
-#import "ServiceComponents.h"
 #import "ThirdPartiesConfigurator.h"
 #import "ThirdPartiesConfiguratorImplementation.h"
-#import "SpotlightIndexerAssembly.h"
 #import "CleanLaunchRouter.h"
 #import "CleanLaunchAppDelegate.h"
-#import "SpotlightAppDelegate.h"
-#import "TabBarControllerFactoryImplementation.h"
-#import "SpotlightLaunchHandler.h"
-#import "EventLaunchRouter.h"
-#import "SpeakerLaunchRouter.h"
-#import "LectureLaunchRouter.h"
 
 #import <RamblerAppDelegateProxy/RamblerAppDelegateProxy.h>
 
@@ -48,7 +43,7 @@
                                             parameters:^(TyphoonMethod *method) {
                                                 [method injectParameterWith:@[
                                                                               [self cleanStartAppDelegate],
-                                                                              [self spotlightAppDelegate]
+                                                                              [self.launchSystemAssembly spotlightAppDelegate]
                                                                               ]];
                                             }];
                               definition.scope = TyphoonScopeSingleton;
@@ -68,66 +63,13 @@
                                                     with:[self.spotlightIndexerAssembly indexerMonitor]];
                               [definition injectProperty:@selector(spotlightCoreDataStackCoordinator)
                                                     with:[self.spotlightIndexerAssembly spotlightCoreDataStackCoordinator]];
-    }];
-}
-
-- (SpotlightAppDelegate *)spotlightAppDelegate {
-    return [TyphoonDefinition withClass:[SpotlightAppDelegate class]
-                          configuration:^(TyphoonDefinition *definition) {
-                              [definition useInitializer:@selector(initWithLaunchHandlers:)
-                                              parameters:^(TyphoonMethod *initializer) {
-                                                  [initializer injectParameterWith:@[
-                                                                                     [self eventLaunchHandler],
-                                                                                     [self speakerLaunchHandler],
-                                                                                     [self lectureLaunchHandler]
-                                                                                     ]];
-                                              }];
-                          }];
-}
-
-- (SpotlightLaunchHandler *)eventLaunchHandler {
-    return [TyphoonDefinition withClass:[SpotlightLaunchHandler class]
-                          configuration:^(TyphoonDefinition *definition) {
-                              [definition useInitializer:@selector(initWithObjectTransformer:dataCardLaunchRouter:)
-                                              parameters:^(TyphoonMethod *initializer) {
-                                                  [initializer injectParameterWith:[self.spotlightIndexerAssembly eventObjectTransformer]];
-                                                  [initializer injectParameterWith:[self eventLaunchRouter]];
-                                              }];
-                          }];
-}
-
-- (SpotlightLaunchHandler *)speakerLaunchHandler {
-    return [TyphoonDefinition withClass:[SpotlightLaunchHandler class]
-                          configuration:^(TyphoonDefinition *definition) {
-                              [definition useInitializer:@selector(initWithObjectTransformer:dataCardLaunchRouter:)
-                                              parameters:^(TyphoonMethod *initializer) {
-                                                  [initializer injectParameterWith:[self.spotlightIndexerAssembly speakerObjectTransformer]];
-                                                  [initializer injectParameterWith:[self speakerLaunchRouter]];
-                                              }];
-                          }];
-}
-
-- (SpotlightLaunchHandler *)lectureLaunchHandler {
-    return [TyphoonDefinition withClass:[SpotlightLaunchHandler class]
-                          configuration:^(TyphoonDefinition *definition) {
-                              [definition useInitializer:@selector(initWithObjectTransformer:dataCardLaunchRouter:)
-                                              parameters:^(TyphoonMethod *initializer) {
-                                                  [initializer injectParameterWith:[self.spotlightIndexerAssembly lectureObjectTransformer]];
-                                                  [initializer injectParameterWith:[self lectureLaunchRouter]];
-                                              }];
+                              
+                              definition.scope = TyphoonScopeSingleton;
                           }];
 }
 
 - (id <ApplicationConfigurator>)applicationConfigurator {
     return [TyphoonDefinition withClass:[ApplicationConfiguratorImplementation class]];
-}
-
-- (id <PushNotificationCenter>)pushNotificationCenter {
-    return [TyphoonDefinition withClass:[PushNotificationCenterImplementation class]
-                          configuration:^(TyphoonDefinition *definition) {
-                              [definition injectProperty:@selector(pushNotificationService)
-                                                    with:[self.serviceComponents pushNotificationService]];
-                          }];
 }
 
 - (id <ThirdPartiesConfigurator>)thirdPartiesConfigurator {
@@ -141,114 +83,9 @@
                           configuration:^(TyphoonDefinition *definition) {
                               [definition useInitializer:@selector(initWithTabBarControllerFactory:window:)
                                               parameters:^(TyphoonMethod *initializer) {
-                                                  [initializer injectParameterWith:[self tabBarControllerFactory]];
-                                                  [initializer injectParameterWith:[self mainWindow]];
+                                                  [initializer injectParameterWith:[self.applicationHelperAssembly tabBarControllerFactory]];
+                                                  [initializer injectParameterWith:[self.systemInfrastructureAssembly mainWindow]];
                                               }];
-                          }];
-}
-
-- (EventLaunchRouter *)eventLaunchRouter {
-    return [TyphoonDefinition withClass:[EventLaunchRouter class]
-                          configuration:^(TyphoonDefinition *definition) {
-                              [definition useInitializer:@selector(initWithTabBarControllerFactory:window:storyboard:)
-                                              parameters:^(TyphoonMethod *initializer) {
-                                                  [initializer injectParameterWith:[self tabBarControllerFactory]];
-                                                  [initializer injectParameterWith:[self mainWindow]];
-                                                  [initializer injectParameterWith:[self eventStoryboard]];
-                                              }];
-                          }];
-}
-
-- (SpeakerLaunchRouter *)speakerLaunchRouter {
-    return [TyphoonDefinition withClass:[SpeakerLaunchRouter class]
-                          configuration:^(TyphoonDefinition *definition) {
-                              [definition useInitializer:@selector(initWithTabBarControllerFactory:window:storyboard:)
-                                              parameters:^(TyphoonMethod *initializer) {
-                                                  [initializer injectParameterWith:[self tabBarControllerFactory]];
-                                                  [initializer injectParameterWith:[self mainWindow]];
-                                                  [initializer injectParameterWith:[self speakerStoryboard]];
-                                              }];
-                          }];
-}
-
-- (LectureLaunchRouter *)lectureLaunchRouter {
-    return [TyphoonDefinition withClass:[LectureLaunchRouter class]
-                          configuration:^(TyphoonDefinition *definition) {
-                              [definition useInitializer:@selector(initWithTabBarControllerFactory:window:storyboard:)
-                                              parameters:^(TyphoonMethod *initializer) {
-                                                  [initializer injectParameterWith:[self tabBarControllerFactory]];
-                                                  [initializer injectParameterWith:[self mainWindow]];
-                                                  [initializer injectParameterWith:[self lectureStoryboard]];
-                                              }];
-                          }];
-}
-
-- (TabBarControllerFactoryImplementation *)tabBarControllerFactory {
-    return [TyphoonDefinition withClass:[TabBarControllerFactoryImplementation class]
-                          configuration:^(TyphoonDefinition *definition) {
-                              [definition useInitializer:@selector(factoryWithStoryboard:)
-                                              parameters:^(TyphoonMethod *initializer) {
-                                                  [initializer injectParameterWith:[self mainStoryboard]];
-                                              }];
-                          }];
-}
-
-- (UIStoryboard *)mainStoryboard {
-    return [TyphoonDefinition withClass:[TyphoonStoryboard class]
-                          configuration:^(TyphoonDefinition *definition) {
-                              [definition useInitializer:@selector(storyboardWithName:factory:bundle:)
-                                              parameters:^(TyphoonMethod *initializer) {
-                                                  [initializer injectParameterWith:@"Main"];
-                                                  [initializer injectParameterWith:self];
-                                                  [initializer injectParameterWith:[NSBundle mainBundle]];
-                                              }];
-                          }];
-}
-
-- (UIStoryboard *)eventStoryboard {
-    return [TyphoonDefinition withClass:[TyphoonStoryboard class]
-                          configuration:^(TyphoonDefinition *definition) {
-                              [definition useInitializer:@selector(storyboardWithName:factory:bundle:)
-                                              parameters:^(TyphoonMethod *initializer) {
-                                                  [initializer injectParameterWith:@"Event"];
-                                                  [initializer injectParameterWith:self];
-                                                  [initializer injectParameterWith:[NSBundle mainBundle]];
-                                              }];
-                          }];
-}
-
-- (UIStoryboard *)speakerStoryboard {
-    return [TyphoonDefinition withClass:[TyphoonStoryboard class]
-                          configuration:^(TyphoonDefinition *definition) {
-                              [definition useInitializer:@selector(storyboardWithName:factory:bundle:)
-                                              parameters:^(TyphoonMethod *initializer) {
-                                                  [initializer injectParameterWith:@"SpeakerInfo"];
-                                                  [initializer injectParameterWith:self];
-                                                  [initializer injectParameterWith:[NSBundle mainBundle]];
-                                              }];
-                          }];
-}
-
-- (UIStoryboard *)lectureStoryboard {
-    return [TyphoonDefinition withClass:[TyphoonStoryboard class]
-                          configuration:^(TyphoonDefinition *definition) {
-                              [definition useInitializer:@selector(storyboardWithName:factory:bundle:)
-                                              parameters:^(TyphoonMethod *initializer) {
-                                                  [initializer injectParameterWith:@"Lecture"];
-                                                  [initializer injectParameterWith:self];
-                                                  [initializer injectParameterWith:[NSBundle mainBundle]];
-                                              }];
-                          }];
-}
-
-- (UIWindow *)mainWindow {
-    return [TyphoonDefinition withClass:[UIWindow class]
-                          configuration:^(TyphoonDefinition *definition) {
-                              [definition useInitializer:@selector(initWithFrame:)
-                                              parameters:^(TyphoonMethod *initializer) {
-                                                  [initializer injectParameterWith:[NSValue valueWithCGRect:[[UIScreen mainScreen] bounds]]];
-                                              }];
-                              definition.scope = TyphoonScopeSingleton;
                           }];
 }
 

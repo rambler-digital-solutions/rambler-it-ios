@@ -21,21 +21,18 @@
 #import <Typhoon/Typhoon.h>
 #import <AssemblyCollector/RamblerInitialAssembly.h>
 
-@class SpotlightIndexerAssembly;
-@class SystemInfrastructureAssembly;
-@class ApplicationHelperAssembly;
-@class LaunchSystemAssembly;
+@protocol TabBarControllerFactory;
+@class StoryboardAssembly;
 
 /**
- @author Artem Karpushin
+ @author Egor Tolstoy
  
- This Assembly is responsible for configuration of the objects in charge of the general logic of the application. Such as: applicationConfigurator, appDelegate
+ Assembly with definitions for ApplicationLayer level helpers
  */
-@interface ApplicationAssembly : TyphoonAssembly <RamblerInitialAssembly>
+@interface ApplicationHelperAssembly : TyphoonAssembly <RamblerInitialAssembly>
 
-@property (strong, nonatomic, readonly) SpotlightIndexerAssembly *spotlightIndexerAssembly;
-@property (strong, nonatomic, readonly) SystemInfrastructureAssembly *systemInfrastructureAssembly;
-@property (strong, nonatomic, readonly) ApplicationHelperAssembly *applicationHelperAssembly;
-@property (strong, nonatomic, readonly) LaunchSystemAssembly *launchSystemAssembly;
+@property (nonatomic, strong, readonly) StoryboardAssembly *storyboardAssembly;
+
+- (id<TabBarControllerFactory>)tabBarControllerFactory;
 
 @end

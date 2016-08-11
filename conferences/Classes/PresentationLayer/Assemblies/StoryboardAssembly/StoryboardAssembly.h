@@ -19,23 +19,18 @@
 // THE SOFTWARE.
 
 #import <Typhoon/Typhoon.h>
-#import <AssemblyCollector/RamblerInitialAssembly.h>
-
-@class SpotlightIndexerAssembly;
-@class SystemInfrastructureAssembly;
-@class ApplicationHelperAssembly;
-@class LaunchSystemAssembly;
+#import <RamblerTyphoonUtils/AssemblyCollector.h>
 
 /**
- @author Artem Karpushin
+ @author Egor Tolstoy
  
- This Assembly is responsible for configuration of the objects in charge of the general logic of the application. Such as: applicationConfigurator, appDelegate
+ Assembly for creating UIStoryboards
  */
-@interface ApplicationAssembly : TyphoonAssembly <RamblerInitialAssembly>
+@interface StoryboardAssembly : TyphoonAssembly <RamblerInitialAssembly>
 
-@property (strong, nonatomic, readonly) SpotlightIndexerAssembly *spotlightIndexerAssembly;
-@property (strong, nonatomic, readonly) SystemInfrastructureAssembly *systemInfrastructureAssembly;
-@property (strong, nonatomic, readonly) ApplicationHelperAssembly *applicationHelperAssembly;
-@property (strong, nonatomic, readonly) LaunchSystemAssembly *launchSystemAssembly;
+- (UIStoryboard *)mainStoryboard;
+- (UIStoryboard *)eventStoryboard;
+- (UIStoryboard *)speakerStoryboard;
+- (UIStoryboard *)lectureStoryboard;
 
 @end

@@ -18,24 +18,22 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Typhoon/Typhoon.h>
-#import <AssemblyCollector/RamblerInitialAssembly.h>
+#import "ApplicationHelperAssembly.h"
 
-@class SpotlightIndexerAssembly;
-@class SystemInfrastructureAssembly;
-@class ApplicationHelperAssembly;
-@class LaunchSystemAssembly;
+#import "StoryboardAssembly.h"
 
-/**
- @author Artem Karpushin
- 
- This Assembly is responsible for configuration of the objects in charge of the general logic of the application. Such as: applicationConfigurator, appDelegate
- */
-@interface ApplicationAssembly : TyphoonAssembly <RamblerInitialAssembly>
+#import "TabBarControllerFactoryImplementation.h"
 
-@property (strong, nonatomic, readonly) SpotlightIndexerAssembly *spotlightIndexerAssembly;
-@property (strong, nonatomic, readonly) SystemInfrastructureAssembly *systemInfrastructureAssembly;
-@property (strong, nonatomic, readonly) ApplicationHelperAssembly *applicationHelperAssembly;
-@property (strong, nonatomic, readonly) LaunchSystemAssembly *launchSystemAssembly;
+@implementation ApplicationHelperAssembly
+
+- (TabBarControllerFactoryImplementation *)tabBarControllerFactory {
+    return [TyphoonDefinition withClass:[TabBarControllerFactoryImplementation class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition useInitializer:@selector(factoryWithStoryboard:)
+                                              parameters:^(TyphoonMethod *initializer) {
+                                                  [initializer injectParameterWith:[self.storyboardAssembly mainStoryboard]];
+                                              }];
+                          }];
+}
 
 @end
