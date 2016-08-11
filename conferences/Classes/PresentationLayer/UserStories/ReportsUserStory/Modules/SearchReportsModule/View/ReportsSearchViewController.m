@@ -35,7 +35,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [[UIScrollView appearance] setBackgroundColor:[UIColor whiteColor]];
     self.reportsListSearchTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
