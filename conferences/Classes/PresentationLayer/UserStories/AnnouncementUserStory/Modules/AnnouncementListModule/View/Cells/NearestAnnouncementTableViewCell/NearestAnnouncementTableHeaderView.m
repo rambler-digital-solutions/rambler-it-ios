@@ -19,10 +19,15 @@
 // THE SOFTWARE.
 
 #import "NearestAnnouncementTableHeaderView.h"
+
+#import "AnnouncementViewModel.h"
 #import "MetaEventPlainObject.h"
+#import "TechPlainObject.h"
+#import "EventPlainObject.h"
+
+#import "UIColor+Hex.h"
 
 #import <SDWebImage/UIImageView+WebCache.h>
-#import "AnnouncementViewModel.h"
 
 static NSString *const kPlaceholderImageName = @"placeholder";
 
@@ -38,6 +43,8 @@ static NSString *const kPlaceholderImageName = @"placeholder";
     self.eventTitle.text = viewModel.eventTitle;
     self.date.text = viewModel.date;
     self.time.text = viewModel.time;
+    
+    self.backgroundView.backgroundColor = [UIColor colorFromHexString:viewModel.event.tech.color];
 
     [self.eventImageView sd_setImageWithURL:viewModel.imageUrl
                            placeholderImage:[UIImage imageNamed:kPlaceholderImageName]];

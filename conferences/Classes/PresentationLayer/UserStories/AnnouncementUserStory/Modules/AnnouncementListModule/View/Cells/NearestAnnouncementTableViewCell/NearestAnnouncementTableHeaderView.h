@@ -31,6 +31,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *date;
 @property (weak, nonatomic) IBOutlet UILabel *time;
 @property (weak, nonatomic) IBOutlet UILabel *eventTitle;
+@property (weak, nonatomic) IBOutlet UIView *backgroundView;
 
 - (void)updateWithViewModel:(AnnouncementViewModel *)viewModel;
 
