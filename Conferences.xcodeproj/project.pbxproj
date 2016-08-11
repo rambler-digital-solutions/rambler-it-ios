@@ -461,6 +461,8 @@
 		9FAC55231D5C7C43005A9362 /* SpotlightLaunchHandlerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAC55221D5C7C43005A9362 /* SpotlightLaunchHandlerTests.m */; };
 		9FBE89741D5CAF6200DA0C32 /* SpeakerLaunchRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89731D5CAF6200DA0C32 /* SpeakerLaunchRouter.m */; };
 		9FBE89771D5CB2A800DA0C32 /* SpeakerLaunchRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89761D5CB2A800DA0C32 /* SpeakerLaunchRouterTests.m */; };
+		9FBE897B1D5CB36500DA0C32 /* LectureLaunchRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE897A1D5CB36500DA0C32 /* LectureLaunchRouter.m */; };
+		9FBE897E1D5CB56100DA0C32 /* LectureLaunchRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE897D1D5CB56100DA0C32 /* LectureLaunchRouterTests.m */; };
 		9FC1F6761D2824000070D9B5 /* EventListServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */; };
 		9FC1F6801D2838FA0070D9B5 /* EventListQueryTransformerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */; };
 		9FC1F6841D28391E0070D9B5 /* EventListQueryTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6831D28391E0070D9B5 /* EventListQueryTransformer.m */; };
@@ -1396,6 +1398,9 @@
 		9FBE89721D5CAF6200DA0C32 /* SpeakerLaunchRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeakerLaunchRouter.h; path = StartUpSystem/Routers/ConcreteClasses/SpeakerLaunchRouter/SpeakerLaunchRouter.h; sourceTree = "<group>"; };
 		9FBE89731D5CAF6200DA0C32 /* SpeakerLaunchRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeakerLaunchRouter.m; path = StartUpSystem/Routers/ConcreteClasses/SpeakerLaunchRouter/SpeakerLaunchRouter.m; sourceTree = "<group>"; };
 		9FBE89761D5CB2A800DA0C32 /* SpeakerLaunchRouterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeakerLaunchRouterTests.m; path = ApplicationLayerTests/StartUpSystem/Routers/ConcreteClasses/SpeakerLaunchRouter/SpeakerLaunchRouterTests.m; sourceTree = "<group>"; };
+		9FBE89791D5CB36500DA0C32 /* LectureLaunchRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LectureLaunchRouter.h; path = StartUpSystem/Routers/ConcreteClasses/LectureLaunchRouter/LectureLaunchRouter.h; sourceTree = "<group>"; };
+		9FBE897A1D5CB36500DA0C32 /* LectureLaunchRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LectureLaunchRouter.m; path = StartUpSystem/Routers/ConcreteClasses/LectureLaunchRouter/LectureLaunchRouter.m; sourceTree = "<group>"; };
+		9FBE897D1D5CB56100DA0C32 /* LectureLaunchRouterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LectureLaunchRouterTests.m; path = ApplicationLayerTests/StartUpSystem/Routers/ConcreteClasses/LectureLaunchRouter/LectureLaunchRouterTests.m; sourceTree = "<group>"; };
 		9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListServiceTests.m; path = EventListServiceTests/EventListServiceTests.m; sourceTree = "<group>"; };
 		9FC1F6781D2826D10070D9B5 /* QueryTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QueryTransformer.h; path = CoreComponents/QueryTransformers/QueryTransformer.h; sourceTree = "<group>"; };
 		9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListQueryTransformerTests.m; path = CoreLayer/CoreComponents/QueryTransformers/EventListQueryTransformer/EventListQueryTransformerTests.m; sourceTree = "<group>"; };
@@ -6274,6 +6279,7 @@
 		9F78D7871D5A2CA7009DDCEA /* ConcreteClasses */ = {
 			isa = PBXGroup;
 			children = (
+				9FBE89781D5CB35200DA0C32 /* LectureLaunchRouter */,
 				9FBE89711D5CAF5200DA0C32 /* SpeakerLaunchRouter */,
 				9F06C1191D5BACF800FE6888 /* EventLaunchRouter */,
 				9F78D7951D5A3770009DDCEA /* CleanStartRouter */,
@@ -6346,6 +6352,7 @@
 		9F78D7991D5A3B4A009DDCEA /* ConcreteClasses */ = {
 			isa = PBXGroup;
 			children = (
+				9FBE897C1D5CB54F00DA0C32 /* LectureLaunchRouter */,
 				9FBE89751D5CB29400DA0C32 /* SpeakerLaunchRouter */,
 				9FFF3E2E1D5CAAD30061BCBD /* EventLaunchRouter */,
 				9F78D79A1D5A3B50009DDCEA /* CleanStartRouter */,
@@ -6596,6 +6603,23 @@
 				9FBE89761D5CB2A800DA0C32 /* SpeakerLaunchRouterTests.m */,
 			);
 			name = SpeakerLaunchRouter;
+			sourceTree = "<group>";
+		};
+		9FBE89781D5CB35200DA0C32 /* LectureLaunchRouter */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE89791D5CB36500DA0C32 /* LectureLaunchRouter.h */,
+				9FBE897A1D5CB36500DA0C32 /* LectureLaunchRouter.m */,
+			);
+			name = LectureLaunchRouter;
+			sourceTree = "<group>";
+		};
+		9FBE897C1D5CB54F00DA0C32 /* LectureLaunchRouter */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE897D1D5CB56100DA0C32 /* LectureLaunchRouterTests.m */,
+			);
+			name = LectureLaunchRouter;
 			sourceTree = "<group>";
 		};
 		9FC1F6741D2823E40070D9B5 /* EventListServiceTests */ = {
@@ -7352,6 +7376,7 @@
 				66E999321D549E2100161D98 /* LectureCellObjectsBuilderImplementation.m in Sources */,
 				3784462F1D4E067A0016121E /* RCNavigationController.m in Sources */,
 				2B05E1711D51E1B100E017AB /* SocialContactsConfigurator.m in Sources */,
+				9FBE897B1D5CB36500DA0C32 /* LectureLaunchRouter.m in Sources */,
 				63F6136A1CB00A220002AEF0 /* PreviousLectureSectionHeaderTableViewCellObject.m in Sources */,
 				63FD4E061BE5038D0046378E /* UIColor+Hex.m in Sources */,
 				66704FF91D4606D800DD9D6E /* PonsomizerAssembly.m in Sources */,
@@ -7519,6 +7544,7 @@
 				2B429A711D4B5305004C005F /* ModelObjectGenerator.m in Sources */,
 				666C5C331D4F2AF6002D73D5 /* ReportsSearchPresenterTests.m in Sources */,
 				631CBA3B1C00935300E3EBA8 /* EventServiceTests.m in Sources */,
+				9FBE897E1D5CB56100DA0C32 /* LectureLaunchRouterTests.m in Sources */,
 				63F403B21BD0D4B40086D030 /* ResponseValidatorsAssemblyTests.m in Sources */,
 				9F78D7801D5A078F009DDCEA /* LectureChangeProviderFetchRequestFactoryTests.m in Sources */,
 				9F0A84C31BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m in Sources */,

@@ -25,18 +25,16 @@
 #import "LecturePlainObject.h"
 #import "SpeakerShortInfoModuleInput.h"
 
+#import "UINavigationBar+States.h"
+
 static CGFloat kTableViewEstimatedRowHeight = 44.0f;
 static CGFloat kTableViewFooterHeight = 16.0f;
-
-@interface LectureViewController() <UIGestureRecognizerDelegate>
-
-@end
 
 @implementation LectureViewController
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	[self.output setupView];
+    [self.output setupView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -55,9 +53,18 @@ static CGFloat kTableViewFooterHeight = 16.0f;
     
     self.tableView.estimatedRowHeight = kTableViewEstimatedRowHeight;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
+    
+    [self setupViewInitialState];
 }
 
 #pragma mark - Private methods
+
+- (void)setupViewInitialState {
+    [self.navigationController.navigationBar becomeTransparent];
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+    [self.navigationController setNavigationBarHidden:NO
+                                             animated:YES];
+}
 
 #pragma mark - Actions
 

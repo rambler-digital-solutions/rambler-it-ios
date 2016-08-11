@@ -8,7 +8,7 @@
         <!--Lecture View Controller-->
         <scene sceneID="yMb-rJ-n2g">
             <objects>
-                <viewController storyboardIdentifier="UIViewController-JLc-iV-GVs" id="JLc-iV-GVs" customClass="LectureViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LectureViewController" id="JLc-iV-GVs" customClass="LectureViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EvR-v3-elB"/>
                         <viewControllerLayoutGuide type="bottom" id="saL-R1-koD"/>

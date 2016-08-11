@@ -35,6 +35,7 @@
 #import "SpotlightLaunchHandler.h"
 #import "EventLaunchRouter.h"
 #import "SpeakerLaunchRouter.h"
+#import "LectureLaunchRouter.h"
 
 #import <RamblerAppDelegateProxy/RamblerAppDelegateProxy.h>
 
@@ -77,7 +78,8 @@
                                               parameters:^(TyphoonMethod *initializer) {
                                                   [initializer injectParameterWith:@[
                                                                                      [self eventLaunchHandler],
-                                                                                     [self speakerLaunchHandler]
+                                                                                     [self speakerLaunchHandler],
+                                                                                     [self lectureLaunchHandler]
                                                                                      ]];
                                               }];
                           }];
@@ -101,6 +103,17 @@
                                               parameters:^(TyphoonMethod *initializer) {
                                                   [initializer injectParameterWith:[self.spotlightIndexerAssembly speakerObjectTransformer]];
                                                   [initializer injectParameterWith:[self speakerLaunchRouter]];
+                                              }];
+                          }];
+}
+
+- (SpotlightLaunchHandler *)lectureLaunchHandler {
+    return [TyphoonDefinition withClass:[SpotlightLaunchHandler class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition useInitializer:@selector(initWithObjectTransformer:dataCardLaunchRouter:)
+                                              parameters:^(TyphoonMethod *initializer) {
+                                                  [initializer injectParameterWith:[self.spotlightIndexerAssembly lectureObjectTransformer]];
+                                                  [initializer injectParameterWith:[self lectureLaunchRouter]];
                                               }];
                           }];
 }
@@ -158,6 +171,18 @@
                           }];
 }
 
+- (LectureLaunchRouter *)lectureLaunchRouter {
+    return [TyphoonDefinition withClass:[LectureLaunchRouter class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition useInitializer:@selector(initWithTabBarControllerFactory:window:storyboard:)
+                                              parameters:^(TyphoonMethod *initializer) {
+                                                  [initializer injectParameterWith:[self tabBarControllerFactory]];
+                                                  [initializer injectParameterWith:[self mainWindow]];
+                                                  [initializer injectParameterWith:[self lectureStoryboard]];
+                                              }];
+                          }];
+}
+
 - (TabBarControllerFactoryImplementation *)tabBarControllerFactory {
     return [TyphoonDefinition withClass:[TabBarControllerFactoryImplementation class]
                           configuration:^(TyphoonDefinition *definition) {
@@ -198,6 +223,18 @@
                               [definition useInitializer:@selector(storyboardWithName:factory:bundle:)
                                               parameters:^(TyphoonMethod *initializer) {
                                                   [initializer injectParameterWith:@"SpeakerInfo"];
+                                                  [initializer injectParameterWith:self];
+                                                  [initializer injectParameterWith:[NSBundle mainBundle]];
+                                              }];
+                          }];
+}
+
+- (UIStoryboard *)lectureStoryboard {
+    return [TyphoonDefinition withClass:[TyphoonStoryboard class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition useInitializer:@selector(storyboardWithName:factory:bundle:)
+                                              parameters:^(TyphoonMethod *initializer) {
+                                                  [initializer injectParameterWith:@"Lecture"];
                                                   [initializer injectParameterWith:self];
                                                   [initializer injectParameterWith:[NSBundle mainBundle]];
                                               }];

@@ -18,18 +18,18 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "SpeakerLaunchRouter.h"
+#import "LectureLaunchRouter.h"
 
-#import "SpeakerModelObject.h"
+#import "LectureModelObject.h"
 #import "TabBarControllerFactory.h"
-#import "SpeakerInfoModuleInput.h"
+#import "LectureModuleInput.h"
 
 #import <UIKit/UIKit.h>
 #import <ViperMcFlurry/ViperMcFlurry.h>
 
-static NSString *const kSpeakerControllerIdentifier = @"SpeakerInfoViewController";
+static NSString *const kLectureControllerIdentifier = @"LectureViewController";
 
-@interface SpeakerLaunchRouter ()
+@interface LectureLaunchRouter ()
 
 @property (nonatomic, strong) id<TabBarControllerFactory> tabBarControllerFactory;
 @property (nonatomic, strong) UIWindow *window;
@@ -37,7 +37,7 @@ static NSString *const kSpeakerControllerIdentifier = @"SpeakerInfoViewControlle
 
 @end
 
-@implementation SpeakerLaunchRouter
+@implementation LectureLaunchRouter
 
 #pragma mark - Initialization
 
@@ -55,7 +55,7 @@ static NSString *const kSpeakerControllerIdentifier = @"SpeakerInfoViewControlle
 
 #pragma mark - <DataCardLaunchRouter>
 
-- (void)openDataCardScreenWithData:(SpeakerModelObject *)data {
+- (void)openDataCardScreenWithData:(LectureModelObject *)data {
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
     
     if (!tabBarController) {
@@ -63,10 +63,10 @@ static NSString *const kSpeakerControllerIdentifier = @"SpeakerInfoViewControlle
     }
     
     RamblerViperModuleFactory *factory = [[RamblerViperModuleFactory alloc] initWithStoryboard:self.storyboard
-                                                                              andRestorationId:kSpeakerControllerIdentifier];
+                                                                              andRestorationId:kLectureControllerIdentifier];
     
-    ModuleTransitionBlock transitionBlock = [self speakerTransitionBlock];
-    RamblerViperModuleLinkBlock configurationBlock = [self speakerConfigurationBlockWithSpeakerId:data.speakerId];
+    ModuleTransitionBlock transitionBlock = [self lectureTransitionBlock];
+    RamblerViperModuleLinkBlock configurationBlock = [self lectureConfigurationBlockWithLectureId:data.lectureId];
     
     UINavigationController *navigationController = [tabBarController selectedViewController];
     [[navigationController.topViewController openModuleUsingFactory:factory
@@ -81,7 +81,7 @@ static NSString *const kSpeakerControllerIdentifier = @"SpeakerInfoViewControlle
 
 #pragma mark - Private methods
 
-- (ModuleTransitionBlock)speakerTransitionBlock {
+- (ModuleTransitionBlock)lectureTransitionBlock {
     return ^(id<RamblerViperModuleTransitionHandlerProtocol> sourceModuleTransitionHandler, id<RamblerViperModuleTransitionHandlerProtocol> destinationModuleTransitionHandler) {
         UIViewController *destinationViewController = (id)destinationModuleTransitionHandler;
         UINavigationController *navigationController = [(id)sourceModuleTransitionHandler navigationController];
@@ -90,9 +90,9 @@ static NSString *const kSpeakerControllerIdentifier = @"SpeakerInfoViewControlle
     };
 }
 
-- (RamblerViperModuleLinkBlock)speakerConfigurationBlockWithSpeakerId:(NSString *)speakerId {
-    return ^id<RamblerViperModuleOutput>(id<SpeakerInfoModuleInput> moduleInput) {
-        [moduleInput configureCurrentModuleWithSpeakerId:speakerId];
+- (RamblerViperModuleLinkBlock)lectureConfigurationBlockWithLectureId:(NSString *)lectureId {
+    return ^id<RamblerViperModuleOutput>(id<LectureModuleInput> moduleInput) {
+        [moduleInput configureCurrentModuleWithLectureObjectId:lectureId];
         return nil;
     };
 }
