@@ -22,19 +22,19 @@
 #import <OCMock/OCMock.h>
 #import <UIKit/UIKit.h>
 
-#import "CleanStartRouter.h"
+#import "CleanLaunchRouter.h"
 
 #import "TabBarControllerFactory.h"
 
-@interface CleanStartRouterTests : XCTestCase
+@interface CleanLaunchRouterTests : XCTestCase
 
-@property (nonatomic, strong) CleanStartRouter *router;
+@property (nonatomic, strong) CleanLaunchRouter *router;
 @property (nonatomic, strong) id mockTabBarControllerFactory;
 @property (nonatomic, strong) id mockWindow;
 
 @end
 
-@implementation CleanStartRouterTests
+@implementation CleanLaunchRouterTests
 
 - (void)setUp {
     [super setUp];
@@ -42,7 +42,7 @@
     self.mockTabBarControllerFactory = OCMProtocolMock(@protocol(TabBarControllerFactory));
     self.mockWindow = OCMClassMock([UIWindow class]);
     
-    self.router = [[CleanStartRouter alloc] initWithTabBarControllerFactory:self.mockTabBarControllerFactory
+    self.router = [[CleanLaunchRouter alloc] initWithTabBarControllerFactory:self.mockTabBarControllerFactory
                                                                      window:self.mockWindow];;
 }
 

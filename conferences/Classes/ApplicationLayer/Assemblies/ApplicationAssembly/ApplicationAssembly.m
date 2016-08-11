@@ -28,8 +28,8 @@
 #import "ThirdPartiesConfigurator.h"
 #import "ThirdPartiesConfiguratorImplementation.h"
 #import "SpotlightIndexerAssembly.h"
-#import "CleanStartRouter.h"
-#import "CleanStartAppDelegate.h"
+#import "CleanLaunchRouter.h"
+#import "CleanLaunchAppDelegate.h"
 #import "SpotlightAppDelegate.h"
 #import "TabBarControllerFactoryImplementation.h"
 #import "SpotlightLaunchHandler.h"
@@ -55,8 +55,8 @@
                           }];
 }
 
-- (CleanStartAppDelegate *)cleanStartAppDelegate {
-    return [TyphoonDefinition withClass:[CleanStartAppDelegate class]
+- (CleanLaunchAppDelegate *)cleanStartAppDelegate {
+    return [TyphoonDefinition withClass:[CleanLaunchAppDelegate class]
                           configuration:^(TyphoonDefinition *definition) {
                               [definition injectProperty:@selector(applicationConfigurator)
                                                     with:[self applicationConfigurator]];
@@ -136,8 +136,8 @@
 
 #pragma mark - StartUpSystem
 
-- (CleanStartRouter *)cleanStartRouter {
-    return [TyphoonDefinition withClass:[CleanStartRouter class]
+- (CleanLaunchRouter *)cleanStartRouter {
+    return [TyphoonDefinition withClass:[CleanLaunchRouter class]
                           configuration:^(TyphoonDefinition *definition) {
                               [definition useInitializer:@selector(initWithTabBarControllerFactory:window:)
                                               parameters:^(TyphoonMethod *initializer) {

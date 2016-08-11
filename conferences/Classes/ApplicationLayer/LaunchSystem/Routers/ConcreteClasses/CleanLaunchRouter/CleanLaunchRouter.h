@@ -16,25 +16,26 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "CleanStartAppDelegate.h"
+#import <Foundation/Foundation.h>
 
-#import "ApplicationConfigurator.h"
-#import "ThirdPartiesConfigurator.h"
-#import "IndexerMonitor.h"
-#import "SpotlightCoreDataStackCoordinator.h"
-#import "CleanStartRouter.h"
+@class UIWindow;
+@protocol TabBarControllerFactory;
 
-@implementation CleanStartAppDelegate
+/**
+ @author Egor Tolstoy
+ 
+ Router for clean application start
+ */
+@interface CleanLaunchRouter : NSObject
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [self.thirdPartiesConfigurator configurate];
-    [self.applicationConfigurator setupCoreDataStack];
-    [self.spotlightCoreDataStackCoordinator setupCoreDataStack];
-    [self.indexerMonitor startMonitoring];
-    
-    [self.cleanStartRouter openInitialScreen];
-    
-    return YES;
-}
+- (instancetype)initWithTabBarControllerFactory:(id<TabBarControllerFactory>)tabBarControllerFactory
+                                         window:(UIWindow *)window;
+
+/**
+ @author Egor Tolstoy
+ 
+ Methods opens initial application screen
+ */
+- (void)openInitialScreen;
 
 @end

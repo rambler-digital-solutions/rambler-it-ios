@@ -16,20 +16,20 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "CleanStartRouter.h"
+#import "CleanLaunchRouter.h"
 
 #import "TabBarControllerFactory.h"
 
 #import <UIKit/UIKit.h>
 
-@interface CleanStartRouter ()
+@interface CleanLaunchRouter ()
 
 @property (nonatomic, strong) id<TabBarControllerFactory> tabBarControllerFactory;
 @property (nonatomic, strong) UIWindow *window;
 
 @end
 
-@implementation CleanStartRouter
+@implementation CleanLaunchRouter
 
 #pragma mark - Initialization
 

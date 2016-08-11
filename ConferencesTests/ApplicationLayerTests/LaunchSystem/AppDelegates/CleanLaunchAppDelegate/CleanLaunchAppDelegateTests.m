@@ -19,17 +19,17 @@
 #import <XCTest/XCTest.h>
 #import <OCMock/OCMock.h>
 
-#import "CleanStartAppDelegate.h"
+#import "CleanLaunchAppDelegate.h"
 
 #import "ApplicationConfigurator.h"
 #import "ThirdPartiesConfigurator.h"
 #import "IndexerMonitor.h"
 #import "SpotlightCoreDataStackCoordinator.h"
-#import "CleanStartRouter.h"
+#import "CleanLaunchRouter.h"
 
-@interface CleanStartAppDelegateTests : XCTestCase
+@interface CleanLaunchAppDelegateTests : XCTestCase
 
-@property (nonatomic, strong) CleanStartAppDelegate *appDelegate;
+@property (nonatomic, strong) CleanLaunchAppDelegate *appDelegate;
 @property (nonatomic, strong) id mockApplicationConfigurator;
 @property (nonatomic, strong) id mockThirdPartiesConfigurator;
 @property (nonatomic, strong) id mockIndexerMonitor;
@@ -38,18 +38,18 @@
 
 @end
 
-@implementation CleanStartAppDelegateTests
+@implementation CleanLaunchAppDelegateTests
 
 - (void)setUp {
     [super setUp];
     
-    self.appDelegate = [CleanStartAppDelegate new];
+    self.appDelegate = [CleanLaunchAppDelegate new];
     
     self.mockApplicationConfigurator = OCMProtocolMock(@protocol(ApplicationConfigurator));
     self.mockThirdPartiesConfigurator = OCMProtocolMock(@protocol(ThirdPartiesConfigurator));
     self.mockIndexerMonitor = OCMClassMock([IndexerMonitor class]);
     self.mockSpotlightCoreDataStackCoordinator = OCMProtocolMock(@protocol(SpotlightCoreDataStackCoordinator));
-    self.mockCleanStartRouter = OCMClassMock([CleanStartRouter class]);
+    self.mockCleanStartRouter = OCMClassMock([CleanLaunchRouter class]);
     
     self.appDelegate.applicationConfigurator = self.mockApplicationConfigurator;
     self.appDelegate.thirdPartiesConfigurator = self.mockThirdPartiesConfigurator;

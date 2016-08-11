@@ -22,19 +22,19 @@
 @protocol ThirdPartiesConfigurator;
 @protocol SpotlightCoreDataStackCoordinator;
 @class IndexerMonitor;
-@class CleanStartRouter;
+@class CleanLaunchRouter;
 
 /**
  @author Egor Tolstoy
  
  This AppDelegate is responsible for clean application start
  */
-@interface CleanStartAppDelegate : NSObject <UIApplicationDelegate>
+@interface CleanLaunchAppDelegate : NSObject <UIApplicationDelegate>
 
 @property (strong, nonatomic) id <ApplicationConfigurator> applicationConfigurator;
 @property (strong, nonatomic) id <ThirdPartiesConfigurator> thirdPartiesConfigurator;
 @property (strong, nonatomic) IndexerMonitor *indexerMonitor;
-@property (strong, nonatomic) CleanStartRouter *cleanStartRouter;
+@property (strong, nonatomic) CleanLaunchRouter *cleanStartRouter;
 @property (strong, nonatomic) id<SpotlightCoreDataStackCoordinator> spotlightCoreDataStackCoordinator;
 
 @end
