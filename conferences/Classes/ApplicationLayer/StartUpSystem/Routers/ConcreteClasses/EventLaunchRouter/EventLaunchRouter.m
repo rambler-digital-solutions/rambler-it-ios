@@ -62,7 +62,8 @@ static NSString *const kEventControllerIdentifier = @"EventViewController";
         tabBarController = [self.tabBarControllerFactory obtainPreconfiguredTabBarController];
     }
     
-    RamblerViperModuleFactory *factory = [[RamblerViperModuleFactory alloc] initWithStoryboard:self.storyboard andRestorationId:kEventControllerIdentifier];
+    RamblerViperModuleFactory *factory = [[RamblerViperModuleFactory alloc] initWithStoryboard:self.storyboard
+                                                                              andRestorationId:kEventControllerIdentifier];
     
     ModuleTransitionBlock transitionBlock = [self eventTransitionBlock];
     RamblerViperModuleLinkBlock configurationBlock = [self eventConfigurationBlockWithEventId:data.eventId];

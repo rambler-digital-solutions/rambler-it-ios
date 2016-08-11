@@ -482,6 +482,7 @@
 		9FFEAF051D2E41B4006E9649 /* DirectionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFEAF031D2E41B4006E9649 /* DirectionCollectionViewCell.m */; };
 		9FFEAF061D2E41B4006E9649 /* DirectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FFEAF041D2E41B4006E9649 /* DirectionCollectionViewCell.xib */; };
 		9FFEAF0C1D2E5CE0006E9649 /* AppleMapsLinkBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFEAF0B1D2E5CE0006E9649 /* AppleMapsLinkBuilder.m */; };
+		9FFF3E301D5CAAE10061BCBD /* EventLaunchRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFF3E2F1D5CAAE10061BCBD /* EventLaunchRouterTests.m */; };
 		F826C56E7FA67515D33573A9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A4F504A716A8833A7A01A5D /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -1428,6 +1429,7 @@
 		9FFEAF091D2E5CD3006E9649 /* MapLinkBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapLinkBuilder.h; path = MapLinkBuilder/MapLinkBuilder.h; sourceTree = "<group>"; };
 		9FFEAF0A1D2E5CE0006E9649 /* AppleMapsLinkBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppleMapsLinkBuilder.h; path = MapLinkBuilder/AppleMapsLinkBuilder.h; sourceTree = "<group>"; };
 		9FFEAF0B1D2E5CE0006E9649 /* AppleMapsLinkBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppleMapsLinkBuilder.m; path = MapLinkBuilder/AppleMapsLinkBuilder.m; sourceTree = "<group>"; };
+		9FFF3E2F1D5CAAE10061BCBD /* EventLaunchRouterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventLaunchRouterTests.m; path = ApplicationLayerTests/StartUpSystem/Routers/ConcreteClasses/EventLaunchRouter/EventLaunchRouterTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -6338,6 +6340,7 @@
 		9F78D7991D5A3B4A009DDCEA /* ConcreteClasses */ = {
 			isa = PBXGroup;
 			children = (
+				9FFF3E2E1D5CAAD30061BCBD /* EventLaunchRouter */,
 				9F78D79A1D5A3B50009DDCEA /* CleanStartRouter */,
 			);
 			name = ConcreteClasses;
@@ -6814,6 +6817,14 @@
 				9FFEAF0B1D2E5CE0006E9649 /* AppleMapsLinkBuilder.m */,
 			);
 			name = MapLinkBuilder;
+			sourceTree = "<group>";
+		};
+		9FFF3E2E1D5CAAD30061BCBD /* EventLaunchRouter */ = {
+			isa = PBXGroup;
+			children = (
+				9FFF3E2F1D5CAAE10061BCBD /* EventLaunchRouterTests.m */,
+			);
+			name = EventLaunchRouter;
 			sourceTree = "<group>";
 		};
 		D1799435EABEFA40D1849E2A /* Frameworks */ = {
@@ -7450,6 +7461,7 @@
 				9F06C1061D5B711300FE6888 /* TyphoonAppDelegateTests.m in Sources */,
 				63F613E51CB111070002AEF0 /* LecturePresenterTests.m in Sources */,
 				9F0A85261BC185AA006F79FB /* ResponseDeserializationOperationTests.m in Sources */,
+				9FFF3E301D5CAAE10061BCBD /* EventLaunchRouterTests.m in Sources */,
 				9FF750081D26C8EB000D208D /* EventListOperationFactoryTests.m in Sources */,
 				662166521D4F4507000A1D11 /* ReportsSearchViewControllerTests.m in Sources */,
 				63F403001BCF85EE0086D030 /* RequestConfiguratorsAssemblyTests.m in Sources */,
@@ -7633,7 +7645,7 @@
 					"\"${PODS_ROOT}/Headers/Public/UICollectionViewLeftAlignedLayout\"",
 					"\"${PODS_ROOT}/Headers/Public/UIViewController+Routing\"",
 					"\"${PODS_ROOT}/Headers/Public/ViperMcFlurry/IntermoduleDataTransfer\"",
-					"\"${PODS_ROOT}/Headers/Public/ViperMcFlurry\"",
+					"\"${PODS_ROOT}/Headers/Public/ViperMcFlurry\"/**",
 					"\"${PODS_ROOT}/Headers/Public/libextobjc\"",
 				);
 				INFOPLIST_FILE = "conferences/Supporting Files/Info.plist";
@@ -7773,7 +7785,7 @@
 					"\"${PODS_ROOT}/Headers/Public/UICollectionViewLeftAlignedLayout\"",
 					"\"${PODS_ROOT}/Headers/Public/UIViewController+Routing\"",
 					"\"${PODS_ROOT}/Headers/Public/ViperMcFlurry/IntermoduleDataTransfer\"",
-					"\"${PODS_ROOT}/Headers/Public/ViperMcFlurry\"",
+					"\"${PODS_ROOT}/Headers/Public/ViperMcFlurry\"/**",
 					"\"${PODS_ROOT}/Headers/Public/libextobjc\"",
 				);
 				INFOPLIST_FILE = "Conferences/Supporting Files/Info.plist";
@@ -7818,7 +7830,7 @@
 					"\"${PODS_ROOT}/Headers/Public/UICollectionViewLeftAlignedLayout\"",
 					"\"${PODS_ROOT}/Headers/Public/UIViewController+Routing\"",
 					"\"${PODS_ROOT}/Headers/Public/ViperMcFlurry/IntermoduleDataTransfer\"",
-					"\"${PODS_ROOT}/Headers/Public/ViperMcFlurry\"",
+					"\"${PODS_ROOT}/Headers/Public/ViperMcFlurry\"/**",
 					"\"${PODS_ROOT}/Headers/Public/libextobjc\"",
 				);
 				INFOPLIST_FILE = "Conferences/Supporting Files/Info.plist";
