@@ -29,8 +29,6 @@
 #import "CompoundOperationBase.h"
 #import "NSManagedObjectID+LJStringConversion.h"
 
-static NSString *const kEventListName = @"kEventListName";
-
 @implementation EventListServiceImplementation
 
 - (void)updateEventListWithСompletionBlock:(EventListUpdateCompletionBlock)completionBlock

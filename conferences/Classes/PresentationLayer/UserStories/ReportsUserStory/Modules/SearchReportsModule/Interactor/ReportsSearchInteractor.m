@@ -46,7 +46,7 @@
     NSString *selectorName = [EventModelObjectAttributes name];
     predicate = [NSPredicate predicateWithFormat:@"name CONTAINS[c] %@", text];
     
-    id managedObjectEvents = [self.eventService obtainEventWithPredicate:predicate];
+    id managedObjectEvents = [self.eventService obtainEventsWithPredicate:predicate];
     NSArray *events = [self.ponsomizer convertObject:managedObjectEvents];
     [foundObjects addObjectsFromArray:events];
     

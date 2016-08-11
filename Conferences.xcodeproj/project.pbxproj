@@ -372,7 +372,6 @@
 		9F8E5F9D1BC2777100DC10DB /* Conferences.Parse.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F8E5F9C1BC2777100DC10DB /* Conferences.Parse.plist */; };
 		9F8E5FA61BC27CCE00DC10DB /* MappingConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5FA51BC27CCE00DC10DB /* MappingConstants.m */; };
 		9F8E5FA91BC27D0D00DC10DB /* ServiceNameConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5FA81BC27D0D00DC10DB /* ServiceNameConstants.m */; };
-		9FC1F6761D2824000070D9B5 /* EventListServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */; };
 		9FC1F6801D2838FA0070D9B5 /* EventListQueryTransformerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */; };
 		9FC1F6841D28391E0070D9B5 /* EventListQueryTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6831D28391E0070D9B5 /* EventListQueryTransformer.m */; };
 		9FD740381CDC98010071BD71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FD740371CDC98010071BD71 /* LaunchScreen.storyboard */; };
@@ -381,7 +380,6 @@
 		9FF37E181D32397900471B4E /* RamblerLocationPresenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF37E171D32397900471B4E /* RamblerLocationPresenterTests.m */; };
 		9FF37E1B1D323B0200471B4E /* RamblerLocationRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF37E1A1D323B0200471B4E /* RamblerLocationRouterTests.m */; };
 		9FF74FFA1D26C448000D208D /* EventListQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF74FF91D26C448000D208D /* EventListQuery.m */; };
-		9FF74FFF1D26C62A000D208D /* EventListServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF74FFE1D26C62A000D208D /* EventListServiceImplementation.m */; };
 		9FF750031D26C74B000D208D /* EventListOperationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF750021D26C74B000D208D /* EventListOperationFactory.m */; };
 		9FF750071D26C8EB000D208D /* EventListOperationFactoryTests.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9FF750051D26C8EB000D208D /* EventListOperationFactoryTests.bundle */; };
 		9FF750081D26C8EB000D208D /* EventListOperationFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF750061D26C8EB000D208D /* EventListOperationFactoryTests.m */; };
@@ -1132,7 +1130,6 @@
 		9F8E5FA81BC27D0D00DC10DB /* ServiceNameConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServiceNameConstants.m; path = Constants/ServiceNameConstants.m; sourceTree = "<group>"; };
 		9F8E5FAA1BC27D1D00DC10DB /* NetworkingConstantsHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NetworkingConstantsHeader.h; path = Constants/NetworkingConstantsHeader.h; sourceTree = "<group>"; };
 		9F8E5FAB1BC27E7F00DC10DB /* HTTPMethodConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTTPMethodConstants.h; path = Constants/HTTPMethodConstants.h; sourceTree = "<group>"; };
-		9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListServiceTests.m; path = EventListServiceTests/EventListServiceTests.m; sourceTree = "<group>"; };
 		9FC1F6781D2826D10070D9B5 /* QueryTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QueryTransformer.h; path = CoreComponents/QueryTransformers/QueryTransformer.h; sourceTree = "<group>"; };
 		9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListQueryTransformerTests.m; path = CoreLayer/CoreComponents/QueryTransformers/EventListQueryTransformer/EventListQueryTransformerTests.m; sourceTree = "<group>"; };
 		9FC1F6821D28391E0070D9B5 /* EventListQueryTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListQueryTransformer.h; sourceTree = "<group>"; };
@@ -1144,9 +1141,6 @@
 		9FF37E1A1D323B0200471B4E /* RamblerLocationRouterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RamblerLocationRouterTests.m; path = RamblerLocationModuleTests/RamblerLocationRouterTests.m; sourceTree = "<group>"; };
 		9FF74FF81D26C448000D208D /* EventListQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventListQuery.h; path = ObjectQueries/EventListQUery/EventListQuery.h; sourceTree = "<group>"; };
 		9FF74FF91D26C448000D208D /* EventListQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListQuery.m; path = ObjectQueries/EventListQUery/EventListQuery.m; sourceTree = "<group>"; };
-		9FF74FFC1D26C61F000D208D /* EventListService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventListService.h; path = EventListService/EventListService.h; sourceTree = "<group>"; };
-		9FF74FFD1D26C62A000D208D /* EventListServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventListServiceImplementation.h; path = EventListService/EventListServiceImplementation.h; sourceTree = "<group>"; };
-		9FF74FFE1D26C62A000D208D /* EventListServiceImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListServiceImplementation.m; path = EventListService/EventListServiceImplementation.m; sourceTree = "<group>"; };
 		9FF750011D26C74B000D208D /* EventListOperationFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventListOperationFactory.h; path = OperationFactories/EventListOperationFactory/EventListOperationFactory.h; sourceTree = "<group>"; };
 		9FF750021D26C74B000D208D /* EventListOperationFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListOperationFactory.m; path = OperationFactories/EventListOperationFactory/EventListOperationFactory.m; sourceTree = "<group>"; };
 		9FF750051D26C8EB000D208D /* EventListOperationFactoryTests.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = EventListOperationFactoryTests.bundle; sourceTree = "<group>"; };
@@ -1906,7 +1900,6 @@
 			children = (
 				2B01CEBC1D50A54000DA8E66 /* MetaEventServiceTests */,
 				9F4077861D2BF82D00D47EF6 /* RamblerLocationServiceTests */,
-				9FC1F6741D2823E40070D9B5 /* EventListServiceTests */,
 				631CBA391C0092C900E3EBA8 /* EventServiceTests */,
 				631CBA361C0092C100E3EBA8 /* ApplicationConfiguratorTests */,
 			);
@@ -2132,7 +2125,6 @@
 			children = (
 				2B429A781D509857004C005F /* MetaEventService */,
 				9F40777B1D2BF4C400D47EF6 /* RamblerLocationService */,
-				9FF74FFB1D26C60E000D208D /* EventListService */,
 				63D7460B1C8B0CF600E3A381 /* EventStoreService */,
 				63EF15BC1BC4617000480CAF /* PushNotificationSrvice */,
 				6373A3E01BBDBDF700DF67FF /* EventService */,
@@ -5157,14 +5149,6 @@
 			name = Constants;
 			sourceTree = "<group>";
 		};
-		9FC1F6741D2823E40070D9B5 /* EventListServiceTests */ = {
-			isa = PBXGroup;
-			children = (
-				9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */,
-			);
-			name = EventListServiceTests;
-			sourceTree = "<group>";
-		};
 		9FC1F6771D2826B70070D9B5 /* QueryTransformers */ = {
 			isa = PBXGroup;
 			children = (
@@ -5249,16 +5233,6 @@
 				9FF74FF91D26C448000D208D /* EventListQuery.m */,
 			);
 			name = EventListQuery;
-			sourceTree = "<group>";
-		};
-		9FF74FFB1D26C60E000D208D /* EventListService */ = {
-			isa = PBXGroup;
-			children = (
-				9FF74FFC1D26C61F000D208D /* EventListService.h */,
-				9FF74FFD1D26C62A000D208D /* EventListServiceImplementation.h */,
-				9FF74FFE1D26C62A000D208D /* EventListServiceImplementation.m */,
-			);
-			name = EventListService;
 			sourceTree = "<group>";
 		};
 		9FF750001D26C734000D208D /* EventListOperationFactory */ = {
@@ -5831,7 +5805,6 @@
 				667050561D46369100DD9D6E /* ReportsSearchCellObjectsDirectorImplementation.m in Sources */,
 				9F0A6C1D1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m in Sources */,
 				9F0A85001BC1698B006F79FB /* ResponseDeserializationOperation.m in Sources */,
-				9FF74FFF1D26C62A000D208D /* EventListServiceImplementation.m in Sources */,
 				2B20647D1D3F9CE900246C8D /* _SpeakerModelObject.m in Sources */,
 				9F0A853B1BC1908B006F79FB /* OperationChainer.m in Sources */,
 				63ECC4161CA81E5300439A01 /* ErrorConstants.m in Sources */,
@@ -5902,7 +5875,6 @@
 				63F613ED1CB111070002AEF0 /* SpeakerInfoInteractorTests.m in Sources */,
 				631CBA741C020CCD00E3EBA8 /* EventModuleAssemblyTests.m in Sources */,
 				63D86BDD1C143FCE00986536 /* DateFormatterTests.m in Sources */,
-				9FC1F6761D2824000070D9B5 /* EventListServiceTests.m in Sources */,
 				63F8F2F61BF9FE7D000017F3 /* RCFRESTRequestConfiguratorTests.m in Sources */,
 				666C5C3F1D4F344B002D73D5 /* ReportsSearchPresenter.m in Sources */,
 				63F613DC1CB111070002AEF0 /* CurrentEventCellObjectBuilderTests.m in Sources */,

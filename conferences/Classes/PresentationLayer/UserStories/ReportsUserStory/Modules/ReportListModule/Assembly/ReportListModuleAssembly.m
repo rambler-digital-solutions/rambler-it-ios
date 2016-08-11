@@ -48,8 +48,6 @@
                                                       with:[self.serviceComponents eventService]];
                                 [definition injectProperty:@selector(ponsomizer)
                                                       with:[self.ponsomizerAssembly ponsomizer]];
-                                [definition injectProperty:@selector(eventListService)
-                                                      with:[self.serviceComponents eventListService]];
                                 [definition injectProperty:@selector(eventTypeDeterminator)
                                                       with:[self.presentationLayerHelpersAssembly eventTypeDeterminator]];
              }];

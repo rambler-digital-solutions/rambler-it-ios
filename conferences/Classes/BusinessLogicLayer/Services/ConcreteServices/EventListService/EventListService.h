@@ -31,21 +31,4 @@ typedef void (^EventListUpdateCompletionBlock)(NSError *error);
  */
 @protocol EventListService <NSObject>
 
-/**
- @author Egor Tolstoy
- 
- Method is used to update a list of Event objects by sending request to server
- 
- @param completionBlock Block called upon completion the method, and returns NSError if there is any
- */
-- (void)updateEventListWithСompletionBlock:(EventListUpdateCompletionBlock)completionBlock;
-
-/**
- @author Konstantin Zinovyev
- 
- Method is used to configure EventList object
-
- */
-- (void)setupPredefinedEventListIfNeeded;
-
 @end

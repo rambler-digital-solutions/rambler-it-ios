@@ -45,8 +45,8 @@
 - (id <ApplicationConfigurator>)applicationConfigurator {
     return [TyphoonDefinition withClass:[ApplicationConfiguratorImplementation class]
                           configuration:^(TyphoonDefinition *definition) {
-                              [definition injectProperty:@selector(eventListService)
-                                                    with:[self.serviceComponents eventListService]];
+                              [definition injectProperty:@selector(eventService)
+                                                    with:[self.serviceComponents eventService]];
                           }];
 }
 

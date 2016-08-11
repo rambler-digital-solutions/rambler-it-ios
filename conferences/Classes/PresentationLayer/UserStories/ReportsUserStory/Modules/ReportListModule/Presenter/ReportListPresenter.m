@@ -43,7 +43,8 @@
 
 #pragma mark - EventListInteractorOutput
 
-- (void)didUpdateEventList:(NSArray *)events {
+- (void)didUpdatedEvents {
+    NSArray *events = [self.interactor obtainEventList];
     [self.view updateViewWithEventList:events];
 }
 

@@ -9,6 +9,8 @@
 #import <XCTest/XCTest.h>
 #import <MagicalRecord/MagicalRecord.h>
 #import <OCMock/OCMock.h>
+#import "XCTestCase+RCFHelpers.h"
+#import "TestConstants.h"
 
 #import "EventServiceImplementation.h"
 #import "EventListOperationFactory.h"
@@ -19,7 +21,8 @@
 @interface EventServiceTests : XCTestCase
 
 @property (strong, nonatomic) EventServiceImplementation *eventService;
-
+@property (nonatomic, strong) EventListOperationFactory *mockEventOperationFactory;
+@property (nonatomic, strong) id <OperationScheduler> mockOperationScheduler;
 @end
 
 @implementation EventServiceTests
@@ -31,32 +34,39 @@
     [MagicalRecord setupCoreDataStackWithInMemoryStore];
     
     self.eventService = [EventServiceImplementation new];
+    self.mockEventOperationFactory = OCMClassMock([EventListOperationFactory class]);
+    self.mockOperationScheduler = OCMProtocolMock(@protocol(OperationScheduler));
+    self.eventService.operationScheduler = self.mockOperationScheduler;
+    self.eventService.eventOperationFactory = self.mockEventOperationFactory;
 }
 
 - (void)tearDown {
     [MagicalRecord cleanUp];
     
     self.eventService = nil;
-
+    self.mockEventOperationFactory = nil;
+    self.mockOperationScheduler = nil;
+    
     [super tearDown];
 }
 
 - (void)testSuccessUpdateEventWithPredicate {
     // given
+    XCTestExpectation *expectation = [self expectationForCurrentTest];
     CompoundOperationBase *compoundOperation = [CompoundOperationBase new];
     
-    EventListOperationFactory *mockEventOperationFactory = OCMClassMock([EventListOperationFactory class]);
-    OCMStub([mockEventOperationFactory getEventsOperationWithQuery:nil modelObjectId:OCMOCK_ANY]).andReturn(compoundOperation);
-    id <OperationScheduler> mockOperationScheduler = OCMProtocolMock(@protocol(OperationScheduler));
-    
-    self.eventService.eventOperationFactory = mockEventOperationFactory;
-    self.eventService.operationScheduler = mockOperationScheduler;
+    OCMStub([self.mockEventOperationFactory getEventsOperationWithQuery:nil modelObjectId:OCMOCK_ANY]).andReturn(compoundOperation);
     
     // when
-    [self.eventService updateEventWithPredicate:OCMOCK_ANY completionBlock:nil];
+    [self.eventService updateEventListWithCompletionBlock:^(NSError *error) {
+        [expectation fulfill];
+    }];
     
     // then
-    OCMVerify([mockOperationScheduler addOperation:compoundOperation]);
+    [self waitForExpectationsWithTimeout:1
+                                 handler:^(NSError * _Nullable error) {
+                                     OCMVerify([self.mockOperationScheduler addOperation:OCMOCK_ANY]);
+                                 }];
 }
 
 @end

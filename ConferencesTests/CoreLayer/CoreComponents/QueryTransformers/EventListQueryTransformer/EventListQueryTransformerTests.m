@@ -11,6 +11,8 @@
 #import "EventListQueryTransformer.h"
 #import "EventListQuery.h"
 
+static NSString *const kLastModifiedFilterFormat = @"filter[modified_since]";
+
 @interface EventListQueryTransformerTests : XCTestCase
 
 @property (nonatomic, strong) EventListQueryTransformer *transformer;
@@ -50,11 +52,11 @@
     query.lastModifiedString = kTestLastModified;
     
     // when
-    NSArray *result = [self.transformer deriveUrlParametersFromQuery:query];
+    NSDictionary *result = [self.transformer deriveUrlParametersFromQuery:query];
     
     // then
-    NSString *parameter = [result firstObject];
-    XCTAssertTrue([parameter rangeOfString:kTestLastModified].location != NSNotFound);
+    NSString *obtainedLastModified = [result objectForKey:kLastModifiedFilterFormat];
+    XCTAssertEqualObjects(obtainedLastModified, kTestLastModified);
 }
 
 @end

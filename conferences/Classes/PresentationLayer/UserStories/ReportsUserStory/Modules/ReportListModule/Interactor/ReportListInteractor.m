@@ -21,7 +21,6 @@
 #import "ReportListInteractor.h"
 #import "ReportListInteractorOutput.h"
 #import "EventService.h"
-#import "EventListService.h"
 #import "EventModelObject.h"
 #import "EventPlainObject.h"
 #import "EventType.h"
@@ -40,17 +39,15 @@
 - (void)updateEventList {
     @weakify(self)
     
-    [self.eventListService updateEventListWithСompletionBlock:^(NSError *error) {
+    [self.eventService updateEventListWithCompletionBlock:^(NSError *error) {
             @strongify(self);
-            NSArray *eventsManagedObjects = [self.eventService obtainEventWithPredicate:nil];
-            NSArray *events  = [self getPlainEventsFromManagedObjects:eventsManagedObjects];
-            [self.output didUpdateEventList:events];
+            [self.output didUpdatedEvents];
     }];
 }
 
 - (NSArray *)obtainEventList {
     
-    id managedObjectEvents = [self.eventService obtainEventWithPredicate:nil];
+    id managedObjectEvents = [self.eventService obtainEventsWithPredicate:nil];
     
     NSArray *events = [self getPlainEventsFromManagedObjects:managedObjectEvents];
     
@@ -58,7 +55,7 @@
 }
 
 - (NSArray *)obtainEventListWithPredicate:(NSPredicate *)predicate {
-    id managedObjectEvents = [self.eventService obtainEventWithPredicate:predicate];
+    id managedObjectEvents = [self.eventService obtainEventsWithPredicate:predicate];
     NSArray *events = [self getPlainEventsFromManagedObjects:managedObjectEvents];
     
     return events;

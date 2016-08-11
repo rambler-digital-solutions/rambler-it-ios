@@ -70,13 +70,13 @@ typedef void (^ProxyBlock)(NSInvocation *);
     ProxyBlock proxyBlock = ^(NSInvocation *invocation){
         void(^completionBlock)(id data, NSError *error);
         
-        [invocation getArgument:&completionBlock atIndex:3];
+        [invocation getArgument:&completionBlock atIndex:2];
         
         completionBlock(data, nil);
     };
     
-    OCMStub([self.mockEventService updateEventWithPredicate:OCMOCK_ANY completionBlock:OCMOCK_ANY]).andDo(proxyBlock);
-    OCMStub([self.mockEventService obtainEventWithPredicate:nil]).andReturn(data);
+    OCMStub([self.mockEventService updateEventListWithCompletionBlock:OCMOCK_ANY]).andDo(proxyBlock);
+    OCMStub([self.mockEventService obtainEventsWithPredicate:nil]).andReturn(data);
     OCMStub([self.mockPonsomizer convertObject:data]).andReturn(eventsPlainObjects);
    
     // when
@@ -92,7 +92,7 @@ typedef void (^ProxyBlock)(NSInvocation *);
     NSArray *eventsManagedObjects = @[event];
     NSArray *eventsPlainObjects = @[@1];
     
-    OCMStub([self.mockEventService obtainEventWithPredicate:nil]).andReturn(eventsManagedObjects);
+    OCMStub([self.mockEventService obtainEventsWithPredicate:nil]).andReturn(eventsManagedObjects);
     OCMStub([self.mockPonsomizer convertObject:eventsManagedObjects]).andReturn(eventsPlainObjects);
     
     // when

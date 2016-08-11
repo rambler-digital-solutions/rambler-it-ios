@@ -29,7 +29,7 @@
  
  @param events Managed Objects
  */
-- (void)didUpdateEventList:(NSArray *)events;
+- (void)didUpdatedEvents;
 
 @end
 

@@ -31,6 +31,7 @@ static NSString * const kRCFCoreDataStoreName = @"Conference";
 }
 
 - (void)configureInitialSettings {
-    [self.eventListService setupPredefinedEventListIfNeeded];
+    [self.eventService setupPredefinedEventListIfNeeded];
 }
+
 @end

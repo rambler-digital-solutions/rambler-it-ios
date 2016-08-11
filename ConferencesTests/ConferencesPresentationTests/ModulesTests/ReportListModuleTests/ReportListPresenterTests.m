@@ -96,10 +96,13 @@
 - (void)testCorrectDidUpdateEventList {
     // given
     NSArray *events = @[];
+    OCMStub([self.mockInteractor obtainEventList]).andReturn(events);
+    
     // when
-    [self.presenter didUpdateEventList:events];
+    [self.presenter didUpdatedEvents];
     
     // then
+    OCMVerify([self.mockInteractor obtainEventList]);
     OCMVerify([self.mockView updateViewWithEventList:events]);
 }
 
