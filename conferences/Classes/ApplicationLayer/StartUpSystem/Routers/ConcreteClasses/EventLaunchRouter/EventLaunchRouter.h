@@ -22,11 +22,19 @@
 
 #import "DataCardLaunchRouter.h"
 
+@protocol TabBarControllerFactory;
+@class UIWindow;
+@class UIStoryboard;
+
 /**
  @author Egor Tolstoy
  
  Launch router responsible for opening Event Card screen
  */
 @interface EventLaunchRouter : NSObject <DataCardLaunchRouter>
+
+- (instancetype)initWithTabBarControllerFactory:(id<TabBarControllerFactory>)tabBarControllerFactory
+                                         window:(UIWindow *)window
+                                     storyboard:(UIStoryboard *)storyboard;
 
 @end

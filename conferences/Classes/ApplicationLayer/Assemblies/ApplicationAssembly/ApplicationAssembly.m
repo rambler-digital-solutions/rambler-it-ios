@@ -32,6 +32,8 @@
 #import "CleanStartAppDelegate.h"
 #import "SpotlightAppDelegate.h"
 #import "TabBarControllerFactoryImplementation.h"
+#import "SpotlightLaunchHandler.h"
+#import "EventLaunchRouter.h"
 
 #import <RamblerAppDelegateProxy/RamblerAppDelegateProxy.h>
 
@@ -68,7 +70,26 @@
 }
 
 - (SpotlightAppDelegate *)spotlightAppDelegate {
-    return [TyphoonDefinition withClass:[SpotlightAppDelegate class]];
+    return [TyphoonDefinition withClass:[SpotlightAppDelegate class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition useInitializer:@selector(initWithLaunchHandlers:)
+                                              parameters:^(TyphoonMethod *initializer) {
+                                                  [initializer injectParameterWith:@[
+                                                                                     [self eventLaunchHandler]
+                                                                                     ]];
+                                              }];
+                          }];
+}
+
+- (SpotlightLaunchHandler *)eventLaunchHandler {
+    return [TyphoonDefinition withClass:[SpotlightLaunchHandler class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition useInitializer:@selector(initWithObjectTransformer:dataCardLaunchRouter:)
+                                              parameters:^(TyphoonMethod *initializer) {
+                                                  [initializer injectParameterWith:[self.spotlightIndexerAssembly eventObjectTransformer]];
+                                                  [initializer injectParameterWith:[self eventLaunchRouter]];
+                                              }];
+                          }];
 }
 
 - (id <ApplicationConfigurator>)applicationConfigurator {
@@ -100,6 +121,18 @@
                           }];
 }
 
+- (EventLaunchRouter *)eventLaunchRouter {
+    return [TyphoonDefinition withClass:[EventLaunchRouter class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition useInitializer:@selector(initWithTabBarControllerFactory:window:storyboard:)
+                                              parameters:^(TyphoonMethod *initializer) {
+                                                  [initializer injectParameterWith:[self tabBarControllerFactory]];
+                                                  [initializer injectParameterWith:[self mainWindow]];
+                                                  [initializer injectParameterWith:[self eventStoryboard]];
+                                              }];
+                          }];
+}
+
 - (TabBarControllerFactoryImplementation *)tabBarControllerFactory {
     return [TyphoonDefinition withClass:[TabBarControllerFactoryImplementation class]
                           configuration:^(TyphoonDefinition *definition) {
@@ -111,11 +144,24 @@
 }
 
 - (UIStoryboard *)mainStoryboard {
-    return [TyphoonDefinition withClass:[UIStoryboard class]
+    return [TyphoonDefinition withClass:[TyphoonStoryboard class]
                           configuration:^(TyphoonDefinition *definition) {
-                              [definition useInitializer:@selector(storyboardWithName:bundle:)
+                              [definition useInitializer:@selector(storyboardWithName:factory:bundle:)
                                               parameters:^(TyphoonMethod *initializer) {
                                                   [initializer injectParameterWith:@"Main"];
+                                                  [initializer injectParameterWith:self];
+                                                  [initializer injectParameterWith:[NSBundle mainBundle]];
+                                              }];
+                          }];
+}
+
+- (UIStoryboard *)eventStoryboard {
+    return [TyphoonDefinition withClass:[TyphoonStoryboard class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition useInitializer:@selector(storyboardWithName:factory:bundle:)
+                                              parameters:^(TyphoonMethod *initializer) {
+                                                  [initializer injectParameterWith:@"Event"];
+                                                  [initializer injectParameterWith:self];
                                                   [initializer injectParameterWith:[NSBundle mainBundle]];
                                               }];
                           }];

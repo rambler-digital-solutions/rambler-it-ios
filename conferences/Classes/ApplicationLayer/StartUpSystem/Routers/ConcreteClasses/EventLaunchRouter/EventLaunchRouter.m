@@ -21,13 +21,79 @@
 #import "EventLaunchRouter.h"
 
 #import "EventModelObject.h"
+#import "TabBarControllerFactory.h"
+#import "EventModuleInput.h"
+
+#import <UIKit/UIKit.h>
+#import <ViperMcFlurry/ViperMcFlurry.h>
+
+static NSString *const kEventControllerIdentifier = @"EventViewController";
+
+@interface EventLaunchRouter ()
+
+@property (nonatomic, strong) id<TabBarControllerFactory> tabBarControllerFactory;
+@property (nonatomic, strong) UIWindow *window;
+@property (nonatomic, strong) UIStoryboard *storyboard;
+
+@end
 
 @implementation EventLaunchRouter
+
+#pragma mark - Initialization
+
+- (instancetype)initWithTabBarControllerFactory:(id<TabBarControllerFactory>)tabBarControllerFactory
+                                         window:(UIWindow *)window
+                                     storyboard:(UIStoryboard *)storyboard {
+    self = [super init];
+    if (self) {
+        _tabBarControllerFactory = tabBarControllerFactory;
+        _window = window;
+        _storyboard = storyboard;
+    }
+    return self;
+}
 
 #pragma mark - <DataCardLaunchRouter>
 
 - (void)openDataCardScreenWithData:(EventModelObject *)data {
+    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
     
+    if (!tabBarController) {
+        tabBarController = [self.tabBarControllerFactory obtainPreconfiguredTabBarController];
+    }
+    
+    RamblerViperModuleFactory *factory = [[RamblerViperModuleFactory alloc] initWithStoryboard:self.storyboard andRestorationId:kEventControllerIdentifier];
+    
+    ModuleTransitionBlock transitionBlock = [self eventTransitionBlock];
+    RamblerViperModuleLinkBlock configurationBlock = [self eventConfigurationBlockWithEventId:data.eventId];
+    
+    UINavigationController *navigationController = [tabBarController selectedViewController];
+    [[navigationController.topViewController openModuleUsingFactory:factory
+                                               withTransitionBlock:transitionBlock]
+     thenChainUsingBlock:configurationBlock];
+    
+    if (!self.window.rootViewController) {
+        self.window.rootViewController = tabBarController;
+        [self.window makeKeyAndVisible];
+    }
+}
+
+#pragma mark - Private methods
+
+- (ModuleTransitionBlock)eventTransitionBlock {
+    return ^(id<RamblerViperModuleTransitionHandlerProtocol> sourceModuleTransitionHandler, id<RamblerViperModuleTransitionHandlerProtocol> destinationModuleTransitionHandler) {
+        UIViewController *destinationViewController = (id)destinationModuleTransitionHandler;
+        UINavigationController *navigationController = [(id)sourceModuleTransitionHandler navigationController];
+        [navigationController pushViewController:destinationViewController
+                                        animated:NO];
+    };
+}
+
+- (RamblerViperModuleLinkBlock)eventConfigurationBlockWithEventId:(NSString *)eventId {
+    return ^id<RamblerViperModuleOutput>(id<EventModuleInput> moduleInput) {
+        [moduleInput configureCurrentModuleWithEventObjectId:eventId];
+        return nil;
+    };
 }
 
 @end

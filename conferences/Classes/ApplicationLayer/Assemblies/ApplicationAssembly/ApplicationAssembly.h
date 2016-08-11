@@ -31,7 +31,7 @@
  */
 @interface ApplicationAssembly : TyphoonAssembly <RamblerInitialAssembly>
 
-@property (strong, nonatomic, readonly) TyphoonAssembly<ServiceComponents>* serviceComponents;
-@property (strong, nonatomic, readonly) SpotlightIndexerAssembly* spotlightIndexerAssembly;
+@property (strong, nonatomic, readonly) TyphoonAssembly<ServiceComponents> *serviceComponents;
+@property (strong, nonatomic, readonly) SpotlightIndexerAssembly *spotlightIndexerAssembly;
 
 @end
