@@ -329,20 +329,6 @@
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>
-		<key>01EBF9692820736C6C4C360F97A6B9F6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>83B228B9DF3C544426D9F0F620EBCA73</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
 		<key>01F5D2CD4E24AEF2610563DA45497F5E</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -659,21 +645,6 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>030A52B20287EE6317D2E94D1DE59BE3</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>RamblerViperModuleFactory.h</string>
-			<key>path</key>
-			<string>Code/IntermoduleDataTransfer/RamblerViperModuleFactory.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>0316200F454D5455F2AB15831D330CBC</key>
 		<dict>
 			<key>fileRef</key>
@@ -979,6 +950,20 @@
 			<string>Source/Factory/Internal/TyphoonCallStack.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
+		</dict>
+		<key>04FE9ED62980A1D472BD3103DD2C8CF6</key>
+		<dict>
+			<key>fileRef</key>
+			<string>BB75B90B38DA83467D4B4B4A600B34ED</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
 		</dict>
 		<key>050E461923F1C5D77847AE866A7BD724</key>
 		<dict>
@@ -1650,7 +1635,7 @@
 			<array>
 				<string>50681C1C8966EB13E7A8B42AF7A32E58</string>
 				<string>FFAA69A430143E2E1441A30C28744D87</string>
-				<string>505040601BA744AAFB3B42EBB0D02FEF</string>
+				<string>43695E2B28AFE643BC799985AD07A6D2</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
@@ -1733,6 +1718,21 @@
 				<key>COMPILER_FLAGS</key>
 				<string>-w -Xanalyzer -analyzer-disable-all-checks</string>
 			</dict>
+		</dict>
+		<key>0AE9B92A06E10D753410023FA78B10EF</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>RamblerViperModuleOutput.h</string>
+			<key>path</key>
+			<string>Code/IntermoduleDataTransfer/RamblerViperModuleOutput.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>0B0C9718D6698AC283DF979A815495FD</key>
 		<dict>
@@ -2178,6 +2178,21 @@
 				</array>
 			</dict>
 		</dict>
+		<key>0DD83D2A6235466264BCBF7D813F0C39</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>RamblerViperOpenModulePromise.h</string>
+			<key>path</key>
+			<string>Code/IntermoduleDataTransfer/RamblerViperOpenModulePromise.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>0DFB66B20EFA4990DBE3458F75938217</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -2280,7 +2295,7 @@
 			<key>children</key>
 			<array>
 				<string>21B72ECA1E7A23B8C18096AC25339E6C</string>
-				<string>7A5F95A1986E1D3D7616816D77369104</string>
+				<string>D9F8F72488E4D60A735B870718BC28C5</string>
 				<string>F7E8D4FF30DF3C185ED0E6D1118C397E</string>
 			</array>
 			<key>isa</key>
@@ -3461,21 +3476,6 @@
 					<string>Public</string>
 				</array>
 			</dict>
-		</dict>
-		<key>1508A6B24F9B173D445B5EC6266F51DB</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>UIViewController+RamblerViperModuleTransitionHandlerProtocol.h</string>
-			<key>path</key>
-			<string>Code/IntermoduleDataTransfer/UIViewController+RamblerViperModuleTransitionHandlerProtocol.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>15092201F5EF351333602534789A7497</key>
 		<dict>
@@ -5890,20 +5890,6 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>273AB550701C4E2A9ADB2EA9E2A25E5E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3E7C4E19054CDFBAD711D77FB4183D37</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
 		<key>279A93958E1098084058C2F304DD6E23</key>
 		<dict>
 			<key>fileRef</key>
@@ -6441,20 +6427,6 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>2C0EA59F53A1397A83FFFF83F152C231</key>
-		<dict>
-			<key>fileRef</key>
-			<string>030A52B20287EE6317D2E94D1DE59BE3</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
 		<key>2C2791F342156BAFB63D9658919A7F82</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -6845,21 +6817,6 @@
 				<string>-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks</string>
 			</dict>
 		</dict>
-		<key>2EB5435B26F106062B81DF7057EFDDCB</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>RamblerViperModuleFactory.m</string>
-			<key>path</key>
-			<string>Code/IntermoduleDataTransfer/RamblerViperModuleFactory.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>2ECDF1BDC1577F6331199F320A82D439</key>
 		<dict>
 			<key>fileRef</key>
@@ -7019,21 +6976,6 @@
 			<string>PFErrorUtilities.h</string>
 			<key>path</key>
 			<string>Parse/Internal/PFErrorUtilities.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>2FFD5DE843EA700DA6C057F166999DC9</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>RamblerViperModuleTransitionHandlerProtocol.h</string>
-			<key>path</key>
-			<string>Code/IntermoduleDataTransfer/RamblerViperModuleTransitionHandlerProtocol.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -8260,21 +8202,6 @@
 				</array>
 			</dict>
 		</dict>
-		<key>36F474CC2359BE85836D51E0BF360773</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>RamblerViperOpenModulePromise.h</string>
-			<key>path</key>
-			<string>Code/IntermoduleDataTransfer/RamblerViperOpenModulePromise.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>3705EB7C3B35204BB8BBBD60CA4B333B</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -8430,6 +8357,21 @@
 			<string>MagicalRecord+Setup.h</string>
 			<key>path</key>
 			<string>MagicalRecord/Core/MagicalRecord+Setup.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>384997B03503D5BDE010547A711E6F94</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>RamblerViperModuleInput.h</string>
+			<key>path</key>
+			<string>Code/IntermoduleDataTransfer/RamblerViperModuleInput.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -9259,21 +9201,6 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>3E7C4E19054CDFBAD711D77FB4183D37</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>IntermoduleDataTransfer.h</string>
-			<key>path</key>
-			<string>Code/IntermoduleDataTransfer.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>3E7EF53B27CDFDFFAED77103FA20F716</key>
 		<dict>
 			<key>fileRef</key>
@@ -9982,6 +9909,27 @@
 			<string>EasyMapping/EKCoreDataImporter.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
+		</dict>
+		<key>43695E2B28AFE643BC799985AD07A6D2</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>DF72189E15B23B0B744C39B0438EAEFE</string>
+				<string>68E59E72204CC4118B7180CBCDE1F3E8</string>
+				<string>48CB9E46E69563494DAC42DA5619C271</string>
+				<string>D775EA849973C32CCB53F5EBBFED73D5</string>
+				<string>ADADAD11775A9CEFD7F38435AF026172</string>
+				<string>E608C0D9BC457C803FF57F7DF2E56742</string>
+				<string>F061FC2FC2C3625B8333EA6E88378B79</string>
+				<string>04FE9ED62980A1D472BD3103DD2C8CF6</string>
+				<string>6D84A60ED4DFB4F1836FAA7DE1FADE23</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
 		</dict>
 		<key>4372C1DE461671BADA248C05205EAC2C</key>
 		<dict>
@@ -10713,6 +10661,20 @@
 				<string>-w -Xanalyzer -analyzer-disable-all-checks</string>
 			</dict>
 		</dict>
+		<key>48CB9E46E69563494DAC42DA5619C271</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9AAD2E56182D325E1AF83E9365B1C86F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
 		<key>49125163B1CE847FDC029AC8B4F8A3B0</key>
 		<dict>
 			<key>fileRef</key>
@@ -10921,20 +10883,6 @@
 			<string>extobjc/NSInvocation+EXT.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
-		</dict>
-		<key>4A9ADCA88E86C41A06FF243A1BF93089</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C29E83F7D8A5C5213EE855EBEB00B89B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
 		</dict>
 		<key>4AB8881B357A9365A65A0A900BFA30A0</key>
 		<dict>
@@ -11984,27 +11932,6 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>505040601BA744AAFB3B42EBB0D02FEF</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>273AB550701C4E2A9ADB2EA9E2A25E5E</string>
-				<string>2C0EA59F53A1397A83FFFF83F152C231</string>
-				<string>864E485289A91884AE16966F73D90434</string>
-				<string>599B2223380F63C2FA44E197E4065687</string>
-				<string>01EBF9692820736C6C4C360F97A6B9F6</string>
-				<string>6AB67BF9A4620EE357C33D79112848E0</string>
-				<string>A3AEF2EC51A42600925F5F034D82D0C1</string>
-				<string>7BDB993829AC8E7A62E8ED4B5DECDCD9</string>
-				<string>4A9ADCA88E86C41A06FF243A1BF93089</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
 		<key>50575EBF2C57EE0AAFCBA5CF856E12A2</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -12842,6 +12769,21 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>54DFCDBF90AFD2C7D6A0F134093062DD</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>RamblerViperModuleTransitionHandlerProtocol.h</string>
+			<key>path</key>
+			<string>Code/IntermoduleDataTransfer/RamblerViperModuleTransitionHandlerProtocol.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>54E95A762FAA8ABE1C41217A26E54855</key>
 		<dict>
 			<key>fileRef</key>
@@ -13666,20 +13608,6 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>599B2223380F63C2FA44E197E4065687</key>
-		<dict>
-			<key>fileRef</key>
-			<string>77E2918C236902CB565D0571A0758667</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
 		<key>59AF509F4718C269921340475059593E</key>
 		<dict>
 			<key>fileRef</key>
@@ -13825,7 +13753,7 @@
 		<key>5AAE530B8AD40BFAE9DFB303295B757F</key>
 		<dict>
 			<key>fileRef</key>
-			<string>F49315BDAB57A328C5CB63DC92C13AF3</string>
+			<string>A0F0CB1380B5DB3C984D2110176C5868</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -15515,6 +15443,21 @@
 				<string>-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks</string>
 			</dict>
 		</dict>
+		<key>64E6778DCEBB928DE1AACEA4EBB3E37C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>RamblerViperModuleFactory.h</string>
+			<key>path</key>
+			<string>Code/IntermoduleDataTransfer/RamblerViperModuleFactory.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>6540ABE5A89D1619C037690D5D87561B</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -16072,6 +16015,20 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>68E59E72204CC4118B7180CBCDE1F3E8</key>
+		<dict>
+			<key>fileRef</key>
+			<string>64E6778DCEBB928DE1AACEA4EBB3E37C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
 		<key>68EC9CB187C03F820C768136E21E06C5</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -16359,20 +16316,6 @@
 			<string>PBXFrameworksBuildPhase</string>
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
-		</dict>
-		<key>6AB67BF9A4620EE357C33D79112848E0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>2FFD5DE843EA700DA6C057F166999DC9</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
 		</dict>
 		<key>6ABA739B422142063D7F1E750F3ADB7C</key>
 		<dict>
@@ -17008,6 +16951,20 @@
 			<string>Parse/Internal/Commands/CommandRunner/URLSession/Session/PFURLSession.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6D84A60ED4DFB4F1836FAA7DE1FADE23</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C29E83F7D8A5C5213EE855EBEB00B89B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
 		</dict>
 		<key>6DB8E406CEC929CC39747321650CA66E</key>
 		<dict>
@@ -18584,21 +18541,6 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>77E2918C236902CB565D0571A0758667</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>RamblerViperModuleInput.h</string>
-			<key>path</key>
-			<string>Code/IntermoduleDataTransfer/RamblerViperModuleInput.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>77FBB7A1AAADC29E3D6F298FB315E4EA</key>
 		<dict>
 			<key>children</key>
@@ -19023,29 +18965,6 @@
 				</array>
 			</dict>
 		</dict>
-		<key>7A5F95A1986E1D3D7616816D77369104</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>3E7C4E19054CDFBAD711D77FB4183D37</string>
-				<string>030A52B20287EE6317D2E94D1DE59BE3</string>
-				<string>2EB5435B26F106062B81DF7057EFDDCB</string>
-				<string>8A78E714B78ECE78F1069F962B559403</string>
-				<string>77E2918C236902CB565D0571A0758667</string>
-				<string>83B228B9DF3C544426D9F0F620EBCA73</string>
-				<string>2FFD5DE843EA700DA6C057F166999DC9</string>
-				<string>36F474CC2359BE85836D51E0BF360773</string>
-				<string>F49315BDAB57A328C5CB63DC92C13AF3</string>
-				<string>1508A6B24F9B173D445B5EC6266F51DB</string>
-				<string>9EC33D87029DF022CC766EB04DE393EF</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>IntermoduleDataTransfer</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>7A74B4BCCE603E47F45AFE03124A6F8D</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -19259,20 +19178,6 @@
 		<dict>
 			<key>fileRef</key>
 			<string>0E274807DAB0B8C8F1C3CF6EA51530A7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>7BDB993829AC8E7A62E8ED4B5DECDCD9</key>
-		<dict>
-			<key>fileRef</key>
-			<string>1508A6B24F9B173D445B5EC6266F51DB</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -20378,21 +20283,6 @@
 				<string>-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks</string>
 			</dict>
 		</dict>
-		<key>83B228B9DF3C544426D9F0F620EBCA73</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>RamblerViperModuleOutput.h</string>
-			<key>path</key>
-			<string>Code/IntermoduleDataTransfer/RamblerViperModuleOutput.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>83B41514F5076F47860E874235D46435</key>
 		<dict>
 			<key>buildConfigurationList</key>
@@ -20719,20 +20609,6 @@
 			<dict>
 				<key>COMPILER_FLAGS</key>
 				<string>-w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
-		</dict>
-		<key>864E485289A91884AE16966F73D90434</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8A78E714B78ECE78F1069F962B559403</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
 			</dict>
 		</dict>
 		<key>8669C04FC09183616C374B93CA4DA71B</key>
@@ -21591,21 +21467,6 @@
 				<key>COMPILER_FLAGS</key>
 				<string>-w -Xanalyzer -analyzer-disable-all-checks</string>
 			</dict>
-		</dict>
-		<key>8A78E714B78ECE78F1069F962B559403</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>RamblerViperModuleFa&#1089;toryProtocol.h</string>
-			<key>path</key>
-			<string>Code/IntermoduleDataTransfer/RamblerViperModuleFa&#1089;toryProtocol.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>8A8D6DA5A7308577754E7761D5F66EFD</key>
 		<dict>
@@ -24017,6 +23878,21 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>9AAD2E56182D325E1AF83E9365B1C86F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>RamblerViperModuleFactoryProtocol.h</string>
+			<key>path</key>
+			<string>Code/IntermoduleDataTransfer/RamblerViperModuleFactoryProtocol.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>9AE39B65769E5207B596619FBE398FD4</key>
 		<dict>
 			<key>children</key>
@@ -24473,21 +24349,6 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>9EC33D87029DF022CC766EB04DE393EF</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>UIViewController+RamblerViperModuleTransitionHandlerProtocol.m</string>
-			<key>path</key>
-			<string>Code/IntermoduleDataTransfer/UIViewController+RamblerViperModuleTransitionHandlerProtocol.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>9EF93E4332EE520466B96E7063B2DEE4</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -24790,6 +24651,21 @@
 				<string>-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks</string>
 			</dict>
 		</dict>
+		<key>A0F0CB1380B5DB3C984D2110176C5868</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>RamblerViperOpenModulePromise.m</string>
+			<key>path</key>
+			<string>Code/IntermoduleDataTransfer/RamblerViperOpenModulePromise.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>A0F92DBD55B8B9FA507B207D7E57D67B</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -24886,6 +24762,21 @@
 			<string>sourcecode.c.h</string>
 			<key>path</key>
 			<string>Typhoon-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A1864CA8AB592E83C4882320B03BDB53</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>UIViewController+RamblerViperModuleTransitionHandlerProtocol.m</string>
+			<key>path</key>
+			<string>Code/IntermoduleDataTransfer/UIViewController+RamblerViperModuleTransitionHandlerProtocol.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -25055,20 +24946,6 @@
 		<dict>
 			<key>fileRef</key>
 			<string>E70C16EE9ABF38A88420B9CD2CB0EAF7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>A3AEF2EC51A42600925F5F034D82D0C1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>36F474CC2359BE85836D51E0BF360773</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -25686,7 +25563,7 @@
 		<key>A7F2B07B980907E0B7B4E46CCF8B5D11</key>
 		<dict>
 			<key>fileRef</key>
-			<string>9EC33D87029DF022CC766EB04DE393EF</string>
+			<string>A1864CA8AB592E83C4882320B03BDB53</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -25698,7 +25575,7 @@
 		<key>A7FAE0DFF1DF81CB2ABED3C476B945D6</key>
 		<dict>
 			<key>fileRef</key>
-			<string>2EB5435B26F106062B81DF7057EFDDCB</string>
+			<string>B1DAA69AEDB3C491C544817B6142B89C</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -26821,6 +26698,20 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>ADADAD11775A9CEFD7F38435AF026172</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0AE9B92A06E10D753410023FA78B10EF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
 		<key>ADADD9DDF90B9181C74084C21354BA7C</key>
 		<dict>
 			<key>fileRef</key>
@@ -27088,6 +26979,21 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>AF79448AEAF5029E44DE7E10DB82A7E9</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>IntermoduleDataTransfer.h</string>
+			<key>path</key>
+			<string>Code/IntermoduleDataTransfer.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>AF8BE40E9E041262549D1DEE79562AE0</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -27331,6 +27237,21 @@
 				<key>COMPILER_FLAGS</key>
 				<string>-w -Xanalyzer -analyzer-disable-all-checks</string>
 			</dict>
+		</dict>
+		<key>B1DAA69AEDB3C491C544817B6142B89C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>RamblerViperModuleFactory.m</string>
+			<key>path</key>
+			<string>Code/IntermoduleDataTransfer/RamblerViperModuleFactory.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>B1E7D844CA9162A2AAAD4374C58FC953</key>
 		<dict>
@@ -28555,6 +28476,21 @@
 				<key>COMPILER_FLAGS</key>
 				<string>-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks</string>
 			</dict>
+		</dict>
+		<key>BB75B90B38DA83467D4B4B4A600B34ED</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>UIViewController+RamblerViperModuleTransitionHandlerProtocol.h</string>
+			<key>path</key>
+			<string>Code/IntermoduleDataTransfer/UIViewController+RamblerViperModuleTransitionHandlerProtocol.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>BB954EC46350A46BC614EFF740D6A501</key>
 		<dict>
@@ -32721,6 +32657,20 @@
 				</array>
 			</dict>
 		</dict>
+		<key>D775EA849973C32CCB53F5EBBFED73D5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>384997B03503D5BDE010547A711E6F94</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
 		<key>D792EA9160EDDC1C825E6DF7615B96CA</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -33093,6 +33043,29 @@
 			<string>UIWebView+AFNetworking.m</string>
 			<key>path</key>
 			<string>UIKit+AFNetworking/UIWebView+AFNetworking.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D9F8F72488E4D60A735B870718BC28C5</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>AF79448AEAF5029E44DE7E10DB82A7E9</string>
+				<string>64E6778DCEBB928DE1AACEA4EBB3E37C</string>
+				<string>B1DAA69AEDB3C491C544817B6142B89C</string>
+				<string>9AAD2E56182D325E1AF83E9365B1C86F</string>
+				<string>384997B03503D5BDE010547A711E6F94</string>
+				<string>0AE9B92A06E10D753410023FA78B10EF</string>
+				<string>54DFCDBF90AFD2C7D6A0F134093062DD</string>
+				<string>0DD83D2A6235466264BCBF7D813F0C39</string>
+				<string>A0F0CB1380B5DB3C984D2110176C5868</string>
+				<string>BB75B90B38DA83467D4B4B4A600B34ED</string>
+				<string>A1864CA8AB592E83C4882320B03BDB53</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>IntermoduleDataTransfer</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -34086,6 +34059,20 @@
 			<string>Parse/Internal/File/State/PFFileState.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
+		</dict>
+		<key>DF72189E15B23B0B744C39B0438EAEFE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AF79448AEAF5029E44DE7E10DB82A7E9</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
 		</dict>
 		<key>DFC07361D9D74109D3E86C59755DC18A</key>
 		<dict>
@@ -35101,6 +35088,20 @@
 			<string>src/collections/src/NICollectionViewActions.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E608C0D9BC457C803FF57F7DF2E56742</key>
+		<dict>
+			<key>fileRef</key>
+			<string>54DFCDBF90AFD2C7D6A0F134093062DD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
 		</dict>
 		<key>E6183CCE461ECD39DF0C0181CD855F29</key>
 		<dict>
@@ -36520,6 +36521,20 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>F061FC2FC2C3625B8333EA6E88378B79</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0DD83D2A6235466264BCBF7D813F0C39</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
 		<key>F07F19AC049B9DCFFC306BAC799247EF</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -36943,21 +36958,6 @@
 				<key>COMPILER_FLAGS</key>
 				<string>-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks</string>
 			</dict>
-		</dict>
-		<key>F49315BDAB57A328C5CB63DC92C13AF3</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>RamblerViperOpenModulePromise.m</string>
-			<key>path</key>
-			<string>Code/IntermoduleDataTransfer/RamblerViperOpenModulePromise.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>F4DE7C0DEA35F27424C169D0EA0B7A83</key>
 		<dict>
