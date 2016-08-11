@@ -30,13 +30,6 @@ static NSString *const kPlaceholderImageName = @"placeholder";
 
 @interface LectureInfoTableViewCell ()
 
-@property (nonatomic, weak) IBOutlet UIImageView *speakerImageView;
-@property (nonatomic, weak) IBOutlet UILabel *speakerName;
-@property (nonatomic, weak) IBOutlet UILabel *speakerCompanyName;
-@property (nonatomic, weak) IBOutlet UILabel *lectureDescription;
-@property (nonatomic, weak) IBOutlet UILabel *lectureTitle;
-@property (nonatomic, weak) IBOutlet UIView *speakerView;
-
 @property (nonatomic, weak) id <LectureInfoTableViewCellActionProtocol> actionProxy;
 @property (nonatomic, strong) LectureInfoTableViewCellObject *cellObject;
 
@@ -66,6 +59,11 @@ static NSString *const kPlaceholderImageName = @"placeholder";
                              placeholderImage:[UIImage imageNamed:kPlaceholderImageName]];
     [self.tapRecognizer setCancelsTouchesInView:NO];
     
+    if (!object.continueReadingFlag) {
+        self.continueReadingButton.hidden = YES;
+        self.lectureDescriptionTOBottomConstraint.priority = UILayoutPriorityDefaultHigh;
+    }
+    
     return YES;
 }
 
@@ -74,10 +72,6 @@ static NSString *const kPlaceholderImageName = @"placeholder";
 }
 
 #pragma mark - IBActions
-
-- (IBAction)didTapReadMoreButton:(UIButton *)sender {
-    [self.actionProxy didTapReadMoreLectureDescriptionButton];
-}
 
 - (void)didTapSpeakerView:(id)sender {
     [self.actionProxy didSpeakerViewWithSpeakerId:self.cellObject.speakerId];

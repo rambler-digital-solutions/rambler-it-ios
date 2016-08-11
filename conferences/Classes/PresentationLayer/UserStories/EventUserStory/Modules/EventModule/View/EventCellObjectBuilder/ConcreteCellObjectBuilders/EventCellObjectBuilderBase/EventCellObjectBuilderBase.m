@@ -45,7 +45,7 @@
     }
     
     for (LecturePlainObject *lecture in event.lectures) {
-        LectureInfoTableViewCellObject *lectureCellobject = [LectureInfoTableViewCellObject objectWithLecture:lecture];
+        LectureInfoTableViewCellObject *lectureCellobject = [LectureInfoTableViewCellObject objectWithLecture:lecture continueReadingFlag:YES];
         [cellObjects addObject:lectureCellobject];
     }
     

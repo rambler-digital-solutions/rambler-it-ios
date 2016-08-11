@@ -23,4 +23,13 @@
 
 @interface LectureInfoTableViewCell : CDResponderTableViewCell <NICell>
 
+@property (nonatomic, weak) IBOutlet UIImageView *speakerImageView;
+@property (nonatomic, weak) IBOutlet UILabel *speakerName;
+@property (nonatomic, weak) IBOutlet UILabel *speakerCompanyName;
+@property (nonatomic, weak) IBOutlet UILabel *lectureDescription;
+@property (nonatomic, weak) IBOutlet UILabel *lectureTitle;
+@property (nonatomic, weak) IBOutlet UIView *speakerView;
+@property (nonatomic, weak) IBOutlet UIButton *continueReadingButton;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *lectureDescriptionTOBottomConstraint;
+
 @end

@@ -31,6 +31,7 @@
 @property (strong, nonatomic, readwrite) NSString *lectureTitle;
 @property (strong, nonatomic, readwrite) NSURL *speakerImageUrl;
 @property (strong, nonatomic, readwrite) NSString *lectureId;
+@property (assign, nonatomic, readwrite) BOOL continueReadingFlag;
 
 @end
 
@@ -38,12 +39,15 @@
 
 #pragma mark - Initialization
 
-- (instancetype)initWithLecture:(LecturePlainObject *)lecture {
+- (instancetype)initWithLecture:(LecturePlainObject *)lecture
+            continueReadingFlag:(BOOL)continueReadingFlag {
     self = [super init];
     if (self) {
         _lectureDescription = lecture.lectureDescription;
         _lectureTitle = lecture.name;
         _lectureId = lecture.lectureId;
+        
+        _continueReadingFlag = continueReadingFlag;
         
         // TODO: реализовать отображение нескольких докладчиков у одного доклада
         SpeakerPlainObject *speaker = lecture.speaker;
@@ -55,8 +59,10 @@
     return self;
 }
 
-+ (instancetype)objectWithLecture:(LecturePlainObject *)lecture {
-    return [[self alloc] initWithLecture:lecture];
++ (instancetype)objectWithLecture:(LecturePlainObject *)lecture
+              continueReadingFlag:(BOOL)continueReadingFlag {
+    return [[self alloc] initWithLecture:lecture
+                     continueReadingFlag:continueReadingFlag];
 }
 
 #pragma mark - NICellObject methods

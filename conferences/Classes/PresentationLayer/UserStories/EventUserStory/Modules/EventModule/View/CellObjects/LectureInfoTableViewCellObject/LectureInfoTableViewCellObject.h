@@ -31,7 +31,9 @@
 @property (strong, nonatomic, readonly) NSURL *speakerImageUrl;
 @property (strong, nonatomic, readonly) NSString *lectureId;
 @property (strong, nonatomic, readonly) NSString *speakerId;
+@property (assign, nonatomic, readonly) BOOL continueReadingFlag;
 
-+ (instancetype)objectWithLecture:(LecturePlainObject *)lecture;
++ (instancetype)objectWithLecture:(LecturePlainObject *)lecture
+              continueReadingFlag:(BOOL)continueReadingFlag;
 
 @end

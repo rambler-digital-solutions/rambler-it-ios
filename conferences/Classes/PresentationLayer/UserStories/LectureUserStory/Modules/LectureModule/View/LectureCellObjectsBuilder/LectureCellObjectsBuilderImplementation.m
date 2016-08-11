@@ -25,7 +25,6 @@
 #import "LocalizedStrings.h"
 
 #import "LectureMaterialTitleTableViewCellObject.h"
-#import "LectureDescriptionTableViewCellObject.h"
 #import "LectureInfoTableViewCellObject.h"
 #import "LectureMaterialTitleTableViewCellObject.h"
 #import "LectureMaterialInfoTableViewCellObject.h"
@@ -45,7 +44,7 @@ static NSString *const kTimeVideoText = @"(32:12)";
 - (NSArray *)cellObjectsForLecture:(LecturePlainObject *)lecture {
     NSMutableArray *cellObjects = [NSMutableArray new];
     
-    LectureInfoTableViewCellObject *lectureDescriptionCellObject = [LectureInfoTableViewCellObject objectWithLecture:lecture];
+    LectureInfoTableViewCellObject *lectureDescriptionCellObject = [LectureInfoTableViewCellObject objectWithLecture:lecture continueReadingFlag:NO];
     [cellObjects addObject:lectureDescriptionCellObject];
     
     TagModuleTableViewCellObject *tagCellObject;

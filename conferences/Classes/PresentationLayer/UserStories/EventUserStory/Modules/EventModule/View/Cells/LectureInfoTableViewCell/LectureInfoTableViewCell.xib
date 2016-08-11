@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -78,14 +79,11 @@
                         </constraints>
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kal-6g-N0T">
-                        <rect key="frame" x="20" y="200" width="102" height="37"/>
+                        <rect key="frame" x="20" y="200.5" width="102" height="36.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <state key="normal" title="Читать далее">
                             <color key="titleColor" red="0.0" green="0.66274509803921566" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
-                        <connections>
-                            <action selector="didTapReadMoreButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="nKV-0C-dyN"/>
-                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="JSDoc3 in Depth" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OhN-Uz-0cE">
                         <rect key="frame" x="20" y="68" width="280" height="29"/>
@@ -116,12 +114,15 @@
                     <constraint firstAttribute="trailing" secondItem="vEZ-m4-SAJ" secondAttribute="trailing" id="Wuz-k1-t0w"/>
                     <constraint firstItem="OhN-Uz-0cE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="b8s-T9-HgM"/>
                     <constraint firstAttribute="bottom" secondItem="Kal-6g-N0T" secondAttribute="bottom" id="e0H-tZ-KHN"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Fsu-uk-D5T" secondAttribute="bottom" priority="250" constant="4" id="i51-lO-Zya"/>
                     <constraint firstItem="Kal-6g-N0T" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="oYO-wW-htn"/>
                     <constraint firstItem="Kal-6g-N0T" firstAttribute="top" secondItem="Fsu-uk-D5T" secondAttribute="bottom" id="xuL-z9-gTh"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="continueReadingButton" destination="Kal-6g-N0T" id="GEk-DZ-bMj"/>
                 <outlet property="lectureDescription" destination="Fsu-uk-D5T" id="PGb-IB-XY7"/>
+                <outlet property="lectureDescriptionTOBottomConstraint" destination="i51-lO-Zya" id="hK2-PB-0xM"/>
                 <outlet property="lectureTitle" destination="OhN-Uz-0cE" id="t9V-sc-jur"/>
                 <outlet property="speakerCompanyName" destination="iwS-kB-Yhp" id="vf1-C1-4T8"/>
                 <outlet property="speakerImageView" destination="Yqb-Gn-1kT" id="07o-IB-Fz2"/>
