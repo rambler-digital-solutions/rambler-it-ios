@@ -81,10 +81,10 @@
             </objects>
             <point key="canvasLocation" x="1599" y="238"/>
         </scene>
-        <!--UIViewController-mwt-bL-fmW-->
+        <!--SpeakerInfoViewController-->
         <scene sceneID="WFn-eE-kxy">
             <objects>
-                <viewControllerPlaceholder storyboardName="SpeakerInfo" referencedIdentifier="UIViewController-mwt-bL-fmW" id="Rfx-yA-6Vy" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="SpeakerInfo" referencedIdentifier="SpeakerInfoViewController" id="Rfx-yA-6Vy" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="yRy-Fh-WEs"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tjw-xA-VCI" userLabel="First Responder" sceneMemberID="firstResponder"/>

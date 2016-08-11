@@ -18,19 +18,23 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Typhoon/Typhoon.h>
-#import <RamblerTyphoonUtils/AssemblyCollector.h>
+#import <Foundation/Foundation.h>
 
-@class IndexerMonitor;
-@protocol SpotlightCoreDataStackCoordinator;
-@protocol ObjectTransformer;
+#import "DataCardLaunchRouter.h"
 
-@interface SpotlightIndexerAssembly : TyphoonAssembly <RamblerInitialAssembly>
+@protocol TabBarControllerFactory;
+@class UIWindow;
+@class UIStoryboard;
 
-- (IndexerMonitor *)indexerMonitor;
-- (id<SpotlightCoreDataStackCoordinator>)spotlightCoreDataStackCoordinator;
-- (id<ObjectTransformer>)eventObjectTransformer;
-- (id<ObjectTransformer>)speakerObjectTransformer;
-- (id<ObjectTransformer>)lectureObjectTransformer;
+/**
+ @author Egor Tolstoy
+ 
+ Launch router responsible for opening Speaker Card screen
+ */
+@interface SpeakerLaunchRouter : NSObject <DataCardLaunchRouter>
+
+- (instancetype)initWithTabBarControllerFactory:(id<TabBarControllerFactory>)tabBarControllerFactory
+                                         window:(UIWindow *)window
+                                     storyboard:(UIStoryboard *)storyboard;
 
 @end

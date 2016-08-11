@@ -459,6 +459,8 @@
 		9FAB6A981D54BE990061F333 /* EventChangeProviderFetchRequestFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB6A971D54BE990061F333 /* EventChangeProviderFetchRequestFactoryTests.m */; };
 		9FAB6A9A1D54BFA00061F333 /* FetchedResultsControllerChangeProviderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB6A991D54BFA00061F333 /* FetchedResultsControllerChangeProviderTests.m */; };
 		9FAC55231D5C7C43005A9362 /* SpotlightLaunchHandlerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAC55221D5C7C43005A9362 /* SpotlightLaunchHandlerTests.m */; };
+		9FBE89741D5CAF6200DA0C32 /* SpeakerLaunchRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89731D5CAF6200DA0C32 /* SpeakerLaunchRouter.m */; };
+		9FBE89771D5CB2A800DA0C32 /* SpeakerLaunchRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89761D5CB2A800DA0C32 /* SpeakerLaunchRouterTests.m */; };
 		9FC1F6761D2824000070D9B5 /* EventListServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */; };
 		9FC1F6801D2838FA0070D9B5 /* EventListQueryTransformerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */; };
 		9FC1F6841D28391E0070D9B5 /* EventListQueryTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6831D28391E0070D9B5 /* EventListQueryTransformer.m */; };
@@ -1391,6 +1393,9 @@
 		9FAB6A971D54BE990061F333 /* EventChangeProviderFetchRequestFactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventChangeProviderFetchRequestFactoryTests.m; path = ApplicationLayerTests/SpotlightIndexer/ChangeProviders/BaseClasses/FetchedResultsControllerChangeProvider/ChangeProviderFetchRequestFactories/ConcreteClasses/EventChangeProviderFetchRequestFactory/EventChangeProviderFetchRequestFactoryTests.m; sourceTree = "<group>"; };
 		9FAB6A991D54BFA00061F333 /* FetchedResultsControllerChangeProviderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FetchedResultsControllerChangeProviderTests.m; path = ApplicationLayerTests/SpotlightIndexer/ChangeProviders/BaseClasses/FetchedResultsControllerChangeProvider/FetchedResultsControllerChangeProviderTests.m; sourceTree = "<group>"; };
 		9FAC55221D5C7C43005A9362 /* SpotlightLaunchHandlerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpotlightLaunchHandlerTests.m; path = ApplicationLayerTests/StartUpSystem/LaunchHandler/SpotlightLaunchHandler/SpotlightLaunchHandlerTests.m; sourceTree = "<group>"; };
+		9FBE89721D5CAF6200DA0C32 /* SpeakerLaunchRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeakerLaunchRouter.h; path = StartUpSystem/Routers/ConcreteClasses/SpeakerLaunchRouter/SpeakerLaunchRouter.h; sourceTree = "<group>"; };
+		9FBE89731D5CAF6200DA0C32 /* SpeakerLaunchRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeakerLaunchRouter.m; path = StartUpSystem/Routers/ConcreteClasses/SpeakerLaunchRouter/SpeakerLaunchRouter.m; sourceTree = "<group>"; };
+		9FBE89761D5CB2A800DA0C32 /* SpeakerLaunchRouterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeakerLaunchRouterTests.m; path = ApplicationLayerTests/StartUpSystem/Routers/ConcreteClasses/SpeakerLaunchRouter/SpeakerLaunchRouterTests.m; sourceTree = "<group>"; };
 		9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListServiceTests.m; path = EventListServiceTests/EventListServiceTests.m; sourceTree = "<group>"; };
 		9FC1F6781D2826D10070D9B5 /* QueryTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QueryTransformer.h; path = CoreComponents/QueryTransformers/QueryTransformer.h; sourceTree = "<group>"; };
 		9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListQueryTransformerTests.m; path = CoreLayer/CoreComponents/QueryTransformers/EventListQueryTransformer/EventListQueryTransformerTests.m; sourceTree = "<group>"; };
@@ -6269,6 +6274,7 @@
 		9F78D7871D5A2CA7009DDCEA /* ConcreteClasses */ = {
 			isa = PBXGroup;
 			children = (
+				9FBE89711D5CAF5200DA0C32 /* SpeakerLaunchRouter */,
 				9F06C1191D5BACF800FE6888 /* EventLaunchRouter */,
 				9F78D7951D5A3770009DDCEA /* CleanStartRouter */,
 			);
@@ -6340,6 +6346,7 @@
 		9F78D7991D5A3B4A009DDCEA /* ConcreteClasses */ = {
 			isa = PBXGroup;
 			children = (
+				9FBE89751D5CB29400DA0C32 /* SpeakerLaunchRouter */,
 				9FFF3E2E1D5CAAD30061BCBD /* EventLaunchRouter */,
 				9F78D79A1D5A3B50009DDCEA /* CleanStartRouter */,
 			);
@@ -6572,6 +6579,23 @@
 				9FAC55221D5C7C43005A9362 /* SpotlightLaunchHandlerTests.m */,
 			);
 			name = SpotlightLaunchHandler;
+			sourceTree = "<group>";
+		};
+		9FBE89711D5CAF5200DA0C32 /* SpeakerLaunchRouter */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE89721D5CAF6200DA0C32 /* SpeakerLaunchRouter.h */,
+				9FBE89731D5CAF6200DA0C32 /* SpeakerLaunchRouter.m */,
+			);
+			name = SpeakerLaunchRouter;
+			sourceTree = "<group>";
+		};
+		9FBE89751D5CB29400DA0C32 /* SpeakerLaunchRouter */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE89761D5CB2A800DA0C32 /* SpeakerLaunchRouterTests.m */,
+			);
+			name = SpeakerLaunchRouter;
 			sourceTree = "<group>";
 		};
 		9FC1F6741D2823E40070D9B5 /* EventListServiceTests */ = {
@@ -7312,6 +7336,7 @@
 				667050141D46143900DD9D6E /* ReportsSearchRouter.m in Sources */,
 				631FFE541BEF930200749DB8 /* ReportListInteractor.m in Sources */,
 				9F0A84FB1BC1698B006F79FB /* CompoundOperationBase.m in Sources */,
+				9FBE89741D5CAF6200DA0C32 /* SpeakerLaunchRouter.m in Sources */,
 				631FFE531BEF930200749DB8 /* ReportListModuleAssembly.m in Sources */,
 				9F4077A41D2C15C600D47EF6 /* ResourceClientAssembly.m in Sources */,
 				63F613611CB00A220002AEF0 /* EventPresenter.m in Sources */,
@@ -7424,6 +7449,7 @@
 				63F613E61CB111070002AEF0 /* LectureRouterTests.m in Sources */,
 				662166501D4F4507000A1D11 /* ReportsSearchInteractorTests.m in Sources */,
 				63F613EF1CB111070002AEF0 /* SpeakerInfoViewControllerTests.m in Sources */,
+				9FBE89771D5CB2A800DA0C32 /* SpeakerLaunchRouterTests.m in Sources */,
 				635E18C21CA6A496005B8439 /* LectureModuleAssemblyTests.m in Sources */,
 				9FF37E181D32397900471B4E /* RamblerLocationPresenterTests.m in Sources */,
 				6621664F1D4F4507000A1D11 /* ReportsSearchDataDisplayManagerTests.m in Sources */,
