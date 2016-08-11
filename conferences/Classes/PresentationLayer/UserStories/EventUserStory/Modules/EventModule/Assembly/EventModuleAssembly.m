@@ -36,7 +36,7 @@
 
 @end
 
-@implementation  EventModuleAssembly
+@implementation EventModuleAssembly
 
 - (EventViewController *)viewEvent {
     return [TyphoonDefinition withClass:[EventViewController class]
@@ -55,6 +55,8 @@
                                                       with:[self presenterEvent]];
                                 [definition injectProperty:@selector(eventService)
                                                       with:[self.serviceComponents eventService]];
+                                [definition injectProperty:@selector(metaEventService)
+                                                      with:[self.serviceComponents metaEventService]];
                                 [definition injectProperty:@selector(ponsomizer)
                                                       with:[self.ponsomizerAssembly ponsomizer]];
                                 [definition injectProperty:@selector(eventTypeDeterminator)

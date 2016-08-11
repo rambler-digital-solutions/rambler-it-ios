@@ -51,7 +51,6 @@
 }
 
 - (NSArray *)obtainPastEventsForMetaEvent:(NSString *)metaEventId {
-    
     MetaEventModelObject *metaEvent = [self.metaEventService obtainMetaEventByMetaEventId:metaEventId];
     NSSet *events = [self.ponsomizer convertObject:metaEvent.events];
     for (EventPlainObject *event in events) {
