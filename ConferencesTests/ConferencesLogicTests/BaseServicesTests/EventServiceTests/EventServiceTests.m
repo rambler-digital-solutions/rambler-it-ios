@@ -46,7 +46,6 @@
     self.eventService = nil;
     self.mockEventOperationFactory = nil;
     self.mockOperationScheduler = nil;
-    
     [super tearDown];
 }
 
@@ -55,18 +54,22 @@
     XCTestExpectation *expectation = [self expectationForCurrentTest];
     CompoundOperationBase *compoundOperation = [CompoundOperationBase new];
     
-    OCMStub([self.mockEventOperationFactory getEventsOperationWithQuery:nil modelObjectId:OCMOCK_ANY]).andReturn(compoundOperation);
+    ProxyBlock proxyBlock = ^(NSInvocation *invocation){
+        [expectation fulfill];
+    };
+    
+    OCMStub([self.mockEventOperationFactory getEventsOperationWithQuery:OCMOCK_ANY modelObjectId:OCMOCK_ANY]).andReturn(compoundOperation);
+    OCMStub([self.mockOperationScheduler addOperation:OCMOCK_ANY]).andDo(proxyBlock);
     
     // when
-    [self.eventService updateEventListWithCompletionBlock:^(NSError *error) {
-        [expectation fulfill];
-    }];
+    [self.eventService updateEventListWithCompletionBlock:nil];
     
     // then
-    [self waitForExpectationsWithTimeout:1
+    [self waitForExpectationsWithTimeout:kTestExpectationTimeout
                                  handler:^(NSError * _Nullable error) {
-                                     OCMVerify([self.mockOperationScheduler addOperation:OCMOCK_ANY]);
-                                 }];
+        OCMVerify([self.mockOperationScheduler addOperation:OCMOCK_ANY]);
+    }];
+    
 }
 
 @end
