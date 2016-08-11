@@ -36,8 +36,8 @@
 
 #pragma mark - Initialization
 
-- (instancetype)initWithObjectTransformers:(id<ObjectTransformer>)objectTransformer
-                     dataCardLaunchRouters:(id<DataCardLaunchRouter>)dataCardLaunchRouter {
+- (instancetype)initWithObjectTransformer:(id<ObjectTransformer>)objectTransformer
+                     dataCardLaunchRouter:(id<DataCardLaunchRouter>)dataCardLaunchRouter {
     self = [super init];
     if (self) {
         _objectTransformer = objectTransformer;
@@ -55,7 +55,8 @@
 
 - (void)handleLaunchWithActivity:(NSUserActivity *)activity {
     NSString *identifier = [self identifierFromActivity:activity];
-    [self.dataCardLaunchRouter openDataCardScreenWithDataId:identifier];
+    id object = [self.objectTransformer objectForIdentifier:identifier];
+    [self.dataCardLaunchRouter openDataCardScreenWithData:object];
 }
 
 #pragma mark - Private methods

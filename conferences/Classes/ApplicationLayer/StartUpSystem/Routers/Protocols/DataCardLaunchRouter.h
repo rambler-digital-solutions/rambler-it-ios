@@ -32,8 +32,8 @@
  
  Method initiates opening of data card screen
  
- @param dataId The identifier of data object
+ @param data The data object
  */
-- (void)openDataCardScreenWithDataId:(NSString *)dataId;
+- (void)openDataCardScreenWithData:(id)data;
 
 @end

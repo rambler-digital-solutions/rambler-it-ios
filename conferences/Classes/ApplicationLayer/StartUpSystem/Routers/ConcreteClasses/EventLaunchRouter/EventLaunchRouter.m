@@ -20,11 +20,13 @@
 
 #import "EventLaunchRouter.h"
 
+#import "EventModelObject.h"
+
 @implementation EventLaunchRouter
 
 #pragma mark - <DataCardLaunchRouter>
 
-- (void)openDataCardScreenWithDataId:(NSString *)dataId {
+- (void)openDataCardScreenWithData:(EventModelObject *)data {
     
 }
 

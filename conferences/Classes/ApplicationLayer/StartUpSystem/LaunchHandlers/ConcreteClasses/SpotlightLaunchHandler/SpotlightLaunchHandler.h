@@ -32,7 +32,7 @@
  */
 @interface SpotlightLaunchHandler : NSObject <LaunchHandler>
 
-- (instancetype)initWithObjectTransformers:(id<ObjectTransformer>)objectTransformer
-                     dataCardLaunchRouters:(id<DataCardLaunchRouter>)dataCardLaunchRouter;
+- (instancetype)initWithObjectTransformer:(id<ObjectTransformer>)objectTransformer
+                     dataCardLaunchRouter:(id<DataCardLaunchRouter>)dataCardLaunchRouter;
 
 @end
