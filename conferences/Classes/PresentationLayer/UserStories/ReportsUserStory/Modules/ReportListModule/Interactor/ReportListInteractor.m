@@ -33,16 +33,6 @@
 
 #pragma mark - ReportListInteractorInput
 
-- (void)updateEventList {
-    @weakify(self)
-    [self.eventService updateEventWithPredicate:nil completionBlock:^(id data, NSError *error) {
-        @strongify(self);
-        NSArray *events  = [self getPlainEventsFromManagedObjects:data];
-        
-        [self.output didUpdateEventList:events];
-    }];
-}
-
 - (NSArray *)obtainEventList {
     id managedObjectEvents = [self.eventService obtainEventWithPredicate:nil];
     

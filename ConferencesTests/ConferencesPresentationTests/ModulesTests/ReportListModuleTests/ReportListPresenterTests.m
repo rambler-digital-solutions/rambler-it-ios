@@ -74,7 +74,6 @@
     
     // then
     OCMVerify([self.mockInteractor obtainEventList]);
-    OCMVerify([self.mockInteractor updateEventList]);
     OCMVerify([self.mockView setupViewWithEventList:OCMOCK_ANY]);
 }
 
@@ -92,16 +91,6 @@
 }
 
 #pragma mark - EventListInteractorOutput
-
-- (void)testCorrectDidUpdateEventList {
-    // given
-    NSArray *events = @[];
-    // when
-    [self.presenter didUpdateEventList:events];
-    
-    // then
-    OCMVerify([self.mockView updateViewWithEventList:events]);
-}
 
 - (void)testCorrectDidTapSearchBarCancelButton {
     // given

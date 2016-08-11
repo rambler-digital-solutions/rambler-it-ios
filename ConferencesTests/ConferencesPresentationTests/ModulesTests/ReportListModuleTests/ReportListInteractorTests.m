@@ -32,6 +32,7 @@
 
 #import "XCTestCase+RCFHelpers.h"
 #import "TestConstants.h"
+
 typedef void (^ProxyBlock)(NSInvocation *);
 
 @interface ReportListInteractorTests : XCTestCase
@@ -69,35 +70,6 @@ typedef void (^ProxyBlock)(NSInvocation *);
     self.mockPonsomizer = nil;
 
     [super tearDown];
-}
-
-- (void)testSuccessUpdateEventList {
-    // given
-    NSObject *event = [NSObject new];
-    NSArray *data = @[event];
-    NSArray *eventsPonso = @[@1];
-    XCTestExpectation *expectation = [self expectationForCurrentTest];
-    
-    ProxyBlock proxyBlock = ^(NSInvocation *invocation){
-        void(^completionBlock)(id data, NSError *error);
-        
-        [invocation getArgument:&completionBlock atIndex:3];
-        [expectation fulfill];
-        completionBlock(data, nil);
-    };
-    
-    OCMStub([self.mockEventService updateEventWithPredicate:OCMOCK_ANY completionBlock:OCMOCK_ANY]).andDo(proxyBlock);
-    OCMStub([self.mockPonsomizer convertObject:data]).andReturn(eventsPonso);
-    // when
-    [self.interactor updateEventList];
-    
-    // then
-    [self waitForExpectationsWithTimeout:kTestExpectationTimeout
-                                 handler:^(NSError * _Nullable error) {
-                                     OCMVerify([self.mockOutput didUpdateEventList:OCMOCK_ANY]);
-                                     OCMVerify([self.mockPonsomizer convertObject:data]);
-                                     OCMVerify([self.mockEventTypeDeterminator determinateTypeForEvent:OCMOCK_ANY]);
-                                 }];
 }
 
 - (void)testSuccessObtainEventList {

@@ -31,7 +31,6 @@
 
 - (void)setupView {
     NSArray *events = [self.interactor obtainEventList];
-    [self.interactor updateEventList];
     [self.router configureReportsSearchModuleWithModuleOutput:self];
     [self.view setupViewWithEventList:events];
 }
@@ -41,15 +40,10 @@
     [self.router openEventModuleWithEventObjectId:event.eventId];
 }
 
-#pragma mark - EventListInteractorOutput
-
-- (void)didUpdateEventList:(NSArray *)events {
-    [self.view updateViewWithEventList:events];
-}
-
 - (void)didTapSearchBarCancelButton {
     [self.reportsSearchModule closeSearchModule];
 }
+
 #pragma mark - SearchBar Delegate
 
 - (void)didChangeSearchBarWithSearchTerm:(NSString *)text {
