@@ -72,6 +72,7 @@
 
 - (void)stopMonitoring {
     self.controller.delegate = nil;
+    self.controller = nil;
 }
 
 - (void)processObjectsForInitialIndexingWithBlock:(ChangeProviderInitialIndexingBlock)block {

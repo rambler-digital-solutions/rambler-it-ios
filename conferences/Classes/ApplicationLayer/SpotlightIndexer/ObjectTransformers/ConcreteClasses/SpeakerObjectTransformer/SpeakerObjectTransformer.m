@@ -21,10 +21,9 @@
 #import "SpeakerObjectTransformer.h"
 
 #import "SpeakerModelObject.h"
+#import "ObjectTransformerConstants.h"
 
 #import <MagicalRecord/MagicalRecord.h>
-
-static NSString *const kIdentifierSeparator = @"_";
 
 @implementation SpeakerObjectTransformer
 
@@ -55,10 +54,10 @@ static NSString *const kIdentifierSeparator = @"_";
     BOOL hasSeparator = [identifier rangeOfString:kIdentifierSeparator].location != NSNotFound;
     
     NSUInteger speakerIdLocation = objectType.length + 1; // 1 for _ symbol
-    NSUInteger speakerIdLength = identifier.length - speakerIdLocation;
+    NSInteger speakerIdLength = identifier.length - speakerIdLocation;
     BOOL hasSpeakerId = speakerIdLength > 0;
     
-    return hasCorrectObjectType != NO && hasSeparator != NO && hasSpeakerId != NO;
+    return hasCorrectObjectType && hasSeparator && hasSpeakerId;
 }
 
 @end

@@ -22,6 +22,11 @@
 
 #import "ChangeProviderFetchRequestFactory.h"
 
+/**
+ @author Egor Tolstoy
+ 
+ FetchRequestFactory for LectureModelObject
+ */
 @interface LectureChangeProviderFetchRequestFactory : NSObject <ChangeProviderFetchRequestFactory>
 
 @end

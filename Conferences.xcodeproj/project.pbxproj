@@ -467,6 +467,7 @@
 		9FBE89DF1D5CB81400DA0C32 /* StoryboardAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89DE1D5CB81400DA0C32 /* StoryboardAssembly.m */; };
 		9FBE89E31D5CBB7800DA0C32 /* LaunchSystemAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89E21D5CBB7800DA0C32 /* LaunchSystemAssembly.m */; };
 		9FBE89E71D5CBC5A00DA0C32 /* ApplicationHelperAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89E61D5CBC5A00DA0C32 /* ApplicationHelperAssembly.m */; };
+		9FBE89EB1D5CCF8300DA0C32 /* ObjectTransformerConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89EA1D5CCF8300DA0C32 /* ObjectTransformerConstants.m */; };
 		9FC1F6761D2824000070D9B5 /* EventListServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */; };
 		9FC1F6801D2838FA0070D9B5 /* EventListQueryTransformerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */; };
 		9FC1F6841D28391E0070D9B5 /* EventListQueryTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6831D28391E0070D9B5 /* EventListQueryTransformer.m */; };
@@ -1411,6 +1412,8 @@
 		9FBE89E21D5CBB7800DA0C32 /* LaunchSystemAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LaunchSystemAssembly.m; path = LaunchSystemAssembly/LaunchSystemAssembly.m; sourceTree = "<group>"; };
 		9FBE89E51D5CBC5A00DA0C32 /* ApplicationHelperAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ApplicationHelperAssembly.h; path = ApplicationHelperAssembly/ApplicationHelperAssembly.h; sourceTree = "<group>"; };
 		9FBE89E61D5CBC5A00DA0C32 /* ApplicationHelperAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ApplicationHelperAssembly.m; path = ApplicationHelperAssembly/ApplicationHelperAssembly.m; sourceTree = "<group>"; };
+		9FBE89E91D5CCF8300DA0C32 /* ObjectTransformerConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectTransformerConstants.h; path = SpotlightIndexer/ObjectTransformers/Constants/ObjectTransformerConstants.h; sourceTree = "<group>"; };
+		9FBE89EA1D5CCF8300DA0C32 /* ObjectTransformerConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjectTransformerConstants.m; path = SpotlightIndexer/ObjectTransformers/Constants/ObjectTransformerConstants.m; sourceTree = "<group>"; };
 		9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListServiceTests.m; path = EventListServiceTests/EventListServiceTests.m; sourceTree = "<group>"; };
 		9FC1F6781D2826D10070D9B5 /* QueryTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QueryTransformer.h; path = CoreComponents/QueryTransformers/QueryTransformer.h; sourceTree = "<group>"; };
 		9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListQueryTransformerTests.m; path = CoreLayer/CoreComponents/QueryTransformers/EventListQueryTransformer/EventListQueryTransformerTests.m; sourceTree = "<group>"; };
@@ -5708,6 +5711,7 @@
 		9F40977D1D51F619008BFE42 /* ObjectTransformers */ = {
 			isa = PBXGroup;
 			children = (
+				9FBE89E81D5CCF6C00DA0C32 /* Constants */,
 				9F4097801D51F63F008BFE42 /* ConcreteClasses */,
 				9F40977E1D51F626008BFE42 /* Protocols */,
 			);
@@ -6661,6 +6665,15 @@
 			name = ApplicationHelperAssembly;
 			sourceTree = "<group>";
 		};
+		9FBE89E81D5CCF6C00DA0C32 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE89E91D5CCF8300DA0C32 /* ObjectTransformerConstants.h */,
+				9FBE89EA1D5CCF8300DA0C32 /* ObjectTransformerConstants.m */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
 		9FC1F6741D2823E40070D9B5 /* EventListServiceTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -7450,6 +7463,7 @@
 				2B429A5B1D464AF5004C005F /* AnnouncementListAnimator.m in Sources */,
 				2B20648D1D3F9CE900246C8D /* RegistrationQuestionModelObject.m in Sources */,
 				636B640D1BBDD5000053E38F /* SocialNetworkAccountServiceImplementation.m in Sources */,
+				9FBE89EB1D5CCF8300DA0C32 /* ObjectTransformerConstants.m in Sources */,
 				66E999681D54B04A00161D98 /* TagPresenter.m in Sources */,
 				667050211D46146B00DD9D6E /* ReportsSearchDataDisplayManager.m in Sources */,
 				66E999621D54B04100161D98 /* TagModuleConfig.m in Sources */,

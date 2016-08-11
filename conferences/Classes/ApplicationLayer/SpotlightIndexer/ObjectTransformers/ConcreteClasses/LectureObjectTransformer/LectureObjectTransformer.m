@@ -21,10 +21,9 @@
 #import "LectureObjectTransformer.h"
 
 #import "LectureModelObject.h"
+#import "ObjectTransformerConstants.h"
 
 #import <MagicalRecord/MagicalRecord.h>
-
-static NSString *const kIdentifierSeparator = @"_";
 
 @implementation LectureObjectTransformer
 
@@ -55,10 +54,10 @@ static NSString *const kIdentifierSeparator = @"_";
     BOOL hasSeparator = [identifier rangeOfString:kIdentifierSeparator].location != NSNotFound;
     
     NSUInteger lectureIdLocation = objectType.length + 1; // 1 for _ symbol
-    NSUInteger lectureIdLength = identifier.length - lectureIdLocation;
+    NSInteger lectureIdLength = identifier.length - lectureIdLocation;
     BOOL hasLectureId = lectureIdLength > 0;
     
-    return hasCorrectObjectType != NO && hasSeparator != NO && hasLectureId != NO;
+    return hasCorrectObjectType && hasSeparator && hasLectureId;
 }
 
 @end

@@ -45,7 +45,7 @@
  
  Changed object type
  */
-@property (assign, nonatomic, readonly) NSString *objectType;
+@property (strong, nonatomic, readonly) NSString *objectType;
 
 /**
  @author Egor Tolstoy

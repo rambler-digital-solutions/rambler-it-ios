@@ -66,13 +66,12 @@ static NSString *const kDataModelName = @"SpotlightIndexer";
     NSURL *storeURL = [documentsURL URLByAppendingPathComponent:databaseFilename];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
-        NSError *error = nil;
         NSPersistentStoreCoordinator *persistentStoreCoordinator = [defaultContext persistentStoreCoordinator];
         [persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType
                                                  configuration:nil
                                                            URL:storeURL
                                                        options:0
-                                                         error:&error];
+                                                         error:nil];
     });
 }
 

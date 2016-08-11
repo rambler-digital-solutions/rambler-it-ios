@@ -18,21 +18,6 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "SpeakerChangeProviderFetchRequestFactory.h"
+#import "ObjectTransformerConstants.h"
 
-#import "SpeakerModelObject.h"
-
-@implementation SpeakerChangeProviderFetchRequestFactory
-
-#pragma mark - <ChangeProviderFetchRequestFactory>
-
-- (NSFetchRequest *)obtainFetchRequestForIndexing {
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Speaker"];
-    
-    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:SpeakerModelObjectAttributes.name
-                                                                     ascending:YES];
-    request.sortDescriptors = @[sortDescriptor];
-    return request;
-}
-
-@end
+NSString *const kIdentifierSeparator = @"_";

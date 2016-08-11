@@ -21,10 +21,9 @@
 #import "EventObjectTransformer.h"
 
 #import "EventModelObject.h"
+#import "ObjectTransformerConstants.h"
 
 #import <MagicalRecord/MagicalRecord.h>
-
-static NSString *const kIdentifierSeparator = @"_";
 
 @implementation EventObjectTransformer
 
@@ -55,10 +54,10 @@ static NSString *const kIdentifierSeparator = @"_";
     BOOL hasSeparator = [identifier rangeOfString:kIdentifierSeparator].location != NSNotFound;
     
     NSUInteger eventIdLocation = objectType.length + 1; // 1 for _ symbol
-    NSUInteger eventIdLength = identifier.length - eventIdLocation;
+    NSInteger eventIdLength = identifier.length - eventIdLocation;
     BOOL hasEventId = eventIdLength > 0;
     
-    return hasCorrectObjectType != NO && hasSeparator != NO && hasEventId != NO;
+    return hasCorrectObjectType && hasSeparator && hasEventId;
 }
 
 @end

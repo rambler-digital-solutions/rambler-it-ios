@@ -29,7 +29,8 @@
 - (NSFetchRequest *)obtainFetchRequestForIndexing {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Lecture"];
     
-    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:NSStringFromSelector(@selector(name)) ascending:YES];
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:LectureModelObjectAttributes.name
+                                                                     ascending:YES];
     request.sortDescriptors = @[sortDescriptor];
     return request;
 }

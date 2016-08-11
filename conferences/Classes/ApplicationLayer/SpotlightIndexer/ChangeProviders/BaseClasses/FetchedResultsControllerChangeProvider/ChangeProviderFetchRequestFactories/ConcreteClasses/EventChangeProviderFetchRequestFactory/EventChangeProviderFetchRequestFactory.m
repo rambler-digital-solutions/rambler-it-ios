@@ -29,7 +29,8 @@
 - (NSFetchRequest *)obtainFetchRequestForIndexing {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Event"];
     
-    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:NSStringFromSelector(@selector(startDate)) ascending:YES];
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:EventModelObjectAttributes.name
+                                                                     ascending:YES];
     request.sortDescriptors = @[sortDescriptor];
     return request;
 }
