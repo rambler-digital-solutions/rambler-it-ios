@@ -63,20 +63,6 @@
     [self verifyTargetDependency:result withClass:targetClass];
 }
 
-- (void)testThatAssemblyCreatesPushNotificationCenter {
-    // given
-    Class targetClass = [PushNotificationCenterImplementation class];
-    NSArray *dependencies = @[
-                              RamblerSelector(pushNotificationService)
-                              ];
-    
-    // when
-    id result = [self.assembly pushNotificationCenter];
-    
-    // then
-    [self verifyTargetDependency:result withClass:targetClass dependencies:dependencies];
-}
-
 - (void)testThatAssemblyCreatesThirdPartiesConfigurator {
     // given
     Class targetClass = [ThirdPartiesConfiguratorImplementation class];
