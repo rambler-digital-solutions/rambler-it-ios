@@ -36,20 +36,9 @@ typedef void (^EventListUpdateCompletionBlock)(NSError *error);
  
  Method is used to update a list of Event objects by sending request to server
  
- @param query           The model describing request parameters
  @param completionBlock Block called upon completion the method, and returns NSError if there is any
  */
-- (void)updateEventListWithQuery:(EventListQuery *)query
-                 completionBlock:(EventListUpdateCompletionBlock)completionBlock;
-
-/**
- @author Konstantin Zinovyev
- 
- Method is used to obtain actual EventListQuery
- 
- @return EventListQuery object
- */
-- (EventListQuery *)obtainActualEventListQuery;
+- (void)updateEventListWithСompletionBlock:(EventListUpdateCompletionBlock)completionBlock;
 
 /**
  @author Konstantin Zinovyev

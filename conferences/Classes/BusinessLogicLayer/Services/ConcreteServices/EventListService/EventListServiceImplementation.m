@@ -33,13 +33,13 @@ static NSString *const kEventListName = @"kEventListName";
 
 @implementation EventListServiceImplementation
 
-- (void)updateEventListWithQuery:(EventListQuery *)query
-                 completionBlock:(EventListUpdateCompletionBlock)completionBlock
+- (void)updateEventListWithСompletionBlock:(EventListUpdateCompletionBlock)completionBlock
     {
+        EventListQuery *listQuery = [self obtainActualEventListObject];
         NSString *modelObjectId = [self obtainCurrentEventModelObjectId];
         NSManagedObjectContext *rootSavingContext = [NSManagedObjectContext MR_rootSavingContext];
         [rootSavingContext performBlock:^{
-            CompoundOperationBase *compoundOperation = [self.eventListOperationFactory getEventsOperationWithQuery:query modelObjectId:modelObjectId];
+            CompoundOperationBase *compoundOperation = [self.eventListOperationFactory getEventsOperationWithQuery:listQuery modelObjectId:modelObjectId];
         
             compoundOperation.resultBlock = ^void(id data, NSError *error) {
             completionBlock(error);
@@ -47,16 +47,6 @@ static NSString *const kEventListName = @"kEventListName";
         
         [self.operationScheduler addOperation:compoundOperation];
     }];
-}
-
-- (EventListQuery *)obtainActualEventListObject {
-    EventListModelObject *modelObject = [EventListModelObject MR_findFirst];
-    EventListQuery *eventListQuery = [EventListQuery new];
-    
-    NSTimeInterval interval = [modelObject.lastModified timeIntervalSince1970];
-    eventListQuery.lastModifiedString = [NSString stringWithFormat:@"%d",(int)interval];
-    
-    return eventListQuery;
 }
 
 - (void)setupPredefinedEventListIfNeeded {
@@ -85,6 +75,17 @@ static NSString *const kEventListName = @"kEventListName";
         [rootSavingContext MR_saveToPersistentStoreAndWait];
     }];
 }
+
+- (EventListQuery *)obtainActualEventListObject {
+    EventListModelObject *modelObject = [EventListModelObject MR_findFirst];
+    EventListQuery *eventListQuery = [EventListQuery new];
+    
+    NSTimeInterval interval = [modelObject.lastModified timeIntervalSince1970];
+    eventListQuery.lastModifiedString = [NSString stringWithFormat:@"%d",(int)interval];
+    
+    return eventListQuery;
+}
+
 - (NSString *)obtainCurrentEventModelObjectId{
     EventListModelObject *modelObject = [EventListModelObject MR_findFirst];
     NSString *modelObjectID = [[modelObject objectID] stringRepresentation];

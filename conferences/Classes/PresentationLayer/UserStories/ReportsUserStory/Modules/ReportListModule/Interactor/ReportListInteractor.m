@@ -40,8 +40,7 @@
 - (void)updateEventList {
     @weakify(self)
     
-    EventListQuery *listQuery = [self.eventListService obtainActualEventListQuery];
-    [self.eventListService updateEventListWithQuery:listQuery completionBlock:^(NSError *error) {
+    [self.eventListService updateEventListWithСompletionBlock:^(NSError *error) {
             @strongify(self);
             NSArray *eventsManagedObjects = [self.eventService obtainEventWithPredicate:nil];
             NSArray *events  = [self getPlainEventsFromManagedObjects:eventsManagedObjects];

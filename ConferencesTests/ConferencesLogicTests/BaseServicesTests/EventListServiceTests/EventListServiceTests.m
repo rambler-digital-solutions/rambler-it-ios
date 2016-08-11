@@ -77,16 +77,14 @@
     CompoundOperationBase *mockOperation = [CompoundOperationBase new];
     OCMStub([self.mockOperationFactory getEventsOperationWithQuery:OCMOCK_ANY modelObjectId:OCMOCK_ANY]).andReturn(mockOperation);
     
-    id mockQuery = [NSObject new];
-    
     // when
-    [self.service updateEventListWithQuery:mockQuery completionBlock:^(NSError *error) {
+    [self.service updateEventListWithСompletionBlock:^(NSError *error) {
         [expectation fulfill];
     }];
     
     // then
     [self waitForExpectationsWithTimeout:kTestExpectationTimeout handler:^(NSError *error) {
-        OCMVerify([self.mockOperationFactory getEventsOperationWithQuery:mockQuery modelObjectId:OCMOCK_ANY]);
+        OCMVerify([self.mockOperationFactory getEventsOperationWithQuery:OCMOCK_ANY modelObjectId:OCMOCK_ANY]);
         OCMVerify([self.mockScheduler addOperation:mockOperation]);
     }];
 }
