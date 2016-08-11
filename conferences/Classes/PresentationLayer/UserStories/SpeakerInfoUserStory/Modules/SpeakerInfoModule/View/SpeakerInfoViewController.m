@@ -39,6 +39,8 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
 #pragma mark - SpeakerInfoViewInput
 
 - (void)setupViewWithSpeaker:(SpeakerPlainObject *)speaker {
+    [self setupViewInitialState];
+    
     [self.dataDisplayManager configureDataDisplayManagerWithSpeaker:speaker];
     
     self.tableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.tableView];
@@ -59,6 +61,13 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
     CGRect frame = [self calculateFrameForHeaderView];
     self.speakerShortInfoView.frame = frame;
     self.tableView.tableHeaderView = self.speakerShortInfoView;
+}
+
+- (void)setupViewInitialState {
+    [self.navigationController.navigationBar becomeTransparent];
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+    [self.navigationController setNavigationBarHidden:NO
+                                             animated:YES];
 }
 
 - (CGRect)calculateFrameForHeaderView {

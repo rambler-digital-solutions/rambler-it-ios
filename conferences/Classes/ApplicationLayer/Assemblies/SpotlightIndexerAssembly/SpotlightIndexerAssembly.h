@@ -23,10 +23,14 @@
 
 @class IndexerMonitor;
 @protocol SpotlightCoreDataStackCoordinator;
+@protocol ObjectTransformer;
 
 @interface SpotlightIndexerAssembly : TyphoonAssembly <RamblerInitialAssembly>
 
 - (IndexerMonitor *)indexerMonitor;
 - (id<SpotlightCoreDataStackCoordinator>)spotlightCoreDataStackCoordinator;
+- (id<ObjectTransformer>)eventObjectTransformer;
+- (id<ObjectTransformer>)speakerObjectTransformer;
+- (id<ObjectTransformer>)lectureObjectTransformer;
 
 @end

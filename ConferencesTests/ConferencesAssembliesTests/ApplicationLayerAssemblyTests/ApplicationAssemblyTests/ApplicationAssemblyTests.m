@@ -25,7 +25,6 @@
 #import "ApplicationAssembly_Testable.h"
 #import "ServiceComponentsAssembly.h"
 
-#import "AppDelegate.h"
 #import "ApplicationConfiguratorImplementation.h"
 #import "PushNotificationCenterImplementation.h"
 #import "ThirdPartiesConfiguratorImplementation.h"
@@ -51,22 +50,6 @@
     self.assembly = nil;
     
     [super tearDown];
-}
-
-- (void)testThatAssemblyCreatesAppDelegate {
-    // given
-    Class targetClass = [AppDelegate class];
-    NSArray *dependencies = @[
-                              RamblerSelector(applicationConfigurator),
-                              RamblerSelector(pushNotificationCenter),
-                              RamblerSelector(thirdPartiesConfigurator)
-                              ];
-    
-    // when
-    id result = [self.assembly appDelegate];
-    
-    // then
-    [self verifyTargetDependency:result withClass:targetClass dependencies:dependencies];
 }
 
 - (void)testThatAssemblyCreatesApplicationConfigurator {

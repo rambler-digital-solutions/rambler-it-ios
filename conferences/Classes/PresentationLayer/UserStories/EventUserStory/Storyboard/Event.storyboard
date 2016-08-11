@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G26a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -8,7 +8,7 @@
         <!--Event View Controller-->
         <scene sceneID="9SB-zP-L2d">
             <objects>
-                <viewController storyboardIdentifier="UIViewController-lPZ-z8-z2H" automaticallyAdjustsScrollViewInsets="NO" id="lPZ-z8-z2H" customClass="EventViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EventViewController" automaticallyAdjustsScrollViewInsets="NO" id="lPZ-z8-z2H" customClass="EventViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="q51-wo-2NC"/>
                         <viewControllerLayoutGuide type="bottom" id="SJ1-15-sm5"/>
@@ -81,20 +81,20 @@
             </objects>
             <point key="canvasLocation" x="1599" y="238"/>
         </scene>
-        <!--UIViewController-mwt-bL-fmW-->
+        <!--SpeakerInfoViewController-->
         <scene sceneID="WFn-eE-kxy">
             <objects>
-                <viewControllerPlaceholder storyboardName="SpeakerInfo" referencedIdentifier="UIViewController-mwt-bL-fmW" id="Rfx-yA-6Vy" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="SpeakerInfo" referencedIdentifier="SpeakerInfoViewController" id="Rfx-yA-6Vy" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="yRy-Fh-WEs"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tjw-xA-VCI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2192.5" y="52"/>
         </scene>
-        <!--UIViewController-JLc-iV-GVs-->
+        <!--LectureViewController-->
         <scene sceneID="U1R-b5-hEw">
             <objects>
-                <viewControllerPlaceholder storyboardName="Lecture" referencedIdentifier="UIViewController-JLc-iV-GVs" id="ApB-G0-QuI" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Lecture" referencedIdentifier="LectureViewController" id="ApB-G0-QuI" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2qi-A7-HYW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2232" y="258"/>

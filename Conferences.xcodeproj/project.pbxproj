@@ -22,7 +22,6 @@
 
 /* Begin PBXBuildFile section */
 		2B01CEBE1D50A55900DA8E66 /* MetaEventServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B01CEBD1D50A55900DA8E66 /* MetaEventServiceTests.m */; };
-		2B01CEC11D50AAC300DA8E66 /* VerySpecialAppDelegateForTesting.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B01CEC01D50AAC300DA8E66 /* VerySpecialAppDelegateForTesting.m */; };
 		2B05E1611D50FEFC00E017AB /* SpeakerInfoCellObjectBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B05E1601D50FEFC00E017AB /* SpeakerInfoCellObjectBuilder.m */; };
 		2B05E1691D51D7A100E017AB /* SpeakerInfoSocialContactsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B05E1671D51D7A100E017AB /* SpeakerInfoSocialContactsTableViewCell.m */; };
 		2B05E16A1D51D7A100E017AB /* SpeakerInfoSocialContactsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B05E1681D51D7A100E017AB /* SpeakerInfoSocialContactsTableViewCell.xib */; };
@@ -268,7 +267,6 @@
 		63F8F2F51BF9FDBF000017F3 /* CompoundOperationBaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A85071BC185AA006F79FB /* CompoundOperationBaseTests.m */; };
 		63F8F2F61BF9FE7D000017F3 /* RCFRESTRequestConfiguratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830991BC022EA000E21A5 /* RCFRESTRequestConfiguratorTests.m */; };
 		63FD4E061BE5038D0046378E /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FD4E051BE5038D0046378E /* UIColor+Hex.m */; };
-		63FDCE061BBDBA2A00A43B60 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FDCDDC1BBDBA2A00A43B60 /* AppDelegate.m */; };
 		63FDCE141BBDBA2A00A43B60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63FDCE021BBDBA2A00A43B60 /* Assets.xcassets */; };
 		63FDCE161BBDBA2A00A43B60 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FDCE051BBDBA2A00A43B60 /* main.m */; };
 		6621664F1D4F4507000A1D11 /* ReportsSearchDataDisplayManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6621664B1D4F4507000A1D11 /* ReportsSearchDataDisplayManagerTests.m */; };
@@ -447,6 +445,28 @@
 		9FAB6A891D5499880061F333 /* IndexerMonitorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB6A881D5499880061F333 /* IndexerMonitorTests.m */; };
 		9FAB6A981D54BE990061F333 /* EventChangeProviderFetchRequestFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB6A971D54BE990061F333 /* EventChangeProviderFetchRequestFactoryTests.m */; };
 		9FAB6A9A1D54BFA00061F333 /* FetchedResultsControllerChangeProviderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB6A991D54BFA00061F333 /* FetchedResultsControllerChangeProviderTests.m */; };
+		9FBE89AE1D5CB71300DA0C32 /* SpotlightAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE898A1D5CB71300DA0C32 /* SpotlightAppDelegate.m */; };
+		9FBE89AF1D5CB71300DA0C32 /* TyphoonAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE898D1D5CB71300DA0C32 /* TyphoonAppDelegate.m */; };
+		9FBE89B01D5CB71300DA0C32 /* VerySpecialAppDelegateForTesting.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89901D5CB71300DA0C32 /* VerySpecialAppDelegateForTesting.m */; };
+		9FBE89B11D5CB71300DA0C32 /* SpotlightLaunchHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89951D5CB71300DA0C32 /* SpotlightLaunchHandler.m */; };
+		9FBE89B21D5CB71300DA0C32 /* CleanLaunchRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE899C1D5CB71300DA0C32 /* CleanLaunchRouter.m */; };
+		9FBE89B31D5CB71300DA0C32 /* EventLaunchRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE899F1D5CB71300DA0C32 /* EventLaunchRouter.m */; };
+		9FBE89B41D5CB71300DA0C32 /* LectureLaunchRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89A21D5CB71300DA0C32 /* LectureLaunchRouter.m */; };
+		9FBE89B51D5CB71300DA0C32 /* SpeakerLaunchRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89A51D5CB71300DA0C32 /* SpeakerLaunchRouter.m */; };
+		9FBE89B61D5CB71300DA0C32 /* TabBarControllerFactoryImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89AA1D5CB71300DA0C32 /* TabBarControllerFactoryImplementation.m */; };
+		9FBE89BA1D5CB72D00DA0C32 /* CleanLaunchAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89B91D5CB72D00DA0C32 /* CleanLaunchAppDelegate.m */; };
+		9FBE89D31D5CB76900DA0C32 /* CleanLaunchAppDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89BE1D5CB76900DA0C32 /* CleanLaunchAppDelegateTests.m */; };
+		9FBE89D41D5CB76900DA0C32 /* SpotlightAppDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89C01D5CB76900DA0C32 /* SpotlightAppDelegateTests.m */; };
+		9FBE89D51D5CB76900DA0C32 /* TyphoonAppDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89C21D5CB76900DA0C32 /* TyphoonAppDelegateTests.m */; };
+		9FBE89D61D5CB76900DA0C32 /* SpotlightLaunchHandlerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89C51D5CB76900DA0C32 /* SpotlightLaunchHandlerTests.m */; };
+		9FBE89D71D5CB76900DA0C32 /* CleanLaunchRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89C91D5CB76900DA0C32 /* CleanLaunchRouterTests.m */; };
+		9FBE89D81D5CB76900DA0C32 /* EventLaunchRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89CB1D5CB76900DA0C32 /* EventLaunchRouterTests.m */; };
+		9FBE89D91D5CB76900DA0C32 /* LectureLaunchRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89CD1D5CB76900DA0C32 /* LectureLaunchRouterTests.m */; };
+		9FBE89DA1D5CB76900DA0C32 /* SpeakerLaunchRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89CF1D5CB76900DA0C32 /* SpeakerLaunchRouterTests.m */; };
+		9FBE89DB1D5CB76900DA0C32 /* TabBarControllerFactoryImplementationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89D21D5CB76900DA0C32 /* TabBarControllerFactoryImplementationTests.m */; };
+		9FBE89DF1D5CB81400DA0C32 /* StoryboardAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89DE1D5CB81400DA0C32 /* StoryboardAssembly.m */; };
+		9FBE89E31D5CBB7800DA0C32 /* LaunchSystemAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89E21D5CBB7800DA0C32 /* LaunchSystemAssembly.m */; };
+		9FBE89E71D5CBC5A00DA0C32 /* ApplicationHelperAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89E61D5CBC5A00DA0C32 /* ApplicationHelperAssembly.m */; };
 		9FC1F6761D2824000070D9B5 /* EventListServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */; };
 		9FC1F6801D2838FA0070D9B5 /* EventListQueryTransformerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */; };
 		9FC1F6841D28391E0070D9B5 /* EventListQueryTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6831D28391E0070D9B5 /* EventListQueryTransformer.m */; };
@@ -486,8 +506,6 @@
 /* Begin PBXFileReference section */
 		2A4F504A716A8833A7A01A5D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B01CEBD1D50A55900DA8E66 /* MetaEventServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetaEventServiceTests.m; sourceTree = "<group>"; };
-		2B01CEBF1D50AAC300DA8E66 /* VerySpecialAppDelegateForTesting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerySpecialAppDelegateForTesting.h; sourceTree = "<group>"; };
-		2B01CEC01D50AAC300DA8E66 /* VerySpecialAppDelegateForTesting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerySpecialAppDelegateForTesting.m; sourceTree = "<group>"; };
 		2B05E15B1D50EDB900E017AB /* EventModuleSegueIdentifiersConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventModuleSegueIdentifiersConstants.h; sourceTree = "<group>"; };
 		2B05E15F1D50FEFC00E017AB /* SpeakerInfoCellObjectBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerInfoCellObjectBuilder.h; sourceTree = "<group>"; };
 		2B05E1601D50FEFC00E017AB /* SpeakerInfoCellObjectBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerInfoCellObjectBuilder.m; sourceTree = "<group>"; };
@@ -987,8 +1005,6 @@
 		63F8F2D81BF8F7F0000017F3 /* ServiceComponentsAssembly_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServiceComponentsAssembly_Testable.h; sourceTree = "<group>"; };
 		63FD4E041BE5038D0046378E /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
 		63FD4E051BE5038D0046378E /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
-		63FDCDDB1BBDBA2A00A43B60 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		63FDCDDC1BBDBA2A00A43B60 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		63FDCE021BBDBA2A00A43B60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63FDCE041BBDBA2A00A43B60 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63FDCE051BBDBA2A00A43B60 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -1357,6 +1373,44 @@
 		9FAB6A881D5499880061F333 /* IndexerMonitorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IndexerMonitorTests.m; path = ApplicationLayerTests/SpotlightIndexer/IndexerMonitor/IndexerMonitorTests.m; sourceTree = "<group>"; };
 		9FAB6A971D54BE990061F333 /* EventChangeProviderFetchRequestFactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventChangeProviderFetchRequestFactoryTests.m; path = ApplicationLayerTests/SpotlightIndexer/ChangeProviders/BaseClasses/FetchedResultsControllerChangeProvider/ChangeProviderFetchRequestFactories/ConcreteClasses/EventChangeProviderFetchRequestFactory/EventChangeProviderFetchRequestFactoryTests.m; sourceTree = "<group>"; };
 		9FAB6A991D54BFA00061F333 /* FetchedResultsControllerChangeProviderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FetchedResultsControllerChangeProviderTests.m; path = ApplicationLayerTests/SpotlightIndexer/ChangeProviders/BaseClasses/FetchedResultsControllerChangeProvider/FetchedResultsControllerChangeProviderTests.m; sourceTree = "<group>"; };
+		9FBE89891D5CB71300DA0C32 /* SpotlightAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotlightAppDelegate.h; sourceTree = "<group>"; };
+		9FBE898A1D5CB71300DA0C32 /* SpotlightAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotlightAppDelegate.m; sourceTree = "<group>"; };
+		9FBE898C1D5CB71300DA0C32 /* TyphoonAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TyphoonAppDelegate.h; sourceTree = "<group>"; };
+		9FBE898D1D5CB71300DA0C32 /* TyphoonAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TyphoonAppDelegate.m; sourceTree = "<group>"; };
+		9FBE898F1D5CB71300DA0C32 /* VerySpecialAppDelegateForTesting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerySpecialAppDelegateForTesting.h; sourceTree = "<group>"; };
+		9FBE89901D5CB71300DA0C32 /* VerySpecialAppDelegateForTesting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerySpecialAppDelegateForTesting.m; sourceTree = "<group>"; };
+		9FBE89941D5CB71300DA0C32 /* SpotlightLaunchHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotlightLaunchHandler.h; sourceTree = "<group>"; };
+		9FBE89951D5CB71300DA0C32 /* SpotlightLaunchHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotlightLaunchHandler.m; sourceTree = "<group>"; };
+		9FBE89971D5CB71300DA0C32 /* LaunchHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchHandler.h; sourceTree = "<group>"; };
+		9FBE899B1D5CB71300DA0C32 /* CleanLaunchRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CleanLaunchRouter.h; sourceTree = "<group>"; };
+		9FBE899C1D5CB71300DA0C32 /* CleanLaunchRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CleanLaunchRouter.m; sourceTree = "<group>"; };
+		9FBE899E1D5CB71300DA0C32 /* EventLaunchRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventLaunchRouter.h; sourceTree = "<group>"; };
+		9FBE899F1D5CB71300DA0C32 /* EventLaunchRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventLaunchRouter.m; sourceTree = "<group>"; };
+		9FBE89A11D5CB71300DA0C32 /* LectureLaunchRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectureLaunchRouter.h; sourceTree = "<group>"; };
+		9FBE89A21D5CB71300DA0C32 /* LectureLaunchRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LectureLaunchRouter.m; sourceTree = "<group>"; };
+		9FBE89A41D5CB71300DA0C32 /* SpeakerLaunchRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerLaunchRouter.h; sourceTree = "<group>"; };
+		9FBE89A51D5CB71300DA0C32 /* SpeakerLaunchRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerLaunchRouter.m; sourceTree = "<group>"; };
+		9FBE89A81D5CB71300DA0C32 /* TabBarControllerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarControllerFactory.h; sourceTree = "<group>"; };
+		9FBE89A91D5CB71300DA0C32 /* TabBarControllerFactoryImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarControllerFactoryImplementation.h; sourceTree = "<group>"; };
+		9FBE89AA1D5CB71300DA0C32 /* TabBarControllerFactoryImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarControllerFactoryImplementation.m; sourceTree = "<group>"; };
+		9FBE89AC1D5CB71300DA0C32 /* DataCardLaunchRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataCardLaunchRouter.h; sourceTree = "<group>"; };
+		9FBE89B81D5CB72D00DA0C32 /* CleanLaunchAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CleanLaunchAppDelegate.h; sourceTree = "<group>"; };
+		9FBE89B91D5CB72D00DA0C32 /* CleanLaunchAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CleanLaunchAppDelegate.m; sourceTree = "<group>"; };
+		9FBE89BE1D5CB76900DA0C32 /* CleanLaunchAppDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CleanLaunchAppDelegateTests.m; sourceTree = "<group>"; };
+		9FBE89C01D5CB76900DA0C32 /* SpotlightAppDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotlightAppDelegateTests.m; sourceTree = "<group>"; };
+		9FBE89C21D5CB76900DA0C32 /* TyphoonAppDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TyphoonAppDelegateTests.m; sourceTree = "<group>"; };
+		9FBE89C51D5CB76900DA0C32 /* SpotlightLaunchHandlerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotlightLaunchHandlerTests.m; sourceTree = "<group>"; };
+		9FBE89C91D5CB76900DA0C32 /* CleanLaunchRouterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CleanLaunchRouterTests.m; sourceTree = "<group>"; };
+		9FBE89CB1D5CB76900DA0C32 /* EventLaunchRouterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventLaunchRouterTests.m; sourceTree = "<group>"; };
+		9FBE89CD1D5CB76900DA0C32 /* LectureLaunchRouterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LectureLaunchRouterTests.m; sourceTree = "<group>"; };
+		9FBE89CF1D5CB76900DA0C32 /* SpeakerLaunchRouterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerLaunchRouterTests.m; sourceTree = "<group>"; };
+		9FBE89D21D5CB76900DA0C32 /* TabBarControllerFactoryImplementationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarControllerFactoryImplementationTests.m; sourceTree = "<group>"; };
+		9FBE89DD1D5CB81400DA0C32 /* StoryboardAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoryboardAssembly.h; path = StoryboardAssembly/StoryboardAssembly.h; sourceTree = "<group>"; };
+		9FBE89DE1D5CB81400DA0C32 /* StoryboardAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoryboardAssembly.m; path = StoryboardAssembly/StoryboardAssembly.m; sourceTree = "<group>"; };
+		9FBE89E11D5CBB7800DA0C32 /* LaunchSystemAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LaunchSystemAssembly.h; path = LaunchSystemAssembly/LaunchSystemAssembly.h; sourceTree = "<group>"; };
+		9FBE89E21D5CBB7800DA0C32 /* LaunchSystemAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LaunchSystemAssembly.m; path = LaunchSystemAssembly/LaunchSystemAssembly.m; sourceTree = "<group>"; };
+		9FBE89E51D5CBC5A00DA0C32 /* ApplicationHelperAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ApplicationHelperAssembly.h; path = ApplicationHelperAssembly/ApplicationHelperAssembly.h; sourceTree = "<group>"; };
+		9FBE89E61D5CBC5A00DA0C32 /* ApplicationHelperAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ApplicationHelperAssembly.m; path = ApplicationHelperAssembly/ApplicationHelperAssembly.m; sourceTree = "<group>"; };
 		9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListServiceTests.m; path = EventListServiceTests/EventListServiceTests.m; sourceTree = "<group>"; };
 		9FC1F6781D2826D10070D9B5 /* QueryTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QueryTransformer.h; path = CoreComponents/QueryTransformers/QueryTransformer.h; sourceTree = "<group>"; };
 		9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListQueryTransformerTests.m; path = CoreLayer/CoreComponents/QueryTransformers/EventListQueryTransformer/EventListQueryTransformerTests.m; sourceTree = "<group>"; };
@@ -2200,6 +2254,8 @@
 		636A37BC1BC13FA200B49C3D /* Assemblies */ = {
 			isa = PBXGroup;
 			children = (
+				9FBE89E41D5CBC4900DA0C32 /* ApplicationHelperAssembly */,
+				9FBE89E01D5CBAE200DA0C32 /* LaunchSystemAssembly */,
 				9F40978A1D5210C4008BFE42 /* SpotlightIndexerAssembly */,
 				636A37BD1BC13FA200B49C3D /* ApplicationAssembly */,
 				636A37BF1BC1410800B49C3D /* SystemInfrastructureAssembly */,
@@ -2277,6 +2333,7 @@
 		636F8D081BCB822F00552B91 /* Assemblies */ = {
 			isa = PBXGroup;
 			children = (
+				9FBE89DC1D5CB80300DA0C32 /* StoryboardAssembly */,
 				636F8D091BCB822F00552B91 /* ModuleAssemblyBase */,
 			);
 			path = Assemblies;
@@ -3796,25 +3853,14 @@
 		63FDCDD91BBDBA2A00A43B60 /* ApplicationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				9FBE89831D5CB71300DA0C32 /* LaunchSystem */,
 				9F533A7C1D50D6E7004F8E82 /* SpotlightIndexer */,
 				63F54D9C1BC5BA8F00DB1746 /* ThirdPartiesConfigurator */,
 				63EF15B71BC4546400480CAF /* PushNotificationCenter */,
 				636A37BC1BC13FA200B49C3D /* Assemblies */,
 				636A37B01BC1354100B49C3D /* ApplicationConfigurator */,
-				63FDCDDA1BBDBA2A00A43B60 /* AppDelegate */,
 			);
 			path = ApplicationLayer;
-			sourceTree = "<group>";
-		};
-		63FDCDDA1BBDBA2A00A43B60 /* AppDelegate */ = {
-			isa = PBXGroup;
-			children = (
-				63FDCDDB1BBDBA2A00A43B60 /* AppDelegate.h */,
-				63FDCDDC1BBDBA2A00A43B60 /* AppDelegate.m */,
-				2B01CEBF1D50AAC300DA8E66 /* VerySpecialAppDelegateForTesting.h */,
-				2B01CEC01D50AAC300DA8E66 /* VerySpecialAppDelegateForTesting.m */,
-			);
-			path = AppDelegate;
 			sourceTree = "<group>";
 		};
 		63FDCDDD1BBDBA2A00A43B60 /* BusinessLogicLayer */ = {
@@ -6285,6 +6331,336 @@
 			name = EventChangeProviderFetchRequestFactory;
 			sourceTree = "<group>";
 		};
+		9FBE89831D5CB71300DA0C32 /* LaunchSystem */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE89841D5CB71300DA0C32 /* AppDelegates */,
+				9FBE89911D5CB71300DA0C32 /* LaunchHandlers */,
+				9FBE89981D5CB71300DA0C32 /* Routers */,
+			);
+			path = LaunchSystem;
+			sourceTree = "<group>";
+		};
+		9FBE89841D5CB71300DA0C32 /* AppDelegates */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE89B71D5CB72D00DA0C32 /* CleanLaunchAppDelegate */,
+				9FBE89881D5CB71300DA0C32 /* SpotlightAppDelegate */,
+				9FBE898B1D5CB71300DA0C32 /* TyphoonAppDelegate */,
+				9FBE898E1D5CB71300DA0C32 /* VerySpecialAppDelegateForTesting */,
+			);
+			path = AppDelegates;
+			sourceTree = "<group>";
+		};
+		9FBE89881D5CB71300DA0C32 /* SpotlightAppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE89891D5CB71300DA0C32 /* SpotlightAppDelegate.h */,
+				9FBE898A1D5CB71300DA0C32 /* SpotlightAppDelegate.m */,
+			);
+			path = SpotlightAppDelegate;
+			sourceTree = "<group>";
+		};
+		9FBE898B1D5CB71300DA0C32 /* TyphoonAppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE898C1D5CB71300DA0C32 /* TyphoonAppDelegate.h */,
+				9FBE898D1D5CB71300DA0C32 /* TyphoonAppDelegate.m */,
+			);
+			path = TyphoonAppDelegate;
+			sourceTree = "<group>";
+		};
+		9FBE898E1D5CB71300DA0C32 /* VerySpecialAppDelegateForTesting */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE898F1D5CB71300DA0C32 /* VerySpecialAppDelegateForTesting.h */,
+				9FBE89901D5CB71300DA0C32 /* VerySpecialAppDelegateForTesting.m */,
+			);
+			path = VerySpecialAppDelegateForTesting;
+			sourceTree = "<group>";
+		};
+		9FBE89911D5CB71300DA0C32 /* LaunchHandlers */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE89921D5CB71300DA0C32 /* ConcreteClasses */,
+				9FBE89961D5CB71300DA0C32 /* Protocols */,
+			);
+			path = LaunchHandlers;
+			sourceTree = "<group>";
+		};
+		9FBE89921D5CB71300DA0C32 /* ConcreteClasses */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE89931D5CB71300DA0C32 /* SpotlightLaunchHandler */,
+			);
+			path = ConcreteClasses;
+			sourceTree = "<group>";
+		};
+		9FBE89931D5CB71300DA0C32 /* SpotlightLaunchHandler */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE89941D5CB71300DA0C32 /* SpotlightLaunchHandler.h */,
+				9FBE89951D5CB71300DA0C32 /* SpotlightLaunchHandler.m */,
+			);
+			path = SpotlightLaunchHandler;
+			sourceTree = "<group>";
+		};
+		9FBE89961D5CB71300DA0C32 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE89971D5CB71300DA0C32 /* LaunchHandler.h */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		9FBE89981D5CB71300DA0C32 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE89991D5CB71300DA0C32 /* ConcreteClasses */,
+				9FBE89A61D5CB71300DA0C32 /* Helpers */,
+				9FBE89AB1D5CB71300DA0C32 /* Protocols */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		9FBE89991D5CB71300DA0C32 /* ConcreteClasses */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE899A1D5CB71300DA0C32 /* CleanLaunchRouter */,
+				9FBE899D1D5CB71300DA0C32 /* EventLaunchRouter */,
+				9FBE89A01D5CB71300DA0C32 /* LectureLaunchRouter */,
+				9FBE89A31D5CB71300DA0C32 /* SpeakerLaunchRouter */,
+			);
+			path = ConcreteClasses;
+			sourceTree = "<group>";
+		};
+		9FBE899A1D5CB71300DA0C32 /* CleanLaunchRouter */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE899B1D5CB71300DA0C32 /* CleanLaunchRouter.h */,
+				9FBE899C1D5CB71300DA0C32 /* CleanLaunchRouter.m */,
+			);
+			path = CleanLaunchRouter;
+			sourceTree = "<group>";
+		};
+		9FBE899D1D5CB71300DA0C32 /* EventLaunchRouter */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE899E1D5CB71300DA0C32 /* EventLaunchRouter.h */,
+				9FBE899F1D5CB71300DA0C32 /* EventLaunchRouter.m */,
+			);
+			path = EventLaunchRouter;
+			sourceTree = "<group>";
+		};
+		9FBE89A01D5CB71300DA0C32 /* LectureLaunchRouter */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE89A11D5CB71300DA0C32 /* LectureLaunchRouter.h */,
+				9FBE89A21D5CB71300DA0C32 /* LectureLaunchRouter.m */,
+			);
+			path = LectureLaunchRouter;
+			sourceTree = "<group>";
+		};
+		9FBE89A31D5CB71300DA0C32 /* SpeakerLaunchRouter */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE89A41D5CB71300DA0C32 /* SpeakerLaunchRouter.h */,
+				9FBE89A51D5CB71300DA0C32 /* SpeakerLaunchRouter.m */,
+			);
+			path = SpeakerLaunchRouter;
+			sourceTree = "<group>";
+		};
+		9FBE89A61D5CB71300DA0C32 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE89A71D5CB71300DA0C32 /* TabBarControllerFactory */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		9FBE89A71D5CB71300DA0C32 /* TabBarControllerFactory */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE89A81D5CB71300DA0C32 /* TabBarControllerFactory.h */,
+				9FBE89A91D5CB71300DA0C32 /* TabBarControllerFactoryImplementation.h */,
+				9FBE89AA1D5CB71300DA0C32 /* TabBarControllerFactoryImplementation.m */,
+			);
+			path = TabBarControllerFactory;
+			sourceTree = "<group>";
+		};
+		9FBE89AB1D5CB71300DA0C32 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE89AC1D5CB71300DA0C32 /* DataCardLaunchRouter.h */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		9FBE89B71D5CB72D00DA0C32 /* CleanLaunchAppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE89B81D5CB72D00DA0C32 /* CleanLaunchAppDelegate.h */,
+				9FBE89B91D5CB72D00DA0C32 /* CleanLaunchAppDelegate.m */,
+			);
+			path = CleanLaunchAppDelegate;
+			sourceTree = "<group>";
+		};
+		9FBE89BB1D5CB76900DA0C32 /* LaunchSystem */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE89BC1D5CB76900DA0C32 /* AppDelegates */,
+				9FBE89C31D5CB76900DA0C32 /* LaunchHandler */,
+				9FBE89C61D5CB76900DA0C32 /* Routers */,
+			);
+			name = LaunchSystem;
+			path = ApplicationLayerTests/LaunchSystem;
+			sourceTree = "<group>";
+		};
+		9FBE89BC1D5CB76900DA0C32 /* AppDelegates */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE89BD1D5CB76900DA0C32 /* CleanLaunchAppDelegate */,
+				9FBE89BF1D5CB76900DA0C32 /* SpotlightAppDelegate */,
+				9FBE89C11D5CB76900DA0C32 /* TyphoonAppDelegate */,
+			);
+			path = AppDelegates;
+			sourceTree = "<group>";
+		};
+		9FBE89BD1D5CB76900DA0C32 /* CleanLaunchAppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE89BE1D5CB76900DA0C32 /* CleanLaunchAppDelegateTests.m */,
+			);
+			path = CleanLaunchAppDelegate;
+			sourceTree = "<group>";
+		};
+		9FBE89BF1D5CB76900DA0C32 /* SpotlightAppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE89C01D5CB76900DA0C32 /* SpotlightAppDelegateTests.m */,
+			);
+			path = SpotlightAppDelegate;
+			sourceTree = "<group>";
+		};
+		9FBE89C11D5CB76900DA0C32 /* TyphoonAppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE89C21D5CB76900DA0C32 /* TyphoonAppDelegateTests.m */,
+			);
+			path = TyphoonAppDelegate;
+			sourceTree = "<group>";
+		};
+		9FBE89C31D5CB76900DA0C32 /* LaunchHandler */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE89C41D5CB76900DA0C32 /* SpotlightLaunchHandler */,
+			);
+			path = LaunchHandler;
+			sourceTree = "<group>";
+		};
+		9FBE89C41D5CB76900DA0C32 /* SpotlightLaunchHandler */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE89C51D5CB76900DA0C32 /* SpotlightLaunchHandlerTests.m */,
+			);
+			path = SpotlightLaunchHandler;
+			sourceTree = "<group>";
+		};
+		9FBE89C61D5CB76900DA0C32 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE89C71D5CB76900DA0C32 /* ConcreteClasses */,
+				9FBE89D01D5CB76900DA0C32 /* Helpers */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		9FBE89C71D5CB76900DA0C32 /* ConcreteClasses */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE89C81D5CB76900DA0C32 /* CleanLaunchRouter */,
+				9FBE89CA1D5CB76900DA0C32 /* EventLaunchRouter */,
+				9FBE89CC1D5CB76900DA0C32 /* LectureLaunchRouter */,
+				9FBE89CE1D5CB76900DA0C32 /* SpeakerLaunchRouter */,
+			);
+			path = ConcreteClasses;
+			sourceTree = "<group>";
+		};
+		9FBE89C81D5CB76900DA0C32 /* CleanLaunchRouter */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE89C91D5CB76900DA0C32 /* CleanLaunchRouterTests.m */,
+			);
+			path = CleanLaunchRouter;
+			sourceTree = "<group>";
+		};
+		9FBE89CA1D5CB76900DA0C32 /* EventLaunchRouter */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE89CB1D5CB76900DA0C32 /* EventLaunchRouterTests.m */,
+			);
+			path = EventLaunchRouter;
+			sourceTree = "<group>";
+		};
+		9FBE89CC1D5CB76900DA0C32 /* LectureLaunchRouter */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE89CD1D5CB76900DA0C32 /* LectureLaunchRouterTests.m */,
+			);
+			path = LectureLaunchRouter;
+			sourceTree = "<group>";
+		};
+		9FBE89CE1D5CB76900DA0C32 /* SpeakerLaunchRouter */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE89CF1D5CB76900DA0C32 /* SpeakerLaunchRouterTests.m */,
+			);
+			path = SpeakerLaunchRouter;
+			sourceTree = "<group>";
+		};
+		9FBE89D01D5CB76900DA0C32 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE89D11D5CB76900DA0C32 /* TabBarControllerFactory */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		9FBE89D11D5CB76900DA0C32 /* TabBarControllerFactory */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE89D21D5CB76900DA0C32 /* TabBarControllerFactoryImplementationTests.m */,
+			);
+			path = TabBarControllerFactory;
+			sourceTree = "<group>";
+		};
+		9FBE89DC1D5CB80300DA0C32 /* StoryboardAssembly */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE89DD1D5CB81400DA0C32 /* StoryboardAssembly.h */,
+				9FBE89DE1D5CB81400DA0C32 /* StoryboardAssembly.m */,
+			);
+			name = StoryboardAssembly;
+			sourceTree = "<group>";
+		};
+		9FBE89E01D5CBAE200DA0C32 /* LaunchSystemAssembly */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE89E11D5CBB7800DA0C32 /* LaunchSystemAssembly.h */,
+				9FBE89E21D5CBB7800DA0C32 /* LaunchSystemAssembly.m */,
+			);
+			name = LaunchSystemAssembly;
+			sourceTree = "<group>";
+		};
+		9FBE89E41D5CBC4900DA0C32 /* ApplicationHelperAssembly */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE89E51D5CBC5A00DA0C32 /* ApplicationHelperAssembly.h */,
+				9FBE89E61D5CBC5A00DA0C32 /* ApplicationHelperAssembly.m */,
+			);
+			name = ApplicationHelperAssembly;
+			sourceTree = "<group>";
+		};
 		9FC1F6741D2823E40070D9B5 /* EventListServiceTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -6350,6 +6726,7 @@
 		9FF125231D51E6120098625F /* ApplicationLayerTests */ = {
 			isa = PBXGroup;
 			children = (
+				9FBE89BB1D5CB76900DA0C32 /* LaunchSystem */,
 				9FF125241D51E61B0098625F /* SpotlightIndexer */,
 			);
 			name = ApplicationLayerTests;
@@ -6875,6 +7252,7 @@
 				2B20648B1D3F9CE900246C8D /* LectureModelObject.m in Sources */,
 				9F8E5F801BC2592600DC10DB /* ResponseValidatorsAssembly.m in Sources */,
 				631FFE551BEF930200749DB8 /* ReportListPresenter.m in Sources */,
+				9FBE89AF1D5CB71300DA0C32 /* TyphoonAppDelegate.m in Sources */,
 				63F6138F1CB00A220002AEF0 /* LectureDescriptionTableViewCellObject.m in Sources */,
 				6315BA051C9EC23600999877 /* VideoRecordTableViewCell.m in Sources */,
 				9F1830BF1BC11D26000E21A5 /* JSONResponseDeserializer.m in Sources */,
@@ -6893,6 +7271,7 @@
 				6670504B1D4615BC00DD9D6E /* ReportEventTableViewCellObject.m in Sources */,
 				2B2064821D3F9CE900246C8D /* _LecturePlainObject.m in Sources */,
 				2B2064841D3F9CE900246C8D /* _RegistrationQuestionPlainObject.m in Sources */,
+				9FBE89B21D5CB71300DA0C32 /* CleanLaunchRouter.m in Sources */,
 				66764D041D4B636B00EF9D58 /* ReportsSearchViewAnimator.m in Sources */,
 				631FFE561BEF930200749DB8 /* ReportListRouter.m in Sources */,
 				66E999631D54B04100161D98 /* TagObjectDescriptor.m in Sources */,
@@ -6919,6 +7298,7 @@
 				2B2064941D3F9CE900246C8D /* LecturePlainObject.m in Sources */,
 				63F6136B1CB00A220002AEF0 /* PreviousLectureTableViewCellObject.m in Sources */,
 				63F613591CB00A220002AEF0 /* EventModuleAssembly.m in Sources */,
+				9FBE89B41D5CB71300DA0C32 /* LectureLaunchRouter.m in Sources */,
 				9F0A85371BC18A3C006F79FB /* NetworkCompoundOperationBuilder.m in Sources */,
 				9FF750031D26C74B000D208D /* EventListOperationFactory.m in Sources */,
 				667050371D46159800DD9D6E /* ReportSpeakerTableViewCell.m in Sources */,
@@ -6930,15 +7310,17 @@
 				66E9999D1D54B31300161D98 /* TagServicePredicateBuilder.m in Sources */,
 				63F613961CB00A220002AEF0 /* SpeakerInfoInteractor.m in Sources */,
 				9F4077901D2BF95200D47EF6 /* CommonResourceClient.m in Sources */,
+				9FBE89BA1D5CB72D00DA0C32 /* CleanLaunchAppDelegate.m in Sources */,
 				2B2064991D3F9CE900246C8D /* TagPlainObject.m in Sources */,
-				63FDCE061BBDBA2A00A43B60 /* AppDelegate.m in Sources */,
 				63F6134E1CB00A220002AEF0 /* AnnouncementListPresenter.m in Sources */,
 				631808401C482B1300A61E7D /* SpeakerShortInfoInteractor.m in Sources */,
+				9FBE89B31D5CB71300DA0C32 /* EventLaunchRouter.m in Sources */,
 				9F78D7441D59D6EF009DDCEA /* SpotlightCoreDataStackCoordinatorImplementation.m in Sources */,
 				667050531D46332200DD9D6E /* ReportsSearchCellObjectsBuilderImplementation.m in Sources */,
 				63F613701CB00A220002AEF0 /* EventDescriptionTableViewCell.m in Sources */,
 				2B05E16E1D51D80100E017AB /* SpeakerInfoSocialContactsCellObject.m in Sources */,
 				2B20647C1D3F9CE900246C8D /* _SocialNetworkAccountModelObject.m in Sources */,
+				9FBE89B11D5CB71300DA0C32 /* SpotlightLaunchHandler.m in Sources */,
 				636B64041BBDD19A0053E38F /* LectureServiceImplementation.m in Sources */,
 				63F54D9B1BC5AB3C00DB1746 /* ServiceComponentsAssembly.m in Sources */,
 				2B20648F1D3F9CE900246C8D /* SpeakerModelObject.m in Sources */,
@@ -6952,6 +7334,7 @@
 				9FAB6A701D53896E0061F333 /* IndexerMonitorOperationQueueFactory.m in Sources */,
 				9F78D7761D5A023B009DDCEA /* LectureObjectIndexer.m in Sources */,
 				63F6134F1CB00A220002AEF0 /* AnnouncementListRouter.m in Sources */,
+				9FBE89E31D5CBB7800DA0C32 /* LaunchSystemAssembly.m in Sources */,
 				636F8C971BC97B3100552B91 /* EventServiceImplementation.m in Sources */,
 				9F40777F1D2BF4F300D47EF6 /* RamblerLocationServiceImplementation.m in Sources */,
 				6318083F1C482B1300A61E7D /* SpeakerShortInfoModuleAssembly.m in Sources */,
@@ -6966,8 +7349,11 @@
 				9F8E5F841BC25A0700DC10DB /* ResponseMappersAssembly.m in Sources */,
 				631808431C482B1300A61E7D /* SpeakerShortInfoView.m in Sources */,
 				63F613681CB00A220002AEF0 /* PreviousEventSectionHeaderTableViewCellObject.m in Sources */,
+				9FBE89B01D5CB71300DA0C32 /* VerySpecialAppDelegateForTesting.m in Sources */,
 				9F18311C1BC1615C000E21A5 /* ResultsResponseObjectFormatter.m in Sources */,
+				9FBE89AE1D5CB71300DA0C32 /* SpotlightAppDelegate.m in Sources */,
 				2B20647A1D3F9CE900246C8D /* _MetaEventModelObject.m in Sources */,
+				9FBE89DF1D5CB81400DA0C32 /* StoryboardAssembly.m in Sources */,
 				63F613921CB00A220002AEF0 /* LectureDataDisplayManager.m in Sources */,
 				9F0A85011BC1698B006F79FB /* ResponseMappingOperation.m in Sources */,
 				63F6136C1CB00A220002AEF0 /* SignUpAndSaveToCalendarEventTableViewCellObject.m in Sources */,
@@ -6976,6 +7362,7 @@
 				2B20648A1D3F9CE900246C8D /* LectureMaterialModelObject.m in Sources */,
 				9F40978D1D5210D9008BFE42 /* SpotlightIndexerAssembly.m in Sources */,
 				2B2064931D3F9CE900246C8D /* LectureMaterialPlainObject.m in Sources */,
+				9FBE89E71D5CBC5A00DA0C32 /* ApplicationHelperAssembly.m in Sources */,
 				66E9993D1D54AF5100161D98 /* TagAssembly.m in Sources */,
 				636B64071BBDD2A40053E38F /* LectureMaterialsServiceImplementation.m in Sources */,
 				2B2064801D3F9CE900246C8D /* _EventPlainObject.m in Sources */,
@@ -6985,6 +7372,7 @@
 				63F613B31CB10FC80002AEF0 /* AnnouncementListTableViewCell.m in Sources */,
 				9F8E5F741BC255AA00DC10DB /* RequestSignersAssembly.m in Sources */,
 				66E9995D1D54B03300161D98 /* TagTextFilter.m in Sources */,
+				9FBE89B61D5CB71300DA0C32 /* TabBarControllerFactoryImplementation.m in Sources */,
 				63F6138A1CB00A220002AEF0 /* LectureModuleAssembly.m in Sources */,
 				9FF99E511BC42FF6006F15AF /* OperationSchedulerImplementation.m in Sources */,
 				63F6136E1CB00A220002AEF0 /* CurrentVideoTranslationTableViewCell.m in Sources */,
@@ -7007,6 +7395,7 @@
 				2B429A631D4798D4004C005F /* EventViewAnimator.m in Sources */,
 				9F533A891D50DE84004F8E82 /* FetchedResultsControllerChangeProvider.m in Sources */,
 				9F0A85021BC1698B006F79FB /* ResponseValidationOperation.m in Sources */,
+				9FBE89B51D5CB71300DA0C32 /* SpeakerLaunchRouter.m in Sources */,
 				63F6135B1CB00A220002AEF0 /* EventHeaderInteractor.m in Sources */,
 				667050141D46143900DD9D6E /* ReportsSearchRouter.m in Sources */,
 				631FFE541BEF930200749DB8 /* ReportListInteractor.m in Sources */,
@@ -7049,7 +7438,6 @@
 				63ECC4161CA81E5300439A01 /* ErrorConstants.m in Sources */,
 				66E999A71D54B50500161D98 /* ContentSizeObserver.m in Sources */,
 				63F613901CB00A220002AEF0 /* LectureDescriptionTableViewCell.m in Sources */,
-				2B01CEC11D50AAC300DA8E66 /* VerySpecialAppDelegateForTesting.m in Sources */,
 				63EF15BB1BC4559900480CAF /* PushNotificationCenterImplementation.m in Sources */,
 				63F613571CB00A220002AEF0 /* AnnouncementListDataDisplayManager.m in Sources */,
 				636F8DDB1BCB8FE800552B91 /* RamblerLocationInteractor.m in Sources */,
@@ -7120,6 +7508,8 @@
 				63F613E61CB111070002AEF0 /* LectureRouterTests.m in Sources */,
 				662166501D4F4507000A1D11 /* ReportsSearchInteractorTests.m in Sources */,
 				63F613EF1CB111070002AEF0 /* SpeakerInfoViewControllerTests.m in Sources */,
+				9FBE89DA1D5CB76900DA0C32 /* SpeakerLaunchRouterTests.m in Sources */,
+				9FBE89D51D5CB76900DA0C32 /* TyphoonAppDelegateTests.m in Sources */,
 				635E18C21CA6A496005B8439 /* LectureModuleAssemblyTests.m in Sources */,
 				9FF37E181D32397900471B4E /* RamblerLocationPresenterTests.m in Sources */,
 				6621664F1D4F4507000A1D11 /* ReportsSearchDataDisplayManagerTests.m in Sources */,
@@ -7134,12 +7524,14 @@
 				63F8F2F61BF9FE7D000017F3 /* RCFRESTRequestConfiguratorTests.m in Sources */,
 				666C5C3F1D4F344B002D73D5 /* ReportsSearchPresenter.m in Sources */,
 				63F613DC1CB111070002AEF0 /* CurrentEventCellObjectBuilderTests.m in Sources */,
+				9FBE89D61D5CB76900DA0C32 /* SpotlightLaunchHandlerTests.m in Sources */,
 				63F613EB1CB111070002AEF0 /* ReportListRouterTests.m in Sources */,
 				631CBA811C021A5300E3EBA8 /* PresentationLayerHelpersAssemblyTests.m in Sources */,
 				9FAB6A831D54965F0061F333 /* SearchableIndexMock.m in Sources */,
 				631CBAA71C021C6900E3EBA8 /* EventTypeDeterminatorTests.m in Sources */,
 				63F402FE1BCF840A0086D030 /* NetworkClientsAssemblyTests.m in Sources */,
 				63F613E01CB111070002AEF0 /* EventInteractorTests.m in Sources */,
+				9FBE89D31D5CB76900DA0C32 /* CleanLaunchAppDelegateTests.m in Sources */,
 				63F613E31CB111070002AEF0 /* EventViewControllerTests.m in Sources */,
 				63F613E71CB111070002AEF0 /* LectureViewControllerTests.m in Sources */,
 				9F0A853F1BC192F0006F79FB /* OperationChainerTests.m in Sources */,
@@ -7148,6 +7540,7 @@
 				63F402F11BCF77CB0086D030 /* ServiceComponentsAssemblyTests.m in Sources */,
 				66E9992C1D54899C00161D98 /* LectureServiceTests.m in Sources */,
 				9F1830DB1BC126D7000E21A5 /* RCFParseResponseValidatorTests.m in Sources */,
+				9FBE89D71D5CB76900DA0C32 /* CleanLaunchRouterTests.m in Sources */,
 				9F0A85201BC185AA006F79FB /* TestChainableOperation.m in Sources */,
 				63F402F01BCF77CB0086D030 /* ApplicationAssemblyTests.m in Sources */,
 				9FF750171D27DCBE000D208D /* EntityNameFormatterImplementationTests.m in Sources */,
@@ -7158,6 +7551,7 @@
 				63F403001BCF85EE0086D030 /* RequestConfiguratorsAssemblyTests.m in Sources */,
 				9F78D7721D5A005A009DDCEA /* LectureObjectTransformerTests.m in Sources */,
 				9FC1F6801D2838FA0070D9B5 /* EventListQueryTransformerTests.m in Sources */,
+				9FBE89DB1D5CB76900DA0C32 /* TabBarControllerFactoryImplementationTests.m in Sources */,
 				63F613DA1CB111070002AEF0 /* AnnouncementListRouterTests.m in Sources */,
 				9F0A85231BC185AA006F79FB /* ChainableOperationTestsBase.m in Sources */,
 				662166511D4F4507000A1D11 /* ReportsSearchRouterTests.m in Sources */,
@@ -7173,6 +7567,7 @@
 				631CBA721C020CCD00E3EBA8 /* AnnouncementListModuleAssemblyTests.m in Sources */,
 				9FAB6A9A1D54BFA00061F333 /* FetchedResultsControllerChangeProviderTests.m in Sources */,
 				635E18C71CA6B8CE005B8439 /* SpeakerShortInfoModuleAssemblyTests.m in Sources */,
+				9FBE89D81D5CB76900DA0C32 /* EventLaunchRouterTests.m in Sources */,
 				9F0A851F1BC185AA006F79FB /* TestCancellableOperation.m in Sources */,
 				9F0A85271BC185AA006F79FB /* ResponseMappingOperationTests.m in Sources */,
 				9F1830F91BC1464C000E21A5 /* ManagedObjectMappingProviderTests.m in Sources */,
@@ -7211,6 +7606,7 @@
 				63F613E81CB111070002AEF0 /* ReportListDataDisplayManagerTests.m in Sources */,
 				9F1830C31BC11DE7000E21A5 /* RCFJSONResponseDeserializerTests.m in Sources */,
 				9F0A85221BC185AA006F79FB /* TestErrorChainableOperation.m in Sources */,
+				9FBE89D91D5CB76900DA0C32 /* LectureLaunchRouterTests.m in Sources */,
 				9F1830FD1BC14C37000E21A5 /* ManagedObjectMapperTests.m in Sources */,
 				9FAB6A981D54BE990061F333 /* EventChangeProviderFetchRequestFactoryTests.m in Sources */,
 				63F613D91CB111070002AEF0 /* AnnouncementListPresenterTests.m in Sources */,
@@ -7225,6 +7621,7 @@
 				63F613E11CB111070002AEF0 /* EventPresenterTests.m in Sources */,
 				9F0A85281BC185AA006F79FB /* ResponseValidationOperationTests.m in Sources */,
 				66704FF61D45F69300DD9D6E /* RamblerInitialAssemblyCollector+Activate.m in Sources */,
+				9FBE89D41D5CB76900DA0C32 /* SpotlightAppDelegateTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7310,6 +7707,33 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CURRENT_PROJECT_VERSION = 33;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/Bolts\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaLumberjack\"",
+					"\"${PODS_ROOT}/Headers/Public/Crashlytics\"",
+					"\"${PODS_ROOT}/Headers/Public/CrutchKit\"",
+					"\"${PODS_ROOT}/Headers/Public/EasyMapping\"",
+					"\"${PODS_ROOT}/Headers/Public/Fabric\"",
+					"\"${PODS_ROOT}/Headers/Public/MMBarricade\"",
+					"\"${PODS_ROOT}/Headers/Public/MagicalRecord\"",
+					"\"${PODS_ROOT}/Headers/Public/Nimbus\"",
+					"\"${PODS_ROOT}/Headers/Public/OCMock\"",
+					"\"${PODS_ROOT}/Headers/Public/Parse\"",
+					"\"${PODS_ROOT}/Headers/Public/PureLayout\"",
+					"\"${PODS_ROOT}/Headers/Public/RamblerAppDelegateProxy\"",
+					"\"${PODS_ROOT}/Headers/Public/RamblerSegues\"",
+					"\"${PODS_ROOT}/Headers/Public/RamblerTyphoonUtils\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"\"${PODS_ROOT}/Headers/Public/Typhoon\"",
+					"\"${PODS_ROOT}/Headers/Public/UICollectionViewLeftAlignedLayout\"",
+					"\"${PODS_ROOT}/Headers/Public/UIViewController+Routing\"",
+					"\"${PODS_ROOT}/Headers/Public/ViperMcFlurry/IntermoduleDataTransfer\"",
+					"\"${PODS_ROOT}/Headers/Public/ViperMcFlurry\"/**",
+					"\"${PODS_ROOT}/Headers/Public/libextobjc\"",
+				);
 				INFOPLIST_FILE = "conferences/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -7423,6 +7847,33 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 33;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/Bolts\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaLumberjack\"",
+					"\"${PODS_ROOT}/Headers/Public/Crashlytics\"",
+					"\"${PODS_ROOT}/Headers/Public/CrutchKit\"",
+					"\"${PODS_ROOT}/Headers/Public/EasyMapping\"",
+					"\"${PODS_ROOT}/Headers/Public/Fabric\"",
+					"\"${PODS_ROOT}/Headers/Public/MMBarricade\"",
+					"\"${PODS_ROOT}/Headers/Public/MagicalRecord\"",
+					"\"${PODS_ROOT}/Headers/Public/Nimbus\"",
+					"\"${PODS_ROOT}/Headers/Public/OCMock\"",
+					"\"${PODS_ROOT}/Headers/Public/Parse\"",
+					"\"${PODS_ROOT}/Headers/Public/PureLayout\"",
+					"\"${PODS_ROOT}/Headers/Public/RamblerAppDelegateProxy\"",
+					"\"${PODS_ROOT}/Headers/Public/RamblerSegues\"",
+					"\"${PODS_ROOT}/Headers/Public/RamblerTyphoonUtils\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"\"${PODS_ROOT}/Headers/Public/Typhoon\"",
+					"\"${PODS_ROOT}/Headers/Public/UICollectionViewLeftAlignedLayout\"",
+					"\"${PODS_ROOT}/Headers/Public/UIViewController+Routing\"",
+					"\"${PODS_ROOT}/Headers/Public/ViperMcFlurry/IntermoduleDataTransfer\"",
+					"\"${PODS_ROOT}/Headers/Public/ViperMcFlurry\"/**",
+					"\"${PODS_ROOT}/Headers/Public/libextobjc\"",
+				);
 				INFOPLIST_FILE = "Conferences/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -7441,6 +7892,33 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CURRENT_PROJECT_VERSION = 33;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/Bolts\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaLumberjack\"",
+					"\"${PODS_ROOT}/Headers/Public/Crashlytics\"",
+					"\"${PODS_ROOT}/Headers/Public/CrutchKit\"",
+					"\"${PODS_ROOT}/Headers/Public/EasyMapping\"",
+					"\"${PODS_ROOT}/Headers/Public/Fabric\"",
+					"\"${PODS_ROOT}/Headers/Public/MMBarricade\"",
+					"\"${PODS_ROOT}/Headers/Public/MagicalRecord\"",
+					"\"${PODS_ROOT}/Headers/Public/Nimbus\"",
+					"\"${PODS_ROOT}/Headers/Public/OCMock\"",
+					"\"${PODS_ROOT}/Headers/Public/Parse\"",
+					"\"${PODS_ROOT}/Headers/Public/PureLayout\"",
+					"\"${PODS_ROOT}/Headers/Public/RamblerAppDelegateProxy\"",
+					"\"${PODS_ROOT}/Headers/Public/RamblerSegues\"",
+					"\"${PODS_ROOT}/Headers/Public/RamblerTyphoonUtils\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"\"${PODS_ROOT}/Headers/Public/Typhoon\"",
+					"\"${PODS_ROOT}/Headers/Public/UICollectionViewLeftAlignedLayout\"",
+					"\"${PODS_ROOT}/Headers/Public/UIViewController+Routing\"",
+					"\"${PODS_ROOT}/Headers/Public/ViperMcFlurry/IntermoduleDataTransfer\"",
+					"\"${PODS_ROOT}/Headers/Public/ViperMcFlurry\"/**",
+					"\"${PODS_ROOT}/Headers/Public/libextobjc\"",
+				);
 				INFOPLIST_FILE = "Conferences/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

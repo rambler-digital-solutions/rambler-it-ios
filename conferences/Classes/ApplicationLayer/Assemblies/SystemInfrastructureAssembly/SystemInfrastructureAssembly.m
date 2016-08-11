@@ -57,5 +57,15 @@
     }];
 }
 
+- (UIWindow *)mainWindow {
+    return [TyphoonDefinition withClass:[UIWindow class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition useInitializer:@selector(initWithFrame:)
+                                              parameters:^(TyphoonMethod *initializer) {
+                                                  [initializer injectParameterWith:[NSValue valueWithCGRect:[[UIScreen mainScreen] bounds]]];
+                                              }];
+                              definition.scope = TyphoonScopeSingleton;
+                          }];
+}
 
 @end

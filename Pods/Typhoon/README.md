@@ -11,6 +11,12 @@ Visit <a href="http://typhoonframework.org">the Typhoon website</a> for an intro
 
 Check out the <a href="http://www.typhoonframework.org/#features">feature list</a>. 
 
+### Looking for a pure Swift Solution?
+
+Typhoon works with Swift, but is written in Objective-C and uses the Objective-C runtime for reflection, injection and instrumenting assemblies. We think Typhoon is an excellent option if you need Dependeny Injection in your Swift projects, however we're happy to announce that we've been working on a pure Swift framework! If you've used Typhoon in the past, our Swift library will feel very familiar yet completely harmonious with static, idiomatic Swift. 
+
+We didn't want to create a pure Swift version of Typhoon unless it would be better in every way, so it has been a while  coming. But when it comes to performance the new library is as Swift as hell :)
+
 ---------------------------------------
 
 # Usage
@@ -33,7 +39,7 @@ let viewControler = assembly.recommendationController() as! RecommendationContro
 *Have a Typhoon example app that you'd like to share? Great! Get in touch with us :)*
 
 # Installing 
-![Cocoapods Version](https://cocoapod-badges.herokuapp.com/v/Typhoon/badge.png) [![Pod Platform](https://img.shields.io/cocoapods/p/Typhoon.svg?style=flat)](http://typhoonframework.org/docs/latest/api/modules.html) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Dependency Status](https://www.versioneye.com/objective-c/typhoon/1.1.1/badge.svg?style=flat)](https://www.versioneye.com/objective-c/typhoon) [![Pod License](https://img.shields.io/cocoapods/l/Typhoon.svg?style=flat)](https://github.com/appsquickly/Typhoon/blob/master/LICENSE)
+![CocoaPods Version](https://cocoapod-badges.herokuapp.com/v/Typhoon/badge.png) [![Pod Platform](https://img.shields.io/cocoapods/p/Typhoon.svg?style=flat)](http://typhoonframework.org/docs/latest/api/modules.html) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Dependency Status](https://www.versioneye.com/objective-c/typhoon/1.1.1/badge.svg?style=flat)](https://www.versioneye.com/objective-c/typhoon) [![Pod License](https://img.shields.io/cocoapods/l/Typhoon.svg?style=flat)](https://github.com/appsquickly/Typhoon/blob/master/LICENSE)
 
 Typhoon is available through <a href="http://cocoapods.org/?q=Typhoon">CocoaPods</a> or <a href="https://github.com/Carthage/Carthage">Carthage</a>, and also builds easily from source.
 

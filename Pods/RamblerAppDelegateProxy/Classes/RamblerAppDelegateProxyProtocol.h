@@ -33,6 +33,6 @@
  
  @param delegates Array of <UIApplicationDelegate> objects
  */
-- (void)addAppDelegates:(NSArray<UIApplicationDelegate> *)delegates;
+- (void)addAppDelegates:(NSArray<id <UIApplicationDelegate>> *)delegates;
 
 @end

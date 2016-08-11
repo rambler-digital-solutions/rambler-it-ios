@@ -20,48 +20,73 @@
 
 #import "ApplicationAssembly.h"
 
+#import "SystemInfrastructureAssembly.h"
+#import "ApplicationHelperAssembly.h"
+#import "LaunchSystemAssembly.h"
+#import "SpotlightIndexerAssembly.h"
+
 #import "ApplicationConfigurator.h"
 #import "ApplicationConfiguratorImplementation.h"
-#import "AppDelegate.h"
-#import "PushNotificationCenter.h"
-#import "PushNotificationCenterImplementation.h"
-#import "ServiceComponents.h"
 #import "ThirdPartiesConfigurator.h"
 #import "ThirdPartiesConfiguratorImplementation.h"
-#import "SpotlightIndexerAssembly.h"
+#import "CleanLaunchRouter.h"
+#import "CleanLaunchAppDelegate.h"
+
+#import <RamblerAppDelegateProxy/RamblerAppDelegateProxy.h>
 
 @implementation ApplicationAssembly
 
-- (AppDelegate *)appDelegate {
-    return [TyphoonDefinition withClass:[AppDelegate class]
+- (RamblerAppDelegateProxy *)applicationDelegateProxy {
+    return [TyphoonDefinition withClass:[RamblerAppDelegateProxy class]
+                          configuration:^(TyphoonDefinition *definition){
+                              [definition injectMethod:@selector(addAppDelegates:)
+                                            parameters:^(TyphoonMethod *method) {
+                                                [method injectParameterWith:@[
+                                                                              [self cleanStartAppDelegate],
+                                                                              [self.launchSystemAssembly spotlightAppDelegate]
+                                                                              ]];
+                                            }];
+                              definition.scope = TyphoonScopeSingleton;
+                          }];
+}
+
+- (CleanLaunchAppDelegate *)cleanStartAppDelegate {
+    return [TyphoonDefinition withClass:[CleanLaunchAppDelegate class]
                           configuration:^(TyphoonDefinition *definition) {
                               [definition injectProperty:@selector(applicationConfigurator)
                                                     with:[self applicationConfigurator]];
-                              [definition injectProperty:@selector(pushNotificationCenter)
-                                                    with:[self pushNotificationCenter]];
                               [definition injectProperty:@selector(thirdPartiesConfigurator)
                                                     with:[self thirdPartiesConfigurator]];
+                              [definition injectProperty:@selector(cleanStartRouter)
+                                                    with:[self cleanStartRouter]];
                               [definition injectProperty:@selector(indexerMonitor)
                                                     with:[self.spotlightIndexerAssembly indexerMonitor]];
                               [definition injectProperty:@selector(spotlightCoreDataStackCoordinator)
                                                     with:[self.spotlightIndexerAssembly spotlightCoreDataStackCoordinator]];
-    }];
+                              
+                              definition.scope = TyphoonScopeSingleton;
+                          }];
 }
 
 - (id <ApplicationConfigurator>)applicationConfigurator {
     return [TyphoonDefinition withClass:[ApplicationConfiguratorImplementation class]];
 }
 
-- (id <PushNotificationCenter>)pushNotificationCenter {
-    return [TyphoonDefinition withClass:[PushNotificationCenterImplementation class]
-                          configuration:^(TyphoonDefinition *definition) {
-                              [definition injectProperty:@selector(pushNotificationService)
-                                                    with:[self.serviceComponents pushNotificationService]];
-    }];
-}
-
 - (id <ThirdPartiesConfigurator>)thirdPartiesConfigurator {
     return [TyphoonDefinition withClass:[ThirdPartiesConfiguratorImplementation class]];
+}
+
+#pragma mark - StartUpSystem
+
+- (CleanLaunchRouter *)cleanStartRouter {
+    return [TyphoonDefinition withClass:[CleanLaunchRouter class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition useInitializer:@selector(initWithTabBarControllerFactory:window:)
+                                              parameters:^(TyphoonMethod *initializer) {
+                                                  [initializer injectParameterWith:[self.applicationHelperAssembly tabBarControllerFactory]];
+                                                  [initializer injectParameterWith:[self.systemInfrastructureAssembly mainWindow]];
+                                              }];
+                          }];
 }
 
 @end

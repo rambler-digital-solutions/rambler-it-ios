@@ -18,11 +18,13 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "TyphoonAssembly.h"
-#import "AssemblyCollector/RamblerInitialAssembly.h"
+#import <Typhoon/Typhoon.h>
+#import <AssemblyCollector/RamblerInitialAssembly.h>
 
-@protocol ServiceComponents;
 @class SpotlightIndexerAssembly;
+@class SystemInfrastructureAssembly;
+@class ApplicationHelperAssembly;
+@class LaunchSystemAssembly;
 
 /**
  @author Artem Karpushin
@@ -31,7 +33,9 @@
  */
 @interface ApplicationAssembly : TyphoonAssembly <RamblerInitialAssembly>
 
-@property (strong, nonatomic, readonly) TyphoonAssembly<ServiceComponents>* serviceComponents;
-@property (strong, nonatomic, readonly) SpotlightIndexerAssembly* spotlightIndexerAssembly;
+@property (strong, nonatomic, readonly) SpotlightIndexerAssembly *spotlightIndexerAssembly;
+@property (strong, nonatomic, readonly) SystemInfrastructureAssembly *systemInfrastructureAssembly;
+@property (strong, nonatomic, readonly) ApplicationHelperAssembly *applicationHelperAssembly;
+@property (strong, nonatomic, readonly) LaunchSystemAssembly *launchSystemAssembly;
 
 @end

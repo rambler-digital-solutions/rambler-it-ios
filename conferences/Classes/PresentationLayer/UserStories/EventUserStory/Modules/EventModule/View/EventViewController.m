@@ -119,7 +119,8 @@
 - (void)setupViewInitialState {
     [self.navigationController.navigationBar becomeTransparent];
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [self.navigationController setNavigationBarHidden:NO
+                                             animated:YES];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 

@@ -35,5 +35,6 @@
 - (NSNotificationCenter *)notificationCenter;
 - (UIApplication *)application;
 - (NSFileManager *)fileManager;
+- (UIWindow *)mainWindow;
 
 @end

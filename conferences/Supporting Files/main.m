@@ -19,13 +19,16 @@
 // THE SOFTWARE.
 
 #import <UIKit/UIKit.h>
-#import "AppDelegate.h"
+#import <RamblerAppDelegateProxy/RamblerAppDelegateProxy.h>
+
+#import "TyphoonAppDelegate.h"
 
 int main(int argc, char * argv[]) {
     @autoreleasepool {
         Class appDelegateClass;
         if (!NSClassFromString(@"XCTest")) {
-            appDelegateClass = [AppDelegate class];
+            [[RamblerAppDelegateProxy injector] setDefaultAppDelegate:[TyphoonAppDelegate new]];
+            return UIApplicationMain(argc, argv, nil, NSStringFromClass([RamblerAppDelegateProxy class]));
         } else {
             appDelegateClass = NSClassFromString(@"VerySpecialAppDelegateForTesting");
         }

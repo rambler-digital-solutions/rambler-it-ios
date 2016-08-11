@@ -51,7 +51,7 @@ static  NSString *const kParseApiKey = @"APIKey";
 #pragma mark - Config
 
 - (id)configurer {
-    return [TyphoonDefinition configDefinitionWithName:kConfigFileName];
+    return [TyphoonDefinition withConfigName:kConfigFileName];
 }
 
 @end
