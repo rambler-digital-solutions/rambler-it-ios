@@ -90,10 +90,6 @@
     [self.output didTapReadMoreEventDescriptionButton];
 }
 
-- (void)didTapReadMoreLectureDescriptionButton {
-    [self.output didTapReadMoreLectureDescriptionButton];
-}
-
 - (void)didTapCurrentTranslationButton {
     [self.output didTapCurrentTranslationButton];
 }

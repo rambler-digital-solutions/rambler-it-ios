@@ -56,13 +56,6 @@
 /**
  @author Artem Karpushin
  
- Method is used to inform presenter that "read more" button of lecture description was tapped
- */
-- (void)didTapReadMoreLectureDescriptionButton;
-
-/**
- @author Artem Karpushin
- 
  Method is used to inform presenter that "current translation" button was tapped
  */
 - (void)didTapCurrentTranslationButton;

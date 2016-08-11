@@ -56,10 +56,6 @@
     
 }
 
-- (void)didTapReadMoreLectureDescriptionButton {
-    
-}
-
 - (void)didTapCurrentTranslationButton {
     
 }

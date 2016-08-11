@@ -153,16 +153,6 @@
     OCMVerify([self.mockOutput didTapReadMoreEventDescriptionButton]);
 }
 
-- (void)testSuccessDidTapReadMoreLectureDescriptionButton {
-    // given
-    
-    // when
-    [self.viewController didTapReadMoreLectureDescriptionButton];
-    
-    // then
-    OCMVerify([self.mockOutput didTapReadMoreLectureDescriptionButton]);
-}
-
 - (void)testSuccessDidTapCurrentTranslationButton {
     // given
     

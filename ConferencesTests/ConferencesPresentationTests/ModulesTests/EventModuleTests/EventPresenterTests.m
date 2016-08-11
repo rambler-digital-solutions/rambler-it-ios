@@ -131,16 +131,6 @@
     // TODO: Complete test after method get implemented
 }
 
-- (void)testSuccessDidTapReadMoreLectureDescriptionButton {
-    // given
-    
-    // when
-    [self.presenter didTapReadMoreLectureDescriptionButton];
-    
-    // then
-    // TODO: Complete test after method get implemented
-}
-
 - (void)testSuccessDidTapCurrentTranslationButton {
     // given
     
