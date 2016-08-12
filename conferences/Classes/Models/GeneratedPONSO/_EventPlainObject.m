@@ -27,7 +27,6 @@
     [aCoder encodeObject:self.lectures forKey:@"lectures"];
     [aCoder encodeObject:self.metaEvent forKey:@"metaEvent"];
     [aCoder encodeObject:self.registrationQuestions forKey:@"registrationQuestions"];
-    [aCoder encodeObject:self.tags forKey:@"tags"];
     [aCoder encodeObject:self.tech forKey:@"tech"];
 }
 
@@ -49,7 +48,6 @@
         _lectures = [[aDecoder decodeObjectForKey:@"lectures"] copy];
         _metaEvent = [[aDecoder decodeObjectForKey:@"metaEvent"] copy];
         _registrationQuestions = [[aDecoder decodeObjectForKey:@"registrationQuestions"] copy];
-        _tags = [[aDecoder decodeObjectForKey:@"tags"] copy];
         _tech = [[aDecoder decodeObjectForKey:@"tech"] copy];
     }
 
@@ -76,7 +74,6 @@
     replica.lectures = self.lectures;
     replica.metaEvent = self.metaEvent;
     replica.registrationQuestions = self.registrationQuestions;
-    replica.tags = self.tags;
     replica.tech = self.tech;
 
     return replica;

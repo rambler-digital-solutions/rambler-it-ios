@@ -25,7 +25,6 @@
 @interface AnnouncementViewModel ()
 
 @property (strong, nonatomic, readwrite) NSString *eventTitle;
-@property (strong, nonatomic, readwrite) NSArray *eventTags;
 @property (strong, nonatomic, readwrite) NSURL *imageUrl;
 @property (strong, nonatomic, readwrite) NSString *date;
 @property (strong, nonatomic, readwrite) NSString *time;
@@ -45,7 +44,6 @@
         _date = date;
         _time = time;
         _eventTitle = event.name;
-        _eventTags = event.tags.allObjects;
         _imageUrl = [NSURL URLWithString:event.metaEvent.imageUrlPath];
         _event = event;
     }

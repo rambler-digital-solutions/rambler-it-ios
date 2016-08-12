@@ -31,7 +31,7 @@
 #import "UIColor+ConferencesPallete.h"
 #import "DateFormatter.h"
 
-static NSString *const kSeparatorTagsString = @", ";
+static NSString *const kSeparatorTagsString = @" ";
 
 @implementation ReportsSearchCellObjectsBuilderImplementation
 
@@ -50,10 +50,7 @@ static NSString *const kSeparatorTagsString = @", ";
     NSAttributedString *highlightedTitle = [self highlightInString:event.name
                                                        selectedText:selectedText
                                                               color:[UIColor colorForSelectedTextEventCellObject]];
-    
-    NSArray *tags = [event.tags valueForKeyPath:TagModelObjectAttributes.name];
-    NSString *stringFromTags = tags ? @"" : [tags componentsJoinedByString:kSeparatorTagsString];
-    
+    NSString *stringFromTags = [self obtainTagsStringFromEvent:event];
     NSAttributedString *highlightedTags = [self highlightInString:stringFromTags
                                                       selectedText:selectedText
                                                              color:[UIColor colorForSelectedTextEventCellObject]];
@@ -95,6 +92,19 @@ static NSString *const kSeparatorTagsString = @", ";
         [highlightedString addAttribute:NSForegroundColorAttributeName value:color range:range];
     }
     return [highlightedString copy];
+}
+
+- (NSString *)obtainTagsStringFromEvent:(EventPlainObject *)event {
+    NSMutableArray *allTags = [NSMutableArray array];
+    for (LecturePlainObject *lecture in event.lectures) {
+        [allTags addObjectsFromArray:[lecture.tags allObjects]];
+    }
+    NSArray *arrayWithoutDuplicates = [[NSSet setWithArray: allTags] allObjects];
+    
+    NSArray *tagsNames = [arrayWithoutDuplicates valueForKey:TagModelObjectAttributes.name];
+    NSString *stringFromTags = [tagsNames count] != 0 ? [tagsNames componentsJoinedByString:kSeparatorTagsString] : @"" ;
+    
+    return stringFromTags;
 }
 
 @end

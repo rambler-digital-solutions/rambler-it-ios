@@ -26,7 +26,6 @@
 @interface AnnouncementViewModel : NSObject
 
 @property (strong, nonatomic, readonly) NSString *eventTitle;
-@property (strong, nonatomic, readonly) NSArray *eventTags;
 @property (strong, nonatomic, readonly) NSURL *imageUrl;
 @property (strong, nonatomic, readonly) NSString *date;
 @property (strong, nonatomic, readonly) NSString *time;

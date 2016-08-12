@@ -24,6 +24,8 @@
 @class LecturePlainObject;
 @class SpeakerPlainObject;
 
+static NSInteger kDefaultEstimatedHeight = 116;
+
 @implementation ReportsSearchViewController
 
 #pragma mark - Lifecycle
@@ -31,12 +33,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.output setupView];
+    self.reportsListSearchTableView.estimatedRowHeight = kDefaultEstimatedHeight;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [[UIScrollView appearance] setBackgroundColor:[UIColor whiteColor]];
+    
     self.reportsListSearchTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.reportsListSearchTableView.estimatedRowHeight = kDefaultEstimatedHeight;
 }
 
 #pragma mark - ReportsSearchViewInput

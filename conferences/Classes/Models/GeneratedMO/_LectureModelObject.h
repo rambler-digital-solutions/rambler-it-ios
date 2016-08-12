@@ -44,8 +44,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong, nullable) SpeakerModelObject *speaker;
 
-@property (nonatomic, strong, nullable) NSOrderedSet<TagModelObject*> *tags;
-- (nullable NSMutableOrderedSet<TagModelObject*>*)tagsSet;
+@property (nonatomic, strong, nullable) NSSet<TagModelObject*> *tags;
+- (nullable NSMutableSet<TagModelObject*>*)tagsSet;
 
 @end
 
@@ -58,17 +58,10 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface _LectureModelObject (TagsCoreDataGeneratedAccessors)
-- (void)addTags:(NSOrderedSet<TagModelObject*>*)value_;
-- (void)removeTags:(NSOrderedSet<TagModelObject*>*)value_;
+- (void)addTags:(NSSet<TagModelObject*>*)value_;
+- (void)removeTags:(NSSet<TagModelObject*>*)value_;
 - (void)addTagsObject:(TagModelObject*)value_;
 - (void)removeTagsObject:(TagModelObject*)value_;
-
-- (void)insertObject:(TagModelObject*)value inTagsAtIndex:(NSUInteger)idx;
-- (void)removeObjectFromTagsAtIndex:(NSUInteger)idx;
-- (void)insertTags:(NSArray *)value atIndexes:(NSIndexSet *)indexes;
-- (void)removeTagsAtIndexes:(NSIndexSet *)indexes;
-- (void)replaceObjectInTagsAtIndex:(NSUInteger)idx withObject:(TagModelObject*)value;
-- (void)replaceTagsAtIndexes:(NSIndexSet *)indexes withTags:(NSArray *)values;
 
 @end
 
@@ -98,8 +91,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (SpeakerModelObject*)primitiveSpeaker;
 - (void)setPrimitiveSpeaker:(SpeakerModelObject*)value;
 
-- (NSMutableOrderedSet<TagModelObject*>*)primitiveTags;
-- (void)setPrimitiveTags:(NSMutableOrderedSet<TagModelObject*>*)value;
+- (NSMutableSet<TagModelObject*>*)primitiveTags;
+- (void)setPrimitiveTags:(NSMutableSet<TagModelObject*>*)value;
 
 @end
 

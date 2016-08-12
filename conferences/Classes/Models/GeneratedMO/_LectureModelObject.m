@@ -81,75 +81,15 @@
 
 @dynamic tags;
 
-- (NSMutableOrderedSet<TagModelObject*>*)tagsSet {
+- (NSMutableSet<TagModelObject*>*)tagsSet {
 	[self willAccessValueForKey:@"tags"];
 
-	NSMutableOrderedSet<TagModelObject*> *result = (NSMutableOrderedSet<TagModelObject*>*)[self mutableOrderedSetValueForKey:@"tags"];
+	NSMutableSet<TagModelObject*> *result = (NSMutableSet<TagModelObject*>*)[self mutableSetValueForKey:@"tags"];
 
 	[self didAccessValueForKey:@"tags"];
 	return result;
 }
 
-@end
-
-@implementation _LectureModelObject (TagsCoreDataGeneratedAccessors)
-- (void)addTags:(NSOrderedSet<TagModelObject*>*)value_ {
-	[self.tagsSet unionOrderedSet:value_];
-}
-- (void)removeTags:(NSOrderedSet<TagModelObject*>*)value_ {
-	[self.tagsSet minusOrderedSet:value_];
-}
-- (void)addTagsObject:(TagModelObject*)value_ {
-	[self.tagsSet addObject:value_];
-}
-- (void)removeTagsObject:(TagModelObject*)value_ {
-	[self.tagsSet removeObject:value_];
-}
-- (void)insertObject:(TagModelObject*)value inTagsAtIndex:(NSUInteger)idx {
-    NSIndexSet* indexes = [NSIndexSet indexSetWithIndex:idx];
-    [self willChange:NSKeyValueChangeInsertion valuesAtIndexes:indexes forKey:@"tags"];
-    NSMutableOrderedSet *tmpOrderedSet = [NSMutableOrderedSet orderedSetWithOrderedSet:[self tags]];
-    [tmpOrderedSet insertObject:value atIndex:idx];
-    [self setPrimitiveValue:tmpOrderedSet forKey:@"tags"];
-    [self didChange:NSKeyValueChangeInsertion valuesAtIndexes:indexes forKey:@"tags"];
-}
-- (void)removeObjectFromTagsAtIndex:(NSUInteger)idx {
-    NSIndexSet* indexes = [NSIndexSet indexSetWithIndex:idx];
-    [self willChange:NSKeyValueChangeRemoval valuesAtIndexes:indexes forKey:@"tags"];
-    NSMutableOrderedSet *tmpOrderedSet = [NSMutableOrderedSet orderedSetWithOrderedSet:[self tags]];
-    [tmpOrderedSet removeObjectAtIndex:idx];
-    [self setPrimitiveValue:tmpOrderedSet forKey:@"tags"];
-    [self didChange:NSKeyValueChangeRemoval valuesAtIndexes:indexes forKey:@"tags"];
-}
-- (void)insertTags:(NSArray *)value atIndexes:(NSIndexSet *)indexes {
-    [self willChange:NSKeyValueChangeInsertion valuesAtIndexes:indexes forKey:@"tags"];
-    NSMutableOrderedSet *tmpOrderedSet = [NSMutableOrderedSet orderedSetWithOrderedSet:[self tags]];
-    [tmpOrderedSet insertObjects:value atIndexes:indexes];
-    [self setPrimitiveValue:tmpOrderedSet forKey:@"tags"];
-    [self didChange:NSKeyValueChangeInsertion valuesAtIndexes:indexes forKey:@"tags"];
-}
-- (void)removeTagsAtIndexes:(NSIndexSet *)indexes {
-    [self willChange:NSKeyValueChangeRemoval valuesAtIndexes:indexes forKey:@"tags"];
-    NSMutableOrderedSet *tmpOrderedSet = [NSMutableOrderedSet orderedSetWithOrderedSet:[self tags]];
-    [tmpOrderedSet removeObjectsAtIndexes:indexes];
-    [self setPrimitiveValue:tmpOrderedSet forKey:@"tags"];
-    [self didChange:NSKeyValueChangeRemoval valuesAtIndexes:indexes forKey:@"tags"];
-}
-- (void)replaceObjectInTagsAtIndex:(NSUInteger)idx withObject:(TagModelObject*)value {
-    NSIndexSet* indexes = [NSIndexSet indexSetWithIndex:idx];
-    [self willChange:NSKeyValueChangeReplacement valuesAtIndexes:indexes forKey:@"tags"];
-    NSMutableOrderedSet *tmpOrderedSet = [NSMutableOrderedSet orderedSetWithOrderedSet:[self tags]];
-    [tmpOrderedSet replaceObjectAtIndex:idx withObject:value];
-    [self setPrimitiveValue:tmpOrderedSet forKey:@"tags"];
-    [self didChange:NSKeyValueChangeReplacement valuesAtIndexes:indexes forKey:@"tags"];
-}
-- (void)replaceTagsAtIndexes:(NSIndexSet *)indexes withTags:(NSArray *)value {
-    [self willChange:NSKeyValueChangeReplacement valuesAtIndexes:indexes forKey:@"tags"];
-    NSMutableOrderedSet *tmpOrderedSet = [NSMutableOrderedSet orderedSetWithOrderedSet:[self tags]];
-    [tmpOrderedSet replaceObjectsAtIndexes:indexes withObjects:value];
-    [self setPrimitiveValue:tmpOrderedSet forKey:@"tags"];
-    [self didChange:NSKeyValueChangeReplacement valuesAtIndexes:indexes forKey:@"tags"];
-}
 @end
 
 @implementation LectureModelObjectAttributes 

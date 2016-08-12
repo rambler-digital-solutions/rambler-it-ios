@@ -102,17 +102,6 @@
 	return result;
 }
 
-@dynamic tags;
-
-- (NSMutableSet<TagModelObject*>*)tagsSet {
-	[self willAccessValueForKey:@"tags"];
-
-	NSMutableSet<TagModelObject*> *result = (NSMutableSet<TagModelObject*>*)[self mutableSetValueForKey:@"tags"];
-
-	[self didAccessValueForKey:@"tags"];
-	return result;
-}
-
 @dynamic tech;
 
 @end
@@ -162,9 +151,6 @@
 }
 + (NSString *)registrationQuestions {
 	return @"registrationQuestions";
-}
-+ (NSString *)tags {
-	return @"tags";
 }
 + (NSString *)tech {
 	return @"tech";

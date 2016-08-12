@@ -14,7 +14,6 @@ NS_ASSUME_NONNULL_BEGIN
 @class LectureModelObject;
 @class MetaEventModelObject;
 @class RegistrationQuestionModelObject;
-@class TagModelObject;
 @class TechModelObject;
 
 @interface EventModelObjectID : NSManagedObjectID {}
@@ -60,9 +59,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, nullable) NSSet<RegistrationQuestionModelObject*> *registrationQuestions;
 - (nullable NSMutableSet<RegistrationQuestionModelObject*>*)registrationQuestionsSet;
 
-@property (nonatomic, strong, nullable) NSSet<TagModelObject*> *tags;
-- (nullable NSMutableSet<TagModelObject*>*)tagsSet;
-
 @property (nonatomic, strong, nullable) TechModelObject *tech;
 
 @end
@@ -80,14 +76,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)removeRegistrationQuestions:(NSSet<RegistrationQuestionModelObject*>*)value_;
 - (void)addRegistrationQuestionsObject:(RegistrationQuestionModelObject*)value_;
 - (void)removeRegistrationQuestionsObject:(RegistrationQuestionModelObject*)value_;
-
-@end
-
-@interface _EventModelObject (TagsCoreDataGeneratedAccessors)
-- (void)addTags:(NSSet<TagModelObject*>*)value_;
-- (void)removeTags:(NSSet<TagModelObject*>*)value_;
-- (void)addTagsObject:(TagModelObject*)value_;
-- (void)removeTagsObject:(TagModelObject*)value_;
 
 @end
 
@@ -138,9 +126,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSMutableSet<RegistrationQuestionModelObject*>*)primitiveRegistrationQuestions;
 - (void)setPrimitiveRegistrationQuestions:(NSMutableSet<RegistrationQuestionModelObject*>*)value;
 
-- (NSMutableSet<TagModelObject*>*)primitiveTags;
-- (void)setPrimitiveTags:(NSMutableSet<TagModelObject*>*)value;
-
 - (TechModelObject*)primitiveTech;
 - (void)setPrimitiveTech:(TechModelObject*)value;
 
@@ -164,7 +149,6 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString *)lectures;
 + (NSString *)metaEvent;
 + (NSString *)registrationQuestions;
-+ (NSString *)tags;
 + (NSString *)tech;
 @end
 

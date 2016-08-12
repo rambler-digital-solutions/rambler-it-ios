@@ -28,9 +28,9 @@
 #import "EventPlainObject.h"
 #import "EXTScope.h"
 #import "TagModelObject.h"
-#import "TagPlainObject.h"
+#import "LecturePlainObject.h"
 
-static NSString *const kSeparatorTagsString = @", ";
+static NSString *const kSeparatorTagsString = @" ";
 
 @interface ReportListDataDisplayManager () <UITableViewDelegate>
 
@@ -95,11 +95,8 @@ static NSString *const kSeparatorTagsString = @", ";
     for (EventPlainObject *event in self.events) {
         NSString *eventDate = [self.dateFormatter obtainDateWithDayMonthYearFormat:event.startDate];
         NSString *eventName = event.name ? event.name : @"";
-        
-        
-        NSArray *tags = [event.tags valueForKeyPath:TagModelObjectAttributes.name];
-        NSString *stringFromTags = tags ? @"" : [tags componentsJoinedByString:kSeparatorTagsString];
-        NSAttributedString *attributedTags = [[NSAttributedString alloc] initWithString:stringFromTags];
+        NSString *tags = [self obtainTagsStringFromEvent:event];
+        NSAttributedString *attributedTags = [[NSAttributedString alloc] initWithString:tags];
         NSAttributedString *eventAttributedName = [[NSAttributedString alloc] initWithString:eventName];
 
         ReportEventTableViewCellObject *cellObject = [ReportEventTableViewCellObject objectWithEvent:event
@@ -120,6 +117,21 @@ static NSString *const kSeparatorTagsString = @", ";
     
     self.tableViewModel = [[NIMutableTableViewModel alloc] initWithSectionedArray:cellObjects
                                                                         delegate:(id)[NICellFactory class]];
+}
+
+#pragma mark - private methods
+
+- (NSString *)obtainTagsStringFromEvent:(EventPlainObject *)event {
+    NSMutableArray *allTags = [NSMutableArray array];
+    for (LecturePlainObject *lecture in event.lectures) {
+        [allTags addObjectsFromArray:[lecture.tags allObjects]];
+    }
+    NSArray *arrayWithoutDuplicates = [[NSSet setWithArray: allTags] allObjects];
+    
+    NSArray *tagsNames = [arrayWithoutDuplicates valueForKey:TagModelObjectAttributes.name];
+    NSString *stringFromTags = [tagsNames count] != 0 ? [tagsNames componentsJoinedByString:kSeparatorTagsString] : @"" ;
+    
+    return stringFromTags;
 }
 
 @end
