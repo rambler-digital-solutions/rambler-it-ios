@@ -27,6 +27,7 @@
 @interface ReportLectureTableViewCellObject ()
 
 @property (nonatomic, strong, readwrite) NSAttributedString *lectureTitle;
+@property (nonatomic, strong, readwrite) NSAttributedString *tags;
 @property (nonatomic, strong, readwrite) NSURL *imageURL;
 @property (nonatomic, strong, readwrite) LecturePlainObject *lecture;
 @property (nonatomic, strong, readwrite) NSString *speakerName;
@@ -39,6 +40,7 @@
 
 - (instancetype)initWithLecture:(LecturePlainObject *)lecture
                  attributedName:(NSAttributedString *)attributedName
+                           tags:(NSAttributedString *)tags
                     speakerName:(NSString *)speakerName
                        imageURL:(NSURL *)imageURL {
     self = [super init];
@@ -46,6 +48,7 @@
         _lectureTitle = attributedName;
         _imageURL = imageURL;
         _lecture = lecture;
+        _tags = tags;
         _speakerName = speakerName;
         
     }
@@ -53,14 +56,16 @@
 }
 
 + (instancetype)objectWithLecture:(LecturePlainObject *)lecture
+                             tags:(NSAttributedString *)tags
                   highlightedText:(NSAttributedString *)highlightedText {
     
     NSString *speakerName = [lecture speaker].name;
     NSURL *lectureImageURL = [NSURL URLWithString:[lecture speaker].imageUrl];
     return [[self alloc] initWithLecture:lecture
                           attributedName:highlightedText
+                                    tags:tags
                              speakerName:speakerName
-                                imageURL:(NSURL *)lectureImageURL];
+                                imageURL:lectureImageURL];
 }
 
 #pragma mark - NICellObject methods

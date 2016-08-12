@@ -44,11 +44,13 @@
     NSPredicate *predicate;
 
     NSString *selectorEventName = [EventModelObjectAttributes name];
+    NSString *selectorLectures = [EventModelObjectRelationships lectures];
+    NSString *selectorTags = [LectureModelObjectRelationships tags];
     NSString *selectorTagName = [TagModelObjectAttributes name];
     NSString *selectorSpeakerName = [SpeakerModelObjectAttributes name];
     NSString *selectorLectureName = [LectureModelObjectAttributes name];
     
-    predicate = [NSPredicate predicateWithFormat:@"%K CONTAINS[c] %@ OR SUBQUERY(lectures, $lecture, SUBQUERY($lecture.tags, $tag, $tag.%K CONTAINS[c] %@).@count > 0).@count > 0",selectorEventName, text, selectorTagName, text];
+    predicate = [NSPredicate predicateWithFormat:@"%K CONTAINS[c] %@ OR SUBQUERY(%K, $lecture, SUBQUERY($lecture.%K, $tag, $tag.%K CONTAINS[c] %@).@count > 0).@count > 0",selectorEventName, text, selectorLectures, selectorTags, selectorTagName, text];
     
     id managedObjectEvents = [self.eventService obtainEventWithPredicate:predicate];
     NSArray *events = [self.ponsomizer convertObject:managedObjectEvents];
@@ -59,7 +61,7 @@
     NSArray *speakers = [self.ponsomizer convertObject:managedObjectSpeakers];
     [foundObjects addObjectsFromArray:speakers];
     
-    predicate = [NSPredicate predicateWithFormat:@"%K CONTAINS[c] %@ OR SUBQUERY(tags, $tag, $tag.%K CONTAINS[c] %@).@count > 0", selectorLectureName, text, selectorTagName, text];
+    predicate = [NSPredicate predicateWithFormat:@"%K CONTAINS[c] %@ OR SUBQUERY(%K, $tag, $tag.%K CONTAINS[c] %@).@count > 0", selectorLectureName, text, selectorTags,selectorTagName, text];
     id managedObjectLectures = [self.lectureService obtainLectureWithPredicate:predicate];
     NSArray *lectures = [self.ponsomizer convertObject:managedObjectLectures];
     [foundObjects addObjectsFromArray:lectures];

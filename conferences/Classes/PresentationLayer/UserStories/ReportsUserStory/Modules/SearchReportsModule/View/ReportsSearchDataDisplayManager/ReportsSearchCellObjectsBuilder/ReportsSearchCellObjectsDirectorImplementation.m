@@ -42,7 +42,7 @@
     
     NSDictionary *sectionsNamesByClassName = [self sectionsNamesForPlainClass];
     NSDictionary *selectorsBuilderByClassName = [self selectorsBuilderForPlainClass];
-    NSArray *namesClass = [[self selectorsBuilderForPlainClass] allKeys];
+    NSArray *namesClass = [self sectionsCellInCorrectOrder];
     NSMutableArray *resultCellObjects = [NSMutableArray new];
     
     for (NSString *nameClass in namesClass) {
@@ -78,18 +78,25 @@
 
 - (NSDictionary *)selectorsBuilderForPlainClass {
     return @{
-             NSStringFromClass([LecturePlainObject class]) : NSStringFromSelector(@selector(lectureCellObjectFromPlainObject:selectedText:)),
              NSStringFromClass([EventPlainObject class])   : NSStringFromSelector(@selector(eventCellObjectFromPlainObject:selectedText:)),
+             NSStringFromClass([LecturePlainObject class]) : NSStringFromSelector(@selector(lectureCellObjectFromPlainObject:selectedText:)),
              NSStringFromClass([SpeakerPlainObject class]) : NSStringFromSelector(@selector(speakerCellObjectFromPlainObject:selectedText:)),
              };
 }
 
 - (NSDictionary *)sectionsNamesForPlainClass {
     return @{
-             NSStringFromClass([LecturePlainObject class]) : @"Доклады",
-             NSStringFromClass([EventPlainObject class])   : @"Конференции",
+             NSStringFromClass([EventPlainObject class])   : @"События",
+             NSStringFromClass([LecturePlainObject class]) : @"Выступления",
              NSStringFromClass([SpeakerPlainObject class]) : @"Докладчики"
              };
 }
 
+- (NSArray *)sectionsCellInCorrectOrder {
+    return @[
+             NSStringFromClass([EventPlainObject class]),
+             NSStringFromClass([LecturePlainObject class]),
+             NSStringFromClass([SpeakerPlainObject class])
+             ];
+}
 @end

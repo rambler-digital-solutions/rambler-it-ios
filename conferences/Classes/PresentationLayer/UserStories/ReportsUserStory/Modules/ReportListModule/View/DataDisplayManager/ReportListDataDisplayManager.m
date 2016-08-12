@@ -30,7 +30,7 @@
 #import "TagModelObject.h"
 #import "LecturePlainObject.h"
 
-static NSString *const kSeparatorTagsString = @" ";
+static NSString *const kSeparatorTagsString = @", ";
 
 @interface ReportListDataDisplayManager () <UITableViewDelegate>
 

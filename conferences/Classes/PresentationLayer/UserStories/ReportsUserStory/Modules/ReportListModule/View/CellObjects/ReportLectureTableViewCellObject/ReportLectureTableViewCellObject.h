@@ -30,12 +30,15 @@
 
 @interface ReportLectureTableViewCellObject : NSObject <NICellObject>
 
-@property (strong, nonatomic, readonly) NSString *date;
-@property (strong, nonatomic, readonly) NSAttributedString *lectureTitle;
-@property (strong, nonatomic, readonly) NSURL *imageURL;
-@property (strong, nonatomic, readonly) LecturePlainObject *lecture;
-@property (strong, nonatomic, readonly) NSString *speakerName;
+@property (nonatomic, strong, readonly) NSString *date;
+@property (nonatomic, strong, readonly) NSAttributedString *lectureTitle;
+@property (nonatomic, strong, readonly) NSAttributedString *tags;
+@property (nonatomic, strong, readonly) NSURL *imageURL;
+@property (nonatomic, strong, readonly) LecturePlainObject *lecture;
+@property (nonatomic, strong, readonly) NSString *speakerName;
 
-+ (instancetype)objectWithLecture:(LecturePlainObject *)lecture highlightedText:(NSAttributedString *)highlightedText;
++ (instancetype)objectWithLecture:(LecturePlainObject *)lecture
+                             tags:(NSAttributedString *)tags
+                  highlightedText:(NSAttributedString *)highlightedText;
 
 @end

@@ -24,15 +24,15 @@
 @implementation UIColor (ConferencesPallete)
 
 + (UIColor *)colorForSelectedTextEventCellObject {
-    return [UIColor colorFromHexString:@"#ff0000"];
+    return [UIColor colorFromHexString:@"#14AAE6"];
 }
 
 + (UIColor *)colorForSelectedTextLectureCellObject {
-    return [UIColor colorFromHexString:@"#00ff00"];
+    return [UIColor colorFromHexString:@"#14AAE6"];
 }
 
 + (UIColor *)colorForSelectedTextSpeakerCellObject {
-    return [UIColor colorFromHexString:@"#0000ff"];
+    return [UIColor colorFromHexString:@"#14AAE6"];
 }
 
 @end

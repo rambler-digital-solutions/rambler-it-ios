@@ -23,8 +23,6 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #include <stdlib.h>
 
-//static CGFloat const kReportEventTableViewCellHeight = 116.0f;
-
 @interface ReportEventTableViewCell ()
 
 @property (weak, nonatomic) IBOutlet UILabel *tags;

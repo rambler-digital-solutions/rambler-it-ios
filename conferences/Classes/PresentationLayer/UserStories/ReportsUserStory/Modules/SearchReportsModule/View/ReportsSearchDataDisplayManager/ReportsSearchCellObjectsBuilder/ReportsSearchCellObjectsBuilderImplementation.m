@@ -31,7 +31,7 @@
 #import "UIColor+ConferencesPallete.h"
 #import "DateFormatter.h"
 
-static NSString *const kSeparatorTagsString = @" ";
+static NSString *const kSeparatorTagsString = @", ";
 
 @implementation ReportsSearchCellObjectsBuilderImplementation
 
@@ -62,11 +62,16 @@ static NSString *const kSeparatorTagsString = @" ";
 }
 
 - (ReportLectureTableViewCellObject *)lectureCellObjectFromPlainObject:(LecturePlainObject *)lecture selectedText:(NSString *)selectedText {
-    NSAttributedString *highlightedString = [self highlightInString:lecture.name
-                                                       selectedText:selectedText
-                                                              color:[UIColor colorForSelectedTextLectureCellObject]];
+    NSAttributedString *highlightedName = [self highlightInString:lecture.name
+                                                     selectedText:selectedText
+                                                            color:[UIColor colorForSelectedTextLectureCellObject]];
+    NSString *tagsString = [self obtainTagsStringFromLecture:lecture];
+    NSAttributedString *highlightedTags = [self highlightInString:tagsString
+                                                     selectedText:selectedText
+                                                            color:[UIColor colorForSelectedTextLectureCellObject]];
     ReportLectureTableViewCellObject *cellObject = [ReportLectureTableViewCellObject objectWithLecture:lecture
-                                                                                       highlightedText:highlightedString];
+                                                                                                  tags:highlightedTags
+                                                                                       highlightedText:highlightedName];
     return cellObject;
 }
 
@@ -102,6 +107,14 @@ static NSString *const kSeparatorTagsString = @" ";
     NSArray *arrayWithoutDuplicates = [[NSSet setWithArray: allTags] allObjects];
     
     NSArray *tagsNames = [arrayWithoutDuplicates valueForKey:TagModelObjectAttributes.name];
+    NSString *stringFromTags = [tagsNames count] != 0 ? [tagsNames componentsJoinedByString:kSeparatorTagsString] : @"" ;
+    
+    return stringFromTags;
+}
+
+- (NSString *)obtainTagsStringFromLecture:(LecturePlainObject *)lecture {
+    NSArray *allTags = [lecture.tags allObjects];
+    NSArray *tagsNames = [allTags valueForKey:TagModelObjectAttributes.name];
     NSString *stringFromTags = [tagsNames count] != 0 ? [tagsNames componentsJoinedByString:kSeparatorTagsString] : @"" ;
     
     return stringFromTags;
