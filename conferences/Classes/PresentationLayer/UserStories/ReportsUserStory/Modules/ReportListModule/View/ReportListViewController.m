@@ -24,6 +24,8 @@
 #import "ReportListDataDisplayManager.h"
 #import <RamblerSegues/RamblerSegues.h>
 
+static NSInteger kDefaultEstimatedHeight = 116;
+
 @interface ReportListViewController() <ReportListDataDisplayManagerDelegate, RamblerEmbedSegueViewContainer>
 
 @end
@@ -41,6 +43,8 @@
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     [[UIScrollView appearance] setBackgroundColor:[UIColor whiteColor]];
+    
+    self.reportsTableView.estimatedRowHeight = kDefaultEstimatedHeight;
     self.reportsTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 

@@ -27,6 +27,10 @@
 #import "DateFormatter.h"
 #import "EventPlainObject.h"
 #import "EXTScope.h"
+#import "TagModelObject.h"
+#import "TagPlainObject.h"
+
+static NSString *const kSeparatorTagsString = @", ";
 
 @interface ReportListDataDisplayManager () <UITableViewDelegate>
 
@@ -91,10 +95,16 @@
     for (EventPlainObject *event in self.events) {
         NSString *eventDate = [self.dateFormatter obtainDateWithDayMonthYearFormat:event.startDate];
         NSString *eventName = event.name ? event.name : @"";
+        
+        
+        NSArray *tags = [event.tags valueForKeyPath:TagModelObjectAttributes.name];
+        NSString *stringFromTags = tags ? @"" : [tags componentsJoinedByString:kSeparatorTagsString];
+        NSAttributedString *attributedTags = [[NSAttributedString alloc] initWithString:stringFromTags];
         NSAttributedString *eventAttributedName = [[NSAttributedString alloc] initWithString:eventName];
 
         ReportEventTableViewCellObject *cellObject = [ReportEventTableViewCellObject objectWithEvent:event
                                                                                              andDate:eventDate
+                                                                                                tags:attributedTags
                                                                                      highlightedText:eventAttributedName];
         [cellObjects addObject:cellObject];
     }

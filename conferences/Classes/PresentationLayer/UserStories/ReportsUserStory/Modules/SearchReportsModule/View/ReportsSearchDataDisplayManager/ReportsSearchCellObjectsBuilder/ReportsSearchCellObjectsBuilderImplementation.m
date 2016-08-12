@@ -23,12 +23,15 @@
 #import "LecturePlainObject.h"
 #import "EventPlainObject.h"
 #import "SpeakerPlainObject.h"
+#import "TagModelObject.h"
 
 #import "ReportEventTableViewCellObject.h"
 #import "ReportSpeakerTableViewCellObject.h"
 #import "ReportLectureTableViewCellObject.h"
 #import "UIColor+ConferencesPallete.h"
 #import "DateFormatter.h"
+
+static NSString *const kSeparatorTagsString = @", ";
 
 @implementation ReportsSearchCellObjectsBuilderImplementation
 
@@ -44,12 +47,20 @@
 
     NSString *eventDate = [self.dateFormatter obtainDateWithDayMonthYearFormat:event.startDate];
     
-    NSAttributedString *highlightedString = [self highlightInString:event.name
+    NSAttributedString *highlightedTitle = [self highlightInString:event.name
                                                        selectedText:selectedText
                                                               color:[UIColor colorForSelectedTextEventCellObject]];
+    
+    NSArray *tags = [event.tags valueForKeyPath:TagModelObjectAttributes.name];
+    NSString *stringFromTags = tags ? @"" : [tags componentsJoinedByString:kSeparatorTagsString];
+    
+    NSAttributedString *highlightedTags = [self highlightInString:stringFromTags
+                                                      selectedText:selectedText
+                                                             color:[UIColor colorForSelectedTextEventCellObject]];
     ReportEventTableViewCellObject *cellObject = [ReportEventTableViewCellObject objectWithEvent:event
                                                                                          andDate:eventDate
-                                                                                 highlightedText:highlightedString];
+                                                                                            tags:highlightedTags
+                                                                                 highlightedText:highlightedTitle];
     return cellObject;
 }
 

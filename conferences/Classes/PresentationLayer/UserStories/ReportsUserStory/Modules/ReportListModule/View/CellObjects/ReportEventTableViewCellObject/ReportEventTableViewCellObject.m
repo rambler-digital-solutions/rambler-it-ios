@@ -30,6 +30,7 @@
 @property (nonatomic, strong, readwrite) NSAttributedString *eventTitle;
 @property (nonatomic, strong, readwrite) UIImage *eventImage;
 @property (nonatomic, strong, readwrite) NSURL *imageURL;
+@property (nonatomic, strong, readwrite) NSAttributedString *tags;
 @property (nonatomic, strong, readwrite) EventPlainObject *event;
 
 @end
@@ -38,20 +39,30 @@
 
 #pragma mark - Initialization
 
-- (instancetype)initWithEvent:(EventPlainObject *)event andDate:(NSString *)date attributedName:(NSAttributedString *)attributedName{
+- (instancetype)initWithEvent:(EventPlainObject *)event
+                      andDate:(NSString *)date
+                         tags:(NSAttributedString *)tags
+               attributedName:(NSAttributedString *)attributedName{
     self = [super init];
     if (self) {
         _eventTitle = attributedName;
         _imageURL = [NSURL URLWithString:event.metaEvent.imageUrlPath];
         _date = date;
+        _tags = tags;
         _event = event;
     }
     return self;
 }
 
-+ (instancetype)objectWithEvent:(EventPlainObject *)event andDate:(NSString *)date highlightedText:(NSAttributedString *)highlightedText {
++ (instancetype)objectWithEvent:(EventPlainObject *)event
+                        andDate:(NSString *)date
+                           tags:(NSAttributedString *)tags
+                highlightedText:(NSAttributedString *)highlightedText {
     
-    return [[self alloc] initWithEvent:event andDate:date attributedName:highlightedText];
+    return [[self alloc] initWithEvent:event
+                               andDate:date
+                                  tags:tags
+                        attributedName:highlightedText];
 }
 
 #pragma mark - NICellObject methods
