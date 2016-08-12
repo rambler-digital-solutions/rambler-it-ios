@@ -21,10 +21,6 @@
 #import "PreviousEventSectionHeaderTableViewCell.h"
 #import "PreviousEventSectionHeaderTableViewCellObject.h"
 
-@interface PreviousEventSectionHeaderTableViewCell ()
-
-@end
-
 @implementation PreviousEventSectionHeaderTableViewCell
 
 #pragma mark - NICell methods

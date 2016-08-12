@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="51" id="KGk-i7-Jjw" customClass="PreviousEventSectionHeaderTableViewCell">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="62" id="KGk-i7-Jjw" customClass="PreviousEventSectionHeaderTableViewCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="51"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -15,7 +15,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Как это бывало" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xC0-yW-gQr">
-                        <rect key="frame" x="19" y="17" width="271" height="21"/>
+                        <rect key="frame" x="20" y="20.5" width="280" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="14" id="uZK-P2-1hV"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -23,11 +26,23 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
-                    <constraint firstAttribute="bottomMargin" secondItem="xC0-yW-gQr" secondAttribute="bottom" constant="4.5" id="OQE-IZ-stp"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="xC0-yW-gQr" secondAttribute="trailing" constant="22" id="kMa-R5-VAg"/>
+                    <constraint firstAttribute="trailing" secondItem="xC0-yW-gQr" secondAttribute="trailing" constant="20" id="BFL-zG-msj"/>
+                    <constraint firstItem="xC0-yW-gQr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="Dkx-Sf-Fdm"/>
+                    <constraint firstItem="xC0-yW-gQr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="KUC-f7-sye"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="xC0-yW-gQr" secondAttribute="bottom" constant="12" id="OQE-IZ-stp"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="xC0-yW-gQr" secondAttribute="trailing" constant="20" id="kMa-R5-VAg"/>
+                    <constraint firstAttribute="bottom" secondItem="xC0-yW-gQr" secondAttribute="bottom" constant="20" id="me5-F0-d6o"/>
                     <constraint firstItem="xC0-yW-gQr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="11" id="ocS-ao-vTL"/>
                     <constraint firstItem="xC0-yW-gQr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="9" id="v8H-a4-M9x"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="OQE-IZ-stp"/>
+                        <exclude reference="kMa-R5-VAg"/>
+                        <exclude reference="ocS-ao-vTL"/>
+                        <exclude reference="v8H-a4-M9x"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <point key="canvasLocation" x="303" y="345.5"/>
         </tableViewCell>
