@@ -3,12 +3,23 @@
 
 #import "_LectureMaterialModelObject.h"
 
+const struct LectureMaterialModelObjectAttributes LectureMaterialModelObjectAttributes = {
+	.lectureMaterialId = @"lectureMaterialId",
+	.link = @"link",
+	.name = @"name",
+	.type = @"type",
+};
+
+const struct LectureMaterialModelObjectRelationships LectureMaterialModelObjectRelationships = {
+	.lecture = @"lecture",
+};
+
 @implementation LectureMaterialModelObjectID
 @end
 
 @implementation _LectureMaterialModelObject
 
-+ (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_ {
++ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
 	NSParameterAssert(moc_);
 	return [NSEntityDescription insertNewObjectForEntityForName:@"LectureMaterial" inManagedObjectContext:moc_];
 }
@@ -29,6 +40,12 @@
 + (NSSet*)keyPathsForValuesAffectingValueForKey:(NSString*)key {
 	NSSet *keyPaths = [super keyPathsForValuesAffectingValueForKey:key];
 
+	if ([key isEqualToString:@"typeValue"]) {
+		NSSet *affectingKey = [NSSet setWithObject:@"type"];
+		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
+		return keyPaths;
+	}
+
 	return keyPaths;
 }
 
@@ -38,25 +55,18 @@
 
 @dynamic name;
 
+@dynamic type;
+
+- (int16_t)typeValue {
+	NSNumber *result = [self type];
+	return [result shortValue];
+}
+
+- (void)setTypeValue:(int16_t)value_ {
+	[self setType:[NSNumber numberWithShort:value_]];
+}
+
 @dynamic lecture;
 
-@end
-
-@implementation LectureMaterialModelObjectAttributes 
-+ (NSString *)lectureMaterialId {
-	return @"lectureMaterialId";
-}
-+ (NSString *)link {
-	return @"link";
-}
-+ (NSString *)name {
-	return @"name";
-}
-@end
-
-@implementation LectureMaterialModelObjectRelationships 
-+ (NSString *)lecture {
-	return @"lecture";
-}
 @end
 

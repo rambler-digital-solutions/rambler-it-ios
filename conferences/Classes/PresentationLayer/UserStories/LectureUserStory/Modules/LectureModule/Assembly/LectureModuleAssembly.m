@@ -88,7 +88,11 @@
 }
 
 - (LectureCellObjectsBuilderImplementation *)builderCellObjects {
-    return [TyphoonDefinition withClass:[LectureCellObjectsBuilderImplementation class]];
+    return [TyphoonDefinition withClass:[LectureCellObjectsBuilderImplementation class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(thumbnailGenerator)
+                                                    with:[self.presentationLayerHelpersAssembly videoThumbnailGenerator]];
+                          }];
 }
 
 @end

@@ -23,6 +23,7 @@
 
 @class EventTypeDeterminator;
 @class DateFormatter;
+@class VideoThumbnailGenerator;
 @protocol MapLinkBuilder;
 
 /**
@@ -35,5 +36,6 @@
 - (EventTypeDeterminator *)eventTypeDeterminator;
 - (DateFormatter *)dateFormatter;
 - (id<MapLinkBuilder>)appleMapsLinkBuilder;
+- (VideoThumbnailGenerator *)videoThumbnailGenerator;
 
 @end

@@ -30,6 +30,7 @@
 #import "LectureMaterialModelObject.h"
 
 #import "SocialNetworkType.h"
+#import "LectureMaterialType.h"
 
 #import "EntityNameFormatter.h"
 
@@ -210,6 +211,9 @@
                                               withBlock:^(EKManagedObjectMapping *mapping) {
                                                   mapping.primaryKey = NSStringFromSelector(@selector(lectureMaterialId));
                                                   [mapping mapPropertiesFromDictionary:properties];
+                                                  [mapping mapKeyPath:@"kind"
+                                                           toProperty:NSStringFromSelector(@selector(type))
+                                                       withValueBlock:[self lectureMaterialTypeValueBlock]];
                                               }];
 }
 
@@ -235,6 +239,23 @@
                                @"Instagram" : @(SocialNetworkInstagramType),
                                @"Email" : @(SocialNetworkEmailType),
                                @"Website" : @(SocialNetworkWebsiteType)
+                               };
+    }
+    return ^id(NSString *key, NSString *value, NSManagedObjectContext *context) {
+        NSNumber *type = socialNetworkTypes[value] ?: @(SocialNetworkUndefinedType);
+        return type;
+    };
+}
+
+- (EKManagedMappingValueBlock)lectureMaterialTypeValueBlock {
+    static NSDictionary *socialNetworkTypes;
+    if (!socialNetworkTypes) {
+        socialNetworkTypes = @{
+                               @"video" : @(LectureMaterialVideoType),
+                               @"presentation" : @(LectureMaterialPresentationType),
+                               @"repo" : @(LectureMaterialRepoType),
+                               @"article" : @(LectureMaterialArticleType),
+                               @"other" : @(LectureMaterialOtherType)
                                };
     }
     return ^id(NSString *key, NSString *value, NSManagedObjectContext *context) {

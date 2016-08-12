@@ -39,8 +39,7 @@ static NSString *const kPlaceholderImageName = @"placeholder";
 - (BOOL)shouldUpdateCellWithObject:(VideoRecordTableViewCellObject *)object {
     if (object.previewImageUrl) {
         self.titleLabel.hidden = YES;
-        NSURL *url = [NSURL URLWithString:object.previewImageUrl];
-        [self.previewImageView sd_setImageWithURL:url
+        [self.previewImageView sd_setImageWithURL:object.previewImageUrl
                                  placeholderImage:[UIImage imageNamed:kPlaceholderImageName]];
     } else {
         self.titleLabel.hidden = NO;

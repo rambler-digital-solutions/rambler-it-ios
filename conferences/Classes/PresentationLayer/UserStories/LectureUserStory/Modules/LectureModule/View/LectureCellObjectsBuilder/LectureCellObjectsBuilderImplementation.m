@@ -22,6 +22,7 @@
 
 #import "LecturePlainObject.h"
 #import "LectureModelObject.h"
+#import "LectureMaterialPlainObject.h"
 #import "LocalizedStrings.h"
 
 #import "LectureMaterialTitleTableViewCellObject.h"
@@ -29,6 +30,8 @@
 #import "LectureMaterialTitleTableViewCellObject.h"
 #import "LectureMaterialInfoTableViewCellObject.h"
 #import "VideoRecordTableViewCellObject.h"
+#import "VideoThumbnailGenerator.h"
+#import "LectureMaterialType.h"
 
 #import "TagObjectDescriptor.h"
 #import "TagModuleTableViewCellObject.h"
@@ -56,12 +59,16 @@ static NSString *const kTimeVideoText = @"(32:12)";
         [cellObjects addObject:tagCellObject];
     }
     
-    NSString *videoRecordTextTitle = [NSString stringWithFormat:@"%@ %@", NSLocalizedString(VideoRecordTableViewCellTitle, nil), kTimeVideoText];
+    NSString *videoRecordTextTitle = NSLocalizedString(VideoRecordTableViewCellTitle, nil);
     LectureMaterialTitleTableViewCellObject *videoRecordTextLabelCellObject = [LectureMaterialTitleTableViewCellObject objectWithText:videoRecordTextTitle];
     [cellObjects addObject:videoRecordTextLabelCellObject];
     
-    VideoRecordTableViewCellObject *videoRecordTableViewCellObject = [VideoRecordTableViewCellObject new];
-    [cellObjects addObject:videoRecordTableViewCellObject];
+    NSURL *videoUrl = [self videoUrlForLecture:lecture];
+    if (videoUrl) {
+        NSURL *previewImageUrl = [self.thumbnailGenerator generateThumbnailWithVideoURL:videoUrl];
+        VideoRecordTableViewCellObject *videoRecordTableViewCellObject = [VideoRecordTableViewCellObject objectWithPreviewImageUrl:previewImageUrl];
+        [cellObjects addObject:videoRecordTableViewCellObject];
+    }
     
     LectureMaterialTitleTableViewCellObject *materialsTextLabelCellObject = [LectureMaterialTitleTableViewCellObject objectWithText:NSLocalizedString(LectureMaterialsTableViewCellTitle, nil)];
     [cellObjects addObject:materialsTextLabelCellObject];
@@ -82,6 +89,17 @@ static NSString *const kTimeVideoText = @"(32:12)";
     [cellObjects addObject:codeGithubTextLabelCellObject];
     
     return cellObjects;
+}
+
+#pragma mark - Private methods
+
+- (NSURL *)videoUrlForLecture:(LecturePlainObject *)lecture {
+    for (LectureMaterialPlainObject *material in lecture.lectureMaterials) {
+        if ([material.type integerValue] == LectureMaterialVideoType) {
+            return [NSURL URLWithString:material.link];
+        }
+    }
+    return nil;
 }
 
 @end
