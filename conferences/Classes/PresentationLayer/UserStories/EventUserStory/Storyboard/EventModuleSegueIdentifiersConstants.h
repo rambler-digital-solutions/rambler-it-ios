@@ -7,5 +7,6 @@
 //
 
 static NSString * const kEventModuleToLectureModuleSegue = @"kEventModuleToLectureModuleSegue";
+static NSString * const kEventModuleToEventModuleSegue = @"kEventModuleToEventModuleSegue";
 static NSString * const kEventModuleToSpeakerModuleSegue = @"kEventModuleToSpeakerModuleSegue";
 

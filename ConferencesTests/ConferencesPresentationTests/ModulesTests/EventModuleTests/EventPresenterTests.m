@@ -99,17 +99,6 @@
     OCMVerify([self.viewMock configureViewWithEvent:event pastEvents:pastEvents]);
 }
 
-- (void)testSuccesDidTapSignUpButtonWithEvent {
-    // given
-    EventPlainObject *event = [EventPlainObject new];
-    
-    // when
-    [self.presenter didTapSignUpButtonWithEvent:event];
-    
-    // then
-    // TODO: Complete test after method get implemented
-}
-
 - (void)testSuccessDidTapSaveToCalendarButtonWithEvent {
     // given
     EventPlainObject *event = [EventPlainObject new];
@@ -121,26 +110,6 @@
     OCMVerify([self.interactorMock saveEventToCalendar:event]);
 }
 
-- (void)testSuccessDidTapReadMoreEventDescriptionButton {
-    // given
-    
-    // when
-    [self.presenter didTapReadMoreEventDescriptionButton];
-    
-    // then
-    // TODO: Complete test after method get implemented
-}
-
-- (void)testSuccessDidTapCurrentTranslationButton {
-    // given
-    
-    // when
-    [self.presenter didTapCurrentTranslationButton];
-    
-    // then
-    // TODO: Complete test after method get implemented
-}
-
 - (void)testSuccessDidTapLectureInfoCellWithLectureObjectIdEvent {
     // given
     NSString *objectId = @"8hefw8";
@@ -150,6 +119,17 @@
     
     // then
     OCMVerify([self.routerMock openLectureModuleWithLectureObjectId:objectId]);
+}
+
+- (void)testSuccessDidTapEventCell {
+    // given
+    NSString *objectId = @"8hefw8";
+    
+    // when
+    [self.presenter didTapEventCellWithEventId:objectId];
+    
+    // then
+    OCMVerify([self.routerMock openEventModuleWithEventId:objectId]);
 }
 
 - (void)testSuccessDidTapShareButton {

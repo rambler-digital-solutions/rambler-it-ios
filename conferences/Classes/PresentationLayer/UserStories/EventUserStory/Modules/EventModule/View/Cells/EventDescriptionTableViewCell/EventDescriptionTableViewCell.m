@@ -52,10 +52,4 @@
     return UITableViewAutomaticDimension;
 }
 
-#pragma mark - IBActions
-
-- (IBAction)didTapReadMoreButton:(UIButton *)sender {
-    [self.actionProxy didTapReadMoreEventDescriptionButton];
-}
-
 @end

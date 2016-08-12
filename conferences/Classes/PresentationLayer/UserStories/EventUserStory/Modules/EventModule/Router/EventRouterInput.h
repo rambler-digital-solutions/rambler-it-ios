@@ -32,6 +32,15 @@
 - (void)openLectureModuleWithLectureObjectId:(NSString *)lectureObjectId;
 
 /**
+ @author Egor Tolstoy
+ 
+ Method is used to initiate transition to the EventModule
+ 
+ @param eventId Event identifier
+ */
+- (void)openEventModuleWithEventId:(NSString *)eventId;
+
+/**
  @author Artem Karpushin
  
  Method is used to initiate transition to the module of the event sharing

@@ -40,6 +40,12 @@
                                     <outlet property="delegate" destination="lPZ-z8-z2H" id="4tx-te-78d"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lac-sB-7G7">
+                                <rect key="frame" x="0.0" y="0.0" width="1" height="1"/>
+                                <connections>
+                                    <segue destination="lPZ-z8-z2H" kind="push" identifier="kEventModuleToEventModuleSegue" id="tmW-0O-3Pw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -94,7 +100,9 @@
         <!--LectureViewController-->
         <scene sceneID="U1R-b5-hEw">
             <objects>
-                <viewControllerPlaceholder storyboardName="Lecture" referencedIdentifier="LectureViewController" id="ApB-G0-QuI" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Lecture" referencedIdentifier="LectureViewController" id="ApB-G0-QuI" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="CeS-pf-1jh"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2qi-A7-HYW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2232" y="258"/>

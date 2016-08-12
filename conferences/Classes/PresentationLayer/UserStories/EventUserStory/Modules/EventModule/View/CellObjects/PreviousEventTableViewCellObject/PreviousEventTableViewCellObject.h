@@ -28,7 +28,9 @@
 @property (strong, nonatomic, readonly) NSString *date;
 @property (strong, nonatomic, readonly) NSString *title;
 @property (strong, nonatomic, readonly) UIColor *backgroundColor;
+@property (strong, nonatomic, readonly) NSString *eventId;
 
-+ (instancetype)objectWithEvent:(EventPlainObject *)event andDate:(NSString *)date;
++ (instancetype)objectWithEvent:(EventPlainObject *)event
+                        andDate:(NSString *)date;
 
 @end

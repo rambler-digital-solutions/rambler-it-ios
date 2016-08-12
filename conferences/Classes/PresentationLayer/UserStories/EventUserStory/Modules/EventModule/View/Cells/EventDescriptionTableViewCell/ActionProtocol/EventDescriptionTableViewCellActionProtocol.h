@@ -22,6 +22,4 @@
 
 @protocol EventDescriptionTableViewCellActionProtocol <NSObject>
 
-- (void)didTapReadMoreEventDescriptionButton;
-
 @end

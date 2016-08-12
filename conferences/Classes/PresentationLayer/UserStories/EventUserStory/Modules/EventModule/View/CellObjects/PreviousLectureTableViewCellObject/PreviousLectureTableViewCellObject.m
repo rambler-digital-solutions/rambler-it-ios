@@ -26,6 +26,7 @@
 @interface PreviousLectureTableViewCellObject ()
 
 @property (strong, nonatomic, readwrite) NSString *lectureTitle;
+@property (strong, nonatomic, readwrite) NSString *lectureId;
 @property (strong, nonatomic, readwrite) NSString *speakerName;
 @property (strong, nonatomic, readwrite) NSString *spickerImageUrl;
 
@@ -39,6 +40,7 @@
     self = [super init];
     if (self) {
         _lectureTitle = lecture.name;
+        _lectureId = lecture.lectureId;
         _speakerName = lecture.speaker.name;
         _spickerImageUrl = lecture.speaker.imageUrl;
     }

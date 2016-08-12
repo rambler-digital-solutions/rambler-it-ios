@@ -132,7 +132,7 @@
     OCMVerify([self.mockOutput didTapSignUpButtonWithEvent:event]);
 }
 
-- (void)testSuccessdidTapSaveToCalendarButton {
+- (void)testSuccessDidTapSaveToCalendarButton {
     // given
     EventPlainObject *event = [EventPlainObject new];
     
@@ -143,24 +143,26 @@
     OCMVerify([self.mockOutput didTapSaveToCalendarButtonWithEvent:event]);
 }
 
-- (void)testSuccessDidTapReadMoreEventDescriptionButton {
+- (void)testSuccessDidTapLectureCell {
     // given
+    NSString *const kTestLectureId = @"1234";
     
     // when
-    [self.viewController didTapReadMoreEventDescriptionButton];
+    [self.viewController didTapLectureInfoCellWithLectureObjectId:kTestLectureId];
     
     // then
-    OCMVerify([self.mockOutput didTapReadMoreEventDescriptionButton]);
+    OCMVerify([self.mockOutput didTapLectureInfoCellWithLectureObjectIdEvent:kTestLectureId]);
 }
 
-- (void)testSuccessDidTapCurrentTranslationButton {
+- (void)testSuccessDidTapEventCell {
     // given
+    NSString *const kTestEventId = @"1234";
     
     // when
-    [self.viewController didTapCurrentTranslationButton];
+    [self.viewController didTapEventCellWithEventId:kTestEventId];
     
     // then
-    OCMVerify([self.mockOutput didTapCurrentTranslationButton]);
+    OCMVerify([self.mockOutput didTapEventCellWithEventId:kTestEventId]);
 }
 
 #pragma mark - Actions

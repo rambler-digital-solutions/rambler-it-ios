@@ -29,6 +29,7 @@
 @property (strong, nonatomic, readwrite) NSString *date;
 @property (strong, nonatomic, readwrite) NSString *title;
 @property (strong, nonatomic, readwrite) UIColor *backgroundColor;
+@property (strong, nonatomic, readwrite) NSString *eventId;
 
 @end
 
@@ -42,6 +43,7 @@
         _date = date;
         _title = event.name;
         _backgroundColor = [UIColor colorFromHexString:event.tech.color];
+        _eventId = event.eventId;
     }
     return self;
 }

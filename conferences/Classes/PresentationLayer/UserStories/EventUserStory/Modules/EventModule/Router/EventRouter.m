@@ -19,9 +19,11 @@
 // THE SOFTWARE.
 
 #import "EventRouter.h"
+
 #import "LectureModuleInput.h"
 #import "SpeakerInfoModuleInput.h"
 #import "EventViewController.h"
+#import "EventModuleInput.h"
 #import "EventModuleSegueIdentifiersConstants.h"
 
 @implementation EventRouter
@@ -31,6 +33,13 @@
 - (void)openLectureModuleWithLectureObjectId:(NSString *)lectureObjectId {
     [[self.transitionHandler openModuleUsingSegue:kEventModuleToLectureModuleSegue] thenChainUsingBlock:^id<RamblerViperModuleOutput>(id<LectureModuleInput> moduleInput) {
         [moduleInput configureCurrentModuleWithLectureObjectId:lectureObjectId];
+        return nil;
+    }];
+}
+
+- (void)openEventModuleWithEventId:(NSString *)eventId {
+    [[self.transitionHandler openModuleUsingSegue:kEventModuleToEventModuleSegue] thenChainUsingBlock:^id<RamblerViperModuleOutput>(id<EventModuleInput> moduleInput) {
+        [moduleInput configureCurrentModuleWithEventObjectId:eventId];
         return nil;
     }];
 }

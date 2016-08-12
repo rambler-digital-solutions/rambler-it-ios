@@ -52,16 +52,12 @@
     [self.interactor saveEventToCalendar:event];
 }
 
-- (void)didTapReadMoreEventDescriptionButton {
-    
-}
-
-- (void)didTapCurrentTranslationButton {
-    
-}
-
 - (void)didTapLectureInfoCellWithLectureObjectIdEvent:(NSString *)lectureObjectId {
     [self.router openLectureModuleWithLectureObjectId:lectureObjectId];
+}
+
+- (void)didTapEventCellWithEventId:(NSString *)eventId {
+    [self.router openEventModuleWithEventId:eventId];
 }
 
 - (void)didTapShareButton {

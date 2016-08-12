@@ -27,6 +27,8 @@
 #import "EventPlainObject.h"
 #import "EXTScope.h"
 #import "LectureInfoTableViewCellObject.h"
+#import "PreviousEventTableViewCellObject.h"
+#import "PreviousLectureTableViewCellObject.h"
 #import "EventViewAnimator.h"
 #import "TechPlainObject.h"
 
@@ -80,17 +82,38 @@
     self.tableViewActions = [[NITableViewActions alloc] initWithTarget:self];
     
     @weakify(self);
-    NIActionBlock lectureInfoActionBlock = ^BOOL(id object, UIViewController *controller, NSIndexPath* indexPath) {
-        @strongify(self);
-        
-        LectureInfoTableViewCellObject *cellObject = (LectureInfoTableViewCellObject *)object;
-        NSString *lectureObjectId = cellObject.lectureId;
+    NIActionBlock lectureInfoActionBlock = ^BOOL(LectureInfoTableViewCellObject *object, UIViewController *controller, NSIndexPath* indexPath) {
+        NSString *lectureObjectId = object.lectureId;
         
         [self.delegate didTapLectureInfoCellWithLectureObjectId:lectureObjectId];
 
         return YES;
     };
-    [self.tableViewActions attachToClass:[LectureInfoTableViewCellObject class] tapBlock:lectureInfoActionBlock];
+    [self.tableViewActions attachToClass:[LectureInfoTableViewCellObject class]
+                                tapBlock:lectureInfoActionBlock];
+    
+    NIActionBlock pastEventActionBlock = ^BOOL(PreviousEventTableViewCellObject *object, UIViewController *controller, NSIndexPath* indexPath) {
+        @strongify(self);
+        NSString *eventId = object.eventId;
+        
+        [self.delegate didTapEventCellWithEventId:eventId];
+        
+        return YES;
+    };
+    [self.tableViewActions attachToClass:[PreviousEventTableViewCellObject class]
+                                tapBlock:pastEventActionBlock];
+    
+    NIActionBlock pastLectureActionBlock = ^BOOL(PreviousLectureTableViewCellObject *object, UIViewController *controller, NSIndexPath* indexPath) {
+        NSString *lectureId = object.lectureId;
+        
+        [self.delegate didTapLectureInfoCellWithLectureObjectId:lectureId];
+        
+        return YES;
+    };
+    [self.tableViewActions attachToClass:[PreviousLectureTableViewCellObject class]
+                                tapBlock:pastLectureActionBlock];
+    
+    self.tableViewActions.tableViewCellSelectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 - (NITableViewModel *)configureTableViewModel {

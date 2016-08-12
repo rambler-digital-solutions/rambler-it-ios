@@ -29,7 +29,23 @@
 
 @protocol EventDataDisplayManagerDelegate <NSObject>
 
+/**
+ @author Egor Tolstoy
+ 
+ The method tells a delegate that a lecture cell was tapped
+ 
+ @param lectureObjectId lecture identifier
+ */
 - (void)didTapLectureInfoCellWithLectureObjectId:(NSString *)lectureObjectId;
+
+/**
+ @author Egor Tolstoy
+ 
+ The method tells a delegate that an event cell was tapped
+ 
+ @param lectureObjectId lecture identifier
+ */
+- (void)didTapEventCellWithEventId:(NSString *)eventId;
 
 @end
 

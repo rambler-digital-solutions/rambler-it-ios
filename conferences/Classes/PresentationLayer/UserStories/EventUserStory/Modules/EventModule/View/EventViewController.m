@@ -86,14 +86,6 @@
     [self.output didTapSaveToCalendarButtonWithEvent:event];
 }
 
-- (void)didTapReadMoreEventDescriptionButton {
-    [self.output didTapReadMoreEventDescriptionButton];
-}
-
-- (void)didTapCurrentTranslationButton {
-    [self.output didTapCurrentTranslationButton];
-}
-
 - (void)didSpeakerViewWithSpeakerId:(NSString *)speakerId {
     [self.output didTapSpeakerViewWithSpeakerId:speakerId];
 }
@@ -102,6 +94,10 @@
 
 - (void)didTapLectureInfoCellWithLectureObjectId:(NSString *)lectureObjectId {
     [self.output didTapLectureInfoCellWithLectureObjectIdEvent:lectureObjectId];
+}
+
+- (void)didTapEventCellWithEventId:(NSString *)eventId {
+    [self.output didTapEventCellWithEventId:eventId];
 }
 
 #pragma mark - IBActions

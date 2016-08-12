@@ -49,25 +49,20 @@
 /**
  @author Artem Karpushin
  
- Method is used to inform presenter that "read more" button of event description was tapped
- */
-- (void)didTapReadMoreEventDescriptionButton;
-
-/**
- @author Artem Karpushin
- 
- Method is used to inform presenter that "current translation" button was tapped
- */
-- (void)didTapCurrentTranslationButton;
-
-/**
- @author Artem Karpushin
- 
  Method is used to inform presenter that cell with lecture info was tapped
  
  @param lectureObjectId Lecture objectId
  */
 - (void)didTapLectureInfoCellWithLectureObjectIdEvent:(NSString *)lectureObjectId;
+
+/**
+ @author Egor Tolstoy
+ 
+ Method is used to inform presenter that cell with event info was tapped
+ 
+ @param eventId Event identifier
+ */
+- (void)didTapEventCellWithEventId:(NSString *)eventId;
 
 /**
  @author Artem Karpushin

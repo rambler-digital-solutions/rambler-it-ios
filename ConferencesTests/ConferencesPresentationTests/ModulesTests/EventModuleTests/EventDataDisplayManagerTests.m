@@ -68,7 +68,7 @@
     [mockCellObjectBuilder stopMocking];
 }
 
-- (void)testThatDataDisplayManagerReturnsTableViewDataSource{
+- (void)testThatDataDisplayManagerReturnsTableViewDataSource {
     // given
     
     // when
