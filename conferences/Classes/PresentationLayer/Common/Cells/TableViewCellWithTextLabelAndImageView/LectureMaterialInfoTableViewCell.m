@@ -22,6 +22,9 @@
 #import "LectureMaterialInfoTableViewCellObject.h"
 
 static CGFloat const TableViewCellWithTextLabelAndImageViewHeight = 40.0f;
+static NSString *const kPresentationImageName = @"ic-presentation";
+static NSString *const kArticleImageName = @"ic-article";
+static NSString *const kCodeGithubImageName = @"ic-github";
 
 @interface LectureMaterialInfoTableViewCell ()
 
@@ -35,14 +38,39 @@ static CGFloat const TableViewCellWithTextLabelAndImageViewHeight = 40.0f;
 #pragma mark - NICell methods
 
 - (BOOL)shouldUpdateCellWithObject:(LectureMaterialInfoTableViewCellObject *)object {
-    self.iconImageView.image = object.image;
-    self.label.text = object.text;
+    UIImage *materialImage = [self obtainImageForMaterialType:object.type];
+    
+    self.iconImageView.image = materialImage;
+    self.label.text = object.title;
     
     return YES;
 }
 
 + (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
     return TableViewCellWithTextLabelAndImageViewHeight;
+}
+
+#pragma mark - Private methods
+
+- (UIImage *)obtainImageForMaterialType:(LectureMaterialType)type {
+    NSDictionary *mappingDictionary = [self materialTypeToImageNameMappingDictionary];
+    NSString *imageName = mappingDictionary[@(type)];
+    return [UIImage imageNamed:imageName];
+}
+
+- (NSDictionary *)materialTypeToImageNameMappingDictionary {
+    NSDictionary *mappingDictionary;
+    if (mappingDictionary) {
+        return mappingDictionary;
+    }
+    mappingDictionary = @{
+                          @(LectureMaterialVideoType) : kPresentationImageName,
+                          @(LectureMaterialPresentationType) : kPresentationImageName,
+                          @(LectureMaterialRepoType) : kCodeGithubImageName,
+                          @(LectureMaterialArticleType) : kArticleImageName,
+                          @(LectureMaterialOtherType) : kPresentationImageName
+                          };
+    return mappingDictionary;
 }
 
 @end

@@ -21,11 +21,16 @@
 #import <Foundation/Foundation.h>
 #import <Nimbus/NimbusModels.h>
 
+#import "LectureMaterialType.h"
+
+@class LectureMaterialPlainObject;
+
 @interface LectureMaterialInfoTableViewCellObject : NSObject <NICellObject>
 
-@property (strong, nonatomic, readonly) UIImage *image;
-@property (strong, nonatomic, readonly) NSString *text;
+@property (nonatomic, strong, readonly) LectureMaterialPlainObject *lectureMaterial;
+@property (nonatomic, strong, readonly) NSString *title;
+@property (nonatomic, assign, readonly) LectureMaterialType type;
 
-+ (instancetype)objectWithText:(NSString *)text andImage:(UIImage *)image;
++ (instancetype)objectWithLectureMaterialObject:(LectureMaterialPlainObject *)lectureMaterialObject;
 
 @end

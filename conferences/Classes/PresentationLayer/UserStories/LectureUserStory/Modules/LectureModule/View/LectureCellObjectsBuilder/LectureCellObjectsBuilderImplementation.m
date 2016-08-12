@@ -37,11 +37,6 @@
 #import "TagModuleTableViewCellObject.h"
 #import "TagShowMediator.h"
 
-static NSString *const kPresentationImageName = @"ic-presentation";
-static NSString *const kArticleImageName = @"ic-article";
-static NSString *const kCodeGithubImageName = @"ic-github";
-static NSString *const kTimeVideoText = @"(32:12)";
-
 @implementation LectureCellObjectsBuilderImplementation
 
 - (NSArray *)cellObjectsForLecture:(LecturePlainObject *)lecture {
@@ -70,24 +65,36 @@ static NSString *const kTimeVideoText = @"(32:12)";
         [cellObjects addObject:videoRecordTableViewCellObject];
     }
     
-    LectureMaterialTitleTableViewCellObject *materialsTextLabelCellObject = [LectureMaterialTitleTableViewCellObject objectWithText:NSLocalizedString(LectureMaterialsTableViewCellTitle, nil)];
-    [cellObjects addObject:materialsTextLabelCellObject];
+    NSMutableArray *mainMaterials = [NSMutableArray new];
+    NSMutableArray *otherMaterials = [NSMutableArray new];
+    for (LectureMaterialPlainObject *material in lecture.lectureMaterials) {
+        if ([material.type integerValue] == LectureMaterialVideoType ||
+            [material.type integerValue] == LectureMaterialPresentationType ||
+            [material.type integerValue] == LectureMaterialArticleType) {
+            [mainMaterials addObject:material];
+        } else {
+            [otherMaterials addObject:material];
+        }
+    }
     
-    UIImage *presentationImage = [UIImage imageNamed:kPresentationImageName];
-    LectureMaterialInfoTableViewCellObject *presentationTextImageLabelCellObject = [LectureMaterialInfoTableViewCellObject objectWithText:NSLocalizedString(LecturePresentationTableViewCellTitle, nil) andImage:presentationImage];
-    [cellObjects addObject:presentationTextImageLabelCellObject];
+    if (mainMaterials.count > 0) {
+        LectureMaterialTitleTableViewCellObject *materialsTextLabelCellObject = [LectureMaterialTitleTableViewCellObject objectWithText:NSLocalizedString(LectureMaterialsTableViewCellTitle, nil)];
+        [cellObjects addObject:materialsTextLabelCellObject];
+        for (LectureMaterialPlainObject *material in mainMaterials) {
+            LectureMaterialInfoTableViewCellObject *cellObject = [LectureMaterialInfoTableViewCellObject objectWithLectureMaterialObject:material];
+            [cellObjects addObject:cellObject];
+        }
+    }
     
-    UIImage *articleImage = [UIImage imageNamed:kArticleImageName];
-    LectureMaterialInfoTableViewCellObject *articlesTextImageLabelCellObject = [LectureMaterialInfoTableViewCellObject objectWithText:NSLocalizedString(LectureArticlesTableViewCellTitle, nil) andImage:articleImage];
-    [cellObjects addObject:articlesTextImageLabelCellObject];
-    
-    LectureMaterialTitleTableViewCellObject *additionalTextLabelCellObject = [LectureMaterialTitleTableViewCellObject objectWithText:NSLocalizedString(AdditionInformationTableViewCellTitle, nil)];
-    [cellObjects addObject:additionalTextLabelCellObject];
-    
-    UIImage *codeGithubImage = [UIImage imageNamed:kCodeGithubImageName];
-    LectureMaterialInfoTableViewCellObject *codeGithubTextLabelCellObject = [LectureMaterialInfoTableViewCellObject objectWithText:NSLocalizedString(LectureCodeGithubTableViewCellTitle, nil) andImage:codeGithubImage];
-    [cellObjects addObject:codeGithubTextLabelCellObject];
-    
+    if (otherMaterials.count > 0) {
+        LectureMaterialTitleTableViewCellObject *materialsTextLabelCellObject = [LectureMaterialTitleTableViewCellObject objectWithText:NSLocalizedString(AdditionInformationTableViewCellTitle, nil)];
+        [cellObjects addObject:materialsTextLabelCellObject];
+        for (LectureMaterialPlainObject *material in otherMaterials) {
+            LectureMaterialInfoTableViewCellObject *cellObject = [LectureMaterialInfoTableViewCellObject objectWithLectureMaterialObject:material];
+            [cellObjects addObject:cellObject];
+        }
+    }
+
     return cellObjects;
 }
 

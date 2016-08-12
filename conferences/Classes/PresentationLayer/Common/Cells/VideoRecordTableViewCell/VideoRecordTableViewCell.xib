@@ -21,7 +21,7 @@
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play-icon-small" translatesAutoresizingMaskIntoConstraints="NO" id="32W-xN-HrW">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="play-icon-small" translatesAutoresizingMaskIntoConstraints="NO" id="32W-xN-HrW">
                         <rect key="frame" x="150" y="67" width="20" height="27"/>
                     </imageView>
                 </subviews>

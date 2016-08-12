@@ -19,12 +19,15 @@
 // THE SOFTWARE.
 
 #import "LectureMaterialInfoTableViewCellObject.h"
+
 #import "LectureMaterialInfoTableViewCell.h"
+#import "LectureMaterialPlainObject.h"
 
 @interface LectureMaterialInfoTableViewCellObject ()
 
-@property (strong, nonatomic, readwrite) UIImage *image;
-@property (strong, nonatomic, readwrite) NSString *text;
+@property (nonatomic, strong, readwrite) LectureMaterialPlainObject *lectureMaterial;
+@property (nonatomic, strong, readwrite) NSString *title;
+@property (nonatomic, assign, readwrite) LectureMaterialType type;
 
 @end
 
@@ -32,17 +35,18 @@
 
 #pragma mark - Initialization
 
-- (instancetype)initWithText:(NSString *)text andImage:(UIImage *)image {
+- (instancetype)initWithLectureMaterialObject:(LectureMaterialPlainObject *)lectureMaterialObject {
     self = [super init];
     if (self) {
-        _text = text;
-        _image = image;
+        _lectureMaterial = lectureMaterialObject;
+        _title = lectureMaterialObject.name;
+        _type = [lectureMaterialObject.type integerValue];
     }
     return self;
 }
 
-+ (instancetype)objectWithText:(NSString *)text andImage:(UIImage *)image {
-    return [[self alloc] initWithText:text andImage: image];
++ (instancetype)objectWithLectureMaterialObject:(LectureMaterialPlainObject *)lectureMaterialObject {
+    return [[self alloc] initWithLectureMaterialObject:lectureMaterialObject];
 }
 
 # pragma mark - NICellObject methods
