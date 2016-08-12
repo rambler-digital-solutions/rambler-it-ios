@@ -87,7 +87,7 @@
     
     // Other lecture materials block
     NSArray *otherMaterialCellObjects = [self generateMaterialsSectionCellObjectsWithMaterials:otherMaterials sectionTitle:NSLocalizedString(AdditionInformationTableViewCellTitle, nil)];
-    [cellObjects addObjectsFromArray:mainMaterialCellObjects];
+    [cellObjects addObjectsFromArray:otherMaterialCellObjects];
 
     return cellObjects;
 }
