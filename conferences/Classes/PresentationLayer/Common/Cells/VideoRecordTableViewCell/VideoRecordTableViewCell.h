@@ -22,4 +22,8 @@
 
 @interface VideoRecordTableViewCell : UITableViewCell <NICell>
 
+@property (nonatomic, strong) IBOutlet UIImageView *previewImageView;
+@property (nonatomic, weak) IBOutlet UILabel *titleLabel;
+@property (nonatomic, weak) IBOutlet UIImageView *playIconImageView;
+
 @end

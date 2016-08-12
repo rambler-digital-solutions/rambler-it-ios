@@ -25,31 +25,36 @@
 static CGFloat const kVideoRecordTableViewCellHeight = 168.0f;
 static NSString *const kPlaceholderImageName = @"placeholder";
 
-@interface VideoRecordTableViewCell ()
-
-@property (nonatomic, strong) IBOutlet UIImageView *previewImageView;
-@property (nonatomic, weak) IBOutlet UILabel *titleLabel;
-
-@end
-
 @implementation VideoRecordTableViewCell
 
 #pragma mark - NICell methods
 
 - (BOOL)shouldUpdateCellWithObject:(VideoRecordTableViewCellObject *)object {
     if (object.previewImageUrl) {
-        self.titleLabel.hidden = YES;
-        [self.previewImageView sd_setImageWithURL:object.previewImageUrl
-                                 placeholderImage:[UIImage imageNamed:kPlaceholderImageName]];
+        [self setupPreviewStateWithObject:object];
     } else {
-        self.titleLabel.hidden = NO;
-        self.previewImageView.image = [UIImage imageNamed:kPlaceholderImageName];
+        [self setupNoVideoStateWithObject:object];
     }
     return YES;
 }
 
 + (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
     return kVideoRecordTableViewCellHeight;
+}
+
+#pragma mark - Private methods
+
+- (void)setupPreviewStateWithObject:(VideoRecordTableViewCellObject *)object {
+    self.titleLabel.hidden = YES;
+    self.playIconImageView.hidden = NO;
+    [self.previewImageView sd_setImageWithURL:object.previewImageUrl
+                             placeholderImage:[UIImage imageNamed:kPlaceholderImageName]];
+}
+
+- (void)setupNoVideoStateWithObject:(VideoRecordTableViewCellObject *)object {
+    self.titleLabel.hidden = NO;
+    self.playIconImageView.hidden = YES;
+    self.previewImageView.image = [UIImage imageNamed:kPlaceholderImageName];
 }
 
 @end
