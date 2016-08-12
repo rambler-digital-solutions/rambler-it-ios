@@ -42,9 +42,11 @@
 - (NSArray *)cellObjectsForLecture:(LecturePlainObject *)lecture {
     NSMutableArray *cellObjects = [NSMutableArray new];
     
+    // Lecture description block
     LectureInfoTableViewCellObject *lectureDescriptionCellObject = [LectureInfoTableViewCellObject objectWithLecture:lecture continueReadingFlag:NO];
     [cellObjects addObject:lectureDescriptionCellObject];
     
+    // Lecture tags block
     TagModuleTableViewCellObject *tagCellObject;
     if (lecture.tags.count > 0) {
         TagObjectDescriptor *objectDescriptor = [[TagObjectDescriptor alloc] initWithObjectName:NSStringFromClass([LectureModelObject class])
@@ -54,6 +56,7 @@
         [cellObjects addObject:tagCellObject];
     }
     
+    // Video preview block
     NSURL *videoUrl = [self videoUrlForLecture:lecture];
     if (videoUrl) {
         NSString *videoRecordTextTitle = NSLocalizedString(VideoRecordTableViewCellTitle, nil);
@@ -65,6 +68,7 @@
         [cellObjects addObject:videoRecordTableViewCellObject];
     }
     
+    // Lecture materials block
     NSMutableArray *mainMaterials = [NSMutableArray new];
     NSMutableArray *otherMaterials = [NSMutableArray new];
     for (LectureMaterialPlainObject *material in lecture.lectureMaterials) {
@@ -77,23 +81,13 @@
         }
     }
     
-    if (mainMaterials.count > 0) {
-        LectureMaterialTitleTableViewCellObject *materialsTextLabelCellObject = [LectureMaterialTitleTableViewCellObject objectWithText:NSLocalizedString(LectureMaterialsTableViewCellTitle, nil)];
-        [cellObjects addObject:materialsTextLabelCellObject];
-        for (LectureMaterialPlainObject *material in mainMaterials) {
-            LectureMaterialInfoTableViewCellObject *cellObject = [LectureMaterialInfoTableViewCellObject objectWithLectureMaterialObject:material];
-            [cellObjects addObject:cellObject];
-        }
-    }
+    // Main lecture materials block
+    NSArray *mainMaterialCellObjects = [self generateMaterialsSectionCellObjectsWithMaterials:mainMaterials sectionTitle:NSLocalizedString(LectureMaterialsTableViewCellTitle, nil)];
+    [cellObjects addObjectsFromArray:mainMaterialCellObjects];
     
-    if (otherMaterials.count > 0) {
-        LectureMaterialTitleTableViewCellObject *materialsTextLabelCellObject = [LectureMaterialTitleTableViewCellObject objectWithText:NSLocalizedString(AdditionInformationTableViewCellTitle, nil)];
-        [cellObjects addObject:materialsTextLabelCellObject];
-        for (LectureMaterialPlainObject *material in otherMaterials) {
-            LectureMaterialInfoTableViewCellObject *cellObject = [LectureMaterialInfoTableViewCellObject objectWithLectureMaterialObject:material];
-            [cellObjects addObject:cellObject];
-        }
-    }
+    // Other lecture materials block
+    NSArray *otherMaterialCellObjects = [self generateMaterialsSectionCellObjectsWithMaterials:otherMaterials sectionTitle:NSLocalizedString(AdditionInformationTableViewCellTitle, nil)];
+    [cellObjects addObjectsFromArray:mainMaterialCellObjects];
 
     return cellObjects;
 }
@@ -107,6 +101,20 @@
         }
     }
     return nil;
+}
+
+- (NSArray *)generateMaterialsSectionCellObjectsWithMaterials:(NSArray *)materials
+                                                 sectionTitle:(NSString *)sectionTitle {
+    NSMutableArray *cellObjects = [NSMutableArray new];
+    if (materials.count > 0) {
+        LectureMaterialTitleTableViewCellObject *materialsTextLabelCellObject = [LectureMaterialTitleTableViewCellObject objectWithText:sectionTitle];
+        [cellObjects addObject:materialsTextLabelCellObject];
+        for (LectureMaterialPlainObject *material in materials) {
+            LectureMaterialInfoTableViewCellObject *cellObject = [LectureMaterialInfoTableViewCellObject objectWithLectureMaterialObject:material];
+            [cellObjects addObject:cellObject];
+        }
+    }
+    return [cellObjects copy];
 }
 
 @end
