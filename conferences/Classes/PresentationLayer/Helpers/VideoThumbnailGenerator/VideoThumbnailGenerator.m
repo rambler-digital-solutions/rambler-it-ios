@@ -26,6 +26,9 @@ static NSString * const kYouTubeVideoThumbnailFormat = @"http://img.youtube.com/
 @implementation VideoThumbnailGenerator
 
 - (NSURL *)generateThumbnailWithVideoURL:(NSURL *)videoURL {
+    if (!videoURL) {
+        return nil;
+    }
     NSString *videoString = [videoURL absoluteString];
     NSDictionary *regExpToThumbnailFormats = [self regExpToThumbnailFormats];
     for (NSString *regexString in [regExpToThumbnailFormats allKeys]) {
