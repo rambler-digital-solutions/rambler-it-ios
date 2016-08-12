@@ -21,11 +21,11 @@
 #import "EventCellObjectBuilderBase.h"
 #import "LectureInfoTableViewCellObject.h"
 #import "EventDescriptionTableViewCellObject.h"
-#import "PreviousEventTableViewCellObject.h"
 #import "PreviousEventSectionHeaderTableViewCellObject.h"
 #import "PreviousLectureSectionHeaderTableViewCellObject.h"
 #import "PreviousEventSectionFooterTableViewCellObject.h"
 #import "PreviousLectureTableViewCellObject.h"
+#import "EventAnnouncementTableViewCellObject.h"
 #import "EventPlainObject.h"
 #import "DateFormatter.h"
 #import "EventCellObjectBuilderConstants.h"
@@ -65,8 +65,11 @@
     
     for (EventPlainObject *pastEvent in filteredPastEvents) {
         NSString *date = [self.dateFormatter obtainDateWithDayMonthFormat:pastEvent.startDate];
-        PreviousEventTableViewCellObject *eventCellobject = [PreviousEventTableViewCellObject objectWithEvent:pastEvent
-                                                                                                      andDate:date];
+        NSString *time = [self.dateFormatter obtainDateWithTimeFormat:pastEvent.startDate];
+        EventAnnouncementTableViewCellObject *eventCellobject = [EventAnnouncementTableViewCellObject objectWithEvent:pastEvent
+                                                                                                            eventDate:date
+                                                                                                                 time:time
+                                                                                                 customBackgroundFlag:YES];
         [cellObjects addObject:eventCellobject];
     }
     

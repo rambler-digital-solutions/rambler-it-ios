@@ -19,18 +19,13 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-#import <Nimbus/NimbusModels.h>
 
-@class EventPlainObject;
+@class DateFormatter;
 
-@interface PreviousEventTableViewCellObject : NSObject <NICellObject>
+@interface AnnouncementCellObjectBuilder : NSObject
 
-@property (strong, nonatomic, readonly) NSString *date;
-@property (strong, nonatomic, readonly) NSString *title;
-@property (strong, nonatomic, readonly) UIColor *backgroundColor;
-@property (strong, nonatomic, readonly) NSString *eventId;
+@property (nonatomic, strong) DateFormatter *dateFormatter;
 
-+ (instancetype)objectWithEvent:(EventPlainObject *)event
-                        andDate:(NSString *)date;
+- (NSArray *)buildCellObjectsWithEvents:(NSArray *)events;
 
 @end

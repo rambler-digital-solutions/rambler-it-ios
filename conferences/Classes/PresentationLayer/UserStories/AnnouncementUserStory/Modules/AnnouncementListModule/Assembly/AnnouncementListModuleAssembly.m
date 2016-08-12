@@ -28,7 +28,7 @@
 #import "PresentationLayerHelpersAssembly.h"
 #import "PonsomizerAssembly.h"
 #import "NearestAnnouncementTableHeaderView.h"
-#import "AnnounceViewModelBuilder.h"
+#import "AnnouncementCellObjectBuilder.h"
 #import "UIView+LJLoadFromNib.h"
 
 @implementation AnnouncementListModuleAssembly
@@ -40,6 +40,8 @@
                                                   with:[self presenterAnnouncementList]];
                               [definition injectProperty:@selector(dataDisplayManager)
                                                     with:[self dataDisplayManagerAnnouncementList]];
+                              [definition injectProperty:@selector(dateFormatter)
+                                                    with:[self.presentationLayerHelpersAssembly dateFormatter]];
              }];
 }
 
@@ -64,8 +66,6 @@
                                                     with:[self interactorAnnouncementList]];
                               [definition injectProperty:@selector(router)
                                                     with:[self routerAnnouncementList]];
-                              [definition injectProperty:@selector(viewModelBuilder)
-                                                    with:[self viewModelBuilderAnnouncementList]];
             }];
 }
 
@@ -78,11 +78,15 @@
 }
 
 - (AnnouncementListDataDisplayManager *)dataDisplayManagerAnnouncementList {
-    return [TyphoonDefinition withClass:[AnnouncementListDataDisplayManager class]];
+    return [TyphoonDefinition withClass:[AnnouncementListDataDisplayManager class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(cellObjectBuilder)
+                                                    with:[self cellObjectBuilderAnnouncementList]];
+                          }];
 }
 
-- (AnnounceViewModelBuilder *)viewModelBuilderAnnouncementList {
-    return [TyphoonDefinition withClass:[AnnounceViewModelBuilder class]
+- (AnnouncementCellObjectBuilder *)cellObjectBuilderAnnouncementList {
+    return [TyphoonDefinition withClass:[AnnouncementCellObjectBuilder class]
                           configuration:^(TyphoonDefinition *definition) {
                               [definition injectProperty:@selector(dateFormatter)
                                                     with:[self.presentationLayerHelpersAssembly dateFormatter]];

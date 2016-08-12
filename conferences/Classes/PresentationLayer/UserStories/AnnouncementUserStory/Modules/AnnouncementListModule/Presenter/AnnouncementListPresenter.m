@@ -22,7 +22,6 @@
 #import "AnnouncementListViewInput.h"
 #import "AnnouncementListInteractorInput.h"
 #import "AnnouncementListRouterInput.h"
-#import "AnnounceViewModelBuilder.h"
 #import "EventPlainObject.h"
 
 @implementation AnnouncementListPresenter
@@ -32,9 +31,7 @@
 - (void)setupView {
     NSArray *events = [self.interactor obtainEventList];
     [self.interactor updateEventList];
-    
-    NSArray *viewModels = [self.viewModelBuilder buildWithEvents:events];
-    [self.view setupViewWithEventList:viewModels];
+    [self.view setupViewWithEventList:events];
 }
 
 - (void)didTriggerTapCellWithEvent:(EventPlainObject *)event {
@@ -44,8 +41,7 @@
 #pragma mark - AnnouncementListInteractorOutput
 
 - (void)didUpdateEventList:(NSArray *)events {
-    NSArray *viewModels = [self.viewModelBuilder buildWithEvents:events];
-    [self.view updateViewWithEventList:viewModels];
+    [self.view updateViewWithEventList:events];
 }
 
 @end

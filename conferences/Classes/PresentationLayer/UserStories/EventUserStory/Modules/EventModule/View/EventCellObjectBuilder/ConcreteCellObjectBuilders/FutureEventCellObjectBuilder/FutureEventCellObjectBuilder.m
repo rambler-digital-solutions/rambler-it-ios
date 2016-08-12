@@ -29,7 +29,6 @@
 #import "PreviousLectureSectionHeaderTableViewCellObject.h"
 #import "PreviousLectureTableViewCellObject.h"
 #import "PreviousEventSectionHeaderTableViewCellObject.h"
-#import "PreviousEventTableViewCellObject.h"
 #import "TechPlainObject.h"
 
 

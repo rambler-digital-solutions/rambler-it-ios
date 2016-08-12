@@ -20,7 +20,6 @@
 
 #import "NearestAnnouncementTableHeaderView.h"
 
-#import "AnnouncementViewModel.h"
 #import "MetaEventPlainObject.h"
 #import "TechPlainObject.h"
 #import "EventPlainObject.h"
@@ -39,14 +38,16 @@ static NSString *const kPlaceholderImageName = @"placeholder";
 
 @implementation NearestAnnouncementTableHeaderView
 
-- (void)updateWithViewModel:(AnnouncementViewModel *)viewModel {
-    self.eventTitle.text = viewModel.eventTitle;
-    self.date.text = viewModel.date;
-    self.time.text = viewModel.time;
+- (void)updateWithEvent:(EventPlainObject *)event
+                   date:(NSString *)date
+                   time:(NSString *)time {
+    self.eventTitle.text = event.name;
+    self.date.text = date;
+    self.time.text = time;
     
-    self.backgroundView.backgroundColor = [UIColor colorFromHexString:viewModel.event.tech.color];
-
-    [self.eventImageView sd_setImageWithURL:viewModel.imageUrl
+    self.backgroundView.backgroundColor = [UIColor colorFromHexString:event.tech.color];
+    
+    [self.eventImageView sd_setImageWithURL:[NSURL URLWithString:event.metaEvent.imageUrlPath]
                            placeholderImage:[UIImage imageNamed:kPlaceholderImageName]];
 }
 

@@ -25,6 +25,7 @@
 
 @class EventPlainObject;
 @class DateFormatter;
+@class AnnouncementCellObjectBuilder;
 
 @protocol AnnouncementLIstDataDisplayManagerDelegate
 
@@ -35,7 +36,8 @@
 
 @interface AnnouncementListDataDisplayManager : NSObject <DataDisplayManager>
 
-@property (weak, nonatomic) id <AnnouncementLIstDataDisplayManagerDelegate> delegate;
+@property (nonatomic, weak) id <AnnouncementLIstDataDisplayManagerDelegate> delegate;
+@property (nonatomic, strong) AnnouncementCellObjectBuilder *cellObjectBuilder;
 
 - (void)updateTableViewModelWithEvents:(NSArray *)events;
 

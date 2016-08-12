@@ -21,7 +21,7 @@
 #import <UIKit/UIKit.h>
 #import "NICellFactory.h"
 
-@class AnnouncementViewModel;
+@class EventPlainObject;
 
 @interface NearestAnnouncementTableHeaderView : UIView
 
@@ -33,6 +33,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *eventTitle;
 @property (weak, nonatomic) IBOutlet UIView *backgroundView;
 
-- (void)updateWithViewModel:(AnnouncementViewModel *)viewModel;
+- (void)updateWithEvent:(EventPlainObject *)event
+                   date:(NSString *)date
+                   time:(NSString *)time;
 
 @end

@@ -32,7 +32,7 @@
 #import "DateFormatter.h"
 #import "EventCellObjectBuilderConstants.h"
 #import "PreviousLectureTableViewCellObject.h"
-#import "PreviousEventTableViewCellObject.h"
+#import "EventAnnouncementTableViewCellObject.h"
 
 @interface PastEventCellObjectBuilderTests : XCTestCase
 
@@ -70,14 +70,12 @@
     NSArray *pastEvents = [ModelObjectGenerator generateEventObjects:4];
     
     NSUInteger const expectedNumberOfEventInfoTableViewCellObjects = 1;
-    NSUInteger const expectedNumberOfVideoRecordEventTableViewCellObjects = 1;
     NSUInteger const expectedNumberOfEventDescriptionTableViewCellObjects = 1;
     NSUInteger const expectedNumberOfLectureInfoTableViewCellObjects = event.lectures.count;
     NSUInteger const expectedNumberOfPastEventsInfoTableViewCellObjects = kEventPastEventsCount;
     NSUInteger const expectedNumberOfPastLectureInfoTableViewCellObjects = kEventPastEventLecturesCount;
     
     NSUInteger actualNumberOfEventInfoTableViewCellObjects = 0;
-    NSUInteger actualNumberOfVideoRecordEventTableViewCellObjects = 0;
     NSUInteger actualNumberOfEventDescriptionTableViewCellObjects = 0;
     NSUInteger actualNumberOfLectureInfoTableViewCellObjects = 0;
     NSUInteger actualNumberOfPastEventsInfoTableViewCellObjects = 0;
@@ -91,16 +89,13 @@
         if ([cellObject isKindOfClass:[EventInfoTableViewCellObject class]]) {
             actualNumberOfEventInfoTableViewCellObjects++;
         }
-        if ([cellObject isKindOfClass:[VideoRecordTableViewCellObject class]]) {
-            actualNumberOfVideoRecordEventTableViewCellObjects++;
-        }
         if ([cellObject isKindOfClass:[EventDescriptionTableViewCellObject class]]) {
             actualNumberOfEventDescriptionTableViewCellObjects++;
         }
         if ([cellObject isKindOfClass:[LectureInfoTableViewCellObject class]]) {
             actualNumberOfLectureInfoTableViewCellObjects++;
         }
-        if ([cellObject isKindOfClass:[PreviousEventTableViewCellObject class]]) {
+        if ([cellObject isKindOfClass:[EventAnnouncementTableViewCellObject class]]) {
             actualNumberOfPastEventsInfoTableViewCellObjects++;
         }
         if ([cellObject isKindOfClass:[PreviousLectureTableViewCellObject class]]) {
@@ -110,7 +105,6 @@
     
     // then
     XCTAssertEqual(expectedNumberOfEventInfoTableViewCellObjects, actualNumberOfEventInfoTableViewCellObjects);
-    XCTAssertEqual(expectedNumberOfVideoRecordEventTableViewCellObjects, actualNumberOfVideoRecordEventTableViewCellObjects);
     XCTAssertEqual(expectedNumberOfEventDescriptionTableViewCellObjects, actualNumberOfEventDescriptionTableViewCellObjects);
     XCTAssertEqual(expectedNumberOfLectureInfoTableViewCellObjects, actualNumberOfLectureInfoTableViewCellObjects);
     XCTAssertEqual(expectedNumberOfPastEventsInfoTableViewCellObjects, actualNumberOfPastEventsInfoTableViewCellObjects);

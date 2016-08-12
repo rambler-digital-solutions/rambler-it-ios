@@ -19,11 +19,13 @@
 // THE SOFTWARE.
 
 #import "AnnouncementListTableViewController.h"
+
+#import "EventPlainObject.h"
 #import "AnnouncementListViewOutput.h"
 #import "DataDisplayManager.h"
 #import "NearestAnnouncementTableHeaderView.h"
-#import "AnnouncementViewModel.h"
 #import "AnnouncementListAnimator.h"
+#import "DateFormatter.h"
 
 static CGFloat const kAnnouncementTableViewEstimatedRowHeight = 44.0f;
 
@@ -61,11 +63,11 @@ static CGFloat const kAnnouncementTableViewEstimatedRowHeight = 44.0f;
 }
 
 - (void)updateViewWithEventList:(NSArray *)events {
-    AnnouncementViewModel *announce = events.firstObject;
+    EventPlainObject *announce = [events firstObject];
     [self updateTableViewHeaderWithAnnounce:announce
                                      events:events];
     
-    NSMutableArray *futureEvents = events.mutableCopy;
+    NSMutableArray *futureEvents = [events mutableCopy];
     [futureEvents removeObject:announce];
     [self.dataDisplayManager updateTableViewModelWithEvents:futureEvents];
 }
@@ -85,12 +87,17 @@ static CGFloat const kAnnouncementTableViewEstimatedRowHeight = 44.0f;
     [self.animator animateWithContentOffset:scrollView.contentOffset];
 }
 
-- (void)updateTableViewHeaderWithAnnounce:(AnnouncementViewModel *)announce
+- (void)updateTableViewHeaderWithAnnounce:(EventPlainObject *)announce
                                    events:(NSArray *)events {
     if (!announce) {
         return;
     }
-    [self.nearestAnnouncementHeaderView updateWithViewModel:announce];
+    
+    NSString *dateString = [self.dateFormatter obtainDateWithDayMonthFormat:announce.startDate];
+    NSString *timeString = [self.dateFormatter obtainDateWithTimeFormat:announce.startDate];
+    [self.nearestAnnouncementHeaderView updateWithEvent:announce
+                                                   date:dateString
+                                                   time:timeString];
     
     self.tableView.tableHeaderView = nil;
     CGRect frame = [self calculateFrameForHeaderView:events.count];

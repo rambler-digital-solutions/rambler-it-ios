@@ -18,9 +18,23 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
-#import <NICellFactory.h>
+#import <Foundation/Foundation.h>
+#import <Nimbus/NimbusModels.h>
 
-@interface PreviousEventTableViewCell : UITableViewCell <NICell>
+@class EventPlainObject;
+
+@interface EventAnnouncementTableViewCellObject : NSObject <NICellObject>
+
+@property (strong, nonatomic, readonly) NSString *eventTitle;
+@property (strong, nonatomic, readonly) NSURL *imageUrl;
+@property (strong, nonatomic, readonly) NSString *date;
+@property (strong, nonatomic, readonly) NSString *time;
+@property (strong, nonatomic, readonly) EventPlainObject *event;
+@property (assign, nonatomic, readonly) BOOL customBackgroundFlag;
+
++ (instancetype)objectWithEvent:(EventPlainObject *)event
+                      eventDate:(NSString *)date
+                           time:(NSString *)time
+           customBackgroundFlag:(BOOL)customBackgroundFlag;
 
 @end

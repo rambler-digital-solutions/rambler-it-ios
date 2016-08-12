@@ -25,7 +25,7 @@
 #import "EventInfoTableViewCellObject.h"
 #import "SignUpAndSaveToCalendarEventTableViewCellObject.h"
 #import "EventDescriptionTableViewCellObject.h"
-#import "PreviousEventTableViewCellObject.h"
+#import "EventAnnouncementTableViewCellObject.h"
 #import "LectureInfoTableViewCellObject.h"
 #import "PreviousLectureTableViewCellObject.h"
 #import "EventPlainObject.h"
@@ -100,7 +100,7 @@
         if ([cellObject isKindOfClass:[LectureInfoTableViewCellObject class]]) {
             actualNumberOfLectureInfoTableViewCellObjects++;
         }
-        if ([cellObject isKindOfClass:[PreviousEventTableViewCellObject class]]) {
+        if ([cellObject isKindOfClass:[EventAnnouncementTableViewCellObject class]]) {
             actualNumberOfPastEventsInfoTableViewCellObjects++;
         }
         if ([cellObject isKindOfClass:[PreviousLectureTableViewCellObject class]]) {

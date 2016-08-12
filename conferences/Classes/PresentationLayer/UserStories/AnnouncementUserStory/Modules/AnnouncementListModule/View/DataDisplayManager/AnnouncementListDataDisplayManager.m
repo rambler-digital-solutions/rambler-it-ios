@@ -22,9 +22,9 @@
 
 #import <Nimbus/NimbusModels.h>
 
-#import "AnnouncementViewModel.h"
 #import "TableViewSectionHeaderCellObject.h"
-#import "AnnouncementListTableViewCell.h"
+#import "EventAnnouncementTableViewCellObject.h"
+#import "AnnouncementCellObjectBuilder.h"
 #import "EventPlainObject.h"
 #import "DateFormatter.h"
 #import "EXTScope.h"
@@ -33,7 +33,6 @@
 
 @property (strong, nonatomic) NIMutableTableViewModel *tableViewModel;
 @property (strong, nonatomic) NITableViewActions *tableViewActions;
-@property (strong, nonatomic) NICellFactory *cellFactory;
 
 @end
 
@@ -48,15 +47,8 @@
 
 - (id<UITableViewDataSource>)dataSourceForTableView:(UITableView *)tableView {
     if (!self.tableViewModel) {
-        NSString *identifier = NSStringFromClass([AnnouncementListTableViewCell class]);
-        UINib *nib = [UINib nibWithNibName:identifier
-                                    bundle:[NSBundle mainBundle]];
-        [tableView registerNib:nib forCellReuseIdentifier:identifier];
-        self.cellFactory = [NICellFactory new];
-        [self.cellFactory mapObjectClass:[AnnouncementViewModel class]
-                             toCellClass:[AnnouncementListTableViewCell class]];
         self.tableViewModel = [[NIMutableTableViewModel alloc] initWithSectionedArray:@[@""]
-                                                                             delegate:self.cellFactory];
+                                                                             delegate:(id)[NICellFactory class]];
     }
     return self.tableViewModel;
 }
@@ -75,21 +67,22 @@
     self.tableViewActions.tableViewCellSelectionStyle = UITableViewCellSelectionStyleNone;
     
     @weakify(self);
-    NIActionBlock announcementListTapActionBlock = ^BOOL(AnnouncementViewModel *object, id target, NSIndexPath *indexPath) {
+    NIActionBlock announcementListTapActionBlock = ^BOOL(EventAnnouncementTableViewCellObject *object, id target, NSIndexPath *indexPath) {
         @strongify(self);
         [self.delegate didTapCellWithEvent:object.event];
         return YES;
     };
     
-    [self.tableViewActions attachToClass:[AnnouncementViewModel class]
+    [self.tableViewActions attachToClass:[EventAnnouncementTableViewCellObject class]
                                 tapBlock:announcementListTapActionBlock];
 }
 
 - (void)updateTableViewModel:(NSArray *)events {
     [self.tableViewModel removeSectionAtIndex:0];
     [self.tableViewModel addSectionWithTitle:@""];
-    [self.tableViewModel addObjectsFromArray:events];
     
+    NSArray *cellObjects = [self.cellObjectBuilder buildCellObjectsWithEvents:events];
+    [self.tableViewModel addObjectsFromArray:cellObjects];
 }
 
 @end

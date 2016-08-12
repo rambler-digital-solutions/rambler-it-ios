@@ -26,11 +26,13 @@
 @class AnnouncementListDataDisplayManager;
 @class NearestAnnouncementTableHeaderView;
 @class AnnouncementListAnimator;
+@class DateFormatter;
 
 @interface AnnouncementListTableViewController : UITableViewController <AnnouncementListViewInput, AnnouncementLIstDataDisplayManagerDelegate>
 
 @property (nonatomic, strong) id<AnnouncementListViewOutput> output;
 @property (nonatomic, strong) AnnouncementListDataDisplayManager *dataDisplayManager;
+@property (nonatomic, strong) DateFormatter *dateFormatter;
 @property (nonatomic, strong) IBOutlet AnnouncementListAnimator *animator;
 
 @property (weak, nonatomic) IBOutlet NearestAnnouncementTableHeaderView *nearestAnnouncementHeaderView;

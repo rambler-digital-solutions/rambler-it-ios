@@ -18,25 +18,39 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "AnnounceViewModelBuilder.h"
+#import "EventAnnouncementTableViewCell.h"
+
+#import "EventAnnouncementTableViewCellObject.h"
+#import "UIColor+Hex.h"
 #import "EventPlainObject.h"
-#import "AnnouncementViewModel.h"
-#import "DateFormatter.h"
+#import "TechPlainObject.h"
 
-@implementation AnnounceViewModelBuilder
+#import <SDWebImage/UIImageView+WebCache.h>
 
-- (NSArray *)buildWithEvents:(NSArray *)events {
-    NSMutableArray *viewModels = [NSMutableArray new];
-    for (EventPlainObject *event in events) {
-        NSString *date = [self.dateFormatter obtainDateWithDayMonthFormat:event.startDate];
-        NSString *time = [self.dateFormatter obtainDateWithTimeFormat:event.startDate];
-        AnnouncementViewModel *viewModel = [AnnouncementViewModel objectWithEvent:event
-                                                                        eventDate:date
-                                                                             time:time];
-        [viewModels addObject:viewModel];
+static NSString *const kPlaceholderImageName = @"placeholder";
+static CGFloat const FutureEventListTableViewCellHeight = 96.0f;
+
+@implementation EventAnnouncementTableViewCell
+
+#pragma mark - NICell methods
+
+- (BOOL)shouldUpdateCellWithObject:(EventAnnouncementTableViewCellObject *)object {
+    self.eventTitle.text = object.eventTitle;
+    self.date.text = object.date;
+    [self.eventImageView sd_setImageWithURL:object.imageUrl
+                           placeholderImage:[UIImage imageNamed:kPlaceholderImageName]];
+    
+    if (object.customBackgroundFlag) {
+        self.contentView.backgroundColor = [UIColor colorFromHexString:object.event.tech.color];
     }
     
-    return [viewModels copy];
+    return YES;
+}
+
++ (CGFloat)heightForObject:(id)object
+               atIndexPath:(NSIndexPath *)indexPath
+                 tableView:(UITableView *)tableView {
+    return FutureEventListTableViewCellHeight;
 }
 
 @end

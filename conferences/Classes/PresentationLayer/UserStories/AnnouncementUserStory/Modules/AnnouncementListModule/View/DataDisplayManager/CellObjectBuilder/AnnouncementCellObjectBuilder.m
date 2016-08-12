@@ -18,33 +18,27 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "PreviousEventTableViewCell.h"
-#import "PreviousEventTableViewCellObject.h"
+#import "AnnouncementCellObjectBuilder.h"
 
-@interface PreviousEventTableViewCell ()
+#import "EventAnnouncementTableViewCellObject.h"
+#import "EventPlainObject.h"
+#import "DateFormatter.h"
 
-@property (weak, nonatomic) IBOutlet UIImageView *eventImageView;
-@property (weak, nonatomic) IBOutlet UILabel *dateTextLabel;
-@property (weak, nonatomic) IBOutlet UILabel *titleTextLabel;
-@property (weak, nonatomic) IBOutlet UIView *eventContentView;
+@implementation AnnouncementCellObjectBuilder
 
-@end
-
-@implementation PreviousEventTableViewCell
-
-#pragma mark - NICell methods
-
-- (BOOL)shouldUpdateCellWithObject:(PreviousEventTableViewCellObject *)object {
-    self.eventImageView.image = [UIImage imageNamed:@"logo-js"];
-    self.dateTextLabel.text = object.date;
-    self.titleTextLabel.text = object.title;
-    self.eventContentView.backgroundColor = object.backgroundColor;
+- (NSArray *)buildCellObjectsWithEvents:(NSArray *)events {
+    NSMutableArray *objects = [NSMutableArray new];
+    for (EventPlainObject *event in events) {
+        NSString *date = [self.dateFormatter obtainDateWithDayMonthFormat:event.startDate];
+        NSString *time = [self.dateFormatter obtainDateWithTimeFormat:event.startDate];
+        EventAnnouncementTableViewCellObject *object = [EventAnnouncementTableViewCellObject objectWithEvent:event
+                                                                                                   eventDate:date
+                                                                                                        time:time
+                                                                                        customBackgroundFlag:NO];
+        [objects addObject:object];
+    }
     
-    return YES;
-}
-
-+ (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
-    return UITableViewAutomaticDimension;
+    return [objects copy];
 }
 
 @end

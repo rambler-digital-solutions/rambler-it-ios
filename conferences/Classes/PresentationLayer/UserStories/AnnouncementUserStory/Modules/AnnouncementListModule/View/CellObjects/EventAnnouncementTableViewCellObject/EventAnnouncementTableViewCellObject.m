@@ -18,46 +18,61 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "AnnouncementViewModel.h"
+#import "EventAnnouncementTableViewCellObject.h"
+
+#import "EventAnnouncementTableViewCell.h"
 #import "EventPlainObject.h"
 #import "MetaEventPlainObject.h"
 
-@interface AnnouncementViewModel ()
+@interface EventAnnouncementTableViewCellObject ()
 
 @property (strong, nonatomic, readwrite) NSString *eventTitle;
-@property (strong, nonatomic, readwrite) NSArray *eventTags;
 @property (strong, nonatomic, readwrite) NSURL *imageUrl;
 @property (strong, nonatomic, readwrite) NSString *date;
 @property (strong, nonatomic, readwrite) NSString *time;
 @property (strong, nonatomic, readwrite) EventPlainObject *event;
+@property (assign, nonatomic, readwrite) BOOL customBackgroundFlag;
 
 @end
 
-@implementation AnnouncementViewModel
+@implementation EventAnnouncementTableViewCellObject
 
 #pragma mark - Initialization
 
 - (instancetype)initWithEvent:(EventPlainObject *)event
                     eventDate:(NSString *)date
-                         time:(NSString *)time {
+                         time:(NSString *)time
+         customBackgroundFlag:(BOOL)customBackgroundFlag {
     self = [super init];
     if (self) {
         _date = date;
         _time = time;
         _eventTitle = event.name;
-        _eventTags = event.tags.allObjects;
         _imageUrl = [NSURL URLWithString:event.metaEvent.imageUrlPath];
         _event = event;
+        _customBackgroundFlag = customBackgroundFlag;
     }
     return self;
 }
 
 + (instancetype)objectWithEvent:(EventPlainObject *)event
                       eventDate:(NSString *)date
-                           time:(NSString *)time {
+                           time:(NSString *)time
+           customBackgroundFlag:(BOOL)customBackgroundFlag {
     return [[self alloc] initWithEvent:event
                              eventDate:date
-                                  time:time];
+                                  time:time
+                  customBackgroundFlag:customBackgroundFlag];
+}
+
+#pragma mark - NICellObject methods
+
+- (Class)cellClass {
+    return [EventAnnouncementTableViewCell class];
+}
+
+- (UINib *)cellNib {
+    return [UINib nibWithNibName:NSStringFromClass([EventAnnouncementTableViewCell class]) bundle:[NSBundle mainBundle]];
 }
 
 @end

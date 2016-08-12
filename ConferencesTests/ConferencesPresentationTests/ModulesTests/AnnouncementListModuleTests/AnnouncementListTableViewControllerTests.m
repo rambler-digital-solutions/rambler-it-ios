@@ -121,21 +121,6 @@
     viewControllerPartialMock = nil;
 }
 
-- (void)testSuccessUpdateViewWithEventList {
-    // given
-    NSArray *events = @[@1, @2, @3, @4, @5];
-    OCMExpect([self.mockDataDisplayManager updateTableViewModelWithEvents:[OCMArg checkWithBlock:^BOOL(NSArray *futureEvents) {
-        return [self verifyViewControllerConfigureRightEvents:events
-                                                 futureEvents:futureEvents];
-    }]]);
-    
-    // when
-    [self.viewController updateViewWithEventList:events];
-    
-    // then
-    OCMVerifyAll(self.mockDataDisplayManager);
-}
-
 - (BOOL)verifyViewControllerConfigureRightEvents:(NSArray *)events
                                     futureEvents:(NSArray *)futureEvents {
     for (id object in futureEvents) {

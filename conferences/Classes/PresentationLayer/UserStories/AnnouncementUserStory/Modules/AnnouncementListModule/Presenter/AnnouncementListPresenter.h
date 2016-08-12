@@ -25,14 +25,12 @@
 @protocol AnnouncementListViewInput;
 @protocol AnnouncementListInteractorInput;
 @protocol AnnouncementListRouterInput;
-@class AnnounceViewModelBuilder;
 
 @interface AnnouncementListPresenter : NSObject<AnnouncementListViewOutput,AnnouncementListInteractorOutput>
 
 @property (nonatomic, weak) id<AnnouncementListViewInput> view;
 @property (nonatomic, strong) id<AnnouncementListInteractorInput> interactor;
 @property (nonatomic, strong) id<AnnouncementListRouterInput> router;
-@property (nonatomic, strong) AnnounceViewModelBuilder *viewModelBuilder;
 
 @end
 
