@@ -19,10 +19,13 @@
 // THE SOFTWARE.
 
 #import <Nimbus/NimbusModels.h>
+
+#import "EXTScope.h"
 #import "LectureDataDisplayManager.h"
 #import "LecturePlainObject.h"
 #import "LocalizedStrings.h"
 #import "LectureCellObjectsBuilder.h"
+#import "VideoRecordTableViewCellObject.h"
 
 @interface LectureDataDisplayManager ()
 
@@ -72,11 +75,23 @@
 - (void)updateTableViewModel {
     NSArray *cellObjects = [self generateCellObjects];
     
-    self.tableViewModel = [[NITableViewModel alloc] initWithSectionedArray:cellObjects delegate:(id)[NICellFactory class]];
+    self.tableViewModel = [[NITableViewModel alloc] initWithSectionedArray:cellObjects
+                                                                  delegate:(id)[NICellFactory class]];
 }
 
 - (void)setupTableViewActions {
     self.tableViewActions = [[NITableViewActions alloc] initWithTarget:self];
+    
+    @weakify(self);
+    NIActionBlock videoRecordActionBlock = ^BOOL(VideoRecordTableViewCellObject *object, UIViewController *controller, NSIndexPath* indexPath) {
+        @strongify(self);
+        NSURL *videoUrl = object.videoUrl;
+        
+        [self.delegate didTapVideoRecordCellWithVideoUrl:videoUrl];
+        return YES;
+    };
+    [self.tableViewActions attachToClass:[VideoRecordTableViewCellObject class]
+                                tapBlock:videoRecordActionBlock];
 }
 
 @end

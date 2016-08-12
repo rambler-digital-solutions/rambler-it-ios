@@ -24,6 +24,7 @@
 @interface VideoRecordTableViewCell ()
 
 @property (nonatomic, strong, readwrite) NSURL *previewImageUrl;
+@property (nonatomic, strong, readwrite) NSURL *videoUrl;
 
 @end
 
@@ -31,16 +32,20 @@
 
 #pragma mark - Initialization
 
-- (instancetype)initWithPreviewImageUrl:(NSURL *)previewImageUrl {
+- (instancetype)initWithPreviewImageUrl:(NSURL *)previewImageUrl
+                               videoUrl:(NSURL *)videoUrl {
     self = [super init];
     if (self) {
         _previewImageUrl = previewImageUrl;
+        _videoUrl = videoUrl;
     }
     return self;
 }
 
-+ (instancetype)objectWithPreviewImageUrl:(NSURL *)previewImageUrl {
-    return [[self alloc] initWithPreviewImageUrl:previewImageUrl];
++ (instancetype)objectWithPreviewImageUrl:(NSURL *)previewImageUrl
+                                 videoUrl:(NSURL *)videoUrl {
+    return [[self alloc] initWithPreviewImageUrl:previewImageUrl
+                                        videoUrl:videoUrl];
 }
 
 #pragma mark - NICellObject methods

@@ -44,6 +44,10 @@
     [self.view configureViewWithLecture:lecture];
 }
 
+- (void)didTapVideoPreviewWithUrl:(NSURL *)videoUrl {
+    [self.router openWebBrowserModuleWithUrl:videoUrl];
+}
+
 - (void)didTapTableViewHeader {
     [self.router openSpeakerInfoModuleWithSpeakerObjectId:self.stateStorage.speakerObjectId];
 }

@@ -59,14 +59,14 @@ static NSString *const kTimeVideoText = @"(32:12)";
         [cellObjects addObject:tagCellObject];
     }
     
-    NSString *videoRecordTextTitle = NSLocalizedString(VideoRecordTableViewCellTitle, nil);
-    LectureMaterialTitleTableViewCellObject *videoRecordTextLabelCellObject = [LectureMaterialTitleTableViewCellObject objectWithText:videoRecordTextTitle];
-    [cellObjects addObject:videoRecordTextLabelCellObject];
-    
     NSURL *videoUrl = [self videoUrlForLecture:lecture];
     if (videoUrl) {
+        NSString *videoRecordTextTitle = NSLocalizedString(VideoRecordTableViewCellTitle, nil);
+        LectureMaterialTitleTableViewCellObject *videoRecordTextLabelCellObject = [LectureMaterialTitleTableViewCellObject objectWithText:videoRecordTextTitle];
+        [cellObjects addObject:videoRecordTextLabelCellObject];
+        
         NSURL *previewImageUrl = [self.thumbnailGenerator generateThumbnailWithVideoURL:videoUrl];
-        VideoRecordTableViewCellObject *videoRecordTableViewCellObject = [VideoRecordTableViewCellObject objectWithPreviewImageUrl:previewImageUrl];
+        VideoRecordTableViewCellObject *videoRecordTableViewCellObject = [VideoRecordTableViewCellObject objectWithPreviewImageUrl:previewImageUrl videoUrl:videoUrl];
         [cellObjects addObject:videoRecordTableViewCellObject];
     }
     

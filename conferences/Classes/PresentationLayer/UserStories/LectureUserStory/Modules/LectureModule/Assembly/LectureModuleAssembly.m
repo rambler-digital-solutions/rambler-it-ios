@@ -72,6 +72,8 @@
                             configuration:^(TyphoonDefinition *definition) {
                                 [definition injectProperty:@selector(transitionHandler)
                                                       with:[self viewLecture]];
+                                [definition injectProperty:@selector(safariFactory)
+                                                      with:[self.presentationLayerHelpersAssembly safariFactory]];
            }];
 }
 
@@ -84,6 +86,8 @@
                           configuration:^(TyphoonDefinition *definition) {
                               [definition injectProperty:@selector(builderCellObjects)
                                                     with:[self builderCellObjects]];
+                              [definition injectProperty:@selector(delegate)
+                                                    with:[self viewLecture]];
             }];
 }
 

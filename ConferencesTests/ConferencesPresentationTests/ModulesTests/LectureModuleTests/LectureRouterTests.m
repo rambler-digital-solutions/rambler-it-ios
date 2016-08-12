@@ -25,11 +25,13 @@
 
 #import "LectureRouter.h"
 #import "SpeakerInfoModuleInput.h"
+#import "SafariFactory.h"
 
 @interface LectureRouterTests : XCTestCase
 
 @property (nonatomic, strong) LectureRouter *router;
 @property (nonatomic, strong) id transitionHandlerMock;
+@property (nonatomic, strong) id mockSafariFactory;
 
 @end
 
@@ -39,9 +41,11 @@
     [super setUp];
     
     self.router = [LectureRouter new];
-    self.transitionHandlerMock = OCMProtocolMock(@protocol(RamblerViperModuleTransitionHandlerProtocol));
+    self.transitionHandlerMock = OCMClassMock([UIViewController class]);
+    self.mockSafariFactory = OCMProtocolMock(@protocol(SafariFactory));
     
     self.router.transitionHandler = self.transitionHandlerMock;
+    self.router.safariFactory = self.mockSafariFactory;
 }
 
 - (void)tearDown {
@@ -49,6 +53,8 @@
     
     [self.transitionHandlerMock stopMocking];
     self.transitionHandlerMock = nil;
+    
+    self.mockSafariFactory = nil;
     
     [super tearDown];
 }
@@ -69,6 +75,17 @@
     
     // then
     OCMVerify([moduleInputMock configureCurrentModuleWithSpeakerId:objectId]);
+}
+
+- (void)testSuccessOpenWebBrowser {
+    // given
+    NSURL *testUrl = [NSURL URLWithString:@"rambler.ru"];
+    
+    // when
+    [self.router openWebBrowserModuleWithUrl:testUrl];
+    
+    // then
+    OCMVerify([self.mockSafariFactory createSafariViewControllerWithUrl:testUrl]);
 }
 
 @end

@@ -19,15 +19,14 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-#import <ViperMcFlurry/ViperMcFlurry.h>
 
-#import "LectureRouterInput.h"
+#import "SafariFactory.h"
 
-@protocol SafariFactory;
-
-@interface LectureRouter : NSObject <LectureRouterInput>
-
-@property (nonatomic, weak) id <RamblerViperModuleTransitionHandlerProtocol> transitionHandler;
-@property (nonatomic, strong) id<SafariFactory> safariFactory;
+/**
+ @author Egor Tolstoy
+ 
+ The implementation of safari controller factory
+ */
+@interface SafariFactoryImplementation : NSObject <SafariFactory>
 
 @end

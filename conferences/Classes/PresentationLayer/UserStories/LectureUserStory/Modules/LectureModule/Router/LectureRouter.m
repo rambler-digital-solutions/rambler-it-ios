@@ -19,8 +19,12 @@
 // THE SOFTWARE.
 
 #import "LectureRouter.h"
+
 #import "SpeakerInfoModuleInput.h"
 #import "LectureViewController.h"
+#import "SafariFactory.h"
+
+#import <SafariServices/SafariServices.h>
 
 static NSString *const LectureModuleToSpeakerInfoModuleSegue = @"LectureModuleToSpeakerInfoModuleSegue";
 
@@ -32,8 +36,15 @@ static NSString *const LectureModuleToSpeakerInfoModuleSegue = @"LectureModuleTo
     [[self.transitionHandler openModuleUsingSegue:LectureModuleToSpeakerInfoModuleSegue] thenChainUsingBlock:^id<RamblerViperModuleOutput>(id<SpeakerInfoModuleInput> moduleInput) {
         [moduleInput configureCurrentModuleWithSpeakerId:objectId];
         
-        return  nil;
+        return nil;
     }];
+}
+
+- (void)openWebBrowserModuleWithUrl:(NSURL *)url {
+    UIViewController *safariViewController = [self.safariFactory createSafariViewControllerWithUrl:url];
+    [(id)self.transitionHandler presentViewController:safariViewController
+                                             animated:YES
+                                           completion:nil];
 }
 
 - (void)openShareModuleWithActivityItems:(NSArray *)activityItems {

@@ -19,8 +19,7 @@
 // THE SOFTWARE.
 
 #import <NICellFactory.h>
-#import "CDResponderTableViewCell.h"
 
-@interface VideoRecordTableViewCell : CDResponderTableViewCell <NICell>
+@interface VideoRecordTableViewCell : UITableViewCell <NICell>
 
 @end

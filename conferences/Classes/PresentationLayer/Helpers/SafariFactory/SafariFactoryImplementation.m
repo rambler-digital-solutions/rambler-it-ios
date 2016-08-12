@@ -18,16 +18,17 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import <ViperMcFlurry/ViperMcFlurry.h>
+#import "SafariFactoryImplementation.h"
 
-#import "LectureRouterInput.h"
+#import <SafariServices/SafariServices.h>
 
-@protocol SafariFactory;
+@implementation SafariFactoryImplementation
 
-@interface LectureRouter : NSObject <LectureRouterInput>
+#pragma mark - <SafariFactory>
 
-@property (nonatomic, weak) id <RamblerViperModuleTransitionHandlerProtocol> transitionHandler;
-@property (nonatomic, strong) id<SafariFactory> safariFactory;
+- (UIViewController *)createSafariViewControllerWithUrl:(NSURL *)url {
+    SFSafariViewController *safariViewController = [[SFSafariViewController alloc] initWithURL:url];
+    return safariViewController;
+}
 
 @end

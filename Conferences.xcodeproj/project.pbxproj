@@ -467,6 +467,7 @@
 		9FBE8A041D5DF0AE00DA0C32 /* AnnouncementCellObjectBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8A031D5DF0AE00DA0C32 /* AnnouncementCellObjectBuilder.m */; };
 		9FBE8A081D5DFA1600DA0C32 /* VideoThumbnailGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8A071D5DFA1600DA0C32 /* VideoThumbnailGenerator.m */; };
 		9FBE8A0B1D5DFAB700DA0C32 /* VideoThumbnailTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8A0A1D5DFAB700DA0C32 /* VideoThumbnailTests.m */; };
+		9FBE8A111D5E5F1B00DA0C32 /* SafariFactoryImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8A101D5E5F1B00DA0C32 /* SafariFactoryImplementation.m */; };
 		9FC1F6761D2824000070D9B5 /* EventListServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */; };
 		9FC1F6801D2838FA0070D9B5 /* EventListQueryTransformerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */; };
 		9FC1F6841D28391E0070D9B5 /* EventListQueryTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6831D28391E0070D9B5 /* EventListQueryTransformer.m */; };
@@ -1412,6 +1413,9 @@
 		9FBE8A071D5DFA1600DA0C32 /* VideoThumbnailGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VideoThumbnailGenerator.m; path = VideoThumbnailGenerator/VideoThumbnailGenerator.m; sourceTree = "<group>"; };
 		9FBE8A0A1D5DFAB700DA0C32 /* VideoThumbnailTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VideoThumbnailTests.m; path = VideoThumbnailTests/VideoThumbnailTests.m; sourceTree = "<group>"; };
 		9FBE8A0C1D5DFD4B00DA0C32 /* LectureMaterialType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LectureMaterialType.h; path = Enumerations/LectureMaterialType.h; sourceTree = "<group>"; };
+		9FBE8A0E1D5E5F0D00DA0C32 /* SafariFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SafariFactory.h; path = SafariFactory/SafariFactory.h; sourceTree = "<group>"; };
+		9FBE8A0F1D5E5F1B00DA0C32 /* SafariFactoryImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SafariFactoryImplementation.h; path = SafariFactory/SafariFactoryImplementation.h; sourceTree = "<group>"; };
+		9FBE8A101D5E5F1B00DA0C32 /* SafariFactoryImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SafariFactoryImplementation.m; path = SafariFactory/SafariFactoryImplementation.m; sourceTree = "<group>"; };
 		9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListServiceTests.m; path = EventListServiceTests/EventListServiceTests.m; sourceTree = "<group>"; };
 		9FC1F6781D2826D10070D9B5 /* QueryTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QueryTransformer.h; path = CoreComponents/QueryTransformers/QueryTransformer.h; sourceTree = "<group>"; };
 		9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListQueryTransformerTests.m; path = CoreLayer/CoreComponents/QueryTransformers/EventListQueryTransformer/EventListQueryTransformerTests.m; sourceTree = "<group>"; };
@@ -3728,6 +3732,7 @@
 		63F8F27A1BF79090000017F3 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				9FBE8A0D1D5E5EF800DA0C32 /* SafariFactory */,
 				9FBE8A051D5DFA0000DA0C32 /* VideoThumbnailGenerator */,
 				2B429A501D4616AD004C005F /* UIView+LJLoadFromNib */,
 				9FFEAF081D2E5CB4006E9649 /* MapLinkBuilder */,
@@ -6687,6 +6692,16 @@
 			name = VideoThumbnailTests;
 			sourceTree = "<group>";
 		};
+		9FBE8A0D1D5E5EF800DA0C32 /* SafariFactory */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE8A0E1D5E5F0D00DA0C32 /* SafariFactory.h */,
+				9FBE8A0F1D5E5F1B00DA0C32 /* SafariFactoryImplementation.h */,
+				9FBE8A101D5E5F1B00DA0C32 /* SafariFactoryImplementation.m */,
+			);
+			name = SafariFactory;
+			sourceTree = "<group>";
+		};
 		9FC1F6741D2823E40070D9B5 /* EventListServiceTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -7433,6 +7448,7 @@
 				2B2064911D3F9CE900246C8D /* TechModelObject.m in Sources */,
 				9F0A84F91BC1698B006F79FB /* AsyncOperation.m in Sources */,
 				66E9997E1D54B0A000161D98 /* TagCellSizeCalculator.m in Sources */,
+				9FBE8A111D5E5F1B00DA0C32 /* SafariFactoryImplementation.m in Sources */,
 				66E999481D54AFA500161D98 /* TagModuleTableViewCellObject.m in Sources */,
 				63F51CB01C42AD3A00AFB9D2 /* LectureMaterialTitleTableViewCellObject.m in Sources */,
 				9F0A85321BC18906006F79FB /* EventQuery.m in Sources */,

@@ -118,6 +118,17 @@
     OCMVerify([self.routerMock openShareModuleWithActivityItems:activityItems]);
 }
 
+- (void)testSuccessDidTapVideoPreview {
+    // given
+    NSURL *testUrl = [NSURL URLWithString:@"rambler.ru"];
+    
+    // when
+    [self.presenter didTapVideoPreviewWithUrl:testUrl];
+    
+    // then
+    OCMVerify([self.routerMock openWebBrowserModuleWithUrl:testUrl]);
+}
+
 #pragma mark - LectureModuleInput
 
 - (void)testSuccessConfigureCurrentModuleWithLectureObjectId {

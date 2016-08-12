@@ -24,6 +24,7 @@
 #import "DateFormatter.h"
 #import "AppleMapsLinkBuilder.h"
 #import "VideoThumbnailGenerator.h"
+#import "SafariFactoryImplementation.h"
 
 @implementation PresentationLayerHelpersAssembly
 
@@ -41,6 +42,10 @@
 
 - (VideoThumbnailGenerator *)videoThumbnailGenerator {
     return [TyphoonDefinition withClass:[VideoThumbnailGenerator class]];
+}
+
+- (SafariFactoryImplementation *)safariFactory {
+    return [TyphoonDefinition withClass:[SafariFactoryImplementation class]];
 }
 
 @end

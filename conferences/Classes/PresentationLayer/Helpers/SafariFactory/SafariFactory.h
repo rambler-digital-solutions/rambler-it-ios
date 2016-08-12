@@ -19,15 +19,25 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-#import <ViperMcFlurry/ViperMcFlurry.h>
 
-#import "LectureRouterInput.h"
+@class UIViewController;
 
-@protocol SafariFactory;
+/**
+ @author Egor Tolstoy
+ 
+ Factory for creating instances of SFSafariViewController
+ */
+@protocol SafariFactory <NSObject>
 
-@interface LectureRouter : NSObject <LectureRouterInput>
-
-@property (nonatomic, weak) id <RamblerViperModuleTransitionHandlerProtocol> transitionHandler;
-@property (nonatomic, strong) id<SafariFactory> safariFactory;
+/**
+ @author Egor Tolstoy
+ 
+ Method returns a safari view controller
+ 
+ @param url Url to open
+ 
+ @return SFSafariViewController
+ */
+- (UIViewController *)createSafariViewControllerWithUrl:(NSURL *)url;
 
 @end

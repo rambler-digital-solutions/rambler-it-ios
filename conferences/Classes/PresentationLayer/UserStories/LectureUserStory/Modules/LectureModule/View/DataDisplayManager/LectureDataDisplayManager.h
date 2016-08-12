@@ -23,10 +23,19 @@
 
 @class LecturePlainObject;
 @protocol LectureCellObjectsBuilder;
+@protocol LectureDataDisplayManagerDelegate;
+
 @interface LectureDataDisplayManager : NSObject <DataDisplayManager, UITableViewDelegate>
 
 @property (nonatomic, strong) id<LectureCellObjectsBuilder> builderCellObjects;
+@property (nonatomic, weak) id<LectureDataDisplayManagerDelegate> delegate;
 
 - (void)configureDataDisplayManagerWithLecture:(LecturePlainObject *)lecture;
+
+@end
+
+@protocol LectureDataDisplayManagerDelegate <NSObject>
+
+- (void)didTapVideoRecordCellWithVideoUrl:(NSURL *)videoUrl;
 
 @end
