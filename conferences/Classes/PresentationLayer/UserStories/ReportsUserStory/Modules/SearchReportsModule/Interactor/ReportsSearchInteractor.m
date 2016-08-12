@@ -59,7 +59,7 @@
     NSArray *speakers = [self.ponsomizer convertObject:managedObjectSpeakers];
     [foundObjects addObjectsFromArray:speakers];
     
-    predicate = [NSPredicate predicateWithFormat:@"%K CONTAINS[c] %@", selectorLectureName, text];
+    predicate = [NSPredicate predicateWithFormat:@"%K CONTAINS[c] %@ OR SUBQUERY(tags, $tag, $tag.%K CONTAINS[c] %@).@count > 0", selectorLectureName, text, selectorTagName, text];
     id managedObjectLectures = [self.lectureService obtainLectureWithPredicate:predicate];
     NSArray *lectures = [self.ponsomizer convertObject:managedObjectLectures];
     [foundObjects addObjectsFromArray:lectures];
