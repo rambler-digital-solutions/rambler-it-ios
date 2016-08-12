@@ -26,6 +26,8 @@
 #import "LocalizedStrings.h"
 #import "LectureCellObjectsBuilder.h"
 #import "VideoRecordTableViewCellObject.h"
+#import "LectureMaterialInfoTableViewCellObject.h"
+#import "LectureMaterialPlainObject.h"
 
 @interface LectureDataDisplayManager ()
 
@@ -83,7 +85,7 @@
     self.tableViewActions = [[NITableViewActions alloc] initWithTarget:self];
     
     @weakify(self);
-    NIActionBlock videoRecordActionBlock = ^BOOL(VideoRecordTableViewCellObject *object, UIViewController *controller, NSIndexPath* indexPath) {
+    NIActionBlock videoRecordActionBlock = ^BOOL(VideoRecordTableViewCellObject *object, UIViewController *controller, NSIndexPath *indexPath) {
         @strongify(self);
         NSURL *videoUrl = object.videoUrl;
         
@@ -92,6 +94,16 @@
     };
     [self.tableViewActions attachToClass:[VideoRecordTableViewCellObject class]
                                 tapBlock:videoRecordActionBlock];
+    
+    NIActionBlock materialActionBlock = ^BOOL(LectureMaterialInfoTableViewCellObject *object, UIViewController *controller, NSIndexPath *indexPath) {
+        @strongify(self);
+        NSURL *materialUrl = [NSURL URLWithString:object.lectureMaterial.link];
+        
+        [self.delegate didTapMaterialCellWithUrl:materialUrl];
+        return YES;
+    };
+    [self.tableViewActions attachToClass:[LectureMaterialInfoTableViewCellObject class]
+                                tapBlock:materialActionBlock];
 }
 
 @end

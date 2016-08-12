@@ -36,6 +36,22 @@
 
 @protocol LectureDataDisplayManagerDelegate <NSObject>
 
+/**
+ @author Egor Tolstoy
+ 
+ Method tells a delegate that a video cell was tapped
+ 
+ @param videoUrl Video URL
+ */
 - (void)didTapVideoRecordCellWithVideoUrl:(NSURL *)videoUrl;
+
+/**
+ @author Egor Tolstoy
+ 
+ Method tells a delegate that a material cell was tapped
+ 
+ @param videoUrl Material URL
+ */
+- (void)didTapMaterialCellWithUrl:(NSURL *)materialUrl;
 
 @end

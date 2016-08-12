@@ -48,6 +48,10 @@
     [self.router openWebBrowserModuleWithUrl:videoUrl];
 }
 
+- (void)didTapMaterialWithUrl:(NSURL *)materialUrl {
+    [self.router openWebBrowserModuleWithUrl:materialUrl];
+}
+
 - (void)didTapTableViewHeader {
     [self.router openSpeakerInfoModuleWithSpeakerObjectId:self.stateStorage.speakerObjectId];
 }

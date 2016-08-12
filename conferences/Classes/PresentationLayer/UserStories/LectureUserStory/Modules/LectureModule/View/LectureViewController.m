@@ -64,6 +64,10 @@ static CGFloat kTableViewFooterHeight = 16.0f;
     [self.output didTapVideoPreviewWithUrl:videoUrl];
 }
 
+- (void)didTapMaterialCellWithUrl:(NSURL *)materialUrl {
+    [self.output didTapMaterialWithUrl:materialUrl];
+}
+
 #pragma mark - Private methods
 
 - (void)setupViewInitialState {

@@ -32,11 +32,20 @@
 /**
  @author Egor Tolstoy
  
- Method is used to inform presenter that video preview was tapped
+ Method is used to inform presenter that a video preview was tapped
  
  @param videoUrl The URL of the video
  */
 - (void)didTapVideoPreviewWithUrl:(NSURL *)videoUrl;
+
+/**
+ @author Egor Tolstoy
+ 
+ Method is used to inform presenter that a ,aterial was tapped
+ 
+ @param videoUrl The URL of the video
+ */
+- (void)didTapMaterialWithUrl:(NSURL *)materialUrl;
 
 /**
  @author Artem Karpushin
