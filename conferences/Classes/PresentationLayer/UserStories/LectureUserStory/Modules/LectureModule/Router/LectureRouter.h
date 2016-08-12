@@ -20,10 +20,14 @@
 
 #import <Foundation/Foundation.h>
 #import <ViperMcFlurry/ViperMcFlurry.h>
+
 #import "LectureRouterInput.h"
+
+@protocol SafariFactory;
 
 @interface LectureRouter : NSObject <LectureRouterInput>
 
-@property (weak, nonatomic) id <RamblerViperModuleTransitionHandlerProtocol> transitionHandler;
+@property (nonatomic, weak) id <RamblerViperModuleTransitionHandlerProtocol> transitionHandler;
+@property (nonatomic, strong) id<SafariFactory> safariFactory;
 
 @end

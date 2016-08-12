@@ -16,6 +16,7 @@
     [aCoder encodeObject:self.lectureMaterialId forKey:@"lectureMaterialId"];
     [aCoder encodeObject:self.link forKey:@"link"];
     [aCoder encodeObject:self.name forKey:@"name"];
+    [aCoder encodeObject:self.type forKey:@"type"];
     [aCoder encodeObject:self.lecture forKey:@"lecture"];
 }
 
@@ -26,6 +27,7 @@
         _lectureMaterialId = [[aDecoder decodeObjectForKey:@"lectureMaterialId"] copy];
         _link = [[aDecoder decodeObjectForKey:@"link"] copy];
         _name = [[aDecoder decodeObjectForKey:@"name"] copy];
+        _type = [[aDecoder decodeObjectForKey:@"type"] copy];
         _lecture = [[aDecoder decodeObjectForKey:@"lecture"] copy];
     }
 
@@ -40,6 +42,7 @@
     replica.lectureMaterialId = self.lectureMaterialId;
     replica.link = self.link;
     replica.name = self.name;
+    replica.type = self.type;
 
     replica.lecture = self.lecture;
 

@@ -19,12 +19,25 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-#import "LectureCellObjectsBuilder.h"
 
-@class VideoThumbnailGenerator;
+@class UIViewController;
 
-@interface LectureCellObjectsBuilderImplementation : NSObject <LectureCellObjectsBuilder>
+/**
+ @author Egor Tolstoy
+ 
+ Factory for creating instances of SFSafariViewController
+ */
+@protocol SafariFactory <NSObject>
 
-@property (nonatomic, strong) VideoThumbnailGenerator *thumbnailGenerator;
+/**
+ @author Egor Tolstoy
+ 
+ Method returns a safari view controller
+ 
+ @param url Url to open
+ 
+ @return SFSafariViewController
+ */
+- (UIViewController *)createSafariViewControllerWithUrl:(NSURL *)url;
 
 @end

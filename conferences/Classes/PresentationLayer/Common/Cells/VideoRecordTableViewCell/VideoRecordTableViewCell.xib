@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G26a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
@@ -21,6 +21,9 @@
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play-icon-small" translatesAutoresizingMaskIntoConstraints="NO" id="32W-xN-HrW">
+                        <rect key="frame" x="150" y="67" width="20" height="27"/>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Ypb-QJ-BP6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="5M6-CA-icy"/>
@@ -28,9 +31,11 @@
                     <constraint firstAttribute="bottom" secondItem="Ypb-QJ-BP6" secondAttribute="bottom" id="5eJ-oZ-0S6"/>
                     <constraint firstAttribute="bottom" secondItem="Ypb-QJ-BP6" secondAttribute="bottom" id="7KQ-D2-82d"/>
                     <constraint firstAttribute="trailing" secondItem="Ypb-QJ-BP6" secondAttribute="trailing" constant="20" id="BKG-yf-K71"/>
+                    <constraint firstItem="32W-xN-HrW" firstAttribute="centerX" secondItem="Ypb-QJ-BP6" secondAttribute="centerX" id="H3k-6V-cTM"/>
                     <constraint firstAttribute="trailing" secondItem="Ypb-QJ-BP6" secondAttribute="trailing" id="OA6-dS-ubl"/>
                     <constraint firstItem="ELo-Uk-S5K" firstAttribute="centerX" secondItem="Ypb-QJ-BP6" secondAttribute="centerX" id="PKR-Ae-g9c"/>
                     <constraint firstItem="Ypb-QJ-BP6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="ojs-Jc-V8U"/>
+                    <constraint firstItem="32W-xN-HrW" firstAttribute="centerY" secondItem="Ypb-QJ-BP6" secondAttribute="centerY" id="qdo-EE-Prz"/>
                     <constraint firstItem="Ypb-QJ-BP6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="uTS-vS-UXW"/>
                     <constraint firstItem="Ypb-QJ-BP6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="wX8-4a-QRV"/>
                 </constraints>
@@ -44,10 +49,14 @@
             </tableViewCellContentView>
             <inset key="separatorInset" minX="9999" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
+                <outlet property="playIconImageView" destination="32W-xN-HrW" id="j3Q-CX-xEh"/>
                 <outlet property="previewImageView" destination="Ypb-QJ-BP6" id="XGw-AQ-QXN"/>
                 <outlet property="titleLabel" destination="ELo-Uk-S5K" id="pRG-vh-4EK"/>
             </connections>
             <point key="canvasLocation" x="348" y="387"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="play-icon-small" width="20" height="27"/>
+    </resources>
 </document>

@@ -19,12 +19,14 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-#import "LectureCellObjectsBuilder.h"
 
-@class VideoThumbnailGenerator;
+#import "SafariFactory.h"
 
-@interface LectureCellObjectsBuilderImplementation : NSObject <LectureCellObjectsBuilder>
-
-@property (nonatomic, strong) VideoThumbnailGenerator *thumbnailGenerator;
+/**
+ @author Egor Tolstoy
+ 
+ The implementation of safari controller factory
+ */
+@interface SafariFactoryImplementation : NSObject <SafariFactory>
 
 @end

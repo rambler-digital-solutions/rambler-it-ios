@@ -1,15 +1,21 @@
 // DO NOT EDIT. This file is machine-generated and constantly overwritten.
 // Make changes to SpeakerModelObject.h instead.
 
-#if __has_feature(modules)
-    @import Foundation;
-    @import CoreData;
-#else
-    #import <Foundation/Foundation.h>
-    #import <CoreData/CoreData.h>
-#endif
+#import <CoreData/CoreData.h>
 
-NS_ASSUME_NONNULL_BEGIN
+extern const struct SpeakerModelObjectAttributes {
+	__unsafe_unretained NSString *biography;
+	__unsafe_unretained NSString *company;
+	__unsafe_unretained NSString *imageUrl;
+	__unsafe_unretained NSString *job;
+	__unsafe_unretained NSString *name;
+	__unsafe_unretained NSString *speakerId;
+} SpeakerModelObjectAttributes;
+
+extern const struct SpeakerModelObjectRelationships {
+	__unsafe_unretained NSString *lectures;
+	__unsafe_unretained NSString *socialNetworkAccounts;
+} SpeakerModelObjectRelationships;
 
 @class LectureModelObject;
 @class SocialNetworkAccountModelObject;
@@ -17,43 +23,57 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SpeakerModelObjectID : NSManagedObjectID {}
 @end
 
-@interface _SpeakerModelObject : NSManagedObject
-+ (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_;
+@interface _SpeakerModelObject : NSManagedObject {}
++ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
-@property (nonatomic, readonly, strong) SpeakerModelObjectID *objectID;
+@property (nonatomic, readonly, strong) SpeakerModelObjectID* objectID;
 
-@property (nonatomic, strong, nullable) NSString* biography;
+@property (nonatomic, strong) NSString* biography;
 
-@property (nonatomic, strong, nullable) NSString* company;
+//- (BOOL)validateBiography:(id*)value_ error:(NSError**)error_;
 
-@property (nonatomic, strong, nullable) NSString* imageUrl;
+@property (nonatomic, strong) NSString* company;
 
-@property (nonatomic, strong, nullable) NSString* job;
+//- (BOOL)validateCompany:(id*)value_ error:(NSError**)error_;
+
+@property (nonatomic, strong) NSString* imageUrl;
+
+//- (BOOL)validateImageUrl:(id*)value_ error:(NSError**)error_;
+
+@property (nonatomic, strong) NSString* job;
+
+//- (BOOL)validateJob:(id*)value_ error:(NSError**)error_;
 
 @property (nonatomic, strong) NSString* name;
 
+//- (BOOL)validateName:(id*)value_ error:(NSError**)error_;
+
 @property (nonatomic, strong) NSString* speakerId;
 
-@property (nonatomic, strong, nullable) NSSet<LectureModelObject*> *lectures;
-- (nullable NSMutableSet<LectureModelObject*>*)lecturesSet;
+//- (BOOL)validateSpeakerId:(id*)value_ error:(NSError**)error_;
 
-@property (nonatomic, strong, nullable) NSSet<SocialNetworkAccountModelObject*> *socialNetworkAccounts;
-- (nullable NSMutableSet<SocialNetworkAccountModelObject*>*)socialNetworkAccountsSet;
+@property (nonatomic, strong) NSSet *lectures;
+
+- (NSMutableSet*)lecturesSet;
+
+@property (nonatomic, strong) NSSet *socialNetworkAccounts;
+
+- (NSMutableSet*)socialNetworkAccountsSet;
 
 @end
 
 @interface _SpeakerModelObject (LecturesCoreDataGeneratedAccessors)
-- (void)addLectures:(NSSet<LectureModelObject*>*)value_;
-- (void)removeLectures:(NSSet<LectureModelObject*>*)value_;
+- (void)addLectures:(NSSet*)value_;
+- (void)removeLectures:(NSSet*)value_;
 - (void)addLecturesObject:(LectureModelObject*)value_;
 - (void)removeLecturesObject:(LectureModelObject*)value_;
 
 @end
 
 @interface _SpeakerModelObject (SocialNetworkAccountsCoreDataGeneratedAccessors)
-- (void)addSocialNetworkAccounts:(NSSet<SocialNetworkAccountModelObject*>*)value_;
-- (void)removeSocialNetworkAccounts:(NSSet<SocialNetworkAccountModelObject*>*)value_;
+- (void)addSocialNetworkAccounts:(NSSet*)value_;
+- (void)removeSocialNetworkAccounts:(NSSet*)value_;
 - (void)addSocialNetworkAccountsObject:(SocialNetworkAccountModelObject*)value_;
 - (void)removeSocialNetworkAccountsObject:(SocialNetworkAccountModelObject*)value_;
 
@@ -79,26 +99,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString*)primitiveSpeakerId;
 - (void)setPrimitiveSpeakerId:(NSString*)value;
 
-- (NSMutableSet<LectureModelObject*>*)primitiveLectures;
-- (void)setPrimitiveLectures:(NSMutableSet<LectureModelObject*>*)value;
+- (NSMutableSet*)primitiveLectures;
+- (void)setPrimitiveLectures:(NSMutableSet*)value;
 
-- (NSMutableSet<SocialNetworkAccountModelObject*>*)primitiveSocialNetworkAccounts;
-- (void)setPrimitiveSocialNetworkAccounts:(NSMutableSet<SocialNetworkAccountModelObject*>*)value;
+- (NSMutableSet*)primitiveSocialNetworkAccounts;
+- (void)setPrimitiveSocialNetworkAccounts:(NSMutableSet*)value;
 
 @end
-
-@interface SpeakerModelObjectAttributes: NSObject 
-+ (NSString *)biography;
-+ (NSString *)company;
-+ (NSString *)imageUrl;
-+ (NSString *)job;
-+ (NSString *)name;
-+ (NSString *)speakerId;
-@end
-
-@interface SpeakerModelObjectRelationships: NSObject
-+ (NSString *)lectures;
-+ (NSString *)socialNetworkAccounts;
-@end
-
-NS_ASSUME_NONNULL_END

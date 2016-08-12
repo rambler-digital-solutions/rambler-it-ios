@@ -18,13 +18,17 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import "LectureCellObjectsBuilder.h"
+#import "SafariFactoryImplementation.h"
 
-@class VideoThumbnailGenerator;
+#import <SafariServices/SafariServices.h>
 
-@interface LectureCellObjectsBuilderImplementation : NSObject <LectureCellObjectsBuilder>
+@implementation SafariFactoryImplementation
 
-@property (nonatomic, strong) VideoThumbnailGenerator *thumbnailGenerator;
+#pragma mark - <SafariFactory>
+
+- (UIViewController *)createSafariViewControllerWithUrl:(NSURL *)url {
+    SFSafariViewController *safariViewController = [[SFSafariViewController alloc] initWithURL:url];
+    return safariViewController;
+}
 
 @end

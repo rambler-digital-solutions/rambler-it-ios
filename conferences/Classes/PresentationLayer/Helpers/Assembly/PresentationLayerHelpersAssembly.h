@@ -23,7 +23,9 @@
 
 @class EventTypeDeterminator;
 @class DateFormatter;
+@class VideoThumbnailGenerator;
 @protocol MapLinkBuilder;
+@protocol SafariFactory;
 
 /**
  @author Artem Karpushin
@@ -35,5 +37,7 @@
 - (EventTypeDeterminator *)eventTypeDeterminator;
 - (DateFormatter *)dateFormatter;
 - (id<MapLinkBuilder>)appleMapsLinkBuilder;
+- (VideoThumbnailGenerator *)videoThumbnailGenerator;
+- (id<SafariFactory>)safariFactory;
 
 @end

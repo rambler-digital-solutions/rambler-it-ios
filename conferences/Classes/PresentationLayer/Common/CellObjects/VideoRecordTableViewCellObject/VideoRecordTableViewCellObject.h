@@ -24,8 +24,10 @@
 
 @interface VideoRecordTableViewCellObject : NSObject <NICellObject>
 
-@property (nonatomic, strong) NSString *previewImageUrl;
+@property (nonatomic, strong, readonly) NSURL *previewImageUrl;
+@property (nonatomic, strong, readonly) NSURL *videoUrl;
 
-+ (instancetype)objectWithEvent:(EventPlainObject *)event;
++ (instancetype)objectWithPreviewImageUrl:(NSURL *)previewImageUrl
+                                 videoUrl:(NSURL *)videoUrl;
 
 @end

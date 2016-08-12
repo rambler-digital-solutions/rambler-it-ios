@@ -20,22 +20,32 @@
 
 #import "VideoRecordTableViewCellObject.h"
 #import "VideoRecordTableViewCell.h"
-#import "EventPlainObject.h"
+
+@interface VideoRecordTableViewCell ()
+
+@property (nonatomic, strong, readwrite) NSURL *previewImageUrl;
+@property (nonatomic, strong, readwrite) NSURL *videoUrl;
+
+@end
 
 @implementation VideoRecordTableViewCellObject
 
 #pragma mark - Initialization
 
-- (instancetype)initWithEvent:(EventPlainObject *)event {
+- (instancetype)initWithPreviewImageUrl:(NSURL *)previewImageUrl
+                               videoUrl:(NSURL *)videoUrl {
     self = [super init];
     if (self) {
-        // 
+        _previewImageUrl = previewImageUrl;
+        _videoUrl = videoUrl;
     }
     return self;
 }
 
-+ (instancetype)objectWithEvent:(EventPlainObject *)event {
-    return [[self alloc] initWithEvent:event];
++ (instancetype)objectWithPreviewImageUrl:(NSURL *)previewImageUrl
+                                 videoUrl:(NSURL *)videoUrl {
+    return [[self alloc] initWithPreviewImageUrl:previewImageUrl
+                                        videoUrl:videoUrl];
 }
 
 #pragma mark - NICellObject methods

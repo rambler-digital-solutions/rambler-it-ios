@@ -42,7 +42,7 @@
     
     NSPredicate *predicate;
 
-    NSString *selectorName = [EventModelObjectAttributes name];
+    NSString *selectorName = EventModelObjectAttributes.name;
     predicate = [NSPredicate predicateWithFormat:@"%K CONTAINS[c] %@",selectorName, text];
     
     id managedObjectEvents = [self.eventService obtainEventWithPredicate:predicate];

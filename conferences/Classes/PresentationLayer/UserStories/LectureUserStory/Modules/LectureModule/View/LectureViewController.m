@@ -47,7 +47,8 @@ static CGFloat kTableViewFooterHeight = 16.0f;
     [self.dataDisplayManager configureDataDisplayManagerWithLecture:lecture];
     
     self.tableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.tableView];
-    self.tableView.delegate = [self.dataDisplayManager delegateForTableView:self.tableView withBaseDelegate:nil];
+    self.tableView.delegate = [self.dataDisplayManager delegateForTableView:self.tableView
+                                                           withBaseDelegate:nil];
     
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, kTableViewFooterHeight)];
     
@@ -55,6 +56,12 @@ static CGFloat kTableViewFooterHeight = 16.0f;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     
     [self setupViewInitialState];
+}
+
+#pragma mark - <LectureDataDisplayManagerDelegate>
+
+- (void)didTapVideoRecordCellWithVideoUrl:(NSURL *)videoUrl {
+    [self.output didTapVideoPreviewWithUrl:videoUrl];
 }
 
 #pragma mark - Private methods

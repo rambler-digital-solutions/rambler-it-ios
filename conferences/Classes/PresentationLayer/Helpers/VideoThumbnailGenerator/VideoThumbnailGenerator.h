@@ -19,12 +19,23 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-#import "LectureCellObjectsBuilder.h"
 
-@class VideoThumbnailGenerator;
+/**
+ @author Egor Tolstoy
+ 
+ This object is responsible for generating previews from YouTube videors
+ */
+@interface VideoThumbnailGenerator : NSObject
 
-@interface LectureCellObjectsBuilderImplementation : NSObject <LectureCellObjectsBuilder>
-
-@property (nonatomic, strong) VideoThumbnailGenerator *thumbnailGenerator;
+/**
+ @author Egor Tolstoy
+ 
+ Method generates a preview image URL from video URL
+ 
+ @param videoURL URL for video file
+ 
+ @return URL for preview
+ */
+- (NSURL *)generateThumbnailWithVideoURL:(NSURL *)videoURL;
 
 @end

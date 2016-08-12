@@ -1,45 +1,60 @@
 // DO NOT EDIT. This file is machine-generated and constantly overwritten.
 // Make changes to MetaEventModelObject.h instead.
 
-#if __has_feature(modules)
-    @import Foundation;
-    @import CoreData;
-#else
-    #import <Foundation/Foundation.h>
-    #import <CoreData/CoreData.h>
-#endif
+#import <CoreData/CoreData.h>
 
-NS_ASSUME_NONNULL_BEGIN
+extern const struct MetaEventModelObjectAttributes {
+	__unsafe_unretained NSString *imageUrlPath;
+	__unsafe_unretained NSString *metaEventDescription;
+	__unsafe_unretained NSString *metaEventId;
+	__unsafe_unretained NSString *name;
+	__unsafe_unretained NSString *websiteUrlPath;
+} MetaEventModelObjectAttributes;
+
+extern const struct MetaEventModelObjectRelationships {
+	__unsafe_unretained NSString *events;
+} MetaEventModelObjectRelationships;
 
 @class EventModelObject;
 
 @interface MetaEventModelObjectID : NSManagedObjectID {}
 @end
 
-@interface _MetaEventModelObject : NSManagedObject
-+ (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_;
+@interface _MetaEventModelObject : NSManagedObject {}
++ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
-@property (nonatomic, readonly, strong) MetaEventModelObjectID *objectID;
+@property (nonatomic, readonly, strong) MetaEventModelObjectID* objectID;
 
-@property (nonatomic, strong, nullable) NSString* imageUrlPath;
+@property (nonatomic, strong) NSString* imageUrlPath;
 
-@property (nonatomic, strong, nullable) NSString* metaEventDescription;
+//- (BOOL)validateImageUrlPath:(id*)value_ error:(NSError**)error_;
+
+@property (nonatomic, strong) NSString* metaEventDescription;
+
+//- (BOOL)validateMetaEventDescription:(id*)value_ error:(NSError**)error_;
 
 @property (nonatomic, strong) NSString* metaEventId;
 
+//- (BOOL)validateMetaEventId:(id*)value_ error:(NSError**)error_;
+
 @property (nonatomic, strong) NSString* name;
 
-@property (nonatomic, strong, nullable) NSString* websiteUrlPath;
+//- (BOOL)validateName:(id*)value_ error:(NSError**)error_;
 
-@property (nonatomic, strong, nullable) NSSet<EventModelObject*> *events;
-- (nullable NSMutableSet<EventModelObject*>*)eventsSet;
+@property (nonatomic, strong) NSString* websiteUrlPath;
+
+//- (BOOL)validateWebsiteUrlPath:(id*)value_ error:(NSError**)error_;
+
+@property (nonatomic, strong) NSSet *events;
+
+- (NSMutableSet*)eventsSet;
 
 @end
 
 @interface _MetaEventModelObject (EventsCoreDataGeneratedAccessors)
-- (void)addEvents:(NSSet<EventModelObject*>*)value_;
-- (void)removeEvents:(NSSet<EventModelObject*>*)value_;
+- (void)addEvents:(NSSet*)value_;
+- (void)removeEvents:(NSSet*)value_;
 - (void)addEventsObject:(EventModelObject*)value_;
 - (void)removeEventsObject:(EventModelObject*)value_;
 
@@ -62,21 +77,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString*)primitiveWebsiteUrlPath;
 - (void)setPrimitiveWebsiteUrlPath:(NSString*)value;
 
-- (NSMutableSet<EventModelObject*>*)primitiveEvents;
-- (void)setPrimitiveEvents:(NSMutableSet<EventModelObject*>*)value;
+- (NSMutableSet*)primitiveEvents;
+- (void)setPrimitiveEvents:(NSMutableSet*)value;
 
 @end
-
-@interface MetaEventModelObjectAttributes: NSObject 
-+ (NSString *)imageUrlPath;
-+ (NSString *)metaEventDescription;
-+ (NSString *)metaEventId;
-+ (NSString *)name;
-+ (NSString *)websiteUrlPath;
-@end
-
-@interface MetaEventModelObjectRelationships: NSObject
-+ (NSString *)events;
-@end
-
-NS_ASSUME_NONNULL_END

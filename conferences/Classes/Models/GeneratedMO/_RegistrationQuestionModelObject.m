@@ -3,12 +3,21 @@
 
 #import "_RegistrationQuestionModelObject.h"
 
+const struct RegistrationQuestionModelObjectAttributes RegistrationQuestionModelObjectAttributes = {
+	.name = @"name",
+	.orderID = @"orderID",
+};
+
+const struct RegistrationQuestionModelObjectRelationships RegistrationQuestionModelObjectRelationships = {
+	.event = @"event",
+};
+
 @implementation RegistrationQuestionModelObjectID
 @end
 
 @implementation _RegistrationQuestionModelObject
 
-+ (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_ {
++ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
 	NSParameterAssert(moc_);
 	return [NSEntityDescription insertNewObjectForEntityForName:@"RegistrationQuestion" inManagedObjectContext:moc_];
 }
@@ -38,20 +47,5 @@
 
 @dynamic event;
 
-@end
-
-@implementation RegistrationQuestionModelObjectAttributes 
-+ (NSString *)name {
-	return @"name";
-}
-+ (NSString *)orderID {
-	return @"orderID";
-}
-@end
-
-@implementation RegistrationQuestionModelObjectRelationships 
-+ (NSString *)event {
-	return @"event";
-}
 @end
 

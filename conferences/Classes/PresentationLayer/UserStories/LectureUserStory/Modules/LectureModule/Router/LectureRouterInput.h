@@ -40,5 +40,14 @@
  */
 - (void)openShareModuleWithActivityItems:(NSArray *)activityItems;
 
+/**
+ @author Egor Tolstoy
+ 
+ Method is used to open web browser module
+ 
+ @param url Opening url
+ */
+- (void)openWebBrowserModuleWithUrl:(NSURL *)url;
+
 @end
 

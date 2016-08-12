@@ -19,8 +19,11 @@
 // THE SOFTWARE.
 
 #import <NICellFactory.h>
-#import "CDResponderTableViewCell.h"
 
-@interface VideoRecordTableViewCell : CDResponderTableViewCell <NICell>
+@interface VideoRecordTableViewCell : UITableViewCell <NICell>
+
+@property (nonatomic, strong) IBOutlet UIImageView *previewImageView;
+@property (nonatomic, weak) IBOutlet UILabel *titleLabel;
+@property (nonatomic, weak) IBOutlet UIImageView *playIconImageView;
 
 @end

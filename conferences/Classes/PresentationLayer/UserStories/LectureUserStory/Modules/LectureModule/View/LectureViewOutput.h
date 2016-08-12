@@ -30,6 +30,15 @@
 - (void)setupView;
 
 /**
+ @author Egor Tolstoy
+ 
+ Method is used to inform presenter that video preview was tapped
+ 
+ @param videoUrl The URL of the video
+ */
+- (void)didTapVideoPreviewWithUrl:(NSURL *)videoUrl;
+
+/**
  @author Artem Karpushin
  
  Method is used to inform presenter that table view header was tapped

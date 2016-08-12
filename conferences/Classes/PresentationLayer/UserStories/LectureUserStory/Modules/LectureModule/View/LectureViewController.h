@@ -19,13 +19,15 @@
 // THE SOFTWARE.
 
 #import <UIKit/UIKit.h>
+
 #import "LectureViewInput.h"
+#import "LectureDataDisplayManager.h"
 
 @protocol LectureViewOutput;
 @protocol SpeakerShortInfoModuleInput;
 @class LectureDataDisplayManager;
 
-@interface LectureViewController : UIViewController<LectureViewInput>
+@interface LectureViewController : UIViewController <LectureViewInput, LectureDataDisplayManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView <SpeakerShortInfoModuleInput> *speakerShortInfoView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
