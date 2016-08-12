@@ -45,7 +45,7 @@
  
  @return NSArray
  */
-- (NSArray *)obtainPastEventsForMetaEvent:(NSString *)metaEventId;
+- (NSArray *)obtainPastEventsForEvent:(EventPlainObject *)event;
 
 /**
  @author Artem Karpushin

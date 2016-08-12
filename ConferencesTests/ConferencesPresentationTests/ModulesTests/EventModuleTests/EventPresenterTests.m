@@ -90,7 +90,7 @@
     EventPlainObject *event = [ModelObjectGenerator generateEventObjects:1].firstObject;
     NSArray *pastEvents = [ModelObjectGenerator generateEventObjects:3];
     OCMStub([self.interactorMock obtainEventWithObjectId:OCMOCK_ANY]).andReturn(event);
-    OCMStub([self.interactorMock obtainPastEventsForMetaEvent:OCMOCK_ANY]).andReturn(pastEvents);
+    OCMStub([self.interactorMock obtainPastEventsForEvent:OCMOCK_ANY]).andReturn(pastEvents);
     
     // when
     [self.presenter setupView];

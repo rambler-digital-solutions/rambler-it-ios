@@ -50,20 +50,21 @@
     return eventPlainObject;
 }
 
-- (NSArray *)obtainPastEventsForMetaEvent:(NSString *)metaEventId {
+- (NSArray *)obtainPastEventsForEvent:(EventPlainObject *)event {
+    NSString *metaEventId = event.metaEvent.metaEventId;
     MetaEventModelObject *metaEvent = [self.metaEventService obtainMetaEventByMetaEventId:metaEventId];
     NSSet *events = [self.ponsomizer convertObject:metaEvent.events];
-    for (EventPlainObject *event in events) {
-        EventType type = [self.eventTypeDeterminator determinateTypeForEvent:event];
-        event.eventType = @(type);
-    }
-
-    NSArray *pastEvents = [self filterEventsWithPastEventType:[events allObjects]];
+    NSDate *currentEventDate = event.startDate;
     
+    NSMutableArray *pastEvents = [NSMutableArray new];
+    for (EventPlainObject *event in events) {
+        if ([event.startDate compare:currentEventDate] == NSOrderedAscending) {
+            [pastEvents addObject:event];
+        }
+    }
     NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:EventModelObjectAttributes.startDate
                                                                  ascending:NO];
     NSArray *sortedEvents = [pastEvents sortedArrayUsingDescriptors:@[descriptor]];
-    
     return sortedEvents;
 }
 

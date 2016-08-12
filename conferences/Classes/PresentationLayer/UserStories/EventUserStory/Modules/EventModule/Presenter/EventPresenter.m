@@ -39,7 +39,7 @@
 
 - (void)setupView {
     EventPlainObject *event = [self.interactor obtainEventWithObjectId:self.presenterStateStorage.eventObjectId];
-    NSArray *pastEvents = [self.interactor obtainPastEventsForMetaEvent:event.metaEvent.metaEventId];
+    NSArray *pastEvents = [self.interactor obtainPastEventsForEvent:event];
     [self.view configureViewWithEvent:event
                            pastEvents:pastEvents];
 }
