@@ -24,6 +24,7 @@
 #import "PreviousEventTableViewCellObject.h"
 #import "PreviousEventSectionHeaderTableViewCellObject.h"
 #import "PreviousLectureSectionHeaderTableViewCellObject.h"
+#import "PreviousEventSectionFooterTableViewCellObject.h"
 #import "PreviousLectureTableViewCellObject.h"
 #import "EventPlainObject.h"
 #import "DateFormatter.h"
@@ -67,6 +68,11 @@
         PreviousEventTableViewCellObject *eventCellobject = [PreviousEventTableViewCellObject objectWithEvent:pastEvent
                                                                                                       andDate:date];
         [cellObjects addObject:eventCellobject];
+    }
+    
+    if (filteredPastEvents.count) {
+        PreviousEventSectionFooterTableViewCellObject *cellObject = [PreviousEventSectionFooterTableViewCellObject objectWithEvent:event];
+        [cellObjects addObject:cellObject];
     }
     
     return cellObjects;
