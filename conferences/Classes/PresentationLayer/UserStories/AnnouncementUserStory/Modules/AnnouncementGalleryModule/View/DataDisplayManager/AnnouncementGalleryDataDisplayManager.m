@@ -63,7 +63,14 @@
     if (!self.collectionActions) {
         [self setupCollectionActions];
     }
-    return (id)self.collectionActions;
+    return self;
+}
+
+#pragma mark - <UICollectionViewDelegate>
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    return [self.collectionActions collectionView:collectionView
+                         didSelectItemAtIndexPath:indexPath];
 }
 
 #pragma mark - Private methods

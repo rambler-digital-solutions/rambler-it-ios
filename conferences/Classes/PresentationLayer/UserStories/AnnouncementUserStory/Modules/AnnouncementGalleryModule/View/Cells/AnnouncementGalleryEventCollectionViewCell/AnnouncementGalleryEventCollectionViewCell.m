@@ -22,14 +22,23 @@
 
 #import "AnnouncementGalleryEventCollectionViewCellObject.h"
 
+#import <SDWebImage/UIImageView+WebCache.h>
+
+static NSString *const kPlaceholderImageName = @"placeholder";
+
 @implementation AnnouncementGalleryEventCollectionViewCell
 
 #pragma mark - <NICollectionViewCell>
 
 - (BOOL)shouldUpdateCellWithObject:(AnnouncementGalleryEventCollectionViewCellObject *)object {
     self.eventTitleLabel.text = object.eventTitle;
+    self.eventDescriptionLabel.text = object.eventDescription;
+    self.eventDateLabel.text = object.eventDate;
+    self.eventTimeLabel.text = object.eventTime;
     
-    self.backgroundColor = object.primaryColor;
+    NSURL *imageUrl = [NSURL URLWithString:object.eventImageUrl];
+    [self.eventLogoImageView sd_setImageWithURL:imageUrl
+                               placeholderImage:[UIImage imageNamed:kPlaceholderImageName]];
     
     return YES;
 }

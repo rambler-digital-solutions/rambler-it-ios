@@ -31,9 +31,15 @@
 
 @property (nonatomic, strong, readonly) EventPlainObject *event;
 @property (nonatomic, strong, readonly) NSString *eventTitle;
+@property (nonatomic, strong, readonly) NSString *eventDescription;
+@property (nonatomic, strong, readonly) NSString *eventDate;
+@property (nonatomic, strong, readonly) NSString *eventTime;
+@property (nonatomic, strong, readonly) NSString *eventImageUrl;
 @property (nonatomic, strong, readonly) UIColor *primaryColor;
 
 + (instancetype)objectWithEvent:(EventPlainObject *)event
-                   primaryColor:(UIColor *)primaryColor;
+                   primaryColor:(UIColor *)primaryColor
+                      eventDate:(NSString *)eventDate
+                      eventTime:(NSString *)eventTime;
 
 @end

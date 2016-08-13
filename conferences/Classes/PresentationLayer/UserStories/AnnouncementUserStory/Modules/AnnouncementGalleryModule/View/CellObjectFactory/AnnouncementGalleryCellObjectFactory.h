@@ -21,6 +21,7 @@
 #import <Foundation/Foundation.h>
 
 @class EventPlainObject;
+@class DateFormatter;
 
 /**
  @author Egor Tolstoy
@@ -28,6 +29,8 @@
  Factory for creating cell objects for AnnouncementGallery module
  */
 @interface AnnouncementGalleryCellObjectFactory : NSObject
+
+@property (nonatomic, strong) DateFormatter *dateFormatter;
 
 /**
  @author Egor Tolstoy

@@ -23,25 +23,39 @@
 #import "EventPlainObject.h"
 #import "TechPlainObject.h"
 #import "AnnouncementGalleryEventCollectionViewCellObject.h"
+#import "DateFormatter.h"
 
 #import "UIColor+Hex.h"
 
 @implementation AnnouncementGalleryCellObjectFactory
 
+#pragma mark - Public methods
+
 - (NSArray *)createCellObjectsWithEvents:(NSArray<EventPlainObject *> *)events {
     NSMutableArray *cellObjects = [NSMutableArray new];
     for (EventPlainObject *event in events) {
-        NSString *colorString = event.tech.color;
-        UIColor *primaryColor = [UIColor colorFromHexString:colorString];
-        AnnouncementGalleryEventCollectionViewCellObject *cellObject = [AnnouncementGalleryEventCollectionViewCellObject objectWithEvent:event primaryColor:primaryColor];
+        AnnouncementGalleryEventCollectionViewCellObject *cellObject = [self cellObjectWithEvent:event];
         [cellObjects addObject:cellObject];
     }
     
-    for (NSUInteger i = 0; i < 10; i++) {
-        [cellObjects addObject:cellObjects.firstObject];
-    }
-    
     return [cellObjects copy];
+}
+
+#pragma mark - Private methods
+
+- (AnnouncementGalleryEventCollectionViewCellObject *)cellObjectWithEvent:(EventPlainObject *)event {
+    NSString *colorString = event.tech.color;
+    UIColor *primaryColor = [UIColor colorFromHexString:colorString];
+    
+    NSString *dateString = [self.dateFormatter obtainDateWithDayMonthFormat:event.startDate];
+    NSString *timeString = [self.dateFormatter obtainDateWithTimeFormat:event.startDate];
+    
+    AnnouncementGalleryEventCollectionViewCellObject *cellObject = [AnnouncementGalleryEventCollectionViewCellObject objectWithEvent:event
+                                                                                                                        primaryColor:primaryColor
+                                                                                                                           eventDate:dateString
+                                                                                                                           eventTime:timeString];
+    
+    return cellObject;
 }
 
 @end

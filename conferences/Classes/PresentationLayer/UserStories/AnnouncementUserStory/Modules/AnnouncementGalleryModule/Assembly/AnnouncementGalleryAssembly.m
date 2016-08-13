@@ -22,6 +22,7 @@
 
 #import "ServiceComponents.h"
 #import "PonsomizerAssembly.h"
+#import "PresentationLayerHelpersAssembly.h"
 
 #import "AnnouncementGalleryViewController.h"
 #import "AnnouncementGalleryInteractor.h"
@@ -97,7 +98,11 @@
 }
 
 - (AnnouncementGalleryCellObjectFactory *)cellObjectFactoryAnnouncementGalleryModule {
-    return [TyphoonDefinition withClass:[AnnouncementGalleryCellObjectFactory class]];
+    return [TyphoonDefinition withClass:[AnnouncementGalleryCellObjectFactory class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(dateFormatter)
+                                                    with:[self.presentationLayerHelpersAssembly dateFormatter]];
+                          }];
 }
 
 @end

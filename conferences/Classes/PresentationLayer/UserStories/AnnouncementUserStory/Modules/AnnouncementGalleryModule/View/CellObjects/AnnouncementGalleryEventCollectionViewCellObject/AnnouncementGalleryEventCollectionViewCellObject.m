@@ -22,12 +22,17 @@
 
 #import "AnnouncementGalleryEventCollectionViewCell.h"
 #import "EventPlainObject.h"
+#import "MetaEventPlainObject.h"
 
 @interface AnnouncementGalleryEventCollectionViewCellObject ()
 
 @property (nonatomic, strong, readwrite) EventPlainObject *event;
 @property (nonatomic, strong, readwrite) NSString *eventTitle;
 @property (nonatomic, strong, readwrite) UIColor *primaryColor;
+@property (nonatomic, strong, readwrite) NSString *eventDescription;
+@property (nonatomic, strong, readwrite) NSString *eventDate;
+@property (nonatomic, strong, readwrite) NSString *eventTime;
+@property (nonatomic, strong, readwrite) NSString *eventImageUrl;
 
 @end
 
@@ -36,21 +41,31 @@
 #pragma mark - Initialization
 
 - (instancetype)initWithEvent:(EventPlainObject *)event
-                 primaryColor:(UIColor *)primaryColor {
+                 primaryColor:(UIColor *)primaryColor
+                    eventDate:(NSString *)eventDate
+                    eventTime:(NSString *)eventTime {
     self = [super init];
     if (self) {
         _event = event;
         _primaryColor = primaryColor;
         
         _eventTitle = event.name;
+        _eventDescription = event.metaEvent.metaEventDescription;
+        _eventImageUrl = event.metaEvent.imageUrlPath;
+        _eventDate = eventDate;
+        _eventTime = eventTime;
     }
     return self;
 }
 
 + (instancetype)objectWithEvent:(EventPlainObject *)event
-                   primaryColor:(UIColor *)primaryColor {
+                   primaryColor:(UIColor *)primaryColor
+                      eventDate:(NSString *)eventDate
+                      eventTime:(NSString *)eventTime {
     return [[self alloc] initWithEvent:event
-                          primaryColor:primaryColor];
+                          primaryColor:primaryColor
+                             eventDate:eventDate
+                             eventTime:eventTime];
 }
 
 #pragma mark - <NICollectionViewNibCellObject>

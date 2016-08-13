@@ -28,5 +28,9 @@
 @interface AnnouncementGalleryEventCollectionViewCell : UICollectionViewCell <NICollectionViewCell>
 
 @property (weak, nonatomic) IBOutlet UILabel *eventTitleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *eventDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *eventLogoImageView;
+@property (weak, nonatomic) IBOutlet UILabel *eventTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *eventDateLabel;
 
 @end
