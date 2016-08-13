@@ -20,10 +20,21 @@
 
 #import "AnnouncementGalleryRouter.h"
 
+#import "EventModuleInput.h"
+
 #import <ViperMcFlurry/ViperMcFlurry.h>
+
+static NSString *const kAnnouncementGalleryModuleToEventModuleSegue = @"AnnouncementGalleryModuleToEventModuleSegue";
 
 @implementation AnnouncementGalleryRouter
 
 #pragma mark - Методы AnnouncementGalleryRouterInput
+
+- (void)openEventModuleWithEventId:(NSString *)eventId {
+    [[self.transitionHandler openModuleUsingSegue:kAnnouncementGalleryModuleToEventModuleSegue] thenChainUsingBlock:^id<RamblerViperModuleOutput>(id<EventModuleInput> moduleInput) {
+        [moduleInput configureCurrentModuleWithEventObjectId:eventId];
+        return nil;
+    }];
+}
 
 @end

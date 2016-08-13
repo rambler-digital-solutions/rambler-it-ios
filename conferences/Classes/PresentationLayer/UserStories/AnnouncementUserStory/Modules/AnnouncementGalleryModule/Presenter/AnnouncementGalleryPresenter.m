@@ -23,6 +23,7 @@
 #import "AnnouncementGalleryViewInput.h"
 #import "AnnouncementGalleryInteractorInput.h"
 #import "AnnouncementGalleryRouterInput.h"
+#import "EventPlainObject.h"
 
 @implementation AnnouncementGalleryPresenter
 
@@ -37,6 +38,11 @@
     if (cachedFutureEvents) {
         [self.view updateStateWithFutureEvents:cachedFutureEvents];
     }
+}
+
+- (void)didTriggerAnnouncementTapEventWithObject:(EventPlainObject *)event {
+    NSString *eventId = event.eventId;
+    [self.router openEventModuleWithEventId:eventId];
 }
 
 #pragma mark - Методы AnnouncementGalleryInteractorOutput

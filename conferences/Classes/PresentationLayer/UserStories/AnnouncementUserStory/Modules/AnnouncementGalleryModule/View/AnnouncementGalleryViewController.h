@@ -21,11 +21,12 @@
 #import <UIKit/UIKit.h>
 
 #import "AnnouncementGalleryViewInput.h"
+#import "AnnouncementGalleryDataDisplayManager.h"
 
 @protocol AnnouncementGalleryViewOutput;
 @class AnnouncementGalleryDataDisplayManager;
 
-@interface AnnouncementGalleryViewController : UIViewController <AnnouncementGalleryViewInput>
+@interface AnnouncementGalleryViewController : UIViewController <AnnouncementGalleryViewInput, AnnouncementGalleryDataDisplayManagerDelegate>
 
 #pragma mark - Interface
 

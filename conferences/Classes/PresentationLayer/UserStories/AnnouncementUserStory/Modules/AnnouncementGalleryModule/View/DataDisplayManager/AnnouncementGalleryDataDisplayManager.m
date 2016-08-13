@@ -21,13 +21,17 @@
 #import "AnnouncementGalleryDataDisplayManager.h"
 
 #import "AnnouncementGalleryCellObjectFactory.h"
+#import "AnnouncementGalleryEventCollectionViewCellObject.h"
 
+#import "EXTScope.h"
 #import <Nimbus/NimbusCollections.h>
 
 @interface AnnouncementGalleryDataDisplayManager () <UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, strong) NICollectionViewModel *collectionModel;
+@property (nonatomic, strong) NICollectionViewActions *collectionActions;
 @property (nonatomic, strong) AnnouncementGalleryCellObjectFactory *cellObjectFactory;
+@property (nonatomic, weak) id<AnnouncementGalleryDataDisplayManagerDelegate> delegate;
 
 @end
 
@@ -35,10 +39,12 @@
 
 #pragma mark - Initialization
 
-- (instancetype)initWithCellObjectFactory:(AnnouncementGalleryCellObjectFactory *)cellObjectFactory {
+- (instancetype)initWithCellObjectFactory:(AnnouncementGalleryCellObjectFactory *)cellObjectFactory
+                                 delegate:(id<AnnouncementGalleryDataDisplayManagerDelegate>)delegate {
     self = [super init];
     if (self) {
         _cellObjectFactory = cellObjectFactory;
+        _delegate = delegate;
     }
     return self;
 }
@@ -54,10 +60,27 @@
 }
 
 - (id<UICollectionViewDelegate>)delegateForCollectionView:(UICollectionView *)collectionView {
-    return self;
+    if (!self.collectionActions) {
+        [self setupCollectionActions];
+    }
+    return (id)self.collectionActions;
 }
 
 #pragma mark - Private methods
+
+- (void)setupCollectionActions {
+    self.collectionActions = [[NICollectionViewActions alloc] initWithTarget:self];
+    
+    @weakify(self);
+    NIActionBlock announcementTapActionBlock = ^BOOL(AnnouncementGalleryEventCollectionViewCellObject *object, id target, NSIndexPath *indexPath) {
+        @strongify(self);
+        [self.delegate didTapEventAnnouncementCellWithEvent:object.event];
+        return YES;
+    };
+    
+    [self.collectionActions attachToClass:[AnnouncementGalleryEventCollectionViewCellObject class]
+                                tapBlock:announcementTapActionBlock];
+}
 
 - (NSArray *)generateCellObjectsFromEvents:(NSArray *)events {
     NSArray *cellObjects = [self.cellObjectFactory createCellObjectsWithEvents:events];

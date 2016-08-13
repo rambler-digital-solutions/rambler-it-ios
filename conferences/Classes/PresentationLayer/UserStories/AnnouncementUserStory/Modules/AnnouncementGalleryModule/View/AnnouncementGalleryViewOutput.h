@@ -20,6 +20,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class EventPlainObject;
+
 @protocol AnnouncementGalleryViewOutput <NSObject>
 
 /**
@@ -28,5 +30,14 @@
  Метод сообщает презентеру о том, что view готова к работе
  */
 - (void)didTriggerViewReadyEvent;
+
+/**
+ @author Egor Tolstoy
+ 
+ Method tells output that event announcement was tapped
+ 
+ @param event EventPlainObject
+ */
+- (void)didTriggerAnnouncementTapEventWithObject:(EventPlainObject *)event;
 
 @end

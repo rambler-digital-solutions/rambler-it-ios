@@ -22,10 +22,12 @@
 
 @class EventPlainObject;
 @class AnnouncementGalleryCellObjectFactory;
+@protocol AnnouncementGalleryDataDisplayManagerDelegate;
 
 @interface AnnouncementGalleryDataDisplayManager : NSObject
 
-- (instancetype)initWithCellObjectFactory:(AnnouncementGalleryCellObjectFactory *)cellObjectFactory;
+- (instancetype)initWithCellObjectFactory:(AnnouncementGalleryCellObjectFactory *)cellObjectFactory
+                                 delegate:(id<AnnouncementGalleryDataDisplayManagerDelegate>)delegate;
 
 /**
  @author Egor Tolstoy
@@ -50,5 +52,18 @@
  @return Delegate
  */
 - (id<UICollectionViewDelegate>)delegateForCollectionView:(UICollectionView *)collectionView;
+
+@end
+
+@protocol AnnouncementGalleryDataDisplayManagerDelegate <NSObject>
+
+/**
+ @author Egor Tolstoy
+ 
+ Method tells delegate that event card was tapped
+ 
+ @param event Event object
+ */
+- (void)didTapEventAnnouncementCellWithEvent:(EventPlainObject *)event;
 
 @end

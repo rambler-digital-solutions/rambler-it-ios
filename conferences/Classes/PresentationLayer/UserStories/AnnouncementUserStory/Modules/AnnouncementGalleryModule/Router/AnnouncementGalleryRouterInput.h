@@ -22,4 +22,13 @@
 
 @protocol AnnouncementGalleryRouterInput <NSObject>
 
+/**
+ @author Egor Tolstoy
+ 
+ Method opens EventModule with a specified event
+ 
+ @param eventId Event identifier
+ */
+- (void)openEventModuleWithEventId:(NSString *)eventId;
+
 @end

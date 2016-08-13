@@ -21,7 +21,6 @@
 #import "AnnouncementGalleryViewController.h"
 
 #import "AnnouncementGalleryViewOutput.h"
-#import "AnnouncementGalleryDataDisplayManager.h"
 
 @implementation AnnouncementGalleryViewController
 
@@ -33,7 +32,7 @@
 	[self.output didTriggerViewReadyEvent];
 }
 
-#pragma mark - Методы AnnouncementGalleryViewInput
+#pragma mark - <AnnouncementGalleryViewInput>
 
 - (void)setupInitialState {
     self.navigationController.navigationBar.hidden = YES;
@@ -45,6 +44,12 @@
     self.collectionView.delegate = [self.dataDisplayManager delegateForCollectionView:self.collectionView];
     
     [self.collectionView reloadData];
+}
+
+#pragma mark - <AnnouncementGalleryDataDisplayManagerDelegate>
+
+- (void)didTapEventAnnouncementCellWithEvent:(EventPlainObject *)event {
+    [self.output didTriggerAnnouncementTapEventWithObject:event];
 }
 
 @end

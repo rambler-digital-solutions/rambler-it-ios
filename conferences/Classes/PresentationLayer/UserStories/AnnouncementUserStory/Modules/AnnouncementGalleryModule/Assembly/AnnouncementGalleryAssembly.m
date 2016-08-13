@@ -88,9 +88,10 @@
 - (AnnouncementGalleryDataDisplayManager *)dataDisplayManagerAnnouncementGalleryModule {
     return [TyphoonDefinition withClass:[AnnouncementGalleryDataDisplayManager class]
                           configuration:^(TyphoonDefinition *definition) {
-                              [definition useInitializer:@selector(initWithCellObjectFactory:)
+                              [definition useInitializer:@selector(initWithCellObjectFactory:delegate:)
                                               parameters:^(TyphoonMethod *initializer) {
                                                   [initializer injectParameterWith:[self cellObjectFactoryAnnouncementGalleryModule]];
+                                                  [initializer injectParameterWith:[self viewAnnouncementGalleryModule]];
                                               }];
                           }];
 }
