@@ -27,19 +27,16 @@
 - (void)prepareLayout {
     [super prepareLayout];
     
-    CGFloat verticalInset = self.collectionView.frame.size.height / 6;
+    self.itemSize = [self calculateEventCardSizeForCollectionViewSize:self.collectionView.frame.size];
     
-    CGFloat locationCardWidth = self.collectionView.frame.size.width - 2 * kEventCardHorizontalInset;
-    CGFloat locationCardHeigth = self.collectionView.frame.size.height - 2 * verticalInset;
-    self.itemSize = CGSizeMake(locationCardWidth,
-                               locationCardHeigth);
-    
-    self.minimumLineSpacing = kEventCardHorizontalInset / 2;
+    self.minimumLineSpacing = kEventCardLineSpacing;
     self.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    
+    CGFloat horizontalInset = (self.collectionView.frame.size.width - self.itemSize.width) / 2;
     self.sectionInset = UIEdgeInsetsMake(0.0,
-                                         kEventCardHorizontalInset,
+                                         horizontalInset,
                                          0.0,
-                                         kEventCardHorizontalInset);
+                                         horizontalInset);
 }
 
 - (CGFloat)pageWidth {
@@ -65,6 +62,18 @@
 
 - (CGFloat)flickVelocity {
     return kEventCardFlickVelocity;
+}
+
+- (CGSize)calculateEventCardSizeForCollectionViewSize:(CGSize)collectionViewSize {
+    CGFloat collectionWidth = collectionViewSize.width;
+    
+    CGSize itemSize;
+    if (collectionWidth >= kAnnouncementGalleryCollectionViewThresholdWidth) {
+        itemSize = CGSizeMake(kEventCardNormalWidth, kEventCardNormalHeight);
+    } else {
+        itemSize = CGSizeMake(kEventCardCompactWidth, kEventCardCompactHeight);
+    }
+    return itemSize;
 }
 
 @end

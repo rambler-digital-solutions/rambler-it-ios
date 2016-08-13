@@ -21,8 +21,13 @@
 #ifndef AnnouncementGalleryCollectionViewFlowLayoutConstants_h
 #define AnnouncementGalleryCollectionViewFlowLayoutConstants_h
 
-static CGFloat const kEventCardHorizontalInset = 50.0f;
-static CGFloat const kEventCardVerticalInset = 60.0f;
 static CGFloat const kEventCardFlickVelocity = 0.5f;
+static CGFloat const kEventCardLineSpacing = 24.0f;
+
+static CGFloat const kAnnouncementGalleryCollectionViewThresholdWidth = 375.0f;
+static CGFloat const kEventCardCompactWidth = 240.0f;
+static CGFloat const kEventCardCompactHeight = 360.0f;
+static CGFloat const kEventCardNormalWidth = 286.0f;
+static CGFloat const kEventCardNormalHeight = 426.0f;
 
 #endif /* AnnouncementGalleryCollectionViewFlowLayoutConstants_h */
