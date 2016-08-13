@@ -97,7 +97,7 @@
     self.stateStorage.speakerObjectId = objectId;
     
     // when
-    [self.presenter didTapTableViewHeader];
+    [self.presenter didTapSpeakerWithId:objectId];
     
     // then
     OCMVerify([self.routerMock openSpeakerInfoModuleWithSpeakerObjectId:objectId]);

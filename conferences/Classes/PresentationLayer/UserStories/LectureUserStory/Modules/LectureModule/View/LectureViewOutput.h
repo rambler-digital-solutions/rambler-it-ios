@@ -41,18 +41,20 @@
 /**
  @author Egor Tolstoy
  
- Method is used to inform presenter that a ,aterial was tapped
+ Method is used to inform presenter that a material was tapped
  
  @param videoUrl The URL of the video
  */
 - (void)didTapMaterialWithUrl:(NSURL *)materialUrl;
 
 /**
- @author Artem Karpushin
+ @author Egor Tolstoy
  
- Method is used to inform presenter that table view header was tapped
+ Method is used to inform presenter that a speaker was tapped
+ 
+ @param videoUrl The URL of the video
  */
-- (void)didTapTableViewHeader;
+- (void)didTapSpeakerWithId:(NSString *)speakerId;
 
 /**
  @author Artem Karpushin

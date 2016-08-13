@@ -19,6 +19,7 @@
 // THE SOFTWARE.
 
 #import "LectureViewController.h"
+
 #import "LectureViewOutput.h"
 #import "LectureDataDisplayManager.h"
 #import "SpeakerPlainObject.h"
@@ -26,6 +27,7 @@
 #import "SpeakerShortInfoModuleInput.h"
 
 #import "UINavigationBar+States.h"
+#import "Extensions/UIViewController+CDObserver/UIViewController+CDObserver.h"
 
 static CGFloat kTableViewEstimatedRowHeight = 44.0f;
 static CGFloat kTableViewFooterHeight = 16.0f;
@@ -34,6 +36,8 @@ static CGFloat kTableViewFooterHeight = 16.0f;
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+    
+    [self cd_startObserveProtocol:@protocol(LectureInfoTableViewCellActionProtocol)];
     [self.output setupView];
 }
 
@@ -68,6 +72,12 @@ static CGFloat kTableViewFooterHeight = 16.0f;
     [self.output didTapMaterialWithUrl:materialUrl];
 }
 
+#pragma mark - <LectureInfoTableViewCellActionProtocol>
+
+- (void)didSpeakerViewWithSpeakerId:(NSString *)speakerId {
+    [self.output didTapSpeakerWithId:speakerId];
+}
+
 #pragma mark - Private methods
 
 - (void)setupViewInitialState {
@@ -75,12 +85,6 @@ static CGFloat kTableViewFooterHeight = 16.0f;
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     [self.navigationController setNavigationBarHidden:NO
                                              animated:YES];
-}
-
-#pragma mark - Actions
-
-- (void)didTapTableViewHeader {
-    [self.output didTapTableViewHeader];
 }
 
 - (IBAction)didTapShareButton:(id)sender {

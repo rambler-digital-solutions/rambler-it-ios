@@ -39,7 +39,7 @@ static NSString *const kPlaceholderImageName = @"placeholder";
 
 - (void)didMoveToSuperview {
     [super didMoveToSuperview];
-    self.actionProxy = (id<LectureInfoTableViewCellActionProtocol>)[self cd_proxyForProtocol:@protocol(EventTableViewCellActionProtocol)];
+    self.actionProxy = (id<LectureInfoTableViewCellActionProtocol>)[self cd_proxyForProtocol:@protocol(LectureInfoTableViewCellActionProtocol)];
     UITapGestureRecognizer *speakerViewTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapSpeakerView:)];
     [self.speakerView addGestureRecognizer:speakerViewTapRecognizer];
 }

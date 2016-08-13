@@ -52,7 +52,7 @@
     [self.router openWebBrowserModuleWithUrl:materialUrl];
 }
 
-- (void)didTapTableViewHeader {
+- (void)didTapSpeakerWithId:(NSString *)speakerId {
     [self.router openSpeakerInfoModuleWithSpeakerObjectId:self.stateStorage.speakerObjectId];
 }
 

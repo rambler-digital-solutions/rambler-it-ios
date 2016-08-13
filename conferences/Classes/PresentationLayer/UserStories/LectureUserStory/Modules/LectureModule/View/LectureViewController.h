@@ -22,12 +22,13 @@
 
 #import "LectureViewInput.h"
 #import "LectureDataDisplayManager.h"
+#import "LectureInfoTableViewCellActionProtocol.h"
 
 @protocol LectureViewOutput;
 @protocol SpeakerShortInfoModuleInput;
 @class LectureDataDisplayManager;
 
-@interface LectureViewController : UIViewController <LectureViewInput, LectureDataDisplayManagerDelegate>
+@interface LectureViewController : UIViewController <LectureViewInput, LectureDataDisplayManagerDelegate, LectureInfoTableViewCellActionProtocol>
 
 @property (weak, nonatomic) IBOutlet UIView <SpeakerShortInfoModuleInput> *speakerShortInfoView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
