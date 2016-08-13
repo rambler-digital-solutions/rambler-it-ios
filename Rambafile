@@ -27,7 +27,7 @@ test_file_path: ConferencesTests/
 test_group_path: ConferencesTests/
 
 ### Dependencies settings section
-podfile_path: Podfile
+podfile_path:
 cartfile_path: 
 
 ### Templates
