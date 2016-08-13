@@ -31,6 +31,10 @@
     [self.view setupViewWithSpeaker:speaker];
 }
 
+- (void)didTriggerSocialNetworkTapEventWithUrl:(NSURL *)socialUrl {
+    [self.router openWebBrowserModuleWithUrl:socialUrl];
+}
+
 #pragma mark - SpeakerInfoInteractorOutput
 
 #pragma mark - SpeakerInfoModuleInput

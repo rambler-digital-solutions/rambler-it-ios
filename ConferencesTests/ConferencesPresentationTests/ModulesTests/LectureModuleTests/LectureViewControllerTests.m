@@ -141,16 +141,6 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
 
 #pragma mark - Actions
 
-- (void)testSuccessDidTapTableViewHeader {
-    // given
-    
-    // when
-    [self.viewController didTapTableViewHeader];
-    
-    // then
-    OCMVerify([self.presenterMock didTapTableViewHeader]);
-}
-
 - (void)testSuccessDidTapShareButton {
     // given
     

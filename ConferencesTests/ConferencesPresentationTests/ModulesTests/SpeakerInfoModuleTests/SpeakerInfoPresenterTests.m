@@ -26,12 +26,14 @@
 #import "SpeakerInfoInteractorInput.h"
 #import "SpeakerInfoPresenterStateStorage.h"
 #import "SpeakerPlainObject.h"
+#import "SpeakerInfoRouterInput.h"
 
 @interface SpeakerInfoPresenterTests : XCTestCase
 
 @property (nonatomic, strong) SpeakerInfoPresenter *presenter;
 @property (nonatomic, strong) id interactorMock;
 @property (nonatomic, strong) id viewMock;
+@property (nonatomic, strong) id routerMock;
 
 @end
 
@@ -43,9 +45,11 @@
     self.presenter = [SpeakerInfoPresenter new];
     self.interactorMock = OCMProtocolMock(@protocol(SpeakerInfoInteractorInput));
     self.viewMock = OCMProtocolMock(@protocol(SpeakerInfoViewInput));
+    self.routerMock = OCMProtocolMock(@protocol(SpeakerInfoRouterInput));
     
     self.presenter.view = self.viewMock;
     self.presenter.interactor = self.interactorMock;
+    self.presenter.router = self.routerMock;
 }
 
 - (void)tearDown {
@@ -54,6 +58,8 @@
     self.interactorMock = nil;
     [self.viewMock stopMocking];
     self.viewMock = nil;
+    
+    self.routerMock = nil;
     
     [super tearDown];
 }
@@ -74,6 +80,17 @@
     
     // then
     OCMVerify([self.interactorMock obtainSpeakerWithSpeakerId:speakerId]);
+}
+
+- (void)testThatPresenterOpensWebBrowserOnSocialMaterialTapEvent {
+    // given
+    NSURL *testUrl = [NSURL URLWithString:@"rambler.ru"];
+    
+    // when
+    [self.presenter didTriggerSocialNetworkTapEventWithUrl:testUrl];
+    
+    // then
+    OCMVerify([self.routerMock openWebBrowserModuleWithUrl:testUrl]);
 }
 
 #pragma mark - SpeakerInfoModuleInput

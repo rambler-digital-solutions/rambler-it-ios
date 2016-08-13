@@ -22,6 +22,8 @@
 #import "SpeakerPlainObject.h"
 #import "SpeakerInfoTableViewCellObject.h"
 #import "SpeakerInfoCellObjectBuilder.h"
+#import "SpeakerInfoSocialContactsCellObject.h"
+#import "EXTScope.h"
 
 @interface SpeakerInfoDataDisplayManager ()
 
@@ -73,6 +75,17 @@
 
 - (void)setupTableViewActions {
     self.tableViewActions = [[NITableViewActions alloc] initWithTarget:self];
+    
+    @weakify(self);
+    NIActionBlock socialContactActionBlock = ^BOOL(SpeakerInfoSocialContactsCellObject *object, UIViewController *controller, NSIndexPath *indexPath) {
+        @strongify(self);
+        NSURL *socialUrl = [NSURL URLWithString:object.link];
+        
+        [self.delegate didTapSocialMaterialCellWithUrl:socialUrl];
+        return YES;
+    };
+    [self.tableViewActions attachToClass:[SpeakerInfoSocialContactsCellObject class]
+                                tapBlock:socialContactActionBlock];
 }
 
 @end

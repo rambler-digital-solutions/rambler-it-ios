@@ -21,10 +21,12 @@
 
 @class SpeakerPlainObject;
 @class SpeakerInfoCellObjectBuilder;
+@protocol SpeakerInfoDataDisplayManagerDelegate;
 
 @interface SpeakerInfoDataDisplayManager : NSObject <DataDisplayManager, UITableViewDelegate>
 
 @property (nonatomic, strong) SpeakerInfoCellObjectBuilder *cellObjectBuilder;
+@property (nonatomic, weak) id<SpeakerInfoDataDisplayManagerDelegate> delegate;
 
 /**
  @author Vasyura Anastasiya
@@ -34,5 +36,19 @@
  @param speaker
  */
 - (void)configureDataDisplayManagerWithSpeaker:(SpeakerPlainObject *)speaker;
+
+@end
+
+
+@protocol SpeakerInfoDataDisplayManagerDelegate <NSObject>
+
+/**
+ @author Egor Tolstoy
+ 
+ VMethod tells delegate that a social material cell was tapped
+ 
+ @param socialUrl Social network URL
+ */
+- (void)didTapSocialMaterialCellWithUrl:(NSURL *)socialUrl;
 
 @end

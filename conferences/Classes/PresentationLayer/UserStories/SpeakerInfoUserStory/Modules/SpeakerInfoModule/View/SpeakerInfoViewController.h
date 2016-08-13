@@ -18,12 +18,13 @@
 
 #import <UIKit/UIKit.h>
 #import "SpeakerInfoViewInput.h"
+#import "SpeakerInfoDataDisplayManager.h"
 
 @protocol SpeakerInfoViewOutput;
 @protocol SpeakerShortInfoModuleInput;
 @class SpeakerInfoDataDisplayManager;
 
-@interface SpeakerInfoViewController : UIViewController <SpeakerInfoViewInput>
+@interface SpeakerInfoViewController : UIViewController <SpeakerInfoViewInput, SpeakerInfoDataDisplayManagerDelegate>
 
 @property (strong, nonatomic) id <SpeakerInfoViewOutput> output;
 @property (strong, nonatomic) SpeakerInfoDataDisplayManager *dataDisplayManager;

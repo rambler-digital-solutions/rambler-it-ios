@@ -17,6 +17,7 @@
 // THE SOFTWARE.
 
 #import "SpeakerInfoModuleAssembly.h"
+
 #import "SpeakerInfoViewController.h"
 #import "SpeakerInfoInteractor.h"
 #import "SpeakerInfoPresenter.h"
@@ -27,6 +28,7 @@
 #import "SocialContactsConfigurator.h"
 #import "ServiceComponents.h"
 #import "PonsomizerAssembly.h"
+#import "PresentationLayerHelpersAssembly.h"
 
 @implementation  SpeakerInfoModuleAssembly
 
@@ -69,6 +71,10 @@
 - (SpeakerInfoRouter *)routerSpeakerInfo {
     return [TyphoonDefinition withClass:[SpeakerInfoRouter class]
                             configuration:^(TyphoonDefinition *definition) {
+                                [definition injectProperty:@selector(transitionHandler)
+                                                      with:[self viewSpeakerInfo]];
+                                [definition injectProperty:@selector(safariFactory)
+                                                      with:[self.presentationLayerHelpersAssembly safariFactory]];
            }];
 }
 
@@ -80,6 +86,8 @@
     return [TyphoonDefinition withClass:[SpeakerInfoDataDisplayManager class] configuration:^(TyphoonDefinition *definition) {
         [definition injectProperty:@selector(cellObjectBuilder)
                               with:[self cellObjectsBuilderSpeakerInfo]];
+        [definition injectProperty:@selector(delegate)
+                              with:[self viewSpeakerInfo]];
     }];
 }
 

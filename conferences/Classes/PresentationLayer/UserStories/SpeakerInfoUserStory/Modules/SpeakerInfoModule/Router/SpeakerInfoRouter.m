@@ -18,12 +18,17 @@
 
 #import "SpeakerInfoRouter.h"
 
-@interface SpeakerInfoRouter()
-
-@end
+#import "SafariFactory.h"
 
 @implementation SpeakerInfoRouter
 
 #pragma mark - SpeakerInfoRouterInput
+
+- (void)openWebBrowserModuleWithUrl:(NSURL *)url {
+    UIViewController *safariViewController = [self.safariFactory createSafariViewControllerWithUrl:url];
+    [(id)self.transitionHandler presentViewController:safariViewController
+                                             animated:YES
+                                           completion:nil];
+}
 
 @end

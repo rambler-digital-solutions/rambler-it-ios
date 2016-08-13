@@ -51,6 +51,12 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
     [self setupHeaderViewWithSpeaker:speaker];
 }
 
+#pragma mark - <SpeakerInfoDataDisplayManagerDelegate>
+
+- (void)didTapSocialMaterialCellWithUrl:(NSURL *)socialUrl {
+    [self.output didTriggerSocialNetworkTapEventWithUrl:socialUrl];
+}
+
 #pragma mark - Private methods
 
 - (void)setupHeaderViewWithSpeaker:(SpeakerPlainObject *)speaker {
@@ -77,6 +83,5 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
     
     return frame;
 }
-
 
 @end

@@ -35,6 +35,7 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
 @property (nonatomic, strong) SpeakerInfoViewController *viewController;
 @property (nonatomic, strong) SpeakerInfoDataDisplayManager *dataDisplayManagerMock;
 @property (nonatomic, strong) UITableView *tableViewMock;
+@property (nonatomic, strong) id mockOutput;
 
 @end
 
@@ -46,13 +47,17 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
     self.viewController = [SpeakerInfoViewController new];
     self.dataDisplayManagerMock = OCMClassMock([SpeakerInfoDataDisplayManager class]);
     self.tableViewMock = OCMClassMock([UITableView class]);
+    self.mockOutput = OCMProtocolMock(@protocol(SpeakerInfoViewOutput));
     
     self.viewController.dataDisplayManager = self.dataDisplayManagerMock;
     self.viewController.tableView = self.tableViewMock;
+    self.viewController.output = self.mockOutput;
 }
 
 - (void)tearDown {
     self.viewController = nil;
+    
+    self.mockOutput;
     
     [(id)self.dataDisplayManagerMock stopMocking];
     self.dataDisplayManagerMock = nil;
@@ -131,6 +136,17 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
     // then
     OCMVerify([speakerShortInfoViewMock configureModuleWithSpeaker:speaker andViewSize:SpeakerShortInfoViewBigSize]);
     [speakerShortInfoViewMock stopMocking];
+}
+
+- (void)testSuccessDidTapSocialMaterial {
+    // given
+    NSURL *testUrl = [NSURL URLWithString:@"rambler.ru"];
+    
+    // when
+    [self.viewController didTapSocialMaterialCellWithUrl:testUrl];
+    
+    // then
+    OCMVerify([self.mockOutput didTriggerSocialNetworkTapEventWithUrl:testUrl]);
 }
 
 @end

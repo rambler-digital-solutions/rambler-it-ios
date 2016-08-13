@@ -17,8 +17,15 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
+#import <ViperMcFlurry/ViperMcFlurry.h>
+
 #import "SpeakerInfoRouterInput.h"
 
+@protocol SafariFactory;
+
 @interface SpeakerInfoRouter : NSObject <SpeakerInfoRouterInput>
+
+@property (nonatomic, weak) id <RamblerViperModuleTransitionHandlerProtocol> transitionHandler;
+@property (nonatomic, strong) id<SafariFactory> safariFactory;
 
 @end

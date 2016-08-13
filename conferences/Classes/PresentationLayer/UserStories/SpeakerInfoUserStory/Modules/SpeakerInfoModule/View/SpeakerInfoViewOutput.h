@@ -20,7 +20,21 @@
 
 @protocol SpeakerInfoViewOutput <NSObject>
 
+/**
+ @author Egor Tolstoy
+ 
+ Method is used for initial view setup
+ */
 - (void)setupView;
+
+/**
+ @author Egor Tolstoy
+ 
+ Method tells output that a social network element was tapped
+ 
+ @param socialUrl The social network URL
+ */
+- (void)didTriggerSocialNetworkTapEventWithUrl:(NSURL *)socialUrl;
 
 @end
 
