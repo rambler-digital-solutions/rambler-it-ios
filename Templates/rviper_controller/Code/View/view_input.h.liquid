@@ -1,0 +1,14 @@
+{% include 'header' %}
+
+#import <Foundation/Foundation.h>
+
+@protocol {{ prefix }}{{ module_info.name }}ViewInput <NSObject>
+
+/**
+ @author {{ developer.name }}
+
+ Метод настраивает начальный стейт view
+ */
+- (void)setupInitialState;
+
+@end
