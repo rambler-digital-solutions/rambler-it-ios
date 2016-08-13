@@ -49,7 +49,7 @@ static CGFloat const kSaveToCalendarButtonBorderWidth = 1.0f;
 
 - (BOOL)shouldUpdateCellWithObject:(SignUpAndSaveToCalendarEventTableViewCellObject *)object {
     self.cellObject = object;
-    self.signUpButton.backgroundColor = object.buttonColor;
+    self.signUpButton.enabled = NO;
     
     [self.saveToCalendarButton setTitleColor:object.buttonColor forState:UIControlStateNormal];
     self.saveToCalendarButton.layer.borderColor = object.buttonColor.CGColor;
