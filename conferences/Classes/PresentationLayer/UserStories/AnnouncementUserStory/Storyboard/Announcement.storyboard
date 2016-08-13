@@ -31,6 +31,7 @@
                             <constraint firstItem="4Ae-hD-WCO" firstAttribute="top" secondItem="Sbt-Sf-L4Y" secondAttribute="bottom" id="xdZ-jw-IQY"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <connections>
                         <outlet property="collectionView" destination="Sbt-Sf-L4Y" id="cYF-Lr-Jlm"/>
                         <segue destination="Rvi-6t-DcR" kind="push" identifier="AnnouncementGalleryModuleToEventModuleSegue" id="IbO-oW-ts1"/>

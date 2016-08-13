@@ -21,6 +21,7 @@
 #import "AnnouncementGalleryEventCollectionViewCell.h"
 
 #import "AnnouncementGalleryEventCollectionViewCellObject.h"
+#import "EXTScope.h"
 
 #import <SDWebImage/UIImageView+WebCache.h>
 
@@ -36,10 +37,16 @@ static NSString *const kPlaceholderImageName = @"placeholder";
     self.eventDateLabel.text = object.eventDate;
     self.eventTimeLabel.text = object.eventTime;
     
-    NSURL *imageUrl = [NSURL URLWithString:object.eventImageUrl];
-    [self.eventLogoImageView sd_setImageWithURL:imageUrl
-                               placeholderImage:[UIImage imageNamed:kPlaceholderImageName]];
+    self.eventLogoImageView.tintColor = object.primaryColor;
     
+    NSURL *imageUrl = [NSURL URLWithString:object.eventImageUrl];
+    @weakify(self);
+    [self.eventLogoImageView sd_setImageWithURL:imageUrl
+                               placeholderImage:[UIImage imageNamed:kPlaceholderImageName]
+                                      completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                                          @strongify(self);
+                                          self.eventLogoImageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+                                      }];
     return YES;
 }
 
