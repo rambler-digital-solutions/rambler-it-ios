@@ -18,37 +18,35 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "AnnouncementGalleryInteractor.h"
-
-#import "AnnouncementGalleryInteractorOutput.h"
-#import "EventService.h"
-#import "EventModelObject.h"
-#import "EventPlainObject.h"
-#import "ROSPonsomizer.h"
 #import "FutureEventFilter.h"
 
-#import "EXTScope.h"
+#import "EventPlainObject.h"
 
-@implementation AnnouncementGalleryInteractor
+@implementation FutureEventFilter
 
-#pragma mark - <AnnouncementGalleryInteractorInput>
+#pragma mark - Public methods
 
-- (void)updateEventList {
-    @weakify(self)
-    [self.eventService updateEventWithPredicate:nil completionBlock:^(id data, NSError *error) {
-        @strongify(self);
-        NSArray *futureEvents = [self obtainFutureEventList];
-        
-        [self.output didUpdateEventListWithFutureEvents:futureEvents];
-    }];
+- (NSArray *)filterFutureEventsFromEvents:(NSArray<EventPlainObject *> *)events {
+    NSDate *currentDate = [NSDate date];
+    NSMutableArray *futureEvents = [NSMutableArray new];
+    
+    for (EventPlainObject *event in events) {
+        if ([event.endDate compare:currentDate] == NSOrderedDescending) {
+            [futureEvents addObject:event];
+        }
+    }
+    
+    NSArray *sortedEvents = [self sortFutureEventsByDate:futureEvents];
+    return sortedEvents;
 }
 
-- (NSArray<EventPlainObject *> *)obtainFutureEventList {
-    NSArray *events = [self.eventService obtainEventWithPredicate:nil];
-    NSArray *plainObjects = [self.ponsomizer convertObject:events];
-    NSArray *futureEvents = [self.futureEventFilter filterFutureEventsFromEvents:plainObjects];
+#pragma mark - Private methods
+
+- (NSArray *)sortFutureEventsByDate:(NSArray *)events {
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:NSStringFromSelector(@selector(startDate)) ascending:NO];
+    NSArray *sortedEvents = [events sortedArrayUsingDescriptors:@[sortDescriptor]];
     
-    return futureEvents;
+    return sortedEvents;
 }
 
 @end

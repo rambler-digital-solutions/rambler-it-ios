@@ -20,13 +20,24 @@
 
 #import <Foundation/Foundation.h>
 
+@class EventPlainObject;
+
 @protocol AnnouncementGalleryViewInput <NSObject>
 
 /**
  @author Egor Tolstoy
 
- Метод настраивает начальный стейт view
+ Method setups view initial state
  */
 - (void)setupInitialState;
+
+/**
+ @author Egor Tolstoy
+ 
+ Method updates view with a list of future events
+ 
+ @param events Future events
+ */
+- (void)updateStateWithFutureEvents:(NSArray <EventPlainObject *> *)events;
 
 @end

@@ -23,11 +23,4 @@
 
 @protocol AnnouncementGalleryModuleInput <RamblerViperModuleInput>
 
-/**
- @author Egor Tolstoy
-
- Метод инициирует стартовую конфигурацию текущего модуля
- */
-- (void)configureModule;
-
 @end

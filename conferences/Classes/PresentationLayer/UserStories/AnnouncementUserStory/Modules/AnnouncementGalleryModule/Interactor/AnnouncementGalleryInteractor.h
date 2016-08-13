@@ -21,9 +21,15 @@
 #import "AnnouncementGalleryInteractorInput.h"
 
 @protocol AnnouncementGalleryInteractorOutput;
+@protocol EventService;
+@protocol ROSPonsomizer;
+@class FutureEventFilter;
 
 @interface AnnouncementGalleryInteractor : NSObject <AnnouncementGalleryInteractorInput>
 
 @property (nonatomic, weak) id<AnnouncementGalleryInteractorOutput> output;
+@property (nonatomic, strong) id <EventService> eventService;
+@property (nonatomic, strong) id <ROSPonsomizer> ponsomizer;
+@property (nonatomic, strong) FutureEventFilter *futureEventFilter;
 
 @end

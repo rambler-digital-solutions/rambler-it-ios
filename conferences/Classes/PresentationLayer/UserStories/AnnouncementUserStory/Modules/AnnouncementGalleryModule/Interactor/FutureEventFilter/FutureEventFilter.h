@@ -18,37 +18,26 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "AnnouncementGalleryInteractor.h"
+#import <Foundation/Foundation.h>
 
-#import "AnnouncementGalleryInteractorOutput.h"
-#import "EventService.h"
-#import "EventModelObject.h"
-#import "EventPlainObject.h"
-#import "ROSPonsomizer.h"
-#import "FutureEventFilter.h"
+@class EventPlainObject;
 
-#import "EXTScope.h"
+/**
+ @author Egor Tolstoy
+ 
+ The object is responsible for filtering all events except future from an array
+ */
+@interface FutureEventFilter : NSObject
 
-@implementation AnnouncementGalleryInteractor
-
-#pragma mark - <AnnouncementGalleryInteractorInput>
-
-- (void)updateEventList {
-    @weakify(self)
-    [self.eventService updateEventWithPredicate:nil completionBlock:^(id data, NSError *error) {
-        @strongify(self);
-        NSArray *futureEvents = [self obtainFutureEventList];
-        
-        [self.output didUpdateEventListWithFutureEvents:futureEvents];
-    }];
-}
-
-- (NSArray<EventPlainObject *> *)obtainFutureEventList {
-    NSArray *events = [self.eventService obtainEventWithPredicate:nil];
-    NSArray *plainObjects = [self.ponsomizer convertObject:events];
-    NSArray *futureEvents = [self.futureEventFilter filterFutureEventsFromEvents:plainObjects];
-    
-    return futureEvents;
-}
+/**
+ @author Egor Tolstoy
+ 
+ Method filters a passed array of events and returns only future events.
+ 
+ @param events All events
+ 
+ @return Future events
+ */
+- (NSArray *)filterFutureEventsFromEvents:(NSArray <EventPlainObject *> *)events;
 
 @end

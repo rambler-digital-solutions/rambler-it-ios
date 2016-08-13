@@ -26,18 +26,23 @@
 
 @implementation AnnouncementGalleryPresenter
 
-#pragma mark - Методы AnnouncementGalleryModuleInput
-
-- (void)configureModule {
-    // Стартовая конфигурация модуля, не привязанная к состоянию view
-}
-
 #pragma mark - Методы AnnouncementGalleryViewOutput
 
 - (void)didTriggerViewReadyEvent {
-	[self.view setupInitialState];
+    [self.view setupInitialState];
+    [self.interactor updateEventList];
+    
+    NSArray *cachedFutureEvents = [self.interactor obtainFutureEventList];
+    
+    if (cachedFutureEvents) {
+        [self.view updateStateWithFutureEvents:cachedFutureEvents];
+    }
 }
 
 #pragma mark - Методы AnnouncementGalleryInteractorOutput
+
+- (void)didUpdateEventListWithFutureEvents:(NSArray<EventPlainObject *> *)events {
+    
+}
 
 @end

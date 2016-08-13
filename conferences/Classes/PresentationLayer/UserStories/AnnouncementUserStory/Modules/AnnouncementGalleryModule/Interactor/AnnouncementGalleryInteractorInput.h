@@ -20,6 +20,24 @@
 
 #import <Foundation/Foundation.h>
 
+@class EventPlainObject;
+
 @protocol AnnouncementGalleryInteractorInput <NSObject>
+
+/**
+ @author Egor Tolstoy
+ 
+ Method triggers update of events from network
+ */
+- (void)updateEventList;
+
+/**
+ @author Egor Tolstoy
+ 
+ Method obtains list of future events
+ 
+ @return NSArray <EventPlainObject *>
+ */
+- (NSArray <EventPlainObject *> *)obtainFutureEventList;
 
 @end

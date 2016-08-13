@@ -21,11 +21,17 @@
 #import <Typhoon/Typhoon.h>
 #import <RamblerTyphoonUtils/AssemblyCollector.h>
 
+#import "ModuleAssemblyBase.h"
+
+@class PonsomizerAssembly;
+
 /**
  @author Egor Tolstoy
 
  AnnouncementGallery module
  */
-@interface AnnouncementGalleryAssembly : TyphoonAssembly <RamblerInitialAssembly>
+@interface AnnouncementGalleryAssembly : ModuleAssemblyBase <RamblerInitialAssembly>
+
+@property (nonatomic, strong) PonsomizerAssembly *ponsomizerAssembly;
 
 @end

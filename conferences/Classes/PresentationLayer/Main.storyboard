@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--AnnouncementListTableViewController-->
+        <!--AnnouncementGalleryViewController-->
         <scene sceneID="iyp-3w-99h">
             <objects>
-                <viewControllerPlaceholder storyboardName="Announcement" referencedIdentifier="AnnouncementListTableViewController" id="Lum-qY-GHL" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Announcement" referencedIdentifier="AnnouncementGalleryViewController" id="Lum-qY-GHL" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="MVm-KZ-g5U"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rh4-4F-X5I" userLabel="First Responder" sceneMemberID="firstResponder"/>

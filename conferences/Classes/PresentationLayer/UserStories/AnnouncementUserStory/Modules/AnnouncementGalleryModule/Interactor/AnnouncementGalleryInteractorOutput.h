@@ -20,6 +20,17 @@
 
 #import <Foundation/Foundation.h>
 
+@class EventPlainObject;
+
 @protocol AnnouncementGalleryInteractorOutput <NSObject>
+
+/**
+ @author Egor Tolstoy
+ 
+ Method is used to inform presenter that list of events has been updated
+ 
+ @param events Array of PlainEvent objects
+ */
+- (void)didUpdateEventListWithFutureEvents:(NSArray <EventPlainObject *> *)events;
 
 @end

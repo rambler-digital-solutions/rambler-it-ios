@@ -36,7 +36,9 @@
 
 - (void)setupInitialState {
     self.navigationController.navigationBar.hidden = YES;
-    
+}
+
+- (void)updateStateWithFutureEvents:(NSArray<EventPlainObject *> *)events {
     
 }
 

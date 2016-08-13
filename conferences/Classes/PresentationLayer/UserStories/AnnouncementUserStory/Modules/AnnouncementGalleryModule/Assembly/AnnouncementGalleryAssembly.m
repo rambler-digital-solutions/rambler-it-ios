@@ -20,10 +20,14 @@
 
 #import "AnnouncementGalleryAssembly.h"
 
+#import "ServiceComponents.h"
+#import "PonsomizerAssembly.h"
+
 #import "AnnouncementGalleryViewController.h"
 #import "AnnouncementGalleryInteractor.h"
 #import "AnnouncementGalleryPresenter.h"
 #import "AnnouncementGalleryRouter.h"
+#import "FutureEventFilter.h"
 
 #import <ViperMcFlurry/ViperMcFlurry.h>
 
@@ -44,6 +48,12 @@
                           configuration:^(TyphoonDefinition *definition) {
                               [definition injectProperty:@selector(output)
                                                     with:[self presenterAnnouncementGalleryModule]];
+                              [definition injectProperty:@selector(eventService)
+                                                    with:[self.serviceComponents eventService]];
+                              [definition injectProperty:@selector(ponsomizer)
+                                                    with:[self.ponsomizerAssembly ponsomizer]];
+                              [definition injectProperty:@selector(futureEventFilter)
+                                                    with:[self futureEventFilter]];
                           }];
 }
 
@@ -65,6 +75,10 @@
                               [definition injectProperty:@selector(transitionHandler)
                                                     with:[self viewAnnouncementGalleryModule]];
                           }];
+}
+
+- (FutureEventFilter *)futureEventFilter {
+    return [TyphoonDefinition withClass:[FutureEventFilter class]];
 }
 
 @end
