@@ -32,6 +32,10 @@
 	[self.output didTriggerViewReadyEvent];
 }
 
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
+
 #pragma mark - <AnnouncementGalleryViewInput>
 
 - (void)setupInitialState {
