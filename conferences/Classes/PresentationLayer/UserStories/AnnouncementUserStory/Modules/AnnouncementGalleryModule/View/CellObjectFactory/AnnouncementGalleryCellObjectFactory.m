@@ -18,33 +18,25 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "AnnouncementGalleryViewController.h"
+#import "AnnouncementGalleryCellObjectFactory.h"
 
-#import "AnnouncementGalleryViewOutput.h"
-#import "AnnouncementGalleryDataDisplayManager.h"
+#import "EventPlainObject.h"
+#import "TechPlainObject.h"
+#import "AnnouncementGalleryEventCollectionViewCellObject.h"
 
-@implementation AnnouncementGalleryViewController
+#import "UIColor+Hex.h"
 
-#pragma mark - Методы жизненного цикла
+@implementation AnnouncementGalleryCellObjectFactory
 
-- (void)viewDidLoad {
-	[super viewDidLoad];
-
-	[self.output didTriggerViewReadyEvent];
-}
-
-#pragma mark - Методы AnnouncementGalleryViewInput
-
-- (void)setupInitialState {
-    self.navigationController.navigationBar.hidden = YES;
-}
-
-- (void)updateStateWithFutureEvents:(NSArray<EventPlainObject *> *)events {
-    self.collectionView.dataSource = [self.dataDisplayManager dataSourceForCollectionView:self.collectionView
-                                                                               withEvents:events];
-    self.collectionView.delegate = [self.dataDisplayManager delegateForCollectionView:self.collectionView];
-    
-    [self.collectionView reloadData];
+- (NSArray *)createCellObjectsWithEvents:(NSArray<EventPlainObject *> *)events {
+    NSMutableArray *cellObjects = [NSMutableArray new];
+    for (EventPlainObject *event in events) {
+        NSString *colorString = event.tech.color;
+        UIColor *primaryColor = [UIColor colorFromHexString:colorString];
+        AnnouncementGalleryEventCollectionViewCellObject *cellObject = [AnnouncementGalleryEventCollectionViewCellObject objectWithEvent:event primaryColor:primaryColor];
+        [cellObjects addObject:cellObject];
+    }
+    return [cellObjects copy];
 }
 
 @end

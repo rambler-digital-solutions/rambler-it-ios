@@ -45,6 +45,9 @@
                             <constraint firstItem="4Ae-hD-WCO" firstAttribute="top" secondItem="Sbt-Sf-L4Y" secondAttribute="bottom" id="xdZ-jw-IQY"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="Sbt-Sf-L4Y" id="cYF-Lr-Jlm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ea-Ji-Jtz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

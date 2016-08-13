@@ -18,33 +18,15 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "AnnouncementGalleryViewController.h"
+#import <Nimbus/NimbusCollections.h>
 
-#import "AnnouncementGalleryViewOutput.h"
-#import "AnnouncementGalleryDataDisplayManager.h"
+/**
+ @author Egor Tolstoy
+ 
+ Cell for UICollectionView with event cards
+ */
+@interface AnnouncementGalleryEventCollectionViewCell : UICollectionViewCell <NICollectionViewCell>
 
-@implementation AnnouncementGalleryViewController
-
-#pragma mark - Методы жизненного цикла
-
-- (void)viewDidLoad {
-	[super viewDidLoad];
-
-	[self.output didTriggerViewReadyEvent];
-}
-
-#pragma mark - Методы AnnouncementGalleryViewInput
-
-- (void)setupInitialState {
-    self.navigationController.navigationBar.hidden = YES;
-}
-
-- (void)updateStateWithFutureEvents:(NSArray<EventPlainObject *> *)events {
-    self.collectionView.dataSource = [self.dataDisplayManager dataSourceForCollectionView:self.collectionView
-                                                                               withEvents:events];
-    self.collectionView.delegate = [self.dataDisplayManager delegateForCollectionView:self.collectionView];
-    
-    [self.collectionView reloadData];
-}
+@property (weak, nonatomic) IBOutlet UILabel *eventTitleLabel;
 
 @end

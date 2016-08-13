@@ -18,33 +18,26 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "AnnouncementGalleryViewController.h"
+#import <Foundation/Foundation.h>
 
-#import "AnnouncementGalleryViewOutput.h"
-#import "AnnouncementGalleryDataDisplayManager.h"
+@class EventPlainObject;
 
-@implementation AnnouncementGalleryViewController
+/**
+ @author Egor Tolstoy
+ 
+ Factory for creating cell objects for AnnouncementGallery module
+ */
+@interface AnnouncementGalleryCellObjectFactory : NSObject
 
-#pragma mark - Методы жизненного цикла
-
-- (void)viewDidLoad {
-	[super viewDidLoad];
-
-	[self.output didTriggerViewReadyEvent];
-}
-
-#pragma mark - Методы AnnouncementGalleryViewInput
-
-- (void)setupInitialState {
-    self.navigationController.navigationBar.hidden = YES;
-}
-
-- (void)updateStateWithFutureEvents:(NSArray<EventPlainObject *> *)events {
-    self.collectionView.dataSource = [self.dataDisplayManager dataSourceForCollectionView:self.collectionView
-                                                                               withEvents:events];
-    self.collectionView.delegate = [self.dataDisplayManager delegateForCollectionView:self.collectionView];
-    
-    [self.collectionView reloadData];
-}
+/**
+ @author Egor Tolstoy
+ 
+ Method returns cell objects for events array
+ 
+ @param events Events array
+ 
+ @return NSArray of cell objects
+ */
+- (NSArray *)createCellObjectsWithEvents:(NSArray <EventPlainObject *> *)events;
 
 @end

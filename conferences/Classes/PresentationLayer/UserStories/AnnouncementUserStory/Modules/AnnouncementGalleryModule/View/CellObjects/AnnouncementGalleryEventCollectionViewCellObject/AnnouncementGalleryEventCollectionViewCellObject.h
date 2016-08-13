@@ -18,33 +18,22 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "AnnouncementGalleryViewController.h"
+#import <Nimbus/NimbusCollections.h>
 
-#import "AnnouncementGalleryViewOutput.h"
-#import "AnnouncementGalleryDataDisplayManager.h"
+@class EventPlainObject;
 
-@implementation AnnouncementGalleryViewController
+/**
+ @author Egor Tolstoy
+ 
+ CellObject for AnnouncementGallery module event cell
+ */
+@interface AnnouncementGalleryEventCollectionViewCellObject : NSObject <NICollectionViewNibCellObject>
 
-#pragma mark - Методы жизненного цикла
+@property (nonatomic, strong, readonly) EventPlainObject *event;
+@property (nonatomic, strong, readonly) NSString *eventTitle;
+@property (nonatomic, strong, readonly) UIColor *primaryColor;
 
-- (void)viewDidLoad {
-	[super viewDidLoad];
-
-	[self.output didTriggerViewReadyEvent];
-}
-
-#pragma mark - Методы AnnouncementGalleryViewInput
-
-- (void)setupInitialState {
-    self.navigationController.navigationBar.hidden = YES;
-}
-
-- (void)updateStateWithFutureEvents:(NSArray<EventPlainObject *> *)events {
-    self.collectionView.dataSource = [self.dataDisplayManager dataSourceForCollectionView:self.collectionView
-                                                                               withEvents:events];
-    self.collectionView.delegate = [self.dataDisplayManager delegateForCollectionView:self.collectionView];
-    
-    [self.collectionView reloadData];
-}
++ (instancetype)objectWithEvent:(EventPlainObject *)event
+                   primaryColor:(UIColor *)primaryColor;
 
 @end

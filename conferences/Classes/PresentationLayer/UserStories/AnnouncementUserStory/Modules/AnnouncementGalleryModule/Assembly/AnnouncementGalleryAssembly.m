@@ -28,6 +28,8 @@
 #import "AnnouncementGalleryPresenter.h"
 #import "AnnouncementGalleryRouter.h"
 #import "FutureEventFilter.h"
+#import "AnnouncementGalleryDataDisplayManager.h"
+#import "AnnouncementGalleryCellObjectFactory.h"
 
 #import <ViperMcFlurry/ViperMcFlurry.h>
 
@@ -40,6 +42,8 @@
                                                     with:[self presenterAnnouncementGalleryModule]];
                               [definition injectProperty:@selector(moduleInput)
                                                     with:[self presenterAnnouncementGalleryModule]];
+                              [definition injectProperty:@selector(dataDisplayManager)
+                                                    with:[self dataDisplayManagerAnnouncementGalleryModule]];
                           }];
 }
 
@@ -79,6 +83,20 @@
 
 - (FutureEventFilter *)futureEventFilter {
     return [TyphoonDefinition withClass:[FutureEventFilter class]];
+}
+
+- (AnnouncementGalleryDataDisplayManager *)dataDisplayManagerAnnouncementGalleryModule {
+    return [TyphoonDefinition withClass:[AnnouncementGalleryDataDisplayManager class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition useInitializer:@selector(initWithCellObjectFactory:)
+                                              parameters:^(TyphoonMethod *initializer) {
+                                                  [initializer injectParameterWith:[self cellObjectFactoryAnnouncementGalleryModule]];
+                                              }];
+                          }];
+}
+
+- (AnnouncementGalleryCellObjectFactory *)cellObjectFactoryAnnouncementGalleryModule {
+    return [TyphoonDefinition withClass:[AnnouncementGalleryCellObjectFactory class]];
 }
 
 @end

@@ -23,9 +23,17 @@
 #import "AnnouncementGalleryViewInput.h"
 
 @protocol AnnouncementGalleryViewOutput;
+@class AnnouncementGalleryDataDisplayManager;
 
 @interface AnnouncementGalleryViewController : UIViewController <AnnouncementGalleryViewInput>
 
+#pragma mark - Interface
+
+@property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
+
+#pragma mark - Dependencies
+
 @property (nonatomic, strong) id<AnnouncementGalleryViewOutput> output;
+@property (nonatomic, strong) AnnouncementGalleryDataDisplayManager *dataDisplayManager;
 
 @end

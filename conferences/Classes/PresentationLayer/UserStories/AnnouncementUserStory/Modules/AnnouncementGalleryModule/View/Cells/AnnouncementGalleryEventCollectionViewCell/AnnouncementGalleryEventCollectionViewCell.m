@@ -18,33 +18,17 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "AnnouncementGalleryViewController.h"
+#import "AnnouncementGalleryEventCollectionViewCell.h"
 
-#import "AnnouncementGalleryViewOutput.h"
-#import "AnnouncementGalleryDataDisplayManager.h"
+#import "AnnouncementGalleryEventCollectionViewCellObject.h"
 
-@implementation AnnouncementGalleryViewController
+@implementation AnnouncementGalleryEventCollectionViewCell
 
-#pragma mark - Методы жизненного цикла
+#pragma mark - <NICollectionViewCell>
 
-- (void)viewDidLoad {
-	[super viewDidLoad];
-
-	[self.output didTriggerViewReadyEvent];
-}
-
-#pragma mark - Методы AnnouncementGalleryViewInput
-
-- (void)setupInitialState {
-    self.navigationController.navigationBar.hidden = YES;
-}
-
-- (void)updateStateWithFutureEvents:(NSArray<EventPlainObject *> *)events {
-    self.collectionView.dataSource = [self.dataDisplayManager dataSourceForCollectionView:self.collectionView
-                                                                               withEvents:events];
-    self.collectionView.delegate = [self.dataDisplayManager delegateForCollectionView:self.collectionView];
-    
-    [self.collectionView reloadData];
+- (BOOL)shouldUpdateCellWithObject:(AnnouncementGalleryEventCollectionViewCellObject *)object {
+    self.eventTitleLabel.text = object.eventTitle;
+    return YES;
 }
 
 @end

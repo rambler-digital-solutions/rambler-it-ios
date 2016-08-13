@@ -18,33 +18,37 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "AnnouncementGalleryViewController.h"
+#import <UIKit/UIKit.h>
 
-#import "AnnouncementGalleryViewOutput.h"
-#import "AnnouncementGalleryDataDisplayManager.h"
+@class EventPlainObject;
+@class AnnouncementGalleryCellObjectFactory;
 
-@implementation AnnouncementGalleryViewController
+@interface AnnouncementGalleryDataDisplayManager : NSObject
 
-#pragma mark - Методы жизненного цикла
+- (instancetype)initWithCellObjectFactory:(AnnouncementGalleryCellObjectFactory *)cellObjectFactory;
 
-- (void)viewDidLoad {
-	[super viewDidLoad];
+/**
+ @author Egor Tolstoy
+ 
+ Returns a data source object for UICollectionView with events
+ 
+ @param collectionView UICollectionView with events
+ @param events         Future events
+ 
+ @return Data source
+ */
+- (id<UICollectionViewDataSource>)dataSourceForCollectionView:(UICollectionView *)collectionView
+                                                   withEvents:(NSArray <EventPlainObject *> *)events;
 
-	[self.output didTriggerViewReadyEvent];
-}
-
-#pragma mark - Методы AnnouncementGalleryViewInput
-
-- (void)setupInitialState {
-    self.navigationController.navigationBar.hidden = YES;
-}
-
-- (void)updateStateWithFutureEvents:(NSArray<EventPlainObject *> *)events {
-    self.collectionView.dataSource = [self.dataDisplayManager dataSourceForCollectionView:self.collectionView
-                                                                               withEvents:events];
-    self.collectionView.delegate = [self.dataDisplayManager delegateForCollectionView:self.collectionView];
-    
-    [self.collectionView reloadData];
-}
+/**
+ @author Egor Tolstoy
+ 
+ Returns a delegate object for UICollectionView with events
+ 
+ @param collectionView UICollectionView with events
+ 
+ @return Delegate
+ */
+- (id<UICollectionViewDelegate>)delegateForCollectionView:(UICollectionView *)collectionView;
 
 @end
