@@ -47,20 +47,6 @@
     return self;
 }
 
-#pragma mark - <UICollectionViewDelegateFlowLayout>
-
-- (CGSize)collectionView:(UICollectionView *)collectionView
-                  layout:(UICollectionViewLayout *)collectionViewLayout
-  sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return collectionView.frame.size;
-}
-
-- (CGFloat)collectionView:(UICollectionView *)collectionView
-                   layout:(UICollectionViewLayout *)collectionViewLayout
-minimumLineSpacingForSectionAtIndex:(NSInteger)section {
-    return 0.0f;
-}
-
 #pragma mark - Private Methods
 
 - (NSArray *)generateCellObjectsFromDirections:(NSArray <DirectionObject *> *)directions {

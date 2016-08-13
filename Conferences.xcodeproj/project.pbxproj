@@ -468,6 +468,7 @@
 		9FBE8A081D5DFA1600DA0C32 /* VideoThumbnailGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8A071D5DFA1600DA0C32 /* VideoThumbnailGenerator.m */; };
 		9FBE8A0B1D5DFAB700DA0C32 /* VideoThumbnailTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8A0A1D5DFAB700DA0C32 /* VideoThumbnailTests.m */; };
 		9FBE8A111D5E5F1B00DA0C32 /* SafariFactoryImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8A101D5E5F1B00DA0C32 /* SafariFactoryImplementation.m */; };
+		9FBE8A161D5F343F00DA0C32 /* LocationCardFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8A151D5F343F00DA0C32 /* LocationCardFlowLayout.m */; };
 		9FC1F6761D2824000070D9B5 /* EventListServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */; };
 		9FC1F6801D2838FA0070D9B5 /* EventListQueryTransformerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */; };
 		9FC1F6841D28391E0070D9B5 /* EventListQueryTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6831D28391E0070D9B5 /* EventListQueryTransformer.m */; };
@@ -1416,6 +1417,9 @@
 		9FBE8A0E1D5E5F0D00DA0C32 /* SafariFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SafariFactory.h; path = SafariFactory/SafariFactory.h; sourceTree = "<group>"; };
 		9FBE8A0F1D5E5F1B00DA0C32 /* SafariFactoryImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SafariFactoryImplementation.h; path = SafariFactory/SafariFactoryImplementation.h; sourceTree = "<group>"; };
 		9FBE8A101D5E5F1B00DA0C32 /* SafariFactoryImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SafariFactoryImplementation.m; path = SafariFactory/SafariFactoryImplementation.m; sourceTree = "<group>"; };
+		9FBE8A141D5F343F00DA0C32 /* LocationCardFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationCardFlowLayout.h; path = LocationCardFlowLayout/LocationCardFlowLayout.h; sourceTree = "<group>"; };
+		9FBE8A151D5F343F00DA0C32 /* LocationCardFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationCardFlowLayout.m; path = LocationCardFlowLayout/LocationCardFlowLayout.m; sourceTree = "<group>"; };
+		9FBE8A171D5F393900DA0C32 /* LocationCardFlowLayoutConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LocationCardFlowLayoutConstants.h; path = LocationCardFlowLayout/LocationCardFlowLayoutConstants.h; sourceTree = "<group>"; };
 		9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListServiceTests.m; path = EventListServiceTests/EventListServiceTests.m; sourceTree = "<group>"; };
 		9FC1F6781D2826D10070D9B5 /* QueryTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QueryTransformer.h; path = CoreComponents/QueryTransformers/QueryTransformer.h; sourceTree = "<group>"; };
 		9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListQueryTransformerTests.m; path = CoreLayer/CoreComponents/QueryTransformers/EventListQueryTransformer/EventListQueryTransformerTests.m; sourceTree = "<group>"; };
@@ -2429,6 +2433,7 @@
 		636F8DCF1BCB8FE800552B91 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9FBE8A131D5F341C00DA0C32 /* LocationCardFlowLayout */,
 				9F4077B11D2E389700D47EF6 /* CellObjectFactory */,
 				9F4077AD1D2E370100D47EF6 /* CellObjects */,
 				9F4077A91D2D617800D47EF6 /* Cells */,
@@ -6702,6 +6707,16 @@
 			name = SafariFactory;
 			sourceTree = "<group>";
 		};
+		9FBE8A131D5F341C00DA0C32 /* LocationCardFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE8A141D5F343F00DA0C32 /* LocationCardFlowLayout.h */,
+				9FBE8A151D5F343F00DA0C32 /* LocationCardFlowLayout.m */,
+				9FBE8A171D5F393900DA0C32 /* LocationCardFlowLayoutConstants.h */,
+			);
+			name = LocationCardFlowLayout;
+			sourceTree = "<group>";
+		};
 		9FC1F6741D2823E40070D9B5 /* EventListServiceTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -7528,6 +7543,7 @@
 				9F1830ED1BC14293000E21A5 /* ManagedObjectMapper.m in Sources */,
 				9F78D7611D59E8D2009DDCEA /* SpeakerChangeProviderFetchRequestFactory.m in Sources */,
 				2B2064951D3F9CE900246C8D /* MetaEventPlainObject.m in Sources */,
+				9FBE8A161D5F343F00DA0C32 /* LocationCardFlowLayout.m in Sources */,
 				63F6139E1CB00A220002AEF0 /* SpeakerInfoViewController.m in Sources */,
 				66E999801D54B0A000161D98 /* TagCellSizeRowCalculator.m in Sources */,
 				6315BA141C9EC32300999877 /* VideoRecordTableViewCellObject.m in Sources */,

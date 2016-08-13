@@ -18,33 +18,13 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "RamblerLocationViewController.h"
-#import "RamblerLocationViewOutput.h"
-#import "RamblerLocationDataDisplayManager.h"
+#import <UIKit/UIKit.h>
 
-@implementation RamblerLocationViewController
-
-- (void)viewDidLoad {
-	[super viewDidLoad];
-	[self.output didTriggerViewReadyEvent];
-}
-
-#pragma mark - RamblerLocationViewInput
-
-- (void)setupViewWithDirections:(NSArray<DirectionObject *> *)directions {
-    id<UICollectionViewDataSource> dataSource = [self.dataDisplayManager dataSourceForCollectionView:self.collectionView
-                                                                                      withDirections:directions];
-    id<UICollectionViewDelegate> delegate = [self.dataDisplayManager delegateForCollectionView:self.collectionView];
-    self.collectionView.dataSource = dataSource;
-    self.collectionView.delegate = delegate;
-    
-    [self.collectionView reloadData];
-}
-
-#pragma mark - IBOutlets
-
-- (IBAction)didTapShareButton:(id)sender {
-    [self.output didTriggerShareButtonTapEvent];
-}
+/**
+ @author Egor Tolstoy
+ 
+ Custom UICollectionViewFlowLayout for Location screen
+ */
+@interface LocationCardFlowLayout : UICollectionViewFlowLayout
 
 @end
