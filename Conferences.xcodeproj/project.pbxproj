@@ -486,6 +486,7 @@
 		9FBE8A4A1D5F499B00DA0C32 /* AnnouncementGalleryEventCollectionViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8A491D5F499B00DA0C32 /* AnnouncementGalleryEventCollectionViewCellObject.m */; };
 		9FBE8A551D5F4B4D00DA0C32 /* AnnouncementGalleryEventCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8A531D5F4B4D00DA0C32 /* AnnouncementGalleryEventCollectionViewCell.m */; };
 		9FBE8A561D5F4B4D00DA0C32 /* AnnouncementGalleryEventCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FBE8A541D5F4B4D00DA0C32 /* AnnouncementGalleryEventCollectionViewCell.xib */; };
+		9FBE8A5A1D5F4E2800DA0C32 /* AnnouncementGalleryCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8A591D5F4E2800DA0C32 /* AnnouncementGalleryCollectionViewFlowLayout.m */; };
 		9FC1F6761D2824000070D9B5 /* EventListServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */; };
 		9FC1F6801D2838FA0070D9B5 /* EventListQueryTransformerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */; };
 		9FC1F6841D28391E0070D9B5 /* EventListQueryTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6831D28391E0070D9B5 /* EventListQueryTransformer.m */; };
@@ -1469,6 +1470,9 @@
 		9FBE8A521D5F4B4D00DA0C32 /* AnnouncementGalleryEventCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnnouncementGalleryEventCollectionViewCell.h; path = Cells/AnnouncementGalleryEventCollectionViewCell/AnnouncementGalleryEventCollectionViewCell.h; sourceTree = "<group>"; };
 		9FBE8A531D5F4B4D00DA0C32 /* AnnouncementGalleryEventCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnnouncementGalleryEventCollectionViewCell.m; path = Cells/AnnouncementGalleryEventCollectionViewCell/AnnouncementGalleryEventCollectionViewCell.m; sourceTree = "<group>"; };
 		9FBE8A541D5F4B4D00DA0C32 /* AnnouncementGalleryEventCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AnnouncementGalleryEventCollectionViewCell.xib; path = Cells/AnnouncementGalleryEventCollectionViewCell/AnnouncementGalleryEventCollectionViewCell.xib; sourceTree = "<group>"; };
+		9FBE8A581D5F4E2800DA0C32 /* AnnouncementGalleryCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnnouncementGalleryCollectionViewFlowLayout.h; path = CollectionViewFlowLayout/AnnouncementGalleryCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		9FBE8A591D5F4E2800DA0C32 /* AnnouncementGalleryCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnnouncementGalleryCollectionViewFlowLayout.m; path = CollectionViewFlowLayout/AnnouncementGalleryCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		9FBE8A5B1D5F4E8B00DA0C32 /* AnnouncementGalleryCollectionViewFlowLayoutConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AnnouncementGalleryCollectionViewFlowLayoutConstants.h; path = CollectionViewFlowLayout/AnnouncementGalleryCollectionViewFlowLayoutConstants.h; sourceTree = "<group>"; };
 		9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListServiceTests.m; path = EventListServiceTests/EventListServiceTests.m; sourceTree = "<group>"; };
 		9FC1F6781D2826D10070D9B5 /* QueryTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QueryTransformer.h; path = CoreComponents/QueryTransformers/QueryTransformer.h; sourceTree = "<group>"; };
 		9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListQueryTransformerTests.m; path = CoreLayer/CoreComponents/QueryTransformers/EventListQueryTransformer/EventListQueryTransformerTests.m; sourceTree = "<group>"; };
@@ -6868,6 +6872,7 @@
 		9FBE8A291D5F3CAD00DA0C32 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9FBE8A571D5F4DE300DA0C32 /* CollectionViewFlowLayout */,
 				9FBE8A4B1D5F4AAB00DA0C32 /* Cells */,
 				9FBE8A461D5F496D00DA0C32 /* CellObjects */,
 				9FBE8A421D5F48F600DA0C32 /* CellObjectFactory */,
@@ -6940,6 +6945,16 @@
 				9FBE8A541D5F4B4D00DA0C32 /* AnnouncementGalleryEventCollectionViewCell.xib */,
 			);
 			name = AnnouncementGalleryEventCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		9FBE8A571D5F4DE300DA0C32 /* CollectionViewFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE8A581D5F4E2800DA0C32 /* AnnouncementGalleryCollectionViewFlowLayout.h */,
+				9FBE8A591D5F4E2800DA0C32 /* AnnouncementGalleryCollectionViewFlowLayout.m */,
+				9FBE8A5B1D5F4E8B00DA0C32 /* AnnouncementGalleryCollectionViewFlowLayoutConstants.h */,
+			);
+			name = CollectionViewFlowLayout;
 			sourceTree = "<group>";
 		};
 		9FC1F6741D2823E40070D9B5 /* EventListServiceTests */ = {
@@ -7487,6 +7502,7 @@
 			files = (
 				2B2064851D3F9CE900246C8D /* _SocialNetworkAccountPlainObject.m in Sources */,
 				63F8F2BC1BF8A713000017F3 /* EventTypeDeterminator.m in Sources */,
+				9FBE8A5A1D5F4E2800DA0C32 /* AnnouncementGalleryCollectionViewFlowLayout.m in Sources */,
 				2B20648C1D3F9CE900246C8D /* MetaEventModelObject.m in Sources */,
 				636B64101BBDD6260053E38F /* SpeakerServiceImplementation.m in Sources */,
 				9FBE8A321D5F3CAD00DA0C32 /* AnnouncementGalleryViewController.m in Sources */,

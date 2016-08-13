@@ -36,6 +36,11 @@
         AnnouncementGalleryEventCollectionViewCellObject *cellObject = [AnnouncementGalleryEventCollectionViewCellObject objectWithEvent:event primaryColor:primaryColor];
         [cellObjects addObject:cellObject];
     }
+    
+    for (NSUInteger i = 0; i < 10; i++) {
+        [cellObjects addObject:cellObjects.firstObject];
+    }
+    
     return [cellObjects copy];
 }
 

@@ -18,20 +18,11 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "AnnouncementGalleryEventCollectionViewCell.h"
+#ifndef AnnouncementGalleryCollectionViewFlowLayoutConstants_h
+#define AnnouncementGalleryCollectionViewFlowLayoutConstants_h
 
-#import "AnnouncementGalleryEventCollectionViewCellObject.h"
+static CGFloat const kEventCardHorizontalInset = 50.0f;
+static CGFloat const kEventCardVerticalInset = 60.0f;
+static CGFloat const kEventCardFlickVelocity = 0.5f;
 
-@implementation AnnouncementGalleryEventCollectionViewCell
-
-#pragma mark - <NICollectionViewCell>
-
-- (BOOL)shouldUpdateCellWithObject:(AnnouncementGalleryEventCollectionViewCellObject *)object {
-    self.eventTitleLabel.text = object.eventTitle;
-    
-    self.backgroundColor = object.primaryColor;
-    
-    return YES;
-}
-
-@end
+#endif /* AnnouncementGalleryCollectionViewFlowLayoutConstants_h */

@@ -18,20 +18,13 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "AnnouncementGalleryEventCollectionViewCell.h"
+#import <UIKit/UIKit.h>
 
-#import "AnnouncementGalleryEventCollectionViewCellObject.h"
-
-@implementation AnnouncementGalleryEventCollectionViewCell
-
-#pragma mark - <NICollectionViewCell>
-
-- (BOOL)shouldUpdateCellWithObject:(AnnouncementGalleryEventCollectionViewCellObject *)object {
-    self.eventTitleLabel.text = object.eventTitle;
-    
-    self.backgroundColor = object.primaryColor;
-    
-    return YES;
-}
+/**
+ @author Egor Tolstoy
+ 
+ Custom collection view flow layout for AnnouncementGallery module
+ */
+@interface AnnouncementGalleryCollectionViewFlowLayout : UICollectionViewFlowLayout
 
 @end
