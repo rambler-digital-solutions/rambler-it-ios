@@ -26,6 +26,9 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 
 static NSString *const kPlaceholderImageName = @"placeholder";
+static CGFloat const kShadowOffset = 5.0f;
+static CGFloat const kShadowRadius = 65.0f;
+static CGFloat const kShadowOpacity = 0.2f;
 
 @implementation AnnouncementGalleryEventCollectionViewCell
 
@@ -47,6 +50,14 @@ static NSString *const kPlaceholderImageName = @"placeholder";
                                           @strongify(self);
                                           self.eventLogoImageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
                                       }];
+    
+    self.layer.shadowColor = [UIColor blackColor].CGColor;
+    self.layer.shadowOffset = CGSizeMake(0, kShadowOffset);
+    self.layer.shadowRadius = kShadowRadius;
+    self.layer.shadowOpacity = kShadowOpacity;
+    self.layer.masksToBounds = NO;
+    self.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.bounds].CGPath;
+    
     return YES;
 }
 
