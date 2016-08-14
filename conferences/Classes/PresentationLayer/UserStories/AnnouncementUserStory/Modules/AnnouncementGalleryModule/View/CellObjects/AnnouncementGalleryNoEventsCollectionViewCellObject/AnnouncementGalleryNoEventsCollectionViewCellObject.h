@@ -18,38 +18,13 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-
-@class EventPlainObject;
-@class DateFormatter;
+#import <Nimbus/NimbusCollections.h>
 
 /**
  @author Egor Tolstoy
  
- Factory for creating cell objects for AnnouncementGallery module
+ CellObject for "No Events" state of AnnouncementGallery module
  */
-@interface AnnouncementGalleryCellObjectFactory : NSObject
-
-@property (nonatomic, strong) DateFormatter *dateFormatter;
-
-/**
- @author Egor Tolstoy
- 
- Method returns cell objects for events array
- 
- @param events Events array
- 
- @return NSArray of cell objects
- */
-- (NSArray *)createCellObjectsWithEvents:(NSArray <EventPlainObject *> *)events;
-
-/**
- @author Egor Tolstoy
- 
- Method retuns cell objects for "No Events" state
- 
- @return NSArray of cell objects
- */
-- (NSArray *)createCellObjectsForNoEventsState;
+@interface AnnouncementGalleryNoEventsCollectionViewCellObject : NSObject <NICollectionViewNibCellObject>
 
 @end

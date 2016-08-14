@@ -23,6 +23,7 @@
 #import "EventPlainObject.h"
 #import "TechPlainObject.h"
 #import "AnnouncementGalleryEventCollectionViewCellObject.h"
+#import "AnnouncementGalleryNoEventsCollectionViewCellObject.h"
 #import "DateFormatter.h"
 
 #import "UIColor+Hex.h"
@@ -39,6 +40,11 @@
     }
     
     return [cellObjects copy];
+}
+
+- (NSArray *)createCellObjectsForNoEventsState {
+    NSArray *cellObjects = @[[AnnouncementGalleryNoEventsCollectionViewCellObject new]];
+    return cellObjects;
 }
 
 #pragma mark - Private methods

@@ -18,38 +18,16 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import "AnnouncementGalleryNoEventsCollectionViewCell.h"
 
-@class EventPlainObject;
-@class DateFormatter;
+#import "AnnouncementGalleryNoEventsCollectionViewCellObject.h"
 
-/**
- @author Egor Tolstoy
- 
- Factory for creating cell objects for AnnouncementGallery module
- */
-@interface AnnouncementGalleryCellObjectFactory : NSObject
+@implementation AnnouncementGalleryNoEventsCollectionViewCell
 
-@property (nonatomic, strong) DateFormatter *dateFormatter;
+#pragma mark - <NICollectionViewCell>
 
-/**
- @author Egor Tolstoy
- 
- Method returns cell objects for events array
- 
- @param events Events array
- 
- @return NSArray of cell objects
- */
-- (NSArray *)createCellObjectsWithEvents:(NSArray <EventPlainObject *> *)events;
-
-/**
- @author Egor Tolstoy
- 
- Method retuns cell objects for "No Events" state
- 
- @return NSArray of cell objects
- */
-- (NSArray *)createCellObjectsForNoEventsState;
+- (BOOL)shouldUpdateCellWithObject:(AnnouncementGalleryNoEventsCollectionViewCellObject *)object {
+    return YES;
+}
 
 @end

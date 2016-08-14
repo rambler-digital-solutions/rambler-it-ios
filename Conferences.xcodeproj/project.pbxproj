@@ -489,6 +489,9 @@
 		9FBE8A5A1D5F4E2800DA0C32 /* AnnouncementGalleryCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8A591D5F4E2800DA0C32 /* AnnouncementGalleryCollectionViewFlowLayout.m */; };
 		9FBE8A601D605E8000DA0C32 /* AnnouncementGalleryBackgroundColorAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8A5F1D605E8000DA0C32 /* AnnouncementGalleryBackgroundColorAnimator.m */; };
 		9FBE8A651D60737100DA0C32 /* AnnouncementGalleryPageSizeCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8A641D60737100DA0C32 /* AnnouncementGalleryPageSizeCalculator.m */; };
+		9FBE8A691D60B83D00DA0C32 /* AnnouncementGalleryNoEventsCollectionViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8A681D60B83D00DA0C32 /* AnnouncementGalleryNoEventsCollectionViewCellObject.m */; };
+		9FBE8A6D1D60B87D00DA0C32 /* AnnouncementGalleryNoEventsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8A6C1D60B87D00DA0C32 /* AnnouncementGalleryNoEventsCollectionViewCell.m */; };
+		9FBE8A6F1D60B8A300DA0C32 /* AnnouncementGalleryNoEventsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FBE8A6E1D60B8A300DA0C32 /* AnnouncementGalleryNoEventsCollectionViewCell.xib */; };
 		9FC1F6761D2824000070D9B5 /* EventListServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */; };
 		9FC1F6801D2838FA0070D9B5 /* EventListQueryTransformerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */; };
 		9FC1F6841D28391E0070D9B5 /* EventListQueryTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6831D28391E0070D9B5 /* EventListQueryTransformer.m */; };
@@ -1479,6 +1482,11 @@
 		9FBE8A5F1D605E8000DA0C32 /* AnnouncementGalleryBackgroundColorAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnnouncementGalleryBackgroundColorAnimator.m; path = Animators/AnnouncementGalleryBackgroundColorAnimator/AnnouncementGalleryBackgroundColorAnimator.m; sourceTree = "<group>"; };
 		9FBE8A631D60737100DA0C32 /* AnnouncementGalleryPageSizeCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnnouncementGalleryPageSizeCalculator.h; path = Helpers/AnnouncementGalleryPageSizeCalculator/AnnouncementGalleryPageSizeCalculator.h; sourceTree = "<group>"; };
 		9FBE8A641D60737100DA0C32 /* AnnouncementGalleryPageSizeCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnnouncementGalleryPageSizeCalculator.m; path = Helpers/AnnouncementGalleryPageSizeCalculator/AnnouncementGalleryPageSizeCalculator.m; sourceTree = "<group>"; };
+		9FBE8A671D60B83D00DA0C32 /* AnnouncementGalleryNoEventsCollectionViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnnouncementGalleryNoEventsCollectionViewCellObject.h; path = CellObjects/AnnouncementGalleryNoEventsCollectionViewCellObject/AnnouncementGalleryNoEventsCollectionViewCellObject.h; sourceTree = "<group>"; };
+		9FBE8A681D60B83D00DA0C32 /* AnnouncementGalleryNoEventsCollectionViewCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnnouncementGalleryNoEventsCollectionViewCellObject.m; path = CellObjects/AnnouncementGalleryNoEventsCollectionViewCellObject/AnnouncementGalleryNoEventsCollectionViewCellObject.m; sourceTree = "<group>"; };
+		9FBE8A6B1D60B87D00DA0C32 /* AnnouncementGalleryNoEventsCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnnouncementGalleryNoEventsCollectionViewCell.h; path = Cells/AnnouncementGalleryNoEventsCollectionViewCell/AnnouncementGalleryNoEventsCollectionViewCell.h; sourceTree = "<group>"; };
+		9FBE8A6C1D60B87D00DA0C32 /* AnnouncementGalleryNoEventsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnnouncementGalleryNoEventsCollectionViewCell.m; path = Cells/AnnouncementGalleryNoEventsCollectionViewCell/AnnouncementGalleryNoEventsCollectionViewCell.m; sourceTree = "<group>"; };
+		9FBE8A6E1D60B8A300DA0C32 /* AnnouncementGalleryNoEventsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AnnouncementGalleryNoEventsCollectionViewCell.xib; path = Cells/AnnouncementGalleryNoEventsCollectionViewCell/AnnouncementGalleryNoEventsCollectionViewCell.xib; sourceTree = "<group>"; };
 		9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListServiceTests.m; path = EventListServiceTests/EventListServiceTests.m; sourceTree = "<group>"; };
 		9FC1F6781D2826D10070D9B5 /* QueryTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QueryTransformer.h; path = CoreComponents/QueryTransformers/QueryTransformer.h; sourceTree = "<group>"; };
 		9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListQueryTransformerTests.m; path = CoreLayer/CoreComponents/QueryTransformers/EventListQueryTransformer/EventListQueryTransformerTests.m; sourceTree = "<group>"; };
@@ -6923,6 +6931,7 @@
 		9FBE8A461D5F496D00DA0C32 /* CellObjects */ = {
 			isa = PBXGroup;
 			children = (
+				9FBE8A661D60B82900DA0C32 /* AnnouncementGalleryNoEventsCollectionViewCellObject */,
 				9FBE8A471D5F497500DA0C32 /* AnnouncementGalleryEventCollectionViewCellObject */,
 			);
 			name = CellObjects;
@@ -6940,6 +6949,7 @@
 		9FBE8A4B1D5F4AAB00DA0C32 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				9FBE8A6A1D60B84A00DA0C32 /* AnnouncementGalleryNoEventsCollectionViewCell */,
 				9FBE8A4C1D5F4AAF00DA0C32 /* AnnouncementGalleryEventCollectionViewCell */,
 			);
 			name = Cells;
@@ -6997,6 +7007,25 @@
 				9FBE8A641D60737100DA0C32 /* AnnouncementGalleryPageSizeCalculator.m */,
 			);
 			name = AnnouncementGalleryPageSizeCalculator;
+			sourceTree = "<group>";
+		};
+		9FBE8A661D60B82900DA0C32 /* AnnouncementGalleryNoEventsCollectionViewCellObject */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE8A671D60B83D00DA0C32 /* AnnouncementGalleryNoEventsCollectionViewCellObject.h */,
+				9FBE8A681D60B83D00DA0C32 /* AnnouncementGalleryNoEventsCollectionViewCellObject.m */,
+			);
+			name = AnnouncementGalleryNoEventsCollectionViewCellObject;
+			sourceTree = "<group>";
+		};
+		9FBE8A6A1D60B84A00DA0C32 /* AnnouncementGalleryNoEventsCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE8A6B1D60B87D00DA0C32 /* AnnouncementGalleryNoEventsCollectionViewCell.h */,
+				9FBE8A6C1D60B87D00DA0C32 /* AnnouncementGalleryNoEventsCollectionViewCell.m */,
+				9FBE8A6E1D60B8A300DA0C32 /* AnnouncementGalleryNoEventsCollectionViewCell.xib */,
+			);
+			name = AnnouncementGalleryNoEventsCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		9FC1F6741D2823E40070D9B5 /* EventListServiceTests */ = {
@@ -7383,6 +7412,7 @@
 				9FFEAF061D2E41B4006E9649 /* DirectionCollectionViewCell.xib in Resources */,
 				63F613711CB00A220002AEF0 /* EventDescriptionTableViewCell.xib in Resources */,
 				63F613B41CB10FC80002AEF0 /* EventAnnouncementTableViewCell.xib in Resources */,
+				9FBE8A6F1D60B8A300DA0C32 /* AnnouncementGalleryNoEventsCollectionViewCell.xib in Resources */,
 				63FDCE141BBDBA2A00A43B60 /* Assets.xcassets in Resources */,
 				63F6137F1CB00A220002AEF0 /* SignUpAndSaveToCalendarEventTableViewCell.xib in Resources */,
 				667050421D4615A700DD9D6E /* GrayTableViewSectionHeaderAndFooterCell.xib in Resources */,
@@ -7602,6 +7632,7 @@
 				631808631C4A66FA00A61E7D /* LocalizedStrings.m in Sources */,
 				63F8F2821BF7925F000017F3 /* PresentationLayerHelpersAssembly.m in Sources */,
 				2BDDB1D31D3F7235007FD547 /* DirectionObject.m in Sources */,
+				9FBE8A6D1D60B87D00DA0C32 /* AnnouncementGalleryNoEventsCollectionViewCell.m in Sources */,
 				9F8E5FA61BC27CCE00DC10DB /* MappingConstants.m in Sources */,
 				66E999881D54B0DB00161D98 /* TagButtonCollectionViewCellObject.m in Sources */,
 				2B20648B1D3F9CE900246C8D /* LectureModelObject.m in Sources */,
@@ -7741,6 +7772,7 @@
 				63F6135C1CB00A220002AEF0 /* EventHeaderPresenter.m in Sources */,
 				9F40779C1D2C109200D47EF6 /* DirectionObjectMapper.m in Sources */,
 				9F0A85031BC1698B006F79FB /* OperationDebugDescriptionFormatter.m in Sources */,
+				9FBE8A691D60B83D00DA0C32 /* AnnouncementGalleryNoEventsCollectionViewCellObject.m in Sources */,
 				63F613861CB00A220002AEF0 /* PastEventCellObjectBuilder.m in Sources */,
 				9F0A84FC1BC1698B006F79FB /* CompoundOperationDebugDescriptionFormatter.m in Sources */,
 				9F0A84FE1BC1698B006F79FB /* RequestConfigurationOperation.m in Sources */,
