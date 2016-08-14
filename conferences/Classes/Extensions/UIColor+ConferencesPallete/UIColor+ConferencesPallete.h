@@ -27,31 +27,17 @@
  */
 @interface UIColor (ConferencesPallete)
 
-/**
- @author Zinovyev Konstantin
- 
- The color of the selected text in the search events in the Reports section
- 
- @return color
- */
-+ (UIColor *)colorForSelectedTextEventCellObject;
-
-/**
- @author Zinovyev Konstantin
- 
- The color of the selected text in the search lectures in the Reports section
- 
- @return color
- */
-+ (UIColor *)colorForSelectedTextLectureCellObject;
-
-/**
- @author Zinovyev Konstantin
- 
- The color of the selected text in the search speakers in the Reports section
- 
- @return color
- */
-+ (UIColor *)colorForSelectedTextSpeakerCellObject;
++ (UIColor *)LJ_black;
++ (UIColor *)LJ_grey;
++ (UIColor *)LJ_darkGray;
++ (UIColor *)LJ_lightGray;
++ (UIColor *)LJ_lightBlue;
++ (UIColor *)LJ_blue;
++ (UIColor *)LJ_green;
++ (UIColor *)LJ_darkGreen;
++ (UIColor *)LJ_red;
++ (UIColor *)LJ_orange;
++ (UIColor *)LJ_purple;
++ (UIColor *)LJ_yellow;
 
 @end

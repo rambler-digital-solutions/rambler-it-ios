@@ -49,11 +49,11 @@ static NSString *const kSeparatorTagsString = @", ";
     
     NSAttributedString *highlightedTitle = [self highlightInString:event.name
                                                        selectedText:selectedText
-                                                              color:[UIColor colorForSelectedTextEventCellObject]];
+                                                              color:[UIColor LJ_lightBlue]];
     NSString *stringFromTags = [self obtainTagsStringFromEvent:event];
     NSAttributedString *highlightedTags = [self highlightInString:stringFromTags
                                                       selectedText:selectedText
-                                                             color:[UIColor colorForSelectedTextEventCellObject]];
+                                                             color:[UIColor LJ_lightBlue]];
     ReportEventTableViewCellObject *cellObject = [ReportEventTableViewCellObject objectWithEvent:event
                                                                                          andDate:eventDate
                                                                                             tags:highlightedTags
@@ -64,11 +64,11 @@ static NSString *const kSeparatorTagsString = @", ";
 - (ReportLectureTableViewCellObject *)lectureCellObjectFromPlainObject:(LecturePlainObject *)lecture selectedText:(NSString *)selectedText {
     NSAttributedString *highlightedName = [self highlightInString:lecture.name
                                                      selectedText:selectedText
-                                                            color:[UIColor colorForSelectedTextLectureCellObject]];
+                                                            color:[UIColor LJ_lightBlue]];
     NSString *tagsString = [self obtainTagsStringFromLecture:lecture];
     NSAttributedString *highlightedTags = [self highlightInString:tagsString
                                                      selectedText:selectedText
-                                                            color:[UIColor colorForSelectedTextLectureCellObject]];
+                                                            color:[UIColor LJ_lightBlue]];
     ReportLectureTableViewCellObject *cellObject = [ReportLectureTableViewCellObject objectWithLecture:lecture
                                                                                                   tags:highlightedTags
                                                                                        highlightedText:highlightedName];
@@ -78,7 +78,7 @@ static NSString *const kSeparatorTagsString = @", ";
 - (ReportSpeakerTableViewCellObject *)speakerCellObjectFromPlainObject:(SpeakerPlainObject *)speaker selectedText:(NSString *)selectedText {
     NSAttributedString *highlightedString = [self highlightInString:speaker.name
                                                        selectedText:selectedText
-                                                              color:[UIColor colorForSelectedTextSpeakerCellObject]];
+                                                              color:[UIColor LJ_lightBlue]];
     ReportSpeakerTableViewCellObject *cellObject = [ReportSpeakerTableViewCellObject objectWithSpeaker:speaker
                                                                                        highlightedText:highlightedString];
     return cellObject;

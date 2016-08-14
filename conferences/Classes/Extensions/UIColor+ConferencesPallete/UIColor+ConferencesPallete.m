@@ -23,16 +23,52 @@
 
 @implementation UIColor (ConferencesPallete)
 
-+ (UIColor *)colorForSelectedTextEventCellObject {
++ (UIColor *)LJ_black {
+    return [UIColor colorFromHexString:@"#000000"];
+}
+
++ (UIColor *)LJ_grey {
+    return [UIColor colorFromHexString:@"#A0A0A0"];
+}
+
++ (UIColor *)LJ_darkGray {
+    return [UIColor colorFromHexString:@"#5A5A5A"];
+}
+
++ (UIColor *)LJ_lightGray {
+    return [UIColor colorFromHexString:@"#CDCDCD"];
+}
+
++ (UIColor *)LJ_lightBlue {
     return [UIColor colorFromHexString:@"#14AAE6"];
 }
 
-+ (UIColor *)colorForSelectedTextLectureCellObject {
-    return [UIColor colorFromHexString:@"#14AAE6"];
++ (UIColor *)LJ_blue {
+    return [UIColor colorFromHexString:@"#0019FF"];
 }
 
-+ (UIColor *)colorForSelectedTextSpeakerCellObject {
-    return [UIColor colorFromHexString:@"#14AAE6"];
++ (UIColor *)LJ_green {
+    return [UIColor colorFromHexString:@"#5EC251"];
+}
+
++ (UIColor *)LJ_darkGreen {
+    return [UIColor colorFromHexString:@"#238C5F"];
+}
+
++ (UIColor *)LJ_red {
+    return [UIColor colorFromHexString:@"#FF3A44"];
+}
+
++ (UIColor *)LJ_orange {
+    return [UIColor colorFromHexString:@"#FF7846"];
+}
+
++ (UIColor *)LJ_purple {
+    return [UIColor colorFromHexString:@"#804EFF"];
+}
+
++ (UIColor *)LJ_yellow {
+    return [UIColor colorFromHexString:@"#FFD000"];
 }
 
 @end
