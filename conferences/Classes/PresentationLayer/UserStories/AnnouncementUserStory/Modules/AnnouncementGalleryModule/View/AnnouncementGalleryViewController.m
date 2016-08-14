@@ -55,7 +55,8 @@
 }
 
 - (void)updateStateWithFutureEvents:(NSArray<EventPlainObject *> *)events {
-    self.view.backgroundColor = [UIColor colorFromHexString:events.firstObject.tech.color];
+    EventPlainObject *firstEvent = [events firstObject];
+    self.backgroundAdditionalView.backgroundColor = [UIColor colorFromHexString:firstEvent.tech.color];
     
     self.collectionView.dataSource = [self.dataDisplayManager dataSourceForCollectionView:self.collectionView
                                                                                withEvents:events];

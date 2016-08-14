@@ -31,14 +31,6 @@ static CGFloat const kAlphaOpacityBorder = 0.4;
 
 #pragma mark - Public methods
 
-/**
- @author Egor Tolstoy
- 
- 155, 465 - моменты переключения карт. Это pageWidth + pageWidth/2.
- 55-255, 365-565 - это интервалы перехода цветов
- 
- @param scrollOffset <#scrollOffset description#>
- */
 - (void)animateColorChangeWithScrollOffset:(CGFloat)scrollOffset {
     CGFloat farRightPoint = self.scrollView.contentSize.width - self.scrollView.frame.size.width;
     if (scrollOffset < 0 || scrollOffset > farRightPoint) {

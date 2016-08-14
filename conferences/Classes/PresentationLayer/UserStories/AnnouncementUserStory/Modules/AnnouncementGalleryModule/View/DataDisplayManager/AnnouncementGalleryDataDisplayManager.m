@@ -23,7 +23,10 @@
 #import "AnnouncementGalleryCellObjectFactory.h"
 #import "AnnouncementGalleryEventCollectionViewCellObject.h"
 #import "AnnouncementGalleryBackgroundColorAnimator.h"
+#import "EventPlainObject.h"
+#import "TechPlainObject.h"
 
+#import "UIColor+Hex.h"
 #import "EXTScope.h"
 #import <Nimbus/NimbusCollections.h>
 
@@ -56,24 +59,10 @@
 }
 
 - (UIColor *)obtainColorForPageWithNumber:(NSUInteger)pageNumber {
-    NSArray *colors = @[
-                        [UIColor redColor],
-                        [UIColor blueColor],
-                        [UIColor yellowColor],
-                        [UIColor greenColor],
-                        [UIColor grayColor],
-                        [UIColor lightGrayColor],
-                        [UIColor brownColor],
-                        [UIColor redColor],
-                        [UIColor blueColor],
-                        [UIColor yellowColor],
-                        [UIColor greenColor],
-                        [UIColor redColor],
-                        [UIColor blueColor],
-                        [UIColor yellowColor],
-                        [UIColor greenColor]
-                        ];
-    return colors[pageNumber];
+    EventPlainObject *event = self.events[pageNumber];
+    NSString *colorString = event.tech.color;
+    UIColor *eventColor = [UIColor colorFromHexString:colorString];
+    return eventColor;
 }
 
 #pragma mark - Public methods
