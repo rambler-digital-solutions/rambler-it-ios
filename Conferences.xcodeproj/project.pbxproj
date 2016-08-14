@@ -487,6 +487,8 @@
 		9FBE8A551D5F4B4D00DA0C32 /* AnnouncementGalleryEventCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8A531D5F4B4D00DA0C32 /* AnnouncementGalleryEventCollectionViewCell.m */; };
 		9FBE8A561D5F4B4D00DA0C32 /* AnnouncementGalleryEventCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FBE8A541D5F4B4D00DA0C32 /* AnnouncementGalleryEventCollectionViewCell.xib */; };
 		9FBE8A5A1D5F4E2800DA0C32 /* AnnouncementGalleryCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8A591D5F4E2800DA0C32 /* AnnouncementGalleryCollectionViewFlowLayout.m */; };
+		9FBE8A601D605E8000DA0C32 /* AnnouncementGalleryBackgroundColorAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8A5F1D605E8000DA0C32 /* AnnouncementGalleryBackgroundColorAnimator.m */; };
+		9FBE8A651D60737100DA0C32 /* AnnouncementGalleryPageSizeCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8A641D60737100DA0C32 /* AnnouncementGalleryPageSizeCalculator.m */; };
 		9FC1F6761D2824000070D9B5 /* EventListServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */; };
 		9FC1F6801D2838FA0070D9B5 /* EventListQueryTransformerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */; };
 		9FC1F6841D28391E0070D9B5 /* EventListQueryTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6831D28391E0070D9B5 /* EventListQueryTransformer.m */; };
@@ -1473,6 +1475,10 @@
 		9FBE8A581D5F4E2800DA0C32 /* AnnouncementGalleryCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnnouncementGalleryCollectionViewFlowLayout.h; path = CollectionViewFlowLayout/AnnouncementGalleryCollectionViewFlowLayout.h; sourceTree = "<group>"; };
 		9FBE8A591D5F4E2800DA0C32 /* AnnouncementGalleryCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnnouncementGalleryCollectionViewFlowLayout.m; path = CollectionViewFlowLayout/AnnouncementGalleryCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		9FBE8A5B1D5F4E8B00DA0C32 /* AnnouncementGalleryCollectionViewFlowLayoutConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AnnouncementGalleryCollectionViewFlowLayoutConstants.h; path = CollectionViewFlowLayout/AnnouncementGalleryCollectionViewFlowLayoutConstants.h; sourceTree = "<group>"; };
+		9FBE8A5E1D605E8000DA0C32 /* AnnouncementGalleryBackgroundColorAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnnouncementGalleryBackgroundColorAnimator.h; path = Animators/AnnouncementGalleryBackgroundColorAnimator/AnnouncementGalleryBackgroundColorAnimator.h; sourceTree = "<group>"; };
+		9FBE8A5F1D605E8000DA0C32 /* AnnouncementGalleryBackgroundColorAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnnouncementGalleryBackgroundColorAnimator.m; path = Animators/AnnouncementGalleryBackgroundColorAnimator/AnnouncementGalleryBackgroundColorAnimator.m; sourceTree = "<group>"; };
+		9FBE8A631D60737100DA0C32 /* AnnouncementGalleryPageSizeCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnnouncementGalleryPageSizeCalculator.h; path = Helpers/AnnouncementGalleryPageSizeCalculator/AnnouncementGalleryPageSizeCalculator.h; sourceTree = "<group>"; };
+		9FBE8A641D60737100DA0C32 /* AnnouncementGalleryPageSizeCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnnouncementGalleryPageSizeCalculator.m; path = Helpers/AnnouncementGalleryPageSizeCalculator/AnnouncementGalleryPageSizeCalculator.m; sourceTree = "<group>"; };
 		9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListServiceTests.m; path = EventListServiceTests/EventListServiceTests.m; sourceTree = "<group>"; };
 		9FC1F6781D2826D10070D9B5 /* QueryTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QueryTransformer.h; path = CoreComponents/QueryTransformers/QueryTransformer.h; sourceTree = "<group>"; };
 		9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListQueryTransformerTests.m; path = CoreLayer/CoreComponents/QueryTransformers/EventListQueryTransformer/EventListQueryTransformerTests.m; sourceTree = "<group>"; };
@@ -6872,6 +6878,8 @@
 		9FBE8A291D5F3CAD00DA0C32 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9FBE8A611D60735800DA0C32 /* Helpers */,
+				9FBE8A5C1D605E5A00DA0C32 /* Animators */,
 				9FBE8A571D5F4DE300DA0C32 /* CollectionViewFlowLayout */,
 				9FBE8A4B1D5F4AAB00DA0C32 /* Cells */,
 				9FBE8A461D5F496D00DA0C32 /* CellObjects */,
@@ -6955,6 +6963,40 @@
 				9FBE8A5B1D5F4E8B00DA0C32 /* AnnouncementGalleryCollectionViewFlowLayoutConstants.h */,
 			);
 			name = CollectionViewFlowLayout;
+			sourceTree = "<group>";
+		};
+		9FBE8A5C1D605E5A00DA0C32 /* Animators */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE8A5D1D605E6400DA0C32 /* AnnouncementGalleryBackgroundColorAnimator */,
+			);
+			name = Animators;
+			sourceTree = "<group>";
+		};
+		9FBE8A5D1D605E6400DA0C32 /* AnnouncementGalleryBackgroundColorAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE8A5E1D605E8000DA0C32 /* AnnouncementGalleryBackgroundColorAnimator.h */,
+				9FBE8A5F1D605E8000DA0C32 /* AnnouncementGalleryBackgroundColorAnimator.m */,
+			);
+			name = AnnouncementGalleryBackgroundColorAnimator;
+			sourceTree = "<group>";
+		};
+		9FBE8A611D60735800DA0C32 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE8A621D60735D00DA0C32 /* AnnouncementGalleryPageSizeCalculator */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		9FBE8A621D60735D00DA0C32 /* AnnouncementGalleryPageSizeCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE8A631D60737100DA0C32 /* AnnouncementGalleryPageSizeCalculator.h */,
+				9FBE8A641D60737100DA0C32 /* AnnouncementGalleryPageSizeCalculator.m */,
+			);
+			name = AnnouncementGalleryPageSizeCalculator;
 			sourceTree = "<group>";
 		};
 		9FC1F6741D2823E40070D9B5 /* EventListServiceTests */ = {
@@ -7629,6 +7671,7 @@
 				63F6134E1CB00A220002AEF0 /* AnnouncementListPresenter.m in Sources */,
 				9FBE8A411D5F449500DA0C32 /* AnnouncementGalleryDataDisplayManager.m in Sources */,
 				631808401C482B1300A61E7D /* SpeakerShortInfoInteractor.m in Sources */,
+				9FBE8A651D60737100DA0C32 /* AnnouncementGalleryPageSizeCalculator.m in Sources */,
 				9FBE89B31D5CB71300DA0C32 /* EventLaunchRouter.m in Sources */,
 				9F78D7441D59D6EF009DDCEA /* SpotlightCoreDataStackCoordinatorImplementation.m in Sources */,
 				667050531D46332200DD9D6E /* ReportsSearchCellObjectsBuilderImplementation.m in Sources */,
@@ -7720,6 +7763,7 @@
 				631FFE531BEF930200749DB8 /* ReportListModuleAssembly.m in Sources */,
 				9F4077A41D2C15C600D47EF6 /* ResourceClientAssembly.m in Sources */,
 				63F613611CB00A220002AEF0 /* EventPresenter.m in Sources */,
+				9FBE8A601D605E8000DA0C32 /* AnnouncementGalleryBackgroundColorAnimator.m in Sources */,
 				63F613501CB00A220002AEF0 /* AnnouncementListTableViewController.m in Sources */,
 				63F6135A1CB00A220002AEF0 /* EventHeaderModuleAssembly.m in Sources */,
 				9FBE8A081D5DFA1600DA0C32 /* VideoThumbnailGenerator.m in Sources */,

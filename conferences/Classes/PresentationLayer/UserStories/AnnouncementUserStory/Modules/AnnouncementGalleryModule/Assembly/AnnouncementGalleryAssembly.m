@@ -31,6 +31,9 @@
 #import "FutureEventFilter.h"
 #import "AnnouncementGalleryDataDisplayManager.h"
 #import "AnnouncementGalleryCellObjectFactory.h"
+#import "AnnouncementGalleryPageSizeCalculator.h"
+#import "AnnouncementGalleryBackgroundColorAnimator.h"
+#import "AnnouncementGalleryCollectionViewFlowLayout.h"
 
 #import <ViperMcFlurry/ViperMcFlurry.h>
 
@@ -45,6 +48,10 @@
                                                     with:[self presenterAnnouncementGalleryModule]];
                               [definition injectProperty:@selector(dataDisplayManager)
                                                     with:[self dataDisplayManagerAnnouncementGalleryModule]];
+                              [definition injectProperty:@selector(backgroundColorAnimator)
+                                                    with:[self announcementGalleryBackgroundColorAnimator]];
+                              [definition injectProperty:@selector(collectionViewFlowLayout)
+                                                    with:[self flowLayoutAnnouncementGalleryModule]];
                           }];
 }
 
@@ -89,9 +96,10 @@
 - (AnnouncementGalleryDataDisplayManager *)dataDisplayManagerAnnouncementGalleryModule {
     return [TyphoonDefinition withClass:[AnnouncementGalleryDataDisplayManager class]
                           configuration:^(TyphoonDefinition *definition) {
-                              [definition useInitializer:@selector(initWithCellObjectFactory:delegate:)
+                              [definition useInitializer:@selector(initWithCellObjectFactory:animator:delegate:)
                                               parameters:^(TyphoonMethod *initializer) {
                                                   [initializer injectParameterWith:[self cellObjectFactoryAnnouncementGalleryModule]];
+                                                  [initializer injectParameterWith:[self announcementGalleryBackgroundColorAnimator]];
                                                   [initializer injectParameterWith:[self viewAnnouncementGalleryModule]];
                                               }];
                           }];
@@ -103,6 +111,28 @@
                               [definition injectProperty:@selector(dateFormatter)
                                                     with:[self.presentationLayerHelpersAssembly dateFormatter]];
                           }];
+}
+
+- (AnnouncementGalleryCollectionViewFlowLayout *)flowLayoutAnnouncementGalleryModule {
+    return [TyphoonDefinition withClass:[AnnouncementGalleryCollectionViewFlowLayout class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(calculator)
+                                                    with:[self announcementGalleryPageSizeCalculator]];
+                          }];
+}
+
+- (AnnouncementGalleryBackgroundColorAnimator *)announcementGalleryBackgroundColorAnimator {
+    return [TyphoonDefinition withClass:[AnnouncementGalleryBackgroundColorAnimator class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(dataSource)
+                                                    with:[self dataDisplayManagerAnnouncementGalleryModule]];
+                              [definition injectProperty:@selector(calculator)
+                                                    with:[self announcementGalleryPageSizeCalculator]];
+                          }];
+}
+
+- (AnnouncementGalleryPageSizeCalculator *)announcementGalleryPageSizeCalculator {
+    return [TyphoonDefinition withClass:[AnnouncementGalleryPageSizeCalculator class]];
 }
 
 @end

@@ -18,28 +18,25 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
+#import "AnnouncementGalleryPageSizeCalculator.h"
 
-#import "AnnouncementGalleryViewInput.h"
-#import "AnnouncementGalleryDataDisplayManager.h"
+#import "AnnouncementGalleryCollectionViewFlowLayoutConstants.h"
 
-@protocol AnnouncementGalleryViewOutput;
-@class AnnouncementGalleryBackgroundColorAnimator;
-@class AnnouncementGalleryDataDisplayManager;
-@class AnnouncementGalleryCollectionViewFlowLayout;
+@implementation AnnouncementGalleryPageSizeCalculator
 
-@interface AnnouncementGalleryViewController : UIViewController <AnnouncementGalleryViewInput, AnnouncementGalleryDataDisplayManagerDelegate>
+- (CGSize)calculateEventCardSizeForViewWidth:(CGFloat)viewWidth {
+    CGSize itemSize;
+    if (viewWidth >= kAnnouncementGalleryCollectionViewThresholdWidth) {
+        itemSize = CGSizeMake(kEventCardNormalWidth, kEventCardNormalHeight);
+    } else {
+        itemSize = CGSizeMake(kEventCardCompactWidth, kEventCardCompactHeight);
+    }
+    return itemSize;
+}
 
-#pragma mark - Interface
-
-@property (nonatomic, weak) IBOutlet UIView *backgroundAdditionalView;
-@property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
-
-#pragma mark - Dependencies
-
-@property (nonatomic, strong) id<AnnouncementGalleryViewOutput> output;
-@property (nonatomic, strong) AnnouncementGalleryDataDisplayManager *dataDisplayManager;
-@property (nonatomic, strong) AnnouncementGalleryBackgroundColorAnimator *backgroundColorAnimator;
-@property (nonatomic, strong) AnnouncementGalleryCollectionViewFlowLayout *collectionViewFlowLayout;
+- (CGFloat)calculatePageSizeForViewWidth:(CGFloat)viewWidth {
+    CGSize itemSize = [self calculateEventCardSizeForViewWidth:viewWidth];
+    return itemSize.width + kEventCardLineSpacing;
+}
 
 @end

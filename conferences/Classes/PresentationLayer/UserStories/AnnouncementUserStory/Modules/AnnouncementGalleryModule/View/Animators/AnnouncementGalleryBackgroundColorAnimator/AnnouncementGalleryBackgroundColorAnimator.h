@@ -18,28 +18,48 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <CoreGraphics/CoreGraphics.h>
 
-#import "AnnouncementGalleryViewInput.h"
-#import "AnnouncementGalleryDataDisplayManager.h"
+@class UIColor;
+@class UIView;
+@class AnnouncementGalleryPageSizeCalculator;
+@protocol AnnouncementGalleryBackgroundColorAnimatorDataSource;
 
-@protocol AnnouncementGalleryViewOutput;
-@class AnnouncementGalleryBackgroundColorAnimator;
-@class AnnouncementGalleryDataDisplayManager;
-@class AnnouncementGalleryCollectionViewFlowLayout;
+/**
+ @author Egor Tolstoy
+ 
+ The object responsible for animating background color change
+ */
+@interface AnnouncementGalleryBackgroundColorAnimator : NSObject
 
-@interface AnnouncementGalleryViewController : UIViewController <AnnouncementGalleryViewInput, AnnouncementGalleryDataDisplayManagerDelegate>
+@property (nonatomic, weak) UIView *view;
+@property (nonatomic, weak) UIView *additionalView;
+@property (nonatomic, weak) id<AnnouncementGalleryBackgroundColorAnimatorDataSource> dataSource;
+@property (nonatomic, strong) AnnouncementGalleryPageSizeCalculator *calculator;
 
-#pragma mark - Interface
+/**
+ @author Egor Tolstoy
+ 
+ Method tells the animator that a scroll offset changed
+ 
+ @param scrollOffset UICollectionView offset
+ */
+- (void)animateColorChangeWithScrollOffset:(CGFloat)scrollOffset;
 
-@property (nonatomic, weak) IBOutlet UIView *backgroundAdditionalView;
-@property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
+@end
 
-#pragma mark - Dependencies
+@protocol AnnouncementGalleryBackgroundColorAnimatorDataSource <NSObject>
 
-@property (nonatomic, strong) id<AnnouncementGalleryViewOutput> output;
-@property (nonatomic, strong) AnnouncementGalleryDataDisplayManager *dataDisplayManager;
-@property (nonatomic, strong) AnnouncementGalleryBackgroundColorAnimator *backgroundColorAnimator;
-@property (nonatomic, strong) AnnouncementGalleryCollectionViewFlowLayout *collectionViewFlowLayout;
+/**
+ @author Egor Tolstoy
+ 
+ The method returns a color for a specific page
+ 
+ @param pageNumber Page number
+ 
+ @return UIColor
+ */
+- (UIColor *)obtainColorForPageWithNumber:(NSUInteger)pageNumber;
 
 @end

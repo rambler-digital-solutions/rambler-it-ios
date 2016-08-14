@@ -20,11 +20,15 @@
 
 #import <UIKit/UIKit.h>
 
+@class AnnouncementGalleryPageSizeCalculator;
+
 /**
  @author Egor Tolstoy
  
  Custom collection view flow layout for AnnouncementGallery module
  */
 @interface AnnouncementGalleryCollectionViewFlowLayout : UICollectionViewFlowLayout
+
+@property (nonatomic, strong) AnnouncementGalleryPageSizeCalculator *calculator;
 
 @end

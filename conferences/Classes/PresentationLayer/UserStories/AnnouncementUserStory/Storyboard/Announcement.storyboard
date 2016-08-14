@@ -16,23 +16,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Sbt-Sf-L4Y">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1dW-rk-T4d">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Sbt-Sf-L4Y">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewLayout key="collectionViewLayout" id="4bE-UB-04j" customClass="AnnouncementGalleryCollectionViewFlowLayout"/>
                                 <cells/>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="1dW-rk-T4d" firstAttribute="leading" secondItem="LQ0-C4-6R2" secondAttribute="leading" id="DUl-rN-nVd"/>
                             <constraint firstItem="Sbt-Sf-L4Y" firstAttribute="leading" secondItem="LQ0-C4-6R2" secondAttribute="leading" id="Uuu-KH-FjX"/>
                             <constraint firstAttribute="trailing" secondItem="Sbt-Sf-L4Y" secondAttribute="trailing" id="Uz1-Ah-hl9"/>
+                            <constraint firstItem="1dW-rk-T4d" firstAttribute="top" secondItem="LQ0-C4-6R2" secondAttribute="top" id="YDZ-hu-dGk"/>
+                            <constraint firstAttribute="trailing" secondItem="1dW-rk-T4d" secondAttribute="trailing" id="f0w-hw-rFz"/>
                             <constraint firstItem="Sbt-Sf-L4Y" firstAttribute="top" secondItem="LQ0-C4-6R2" secondAttribute="top" id="vNo-Mc-pvZ"/>
+                            <constraint firstAttribute="bottom" secondItem="1dW-rk-T4d" secondAttribute="bottom" id="wUF-nt-IMD"/>
                             <constraint firstItem="4Ae-hD-WCO" firstAttribute="top" secondItem="Sbt-Sf-L4Y" secondAttribute="bottom" id="xdZ-jw-IQY"/>
                         </constraints>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="backgroundAdditionalView" destination="1dW-rk-T4d" id="PCl-Z9-40T"/>
                         <outlet property="collectionView" destination="Sbt-Sf-L4Y" id="cYF-Lr-Jlm"/>
                         <segue destination="Rvi-6t-DcR" kind="push" identifier="AnnouncementGalleryModuleToEventModuleSegue" id="IbO-oW-ts1"/>
                     </connections>

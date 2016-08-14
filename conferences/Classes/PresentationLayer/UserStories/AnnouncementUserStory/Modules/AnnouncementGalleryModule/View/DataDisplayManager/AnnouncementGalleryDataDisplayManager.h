@@ -22,11 +22,13 @@
 
 @class EventPlainObject;
 @class AnnouncementGalleryCellObjectFactory;
+@class AnnouncementGalleryBackgroundColorAnimator;
 @protocol AnnouncementGalleryDataDisplayManagerDelegate;
 
 @interface AnnouncementGalleryDataDisplayManager : NSObject
 
 - (instancetype)initWithCellObjectFactory:(AnnouncementGalleryCellObjectFactory *)cellObjectFactory
+                                 animator:(AnnouncementGalleryBackgroundColorAnimator *)animator
                                  delegate:(id<AnnouncementGalleryDataDisplayManagerDelegate>)delegate;
 
 /**

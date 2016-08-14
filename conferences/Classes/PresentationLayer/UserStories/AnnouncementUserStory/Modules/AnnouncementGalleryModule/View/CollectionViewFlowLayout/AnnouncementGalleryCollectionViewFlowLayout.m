@@ -21,13 +21,14 @@
 #import "AnnouncementGalleryCollectionViewFlowLayout.h"
 
 #import "AnnouncementGalleryCollectionViewFlowLayoutConstants.h"
+#import "AnnouncementGalleryPageSizeCalculator.h"
 
 @implementation AnnouncementGalleryCollectionViewFlowLayout
 
 - (void)prepareLayout {
     [super prepareLayout];
     
-    self.itemSize = [self calculateEventCardSizeForCollectionViewSize:self.collectionView.frame.size];
+    self.itemSize = [self.calculator calculateEventCardSizeForViewWidth:self.collectionView.frame.size.width];
     
     self.minimumLineSpacing = kEventCardLineSpacing;
     self.scrollDirection = UICollectionViewScrollDirectionHorizontal;
@@ -40,7 +41,7 @@
 }
 
 - (CGFloat)pageWidth {
-    return self.itemSize.width + self.minimumLineSpacing;
+    return [self.calculator calculatePageSizeForViewWidth:self.collectionView.frame.size.width];
 }
 
 - (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset
@@ -62,18 +63,6 @@
 
 - (CGFloat)flickVelocity {
     return kEventCardFlickVelocity;
-}
-
-- (CGSize)calculateEventCardSizeForCollectionViewSize:(CGSize)collectionViewSize {
-    CGFloat collectionWidth = collectionViewSize.width;
-    
-    CGSize itemSize;
-    if (collectionWidth >= kAnnouncementGalleryCollectionViewThresholdWidth) {
-        itemSize = CGSizeMake(kEventCardNormalWidth, kEventCardNormalHeight);
-    } else {
-        itemSize = CGSizeMake(kEventCardCompactWidth, kEventCardCompactHeight);
-    }
-    return itemSize;
 }
 
 @end

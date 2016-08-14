@@ -22,16 +22,20 @@
 
 #import "AnnouncementGalleryCellObjectFactory.h"
 #import "AnnouncementGalleryEventCollectionViewCellObject.h"
+#import "AnnouncementGalleryBackgroundColorAnimator.h"
 
 #import "EXTScope.h"
 #import <Nimbus/NimbusCollections.h>
 
-@interface AnnouncementGalleryDataDisplayManager () <UICollectionViewDelegateFlowLayout>
+@interface AnnouncementGalleryDataDisplayManager () <UICollectionViewDelegateFlowLayout, AnnouncementGalleryBackgroundColorAnimatorDataSource>
 
 @property (nonatomic, strong) NICollectionViewModel *collectionModel;
 @property (nonatomic, strong) NICollectionViewActions *collectionActions;
 @property (nonatomic, strong) AnnouncementGalleryCellObjectFactory *cellObjectFactory;
 @property (nonatomic, weak) id<AnnouncementGalleryDataDisplayManagerDelegate> delegate;
+@property (nonatomic, strong) AnnouncementGalleryBackgroundColorAnimator *animator;
+
+@property (nonatomic, strong) NSArray *events;
 
 @end
 
@@ -40,19 +44,35 @@
 #pragma mark - Initialization
 
 - (instancetype)initWithCellObjectFactory:(AnnouncementGalleryCellObjectFactory *)cellObjectFactory
+                                 animator:(AnnouncementGalleryBackgroundColorAnimator *)animator
                                  delegate:(id<AnnouncementGalleryDataDisplayManagerDelegate>)delegate {
     self = [super init];
     if (self) {
         _cellObjectFactory = cellObjectFactory;
         _delegate = delegate;
+        _animator = animator;
     }
     return self;
+}
+
+- (UIColor *)obtainColorForPageWithNumber:(NSUInteger)pageNumber {
+    NSArray *colors = @[
+                        [UIColor redColor],
+                        [UIColor blueColor],
+                        [UIColor yellowColor],
+                        [UIColor greenColor],
+                        [UIColor grayColor],
+                        [UIColor lightGrayColor],
+                        [UIColor brownColor]
+                        ];
+    return colors[pageNumber];
 }
 
 #pragma mark - Public methods
 
 - (id<UICollectionViewDataSource>)dataSourceForCollectionView:(UICollectionView *)collectionView
                                                    withEvents:(NSArray<EventPlainObject *> *)events {
+    self.events = events;
     NSArray *cellObjects = [self generateCellObjectsFromEvents:events];
     self.collectionModel = [[NICollectionViewModel alloc] initWithListArray:cellObjects
                                                                    delegate:(id)[NICollectionViewCellFactory class]];
@@ -71,6 +91,10 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     return [self.collectionActions collectionView:collectionView
                          didSelectItemAtIndexPath:indexPath];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [self.animator animateColorChangeWithScrollOffset:scrollView.contentOffset.x];
 }
 
 #pragma mark - Private methods

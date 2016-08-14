@@ -21,6 +21,12 @@
 #import "AnnouncementGalleryViewController.h"
 
 #import "AnnouncementGalleryViewOutput.h"
+#import "AnnouncementGalleryBackgroundColorAnimator.h"
+#import "AnnouncementGalleryCollectionViewFlowLayout.h"
+
+#import "EventPlainObject.h"
+#import "TechPlainObject.h"
+#import "UIColor+Hex.h"
 
 @implementation AnnouncementGalleryViewController
 
@@ -40,9 +46,16 @@
 
 - (void)setupInitialState {
     self.navigationController.navigationBar.hidden = YES;
+    
+    self.backgroundColorAnimator.view = self.view;
+    self.backgroundColorAnimator.additionalView = self.backgroundAdditionalView;
+    
+    self.collectionView.collectionViewLayout = self.collectionViewFlowLayout;
 }
 
 - (void)updateStateWithFutureEvents:(NSArray<EventPlainObject *> *)events {
+    self.view.backgroundColor = [UIColor colorFromHexString:events.firstObject.tech.color];
+    
     self.collectionView.dataSource = [self.dataDisplayManager dataSourceForCollectionView:self.collectionView
                                                                                withEvents:events];
     self.collectionView.delegate = [self.dataDisplayManager delegateForCollectionView:self.collectionView];
