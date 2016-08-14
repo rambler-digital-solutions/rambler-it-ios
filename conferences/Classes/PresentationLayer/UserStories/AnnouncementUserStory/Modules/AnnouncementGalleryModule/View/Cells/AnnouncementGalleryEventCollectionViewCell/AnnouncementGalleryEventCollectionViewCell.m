@@ -22,13 +22,11 @@
 
 #import "AnnouncementGalleryEventCollectionViewCellObject.h"
 #import "EXTScope.h"
+#import "AnnouncementGalleryCollectionViewCellShadower.h"
 
 #import <SDWebImage/UIImageView+WebCache.h>
 
 static NSString *const kPlaceholderImageName = @"placeholder";
-static CGFloat const kShadowOffset = 5.0f;
-static CGFloat const kShadowRadius = 65.0f;
-static CGFloat const kShadowOpacity = 0.2f;
 
 @implementation AnnouncementGalleryEventCollectionViewCell
 
@@ -51,14 +49,14 @@ static CGFloat const kShadowOpacity = 0.2f;
                                           self.eventLogoImageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
                                       }];
     
-    self.layer.shadowColor = [UIColor blackColor].CGColor;
-    self.layer.shadowOffset = CGSizeMake(0, kShadowOffset);
-    self.layer.shadowRadius = kShadowRadius;
-    self.layer.shadowOpacity = kShadowOpacity;
-    self.layer.masksToBounds = NO;
-    self.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.bounds].CGPath;
+    [self setupShadows];
     
     return YES;
+}
+
+- (void)setupShadows {
+    AnnouncementGalleryCollectionViewCellShadower *shadower = [AnnouncementGalleryCollectionViewCellShadower new];
+    [shadower applyShadowOnView:self];
 }
 
 @end

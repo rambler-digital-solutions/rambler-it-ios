@@ -18,20 +18,23 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "AnnouncementGalleryNoEventsCollectionViewCell.h"
-
-#import "AnnouncementGalleryNoEventsCollectionViewCellObject.h"
 #import "AnnouncementGalleryCollectionViewCellShadower.h"
 
-@implementation AnnouncementGalleryNoEventsCollectionViewCell
+#import <UIKit/UIKit.h>
 
-#pragma mark - <NICollectionViewCell>
+static CGFloat const kShadowOffset = 5.0f;
+static CGFloat const kShadowRadius = 65.0f;
+static CGFloat const kShadowOpacity = 0.2f;
 
-- (BOOL)shouldUpdateCellWithObject:(AnnouncementGalleryNoEventsCollectionViewCellObject *)object {
-    AnnouncementGalleryCollectionViewCellShadower *shadower = [AnnouncementGalleryCollectionViewCellShadower new];
-    [shadower applyShadowOnView:self];
-    
-    return YES;
+@implementation AnnouncementGalleryCollectionViewCellShadower
+
+- (void)applyShadowOnView:(UIView *)view {
+    view.layer.shadowColor = [UIColor blackColor].CGColor;
+    view.layer.shadowOffset = CGSizeMake(0, kShadowOffset);
+    view.layer.shadowRadius = kShadowRadius;
+    view.layer.shadowOpacity = kShadowOpacity;
+    view.layer.masksToBounds = NO;
+    view.layer.shadowPath = [UIBezierPath bezierPathWithRect:view.bounds].CGPath;
 }
 
 @end

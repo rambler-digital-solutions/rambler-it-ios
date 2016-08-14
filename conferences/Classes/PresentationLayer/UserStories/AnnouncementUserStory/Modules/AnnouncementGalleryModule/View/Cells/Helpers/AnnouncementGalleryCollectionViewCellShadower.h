@@ -18,20 +18,24 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "AnnouncementGalleryNoEventsCollectionViewCell.h"
+#import <Foundation/Foundation.h>
 
-#import "AnnouncementGalleryNoEventsCollectionViewCellObject.h"
-#import "AnnouncementGalleryCollectionViewCellShadower.h"
+@class UIView;
 
-@implementation AnnouncementGalleryNoEventsCollectionViewCell
+/**
+ @author Egor Tolstoy
+ 
+ THis object is responsible for applying proper shadows on cards in AnnouncementGallery module
+ */
+@interface AnnouncementGalleryCollectionViewCellShadower : NSObject
 
-#pragma mark - <NICollectionViewCell>
-
-- (BOOL)shouldUpdateCellWithObject:(AnnouncementGalleryNoEventsCollectionViewCellObject *)object {
-    AnnouncementGalleryCollectionViewCellShadower *shadower = [AnnouncementGalleryCollectionViewCellShadower new];
-    [shadower applyShadowOnView:self];
-    
-    return YES;
-}
+/**
+ @author Egor Tolstoy
+ 
+ Method applies shadows on a specific view
+ 
+ @param view UIView
+ */
+- (void)applyShadowOnView:(UIView *)view;
 
 @end

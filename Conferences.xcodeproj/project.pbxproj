@@ -492,6 +492,7 @@
 		9FBE8A691D60B83D00DA0C32 /* AnnouncementGalleryNoEventsCollectionViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8A681D60B83D00DA0C32 /* AnnouncementGalleryNoEventsCollectionViewCellObject.m */; };
 		9FBE8A6D1D60B87D00DA0C32 /* AnnouncementGalleryNoEventsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8A6C1D60B87D00DA0C32 /* AnnouncementGalleryNoEventsCollectionViewCell.m */; };
 		9FBE8A6F1D60B8A300DA0C32 /* AnnouncementGalleryNoEventsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FBE8A6E1D60B8A300DA0C32 /* AnnouncementGalleryNoEventsCollectionViewCell.xib */; };
+		9FBE8A741D60BF1800DA0C32 /* AnnouncementGalleryCollectionViewCellShadower.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8A731D60BF1800DA0C32 /* AnnouncementGalleryCollectionViewCellShadower.m */; };
 		9FC1F6761D2824000070D9B5 /* EventListServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */; };
 		9FC1F6801D2838FA0070D9B5 /* EventListQueryTransformerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */; };
 		9FC1F6841D28391E0070D9B5 /* EventListQueryTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6831D28391E0070D9B5 /* EventListQueryTransformer.m */; };
@@ -1487,6 +1488,8 @@
 		9FBE8A6B1D60B87D00DA0C32 /* AnnouncementGalleryNoEventsCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnnouncementGalleryNoEventsCollectionViewCell.h; path = Cells/AnnouncementGalleryNoEventsCollectionViewCell/AnnouncementGalleryNoEventsCollectionViewCell.h; sourceTree = "<group>"; };
 		9FBE8A6C1D60B87D00DA0C32 /* AnnouncementGalleryNoEventsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnnouncementGalleryNoEventsCollectionViewCell.m; path = Cells/AnnouncementGalleryNoEventsCollectionViewCell/AnnouncementGalleryNoEventsCollectionViewCell.m; sourceTree = "<group>"; };
 		9FBE8A6E1D60B8A300DA0C32 /* AnnouncementGalleryNoEventsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AnnouncementGalleryNoEventsCollectionViewCell.xib; path = Cells/AnnouncementGalleryNoEventsCollectionViewCell/AnnouncementGalleryNoEventsCollectionViewCell.xib; sourceTree = "<group>"; };
+		9FBE8A721D60BF1800DA0C32 /* AnnouncementGalleryCollectionViewCellShadower.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnnouncementGalleryCollectionViewCellShadower.h; path = Cells/Helpers/AnnouncementGalleryCollectionViewCellShadower.h; sourceTree = "<group>"; };
+		9FBE8A731D60BF1800DA0C32 /* AnnouncementGalleryCollectionViewCellShadower.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnnouncementGalleryCollectionViewCellShadower.m; path = Cells/Helpers/AnnouncementGalleryCollectionViewCellShadower.m; sourceTree = "<group>"; };
 		9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListServiceTests.m; path = EventListServiceTests/EventListServiceTests.m; sourceTree = "<group>"; };
 		9FC1F6781D2826D10070D9B5 /* QueryTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QueryTransformer.h; path = CoreComponents/QueryTransformers/QueryTransformer.h; sourceTree = "<group>"; };
 		9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListQueryTransformerTests.m; path = CoreLayer/CoreComponents/QueryTransformers/EventListQueryTransformer/EventListQueryTransformerTests.m; sourceTree = "<group>"; };
@@ -6949,6 +6952,7 @@
 		9FBE8A4B1D5F4AAB00DA0C32 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				9FBE8A701D60BEF500DA0C32 /* Helpers */,
 				9FBE8A6A1D60B84A00DA0C32 /* AnnouncementGalleryNoEventsCollectionViewCell */,
 				9FBE8A4C1D5F4AAF00DA0C32 /* AnnouncementGalleryEventCollectionViewCell */,
 			);
@@ -7026,6 +7030,23 @@
 				9FBE8A6E1D60B8A300DA0C32 /* AnnouncementGalleryNoEventsCollectionViewCell.xib */,
 			);
 			name = AnnouncementGalleryNoEventsCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		9FBE8A701D60BEF500DA0C32 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE8A711D60BEF900DA0C32 /* AnnouncementGalleryCollectionViewCellShadower */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		9FBE8A711D60BEF900DA0C32 /* AnnouncementGalleryCollectionViewCellShadower */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE8A721D60BF1800DA0C32 /* AnnouncementGalleryCollectionViewCellShadower.h */,
+				9FBE8A731D60BF1800DA0C32 /* AnnouncementGalleryCollectionViewCellShadower.m */,
+			);
+			name = AnnouncementGalleryCollectionViewCellShadower;
 			sourceTree = "<group>";
 		};
 		9FC1F6741D2823E40070D9B5 /* EventListServiceTests */ = {
@@ -7785,6 +7806,7 @@
 				63F613741CB00A220002AEF0 /* LectureInfoTableViewCell.m in Sources */,
 				2B429A631D4798D4004C005F /* EventViewAnimator.m in Sources */,
 				9F533A891D50DE84004F8E82 /* FetchedResultsControllerChangeProvider.m in Sources */,
+				9FBE8A741D60BF1800DA0C32 /* AnnouncementGalleryCollectionViewCellShadower.m in Sources */,
 				9F0A85021BC1698B006F79FB /* ResponseValidationOperation.m in Sources */,
 				9FBE89B51D5CB71300DA0C32 /* SpeakerLaunchRouter.m in Sources */,
 				63F6135B1CB00A220002AEF0 /* EventHeaderInteractor.m in Sources */,
