@@ -35,9 +35,7 @@
     
     NSArray *cachedFutureEvents = [self.interactor obtainFutureEventList];
     
-    if (cachedFutureEvents) {
-        [self.view updateStateWithFutureEvents:cachedFutureEvents];
-    }
+    [self updateViewWithEvents:cachedFutureEvents];
 }
 
 - (void)didTriggerAnnouncementTapEventWithObject:(EventPlainObject *)event {
@@ -48,7 +46,17 @@
 #pragma mark - Методы AnnouncementGalleryInteractorOutput
 
 - (void)didUpdateEventListWithFutureEvents:(NSArray<EventPlainObject *> *)events {
-    
+    [self updateViewWithEvents:events];
+}
+
+#pragma mark - Private methods
+
+- (void)updateViewWithEvents:(NSArray *)events {
+    if (events.count > 0) {
+        [self.view updateStateWithFutureEvents:events];
+    } else {
+        [self.view triggerNoFutureEventsState];
+    }
 }
 
 @end

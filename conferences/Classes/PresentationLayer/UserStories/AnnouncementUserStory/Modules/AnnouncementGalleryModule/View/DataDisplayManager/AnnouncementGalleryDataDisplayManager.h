@@ -34,15 +34,13 @@
 /**
  @author Egor Tolstoy
  
- Returns a data source object for UICollectionView with events
+ Returns a data source object for UICollectionView
  
- @param collectionView UICollectionView with events
- @param events         Future events
+ @param collectionView UICollectionView
  
  @return Data source
  */
-- (id<UICollectionViewDataSource>)dataSourceForCollectionView:(UICollectionView *)collectionView
-                                                   withEvents:(NSArray <EventPlainObject *> *)events;
+- (id<UICollectionViewDataSource>)dataSourceForCollectionView:(UICollectionView *)collectionView;
 
 /**
  @author Egor Tolstoy
@@ -54,6 +52,22 @@
  @return Delegate
  */
 - (id<UICollectionViewDelegate>)delegateForCollectionView:(UICollectionView *)collectionView;
+
+/**
+ @author Egor Tolstoy
+ 
+ Updates a collection view data source with events array
+ 
+ @param events Events array
+ */
+- (void)updateDataSourceWithEvents:(NSArray *)events;
+
+/**
+ @author Egor Tolstoy
+ 
+ Setups "No events" state
+ */
+- (void)updateDataSourceWithNoEventsState;
 
 @end
 

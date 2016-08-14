@@ -52,16 +52,20 @@
     self.backgroundColorAnimator.scrollView = self.collectionView;
     
     self.collectionView.collectionViewLayout = self.collectionViewFlowLayout;
+    self.collectionView.dataSource = [self.dataDisplayManager dataSourceForCollectionView:self.collectionView];
+    self.collectionView.delegate = [self.dataDisplayManager delegateForCollectionView:self.collectionView];
 }
 
 - (void)updateStateWithFutureEvents:(NSArray<EventPlainObject *> *)events {
     EventPlainObject *firstEvent = [events firstObject];
     self.backgroundAdditionalView.backgroundColor = [UIColor colorFromHexString:firstEvent.tech.color];
     
-    self.collectionView.dataSource = [self.dataDisplayManager dataSourceForCollectionView:self.collectionView
-                                                                               withEvents:events];
-    self.collectionView.delegate = [self.dataDisplayManager delegateForCollectionView:self.collectionView];
-    
+    [self.dataDisplayManager updateDataSourceWithEvents:events];
+    [self.collectionView reloadData];
+}
+
+- (void)triggerNoFutureEventsState {
+    [self.dataDisplayManager updateDataSourceWithNoEventsState];
     [self.collectionView reloadData];
 }
 

@@ -32,7 +32,7 @@
 
 @interface AnnouncementGalleryDataDisplayManager () <UICollectionViewDelegateFlowLayout, AnnouncementGalleryBackgroundColorAnimatorDataSource>
 
-@property (nonatomic, strong) NICollectionViewModel *collectionModel;
+@property (nonatomic, strong) NIMutableCollectionViewModel *collectionModel;
 @property (nonatomic, strong) NICollectionViewActions *collectionActions;
 @property (nonatomic, strong) AnnouncementGalleryCellObjectFactory *cellObjectFactory;
 @property (nonatomic, weak) id<AnnouncementGalleryDataDisplayManagerDelegate> delegate;
@@ -67,12 +67,10 @@
 
 #pragma mark - Public methods
 
-- (id<UICollectionViewDataSource>)dataSourceForCollectionView:(UICollectionView *)collectionView
-                                                   withEvents:(NSArray<EventPlainObject *> *)events {
-    self.events = events;
-    NSArray *cellObjects = [self generateCellObjectsFromEvents:events];
-    self.collectionModel = [[NICollectionViewModel alloc] initWithListArray:cellObjects
-                                                                   delegate:(id)[NICollectionViewCellFactory class]];
+- (id<UICollectionViewDataSource>)dataSourceForCollectionView:(UICollectionView *)collectionView {
+    
+    self.collectionModel = [[NIMutableCollectionViewModel alloc] initWithSectionedArray:@[@""]
+                                                                               delegate:(id)[NICollectionViewCellFactory class]];
     return self.collectionModel;
 }
 
@@ -81,6 +79,24 @@
         [self setupCollectionActions];
     }
     return self;
+}
+
+- (void)updateDataSourceWithEvents:(NSArray *)events {
+    self.events = events;
+    [self.collectionModel removeSectionAtIndex:0];
+    [self.collectionModel addSectionWithTitle:@""];
+    
+    NSArray *cellObjects = [self.cellObjectFactory createCellObjectsWithEvents:events];
+    [self.collectionModel addObjectsFromArray:cellObjects];
+}
+
+- (void)updateDataSourceWithNoEventsState {
+    self.events = nil;
+    [self.collectionModel removeSectionAtIndex:0];
+    [self.collectionModel addSectionWithTitle:@""];
+    
+    NSArray *cellObjects = [self.cellObjectFactory createCellObjectsForNoEventsState];
+    [self.collectionModel addObjectsFromArray:cellObjects];
 }
 
 #pragma mark - <UICollectionViewDelegate>
@@ -108,11 +124,6 @@
     
     [self.collectionActions attachToClass:[AnnouncementGalleryEventCollectionViewCellObject class]
                                 tapBlock:announcementTapActionBlock];
-}
-
-- (NSArray *)generateCellObjectsFromEvents:(NSArray *)events {
-    NSArray *cellObjects = [self.cellObjectFactory createCellObjectsWithEvents:events];
-    return cellObjects;
 }
 
 @end

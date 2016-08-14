@@ -40,4 +40,11 @@
  */
 - (void)updateStateWithFutureEvents:(NSArray <EventPlainObject *> *)events;
 
+/**
+ @author Egor Tolstoy
+ 
+ Method triggers "No Events" state for the view
+ */
+- (void)triggerNoFutureEventsState;
+
 @end
