@@ -27,6 +27,10 @@
     return [UIColor colorFromHexString:@"#000000"];
 }
 
++ (UIColor *)LJ_separatorColor {
+    return [UIColor colorWithRed:0 green:0 blue:0 alpha:0.1];
+}
+
 + (UIColor *)LJ_grey {
     return [UIColor colorFromHexString:@"#A0A0A0"];
 }

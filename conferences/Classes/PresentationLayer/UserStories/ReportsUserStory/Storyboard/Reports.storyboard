@@ -46,7 +46,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="fsa-Jb-EBP" firstAttribute="top" secondItem="FyI-eO-14m" secondAttribute="top" id="Kbk-Mb-I8b"/>
                             <constraint firstAttribute="trailing" secondItem="fsa-Jb-EBP" secondAttribute="trailing" id="Ljy-aY-T73"/>
@@ -175,6 +175,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="sLc-aS-kWB"/>
+        <segue reference="ap8-a5-IEU"/>
     </inferredMetricsTieBreakers>
 </document>

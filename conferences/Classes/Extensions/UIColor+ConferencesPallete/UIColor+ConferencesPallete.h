@@ -28,6 +28,7 @@
 @interface UIColor (ConferencesPallete)
 
 + (UIColor *)LJ_black;
++ (UIColor *)LJ_separatorColor;
 + (UIColor *)LJ_grey;
 + (UIColor *)LJ_darkGray;
 + (UIColor *)LJ_lightGray;

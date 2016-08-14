@@ -32,6 +32,7 @@
 #import "DateFormatter.h"
 
 static NSString *const kSeparatorTagsString = @", ";
+static const CGFloat kDefaultLineHeight = 3;
 
 @implementation ReportsSearchCellObjectsBuilderImplementation
 
@@ -95,6 +96,12 @@ static NSString *const kSeparatorTagsString = @", ";
     if ([selectedText length] != 0) {
         NSRange range = [[string lowercaseString] rangeOfString:selectedText];
         [highlightedString addAttribute:NSForegroundColorAttributeName value:color range:range];
+        
+        NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
+        [style setLineSpacing:kDefaultLineHeight];
+        [highlightedString addAttribute:NSParagraphStyleAttributeName
+                           value:style
+                           range:NSMakeRange(0, highlightedString.length)];
     }
     return [highlightedString copy];
 }

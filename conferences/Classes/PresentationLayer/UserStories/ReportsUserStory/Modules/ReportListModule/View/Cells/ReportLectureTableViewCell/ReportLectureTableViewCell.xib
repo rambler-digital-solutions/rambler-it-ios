@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="327" height="200.5"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zrl-KN-Qov" userLabel="SpeakerView">
-                                <rect key="frame" x="0.0" y="12" width="327" height="40"/>
+                                <rect key="frame" x="0.0" y="16" width="327" height="40"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="light-gray-square" translatesAutoresizingMaskIntoConstraints="NO" id="EUl-Bs-gYM">
                                         <rect key="frame" x="20" y="0.0" width="40" height="40"/>
@@ -100,12 +100,12 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Rambler.iOS #5" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5nU-vp-JSC">
-                                <rect key="frame" x="20" y="62" width="287" height="101"/>
+                                <rect key="frame" x="20" y="66" width="287" height="97"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="IL0-2N-bz7"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="23" id="yY0-l6-7PA"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="-1" height="-1"/>
@@ -119,7 +119,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Zrl-KN-Qov" firstAttribute="leading" secondItem="78c-gc-n18" secondAttribute="leading" id="2hg-uW-U0T"/>
-                            <constraint firstItem="Zrl-KN-Qov" firstAttribute="top" secondItem="78c-gc-n18" secondAttribute="top" constant="12" id="48N-Cb-Ysx"/>
+                            <constraint firstItem="Zrl-KN-Qov" firstAttribute="top" secondItem="78c-gc-n18" secondAttribute="top" constant="16" id="48N-Cb-Ysx"/>
                             <constraint firstItem="5nU-vp-JSC" firstAttribute="top" secondItem="Zrl-KN-Qov" secondAttribute="bottom" constant="10" id="Cf0-Fw-c4y"/>
                             <constraint firstAttribute="trailing" secondItem="PnE-Mb-qQ0" secondAttribute="trailing" constant="20" id="FeK-pk-5Wl"/>
                             <constraint firstItem="PnE-Mb-qQ0" firstAttribute="leading" secondItem="5nU-vp-JSC" secondAttribute="leading" id="PIn-Y0-S21"/>

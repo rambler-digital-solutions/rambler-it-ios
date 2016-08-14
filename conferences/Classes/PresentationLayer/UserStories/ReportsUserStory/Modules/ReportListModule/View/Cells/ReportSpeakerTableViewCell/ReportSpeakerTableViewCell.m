@@ -23,7 +23,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 
 static CGFloat const kReportSpeakerTableViewCellHeight = 64.0f;
-static CGFloat const kReportSpeakerTableViewSeparatorInset = 20.0f;
+static CGFloat const kReportSpeakerTableViewSeparatorInset = 72.0f;
 
 @interface ReportSpeakerTableViewCell ()
 

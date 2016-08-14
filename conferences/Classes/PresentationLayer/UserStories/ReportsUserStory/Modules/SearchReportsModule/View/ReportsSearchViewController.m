@@ -20,6 +20,7 @@
 
 #import "ReportsSearchViewController.h"
 #import "ReportsSearchViewAnimator.h"
+#import "UIColor+ConferencesPallete.h"
 
 @class LecturePlainObject;
 @class SpeakerPlainObject;
@@ -33,15 +34,13 @@ static NSInteger kDefaultEstimatedHeight = 116;
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.output setupView];
-    self.reportsListSearchTableView.estimatedRowHeight = kDefaultEstimatedHeight;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [[UIScrollView appearance] setBackgroundColor:[UIColor whiteColor]];
-    
-    self.reportsListSearchTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.reportsListSearchTableView.estimatedRowHeight = kDefaultEstimatedHeight;
+    self.reportsListSearchTableView.separatorColor = [UIColor LJ_separatorColor];
 }
 
 #pragma mark - ReportsSearchViewInput

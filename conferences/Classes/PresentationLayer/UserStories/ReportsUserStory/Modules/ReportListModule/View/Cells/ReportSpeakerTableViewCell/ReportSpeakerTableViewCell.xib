@@ -25,14 +25,14 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hxd-vg-oVQ">
-                                <rect key="frame" x="72" y="1" width="137" height="36.5"/>
+                                <rect key="frame" x="72" y="1" width="128" height="37"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Герман Сапрыкин" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0UL-ri-VYm">
-                                        <rect key="frame" x="0.0" y="0.0" width="137" height="19.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="17.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="4yW-WR-iIC"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
@@ -41,8 +41,8 @@
                                             </mask>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rambler&amp;Co" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bfd-xF-bun">
-                                        <rect key="frame" x="0.0" y="19" width="137" height="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RAMBLER&amp;Co" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bfd-xF-bun">
+                                        <rect key="frame" x="0.0" y="19.5" width="128" height="17"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="A8a-Qy-IQl"/>
                                         </constraints>
@@ -62,7 +62,7 @@
                                     <constraint firstAttribute="trailing" secondItem="0UL-ri-VYm" secondAttribute="trailing" id="9D9-iT-B1Y"/>
                                     <constraint firstItem="0UL-ri-VYm" firstAttribute="top" secondItem="hxd-vg-oVQ" secondAttribute="top" id="C9s-o2-8Ec"/>
                                     <constraint firstAttribute="trailing" secondItem="Bfd-xF-bun" secondAttribute="trailing" id="GoX-F0-6UO"/>
-                                    <constraint firstItem="Bfd-xF-bun" firstAttribute="top" secondItem="0UL-ri-VYm" secondAttribute="bottom" id="i1r-8x-gWm"/>
+                                    <constraint firstItem="Bfd-xF-bun" firstAttribute="top" secondItem="0UL-ri-VYm" secondAttribute="bottom" constant="2" id="i1r-8x-gWm"/>
                                     <constraint firstItem="Bfd-xF-bun" firstAttribute="leading" secondItem="hxd-vg-oVQ" secondAttribute="leading" id="og4-hN-eZC"/>
                                     <constraint firstAttribute="bottom" secondItem="Bfd-xF-bun" secondAttribute="bottom" id="zJF-yg-efY"/>
                                 </constraints>

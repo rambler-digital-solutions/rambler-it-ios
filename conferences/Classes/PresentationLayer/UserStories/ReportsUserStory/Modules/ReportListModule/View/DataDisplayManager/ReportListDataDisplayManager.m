@@ -31,6 +31,8 @@
 #import "LecturePlainObject.h"
 
 static NSString *const kSeparatorTagsString = @", ";
+static const CGFloat kTagsLineHeight = 3;
+static const CGFloat kTitleLineHeight = 3;
 
 @interface ReportListDataDisplayManager () <UITableViewDelegate>
 
@@ -96,8 +98,8 @@ static NSString *const kSeparatorTagsString = @", ";
         NSString *eventDate = [self.dateFormatter obtainDateWithDayMonthYearFormat:event.startDate];
         NSString *eventName = event.name ? event.name : @"";
         NSString *tags = [self obtainTagsStringFromEvent:event];
-        NSAttributedString *attributedTags = [[NSAttributedString alloc] initWithString:tags];
-        NSAttributedString *eventAttributedName = [[NSAttributedString alloc] initWithString:eventName];
+        NSAttributedString *attributedTags = [self stringWithLineSpacingHeight:kTagsLineHeight text:tags];
+        NSAttributedString *eventAttributedName = [self stringWithLineSpacingHeight:kTitleLineHeight text:eventName];
 
         ReportEventTableViewCellObject *cellObject = [ReportEventTableViewCellObject objectWithEvent:event
                                                                                              andDate:eventDate
@@ -132,6 +134,20 @@ static NSString *const kSeparatorTagsString = @", ";
     NSString *stringFromTags = [tagsNames count] != 0 ? [tagsNames componentsJoinedByString:kSeparatorTagsString] : @"" ;
     
     return stringFromTags;
+}
+
+- (NSAttributedString *)stringWithLineSpacingHeight:(CGFloat)height
+                                               text:(NSString *)text {
+    NSMutableAttributedString *stringWithLineSpacing = [[NSMutableAttributedString alloc] initWithString:text];
+    
+    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
+    [style setLineSpacing:height];
+    
+    [stringWithLineSpacing addAttribute:NSParagraphStyleAttributeName
+                              value:style
+                              range:NSMakeRange(0, stringWithLineSpacing.length)];
+    return [stringWithLineSpacing copy];
+    
 }
 
 @end
