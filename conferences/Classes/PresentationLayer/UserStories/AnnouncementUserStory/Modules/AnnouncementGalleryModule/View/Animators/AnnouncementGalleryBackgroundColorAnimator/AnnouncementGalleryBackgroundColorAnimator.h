@@ -23,6 +23,7 @@
 
 @class UIColor;
 @class UIView;
+@class UIScrollView;
 @class AnnouncementGalleryPageSizeCalculator;
 @protocol AnnouncementGalleryBackgroundColorAnimatorDataSource;
 
@@ -35,6 +36,7 @@
 
 @property (nonatomic, weak) UIView *view;
 @property (nonatomic, weak) UIView *additionalView;
+@property (nonatomic, weak) UIScrollView *scrollView;
 @property (nonatomic, weak) id<AnnouncementGalleryBackgroundColorAnimatorDataSource> dataSource;
 @property (nonatomic, strong) AnnouncementGalleryPageSizeCalculator *calculator;
 

@@ -63,7 +63,15 @@
                         [UIColor greenColor],
                         [UIColor grayColor],
                         [UIColor lightGrayColor],
-                        [UIColor brownColor]
+                        [UIColor brownColor],
+                        [UIColor redColor],
+                        [UIColor blueColor],
+                        [UIColor yellowColor],
+                        [UIColor greenColor],
+                        [UIColor redColor],
+                        [UIColor blueColor],
+                        [UIColor yellowColor],
+                        [UIColor greenColor]
                         ];
     return colors[pageNumber];
 }

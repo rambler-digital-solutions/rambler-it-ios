@@ -40,31 +40,35 @@ static CGFloat const kAlphaOpacityBorder = 0.4;
  @param scrollOffset <#scrollOffset description#>
  */
 - (void)animateColorChangeWithScrollOffset:(CGFloat)scrollOffset {
+    CGFloat farRightPoint = self.scrollView.contentSize.width - self.scrollView.frame.size.width;
+    if (scrollOffset < 0 || scrollOffset > farRightPoint) {
+        return;
+    }
+    
     CGFloat pageWidth = [self.calculator calculatePageSizeForViewWidth:self.view.frame.size.width];
     
     CGFloat initialThreshold = 100;
     
     // We are animating a situation, when we are in the middle of switching two cards
     CGFloat middleScreenOffset = scrollOffset + pageWidth / 2;
-    
-    NSInteger currentPageNumber = round(scrollOffset / pageWidth);
-    NSLog(@"scrollOffset = %.f", scrollOffset);
-    NSLog(@"middleScreenOffset = %.f", middleScreenOffset);
-    NSLog(@"currentPageNumber = %lu", currentPageNumber);
+    NSInteger currentPageNumber = scrollOffset / pageWidth + 1;
     if (currentPageNumber < 0) {
         currentPageNumber = 0;
     }
     
-    CGFloat delta = (NSInteger)middleScreenOffset % (NSInteger)pageWidth + pageWidth/2;
-    NSLog(@"delta = %.f", delta);
-    
+    // delta is a distance from a central point between two cards. Can be negative and positive.
+    CGFloat delta = (NSInteger)middleScreenOffset % (NSInteger)pageWidth;
+    if (delta > pageWidth / 2) {
+        delta = -(pageWidth - delta);
+    }
+
     // We're interested in a range (-initialThreshold : initialThreshold). Wnen delta is out of this range, we just miss it.
     if (delta < -initialThreshold || delta > initialThreshold) {
         return;
     }
 
     NSInteger leftPageNumber = currentPageNumber - 1 > 0 ? currentPageNumber - 1 : 0;
-    NSUInteger rightPageNumber = currentPageNumber;
+    NSUInteger rightPageNumber = leftPageNumber + 1;
 
     UIColor *leftColor = [self.dataSource obtainColorForPageWithNumber:leftPageNumber];
     UIColor *rightColor = [self.dataSource obtainColorForPageWithNumber:rightPageNumber];
@@ -76,8 +80,8 @@ static CGFloat const kAlphaOpacityBorder = 0.4;
     // We change it from 0.0 to alphaOpacityBorder on the interval of (-initialThreshold : alphaOffsetBorder).
     // And then we change it from alphaOpacityBorder to 1.0 on the interval of (alphaOffsetBorder : initialThreshold).
     CGFloat alphaOffsetBorder = initialThreshold / kThresholdCoefficient;
-    if (delta < alphaOffsetBorder) {
-        self.additionalView.alpha = ((delta + initialThreshold) / initialThreshold + alphaOffsetBorder) * kAlphaOpacityBorder;
+    if (delta <= alphaOffsetBorder) {
+        self.additionalView.alpha = ((delta + initialThreshold) / (initialThreshold + alphaOffsetBorder)) * kAlphaOpacityBorder;
     } else if (delta > alphaOffsetBorder) {
         self.additionalView.alpha = ((delta - alphaOffsetBorder) / alphaOffsetBorder) * (1.0 - kAlphaOpacityBorder) + kAlphaOpacityBorder;
     }

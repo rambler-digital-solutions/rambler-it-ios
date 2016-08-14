@@ -49,6 +49,7 @@
     
     self.backgroundColorAnimator.view = self.view;
     self.backgroundColorAnimator.additionalView = self.backgroundAdditionalView;
+    self.backgroundColorAnimator.scrollView = self.collectionView;
     
     self.collectionView.collectionViewLayout = self.collectionViewFlowLayout;
 }
