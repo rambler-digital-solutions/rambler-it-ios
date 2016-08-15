@@ -21,9 +21,9 @@
 #import <Foundation/Foundation.h>
 
 /**
- @author Egor Tolstoy
+ @author Konstantin Zinovyev
  
- This protocol describes an object that is responsible for mapping NSDictionary with contents of resource file to a model object.
+ This protocol describes an object that is responsible for convert NSDictionary to another representation
  */
 @protocol ResponseConverter <NSObject>
 

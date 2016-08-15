@@ -21,6 +21,11 @@
 #import <Foundation/Foundation.h>
 #import "ResponseObjectFormatter.h"
 
+/**
+ @author Konstantin Zinovyev
+ 
+ The formatter takes an NSDictionary as an input and produces CustomServerResponse as an output.
+ */
 @interface DeletedResponseObjectFormatter : NSObject <ResponseObjectFormatter> 
 
 @end

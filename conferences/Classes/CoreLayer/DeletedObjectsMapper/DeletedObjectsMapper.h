@@ -25,6 +25,11 @@
 @protocol ResponseObjectFormatter;
 @protocol EntityNameFormatter;
 
+/**
+ @author Konstantin Zinovyev
+ 
+ It's an object for mapping response with deleted and updated objects
+ */
 @interface DeletedObjectsMapper : NSObject
 
 @property (strong, nonatomic) id<ResponseObjectFormatter> deletedResponseFormatter;

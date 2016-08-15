@@ -23,6 +23,11 @@
 #import "ResponseConverter.h"
 #import "ChainableOperation.h"
 
+/**
+ @author Konstantin Zinovyev
+ 
+ The operation is responsible for convert from one representation response to another
+ */
 @interface ResponseConverterOperation : AsyncOperation <ChainableOperation>
 
 + (instancetype)operationWithResponseConverter:(id<ResponseConverter>)responseConverter;
