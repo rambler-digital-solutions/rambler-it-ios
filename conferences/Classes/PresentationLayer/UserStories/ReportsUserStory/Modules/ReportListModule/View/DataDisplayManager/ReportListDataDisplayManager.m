@@ -108,9 +108,6 @@ static const CGFloat kTitleLineHeight = 3;
         [cellObjects addObject:cellObject];
     }
     
-    TableViewSectionHeaderCellObject *footerCellObject = [TableViewSectionHeaderCellObject new];
-    [cellObjects addObject:footerCellObject];
-    
     return cellObjects;
 }
 

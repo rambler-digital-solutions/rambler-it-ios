@@ -300,6 +300,9 @@
 		667050531D46332200DD9D6E /* ReportsSearchCellObjectsBuilderImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 667050521D46332200DD9D6E /* ReportsSearchCellObjectsBuilderImplementation.m */; };
 		667050561D46369100DD9D6E /* ReportsSearchCellObjectsDirectorImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 667050551D46369100DD9D6E /* ReportsSearchCellObjectsDirectorImplementation.m */; };
 		66764D041D4B636B00EF9D58 /* ReportsSearchViewAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 66764D031D4B636B00EF9D58 /* ReportsSearchViewAnimator.m */; };
+		66CCA72C1D61A654004153EA /* ReportSearchSectionTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CCA72A1D61A654004153EA /* ReportSearchSectionTitleTableViewCell.m */; };
+		66CCA72D1D61A654004153EA /* ReportSearchSectionTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66CCA72B1D61A654004153EA /* ReportSearchSectionTitleTableViewCell.xib */; };
+		66CCA7301D61A67E004153EA /* ReportSearchSectionTitleCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CCA72F1D61A67E004153EA /* ReportSearchSectionTitleCellObject.m */; };
 		66E9992C1D54899C00161D98 /* LectureServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E9992B1D54899C00161D98 /* LectureServiceTests.m */; };
 		66E999321D549E2100161D98 /* LectureCellObjectsBuilderImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E999311D549E2100161D98 /* LectureCellObjectsBuilderImplementation.m */; };
 		66E9993D1D54AF5100161D98 /* TagAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E9993C1D54AF5100161D98 /* TagAssembly.m */; };
@@ -1068,6 +1071,11 @@
 		667050591D464BF200DD9D6E /* ReportsSearchCellObjectsDirector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportsSearchCellObjectsDirector.h; path = SearchReportsModule/View/ReportsSearchDataDisplayManager/ReportsSearchCellObjectsBuilder/ReportsSearchCellObjectsDirector.h; sourceTree = "<group>"; };
 		66764D021D4B636B00EF9D58 /* ReportsSearchViewAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportsSearchViewAnimator.h; path = SearchReportsModule/View/ReportSearchViewAnimator/ReportsSearchViewAnimator.h; sourceTree = "<group>"; };
 		66764D031D4B636B00EF9D58 /* ReportsSearchViewAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportsSearchViewAnimator.m; path = SearchReportsModule/View/ReportSearchViewAnimator/ReportsSearchViewAnimator.m; sourceTree = "<group>"; };
+		66CCA7291D61A654004153EA /* ReportSearchSectionTitleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportSearchSectionTitleTableViewCell.h; path = SearchReportsModule/View/Cells/ReportSearchSectionTitleTableViewCell/ReportSearchSectionTitleTableViewCell.h; sourceTree = "<group>"; };
+		66CCA72A1D61A654004153EA /* ReportSearchSectionTitleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportSearchSectionTitleTableViewCell.m; path = SearchReportsModule/View/Cells/ReportSearchSectionTitleTableViewCell/ReportSearchSectionTitleTableViewCell.m; sourceTree = "<group>"; };
+		66CCA72B1D61A654004153EA /* ReportSearchSectionTitleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ReportSearchSectionTitleTableViewCell.xib; path = SearchReportsModule/View/Cells/ReportSearchSectionTitleTableViewCell/ReportSearchSectionTitleTableViewCell.xib; sourceTree = "<group>"; };
+		66CCA72E1D61A67E004153EA /* ReportSearchSectionTitleCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportSearchSectionTitleCellObject.h; path = CellObjects/ReportSearchSectionTitleCellObject/ReportSearchSectionTitleCellObject.h; sourceTree = "<group>"; };
+		66CCA72F1D61A67E004153EA /* ReportSearchSectionTitleCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportSearchSectionTitleCellObject.m; path = CellObjects/ReportSearchSectionTitleCellObject/ReportSearchSectionTitleCellObject.m; sourceTree = "<group>"; };
 		66E9992B1D54899C00161D98 /* LectureServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LectureServiceTests.m; path = ConferencesTests/ConferencesLogicTests/BaseServicesTests/LectureServiceTests/LectureServiceTests.m; sourceTree = SOURCE_ROOT; };
 		66E9992F1D549E0E00161D98 /* LectureCellObjectsBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LectureCellObjectsBuilder.h; path = LectureCellObjectsBuilder/LectureCellObjectsBuilder.h; sourceTree = "<group>"; };
 		66E999301D549E2100161D98 /* LectureCellObjectsBuilderImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LectureCellObjectsBuilderImplementation.h; path = LectureCellObjectsBuilder/LectureCellObjectsBuilderImplementation.h; sourceTree = "<group>"; };
@@ -4069,6 +4077,8 @@
 		667050081D4613EA00DD9D6E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				66CCA7251D61A5D7004153EA /* CellObjects */,
+				66CCA7241D61A5D0004153EA /* Cells */,
 				66764D011D4B633F00EF9D58 /* ReportSearchViewAnimator */,
 				6670501E1D46146100DD9D6E /* ReportsSearchDataDisplayManager */,
 				667050191D46145300DD9D6E /* ReportsSearchViewController.h */,
@@ -4175,6 +4185,33 @@
 				66764D031D4B636B00EF9D58 /* ReportsSearchViewAnimator.m */,
 			);
 			name = ReportSearchViewAnimator;
+			sourceTree = "<group>";
+		};
+		66CCA7241D61A5D0004153EA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				66CCA7261D61A5EB004153EA /* ReportSearchSectionTitleTableViewCell */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		66CCA7251D61A5D7004153EA /* CellObjects */ = {
+			isa = PBXGroup;
+			children = (
+				66CCA72E1D61A67E004153EA /* ReportSearchSectionTitleCellObject.h */,
+				66CCA72F1D61A67E004153EA /* ReportSearchSectionTitleCellObject.m */,
+			);
+			name = CellObjects;
+			sourceTree = "<group>";
+		};
+		66CCA7261D61A5EB004153EA /* ReportSearchSectionTitleTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				66CCA7291D61A654004153EA /* ReportSearchSectionTitleTableViewCell.h */,
+				66CCA72A1D61A654004153EA /* ReportSearchSectionTitleTableViewCell.m */,
+				66CCA72B1D61A654004153EA /* ReportSearchSectionTitleTableViewCell.xib */,
+			);
+			name = ReportSearchSectionTitleTableViewCell;
 			sourceTree = "<group>";
 		};
 		66E9992D1D5489A300161D98 /* LectureServiceTests */ = {
@@ -7025,6 +7062,7 @@
 				63F613581CB00A220002AEF0 /* Announcement.storyboard in Resources */,
 				9FD740381CDC98010071BD71 /* LaunchScreen.storyboard in Resources */,
 				63F6139C1CB00A220002AEF0 /* SpeakerInfoTableViewCell.xib in Resources */,
+				66CCA72D1D61A654004153EA /* ReportSearchSectionTitleTableViewCell.xib in Resources */,
 				63F6137D1CB00A220002AEF0 /* PreviousLectureTableViewCell.xib in Resources */,
 				66E999941D54B10800161D98 /* TagCollectionViewCell.xib in Resources */,
 				9F8E5F9D1BC2777100DC10DB /* Conferences.Parse.plist in Resources */,
@@ -7215,6 +7253,7 @@
 				9F4097841D51F658008BFE42 /* EventObjectTransformer.m in Sources */,
 				9F8E5F941BC269EA00DC10DB /* OperationFactoriesAssembly.m in Sources */,
 				63F613971CB00A220002AEF0 /* SpeakerInfoPresenterStateStorage.m in Sources */,
+				66CCA7301D61A67E004153EA /* ReportSearchSectionTitleCellObject.m in Sources */,
 				2B2064781D3F9CE900246C8D /* _LectureMaterialModelObject.m in Sources */,
 				2B429A7C1D50987E004C005F /* MetaEventServiceImpementation.m in Sources */,
 				6670500B1D4613F800DD9D6E /* ReportsSearchAssembly.m in Sources */,
@@ -7285,6 +7324,7 @@
 				9F4077B41D2E38AB00D47EF6 /* DirectionCellObjectFactory.m in Sources */,
 				667050481D4615B600DD9D6E /* ReportLectureTableViewCellObject.m in Sources */,
 				6318086D1C4A872600A61E7D /* LectureMaterialInfoTableViewCellObject.m in Sources */,
+				66CCA72C1D61A654004153EA /* ReportSearchSectionTitleTableViewCell.m in Sources */,
 				2B2064901D3F9CE900246C8D /* TagModelObject.m in Sources */,
 				9F78D74B1D59D73E009DDCEA /* IndexState+CoreDataProperties.m in Sources */,
 				63F6135E1CB00A220002AEF0 /* EventHeaderView.m in Sources */,

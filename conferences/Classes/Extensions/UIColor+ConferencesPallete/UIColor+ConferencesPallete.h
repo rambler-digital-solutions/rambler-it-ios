@@ -32,6 +32,7 @@
 + (UIColor *)LJ_grey;
 + (UIColor *)LJ_darkGray;
 + (UIColor *)LJ_lightGray;
++ (UIColor *)LJ_lightGrayBackgroundColor;
 + (UIColor *)LJ_lightBlue;
 + (UIColor *)LJ_blue;
 + (UIColor *)LJ_green;

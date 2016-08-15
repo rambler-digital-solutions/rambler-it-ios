@@ -28,6 +28,7 @@
 #import "ReportEventTableViewCellObject.h"
 #import "ReportSpeakerTableViewCellObject.h"
 #import "ReportLectureTableViewCellObject.h"
+#import "ReportSearchSectionTitleCellObject.h"
 #import "UIColor+ConferencesPallete.h"
 #import "DateFormatter.h"
 
@@ -44,7 +45,8 @@ static const CGFloat kDefaultLineHeight = 3;
     return self;
 }
 
-- (ReportEventTableViewCellObject *)eventCellObjectFromPlainObject:(EventPlainObject *)event selectedText:(NSString *)selectedText {
+- (ReportEventTableViewCellObject *)eventCellObjectFromPlainObject:(EventPlainObject *)event
+                                                      selectedText:(NSString *)selectedText {
 
     NSString *eventDate = [self.dateFormatter obtainDateWithDayMonthYearFormat:event.startDate];
     
@@ -62,7 +64,8 @@ static const CGFloat kDefaultLineHeight = 3;
     return cellObject;
 }
 
-- (ReportLectureTableViewCellObject *)lectureCellObjectFromPlainObject:(LecturePlainObject *)lecture selectedText:(NSString *)selectedText {
+- (ReportLectureTableViewCellObject *)lectureCellObjectFromPlainObject:(LecturePlainObject *)lecture
+                                                          selectedText:(NSString *)selectedText {
     NSAttributedString *highlightedName = [self highlightInString:lecture.name
                                                      selectedText:selectedText
                                                             color:[UIColor LJ_lightBlue]];
@@ -76,7 +79,8 @@ static const CGFloat kDefaultLineHeight = 3;
     return cellObject;
 }
 
-- (ReportSpeakerTableViewCellObject *)speakerCellObjectFromPlainObject:(SpeakerPlainObject *)speaker selectedText:(NSString *)selectedText {
+- (ReportSpeakerTableViewCellObject *)speakerCellObjectFromPlainObject:(SpeakerPlainObject *)speaker
+                                                          selectedText:(NSString *)selectedText {
     NSAttributedString *highlightedString = [self highlightInString:speaker.name
                                                        selectedText:selectedText
                                                               color:[UIColor LJ_lightBlue]];
@@ -85,9 +89,17 @@ static const CGFloat kDefaultLineHeight = 3;
     return cellObject;
 }
 
+- (ReportSearchSectionTitleCellObject *)sectionCellObjectWithTitle:(NSString *)title
+                                                   backgroundColor:(UIColor *)color {
+    return [ReportSearchSectionTitleCellObject objectWithSectionTitle:title
+                                                      backgroundColor:color];
+}
+
 #pragma mark - private methods
 
-- (NSAttributedString *)highlightInString:(NSString *)string selectedText:(NSString *)selectedText color:(UIColor *)color {
+- (NSAttributedString *)highlightInString:(NSString *)string
+                             selectedText:(NSString *)selectedText
+                                    color:(UIColor *)color {
     if (!string) {
         return [[NSAttributedString alloc] initWithString:@""];
     }

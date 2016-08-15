@@ -23,6 +23,7 @@
 @class ReportEventTableViewCellObject;
 @class ReportLectureTableViewCellObject;
 @class ReportSpeakerTableViewCellObject;
+@class ReportSearchSectionTitleCellObject;
 
 @class LecturePlainObject;
 @class EventPlainObject;
@@ -68,6 +69,18 @@
  */
 - (ReportSpeakerTableViewCellObject *)speakerCellObjectFromPlainObject:(SpeakerPlainObject *)speaker
                                                           selectedText:(NSString *)selectedText;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ Method generates section cell object from string
+ 
+ @param title title
+ 
+ @return speaker cell object
+ */
+- (ReportSearchSectionTitleCellObject *)sectionCellObjectWithTitle:(NSString *)title
+                                                 backgroundColor:(UIColor *)color;
 
 @end
 

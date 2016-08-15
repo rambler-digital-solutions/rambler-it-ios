@@ -23,6 +23,7 @@
 #import "LecturePlainObject.h"
 #import "EventPlainObject.h"
 #import "SpeakerPlainObject.h"
+#import "UIColor+ConferencesPallete.h"
 
 @implementation ReportsSearchCellObjectsDirectorImplementation
 
@@ -39,49 +40,73 @@
     if (!plainObjects) {
         return nil;
     }
-    
-    NSDictionary *sectionsNamesByClassName = [self sectionsNamesForPlainClass];
-    NSDictionary *selectorsBuilderByClassName = [self selectorsBuilderForPlainClass];
     NSArray *namesClass = [self sectionsCellInCorrectOrder];
     NSMutableArray *resultCellObjects = [NSMutableArray new];
     
     for (NSString *nameClass in namesClass) {
         
-        NSPredicate *predicate = [NSPredicate predicateWithFormat: @"className == %@", nameClass];
-        NSArray *sectionPlainObjects = [plainObjects filteredArrayUsingPredicate:predicate];
+        NSArray *sectionPlainObjects = [self getObjectsByNameClass:nameClass
+                                                       fromObjects:plainObjects];
         
         if ([sectionPlainObjects count] == 0) {
             continue;
         }
         
-        NSString *sectionName = sectionsNamesByClassName[nameClass];
-        [resultCellObjects addObject:sectionName];
-        
-        id cellObject = nil;
-        
-        for (id plainObject in sectionPlainObjects) {
-            SEL selector = NSSelectorFromString(selectorsBuilderByClassName[nameClass]);
-            if ([self.builder respondsToSelector:selector]) {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-                 cellObject = [self.builder performSelector:selector withObject:plainObject withObject:selectedText];
-#pragma clang diagnostic pop
-            }
-            [resultCellObjects addObject:cellObject];
-        }
-        
+        id sectionCell = [self generateSectionCellForNameClass:nameClass];
+        NSArray *cellObjects = [self generateCellObjectsForNameClass:nameClass
+                                                    fromPlainObjects:sectionPlainObjects
+                                                        selectedText:selectedText];
+        [resultCellObjects addObject:sectionCell];
+        [resultCellObjects addObjectsFromArray:cellObjects];
     }
     
     return [resultCellObjects copy];
 }
 
+#pragma mark - private methods
 
-- (NSDictionary *)selectorsBuilderForPlainClass {
-    return @{
-             NSStringFromClass([EventPlainObject class])   : NSStringFromSelector(@selector(eventCellObjectFromPlainObject:selectedText:)),
-             NSStringFromClass([LecturePlainObject class]) : NSStringFromSelector(@selector(lectureCellObjectFromPlainObject:selectedText:)),
-             NSStringFromClass([SpeakerPlainObject class]) : NSStringFromSelector(@selector(speakerCellObjectFromPlainObject:selectedText:)),
-             };
+- (NSArray *)getObjectsByNameClass:(NSString *)nameClass fromObjects:(NSArray *)objects {
+    NSPredicate *predicate = [NSPredicate predicateWithFormat: @"className == %@", nameClass];
+    NSArray *sectionPlainObjects = [objects filteredArrayUsingPredicate:predicate];
+    return sectionPlainObjects;
+}
+
+- (id)generateSectionCellForNameClass:(NSString *)nameClass {
+    NSDictionary *sectionsNamesByClassName = [self sectionsNamesForPlainClass];
+    NSDictionary *colorSections = [self colorSectionsByNameClass];
+    NSString *sectionName = sectionsNamesByClassName[nameClass];
+    UIColor *sectionColor = colorSections[nameClass];
+    id sectionCell = [self.builder sectionCellObjectWithTitle:sectionName
+                                              backgroundColor:sectionColor];
+    return sectionCell;
+}
+
+- (NSArray *)generateCellObjectsForNameClass:(NSString *)nameClass
+                            fromPlainObjects:(NSArray *)plainObjects
+                                selectedText:(NSString *)selectedText {
+    NSDictionary *selectorsBuilderByClassName = [self selectorsBuilderForPlainClass];
+    NSMutableArray *cellObjects = [NSMutableArray new];
+    id cellObject = nil;
+    for (id plainObject in plainObjects) {
+        SEL selector = NSSelectorFromString(selectorsBuilderByClassName[nameClass]);
+        if ([self.builder respondsToSelector:selector]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+            cellObject = [self.builder performSelector:selector
+                                            withObject:plainObject
+                                            withObject:selectedText];
+#pragma clang diagnostic pop
+        }
+        [cellObjects addObject:cellObject];
+    }
+    return cellObjects;
+}
+- (NSArray *)sectionsCellInCorrectOrder {
+    return @[
+             NSStringFromClass([EventPlainObject class]),
+             NSStringFromClass([LecturePlainObject class]),
+             NSStringFromClass([SpeakerPlainObject class])
+             ];
 }
 
 - (NSDictionary *)sectionsNamesForPlainClass {
@@ -92,11 +117,20 @@
              };
 }
 
-- (NSArray *)sectionsCellInCorrectOrder {
-    return @[
-             NSStringFromClass([EventPlainObject class]),
-             NSStringFromClass([LecturePlainObject class]),
-             NSStringFromClass([SpeakerPlainObject class])
-             ];
+- (NSDictionary *)colorSectionsByNameClass {
+    return @{
+             NSStringFromClass([EventPlainObject class])   : [UIColor LJ_lightGrayBackgroundColor],
+             NSStringFromClass([LecturePlainObject class]) : [UIColor whiteColor],
+             NSStringFromClass([SpeakerPlainObject class]) : [UIColor whiteColor]
+             };
 }
+
+- (NSDictionary *)selectorsBuilderForPlainClass {
+    return @{
+             NSStringFromClass([EventPlainObject class])   : NSStringFromSelector(@selector(eventCellObjectFromPlainObject:selectedText:)),
+             NSStringFromClass([LecturePlainObject class]) : NSStringFromSelector(@selector(lectureCellObjectFromPlainObject:selectedText:)),
+             NSStringFromClass([SpeakerPlainObject class]) : NSStringFromSelector(@selector(speakerCellObjectFromPlainObject:selectedText:)),
+             };
+}
+
 @end

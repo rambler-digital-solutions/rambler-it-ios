@@ -126,6 +126,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <segue destination="dMH-rk-qxb" kind="push" identifier="ReportsSearchModuleToEventModuleSegue" id="sLc-aS-kWB"/>
                                         </connections>
@@ -175,6 +176,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ap8-a5-IEU"/>
+        <segue reference="sLc-aS-kWB"/>
     </inferredMetricsTieBreakers>
 </document>

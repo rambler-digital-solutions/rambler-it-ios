@@ -43,6 +43,11 @@
     return [UIColor colorFromHexString:@"#CDCDCD"];
 }
 
++ (UIColor *)LJ_lightGrayBackgroundColor {
+    return [UIColor colorFromHexString:@"#ECECEC"];
+}
+
+
 + (UIColor *)LJ_lightBlue {
     return [UIColor colorFromHexString:@"#14AAE6"];
 }
