@@ -27,6 +27,7 @@
 @interface ReportLectureTableViewCellObject ()
 
 @property (nonatomic, strong, readwrite) NSAttributedString *lectureTitle;
+@property (nonatomic, strong, readwrite) NSString *company;
 @property (nonatomic, strong, readwrite) NSAttributedString *tags;
 @property (nonatomic, strong, readwrite) NSURL *imageURL;
 @property (nonatomic, strong, readwrite) LecturePlainObject *lecture;
@@ -48,6 +49,7 @@
         _lectureTitle = attributedName;
         _imageURL = imageURL;
         _lecture = lecture;
+        _company = lecture.speaker.company;
         _tags = tags;
         _speakerName = speakerName;
         

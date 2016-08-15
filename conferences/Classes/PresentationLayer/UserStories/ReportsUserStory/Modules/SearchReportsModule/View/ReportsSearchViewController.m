@@ -38,7 +38,6 @@ static NSInteger kDefaultEstimatedHeight = 116;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [[UIScrollView appearance] setBackgroundColor:[UIColor whiteColor]];
     self.reportsListSearchTableView.estimatedRowHeight = kDefaultEstimatedHeight;
     self.reportsListSearchTableView.separatorColor = [UIColor LJ_separatorColor];
 }

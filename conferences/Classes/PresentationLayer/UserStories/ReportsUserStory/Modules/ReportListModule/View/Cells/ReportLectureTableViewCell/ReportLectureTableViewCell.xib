@@ -153,6 +153,7 @@
                 </variation>
             </tableViewCellContentView>
             <connections>
+                <outlet property="companyLabel" destination="Pji-TF-WZb" id="Xaz-Po-lrS"/>
                 <outlet property="lectureImageView" destination="EUl-Bs-gYM" id="CSe-AC-WBi"/>
                 <outlet property="lectureTitle" destination="5nU-vp-JSC" id="ott-Vt-fts"/>
                 <outlet property="speakerName" destination="oHy-QR-RtB" id="vEA-ay-Cj6"/>

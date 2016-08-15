@@ -29,6 +29,7 @@ static CGFloat const kReportSpeakerTableViewSeparatorInset = 72.0f;
 
 @property (nonatomic, weak) IBOutlet UILabel *speakerTitle;
 @property (nonatomic, weak) IBOutlet UIImageView *speakerImageView;
+@property (weak, nonatomic) IBOutlet UILabel *companyLabel;
 
 @end
 
@@ -38,6 +39,7 @@ static CGFloat const kReportSpeakerTableViewSeparatorInset = 72.0f;
 
 - (BOOL)shouldUpdateCellWithObject:(ReportSpeakerTableViewCellObject *)object {
     self.speakerTitle.attributedText = object.speakerName;
+    self.companyLabel.text = object.company;
     [self.speakerImageView sd_setImageWithURL:object.imageURL
                              placeholderImage:nil];
     self.separatorInset = UIEdgeInsetsMake(0.f, kReportSpeakerTableViewSeparatorInset, 0.f, 0.0f);

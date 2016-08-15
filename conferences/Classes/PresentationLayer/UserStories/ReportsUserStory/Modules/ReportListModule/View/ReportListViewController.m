@@ -42,7 +42,6 @@ static NSInteger kDefaultEstimatedHeight = 116;
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
-    [[UIScrollView appearance] setBackgroundColor:[UIColor whiteColor]];
     
     self.reportsTableView.estimatedRowHeight = kDefaultEstimatedHeight;
     self.reportsTableView.separatorStyle = UITableViewCellSeparatorStyleNone;

@@ -31,6 +31,7 @@
 @interface ReportLectureTableViewCellObject : NSObject <NICellObject>
 
 @property (nonatomic, strong, readonly) NSString *date;
+@property (nonatomic, strong, readonly) NSString *company;
 @property (nonatomic, strong, readonly) NSAttributedString *lectureTitle;
 @property (nonatomic, strong, readonly) NSAttributedString *tags;
 @property (nonatomic, strong, readonly) NSURL *imageURL;

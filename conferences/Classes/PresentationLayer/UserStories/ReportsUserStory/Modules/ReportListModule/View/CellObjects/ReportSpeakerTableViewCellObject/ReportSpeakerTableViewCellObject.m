@@ -26,6 +26,7 @@
 @interface ReportSpeakerTableViewCellObject ()
 
 @property (strong, nonatomic, readwrite) NSAttributedString *speakerName;
+@property (strong, nonatomic, readwrite) NSString *company;
 @property (strong, nonatomic, readwrite) NSURL *imageURL;
 @property (strong, nonatomic, readwrite) SpeakerPlainObject *speaker;
 
@@ -39,6 +40,7 @@
     self = [super init];
     if (self) {
         _speakerName = attributedName;
+        _company = speaker.company;
         _speakerImage = nil;
         _speaker = speaker;
         _imageURL = [NSURL URLWithString:speaker.imageUrl];

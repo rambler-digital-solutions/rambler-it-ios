@@ -86,6 +86,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="companyLabel" destination="Bfd-xF-bun" id="VRF-I4-4T7"/>
                 <outlet property="speakerImageView" destination="8Cm-f0-fxL" id="BCD-1m-bWd"/>
                 <outlet property="speakerTitle" destination="0UL-ri-VYm" id="7Kn-Af-Jo1"/>
             </connections>
