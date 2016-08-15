@@ -9,20 +9,18 @@
 @protocol ResponseConverter;
 
 /**
- @author Egor Tolstoy
+ @author Konstantin Zinovyev
  
- The factory is responsible for creating ResponseMappers
+ The factory is responsible for creating ResponseConverter
  */
 @protocol ResponseConverterFactory <NSObject>
 
 /**
- @author Egor Tolstoy
+ @author Konstantin Zinovyev
  
- The method returns a proper ResponseMapper based on a given type
+ The method returns a ResponseConverter
  
- @param type ResponseMappingType
- 
- @return id<ResponseMapper>
+ @return id<ResponseConverter>
  */
 - (id<ResponseConverter>)converterResponse;
 
