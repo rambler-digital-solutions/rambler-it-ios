@@ -21,7 +21,9 @@
 #import "ResponseMappersAssembly.h"
 
 #import "ManagedObjectMapper.h"
+#import "DeletedObjectsMapper.h"
 
+#import "DeletedResponseObjectFormatter.h"
 #import "ResultsResponseObjectFormatter.h"
 #import "SingleResponseObjectFormatter.h"
 
@@ -39,10 +41,23 @@
         
         [matcher caseEqual:@(ResponseMappingSingleType)
                        use:[self singleResponseMapper]];
+        
+        [matcher caseEqual:@(ResponseMappingDeletedType)
+                       use:[self deletedResponseMapper]];
     }];
 }
 
 #pragma mark - Concrete definitions
+
+- (id<ResponseMapper>)deletedResponseMapper {
+    return [TyphoonDefinition withClass:[DeletedObjectsMapper class] configuration:^(TyphoonDefinition *definition) {
+        [definition useInitializer:@selector(initWithMappingProvider:responseObjectFormatter:entityNameFormatter:) parameters:^(TyphoonMethod *initializer) {
+            [initializer injectParameterWith:[self mappingProvider]];
+            [initializer injectParameterWith:[self deletedObjectFormatter]];
+            [initializer injectParameterWith:[self entityNameFormatter]];
+        }];
+    }];
+}
 
 - (id<ResponseMapper>)resultsResponseMapper {
     return [TyphoonDefinition withClass:[ManagedObjectMapper class] configuration:^(TyphoonDefinition *definition) {
@@ -55,16 +70,26 @@
 }
 
 - (id<ResponseMapper>)singleResponseMapper {
-    return [TyphoonDefinition withClass:[ManagedObjectMapper class] configuration:^(TyphoonDefinition *definition) {
-        [definition useInitializer:@selector(initWithMappingProvider:responseObjectFormatter:entityNameFormatter:) parameters:^(TyphoonMethod *initializer) {
-            [initializer injectParameterWith:[self mappingProvider]];
-            [initializer injectParameterWith:[self singleObjectFormatter]];
-            [initializer injectParameterWith:[self entityNameFormatter]];
-        }];
+    return [TyphoonDefinition withClass:[ManagedObjectMapper class]
+                          configuration:^(TyphoonDefinition *definition) {
+        
+                              [definition useInitializer:@selector(initWithMappingProvider:responseObjectFormatter:entityNameFormatter:) parameters:^(TyphoonMethod *initializer) {
+            
+                                  [initializer injectParameterWith:[self mappingProvider]];
+            
+                                  [initializer injectParameterWith:[self singleObjectFormatter]];
+            
+                                  [initializer injectParameterWith:[self entityNameFormatter]];
+        
+                              }];
     }];
 }
 
 #pragma mark - Object formatters
+
+- (id<ResponseObjectFormatter>)deletedObjectFormatter {
+    return [TyphoonDefinition withClass:[DeletedResponseObjectFormatter class]];
+}
 
 - (id<ResponseObjectFormatter>)resultsObjectFormatter {
     return [TyphoonDefinition withClass:[ResultsResponseObjectFormatter class]];
@@ -83,6 +108,7 @@
                                                     with:[self entityNameFormatter]];
                               [definition injectProperty:@selector(dateFormatter)
                                                     with:[self mappingDateFormatter]];
+                              
                           }];
 }
 

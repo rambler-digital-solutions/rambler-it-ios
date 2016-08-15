@@ -26,6 +26,7 @@
 #import "ResponseDeserializationOperation.h"
 #import "ResponseValidationOperation.h"
 #import "ResponseMappingOperation.h"
+#import "ResponseConverterOperation.h"
 
 #import "RequestConfiguratorsFactory.h"
 #import "RequestSignersFactory.h"
@@ -33,6 +34,7 @@
 #import "ResponseDeserializersFactory.h"
 #import "ResponseValidatorsFactory.h"
 #import "ResponseMappersFactory.h"
+#import "ResponseConverterFactory.h"
 
 #import "ChainableOperation.h"
 #import "OperationBuffer.h"
@@ -74,6 +76,7 @@
     [self buildNetworkOperationWithConfig:config];
     [self buildLastModifiedMapperOperationWithModelObjectId:modelObjectId];
     [self buildResponseDeserializationOperationWithConfig:config];
+    [self buildResponseConverterOperationWithConfig:config];
     [self buildResponseValidationOperationWithConfig:config];
     [self buildResponseMappingOperationWithConfig:config];
     
@@ -111,6 +114,12 @@
 - (void)buildResponseDeserializationOperationWithConfig:(CompoundOperationBuilderConfig *)config {
     id<ResponseDeserializer> deserializer = [self.responseDeserializersFactory deserializerWithType:@(config.responseDeserializationType)];
     ResponseDeserializationOperation *operation = [ResponseDeserializationOperation operationWithResponseDeserializer:deserializer];
+    [self addOperation:operation];
+}
+
+- (void)buildResponseConverterOperationWithConfig:(CompoundOperationBuilderConfig *)config {
+    id<ResponseConverter> converter = [self.responseConverterFactory converterResponse];
+    ResponseConverterOperation *operation = [ResponseConverterOperation operationWithResponseConverter:converter];
     [self addOperation:operation];
 }
 

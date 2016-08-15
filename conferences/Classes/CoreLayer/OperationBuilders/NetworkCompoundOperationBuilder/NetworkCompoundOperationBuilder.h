@@ -30,7 +30,7 @@
 @protocol ResponseDeserializersFactory;
 @protocol ResponseValidatorsFactory;
 @protocol ResponseMappersFactory;
-
+@protocol ResponseConverterFactory;
 /**
  @author Egor Tolstoy
  
@@ -63,6 +63,7 @@
 @property (nonatomic, strong) id<ResponseDeserializersFactory> responseDeserializersFactory;
 @property (nonatomic, strong) id<ResponseValidatorsFactory> responseValidatorsFactory;
 @property (nonatomic, strong) id<ResponseMappersFactory> responseMappersFactory;
+@property (nonatomic, strong) id<ResponseConverterFactory> responseConverterFactory;
 @property (nonatomic, strong, readonly) OperationChainer *chainer;
 @property (nonatomic, strong) NSDateFormatter *lastModifiedDateFormatter;
 

@@ -71,6 +71,7 @@ static const int ddLogLevel = DDLogLevelVerbose;
     DDLogVerbose(@"Start server response deserialization");
     @weakify(self);
     [self.responseDeserializer deserializeServerResponse:inputData completionBlock:^(NSDictionary *response, NSError *error) {
+        
         @strongify(self);
         if (error) {
             DDLogError(@"ResponseDeserializer in operation %@ has produced error: %@", NSStringFromClass([self class]), error);

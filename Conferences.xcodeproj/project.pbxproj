@@ -299,6 +299,12 @@
 		66B292B31D4F905600E4D80F /* _EventListPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B292B21D4F905600E4D80F /* _EventListPlainObject.m */; };
 		66B292B61D4F905D00E4D80F /* EventListModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B292B51D4F905D00E4D80F /* EventListModelObject.m */; };
 		66B292B91D4F906400E4D80F /* EventListPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B292B81D4F906400E4D80F /* EventListPlainObject.m */; };
+		66CCA7341D61DE11004153EA /* ResponseConverterOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CCA7331D61DE11004153EA /* ResponseConverterOperation.m */; };
+		66CCA73C1D61E99E004153EA /* ResponseConverterImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CCA73B1D61E99E004153EA /* ResponseConverterImplementation.m */; };
+		66CCA7431D61F394004153EA /* ResponseConverterAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CCA7421D61F394004153EA /* ResponseConverterAssembly.m */; };
+		66CCA7481D61FC72004153EA /* DeletedObjectsMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CCA7471D61FC72004153EA /* DeletedObjectsMapper.m */; };
+		66CCA74D1D61FDDE004153EA /* DeletedResponseObjectFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CCA74C1D61FDDE004153EA /* DeletedResponseObjectFormatter.m */; };
+		66CCA7551D62095E004153EA /* CustomServerResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CCA7541D62095E004153EA /* CustomServerResponse.m */; };
 		9F0A6C1D1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */; };
 		9F0A6C2E1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C2D1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m */; };
 		9F0A84C31BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A84C21BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m */; };
@@ -971,6 +977,20 @@
 		66B292B51D4F905D00E4D80F /* EventListModelObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListModelObject.m; sourceTree = "<group>"; };
 		66B292B71D4F906400E4D80F /* EventListPlainObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListPlainObject.h; sourceTree = "<group>"; };
 		66B292B81D4F906400E4D80F /* EventListPlainObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListPlainObject.m; sourceTree = "<group>"; };
+		66CCA7321D61DE11004153EA /* ResponseConverterOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResponseConverterOperation.h; path = JSONDeletedObjectsTransforOperation/ResponseConverterOperation.h; sourceTree = "<group>"; };
+		66CCA7331D61DE11004153EA /* ResponseConverterOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResponseConverterOperation.m; path = JSONDeletedObjectsTransforOperation/ResponseConverterOperation.m; sourceTree = "<group>"; };
+		66CCA7391D61E984004153EA /* ResponseConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResponseConverter.h; path = CoreComponents/TransfromJSON/Protocols/ResponseConverter.h; sourceTree = "<group>"; };
+		66CCA73A1D61E99E004153EA /* ResponseConverterImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResponseConverterImplementation.h; path = ConcreteClass/ResponseConverterImplementation.h; sourceTree = "<group>"; };
+		66CCA73B1D61E99E004153EA /* ResponseConverterImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResponseConverterImplementation.m; path = ConcreteClass/ResponseConverterImplementation.m; sourceTree = "<group>"; };
+		66CCA7411D61F394004153EA /* ResponseConverterAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResponseConverterAssembly.h; path = Assemblies/ResponseConverterAssembly/ResponseConverterAssembly.h; sourceTree = "<group>"; };
+		66CCA7421D61F394004153EA /* ResponseConverterAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResponseConverterAssembly.m; path = Assemblies/ResponseConverterAssembly/ResponseConverterAssembly.m; sourceTree = "<group>"; };
+		66CCA7441D61F3B5004153EA /* ResponseConverterFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ResponseConverterFactory.h; path = Assemblies/ResponseConverterAssembly/ResponseConverterFactory.h; sourceTree = "<group>"; };
+		66CCA7461D61FC72004153EA /* DeletedObjectsMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeletedObjectsMapper.h; path = DeletedObjectsMapper/DeletedObjectsMapper.h; sourceTree = "<group>"; };
+		66CCA7471D61FC72004153EA /* DeletedObjectsMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeletedObjectsMapper.m; path = DeletedObjectsMapper/DeletedObjectsMapper.m; sourceTree = "<group>"; };
+		66CCA74B1D61FDDE004153EA /* DeletedResponseObjectFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeletedResponseObjectFormatter.h; path = DeletedResponseObjectFormatter/DeletedResponseObjectFormatter.h; sourceTree = "<group>"; };
+		66CCA74C1D61FDDE004153EA /* DeletedResponseObjectFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeletedResponseObjectFormatter.m; path = DeletedResponseObjectFormatter/DeletedResponseObjectFormatter.m; sourceTree = "<group>"; };
+		66CCA7531D62095E004153EA /* CustomServerResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomServerResponse.h; path = Model/CustomServerResponse/CustomServerResponse.h; sourceTree = "<group>"; };
+		66CCA7541D62095E004153EA /* CustomServerResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomServerResponse.m; path = Model/CustomServerResponse/CustomServerResponse.m; sourceTree = "<group>"; };
 		84D2CBEF6E088EFC9A139E49 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9F0A6C1B1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CompoundOperationBuilderConfig.h; path = OperationBuilders/CompoundOperationBuilderConfig/CompoundOperationBuilderConfig.h; sourceTree = "<group>"; };
 		9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CompoundOperationBuilderConfig.m; path = OperationBuilders/CompoundOperationBuilderConfig/CompoundOperationBuilderConfig.m; sourceTree = "<group>"; };
@@ -3865,6 +3885,7 @@
 		6695DB8D1D51F6D40095BF38 /* MiscellaneousOperations */ = {
 			isa = PBXGroup;
 			children = (
+				66CCA7311D61DCFC004153EA /* ResponseConverterOperation */,
 				6631B2921D51F820004B5D75 /* LastModifiedMapperOperation */,
 			);
 			name = MiscellaneousOperations;
@@ -3877,6 +3898,86 @@
 				66AE2C621D51F923003E587E /* ServerResponseModel.m */,
 			);
 			name = ServerResponseModel;
+			sourceTree = "<group>";
+		};
+		66CCA7311D61DCFC004153EA /* ResponseConverterOperation */ = {
+			isa = PBXGroup;
+			children = (
+				66CCA7321D61DE11004153EA /* ResponseConverterOperation.h */,
+				66CCA7331D61DE11004153EA /* ResponseConverterOperation.m */,
+			);
+			name = ResponseConverterOperation;
+			sourceTree = "<group>";
+		};
+		66CCA7351D61DF1A004153EA /* TransformJSON */ = {
+			isa = PBXGroup;
+			children = (
+				66CCA7371D61DF40004153EA /* ConcreteClass */,
+				66CCA7361D61DF32004153EA /* Protocols */,
+			);
+			name = TransformJSON;
+			sourceTree = "<group>";
+		};
+		66CCA7361D61DF32004153EA /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				66CCA7391D61E984004153EA /* ResponseConverter.h */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		66CCA7371D61DF40004153EA /* ConcreteClass */ = {
+			isa = PBXGroup;
+			children = (
+				66CCA73A1D61E99E004153EA /* ResponseConverterImplementation.h */,
+				66CCA73B1D61E99E004153EA /* ResponseConverterImplementation.m */,
+			);
+			name = ConcreteClass;
+			sourceTree = "<group>";
+		};
+		66CCA73D1D61F0CB004153EA /* ResponseConverterAssembly */ = {
+			isa = PBXGroup;
+			children = (
+				66CCA7441D61F3B5004153EA /* ResponseConverterFactory.h */,
+				66CCA7411D61F394004153EA /* ResponseConverterAssembly.h */,
+				66CCA7421D61F394004153EA /* ResponseConverterAssembly.m */,
+			);
+			name = ResponseConverterAssembly;
+			sourceTree = "<group>";
+		};
+		66CCA7451D61FC24004153EA /* DeletedObjectMapper */ = {
+			isa = PBXGroup;
+			children = (
+				66CCA7461D61FC72004153EA /* DeletedObjectsMapper.h */,
+				66CCA7471D61FC72004153EA /* DeletedObjectsMapper.m */,
+			);
+			name = DeletedObjectMapper;
+			sourceTree = "<group>";
+		};
+		66CCA74A1D61FDC7004153EA /* DeletedResponseObjectFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				66CCA74B1D61FDDE004153EA /* DeletedResponseObjectFormatter.h */,
+				66CCA74C1D61FDDE004153EA /* DeletedResponseObjectFormatter.m */,
+			);
+			name = DeletedResponseObjectFormatter;
+			sourceTree = "<group>";
+		};
+		66CCA7511D62092D004153EA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				66CCA7521D62093F004153EA /* CustomServerResponse */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		66CCA7521D62093F004153EA /* CustomServerResponse */ = {
+			isa = PBXGroup;
+			children = (
+				66CCA7531D62095E004153EA /* CustomServerResponse.h */,
+				66CCA7541D62095E004153EA /* CustomServerResponse.m */,
+			);
+			name = CustomServerResponse;
 			sourceTree = "<group>";
 		};
 		9879306505819DD768BE2239 /* Pods */ = {
@@ -3902,6 +4003,7 @@
 		9F0A6C241BC1B85A00A25417 /* Assemblies */ = {
 			isa = PBXGroup;
 			children = (
+				66CCA73D1D61F0CB004153EA /* ResponseConverterAssembly */,
 				2BDDB2441D3F817C007FD547 /* PonsomizerAssembly */,
 				9F4077A51D2C163C00D47EF6 /* ResourceMapperAssembly */,
 				9F4077A11D2C159A00D47EF6 /* ResourceClientAssembly */,
@@ -4375,6 +4477,7 @@
 		9F18308B1BC01E65000E21A5 /* CoreComponents */ = {
 			isa = PBXGroup;
 			children = (
+				66CCA7351D61DF1A004153EA /* TransformJSON */,
 				9F4077951D2C105100D47EF6 /* ResourceMappers */,
 				9F4077891D2BF8DB00D47EF6 /* ResourceClients */,
 				9FC1F6771D2826B70070D9B5 /* QueryTransformers */,
@@ -4765,6 +4868,7 @@
 		9F1830E91BC14270000E21A5 /* BaseClasses */ = {
 			isa = PBXGroup;
 			children = (
+				66CCA7451D61FC24004153EA /* DeletedObjectMapper */,
 				9F1830EA1BC14277000E21A5 /* ManagedObjectMapper */,
 			);
 			name = BaseClasses;
@@ -4824,6 +4928,7 @@
 		9F18310A1BC16141000E21A5 /* ResponseObjectFormatters */ = {
 			isa = PBXGroup;
 			children = (
+				66CCA7511D62092D004153EA /* Model */,
 				9F1831151BC1615C000E21A5 /* ConcreteClasses */,
 				9F18310B1BC16141000E21A5 /* Protocols */,
 			);
@@ -4842,6 +4947,7 @@
 		9F1831151BC1615C000E21A5 /* ConcreteClasses */ = {
 			isa = PBXGroup;
 			children = (
+				66CCA74A1D61FDC7004153EA /* DeletedResponseObjectFormatter */,
 				9F1831161BC1615C000E21A5 /* ResultResponseObjectFormatter */,
 				9F1831191BC1615C000E21A5 /* SingleResponseObjectFormatter */,
 			);
@@ -5632,8 +5738,10 @@
 				9F8E5F941BC269EA00DC10DB /* OperationFactoriesAssembly.m in Sources */,
 				63F613971CB00A220002AEF0 /* SpeakerInfoPresenterStateStorage.m in Sources */,
 				2B2064781D3F9CE900246C8D /* _LectureMaterialModelObject.m in Sources */,
+				66CCA7551D62095E004153EA /* CustomServerResponse.m in Sources */,
 				2B429A7C1D50987E004C005F /* MetaEventServiceImpementation.m in Sources */,
 				6670500B1D4613F800DD9D6E /* ReportsSearchAssembly.m in Sources */,
+				66CCA7341D61DE11004153EA /* ResponseConverterOperation.m in Sources */,
 				631808691C4A870C00A61E7D /* TableViewCellWithTextLabelAndImageView.m in Sources */,
 				63F613721CB00A220002AEF0 /* EventInfoTableViewCell.m in Sources */,
 				2B429A571D461E29004C005F /* AnnounceViewModelBuilder.m in Sources */,
@@ -5650,6 +5758,7 @@
 				2B20647B1D3F9CE900246C8D /* _RegistrationQuestionModelObject.m in Sources */,
 				9F1830B31BC11879000E21A5 /* CommonNetworkClient.m in Sources */,
 				2B2064881D3F9CE900246C8D /* _TechPlainObject.m in Sources */,
+				66CCA7431D61F394004153EA /* ResponseConverterAssembly.m in Sources */,
 				9F0A84FD1BC1698B006F79FB /* NetworkOperation.m in Sources */,
 				63F613661CB00A220002AEF0 /* EventInfoTableViewCellObject.m in Sources */,
 				63F613981CB00A220002AEF0 /* SpeakerInfoPresenter.m in Sources */,
@@ -5667,6 +5776,7 @@
 				9FF7500D1D27DB5F000D208D /* ManagedObjectMappingProvider.m in Sources */,
 				631FFE191BEF451400749DB8 /* CDResponderTableViewCell.m in Sources */,
 				9F1830931BC02293000E21A5 /* RESTRequestConfigurator.m in Sources */,
+				66CCA73C1D61E99E004153EA /* ResponseConverterImplementation.m in Sources */,
 				2B20647E1D3F9CE900246C8D /* _TagModelObject.m in Sources */,
 				63F342B01C8B20AB002AF7CD /* EventStoreService.m in Sources */,
 				667050001D460E3100DD9D6E /* UIColor+ConferencesPallete.m in Sources */,
@@ -5714,6 +5824,7 @@
 				63FDCE061BBDBA2A00A43B60 /* AppDelegate.m in Sources */,
 				63F6134E1CB00A220002AEF0 /* AnnouncementListPresenter.m in Sources */,
 				631808401C482B1300A61E7D /* SpeakerShortInfoInteractor.m in Sources */,
+				66CCA74D1D61FDDE004153EA /* DeletedResponseObjectFormatter.m in Sources */,
 				667050531D46332200DD9D6E /* ReportsSearchCellObjectsBuilderImplementation.m in Sources */,
 				63F613701CB00A220002AEF0 /* EventDescriptionTableViewCell.m in Sources */,
 				2B20647C1D3F9CE900246C8D /* _SocialNetworkAccountModelObject.m in Sources */,
@@ -5762,6 +5873,7 @@
 				63F6136E1CB00A220002AEF0 /* CurrentVideoTranslationTableViewCell.m in Sources */,
 				63F6137C1CB00A220002AEF0 /* PreviousLectureTableViewCell.m in Sources */,
 				63F6135C1CB00A220002AEF0 /* EventHeaderPresenter.m in Sources */,
+				66CCA7481D61FC72004153EA /* DeletedObjectsMapper.m in Sources */,
 				9F40779C1D2C109200D47EF6 /* DirectionObjectMapper.m in Sources */,
 				9F0A85031BC1698B006F79FB /* OperationDebugDescriptionFormatter.m in Sources */,
 				63F613861CB00A220002AEF0 /* PastEventCellObjectBuilder.m in Sources */,

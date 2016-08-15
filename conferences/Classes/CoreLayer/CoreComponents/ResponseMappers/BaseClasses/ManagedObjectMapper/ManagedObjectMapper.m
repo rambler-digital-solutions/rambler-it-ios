@@ -66,8 +66,8 @@
     __block NSArray *result;
     [rootSavingContext performBlockAndWait:^{
         result = [EKManagedObjectMapper arrayOfObjectsFromExternalRepresentation:response
-                                                                         withMapping:mapping
-                                                              inManagedObjectContext:rootSavingContext];
+                                                                     withMapping:mapping
+                                                          inManagedObjectContext:rootSavingContext];
         [rootSavingContext MR_saveToPersistentStoreAndWait];
     }];
     

@@ -27,6 +27,7 @@
 @protocol ResponseDeserializersFactory;
 @protocol ResponseValidatorsFactory;
 @protocol ResponseMappersFactory;
+@protocol ResponseConverterFactory;
 
 @class EventOperationFactory;
 
@@ -45,5 +46,6 @@
 @property (strong, nonatomic, readonly) TyphoonAssembly <ResponseDeserializersFactory> *responseDeserializersFactory;
 @property (strong, nonatomic, readonly) TyphoonAssembly <ResponseValidatorsFactory> *responseValidatorsFactory;
 @property (strong, nonatomic, readonly) TyphoonAssembly <ResponseMappersFactory> *responseMappersFactory;
+@property (strong, nonatomic, readonly) TyphoonAssembly <ResponseMappersFactory> *responseConverterFactory;
 
 @end

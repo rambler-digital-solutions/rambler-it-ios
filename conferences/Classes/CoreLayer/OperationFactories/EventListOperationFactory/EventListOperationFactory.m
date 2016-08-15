@@ -66,7 +66,7 @@
     
     config.responseValidationType = ResponseValidationParseType;
     
-    config.responseMappingType = ResponseMappingResultsType;
+    config.responseMappingType = ResponseMappingDeletedType;
     config.mappingContext = @{
                               kMappingContextModelClassKey : NSStringFromClass([EventModelObject class])
                               };

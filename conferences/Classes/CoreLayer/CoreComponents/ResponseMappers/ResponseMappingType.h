@@ -24,7 +24,8 @@
 typedef NS_ENUM(NSUInteger, ResponseMappingType) {
     ResponseMappingDisabledType = 0,
     ResponseMappingResultsType = 1,
-    ResponseMappingSingleType = 2
+    ResponseMappingSingleType = 2,
+    ResponseMappingDeletedType = 3
 };
 
 #endif /* ResponseMappingType_h */

@@ -68,6 +68,8 @@ static NSString *const kLastModifiedDateFormat = @"EE, d MMM yyyy HH:mm:ss ZZZ";
                               with:self.responseValidatorsFactory];
         [definition injectProperty:@selector(responseMappersFactory)
                               with:self.responseMappersFactory];
+        [definition injectProperty:@selector(responseConverterFactory)
+                              with:self.responseConverterFactory];
         [definition injectProperty:@selector(lastModifiedDateFormatter)
                               with:[self lastModifiedDateFormatter]];
     }];
