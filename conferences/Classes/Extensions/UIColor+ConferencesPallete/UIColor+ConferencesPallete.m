@@ -23,6 +23,10 @@
 
 @implementation UIColor (ConferencesPallete)
 
++ (UIColor *)rcf_yellowColor {
+    return [UIColor colorFromHexString:@"#ffd000"];
+}
+
 + (UIColor *)colorForSelectedTextEventCellObject {
     return [UIColor colorFromHexString:@"#ff0000"];
 }

@@ -27,6 +27,7 @@
 #import "EventPlainObject.h"
 #import "TechPlainObject.h"
 #import "UIColor+Hex.h"
+#import "UIColor+ConferencesPallete.h"
 
 @implementation AnnouncementGalleryViewController
 
@@ -66,6 +67,7 @@
 
 - (void)triggerNoFutureEventsState {
     [self.dataDisplayManager updateDataSourceWithNoEventsState];
+    self.backgroundAdditionalView.backgroundColor = [UIColor rcf_yellowColor];
     [self.collectionView reloadData];
 }
 
