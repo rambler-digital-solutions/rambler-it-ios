@@ -22,6 +22,11 @@
 #import "ResponseConverter.h"
 #import "ResponseObjectFormatter.h"
 
+/**
+ @author Egor Tolstoy
+ 
+ The object is responsible for convert to another JSON representation
+ */
 @interface ResponseConverterImplementation : NSObject <ResponseConverter>
 
 @property (strong, nonatomic) id<ResponseObjectFormatter> responseFormatter;

@@ -23,8 +23,11 @@
 #import "ResponseConverter.h"
 #import "ResponseConverterFactory.h"
 
-@interface ResponseConverterAssembly : ModuleAssemblyBase <ResponseConverterFactory, RamblerInitialAssembly>
-
--(id<ResponseConverter>)converterResponse;
+/**
+ @author Konstantin Zinovyev
+ 
+ The implementation of the ResponseConverterFactory protocol, based on TyphoonAssembly
+ */
+@interface ResponseConverterAssembly : TyphoonAssembly <ResponseConverterFactory, RamblerInitialAssembly>
 
 @end
