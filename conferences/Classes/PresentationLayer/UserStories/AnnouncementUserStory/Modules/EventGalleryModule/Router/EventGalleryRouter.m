@@ -25,6 +25,7 @@
 #import <ViperMcFlurry/ViperMcFlurry.h>
 
 static NSString *const kAnnouncementGalleryModuleToEventModuleSegue = @"EventGalleryModuleToEventModuleSegue";
+static NSString *const kAnnouncementGalleryModuleToEventListModuleSegue = @"kAnnouncementGalleryModuleToEventListModuleSegue";
 
 @implementation EventGalleryRouter
 
@@ -37,8 +38,11 @@ static NSString *const kAnnouncementGalleryModuleToEventModuleSegue = @"EventGal
     }];
 }
 
-- (void)openReportsModule {
-
+- (void)openEventListModule {
+    [[self.transitionHandler openModuleUsingSegue:kAnnouncementGalleryModuleToEventListModuleSegue] thenChainUsingBlock:^id<RamblerViperModuleOutput>(id<EventModuleInput> moduleInput) {
+        
+        return nil;
+    }];
 }
 
 @end

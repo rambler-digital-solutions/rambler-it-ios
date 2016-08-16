@@ -43,8 +43,8 @@
 /**
  @author Egor Tolstoy
  
- Method tells presenter that a "Open reports" button was tapped
+ Method tells presenter that a "More events" button was tapped
  */
-- (void)didTriggerReportsButtonTapEvent;
+- (void)didTriggerMoreEventsButtonTapEvent;
 
 @end

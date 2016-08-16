@@ -30,8 +30,8 @@
 /**
  @author Egor Tolstoy
  
- Method is used to inform delegate that a reports button was tapped
+ Method is used to inform delegate that a "More events" button was tapped
  */
-- (void)didTapReportsButton;
+- (void)didTapMoreEventsButton;
 
 @end

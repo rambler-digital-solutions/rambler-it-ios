@@ -68,8 +68,8 @@
 
 #pragma mark - <EventGalleryMoreEventsCollectionViewCellActionProtocol>
 
-- (void)didTapReportsButton {
-    [self.output didTriggerReportsButtonTapEvent];
+- (void)didTapMoreEventsButton {
+    [self.output didTriggerMoreEventsButtonTapEvent];
 }
 
 #pragma mark - <EventGalleryDataDisplayManagerDelegate>

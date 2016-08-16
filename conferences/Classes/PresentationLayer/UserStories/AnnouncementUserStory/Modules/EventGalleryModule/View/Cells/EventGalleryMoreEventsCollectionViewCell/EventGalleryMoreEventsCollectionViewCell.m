@@ -51,7 +51,7 @@
 #pragma mark - IBActions
 
 - (IBAction)didTapReportsButton:(id)sender {
-    [self.actionProxy didTapReportsButton];
+    [self.actionProxy didTapMoreEventsButton];
 }
 
 @end

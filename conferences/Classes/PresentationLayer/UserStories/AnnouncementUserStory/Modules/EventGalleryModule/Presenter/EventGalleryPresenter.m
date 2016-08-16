@@ -43,8 +43,8 @@
     [self.router openEventModuleWithEventId:eventId];
 }
 
-- (void)didTriggerReportsButtonTapEvent {
-    [self.router openReportsModule];
+- (void)didTriggerMoreEventsButtonTapEvent {
+    [self.router openEventListModule];
 }
 
 #pragma mark - Методы EventGalleryInteractorOutput

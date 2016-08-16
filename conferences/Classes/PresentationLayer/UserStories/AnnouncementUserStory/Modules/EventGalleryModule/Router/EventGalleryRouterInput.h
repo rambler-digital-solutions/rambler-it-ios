@@ -34,8 +34,8 @@
 /**
  @author Egor Tolstoy
  
- Method opems ReportsModule
+ Method opens MoreEvents
  */
-- (void)openReportsModule;
+- (void)openEventListModule;
 
 @end
