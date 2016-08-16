@@ -474,10 +474,9 @@
 		9FBE8A351D5F3CD500DA0C32 /* EventGalleryPresenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E95DD4B714E0257EE1CE1C0D /* EventGalleryPresenterTests.m */; };
 		9FBE8A361D5F3CD800DA0C32 /* EventGalleryViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E95A8F2CA91B564A26FB49 /* EventGalleryViewControllerTests.m */; };
 		9FBE8A371D5F3CDD00DA0C32 /* EventGalleryAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3E16ACB081075262931CD4 /* EventGalleryAssemblyTests.m */; };
-		9FBE8A3D1D5F402E00DA0C32 /* FutureEventFilterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8A3C1D5F402E00DA0C32 /* FutureEventFilterTests.m */; };
+		9FBE8A3D1D5F402E00DA0C32 /* EventGalleryEventFilterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8A3C1D5F402E00DA0C32 /* EventGalleryEventFilterTests.m */; };
 		9FBE8AB51D630D4C00DA0C32 /* EventGalleryAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8A791D630D4C00DA0C32 /* EventGalleryAssembly.m */; };
 		9FBE8AB61D630D4C00DA0C32 /* EventGalleryInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8A7C1D630D4C00DA0C32 /* EventGalleryInteractor.m */; };
-		9FBE8AB71D630D4C00DA0C32 /* FutureEventFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8A811D630D4C00DA0C32 /* FutureEventFilter.m */; };
 		9FBE8AB81D630D4C00DA0C32 /* EventGalleryPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8A851D630D4C00DA0C32 /* EventGalleryPresenter.m */; };
 		9FBE8AB91D630D4C00DA0C32 /* EventGalleryRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8A881D630D4C00DA0C32 /* EventGalleryRouter.m */; };
 		9FBE8ABA1D630D4C00DA0C32 /* EventGalleryBackgroundColorAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8A8E1D630D4C00DA0C32 /* EventGalleryBackgroundColorAnimator.m */; };
@@ -493,6 +492,7 @@
 		9FBE8AC41D630D4C00DA0C32 /* EventGalleryCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8AAC1D630D4C00DA0C32 /* EventGalleryCollectionViewFlowLayout.m */; };
 		9FBE8AC51D630D4C00DA0C32 /* EventGalleryDataDisplayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8AB01D630D4C00DA0C32 /* EventGalleryDataDisplayManager.m */; };
 		9FBE8AC61D630D4C00DA0C32 /* EventGalleryPageSizeCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8AB41D630D4C00DA0C32 /* EventGalleryPageSizeCalculator.m */; };
+		9FBE8ACB1D63293700DA0C32 /* EventGalleryEventFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8ACA1D63293700DA0C32 /* EventGalleryEventFilter.m */; };
 		9FC1F6761D2824000070D9B5 /* EventListServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */; };
 		9FC1F6801D2838FA0070D9B5 /* EventListQueryTransformerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */; };
 		9FC1F6841D28391E0070D9B5 /* EventListQueryTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6831D28391E0070D9B5 /* EventListQueryTransformer.m */; };
@@ -1448,15 +1448,13 @@
 		9FBE8A141D5F343F00DA0C32 /* LocationCardFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationCardFlowLayout.h; path = LocationCardFlowLayout/LocationCardFlowLayout.h; sourceTree = "<group>"; };
 		9FBE8A151D5F343F00DA0C32 /* LocationCardFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationCardFlowLayout.m; path = LocationCardFlowLayout/LocationCardFlowLayout.m; sourceTree = "<group>"; };
 		9FBE8A171D5F393900DA0C32 /* LocationCardFlowLayoutConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LocationCardFlowLayoutConstants.h; path = LocationCardFlowLayout/LocationCardFlowLayoutConstants.h; sourceTree = "<group>"; };
-		9FBE8A3C1D5F402E00DA0C32 /* FutureEventFilterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FutureEventFilterTests.m; sourceTree = "<group>"; };
+		9FBE8A3C1D5F402E00DA0C32 /* EventGalleryEventFilterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventGalleryEventFilterTests.m; sourceTree = "<group>"; };
 		9FBE8A781D630D4C00DA0C32 /* EventGalleryAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventGalleryAssembly.h; sourceTree = "<group>"; };
 		9FBE8A791D630D4C00DA0C32 /* EventGalleryAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventGalleryAssembly.m; sourceTree = "<group>"; };
 		9FBE8A7B1D630D4C00DA0C32 /* EventGalleryInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventGalleryInteractor.h; sourceTree = "<group>"; };
 		9FBE8A7C1D630D4C00DA0C32 /* EventGalleryInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventGalleryInteractor.m; sourceTree = "<group>"; };
 		9FBE8A7D1D630D4C00DA0C32 /* EventGalleryInteractorInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventGalleryInteractorInput.h; sourceTree = "<group>"; };
 		9FBE8A7E1D630D4C00DA0C32 /* EventGalleryInteractorOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventGalleryInteractorOutput.h; sourceTree = "<group>"; };
-		9FBE8A801D630D4C00DA0C32 /* FutureEventFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FutureEventFilter.h; sourceTree = "<group>"; };
-		9FBE8A811D630D4C00DA0C32 /* FutureEventFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FutureEventFilter.m; sourceTree = "<group>"; };
 		9FBE8A831D630D4C00DA0C32 /* EventGalleryModuleInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventGalleryModuleInput.h; sourceTree = "<group>"; };
 		9FBE8A841D630D4C00DA0C32 /* EventGalleryPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventGalleryPresenter.h; sourceTree = "<group>"; };
 		9FBE8A851D630D4C00DA0C32 /* EventGalleryPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventGalleryPresenter.m; sourceTree = "<group>"; };
@@ -1491,6 +1489,9 @@
 		9FBE8AB01D630D4C00DA0C32 /* EventGalleryDataDisplayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventGalleryDataDisplayManager.m; sourceTree = "<group>"; };
 		9FBE8AB31D630D4C00DA0C32 /* EventGalleryPageSizeCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventGalleryPageSizeCalculator.h; sourceTree = "<group>"; };
 		9FBE8AB41D630D4C00DA0C32 /* EventGalleryPageSizeCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventGalleryPageSizeCalculator.m; sourceTree = "<group>"; };
+		9FBE8AC91D63293700DA0C32 /* EventGalleryEventFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventGalleryEventFilter.h; sourceTree = "<group>"; };
+		9FBE8ACA1D63293700DA0C32 /* EventGalleryEventFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventGalleryEventFilter.m; sourceTree = "<group>"; };
+		9FBE8ACC1D63296400DA0C32 /* EventGalleryEventFilterConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventGalleryEventFilterConstants.h; sourceTree = "<group>"; };
 		9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListServiceTests.m; path = EventListServiceTests/EventListServiceTests.m; sourceTree = "<group>"; };
 		9FC1F6781D2826D10070D9B5 /* QueryTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QueryTransformer.h; path = CoreComponents/QueryTransformers/QueryTransformer.h; sourceTree = "<group>"; };
 		9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListQueryTransformerTests.m; path = CoreLayer/CoreComponents/QueryTransformers/EventListQueryTransformer/EventListQueryTransformerTests.m; sourceTree = "<group>"; };
@@ -1806,7 +1807,7 @@
 			isa = PBXGroup;
 			children = (
 				37C2D8F2CACC9D443740E428 /* EventGalleryInteractorTests.m */,
-				9FBE8A3C1D5F402E00DA0C32 /* FutureEventFilterTests.m */,
+				9FBE8A3C1D5F402E00DA0C32 /* EventGalleryEventFilterTests.m */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -6858,22 +6859,13 @@
 		9FBE8A7A1D630D4C00DA0C32 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				9FBE8AC81D63293700DA0C32 /* EventGalleryEventFilter */,
 				9FBE8A7B1D630D4C00DA0C32 /* EventGalleryInteractor.h */,
 				9FBE8A7C1D630D4C00DA0C32 /* EventGalleryInteractor.m */,
 				9FBE8A7D1D630D4C00DA0C32 /* EventGalleryInteractorInput.h */,
 				9FBE8A7E1D630D4C00DA0C32 /* EventGalleryInteractorOutput.h */,
-				9FBE8A7F1D630D4C00DA0C32 /* FutureEventFilter */,
 			);
 			path = Interactor;
-			sourceTree = "<group>";
-		};
-		9FBE8A7F1D630D4C00DA0C32 /* FutureEventFilter */ = {
-			isa = PBXGroup;
-			children = (
-				9FBE8A801D630D4C00DA0C32 /* FutureEventFilter.h */,
-				9FBE8A811D630D4C00DA0C32 /* FutureEventFilter.m */,
-			);
-			path = FutureEventFilter;
 			sourceTree = "<group>";
 		};
 		9FBE8A821D630D4C00DA0C32 /* Presenter */ = {
@@ -7041,6 +7033,16 @@
 				9FBE8AB41D630D4C00DA0C32 /* EventGalleryPageSizeCalculator.m */,
 			);
 			path = EventGalleryPageSizeCalculator;
+			sourceTree = "<group>";
+		};
+		9FBE8AC81D63293700DA0C32 /* EventGalleryEventFilter */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE8AC91D63293700DA0C32 /* EventGalleryEventFilter.h */,
+				9FBE8ACA1D63293700DA0C32 /* EventGalleryEventFilter.m */,
+				9FBE8ACC1D63296400DA0C32 /* EventGalleryEventFilterConstants.h */,
+			);
+			path = EventGalleryEventFilter;
 			sourceTree = "<group>";
 		};
 		9FC1F6741D2823E40070D9B5 /* EventListServiceTests */ = {
@@ -7857,6 +7859,7 @@
 				2B20648D1D3F9CE900246C8D /* RegistrationQuestionModelObject.m in Sources */,
 				636B640D1BBDD5000053E38F /* SocialNetworkAccountServiceImplementation.m in Sources */,
 				9FBE89EB1D5CCF8300DA0C32 /* ObjectTransformerConstants.m in Sources */,
+				9FBE8ACB1D63293700DA0C32 /* EventGalleryEventFilter.m in Sources */,
 				66E999681D54B04A00161D98 /* TagPresenter.m in Sources */,
 				667050211D46146B00DD9D6E /* ReportsSearchDataDisplayManager.m in Sources */,
 				66E999621D54B04100161D98 /* TagModuleConfig.m in Sources */,
@@ -7890,7 +7893,6 @@
 				2B2064891D3F9CE900246C8D /* EventModelObject.m in Sources */,
 				2B20647F1D3F9CE900246C8D /* _TechModelObject.m in Sources */,
 				63F51CAC1C42AD2100AFB9D2 /* LectureMaterialTitleTableViewCell.m in Sources */,
-				9FBE8AB71D630D4C00DA0C32 /* FutureEventFilter.m in Sources */,
 				9F4077A81D2C164800D47EF6 /* ResourceMapperAssembly.m in Sources */,
 				63F613881CB00A220002AEF0 /* EventViewController.m in Sources */,
 				66E999551D54AFE900161D98 /* TagShowMediator.m in Sources */,
@@ -7927,7 +7929,7 @@
 				9FF37E181D32397900471B4E /* RamblerLocationPresenterTests.m in Sources */,
 				6621664F1D4F4507000A1D11 /* ReportsSearchDataDisplayManagerTests.m in Sources */,
 				9FBE8A0B1D5DFAB700DA0C32 /* VideoThumbnailTests.m in Sources */,
-				9FBE8A3D1D5F402E00DA0C32 /* FutureEventFilterTests.m in Sources */,
+				9FBE8A3D1D5F402E00DA0C32 /* EventGalleryEventFilterTests.m in Sources */,
 				9F533A7B1D50D459004F8E82 /* (null) in Sources */,
 				63F613ED1CB111070002AEF0 /* SpeakerInfoInteractorTests.m in Sources */,
 				9F78D76B1D59EB52009DDCEA /* SpeakerObjectIndexerTests.m in Sources */,

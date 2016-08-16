@@ -20,21 +20,22 @@
 
 #import <XCTest/XCTest.h>
 
-#import "FutureEventFilter.h"
+#import "EventGalleryEventFilter.h"
 #import "EventPlainObject.h"
+#import "EventGalleryEventFilterConstants.h"
 
-@interface FutureEventFilterTests : XCTestCase
+@interface EventGalleryEventFilterTests : XCTestCase
 
-@property (nonatomic, strong) FutureEventFilter *filter;
+@property (nonatomic, strong) EventGalleryEventFilter *filter;
 
 @end
 
-@implementation FutureEventFilterTests
+@implementation EventGalleryEventFilterTests
 
 - (void)setUp {
     [super setUp];
     
-    self.filter = [FutureEventFilter new];
+    self.filter = [EventGalleryEventFilter new];
 }
 
 - (void)tearDown {
@@ -43,10 +44,10 @@
     [super tearDown];
 }
 
-- (void)testThatFilterFiltersFutureEvents {
+- (void)testThatFilterFiltersAllEvents {
     // given
     NSUInteger pastEventsCount = 10;
-    NSUInteger futureEventsCount = 5;
+    NSUInteger futureEventsCount = 20;
     NSArray *events = [self generateEventsWithFutureEventsCount:futureEventsCount
                                                 pastEventsCount:pastEventsCount];
     
@@ -55,6 +56,20 @@
     
     // then
     XCTAssertEqual(result.count, futureEventsCount);
+}
+
+- (void)testThatFilterAddsPastEventsIfNotEnoughFutureEvents {
+    // given
+    NSUInteger eventDelta = 5;
+    NSUInteger futureEventsCount = kEventGalleryMinimumEventCount - eventDelta;
+    NSArray *events = [self generateEventsWithFutureEventsCount:futureEventsCount
+                                                pastEventsCount:eventDelta];
+    
+    // when
+    NSArray *result = [self.filter filterFutureEventsFromEvents:events];
+    
+    // then
+    XCTAssertEqual(result.count, kEventGalleryMinimumEventCount);
 }
 
 #pragma mark - Private methods

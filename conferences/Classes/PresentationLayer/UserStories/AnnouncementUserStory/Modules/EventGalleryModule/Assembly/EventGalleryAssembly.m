@@ -28,7 +28,7 @@
 #import "EventGalleryInteractor.h"
 #import "EventGalleryPresenter.h"
 #import "EventGalleryRouter.h"
-#import "FutureEventFilter.h"
+#import "EventGalleryEventFilter.h"
 #import "EventGalleryDataDisplayManager.h"
 #import "EventGalleryCellObjectFactory.h"
 #import "EventGalleryPageSizeCalculator.h"
@@ -65,7 +65,7 @@
                               [definition injectProperty:@selector(ponsomizer)
                                                     with:[self.ponsomizerAssembly ponsomizer]];
                               [definition injectProperty:@selector(futureEventFilter)
-                                                    with:[self futureEventFilter]];
+                                                    with:[self eventGalleryEventFilter]];
                           }];
 }
 
@@ -89,8 +89,8 @@
                           }];
 }
 
-- (FutureEventFilter *)futureEventFilter {
-    return [TyphoonDefinition withClass:[FutureEventFilter class]];
+- (EventGalleryEventFilter *)eventGalleryEventFilter {
+    return [TyphoonDefinition withClass:[EventGalleryEventFilter class]];
 }
 
 - (EventGalleryDataDisplayManager *)dataDisplayManagerEventGalleryModule {

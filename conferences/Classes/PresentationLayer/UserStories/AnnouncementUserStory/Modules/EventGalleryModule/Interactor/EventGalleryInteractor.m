@@ -25,7 +25,7 @@
 #import "EventModelObject.h"
 #import "EventPlainObject.h"
 #import "ROSPonsomizer.h"
-#import "FutureEventFilter.h"
+#import "EventGalleryEventFilter.h"
 
 #import "EXTScope.h"
 

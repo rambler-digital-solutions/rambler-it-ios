@@ -18,26 +18,39 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "FutureEventFilter.h"
+#import "EventGalleryEventFilter.h"
 
 #import "EventPlainObject.h"
+#import "EventGalleryEventFilterConstants.h"
 
-@implementation FutureEventFilter
+@implementation EventGalleryEventFilter
 
 #pragma mark - Public methods
 
 - (NSArray *)filterFutureEventsFromEvents:(NSArray<EventPlainObject *> *)events {
     NSDate *currentDate = [NSDate date];
-    NSMutableArray *futureEvents = [NSMutableArray new];
+    NSArray *sortedEvents = [self sortFutureEventsByDate:events];
+    NSMutableArray *resultEvents = [NSMutableArray new];
     
-    for (EventPlainObject *event in events) {
+    for (EventPlainObject *event in sortedEvents) {
         if ([event.endDate compare:currentDate] == NSOrderedDescending) {
-            [futureEvents addObject:event];
+            [resultEvents addObject:event];
         }
     }
     
-    NSArray *sortedEvents = [self sortFutureEventsByDate:events];
-    return sortedEvents;
+    if (resultEvents.count < kEventGalleryMinimumEventCount) {
+        NSUInteger additionalEventCount = kEventGalleryMinimumEventCount - resultEvents.count;
+        NSMutableArray *pastEvents = [NSMutableArray arrayWithArray:sortedEvents];
+        [pastEvents removeObjectsInArray:resultEvents];
+        
+        NSUInteger count = additionalEventCount < pastEvents.count ? additionalEventCount : pastEvents.count;
+        for (NSUInteger i = 0; i < count; i++) {
+            [resultEvents addObject:pastEvents[i]];
+        }
+    }
+    
+    NSArray *result = [self sortFutureEventsByDate:resultEvents];
+    return result;
 }
 
 #pragma mark - Private methods

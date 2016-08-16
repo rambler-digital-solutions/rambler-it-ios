@@ -18,18 +18,26 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "EventGalleryInteractorInput.h"
+#import <Foundation/Foundation.h>
 
-@protocol EventGalleryInteractorOutput;
-@protocol EventService;
-@protocol ROSPonsomizer;
-@class EventGalleryEventFilter;
+@class EventPlainObject;
 
-@interface EventGalleryInteractor : NSObject <EventGalleryInteractorInput>
+/**
+ @author Egor Tolstoy
+ 
+ The object is responsible for filtering all events except future from an array
+ */
+@interface EventGalleryEventFilter : NSObject
 
-@property (nonatomic, weak) id<EventGalleryInteractorOutput> output;
-@property (nonatomic, strong) id <EventService> eventService;
-@property (nonatomic, strong) id <ROSPonsomizer> ponsomizer;
-@property (nonatomic, strong) EventGalleryEventFilter *futureEventFilter;
+/**
+ @author Egor Tolstoy
+ 
+ Method filters a passed array of events and returns only future events.
+ 
+ @param events All events
+ 
+ @return Future events
+ */
+- (NSArray *)filterFutureEventsFromEvents:(NSArray <EventPlainObject *> *)events;
 
 @end

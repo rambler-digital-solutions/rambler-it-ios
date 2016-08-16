@@ -18,26 +18,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#ifndef EventGalleryEventFilterConstants_h
+#define EventGalleryEventFilterConstants_h
 
-@class EventPlainObject;
+static NSUInteger const kEventGalleryMinimumEventCount = 7;
 
-/**
- @author Egor Tolstoy
- 
- The object is responsible for filtering all events except future from an array
- */
-@interface FutureEventFilter : NSObject
-
-/**
- @author Egor Tolstoy
- 
- Method filters a passed array of events and returns only future events.
- 
- @param events All events
- 
- @return Future events
- */
-- (NSArray *)filterFutureEventsFromEvents:(NSArray <EventPlainObject *> *)events;
-
-@end
+#endif /* EventGalleryEventFilterConstants_h */
