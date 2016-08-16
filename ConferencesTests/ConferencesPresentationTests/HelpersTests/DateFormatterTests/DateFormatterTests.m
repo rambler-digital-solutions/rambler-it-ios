@@ -38,7 +38,7 @@
     
     NSString *stringDate = @"2015-12-06 12:39:05";
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd hh:mm:ss"];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     self.date = [dateFormatter dateFromString:stringDate];
 }
 

@@ -461,7 +461,6 @@
 		9FBE8A341D5F3CD100DA0C32 /* EventGalleryInteractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C2D8F2CACC9D443740E428 /* EventGalleryInteractorTests.m */; };
 		9FBE8A351D5F3CD500DA0C32 /* EventGalleryPresenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E95DD4B714E0257EE1CE1C0D /* EventGalleryPresenterTests.m */; };
 		9FBE8A361D5F3CD800DA0C32 /* EventGalleryViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E95A8F2CA91B564A26FB49 /* EventGalleryViewControllerTests.m */; };
-		9FBE8A371D5F3CDD00DA0C32 /* EventGalleryAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3E16ACB081075262931CD4 /* EventGalleryAssemblyTests.m */; };
 		9FBE8A3D1D5F402E00DA0C32 /* EventGalleryEventFilterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8A3C1D5F402E00DA0C32 /* EventGalleryEventFilterTests.m */; };
 		9FBE8AB51D630D4C00DA0C32 /* EventGalleryAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8A791D630D4C00DA0C32 /* EventGalleryAssembly.m */; };
 		9FBE8AB61D630D4C00DA0C32 /* EventGalleryInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8A7C1D630D4C00DA0C32 /* EventGalleryInteractor.m */; };
@@ -527,7 +526,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		144D9B8B5AEBB4A2D93334B2 /* EventGalleryAssembly_Testable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EventGalleryAssembly_Testable.h; sourceTree = "<group>"; };
 		2A4F504A716A8833A7A01A5D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B01CEBD1D50A55900DA8E66 /* MetaEventServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetaEventServiceTests.m; sourceTree = "<group>"; };
 		2B05E15B1D50EDB900E017AB /* EventModuleSegueIdentifiersConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventModuleSegueIdentifiersConstants.h; sourceTree = "<group>"; };
@@ -1521,7 +1519,6 @@
 		9FFEAF091D2E5CD3006E9649 /* MapLinkBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapLinkBuilder.h; path = MapLinkBuilder/MapLinkBuilder.h; sourceTree = "<group>"; };
 		9FFEAF0A1D2E5CE0006E9649 /* AppleMapsLinkBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppleMapsLinkBuilder.h; path = MapLinkBuilder/AppleMapsLinkBuilder.h; sourceTree = "<group>"; };
 		9FFEAF0B1D2E5CE0006E9649 /* AppleMapsLinkBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppleMapsLinkBuilder.m; path = MapLinkBuilder/AppleMapsLinkBuilder.m; sourceTree = "<group>"; };
-		CA3E16ACB081075262931CD4 /* EventGalleryAssemblyTests.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EventGalleryAssemblyTests.m; sourceTree = "<group>"; };
 		E95DD4B714E0257EE1CE1C0D /* EventGalleryPresenterTests.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EventGalleryPresenterTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -4398,15 +4395,6 @@
 			name = Nimbus;
 			sourceTree = "<group>";
 		};
-		7213055A78CD4F2F8D988B3A /* Assembly */ = {
-			isa = PBXGroup;
-			children = (
-				CA3E16ACB081075262931CD4 /* EventGalleryAssemblyTests.m */,
-				144D9B8B5AEBB4A2D93334B2 /* EventGalleryAssembly_Testable.h */,
-			);
-			path = Assembly;
-			sourceTree = "<group>";
-		};
 		846E56C9D402B4092A067186 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -7243,7 +7231,6 @@
 		AE35A84265303BC48C2CD8D7 /* AnnouncementGallery */ = {
 			isa = PBXGroup;
 			children = (
-				7213055A78CD4F2F8D988B3A /* Assembly */,
 				2F78E70CD8438165FE1F4A7A /* View */,
 				846E56C9D402B4092A067186 /* Presenter */,
 				3D24A952DDF1D4E328573040 /* Interactor */,
@@ -7918,7 +7905,6 @@
 				63F403001BCF85EE0086D030 /* RequestConfiguratorsAssemblyTests.m in Sources */,
 				9F78D7721D5A005A009DDCEA /* LectureObjectTransformerTests.m in Sources */,
 				9FC1F6801D2838FA0070D9B5 /* EventListQueryTransformerTests.m in Sources */,
-				9FBE8A371D5F3CDD00DA0C32 /* EventGalleryAssemblyTests.m in Sources */,
 				9FBE89DB1D5CB76900DA0C32 /* TabBarControllerFactoryImplementationTests.m in Sources */,
 				63F613DA1CB111070002AEF0 /* EventListRouterTests.m in Sources */,
 				9F0A85231BC185AA006F79FB /* ChainableOperationTestsBase.m in Sources */,
