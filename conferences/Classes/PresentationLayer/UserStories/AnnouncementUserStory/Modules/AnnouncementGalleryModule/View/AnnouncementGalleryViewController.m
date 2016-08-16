@@ -26,6 +26,8 @@
 
 #import "EventPlainObject.h"
 #import "TechPlainObject.h"
+
+#import "Extensions/UIViewController+CDObserver/UIViewController+CDObserver.h"
 #import "UIColor+Hex.h"
 #import "UIColor+ConferencesPallete.h"
 
@@ -35,7 +37,7 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-
+    [self cd_startObserveProtocol:@protocol(AnnouncementGalleryNoEventsCollectionViewCellActionProtocol)];
 	[self.output didTriggerViewReadyEvent];
 }
 
@@ -69,6 +71,12 @@
     [self.dataDisplayManager updateDataSourceWithNoEventsState];
     self.backgroundAdditionalView.backgroundColor = [UIColor rcf_yellowColor];
     [self.collectionView reloadData];
+}
+
+#pragma ,ark - <AnnouncementGalleryNoEventsCollectionViewCellActionProtocol>
+
+- (void)didTapReportsButton {
+    [self.output didTriggerReportsButtonTapEvent];
 }
 
 #pragma mark - <AnnouncementGalleryDataDisplayManagerDelegate>

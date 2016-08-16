@@ -31,4 +31,11 @@
  */
 - (void)openEventModuleWithEventId:(NSString *)eventId;
 
+/**
+ @author Egor Tolstoy
+ 
+ Method opems ReportsModule
+ */
+- (void)openReportsModule;
+
 @end

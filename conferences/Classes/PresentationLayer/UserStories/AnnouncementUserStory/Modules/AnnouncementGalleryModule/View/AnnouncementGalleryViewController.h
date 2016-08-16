@@ -22,13 +22,14 @@
 
 #import "AnnouncementGalleryViewInput.h"
 #import "AnnouncementGalleryDataDisplayManager.h"
+#import "AnnouncementGalleryNoEventsCollectionViewCellActionProtocol.h"
 
 @protocol AnnouncementGalleryViewOutput;
 @class AnnouncementGalleryBackgroundColorAnimator;
 @class AnnouncementGalleryDataDisplayManager;
 @class AnnouncementGalleryCollectionViewFlowLayout;
 
-@interface AnnouncementGalleryViewController : UIViewController <AnnouncementGalleryViewInput, AnnouncementGalleryDataDisplayManagerDelegate>
+@interface AnnouncementGalleryViewController : UIViewController <AnnouncementGalleryViewInput, AnnouncementGalleryDataDisplayManagerDelegate, AnnouncementGalleryNoEventsCollectionViewCellActionProtocol>
 
 #pragma mark - Interface
 

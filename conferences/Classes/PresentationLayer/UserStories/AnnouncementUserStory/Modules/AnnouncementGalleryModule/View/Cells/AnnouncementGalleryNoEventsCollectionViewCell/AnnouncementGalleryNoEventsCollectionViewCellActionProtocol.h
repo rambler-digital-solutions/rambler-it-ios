@@ -20,31 +20,18 @@
 
 #import <Foundation/Foundation.h>
 
-@class EventPlainObject;
-
-@protocol AnnouncementGalleryViewOutput <NSObject>
-
 /**
  @author Egor Tolstoy
-
- Method tells presenter that view is ready for work
+ 
+ Action protocol for AnnouncementGalleryNoEventsCollectionViewCell
  */
-- (void)didTriggerViewReadyEvent;
+@protocol AnnouncementGalleryNoEventsCollectionViewCellActionProtocol <NSObject>
 
 /**
  @author Egor Tolstoy
  
- Method tells output that event announcement was tapped
- 
- @param event EventPlainObject
+ Method is used to inform delegate that a reports button was tapped
  */
-- (void)didTriggerAnnouncementTapEventWithObject:(EventPlainObject *)event;
-
-/**
- @author Egor Tolstoy
- 
- Method tells presenter that a "Open reports" button was tapped
- */
-- (void)didTriggerReportsButtonTapEvent;
+- (void)didTapReportsButton;
 
 @end

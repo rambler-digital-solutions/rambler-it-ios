@@ -37,4 +37,8 @@ static NSString *const kAnnouncementGalleryModuleToEventModuleSegue = @"Announce
     }];
 }
 
+- (void)openReportsModule {
+
+}
+
 @end

@@ -27,4 +27,6 @@
  */
 @interface AnnouncementGalleryNoEventsCollectionViewCell : UICollectionViewCell <NICollectionViewCell>
 
+- (IBAction)didTapReportsButton:(id)sender;
+
 @end

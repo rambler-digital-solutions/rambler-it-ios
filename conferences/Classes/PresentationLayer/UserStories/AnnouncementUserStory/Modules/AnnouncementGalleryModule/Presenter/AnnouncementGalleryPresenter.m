@@ -43,6 +43,10 @@
     [self.router openEventModuleWithEventId:eventId];
 }
 
+- (void)didTriggerReportsButtonTapEvent {
+    [self.router openReportsModule];
+}
+
 #pragma mark - Методы AnnouncementGalleryInteractorOutput
 
 - (void)didUpdateEventListWithFutureEvents:(NSArray<EventPlainObject *> *)events {
@@ -52,7 +56,7 @@
 #pragma mark - Private methods
 
 - (void)updateViewWithEvents:(NSArray *)events {
-    if (events.count > 0) {
+    if (events.count == 0) {
         [self.view updateStateWithFutureEvents:events];
     } else {
         [self.view triggerNoFutureEventsState];

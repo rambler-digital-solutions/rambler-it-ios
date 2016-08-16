@@ -1490,6 +1490,7 @@
 		9FBE8A6E1D60B8A300DA0C32 /* AnnouncementGalleryNoEventsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AnnouncementGalleryNoEventsCollectionViewCell.xib; path = Cells/AnnouncementGalleryNoEventsCollectionViewCell/AnnouncementGalleryNoEventsCollectionViewCell.xib; sourceTree = "<group>"; };
 		9FBE8A721D60BF1800DA0C32 /* AnnouncementGalleryCollectionViewCellShadower.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnnouncementGalleryCollectionViewCellShadower.h; path = Cells/Helpers/AnnouncementGalleryCollectionViewCellShadower.h; sourceTree = "<group>"; };
 		9FBE8A731D60BF1800DA0C32 /* AnnouncementGalleryCollectionViewCellShadower.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnnouncementGalleryCollectionViewCellShadower.m; path = Cells/Helpers/AnnouncementGalleryCollectionViewCellShadower.m; sourceTree = "<group>"; };
+		9FBE8A751D625F6100DA0C32 /* AnnouncementGalleryNoEventsCollectionViewCellActionProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnnouncementGalleryNoEventsCollectionViewCellActionProtocol.h; path = Cells/AnnouncementGalleryNoEventsCollectionViewCell/AnnouncementGalleryNoEventsCollectionViewCellActionProtocol.h; sourceTree = "<group>"; };
 		9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListServiceTests.m; path = EventListServiceTests/EventListServiceTests.m; sourceTree = "<group>"; };
 		9FC1F6781D2826D10070D9B5 /* QueryTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QueryTransformer.h; path = CoreComponents/QueryTransformers/QueryTransformer.h; sourceTree = "<group>"; };
 		9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListQueryTransformerTests.m; path = CoreLayer/CoreComponents/QueryTransformers/EventListQueryTransformer/EventListQueryTransformerTests.m; sourceTree = "<group>"; };
@@ -7028,6 +7029,7 @@
 				9FBE8A6B1D60B87D00DA0C32 /* AnnouncementGalleryNoEventsCollectionViewCell.h */,
 				9FBE8A6C1D60B87D00DA0C32 /* AnnouncementGalleryNoEventsCollectionViewCell.m */,
 				9FBE8A6E1D60B8A300DA0C32 /* AnnouncementGalleryNoEventsCollectionViewCell.xib */,
+				9FBE8A751D625F6100DA0C32 /* AnnouncementGalleryNoEventsCollectionViewCellActionProtocol.h */,
 			);
 			name = AnnouncementGalleryNoEventsCollectionViewCell;
 			sourceTree = "<group>";

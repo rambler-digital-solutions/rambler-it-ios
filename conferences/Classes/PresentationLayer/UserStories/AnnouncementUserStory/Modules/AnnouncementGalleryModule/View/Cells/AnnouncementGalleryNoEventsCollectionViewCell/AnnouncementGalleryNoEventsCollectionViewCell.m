@@ -22,8 +22,22 @@
 
 #import "AnnouncementGalleryNoEventsCollectionViewCellObject.h"
 #import "AnnouncementGalleryCollectionViewCellShadower.h"
+#import "AnnouncementGalleryNoEventsCollectionViewCellActionProtocol.h"
+
+#import "Extensions/UIResponder+CDProxying/UIResponder+CDProxying.h"
+
+@interface AnnouncementGalleryNoEventsCollectionViewCell ()
+
+@property (nonatomic, weak) id <AnnouncementGalleryNoEventsCollectionViewCellActionProtocol> actionProxy;
+
+@end
 
 @implementation AnnouncementGalleryNoEventsCollectionViewCell
+
+- (void)didMoveToSuperview {
+    [super didMoveToSuperview];
+    self.actionProxy = (id<AnnouncementGalleryNoEventsCollectionViewCellActionProtocol>)[self cd_proxyForProtocol:@protocol(AnnouncementGalleryNoEventsCollectionViewCellActionProtocol)];
+}
 
 #pragma mark - <NICollectionViewCell>
 
@@ -32,6 +46,12 @@
     [shadower applyShadowOnView:self];
     
     return YES;
+}
+
+#pragma mark - IBActions
+
+- (IBAction)didTapReportsButton:(id)sender {
+    [self.actionProxy didTapReportsButton];
 }
 
 @end
