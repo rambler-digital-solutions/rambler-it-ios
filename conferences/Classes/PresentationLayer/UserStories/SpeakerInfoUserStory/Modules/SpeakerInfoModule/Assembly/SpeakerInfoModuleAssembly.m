@@ -94,8 +94,10 @@
 - (SpeakerInfoCellObjectBuilder *)cellObjectsBuilderSpeakerInfo {
     return [TyphoonDefinition withClass:[SpeakerInfoCellObjectBuilder class]
                           configuration:^(TyphoonDefinition *definition) {
-        [definition injectProperty:@selector(configurator)
-                              with:[self socialContactsConfiguratorSpeakerInfo]];
+                              [definition injectProperty:@selector(configurator)
+                                                    with:[self socialContactsConfiguratorSpeakerInfo]];
+                              [definition injectProperty:@selector(dateFormatter)
+                                                    with:[self.presentationLayerHelpersAssembly dateFormatter]];
     }];
 }
 

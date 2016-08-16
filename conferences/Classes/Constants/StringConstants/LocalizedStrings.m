@@ -24,6 +24,7 @@
 
 NSString *const kSpeakerInfoSocialNetworksSectionName = @"kSpeakerInfoSocialNetworksSectionName";
 NSString *const kSpeakerInfoWebsiteSectionName = @"kSpeakerInfoWebsiteSectionName";
+NSString *const kSpeakerInfoLecturesSectionName = @"kSpeakerInfoLecturesSectionName";
 NSString *const kSpeakInfoFacebookAccountTitle = @"kSpeakInfoFacebookAccountTitle";
 NSString *const kSpeakInfoVkontakteAccountTitle = @"kSpeakInfoVkontakteAccountTitle";
 NSString *const kSpeakInfoGithubAccountTitle = @"kSpeakInfoGithubAccountTitle";

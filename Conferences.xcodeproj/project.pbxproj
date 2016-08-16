@@ -364,6 +364,9 @@
 		9F18311D1BC1615C000E21A5 /* SingleResponseObjectFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F18311B1BC1615C000E21A5 /* SingleResponseObjectFormatter.m */; };
 		9F1831211BC16195000E21A5 /* RCFResultResponseObjectFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1831201BC16195000E21A5 /* RCFResultResponseObjectFormatterTests.m */; };
 		9F33B8801D63512200BE136C /* EventListTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F33B87F1D63512200BE136C /* EventListTableViewCellObject.m */; };
+		9F33B8841D639C6000BE136C /* SpeakerInfoLectureCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F33B8831D639C6000BE136C /* SpeakerInfoLectureCellObject.m */; };
+		9F33B8881D639C7300BE136C /* SpeakerInfoLectureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F33B8871D639C7300BE136C /* SpeakerInfoLectureCell.m */; };
+		9F33B88A1D639DA300BE136C /* SpeakerInfoLectureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F33B8891D639DA300BE136C /* SpeakerInfoLectureCell.xib */; };
 		9F40777A1D2BF33800D47EF6 /* RamblerLocationDataDisplayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4077791D2BF33800D47EF6 /* RamblerLocationDataDisplayManager.m */; };
 		9F40777F1D2BF4F300D47EF6 /* RamblerLocationServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F40777E1D2BF4F300D47EF6 /* RamblerLocationServiceImplementation.m */; };
 		9F4077851D2BF6A700D47EF6 /* directions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F4077841D2BF6A700D47EF6 /* directions.plist */; };
@@ -1240,6 +1243,11 @@
 		9F1F38001BBBB80D00C7797D /* ConferencesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConferencesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F33B87E1D63512200BE136C /* EventListTableViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListTableViewCellObject.h; sourceTree = "<group>"; };
 		9F33B87F1D63512200BE136C /* EventListTableViewCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListTableViewCellObject.m; sourceTree = "<group>"; };
+		9F33B8821D639C6000BE136C /* SpeakerInfoLectureCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeakerInfoLectureCellObject.h; path = SpeakerInfoLectureCellObject/SpeakerInfoLectureCellObject.h; sourceTree = "<group>"; };
+		9F33B8831D639C6000BE136C /* SpeakerInfoLectureCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeakerInfoLectureCellObject.m; path = SpeakerInfoLectureCellObject/SpeakerInfoLectureCellObject.m; sourceTree = "<group>"; };
+		9F33B8861D639C7300BE136C /* SpeakerInfoLectureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeakerInfoLectureCell.h; path = SpeakerInfoLectureCell/SpeakerInfoLectureCell.h; sourceTree = "<group>"; };
+		9F33B8871D639C7300BE136C /* SpeakerInfoLectureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeakerInfoLectureCell.m; path = SpeakerInfoLectureCell/SpeakerInfoLectureCell.m; sourceTree = "<group>"; };
+		9F33B8891D639DA300BE136C /* SpeakerInfoLectureCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SpeakerInfoLectureCell.xib; path = SpeakerInfoLectureCell/SpeakerInfoLectureCell.xib; sourceTree = "<group>"; };
 		9F4077781D2BF33800D47EF6 /* RamblerLocationDataDisplayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RamblerLocationDataDisplayManager.h; path = DataDisplayManager/RamblerLocationDataDisplayManager.h; sourceTree = "<group>"; };
 		9F4077791D2BF33800D47EF6 /* RamblerLocationDataDisplayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RamblerLocationDataDisplayManager.m; path = DataDisplayManager/RamblerLocationDataDisplayManager.m; sourceTree = "<group>"; };
 		9F40777C1D2BF4E500D47EF6 /* RamblerLocationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RamblerLocationService.h; path = RamblerLocationService/RamblerLocationService.h; sourceTree = "<group>"; };
@@ -3559,6 +3567,7 @@
 		63F6133A1CB00A220002AEF0 /* CellObjects */ = {
 			isa = PBXGroup;
 			children = (
+				9F33B8811D639C4800BE136C /* SpeakerInfoLectureCellObject */,
 				2B4F201A1D5326E400C9891E /* SpeakerInfoSectionHeaderCellObject */,
 				2B05E16B1D51D7F000E017AB /* SpeakerInfoSocialContactsCellObject */,
 				63F6133B1CB00A220002AEF0 /* SpeakerInfoTableViewCellObject */,
@@ -3578,6 +3587,7 @@
 		63F6133E1CB00A220002AEF0 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				9F33B8851D639C6300BE136C /* SpeakerInfoLectureCell */,
 				2B4F201E1D53271600C9891E /* SpeakerInfoSectionHeaderTableViewCell */,
 				2B05E1621D51D71100E017AB /* SpeakerInfoSocialContactsTableViewCell */,
 				63F6133F1CB00A220002AEF0 /* SpeakerInfoTableViewCell */,
@@ -5458,6 +5468,25 @@
 				9F33B87F1D63512200BE136C /* EventListTableViewCellObject.m */,
 			);
 			path = EventListTableViewCellObject;
+			sourceTree = "<group>";
+		};
+		9F33B8811D639C4800BE136C /* SpeakerInfoLectureCellObject */ = {
+			isa = PBXGroup;
+			children = (
+				9F33B8821D639C6000BE136C /* SpeakerInfoLectureCellObject.h */,
+				9F33B8831D639C6000BE136C /* SpeakerInfoLectureCellObject.m */,
+			);
+			name = SpeakerInfoLectureCellObject;
+			sourceTree = "<group>";
+		};
+		9F33B8851D639C6300BE136C /* SpeakerInfoLectureCell */ = {
+			isa = PBXGroup;
+			children = (
+				9F33B8861D639C7300BE136C /* SpeakerInfoLectureCell.h */,
+				9F33B8871D639C7300BE136C /* SpeakerInfoLectureCell.m */,
+				9F33B8891D639DA300BE136C /* SpeakerInfoLectureCell.xib */,
+			);
+			name = SpeakerInfoLectureCell;
 			sourceTree = "<group>";
 		};
 		9F4077771D2BF32600D47EF6 /* DataDisplayManager */ = {
@@ -7358,6 +7387,7 @@
 				63F613941CB00A220002AEF0 /* Lecture.storyboard in Resources */,
 				63F613581CB00A220002AEF0 /* Events.storyboard in Resources */,
 				9FD740381CDC98010071BD71 /* LaunchScreen.storyboard in Resources */,
+				9F33B88A1D639DA300BE136C /* SpeakerInfoLectureCell.xib in Resources */,
 				63F6139C1CB00A220002AEF0 /* SpeakerInfoTableViewCell.xib in Resources */,
 				63F6137D1CB00A220002AEF0 /* PreviousLectureTableViewCell.xib in Resources */,
 				66E999941D54B10800161D98 /* TagCollectionViewCell.xib in Resources */,
@@ -7687,6 +7717,7 @@
 				636F8DDC1BCB8FE800552B91 /* RamblerLocationPresenter.m in Sources */,
 				9F533A961D50EEE0004F8E82 /* ObjectIndexerBase.m in Sources */,
 				9F8E5F841BC25A0700DC10DB /* ResponseMappersAssembly.m in Sources */,
+				9F33B8881D639C7300BE136C /* SpeakerInfoLectureCell.m in Sources */,
 				631808431C482B1300A61E7D /* SpeakerShortInfoView.m in Sources */,
 				63F613681CB00A220002AEF0 /* PreviousEventSectionHeaderTableViewCellObject.m in Sources */,
 				9FBE89B01D5CB71300DA0C32 /* VerySpecialAppDelegateForTesting.m in Sources */,
@@ -7792,6 +7823,7 @@
 				66E999761D54B08B00161D98 /* TagDataDisplayManager.m in Sources */,
 				2B20648D1D3F9CE900246C8D /* RegistrationQuestionModelObject.m in Sources */,
 				636B640D1BBDD5000053E38F /* SocialNetworkAccountServiceImplementation.m in Sources */,
+				9F33B8841D639C6000BE136C /* SpeakerInfoLectureCellObject.m in Sources */,
 				9FBE89EB1D5CCF8300DA0C32 /* ObjectTransformerConstants.m in Sources */,
 				9FBE8ACB1D63293700DA0C32 /* EventGalleryEventFilter.m in Sources */,
 				66E999681D54B04A00161D98 /* TagPresenter.m in Sources */,

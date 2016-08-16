@@ -17,13 +17,18 @@
 // THE SOFTWARE.
 
 #import "SpeakerInfoCellObjectBuilder.h"
+
 #import "SpeakerInfoTableViewCellObject.h"
 #import "SpeakerInfoSocialContactsCellObject.h"
 #import "SocialNetworkAccountPlainObject.h"
 #import "SocialContactsConfigurator.h"
 #import "SpeakerInfoSectionHeaderCellObject.h"
+#import "SpeakerInfoLectureCellObject.h"
 #import "SpeakerPlainObject.h"
+#import "EventPlainObject.h"
+#import "LecturePlainObject.h"
 #import "LocalizedStrings.h"
+#import "DateFormatter.h"
 
 @implementation SpeakerInfoCellObjectBuilder
 
@@ -51,8 +56,12 @@
         [cellObjects addObjectsFromArray:socialAccounts];
     }
     
+    if (speaker.lectures.count > 0) {
+        NSArray *lectures = [self buildLectureCellObjectsWithSpeaker:speaker];
+        [cellObjects addObjectsFromArray:lectures];
+    }
+    
     return cellObjects;
-
 }
 
 - (NSArray *)buildWebsiteCellObjectsWithAccount:(SocialNetworkAccountPlainObject *)account {
@@ -71,7 +80,6 @@
 }
 
 - (NSArray *)buildSocialContactsCellObjectsWithAccounts:(NSArray *)socialAccounts {
-    
     NSMutableArray *cellObjects = [NSMutableArray new];
     SpeakerInfoSectionHeaderCellObject *cellObject = [SpeakerInfoSectionHeaderCellObject objectWithText:RCLocalize(kSpeakerInfoSocialNetworksSectionName)];
     [cellObjects addObject:cellObject];
@@ -86,6 +94,24 @@
     }
     
     return [cellObjects copy];
+}
+
+- (NSArray *)buildLectureCellObjectsWithSpeaker:(SpeakerPlainObject *)speaker {
+    NSMutableArray *cellObjects = [NSMutableArray new];
+    
+    SpeakerInfoSectionHeaderCellObject *cellObject = [SpeakerInfoSectionHeaderCellObject objectWithText:RCLocalize(kSpeakerInfoLecturesSectionName)];
+    [cellObjects addObject:cellObject];
+    
+    // тут нужна сортировка лекций по дате
+    // и верстку ячеек пофиксить - и ок
+    for (LecturePlainObject *lecture in speaker.lectures) {
+        NSDate *eventDate = lecture.event.startDate;
+        NSString *dateString = [self.dateFormatter obtainDateWithDayMonthYearFormat:eventDate];
+        SpeakerInfoLectureCellObject *object = [SpeakerInfoLectureCellObject objectWithLecture:lecture dateString:dateString];
+        [cellObjects addObject:object];
+    }
+    
+    return [cellObjects copy];;
 }
 
 @end

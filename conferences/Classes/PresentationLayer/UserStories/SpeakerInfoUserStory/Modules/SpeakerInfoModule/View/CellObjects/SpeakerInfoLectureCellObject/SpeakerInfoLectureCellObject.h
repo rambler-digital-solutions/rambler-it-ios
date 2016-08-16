@@ -16,22 +16,17 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import <Nimbus/NimbusModels.h>
 
-@class SpeakerPlainObject;
-@class SocialContactsConfigurator;
-@class DateFormatter;
+@class LecturePlainObject;
 
-/**
- @author Vasyura Anastasiya
- 
- Builder for speakerInfo cellObjects
- */
-@interface SpeakerInfoCellObjectBuilder : NSObject
+@interface SpeakerInfoLectureCellObject : NSObject <NICellObject>
 
-@property (nonatomic, strong) SocialContactsConfigurator *configurator;
-@property (nonatomic, strong) DateFormatter *dateFormatter;
++ (instancetype)objectWithLecture:(LecturePlainObject *)lecture
+                       dateString:(NSString *)dateString;
 
-- (NSArray *)buildObjectsWithSpeaker:(SpeakerPlainObject *)speaker;
+@property (nonatomic, strong, readonly) NSURL *imageUrl;
+@property (nonatomic, strong, readonly) NSString *lectureTitle;
+@property (nonatomic, strong, readonly) NSString *lectureDateString;
 
 @end

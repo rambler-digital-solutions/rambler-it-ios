@@ -24,6 +24,7 @@
 
 extern NSString *const kSpeakerInfoSocialNetworksSectionName;
 extern NSString *const kSpeakerInfoWebsiteSectionName;
+extern NSString *const kSpeakerInfoLecturesSectionName;
 extern NSString *const kSpeakInfoFacebookAccountTitle;
 extern NSString *const kSpeakInfoVkontakteAccountTitle;
 extern NSString *const kSpeakInfoGithubAccountTitle;

@@ -13,6 +13,7 @@
 "LectureArticlesTableViewCellTitle" = "cтатья";
 "LectureCodeGithubTableViewCellTitle" = "код проекта на Гитхабе";
 "kSpeakerInfoSocialNetworksSectionName" = "Контакты";
+"kSpeakerInfoLecturesSectionName" = "Выступления";
 "kSpeakerInfoWebsiteSectionName" = "Веб-сайт";
 "kSpeakInfoFacebookAccountTitle" = "Facebook";
 "kSpeakInfoVkontakteAccountTitle" = "Vkontakte";

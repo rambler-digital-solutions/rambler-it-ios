@@ -16,22 +16,31 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import "SpeakerInfoLectureCell.h"
+#import "SpeakerInfoLectureCellObject.h"
 
-@class SpeakerPlainObject;
-@class SocialContactsConfigurator;
-@class DateFormatter;
+#import <SDWebImage/UIImageView+WebCache.h>
 
-/**
- @author Vasyura Anastasiya
- 
- Builder for speakerInfo cellObjects
- */
-@interface SpeakerInfoCellObjectBuilder : NSObject
+static NSString *const kPlaceholderImageName = @"placeholder";
 
-@property (nonatomic, strong) SocialContactsConfigurator *configurator;
-@property (nonatomic, strong) DateFormatter *dateFormatter;
+@implementation SpeakerInfoLectureCell
 
-- (NSArray *)buildObjectsWithSpeaker:(SpeakerPlainObject *)speaker;
+#pragma mark - <NICell>
+
+- (BOOL)shouldUpdateCellWithObject:(SpeakerInfoLectureCellObject *)object {
+    self.lectureTitleLabel.text = object.lectureTitle;
+    self.lectureDateLabel.text = object.lectureDateString;
+    
+    [self.eventLogoImageView sd_setImageWithURL:object.imageUrl
+                               placeholderImage:[UIImage imageNamed:kPlaceholderImageName]];
+    
+    return YES;
+}
+
++ (CGFloat)heightForObject:(id)object
+               atIndexPath:(NSIndexPath *)indexPath
+                 tableView:(UITableView *)tableView {
+    return UITableViewAutomaticDimension;
+}
 
 @end

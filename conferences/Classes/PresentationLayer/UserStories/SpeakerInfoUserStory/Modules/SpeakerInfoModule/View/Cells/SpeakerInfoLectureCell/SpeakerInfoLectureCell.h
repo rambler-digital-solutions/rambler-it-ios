@@ -16,22 +16,13 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import <Nimbus/NICellFactory.h>
 
-@class SpeakerPlainObject;
-@class SocialContactsConfigurator;
-@class DateFormatter;
+@interface SpeakerInfoLectureCell : UITableViewCell <NICell>
 
-/**
- @author Vasyura Anastasiya
- 
- Builder for speakerInfo cellObjects
- */
-@interface SpeakerInfoCellObjectBuilder : NSObject
-
-@property (nonatomic, strong) SocialContactsConfigurator *configurator;
-@property (nonatomic, strong) DateFormatter *dateFormatter;
-
-- (NSArray *)buildObjectsWithSpeaker:(SpeakerPlainObject *)speaker;
+@property (nonatomic, weak) IBOutlet UIImageView *eventLogoImageView;
+@property (nonatomic, weak) IBOutlet UILabel *lectureTitleLabel;
+@property (nonatomic, weak) IBOutlet UILabel *lectureDateLabel;
 
 @end
