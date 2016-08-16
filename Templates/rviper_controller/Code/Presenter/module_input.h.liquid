@@ -1,0 +1,15 @@
+{% include 'header' %}
+
+#import <Foundation/Foundation.h>
+#import <ViperMcFlurry/ViperMcFlurry.h>
+
+@protocol {{ prefix }}{{ module_info.name }}ModuleInput <RamblerViperModuleInput>
+
+/**
+ @author {{ developer.name }}
+
+ Метод инициирует стартовую конфигурацию текущего модуля
+ */
+- (void)configureModule;
+
+@end

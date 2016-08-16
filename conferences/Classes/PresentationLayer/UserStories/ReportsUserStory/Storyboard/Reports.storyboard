@@ -72,7 +72,7 @@
         <!--EventViewController-->
         <scene sceneID="lUn-3u-T3A">
             <objects>
-                <viewControllerPlaceholder storyboardName="Announcement" referencedIdentifier="EventViewController" id="dMH-rk-qxb" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Event" referencedIdentifier="EventViewController" id="dMH-rk-qxb" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="jEo-yP-ULH"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dzu-DZ-TYh" userLabel="First Responder" sceneMemberID="firstResponder"/>

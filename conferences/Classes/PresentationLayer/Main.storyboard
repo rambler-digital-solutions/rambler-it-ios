@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--AnnouncementListTableViewController-->
+        <!--EventGalleryViewController-->
         <scene sceneID="iyp-3w-99h">
             <objects>
-                <viewControllerPlaceholder storyboardName="Announcement" referencedIdentifier="AnnouncementListTableViewController" id="Lum-qY-GHL" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Events" referencedIdentifier="EventGalleryViewController" id="Lum-qY-GHL" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="MVm-KZ-g5U"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rh4-4F-X5I" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -29,7 +29,7 @@
         <scene sceneID="3eL-eY-bY4">
             <objects>
                 <navigationController title="Как добраться" id="jQF-k4-Vet" customClass="RCNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Как добраться" id="spG-Da-Y0v"/>
+                    <tabBarItem key="tabBarItem" title="Как добраться" image="tabsLocationActive" id="spG-Da-Y0v"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lT1-Hz-AIW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -59,7 +59,9 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="2XQ-lX-A4G">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
                         <segue destination="JLd-bL-bGb" kind="relationship" relationship="viewControllers" id="cv9-Tv-vaS"/>
@@ -75,7 +77,7 @@
         <scene sceneID="Mpn-Tk-RCv">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JLd-bL-bGb" customClass="RCNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Анонсы" id="toR-Yz-X4q"/>
+                    <tabBarItem key="tabBarItem" title="Анонсы" image="tabsAnnouncementsActive" id="toR-Yz-X4q"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rtz-ho-0Rr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -94,7 +96,7 @@
         <scene sceneID="kNR-4e-dMq">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="24b-F2-UUq" customClass="RCNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Отчеты" id="YQW-lF-LbB"/>
+                    <tabBarItem key="tabBarItem" title="Отчеты" image="tabsReportsActive" id="YQW-lF-LbB"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="EGp-eR-BLf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -110,4 +112,9 @@
             <point key="canvasLocation" x="2787" y="857"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tabsAnnouncementsActive" width="24" height="24"/>
+        <image name="tabsLocationActive" width="24" height="24"/>
+        <image name="tabsReportsActive" width="24" height="24"/>
+    </resources>
 </document>

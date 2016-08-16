@@ -28,6 +28,15 @@
 @interface UIColor (ConferencesPallete)
 
 /**
+ @author Egor Tolstoy
+ 
+ The yellow color
+ 
+ @return color
+ */
++ (UIColor *)rcf_yellowColor;
+
+/**
  @author Zinovyev Konstantin
  
  The color of the selected text in the search events in the Reports section

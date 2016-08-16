@@ -28,7 +28,7 @@
 #import "EXTScope.h"
 #import "LectureInfoTableViewCellObject.h"
 #import "PreviousLectureTableViewCellObject.h"
-#import "EventAnnouncementTableViewCellObject.h"
+#import "EventListTableViewCellObject.h"
 #import "EventViewAnimator.h"
 #import "TechPlainObject.h"
 
@@ -92,7 +92,7 @@
     [self.tableViewActions attachToClass:[LectureInfoTableViewCellObject class]
                                 tapBlock:lectureInfoActionBlock];
     
-    NIActionBlock pastEventActionBlock = ^BOOL(EventAnnouncementTableViewCellObject *object, UIViewController *controller, NSIndexPath* indexPath) {
+    NIActionBlock pastEventActionBlock = ^BOOL(EventListTableViewCellObject *object, UIViewController *controller, NSIndexPath* indexPath) {
         @strongify(self);
         NSString *eventId = object.event.eventId;
         
@@ -100,7 +100,7 @@
         
         return YES;
     };
-    [self.tableViewActions attachToClass:[EventAnnouncementTableViewCellObject class]
+    [self.tableViewActions attachToClass:[EventListTableViewCellObject class]
                                 tapBlock:pastEventActionBlock];
     
     NIActionBlock pastLectureActionBlock = ^BOOL(PreviousLectureTableViewCellObject *object, UIViewController *controller, NSIndexPath* indexPath) {
