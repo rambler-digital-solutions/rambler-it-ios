@@ -37,13 +37,13 @@ static NSInteger kDefaultEstimatedHeight = 116;
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	[self.output setupView];
+    self.reportsTableView.estimatedRowHeight = kDefaultEstimatedHeight;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     
-    self.reportsTableView.estimatedRowHeight = kDefaultEstimatedHeight;
     self.reportsTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 

@@ -15,7 +15,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="327" height="200.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="78c-gc-n18">
+                    <view contentMode="scaleToFill" verticalHuggingPriority="1" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="78c-gc-n18">
                         <rect key="frame" x="0.0" y="0.0" width="327" height="200.5"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zrl-KN-Qov" userLabel="SpeakerView">

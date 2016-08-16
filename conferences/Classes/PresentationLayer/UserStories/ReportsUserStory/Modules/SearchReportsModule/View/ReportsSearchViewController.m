@@ -34,12 +34,7 @@ static NSInteger kDefaultEstimatedHeight = 116;
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.output setupView];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
     self.reportsListSearchTableView.estimatedRowHeight = kDefaultEstimatedHeight;
-    self.reportsListSearchTableView.separatorColor = [UIColor LJ_separatorColor];
 }
 
 #pragma mark - ReportsSearchViewInput
@@ -53,6 +48,8 @@ static NSInteger kDefaultEstimatedHeight = 116;
 }
 
 - (void)setupView {
+    self.reportsListSearchTableView.separatorColor = [UIColor LJ_separatorColor];
+    
     [self.reportsListSearchTableView setTableFooterView:[UIView new]];
     
     self.animatorReportsSearchView.delegate = self;

@@ -82,6 +82,26 @@
             </objects>
             <point key="canvasLocation" x="2196.5" y="889"/>
         </scene>
+        <!--SpeakerInfoViewController-->
+        <scene sceneID="xK4-tR-4a3">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SpeakerInfo" referencedIdentifier="SpeakerInfoViewController" id="qMA-Bk-oT9" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="gbl-bd-QM8"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zz9-Oo-gA1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2196" y="1391"/>
+        </scene>
+        <!--LectureViewController-->
+        <scene sceneID="ah5-sY-1fy">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Lecture" referencedIdentifier="LectureViewController" id="GSP-14-n54" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="paF-er-EJa"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a2c-HB-x5Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2196" y="1321"/>
+        </scene>
         <!--Reports Search View Controller-->
         <scene sceneID="jdV-Ct-Pb1">
             <objects>
@@ -158,6 +178,8 @@
                         <outlet property="clearPlaceholderView" destination="39z-7p-f7K" id="ob4-C1-Bwf"/>
                         <outlet property="emptyPlaceholderView" destination="ef0-fI-DXD" id="3Wj-3u-Nhe"/>
                         <outlet property="reportsListSearchTableView" destination="ymM-1E-AlH" id="fWt-OP-4Fi"/>
+                        <segue destination="GSP-14-n54" kind="push" identifier="ReportsSearchModuleToLectureModuleSegue" id="8BM-dq-5wt"/>
+                        <segue destination="qMA-Bk-oT9" kind="push" identifier="ReportsSearchModuleToSpeakerModuleSegue" id="CxD-rk-JNL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iMU-4N-SSR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -179,6 +201,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ap8-a5-IEU"/>
+        <segue reference="sLc-aS-kWB"/>
     </inferredMetricsTieBreakers>
 </document>
