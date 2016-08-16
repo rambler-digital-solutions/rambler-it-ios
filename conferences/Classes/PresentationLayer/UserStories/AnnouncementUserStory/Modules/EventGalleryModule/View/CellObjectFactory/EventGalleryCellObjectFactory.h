@@ -43,13 +43,4 @@
  */
 - (NSArray *)createCellObjectsWithEvents:(NSArray <EventPlainObject *> *)events;
 
-/**
- @author Egor Tolstoy
- 
- Method retuns cell objects for "No Events" state
- 
- @return NSArray of cell objects
- */
-- (NSArray *)createCellObjectsForNoEventsState;
-
 @end

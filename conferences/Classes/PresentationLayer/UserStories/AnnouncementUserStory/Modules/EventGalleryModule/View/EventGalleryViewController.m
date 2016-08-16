@@ -29,7 +29,6 @@
 
 #import "Extensions/UIViewController+CDObserver/UIViewController+CDObserver.h"
 #import "UIColor+Hex.h"
-#import "UIColor+ConferencesPallete.h"
 
 @implementation EventGalleryViewController
 
@@ -64,12 +63,6 @@
     self.backgroundAdditionalView.backgroundColor = [UIColor colorFromHexString:firstEvent.tech.color];
     
     [self.dataDisplayManager updateDataSourceWithEvents:events];
-    [self.collectionView reloadData];
-}
-
-- (void)triggerNoFutureEventsState {
-    [self.dataDisplayManager updateDataSourceWithNoEventsState];
-    self.backgroundAdditionalView.backgroundColor = [UIColor rcf_yellowColor];
     [self.collectionView reloadData];
 }
 

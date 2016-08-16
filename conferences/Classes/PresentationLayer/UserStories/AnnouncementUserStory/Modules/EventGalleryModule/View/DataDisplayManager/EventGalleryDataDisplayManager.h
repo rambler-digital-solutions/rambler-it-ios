@@ -62,13 +62,6 @@
  */
 - (void)updateDataSourceWithEvents:(NSArray *)events;
 
-/**
- @author Egor Tolstoy
- 
- Setups "No events" state
- */
-- (void)updateDataSourceWithNoEventsState;
-
 @end
 
 @protocol EventGalleryDataDisplayManagerDelegate <NSObject>

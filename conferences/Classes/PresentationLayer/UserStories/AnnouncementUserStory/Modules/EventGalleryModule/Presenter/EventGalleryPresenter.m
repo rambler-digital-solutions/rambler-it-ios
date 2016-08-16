@@ -56,11 +56,7 @@
 #pragma mark - Private methods
 
 - (void)updateViewWithEvents:(NSArray *)events {
-    if (events.count > 0) {
-        [self.view updateStateWithFutureEvents:events];
-    } else {
-        [self.view triggerNoFutureEventsState];
-    }
+    [self.view updateStateWithFutureEvents:events];
 }
 
 @end

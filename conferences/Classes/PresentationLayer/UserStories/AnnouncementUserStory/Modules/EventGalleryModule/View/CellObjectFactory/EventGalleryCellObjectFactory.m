@@ -38,13 +38,10 @@
         EventGalleryEventCollectionViewCellObject *cellObject = [self cellObjectWithEvent:event];
         [cellObjects addObject:cellObject];
     }
+    EventGalleryMoreEventsCollectionViewCellObject *moreEventsCellObject = [EventGalleryMoreEventsCollectionViewCellObject new];
+    [cellObjects addObject:moreEventsCellObject];
     
     return [cellObjects copy];
-}
-
-- (NSArray *)createCellObjectsForNoEventsState {
-    NSArray *cellObjects = @[[EventGalleryMoreEventsCollectionViewCellObject new]];
-    return cellObjects;
 }
 
 #pragma mark - Private methods

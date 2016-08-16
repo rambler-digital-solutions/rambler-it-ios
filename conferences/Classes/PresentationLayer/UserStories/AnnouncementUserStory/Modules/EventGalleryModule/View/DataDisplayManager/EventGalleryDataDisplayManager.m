@@ -27,6 +27,7 @@
 #import "TechPlainObject.h"
 
 #import "UIColor+Hex.h"
+#import "UIColor+ConferencesPallete.h"
 #import "EXTScope.h"
 #import <Nimbus/NimbusCollections.h>
 
@@ -58,13 +59,6 @@
     return self;
 }
 
-- (UIColor *)obtainColorForPageWithNumber:(NSUInteger)pageNumber {
-    EventPlainObject *event = self.events[pageNumber];
-    NSString *colorString = event.tech.color;
-    UIColor *eventColor = [UIColor colorFromHexString:colorString];
-    return eventColor;
-}
-
 #pragma mark - Public methods
 
 - (id<UICollectionViewDataSource>)dataSourceForCollectionView:(UICollectionView *)collectionView {
@@ -90,15 +84,6 @@
     [self.collectionModel addObjectsFromArray:cellObjects];
 }
 
-- (void)updateDataSourceWithNoEventsState {
-    self.events = nil;
-    [self.collectionModel removeSectionAtIndex:0];
-    [self.collectionModel addSectionWithTitle:@""];
-    
-    NSArray *cellObjects = [self.cellObjectFactory createCellObjectsForNoEventsState];
-    [self.collectionModel addObjectsFromArray:cellObjects];
-}
-
 #pragma mark - <UICollectionViewDelegate>
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -109,6 +94,21 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     [self.animator animateColorChangeWithScrollOffset:scrollView.contentOffset.x];
 }
+
+#pragma mark - <EventGalleryBackgroundColorAnimatorDataSource>
+
+- (UIColor *)obtainColorForPageWithNumber:(NSUInteger)pageNumber {
+    if (pageNumber == self.events.count) {
+        // That's the case for "More events" card
+        UIColor *moreEventsColor = [UIColor rcf_yellowColor];
+        return moreEventsColor;
+    }
+    EventPlainObject *event = self.events[pageNumber];
+    NSString *colorString = event.tech.color;
+    UIColor *eventColor = [UIColor colorFromHexString:colorString];
+    return eventColor;
+}
+
 
 #pragma mark - Private methods
 
