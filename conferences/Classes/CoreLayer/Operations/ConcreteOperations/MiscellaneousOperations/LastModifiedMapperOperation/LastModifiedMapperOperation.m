@@ -14,7 +14,7 @@
 #import "NSManagedObjectID+LJStringConversion.h"
 
 #import "ServerResponseModel.h"
-#import "EventListModelObject.h"
+#import "LastModifiedModelObject.h"
 
 #import "DateFormatter.h"
 
@@ -79,9 +79,9 @@ static NSString *const kLastModifiedHeaderKey = @"Date";
         
         
         NSManagedObjectID *categoryMOID = [NSManagedObjectID managedObjectIDFromString:self.modelObjectId inContext:rootSavingContext];
-        EventListModelObject *modelObject = [rootSavingContext existingObjectWithID:categoryMOID
+        LastModifiedModelObject *modelObject = [rootSavingContext existingObjectWithID:categoryMOID
                                                                               error:&error];
-        modelObject.lastModified = lastModifiedDate;
+        modelObject.lastModifiedDate = lastModifiedDate;
         
         [rootSavingContext MR_saveToPersistentStoreWithCompletion:^(BOOL contextDidSave, NSError *error) {
     

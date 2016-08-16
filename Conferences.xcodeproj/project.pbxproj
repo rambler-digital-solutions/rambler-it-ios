@@ -295,16 +295,16 @@
 		667050561D46369100DD9D6E /* ReportsSearchCellObjectsDirectorImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 667050551D46369100DD9D6E /* ReportsSearchCellObjectsDirectorImplementation.m */; };
 		66764D041D4B636B00EF9D58 /* ReportsSearchViewAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 66764D031D4B636B00EF9D58 /* ReportsSearchViewAnimator.m */; };
 		66AE2C631D51F923003E587E /* ServerResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AE2C621D51F923003E587E /* ServerResponseModel.m */; };
-		66B292B01D4F904F00E4D80F /* _EventListModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B292AF1D4F904F00E4D80F /* _EventListModelObject.m */; };
-		66B292B31D4F905600E4D80F /* _EventListPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B292B21D4F905600E4D80F /* _EventListPlainObject.m */; };
-		66B292B61D4F905D00E4D80F /* EventListModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B292B51D4F905D00E4D80F /* EventListModelObject.m */; };
-		66B292B91D4F906400E4D80F /* EventListPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B292B81D4F906400E4D80F /* EventListPlainObject.m */; };
 		66CCA7341D61DE11004153EA /* ResponseConverterOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CCA7331D61DE11004153EA /* ResponseConverterOperation.m */; };
 		66CCA73C1D61E99E004153EA /* ResponseConverterImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CCA73B1D61E99E004153EA /* ResponseConverterImplementation.m */; };
 		66CCA7431D61F394004153EA /* ResponseConverterAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CCA7421D61F394004153EA /* ResponseConverterAssembly.m */; };
 		66CCA7481D61FC72004153EA /* DeletedObjectsMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CCA7471D61FC72004153EA /* DeletedObjectsMapper.m */; };
 		66CCA74D1D61FDDE004153EA /* DeletedResponseObjectFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CCA74C1D61FDDE004153EA /* DeletedResponseObjectFormatter.m */; };
 		66CCA7551D62095E004153EA /* CustomServerResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CCA7541D62095E004153EA /* CustomServerResponse.m */; };
+		66E1E9A71D62E91800E22B1E /* _LastModifiedPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E1E9A61D62E91800E22B1E /* _LastModifiedPlainObject.m */; };
+		66E1E9AA1D62E91E00E22B1E /* _LastModifiedModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E1E9A91D62E91E00E22B1E /* _LastModifiedModelObject.m */; };
+		66E1E9AD1D62E92500E22B1E /* LastModifiedModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E1E9AC1D62E92500E22B1E /* LastModifiedModelObject.m */; };
+		66E1E9B01D62E92D00E22B1E /* LastModifiedPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E1E9AF1D62E92D00E22B1E /* LastModifiedPlainObject.m */; };
 		9F0A6C1D1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */; };
 		9F0A6C2E1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C2D1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m */; };
 		9F0A84C31BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A84C21BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m */; };
@@ -969,14 +969,6 @@
 		66764D031D4B636B00EF9D58 /* ReportsSearchViewAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportsSearchViewAnimator.m; path = SearchReportsModule/View/ReportSearchViewAnimator/ReportsSearchViewAnimator.m; sourceTree = "<group>"; };
 		66AE2C611D51F923003E587E /* ServerResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServerResponseModel.h; path = CoreComponents/NetworkClients/Models/ServerResponseModel/ServerResponseModel.h; sourceTree = "<group>"; };
 		66AE2C621D51F923003E587E /* ServerResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServerResponseModel.m; path = CoreComponents/NetworkClients/Models/ServerResponseModel/ServerResponseModel.m; sourceTree = "<group>"; };
-		66B292AE1D4F904F00E4D80F /* _EventListModelObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _EventListModelObject.h; sourceTree = "<group>"; };
-		66B292AF1D4F904F00E4D80F /* _EventListModelObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _EventListModelObject.m; sourceTree = "<group>"; };
-		66B292B11D4F905600E4D80F /* _EventListPlainObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _EventListPlainObject.h; sourceTree = "<group>"; };
-		66B292B21D4F905600E4D80F /* _EventListPlainObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _EventListPlainObject.m; sourceTree = "<group>"; };
-		66B292B41D4F905D00E4D80F /* EventListModelObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListModelObject.h; sourceTree = "<group>"; };
-		66B292B51D4F905D00E4D80F /* EventListModelObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListModelObject.m; sourceTree = "<group>"; };
-		66B292B71D4F906400E4D80F /* EventListPlainObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListPlainObject.h; sourceTree = "<group>"; };
-		66B292B81D4F906400E4D80F /* EventListPlainObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListPlainObject.m; sourceTree = "<group>"; };
 		66CCA7321D61DE11004153EA /* ResponseConverterOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResponseConverterOperation.h; path = JSONDeletedObjectsTransforOperation/ResponseConverterOperation.h; sourceTree = "<group>"; };
 		66CCA7331D61DE11004153EA /* ResponseConverterOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResponseConverterOperation.m; path = JSONDeletedObjectsTransforOperation/ResponseConverterOperation.m; sourceTree = "<group>"; };
 		66CCA7391D61E984004153EA /* ResponseConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResponseConverter.h; path = CoreComponents/TransfromJSON/Protocols/ResponseConverter.h; sourceTree = "<group>"; };
@@ -991,6 +983,14 @@
 		66CCA74C1D61FDDE004153EA /* DeletedResponseObjectFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeletedResponseObjectFormatter.m; path = DeletedResponseObjectFormatter/DeletedResponseObjectFormatter.m; sourceTree = "<group>"; };
 		66CCA7531D62095E004153EA /* CustomServerResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomServerResponse.h; path = Model/CustomServerResponse/CustomServerResponse.h; sourceTree = "<group>"; };
 		66CCA7541D62095E004153EA /* CustomServerResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomServerResponse.m; path = Model/CustomServerResponse/CustomServerResponse.m; sourceTree = "<group>"; };
+		66E1E9A51D62E91800E22B1E /* _LastModifiedPlainObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _LastModifiedPlainObject.h; sourceTree = "<group>"; };
+		66E1E9A61D62E91800E22B1E /* _LastModifiedPlainObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _LastModifiedPlainObject.m; sourceTree = "<group>"; };
+		66E1E9A81D62E91E00E22B1E /* _LastModifiedModelObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _LastModifiedModelObject.h; sourceTree = "<group>"; };
+		66E1E9A91D62E91E00E22B1E /* _LastModifiedModelObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _LastModifiedModelObject.m; sourceTree = "<group>"; };
+		66E1E9AB1D62E92500E22B1E /* LastModifiedModelObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LastModifiedModelObject.h; sourceTree = "<group>"; };
+		66E1E9AC1D62E92500E22B1E /* LastModifiedModelObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LastModifiedModelObject.m; sourceTree = "<group>"; };
+		66E1E9AE1D62E92D00E22B1E /* LastModifiedPlainObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LastModifiedPlainObject.h; sourceTree = "<group>"; };
+		66E1E9AF1D62E92D00E22B1E /* LastModifiedPlainObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LastModifiedPlainObject.m; sourceTree = "<group>"; };
 		84D2CBEF6E088EFC9A139E49 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9F0A6C1B1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CompoundOperationBuilderConfig.h; path = OperationBuilders/CompoundOperationBuilderConfig/CompoundOperationBuilderConfig.h; sourceTree = "<group>"; };
 		9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CompoundOperationBuilderConfig.m; path = OperationBuilders/CompoundOperationBuilderConfig/CompoundOperationBuilderConfig.m; sourceTree = "<group>"; };
@@ -1215,8 +1215,8 @@
 		2B20642B1D3F9CE900246C8D /* GeneratedMO */ = {
 			isa = PBXGroup;
 			children = (
-				66B292AE1D4F904F00E4D80F /* _EventListModelObject.h */,
-				66B292AF1D4F904F00E4D80F /* _EventListModelObject.m */,
+				66E1E9A81D62E91E00E22B1E /* _LastModifiedModelObject.h */,
+				66E1E9A91D62E91E00E22B1E /* _LastModifiedModelObject.m */,
 				2B20642C1D3F9CE900246C8D /* _EventModelObject.h */,
 				2B20642D1D3F9CE900246C8D /* _EventModelObject.m */,
 				2B20642E1D3F9CE900246C8D /* _LectureMaterialModelObject.h */,
@@ -1242,8 +1242,8 @@
 		2B20643E1D3F9CE900246C8D /* GeneratedPONSO */ = {
 			isa = PBXGroup;
 			children = (
-				66B292B11D4F905600E4D80F /* _EventListPlainObject.h */,
-				66B292B21D4F905600E4D80F /* _EventListPlainObject.m */,
+				66E1E9A51D62E91800E22B1E /* _LastModifiedPlainObject.h */,
+				66E1E9A61D62E91800E22B1E /* _LastModifiedPlainObject.m */,
 				2B20643F1D3F9CE900246C8D /* _EventPlainObject.h */,
 				2B2064401D3F9CE900246C8D /* _EventPlainObject.m */,
 				2B2064411D3F9CE900246C8D /* _LectureMaterialPlainObject.h */,
@@ -1269,8 +1269,8 @@
 		2B2064511D3F9CE900246C8D /* ManagedObjects */ = {
 			isa = PBXGroup;
 			children = (
-				66B292B41D4F905D00E4D80F /* EventListModelObject.h */,
-				66B292B51D4F905D00E4D80F /* EventListModelObject.m */,
+				66E1E9AB1D62E92500E22B1E /* LastModifiedModelObject.h */,
+				66E1E9AC1D62E92500E22B1E /* LastModifiedModelObject.m */,
 				2B2064521D3F9CE900246C8D /* EventModelObject.h */,
 				2B2064531D3F9CE900246C8D /* EventModelObject.m */,
 				2B2064541D3F9CE900246C8D /* LectureMaterialModelObject.h */,
@@ -1296,8 +1296,8 @@
 		2B2064641D3F9CE900246C8D /* PlainObjects */ = {
 			isa = PBXGroup;
 			children = (
-				66B292B71D4F906400E4D80F /* EventListPlainObject.h */,
-				66B292B81D4F906400E4D80F /* EventListPlainObject.m */,
+				66E1E9AE1D62E92D00E22B1E /* LastModifiedPlainObject.h */,
+				66E1E9AF1D62E92D00E22B1E /* LastModifiedPlainObject.m */,
 				2B2064651D3F9CE900246C8D /* EventPlainObject.h */,
 				2B2064661D3F9CE900246C8D /* EventPlainObject.m */,
 				2B2064671D3F9CE900246C8D /* LectureMaterialPlainObject.h */,
@@ -5781,20 +5781,20 @@
 				63F342B01C8B20AB002AF7CD /* EventStoreService.m in Sources */,
 				667050001D460E3100DD9D6E /* UIColor+ConferencesPallete.m in Sources */,
 				636F8DDA1BCB8FE800552B91 /* RamblerLocationModuleAssembly.m in Sources */,
-				66B292B01D4F904F00E4D80F /* _EventListModelObject.m in Sources */,
 				9F1830A71BC032CF000E21A5 /* ParseRequestSigner.m in Sources */,
 				636F8DDD1BCB8FE800552B91 /* RamblerLocationRouter.m in Sources */,
 				9FC1F6841D28391E0070D9B5 /* EventListQueryTransformer.m in Sources */,
+				66E1E9AD1D62E92500E22B1E /* LastModifiedModelObject.m in Sources */,
 				9F0A84FA1BC1698B006F79FB /* OperationBuffer.m in Sources */,
 				6670504B1D4615BC00DD9D6E /* ReportEventTableViewCellObject.m in Sources */,
 				2B2064821D3F9CE900246C8D /* _LecturePlainObject.m in Sources */,
 				2B2064841D3F9CE900246C8D /* _RegistrationQuestionPlainObject.m in Sources */,
 				66764D041D4B636B00EF9D58 /* ReportsSearchViewAnimator.m in Sources */,
 				631FFE561BEF930200749DB8 /* ReportListRouter.m in Sources */,
-				66B292B31D4F905600E4D80F /* _EventListPlainObject.m in Sources */,
 				631808411C482B1300A61E7D /* SpeakerShortInfoPresenter.m in Sources */,
 				63F6135D1CB00A220002AEF0 /* EventHeaderRouter.m in Sources */,
 				2B2064981D3F9CE900246C8D /* SpeakerPlainObject.m in Sources */,
+				66E1E9A71D62E91800E22B1E /* _LastModifiedPlainObject.m in Sources */,
 				63F613851CB00A220002AEF0 /* FutureEventCellObjectBuilder.m in Sources */,
 				2B2064921D3F9CE900246C8D /* EventPlainObject.m in Sources */,
 				9F4077B41D2E38AB00D47EF6 /* DirectionCellObjectFactory.m in Sources */,
@@ -5843,6 +5843,7 @@
 				66AE2C631D51F923003E587E /* ServerResponseModel.m in Sources */,
 				63F6138E1CB00A220002AEF0 /* LectureRouter.m in Sources */,
 				9F4077B01D2E371C00D47EF6 /* DirectionCellObject.m in Sources */,
+				66E1E9B01D62E92D00E22B1E /* LastModifiedPlainObject.m in Sources */,
 				63F6138C1CB00A220002AEF0 /* LecturePresenter.m in Sources */,
 				9FFEAF051D2E41B4006E9649 /* DirectionCollectionViewCell.m in Sources */,
 				63F613841CB00A220002AEF0 /* EventCellObjectBuilderBase.m in Sources */,
@@ -5860,7 +5861,6 @@
 				63FDCE161BBDBA2A00A43B60 /* main.m in Sources */,
 				9FF750121D27DB99000D208D /* EntityNameFormatterImplementation.m in Sources */,
 				2B20648A1D3F9CE900246C8D /* LectureMaterialModelObject.m in Sources */,
-				66B292B61D4F905D00E4D80F /* EventListModelObject.m in Sources */,
 				2B2064931D3F9CE900246C8D /* LectureMaterialPlainObject.m in Sources */,
 				636B64071BBDD2A40053E38F /* LectureMaterialsServiceImplementation.m in Sources */,
 				2B2064801D3F9CE900246C8D /* _EventPlainObject.m in Sources */,
@@ -5890,6 +5890,7 @@
 				9F0A85021BC1698B006F79FB /* ResponseValidationOperation.m in Sources */,
 				63F6135B1CB00A220002AEF0 /* EventHeaderInteractor.m in Sources */,
 				667050141D46143900DD9D6E /* ReportsSearchRouter.m in Sources */,
+				66E1E9AA1D62E91E00E22B1E /* _LastModifiedModelObject.m in Sources */,
 				631FFE541BEF930200749DB8 /* ReportListInteractor.m in Sources */,
 				9F0A84FB1BC1698B006F79FB /* CompoundOperationBase.m in Sources */,
 				631FFE531BEF930200749DB8 /* ReportListModuleAssembly.m in Sources */,
@@ -5941,7 +5942,6 @@
 				636B640A1BBDD3FA0053E38F /* RegistrationQuestionServiceImplementation.m in Sources */,
 				63F613651CB00A220002AEF0 /* EventDescriptionTableViewCellObject.m in Sources */,
 				636F8D0C1BCB825F00552B91 /* ModuleAssemblyBase.m in Sources */,
-				66B292B91D4F906400E4D80F /* EventListPlainObject.m in Sources */,
 				2B2064811D3F9CE900246C8D /* _LectureMaterialPlainObject.m in Sources */,
 				636A37C21BC1413A00B49C3D /* SystemInfrastructureAssembly.m in Sources */,
 				63F613951CB00A220002AEF0 /* SpeakerInfoModuleAssembly.m in Sources */,

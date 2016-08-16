@@ -26,7 +26,7 @@
 #import "EventType.h"
 #import "EventTypeDeterminator.h"
 #import "ROSPonsomizer.h"
-#import "EventListModelObject.h"
+#import "LastModifiedModelObject.h"
 #import "EventListQuery.h"
 #import <MagicalRecord/MagicalRecord.h>
 

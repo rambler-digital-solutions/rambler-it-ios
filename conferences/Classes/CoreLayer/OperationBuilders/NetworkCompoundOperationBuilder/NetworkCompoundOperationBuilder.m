@@ -137,7 +137,8 @@
 
 - (void)buildLastModifiedMapperOperationWithModelObjectId:(NSString *)eventListObjectId {
 //    NSDateFormatter *dateFormatter 
-    LastModifiedMapperOperation *operation = [LastModifiedMapperOperation operationWithDateFormatter:self.lastModifiedDateFormatter modelObjectId:eventListObjectId];
+    LastModifiedMapperOperation *operation = [LastModifiedMapperOperation operationWithDateFormatter:self.lastModifiedDateFormatter
+                                                                                       modelObjectId:eventListObjectId];
     [self addOperation:operation];
 }
 

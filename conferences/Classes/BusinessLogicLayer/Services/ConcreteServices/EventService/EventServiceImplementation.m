@@ -24,7 +24,7 @@
 #import "EventServiceImplementation.h"
 #import "EventListOperationFactory.h"
 #import "CompoundOperationBase.h"
-#import "EventListModelObject.h"
+#import "LastModifiedModelObject.h"
 #import "OperationScheduler.h"
 #import "EventModelObject.h"
 #import "EventListQuery.h"
@@ -48,7 +48,8 @@ static NSString *const kEventListName = @"kEventListName";
     NSString *modelObjectId = [self obtainCurrentEventModelObjectId];
     NSManagedObjectContext *rootSavingContext = [NSManagedObjectContext MR_rootSavingContext];
     [rootSavingContext performBlock:^{
-        CompoundOperationBase *compoundOperation = [self.eventOperationFactory getEventsOperationWithQuery:listQuery modelObjectId:modelObjectId];
+        CompoundOperationBase *compoundOperation = [self.eventOperationFactory getEventsOperationWithQuery:listQuery
+                                                                                             modelObjectId:modelObjectId];
         
         compoundOperation.resultBlock = ^void(id data, NSError *error) {
             completionBlock(error);
@@ -66,19 +67,19 @@ static NSString *const kEventListName = @"kEventListName";
 
 - (void)setupPredefinedEventListWithName:(NSString *)eventListName {
     NSManagedObjectContext *defaultContext = [NSManagedObjectContext MR_defaultContext];
-    EventListModelObject *eventListObject = [EventListModelObject MR_findFirstByAttribute:NSStringFromSelector(@selector(name)) withValue:eventListName inContext:defaultContext];
+    LastModifiedModelObject *eventListObject = [LastModifiedModelObject MR_findFirstByAttribute:NSStringFromSelector(@selector(name)) withValue:eventListName inContext:defaultContext];
     if (eventListObject) {
         return;
     }
     
     NSManagedObjectContext *rootSavingContext = [NSManagedObjectContext MR_rootSavingContext];
     [rootSavingContext performBlockAndWait:^{
-        EventListModelObject *eventListObject = [EventListModelObject MR_findFirstByAttribute:NSStringFromSelector(@selector(name)) withValue:eventListName inContext:rootSavingContext];
+        LastModifiedModelObject *eventListObject = [LastModifiedModelObject MR_findFirstByAttribute:NSStringFromSelector(@selector(name)) withValue:eventListName inContext:rootSavingContext];
         if (!eventListObject) {
-            eventListObject = [EventListModelObject MR_createEntityInContext:rootSavingContext];
+            eventListObject = [LastModifiedModelObject MR_createEntityInContext:rootSavingContext];
             eventListObject.name = eventListName;
-            eventListObject.eventListId = [[NSUUID UUID] UUIDString];
-            eventListObject.lastModified = [NSDate dateWithTimeIntervalSince1970:0];
+            eventListObject.lastModifiedId = [[NSUUID UUID] UUIDString];
+            eventListObject.lastModifiedDate = [NSDate dateWithTimeIntervalSince1970:0];
         }
         
         [rootSavingContext MR_saveToPersistentStoreAndWait];
@@ -86,17 +87,17 @@ static NSString *const kEventListName = @"kEventListName";
 }
 
 - (EventListQuery *)obtainActualEventListObject {
-    EventListModelObject *modelObject = [EventListModelObject MR_findFirst];
+    LastModifiedModelObject *modelObject = [LastModifiedModelObject MR_findFirst];
     EventListQuery *eventListQuery = [EventListQuery new];
     
-    NSTimeInterval interval = [modelObject.lastModified timeIntervalSince1970];
+    NSTimeInterval interval = [modelObject.lastModifiedDate timeIntervalSince1970];
     eventListQuery.lastModifiedString = [NSString stringWithFormat:@"%d",(int)interval];
     
     return eventListQuery;
 }
 
 - (NSString *)obtainCurrentEventModelObjectId{
-    EventListModelObject *modelObject = [EventListModelObject MR_findFirst];
+    LastModifiedModelObject *modelObject = [LastModifiedModelObject MR_findFirst];
     NSString *modelObjectID = [[modelObject objectID] stringRepresentation];
     return modelObjectID;
 }
