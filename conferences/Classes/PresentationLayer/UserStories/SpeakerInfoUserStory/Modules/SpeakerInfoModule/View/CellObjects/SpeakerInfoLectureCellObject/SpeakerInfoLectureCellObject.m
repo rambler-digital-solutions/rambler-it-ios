@@ -21,6 +21,7 @@
 #import "SpeakerInfoLectureCell.h"
 #import "LecturePlainObject.h"
 #import "EventPlainObject.h"
+#import "MetaEventPlainObject.h"
 
 @interface SpeakerInfoLectureCellObject ()
 
@@ -38,7 +39,7 @@
                      dateString:(NSString *)dateString {
     self = [super init];
     if (self) {
-        _imageUrl = [NSURL URLWithString:lecture.event.imageUrl];
+        _imageUrl = [NSURL URLWithString:lecture.event.metaEvent.imageUrlPath];
         _lectureTitle = lecture.name;
         _lectureDateString = dateString;
     }

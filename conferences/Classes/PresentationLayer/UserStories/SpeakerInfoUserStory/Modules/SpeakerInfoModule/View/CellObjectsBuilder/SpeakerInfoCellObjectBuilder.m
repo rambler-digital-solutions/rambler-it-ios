@@ -102,16 +102,21 @@
     SpeakerInfoSectionHeaderCellObject *cellObject = [SpeakerInfoSectionHeaderCellObject objectWithText:RCLocalize(kSpeakerInfoLecturesSectionName)];
     [cellObjects addObject:cellObject];
     
-    // тут нужна сортировка лекций по дате
-    // и верстку ячеек пофиксить - и ок
-    for (LecturePlainObject *lecture in speaker.lectures) {
+    NSArray *lectures = [speaker.lectures allObjects];
+    lectures = [lectures sortedArrayUsingComparator:^NSComparisonResult(LecturePlainObject *a, LecturePlainObject *b) {
+        NSDate *firstDate = a.event.startDate;
+        NSDate *secondDate = b.event.startDate;
+        return [secondDate compare:firstDate];
+    }];
+    
+    for (LecturePlainObject *lecture in lectures) {
         NSDate *eventDate = lecture.event.startDate;
         NSString *dateString = [self.dateFormatter obtainDateWithDayMonthYearFormat:eventDate];
         SpeakerInfoLectureCellObject *object = [SpeakerInfoLectureCellObject objectWithLecture:lecture dateString:dateString];
         [cellObjects addObject:object];
     }
     
-    return [cellObjects copy];;
+    return [cellObjects copy];
 }
 
 @end
