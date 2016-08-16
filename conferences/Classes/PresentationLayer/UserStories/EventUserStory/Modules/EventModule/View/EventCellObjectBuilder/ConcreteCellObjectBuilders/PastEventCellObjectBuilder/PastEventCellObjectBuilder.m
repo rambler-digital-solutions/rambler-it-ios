@@ -34,7 +34,7 @@
                       pastEvents:(NSArray *)pastEvents {
     NSMutableArray *cellObjects = [NSMutableArray array];
     
-    NSString *formattedDate = [self.dateFormatter obtainDateWithDayMonthTimeFormat:event.startDate];
+    NSString *formattedDate = [self.dateFormatter obtainDateWithDayMonthYearTimeFormat:event.startDate];
     
     EventInfoTableViewCellObject *eventInfoCellObject = [EventInfoTableViewCellObject objectWithEvent:event andDate:formattedDate];
     [cellObjects addObject:eventInfoCellObject];

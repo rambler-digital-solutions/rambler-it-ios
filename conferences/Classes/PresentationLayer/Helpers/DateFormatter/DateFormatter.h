@@ -28,6 +28,17 @@
 @interface DateFormatter : NSObject
 
 /**
+ @author Egor Tolstoy
+ 
+ Method is used to obtain string from date with format "d MMMM yyyy в HH:mm"
+ 
+ @param date NSDate object
+ 
+ @return NSString object
+ */
+- (NSString *)obtainDateWithDayMonthYearTimeFormat:(NSDate *)date;
+
+/**
  @author Artem Karpushin
  
  Method is used to obtain string from date with format "d MMMM в HH:mm"

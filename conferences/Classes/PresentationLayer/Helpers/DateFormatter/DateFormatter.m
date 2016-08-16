@@ -20,6 +20,7 @@
 
 #import "DateFormatter.h"
 
+static NSString *const DayMonthYearTimeDateFormat = @"d MMMM yyyy в HH:mm";
 static NSString *const DayMonthTimeDateFormat = @"d MMMM в HH:mm";
 static NSString *const DayMonthYearDateFormat = @"d MMMM yyyy";
 static NSString *const DayMonthDateFormat = @"d MMMM";
@@ -30,6 +31,10 @@ static NSString *const TimeDateFormat = @"HH:mm";
 @implementation DateFormatter
 
 #pragma mark - Public methods
+
+- (NSString *)obtainDateWithDayMonthYearTimeFormat:(NSDate *)date {
+    return [self obtainDateWithFormat:DayMonthYearTimeDateFormat date:date];
+}
 
 - (NSString *)obtainDateWithDayMonthTimeFormat:(NSDate *)date {
     return [self obtainDateWithFormat:DayMonthTimeDateFormat date:date];

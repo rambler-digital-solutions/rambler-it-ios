@@ -49,6 +49,18 @@
     [super tearDown];
 }
 
+- (void)testSuccessObtainDateWithDayMonthYearTimeFormat {
+    // given
+    NSString *expectedFormattedDateString = @"6 December 2015 в 12:39";
+    NSString *actualFormattedDateString = nil;
+    
+    // when
+    actualFormattedDateString = [self.dateFormatter obtainDateWithDayMonthYearTimeFormat:self.date];
+    
+    // then
+    XCTAssertEqualObjects(expectedFormattedDateString, actualFormattedDateString);
+}
+
 - (void)testSuccessObtainDateWithDayMonthTimeFormat {
     // given
     NSString *expectedFormattedDateString = @"6 December в 12:39";
