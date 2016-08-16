@@ -20,12 +20,12 @@
 
 #import "DateFormatter.h"
 
-static NSString *const DayMonthTimeDateFormat = @"d MMMM в hh:mm";
+static NSString *const DayMonthTimeDateFormat = @"d MMMM в HH:mm";
 static NSString *const DayMonthYearDateFormat = @"d MMMM yyyy";
 static NSString *const DayMonthDateFormat = @"d MMMM";
 static NSString *const MonthDateFormat = @"MMMM";
 static NSString *const DayDateFormat = @"d";
-static NSString *const TimeDateFormat = @"hh:mm";
+static NSString *const TimeDateFormat = @"HH:mm";
 
 @implementation DateFormatter
 
