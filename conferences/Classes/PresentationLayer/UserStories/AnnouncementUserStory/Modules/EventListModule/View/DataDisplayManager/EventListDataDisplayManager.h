@@ -29,7 +29,6 @@
 
 @protocol EventListDataDisplayManagerDelegate
 
-- (void)didUpdateTableViewModel;
 - (void)didTapCellWithEvent:(EventPlainObject *)event;
 
 @end

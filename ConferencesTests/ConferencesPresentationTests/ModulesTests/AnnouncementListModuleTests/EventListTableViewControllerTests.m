@@ -106,21 +106,6 @@
     OCMVerify([self.mockTableView setDelegate:mockDelegate]);
 }
 
-- (void)testSuccessSetupViewWithEventList {
-    // given
-    NSArray *events = @[];
-    
-    id viewControllerPartialMock = OCMPartialMock(self.viewController);
-    
-    // when
-    [self.viewController setupViewWithEventList:events];
-    
-    // then
-    OCMVerify([viewControllerPartialMock updateViewWithEventList:events]);
-    [(id)viewControllerPartialMock stopMocking];
-    viewControllerPartialMock = nil;
-}
-
 - (BOOL)verifyViewControllerConfigureRightEvents:(NSArray *)events
                                     futureEvents:(NSArray *)futureEvents {
     for (id object in futureEvents) {
@@ -136,17 +121,6 @@
 }
 
 #pragma mark - EventListDataDisplayManagerDelegate
-
-- (void)testSuccessDidUpdateTableViewModel {
-    // given
-
-    // when
-    [self.viewController didUpdateTableViewModel];
-    
-    // then
-    OCMVerify([self.mockDataDisplayManager dataSourceForTableView:self.mockTableView]);
-    OCMVerify([self.mockTableView reloadData]);
-}
 
 - (void)testSuccessDidTapCellWithEvent {
     // given

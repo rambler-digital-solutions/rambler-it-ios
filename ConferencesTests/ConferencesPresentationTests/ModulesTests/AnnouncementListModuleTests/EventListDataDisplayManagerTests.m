@@ -75,19 +75,6 @@ typedef NS_ENUM(NSUInteger, TableViewSectionIndex){
     XCTAssertNotNil(dataSource);
 }
 
-- (void)testSuccessUpdateTableViewModelWithEvents {
-    // given
-    id mockViewController = OCMClassMock([EventListTableViewController class]);
-    self.dataDisplayManager.delegate = mockViewController;
-    
-    // when
-    [self.dataDisplayManager updateTableViewModelWithEvents:self.events];
-    
-    // then
-    OCMVerify([mockViewController didUpdateTableViewModel]);
-    [mockViewController stopMocking];
-}
-
 - (void)testThatDataDisplayManagerReturnsCorrectNumberOfSections {
     // given
     NSUInteger const kExpectedNumberOfSections = 1;

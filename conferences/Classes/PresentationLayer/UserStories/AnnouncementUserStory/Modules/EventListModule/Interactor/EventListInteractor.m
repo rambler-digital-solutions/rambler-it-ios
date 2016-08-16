@@ -31,26 +31,17 @@
 
 #pragma mark - AnnouncementListInteractorInput
 
-- (void)updateEventList {
-    @weakify(self)
-    [self.eventService updateEventWithPredicate:nil completionBlock:^(id data, NSError *error) {
-        @strongify(self);
-        NSArray *events = [self obtainEventList];
-        
-        [self.output didUpdateEventList:events];
-    }];
-}
-
 - (NSArray *)obtainEventList {
     NSArray *events = [self.eventService obtainEventWithPredicate:nil];
     NSArray *plainObjects = [self.ponsomizer convertObject:events];
+    NSArray *sortedEvents = [self sortEventsByDate:plainObjects];
     
-    return plainObjects;
+    return sortedEvents;
 }
 
 #pragma mark - Private methods
 
-- (NSArray *)sortEventsByDate:(NSMutableArray *)events {
+- (NSArray *)sortEventsByDate:(NSArray *)events {
     NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:NSStringFromSelector(@selector(startDate)) ascending:NO];
     events = [[events sortedArrayUsingDescriptors:@[sortDescriptor]] mutableCopy];
     

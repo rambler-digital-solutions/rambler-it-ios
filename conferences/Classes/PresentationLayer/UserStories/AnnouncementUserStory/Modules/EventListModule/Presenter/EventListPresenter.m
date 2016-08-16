@@ -30,18 +30,11 @@
 
 - (void)setupView {
     NSArray *events = [self.interactor obtainEventList];
-    [self.interactor updateEventList];
     [self.view setupViewWithEventList:events];
 }
 
 - (void)didTriggerTapCellWithEvent:(EventPlainObject *)event {
     [self.router openEventModuleWithEventObjectId:event.eventId];
-}
-
-#pragma mark - AnnouncementListInteractorOutput
-
-- (void)didUpdateEventList:(NSArray *)events {
-    [self.view updateViewWithEventList:events];
 }
 
 @end

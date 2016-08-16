@@ -61,31 +61,6 @@ typedef void (^ProxyBlock)(NSInvocation *);
     [super tearDown];
 }
 
-- (void)testSuccessUpdateEventList {
-    // given
-    NSObject *event = [NSObject new];
-    NSArray *data = @[event];
-    NSArray *eventsPlainObjects = @[@1];
-    
-    ProxyBlock proxyBlock = ^(NSInvocation *invocation){
-        void(^completionBlock)(id data, NSError *error);
-        
-        [invocation getArgument:&completionBlock atIndex:3];
-        
-        completionBlock(data, nil);
-    };
-    
-    OCMStub([self.mockEventService updateEventWithPredicate:OCMOCK_ANY completionBlock:OCMOCK_ANY]).andDo(proxyBlock);
-    OCMStub([self.mockEventService obtainEventWithPredicate:nil]).andReturn(data);
-    OCMStub([self.mockPonsomizer convertObject:data]).andReturn(eventsPlainObjects);
-   
-    // when
-    [self.interactor updateEventList];
-    
-    // then
-    OCMVerify([self.mockOutput didUpdateEventList:eventsPlainObjects]);
-}
-
 - (void)testSuccessObtainEventList {
     // given
     NSObject *event = [NSObject new];

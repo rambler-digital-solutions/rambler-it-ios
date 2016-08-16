@@ -61,10 +61,10 @@
             </objects>
             <point key="canvasLocation" x="1764" y="-777"/>
         </scene>
-        <!--Event List Table View Controller-->
+        <!--Все события-->
         <scene sceneID="nOx-C3-ZAu">
             <objects>
-                <tableViewController storyboardIdentifier="AnnouncementListTableViewController" id="nCN-ol-buU" customClass="EventListTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="EventListTableViewController" id="nCN-ol-buU" customClass="EventListTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="96" sectionHeaderHeight="28" sectionFooterHeight="28" id="LWI-Zc-aHz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,7 +72,7 @@
                         <inset key="separatorInset" minX="12" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="xkU-eC-DgW">
-                                <rect key="frame" x="0.0" y="28" width="320" height="96"/>
+                                <rect key="frame" x="0.0" y="92" width="320" height="96"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xkU-eC-DgW" id="fT3-OQ-TLu">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="95.5"/>
@@ -88,14 +88,11 @@
                             <outlet property="delegate" destination="nCN-ol-buU" id="Li9-M4-ulR"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="bnq-gD-ykW"/>
+                    <navigationItem key="navigationItem" title="Все события" id="bnq-gD-ykW"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="animator" destination="ZMC-Oq-EAi" id="KXM-Gn-Pyb"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nFg-Tn-fxr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="ZMC-Oq-EAi" customClass="AnnouncementListAnimator"/>
             </objects>
             <point key="canvasLocation" x="1764" y="-305"/>
         </scene>

@@ -36,14 +36,10 @@ static CGFloat const kEventTableViewEstimatedRowHeight = 44.0f;
 	[self.output setupView];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES animated:animated];
-}
-
 #pragma mark - AnnouncementListViewInput
 
 - (void)setupViewWithEventList:(NSArray *)events {
+    [self setupViewInitialState];
     self.dataDisplayManager.delegate = self;
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -51,24 +47,23 @@ static CGFloat const kEventTableViewEstimatedRowHeight = 44.0f;
     
     self.tableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.tableView];
     self.tableView.delegate = [self.dataDisplayManager delegateForTableView:self.tableView
-                                                           withBaseDelegate:nil];
+                                                           withBaseDelegate:self];
     
-    [self updateViewWithEventList:events];
-}
-
-- (void)updateViewWithEventList:(NSArray *)events {
     [self.dataDisplayManager updateTableViewModelWithEvents:events];
 }
 
-#pragma mark - AnnouncementListDataDisplayManagerDelegate
-
-- (void)didUpdateTableViewModel {
-    self.tableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.tableView];
-    [self.tableView reloadData];
-}
+#pragma mark - EventListDataDisplayManagerDelegate
 
 - (void)didTapCellWithEvent:(EventPlainObject *)event {
     [self.output didTriggerTapCellWithEvent:event];
+}
+
+#pragma mark - Private methods
+
+- (void)setupViewInitialState {
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+    self.navigationController.navigationBar.hidden = NO;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 @end

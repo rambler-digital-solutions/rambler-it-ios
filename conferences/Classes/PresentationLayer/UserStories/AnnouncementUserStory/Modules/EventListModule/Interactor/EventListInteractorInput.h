@@ -25,13 +25,6 @@
 /**
  @author Artem Karpushin
  
- Method is used to update list of events
- */
-- (void)updateEventList;
-
-/**
- @author Artem Karpushin
- 
  Method is used to obtain list of events
  
  @return Array of PlainEvent objects

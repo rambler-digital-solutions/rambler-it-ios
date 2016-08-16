@@ -40,7 +40,6 @@
 
 - (void)updateTableViewModelWithEvents:(NSArray *)events {
     [self updateTableViewModel:events];
-    [self.delegate didUpdateTableViewModel];
 }
 
 #pragma mark - DataDisplayManager methods

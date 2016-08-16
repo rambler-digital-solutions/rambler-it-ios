@@ -68,7 +68,6 @@
     
     // then
     OCMVerify([self.mockInteractor obtainEventList]);
-    OCMVerify([self.mockInteractor updateEventList]);
     OCMVerify([self.mockView setupViewWithEventList:OCMOCK_ANY]);
 }
 
@@ -83,18 +82,6 @@
     
     // then
     OCMVerify([self.mockRouter openEventModuleWithEventObjectId:objectId]);
-}
-
-- (void)testSuccessDidUpdateEventList {
-    // given
-    NSArray *events = @[];
-    NSArray *viewModels = @[@1, @2, @3];
-   
-    // when
-    [self.presenter didUpdateEventList:events];
-    
-    // then
-    OCMVerify([self.mockView updateViewWithEventList:events]);
 }
 
 @end

@@ -40,6 +40,11 @@
 	[self.output didTriggerViewReadyEvent];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.hidden = YES;
+}
+
 - (BOOL)prefersStatusBarHidden {
     return YES;
 }
@@ -47,8 +52,6 @@
 #pragma mark - <EventGalleryViewInput>
 
 - (void)setupInitialState {
-    self.navigationController.navigationBar.hidden = YES;
-    
     self.backgroundColorAnimator.view = self.view;
     self.backgroundColorAnimator.additionalView = self.backgroundAdditionalView;
     self.backgroundColorAnimator.scrollView = self.collectionView;
