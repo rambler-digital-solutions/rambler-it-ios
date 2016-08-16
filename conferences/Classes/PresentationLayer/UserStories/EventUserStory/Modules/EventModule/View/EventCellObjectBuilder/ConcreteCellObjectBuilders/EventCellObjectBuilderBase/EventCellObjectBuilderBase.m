@@ -25,7 +25,7 @@
 #import "PreviousLectureSectionHeaderTableViewCellObject.h"
 #import "PreviousEventSectionFooterTableViewCellObject.h"
 #import "PreviousLectureTableViewCellObject.h"
-#import "EventAnnouncementTableViewCellObject.h"
+#import "EventListTableViewCellObject.h"
 #import "EventPlainObject.h"
 #import "DateFormatter.h"
 #import "EventCellObjectBuilderConstants.h"
@@ -66,7 +66,7 @@
     for (EventPlainObject *pastEvent in filteredPastEvents) {
         NSString *date = [self.dateFormatter obtainDateWithDayMonthFormat:pastEvent.startDate];
         NSString *time = [self.dateFormatter obtainDateWithTimeFormat:pastEvent.startDate];
-        EventAnnouncementTableViewCellObject *eventCellobject = [EventAnnouncementTableViewCellObject objectWithEvent:pastEvent
+        EventListTableViewCellObject *eventCellobject = [EventListTableViewCellObject objectWithEvent:pastEvent
                                                                                                             eventDate:date
                                                                                                                  time:time
                                                                                                  customBackgroundFlag:YES];

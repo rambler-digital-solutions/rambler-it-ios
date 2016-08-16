@@ -32,7 +32,7 @@
 #import "DateFormatter.h"
 #import "EventCellObjectBuilderConstants.h"
 #import "PreviousLectureTableViewCellObject.h"
-#import "EventAnnouncementTableViewCellObject.h"
+#import "EventListTableViewCellObject.h"
 
 @interface PastEventCellObjectBuilderTests : XCTestCase
 
@@ -95,7 +95,7 @@
         if ([cellObject isKindOfClass:[LectureInfoTableViewCellObject class]]) {
             actualNumberOfLectureInfoTableViewCellObjects++;
         }
-        if ([cellObject isKindOfClass:[EventAnnouncementTableViewCellObject class]]) {
+        if ([cellObject isKindOfClass:[EventListTableViewCellObject class]]) {
             actualNumberOfPastEventsInfoTableViewCellObjects++;
         }
         if ([cellObject isKindOfClass:[PreviousLectureTableViewCellObject class]]) {
