@@ -24,15 +24,10 @@
 
 static CGFloat TableViewEstimatedRowHeight = 44.0f;
 
-@interface SpeakerInfoViewController()
-
-@end
-
 @implementation SpeakerInfoViewController
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-    [self.navigationController.navigationBar becomeTransparent];
 	[self.output setupView];
 }
 
@@ -70,7 +65,7 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
 }
 
 - (void)setupViewInitialState {
-    [self.navigationController.navigationBar becomeTransparent];
+    [self.navigationController.navigationBar rcf_becomeTransparent];
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     [self.navigationController setNavigationBarHidden:NO
                                              animated:YES];

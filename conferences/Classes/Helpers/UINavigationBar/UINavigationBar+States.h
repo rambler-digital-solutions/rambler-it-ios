@@ -27,6 +27,13 @@
  
  Method makes navigation bar transparent
  */
-- (void)becomeTransparent;
+- (void)rcf_becomeTransparent;
+
+/**
+ @author Egor Tolstoy
+ 
+ Switches to default appearance of navigation bar
+ */
+- (void)rcf_becomeDefault;
 
 @end

@@ -22,12 +22,19 @@
 
 @implementation UINavigationBar (States)
 
-- (void)becomeTransparent {
+- (void)rcf_becomeTransparent {
     UIImage *clearImage = [UIImage new];
     [self setBackgroundImage:clearImage
                forBarMetrics:UIBarMetricsDefault];
     [self setTranslucent:YES];
     [self setShadowImage:clearImage];
+}
+
+- (void)rcf_becomeDefault {
+    [self setBackgroundImage:[[UINavigationBar appearance] backgroundImageForBarMetrics:UIBarMetricsDefault]
+               forBarMetrics:UIBarMetricsDefault];
+    [self setTranslucent:YES];
+    [self setShadowImage:[[UINavigationBar appearance] shadowImage]];
 }
 
 @end

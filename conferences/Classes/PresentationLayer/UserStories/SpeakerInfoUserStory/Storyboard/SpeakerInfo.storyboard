@@ -31,13 +31,24 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U0t-rW-4Kg">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="64" id="Li9-pk-jWl"/>
+                                    <constraint firstAttribute="height" constant="64" id="SP6-Vo-8tg"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="rrv-wF-P8N" firstAttribute="leading" secondItem="nxD-Il-s5p" secondAttribute="leading" id="JUM-PO-HWs"/>
                             <constraint firstAttribute="trailing" secondItem="rrv-wF-P8N" secondAttribute="trailing" id="Ux9-IF-F25"/>
                             <constraint firstAttribute="bottomMargin" secondItem="rrv-wF-P8N" secondAttribute="bottom" id="hVO-FA-lqA"/>
+                            <constraint firstItem="U0t-rW-4Kg" firstAttribute="top" secondItem="nxD-Il-s5p" secondAttribute="top" id="iag-3r-to5"/>
+                            <constraint firstItem="U0t-rW-4Kg" firstAttribute="leading" secondItem="nxD-Il-s5p" secondAttribute="leading" id="pQd-1x-ELE"/>
                             <constraint firstItem="rrv-wF-P8N" firstAttribute="top" secondItem="nxD-Il-s5p" secondAttribute="top" id="sbf-C6-BQx"/>
+                            <constraint firstAttribute="trailing" secondItem="U0t-rW-4Kg" secondAttribute="trailing" id="xfV-Vl-34z"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="adq-Wh-qrY">

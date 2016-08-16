@@ -24,6 +24,7 @@
 #import "EventListViewOutput.h"
 #import "DataDisplayManager.h"
 #import "DateFormatter.h"
+#import "UINavigationBar+States.h"
 
 static CGFloat const kEventTableViewEstimatedRowHeight = 44.0f;
 
@@ -61,6 +62,7 @@ static CGFloat const kEventTableViewEstimatedRowHeight = 44.0f;
 #pragma mark - Private methods
 
 - (void)setupViewInitialState {
+    [self.navigationController.navigationBar rcf_becomeDefault];
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     self.navigationController.navigationBar.hidden = NO;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
