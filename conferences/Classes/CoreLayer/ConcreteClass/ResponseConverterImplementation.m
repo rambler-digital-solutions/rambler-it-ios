@@ -19,6 +19,7 @@
 // THE SOFTWARE.
 
 #import "ResponseConverterImplementation.h"
+#import "ResponseObjectFormatter.h"
 
 static NSString *const kEventAttributesKey = @"attributes";
 static NSString *const kEventDeletedKey = @"deleted";
@@ -27,8 +28,8 @@ static NSString *const kServerResponseResultsKey = @"data";
 
 @implementation ResponseConverterImplementation
 
-- (NSDictionary *)convertFromResponse:(NSDictionary *)dict {
-    NSArray *data = [self.responseFormatter formatServerResponse:dict];
+- (NSDictionary *)convertFromResponse:(NSDictionary *)dictionary {
+    NSArray *data = [self.responseFormatter formatServerResponse:dictionary];
     
     NSMutableArray *deletedObjects = [NSMutableArray new];
     NSMutableArray *updatedObjects = [NSMutableArray new];

@@ -20,8 +20,8 @@
 
 #import <Foundation/Foundation.h>
 #import "ResponseConverter.h"
-#import "ResponseObjectFormatter.h"
 
+@protocol ResponseObjectFormatter;
 /**
  @author Egor Tolstoy
  

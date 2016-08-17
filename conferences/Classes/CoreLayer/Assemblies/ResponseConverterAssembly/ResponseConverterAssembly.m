@@ -28,11 +28,11 @@
     return [TyphoonDefinition withClass:[ResponseConverterImplementation class]
                           configuration:^(TyphoonDefinition *definition) {
                               [definition injectProperty:@selector(responseFormatter)
-                                                    with:[self formatter]];
+                                                    with:[self responseObjectFormatter]];
                           }];
 }
 
-- (id<ResponseObjectFormatter>)formatter {
+- (id<ResponseObjectFormatter>)responseObjectFormatter {
     return [TyphoonDefinition withClass:[ResultsResponseObjectFormatter class]];
 }
 
