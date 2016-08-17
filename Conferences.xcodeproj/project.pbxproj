@@ -300,6 +300,7 @@
 		667050531D46332200DD9D6E /* ReportsSearchCellObjectsBuilderImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 667050521D46332200DD9D6E /* ReportsSearchCellObjectsBuilderImplementation.m */; };
 		667050561D46369100DD9D6E /* ReportsSearchCellObjectsDirectorImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 667050551D46369100DD9D6E /* ReportsSearchCellObjectsDirectorImplementation.m */; };
 		66764D041D4B636B00EF9D58 /* ReportsSearchViewAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 66764D031D4B636B00EF9D58 /* ReportsSearchViewAnimator.m */; };
+		66A861661D64851D00D1C382 /* ReportSearchSectionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A861651D64851D00D1C382 /* ReportSearchSectionObject.m */; };
 		66CCA72C1D61A654004153EA /* ReportSearchSectionTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CCA72A1D61A654004153EA /* ReportSearchSectionTitleTableViewCell.m */; };
 		66CCA72D1D61A654004153EA /* ReportSearchSectionTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66CCA72B1D61A654004153EA /* ReportSearchSectionTitleTableViewCell.xib */; };
 		66CCA7301D61A67E004153EA /* ReportSearchSectionTitleCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CCA72F1D61A67E004153EA /* ReportSearchSectionTitleCellObject.m */; };
@@ -1071,6 +1072,8 @@
 		667050591D464BF200DD9D6E /* ReportsSearchCellObjectsDirector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportsSearchCellObjectsDirector.h; path = SearchReportsModule/View/ReportsSearchDataDisplayManager/ReportsSearchCellObjectsBuilder/ReportsSearchCellObjectsDirector.h; sourceTree = "<group>"; };
 		66764D021D4B636B00EF9D58 /* ReportsSearchViewAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportsSearchViewAnimator.h; path = SearchReportsModule/View/ReportSearchViewAnimator/ReportsSearchViewAnimator.h; sourceTree = "<group>"; };
 		66764D031D4B636B00EF9D58 /* ReportsSearchViewAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportsSearchViewAnimator.m; path = SearchReportsModule/View/ReportSearchViewAnimator/ReportsSearchViewAnimator.m; sourceTree = "<group>"; };
+		66A861641D64851D00D1C382 /* ReportSearchSectionObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportSearchSectionObject.h; path = Model/ReportSearchSectionObject.h; sourceTree = "<group>"; };
+		66A861651D64851D00D1C382 /* ReportSearchSectionObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportSearchSectionObject.m; path = Model/ReportSearchSectionObject.m; sourceTree = "<group>"; };
 		66CCA7291D61A654004153EA /* ReportSearchSectionTitleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportSearchSectionTitleTableViewCell.h; path = SearchReportsModule/View/Cells/ReportSearchSectionTitleTableViewCell/ReportSearchSectionTitleTableViewCell.h; sourceTree = "<group>"; };
 		66CCA72A1D61A654004153EA /* ReportSearchSectionTitleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportSearchSectionTitleTableViewCell.m; path = SearchReportsModule/View/Cells/ReportSearchSectionTitleTableViewCell/ReportSearchSectionTitleTableViewCell.m; sourceTree = "<group>"; };
 		66CCA72B1D61A654004153EA /* ReportSearchSectionTitleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ReportSearchSectionTitleTableViewCell.xib; path = SearchReportsModule/View/Cells/ReportSearchSectionTitleTableViewCell/ReportSearchSectionTitleTableViewCell.xib; sourceTree = "<group>"; };
@@ -4168,6 +4171,7 @@
 		667050501D4632D600DD9D6E /* ReportsSearchCellObjectsBuilder */ = {
 			isa = PBXGroup;
 			children = (
+				66A861631D6483EC00D1C382 /* Model */,
 				667050511D46332200DD9D6E /* ReportsSearchCellObjectsBuilderImplementation.h */,
 				667050521D46332200DD9D6E /* ReportsSearchCellObjectsBuilderImplementation.m */,
 				667050541D46369100DD9D6E /* ReportsSearchCellObjectsDirectorImplementation.h */,
@@ -4185,6 +4189,15 @@
 				66764D031D4B636B00EF9D58 /* ReportsSearchViewAnimator.m */,
 			);
 			name = ReportSearchViewAnimator;
+			sourceTree = "<group>";
+		};
+		66A861631D6483EC00D1C382 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				66A861641D64851D00D1C382 /* ReportSearchSectionObject.h */,
+				66A861651D64851D00D1C382 /* ReportSearchSectionObject.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		66CCA7241D61A5D0004153EA /* Cells */ = {
@@ -7458,6 +7471,7 @@
 				63FD4E061BE5038D0046378E /* UIColor+Hex.m in Sources */,
 				66704FF91D4606D800DD9D6E /* PonsomizerAssembly.m in Sources */,
 				9F0A84FF1BC1698B006F79FB /* RequestSigningOperation.m in Sources */,
+				66A861661D64851D00D1C382 /* ReportSearchSectionObject.m in Sources */,
 				9F1830F51BC14444000E21A5 /* NSString+RCFCapitalization.m in Sources */,
 				2BDDAB551D363D34007FD547 /* ROSPonsomizerImplementation.m in Sources */,
 				667050411D4615A700DD9D6E /* GrayTableViewSectionHeaderAndFooterCell.m in Sources */,

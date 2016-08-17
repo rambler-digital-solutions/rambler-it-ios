@@ -24,6 +24,8 @@
 #import "EventPlainObject.h"
 #import "SpeakerPlainObject.h"
 #import "UIColor+ConferencesPallete.h"
+#import "LocalizedStrings.h"
+#import "ReportSearchSectionObject.h"
 
 @implementation ReportsSearchCellObjectsDirectorImplementation
 
@@ -40,20 +42,20 @@
     if (!plainObjects) {
         return nil;
     }
-    NSArray *namesClass = [self sectionsCellInCorrectOrder];
+    NSArray *sectionObjects = [self generateSectionsObject];
     NSMutableArray *resultCellObjects = [NSMutableArray new];
     
-    for (NSString *nameClass in namesClass) {
+    for (ReportSearchSectionObject *sectionObject in sectionObjects) {
         
-        NSArray *sectionPlainObjects = [self getObjectsByNameClass:nameClass
+        NSArray *sectionPlainObjects = [self getObjectsByNameClass:sectionObject.nameObjectClassInSection
                                                        fromObjects:plainObjects];
         
         if ([sectionPlainObjects count] == 0) {
             continue;
         }
         
-        id sectionCell = [self generateSectionCellForNameClass:nameClass];
-        NSArray *cellObjects = [self generateCellObjectsForNameClass:nameClass
+        ReportSearchSectionTitleCellObject *sectionCell = [self generateSectionCellForSecionObject:sectionObject];
+        NSArray *cellObjects = [self generateCellObjectsForNameClass:sectionObject.nameObjectClassInSection
                                                     fromPlainObjects:sectionPlainObjects
                                                         selectedText:selectedText];
         [resultCellObjects addObject:sectionCell];
@@ -71,13 +73,9 @@
     return sectionPlainObjects;
 }
 
-- (id)generateSectionCellForNameClass:(NSString *)nameClass {
-    NSDictionary *sectionsNamesByClassName = [self sectionsNamesForPlainClass];
-    NSDictionary *colorSections = [self colorSectionsByNameClass];
-    NSString *sectionName = sectionsNamesByClassName[nameClass];
-    UIColor *sectionColor = colorSections[nameClass];
-    id sectionCell = [self.builder sectionCellObjectWithTitle:sectionName
-                                              backgroundColor:sectionColor];
+- (ReportSearchSectionTitleCellObject *)generateSectionCellForSecionObject:(ReportSearchSectionObject *)sectionObject {
+    ReportSearchSectionTitleCellObject *sectionCell = [self.builder sectionCellObjectWithTitle:sectionObject.titleSection
+                                                                               backgroundColor:sectionObject.backgroundColorSection];
     return sectionCell;
 }
 
@@ -101,28 +99,24 @@
     }
     return cellObjects;
 }
-- (NSArray *)sectionsCellInCorrectOrder {
+
+- (NSArray *)generateSectionsObject {
+    ReportSearchSectionObject *eventSection = [ReportSearchSectionObject objectSectionWithTitle:RCLocalize(kReportSearchEventSectionTitle)
+                                                                                  nameObjectClass:NSStringFromClass([EventPlainObject class])
+                                                                                backgroundColor:[UIColor LJ_lightGrayBackgroundColor]];
+    
+    ReportSearchSectionObject *lectureSection = [ReportSearchSectionObject objectSectionWithTitle:RCLocalize(kReportSearchLectureSectionTitle)
+                                                                                    nameObjectClass:NSStringFromClass([LecturePlainObject class])
+                                                                                  backgroundColor:[UIColor whiteColor]];
+    
+    ReportSearchSectionObject *speakerSection = [ReportSearchSectionObject objectSectionWithTitle:RCLocalize(kReportSearchSpeakerSectionTitle)
+                                                                                    nameObjectClass:NSStringFromClass([SpeakerPlainObject class])
+                                                                                  backgroundColor:[UIColor whiteColor]];
     return @[
-             NSStringFromClass([EventPlainObject class]),
-             NSStringFromClass([LecturePlainObject class]),
-             NSStringFromClass([SpeakerPlainObject class])
+             eventSection,
+             lectureSection,
+             speakerSection
              ];
-}
-
-- (NSDictionary *)sectionsNamesForPlainClass {
-    return @{
-             NSStringFromClass([EventPlainObject class])   : @"События",
-             NSStringFromClass([LecturePlainObject class]) : @"Выступления",
-             NSStringFromClass([SpeakerPlainObject class]) : @"Докладчики"
-             };
-}
-
-- (NSDictionary *)colorSectionsByNameClass {
-    return @{
-             NSStringFromClass([EventPlainObject class])   : [UIColor LJ_lightGrayBackgroundColor],
-             NSStringFromClass([LecturePlainObject class]) : [UIColor whiteColor],
-             NSStringFromClass([SpeakerPlainObject class]) : [UIColor whiteColor]
-             };
 }
 
 - (NSDictionary *)selectorsBuilderForPlainClass {
@@ -132,5 +126,7 @@
              NSStringFromClass([SpeakerPlainObject class]) : NSStringFromSelector(@selector(speakerCellObjectFromPlainObject:selectedText:)),
              };
 }
+
+
 
 @end

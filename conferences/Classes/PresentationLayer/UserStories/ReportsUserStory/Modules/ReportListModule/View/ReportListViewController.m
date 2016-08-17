@@ -24,7 +24,7 @@
 #import "ReportListDataDisplayManager.h"
 #import <RamblerSegues/RamblerSegues.h>
 
-static NSInteger kDefaultEstimatedHeight = 116;
+static const NSInteger kDefaultEstimatedHeight = 116;
 
 @interface ReportListViewController() <ReportListDataDisplayManagerDelegate, RamblerEmbedSegueViewContainer>
 

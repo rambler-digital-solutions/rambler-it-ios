@@ -31,6 +31,12 @@ NSString *const kSpeakInfoLinkedInAccountTitle = @"kSpeakInfoLinkedInAccountTitl
 NSString *const kSpeakInfoInstagramAccountTitle = @"kSpeakInfoInstagramAccountTitle";
 NSString *const kSpeakInfoTwitterAccountTitle = @"kSpeakInfoTwitterAccountTitle";
 
+#pragma mark - Search module
+
+NSString *const kReportSearchEventSectionTitle = @"kReportSearchEventSectionTitle";
+NSString *const kReportSearchLectureSectionTitle = @"kReportSearchLectureSectionTitle";
+NSString *const kReportSearchSpeakerSectionTitle = @"kReportSearchSpeakerSectionTitle";
+
 #pragma mark - Cell title
 
 NSString * const VideoRecordTableViewCellTitle = @"VideoRecordTableViewCellTitle";
