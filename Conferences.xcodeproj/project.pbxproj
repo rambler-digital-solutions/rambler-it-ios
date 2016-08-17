@@ -503,6 +503,9 @@
 		9FC305351D6478F60052CB67 /* ShareUrlBuilderImplementationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC305341D6478F60052CB67 /* ShareUrlBuilderImplementationTests.m */; };
 		9FD740381CDC98010071BD71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FD740371CDC98010071BD71 /* LaunchScreen.storyboard */; };
 		9FE138FE1D64C36A00D7BF44 /* CustomSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE138FD1D64C36A00D7BF44 /* CustomSearchBar.m */; };
+		9FE139021D64D86400D7BF44 /* SearchSuggestTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE139011D64D86400D7BF44 /* SearchSuggestTableViewCell.m */; };
+		9FE139061D64D87400D7BF44 /* SearchSuggestTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE139051D64D87400D7BF44 /* SearchSuggestTableViewCellObject.m */; };
+		9FE139081D64D99200D7BF44 /* SearchSuggestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FE139071D64D99200D7BF44 /* SearchSuggestTableViewCell.xib */; };
 		9FF1251E1D51DF460098625F /* EventObjectIndexer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF1251D1D51DF460098625F /* EventObjectIndexer.m */; };
 		9FF37E111D3235BB00471B4E /* AppleMapsLinkBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF37E101D3235BB00471B4E /* AppleMapsLinkBuilderTests.m */; };
 		9FF37E151D32373500471B4E /* RamblerLocationInteractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF37E141D32373500471B4E /* RamblerLocationInteractorTests.m */; };
@@ -1515,6 +1518,11 @@
 		9FD740371CDC98010071BD71 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9FE138FC1D64C36A00D7BF44 /* CustomSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomSearchBar.h; path = Views/CustomSearchBar/CustomSearchBar.h; sourceTree = "<group>"; };
 		9FE138FD1D64C36A00D7BF44 /* CustomSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomSearchBar.m; path = Views/CustomSearchBar/CustomSearchBar.m; sourceTree = "<group>"; };
+		9FE139001D64D86400D7BF44 /* SearchSuggestTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchSuggestTableViewCell.h; path = SearchSuggestTableViewCell/SearchSuggestTableViewCell.h; sourceTree = "<group>"; };
+		9FE139011D64D86400D7BF44 /* SearchSuggestTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchSuggestTableViewCell.m; path = SearchSuggestTableViewCell/SearchSuggestTableViewCell.m; sourceTree = "<group>"; };
+		9FE139041D64D87400D7BF44 /* SearchSuggestTableViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchSuggestTableViewCellObject.h; path = SearchSuggestTableViewCellObject/SearchSuggestTableViewCellObject.h; sourceTree = "<group>"; };
+		9FE139051D64D87400D7BF44 /* SearchSuggestTableViewCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchSuggestTableViewCellObject.m; path = SearchSuggestTableViewCellObject/SearchSuggestTableViewCellObject.m; sourceTree = "<group>"; };
+		9FE139071D64D99200D7BF44 /* SearchSuggestTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchSuggestTableViewCell.xib; path = SearchSuggestTableViewCell/SearchSuggestTableViewCell.xib; sourceTree = "<group>"; };
 		9FF1251C1D51DF460098625F /* EventObjectIndexer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventObjectIndexer.h; path = SpotlightIndexer/ObjectIndexers/ConcreteClasses/EventObjectIndexer/EventObjectIndexer.h; sourceTree = "<group>"; };
 		9FF1251D1D51DF460098625F /* EventObjectIndexer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventObjectIndexer.m; path = SpotlightIndexer/ObjectIndexers/ConcreteClasses/EventObjectIndexer/EventObjectIndexer.m; sourceTree = "<group>"; };
 		9FF37E101D3235BB00471B4E /* AppleMapsLinkBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppleMapsLinkBuilderTests.m; path = MapLinkBuildersTests/AppleMapsLinkBuilderTests.m; sourceTree = "<group>"; };
@@ -2229,6 +2237,7 @@
 		631FFE5A1BEF98E600749DB8 /* CellObjects */ = {
 			isa = PBXGroup;
 			children = (
+				9FE139031D64D86900D7BF44 /* SearchSuggestTableViewCellObject */,
 				667050331D46157800DD9D6E /* GrayTableViewSectionHeaderAndFooterCellObject */,
 				667050321D46157100DD9D6E /* ReportEventTableViewCellObject */,
 				667050311D46156B00DD9D6E /* ReportLectureTableViewCellObject */,
@@ -2240,6 +2249,7 @@
 		631FFE5B1BEF98E600749DB8 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				9FE138FF1D64D83900D7BF44 /* SearchSuggestTableViewCell */,
 				6670502C1D4614D400DD9D6E /* GrayTableViewSectionHeaderAndFooterCell */,
 				6670502B1D4614D100DD9D6E /* ReportLectureTableViewCell */,
 				6670502A1D4614CE00DD9D6E /* ReportSpeakerTableViewCell */,
@@ -7176,6 +7186,25 @@
 			name = CustomSearchBar;
 			sourceTree = "<group>";
 		};
+		9FE138FF1D64D83900D7BF44 /* SearchSuggestTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				9FE139001D64D86400D7BF44 /* SearchSuggestTableViewCell.h */,
+				9FE139011D64D86400D7BF44 /* SearchSuggestTableViewCell.m */,
+				9FE139071D64D99200D7BF44 /* SearchSuggestTableViewCell.xib */,
+			);
+			name = SearchSuggestTableViewCell;
+			sourceTree = "<group>";
+		};
+		9FE139031D64D86900D7BF44 /* SearchSuggestTableViewCellObject */ = {
+			isa = PBXGroup;
+			children = (
+				9FE139041D64D87400D7BF44 /* SearchSuggestTableViewCellObject.h */,
+				9FE139051D64D87400D7BF44 /* SearchSuggestTableViewCellObject.m */,
+			);
+			name = SearchSuggestTableViewCellObject;
+			sourceTree = "<group>";
+		};
 		9FF1251A1D51DF130098625F /* ConcreteClasses */ = {
 			isa = PBXGroup;
 			children = (
@@ -7501,6 +7530,7 @@
 				6670503D1D4615A100DD9D6E /* ReportLectureTableViewCell.xib in Resources */,
 				6318086A1C4A870C00A61E7D /* LectureMaterialInfoTableViewCell.xib in Resources */,
 				63F613731CB00A220002AEF0 /* EventInfoTableViewCell.xib in Resources */,
+				9FE139081D64D99200D7BF44 /* SearchSuggestTableViewCell.xib in Resources */,
 				2B4F20231D53273100C9891E /* SpeakerInfoSectionHeaderTableViewCell.xib in Resources */,
 				9FBE89F11D5DDA6C00DA0C32 /* PreviousEventSectionFooterTableViewCell.xib in Resources */,
 				9FBE8B031D634F0500DA0C32 /* EventListTableViewCell.xib in Resources */,
@@ -7774,6 +7804,7 @@
 				631808411C482B1300A61E7D /* SpeakerShortInfoPresenter.m in Sources */,
 				63F6135D1CB00A220002AEF0 /* EventHeaderRouter.m in Sources */,
 				9FC305321D6476EA0052CB67 /* ShareUrlBuilderImplementation.m in Sources */,
+				9FE139021D64D86400D7BF44 /* SearchSuggestTableViewCell.m in Sources */,
 				9F5316A91D50F56900F13931 /* IndexerStateStorage.m in Sources */,
 				9F533A8E1D50EC10004F8E82 /* IndexerMonitor.m in Sources */,
 				2B2064981D3F9CE900246C8D /* SpeakerPlainObject.m in Sources */,
@@ -7792,6 +7823,7 @@
 				9FBE8AFE1D634F0500DA0C32 /* EventListRouter.m in Sources */,
 				9F1830D11BC12492000E21A5 /* ResponseValidatorBase.m in Sources */,
 				63F613931CB00A220002AEF0 /* LectureViewController.m in Sources */,
+				9FE139061D64D87400D7BF44 /* SearchSuggestTableViewCellObject.m in Sources */,
 				9F78D75A1D59E6CB009DDCEA /* SpeakerObjectTransformer.m in Sources */,
 				2B2064941D3F9CE900246C8D /* LecturePlainObject.m in Sources */,
 				63F6136B1CB00A220002AEF0 /* PreviousLectureTableViewCellObject.m in Sources */,
