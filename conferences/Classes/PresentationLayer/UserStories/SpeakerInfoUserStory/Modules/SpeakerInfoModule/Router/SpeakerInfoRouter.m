@@ -34,11 +34,17 @@ static NSString *const kSpeakerModuleToLectureModuleSegue = @"SpeakerModuleToLec
                                            completion:nil];
 }
 
-- (void)openLectureModuleWithLectureId:(NSString *)lectureid {
+- (void)openLectureModuleWithLectureId:(NSString *)lectureId {
     [[self.transitionHandler openModuleUsingSegue:kSpeakerModuleToLectureModuleSegue] thenChainUsingBlock:^id<RamblerViperModuleOutput>(id<LectureModuleInput> moduleInput) {
-        [moduleInput configureCurrentModuleWithLectureObjectId:lectureid];
+        [moduleInput configureCurrentModuleWithLectureObjectId:lectureId];
         return nil;
     }];
+}
+
+- (void)openShareModuleWithActivityItems:(NSArray *)activityItems {
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
+    
+    [[(id)self.transitionHandler navigationController] presentViewController:activityViewController animated:true completion:nil];
 }
 
 @end

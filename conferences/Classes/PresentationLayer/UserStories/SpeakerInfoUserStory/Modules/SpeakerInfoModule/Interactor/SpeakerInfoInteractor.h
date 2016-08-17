@@ -21,12 +21,14 @@
 
 @protocol ROSPonsomizer;
 @protocol SpeakerService;
+@protocol ShareUrlBuilder;
 
 @interface SpeakerInfoInteractor : NSObject <SpeakerInfoInteractorInput>
 
 @property (nonatomic, weak) id  output;
 @property (nonatomic, strong) id<ROSPonsomizer> ponsomizer;
 @property (nonatomic, strong) id<SpeakerService> speakerService;
+@property (nonatomic, strong) id<ShareUrlBuilder> shareUrlBuilder;
 
 @end
 

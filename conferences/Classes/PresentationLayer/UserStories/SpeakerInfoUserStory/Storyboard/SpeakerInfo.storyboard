@@ -54,6 +54,9 @@
                     <navigationItem key="navigationItem" id="adq-Wh-qrY">
                         <barButtonItem key="rightBarButtonItem" image="ic-share" id="EO9-KQ-OxQ">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="didTapShareButton:" destination="mwt-bL-fmW" id="Fle-RH-4FV"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>

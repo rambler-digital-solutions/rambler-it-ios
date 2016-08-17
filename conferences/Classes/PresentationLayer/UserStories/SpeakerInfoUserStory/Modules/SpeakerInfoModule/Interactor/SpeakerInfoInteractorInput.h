@@ -31,5 +31,16 @@
  */
 - (SpeakerPlainObject *)obtainSpeakerWithSpeakerId:(NSString *)speakerId;
 
+/**
+ @author Artem Karpushin
+ 
+ Method is used to obtain activity items for sharing
+ 
+ @param event SpeakerPlainObject
+ 
+ @return Activity items
+ */
+- (NSArray *)obtainActivityItemsForSpeaker:(SpeakerPlainObject *)speaker;
+
 @end
 

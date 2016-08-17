@@ -160,4 +160,15 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
     OCMVerify([self.mockOutput didTriggerLectureTapEventWithLecture:mockLecture]);
 }
 
+- (void)testSuccessDidTapShare {
+    // given
+    
+    
+    // when
+    [self.viewController didTapShareButton:nil];
+    
+    // then
+    OCMVerify([self.mockOutput didTriggerShareButtonTapEvent]);
+}
+
 @end

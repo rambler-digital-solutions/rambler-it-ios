@@ -17,14 +17,12 @@
 // THE SOFTWARE.
 
 #import "SpeakerInfoInteractor.h"
+
 #import "SpeakerPlainObject.h"
 #import "SpeakerModelObject.h"
 #import "ROSPonsomizer.h"
 #import "SpeakerService.h"
-
-@interface SpeakerInfoInteractor()
-
-@end
+#import "ShareUrlBuilder.h"
 
 @implementation SpeakerInfoInteractor
 
@@ -36,6 +34,12 @@
     SpeakerPlainObject *plainSpeaker = [self.ponsomizer convertObject:speaker];
     
     return plainSpeaker;
+}
+
+- (NSArray *)obtainActivityItemsForSpeaker:(SpeakerPlainObject *)speaker {
+    NSURL *shareUrl = [self.shareUrlBuilder buildShareUrlWithItemId:speaker.speakerId];
+    NSArray *activityItems = @[shareUrl];
+    return activityItems;
 }
 
 @end

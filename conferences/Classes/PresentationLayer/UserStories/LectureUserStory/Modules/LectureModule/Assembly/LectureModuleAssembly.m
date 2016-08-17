@@ -28,6 +28,9 @@
 #import "PresentationLayerHelpersAssembly.h"
 #import "ServiceComponents.h"
 #import "LectureCellObjectsBuilderImplementation.h"
+#import "ShareUrlBuilderImplementation.h"
+
+static NSString *const kLectureShareItemType = @"lecture";
 
 @implementation  LectureModuleAssembly
 
@@ -50,6 +53,8 @@
                                                       with:[self.ponsomizerAssembly ponsomizer]];
                                 [definition injectProperty:@selector(lectureService)
                                                       with:[self.serviceComponents lectureService]];
+                                [definition injectProperty:@selector(shareUrlBuilder)
+                                                      with:[self lectureShareUrlBuilder]];
              }];
 }
 
@@ -96,6 +101,16 @@
                           configuration:^(TyphoonDefinition *definition) {
                               [definition injectProperty:@selector(thumbnailGenerator)
                                                     with:[self.presentationLayerHelpersAssembly videoThumbnailGenerator]];
+                          }];
+}
+
+- (ShareUrlBuilderImplementation *)lectureShareUrlBuilder {
+    return [TyphoonDefinition withClass:[ShareUrlBuilderImplementation class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition useInitializer:@selector(initWithItemType:)
+                                              parameters:^(TyphoonMethod *initializer) {
+                                                  [initializer injectParameterWith:kLectureShareItemType];
+                                              }];
                           }];
 }
 
