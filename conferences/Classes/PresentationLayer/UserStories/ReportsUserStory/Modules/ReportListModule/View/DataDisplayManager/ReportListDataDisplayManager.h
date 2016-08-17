@@ -21,19 +21,11 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#import "DataDisplayManager.h"
-
 @class EventPlainObject;
 @class DateFormatter;
+@class ReportListCellObjectFactory;
 
 @protocol ReportListDataDisplayManagerDelegate
-
-/**
- @author Zinovyev Konstantin
- 
- Method informs delegate, that table view model was updated
- */
-- (void)didUpdateTableViewModel;
 
 /**
  @author Zinovyev Konstantin
@@ -46,18 +38,35 @@
 
 @end
 
-@interface ReportListDataDisplayManager : NSObject <DataDisplayManager>
+@interface ReportListDataDisplayManager : NSObject
 
-@property (weak, nonatomic) id <ReportListDataDisplayManagerDelegate> delegate;
-@property (strong, nonatomic) DateFormatter *dateFormatter;
+@property (nonatomic, weak) id <ReportListDataDisplayManagerDelegate> delegate;
+@property (nonatomic, strong) DateFormatter *dateFormatter;
+@property (nonatomic, strong) ReportListCellObjectFactory *cellObjectFactory;
 
 /**
- @author Zinovyev Konstantin
+ @author Egor Tolstoy
  
- Method is used to update TableViewModel with new events
+ Returns a data source object for UITableView
  
- @param events Event list
+ @param tableView UITableView
+ @param suggests  Suggests array
+ 
+ @return Data source
  */
-- (void)updateTableViewModelWithEvents:(NSArray *)events;
+- (id<UITableViewDataSource>)dataSourceForTableView:(UITableView *)tableView
+                                       withSuggests:(NSArray *)suggests;
+
+/**
+ @author Egor Tolstoy
+ 
+ Returns a delegate object for UITableView with events
+ 
+ @param collectionView UITableView
+ 
+ @return Delegate
+ */
+- (id<UITableViewDelegate>)delegateForTableView:(UITableView *)tableView
+                               withBaseDelegate:(id<UITableViewDelegate>)baseTableViewDelegate;
 
 @end

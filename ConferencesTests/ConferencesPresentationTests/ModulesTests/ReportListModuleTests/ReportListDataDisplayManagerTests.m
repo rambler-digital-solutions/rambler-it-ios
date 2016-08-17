@@ -53,28 +53,14 @@ typedef NS_ENUM(NSUInteger, TableViewSectionIndex){
     [super tearDown];
 }
 
-- (void)testThatDataDisplayManagerReturnsTableViewDataSource{
+- (void)testThatDataDisplayManagerReturnsTableViewDataSource {
     // given
     
     // when
-    [self.dataDisplayManager updateTableViewModelWithEvents:self.events];
-    id <UITableViewDataSource> dataSource = [self.dataDisplayManager dataSourceForTableView:nil];
+    id <UITableViewDataSource> dataSource = [self.dataDisplayManager dataSourceForTableView:nil withSuggests:nil];
     
     // then
     XCTAssertNotNil(dataSource);
-}
-
-- (void)testSuccessUpdateTableViewModelWithEvents {
-    // given
-    id mockViewController = OCMClassMock([ReportListViewController class]);
-    self.dataDisplayManager.delegate = mockViewController;
-    
-    // when
-    [self.dataDisplayManager updateTableViewModelWithEvents:self.events];
-    
-    // then
-    OCMVerify([mockViewController didUpdateTableViewModel]);
-    [mockViewController stopMocking];
 }
 
 - (void)testThatDataDisplayManagerReturnsCorrectNumberOfSections {
@@ -83,53 +69,12 @@ typedef NS_ENUM(NSUInteger, TableViewSectionIndex){
     NSUInteger actualNumberOfSections = 0;
     
     // when
-    [self.dataDisplayManager updateTableViewModelWithEvents:self.events];
-    id <UITableViewDataSource> dataSource = [self.dataDisplayManager dataSourceForTableView:nil];
+    id <UITableViewDataSource> dataSource = [self.dataDisplayManager dataSourceForTableView:nil withSuggests:nil];
     
     actualNumberOfSections = [dataSource numberOfSectionsInTableView:nil];
     
     // then
     XCTAssertEqual(actualNumberOfSections, kExpectedNumberOfSections);
-}
-
-- (void)testThatDataDisplayManagerReturnsCorrectNumberOfRows {
-    // given
-    NSUInteger footerTableView = 1;
-    
-    NSUInteger const kExpectedNumberOfRows = self.events.count + footerTableView;
-    NSUInteger actualNumberOfRows = 0;
-    
-    // when
-    [self.dataDisplayManager updateTableViewModelWithEvents:self.events];
-    id <UITableViewDataSource> dataSource = [self.dataDisplayManager dataSourceForTableView:nil];
-    actualNumberOfRows = [dataSource tableView:nil numberOfRowsInSection:ReportsSection];
-    
-    // then
-    XCTAssertEqual(kExpectedNumberOfRows, actualNumberOfRows);
-}
-
-- (void)testThatDataDisplayManagerReturnsCorrectClassForTableViewCell {
-    // given
-    NSUInteger expectedNumberOfCellForCorrespondingClass = self.events.count;
-    NSUInteger actualNumberOfCellForCorrespondingClass = 0;
-    
-    // when
-    [self.dataDisplayManager updateTableViewModelWithEvents:self.events];
-    id <UITableViewDataSource> dataSource = [self.dataDisplayManager dataSourceForTableView:nil];
-    
-    NSUInteger numberOfRows = [dataSource tableView:nil numberOfRowsInSection:ReportsSection];
-    
-    for (int i = 0; i < numberOfRows; i++) {
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:ReportsSection];
-        UITableViewCell *cell = [dataSource tableView:nil cellForRowAtIndexPath:indexPath];
-        
-        if ([cell isKindOfClass:[ReportEventTableViewCell class]]) {
-            actualNumberOfCellForCorrespondingClass++;
-        }
-    }
-    
-    // then
-    XCTAssertEqual(expectedNumberOfCellForCorrespondingClass, actualNumberOfCellForCorrespondingClass);
 }
 
 @end

@@ -18,41 +18,21 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+#import "ReportListCellObjectFactory.h"
+
 #import "SearchSuggestTableViewCellObject.h"
 
-#import "SearchSuggestTableViewCell.h"
+@implementation ReportListCellObjectFactory
 
-@interface SearchSuggestTableViewCellObject ()
-
-@property (nonatomic, strong, readwrite) NSString *suggestText;
-
-@end
-
-@implementation SearchSuggestTableViewCellObject
-
-#pragma mark - Initialization
-
-- (instancetype)initWithSuggestText:(NSString *)suggestText {
-    self = [super init];
-    if (self) {
-        _suggestText = suggestText;
+- (NSArray *)generateCellObjectsWithSuggests:(NSArray<NSString *> *)suggests {
+    NSMutableArray *cellObjects = [NSMutableArray new];
+    
+    for (NSString *suggest in suggests) {
+        SearchSuggestTableViewCellObject *object = [SearchSuggestTableViewCellObject objectWithSuggestText:suggest];
+        [cellObjects addObject:object];
     }
-    return self;
+    
+    return [cellObjects copy];
 }
-
-+ (instancetype)objectWithSuggestText:(NSString *)suggestText {
-    return [[self alloc] initWithSuggestText:suggestText];
-}
-
-#pragma mark - <NICellObject>
-
-- (Class)cellClass {
-    return [SearchSuggestTableViewCell class];
-}
-
-- (UINib *)cellNib {
-    return [UINib nibWithNibName:NSStringFromClass([SearchSuggestTableViewCell class]) bundle:[NSBundle mainBundle]];
-}
-
 
 @end

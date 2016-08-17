@@ -51,10 +51,10 @@ static const NSInteger kDefaultEstimatedHeight = 116;
 - (void)setupViewWithEventList:(NSArray *)events {
     [self.reportsTableView setTableFooterView:[UIView new]];
     
-    [self.dataDisplayManager updateTableViewModelWithEvents:events];
     self.dataDisplayManager.delegate = self;
     
-    self.reportsTableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.reportsTableView];
+    NSArray *suggests = @[@"1234", @"5678"];
+    self.reportsTableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.reportsTableView withSuggests:suggests];
     self.reportsTableView.delegate = [self.dataDisplayManager delegateForTableView:self.reportsTableView withBaseDelegate:nil];
 }
 
@@ -63,7 +63,7 @@ static const NSInteger kDefaultEstimatedHeight = 116;
 }
 
 - (void)updateViewWithEventList:(NSArray *)events {
-    [self.dataDisplayManager updateTableViewModelWithEvents:events];
+
 }
 
 - (void)hideSearchModuleView {
@@ -72,11 +72,6 @@ static const NSInteger kDefaultEstimatedHeight = 116;
 }
 
 #pragma mark - ReportListDataDisplayManagerDelegate methods
-
-- (void)didUpdateTableViewModel {
-    self.reportsTableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.reportsTableView];
-    [self.reportsTableView reloadData];
-}
 
 - (void)didTapCellWithEvent:(EventPlainObject *)event {
     [self.output didTriggerTapCellWithEvent:event];
@@ -102,6 +97,7 @@ static const NSInteger kDefaultEstimatedHeight = 116;
     [self hideCancelButtonSearchBar];
     return YES;
 }
+
 - (UIView *)viewForEmbedIdentifier:(NSString *)embedIdentifier {
     return self.searchEmbedContainer;
 }

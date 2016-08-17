@@ -19,6 +19,7 @@
 // THE SOFTWARE.
 
 #import "ReportListModuleAssembly.h"
+
 #import "ReportListViewController.h"
 #import "ReportListInteractor.h"
 #import "ReportListPresenter.h"
@@ -26,6 +27,7 @@
 #import "ReportListDataDisplayManager.h"
 #import "ServiceComponents.h"
 #import "PresentationLayerHelpersAssembly.h"
+#import "ReportListCellObjectFactory.h"
 
 @implementation  ReportListModuleAssembly
 
@@ -78,7 +80,13 @@
                           configuration:^(TyphoonDefinition *definition) {
                               [definition injectProperty:@selector(dateFormatter)
                                                     with:[self.presentationLayerHelpersAssembly dateFormatter]];
+                              [definition injectProperty:@selector(cellObjectFactory)
+                                                    with:[self cellObjectFactoryReportList]];
     }];
+}
+
+- (ReportListCellObjectFactory *)cellObjectFactoryReportList {
+    return [TyphoonDefinition withClass:[ReportListCellObjectFactory class]];
 }
 
 @end

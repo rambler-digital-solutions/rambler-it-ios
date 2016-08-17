@@ -506,6 +506,7 @@
 		9FE139021D64D86400D7BF44 /* SearchSuggestTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE139011D64D86400D7BF44 /* SearchSuggestTableViewCell.m */; };
 		9FE139061D64D87400D7BF44 /* SearchSuggestTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE139051D64D87400D7BF44 /* SearchSuggestTableViewCellObject.m */; };
 		9FE139081D64D99200D7BF44 /* SearchSuggestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FE139071D64D99200D7BF44 /* SearchSuggestTableViewCell.xib */; };
+		9FE1390C1D64DB5500D7BF44 /* ReportListCellObjectFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1390B1D64DB5500D7BF44 /* ReportListCellObjectFactory.m */; };
 		9FF1251E1D51DF460098625F /* EventObjectIndexer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF1251D1D51DF460098625F /* EventObjectIndexer.m */; };
 		9FF37E111D3235BB00471B4E /* AppleMapsLinkBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF37E101D3235BB00471B4E /* AppleMapsLinkBuilderTests.m */; };
 		9FF37E151D32373500471B4E /* RamblerLocationInteractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF37E141D32373500471B4E /* RamblerLocationInteractorTests.m */; };
@@ -1523,6 +1524,8 @@
 		9FE139041D64D87400D7BF44 /* SearchSuggestTableViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchSuggestTableViewCellObject.h; path = SearchSuggestTableViewCellObject/SearchSuggestTableViewCellObject.h; sourceTree = "<group>"; };
 		9FE139051D64D87400D7BF44 /* SearchSuggestTableViewCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchSuggestTableViewCellObject.m; path = SearchSuggestTableViewCellObject/SearchSuggestTableViewCellObject.m; sourceTree = "<group>"; };
 		9FE139071D64D99200D7BF44 /* SearchSuggestTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchSuggestTableViewCell.xib; path = SearchSuggestTableViewCell/SearchSuggestTableViewCell.xib; sourceTree = "<group>"; };
+		9FE1390A1D64DB5500D7BF44 /* ReportListCellObjectFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportListCellObjectFactory.h; path = CellObjectFactory/ReportListCellObjectFactory.h; sourceTree = "<group>"; };
+		9FE1390B1D64DB5500D7BF44 /* ReportListCellObjectFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportListCellObjectFactory.m; path = CellObjectFactory/ReportListCellObjectFactory.m; sourceTree = "<group>"; };
 		9FF1251C1D51DF460098625F /* EventObjectIndexer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventObjectIndexer.h; path = SpotlightIndexer/ObjectIndexers/ConcreteClasses/EventObjectIndexer/EventObjectIndexer.h; sourceTree = "<group>"; };
 		9FF1251D1D51DF460098625F /* EventObjectIndexer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventObjectIndexer.m; path = SpotlightIndexer/ObjectIndexers/ConcreteClasses/EventObjectIndexer/EventObjectIndexer.m; sourceTree = "<group>"; };
 		9FF37E101D3235BB00471B4E /* AppleMapsLinkBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppleMapsLinkBuilderTests.m; path = MapLinkBuildersTests/AppleMapsLinkBuilderTests.m; sourceTree = "<group>"; };
@@ -2222,6 +2225,7 @@
 		631FFE4E1BEF930200749DB8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9FE139091D64DB3F00D7BF44 /* CellObjectFactory */,
 				9FE138FA1D64C35700D7BF44 /* Views */,
 				631FFE5A1BEF98E600749DB8 /* CellObjects */,
 				631FFE5B1BEF98E600749DB8 /* Cells */,
@@ -7205,6 +7209,15 @@
 			name = SearchSuggestTableViewCellObject;
 			sourceTree = "<group>";
 		};
+		9FE139091D64DB3F00D7BF44 /* CellObjectFactory */ = {
+			isa = PBXGroup;
+			children = (
+				9FE1390A1D64DB5500D7BF44 /* ReportListCellObjectFactory.h */,
+				9FE1390B1D64DB5500D7BF44 /* ReportListCellObjectFactory.m */,
+			);
+			name = CellObjectFactory;
+			sourceTree = "<group>";
+		};
 		9FF1251A1D51DF130098625F /* ConcreteClasses */ = {
 			isa = PBXGroup;
 			children = (
@@ -7963,6 +7976,7 @@
 				2B2064791D3F9CE900246C8D /* _LectureModelObject.m in Sources */,
 				667050561D46369100DD9D6E /* ReportsSearchCellObjectsDirectorImplementation.m in Sources */,
 				9F0A6C1D1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m in Sources */,
+				9FE1390C1D64DB5500D7BF44 /* ReportListCellObjectFactory.m in Sources */,
 				66E999581D54AFF200161D98 /* TagEditMediator.m in Sources */,
 				66E9994C1D54AFB000161D98 /* TagModuleTableViewCell.m in Sources */,
 				9F0A85001BC1698B006F79FB /* ResponseDeserializationOperation.m in Sources */,

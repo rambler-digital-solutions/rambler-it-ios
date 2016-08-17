@@ -29,14 +29,11 @@
 #import "EXTScope.h"
 #import "TagModelObject.h"
 #import "LecturePlainObject.h"
-
-static NSString *const kSeparatorTagsString = @", ";
-static const CGFloat kTagsLineHeight = 3;
-static const CGFloat kTitleLineHeight = 3;
+#import "ReportListCellObjectFactory.h"
 
 @interface ReportListDataDisplayManager () <UITableViewDelegate>
 
-@property (strong, nonatomic) NIMutableTableViewModel *tableViewModel;
+@property (strong, nonatomic) NITableViewModel *tableViewModel;
 @property (strong, nonatomic) NITableViewActions *tableViewActions;
 @property (strong, nonatomic) NSArray *events;
 
@@ -44,22 +41,18 @@ static const CGFloat kTitleLineHeight = 3;
 
 @implementation ReportListDataDisplayManager
 
-- (void)updateTableViewModelWithEvents:(NSArray *)events {
-    self.events = events;
-    [self updateTableViewModel];
-    [self.delegate didUpdateTableViewModel];
-}
-
 #pragma mark - DataDisplayManager methods
 
-- (id<UITableViewDataSource>)dataSourceForTableView:(UITableView *)tableView {
-    if (!self.tableViewModel) {
-        [self updateTableViewModel];
-    }
+- (id<UITableViewDataSource>)dataSourceForTableView:(UITableView *)tableView
+                                       withSuggests:(NSArray *)suggests {
+    NSArray *cellObjects = [self.cellObjectFactory generateCellObjectsWithSuggests:suggests];
+    self.tableViewModel = [[NITableViewModel alloc] initWithListArray:cellObjects
+                                                             delegate:(id)[NICellFactory class]];
     return self.tableViewModel;
 }
 
-- (id<UITableViewDelegate>)delegateForTableView:(UITableView *)tableView withBaseDelegate:(id<UITableViewDelegate>)baseTableViewDelegate {
+- (id<UITableViewDelegate>)delegateForTableView:(UITableView *)tableView
+                               withBaseDelegate:(id<UITableViewDelegate>)baseTableViewDelegate {
     if (!self.tableViewActions) {
         [self setupTableViewActions];
     }
@@ -85,66 +78,8 @@ static const CGFloat kTitleLineHeight = 3;
         [self.delegate didTapCellWithEvent:object.event];
         return YES;
     };
-    [self.tableViewActions attachToClass:[ReportEventTableViewCellObject class] tapBlock:reportTapActionBlock];
-}
-
-- (NSArray *)generateCellObjects {
-    NSMutableArray *cellObjects = [NSMutableArray array];
-    
-    TableViewSectionHeaderCellObject *headerCellObject = [TableViewSectionHeaderCellObject new];
-    [cellObjects addObject:headerCellObject];
-    
-    for (EventPlainObject *event in self.events) {
-        NSString *eventDate = [self.dateFormatter obtainDateWithDayMonthYearFormat:event.startDate];
-        NSString *eventName = event.name ? event.name : @"";
-        NSString *tags = [self obtainTagsStringFromEvent:event];
-        NSAttributedString *attributedTags = [self stringWithLineSpacingHeight:kTagsLineHeight text:tags];
-        NSAttributedString *eventAttributedName = [self stringWithLineSpacingHeight:kTitleLineHeight text:eventName];
-
-        ReportEventTableViewCellObject *cellObject = [ReportEventTableViewCellObject objectWithEvent:event
-                                                                                             andDate:eventDate
-                                                                                                tags:attributedTags
-                                                                                     highlightedText:eventAttributedName];
-        [cellObjects addObject:cellObject];
-    }
-    
-    return cellObjects;
-}
-
-- (void)updateTableViewModel {
-    NSArray *cellObjects = [self generateCellObjects];
-    
-    self.tableViewModel = [[NIMutableTableViewModel alloc] initWithSectionedArray:cellObjects
-                                                                        delegate:(id)[NICellFactory class]];
-}
-
-#pragma mark - private methods
-
-- (NSString *)obtainTagsStringFromEvent:(EventPlainObject *)event {
-    NSMutableArray *allTags = [NSMutableArray array];
-    for (LecturePlainObject *lecture in event.lectures) {
-        [allTags addObjectsFromArray:[lecture.tags allObjects]];
-    }
-    NSArray *arrayWithoutDuplicates = [[NSSet setWithArray: allTags] allObjects];
-    
-    NSArray *tagsNames = [arrayWithoutDuplicates valueForKey:TagModelObjectAttributes.name];
-    NSString *stringFromTags = [tagsNames count] != 0 ? [tagsNames componentsJoinedByString:kSeparatorTagsString] : @"" ;
-    
-    return stringFromTags;
-}
-
-- (NSAttributedString *)stringWithLineSpacingHeight:(CGFloat)height
-                                               text:(NSString *)text {
-    NSMutableAttributedString *stringWithLineSpacing = [[NSMutableAttributedString alloc] initWithString:text];
-    
-    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
-    [style setLineSpacing:height];
-    
-    [stringWithLineSpacing addAttribute:NSParagraphStyleAttributeName
-                              value:style
-                              range:NSMakeRange(0, stringWithLineSpacing.length)];
-    return [stringWithLineSpacing copy];
-    
+    [self.tableViewActions attachToClass:[ReportEventTableViewCellObject class]
+                                tapBlock:reportTapActionBlock];
 }
 
 @end
