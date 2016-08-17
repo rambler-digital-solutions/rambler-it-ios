@@ -27,6 +27,12 @@
 #import "DateFormatter.h"
 #import "EventPlainObject.h"
 #import "EXTScope.h"
+#import "TagModelObject.h"
+#import "LecturePlainObject.h"
+
+static NSString *const kSeparatorTagsString = @", ";
+static const CGFloat kTagsLineHeight = 3;
+static const CGFloat kTitleLineHeight = 3;
 
 @interface ReportListDataDisplayManager () <UITableViewDelegate>
 
@@ -91,16 +97,16 @@
     for (EventPlainObject *event in self.events) {
         NSString *eventDate = [self.dateFormatter obtainDateWithDayMonthYearFormat:event.startDate];
         NSString *eventName = event.name ? event.name : @"";
-        NSAttributedString *eventAttributedName = [[NSAttributedString alloc] initWithString:eventName];
+        NSString *tags = [self obtainTagsStringFromEvent:event];
+        NSAttributedString *attributedTags = [self stringWithLineSpacingHeight:kTagsLineHeight text:tags];
+        NSAttributedString *eventAttributedName = [self stringWithLineSpacingHeight:kTitleLineHeight text:eventName];
 
         ReportEventTableViewCellObject *cellObject = [ReportEventTableViewCellObject objectWithEvent:event
                                                                                              andDate:eventDate
+                                                                                                tags:attributedTags
                                                                                      highlightedText:eventAttributedName];
         [cellObjects addObject:cellObject];
     }
-    
-    TableViewSectionHeaderCellObject *footerCellObject = [TableViewSectionHeaderCellObject new];
-    [cellObjects addObject:footerCellObject];
     
     return cellObjects;
 }
@@ -110,6 +116,35 @@
     
     self.tableViewModel = [[NIMutableTableViewModel alloc] initWithSectionedArray:cellObjects
                                                                         delegate:(id)[NICellFactory class]];
+}
+
+#pragma mark - private methods
+
+- (NSString *)obtainTagsStringFromEvent:(EventPlainObject *)event {
+    NSMutableArray *allTags = [NSMutableArray array];
+    for (LecturePlainObject *lecture in event.lectures) {
+        [allTags addObjectsFromArray:[lecture.tags allObjects]];
+    }
+    NSArray *arrayWithoutDuplicates = [[NSSet setWithArray: allTags] allObjects];
+    
+    NSArray *tagsNames = [arrayWithoutDuplicates valueForKey:TagModelObjectAttributes.name];
+    NSString *stringFromTags = [tagsNames count] != 0 ? [tagsNames componentsJoinedByString:kSeparatorTagsString] : @"" ;
+    
+    return stringFromTags;
+}
+
+- (NSAttributedString *)stringWithLineSpacingHeight:(CGFloat)height
+                                               text:(NSString *)text {
+    NSMutableAttributedString *stringWithLineSpacing = [[NSMutableAttributedString alloc] initWithString:text];
+    
+    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
+    [style setLineSpacing:height];
+    
+    [stringWithLineSpacing addAttribute:NSParagraphStyleAttributeName
+                              value:style
+                              range:NSMakeRange(0, stringWithLineSpacing.length)];
+    return [stringWithLineSpacing copy];
+    
 }
 
 @end

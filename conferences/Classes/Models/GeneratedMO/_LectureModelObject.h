@@ -1,21 +1,15 @@
 // DO NOT EDIT. This file is machine-generated and constantly overwritten.
 // Make changes to LectureModelObject.h instead.
 
-#import <CoreData/CoreData.h>
+#if __has_feature(modules)
+    @import Foundation;
+    @import CoreData;
+#else
+    #import <Foundation/Foundation.h>
+    #import <CoreData/CoreData.h>
+#endif
 
-extern const struct LectureModelObjectAttributes {
-	__unsafe_unretained NSString *favourite;
-	__unsafe_unretained NSString *lectureDescription;
-	__unsafe_unretained NSString *lectureId;
-	__unsafe_unretained NSString *name;
-} LectureModelObjectAttributes;
-
-extern const struct LectureModelObjectRelationships {
-	__unsafe_unretained NSString *event;
-	__unsafe_unretained NSString *lectureMaterials;
-	__unsafe_unretained NSString *speaker;
-	__unsafe_unretained NSString *tags;
-} LectureModelObjectRelationships;
+NS_ASSUME_NONNULL_BEGIN
 
 @class EventModelObject;
 @class LectureMaterialModelObject;
@@ -25,70 +19,49 @@ extern const struct LectureModelObjectRelationships {
 @interface LectureModelObjectID : NSManagedObjectID {}
 @end
 
-@interface _LectureModelObject : NSManagedObject {}
-+ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_;
+@interface _LectureModelObject : NSManagedObject
++ (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
-@property (nonatomic, readonly, strong) LectureModelObjectID* objectID;
+@property (nonatomic, readonly, strong) LectureModelObjectID *objectID;
 
-@property (nonatomic, strong) NSNumber* favourite;
+@property (nonatomic, strong, nullable) NSNumber* favourite;
 
 @property (atomic) BOOL favouriteValue;
 - (BOOL)favouriteValue;
 - (void)setFavouriteValue:(BOOL)value_;
 
-//- (BOOL)validateFavourite:(id*)value_ error:(NSError**)error_;
-
-@property (nonatomic, strong) NSString* lectureDescription;
-
-//- (BOOL)validateLectureDescription:(id*)value_ error:(NSError**)error_;
+@property (nonatomic, strong, nullable) NSString* lectureDescription;
 
 @property (nonatomic, strong) NSString* lectureId;
 
-//- (BOOL)validateLectureId:(id*)value_ error:(NSError**)error_;
-
 @property (nonatomic, strong) NSString* name;
 
-//- (BOOL)validateName:(id*)value_ error:(NSError**)error_;
+@property (nonatomic, strong, nullable) EventModelObject *event;
 
-@property (nonatomic, strong) EventModelObject *event;
+@property (nonatomic, strong, nullable) NSSet<LectureMaterialModelObject*> *lectureMaterials;
+- (nullable NSMutableSet<LectureMaterialModelObject*>*)lectureMaterialsSet;
 
-//- (BOOL)validateEvent:(id*)value_ error:(NSError**)error_;
+@property (nonatomic, strong, nullable) SpeakerModelObject *speaker;
 
-@property (nonatomic, strong) NSSet *lectureMaterials;
-
-- (NSMutableSet*)lectureMaterialsSet;
-
-@property (nonatomic, strong) SpeakerModelObject *speaker;
-
-//- (BOOL)validateSpeaker:(id*)value_ error:(NSError**)error_;
-
-@property (nonatomic, strong) NSOrderedSet *tags;
-
-- (NSMutableOrderedSet*)tagsSet;
+@property (nonatomic, strong, nullable) NSSet<TagModelObject*> *tags;
+- (nullable NSMutableSet<TagModelObject*>*)tagsSet;
 
 @end
 
 @interface _LectureModelObject (LectureMaterialsCoreDataGeneratedAccessors)
-- (void)addLectureMaterials:(NSSet*)value_;
-- (void)removeLectureMaterials:(NSSet*)value_;
+- (void)addLectureMaterials:(NSSet<LectureMaterialModelObject*>*)value_;
+- (void)removeLectureMaterials:(NSSet<LectureMaterialModelObject*>*)value_;
 - (void)addLectureMaterialsObject:(LectureMaterialModelObject*)value_;
 - (void)removeLectureMaterialsObject:(LectureMaterialModelObject*)value_;
 
 @end
 
 @interface _LectureModelObject (TagsCoreDataGeneratedAccessors)
-- (void)addTags:(NSOrderedSet*)value_;
-- (void)removeTags:(NSOrderedSet*)value_;
+- (void)addTags:(NSSet<TagModelObject*>*)value_;
+- (void)removeTags:(NSSet<TagModelObject*>*)value_;
 - (void)addTagsObject:(TagModelObject*)value_;
 - (void)removeTagsObject:(TagModelObject*)value_;
-
-- (void)insertObject:(TagModelObject*)value inTagsAtIndex:(NSUInteger)idx;
-- (void)removeObjectFromTagsAtIndex:(NSUInteger)idx;
-- (void)insertTags:(NSArray *)value atIndexes:(NSIndexSet *)indexes;
-- (void)removeTagsAtIndexes:(NSIndexSet *)indexes;
-- (void)replaceObjectInTagsAtIndex:(NSUInteger)idx withObject:(TagModelObject*)value;
-- (void)replaceTagsAtIndexes:(NSIndexSet *)indexes withTags:(NSArray *)values;
 
 @end
 
@@ -112,13 +85,29 @@ extern const struct LectureModelObjectRelationships {
 - (EventModelObject*)primitiveEvent;
 - (void)setPrimitiveEvent:(EventModelObject*)value;
 
-- (NSMutableSet*)primitiveLectureMaterials;
-- (void)setPrimitiveLectureMaterials:(NSMutableSet*)value;
+- (NSMutableSet<LectureMaterialModelObject*>*)primitiveLectureMaterials;
+- (void)setPrimitiveLectureMaterials:(NSMutableSet<LectureMaterialModelObject*>*)value;
 
 - (SpeakerModelObject*)primitiveSpeaker;
 - (void)setPrimitiveSpeaker:(SpeakerModelObject*)value;
 
-- (NSMutableOrderedSet*)primitiveTags;
-- (void)setPrimitiveTags:(NSMutableOrderedSet*)value;
+- (NSMutableSet<TagModelObject*>*)primitiveTags;
+- (void)setPrimitiveTags:(NSMutableSet<TagModelObject*>*)value;
 
 @end
+
+@interface LectureModelObjectAttributes: NSObject 
++ (NSString *)favourite;
++ (NSString *)lectureDescription;
++ (NSString *)lectureId;
++ (NSString *)name;
+@end
+
+@interface LectureModelObjectRelationships: NSObject
++ (NSString *)event;
++ (NSString *)lectureMaterials;
++ (NSString *)speaker;
++ (NSString *)tags;
+@end
+
+NS_ASSUME_NONNULL_END

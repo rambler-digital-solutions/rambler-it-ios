@@ -21,11 +21,13 @@
 #import "ReportEventTableViewCell.h"
 #import "ReportEventTableViewCellObject.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#include <stdlib.h>
 
-static CGFloat const kReportEventTableViewCellHeight = 116.0f;
+static NSString *const kPlaceholderImageName = @"placeholder";
 
 @interface ReportEventTableViewCell ()
 
+@property (weak, nonatomic) IBOutlet UILabel *tags;
 @property (weak, nonatomic) IBOutlet UILabel *date;
 @property (weak, nonatomic) IBOutlet UILabel *eventTitle;
 @property (weak, nonatomic) IBOutlet UIImageView *eventImageView;
@@ -39,8 +41,9 @@ static CGFloat const kReportEventTableViewCellHeight = 116.0f;
 - (BOOL)shouldUpdateCellWithObject:(ReportEventTableViewCellObject *)object {
     self.date.text = object.date;
     self.eventTitle.attributedText = object.eventTitle;
+    self.tags.attributedText = object.tags;
     [self.eventImageView sd_setImageWithURL:object.imageURL
-                           placeholderImage:nil];
+                           placeholderImage:[UIImage imageNamed:kPlaceholderImageName]];
     self.separatorInset = UIEdgeInsetsMake(0.f, self.bounds.size.width, 0.f, 0.0f);
     
     return YES;
@@ -49,7 +52,7 @@ static CGFloat const kReportEventTableViewCellHeight = 116.0f;
 + (CGFloat)heightForObject:(id)object
                atIndexPath:(NSIndexPath *)indexPath
                  tableView:(UITableView *)tableView {
-    return kReportEventTableViewCellHeight;
+    return UITableViewAutomaticDimension;
 }
 
 @end

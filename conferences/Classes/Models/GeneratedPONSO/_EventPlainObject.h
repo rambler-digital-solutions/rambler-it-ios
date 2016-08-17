@@ -10,7 +10,6 @@
 @class LecturePlainObject;
 @class MetaEventPlainObject;
 @class RegistrationQuestionPlainObject;
-@class TagPlainObject;
 @class TechPlainObject;
 
 @interface _EventPlainObject : NSObject <NSCoding, NSCopying>
@@ -32,8 +31,6 @@
 @property (nonatomic, copy, readwrite) MetaEventPlainObject *metaEvent;
 
 @property (nonatomic, copy, readwrite) NSSet<RegistrationQuestionPlainObject *> *registrationQuestions;
-
-@property (nonatomic, copy, readwrite) NSSet<TagPlainObject *> *tags;
 
 @property (nonatomic, copy, readwrite) TechPlainObject *tech;
 

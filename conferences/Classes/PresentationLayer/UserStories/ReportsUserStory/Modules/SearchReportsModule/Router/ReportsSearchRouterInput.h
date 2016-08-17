@@ -25,10 +25,28 @@
 /**
  @author Zinovyev Konstantin
  
- Method is used to initiate transition to the LectureModule
+ Method is used to initiate transition to the EventModule
  
  @param objectId NSString event object id
  */
 - (void)openEventModuleWithEventObjectId:(NSString *)objectId;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ Method is used to initiate transition to the LectureModule
+ 
+ @param objectId NSString event object id
+ */
+- (void)openLectureModuleWithLectureObjectId:(NSString *)objectId;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ Method is used to initiate transition to the SpeakerModule
+ 
+ @param objectId NSString event object id
+ */
+- (void)openSpeakerModuleWithSpeakerObjectId:(NSString *)objectId;
 
 @end

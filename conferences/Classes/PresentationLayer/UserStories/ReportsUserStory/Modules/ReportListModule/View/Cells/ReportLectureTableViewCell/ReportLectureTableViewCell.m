@@ -22,12 +22,15 @@
 #import "ReportLectureTableViewCellObject.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
-static CGFloat const kReportLectureTableViewCellHeight = 116.0f;
+static CGFloat const kReportLectureTableViewSeparatorInset = 20.0f;
+static NSString *const kPlaceholderImageName = @"placeholder";
 
 @interface ReportLectureTableViewCell ()
 
 @property (nonatomic, weak) IBOutlet UILabel *lectureTitle;
 @property (nonatomic, weak) IBOutlet UILabel *speakerName;
+@property (nonatomic, weak) IBOutlet UILabel *tags;
+@property (weak, nonatomic) IBOutlet UILabel *companyLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *lectureImageView;
 
 @end
@@ -38,18 +41,20 @@ static CGFloat const kReportLectureTableViewCellHeight = 116.0f;
 
 - (BOOL)shouldUpdateCellWithObject:(ReportLectureTableViewCellObject *)object {
     self.lectureTitle.attributedText = object.lectureTitle;
-    [self.lectureImageView sd_setImageWithURL:object.imageURL
-                             placeholderImage:nil];
-    self.speakerName.text = object.speakerName;
-    self.separatorInset = UIEdgeInsetsMake(0.f, self.bounds.size.width, 0.f, 0.0f);
+    self.companyLabel.text = object.company;
     self.lectureImageView.layer.cornerRadius = self.lectureImageView.frame.size.height/2.0;
+    [self.lectureImageView sd_setImageWithURL:object.imageURL
+                             placeholderImage:[UIImage imageNamed:kPlaceholderImageName]];
+    self.speakerName.text = object.speakerName;
+    self.tags.attributedText = object.tags;
+    self.separatorInset = UIEdgeInsetsMake(0.f, kReportLectureTableViewSeparatorInset, 0.f, 0.0f);
     return YES;
 }
 
 + (CGFloat)heightForObject:(id)object
                atIndexPath:(NSIndexPath *)indexPath
                  tableView:(UITableView *)tableView {
-    return kReportLectureTableViewCellHeight;
+    return UITableViewAutomaticDimension;
 }
 
 @end

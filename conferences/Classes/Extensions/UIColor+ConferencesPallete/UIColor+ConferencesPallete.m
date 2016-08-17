@@ -27,16 +27,57 @@
     return [UIColor colorFromHexString:@"#ffd000"];
 }
 
-+ (UIColor *)colorForSelectedTextEventCellObject {
-    return [UIColor colorFromHexString:@"#ff0000"];
++ (UIColor *)rcf_blackColor {
+    return [UIColor colorFromHexString:@"#000000"];
 }
 
-+ (UIColor *)colorForSelectedTextLectureCellObject {
-    return [UIColor colorFromHexString:@"#00ff00"];
++ (UIColor *)rcf_separatorColor {
+    return [UIColor colorWithRed:0 green:0 blue:0 alpha:0.1];
 }
 
-+ (UIColor *)colorForSelectedTextSpeakerCellObject {
-    return [UIColor colorFromHexString:@"#0000ff"];
++ (UIColor *)rcf_greyColor {
+    return [UIColor colorFromHexString:@"#A0A0A0"];
+}
+
++ (UIColor *)rcf_darkGrayColor {
+    return [UIColor colorFromHexString:@"#5A5A5A"];
+}
+
++ (UIColor *)rcf_lightGrayColor {
+    return [UIColor colorFromHexString:@"#CDCDCD"];
+}
+
++ (UIColor *)rcf_lightGrayBackgroundColor {
+    return [UIColor colorFromHexString:@"#ECECEC"];
+}
+
+
++ (UIColor *)rcf_lightBlueColor {
+    return [UIColor colorFromHexString:@"#14AAE6"];
+}
+
++ (UIColor *)rcf_blueColor {
+    return [UIColor colorFromHexString:@"#0019FF"];
+}
+
++ (UIColor *)rcf_greenColor {
+    return [UIColor colorFromHexString:@"#5EC251"];
+}
+
++ (UIColor *)rcf_darkGreenColor {
+    return [UIColor colorFromHexString:@"#238C5F"];
+}
+
++ (UIColor *)rcf_redColor {
+    return [UIColor colorFromHexString:@"#FF3A44"];
+}
+
++ (UIColor *)rcf_orangeColor {
+    return [UIColor colorFromHexString:@"#FF7846"];
+}
+
++ (UIColor *)rcf_purpleColor {
+    return [UIColor colorFromHexString:@"#804EFF"];
 }
 
 @end

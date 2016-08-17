@@ -71,8 +71,7 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
 - (void)setupViewInitialState {
     [self.navigationController.navigationBar rcf_becomeTransparent];
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
-    [self.navigationController setNavigationBarHidden:NO
-                                             animated:YES];
+    self.navigationController.navigationBar.hidden = NO;
 }
 
 - (CGRect)calculateFrameForHeaderView {

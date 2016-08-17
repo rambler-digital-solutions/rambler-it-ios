@@ -23,6 +23,9 @@
 #import "LecturePlainObject.h"
 #import "EventPlainObject.h"
 #import "SpeakerPlainObject.h"
+#import "UIColor+ConferencesPallete.h"
+#import "LocalizedStrings.h"
+#import "ReportSearchSectionObject.h"
 
 @implementation ReportsSearchCellObjectsDirectorImplementation
 
@@ -39,57 +42,91 @@
     if (!plainObjects) {
         return nil;
     }
-    
-    NSDictionary *sectionsNamesByClassName = [self sectionsNamesForPlainClass];
-    NSDictionary *selectorsBuilderByClassName = [self selectorsBuilderForPlainClass];
-    NSArray *namesClass = [[self selectorsBuilderForPlainClass] allKeys];
+    NSArray *sectionObjects = [self generateSectionsObject];
     NSMutableArray *resultCellObjects = [NSMutableArray new];
     
-    for (NSString *nameClass in namesClass) {
+    for (ReportSearchSectionObject *sectionObject in sectionObjects) {
         
-        NSPredicate *predicate = [NSPredicate predicateWithFormat: @"className == %@", nameClass];
-        NSArray *sectionPlainObjects = [plainObjects filteredArrayUsingPredicate:predicate];
+        NSArray *sectionPlainObjects = [self getObjectsByNameClass:sectionObject.nameObjectClassInSection
+                                                       fromObjects:plainObjects];
         
         if ([sectionPlainObjects count] == 0) {
             continue;
         }
         
-        NSString *sectionName = sectionsNamesByClassName[nameClass];
-        [resultCellObjects addObject:sectionName];
-        
-        id cellObject = nil;
-        
-        for (id plainObject in sectionPlainObjects) {
-            SEL selector = NSSelectorFromString(selectorsBuilderByClassName[nameClass]);
-            if ([self.builder respondsToSelector:selector]) {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-                 cellObject = [self.builder performSelector:selector withObject:plainObject withObject:selectedText];
-#pragma clang diagnostic pop
-            }
-            [resultCellObjects addObject:cellObject];
-        }
-        
+        ReportSearchSectionTitleCellObject *sectionCell = [self generateSectionCellForSecionObject:sectionObject];
+        NSArray *cellObjects = [self generateCellObjectsForNameClass:sectionObject.nameObjectClassInSection
+                                                    fromPlainObjects:sectionPlainObjects
+                                                        selectedText:selectedText];
+        [resultCellObjects addObject:sectionCell];
+        [resultCellObjects addObjectsFromArray:cellObjects];
     }
     
     return [resultCellObjects copy];
 }
 
+#pragma mark - private methods
+
+- (NSArray *)getObjectsByNameClass:(NSString *)nameClass fromObjects:(NSArray *)objects {
+    NSPredicate *predicate = [NSPredicate predicateWithFormat: @"className == %@", nameClass];
+    NSArray *sectionPlainObjects = [objects filteredArrayUsingPredicate:predicate];
+    return sectionPlainObjects;
+}
+
+- (ReportSearchSectionTitleCellObject *)generateSectionCellForSecionObject:(ReportSearchSectionObject *)sectionObject {
+    ReportSearchSectionTitleCellObject *sectionCell = [self.builder sectionCellObjectWithTitle:sectionObject.titleSection
+                                                                               backgroundColor:sectionObject.backgroundColorSection];
+    return sectionCell;
+}
+
+- (NSArray *)generateCellObjectsForNameClass:(NSString *)nameClass
+                            fromPlainObjects:(NSArray *)plainObjects
+                                selectedText:(NSString *)selectedText {
+    NSDictionary *selectorsBuilderByClassName = [self selectorsBuilderForPlainClass];
+    NSMutableArray *cellObjects = [NSMutableArray new];
+    id cellObject = nil;
+    for (id plainObject in plainObjects) {
+        SEL selector = NSSelectorFromString(selectorsBuilderByClassName[nameClass]);
+        if ([self.builder respondsToSelector:selector]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+            cellObject = [self.builder performSelector:selector
+                                            withObject:plainObject
+                                            withObject:selectedText];
+#pragma clang diagnostic pop
+        }
+        [cellObjects addObject:cellObject];
+    }
+    return cellObjects;
+}
+
+- (NSArray *)generateSectionsObject {
+    ReportSearchSectionObject *eventSection = [ReportSearchSectionObject objectSectionWithTitle:RCLocalize(kReportSearchEventSectionTitle)
+                                                                                  nameObjectClass:NSStringFromClass([EventPlainObject class])
+                                                                                backgroundColor:[UIColor rcf_lightGrayBackgroundColor]];
+    
+    ReportSearchSectionObject *lectureSection = [ReportSearchSectionObject objectSectionWithTitle:RCLocalize(kReportSearchLectureSectionTitle)
+                                                                                    nameObjectClass:NSStringFromClass([LecturePlainObject class])
+                                                                                  backgroundColor:[UIColor whiteColor]];
+    
+    ReportSearchSectionObject *speakerSection = [ReportSearchSectionObject objectSectionWithTitle:RCLocalize(kReportSearchSpeakerSectionTitle)
+                                                                                    nameObjectClass:NSStringFromClass([SpeakerPlainObject class])
+                                                                                  backgroundColor:[UIColor whiteColor]];
+    return @[
+             eventSection,
+             lectureSection,
+             speakerSection
+             ];
+}
 
 - (NSDictionary *)selectorsBuilderForPlainClass {
     return @{
-             NSStringFromClass([LecturePlainObject class]) : NSStringFromSelector(@selector(lectureCellObjectFromPlainObject:selectedText:)),
              NSStringFromClass([EventPlainObject class])   : NSStringFromSelector(@selector(eventCellObjectFromPlainObject:selectedText:)),
+             NSStringFromClass([LecturePlainObject class]) : NSStringFromSelector(@selector(lectureCellObjectFromPlainObject:selectedText:)),
              NSStringFromClass([SpeakerPlainObject class]) : NSStringFromSelector(@selector(speakerCellObjectFromPlainObject:selectedText:)),
              };
 }
 
-- (NSDictionary *)sectionsNamesForPlainClass {
-    return @{
-             NSStringFromClass([LecturePlainObject class]) : @"Доклады",
-             NSStringFromClass([EventPlainObject class])   : @"Конференции",
-             NSStringFromClass([SpeakerPlainObject class]) : @"Докладчики"
-             };
-}
+
 
 @end

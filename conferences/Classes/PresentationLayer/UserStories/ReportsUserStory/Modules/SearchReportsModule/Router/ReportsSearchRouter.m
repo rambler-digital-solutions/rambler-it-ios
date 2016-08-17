@@ -20,11 +20,15 @@
 
 #import "ReportsSearchRouter.h"
 #import "EventModuleInput.h"
+#import "LectureModuleInput.h"
+#import "SpeakerInfoModuleInput.h"
 #import "ReportsSearchModuleInput.h"
 
 @protocol ReportsSearchModuleOutput;
 
 static NSString *const kReportsSearchModuleToEventModuleSegue = @"ReportsSearchModuleToEventModuleSegue";
+static NSString *const kReportsSearchModuleToLectureModuleSegue = @"ReportsSearchModuleToLectureModuleSegue";
+static NSString *const kReportsSearchModuleToSpeakerModuleSegue = @"ReportsSearchModuleToSpeakerModuleSegue";
 
 @implementation ReportsSearchRouter
 
@@ -33,6 +37,20 @@ static NSString *const kReportsSearchModuleToEventModuleSegue = @"ReportsSearchM
 - (void)openEventModuleWithEventObjectId:(NSString *)objectId {
     [[self.transitionHandler openModuleUsingSegue:kReportsSearchModuleToEventModuleSegue] thenChainUsingBlock:^id<RamblerViperModuleOutput>(id<EventModuleInput> moduleInput) {
         [moduleInput configureCurrentModuleWithEventObjectId:objectId];
+        return nil;
+    }];
+}
+
+- (void)openLectureModuleWithLectureObjectId:(NSString *)objectId {
+    [[self.transitionHandler openModuleUsingSegue:kReportsSearchModuleToLectureModuleSegue] thenChainUsingBlock:^id<RamblerViperModuleOutput>(id<LectureModuleInput> moduleInput) {
+        [moduleInput configureCurrentModuleWithLectureObjectId:objectId];
+        return nil;
+    }];
+}
+
+- (void)openSpeakerModuleWithSpeakerObjectId:(NSString *)objectId {
+    [[self.transitionHandler openModuleUsingSegue:kReportsSearchModuleToSpeakerModuleSegue] thenChainUsingBlock:^id<RamblerViperModuleOutput>(id<SpeakerInfoModuleInput> moduleInput) {
+        [moduleInput configureCurrentModuleWithSpeakerId:objectId];
         return nil;
     }];
 }

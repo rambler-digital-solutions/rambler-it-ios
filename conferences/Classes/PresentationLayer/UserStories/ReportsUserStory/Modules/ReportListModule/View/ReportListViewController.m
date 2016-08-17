@@ -23,6 +23,9 @@
 #import "DataDisplayManager.h"
 #import "ReportListDataDisplayManager.h"
 #import <RamblerSegues/RamblerSegues.h>
+#import "UINavigationBar+States.h"
+
+static const NSInteger kDefaultEstimatedHeight = 116;
 
 @interface ReportListViewController() <ReportListDataDisplayManagerDelegate, RamblerEmbedSegueViewContainer>
 
@@ -35,12 +38,12 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	[self.output setupView];
+    self.reportsTableView.estimatedRowHeight = kDefaultEstimatedHeight;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES animated:animated];
-    self.reportsTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self setupViewInitialState];
 }
 
 #pragma mark - ReportListViewInput
@@ -53,6 +56,12 @@
     
     self.reportsTableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.reportsTableView];
     self.reportsTableView.delegate = [self.dataDisplayManager delegateForTableView:self.reportsTableView withBaseDelegate:nil];
+}
+
+- (void)setupViewInitialState {
+    [self.navigationController.navigationBar rcf_becomeTransparent];
+    self.navigationController.navigationBar.hidden = YES;
+    self.reportsTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 - (void)updateViewWithEventList:(NSArray *)events {

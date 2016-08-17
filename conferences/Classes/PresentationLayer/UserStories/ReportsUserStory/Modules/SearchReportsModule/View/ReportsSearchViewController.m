@@ -20,9 +20,12 @@
 
 #import "ReportsSearchViewController.h"
 #import "ReportsSearchViewAnimator.h"
+#import "UIColor+ConferencesPallete.h"
 
 @class LecturePlainObject;
 @class SpeakerPlainObject;
+
+static NSInteger kDefaultEstimatedHeight = 116;
 
 @implementation ReportsSearchViewController
 
@@ -31,6 +34,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.output setupView];
+    self.reportsListSearchTableView.estimatedRowHeight = kDefaultEstimatedHeight;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -49,6 +53,8 @@
 }
 
 - (void)setupView {
+    self.reportsListSearchTableView.separatorColor = [UIColor rcf_separatorColor];
+    
     [self.reportsListSearchTableView setTableFooterView:[UIView new]];
     
     self.animatorReportsSearchView.delegate = self;

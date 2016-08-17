@@ -3,23 +3,12 @@
 
 #import "_LectureMaterialModelObject.h"
 
-const struct LectureMaterialModelObjectAttributes LectureMaterialModelObjectAttributes = {
-	.lectureMaterialId = @"lectureMaterialId",
-	.link = @"link",
-	.name = @"name",
-	.type = @"type",
-};
-
-const struct LectureMaterialModelObjectRelationships LectureMaterialModelObjectRelationships = {
-	.lecture = @"lecture",
-};
-
 @implementation LectureMaterialModelObjectID
 @end
 
 @implementation _LectureMaterialModelObject
 
-+ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
++ (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_ {
 	NSParameterAssert(moc_);
 	return [NSEntityDescription insertNewObjectForEntityForName:@"LectureMaterial" inManagedObjectContext:moc_];
 }
@@ -63,10 +52,31 @@ const struct LectureMaterialModelObjectRelationships LectureMaterialModelObjectR
 }
 
 - (void)setTypeValue:(int16_t)value_ {
-	[self setType:[NSNumber numberWithShort:value_]];
+	[self setType:@(value_)];
 }
 
 @dynamic lecture;
 
+@end
+
+@implementation LectureMaterialModelObjectAttributes 
++ (NSString *)lectureMaterialId {
+	return @"lectureMaterialId";
+}
++ (NSString *)link {
+	return @"link";
+}
++ (NSString *)name {
+	return @"name";
+}
++ (NSString *)type {
+	return @"type";
+}
+@end
+
+@implementation LectureMaterialModelObjectRelationships 
++ (NSString *)lecture {
+	return @"lecture";
+}
 @end
 

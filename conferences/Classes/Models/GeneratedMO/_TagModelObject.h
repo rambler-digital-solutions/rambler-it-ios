@@ -1,18 +1,15 @@
 // DO NOT EDIT. This file is machine-generated and constantly overwritten.
 // Make changes to TagModelObject.h instead.
 
-#import <CoreData/CoreData.h>
+#if __has_feature(modules)
+    @import Foundation;
+    @import CoreData;
+#else
+    #import <Foundation/Foundation.h>
+    #import <CoreData/CoreData.h>
+#endif
 
-extern const struct TagModelObjectAttributes {
-	__unsafe_unretained NSString *name;
-	__unsafe_unretained NSString *slug;
-	__unsafe_unretained NSString *tagId;
-} TagModelObjectAttributes;
-
-extern const struct TagModelObjectRelationships {
-	__unsafe_unretained NSString *event;
-	__unsafe_unretained NSString *lectures;
-} TagModelObjectRelationships;
+NS_ASSUME_NONNULL_BEGIN
 
 @class EventModelObject;
 @class LectureModelObject;
@@ -20,37 +17,28 @@ extern const struct TagModelObjectRelationships {
 @interface TagModelObjectID : NSManagedObjectID {}
 @end
 
-@interface _TagModelObject : NSManagedObject {}
-+ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_;
+@interface _TagModelObject : NSManagedObject
++ (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
-@property (nonatomic, readonly, strong) TagModelObjectID* objectID;
+@property (nonatomic, readonly, strong) TagModelObjectID *objectID;
 
-@property (nonatomic, strong) NSString* name;
+@property (nonatomic, strong, nullable) NSString* name;
 
-//- (BOOL)validateName:(id*)value_ error:(NSError**)error_;
+@property (nonatomic, strong, nullable) NSString* slug;
 
-@property (nonatomic, strong) NSString* slug;
+@property (nonatomic, strong, nullable) NSString* tagId;
 
-//- (BOOL)validateSlug:(id*)value_ error:(NSError**)error_;
+@property (nonatomic, strong, nullable) EventModelObject *event;
 
-@property (nonatomic, strong) NSString* tagId;
-
-//- (BOOL)validateTagId:(id*)value_ error:(NSError**)error_;
-
-@property (nonatomic, strong) EventModelObject *event;
-
-//- (BOOL)validateEvent:(id*)value_ error:(NSError**)error_;
-
-@property (nonatomic, strong) NSSet *lectures;
-
-- (NSMutableSet*)lecturesSet;
+@property (nonatomic, strong, nullable) NSSet<LectureModelObject*> *lectures;
+- (nullable NSMutableSet<LectureModelObject*>*)lecturesSet;
 
 @end
 
 @interface _TagModelObject (LecturesCoreDataGeneratedAccessors)
-- (void)addLectures:(NSSet*)value_;
-- (void)removeLectures:(NSSet*)value_;
+- (void)addLectures:(NSSet<LectureModelObject*>*)value_;
+- (void)removeLectures:(NSSet<LectureModelObject*>*)value_;
 - (void)addLecturesObject:(LectureModelObject*)value_;
 - (void)removeLecturesObject:(LectureModelObject*)value_;
 
@@ -70,7 +58,20 @@ extern const struct TagModelObjectRelationships {
 - (EventModelObject*)primitiveEvent;
 - (void)setPrimitiveEvent:(EventModelObject*)value;
 
-- (NSMutableSet*)primitiveLectures;
-- (void)setPrimitiveLectures:(NSMutableSet*)value;
+- (NSMutableSet<LectureModelObject*>*)primitiveLectures;
+- (void)setPrimitiveLectures:(NSMutableSet<LectureModelObject*>*)value;
 
 @end
+
+@interface TagModelObjectAttributes: NSObject 
++ (NSString *)name;
++ (NSString *)slug;
++ (NSString *)tagId;
+@end
+
+@interface TagModelObjectRelationships: NSObject
++ (NSString *)event;
++ (NSString *)lectures;
+@end
+
+NS_ASSUME_NONNULL_END

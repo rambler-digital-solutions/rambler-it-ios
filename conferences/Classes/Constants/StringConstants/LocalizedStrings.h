@@ -32,6 +32,12 @@ extern NSString *const kSpeakInfoLinkedInAccountTitle;
 extern NSString *const kSpeakInfoInstagramAccountTitle;
 extern NSString *const kSpeakInfoTwitterAccountTitle;
 
+#pragma mark - Search module
+
+extern NSString *const kReportSearchEventSectionTitle;
+extern NSString *const kReportSearchLectureSectionTitle;
+extern NSString *const kReportSearchSpeakerSectionTitle;
+
 #pragma mark - Cell title
 
 extern NSString * const VideoRecordTableViewCellTitle;

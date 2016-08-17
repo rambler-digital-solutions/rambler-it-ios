@@ -37,11 +37,11 @@
 }
 
 - (void)didTriggerTapCellWithLecture:(LecturePlainObject *)lecture {
-    //TODO: Добавить действие при нажатии на ячейку с докладом
+    [self.router openLectureModuleWithLectureObjectId:lecture.lectureId];
 }
 
 - (void)didTriggerTapCellWithSpeaker:(SpeakerPlainObject *)speaker {
-    //TODO: Добавить действие при нажатии на ячейку с докладчиком
+    [self.router openSpeakerModuleWithSpeakerObjectId:speaker.speakerId];
 }
 
 - (void)didTapClearPlaceholderView {

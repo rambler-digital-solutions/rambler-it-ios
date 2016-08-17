@@ -39,28 +39,118 @@
 /**
  @author Zinovyev Konstantin
  
- The color of the selected text in the search events in the Reports section
+ The black color
  
  @return color
  */
-+ (UIColor *)colorForSelectedTextEventCellObject;
++ (UIColor *)rcf_blackColor;
 
 /**
  @author Zinovyev Konstantin
  
- The color of the selected text in the search lectures in the Reports section
+ The separator color
  
  @return color
  */
-+ (UIColor *)colorForSelectedTextLectureCellObject;
++ (UIColor *)rcf_separatorColor;
 
 /**
  @author Zinovyev Konstantin
  
- The color of the selected text in the search speakers in the Reports section
+ The gray color
  
  @return color
  */
-+ (UIColor *)colorForSelectedTextSpeakerCellObject;
++ (UIColor *)rcf_greyColor;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ The dark gray color
+ 
+ @return color
+ */
++ (UIColor *)rcf_darkGrayColor;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ The light gray color
+ 
+ @return color
+ */
++ (UIColor *)rcf_lightGrayColor;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ The light gray background color
+ 
+ @return color
+ */
++ (UIColor *)rcf_lightGrayBackgroundColor;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ The lighe blue color
+ 
+ @return color
+ */
++ (UIColor *)rcf_lightBlueColor;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ The blue color
+ 
+ @return color
+ */
++ (UIColor *)rcf_blueColor;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ The green color
+ 
+ @return color
+ */
++ (UIColor *)rcf_greenColor;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ The dark green color
+ 
+ @return color
+ */
++ (UIColor *)rcf_darkGreenColor;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ The red color
+ 
+ @return color
+ */
++ (UIColor *)rcf_redColor;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ The orange color
+ 
+ @return color
+ */
++ (UIColor *)rcf_orangeColor;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ The purple color
+ 
+ @return color
+ */
++ (UIColor *)rcf_purpleColor;
 
 @end

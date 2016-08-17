@@ -1,39 +1,32 @@
 // DO NOT EDIT. This file is machine-generated and constantly overwritten.
 // Make changes to RegistrationQuestionModelObject.h instead.
 
-#import <CoreData/CoreData.h>
+#if __has_feature(modules)
+    @import Foundation;
+    @import CoreData;
+#else
+    #import <Foundation/Foundation.h>
+    #import <CoreData/CoreData.h>
+#endif
 
-extern const struct RegistrationQuestionModelObjectAttributes {
-	__unsafe_unretained NSString *name;
-	__unsafe_unretained NSString *orderID;
-} RegistrationQuestionModelObjectAttributes;
-
-extern const struct RegistrationQuestionModelObjectRelationships {
-	__unsafe_unretained NSString *event;
-} RegistrationQuestionModelObjectRelationships;
+NS_ASSUME_NONNULL_BEGIN
 
 @class EventModelObject;
 
 @interface RegistrationQuestionModelObjectID : NSManagedObjectID {}
 @end
 
-@interface _RegistrationQuestionModelObject : NSManagedObject {}
-+ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_;
+@interface _RegistrationQuestionModelObject : NSManagedObject
++ (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
-@property (nonatomic, readonly, strong) RegistrationQuestionModelObjectID* objectID;
+@property (nonatomic, readonly, strong) RegistrationQuestionModelObjectID *objectID;
 
 @property (nonatomic, strong) NSString* name;
 
-//- (BOOL)validateName:(id*)value_ error:(NSError**)error_;
-
 @property (nonatomic, strong) NSString* orderID;
 
-//- (BOOL)validateOrderID:(id*)value_ error:(NSError**)error_;
-
-@property (nonatomic, strong) EventModelObject *event;
-
-//- (BOOL)validateEvent:(id*)value_ error:(NSError**)error_;
+@property (nonatomic, strong, nullable) EventModelObject *event;
 
 @end
 
@@ -49,3 +42,14 @@ extern const struct RegistrationQuestionModelObjectRelationships {
 - (void)setPrimitiveEvent:(EventModelObject*)value;
 
 @end
+
+@interface RegistrationQuestionModelObjectAttributes: NSObject 
++ (NSString *)name;
++ (NSString *)orderID;
+@end
+
+@interface RegistrationQuestionModelObjectRelationships: NSObject
++ (NSString *)event;
+@end
+
+NS_ASSUME_NONNULL_END

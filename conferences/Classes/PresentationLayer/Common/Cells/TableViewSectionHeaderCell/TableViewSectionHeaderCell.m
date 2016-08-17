@@ -21,7 +21,7 @@
 #import "TableViewSectionHeaderCell.h"
 #import "TableViewSectionHeaderCellObject.h"
 
-static CGFloat const TableViewSectionHeaderCellHeight = 5.0f;
+static CGFloat const TableViewSectionHeaderCellHeight = 10.0f;
 
 @implementation TableViewSectionHeaderCell
 

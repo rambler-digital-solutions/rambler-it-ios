@@ -22,12 +22,15 @@
 #import "ReportSpeakerTableViewCellObject.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
-static CGFloat const kReportSpeakerTableViewCellHeight = 92.0f;
+static CGFloat const kReportSpeakerTableViewCellHeight = 64.0f;
+static CGFloat const kReportSpeakerTableViewSeparatorInset = 72.0f;
+static NSString *const kPlaceholderImageName = @"placeholder";
 
 @interface ReportSpeakerTableViewCell ()
 
 @property (nonatomic, weak) IBOutlet UILabel *speakerTitle;
 @property (nonatomic, weak) IBOutlet UIImageView *speakerImageView;
+@property (weak, nonatomic) IBOutlet UILabel *companyLabel;
 
 @end
 
@@ -37,9 +40,10 @@ static CGFloat const kReportSpeakerTableViewCellHeight = 92.0f;
 
 - (BOOL)shouldUpdateCellWithObject:(ReportSpeakerTableViewCellObject *)object {
     self.speakerTitle.attributedText = object.speakerName;
+    self.companyLabel.text = object.company;
     [self.speakerImageView sd_setImageWithURL:object.imageURL
-                             placeholderImage:nil];
-    self.separatorInset = UIEdgeInsetsMake(0.f, self.bounds.size.width, 0.f, 0.0f);
+                             placeholderImage:[UIImage imageNamed:kPlaceholderImageName]];
+    self.separatorInset = UIEdgeInsetsMake(0.f, kReportSpeakerTableViewSeparatorInset, 0.f, 0.0f);
     self.speakerImageView.layer.cornerRadius = self.speakerImageView.frame.size.height/2.0;
     
     return YES;

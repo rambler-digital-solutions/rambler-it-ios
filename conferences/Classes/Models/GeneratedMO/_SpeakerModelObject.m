@@ -3,26 +3,12 @@
 
 #import "_SpeakerModelObject.h"
 
-const struct SpeakerModelObjectAttributes SpeakerModelObjectAttributes = {
-	.biography = @"biography",
-	.company = @"company",
-	.imageUrl = @"imageUrl",
-	.job = @"job",
-	.name = @"name",
-	.speakerId = @"speakerId",
-};
-
-const struct SpeakerModelObjectRelationships SpeakerModelObjectRelationships = {
-	.lectures = @"lectures",
-	.socialNetworkAccounts = @"socialNetworkAccounts",
-};
-
 @implementation SpeakerModelObjectID
 @end
 
 @implementation _SpeakerModelObject
 
-+ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
++ (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_ {
 	NSParameterAssert(moc_);
 	return [NSEntityDescription insertNewObjectForEntityForName:@"Speaker" inManagedObjectContext:moc_];
 }
@@ -60,10 +46,10 @@ const struct SpeakerModelObjectRelationships SpeakerModelObjectRelationships = {
 
 @dynamic lectures;
 
-- (NSMutableSet*)lecturesSet {
+- (NSMutableSet<LectureModelObject*>*)lecturesSet {
 	[self willAccessValueForKey:@"lectures"];
 
-	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"lectures"];
+	NSMutableSet<LectureModelObject*> *result = (NSMutableSet<LectureModelObject*>*)[self mutableSetValueForKey:@"lectures"];
 
 	[self didAccessValueForKey:@"lectures"];
 	return result;
@@ -71,14 +57,44 @@ const struct SpeakerModelObjectRelationships SpeakerModelObjectRelationships = {
 
 @dynamic socialNetworkAccounts;
 
-- (NSMutableSet*)socialNetworkAccountsSet {
+- (NSMutableSet<SocialNetworkAccountModelObject*>*)socialNetworkAccountsSet {
 	[self willAccessValueForKey:@"socialNetworkAccounts"];
 
-	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"socialNetworkAccounts"];
+	NSMutableSet<SocialNetworkAccountModelObject*> *result = (NSMutableSet<SocialNetworkAccountModelObject*>*)[self mutableSetValueForKey:@"socialNetworkAccounts"];
 
 	[self didAccessValueForKey:@"socialNetworkAccounts"];
 	return result;
 }
 
+@end
+
+@implementation SpeakerModelObjectAttributes 
++ (NSString *)biography {
+	return @"biography";
+}
++ (NSString *)company {
+	return @"company";
+}
++ (NSString *)imageUrl {
+	return @"imageUrl";
+}
++ (NSString *)job {
+	return @"job";
+}
++ (NSString *)name {
+	return @"name";
+}
++ (NSString *)speakerId {
+	return @"speakerId";
+}
+@end
+
+@implementation SpeakerModelObjectRelationships 
++ (NSString *)lectures {
+	return @"lectures";
+}
++ (NSString *)socialNetworkAccounts {
+	return @"socialNetworkAccounts";
+}
 @end
 

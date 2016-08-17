@@ -35,9 +35,13 @@
 @property (nonatomic, strong, readonly) NSString *date;
 @property (nonatomic, strong, readonly) NSAttributedString *eventTitle;
 @property (nonatomic, strong, readonly) UIImage *eventImage;
+@property (nonatomic, strong, readonly) NSAttributedString *tags;
 @property (nonatomic, strong, readonly) NSURL *imageURL;
 @property (nonatomic, strong, readonly) EventPlainObject *event;
 
-+ (instancetype)objectWithEvent:(EventPlainObject *)event andDate:(NSString *)date highlightedText:(NSAttributedString *)highlightedText;
++ (instancetype)objectWithEvent:(EventPlainObject *)event
+                        andDate:(NSString *)date
+                           tags:(NSAttributedString *)tags
+                highlightedText:(NSAttributedString *)highlightedText;
 
 @end
