@@ -1529,6 +1529,7 @@
 		9FE1390B1D64DB5500D7BF44 /* ReportListCellObjectFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportListCellObjectFactory.m; path = CellObjectFactory/ReportListCellObjectFactory.m; sourceTree = "<group>"; };
 		9FE1390E1D64EF7600D7BF44 /* SuggestTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SuggestTableView.h; path = Views/SuggestTableView/SuggestTableView.h; sourceTree = "<group>"; };
 		9FE1390F1D64EF7600D7BF44 /* SuggestTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SuggestTableView.m; path = Views/SuggestTableView/SuggestTableView.m; sourceTree = "<group>"; };
+		9FE139141D64F4E700D7BF44 /* SearchSuggestTableViewCellActionProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchSuggestTableViewCellActionProtocol.h; path = SearchSuggestTableViewCell/SearchSuggestTableViewCellActionProtocol.h; sourceTree = "<group>"; };
 		9FF1251C1D51DF460098625F /* EventObjectIndexer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventObjectIndexer.h; path = SpotlightIndexer/ObjectIndexers/ConcreteClasses/EventObjectIndexer/EventObjectIndexer.h; sourceTree = "<group>"; };
 		9FF1251D1D51DF460098625F /* EventObjectIndexer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventObjectIndexer.m; path = SpotlightIndexer/ObjectIndexers/ConcreteClasses/EventObjectIndexer/EventObjectIndexer.m; sourceTree = "<group>"; };
 		9FF37E101D3235BB00471B4E /* AppleMapsLinkBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppleMapsLinkBuilderTests.m; path = MapLinkBuildersTests/AppleMapsLinkBuilderTests.m; sourceTree = "<group>"; };
@@ -7200,6 +7201,7 @@
 				9FE139001D64D86400D7BF44 /* SearchSuggestTableViewCell.h */,
 				9FE139011D64D86400D7BF44 /* SearchSuggestTableViewCell.m */,
 				9FE139071D64D99200D7BF44 /* SearchSuggestTableViewCell.xib */,
+				9FE139141D64F4E700D7BF44 /* SearchSuggestTableViewCellActionProtocol.h */,
 			);
 			name = SearchSuggestTableViewCell;
 			sourceTree = "<group>";

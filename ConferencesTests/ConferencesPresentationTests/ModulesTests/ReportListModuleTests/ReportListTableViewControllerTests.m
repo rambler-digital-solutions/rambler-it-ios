@@ -119,4 +119,15 @@
     OCMVerify([self.mockOutput didChangeSearchBarWithSearchTerm:searchString]);
 }
 
+- (void)testSuccessTapSuggest {
+    // given
+    NSString *testSuggest = @"text";
+    
+    // when
+    [self.viewController didTapSuggestButtonWithSuggest:testSuggest];
+    
+    // then
+    OCMVerify([self.mockOutput didTapSuggestWithText:testSuggest]);
+}
+
 @end

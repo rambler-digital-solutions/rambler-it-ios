@@ -144,6 +144,19 @@
     OCMVerify([self.mockView hideSearchModuleView]);
 }
 
+- (void)testSuccessDidTapSuggest {
+    // given
+    NSString *testSuggest = @"text";
+    
+    // when
+    [self.presenter didTapSuggestWithText:testSuggest];
+    
+    // then
+    OCMVerify([self.mockView showSearchModuleView]);
+    OCMVerify([self.mockView updateSearchBarWithText:testSuggest]);
+    OCMVerify([self.mockReportsSearchModule updateModuleWithSearchTerm:testSuggest]);
+}
+
 #pragma mark - ReportsSearchModuleOuput
 
 - (void)testSuccessDidLoadReportsSearchModuleInput {

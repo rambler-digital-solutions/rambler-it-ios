@@ -56,5 +56,14 @@
  */
 - (void)didTapSearchBarCancelButton;
 
+/**
+ @author Egor Tolstoy
+ 
+ Method tells presenter that a suggest was tapped
+ 
+ @param text Suggest text
+ */
+- (void)didTapSuggestWithText:(NSString *)text;
+
 @end
 

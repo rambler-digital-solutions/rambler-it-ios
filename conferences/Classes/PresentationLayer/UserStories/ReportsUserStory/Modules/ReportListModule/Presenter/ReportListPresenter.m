@@ -44,10 +44,17 @@
     [self.reportsSearchModule closeSearchModule];
 }
 
+- (void)didTapSuggestWithText:(NSString *)text {
+    [self.reportsSearchModule updateModuleWithSearchTerm:text];
+    [self.view showSearchModuleView];
+     [self.view updateSearchBarWithText:text];
+}
+
 #pragma mark - SearchBar Delegate
 
 - (void)didChangeSearchBarWithSearchTerm:(NSString *)text {
     [self.reportsSearchModule updateModuleWithSearchTerm:text];
+    [self.view showSearchModuleView];
 }
 
 - (void)didTapClearScreenSearchModule {

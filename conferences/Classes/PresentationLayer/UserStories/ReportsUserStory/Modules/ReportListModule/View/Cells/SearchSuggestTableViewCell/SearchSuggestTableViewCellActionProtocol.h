@@ -20,48 +20,15 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol ReportListViewInput <NSObject>
-
-/**
- @author Zinovyev Konstantin
- 
- Method is used to inform View about initial setup
-
- @param events Event list
- */
-- (void)setupViewWithEventList:(NSArray *)events;
-
-/**
- @author Zinovyev Konstantin
- 
- Method is used to inform View that events should be updated
- 
- @param eventsEvent list
- */
-- (void)updateViewWithEventList:(NSArray *)events;
+@protocol SearchSuggestTableViewCellActionProtocol <NSObject>
 
 /**
  @author Egor Tolstoy
  
- MEthod is used to update a search edit field with a specific text
+ Method tells delegate that a suggest button was tapped
  
- @param text Search text
+ @param suggest Suggest text
  */
-- (void)updateSearchBarWithText:(NSString *)text;
-
-/**
- @author Zinovyev Konstantin
- 
- Method is used to inform View that SearchModuleView should be hidden
- */
-- (void)hideSearchModuleView;
-
-/**
- @author Zinovyev Konstantin
- 
- Method is used to inform View that SearchModuleView should be shown
- */
-- (void)showSearchModuleView;
+- (void)didTapSuggestButtonWithSuggest:(NSString *)suggest;
 
 @end
-

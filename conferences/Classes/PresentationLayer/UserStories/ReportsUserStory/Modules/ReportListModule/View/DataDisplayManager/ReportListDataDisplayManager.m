@@ -22,8 +22,6 @@
 
 #import <Nimbus/NimbusModels.h>
 
-#import "ReportEventTableViewCellObject.h"
-#import "TableViewSectionHeaderCellObject.h"
 #import "DateFormatter.h"
 #import "EventPlainObject.h"
 #import "EXTScope.h"
@@ -63,15 +61,6 @@
 - (void)setupTableViewActions {
     self.tableViewActions = [[NITableViewActions alloc] initWithTarget:self];
     self.tableViewActions.tableViewCellSelectionStyle = UITableViewCellSelectionStyleNone;
-    
-    @weakify(self);
-    NIActionBlock reportTapActionBlock = ^BOOL(ReportEventTableViewCellObject *object, id target, NSIndexPath *indexPath) {
-        @strongify(self);
-        [self.delegate didTapCellWithEvent:object.event];
-        return YES;
-    };
-    [self.tableViewActions attachToClass:[ReportEventTableViewCellObject class]
-                                tapBlock:reportTapActionBlock];
 }
 
 @end

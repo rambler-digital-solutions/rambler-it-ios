@@ -20,11 +20,12 @@
 
 #import <UIKit/UIKit.h>
 #import "ReportListViewInput.h"
+#import "SearchSuggestTableViewCellActionProtocol.h"
 
 @protocol ReportListViewOutput;
 @class  ReportListDataDisplayManager;
 
-@interface ReportListViewController : UIViewController <ReportListViewInput>
+@interface ReportListViewController : UIViewController <ReportListViewInput, SearchSuggestTableViewCellActionProtocol>
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *reportsTableView;

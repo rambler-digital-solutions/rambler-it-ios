@@ -21,15 +21,25 @@
 #import "SearchSuggestTableViewCell.h"
 
 #import "SearchSuggestTableViewCellObject.h"
+#import "SearchSuggestTableViewCellActionProtocol.h"
+
+#import "Extensions/UIResponder+CDProxying/UIResponder+CDProxying.h"
 
 static CGFloat const kSearchSuggestTableViewCellHeight = 44.0f;
+
+@interface SearchSuggestTableViewCell ()
+
+@property (nonatomic, strong) NSString *suggest;
+
+@end
 
 @implementation SearchSuggestTableViewCell
 
 #pragma mark - <NICell>
 
 - (BOOL)shouldUpdateCellWithObject:(SearchSuggestTableViewCellObject *)object {
-    [self.suggestButton setTitle:object.suggestText
+    self.suggest = object.suggestText;
+    [self.suggestButton setTitle:self.suggest
                         forState:UIControlStateNormal];
     return YES;
 }
@@ -43,7 +53,9 @@ static CGFloat const kSearchSuggestTableViewCellHeight = 44.0f;
 #pragma mark - IBActions
 
 - (IBAction)didTapSuggestButton:(id)sender {
+    id<SearchSuggestTableViewCellActionProtocol> actionProxy = (id<SearchSuggestTableViewCellActionProtocol>)[self cd_proxyForProtocol:@protocol(SearchSuggestTableViewCellActionProtocol)];
     
+    [actionProxy didTapSuggestButtonWithSuggest:self.suggest];
 }
 
 @end

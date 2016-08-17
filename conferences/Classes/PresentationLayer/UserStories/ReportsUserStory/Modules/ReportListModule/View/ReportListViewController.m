@@ -19,11 +19,15 @@
 // THE SOFTWARE.
 
 #import "ReportListViewController.h"
+
 #import "ReportListViewOutput.h"
 #import "DataDisplayManager.h"
 #import "ReportListDataDisplayManager.h"
-#import <RamblerSegues/RamblerSegues.h>
+
+#import "Extensions/UIViewController+CDObserver/UIViewController+CDObserver.h"
 #import "UINavigationBar+States.h"
+
+#import <RamblerSegues/RamblerSegues.h>
 
 @interface ReportListViewController() <ReportListDataDisplayManagerDelegate, RamblerEmbedSegueViewContainer>
 
@@ -35,11 +39,14 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+    
+    [self cd_startObserveProtocol:@protocol(SearchSuggestTableViewCellActionProtocol)];
 	[self.output setupView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
     [self setupViewInitialState];
 }
 
@@ -50,7 +57,7 @@
     
     self.dataDisplayManager.delegate = self;
     
-    NSArray *suggests = @[@"1234", @"5678"];
+    NSArray *suggests = @[@"1234", @"5678", @"ios"];
     self.reportsTableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.reportsTableView withSuggests:suggests];
     self.reportsTableView.delegate = [self.dataDisplayManager delegateForTableView:self.reportsTableView withBaseDelegate:nil];
 }
@@ -68,6 +75,15 @@
     [self.searchEmbedContainer setHidden:YES];
 }
 
+- (void)showSearchModuleView {
+    [self.searchEmbedContainer setHidden:NO];
+    [self.searchBar setShowsCancelButton:YES animated:YES];
+}
+
+- (void)updateSearchBarWithText:(NSString *)text {
+    self.searchBar.text = text;
+}
+
 #pragma mark - ReportListDataDisplayManagerDelegate methods
 
 - (void)didTapCellWithEvent:(EventPlainObject *)event {
@@ -77,8 +93,6 @@
 #pragma mark - SearchBarDelegate
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
-    [self.searchEmbedContainer setHidden:NO];
-    [self.searchBar setShowsCancelButton:YES animated:YES];
     [self.output didChangeSearchBarWithSearchTerm:searchBar.text];
 }
 
@@ -97,6 +111,12 @@
 
 - (UIView *)viewForEmbedIdentifier:(NSString *)embedIdentifier {
     return self.searchEmbedContainer;
+}
+
+#pragma mark - <SearchSuggestTableViewCellActionProtocol>
+
+- (void)didTapSuggestButtonWithSuggest:(NSString *)suggest {
+    [self.output didTapSuggestWithText:suggest];
 }
 
 #pragma mark - Helpers

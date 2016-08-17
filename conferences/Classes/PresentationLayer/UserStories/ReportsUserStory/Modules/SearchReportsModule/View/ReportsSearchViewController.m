@@ -19,6 +19,7 @@
 // THE SOFTWARE.
 
 #import "ReportsSearchViewController.h"
+
 #import "ReportsSearchViewAnimator.h"
 #import "UIColor+ConferencesPallete.h"
 
@@ -97,6 +98,7 @@ static NSInteger kDefaultEstimatedHeight = 116;
 - (void)didTapClearPlaceholderView {
     [self.output didTapClearPlaceholderView];
 }
+
 #pragma mark - Gesture Recognizer
 
 - (IBAction)handleTapClearPlaceholder:(id)sender {
