@@ -59,8 +59,6 @@ static const NSInteger kDefaultEstimatedHeight = 116;
 }
 
 - (void)setupViewInitialState {
-    [self.navigationController.navigationBar rcf_becomeTransparent];
-    self.navigationController.navigationBar.hidden = YES;
     self.reportsTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
@@ -72,8 +70,6 @@ static const NSInteger kDefaultEstimatedHeight = 116;
     [self.searchBar resignFirstResponder];
     [self.searchEmbedContainer setHidden:YES];
 }
-
-
 
 #pragma mark - ReportListDataDisplayManagerDelegate methods
 
