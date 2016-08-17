@@ -116,7 +116,7 @@
     XCTAssertEqual(expectedNumberOfPastEventsInfoTableViewCellObjects, actualNumberOfPastEventsInfoTableViewCellObjects);
     XCTAssertEqual(expectedNumberOfPastLectureInfoTableViewCellObjects, actualNumberOfPastLectureInfoTableViewCellObjects);
 
-    OCMVerify([self.mockDateFormatter obtainDateWithDayMonthTimeFormat:eventStartDate]);
+    OCMVerify([self.mockDateFormatter obtainDateWithDayMonthYearTimeFormat:eventStartDate]);
 }
 
 @end

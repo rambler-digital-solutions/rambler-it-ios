@@ -81,7 +81,7 @@
     // then
     XCTAssertEqual(expectedNumberOfEventInfoTableViewCellObjects, actualNumberOfEventInfoTableViewCellObjects);
     XCTAssertEqual(expectedNumberOfCurrentVideoTranslationTableViewCellObjects, actualNumberOfCurrentVideoTranslationTableViewCellObjects);
-    OCMVerify([self.mockDateFormatter obtainDateWithDayMonthTimeFormat:eventStartDate]);
+    OCMVerify([self.mockDateFormatter obtainDateWithDayMonthYearTimeFormat:eventStartDate]);
 }
 
 @end

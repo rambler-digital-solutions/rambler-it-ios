@@ -94,10 +94,9 @@ typedef NS_ENUM(NSUInteger, TableViewSectionIndex){
 
 - (void)testThatDataDisplayManagerReturnsCorrectNumberOfRows {
     // given
-    NSUInteger headerTableView = 1;
     NSUInteger footerTableView = 1;
     
-    NSUInteger const kExpectedNumberOfRows = self.events.count + headerTableView + footerTableView;
+    NSUInteger const kExpectedNumberOfRows = self.events.count + footerTableView;
     NSUInteger actualNumberOfRows = 0;
     
     // when
