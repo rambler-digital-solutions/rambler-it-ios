@@ -495,6 +495,8 @@
 		9FC1F6761D2824000070D9B5 /* EventListServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */; };
 		9FC1F6801D2838FA0070D9B5 /* EventListQueryTransformerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */; };
 		9FC1F6841D28391E0070D9B5 /* EventListQueryTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6831D28391E0070D9B5 /* EventListQueryTransformer.m */; };
+		9FC305321D6476EA0052CB67 /* ShareUrlBuilderImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC305311D6476EA0052CB67 /* ShareUrlBuilderImplementation.m */; };
+		9FC305351D6478F60052CB67 /* ShareUrlBuilderImplementationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC305341D6478F60052CB67 /* ShareUrlBuilderImplementationTests.m */; };
 		9FD740381CDC98010071BD71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FD740371CDC98010071BD71 /* LaunchScreen.storyboard */; };
 		9FF1251E1D51DF460098625F /* EventObjectIndexer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF1251D1D51DF460098625F /* EventObjectIndexer.m */; };
 		9FF37E111D3235BB00471B4E /* AppleMapsLinkBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF37E101D3235BB00471B4E /* AppleMapsLinkBuilderTests.m */; };
@@ -1494,6 +1496,10 @@
 		9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListQueryTransformerTests.m; path = CoreLayer/CoreComponents/QueryTransformers/EventListQueryTransformer/EventListQueryTransformerTests.m; sourceTree = "<group>"; };
 		9FC1F6821D28391E0070D9B5 /* EventListQueryTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListQueryTransformer.h; sourceTree = "<group>"; };
 		9FC1F6831D28391E0070D9B5 /* EventListQueryTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListQueryTransformer.m; sourceTree = "<group>"; };
+		9FC3052B1D64768F0052CB67 /* ShareUrlBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShareUrlBuilder.h; path = ShareUrlBuilder/Protocols/ShareUrlBuilder.h; sourceTree = "<group>"; };
+		9FC305301D6476EA0052CB67 /* ShareUrlBuilderImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShareUrlBuilderImplementation.h; path = ShareUrlBuilder/ConcreteClasses/ShareUrlBuilderImplementation/ShareUrlBuilderImplementation.h; sourceTree = "<group>"; };
+		9FC305311D6476EA0052CB67 /* ShareUrlBuilderImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShareUrlBuilderImplementation.m; path = ShareUrlBuilder/ConcreteClasses/ShareUrlBuilderImplementation/ShareUrlBuilderImplementation.m; sourceTree = "<group>"; };
+		9FC305341D6478F60052CB67 /* ShareUrlBuilderImplementationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShareUrlBuilderImplementationTests.m; path = ShareUrlBuilderTests/ShareUrlBuilderImplementationTests.m; sourceTree = "<group>"; };
 		9FD740371CDC98010071BD71 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9FF1251C1D51DF460098625F /* EventObjectIndexer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventObjectIndexer.h; path = SpotlightIndexer/ObjectIndexers/ConcreteClasses/EventObjectIndexer/EventObjectIndexer.h; sourceTree = "<group>"; };
 		9FF1251D1D51DF460098625F /* EventObjectIndexer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventObjectIndexer.m; path = SpotlightIndexer/ObjectIndexers/ConcreteClasses/EventObjectIndexer/EventObjectIndexer.m; sourceTree = "<group>"; };
@@ -2075,6 +2081,7 @@
 		631CBA901C021C3900E3EBA8 /* HelpersTests */ = {
 			isa = PBXGroup;
 			children = (
+				9FC305331D6478E20052CB67 /* ShareUrlBuilderTests */,
 				9FBE8A091D5DFAA600DA0C32 /* VideoThumbnailTests */,
 				9FF37E0F1D32359D00471B4E /* MapLinkBuildersTests */,
 				63D86BDB1C143FAE00986536 /* DateFormatterTests */,
@@ -3711,6 +3718,7 @@
 		63F8F27A1BF79090000017F3 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				9FC305291D6476650052CB67 /* ShareUrlBuilder */,
 				9FBE8A0D1D5E5EF800DA0C32 /* SafariFactory */,
 				9FBE8A051D5DFA0000DA0C32 /* VideoThumbnailGenerator */,
 				2B429A501D4616AD004C005F /* UIView+LJLoadFromNib */,
@@ -7055,6 +7063,48 @@
 			path = CoreComponents/QueryTransformers/EventListQueryTransformer;
 			sourceTree = "<group>";
 		};
+		9FC305291D6476650052CB67 /* ShareUrlBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				9FC3052E1D6476BF0052CB67 /* ConcreteClasses */,
+				9FC3052A1D6476760052CB67 /* Protocols */,
+			);
+			name = ShareUrlBuilder;
+			sourceTree = "<group>";
+		};
+		9FC3052A1D6476760052CB67 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9FC3052B1D64768F0052CB67 /* ShareUrlBuilder.h */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		9FC3052E1D6476BF0052CB67 /* ConcreteClasses */ = {
+			isa = PBXGroup;
+			children = (
+				9FC3052F1D6476D40052CB67 /* ShareUrlBuilderImplementation */,
+			);
+			name = ConcreteClasses;
+			sourceTree = "<group>";
+		};
+		9FC3052F1D6476D40052CB67 /* ShareUrlBuilderImplementation */ = {
+			isa = PBXGroup;
+			children = (
+				9FC305301D6476EA0052CB67 /* ShareUrlBuilderImplementation.h */,
+				9FC305311D6476EA0052CB67 /* ShareUrlBuilderImplementation.m */,
+			);
+			name = ShareUrlBuilderImplementation;
+			sourceTree = "<group>";
+		};
+		9FC305331D6478E20052CB67 /* ShareUrlBuilderTests */ = {
+			isa = PBXGroup;
+			children = (
+				9FC305341D6478F60052CB67 /* ShareUrlBuilderImplementationTests.m */,
+			);
+			name = ShareUrlBuilderTests;
+			sourceTree = "<group>";
+		};
 		9FF1251A1D51DF130098625F /* ConcreteClasses */ = {
 			isa = PBXGroup;
 			children = (
@@ -7648,6 +7698,7 @@
 				66E999631D54B04100161D98 /* TagObjectDescriptor.m in Sources */,
 				631808411C482B1300A61E7D /* SpeakerShortInfoPresenter.m in Sources */,
 				63F6135D1CB00A220002AEF0 /* EventHeaderRouter.m in Sources */,
+				9FC305321D6476EA0052CB67 /* ShareUrlBuilderImplementation.m in Sources */,
 				9F5316A91D50F56900F13931 /* IndexerStateStorage.m in Sources */,
 				9F533A8E1D50EC10004F8E82 /* IndexerMonitor.m in Sources */,
 				2B2064981D3F9CE900246C8D /* SpeakerPlainObject.m in Sources */,
@@ -7923,6 +7974,7 @@
 				9F0A85211BC185AA006F79FB /* TestChainableOperationWithValidationBlock.m in Sources */,
 				9F78D7791D5A0330009DDCEA /* LectureObjectIndexerTests.m in Sources */,
 				63F402F11BCF77CB0086D030 /* ServiceComponentsAssemblyTests.m in Sources */,
+				9FC305351D6478F60052CB67 /* ShareUrlBuilderImplementationTests.m in Sources */,
 				66E9992C1D54899C00161D98 /* LectureServiceTests.m in Sources */,
 				9F1830DB1BC126D7000E21A5 /* RCFParseResponseValidatorTests.m in Sources */,
 				9FBE89D71D5CB76900DA0C32 /* CleanLaunchRouterTests.m in Sources */,
