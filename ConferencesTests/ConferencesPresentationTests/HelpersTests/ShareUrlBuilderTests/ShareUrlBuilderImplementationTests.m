@@ -18,26 +18,42 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import "EventInteractorInput.h"
+#import <XCTest/XCTest.h>
 
-@protocol EventInteractorOutput;
-@protocol EventService;
-@protocol MetaEventService;
-@protocol ROSPonsomizer;
-@protocol ShareUrlBuilder;
-@protocol EventStoreServiceProtocol;
-@class EventTypeDeterminator;
+#import "ShareUrlBuilderImplementation.h"
 
-@interface EventInteractor : NSObject<EventInteractorInput>
+static NSString *const kTestItemType = @"item";
 
-@property (nonatomic, weak) id<EventInteractorOutput> output;
-@property (nonatomic, strong) id <EventService> eventService;
-@property (nonatomic, strong) EventTypeDeterminator *eventTypeDeterminator;
-@property (nonatomic, strong) id <EventStoreServiceProtocol> eventStoreService;
-@property (nonatomic, strong) id <ROSPonsomizer> ponsomizer;
-@property (nonatomic, strong) id <ShareUrlBuilder> shareUrlBuilder;
-@property (nonatomic, strong) id <MetaEventService> metaEventService;
+@interface ShareUrlBuilderImplementationTests : XCTestCase
+
+@property (nonatomic, strong) ShareUrlBuilderImplementation *builder;
 
 @end
 
+@implementation ShareUrlBuilderImplementationTests
+
+- (void)setUp {
+    [super setUp];
+    
+    self.builder = [[ShareUrlBuilderImplementation alloc] initWithItemType:kTestItemType];
+}
+
+- (void)tearDown {
+    self.builder = nil;
+    
+    [super tearDown];
+}
+
+- (void)testThatBuilderBuildsProperUrl {
+    // given
+    NSString *const kTestItemId = @"1234";
+    NSString *const kExpectedUrlString = @"http://it.rambler-co.ru/#/item/1234";
+    
+    // when
+    NSURL *result = [self.builder buildShareUrlWithItemId:kTestItemId];
+    
+    // then
+    XCTAssertEqualObjects(result.absoluteString, kExpectedUrlString);
+}
+
+@end

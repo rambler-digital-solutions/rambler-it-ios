@@ -24,11 +24,14 @@
 #import "SpeakerInfoInteractor.h"
 #import "ROSPonsomizer.h"
 #import "SpeakerService.h"
+#import "ShareUrlBuilder.h"
+#import "SpeakerPlainObject.h"
 
 @interface SpeakerInfoInteractorTests : XCTestCase
 
 @property (nonatomic, strong) SpeakerInfoInteractor *interactor;
 @property (nonatomic, strong) id mockSpeakerService;
+@property (nonatomic, strong) id mockUrlBuilder;
 @property (nonatomic, strong) id mockPonsomizer;
 
 @end
@@ -41,9 +44,11 @@
     self.interactor = [SpeakerInfoInteractor new];
     self.mockPonsomizer = OCMProtocolMock(@protocol(ROSPonsomizer));
     self.mockSpeakerService = OCMProtocolMock(@protocol(SpeakerService));
+    self.mockUrlBuilder = OCMProtocolMock(@protocol(ShareUrlBuilder));
     
     self.interactor.speakerService = self.mockSpeakerService;
     self.interactor.ponsomizer = self.mockPonsomizer;
+    self.interactor.shareUrlBuilder = self.mockUrlBuilder;
 }
 
 - (void)tearDown {
@@ -51,6 +56,7 @@
     
     self.mockPonsomizer = nil;
     self.mockSpeakerService = nil;
+    self.mockUrlBuilder = nil;
     
     [super tearDown];
 }
@@ -71,6 +77,19 @@
     
     // then
     XCTAssertEqualObjects(result, plainSpeaker);
+}
+
+- (void)testThatInteractorReturnsActivityItems {
+    // given
+    NSURL *testUrl = [NSURL URLWithString:@"rambler.ru"];
+    SpeakerPlainObject *speaker = [SpeakerPlainObject new];
+    OCMStub([self.mockUrlBuilder buildShareUrlWithItemId:OCMOCK_ANY]).andReturn(testUrl);
+    
+    // when
+    NSArray *result = [self.interactor obtainActivityItemsForSpeaker:speaker];
+    
+    // then
+    XCTAssertEqualObjects([result firstObject], testUrl);
 }
 
 @end

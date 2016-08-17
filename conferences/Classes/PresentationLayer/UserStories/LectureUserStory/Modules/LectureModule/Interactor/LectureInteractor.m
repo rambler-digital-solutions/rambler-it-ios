@@ -19,16 +19,14 @@
 // THE SOFTWARE.
 
 #import "LectureInteractor.h"
+
 #import "LectureInteractorOutput.h"
 #import "LectureService.h"
 #import "ROSPonsomizer.h"
+#import "ShareUrlBuilder.h"
 
 #import "LecturePlainObject.h"
 #import "SpeakerPlainObject.h"
-
-@interface LectureInteractor()
-
-@end
 
 @implementation LectureInteractor
 
@@ -41,12 +39,8 @@
 }
 
 - (NSArray *)obtainActivityItemsForLecture:(LecturePlainObject *)lecture {
-    /**
-     @author Artem Karpushin
-     
-     // TODO: fill the array
-     */
-    NSArray *activityItems = @[];
+    NSURL *shareUrl = [self.shareUrlBuilder buildShareUrlWithItemId:lecture.lectureId];
+    NSArray *activityItems = @[shareUrl];
     return activityItems;
 }
 

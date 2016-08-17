@@ -19,25 +19,16 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-#import "EventInteractorInput.h"
 
-@protocol EventInteractorOutput;
-@protocol EventService;
-@protocol MetaEventService;
-@protocol ROSPonsomizer;
-@protocol ShareUrlBuilder;
-@protocol EventStoreServiceProtocol;
-@class EventTypeDeterminator;
+#import "ShareUrlBuilder.h"
 
-@interface EventInteractor : NSObject<EventInteractorInput>
+/**
+ @author Egor Tolstoy
+ 
+ The main implementation of ShareUrlBuilder, which handles URL generation for all content objects.
+ */
+@interface ShareUrlBuilderImplementation : NSObject <ShareUrlBuilder>
 
-@property (nonatomic, weak) id<EventInteractorOutput> output;
-@property (nonatomic, strong) id <EventService> eventService;
-@property (nonatomic, strong) EventTypeDeterminator *eventTypeDeterminator;
-@property (nonatomic, strong) id <EventStoreServiceProtocol> eventStoreService;
-@property (nonatomic, strong) id <ROSPonsomizer> ponsomizer;
-@property (nonatomic, strong) id <ShareUrlBuilder> shareUrlBuilder;
-@property (nonatomic, strong) id <MetaEventService> metaEventService;
+- (instancetype)initWithItemType:(NSString *)itemType;
 
 @end
-

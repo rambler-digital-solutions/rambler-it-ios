@@ -42,6 +42,13 @@
     [self.router openLectureModuleWithLectureId:lectureId];
 }
 
+- (void)didTriggerShareButtonTapEvent {
+    SpeakerPlainObject *speaker = [self.interactor obtainSpeakerWithSpeakerId:self.stateStorage.speakerId];
+    NSArray *activityItems = [self.interactor obtainActivityItemsForSpeaker:speaker];
+    
+    [self.router openShareModuleWithActivityItems:activityItems];
+}
+
 #pragma mark - SpeakerInfoInteractorOutput
 
 #pragma mark - SpeakerInfoModuleInput

@@ -24,7 +24,9 @@
 #import "LectureInteractor.h"
 #import "LectureInteractorOutput.h"
 #import "ROSPonsomizer.h"
+#import "ShareUrlBuilder.h"
 #import "LectureService.h"
+#import "LecturePlainObject.h"
 
 @interface LectureInteractorTests : XCTestCase
 
@@ -32,6 +34,7 @@
 @property (nonatomic, strong) id mockPresenter;
 @property (nonatomic, strong) id mockPonsomizer;
 @property (nonatomic, strong) id mockLectureService;
+@property (nonatomic, strong) id mockUrlBuilder;
 
 @end
 
@@ -44,10 +47,12 @@
     self.mockPresenter = OCMProtocolMock(@protocol(LectureInteractorOutput));
     self.mockPonsomizer = OCMProtocolMock(@protocol(ROSPonsomizer));
     self.mockLectureService = OCMProtocolMock(@protocol(LectureService));
+    self.mockUrlBuilder = OCMProtocolMock(@protocol(ShareUrlBuilder));
     
     self.interactor.output = self.mockPresenter;
     self.interactor.ponsomizer = self.mockPonsomizer;
     self.interactor.lectureService = self.mockLectureService;
+    self.interactor.shareUrlBuilder = self.mockUrlBuilder;
 }
 
 - (void)tearDown {
@@ -56,17 +61,13 @@
     self.mockPresenter = nil;
     self.mockPonsomizer = nil;
     self.mockLectureService = nil;
+    self.mockUrlBuilder = nil;
     
     [super tearDown];
 }
 
 #pragma mark - LectureInteractorInput
 
-/**
- @author Artem Karpushin
- 
- TODO: need to complete the test after service for lectures will get ready
- */
 - (void)testSuccessObtainLectureWithObjectId {
     // given
     NSString *lectureId = @"0";
@@ -83,6 +84,19 @@
     OCMVerify([self.mockLectureService obtainLectureWithLectureId:lectureId]);
     OCMVerify([self.mockPonsomizer convertObject:lectureManagedObject]);
     XCTAssertEqualObjects(resultLecture, lecturePlainObject);
+}
+
+- (void)testThatInteractorReturnsActivityItems {
+    // given
+    NSURL *testUrl = [NSURL URLWithString:@"rambler.ru"];
+    LecturePlainObject *lecture = [LecturePlainObject new];
+    OCMStub([self.mockUrlBuilder buildShareUrlWithItemId:OCMOCK_ANY]).andReturn(testUrl);
+    
+    // when
+    NSArray *result = [self.interactor obtainActivityItemsForLecture:lecture];
+    
+    // then
+    XCTAssertEqualObjects([result firstObject], testUrl);
 }
 
 @end

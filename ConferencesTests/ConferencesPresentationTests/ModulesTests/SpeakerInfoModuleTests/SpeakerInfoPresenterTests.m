@@ -107,6 +107,18 @@
     OCMVerify([self.routerMock openLectureModuleWithLectureId:kTestLectureId]);
 }
 
+- (void)testThatPresenterOpensShareDialog {
+    // given
+    NSArray *testItems = @[@"1"];
+    OCMStub([self.interactorMock obtainActivityItemsForSpeaker:OCMOCK_ANY]).andReturn(testItems);
+    
+    // when
+    [self.presenter didTriggerShareButtonTapEvent];
+    
+    // then
+    OCMVerify([self.routerMock openShareModuleWithActivityItems:testItems]);
+}
+
 #pragma mark - SpeakerInfoModuleInput
 
 - (void)testSuccessConfigureCurrentModuleWithSpeakerObjectId {

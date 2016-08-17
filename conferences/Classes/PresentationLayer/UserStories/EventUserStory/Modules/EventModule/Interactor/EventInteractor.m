@@ -19,6 +19,7 @@
 // THE SOFTWARE.
 
 #import "EventInteractor.h"
+
 #import "EventInteractorOutput.h"
 #import "EventService.h"
 #import "EventModelObject.h"
@@ -31,8 +32,8 @@
 #import "MetaEventModelObject.h"
 #import "MetaEventPlainObject.h"
 #import "MetaEventService.h"
+#import "ShareUrlBuilder.h"
 #import "EXTScope.h"
-
 
 @implementation EventInteractor
 
@@ -93,12 +94,8 @@
 }
 
 - (NSArray *)obtainActivityItemsForEvent:(EventPlainObject *)event {
-    /**
-     @author Artem Karpushin
-     
-     // TODO: fill the array
-     */
-    NSArray *activityItems = @[];
+    NSURL *shareUrl = [self.shareUrlBuilder buildShareUrlWithItemId:event.eventId];
+    NSArray *activityItems = @[shareUrl];
     return activityItems;
 }
 

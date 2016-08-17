@@ -29,6 +29,9 @@
 #import "ServiceComponents.h"
 #import "PonsomizerAssembly.h"
 #import "PresentationLayerHelpersAssembly.h"
+#import "ShareUrlBuilderImplementation.h"
+
+static NSString *const kSpeakerShareItemType = @"speaker";
 
 @implementation  SpeakerInfoModuleAssembly
 
@@ -51,6 +54,8 @@
                                                       with:[self.serviceComponents speakerService]];
                                 [definition injectProperty:@selector(ponsomizer)
                                                       with:[self.ponsomizerAssembly ponsomizer]];
+                                [definition injectProperty:@selector(shareUrlBuilder)
+                                                      with:[self speakerShareUrlBuilder]];
              }];
 }
 
@@ -103,6 +108,16 @@
 
 - (SocialContactsConfigurator *)socialContactsConfiguratorSpeakerInfo {
     return [TyphoonDefinition withClass:[SocialContactsConfigurator class]];
+}
+
+- (ShareUrlBuilderImplementation *)speakerShareUrlBuilder {
+    return [TyphoonDefinition withClass:[ShareUrlBuilderImplementation class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition useInitializer:@selector(initWithItemType:)
+                                              parameters:^(TyphoonMethod *initializer) {
+                                                  [initializer injectParameterWith:kSpeakerShareItemType];
+                                              }];
+                          }];
 }
 
 @end

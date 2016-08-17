@@ -18,26 +18,34 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import "EventInteractorInput.h"
+#import "ShareUrlBuilderImplementation.h"
 
-@protocol EventInteractorOutput;
-@protocol EventService;
-@protocol MetaEventService;
-@protocol ROSPonsomizer;
-@protocol ShareUrlBuilder;
-@protocol EventStoreServiceProtocol;
-@class EventTypeDeterminator;
+static NSString *const kBaseUrlPath = @"http://it.rambler-co.ru/#";
 
-@interface EventInteractor : NSObject<EventInteractorInput>
+@interface ShareUrlBuilderImplementation ()
 
-@property (nonatomic, weak) id<EventInteractorOutput> output;
-@property (nonatomic, strong) id <EventService> eventService;
-@property (nonatomic, strong) EventTypeDeterminator *eventTypeDeterminator;
-@property (nonatomic, strong) id <EventStoreServiceProtocol> eventStoreService;
-@property (nonatomic, strong) id <ROSPonsomizer> ponsomizer;
-@property (nonatomic, strong) id <ShareUrlBuilder> shareUrlBuilder;
-@property (nonatomic, strong) id <MetaEventService> metaEventService;
+@property (nonatomic, strong) NSString *itemType;
 
 @end
 
+@implementation ShareUrlBuilderImplementation
+
+#pragma mark - Initialization
+
+- (instancetype)initWithItemType:(NSString *)itemType {
+    self = [super init];
+    if (self) {
+        _itemType = itemType;
+    }
+    return self;
+}
+
+#pragma mark - <ShareUrlBuilder>
+
+- (NSURL *)buildShareUrlWithItemId:(NSString *)itemId {
+    NSString *urlString = [NSString stringWithFormat:@"%@/%@/%@", kBaseUrlPath, self.itemType, itemId];
+    NSURL *shareUrl = [NSURL URLWithString:urlString];
+    return shareUrl;
+}
+
+@end

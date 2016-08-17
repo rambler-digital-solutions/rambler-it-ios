@@ -30,6 +30,8 @@
 #import "EventStoreServiceProtocol.h"
 #import "ErrorConstants.h"
 #import "ROSPonsomizer.h"
+#import "EventPlainObject.h"
+#import "ShareUrlBuilder.h"
 
 typedef void (^ProxyBlock)(NSInvocation *);
 
@@ -41,6 +43,7 @@ typedef void (^ProxyBlock)(NSInvocation *);
 @property (nonatomic, strong) id <EventInteractorOutput> presenterMock;
 @property (nonatomic, strong) id eventStoreServiceMock;
 @property (nonatomic, strong) id <ROSPonsomizer>mockPonsomizer;
+@property (nonatomic, strong) id mockUrlBuilder;
 @end
 
 @implementation EventInteractorTests
@@ -54,12 +57,14 @@ typedef void (^ProxyBlock)(NSInvocation *);
     self.presenterMock = OCMProtocolMock(@protocol(EventInteractorOutput));
     self.eventStoreServiceMock = OCMProtocolMock(@protocol(EventStoreServiceProtocol));
     self.mockPonsomizer = OCMProtocolMock(@protocol(ROSPonsomizer));
+    self.mockUrlBuilder = OCMProtocolMock(@protocol(ShareUrlBuilder));
     
     self.interactor.eventService = self.eventServiceMock;
     self.interactor.eventTypeDeterminator = self.eventTypeDeterminatorMock;
     self.interactor.output = self.presenterMock;
     self.interactor.eventStoreService = self.eventStoreServiceMock;
     self.interactor.ponsomizer = self.mockPonsomizer;
+    self.interactor.shareUrlBuilder = self.mockUrlBuilder;
 }
 
 - (void)tearDown {
@@ -73,6 +78,7 @@ typedef void (^ProxyBlock)(NSInvocation *);
     [self.eventStoreServiceMock stopMocking];
     self.eventStoreServiceMock = nil;
     self.mockPonsomizer = nil;
+    self.mockUrlBuilder = nil;
     
     [super tearDown];
 }
@@ -141,13 +147,16 @@ typedef void (^ProxyBlock)(NSInvocation *);
 
 - (void)testSuccessObtainActivityItemsForEvent {
     // given
+    NSURL *testUrl = [NSURL URLWithString:@"rambler.ru"];
+    OCMStub([self.mockUrlBuilder buildShareUrlWithItemId:OCMOCK_ANY]).andReturn(testUrl);
+    EventPlainObject *event = [EventPlainObject new];
     
     // when
-    NSArray *obtainedItems = [self.interactor obtainActivityItemsForEvent:OCMOCK_ANY];
+    NSArray *obtainedItems = [self.interactor obtainActivityItemsForEvent:event];
     
     // then
     XCTAssertNotNil(obtainedItems);
-    // TODO: Complete test after method get implemented
+    XCTAssertEqualObjects([obtainedItems firstObject], testUrl);
 }
 
 @end

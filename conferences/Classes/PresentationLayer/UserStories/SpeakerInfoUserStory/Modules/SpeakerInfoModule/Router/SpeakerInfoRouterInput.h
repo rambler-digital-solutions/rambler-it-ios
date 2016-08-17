@@ -36,7 +36,16 @@
  
  @param lectureid Lecture identifier
  */
-- (void)openLectureModuleWithLectureId:(NSString *)lectureid;
+- (void)openLectureModuleWithLectureId:(NSString *)lectureId;
+
+/**
+ @author Artem Karpushin
+ 
+ Method is used to initiate transition to the module of the event sharing
+ 
+ @param activityItems Array of activity items for sharing
+ */
+- (void)openShareModuleWithActivityItems:(NSArray *)activityItems;
 
 @end
 

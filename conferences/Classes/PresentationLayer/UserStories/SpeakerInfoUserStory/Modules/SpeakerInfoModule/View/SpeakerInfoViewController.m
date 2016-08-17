@@ -82,4 +82,10 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
     return frame;
 }
 
+#pragma mark - IBActions
+
+- (IBAction)didTapShareButton:(id)sender {
+    [self.output didTriggerShareButtonTapEvent];
+}
+
 @end

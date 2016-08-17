@@ -32,5 +32,9 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView <SpeakerShortInfoModuleInput> *speakerShortInfoView;
 
+#pragma mark - IBActions
+
+- (IBAction)didTapShareButton:(id)sender;
+
 @end
 

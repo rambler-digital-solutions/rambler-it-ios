@@ -19,25 +19,23 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-#import "EventInteractorInput.h"
 
-@protocol EventInteractorOutput;
-@protocol EventService;
-@protocol MetaEventService;
-@protocol ROSPonsomizer;
-@protocol ShareUrlBuilder;
-@protocol EventStoreServiceProtocol;
-@class EventTypeDeterminator;
+/**
+ @author Egor Tolstoy
+ 
+ The protocol describes an object responsible for building NSURLs for sharing different content items
+ */
+@protocol ShareUrlBuilder <NSObject>
 
-@interface EventInteractor : NSObject<EventInteractorInput>
-
-@property (nonatomic, weak) id<EventInteractorOutput> output;
-@property (nonatomic, strong) id <EventService> eventService;
-@property (nonatomic, strong) EventTypeDeterminator *eventTypeDeterminator;
-@property (nonatomic, strong) id <EventStoreServiceProtocol> eventStoreService;
-@property (nonatomic, strong) id <ROSPonsomizer> ponsomizer;
-@property (nonatomic, strong) id <ShareUrlBuilder> shareUrlBuilder;
-@property (nonatomic, strong) id <MetaEventService> metaEventService;
+/**
+ @author Egor Tolstoy
+ 
+ The method takes an item identifier and builds a special sharing URL with it. This URL points to our web site.
+ 
+ @param itemId Item identifier
+ 
+ @return NSURL for sharing
+ */
+- (NSURL *)buildShareUrlWithItemId:(NSString *)itemId;
 
 @end
-
