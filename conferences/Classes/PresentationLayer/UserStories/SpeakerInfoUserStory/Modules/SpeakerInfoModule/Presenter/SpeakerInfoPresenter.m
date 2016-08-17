@@ -17,10 +17,12 @@
 // THE SOFTWARE.
 
 #import "SpeakerInfoPresenter.h"
+
 #import "SpeakerInfoViewInput.h"
 #import "SpeakerInfoInteractorInput.h"
 #import "SpeakerInfoRouterInput.h"
 #import "SpeakerInfoPresenterStateStorage.h"
+#import "LecturePlainObject.h"
 
 @implementation SpeakerInfoPresenter
 
@@ -33,6 +35,11 @@
 
 - (void)didTriggerSocialNetworkTapEventWithUrl:(NSURL *)socialUrl {
     [self.router openWebBrowserModuleWithUrl:socialUrl];
+}
+
+- (void)didTriggerLectureTapEventWithLecture:(LecturePlainObject *)lecture {
+    NSString *lectureId = lecture.lectureId;
+    [self.router openLectureModuleWithLectureId:lectureId];
 }
 
 #pragma mark - SpeakerInfoInteractorOutput

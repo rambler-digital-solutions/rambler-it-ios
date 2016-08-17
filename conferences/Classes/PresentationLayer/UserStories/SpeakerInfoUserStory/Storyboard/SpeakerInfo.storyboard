@@ -61,11 +61,22 @@
                     <connections>
                         <outlet property="speakerShortInfoView" destination="7dX-Eb-ltY" id="tCh-9W-pcl"/>
                         <outlet property="tableView" destination="rrv-wF-P8N" id="flm-ls-QVf"/>
+                        <segue destination="Apr-Lo-nrJ" kind="push" identifier="SpeakerModuleToLectureModuleSegue" id="sdi-4B-jMP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ita-kl-7HN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2719" y="258"/>
+        </scene>
+        <!--LectureViewController-->
+        <scene sceneID="xkx-ac-kRF">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Lecture" referencedIdentifier="LectureViewController" id="Apr-Lo-nrJ" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="CWM-OP-tGg"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b36-sV-cmg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3317.5" y="263"/>
         </scene>
     </scenes>
     <resources>

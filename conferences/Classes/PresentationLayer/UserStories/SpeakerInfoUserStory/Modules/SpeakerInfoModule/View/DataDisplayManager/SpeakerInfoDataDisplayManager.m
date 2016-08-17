@@ -23,6 +23,7 @@
 #import "SpeakerInfoTableViewCellObject.h"
 #import "SpeakerInfoCellObjectBuilder.h"
 #import "SpeakerInfoSocialContactsCellObject.h"
+#import "SpeakerInfoLectureCellObject.h"
 #import "EXTScope.h"
 
 @interface SpeakerInfoDataDisplayManager ()
@@ -86,6 +87,14 @@
     };
     [self.tableViewActions attachToClass:[SpeakerInfoSocialContactsCellObject class]
                                 tapBlock:socialContactActionBlock];
+    
+    NIActionBlock lectureActionBlock = ^BOOL(SpeakerInfoLectureCellObject *object, UIViewController *controller, NSIndexPath *indexPath) {
+        @strongify(self);
+        [self.delegate didTapLectureCellWithLecture:object.lecture];
+        return YES;
+    };
+    [self.tableViewActions attachToClass:[SpeakerInfoLectureCellObject class]
+                                tapBlock:lectureActionBlock];
 }
 
 @end

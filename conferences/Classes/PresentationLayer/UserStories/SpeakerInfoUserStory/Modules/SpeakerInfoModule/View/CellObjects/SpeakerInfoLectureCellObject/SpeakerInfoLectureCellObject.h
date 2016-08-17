@@ -25,6 +25,7 @@
 + (instancetype)objectWithLecture:(LecturePlainObject *)lecture
                        dateString:(NSString *)dateString;
 
+@property (nonatomic, strong, readonly) LecturePlainObject *lecture;
 @property (nonatomic, strong, readonly) NSURL *imageUrl;
 @property (nonatomic, strong, readonly) NSString *lectureTitle;
 @property (nonatomic, strong, readonly) NSString *lectureDateString;

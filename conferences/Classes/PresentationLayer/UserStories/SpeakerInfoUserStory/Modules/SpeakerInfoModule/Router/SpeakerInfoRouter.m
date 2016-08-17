@@ -18,7 +18,10 @@
 
 #import "SpeakerInfoRouter.h"
 
+#import "LectureModuleInput.h"
 #import "SafariFactory.h"
+
+static NSString *const kSpeakerModuleToLectureModuleSegue = @"SpeakerModuleToLectureModuleSegue";
 
 @implementation SpeakerInfoRouter
 
@@ -29,6 +32,13 @@
     [(id)self.transitionHandler presentViewController:safariViewController
                                              animated:YES
                                            completion:nil];
+}
+
+- (void)openLectureModuleWithLectureId:(NSString *)lectureid {
+    [[self.transitionHandler openModuleUsingSegue:kSpeakerModuleToLectureModuleSegue] thenChainUsingBlock:^id<RamblerViperModuleOutput>(id<LectureModuleInput> moduleInput) {
+        [moduleInput configureCurrentModuleWithLectureObjectId:lectureid];
+        return nil;
+    }];
 }
 
 @end

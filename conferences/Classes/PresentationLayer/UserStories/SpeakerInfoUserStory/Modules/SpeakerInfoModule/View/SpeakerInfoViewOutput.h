@@ -18,6 +18,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class LecturePlainObject;
+
 @protocol SpeakerInfoViewOutput <NSObject>
 
 /**
@@ -35,6 +37,15 @@
  @param socialUrl The social network URL
  */
 - (void)didTriggerSocialNetworkTapEventWithUrl:(NSURL *)socialUrl;
+
+/**
+ @author Egor Tolstoy
+ 
+ Method tells output that a lecture element was tapped
+ 
+ @param lecture Lecture model object
+ */
+- (void)didTriggerLectureTapEventWithLecture:(LecturePlainObject *)lecture;
 
 @end
 

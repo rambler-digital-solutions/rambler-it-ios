@@ -52,6 +52,10 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
     [self.output didTriggerSocialNetworkTapEventWithUrl:socialUrl];
 }
 
+- (void)didTapLectureCellWithLecture:(LecturePlainObject *)lecture {
+    [self.output didTriggerLectureTapEventWithLecture:lecture];
+}
+
 #pragma mark - Private methods
 
 - (void)setupHeaderViewWithSpeaker:(SpeakerPlainObject *)speaker {

@@ -29,5 +29,14 @@
  */
 - (void)openWebBrowserModuleWithUrl:(NSURL *)url;
 
+/**
+ @author Egor Tolstoy
+ 
+ method is used to open Lecture Module
+ 
+ @param lectureid Lecture identifier
+ */
+- (void)openLectureModuleWithLectureId:(NSString *)lectureid;
+
 @end
 

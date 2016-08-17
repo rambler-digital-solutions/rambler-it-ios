@@ -25,6 +25,7 @@
 
 @interface SpeakerInfoLectureCellObject ()
 
+@property (nonatomic, strong, readwrite) LecturePlainObject *lecture;
 @property (nonatomic, strong, readwrite) NSURL *imageUrl;
 @property (nonatomic, strong, readwrite) NSString *lectureTitle;
 @property (nonatomic, strong, readwrite) NSString *lectureDateString;
@@ -39,6 +40,7 @@
                      dateString:(NSString *)dateString {
     self = [super init];
     if (self) {
+        _lecture = lecture;
         _imageUrl = [NSURL URLWithString:lecture.event.metaEvent.imageUrlPath];
         _lectureTitle = lecture.name;
         _lectureDateString = dateString;

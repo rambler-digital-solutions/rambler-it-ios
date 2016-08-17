@@ -27,6 +27,7 @@
 #import "SpeakerInfoPresenterStateStorage.h"
 #import "SpeakerPlainObject.h"
 #import "SpeakerInfoRouterInput.h"
+#import "LecturePlainObject.h"
 
 @interface SpeakerInfoPresenterTests : XCTestCase
 
@@ -91,6 +92,19 @@
     
     // then
     OCMVerify([self.routerMock openWebBrowserModuleWithUrl:testUrl]);
+}
+
+- (void)testThatPresenterOpensLectureModuleOnLectureTapEvent {
+    // given
+    NSString *const kTestLectureId = @"1234";
+    LecturePlainObject *lecture = [LecturePlainObject new];
+    lecture.lectureId = kTestLectureId;
+    
+    // when
+    [self.presenter didTriggerLectureTapEventWithLecture:lecture];
+    
+    // then
+    OCMVerify([self.routerMock openLectureModuleWithLectureId:kTestLectureId]);
 }
 
 #pragma mark - SpeakerInfoModuleInput
