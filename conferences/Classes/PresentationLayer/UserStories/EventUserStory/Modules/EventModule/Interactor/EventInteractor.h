@@ -25,6 +25,7 @@
 @protocol EventService;
 @protocol MetaEventService;
 @protocol ROSPonsomizer;
+@protocol ShareUrlBuilder;
 @protocol EventStoreServiceProtocol;
 @class EventTypeDeterminator;
 
@@ -35,6 +36,7 @@
 @property (nonatomic, strong) EventTypeDeterminator *eventTypeDeterminator;
 @property (nonatomic, strong) id <EventStoreServiceProtocol> eventStoreService;
 @property (nonatomic, strong) id <ROSPonsomizer> ponsomizer;
+@property (nonatomic, strong) id <ShareUrlBuilder> shareUrlBuilder;
 @property (nonatomic, strong) id <MetaEventService> metaEventService;
 
 @end

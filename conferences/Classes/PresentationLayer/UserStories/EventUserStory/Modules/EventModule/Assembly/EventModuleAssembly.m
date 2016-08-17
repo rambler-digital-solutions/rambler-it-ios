@@ -29,6 +29,9 @@
 #import "PresentationLayerHelpersAssembly.h"
 #import "EventCellObjectBuilderFactory.h"
 #import "PonsomizerAssembly.h"
+#import "ShareUrlBuilderImplementation.h"
+
+static NSString *const kEventShareItemType = @"brand";
 
 @interface EventModuleAssembly ()
 
@@ -63,6 +66,8 @@
                                                       with:[self.presentationLayerHelpersAssembly eventTypeDeterminator]];
                                 [definition injectProperty:@selector(eventStoreService)
                                                       with:[self.serviceComponents eventStoreService]];
+                                [definition injectProperty:@selector(shareUrlBuilder)
+                                                      with:[self eventShareUrlBuilder]];
              }];
 }
 
@@ -98,6 +103,16 @@
 
 - (EventPresenterStateStorage *)presenterStateStorage {
     return [TyphoonDefinition withClass:[EventPresenterStateStorage class]];
+}
+
+- (ShareUrlBuilderImplementation *)eventShareUrlBuilder {
+    return [TyphoonDefinition withClass:[ShareUrlBuilderImplementation class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition useInitializer:@selector(initWithItemType:)
+                                              parameters:^(TyphoonMethod *initializer) {
+                                                  [initializer injectParameterWith:kEventShareItemType];
+                                              }];
+                          }];
 }
 
 @end
