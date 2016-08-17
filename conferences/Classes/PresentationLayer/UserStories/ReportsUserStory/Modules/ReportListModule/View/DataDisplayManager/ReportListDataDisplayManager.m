@@ -58,14 +58,7 @@
     return [self.tableViewActions forwardingTo:self];
 }
 
-#pragma mark - UITableViewDelegate methods
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [NICellFactory tableView:tableView heightForRowAtIndexPath:indexPath model:self.tableViewModel];
-}
-
 #pragma mark - Private methods
-
 
 - (void)setupTableViewActions {
     self.tableViewActions = [[NITableViewActions alloc] initWithTarget:self];

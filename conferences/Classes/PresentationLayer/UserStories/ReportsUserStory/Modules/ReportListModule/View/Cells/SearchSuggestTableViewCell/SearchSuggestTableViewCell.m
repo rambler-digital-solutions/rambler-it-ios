@@ -29,7 +29,8 @@ static CGFloat const kSearchSuggestTableViewCellHeight = 44.0f;
 #pragma mark - <NICell>
 
 - (BOOL)shouldUpdateCellWithObject:(SearchSuggestTableViewCellObject *)object {
-    self.suggestButton.titleLabel.text = object.suggestText;
+    [self.suggestButton setTitle:object.suggestText
+                        forState:UIControlStateNormal];
     return YES;
 }
 
