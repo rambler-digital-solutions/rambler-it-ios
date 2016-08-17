@@ -27,6 +27,15 @@
  */
 @protocol ResponseConverter <NSObject>
 
-- (NSDictionary *)convertFromResponse:(NSDictionary *)dict;
+/**
+ @author Konstantin Zinovyev
+ 
+ The method convert passed NSDictionary to a specific representation
+ 
+ @param dictionary Resource dictionary
+ 
+ @return specific dictionary
+ */
+- (NSDictionary *)convertFromResponse:(NSDictionary *)dictionary;
 
 @end

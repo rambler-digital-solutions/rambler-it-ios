@@ -19,15 +19,15 @@
 // THE SOFTWARE.
 
 #import "DeletedResponseObjectFormatter.h"
-#import "CustomServerResponse.h"
+#import "ModifiedDataListServerResponse.h"
 
 static NSString *const kServerResponseDeletedKey = @"deleted";
 static NSString *const kServerResponseUpdatedKey = @"updated";
 
 @implementation DeletedResponseObjectFormatter
 
-- (CustomServerResponse *)formatServerResponse:(NSDictionary *)serverResponse {
-    CustomServerResponse *response = [CustomServerResponse new];
+- (ModifiedDataListServerResponse *)formatServerResponse:(NSDictionary *)serverResponse {
+    ModifiedDataListServerResponse *response = [ModifiedDataListServerResponse new];
     response.deletedObjects = serverResponse[kServerResponseDeletedKey];
     response.updatedObjects = serverResponse[kServerResponseUpdatedKey];
     return response;

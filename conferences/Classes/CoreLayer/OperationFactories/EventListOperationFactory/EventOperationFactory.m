@@ -18,7 +18,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "EventListOperationFactory.h"
+#import "EventOperationFactory.h"
 
 #import "NetworkCompoundOperationBuilder.h"
 #import "CompoundOperationBuilderConfig.h"
@@ -29,14 +29,14 @@
 #import "QueryTransformer.h"
 #import "RequestDataModel.h"
 
-@interface EventListOperationFactory ()
+@interface EventOperationFactory ()
 
 @property (nonatomic, strong) NetworkCompoundOperationBuilder *networkOperationBuilder;
 @property (nonatomic, strong) id<QueryTransformer> queryTransformer;
 
 @end
 
-@implementation EventListOperationFactory
+@implementation EventOperationFactory
 
 #pragma mark - Initialization
 

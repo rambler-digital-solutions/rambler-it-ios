@@ -32,6 +32,6 @@
 @property (strong, nonatomic) NSData *bodyData;
 
 - (instancetype)initWithHttpHeaderFields:(NSDictionary *)httpHeaderFields
-                 queryParameters:(NSDictionary *)queryParameters
-                        bodyData:(NSData *)bodyData;
+                         queryParameters:(NSDictionary *)queryParameters
+                                bodyData:(NSData *)bodyData;
 @end

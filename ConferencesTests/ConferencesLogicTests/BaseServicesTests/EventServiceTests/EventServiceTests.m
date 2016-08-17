@@ -25,7 +25,7 @@
 #import "TestConstants.h"
 
 #import "EventServiceImplementation.h"
-#import "EventListOperationFactory.h"
+#import "EventOperationFactory.h"
 #import "OperationScheduler.h"
 #import "CompoundOperationBase.h"
 #import "EventModelObject.h"
@@ -33,7 +33,7 @@
 @interface EventServiceTests : XCTestCase
 
 @property (strong, nonatomic) EventServiceImplementation *eventService;
-@property (nonatomic, strong) EventListOperationFactory *mockEventOperationFactory;
+@property (nonatomic, strong) EventOperationFactory *mockEventOperationFactory;
 @property (nonatomic, strong) id <OperationScheduler> mockOperationScheduler;
 @end
 
@@ -46,7 +46,7 @@
     [MagicalRecord setupCoreDataStackWithInMemoryStore];
     
     self.eventService = [EventServiceImplementation new];
-    self.mockEventOperationFactory = OCMClassMock([EventListOperationFactory class]);
+    self.mockEventOperationFactory = OCMClassMock([EventOperationFactory class]);
     self.mockOperationScheduler = OCMProtocolMock(@protocol(OperationScheduler));
     self.eventService.operationScheduler = self.mockOperationScheduler;
     self.eventService.eventOperationFactory = self.mockEventOperationFactory;

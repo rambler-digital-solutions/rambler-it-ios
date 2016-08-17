@@ -24,7 +24,7 @@
 #import "OperationChainer.h"
 #import "EventListQueryTransformer.h"
 
-#import "EventListOperationFactory.h"
+#import "EventOperationFactory.h"
 
 static NSString *const kLastModifiedDateFormat = @"EE, d MMM yyyy HH:mm:ss ZZZ";
 
@@ -32,8 +32,8 @@ static NSString *const kLastModifiedDateFormat = @"EE, d MMM yyyy HH:mm:ss ZZZ";
 
 #pragma mark - Operation factories
 
-- (EventListOperationFactory *)eventListOperationFactory {
-    return [TyphoonDefinition withClass:[EventListOperationFactory class]
+- (EventOperationFactory *)eventListOperationFactory {
+    return [TyphoonDefinition withClass:[EventOperationFactory class]
                           configuration:^(TyphoonDefinition *definition) {
                               [definition useInitializer:@selector(initWithBuilder:queryTransformer:)
                                               parameters:^(TyphoonMethod *initializer) {

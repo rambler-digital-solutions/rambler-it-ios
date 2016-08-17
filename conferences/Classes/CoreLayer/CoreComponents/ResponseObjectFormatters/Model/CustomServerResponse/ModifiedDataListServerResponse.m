@@ -18,11 +18,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import "ModifiedDataListServerResponse.h"
 
-@interface CustomServerResponse : NSObject
-
-@property (nonatomic, strong) NSArray *deletedObjects;
-@property (nonatomic, strong) NSArray *updatedObjects;
+@implementation ModifiedDataListServerResponse
 
 @end

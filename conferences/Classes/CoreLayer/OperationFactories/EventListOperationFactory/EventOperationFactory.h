@@ -18,8 +18,43 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "CustomServerResponse.h"
+#import <Foundation/Foundation.h>
 
-@implementation CustomServerResponse
+@class NetworkCompoundOperationBuilder;
+@class CompoundOperationBase;
+@class EventListQuery;
+@protocol QueryTransformer;
+
+/**
+ @author Egor Tolstoy
+ 
+ The operation factory for building Event List operations
+ */
+@interface EventOperationFactory : NSObject
+
+/**
+ @author Egor Tolstoy
+ 
+ The main initializer of the current operation factory
+ 
+ @param builder          Compound operation builder
+ @param queryTransformer Incoming query objects transformer to URL parameters
+ 
+ @return EventListOperationFactory
+ */
+- (instancetype)initWithBuilder:(NetworkCompoundOperationBuilder *)builder
+               queryTransformer:(id<QueryTransformer>)queryTransformer;
+
+/**
+ @author Egor Tolstoy
+ 
+ The method returns a compound operation for obtaining event list
+ 
+ @param query The query object
+ 
+ @return CompoundOperationBase
+ */
+- (CompoundOperationBase *)getEventsOperationWithQuery:(EventListQuery *)query
+                                         modelObjectId:(NSString *)modelObjectId;
 
 @end

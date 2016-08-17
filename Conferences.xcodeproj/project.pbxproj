@@ -300,7 +300,7 @@
 		66CCA7431D61F394004153EA /* ResponseConverterAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CCA7421D61F394004153EA /* ResponseConverterAssembly.m */; };
 		66CCA7481D61FC72004153EA /* DeletedObjectsMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CCA7471D61FC72004153EA /* DeletedObjectsMapper.m */; };
 		66CCA74D1D61FDDE004153EA /* DeletedResponseObjectFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CCA74C1D61FDDE004153EA /* DeletedResponseObjectFormatter.m */; };
-		66CCA7551D62095E004153EA /* CustomServerResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CCA7541D62095E004153EA /* CustomServerResponse.m */; };
+		66CCA7551D62095E004153EA /* ModifiedDataListServerResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CCA7541D62095E004153EA /* ModifiedDataListServerResponse.m */; };
 		66E1E9A71D62E91800E22B1E /* _LastModifiedPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E1E9A61D62E91800E22B1E /* _LastModifiedPlainObject.m */; };
 		66E1E9AA1D62E91E00E22B1E /* _LastModifiedModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E1E9A91D62E91E00E22B1E /* _LastModifiedModelObject.m */; };
 		66E1E9AD1D62E92500E22B1E /* LastModifiedModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E1E9AC1D62E92500E22B1E /* LastModifiedModelObject.m */; };
@@ -386,7 +386,7 @@
 		9FF37E181D32397900471B4E /* RamblerLocationPresenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF37E171D32397900471B4E /* RamblerLocationPresenterTests.m */; };
 		9FF37E1B1D323B0200471B4E /* RamblerLocationRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF37E1A1D323B0200471B4E /* RamblerLocationRouterTests.m */; };
 		9FF74FFA1D26C448000D208D /* EventListQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF74FF91D26C448000D208D /* EventListQuery.m */; };
-		9FF750031D26C74B000D208D /* EventListOperationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF750021D26C74B000D208D /* EventListOperationFactory.m */; };
+		9FF750031D26C74B000D208D /* EventOperationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF750021D26C74B000D208D /* EventOperationFactory.m */; };
 		9FF750071D26C8EB000D208D /* EventListOperationFactoryTests.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9FF750051D26C8EB000D208D /* EventListOperationFactoryTests.bundle */; };
 		9FF750081D26C8EB000D208D /* EventListOperationFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF750061D26C8EB000D208D /* EventListOperationFactoryTests.m */; };
 		9FF7500D1D27DB5F000D208D /* ManagedObjectMappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF7500C1D27DB5F000D208D /* ManagedObjectMappingProvider.m */; };
@@ -981,8 +981,8 @@
 		66CCA7471D61FC72004153EA /* DeletedObjectsMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeletedObjectsMapper.m; path = DeletedObjectsMapper/DeletedObjectsMapper.m; sourceTree = "<group>"; };
 		66CCA74B1D61FDDE004153EA /* DeletedResponseObjectFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeletedResponseObjectFormatter.h; path = DeletedResponseObjectFormatter/DeletedResponseObjectFormatter.h; sourceTree = "<group>"; };
 		66CCA74C1D61FDDE004153EA /* DeletedResponseObjectFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeletedResponseObjectFormatter.m; path = DeletedResponseObjectFormatter/DeletedResponseObjectFormatter.m; sourceTree = "<group>"; };
-		66CCA7531D62095E004153EA /* CustomServerResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomServerResponse.h; path = Model/CustomServerResponse/CustomServerResponse.h; sourceTree = "<group>"; };
-		66CCA7541D62095E004153EA /* CustomServerResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomServerResponse.m; path = Model/CustomServerResponse/CustomServerResponse.m; sourceTree = "<group>"; };
+		66CCA7531D62095E004153EA /* ModifiedDataListServerResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModifiedDataListServerResponse.h; path = Model/CustomServerResponse/ModifiedDataListServerResponse.h; sourceTree = "<group>"; };
+		66CCA7541D62095E004153EA /* ModifiedDataListServerResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModifiedDataListServerResponse.m; path = Model/CustomServerResponse/ModifiedDataListServerResponse.m; sourceTree = "<group>"; };
 		66E1E9A51D62E91800E22B1E /* _LastModifiedPlainObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _LastModifiedPlainObject.h; sourceTree = "<group>"; };
 		66E1E9A61D62E91800E22B1E /* _LastModifiedPlainObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _LastModifiedPlainObject.m; sourceTree = "<group>"; };
 		66E1E9A81D62E91E00E22B1E /* _LastModifiedModelObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _LastModifiedModelObject.h; sourceTree = "<group>"; };
@@ -1161,8 +1161,8 @@
 		9FF37E1A1D323B0200471B4E /* RamblerLocationRouterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RamblerLocationRouterTests.m; path = RamblerLocationModuleTests/RamblerLocationRouterTests.m; sourceTree = "<group>"; };
 		9FF74FF81D26C448000D208D /* EventListQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventListQuery.h; path = ObjectQueries/EventListQUery/EventListQuery.h; sourceTree = "<group>"; };
 		9FF74FF91D26C448000D208D /* EventListQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListQuery.m; path = ObjectQueries/EventListQUery/EventListQuery.m; sourceTree = "<group>"; };
-		9FF750011D26C74B000D208D /* EventListOperationFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventListOperationFactory.h; path = OperationFactories/EventListOperationFactory/EventListOperationFactory.h; sourceTree = "<group>"; };
-		9FF750021D26C74B000D208D /* EventListOperationFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListOperationFactory.m; path = OperationFactories/EventListOperationFactory/EventListOperationFactory.m; sourceTree = "<group>"; };
+		9FF750011D26C74B000D208D /* EventOperationFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventOperationFactory.h; path = OperationFactories/EventListOperationFactory/EventOperationFactory.h; sourceTree = "<group>"; };
+		9FF750021D26C74B000D208D /* EventOperationFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventOperationFactory.m; path = OperationFactories/EventListOperationFactory/EventOperationFactory.m; sourceTree = "<group>"; };
 		9FF750051D26C8EB000D208D /* EventListOperationFactoryTests.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = EventListOperationFactoryTests.bundle; sourceTree = "<group>"; };
 		9FF750061D26C8EB000D208D /* EventListOperationFactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListOperationFactoryTests.m; sourceTree = "<group>"; };
 		9FF7500B1D27DB5F000D208D /* ManagedObjectMappingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagedObjectMappingProvider.h; sourceTree = "<group>"; };
@@ -3974,8 +3974,8 @@
 		66CCA7521D62093F004153EA /* CustomServerResponse */ = {
 			isa = PBXGroup;
 			children = (
-				66CCA7531D62095E004153EA /* CustomServerResponse.h */,
-				66CCA7541D62095E004153EA /* CustomServerResponse.m */,
+				66CCA7531D62095E004153EA /* ModifiedDataListServerResponse.h */,
+				66CCA7541D62095E004153EA /* ModifiedDataListServerResponse.m */,
 			);
 			name = CustomServerResponse;
 			sourceTree = "<group>";
@@ -5344,8 +5344,8 @@
 		9FF750001D26C734000D208D /* EventListOperationFactory */ = {
 			isa = PBXGroup;
 			children = (
-				9FF750011D26C74B000D208D /* EventListOperationFactory.h */,
-				9FF750021D26C74B000D208D /* EventListOperationFactory.m */,
+				9FF750011D26C74B000D208D /* EventOperationFactory.h */,
+				9FF750021D26C74B000D208D /* EventOperationFactory.m */,
 			);
 			name = EventListOperationFactory;
 			sourceTree = "<group>";
@@ -5738,7 +5738,7 @@
 				9F8E5F941BC269EA00DC10DB /* OperationFactoriesAssembly.m in Sources */,
 				63F613971CB00A220002AEF0 /* SpeakerInfoPresenterStateStorage.m in Sources */,
 				2B2064781D3F9CE900246C8D /* _LectureMaterialModelObject.m in Sources */,
-				66CCA7551D62095E004153EA /* CustomServerResponse.m in Sources */,
+				66CCA7551D62095E004153EA /* ModifiedDataListServerResponse.m in Sources */,
 				2B429A7C1D50987E004C005F /* MetaEventServiceImpementation.m in Sources */,
 				6670500B1D4613F800DD9D6E /* ReportsSearchAssembly.m in Sources */,
 				66CCA7341D61DE11004153EA /* ResponseConverterOperation.m in Sources */,
@@ -5812,7 +5812,7 @@
 				63F6136B1CB00A220002AEF0 /* PreviousLectureTableViewCellObject.m in Sources */,
 				63F613591CB00A220002AEF0 /* EventModuleAssembly.m in Sources */,
 				9F0A85371BC18A3C006F79FB /* NetworkCompoundOperationBuilder.m in Sources */,
-				9FF750031D26C74B000D208D /* EventListOperationFactory.m in Sources */,
+				9FF750031D26C74B000D208D /* EventOperationFactory.m in Sources */,
 				667050371D46159800DD9D6E /* ReportSpeakerTableViewCell.m in Sources */,
 				9F18309F1BC024A9000E21A5 /* RequestDataModel.m in Sources */,
 				631FFE5F1BEF991000749DB8 /* ReportListDataDisplayManager.m in Sources */,

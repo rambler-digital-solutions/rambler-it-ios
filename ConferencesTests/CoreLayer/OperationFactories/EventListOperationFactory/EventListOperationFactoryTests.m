@@ -20,12 +20,12 @@
 
 #import "CompoundOperationFactoryTestsBase.h"
 
-#import "EventListOperationFactory.h"
+#import "EventOperationFactory.h"
 #import "EventModelObject.h"
 
 @interface EventListOperationFactoryTests : CompoundOperationFactoryTestsBase
 
-@property (strong, nonatomic) InjectedClass(EventListOperationFactory) factory;
+@property (strong, nonatomic) InjectedClass(EventOperationFactory) factory;
 
 @end
 

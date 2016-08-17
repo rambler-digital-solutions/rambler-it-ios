@@ -19,7 +19,6 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-#import "ResponseObjectFormatter.h"
 
 @class ManagedObjectMappingProvider;
 @protocol ResponseObjectFormatter;

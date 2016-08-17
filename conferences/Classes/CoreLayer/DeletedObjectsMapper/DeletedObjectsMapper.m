@@ -19,12 +19,13 @@
 // THE SOFTWARE.
 
 #import "DeletedObjectsMapper.h"
-#import "CustomServerResponse.h"
+#import "ModifiedDataListServerResponse.h"
 #import "NetworkingConstantsHeader.h"
 
 #import <EasyMapping/EasyMapping.h>
 #import <MagicalRecord/MagicalRecord.h>
 #import "ManagedObjectMappingProvider.h"
+#import "ResponseObjectFormatter.h"
 
 @implementation DeletedObjectsMapper
 
@@ -43,7 +44,7 @@
 - (id)mapServerResponse:(id)response
      withMappingContext:(NSDictionary *)context
                   error:(NSError *__autoreleasing *)error {
-    CustomServerResponse *customResponse;
+    ModifiedDataListServerResponse *customResponse;
     customResponse = [self.deletedResponseFormatter formatServerResponse:response];
     
     NSManagedObjectContext *rootSavingContext = [NSManagedObjectContext MR_rootSavingContext];
@@ -65,12 +66,16 @@
 -(void)deleteObjects:(NSArray *)objects
          withMapping:(EKManagedObjectMapping *)mapping
        objectContext:(NSManagedObjectContext*)context {
-    for (NSDictionary *object in objects) {
-        id managedObject = [EKManagedObjectMapper objectFromExternalRepresentation:object
-                                                                       withMapping:mapping
-                                                            inManagedObjectContext:context];
-        [managedObject MR_deleteEntity];
-    }
+
+    [context performBlockAndWait:^{
+        for (NSDictionary *object in objects) {
+            id managedObject = [EKManagedObjectMapper objectFromExternalRepresentation:object
+                                                                           withMapping:mapping
+                                                                inManagedObjectContext:context];
+
+            [managedObject MR_deleteEntityInContext:context];
+        }
+    }];
 }
 
 -(NSArray *)updateObjects:(NSArray *)objects

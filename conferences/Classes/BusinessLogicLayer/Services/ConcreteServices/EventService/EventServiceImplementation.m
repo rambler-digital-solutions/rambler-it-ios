@@ -22,7 +22,7 @@
 #import "NSManagedObjectID+LJStringConversion.h"
 
 #import "EventServiceImplementation.h"
-#import "EventListOperationFactory.h"
+#import "EventOperationFactory.h"
 #import "CompoundOperationBase.h"
 #import "LastModifiedModelObject.h"
 #import "OperationScheduler.h"
