@@ -23,6 +23,9 @@
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hjQ-1l-wkY">
                         <rect key="frame" x="24" y="7" width="290" height="30"/>
                         <state key="normal" title="Suggest"/>
+                        <connections>
+                            <action selector="didTapSuggestButton:" destination="0qz-F9-bzr" eventType="touchUpInside" id="Fdm-6c-oEk"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>

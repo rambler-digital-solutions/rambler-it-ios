@@ -18,31 +18,13 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "SearchSuggestTableViewCell.h"
+#import <UIKit/UIKit.h>
 
-#import "SearchSuggestTableViewCellObject.h"
-
-static CGFloat const kSearchSuggestTableViewCellHeight = 44.0f;
-
-@implementation SearchSuggestTableViewCell
-
-#pragma mark - <NICell>
-
-- (BOOL)shouldUpdateCellWithObject:(SearchSuggestTableViewCellObject *)object {
-    self.suggestButton.titleLabel.text = object.suggestText;
-    return YES;
-}
-
-+ (CGFloat)heightForObject:(id)object
-               atIndexPath:(NSIndexPath *)indexPath
-                 tableView:(UITableView *)tableView {
-    return kSearchSuggestTableViewCellHeight;
-}
-
-#pragma mark - IBActions
-
-- (IBAction)didTapSuggestButton:(id)sender {
-    
-}
+/**
+ @author Egor Tolstoy
+ 
+ Custom UITableView subclass for SearchModule
+ */
+@interface SuggestTableView : UITableView
 
 @end

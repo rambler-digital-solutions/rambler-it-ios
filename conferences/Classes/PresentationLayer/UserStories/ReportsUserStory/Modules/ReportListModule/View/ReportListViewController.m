@@ -25,8 +25,6 @@
 #import <RamblerSegues/RamblerSegues.h>
 #import "UINavigationBar+States.h"
 
-static const NSInteger kDefaultEstimatedHeight = 116;
-
 @interface ReportListViewController() <ReportListDataDisplayManagerDelegate, RamblerEmbedSegueViewContainer>
 
 @end
@@ -38,7 +36,6 @@ static const NSInteger kDefaultEstimatedHeight = 116;
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	[self.output setupView];
-    self.reportsTableView.estimatedRowHeight = kDefaultEstimatedHeight;
 }
 
 - (void)viewWillAppear:(BOOL)animated {

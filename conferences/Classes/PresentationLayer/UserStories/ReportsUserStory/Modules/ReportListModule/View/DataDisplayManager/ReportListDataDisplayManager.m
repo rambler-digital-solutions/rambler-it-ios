@@ -35,7 +35,6 @@
 
 @property (strong, nonatomic) NITableViewModel *tableViewModel;
 @property (strong, nonatomic) NITableViewActions *tableViewActions;
-@property (strong, nonatomic) NSArray *events;
 
 @end
 

@@ -18,31 +18,23 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "SearchSuggestTableViewCell.h"
+#import "SuggestTableView.h"
 
-#import "SearchSuggestTableViewCellObject.h"
+@implementation SuggestTableView
 
-static CGFloat const kSearchSuggestTableViewCellHeight = 44.0f;
-
-@implementation SearchSuggestTableViewCell
-
-#pragma mark - <NICell>
-
-- (BOOL)shouldUpdateCellWithObject:(SearchSuggestTableViewCellObject *)object {
-    self.suggestButton.titleLabel.text = object.suggestText;
-    return YES;
+- (CGSize)intrinsicContentSize {
+    [self layoutIfNeeded];
+    return CGSizeMake(UIViewNoIntrinsicMetric, self.contentSize.height);
 }
 
-+ (CGFloat)heightForObject:(id)object
-               atIndexPath:(NSIndexPath *)indexPath
-                 tableView:(UITableView *)tableView {
-    return kSearchSuggestTableViewCellHeight;
+- (void)endUpdates {
+    [super endUpdates];
+    [self invalidateIntrinsicContentSize];
 }
 
-#pragma mark - IBActions
-
-- (IBAction)didTapSuggestButton:(id)sender {
-    
+- (void)reloadData {
+    [super reloadData];
+    [self invalidateIntrinsicContentSize];
 }
 
 @end
