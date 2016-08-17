@@ -59,6 +59,7 @@ static const NSInteger kDefaultEstimatedHeight = 116;
 }
 
 - (void)setupViewInitialState {
+    [self.navigationController.navigationBar rcf_becomeDefault];
     self.reportsTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
