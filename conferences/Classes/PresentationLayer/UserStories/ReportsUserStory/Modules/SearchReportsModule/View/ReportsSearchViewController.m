@@ -37,11 +37,6 @@ static NSInteger kDefaultEstimatedHeight = 116;
     self.reportsListSearchTableView.estimatedRowHeight = kDefaultEstimatedHeight;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    self.reportsListSearchTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-}
-
 #pragma mark - ReportsSearchViewInput
 
 - (void)showClearPlaceholder {
