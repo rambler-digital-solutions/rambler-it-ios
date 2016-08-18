@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G26a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TD8-5D-0HM">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
@@ -16,17 +16,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="рамблер.конференции" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4DI-1f-THR">
-                                <rect key="frame" x="201" y="289" width="198" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black-ampersand" translatesAutoresizingMaskIntoConstraints="NO" id="YSY-uC-gTr">
+                                <rect key="frame" x="172" y="172" width="256" height="256"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="256" id="5d3-0c-Ia1"/>
+                                    <constraint firstAttribute="width" constant="256" id="v9l-WK-kYq"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="4DI-1f-THR" firstAttribute="centerX" secondItem="w0b-cA-uta" secondAttribute="centerX" id="QYa-Y5-hte"/>
-                            <constraint firstItem="4DI-1f-THR" firstAttribute="centerY" secondItem="w0b-cA-uta" secondAttribute="centerY" id="ejM-bc-ChF"/>
+                            <constraint firstItem="YSY-uC-gTr" firstAttribute="centerX" secondItem="w0b-cA-uta" secondAttribute="centerX" id="Vdk-IC-N2o"/>
+                            <constraint firstItem="YSY-uC-gTr" firstAttribute="centerY" secondItem="w0b-cA-uta" secondAttribute="centerY" id="sVF-7B-EF0"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -35,4 +36,7 @@
             <point key="canvasLocation" x="347" y="449"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="black-ampersand" width="256" height="256"/>
+    </resources>
 </document>
