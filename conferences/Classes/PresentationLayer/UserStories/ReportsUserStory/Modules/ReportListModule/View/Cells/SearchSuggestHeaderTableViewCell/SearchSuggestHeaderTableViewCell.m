@@ -18,40 +18,24 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "SearchSuggestTableViewCellObject.h"
+#import "SearchSuggestHeaderTableViewCell.h"
 
-#import "SearchSuggestTableViewCell.h"
+#import "SearchSuggestHeaderTableViewCellObject.h"
 
-@interface SearchSuggestTableViewCellObject ()
+static CGFloat const kSearchSuggestHeaderTableViewCellHeight = 64.0f;
 
-@property (nonatomic, strong, readwrite) NSString *suggestText;
+@implementation SearchSuggestHeaderTableViewCell
 
-@end
+#pragma mark - <NICell>
 
-@implementation SearchSuggestTableViewCellObject
-
-#pragma mark - Initialization
-
-- (instancetype)initWithSuggestText:(NSString *)suggestText {
-    self = [super init];
-    if (self) {
-        _suggestText = suggestText;
-    }
-    return self;
+- (BOOL)shouldUpdateCellWithObject:(SearchSuggestHeaderTableViewCellObject *)object {
+    return YES;
 }
 
-+ (instancetype)objectWithSuggestText:(NSString *)suggestText {
-    return [[self alloc] initWithSuggestText:suggestText];
-}
-
-#pragma mark - <NICellObject>
-
-- (Class)cellClass {
-    return [SearchSuggestTableViewCell class];
-}
-
-- (UINib *)cellNib {
-    return [UINib nibWithNibName:NSStringFromClass([SearchSuggestTableViewCell class]) bundle:[NSBundle mainBundle]];
++ (CGFloat)heightForObject:(id)object
+               atIndexPath:(NSIndexPath *)indexPath
+                 tableView:(UITableView *)tableView {
+    return kSearchSuggestHeaderTableViewCellHeight;
 }
 
 @end

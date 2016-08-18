@@ -18,40 +18,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "SearchSuggestTableViewCellObject.h"
+#import <Nimbus/NimbusModels.h>
 
-#import "SearchSuggestTableViewCell.h"
-
-@interface SearchSuggestTableViewCellObject ()
-
-@property (nonatomic, strong, readwrite) NSString *suggestText;
-
-@end
-
-@implementation SearchSuggestTableViewCellObject
-
-#pragma mark - Initialization
-
-- (instancetype)initWithSuggestText:(NSString *)suggestText {
-    self = [super init];
-    if (self) {
-        _suggestText = suggestText;
-    }
-    return self;
-}
-
-+ (instancetype)objectWithSuggestText:(NSString *)suggestText {
-    return [[self alloc] initWithSuggestText:suggestText];
-}
-
-#pragma mark - <NICellObject>
-
-- (Class)cellClass {
-    return [SearchSuggestTableViewCell class];
-}
-
-- (UINib *)cellNib {
-    return [UINib nibWithNibName:NSStringFromClass([SearchSuggestTableViewCell class]) bundle:[NSBundle mainBundle]];
-}
+@interface SearchSuggestHeaderTableViewCellObject : NSObject <NICellObject>
 
 @end

@@ -21,11 +21,15 @@
 #import "ReportListCellObjectFactory.h"
 
 #import "SearchSuggestTableViewCellObject.h"
+#import "SearchSuggestHeaderTableViewCellObject.h"
 
 @implementation ReportListCellObjectFactory
 
 - (NSArray *)generateCellObjectsWithSuggests:(NSArray<NSString *> *)suggests {
     NSMutableArray *cellObjects = [NSMutableArray new];
+    
+    SearchSuggestHeaderTableViewCellObject *header = [SearchSuggestHeaderTableViewCellObject new];
+    [cellObjects addObject:header];
     
     for (NSString *suggest in suggests) {
         SearchSuggestTableViewCellObject *object = [SearchSuggestTableViewCellObject objectWithSuggestText:suggest];

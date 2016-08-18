@@ -13,8 +13,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="338" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yWw-Ne-beP" userLabel="SpeakerView">
-                        <rect key="frame" x="0.0" y="8" width="338" height="40"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yWw-Ne-beP" userLabel="SpeakerView">
+                        <rect key="frame" x="0.0" y="2" width="338" height="40"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="X1z-Ug-RcT"/>

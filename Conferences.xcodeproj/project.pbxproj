@@ -508,6 +508,9 @@
 		9FE139081D64D99200D7BF44 /* SearchSuggestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FE139071D64D99200D7BF44 /* SearchSuggestTableViewCell.xib */; };
 		9FE1390C1D64DB5500D7BF44 /* ReportListCellObjectFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1390B1D64DB5500D7BF44 /* ReportListCellObjectFactory.m */; };
 		9FE139101D64EF7600D7BF44 /* SuggestTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1390F1D64EF7600D7BF44 /* SuggestTableView.m */; };
+		9FE139181D65ABBC00D7BF44 /* SearchSuggestHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE139171D65ABBC00D7BF44 /* SearchSuggestHeaderTableViewCell.m */; };
+		9FE1391A1D65ABC900D7BF44 /* SearchSuggestHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FE139191D65ABC900D7BF44 /* SearchSuggestHeaderTableViewCell.xib */; };
+		9FE1391E1D65ABDB00D7BF44 /* SearchSuggestHeaderTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1391D1D65ABDB00D7BF44 /* SearchSuggestHeaderTableViewCellObject.m */; };
 		9FF1251E1D51DF460098625F /* EventObjectIndexer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF1251D1D51DF460098625F /* EventObjectIndexer.m */; };
 		9FF37E111D3235BB00471B4E /* AppleMapsLinkBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF37E101D3235BB00471B4E /* AppleMapsLinkBuilderTests.m */; };
 		9FF37E151D32373500471B4E /* RamblerLocationInteractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF37E141D32373500471B4E /* RamblerLocationInteractorTests.m */; };
@@ -1530,6 +1533,11 @@
 		9FE1390E1D64EF7600D7BF44 /* SuggestTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SuggestTableView.h; path = Views/SuggestTableView/SuggestTableView.h; sourceTree = "<group>"; };
 		9FE1390F1D64EF7600D7BF44 /* SuggestTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SuggestTableView.m; path = Views/SuggestTableView/SuggestTableView.m; sourceTree = "<group>"; };
 		9FE139141D64F4E700D7BF44 /* SearchSuggestTableViewCellActionProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchSuggestTableViewCellActionProtocol.h; path = SearchSuggestTableViewCell/SearchSuggestTableViewCellActionProtocol.h; sourceTree = "<group>"; };
+		9FE139161D65ABBC00D7BF44 /* SearchSuggestHeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchSuggestHeaderTableViewCell.h; path = SearchSuggestHeaderTableViewCell/SearchSuggestHeaderTableViewCell.h; sourceTree = "<group>"; };
+		9FE139171D65ABBC00D7BF44 /* SearchSuggestHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchSuggestHeaderTableViewCell.m; path = SearchSuggestHeaderTableViewCell/SearchSuggestHeaderTableViewCell.m; sourceTree = "<group>"; };
+		9FE139191D65ABC900D7BF44 /* SearchSuggestHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchSuggestHeaderTableViewCell.xib; path = SearchSuggestHeaderTableViewCell/SearchSuggestHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		9FE1391C1D65ABDB00D7BF44 /* SearchSuggestHeaderTableViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchSuggestHeaderTableViewCellObject.h; path = SearchSuggestHeaderTableViewCellObject/SearchSuggestHeaderTableViewCellObject.h; sourceTree = "<group>"; };
+		9FE1391D1D65ABDB00D7BF44 /* SearchSuggestHeaderTableViewCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchSuggestHeaderTableViewCellObject.m; path = SearchSuggestHeaderTableViewCellObject/SearchSuggestHeaderTableViewCellObject.m; sourceTree = "<group>"; };
 		9FF1251C1D51DF460098625F /* EventObjectIndexer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventObjectIndexer.h; path = SpotlightIndexer/ObjectIndexers/ConcreteClasses/EventObjectIndexer/EventObjectIndexer.h; sourceTree = "<group>"; };
 		9FF1251D1D51DF460098625F /* EventObjectIndexer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventObjectIndexer.m; path = SpotlightIndexer/ObjectIndexers/ConcreteClasses/EventObjectIndexer/EventObjectIndexer.m; sourceTree = "<group>"; };
 		9FF37E101D3235BB00471B4E /* AppleMapsLinkBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppleMapsLinkBuilderTests.m; path = MapLinkBuildersTests/AppleMapsLinkBuilderTests.m; sourceTree = "<group>"; };
@@ -2245,6 +2253,7 @@
 		631FFE5A1BEF98E600749DB8 /* CellObjects */ = {
 			isa = PBXGroup;
 			children = (
+				9FE1391B1D65ABCD00D7BF44 /* SearchSuggestHeaderTableViewCellObject */,
 				9FE139031D64D86900D7BF44 /* SearchSuggestTableViewCellObject */,
 				667050331D46157800DD9D6E /* GrayTableViewSectionHeaderAndFooterCellObject */,
 				667050321D46157100DD9D6E /* ReportEventTableViewCellObject */,
@@ -2257,6 +2266,7 @@
 		631FFE5B1BEF98E600749DB8 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				9FE139151D65ABAA00D7BF44 /* SearchSuggestHeaderTableViewCell */,
 				9FE138FF1D64D83900D7BF44 /* SearchSuggestTableViewCell */,
 				6670502C1D4614D400DD9D6E /* GrayTableViewSectionHeaderAndFooterCell */,
 				6670502B1D4614D100DD9D6E /* ReportLectureTableViewCell */,
@@ -7233,6 +7243,25 @@
 			name = SuggestTableView;
 			sourceTree = "<group>";
 		};
+		9FE139151D65ABAA00D7BF44 /* SearchSuggestHeaderTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				9FE139161D65ABBC00D7BF44 /* SearchSuggestHeaderTableViewCell.h */,
+				9FE139171D65ABBC00D7BF44 /* SearchSuggestHeaderTableViewCell.m */,
+				9FE139191D65ABC900D7BF44 /* SearchSuggestHeaderTableViewCell.xib */,
+			);
+			name = SearchSuggestHeaderTableViewCell;
+			sourceTree = "<group>";
+		};
+		9FE1391B1D65ABCD00D7BF44 /* SearchSuggestHeaderTableViewCellObject */ = {
+			isa = PBXGroup;
+			children = (
+				9FE1391C1D65ABDB00D7BF44 /* SearchSuggestHeaderTableViewCellObject.h */,
+				9FE1391D1D65ABDB00D7BF44 /* SearchSuggestHeaderTableViewCellObject.m */,
+			);
+			name = SearchSuggestHeaderTableViewCellObject;
+			sourceTree = "<group>";
+		};
 		9FF1251A1D51DF130098625F /* ConcreteClasses */ = {
 			isa = PBXGroup;
 			children = (
@@ -7585,6 +7614,7 @@
 				9FBE8AC01D630D4C00DA0C32 /* EventGalleryEventCollectionViewCell.xib in Resources */,
 				66E9994D1D54AFB000161D98 /* TagModuleTableViewCell.xib in Resources */,
 				66E999701D54B06400161D98 /* TagCollectionView.xib in Resources */,
+				9FE1391A1D65ABC900D7BF44 /* SearchSuggestHeaderTableViewCell.xib in Resources */,
 				631808451C48324000A61E7D /* SpeakerShortInfoView.xib in Resources */,
 				63F6135F1CB00A220002AEF0 /* EventHeaderView.xib in Resources */,
 				63F612291CAFF8530002AEF0 /* Reports.storyboard in Resources */,
@@ -7821,6 +7851,7 @@
 				9FE138FE1D64C36A00D7BF44 /* CustomSearchBar.m in Sources */,
 				636F8DDD1BCB8FE800552B91 /* RamblerLocationRouter.m in Sources */,
 				9FC1F6841D28391E0070D9B5 /* EventListQueryTransformer.m in Sources */,
+				9FE1391E1D65ABDB00D7BF44 /* SearchSuggestHeaderTableViewCellObject.m in Sources */,
 				9F0A84FA1BC1698B006F79FB /* OperationBuffer.m in Sources */,
 				6670504B1D4615BC00DD9D6E /* ReportEventTableViewCellObject.m in Sources */,
 				2B2064821D3F9CE900246C8D /* _LecturePlainObject.m in Sources */,
@@ -7855,6 +7886,7 @@
 				9F78D75A1D59E6CB009DDCEA /* SpeakerObjectTransformer.m in Sources */,
 				2B2064941D3F9CE900246C8D /* LecturePlainObject.m in Sources */,
 				63F6136B1CB00A220002AEF0 /* PreviousLectureTableViewCellObject.m in Sources */,
+				9FE139181D65ABBC00D7BF44 /* SearchSuggestHeaderTableViewCell.m in Sources */,
 				63F613591CB00A220002AEF0 /* EventModuleAssembly.m in Sources */,
 				9FBE89B41D5CB71300DA0C32 /* LectureLaunchRouter.m in Sources */,
 				9F0A85371BC18A3C006F79FB /* NetworkCompoundOperationBuilder.m in Sources */,
