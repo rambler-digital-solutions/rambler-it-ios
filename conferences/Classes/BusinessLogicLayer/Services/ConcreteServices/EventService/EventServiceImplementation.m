@@ -52,7 +52,9 @@ static NSString *const kEventListName = @"kEventListName";
                                                                                              modelObjectId:modelObjectId];
         
         compoundOperation.resultBlock = ^void(id data, NSError *error) {
-            completionBlock(error);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completionBlock(error);
+            });
         };
         
         [self.operationScheduler addOperation:compoundOperation];
