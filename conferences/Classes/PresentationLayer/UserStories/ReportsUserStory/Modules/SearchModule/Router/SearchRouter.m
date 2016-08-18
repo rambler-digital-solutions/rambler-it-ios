@@ -18,20 +18,30 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "SearchModuleAssembly.h"
+#import "SearchRouter.h"
+#import "EventModuleInput.h"
+#import "ReportsSearchModuleInput.h"
 
-@class SearchViewController;
-@class SearchInteractor;
-@class SearchPresenter;
-@class SearchRouter;
-@class SearchDataDisplayManager;
+@protocol ReportsSearchModuleOutput;
 
-@interface SearchModuleAssembly ()
+static NSString *const kReportListModuleToEventModuleSegue = @"ReportListModuleToEventModuleSegue";
+static NSString *const kReportListModuleToReportsSearchModuleSegue = @"ReportListModuleToReportsSearchModuleSegue";
 
-- (SearchViewController *)viewSearchList;
-- (SearchInteractor *)interactorSearchList;
-- (SearchPresenter *)presenterSearchList;
-- (SearchRouter *)routerSearchList;
-- (SearchDataDisplayManager *)dataDisplayManagerSearchList;
+@implementation SearchRouter
+
+#pragma mark - ReportListRouterInput
+
+- (void)openEventModuleWithEventObjectId:(NSString *)objectId {
+    [[self.transitionHandler openModuleUsingSegue:kReportListModuleToEventModuleSegue] thenChainUsingBlock:^id<RamblerViperModuleOutput>(id<EventModuleInput> moduleInput) {
+        [moduleInput configureCurrentModuleWithEventObjectId:objectId];
+        return nil;
+    }];
+}
+
+- (void)configureReportsSearchModuleWithModuleOutput:(id<ReportsSearchModuleOutput>)moduleOutput {
+    [[self.transitionHandler openModuleUsingSegue:kReportListModuleToReportsSearchModuleSegue] thenChainUsingBlock:^id<ReportsSearchModuleOutput>(id<ReportsSearchModuleInput> moduleInput) {
+        return moduleOutput;
+    }];
+}
 
 @end

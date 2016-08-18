@@ -7,7 +7,7 @@
         <!--Поиск-->
         <scene sceneID="J2Q-yz-PPa">
             <objects>
-                <viewController storyboardIdentifier="ReportListViewController" id="HJq-I7-iIp" customClass="ReportListViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchViewController" id="HJq-I7-iIp" customClass="SearchViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NLT-fm-8ht"/>
                         <viewControllerLayoutGuide type="bottom" id="Fe3-sy-4K7"/>

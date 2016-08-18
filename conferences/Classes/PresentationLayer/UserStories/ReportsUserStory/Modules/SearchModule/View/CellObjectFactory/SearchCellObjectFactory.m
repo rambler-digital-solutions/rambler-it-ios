@@ -18,20 +18,25 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "SearchModuleAssembly.h"
+#import "SearchCellObjectFactory.h"
 
-@class SearchViewController;
-@class SearchInteractor;
-@class SearchPresenter;
-@class SearchRouter;
-@class SearchDataDisplayManager;
+#import "SearchSuggestTableViewCellObject.h"
+#import "SearchSuggestHeaderTableViewCellObject.h"
 
-@interface SearchModuleAssembly ()
+@implementation SearchCellObjectFactory
 
-- (SearchViewController *)viewSearchList;
-- (SearchInteractor *)interactorSearchList;
-- (SearchPresenter *)presenterSearchList;
-- (SearchRouter *)routerSearchList;
-- (SearchDataDisplayManager *)dataDisplayManagerSearchList;
+- (NSArray *)generateCellObjectsWithSuggests:(NSArray<NSString *> *)suggests {
+    NSMutableArray *cellObjects = [NSMutableArray new];
+    
+    SearchSuggestHeaderTableViewCellObject *header = [SearchSuggestHeaderTableViewCellObject new];
+    [cellObjects addObject:header];
+    
+    for (NSString *suggest in suggests) {
+        SearchSuggestTableViewCellObject *object = [SearchSuggestTableViewCellObject objectWithSuggestText:suggest];
+        [cellObjects addObject:object];
+    }
+    
+    return [cellObjects copy];
+}
 
 @end

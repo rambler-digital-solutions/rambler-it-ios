@@ -21,13 +21,13 @@
 #import <XCTest/XCTest.h>
 #import <RamblerTyphoonUtils/AssemblyTesting.h>
 
-#import "ReportListModuleAssembly.h"
+#import "SearchModuleAssembly.h"
 #import "ReportListModuleAssembly_Testable.h"
-#import "ReportListViewController.h"
-#import "ReportListInteractor.h"
-#import "ReportListPresenter.h"
-#import "ReportListRouter.h"
-#import "ReportListDataDisplayManager.h"
+#import "SearchViewController.h"
+#import "SearchInteractor.h"
+#import "SearchPresenter.h"
+#import "SearchRouter.h"
+#import "SearchDataDisplayManager.h"
 #import "ServiceComponents.h"
 #import "PresentationLayerHelpersAssembly.h"
 #import "ServiceComponentsAssembly.h"
@@ -37,7 +37,7 @@
 
 @interface ReportListModuleAssemblyTests : RamblerTyphoonAssemblyTests
 
-@property (strong, nonatomic) ReportListModuleAssembly *assembly;
+@property (strong, nonatomic) SearchModuleAssembly *assembly;
 
 @end
 
@@ -46,7 +46,7 @@
 - (void)setUp {
     [super setUp];
     
-    self.assembly = [ReportListModuleAssembly new];
+    self.assembly = [SearchModuleAssembly new];
     [self.assembly activateWithCollaboratingAssemblies:@[
                                                          [ServiceComponentsAssembly new],
                                                          [OperationFactoriesAssembly new],
@@ -63,13 +63,13 @@
 
 - (void)testThatAssemblyCreatesView {
     // given
-    Class targetClass = [ReportListViewController class];
+    Class targetClass = [SearchViewController class];
     NSArray *dependencies = @[
                               RamblerSelector(output),
                               RamblerSelector(dataDisplayManager)
                               ];
     // when
-    id result = [self.assembly viewReportList];
+    id result = [self.assembly viewSearchList];
     
     // then
     [self verifyTargetDependency:result withClass:targetClass dependencies:dependencies];
@@ -77,7 +77,7 @@
 
 - (void)testThatAssemblyCreatesInteractor {
     // given
-    Class targetClass = [ReportListInteractor class];
+    Class targetClass = [SearchInteractor class];
     NSArray *dependencies = @[
                               RamblerSelector(output),
                               RamblerSelector(eventService),
@@ -85,7 +85,7 @@
                               RamblerSelector(eventTypeDeterminator)
                               ];
     // when
-    id result = [self.assembly interactorReportList];
+    id result = [self.assembly interactorSearchList];
     
     // then
     [self verifyTargetDependency:result withClass:targetClass dependencies:dependencies];
@@ -93,14 +93,14 @@
 
 - (void)testThatAssemblyCreatesPresenter {
     // given
-    Class targetClass = [ReportListPresenter class];
+    Class targetClass = [SearchPresenter class];
     NSArray *dependencies = @[
                               RamblerSelector(view),
                               RamblerSelector(interactor),
                               RamblerSelector(router)
                               ];
     // when
-    id result = [self.assembly presenterReportList];
+    id result = [self.assembly presenterSearchList];
     
     // then
     [self verifyTargetDependency:result withClass:targetClass dependencies:dependencies];
@@ -108,12 +108,12 @@
 
 - (void)testThatAssemblyCreatesRouter {
     // given
-    Class targetClass = [ReportListRouter class  ];
+    Class targetClass = [SearchRouter class  ];
     NSArray *dependencies = @[
                               RamblerSelector(transitionHandler)
                               ];
     // when
-    id result = [self.assembly routerReportList];
+    id result = [self.assembly routerSearchList];
     
     // then
     [self verifyTargetDependency:result withClass:targetClass dependencies:dependencies];
@@ -121,13 +121,13 @@
 
 - (void)testThatAssemblyCreatesDataDisplayManager {
     // given
-    Class targetClass = [ReportListDataDisplayManager class];
+    Class targetClass = [SearchDataDisplayManager class];
     NSArray *dependencies = @[
                               RamblerSelector(dateFormatter)
                               ];
     
     // when
-    id result = [self.assembly dataDisplayManagerReportList];
+    id result = [self.assembly dataDisplayManagerSearchList];
     
     // then
     [self verifyTargetDependency:result withClass:targetClass dependencies:dependencies];

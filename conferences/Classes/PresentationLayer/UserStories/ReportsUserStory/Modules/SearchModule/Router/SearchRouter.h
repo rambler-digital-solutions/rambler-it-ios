@@ -18,20 +18,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "SearchModuleAssembly.h"
+#import <Foundation/Foundation.h>
+#import <ViperMcFlurry/ViperMcFlurry.h>
+#import "SearchRouterInput.h"
 
-@class SearchViewController;
-@class SearchInteractor;
-@class SearchPresenter;
-@class SearchRouter;
-@class SearchDataDisplayManager;
+@interface SearchRouter : NSObject<SearchRouterInput>
 
-@interface SearchModuleAssembly ()
-
-- (SearchViewController *)viewSearchList;
-- (SearchInteractor *)interactorSearchList;
-- (SearchPresenter *)presenterSearchList;
-- (SearchRouter *)routerSearchList;
-- (SearchDataDisplayManager *)dataDisplayManagerSearchList;
+@property (weak, nonatomic) id <RamblerViperModuleTransitionHandlerProtocol> transitionHandler;
 
 @end

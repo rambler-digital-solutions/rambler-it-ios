@@ -18,20 +18,43 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "SearchModuleAssembly.h"
+#import <Foundation/Foundation.h>
 
-@class SearchViewController;
-@class SearchInteractor;
-@class SearchPresenter;
-@class SearchRouter;
-@class SearchDataDisplayManager;
+@class EventPlainObject;
 
-@interface SearchModuleAssembly ()
+@protocol SearchViewOutput <NSObject>
 
-- (SearchViewController *)viewSearchList;
-- (SearchInteractor *)interactorSearchList;
-- (SearchPresenter *)presenterSearchList;
-- (SearchRouter *)routerSearchList;
-- (SearchDataDisplayManager *)dataDisplayManagerSearchList;
+/**
+ @author Zinovyev Konstantin
+ 
+ Method is used to inform presenter that need setup the view
+ */
+- (void)setupView;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ Method is used to inform presenter that user has change the search text
+ 
+ @param text Text in search bar
+ */
+- (void)didChangeSearchBarWithSearchTerm:(NSString *)text;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ Method is used to inform presenter that user has tapped the cancel button
+ */
+- (void)didTapSearchBarCancelButton;
+
+/**
+ @author Egor Tolstoy
+ 
+ Method tells presenter that a suggest was tapped
+ 
+ @param text Suggest text
+ */
+- (void)didTapSuggestWithText:(NSString *)text;
 
 @end
+

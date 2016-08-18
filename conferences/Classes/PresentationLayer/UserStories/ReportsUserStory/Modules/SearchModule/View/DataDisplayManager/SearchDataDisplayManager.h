@@ -18,20 +18,41 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "SearchModuleAssembly.h"
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@class SearchViewController;
-@class SearchInteractor;
-@class SearchPresenter;
-@class SearchRouter;
-@class SearchDataDisplayManager;
+@class EventPlainObject;
+@class DateFormatter;
+@class SearchCellObjectFactory;
 
-@interface SearchModuleAssembly ()
+@interface SearchDataDisplayManager : NSObject
 
-- (SearchViewController *)viewSearchList;
-- (SearchInteractor *)interactorSearchList;
-- (SearchPresenter *)presenterSearchList;
-- (SearchRouter *)routerSearchList;
-- (SearchDataDisplayManager *)dataDisplayManagerSearchList;
+@property (nonatomic, strong) DateFormatter *dateFormatter;
+@property (nonatomic, strong) SearchCellObjectFactory *cellObjectFactory;
+
+/**
+ @author Egor Tolstoy
+ 
+ Returns a data source object for UITableView
+ 
+ @param tableView UITableView
+ @param suggests  Suggests array
+ 
+ @return Data source
+ */
+- (id<UITableViewDataSource>)dataSourceForTableView:(UITableView *)tableView
+                                       withSuggests:(NSArray *)suggests;
+
+/**
+ @author Egor Tolstoy
+ 
+ Returns a delegate object for UITableView with events
+ 
+ @param collectionView UITableView
+ 
+ @return Delegate
+ */
+- (id<UITableViewDelegate>)delegateForTableView:(UITableView *)tableView
+                               withBaseDelegate:(id<UITableViewDelegate>)baseTableViewDelegate;
 
 @end

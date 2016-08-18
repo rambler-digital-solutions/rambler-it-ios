@@ -18,20 +18,26 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "SearchModuleAssembly.h"
+#import "SearchInteractor.h"
+#import "SearchInteractorOutput.h"
 
-@class SearchViewController;
-@class SearchInteractor;
-@class SearchPresenter;
-@class SearchRouter;
-@class SearchDataDisplayManager;
+#import "EventService.h"
+#import "EventModelObject.h"
+#import "EventPlainObject.h"
+#import "EventType.h"
+#import "EventTypeDeterminator.h"
+#import "ROSPonsomizer.h"
+#import "EXTScope.h"
+#import "SuggestService.h"
 
-@interface SearchModuleAssembly ()
+static NSUInteger const kSuggestCount = 7;
 
-- (SearchViewController *)viewSearchList;
-- (SearchInteractor *)interactorSearchList;
-- (SearchPresenter *)presenterSearchList;
-- (SearchRouter *)routerSearchList;
-- (SearchDataDisplayManager *)dataDisplayManagerSearchList;
+@implementation SearchInteractor
+
+#pragma mark - ReportListInteractorInput
+
+- (NSArray *)obtainSuggests {
+    return [self.suggestService obtainRandomSuggestsWithCount:kSuggestCount];
+}
 
 @end

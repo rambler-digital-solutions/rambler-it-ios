@@ -18,20 +18,22 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "SearchModuleAssembly.h"
+#import <Foundation/Foundation.h>
+#import "SearchViewOutput.h"
+#import "SearchInteractorOutput.h"
+#import "ReportsSearchModuleOutput.h"
+#import "ReportsSearchModuleInput.h"
 
-@class SearchViewController;
-@class SearchInteractor;
-@class SearchPresenter;
-@class SearchRouter;
-@class SearchDataDisplayManager;
+@protocol SearchViewInput;
+@protocol SearchInteractorInput;
+@protocol SearchRouterInput;
 
-@interface SearchModuleAssembly ()
+@interface SearchPresenter : NSObject<SearchViewOutput,SearchInteractorOutput, ReportsSearchModuleOutput>
 
-- (SearchViewController *)viewSearchList;
-- (SearchInteractor *)interactorSearchList;
-- (SearchPresenter *)presenterSearchList;
-- (SearchRouter *)routerSearchList;
-- (SearchDataDisplayManager *)dataDisplayManagerSearchList;
+@property (nonatomic, weak) id<SearchViewInput> view;
+@property (nonatomic, strong) id<SearchInteractorInput>  interactor;
+@property (nonatomic, strong) id<SearchRouterInput> router;
+@property (nonatomic, strong) id<ReportsSearchModuleInput> reportsSearchModule;
 
 @end
+
