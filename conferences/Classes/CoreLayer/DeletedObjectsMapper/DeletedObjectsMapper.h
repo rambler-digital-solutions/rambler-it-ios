@@ -19,6 +19,7 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
+#import "ResponseMapper.h"
 
 @class ManagedObjectMappingProvider;
 @protocol ResponseObjectFormatter;
@@ -29,7 +30,7 @@
  
  It's an object for mapping response with deleted and updated objects
  */
-@interface DeletedObjectsMapper : NSObject
+@interface DeletedObjectsMapper : NSObject <ResponseMapper>
 
 @property (strong, nonatomic) id<ResponseObjectFormatter> deletedResponseFormatter;
 @property (strong, nonatomic, readonly) ManagedObjectMappingProvider *provider;

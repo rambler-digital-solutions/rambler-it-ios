@@ -267,6 +267,11 @@
 		662166521D4F4507000A1D11 /* ReportsSearchViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6621664E1D4F4507000A1D11 /* ReportsSearchViewControllerTests.m */; };
 		6631B2951D51F828004B5D75 /* LastModifiedMapperOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6631B2941D51F828004B5D75 /* LastModifiedMapperOperation.m */; };
 		6631B2991D51F83E004B5D75 /* NSManagedObjectID+LJStringConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 6631B2981D51F83E004B5D75 /* NSManagedObjectID+LJStringConversion.m */; };
+		6647B5BB1D65987100A82C4C /* LastModifiedMapperOperationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6647B5BA1D65987100A82C4C /* LastModifiedMapperOperationTests.m */; };
+		6647B5BD1D65988800A82C4C /* ResponseConverterOperationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6647B5BC1D65988800A82C4C /* ResponseConverterOperationTests.m */; };
+		6647B5C01D65A92700A82C4C /* DeletedObjectMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6647B5BF1D65A92700A82C4C /* DeletedObjectMapperTests.m */; };
+		6647B5C31D65AD4600A82C4C /* DeletedResponseObjectFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6647B5C21D65AD4600A82C4C /* DeletedResponseObjectFormatterTests.m */; };
+		6647B5C61D65AEBE00A82C4C /* ResponseConverterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6647B5C51D65AEBE00A82C4C /* ResponseConverterTests.m */; };
 		666C5C331D4F2AF6002D73D5 /* ReportsSearchPresenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 666C5C321D4F2AF6002D73D5 /* ReportsSearchPresenterTests.m */; };
 		666C5C3E1D4F344B002D73D5 /* ReportsSearchPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 666C5C3D1D4F344B002D73D5 /* ReportsSearchPresenter.m */; };
 		666C5C3F1D4F344B002D73D5 /* ReportsSearchPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 666C5C3D1D4F344B002D73D5 /* ReportsSearchPresenter.m */; };
@@ -911,6 +916,11 @@
 		6631B2941D51F828004B5D75 /* LastModifiedMapperOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LastModifiedMapperOperation.m; path = MiscellaneousOperations/LastModifiedMapperOperation/LastModifiedMapperOperation.m; sourceTree = "<group>"; };
 		6631B2971D51F83E004B5D75 /* NSManagedObjectID+LJStringConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSManagedObjectID+LJStringConversion.h"; path = "NSManagedObjectID+LJStringConversion/NSManagedObjectID+LJStringConversion.h"; sourceTree = "<group>"; };
 		6631B2981D51F83E004B5D75 /* NSManagedObjectID+LJStringConversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObjectID+LJStringConversion.m"; path = "NSManagedObjectID+LJStringConversion/NSManagedObjectID+LJStringConversion.m"; sourceTree = "<group>"; };
+		6647B5BA1D65987100A82C4C /* LastModifiedMapperOperationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LastModifiedMapperOperationTests.m; path = MiscellaneousOperationsTests/LastModifiedMapperOperationTests/LastModifiedMapperOperationTests.m; sourceTree = "<group>"; };
+		6647B5BC1D65988800A82C4C /* ResponseConverterOperationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResponseConverterOperationTests.m; path = MiscellaneousOperationsTests/ResponseConverterOperationTests/ResponseConverterOperationTests.m; sourceTree = "<group>"; };
+		6647B5BF1D65A92700A82C4C /* DeletedObjectMapperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeletedObjectMapperTests.m; path = DeletedObjectsMapper/DeletedObjectMapperTests.m; sourceTree = "<group>"; };
+		6647B5C21D65AD4600A82C4C /* DeletedResponseObjectFormatterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeletedResponseObjectFormatterTests.m; path = CoreLayer/CoreComponents/ResponseObjectFormatters/DeletedResponseObjectFormatter/DeletedResponseObjectFormatterTests.m; sourceTree = "<group>"; };
+		6647B5C51D65AEBE00A82C4C /* ResponseConverterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResponseConverterTests.m; path = ResponseConverter/ResponseConverterTests.m; sourceTree = "<group>"; };
 		666C5C321D4F2AF6002D73D5 /* ReportsSearchPresenterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportsSearchPresenterTests.m; path = ReportsSearchModuleTests/ReportsSearchPresenterTests.m; sourceTree = "<group>"; };
 		666C5C3C1D4F344B002D73D5 /* ReportsSearchPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportsSearchPresenter.h; path = SearchReportsModule/Presenter/ReportsSearchPresenter.h; sourceTree = "<group>"; };
 		666C5C3D1D4F344B002D73D5 /* ReportsSearchPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportsSearchPresenter.m; path = SearchReportsModule/Presenter/ReportsSearchPresenter.m; sourceTree = "<group>"; };
@@ -3680,6 +3690,55 @@
 			name = "NSManagedObjectID+LJStringConversion";
 			sourceTree = "<group>";
 		};
+		6647B5B61D65980800A82C4C /* MiscellaneousOperationsTests */ = {
+			isa = PBXGroup;
+			children = (
+				6647B5B81D65982900A82C4C /* LastModifiedMapperOperationTests */,
+				6647B5B71D65981600A82C4C /* ResponseConverterOperationTests */,
+			);
+			name = MiscellaneousOperationsTests;
+			sourceTree = "<group>";
+		};
+		6647B5B71D65981600A82C4C /* ResponseConverterOperationTests */ = {
+			isa = PBXGroup;
+			children = (
+				6647B5BC1D65988800A82C4C /* ResponseConverterOperationTests.m */,
+			);
+			name = ResponseConverterOperationTests;
+			sourceTree = "<group>";
+		};
+		6647B5B81D65982900A82C4C /* LastModifiedMapperOperationTests */ = {
+			isa = PBXGroup;
+			children = (
+				6647B5BA1D65987100A82C4C /* LastModifiedMapperOperationTests.m */,
+			);
+			name = LastModifiedMapperOperationTests;
+			sourceTree = "<group>";
+		};
+		6647B5BE1D65A8FD00A82C4C /* DeletedObjectMapper */ = {
+			isa = PBXGroup;
+			children = (
+				6647B5BF1D65A92700A82C4C /* DeletedObjectMapperTests.m */,
+			);
+			name = DeletedObjectMapper;
+			sourceTree = "<group>";
+		};
+		6647B5C11D65AD1D00A82C4C /* DeletedResponseObjectFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				6647B5C21D65AD4600A82C4C /* DeletedResponseObjectFormatterTests.m */,
+			);
+			name = DeletedResponseObjectFormatter;
+			sourceTree = "<group>";
+		};
+		6647B5C41D65AE9800A82C4C /* ResponseConverter */ = {
+			isa = PBXGroup;
+			children = (
+				6647B5C51D65AEBE00A82C4C /* ResponseConverterTests.m */,
+			);
+			name = ResponseConverter;
+			sourceTree = "<group>";
+		};
 		666C5C311D4F2A65002D73D5 /* ReportsSearchModuleTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -3909,13 +3968,13 @@
 			name = ResponseConverterOperation;
 			sourceTree = "<group>";
 		};
-		66CCA7351D61DF1A004153EA /* TransformJSON */ = {
+		66CCA7351D61DF1A004153EA /* ResponseConverter */ = {
 			isa = PBXGroup;
 			children = (
 				66CCA7371D61DF40004153EA /* ConcreteClass */,
 				66CCA7361D61DF32004153EA /* Protocols */,
 			);
-			name = TransformJSON;
+			name = ResponseConverter;
 			sourceTree = "<group>";
 		};
 		66CCA7361D61DF32004153EA /* Protocols */ = {
@@ -4337,6 +4396,7 @@
 		9F0A85101BC185AA006F79FB /* ConcreteOperations */ = {
 			isa = PBXGroup;
 			children = (
+				6647B5B61D65980800A82C4C /* MiscellaneousOperationsTests */,
 				9F0A85111BC185AA006F79FB /* ChainableOperationTestsBase */,
 				9F0A85141BC185AA006F79FB /* RequestConfigurationOperationTests */,
 				9F0A85161BC185AA006F79FB /* RequestSigningOperationTests */,
@@ -4477,7 +4537,7 @@
 		9F18308B1BC01E65000E21A5 /* CoreComponents */ = {
 			isa = PBXGroup;
 			children = (
-				66CCA7351D61DF1A004153EA /* TransformJSON */,
+				66CCA7351D61DF1A004153EA /* ResponseConverter */,
 				9F4077951D2C105100D47EF6 /* ResourceMappers */,
 				9F4077891D2BF8DB00D47EF6 /* ResourceClients */,
 				9FC1F6771D2826B70070D9B5 /* QueryTransformers */,
@@ -4546,6 +4606,7 @@
 		9F1830951BC022A6000E21A5 /* CoreComponents */ = {
 			isa = PBXGroup;
 			children = (
+				6647B5C41D65AE9800A82C4C /* ResponseConverter */,
 				9F40779D1D2C118A00D47EF6 /* ResourceMappers */,
 				9F4077911D2BFA5800D47EF6 /* ResourceClients */,
 				9FC1F67D1D2838CD0070D9B5 /* QueryTransformers */,
@@ -4911,6 +4972,7 @@
 		9F1830FA1BC14C0F000E21A5 /* ResponseMappers */ = {
 			isa = PBXGroup;
 			children = (
+				6647B5BE1D65A8FD00A82C4C /* DeletedObjectMapper */,
 				9F1830FB1BC14C15000E21A5 /* ManagedObjectMapper */,
 			);
 			name = ResponseMappers;
@@ -4975,6 +5037,7 @@
 		9F18311E1BC16162000E21A5 /* ResponseObjectFormatters */ = {
 			isa = PBXGroup;
 			children = (
+				6647B5C11D65AD1D00A82C4C /* DeletedResponseObjectFormatter */,
 				9F0A84C11BC16290006F79FB /* SingleResponseObjectFormatter */,
 				9F18311F1BC1616D000E21A5 /* ResultResponseObjectFormatter */,
 			);
@@ -6005,6 +6068,7 @@
 				63F402F01BCF77CB0086D030 /* ApplicationAssemblyTests.m in Sources */,
 				9FF750171D27DCBE000D208D /* EntityNameFormatterImplementationTests.m in Sources */,
 				63F613E51CB111070002AEF0 /* LecturePresenterTests.m in Sources */,
+				6647B5C31D65AD4600A82C4C /* DeletedResponseObjectFormatterTests.m in Sources */,
 				9F0A85261BC185AA006F79FB /* ResponseDeserializationOperationTests.m in Sources */,
 				9FF750081D26C8EB000D208D /* EventListOperationFactoryTests.m in Sources */,
 				662166521D4F4507000A1D11 /* ReportsSearchViewControllerTests.m in Sources */,
@@ -6012,9 +6076,11 @@
 				9FC1F6801D2838FA0070D9B5 /* EventListQueryTransformerTests.m in Sources */,
 				63F613DA1CB111070002AEF0 /* AnnouncementListRouterTests.m in Sources */,
 				9F0A85231BC185AA006F79FB /* ChainableOperationTestsBase.m in Sources */,
+				6647B5BD1D65988800A82C4C /* ResponseConverterOperationTests.m in Sources */,
 				662166511D4F4507000A1D11 /* ReportsSearchRouterTests.m in Sources */,
 				63F402FB1BCF79390086D030 /* OperationFactoriesAssemblyTests.m in Sources */,
 				63F613EC1CB111070002AEF0 /* ReportListTableViewControllerTests.m in Sources */,
+				6647B5C01D65A92700A82C4C /* DeletedObjectMapperTests.m in Sources */,
 				9F0A85251BC185AA006F79FB /* RequestSigningOperationTests.m in Sources */,
 				63F613DD1CB111070002AEF0 /* FutureEventCellObjectBuilderTests.m in Sources */,
 				9F0A85241BC185AA006F79FB /* RequestConfigurationOperationTests.m in Sources */,
@@ -6040,6 +6106,7 @@
 				631CBA381C0092C100E3EBA8 /* ApplicationConfiguratorTests.m in Sources */,
 				9F1830AB1BC1139B000E21A5 /* RCFParseRequestSignerTests.m in Sources */,
 				63F613D71CB111070002AEF0 /* AnnouncementListDataDisplayManagerTests.m in Sources */,
+				6647B5BB1D65987100A82C4C /* LastModifiedMapperOperationTests.m in Sources */,
 				63F613DB1CB111070002AEF0 /* AnnouncementListTableViewControllerTests.m in Sources */,
 				63F403AF1BD0D0690086D030 /* ResponseMappersAssemblyTests.m in Sources */,
 				9F1830DF1BC12749000E21A5 /* RCFResponseValidatorTestsBase.m in Sources */,
@@ -6058,6 +6125,7 @@
 				63F613D91CB111070002AEF0 /* AnnouncementListPresenterTests.m in Sources */,
 				631CBA731C020CCD00E3EBA8 /* EventCellObjectBuilderFactoryTests.m in Sources */,
 				63F8F2F51BF9FDBF000017F3 /* CompoundOperationBaseTests.m in Sources */,
+				6647B5C61D65AEBE00A82C4C /* ResponseConverterTests.m in Sources */,
 				63F613DE1CB111070002AEF0 /* PastEventCellObjectBuilderTests.m in Sources */,
 				9F1830FE1BC14E64000E21A5 /* Conference.xcdatamodeld in Sources */,
 				63F613E91CB111070002AEF0 /* ReportListInteractorTests.m in Sources */,
