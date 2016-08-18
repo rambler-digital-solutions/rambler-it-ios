@@ -100,7 +100,7 @@
 - (UIColor *)obtainColorForPageWithNumber:(NSUInteger)pageNumber {
     if (pageNumber == self.events.count) {
         // That's the case for "More events" card
-        UIColor *moreEventsColor = [UIColor rcf_yellowColor];
+        UIColor *moreEventsColor = [UIColor rcf_lightGrayColor];
         return moreEventsColor;
     }
     EventPlainObject *event = self.events[pageNumber];

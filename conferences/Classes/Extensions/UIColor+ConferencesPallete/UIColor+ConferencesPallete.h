@@ -66,20 +66,20 @@
 /**
  @author Zinovyev Konstantin
  
- The dark gray color
- 
- @return color
- */
-+ (UIColor *)rcf_darkGrayColor;
-
-/**
- @author Zinovyev Konstantin
- 
  The light gray color
  
  @return color
  */
 + (UIColor *)rcf_lightGrayColor;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ The dark gray color
+ 
+ @return color
+ */
++ (UIColor *)rcf_darkGrayColor;
 
 /**
  @author Zinovyev Konstantin

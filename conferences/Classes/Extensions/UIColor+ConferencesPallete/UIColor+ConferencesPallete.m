@@ -39,18 +39,17 @@
     return [UIColor colorFromHexString:@"#A0A0A0"];
 }
 
-+ (UIColor *)rcf_darkGrayColor {
-    return [UIColor colorFromHexString:@"#5A5A5A"];
++ (UIColor *)rcf_lightGrayColor {
+    return [UIColor colorFromHexString:@"#F2F2F2"];
 }
 
-+ (UIColor *)rcf_lightGrayColor {
-    return [UIColor colorFromHexString:@"#CDCDCD"];
++ (UIColor *)rcf_darkGrayColor {
+    return [UIColor colorFromHexString:@"#5A5A5A"];
 }
 
 + (UIColor *)rcf_lightGrayBackgroundColor {
     return [UIColor colorFromHexString:@"#ECECEC"];
 }
-
 
 + (UIColor *)rcf_lightBlueColor {
     return [UIColor colorFromHexString:@"#14AAE6"];
