@@ -36,3 +36,5 @@ artifacts
 .idea/scopes/scope_settings.xml
 .idea/RamblerMail_iOS.iml
 .idea/misc.xml
+.idea/RamblerConferencesGitHub.iml
+.idea/runConfigurations/Conferences.xml

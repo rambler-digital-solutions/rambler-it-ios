@@ -18,20 +18,28 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "SearchModuleAssembly.h"
+#import <Foundation/Foundation.h>
+#import "ReportsSearchModuleOutput.h"
 
-@class SearchViewController;
-@class SearchInteractor;
-@class SearchPresenter;
-@class SearchRouter;
-@class SearchDataDisplayManager;
+@protocol SearchRouterInput <NSObject>
 
-@interface SearchModuleAssembly ()
+/**
+ @author Zinovyev Konstantin
+ 
+ Method is used to open EventModule and configure with event Id
+ 
+ @param objectId Идентификатор события
+ */
+- (void)openEventModuleWithEventObjectId:(NSString *)objectId;
 
-- (SearchViewController *)viewSearchList;
-- (SearchInteractor *)interactorSearchList;
-- (SearchPresenter *)presenterSearchList;
-- (SearchRouter *)routerSearchList;
-- (SearchDataDisplayManager *)dataDisplayManagerSearchList;
+/**
+ @author Zinovyev Konstantin
+ 
+ Method is used to configure ReportsSearchModule
+ 
+ @param moduleOutput Report list presenter
+ */
+- (void)configureReportsSearchModuleWithModuleOutput:(id<ReportsSearchModuleOutput>)moduleOutput;
 
 @end
+

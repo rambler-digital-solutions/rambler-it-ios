@@ -18,20 +18,24 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "SearchModuleAssembly.h"
+#import "SearchSuggestHeaderTableViewCell.h"
 
-@class SearchViewController;
-@class SearchInteractor;
-@class SearchPresenter;
-@class SearchRouter;
-@class SearchDataDisplayManager;
+#import "SearchSuggestHeaderTableViewCellObject.h"
 
-@interface SearchModuleAssembly ()
+static CGFloat const kSearchSuggestHeaderTableViewCellHeight = 64.0f;
 
-- (SearchViewController *)viewSearchList;
-- (SearchInteractor *)interactorSearchList;
-- (SearchPresenter *)presenterSearchList;
-- (SearchRouter *)routerSearchList;
-- (SearchDataDisplayManager *)dataDisplayManagerSearchList;
+@implementation SearchSuggestHeaderTableViewCell
+
+#pragma mark - <NICell>
+
+- (BOOL)shouldUpdateCellWithObject:(SearchSuggestHeaderTableViewCellObject *)object {
+    return YES;
+}
+
++ (CGFloat)heightForObject:(id)object
+               atIndexPath:(NSIndexPath *)indexPath
+                 tableView:(UITableView *)tableView {
+    return kSearchSuggestHeaderTableViewCellHeight;
+}
 
 @end

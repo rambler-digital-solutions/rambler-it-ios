@@ -39,6 +39,7 @@
 #import "SpeakerServiceImplementation.h"
 #import "TagServiceImplementation.h"
 #import "TagServicePredicateBuilder.h"
+#import "SuggestServiceImplementation.h"
 
 @implementation ServiceComponentsAssembly
 
@@ -85,6 +86,10 @@
                               [definition injectProperty:@selector(mapper)
                                                     with:[self.resourceMapperAssembly directionObjectMapper]];
                           }];
+}
+
+- (id<SuggestService>)suggestService {
+    return [TyphoonDefinition withClass:[SuggestServiceImplementation class]];
 }
 
 - (id <TagService>)tagService {

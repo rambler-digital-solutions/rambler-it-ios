@@ -18,20 +18,20 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "SearchModuleAssembly.h"
+#import "SearchSuggestHeaderTableViewCellObject.h"
 
-@class SearchViewController;
-@class SearchInteractor;
-@class SearchPresenter;
-@class SearchRouter;
-@class SearchDataDisplayManager;
+#import "SearchSuggestHeaderTableViewCell.h"
 
-@interface SearchModuleAssembly ()
+@implementation SearchSuggestHeaderTableViewCellObject
 
-- (SearchViewController *)viewSearchList;
-- (SearchInteractor *)interactorSearchList;
-- (SearchPresenter *)presenterSearchList;
-- (SearchRouter *)routerSearchList;
-- (SearchDataDisplayManager *)dataDisplayManagerSearchList;
+#pragma mark - <NICellObject>
+
+- (Class)cellClass {
+    return [SearchSuggestHeaderTableViewCell class];
+}
+
+- (UINib *)cellNib {
+    return [UINib nibWithNibName:NSStringFromClass([SearchSuggestHeaderTableViewCell class]) bundle:[NSBundle mainBundle]];
+}
 
 @end

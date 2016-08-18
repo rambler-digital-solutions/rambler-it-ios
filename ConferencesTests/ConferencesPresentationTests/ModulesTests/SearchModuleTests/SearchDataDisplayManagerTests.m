@@ -18,20 +18,49 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "SearchModuleAssembly.h"
+#import <XCTest/XCTest.h>
+#import <OCMock/OCMock.h>
 
-@class SearchViewController;
-@class SearchInteractor;
-@class SearchPresenter;
-@class SearchRouter;
-@class SearchDataDisplayManager;
+#import "SearchDataDisplayManager.h"
+#import "ReportEventTableViewCell.h"
+#import "EventPlainObject.h"
+#import "SearchViewController.h"
 
-@interface SearchModuleAssembly ()
+typedef NS_ENUM(NSUInteger, TableViewSectionIndex){
+    ReportsSection = 0
+};
 
-- (SearchViewController *)viewSearchList;
-- (SearchInteractor *)interactorSearchList;
-- (SearchPresenter *)presenterSearchList;
-- (SearchRouter *)routerSearchList;
-- (SearchDataDisplayManager *)dataDisplayManagerSearchList;
+@interface SearchDataDisplayManagerTests : XCTestCase
+
+@property (strong, nonatomic) SearchDataDisplayManager *dataDisplayManager;
+@property (strong, nonatomic) NSArray *events;
+
+@end
+
+@implementation SearchDataDisplayManagerTests
+
+- (void)setUp {
+    [super setUp];
+    
+    self.dataDisplayManager = [SearchDataDisplayManager new];
+    self.events = @[[EventPlainObject new], [EventPlainObject new], [EventPlainObject new]];
+}
+
+- (void)tearDown {
+    self.dataDisplayManager = nil;
+    self.events = nil;
+    
+    [super tearDown];
+}
+
+- (void)testThatDataDisplayManagerReturnsTableViewDataSource {
+    // given
+    
+    // when
+    id <UITableViewDataSource> dataSource = [self.dataDisplayManager dataSourceForTableView:nil withSuggests:nil];
+    
+    // then
+    XCTAssertNotNil(dataSource);
+}
 
 @end

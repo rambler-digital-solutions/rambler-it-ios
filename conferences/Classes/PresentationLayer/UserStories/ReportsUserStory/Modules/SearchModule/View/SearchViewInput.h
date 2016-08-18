@@ -18,20 +18,41 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "SearchModuleAssembly.h"
+#import <Foundation/Foundation.h>
 
-@class SearchViewController;
-@class SearchInteractor;
-@class SearchPresenter;
-@class SearchRouter;
-@class SearchDataDisplayManager;
+@protocol SearchViewInput <NSObject>
 
-@interface SearchModuleAssembly ()
+/**
+ @author Egor Tolstoy
+ 
+ Method is used to inform View about initial setup
+ 
+ @param suggests Suggests array
+ */
+- (void)setupViewWithSuggests:(NSArray *)suggests;
 
-- (SearchViewController *)viewSearchList;
-- (SearchInteractor *)interactorSearchList;
-- (SearchPresenter *)presenterSearchList;
-- (SearchRouter *)routerSearchList;
-- (SearchDataDisplayManager *)dataDisplayManagerSearchList;
+/**
+ @author Egor Tolstoy
+ 
+ MEthod is used to update a search edit field with a specific text
+ 
+ @param text Search text
+ */
+- (void)updateSearchBarWithText:(NSString *)text;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ Method is used to inform View that SearchModuleView should be hidden
+ */
+- (void)hideSearchModuleView;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ Method is used to inform View that SearchModuleView should be shown
+ */
+- (void)showSearchModuleView;
 
 @end
+

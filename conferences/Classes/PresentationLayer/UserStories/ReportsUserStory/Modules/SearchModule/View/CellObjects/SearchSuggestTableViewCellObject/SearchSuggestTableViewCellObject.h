@@ -18,20 +18,17 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "SearchModuleAssembly.h"
+#import <Nimbus/NimbusModels.h>
 
-@class SearchViewController;
-@class SearchInteractor;
-@class SearchPresenter;
-@class SearchRouter;
-@class SearchDataDisplayManager;
+/**
+ @author Egor Tolstoy
+ 
+ CellObject with search suggest
+ */
+@interface SearchSuggestTableViewCellObject : NSObject <NICellObject>
 
-@interface SearchModuleAssembly ()
++ (instancetype)objectWithSuggestText:(NSString *)suggestText;
 
-- (SearchViewController *)viewSearchList;
-- (SearchInteractor *)interactorSearchList;
-- (SearchPresenter *)presenterSearchList;
-- (SearchRouter *)routerSearchList;
-- (SearchDataDisplayManager *)dataDisplayManagerSearchList;
+@property (nonatomic, strong, readonly) NSString *suggestText;
 
 @end

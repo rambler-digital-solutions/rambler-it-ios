@@ -26,20 +26,21 @@
 @protocol LectureService;
 @protocol SpeakerService;
 @protocol TagService;
-@protocol EventListService;
 @protocol MetaEventService;
 @protocol EventStoreServiceProtocol;
+@protocol SuggestService;
 @protocol RamblerLocationService;
 
 @protocol ServiceComponents <NSObject>
 
-- (id <PushNotificationService>)pushNotificationService;
-- (id <EventService>)eventService;
-- (id <LectureService>)lectureService;
-- (id <SpeakerService>)speakerService;
-- (id <MetaEventService>)metaEventService;
-- (id <EventStoreServiceProtocol>)eventStoreService;
-- (id <RamblerLocationService>)ramblerLocationService;
-- (id <TagService>)tagService;
+- (id<PushNotificationService>)pushNotificationService;
+- (id<EventService>)eventService;
+- (id<LectureService>)lectureService;
+- (id<SpeakerService>)speakerService;
+- (id<MetaEventService>)metaEventService;
+- (id<EventStoreServiceProtocol>)eventStoreService;
+- (id<RamblerLocationService>)ramblerLocationService;
+- (id<TagService>)tagService;
+- (id<SuggestService>)suggestService;
 
 @end

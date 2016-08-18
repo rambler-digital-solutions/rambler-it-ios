@@ -18,20 +18,17 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "SearchModuleAssembly.h"
+#import <Foundation/Foundation.h>
 
-@class SearchViewController;
-@class SearchInteractor;
-@class SearchPresenter;
-@class SearchRouter;
-@class SearchDataDisplayManager;
+@protocol SearchSuggestTableViewCellActionProtocol <NSObject>
 
-@interface SearchModuleAssembly ()
-
-- (SearchViewController *)viewSearchList;
-- (SearchInteractor *)interactorSearchList;
-- (SearchPresenter *)presenterSearchList;
-- (SearchRouter *)routerSearchList;
-- (SearchDataDisplayManager *)dataDisplayManagerSearchList;
+/**
+ @author Egor Tolstoy
+ 
+ Method tells delegate that a suggest button was tapped
+ 
+ @param suggest Suggest text
+ */
+- (void)didTapSuggestButtonWithSuggest:(NSString *)suggest;
 
 @end

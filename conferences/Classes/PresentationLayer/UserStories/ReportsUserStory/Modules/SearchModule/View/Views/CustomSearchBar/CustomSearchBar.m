@@ -18,20 +18,25 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "SearchModuleAssembly.h"
+#import "CustomSearchBar.h"
 
-@class SearchViewController;
-@class SearchInteractor;
-@class SearchPresenter;
-@class SearchRouter;
-@class SearchDataDisplayManager;
+@implementation CustomSearchBar
 
-@interface SearchModuleAssembly ()
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    [self setupBarTint];
+    [self setupText];
+}
 
-- (SearchViewController *)viewSearchList;
-- (SearchInteractor *)interactorSearchList;
-- (SearchPresenter *)presenterSearchList;
-- (SearchRouter *)routerSearchList;
-- (SearchDataDisplayManager *)dataDisplayManagerSearchList;
+- (void)setupBarTint {
+    UIColor *tintColor = [UIColor whiteColor];
+    [self setBarTintColor:tintColor];
+}
+
+- (void)setupText {
+    UIColor *textColor = [UIColor blackColor];
+    [[UITextField appearanceWhenContainedInInstancesOfClasses:@[[self class]]] setTextColor:textColor];
+}
 
 @end

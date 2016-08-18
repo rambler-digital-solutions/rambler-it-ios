@@ -18,20 +18,21 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "SearchModuleAssembly.h"
+#import <UIKit/UIKit.h>
+#import "SearchViewInput.h"
+#import "SearchSuggestTableViewCellActionProtocol.h"
 
-@class SearchViewController;
-@class SearchInteractor;
-@class SearchPresenter;
-@class SearchRouter;
-@class SearchDataDisplayManager;
+@protocol SearchViewOutput;
+@class  SearchDataDisplayManager;
 
-@interface SearchModuleAssembly ()
+@interface SearchViewController : UIViewController <SearchViewInput, SearchSuggestTableViewCellActionProtocol>
 
-- (SearchViewController *)viewSearchList;
-- (SearchInteractor *)interactorSearchList;
-- (SearchPresenter *)presenterSearchList;
-- (SearchRouter *)routerSearchList;
-- (SearchDataDisplayManager *)dataDisplayManagerSearchList;
+@property (nonatomic, weak) IBOutlet UISearchBar *searchBar;
+@property (nonatomic, weak) IBOutlet UITableView *reportsTableView;
+@property (nonatomic, weak) IBOutlet UIView *searchEmbedContainer;
+
+@property (nonatomic, strong) id<SearchViewOutput> output;
+@property (nonatomic, strong) SearchDataDisplayManager *dataDisplayManager;
 
 @end
+

@@ -18,20 +18,22 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "SearchModuleAssembly.h"
+#import <Foundation/Foundation.h>
+#import "SearchInteractorInput.h"
 
-@class SearchViewController;
-@class SearchInteractor;
-@class SearchPresenter;
-@class SearchRouter;
-@class SearchDataDisplayManager;
+@protocol SearchInteractorOutput;
+@protocol EventService;
+@protocol ROSPonsomizer;
+@protocol SuggestService;
+@class EventTypeDeterminator;
 
-@interface SearchModuleAssembly ()
+@interface SearchInteractor : NSObject<SearchInteractorInput>
 
-- (SearchViewController *)viewSearchList;
-- (SearchInteractor *)interactorSearchList;
-- (SearchPresenter *)presenterSearchList;
-- (SearchRouter *)routerSearchList;
-- (SearchDataDisplayManager *)dataDisplayManagerSearchList;
+@property (weak, nonatomic) id <SearchInteractorOutput> output;
+@property (strong, nonatomic) id <EventService> eventService;
+@property (strong, nonatomic) id <SuggestService> suggestService;
+@property (strong, nonatomic) id <ROSPonsomizer> ponsomizer;
+@property (strong, nonatomic) EventTypeDeterminator *eventTypeDeterminator;
 
 @end
+

@@ -19,6 +19,7 @@
 // THE SOFTWARE.
 
 #import "ReportsSearchViewController.h"
+
 #import "ReportsSearchViewAnimator.h"
 #import "UIColor+ConferencesPallete.h"
 
@@ -35,11 +36,6 @@ static NSInteger kDefaultEstimatedHeight = 116;
     [super viewDidLoad];
     [self.output setupView];
     self.reportsListSearchTableView.estimatedRowHeight = kDefaultEstimatedHeight;
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    self.reportsListSearchTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 #pragma mark - ReportsSearchViewInput
@@ -102,6 +98,7 @@ static NSInteger kDefaultEstimatedHeight = 116;
 - (void)didTapClearPlaceholderView {
     [self.output didTapClearPlaceholderView];
 }
+
 #pragma mark - Gesture Recognizer
 
 - (IBAction)handleTapClearPlaceholder:(id)sender {

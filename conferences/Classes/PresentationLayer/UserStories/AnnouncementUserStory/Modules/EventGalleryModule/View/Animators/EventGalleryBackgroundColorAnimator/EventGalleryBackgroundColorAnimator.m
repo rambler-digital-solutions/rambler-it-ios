@@ -51,7 +51,7 @@ static CGFloat const kAlphaOpacityBorder = 0.4;
     // delta is a distance from a central point between two cards. Can be negative and positive.
     CGFloat delta = (NSInteger)middleScreenOffset % (NSInteger)pageWidth;
     if (delta > pageWidth / 2) {
-        delta = -(pageWidth - delta);
+        delta -= pageWidth;
     }
 
     // We're interested in a range (-initialThreshold : initialThreshold). Wnen delta is out of this range, we just miss it.

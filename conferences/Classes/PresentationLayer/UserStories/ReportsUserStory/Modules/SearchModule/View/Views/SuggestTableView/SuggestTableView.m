@@ -18,20 +18,23 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "SearchModuleAssembly.h"
+#import "SuggestTableView.h"
 
-@class SearchViewController;
-@class SearchInteractor;
-@class SearchPresenter;
-@class SearchRouter;
-@class SearchDataDisplayManager;
+@implementation SuggestTableView
 
-@interface SearchModuleAssembly ()
+- (CGSize)intrinsicContentSize {
+    [self layoutIfNeeded];
+    return CGSizeMake(UIViewNoIntrinsicMetric, self.contentSize.height);
+}
 
-- (SearchViewController *)viewSearchList;
-- (SearchInteractor *)interactorSearchList;
-- (SearchPresenter *)presenterSearchList;
-- (SearchRouter *)routerSearchList;
-- (SearchDataDisplayManager *)dataDisplayManagerSearchList;
+- (void)endUpdates {
+    [super endUpdates];
+    [self invalidateIntrinsicContentSize];
+}
+
+- (void)reloadData {
+    [super reloadData];
+    [self invalidateIntrinsicContentSize];
+}
 
 @end
