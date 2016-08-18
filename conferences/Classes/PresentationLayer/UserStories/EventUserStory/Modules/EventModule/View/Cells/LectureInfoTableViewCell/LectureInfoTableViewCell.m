@@ -26,7 +26,7 @@
 
 #import <SDWebImage/UIImageView+WebCache.h>
 
-static NSString *const kPlaceholderImageName = @"placeholder";
+static NSString *const kPlaceholderImageName = @"speaker-placeholder";
 
 @interface LectureInfoTableViewCell ()
 

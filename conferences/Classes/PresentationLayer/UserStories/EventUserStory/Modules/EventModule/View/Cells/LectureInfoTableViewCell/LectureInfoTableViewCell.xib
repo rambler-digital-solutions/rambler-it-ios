@@ -18,7 +18,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vEZ-m4-SAJ" userLabel="SpeakerView">
                         <rect key="frame" x="0.0" y="18" width="320" height="40"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="light-gray-square" translatesAutoresizingMaskIntoConstraints="NO" id="Yqb-Gn-1kT">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="light-gray-square" translatesAutoresizingMaskIntoConstraints="NO" id="Yqb-Gn-1kT">
                                 <rect key="frame" x="20" y="0.0" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Yqb-Gn-1kT" secondAttribute="height" multiplier="1:1" id="fQB-0e-qYa"/>

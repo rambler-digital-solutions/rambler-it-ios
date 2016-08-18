@@ -24,7 +24,8 @@
 
 static CGFloat const kReportSpeakerTableViewCellHeight = 64.0f;
 static CGFloat const kReportSpeakerTableViewSeparatorInset = 72.0f;
-static NSString *const kPlaceholderImageName = @"placeholder";
+
+static NSString *const kPlaceholderImageName = @"speaker-placeholder";
 
 @interface ReportSpeakerTableViewCell ()
 

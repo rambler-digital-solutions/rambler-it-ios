@@ -23,7 +23,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 
 static CGFloat const kReportLectureTableViewSeparatorInset = 20.0f;
-static NSString *const kPlaceholderImageName = @"placeholder";
+static NSString *const kPlaceholderImageName = @"speaker-placeholder";
 
 @interface ReportLectureTableViewCell ()
 
