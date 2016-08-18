@@ -21,7 +21,7 @@
 #import "ReportsSearchViewController.h"
 
 #import "ReportsSearchViewAnimator.h"
-#import "UIColor+ConferencesPallete.h"
+#import "UIColor+ConferencesPalette.h"
 
 @class LecturePlainObject;
 @class SpeakerPlainObject;

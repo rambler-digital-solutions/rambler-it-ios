@@ -21,7 +21,7 @@
 #import "ReportLectureTableViewCellObject.h"
 #import "ReportLectureTableViewCell.h"
 #import "LecturePlainObject.h"
-#import "UIColor+ConferencesPallete.h"
+#import "UIColor+ConferencesPalette.h"
 #import "SpeakerPlainObject.h"
 
 @interface ReportLectureTableViewCellObject ()

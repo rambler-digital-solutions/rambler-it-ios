@@ -25,7 +25,7 @@
  
  Category contains custom colors
  */
-@interface UIColor (ConferencesPallete)
+@interface UIColor (ConferencesPalette)
 
 /**
  @author Egor Tolstoy

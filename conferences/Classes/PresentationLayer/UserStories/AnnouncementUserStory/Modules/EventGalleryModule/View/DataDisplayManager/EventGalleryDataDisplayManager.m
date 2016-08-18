@@ -27,7 +27,7 @@
 #import "TechPlainObject.h"
 
 #import "UIColor+Hex.h"
-#import "UIColor+ConferencesPallete.h"
+#import "UIColor+ConferencesPalette.h"
 #import "EXTScope.h"
 #import <Nimbus/NimbusCollections.h>
 

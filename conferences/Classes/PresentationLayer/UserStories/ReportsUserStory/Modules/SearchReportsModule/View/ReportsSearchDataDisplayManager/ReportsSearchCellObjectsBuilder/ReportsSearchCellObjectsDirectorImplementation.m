@@ -23,7 +23,7 @@
 #import "LecturePlainObject.h"
 #import "EventPlainObject.h"
 #import "SpeakerPlainObject.h"
-#import "UIColor+ConferencesPallete.h"
+#import "UIColor+ConferencesPalette.h"
 #import "LocalizedStrings.h"
 #import "ReportSearchSectionObject.h"
 

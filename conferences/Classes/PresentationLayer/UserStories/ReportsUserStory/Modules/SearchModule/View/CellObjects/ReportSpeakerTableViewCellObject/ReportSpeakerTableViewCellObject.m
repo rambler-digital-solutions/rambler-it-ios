@@ -21,7 +21,7 @@
 #import "ReportSpeakerTableViewCellObject.h"
 #import "ReportSpeakerTableViewCell.h"
 #import "SpeakerPlainObject.h"
-#import "UIColor+ConferencesPallete.h"
+#import "UIColor+ConferencesPalette.h"
 
 @interface ReportSpeakerTableViewCellObject ()
 

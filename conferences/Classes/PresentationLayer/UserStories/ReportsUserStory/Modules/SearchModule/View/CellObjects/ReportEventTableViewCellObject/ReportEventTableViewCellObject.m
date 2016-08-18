@@ -21,7 +21,7 @@
 #import "ReportEventTableViewCellObject.h"
 #import "ReportEventTableViewCell.h"
 #import "EventPlainObject.h"
-#import "UIColor+ConferencesPallete.h"
+#import "UIColor+ConferencesPalette.h"
 #import "MetaEventPlainObject.h"
 
 @interface ReportEventTableViewCellObject ()

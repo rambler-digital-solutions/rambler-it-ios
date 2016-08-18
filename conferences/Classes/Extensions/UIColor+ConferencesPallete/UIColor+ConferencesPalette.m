@@ -18,10 +18,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "UIColor+ConferencesPallete.h"
+#import "UIColor+ConferencesPalette.h"
 #import "UIColor+Hex.h"
 
-@implementation UIColor (ConferencesPallete)
+@implementation UIColor (ConferencesPalette)
 
 + (UIColor *)rcf_yellowColor {
     return [UIColor colorFromHexString:@"#ffd000"];

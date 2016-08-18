@@ -29,7 +29,7 @@
 #import "ReportSpeakerTableViewCellObject.h"
 #import "ReportLectureTableViewCellObject.h"
 #import "ReportSearchSectionTitleCellObject.h"
-#import "UIColor+ConferencesPallete.h"
+#import "UIColor+ConferencesPalette.h"
 #import "DateFormatter.h"
 
 static NSString *const kSeparatorTagsString = @", ";
