@@ -29,6 +29,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self.thirdPartiesConfigurator configurate];
     [self.applicationConfigurator setupCoreDataStack];
+    [self.applicationConfigurator configureInitialSettings];
     [self.spotlightCoreDataStackCoordinator setupCoreDataStack];
     [self.indexerMonitor startMonitoring];
     

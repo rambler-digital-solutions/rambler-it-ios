@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "tabsLocationActive.png",
+      "filename" : "events-tabbar-icon.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "tabsLocationActive@2x.png",
+      "filename" : "events-tabbar-icon@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "tabsLocationActive@3x.png",
+      "filename" : "events-tabbar-icon@3x.png",
       "scale" : "3x"
     }
   ],

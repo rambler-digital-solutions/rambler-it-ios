@@ -31,6 +31,7 @@ static NSString * const kRCFCoreDataStoreName = @"Conference";
 }
 
 - (void)configureInitialSettings {
+    [[UITabBar appearance] setTintColor:[UIColor blackColor]];
     [self.eventService setupPredefinedEventListIfNeeded];
 }
 
