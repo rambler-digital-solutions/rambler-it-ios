@@ -272,6 +272,7 @@
 		6647B5C01D65A92700A82C4C /* DeletedObjectMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6647B5BF1D65A92700A82C4C /* DeletedObjectMapperTests.m */; };
 		6647B5C31D65AD4600A82C4C /* DeletedResponseObjectFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6647B5C21D65AD4600A82C4C /* DeletedResponseObjectFormatterTests.m */; };
 		6647B5C61D65AEBE00A82C4C /* ResponseConverterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6647B5C51D65AEBE00A82C4C /* ResponseConverterTests.m */; };
+		6647B5C81D65B5CF00A82C4C /* DeletedObjectMapperTests.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6647B5C71D65B5CF00A82C4C /* DeletedObjectMapperTests.bundle */; };
 		666C5C331D4F2AF6002D73D5 /* ReportsSearchPresenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 666C5C321D4F2AF6002D73D5 /* ReportsSearchPresenterTests.m */; };
 		666C5C3E1D4F344B002D73D5 /* ReportsSearchPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 666C5C3D1D4F344B002D73D5 /* ReportsSearchPresenter.m */; };
 		666C5C3F1D4F344B002D73D5 /* ReportsSearchPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 666C5C3D1D4F344B002D73D5 /* ReportsSearchPresenter.m */; };
@@ -921,6 +922,7 @@
 		6647B5BF1D65A92700A82C4C /* DeletedObjectMapperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeletedObjectMapperTests.m; path = DeletedObjectsMapper/DeletedObjectMapperTests.m; sourceTree = "<group>"; };
 		6647B5C21D65AD4600A82C4C /* DeletedResponseObjectFormatterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeletedResponseObjectFormatterTests.m; path = CoreLayer/CoreComponents/ResponseObjectFormatters/DeletedResponseObjectFormatter/DeletedResponseObjectFormatterTests.m; sourceTree = "<group>"; };
 		6647B5C51D65AEBE00A82C4C /* ResponseConverterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResponseConverterTests.m; path = ResponseConverter/ResponseConverterTests.m; sourceTree = "<group>"; };
+		6647B5C71D65B5CF00A82C4C /* DeletedObjectMapperTests.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = DeletedObjectMapperTests.bundle; path = DeletedObjectsMapper/DeletedObjectMapperTests.bundle; sourceTree = "<group>"; };
 		666C5C321D4F2AF6002D73D5 /* ReportsSearchPresenterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportsSearchPresenterTests.m; path = ReportsSearchModuleTests/ReportsSearchPresenterTests.m; sourceTree = "<group>"; };
 		666C5C3C1D4F344B002D73D5 /* ReportsSearchPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportsSearchPresenter.h; path = SearchReportsModule/Presenter/ReportsSearchPresenter.h; sourceTree = "<group>"; };
 		666C5C3D1D4F344B002D73D5 /* ReportsSearchPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportsSearchPresenter.m; path = SearchReportsModule/Presenter/ReportsSearchPresenter.m; sourceTree = "<group>"; };
@@ -3719,6 +3721,7 @@
 			isa = PBXGroup;
 			children = (
 				6647B5BF1D65A92700A82C4C /* DeletedObjectMapperTests.m */,
+				6647B5C71D65B5CF00A82C4C /* DeletedObjectMapperTests.bundle */,
 			);
 			name = DeletedObjectMapper;
 			sourceTree = "<group>";
@@ -5654,6 +5657,7 @@
 			files = (
 				9FF750071D26C8EB000D208D /* EventListOperationFactoryTests.bundle in Resources */,
 				9FF750191D27E6EE000D208D /* ManagedObjectMapperTests.bundle in Resources */,
+				6647B5C81D65B5CF00A82C4C /* DeletedObjectMapperTests.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

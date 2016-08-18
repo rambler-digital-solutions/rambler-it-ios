@@ -7,8 +7,16 @@
 //
 
 #import <XCTest/XCTest.h>
+#import <OCMock/OCMock.h>
+
+#import "ResponseConverterImplementation.h"
+#import "ResponseObjectFormatter.h"
+#import "ResultsResponseObjectFormatter.h"
 
 @interface ResponseConverterTests : XCTestCase
+
+@property (nonatomic, strong) ResponseConverterImplementation *converter;
+@property (strong, nonatomic) id<ResponseObjectFormatter> mockResponseFormatter;
 
 @end
 
@@ -17,24 +25,73 @@
 - (void)setUp {
     [super setUp];
     
-    // Put setup code here. This method is called before the invocation of each test method in the class.
-
-    // In UI tests it is usually best to stop immediately when a failure occurs.
-    self.continueAfterFailure = NO;
-    // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-    [[[XCUIApplication alloc] init] launch];
-
-    // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+    self.converter = [[ResponseConverterImplementation alloc] init];
+    self.mockResponseFormatter = [ResultsResponseObjectFormatter new];
+    self.converter.responseFormatter = self.mockResponseFormatter;
 }
 
 - (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
+    self.converter = nil;
+    self.mockResponseFormatter = nil;
     [super tearDown];
 }
 
-- (void)testExample {
-    // Use recording to get started writing UI tests.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+- (void)testThatCorrectlyConvert {
+    //given
+    NSDictionary *inputData = [self inputJSONData];
+    NSDictionary *outputData = [self outputJSONData];
+    
+    //when
+    id result = [self.converter convertFromResponse:inputData];
+    
+    //then
+    XCTAssertEqualObjects(result, outputData);
+}
+
+- (NSDictionary *)inputJSONData {
+    return @{
+             @"data" :
+                 @[
+                     @{
+                         @"attributes" :
+                            @{
+                                @"name":@"1",
+                                @"deleted":@1
+                             }
+                       },
+                     @{
+                         @"attributes" :
+                            @{
+                                @"name":@"2",
+                                }
+                       }
+                    ]
+             };
+}
+
+- (NSDictionary *)outputJSONData {
+    return @{
+             @"deleted" :
+                 @[
+                     @{
+                         @"attributes" :
+                             @{
+                                 @"name":@"1",
+                                 @"deleted":@1
+                              }
+                       }
+                     ],
+             
+             @"updated" :
+                 @[
+                     @{
+                         @"attributes" :
+                             @{
+                                 @"name":@"2",
+                                 }
+                       }
+                     ]
+             };
 }
 
 @end
