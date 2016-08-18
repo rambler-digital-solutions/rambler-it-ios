@@ -41,7 +41,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Как добраться" id="DZy-Ug-hKQ"/>
                     <navigationItem key="navigationItem" title="Как добраться" id="eWj-pQ-ha1">
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="jKS-Vz-0ym">
+                        <barButtonItem key="rightBarButtonItem" image="location-tabbar-icon" id="jKS-Vz-0ym">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="didTapShareButton:" destination="kbg-lh-1lE" id="vFh-A1-dTa"/>
                             </connections>
@@ -59,6 +60,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="location-tabbar-icon" width="24" height="24"/>
         <image name="rambler-map" width="1294" height="1462"/>
     </resources>
 </document>
