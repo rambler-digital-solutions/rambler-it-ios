@@ -37,6 +37,13 @@ static CGFloat const kEventTableViewEstimatedRowHeight = 44.0f;
 	[self.output setupView];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.navigationController.navigationBar rcf_becomeDefault];
+    self.navigationController.navigationBar.hidden = NO;
+}
+
 #pragma mark - AnnouncementListViewInput
 
 - (void)setupViewWithEventList:(NSArray *)events {
