@@ -20,34 +20,13 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol ReportListInteractorInput <NSObject>
+#import "SuggestService.h"
 
 /**
  @author Egor Tolstoy
  
- Method returns searchSuggests
- 
- @return NSArray
+ Implementation of SuggestService protocol
  */
-- (NSArray *)obtainSuggests;
-
-/**
- @author Zinovyev Konstantin
- 
- Метод получения всех прошедших событий из кеша, отсортированных по дате
-
- @return Массив событий
- */
-- (NSArray *)obtainEventList;
-
-/**
- @author Zinovyev Konstantin
- 
- Методполучения список всех прошедших событий, отсортированных по дате и по предикату
- 
- @return Массив событий
- */
-- (NSArray *)obtainEventListWithPredicate:(NSPredicate *)predicate;
+@interface SuggestServiceImplementation : NSObject <SuggestService>
 
 @end
-

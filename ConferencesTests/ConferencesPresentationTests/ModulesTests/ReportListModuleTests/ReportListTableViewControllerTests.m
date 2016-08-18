@@ -77,18 +77,18 @@
 
 #pragma mark - ReportListViewInput
 
-- (void)testSuccessSetupViewWithEventList {
+- (void)testSuccessSetupViewWithSuggests {
     // given
-    NSArray *events = @[];
+    NSArray *suggests = @[];
     
     id dataSource = OCMProtocolMock(@protocol(UITableViewDataSource));
     id delegate = OCMProtocolMock(@protocol(UITableViewDelegate));
     
-    OCMStub([self.mockDataDisplayManager dataSourceForTableView:self.mockTableView withSuggests:nil]).andReturn(dataSource);
+    OCMStub([self.mockDataDisplayManager dataSourceForTableView:self.mockTableView withSuggests:OCMOCK_ANY]).andReturn(dataSource);
     OCMStub([self.mockDataDisplayManager delegateForTableView:self.mockTableView withBaseDelegate:nil]).andReturn(delegate);
     
     // when
-    [self.viewController setupViewWithEventList:events];
+    [self.viewController setupViewWithSuggests:suggests];
     
     // then
     OCMVerify([self.mockTableView setDataSource:dataSource]);

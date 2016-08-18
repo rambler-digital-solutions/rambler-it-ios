@@ -48,6 +48,8 @@
                                                       with:[self presenterReportList]];
                                 [definition injectProperty:@selector(eventService)
                                                       with:[self.serviceComponents eventService]];
+                                [definition injectProperty:@selector(suggestService)
+                                                      with:[self.serviceComponents suggestService]];
                                 [definition injectProperty:@selector(ponsomizer)
                                                       with:[self.ponsomizerAssembly ponsomizer]];
                                 [definition injectProperty:@selector(eventTypeDeterminator)

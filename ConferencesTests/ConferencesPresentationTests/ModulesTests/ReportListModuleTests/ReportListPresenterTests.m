@@ -73,8 +73,8 @@
     [self.presenter setupView];
     
     // then
-    OCMVerify([self.mockInteractor obtainEventList]);
-    OCMVerify([self.mockView setupViewWithEventList:OCMOCK_ANY]);
+    OCMVerify([self.mockInteractor obtainSuggests]);
+    OCMVerify([self.mockView setupViewWithSuggests:OCMOCK_ANY]);
 }
 
 - (void)testSuccessDidTriggerTapCellWithEvent {

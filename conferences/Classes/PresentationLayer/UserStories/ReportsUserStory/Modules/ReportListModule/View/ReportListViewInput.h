@@ -23,6 +23,15 @@
 @protocol ReportListViewInput <NSObject>
 
 /**
+ @author Egor Tolstoy
+ 
+ Method is used to inform View about initial setup
+ 
+ @param suggests Suggests array
+ */
+- (void)setupViewWithSuggests:(NSArray *)suggests;
+
+/**
  @author Zinovyev Konstantin
  
  Method is used to inform View about initial setup

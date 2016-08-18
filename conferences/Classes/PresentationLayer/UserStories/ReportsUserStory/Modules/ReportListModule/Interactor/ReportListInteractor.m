@@ -28,10 +28,17 @@
 #import "EventTypeDeterminator.h"
 #import "ROSPonsomizer.h"
 #import "EXTScope.h"
+#import "SuggestService.h"
+
+static NSUInteger const kSuggestCount = 7;
 
 @implementation ReportListInteractor
 
 #pragma mark - ReportListInteractorInput
+
+- (NSArray *)obtainSuggests {
+    return [self.suggestService obtainRandomSuggestsWithCount:kSuggestCount];
+}
 
 - (NSArray *)obtainEventList {
     id managedObjectEvents = [self.eventService obtainEventWithPredicate:nil];

@@ -29,6 +29,7 @@
 #import "EventPlainObject.h"
 #import "EventModelObject.h"
 #import "ROSPonsomizer.h"
+#import "SuggestService.h"
 
 #import "XCTestCase+RCFHelpers.h"
 #import "TestConstants.h"
@@ -41,6 +42,7 @@ typedef void (^ProxyBlock)(NSInvocation *);
 @property (strong, nonatomic) EventTypeDeterminator *mockEventTypeDeterminator;
 @property (strong, nonatomic) id <ReportListInteractorOutput> mockOutput;
 @property (strong, nonatomic) id <EventService> mockEventService;
+@property (strong, nonatomic) id mockSuggestService;
 @property (strong, nonatomic) id <ROSPonsomizer> mockPonsomizer;
 
 @end
@@ -55,11 +57,13 @@ typedef void (^ProxyBlock)(NSInvocation *);
     self.mockEventService = OCMProtocolMock(@protocol(EventService));
     self.mockEventTypeDeterminator = OCMClassMock([EventTypeDeterminator class]);
     self.mockPonsomizer = OCMProtocolMock(@protocol(ROSPonsomizer));
+    self.mockSuggestService = OCMProtocolMock(@protocol(SuggestService));
     
     self.interactor.output = self.mockOutput;
     self.interactor.eventService = self.mockEventService;
     self.interactor.eventTypeDeterminator = self.mockEventTypeDeterminator;
     self.interactor.ponsomizer = self.mockPonsomizer;
+    self.interactor.suggestService = self.mockSuggestService;
 }
 
 - (void)tearDown {
@@ -68,6 +72,7 @@ typedef void (^ProxyBlock)(NSInvocation *);
     self.mockEventService = nil;
     self.mockEventTypeDeterminator = nil;
     self.mockPonsomizer = nil;
+    self.mockSuggestService = nil;
 
     [super tearDown];
 }
@@ -110,4 +115,17 @@ typedef void (^ProxyBlock)(NSInvocation *);
     OCMVerify([self.mockPonsomizer convertObject:events]);
     OCMVerify([self.mockEventService obtainEventWithPredicate:OCMOCK_ANY]);
 }
+
+- (void)testThatInteractorObtainsSuggests {
+    // given
+    NSArray *testArray = @[@"1"];
+    OCMStub([[self.mockSuggestService ignoringNonObjectArgs] obtainRandomSuggestsWithCount:0]).andReturn(testArray);
+    
+    // when
+    NSArray *result = [self.interactor obtainSuggests];
+    
+    // then
+    XCTAssertEqualObjects(result, testArray);
+}
+
 @end

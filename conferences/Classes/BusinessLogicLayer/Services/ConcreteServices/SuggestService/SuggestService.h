@@ -20,34 +20,22 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol ReportListInteractorInput <NSObject>
+/**
+ @author Egor Tolstoy
+ 
+ Protocol describes an object, responsible for generating text suggests for search
+ */
+@protocol SuggestService <NSObject>
 
 /**
  @author Egor Tolstoy
  
- Method returns searchSuggests
+ Method returns random text suggests for search
  
- @return NSArray
+ @param count Suggests count
+ 
+ @return Array of strings
  */
-- (NSArray *)obtainSuggests;
-
-/**
- @author Zinovyev Konstantin
- 
- Метод получения всех прошедших событий из кеша, отсортированных по дате
-
- @return Массив событий
- */
-- (NSArray *)obtainEventList;
-
-/**
- @author Zinovyev Konstantin
- 
- Методполучения список всех прошедших событий, отсортированных по дате и по предикату
- 
- @return Массив событий
- */
-- (NSArray *)obtainEventListWithPredicate:(NSPredicate *)predicate;
+- (NSArray<NSString *> *)obtainRandomSuggestsWithCount:(NSUInteger)count;
 
 @end
-

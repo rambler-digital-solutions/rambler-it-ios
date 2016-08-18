@@ -30,11 +30,10 @@
 #pragma mark - ReportListViewOutput
 
 - (void)setupView {
-    NSArray *events = [self.interactor obtainEventList];
+    NSArray *suggests = [self.interactor obtainSuggests];
     [self.router configureReportsSearchModuleWithModuleOutput:self];
-    [self.view setupViewWithEventList:events];
+    [self.view setupViewWithSuggests:suggests];
 }
-
 
 - (void)didTriggerTapCellWithEvent:(EventPlainObject *)event {
     [self.router openEventModuleWithEventObjectId:event.eventId];

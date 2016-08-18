@@ -52,14 +52,16 @@
 
 #pragma mark - ReportListViewInput
 
-- (void)setupViewWithEventList:(NSArray *)events {
+- (void)setupViewWithSuggests:(NSArray *)suggests {
     [self.reportsTableView setTableFooterView:[UIView new]];
     
     self.dataDisplayManager.delegate = self;
-    
-    NSArray *suggests = @[@"1234", @"5678", @"ios"];
     self.reportsTableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.reportsTableView withSuggests:suggests];
     self.reportsTableView.delegate = [self.dataDisplayManager delegateForTableView:self.reportsTableView withBaseDelegate:nil];
+}
+
+- (void)setupViewWithEventList:(NSArray *)events {
+    
 }
 
 - (void)setupViewInitialState {
