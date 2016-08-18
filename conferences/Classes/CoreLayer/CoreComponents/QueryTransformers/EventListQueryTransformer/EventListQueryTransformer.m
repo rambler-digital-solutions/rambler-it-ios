@@ -22,16 +22,16 @@
 
 #import "EventListQuery.h"
 
-static NSString *const kLastModifiedFilterFormat = @"filter[modified_since]=%@";
+static NSString *const kLastModifiedFilterFormat = @"filter[modified_since]";
 
 @implementation EventListQueryTransformer
 
-- (NSArray *)deriveUrlParametersFromQuery:(EventListQuery *)query {
+- (NSDictionary *)deriveUrlParametersFromQuery:(EventListQuery *)query {
     if (!query.lastModifiedString) {
-        return @[];
+        return nil;
     }
-    NSString *lastModified = [NSString stringWithFormat:kLastModifiedFilterFormat, query.lastModifiedString];
-    return @[lastModified];
+    NSString *lastModified = query.lastModifiedString;
+    return @{kLastModifiedFilterFormat:lastModified};
 }
 
 @end

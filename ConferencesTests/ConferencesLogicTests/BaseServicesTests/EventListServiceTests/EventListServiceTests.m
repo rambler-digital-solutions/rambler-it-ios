@@ -25,7 +25,9 @@
 #import "EventListOperationFactory.h"
 #import "OperationScheduler.h"
 #import "CompoundOperationBase.h"
-
+#import "XCTestCase+RCFHelpers.h"
+#import "TestConstants.h"
+#import <MagicalRecord/MagicalRecord.h>
 @interface EventListServiceTests : XCTestCase
 
 @property (nonatomic, strong) EventListServiceImplementation *service;
@@ -55,11 +57,12 @@
         operation.resultBlock(nil, nil);
     };
     OCMStub([self.mockScheduler addOperation:OCMOCK_ANY]).andDo(block);
+    [MagicalRecord setupCoreDataStackWithInMemoryStore];
 }
 
 - (void)tearDown {
     self.service = nil;
-    
+    [MagicalRecord cleanUp];
     [self.mockOperationFactory stopMocking];
     self.mockOperationFactory = nil;
     
@@ -70,17 +73,20 @@
 
 - (void)testThatServiceUpdatesEventList {
     // given
+    XCTestExpectation *expectation = [self expectationForCurrentTest];
     CompoundOperationBase *mockOperation = [CompoundOperationBase new];
-    OCMStub([self.mockOperationFactory getEventsOperationWithQuery:OCMOCK_ANY]).andReturn(mockOperation);
-    
-    id mockQuery = [NSObject new];
+    OCMStub([self.mockOperationFactory getEventsOperationWithQuery:OCMOCK_ANY modelObjectId:OCMOCK_ANY]).andReturn(mockOperation);
     
     // when
-    [self.service updateEventListWithQuery:mockQuery completionBlock:^(NSError *error) {}];
+    [self.service updateEventListWithСompletionBlock:^(NSError *error) {
+        [expectation fulfill];
+    }];
     
     // then
-    OCMVerify([self.mockOperationFactory getEventsOperationWithQuery:mockQuery]);
-    OCMVerify([self.mockScheduler addOperation:mockOperation]);
+    [self waitForExpectationsWithTimeout:kTestExpectationTimeout handler:^(NSError *error) {
+        OCMVerify([self.mockOperationFactory getEventsOperationWithQuery:OCMOCK_ANY modelObjectId:OCMOCK_ANY]);
+        OCMVerify([self.mockScheduler addOperation:mockOperation]);
+    }];
 }
 
 @end

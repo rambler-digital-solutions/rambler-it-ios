@@ -24,6 +24,7 @@
 @protocol ReportListInteractorOutput;
 @protocol EventService;
 @protocol ROSPonsomizer;
+
 @class EventTypeDeterminator;
 
 @interface ReportListInteractor : NSObject<ReportListInteractorInput>

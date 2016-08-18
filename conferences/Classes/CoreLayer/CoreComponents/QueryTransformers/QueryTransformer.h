@@ -34,8 +34,8 @@
  
  @param query The query object obtained from the presentation layer
  
- @return An array of URL parameters
+ @return A dictionary of URL parameters
  */
-- (NSArray *)deriveUrlParametersFromQuery:(id)query;
+- (NSDictionary *)deriveUrlParametersFromQuery:(id)query;
 
 @end

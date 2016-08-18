@@ -37,7 +37,6 @@
 - (id <EventService>)eventService;
 - (id <LectureService>)lectureService;
 - (id <SpeakerService>)speakerService;
-- (id <EventListService>)eventListService;
 - (id <MetaEventService>)metaEventService;
 - (id <EventStoreServiceProtocol>)eventStoreService;
 - (id <RamblerLocationService>)ramblerLocationService;

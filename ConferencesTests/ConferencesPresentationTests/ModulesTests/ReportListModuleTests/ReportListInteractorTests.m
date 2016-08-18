@@ -32,7 +32,6 @@
 
 #import "XCTestCase+RCFHelpers.h"
 #import "TestConstants.h"
-
 typedef void (^ProxyBlock)(NSInvocation *);
 
 @interface ReportListInteractorTests : XCTestCase
@@ -77,7 +76,7 @@ typedef void (^ProxyBlock)(NSInvocation *);
     NSObject *event = [NSObject new];
     NSArray *events = @[event];
     
-    OCMStub([self.mockEventService obtainEventWithPredicate:nil]).andReturn(events);
+    OCMStub([self.mockEventService obtainEventsWithPredicate:nil]).andReturn(events);
     OCMStub([self.mockPonsomizer convertObject:OCMOCK_ANY]).andReturn(events);
     // when
     id result = [self.interactor obtainEventList];
@@ -86,7 +85,7 @@ typedef void (^ProxyBlock)(NSInvocation *);
     XCTAssertNotNil(result);
     OCMVerify([self.mockEventTypeDeterminator determinateTypeForEvent:OCMOCK_ANY]);
     OCMVerify([self.mockPonsomizer convertObject:events]);
-    OCMVerify([self.mockEventService obtainEventWithPredicate:OCMOCK_ANY]);
+    OCMVerify([self.mockEventService obtainEventsWithPredicate:OCMOCK_ANY]);
 }
 
 - (void)testSuccessObtainEventListWithPredicate {
@@ -98,7 +97,7 @@ typedef void (^ProxyBlock)(NSInvocation *);
     NSArray *eventsPonso = @[@1];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name CONTAINS[c] %@", @"Test"];
     OCMStub([self.mockEventTypeDeterminator determinateTypeForEvent:OCMOCK_ANY]).andReturn(PastEvent);
-    OCMStub([self.mockEventService obtainEventWithPredicate:predicate]).andReturn(events);
+    OCMStub([self.mockEventService obtainEventsWithPredicate:predicate]).andReturn(events);
     OCMStub([self.mockPonsomizer convertObject:events]).andReturn(eventsPonso);
     
     // when
@@ -108,6 +107,6 @@ typedef void (^ProxyBlock)(NSInvocation *);
     XCTAssertNotNil(result);
     OCMVerify([self.mockEventTypeDeterminator determinateTypeForEvent:OCMOCK_ANY]);
     OCMVerify([self.mockPonsomizer convertObject:events]);
-    OCMVerify([self.mockEventService obtainEventWithPredicate:OCMOCK_ANY]);
+    OCMVerify([self.mockEventService obtainEventsWithPredicate:OCMOCK_ANY]);
 }
 @end

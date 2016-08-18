@@ -62,15 +62,12 @@
     }
     NSManagedObjectContext *rootSavingContext = [NSManagedObjectContext MR_rootSavingContext];
     EKManagedObjectMapping *mapping = [self retreiveMappingForMappingContext:context];
-    NSFetchRequest *request = [self createFetchRequestForMappingContext:context
-                                                         managedContext:rootSavingContext];
     
     __block NSArray *result;
     [rootSavingContext performBlockAndWait:^{
-        result = [EKManagedObjectMapper syncArrayOfObjectsFromExternalRepresentation:response
-                                                                         withMapping:mapping
-                                                                        fetchRequest:request
-                                                              inManagedObjectContext:rootSavingContext];
+        result = [EKManagedObjectMapper arrayOfObjectsFromExternalRepresentation:response
+                                                                     withMapping:mapping
+                                                          inManagedObjectContext:rootSavingContext];
         [rootSavingContext MR_saveToPersistentStoreAndWait];
     }];
     

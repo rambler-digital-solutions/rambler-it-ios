@@ -22,4 +22,18 @@
 
 @implementation RequestDataModel
 
+- (instancetype)initWithHttpHeaderFields:(NSDictionary *)httpHeaderFields
+                         queryParameters:(NSDictionary *)queryParameters
+                                bodyData:(NSData *)bodyData {
+    self = [super init];
+    
+    if (self) {
+        _httpHeaderFields = httpHeaderFields;
+        _queryParameters = queryParameters;
+        _bodyData = bodyData;
+    }
+    
+    return self;
+}
+
 @end

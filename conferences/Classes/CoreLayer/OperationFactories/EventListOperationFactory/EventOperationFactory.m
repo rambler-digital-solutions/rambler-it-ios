@@ -18,7 +18,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "EventListOperationFactory.h"
+#import "EventOperationFactory.h"
 
 #import "NetworkCompoundOperationBuilder.h"
 #import "CompoundOperationBuilderConfig.h"
@@ -27,15 +27,16 @@
 #import "EventModelObject.h"
 #import "NetworkingConstantsHeader.h"
 #import "QueryTransformer.h"
+#import "RequestDataModel.h"
 
-@interface EventListOperationFactory ()
+@interface EventOperationFactory ()
 
 @property (nonatomic, strong) NetworkCompoundOperationBuilder *networkOperationBuilder;
 @property (nonatomic, strong) id<QueryTransformer> queryTransformer;
 
 @end
 
-@implementation EventListOperationFactory
+@implementation EventOperationFactory
 
 #pragma mark - Initialization
 
@@ -51,14 +52,13 @@
 
 #pragma mark - Operations creation
 
-- (CompoundOperationBase *)getEventsOperationWithQuery:(EventListQuery *)query {
+- (CompoundOperationBase *)getEventsOperationWithQuery:(EventListQuery *)query
+                                         modelObjectId:(NSString *)modelObjectId {
     CompoundOperationBuilderConfig *config = [CompoundOperationBuilderConfig new];
     
     config.requestConfigurationType = RequestConfigurationRESTType;
     config.requestMethod = kHTTPMethodGET;
     config.serviceName = kEventServiceName;
-    NSArray *urlParameters = [self.queryTransformer deriveUrlParametersFromQuery:query];
-    config.urlParameters = urlParameters;
     
     config.requestSigningType = RequestSigningDisabledType;
     
@@ -66,12 +66,17 @@
     
     config.responseValidationType = ResponseValidationParseType;
     
-    config.responseMappingType = ResponseMappingResultsType;
+    config.responseMappingType = ResponseMappingDeletedType;
     config.mappingContext = @{
                               kMappingContextModelClassKey : NSStringFromClass([EventModelObject class])
                               };
-    
-    return [self.networkOperationBuilder buildCompoundOperationWithConfig:config];
+    NSDictionary *queryParameters = [self.queryTransformer deriveUrlParametersFromQuery:query];
+    RequestDataModel *inputData = [[RequestDataModel alloc] initWithHttpHeaderFields:nil
+                                                                     queryParameters:queryParameters
+                                                                            bodyData:nil];
+    config.inputQueueData = inputData;
+    return [self.networkOperationBuilder buildCompoundOperationWithConfig:config
+                                                            modelObjectId:(NSString *)modelObjectId];
 }
 
 @end

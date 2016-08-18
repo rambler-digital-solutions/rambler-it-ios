@@ -32,7 +32,7 @@
 #pragma mark - AnnouncementListInteractorInput
 
 - (NSArray *)obtainEventList {
-    NSArray *events = [self.eventService obtainEventWithPredicate:nil];
+    NSArray *events = [self.eventService obtainEventsWithPredicate:nil];
     NSArray *plainObjects = [self.ponsomizer convertObject:events];
     NSArray *sortedEvents = [self sortEventsByDate:plainObjects];
     

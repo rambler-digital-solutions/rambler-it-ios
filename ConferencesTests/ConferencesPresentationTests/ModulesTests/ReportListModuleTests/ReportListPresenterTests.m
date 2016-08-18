@@ -90,7 +90,7 @@
     OCMVerify([self.mockRouter openEventModuleWithEventObjectId:eventId]);
 }
 
-#pragma mark - EventListInteractorOutput
+#pragma mark - ReportListInteractorOutput
 
 - (void)testCorrectDidTapSearchBarCancelButton {
     // given

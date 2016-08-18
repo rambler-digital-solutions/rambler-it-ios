@@ -20,6 +20,7 @@
 
 #import <Typhoon/Typhoon.h>
 #import <AssemblyCollector/RamblerInitialAssembly.h>
+#import "ModuleAssemblyBase.h"
 
 @class SpotlightIndexerAssembly;
 @class SystemInfrastructureAssembly;
@@ -31,7 +32,7 @@
  
  This Assembly is responsible for configuration of the objects in charge of the general logic of the application. Such as: applicationConfigurator, appDelegate
  */
-@interface ApplicationAssembly : TyphoonAssembly <RamblerInitialAssembly>
+@interface ApplicationAssembly : ModuleAssemblyBase <RamblerInitialAssembly>
 
 @property (strong, nonatomic, readonly) SpotlightIndexerAssembly *spotlightIndexerAssembly;
 @property (strong, nonatomic, readonly) SystemInfrastructureAssembly *systemInfrastructureAssembly;

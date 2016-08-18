@@ -21,6 +21,7 @@
 #import "NetworkOperation.h"
 
 #import "NetworkClient.h"
+#import "ServerResponseModel.h"
 
 #import <CocoalumberJack/CocoaLumberjack.h>
 #import <libextobjc/EXTScope.h>
@@ -70,16 +71,16 @@ static const int ddLogLevel = DDLogFlagVerbose;
     
     DDLogVerbose(@"Start sending request to the remote server");
     @weakify(self);
-    [self.networkClient sendRequest:inputData completionBlock:^(id data, NSError *error) {
+    [self.networkClient sendRequest:inputData completionBlock:^(ServerResponseModel *responseModel, NSError *error) {
         @strongify(self);
         if (error) {
             DDLogError(@"NetworkClient in operation %@ has produced an error: %@", NSStringFromClass([self class]), error);
         }
-        if (data) {
-            DDLogVerbose(@"Server returned data with length: %li", (unsigned long)[(NSData *)data length]);
+        if (responseModel) {
+            DDLogVerbose(@"Server returned data with length: %li", (unsigned long)[(NSData *)responseModel.data length]);
         }
         
-        [self completeOperationWithData:data error:error];
+        [self completeOperationWithData:responseModel error:error];
     }];
 }
 

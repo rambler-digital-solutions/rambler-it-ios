@@ -19,34 +19,87 @@
 // THE SOFTWARE.
 
 #import <MagicalRecord/MagicalRecord.h>
+#import "NSManagedObjectID+LJStringConversion.h"
 
 #import "EventServiceImplementation.h"
-
+#import "EventOperationFactory.h"
 #import "CompoundOperationBase.h"
-#import "EventListOperationFactory.h"
+#import "LastModifiedModelObject.h"
 #import "OperationScheduler.h"
 #import "EventModelObject.h"
+#import "EventListQuery.h"
 #import "ROSPonsomizer.h"
+
+static NSString *const kEventListName = @"kEventListName";
 
 @implementation EventServiceImplementation
 
-- (void)updateEventWithPredicate:(NSPredicate *)predicate completionBlock:(EventCompletionBlock)completionBlock {
-    CompoundOperationBase *compoundOperation = [self.eventOperationFactory getEventsOperationWithQuery:nil];
-    compoundOperation.resultBlock = ^void(id data, NSError *error) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            completionBlock(data, error);
-        });
-    };
-    
-    [self.operationScheduler addOperation:compoundOperation];
-}
-
-- (NSArray *)obtainEventWithPredicate:(NSPredicate *)predicate {
+- (NSArray *)obtainEventsWithPredicate:(NSPredicate *)predicate {
     NSManagedObjectContext *context = [NSManagedObjectContext MR_defaultContext];
     
     NSArray *events = [EventModelObject MR_findAllWithPredicate:predicate inContext:context];
     
     return events;
+}
+
+- (void)updateEventListWithCompletionBlock:(EventsCompletionBlock)completionBlock
+{
+    EventListQuery *listQuery = [self obtainActualEventListObject];
+    NSString *modelObjectId = [self obtainCurrentEventModelObjectId];
+    NSManagedObjectContext *rootSavingContext = [NSManagedObjectContext MR_rootSavingContext];
+    [rootSavingContext performBlock:^{
+        CompoundOperationBase *compoundOperation = [self.eventOperationFactory getEventsOperationWithQuery:listQuery
+                                                                                             modelObjectId:modelObjectId];
+        
+        compoundOperation.resultBlock = ^void(id data, NSError *error) {
+            completionBlock(error);
+        };
+        
+        [self.operationScheduler addOperation:compoundOperation];
+    }];
+}
+
+- (void)setupPredefinedEventListIfNeeded {
+    [self setupPredefinedEventListWithName:kEventListName];
+}
+
+#pragma mark - private methods
+
+- (void)setupPredefinedEventListWithName:(NSString *)eventListName {
+    NSManagedObjectContext *defaultContext = [NSManagedObjectContext MR_defaultContext];
+    LastModifiedModelObject *eventListObject = [LastModifiedModelObject MR_findFirstByAttribute:NSStringFromSelector(@selector(name)) withValue:eventListName inContext:defaultContext];
+    if (eventListObject) {
+        return;
+    }
+    
+    NSManagedObjectContext *rootSavingContext = [NSManagedObjectContext MR_rootSavingContext];
+    [rootSavingContext performBlockAndWait:^{
+        LastModifiedModelObject *eventListObject = [LastModifiedModelObject MR_findFirstByAttribute:NSStringFromSelector(@selector(name)) withValue:eventListName inContext:rootSavingContext];
+        if (!eventListObject) {
+            eventListObject = [LastModifiedModelObject MR_createEntityInContext:rootSavingContext];
+            eventListObject.name = eventListName;
+            eventListObject.lastModifiedId = [[NSUUID UUID] UUIDString];
+            eventListObject.lastModifiedDate = [NSDate dateWithTimeIntervalSince1970:0];
+        }
+        
+        [rootSavingContext MR_saveToPersistentStoreAndWait];
+    }];
+}
+
+- (EventListQuery *)obtainActualEventListObject {
+    LastModifiedModelObject *modelObject = [LastModifiedModelObject MR_findFirst];
+    EventListQuery *eventListQuery = [EventListQuery new];
+    
+    NSTimeInterval interval = [modelObject.lastModifiedDate timeIntervalSince1970];
+    eventListQuery.lastModifiedString = [NSString stringWithFormat:@"%d",(int)interval];
+    
+    return eventListQuery;
+}
+
+- (NSString *)obtainCurrentEventModelObjectId{
+    LastModifiedModelObject *modelObject = [LastModifiedModelObject MR_findFirst];
+    NSString *modelObjectID = [[modelObject objectID] stringRepresentation];
+    return modelObjectID;
 }
 
 @end

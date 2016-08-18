@@ -52,7 +52,7 @@
     
     predicate = [NSPredicate predicateWithFormat:@"%K CONTAINS[c] %@ OR SUBQUERY(%K, $lecture, SUBQUERY($lecture.%K, $tag, $tag.%K CONTAINS[c] %@).@count > 0).@count > 0",selectorEventName, text, selectorLectures, selectorTags, selectorTagName, text];
     
-    id managedObjectEvents = [self.eventService obtainEventWithPredicate:predicate];
+    id managedObjectEvents = [self.eventService obtainEventsWithPredicate:predicate];
     NSArray *events = [self.ponsomizer convertObject:managedObjectEvents];
     [foundObjects addObjectsFromArray:events];
     

@@ -73,8 +73,6 @@ static const NSInteger kDefaultEstimatedHeight = 116;
     [self.searchEmbedContainer setHidden:YES];
 }
 
-
-
 #pragma mark - ReportListDataDisplayManagerDelegate methods
 
 - (void)didUpdateTableViewModel {

@@ -21,13 +21,13 @@
 #import <Foundation/Foundation.h>
 #import "EventService.h"
 
-@class EventListOperationFactory;
+@class EventOperationFactory;
 @protocol OperationScheduler;
 @protocol ROSPonsomizer;
 
 @interface EventServiceImplementation : NSObject <EventService>
 
-@property (strong, nonatomic) EventListOperationFactory *eventOperationFactory;
+@property (strong, nonatomic) EventOperationFactory *eventOperationFactory;
 @property (strong, nonatomic) id <OperationScheduler> operationScheduler;
 
 @end

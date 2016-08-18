@@ -35,7 +35,7 @@
 
 - (void)updateEventList {
     @weakify(self)
-    [self.eventService updateEventWithPredicate:nil completionBlock:^(id data, NSError *error) {
+    [self.eventService updateEventListWithCompletionBlock:^(NSError *error) {
         @strongify(self);
         NSArray *futureEvents = [self obtainFutureEventList];
         
@@ -44,7 +44,7 @@
 }
 
 - (NSArray<EventPlainObject *> *)obtainFutureEventList {
-    NSArray *events = [self.eventService obtainEventWithPredicate:nil];
+    NSArray *events = [self.eventService obtainEventsWithPredicate:nil];
     NSArray *plainObjects = [self.ponsomizer convertObject:events];
     NSArray *futureEvents = [self.futureEventFilter filterFutureEventsFromEvents:plainObjects];
     

@@ -250,6 +250,19 @@
 		63FD4E061BE5038D0046378E /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FD4E051BE5038D0046378E /* UIColor+Hex.m */; };
 		63FDCE141BBDBA2A00A43B60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63FDCE021BBDBA2A00A43B60 /* Assets.xcassets */; };
 		63FDCE161BBDBA2A00A43B60 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FDCE051BBDBA2A00A43B60 /* main.m */; };
+		661CA3F51D65CF920047EB68 /* EventOperationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 661CA3F41D65CF920047EB68 /* EventOperationFactory.m */; };
+		661CA3FE1D65CFF70047EB68 /* LastModifiedMapperOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 661CA3FD1D65CFF70047EB68 /* LastModifiedMapperOperation.m */; };
+		661CA4031D65D04E0047EB68 /* ServerResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 661CA4021D65D04E0047EB68 /* ServerResponseModel.m */; };
+		661CA4071D65D0720047EB68 /* NSManagedObjectID+LJStringConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 661CA4061D65D0720047EB68 /* NSManagedObjectID+LJStringConversion.m */; };
+		661CA40A1D65D0D20047EB68 /* _LastModifiedModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 661CA4091D65D0D20047EB68 /* _LastModifiedModelObject.m */; };
+		661CA40D1D65D0D80047EB68 /* _LastModifiedPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 661CA40C1D65D0D80047EB68 /* _LastModifiedPlainObject.m */; };
+		661CA4131D65D0E30047EB68 /* LastModifiedModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 661CA4111D65D0E30047EB68 /* LastModifiedModelObject.m */; };
+		661CA4161D65D0EB0047EB68 /* LastModifiedPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 661CA4151D65D0EB0047EB68 /* LastModifiedPlainObject.m */; };
+		661CA41D1D65D17D0047EB68 /* DeletedObjectsMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 661CA41C1D65D17D0047EB68 /* DeletedObjectsMapper.m */; };
+		661CA4211D65D1C30047EB68 /* ResponseConverterImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 661CA4201D65D1C30047EB68 /* ResponseConverterImplementation.m */; };
+		661CA4271D65D2040047EB68 /* ResponseConverterAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 661CA4251D65D2040047EB68 /* ResponseConverterAssembly.m */; };
+		661CA42B1D65D2270047EB68 /* DeletedResponseObjectFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 661CA42A1D65D2270047EB68 /* DeletedResponseObjectFormatter.m */; };
+		661CA42F1D65D2550047EB68 /* ModifiedDataListServerResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 661CA42E1D65D2550047EB68 /* ModifiedDataListServerResponse.m */; };
 		6621664F1D4F4507000A1D11 /* ReportsSearchDataDisplayManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6621664B1D4F4507000A1D11 /* ReportsSearchDataDisplayManagerTests.m */; };
 		662166501D4F4507000A1D11 /* ReportsSearchInteractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6621664C1D4F4507000A1D11 /* ReportsSearchInteractorTests.m */; };
 		662166511D4F4507000A1D11 /* ReportsSearchRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6621664D1D4F4507000A1D11 /* ReportsSearchRouterTests.m */; };
@@ -285,6 +298,7 @@
 		66CCA72C1D61A654004153EA /* ReportSearchSectionTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CCA72A1D61A654004153EA /* ReportSearchSectionTitleTableViewCell.m */; };
 		66CCA72D1D61A654004153EA /* ReportSearchSectionTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66CCA72B1D61A654004153EA /* ReportSearchSectionTitleTableViewCell.xib */; };
 		66CCA7301D61A67E004153EA /* ReportSearchSectionTitleCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CCA72F1D61A67E004153EA /* ReportSearchSectionTitleCellObject.m */; };
+		66DB636E1D65DCFE009071FD /* ResponseConverterOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 66DB636D1D65DCFE009071FD /* ResponseConverterOperation.m */; };
 		66E9992C1D54899C00161D98 /* LectureServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E9992B1D54899C00161D98 /* LectureServiceTests.m */; };
 		66E999321D549E2100161D98 /* LectureCellObjectsBuilderImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E999311D549E2100161D98 /* LectureCellObjectsBuilderImplementation.m */; };
 		66E9993D1D54AF5100161D98 /* TagAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E9993C1D54AF5100161D98 /* TagAssembly.m */; };
@@ -496,7 +510,6 @@
 		9FBE8B031D634F0500DA0C32 /* EventListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FBE8AEF1D634F0500DA0C32 /* EventListTableViewCell.xib */; };
 		9FBE8B061D634F0500DA0C32 /* EventListDataDisplayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8AF71D634F0500DA0C32 /* EventListDataDisplayManager.m */; };
 		9FBE8B071D634F0500DA0C32 /* EventListCellObjectBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8AFA1D634F0500DA0C32 /* EventListCellObjectBuilder.m */; };
-		9FC1F6761D2824000070D9B5 /* EventListServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */; };
 		9FC1F6801D2838FA0070D9B5 /* EventListQueryTransformerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */; };
 		9FC1F6841D28391E0070D9B5 /* EventListQueryTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6831D28391E0070D9B5 /* EventListQueryTransformer.m */; };
 		9FC305321D6476EA0052CB67 /* ShareUrlBuilderImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC305311D6476EA0052CB67 /* ShareUrlBuilderImplementation.m */; };
@@ -508,8 +521,6 @@
 		9FF37E181D32397900471B4E /* RamblerLocationPresenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF37E171D32397900471B4E /* RamblerLocationPresenterTests.m */; };
 		9FF37E1B1D323B0200471B4E /* RamblerLocationRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF37E1A1D323B0200471B4E /* RamblerLocationRouterTests.m */; };
 		9FF74FFA1D26C448000D208D /* EventListQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF74FF91D26C448000D208D /* EventListQuery.m */; };
-		9FF74FFF1D26C62A000D208D /* EventListServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF74FFE1D26C62A000D208D /* EventListServiceImplementation.m */; };
-		9FF750031D26C74B000D208D /* EventListOperationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF750021D26C74B000D208D /* EventListOperationFactory.m */; };
 		9FF750071D26C8EB000D208D /* EventListOperationFactoryTests.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9FF750051D26C8EB000D208D /* EventListOperationFactoryTests.bundle */; };
 		9FF750081D26C8EB000D208D /* EventListOperationFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF750061D26C8EB000D208D /* EventListOperationFactoryTests.m */; };
 		9FF7500D1D27DB5F000D208D /* ManagedObjectMappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF7500C1D27DB5F000D208D /* ManagedObjectMappingProvider.m */; };
@@ -1001,6 +1012,34 @@
 		63FDCE021BBDBA2A00A43B60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63FDCE041BBDBA2A00A43B60 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63FDCE051BBDBA2A00A43B60 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		661CA3F31D65CF920047EB68 /* EventOperationFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventOperationFactory.h; path = OperationFactories/EventListOperationFactory/EventOperationFactory.h; sourceTree = "<group>"; };
+		661CA3F41D65CF920047EB68 /* EventOperationFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventOperationFactory.m; path = OperationFactories/EventListOperationFactory/EventOperationFactory.m; sourceTree = "<group>"; };
+		661CA3FC1D65CFF70047EB68 /* LastModifiedMapperOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LastModifiedMapperOperation.h; path = MiscellaneousOperations/LastModifiedMapperOperation/LastModifiedMapperOperation.h; sourceTree = "<group>"; };
+		661CA3FD1D65CFF70047EB68 /* LastModifiedMapperOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LastModifiedMapperOperation.m; path = MiscellaneousOperations/LastModifiedMapperOperation/LastModifiedMapperOperation.m; sourceTree = "<group>"; };
+		661CA4011D65D04E0047EB68 /* ServerResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServerResponseModel.h; path = CoreComponents/NetworkClients/Models/ServerResponseModel/ServerResponseModel.h; sourceTree = "<group>"; };
+		661CA4021D65D04E0047EB68 /* ServerResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServerResponseModel.m; path = CoreComponents/NetworkClients/Models/ServerResponseModel/ServerResponseModel.m; sourceTree = "<group>"; };
+		661CA4051D65D0720047EB68 /* NSManagedObjectID+LJStringConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSManagedObjectID+LJStringConversion.h"; path = "NSManagedObjectID+LJStringConversion/NSManagedObjectID+LJStringConversion.h"; sourceTree = "<group>"; };
+		661CA4061D65D0720047EB68 /* NSManagedObjectID+LJStringConversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObjectID+LJStringConversion.m"; path = "NSManagedObjectID+LJStringConversion/NSManagedObjectID+LJStringConversion.m"; sourceTree = "<group>"; };
+		661CA4081D65D0D20047EB68 /* _LastModifiedModelObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _LastModifiedModelObject.h; sourceTree = "<group>"; };
+		661CA4091D65D0D20047EB68 /* _LastModifiedModelObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _LastModifiedModelObject.m; sourceTree = "<group>"; };
+		661CA40B1D65D0D80047EB68 /* _LastModifiedPlainObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _LastModifiedPlainObject.h; sourceTree = "<group>"; };
+		661CA40C1D65D0D80047EB68 /* _LastModifiedPlainObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _LastModifiedPlainObject.m; sourceTree = "<group>"; };
+		661CA4101D65D0E30047EB68 /* LastModifiedModelObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LastModifiedModelObject.h; sourceTree = "<group>"; };
+		661CA4111D65D0E30047EB68 /* LastModifiedModelObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LastModifiedModelObject.m; sourceTree = "<group>"; };
+		661CA4141D65D0EB0047EB68 /* LastModifiedPlainObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LastModifiedPlainObject.h; sourceTree = "<group>"; };
+		661CA4151D65D0EB0047EB68 /* LastModifiedPlainObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LastModifiedPlainObject.m; sourceTree = "<group>"; };
+		661CA41B1D65D17D0047EB68 /* DeletedObjectsMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeletedObjectsMapper.h; path = CoreComponents/ResponseMappers/BaseClasses/DeletedObjectsMapper/DeletedObjectsMapper.h; sourceTree = "<group>"; };
+		661CA41C1D65D17D0047EB68 /* DeletedObjectsMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeletedObjectsMapper.m; path = CoreComponents/ResponseMappers/BaseClasses/DeletedObjectsMapper/DeletedObjectsMapper.m; sourceTree = "<group>"; };
+		661CA41F1D65D1C30047EB68 /* ResponseConverterImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResponseConverterImplementation.h; path = CoreComponents/ResponseConverter/ConcreteClass/ResponseConverterImplementation.h; sourceTree = "<group>"; };
+		661CA4201D65D1C30047EB68 /* ResponseConverterImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResponseConverterImplementation.m; path = CoreComponents/ResponseConverter/ConcreteClass/ResponseConverterImplementation.m; sourceTree = "<group>"; };
+		661CA4221D65D1CF0047EB68 /* ResponseConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResponseConverter.h; path = CoreComponents/ResponseConverter/Protocols/ResponseConverter.h; sourceTree = "<group>"; };
+		661CA4241D65D2040047EB68 /* ResponseConverterAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResponseConverterAssembly.h; path = Assemblies/ResponseConverterAssembly/ResponseConverterAssembly.h; sourceTree = "<group>"; };
+		661CA4251D65D2040047EB68 /* ResponseConverterAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResponseConverterAssembly.m; path = Assemblies/ResponseConverterAssembly/ResponseConverterAssembly.m; sourceTree = "<group>"; };
+		661CA4261D65D2040047EB68 /* ResponseConverterFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResponseConverterFactory.h; path = Assemblies/ResponseConverterAssembly/ResponseConverterFactory.h; sourceTree = "<group>"; };
+		661CA4291D65D2270047EB68 /* DeletedResponseObjectFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeletedResponseObjectFormatter.h; path = DeletedResponseObjectFormatter/DeletedResponseObjectFormatter.h; sourceTree = "<group>"; };
+		661CA42A1D65D2270047EB68 /* DeletedResponseObjectFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeletedResponseObjectFormatter.m; path = DeletedResponseObjectFormatter/DeletedResponseObjectFormatter.m; sourceTree = "<group>"; };
+		661CA42D1D65D2550047EB68 /* ModifiedDataListServerResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModifiedDataListServerResponse.h; path = conferences/Classes/CoreLayer/CoreComponents/ResponseObjectFormatters/Model/CustomServerResponse/ModifiedDataListServerResponse.h; sourceTree = SOURCE_ROOT; };
+		661CA42E1D65D2550047EB68 /* ModifiedDataListServerResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModifiedDataListServerResponse.m; path = conferences/Classes/CoreLayer/CoreComponents/ResponseObjectFormatters/Model/CustomServerResponse/ModifiedDataListServerResponse.m; sourceTree = SOURCE_ROOT; };
 		6621664B1D4F4507000A1D11 /* ReportsSearchDataDisplayManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportsSearchDataDisplayManagerTests.m; path = ReportsSearchModuleTests/ReportsSearchDataDisplayManagerTests.m; sourceTree = "<group>"; };
 		6621664C1D4F4507000A1D11 /* ReportsSearchInteractorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportsSearchInteractorTests.m; path = ReportsSearchModuleTests/ReportsSearchInteractorTests.m; sourceTree = "<group>"; };
 		6621664D1D4F4507000A1D11 /* ReportsSearchRouterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportsSearchRouterTests.m; path = ReportsSearchModuleTests/ReportsSearchRouterTests.m; sourceTree = "<group>"; };
@@ -1068,6 +1107,8 @@
 		66CCA72B1D61A654004153EA /* ReportSearchSectionTitleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ReportSearchSectionTitleTableViewCell.xib; path = SearchReportsModule/View/Cells/ReportSearchSectionTitleTableViewCell/ReportSearchSectionTitleTableViewCell.xib; sourceTree = "<group>"; };
 		66CCA72E1D61A67E004153EA /* ReportSearchSectionTitleCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportSearchSectionTitleCellObject.h; path = CellObjects/ReportSearchSectionTitleCellObject/ReportSearchSectionTitleCellObject.h; sourceTree = "<group>"; };
 		66CCA72F1D61A67E004153EA /* ReportSearchSectionTitleCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportSearchSectionTitleCellObject.m; path = CellObjects/ReportSearchSectionTitleCellObject/ReportSearchSectionTitleCellObject.m; sourceTree = "<group>"; };
+		66DB636C1D65DCFE009071FD /* ResponseConverterOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResponseConverterOperation.h; path = MiscellaneousOperations/ResponseConverterOperation/ResponseConverterOperation.h; sourceTree = "<group>"; };
+		66DB636D1D65DCFE009071FD /* ResponseConverterOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResponseConverterOperation.m; path = MiscellaneousOperations/ResponseConverterOperation/ResponseConverterOperation.m; sourceTree = "<group>"; };
 		66E9992B1D54899C00161D98 /* LectureServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LectureServiceTests.m; path = ConferencesTests/ConferencesLogicTests/BaseServicesTests/LectureServiceTests/LectureServiceTests.m; sourceTree = SOURCE_ROOT; };
 		66E9992F1D549E0E00161D98 /* LectureCellObjectsBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LectureCellObjectsBuilder.h; path = LectureCellObjectsBuilder/LectureCellObjectsBuilder.h; sourceTree = "<group>"; };
 		66E999301D549E2100161D98 /* LectureCellObjectsBuilderImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LectureCellObjectsBuilderImplementation.h; path = LectureCellObjectsBuilder/LectureCellObjectsBuilderImplementation.h; sourceTree = "<group>"; };
@@ -1502,7 +1543,6 @@
 		9FBE8AF71D634F0500DA0C32 /* EventListDataDisplayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListDataDisplayManager.m; sourceTree = "<group>"; };
 		9FBE8AF91D634F0500DA0C32 /* EventListCellObjectBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListCellObjectBuilder.h; sourceTree = "<group>"; };
 		9FBE8AFA1D634F0500DA0C32 /* EventListCellObjectBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListCellObjectBuilder.m; sourceTree = "<group>"; };
-		9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListServiceTests.m; path = EventListServiceTests/EventListServiceTests.m; sourceTree = "<group>"; };
 		9FC1F6781D2826D10070D9B5 /* QueryTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QueryTransformer.h; path = CoreComponents/QueryTransformers/QueryTransformer.h; sourceTree = "<group>"; };
 		9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListQueryTransformerTests.m; path = CoreLayer/CoreComponents/QueryTransformers/EventListQueryTransformer/EventListQueryTransformerTests.m; sourceTree = "<group>"; };
 		9FC1F6821D28391E0070D9B5 /* EventListQueryTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListQueryTransformer.h; sourceTree = "<group>"; };
@@ -1520,11 +1560,6 @@
 		9FF37E1A1D323B0200471B4E /* RamblerLocationRouterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RamblerLocationRouterTests.m; path = RamblerLocationModuleTests/RamblerLocationRouterTests.m; sourceTree = "<group>"; };
 		9FF74FF81D26C448000D208D /* EventListQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventListQuery.h; path = ObjectQueries/EventListQUery/EventListQuery.h; sourceTree = "<group>"; };
 		9FF74FF91D26C448000D208D /* EventListQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListQuery.m; path = ObjectQueries/EventListQUery/EventListQuery.m; sourceTree = "<group>"; };
-		9FF74FFC1D26C61F000D208D /* EventListService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventListService.h; path = EventListService/EventListService.h; sourceTree = "<group>"; };
-		9FF74FFD1D26C62A000D208D /* EventListServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventListServiceImplementation.h; path = EventListService/EventListServiceImplementation.h; sourceTree = "<group>"; };
-		9FF74FFE1D26C62A000D208D /* EventListServiceImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListServiceImplementation.m; path = EventListService/EventListServiceImplementation.m; sourceTree = "<group>"; };
-		9FF750011D26C74B000D208D /* EventListOperationFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventListOperationFactory.h; path = OperationFactories/EventListOperationFactory/EventListOperationFactory.h; sourceTree = "<group>"; };
-		9FF750021D26C74B000D208D /* EventListOperationFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListOperationFactory.m; path = OperationFactories/EventListOperationFactory/EventListOperationFactory.m; sourceTree = "<group>"; };
 		9FF750051D26C8EB000D208D /* EventListOperationFactoryTests.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = EventListOperationFactoryTests.bundle; sourceTree = "<group>"; };
 		9FF750061D26C8EB000D208D /* EventListOperationFactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListOperationFactoryTests.m; sourceTree = "<group>"; };
 		9FF7500B1D27DB5F000D208D /* ManagedObjectMappingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagedObjectMappingProvider.h; sourceTree = "<group>"; };
@@ -1616,6 +1651,8 @@
 		2B20642B1D3F9CE900246C8D /* GeneratedMO */ = {
 			isa = PBXGroup;
 			children = (
+				661CA4081D65D0D20047EB68 /* _LastModifiedModelObject.h */,
+				661CA4091D65D0D20047EB68 /* _LastModifiedModelObject.m */,
 				2B20642C1D3F9CE900246C8D /* _EventModelObject.h */,
 				2B20642D1D3F9CE900246C8D /* _EventModelObject.m */,
 				2B20642E1D3F9CE900246C8D /* _LectureMaterialModelObject.h */,
@@ -1641,6 +1678,8 @@
 		2B20643E1D3F9CE900246C8D /* GeneratedPONSO */ = {
 			isa = PBXGroup;
 			children = (
+				661CA40B1D65D0D80047EB68 /* _LastModifiedPlainObject.h */,
+				661CA40C1D65D0D80047EB68 /* _LastModifiedPlainObject.m */,
 				2B20643F1D3F9CE900246C8D /* _EventPlainObject.h */,
 				2B2064401D3F9CE900246C8D /* _EventPlainObject.m */,
 				2B2064411D3F9CE900246C8D /* _LectureMaterialPlainObject.h */,
@@ -1666,6 +1705,8 @@
 		2B2064511D3F9CE900246C8D /* ManagedObjects */ = {
 			isa = PBXGroup;
 			children = (
+				661CA4101D65D0E30047EB68 /* LastModifiedModelObject.h */,
+				661CA4111D65D0E30047EB68 /* LastModifiedModelObject.m */,
 				2B2064521D3F9CE900246C8D /* EventModelObject.h */,
 				2B2064531D3F9CE900246C8D /* EventModelObject.m */,
 				2B2064541D3F9CE900246C8D /* LectureMaterialModelObject.h */,
@@ -1691,6 +1732,8 @@
 		2B2064641D3F9CE900246C8D /* PlainObjects */ = {
 			isa = PBXGroup;
 			children = (
+				661CA4141D65D0EB0047EB68 /* LastModifiedPlainObject.h */,
+				661CA4151D65D0EB0047EB68 /* LastModifiedPlainObject.m */,
 				2B2064651D3F9CE900246C8D /* EventPlainObject.h */,
 				2B2064661D3F9CE900246C8D /* EventPlainObject.m */,
 				2B2064671D3F9CE900246C8D /* LectureMaterialPlainObject.h */,
@@ -2340,7 +2383,6 @@
 				66E9992D1D5489A300161D98 /* LectureServiceTests */,
 				2B01CEBC1D50A54000DA8E66 /* MetaEventServiceTests */,
 				9F4077861D2BF82D00D47EF6 /* RamblerLocationServiceTests */,
-				9FC1F6741D2823E40070D9B5 /* EventListServiceTests */,
 				631CBA391C0092C900E3EBA8 /* EventServiceTests */,
 				631CBA361C0092C100E3EBA8 /* ApplicationConfiguratorTests */,
 			);
@@ -2572,7 +2614,6 @@
 				66E999961D54B2F800161D98 /* TagService */,
 				2B429A781D509857004C005F /* MetaEventService */,
 				9F40777B1D2BF4C400D47EF6 /* RamblerLocationService */,
-				9FF74FFB1D26C60E000D208D /* EventListService */,
 				63D7460B1C8B0CF600E3A381 /* EventStoreService */,
 				63EF15BC1BC4617000480CAF /* PushNotificationSrvice */,
 				6373A3E01BBDBDF700DF67FF /* EventService */,
@@ -3845,6 +3886,7 @@
 		63FDCDE01BBDBA2A00A43B60 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				661CA4041D65D0690047EB68 /* NSManagedObjectID+LJStringConversion */,
 				2B429A5C1D4789FA004C005F /* UINavigationBar */,
 				66704FFD1D460E2A00DD9D6E /* UIColor+ConferencesPallete */,
 				63FD4E021BE503440046378E /* UIColor+Hex */,
@@ -3929,6 +3971,123 @@
 			name = "Supporting Files";
 			path = "conferences/Supporting Files";
 			sourceTree = SOURCE_ROOT;
+		};
+		661CA3F61D65CFA80047EB68 /* MiscellaneousOperations */ = {
+			isa = PBXGroup;
+			children = (
+				661CA3F81D65CFCC0047EB68 /* ResponseConverterOperation */,
+				661CA3F71D65CFC30047EB68 /* LastModifiedMapperOperation */,
+			);
+			name = MiscellaneousOperations;
+			sourceTree = "<group>";
+		};
+		661CA3F71D65CFC30047EB68 /* LastModifiedMapperOperation */ = {
+			isa = PBXGroup;
+			children = (
+				661CA3FC1D65CFF70047EB68 /* LastModifiedMapperOperation.h */,
+				661CA3FD1D65CFF70047EB68 /* LastModifiedMapperOperation.m */,
+			);
+			name = LastModifiedMapperOperation;
+			sourceTree = "<group>";
+		};
+		661CA3F81D65CFCC0047EB68 /* ResponseConverterOperation */ = {
+			isa = PBXGroup;
+			children = (
+				66DB636C1D65DCFE009071FD /* ResponseConverterOperation.h */,
+				66DB636D1D65DCFE009071FD /* ResponseConverterOperation.m */,
+			);
+			name = ResponseConverterOperation;
+			sourceTree = "<group>";
+		};
+		661CA3FF1D65D0390047EB68 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				661CA4001D65D0410047EB68 /* ServerResponseModel */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		661CA4001D65D0410047EB68 /* ServerResponseModel */ = {
+			isa = PBXGroup;
+			children = (
+				661CA4011D65D04E0047EB68 /* ServerResponseModel.h */,
+				661CA4021D65D04E0047EB68 /* ServerResponseModel.m */,
+			);
+			name = ServerResponseModel;
+			sourceTree = "<group>";
+		};
+		661CA4041D65D0690047EB68 /* NSManagedObjectID+LJStringConversion */ = {
+			isa = PBXGroup;
+			children = (
+				661CA4051D65D0720047EB68 /* NSManagedObjectID+LJStringConversion.h */,
+				661CA4061D65D0720047EB68 /* NSManagedObjectID+LJStringConversion.m */,
+			);
+			name = "NSManagedObjectID+LJStringConversion";
+			sourceTree = "<group>";
+		};
+		661CA4171D65D1020047EB68 /* ResponseConverter */ = {
+			isa = PBXGroup;
+			children = (
+				661CA41E1D65D1B40047EB68 /* ConcreteClass */,
+				661CA4191D65D1200047EB68 /* Protocols */,
+			);
+			name = ResponseConverter;
+			sourceTree = "<group>";
+		};
+		661CA4191D65D1200047EB68 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				661CA4221D65D1CF0047EB68 /* ResponseConverter.h */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		661CA41A1D65D16D0047EB68 /* DeletedObjectsMapper */ = {
+			isa = PBXGroup;
+			children = (
+				661CA41B1D65D17D0047EB68 /* DeletedObjectsMapper.h */,
+				661CA41C1D65D17D0047EB68 /* DeletedObjectsMapper.m */,
+			);
+			name = DeletedObjectsMapper;
+			sourceTree = "<group>";
+		};
+		661CA41E1D65D1B40047EB68 /* ConcreteClass */ = {
+			isa = PBXGroup;
+			children = (
+				661CA41F1D65D1C30047EB68 /* ResponseConverterImplementation.h */,
+				661CA4201D65D1C30047EB68 /* ResponseConverterImplementation.m */,
+			);
+			name = ConcreteClass;
+			sourceTree = "<group>";
+		};
+		661CA4231D65D1E90047EB68 /* ResponseConverterFactory */ = {
+			isa = PBXGroup;
+			children = (
+				661CA4241D65D2040047EB68 /* ResponseConverterAssembly.h */,
+				661CA4251D65D2040047EB68 /* ResponseConverterAssembly.m */,
+				661CA4261D65D2040047EB68 /* ResponseConverterFactory.h */,
+			);
+			name = ResponseConverterFactory;
+			sourceTree = "<group>";
+		};
+		661CA4281D65D21D0047EB68 /* DeletedResponseObjectFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				661CA42C1D65D24E0047EB68 /* Model */,
+				661CA4291D65D2270047EB68 /* DeletedResponseObjectFormatter.h */,
+				661CA42A1D65D2270047EB68 /* DeletedResponseObjectFormatter.m */,
+			);
+			name = DeletedResponseObjectFormatter;
+			sourceTree = "<group>";
+		};
+		661CA42C1D65D24E0047EB68 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				661CA42D1D65D2550047EB68 /* ModifiedDataListServerResponse.h */,
+				661CA42E1D65D2550047EB68 /* ModifiedDataListServerResponse.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
 		};
 		666C5C311D4F2A65002D73D5 /* ReportsSearchModuleTests */ = {
 			isa = PBXGroup;
@@ -4494,6 +4653,7 @@
 		9F0A6C241BC1B85A00A25417 /* Assemblies */ = {
 			isa = PBXGroup;
 			children = (
+				661CA4231D65D1E90047EB68 /* ResponseConverterFactory */,
 				2BDDB2441D3F817C007FD547 /* PonsomizerAssembly */,
 				9F4077A51D2C163C00D47EF6 /* ResourceMapperAssembly */,
 				9F4077A11D2C159A00D47EF6 /* ResourceClientAssembly */,
@@ -4665,6 +4825,7 @@
 		9F0A84D91BC1698B006F79FB /* ConcreteOperations */ = {
 			isa = PBXGroup;
 			children = (
+				661CA3F61D65CFA80047EB68 /* MiscellaneousOperations */,
 				9F0A84DA1BC1698B006F79FB /* NetworkOperations */,
 				9F0A84DD1BC1698B006F79FB /* RequestConfigurationOperations */,
 				9F0A84E01BC1698B006F79FB /* RequestSigningOperations */,
@@ -4967,6 +5128,7 @@
 		9F18308B1BC01E65000E21A5 /* CoreComponents */ = {
 			isa = PBXGroup;
 			children = (
+				661CA4171D65D1020047EB68 /* ResponseConverter */,
 				9F4077951D2C105100D47EF6 /* ResourceMappers */,
 				9F4077891D2BF8DB00D47EF6 /* ResourceClients */,
 				9FC1F6771D2826B70070D9B5 /* QueryTransformers */,
@@ -5137,6 +5299,7 @@
 		9F1830AC1BC116D6000E21A5 /* NetworkClients */ = {
 			isa = PBXGroup;
 			children = (
+				661CA3FF1D65D0390047EB68 /* Models */,
 				9F1830AF1BC117F1000E21A5 /* ConcreteClasses */,
 				9F1830AD1BC116E1000E21A5 /* Protocols */,
 				9F0A6C201BC1B60500A25417 /* NetworkConnectionType.h */,
@@ -5356,6 +5519,7 @@
 		9F1830E91BC14270000E21A5 /* BaseClasses */ = {
 			isa = PBXGroup;
 			children = (
+				661CA41A1D65D16D0047EB68 /* DeletedObjectsMapper */,
 				9F1830EA1BC14277000E21A5 /* ManagedObjectMapper */,
 			);
 			name = BaseClasses;
@@ -5433,6 +5597,7 @@
 		9F1831151BC1615C000E21A5 /* ConcreteClasses */ = {
 			isa = PBXGroup;
 			children = (
+				661CA4281D65D21D0047EB68 /* DeletedResponseObjectFormatter */,
 				9F1831161BC1615C000E21A5 /* ResultResponseObjectFormatter */,
 				9F1831191BC1615C000E21A5 /* SingleResponseObjectFormatter */,
 			);
@@ -7070,14 +7235,6 @@
 			path = CellObjectBuilder;
 			sourceTree = "<group>";
 		};
-		9FC1F6741D2823E40070D9B5 /* EventListServiceTests */ = {
-			isa = PBXGroup;
-			children = (
-				9FC1F6751D2824000070D9B5 /* EventListServiceTests.m */,
-			);
-			name = EventListServiceTests;
-			sourceTree = "<group>";
-		};
 		9FC1F6771D2826B70070D9B5 /* QueryTransformers */ = {
 			isa = PBXGroup;
 			children = (
@@ -7248,21 +7405,11 @@
 			name = EventListQuery;
 			sourceTree = "<group>";
 		};
-		9FF74FFB1D26C60E000D208D /* EventListService */ = {
-			isa = PBXGroup;
-			children = (
-				9FF74FFC1D26C61F000D208D /* EventListService.h */,
-				9FF74FFD1D26C62A000D208D /* EventListServiceImplementation.h */,
-				9FF74FFE1D26C62A000D208D /* EventListServiceImplementation.m */,
-			);
-			name = EventListService;
-			sourceTree = "<group>";
-		};
 		9FF750001D26C734000D208D /* EventListOperationFactory */ = {
 			isa = PBXGroup;
 			children = (
-				9FF750011D26C74B000D208D /* EventListOperationFactory.h */,
-				9FF750021D26C74B000D208D /* EventListOperationFactory.m */,
+				661CA3F31D65CF920047EB68 /* EventOperationFactory.h */,
+				661CA3F41D65CF920047EB68 /* EventOperationFactory.m */,
 			);
 			name = EventListOperationFactory;
 			sourceTree = "<group>";
@@ -7720,10 +7867,12 @@
 				9FBE8AC11D630D4C00DA0C32 /* EventGalleryMoreEventsCollectionViewCell.m in Sources */,
 				63F8F2821BF7925F000017F3 /* PresentationLayerHelpersAssembly.m in Sources */,
 				2BDDB1D31D3F7235007FD547 /* DirectionObject.m in Sources */,
+				661CA3FE1D65CFF70047EB68 /* LastModifiedMapperOperation.m in Sources */,
 				9FBE8ABB1D630D4C00DA0C32 /* EventGalleryViewController.m in Sources */,
 				9F8E5FA61BC27CCE00DC10DB /* MappingConstants.m in Sources */,
 				66E999881D54B0DB00161D98 /* TagButtonCollectionViewCellObject.m in Sources */,
 				2B20648B1D3F9CE900246C8D /* LectureModelObject.m in Sources */,
+				661CA42F1D65D2550047EB68 /* ModifiedDataListServerResponse.m in Sources */,
 				9F8E5F801BC2592600DC10DB /* ResponseValidatorsAssembly.m in Sources */,
 				631FFE551BEF930200749DB8 /* ReportListPresenter.m in Sources */,
 				9FBE89AF1D5CB71300DA0C32 /* TyphoonAppDelegate.m in Sources */,
@@ -7776,12 +7925,12 @@
 				63F613591CB00A220002AEF0 /* EventModuleAssembly.m in Sources */,
 				9FBE89B41D5CB71300DA0C32 /* LectureLaunchRouter.m in Sources */,
 				9F0A85371BC18A3C006F79FB /* NetworkCompoundOperationBuilder.m in Sources */,
-				9FF750031D26C74B000D208D /* EventListOperationFactory.m in Sources */,
 				667050371D46159800DD9D6E /* ReportSpeakerTableViewCell.m in Sources */,
 				9F18309F1BC024A9000E21A5 /* RequestDataModel.m in Sources */,
 				631FFE5F1BEF991000749DB8 /* ReportListDataDisplayManager.m in Sources */,
 				63F6139D1CB00A220002AEF0 /* SpeakerInfoDataDisplayManager.m in Sources */,
 				2B4F20221D53273100C9891E /* SpeakerInfoSectionHeaderTableViewCell.m in Sources */,
+				661CA42B1D65D2270047EB68 /* DeletedResponseObjectFormatter.m in Sources */,
 				66704FFC1D460DC000DD9D6E /* ReportListViewController.m in Sources */,
 				66E9999D1D54B31300161D98 /* TagServicePredicateBuilder.m in Sources */,
 				63F613961CB00A220002AEF0 /* SpeakerInfoInteractor.m in Sources */,
@@ -7790,6 +7939,8 @@
 				2B2064991D3F9CE900246C8D /* TagPlainObject.m in Sources */,
 				631808401C482B1300A61E7D /* SpeakerShortInfoInteractor.m in Sources */,
 				9FBE89B31D5CB71300DA0C32 /* EventLaunchRouter.m in Sources */,
+				661CA4071D65D0720047EB68 /* NSManagedObjectID+LJStringConversion.m in Sources */,
+				661CA4031D65D04E0047EB68 /* ServerResponseModel.m in Sources */,
 				9F78D7441D59D6EF009DDCEA /* SpotlightCoreDataStackCoordinatorImplementation.m in Sources */,
 				667050531D46332200DD9D6E /* ReportsSearchCellObjectsBuilderImplementation.m in Sources */,
 				63F613701CB00A220002AEF0 /* EventDescriptionTableViewCell.m in Sources */,
@@ -7866,11 +8017,13 @@
 				6315BA0F1C9EC2D400999877 /* TableViewSectionHeaderCell.m in Sources */,
 				6670503C1D4615A100DD9D6E /* ReportLectureTableViewCell.m in Sources */,
 				66E9997F1D54B0A000161D98 /* TagCellSizeConfig.m in Sources */,
+				661CA41D1D65D17D0047EB68 /* DeletedObjectsMapper.m in Sources */,
 				6670504E1D4615C200DD9D6E /* GrayTableViewSectionHeaderAndFooterCellObject.m in Sources */,
 				9FBE8ABF1D630D4C00DA0C32 /* EventGalleryEventCollectionViewCell.m in Sources */,
 				9F8E5F781BC2571B00DC10DB /* NetworkClientsAssembly.m in Sources */,
 				63F613741CB00A220002AEF0 /* LectureInfoTableViewCell.m in Sources */,
 				2B429A631D4798D4004C005F /* EventViewAnimator.m in Sources */,
+				661CA40D1D65D0D80047EB68 /* _LastModifiedPlainObject.m in Sources */,
 				9F533A891D50DE84004F8E82 /* FetchedResultsControllerChangeProvider.m in Sources */,
 				9F0A85021BC1698B006F79FB /* ResponseValidationOperation.m in Sources */,
 				9FBE89B51D5CB71300DA0C32 /* SpeakerLaunchRouter.m in Sources */,
@@ -7886,6 +8039,7 @@
 				2B2064911D3F9CE900246C8D /* TechModelObject.m in Sources */,
 				9F0A84F91BC1698B006F79FB /* AsyncOperation.m in Sources */,
 				66E9997E1D54B0A000161D98 /* TagCellSizeCalculator.m in Sources */,
+				661CA40A1D65D0D20047EB68 /* _LastModifiedModelObject.m in Sources */,
 				9FBE8A111D5E5F1B00DA0C32 /* SafariFactoryImplementation.m in Sources */,
 				66E999481D54AFA500161D98 /* TagModuleTableViewCellObject.m in Sources */,
 				63F51CB01C42AD3A00AFB9D2 /* LectureMaterialTitleTableViewCellObject.m in Sources */,
@@ -7896,6 +8050,7 @@
 				2B05E1711D51E1B100E017AB /* SocialContactsConfigurator.m in Sources */,
 				63F6136A1CB00A220002AEF0 /* PreviousLectureSectionHeaderTableViewCellObject.m in Sources */,
 				63FD4E061BE5038D0046378E /* UIColor+Hex.m in Sources */,
+				661CA4161D65D0EB0047EB68 /* LastModifiedPlainObject.m in Sources */,
 				66704FF91D4606D800DD9D6E /* PonsomizerAssembly.m in Sources */,
 				9FBE8AFC1D634F0500DA0C32 /* EventListInteractor.m in Sources */,
 				9F0A84FF1BC1698B006F79FB /* RequestSigningOperation.m in Sources */,
@@ -7911,24 +8066,27 @@
 				9F0A6C1D1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m in Sources */,
 				66E999581D54AFF200161D98 /* TagEditMediator.m in Sources */,
 				66E9994C1D54AFB000161D98 /* TagModuleTableViewCell.m in Sources */,
+				661CA3F51D65CF920047EB68 /* EventOperationFactory.m in Sources */,
 				9F0A85001BC1698B006F79FB /* ResponseDeserializationOperation.m in Sources */,
 				9F78D74E1D59D755009DDCEA /* ContextStorageImplementation.m in Sources */,
-				9FF74FFF1D26C62A000D208D /* EventListServiceImplementation.m in Sources */,
 				2B20647D1D3F9CE900246C8D /* _SpeakerModelObject.m in Sources */,
 				9F0A853B1BC1908B006F79FB /* OperationChainer.m in Sources */,
 				66EE4D351D54BFCD0011F94A /* NITableViewModel+LJIndexOfObject.m in Sources */,
 				63ECC4161CA81E5300439A01 /* ErrorConstants.m in Sources */,
+				661CA4271D65D2040047EB68 /* ResponseConverterAssembly.m in Sources */,
 				66E999A71D54B50500161D98 /* ContentSizeObserver.m in Sources */,
 				63EF15BB1BC4559900480CAF /* PushNotificationCenterImplementation.m in Sources */,
 				636F8DDB1BCB8FE800552B91 /* RamblerLocationInteractor.m in Sources */,
 				63F613761CB00A220002AEF0 /* PreviousEventSectionHeaderTableViewCell.m in Sources */,
 				63F613601CB00A220002AEF0 /* EventInteractor.m in Sources */,
 				666C5C3E1D4F344B002D73D5 /* ReportsSearchPresenter.m in Sources */,
+				661CA4131D65D0E30047EB68 /* LastModifiedModelObject.m in Sources */,
 				63F54D951BC5A79900DB1746 /* EXTScope.m in Sources */,
 				66E9996F1D54B06400161D98 /* TagCollectionView.m in Sources */,
 				66E999761D54B08B00161D98 /* TagDataDisplayManager.m in Sources */,
 				2B20648D1D3F9CE900246C8D /* RegistrationQuestionModelObject.m in Sources */,
 				636B640D1BBDD5000053E38F /* SocialNetworkAccountServiceImplementation.m in Sources */,
+				661CA4211D65D1C30047EB68 /* ResponseConverterImplementation.m in Sources */,
 				9F33B8841D639C6000BE136C /* SpeakerInfoLectureCellObject.m in Sources */,
 				9FBE89EB1D5CCF8300DA0C32 /* ObjectTransformerConstants.m in Sources */,
 				9FBE8ACB1D63293700DA0C32 /* EventGalleryEventFilter.m in Sources */,
@@ -7941,6 +8099,7 @@
 				2B2064961D3F9CE900246C8D /* RegistrationQuestionPlainObject.m in Sources */,
 				9FBE8AB81D630D4C00DA0C32 /* EventGalleryPresenter.m in Sources */,
 				66E999A31D54B40500161D98 /* NITyphoonCellFactory.m in Sources */,
+				66DB636E1D65DCFE009071FD /* ResponseConverterOperation.m in Sources */,
 				66E9999C1D54B31300161D98 /* TagServiceImplementation.m in Sources */,
 				2B20648E1D3F9CE900246C8D /* SocialNetworkAccountModelObject.m in Sources */,
 				63F54DA01BC5BB2800DB1746 /* ThirdPartiesConfiguratorImplementation.m in Sources */,
@@ -8009,7 +8168,6 @@
 				63D86BDD1C143FCE00986536 /* DateFormatterTests.m in Sources */,
 				9F78D75D1D59E778009DDCEA /* SpeakerObjectTransformerTests.m in Sources */,
 				9FAB6A891D5499880061F333 /* IndexerMonitorTests.m in Sources */,
-				9FC1F6761D2824000070D9B5 /* EventListServiceTests.m in Sources */,
 				63F8F2F61BF9FE7D000017F3 /* RCFRESTRequestConfiguratorTests.m in Sources */,
 				9FBE8A331D5F3CCC00DA0C32 /* EventGalleryRouterTests.m in Sources */,
 				666C5C3F1D4F344B002D73D5 /* ReportsSearchPresenter.m in Sources */,

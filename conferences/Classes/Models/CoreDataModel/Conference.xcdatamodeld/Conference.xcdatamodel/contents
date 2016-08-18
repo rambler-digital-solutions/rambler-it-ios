@@ -17,6 +17,11 @@
         <relationship name="registrationQuestions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RegistrationQuestion" inverseName="event" inverseEntity="RegistrationQuestion" syncable="YES"/>
         <relationship name="tech" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tech" inverseName="events" inverseEntity="Tech" syncable="YES"/>
     </entity>
+    <entity name="LastModified" representedClassName="LastModifiedModelObject" syncable="YES">
+        <attribute name="lastModifiedDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="lastModifiedId" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Lecture" representedClassName="LectureModelObject" syncable="YES">
         <attribute name="favourite" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="lectureDescription" optional="YES" attributeType="String" syncable="YES"/>
@@ -77,6 +82,7 @@
     </entity>
     <elements>
         <element name="Event" positionX="0" positionY="0" width="128" height="270"/>
+        <element name="LastModified" positionX="27" positionY="135" width="128" height="90"/>
         <element name="Lecture" positionX="0" positionY="0" width="128" height="165"/>
         <element name="LectureMaterial" positionX="0" positionY="0" width="128" height="120"/>
         <element name="MetaEvent" positionX="0" positionY="0" width="128" height="135"/>

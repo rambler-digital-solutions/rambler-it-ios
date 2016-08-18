@@ -18,28 +18,16 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-
-typedef void (^EventListUpdateCompletionBlock)(NSError *error);
-
-@class EventListQuery;
-
-/**
- @author Egor Tolstoy
- 
- The service is designed to obtain event list from server or cache
- */
-@protocol EventListService <NSObject>
+#import "ModuleAssemblyBase.h"
+#import "AssemblyCollector/RamblerInitialAssembly.h"
+#import "ResponseConverter.h"
+#import "ResponseConverterFactory.h"
 
 /**
- @author Egor Tolstoy
+ @author Konstantin Zinovyev
  
- Method is used to update a list of Event objects by sending request to server
- 
- @param query           The model describing request parameters
- @param completionBlock Block called upon completion the method, and returns NSError if there is any
+ The implementation of the ResponseConverterFactory protocol, based on TyphoonAssembly
  */
-- (void)updateEventListWithQuery:(EventListQuery *)query
-                 completionBlock:(EventListUpdateCompletionBlock)completionBlock;
+@interface ResponseConverterAssembly : TyphoonAssembly <ResponseConverterFactory, RamblerInitialAssembly>
 
 @end

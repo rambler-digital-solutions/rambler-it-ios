@@ -85,7 +85,7 @@ typedef void (^ProxyBlock)(NSInvocation *);
     // given
     
     NSArray *expectetObjects = @[@1, @2, @3];
-    OCMStub([self.mockEventService obtainEventWithPredicate:OCMOCK_ANY]).andReturn(@[@1]);
+    OCMStub([self.mockEventService obtainEventsWithPredicate:OCMOCK_ANY]).andReturn(@[@1]);
     OCMStub([self.mockSpeakerService obtainSpeakerWithPredicate:OCMOCK_ANY]).andReturn(@[@2]);
     OCMStub([self.mockLectureService obtainLectureWithPredicate:OCMOCK_ANY]).andReturn(@[@3]);
     

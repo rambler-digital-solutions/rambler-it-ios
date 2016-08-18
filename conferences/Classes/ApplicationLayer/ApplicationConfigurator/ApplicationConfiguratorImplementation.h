@@ -21,7 +21,10 @@
 #import <Foundation/Foundation.h>
 
 #import "ApplicationConfigurator.h"
+#import "EventService.h"
 
 @interface ApplicationConfiguratorImplementation : NSObject <ApplicationConfigurator>
+
+@property (nonatomic, strong) id<EventService> eventService;
 
 @end

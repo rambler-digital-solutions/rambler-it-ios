@@ -1,0 +1,13 @@
+{
+    "deleted":[],
+    "updated":
+    [
+     {
+     "id": "11",
+     "name": "stopListening",
+     "description": "Указывает объекту object перестать слушать события.",
+     "home_page": "http://etolstoy.com",
+     "logo": "http://etolstoy.com/picture.png"
+     }
+     ]
+}

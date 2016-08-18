@@ -34,7 +34,7 @@
 #pragma mark - ReportListInteractorInput
 
 - (NSArray *)obtainEventList {
-    id managedObjectEvents = [self.eventService obtainEventWithPredicate:nil];
+    id managedObjectEvents = [self.eventService obtainEventsWithPredicate:nil];
     
     NSArray *events = [self getPlainEventsFromManagedObjects:managedObjectEvents];
     
@@ -42,7 +42,7 @@
 }
 
 - (NSArray *)obtainEventListWithPredicate:(NSPredicate *)predicate {
-    id managedObjectEvents = [self.eventService obtainEventWithPredicate:predicate];
+    id managedObjectEvents = [self.eventService obtainEventsWithPredicate:predicate];
     NSArray *events = [self getPlainEventsFromManagedObjects:managedObjectEvents];
     
     return events;

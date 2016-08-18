@@ -31,6 +31,7 @@
 #import "ThirdPartiesConfiguratorImplementation.h"
 #import "CleanLaunchRouter.h"
 #import "CleanLaunchAppDelegate.h"
+#import "ServiceComponents.h"
 
 #import <RamblerAppDelegateProxy/RamblerAppDelegateProxy.h>
 
@@ -69,7 +70,11 @@
 }
 
 - (id <ApplicationConfigurator>)applicationConfigurator {
-    return [TyphoonDefinition withClass:[ApplicationConfiguratorImplementation class]];
+    return [TyphoonDefinition withClass:[ApplicationConfiguratorImplementation class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(eventService)
+                                                    with:[self.serviceComponents eventService]];
+                          }];
 }
 
 - (id <ThirdPartiesConfigurator>)thirdPartiesConfigurator {

@@ -18,26 +18,14 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "EventListServiceImplementation.h"
+#import <Foundation/Foundation.h>
+#import <Nimbus/NimbusModels.h>
 
-#import "EventListQuery.h"
-#import "EventListOperationFactory.h"
-#import "OperationScheduler.h"
+@interface TableViewCellWithTextLabelAndImageViewCellObject : NSObject <NICellObject>
 
-#import "CompoundOperationBase.h"
+@property (strong, nonatomic, readonly) UIImage *image;
+@property (strong, nonatomic, readonly) NSString *text;
 
-@implementation EventListServiceImplementation
-
-- (void)updateEventListWithQuery:(EventListQuery *)query
-                 completionBlock:(EventListUpdateCompletionBlock)completionBlock {
-    CompoundOperationBase *compoundOperation = [self.eventListOperationFactory getEventsOperationWithQuery:query];
-    compoundOperation.resultBlock = ^void(id data, NSError *error) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            completionBlock(error);
-        });
-    };
-    
-    [self.operationScheduler addOperation:compoundOperation];
-}
++ (instancetype)objectWithText:(NSString *)text andImage:(UIImage *)image;
 
 @end

@@ -88,7 +88,7 @@ typedef void (^ProxyBlock)(NSInvocation *);
     NSObject *event = [EventPlainObject new];
     NSArray *events = @[event];
     
-    OCMStub([self.eventServiceMock obtainEventWithPredicate:OCMOCK_ANY]).andReturn(events);
+    OCMStub([self.eventServiceMock obtainEventsWithPredicate:OCMOCK_ANY]).andReturn(events);
     OCMStub([self.mockPonsomizer convertObject:OCMOCK_ANY]).andReturn(event);
     // when
     EventPlainObject *obtainedEvent = [self.interactor obtainEventWithObjectId:OCMOCK_ANY];
@@ -96,7 +96,7 @@ typedef void (^ProxyBlock)(NSInvocation *);
     // then
     OCMVerify([self.eventTypeDeterminatorMock determinateTypeForEvent:OCMOCK_ANY]);
     OCMVerify([self.mockPonsomizer convertObject:OCMOCK_ANY]);
-    OCMVerify([self.eventServiceMock obtainEventWithPredicate:OCMOCK_ANY]);
+    OCMVerify([self.eventServiceMock obtainEventsWithPredicate:OCMOCK_ANY]);
     XCTAssertEqual(obtainedEvent, event);
 }
 

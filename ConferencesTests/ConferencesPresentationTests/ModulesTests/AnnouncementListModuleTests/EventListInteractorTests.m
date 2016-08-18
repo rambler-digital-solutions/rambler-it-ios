@@ -67,7 +67,7 @@ typedef void (^ProxyBlock)(NSInvocation *);
     NSArray *eventsManagedObjects = @[event];
     NSArray *eventsPlainObjects = @[@1];
     
-    OCMStub([self.mockEventService obtainEventWithPredicate:nil]).andReturn(eventsManagedObjects);
+    OCMStub([self.mockEventService obtainEventsWithPredicate:nil]).andReturn(eventsManagedObjects);
     OCMStub([self.mockPonsomizer convertObject:eventsManagedObjects]).andReturn(eventsPlainObjects);
     
     // when

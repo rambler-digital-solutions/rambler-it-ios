@@ -18,21 +18,19 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import "DeletedResponseObjectFormatter.h"
+#import "ModifiedDataListServerResponse.h"
 
-#import "EventListService.h"
+static NSString *const kServerResponseDeletedKey = @"deleted";
+static NSString *const kServerResponseUpdatedKey = @"updated";
 
-@class EventListOperationFactory;
-@protocol OperationScheduler;
+@implementation DeletedResponseObjectFormatter
 
-/**
- @author Egor Tolstoy
- 
- The basic implementation of EventListService protocol
- */
-@interface EventListServiceImplementation : NSObject <EventListService>
-
-@property (strong, nonatomic) EventListOperationFactory *eventListOperationFactory;
-@property (strong, nonatomic) id <OperationScheduler> operationScheduler;
+- (ModifiedDataListServerResponse *)formatServerResponse:(NSDictionary *)serverResponse {
+    ModifiedDataListServerResponse *response = [ModifiedDataListServerResponse new];
+    response.deletedObjects = serverResponse[kServerResponseDeletedKey];
+    response.updatedObjects = serverResponse[kServerResponseUpdatedKey];
+    return response;
+}
 
 @end

@@ -30,4 +30,8 @@ static NSString * const kRCFCoreDataStoreName = @"Conference";
     [MagicalRecord setupAutoMigratingCoreDataStack];
 }
 
+- (void)configureInitialSettings {
+    [self.eventService setupPredefinedEventListIfNeeded];
+}
+
 @end

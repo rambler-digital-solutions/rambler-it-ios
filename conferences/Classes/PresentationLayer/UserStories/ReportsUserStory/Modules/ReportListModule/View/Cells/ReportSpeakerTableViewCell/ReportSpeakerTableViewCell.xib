@@ -81,8 +81,9 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="kJI-hF-2hS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="0Rw-L6-E8F"/>
+                    <constraint firstItem="kJI-hF-2hS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="3Vk-tK-YDn"/>
+                    <constraint firstAttribute="bottom" secondItem="kJI-hF-2hS" secondAttribute="bottom" constant="7.5" id="Piw-BO-5Ba"/>
                     <constraint firstAttribute="trailing" secondItem="kJI-hF-2hS" secondAttribute="trailing" id="Wb3-dL-aba"/>
-                    <constraint firstItem="kJI-hF-2hS" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="tHt-QB-4bk"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

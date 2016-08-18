@@ -26,6 +26,7 @@
 #import "ResponseDeserializationOperation.h"
 #import "ResponseValidationOperation.h"
 #import "ResponseMappingOperation.h"
+#import "ResponseConverterOperation.h"
 
 #import "RequestConfiguratorsFactory.h"
 #import "RequestSignersFactory.h"
@@ -33,12 +34,14 @@
 #import "ResponseDeserializersFactory.h"
 #import "ResponseValidatorsFactory.h"
 #import "ResponseMappersFactory.h"
+#import "ResponseConverterFactory.h"
 
 #import "ChainableOperation.h"
 #import "OperationBuffer.h"
 #import "OperationChainer.h"
 #import "CompoundOperationBase.h"
 #import "CompoundOperationBuilderConfig.h"
+#import "LastModifiedMapperOperation.h"
 
 @interface NetworkCompoundOperationBuilder ()
 
@@ -62,7 +65,8 @@
 
 #pragma mark - Building Compound operation
 
-- (CompoundOperationBase *)buildCompoundOperationWithConfig:(CompoundOperationBuilderConfig *)config {
+- (CompoundOperationBase *)buildCompoundOperationWithConfig:(CompoundOperationBuilderConfig *)config
+                                              modelObjectId:(NSString *)modelObjectId{
     NSAssert(config, @"Config shouldn't be nil");
     
     [self.operationsArray removeAllObjects];
@@ -70,7 +74,9 @@
     [self buildRequestConfigurationOperationWithConfig:config];
     [self buildRequestSigningOperationWithConfig:config];
     [self buildNetworkOperationWithConfig:config];
+    [self buildLastModifiedMapperOperationWithModelObjectId:modelObjectId];
     [self buildResponseDeserializationOperationWithConfig:config];
+    [self buildResponseConverterOperationWithConfig:config];
     [self buildResponseValidationOperationWithConfig:config];
     [self buildResponseMappingOperationWithConfig:config];
     
@@ -111,6 +117,12 @@
     [self addOperation:operation];
 }
 
+- (void)buildResponseConverterOperationWithConfig:(CompoundOperationBuilderConfig *)config {
+    id<ResponseConverter> converter = [self.responseConverterFactory converterResponse];
+    ResponseConverterOperation *operation = [ResponseConverterOperation operationWithResponseConverter:converter];
+    [self addOperation:operation];
+}
+
 - (void)buildResponseValidationOperationWithConfig:(CompoundOperationBuilderConfig *)config {
     id<ResponseValidator> validator = [self.responseValidatorsFactory validatorWithType:@(config.responseValidationType)];
     ResponseValidationOperation *operation = [ResponseValidationOperation operationWithResponseValidator:validator];
@@ -120,6 +132,12 @@
 - (void)buildResponseMappingOperationWithConfig:(CompoundOperationBuilderConfig *)config {
     id <ResponseMapper> mapper = [self.responseMappersFactory mapperWithType:@(config.responseMappingType)];
     ResponseMappingOperation *operation = [ResponseMappingOperation operationWithResponseMapper:mapper mappingContext:config.mappingContext];
+    [self addOperation:operation];
+}
+
+- (void)buildLastModifiedMapperOperationWithModelObjectId:(NSString *)eventListObjectId {
+    LastModifiedMapperOperation *operation = [LastModifiedMapperOperation operationWithDateFormatter:self.lastModifiedDateFormatter
+                                                                                       modelObjectId:eventListObjectId];
     [self addOperation:operation];
 }
 

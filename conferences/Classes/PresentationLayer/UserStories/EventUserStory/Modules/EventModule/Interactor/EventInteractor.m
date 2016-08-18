@@ -42,7 +42,7 @@
 - (EventPlainObject *)obtainEventWithObjectId:(NSString *)objectId {
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K = %@", EventModelObjectAttributes.eventId, objectId];
     
-    NSArray *events = [self.eventService obtainEventWithPredicate:predicate];
+    NSArray *events = [self.eventService obtainEventsWithPredicate:predicate];
     id managedObjectEvent = [events firstObject];
     
     EventPlainObject *eventPlainObject = [self.ponsomizer convertObject:managedObjectEvent];

@@ -22,7 +22,7 @@
 
 @class NSPredicate;
 
-typedef void (^EventCompletionBlock)(id data, NSError *error);
+typedef void (^EventsCompletionBlock)(NSError *error);
 
 /**
  @author Artem Karpushin
@@ -40,16 +40,23 @@ typedef void (^EventCompletionBlock)(id data, NSError *error);
  
  @return Event object
  */
-- (NSArray *)obtainEventWithPredicate:(NSPredicate *)predicate;
+- (NSArray *)obtainEventsWithPredicate:(NSPredicate *)predicate;
 
 /**
- @author Artem Karpushin
+ @author Egor Tolstoy
  
- Method is used to update Event object by sending request to server
+ Method is used to update a list of Event objects by sending request to server
  
- @param predicate NSPredicate for specifying the filtering parameters
- @param completionBlock EventCompletionBlock called upon completion the method, and returns Event object and NSError object if there is any
+ @param completionBlock Block called upon completion the method, and returns NSError if there is any
  */
-- (void)updateEventWithPredicate:(NSPredicate *)predicate completionBlock:(EventCompletionBlock)completionBlock;
+- (void)updateEventListWithCompletionBlock:(EventsCompletionBlock)completionBlock;
+
+/**
+ @author Konstantin Zinovyev
+ 
+ Method is used to configure EventList object
+ 
+ */
+- (void)setupPredefinedEventListIfNeeded;
 
 @end
