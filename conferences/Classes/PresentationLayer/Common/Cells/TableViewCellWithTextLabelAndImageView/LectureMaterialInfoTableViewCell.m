@@ -25,6 +25,8 @@ static CGFloat const TableViewCellWithTextLabelAndImageViewHeight = 40.0f;
 static NSString *const kPresentationImageName = @"ic-presentation";
 static NSString *const kArticleImageName = @"ic-article";
 static NSString *const kCodeGithubImageName = @"ic-github";
+static NSString *const kVideoImageName = @"video-material-icon";
+static NSString *const kOtherImageName = @"unspecified-material-icon";
 
 @interface LectureMaterialInfoTableViewCell ()
 
@@ -64,11 +66,11 @@ static NSString *const kCodeGithubImageName = @"ic-github";
         return mappingDictionary;
     }
     mappingDictionary = @{
-                          @(LectureMaterialVideoType) : kPresentationImageName,
+                          @(LectureMaterialVideoType) : kVideoImageName,
                           @(LectureMaterialPresentationType) : kPresentationImageName,
                           @(LectureMaterialRepoType) : kCodeGithubImageName,
                           @(LectureMaterialArticleType) : kArticleImageName,
-                          @(LectureMaterialOtherType) : kPresentationImageName
+                          @(LectureMaterialOtherType) : kOtherImageName
                           };
     return mappingDictionary;
 }
