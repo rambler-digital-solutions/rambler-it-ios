@@ -57,6 +57,10 @@
     [self updateViewWithEvents:events];
 }
 
+- (void)didUpdateEventListWithError {
+    [self.view showErrorState];
+}
+
 #pragma mark - Private methods
 
 - (void)updateViewWithEvents:(NSArray *)events {

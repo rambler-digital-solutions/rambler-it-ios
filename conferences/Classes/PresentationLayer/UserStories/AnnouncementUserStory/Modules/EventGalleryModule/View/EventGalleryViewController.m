@@ -29,6 +29,7 @@
 
 #import "Extensions/UIViewController+CDObserver/UIViewController+CDObserver.h"
 #import "UIColor+Hex.h"
+#import <FLAnimatedImage/FLAnimatedImage.h>
 
 static NSString *const kLoadingAnimationImageName = @"loading%lu";
 static NSUInteger const kLoadingAnimationFrameCount = 9;
@@ -79,6 +80,8 @@ static CGFloat const kLoadingAnimationDuration = 1.8f;
     
     self.loadingImageView.hidden = YES;
     [self.loadingImageView stopAnimating];
+    
+    self.errorImageView.hidden = YES;
 }
 
 - (void)showLoadingState {
@@ -88,6 +91,22 @@ static CGFloat const kLoadingAnimationDuration = 1.8f;
     self.loadingImageView.animationImages = [self obtainLoadingAnimationImages];
     self.loadingImageView.animationDuration = kLoadingAnimationDuration;
     [self.loadingImageView startAnimating];
+    
+    self.errorImageView.hidden = YES;
+}
+
+- (void)showErrorState {
+    self.collectionView.hidden = YES;
+    self.backgroundAdditionalView.hidden = YES;
+    
+    self.loadingImageView.hidden = YES;
+    [self.loadingImageView stopAnimating];
+    
+    self.errorImageView.hidden = NO;
+    NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"ampersand-error.gif" ofType:nil];
+    NSData *imageData = [NSData dataWithContentsOfFile:imagePath];
+    FLAnimatedImage *image = [FLAnimatedImage animatedImageWithGIFData:imageData];
+    self.errorImageView.animatedImage = image;
 }
 
 #pragma mark - <EventGalleryMoreEventsCollectionViewCellActionProtocol>

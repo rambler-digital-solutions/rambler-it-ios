@@ -33,15 +33,24 @@
                                     <constraint firstAttribute="height" constant="256" id="cVR-ta-wgZ"/>
                                 </constraints>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zen-IY-gTV" customClass="FLAnimatedImageView">
+                                <rect key="frame" x="32" y="156" width="256" height="256"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="256" id="DU4-AB-aae"/>
+                                    <constraint firstAttribute="width" constant="256" id="a4g-Xw-Sn6"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.96470588235294119" green="0.95686274509803915" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="1dW-rk-T4d" firstAttribute="leading" secondItem="LQ0-C4-6R2" secondAttribute="leading" id="DUl-rN-nVd"/>
                             <constraint firstItem="lT5-OJ-HHf" firstAttribute="centerY" secondItem="LQ0-C4-6R2" secondAttribute="centerY" id="PcF-Ro-ZgJ"/>
                             <constraint firstItem="Sbt-Sf-L4Y" firstAttribute="leading" secondItem="LQ0-C4-6R2" secondAttribute="leading" id="Uuu-KH-FjX"/>
                             <constraint firstAttribute="trailing" secondItem="Sbt-Sf-L4Y" secondAttribute="trailing" id="Uz1-Ah-hl9"/>
                             <constraint firstItem="1dW-rk-T4d" firstAttribute="top" secondItem="LQ0-C4-6R2" secondAttribute="top" id="YDZ-hu-dGk"/>
+                            <constraint firstItem="Zen-IY-gTV" firstAttribute="centerX" secondItem="LQ0-C4-6R2" secondAttribute="centerX" id="aca-xZ-tLE"/>
                             <constraint firstAttribute="trailing" secondItem="1dW-rk-T4d" secondAttribute="trailing" id="f0w-hw-rFz"/>
+                            <constraint firstItem="Zen-IY-gTV" firstAttribute="centerY" secondItem="LQ0-C4-6R2" secondAttribute="centerY" id="mNR-Jr-y3c"/>
                             <constraint firstItem="Sbt-Sf-L4Y" firstAttribute="top" secondItem="LQ0-C4-6R2" secondAttribute="top" id="vNo-Mc-pvZ"/>
                             <constraint firstAttribute="bottom" secondItem="1dW-rk-T4d" secondAttribute="bottom" id="wUF-nt-IMD"/>
                             <constraint firstItem="4Ae-hD-WCO" firstAttribute="top" secondItem="Sbt-Sf-L4Y" secondAttribute="bottom" id="xdZ-jw-IQY"/>
@@ -52,6 +61,7 @@
                     <connections>
                         <outlet property="backgroundAdditionalView" destination="1dW-rk-T4d" id="PCl-Z9-40T"/>
                         <outlet property="collectionView" destination="Sbt-Sf-L4Y" id="cYF-Lr-Jlm"/>
+                        <outlet property="errorImageView" destination="Zen-IY-gTV" id="bCs-W3-0jp"/>
                         <outlet property="loadingImageView" destination="lT5-OJ-HHf" id="T1c-2q-c1a"/>
                         <segue destination="Rvi-6t-DcR" kind="push" identifier="EventGalleryModuleToEventModuleSegue" id="IbO-oW-ts1"/>
                         <segue destination="nCN-ol-buU" kind="push" identifier="kAnnouncementGalleryModuleToEventListModuleSegue" id="7cy-B1-Qje"/>

@@ -33,4 +33,11 @@
  */
 - (void)didUpdateEventListWithFutureEvents:(NSArray <EventPlainObject *> *)events;
 
+/**
+ @author Egor Tolstoy
+ 
+ Method is used to inform presenter that list of events updated with error
+ */
+- (void)didUpdateEventListWithError;
+
 @end

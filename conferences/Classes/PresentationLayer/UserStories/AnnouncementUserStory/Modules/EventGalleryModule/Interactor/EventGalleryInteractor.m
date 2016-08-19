@@ -37,6 +37,11 @@
     @weakify(self)
     [self.eventService updateEventListWithCompletionBlock:^(NSError *error) {
         @strongify(self);
+        if (error) {
+            [self.output didUpdateEventListWithError];
+            return;
+        }
+        
         NSArray *futureEvents = [self obtainFutureEventList];
         
         [self.output didUpdateEventListWithFutureEvents:futureEvents];

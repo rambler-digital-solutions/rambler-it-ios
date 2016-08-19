@@ -40,7 +40,7 @@
 }
 
 + (UIColor *)rcf_lightGrayColor {
-    return [UIColor colorFromHexString:@"#F2F2F2"];
+    return [UIColor colorFromHexString:@"#F6F4F6"];
 }
 
 + (UIColor *)rcf_darkGrayColor {
