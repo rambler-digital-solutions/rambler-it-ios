@@ -32,7 +32,9 @@
 - (void)setupView {
     NSArray *suggests = [self.interactor obtainSuggests];
     [self.router configureReportsSearchModuleWithModuleOutput:self];
-    [self.view setupViewWithSuggests:suggests];
+    if (suggests.count > 0) {
+        [self.view setupViewWithSuggests:suggests];
+    }
 }
 
 - (void)didTapSearchBarCancelButton {

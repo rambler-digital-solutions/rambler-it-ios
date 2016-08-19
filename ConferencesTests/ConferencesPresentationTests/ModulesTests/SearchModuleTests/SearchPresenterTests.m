@@ -31,7 +31,7 @@
 
 @property (nonatomic, strong) SearchPresenter *presenter;
 @property (nonatomic, strong) id <SearchInteractorInput> mockInteractor;
-@property (nonatomic, strong) id <SearchViewInput> mockView;
+@property (nonatomic, strong) id mockView;
 @property (nonatomic, strong) id <SearchRouterInput> mockRouter;
 @property (nonatomic, strong) id<ReportsSearchModuleInput> mockReportsSearchModule;
 
@@ -66,15 +66,30 @@
 
 #pragma mark - ReportListViewOutput
 
-- (void)testSuccessSetupView {
+- (void)testSuccessSetupViewWithSuggestsIfThereAreAny {
     // given
+    NSArray *testArray = @[@"1"];
+    OCMStub([self.mockInteractor obtainSuggests]).andReturn(testArray);
     
     // when
     [self.presenter setupView];
     
     // then
-    OCMVerify([self.mockInteractor obtainSuggests]);
-    OCMVerify([self.mockView setupViewWithSuggests:OCMOCK_ANY]);
+    OCMVerify([self.mockView setupViewWithSuggests:testArray]);
+}
+
+- (void)testSuccessDoesNotSetupViewWithSuggestsIfThereAreNo {
+    // given
+    NSArray *testArray = @[];
+    OCMStub([self.mockInteractor obtainSuggests]).andReturn(testArray);
+    
+    [[self.mockView reject] setupViewWithSuggests:OCMOCK_ANY];
+    
+    // when
+    [self.presenter setupView];
+    
+    // then
+    OCMVerifyAll(self.mockView);
 }
 
 #pragma mark - ReportListInteractorOutput

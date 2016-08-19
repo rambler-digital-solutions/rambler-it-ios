@@ -38,6 +38,9 @@
         while ([mutableSuggests containsObject:suggest]) {
             suggest = [self generateRandomSuggest];
         }
+        if (suggest == nil) {
+            break;
+        }
         [mutableSuggests addObject:suggest];
     }
     return [mutableSuggests copy];
@@ -53,6 +56,9 @@
     
     NSManagedObjectContext *defaultContext = [NSManagedObjectContext MR_defaultContext];
     NSUInteger overallModelCount = [modelClass MR_countOfEntitiesWithContext:defaultContext];
+    if (overallModelCount == 0) {
+        return nil;
+    }
     NSInteger modelIndex = arc4random_uniform((int)overallModelCount);
     
     NSArray *models = [modelClass MR_findAllInContext:defaultContext];
