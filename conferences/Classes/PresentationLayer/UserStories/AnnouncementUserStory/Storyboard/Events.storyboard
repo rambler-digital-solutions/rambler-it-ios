@@ -34,7 +34,7 @@
                                 <cells/>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="61J-Ae-4aK" userLabel="ErrorView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                                <rect key="frame" x="0.0" y="24.5" width="320" height="519"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Не удалось загрузить данные" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivb-iI-TOo">
                                         <rect key="frame" x="48" y="347.5" width="224" height="48"/>
@@ -55,6 +55,9 @@
                                         <state key="normal" title="Повторить">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="didTapRetryUpdateButton:" destination="uzr-oH-WTB" eventType="touchUpInside" id="rRs-xa-I7l"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fAA-Sj-V89">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="347.5"/>
@@ -78,6 +81,8 @@
                                 <constraints>
                                     <constraint firstItem="fAA-Sj-V89" firstAttribute="leading" secondItem="61J-Ae-4aK" secondAttribute="leading" id="5Ko-wp-K6V"/>
                                     <constraint firstAttribute="trailing" secondItem="fAA-Sj-V89" secondAttribute="trailing" id="9z9-TZ-r68"/>
+                                    <constraint firstAttribute="height" constant="519" id="NBY-Fs-Lm6"/>
+                                    <constraint firstAttribute="width" constant="320" id="NcO-nr-5jq"/>
                                     <constraint firstItem="3pH-jK-hqY" firstAttribute="leading" secondItem="61J-Ae-4aK" secondAttribute="leading" constant="67" id="UXs-r6-Xgm"/>
                                     <constraint firstItem="ivb-iI-TOo" firstAttribute="centerX" secondItem="61J-Ae-4aK" secondAttribute="centerX" id="VXs-Oo-6Xh"/>
                                     <constraint firstItem="3pH-jK-hqY" firstAttribute="top" secondItem="ivb-iI-TOo" secondAttribute="bottom" constant="13.5" id="dfG-Ar-B5N"/>
@@ -90,18 +95,16 @@
                         </subviews>
                         <color key="backgroundColor" red="0.96470588235294119" green="0.95686274509803915" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="4Ae-hD-WCO" firstAttribute="top" secondItem="61J-Ae-4aK" secondAttribute="bottom" id="3OY-sU-qAu"/>
+                            <constraint firstItem="61J-Ae-4aK" firstAttribute="centerX" secondItem="LQ0-C4-6R2" secondAttribute="centerX" id="C6w-tZ-2Mk"/>
                             <constraint firstItem="1dW-rk-T4d" firstAttribute="leading" secondItem="LQ0-C4-6R2" secondAttribute="leading" id="DUl-rN-nVd"/>
                             <constraint firstItem="lT5-OJ-HHf" firstAttribute="centerY" secondItem="LQ0-C4-6R2" secondAttribute="centerY" id="PcF-Ro-ZgJ"/>
-                            <constraint firstItem="61J-Ae-4aK" firstAttribute="leading" secondItem="LQ0-C4-6R2" secondAttribute="leading" id="TRc-sC-lyO"/>
                             <constraint firstItem="Sbt-Sf-L4Y" firstAttribute="leading" secondItem="LQ0-C4-6R2" secondAttribute="leading" id="Uuu-KH-FjX"/>
                             <constraint firstAttribute="trailing" secondItem="Sbt-Sf-L4Y" secondAttribute="trailing" id="Uz1-Ah-hl9"/>
                             <constraint firstItem="1dW-rk-T4d" firstAttribute="top" secondItem="LQ0-C4-6R2" secondAttribute="top" id="YDZ-hu-dGk"/>
                             <constraint firstAttribute="trailing" secondItem="1dW-rk-T4d" secondAttribute="trailing" id="f0w-hw-rFz"/>
+                            <constraint firstItem="61J-Ae-4aK" firstAttribute="centerY" secondItem="LQ0-C4-6R2" secondAttribute="centerY" id="uBI-QG-CED"/>
                             <constraint firstItem="Sbt-Sf-L4Y" firstAttribute="top" secondItem="LQ0-C4-6R2" secondAttribute="top" id="vNo-Mc-pvZ"/>
-                            <constraint firstItem="61J-Ae-4aK" firstAttribute="top" secondItem="LQ0-C4-6R2" secondAttribute="top" id="wIi-AY-rSF"/>
                             <constraint firstAttribute="bottom" secondItem="1dW-rk-T4d" secondAttribute="bottom" id="wUF-nt-IMD"/>
-                            <constraint firstAttribute="trailing" secondItem="61J-Ae-4aK" secondAttribute="trailing" id="xMO-2u-N7b"/>
                             <constraint firstItem="4Ae-hD-WCO" firstAttribute="top" secondItem="Sbt-Sf-L4Y" secondAttribute="bottom" id="xdZ-jw-IQY"/>
                             <constraint firstItem="lT5-OJ-HHf" firstAttribute="centerX" secondItem="LQ0-C4-6R2" secondAttribute="centerX" id="y7o-RY-S3C"/>
                         </constraints>

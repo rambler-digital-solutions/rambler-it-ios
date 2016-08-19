@@ -51,6 +51,11 @@
     [self.router openEventListModule];
 }
 
+- (void)didTriggerRetryUpdateEvent {
+    [self.view showLoadingState];
+    [self.interactor updateEventList];
+}
+
 #pragma mark - Методы EventGalleryInteractorOutput
 
 - (void)didUpdateEventListWithFutureEvents:(NSArray<EventPlainObject *> *)events {

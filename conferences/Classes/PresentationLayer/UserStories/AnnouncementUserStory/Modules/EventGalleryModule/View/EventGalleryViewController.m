@@ -89,6 +89,7 @@ static CGFloat const kLoadingAnimationDuration = 1.8f;
     self.collectionView.hidden = YES;
     self.backgroundAdditionalView.hidden = YES;
     
+    self.loadingImageView.hidden = NO;
     self.loadingImageView.animationImages = [self obtainLoadingAnimationImages];
     self.loadingImageView.animationDuration = kLoadingAnimationDuration;
     [self.loadingImageView startAnimating];
@@ -119,6 +120,12 @@ static CGFloat const kLoadingAnimationDuration = 1.8f;
 
 - (void)didTapEventAnnouncementCellWithEvent:(EventPlainObject *)event {
     [self.output didTriggerEventTapEventWithObject:event];
+}
+
+#pragma mark - IBActions
+
+- (IBAction)didTapRetryUpdateButton:(id)sender {
+    [self.output didTriggerRetryUpdateEvent];
 }
 
 #pragma mark - Private methods

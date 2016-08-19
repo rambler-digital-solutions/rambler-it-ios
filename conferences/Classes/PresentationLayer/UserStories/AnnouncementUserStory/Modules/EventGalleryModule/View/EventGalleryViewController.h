@@ -48,4 +48,8 @@
 @property (nonatomic, strong) EventGalleryBackgroundColorAnimator *backgroundColorAnimator;
 @property (nonatomic, strong) EventGalleryCollectionViewFlowLayout *collectionViewFlowLayout;
 
+#pragma mark - IBActions
+
+- (IBAction)didTapRetryUpdateButton:(id)sender;
+
 @end
