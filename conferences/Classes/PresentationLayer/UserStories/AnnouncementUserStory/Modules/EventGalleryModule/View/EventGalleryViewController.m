@@ -32,6 +32,7 @@
 #import <FLAnimatedImage/FLAnimatedImage.h>
 
 static NSString *const kLoadingAnimationImageName = @"loading%lu";
+static NSString *const kErrorImageName = @"ampersand-error.gif";
 static NSUInteger const kLoadingAnimationFrameCount = 9;
 static CGFloat const kLoadingAnimationDuration = 1.8f;
 
@@ -81,7 +82,7 @@ static CGFloat const kLoadingAnimationDuration = 1.8f;
     self.loadingImageView.hidden = YES;
     [self.loadingImageView stopAnimating];
     
-    self.errorImageView.hidden = YES;
+    self.errorView.hidden = YES;
 }
 
 - (void)showLoadingState {
@@ -92,7 +93,7 @@ static CGFloat const kLoadingAnimationDuration = 1.8f;
     self.loadingImageView.animationDuration = kLoadingAnimationDuration;
     [self.loadingImageView startAnimating];
     
-    self.errorImageView.hidden = YES;
+    self.errorView.hidden = YES;
 }
 
 - (void)showErrorState {
@@ -102,9 +103,8 @@ static CGFloat const kLoadingAnimationDuration = 1.8f;
     self.loadingImageView.hidden = YES;
     [self.loadingImageView stopAnimating];
     
-    self.errorImageView.hidden = NO;
-    NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"ampersand-error.gif" ofType:nil];
-    NSData *imageData = [NSData dataWithContentsOfFile:imagePath];
+    self.errorView.hidden = NO;
+    NSData *imageData = [self obtainErrorAnimatedImageData];
     FLAnimatedImage *image = [FLAnimatedImage animatedImageWithGIFData:imageData];
     self.errorImageView.animatedImage = image;
 }
@@ -136,6 +136,18 @@ static CGFloat const kLoadingAnimationDuration = 1.8f;
         [mutableImages addObject:image];
     }
     return [mutableImages copy];
+}
+
+- (NSData *)obtainErrorAnimatedImageData {
+    static NSData *imageData;
+    if (imageData) {
+        return imageData;
+    }
+    
+    NSString *imagePath = [[NSBundle mainBundle] pathForResource:kErrorImageName
+                                                          ofType:nil];
+    imageData = [NSData dataWithContentsOfFile:imagePath];
+    return imageData;
 }
 
 @end

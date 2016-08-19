@@ -37,6 +37,8 @@
 @property (nonatomic, weak) IBOutlet UIView *backgroundAdditionalView;
 @property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, weak) IBOutlet UIImageView *loadingImageView;
+
+@property (nonatomic, weak) IBOutlet UIView *errorView;
 @property (nonatomic, weak) IBOutlet FLAnimatedImageView *errorImageView;
 
 #pragma mark - Dependencies
