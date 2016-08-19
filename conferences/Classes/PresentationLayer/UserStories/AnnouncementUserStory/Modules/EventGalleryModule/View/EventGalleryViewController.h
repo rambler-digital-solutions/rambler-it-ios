@@ -28,6 +28,7 @@
 @class EventGalleryBackgroundColorAnimator;
 @class EventGalleryDataDisplayManager;
 @class EventGalleryCollectionViewFlowLayout;
+@class FLAnimatedImageView;
 
 @interface EventGalleryViewController : UIViewController <EventGalleryViewInput, EventGalleryDataDisplayManagerDelegate, EventGalleryMoreEventsCollectionViewCellActionProtocol>
 
@@ -37,11 +38,18 @@
 @property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, weak) IBOutlet UIImageView *loadingImageView;
 
+@property (nonatomic, weak) IBOutlet UIView *errorView;
+@property (nonatomic, weak) IBOutlet FLAnimatedImageView *errorImageView;
+
 #pragma mark - Dependencies
 
 @property (nonatomic, strong) id<EventGalleryViewOutput> output;
 @property (nonatomic, strong) EventGalleryDataDisplayManager *dataDisplayManager;
 @property (nonatomic, strong) EventGalleryBackgroundColorAnimator *backgroundColorAnimator;
 @property (nonatomic, strong) EventGalleryCollectionViewFlowLayout *collectionViewFlowLayout;
+
+#pragma mark - IBActions
+
+- (IBAction)didTapRetryUpdateButton:(id)sender;
 
 @end

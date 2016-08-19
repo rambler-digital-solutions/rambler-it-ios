@@ -38,6 +38,7 @@ PODS:
     - EasyMapping/Core (= 0.15.3)
   - EasyMapping/Core (0.15.3)
   - Fabric (1.6.7)
+  - FLAnimatedImage (1.0.12)
   - libextobjc (0.4.1):
     - libextobjc/EXTADT (= 0.4.1)
     - libextobjc/EXTConcreteProtocol (= 0.4.1)
@@ -118,6 +119,7 @@ DEPENDENCIES:
   - CrutchKit/Proxying (from `https://github.com/CognitiveDisson/CrutchKit`, tag `0.0.10`)
   - EasyMapping (~> 0.15)
   - Fabric
+  - FLAnimatedImage (~> 1.0)
   - libextobjc (~> 0.4)
   - MagicalRecord (~> 2.3)
   - MMBarricade (~> 1.0.1)
@@ -159,6 +161,7 @@ SPEC CHECKSUMS:
   CrutchKit: 562cf1276c995cb3e575d468684da7eb7ae2a93c
   EasyMapping: 5baf5a9a814538fdac4859cf56270ae761dd904a
   Fabric: caf7580c725e64db144f610ac65cd60956911dc7
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
   MagicalRecord: 89eb7d7ead39fb37f01c3d010665ee94d17f8dba
   MMBarricade: 61e17f747baa1a33cd7f8a9c75d520ca958508dd

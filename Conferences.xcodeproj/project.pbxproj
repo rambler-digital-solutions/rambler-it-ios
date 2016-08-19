@@ -491,6 +491,7 @@
 		9FBE8B031D634F0500DA0C32 /* EventListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FBE8AEF1D634F0500DA0C32 /* EventListTableViewCell.xib */; };
 		9FBE8B061D634F0500DA0C32 /* EventListDataDisplayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8AF71D634F0500DA0C32 /* EventListDataDisplayManager.m */; };
 		9FBE8B071D634F0500DA0C32 /* EventListCellObjectBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8AFA1D634F0500DA0C32 /* EventListCellObjectBuilder.m */; };
+		9FC1EFF41D66F94C00BD37F4 /* ampersand-error.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9FC1EFF31D66F94C00BD37F4 /* ampersand-error.gif */; };
 		9FC1F6801D2838FA0070D9B5 /* EventListQueryTransformerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */; };
 		9FC1F6841D28391E0070D9B5 /* EventListQueryTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6831D28391E0070D9B5 /* EventListQueryTransformer.m */; };
 		9FC305321D6476EA0052CB67 /* ShareUrlBuilderImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC305311D6476EA0052CB67 /* ShareUrlBuilderImplementation.m */; };
@@ -1516,6 +1517,7 @@
 		9FBE8AF71D634F0500DA0C32 /* EventListDataDisplayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListDataDisplayManager.m; sourceTree = "<group>"; };
 		9FBE8AF91D634F0500DA0C32 /* EventListCellObjectBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListCellObjectBuilder.h; sourceTree = "<group>"; };
 		9FBE8AFA1D634F0500DA0C32 /* EventListCellObjectBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListCellObjectBuilder.m; sourceTree = "<group>"; };
+		9FC1EFF31D66F94C00BD37F4 /* ampersand-error.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "ampersand-error.gif"; sourceTree = "<group>"; };
 		9FC1F6781D2826D10070D9B5 /* QueryTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QueryTransformer.h; path = CoreComponents/QueryTransformers/QueryTransformer.h; sourceTree = "<group>"; };
 		9FC1F67F1D2838FA0070D9B5 /* EventListQueryTransformerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListQueryTransformerTests.m; path = CoreLayer/CoreComponents/QueryTransformers/EventListQueryTransformer/EventListQueryTransformerTests.m; sourceTree = "<group>"; };
 		9FC1F6821D28391E0070D9B5 /* EventListQueryTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListQueryTransformer.h; sourceTree = "<group>"; };
@@ -3881,6 +3883,7 @@
 		63FDCE011BBDBA2A00A43B60 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9FC1EFF31D66F94C00BD37F4 /* ampersand-error.gif */,
 				63FDCE021BBDBA2A00A43B60 /* Assets.xcassets */,
 			);
 			path = Images;
@@ -7793,6 +7796,7 @@
 				63F6137B1CB00A220002AEF0 /* PreviousLectureSectionHeaderTableViewCell.xib in Resources */,
 				9F4077851D2BF6A700D47EF6 /* directions.plist in Resources */,
 				63F51CAD1C42AD2100AFB9D2 /* LectureMaterialTitleTableViewCell.xib in Resources */,
+				9FC1EFF41D66F94C00BD37F4 /* ampersand-error.gif in Resources */,
 				63ECC4191CA8373400439A01 /* Localizable.strings in Resources */,
 				63F613891CB00A220002AEF0 /* Event.storyboard in Resources */,
 				63F613751CB00A220002AEF0 /* LectureInfoTableViewCell.xib in Resources */,

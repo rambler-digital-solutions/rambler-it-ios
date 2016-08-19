@@ -54,4 +54,11 @@
  */
 - (void)showLoadingState;
 
+/**
+ @author Egor Tolstoy
+ 
+ Method triggers view to show error state
+ */
+- (void)showErrorState;
+
 @end

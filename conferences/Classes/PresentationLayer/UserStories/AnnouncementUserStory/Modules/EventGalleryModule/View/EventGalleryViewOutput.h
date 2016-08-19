@@ -47,4 +47,11 @@
  */
 - (void)didTriggerMoreEventsButtonTapEvent;
 
+/**
+ @author Egor Tolstoy
+ 
+ Method tells presenter taht a retry buddon was tapped
+ */
+- (void)didTriggerRetryUpdateEvent;
+
 @end

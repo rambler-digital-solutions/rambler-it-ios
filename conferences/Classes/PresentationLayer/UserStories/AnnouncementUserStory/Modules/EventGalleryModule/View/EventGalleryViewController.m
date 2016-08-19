@@ -29,8 +29,10 @@
 
 #import "Extensions/UIViewController+CDObserver/UIViewController+CDObserver.h"
 #import "UIColor+Hex.h"
+#import <FLAnimatedImage/FLAnimatedImage.h>
 
 static NSString *const kLoadingAnimationImageName = @"loading%lu";
+static NSString *const kErrorImageName = @"ampersand-error.gif";
 static NSUInteger const kLoadingAnimationFrameCount = 9;
 static CGFloat const kLoadingAnimationDuration = 1.8f;
 
@@ -79,15 +81,33 @@ static CGFloat const kLoadingAnimationDuration = 1.8f;
     
     self.loadingImageView.hidden = YES;
     [self.loadingImageView stopAnimating];
+    
+    self.errorView.hidden = YES;
 }
 
 - (void)showLoadingState {
     self.collectionView.hidden = YES;
     self.backgroundAdditionalView.hidden = YES;
     
+    self.loadingImageView.hidden = NO;
     self.loadingImageView.animationImages = [self obtainLoadingAnimationImages];
     self.loadingImageView.animationDuration = kLoadingAnimationDuration;
     [self.loadingImageView startAnimating];
+    
+    self.errorView.hidden = YES;
+}
+
+- (void)showErrorState {
+    self.collectionView.hidden = YES;
+    self.backgroundAdditionalView.hidden = YES;
+    
+    self.loadingImageView.hidden = YES;
+    [self.loadingImageView stopAnimating];
+    
+    self.errorView.hidden = NO;
+    NSData *imageData = [self obtainErrorAnimatedImageData];
+    FLAnimatedImage *image = [FLAnimatedImage animatedImageWithGIFData:imageData];
+    self.errorImageView.animatedImage = image;
 }
 
 #pragma mark - <EventGalleryMoreEventsCollectionViewCellActionProtocol>
@@ -100,6 +120,12 @@ static CGFloat const kLoadingAnimationDuration = 1.8f;
 
 - (void)didTapEventAnnouncementCellWithEvent:(EventPlainObject *)event {
     [self.output didTriggerEventTapEventWithObject:event];
+}
+
+#pragma mark - IBActions
+
+- (IBAction)didTapRetryUpdateButton:(id)sender {
+    [self.output didTriggerRetryUpdateEvent];
 }
 
 #pragma mark - Private methods
@@ -117,6 +143,18 @@ static CGFloat const kLoadingAnimationDuration = 1.8f;
         [mutableImages addObject:image];
     }
     return [mutableImages copy];
+}
+
+- (NSData *)obtainErrorAnimatedImageData {
+    static NSData *imageData;
+    if (imageData) {
+        return imageData;
+    }
+    
+    NSString *imagePath = [[NSBundle mainBundle] pathForResource:kErrorImageName
+                                                          ofType:nil];
+    imageData = [NSData dataWithContentsOfFile:imagePath];
+    return imageData;
 }
 
 @end

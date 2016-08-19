@@ -24,6 +24,7 @@ pod 'RamblerTyphoonUtils/AssemblyCollector'
 pod 'RamblerAppDelegateProxy', :head
 pod 'RamblerSegues'
 pod 'UICollectionViewLeftAlignedLayout', '1.0.1'
+pod 'FLAnimatedImage', '~> 1.0'
 
 target 'ConferencesTests', :exclusive => true do
     pod 'OCMock', '~> 3.1'
