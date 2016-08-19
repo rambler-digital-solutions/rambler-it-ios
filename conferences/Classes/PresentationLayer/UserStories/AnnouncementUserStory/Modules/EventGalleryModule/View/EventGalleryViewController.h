@@ -29,6 +29,7 @@
 @class EventGalleryDataDisplayManager;
 @class EventGalleryCollectionViewFlowLayout;
 @class FLAnimatedImageView;
+@class EventGalleryCollectionViewCellShadower;
 
 @interface EventGalleryViewController : UIViewController <EventGalleryViewInput, EventGalleryDataDisplayManagerDelegate, EventGalleryMoreEventsCollectionViewCellActionProtocol>
 
@@ -40,6 +41,7 @@
 
 @property (nonatomic, weak) IBOutlet UIView *errorView;
 @property (nonatomic, weak) IBOutlet FLAnimatedImageView *errorImageView;
+@property (nonatomic, weak) IBOutlet UIButton *retryButton;
 
 #pragma mark - Dependencies
 
@@ -47,6 +49,7 @@
 @property (nonatomic, strong) EventGalleryDataDisplayManager *dataDisplayManager;
 @property (nonatomic, strong) EventGalleryBackgroundColorAnimator *backgroundColorAnimator;
 @property (nonatomic, strong) EventGalleryCollectionViewFlowLayout *collectionViewFlowLayout;
+@property (nonatomic, strong) EventGalleryCollectionViewCellShadower *shadower;
 
 #pragma mark - IBActions
 

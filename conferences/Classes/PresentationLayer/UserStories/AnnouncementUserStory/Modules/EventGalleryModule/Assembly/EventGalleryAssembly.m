@@ -34,6 +34,7 @@
 #import "EventGalleryPageSizeCalculator.h"
 #import "EventGalleryBackgroundColorAnimator.h"
 #import "EventGalleryCollectionViewFlowLayout.h"
+#import "EventGalleryCollectionViewCellShadower.h"
 
 #import <ViperMcFlurry/ViperMcFlurry.h>
 
@@ -52,6 +53,8 @@
                                                     with:[self eventGalleryBackgroundColorAnimator]];
                               [definition injectProperty:@selector(collectionViewFlowLayout)
                                                     with:[self flowLayoutEventGalleryModule]];
+                              [definition injectProperty:@selector(shadower)
+                                                    with:[self eventGalleryCollectionViewCellShadower]];
                           }];
 }
 
@@ -133,6 +136,10 @@
 
 - (EventGalleryPageSizeCalculator *)eventGalleryPageSizeCalculator {
     return [TyphoonDefinition withClass:[EventGalleryPageSizeCalculator class]];
+}
+
+- (EventGalleryCollectionViewCellShadower *)eventGalleryCollectionViewCellShadower {
+    return [TyphoonDefinition withClass:[EventGalleryCollectionViewCellShadower class]];
 }
 
 @end

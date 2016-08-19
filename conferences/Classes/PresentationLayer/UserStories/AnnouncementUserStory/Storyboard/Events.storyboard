@@ -116,6 +116,7 @@
                         <outlet property="errorImageView" destination="Zen-IY-gTV" id="bCs-W3-0jp"/>
                         <outlet property="errorView" destination="61J-Ae-4aK" id="geG-Xx-arh"/>
                         <outlet property="loadingImageView" destination="lT5-OJ-HHf" id="T1c-2q-c1a"/>
+                        <outlet property="retryButton" destination="3pH-jK-hqY" id="8bW-Kn-ep3"/>
                         <segue destination="Rvi-6t-DcR" kind="push" identifier="EventGalleryModuleToEventModuleSegue" id="IbO-oW-ts1"/>
                         <segue destination="nCN-ol-buU" kind="push" identifier="kAnnouncementGalleryModuleToEventListModuleSegue" id="7cy-B1-Qje"/>
                     </connections>

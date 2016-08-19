@@ -23,6 +23,7 @@
 #import "EventGalleryViewOutput.h"
 #import "EventGalleryBackgroundColorAnimator.h"
 #import "EventGalleryCollectionViewFlowLayout.h"
+#import "EventGalleryCollectionViewCellShadower.h"
 
 #import "EventPlainObject.h"
 #import "TechPlainObject.h"
@@ -65,6 +66,8 @@ static CGFloat const kLoadingAnimationDuration = 1.8f;
     self.collectionView.collectionViewLayout = self.collectionViewFlowLayout;
     self.collectionView.dataSource = [self.dataDisplayManager dataSourceForCollectionView:self.collectionView];
     self.collectionView.delegate = [self.dataDisplayManager delegateForCollectionView:self.collectionView];
+    
+    [self.shadower applyShadowOnView:self.retryButton];
 }
 
 - (void)updateStateWithFutureEvents:(NSArray<EventPlainObject *> *)events {
