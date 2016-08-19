@@ -20,7 +20,6 @@
 
 #import "ThirdPartiesConfiguratorImplementation.h"
 
-#import <Parse/Parse.h>
 #import <Crashlytics/Crashlytics.h>
 #import <Fabric/Fabric.h>
 
@@ -29,17 +28,8 @@
 #pragma mark - Public methods
 
 - (void)configurate {
-    [self setupParse];
-    
     NSArray *instances = @[[Crashlytics class]];
     [Fabric with:instances];
-}
-
-#pragma mark - Private methods
-
-- (void)setupParse {
-    [Parse setApplicationId:@"nxZOr56yX2PzSLhgWUtpSx54WrtK1MYHqju94YUA"
-                  clientKey:@"I1ZzQVAmCaFCLPLnqEnDBmN38dX9Hb2IDLwMyPJ4"];
 }
 
 @end
