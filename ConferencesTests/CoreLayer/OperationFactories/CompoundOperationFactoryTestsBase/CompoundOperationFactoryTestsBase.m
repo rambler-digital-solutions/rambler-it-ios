@@ -27,6 +27,7 @@
 #import "ResponseDeserializersAssembly.h"
 #import "ResponseValidatorsAssembly.h"
 #import "ResponseMappersAssembly.h"
+#import "ResponseConverterAssembly.h"
 
 @implementation CompoundOperationFactoryTestsBase
 
@@ -46,7 +47,8 @@
                                          [NetworkClientsAssembly new],
                                          [ResponseDeserializersAssembly new],
                                          [ResponseValidatorsAssembly new],
-                                         [ResponseMappersAssembly new]
+                                         [ResponseMappersAssembly new],
+                                         [ResponseConverterAssembly new]
                                          ];
     
     if (additionalCollaboratingAssemblies) {
