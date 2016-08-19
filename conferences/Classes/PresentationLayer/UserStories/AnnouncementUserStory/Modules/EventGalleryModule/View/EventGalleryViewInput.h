@@ -40,4 +40,18 @@
  */
 - (void)updateStateWithFutureEvents:(NSArray <EventPlainObject *> *)events;
 
+/**
+ @author Egor Tolstoy
+ 
+ Method triggers view to show gallery (default) state
+ */
+- (void)showGalleryState;
+
+/**
+ @author Egor Tolstoy
+ 
+ Method triggers view to show loading state
+ */
+- (void)showLoadingState;
+
 @end

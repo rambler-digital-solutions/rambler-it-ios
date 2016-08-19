@@ -32,10 +32,14 @@
 - (void)didTriggerViewReadyEvent {
     [self.view setupInitialState];
     [self.interactor updateEventList];
-    
+
     NSArray *cachedFutureEvents = [self.interactor obtainFutureEventList];
     
-    [self updateViewWithEvents:cachedFutureEvents];
+    if (cachedFutureEvents.count > 0) {
+        [self updateViewWithEvents:cachedFutureEvents];
+    } else {
+        [self.view showLoadingState];
+    }
 }
 
 - (void)didTriggerEventTapEventWithObject:(EventPlainObject *)event {
@@ -56,6 +60,7 @@
 #pragma mark - Private methods
 
 - (void)updateViewWithEvents:(NSArray *)events {
+    [self.view showGalleryState];
     [self.view updateStateWithFutureEvents:events];
 }
 

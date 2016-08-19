@@ -42,8 +42,7 @@ static NSString *const kEventListName = @"kEventListName";
     return events;
 }
 
-- (void)updateEventListWithCompletionBlock:(EventsCompletionBlock)completionBlock
-{
+- (void)updateEventListWithCompletionBlock:(EventsCompletionBlock)completionBlock {
     EventListQuery *listQuery = [self obtainActualEventListObject];
     NSString *modelObjectId = [self obtainCurrentEventModelObjectId];
     NSManagedObjectContext *rootSavingContext = [NSManagedObjectContext MR_rootSavingContext];

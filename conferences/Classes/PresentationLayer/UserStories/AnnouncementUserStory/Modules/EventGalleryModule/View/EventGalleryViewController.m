@@ -30,6 +30,10 @@
 #import "Extensions/UIViewController+CDObserver/UIViewController+CDObserver.h"
 #import "UIColor+Hex.h"
 
+static NSString *const kLoadingAnimationImageName = @"loading%lu";
+static NSUInteger const kLoadingAnimationFrameCount = 9;
+static CGFloat const kLoadingAnimationDuration = 1.8f;
+
 @implementation EventGalleryViewController
 
 #pragma mark - Lifecycle methods
@@ -69,6 +73,23 @@
     [self.collectionView reloadData];
 }
 
+- (void)showGalleryState {
+    self.collectionView.hidden = NO;
+    self.backgroundAdditionalView.hidden = NO;
+    
+    self.loadingImageView.hidden = YES;
+    [self.loadingImageView stopAnimating];
+}
+
+- (void)showLoadingState {
+    self.collectionView.hidden = YES;
+    self.backgroundAdditionalView.hidden = YES;
+    
+    self.loadingImageView.animationImages = [self obtainLoadingAnimationImages];
+    self.loadingImageView.animationDuration = kLoadingAnimationDuration;
+    [self.loadingImageView startAnimating];
+}
+
 #pragma mark - <EventGalleryMoreEventsCollectionViewCellActionProtocol>
 
 - (void)didTapMoreEventsButton {
@@ -79,6 +100,23 @@
 
 - (void)didTapEventAnnouncementCellWithEvent:(EventPlainObject *)event {
     [self.output didTriggerEventTapEventWithObject:event];
+}
+
+#pragma mark - Private methods
+
+- (NSArray *)obtainLoadingAnimationImages {
+    static NSMutableArray *mutableImages;
+    if (mutableImages) {
+        return [mutableImages copy];
+    }
+    
+    mutableImages = [NSMutableArray new];
+    for (NSUInteger i = 1; i < kLoadingAnimationFrameCount; i++) {
+        NSString *imageName = [NSString stringWithFormat:kLoadingAnimationImageName, i];
+        UIImage *image = [UIImage imageNamed:imageName];
+        [mutableImages addObject:image];
+    }
+    return [mutableImages copy];
 }
 
 @end

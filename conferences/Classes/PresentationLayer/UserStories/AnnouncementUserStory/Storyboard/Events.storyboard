@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G26a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
@@ -26,10 +26,18 @@
                                 <collectionViewLayout key="collectionViewLayout" id="4bE-UB-04j" customClass="EventGalleryCollectionViewFlowLayout"/>
                                 <cells/>
                             </collectionView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lT5-OJ-HHf">
+                                <rect key="frame" x="32" y="156" width="256" height="256"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="256" id="Xhy-Hq-v6n"/>
+                                    <constraint firstAttribute="height" constant="256" id="cVR-ta-wgZ"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="1dW-rk-T4d" firstAttribute="leading" secondItem="LQ0-C4-6R2" secondAttribute="leading" id="DUl-rN-nVd"/>
+                            <constraint firstItem="lT5-OJ-HHf" firstAttribute="centerY" secondItem="LQ0-C4-6R2" secondAttribute="centerY" id="PcF-Ro-ZgJ"/>
                             <constraint firstItem="Sbt-Sf-L4Y" firstAttribute="leading" secondItem="LQ0-C4-6R2" secondAttribute="leading" id="Uuu-KH-FjX"/>
                             <constraint firstAttribute="trailing" secondItem="Sbt-Sf-L4Y" secondAttribute="trailing" id="Uz1-Ah-hl9"/>
                             <constraint firstItem="1dW-rk-T4d" firstAttribute="top" secondItem="LQ0-C4-6R2" secondAttribute="top" id="YDZ-hu-dGk"/>
@@ -37,19 +45,21 @@
                             <constraint firstItem="Sbt-Sf-L4Y" firstAttribute="top" secondItem="LQ0-C4-6R2" secondAttribute="top" id="vNo-Mc-pvZ"/>
                             <constraint firstAttribute="bottom" secondItem="1dW-rk-T4d" secondAttribute="bottom" id="wUF-nt-IMD"/>
                             <constraint firstItem="4Ae-hD-WCO" firstAttribute="top" secondItem="Sbt-Sf-L4Y" secondAttribute="bottom" id="xdZ-jw-IQY"/>
+                            <constraint firstItem="lT5-OJ-HHf" firstAttribute="centerX" secondItem="LQ0-C4-6R2" secondAttribute="centerX" id="y7o-RY-S3C"/>
                         </constraints>
                     </view>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="backgroundAdditionalView" destination="1dW-rk-T4d" id="PCl-Z9-40T"/>
                         <outlet property="collectionView" destination="Sbt-Sf-L4Y" id="cYF-Lr-Jlm"/>
+                        <outlet property="loadingImageView" destination="lT5-OJ-HHf" id="T1c-2q-c1a"/>
                         <segue destination="Rvi-6t-DcR" kind="push" identifier="EventGalleryModuleToEventModuleSegue" id="IbO-oW-ts1"/>
                         <segue destination="nCN-ol-buU" kind="push" identifier="kAnnouncementGalleryModuleToEventListModuleSegue" id="7cy-B1-Qje"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ea-Ji-Jtz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1188" y="-537"/>
+            <point key="canvasLocation" x="1176" y="-398"/>
         </scene>
         <!--EventViewController-->
         <scene sceneID="orE-EG-ctz">
