@@ -49,5 +49,14 @@
  */
 - (void)openWebBrowserModuleWithUrl:(NSURL *)url;
 
+/**
+ @author Egor Tolstoy
+ 
+ Method opens YouTube player module
+ 
+ @param url Opening url
+ */
+- (void)openYouTubeVideoPlayerModuleWithUrl:(NSURL *)url;
+
 @end
 

@@ -45,7 +45,7 @@
 }
 
 - (void)didTapVideoPreviewWithUrl:(NSURL *)videoUrl {
-    [self.router openWebBrowserModuleWithUrl:videoUrl];
+    [self.router openYouTubeVideoPlayerModuleWithUrl:videoUrl];
 }
 
 - (void)didTapMaterialWithUrl:(NSURL *)materialUrl {
