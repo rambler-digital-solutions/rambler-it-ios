@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15G26a" minimumToolsVersion="Xcode 4.2">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15G31" minimumToolsVersion="Xcode 4.2">
     <entity name="Event" representedClassName="EventModelObject" syncable="YES">
         <attribute name="endDate" attributeType="Date" syncable="YES"/>
         <attribute name="eventDescription" optional="YES" attributeType="String" syncable="YES"/>
@@ -12,10 +12,10 @@
         <attribute name="startDate" attributeType="Date" syncable="YES"/>
         <attribute name="timePadID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="twitterTag" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="lectures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lecture" inverseName="event" inverseEntity="Lecture" syncable="YES"/>
-        <relationship name="metaEvent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MetaEvent" inverseName="events" inverseEntity="MetaEvent" syncable="YES"/>
-        <relationship name="registrationQuestions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RegistrationQuestion" inverseName="event" inverseEntity="RegistrationQuestion" syncable="YES"/>
-        <relationship name="tech" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tech" inverseName="events" inverseEntity="Tech" syncable="YES"/>
+        <relationship name="lectures" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Lecture" inverseName="event" inverseEntity="Lecture" syncable="YES"/>
+        <relationship name="metaEvent" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="MetaEvent" inverseName="events" inverseEntity="MetaEvent" syncable="YES"/>
+        <relationship name="registrationQuestions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="RegistrationQuestion" inverseName="event" inverseEntity="RegistrationQuestion" syncable="YES"/>
+        <relationship name="tech" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Tech" inverseName="events" inverseEntity="Tech" syncable="YES"/>
     </entity>
     <entity name="LastModified" representedClassName="LastModifiedModelObject" syncable="YES">
         <attribute name="lastModifiedDate" optional="YES" attributeType="Date" syncable="YES"/>
@@ -28,9 +28,9 @@
         <attribute name="lectureId" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="lectures" inverseEntity="Event" syncable="YES"/>
-        <relationship name="lectureMaterials" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LectureMaterial" inverseName="lecture" inverseEntity="LectureMaterial" syncable="YES"/>
-        <relationship name="speaker" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Speaker" inverseName="lectures" inverseEntity="Speaker" syncable="YES"/>
-        <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="lectures" inverseEntity="Tag" syncable="YES"/>
+        <relationship name="lectureMaterials" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="LectureMaterial" inverseName="lecture" inverseEntity="LectureMaterial" syncable="YES"/>
+        <relationship name="speaker" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Speaker" inverseName="lectures" inverseEntity="Speaker" syncable="YES"/>
+        <relationship name="tags" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Tag" inverseName="lectures" inverseEntity="Tag" syncable="YES"/>
     </entity>
     <entity name="LectureMaterial" representedClassName="LectureMaterialModelObject" syncable="YES">
         <attribute name="lectureMaterialId" attributeType="String" syncable="YES"/>
