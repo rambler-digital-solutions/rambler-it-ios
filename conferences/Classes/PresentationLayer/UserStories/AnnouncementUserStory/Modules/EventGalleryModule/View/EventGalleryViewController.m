@@ -141,7 +141,7 @@ static CGFloat const kLoadingAnimationDuration = 1.8f;
     
     mutableImages = [NSMutableArray new];
     for (NSUInteger i = 1; i < kLoadingAnimationFrameCount; i++) {
-        NSString *imageName = [NSString stringWithFormat:kLoadingAnimationImageName, i];
+        NSString *imageName = [NSString stringWithFormat:kLoadingAnimationImageName, (unsigned long)i];
         UIImage *image = [UIImage imageNamed:imageName];
         [mutableImages addObject:image];
     }
