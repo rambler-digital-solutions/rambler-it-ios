@@ -55,6 +55,8 @@ static NSString *const kLectureShareItemType = @"lecture";
                                                       with:[self.serviceComponents lectureService]];
                                 [definition injectProperty:@selector(shareUrlBuilder)
                                                       with:[self lectureShareUrlBuilder]];
+                                [definition injectProperty:@selector(deriviator)
+                                                      with:[self.presentationLayerHelpersAssembly youTubeIdentifierDeriviator]];
              }];
 }
 

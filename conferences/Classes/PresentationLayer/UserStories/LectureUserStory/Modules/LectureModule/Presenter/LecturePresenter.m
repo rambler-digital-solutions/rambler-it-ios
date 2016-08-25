@@ -45,7 +45,13 @@
 }
 
 - (void)didTapVideoPreviewWithUrl:(NSURL *)videoUrl {
-    [self.router openYouTubeVideoPlayerModuleWithUrl:videoUrl];
+    BOOL isYouTube = [self.interactor checkIfVideoIsFromYouTube:videoUrl];
+    if (isYouTube) {
+        NSString *videoIdentifier = [self.interactor deriveVideoIdFromYouTubeUrl:videoUrl];
+        [self.router openYouTubeVideoPlayerModuleWithIdentifier:videoIdentifier];
+    } else {
+        [self.router openWebBrowserModuleWithUrl:videoUrl];
+    }
 }
 
 - (void)didTapMaterialWithUrl:(NSURL *)materialUrl {

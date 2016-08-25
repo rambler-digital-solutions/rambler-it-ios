@@ -44,5 +44,27 @@
  */
 - (NSArray *)obtainActivityItemsForLecture:(LecturePlainObject *)lecture;
 
+/**
+ @author Egor Tolstoy
+ 
+ Method performs a check for the video source
+ 
+ @param videoUrl Video url
+ 
+ @return YES/NO
+ */
+- (BOOL)checkIfVideoIsFromYouTube:(NSURL *)videoUrl;
+
+/**
+ @author Egor Tolstoy
+ 
+ Method returns an identifier for youtube video
+ 
+ @param videoUrl YouTube video URL
+ 
+ @return YouTube video identifier
+ */
+- (NSString *)deriveVideoIdFromYouTubeUrl:(NSURL *)videoUrl;
+
 @end
 

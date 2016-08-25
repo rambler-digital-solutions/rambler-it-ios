@@ -118,9 +118,24 @@
     OCMVerify([self.routerMock openShareModuleWithActivityItems:activityItems]);
 }
 
-- (void)testSuccessDidTapVideoPreview {
+- (void)testSuccessDidTapYouTubeVideoPreview {
     // given
     NSURL *testUrl = [NSURL URLWithString:@"rambler.ru"];
+    NSString *testIdentifier = @"1234";
+    OCMStub([self.interactorMock checkIfVideoIsFromYouTube:testUrl]).andReturn(YES);
+    OCMStub([self.interactorMock deriveVideoIdFromYouTubeUrl:testUrl]).andReturn(testIdentifier);
+    
+    // when
+    [self.presenter didTapVideoPreviewWithUrl:testUrl];
+    
+    // then
+    OCMVerify([self.routerMock openYouTubeVideoPlayerModuleWithIdentifier:testIdentifier]);
+}
+
+- (void)testSuccessTapOtherVideoPreview {
+    // given
+    NSURL *testUrl = [NSURL URLWithString:@"rambler.ru"];
+    OCMStub([self.interactorMock checkIfVideoIsFromYouTube:testUrl]).andReturn(NO);
     
     // when
     [self.presenter didTapVideoPreviewWithUrl:testUrl];
