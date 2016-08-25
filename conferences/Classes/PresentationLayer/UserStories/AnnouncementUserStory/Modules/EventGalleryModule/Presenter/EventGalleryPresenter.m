@@ -63,7 +63,10 @@
 }
 
 - (void)didUpdateEventListWithError {
-    [self.view showErrorState];
+    NSArray *cachedFutureEvents = [self.interactor obtainFutureEventList];
+    if (cachedFutureEvents.count == 0) {
+        [self.view showErrorState];
+    }
 }
 
 #pragma mark - Private methods
