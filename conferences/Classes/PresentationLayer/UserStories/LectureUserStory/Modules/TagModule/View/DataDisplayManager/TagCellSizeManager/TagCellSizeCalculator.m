@@ -39,6 +39,7 @@
                                config:(TagCellSizeConfig *)config {
     self = [super init];
     if (self) {
+        _prototypeCells = [NSMutableDictionary new];
         _rowCalculator = rowCalculator;
         _config = config;
     }
