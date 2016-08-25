@@ -50,6 +50,10 @@
     [self setupViewInitialState];
 }
 
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
+}
+
 #pragma mark - ReportListViewInput
 
 - (void)setupViewWithSuggests:(NSArray *)suggests {

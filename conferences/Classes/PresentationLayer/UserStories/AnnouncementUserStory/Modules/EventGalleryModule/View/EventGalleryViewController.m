@@ -56,6 +56,10 @@ static CGFloat const kLoadingAnimationDuration = 1.8f;
     return YES;
 }
 
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
+}
+
 #pragma mark - <EventGalleryViewInput>
 
 - (void)setupInitialState {

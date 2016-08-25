@@ -28,6 +28,7 @@
 
 #import "UINavigationBar+States.h"
 #import "Extensions/UIViewController+CDObserver/UIViewController+CDObserver.h"
+#import "UIViewController+RCFForceRotation.h"
 
 static CGFloat kTableViewEstimatedRowHeight = 44.0f;
 static CGFloat kTableViewFooterHeight = 16.0f;
@@ -43,6 +44,12 @@ static CGFloat kTableViewFooterHeight = 16.0f;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+   
+    [self rcf_forceRotateToOrientation:UIDeviceOrientationPortrait];
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
 }
 
 #pragma mark - LectureViewInput

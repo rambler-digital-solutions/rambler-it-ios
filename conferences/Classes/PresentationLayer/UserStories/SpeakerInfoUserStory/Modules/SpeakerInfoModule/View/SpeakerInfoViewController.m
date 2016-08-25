@@ -31,6 +31,10 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
 	[self.output setupView];
 }
 
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
+}
+
 #pragma mark - SpeakerInfoViewInput
 
 - (void)setupViewWithSpeaker:(SpeakerPlainObject *)speaker {

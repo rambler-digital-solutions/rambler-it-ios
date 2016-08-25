@@ -44,6 +44,10 @@ static CGFloat const kEventTableViewEstimatedRowHeight = 44.0f;
     self.navigationController.navigationBar.hidden = NO;
 }
 
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
+}
+
 #pragma mark - AnnouncementListViewInput
 
 - (void)setupViewWithEventList:(NSArray *)events {

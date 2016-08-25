@@ -1,4 +1,4 @@
-// Copyright (c) 2015 RAMBLER&Co
+// Copyright (c) 2016 RAMBLER&Co
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -18,37 +18,16 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "RamblerLocationViewController.h"
-#import "RamblerLocationViewOutput.h"
-#import "RamblerLocationDataDisplayManager.h"
+#import "RCTabBarController.h"
 
-@implementation RamblerLocationViewController
+@implementation RCTabBarController
 
-- (void)viewDidLoad {
-	[super viewDidLoad];
-	[self.output didTriggerViewReadyEvent];
+- (BOOL)shouldAutorotate {
+    return YES;
 }
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskPortrait;
-}
-
-#pragma mark - RamblerLocationViewInput
-
-- (void)setupViewWithDirections:(NSArray<DirectionObject *> *)directions {
-    id<UICollectionViewDataSource> dataSource = [self.dataDisplayManager dataSourceForCollectionView:self.collectionView
-                                                                                      withDirections:directions];
-    id<UICollectionViewDelegate> delegate = [self.dataDisplayManager delegateForCollectionView:self.collectionView];
-    self.collectionView.dataSource = dataSource;
-    self.collectionView.delegate = delegate;
-    
-    [self.collectionView reloadData];
-}
-
-#pragma mark - IBOutlets
-
-- (IBAction)didTapShareButton:(id)sender {
-    [self.output didTriggerShareButtonTapEvent];
+    return [[self selectedViewController] supportedInterfaceOrientations];
 }
 
 @end

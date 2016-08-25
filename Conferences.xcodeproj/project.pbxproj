@@ -421,6 +421,8 @@
 		9F8E5F9D1BC2777100DC10DB /* Conferences.Parse.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F8E5F9C1BC2777100DC10DB /* Conferences.Parse.plist */; };
 		9F8E5FA61BC27CCE00DC10DB /* MappingConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5FA51BC27CCE00DC10DB /* MappingConstants.m */; };
 		9F8E5FA91BC27D0D00DC10DB /* ServiceNameConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5FA81BC27D0D00DC10DB /* ServiceNameConstants.m */; };
+		9FA6E7801D6EFE9E0047D2C4 /* RCTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA6E77F1D6EFE9E0047D2C4 /* RCTabBarController.m */; };
+		9FA6E7841D6F20D40047D2C4 /* UIViewController+RCFForceRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA6E7831D6F20D40047D2C4 /* UIViewController+RCFForceRotation.m */; };
 		9FAB6A6C1D5384F30061F333 /* SpotlightIndexerConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB6A6B1D5384F30061F333 /* SpotlightIndexerConstants.m */; };
 		9FAB6A701D53896E0061F333 /* IndexerMonitorOperationQueueFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB6A6F1D53896E0061F333 /* IndexerMonitorOperationQueueFactory.m */; };
 		9FAB6A731D53914C0061F333 /* IndexerStateStorageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB6A721D53914C0061F333 /* IndexerStateStorageTests.m */; };
@@ -1391,6 +1393,10 @@
 		9F8E5FA81BC27D0D00DC10DB /* ServiceNameConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServiceNameConstants.m; path = Constants/ServiceNameConstants.m; sourceTree = "<group>"; };
 		9F8E5FAA1BC27D1D00DC10DB /* NetworkingConstantsHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NetworkingConstantsHeader.h; path = Constants/NetworkingConstantsHeader.h; sourceTree = "<group>"; };
 		9F8E5FAB1BC27E7F00DC10DB /* HTTPMethodConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTTPMethodConstants.h; path = Constants/HTTPMethodConstants.h; sourceTree = "<group>"; };
+		9FA6E77E1D6EFE9E0047D2C4 /* RCTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCTabBarController.h; path = TabBarController/RCTabBarController.h; sourceTree = "<group>"; };
+		9FA6E77F1D6EFE9E0047D2C4 /* RCTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCTabBarController.m; path = TabBarController/RCTabBarController.m; sourceTree = "<group>"; };
+		9FA6E7821D6F20D40047D2C4 /* UIViewController+RCFForceRotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+RCFForceRotation.h"; path = "UIViewController+ForceRotation/UIViewController+RCFForceRotation.h"; sourceTree = "<group>"; };
+		9FA6E7831D6F20D40047D2C4 /* UIViewController+RCFForceRotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+RCFForceRotation.m"; path = "UIViewController+ForceRotation/UIViewController+RCFForceRotation.m"; sourceTree = "<group>"; };
 		9FAB6A6A1D5384F30061F333 /* SpotlightIndexerConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpotlightIndexerConstants.h; path = SpotlightIndexer/Constants/SpotlightIndexerConstants.h; sourceTree = "<group>"; };
 		9FAB6A6B1D5384F30061F333 /* SpotlightIndexerConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpotlightIndexerConstants.m; path = SpotlightIndexer/Constants/SpotlightIndexerConstants.m; sourceTree = "<group>"; };
 		9FAB6A6E1D53896E0061F333 /* IndexerMonitorOperationQueueFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndexerMonitorOperationQueueFactory.h; path = SpotlightIndexer/IndexerMonitor/IndexerMonitorOperationQueueFactory/IndexerMonitorOperationQueueFactory.h; sourceTree = "<group>"; };
@@ -1904,6 +1910,7 @@
 		63136F941BDCDB2600994356 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				9FA6E77D1D6EFE8A0047D2C4 /* TabBarController */,
 				66EE4D2C1D54BFB90011F94A /* Nimbus */,
 				66EE4D281D54BCD70011F94A /* CollectionViewAnimator */,
 				66E999A41D54B4FC00161D98 /* ContentSizeObserver */,
@@ -3826,6 +3833,7 @@
 		63FDCDE01BBDBA2A00A43B60 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				9FA6E7811D6F20A10047D2C4 /* UIViewController+ForceRotation */,
 				661CA4041D65D0690047EB68 /* NSManagedObjectID+LJStringConversion */,
 				2B429A5C1D4789FA004C005F /* UINavigationBar */,
 				66704FFD1D460E2A00DD9D6E /* UIColor+ConferencesPallete */,
@@ -6267,6 +6275,24 @@
 			name = Constants;
 			sourceTree = "<group>";
 		};
+		9FA6E77D1D6EFE8A0047D2C4 /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				9FA6E77E1D6EFE9E0047D2C4 /* RCTabBarController.h */,
+				9FA6E77F1D6EFE9E0047D2C4 /* RCTabBarController.m */,
+			);
+			name = TabBarController;
+			sourceTree = "<group>";
+		};
+		9FA6E7811D6F20A10047D2C4 /* UIViewController+ForceRotation */ = {
+			isa = PBXGroup;
+			children = (
+				9FA6E7821D6F20D40047D2C4 /* UIViewController+RCFForceRotation.h */,
+				9FA6E7831D6F20D40047D2C4 /* UIViewController+RCFForceRotation.m */,
+			);
+			name = "UIViewController+ForceRotation";
+			sourceTree = "<group>";
+		};
 		9FAB6A691D5384E30061F333 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -8060,6 +8086,7 @@
 				9FBE89AF1D5CB71300DA0C32 /* TyphoonAppDelegate.m in Sources */,
 				6315BA051C9EC23600999877 /* VideoRecordTableViewCell.m in Sources */,
 				9F1830BF1BC11D26000E21A5 /* JSONResponseDeserializer.m in Sources */,
+				9FA6E7841D6F20D40047D2C4 /* UIViewController+RCFForceRotation.m in Sources */,
 				9FF7500D1D27DB5F000D208D /* ManagedObjectMappingProvider.m in Sources */,
 				631FFE191BEF451400749DB8 /* CDResponderTableViewCell.m in Sources */,
 				9FBE8ABC1D630D4C00DA0C32 /* EventGalleryCellObjectFactory.m in Sources */,
@@ -8162,6 +8189,7 @@
 				631808431C482B1300A61E7D /* SpeakerShortInfoView.m in Sources */,
 				63F613681CB00A220002AEF0 /* PreviousEventSectionHeaderTableViewCellObject.m in Sources */,
 				9FE139771D65F3E900D7BF44 /* SearchInteractor.m in Sources */,
+				9FA6E7801D6EFE9E0047D2C4 /* RCTabBarController.m in Sources */,
 				9FBE89B01D5CB71300DA0C32 /* VerySpecialAppDelegateForTesting.m in Sources */,
 				9F18311C1BC1615C000E21A5 /* ResultsResponseObjectFormatter.m in Sources */,
 				9FBE89AE1D5CB71300DA0C32 /* SpotlightAppDelegate.m in Sources */,

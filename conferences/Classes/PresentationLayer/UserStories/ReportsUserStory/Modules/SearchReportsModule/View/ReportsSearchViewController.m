@@ -38,6 +38,10 @@ static NSInteger kDefaultEstimatedHeight = 116;
     self.reportsListSearchTableView.estimatedRowHeight = kDefaultEstimatedHeight;
 }
 
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
+}
+
 #pragma mark - ReportsSearchViewInput
 
 - (void)showClearPlaceholder {
