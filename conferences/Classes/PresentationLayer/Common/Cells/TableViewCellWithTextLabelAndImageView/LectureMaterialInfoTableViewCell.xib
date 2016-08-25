@@ -14,14 +14,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="fGM-1L-IJc">
-                        <rect key="frame" x="20" y="10" width="20" height="20"/>
+                        <rect key="frame" x="20" y="8" width="24" height="24"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="20" id="GUq-YA-8ld"/>
-                            <constraint firstAttribute="width" constant="20" id="V0b-Yc-r6r"/>
+                            <constraint firstAttribute="height" constant="24" id="GUq-YA-8ld"/>
+                            <constraint firstAttribute="width" constant="24" id="V0b-Yc-r6r"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Фейсбук" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tet-ao-faO">
-                        <rect key="frame" x="54" y="9.5" width="246" height="16.5"/>
+                        <rect key="frame" x="58" y="11.5" width="242" height="16.5"/>
                         <constraints>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="16" id="esY-39-AWY"/>
                         </constraints>
@@ -33,7 +33,7 @@
                 <constraints>
                     <constraint firstItem="tet-ao-faO" firstAttribute="leading" secondItem="fGM-1L-IJc" secondAttribute="trailing" constant="14" id="Ajl-yf-WEr"/>
                     <constraint firstItem="tet-ao-faO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="Ee3-0Z-yEm"/>
-                    <constraint firstItem="tet-ao-faO" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="-2" id="GxB-2J-4Fg"/>
+                    <constraint firstItem="tet-ao-faO" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="GxB-2J-4Fg"/>
                     <constraint firstItem="fGM-1L-IJc" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="S0B-ZF-mef"/>
                     <constraint firstItem="fGM-1L-IJc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="kgR-9L-9l7"/>
                     <constraint firstAttribute="trailing" secondItem="tet-ao-faO" secondAttribute="trailing" constant="20" id="yoH-G5-TrP"/>
