@@ -20,9 +20,17 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="light-gray-square" translatesAutoresizingMaskIntoConstraints="NO" id="8Cm-f0-fxL">
                                 <rect key="frame" x="20" y="0.0" width="40" height="40"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="HcU-jA-cuE"/>
+                                    <constraint firstAttribute="height" constant="40" id="Slc-ta-va9"/>
                                     <constraint firstAttribute="width" constant="40" id="XcT-oz-6r7"/>
                                     <constraint firstAttribute="width" secondItem="8Cm-f0-fxL" secondAttribute="height" multiplier="1:1" id="oPN-Lz-MOs"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="XcT-oz-6r7"/>
+                                        <exclude reference="oPN-Lz-MOs"/>
+                                    </mask>
+                                </variation>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hxd-vg-oVQ">
                                 <rect key="frame" x="72" y="1" width="128" height="37"/>
@@ -75,8 +83,17 @@
                             <constraint firstItem="8Cm-f0-fxL" firstAttribute="top" secondItem="kJI-hF-2hS" secondAttribute="top" id="Woq-pO-vNj"/>
                             <constraint firstAttribute="height" constant="40" id="Y3Q-k6-qga"/>
                             <constraint firstAttribute="bottom" secondItem="8Cm-f0-fxL" secondAttribute="bottom" id="hDV-Vs-orr"/>
+                            <constraint firstItem="8Cm-f0-fxL" firstAttribute="centerX" secondItem="kJI-hF-2hS" secondAttribute="centerX" id="iYh-qF-AQf"/>
+                            <constraint firstItem="8Cm-f0-fxL" firstAttribute="centerY" secondItem="kJI-hF-2hS" secondAttribute="centerY" id="mIF-1G-sOv"/>
                             <constraint firstItem="hxd-vg-oVQ" firstAttribute="centerY" secondItem="kJI-hF-2hS" secondAttribute="centerY" id="sVQ-33-m32"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Woq-pO-vNj"/>
+                                <exclude reference="hDV-Vs-orr"/>
+                                <exclude reference="iYh-qF-AQf"/>
+                            </mask>
+                        </variation>
                     </view>
                 </subviews>
                 <constraints>
