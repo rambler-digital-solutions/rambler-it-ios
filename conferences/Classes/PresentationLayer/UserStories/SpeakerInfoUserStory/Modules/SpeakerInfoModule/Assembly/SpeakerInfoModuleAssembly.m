@@ -31,7 +31,7 @@
 #import "PresentationLayerHelpersAssembly.h"
 #import "ShareUrlBuilderImplementation.h"
 
-static NSString *const kSpeakerShareItemType = @"speaker";
+static NSString *const kSpeakerShareItemType = @"speakers";
 
 @implementation  SpeakerInfoModuleAssembly
 
