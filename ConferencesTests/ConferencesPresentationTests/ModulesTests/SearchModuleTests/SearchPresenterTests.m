@@ -102,6 +102,7 @@
     
     // then
     OCMVerify([self.mockReportsSearchModule closeSearchModule]);
+    OCMVerify([self.mockView updateSearchBarWithText:@""]);
 }
 
 #pragma mark - SearchBar Delegate

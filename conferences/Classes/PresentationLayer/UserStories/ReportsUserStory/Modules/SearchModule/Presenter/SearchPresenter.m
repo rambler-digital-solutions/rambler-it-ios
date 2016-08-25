@@ -39,6 +39,7 @@
 
 - (void)didTapSearchBarCancelButton {
     [self.reportsSearchModule closeSearchModule];
+    [self.view updateSearchBarWithText:@""];
 }
 
 - (void)didTapSuggestWithText:(NSString *)text {
