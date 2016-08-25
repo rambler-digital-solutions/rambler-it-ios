@@ -74,6 +74,7 @@
                     <constraint firstAttribute="trailing" secondItem="rxs-k3-aJ4" secondAttribute="trailing" constant="10" id="vW4-kL-rqC"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="date" destination="i0a-cT-mA2" id="e1f-4A-THO"/>
                 <outlet property="eventImageView" destination="M4a-kq-6ct" id="Pbb-2n-zQd"/>
