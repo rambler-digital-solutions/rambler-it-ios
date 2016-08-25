@@ -29,6 +29,10 @@
 	[self.output didTriggerViewReadyEvent];
 }
 
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
+}
+
 #pragma mark - RamblerLocationViewInput
 
 - (void)setupViewWithDirections:(NSArray<DirectionObject *> *)directions {

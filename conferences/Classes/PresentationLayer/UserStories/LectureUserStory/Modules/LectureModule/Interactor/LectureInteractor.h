@@ -25,12 +25,14 @@
 @protocol ROSPonsomizer;
 @protocol LectureInteractorOutput;
 @protocol ShareUrlBuilder;
+@class YouTubeIdentifierDeriviator;
 
 @interface LectureInteractor : NSObject<LectureInteractorInput>
 
 @property (nonatomic, strong) id<LectureService> lectureService;
 @property (nonatomic, strong) id<ROSPonsomizer> ponsomizer;
 @property (nonatomic, strong) id<ShareUrlBuilder> shareUrlBuilder;
+@property (nonatomic, strong) YouTubeIdentifierDeriviator *deriviator;
 @property (nonatomic, weak) id<LectureInteractorOutput> output;
 
 @end

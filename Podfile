@@ -25,6 +25,7 @@ pod 'RamblerAppDelegateProxy', :head
 pod 'RamblerSegues'
 pod 'UICollectionViewLeftAlignedLayout', '1.0.1'
 pod 'FLAnimatedImage', '~> 1.0'
+pod 'XCDYouTubeKit', '~> 2.5'
 
 target 'ConferencesTests', :exclusive => true do
     pod 'OCMock', '~> 3.1'

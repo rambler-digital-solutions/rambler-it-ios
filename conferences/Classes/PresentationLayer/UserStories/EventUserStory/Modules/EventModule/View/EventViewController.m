@@ -51,6 +51,10 @@
     [self setupViewInitialState];
 }
 
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
+}
+
 #pragma mark - EventViewInput
 
 - (void)configureViewWithEvent:(EventPlainObject *)event pastEvents:(NSArray *)pastEvents {

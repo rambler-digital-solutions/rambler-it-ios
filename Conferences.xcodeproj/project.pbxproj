@@ -407,6 +407,9 @@
 		9F78D7791D5A0330009DDCEA /* LectureObjectIndexerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D7781D5A0330009DDCEA /* LectureObjectIndexerTests.m */; };
 		9F78D77D1D5A075C009DDCEA /* LectureChangeProviderFetchRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D77C1D5A075C009DDCEA /* LectureChangeProviderFetchRequestFactory.m */; };
 		9F78D7801D5A078F009DDCEA /* LectureChangeProviderFetchRequestFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D77F1D5A078F009DDCEA /* LectureChangeProviderFetchRequestFactoryTests.m */; };
+		9F8B49E11D6EEE9000ED176B /* YouTubeIdentifierDeriviator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B49E01D6EEE9000ED176B /* YouTubeIdentifierDeriviator.m */; };
+		9F8B49E41D6EEF4500ED176B /* YouTubeIdentifierDeriviatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B49E31D6EEF4500ED176B /* YouTubeIdentifierDeriviatorTests.m */; };
+		9F8B49E91D6EF72B00ED176B /* YouTubePlayerFactoryImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B49E81D6EF72B00ED176B /* YouTubePlayerFactoryImplementation.m */; };
 		9F8E5F701BC2552600DC10DB /* Conferences.API.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F8E5F6F1BC2552600DC10DB /* Conferences.API.plist */; };
 		9F8E5F741BC255AA00DC10DB /* RequestSignersAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5F731BC255AA00DC10DB /* RequestSignersAssembly.m */; };
 		9F8E5F781BC2571B00DC10DB /* NetworkClientsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5F771BC2571B00DC10DB /* NetworkClientsAssembly.m */; };
@@ -418,6 +421,8 @@
 		9F8E5F9D1BC2777100DC10DB /* Conferences.Parse.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F8E5F9C1BC2777100DC10DB /* Conferences.Parse.plist */; };
 		9F8E5FA61BC27CCE00DC10DB /* MappingConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5FA51BC27CCE00DC10DB /* MappingConstants.m */; };
 		9F8E5FA91BC27D0D00DC10DB /* ServiceNameConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5FA81BC27D0D00DC10DB /* ServiceNameConstants.m */; };
+		9FA6E7801D6EFE9E0047D2C4 /* RCTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA6E77F1D6EFE9E0047D2C4 /* RCTabBarController.m */; };
+		9FA6E7841D6F20D40047D2C4 /* UIViewController+RCFForceRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA6E7831D6F20D40047D2C4 /* UIViewController+RCFForceRotation.m */; };
 		9FAB6A6C1D5384F30061F333 /* SpotlightIndexerConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB6A6B1D5384F30061F333 /* SpotlightIndexerConstants.m */; };
 		9FAB6A701D53896E0061F333 /* IndexerMonitorOperationQueueFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB6A6F1D53896E0061F333 /* IndexerMonitorOperationQueueFactory.m */; };
 		9FAB6A731D53914C0061F333 /* IndexerStateStorageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB6A721D53914C0061F333 /* IndexerStateStorageTests.m */; };
@@ -1355,6 +1360,12 @@
 		9F78D77B1D5A075C009DDCEA /* LectureChangeProviderFetchRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LectureChangeProviderFetchRequestFactory.h; path = ChangeProviderFetchRequestFactories/ConcreteClasses/LectureChangeProviderFetchRequestFactory/LectureChangeProviderFetchRequestFactory.h; sourceTree = "<group>"; };
 		9F78D77C1D5A075C009DDCEA /* LectureChangeProviderFetchRequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LectureChangeProviderFetchRequestFactory.m; path = ChangeProviderFetchRequestFactories/ConcreteClasses/LectureChangeProviderFetchRequestFactory/LectureChangeProviderFetchRequestFactory.m; sourceTree = "<group>"; };
 		9F78D77F1D5A078F009DDCEA /* LectureChangeProviderFetchRequestFactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LectureChangeProviderFetchRequestFactoryTests.m; path = ApplicationLayerTests/SpotlightIndexer/ChangeProviders/BaseClasses/FetchedResultsControllerChangeProvider/ChangeProviderFetchRequestFactories/ConcreteClasses/LectureChangeProviderFetchRequestFactory/LectureChangeProviderFetchRequestFactoryTests.m; sourceTree = "<group>"; };
+		9F8B49DF1D6EEE9000ED176B /* YouTubeIdentifierDeriviator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YouTubeIdentifierDeriviator.h; path = YouTubeIdentifierDeriviator/YouTubeIdentifierDeriviator.h; sourceTree = "<group>"; };
+		9F8B49E01D6EEE9000ED176B /* YouTubeIdentifierDeriviator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YouTubeIdentifierDeriviator.m; path = YouTubeIdentifierDeriviator/YouTubeIdentifierDeriviator.m; sourceTree = "<group>"; };
+		9F8B49E31D6EEF4500ED176B /* YouTubeIdentifierDeriviatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YouTubeIdentifierDeriviatorTests.m; path = YouTubeIdentifierDeriviator/YouTubeIdentifierDeriviatorTests.m; sourceTree = "<group>"; };
+		9F8B49E61D6EF72100ED176B /* YouTubePlayerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YouTubePlayerFactory.h; path = YouTubePlayerFactory/YouTubePlayerFactory.h; sourceTree = "<group>"; };
+		9F8B49E71D6EF72B00ED176B /* YouTubePlayerFactoryImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YouTubePlayerFactoryImplementation.h; path = YouTubePlayerFactory/YouTubePlayerFactoryImplementation.h; sourceTree = "<group>"; };
+		9F8B49E81D6EF72B00ED176B /* YouTubePlayerFactoryImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YouTubePlayerFactoryImplementation.m; path = YouTubePlayerFactory/YouTubePlayerFactoryImplementation.m; sourceTree = "<group>"; };
 		9F8E5F6F1BC2552600DC10DB /* Conferences.API.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Conferences.API.plist; path = Assemblies/RequestConfiguratorsFactory/Conferences.API.plist; sourceTree = "<group>"; };
 		9F8E5F711BC2559B00DC10DB /* RequestSignersFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequestSignersFactory.h; path = Assemblies/RequestSignersFactory/RequestSignersFactory.h; sourceTree = "<group>"; };
 		9F8E5F721BC255AA00DC10DB /* RequestSignersAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequestSignersAssembly.h; path = Assemblies/RequestSignersFactory/RequestSignersAssembly.h; sourceTree = "<group>"; };
@@ -1382,6 +1393,10 @@
 		9F8E5FA81BC27D0D00DC10DB /* ServiceNameConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServiceNameConstants.m; path = Constants/ServiceNameConstants.m; sourceTree = "<group>"; };
 		9F8E5FAA1BC27D1D00DC10DB /* NetworkingConstantsHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NetworkingConstantsHeader.h; path = Constants/NetworkingConstantsHeader.h; sourceTree = "<group>"; };
 		9F8E5FAB1BC27E7F00DC10DB /* HTTPMethodConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTTPMethodConstants.h; path = Constants/HTTPMethodConstants.h; sourceTree = "<group>"; };
+		9FA6E77E1D6EFE9E0047D2C4 /* RCTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCTabBarController.h; path = TabBarController/RCTabBarController.h; sourceTree = "<group>"; };
+		9FA6E77F1D6EFE9E0047D2C4 /* RCTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCTabBarController.m; path = TabBarController/RCTabBarController.m; sourceTree = "<group>"; };
+		9FA6E7821D6F20D40047D2C4 /* UIViewController+RCFForceRotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+RCFForceRotation.h"; path = "UIViewController+ForceRotation/UIViewController+RCFForceRotation.h"; sourceTree = "<group>"; };
+		9FA6E7831D6F20D40047D2C4 /* UIViewController+RCFForceRotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+RCFForceRotation.m"; path = "UIViewController+ForceRotation/UIViewController+RCFForceRotation.m"; sourceTree = "<group>"; };
 		9FAB6A6A1D5384F30061F333 /* SpotlightIndexerConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpotlightIndexerConstants.h; path = SpotlightIndexer/Constants/SpotlightIndexerConstants.h; sourceTree = "<group>"; };
 		9FAB6A6B1D5384F30061F333 /* SpotlightIndexerConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpotlightIndexerConstants.m; path = SpotlightIndexer/Constants/SpotlightIndexerConstants.m; sourceTree = "<group>"; };
 		9FAB6A6E1D53896E0061F333 /* IndexerMonitorOperationQueueFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndexerMonitorOperationQueueFactory.h; path = SpotlightIndexer/IndexerMonitor/IndexerMonitorOperationQueueFactory/IndexerMonitorOperationQueueFactory.h; sourceTree = "<group>"; };
@@ -1895,6 +1910,7 @@
 		63136F941BDCDB2600994356 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				9FA6E77D1D6EFE8A0047D2C4 /* TabBarController */,
 				66EE4D2C1D54BFB90011F94A /* Nimbus */,
 				66EE4D281D54BCD70011F94A /* CollectionViewAnimator */,
 				66E999A41D54B4FC00161D98 /* ContentSizeObserver */,
@@ -2168,6 +2184,7 @@
 		631CBA901C021C3900E3EBA8 /* HelpersTests */ = {
 			isa = PBXGroup;
 			children = (
+				9F8B49E21D6EEF3C00ED176B /* YouTubeIdentifierDeriviator */,
 				9FC305331D6478E20052CB67 /* ShareUrlBuilderTests */,
 				9FBE8A091D5DFAA600DA0C32 /* VideoThumbnailTests */,
 				9FF37E0F1D32359D00471B4E /* MapLinkBuildersTests */,
@@ -3698,6 +3715,8 @@
 		63F8F27A1BF79090000017F3 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				9F8B49E51D6EF71200ED176B /* YouTubePlayerFactory */,
+				9F8B49DE1D6EEE5E00ED176B /* YouTubeIdentifierDeriviator */,
 				9FC305291D6476650052CB67 /* ShareUrlBuilder */,
 				9FBE8A0D1D5E5EF800DA0C32 /* SafariFactory */,
 				9FBE8A051D5DFA0000DA0C32 /* VideoThumbnailGenerator */,
@@ -3814,6 +3833,7 @@
 		63FDCDE01BBDBA2A00A43B60 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				9FA6E7811D6F20A10047D2C4 /* UIViewController+ForceRotation */,
 				661CA4041D65D0690047EB68 /* NSManagedObjectID+LJStringConversion */,
 				2B429A5C1D4789FA004C005F /* UINavigationBar */,
 				66704FFD1D460E2A00DD9D6E /* UIColor+ConferencesPallete */,
@@ -6187,6 +6207,33 @@
 			name = LectureChangeProviderFetchRequestFactory;
 			sourceTree = "<group>";
 		};
+		9F8B49DE1D6EEE5E00ED176B /* YouTubeIdentifierDeriviator */ = {
+			isa = PBXGroup;
+			children = (
+				9F8B49DF1D6EEE9000ED176B /* YouTubeIdentifierDeriviator.h */,
+				9F8B49E01D6EEE9000ED176B /* YouTubeIdentifierDeriviator.m */,
+			);
+			name = YouTubeIdentifierDeriviator;
+			sourceTree = "<group>";
+		};
+		9F8B49E21D6EEF3C00ED176B /* YouTubeIdentifierDeriviator */ = {
+			isa = PBXGroup;
+			children = (
+				9F8B49E31D6EEF4500ED176B /* YouTubeIdentifierDeriviatorTests.m */,
+			);
+			name = YouTubeIdentifierDeriviator;
+			sourceTree = "<group>";
+		};
+		9F8B49E51D6EF71200ED176B /* YouTubePlayerFactory */ = {
+			isa = PBXGroup;
+			children = (
+				9F8B49E61D6EF72100ED176B /* YouTubePlayerFactory.h */,
+				9F8B49E71D6EF72B00ED176B /* YouTubePlayerFactoryImplementation.h */,
+				9F8B49E81D6EF72B00ED176B /* YouTubePlayerFactoryImplementation.m */,
+			);
+			name = YouTubePlayerFactory;
+			sourceTree = "<group>";
+		};
 		9F8E5F911BC269D000DC10DB /* OperationFactoriesAssembly */ = {
 			isa = PBXGroup;
 			children = (
@@ -6226,6 +6273,24 @@
 				9F8E5FAB1BC27E7F00DC10DB /* HTTPMethodConstants.h */,
 			);
 			name = Constants;
+			sourceTree = "<group>";
+		};
+		9FA6E77D1D6EFE8A0047D2C4 /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				9FA6E77E1D6EFE9E0047D2C4 /* RCTabBarController.h */,
+				9FA6E77F1D6EFE9E0047D2C4 /* RCTabBarController.m */,
+			);
+			name = TabBarController;
+			sourceTree = "<group>";
+		};
+		9FA6E7811D6F20A10047D2C4 /* UIViewController+ForceRotation */ = {
+			isa = PBXGroup;
+			children = (
+				9FA6E7821D6F20D40047D2C4 /* UIViewController+RCFForceRotation.h */,
+				9FA6E7831D6F20D40047D2C4 /* UIViewController+RCFForceRotation.m */,
+			);
+			name = "UIViewController+ForceRotation";
 			sourceTree = "<group>";
 		};
 		9FAB6A691D5384E30061F333 /* Constants */ = {
@@ -8021,6 +8086,7 @@
 				9FBE89AF1D5CB71300DA0C32 /* TyphoonAppDelegate.m in Sources */,
 				6315BA051C9EC23600999877 /* VideoRecordTableViewCell.m in Sources */,
 				9F1830BF1BC11D26000E21A5 /* JSONResponseDeserializer.m in Sources */,
+				9FA6E7841D6F20D40047D2C4 /* UIViewController+RCFForceRotation.m in Sources */,
 				9FF7500D1D27DB5F000D208D /* ManagedObjectMappingProvider.m in Sources */,
 				631FFE191BEF451400749DB8 /* CDResponderTableViewCell.m in Sources */,
 				9FBE8ABC1D630D4C00DA0C32 /* EventGalleryCellObjectFactory.m in Sources */,
@@ -8042,6 +8108,7 @@
 				9FE139811D65F3E900D7BF44 /* GrayTableViewSectionHeaderAndFooterCell.m in Sources */,
 				631808411C482B1300A61E7D /* SpeakerShortInfoPresenter.m in Sources */,
 				63F6135D1CB00A220002AEF0 /* EventHeaderRouter.m in Sources */,
+				9F8B49E11D6EEE9000ED176B /* YouTubeIdentifierDeriviator.m in Sources */,
 				9FC305321D6476EA0052CB67 /* ShareUrlBuilderImplementation.m in Sources */,
 				9F5316A91D50F56900F13931 /* IndexerStateStorage.m in Sources */,
 				9F533A8E1D50EC10004F8E82 /* IndexerMonitor.m in Sources */,
@@ -8115,12 +8182,14 @@
 				63F613841CB00A220002AEF0 /* EventCellObjectBuilderBase.m in Sources */,
 				2B2064861D3F9CE900246C8D /* _SpeakerPlainObject.m in Sources */,
 				636F8DDC1BCB8FE800552B91 /* RamblerLocationPresenter.m in Sources */,
+				9F8B49E91D6EF72B00ED176B /* YouTubePlayerFactoryImplementation.m in Sources */,
 				9F533A961D50EEE0004F8E82 /* ObjectIndexerBase.m in Sources */,
 				9F8E5F841BC25A0700DC10DB /* ResponseMappersAssembly.m in Sources */,
 				9F33B8881D639C7300BE136C /* SpeakerInfoLectureCell.m in Sources */,
 				631808431C482B1300A61E7D /* SpeakerShortInfoView.m in Sources */,
 				63F613681CB00A220002AEF0 /* PreviousEventSectionHeaderTableViewCellObject.m in Sources */,
 				9FE139771D65F3E900D7BF44 /* SearchInteractor.m in Sources */,
+				9FA6E7801D6EFE9E0047D2C4 /* RCTabBarController.m in Sources */,
 				9FBE89B01D5CB71300DA0C32 /* VerySpecialAppDelegateForTesting.m in Sources */,
 				9F18311C1BC1615C000E21A5 /* ResultsResponseObjectFormatter.m in Sources */,
 				9FBE89AE1D5CB71300DA0C32 /* SpotlightAppDelegate.m in Sources */,
@@ -8349,6 +8418,7 @@
 				9FC1F6801D2838FA0070D9B5 /* EventListQueryTransformerTests.m in Sources */,
 				9FBE89DB1D5CB76900DA0C32 /* TabBarControllerFactoryImplementationTests.m in Sources */,
 				63F613DA1CB111070002AEF0 /* EventListRouterTests.m in Sources */,
+				9F8B49E41D6EEF4500ED176B /* YouTubeIdentifierDeriviatorTests.m in Sources */,
 				9F0A85231BC185AA006F79FB /* ChainableOperationTestsBase.m in Sources */,
 				662166511D4F4507000A1D11 /* ReportsSearchRouterTests.m in Sources */,
 				63F402FB1BCF79390086D030 /* OperationFactoriesAssemblyTests.m in Sources */,

@@ -20,12 +20,16 @@
 
 #import <Foundation/Foundation.h>
 
+@class YouTubeIdentifierDeriviator;
+
 /**
  @author Egor Tolstoy
  
  This object is responsible for generating previews from YouTube videors
  */
 @interface VideoThumbnailGenerator : NSObject
+
+- (instancetype)initWithIdentifierDeriviator:(YouTubeIdentifierDeriviator *)identifierDeriviator;
 
 /**
  @author Egor Tolstoy

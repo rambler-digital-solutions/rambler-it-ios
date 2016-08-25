@@ -42,6 +42,14 @@ static NSString *const kBackButtonName = @"ic-back";
     return self;
 }
 
+- (BOOL)shouldAutorotate {
+    return YES;
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return [self.visibleViewController supportedInterfaceOrientations];
+}
+
 - (void)navigationController:(UINavigationController *)navigationController
       willShowViewController:(UIViewController *)viewController
                     animated:(BOOL)animated {

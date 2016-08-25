@@ -26,12 +26,14 @@
 #import "LectureRouter.h"
 #import "SpeakerInfoModuleInput.h"
 #import "SafariFactory.h"
+#import "YouTubePlayerFactory.h"
 
 @interface LectureRouterTests : XCTestCase
 
 @property (nonatomic, strong) LectureRouter *router;
 @property (nonatomic, strong) id transitionHandlerMock;
 @property (nonatomic, strong) id mockSafariFactory;
+@property (nonatomic, strong) id mockYouTubePlayerFactory;
 
 @end
 
@@ -43,9 +45,11 @@
     self.router = [LectureRouter new];
     self.transitionHandlerMock = OCMClassMock([UIViewController class]);
     self.mockSafariFactory = OCMProtocolMock(@protocol(SafariFactory));
+    self.mockYouTubePlayerFactory = OCMProtocolMock(@protocol(YouTubePlayerFactory));
     
     self.router.transitionHandler = self.transitionHandlerMock;
     self.router.safariFactory = self.mockSafariFactory;
+    self.router.youTubePlayerFactory = self.mockYouTubePlayerFactory;
 }
 
 - (void)tearDown {
@@ -55,6 +59,7 @@
     self.transitionHandlerMock = nil;
     
     self.mockSafariFactory = nil;
+    self.mockYouTubePlayerFactory = nil;
     
     [super tearDown];
 }
@@ -86,6 +91,17 @@
     
     // then
     OCMVerify([self.mockSafariFactory createSafariViewControllerWithUrl:testUrl]);
+}
+
+- (void)testSuccessOpenYouTubePlayer {
+    // given
+    NSString *testIdentifier = @"1234";
+    
+    // when
+    [self.router openYouTubeVideoPlayerModuleWithIdentifier:testIdentifier];
+    
+    // then
+    OCMVerify([self.mockYouTubePlayerFactory createYouTubePlayerControllerWithVideoIdentifier:testIdentifier]);
 }
 
 @end

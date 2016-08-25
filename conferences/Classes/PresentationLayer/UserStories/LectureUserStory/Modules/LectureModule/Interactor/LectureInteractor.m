@@ -24,9 +24,12 @@
 #import "LectureService.h"
 #import "ROSPonsomizer.h"
 #import "ShareUrlBuilder.h"
+#import "YouTubeIdentifierDeriviator.h"
 
 #import "LecturePlainObject.h"
 #import "SpeakerPlainObject.h"
+
+static NSString *const kYouTubeValidationString = @"youtu";
 
 @implementation LectureInteractor
 
@@ -42,6 +45,15 @@
     NSURL *shareUrl = [self.shareUrlBuilder buildShareUrlWithItemId:lecture.lectureId];
     NSArray *activityItems = @[shareUrl];
     return activityItems;
+}
+
+- (BOOL)checkIfVideoIsFromYouTube:(NSURL *)videoUrl {
+    NSString *videoUrlString = [videoUrl absoluteString];
+    return [videoUrlString containsString:kYouTubeValidationString];
+}
+
+- (NSString *)deriveVideoIdFromYouTubeUrl:(NSURL *)videoUrl {
+    return [self.deriviator deriveIdentifierFromUrl:videoUrl];
 }
 
 @end

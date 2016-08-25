@@ -23,8 +23,7 @@
 #import "SpeakerInfoModuleInput.h"
 #import "LectureViewController.h"
 #import "SafariFactory.h"
-
-#import <SafariServices/SafariServices.h>
+#import "YouTubePlayerFactory.h"
 
 static NSString *const LectureModuleToSpeakerInfoModuleSegue = @"LectureModuleToSpeakerInfoModuleSegue";
 
@@ -43,6 +42,13 @@ static NSString *const LectureModuleToSpeakerInfoModuleSegue = @"LectureModuleTo
 - (void)openWebBrowserModuleWithUrl:(NSURL *)url {
     UIViewController *safariViewController = [self.safariFactory createSafariViewControllerWithUrl:url];
     [(id)self.transitionHandler presentViewController:safariViewController
+                                             animated:YES
+                                           completion:nil];
+}
+
+- (void)openYouTubeVideoPlayerModuleWithIdentifier:(NSString *)identifier {
+    UIViewController *playerController = [self.youTubePlayerFactory createYouTubePlayerControllerWithVideoIdentifier:identifier];
+    [(id)self.transitionHandler presentViewController:playerController
                                              animated:YES
                                            completion:nil];
 }

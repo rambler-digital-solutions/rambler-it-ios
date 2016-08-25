@@ -55,7 +55,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="T2G-Zq-Mi3">
             <objects>
-                <tabBarController id="cow-pd-70F" sceneMemberID="viewController">
+                <tabBarController id="cow-pd-70F" customClass="RCTabBarController" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="2XQ-lX-A4G">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

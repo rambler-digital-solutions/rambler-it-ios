@@ -27,6 +27,7 @@
 #import "ShareUrlBuilder.h"
 #import "LectureService.h"
 #import "LecturePlainObject.h"
+#import "YouTubeIdentifierDeriviator.h"
 
 @interface LectureInteractorTests : XCTestCase
 
@@ -35,6 +36,7 @@
 @property (nonatomic, strong) id mockPonsomizer;
 @property (nonatomic, strong) id mockLectureService;
 @property (nonatomic, strong) id mockUrlBuilder;
+@property (nonatomic, strong) id mockDeriviator;
 
 @end
 
@@ -48,17 +50,23 @@
     self.mockPonsomizer = OCMProtocolMock(@protocol(ROSPonsomizer));
     self.mockLectureService = OCMProtocolMock(@protocol(LectureService));
     self.mockUrlBuilder = OCMProtocolMock(@protocol(ShareUrlBuilder));
+    self.mockDeriviator = OCMClassMock([YouTubeIdentifierDeriviator class]);
     
     self.interactor.output = self.mockPresenter;
     self.interactor.ponsomizer = self.mockPonsomizer;
     self.interactor.lectureService = self.mockLectureService;
     self.interactor.shareUrlBuilder = self.mockUrlBuilder;
+    self.interactor.deriviator = self.mockDeriviator;
 }
 
 - (void)tearDown {
     self.interactor = nil;
     [self.mockPresenter stopMocking];
     self.mockPresenter = nil;
+    
+    [self.mockDeriviator stopMocking];
+    self.mockDeriviator = nil;
+    
     self.mockPonsomizer = nil;
     self.mockLectureService = nil;
     self.mockUrlBuilder = nil;
@@ -97,6 +105,45 @@
     
     // then
     XCTAssertEqualObjects([result firstObject], testUrl);
+}
+
+- (void)testThatInteractorDetectsYouTube {
+    // given
+    NSString *testUrlString = @"youtu.be/1234";
+    NSURL *testUrl = [NSURL URLWithString:testUrlString];
+    
+    // when
+    BOOL result = [self.interactor checkIfVideoIsFromYouTube:testUrl];
+    
+    // then
+    XCTAssertTrue(result);
+}
+
+- (void)testThatInteractorDetectsNonYouTube {
+    // given
+    NSString *testUrlString = @"rambler.ru/1234";
+    NSURL *testUrl = [NSURL URLWithString:testUrlString];
+    
+    // when
+    BOOL result = [self.interactor checkIfVideoIsFromYouTube:testUrl];
+    
+    // then
+    XCTAssertFalse(result);
+}
+
+- (void)testThatInteractorDerivesYouTubeIdentifier {
+    // given
+    NSString *testUrlString = @"rambler.ru/1234";
+    NSString *identifier = @"abcd";
+    NSURL *testUrl = [NSURL URLWithString:testUrlString];
+    
+    OCMStub([self.mockDeriviator deriveIdentifierFromUrl:testUrl]).andReturn(identifier);
+    
+    // when
+    NSString *result = [self.interactor deriveVideoIdFromYouTubeUrl:testUrl];
+    
+    // then
+    XCTAssertEqualObjects(result, identifier);
 }
 
 @end
