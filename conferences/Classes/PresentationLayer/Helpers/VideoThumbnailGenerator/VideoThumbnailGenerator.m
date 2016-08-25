@@ -20,28 +20,44 @@
 
 #import "VideoThumbnailGenerator.h"
 
-static NSString * const kYouTubeVideoRegExp = @"((?<=(v|V)/)|(?<=be/)|(?<=(\\?|\\&)v=)|(?<=embed/)|((?<=e/)))([\\w-]++)";
+#import "YouTubeIdentifierDeriviator.h"
+
 static NSString * const kYouTubeVideoThumbnailFormat = @"http://img.youtube.com/vi/%@/hqdefault.jpg";
 
+@interface VideoThumbnailGenerator ()
+
+@property (nonatomic, strong) YouTubeIdentifierDeriviator *identifierDeriviator;
+
+@end
+
 @implementation VideoThumbnailGenerator
+
+#pragma mark - Initialization
+
+- (instancetype)initWithIdentifierDeriviator:(YouTubeIdentifierDeriviator *)identifierDeriviator; {
+    self = [super init];
+    if (self) {
+        _identifierDeriviator = identifierDeriviator;
+    }
+    return self;
+}
+
+#pragma mark - Public methods
 
 - (NSURL *)generateThumbnailWithVideoURL:(NSURL *)videoURL {
     if (!videoURL) {
         return nil;
     }
-    NSString *videoString = [videoURL absoluteString];
-    NSDictionary *regExpToThumbnailFormats = [self regExpToThumbnailFormats];
-    for (NSString *regexString in [regExpToThumbnailFormats allKeys]) {
+    NSArray *thumbnailFormats = [self thumbnailFormats];
+    for (NSString *format in thumbnailFormats) {
         
-        NSString *videoID = [self videoIDFromLink:videoString
-                                      regexString:regexString];
+        NSString *videoID = [self.identifierDeriviator deriveIdentifierFromUrl:videoURL];
         
         if (!videoID) {
             continue;
         }
         
-        NSString *thumbnailFormat = [regExpToThumbnailFormats valueForKey:regexString];
-        NSString *thumbnailLink = [NSString stringWithFormat:thumbnailFormat, videoID];
+        NSString *thumbnailLink = [NSString stringWithFormat:format, videoID];
         return [NSURL URLWithString:thumbnailLink];
     }
     
@@ -64,8 +80,8 @@ static NSString * const kYouTubeVideoThumbnailFormat = @"http://img.youtube.com/
     return nil;
 }
 
-- (NSDictionary *)regExpToThumbnailFormats {
-    return @{kYouTubeVideoRegExp : kYouTubeVideoThumbnailFormat};
+- (NSArray *)thumbnailFormats {
+    return @[kYouTubeVideoThumbnailFormat];
 }
 
 @end

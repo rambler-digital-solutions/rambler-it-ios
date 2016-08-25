@@ -24,6 +24,7 @@
 @class EventTypeDeterminator;
 @class DateFormatter;
 @class VideoThumbnailGenerator;
+@class YouTubeIdentifierDeriviator;
 @protocol MapLinkBuilder;
 @protocol SafariFactory;
 
@@ -39,5 +40,6 @@
 - (id<MapLinkBuilder>)appleMapsLinkBuilder;
 - (VideoThumbnailGenerator *)videoThumbnailGenerator;
 - (id<SafariFactory>)safariFactory;
+- (YouTubeIdentifierDeriviator *)youTubeIdentifierDeriviator;
 
 @end

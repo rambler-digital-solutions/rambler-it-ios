@@ -19,11 +19,16 @@
 // THE SOFTWARE.
 
 #import <XCTest/XCTest.h>
+#import <OCMock/OCMock.h>
+
 #import "VideoThumbnailGenerator.h"
+#import "YouTubeIdentifierDeriviator.h"
 
 @interface VideoThumbnailTests : XCTestCase
 
 @property (nonatomic, strong) VideoThumbnailGenerator *generator;
+
+@property (nonatomic, strong) id mockDeriviator;
 
 @end
 
@@ -31,17 +36,24 @@
 
 - (void)setUp {
     [super setUp];
-    self.generator = [VideoThumbnailGenerator new];
+    
+    self.mockDeriviator = OCMClassMock([YouTubeIdentifierDeriviator class]);
+    self.generator = [[VideoThumbnailGenerator alloc] initWithIdentifierDeriviator:self.mockDeriviator];
 }
 
 - (void)tearDown {
     self.generator = nil;
+    
+    [self.mockDeriviator stopMocking];
+    self.mockDeriviator = nil;
+    
     [super tearDown];
 }
 
 - (void)testGenerateThumbnail {
     // given
     NSString *videoID = @"i-7engtLj4U";
+    OCMStub([self.mockDeriviator deriveIdentifierFromUrl:OCMOCK_ANY]).andReturn(videoID);
     NSString *originalURLString = [NSString stringWithFormat:@"https://www.youtube.com/watch?v=%@", videoID];
     NSString * expectedTumbnailURLString = [NSString stringWithFormat:@"http://img.youtube.com/vi/%@/hqdefault.jpg", videoID];
     NSURL *originalURL = [NSURL URLWithString:originalURLString];
@@ -56,6 +68,7 @@
 - (void)testAllYoutubeLinkFormats {
     // given
     NSString *videoID = @"dQw4w9WgXcQ";
+    OCMStub([self.mockDeriviator deriveIdentifierFromUrl:OCMOCK_ANY]).andReturn(videoID);
     NSMutableArray *tumbnails = [NSMutableArray new];
     NSString * expectedTumbnailURLString = [NSString stringWithFormat:@"http://img.youtube.com/vi/%@/hqdefault.jpg", videoID];
     NSArray *allFormats = @[@"http://www.youtube.com/v/%@?fs=1&hl=en_US&rel=0",

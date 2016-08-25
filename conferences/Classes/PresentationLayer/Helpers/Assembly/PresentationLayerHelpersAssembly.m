@@ -25,6 +25,7 @@
 #import "AppleMapsLinkBuilder.h"
 #import "VideoThumbnailGenerator.h"
 #import "SafariFactoryImplementation.h"
+#import "YouTubeIdentifierDeriviator.h"
 
 @implementation PresentationLayerHelpersAssembly
 
@@ -41,11 +42,21 @@
 }
 
 - (VideoThumbnailGenerator *)videoThumbnailGenerator {
-    return [TyphoonDefinition withClass:[VideoThumbnailGenerator class]];
+    return [TyphoonDefinition withClass:[VideoThumbnailGenerator class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition useInitializer:@selector(initWithIdentifierDeriviator:)
+                                              parameters:^(TyphoonMethod *initializer) {
+                                                  [initializer injectParameterWith:[self youTubeIdentifierDeriviator]
+                                                   ];                                              }];
+                          }];
 }
 
 - (SafariFactoryImplementation *)safariFactory {
     return [TyphoonDefinition withClass:[SafariFactoryImplementation class]];
+}
+
+- (YouTubeIdentifierDeriviator *)youTubeIdentifierDeriviator {
+    return [TyphoonDefinition withClass:[YouTubeIdentifierDeriviator class]];
 }
 
 @end
