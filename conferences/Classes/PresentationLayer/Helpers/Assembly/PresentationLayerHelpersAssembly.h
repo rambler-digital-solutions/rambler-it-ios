@@ -27,6 +27,7 @@
 @class YouTubeIdentifierDeriviator;
 @protocol MapLinkBuilder;
 @protocol SafariFactory;
+@protocol YouTubePlayerFactory;
 
 /**
  @author Artem Karpushin
@@ -40,6 +41,7 @@
 - (id<MapLinkBuilder>)appleMapsLinkBuilder;
 - (VideoThumbnailGenerator *)videoThumbnailGenerator;
 - (id<SafariFactory>)safariFactory;
+- (id<YouTubePlayerFactory>)youTubePlayerFactory;
 - (YouTubeIdentifierDeriviator *)youTubeIdentifierDeriviator;
 
 @end

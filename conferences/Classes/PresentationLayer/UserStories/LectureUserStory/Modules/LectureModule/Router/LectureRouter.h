@@ -24,10 +24,12 @@
 #import "LectureRouterInput.h"
 
 @protocol SafariFactory;
+@protocol YouTubePlayerFactory;
 
 @interface LectureRouter : NSObject <LectureRouterInput>
 
 @property (nonatomic, weak) id <RamblerViperModuleTransitionHandlerProtocol> transitionHandler;
 @property (nonatomic, strong) id<SafariFactory> safariFactory;
+@property (nonatomic, strong) id<YouTubePlayerFactory> youTubePlayerFactory;
 
 @end

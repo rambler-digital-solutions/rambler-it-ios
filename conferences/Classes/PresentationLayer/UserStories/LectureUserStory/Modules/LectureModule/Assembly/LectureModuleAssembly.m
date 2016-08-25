@@ -81,6 +81,8 @@ static NSString *const kLectureShareItemType = @"lecture";
                                                       with:[self viewLecture]];
                                 [definition injectProperty:@selector(safariFactory)
                                                       with:[self.presentationLayerHelpersAssembly safariFactory]];
+                                [definition injectProperty:@selector(youTubePlayerFactory)
+                                                      with:[self.presentationLayerHelpersAssembly youTubePlayerFactory]];
            }];
 }
 

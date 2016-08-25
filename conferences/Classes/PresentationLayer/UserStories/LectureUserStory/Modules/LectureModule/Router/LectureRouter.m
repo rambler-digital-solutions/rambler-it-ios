@@ -23,9 +23,7 @@
 #import "SpeakerInfoModuleInput.h"
 #import "LectureViewController.h"
 #import "SafariFactory.h"
-
-#import <SafariServices/SafariServices.h>
-#import <XCDYouTubeKit/XCDYouTubeKit.h>
+#import "YouTubePlayerFactory.h"
 
 static NSString *const LectureModuleToSpeakerInfoModuleSegue = @"LectureModuleToSpeakerInfoModuleSegue";
 
@@ -48,11 +46,9 @@ static NSString *const LectureModuleToSpeakerInfoModuleSegue = @"LectureModuleTo
                                            completion:nil];
 }
 
-- (void)openYouTubeVideoPlayerModuleWithUrl:(NSURL *)url {
-    NSString *urlString = [url absoluteString];
-    NSString *videoId = [[urlString componentsSeparatedByString:@"="] lastObject];
-    XCDYouTubeVideoPlayerViewController *videoPlayerViewController = [[XCDYouTubeVideoPlayerViewController alloc] initWithVideoIdentifier:videoId];
-    [(id)self.transitionHandler presentViewController:videoPlayerViewController
+- (void)openYouTubeVideoPlayerModuleWithIdentifier:(NSString *)identifier {
+    UIViewController *playerController = [self.youTubePlayerFactory createYouTubePlayerControllerWithVideoIdentifier:identifier];
+    [(id)self.transitionHandler presentViewController:playerController
                                              animated:YES
                                            completion:nil];
 }

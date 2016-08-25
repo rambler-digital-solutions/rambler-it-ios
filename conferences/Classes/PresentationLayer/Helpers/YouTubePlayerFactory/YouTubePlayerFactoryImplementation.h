@@ -20,43 +20,13 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol LectureRouterInput <NSObject>
-
-/**
- @author Artem Karpushin
- 
- Method is used to initiate transition to the SpeakerInfo module
- 
- @param objectId NSString object id
- */
-- (void)openSpeakerInfoModuleWithSpeakerObjectId:(NSString *)objectId;
-
-/**
- @author Artem Karpushin
- 
- Method is used to initiate transition to the module of the event sharing
- 
- @param activityItems Array of activity items for sharing
- */
-- (void)openShareModuleWithActivityItems:(NSArray *)activityItems;
+#import "YouTubePlayerFactory.h"
 
 /**
  @author Egor Tolstoy
  
- Method is used to open web browser module
- 
- @param url Opening url
+ Implementation of <YouTubePlayerFactory>
  */
-- (void)openWebBrowserModuleWithUrl:(NSURL *)url;
-
-/**
- @author Egor Tolstoy
- 
- Method opens YouTube player module
- 
- @param identifier Video identifier
- */
-- (void)openYouTubeVideoPlayerModuleWithIdentifier:(NSString *)identifier;
+@interface YouTubePlayerFactoryImplementation : NSObject <YouTubePlayerFactory>
 
 @end
-

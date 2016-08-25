@@ -409,6 +409,7 @@
 		9F78D7801D5A078F009DDCEA /* LectureChangeProviderFetchRequestFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D77F1D5A078F009DDCEA /* LectureChangeProviderFetchRequestFactoryTests.m */; };
 		9F8B49E11D6EEE9000ED176B /* YouTubeIdentifierDeriviator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B49E01D6EEE9000ED176B /* YouTubeIdentifierDeriviator.m */; };
 		9F8B49E41D6EEF4500ED176B /* YouTubeIdentifierDeriviatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B49E31D6EEF4500ED176B /* YouTubeIdentifierDeriviatorTests.m */; };
+		9F8B49E91D6EF72B00ED176B /* YouTubePlayerFactoryImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B49E81D6EF72B00ED176B /* YouTubePlayerFactoryImplementation.m */; };
 		9F8E5F701BC2552600DC10DB /* Conferences.API.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F8E5F6F1BC2552600DC10DB /* Conferences.API.plist */; };
 		9F8E5F741BC255AA00DC10DB /* RequestSignersAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5F731BC255AA00DC10DB /* RequestSignersAssembly.m */; };
 		9F8E5F781BC2571B00DC10DB /* NetworkClientsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E5F771BC2571B00DC10DB /* NetworkClientsAssembly.m */; };
@@ -1360,6 +1361,9 @@
 		9F8B49DF1D6EEE9000ED176B /* YouTubeIdentifierDeriviator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YouTubeIdentifierDeriviator.h; path = YouTubeIdentifierDeriviator/YouTubeIdentifierDeriviator.h; sourceTree = "<group>"; };
 		9F8B49E01D6EEE9000ED176B /* YouTubeIdentifierDeriviator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YouTubeIdentifierDeriviator.m; path = YouTubeIdentifierDeriviator/YouTubeIdentifierDeriviator.m; sourceTree = "<group>"; };
 		9F8B49E31D6EEF4500ED176B /* YouTubeIdentifierDeriviatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YouTubeIdentifierDeriviatorTests.m; path = YouTubeIdentifierDeriviator/YouTubeIdentifierDeriviatorTests.m; sourceTree = "<group>"; };
+		9F8B49E61D6EF72100ED176B /* YouTubePlayerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YouTubePlayerFactory.h; path = YouTubePlayerFactory/YouTubePlayerFactory.h; sourceTree = "<group>"; };
+		9F8B49E71D6EF72B00ED176B /* YouTubePlayerFactoryImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YouTubePlayerFactoryImplementation.h; path = YouTubePlayerFactory/YouTubePlayerFactoryImplementation.h; sourceTree = "<group>"; };
+		9F8B49E81D6EF72B00ED176B /* YouTubePlayerFactoryImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YouTubePlayerFactoryImplementation.m; path = YouTubePlayerFactory/YouTubePlayerFactoryImplementation.m; sourceTree = "<group>"; };
 		9F8E5F6F1BC2552600DC10DB /* Conferences.API.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Conferences.API.plist; path = Assemblies/RequestConfiguratorsFactory/Conferences.API.plist; sourceTree = "<group>"; };
 		9F8E5F711BC2559B00DC10DB /* RequestSignersFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequestSignersFactory.h; path = Assemblies/RequestSignersFactory/RequestSignersFactory.h; sourceTree = "<group>"; };
 		9F8E5F721BC255AA00DC10DB /* RequestSignersAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequestSignersAssembly.h; path = Assemblies/RequestSignersFactory/RequestSignersAssembly.h; sourceTree = "<group>"; };
@@ -3704,6 +3708,7 @@
 		63F8F27A1BF79090000017F3 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				9F8B49E51D6EF71200ED176B /* YouTubePlayerFactory */,
 				9F8B49DE1D6EEE5E00ED176B /* YouTubeIdentifierDeriviator */,
 				9FC305291D6476650052CB67 /* ShareUrlBuilder */,
 				9FBE8A0D1D5E5EF800DA0C32 /* SafariFactory */,
@@ -6211,6 +6216,16 @@
 			name = YouTubeIdentifierDeriviator;
 			sourceTree = "<group>";
 		};
+		9F8B49E51D6EF71200ED176B /* YouTubePlayerFactory */ = {
+			isa = PBXGroup;
+			children = (
+				9F8B49E61D6EF72100ED176B /* YouTubePlayerFactory.h */,
+				9F8B49E71D6EF72B00ED176B /* YouTubePlayerFactoryImplementation.h */,
+				9F8B49E81D6EF72B00ED176B /* YouTubePlayerFactoryImplementation.m */,
+			);
+			name = YouTubePlayerFactory;
+			sourceTree = "<group>";
+		};
 		9F8E5F911BC269D000DC10DB /* OperationFactoriesAssembly */ = {
 			isa = PBXGroup;
 			children = (
@@ -8140,6 +8155,7 @@
 				63F613841CB00A220002AEF0 /* EventCellObjectBuilderBase.m in Sources */,
 				2B2064861D3F9CE900246C8D /* _SpeakerPlainObject.m in Sources */,
 				636F8DDC1BCB8FE800552B91 /* RamblerLocationPresenter.m in Sources */,
+				9F8B49E91D6EF72B00ED176B /* YouTubePlayerFactoryImplementation.m in Sources */,
 				9F533A961D50EEE0004F8E82 /* ObjectIndexerBase.m in Sources */,
 				9F8E5F841BC25A0700DC10DB /* ResponseMappersAssembly.m in Sources */,
 				9F33B8881D639C7300BE136C /* SpeakerInfoLectureCell.m in Sources */,

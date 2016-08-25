@@ -18,45 +18,15 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import "YouTubePlayerFactoryImplementation.h"
 
-@protocol LectureRouterInput <NSObject>
+#import <XCDYouTubeKit/XCDYouTubeKit.h>
 
-/**
- @author Artem Karpushin
- 
- Method is used to initiate transition to the SpeakerInfo module
- 
- @param objectId NSString object id
- */
-- (void)openSpeakerInfoModuleWithSpeakerObjectId:(NSString *)objectId;
+@implementation YouTubePlayerFactoryImplementation
 
-/**
- @author Artem Karpushin
- 
- Method is used to initiate transition to the module of the event sharing
- 
- @param activityItems Array of activity items for sharing
- */
-- (void)openShareModuleWithActivityItems:(NSArray *)activityItems;
-
-/**
- @author Egor Tolstoy
- 
- Method is used to open web browser module
- 
- @param url Opening url
- */
-- (void)openWebBrowserModuleWithUrl:(NSURL *)url;
-
-/**
- @author Egor Tolstoy
- 
- Method opens YouTube player module
- 
- @param identifier Video identifier
- */
-- (void)openYouTubeVideoPlayerModuleWithIdentifier:(NSString *)identifier;
+- (UIViewController *)createYouTubePlayerControllerWithVideoIdentifier:(NSString *)videoIdentifier {
+    XCDYouTubeVideoPlayerViewController *videoPlayerViewController = [[XCDYouTubeVideoPlayerViewController alloc] initWithVideoIdentifier:videoIdentifier];
+    return videoPlayerViewController;
+}
 
 @end
-

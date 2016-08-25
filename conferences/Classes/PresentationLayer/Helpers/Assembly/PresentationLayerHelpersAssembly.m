@@ -26,6 +26,7 @@
 #import "VideoThumbnailGenerator.h"
 #import "SafariFactoryImplementation.h"
 #import "YouTubeIdentifierDeriviator.h"
+#import "YouTubePlayerFactoryImplementation.h"
 
 @implementation PresentationLayerHelpersAssembly
 
@@ -53,6 +54,10 @@
 
 - (SafariFactoryImplementation *)safariFactory {
     return [TyphoonDefinition withClass:[SafariFactoryImplementation class]];
+}
+
+- (id<YouTubePlayerFactory>)youTubePlayerFactory {
+    return [TyphoonDefinition withClass:[YouTubePlayerFactoryImplementation class]];
 }
 
 - (YouTubeIdentifierDeriviator *)youTubeIdentifierDeriviator {
