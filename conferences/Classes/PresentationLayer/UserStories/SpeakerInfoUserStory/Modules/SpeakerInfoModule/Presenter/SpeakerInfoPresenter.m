@@ -34,7 +34,9 @@
 }
 
 - (void)didTriggerSocialNetworkTapEventWithUrl:(NSURL *)socialUrl {
-    [self.router openWebBrowserModuleWithUrl:socialUrl];
+    if (socialUrl) {
+        [self.router openWebBrowserModuleWithUrl:socialUrl];
+    }
 }
 
 - (void)didTriggerLectureTapEventWithLecture:(LecturePlainObject *)lecture {
