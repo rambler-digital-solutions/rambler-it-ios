@@ -383,6 +383,7 @@
 		9F4097891D51F8FD008BFE42 /* EventObjectTransformerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4097881D51F8FD008BFE42 /* EventObjectTransformerTests.m */; };
 		9F40978D1D5210D9008BFE42 /* SpotlightIndexerAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F40978C1D5210D9008BFE42 /* SpotlightIndexerAssembly.m */; };
 		9F4097951D534F82008BFE42 /* EventChangeProviderFetchRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4097941D534F82008BFE42 /* EventChangeProviderFetchRequestFactory.m */; };
+		9F4825341D7C95AC0066D9EE /* QuickActionDaemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4825311D7C95AC0066D9EE /* QuickActionDaemon.m */; };
 		9F5316A91D50F56900F13931 /* IndexerStateStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5316A81D50F56900F13931 /* IndexerStateStorage.m */; };
 		9F533A891D50DE84004F8E82 /* FetchedResultsControllerChangeProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F533A881D50DE84004F8E82 /* FetchedResultsControllerChangeProvider.m */; };
 		9F533A8E1D50EC10004F8E82 /* IndexerMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F533A8D1D50EC10004F8E82 /* IndexerMonitor.m */; };
@@ -1313,6 +1314,9 @@
 		9F4097901D534F1E008BFE42 /* ChangeProviderFetchRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChangeProviderFetchRequestFactory.h; path = ChangeProviderFetchRequestFactories/Protocols/ChangeProviderFetchRequestFactory.h; sourceTree = "<group>"; };
 		9F4097931D534F82008BFE42 /* EventChangeProviderFetchRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventChangeProviderFetchRequestFactory.h; path = ChangeProviderFetchRequestFactories/ConcreteClasses/EventChangeProviderFetchRequestFactory/EventChangeProviderFetchRequestFactory.h; sourceTree = "<group>"; };
 		9F4097941D534F82008BFE42 /* EventChangeProviderFetchRequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventChangeProviderFetchRequestFactory.m; path = ChangeProviderFetchRequestFactories/ConcreteClasses/EventChangeProviderFetchRequestFactory/EventChangeProviderFetchRequestFactory.m; sourceTree = "<group>"; };
+		9F4825301D7C95AC0066D9EE /* QuickActionDaemon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickActionDaemon.h; sourceTree = "<group>"; };
+		9F4825311D7C95AC0066D9EE /* QuickActionDaemon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickActionDaemon.m; sourceTree = "<group>"; };
+		9F4825331D7C95AC0066D9EE /* Daemon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Daemon.h; sourceTree = "<group>"; };
 		9F5316A51D50F29000F13931 /* ChangeProviderChangeType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ChangeProviderChangeType.h; path = SpotlightIndexer/Transactions/Headers/ChangeProviderChangeType.h; sourceTree = "<group>"; };
 		9F5316A71D50F56900F13931 /* IndexerStateStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndexerStateStorage.h; path = SpotlightIndexer/IndexerStateStorage/IndexerStateStorage.h; sourceTree = "<group>"; };
 		9F5316A81D50F56900F13931 /* IndexerStateStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IndexerStateStorage.m; path = SpotlightIndexer/IndexerStateStorage/IndexerStateStorage.m; sourceTree = "<group>"; };
@@ -3788,6 +3792,7 @@
 		63FDCDD91BBDBA2A00A43B60 /* ApplicationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				9F48252D1D7C95AC0066D9EE /* Daemons */,
 				9FBE89831D5CB71300DA0C32 /* LaunchSystem */,
 				9F533A7C1D50D6E7004F8E82 /* SpotlightIndexer */,
 				63F54D9C1BC5BA8F00DB1746 /* ThirdPartiesConfigurator */,
@@ -5882,6 +5887,40 @@
 				9F4097941D534F82008BFE42 /* EventChangeProviderFetchRequestFactory.m */,
 			);
 			name = EventChangeProviderFetchRequestFactory;
+			sourceTree = "<group>";
+		};
+		9F48252D1D7C95AC0066D9EE /* Daemons */ = {
+			isa = PBXGroup;
+			children = (
+				9F4825321D7C95AC0066D9EE /* Protocols */,
+				9F48252E1D7C95AC0066D9EE /* ConcreteClasses */,
+			);
+			path = Daemons;
+			sourceTree = "<group>";
+		};
+		9F48252E1D7C95AC0066D9EE /* ConcreteClasses */ = {
+			isa = PBXGroup;
+			children = (
+				9F48252F1D7C95AC0066D9EE /* QuickActionDaemon */,
+			);
+			path = ConcreteClasses;
+			sourceTree = "<group>";
+		};
+		9F48252F1D7C95AC0066D9EE /* QuickActionDaemon */ = {
+			isa = PBXGroup;
+			children = (
+				9F4825301D7C95AC0066D9EE /* QuickActionDaemon.h */,
+				9F4825311D7C95AC0066D9EE /* QuickActionDaemon.m */,
+			);
+			path = QuickActionDaemon;
+			sourceTree = "<group>";
+		};
+		9F4825321D7C95AC0066D9EE /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9F4825331D7C95AC0066D9EE /* Daemon.h */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		9F5316A41D50F27100F13931 /* Headers */ = {
@@ -8306,6 +8345,7 @@
 				667050211D46146B00DD9D6E /* ReportsSearchDataDisplayManager.m in Sources */,
 				66E999621D54B04100161D98 /* TagModuleConfig.m in Sources */,
 				63F6137E1CB00A220002AEF0 /* SignUpAndSaveToCalendarEventTableViewCell.m in Sources */,
+				9F4825341D7C95AC0066D9EE /* QuickActionDaemon.m in Sources */,
 				9FE1397B1D65F3E900D7BF44 /* GrayTableViewSectionHeaderAndFooterCellObject.m in Sources */,
 				66EE4D341D54BFCD0011F94A /* NIMutableCollectionViewModel+LJAddObject.m in Sources */,
 				2B2064961D3F9CE900246C8D /* RegistrationQuestionPlainObject.m in Sources */,

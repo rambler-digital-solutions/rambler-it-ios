@@ -1,3 +1,5 @@
+// Copyright (c) 2015 RAMBLER&Co
+//
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
@@ -16,30 +18,19 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "CleanLaunchAppDelegate.h"
+#import <Foundation/Foundation.h>
+#import "Daemon.h"
 
-#import "ApplicationConfigurator.h"
-#import "ThirdPartiesConfigurator.h"
-#import "IndexerMonitor.h"
-#import "SpotlightCoreDataStackCoordinator.h"
-#import "CleanLaunchRouter.h"
+@class UIApplication;
 
-@implementation CleanLaunchAppDelegate
+/**
+ @author Egor Tolstoy
+ 
+ Daemon responsible for registering dynamic quick actions
+ */
+@interface QuickActionDaemon : NSObject <Daemon>
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [self.thirdPartiesConfigurator configurate];
-    [self.applicationConfigurator setupCoreDataStack];
-    [self.applicationConfigurator configureInitialSettings];
-    [self.spotlightCoreDataStackCoordinator setupCoreDataStack];
-    [self.indexerMonitor startMonitoring];
-    
-    [self.cleanStartRouter openInitialScreen];
-    
-    return YES;
-}
-
-- (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler {
-    
-}
+- (instancetype)initWithApplication:(UIApplication *)application
+                 notificationCenter:(NSNotificationCenter *)notificationCenter;
 
 @end

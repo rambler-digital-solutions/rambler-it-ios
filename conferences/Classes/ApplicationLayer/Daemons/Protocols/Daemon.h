@@ -1,3 +1,5 @@
+// Copyright (c) 2015 RAMBLER&Co
+//
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
@@ -16,30 +18,27 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "CleanLaunchAppDelegate.h"
+#import <Foundation/Foundation.h>
 
-#import "ApplicationConfigurator.h"
-#import "ThirdPartiesConfigurator.h"
-#import "IndexerMonitor.h"
-#import "SpotlightCoreDataStackCoordinator.h"
-#import "CleanLaunchRouter.h"
+/**
+ @author Egor Tolstoy
+ 
+ Describes an object, which lives during the application lifecycle and performs some activity independently from user actions.
+ */
+@protocol Daemon <NSObject>
 
-@implementation CleanLaunchAppDelegate
+/**
+ @author Egor Tolstoy
+ 
+ The method starts daemon's activity
+ */
+- (void)start;
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [self.thirdPartiesConfigurator configurate];
-    [self.applicationConfigurator setupCoreDataStack];
-    [self.applicationConfigurator configureInitialSettings];
-    [self.spotlightCoreDataStackCoordinator setupCoreDataStack];
-    [self.indexerMonitor startMonitoring];
-    
-    [self.cleanStartRouter openInitialScreen];
-    
-    return YES;
-}
-
-- (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler {
-    
-}
+/**
+ @author Egor Tolstoy
+ 
+ The method stops daemon's activity
+ */
+- (void)stop;
 
 @end
