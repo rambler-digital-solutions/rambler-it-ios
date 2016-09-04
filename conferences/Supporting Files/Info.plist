@@ -51,6 +51,33 @@
 	</array>
 	<key>UIStatusBarHidden</key>
 	<true/>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>search-tabbar-icon</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Поиск</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>ru.ramblerco.rambler.it.opensearch</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>location-tabbar-icon</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Как добраться</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>ru.ramblerco.rambler.it.opendirections</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>events-tabbar-icon</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>События</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>ru.ramblerco.rambler.it.openevents</string>
+		</dict>
+	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array/>
 </dict>
