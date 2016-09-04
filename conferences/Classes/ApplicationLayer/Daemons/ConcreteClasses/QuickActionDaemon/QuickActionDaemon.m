@@ -26,6 +26,7 @@
 #import <UIKit/UIKit.h>
 
 static NSUInteger const kMaximumActionCount = 2;
+static NSString *const kEventImageName = @"events-tabbar-icon";
 
 @interface QuickActionDaemon ()
 
@@ -98,6 +99,15 @@ static NSUInteger const kMaximumActionCount = 2;
     NSString *type = [NSString stringWithFormat:@"%@.Dynamic", self.bundle.bundleIdentifier];
     NSString *title = event.name;
     NSString *description = event.eventDescription;
+    NSMutableArray *mutableShortcutItems = [self.application.shortcutItems mutableCopy];
+    
+    for (UIApplicationShortcutItem *item in mutableShortcutItems) {
+        if ([item.localizedTitle isEqualToString:title]) {
+            return;
+        }
+    }
+    
+    UIApplicationShortcutIcon *eventIcon = [UIApplicationShortcutIcon iconWithTemplateImageName:kEventImageName];
     NSDictionary *userInfo = @{
                                EventModelObjectAttributes.eventId : event.eventId
                                };
@@ -105,9 +115,9 @@ static NSUInteger const kMaximumActionCount = 2;
     UIApplicationShortcutItem *item = [[UIApplicationShortcutItem alloc] initWithType:type
                                                                        localizedTitle:title
                                                                     localizedSubtitle:description
-                                                                                 icon:nil
+                                                                                 icon:eventIcon
                                                                              userInfo:userInfo];
-    NSMutableArray *mutableShortcutItems = [self.application.shortcutItems mutableCopy];
+    
     [mutableShortcutItems addObject:item];
     if (mutableShortcutItems.count > kMaximumActionCount) {
         NSRange removalRange = NSMakeRange(0, mutableShortcutItems.count - kMaximumActionCount);
