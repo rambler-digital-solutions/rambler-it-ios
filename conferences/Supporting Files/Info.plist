@@ -59,7 +59,7 @@
 			<key>UIApplicationShortcutItemTitle</key>
 			<string>Поиск</string>
 			<key>UIApplicationShortcutItemType</key>
-			<string>ru.ramblerco.rambler.it.opensearch</string>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER).Search</string>
 		</dict>
 		<dict>
 			<key>UIApplicationShortcutItemIconFile</key>
@@ -67,7 +67,7 @@
 			<key>UIApplicationShortcutItemTitle</key>
 			<string>Как добраться</string>
 			<key>UIApplicationShortcutItemType</key>
-			<string>ru.ramblerco.rambler.it.opendirections</string>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER).Directions</string>
 		</dict>
 		<dict>
 			<key>UIApplicationShortcutItemIconFile</key>
@@ -75,7 +75,7 @@
 			<key>UIApplicationShortcutItemTitle</key>
 			<string>События</string>
 			<key>UIApplicationShortcutItemType</key>
-			<string>ru.ramblerco.rambler.it.openevents</string>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER).Events</string>
 		</dict>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
