@@ -18,20 +18,21 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import "Daemon.h"
+#import <Typhoon/Typhoon.h>
+#import <RamblerTyphoonUtils/AssemblyCollector.h>
 
-@class UIApplication;
+@protocol Daemon;
+@class SystemInfrastructureAssembly;
 
 /**
  @author Egor Tolstoy
  
- Daemon responsible for registering dynamic quick actions
+ Assembly for creating daemons
  */
-@interface QuickActionDaemon : NSObject <Daemon>
+@interface DaemonAssembly : TyphoonAssembly <RamblerInitialAssembly>
 
-- (instancetype)initWithApplication:(UIApplication *)application
-                 notificationCenter:(NSNotificationCenter *)notificationCenter
-                             bundle:(NSBundle *)bundle;
+@property (strong, nonatomic, readonly) SystemInfrastructureAssembly *systemInfrastructureAssembly;
+
+- (id<Daemon>)quickActionDaemon;
 
 @end

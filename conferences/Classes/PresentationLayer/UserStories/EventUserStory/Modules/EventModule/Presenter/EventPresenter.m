@@ -42,6 +42,7 @@
     NSArray *pastEvents = [self.interactor obtainPastEventsForEvent:event];
     [self.view configureViewWithEvent:event
                            pastEvents:pastEvents];
+    [self.interactor trackEventVisitForEvent:event];
 }
 
 - (void)didTapSignUpButtonWithEvent:(EventPlainObject *)event {

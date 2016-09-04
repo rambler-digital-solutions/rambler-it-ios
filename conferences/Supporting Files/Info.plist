@@ -69,14 +69,6 @@
 			<key>UIApplicationShortcutItemType</key>
 			<string>$(PRODUCT_BUNDLE_IDENTIFIER).Directions</string>
 		</dict>
-		<dict>
-			<key>UIApplicationShortcutItemIconFile</key>
-			<string>events-tabbar-icon</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>События</string>
-			<key>UIApplicationShortcutItemType</key>
-			<string>$(PRODUCT_BUNDLE_IDENTIFIER).Events</string>
-		</dict>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array/>

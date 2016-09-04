@@ -18,20 +18,24 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import "Daemon.h"
+#import "DaemonAssembly.h"
 
-@class UIApplication;
+#import "SystemInfrastructureAssembly.h"
 
-/**
- @author Egor Tolstoy
- 
- Daemon responsible for registering dynamic quick actions
- */
-@interface QuickActionDaemon : NSObject <Daemon>
+#import "QuickActionDaemon.h"
 
-- (instancetype)initWithApplication:(UIApplication *)application
-                 notificationCenter:(NSNotificationCenter *)notificationCenter
-                             bundle:(NSBundle *)bundle;
+@implementation DaemonAssembly
+
+- (id<Daemon>)quickActionDaemon {
+    return [TyphoonDefinition withClass:[QuickActionDaemon class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition useInitializer:@selector(initWithApplication:notificationCenter:bundle:)
+                                              parameters:^(TyphoonMethod *initializer) {
+                                                  [initializer injectParameterWith:[self.systemInfrastructureAssembly application]];
+                                                  [initializer injectParameterWith:[self.systemInfrastructureAssembly notificationCenter]];
+                                                  [initializer injectParameterWith:[self.systemInfrastructureAssembly mainBundle]];
+                                              }];
+                          }];
+}
 
 @end

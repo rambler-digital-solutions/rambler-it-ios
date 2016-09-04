@@ -68,4 +68,11 @@
                           }];
 }
 
+- (NSBundle *)mainBundle {
+    return [TyphoonDefinition withClass:[NSBundle class] configuration:^(TyphoonDefinition *definition) {
+        [definition useInitializer:@selector(mainBundle)];
+        definition.scope = TyphoonScopeSingleton;
+    }];
+}
+
 @end

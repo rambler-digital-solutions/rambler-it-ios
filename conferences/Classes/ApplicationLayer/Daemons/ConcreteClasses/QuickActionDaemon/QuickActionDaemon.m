@@ -25,12 +25,13 @@
 #import <MagicalRecord/MagicalRecord.h>
 #import <UIKit/UIKit.h>
 
-static NSString *const RCFManagedObjectContextNotificationKey = @"managedObjectContext";
+static NSUInteger const kMaximumActionCount = 2;
 
 @interface QuickActionDaemon ()
 
 @property (nonatomic, strong) UIApplication *application;
 @property (nonatomic, strong) NSNotificationCenter *notificationCenter;
+@property (nonatomic, strong) NSBundle *bundle;
 
 @end
 
@@ -39,11 +40,13 @@ static NSString *const RCFManagedObjectContextNotificationKey = @"managedObjectC
 #pragma mark - Initialization
 
 - (instancetype)initWithApplication:(UIApplication *)application
-                 notificationCenter:(NSNotificationCenter *)notificationCenter {
+                 notificationCenter:(NSNotificationCenter *)notificationCenter
+                             bundle:(NSBundle *)bundle {
     self = [super init];
     if (self) {
         _application = application;
         _notificationCenter = notificationCenter;
+        _bundle = bundle;
     }
     return self;
 }
@@ -77,19 +80,41 @@ static NSString *const RCFManagedObjectContextNotificationKey = @"managedObjectC
 - (void)handleUpdatedEvent:(NSManagedObject *)event {
     NSDictionary *changedValues = event.changedValues;
     if (changedValues[EventModelObjectAttributes.lastVisitDate] != nil) {
+        NSManagedObjectID *objectId = event.objectID;
+        NSManagedObjectContext *defaultContext = [NSManagedObjectContext MR_defaultContext];
         if ([NSThread isMainThread]) {
-            [self registerDynamicActionWithEvent:(EventModelObject *)event];
+            EventModelObject *defaultEvent = [defaultContext objectWithID:objectId];
+            [self registerDynamicActionWithEvent:defaultEvent];
         } else {
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self registerDynamicActionWithEvent:(EventModelObject *)event];
+                EventModelObject *defaultEvent = [defaultContext objectWithID:objectId];
+                [self registerDynamicActionWithEvent:defaultEvent];
             });
         }
     }
 }
 
 - (void)registerDynamicActionWithEvent:(EventModelObject *)event {
-    UIApplicationShortcutItem *item = [[UIApplicationShortcutItem alloc] initWithType:@"myTYpe" localizedTitle:@"test" localizedSubtitle:@"test" icon:nil userInfo:nil];
-    self.application.shortcutItems = @[item];
+    NSString *type = [NSString stringWithFormat:@"%@.Dynamic", self.bundle.bundleIdentifier];
+    NSString *title = event.name;
+    NSString *description = event.eventDescription;
+    NSDictionary *userInfo = @{
+                               EventModelObjectAttributes.eventId : event.eventId
+                               };
+    
+    UIApplicationShortcutItem *item = [[UIApplicationShortcutItem alloc] initWithType:type
+                                                                       localizedTitle:title
+                                                                    localizedSubtitle:description
+                                                                                 icon:nil
+                                                                             userInfo:userInfo];
+    NSMutableArray *mutableShortcutItems = [self.application.shortcutItems mutableCopy];
+    [mutableShortcutItems addObject:item];
+    if (mutableShortcutItems.count > kMaximumActionCount) {
+        NSRange removalRange = NSMakeRange(0, mutableShortcutItems.count - kMaximumActionCount);
+        [mutableShortcutItems removeObjectsInRange:removalRange];
+    }
+    
+    self.application.shortcutItems = [mutableShortcutItems copy];
 }
 
 @end

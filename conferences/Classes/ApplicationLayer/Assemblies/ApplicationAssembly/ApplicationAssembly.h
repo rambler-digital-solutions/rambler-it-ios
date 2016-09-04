@@ -26,6 +26,7 @@
 @class SystemInfrastructureAssembly;
 @class ApplicationHelperAssembly;
 @class LaunchSystemAssembly;
+@class DaemonAssembly;
 
 /**
  @author Artem Karpushin
@@ -35,6 +36,7 @@
 @interface ApplicationAssembly : ModuleAssemblyBase <RamblerInitialAssembly>
 
 @property (strong, nonatomic, readonly) SpotlightIndexerAssembly *spotlightIndexerAssembly;
+@property (strong, nonatomic, readonly) DaemonAssembly *daemonAssembly;
 @property (strong, nonatomic, readonly) SystemInfrastructureAssembly *systemInfrastructureAssembly;
 @property (strong, nonatomic, readonly) ApplicationHelperAssembly *applicationHelperAssembly;
 @property (strong, nonatomic, readonly) LaunchSystemAssembly *launchSystemAssembly;

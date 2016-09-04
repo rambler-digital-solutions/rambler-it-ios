@@ -23,6 +23,7 @@
 #import "IndexerMonitor.h"
 #import "SpotlightCoreDataStackCoordinator.h"
 #import "CleanLaunchRouter.h"
+#import "Daemon.h"
 
 @implementation CleanLaunchAppDelegate
 
@@ -32,6 +33,7 @@
     [self.applicationConfigurator configureInitialSettings];
     [self.spotlightCoreDataStackCoordinator setupCoreDataStack];
     [self.indexerMonitor startMonitoring];
+    [self.quickActionDaemon start];
     
     [self.cleanStartRouter openInitialScreen];
     

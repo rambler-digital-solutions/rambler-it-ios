@@ -384,6 +384,7 @@
 		9F40978D1D5210D9008BFE42 /* SpotlightIndexerAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F40978C1D5210D9008BFE42 /* SpotlightIndexerAssembly.m */; };
 		9F4097951D534F82008BFE42 /* EventChangeProviderFetchRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4097941D534F82008BFE42 /* EventChangeProviderFetchRequestFactory.m */; };
 		9F4825341D7C95AC0066D9EE /* QuickActionDaemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4825311D7C95AC0066D9EE /* QuickActionDaemon.m */; };
+		9F4825381D7C99670066D9EE /* DaemonAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4825371D7C99670066D9EE /* DaemonAssembly.m */; };
 		9F5316A91D50F56900F13931 /* IndexerStateStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5316A81D50F56900F13931 /* IndexerStateStorage.m */; };
 		9F533A891D50DE84004F8E82 /* FetchedResultsControllerChangeProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F533A881D50DE84004F8E82 /* FetchedResultsControllerChangeProvider.m */; };
 		9F533A8E1D50EC10004F8E82 /* IndexerMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F533A8D1D50EC10004F8E82 /* IndexerMonitor.m */; };
@@ -1317,6 +1318,8 @@
 		9F4825301D7C95AC0066D9EE /* QuickActionDaemon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickActionDaemon.h; sourceTree = "<group>"; };
 		9F4825311D7C95AC0066D9EE /* QuickActionDaemon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickActionDaemon.m; sourceTree = "<group>"; };
 		9F4825331D7C95AC0066D9EE /* Daemon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Daemon.h; sourceTree = "<group>"; };
+		9F4825361D7C99670066D9EE /* DaemonAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DaemonAssembly.h; path = DaemonAssembly/DaemonAssembly.h; sourceTree = "<group>"; };
+		9F4825371D7C99670066D9EE /* DaemonAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DaemonAssembly.m; path = DaemonAssembly/DaemonAssembly.m; sourceTree = "<group>"; };
 		9F5316A51D50F29000F13931 /* ChangeProviderChangeType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ChangeProviderChangeType.h; path = SpotlightIndexer/Transactions/Headers/ChangeProviderChangeType.h; sourceTree = "<group>"; };
 		9F5316A71D50F56900F13931 /* IndexerStateStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndexerStateStorage.h; path = SpotlightIndexer/IndexerStateStorage/IndexerStateStorage.h; sourceTree = "<group>"; };
 		9F5316A81D50F56900F13931 /* IndexerStateStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IndexerStateStorage.m; path = SpotlightIndexer/IndexerStateStorage/IndexerStateStorage.m; sourceTree = "<group>"; };
@@ -2360,6 +2363,7 @@
 		636A37BC1BC13FA200B49C3D /* Assemblies */ = {
 			isa = PBXGroup;
 			children = (
+				9F4825351D7C99560066D9EE /* DaemonAssembly */,
 				9FBE89E41D5CBC4900DA0C32 /* ApplicationHelperAssembly */,
 				9FBE89E01D5CBAE200DA0C32 /* LaunchSystemAssembly */,
 				9F40978A1D5210C4008BFE42 /* SpotlightIndexerAssembly */,
@@ -5923,6 +5927,15 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		9F4825351D7C99560066D9EE /* DaemonAssembly */ = {
+			isa = PBXGroup;
+			children = (
+				9F4825361D7C99670066D9EE /* DaemonAssembly.h */,
+				9F4825371D7C99670066D9EE /* DaemonAssembly.m */,
+			);
+			name = DaemonAssembly;
+			sourceTree = "<group>";
+		};
 		9F5316A41D50F27100F13931 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
@@ -8110,6 +8123,7 @@
 				9F78D74A1D59D73E009DDCEA /* IndexState.m in Sources */,
 				63F613981CB00A220002AEF0 /* SpeakerInfoPresenter.m in Sources */,
 				2B429A531D4616AD004C005F /* UIView+LJLoadFromNib.m in Sources */,
+				9F4825381D7C99670066D9EE /* DaemonAssembly.m in Sources */,
 				631808631C4A66FA00A61E7D /* LocalizedStrings.m in Sources */,
 				9FBE8AC11D630D4C00DA0C32 /* EventGalleryMoreEventsCollectionViewCell.m in Sources */,
 				63F8F2821BF7925F000017F3 /* PresentationLayerHelpersAssembly.m in Sources */,

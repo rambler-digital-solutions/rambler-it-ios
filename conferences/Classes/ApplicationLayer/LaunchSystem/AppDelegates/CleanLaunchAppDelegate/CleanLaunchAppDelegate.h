@@ -21,6 +21,7 @@
 @protocol ApplicationConfigurator;
 @protocol ThirdPartiesConfigurator;
 @protocol SpotlightCoreDataStackCoordinator;
+@protocol Daemon;
 @class IndexerMonitor;
 @class CleanLaunchRouter;
 
@@ -33,6 +34,7 @@
 
 @property (strong, nonatomic) id <ApplicationConfigurator> applicationConfigurator;
 @property (strong, nonatomic) id <ThirdPartiesConfigurator> thirdPartiesConfigurator;
+@property (strong, nonatomic) id <Daemon> quickActionDaemon;
 @property (strong, nonatomic) IndexerMonitor *indexerMonitor;
 @property (strong, nonatomic) CleanLaunchRouter *cleanStartRouter;
 @property (strong, nonatomic) id<SpotlightCoreDataStackCoordinator> spotlightCoreDataStackCoordinator;
