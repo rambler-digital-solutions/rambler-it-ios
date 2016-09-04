@@ -19,6 +19,7 @@
     [aCoder encodeObject:self.eventSubtitle forKey:@"eventSubtitle"];
     [aCoder encodeObject:self.eventType forKey:@"eventType"];
     [aCoder encodeObject:self.imageUrl forKey:@"imageUrl"];
+    [aCoder encodeObject:self.lastVisitDate forKey:@"lastVisitDate"];
     [aCoder encodeObject:self.liveStreamLink forKey:@"liveStreamLink"];
     [aCoder encodeObject:self.name forKey:@"name"];
     [aCoder encodeObject:self.startDate forKey:@"startDate"];
@@ -40,6 +41,7 @@
         _eventSubtitle = [[aDecoder decodeObjectForKey:@"eventSubtitle"] copy];
         _eventType = [[aDecoder decodeObjectForKey:@"eventType"] copy];
         _imageUrl = [[aDecoder decodeObjectForKey:@"imageUrl"] copy];
+        _lastVisitDate = [[aDecoder decodeObjectForKey:@"lastVisitDate"] copy];
         _liveStreamLink = [[aDecoder decodeObjectForKey:@"liveStreamLink"] copy];
         _name = [[aDecoder decodeObjectForKey:@"name"] copy];
         _startDate = [[aDecoder decodeObjectForKey:@"startDate"] copy];
@@ -65,6 +67,7 @@
     replica.eventSubtitle = self.eventSubtitle;
     replica.eventType = self.eventType;
     replica.imageUrl = self.imageUrl;
+    replica.lastVisitDate = self.lastVisitDate;
     replica.liveStreamLink = self.liveStreamLink;
     replica.name = self.name;
     replica.startDate = self.startDate;

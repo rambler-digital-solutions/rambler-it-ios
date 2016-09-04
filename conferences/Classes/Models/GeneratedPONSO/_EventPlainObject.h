@@ -20,6 +20,7 @@
 @property (nonatomic, copy, readwrite) NSString *eventSubtitle;
 @property (nonatomic, copy, readwrite) NSNumber *eventType;
 @property (nonatomic, copy, readwrite) NSString *imageUrl;
+@property (nonatomic, copy, readwrite) NSDate *lastVisitDate;
 @property (nonatomic, copy, readwrite) NSString *liveStreamLink;
 @property (nonatomic, copy, readwrite) NSString *name;
 @property (nonatomic, copy, readwrite) NSDate *startDate;

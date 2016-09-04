@@ -55,8 +55,16 @@ typedef void (^EventsCompletionBlock)(NSError *error);
  @author Konstantin Zinovyev
  
  Method is used to configure EventList object
- 
  */
 - (void)setupPredefinedEventListIfNeeded;
+
+/**
+ @author Egor Tolstoy
+ 
+ Method tracks event visit in history
+ 
+ @param eventId Event identifier
+ */
+- (void)trackEventVisitForEventId:(NSString *)eventId;
 
 @end

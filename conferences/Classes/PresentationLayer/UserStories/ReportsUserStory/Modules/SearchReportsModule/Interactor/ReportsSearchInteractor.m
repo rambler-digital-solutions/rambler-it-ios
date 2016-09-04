@@ -43,12 +43,12 @@
     
     NSPredicate *predicate;
 
-    NSString *selectorEventName = [EventModelObjectAttributes name];
-    NSString *selectorLectures = [EventModelObjectRelationships lectures];
-    NSString *selectorTags = [LectureModelObjectRelationships tags];
-    NSString *selectorTagName = [TagModelObjectAttributes name];
-    NSString *selectorSpeakerName = [SpeakerModelObjectAttributes name];
-    NSString *selectorLectureName = [LectureModelObjectAttributes name];
+    NSString *selectorEventName = EventModelObjectAttributes.name;
+    NSString *selectorLectures = EventModelObjectRelationships.lectures;
+    NSString *selectorTags = LectureModelObjectRelationships.tags;
+    NSString *selectorTagName = TagModelObjectAttributes.name;
+    NSString *selectorSpeakerName = SpeakerModelObjectAttributes.name;
+    NSString *selectorLectureName = LectureModelObjectAttributes.name;
     
     predicate = [NSPredicate predicateWithFormat:@"%K CONTAINS[c] %@ OR SUBQUERY(%K, $lecture, SUBQUERY($lecture.%K, $tag, $tag.%K CONTAINS[c] %@).@count > 0).@count > 0",selectorEventName, text, selectorLectures, selectorTags, selectorTagName, text];
     

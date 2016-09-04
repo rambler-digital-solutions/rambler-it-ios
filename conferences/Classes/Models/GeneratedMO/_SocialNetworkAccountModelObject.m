@@ -3,12 +3,21 @@
 
 #import "_SocialNetworkAccountModelObject.h"
 
+const struct SocialNetworkAccountModelObjectAttributes SocialNetworkAccountModelObjectAttributes = {
+	.profileLink = @"profileLink",
+	.type = @"type",
+};
+
+const struct SocialNetworkAccountModelObjectRelationships SocialNetworkAccountModelObjectRelationships = {
+	.speaker = @"speaker",
+};
+
 @implementation SocialNetworkAccountModelObjectID
 @end
 
 @implementation _SocialNetworkAccountModelObject
 
-+ (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_ {
++ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
 	NSParameterAssert(moc_);
 	return [NSEntityDescription insertNewObjectForEntityForName:@"SocialNetworkAccount" inManagedObjectContext:moc_];
 }
@@ -48,25 +57,10 @@
 }
 
 - (void)setTypeValue:(int16_t)value_ {
-	[self setType:@(value_)];
+	[self setType:[NSNumber numberWithShort:value_]];
 }
 
 @dynamic speaker;
 
-@end
-
-@implementation SocialNetworkAccountModelObjectAttributes 
-+ (NSString *)profileLink {
-	return @"profileLink";
-}
-+ (NSString *)type {
-	return @"type";
-}
-@end
-
-@implementation SocialNetworkAccountModelObjectRelationships 
-+ (NSString *)speaker {
-	return @"speaker";
-}
 @end
 

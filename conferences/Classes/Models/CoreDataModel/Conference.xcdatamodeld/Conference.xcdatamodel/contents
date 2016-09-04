@@ -7,6 +7,7 @@
         <attribute name="eventSubtitle" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="eventType" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="imageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastVisitDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="liveStreamLink" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="startDate" attributeType="Date" syncable="YES"/>
@@ -71,7 +72,6 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="slug" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tagId" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" syncable="YES"/>
         <relationship name="lectures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lecture" inverseName="tags" inverseEntity="Lecture" syncable="YES"/>
     </entity>
     <entity name="Tech" representedClassName="TechModelObject" syncable="YES">
@@ -81,7 +81,7 @@
         <relationship name="events" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event" inverseName="tech" inverseEntity="Event" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="0" positionY="0" width="128" height="270"/>
+        <element name="Event" positionX="0" positionY="0" width="128" height="285"/>
         <element name="LastModified" positionX="27" positionY="135" width="128" height="90"/>
         <element name="Lecture" positionX="0" positionY="0" width="128" height="165"/>
         <element name="LectureMaterial" positionX="0" positionY="0" width="128" height="120"/>
@@ -89,7 +89,7 @@
         <element name="RegistrationQuestion" positionX="0" positionY="0" width="128" height="90"/>
         <element name="SocialNetworkAccount" positionX="0" positionY="0" width="128" height="90"/>
         <element name="Speaker" positionX="0" positionY="0" width="128" height="165"/>
-        <element name="Tag" positionX="0" positionY="0" width="128" height="120"/>
+        <element name="Tag" positionX="0" positionY="0" width="128" height="105"/>
         <element name="Tech" positionX="36" positionY="144" width="128" height="105"/>
     </elements>
 </model>

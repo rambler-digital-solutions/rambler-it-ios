@@ -1,15 +1,29 @@
 // DO NOT EDIT. This file is machine-generated and constantly overwritten.
 // Make changes to EventModelObject.h instead.
 
-#if __has_feature(modules)
-    @import Foundation;
-    @import CoreData;
-#else
-    #import <Foundation/Foundation.h>
-    #import <CoreData/CoreData.h>
-#endif
+#import <CoreData/CoreData.h>
 
-NS_ASSUME_NONNULL_BEGIN
+extern const struct EventModelObjectAttributes {
+	__unsafe_unretained NSString *endDate;
+	__unsafe_unretained NSString *eventDescription;
+	__unsafe_unretained NSString *eventId;
+	__unsafe_unretained NSString *eventSubtitle;
+	__unsafe_unretained NSString *eventType;
+	__unsafe_unretained NSString *imageUrl;
+	__unsafe_unretained NSString *lastVisitDate;
+	__unsafe_unretained NSString *liveStreamLink;
+	__unsafe_unretained NSString *name;
+	__unsafe_unretained NSString *startDate;
+	__unsafe_unretained NSString *timePadID;
+	__unsafe_unretained NSString *twitterTag;
+} EventModelObjectAttributes;
+
+extern const struct EventModelObjectRelationships {
+	__unsafe_unretained NSString *lectures;
+	__unsafe_unretained NSString *metaEvent;
+	__unsafe_unretained NSString *registrationQuestions;
+	__unsafe_unretained NSString *tech;
+} EventModelObjectRelationships;
 
 @class LectureModelObject;
 @class MetaEventModelObject;
@@ -19,61 +33,93 @@ NS_ASSUME_NONNULL_BEGIN
 @interface EventModelObjectID : NSManagedObjectID {}
 @end
 
-@interface _EventModelObject : NSManagedObject
-+ (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_;
+@interface _EventModelObject : NSManagedObject {}
++ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
-@property (nonatomic, readonly, strong) EventModelObjectID *objectID;
+@property (nonatomic, readonly, strong) EventModelObjectID* objectID;
 
 @property (nonatomic, strong) NSDate* endDate;
 
-@property (nonatomic, strong, nullable) NSString* eventDescription;
+//- (BOOL)validateEndDate:(id*)value_ error:(NSError**)error_;
 
-@property (nonatomic, strong, nullable) NSString* eventId;
+@property (nonatomic, strong) NSString* eventDescription;
 
-@property (nonatomic, strong, nullable) NSString* eventSubtitle;
+//- (BOOL)validateEventDescription:(id*)value_ error:(NSError**)error_;
 
-@property (nonatomic, strong, nullable) NSNumber* eventType;
+@property (nonatomic, strong) NSString* eventId;
+
+//- (BOOL)validateEventId:(id*)value_ error:(NSError**)error_;
+
+@property (nonatomic, strong) NSString* eventSubtitle;
+
+//- (BOOL)validateEventSubtitle:(id*)value_ error:(NSError**)error_;
+
+@property (nonatomic, strong) NSNumber* eventType;
 
 @property (atomic) int32_t eventTypeValue;
 - (int32_t)eventTypeValue;
 - (void)setEventTypeValue:(int32_t)value_;
 
-@property (nonatomic, strong, nullable) NSString* imageUrl;
+//- (BOOL)validateEventType:(id*)value_ error:(NSError**)error_;
 
-@property (nonatomic, strong, nullable) NSString* liveStreamLink;
+@property (nonatomic, strong) NSString* imageUrl;
+
+//- (BOOL)validateImageUrl:(id*)value_ error:(NSError**)error_;
+
+@property (nonatomic, strong) NSDate* lastVisitDate;
+
+//- (BOOL)validateLastVisitDate:(id*)value_ error:(NSError**)error_;
+
+@property (nonatomic, strong) NSString* liveStreamLink;
+
+//- (BOOL)validateLiveStreamLink:(id*)value_ error:(NSError**)error_;
 
 @property (nonatomic, strong) NSString* name;
 
+//- (BOOL)validateName:(id*)value_ error:(NSError**)error_;
+
 @property (nonatomic, strong) NSDate* startDate;
 
-@property (nonatomic, strong, nullable) NSString* timePadID;
+//- (BOOL)validateStartDate:(id*)value_ error:(NSError**)error_;
 
-@property (nonatomic, strong, nullable) NSString* twitterTag;
+@property (nonatomic, strong) NSString* timePadID;
 
-@property (nonatomic, strong, nullable) NSSet<LectureModelObject*> *lectures;
-- (nullable NSMutableSet<LectureModelObject*>*)lecturesSet;
+//- (BOOL)validateTimePadID:(id*)value_ error:(NSError**)error_;
 
-@property (nonatomic, strong, nullable) MetaEventModelObject *metaEvent;
+@property (nonatomic, strong) NSString* twitterTag;
 
-@property (nonatomic, strong, nullable) NSSet<RegistrationQuestionModelObject*> *registrationQuestions;
-- (nullable NSMutableSet<RegistrationQuestionModelObject*>*)registrationQuestionsSet;
+//- (BOOL)validateTwitterTag:(id*)value_ error:(NSError**)error_;
 
-@property (nonatomic, strong, nullable) TechModelObject *tech;
+@property (nonatomic, strong) NSSet *lectures;
+
+- (NSMutableSet*)lecturesSet;
+
+@property (nonatomic, strong) MetaEventModelObject *metaEvent;
+
+//- (BOOL)validateMetaEvent:(id*)value_ error:(NSError**)error_;
+
+@property (nonatomic, strong) NSSet *registrationQuestions;
+
+- (NSMutableSet*)registrationQuestionsSet;
+
+@property (nonatomic, strong) TechModelObject *tech;
+
+//- (BOOL)validateTech:(id*)value_ error:(NSError**)error_;
 
 @end
 
 @interface _EventModelObject (LecturesCoreDataGeneratedAccessors)
-- (void)addLectures:(NSSet<LectureModelObject*>*)value_;
-- (void)removeLectures:(NSSet<LectureModelObject*>*)value_;
+- (void)addLectures:(NSSet*)value_;
+- (void)removeLectures:(NSSet*)value_;
 - (void)addLecturesObject:(LectureModelObject*)value_;
 - (void)removeLecturesObject:(LectureModelObject*)value_;
 
 @end
 
 @interface _EventModelObject (RegistrationQuestionsCoreDataGeneratedAccessors)
-- (void)addRegistrationQuestions:(NSSet<RegistrationQuestionModelObject*>*)value_;
-- (void)removeRegistrationQuestions:(NSSet<RegistrationQuestionModelObject*>*)value_;
+- (void)addRegistrationQuestions:(NSSet*)value_;
+- (void)removeRegistrationQuestions:(NSSet*)value_;
 - (void)addRegistrationQuestionsObject:(RegistrationQuestionModelObject*)value_;
 - (void)removeRegistrationQuestionsObject:(RegistrationQuestionModelObject*)value_;
 
@@ -102,6 +148,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString*)primitiveImageUrl;
 - (void)setPrimitiveImageUrl:(NSString*)value;
 
+- (NSDate*)primitiveLastVisitDate;
+- (void)setPrimitiveLastVisitDate:(NSDate*)value;
+
 - (NSString*)primitiveLiveStreamLink;
 - (void)setPrimitiveLiveStreamLink:(NSString*)value;
 
@@ -117,39 +166,16 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString*)primitiveTwitterTag;
 - (void)setPrimitiveTwitterTag:(NSString*)value;
 
-- (NSMutableSet<LectureModelObject*>*)primitiveLectures;
-- (void)setPrimitiveLectures:(NSMutableSet<LectureModelObject*>*)value;
+- (NSMutableSet*)primitiveLectures;
+- (void)setPrimitiveLectures:(NSMutableSet*)value;
 
 - (MetaEventModelObject*)primitiveMetaEvent;
 - (void)setPrimitiveMetaEvent:(MetaEventModelObject*)value;
 
-- (NSMutableSet<RegistrationQuestionModelObject*>*)primitiveRegistrationQuestions;
-- (void)setPrimitiveRegistrationQuestions:(NSMutableSet<RegistrationQuestionModelObject*>*)value;
+- (NSMutableSet*)primitiveRegistrationQuestions;
+- (void)setPrimitiveRegistrationQuestions:(NSMutableSet*)value;
 
 - (TechModelObject*)primitiveTech;
 - (void)setPrimitiveTech:(TechModelObject*)value;
 
 @end
-
-@interface EventModelObjectAttributes: NSObject 
-+ (NSString *)endDate;
-+ (NSString *)eventDescription;
-+ (NSString *)eventId;
-+ (NSString *)eventSubtitle;
-+ (NSString *)eventType;
-+ (NSString *)imageUrl;
-+ (NSString *)liveStreamLink;
-+ (NSString *)name;
-+ (NSString *)startDate;
-+ (NSString *)timePadID;
-+ (NSString *)twitterTag;
-@end
-
-@interface EventModelObjectRelationships: NSObject
-+ (NSString *)lectures;
-+ (NSString *)metaEvent;
-+ (NSString *)registrationQuestions;
-+ (NSString *)tech;
-@end
-
-NS_ASSUME_NONNULL_END

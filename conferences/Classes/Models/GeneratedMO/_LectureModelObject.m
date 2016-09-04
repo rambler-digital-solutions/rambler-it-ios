@@ -3,12 +3,26 @@
 
 #import "_LectureModelObject.h"
 
+const struct LectureModelObjectAttributes LectureModelObjectAttributes = {
+	.favourite = @"favourite",
+	.lectureDescription = @"lectureDescription",
+	.lectureId = @"lectureId",
+	.name = @"name",
+};
+
+const struct LectureModelObjectRelationships LectureModelObjectRelationships = {
+	.event = @"event",
+	.lectureMaterials = @"lectureMaterials",
+	.speaker = @"speaker",
+	.tags = @"tags",
+};
+
 @implementation LectureModelObjectID
 @end
 
 @implementation _LectureModelObject
 
-+ (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_ {
++ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
 	NSParameterAssert(moc_);
 	return [NSEntityDescription insertNewObjectForEntityForName:@"Lecture" inManagedObjectContext:moc_];
 }
@@ -46,7 +60,7 @@
 }
 
 - (void)setFavouriteValue:(BOOL)value_ {
-	[self setFavourite:@(value_)];
+	[self setFavourite:[NSNumber numberWithBool:value_]];
 }
 
 - (BOOL)primitiveFavouriteValue {
@@ -55,7 +69,7 @@
 }
 
 - (void)setPrimitiveFavouriteValue:(BOOL)value_ {
-	[self setPrimitiveFavourite:@(value_)];
+	[self setPrimitiveFavourite:[NSNumber numberWithBool:value_]];
 }
 
 @dynamic lectureDescription;
@@ -68,10 +82,10 @@
 
 @dynamic lectureMaterials;
 
-- (NSMutableSet<LectureMaterialModelObject*>*)lectureMaterialsSet {
+- (NSMutableSet*)lectureMaterialsSet {
 	[self willAccessValueForKey:@"lectureMaterials"];
 
-	NSMutableSet<LectureMaterialModelObject*> *result = (NSMutableSet<LectureMaterialModelObject*>*)[self mutableSetValueForKey:@"lectureMaterials"];
+	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"lectureMaterials"];
 
 	[self didAccessValueForKey:@"lectureMaterials"];
 	return result;
@@ -81,44 +95,14 @@
 
 @dynamic tags;
 
-- (NSMutableSet<TagModelObject*>*)tagsSet {
+- (NSMutableSet*)tagsSet {
 	[self willAccessValueForKey:@"tags"];
 
-	NSMutableSet<TagModelObject*> *result = (NSMutableSet<TagModelObject*>*)[self mutableSetValueForKey:@"tags"];
+	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"tags"];
 
 	[self didAccessValueForKey:@"tags"];
 	return result;
 }
 
-@end
-
-@implementation LectureModelObjectAttributes 
-+ (NSString *)favourite {
-	return @"favourite";
-}
-+ (NSString *)lectureDescription {
-	return @"lectureDescription";
-}
-+ (NSString *)lectureId {
-	return @"lectureId";
-}
-+ (NSString *)name {
-	return @"name";
-}
-@end
-
-@implementation LectureModelObjectRelationships 
-+ (NSString *)event {
-	return @"event";
-}
-+ (NSString *)lectureMaterials {
-	return @"lectureMaterials";
-}
-+ (NSString *)speaker {
-	return @"speaker";
-}
-+ (NSString *)tags {
-	return @"tags";
-}
 @end
 

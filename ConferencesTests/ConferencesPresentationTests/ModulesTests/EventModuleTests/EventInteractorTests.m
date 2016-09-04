@@ -159,4 +159,17 @@ typedef void (^ProxyBlock)(NSInvocation *);
     XCTAssertEqualObjects([obtainedItems firstObject], testUrl);
 }
 
+- (void)testThatInteractorTracksEventVisit {
+    // given
+    NSString *const kTestEventId = @"1234";
+    EventPlainObject *event = [EventPlainObject new];
+    event.eventId = kTestEventId;
+    
+    // when
+    [self.interactor trackEventVisitForEvent:event];
+    
+    // then
+    OCMVerify([self.eventServiceMock trackEventVisitForEventId:kTestEventId]);
+}
+
 @end

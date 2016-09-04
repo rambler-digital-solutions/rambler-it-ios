@@ -3,12 +3,34 @@
 
 #import "_EventModelObject.h"
 
+const struct EventModelObjectAttributes EventModelObjectAttributes = {
+	.endDate = @"endDate",
+	.eventDescription = @"eventDescription",
+	.eventId = @"eventId",
+	.eventSubtitle = @"eventSubtitle",
+	.eventType = @"eventType",
+	.imageUrl = @"imageUrl",
+	.lastVisitDate = @"lastVisitDate",
+	.liveStreamLink = @"liveStreamLink",
+	.name = @"name",
+	.startDate = @"startDate",
+	.timePadID = @"timePadID",
+	.twitterTag = @"twitterTag",
+};
+
+const struct EventModelObjectRelationships EventModelObjectRelationships = {
+	.lectures = @"lectures",
+	.metaEvent = @"metaEvent",
+	.registrationQuestions = @"registrationQuestions",
+	.tech = @"tech",
+};
+
 @implementation EventModelObjectID
 @end
 
 @implementation _EventModelObject
 
-+ (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_ {
++ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
 	NSParameterAssert(moc_);
 	return [NSEntityDescription insertNewObjectForEntityForName:@"Event" inManagedObjectContext:moc_];
 }
@@ -54,7 +76,7 @@
 }
 
 - (void)setEventTypeValue:(int32_t)value_ {
-	[self setEventType:@(value_)];
+	[self setEventType:[NSNumber numberWithInt:value_]];
 }
 
 - (int32_t)primitiveEventTypeValue {
@@ -63,10 +85,12 @@
 }
 
 - (void)setPrimitiveEventTypeValue:(int32_t)value_ {
-	[self setPrimitiveEventType:@(value_)];
+	[self setPrimitiveEventType:[NSNumber numberWithInt:value_]];
 }
 
 @dynamic imageUrl;
+
+@dynamic lastVisitDate;
 
 @dynamic liveStreamLink;
 
@@ -80,10 +104,10 @@
 
 @dynamic lectures;
 
-- (NSMutableSet<LectureModelObject*>*)lecturesSet {
+- (NSMutableSet*)lecturesSet {
 	[self willAccessValueForKey:@"lectures"];
 
-	NSMutableSet<LectureModelObject*> *result = (NSMutableSet<LectureModelObject*>*)[self mutableSetValueForKey:@"lectures"];
+	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"lectures"];
 
 	[self didAccessValueForKey:@"lectures"];
 	return result;
@@ -93,10 +117,10 @@
 
 @dynamic registrationQuestions;
 
-- (NSMutableSet<RegistrationQuestionModelObject*>*)registrationQuestionsSet {
+- (NSMutableSet*)registrationQuestionsSet {
 	[self willAccessValueForKey:@"registrationQuestions"];
 
-	NSMutableSet<RegistrationQuestionModelObject*> *result = (NSMutableSet<RegistrationQuestionModelObject*>*)[self mutableSetValueForKey:@"registrationQuestions"];
+	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"registrationQuestions"];
 
 	[self didAccessValueForKey:@"registrationQuestions"];
 	return result;
@@ -104,56 +128,5 @@
 
 @dynamic tech;
 
-@end
-
-@implementation EventModelObjectAttributes 
-+ (NSString *)endDate {
-	return @"endDate";
-}
-+ (NSString *)eventDescription {
-	return @"eventDescription";
-}
-+ (NSString *)eventId {
-	return @"eventId";
-}
-+ (NSString *)eventSubtitle {
-	return @"eventSubtitle";
-}
-+ (NSString *)eventType {
-	return @"eventType";
-}
-+ (NSString *)imageUrl {
-	return @"imageUrl";
-}
-+ (NSString *)liveStreamLink {
-	return @"liveStreamLink";
-}
-+ (NSString *)name {
-	return @"name";
-}
-+ (NSString *)startDate {
-	return @"startDate";
-}
-+ (NSString *)timePadID {
-	return @"timePadID";
-}
-+ (NSString *)twitterTag {
-	return @"twitterTag";
-}
-@end
-
-@implementation EventModelObjectRelationships 
-+ (NSString *)lectures {
-	return @"lectures";
-}
-+ (NSString *)metaEvent {
-	return @"metaEvent";
-}
-+ (NSString *)registrationQuestions {
-	return @"registrationQuestions";
-}
-+ (NSString *)tech {
-	return @"tech";
-}
 @end
 
