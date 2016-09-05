@@ -23,13 +23,11 @@
 
 @protocol TagViewInput;
 @protocol TagInteractorInput;
-@class TagTextFilter;
 
 @interface TagPresenter : NSObject <TagModuleInput, TagViewOutput>
 
 @property (nonatomic, weak) id<TagViewInput> view;
 @property (nonatomic, strong) id<TagInteractorInput> interactor;
 @property (nonatomic, weak) id<TagModuleOutput> output;
-@property (nonatomic, strong) TagTextFilter *tagFilter;
 
 @end

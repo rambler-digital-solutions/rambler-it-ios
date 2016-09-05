@@ -37,15 +37,6 @@
 /**
  @author Golovko Mikhail
  
- Метод обновляет модуль для поиска по тексту.
- 
- @param searchText Текст поиска.
- */
-- (void)updateModuleWithSearchText:(NSString *)searchText;
-
-/**
- @author Golovko Mikhail
- 
  Метод отображает кнопку добавить тег
  */
 - (void)showAddButton;

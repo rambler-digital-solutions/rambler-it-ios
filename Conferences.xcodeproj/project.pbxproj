@@ -289,8 +289,6 @@
 		66E9994C1D54AFB000161D98 /* TagModuleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E9994A1D54AFB000161D98 /* TagModuleTableViewCell.m */; };
 		66E9994D1D54AFB000161D98 /* TagModuleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66E9994B1D54AFB000161D98 /* TagModuleTableViewCell.xib */; };
 		66E999551D54AFE900161D98 /* TagShowMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E999541D54AFE900161D98 /* TagShowMediator.m */; };
-		66E999581D54AFF200161D98 /* TagEditMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E999571D54AFF200161D98 /* TagEditMediator.m */; };
-		66E9995D1D54B03300161D98 /* TagTextFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E9995C1D54B03300161D98 /* TagTextFilter.m */; };
 		66E999621D54B04100161D98 /* TagModuleConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E9995F1D54B04100161D98 /* TagModuleConfig.m */; };
 		66E999631D54B04100161D98 /* TagObjectDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E999611D54B04100161D98 /* TagObjectDescriptor.m */; };
 		66E999681D54B04A00161D98 /* TagPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E999671D54B04A00161D98 /* TagPresenter.m */; };
@@ -301,9 +299,6 @@
 		66E9997F1D54B0A000161D98 /* TagCellSizeConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E9997B1D54B0A000161D98 /* TagCellSizeConfig.m */; };
 		66E999801D54B0A000161D98 /* TagCellSizeRowCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E9997D1D54B0A000161D98 /* TagCellSizeRowCalculator.m */; };
 		66E999851D54B0CC00161D98 /* TagCollectionViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E999841D54B0CC00161D98 /* TagCollectionViewCellObject.m */; };
-		66E999881D54B0DB00161D98 /* TagButtonCollectionViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E999871D54B0DB00161D98 /* TagButtonCollectionViewCellObject.m */; };
-		66E9998E1D54B0F800161D98 /* TagButtonCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E9998C1D54B0F800161D98 /* TagButtonCollectionViewCell.m */; };
-		66E9998F1D54B0F800161D98 /* TagButtonCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66E9998D1D54B0F800161D98 /* TagButtonCollectionViewCell.xib */; };
 		66E999931D54B10800161D98 /* TagCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E999911D54B10800161D98 /* TagCollectionViewCell.m */; };
 		66E999941D54B10800161D98 /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66E999921D54B10800161D98 /* TagCollectionViewCell.xib */; };
 		66E9999C1D54B31300161D98 /* TagServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E999991D54B31300161D98 /* TagServiceImplementation.m */; };
@@ -1105,8 +1100,6 @@
 		66E999521D54AFD900161D98 /* TagMediatorInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagMediatorInput.h; path = TagModule/Integration/TagMediator/TagMediatorInput.h; sourceTree = "<group>"; };
 		66E999531D54AFE900161D98 /* TagShowMediator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagShowMediator.h; path = TagModule/Integration/TagMediator/TagShowMediator/TagShowMediator.h; sourceTree = "<group>"; };
 		66E999541D54AFE900161D98 /* TagShowMediator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagShowMediator.m; path = TagModule/Integration/TagMediator/TagShowMediator/TagShowMediator.m; sourceTree = "<group>"; };
-		66E9995B1D54B03300161D98 /* TagTextFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagTextFilter.h; path = TagModule/Presenter/TagTextFilter/TagTextFilter.h; sourceTree = "<group>"; };
-		66E9995C1D54B03300161D98 /* TagTextFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagTextFilter.m; path = TagModule/Presenter/TagTextFilter/TagTextFilter.m; sourceTree = "<group>"; };
 		66E9995E1D54B04100161D98 /* TagModuleConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagModuleConfig.h; path = TagModule/Presenter/TagModuleConfig/TagModuleConfig.h; sourceTree = "<group>"; };
 		66E9995F1D54B04100161D98 /* TagModuleConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagModuleConfig.m; path = TagModule/Presenter/TagModuleConfig/TagModuleConfig.m; sourceTree = "<group>"; };
 		66E999601D54B04100161D98 /* TagObjectDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagObjectDescriptor.h; path = TagModule/Presenter/TagModuleConfig/TagObjectDescriptor.h; sourceTree = "<group>"; };
@@ -4261,7 +4254,6 @@
 				66E999661D54B04A00161D98 /* TagPresenter.h */,
 				66E999671D54B04A00161D98 /* TagPresenter.m */,
 				66E9995A1D54B01F00161D98 /* TagModuleConfig */,
-				66E999591D54B01B00161D98 /* TagTextFilter */,
 			);
 			name = Presenter;
 			sourceTree = "<group>";
@@ -4325,15 +4317,6 @@
 				66E999541D54AFE900161D98 /* TagShowMediator.m */,
 			);
 			name = TagShowMediator;
-			sourceTree = "<group>";
-		};
-		66E999591D54B01B00161D98 /* TagTextFilter */ = {
-			isa = PBXGroup;
-			children = (
-				66E9995B1D54B03300161D98 /* TagTextFilter.h */,
-				66E9995C1D54B03300161D98 /* TagTextFilter.m */,
-			);
-			name = TagTextFilter;
 			sourceTree = "<group>";
 		};
 		66E9995A1D54B01F00161D98 /* TagModuleConfig */ = {
@@ -8164,7 +8147,6 @@
 				63EF15C01BC461DD00480CAF /* PushNotificationServiceImplementation.m in Sources */,
 				66EE4D2B1D54BCDF0011F94A /* CollectionViewAnimator.m in Sources */,
 				9F8E5F741BC255AA00DC10DB /* RequestSignersAssembly.m in Sources */,
-				66E9995D1D54B03300161D98 /* TagTextFilter.m in Sources */,
 				9FBE8AFD1D634F0500DA0C32 /* EventListPresenter.m in Sources */,
 				9FBE8AC31D630D4C00DA0C32 /* EventGalleryCollectionViewCellShadower.m in Sources */,
 				9FBE89B61D5CB71300DA0C32 /* TabBarControllerFactoryImplementation.m in Sources */,

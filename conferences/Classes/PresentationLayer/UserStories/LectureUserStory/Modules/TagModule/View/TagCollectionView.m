@@ -143,8 +143,4 @@
     [self.moduleInput addTagWithName:name];
 }
 
-- (void)updateModuleWithSearchText:(NSString *)searchText {
-    [self.moduleInput updateModuleWithSearchText:searchText];
-}
-
 @end

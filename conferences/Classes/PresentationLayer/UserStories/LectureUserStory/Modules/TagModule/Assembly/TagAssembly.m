@@ -29,7 +29,6 @@
 #import "ContentSizeObserver.h"
 #import "TagCellSizeConfig.h"
 #import "TagCellSizeRowCalculator.h"
-#import "TagTextFilter.h"
 #import "ServiceComponents.h"
 
 @implementation TagAssembly
@@ -64,8 +63,6 @@
                                                     with:[self collectionViewTagModule]];
                               [definition injectProperty:@selector(interactor)
                                                     with:[self interactorTagModule]];
-                              [definition injectProperty:@selector(tagFilter)
-                                                    with:[self tagTextFilterTagModule]];
                           }];
 }
 
@@ -105,10 +102,6 @@
                           configuration:^(TyphoonDefinition *definition) {
                               [definition useInitializer:@selector(defaultConfig)];
                           }];
-}
-
-- (TagTextFilter *)tagTextFilterTagModule {
-    return [TyphoonDefinition withClass:[TagTextFilter class]];
 }
 
 #pragma mark - Для ячейки

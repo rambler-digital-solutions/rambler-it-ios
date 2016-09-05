@@ -24,7 +24,6 @@
 #import "TagInteractorInput.h"
 #import "TagModuleConfig.h"
 #import "TagModuleOutput.h"
-#import "TagTextFilter.h"
 
 @interface TagPresenter ()
 
@@ -68,16 +67,6 @@
     [self.view setupShowNumberOfLines:moduleConfig.numberOfShowLine];
 
     [self updateTagsInView];
-}
-
-- (void)updateModuleWithSearchText:(NSString *)searchText {
-    NSArray *tags = [self.tagFilter obtainTagsFilteredByName:searchText];
-    [self.view showTags:tags];
-    if (tags.count == 0) {
-        if ([self.output respondsToSelector:@selector(didShowEmptyState)]) {
-            [self.output didShowEmptyState];
-        }
-    }
 }
 
 - (void)showAddButton {
@@ -129,8 +118,6 @@
 - (void)updateTagsInView {
     NSArray *tags = [self.interactor obtainTagsFromObjectDescriptor:self.moduleConfig.objectDescriptor
                                             excludeObjectDescriptor:self.moduleConfig.filteredObjectDescriptor];
-
-    [self.tagFilter setupTagsForFiltering:tags];
 
     [self.view showTags:tags];
 }

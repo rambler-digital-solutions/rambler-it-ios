@@ -34,8 +34,7 @@
 
 @synthesize isConfigured = _isConfigured;
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
+- (void)didMoveToSuperview {
     /**
      @author Vadim Smal
      
@@ -47,6 +46,7 @@
      
      Поэтому мы задаем правильный размер UICollectionView заранее
      */
+    [super didMoveToSuperview];
     self.collectionViewWidthConstraint.constant = [UIScreen mainScreen].bounds.size.width - (self.collectionViewLeadingConstraint.constant * 2);
 }
 
