@@ -1102,13 +1102,9 @@
 		66E999491D54AFB000161D98 /* TagModuleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagModuleTableViewCell.h; path = TagModule/Integration/Table/TagTableViewCell/TagModuleTableViewCell.h; sourceTree = "<group>"; };
 		66E9994A1D54AFB000161D98 /* TagModuleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagModuleTableViewCell.m; path = TagModule/Integration/Table/TagTableViewCell/TagModuleTableViewCell.m; sourceTree = "<group>"; };
 		66E9994B1D54AFB000161D98 /* TagModuleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TagModuleTableViewCell.xib; path = TagModule/Integration/Table/TagTableViewCell/TagModuleTableViewCell.xib; sourceTree = "<group>"; };
-		66E999501D54AFD900161D98 /* TagEditMediatorInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagEditMediatorInput.h; path = TagModule/Integration/TagMediator/TagEditMediatorInput.h; sourceTree = "<group>"; };
-		66E999511D54AFD900161D98 /* TagEditMediatorOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagEditMediatorOutput.h; path = TagModule/Integration/TagMediator/TagEditMediatorOutput.h; sourceTree = "<group>"; };
 		66E999521D54AFD900161D98 /* TagMediatorInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagMediatorInput.h; path = TagModule/Integration/TagMediator/TagMediatorInput.h; sourceTree = "<group>"; };
 		66E999531D54AFE900161D98 /* TagShowMediator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagShowMediator.h; path = TagModule/Integration/TagMediator/TagShowMediator/TagShowMediator.h; sourceTree = "<group>"; };
 		66E999541D54AFE900161D98 /* TagShowMediator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagShowMediator.m; path = TagModule/Integration/TagMediator/TagShowMediator/TagShowMediator.m; sourceTree = "<group>"; };
-		66E999561D54AFF200161D98 /* TagEditMediator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagEditMediator.h; path = TagModule/Integration/TagMediator/TagEditMediator/TagEditMediator.h; sourceTree = "<group>"; };
-		66E999571D54AFF200161D98 /* TagEditMediator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagEditMediator.m; path = TagModule/Integration/TagMediator/TagEditMediator/TagEditMediator.m; sourceTree = "<group>"; };
 		66E9995B1D54B03300161D98 /* TagTextFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagTextFilter.h; path = TagModule/Presenter/TagTextFilter/TagTextFilter.h; sourceTree = "<group>"; };
 		66E9995C1D54B03300161D98 /* TagTextFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagTextFilter.m; path = TagModule/Presenter/TagTextFilter/TagTextFilter.m; sourceTree = "<group>"; };
 		66E9995E1D54B04100161D98 /* TagModuleConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagModuleConfig.h; path = TagModule/Presenter/TagModuleConfig/TagModuleConfig.h; sourceTree = "<group>"; };
@@ -1135,15 +1131,9 @@
 		66E9997D1D54B0A000161D98 /* TagCellSizeRowCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagCellSizeRowCalculator.m; path = TagModule/View/DataDisplayManager/TagCellSizeManager/TagCellSizeRowCalculator.m; sourceTree = "<group>"; };
 		66E999831D54B0CC00161D98 /* TagCollectionViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagCollectionViewCellObject.h; path = TagModule/View/CellObjects/TagCollectionViewCellObject/TagCollectionViewCellObject.h; sourceTree = "<group>"; };
 		66E999841D54B0CC00161D98 /* TagCollectionViewCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagCollectionViewCellObject.m; path = TagModule/View/CellObjects/TagCollectionViewCellObject/TagCollectionViewCellObject.m; sourceTree = "<group>"; };
-		66E999861D54B0DB00161D98 /* TagButtonCollectionViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagButtonCollectionViewCellObject.h; path = TagModule/View/CellObjects/TagButtonCollectionViewCellObject/TagButtonCollectionViewCellObject.h; sourceTree = "<group>"; };
-		66E999871D54B0DB00161D98 /* TagButtonCollectionViewCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagButtonCollectionViewCellObject.m; path = TagModule/View/CellObjects/TagButtonCollectionViewCellObject/TagButtonCollectionViewCellObject.m; sourceTree = "<group>"; };
-		66E9998B1D54B0F800161D98 /* TagButtonCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagButtonCollectionViewCell.h; path = TagModule/View/Cells/TagButtonCollectionViewCell/TagButtonCollectionViewCell.h; sourceTree = "<group>"; };
-		66E9998C1D54B0F800161D98 /* TagButtonCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagButtonCollectionViewCell.m; path = TagModule/View/Cells/TagButtonCollectionViewCell/TagButtonCollectionViewCell.m; sourceTree = "<group>"; };
-		66E9998D1D54B0F800161D98 /* TagButtonCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TagButtonCollectionViewCell.xib; path = TagModule/View/Cells/TagButtonCollectionViewCell/TagButtonCollectionViewCell.xib; sourceTree = "<group>"; };
 		66E999901D54B10800161D98 /* TagCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagCollectionViewCell.h; path = TagModule/View/Cells/TagCollectionViewCell/TagCollectionViewCell.h; sourceTree = "<group>"; };
 		66E999911D54B10800161D98 /* TagCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagCollectionViewCell.m; path = TagModule/View/Cells/TagCollectionViewCell/TagCollectionViewCell.m; sourceTree = "<group>"; };
 		66E999921D54B10800161D98 /* TagCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TagCollectionViewCell.xib; path = TagModule/View/Cells/TagCollectionViewCell/TagCollectionViewCell.xib; sourceTree = "<group>"; };
-		66E999951D54B11100161D98 /* TagCellDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagCellDelegate.h; path = TagModule/View/Cells/TagCellDelegate.h; sourceTree = "<group>"; };
 		66E999971D54B30A00161D98 /* TagService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagService.h; path = TagService/TagService.h; sourceTree = "<group>"; };
 		66E999981D54B31300161D98 /* TagServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagServiceImplementation.h; path = TagService/TagServiceImplementation.h; sourceTree = "<group>"; };
 		66E999991D54B31300161D98 /* TagServiceImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagServiceImplementation.m; path = TagService/TagServiceImplementation.m; sourceTree = "<group>"; };
@@ -4303,11 +4293,8 @@
 		66E999431D54AF7D00161D98 /* TagMediator */ = {
 			isa = PBXGroup;
 			children = (
-				66E999501D54AFD900161D98 /* TagEditMediatorInput.h */,
-				66E999511D54AFD900161D98 /* TagEditMediatorOutput.h */,
 				66E999521D54AFD900161D98 /* TagMediatorInput.h */,
 				66E9994F1D54AFC400161D98 /* TagShowMediator */,
-				66E9994E1D54AFC100161D98 /* TagEditMediator */,
 			);
 			name = TagMediator;
 			sourceTree = "<group>";
@@ -4329,15 +4316,6 @@
 				66E9994B1D54AFB000161D98 /* TagModuleTableViewCell.xib */,
 			);
 			name = TagTableViewCell;
-			sourceTree = "<group>";
-		};
-		66E9994E1D54AFC100161D98 /* TagEditMediator */ = {
-			isa = PBXGroup;
-			children = (
-				66E999561D54AFF200161D98 /* TagEditMediator.h */,
-				66E999571D54AFF200161D98 /* TagEditMediator.m */,
-			);
-			name = TagEditMediator;
 			sourceTree = "<group>";
 		};
 		66E9994F1D54AFC400161D98 /* TagShowMediator */ = {
@@ -4383,9 +4361,7 @@
 		66E999711D54B07200161D98 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				66E999951D54B11100161D98 /* TagCellDelegate.h */,
 				66E9998A1D54B0EC00161D98 /* TagCollectionViewCell */,
-				66E999891D54B0E100161D98 /* TagButtonCollectionViewCell */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -4394,7 +4370,6 @@
 			isa = PBXGroup;
 			children = (
 				66E999821D54B0BA00161D98 /* TagCollectionViewCellObject */,
-				66E999811D54B0B400161D98 /* TagButtonCollectionViewCellObject */,
 			);
 			name = CellObjects;
 			sourceTree = "<group>";
@@ -4412,15 +4387,6 @@
 			name = TagCellSizeManager;
 			sourceTree = "<group>";
 		};
-		66E999811D54B0B400161D98 /* TagButtonCollectionViewCellObject */ = {
-			isa = PBXGroup;
-			children = (
-				66E999861D54B0DB00161D98 /* TagButtonCollectionViewCellObject.h */,
-				66E999871D54B0DB00161D98 /* TagButtonCollectionViewCellObject.m */,
-			);
-			name = TagButtonCollectionViewCellObject;
-			sourceTree = "<group>";
-		};
 		66E999821D54B0BA00161D98 /* TagCollectionViewCellObject */ = {
 			isa = PBXGroup;
 			children = (
@@ -4428,16 +4394,6 @@
 				66E999841D54B0CC00161D98 /* TagCollectionViewCellObject.m */,
 			);
 			name = TagCollectionViewCellObject;
-			sourceTree = "<group>";
-		};
-		66E999891D54B0E100161D98 /* TagButtonCollectionViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				66E9998B1D54B0F800161D98 /* TagButtonCollectionViewCell.h */,
-				66E9998C1D54B0F800161D98 /* TagButtonCollectionViewCell.m */,
-				66E9998D1D54B0F800161D98 /* TagButtonCollectionViewCell.xib */,
-			);
-			name = TagButtonCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		66E9998A1D54B0EC00161D98 /* TagCollectionViewCell */ = {
@@ -7821,7 +7777,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6315BA101C9EC2D400999877 /* TableViewSectionHeaderCell.xib in Resources */,
-				66E9998F1D54B0F800161D98 /* TagButtonCollectionViewCell.xib in Resources */,
 				636F8DFF1BCB91A900552B91 /* RamblerLocation.storyboard in Resources */,
 				6318086A1C4A870C00A61E7D /* LectureMaterialInfoTableViewCell.xib in Resources */,
 				63F613731CB00A220002AEF0 /* EventInfoTableViewCell.xib in Resources */,
@@ -8079,7 +8034,6 @@
 				661CA3FE1D65CFF70047EB68 /* LastModifiedMapperOperation.m in Sources */,
 				9FBE8ABB1D630D4C00DA0C32 /* EventGalleryViewController.m in Sources */,
 				9F8E5FA61BC27CCE00DC10DB /* MappingConstants.m in Sources */,
-				66E999881D54B0DB00161D98 /* TagButtonCollectionViewCellObject.m in Sources */,
 				2B20648B1D3F9CE900246C8D /* LectureModelObject.m in Sources */,
 				661CA42F1D65D2550047EB68 /* ModifiedDataListServerResponse.m in Sources */,
 				9F8E5F801BC2592600DC10DB /* ResponseValidatorsAssembly.m in Sources */,
@@ -8274,7 +8228,6 @@
 				2B2064791D3F9CE900246C8D /* _LectureModelObject.m in Sources */,
 				667050561D46369100DD9D6E /* ReportsSearchCellObjectsDirectorImplementation.m in Sources */,
 				9F0A6C1D1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m in Sources */,
-				66E999581D54AFF200161D98 /* TagEditMediator.m in Sources */,
 				66E9994C1D54AFB000161D98 /* TagModuleTableViewCell.m in Sources */,
 				661CA3F51D65CF920047EB68 /* EventOperationFactory.m in Sources */,
 				9F0A85001BC1698B006F79FB /* ResponseDeserializationOperation.m in Sources */,
@@ -8323,7 +8276,6 @@
 				2B2064811D3F9CE900246C8D /* _LectureMaterialPlainObject.m in Sources */,
 				636A37C21BC1413A00B49C3D /* SystemInfrastructureAssembly.m in Sources */,
 				63F613951CB00A220002AEF0 /* SpeakerInfoModuleAssembly.m in Sources */,
-				66E9998E1D54B0F800161D98 /* TagButtonCollectionViewCell.m in Sources */,
 				2B2064771D3F9CE900246C8D /* _EventModelObject.m in Sources */,
 				9F0A6C2E1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m in Sources */,
 				6315BA0A1C9EC2A200999877 /* TableViewSectionHeaderCellObject.m in Sources */,

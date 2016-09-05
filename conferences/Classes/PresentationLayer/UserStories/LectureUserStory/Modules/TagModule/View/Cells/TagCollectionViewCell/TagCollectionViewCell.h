@@ -33,13 +33,4 @@
 @property (nonatomic, weak) IBOutlet UILabel *tagLabel;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *trailingTagLabelConstraint;
 
-/**
- @author Golovko Mikhail
- 
- Метод вызывается, когда была нажата кнопка удаления тега.
- 
- @param sender Отправитель.
- */
-- (void)didTapRemoveButton:(id)sender;
-
 @end

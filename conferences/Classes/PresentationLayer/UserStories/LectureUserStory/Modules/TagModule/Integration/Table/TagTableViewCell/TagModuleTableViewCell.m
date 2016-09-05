@@ -20,9 +20,9 @@
 
 #import "TagModuleTableViewCell.h"
 #import "TagModuleTableViewCellObject.h"
-#import "TagEditMediator.h"
 #import "TagObjectDescriptor.h"
 #import <CrutchKit/CDProxying.h>
+#import "TagMediatorInput.h"
 
 @interface TagModuleTableViewCell ()
 

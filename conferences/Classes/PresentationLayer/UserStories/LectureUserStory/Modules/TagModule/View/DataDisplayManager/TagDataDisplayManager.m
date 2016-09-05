@@ -21,7 +21,6 @@
 #import "TagDataDisplayManager.h"
 #import "TagCollectionViewCellObject.h"
 #import "TagCellSizeCalculator.h"
-#import "TagButtonCollectionViewCellObject.h"
 #import "CollectionViewAnimator.h"
 #import "NIMutableCollectionViewModel.h"
 #import "NICollectionViewActions.h"
@@ -67,23 +66,6 @@ typedef NS_ENUM(NSInteger, TagSectionIndex) {
     self.collectionViewActions = [[NICollectionViewActions alloc] initWithTarget:self];
 
     @weakify(self);
-    
-    NIActionBlock addTagTapBlock = ^BOOL(TagButtonCollectionViewCellObject *object, id target, NSIndexPath *indexPath) {
-        @strongify(self);
-        switch(object.type) {
-            case TagButtonMoreType:
-                [self didTapMoreButton:object];
-                break;
-            case TagButtonAddTagType:
-                [self.delegate dataDisplayManagerDidTapAddButton:self];
-                break;
-            default:
-                break;
-        }
-        return NO;
-    };
-    [self.collectionViewActions attachToClass:[TagButtonCollectionViewCellObject class]
-                                     tapBlock:addTagTapBlock];
 
     NIActionBlock tagTapBlock = ^BOOL(TagCollectionViewCellObject *tagCellObject, id target, NSIndexPath *indexPath) {
         @strongify(self);
@@ -134,9 +116,6 @@ typedef NS_ENUM(NSInteger, TagSectionIndex) {
 
     NSIndexSet *addIndexSet = [self.collectionViewModule addSectionWithTitle:@""];
     self.addButtonSectionIndex = addIndexSet.firstIndex;
-    TagButtonCollectionViewCellObject *cellObject = [self createAddButtonObject];
-    [self.collectionViewModule addObject:cellObject
-                               toSection:self.addButtonSectionIndex];
 
     [self.collectionViewAnimator animateTableViewWithInsertedSectionsIndexSet:addIndexSet
                                                       updatedSectionsIndexSet:nil
@@ -240,22 +219,6 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
                               atIndex:indexPath.row];
 }
 
-#pragma mark - Дополнительные методы
-
-- (void)didTapMoreButton:(TagButtonCollectionViewCellObject *)cellObject {
-    NSIndexPath *removeIndexPath = [self.collectionViewModule indexPathForObject:cellObject];
-    [self.collectionViewModule removeObjectAtIndexPath:removeIndexPath];
-
-    NSArray *insertIndexPaths = [self.collectionViewModule addObjectsFromArray:self.hideTags
-                                                                     toSection:TagItemSectionIndex];
-
-    [self.collectionViewAnimator animateTableViewWithInsertedItemsAtIndexPaths:insertIndexPaths
-                                                        updatedItemsIndexPaths:nil
-                                                        removedItemsIndexPaths:@[removeIndexPath]
-                                                                  batchUpdates:YES];
-
-}
-
 #pragma mark - Методы генерации объектов ячеек
 
 - (NSArray *)generateCellObjects:(NSArray *)tags {
@@ -263,13 +226,6 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [tagObjects addObject:@""];
 
     [tagObjects addObjectsFromArray:[self generateTagContentCellObjects:tags]];
-
-    if (self.addButtonSectionIndex != kUndefineSectionIndex) {
-        [tagObjects addObject:@""];
-        TagButtonCollectionViewCellObject *cellObject = [self createAddButtonObject];
-        [tagObjects addObject:cellObject];
-
-    }
 
     return tagObjects;
 }
@@ -294,12 +250,10 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     if (numberFullRows <= self.numberOfShowLine) {
         return tagObjects;
     }
-
-    TagButtonCollectionViewCellObject *lastTemplateCellObject = [self createMoreButtonWithCount:kMaxCountItemsCollapseFromCalculate];
-
+    
     NSInteger countTags = [self.cellSizeCalculator countItemsInRows:self.numberOfShowLine
                                                      forCellObjects:tagObjects
-                                                     lastCellObject:lastTemplateCellObject];
+                                                     lastCellObject:nil];
 
     NSMutableArray *showObjects = [NSMutableArray array];
     NSArray *showTags = [tagObjects subarrayWithRange:NSMakeRange(0, countTags)];
@@ -307,33 +261,14 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 
     self.hideTags = [tagObjects subarrayWithRange:NSMakeRange(countTags, tagObjects.count - countTags)];
 
-    TagButtonCollectionViewCellObject *lastCellObject = [self createMoreButtonWithCount:self.hideTags.count];
-
-    [showObjects addObject:lastCellObject];
-
     return [showObjects copy];
 }
 
 #pragma mark - Методы создания объектов ячеек
 
-- (TagButtonCollectionViewCellObject *)createAddButtonObject {
-    TagButtonCollectionViewCellObject *cellObject = [[TagButtonCollectionViewCellObject alloc] initWithTextButton:kTagViewAddTagButton
-                                                                                                             type:TagButtonAddTagType];
-    return cellObject;
-}
-
 - (TagCollectionViewCellObject *)createTagCellWithName:(NSString *)tagName {
-    TagCollectionViewCellObject *object = [[TagCollectionViewCellObject alloc] initWithTagName:tagName
-                                                                            enableRemoveButton:self.enableRemoveTagButton
-                                                                                      delegate:self];
+    TagCollectionViewCellObject *object = [[TagCollectionViewCellObject alloc] initWithTagName:tagName];
     return object;
-}
-
-- (TagButtonCollectionViewCellObject *)createMoreButtonWithCount:(NSInteger)count {
-    NSString *textButton = [[NSString alloc] initWithFormat:kTagMoreButton, (long)count];
-    TagButtonCollectionViewCellObject *cellObject = [[TagButtonCollectionViewCellObject alloc] initWithTextButton:textButton
-                                                                                                             type:TagButtonMoreType];
-    return cellObject;
 }
 
 @end

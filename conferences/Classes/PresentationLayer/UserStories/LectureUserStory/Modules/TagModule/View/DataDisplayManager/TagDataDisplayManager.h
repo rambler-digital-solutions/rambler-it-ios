@@ -19,7 +19,6 @@
 // THE SOFTWARE.
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "TagCellDelegate.h"
 
 @class NITableViewModel;
 @class NICollectionViewModel;
@@ -27,7 +26,7 @@
 @protocol TagDataDisplayManagerDelegate;
 
 
-@interface TagDataDisplayManager : NSObject <TagCellDelegate, UICollectionViewDelegateFlowLayout>
+@interface TagDataDisplayManager : NSObject <UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, strong) TagCellSizeCalculator *cellSizeCalculator;
 @property (nonatomic, weak) id<TagDataDisplayManagerDelegate> delegate;

@@ -37,22 +37,6 @@
  */
 @property (nonatomic, strong, readonly) NSString *tagName;
 
-/**
- @author Golovko Mikhail
-
- Флаг включения кнопки удалить
- */
-@property (nonatomic, assign, readonly) BOOL enableRemoveButton;
-
-/**
- @author Golovko Mikhail
-
- Делегат тега
- */
-@property (nonatomic, weak, readonly) id<TagCellDelegate> delegate;
-
-- (instancetype)initWithTagName:(NSString *)tagName
-             enableRemoveButton:(BOOL)enableRemoveButton
-                       delegate:(id <TagCellDelegate>)delegate;
+- (instancetype)initWithTagName:(NSString *)tagName;
 
 @end
