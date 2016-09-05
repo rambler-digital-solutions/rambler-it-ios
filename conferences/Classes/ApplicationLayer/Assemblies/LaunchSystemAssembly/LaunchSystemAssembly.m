@@ -27,6 +27,7 @@
 
 #import "QuickActionAppDelegate.h"
 #import "QuickActionUserActivityFactory.h"
+#import "QuickActionLaunchHandler.h"
 #import "SpotlightAppDelegate.h"
 #import "SpotlightLaunchHandler.h"
 #import "EventLaunchRouter.h"
@@ -58,7 +59,7 @@
                               [definition useInitializer:@selector(initWithLaunchHandlers:userActivityFactory:)
                                               parameters:^(TyphoonMethod *initializer) {
                                                   [initializer injectParameterWith:@[
-                                                                                     [self eventLaunchHandler]
+                                                                                     [self eventQuickActionLaunchHandler]
                                                                                      ]];
                                                   [initializer injectParameterWith:[self quickActionUserActivityFactory]];
                                               }];
@@ -97,6 +98,18 @@
                                               parameters:^(TyphoonMethod *initializer) {
                                                   [initializer injectParameterWith:[self.spotlightIndexerAssembly lectureObjectTransformer]];
                                                   [initializer injectParameterWith:[self lectureLaunchRouter]];
+                                              }];
+                          }];
+}
+
+- (QuickActionLaunchHandler *)eventQuickActionLaunchHandler {
+    return [TyphoonDefinition withClass:[QuickActionLaunchHandler class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition useInitializer:@selector(initWithObjectTransformer:dataCardLaunchRouter:quickActionItemType:)
+                                              parameters:^(TyphoonMethod *initializer) {
+                                                  [initializer injectParameterWith:[self.spotlightIndexerAssembly eventObjectTransformer]];
+                                                  [initializer injectParameterWith:[self eventLaunchRouter]];
+                                                  [initializer injectParameterWith:nil];
                                               }];
                           }];
 }

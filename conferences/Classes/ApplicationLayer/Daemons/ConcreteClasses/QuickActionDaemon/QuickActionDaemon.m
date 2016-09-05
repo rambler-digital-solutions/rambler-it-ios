@@ -21,6 +21,7 @@
 #import "QuickActionDaemon.h"
 
 #import "EventModelObject.h"
+#import "QuickActionConstants.h"
 
 #import <MagicalRecord/MagicalRecord.h>
 #import <UIKit/UIKit.h>
@@ -96,7 +97,9 @@ static NSString *const kEventImageName = @"events-tabbar-icon";
 }
 
 - (void)registerDynamicActionWithEvent:(EventModelObject *)event {
-    NSString *type = [NSString stringWithFormat:@"%@.Dynamic", self.bundle.bundleIdentifier];
+    NSString *type = [NSString stringWithFormat:kQuickActionDynamicTypeFormat,
+                      self.bundle.bundleIdentifier,
+                      NSStringFromClass([EventModelObject class])];
     NSString *title = event.name;
     NSString *description = event.eventDescription;
     NSMutableArray *mutableShortcutItems = [NSMutableArray new];
@@ -111,7 +114,7 @@ static NSString *const kEventImageName = @"events-tabbar-icon";
     UIApplicationShortcutIcon *eventIcon = [UIApplicationShortcutIcon iconWithTemplateImageName:kEventImageName];
     NSString *identifier = [NSString stringWithFormat:@"%@_%@", NSStringFromClass([EventModelObject class]), event.eventId];
     NSDictionary *userInfo = @{
-                               EventModelObjectAttributes.eventId : identifier
+                               kQuickActionItemIdentifierKey : identifier
                                };
     
     UIApplicationShortcutItem *item = [[UIApplicationShortcutItem alloc] initWithType:type
