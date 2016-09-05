@@ -99,7 +99,8 @@ static NSString *const kEventImageName = @"events-tabbar-icon";
     NSString *type = [NSString stringWithFormat:@"%@.Dynamic", self.bundle.bundleIdentifier];
     NSString *title = event.name;
     NSString *description = event.eventDescription;
-    NSMutableArray *mutableShortcutItems = [self.application.shortcutItems mutableCopy];
+    NSMutableArray *mutableShortcutItems = [NSMutableArray new];
+    [mutableShortcutItems addObjectsFromArray:self.application.shortcutItems];
     
     for (UIApplicationShortcutItem *item in mutableShortcutItems) {
         if ([item.localizedTitle isEqualToString:title]) {

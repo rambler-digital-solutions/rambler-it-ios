@@ -409,6 +409,8 @@
 		9F78D7791D5A0330009DDCEA /* LectureObjectIndexerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D7781D5A0330009DDCEA /* LectureObjectIndexerTests.m */; };
 		9F78D77D1D5A075C009DDCEA /* LectureChangeProviderFetchRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D77C1D5A075C009DDCEA /* LectureChangeProviderFetchRequestFactory.m */; };
 		9F78D7801D5A078F009DDCEA /* LectureChangeProviderFetchRequestFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D77F1D5A078F009DDCEA /* LectureChangeProviderFetchRequestFactoryTests.m */; };
+		9F7B821B1D7CAB28002E977A /* QuickActionDaemonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B821A1D7CAB28002E977A /* QuickActionDaemonTests.m */; };
+		9F7B821E1D7CB15E002E977A /* QuickActionMockApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B821D1D7CB15E002E977A /* QuickActionMockApplication.m */; };
 		9F8B49E11D6EEE9000ED176B /* YouTubeIdentifierDeriviator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B49E01D6EEE9000ED176B /* YouTubeIdentifierDeriviator.m */; };
 		9F8B49E41D6EEF4500ED176B /* YouTubeIdentifierDeriviatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B49E31D6EEF4500ED176B /* YouTubeIdentifierDeriviatorTests.m */; };
 		9F8B49E91D6EF72B00ED176B /* YouTubePlayerFactoryImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B49E81D6EF72B00ED176B /* YouTubePlayerFactoryImplementation.m */; };
@@ -1367,6 +1369,9 @@
 		9F78D77B1D5A075C009DDCEA /* LectureChangeProviderFetchRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LectureChangeProviderFetchRequestFactory.h; path = ChangeProviderFetchRequestFactories/ConcreteClasses/LectureChangeProviderFetchRequestFactory/LectureChangeProviderFetchRequestFactory.h; sourceTree = "<group>"; };
 		9F78D77C1D5A075C009DDCEA /* LectureChangeProviderFetchRequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LectureChangeProviderFetchRequestFactory.m; path = ChangeProviderFetchRequestFactories/ConcreteClasses/LectureChangeProviderFetchRequestFactory/LectureChangeProviderFetchRequestFactory.m; sourceTree = "<group>"; };
 		9F78D77F1D5A078F009DDCEA /* LectureChangeProviderFetchRequestFactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LectureChangeProviderFetchRequestFactoryTests.m; path = ApplicationLayerTests/SpotlightIndexer/ChangeProviders/BaseClasses/FetchedResultsControllerChangeProvider/ChangeProviderFetchRequestFactories/ConcreteClasses/LectureChangeProviderFetchRequestFactory/LectureChangeProviderFetchRequestFactoryTests.m; sourceTree = "<group>"; };
+		9F7B821A1D7CAB28002E977A /* QuickActionDaemonTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuickActionDaemonTests.m; path = ApplicationLayerTests/Daemons/QuickActionDaemon/QuickActionDaemonTests.m; sourceTree = "<group>"; };
+		9F7B821C1D7CB15E002E977A /* QuickActionMockApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuickActionMockApplication.h; path = ApplicationLayerTests/Daemons/QuickActionDaemon/QuickActionMockApplication.h; sourceTree = "<group>"; };
+		9F7B821D1D7CB15E002E977A /* QuickActionMockApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuickActionMockApplication.m; path = ApplicationLayerTests/Daemons/QuickActionDaemon/QuickActionMockApplication.m; sourceTree = "<group>"; };
 		9F8B49DF1D6EEE9000ED176B /* YouTubeIdentifierDeriviator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YouTubeIdentifierDeriviator.h; path = YouTubeIdentifierDeriviator/YouTubeIdentifierDeriviator.h; sourceTree = "<group>"; };
 		9F8B49E01D6EEE9000ED176B /* YouTubeIdentifierDeriviator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YouTubeIdentifierDeriviator.m; path = YouTubeIdentifierDeriviator/YouTubeIdentifierDeriviator.m; sourceTree = "<group>"; };
 		9F8B49E31D6EEF4500ED176B /* YouTubeIdentifierDeriviatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YouTubeIdentifierDeriviatorTests.m; path = YouTubeIdentifierDeriviator/YouTubeIdentifierDeriviatorTests.m; sourceTree = "<group>"; };
@@ -6259,6 +6264,24 @@
 			name = LectureChangeProviderFetchRequestFactory;
 			sourceTree = "<group>";
 		};
+		9F7B82181D7CAB07002E977A /* Daemons */ = {
+			isa = PBXGroup;
+			children = (
+				9F7B82191D7CAB0B002E977A /* QuickActionDaemon */,
+			);
+			name = Daemons;
+			sourceTree = "<group>";
+		};
+		9F7B82191D7CAB0B002E977A /* QuickActionDaemon */ = {
+			isa = PBXGroup;
+			children = (
+				9F7B821A1D7CAB28002E977A /* QuickActionDaemonTests.m */,
+				9F7B821C1D7CB15E002E977A /* QuickActionMockApplication.h */,
+				9F7B821D1D7CB15E002E977A /* QuickActionMockApplication.m */,
+			);
+			name = QuickActionDaemon;
+			sourceTree = "<group>";
+		};
 		9F8B49DE1D6EEE5E00ED176B /* YouTubeIdentifierDeriviator */ = {
 			isa = PBXGroup;
 			children = (
@@ -7585,6 +7608,7 @@
 		9FF125231D51E6120098625F /* ApplicationLayerTests */ = {
 			isa = PBXGroup;
 			children = (
+				9F7B82181D7CAB07002E977A /* Daemons */,
 				9FBE89BB1D5CB76900DA0C32 /* LaunchSystem */,
 				9FF125241D51E61B0098625F /* SpotlightIndexer */,
 			);
@@ -8418,6 +8442,7 @@
 				63F613EA1CB111070002AEF0 /* SearchPresenterTests.m in Sources */,
 				635E18D51CA6CECB005B8439 /* EventHeaderModuleAssemblyTests.m in Sources */,
 				63F613E41CB111070002AEF0 /* LectureInteractorTests.m in Sources */,
+				9F7B821B1D7CAB28002E977A /* QuickActionDaemonTests.m in Sources */,
 				63F613D81CB111070002AEF0 /* EventListInteractorTests.m in Sources */,
 				63F613E61CB111070002AEF0 /* LectureRouterTests.m in Sources */,
 				662166501D4F4507000A1D11 /* ReportsSearchInteractorTests.m in Sources */,
@@ -8486,6 +8511,7 @@
 				2B01CEBE1D50A55900DA8E66 /* MetaEventServiceTests.m in Sources */,
 				631CBA721C020CCD00E3EBA8 /* EventListModuleAssemblyTests.m in Sources */,
 				9FAB6A9A1D54BFA00061F333 /* FetchedResultsControllerChangeProviderTests.m in Sources */,
+				9F7B821E1D7CB15E002E977A /* QuickActionMockApplication.m in Sources */,
 				635E18C71CA6B8CE005B8439 /* SpeakerShortInfoModuleAssemblyTests.m in Sources */,
 				9FBE8A351D5F3CD500DA0C32 /* EventGalleryPresenterTests.m in Sources */,
 				9FBE89D81D5CB76900DA0C32 /* EventLaunchRouterTests.m in Sources */,
