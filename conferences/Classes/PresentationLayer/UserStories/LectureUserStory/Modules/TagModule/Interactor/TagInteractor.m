@@ -46,5 +46,4 @@
     return [result copy];
 }
 
-
 @end

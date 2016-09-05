@@ -56,25 +56,9 @@ typedef NS_ENUM(NSInteger, TagSectionIndex) {
     self = [super init];
     if (self) {
         _addButtonSectionIndex = kUndefineSectionIndex;
-        [self setupActions];
     }
 
     return self;
-}
-
-- (void)setupActions {
-    self.collectionViewActions = [[NICollectionViewActions alloc] initWithTarget:self];
-
-    @weakify(self);
-
-    NIActionBlock tagTapBlock = ^BOOL(TagCollectionViewCellObject *tagCellObject, id target, NSIndexPath *indexPath) {
-        @strongify(self);
-        [self.delegate dataDisplayManager:self
-                        didTapTagWithName:tagCellObject.tagName];
-        return NO;
-    };
-    [self.collectionViewActions attachToClass:[TagCollectionViewCellObject class]
-                                     tapBlock:tagTapBlock];
 }
 
 #pragma mark - Методы интерфейса
@@ -91,69 +75,6 @@ typedef NS_ENUM(NSInteger, TagSectionIndex) {
     self.collectionViewAnimator = [CollectionViewAnimator animatorWithCollectionView:collectionView];
 
     return self.collectionViewModule;
-}
-
-- (void)appendAddTagButton {
-    /**
-     @author Golovko Mikhail
-     
-     Если кнопка уже добавленна, то добавлять ещё раз не надо.
-     */
-    if (self.addButtonSectionIndex != kUndefineSectionIndex) {
-        return;
-    }
-    
-    /**
-     @author Golovko Mikhail
-     
-     Если модели нету, то и добавлять некуда. Поэтому поменяем индекс секции на дефолтный
-     для кнопки Add Button. Тогда при создании модели добавится кнопка.
-     */
-    if (self.collectionViewModule == nil) {
-        self.addButtonSectionIndex = TagAddButtonSectionIndex;
-        return;
-    }
-
-    NSIndexSet *addIndexSet = [self.collectionViewModule addSectionWithTitle:@""];
-    self.addButtonSectionIndex = addIndexSet.firstIndex;
-
-    [self.collectionViewAnimator animateTableViewWithInsertedSectionsIndexSet:addIndexSet
-                                                      updatedSectionsIndexSet:nil
-                                                      removedSectionsIndexSet:nil
-                                                                 batchUpdates:YES];
-}
-
-- (void)removeAddTagButton {
-    /**
-     @author Golovko Mikhail
-     
-     Если кнопка не добавлена, то удалять нечего.
-     */
-    if (self.addButtonSectionIndex == kUndefineSectionIndex) {
-        return;
-    }
-
-    /**
-     @author Golovko Mikhail
-     
-     Если модели нет, то удалять неоткуда. Просто сбрасываем индекс, чтобы при
-     создании модели кнопка не добавилась.
-     */
-    if (self.collectionViewModule == nil) {
-        self.addButtonSectionIndex = kUndefineSectionIndex;
-        return;
-    }
-
-    [self.collectionViewModule removeSectionAtIndex:self.addButtonSectionIndex];
-
-    NSIndexSet *removeIndexSet = [[NSIndexSet alloc] initWithIndex:self.addButtonSectionIndex];
-
-    [self.collectionViewAnimator animateTableViewWithInsertedSectionsIndexSet:nil
-                                                      updatedSectionsIndexSet:nil
-                                                      removedSectionsIndexSet:removeIndexSet
-                                                                 batchUpdates:YES];
-
-    self.addButtonSectionIndex = kUndefineSectionIndex;
 }
 
 - (void)setCompressWidth:(BOOL)compressWidth {
@@ -202,21 +123,6 @@ typedef NS_ENUM(NSInteger, TagSectionIndex) {
         return UIEdgeInsetsZero;
     }
     return UIEdgeInsetsMake(kTagSectionTopInset, 0, 0, 0);
-}
-
-- (void)collectionView:(UICollectionView *)collectionView
-didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    [self.collectionViewActions collectionView:collectionView
-                      didSelectItemAtIndexPath:indexPath];
-}
-
-#pragma mark - методы TagCellDelegate
-
-- (void)didTapRemoveTag:(TagCollectionViewCellObject *)cellObject {
-    NSIndexPath *indexPath = [self.collectionViewModule indexPathForObject:cellObject];
-    [self.delegate dataDisplayManager:self
-              didTapRemoveTagWithName:cellObject.tagName
-                              atIndex:indexPath.row];
 }
 
 #pragma mark - Методы генерации объектов ячеек

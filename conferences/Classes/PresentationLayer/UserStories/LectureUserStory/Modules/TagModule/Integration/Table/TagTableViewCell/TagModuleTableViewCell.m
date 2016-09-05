@@ -34,22 +34,6 @@
 
 @synthesize isConfigured = _isConfigured;
 
-- (void)didMoveToSuperview {
-    /**
-     @author Vadim Smal
-     
-     Если при открытие экрана таблица не видна (из за большого хэдера на iPhone 4),
-     ячейка при не правильного размера - из за этого collectionView внутри таблицы
-     неправильно лейаутится (contentSizeObserver:viewDidChangeContentSize:) и обновляется.
-     Если это делать когда показалась, будут различные сайд эффекты. (скролинг, видимость анимации расширенияи т.д.)
-     + тот же механизм используется при написание поста.
-     
-     Поэтому мы задаем правильный размер UICollectionView заранее
-     */
-    [super didMoveToSuperview];
-    self.collectionViewWidthConstraint.constant = [UIScreen mainScreen].bounds.size.width - (self.collectionViewLeadingConstraint.constant * 2);
-}
-
 #pragma mark - Методы NICell
 
 - (BOOL)shouldUpdateCellWithObject:(TagModuleTableViewCellObject *)object {

@@ -27,6 +27,7 @@
 @protocol LectureViewOutput;
 @protocol SpeakerShortInfoModuleInput;
 @class LectureDataDisplayManager;
+@class CollectionViewContentCellAnimator;
 
 @interface LectureViewController : UIViewController <LectureViewInput, LectureDataDisplayManagerDelegate, LectureInfoTableViewCellActionProtocol>
 
@@ -34,6 +35,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (strong, nonatomic) id<LectureViewOutput> output;
+@property (nonatomic, strong) CollectionViewContentCellAnimator *animator;
 @property (strong, nonatomic) LectureDataDisplayManager *dataDisplayManager;
 
 @end
