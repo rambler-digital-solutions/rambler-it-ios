@@ -1,3 +1,5 @@
+// Copyright (c) 2015 RAMBLER&Co
+//
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
@@ -16,28 +18,19 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "CleanLaunchAppDelegate.h"
+#import <UIKit/UIKit.h>
 
-#import "ApplicationConfigurator.h"
-#import "ThirdPartiesConfigurator.h"
-#import "IndexerMonitor.h"
-#import "SpotlightCoreDataStackCoordinator.h"
-#import "CleanLaunchRouter.h"
-#import "Daemon.h"
+@protocol LaunchHandler;
+@class QuickActionUserActivityFactory;
 
-@implementation CleanLaunchAppDelegate
+/**
+ @author Egor Tolstoy
+ 
+ This AppDelegate is responsible for handling application open from QuickActions
+ */
+@interface QuickActionAppDelegate : NSObject <UIApplicationDelegate>
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [self.thirdPartiesConfigurator configurate];
-    [self.applicationConfigurator setupCoreDataStack];
-    [self.applicationConfigurator configureInitialSettings];
-    [self.spotlightCoreDataStackCoordinator setupCoreDataStack];
-    [self.indexerMonitor startMonitoring];
-    [self.quickActionDaemon start];
-    
-    [self.cleanStartRouter openInitialScreen];
-    
-    return YES;
-}
+- (instancetype)initWithLaunchHandlers:(NSArray <id<LaunchHandler>> *)launchHandlers
+                   userActivityFactory:(QuickActionUserActivityFactory *)userActivityFactory;
 
 @end
