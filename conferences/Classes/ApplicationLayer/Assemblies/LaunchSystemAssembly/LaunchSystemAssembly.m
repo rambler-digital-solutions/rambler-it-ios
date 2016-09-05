@@ -25,6 +25,8 @@
 #import "SystemInfrastructureAssembly.h"
 #import "SpotlightIndexerAssembly.h"
 
+#import "QuickActionAppDelegate.h"
+#import "QuickActionUserActivityFactory.h"
 #import "SpotlightAppDelegate.h"
 #import "SpotlightLaunchHandler.h"
 #import "EventLaunchRouter.h"
@@ -45,6 +47,20 @@
                                                                                      [self speakerLaunchHandler],
                                                                                      [self lectureLaunchHandler]
                                                                                      ]];
+                                              }];
+                              definition.scope = TyphoonScopeSingleton;
+                          }];
+}
+
+- (QuickActionAppDelegate *)quickActionAppDelegate {
+    return [TyphoonDefinition withClass:[QuickActionAppDelegate class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition useInitializer:@selector(initWithLaunchHandlers:userActivityFactory:)
+                                              parameters:^(TyphoonMethod *initializer) {
+                                                  [initializer injectParameterWith:@[
+                                                                                     [self eventLaunchHandler]
+                                                                                     ]];
+                                                  [initializer injectParameterWith:[self quickActionUserActivityFactory]];
                                               }];
                               definition.scope = TyphoonScopeSingleton;
                           }];
@@ -121,6 +137,12 @@
                                                   [initializer injectParameterWith:[self.storyboardAssembly lectureStoryboard]];
                                               }];
                           }];
+}
+
+#pragma mark - Factories
+
+- (QuickActionUserActivityFactory *)quickActionUserActivityFactory {
+    return [TyphoonDefinition withClass:[QuickActionUserActivityFactory class]];
 }
 
 @end

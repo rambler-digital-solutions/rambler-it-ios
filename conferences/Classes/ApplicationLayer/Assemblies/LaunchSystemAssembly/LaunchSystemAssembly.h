@@ -26,6 +26,7 @@
 @class SystemInfrastructureAssembly;
 @class SpotlightIndexerAssembly;
 @class SpotlightAppDelegate;
+@class QuickActionAppDelegate;
 
 /**
  @author Egor Tolstoy
@@ -40,5 +41,6 @@
 @property (strong, nonatomic, readonly) SpotlightIndexerAssembly *spotlightIndexerAssembly;
 
 - (SpotlightAppDelegate *)spotlightAppDelegate;
+- (QuickActionAppDelegate *)quickActionAppDelegate;
 
 @end

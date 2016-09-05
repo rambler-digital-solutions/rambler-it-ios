@@ -45,8 +45,10 @@
                                             parameters:^(TyphoonMethod *method) {
                                                 [method injectParameterWith:@[
                                                                               [self cleanStartAppDelegate],
-                                                                              [self.launchSystemAssembly spotlightAppDelegate]
-                                                                              ]];
+                                                                              [self.launchSystemAssembly spotlightAppDelegate],
+                                                                              [self.launchSystemAssembly quickActionAppDelegate]
+                                                                              ]
+                                                                              ];
                                             }];
                               definition.scope = TyphoonScopeSingleton;
                           }];

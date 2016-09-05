@@ -411,6 +411,11 @@
 		9F78D7801D5A078F009DDCEA /* LectureChangeProviderFetchRequestFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D77F1D5A078F009DDCEA /* LectureChangeProviderFetchRequestFactoryTests.m */; };
 		9F7B821B1D7CAB28002E977A /* QuickActionDaemonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B821A1D7CAB28002E977A /* QuickActionDaemonTests.m */; };
 		9F7B821E1D7CB15E002E977A /* QuickActionMockApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B821D1D7CB15E002E977A /* QuickActionMockApplication.m */; };
+		9F7B82221D7DA554002E977A /* QuickActionAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B82211D7DA554002E977A /* QuickActionAppDelegate.m */; };
+		9F7B82261D7DA8B5002E977A /* QuickActionLaunchHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B82251D7DA8B5002E977A /* QuickActionLaunchHandler.m */; };
+		9F7B82291D7DA9E9002E977A /* QuickActionAppDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B82281D7DA9E9002E977A /* QuickActionAppDelegateTests.m */; };
+		9F7B822D1D7DAB51002E977A /* QuickActionUserActivityFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B822C1D7DAB51002E977A /* QuickActionUserActivityFactory.m */; };
+		9F7B82301D7DABB3002E977A /* QuickActionUserActivityFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B822F1D7DABB3002E977A /* QuickActionUserActivityFactoryTests.m */; };
 		9F8B49E11D6EEE9000ED176B /* YouTubeIdentifierDeriviator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B49E01D6EEE9000ED176B /* YouTubeIdentifierDeriviator.m */; };
 		9F8B49E41D6EEF4500ED176B /* YouTubeIdentifierDeriviatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B49E31D6EEF4500ED176B /* YouTubeIdentifierDeriviatorTests.m */; };
 		9F8B49E91D6EF72B00ED176B /* YouTubePlayerFactoryImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B49E81D6EF72B00ED176B /* YouTubePlayerFactoryImplementation.m */; };
@@ -1372,6 +1377,14 @@
 		9F7B821A1D7CAB28002E977A /* QuickActionDaemonTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuickActionDaemonTests.m; path = ApplicationLayerTests/Daemons/QuickActionDaemon/QuickActionDaemonTests.m; sourceTree = "<group>"; };
 		9F7B821C1D7CB15E002E977A /* QuickActionMockApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuickActionMockApplication.h; path = ApplicationLayerTests/Daemons/QuickActionDaemon/QuickActionMockApplication.h; sourceTree = "<group>"; };
 		9F7B821D1D7CB15E002E977A /* QuickActionMockApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuickActionMockApplication.m; path = ApplicationLayerTests/Daemons/QuickActionDaemon/QuickActionMockApplication.m; sourceTree = "<group>"; };
+		9F7B82201D7DA554002E977A /* QuickActionAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuickActionAppDelegate.h; path = QuickActionAppDelegate/QuickActionAppDelegate.h; sourceTree = "<group>"; };
+		9F7B82211D7DA554002E977A /* QuickActionAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuickActionAppDelegate.m; path = QuickActionAppDelegate/QuickActionAppDelegate.m; sourceTree = "<group>"; };
+		9F7B82241D7DA8B5002E977A /* QuickActionLaunchHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuickActionLaunchHandler.h; path = QuickActionLaunchHandler/QuickActionLaunchHandler.h; sourceTree = "<group>"; };
+		9F7B82251D7DA8B5002E977A /* QuickActionLaunchHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuickActionLaunchHandler.m; path = QuickActionLaunchHandler/QuickActionLaunchHandler.m; sourceTree = "<group>"; };
+		9F7B82281D7DA9E9002E977A /* QuickActionAppDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuickActionAppDelegateTests.m; path = QuickActionAppDelegate/QuickActionAppDelegateTests.m; sourceTree = "<group>"; };
+		9F7B822B1D7DAB51002E977A /* QuickActionUserActivityFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuickActionUserActivityFactory.h; path = CleanLaunchAppDelegate/QuickActionUserActivityFactory/QuickActionUserActivityFactory.h; sourceTree = "<group>"; };
+		9F7B822C1D7DAB51002E977A /* QuickActionUserActivityFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuickActionUserActivityFactory.m; path = CleanLaunchAppDelegate/QuickActionUserActivityFactory/QuickActionUserActivityFactory.m; sourceTree = "<group>"; };
+		9F7B822F1D7DABB3002E977A /* QuickActionUserActivityFactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuickActionUserActivityFactoryTests.m; path = QuickActionAppDelegate/QuickActionUserActivityFactory/QuickActionUserActivityFactoryTests.m; sourceTree = "<group>"; };
 		9F8B49DF1D6EEE9000ED176B /* YouTubeIdentifierDeriviator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YouTubeIdentifierDeriviator.h; path = YouTubeIdentifierDeriviator/YouTubeIdentifierDeriviator.h; sourceTree = "<group>"; };
 		9F8B49E01D6EEE9000ED176B /* YouTubeIdentifierDeriviator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YouTubeIdentifierDeriviator.m; path = YouTubeIdentifierDeriviator/YouTubeIdentifierDeriviator.m; sourceTree = "<group>"; };
 		9F8B49E31D6EEF4500ED176B /* YouTubeIdentifierDeriviatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YouTubeIdentifierDeriviatorTests.m; path = YouTubeIdentifierDeriviator/YouTubeIdentifierDeriviatorTests.m; sourceTree = "<group>"; };
@@ -6282,6 +6295,51 @@
 			name = QuickActionDaemon;
 			sourceTree = "<group>";
 		};
+		9F7B821F1D7DA546002E977A /* QuickActionAppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				9F7B822A1D7DAB3E002E977A /* QuickActionUserActivityFactory */,
+				9F7B82201D7DA554002E977A /* QuickActionAppDelegate.h */,
+				9F7B82211D7DA554002E977A /* QuickActionAppDelegate.m */,
+			);
+			name = QuickActionAppDelegate;
+			sourceTree = "<group>";
+		};
+		9F7B82231D7DA8A7002E977A /* QuickActionLaunchHandler */ = {
+			isa = PBXGroup;
+			children = (
+				9F7B82241D7DA8B5002E977A /* QuickActionLaunchHandler.h */,
+				9F7B82251D7DA8B5002E977A /* QuickActionLaunchHandler.m */,
+			);
+			name = QuickActionLaunchHandler;
+			sourceTree = "<group>";
+		};
+		9F7B82271D7DA9DC002E977A /* QuickActionAppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				9F7B822E1D7DABA6002E977A /* QuickActionUserActivityFactory */,
+				9F7B82281D7DA9E9002E977A /* QuickActionAppDelegateTests.m */,
+			);
+			name = QuickActionAppDelegate;
+			sourceTree = "<group>";
+		};
+		9F7B822A1D7DAB3E002E977A /* QuickActionUserActivityFactory */ = {
+			isa = PBXGroup;
+			children = (
+				9F7B822B1D7DAB51002E977A /* QuickActionUserActivityFactory.h */,
+				9F7B822C1D7DAB51002E977A /* QuickActionUserActivityFactory.m */,
+			);
+			name = QuickActionUserActivityFactory;
+			sourceTree = "<group>";
+		};
+		9F7B822E1D7DABA6002E977A /* QuickActionUserActivityFactory */ = {
+			isa = PBXGroup;
+			children = (
+				9F7B822F1D7DABB3002E977A /* QuickActionUserActivityFactoryTests.m */,
+			);
+			name = QuickActionUserActivityFactory;
+			sourceTree = "<group>";
+		};
 		9F8B49DE1D6EEE5E00ED176B /* YouTubeIdentifierDeriviator */ = {
 			isa = PBXGroup;
 			children = (
@@ -6536,6 +6594,7 @@
 		9FBE89841D5CB71300DA0C32 /* AppDelegates */ = {
 			isa = PBXGroup;
 			children = (
+				9F7B821F1D7DA546002E977A /* QuickActionAppDelegate */,
 				9FBE89B71D5CB72D00DA0C32 /* CleanLaunchAppDelegate */,
 				9FBE89881D5CB71300DA0C32 /* SpotlightAppDelegate */,
 				9FBE898B1D5CB71300DA0C32 /* TyphoonAppDelegate */,
@@ -6583,6 +6642,7 @@
 		9FBE89921D5CB71300DA0C32 /* ConcreteClasses */ = {
 			isa = PBXGroup;
 			children = (
+				9F7B82231D7DA8A7002E977A /* QuickActionLaunchHandler */,
 				9FBE89931D5CB71300DA0C32 /* SpotlightLaunchHandler */,
 			);
 			path = ConcreteClasses;
@@ -6711,6 +6771,7 @@
 		9FBE89BC1D5CB76900DA0C32 /* AppDelegates */ = {
 			isa = PBXGroup;
 			children = (
+				9F7B82271D7DA9DC002E977A /* QuickActionAppDelegate */,
 				9FBE89BD1D5CB76900DA0C32 /* CleanLaunchAppDelegate */,
 				9FBE89BF1D5CB76900DA0C32 /* SpotlightAppDelegate */,
 				9FBE89C11D5CB76900DA0C32 /* TyphoonAppDelegate */,
@@ -8119,6 +8180,7 @@
 				631808691C4A870C00A61E7D /* LectureMaterialInfoTableViewCell.m in Sources */,
 				63F613721CB00A220002AEF0 /* EventInfoTableViewCell.m in Sources */,
 				63F613671CB00A220002AEF0 /* LectureInfoTableViewCellObject.m in Sources */,
+				9F7B82261D7DA8B5002E977A /* QuickActionLaunchHandler.m in Sources */,
 				2B2064971D3F9CE900246C8D /* SocialNetworkAccountPlainObject.m in Sources */,
 				63F6139B1CB00A220002AEF0 /* SpeakerInfoTableViewCell.m in Sources */,
 				667050101D46140200DD9D6E /* ReportsSearchInteractor.m in Sources */,
@@ -8199,6 +8261,7 @@
 				9F78D74B1D59D73E009DDCEA /* IndexState+CoreDataProperties.m in Sources */,
 				63F6135E1CB00A220002AEF0 /* EventHeaderView.m in Sources */,
 				9FE1398D1D65F3E900D7BF44 /* SearchDataDisplayManager.m in Sources */,
+				9F7B82221D7DA554002E977A /* QuickActionAppDelegate.m in Sources */,
 				9FF74FFA1D26C448000D208D /* EventListQuery.m in Sources */,
 				9F1830D71BC125C3000E21A5 /* ParseResponseValidator.m in Sources */,
 				631808421C482B1300A61E7D /* SpeakerShortInfoRouter.m in Sources */,
@@ -8301,6 +8364,7 @@
 				9F40779C1D2C109200D47EF6 /* DirectionObjectMapper.m in Sources */,
 				9F0A85031BC1698B006F79FB /* OperationDebugDescriptionFormatter.m in Sources */,
 				63F613861CB00A220002AEF0 /* PastEventCellObjectBuilder.m in Sources */,
+				9F7B822D1D7DAB51002E977A /* QuickActionUserActivityFactory.m in Sources */,
 				9F0A84FC1BC1698B006F79FB /* CompoundOperationDebugDescriptionFormatter.m in Sources */,
 				9F0A84FE1BC1698B006F79FB /* RequestConfigurationOperation.m in Sources */,
 				9FBE8AB51D630D4C00DA0C32 /* EventGalleryAssembly.m in Sources */,
@@ -8457,6 +8521,7 @@
 				63F613ED1CB111070002AEF0 /* SpeakerInfoInteractorTests.m in Sources */,
 				9F78D76B1D59EB52009DDCEA /* SpeakerObjectIndexerTests.m in Sources */,
 				631CBA741C020CCD00E3EBA8 /* EventModuleAssemblyTests.m in Sources */,
+				9F7B82291D7DA9E9002E977A /* QuickActionAppDelegateTests.m in Sources */,
 				63D86BDD1C143FCE00986536 /* DateFormatterTests.m in Sources */,
 				9FE139261D65CC2500D7BF44 /* SuggestServiceImplementationTests.m in Sources */,
 				9F78D75D1D59E778009DDCEA /* SpeakerObjectTransformerTests.m in Sources */,
@@ -8548,6 +8613,7 @@
 				635E18BF1CA6A0A9005B8439 /* SpeakerInfoModuleAssemblyTests.m in Sources */,
 				9FAB6A771D548C480061F333 /* IndexTransactionBatchTests.m in Sources */,
 				635E18CD1CA6C5E5005B8439 /* StubTestHelper.m in Sources */,
+				9F7B82301D7DABB3002E977A /* QuickActionUserActivityFactoryTests.m in Sources */,
 				631CBA7E1C02140600E3EBA8 /* RamblerLocationModuleAssemblyTests.m in Sources */,
 				63F613DF1CB111070002AEF0 /* EventDataDisplayManagerTests.m in Sources */,
 				63F613E81CB111070002AEF0 /* SearchDataDisplayManagerTests.m in Sources */,

@@ -109,8 +109,9 @@ static NSString *const kEventImageName = @"events-tabbar-icon";
     }
     
     UIApplicationShortcutIcon *eventIcon = [UIApplicationShortcutIcon iconWithTemplateImageName:kEventImageName];
+    NSString *identifier = [NSString stringWithFormat:@"%@_%@", NSStringFromClass([EventModelObject class]), event.eventId];
     NSDictionary *userInfo = @{
-                               EventModelObjectAttributes.eventId : event.eventId
+                               EventModelObjectAttributes.eventId : identifier
                                };
     
     UIApplicationShortcutItem *item = [[UIApplicationShortcutItem alloc] initWithType:type
