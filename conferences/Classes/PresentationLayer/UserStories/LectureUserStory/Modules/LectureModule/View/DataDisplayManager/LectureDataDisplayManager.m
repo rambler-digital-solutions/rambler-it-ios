@@ -28,7 +28,7 @@
 #import "VideoRecordTableViewCellObject.h"
 #import "LectureMaterialInfoTableViewCellObject.h"
 #import "LectureMaterialPlainObject.h"
-
+#import "NITyphoonCellFactory.h"
 @interface LectureDataDisplayManager ()
 
 @property (strong, nonatomic) NITableViewModel *tableViewModel;
@@ -78,7 +78,7 @@
     NSArray *cellObjects = [self generateCellObjects];
     
     self.tableViewModel = [[NITableViewModel alloc] initWithSectionedArray:cellObjects
-                                                                  delegate:(id)[NICellFactory class]];
+                                                                  delegate:(id)[NITyphoonCellFactory class]];
 }
 
 - (void)setupTableViewActions {

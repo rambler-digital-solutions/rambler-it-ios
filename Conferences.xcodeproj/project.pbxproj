@@ -1112,7 +1112,6 @@
 		66E9996B1D54B06400161D98 /* TagCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagCollectionView.m; path = TagModule/View/TagCollectionView.m; sourceTree = "<group>"; };
 		66E9996C1D54B06400161D98 /* TagCollectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TagCollectionView.xib; path = TagModule/View/TagCollectionView.xib; sourceTree = "<group>"; };
 		66E9996D1D54B06400161D98 /* TagViewInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagViewInput.h; path = TagModule/View/TagViewInput.h; sourceTree = "<group>"; };
-		66E9996E1D54B06400161D98 /* TagViewOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagViewOutput.h; path = TagModule/View/TagViewOutput.h; sourceTree = "<group>"; };
 		66E999731D54B08B00161D98 /* TagDataDisplayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagDataDisplayManager.h; path = TagModule/View/DataDisplayManager/TagDataDisplayManager.h; sourceTree = "<group>"; };
 		66E999741D54B08B00161D98 /* TagDataDisplayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagDataDisplayManager.m; path = TagModule/View/DataDisplayManager/TagDataDisplayManager.m; sourceTree = "<group>"; };
 		66E999751D54B08B00161D98 /* TagModuleViewConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagModuleViewConstants.h; path = TagModule/View/DataDisplayManager/TagModuleViewConstants.h; sourceTree = "<group>"; };
@@ -4267,7 +4266,6 @@
 				66E9996B1D54B06400161D98 /* TagCollectionView.m */,
 				66E9996C1D54B06400161D98 /* TagCollectionView.xib */,
 				66E9996D1D54B06400161D98 /* TagViewInput.h */,
-				66E9996E1D54B06400161D98 /* TagViewOutput.h */,
 				66E999691D54B05300161D98 /* DataDisplayManager */,
 			);
 			name = View;

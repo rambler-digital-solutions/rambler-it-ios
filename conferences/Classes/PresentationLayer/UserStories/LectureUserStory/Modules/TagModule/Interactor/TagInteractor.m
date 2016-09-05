@@ -36,18 +36,6 @@
     return [self plainStringFromObjects:tags];
 }
 
-- (void)addTagWithName:(NSString *)tagName
-   forObjectDescriptor:(TagObjectDescriptor *)objectDescriptor {
-    [self.tagService addTagWithName:tagName
-                forObjectDescriptor:objectDescriptor];
-}
-
-- (void)removeTagWithName:(NSString *)tagName
-      forObjectDescriptor:(TagObjectDescriptor *)objectDescriptor {
-    [self.tagService removeTagWithName:tagName
-                   forObjectDescriptor:objectDescriptor];
-}
-
 #pragma mark - Дополнительные методы
 
 - (NSArray *)plainStringFromObjects:(NSArray *)array {

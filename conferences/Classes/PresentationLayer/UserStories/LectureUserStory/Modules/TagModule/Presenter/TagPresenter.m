@@ -49,69 +49,10 @@
         [self.view setupHorizontalContentAlign];
     }
 
-    if (moduleConfig.enableAddButton) {
-        [self.view showAddButton];
-    }
-    else {
-        [self.view hideAddButton];
-    }
-    
-    if (moduleConfig.enableRemoveButton) {
-        [self.view enableRemoveTag];
-    }
-    else {
-        [self.view disableRemoveTag];
-    }
-
-
     [self.view setupShowNumberOfLines:moduleConfig.numberOfShowLine];
 
     [self updateTagsInView];
 }
-
-- (void)showAddButton {
-    [self.view showAddButton];
-}
-
-- (void)hideAddButton {
-    [self.view hideAddButton];
-}
-
-- (void)addTagWithName:(NSString *)name {
-    [self.interactor addTagWithName:name
-                forObjectDescriptor:self.moduleConfig.objectDescriptor];
-    [self.view appendTagWithName:name];
-}
-
-#pragma mark - Методы TagViewOutput
-
-- (void)didTriggerTapAddButton {
-    id <TagModuleOutput> output = self.output;
-    if ([output respondsToSelector:@selector(didTapAddButton)]) {
-        [output didTapAddButton];
-    }
-}
-
-- (void)didTriggerTapTagWithName:(NSString *)name {
-    id <TagModuleOutput> output = self.output;
-    if ([output respondsToSelector:@selector(didTapTagWithName:)]) {
-        [output didTapTagWithName:name];
-    }
-}
-
-- (void)didTriggerTapRemoveTagWithName:(NSString *)name
-                               atIndex:(NSInteger)index {
-    [self.interactor removeTagWithName:name
-                         forObjectDescriptor:self.moduleConfig.objectDescriptor];
-    [self.view removeTagAtIndex:index];
-
-    id <TagModuleOutput> output = self.output;
-    if ([output respondsToSelector:@selector(didRemoveTagWithName:)]) {
-        [output didRemoveTagWithName:name];
-    }
-}
-
-#pragma mark - Методы TagInteractorOutput
 
 #pragma mark - Дополнительные методы
 

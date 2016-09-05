@@ -28,7 +28,7 @@
 @class TagCellSizeConfig;
 
 
-@interface TagCollectionView : UICollectionView <TagViewInput, TagDataDisplayManagerDelegate, TagModuleInput>
+@interface TagCollectionView : UICollectionView <TagViewInput, TagModuleInput>
 
 + (TagCollectionView *)collectionView;
 

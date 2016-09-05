@@ -19,7 +19,6 @@
 // THE SOFTWARE.
 
 #import "TagCollectionView.h"
-#import "TagViewOutput.h"
 #import "UICollectionViewLeftAlignedLayout.h"
 #import "TagModuleInput.h"
 #import "TagCellSizeConfig.h"
@@ -86,51 +85,6 @@
     [self.dataDisplayManager setCompressWidth:NO];
 }
 
-- (void)hideAddButton {
-    [self.dataDisplayManager removeAddTagButton];
-}
-
-- (void)showAddButton {
-    [self.dataDisplayManager appendAddTagButton];
-}
-
-- (void)enableRemoveTag {
-    self.dataDisplayManager.enableRemoveTagButton = YES;
-}
-
-- (void)disableRemoveTag {
-    self.dataDisplayManager.enableRemoveTagButton = NO;
-}
-
-- (void)removeTagAtIndex:(NSInteger)index {
-    [self.dataDisplayManager removeTagAtIndex:index];
-}
-
-- (void)appendTagWithName:(NSString *)tagName {
-    [self.dataDisplayManager appendTagWithName:tagName];
-}
-
-- (void)setupShowNumberOfLines:(NSInteger)lines {
-    self.dataDisplayManager.numberOfShowLine = lines;
-}
-
-#pragma mark - Методы TagDataDisplayManagerDelegate
-
-- (void)dataDisplayManagerDidTapAddButton:(TagDataDisplayManager *)dataDisplayManager {
-    [self.output didTriggerTapAddButton];
-}
-
-- (void)dataDisplayManager:(TagDataDisplayManager *)dataDisplayManager
-         didTapTagWithName:(NSString *)tagName {
-    [self.output didTriggerTapTagWithName:tagName];
-}
-
-- (void)dataDisplayManager:(TagDataDisplayManager *)dataDisplayManager
-   didTapRemoveTagWithName:(NSString *)tagName
-                   atIndex:(NSInteger)index {
-    [self.output didTriggerTapRemoveTagWithName:tagName atIndex:index];
-}
-
 #pragma mark - Методы TagModuleInput
 
 - (void)configureModuleWithModuleConfig:(TagModuleConfig *)moduleConfig
@@ -139,8 +93,10 @@
                                          moduleOutput:moduleOutput];
 }
 
-- (void)addTagWithName:(NSString *)name {
-    [self.moduleInput addTagWithName:name];
+- (void)setupShowNumberOfLines:(NSInteger)lines {
+    self.dataDisplayManager.numberOfShowLine = lines;
 }
+
+
 
 @end

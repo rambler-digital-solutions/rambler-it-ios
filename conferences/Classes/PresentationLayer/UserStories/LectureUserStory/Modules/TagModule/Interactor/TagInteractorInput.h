@@ -39,26 +39,4 @@
  */
 - (NSArray *)obtainTagsFromObjectDescriptor:(TagObjectDescriptor *)objectDescriptor
                     excludeObjectDescriptor:(TagObjectDescriptor *)excludeObjectDescriptor;
-
-/**
- @author Golovko Mikhail
- 
- Метод добавляет тег объекту
- 
- @param tagName          Имя нового тега
- @param objectDescriptor Информация об объекте
- */
-- (void)addTagWithName:(NSString *)tagName
-   forObjectDescriptor:(TagObjectDescriptor *)objectDescriptor;
-
-/**
- @author Golovko Mikhail
- 
- Метод удаляет тег у объекта
- 
- @param tagName          Имя нового тега
- @param objectDescriptor Информация об объекте
- */
-- (void)removeTagWithName:(NSString *)tagName
-      forObjectDescriptor:(TagObjectDescriptor *)objectDescriptor;
 @end
