@@ -30,13 +30,6 @@
 
 /**
  @author Golovko Mikhail
- 
- Флаг включения кнопки удалить тег
- */
-@property (nonatomic, assign) BOOL enableRemoveTagButton;
-
-/**
- @author Golovko Mikhail
 
  Флаг сжатия ячеек по ширине.
  */

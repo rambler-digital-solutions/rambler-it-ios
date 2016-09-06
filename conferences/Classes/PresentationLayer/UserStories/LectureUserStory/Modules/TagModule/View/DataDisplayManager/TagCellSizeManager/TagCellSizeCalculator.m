@@ -22,11 +22,10 @@
 #import "TagCellSizeConfig.h"
 #import "NICollectionViewCellFactory.h"
 #import "TagCellSizeRowCalculator.h"
-
+#import "TagCollectionViewCellObject.h"
+#import "TagModuleViewConstants.h"
 
 @interface TagCellSizeCalculator ()
-
-@property (nonatomic, strong) NSMutableDictionary *prototypeCells;
 
 @end
 
@@ -39,7 +38,6 @@
                                config:(TagCellSizeConfig *)config {
     self = [super init];
     if (self) {
-        _prototypeCells = [NSMutableDictionary new];
         _rowCalculator = rowCalculator;
         _config = config;
     }
@@ -131,47 +129,16 @@
 
 #pragma mark - Дополнительные методы
 
-- (UICollectionViewCell *)cellWithIdentifier:(id)identifier {
-    return self.prototypeCells[identifier];
-}
+- (CGSize)fullSizeForCellObject:(TagCollectionViewCellObject *)cellObject {
 
-- (void)addCellToCache:(UICollectionViewCell *)cell withIdentifier:(id)identifier {
-    self.prototypeCells[identifier] = cell;
-}
-
-- (UICollectionViewCell *)cellWithNib:(UINib *)nib
-                               object:(id)object {
-    UICollectionViewCell* cell = nil;
-
-    NSString* identifier = NSStringFromClass([object class]);
-
-    cell = [self cellWithIdentifier:identifier];
-
-    if (!cell) {
-        cell = [[nib instantiateWithOwner:nil
-                                  options:nil] firstObject];
-        if (cell) {
-            [self addCellToCache:cell withIdentifier:identifier];
-        }
-    }
-
-    return cell;
-}
-
-- (CGSize)fullSizeForCellObject:(id <NICollectionViewNibCellObject>)cellObject {
-
-    UICollectionViewCell* cell = nil;
-
-    UINib *nib = [cellObject collectionViewCellNib];
-    if (nib) {
-        cell = [self cellWithNib:nib object:cellObject];
-    }
-
-    if ([cell respondsToSelector:@selector(shouldUpdateCellWithObject:)]) {
-        [(id<NICollectionViewCell>)cell shouldUpdateCellWithObject:cellObject];
-    }
-
-    return [cell systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    CGSize size = CGSizeMake(0, kItemHeight);
+    NSString *tagName = cellObject.tagName;
+    CGFloat widthText = [tagName boundingRectWithSize:size
+                                          options:NSStringDrawingUsesLineFragmentOrigin
+                                       attributes:@{ NSFontAttributeName:self.config.font }
+                                          context:nil].size.width;
+    size.width = ceil(widthText) + ceil(kSideItemInset) * 2;
+    return size;
 }
 
 - (CGSize)compressingCellSize:(CGSize)cellSize {

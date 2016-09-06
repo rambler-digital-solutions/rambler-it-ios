@@ -18,6 +18,13 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+static const NSInteger TagModuleDisableCollapseTags = 0;
 
-const NSInteger TagModuleDisableCollapseTags = 0;
+static const CGFloat kLeftContentSpacing = 15;
+static const CGFloat kRightContentSpacing = 15;
+static const CGFloat kItemSpacing = 5.0f;
+static const CGFloat kItemHeight = 22.0f;
+static const CGFloat kSideItemInset = 10.0f;
+static const CGFloat kSizeFontTagText = 14.0f;
+
+static NSString *const kNameFontTagText = @"HelveticaNeue";

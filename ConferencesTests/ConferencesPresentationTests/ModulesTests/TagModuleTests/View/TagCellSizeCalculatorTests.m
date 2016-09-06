@@ -47,7 +47,10 @@ const CGFloat kCalculatorItemSpacing = 7.0f;
     [super setUp];
 
     self.mockConfig = [[TagCellSizeConfig alloc] initWithContentWidth:kCalculatorContentWidth
-                                                          itemSpacing:kCalculatorItemSpacing];
+                                                          itemSpacing:kCalculatorItemSpacing
+                                                           itemHeight:0
+                                                        itemSideInset:0
+                                                                 font:nil];
 
     self.mockRowCalculator = OCMClassMock([TagCellSizeRowCalculator class]);
 

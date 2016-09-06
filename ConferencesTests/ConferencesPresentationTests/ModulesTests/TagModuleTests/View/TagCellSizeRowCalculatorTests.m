@@ -38,7 +38,10 @@ const CGFloat kRowCalculatorItemSpacing = 7.0f;
     [super setUp];
 
     self.mockConfig = [[TagCellSizeConfig alloc] initWithContentWidth:kRowCalculatorContentWidth
-                                                          itemSpacing:kRowCalculatorItemSpacing];
+                                                          itemSpacing:kRowCalculatorItemSpacing
+                                                           itemHeight:0
+                                                        itemSideInset:0
+                                                                 font:nil];;
 
     self.calculator = [[TagCellSizeRowCalculator alloc] initWithConfig:self.mockConfig];
 }

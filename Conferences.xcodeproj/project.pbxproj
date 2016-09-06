@@ -1035,6 +1035,7 @@
 		63FDCE021BBDBA2A00A43B60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63FDCE041BBDBA2A00A43B60 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63FDCE051BBDBA2A00A43B60 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6612BF6F1D7ECDEA00E07586 /* TagModuleViewConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TagModuleViewConstants.h; path = TagModule/View/Constants/TagModuleViewConstants.h; sourceTree = "<group>"; };
 		661CA3F31D65CF920047EB68 /* EventOperationFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventOperationFactory.h; path = OperationFactories/EventListOperationFactory/EventOperationFactory.h; sourceTree = "<group>"; };
 		661CA3F41D65CF920047EB68 /* EventOperationFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventOperationFactory.m; path = OperationFactories/EventListOperationFactory/EventOperationFactory.m; sourceTree = "<group>"; };
 		661CA3FC1D65CFF70047EB68 /* LastModifiedMapperOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LastModifiedMapperOperation.h; path = MiscellaneousOperations/LastModifiedMapperOperation/LastModifiedMapperOperation.h; sourceTree = "<group>"; };
@@ -1158,7 +1159,6 @@
 		66E9996D1D54B06400161D98 /* TagViewInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagViewInput.h; path = TagModule/View/TagViewInput.h; sourceTree = "<group>"; };
 		66E999731D54B08B00161D98 /* TagDataDisplayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagDataDisplayManager.h; path = TagModule/View/DataDisplayManager/TagDataDisplayManager.h; sourceTree = "<group>"; };
 		66E999741D54B08B00161D98 /* TagDataDisplayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagDataDisplayManager.m; path = TagModule/View/DataDisplayManager/TagDataDisplayManager.m; sourceTree = "<group>"; };
-		66E999751D54B08B00161D98 /* TagModuleViewConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagModuleViewConstants.h; path = TagModule/View/DataDisplayManager/TagModuleViewConstants.h; sourceTree = "<group>"; };
 		66E999781D54B0A000161D98 /* TagCellSizeCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagCellSizeCalculator.h; path = TagModule/View/DataDisplayManager/TagCellSizeManager/TagCellSizeCalculator.h; sourceTree = "<group>"; };
 		66E999791D54B0A000161D98 /* TagCellSizeCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagCellSizeCalculator.m; path = TagModule/View/DataDisplayManager/TagCellSizeManager/TagCellSizeCalculator.m; sourceTree = "<group>"; };
 		66E9997A1D54B0A000161D98 /* TagCellSizeConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagCellSizeConfig.h; path = TagModule/View/DataDisplayManager/TagCellSizeManager/TagCellSizeConfig.h; sourceTree = "<group>"; };
@@ -3977,6 +3977,14 @@
 			path = "conferences/Supporting Files";
 			sourceTree = SOURCE_ROOT;
 		};
+		6612BF6E1D7ECDC500E07586 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				6612BF6F1D7ECDEA00E07586 /* TagModuleViewConstants.h */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
 		661CA3F61D65CFA80047EB68 /* MiscellaneousOperations */ = {
 			isa = PBXGroup;
 			children = (
@@ -4428,6 +4436,7 @@
 		66E9993A1D54AF4500161D98 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6612BF6E1D7ECDC500E07586 /* Constants */,
 				66E999721D54B07600161D98 /* CellObjects */,
 				66E999711D54B07200161D98 /* Cells */,
 				66E9996A1D54B06400161D98 /* TagCollectionView.h */,
@@ -4502,7 +4511,6 @@
 				66E999771D54B09000161D98 /* TagCellSizeManager */,
 				66E999731D54B08B00161D98 /* TagDataDisplayManager.h */,
 				66E999741D54B08B00161D98 /* TagDataDisplayManager.m */,
-				66E999751D54B08B00161D98 /* TagModuleViewConstants.h */,
 			);
 			name = DataDisplayManager;
 			sourceTree = "<group>";
