@@ -29,7 +29,7 @@
 - (NSArray *)buildCellObjectsWithEvents:(NSArray *)events {
     NSMutableArray *objects = [NSMutableArray new];
     for (EventPlainObject *event in events) {
-        NSString *date = [self.dateFormatter obtainDateWithDayMonthFormat:event.startDate];
+        NSString *date = [self obtainDateForEvent:event];
         NSString *time = [self.dateFormatter obtainDateWithTimeFormat:event.startDate];
         EventListTableViewCellObject *object = [EventListTableViewCellObject objectWithEvent:event
                                                                                                    eventDate:date
@@ -39,6 +39,27 @@
     }
     
     return [objects copy];
+}
+
+- (NSString *)obtainDateForEvent:(EventPlainObject *)event {
+    NSDate *eventDate = event.startDate;
+    NSDate *currentDate = [NSDate date];
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *eventDateComponents = [calendar components:NSCalendarUnitYear
+                                                        fromDate:eventDate];
+    NSDateComponents *currentDateComponents = [calendar components:NSCalendarUnitYear
+                                                          fromDate:currentDate];
+    NSInteger eventYear = eventDateComponents.year;
+    NSInteger currentYear = currentDateComponents.year;
+    
+    NSString *result;
+    if (eventYear == currentYear) {
+        result = [self.dateFormatter obtainDateWithDayMonthFormat:eventDate];
+    } else {
+        result = [self.dateFormatter obtainDateWithDayMonthYearFormat:eventDate];
+    }
+    return result;
 }
 
 @end
