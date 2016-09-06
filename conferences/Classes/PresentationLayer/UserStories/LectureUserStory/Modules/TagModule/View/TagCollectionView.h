@@ -24,7 +24,6 @@
 #import "TagModuleInput.h"
 
 @class TagDataDisplayManager;
-@protocol TagViewOutput;
 @class TagCellSizeConfig;
 
 
@@ -33,7 +32,6 @@
 + (TagCollectionView *)collectionView;
 
 @property (nonatomic, strong) id<TagModuleInput> moduleInput;
-@property (nonatomic, strong) id<TagViewOutput> output;
 @property (nonatomic, strong) TagDataDisplayManager *dataDisplayManager;
 @property (nonatomic, strong) TagCellSizeConfig *cellSizeConfig;
 

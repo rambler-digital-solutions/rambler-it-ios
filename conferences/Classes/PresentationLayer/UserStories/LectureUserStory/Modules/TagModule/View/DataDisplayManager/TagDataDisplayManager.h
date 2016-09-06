@@ -23,13 +23,10 @@
 @class NITableViewModel;
 @class NICollectionViewModel;
 @class TagCellSizeCalculator;
-@protocol TagDataDisplayManagerDelegate;
-
 
 @interface TagDataDisplayManager : NSObject <UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, strong) TagCellSizeCalculator *cellSizeCalculator;
-@property (nonatomic, weak) id<TagDataDisplayManagerDelegate> delegate;
 
 /**
  @author Golovko Mikhail
