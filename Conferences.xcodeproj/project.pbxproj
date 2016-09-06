@@ -1462,7 +1462,7 @@
 		9FBE89A81D5CB71300DA0C32 /* TabBarControllerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarControllerFactory.h; sourceTree = "<group>"; };
 		9FBE89A91D5CB71300DA0C32 /* TabBarControllerFactoryImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarControllerFactoryImplementation.h; sourceTree = "<group>"; };
 		9FBE89AA1D5CB71300DA0C32 /* TabBarControllerFactoryImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarControllerFactoryImplementation.m; sourceTree = "<group>"; };
-		9FBE89AC1D5CB71300DA0C32 /* DataCardLaunchRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataCardLaunchRouter.h; sourceTree = "<group>"; };
+		9FBE89AC1D5CB71300DA0C32 /* LaunchRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchRouter.h; sourceTree = "<group>"; };
 		9FBE89B81D5CB72D00DA0C32 /* CleanLaunchAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CleanLaunchAppDelegate.h; sourceTree = "<group>"; };
 		9FBE89B91D5CB72D00DA0C32 /* CleanLaunchAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CleanLaunchAppDelegate.m; sourceTree = "<group>"; };
 		9FBE89BE1D5CB76900DA0C32 /* CleanLaunchAppDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CleanLaunchAppDelegateTests.m; sourceTree = "<group>"; };
@@ -6761,7 +6761,7 @@
 		9FBE89AB1D5CB71300DA0C32 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				9FBE89AC1D5CB71300DA0C32 /* DataCardLaunchRouter.h */,
+				9FBE89AC1D5CB71300DA0C32 /* LaunchRouter.h */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";

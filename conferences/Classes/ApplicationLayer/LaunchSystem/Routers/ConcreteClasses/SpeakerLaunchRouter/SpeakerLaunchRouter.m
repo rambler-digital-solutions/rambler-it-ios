@@ -53,9 +53,9 @@ static NSString *const kSpeakerControllerIdentifier = @"SpeakerInfoViewControlle
     return self;
 }
 
-#pragma mark - <DataCardLaunchRouter>
+#pragma mark - <LaunchRouter>
 
-- (void)openDataCardScreenWithData:(SpeakerModelObject *)data {
+- (void)openScreenWithData:(SpeakerModelObject *)data {
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
     
     if (!tabBarController) {

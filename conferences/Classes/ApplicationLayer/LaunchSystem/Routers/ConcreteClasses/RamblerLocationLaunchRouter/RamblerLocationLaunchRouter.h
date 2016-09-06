@@ -20,7 +20,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "DataCardLaunchRouter.h"
+#import "LaunchRouter.h"
 
 @protocol TabBarControllerFactory;
 @class UIWindow;
@@ -31,7 +31,7 @@
  
  Launch router responsible for opening RamblerLocation screen
  */
-@interface RamblerLocationLaunchRouter : NSObject <DataCardLaunchRouter>
+@interface RamblerLocationLaunchRouter : NSObject <LaunchRouter>
 
 - (instancetype)initWithTabBarControllerFactory:(id<TabBarControllerFactory>)tabBarControllerFactory
                                          window:(UIWindow *)window;

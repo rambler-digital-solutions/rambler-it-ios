@@ -20,7 +20,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "DataCardLaunchRouter.h"
+#import "LaunchRouter.h"
 
 @protocol TabBarControllerFactory;
 @class UIWindow;
@@ -31,7 +31,7 @@
  
  Launch router responsible for opening Speaker Card screen
  */
-@interface SpeakerLaunchRouter : NSObject <DataCardLaunchRouter>
+@interface SpeakerLaunchRouter : NSObject <LaunchRouter>
 
 - (instancetype)initWithTabBarControllerFactory:(id<TabBarControllerFactory>)tabBarControllerFactory
                                          window:(UIWindow *)window

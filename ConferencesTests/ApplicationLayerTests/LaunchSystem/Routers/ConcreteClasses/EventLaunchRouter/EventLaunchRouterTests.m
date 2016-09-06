@@ -90,7 +90,7 @@
     OCMStub([self.mockTabBarControllerFactory obtainPreconfiguredTabBarController]).andReturn(self.mockTabBarController);
     
     // when
-    [self.router openDataCardScreenWithData:nil];
+    [self.router openScreenWithData:nil];
     
     // then
     OCMVerify([self.mockTopController openModuleUsingFactory:OCMOCK_ANY
@@ -103,7 +103,7 @@
     [[self.mockTabBarControllerFactory reject] obtainPreconfiguredTabBarController];
     
     // when
-    [self.router openDataCardScreenWithData:nil];
+    [self.router openScreenWithData:nil];
     
     // then
     OCMVerify([self.mockTopController openModuleUsingFactory:OCMOCK_ANY

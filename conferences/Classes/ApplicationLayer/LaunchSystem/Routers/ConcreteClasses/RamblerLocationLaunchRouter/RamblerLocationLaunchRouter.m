@@ -48,9 +48,9 @@ static NSUInteger const kRamblerLocationTabIndex = 1;
     return self;
 }
 
-#pragma mark - <DataCardLaunchRouter>
+#pragma mark - <LaunchRouter>
 
-- (void)openDataCardScreenWithData:(id)data {
+- (void)openScreenWithData:(id)data {
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
     
     if (!tabBarController) {

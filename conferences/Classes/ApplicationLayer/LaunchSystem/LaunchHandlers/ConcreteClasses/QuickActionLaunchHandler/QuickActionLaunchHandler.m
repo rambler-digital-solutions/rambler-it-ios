@@ -21,13 +21,13 @@
 #import "QuickActionLaunchHandler.h"
 
 #import "ObjectTransformer.h"
-#import "DataCardLaunchRouter.h"
+#import "LaunchRouter.h"
 #import "QuickActionConstants.h"
 
 @interface QuickActionLaunchHandler ()
 
 @property (nonatomic, strong) id<ObjectTransformer> objectTransformer;
-@property (nonatomic, strong) id<DataCardLaunchRouter> dataCardLaunchRouter;
+@property (nonatomic, strong) id<LaunchRouter> launchRouter;
 @property (nonatomic, strong) NSString *quickActionItemType;
 
 @end
@@ -37,12 +37,12 @@
 #pragma mark - Initialization
 
 - (instancetype)initWithObjectTransformer:(id<ObjectTransformer>)objectTransformer
-                     dataCardLaunchRouter:(id<DataCardLaunchRouter>)dataCardLaunchRouter
+                     launchRouter:(id<LaunchRouter>)launchRouter
                       quickActionItemType:(NSString *)quickActionItemType {
     self = [super init];
     if (self) {
         _objectTransformer = objectTransformer;
-        _dataCardLaunchRouter = dataCardLaunchRouter;
+        _launchRouter = launchRouter;
         _quickActionItemType = quickActionItemType;
     }
     return self;
@@ -66,7 +66,7 @@
     if (itemIdentifier) {
         object = [self.objectTransformer objectForIdentifier:itemIdentifier];
     }
-    [self.dataCardLaunchRouter openDataCardScreenWithData:object];
+    [self.launchRouter openScreenWithData:object];
 }
 
 #pragma mark - Private methods

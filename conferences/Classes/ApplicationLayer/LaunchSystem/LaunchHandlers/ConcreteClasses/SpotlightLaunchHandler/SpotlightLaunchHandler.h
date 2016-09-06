@@ -23,7 +23,7 @@
 #import "LaunchHandler.h"
 
 @protocol ObjectTransformer;
-@protocol DataCardLaunchRouter;
+@protocol LaunchRouter;
 
 /**
  @author Egor Tolstoy
@@ -33,6 +33,6 @@
 @interface SpotlightLaunchHandler : NSObject <LaunchHandler>
 
 - (instancetype)initWithObjectTransformer:(id<ObjectTransformer>)objectTransformer
-                     dataCardLaunchRouter:(id<DataCardLaunchRouter>)dataCardLaunchRouter;
+                             launchRouter:(id<LaunchRouter>)launchRouter;
 
 @end

@@ -25,7 +25,7 @@
  
  This protocol describes a router responsible for opening after the application launch one of the cards screens: Event, User or Lecture.
  */
-@protocol DataCardLaunchRouter <NSObject>
+@protocol LaunchRouter <NSObject>
 
 /**
  @author Egor Tolstoy
@@ -34,6 +34,6 @@
  
  @param data The data object
  */
-- (void)openDataCardScreenWithData:(id)data;
+- (void)openScreenWithData:(id)data;
 
 @end

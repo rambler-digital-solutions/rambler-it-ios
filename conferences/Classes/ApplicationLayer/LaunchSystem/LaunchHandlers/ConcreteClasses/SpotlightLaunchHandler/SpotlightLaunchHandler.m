@@ -21,14 +21,14 @@
 #import "SpotlightLaunchHandler.h"
 
 #import "ObjectTransformer.h"
-#import "DataCardLaunchRouter.h"
+#import "LaunchRouter.h"
 
 #import <CoreSpotlight/CoreSpotlight.h>
 
 @interface SpotlightLaunchHandler ()
 
 @property (nonatomic, strong) id<ObjectTransformer> objectTransformer;
-@property (nonatomic, strong) id<DataCardLaunchRouter> dataCardLaunchRouter;
+@property (nonatomic, strong) id<LaunchRouter> launchRouter;
 
 @end
 
@@ -37,11 +37,11 @@
 #pragma mark - Initialization
 
 - (instancetype)initWithObjectTransformer:(id<ObjectTransformer>)objectTransformer
-                     dataCardLaunchRouter:(id<DataCardLaunchRouter>)dataCardLaunchRouter {
+                             launchRouter:(id<LaunchRouter>)launchRouter {
     self = [super init];
     if (self) {
         _objectTransformer = objectTransformer;
-        _dataCardLaunchRouter = dataCardLaunchRouter;
+        _launchRouter = launchRouter;
     }
     return self;
 }
@@ -56,7 +56,7 @@
 - (void)handleLaunchWithActivity:(NSUserActivity *)activity {
     NSString *identifier = [self identifierFromActivity:activity];
     id object = [self.objectTransformer objectForIdentifier:identifier];
-    [self.dataCardLaunchRouter openDataCardScreenWithData:object];
+    [self.launchRouter openScreenWithData:object];
 }
 
 #pragma mark - Private methods

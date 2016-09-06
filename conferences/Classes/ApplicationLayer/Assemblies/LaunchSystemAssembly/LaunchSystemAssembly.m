@@ -76,7 +76,7 @@
 - (SpotlightLaunchHandler *)eventLaunchHandler {
     return [TyphoonDefinition withClass:[SpotlightLaunchHandler class]
                           configuration:^(TyphoonDefinition *definition) {
-                              [definition useInitializer:@selector(initWithObjectTransformer:dataCardLaunchRouter:)
+                              [definition useInitializer:@selector(initWithObjectTransformer:launchRouter:)
                                               parameters:^(TyphoonMethod *initializer) {
                                                   [initializer injectParameterWith:[self.spotlightIndexerAssembly eventObjectTransformer]];
                                                   [initializer injectParameterWith:[self eventLaunchRouter]];
@@ -87,7 +87,7 @@
 - (SpotlightLaunchHandler *)speakerLaunchHandler {
     return [TyphoonDefinition withClass:[SpotlightLaunchHandler class]
                           configuration:^(TyphoonDefinition *definition) {
-                              [definition useInitializer:@selector(initWithObjectTransformer:dataCardLaunchRouter:)
+                              [definition useInitializer:@selector(initWithObjectTransformer:launchRouter:)
                                               parameters:^(TyphoonMethod *initializer) {
                                                   [initializer injectParameterWith:[self.spotlightIndexerAssembly speakerObjectTransformer]];
                                                   [initializer injectParameterWith:[self speakerLaunchRouter]];
@@ -98,7 +98,7 @@
 - (SpotlightLaunchHandler *)lectureLaunchHandler {
     return [TyphoonDefinition withClass:[SpotlightLaunchHandler class]
                           configuration:^(TyphoonDefinition *definition) {
-                              [definition useInitializer:@selector(initWithObjectTransformer:dataCardLaunchRouter:)
+                              [definition useInitializer:@selector(initWithObjectTransformer:launchRouter:)
                                               parameters:^(TyphoonMethod *initializer) {
                                                   [initializer injectParameterWith:[self.spotlightIndexerAssembly lectureObjectTransformer]];
                                                   [initializer injectParameterWith:[self lectureLaunchRouter]];
@@ -109,7 +109,7 @@
 - (QuickActionLaunchHandler *)eventQuickActionLaunchHandler {
     return [TyphoonDefinition withClass:[QuickActionLaunchHandler class]
                           configuration:^(TyphoonDefinition *definition) {
-                              [definition useInitializer:@selector(initWithObjectTransformer:dataCardLaunchRouter:quickActionItemType:)
+                              [definition useInitializer:@selector(initWithObjectTransformer:launchRouter:quickActionItemType:)
                                               parameters:^(TyphoonMethod *initializer) {
                                                   [initializer injectParameterWith:[self.spotlightIndexerAssembly eventObjectTransformer]];
                                                   [initializer injectParameterWith:[self eventLaunchRouter]];
@@ -121,7 +121,7 @@
 - (QuickActionLaunchHandler *)ramblerLocationQuickActionLaunchHandler {
     return [TyphoonDefinition withClass:[QuickActionLaunchHandler class]
                           configuration:^(TyphoonDefinition *definition) {
-                              [definition useInitializer:@selector(initWithObjectTransformer:dataCardLaunchRouter:quickActionItemType:)
+                              [definition useInitializer:@selector(initWithObjectTransformer:launchRouter:quickActionItemType:)
                                               parameters:^(TyphoonMethod *initializer) {
                                                   [initializer injectParameterWith:nil];
                                                   [initializer injectParameterWith:[self ramblerLocationLaunchRouter]];

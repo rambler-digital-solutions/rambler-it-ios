@@ -23,7 +23,7 @@
 #import "LaunchHandler.h"
 
 @protocol ObjectTransformer;
-@protocol DataCardLaunchRouter;
+@protocol LaunchRouter;
 
 /**
  @author Egor Tolstoy
@@ -33,7 +33,7 @@
 @interface QuickActionLaunchHandler : NSObject <LaunchHandler>
 
 - (instancetype)initWithObjectTransformer:(id<ObjectTransformer>)objectTransformer
-                     dataCardLaunchRouter:(id<DataCardLaunchRouter>)dataCardLaunchRouter
+                             launchRouter:(id<LaunchRouter>)launchRouter
                       quickActionItemType:(NSString *)quickActionItemType;
 
 @end

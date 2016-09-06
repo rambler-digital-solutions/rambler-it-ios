@@ -25,13 +25,13 @@
 #import "SpotlightLaunchHandler.h"
 
 #import "ObjectTransformer.h"
-#import "DataCardLaunchRouter.h"
+#import "LaunchRouter.h"
 
 @interface SpotlightLaunchHandlerTests : XCTestCase
 
 @property (nonatomic, strong) SpotlightLaunchHandler *launchHandler;
 @property (nonatomic, strong) id mockObjectTransformer;
-@property (nonatomic, strong) id mockDataCardLaunchRouter;
+@property (nonatomic, strong) id mockLaunchRouter;
 
 @end
 
@@ -41,16 +41,16 @@
     [super setUp];
     
     self.mockObjectTransformer = OCMProtocolMock(@protocol(ObjectTransformer));
-    self.mockDataCardLaunchRouter = OCMProtocolMock(@protocol(DataCardLaunchRouter));
+    self.mockLaunchRouter = OCMProtocolMock(@protocol(LaunchRouter));
     
     self.launchHandler = [[SpotlightLaunchHandler alloc] initWithObjectTransformer:self.mockObjectTransformer
-                                                              dataCardLaunchRouter:self.mockDataCardLaunchRouter];
+                                                                      launchRouter:self.mockLaunchRouter];
 }
 
 - (void)tearDown {
     self.launchHandler = nil;
     self.mockObjectTransformer = nil;
-    self.mockDataCardLaunchRouter = nil;
+    self.mockLaunchRouter = nil;
     
     [super tearDown];
 }
@@ -93,7 +93,7 @@
     [self.launchHandler handleLaunchWithActivity:activity];
     
     // then
-    OCMVerify([self.mockDataCardLaunchRouter openDataCardScreenWithData:mockObject]);
+    OCMVerify([self.mockLaunchRouter openScreenWithData:mockObject]);
 }
 
 #pragma mark - Helper methods
