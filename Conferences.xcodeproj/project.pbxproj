@@ -419,6 +419,7 @@
 		9F7B82331D7DB1AD002E977A /* QuickActionConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B82321D7DB1AD002E977A /* QuickActionConstants.m */; };
 		9F7B823B1D7ECA07002E977A /* TabLaunchRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B823A1D7ECA07002E977A /* TabLaunchRouter.m */; };
 		9F7B823E1D7ECAD9002E977A /* QuickActionLaunchHandlerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B823D1D7ECAD9002E977A /* QuickActionLaunchHandlerTests.m */; };
+		9F7B82411D7ECF14002E977A /* TabLaunchRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B82401D7ECF14002E977A /* TabLaunchRouterTests.m */; };
 		9F8B49E11D6EEE9000ED176B /* YouTubeIdentifierDeriviator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B49E01D6EEE9000ED176B /* YouTubeIdentifierDeriviator.m */; };
 		9F8B49E41D6EEF4500ED176B /* YouTubeIdentifierDeriviatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B49E31D6EEF4500ED176B /* YouTubeIdentifierDeriviatorTests.m */; };
 		9F8B49E91D6EF72B00ED176B /* YouTubePlayerFactoryImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B49E81D6EF72B00ED176B /* YouTubePlayerFactoryImplementation.m */; };
@@ -1393,6 +1394,7 @@
 		9F7B82391D7ECA07002E977A /* TabLaunchRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabLaunchRouter.h; sourceTree = "<group>"; };
 		9F7B823A1D7ECA07002E977A /* TabLaunchRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabLaunchRouter.m; sourceTree = "<group>"; };
 		9F7B823D1D7ECAD9002E977A /* QuickActionLaunchHandlerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuickActionLaunchHandlerTests.m; path = QuickActionLaunchHandler/QuickActionLaunchHandlerTests.m; sourceTree = "<group>"; };
+		9F7B82401D7ECF14002E977A /* TabLaunchRouterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TabLaunchRouterTests.m; path = TabLaunchRouter/TabLaunchRouterTests.m; sourceTree = "<group>"; };
 		9F8B49DF1D6EEE9000ED176B /* YouTubeIdentifierDeriviator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YouTubeIdentifierDeriviator.h; path = YouTubeIdentifierDeriviator/YouTubeIdentifierDeriviator.h; sourceTree = "<group>"; };
 		9F8B49E01D6EEE9000ED176B /* YouTubeIdentifierDeriviator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YouTubeIdentifierDeriviator.m; path = YouTubeIdentifierDeriviator/YouTubeIdentifierDeriviator.m; sourceTree = "<group>"; };
 		9F8B49E31D6EEF4500ED176B /* YouTubeIdentifierDeriviatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YouTubeIdentifierDeriviatorTests.m; path = YouTubeIdentifierDeriviator/YouTubeIdentifierDeriviatorTests.m; sourceTree = "<group>"; };
@@ -6367,6 +6369,14 @@
 			name = QuickActionLaunchHandler;
 			sourceTree = "<group>";
 		};
+		9F7B823F1D7ECF0A002E977A /* TabLaunchRouter */ = {
+			isa = PBXGroup;
+			children = (
+				9F7B82401D7ECF14002E977A /* TabLaunchRouterTests.m */,
+			);
+			name = TabLaunchRouter;
+			sourceTree = "<group>";
+		};
 		9F8B49DE1D6EEE5E00ED176B /* YouTubeIdentifierDeriviator */ = {
 			isa = PBXGroup;
 			children = (
@@ -6860,6 +6870,7 @@
 		9FBE89C71D5CB76900DA0C32 /* ConcreteClasses */ = {
 			isa = PBXGroup;
 			children = (
+				9F7B823F1D7ECF0A002E977A /* TabLaunchRouter */,
 				9FBE89C81D5CB76900DA0C32 /* CleanLaunchRouter */,
 				9FBE89CA1D5CB76900DA0C32 /* EventLaunchRouter */,
 				9FBE89CC1D5CB76900DA0C32 /* LectureLaunchRouter */,
@@ -8641,6 +8652,7 @@
 				9FAB6A871D54981B0061F333 /* IndexerMonitorOperationQueueFactoryTests.m in Sources */,
 				9F1830B81BC119A5000E21A5 /* CommonNetworkClientTests.m in Sources */,
 				2B4F20281D54DBDF00C9891E /* SpeakerInfoDataDisplayManagerTests.m in Sources */,
+				9F7B82411D7ECF14002E977A /* TabLaunchRouterTests.m in Sources */,
 				635E18BF1CA6A0A9005B8439 /* SpeakerInfoModuleAssemblyTests.m in Sources */,
 				9FAB6A771D548C480061F333 /* IndexTransactionBatchTests.m in Sources */,
 				635E18CD1CA6C5E5005B8439 /* StubTestHelper.m in Sources */,
