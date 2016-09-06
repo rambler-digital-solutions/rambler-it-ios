@@ -417,7 +417,7 @@
 		9F7B822D1D7DAB51002E977A /* QuickActionUserActivityFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B822C1D7DAB51002E977A /* QuickActionUserActivityFactory.m */; };
 		9F7B82301D7DABB3002E977A /* QuickActionUserActivityFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B822F1D7DABB3002E977A /* QuickActionUserActivityFactoryTests.m */; };
 		9F7B82331D7DB1AD002E977A /* QuickActionConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B82321D7DB1AD002E977A /* QuickActionConstants.m */; };
-		9F7B82371D7DCCDE002E977A /* RamblerLocationLaunchRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B82361D7DCCDE002E977A /* RamblerLocationLaunchRouter.m */; };
+		9F7B823B1D7ECA07002E977A /* TabLaunchRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B823A1D7ECA07002E977A /* TabLaunchRouter.m */; };
 		9F8B49E11D6EEE9000ED176B /* YouTubeIdentifierDeriviator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B49E01D6EEE9000ED176B /* YouTubeIdentifierDeriviator.m */; };
 		9F8B49E41D6EEF4500ED176B /* YouTubeIdentifierDeriviatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B49E31D6EEF4500ED176B /* YouTubeIdentifierDeriviatorTests.m */; };
 		9F8B49E91D6EF72B00ED176B /* YouTubePlayerFactoryImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B49E81D6EF72B00ED176B /* YouTubePlayerFactoryImplementation.m */; };
@@ -1389,8 +1389,8 @@
 		9F7B822F1D7DABB3002E977A /* QuickActionUserActivityFactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuickActionUserActivityFactoryTests.m; path = QuickActionAppDelegate/QuickActionUserActivityFactory/QuickActionUserActivityFactoryTests.m; sourceTree = "<group>"; };
 		9F7B82311D7DB1AD002E977A /* QuickActionConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickActionConstants.h; sourceTree = "<group>"; };
 		9F7B82321D7DB1AD002E977A /* QuickActionConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickActionConstants.m; sourceTree = "<group>"; };
-		9F7B82351D7DCCDE002E977A /* RamblerLocationLaunchRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RamblerLocationLaunchRouter.h; path = RamblerLocationLaunchRouter/RamblerLocationLaunchRouter.h; sourceTree = "<group>"; };
-		9F7B82361D7DCCDE002E977A /* RamblerLocationLaunchRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RamblerLocationLaunchRouter.m; path = RamblerLocationLaunchRouter/RamblerLocationLaunchRouter.m; sourceTree = "<group>"; };
+		9F7B82391D7ECA07002E977A /* TabLaunchRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabLaunchRouter.h; sourceTree = "<group>"; };
+		9F7B823A1D7ECA07002E977A /* TabLaunchRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabLaunchRouter.m; sourceTree = "<group>"; };
 		9F8B49DF1D6EEE9000ED176B /* YouTubeIdentifierDeriviator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YouTubeIdentifierDeriviator.h; path = YouTubeIdentifierDeriviator/YouTubeIdentifierDeriviator.h; sourceTree = "<group>"; };
 		9F8B49E01D6EEE9000ED176B /* YouTubeIdentifierDeriviator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YouTubeIdentifierDeriviator.m; path = YouTubeIdentifierDeriviator/YouTubeIdentifierDeriviator.m; sourceTree = "<group>"; };
 		9F8B49E31D6EEF4500ED176B /* YouTubeIdentifierDeriviatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YouTubeIdentifierDeriviatorTests.m; path = YouTubeIdentifierDeriviator/YouTubeIdentifierDeriviatorTests.m; sourceTree = "<group>"; };
@@ -6348,13 +6348,13 @@
 			name = QuickActionUserActivityFactory;
 			sourceTree = "<group>";
 		};
-		9F7B82341D7DCCC4002E977A /* RamblerLocationLaunchRouter */ = {
+		9F7B82381D7ECA07002E977A /* TabLaunchRouter */ = {
 			isa = PBXGroup;
 			children = (
-				9F7B82351D7DCCDE002E977A /* RamblerLocationLaunchRouter.h */,
-				9F7B82361D7DCCDE002E977A /* RamblerLocationLaunchRouter.m */,
+				9F7B82391D7ECA07002E977A /* TabLaunchRouter.h */,
+				9F7B823A1D7ECA07002E977A /* TabLaunchRouter.m */,
 			);
-			name = RamblerLocationLaunchRouter;
+			path = TabLaunchRouter;
 			sourceTree = "<group>";
 		};
 		9F8B49DE1D6EEE5E00ED176B /* YouTubeIdentifierDeriviator */ = {
@@ -6695,7 +6695,7 @@
 		9FBE89991D5CB71300DA0C32 /* ConcreteClasses */ = {
 			isa = PBXGroup;
 			children = (
-				9F7B82341D7DCCC4002E977A /* RamblerLocationLaunchRouter */,
+				9F7B82381D7ECA07002E977A /* TabLaunchRouter */,
 				9FBE899A1D5CB71300DA0C32 /* CleanLaunchRouter */,
 				9FBE899D1D5CB71300DA0C32 /* EventLaunchRouter */,
 				9FBE89A01D5CB71300DA0C32 /* LectureLaunchRouter */,
@@ -8180,7 +8180,6 @@
 				9FE1397E1D65F3E900D7BF44 /* ReportSpeakerTableViewCellObject.m in Sources */,
 				63F613871CB00A220002AEF0 /* EventCellObjectBuilderFactory.m in Sources */,
 				9FFEAF0C1D2E5CE0006E9649 /* AppleMapsLinkBuilder.m in Sources */,
-				9F7B82371D7DCCDE002E977A /* RamblerLocationLaunchRouter.m in Sources */,
 				636F8DDE1BCB8FE800552B91 /* RamblerLocationViewController.m in Sources */,
 				2B2064831D3F9CE900246C8D /* _MetaEventPlainObject.m in Sources */,
 				9FBE8AB61D630D4C00DA0C32 /* EventGalleryInteractor.m in Sources */,
@@ -8446,6 +8445,7 @@
 				63ECC4161CA81E5300439A01 /* ErrorConstants.m in Sources */,
 				661CA4271D65D2040047EB68 /* ResponseConverterAssembly.m in Sources */,
 				66E999A71D54B50500161D98 /* ContentSizeObserver.m in Sources */,
+				9F7B823B1D7ECA07002E977A /* TabLaunchRouter.m in Sources */,
 				63EF15BB1BC4559900480CAF /* PushNotificationCenterImplementation.m in Sources */,
 				636F8DDB1BCB8FE800552B91 /* RamblerLocationInteractor.m in Sources */,
 				63F613761CB00A220002AEF0 /* PreviousEventSectionHeaderTableViewCell.m in Sources */,

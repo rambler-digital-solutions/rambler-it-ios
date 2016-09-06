@@ -33,9 +33,12 @@
 #import "EventLaunchRouter.h"
 #import "SpeakerLaunchRouter.h"
 #import "LectureLaunchRouter.h"
-#import "RamblerLocationLaunchRouter.h"
+#import "TabLaunchRouter.h"
 
 #import "QuickActionConstants.h"
+
+static NSUInteger const kRamblerLocationTabIndex = 1;
+static NSUInteger const kSearchTabIndex = 2;
 
 @implementation LaunchSystemAssembly
 
@@ -63,7 +66,8 @@
                                               parameters:^(TyphoonMethod *initializer) {
                                                   [initializer injectParameterWith:@[
                                                                                      [self eventQuickActionLaunchHandler],
-                                                                                     [self ramblerLocationQuickActionLaunchHandler]
+                                                                                     [self ramblerLocationQuickActionLaunchHandler],
+                                                                                     [self searchQuickActionLaunchHandler]
                                                                                      ]];
                                                   [initializer injectParameterWith:[self quickActionUserActivityFactory]];
                                               }];
@@ -130,6 +134,18 @@
                           }];
 }
 
+- (QuickActionLaunchHandler *)searchQuickActionLaunchHandler {
+    return [TyphoonDefinition withClass:[QuickActionLaunchHandler class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition useInitializer:@selector(initWithObjectTransformer:launchRouter:quickActionItemType:)
+                                              parameters:^(TyphoonMethod *initializer) {
+                                                  [initializer injectParameterWith:nil];
+                                                  [initializer injectParameterWith:[self searchLaunchRouter]];
+                                                  [initializer injectParameterWith:kSearchQuickActionType];
+                                              }];
+                          }];
+}
+
 #pragma mark - Launch routers
 
 - (EventLaunchRouter *)eventLaunchRouter {
@@ -168,13 +184,26 @@
                           }];
 }
 
-- (RamblerLocationLaunchRouter *)ramblerLocationLaunchRouter {
-    return [TyphoonDefinition withClass:[RamblerLocationLaunchRouter class]
+- (TabLaunchRouter *)ramblerLocationLaunchRouter {
+    return [TyphoonDefinition withClass:[TabLaunchRouter class]
                           configuration:^(TyphoonDefinition *definition) {
-                              [definition useInitializer:@selector(initWithTabBarControllerFactory:window:)
+                              [definition useInitializer:@selector(initWithTabBarControllerFactory:window:tabIndex:)
                                               parameters:^(TyphoonMethod *initializer) {
                                                   [initializer injectParameterWith:[self.applicationHelperAssembly tabBarControllerFactory]];
                                                   [initializer injectParameterWith:[self.systemInfrastructureAssembly mainWindow]];
+                                                  [initializer injectParameterWith:@(kRamblerLocationTabIndex)];
+                                              }];
+                          }];
+}
+
+- (TabLaunchRouter *)searchLaunchRouter {
+    return [TyphoonDefinition withClass:[TabLaunchRouter class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition useInitializer:@selector(initWithTabBarControllerFactory:window:tabIndex:)
+                                              parameters:^(TyphoonMethod *initializer) {
+                                                  [initializer injectParameterWith:[self.applicationHelperAssembly tabBarControllerFactory]];
+                                                  [initializer injectParameterWith:[self.systemInfrastructureAssembly mainWindow]];
+                                                  [initializer injectParameterWith:@(kSearchTabIndex)];
                                               }];
                           }];
 }

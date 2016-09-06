@@ -18,32 +18,33 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "RamblerLocationLaunchRouter.h"
+#import "TabLaunchRouter.h"
 
 #import "TabBarControllerFactory.h"
 
 #import <UIKit/UIKit.h>
 #import <ViperMcFlurry/ViperMcFlurry.h>
 
-static NSUInteger const kRamblerLocationTabIndex = 1;
-
-@interface RamblerLocationLaunchRouter ()
+@interface TabLaunchRouter ()
 
 @property (nonatomic, strong) id<TabBarControllerFactory> tabBarControllerFactory;
 @property (nonatomic, strong) UIWindow *window;
+@property (nonatomic, assign) NSUInteger tabIndex;
 
 @end
 
-@implementation RamblerLocationLaunchRouter
+@implementation TabLaunchRouter
 
 #pragma mark - Initialization
 
 - (instancetype)initWithTabBarControllerFactory:(id<TabBarControllerFactory>)tabBarControllerFactory
-                                         window:(UIWindow *)window {
+                                         window:(UIWindow *)window
+                                       tabIndex:(NSUInteger)tabIndex {
     self = [super init];
     if (self) {
         _tabBarControllerFactory = tabBarControllerFactory;
         _window = window;
+        _tabIndex = tabIndex;
     }
     return self;
 }
@@ -60,7 +61,7 @@ static NSUInteger const kRamblerLocationTabIndex = 1;
         self.window.rootViewController = tabBarController;
         [self.window makeKeyAndVisible];
     }
-    tabBarController.selectedIndex = kRamblerLocationTabIndex;
+    tabBarController.selectedIndex = self.tabIndex;
 }
 
 @end

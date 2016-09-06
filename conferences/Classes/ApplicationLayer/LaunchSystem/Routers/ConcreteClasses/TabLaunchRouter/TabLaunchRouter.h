@@ -29,11 +29,12 @@
 /**
  @author Egor Tolstoy
  
- Launch router responsible for opening RamblerLocation screen
+ Launch router responsible for opening initial TabBarController tabs
  */
-@interface RamblerLocationLaunchRouter : NSObject <LaunchRouter>
+@interface TabLaunchRouter : NSObject <LaunchRouter>
 
 - (instancetype)initWithTabBarControllerFactory:(id<TabBarControllerFactory>)tabBarControllerFactory
-                                         window:(UIWindow *)window;
+                                         window:(UIWindow *)window
+                                       tabIndex:(NSUInteger)tabIndex;
 
 @end
