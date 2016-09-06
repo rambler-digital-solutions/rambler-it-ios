@@ -32,11 +32,11 @@
  */
 @interface CleanLaunchAppDelegate : NSObject <UIApplicationDelegate>
 
-@property (strong, nonatomic) id <ApplicationConfigurator> applicationConfigurator;
-@property (strong, nonatomic) id <ThirdPartiesConfigurator> thirdPartiesConfigurator;
-@property (strong, nonatomic) id <Daemon> quickActionDaemon;
-@property (strong, nonatomic) IndexerMonitor *indexerMonitor;
-@property (strong, nonatomic) CleanLaunchRouter *cleanStartRouter;
-@property (strong, nonatomic) id<SpotlightCoreDataStackCoordinator> spotlightCoreDataStackCoordinator;
+@property (nonatomic, strong) id <ApplicationConfigurator> applicationConfigurator;
+@property (nonatomic, strong) id <ThirdPartiesConfigurator> thirdPartiesConfigurator;
+@property (nonatomic, strong) id <Daemon> quickActionDaemon;
+@property (nonatomic, strong) IndexerMonitor *indexerMonitor;
+@property (nonatomic, strong) CleanLaunchRouter *cleanStartRouter;
+@property (nonatomic, strong) id<SpotlightCoreDataStackCoordinator> spotlightCoreDataStackCoordinator;
 
 @end
