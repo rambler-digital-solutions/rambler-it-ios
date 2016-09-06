@@ -25,11 +25,20 @@
 #import "SystemInfrastructureAssembly.h"
 #import "SpotlightIndexerAssembly.h"
 
+#import "QuickActionAppDelegate.h"
+#import "QuickActionUserActivityFactory.h"
+#import "QuickActionLaunchHandler.h"
 #import "SpotlightAppDelegate.h"
 #import "SpotlightLaunchHandler.h"
 #import "EventLaunchRouter.h"
 #import "SpeakerLaunchRouter.h"
 #import "LectureLaunchRouter.h"
+#import "TabLaunchRouter.h"
+
+#import "QuickActionConstants.h"
+
+static NSUInteger const kRamblerLocationTabIndex = 1;
+static NSUInteger const kSearchTabIndex = 2;
 
 @implementation LaunchSystemAssembly
 
@@ -50,12 +59,28 @@
                           }];
 }
 
+- (QuickActionAppDelegate *)quickActionAppDelegate {
+    return [TyphoonDefinition withClass:[QuickActionAppDelegate class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition useInitializer:@selector(initWithLaunchHandlers:userActivityFactory:)
+                                              parameters:^(TyphoonMethod *initializer) {
+                                                  [initializer injectParameterWith:@[
+                                                                                     [self eventQuickActionLaunchHandler],
+                                                                                     [self ramblerLocationQuickActionLaunchHandler],
+                                                                                     [self searchQuickActionLaunchHandler]
+                                                                                     ]];
+                                                  [initializer injectParameterWith:[self quickActionUserActivityFactory]];
+                                              }];
+                              definition.scope = TyphoonScopeSingleton;
+                          }];
+}
+
 #pragma mark - Launch handlers
 
 - (SpotlightLaunchHandler *)eventLaunchHandler {
     return [TyphoonDefinition withClass:[SpotlightLaunchHandler class]
                           configuration:^(TyphoonDefinition *definition) {
-                              [definition useInitializer:@selector(initWithObjectTransformer:dataCardLaunchRouter:)
+                              [definition useInitializer:@selector(initWithObjectTransformer:launchRouter:)
                                               parameters:^(TyphoonMethod *initializer) {
                                                   [initializer injectParameterWith:[self.spotlightIndexerAssembly eventObjectTransformer]];
                                                   [initializer injectParameterWith:[self eventLaunchRouter]];
@@ -66,7 +91,7 @@
 - (SpotlightLaunchHandler *)speakerLaunchHandler {
     return [TyphoonDefinition withClass:[SpotlightLaunchHandler class]
                           configuration:^(TyphoonDefinition *definition) {
-                              [definition useInitializer:@selector(initWithObjectTransformer:dataCardLaunchRouter:)
+                              [definition useInitializer:@selector(initWithObjectTransformer:launchRouter:)
                                               parameters:^(TyphoonMethod *initializer) {
                                                   [initializer injectParameterWith:[self.spotlightIndexerAssembly speakerObjectTransformer]];
                                                   [initializer injectParameterWith:[self speakerLaunchRouter]];
@@ -77,10 +102,46 @@
 - (SpotlightLaunchHandler *)lectureLaunchHandler {
     return [TyphoonDefinition withClass:[SpotlightLaunchHandler class]
                           configuration:^(TyphoonDefinition *definition) {
-                              [definition useInitializer:@selector(initWithObjectTransformer:dataCardLaunchRouter:)
+                              [definition useInitializer:@selector(initWithObjectTransformer:launchRouter:)
                                               parameters:^(TyphoonMethod *initializer) {
                                                   [initializer injectParameterWith:[self.spotlightIndexerAssembly lectureObjectTransformer]];
                                                   [initializer injectParameterWith:[self lectureLaunchRouter]];
+                                              }];
+                          }];
+}
+
+- (QuickActionLaunchHandler *)eventQuickActionLaunchHandler {
+    return [TyphoonDefinition withClass:[QuickActionLaunchHandler class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition useInitializer:@selector(initWithObjectTransformer:launchRouter:quickActionItemType:)
+                                              parameters:^(TyphoonMethod *initializer) {
+                                                  [initializer injectParameterWith:[self.spotlightIndexerAssembly eventObjectTransformer]];
+                                                  [initializer injectParameterWith:[self eventLaunchRouter]];
+                                                  [initializer injectParameterWith:nil];
+                                              }];
+                          }];
+}
+
+- (QuickActionLaunchHandler *)ramblerLocationQuickActionLaunchHandler {
+    return [TyphoonDefinition withClass:[QuickActionLaunchHandler class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition useInitializer:@selector(initWithObjectTransformer:launchRouter:quickActionItemType:)
+                                              parameters:^(TyphoonMethod *initializer) {
+                                                  [initializer injectParameterWith:nil];
+                                                  [initializer injectParameterWith:[self ramblerLocationLaunchRouter]];
+                                                  [initializer injectParameterWith:kRamblerLocationQuickActionType];
+                                              }];
+                          }];
+}
+
+- (QuickActionLaunchHandler *)searchQuickActionLaunchHandler {
+    return [TyphoonDefinition withClass:[QuickActionLaunchHandler class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition useInitializer:@selector(initWithObjectTransformer:launchRouter:quickActionItemType:)
+                                              parameters:^(TyphoonMethod *initializer) {
+                                                  [initializer injectParameterWith:nil];
+                                                  [initializer injectParameterWith:[self searchLaunchRouter]];
+                                                  [initializer injectParameterWith:kSearchQuickActionType];
                                               }];
                           }];
 }
@@ -121,6 +182,36 @@
                                                   [initializer injectParameterWith:[self.storyboardAssembly lectureStoryboard]];
                                               }];
                           }];
+}
+
+- (TabLaunchRouter *)ramblerLocationLaunchRouter {
+    return [TyphoonDefinition withClass:[TabLaunchRouter class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition useInitializer:@selector(initWithTabBarControllerFactory:window:tabIndex:)
+                                              parameters:^(TyphoonMethod *initializer) {
+                                                  [initializer injectParameterWith:[self.applicationHelperAssembly tabBarControllerFactory]];
+                                                  [initializer injectParameterWith:[self.systemInfrastructureAssembly mainWindow]];
+                                                  [initializer injectParameterWith:@(kRamblerLocationTabIndex)];
+                                              }];
+                          }];
+}
+
+- (TabLaunchRouter *)searchLaunchRouter {
+    return [TyphoonDefinition withClass:[TabLaunchRouter class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition useInitializer:@selector(initWithTabBarControllerFactory:window:tabIndex:)
+                                              parameters:^(TyphoonMethod *initializer) {
+                                                  [initializer injectParameterWith:[self.applicationHelperAssembly tabBarControllerFactory]];
+                                                  [initializer injectParameterWith:[self.systemInfrastructureAssembly mainWindow]];
+                                                  [initializer injectParameterWith:@(kSearchTabIndex)];
+                                              }];
+                          }];
+}
+
+#pragma mark - Factories
+
+- (QuickActionUserActivityFactory *)quickActionUserActivityFactory {
+    return [TyphoonDefinition withClass:[QuickActionUserActivityFactory class]];
 }
 
 @end

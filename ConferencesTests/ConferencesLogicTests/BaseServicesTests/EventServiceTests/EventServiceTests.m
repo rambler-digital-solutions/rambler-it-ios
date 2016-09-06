@@ -21,6 +21,7 @@
 #import <XCTest/XCTest.h>
 #import <MagicalRecord/MagicalRecord.h>
 #import <OCMock/OCMock.h>
+
 #import "XCTestCase+RCFHelpers.h"
 #import "TestConstants.h"
 
@@ -42,8 +43,7 @@
 - (void)setUp {
     [super setUp];
     
-    [MagicalRecord setDefaultModelFromClass:[self class]];
-    [MagicalRecord setupCoreDataStackWithInMemoryStore];
+    [self setupCoreDataStackForTests];
     
     self.eventService = [EventServiceImplementation new];
     self.mockEventOperationFactory = OCMClassMock([EventOperationFactory class]);
@@ -53,11 +53,11 @@
 }
 
 - (void)tearDown {
-    [MagicalRecord cleanUp];
-    
     self.eventService = nil;
     self.mockEventOperationFactory = nil;
     self.mockOperationScheduler = nil;
+    
+    [self tearDownCoreDataStack];
     [super tearDown];
 }
 
@@ -81,7 +81,38 @@
                                  handler:^(NSError * _Nullable error) {
         OCMVerify([self.mockOperationScheduler addOperation:OCMOCK_ANY]);
     }];
+}
+
+- (void)testThatServiceTracksEventVisit {
+    // given
+    NSString *const kTestEventId = @"1234";
+    [self generateEventForTestPurposesWithId:kTestEventId];
     
+    // when
+    [self.eventService trackEventVisitForEventId:kTestEventId];
+    
+    // then
+    EventModelObject *event = [self obtainEventWithId:kTestEventId];
+    XCTAssertNotNil(event.lastVisitDate);
+}
+
+#pragma mark - Helper methods
+
+- (void)generateEventForTestPurposesWithId:(NSString *)eventId {
+    NSManagedObjectContext *rootSavingContext = [NSManagedObjectContext MR_rootSavingContext];
+    [rootSavingContext performBlockAndWait:^{
+        EventModelObject *event = [EventModelObject MR_createEntityInContext:rootSavingContext];
+        event.eventId = eventId;
+        [rootSavingContext MR_saveToPersistentStoreAndWait];
+    }];
+}
+
+- (EventModelObject *)obtainEventWithId:(NSString *)eventId {
+    NSManagedObjectContext *defaultContext = [NSManagedObjectContext MR_defaultContext];
+    EventModelObject *event = [EventModelObject MR_findFirstByAttribute:EventModelObjectAttributes.eventId
+                                                              withValue:eventId
+                                                              inContext:defaultContext];
+    return event;
 }
 
 @end

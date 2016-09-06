@@ -16,7 +16,6 @@
     [aCoder encodeObject:self.name forKey:@"name"];
     [aCoder encodeObject:self.slug forKey:@"slug"];
     [aCoder encodeObject:self.tagId forKey:@"tagId"];
-    [aCoder encodeObject:self.event forKey:@"event"];
     [aCoder encodeObject:self.lectures forKey:@"lectures"];
 }
 
@@ -27,7 +26,6 @@
         _name = [[aDecoder decodeObjectForKey:@"name"] copy];
         _slug = [[aDecoder decodeObjectForKey:@"slug"] copy];
         _tagId = [[aDecoder decodeObjectForKey:@"tagId"] copy];
-        _event = [[aDecoder decodeObjectForKey:@"event"] copy];
         _lectures = [[aDecoder decodeObjectForKey:@"lectures"] copy];
     }
 
@@ -43,7 +41,6 @@
     replica.slug = self.slug;
     replica.tagId = self.tagId;
 
-    replica.event = self.event;
     replica.lectures = self.lectures;
 
     return replica;

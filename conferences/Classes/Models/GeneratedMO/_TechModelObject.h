@@ -1,41 +1,50 @@
 // DO NOT EDIT. This file is machine-generated and constantly overwritten.
 // Make changes to TechModelObject.h instead.
 
-#if __has_feature(modules)
-    @import Foundation;
-    @import CoreData;
-#else
-    #import <Foundation/Foundation.h>
-    #import <CoreData/CoreData.h>
-#endif
+#import <CoreData/CoreData.h>
 
-NS_ASSUME_NONNULL_BEGIN
+extern const struct TechModelObjectAttributes {
+	__unsafe_unretained NSString *color;
+	__unsafe_unretained NSString *name;
+	__unsafe_unretained NSString *techId;
+} TechModelObjectAttributes;
+
+extern const struct TechModelObjectRelationships {
+	__unsafe_unretained NSString *events;
+} TechModelObjectRelationships;
 
 @class EventModelObject;
 
 @interface TechModelObjectID : NSManagedObjectID {}
 @end
 
-@interface _TechModelObject : NSManagedObject
-+ (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_;
+@interface _TechModelObject : NSManagedObject {}
++ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
-@property (nonatomic, readonly, strong) TechModelObjectID *objectID;
+@property (nonatomic, readonly, strong) TechModelObjectID* objectID;
 
-@property (nonatomic, strong, nullable) NSString* color;
+@property (nonatomic, strong) NSString* color;
 
-@property (nonatomic, strong, nullable) NSString* name;
+//- (BOOL)validateColor:(id*)value_ error:(NSError**)error_;
 
-@property (nonatomic, strong, nullable) NSString* techId;
+@property (nonatomic, strong) NSString* name;
 
-@property (nonatomic, strong, nullable) NSSet<EventModelObject*> *events;
-- (nullable NSMutableSet<EventModelObject*>*)eventsSet;
+//- (BOOL)validateName:(id*)value_ error:(NSError**)error_;
+
+@property (nonatomic, strong) NSString* techId;
+
+//- (BOOL)validateTechId:(id*)value_ error:(NSError**)error_;
+
+@property (nonatomic, strong) NSSet *events;
+
+- (NSMutableSet*)eventsSet;
 
 @end
 
 @interface _TechModelObject (EventsCoreDataGeneratedAccessors)
-- (void)addEvents:(NSSet<EventModelObject*>*)value_;
-- (void)removeEvents:(NSSet<EventModelObject*>*)value_;
+- (void)addEvents:(NSSet*)value_;
+- (void)removeEvents:(NSSet*)value_;
 - (void)addEventsObject:(EventModelObject*)value_;
 - (void)removeEventsObject:(EventModelObject*)value_;
 
@@ -52,19 +61,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString*)primitiveTechId;
 - (void)setPrimitiveTechId:(NSString*)value;
 
-- (NSMutableSet<EventModelObject*>*)primitiveEvents;
-- (void)setPrimitiveEvents:(NSMutableSet<EventModelObject*>*)value;
+- (NSMutableSet*)primitiveEvents;
+- (void)setPrimitiveEvents:(NSMutableSet*)value;
 
 @end
-
-@interface TechModelObjectAttributes: NSObject 
-+ (NSString *)color;
-+ (NSString *)name;
-+ (NSString *)techId;
-@end
-
-@interface TechModelObjectRelationships: NSObject
-+ (NSString *)events;
-@end
-
-NS_ASSUME_NONNULL_END

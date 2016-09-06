@@ -24,6 +24,7 @@
 #import "ApplicationHelperAssembly.h"
 #import "LaunchSystemAssembly.h"
 #import "SpotlightIndexerAssembly.h"
+#import "DaemonAssembly.h"
 
 #import "ApplicationConfigurator.h"
 #import "ApplicationConfiguratorImplementation.h"
@@ -44,8 +45,10 @@
                                             parameters:^(TyphoonMethod *method) {
                                                 [method injectParameterWith:@[
                                                                               [self cleanStartAppDelegate],
-                                                                              [self.launchSystemAssembly spotlightAppDelegate]
-                                                                              ]];
+                                                                              [self.launchSystemAssembly spotlightAppDelegate],
+                                                                              [self.launchSystemAssembly quickActionAppDelegate]
+                                                                              ]
+                                                                              ];
                                             }];
                               definition.scope = TyphoonScopeSingleton;
                           }];
@@ -64,6 +67,8 @@
                                                     with:[self.spotlightIndexerAssembly indexerMonitor]];
                               [definition injectProperty:@selector(spotlightCoreDataStackCoordinator)
                                                     with:[self.spotlightIndexerAssembly spotlightCoreDataStackCoordinator]];
+                              [definition injectProperty:@selector(quickActionDaemon)
+                                                    with:[self.daemonAssembly quickActionDaemon]];
                               
                               definition.scope = TyphoonScopeSingleton;
                           }];

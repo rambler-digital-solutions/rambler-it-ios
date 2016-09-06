@@ -18,22 +18,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-/**
- @author Egor Tolstoy
- 
- This protocol describes a router responsible for opening after the application launch one of the cards screens: Event, User or Lecture.
- */
-@protocol DataCardLaunchRouter <NSObject>
+@interface QuickActionMockApplication : NSObject
 
-/**
- @author Egor Tolstoy
- 
- Method initiates opening of data card screen
- 
- @param data The data object
- */
-- (void)openDataCardScreenWithData:(id)data;
+@property (nonatomic, strong) NSArray *shortcutItems;
 
 @end

@@ -392,6 +392,8 @@
 		9F4097891D51F8FD008BFE42 /* EventObjectTransformerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4097881D51F8FD008BFE42 /* EventObjectTransformerTests.m */; };
 		9F40978D1D5210D9008BFE42 /* SpotlightIndexerAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F40978C1D5210D9008BFE42 /* SpotlightIndexerAssembly.m */; };
 		9F4097951D534F82008BFE42 /* EventChangeProviderFetchRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4097941D534F82008BFE42 /* EventChangeProviderFetchRequestFactory.m */; };
+		9F4825341D7C95AC0066D9EE /* QuickActionDaemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4825311D7C95AC0066D9EE /* QuickActionDaemon.m */; };
+		9F4825381D7C99670066D9EE /* DaemonAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4825371D7C99670066D9EE /* DaemonAssembly.m */; };
 		9F5316A91D50F56900F13931 /* IndexerStateStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5316A81D50F56900F13931 /* IndexerStateStorage.m */; };
 		9F533A891D50DE84004F8E82 /* FetchedResultsControllerChangeProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F533A881D50DE84004F8E82 /* FetchedResultsControllerChangeProvider.m */; };
 		9F533A8E1D50EC10004F8E82 /* IndexerMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F533A8D1D50EC10004F8E82 /* IndexerMonitor.m */; };
@@ -416,6 +418,17 @@
 		9F78D7791D5A0330009DDCEA /* LectureObjectIndexerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D7781D5A0330009DDCEA /* LectureObjectIndexerTests.m */; };
 		9F78D77D1D5A075C009DDCEA /* LectureChangeProviderFetchRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D77C1D5A075C009DDCEA /* LectureChangeProviderFetchRequestFactory.m */; };
 		9F78D7801D5A078F009DDCEA /* LectureChangeProviderFetchRequestFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D77F1D5A078F009DDCEA /* LectureChangeProviderFetchRequestFactoryTests.m */; };
+		9F7B821B1D7CAB28002E977A /* QuickActionDaemonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B821A1D7CAB28002E977A /* QuickActionDaemonTests.m */; };
+		9F7B821E1D7CB15E002E977A /* QuickActionMockApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B821D1D7CB15E002E977A /* QuickActionMockApplication.m */; };
+		9F7B82221D7DA554002E977A /* QuickActionAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B82211D7DA554002E977A /* QuickActionAppDelegate.m */; };
+		9F7B82261D7DA8B5002E977A /* QuickActionLaunchHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B82251D7DA8B5002E977A /* QuickActionLaunchHandler.m */; };
+		9F7B82291D7DA9E9002E977A /* QuickActionAppDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B82281D7DA9E9002E977A /* QuickActionAppDelegateTests.m */; };
+		9F7B822D1D7DAB51002E977A /* QuickActionUserActivityFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B822C1D7DAB51002E977A /* QuickActionUserActivityFactory.m */; };
+		9F7B82301D7DABB3002E977A /* QuickActionUserActivityFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B822F1D7DABB3002E977A /* QuickActionUserActivityFactoryTests.m */; };
+		9F7B82331D7DB1AD002E977A /* QuickActionConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B82321D7DB1AD002E977A /* QuickActionConstants.m */; };
+		9F7B823B1D7ECA07002E977A /* TabLaunchRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B823A1D7ECA07002E977A /* TabLaunchRouter.m */; };
+		9F7B823E1D7ECAD9002E977A /* QuickActionLaunchHandlerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B823D1D7ECAD9002E977A /* QuickActionLaunchHandlerTests.m */; };
+		9F7B82411D7ECF14002E977A /* TabLaunchRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B82401D7ECF14002E977A /* TabLaunchRouterTests.m */; };
 		9F8B49E11D6EEE9000ED176B /* YouTubeIdentifierDeriviator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B49E01D6EEE9000ED176B /* YouTubeIdentifierDeriviator.m */; };
 		9F8B49E41D6EEF4500ED176B /* YouTubeIdentifierDeriviatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B49E31D6EEF4500ED176B /* YouTubeIdentifierDeriviatorTests.m */; };
 		9F8B49E91D6EF72B00ED176B /* YouTubePlayerFactoryImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B49E81D6EF72B00ED176B /* YouTubePlayerFactoryImplementation.m */; };
@@ -1328,6 +1341,11 @@
 		9F4097901D534F1E008BFE42 /* ChangeProviderFetchRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChangeProviderFetchRequestFactory.h; path = ChangeProviderFetchRequestFactories/Protocols/ChangeProviderFetchRequestFactory.h; sourceTree = "<group>"; };
 		9F4097931D534F82008BFE42 /* EventChangeProviderFetchRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventChangeProviderFetchRequestFactory.h; path = ChangeProviderFetchRequestFactories/ConcreteClasses/EventChangeProviderFetchRequestFactory/EventChangeProviderFetchRequestFactory.h; sourceTree = "<group>"; };
 		9F4097941D534F82008BFE42 /* EventChangeProviderFetchRequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventChangeProviderFetchRequestFactory.m; path = ChangeProviderFetchRequestFactories/ConcreteClasses/EventChangeProviderFetchRequestFactory/EventChangeProviderFetchRequestFactory.m; sourceTree = "<group>"; };
+		9F4825301D7C95AC0066D9EE /* QuickActionDaemon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickActionDaemon.h; sourceTree = "<group>"; };
+		9F4825311D7C95AC0066D9EE /* QuickActionDaemon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickActionDaemon.m; sourceTree = "<group>"; };
+		9F4825331D7C95AC0066D9EE /* Daemon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Daemon.h; sourceTree = "<group>"; };
+		9F4825361D7C99670066D9EE /* DaemonAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DaemonAssembly.h; path = DaemonAssembly/DaemonAssembly.h; sourceTree = "<group>"; };
+		9F4825371D7C99670066D9EE /* DaemonAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DaemonAssembly.m; path = DaemonAssembly/DaemonAssembly.m; sourceTree = "<group>"; };
 		9F5316A51D50F29000F13931 /* ChangeProviderChangeType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ChangeProviderChangeType.h; path = SpotlightIndexer/Transactions/Headers/ChangeProviderChangeType.h; sourceTree = "<group>"; };
 		9F5316A71D50F56900F13931 /* IndexerStateStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndexerStateStorage.h; path = SpotlightIndexer/IndexerStateStorage/IndexerStateStorage.h; sourceTree = "<group>"; };
 		9F5316A81D50F56900F13931 /* IndexerStateStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IndexerStateStorage.m; path = SpotlightIndexer/IndexerStateStorage/IndexerStateStorage.m; sourceTree = "<group>"; };
@@ -1375,6 +1393,23 @@
 		9F78D77B1D5A075C009DDCEA /* LectureChangeProviderFetchRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LectureChangeProviderFetchRequestFactory.h; path = ChangeProviderFetchRequestFactories/ConcreteClasses/LectureChangeProviderFetchRequestFactory/LectureChangeProviderFetchRequestFactory.h; sourceTree = "<group>"; };
 		9F78D77C1D5A075C009DDCEA /* LectureChangeProviderFetchRequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LectureChangeProviderFetchRequestFactory.m; path = ChangeProviderFetchRequestFactories/ConcreteClasses/LectureChangeProviderFetchRequestFactory/LectureChangeProviderFetchRequestFactory.m; sourceTree = "<group>"; };
 		9F78D77F1D5A078F009DDCEA /* LectureChangeProviderFetchRequestFactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LectureChangeProviderFetchRequestFactoryTests.m; path = ApplicationLayerTests/SpotlightIndexer/ChangeProviders/BaseClasses/FetchedResultsControllerChangeProvider/ChangeProviderFetchRequestFactories/ConcreteClasses/LectureChangeProviderFetchRequestFactory/LectureChangeProviderFetchRequestFactoryTests.m; sourceTree = "<group>"; };
+		9F7B821A1D7CAB28002E977A /* QuickActionDaemonTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuickActionDaemonTests.m; path = ApplicationLayerTests/Daemons/QuickActionDaemon/QuickActionDaemonTests.m; sourceTree = "<group>"; };
+		9F7B821C1D7CB15E002E977A /* QuickActionMockApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuickActionMockApplication.h; path = ApplicationLayerTests/Daemons/QuickActionDaemon/QuickActionMockApplication.h; sourceTree = "<group>"; };
+		9F7B821D1D7CB15E002E977A /* QuickActionMockApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuickActionMockApplication.m; path = ApplicationLayerTests/Daemons/QuickActionDaemon/QuickActionMockApplication.m; sourceTree = "<group>"; };
+		9F7B82201D7DA554002E977A /* QuickActionAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuickActionAppDelegate.h; path = QuickActionAppDelegate/QuickActionAppDelegate.h; sourceTree = "<group>"; };
+		9F7B82211D7DA554002E977A /* QuickActionAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuickActionAppDelegate.m; path = QuickActionAppDelegate/QuickActionAppDelegate.m; sourceTree = "<group>"; };
+		9F7B82241D7DA8B5002E977A /* QuickActionLaunchHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuickActionLaunchHandler.h; path = QuickActionLaunchHandler/QuickActionLaunchHandler.h; sourceTree = "<group>"; };
+		9F7B82251D7DA8B5002E977A /* QuickActionLaunchHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuickActionLaunchHandler.m; path = QuickActionLaunchHandler/QuickActionLaunchHandler.m; sourceTree = "<group>"; };
+		9F7B82281D7DA9E9002E977A /* QuickActionAppDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuickActionAppDelegateTests.m; path = QuickActionAppDelegate/QuickActionAppDelegateTests.m; sourceTree = "<group>"; };
+		9F7B822B1D7DAB51002E977A /* QuickActionUserActivityFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuickActionUserActivityFactory.h; path = CleanLaunchAppDelegate/QuickActionUserActivityFactory/QuickActionUserActivityFactory.h; sourceTree = "<group>"; };
+		9F7B822C1D7DAB51002E977A /* QuickActionUserActivityFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuickActionUserActivityFactory.m; path = CleanLaunchAppDelegate/QuickActionUserActivityFactory/QuickActionUserActivityFactory.m; sourceTree = "<group>"; };
+		9F7B822F1D7DABB3002E977A /* QuickActionUserActivityFactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuickActionUserActivityFactoryTests.m; path = QuickActionAppDelegate/QuickActionUserActivityFactory/QuickActionUserActivityFactoryTests.m; sourceTree = "<group>"; };
+		9F7B82311D7DB1AD002E977A /* QuickActionConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickActionConstants.h; sourceTree = "<group>"; };
+		9F7B82321D7DB1AD002E977A /* QuickActionConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickActionConstants.m; sourceTree = "<group>"; };
+		9F7B82391D7ECA07002E977A /* TabLaunchRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabLaunchRouter.h; sourceTree = "<group>"; };
+		9F7B823A1D7ECA07002E977A /* TabLaunchRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabLaunchRouter.m; sourceTree = "<group>"; };
+		9F7B823D1D7ECAD9002E977A /* QuickActionLaunchHandlerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuickActionLaunchHandlerTests.m; path = QuickActionLaunchHandler/QuickActionLaunchHandlerTests.m; sourceTree = "<group>"; };
+		9F7B82401D7ECF14002E977A /* TabLaunchRouterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TabLaunchRouterTests.m; path = TabLaunchRouter/TabLaunchRouterTests.m; sourceTree = "<group>"; };
 		9F8B49DF1D6EEE9000ED176B /* YouTubeIdentifierDeriviator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YouTubeIdentifierDeriviator.h; path = YouTubeIdentifierDeriviator/YouTubeIdentifierDeriviator.h; sourceTree = "<group>"; };
 		9F8B49E01D6EEE9000ED176B /* YouTubeIdentifierDeriviator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YouTubeIdentifierDeriviator.m; path = YouTubeIdentifierDeriviator/YouTubeIdentifierDeriviator.m; sourceTree = "<group>"; };
 		9F8B49E31D6EEF4500ED176B /* YouTubeIdentifierDeriviatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YouTubeIdentifierDeriviatorTests.m; path = YouTubeIdentifierDeriviator/YouTubeIdentifierDeriviatorTests.m; sourceTree = "<group>"; };
@@ -1446,7 +1481,7 @@
 		9FBE89A81D5CB71300DA0C32 /* TabBarControllerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarControllerFactory.h; sourceTree = "<group>"; };
 		9FBE89A91D5CB71300DA0C32 /* TabBarControllerFactoryImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarControllerFactoryImplementation.h; sourceTree = "<group>"; };
 		9FBE89AA1D5CB71300DA0C32 /* TabBarControllerFactoryImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarControllerFactoryImplementation.m; sourceTree = "<group>"; };
-		9FBE89AC1D5CB71300DA0C32 /* DataCardLaunchRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataCardLaunchRouter.h; sourceTree = "<group>"; };
+		9FBE89AC1D5CB71300DA0C32 /* LaunchRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchRouter.h; sourceTree = "<group>"; };
 		9FBE89B81D5CB72D00DA0C32 /* CleanLaunchAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CleanLaunchAppDelegate.h; sourceTree = "<group>"; };
 		9FBE89B91D5CB72D00DA0C32 /* CleanLaunchAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CleanLaunchAppDelegate.m; sourceTree = "<group>"; };
 		9FBE89BE1D5CB76900DA0C32 /* CleanLaunchAppDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CleanLaunchAppDelegateTests.m; sourceTree = "<group>"; };
@@ -2373,6 +2408,7 @@
 		636A37BC1BC13FA200B49C3D /* Assemblies */ = {
 			isa = PBXGroup;
 			children = (
+				9F4825351D7C99560066D9EE /* DaemonAssembly */,
 				9FBE89E41D5CBC4900DA0C32 /* ApplicationHelperAssembly */,
 				9FBE89E01D5CBAE200DA0C32 /* LaunchSystemAssembly */,
 				9F40978A1D5210C4008BFE42 /* SpotlightIndexerAssembly */,
@@ -3807,6 +3843,7 @@
 		63FDCDD91BBDBA2A00A43B60 /* ApplicationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				9F48252D1D7C95AC0066D9EE /* Daemons */,
 				9FBE89831D5CB71300DA0C32 /* LaunchSystem */,
 				9F533A7C1D50D6E7004F8E82 /* SpotlightIndexer */,
 				63F54D9C1BC5BA8F00DB1746 /* ThirdPartiesConfigurator */,
@@ -5961,6 +5998,51 @@
 			name = EventChangeProviderFetchRequestFactory;
 			sourceTree = "<group>";
 		};
+		9F48252D1D7C95AC0066D9EE /* Daemons */ = {
+			isa = PBXGroup;
+			children = (
+				9F4825321D7C95AC0066D9EE /* Protocols */,
+				9F48252E1D7C95AC0066D9EE /* ConcreteClasses */,
+			);
+			path = Daemons;
+			sourceTree = "<group>";
+		};
+		9F48252E1D7C95AC0066D9EE /* ConcreteClasses */ = {
+			isa = PBXGroup;
+			children = (
+				9F48252F1D7C95AC0066D9EE /* QuickActionDaemon */,
+			);
+			path = ConcreteClasses;
+			sourceTree = "<group>";
+		};
+		9F48252F1D7C95AC0066D9EE /* QuickActionDaemon */ = {
+			isa = PBXGroup;
+			children = (
+				9F4825301D7C95AC0066D9EE /* QuickActionDaemon.h */,
+				9F4825311D7C95AC0066D9EE /* QuickActionDaemon.m */,
+				9F7B82311D7DB1AD002E977A /* QuickActionConstants.h */,
+				9F7B82321D7DB1AD002E977A /* QuickActionConstants.m */,
+			);
+			path = QuickActionDaemon;
+			sourceTree = "<group>";
+		};
+		9F4825321D7C95AC0066D9EE /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9F4825331D7C95AC0066D9EE /* Daemon.h */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		9F4825351D7C99560066D9EE /* DaemonAssembly */ = {
+			isa = PBXGroup;
+			children = (
+				9F4825361D7C99670066D9EE /* DaemonAssembly.h */,
+				9F4825371D7C99670066D9EE /* DaemonAssembly.m */,
+			);
+			name = DaemonAssembly;
+			sourceTree = "<group>";
+		};
 		9F5316A41D50F27100F13931 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
@@ -6284,6 +6366,94 @@
 			name = LectureChangeProviderFetchRequestFactory;
 			sourceTree = "<group>";
 		};
+		9F7B82181D7CAB07002E977A /* Daemons */ = {
+			isa = PBXGroup;
+			children = (
+				9F7B82191D7CAB0B002E977A /* QuickActionDaemon */,
+			);
+			name = Daemons;
+			sourceTree = "<group>";
+		};
+		9F7B82191D7CAB0B002E977A /* QuickActionDaemon */ = {
+			isa = PBXGroup;
+			children = (
+				9F7B821A1D7CAB28002E977A /* QuickActionDaemonTests.m */,
+				9F7B821C1D7CB15E002E977A /* QuickActionMockApplication.h */,
+				9F7B821D1D7CB15E002E977A /* QuickActionMockApplication.m */,
+			);
+			name = QuickActionDaemon;
+			sourceTree = "<group>";
+		};
+		9F7B821F1D7DA546002E977A /* QuickActionAppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				9F7B822A1D7DAB3E002E977A /* QuickActionUserActivityFactory */,
+				9F7B82201D7DA554002E977A /* QuickActionAppDelegate.h */,
+				9F7B82211D7DA554002E977A /* QuickActionAppDelegate.m */,
+			);
+			name = QuickActionAppDelegate;
+			sourceTree = "<group>";
+		};
+		9F7B82231D7DA8A7002E977A /* QuickActionLaunchHandler */ = {
+			isa = PBXGroup;
+			children = (
+				9F7B82241D7DA8B5002E977A /* QuickActionLaunchHandler.h */,
+				9F7B82251D7DA8B5002E977A /* QuickActionLaunchHandler.m */,
+			);
+			name = QuickActionLaunchHandler;
+			sourceTree = "<group>";
+		};
+		9F7B82271D7DA9DC002E977A /* QuickActionAppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				9F7B822E1D7DABA6002E977A /* QuickActionUserActivityFactory */,
+				9F7B82281D7DA9E9002E977A /* QuickActionAppDelegateTests.m */,
+			);
+			name = QuickActionAppDelegate;
+			sourceTree = "<group>";
+		};
+		9F7B822A1D7DAB3E002E977A /* QuickActionUserActivityFactory */ = {
+			isa = PBXGroup;
+			children = (
+				9F7B822B1D7DAB51002E977A /* QuickActionUserActivityFactory.h */,
+				9F7B822C1D7DAB51002E977A /* QuickActionUserActivityFactory.m */,
+			);
+			name = QuickActionUserActivityFactory;
+			sourceTree = "<group>";
+		};
+		9F7B822E1D7DABA6002E977A /* QuickActionUserActivityFactory */ = {
+			isa = PBXGroup;
+			children = (
+				9F7B822F1D7DABB3002E977A /* QuickActionUserActivityFactoryTests.m */,
+			);
+			name = QuickActionUserActivityFactory;
+			sourceTree = "<group>";
+		};
+		9F7B82381D7ECA07002E977A /* TabLaunchRouter */ = {
+			isa = PBXGroup;
+			children = (
+				9F7B82391D7ECA07002E977A /* TabLaunchRouter.h */,
+				9F7B823A1D7ECA07002E977A /* TabLaunchRouter.m */,
+			);
+			path = TabLaunchRouter;
+			sourceTree = "<group>";
+		};
+		9F7B823C1D7ECACC002E977A /* QuickActionLaunchHandler */ = {
+			isa = PBXGroup;
+			children = (
+				9F7B823D1D7ECAD9002E977A /* QuickActionLaunchHandlerTests.m */,
+			);
+			name = QuickActionLaunchHandler;
+			sourceTree = "<group>";
+		};
+		9F7B823F1D7ECF0A002E977A /* TabLaunchRouter */ = {
+			isa = PBXGroup;
+			children = (
+				9F7B82401D7ECF14002E977A /* TabLaunchRouterTests.m */,
+			);
+			name = TabLaunchRouter;
+			sourceTree = "<group>";
+		};
 		9F8B49DE1D6EEE5E00ED176B /* YouTubeIdentifierDeriviator */ = {
 			isa = PBXGroup;
 			children = (
@@ -6538,6 +6708,7 @@
 		9FBE89841D5CB71300DA0C32 /* AppDelegates */ = {
 			isa = PBXGroup;
 			children = (
+				9F7B821F1D7DA546002E977A /* QuickActionAppDelegate */,
 				9FBE89B71D5CB72D00DA0C32 /* CleanLaunchAppDelegate */,
 				9FBE89881D5CB71300DA0C32 /* SpotlightAppDelegate */,
 				9FBE898B1D5CB71300DA0C32 /* TyphoonAppDelegate */,
@@ -6585,6 +6756,7 @@
 		9FBE89921D5CB71300DA0C32 /* ConcreteClasses */ = {
 			isa = PBXGroup;
 			children = (
+				9F7B82231D7DA8A7002E977A /* QuickActionLaunchHandler */,
 				9FBE89931D5CB71300DA0C32 /* SpotlightLaunchHandler */,
 			);
 			path = ConcreteClasses;
@@ -6620,6 +6792,7 @@
 		9FBE89991D5CB71300DA0C32 /* ConcreteClasses */ = {
 			isa = PBXGroup;
 			children = (
+				9F7B82381D7ECA07002E977A /* TabLaunchRouter */,
 				9FBE899A1D5CB71300DA0C32 /* CleanLaunchRouter */,
 				9FBE899D1D5CB71300DA0C32 /* EventLaunchRouter */,
 				9FBE89A01D5CB71300DA0C32 /* LectureLaunchRouter */,
@@ -6685,7 +6858,7 @@
 		9FBE89AB1D5CB71300DA0C32 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				9FBE89AC1D5CB71300DA0C32 /* DataCardLaunchRouter.h */,
+				9FBE89AC1D5CB71300DA0C32 /* LaunchRouter.h */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -6713,6 +6886,7 @@
 		9FBE89BC1D5CB76900DA0C32 /* AppDelegates */ = {
 			isa = PBXGroup;
 			children = (
+				9F7B82271D7DA9DC002E977A /* QuickActionAppDelegate */,
 				9FBE89BD1D5CB76900DA0C32 /* CleanLaunchAppDelegate */,
 				9FBE89BF1D5CB76900DA0C32 /* SpotlightAppDelegate */,
 				9FBE89C11D5CB76900DA0C32 /* TyphoonAppDelegate */,
@@ -6747,6 +6921,7 @@
 		9FBE89C31D5CB76900DA0C32 /* LaunchHandler */ = {
 			isa = PBXGroup;
 			children = (
+				9F7B823C1D7ECACC002E977A /* QuickActionLaunchHandler */,
 				9FBE89C41D5CB76900DA0C32 /* SpotlightLaunchHandler */,
 			);
 			path = LaunchHandler;
@@ -6772,6 +6947,7 @@
 		9FBE89C71D5CB76900DA0C32 /* ConcreteClasses */ = {
 			isa = PBXGroup;
 			children = (
+				9F7B823F1D7ECF0A002E977A /* TabLaunchRouter */,
 				9FBE89C81D5CB76900DA0C32 /* CleanLaunchRouter */,
 				9FBE89CA1D5CB76900DA0C32 /* EventLaunchRouter */,
 				9FBE89CC1D5CB76900DA0C32 /* LectureLaunchRouter */,
@@ -7610,6 +7786,7 @@
 		9FF125231D51E6120098625F /* ApplicationLayerTests */ = {
 			isa = PBXGroup;
 			children = (
+				9F7B82181D7CAB07002E977A /* Daemons */,
 				9FBE89BB1D5CB76900DA0C32 /* LaunchSystem */,
 				9FF125241D51E61B0098625F /* SpotlightIndexer */,
 			);
@@ -8119,6 +8296,7 @@
 				631808691C4A870C00A61E7D /* LectureMaterialInfoTableViewCell.m in Sources */,
 				63F613721CB00A220002AEF0 /* EventInfoTableViewCell.m in Sources */,
 				63F613671CB00A220002AEF0 /* LectureInfoTableViewCellObject.m in Sources */,
+				9F7B82261D7DA8B5002E977A /* QuickActionLaunchHandler.m in Sources */,
 				2B2064971D3F9CE900246C8D /* SocialNetworkAccountPlainObject.m in Sources */,
 				63F6139B1CB00A220002AEF0 /* SpeakerInfoTableViewCell.m in Sources */,
 				667050101D46140200DD9D6E /* ReportsSearchInteractor.m in Sources */,
@@ -8147,6 +8325,7 @@
 				9F78D74A1D59D73E009DDCEA /* IndexState.m in Sources */,
 				63F613981CB00A220002AEF0 /* SpeakerInfoPresenter.m in Sources */,
 				2B429A531D4616AD004C005F /* UIView+LJLoadFromNib.m in Sources */,
+				9F4825381D7C99670066D9EE /* DaemonAssembly.m in Sources */,
 				631808631C4A66FA00A61E7D /* LocalizedStrings.m in Sources */,
 				9FBE8AC11D630D4C00DA0C32 /* EventGalleryMoreEventsCollectionViewCell.m in Sources */,
 				63F8F2821BF7925F000017F3 /* PresentationLayerHelpersAssembly.m in Sources */,
@@ -8197,6 +8376,7 @@
 				9F78D74B1D59D73E009DDCEA /* IndexState+CoreDataProperties.m in Sources */,
 				63F6135E1CB00A220002AEF0 /* EventHeaderView.m in Sources */,
 				9FE1398D1D65F3E900D7BF44 /* SearchDataDisplayManager.m in Sources */,
+				9F7B82221D7DA554002E977A /* QuickActionAppDelegate.m in Sources */,
 				9FF74FFA1D26C448000D208D /* EventListQuery.m in Sources */,
 				9F1830D71BC125C3000E21A5 /* ParseResponseValidator.m in Sources */,
 				631808421C482B1300A61E7D /* SpeakerShortInfoRouter.m in Sources */,
@@ -8299,6 +8479,7 @@
 				9F40779C1D2C109200D47EF6 /* DirectionObjectMapper.m in Sources */,
 				9F0A85031BC1698B006F79FB /* OperationDebugDescriptionFormatter.m in Sources */,
 				63F613861CB00A220002AEF0 /* PastEventCellObjectBuilder.m in Sources */,
+				9F7B822D1D7DAB51002E977A /* QuickActionUserActivityFactory.m in Sources */,
 				9F0A84FC1BC1698B006F79FB /* CompoundOperationDebugDescriptionFormatter.m in Sources */,
 				9F0A84FE1BC1698B006F79FB /* RequestConfigurationOperation.m in Sources */,
 				9FBE8AB51D630D4C00DA0C32 /* EventGalleryAssembly.m in Sources */,
@@ -8360,6 +8541,7 @@
 				63ECC4161CA81E5300439A01 /* ErrorConstants.m in Sources */,
 				661CA4271D65D2040047EB68 /* ResponseConverterAssembly.m in Sources */,
 				66E999A71D54B50500161D98 /* ContentSizeObserver.m in Sources */,
+				9F7B823B1D7ECA07002E977A /* TabLaunchRouter.m in Sources */,
 				63EF15BB1BC4559900480CAF /* PushNotificationCenterImplementation.m in Sources */,
 				636F8DDB1BCB8FE800552B91 /* RamblerLocationInteractor.m in Sources */,
 				63F613761CB00A220002AEF0 /* PreviousEventSectionHeaderTableViewCell.m in Sources */,
@@ -8380,6 +8562,7 @@
 				667050211D46146B00DD9D6E /* ReportsSearchDataDisplayManager.m in Sources */,
 				66E999621D54B04100161D98 /* TagModuleConfig.m in Sources */,
 				63F6137E1CB00A220002AEF0 /* SignUpAndSaveToCalendarEventTableViewCell.m in Sources */,
+				9F4825341D7C95AC0066D9EE /* QuickActionDaemon.m in Sources */,
 				9FE1397B1D65F3E900D7BF44 /* GrayTableViewSectionHeaderAndFooterCellObject.m in Sources */,
 				66EE4D341D54BFCD0011F94A /* NIMutableCollectionViewModel+LJAddObject.m in Sources */,
 				2B2064961D3F9CE900246C8D /* RegistrationQuestionPlainObject.m in Sources */,
@@ -8394,6 +8577,7 @@
 				63F613651CB00A220002AEF0 /* EventDescriptionTableViewCellObject.m in Sources */,
 				9FBE8AB91D630D4C00DA0C32 /* EventGalleryRouter.m in Sources */,
 				636F8D0C1BCB825F00552B91 /* ModuleAssemblyBase.m in Sources */,
+				9F7B82331D7DB1AD002E977A /* QuickActionConstants.m in Sources */,
 				2B2064811D3F9CE900246C8D /* _LectureMaterialPlainObject.m in Sources */,
 				636A37C21BC1413A00B49C3D /* SystemInfrastructureAssembly.m in Sources */,
 				63F613951CB00A220002AEF0 /* SpeakerInfoModuleAssembly.m in Sources */,
@@ -8438,6 +8622,7 @@
 				635E18D51CA6CECB005B8439 /* EventHeaderModuleAssemblyTests.m in Sources */,
 				63F613E41CB111070002AEF0 /* LectureInteractorTests.m in Sources */,
 				66A1DD3B1D7E983100998F6B /* TagModuleTableViewCellTests.m in Sources */,
+				9F7B821B1D7CAB28002E977A /* QuickActionDaemonTests.m in Sources */,
 				63F613D81CB111070002AEF0 /* EventListInteractorTests.m in Sources */,
 				63F613E61CB111070002AEF0 /* LectureRouterTests.m in Sources */,
 				662166501D4F4507000A1D11 /* ReportsSearchInteractorTests.m in Sources */,
@@ -8454,6 +8639,7 @@
 				63F613ED1CB111070002AEF0 /* SpeakerInfoInteractorTests.m in Sources */,
 				9F78D76B1D59EB52009DDCEA /* SpeakerObjectIndexerTests.m in Sources */,
 				631CBA741C020CCD00E3EBA8 /* EventModuleAssemblyTests.m in Sources */,
+				9F7B82291D7DA9E9002E977A /* QuickActionAppDelegateTests.m in Sources */,
 				63D86BDD1C143FCE00986536 /* DateFormatterTests.m in Sources */,
 				66A1DD551D7E993A00998F6B /* MockObjectsFactory.m in Sources */,
 				9FE139261D65CC2500D7BF44 /* SuggestServiceImplementationTests.m in Sources */,
@@ -8513,6 +8699,7 @@
 				631CBA721C020CCD00E3EBA8 /* EventListModuleAssemblyTests.m in Sources */,
 				66A1DD481D7E984E00998F6B /* TagDataDisplayManagerTests.m in Sources */,
 				9FAB6A9A1D54BFA00061F333 /* FetchedResultsControllerChangeProviderTests.m in Sources */,
+				9F7B821E1D7CB15E002E977A /* QuickActionMockApplication.m in Sources */,
 				635E18C71CA6B8CE005B8439 /* SpeakerShortInfoModuleAssemblyTests.m in Sources */,
 				9FBE8A351D5F3CD500DA0C32 /* EventGalleryPresenterTests.m in Sources */,
 				66A1DD301D7E980D00998F6B /* TagAssemblyTests.m in Sources */,
@@ -8548,9 +8735,11 @@
 				9FAB6A871D54981B0061F333 /* IndexerMonitorOperationQueueFactoryTests.m in Sources */,
 				9F1830B81BC119A5000E21A5 /* CommonNetworkClientTests.m in Sources */,
 				2B4F20281D54DBDF00C9891E /* SpeakerInfoDataDisplayManagerTests.m in Sources */,
+				9F7B82411D7ECF14002E977A /* TabLaunchRouterTests.m in Sources */,
 				635E18BF1CA6A0A9005B8439 /* SpeakerInfoModuleAssemblyTests.m in Sources */,
 				9FAB6A771D548C480061F333 /* IndexTransactionBatchTests.m in Sources */,
 				635E18CD1CA6C5E5005B8439 /* StubTestHelper.m in Sources */,
+				9F7B82301D7DABB3002E977A /* QuickActionUserActivityFactoryTests.m in Sources */,
 				631CBA7E1C02140600E3EBA8 /* RamblerLocationModuleAssemblyTests.m in Sources */,
 				63F613DF1CB111070002AEF0 /* EventDataDisplayManagerTests.m in Sources */,
 				63F613E81CB111070002AEF0 /* SearchDataDisplayManagerTests.m in Sources */,
@@ -8569,6 +8758,7 @@
 				63F613DE1CB111070002AEF0 /* PastEventCellObjectBuilderTests.m in Sources */,
 				2B4F202A1D54E11F00C9891E /* SpeakerInfoCellObjectsBuilderTests.m in Sources */,
 				9F1830FE1BC14E64000E21A5 /* Conference.xcdatamodeld in Sources */,
+				9F7B823E1D7ECAD9002E977A /* QuickActionLaunchHandlerTests.m in Sources */,
 				63F613E91CB111070002AEF0 /* SearchInteractorTests.m in Sources */,
 				63F613E11CB111070002AEF0 /* EventPresenterTests.m in Sources */,
 				9F0A85281BC185AA006F79FB /* ResponseValidationOperationTests.m in Sources */,

@@ -24,6 +24,7 @@ static NSString *const kMainStoryboardName = @"Main";
 static NSString *const kEventStoryboardName = @"Event";
 static NSString *const kSpeakerStoryboardName = @"SpeakerInfo";
 static NSString *const kLectureStoryboardName = @"Lecture";
+static NSString *const kRamblerLocationStoryboardName = @"RamblerLocation";
 
 @implementation StoryboardAssembly
 
@@ -69,6 +70,18 @@ static NSString *const kLectureStoryboardName = @"Lecture";
                               [definition useInitializer:@selector(storyboardWithName:factory:bundle:)
                                               parameters:^(TyphoonMethod *initializer) {
                                                   [initializer injectParameterWith:kLectureStoryboardName];
+                                                  [initializer injectParameterWith:self];
+                                                  [initializer injectParameterWith:[NSBundle mainBundle]];
+                                              }];
+                          }];
+}
+
+- (UIStoryboard *)ramblerLocationStoryboard {
+    return [TyphoonDefinition withClass:[TyphoonStoryboard class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition useInitializer:@selector(storyboardWithName:factory:bundle:)
+                                              parameters:^(TyphoonMethod *initializer) {
+                                                  [initializer injectParameterWith:kRamblerLocationStoryboardName];
                                                   [initializer injectParameterWith:self];
                                                   [initializer injectParameterWith:[NSBundle mainBundle]];
                                               }];

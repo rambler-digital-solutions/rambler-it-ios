@@ -51,6 +51,25 @@
 	</array>
 	<key>UIStatusBarHidden</key>
 	<true/>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>search-tabbar-icon</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Поиск</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER).Search</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>location-tabbar-icon</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Как добраться</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER).Directions</string>
+		</dict>
+	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array/>
 </dict>

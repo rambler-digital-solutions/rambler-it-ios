@@ -69,6 +69,10 @@
     return sortedEvents;
 }
 
+- (void)trackEventVisitForEvent:(EventPlainObject *)event {
+    [self.eventService trackEventVisitForEventId:event.eventId];
+}
+
 - (void)saveEventToCalendar:(EventPlainObject *)event {
     @weakify(self);
     [self.eventStoreService saveEventToCaledar:event withCompletionBlock:^(NSArray *errors) {

@@ -53,9 +53,9 @@ static NSString *const kLectureControllerIdentifier = @"LectureViewController";
     return self;
 }
 
-#pragma mark - <DataCardLaunchRouter>
+#pragma mark - <LaunchRouter>
 
-- (void)openDataCardScreenWithData:(LectureModelObject *)data {
+- (void)openScreenWithData:(LectureModelObject *)data {
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
     
     if (!tabBarController) {

@@ -3,12 +3,22 @@
 
 #import "_TechModelObject.h"
 
+const struct TechModelObjectAttributes TechModelObjectAttributes = {
+	.color = @"color",
+	.name = @"name",
+	.techId = @"techId",
+};
+
+const struct TechModelObjectRelationships TechModelObjectRelationships = {
+	.events = @"events",
+};
+
 @implementation TechModelObjectID
 @end
 
 @implementation _TechModelObject
 
-+ (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_ {
++ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
 	NSParameterAssert(moc_);
 	return [NSEntityDescription insertNewObjectForEntityForName:@"Tech" inManagedObjectContext:moc_];
 }
@@ -40,32 +50,14 @@
 
 @dynamic events;
 
-- (NSMutableSet<EventModelObject*>*)eventsSet {
+- (NSMutableSet*)eventsSet {
 	[self willAccessValueForKey:@"events"];
 
-	NSMutableSet<EventModelObject*> *result = (NSMutableSet<EventModelObject*>*)[self mutableSetValueForKey:@"events"];
+	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"events"];
 
 	[self didAccessValueForKey:@"events"];
 	return result;
 }
 
-@end
-
-@implementation TechModelObjectAttributes 
-+ (NSString *)color {
-	return @"color";
-}
-+ (NSString *)name {
-	return @"name";
-}
-+ (NSString *)techId {
-	return @"techId";
-}
-@end
-
-@implementation TechModelObjectRelationships 
-+ (NSString *)events {
-	return @"events";
-}
 @end
 

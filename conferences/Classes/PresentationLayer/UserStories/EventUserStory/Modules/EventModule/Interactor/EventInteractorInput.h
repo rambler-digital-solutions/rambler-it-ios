@@ -48,6 +48,15 @@
 - (NSArray *)obtainPastEventsForEvent:(EventPlainObject *)event;
 
 /**
+ @author Egor Tolstoy
+ 
+ Method tracks current event visit in history
+ 
+ @param event EventPlainObject
+ */
+- (void)trackEventVisitForEvent:(EventPlainObject *)event;
+
+/**
  @author Artem Karpushin
  
  Method is used to save an event to the calendar

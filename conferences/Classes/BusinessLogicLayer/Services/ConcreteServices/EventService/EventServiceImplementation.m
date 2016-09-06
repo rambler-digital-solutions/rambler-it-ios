@@ -64,6 +64,17 @@ static NSString *const kEventListName = @"kEventListName";
     [self setupPredefinedEventListWithName:kEventListName];
 }
 
+- (void)trackEventVisitForEventId:(NSString *)eventId {
+    NSManagedObjectContext *rootSavingContext = [NSManagedObjectContext MR_rootSavingContext];
+    [rootSavingContext performBlock:^{
+        EventModelObject *event = [EventModelObject MR_findFirstByAttribute:EventModelObjectAttributes.eventId
+                                                                  withValue:eventId
+                                                                  inContext:rootSavingContext];
+        event.lastVisitDate = [NSDate date];
+        [rootSavingContext MR_saveToPersistentStoreAndWait];
+    }];
+}
+
 #pragma mark - private methods
 
 - (void)setupPredefinedEventListWithName:(NSString *)eventListName {

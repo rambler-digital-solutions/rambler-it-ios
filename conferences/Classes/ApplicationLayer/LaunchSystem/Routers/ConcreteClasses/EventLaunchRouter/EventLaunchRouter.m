@@ -53,9 +53,9 @@ static NSString *const kEventControllerIdentifier = @"EventViewController";
     return self;
 }
 
-#pragma mark - <DataCardLaunchRouter>
+#pragma mark - <LaunchRouter>
 
-- (void)openDataCardScreenWithData:(EventModelObject *)data {
+- (void)openScreenWithData:(EventModelObject *)data {
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
     
     if (!tabBarController) {

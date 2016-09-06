@@ -36,5 +36,6 @@
 - (UIApplication *)application;
 - (NSFileManager *)fileManager;
 - (UIWindow *)mainWindow;
+- (NSBundle *)mainBundle;
 
 @end
