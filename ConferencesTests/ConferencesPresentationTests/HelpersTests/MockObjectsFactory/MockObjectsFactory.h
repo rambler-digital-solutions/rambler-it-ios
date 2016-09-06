@@ -30,14 +30,14 @@
 /**
  @author Egor Tolstoy
  
- Объект генерирует различные моковые сущности, реисползуемые в разных тестах
+ Object generates various mock entities, reusable in different tests
  */
 @interface MockObjectsFactory : NSObject
 
 /**
  @author Egor Tolstoy
  
- Метод генерирует случайную ошибку
+ Method generates random error
  
  @return NSError
  */
@@ -46,7 +46,7 @@
 /**
  @author Egor Tolstoy
  
- Метод генерирует случайный URL Request
+ Method generates random URL Request
  
  @return NSURLRequest
  */
@@ -55,7 +55,7 @@
 /**
  @author Egor Tolstoy
  
- Метод генерирует массив со случайными данными
+ Method generates array with random data
  
  @return NSArray
  */
@@ -63,9 +63,9 @@
 /**
  @author Egor Tolstoy
  
- Метод создает моковую таблицу, которая отдает определенный класс ячейки для идентификатора
+ Method generates mock table, that return concrete class cell for concrete identifier
  
- @param cellClass  Класс стабовой ячейки
+ @param cellClass  Class for cell
  @param identifier reuseIdentifier ячейки
  
  @return UITableView
@@ -78,10 +78,10 @@
 /**
  @author Vadim Smal
  
-  Метод создает моковую таблицу, которая отдает определенный классы ячейки для идентификаторов
+ Method generates mock table, that return concrete classes cells for concrete identifiers
  
- @param cellClasses Массив строк с именем класса
- @param identifiers Массив reuseIdentifier ячеек
+ @param cellClasses Array with classes names
+ @param identifiers Array wuth reuseIdentifier cells
  
  @return UITableView
  */
