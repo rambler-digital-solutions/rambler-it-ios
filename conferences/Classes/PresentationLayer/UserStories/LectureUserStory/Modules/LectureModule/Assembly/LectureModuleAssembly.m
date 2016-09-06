@@ -29,6 +29,7 @@
 #import "ServiceComponents.h"
 #import "LectureCellObjectsBuilderImplementation.h"
 #import "ShareUrlBuilderImplementation.h"
+#import "CollectionViewContentCellAnimator.h"
 
 static NSString *const kLectureShareItemType = @"lecture";
 
@@ -41,6 +42,8 @@ static NSString *const kLectureShareItemType = @"lecture";
                                                       with:[self presenterLecture]];
                                 [definition injectProperty:@selector(dataDisplayManager)
                                                       with:[self dataDisplayManagerLecture]];
+                                [definition injectProperty:@selector(animator)
+                                                      with:[self collectionViewContentCellAnimator]];
              }];
 }
 
@@ -88,6 +91,10 @@ static NSString *const kLectureShareItemType = @"lecture";
 
 - (LecturePresenterStateStorage *)presenterStateStorageLecture {
     return [TyphoonDefinition withClass:[LecturePresenterStateStorage class]];
+}
+
+- (CollectionViewContentCellAnimator *)collectionViewContentCellAnimator {
+    return [TyphoonDefinition withClass:[CollectionViewContentCellAnimator class]];
 }
 
 - (LectureDataDisplayManager *)dataDisplayManagerLecture {

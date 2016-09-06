@@ -20,7 +20,6 @@
 
 #import "TagModuleTableViewCellObject.h"
 #import "TagModuleTableViewCell.h"
-#import "TagEditMediator.h"
 #import "TagModuleOutput.h"
 #import "TagModuleInput.h"
 #import "TagMediatorInput.h"

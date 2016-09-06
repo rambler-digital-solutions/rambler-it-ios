@@ -18,35 +18,48 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import <XCTest/XCTest.h>
+#import <OCMock/OCMock.h>
+#import "TagCollectionViewCell.h"
+#import "TagCollectionViewCellObject.h"
 
-@protocol TagChooseModuleInput;
-@class TagObjectDescriptor;
+@interface TagCollectionViewCellTests : XCTestCase
 
-/**
- @author Golovko Mikhail
+@property (nonatomic, strong) TagCollectionViewCell *cell;
+@property (nonatomic, strong) id mockLabel;
 
- Протокол описывающий интерфейс медиатора, который используется для управления
- модулем редактирования тегов (TagChooseModuleInput).
- */
-@protocol TagEditMediatorInput <NSObject>
+@end
 
-/**
- @author Golovko Mikhail
- 
- Метод конфигурирует медиатор.
- 
- @param tagChooseModuleInput Модуль редактирования тегов.
- */
-- (void)configureModuleWithChooseModuleInput:(id<TagChooseModuleInput>)tagChooseModuleInput;
+@implementation TagCollectionViewCellTests
 
-/**
- @author Golovko Mikhail
- 
- Метод сообщает о том, что объект для выбора саджестов был изменён.
- 
- @param objectDescriptor Информация об объекте.
- */
-- (void)updateWithSuggestObjectDescriptor:(TagObjectDescriptor *)objectDescriptor;
+- (void)setUp {
+    [super setUp];
+
+    self.cell = [TagCollectionViewCell new];
+    self.mockLabel = OCMClassMock([UILabel class]);
+
+    self.cell.tagLabel = self.mockLabel;
+}
+
+- (void)tearDown {
+
+    self.cell = nil;
+
+    self.mockLabel = nil;
+
+    [super tearDown];
+}
+
+- (void)testConfigureCell {
+    // given
+    NSString *tagName = @"tag 1";
+    id cellObject = [[TagCollectionViewCellObject alloc] initWithTagName:tagName];
+
+    // when
+    [self.cell shouldUpdateCellWithObject:cellObject];
+
+    // then
+    OCMVerify([self.mockLabel setText:tagName]);
+}
 
 @end

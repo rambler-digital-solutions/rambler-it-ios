@@ -54,52 +54,6 @@
 /**
  @author Golovko Mikhail
  
- Метод скрывает кнопку добавить тег
- */
-- (void)hideAddButton;
-
-/**
- @author Golovko Mikhail
- 
- Метод отображает кнопку добавить тег
- */
-- (void)showAddButton;
-
-/**
- @author Golovko Mikhail
- 
- Метод включает кнопку удаления у тегов
- */
-- (void)enableRemoveTag;
-
-/**
- @author Golovko Mikhail
- 
- Метод отключает кнопку удаления у тегов
- */
-- (void)disableRemoveTag;
-
-/**
- @author Golovko Mikhail
- 
- Метод удаляет тег с вьюшки
- 
- @param index Индекс удаляемого тега
- */
-- (void)removeTagAtIndex:(NSInteger)index;
-
-/**
- @author Golovko Mikhail
- 
- Метод добавляет тег на вьюшку
- 
- @param tagName Имя тега
- */
-- (void)appendTagWithName:(NSString *)tagName;
-
-/**
- @author Golovko Mikhail
- 
  Метод настраивает количество отображаемых строк
  
  @param lines Количество отображаемых строк

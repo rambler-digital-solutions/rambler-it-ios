@@ -29,7 +29,6 @@
 #import "ContentSizeObserver.h"
 #import "TagCellSizeConfig.h"
 #import "TagCellSizeRowCalculator.h"
-#import "TagTextFilter.h"
 #import "ServiceComponents.h"
 
 @implementation TagAssembly
@@ -39,8 +38,6 @@
                           configuration:^(TyphoonDefinition *definition) {
                               [definition useInitializer:@selector(collectionView)];
                               [definition injectProperty:@selector(moduleInput)
-                                                    with:[self presenterTagModule]];
-                              [definition injectProperty:@selector(output)
                                                     with:[self presenterTagModule]];
                               [definition injectProperty:@selector(dataDisplayManager)
                                                     with:[self dataDisplayManagerTagModule]];
@@ -64,8 +61,6 @@
                                                     with:[self collectionViewTagModule]];
                               [definition injectProperty:@selector(interactor)
                                                     with:[self interactorTagModule]];
-                              [definition injectProperty:@selector(tagFilter)
-                                                    with:[self tagTextFilterTagModule]];
                           }];
 }
 
@@ -74,8 +69,6 @@
                           configuration:^(TyphoonDefinition *definition) {
                               [definition injectProperty:@selector(cellSizeCalculator)
                                                     with:[self tagCellSizeCalculatorTagModule]];
-                              [definition injectProperty:@selector(delegate)
-                                                    with:[self collectionViewTagModule]];
                           }];
 }
 
@@ -105,10 +98,6 @@
                           configuration:^(TyphoonDefinition *definition) {
                               [definition useInitializer:@selector(defaultConfig)];
                           }];
-}
-
-- (TagTextFilter *)tagTextFilterTagModule {
-    return [TyphoonDefinition withClass:[TagTextFilter class]];
 }
 
 #pragma mark - Для ячейки

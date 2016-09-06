@@ -18,23 +18,29 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "TagButtonCollectionViewCell.h"
-#import "TagButtonCollectionViewCellObject.h"
+#import "MockTagTableViewCell.h"
+#import <OCMock/OCMock.h>
+#import "TagCollectionView.h"
+#import "ContentSizeObserver.h"
 
+@implementation MockTagTableViewCell
 
-@implementation TagButtonCollectionViewCell
+- (instancetype)init {
+    self = [super init];
+    if (self) {
 
-#pragma mark - методы NICollectionViewCell
+        _mockTagCollectionView = OCMClassMock([TagCollectionView class]);
+        self.tagCollectionView = _mockTagCollectionView;
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    self.layer.borderColor = [UIColor lightGrayColor].CGColor;
+        _mockSizeObserver = OCMClassMock([ContentSizeObserver class]);
+        self.sizeObserver = _mockSizeObserver;
+    }
+    return self;
 }
 
-
-- (BOOL)shouldUpdateCellWithObject:(TagButtonCollectionViewCellObject *)object {
-    self.textLabel.text = object.textButton;
-    return YES;
+- (void)dealloc {
+    [self.mockTagCollectionView stopMocking];
+    [self.mockSizeObserver stopMocking];
 }
 
 @end

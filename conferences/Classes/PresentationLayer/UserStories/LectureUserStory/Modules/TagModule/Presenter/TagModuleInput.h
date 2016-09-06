@@ -34,36 +34,4 @@
 - (void)configureModuleWithModuleConfig:(TagModuleConfig *)moduleConfig
                            moduleOutput:(id <TagModuleOutput>)moduleOutput;
 
-/**
- @author Golovko Mikhail
- 
- Метод обновляет модуль для поиска по тексту.
- 
- @param searchText Текст поиска.
- */
-- (void)updateModuleWithSearchText:(NSString *)searchText;
-
-/**
- @author Golovko Mikhail
- 
- Метод отображает кнопку добавить тег
- */
-- (void)showAddButton;
-
-/**
- @author Golovko Mikhail
- 
- Метод скрывает кнопку добавить тег
- */
-- (void)hideAddButton;
-
-/**
- @author Golovko Mikhail
- 
- Метод добавляет тег
- 
- @param name Имя тега
- */
-- (void)addTagWithName:(NSString *)name;
-
 @end

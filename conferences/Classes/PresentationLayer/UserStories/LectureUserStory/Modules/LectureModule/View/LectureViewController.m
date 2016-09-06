@@ -29,6 +29,8 @@
 #import "UINavigationBar+States.h"
 #import "Extensions/UIViewController+CDObserver/UIViewController+CDObserver.h"
 #import "UIViewController+RCFForceRotation.h"
+#import "TagModuleTableViewCell.h"
+#import "CollectionViewContentCellAnimator.h"
 
 static CGFloat kTableViewEstimatedRowHeight = 44.0f;
 static CGFloat kTableViewFooterHeight = 16.0f;
@@ -38,7 +40,8 @@ static CGFloat kTableViewFooterHeight = 16.0f;
 - (void)viewDidLoad {
 	[super viewDidLoad];
     
-    [self cd_startObserveProtocol:@protocol(LectureInfoTableViewCellActionProtocol)];
+    [self cd_startObserveProtocols:@[@protocol(LectureInfoTableViewCellActionProtocol),
+                                     @protocol(TagTableViewCellDelegate)]];
     [self.output setupView];
 }
 
@@ -91,10 +94,17 @@ static CGFloat kTableViewFooterHeight = 16.0f;
     [self.navigationController.navigationBar rcf_becomeTransparent];
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     self.navigationController.navigationBar.hidden = NO;
+    self.animator.tableView = self.tableView;
 }
 
 - (IBAction)didTapShareButton:(id)sender {
     [self.output didTapShareButton];
+}
+
+- (void)collectionViewDidChangeContentSize:(UICollectionView *)collectionView
+                                      cell:(UITableViewCell *)cell {
+    [self.animator animateChangeCellSizeFromCollectionView:collectionView
+                                                      cell:cell];
 }
 
 @end

@@ -20,19 +20,13 @@
 
 #import "TagCollectionViewCellObject.h"
 #import "TagCollectionViewCell.h"
-#import "TagCellDelegate.h"
-
 
 @implementation TagCollectionViewCellObject
 
-- (instancetype)initWithTagName:(NSString *)tagName
-             enableRemoveButton:(BOOL)enableRemoveButton
-                       delegate:(id <TagCellDelegate>)delegate {
+- (instancetype)initWithTagName:(NSString *)tagName {
     self = [super init];
     if (self) {
         _tagName = tagName;
-        _enableRemoveButton = enableRemoveButton;
-        _delegate = delegate;
     }
 
     return self;
@@ -54,9 +48,7 @@
 
     TagCollectionViewCellObject *otherCellObject = other;
 
-    return self.enableRemoveButton == otherCellObject.enableRemoveButton
-            && [self.tagName isEqual:otherCellObject.tagName]
-            && [self.delegate isEqual:otherCellObject.delegate];
+    return [self.tagName isEqual:otherCellObject.tagName];
 }
 
 

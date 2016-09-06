@@ -18,22 +18,23 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import "TagModuleOutput.h"
-#import "TagMediatorInput.h"
-#import "TagEditMediatorInput.h"
+#import <XCTest/XCTest.h>
 
-@protocol TagChooseModuleInput;
-@protocol TagEditMediatorOutput;
-@protocol TagModuleInput;
+@interface XCTestCase (CollectionViewDataDisplayManager)
 
 /**
  @author Golovko Mikhail
  
- Медиатор для реализации взаимодействия модуля отображения тегов и модуля выбора тега.
+ Метод конфигурирует ячейку через dataSource.
+ 
+ @param dataSource             DataSource табилцы
+ @param mockCell               Ячейка, которая будет конфигурироваться
+ @param originalCellIdentifier Идентификатор чейки
+ @param testIndexPath          Индекс ячейки
  */
-@interface TagEditMediator : NSObject <TagModuleOutput, TagMediatorInput, TagEditMediatorInput>
-
-@property (nonatomic, weak) id<TagEditMediatorOutput> output;
+- (void)testCollectionViewViewDataSource:(id <UICollectionViewDataSource>)dataSource
+                            withMockCell:(id)mockCell
+                  originalCellIdentifier:(NSString *)originalCellIdentifier
+                           testIndexPath:(NSIndexPath *)testIndexPath;
 
 @end

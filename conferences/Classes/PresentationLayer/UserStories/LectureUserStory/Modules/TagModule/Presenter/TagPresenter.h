@@ -18,18 +18,15 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "TagViewOutput.h"
 #import "TagModuleInput.h"
 
 @protocol TagViewInput;
 @protocol TagInteractorInput;
-@class TagTextFilter;
 
-@interface TagPresenter : NSObject <TagModuleInput, TagViewOutput>
+@interface TagPresenter : NSObject <TagModuleInput>
 
 @property (nonatomic, weak) id<TagViewInput> view;
 @property (nonatomic, strong) id<TagInteractorInput> interactor;
 @property (nonatomic, weak) id<TagModuleOutput> output;
-@property (nonatomic, strong) TagTextFilter *tagFilter;
 
 @end

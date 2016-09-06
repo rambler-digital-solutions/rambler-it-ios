@@ -21,7 +21,6 @@
 #import "TagDataDisplayManager.h"
 #import "TagCollectionViewCellObject.h"
 #import "TagCellSizeCalculator.h"
-#import "TagButtonCollectionViewCellObject.h"
 #import "CollectionViewAnimator.h"
 #import "NIMutableCollectionViewModel.h"
 #import "NICollectionViewActions.h"
@@ -57,42 +56,9 @@ typedef NS_ENUM(NSInteger, TagSectionIndex) {
     self = [super init];
     if (self) {
         _addButtonSectionIndex = kUndefineSectionIndex;
-        [self setupActions];
     }
 
     return self;
-}
-
-- (void)setupActions {
-    self.collectionViewActions = [[NICollectionViewActions alloc] initWithTarget:self];
-
-    @weakify(self);
-    
-    NIActionBlock addTagTapBlock = ^BOOL(TagButtonCollectionViewCellObject *object, id target, NSIndexPath *indexPath) {
-        @strongify(self);
-        switch(object.type) {
-            case TagButtonMoreType:
-                [self didTapMoreButton:object];
-                break;
-            case TagButtonAddTagType:
-                [self.delegate dataDisplayManagerDidTapAddButton:self];
-                break;
-            default:
-                break;
-        }
-        return NO;
-    };
-    [self.collectionViewActions attachToClass:[TagButtonCollectionViewCellObject class]
-                                     tapBlock:addTagTapBlock];
-
-    NIActionBlock tagTapBlock = ^BOOL(TagCollectionViewCellObject *tagCellObject, id target, NSIndexPath *indexPath) {
-        @strongify(self);
-        [self.delegate dataDisplayManager:self
-                        didTapTagWithName:tagCellObject.tagName];
-        return NO;
-    };
-    [self.collectionViewActions attachToClass:[TagCollectionViewCellObject class]
-                                     tapBlock:tagTapBlock];
 }
 
 #pragma mark - Методы интерфейса
@@ -109,72 +75,6 @@ typedef NS_ENUM(NSInteger, TagSectionIndex) {
     self.collectionViewAnimator = [CollectionViewAnimator animatorWithCollectionView:collectionView];
 
     return self.collectionViewModule;
-}
-
-- (void)appendAddTagButton {
-    /**
-     @author Golovko Mikhail
-     
-     Если кнопка уже добавленна, то добавлять ещё раз не надо.
-     */
-    if (self.addButtonSectionIndex != kUndefineSectionIndex) {
-        return;
-    }
-    
-    /**
-     @author Golovko Mikhail
-     
-     Если модели нету, то и добавлять некуда. Поэтому поменяем индекс секции на дефолтный
-     для кнопки Add Button. Тогда при создании модели добавится кнопка.
-     */
-    if (self.collectionViewModule == nil) {
-        self.addButtonSectionIndex = TagAddButtonSectionIndex;
-        return;
-    }
-
-    NSIndexSet *addIndexSet = [self.collectionViewModule addSectionWithTitle:@""];
-    self.addButtonSectionIndex = addIndexSet.firstIndex;
-    TagButtonCollectionViewCellObject *cellObject = [self createAddButtonObject];
-    [self.collectionViewModule addObject:cellObject
-                               toSection:self.addButtonSectionIndex];
-
-    [self.collectionViewAnimator animateTableViewWithInsertedSectionsIndexSet:addIndexSet
-                                                      updatedSectionsIndexSet:nil
-                                                      removedSectionsIndexSet:nil
-                                                                 batchUpdates:YES];
-}
-
-- (void)removeAddTagButton {
-    /**
-     @author Golovko Mikhail
-     
-     Если кнопка не добавлена, то удалять нечего.
-     */
-    if (self.addButtonSectionIndex == kUndefineSectionIndex) {
-        return;
-    }
-
-    /**
-     @author Golovko Mikhail
-     
-     Если модели нет, то удалять неоткуда. Просто сбрасываем индекс, чтобы при
-     создании модели кнопка не добавилась.
-     */
-    if (self.collectionViewModule == nil) {
-        self.addButtonSectionIndex = kUndefineSectionIndex;
-        return;
-    }
-
-    [self.collectionViewModule removeSectionAtIndex:self.addButtonSectionIndex];
-
-    NSIndexSet *removeIndexSet = [[NSIndexSet alloc] initWithIndex:self.addButtonSectionIndex];
-
-    [self.collectionViewAnimator animateTableViewWithInsertedSectionsIndexSet:nil
-                                                      updatedSectionsIndexSet:nil
-                                                      removedSectionsIndexSet:removeIndexSet
-                                                                 batchUpdates:YES];
-
-    self.addButtonSectionIndex = kUndefineSectionIndex;
 }
 
 - (void)setCompressWidth:(BOOL)compressWidth {
@@ -225,37 +125,6 @@ typedef NS_ENUM(NSInteger, TagSectionIndex) {
     return UIEdgeInsetsMake(kTagSectionTopInset, 0, 0, 0);
 }
 
-- (void)collectionView:(UICollectionView *)collectionView
-didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    [self.collectionViewActions collectionView:collectionView
-                      didSelectItemAtIndexPath:indexPath];
-}
-
-#pragma mark - методы TagCellDelegate
-
-- (void)didTapRemoveTag:(TagCollectionViewCellObject *)cellObject {
-    NSIndexPath *indexPath = [self.collectionViewModule indexPathForObject:cellObject];
-    [self.delegate dataDisplayManager:self
-              didTapRemoveTagWithName:cellObject.tagName
-                              atIndex:indexPath.row];
-}
-
-#pragma mark - Дополнительные методы
-
-- (void)didTapMoreButton:(TagButtonCollectionViewCellObject *)cellObject {
-    NSIndexPath *removeIndexPath = [self.collectionViewModule indexPathForObject:cellObject];
-    [self.collectionViewModule removeObjectAtIndexPath:removeIndexPath];
-
-    NSArray *insertIndexPaths = [self.collectionViewModule addObjectsFromArray:self.hideTags
-                                                                     toSection:TagItemSectionIndex];
-
-    [self.collectionViewAnimator animateTableViewWithInsertedItemsAtIndexPaths:insertIndexPaths
-                                                        updatedItemsIndexPaths:nil
-                                                        removedItemsIndexPaths:@[removeIndexPath]
-                                                                  batchUpdates:YES];
-
-}
-
 #pragma mark - Методы генерации объектов ячеек
 
 - (NSArray *)generateCellObjects:(NSArray *)tags {
@@ -263,13 +132,6 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [tagObjects addObject:@""];
 
     [tagObjects addObjectsFromArray:[self generateTagContentCellObjects:tags]];
-
-    if (self.addButtonSectionIndex != kUndefineSectionIndex) {
-        [tagObjects addObject:@""];
-        TagButtonCollectionViewCellObject *cellObject = [self createAddButtonObject];
-        [tagObjects addObject:cellObject];
-
-    }
 
     return tagObjects;
 }
@@ -294,12 +156,10 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     if (numberFullRows <= self.numberOfShowLine) {
         return tagObjects;
     }
-
-    TagButtonCollectionViewCellObject *lastTemplateCellObject = [self createMoreButtonWithCount:kMaxCountItemsCollapseFromCalculate];
-
+    
     NSInteger countTags = [self.cellSizeCalculator countItemsInRows:self.numberOfShowLine
                                                      forCellObjects:tagObjects
-                                                     lastCellObject:lastTemplateCellObject];
+                                                     lastCellObject:nil];
 
     NSMutableArray *showObjects = [NSMutableArray array];
     NSArray *showTags = [tagObjects subarrayWithRange:NSMakeRange(0, countTags)];
@@ -307,33 +167,14 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 
     self.hideTags = [tagObjects subarrayWithRange:NSMakeRange(countTags, tagObjects.count - countTags)];
 
-    TagButtonCollectionViewCellObject *lastCellObject = [self createMoreButtonWithCount:self.hideTags.count];
-
-    [showObjects addObject:lastCellObject];
-
     return [showObjects copy];
 }
 
 #pragma mark - Методы создания объектов ячеек
 
-- (TagButtonCollectionViewCellObject *)createAddButtonObject {
-    TagButtonCollectionViewCellObject *cellObject = [[TagButtonCollectionViewCellObject alloc] initWithTextButton:kTagViewAddTagButton
-                                                                                                             type:TagButtonAddTagType];
-    return cellObject;
-}
-
 - (TagCollectionViewCellObject *)createTagCellWithName:(NSString *)tagName {
-    TagCollectionViewCellObject *object = [[TagCollectionViewCellObject alloc] initWithTagName:tagName
-                                                                            enableRemoveButton:self.enableRemoveTagButton
-                                                                                      delegate:self];
+    TagCollectionViewCellObject *object = [[TagCollectionViewCellObject alloc] initWithTagName:tagName];
     return object;
-}
-
-- (TagButtonCollectionViewCellObject *)createMoreButtonWithCount:(NSInteger)count {
-    NSString *textButton = [[NSString alloc] initWithFormat:kTagMoreButton, (long)count];
-    TagButtonCollectionViewCellObject *cellObject = [[TagButtonCollectionViewCellObject alloc] initWithTextButton:textButton
-                                                                                                             type:TagButtonMoreType];
-    return cellObject;
 }
 
 @end

@@ -18,16 +18,21 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import "NICollectionViewCellFactory.h"
+#import "XCTestCase+CollectionViewDataDisplayManager.h"
+#import "MockObjectsFactory.h"
 
-/**
- @author Golovko Mikhail
- 
- Ячейка кнопки тега
- */
-@interface TagButtonCollectionViewCell : UICollectionViewCell <NICollectionViewCell>
 
-@property (nonatomic, weak) IBOutlet UILabel *textLabel;
+@implementation XCTestCase (CollectionViewDataDisplayManager)
+- (void)testCollectionViewViewDataSource:(id <UICollectionViewDataSource>)dataSource
+                            withMockCell:(id)mockCell
+                  originalCellIdentifier:(NSString *)originalCellIdentifier
+                           testIndexPath:(NSIndexPath *)testIndexPath {
+    UICollectionView *mockCollectionView = [MockObjectsFactory mockCollectionViewViewWithMockCell:mockCell
+                                                                                    forIdentifier:originalCellIdentifier];
+    mockCollectionView.dataSource = dataSource;
+
+    [dataSource collectionView:mockCollectionView
+        cellForItemAtIndexPath:testIndexPath];
+}
 
 @end

@@ -19,28 +19,12 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-#import "NICollectionViewCellFactory.h"
+#import "TagModuleTableViewCell.h"
 
-typedef NS_ENUM(NSInteger, TagButtonType) {
-    TagButtonMoreType,
-    TagButtonAddTagType
-};
 
-/**
- @author Golovko Mikhail
- 
- Модель ячейки коллекции для отображения кнопки.
- */
-@interface TagButtonCollectionViewCellObject : NSObject <NICollectionViewNibCellObject>
+@interface MockTagTableViewCell : TagModuleTableViewCell
 
-/**
- @author Golovko Mikhail
- 
- Заголовок кнопки.
- */
-@property (nonatomic, strong, readonly) NSString *textButton;
-@property (nonatomic, assign, readonly) TagButtonType type;
-
-- (instancetype)initWithTextButton:(NSString *)textButton type:(TagButtonType)type;
+@property (nonatomic, strong) id mockTagCollectionView;
+@property (nonatomic, strong) id mockSizeObserver;
 
 @end

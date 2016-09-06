@@ -18,35 +18,18 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import "TagAssembly.h"
 
-@protocol TagViewOutput <NSObject>
+@class TagInteractor;
+@class TagPresenter;
+@class TagCollectionView;
+@class TagDataDisplayManager;
 
-/**
- @author Golovko Mikhail
- 
- Метод вызвыается, когда на вью была нажата кнопка добавить тег
- */
-- (void)didTriggerTapAddButton;
+@interface TagAssembly ()
 
-/**
- @author Golovko Mikhail
- 
- Метод вызвыается, когда был нажа тег
- 
- @param name Имя тега
- */
-- (void)didTriggerTapTagWithName:(NSString *)name;
-
-/**
- @author Golovko Mikhail
- 
- Метод вызывается, когда была нажата кнопка удалить тег
- 
- @param name Имя тега
-@param index Индекс тега
- */
-- (void)didTriggerTapRemoveTagWithName:(NSString *)name
-                               atIndex:(NSInteger)index;
+- (TagCollectionView *)collectionViewTagModule;
+- (TagPresenter *)presenterTagModule;
+- (TagInteractor *)interactorTagModule;
+- (TagDataDisplayManager *)dataDisplayManagerTagModule;
 
 @end

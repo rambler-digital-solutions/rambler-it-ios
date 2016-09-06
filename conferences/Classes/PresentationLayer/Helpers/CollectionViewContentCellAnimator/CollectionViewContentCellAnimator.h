@@ -18,19 +18,26 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-
-@class TagCollectionViewCellObject;
-
-@protocol TagCellDelegate <NSObject>
+#import <UIKit/UIKit.h>
 
 /**
  @author Golovko Mikhail
  
- Метод вызывается, когда на ячейки была нажата кнопка удалить тег
- 
- @param cellObject Модель ячейки, для которой была нажата кнопка
+ Класс, для обновления таблицы, когда СollectionView в ячейки, поменяла свой размер.
  */
-- (void)didTapRemoveTag:(TagCollectionViewCellObject *)cellObject;
+@interface CollectionViewContentCellAnimator : NSObject
+
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
+
+/**
+ @author Golovko Mikhail
+ 
+ Метод обновляет таблицу, когда CollectionView поменяла свой размер.
+ 
+ @param collectionView CollectionView, который лежит в ячейки табилцы.
+ @param Ячейка таблицы с CollectionView
+ */
+- (void)animateChangeCellSizeFromCollectionView:(UICollectionView *)collectionView
+                                           cell:(UITableViewCell *)cell;
 
 @end

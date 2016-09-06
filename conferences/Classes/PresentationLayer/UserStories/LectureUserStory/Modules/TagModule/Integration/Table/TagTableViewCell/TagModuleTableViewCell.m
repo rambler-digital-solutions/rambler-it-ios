@@ -20,9 +20,9 @@
 
 #import "TagModuleTableViewCell.h"
 #import "TagModuleTableViewCellObject.h"
-#import "TagEditMediator.h"
 #import "TagObjectDescriptor.h"
 #import <CrutchKit/CDProxying.h>
+#import "TagMediatorInput.h"
 
 @interface TagModuleTableViewCell ()
 
@@ -33,22 +33,6 @@
 @implementation TagModuleTableViewCell
 
 @synthesize isConfigured = _isConfigured;
-
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    /**
-     @author Vadim Smal
-     
-     Если при открытие экрана таблица не видна (из за большого хэдера на iPhone 4),
-     ячейка при не правильного размера - из за этого collectionView внутри таблицы
-     неправильно лейаутится (contentSizeObserver:viewDidChangeContentSize:) и обновляется.
-     Если это делать когда показалась, будут различные сайд эффекты. (скролинг, видимость анимации расширенияи т.д.)
-     + тот же механизм используется при написание поста.
-     
-     Поэтому мы задаем правильный размер UICollectionView заранее
-     */
-    self.collectionViewWidthConstraint.constant = [UIScreen mainScreen].bounds.size.width - (self.collectionViewLeadingConstraint.constant * 2);
-}
 
 #pragma mark - Методы NICell
 

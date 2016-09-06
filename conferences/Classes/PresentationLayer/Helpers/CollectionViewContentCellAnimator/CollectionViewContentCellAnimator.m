@@ -18,29 +18,18 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "TagButtonCollectionViewCellObject.h"
-#import "TagButtonCollectionViewCell.h"
+#import "CollectionViewContentCellAnimator.h"
 
 
-@implementation TagButtonCollectionViewCellObject
+@implementation CollectionViewContentCellAnimator
 
-- (instancetype)initWithTextButton:(NSString *)textButton type:(TagButtonType)type {
-    self = [super init];
-    if (self) {
-        _textButton = textButton;
-        _type = type;
+- (void)animateChangeCellSizeFromCollectionView:(UICollectionView *)collectionView
+                                           cell:(UITableViewCell *)cell {
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    if (indexPath) {
+        [self.tableView beginUpdates];
+        [self.tableView endUpdates];
     }
-
-    return self;
-}
-
-
-- (UINib *)collectionViewCellNib {
-    NSString *className = NSStringFromClass([TagButtonCollectionViewCell class]);
-    NSBundle *bundle = [NSBundle mainBundle];
-    UINib *nib = [UINib nibWithNibName:className
-                                bundle:bundle];
-    return nib;
 }
 
 @end
