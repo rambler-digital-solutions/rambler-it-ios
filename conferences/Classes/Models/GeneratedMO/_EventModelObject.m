@@ -104,10 +104,10 @@ const struct EventModelObjectRelationships EventModelObjectRelationships = {
 
 @dynamic lectures;
 
-- (NSMutableSet*)lecturesSet {
+- (NSMutableOrderedSet*)lecturesSet {
 	[self willAccessValueForKey:@"lectures"];
 
-	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"lectures"];
+	NSMutableOrderedSet *result = (NSMutableOrderedSet*)[self mutableOrderedSetValueForKey:@"lectures"];
 
 	[self didAccessValueForKey:@"lectures"];
 	return result;
@@ -128,5 +128,65 @@ const struct EventModelObjectRelationships EventModelObjectRelationships = {
 
 @dynamic tech;
 
+@end
+
+@implementation _EventModelObject (LecturesCoreDataGeneratedAccessors)
+- (void)addLectures:(NSOrderedSet*)value_ {
+	[self.lecturesSet unionOrderedSet:value_];
+}
+- (void)removeLectures:(NSOrderedSet*)value_ {
+	[self.lecturesSet minusOrderedSet:value_];
+}
+- (void)addLecturesObject:(LectureModelObject*)value_ {
+	[self.lecturesSet addObject:value_];
+}
+- (void)removeLecturesObject:(LectureModelObject*)value_ {
+	[self.lecturesSet removeObject:value_];
+}
+- (void)insertObject:(LectureModelObject*)value inLecturesAtIndex:(NSUInteger)idx {
+    NSIndexSet* indexes = [NSIndexSet indexSetWithIndex:idx];
+    [self willChange:NSKeyValueChangeInsertion valuesAtIndexes:indexes forKey:@"lectures"];
+    NSMutableOrderedSet *tmpOrderedSet = [NSMutableOrderedSet orderedSetWithOrderedSet:[self lectures]];
+    [tmpOrderedSet insertObject:value atIndex:idx];
+    [self setPrimitiveValue:tmpOrderedSet forKey:@"lectures"];
+    [self didChange:NSKeyValueChangeInsertion valuesAtIndexes:indexes forKey:@"lectures"];
+}
+- (void)removeObjectFromLecturesAtIndex:(NSUInteger)idx {
+    NSIndexSet* indexes = [NSIndexSet indexSetWithIndex:idx];
+    [self willChange:NSKeyValueChangeRemoval valuesAtIndexes:indexes forKey:@"lectures"];
+    NSMutableOrderedSet *tmpOrderedSet = [NSMutableOrderedSet orderedSetWithOrderedSet:[self lectures]];
+    [tmpOrderedSet removeObjectAtIndex:idx];
+    [self setPrimitiveValue:tmpOrderedSet forKey:@"lectures"];
+    [self didChange:NSKeyValueChangeRemoval valuesAtIndexes:indexes forKey:@"lectures"];
+}
+- (void)insertLectures:(NSArray *)value atIndexes:(NSIndexSet *)indexes {
+    [self willChange:NSKeyValueChangeInsertion valuesAtIndexes:indexes forKey:@"lectures"];
+    NSMutableOrderedSet *tmpOrderedSet = [NSMutableOrderedSet orderedSetWithOrderedSet:[self lectures]];
+    [tmpOrderedSet insertObjects:value atIndexes:indexes];
+    [self setPrimitiveValue:tmpOrderedSet forKey:@"lectures"];
+    [self didChange:NSKeyValueChangeInsertion valuesAtIndexes:indexes forKey:@"lectures"];
+}
+- (void)removeLecturesAtIndexes:(NSIndexSet *)indexes {
+    [self willChange:NSKeyValueChangeRemoval valuesAtIndexes:indexes forKey:@"lectures"];
+    NSMutableOrderedSet *tmpOrderedSet = [NSMutableOrderedSet orderedSetWithOrderedSet:[self lectures]];
+    [tmpOrderedSet removeObjectsAtIndexes:indexes];
+    [self setPrimitiveValue:tmpOrderedSet forKey:@"lectures"];
+    [self didChange:NSKeyValueChangeRemoval valuesAtIndexes:indexes forKey:@"lectures"];
+}
+- (void)replaceObjectInLecturesAtIndex:(NSUInteger)idx withObject:(LectureModelObject*)value {
+    NSIndexSet* indexes = [NSIndexSet indexSetWithIndex:idx];
+    [self willChange:NSKeyValueChangeReplacement valuesAtIndexes:indexes forKey:@"lectures"];
+    NSMutableOrderedSet *tmpOrderedSet = [NSMutableOrderedSet orderedSetWithOrderedSet:[self lectures]];
+    [tmpOrderedSet replaceObjectAtIndex:idx withObject:value];
+    [self setPrimitiveValue:tmpOrderedSet forKey:@"lectures"];
+    [self didChange:NSKeyValueChangeReplacement valuesAtIndexes:indexes forKey:@"lectures"];
+}
+- (void)replaceLecturesAtIndexes:(NSIndexSet *)indexes withLectures:(NSArray *)value {
+    [self willChange:NSKeyValueChangeReplacement valuesAtIndexes:indexes forKey:@"lectures"];
+    NSMutableOrderedSet *tmpOrderedSet = [NSMutableOrderedSet orderedSetWithOrderedSet:[self lectures]];
+    [tmpOrderedSet replaceObjectsAtIndexes:indexes withObjects:value];
+    [self setPrimitiveValue:tmpOrderedSet forKey:@"lectures"];
+    [self didChange:NSKeyValueChangeReplacement valuesAtIndexes:indexes forKey:@"lectures"];
+}
 @end
 

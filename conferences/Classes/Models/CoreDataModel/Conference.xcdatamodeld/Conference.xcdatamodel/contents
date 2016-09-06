@@ -13,7 +13,7 @@
         <attribute name="startDate" attributeType="Date" syncable="YES"/>
         <attribute name="timePadID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="twitterTag" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="lectures" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Lecture" inverseName="event" inverseEntity="Lecture" syncable="YES"/>
+        <relationship name="lectures" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Lecture" inverseName="event" inverseEntity="Lecture" syncable="YES"/>
         <relationship name="metaEvent" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="MetaEvent" inverseName="events" inverseEntity="MetaEvent" syncable="YES"/>
         <relationship name="registrationQuestions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="RegistrationQuestion" inverseName="event" inverseEntity="RegistrationQuestion" syncable="YES"/>
         <relationship name="tech" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Tech" inverseName="events" inverseEntity="Tech" syncable="YES"/>

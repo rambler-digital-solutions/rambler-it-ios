@@ -91,9 +91,9 @@ extern const struct EventModelObjectRelationships {
 
 //- (BOOL)validateTwitterTag:(id*)value_ error:(NSError**)error_;
 
-@property (nonatomic, strong) NSSet *lectures;
+@property (nonatomic, strong) NSOrderedSet *lectures;
 
-- (NSMutableSet*)lecturesSet;
+- (NSMutableOrderedSet*)lecturesSet;
 
 @property (nonatomic, strong) MetaEventModelObject *metaEvent;
 
@@ -110,10 +110,17 @@ extern const struct EventModelObjectRelationships {
 @end
 
 @interface _EventModelObject (LecturesCoreDataGeneratedAccessors)
-- (void)addLectures:(NSSet*)value_;
-- (void)removeLectures:(NSSet*)value_;
+- (void)addLectures:(NSOrderedSet*)value_;
+- (void)removeLectures:(NSOrderedSet*)value_;
 - (void)addLecturesObject:(LectureModelObject*)value_;
 - (void)removeLecturesObject:(LectureModelObject*)value_;
+
+- (void)insertObject:(LectureModelObject*)value inLecturesAtIndex:(NSUInteger)idx;
+- (void)removeObjectFromLecturesAtIndex:(NSUInteger)idx;
+- (void)insertLectures:(NSArray *)value atIndexes:(NSIndexSet *)indexes;
+- (void)removeLecturesAtIndexes:(NSIndexSet *)indexes;
+- (void)replaceObjectInLecturesAtIndex:(NSUInteger)idx withObject:(LectureModelObject*)value;
+- (void)replaceLecturesAtIndexes:(NSIndexSet *)indexes withLectures:(NSArray *)values;
 
 @end
 
@@ -166,8 +173,8 @@ extern const struct EventModelObjectRelationships {
 - (NSString*)primitiveTwitterTag;
 - (void)setPrimitiveTwitterTag:(NSString*)value;
 
-- (NSMutableSet*)primitiveLectures;
-- (void)setPrimitiveLectures:(NSMutableSet*)value;
+- (NSMutableOrderedSet*)primitiveLectures;
+- (void)setPrimitiveLectures:(NSMutableOrderedSet*)value;
 
 - (MetaEventModelObject*)primitiveMetaEvent;
 - (void)setPrimitiveMetaEvent:(MetaEventModelObject*)value;
