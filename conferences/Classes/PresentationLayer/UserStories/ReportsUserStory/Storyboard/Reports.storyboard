@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G26a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
@@ -30,7 +30,7 @@
                                 </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="568" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fsa-Jb-EBP" customClass="SuggestTableView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="108" width="320" height="460"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Em2-rY-Okg" userLabel="Search Embed Container">
@@ -40,14 +40,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Fe3-sy-4K7" firstAttribute="top" secondItem="fsa-Jb-EBP" secondAttribute="bottom" id="21d-mv-Gcy"/>
                             <constraint firstAttribute="trailing" secondItem="fsa-Jb-EBP" secondAttribute="trailing" id="Ljy-aY-T73"/>
                             <constraint firstItem="fsa-Jb-EBP" firstAttribute="leading" secondItem="FyI-eO-14m" secondAttribute="leading" id="TtW-D0-gcA"/>
                             <constraint firstItem="Em2-rY-Okg" firstAttribute="leading" secondItem="FyI-eO-14m" secondAttribute="leading" id="UZg-dA-U5f"/>
                             <constraint firstItem="AyC-as-YWd" firstAttribute="leading" secondItem="FyI-eO-14m" secondAttribute="leading" id="WXA-fP-eBD"/>
                             <constraint firstItem="Fe3-sy-4K7" firstAttribute="top" secondItem="Em2-rY-Okg" secondAttribute="bottom" id="dt4-BD-I7z"/>
-                            <constraint firstItem="fsa-Jb-EBP" firstAttribute="centerY" secondItem="FyI-eO-14m" secondAttribute="centerY" id="fte-tj-Ogr"/>
                             <constraint firstItem="AyC-as-YWd" firstAttribute="top" secondItem="NLT-fm-8ht" secondAttribute="bottom" id="g6u-Vi-USY"/>
                             <constraint firstAttribute="trailing" secondItem="Em2-rY-Okg" secondAttribute="trailing" id="pyj-YO-E46"/>
+                            <constraint firstItem="fsa-Jb-EBP" firstAttribute="top" secondItem="AyC-as-YWd" secondAttribute="bottom" id="qsG-yA-b7G"/>
                             <constraint firstItem="Em2-rY-Okg" firstAttribute="top" secondItem="NLT-fm-8ht" secondAttribute="bottom" constant="44" id="t0K-9c-zYY"/>
                             <constraint firstAttribute="trailing" secondItem="AyC-as-YWd" secondAttribute="trailing" id="zFu-9O-gRY"/>
                         </constraints>
