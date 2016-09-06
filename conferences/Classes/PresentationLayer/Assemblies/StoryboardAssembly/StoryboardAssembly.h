@@ -32,5 +32,6 @@
 - (UIStoryboard *)eventStoryboard;
 - (UIStoryboard *)speakerStoryboard;
 - (UIStoryboard *)lectureStoryboard;
+- (UIStoryboard *)ramblerLocationStoryboard;
 
 @end

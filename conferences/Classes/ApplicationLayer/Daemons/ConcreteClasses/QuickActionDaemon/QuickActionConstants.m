@@ -20,5 +20,8 @@
 
 #import "QuickActionConstants.h"
 
-extern NSString *const kQuickActionDynamicTypeFormat;
-extern NSString *const kQuickActionItemIdentifierKey;
+NSString *const kQuickActionDynamicTypeFormat = @"%@.Dynamic.%@";
+NSString *const kQuickActionItemIdentifierKey = @"kQuickActionItemIdentifierKey";
+NSString *const kRamblerLocationQuickActionType = @"ru.ramblerco.rambler.it.Directions";
+NSString *const kSearchQuickActionType = @"ru.ramblerco.rambler.it.Search";
+

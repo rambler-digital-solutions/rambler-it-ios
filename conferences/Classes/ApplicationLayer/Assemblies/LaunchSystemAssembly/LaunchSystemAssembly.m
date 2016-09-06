@@ -33,6 +33,9 @@
 #import "EventLaunchRouter.h"
 #import "SpeakerLaunchRouter.h"
 #import "LectureLaunchRouter.h"
+#import "RamblerLocationLaunchRouter.h"
+
+#import "QuickActionConstants.h"
 
 @implementation LaunchSystemAssembly
 
@@ -59,7 +62,8 @@
                               [definition useInitializer:@selector(initWithLaunchHandlers:userActivityFactory:)
                                               parameters:^(TyphoonMethod *initializer) {
                                                   [initializer injectParameterWith:@[
-                                                                                     [self eventQuickActionLaunchHandler]
+                                                                                     [self eventQuickActionLaunchHandler],
+                                                                                     [self ramblerLocationQuickActionLaunchHandler]
                                                                                      ]];
                                                   [initializer injectParameterWith:[self quickActionUserActivityFactory]];
                                               }];
@@ -114,6 +118,18 @@
                           }];
 }
 
+- (QuickActionLaunchHandler *)ramblerLocationQuickActionLaunchHandler {
+    return [TyphoonDefinition withClass:[QuickActionLaunchHandler class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition useInitializer:@selector(initWithObjectTransformer:dataCardLaunchRouter:quickActionItemType:)
+                                              parameters:^(TyphoonMethod *initializer) {
+                                                  [initializer injectParameterWith:nil];
+                                                  [initializer injectParameterWith:[self ramblerLocationLaunchRouter]];
+                                                  [initializer injectParameterWith:kRamblerLocationQuickActionType];
+                                              }];
+                          }];
+}
+
 #pragma mark - Launch routers
 
 - (EventLaunchRouter *)eventLaunchRouter {
@@ -148,6 +164,17 @@
                                                   [initializer injectParameterWith:[self.applicationHelperAssembly tabBarControllerFactory]];
                                                   [initializer injectParameterWith:[self.systemInfrastructureAssembly mainWindow]];
                                                   [initializer injectParameterWith:[self.storyboardAssembly lectureStoryboard]];
+                                              }];
+                          }];
+}
+
+- (RamblerLocationLaunchRouter *)ramblerLocationLaunchRouter {
+    return [TyphoonDefinition withClass:[RamblerLocationLaunchRouter class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition useInitializer:@selector(initWithTabBarControllerFactory:window:)
+                                              parameters:^(TyphoonMethod *initializer) {
+                                                  [initializer injectParameterWith:[self.applicationHelperAssembly tabBarControllerFactory]];
+                                                  [initializer injectParameterWith:[self.systemInfrastructureAssembly mainWindow]];
                                               }];
                           }];
 }

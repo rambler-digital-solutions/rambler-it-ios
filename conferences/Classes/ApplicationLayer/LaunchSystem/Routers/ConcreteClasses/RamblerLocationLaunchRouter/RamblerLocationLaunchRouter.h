@@ -20,7 +20,20 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSString *const kQuickActionDynamicTypeFormat;
-extern NSString *const kQuickActionItemIdentifierKey;
-extern NSString *const kRamblerLocationQuickActionType;
-extern NSString *const kSearchQuickActionType;
+#import "DataCardLaunchRouter.h"
+
+@protocol TabBarControllerFactory;
+@class UIWindow;
+@class UIStoryboard;
+
+/**
+ @author Egor Tolstoy
+ 
+ Launch router responsible for opening RamblerLocation screen
+ */
+@interface RamblerLocationLaunchRouter : NSObject <DataCardLaunchRouter>
+
+- (instancetype)initWithTabBarControllerFactory:(id<TabBarControllerFactory>)tabBarControllerFactory
+                                         window:(UIWindow *)window;
+
+@end
