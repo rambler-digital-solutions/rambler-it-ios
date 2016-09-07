@@ -45,10 +45,10 @@ static const CGFloat kDefaultMargin = 8.0f;
     }
 
     self.cellObject = object;
-    self.cellObject.height = [object.mediatorInput obtainHeightTagModuleViewWithObjectDescriptor:self.cellObject.objectDescriptor
-                                                                                  tagModuleInput:self.tagCollectionView];
+    self.cellObject.height = [self calculateHeightTableViewCellWithCellObject:object
+                                                               tagModuleInput:self.tagCollectionView];
     
-    [object.mediatorInput configureWithObjectDescriptor:self.cellObject.objectDescriptor
+    [object.mediatorInput configureWithObjectDescriptor:object.objectDescriptor
                                          tagModuleInput:self.tagCollectionView];
     
     return YES;
@@ -58,7 +58,16 @@ static const CGFloat kDefaultMargin = 8.0f;
 + (CGFloat)heightForObject:(TagModuleTableViewCellObject *)object
                atIndexPath:(NSIndexPath *)indexPath
                  tableView:(UITableView *)tableView {
-    return object.height + kDefaultMargin * 2;
+    return object.height;
+}
+
+#pragma mark - private
+
+- (CGFloat)calculateHeightTableViewCellWithCellObject:(TagModuleTableViewCellObject *)object
+                                       tagModuleInput:(id <TagModuleInput>)moduleInput{
+    CGFloat heightTagModuleView = [object.mediatorInput obtainHeightTagModuleViewWithObjectDescriptor:self.cellObject.objectDescriptor
+                                                                                       tagModuleInput:moduleInput];
+     return heightTagModuleView + kDefaultMargin * 2;
 }
 
 @end
