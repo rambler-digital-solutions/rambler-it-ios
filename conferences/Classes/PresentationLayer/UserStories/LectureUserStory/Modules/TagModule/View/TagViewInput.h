@@ -60,7 +60,14 @@
  */
 - (void)setupShowNumberOfLines:(NSInteger)lines;
 
-
+/**
+ @author Konstantin Zinovyev
+ 
+ Метод для получения высоты модуля тэгов
+ 
+ @param tags Тэги, по которым считается высота
+ @return Высота модуля тэгов
+ */
 - (CGFloat)obtainHeightTagCollectionViewWithTags:(NSArray *)tags;
 
 @end

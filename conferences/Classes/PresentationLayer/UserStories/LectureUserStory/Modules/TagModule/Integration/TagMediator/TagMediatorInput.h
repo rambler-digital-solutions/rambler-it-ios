@@ -36,11 +36,21 @@
  
  Метод конфигурируем медиатор.
  
- @param objectDescriptor Инофмрация об редактируемом объекте.
+ @param objectDescriptor Иноформация о конфигурируемом объекте.
+ @param tagModuleInput Модуль
  */
 - (void)configureWithObjectDescriptor:(TagObjectDescriptor *)objectDescriptor
                        tagModuleInput:(id <TagModuleInput>)tagModuleInput;
 
+/**
+ @author Konstantin Zinovyev
+ 
+ Метод для получения высоты модуля тэгов
+ 
+ @param objectDescriptor Иноформация о модуле тэгов.
+ @param tagModuleInput Модуль
+ @return Высота модуля тэгов
+ */
 - (CGFloat)obtainHeightTagModuleViewWithObjectDescriptor:(TagObjectDescriptor *)objectDescriptor
                                           tagModuleInput:(id <TagModuleInput>)tagModuleInput;
 

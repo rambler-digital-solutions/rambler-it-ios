@@ -94,6 +94,14 @@
  */
 - (NSInteger)countRowsForObjects:(NSArray *)cellObjects;
 
+/**
+ @author Konstantin Zinovyev
+ 
+ Метод для подсчета высоты модуля тэгов
+ 
+ @param cellObjects Объекты ячеек, по которым считается высота
+ @return Высота модуля тэгов
+ */
 - (CGFloat)calculateHeightRowsForCellObjects:(NSArray *)cellObjects;
 
 @end
