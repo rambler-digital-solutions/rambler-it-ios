@@ -34,4 +34,6 @@
 - (void)configureModuleWithModuleConfig:(TagModuleConfig *)moduleConfig
                            moduleOutput:(id <TagModuleOutput>)moduleOutput;
 
+- (CGFloat)obtainHeightTagModuleViewWithModuleConfig:(TagModuleConfig *)moduleConfig;
+
 @end

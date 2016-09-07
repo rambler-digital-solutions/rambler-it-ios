@@ -51,14 +51,21 @@
 
     [self.view setupShowNumberOfLines:moduleConfig.numberOfShowLine];
 
-    [self updateTagsInView];
+    [self updateTagsInViewWithModuleConfig:moduleConfig];
 }
+
+- (CGFloat)obtainHeightTagModuleViewWithModuleConfig:(TagModuleConfig *)moduleConfig {
+    NSArray *tags = [self.interactor obtainTagsFromObjectDescriptor:moduleConfig.objectDescriptor
+                                            excludeObjectDescriptor:moduleConfig.filteredObjectDescriptor];
+    return [self.view obtainHeightTagCollectionViewWithTags:tags];
+}
+
 
 #pragma mark - Дополнительные методы
 
-- (void)updateTagsInView {
-    NSArray *tags = [self.interactor obtainTagsFromObjectDescriptor:self.moduleConfig.objectDescriptor
-                                            excludeObjectDescriptor:self.moduleConfig.filteredObjectDescriptor];
+- (void)updateTagsInViewWithModuleConfig:(TagModuleConfig *)moduleConfig {
+    NSArray *tags = [self.interactor obtainTagsFromObjectDescriptor:moduleConfig.objectDescriptor
+                                            excludeObjectDescriptor:moduleConfig.filteredObjectDescriptor];
 
     [self.view showTags:tags];
 }

@@ -30,15 +30,27 @@ const NSInteger kCountShowLines = 3;
 
 - (void)configureWithObjectDescriptor:(TagObjectDescriptor *)objectDescriptor
                        tagModuleInput:(id <TagModuleInput>)tagModuleInput {
+    
+    TagModuleConfig *moduleConfig = [self tagModuleConfigWithObjectDescriptor:objectDescriptor];
+    [tagModuleInput configureModuleWithModuleConfig:moduleConfig
+                                       moduleOutput:nil];
+}
 
+- (CGFloat)obtainHeightTagModuleViewWithObjectDescriptor:(TagObjectDescriptor *)objectDescriptor
+                                          tagModuleInput:(id <TagModuleInput>)tagModuleInput {
+    TagModuleConfig *moduleConfig = [self tagModuleConfigWithObjectDescriptor:objectDescriptor];
+    return [tagModuleInput obtainHeightTagModuleViewWithModuleConfig:moduleConfig];
+}
+
+#pragma mark - private
+
+- (TagModuleConfig *)tagModuleConfigWithObjectDescriptor:(TagObjectDescriptor *)objectDescriptor {
     TagModuleConfig *moduleConfig = [[TagModuleConfig alloc] initWithObjectDescriptor:objectDescriptor];
     moduleConfig.verticalAlign = YES;
     moduleConfig.enableAddButton = NO;
     moduleConfig.enableRemoveButton = NO;
     moduleConfig.numberOfShowLine = kCountShowLines;
-
-    [tagModuleInput configureModuleWithModuleConfig:moduleConfig
-                                       moduleOutput:nil];
+    return moduleConfig;
 }
 
 @end

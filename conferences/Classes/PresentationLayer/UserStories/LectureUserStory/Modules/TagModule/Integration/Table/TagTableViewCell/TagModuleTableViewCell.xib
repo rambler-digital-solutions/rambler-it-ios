@@ -24,6 +24,8 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="K8q-1f-fkt" secondAttribute="trailing" constant="15" id="7ER-6V-GI8"/>
+                    <constraint firstItem="K8q-1f-fkt" firstAttribute="top" secondItem="Lyg-UV-Fdz" secondAttribute="top" constant="8" id="JdR-VA-5gA"/>
+                    <constraint firstAttribute="bottom" secondItem="K8q-1f-fkt" secondAttribute="bottom" constant="8" id="SIl-7Y-fh6"/>
                     <constraint firstItem="K8q-1f-fkt" firstAttribute="top" secondItem="Lyg-UV-Fdz" secondAttribute="topMargin" id="Y6l-AL-aUX"/>
                     <constraint firstAttribute="trailing" secondItem="K8q-1f-fkt" secondAttribute="trailing" constant="20" id="cnW-jQ-ajQ"/>
                     <constraint firstAttribute="bottomMargin" secondItem="K8q-1f-fkt" secondAttribute="bottom" id="knz-Za-ZyC"/>
@@ -32,6 +34,8 @@
                 <variation key="default">
                     <mask key="constraints">
                         <exclude reference="7ER-6V-GI8"/>
+                        <exclude reference="Y6l-AL-aUX"/>
+                        <exclude reference="knz-Za-ZyC"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>

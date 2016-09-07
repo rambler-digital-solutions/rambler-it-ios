@@ -24,6 +24,8 @@
 #import <CrutchKit/CDProxying.h>
 #import "TagMediatorInput.h"
 
+static const CGFloat kDefaultMargin = 8.0f;
+
 @interface TagModuleTableViewCell ()
 
 @property (nonatomic, strong) TagModuleTableViewCellObject *cellObject;
@@ -42,41 +44,21 @@
         return NO;
     }
 
-    self.sizeObserver.observerView = self.tagCollectionView;
-
     self.cellObject = object;
-
+    self.cellObject.height = [object.mediatorInput obtainHeightTagModuleViewWithObjectDescriptor:self.cellObject.objectDescriptor
+                                                                                  tagModuleInput:self.tagCollectionView];
+    
     [object.mediatorInput configureWithObjectDescriptor:self.cellObject.objectDescriptor
                                          tagModuleInput:self.tagCollectionView];
-
+    
     return YES;
 }
 
-#pragma mark - Методы ContentSizeObserverDelegate
-
-- (void)contentSizeObserver:(ContentSizeObserver *)observer
-   viewDidChangeContentSize:(UIView *)view {
-    
-    /**
-     @author Golovko Mikhail
-     
-     На iOS 8 есть баг, когда меняем размер collectionView, она не пересчитывает положение ячеек.
-     */
-    [self.tagCollectionView.collectionViewLayout invalidateLayout];
-    CGFloat height = [self systemLayoutSizeFittingSize:UILayoutFittingExpandedSize].height;
-    if (self.cellObject.height == height) {
-        return;
-    }
-    self.cellObject.height = height;
-    id <TagTableViewCellDelegate> proxy = [[self cd_proxyForProtocol:@protocol(TagTableViewCellDelegate)] unwrap];
-    [proxy collectionViewDidChangeContentSize:self.tagCollectionView
-                                         cell:self];
-}
 
 + (CGFloat)heightForObject:(TagModuleTableViewCellObject *)object
                atIndexPath:(NSIndexPath *)indexPath
                  tableView:(UITableView *)tableView {
-    return object.height;
+    return object.height + kDefaultMargin * 2;
 }
 
 @end

@@ -21,7 +21,6 @@
 #import "MockTagTableViewCell.h"
 #import <OCMock/OCMock.h>
 #import "TagCollectionView.h"
-#import "ContentSizeObserver.h"
 
 @implementation MockTagTableViewCell
 
@@ -32,15 +31,12 @@
         _mockTagCollectionView = OCMClassMock([TagCollectionView class]);
         self.tagCollectionView = _mockTagCollectionView;
 
-        _mockSizeObserver = OCMClassMock([ContentSizeObserver class]);
-        self.sizeObserver = _mockSizeObserver;
     }
     return self;
 }
 
 - (void)dealloc {
     [self.mockTagCollectionView stopMocking];
-    [self.mockSizeObserver stopMocking];
 }
 
 @end

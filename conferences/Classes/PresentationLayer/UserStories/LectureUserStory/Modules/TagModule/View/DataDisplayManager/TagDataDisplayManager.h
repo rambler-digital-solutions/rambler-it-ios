@@ -47,4 +47,6 @@
 - (id<UICollectionViewDataSource>)dataSourceForCollectionView:(UICollectionView *)collectionView
                                                      withTags:(NSArray *)tags;
 
+- (CGFloat)obtainHeightTagCollectionViewWithTags:(NSArray *)tags;
+
 @end

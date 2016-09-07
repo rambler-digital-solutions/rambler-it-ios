@@ -142,18 +142,4 @@
 
 #pragma mark - Тестирование методов TagModuleInput
 
-- (void)testForwardConfigureModuleWithModuleConfig {
-    // given
-    id moduleConfig = [NSObject new];
-    id moduleOutput = [NSObject new];
-
-    // when
-    [self.view configureModuleWithModuleConfig:moduleConfig
-                                  moduleOutput:moduleOutput];
-
-    // then
-    OCMVerify([self.mockModuleInput configureModuleWithModuleConfig:moduleConfig
-                                                       moduleOutput:moduleOutput]);
-}
-
 @end

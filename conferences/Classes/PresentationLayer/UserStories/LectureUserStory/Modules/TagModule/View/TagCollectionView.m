@@ -85,6 +85,15 @@
     [self.dataDisplayManager setCompressWidth:NO];
 }
 
+- (CGFloat)obtainHeightTagCollectionViewWithTags:(NSArray *)tags {
+    
+    return [self.dataDisplayManager obtainHeightTagCollectionViewWithTags:tags];
+}
+
+- (void)setupShowNumberOfLines:(NSInteger)lines {
+    self.dataDisplayManager.numberOfShowLine = lines;
+}
+
 #pragma mark - Методы TagModuleInput
 
 - (void)configureModuleWithModuleConfig:(TagModuleConfig *)moduleConfig
@@ -93,8 +102,8 @@
                                          moduleOutput:moduleOutput];
 }
 
-- (void)setupShowNumberOfLines:(NSInteger)lines {
-    self.dataDisplayManager.numberOfShowLine = lines;
+- (CGFloat)obtainHeightTagModuleViewWithModuleConfig:(TagModuleConfig *)moduleConfig {
+    return [self.moduleInput obtainHeightTagModuleViewWithModuleConfig:moduleConfig];
 }
 
 

@@ -25,6 +25,5 @@
 @interface MockTagTableViewCell : TagModuleTableViewCell
 
 @property (nonatomic, strong) id mockTagCollectionView;
-@property (nonatomic, strong) id mockSizeObserver;
 
 @end

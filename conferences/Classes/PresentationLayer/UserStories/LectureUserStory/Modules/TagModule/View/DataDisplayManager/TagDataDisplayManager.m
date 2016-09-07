@@ -47,6 +47,7 @@ typedef NS_ENUM(NSInteger, TagSectionIndex) {
 @property (nonatomic, strong) CollectionViewAnimator *collectionViewAnimator;
 @property (nonatomic, assign) NSInteger addButtonSectionIndex;
 @property (nonatomic, strong) NSArray *hideTags;
+@property (nonatomic, readwrite) NSInteger heightTagRows;
 
 @end
 
@@ -69,11 +70,11 @@ typedef NS_ENUM(NSInteger, TagSectionIndex) {
 
 - (id <UICollectionViewDataSource>)dataSourceForCollectionView:(UICollectionView *)collectionView
                                                       withTags:(NSArray *)tags {
+    
     NSArray *cellObjects = [self generateCellObjects:tags];
     self.collectionViewModule = [[NIMutableCollectionViewModel alloc] initWithSectionedArray:cellObjects
                                                              delegate:(id)[NICollectionViewCellFactory class]];
     self.collectionViewAnimator = [CollectionViewAnimator animatorWithCollectionView:collectionView];
-
     return self.collectionViewModule;
 }
 
@@ -143,11 +144,10 @@ typedef NS_ENUM(NSInteger, TagSectionIndex) {
         id object = [self createTagCellWithName:tag];
         [tagObjects addObject:object];
     }
-
+    
     if (self.numberOfShowLine != TagModuleDisableCollapseTags) {
         return [self collapseTagCellObjects:tagObjects];
     }
-
     return [tagObjects copy];
 }
 
@@ -175,6 +175,13 @@ typedef NS_ENUM(NSInteger, TagSectionIndex) {
 - (TagCollectionViewCellObject *)createTagCellWithName:(NSString *)tagName {
     TagCollectionViewCellObject *object = [[TagCollectionViewCellObject alloc] initWithTagName:tagName];
     return object;
+}
+
+- (CGFloat)obtainHeightTagCollectionViewWithTags:(NSArray *)tags {
+    NSArray *cellObjects = [self generateTagContentCellObjects:tags];
+    NSInteger countRows = [self.cellSizeCalculator countRowsForObjects:cellObjects];
+    CGFloat height = countRows * kItemHeight + countRows * kItemSpacing;
+    return height;
 }
 
 @end

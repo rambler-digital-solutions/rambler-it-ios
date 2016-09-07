@@ -60,4 +60,7 @@
  */
 - (void)setupShowNumberOfLines:(NSInteger)lines;
 
+
+- (CGFloat)obtainHeightTagCollectionViewWithTags:(NSArray *)tags;
+
 @end
