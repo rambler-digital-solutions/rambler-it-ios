@@ -28,10 +28,8 @@
 
 #pragma mark - Методы TagInteractorInput
 
-- (NSArray *)obtainTagsFromObjectDescriptor:(TagObjectDescriptor *)objectDescriptor
-                    excludeObjectDescriptor:(TagObjectDescriptor *)excludeObjectDescriptor {
-    NSArray *tags = [self.tagService obtainTagsFromObjectDescriptor:objectDescriptor
-                                            excludeObjectDescriptor:excludeObjectDescriptor];
+- (NSArray *)obtainTagsFromObjectDescriptor:(TagObjectDescriptor *)objectDescriptor {
+    NSArray *tags = [self.tagService obtainTagsFromObjectDescriptor:objectDescriptor];
 
     return [self plainStringFromObjects:tags];
 }

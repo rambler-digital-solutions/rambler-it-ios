@@ -126,6 +126,11 @@
     return self.rowCalculator.countRows;
 }
 
+- (CGFloat)calculateHeightRowsForCellObjects:(NSArray *)cellObjects {
+    NSInteger countRows = [self countRowsForObjects:cellObjects];
+    CGFloat height = countRows * (kItemHeight + kItemSpacing);
+    return height;
+}
 
 #pragma mark - Дополнительные методы
 

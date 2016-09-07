@@ -127,8 +127,7 @@
 }
 
 - (void)stubObtainTags:(NSArray *)tags {
-    OCMStub([self.mockInteractor obtainTagsFromObjectDescriptor:OCMOCK_ANY
-                                        excludeObjectDescriptor:OCMOCK_ANY]).andReturn(tags);
+    OCMStub([self.mockInteractor obtainTagsFromObjectDescriptor:OCMOCK_ANY]).andReturn(tags);
 }
 
 @end

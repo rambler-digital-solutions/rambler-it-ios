@@ -55,8 +55,7 @@
 }
 
 - (CGFloat)obtainHeightTagModuleViewWithModuleConfig:(TagModuleConfig *)moduleConfig {
-    NSArray *tags = [self.interactor obtainTagsFromObjectDescriptor:moduleConfig.objectDescriptor
-                                            excludeObjectDescriptor:moduleConfig.filteredObjectDescriptor];
+    NSArray *tags = [self.interactor obtainTagsFromObjectDescriptor:moduleConfig.objectDescriptor];
     return [self.view obtainHeightTagCollectionViewWithTags:tags];
 }
 
@@ -64,8 +63,7 @@
 #pragma mark - Дополнительные методы
 
 - (void)updateTagsInViewWithModuleConfig:(TagModuleConfig *)moduleConfig {
-    NSArray *tags = [self.interactor obtainTagsFromObjectDescriptor:moduleConfig.objectDescriptor
-                                            excludeObjectDescriptor:moduleConfig.filteredObjectDescriptor];
+    NSArray *tags = [self.interactor obtainTagsFromObjectDescriptor:moduleConfig.objectDescriptor];
 
     [self.view showTags:tags];
 }

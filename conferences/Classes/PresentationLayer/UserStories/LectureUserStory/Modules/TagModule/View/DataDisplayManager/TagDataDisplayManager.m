@@ -179,8 +179,7 @@ typedef NS_ENUM(NSInteger, TagSectionIndex) {
 
 - (CGFloat)obtainHeightTagCollectionViewWithTags:(NSArray *)tags {
     NSArray *cellObjects = [self generateTagContentCellObjects:tags];
-    NSInteger countRows = [self.cellSizeCalculator countRowsForObjects:cellObjects];
-    CGFloat height = countRows * kItemHeight + countRows * kItemSpacing;
+    CGFloat height = [self.cellSizeCalculator calculateHeightRowsForCellObjects:cellObjects];
     return height;
 }
 

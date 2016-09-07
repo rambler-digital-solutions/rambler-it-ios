@@ -38,13 +38,6 @@
 
 /**
  @author Golovko Mikhail
-
- Конфигурация объекта, теги которого не нужно отображать в выборке.
- */
-@property (nonatomic, strong) TagObjectDescriptor *filteredObjectDescriptor;
-
-/**
- @author Golovko Mikhail
  
  Режим отображения
  YES - вертикальный
@@ -75,9 +68,5 @@
 @property (assign, nonatomic) NSInteger numberOfShowLine;
 
 - (instancetype)initWithObjectDescriptor:(TagObjectDescriptor *)objectDescriptor;
-
-- (instancetype)initWithObjectDescriptor:(TagObjectDescriptor *)objectDescriptor
-                filteredObjectDescriptor:(TagObjectDescriptor *)filteredObjectDescriptor;
-
 
 @end

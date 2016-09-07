@@ -37,6 +37,5 @@
  
  @return Теги
  */
-- (NSArray *)obtainTagsFromObjectDescriptor:(TagObjectDescriptor *)objectDescriptor
-                    excludeObjectDescriptor:(TagObjectDescriptor *)excludeObjectDescriptor;
+- (NSArray *)obtainTagsFromObjectDescriptor:(TagObjectDescriptor *)objectDescriptor;
 @end

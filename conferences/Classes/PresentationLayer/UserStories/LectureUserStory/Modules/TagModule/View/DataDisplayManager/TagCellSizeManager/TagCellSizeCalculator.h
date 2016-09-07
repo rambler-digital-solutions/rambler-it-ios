@@ -94,4 +94,6 @@
  */
 - (NSInteger)countRowsForObjects:(NSArray *)cellObjects;
 
+- (CGFloat)calculateHeightRowsForCellObjects:(NSArray *)cellObjects;
+
 @end
