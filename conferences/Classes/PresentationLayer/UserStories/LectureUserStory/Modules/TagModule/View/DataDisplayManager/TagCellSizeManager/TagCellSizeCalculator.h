@@ -34,13 +34,6 @@
 /**
  @author Golovko Mikhail
  
- Флаг сжатия ячейки по ширине
- */
-@property (nonatomic, assign) BOOL compressWidth;
-
-/**
- @author Golovko Mikhail
- 
  Дополнительный калькулятор для расчёта строк.
  */
 @property (nonatomic, strong, readonly) TagCellSizeRowCalculator *rowCalculator;

@@ -78,15 +78,6 @@ typedef NS_ENUM(NSInteger, TagSectionIndex) {
     return self.collectionViewModule;
 }
 
-- (void)setCompressWidth:(BOOL)compressWidth {
-    self.cellSizeCalculator.compressWidth = compressWidth;
-}
-
-- (BOOL)compressWidth {
-    return self.cellSizeCalculator.compressWidth;
-}
-
-
 - (void)removeTagAtIndex:(NSInteger)index {
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index
                                                 inSection:TagItemSectionIndex];

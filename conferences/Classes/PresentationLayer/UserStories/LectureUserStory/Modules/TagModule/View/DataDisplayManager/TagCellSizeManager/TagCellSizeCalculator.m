@@ -48,9 +48,7 @@
 - (CGSize)sizeForCellObject:(id <NICollectionViewNibCellObject>)cellObject {
     CGSize size = [self fullSizeForCellObject:cellObject];
 
-    if (self.compressWidth) {
-        size = [self compressingCellSize:size];
-    }
+    size = [self compressingCellSize:size];
 
     return size;
 }
