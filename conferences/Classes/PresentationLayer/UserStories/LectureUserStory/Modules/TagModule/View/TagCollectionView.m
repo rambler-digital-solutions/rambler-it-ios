@@ -32,15 +32,6 @@
                                         options:NULL] firstObject];
 }
 
-- (void)setContentSize:(CGSize)contentSize {
-    [super setContentSize:contentSize];
-    [self invalidateIntrinsicContentSize];
-}
-
-- (CGSize)intrinsicContentSize {
-    return self.contentSize;
-}
-
 #pragma mark - Методы TagViewInput
 
 - (void)setupInitialState {
