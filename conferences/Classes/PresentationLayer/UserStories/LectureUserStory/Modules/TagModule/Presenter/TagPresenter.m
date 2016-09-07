@@ -43,11 +43,7 @@
 
     [self.view setupInitialState];
 
-    if (moduleConfig.verticalAlign) {
-        [self.view setupVerticalContentAlign];
-    } else {
-        [self.view setupHorizontalContentAlign];
-    }
+    [self.view setupVerticalContentAlign];
 
     [self.view setupShowNumberOfLines:moduleConfig.numberOfShowLine];
 

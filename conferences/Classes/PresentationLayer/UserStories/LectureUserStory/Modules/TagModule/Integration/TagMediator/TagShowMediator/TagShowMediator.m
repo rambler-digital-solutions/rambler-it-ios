@@ -46,7 +46,6 @@ const NSInteger kCountShowLines = 3;
 
 - (TagModuleConfig *)tagModuleConfigWithObjectDescriptor:(TagObjectDescriptor *)objectDescriptor {
     TagModuleConfig *moduleConfig = [[TagModuleConfig alloc] initWithObjectDescriptor:objectDescriptor];
-    moduleConfig.verticalAlign = YES;
     moduleConfig.enableAddButton = NO;
     moduleConfig.enableRemoveButton = NO;
     moduleConfig.numberOfShowLine = kCountShowLines;

@@ -26,6 +26,8 @@
 #import "TagMediatorInput.h"
 #import "TagObjectDescriptor.h"
 
+static const CGFloat kDefaultMargin = 8.0f;
+
 @interface TagModuleTableViewCellTests : XCTestCase
 
 @property(nonatomic, strong) TagModuleTableViewCell *cell;
@@ -83,6 +85,23 @@
     // then
     OCMVerify([self.mockMediatorInput configureWithObjectDescriptor:self.mockObjectDescriptor
                                                      tagModuleInput:self.mockTagCollectionView]);
+}
+
+- (void)testShouldUpdateCellWithObjectCorrectHeight {
+    // given
+    CGFloat heightTagView = 20.0f;
+    CGFloat expectedCellHeight = heightTagView + 2 * kDefaultMargin ;
+    TagModuleTableViewCellObject *cellObject = [[TagModuleTableViewCellObject alloc] initWithObjectDescriptor:self.mockObjectDescriptor
+                                                                     mediatorInput:self.mockMediatorInput];
+    OCMStub([self.mockMediatorInput obtainHeightTagModuleViewWithObjectDescriptor:self.mockObjectDescriptor
+                                                                   tagModuleInput:self.mockTagCollectionView]).andReturn(heightTagView);
+    
+    
+    // when
+    [self.cell shouldUpdateCellWithObject:cellObject];
+    
+    // then
+    XCTAssertEqual(cellObject.height, expectedCellHeight);
 }
 
 - (void)testHeightForObject {

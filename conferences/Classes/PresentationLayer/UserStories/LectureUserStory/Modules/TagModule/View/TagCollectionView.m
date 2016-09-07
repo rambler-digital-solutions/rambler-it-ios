@@ -58,22 +58,6 @@
     self.scrollEnabled = NO;
     self.alwaysBounceHorizontal = NO;
     self.showsVerticalScrollIndicator = NO;
-
-    [self.dataDisplayManager setCompressWidth:YES];
-}
-
-- (void)setupHorizontalContentAlign {
-    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    layout.minimumInteritemSpacing = self.cellSizeConfig.itemSpacing;
-    layout.minimumLineSpacing = self.cellSizeConfig.itemSpacing;
-    layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-
-    self.collectionViewLayout = layout;
-    self.scrollEnabled = YES;
-    self.alwaysBounceHorizontal = YES;
-    self.showsHorizontalScrollIndicator = NO;
-
-    [self.dataDisplayManager setCompressWidth:NO];
 }
 
 - (CGFloat)obtainHeightTagCollectionViewWithTags:(NSArray *)tags {

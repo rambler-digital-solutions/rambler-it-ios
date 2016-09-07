@@ -60,8 +60,7 @@
 
     OCMExpect([self.mockTagInput configureModuleWithModuleConfig:
                                          [OCMArg checkWithBlock:^BOOL(TagModuleConfig *obj) {
-                                             return obj.verticalAlign
-                                                     && !obj.enableAddButton
+                                             return  !obj.enableAddButton
                                                      && !obj.enableRemoveButton
                                                      && obj.numberOfShowLine == expectedNumberOfLines
                                                      && [obj.objectDescriptor isEqual:objectDescriptor];
@@ -72,6 +71,27 @@
     [self.mediator configureWithObjectDescriptor:objectDescriptor
                                   tagModuleInput:self.mockTagInput];
 
+    // then
+    OCMVerifyAll(self.mockTagInput);
+}
+
+- (void)testObtainHeightWithObjectDescriptor {
+    // given
+    NSInteger expectedNumberOfLines = 3;
+    TagObjectDescriptor *objectDescriptor = [[TagObjectDescriptor alloc] init];
+    
+    OCMExpect([self.mockTagInput obtainHeightTagModuleViewWithModuleConfig:
+               [OCMArg checkWithBlock:^BOOL(TagModuleConfig *obj) {
+        return !obj.enableAddButton
+        && !obj.enableRemoveButton
+        && obj.numberOfShowLine == expectedNumberOfLines
+        && [obj.objectDescriptor isEqual:objectDescriptor];
+    }]]);
+    
+    // when
+    [self.mediator obtainHeightTagModuleViewWithObjectDescriptor:objectDescriptor
+                                  tagModuleInput:self.mockTagInput];
+    
     // then
     OCMVerifyAll(self.mockTagInput);
 }

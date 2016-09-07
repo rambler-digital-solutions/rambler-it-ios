@@ -108,27 +108,8 @@
     XCTAssertFalse(self.view.scrollEnabled);
     XCTAssertFalse(self.view.alwaysBounceHorizontal);
     XCTAssertFalse(self.view.showsVerticalScrollIndicator);
-    OCMVerify([self.mockDataDisplayManager setCompressWidth:YES]);
 }
 
-- (void)testSetupHorizontalContentAlign {
-    // given
-    CGFloat kExpectedSpacing = self.cellSizeConfig.itemSpacing;
-
-    // when
-    [self.view setupHorizontalContentAlign];
-
-    // then
-    XCTAssertEqualObjects([self.view.collectionViewLayout class], [UICollectionViewFlowLayout class]);
-    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *) self.view.collectionViewLayout;
-    XCTAssertEqual([layout minimumInteritemSpacing], kExpectedSpacing);
-    XCTAssertEqual([layout minimumLineSpacing], kExpectedSpacing);
-    XCTAssertEqual([layout scrollDirection], UICollectionViewScrollDirectionHorizontal);
-    XCTAssertTrue(self.view.scrollEnabled);
-    XCTAssertTrue(self.view.alwaysBounceHorizontal);
-    XCTAssertFalse(self.view.showsHorizontalScrollIndicator);
-    OCMVerify([self.mockDataDisplayManager setCompressWidth:NO]);
-}
 - (void)testSetupShowNumberOfLines {
     // given
     NSInteger numberShowLines = 4;
@@ -138,6 +119,17 @@
     
     // then
     OCMVerify([self.mockDataDisplayManager setNumberOfShowLine:numberShowLines]);
+}
+
+- (void)testObtainHeight {
+    // given
+    TagModuleConfig *moduleConfig = [TagModuleConfig new];
+    
+    // when
+    [self.view obtainHeightTagModuleViewWithModuleConfig:moduleConfig];
+    
+    // then
+    OCMVerify([self.mockModuleInput obtainHeightTagModuleViewWithModuleConfig:moduleConfig]);
 }
 
 #pragma mark - Тестирование методов TagModuleInput

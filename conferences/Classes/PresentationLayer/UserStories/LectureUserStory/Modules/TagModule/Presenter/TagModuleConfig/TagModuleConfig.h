@@ -39,15 +39,6 @@
 /**
  @author Golovko Mikhail
  
- Режим отображения
- YES - вертикальный
- NO - горизонтальный
- */
-@property (assign, nonatomic) BOOL verticalAlign;
-
-/**
- @author Golovko Mikhail
- 
  Флаг отображения кнопки добавления тегов
  */
 @property (assign, nonatomic) BOOL enableAddButton;

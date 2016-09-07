@@ -31,13 +31,6 @@
 /**
  @author Golovko Mikhail
 
- Флаг сжатия ячеек по ширине.
- */
-@property (nonatomic, assign) BOOL compressWidth;
-
-/**
- @author Golovko Mikhail
-
  Количество отображаемых строк.
  */
 @property (nonatomic, assign) NSInteger numberOfShowLine;
