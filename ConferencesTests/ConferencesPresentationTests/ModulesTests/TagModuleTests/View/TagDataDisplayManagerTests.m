@@ -191,8 +191,7 @@
                   showTags:(NSInteger)showTags {
     OCMStub([self.mockCellSizeCalculator countRowsForObjects:OCMOCK_ANY]).andReturn(tagRows);
     OCMStub([self.mockCellSizeCalculator countItemsInRows:countShowLines
-                                           forCellObjects:OCMOCK_ANY
-                                           lastCellObject:OCMOCK_ANY]).andReturn(showTags);
+                                           forCellObjects:OCMOCK_ANY]).andReturn(showTags);
 }
 
 #pragma mark - Тестирование методов UICollectionViewDelegateFlowLayout

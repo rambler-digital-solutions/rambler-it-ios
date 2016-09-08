@@ -25,8 +25,7 @@
 #import "TagCollectionView.h"
 #import "TagMediatorInput.h"
 #import "TagObjectDescriptor.h"
-
-static const CGFloat kDefaultMargin = 8.0f;
+#import "TagModuleViewConstants.h"
 
 @interface TagModuleTableViewCellTests : XCTestCase
 
@@ -90,7 +89,7 @@ static const CGFloat kDefaultMargin = 8.0f;
 - (void)testShouldUpdateCellWithObjectCorrectHeight {
     // given
     CGFloat heightTagView = 20.0f;
-    CGFloat expectedCellHeight = heightTagView + 2 * kDefaultMargin ;
+    CGFloat expectedCellHeight = heightTagView + 2 * kVerticalContentSpacing;
     TagModuleTableViewCellObject *cellObject = [[TagModuleTableViewCellObject alloc] initWithObjectDescriptor:self.mockObjectDescriptor
                                                                      mediatorInput:self.mockMediatorInput];
     OCMStub([self.mockMediatorInput obtainHeightTagModuleViewWithObjectDescriptor:self.mockObjectDescriptor

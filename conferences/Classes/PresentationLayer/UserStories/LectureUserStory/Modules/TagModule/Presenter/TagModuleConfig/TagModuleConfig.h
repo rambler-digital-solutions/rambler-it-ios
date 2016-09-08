@@ -39,20 +39,6 @@
 /**
  @author Golovko Mikhail
  
- Флаг отображения кнопки добавления тегов
- */
-@property (assign, nonatomic) BOOL enableAddButton;
-
-/**
- @author Golovko Mikhail
- 
- Флаг отображения кнопки удаления тега
- */
-@property (assign, nonatomic) BOOL enableRemoveButton;
-
-/**
- @author Golovko Mikhail
- 
  Количество строк, которые отображаются в свернутом режиме.
  TagModuleDisableCollapseTags - не будет сворачиваться.
  */

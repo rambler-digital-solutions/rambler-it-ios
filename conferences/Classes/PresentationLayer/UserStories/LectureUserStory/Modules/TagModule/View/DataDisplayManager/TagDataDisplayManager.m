@@ -30,10 +30,6 @@
 
 const NSInteger kUndefineSectionIndex = -1;
 const CGFloat kTagSectionTopInset = 5.0f;
-const NSInteger kMaxCountItemsCollapseFromCalculate = 99;
-
-static NSString *const kTagMoreButton = @"%lu ещё";
-static NSString *const kTagViewAddTagButton = @"Добавить метку";
 
 typedef NS_ENUM(NSInteger, TagSectionIndex) {
     TagItemSectionIndex = 0,
@@ -43,11 +39,6 @@ typedef NS_ENUM(NSInteger, TagSectionIndex) {
 @interface TagDataDisplayManager ()
 
 @property (nonatomic, strong) NIMutableCollectionViewModel *collectionViewModule;
-@property (nonatomic, strong) NICollectionViewActions *collectionViewActions;
-@property (nonatomic, strong) CollectionViewAnimator *collectionViewAnimator;
-@property (nonatomic, assign) NSInteger addButtonSectionIndex;
-@property (nonatomic, strong) NSArray *hideTags;
-@property (nonatomic, readwrite) NSInteger heightTagRows;
 
 @end
 
@@ -56,7 +47,6 @@ typedef NS_ENUM(NSInteger, TagSectionIndex) {
 - (instancetype)init {
     self = [super init];
     if (self) {
-        _addButtonSectionIndex = kUndefineSectionIndex;
     }
 
     return self;
@@ -74,29 +64,7 @@ typedef NS_ENUM(NSInteger, TagSectionIndex) {
     NSArray *cellObjects = [self generateCellObjects:tags];
     self.collectionViewModule = [[NIMutableCollectionViewModel alloc] initWithSectionedArray:cellObjects
                                                              delegate:(id)[NICollectionViewCellFactory class]];
-    self.collectionViewAnimator = [CollectionViewAnimator animatorWithCollectionView:collectionView];
     return self.collectionViewModule;
-}
-
-- (void)removeTagAtIndex:(NSInteger)index {
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index
-                                                inSection:TagItemSectionIndex];
-
-    [self.collectionViewModule removeObjectAtIndexPath:indexPath];
-    [self.collectionViewAnimator animateTableViewWithInsertedItemsAtIndexPaths:nil
-                                                        updatedItemsIndexPaths:nil
-                                                        removedItemsIndexPaths:@[indexPath]
-                                                                  batchUpdates:YES];
-}
-
-- (void)appendTagWithName:(NSString *)tagName {
-    id object = [self createTagCellWithName:tagName];
-    NSArray *insertedIndexPaths = [self.collectionViewModule addObject:object
-                                                             toSection:TagItemSectionIndex];
-    [self.collectionViewAnimator animateTableViewWithInsertedItemsAtIndexPaths:insertedIndexPaths
-                                                        updatedItemsIndexPaths:nil
-                                                        removedItemsIndexPaths:nil
-                                                                  batchUpdates:YES];
 }
 
 #pragma mark - Методы UICollectionViewDelegateFlowLayout
@@ -149,14 +117,11 @@ typedef NS_ENUM(NSInteger, TagSectionIndex) {
     }
     
     NSInteger countTags = [self.cellSizeCalculator countItemsInRows:self.numberOfShowLine
-                                                     forCellObjects:tagObjects
-                                                     lastCellObject:nil];
+                                                     forCellObjects:tagObjects];
 
     NSMutableArray *showObjects = [NSMutableArray array];
     NSArray *showTags = [tagObjects subarrayWithRange:NSMakeRange(0, countTags)];
     [showObjects addObjectsFromArray:showTags];
-
-    self.hideTags = [tagObjects subarrayWithRange:NSMakeRange(countTags, tagObjects.count - countTags)];
 
     return [showObjects copy];
 }

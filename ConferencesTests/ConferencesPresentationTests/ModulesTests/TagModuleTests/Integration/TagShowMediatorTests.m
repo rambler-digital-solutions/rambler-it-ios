@@ -60,9 +60,7 @@
 
     OCMExpect([self.mockTagInput configureModuleWithModuleConfig:
                                          [OCMArg checkWithBlock:^BOOL(TagModuleConfig *obj) {
-                                             return  !obj.enableAddButton
-                                                     && !obj.enableRemoveButton
-                                                     && obj.numberOfShowLine == expectedNumberOfLines
+                                             return  obj.numberOfShowLine == expectedNumberOfLines
                                                      && [obj.objectDescriptor isEqual:objectDescriptor];
                                          }]
                                                     moduleOutput:nil]);
@@ -82,9 +80,7 @@
     
     OCMExpect([self.mockTagInput obtainHeightTagModuleViewWithModuleConfig:
                [OCMArg checkWithBlock:^BOOL(TagModuleConfig *obj) {
-        return !obj.enableAddButton
-        && !obj.enableRemoveButton
-        && obj.numberOfShowLine == expectedNumberOfLines
+        return obj.numberOfShowLine == expectedNumberOfLines
         && [obj.objectDescriptor isEqual:objectDescriptor];
     }]]);
     

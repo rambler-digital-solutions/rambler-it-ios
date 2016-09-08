@@ -281,7 +281,6 @@
 		66A1DD351D7E982500998F6B /* TagPresenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A1DD331D7E982500998F6B /* TagPresenterTests.m */; };
 		66A1DD3B1D7E983100998F6B /* TagModuleTableViewCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A1DD381D7E983100998F6B /* TagModuleTableViewCellTests.m */; };
 		66A1DD3C1D7E983100998F6B /* TagShowMediatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A1DD391D7E983100998F6B /* TagShowMediatorTests.m */; };
-		66A1DD401D7E984400998F6B /* MockTagTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A1DD3F1D7E984400998F6B /* MockTagTableViewCell.m */; };
 		66A1DD451D7E984E00998F6B /* TagCellSizeCalculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A1DD411D7E984E00998F6B /* TagCellSizeCalculatorTests.m */; };
 		66A1DD461D7E984E00998F6B /* TagCellSizeRowCalculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A1DD421D7E984E00998F6B /* TagCellSizeRowCalculatorTests.m */; };
 		66A1DD471D7E984E00998F6B /* TagCollectionViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A1DD431D7E984E00998F6B /* TagCollectionViewTests.m */; };
@@ -1107,8 +1106,6 @@
 		66A1DD331D7E982500998F6B /* TagPresenterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagPresenterTests.m; path = TagModuleTests/Presenter/TagPresenterTests.m; sourceTree = "<group>"; };
 		66A1DD381D7E983100998F6B /* TagModuleTableViewCellTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagModuleTableViewCellTests.m; path = TagModuleTests/Integration/TagModuleTableViewCellTests.m; sourceTree = "<group>"; };
 		66A1DD391D7E983100998F6B /* TagShowMediatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagShowMediatorTests.m; path = TagModuleTests/Integration/TagShowMediatorTests.m; sourceTree = "<group>"; };
-		66A1DD3E1D7E984400998F6B /* MockTagTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MockTagTableViewCell.h; path = TagModuleTests/Integration/MockCell/MockTagTableViewCell.h; sourceTree = "<group>"; };
-		66A1DD3F1D7E984400998F6B /* MockTagTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MockTagTableViewCell.m; path = TagModuleTests/Integration/MockCell/MockTagTableViewCell.m; sourceTree = "<group>"; };
 		66A1DD411D7E984E00998F6B /* TagCellSizeCalculatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagCellSizeCalculatorTests.m; path = TagModuleTests/View/TagCellSizeCalculatorTests.m; sourceTree = "<group>"; };
 		66A1DD421D7E984E00998F6B /* TagCellSizeRowCalculatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagCellSizeRowCalculatorTests.m; path = TagModuleTests/View/TagCellSizeRowCalculatorTests.m; sourceTree = "<group>"; };
 		66A1DD431D7E984E00998F6B /* TagCollectionViewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagCollectionViewTests.m; path = TagModuleTests/View/TagCollectionViewTests.m; sourceTree = "<group>"; };
@@ -4244,7 +4241,6 @@
 		66A1DD281D7E97DF00998F6B /* Integration */ = {
 			isa = PBXGroup;
 			children = (
-				66A1DD3D1D7E983500998F6B /* MockCell */,
 				66A1DD381D7E983100998F6B /* TagModuleTableViewCellTests.m */,
 				66A1DD391D7E983100998F6B /* TagShowMediatorTests.m */,
 			);
@@ -4286,15 +4282,6 @@
 				66A1DD441D7E984E00998F6B /* TagDataDisplayManagerTests.m */,
 			);
 			name = View;
-			sourceTree = "<group>";
-		};
-		66A1DD3D1D7E983500998F6B /* MockCell */ = {
-			isa = PBXGroup;
-			children = (
-				66A1DD3E1D7E984400998F6B /* MockTagTableViewCell.h */,
-				66A1DD3F1D7E984400998F6B /* MockTagTableViewCell.m */,
-			);
-			name = MockCell;
 			sourceTree = "<group>";
 		};
 		66A1DD491D7E985200998F6B /* Cells */ = {
@@ -8748,7 +8735,6 @@
 				9F78D7551D59DB89009DDCEA /* ContextStorageImplementationTests.m in Sources */,
 				63F8F2F51BF9FDBF000017F3 /* CompoundOperationBaseTests.m in Sources */,
 				9FAB6A731D53914C0061F333 /* IndexerStateStorageTests.m in Sources */,
-				66A1DD401D7E984400998F6B /* MockTagTableViewCell.m in Sources */,
 				63F613DE1CB111070002AEF0 /* PastEventCellObjectBuilderTests.m in Sources */,
 				2B4F202A1D54E11F00C9891E /* SpeakerInfoCellObjectsBuilderTests.m in Sources */,
 				9F1830FE1BC14E64000E21A5 /* Conference.xcdatamodeld in Sources */,

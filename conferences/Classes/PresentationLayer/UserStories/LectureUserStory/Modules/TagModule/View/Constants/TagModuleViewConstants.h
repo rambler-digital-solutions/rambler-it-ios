@@ -20,11 +20,62 @@
 
 static const NSInteger TagModuleDisableCollapseTags = 0;
 
+#pragma mark - Inside Tag module cell
+/**
+ @author Konstantin Zinovyev
+ 
+ Space between tags collection view and left screen's border
+ */
 static const CGFloat kLeftContentSpacing = 15;
+
+/**
+ @author Konstantin Zinovyev
+ 
+ Space between tags collection view and right screen's border
+ */
 static const CGFloat kRightContentSpacing = 15;
+
+/**
+ @author Konstantin Zinovyev
+ 
+ Space beetwen tag collection view and top/bottom tag cell module
+ */
+static const CGFloat kVerticalContentSpacing = 8.0f;
+
+#pragma mark - Inside Collection View
+
+/**
+ @author Konstantin Zinovyev
+ 
+ Vertical and horizontal space between tags in collection
+ */
 static const CGFloat kItemSpacing = 5.0f;
-static const CGFloat kItemHeight = 22.0f;
-static const CGFloat kSideItemInset = 10.0f;
+
+#pragma mark - Inside Tag cell
+
+/**
+ @author Konstantin Zinovyev
+ 
+ Size font in tag's label
+ */
 static const CGFloat kSizeFontTagText = 14.0f;
 
+/**
+ @author Konstantin Zinovyev
+ 
+ Font name in tag's label
+ */
 static NSString *const kNameFontTagText = @"HelveticaNeue";
+/**
+ @author Konstantin Zinovyev
+ 
+ Height tag
+ */
+static const CGFloat kItemHeight = 22.0f;
+
+/**
+ @author Konstantin Zinovyev
+ 
+ Space between tag's label  and left/right border
+ */
+static const CGFloat kSideItemInset = 10.0f;

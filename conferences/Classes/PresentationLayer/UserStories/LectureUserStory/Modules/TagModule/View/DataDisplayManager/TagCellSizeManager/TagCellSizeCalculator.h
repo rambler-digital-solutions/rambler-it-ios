@@ -68,13 +68,11 @@
  
  @param rows           Число строк, для которых нужно узнать количество влезаемых элементов
  @param cellObjects    Объекты ячеек для отображения
- @param lastCellObject Объект ячейки, который должен обязательно вместиться последним элементом
  
  @return Количество элементов из cellObjects, которые влезают в rows строк
  */
 - (NSInteger)countItemsInRows:(NSInteger)rows
-               forCellObjects:(NSArray *)cellObjects
-               lastCellObject:(id <NICollectionViewNibCellObject>)lastCellObject;
+               forCellObjects:(NSArray *)cellObjects;
 
 /**
  @author Golovko Mikhail

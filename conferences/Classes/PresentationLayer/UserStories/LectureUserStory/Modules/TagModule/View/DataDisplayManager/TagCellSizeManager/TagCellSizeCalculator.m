@@ -23,7 +23,6 @@
 #import "NICollectionViewCellFactory.h"
 #import "TagCellSizeRowCalculator.h"
 #import "TagCollectionViewCellObject.h"
-#import "TagModuleViewConstants.h"
 
 @interface TagCellSizeCalculator ()
 
@@ -54,8 +53,7 @@
 }
 
 - (NSInteger)countItemsInRows:(NSInteger)rows
-               forCellObjects:(NSArray *)cellObjects
-               lastCellObject:(id <NICollectionViewNibCellObject>)lastCellObject {
+               forCellObjects:(NSArray *)cellObjects {
 
     [self.rowCalculator cleanRows];
 
@@ -69,18 +67,6 @@
     for (int i = 0; i < rows; ++i) {
 
         [self.rowCalculator addNewRow];
-
-        /**
-         @author Golovko Mikhail
-         
-         Если последняя строка, первым делом добавляем последний cellobject, 
-         который обязательно должен быть.
-         */
-        if (i == rows - 1) {
-            CGSize size = [self sizeForCellObject:lastCellObject];
-
-            [self.rowCalculator addItemInSameRowAtWidth:size.width];
-        }
 
         while(cellObjectIndex < cellObjects.count) {
 
@@ -101,13 +87,7 @@
         }
     }
 
-    /**
-     @author Golovko Mikhail
-     
-     Один элемент из добавленных - это lastCellObject. Нам нужно показать,
-     сколько элементов влезает из cellObjects, поэтому вычитаем единицу.
-     */
-    return self.rowCalculator.countAddItems - 1;
+    return self.rowCalculator.countAddItems;
 }
 
 - (NSInteger)countRowsForObjects:(NSArray *)cellObjects {
@@ -126,7 +106,7 @@
 
 - (CGFloat)calculateHeightRowsForCellObjects:(NSArray *)cellObjects {
     NSInteger countRows = [self countRowsForObjects:cellObjects];
-    CGFloat height = countRows * (kItemHeight + kItemSpacing);
+    CGFloat height = countRows * (self.config.itemHeight + self.config.itemSpacing);
     return height;
 }
 
@@ -134,13 +114,13 @@
 
 - (CGSize)fullSizeForCellObject:(TagCollectionViewCellObject *)cellObject {
 
-    CGSize size = CGSizeMake(0, kItemHeight);
+    CGSize size = CGSizeMake(0, self.config.itemHeight);
     NSString *tagName = cellObject.tagName;
     CGFloat widthText = [tagName boundingRectWithSize:size
                                           options:NSStringDrawingUsesLineFragmentOrigin
                                        attributes:@{ NSFontAttributeName:self.config.font }
                                           context:nil].size.width;
-    size.width = ceil(widthText) + ceil(kSideItemInset) * 2;
+    size.width = ceil(widthText) + ceil(self.config.itemSideInset) * 2;
     return size;
 }
 

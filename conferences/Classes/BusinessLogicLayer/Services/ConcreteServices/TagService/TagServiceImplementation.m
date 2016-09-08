@@ -42,30 +42,6 @@
 }
 #pragma mark - Дополнительные методы
 
-- (id)obtainObjectWithObjectDescriptor:(TagObjectDescriptor *)objectDescriptor
-                                            inContext:(NSManagedObjectContext *)context {
-
-    NSPredicate *predicate = [self.predicateBuilder buildGetObjectPredicateFromObjectDescriptor:objectDescriptor];
-    NSFetchRequest *request = [NSClassFromString(objectDescriptor.objectName) MR_requestFirstWithPredicate:predicate];
-    NSManagedObject *object = [NSClassFromString(objectDescriptor.objectName) MR_executeFetchRequestAndReturnFirstObject:request
-                                                                                                               inContext:context];
-
-    return object;
-}
-
-- (TagModelObject *)obtainTagWithName:(NSString *)name
-                             inObject:(id)object {
-    // Ищем тег у объекта
-    NSSet *tags = [object tags];
-    for (TagModelObject *tag in tags) {
-        if ([tag.name isEqual:name]) {
-            return tag;
-        }
-    }
-
-    return nil;
-}
-
 - (NSOrderedSet *)tagsFromObjectDescriptor:(TagObjectDescriptor *)objectDescriptor
                                  inContext:(NSManagedObjectContext *)context {
     NSPredicate *objectPredicate = [self.predicateBuilder buildGetObjectPredicateFromObjectDescriptor:objectDescriptor];

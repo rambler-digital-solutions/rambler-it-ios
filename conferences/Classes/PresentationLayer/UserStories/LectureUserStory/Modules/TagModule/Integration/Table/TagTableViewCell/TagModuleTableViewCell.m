@@ -23,12 +23,15 @@
 #import "TagObjectDescriptor.h"
 #import <CrutchKit/CDProxying.h>
 #import "TagMediatorInput.h"
-
-static const CGFloat kDefaultMargin = 8.0f;
+#import "TagModuleViewConstants.h"
 
 @interface TagModuleTableViewCell ()
 
 @property (nonatomic, strong) TagModuleTableViewCellObject *cellObject;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topConstraintCollectionView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomConstraintCollectionView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *trailingConstraintCollectionView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *leadingConstraintCollectionView;
 
 @end
 
@@ -45,6 +48,11 @@ static const CGFloat kDefaultMargin = 8.0f;
     }
 
     self.cellObject = object;
+    self.topConstraintCollectionView.constant = kVerticalContentSpacing;
+    self.bottomConstraintCollectionView.constant = kVerticalContentSpacing;
+    self.trailingConstraintCollectionView.constant = kRightContentSpacing;
+    self.leadingConstraintCollectionView.constant = kLeftContentSpacing;
+    
     self.cellObject.height = [self calculateHeightTableViewCellWithCellObject:object
                                                                tagModuleInput:self.tagCollectionView];
     
@@ -67,7 +75,7 @@ static const CGFloat kDefaultMargin = 8.0f;
                                        tagModuleInput:(id <TagModuleInput>)moduleInput{
     CGFloat heightTagModuleView = [object.mediatorInput obtainHeightTagModuleViewWithObjectDescriptor:self.cellObject.objectDescriptor
                                                                                        tagModuleInput:moduleInput];
-     return heightTagModuleView + kDefaultMargin * 2;
+     return heightTagModuleView + kVerticalContentSpacing * 2;
 }
 
 @end

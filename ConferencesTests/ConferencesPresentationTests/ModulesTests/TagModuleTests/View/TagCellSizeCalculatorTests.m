@@ -120,8 +120,7 @@ const CGFloat kCalculatorItemSpacing = 7.0f;
 
     // when
     NSInteger result = [self.calculator countItemsInRows:0
-                                          forCellObjects:nil
-                                          lastCellObject:nil];
+                                          forCellObjects:nil];
 
     // then
     XCTAssertEqual(result, countAddItems - 1);
