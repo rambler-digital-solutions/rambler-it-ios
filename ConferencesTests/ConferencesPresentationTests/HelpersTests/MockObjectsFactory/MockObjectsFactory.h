@@ -88,8 +88,4 @@
 + (UITableView *)mockTableViewWithStubCellClasses:(NSArray *)cellClasses
                                    forIdentifiers:(NSArray *)identifiers;
 
-+ (NewPostViewModel *)generateNewPostViewModel;
-
-+ (NewPostViewModel *)generateNewPostViewModelWithMediaItems:(NSInteger)count;
-
 @end

@@ -57,7 +57,7 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
 - (void)tearDown {
     self.viewController = nil;
     
-    self.mockOutput;
+    self.mockOutput = nil;
     
     [(id)self.dataDisplayManagerMock stopMocking];
     self.dataDisplayManagerMock = nil;

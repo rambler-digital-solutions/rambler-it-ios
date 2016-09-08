@@ -98,28 +98,23 @@ static NSString *const kTestBaseAPIPath = @"/v1/rest/";
     XCTAssertEqualObjects(result.HTTPMethod, @"GET");
 }
 
-//- (void)testThatConfiguratorCreatesBodyRequests {
-//    // given
-//    NSString *expectedURLPath = @"https://myapi.com/v1/rest/service/object";
-//    
-//    RequestDataModel *dataModel = [[RequestDataModel alloc] init];
-//    dataModel.bodyData = [self generateBodyData];
-//    
-//    // when
-//    NSURLRequest *result = [self.configurator requestWithMethod:kHTTPMethodPOST
-//                                                    serviceName:@"service"
-//                                                  urlParameters:@[@"object"]
-//                                               requestDataModel:dataModel];
-//    
-//    // then
-//    XCTAssertEqualObjects(result.URL.absoluteString, expectedURLPath);
-//    XCTAssertEqualObjects(result.HTTPMethod, @"POST");
-//    XCTAssertEqualObjects(result.HTTPBody, dataModel.bodyData);
-//}
-
 - (void)testThatConfiguratorCreatesBodyRequests {
-    id a = kHTTPMethodPOST;
+    // given
+    NSString *expectedURLPath = @"https://myapi.com/v1/rest/service/object";
     
+    RequestDataModel *dataModel = [[RequestDataModel alloc] init];
+    dataModel.bodyData = [self generateBodyData];
+    
+    // when
+    NSURLRequest *result = [self.configurator requestWithMethod:kHTTPMethodPOST
+                                                    serviceName:@"service"
+                                                  urlParameters:@[@"object"]
+                                               requestDataModel:dataModel];
+    
+    // then
+    XCTAssertEqualObjects(result.URL.absoluteString, expectedURLPath);
+    XCTAssertEqualObjects(result.HTTPMethod, @"POST");
+    XCTAssertEqualObjects(result.HTTPBody, dataModel.bodyData);
 }
 
 - (void)testThatConfiguratorFiltersSlashes {

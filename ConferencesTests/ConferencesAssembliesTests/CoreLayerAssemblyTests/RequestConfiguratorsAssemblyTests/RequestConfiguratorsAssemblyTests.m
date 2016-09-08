@@ -59,7 +59,8 @@
     id result = [self.assembly requestConfiguratorWithType:@(RequestConfigurationRESTType)];
     
     // then
-    [self verifyTargetDependency:result withClass:targetClass dependencies:dependencies];
+    RamblerTyphoonAssemblyTestsTypeDescriptor *descriptor = [RamblerTyphoonAssemblyTestsTypeDescriptor descriptorWithClass:targetClass];
+    [self verifyTargetDependency:result withDescriptor:descriptor dependencies:dependencies];
 }
 
 @end

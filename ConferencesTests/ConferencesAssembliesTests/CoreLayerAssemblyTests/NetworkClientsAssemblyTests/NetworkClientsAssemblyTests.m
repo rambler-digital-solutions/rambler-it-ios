@@ -60,7 +60,8 @@
     id result = [self.assembly commonNetworkClient];
     
     // then
-    [self verifyTargetDependency:result withClass:targetClass dependencies:dependencies];
+    RamblerTyphoonAssemblyTestsTypeDescriptor *descriptor = [RamblerTyphoonAssemblyTestsTypeDescriptor descriptorWithClass:targetClass];
+    [self verifyTargetDependency:result withDescriptor:descriptor dependencies:dependencies];
 }
 
 @end

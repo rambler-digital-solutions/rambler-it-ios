@@ -29,7 +29,7 @@
 
 @interface SearchTableViewControllerTests : XCTestCase
 
-@property (strong, nonatomic) SearchViewController <UISearchBarDelegate> *viewController;
+@property (strong, nonatomic) SearchViewController *viewController;
 @property (strong, nonatomic) SearchDataDisplayManager *mockDataDisplayManager;
 @property (strong, nonatomic) id <SearchViewOutput> mockOutput;
 @property (strong, nonatomic) UITableView *mockTableView;
@@ -102,7 +102,7 @@
     UISearchBar *searchBar = [UISearchBar new];
     NSString *searchString = @"search string";
     // when
-    [self.viewController searchBar:searchBar textDidChange:searchString];
+    [(id<UISearchBarDelegate>)self.viewController searchBar:searchBar textDidChange:searchString];
 
     // then
     OCMVerify([self.mockOutput didChangeSearchBarWithSearchTerm:searchString]);

@@ -63,7 +63,8 @@
     id result = [self.assembly viewEventHeader];
     
     // then
-    [self verifyTargetDependency:result withClass:targetClass dependencies:dependencies];
+    RamblerTyphoonAssemblyTestsTypeDescriptor *descriptor = [RamblerTyphoonAssemblyTestsTypeDescriptor descriptorWithClass:targetClass];
+    [self verifyTargetDependency:result withDescriptor:descriptor dependencies:dependencies];
 }
 
 - (void)testThatAssemblyCreatesInteractor {
@@ -76,7 +77,8 @@
     id result = [self.assembly interactorEventHeader];
     
     // then
-    [self verifyTargetDependency:result withClass:targetClass dependencies:dependencies];
+    RamblerTyphoonAssemblyTestsTypeDescriptor *descriptor = [RamblerTyphoonAssemblyTestsTypeDescriptor descriptorWithClass:targetClass];
+    [self verifyTargetDependency:result withDescriptor:descriptor dependencies:dependencies];
 }
 
 - (void)testThatAssemblyCreatesPresenter {
@@ -91,7 +93,8 @@
     id result = [self.assembly presenterEventHeader];
     
     // then
-    [self verifyTargetDependency:result withClass:targetClass dependencies:dependencies];
+    RamblerTyphoonAssemblyTestsTypeDescriptor *descriptor = [RamblerTyphoonAssemblyTestsTypeDescriptor descriptorWithClass:targetClass];
+    [self verifyTargetDependency:result withDescriptor:descriptor dependencies:dependencies];
 }
 
 - (void)testThatAssemblyCreatesRouter {
@@ -103,7 +106,8 @@
     id result = [self.assembly routerEventHeader];
     
     // then
-    [self verifyTargetDependency:result withClass:targetClass dependencies:dependencies];
+    RamblerTyphoonAssemblyTestsTypeDescriptor *descriptor = [RamblerTyphoonAssemblyTestsTypeDescriptor descriptorWithClass:targetClass];
+    [self verifyTargetDependency:result withDescriptor:descriptor dependencies:dependencies];
 }
 
 @end

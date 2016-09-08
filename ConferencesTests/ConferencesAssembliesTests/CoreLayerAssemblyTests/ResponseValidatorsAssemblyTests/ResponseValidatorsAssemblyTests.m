@@ -57,7 +57,8 @@
     id result = [self.assembly parseResponseValidator];
     
     // then
-    [self verifyTargetDependency:result withClass:targetClass];
+    RamblerTyphoonAssemblyTestsTypeDescriptor *descriptor = [RamblerTyphoonAssemblyTestsTypeDescriptor descriptorWithClass:targetClass];
+    [self verifyTargetDependency:result withDescriptor:descriptor];
 }
 
 - (void)testThatAssemblyCreatesValidatorWithResponseValidationParseType {
@@ -68,7 +69,8 @@
     id result = [self.assembly validatorWithType:@(ResponseValidationParseType)];
     
     // then
-    [self verifyTargetDependency:result withClass:targetClass];
+    RamblerTyphoonAssemblyTestsTypeDescriptor *descriptor = [RamblerTyphoonAssemblyTestsTypeDescriptor descriptorWithClass:targetClass];
+    [self verifyTargetDependency:result withDescriptor:descriptor];
 }
 
 @end

@@ -56,7 +56,8 @@
     id result = [self.assembly eventTypeDeterminator];
     
     // then
-    [self verifyTargetDependency:result withClass:targetClass];
+    RamblerTyphoonAssemblyTestsTypeDescriptor *descriptor = [RamblerTyphoonAssemblyTestsTypeDescriptor descriptorWithClass:targetClass];
+    [self verifyTargetDependency:result withDescriptor:descriptor];
 }
 
 - (void)testThatAssemblyCreatesDateFormatter {
@@ -67,7 +68,8 @@
     id result = [self.assembly dateFormatter];
     
     // then
-    [self verifyTargetDependency:result withClass:targetClass];
+    RamblerTyphoonAssemblyTestsTypeDescriptor *descriptor = [RamblerTyphoonAssemblyTestsTypeDescriptor descriptorWithClass:targetClass];
+    [self verifyTargetDependency:result withDescriptor:descriptor];
 }
 
 @end

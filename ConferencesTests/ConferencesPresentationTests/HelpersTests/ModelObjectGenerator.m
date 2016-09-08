@@ -29,7 +29,7 @@
     NSMutableArray *events = [NSMutableArray new];
     for (NSInteger index = 0; index < count; index++) {
         EventPlainObject *event = [EventPlainObject new];
-        event.eventId = [NSString stringWithFormat:@"%d", index];
+        event.eventId = [NSString stringWithFormat:@"%li", index];
         
         NSArray *lectures = [self generateLectureObjects:3];
         event.lectures = [NSSet setWithArray:lectures];
@@ -44,7 +44,7 @@
     NSMutableArray *lectures = [NSMutableArray new];
     for (NSInteger index = 0; index < count; index++) {
         LecturePlainObject *lecture = [LecturePlainObject new];
-        lecture.lectureId = [NSString stringWithFormat:@"%d", index];
+        lecture.lectureId = [NSString stringWithFormat:@"%li", index];
         
         [lectures addObject:lecture];
     }

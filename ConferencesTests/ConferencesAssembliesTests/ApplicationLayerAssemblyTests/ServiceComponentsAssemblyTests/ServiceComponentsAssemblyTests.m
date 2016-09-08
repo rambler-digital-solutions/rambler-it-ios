@@ -63,7 +63,8 @@
     id result = [self.assembly pushNotificationService];
     
     // then
-    [self verifyTargetDependency:result withClass:targetClass];
+    RamblerTyphoonAssemblyTestsTypeDescriptor *descriptor = [RamblerTyphoonAssemblyTestsTypeDescriptor descriptorWithClass:targetClass];
+    [self verifyTargetDependency:result withDescriptor:descriptor];
 }
 
 - (void)testThatAssemblyCreatesEventService {
@@ -77,7 +78,8 @@
     id result = [self.assembly eventService];
     
     // then
-    [self verifyTargetDependency:result withClass:targetClass dependencies:dependencies];
+    RamblerTyphoonAssemblyTestsTypeDescriptor *descriptor = [RamblerTyphoonAssemblyTestsTypeDescriptor descriptorWithClass:targetClass];
+    [self verifyTargetDependency:result withDescriptor:descriptor dependencies:dependencies];
 }
 
 - (void)testThatAssemblyCreatesOperationScheduler {
@@ -88,7 +90,8 @@
     id result = [self.assembly operationScheduler];
     
     // then
-    [self verifyTargetDependency:result withClass:targetClass];
+    RamblerTyphoonAssemblyTestsTypeDescriptor *descriptor = [RamblerTyphoonAssemblyTestsTypeDescriptor descriptorWithClass:targetClass];
+    [self verifyTargetDependency:result withDescriptor:descriptor];
 }
 
 - (void)testThatAssemblyCreatesRamblerLocationService {
@@ -104,7 +107,8 @@
     id result = [self.assembly ramblerLocationService];
     
     // then
-    [self verifyTargetDependency:result withClass:targetClass dependencies:dependencies];
+    RamblerTyphoonAssemblyTestsTypeDescriptor *descriptor = [RamblerTyphoonAssemblyTestsTypeDescriptor descriptorWithClass:targetClass];
+    [self verifyTargetDependency:result withDescriptor:descriptor dependencies:dependencies];
 }
 
 @end

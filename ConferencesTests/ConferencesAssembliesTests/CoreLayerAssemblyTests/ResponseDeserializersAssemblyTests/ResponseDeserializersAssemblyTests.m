@@ -53,10 +53,11 @@
     Class targetClass = [JSONResponseDeserializer class];
     
     // when
-    id restult = [self.assembly deserializerWithType:@(ResponseDeserializationJSONType)];
+    id result = [self.assembly deserializerWithType:@(ResponseDeserializationJSONType)];
     
     // then
-    [self verifyTargetDependency:restult withClass:targetClass];
+    RamblerTyphoonAssemblyTestsTypeDescriptor *descriptor = [RamblerTyphoonAssemblyTestsTypeDescriptor descriptorWithClass:targetClass];
+    [self verifyTargetDependency:result withDescriptor:descriptor];
 }
 
 - (void)testThatAssemblyCreatesJsonResponseDeserializer {
@@ -67,7 +68,8 @@
     id result = [self.assembly jsonResponseDeserializer];
     
     // then
-    [self verifyTargetDependency:result withClass:targetClass];
+    RamblerTyphoonAssemblyTestsTypeDescriptor *descriptor = [RamblerTyphoonAssemblyTestsTypeDescriptor descriptorWithClass:targetClass];
+    [self verifyTargetDependency:result withDescriptor:descriptor];
 }
 
 @end

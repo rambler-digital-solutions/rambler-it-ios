@@ -51,7 +51,10 @@
     OCMStub([mockCollector collectInitialAssemblyClasses]).andReturn(testArray);
     
     // when
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
     id result = [self.appDelegate performSelector:@selector(initialAssemblies)];
+#pragma clang diagnostic pop
     
     // then
     XCTAssertEqualObjects(result, testArray);

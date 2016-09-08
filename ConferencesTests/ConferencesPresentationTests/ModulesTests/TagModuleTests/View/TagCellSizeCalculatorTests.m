@@ -123,7 +123,7 @@ const CGFloat kCalculatorItemSpacing = 7.0f;
                                           forCellObjects:nil];
 
     // then
-    XCTAssertEqual(result, countAddItems - 1);
+    XCTAssertEqual(result, countAddItems);
 }
 
 - (void)testCountRowsForObject {

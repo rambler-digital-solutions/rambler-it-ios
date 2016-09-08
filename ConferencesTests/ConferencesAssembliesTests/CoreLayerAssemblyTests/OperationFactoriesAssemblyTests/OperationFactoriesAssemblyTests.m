@@ -61,7 +61,8 @@
     id result = [self.assembly eventListOperationFactory];
     
     // then
-    [self verifyTargetDependency:result withClass:targetClass dependencies:dependencies];
+    RamblerTyphoonAssemblyTestsTypeDescriptor *descriptor = [RamblerTyphoonAssemblyTestsTypeDescriptor descriptorWithClass:targetClass];
+    [self verifyTargetDependency:result withDescriptor:descriptor dependencies:dependencies];
 }
 
 - (void)testThatAssemblyCreatesOperationChainer {
@@ -72,7 +73,8 @@
     id result = [self.assembly operationChainer];
     
     // then
-    [self verifyTargetDependency:result withClass:targetClass];
+    RamblerTyphoonAssemblyTestsTypeDescriptor *descriptor = [RamblerTyphoonAssemblyTestsTypeDescriptor descriptorWithClass:targetClass];
+    [self verifyTargetDependency:result withDescriptor:descriptor];
 }
 
 @end

@@ -50,10 +50,10 @@ static NSString *const kLastModifiedFilterFormat = @"filter[modified_since]";
     EventListQuery *query = [EventListQuery new];
     
     // when
-    NSArray *result = [self.transformer deriveUrlParametersFromQuery:query];
+    NSDictionary *result = [self.transformer deriveUrlParametersFromQuery:query];
     
     // then
-    XCTAssertTrue(result.count == 0);
+    XCTAssertTrue(result.allKeys.count == 0);
 }
 
 - (void)testThatTransformerReturnsProperParametersForNonNilLastModified {

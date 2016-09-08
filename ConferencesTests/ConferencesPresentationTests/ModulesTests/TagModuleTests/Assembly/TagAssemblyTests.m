@@ -77,9 +77,8 @@
     id result = [self.assembly collectionViewTagModule];
 
     // then
-    [self verifyTargetDependency:result
-                       withClass:targetClass
-                    dependencies:dependencies];
+    RamblerTyphoonAssemblyTestsTypeDescriptor *descriptor = [RamblerTyphoonAssemblyTestsTypeDescriptor descriptorWithClass:targetClass];
+    [self verifyTargetDependency:result withDescriptor:descriptor dependencies:dependencies];
 }
 
 - (void)testThatAssemblyCreatesPresenter {
@@ -93,9 +92,8 @@
     id result = [self.assembly presenterTagModule];
 
     // then
-    [self verifyTargetDependency:result
-                       withClass:targetClass
-                    dependencies:dependencies];
+    RamblerTyphoonAssemblyTestsTypeDescriptor *descriptor = [RamblerTyphoonAssemblyTestsTypeDescriptor descriptorWithClass:targetClass];
+    [self verifyTargetDependency:result withDescriptor:descriptor dependencies:dependencies];
 }
 
 - (void)testThatAssemblyCreatesInteractor {
@@ -108,9 +106,8 @@
     id result = [self.assembly interactorTagModule];
 
     // then
-    [self verifyTargetDependency:result
-                       withClass:targetClass
-                    dependencies:dependencies];
+    RamblerTyphoonAssemblyTestsTypeDescriptor *descriptor = [RamblerTyphoonAssemblyTestsTypeDescriptor descriptorWithClass:targetClass];
+    [self verifyTargetDependency:result withDescriptor:descriptor dependencies:dependencies];
 }
 
 - (void)testThatAssemblyCreatesDataDisplayManager {
@@ -123,9 +120,8 @@
     id result = [self.assembly dataDisplayManagerTagModule];
 
     // then
-    [self verifyTargetDependency:result
-                       withClass:targetClass
-                    dependencies:dependencies];
+    RamblerTyphoonAssemblyTestsTypeDescriptor *descriptor = [RamblerTyphoonAssemblyTestsTypeDescriptor descriptorWithClass:targetClass];
+    [self verifyTargetDependency:result withDescriptor:descriptor dependencies:dependencies];
 }
 
 @end

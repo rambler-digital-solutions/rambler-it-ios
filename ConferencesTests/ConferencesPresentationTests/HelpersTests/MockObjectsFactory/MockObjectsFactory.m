@@ -74,9 +74,4 @@
     return mockTableView;
 }
 
-+ (NewPostViewModel *)generateNewPostViewModel {
-    NewPostViewModel *post = [self generateNewPostViewModelWithMediaItems:1];
-    return post;
-}
-
 @end
