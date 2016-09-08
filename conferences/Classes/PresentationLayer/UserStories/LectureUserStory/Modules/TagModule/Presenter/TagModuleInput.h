@@ -33,5 +33,14 @@
  */
 - (void)configureModuleWithModuleConfig:(TagModuleConfig *)moduleConfig
                            moduleOutput:(id <TagModuleOutput>)moduleOutput;
+/**
+ @author Konstantin Zinovyev
+ 
+ Метод для получения высоты модуля тэгов
+ 
+ @param moduleConfig Информация о модуле тэгов.
+ @return Высота модуля тэгов
+ */
+- (CGFloat)obtainHeightTagModuleViewWithModuleConfig:(TagModuleConfig *)moduleConfig;
 
 @end

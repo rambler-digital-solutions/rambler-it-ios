@@ -23,10 +23,15 @@
 #import "TagObjectDescriptor.h"
 #import <CrutchKit/CDProxying.h>
 #import "TagMediatorInput.h"
+#import "TagModuleViewConstants.h"
 
 @interface TagModuleTableViewCell ()
 
 @property (nonatomic, strong) TagModuleTableViewCellObject *cellObject;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topConstraintCollectionView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomConstraintCollectionView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *trailingConstraintCollectionView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *leadingConstraintCollectionView;
 
 @end
 
@@ -42,41 +47,35 @@
         return NO;
     }
 
-    self.sizeObserver.observerView = self.tagCollectionView;
-
     self.cellObject = object;
-
-    [object.mediatorInput configureWithObjectDescriptor:self.cellObject.objectDescriptor
+    self.topConstraintCollectionView.constant = kVerticalContentSpacing;
+    self.bottomConstraintCollectionView.constant = kVerticalContentSpacing;
+    self.trailingConstraintCollectionView.constant = kRightContentSpacing;
+    self.leadingConstraintCollectionView.constant = kLeftContentSpacing;
+    
+    self.cellObject.height = [self calculateHeightTableViewCellWithCellObject:object
+                                                               tagModuleInput:self.tagCollectionView];
+    
+    [object.mediatorInput configureWithObjectDescriptor:object.objectDescriptor
                                          tagModuleInput:self.tagCollectionView];
-
+    
     return YES;
 }
 
-#pragma mark - Методы ContentSizeObserverDelegate
-
-- (void)contentSizeObserver:(ContentSizeObserver *)observer
-   viewDidChangeContentSize:(UIView *)view {
-    
-    /**
-     @author Golovko Mikhail
-     
-     На iOS 8 есть баг, когда меняем размер collectionView, она не пересчитывает положение ячеек.
-     */
-    [self.tagCollectionView.collectionViewLayout invalidateLayout];
-    CGFloat height = [self systemLayoutSizeFittingSize:UILayoutFittingExpandedSize].height;
-    if (self.cellObject.height == height) {
-        return;
-    }
-    self.cellObject.height = height;
-    id <TagTableViewCellDelegate> proxy = [[self cd_proxyForProtocol:@protocol(TagTableViewCellDelegate)] unwrap];
-    [proxy collectionViewDidChangeContentSize:self.tagCollectionView
-                                         cell:self];
-}
 
 + (CGFloat)heightForObject:(TagModuleTableViewCellObject *)object
                atIndexPath:(NSIndexPath *)indexPath
                  tableView:(UITableView *)tableView {
     return object.height;
+}
+
+#pragma mark - private
+
+- (CGFloat)calculateHeightTableViewCellWithCellObject:(TagModuleTableViewCellObject *)object
+                                       tagModuleInput:(id <TagModuleInput>)moduleInput{
+    CGFloat heightTagModuleView = [object.mediatorInput obtainHeightTagModuleViewWithObjectDescriptor:self.cellObject.objectDescriptor
+                                                                                       tagModuleInput:moduleInput];
+     return heightTagModuleView + kVerticalContentSpacing * 2;
 }
 
 @end

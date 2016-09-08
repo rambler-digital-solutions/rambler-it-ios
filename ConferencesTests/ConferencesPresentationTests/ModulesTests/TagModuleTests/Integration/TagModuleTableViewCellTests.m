@@ -23,9 +23,9 @@
 #import "TagModuleTableViewCell.h"
 #import "TagModuleTableViewCellObject.h"
 #import "TagCollectionView.h"
-#import "ContentSizeObserver.h"
 #import "TagMediatorInput.h"
 #import "TagObjectDescriptor.h"
+#import "TagModuleViewConstants.h"
 
 @interface TagModuleTableViewCellTests : XCTestCase
 
@@ -33,7 +33,6 @@
 @property(nonatomic, strong) TagObjectDescriptor *mockObjectDescriptor;
 @property(nonatomic, strong) id mockTagCollectionView;
 @property(nonatomic, strong) id mockCollectionViewLayout;
-@property(nonatomic, strong) id mockSizeObserver;
 @property(nonatomic, strong) id mockMediatorInput;
 
 @end
@@ -51,12 +50,10 @@
 
     self.mockTagCollectionView = OCMClassMock([TagCollectionView class]);
     
-    self.mockSizeObserver = OCMClassMock([ContentSizeObserver class]);
     self.mockCollectionViewLayout = OCMClassMock([UICollectionViewLayout class]);
 
 
     self.cell.tagCollectionView = self.mockTagCollectionView;
-    self.cell.sizeObserver = self.mockSizeObserver;
     OCMStub([self.mockTagCollectionView collectionViewLayout]).andReturn(self.mockCollectionViewLayout);
 }
 
@@ -65,9 +62,6 @@
 
     [self.mockTagCollectionView stopMocking];
     self.mockTagCollectionView = nil;
-
-    [self.mockSizeObserver stopMocking];
-    self.mockSizeObserver = nil;
 
     [self.mockMediatorInput stopMocking];
     self.mockMediatorInput = nil;
@@ -88,9 +82,25 @@
     [self.cell shouldUpdateCellWithObject:cellObject];
 
     // then
-    OCMVerify([self.mockSizeObserver setObserverView:self.mockTagCollectionView]);
     OCMVerify([self.mockMediatorInput configureWithObjectDescriptor:self.mockObjectDescriptor
                                                      tagModuleInput:self.mockTagCollectionView]);
+}
+
+- (void)testShouldUpdateCellWithObjectCorrectHeight {
+    // given
+    CGFloat heightTagView = 20.0f;
+    CGFloat expectedCellHeight = heightTagView + 2 * kVerticalContentSpacing;
+    TagModuleTableViewCellObject *cellObject = [[TagModuleTableViewCellObject alloc] initWithObjectDescriptor:self.mockObjectDescriptor
+                                                                     mediatorInput:self.mockMediatorInput];
+    OCMStub([self.mockMediatorInput obtainHeightTagModuleViewWithObjectDescriptor:self.mockObjectDescriptor
+                                                                   tagModuleInput:self.mockTagCollectionView]).andReturn(heightTagView);
+    
+    
+    // when
+    [self.cell shouldUpdateCellWithObject:cellObject];
+    
+    // then
+    XCTAssertEqual(cellObject.height, expectedCellHeight);
 }
 
 - (void)testHeightForObject {
@@ -105,17 +115,6 @@
 
     // then
     XCTAssertEqual(height, cellObject.height);
-}
-
-- (void)testContentSizeObserver {
-    // given
-    
-    // when
-    [self.cell contentSizeObserver:self.mockSizeObserver
-          viewDidChangeContentSize:self.mockTagCollectionView];
-    
-    // then
-    OCMVerify([self.mockCollectionViewLayout invalidateLayout]);
 }
 
 @end

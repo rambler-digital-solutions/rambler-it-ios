@@ -59,47 +59,16 @@
 - (void)testThatInteractorObtainTags {
     // given
     id objectDescriptor = [TagObjectDescriptor new];
-    id excludeObjectDescriptor = [TagObjectDescriptor new];
     NSInteger kCountTag = 5;
     NSArray *tags = [self generateTags:kCountTag];
     NSArray *expectedResult = [self generateTagNames:tags];
 
-    OCMStub([self.mockTagService obtainTagsFromObjectDescriptor:objectDescriptor
-                                        excludeObjectDescriptor:excludeObjectDescriptor]).andReturn(tags);
+    OCMStub([self.mockTagService obtainTagsFromObjectDescriptor:objectDescriptor]).andReturn(tags);
 
     // when
-    id result = [self.interactor obtainTagsFromObjectDescriptor:objectDescriptor
-                                        excludeObjectDescriptor:excludeObjectDescriptor];
+    id result = [self.interactor obtainTagsFromObjectDescriptor:objectDescriptor];
     // then
     XCTAssertEqualObjects(result, expectedResult);
-}
-
-- (void)testThatInteractorAddTag {
-    // given
-    id objectDescriptor = [TagObjectDescriptor new];
-    id tagName = [NSString new];
-
-    // when
-    [self.mockTagService addTagWithName:tagName
-                    forObjectDescriptor:objectDescriptor];
-
-    // then
-    OCMVerify([self.mockTagService addTagWithName:tagName
-                              forObjectDescriptor:objectDescriptor]);
-}
-
-- (void)testThatInteractorRemoveTag {
-    // given
-    id objectDescriptor = [TagObjectDescriptor new];
-    id tagName = [NSString new];
-
-    // when
-    [self.mockTagService removeTagWithName:tagName
-                       forObjectDescriptor:objectDescriptor];
-
-    // then
-    OCMVerify([self.mockTagService removeTagWithName:tagName
-                                 forObjectDescriptor:objectDescriptor]);
 }
 
 #pragma mark - Дополнительные методы

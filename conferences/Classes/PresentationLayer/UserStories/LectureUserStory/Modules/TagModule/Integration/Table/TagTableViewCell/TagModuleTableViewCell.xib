@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -15,7 +14,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" restorationIdentifier="collectionViewTagModule" translatesAutoresizingMaskIntoConstraints="NO" id="K8q-1f-fkt" customClass="TyphoonLoadedView">
-                        <rect key="frame" x="20" y="8" width="125" height="69.5"/>
+                        <rect key="frame" x="15" y="8" width="135" height="69.5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="27" id="3Dz-Qj-tVZ"/>
@@ -23,21 +22,19 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="K8q-1f-fkt" secondAttribute="trailing" constant="15" id="7ER-6V-GI8"/>
-                    <constraint firstItem="K8q-1f-fkt" firstAttribute="top" secondItem="Lyg-UV-Fdz" secondAttribute="topMargin" id="Y6l-AL-aUX"/>
-                    <constraint firstAttribute="trailing" secondItem="K8q-1f-fkt" secondAttribute="trailing" constant="20" id="cnW-jQ-ajQ"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="K8q-1f-fkt" secondAttribute="bottom" id="knz-Za-ZyC"/>
-                    <constraint firstItem="K8q-1f-fkt" firstAttribute="leading" secondItem="Lyg-UV-Fdz" secondAttribute="leading" constant="20" id="u8t-xC-QuR"/>
+                    <constraint firstItem="K8q-1f-fkt" firstAttribute="top" secondItem="Lyg-UV-Fdz" secondAttribute="top" constant="8" id="ADB-Mp-zLg"/>
+                    <constraint firstAttribute="trailing" secondItem="K8q-1f-fkt" secondAttribute="trailing" constant="15" id="cnW-jQ-ajQ"/>
+                    <constraint firstAttribute="bottom" secondItem="K8q-1f-fkt" secondAttribute="bottom" constant="8" id="nsR-Pl-jZi"/>
+                    <constraint firstItem="K8q-1f-fkt" firstAttribute="leading" secondItem="Lyg-UV-Fdz" secondAttribute="leading" constant="15" id="u8t-xC-QuR"/>
                 </constraints>
-                <variation key="default">
-                    <mask key="constraints">
-                        <exclude reference="7ER-6V-GI8"/>
-                    </mask>
-                </variation>
             </tableViewCellContentView>
             <connections>
+                <outlet property="bottomConstraintCollectionView" destination="nsR-Pl-jZi" id="4er-q7-rVr"/>
                 <outlet property="collectionViewLeadingConstraint" destination="u8t-xC-QuR" id="zGa-ZW-lxo"/>
+                <outlet property="leadingConstraintCollectionView" destination="u8t-xC-QuR" id="PGz-6I-EgG"/>
                 <outlet property="tagCollectionView" destination="K8q-1f-fkt" id="QxW-Cl-Kck"/>
+                <outlet property="topConstraintCollectionView" destination="ADB-Mp-zLg" id="Y2s-gG-CCg"/>
+                <outlet property="trailingConstraintCollectionView" destination="cnW-jQ-ajQ" id="qg8-Rz-2ds"/>
             </connections>
             <point key="canvasLocation" x="-1.5" y="246"/>
         </tableViewCell>

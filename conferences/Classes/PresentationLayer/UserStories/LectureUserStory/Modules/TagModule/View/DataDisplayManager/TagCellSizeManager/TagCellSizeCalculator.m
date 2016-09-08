@@ -22,11 +22,9 @@
 #import "TagCellSizeConfig.h"
 #import "NICollectionViewCellFactory.h"
 #import "TagCellSizeRowCalculator.h"
-
+#import "TagCollectionViewCellObject.h"
 
 @interface TagCellSizeCalculator ()
-
-@property (nonatomic, strong) NSMutableDictionary *prototypeCells;
 
 @end
 
@@ -39,7 +37,6 @@
                                config:(TagCellSizeConfig *)config {
     self = [super init];
     if (self) {
-        _prototypeCells = [NSMutableDictionary new];
         _rowCalculator = rowCalculator;
         _config = config;
     }
@@ -50,16 +47,13 @@
 - (CGSize)sizeForCellObject:(id <NICollectionViewNibCellObject>)cellObject {
     CGSize size = [self fullSizeForCellObject:cellObject];
 
-    if (self.compressWidth) {
-        size = [self compressingCellSize:size];
-    }
+    size = [self compressingCellSize:size];
 
     return size;
 }
 
 - (NSInteger)countItemsInRows:(NSInteger)rows
-               forCellObjects:(NSArray *)cellObjects
-               lastCellObject:(id <NICollectionViewNibCellObject>)lastCellObject {
+               forCellObjects:(NSArray *)cellObjects {
 
     [self.rowCalculator cleanRows];
 
@@ -73,18 +67,6 @@
     for (int i = 0; i < rows; ++i) {
 
         [self.rowCalculator addNewRow];
-
-        /**
-         @author Golovko Mikhail
-         
-         Если последняя строка, первым делом добавляем последний cellobject, 
-         который обязательно должен быть.
-         */
-        if (i == rows - 1) {
-            CGSize size = [self sizeForCellObject:lastCellObject];
-
-            [self.rowCalculator addItemInSameRowAtWidth:size.width];
-        }
 
         while(cellObjectIndex < cellObjects.count) {
 
@@ -105,13 +87,7 @@
         }
     }
 
-    /**
-     @author Golovko Mikhail
-     
-     Один элемент из добавленных - это lastCellObject. Нам нужно показать,
-     сколько элементов влезает из cellObjects, поэтому вычитаем единицу.
-     */
-    return self.rowCalculator.countAddItems - 1;
+    return self.rowCalculator.countAddItems;
 }
 
 - (NSInteger)countRowsForObjects:(NSArray *)cellObjects {
@@ -128,50 +104,24 @@
     return self.rowCalculator.countRows;
 }
 
+- (CGFloat)calculateHeightRowsForCellObjects:(NSArray *)cellObjects {
+    NSInteger countRows = [self countRowsForObjects:cellObjects];
+    CGFloat height = countRows * (self.config.itemHeight + self.config.itemSpacing);
+    return height;
+}
 
 #pragma mark - Дополнительные методы
 
-- (UICollectionViewCell *)cellWithIdentifier:(id)identifier {
-    return self.prototypeCells[identifier];
-}
+- (CGSize)fullSizeForCellObject:(TagCollectionViewCellObject *)cellObject {
 
-- (void)addCellToCache:(UICollectionViewCell *)cell withIdentifier:(id)identifier {
-    self.prototypeCells[identifier] = cell;
-}
-
-- (UICollectionViewCell *)cellWithNib:(UINib *)nib
-                               object:(id)object {
-    UICollectionViewCell* cell = nil;
-
-    NSString* identifier = NSStringFromClass([object class]);
-
-    cell = [self cellWithIdentifier:identifier];
-
-    if (!cell) {
-        cell = [[nib instantiateWithOwner:nil
-                                  options:nil] firstObject];
-        if (cell) {
-            [self addCellToCache:cell withIdentifier:identifier];
-        }
-    }
-
-    return cell;
-}
-
-- (CGSize)fullSizeForCellObject:(id <NICollectionViewNibCellObject>)cellObject {
-
-    UICollectionViewCell* cell = nil;
-
-    UINib *nib = [cellObject collectionViewCellNib];
-    if (nib) {
-        cell = [self cellWithNib:nib object:cellObject];
-    }
-
-    if ([cell respondsToSelector:@selector(shouldUpdateCellWithObject:)]) {
-        [(id<NICollectionViewCell>)cell shouldUpdateCellWithObject:cellObject];
-    }
-
-    return [cell systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    CGSize size = CGSizeMake(0, self.config.itemHeight);
+    NSString *tagName = cellObject.tagName;
+    CGFloat widthText = [tagName boundingRectWithSize:size
+                                          options:NSStringDrawingUsesLineFragmentOrigin
+                                       attributes:@{ NSFontAttributeName:self.config.font }
+                                          context:nil].size.width;
+    size.width = ceil(widthText) + ceil(self.config.itemSideInset) * 2;
+    return size;
 }
 
 - (CGSize)compressingCellSize:(CGSize)cellSize {

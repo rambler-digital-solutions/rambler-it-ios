@@ -26,7 +26,6 @@
 #import "TagDataDisplayManager.h"
 #import "TagCellSizeCalculator.h"
 #import "TagModuleTableViewCell.h"
-#import "ContentSizeObserver.h"
 #import "TagCellSizeConfig.h"
 #import "TagCellSizeRowCalculator.h"
 #import "ServiceComponents.h"
@@ -103,19 +102,7 @@
 #pragma mark - Для ячейки
 
 - (TagModuleTableViewCell *)tagCellNewPostModule {
-    return [TyphoonDefinition withClass:[TagModuleTableViewCell class]
-                          configuration:^(TyphoonDefinition *definition) {
-                              [definition injectProperty:@selector(sizeObserver)
-                                                    with:[self contentSizeObserverNewPostModule]];
-                          }];
-}
-
-- (ContentSizeObserver *)contentSizeObserverNewPostModule {
-    return [TyphoonDefinition withClass:[ContentSizeObserver class]
-                          configuration:^(TyphoonDefinition *definition) {
-                              [definition injectProperty:@selector(delegate)
-                                                    with:[self tagCellNewPostModule]];
-                          }];
+    return [TyphoonDefinition withClass:[TagModuleTableViewCell class]];
 }
 
 @end

@@ -32,16 +32,4 @@
     return self;
 }
 
-- (instancetype)initWithObjectDescriptor:(TagObjectDescriptor *)objectDescriptor
-                filteredObjectDescriptor:(TagObjectDescriptor *)filteredObjectDescriptor {
-    self = [super init];
-    if (self) {
-        _objectDescriptor = objectDescriptor;
-        _filteredObjectDescriptor = filteredObjectDescriptor;
-    }
-
-    return self;
-}
-
-
 @end

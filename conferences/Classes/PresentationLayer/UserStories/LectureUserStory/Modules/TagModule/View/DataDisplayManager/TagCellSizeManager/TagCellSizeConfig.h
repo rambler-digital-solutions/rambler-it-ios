@@ -45,6 +45,27 @@
 /**
  @author Golovko Mikhail
  
+ Высота ячейки тэгов
+ */
+@property (nonatomic, assign, readonly) CGFloat itemHeight;
+
+/**
+ @author Konstantin Zinovyev
+ 
+ Смещение слева/справа текста в ячейке тэгов
+ */
+@property (nonatomic, assign, readonly) CGFloat itemSideInset;
+
+/**
+ @author Konstantin Zinovyev
+ 
+ Шрифт используемый в ячейке тэгов
+ */
+@property (nonatomic, assign, readonly) UIFont *font;
+
+/**
+ @author Golovko Mikhail
+ 
  Метод возвращает дефолтную конфигурацию
  
  @return TagCellSizeConfig
@@ -52,7 +73,10 @@
 + (instancetype)defaultConfig;
 
 - (instancetype)initWithContentWidth:(CGFloat)contentWidth
-                         itemSpacing:(CGFloat)itemSpacing;
+                         itemSpacing:(CGFloat)itemSpacing
+                          itemHeight:(CGFloat)itemHeight
+                       itemSideInset:(CGFloat)itemSideInset
+                                font:(UIFont *)font;
 
 
 @end

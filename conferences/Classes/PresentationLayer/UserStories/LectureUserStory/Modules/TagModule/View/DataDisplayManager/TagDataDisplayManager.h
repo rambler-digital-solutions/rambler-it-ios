@@ -30,20 +30,6 @@
 
 /**
  @author Golovko Mikhail
- 
- Флаг включения кнопки удалить тег
- */
-@property (nonatomic, assign) BOOL enableRemoveTagButton;
-
-/**
- @author Golovko Mikhail
-
- Флаг сжатия ячеек по ширине.
- */
-@property (nonatomic, assign) BOOL compressWidth;
-
-/**
- @author Golovko Mikhail
 
  Количество отображаемых строк.
  */
@@ -53,5 +39,15 @@
 
 - (id<UICollectionViewDataSource>)dataSourceForCollectionView:(UICollectionView *)collectionView
                                                      withTags:(NSArray *)tags;
+
+/**
+ @author Konstantin Zinovyev
+ 
+ Метод для получения высоты модуля тэгов
+ 
+ @param tags Тэги, по которым считается высота
+ @return Высота модуля тэгов
+ */
+- (CGFloat)obtainHeightTagCollectionViewWithTags:(NSArray *)tags;
 
 @end

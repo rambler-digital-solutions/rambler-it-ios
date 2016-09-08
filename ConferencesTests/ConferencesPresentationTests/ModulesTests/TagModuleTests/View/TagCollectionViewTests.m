@@ -108,27 +108,8 @@
     XCTAssertFalse(self.view.scrollEnabled);
     XCTAssertFalse(self.view.alwaysBounceHorizontal);
     XCTAssertFalse(self.view.showsVerticalScrollIndicator);
-    OCMVerify([self.mockDataDisplayManager setCompressWidth:YES]);
 }
 
-- (void)testSetupHorizontalContentAlign {
-    // given
-    CGFloat kExpectedSpacing = self.cellSizeConfig.itemSpacing;
-
-    // when
-    [self.view setupHorizontalContentAlign];
-
-    // then
-    XCTAssertEqualObjects([self.view.collectionViewLayout class], [UICollectionViewFlowLayout class]);
-    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *) self.view.collectionViewLayout;
-    XCTAssertEqual([layout minimumInteritemSpacing], kExpectedSpacing);
-    XCTAssertEqual([layout minimumLineSpacing], kExpectedSpacing);
-    XCTAssertEqual([layout scrollDirection], UICollectionViewScrollDirectionHorizontal);
-    XCTAssertTrue(self.view.scrollEnabled);
-    XCTAssertTrue(self.view.alwaysBounceHorizontal);
-    XCTAssertFalse(self.view.showsHorizontalScrollIndicator);
-    OCMVerify([self.mockDataDisplayManager setCompressWidth:NO]);
-}
 - (void)testSetupShowNumberOfLines {
     // given
     NSInteger numberShowLines = 4;
@@ -140,20 +121,17 @@
     OCMVerify([self.mockDataDisplayManager setNumberOfShowLine:numberShowLines]);
 }
 
-#pragma mark - Тестирование методов TagModuleInput
-
-- (void)testForwardConfigureModuleWithModuleConfig {
+- (void)testObtainHeight {
     // given
-    id moduleConfig = [NSObject new];
-    id moduleOutput = [NSObject new];
-
+    TagModuleConfig *moduleConfig = [TagModuleConfig new];
+    
     // when
-    [self.view configureModuleWithModuleConfig:moduleConfig
-                                  moduleOutput:moduleOutput];
-
+    [self.view obtainHeightTagModuleViewWithModuleConfig:moduleConfig];
+    
     // then
-    OCMVerify([self.mockModuleInput configureModuleWithModuleConfig:moduleConfig
-                                                       moduleOutput:moduleOutput]);
+    OCMVerify([self.mockModuleInput obtainHeightTagModuleViewWithModuleConfig:moduleConfig]);
 }
+
+#pragma mark - Тестирование методов TagModuleInput
 
 @end

@@ -25,6 +25,7 @@
 #import "TagCellSizeConfig.h"
 #import "TagCollectionViewCellObject.h"
 #import "TagCollectionViewCell.h"
+#import "TagModuleViewConstants.h"
 
 @interface TagCellSizeCalculatorTests : XCTestCase
 
@@ -45,9 +46,12 @@ const CGFloat kCalculatorItemSpacing = 7.0f;
 
 - (void)setUp {
     [super setUp];
-
+    UIFont *font = [UIFont fontWithName:kNameFontTagText size:kSizeFontTagText];
     self.mockConfig = [[TagCellSizeConfig alloc] initWithContentWidth:kCalculatorContentWidth
-                                                          itemSpacing:kCalculatorItemSpacing];
+                                                          itemSpacing:kCalculatorItemSpacing
+                                                           itemHeight:kItemHeight
+                                                        itemSideInset:kSideItemInset
+                                                                 font:font];
 
     self.mockRowCalculator = OCMClassMock([TagCellSizeRowCalculator class]);
 
@@ -88,24 +92,22 @@ const CGFloat kCalculatorItemSpacing = 7.0f;
 
 - (void)testSizeForCellObject {
     // given
-    CGSize cellSize = CGSizeMake(kCalculatorContentWidth * 2, 0);
-    OCMStub([self.mockCell systemLayoutSizeFittingSize:UILayoutFittingCompressedSize]).andReturn(cellSize);
-
+    TagCollectionViewCellObject *cellObject = [[TagCollectionViewCellObject alloc] initWithTagName:@"tag"];
+    CGFloat expectedWidth = 40;
     // when
-    CGSize result = [self.calculator sizeForCellObject:self.mockCellObject];
+    CGSize result = [self.calculator sizeForCellObject:cellObject];
 
     // then
-    XCTAssertEqual(result.width, cellSize.width);
+    XCTAssertEqual(result.width, expectedWidth);
 }
 
 - (void)testCompressSizeForCellObject {
     // given
-    CGSize cellSize = CGSizeMake(kCalculatorContentWidth * 2, 0);
-    OCMStub([self.mockCell systemLayoutSizeFittingSize:UILayoutFittingCompressedSize]).andReturn(cellSize);
-    self.calculator.compressWidth = YES;
+    NSString *tagName = @"longlonglonglonglonglonglonglonglonglonglonglongtagname";
+    TagCollectionViewCellObject *cellObject = [[TagCollectionViewCellObject alloc] initWithTagName:tagName];
 
     // when
-    CGSize result = [self.calculator sizeForCellObject:self.mockCellObject];
+    CGSize result = [self.calculator sizeForCellObject:cellObject];
 
     // then
     XCTAssertEqual(result.width, kCalculatorContentWidth);
@@ -118,8 +120,7 @@ const CGFloat kCalculatorItemSpacing = 7.0f;
 
     // when
     NSInteger result = [self.calculator countItemsInRows:0
-                                          forCellObjects:nil
-                                          lastCellObject:nil];
+                                          forCellObjects:nil];
 
     // then
     XCTAssertEqual(result, countAddItems - 1);

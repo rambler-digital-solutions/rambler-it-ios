@@ -22,20 +22,17 @@
 #import "NICellFactory.h"
 #import "NITyphoonInjectableCell.h"
 #import "TagModuleOutput.h"
-#import "ContentSizeObserver.h"
 
 @protocol TagModuleInput;
-@class ContentSizeObserver;
 
 /**
  @author Golovko Mikhail
  
  Ячейка отображения тегов.
  */
-@interface TagModuleTableViewCell : UITableViewCell <NICell, NITyphoonInjectableCell, ContentSizeObserverDelegate>
+@interface TagModuleTableViewCell : UITableViewCell <NICell, NITyphoonInjectableCell>
 
 @property (nonatomic, weak) IBOutlet UICollectionView<TagModuleInput> *tagCollectionView;
-@property (nonatomic, strong) ContentSizeObserver *sizeObserver;
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint *collectionViewWidthConstraint;
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint *collectionViewLeadingConstraint;
 

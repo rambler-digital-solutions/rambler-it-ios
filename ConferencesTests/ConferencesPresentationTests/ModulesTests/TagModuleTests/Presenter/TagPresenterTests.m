@@ -94,30 +94,17 @@
     OCMVerify([self.mockView setupShowNumberOfLines:moduleConfig.numberOfShowLine]);
 }
 
-- (void)testThatPresenterConfigureHorizontalContentAlign {
+- (void)testThatPresenterObtainHeight {
     // given
     TagModuleConfig *moduleConfig = [TagModuleConfig new];
-    moduleConfig.verticalAlign = NO;
-
+    NSArray *tags = [self generateTags];
+    [self stubObtainTags:tags];
+    
     // when
-    [self.presenter configureModuleWithModuleConfig:moduleConfig
-                                       moduleOutput:nil];
-
+    [self.presenter obtainHeightTagModuleViewWithModuleConfig:moduleConfig];
+    
     // then
-    OCMVerify([self.mockView setupHorizontalContentAlign]);
-}
-
-- (void)testThatPresenterConfigureVerticalContentAlign {
-    // given
-    TagModuleConfig *moduleConfig = [TagModuleConfig new];
-    moduleConfig.verticalAlign = YES;
-
-    // when
-    [self.presenter configureModuleWithModuleConfig:moduleConfig
-                                       moduleOutput:nil];
-
-    // then
-    OCMVerify([self.mockView setupVerticalContentAlign]);
+    OCMVerify([self.mockView obtainHeightTagCollectionViewWithTags:tags]);
 }
 
 #pragma mark - Дополнительные методы
@@ -127,8 +114,7 @@
 }
 
 - (void)stubObtainTags:(NSArray *)tags {
-    OCMStub([self.mockInteractor obtainTagsFromObjectDescriptor:OCMOCK_ANY
-                                        excludeObjectDescriptor:OCMOCK_ANY]).andReturn(tags);
+    OCMStub([self.mockInteractor obtainTagsFromObjectDescriptor:OCMOCK_ANY]).andReturn(tags);
 }
 
 @end

@@ -148,16 +148,16 @@
     XCTAssertNotNil(result);
 }
 
-- (void)testSetCompressWidth {
+- (void)testObtainHeight {
     // given
-    BOOL compressWidth = YES;
-
+    NSArray *tags = @[@"tag 1", @"tag 2", @"tag 3"];
+    
     // when
-    [self.dataDisplayManager setCompressWidth:compressWidth];
-
+    [self.dataDisplayManager obtainHeightTagCollectionViewWithTags:tags];
+    
     // then
-    OCMVerify([self.mockCellSizeCalculator setCompressWidth:compressWidth]);
-
+    OCMVerify([self.mockCellSizeCalculator calculateHeightRowsForCellObjects:OCMOCK_ANY]);
+    
 }
 
 - (void)testCollapseCells {
@@ -191,8 +191,7 @@
                   showTags:(NSInteger)showTags {
     OCMStub([self.mockCellSizeCalculator countRowsForObjects:OCMOCK_ANY]).andReturn(tagRows);
     OCMStub([self.mockCellSizeCalculator countItemsInRows:countShowLines
-                                           forCellObjects:OCMOCK_ANY
-                                           lastCellObject:OCMOCK_ANY]).andReturn(showTags);
+                                           forCellObjects:OCMOCK_ANY]).andReturn(showTags);
 }
 
 #pragma mark - Тестирование методов UICollectionViewDelegateFlowLayout

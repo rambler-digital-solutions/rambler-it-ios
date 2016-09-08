@@ -21,15 +21,15 @@
 #import "TagCollectionViewCell.h"
 #import "TagCollectionViewCellObject.h"
 #import <PureLayout/PureLayout.h>
-
-const CGFloat kRightSpace = 10;
-const CGFloat kButtonWidth = 10;
-const CGFloat kRightSpaceWithButton = 22;
+#import "TagModuleViewConstants.h"
 
 @interface TagCollectionViewCell ()
 
 @property (nonatomic, strong) TagCollectionViewCellObject *cellObject;
-@property (nonatomic, strong) UIButton *removeButton;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *leadingConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *trailingConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
 
 @end
 
@@ -40,9 +40,17 @@ const CGFloat kRightSpaceWithButton = 22;
     if ([self.cellObject isEqual:object]) {
         return NO;
     }
-
+    
+    self.trailingConstraint.constant = kSideItemInset;
+    self.leadingConstraint.constant = kSideItemInset;
+    self.heightConstraint.constant = kItemHeight;
+    
     self.cellObject = object;
     self.tagLabel.text = object.tagName;
+    
+    UIFont *font = [UIFont fontWithName:kNameFontTagText size:kSizeFontTagText];
+    self.tagLabel.font = font;
+    
 
     return YES;
 }

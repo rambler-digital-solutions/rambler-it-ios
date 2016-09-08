@@ -19,19 +19,23 @@
 // THE SOFTWARE.
 
 #import "TagCellSizeConfig.h"
-
-const CGFloat kLeftContentSpacing = 15;
-const CGFloat kRightContentSpacing = 15;
-const CGFloat kItemSpacing = 5.0f;
+#import "TagModuleViewConstants.h"
 
 @implementation TagCellSizeConfig
 
 - (instancetype)initWithContentWidth:(CGFloat)contentWidth
-                         itemSpacing:(CGFloat)itemSpacing {
+                         itemSpacing:(CGFloat)itemSpacing
+                         itemHeight:(CGFloat)itemHeight
+                       itemSideInset:(CGFloat)itemSideInset
+                         font:(UIFont *)font {
     self = [super init];
     if (self) {
         _contentWidth = contentWidth;
         _itemSpacing = itemSpacing;
+        _itemSideInset = itemSideInset;
+        _font = font;
+        _itemHeight = itemHeight;
+        
     }
 
     return self;
@@ -43,9 +47,13 @@ const CGFloat kItemSpacing = 5.0f;
     CGRect screenRect = [UIScreen mainScreen].bounds;
     CGFloat screenWidth = CGRectGetWidth(screenRect);
     CGFloat contentWidth = screenWidth - kLeftContentSpacing - kRightContentSpacing;
-
+    UIFont *font = [UIFont fontWithName:kNameFontTagText size:kSizeFontTagText];
+    
     TagCellSizeConfig *config = [[TagCellSizeConfig alloc] initWithContentWidth:contentWidth
-                                                                    itemSpacing:kItemSpacing];
+                                                                    itemSpacing:kItemSpacing
+                                                                     itemHeight:kItemHeight
+                                                                  itemSideInset:kSideItemInset
+                                                                           font:font];
 
 
     return config;

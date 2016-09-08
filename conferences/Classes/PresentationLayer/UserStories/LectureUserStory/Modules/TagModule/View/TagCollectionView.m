@@ -32,15 +32,6 @@
                                         options:NULL] firstObject];
 }
 
-- (void)setContentSize:(CGSize)contentSize {
-    [super setContentSize:contentSize];
-    [self invalidateIntrinsicContentSize];
-}
-
-- (CGSize)intrinsicContentSize {
-    return self.contentSize;
-}
-
 #pragma mark - Методы TagViewInput
 
 - (void)setupInitialState {
@@ -67,22 +58,15 @@
     self.scrollEnabled = NO;
     self.alwaysBounceHorizontal = NO;
     self.showsVerticalScrollIndicator = NO;
-
-    [self.dataDisplayManager setCompressWidth:YES];
 }
 
-- (void)setupHorizontalContentAlign {
-    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    layout.minimumInteritemSpacing = self.cellSizeConfig.itemSpacing;
-    layout.minimumLineSpacing = self.cellSizeConfig.itemSpacing;
-    layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+- (CGFloat)obtainHeightTagCollectionViewWithTags:(NSArray *)tags {
+    
+    return [self.dataDisplayManager obtainHeightTagCollectionViewWithTags:tags];
+}
 
-    self.collectionViewLayout = layout;
-    self.scrollEnabled = YES;
-    self.alwaysBounceHorizontal = YES;
-    self.showsHorizontalScrollIndicator = NO;
-
-    [self.dataDisplayManager setCompressWidth:NO];
+- (void)setupShowNumberOfLines:(NSInteger)lines {
+    self.dataDisplayManager.numberOfShowLine = lines;
 }
 
 #pragma mark - Методы TagModuleInput
@@ -93,8 +77,8 @@
                                          moduleOutput:moduleOutput];
 }
 
-- (void)setupShowNumberOfLines:(NSInteger)lines {
-    self.dataDisplayManager.numberOfShowLine = lines;
+- (CGFloat)obtainHeightTagModuleViewWithModuleConfig:(TagModuleConfig *)moduleConfig {
+    return [self.moduleInput obtainHeightTagModuleViewWithModuleConfig:moduleConfig];
 }
 
 

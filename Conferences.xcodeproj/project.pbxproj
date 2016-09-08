@@ -281,7 +281,6 @@
 		66A1DD351D7E982500998F6B /* TagPresenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A1DD331D7E982500998F6B /* TagPresenterTests.m */; };
 		66A1DD3B1D7E983100998F6B /* TagModuleTableViewCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A1DD381D7E983100998F6B /* TagModuleTableViewCellTests.m */; };
 		66A1DD3C1D7E983100998F6B /* TagShowMediatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A1DD391D7E983100998F6B /* TagShowMediatorTests.m */; };
-		66A1DD401D7E984400998F6B /* MockTagTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A1DD3F1D7E984400998F6B /* MockTagTableViewCell.m */; };
 		66A1DD451D7E984E00998F6B /* TagCellSizeCalculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A1DD411D7E984E00998F6B /* TagCellSizeCalculatorTests.m */; };
 		66A1DD461D7E984E00998F6B /* TagCellSizeRowCalculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A1DD421D7E984E00998F6B /* TagCellSizeRowCalculatorTests.m */; };
 		66A1DD471D7E984E00998F6B /* TagCollectionViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A1DD431D7E984E00998F6B /* TagCollectionViewTests.m */; };
@@ -317,7 +316,6 @@
 		66E9999C1D54B31300161D98 /* TagServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E999991D54B31300161D98 /* TagServiceImplementation.m */; };
 		66E9999D1D54B31300161D98 /* TagServicePredicateBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E9999B1D54B31300161D98 /* TagServicePredicateBuilder.m */; };
 		66E999A31D54B40500161D98 /* NITyphoonCellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E999A01D54B40500161D98 /* NITyphoonCellFactory.m */; };
-		66E999A71D54B50500161D98 /* ContentSizeObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E999A61D54B50500161D98 /* ContentSizeObserver.m */; };
 		66EE4D2B1D54BCDF0011F94A /* CollectionViewAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EE4D2A1D54BCDF0011F94A /* CollectionViewAnimator.m */; };
 		66EE4D341D54BFCD0011F94A /* NIMutableCollectionViewModel+LJAddObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EE4D2F1D54BFCD0011F94A /* NIMutableCollectionViewModel+LJAddObject.m */; };
 		66EE4D351D54BFCD0011F94A /* NITableViewModel+LJIndexOfObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EE4D311D54BFCD0011F94A /* NITableViewModel+LJIndexOfObject.m */; };
@@ -1035,6 +1033,7 @@
 		63FDCE021BBDBA2A00A43B60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63FDCE041BBDBA2A00A43B60 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63FDCE051BBDBA2A00A43B60 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6612BF6F1D7ECDEA00E07586 /* TagModuleViewConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TagModuleViewConstants.h; path = TagModule/View/Constants/TagModuleViewConstants.h; sourceTree = "<group>"; };
 		661CA3F31D65CF920047EB68 /* EventOperationFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventOperationFactory.h; path = OperationFactories/EventListOperationFactory/EventOperationFactory.h; sourceTree = "<group>"; };
 		661CA3F41D65CF920047EB68 /* EventOperationFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventOperationFactory.m; path = OperationFactories/EventListOperationFactory/EventOperationFactory.m; sourceTree = "<group>"; };
 		661CA3FC1D65CFF70047EB68 /* LastModifiedMapperOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LastModifiedMapperOperation.h; path = MiscellaneousOperations/LastModifiedMapperOperation/LastModifiedMapperOperation.h; sourceTree = "<group>"; };
@@ -1107,8 +1106,6 @@
 		66A1DD331D7E982500998F6B /* TagPresenterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagPresenterTests.m; path = TagModuleTests/Presenter/TagPresenterTests.m; sourceTree = "<group>"; };
 		66A1DD381D7E983100998F6B /* TagModuleTableViewCellTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagModuleTableViewCellTests.m; path = TagModuleTests/Integration/TagModuleTableViewCellTests.m; sourceTree = "<group>"; };
 		66A1DD391D7E983100998F6B /* TagShowMediatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagShowMediatorTests.m; path = TagModuleTests/Integration/TagShowMediatorTests.m; sourceTree = "<group>"; };
-		66A1DD3E1D7E984400998F6B /* MockTagTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MockTagTableViewCell.h; path = TagModuleTests/Integration/MockCell/MockTagTableViewCell.h; sourceTree = "<group>"; };
-		66A1DD3F1D7E984400998F6B /* MockTagTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MockTagTableViewCell.m; path = TagModuleTests/Integration/MockCell/MockTagTableViewCell.m; sourceTree = "<group>"; };
 		66A1DD411D7E984E00998F6B /* TagCellSizeCalculatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagCellSizeCalculatorTests.m; path = TagModuleTests/View/TagCellSizeCalculatorTests.m; sourceTree = "<group>"; };
 		66A1DD421D7E984E00998F6B /* TagCellSizeRowCalculatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagCellSizeRowCalculatorTests.m; path = TagModuleTests/View/TagCellSizeRowCalculatorTests.m; sourceTree = "<group>"; };
 		66A1DD431D7E984E00998F6B /* TagCollectionViewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagCollectionViewTests.m; path = TagModuleTests/View/TagCollectionViewTests.m; sourceTree = "<group>"; };
@@ -1158,7 +1155,6 @@
 		66E9996D1D54B06400161D98 /* TagViewInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagViewInput.h; path = TagModule/View/TagViewInput.h; sourceTree = "<group>"; };
 		66E999731D54B08B00161D98 /* TagDataDisplayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagDataDisplayManager.h; path = TagModule/View/DataDisplayManager/TagDataDisplayManager.h; sourceTree = "<group>"; };
 		66E999741D54B08B00161D98 /* TagDataDisplayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagDataDisplayManager.m; path = TagModule/View/DataDisplayManager/TagDataDisplayManager.m; sourceTree = "<group>"; };
-		66E999751D54B08B00161D98 /* TagModuleViewConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagModuleViewConstants.h; path = TagModule/View/DataDisplayManager/TagModuleViewConstants.h; sourceTree = "<group>"; };
 		66E999781D54B0A000161D98 /* TagCellSizeCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagCellSizeCalculator.h; path = TagModule/View/DataDisplayManager/TagCellSizeManager/TagCellSizeCalculator.h; sourceTree = "<group>"; };
 		66E999791D54B0A000161D98 /* TagCellSizeCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagCellSizeCalculator.m; path = TagModule/View/DataDisplayManager/TagCellSizeManager/TagCellSizeCalculator.m; sourceTree = "<group>"; };
 		66E9997A1D54B0A000161D98 /* TagCellSizeConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagCellSizeConfig.h; path = TagModule/View/DataDisplayManager/TagCellSizeManager/TagCellSizeConfig.h; sourceTree = "<group>"; };
@@ -1179,8 +1175,6 @@
 		66E999A01D54B40500161D98 /* NITyphoonCellFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NITyphoonCellFactory.m; path = NITyphoonCellFactory/NITyphoonCellFactory.m; sourceTree = "<group>"; };
 		66E999A11D54B40500161D98 /* NITyphoonInjectableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NITyphoonInjectableCell.h; path = NITyphoonCellFactory/NITyphoonInjectableCell.h; sourceTree = "<group>"; };
 		66E999A21D54B40500161D98 /* TableViewCellAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TableViewCellAssembly.h; path = NITyphoonCellFactory/TableViewCellAssembly.h; sourceTree = "<group>"; };
-		66E999A51D54B50500161D98 /* ContentSizeObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContentSizeObserver.h; path = ContentSizeObserver/ContentSizeObserver.h; sourceTree = "<group>"; };
-		66E999A61D54B50500161D98 /* ContentSizeObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContentSizeObserver.m; path = ContentSizeObserver/ContentSizeObserver.m; sourceTree = "<group>"; };
 		66EE4D291D54BCDF0011F94A /* CollectionViewAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CollectionViewAnimator.h; path = CollectionViewAnimator/CollectionViewAnimator.h; sourceTree = "<group>"; };
 		66EE4D2A1D54BCDF0011F94A /* CollectionViewAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CollectionViewAnimator.m; path = CollectionViewAnimator/CollectionViewAnimator.m; sourceTree = "<group>"; };
 		66EE4D2D1D54BFCD0011F94A /* NextInputResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NextInputResponder.h; path = Nimbus/NextInputResponder.h; sourceTree = "<group>"; };
@@ -1963,7 +1957,6 @@
 				9FA6E77D1D6EFE8A0047D2C4 /* TabBarController */,
 				66EE4D2C1D54BFB90011F94A /* Nimbus */,
 				66EE4D281D54BCD70011F94A /* CollectionViewAnimator */,
-				66E999A41D54B4FC00161D98 /* ContentSizeObserver */,
 				66E9999E1D54B3FD00161D98 /* NITyphoonCellFactory */,
 				3784462C1D4E06440016121E /* NavigationController */,
 				631808111C482ABC00A61E7D /* SpeakerShortInfoModule */,
@@ -3977,6 +3970,14 @@
 			path = "conferences/Supporting Files";
 			sourceTree = SOURCE_ROOT;
 		};
+		6612BF6E1D7ECDC500E07586 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				6612BF6F1D7ECDEA00E07586 /* TagModuleViewConstants.h */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
 		661CA3F61D65CFA80047EB68 /* MiscellaneousOperations */ = {
 			isa = PBXGroup;
 			children = (
@@ -4240,7 +4241,6 @@
 		66A1DD281D7E97DF00998F6B /* Integration */ = {
 			isa = PBXGroup;
 			children = (
-				66A1DD3D1D7E983500998F6B /* MockCell */,
 				66A1DD381D7E983100998F6B /* TagModuleTableViewCellTests.m */,
 				66A1DD391D7E983100998F6B /* TagShowMediatorTests.m */,
 			);
@@ -4282,15 +4282,6 @@
 				66A1DD441D7E984E00998F6B /* TagDataDisplayManagerTests.m */,
 			);
 			name = View;
-			sourceTree = "<group>";
-		};
-		66A1DD3D1D7E983500998F6B /* MockCell */ = {
-			isa = PBXGroup;
-			children = (
-				66A1DD3E1D7E984400998F6B /* MockTagTableViewCell.h */,
-				66A1DD3F1D7E984400998F6B /* MockTagTableViewCell.m */,
-			);
-			name = MockCell;
 			sourceTree = "<group>";
 		};
 		66A1DD491D7E985200998F6B /* Cells */ = {
@@ -4428,6 +4419,7 @@
 		66E9993A1D54AF4500161D98 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6612BF6E1D7ECDC500E07586 /* Constants */,
 				66E999721D54B07600161D98 /* CellObjects */,
 				66E999711D54B07200161D98 /* Cells */,
 				66E9996A1D54B06400161D98 /* TagCollectionView.h */,
@@ -4502,7 +4494,6 @@
 				66E999771D54B09000161D98 /* TagCellSizeManager */,
 				66E999731D54B08B00161D98 /* TagDataDisplayManager.h */,
 				66E999741D54B08B00161D98 /* TagDataDisplayManager.m */,
-				66E999751D54B08B00161D98 /* TagModuleViewConstants.h */,
 			);
 			name = DataDisplayManager;
 			sourceTree = "<group>";
@@ -4576,15 +4567,6 @@
 				66E999A21D54B40500161D98 /* TableViewCellAssembly.h */,
 			);
 			name = NITyphoonCellFactory;
-			sourceTree = "<group>";
-		};
-		66E999A41D54B4FC00161D98 /* ContentSizeObserver */ = {
-			isa = PBXGroup;
-			children = (
-				66E999A51D54B50500161D98 /* ContentSizeObserver.h */,
-				66E999A61D54B50500161D98 /* ContentSizeObserver.m */,
-			);
-			name = ContentSizeObserver;
 			sourceTree = "<group>";
 		};
 		66EE4D281D54BCD70011F94A /* CollectionViewAnimator */ = {
@@ -8540,7 +8522,6 @@
 				9FE139871D65F3E900D7BF44 /* ReportSpeakerTableViewCell.m in Sources */,
 				63ECC4161CA81E5300439A01 /* ErrorConstants.m in Sources */,
 				661CA4271D65D2040047EB68 /* ResponseConverterAssembly.m in Sources */,
-				66E999A71D54B50500161D98 /* ContentSizeObserver.m in Sources */,
 				9F7B823B1D7ECA07002E977A /* TabLaunchRouter.m in Sources */,
 				63EF15BB1BC4559900480CAF /* PushNotificationCenterImplementation.m in Sources */,
 				636F8DDB1BCB8FE800552B91 /* RamblerLocationInteractor.m in Sources */,
@@ -8754,7 +8735,6 @@
 				9F78D7551D59DB89009DDCEA /* ContextStorageImplementationTests.m in Sources */,
 				63F8F2F51BF9FDBF000017F3 /* CompoundOperationBaseTests.m in Sources */,
 				9FAB6A731D53914C0061F333 /* IndexerStateStorageTests.m in Sources */,
-				66A1DD401D7E984400998F6B /* MockTagTableViewCell.m in Sources */,
 				63F613DE1CB111070002AEF0 /* PastEventCellObjectBuilderTests.m in Sources */,
 				2B4F202A1D54E11F00C9891E /* SpeakerInfoCellObjectsBuilderTests.m in Sources */,
 				9F1830FE1BC14E64000E21A5 /* Conference.xcdatamodeld in Sources */,

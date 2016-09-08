@@ -18,40 +18,64 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
+static const NSInteger TagModuleDisableCollapseTags = 0;
 
-@class TagObjectDescriptor;
-@protocol TagModuleInput;
-
+#pragma mark - Inside Tag module cell
 /**
- @author Golovko Mikhail
-
- Протокол описывающий интерфейс медиатора, который используется для управления
- модулем отображением тегов (TagModuleInput).
- */
-@protocol TagMediatorInput <NSObject>
-
-/**
- @author Golovko Mikhail
+ @author Konstantin Zinovyev
  
- Метод конфигурируем медиатор.
- 
- @param objectDescriptor Иноформация о конфигурируемом объекте.
- @param tagModuleInput Модуль
+ Space between tags collection view and left screen's border
  */
-- (void)configureWithObjectDescriptor:(TagObjectDescriptor *)objectDescriptor
-                       tagModuleInput:(id <TagModuleInput>)tagModuleInput;
+static const CGFloat kLeftContentSpacing = 15;
 
 /**
  @author Konstantin Zinovyev
  
- Метод для получения высоты модуля тэгов
- 
- @param objectDescriptor Иноформация о модуле тэгов.
- @param tagModuleInput Модуль
- @return Высота модуля тэгов
+ Space between tags collection view and right screen's border
  */
-- (CGFloat)obtainHeightTagModuleViewWithObjectDescriptor:(TagObjectDescriptor *)objectDescriptor
-                                          tagModuleInput:(id <TagModuleInput>)tagModuleInput;
+static const CGFloat kRightContentSpacing = 15;
 
-@end
+/**
+ @author Konstantin Zinovyev
+ 
+ Space beetwen tag collection view and top/bottom tag cell module
+ */
+static const CGFloat kVerticalContentSpacing = 8.0f;
+
+#pragma mark - Inside Collection View
+
+/**
+ @author Konstantin Zinovyev
+ 
+ Vertical and horizontal space between tags in collection
+ */
+static const CGFloat kItemSpacing = 5.0f;
+
+#pragma mark - Inside Tag cell
+
+/**
+ @author Konstantin Zinovyev
+ 
+ Size font in tag's label
+ */
+static const CGFloat kSizeFontTagText = 14.0f;
+
+/**
+ @author Konstantin Zinovyev
+ 
+ Font name in tag's label
+ */
+static NSString *const kNameFontTagText = @"HelveticaNeue";
+/**
+ @author Konstantin Zinovyev
+ 
+ Height tag
+ */
+static const CGFloat kItemHeight = 22.0f;
+
+/**
+ @author Konstantin Zinovyev
+ 
+ Space between tag's label  and left/right border
+ */
+static const CGFloat kSideItemInset = 10.0f;

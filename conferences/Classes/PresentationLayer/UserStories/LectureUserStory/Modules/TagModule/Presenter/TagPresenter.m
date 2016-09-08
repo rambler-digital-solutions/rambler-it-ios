@@ -43,22 +43,23 @@
 
     [self.view setupInitialState];
 
-    if (moduleConfig.verticalAlign) {
-        [self.view setupVerticalContentAlign];
-    } else {
-        [self.view setupHorizontalContentAlign];
-    }
+    [self.view setupVerticalContentAlign];
 
     [self.view setupShowNumberOfLines:moduleConfig.numberOfShowLine];
 
-    [self updateTagsInView];
+    [self updateTagsInViewWithModuleConfig:moduleConfig];
 }
+
+- (CGFloat)obtainHeightTagModuleViewWithModuleConfig:(TagModuleConfig *)moduleConfig {
+    NSArray *tags = [self.interactor obtainTagsFromObjectDescriptor:moduleConfig.objectDescriptor];
+    return [self.view obtainHeightTagCollectionViewWithTags:tags];
+}
+
 
 #pragma mark - Дополнительные методы
 
-- (void)updateTagsInView {
-    NSArray *tags = [self.interactor obtainTagsFromObjectDescriptor:self.moduleConfig.objectDescriptor
-                                            excludeObjectDescriptor:self.moduleConfig.filteredObjectDescriptor];
+- (void)updateTagsInViewWithModuleConfig:(TagModuleConfig *)moduleConfig {
+    NSArray *tags = [self.interactor obtainTagsFromObjectDescriptor:moduleConfig.objectDescriptor];
 
     [self.view showTags:tags];
 }
