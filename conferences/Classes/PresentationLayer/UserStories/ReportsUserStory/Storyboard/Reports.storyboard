@@ -76,6 +76,16 @@
             </objects>
             <point key="canvasLocation" x="2196" y="1391"/>
         </scene>
+        <!--EventViewController-->
+        <scene sceneID="uD5-9y-Ox0">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Event" referencedIdentifier="EventViewController" id="Rfg-4w-L7M" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="BAJ-Lx-1ru"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LaW-6U-u9o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2191.5" y="1506"/>
+        </scene>
         <!--LectureViewController-->
         <scene sceneID="ah5-sY-1fy">
             <objects>
@@ -150,6 +160,7 @@
                         <outlet property="reportsListSearchTableView" destination="ymM-1E-AlH" id="fWt-OP-4Fi"/>
                         <segue destination="GSP-14-n54" kind="push" identifier="ReportsSearchModuleToLectureModuleSegue" id="8BM-dq-5wt"/>
                         <segue destination="qMA-Bk-oT9" kind="push" identifier="ReportsSearchModuleToSpeakerModuleSegue" id="CxD-rk-JNL"/>
+                        <segue destination="Rfg-4w-L7M" kind="push" identifier="ReportsSearchModuleToEventModuleSegue" id="BuA-DV-KG4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iMU-4N-SSR" userLabel="First Responder" sceneMemberID="firstResponder"/>
