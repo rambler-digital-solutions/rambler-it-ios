@@ -43,6 +43,9 @@
     NSString *eventDescription = [self generateEventDescriptionForEvent:object];
     attributeSet.contentDescription = eventDescription;
     
+    attributeSet.startDate = object.startDate;
+    attributeSet.endDate = object.endDate;
+    
     NSArray *keywords = [self generateKeywordsForEvent:object];
     attributeSet.keywords = keywords;
 
