@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Rambler DS. All rights reserved.
 //
 
-#import <RamblerAppDelegateProxyProtocol.h>
+#import "RamblerAppDelegateProxyProtocol.h"
 
 /**
  @author Vadim Smal

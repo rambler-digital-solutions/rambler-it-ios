@@ -20,7 +20,6 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - Bolts/Tasks (1.4.0)
   - CocoaLumberjack (2.2.0):
     - CocoaLumberjack/Default (= 2.2.0)
     - CocoaLumberjack/Extensions (= 2.2.0)
@@ -84,10 +83,8 @@ PODS:
   - Nimbus/Models (1.2.2):
     - Nimbus/Core
   - OCMock (3.2)
-  - Parse (1.9.1):
-    - Bolts/Tasks (>= 1.4.0)
   - PureLayout (3.0.1)
-  - RamblerAppDelegateProxy (HEAD based on 0.0.1)
+  - RamblerAppDelegateProxy (HEAD based on 0.0.2)
   - RamblerSegues (1.1.0):
     - RamblerSegues/Core (= 1.1.0)
     - RamblerSegues/CrossStoryboardSegue (= 1.1.0)
@@ -127,7 +124,6 @@ DEPENDENCIES:
   - Nimbus/Collections (from `https://github.com/rambler-ios/nimbus`)
   - Nimbus/Models (from `https://github.com/rambler-ios/nimbus`)
   - OCMock (~> 3.1)
-  - Parse (~> 1.8)
   - PureLayout (~> 3.0)
   - RamblerAppDelegateProxy (HEAD)
   - RamblerSegues
@@ -157,7 +153,6 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
-  Bolts: 0e9bce58b9b9f5e8a7a4d47b16d2fabec289072b
   CocoaLumberjack: 17fe8581f84914d5d7e6360f7c70022b173c3ae0
   Crashlytics: c3a2333dea9e2733d2777f730910321fc9e25c0d
   CrutchKit: 562cf1276c995cb3e575d468684da7eb7ae2a93c
@@ -169,9 +164,8 @@ SPEC CHECKSUMS:
   MMBarricade: 61e17f747baa1a33cd7f8a9c75d520ca958508dd
   Nimbus: 355131d4656498bf072fecc142752a9f343eb59b
   OCMock: 28def049ef47f996b515a8eeea958be7ccab2dbb
-  Parse: 54a965c8c19a6dde90284ab654dbcc77ef8c001b
   PureLayout: f35f5384c9c4e4479df041dbe33ad7577b71ddfb
-  RamblerAppDelegateProxy: 8926ec7e066d4f4aabf965a32126c747d32498a7
+  RamblerAppDelegateProxy: a0cf2f01a8474e9aee0e9dad81147ddf22874464
   RamblerSegues: e4b34295ede5203115b53f6b749c14d9ba6b9e5e
   RamblerTyphoonUtils: c799c606d7406002bf56f376443763b15947be8c
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84

@@ -25,9 +25,7 @@
 #import "ServiceComponentsAssembly.h"
 #import "ServiceComponentsAssembly_Testable.h"
 
-#import "PushNotificationServiceImplementation.h"
 #import "EventServiceImplementation.h"
-#import "PushNotificationServiceImplementation.h"
 #import "OperationScheduler.h"
 #import "OperationSchedulerImplementation.h"
 
@@ -53,18 +51,6 @@
     self.assembly = nil;
     
     [super tearDown];
-}
-
-- (void)testThatAssemblyCreatesPushNotificationService {
-    // given
-    Class targetClass = [PushNotificationServiceImplementation class];
-    
-    // when
-    id result = [self.assembly pushNotificationService];
-    
-    // then
-    RamblerTyphoonAssemblyTestsTypeDescriptor *descriptor = [RamblerTyphoonAssemblyTestsTypeDescriptor descriptorWithClass:targetClass];
-    [self verifyTargetDependency:result withDescriptor:descriptor];
 }
 
 - (void)testThatAssemblyCreatesEventService {
