@@ -72,7 +72,7 @@
 	</array>
 	<key>UIStatusBarHidden</key>
 	<true/>
-	<key>UISupportedInterfaceOrientations</key>
-	<array/>
+	<key>CoreSpotlightContinuation</key>
+	<true/>
 </dict>
 </plist>
