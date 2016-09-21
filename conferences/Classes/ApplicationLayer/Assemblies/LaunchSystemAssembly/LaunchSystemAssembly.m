@@ -29,11 +29,13 @@
 #import "QuickActionUserActivityFactory.h"
 #import "QuickActionLaunchHandler.h"
 #import "SpotlightAppDelegate.h"
+#import "SpotlightContinuationAppDelegate.h"
 #import "SpotlightLaunchHandler.h"
 #import "EventLaunchRouter.h"
 #import "SpeakerLaunchRouter.h"
 #import "LectureLaunchRouter.h"
 #import "TabLaunchRouter.h"
+#import "SearchLaunchRouter.h"
 
 #import "QuickActionConstants.h"
 
@@ -55,6 +57,15 @@ static NSUInteger const kSearchTabIndex = 2;
                                                                                      [self lectureLaunchHandler]
                                                                                      ]];
                                               }];
+                              definition.scope = TyphoonScopeSingleton;
+                          }];
+}
+
+- (SpotlightContinuationAppDelegate *)spotlightContinuationAppDelegate {
+    return [TyphoonDefinition withClass:[SpotlightContinuationAppDelegate class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(router)
+                                                    with:[self searchWithTextLaunchRouter]];
                               definition.scope = TyphoonScopeSingleton;
                           }];
 }
@@ -204,6 +215,17 @@ static NSUInteger const kSearchTabIndex = 2;
                                                   [initializer injectParameterWith:[self.applicationHelperAssembly tabBarControllerFactory]];
                                                   [initializer injectParameterWith:[self.systemInfrastructureAssembly mainWindow]];
                                                   [initializer injectParameterWith:@(kSearchTabIndex)];
+                                              }];
+                          }];
+}
+
+- (SearchLaunchRouter *)searchWithTextLaunchRouter {
+    return [TyphoonDefinition withClass:[SearchLaunchRouter class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition useInitializer:@selector(initWithTabBarControllerFactory:window:)
+                                              parameters:^(TyphoonMethod *initializer) {
+                                                  [initializer injectParameterWith:[self.applicationHelperAssembly tabBarControllerFactory]];
+                                                  [initializer injectParameterWith:[self.systemInfrastructureAssembly mainWindow]];
                                               }];
                           }];
 }

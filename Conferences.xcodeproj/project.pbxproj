@@ -521,6 +521,8 @@
 		9FC1F6841D28391E0070D9B5 /* EventListQueryTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6831D28391E0070D9B5 /* EventListQueryTransformer.m */; };
 		9FC305321D6476EA0052CB67 /* ShareUrlBuilderImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC305311D6476EA0052CB67 /* ShareUrlBuilderImplementation.m */; };
 		9FC305351D6478F60052CB67 /* ShareUrlBuilderImplementationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC305341D6478F60052CB67 /* ShareUrlBuilderImplementationTests.m */; };
+		9FCFC50E1D903719009FD57D /* SpotlightContinuationAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCFC50D1D903719009FD57D /* SpotlightContinuationAppDelegate.m */; };
+		9FCFC5121D9037D3009FD57D /* SearchLaunchRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCFC5111D9037D3009FD57D /* SearchLaunchRouter.m */; };
 		9FD740381CDC98010071BD71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FD740371CDC98010071BD71 /* LaunchScreen.storyboard */; };
 		9FE139231D65BD9700D7BF44 /* SuggestServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE139221D65BD9700D7BF44 /* SuggestServiceImplementation.m */; };
 		9FE139261D65CC2500D7BF44 /* SuggestServiceImplementationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE139251D65CC2500D7BF44 /* SuggestServiceImplementationTests.m */; };
@@ -1582,6 +1584,10 @@
 		9FC305301D6476EA0052CB67 /* ShareUrlBuilderImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShareUrlBuilderImplementation.h; path = ShareUrlBuilder/ConcreteClasses/ShareUrlBuilderImplementation/ShareUrlBuilderImplementation.h; sourceTree = "<group>"; };
 		9FC305311D6476EA0052CB67 /* ShareUrlBuilderImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShareUrlBuilderImplementation.m; path = ShareUrlBuilder/ConcreteClasses/ShareUrlBuilderImplementation/ShareUrlBuilderImplementation.m; sourceTree = "<group>"; };
 		9FC305341D6478F60052CB67 /* ShareUrlBuilderImplementationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShareUrlBuilderImplementationTests.m; path = ShareUrlBuilderTests/ShareUrlBuilderImplementationTests.m; sourceTree = "<group>"; };
+		9FCFC50C1D903719009FD57D /* SpotlightContinuationAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpotlightContinuationAppDelegate.h; path = SpotlightContinuationAppDelegate/SpotlightContinuationAppDelegate.h; sourceTree = "<group>"; };
+		9FCFC50D1D903719009FD57D /* SpotlightContinuationAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpotlightContinuationAppDelegate.m; path = SpotlightContinuationAppDelegate/SpotlightContinuationAppDelegate.m; sourceTree = "<group>"; };
+		9FCFC5101D9037D3009FD57D /* SearchLaunchRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchLaunchRouter.h; path = SearchLaunchRouter/SearchLaunchRouter.h; sourceTree = "<group>"; };
+		9FCFC5111D9037D3009FD57D /* SearchLaunchRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchLaunchRouter.m; path = SearchLaunchRouter/SearchLaunchRouter.m; sourceTree = "<group>"; };
 		9FD740371CDC98010071BD71 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9FE139201D65BD8500D7BF44 /* SuggestService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SuggestService.h; path = SuggestService/SuggestService.h; sourceTree = "<group>"; };
 		9FE139211D65BD9700D7BF44 /* SuggestServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SuggestServiceImplementation.h; path = SuggestService/SuggestServiceImplementation.h; sourceTree = "<group>"; };
@@ -6707,6 +6713,7 @@
 		9FBE89841D5CB71300DA0C32 /* AppDelegates */ = {
 			isa = PBXGroup;
 			children = (
+				9FCFC50B1D9036F7009FD57D /* SpotlightContinuationAppDelegate */,
 				9F7B821F1D7DA546002E977A /* QuickActionAppDelegate */,
 				9FBE89B71D5CB72D00DA0C32 /* CleanLaunchAppDelegate */,
 				9FBE89881D5CB71300DA0C32 /* SpotlightAppDelegate */,
@@ -6791,6 +6798,7 @@
 		9FBE89991D5CB71300DA0C32 /* ConcreteClasses */ = {
 			isa = PBXGroup;
 			children = (
+				9FCFC50F1D9037B9009FD57D /* SearchLaunchRouter */,
 				9F7B82381D7ECA07002E977A /* TabLaunchRouter */,
 				9FBE899A1D5CB71300DA0C32 /* CleanLaunchRouter */,
 				9FBE899D1D5CB71300DA0C32 /* EventLaunchRouter */,
@@ -7481,6 +7489,24 @@
 				9FC305341D6478F60052CB67 /* ShareUrlBuilderImplementationTests.m */,
 			);
 			name = ShareUrlBuilderTests;
+			sourceTree = "<group>";
+		};
+		9FCFC50B1D9036F7009FD57D /* SpotlightContinuationAppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				9FCFC50C1D903719009FD57D /* SpotlightContinuationAppDelegate.h */,
+				9FCFC50D1D903719009FD57D /* SpotlightContinuationAppDelegate.m */,
+			);
+			name = SpotlightContinuationAppDelegate;
+			sourceTree = "<group>";
+		};
+		9FCFC50F1D9037B9009FD57D /* SearchLaunchRouter */ = {
+			isa = PBXGroup;
+			children = (
+				9FCFC5101D9037D3009FD57D /* SearchLaunchRouter.h */,
+				9FCFC5111D9037D3009FD57D /* SearchLaunchRouter.m */,
+			);
+			name = SearchLaunchRouter;
 			sourceTree = "<group>";
 		};
 		9FE1391F1D65BD6B00D7BF44 /* SuggestService */ = {
@@ -8387,6 +8413,7 @@
 				631808401C482B1300A61E7D /* SpeakerShortInfoInteractor.m in Sources */,
 				9FBE89B31D5CB71300DA0C32 /* EventLaunchRouter.m in Sources */,
 				661CA4071D65D0720047EB68 /* NSManagedObjectID+LJStringConversion.m in Sources */,
+				9FCFC50E1D903719009FD57D /* SpotlightContinuationAppDelegate.m in Sources */,
 				661CA4031D65D04E0047EB68 /* ServerResponseModel.m in Sources */,
 				9F78D7441D59D6EF009DDCEA /* SpotlightCoreDataStackCoordinatorImplementation.m in Sources */,
 				667050531D46332200DD9D6E /* ReportsSearchCellObjectsBuilderImplementation.m in Sources */,
@@ -8516,6 +8543,7 @@
 				66E9994C1D54AFB000161D98 /* TagModuleTableViewCell.m in Sources */,
 				661CA3F51D65CF920047EB68 /* EventOperationFactory.m in Sources */,
 				9F0A85001BC1698B006F79FB /* ResponseDeserializationOperation.m in Sources */,
+				9FCFC5121D9037D3009FD57D /* SearchLaunchRouter.m in Sources */,
 				9F78D74E1D59D755009DDCEA /* ContextStorageImplementation.m in Sources */,
 				2B20647D1D3F9CE900246C8D /* _SpeakerModelObject.m in Sources */,
 				9F0A853B1BC1908B006F79FB /* OperationChainer.m in Sources */,

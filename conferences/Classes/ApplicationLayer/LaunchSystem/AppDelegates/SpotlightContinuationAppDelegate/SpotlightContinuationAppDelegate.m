@@ -18,31 +18,24 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Typhoon/Typhoon.h>
-#import <RamblerTyphoonUtils/AssemblyCollector.h>
+#import "SpotlightContinuationAppDelegate.h"
 
-@class ApplicationHelperAssembly;
-@class StoryboardAssembly;
-@class SystemInfrastructureAssembly;
-@class SpotlightIndexerAssembly;
-@class SpotlightAppDelegate;
-@class QuickActionAppDelegate;
-@class SpotlightContinuationAppDelegate;
+#import "LaunchRouter.h"
 
-/**
- @author Egor Tolstoy
- 
- Assembly with definitions for LaunchSystem components
- */
-@interface LaunchSystemAssembly : TyphoonAssembly <RamblerInitialAssembly>
+#import <CoreSpotlight/CoreSpotlight.h>
 
-@property (strong, nonatomic, readonly) ApplicationHelperAssembly *applicationHelperAssembly;
-@property (strong, nonatomic, readonly) StoryboardAssembly *storyboardAssembly;
-@property (strong, nonatomic, readonly) SystemInfrastructureAssembly *systemInfrastructureAssembly;
-@property (strong, nonatomic, readonly) SpotlightIndexerAssembly *spotlightIndexerAssembly;
+@implementation SpotlightContinuationAppDelegate
 
-- (SpotlightAppDelegate *)spotlightAppDelegate;
-- (SpotlightContinuationAppDelegate *)spotlightContinuationAppDelegate;
-- (QuickActionAppDelegate *)quickActionAppDelegate;
+#pragma mark - <UIApplicationDelegate>
+
+- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray * _Nullable))restorationHandler {
+    if (![userActivity.activityType isEqualToString:CSQueryContinuationActionType]) {
+        return NO;
+    }
+    
+    [self.router openScreenWithData:@""];
+    
+    return YES;
+}
 
 @end
