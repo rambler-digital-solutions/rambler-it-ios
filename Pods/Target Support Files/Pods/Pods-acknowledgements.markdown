@@ -146,7 +146,7 @@ Fabric: Copyright 2015 Twitter, Inc. All Rights Reserved. Use of this software i
  Software is furnished to do so, subject to the following
  conditions:
  
- * Link to the MagicalRecord Repository at http:/github.com/magicalpanda/magicalrecord in the credits section of your application
+ * Link to the MagicalRecord Repository at https://github.com/magicalpanda/MagicalRecord in the credits section of your application
 
  The above copyright notice and this permission notice shall be
  included in all copies or substantial portions of the Software.
