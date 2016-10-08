@@ -21,7 +21,7 @@
 #import "ModuleAssemblyBase.h"
 #import "AssemblyCollector/RamblerInitialAssembly.h"
 
-@class PonsomizerAssembly;
+@class PonsomizerAssembly, EventListTableViewController;
 
 /**
  @author Artem Karpushin
@@ -31,6 +31,8 @@
 @interface EventListModuleAssembly : ModuleAssemblyBase <RamblerInitialAssembly>
 
 @property (strong, nonatomic) PonsomizerAssembly *coreAssembly;
+
+- (EventListTableViewController *)viewEventList;
 
 @end
 
