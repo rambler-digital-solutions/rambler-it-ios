@@ -105,6 +105,32 @@
 		631CBAA71C021C6900E3EBA8 /* EventTypeDeterminatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBAA61C021C6900E3EBA8 /* EventTypeDeterminatorTests.m */; };
 		631FFE191BEF451400749DB8 /* CDResponderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FFE141BEF451400749DB8 /* CDResponderTableViewCell.m */; };
 		631FFE1A1BEF451400749DB8 /* UIView+CDResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FFE181BEF451400749DB8 /* UIView+CDResponder.m */; };
+		6321841D1D9BFD22001BB7A7 /* Conference.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6373A40E1BBDC5EA00DF67FF /* Conference.xcdatamodeld */; };
+		6321841E1D9BFD31001BB7A7 /* SpotlightIndexer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D7401D59D6EF009DDCEA /* SpotlightIndexer.xcdatamodeld */; };
+		6321841F1D9BFD42001BB7A7 /* Conference.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 6373A40E1BBDC5EA00DF67FF /* Conference.xcdatamodeld */; };
+		632184201D9BFD49001BB7A7 /* SpotlightIndexer.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 9F78D7401D59D6EF009DDCEA /* SpotlightIndexer.xcdatamodeld */; };
+		632184211D9D2F2B001BB7A7 /* _LectureMaterialPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064421D3F9CE900246C8D /* _LectureMaterialPlainObject.m */; };
+		632184221D9D2F3A001BB7A7 /* LecturePlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B20646A1D3F9CE900246C8D /* LecturePlainObject.m */; };
+		632184231D9D2F65001BB7A7 /* _LecturePlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064441D3F9CE900246C8D /* _LecturePlainObject.m */; };
+		632184241D9D31B5001BB7A7 /* LectureMaterialModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064551D3F9CE900246C8D /* LectureMaterialModelObject.m */; };
+		632184251D9D31BF001BB7A7 /* _LectureMaterialModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B20642F1D3F9CE900246C8D /* _LectureMaterialModelObject.m */; };
+		632184261D9D3268001BB7A7 /* LectureMaterialPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064681D3F9CE900246C8D /* LectureMaterialPlainObject.m */; };
+		632184271D9D32C6001BB7A7 /* SpeakerPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064721D3F9CE900246C8D /* SpeakerPlainObject.m */; };
+		632184281D9D32CD001BB7A7 /* _SpeakerPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B20644C1D3F9CE900246C8D /* _SpeakerPlainObject.m */; };
+		632184291D9D3368001BB7A7 /* TagModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064611D3F9CE900246C8D /* TagModelObject.m */; };
+		6321842A1D9D33E7001BB7A7 /* TagPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064741D3F9CE900246C8D /* TagPlainObject.m */; };
+		6321842B1D9D33EF001BB7A7 /* _TagPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B20644E1D3F9CE900246C8D /* _TagPlainObject.m */; };
+		6321842C1D9D342B001BB7A7 /* _MetaEventPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064461D3F9CE900246C8D /* _MetaEventPlainObject.m */; };
+		6321842D1D9D3430001BB7A7 /* MetaEventPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B20646C1D3F9CE900246C8D /* MetaEventPlainObject.m */; };
+		6321842E1D9D34CC001BB7A7 /* TechModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064631D3F9CE900246C8D /* TechModelObject.m */; };
+		6321842F1D9D34D6001BB7A7 /* _TechModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B20643D1D3F9CE900246C8D /* _TechModelObject.m */; };
+		632184301D9D3521001BB7A7 /* _TechPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064501D3F9CE900246C8D /* _TechPlainObject.m */; };
+		632184311D9D3527001BB7A7 /* TechPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064761D3F9CE900246C8D /* TechPlainObject.m */; };
+		632184321D9D3558001BB7A7 /* SocialNetworkAccountModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B20645D1D3F9CE900246C8D /* SocialNetworkAccountModelObject.m */; };
+		632184331D9D355F001BB7A7 /* _SocialNetworkAccountModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064371D3F9CE900246C8D /* _SocialNetworkAccountModelObject.m */; };
+		632184341D9D3574001BB7A7 /* SocialNetworkAccountPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064701D3F9CE900246C8D /* SocialNetworkAccountPlainObject.m */; };
+		632184351D9D3579001BB7A7 /* _SocialNetworkAccountPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B20644A1D3F9CE900246C8D /* _SocialNetworkAccountPlainObject.m */; };
+		632184361D9D3816001BB7A7 /* EventListTableViewCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8AEF1D634F0500DA0C32 /* EventListTableViewCell.xib */; };
 		635E18BF1CA6A0A9005B8439 /* SpeakerInfoModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 635E18BE1CA6A0A9005B8439 /* SpeakerInfoModuleAssemblyTests.m */; };
 		635E18C21CA6A496005B8439 /* LectureModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 635E18C11CA6A496005B8439 /* LectureModuleAssemblyTests.m */; };
 		635E18C71CA6B8CE005B8439 /* SpeakerShortInfoModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 635E18C61CA6B8CE005B8439 /* SpeakerShortInfoModuleAssemblyTests.m */; };
@@ -119,6 +145,48 @@
 		636B640D1BBDD5000053E38F /* SocialNetworkAccountServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B640C1BBDD5000053E38F /* SocialNetworkAccountServiceImplementation.m */; };
 		636B64101BBDD6260053E38F /* SpeakerServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B640F1BBDD6260053E38F /* SpeakerServiceImplementation.m */; };
 		636B64121BBFE2C20053E38F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 636B64111BBFE2C20053E38F /* Main.storyboard */; };
+		636E26C61D8FDF41001ABB92 /* EventListModuleAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8AD01D634F0500DA0C32 /* EventListModuleAssembly.m */; };
+		636E26C71D8FE069001ABB92 /* EventListCellObjectBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8AFA1D634F0500DA0C32 /* EventListCellObjectBuilder.m */; };
+		636E26C81D8FE076001ABB92 /* EventListDataDisplayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8AF71D634F0500DA0C32 /* EventListDataDisplayManager.m */; };
+		636E26C91D8FE082001ABB92 /* EventListInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8AD31D634F0500DA0C32 /* EventListInteractor.m */; };
+		636E26CA1D8FE091001ABB92 /* EventListPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8AD81D634F0500DA0C32 /* EventListPresenter.m */; };
+		636E26CB1D8FE09C001ABB92 /* EventListRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8ADC1D634F0500DA0C32 /* EventListRouter.m */; };
+		636E26CC1D8FE0AB001ABB92 /* EventListTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F33B87F1D63512200BE136C /* EventListTableViewCellObject.m */; };
+		636E26CD1D8FE0B7001ABB92 /* EventListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8AEE1D634F0500DA0C32 /* EventListTableViewCell.m */; };
+		636E26CE1D8FE0C4001ABB92 /* EventListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8AE31D634F0500DA0C32 /* EventListTableViewController.m */; };
+		636E26CF1D8FE0D0001ABB92 /* MessageExtensionAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 636E269B1D8ECFAC001ABB92 /* MessageExtensionAssembly.m */; };
+		636E26D01D8FE0DC001ABB92 /* ModuleAssemblyBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D0B1BCB825F00552B91 /* ModuleAssemblyBase.m */; };
+		636E26D11D8FE0E9001ABB92 /* PonsomizerAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 66704FF81D4606D800DD9D6E /* PonsomizerAssembly.m */; };
+		636E26D21D8FE0F4001ABB92 /* ROSPonsomizerImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDDAB541D363D34007FD547 /* ROSPonsomizerImplementation.m */; };
+		636E26D61D8FE706001ABB92 /* ServiceComponentsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F54D9A1BC5AB3C00DB1746 /* ServiceComponentsAssembly.m */; };
+		636E26D71D8FE719001ABB92 /* EventServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8C961BC97B3100552B91 /* EventServiceImplementation.m */; };
+		636E26D81D8FE73F001ABB92 /* _EventModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B20642D1D3F9CE900246C8D /* _EventModelObject.m */; };
+		636E26D91D8FE74D001ABB92 /* EventListQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF74FF91D26C448000D208D /* EventListQuery.m */; };
+		636E26DA1D8FE760001ABB92 /* EventModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064531D3F9CE900246C8D /* EventModelObject.m */; };
+		636E26DB1D8FE76E001ABB92 /* EventStoreService.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D7460E1C8B0D5200E3A381 /* EventStoreService.m */; };
+		636E26DC1D8FE77D001ABB92 /* LectureServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64031BBDD19A0053E38F /* LectureServiceImplementation.m */; };
+		636E26DD1D8FE78D001ABB92 /* LectureModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064571D3F9CE900246C8D /* LectureModelObject.m */; };
+		636E26DE1D8FE799001ABB92 /* LastModifiedModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 661CA4111D65D0E30047EB68 /* LastModifiedModelObject.m */; };
+		636E26DF1D8FE7A2001ABB92 /* _LastModifiedModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 661CA4091D65D0D20047EB68 /* _LastModifiedModelObject.m */; };
+		636E26E01D8FE7AE001ABB92 /* MetaEventServiceImpementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B429A7B1D50987E004C005F /* MetaEventServiceImpementation.m */; };
+		636E26E11D8FE7C9001ABB92 /* _MetaEventModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064331D3F9CE900246C8D /* _MetaEventModelObject.m */; };
+		636E26E21D8FE7D7001ABB92 /* MetaEventModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064591D3F9CE900246C8D /* MetaEventModelObject.m */; };
+		636E26E31D8FE7E3001ABB92 /* OperationSchedulerImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF99E501BC42FF6006F15AF /* OperationSchedulerImplementation.m */; };
+		636E26E41D8FE7EE001ABB92 /* PushNotificationServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF15BF1BC461DD00480CAF /* PushNotificationServiceImplementation.m */; };
+		636E26E51D8FE7FB001ABB92 /* RamblerLocationServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F40777E1D2BF4F300D47EF6 /* RamblerLocationServiceImplementation.m */; };
+		636E26E61D8FE807001ABB92 /* SpeakerServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B640F1BBDD6260053E38F /* SpeakerServiceImplementation.m */; };
+		636E26E71D8FE816001ABB92 /* SpeakerModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B20645F1D3F9CE900246C8D /* SpeakerModelObject.m */; };
+		636E26E81D8FE822001ABB92 /* SuggestServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE139221D65BD9700D7BF44 /* SuggestServiceImplementation.m */; };
+		636E26E91D8FE82D001ABB92 /* TagServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E999991D54B31300161D98 /* TagServiceImplementation.m */; };
+		636E26EA1D8FE837001ABB92 /* TagServicePredicateBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E9999B1D54B31300161D98 /* TagServicePredicateBuilder.m */; };
+		636E26EB1D8FE847001ABB92 /* _LectureModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064311D3F9CE900246C8D /* _LectureModelObject.m */; };
+		636E26EC1D8FE859001ABB92 /* _SpeakerModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064391D3F9CE900246C8D /* _SpeakerModelObject.m */; };
+		636E26ED1D8FE86A001ABB92 /* _TagModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B20643B1D3F9CE900246C8D /* _TagModelObject.m */; };
+		636E26EE1D8FE8AD001ABB92 /* EventPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064661D3F9CE900246C8D /* EventPlainObject.m */; };
+		636E26EF1D8FE8CB001ABB92 /* _EventPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064401D3F9CE900246C8D /* _EventPlainObject.m */; };
+		636E26F01D8FE8E6001ABB92 /* ErrorConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ECC4151CA81E5300439A01 /* ErrorConstants.m */; };
+		636E26F11D8FEF29001ABB92 /* NSManagedObjectID+LJStringConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 661CA4061D65D0720047EB68 /* NSManagedObjectID+LJStringConversion.m */; };
+		636E26F31D8FF072001ABB92 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636E26F21D8FF072001ABB92 /* CoreData.framework */; };
 		636F8C971BC97B3100552B91 /* EventServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8C961BC97B3100552B91 /* EventServiceImplementation.m */; };
 		636F8D0C1BCB825F00552B91 /* ModuleAssemblyBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D0B1BCB825F00552B91 /* ModuleAssemblyBase.m */; };
 		636F8DDA1BCB8FE800552B91 /* RamblerLocationModuleAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8DC21BCB8FE800552B91 /* RamblerLocationModuleAssembly.m */; };
@@ -127,6 +195,11 @@
 		636F8DDD1BCB8FE800552B91 /* RamblerLocationRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8DCD1BCB8FE800552B91 /* RamblerLocationRouter.m */; };
 		636F8DDE1BCB8FE800552B91 /* RamblerLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8DD11BCB8FE800552B91 /* RamblerLocationViewController.m */; };
 		636F8DFF1BCB91A900552B91 /* RamblerLocation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 636F8DFE1BCB91A900552B91 /* RamblerLocation.storyboard */; };
+		63BDBBC31D87E3DE006E8A15 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63BDBBC21D87E3DE006E8A15 /* Messages.framework */; };
+		63BDBBC71D87E3DE006E8A15 /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BDBBC61D87E3DE006E8A15 /* MessagesViewController.m */; };
+		63BDBBCA1D87E3DE006E8A15 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BDBBC81D87E3DE006E8A15 /* MainInterface.storyboard */; };
+		63BDBBCC1D87E3DE006E8A15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63BDBBCB1D87E3DE006E8A15 /* Assets.xcassets */; };
+		63BDBBD01D87E3DE006E8A15 /* RamblerMessageExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 63BDBBC11D87E3DE006E8A15 /* RamblerMessageExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		63D86BDA1C1439D800986536 /* DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D86BD91C1439D800986536 /* DateFormatter.m */; };
 		63D86BDD1C143FCE00986536 /* DateFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D86BDC1C143FCE00986536 /* DateFormatterTests.m */; };
 		63ECC4161CA81E5300439A01 /* ErrorConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ECC4151CA81E5300439A01 /* ErrorConstants.m */; };
@@ -321,6 +394,7 @@
 		66EE4D351D54BFCD0011F94A /* NITableViewModel+LJIndexOfObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EE4D311D54BFCD0011F94A /* NITableViewModel+LJIndexOfObject.m */; };
 		66EE4D361D54BFCD0011F94A /* NITableViewModel+NextInputResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EE4D331D54BFCD0011F94A /* NITableViewModel+NextInputResponder.m */; };
 		66FFD29C1D7DCCFB0009B7DC /* CollectionViewContentCellAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 66FFD29B1D7DCCFB0009B7DC /* CollectionViewContentCellAnimator.m */; };
+		9A0EEDB6B85D7A9A13847D60 /* libPods-RamblerMessageExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DD2D1BD8B19DA33CC71B815 /* libPods-RamblerMessageExtension.a */; };
 		9F0A6C1D1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */; };
 		9F0A6C2E1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C2D1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m */; };
 		9F0A84C31BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A84C21BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m */; };
@@ -572,6 +646,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		63BDBBCE1D87E3DE006E8A15 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F1F37DC1BBBB80D00C7797D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 63BDBBC01D87E3DE006E8A15;
+			remoteInfo = RamblerMessageExtension;
+		};
 		9F1F38011BBBB80D00C7797D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9F1F37DC1BBBB80D00C7797D /* Project object */;
@@ -580,6 +661,20 @@
 			remoteInfo = Conferences;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		63BDBBD51D87E3DE006E8A15 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				63BDBBD01D87E3DE006E8A15 /* RamblerMessageExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2A4F504A716A8833A7A01A5D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -695,6 +790,8 @@
 		3784462D1D4E067A0016121E /* RCNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCNavigationController.h; sourceTree = "<group>"; };
 		3784462E1D4E067A0016121E /* RCNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCNavigationController.m; sourceTree = "<group>"; };
 		37C2D8F2CACC9D443740E428 /* EventGalleryInteractorTests.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EventGalleryInteractorTests.m; sourceTree = "<group>"; };
+		3FF34B2C16698CFE0F52F7C1 /* Pods.nightly.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.nightly.xcconfig; path = "Pods/Target Support Files/Pods/Pods.nightly.xcconfig"; sourceTree = "<group>"; };
+		4F6D62D1702A84C83A3BA854 /* Pods-RamblerMessageExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RamblerMessageExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-RamblerMessageExtension/Pods-RamblerMessageExtension.release.xcconfig"; sourceTree = "<group>"; };
 		559ED4EDBC100544852E4E6A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		5E72B1E234365770B87BDC6D /* libPods-ConferencesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ConferencesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FED76184BAB5478101AC945 /* Pods-ConferencesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConferencesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConferencesTests/Pods-ConferencesTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -754,6 +851,7 @@
 		631FFE151BEF451400749DB8 /* RCMResignFirstResponderHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCMResignFirstResponderHandler.h; sourceTree = "<group>"; };
 		631FFE171BEF451400749DB8 /* UIView+CDResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CDResponder.h"; sourceTree = "<group>"; };
 		631FFE181BEF451400749DB8 /* UIView+CDResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CDResponder.m"; sourceTree = "<group>"; };
+		6321841B1D9BF7E7001BB7A7 /* libMagicalRecord.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMagicalRecord.a; path = "../Library/Developer/Xcode/DerivedData/Conferences-fqevuzrasmsxnccgiaatgyhwrafz/Build/Products/Debug-iphonesimulator/libMagicalRecord.a"; sourceTree = "<group>"; };
 		635E18BD1CA69F4A005B8439 /* SpeakerInfoModuleAssembly_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpeakerInfoModuleAssembly_Testable.h; sourceTree = "<group>"; };
 		635E18BE1CA6A0A9005B8439 /* SpeakerInfoModuleAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerInfoModuleAssemblyTests.m; sourceTree = "<group>"; };
 		635E18C01CA6A3E3005B8439 /* LectureModuleAssembly_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LectureModuleAssembly_Testable.h; sourceTree = "<group>"; };
@@ -786,6 +884,9 @@
 		636B640E1BBDD6260053E38F /* SpeakerServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerServiceImplementation.h; sourceTree = "<group>"; };
 		636B640F1BBDD6260053E38F /* SpeakerServiceImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerServiceImplementation.m; sourceTree = "<group>"; };
 		636B64111BBFE2C20053E38F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		636E269A1D8ECFAC001ABB92 /* MessageExtensionAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageExtensionAssembly.h; path = Classes/Assembly/MessageExtensionAssembly.h; sourceTree = "<group>"; };
+		636E269B1D8ECFAC001ABB92 /* MessageExtensionAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageExtensionAssembly.m; path = Classes/Assembly/MessageExtensionAssembly.m; sourceTree = "<group>"; };
+		636E26F21D8FF072001ABB92 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		636F8C951BC97B3100552B91 /* EventServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventServiceImplementation.h; sourceTree = "<group>"; };
 		636F8C961BC97B3100552B91 /* EventServiceImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventServiceImplementation.m; sourceTree = "<group>"; };
 		636F8D0A1BCB825F00552B91 /* ModuleAssemblyBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleAssemblyBase.h; sourceTree = "<group>"; };
@@ -812,6 +913,15 @@
 		6373A40F1BBDC5EA00DF67FF /* Conference.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Conference.xcdatamodel; sourceTree = "<group>"; };
 		638172081C8B118D0094F19A /* EventStoreServiceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventStoreServiceProtocol.h; sourceTree = "<group>"; };
 		6394E4181CB1510800548EAE /* LectureViewController_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LectureViewController_Testable.h; sourceTree = "<group>"; };
+		63AA03541D99063900F4C094 /* Conferences.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Conferences.entitlements; sourceTree = "<group>"; };
+		63AA03551D99067000F4C094 /* RamblerMessageExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RamblerMessageExtension.entitlements; sourceTree = "<group>"; };
+		63BDBBC11D87E3DE006E8A15 /* RamblerMessageExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RamblerMessageExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		63BDBBC21D87E3DE006E8A15 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
+		63BDBBC51D87E3DE006E8A15 /* MessagesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessagesViewController.h; sourceTree = "<group>"; };
+		63BDBBC61D87E3DE006E8A15 /* MessagesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessagesViewController.m; sourceTree = "<group>"; };
+		63BDBBC91D87E3DE006E8A15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		63BDBBCB1D87E3DE006E8A15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		63BDBBCD1D87E3DE006E8A15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63D7460D1C8B0D5200E3A381 /* EventStoreService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventStoreService.h; sourceTree = "<group>"; };
 		63D7460E1C8B0D5200E3A381 /* EventStoreService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventStoreService.m; sourceTree = "<group>"; };
 		63D86BD81C1439D800986536 /* DateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateFormatter.h; sourceTree = "<group>"; };
@@ -1187,6 +1297,9 @@
 		66FFD29A1D7DCCFB0009B7DC /* CollectionViewContentCellAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CollectionViewContentCellAnimator.h; path = conferences/Classes/PresentationLayer/Helpers/CollectionViewContentCellAnimator/CollectionViewContentCellAnimator.h; sourceTree = SOURCE_ROOT; };
 		66FFD29B1D7DCCFB0009B7DC /* CollectionViewContentCellAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CollectionViewContentCellAnimator.m; path = conferences/Classes/PresentationLayer/Helpers/CollectionViewContentCellAnimator/CollectionViewContentCellAnimator.m; sourceTree = SOURCE_ROOT; };
 		76E95A8F2CA91B564A26FB49 /* EventGalleryViewControllerTests.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EventGalleryViewControllerTests.m; sourceTree = "<group>"; };
+		78CE7016463ABBC901050F19 /* Pods-ConferencesTests.nightly.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConferencesTests.nightly.xcconfig"; path = "Pods/Target Support Files/Pods-ConferencesTests/Pods-ConferencesTests.nightly.xcconfig"; sourceTree = "<group>"; };
+		7C792CFFA34171CCC305DD0D /* Pods-RamblerMessageExtension.nightly.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RamblerMessageExtension.nightly.xcconfig"; path = "Pods/Target Support Files/Pods-RamblerMessageExtension/Pods-RamblerMessageExtension.nightly.xcconfig"; sourceTree = "<group>"; };
+		7DD2D1BD8B19DA33CC71B815 /* libPods-RamblerMessageExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RamblerMessageExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D2CBEF6E088EFC9A139E49 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9F0A6C1B1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CompoundOperationBuilderConfig.h; path = OperationBuilders/CompoundOperationBuilderConfig/CompoundOperationBuilderConfig.h; sourceTree = "<group>"; };
 		9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CompoundOperationBuilderConfig.m; path = OperationBuilders/CompoundOperationBuilderConfig/CompoundOperationBuilderConfig.m; sourceTree = "<group>"; };
@@ -1671,10 +1784,21 @@
 		9FFEAF091D2E5CD3006E9649 /* MapLinkBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapLinkBuilder.h; path = MapLinkBuilder/MapLinkBuilder.h; sourceTree = "<group>"; };
 		9FFEAF0A1D2E5CE0006E9649 /* AppleMapsLinkBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppleMapsLinkBuilder.h; path = MapLinkBuilder/AppleMapsLinkBuilder.h; sourceTree = "<group>"; };
 		9FFEAF0B1D2E5CE0006E9649 /* AppleMapsLinkBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppleMapsLinkBuilder.m; path = MapLinkBuilder/AppleMapsLinkBuilder.m; sourceTree = "<group>"; };
+		C734A53C32A7A16F1C8B0956 /* Pods-RamblerMessageExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RamblerMessageExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RamblerMessageExtension/Pods-RamblerMessageExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		E95DD4B714E0257EE1CE1C0D /* EventGalleryPresenterTests.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EventGalleryPresenterTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		63BDBBBE1D87E3DE006E8A15 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				636E26F31D8FF072001ABB92 /* CoreData.framework in Frameworks */,
+				63BDBBC31D87E3DE006E8A15 /* Messages.framework in Frameworks */,
+				9A0EEDB6B85D7A9A13847D60 /* libPods-RamblerMessageExtension.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9F1F37E11BBBB80D00C7797D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -2467,6 +2591,23 @@
 			path = SocialNetworkAccountService;
 			sourceTree = "<group>";
 		};
+		636E26981D8ECF4A001ABB92 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				636E26991D8ECF5D001ABB92 /* Assembly */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		636E26991D8ECF5D001ABB92 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				636E269A1D8ECFAC001ABB92 /* MessageExtensionAssembly.h */,
+				636E269B1D8ECFAC001ABB92 /* MessageExtensionAssembly.m */,
+			);
+			name = Assembly;
+			sourceTree = "<group>";
+		};
 		636F8D081BCB822F00552B91 /* Assemblies */ = {
 			isa = PBXGroup;
 			children = (
@@ -2645,6 +2786,20 @@
 				636B640F1BBDD6260053E38F /* SpeakerServiceImplementation.m */,
 			);
 			path = SpeakerService;
+			sourceTree = "<group>";
+		};
+		63BDBBC41D87E3DE006E8A15 /* RamblerMessageExtension */ = {
+			isa = PBXGroup;
+			children = (
+				63AA03551D99067000F4C094 /* RamblerMessageExtension.entitlements */,
+				636E26981D8ECF4A001ABB92 /* Classes */,
+				63BDBBC51D87E3DE006E8A15 /* MessagesViewController.h */,
+				63BDBBC61D87E3DE006E8A15 /* MessagesViewController.m */,
+				63BDBBC81D87E3DE006E8A15 /* MainInterface.storyboard */,
+				63BDBBCB1D87E3DE006E8A15 /* Assets.xcassets */,
+				63BDBBCD1D87E3DE006E8A15 /* Info.plist */,
+			);
+			path = RamblerMessageExtension;
 			sourceTree = "<group>";
 		};
 		63D7460B1C8B0CF600E3A381 /* EventStoreService */ = {
@@ -4616,6 +4771,11 @@
 				84D2CBEF6E088EFC9A139E49 /* Pods.release.xcconfig */,
 				2C01BA17D4018DCA62CC6C3B /* Pods-ConferencesTests.debug.xcconfig */,
 				5FED76184BAB5478101AC945 /* Pods-ConferencesTests.release.xcconfig */,
+				C734A53C32A7A16F1C8B0956 /* Pods-RamblerMessageExtension.debug.xcconfig */,
+				4F6D62D1702A84C83A3BA854 /* Pods-RamblerMessageExtension.release.xcconfig */,
+				7C792CFFA34171CCC305DD0D /* Pods-RamblerMessageExtension.nightly.xcconfig */,
+				3FF34B2C16698CFE0F52F7C1 /* Pods.nightly.xcconfig */,
+				78CE7016463ABBC901050F19 /* Pods-ConferencesTests.nightly.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -5624,6 +5784,7 @@
 				9F1F37E61BBBB80D00C7797D /* Conferences */,
 				9F1F38031BBBB80D00C7797D /* ConferencesTests */,
 				635E18CA1CA6C572005B8439 /* ConferencesTestHelpers */,
+				63BDBBC41D87E3DE006E8A15 /* RamblerMessageExtension */,
 				9F1F37E51BBBB80D00C7797D /* Products */,
 				9879306505819DD768BE2239 /* Pods */,
 				D1799435EABEFA40D1849E2A /* Frameworks */,
@@ -5635,6 +5796,7 @@
 			children = (
 				9F1F37E41BBBB80D00C7797D /* Conferences.app */,
 				9F1F38001BBBB80D00C7797D /* ConferencesTests.xctest */,
+				63BDBBC11D87E3DE006E8A15 /* RamblerMessageExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -5642,6 +5804,7 @@
 		9F1F37E61BBBB80D00C7797D /* Conferences */ = {
 			isa = PBXGroup;
 			children = (
+				63AA03541D99063900F4C094 /* Conferences.entitlements */,
 				63FDCDD81BBDBA2A00A43B60 /* Classes */,
 				63FDCE001BBDBA2A00A43B60 /* Resources */,
 				63FDCE031BBDBA2A00A43B60 /* Supporting Files */,
@@ -7953,8 +8116,12 @@
 		D1799435EABEFA40D1849E2A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6321841B1D9BF7E7001BB7A7 /* libMagicalRecord.a */,
+				636E26F21D8FF072001ABB92 /* CoreData.framework */,
 				2A4F504A716A8833A7A01A5D /* libPods.a */,
 				5E72B1E234365770B87BDC6D /* libPods-ConferencesTests.a */,
+				63BDBBC21D87E3DE006E8A15 /* Messages.framework */,
+				7DD2D1BD8B19DA33CC71B815 /* libPods-RamblerMessageExtension.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -7962,6 +8129,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		63BDBBC01D87E3DE006E8A15 /* RamblerMessageExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63BDBBD41D87E3DE006E8A15 /* Build configuration list for PBXNativeTarget "RamblerMessageExtension" */;
+			buildPhases = (
+				9817CBBE92A90330574EF271 /* Check Pods Manifest.lock */,
+				63BDBBBD1D87E3DE006E8A15 /* Sources */,
+				63BDBBBE1D87E3DE006E8A15 /* Frameworks */,
+				63BDBBBF1D87E3DE006E8A15 /* Resources */,
+				2402DCDF1C57B359AA190D2E /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RamblerMessageExtension;
+			productName = RamblerMessageExtension;
+			productReference = 63BDBBC11D87E3DE006E8A15 /* RamblerMessageExtension.appex */;
+			productType = "com.apple.product-type.app-extension.messages";
+		};
 		9F1F37E31BBBB80D00C7797D /* Conferences */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9F1F38091BBBB80D00C7797D /* Build configuration list for PBXNativeTarget "Conferences" */;
@@ -7973,10 +8159,12 @@
 				AC57B147A39D9B475E98FAA1 /* Copy Pods Resources */,
 				98E8F62F8473562795B255F8 /* Embed Pods Frameworks */,
 				9FF4C3E41CE22036002157B2 /* ShellScript */,
+				63BDBBD51D87E3DE006E8A15 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				63BDBBCF1D87E3DE006E8A15 /* PBXTargetDependency */,
 			);
 			name = Conferences;
 			productName = Conferences;
@@ -8016,10 +8204,23 @@
 					2B750D101D362C1B00EACE98 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
+					63BDBBC01D87E3DE006E8A15 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = UM246WFXVS;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					9F1F37E31BBBB80D00C7797D = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = UM246WFXVS;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 0;
 							};
@@ -8047,11 +8248,23 @@
 				9F1F37E31BBBB80D00C7797D /* Conferences */,
 				2B750D101D362C1B00EACE98 /* Mogenerator */,
 				9F1F37FF1BBBB80D00C7797D /* ConferencesTests */,
+				63BDBBC01D87E3DE006E8A15 /* RamblerMessageExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		63BDBBBF1D87E3DE006E8A15 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				632184201D9BFD49001BB7A7 /* SpotlightIndexer.xcdatamodeld in Resources */,
+				6321841F1D9BFD42001BB7A7 /* Conference.xcdatamodeld in Resources */,
+				63BDBBCC1D87E3DE006E8A15 /* Assets.xcassets in Resources */,
+				63BDBBCA1D87E3DE006E8A15 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9F1F37E21BBBB80D00C7797D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -8118,6 +8331,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2402DCDF1C57B359AA190D2E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RamblerMessageExtension/Pods-RamblerMessageExtension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		2B750D161D362DB000EACE98 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -8132,6 +8360,21 @@
 			shellScript = "\"${SRCROOT}/Scripts/mogenerator.sh\"";
 		};
 		557A799BF98EEBF2A32D64F3 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9817CBBE92A90330574EF271 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -8237,6 +8480,79 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		63BDBBBD1D87E3DE006E8A15 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				632184361D9D3816001BB7A7 /* EventListTableViewCell.xib in Sources */,
+				636E26D71D8FE719001ABB92 /* EventServiceImplementation.m in Sources */,
+				636E26ED1D8FE86A001ABB92 /* _TagModelObject.m in Sources */,
+				632184241D9D31B5001BB7A7 /* LectureMaterialModelObject.m in Sources */,
+				636E26EF1D8FE8CB001ABB92 /* _EventPlainObject.m in Sources */,
+				636E26CE1D8FE0C4001ABB92 /* EventListTableViewController.m in Sources */,
+				636E26E71D8FE816001ABB92 /* SpeakerModelObject.m in Sources */,
+				636E26CD1D8FE0B7001ABB92 /* EventListTableViewCell.m in Sources */,
+				6321841E1D9BFD31001BB7A7 /* SpotlightIndexer.xcdatamodeld in Sources */,
+				636E26E21D8FE7D7001ABB92 /* MetaEventModelObject.m in Sources */,
+				632184311D9D3527001BB7A7 /* TechPlainObject.m in Sources */,
+				636E26DD1D8FE78D001ABB92 /* LectureModelObject.m in Sources */,
+				632184341D9D3574001BB7A7 /* SocialNetworkAccountPlainObject.m in Sources */,
+				6321842A1D9D33E7001BB7A7 /* TagPlainObject.m in Sources */,
+				632184301D9D3521001BB7A7 /* _TechPlainObject.m in Sources */,
+				636E26D81D8FE73F001ABB92 /* _EventModelObject.m in Sources */,
+				636E26E01D8FE7AE001ABB92 /* MetaEventServiceImpementation.m in Sources */,
+				636E26F01D8FE8E6001ABB92 /* ErrorConstants.m in Sources */,
+				632184221D9D2F3A001BB7A7 /* LecturePlainObject.m in Sources */,
+				636E26E31D8FE7E3001ABB92 /* OperationSchedulerImplementation.m in Sources */,
+				6321842E1D9D34CC001BB7A7 /* TechModelObject.m in Sources */,
+				636E26C61D8FDF41001ABB92 /* EventListModuleAssembly.m in Sources */,
+				632184321D9D3558001BB7A7 /* SocialNetworkAccountModelObject.m in Sources */,
+				636E26DE1D8FE799001ABB92 /* LastModifiedModelObject.m in Sources */,
+				636E26E81D8FE822001ABB92 /* SuggestServiceImplementation.m in Sources */,
+				6321842B1D9D33EF001BB7A7 /* _TagPlainObject.m in Sources */,
+				636E26E41D8FE7EE001ABB92 /* PushNotificationServiceImplementation.m in Sources */,
+				632184351D9D3579001BB7A7 /* _SocialNetworkAccountPlainObject.m in Sources */,
+				636E26E11D8FE7C9001ABB92 /* _MetaEventModelObject.m in Sources */,
+				632184271D9D32C6001BB7A7 /* SpeakerPlainObject.m in Sources */,
+				636E26CC1D8FE0AB001ABB92 /* EventListTableViewCellObject.m in Sources */,
+				636E26E61D8FE807001ABB92 /* SpeakerServiceImplementation.m in Sources */,
+				636E26F11D8FEF29001ABB92 /* NSManagedObjectID+LJStringConversion.m in Sources */,
+				6321841D1D9BFD22001BB7A7 /* Conference.xcdatamodeld in Sources */,
+				636E26E91D8FE82D001ABB92 /* TagServiceImplementation.m in Sources */,
+				636E26DB1D8FE76E001ABB92 /* EventStoreService.m in Sources */,
+				636E26D21D8FE0F4001ABB92 /* ROSPonsomizerImplementation.m in Sources */,
+				636E26EA1D8FE837001ABB92 /* TagServicePredicateBuilder.m in Sources */,
+				636E26EC1D8FE859001ABB92 /* _SpeakerModelObject.m in Sources */,
+				636E26D01D8FE0DC001ABB92 /* ModuleAssemblyBase.m in Sources */,
+				636E26D61D8FE706001ABB92 /* ServiceComponentsAssembly.m in Sources */,
+				632184291D9D3368001BB7A7 /* TagModelObject.m in Sources */,
+				636E26CB1D8FE09C001ABB92 /* EventListRouter.m in Sources */,
+				632184331D9D355F001BB7A7 /* _SocialNetworkAccountModelObject.m in Sources */,
+				636E26EB1D8FE847001ABB92 /* _LectureModelObject.m in Sources */,
+				6321842C1D9D342B001BB7A7 /* _MetaEventPlainObject.m in Sources */,
+				636E26EE1D8FE8AD001ABB92 /* EventPlainObject.m in Sources */,
+				636E26C81D8FE076001ABB92 /* EventListDataDisplayManager.m in Sources */,
+				636E26D91D8FE74D001ABB92 /* EventListQuery.m in Sources */,
+				632184281D9D32CD001BB7A7 /* _SpeakerPlainObject.m in Sources */,
+				636E26DA1D8FE760001ABB92 /* EventModelObject.m in Sources */,
+				636E26C91D8FE082001ABB92 /* EventListInteractor.m in Sources */,
+				636E26E51D8FE7FB001ABB92 /* RamblerLocationServiceImplementation.m in Sources */,
+				636E26DF1D8FE7A2001ABB92 /* _LastModifiedModelObject.m in Sources */,
+				636E26D11D8FE0E9001ABB92 /* PonsomizerAssembly.m in Sources */,
+				632184231D9D2F65001BB7A7 /* _LecturePlainObject.m in Sources */,
+				6321842D1D9D3430001BB7A7 /* MetaEventPlainObject.m in Sources */,
+				632184251D9D31BF001BB7A7 /* _LectureMaterialModelObject.m in Sources */,
+				636E26C71D8FE069001ABB92 /* EventListCellObjectBuilder.m in Sources */,
+				63BDBBC71D87E3DE006E8A15 /* MessagesViewController.m in Sources */,
+				636E26CA1D8FE091001ABB92 /* EventListPresenter.m in Sources */,
+				632184211D9D2F2B001BB7A7 /* _LectureMaterialPlainObject.m in Sources */,
+				6321842F1D9D34D6001BB7A7 /* _TechModelObject.m in Sources */,
+				632184261D9D3268001BB7A7 /* LectureMaterialPlainObject.m in Sources */,
+				636E26DC1D8FE77D001ABB92 /* LectureServiceImplementation.m in Sources */,
+				636E26CF1D8FE0D0001ABB92 /* MessageExtensionAssembly.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9F1F37E01BBBB80D00C7797D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -8751,12 +9067,28 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		63BDBBCF1D87E3DE006E8A15 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 63BDBBC01D87E3DE006E8A15 /* RamblerMessageExtension */;
+			targetProxy = 63BDBBCE1D87E3DE006E8A15 /* PBXContainerItemProxy */;
+		};
 		9F1F38021BBBB80D00C7797D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9F1F37E31BBBB80D00C7797D /* Conferences */;
 			targetProxy = 9F1F38011BBBB80D00C7797D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		63BDBBC81D87E3DE006E8A15 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63BDBBC91D87E3DE006E8A15 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		2B750D111D362C1B00EACE98 /* Debug */ = {
@@ -8780,6 +9112,77 @@
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Nightly;
+		};
+		63BDBBD11D87E3DE006E8A15 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C734A53C32A7A16F1C8B0956 /* Pods-RamblerMessageExtension.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_ENTITLEMENTS = RamblerMessageExtension/RamblerMessageExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = UM246WFXVS;
+				INFOPLIST_FILE = RamblerMessageExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.ramblerco.rambler.it.RamblerMessageExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s";
+			};
+			name = Debug;
+		};
+		63BDBBD21D87E3DE006E8A15 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F6D62D1702A84C83A3BA854 /* Pods-RamblerMessageExtension.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_ENTITLEMENTS = RamblerMessageExtension/RamblerMessageExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = UM246WFXVS;
+				INFOPLIST_FILE = RamblerMessageExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.ramblerco.rambler.it.RamblerMessageExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s";
+			};
+			name = Release;
+		};
+		63BDBBD31D87E3DE006E8A15 /* Nightly */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C792CFFA34171CCC305DD0D /* Pods-RamblerMessageExtension.nightly.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_ENTITLEMENTS = RamblerMessageExtension/RamblerMessageExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = UM246WFXVS;
+				INFOPLIST_FILE = RamblerMessageExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.ramblerco.rambler.it.RamblerMessageExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Nightly;
 		};
@@ -8823,9 +9226,10 @@
 		};
 		892D07FD1BED037200825704 /* Nightly */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 84D2CBEF6E088EFC9A139E49 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 3FF34B2C16698CFE0F52F7C1 /* Pods.nightly.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Conferences/Conferences.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CURRENT_PROJECT_VERSION = 33;
@@ -8869,7 +9273,7 @@
 		};
 		892D07FE1BED037200825704 /* Nightly */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5FED76184BAB5478101AC945 /* Pods-ConferencesTests.release.xcconfig */;
+			baseConfigurationReference = 78CE7016463ABBC901050F19 /* Pods-ConferencesTests.nightly.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "ConferencesTests/Supporting Files/Info.plist";
@@ -8967,6 +9371,7 @@
 			baseConfigurationReference = 559ED4EDBC100544852E4E6A /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Conferences/Conferences.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 33;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -9012,6 +9417,7 @@
 			baseConfigurationReference = 84D2CBEF6E088EFC9A139E49 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Conferences/Conferences.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CURRENT_PROJECT_VERSION = 33;
@@ -9120,6 +9526,16 @@
 				2B750D111D362C1B00EACE98 /* Debug */,
 				2B750D121D362C1B00EACE98 /* Release */,
 				2B750D131D362C1B00EACE98 /* Nightly */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		63BDBBD41D87E3DE006E8A15 /* Build configuration list for PBXNativeTarget "RamblerMessageExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63BDBBD11D87E3DE006E8A15 /* Debug */,
+				63BDBBD21D87E3DE006E8A15 /* Release */,
+				63BDBBD31D87E3DE006E8A15 /* Nightly */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
