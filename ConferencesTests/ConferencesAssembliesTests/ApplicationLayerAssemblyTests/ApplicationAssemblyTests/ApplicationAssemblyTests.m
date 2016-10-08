@@ -26,7 +26,6 @@
 #import "ServiceComponentsAssembly.h"
 
 #import "ApplicationConfiguratorImplementation.h"
-#import "PushNotificationCenterImplementation.h"
 #import "ThirdPartiesConfiguratorImplementation.h"
 #import "RamblerInitialAssemblyCollector+Activate.h"
 

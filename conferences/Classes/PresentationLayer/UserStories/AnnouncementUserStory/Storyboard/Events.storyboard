@@ -152,6 +152,9 @@
                     <navigationItem key="navigationItem" title="Все события" id="bnq-gD-ykW"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="VXB-v3-PPF" kind="push" identifier="EventListModuleToEventModuleSegue" id="cI1-GF-03R"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nFg-Tn-fxr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -204,8 +204,6 @@
 		63D86BDD1C143FCE00986536 /* DateFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D86BDC1C143FCE00986536 /* DateFormatterTests.m */; };
 		63ECC4161CA81E5300439A01 /* ErrorConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ECC4151CA81E5300439A01 /* ErrorConstants.m */; };
 		63ECC4191CA8373400439A01 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 63ECC4181CA8373400439A01 /* Localizable.strings */; };
-		63EF15BB1BC4559900480CAF /* PushNotificationCenterImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF15BA1BC4559900480CAF /* PushNotificationCenterImplementation.m */; };
-		63EF15C01BC461DD00480CAF /* PushNotificationServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF15BF1BC461DD00480CAF /* PushNotificationServiceImplementation.m */; };
 		63F342B01C8B20AB002AF7CD /* EventStoreService.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D7460E1C8B0D5200E3A381 /* EventStoreService.m */; };
 		63F402F01BCF77CB0086D030 /* ApplicationAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F402ED1BCF77CB0086D030 /* ApplicationAssemblyTests.m */; };
 		63F402F11BCF77CB0086D030 /* ServiceComponentsAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F402EF1BCF77CB0086D030 /* ServiceComponentsAssemblyTests.m */; };
@@ -930,12 +928,6 @@
 		63ECC4141CA81E5300439A01 /* ErrorConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorConstants.h; sourceTree = "<group>"; };
 		63ECC4151CA81E5300439A01 /* ErrorConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorConstants.m; sourceTree = "<group>"; };
 		63ECC4181CA8373400439A01 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		63EF15B81BC4557600480CAF /* PushNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNotificationCenter.h; sourceTree = "<group>"; };
-		63EF15B91BC4559900480CAF /* PushNotificationCenterImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNotificationCenterImplementation.h; sourceTree = "<group>"; };
-		63EF15BA1BC4559900480CAF /* PushNotificationCenterImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushNotificationCenterImplementation.m; sourceTree = "<group>"; };
-		63EF15BD1BC461B700480CAF /* PushNotificationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNotificationService.h; sourceTree = "<group>"; };
-		63EF15BE1BC461DD00480CAF /* PushNotificationServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNotificationServiceImplementation.h; sourceTree = "<group>"; };
-		63EF15BF1BC461DD00480CAF /* PushNotificationServiceImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushNotificationServiceImplementation.m; sourceTree = "<group>"; };
 		63F402EC1BCF77CB0086D030 /* ApplicationAssembly_Testable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationAssembly_Testable.h; sourceTree = "<group>"; };
 		63F402ED1BCF77CB0086D030 /* ApplicationAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationAssemblyTests.m; sourceTree = "<group>"; };
 		63F402EF1BCF77CB0086D030 /* ServiceComponentsAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceComponentsAssemblyTests.m; sourceTree = "<group>"; };
@@ -2747,7 +2739,6 @@
 				2B429A781D509857004C005F /* MetaEventService */,
 				9F40777B1D2BF4C400D47EF6 /* RamblerLocationService */,
 				63D7460B1C8B0CF600E3A381 /* EventStoreService */,
-				63EF15BC1BC4617000480CAF /* PushNotificationSrvice */,
 				6373A3E01BBDBDF700DF67FF /* EventService */,
 				636B63C61BBDCC060053E38F /* LectureService */,
 				636B63C51BBDCC060053E38F /* LectureMaterialsService */,
@@ -2844,26 +2835,6 @@
 				63ECC4181CA8373400439A01 /* Localizable.strings */,
 			);
 			path = Strings;
-			sourceTree = "<group>";
-		};
-		63EF15B71BC4546400480CAF /* PushNotificationCenter */ = {
-			isa = PBXGroup;
-			children = (
-				63EF15B81BC4557600480CAF /* PushNotificationCenter.h */,
-				63EF15B91BC4559900480CAF /* PushNotificationCenterImplementation.h */,
-				63EF15BA1BC4559900480CAF /* PushNotificationCenterImplementation.m */,
-			);
-			path = PushNotificationCenter;
-			sourceTree = "<group>";
-		};
-		63EF15BC1BC4617000480CAF /* PushNotificationSrvice */ = {
-			isa = PBXGroup;
-			children = (
-				63EF15BD1BC461B700480CAF /* PushNotificationService.h */,
-				63EF15BE1BC461DD00480CAF /* PushNotificationServiceImplementation.h */,
-				63EF15BF1BC461DD00480CAF /* PushNotificationServiceImplementation.m */,
-			);
-			path = PushNotificationSrvice;
 			sourceTree = "<group>";
 		};
 		63F402EA1BCF77CB0086D030 /* ApplicationLayerAssemblyTests */ = {
@@ -3995,7 +3966,6 @@
 				9FBE89831D5CB71300DA0C32 /* LaunchSystem */,
 				9F533A7C1D50D6E7004F8E82 /* SpotlightIndexer */,
 				63F54D9C1BC5BA8F00DB1746 /* ThirdPartiesConfigurator */,
-				63EF15B71BC4546400480CAF /* PushNotificationCenter */,
 				636A37BC1BC13FA200B49C3D /* Assemblies */,
 				636A37B01BC1354100B49C3D /* ApplicationConfigurator */,
 			);
@@ -8198,7 +8168,7 @@
 		9F1F37DC1BBBB80D00C7797D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Rambler;
 				TargetAttributes = {
 					2B750D101D362C1B00EACE98 = {
@@ -8217,6 +8187,7 @@
 					9F1F37E31BBBB80D00C7797D = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = UM246WFXVS;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -8761,7 +8732,6 @@
 				66E9993D1D54AF5100161D98 /* TagAssembly.m in Sources */,
 				636B64071BBDD2A40053E38F /* LectureMaterialsServiceImplementation.m in Sources */,
 				2B2064801D3F9CE900246C8D /* _EventPlainObject.m in Sources */,
-				63EF15C01BC461DD00480CAF /* PushNotificationServiceImplementation.m in Sources */,
 				66EE4D2B1D54BCDF0011F94A /* CollectionViewAnimator.m in Sources */,
 				9F8E5F741BC255AA00DC10DB /* RequestSignersAssembly.m in Sources */,
 				9FBE8AFD1D634F0500DA0C32 /* EventListPresenter.m in Sources */,
@@ -8839,7 +8809,6 @@
 				63ECC4161CA81E5300439A01 /* ErrorConstants.m in Sources */,
 				661CA4271D65D2040047EB68 /* ResponseConverterAssembly.m in Sources */,
 				9F7B823B1D7ECA07002E977A /* TabLaunchRouter.m in Sources */,
-				63EF15BB1BC4559900480CAF /* PushNotificationCenterImplementation.m in Sources */,
 				636F8DDB1BCB8FE800552B91 /* RamblerLocationInteractor.m in Sources */,
 				63F613761CB00A220002AEF0 /* PreviousEventSectionHeaderTableViewCell.m in Sources */,
 				63F613601CB00A220002AEF0 /* EventInteractor.m in Sources */,
@@ -9199,8 +9168,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -9233,6 +9204,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CURRENT_PROJECT_VERSION = 33;
+				DEVELOPMENT_TEAM = "";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -9266,7 +9238,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.ramblerco.rambler.it;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "$(PROFILE_UDID)";
+				PROVISIONING_PROFILE = "";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Nightly;
@@ -9297,8 +9269,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -9341,8 +9315,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -9375,6 +9351,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 33;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = UM246WFXVS;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -9408,6 +9385,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.ramblerco.rambler.it;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ac2a2aa4-c644-472b-be81-4f244ba105bb";
+				PROVISIONING_PROFILE_SPECIFIER = "IT Development";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -9421,6 +9400,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CURRENT_PROJECT_VERSION = 33;
+				DEVELOPMENT_TEAM = UM246WFXVS;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -9454,7 +9434,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.ramblerco.rambler.it;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "$(PROFILE_UDID)";
+				PROVISIONING_PROFILE = "b2d3fa3d-b5e6-4999-bd78-c7b0eb46db25";
+				PROVISIONING_PROFILE_SPECIFIER = "IT Distribution";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

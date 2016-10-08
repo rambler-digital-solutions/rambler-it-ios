@@ -51,13 +51,14 @@
 }
 
 - (void)tearDown {
-    self.viewController = nil;
     [(id)self.mockDataDisplayManager stopMocking];
     self.mockDataDisplayManager = nil;
     [(id)self.mockOutput stopMocking];
     self.mockOutput = nil;
     [(id)self.mockTableView stopMocking];
     self.mockTableView = nil;
+    
+    self.viewController = nil;
     
     [super tearDown];
 }

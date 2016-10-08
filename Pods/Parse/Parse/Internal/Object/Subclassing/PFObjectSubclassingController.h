@@ -15,23 +15,17 @@
 @interface PFObjectSubclassingController : NSObject
 
 ///--------------------------------------
-/// @name Init
+#pragma mark - Registration
 ///--------------------------------------
 
-//TODO: (nlutsenko, richardross) Make it not terrible aka don't have singletons.
-+ (instancetype)defaultController;
-+ (void)clearDefaultController;
-
-///--------------------------------------
-/// @name Registration
-///--------------------------------------
+- (void)scanForUnregisteredSubclasses:(BOOL)shouldSubscribe;
 
 - (Class<PFSubclassing>)subclassForParseClassName:(NSString *)parseClassName;
 - (void)registerSubclass:(Class<PFSubclassing>)kls;
 - (void)unregisterSubclass:(Class<PFSubclassing>)kls;
 
 ///--------------------------------------
-/// @name Forwarding
+#pragma mark - Forwarding
 ///--------------------------------------
 
 - (NSMethodSignature *)forwardingMethodSignatureForSelector:(SEL)cmd ofClass:(Class)kls;

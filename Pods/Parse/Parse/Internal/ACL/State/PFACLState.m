@@ -19,8 +19,8 @@
 
 + (NSDictionary *)propertyAttributes {
     return @{
-        @"permissions": [PFPropertyAttributes attributes],
-        @"shared": [PFPropertyAttributes attributes],
+        PFACLStatePropertyName(permissions): [PFPropertyAttributes attributes],
+        PFACLStatePropertyName(shared): [PFPropertyAttributes attributes],
     };
 }
 
@@ -30,9 +30,9 @@
 
 - (instancetype)init {
     self = [super init];
-    if (!self) return nil;
+    if (!self) return self;
 
-    _permissions = [NSDictionary dictionary];
+    _permissions = @{};
     _shared = NO;
 
     return self;
@@ -44,7 +44,7 @@
 
 - (instancetype)initWithState:(PFACLState *)otherState mutatingBlock:(PFACLStateMutationBlock)mutatingBlock {
     self = [self initWithState:otherState];
-    if (!self) return nil;
+    if (!self) return self;
 
     // Make permissions mutable for the duration of the block.
     _permissions = [_permissions mutableCopy];
@@ -80,7 +80,7 @@
 #pragma mark - Mutating
 ///--------------------------------------
 
-- (instancetype)copyByMutatingWithBlock:(PFACLStateMutationBlock)mutationsBlock {
+- (PFACLState *)copyByMutatingWithBlock:(PFACLStateMutationBlock)mutationsBlock {
     return [[PFACLState alloc] initWithState:self mutatingBlock:mutationsBlock];
 }
 

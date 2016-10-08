@@ -21,7 +21,6 @@
 #import <Foundation/Foundation.h>
 #import "TyphoonAssembly.h"
 
-@protocol PushNotificationService;
 @protocol EventService;
 @protocol LectureService;
 @protocol SpeakerService;
@@ -33,7 +32,6 @@
 
 @protocol ServiceComponents <NSObject>
 
-- (id<PushNotificationService>)pushNotificationService;
 - (id<EventService>)eventService;
 - (id<LectureService>)lectureService;
 - (id<SpeakerService>)speakerService;

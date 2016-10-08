@@ -9,6 +9,15 @@
 
 #import "PFPushState.h"
 
+/**
+ Returns NSString representation of a property.
+
+ @param NAME The name of the property.
+
+ @return NSString representation of a given property.
+ */
+#define PFPushStatePropertyName(NAME) @keypath(PFPushState, NAME)
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface PFPushState ()
@@ -17,7 +26,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy, readwrite) PFQueryState *queryState;
 
 @property (nullable, nonatomic, strong, readwrite) NSDate *expirationDate;
-@property (nullable, nonatomic, copy, readwrite) NSNumber *expirationTimeInterval;
+@property (nullable, nonatomic, strong, readwrite) NSNumber *expirationTimeInterval;
+@property (nullable, nonatomic, strong, readwrite) NSDate *pushDate;
 
 @property (nullable, nonatomic, copy, readwrite) NSDictionary *payload;
 

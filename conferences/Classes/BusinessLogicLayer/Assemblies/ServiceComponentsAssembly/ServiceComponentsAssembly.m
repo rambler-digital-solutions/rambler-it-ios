@@ -23,9 +23,7 @@
 #import "ResourceClientAssembly.h"
 #import "ResourceMapperAssembly.h"
 
-#import "PushNotificationService.h"
 #import "EventServiceImplementation.h"
-#import "PushNotificationServiceImplementation.h"
 #import "OperationScheduler.h"
 #import "OperationSchedulerImplementation.h"
 #import "EventStoreServiceProtocol.h"
@@ -42,10 +40,6 @@
 #import "SuggestServiceImplementation.h"
 
 @implementation ServiceComponentsAssembly
-
-- (id <PushNotificationService>)pushNotificationService {
-    return [TyphoonDefinition withClass:[PushNotificationServiceImplementation class]];
-}
 
 - (id <EventService>)eventService {
     return [TyphoonDefinition withClass:[EventServiceImplementation class]

@@ -53,40 +53,43 @@
 - (void)testThatAssemblyCreatesCurrentEventCellObjectBuilder {
     // given
     Class targetClass = [CurrentEventCellObjectBuilder class];
-    NSArray *dependincies = @[
+    NSArray *dependencies = @[
                               RamblerSelector(dateFormatter)
                               ];
     // when
     id result = [self.factory currentEventCellObjectBuilder];
     
     // then
-    [self verifyTargetDependency:result withClass:targetClass dependencies:dependincies];
+    RamblerTyphoonAssemblyTestsTypeDescriptor *descriptor = [RamblerTyphoonAssemblyTestsTypeDescriptor descriptorWithClass:targetClass];
+    [self verifyTargetDependency:result withDescriptor:descriptor dependencies:dependencies];
 }
 
 - (void)testThatAssemblyCreatesFutureEventCellObjectBuilder {
     // given
     Class targetClass = [FutureEventCellObjectBuilder class];
-    NSArray *dependincies = @[
+    NSArray *dependencies = @[
                               RamblerSelector(dateFormatter)
                               ];
     // when
     id result = [self.factory futureEventCellObjectBuilder];
     
     // then
-    [self verifyTargetDependency:result withClass:targetClass dependencies:dependincies];
+    RamblerTyphoonAssemblyTestsTypeDescriptor *descriptor = [RamblerTyphoonAssemblyTestsTypeDescriptor descriptorWithClass:targetClass];
+    [self verifyTargetDependency:result withDescriptor:descriptor dependencies:dependencies];
 }
 
 - (void)testThatAssemblyCreatesPastEventCellObjectBuilder {
     // given
     Class targetClass = [PastEventCellObjectBuilder class];
-    NSArray *dependincies = @[
+    NSArray *dependencies = @[
                               RamblerSelector(dateFormatter)
                               ];
     // when
     id result = [self.factory pastEventCellObjectBuilder];
     
     // then
-    [self verifyTargetDependency:result withClass:targetClass dependencies:dependincies];
+    RamblerTyphoonAssemblyTestsTypeDescriptor *descriptor = [RamblerTyphoonAssemblyTestsTypeDescriptor descriptorWithClass:targetClass];
+    [self verifyTargetDependency:result withDescriptor:descriptor dependencies:dependencies];
 }
 
 @end

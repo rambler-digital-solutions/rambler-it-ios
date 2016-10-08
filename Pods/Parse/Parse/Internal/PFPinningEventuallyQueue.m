@@ -25,30 +25,30 @@
 #import "PFTaskQueue.h"
 
 @interface PFPinningEventuallyQueue () <PFEventuallyQueueSubclass> {
-    /*!
+    /**
      Queue for reading/writing eventually operations from LDS. Makes all reads/writes atomic
      operations.
      */
     PFTaskQueue *_taskQueue;
 
-    /*!
+    /**
      List of `PFEventuallyPin.uuid` that are currently queued in `_processingQueue`. This contains
      uuid of PFEventuallyPin that's enqueued.
      */
     NSMutableArray *_eventuallyPinUUIDQueue;
 
-    /*!
+    /**
      Map of eventually operation UUID to matching PFEventuallyPin. This contains PFEventuallyPin
      that's enqueued.
      */
     NSMutableDictionary *_uuidToEventuallyPin;
 
-    /*!
+    /**
      Map OperationSetUUID to PFOperationSet
      */
     NSMutableDictionary *_operationSetUUIDToOperationSet;
 
-    /*!
+    /**
      Map OperationSetUUID to PFEventuallyPin
      */
     NSMutableDictionary *_operationSetUUIDToEventuallyPin;
@@ -62,22 +62,18 @@
 #pragma mark - Init
 ///--------------------------------------
 
-+ (instancetype)newDefaultPinningEventuallyQueueWithCommandRunner:(id<PFCommandRunning>)commandRunner {
-    PFPinningEventuallyQueue *queue = [[self alloc] initWithCommandRunner:commandRunner
-                                                         maxAttemptsCount:PFEventuallyQueueDefaultMaxAttemptsCount
-                                                            retryInterval:PFEventuallyQueueDefaultTimeoutRetryInterval];
++ (instancetype)newDefaultPinningEventuallyQueueWithDataSource:(id<PFCommandRunnerProvider>)dataSource {
+    PFPinningEventuallyQueue *queue = [[self alloc] initWithDataSource:dataSource
+                                                      maxAttemptsCount:PFEventuallyQueueDefaultMaxAttemptsCount
+                                                         retryInterval:PFEventuallyQueueDefaultTimeoutRetryInterval];
     [queue start];
     return queue;
 }
 
-- (instancetype)init {
-    PFNotDesignatedInitializer();
-}
-
-- (instancetype)initWithCommandRunner:(id<PFCommandRunning>)commandRunner
-                     maxAttemptsCount:(NSUInteger)attemptsCount
-                        retryInterval:(NSTimeInterval)retryInterval {
-    self = [super initWithCommandRunner:commandRunner maxAttemptsCount:attemptsCount retryInterval:retryInterval];
+- (instancetype)initWithDataSource:(id<PFCommandRunnerProvider>)dataSource
+                  maxAttemptsCount:(NSUInteger)attemptsCount
+                     retryInterval:(NSTimeInterval)retryInterval {
+    self = [super initWithDataSource:dataSource maxAttemptsCount:attemptsCount retryInterval:retryInterval];
     if (!self) return nil;
 
     _taskQueue = [[PFTaskQueue alloc] init];
@@ -143,7 +139,7 @@
 ///--------------------------------------
 
 - (NSString *)_newIdentifierForCommand:(id<PFNetworkCommand>)command {
-    return [[NSUUID UUID] UUIDString];
+    return [NSUUID UUID].UUIDString;
 }
 
 - (NSArray *)_pendingCommandIdentifiers {
@@ -216,7 +212,7 @@
             [_eventuallyPinUUIDQueue removeObject:identifier];
         });
 
-        if (resultTask.cancelled || resultTask.exception || resultTask.error) {
+        if (resultTask.cancelled || resultTask.faulted) {
             return resultTask;
         }
 
@@ -261,7 +257,7 @@
     }];
 }
 
-/*!
+/**
  Synchronizes PFObject taskQueue (Many) and PFPinningEventuallyQueue taskQueue (None). Each queue will be held
  until both are ready, matched on operationSetUUID. Once both are ready, the eventually task will run.
  */
@@ -285,10 +281,10 @@
         }
     });
     if (uuid == nil) {
-        NSException *exception = [NSException exceptionWithName:NSInternalInconsistencyException
-                                                         reason:@"Either operationSet or eventuallyPin must be set"
-                                                       userInfo:nil];
-        return [BFTask taskWithException:exception];
+        NSError *error = [PFErrorUtilities errorWithCode:kPFErrorIncorrectType
+                                                 message:@"Either operationSet or eventuallyPin must be set"
+                                               shouldLog:NO];
+        return [BFTask taskWithError:error];
     }
     return [BFTask taskWithResult:nil];
 }

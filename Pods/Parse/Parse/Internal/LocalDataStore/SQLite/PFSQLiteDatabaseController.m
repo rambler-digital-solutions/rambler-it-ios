@@ -25,10 +25,6 @@
 #pragma mark - Init
 ///--------------------------------------
 
-- (instancetype)init {
-    PFNotDesignatedInitializer();
-}
-
 - (instancetype)initWithFileManager:(PFFileManager *)fileManager {
     self = [super init];
     if (!self) return nil;
@@ -58,8 +54,6 @@
                 NSError *error = task.error;
                 if (error) {
                     [taskCompletionSource trySetError:error];
-                } else {
-                    [taskCompletionSource trySetException:task.exception];
                 }
             } else if (task.cancelled) {
                 [taskCompletionSource trySetCancelled];

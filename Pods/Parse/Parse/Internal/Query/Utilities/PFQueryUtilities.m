@@ -23,7 +23,7 @@
     return [self _hoistCommonPredicates:[self _normalizeToDNF:predicate]];
 }
 
-/*!
+/**
  Traverses over all of the subpredicates in the given predicate, calling the given blocks to
  transform any instances of NSPredicate.
  */
@@ -47,7 +47,6 @@
             return [[NSCompoundPredicate alloc] initWithType:type subpredicates:newSubpredicates];
         }
     }
-
     if ([predicate isKindOfClass:[NSComparisonPredicate class]]) {
         if (comparisonBlock) {
             return comparisonBlock((NSComparisonPredicate *)predicate);
@@ -55,12 +54,11 @@
             return predicate;
         }
     }
-
-    [NSException raise:NSInternalInconsistencyException format:@"NSExpression predicates are not supported."];
+    PFConsistencyAssertionFailure(@"NSExpression predicates are not supported.");
     return nil;
 }
 
-/*!
+/**
  Returns a predicate that is the negation of the input predicate, or throws on error.
  */
 + (NSPredicate *)_negatePredicate:(NSPredicate *)predicate {
@@ -68,7 +66,7 @@
                  compoundBlock:^NSPredicate *(NSCompoundPredicate *compound) {
                      switch (compound.compoundPredicateType) {
                          case NSNotPredicateType: {
-                             return [compound.subpredicates objectAtIndex:0];
+                             return compound.subpredicates[0];
                          }
                          case NSAndPredicateType: {
                              NSMutableArray *newSubpredicates =
@@ -87,9 +85,8 @@
                              return [NSCompoundPredicate andPredicateWithSubpredicates:newSubpredicates];
                          }
                          default: {
-                             [NSException raise:NSInternalInconsistencyException
-                                         format:@"This compound predicate cannot be negated. (%zd)",
-                              compound.compoundPredicateType];
+                             PFConsistencyAssertionFailure(@"This compound predicate cannot be negated. (%zd)",
+                                                           compound.compoundPredicateType);
                              return nil;
                          }
                      }
@@ -129,8 +126,7 @@
                              break;
                          }
                          case NSBetweenPredicateOperatorType: {
-                             [NSException raise:NSInternalInconsistencyException
-                                         format:@"A BETWEEN predicate was found after they should have been removed."];
+                             PFConsistencyAssertionFailure(@"A BETWEEN predicate was found after they should have been removed.");
                          }
                          case NSMatchesPredicateOperatorType:
                          case NSLikePredicateOperatorType:
@@ -139,8 +135,7 @@
                          case NSContainsPredicateOperatorType:
                          case NSCustomSelectorPredicateOperatorType:
                          default: {
-                             [NSException raise:NSInternalInconsistencyException
-                                         format:@"This comparison predicate cannot be negated. (%@)", comparison];
+                             PFConsistencyAssertionFailure(@"This comparison predicate cannot be negated. (%@)", comparison);
                              return nil;
                          }
                      }
@@ -159,7 +154,7 @@
                  }];
 }
 
-/*!
+/**
  Returns a version of the given predicate that contains no NSNotPredicateType compound predicates.
  This greatly simplifies the diversity of predicates we have to handle later in the pipeline.
  */
@@ -169,14 +164,14 @@
                      // Remove negation from any subpredicates.
                      NSMutableArray *newSubpredicates =
                      [NSMutableArray arrayWithCapacity:compound.subpredicates.count];
-                     for (NSPredicate *subPredicate in [compound subpredicates]) {
+                     for (NSPredicate *subPredicate in compound.subpredicates) {
                          [newSubpredicates addObject:[self removeNegation:subPredicate]];
                      }
 
                      // If this is a NOT predicate, return the negation of the subpredicate.
                      // Otherwise, just pass it on.
                      if (compound.compoundPredicateType == NSNotPredicateType) {
-                         return [self _negatePredicate:[newSubpredicates objectAtIndex:0]];
+                         return [self _negatePredicate:newSubpredicates[0]];
                      } else {
                          return [[NSCompoundPredicate alloc] initWithType:compound.compoundPredicateType
                                                             subpredicates:newSubpredicates];
@@ -184,7 +179,7 @@
                  } comparisonBlock:nil];
 }
 
-/*!
+/**
  Returns a version of the given predicate that contains no NSBetweenPredicateOperatorType predicates.
  (A BETWEEN {C, D}) gets converted to (A >= C AND A <= D).
  */
@@ -192,7 +187,7 @@
     return [self _mapPredicate:predicate
                  compoundBlock:nil
                comparisonBlock:^NSPredicate *(NSComparisonPredicate *predicate) {
-                   if ([predicate predicateOperatorType] == NSBetweenPredicateOperatorType) {
+                   if (predicate.predicateOperatorType == NSBetweenPredicateOperatorType) {
                        NSComparisonPredicate *between = (NSComparisonPredicate *)predicate;
                        NSExpression *rhs = between.rightExpression;
 
@@ -233,7 +228,7 @@
                }];
 }
 
-/*!
+/**
  Returns a version of the given predicate that contains no Yoda conditions.
  A Yoda condition is one where there's a constant on the LHS, such as (3 <= X).
  The predicate returned by this method will instead have (X >= 3).
@@ -246,7 +241,7 @@
                        comparison.rightExpression.expressionType == NSKeyPathExpressionType) {
                        // This is a Yoda condition.
                        NSPredicateOperatorType newType;
-                       switch ([comparison predicateOperatorType]) {
+                       switch (comparison.predicateOperatorType) {
                            case NSEqualToPredicateOperatorType: {
                                newType = NSEqualToPredicateOperatorType;
                                break;
@@ -299,7 +294,7 @@
                }];
 }
 
-/*!
+/**
  Returns a version of the given predicate converted to disjunctive normal form (DNF).
  Unlike normalizeToDNF:error:, this method only accepts compound predicates, and assumes that
  removeNegation:error: has already been applied to the given predicate.
@@ -358,8 +353,7 @@
                     }
 
                 } else {
-                    [NSException raise:NSInternalInconsistencyException
-                                format:@"[PFQuery asOrOfAnds:] found a compound query that wasn't OR or AND."];
+                    PFConsistencyAssertionFailure(@"[PFQuery asOrOfAnds:] found a compound query that wasn't OR or AND.");
                 }
             } else {
                 // Just add this condition to all the conjunctions in progress.
@@ -388,14 +382,11 @@
             return [NSCompoundPredicate orPredicateWithSubpredicates:andPredicates];
         }
     }
-
-    [NSException raise:NSInternalInconsistencyException
-                format:@"[PFQuery asOrOfAnds:] was passed a compound query that wasn't OR or AND."];
-
+    PFConsistencyAssertionFailure(@"[PFQuery asOrOfAnds:] was passed a compound query that wasn't OR or AND.");
     return nil;
 }
 
-/*!
+/**
  Throws an exception if any comparison predicate inside this predicate has any modifiers, such as ANY, EVERY, etc.
  */
 + (void)assertNoPredicateModifiers:(NSPredicate *)predicate {
@@ -409,7 +400,7 @@
         }];
 }
 
-/*!
+/**
  Returns a version of the given predicate converted to disjunctive normal form (DNF),
  known colloqially as an "or of ands", the only form of query that PFQuery accepts.
  */
@@ -435,7 +426,7 @@
     return [self asOrOfAnds:(NSCompoundPredicate *)predicate];
 }
 
-/*!
+/**
  Takes a predicate like ((A AND B) OR (A AND C)) and rewrites it as the more efficient (A AND (B OR C)).
  Assumes the input predicate is already in DNF.
  // TODO: (nlutsenko): Move this logic into the server and remove it from here.
@@ -508,7 +499,7 @@
 #pragma mark - Regex
 ///--------------------------------------
 
-/*!
+/**
  This is used to create a regex string to match the input string. By using Q and E flags to match, we can do this
  without requiring super expensive rewrites, but me must be careful to escape existing \E flags in the input string.
  By replacing it with `\E\\E\Q`, the regex engine will end the old literal block, put in the user's `\E` string, and

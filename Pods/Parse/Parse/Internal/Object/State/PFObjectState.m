@@ -28,7 +28,7 @@
 
     _serverData = [NSMutableDictionary dictionary];
 
-    return [super init];
+    return self;
 }
 
 - (instancetype)initWithState:(PFObjectState *)state {
@@ -62,6 +62,15 @@
     _parseClassName = [parseClassName copy];
     _objectId = [objectId copy];
     _complete = complete;
+
+    return self;
+}
+
+- (instancetype)initWithState:(PFObjectState *)state mutatingBlock:(PFObjectStateMutationBlock)block {
+    self = [self initWithState:state];
+    if (!self) return nil;
+
+    block((PFMutableObjectState *)self);
 
     return self;
 }
@@ -158,6 +167,14 @@
 
 - (void)applyOperationSet:(PFOperationSet *)operationSet {
     [PFObjectUtilities applyOperationSet:operationSet toDictionary:_serverData];
+}
+
+///--------------------------------------
+#pragma mark - Mutating
+///--------------------------------------
+
+- (PFObjectState *)copyByMutatingWithBlock:(PFObjectStateMutationBlock)block {
+    return [[PFObjectState alloc] initWithState:self mutatingBlock:block];
 }
 
 ///--------------------------------------

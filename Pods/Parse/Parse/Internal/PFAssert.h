@@ -12,7 +12,7 @@
 #ifndef Parse_PFAssert_h
 #define Parse_PFAssert_h
 
-/*!
+/**
  Raises an `NSInvalidArgumentException` if the `condition` does not pass.
  Use `description` to supply the way to fix the exception.
  */
@@ -24,44 +24,61 @@
         } \
     } while(0)
 
-/*!
+/**
+ Raises an `NSInvalidArgumentException`. Use `description` to supply the way to fix the exception.
+ */
+#define PFParameterAssertionFailure(description, ...) \
+do {\
+    [NSException raise:NSInvalidArgumentException \
+                format:description, ##__VA_ARGS__]; \
+} while(0)
+
+/**
  Raises an `NSRangeException` if the `condition` does not pass.
  Use `description` to supply the way to fix the exception.
  */
 #define PFRangeAssert(condition, description, ...) \
-    do {\
-        if (!(condition)) { \
-            [NSException raise:NSRangeException \
-                        format:description, ##__VA_ARGS__]; \
-    } \
+do {\
+    if (!(condition)) { \
+        [NSException raise:NSRangeException \
+                    format:description, ##__VA_ARGS__]; \
+} \
 } while(0)
 
-/*!
+/**
  Raises an `NSInternalInconsistencyException` if the `condition` does not pass.
  Use `description` to supply the way to fix the exception.
  */
 #define PFConsistencyAssert(condition, description, ...) \
-    do { \
-        if (!(condition)) { \
-            [NSException raise:NSInternalInconsistencyException \
-                        format:description, ##__VA_ARGS__]; \
-        } \
-    } while(0)
+do { \
+    if (!(condition)) { \
+        [NSException raise:NSInternalInconsistencyException \
+                    format:description, ##__VA_ARGS__]; \
+    } \
+} while(0)
 
-/*!
+/**
+ Raises an `NSInternalInconsistencyException`. Use `description` to supply the way to fix the exception.
+ */
+#define PFConsistencyAssertionFailure(description, ...) \
+do {\
+    [NSException raise:NSInternalInconsistencyException \
+                format:description, ##__VA_ARGS__]; \
+} while(0)
+
+/**
  Always raises `NSInternalInconsistencyException` with details
  about the method used and class that received the message
  */
 #define PFNotDesignatedInitializer() \
 do { \
-    PFConsistencyAssert(NO, \
-                        @"%@ is not the designated initializer for instances of %@.", \
-                        NSStringFromSelector(_cmd), \
-                        NSStringFromClass([self class])); \
+    PFConsistencyAssertionFailure(@"%@ is not the designated initializer for instances of %@.", \
+                                  NSStringFromSelector(_cmd), \
+                                  NSStringFromClass([self class])); \
     return nil; \
 } while (0)
 
-/*!
+/**
  Raises `NSInternalInconsistencyException` if current thread is not main thread.
  */
 #define PFAssertMainThread() \
@@ -69,7 +86,7 @@ do { \
     PFConsistencyAssert([NSThread isMainThread], @"This method must be called on the main thread."); \
 } while (0)
 
-/*!
+/**
  Raises `NSInternalInconsistencyException` if current thread is not the required one.
  */
 #define PFAssertIsOnThread(thread) \
@@ -78,7 +95,7 @@ do { \
                         @"This method must be called only on thread: %@.", thread); \
 } while (0)
 
-/*!
+/**
  Raises `NSInternalInconsistencyException` if the current queue
  is not the same as the queue provided.
  Make sure you mark the queue first via `PFMarkDispatchQueue`

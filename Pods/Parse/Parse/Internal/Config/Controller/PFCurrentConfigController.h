@@ -11,27 +11,28 @@
 
 #import <Parse/PFConstants.h>
 
-#import "PFMacros.h"
+#import "PFDataProvider.h"
 
-@class BFTask PF_GENERIC(__covariant BFGenericType);
+@class BFTask<__covariant BFGenericType>;
 @class PFConfig;
-@class PFFileManager;
 
 @interface PFCurrentConfigController : NSObject
 
-@property (nonatomic, strong, readonly) PFFileManager *fileManager;
+@property (nonatomic, weak, readonly) id<PFPersistenceControllerProvider> dataSource;
 
 ///--------------------------------------
-/// @name Init
+#pragma mark - Init
 ///--------------------------------------
 
 - (instancetype)init NS_UNAVAILABLE;
-- (instancetype)initWithFileManager:(PFFileManager *)fileManager NS_DESIGNATED_INITIALIZER;
++ (instancetype)new NS_UNAVAILABLE;
 
-+ (instancetype)controllerWithFileManager:(PFFileManager *)fileManager;
+- (instancetype)initWithDataSource:(id<PFPersistenceControllerProvider>)dataSource NS_DESIGNATED_INITIALIZER;
+
++ (instancetype)controllerWithDataSource:(id<PFPersistenceControllerProvider>)dataSource;
 
 ///--------------------------------------
-/// @name Accessors
+#pragma mark - Accessors
 ///--------------------------------------
 
 - (BFTask *)getCurrentConfigAsync;

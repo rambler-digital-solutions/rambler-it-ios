@@ -14,6 +14,7 @@
 #import "PFHTTPRequest.h"
 #import "PFQueryPrivate.h"
 #import "PFQueryState.h"
+#import "PFQueryConstants.h"
 
 @implementation PFRESTQueryCommand
 
@@ -103,14 +104,18 @@
                                   tracingEnabled:(BOOL)trace {
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
 
-    if ([order length]) {
+    if (order.length) {
         parameters[@"order"] = order;
     }
-    if (selectedKeys != nil) {
-        parameters[@"keys"] = [[selectedKeys allObjects] componentsJoinedByString:@","];
+    if (selectedKeys) {
+        NSArray *sortDescriptors = @[ [NSSortDescriptor sortDescriptorWithKey:@"self" ascending:YES selector:@selector(compare:)] ];
+        NSArray *keysArray = [selectedKeys sortedArrayUsingDescriptors:sortDescriptors];
+        parameters[@"keys"] = [keysArray componentsJoinedByString:@","];
     }
-    if ([includedKeys count] > 0) {
-        parameters[@"include"] = [[includedKeys allObjects] componentsJoinedByString:@","];
+    if (includedKeys.count > 0) {
+        NSArray *sortDescriptors = @[ [NSSortDescriptor sortDescriptorWithKey:@"self" ascending:YES selector:@selector(compare:)] ];
+        NSArray *keysArray = [includedKeys sortedArrayUsingDescriptors:sortDescriptors];
+        parameters[@"include"] = [keysArray componentsJoinedByString:@","];
     }
     if (limit >= 0) {
         parameters[@"limit"] = [NSString stringWithFormat:@"%d", (int)limit];
@@ -126,10 +131,10 @@
         parameters[key] = obj;
     }];
 
-    if ([conditions count] > 0) {
+    if (conditions.count > 0) {
         NSMutableDictionary *whereData = [[NSMutableDictionary alloc] init];
         [conditions enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-            if ([key isEqualToString:@"$or"]) {
+            if ([key isEqualToString:PFQueryKeyOr]) {
                 NSArray *array = (NSArray *)obj;
                 NSMutableArray *newArray = [NSMutableArray array];
                 for (PFQuery *subquery in array) {
@@ -150,10 +155,10 @@
                                                                     tracingEnabled:NO];
 
                     queryDict = queryDict[@"where"];
-                    if ([queryDict count] > 0) {
+                    if (queryDict.count > 0) {
                         [newArray addObject:queryDict];
                     } else {
-                        [newArray addObject:[NSDictionary dictionary]];
+                        [newArray addObject:@{}];
                     }
                 }
                 whereData[key] = newArray;

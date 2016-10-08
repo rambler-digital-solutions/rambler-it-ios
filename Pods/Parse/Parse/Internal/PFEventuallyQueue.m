@@ -46,36 +46,30 @@ NSTimeInterval const PFEventuallyQueueDefaultTimeoutRetryInterval = 600.0f;
 #pragma mark - Init
 ///--------------------------------------
 
-- (instancetype)init {
-    PFNotDesignatedInitializer();
-}
-
-- (instancetype)initWithCommandRunner:(id<PFCommandRunning>)commandRunner
-                     maxAttemptsCount:(NSUInteger)attemptsCount
-                        retryInterval:(NSTimeInterval)retryInterval {
+- (instancetype)initWithDataSource:(id<PFCommandRunnerProvider>)dataSource
+                  maxAttemptsCount:(NSUInteger)attemptsCount
+                     retryInterval:(NSTimeInterval)retryInterval {
     self = [super init];
     if (!self) return nil;
 
-    _commandRunner = commandRunner;
+    _dataSource = dataSource;
     _maxAttemptsCount = attemptsCount;
     _retryInterval = retryInterval;
 
     // Set up all the queues
     NSString *queueBaseLabel = [NSString stringWithFormat:@"com.parse.%@", NSStringFromClass([self class])];
 
-    _synchronizationQueue = dispatch_queue_create([[NSString stringWithFormat:@"%@.synchronization",
-                                                    queueBaseLabel] UTF8String],
+    _synchronizationQueue = dispatch_queue_create([NSString stringWithFormat:@"%@.synchronization", queueBaseLabel].UTF8String,
                                                   DISPATCH_QUEUE_SERIAL);
     PFMarkDispatchQueue(_synchronizationQueue);
     _synchronizationExecutor = [BFExecutor executorWithDispatchQueue:_synchronizationQueue];
 
-    _processingQueue = dispatch_queue_create([[NSString stringWithFormat:@"%@.processing",
-                                               queueBaseLabel] UTF8String],
+    _processingQueue = dispatch_queue_create([NSString stringWithFormat:@"%@.processing", queueBaseLabel].UTF8String,
                                              DISPATCH_QUEUE_SERIAL);
     PFMarkDispatchQueue(_processingQueue);
 
     _processingQueueSource = dispatch_source_create(DISPATCH_SOURCE_TYPE_DATA_ADD, 0, 0, _processingQueue);
-
+    
     _commandEnqueueTaskQueue = [[PFTaskQueue alloc] init];
 
     _taskCompletionSources = [NSMutableDictionary dictionary];
@@ -112,12 +106,10 @@ NSTimeInterval const PFEventuallyQueueDefaultTimeoutRetryInterval = 600.0f;
             return [[[self _enqueueCommandInBackground:command
                                                 object:object
                                             identifier:identifier] continueWithBlock:^id(BFTask *task) {
-                if (task.error || task.exception || task.cancelled) {
+                if (task.faulted || task.cancelled) {
                     [self.testHelper notify:PFEventuallyQueueEventCommandNotEnqueued];
                     if (task.error) {
                         taskCompletionSource.error = task.error;
-                    } else if (task.exception) {
-                        taskCompletionSource.exception = task.exception;
                     } else if (task.cancelled) {
                         [taskCompletionSource cancel];
                     }
@@ -174,7 +166,7 @@ NSTimeInterval const PFEventuallyQueueDefaultTimeoutRetryInterval = 600.0f;
 }
 
 - (NSUInteger)commandCount {
-    return [[self _pendingCommandIdentifiers] count];
+    return [self _pendingCommandIdentifiers].count;
 }
 
 ///--------------------------------------
@@ -266,8 +258,8 @@ NSTimeInterval const PFEventuallyQueueDefaultTimeoutRetryInterval = 600.0f;
 
         if (error) {
             BOOL permanent = (![error.userInfo[@"temporary"] boolValue] &&
-                              ([[error domain] isEqualToString:PFParseErrorDomain] ||
-                               [error code] != kPFErrorConnectionFailed));
+                              ([error.domain isEqualToString:PFParseErrorDomain] ||
+                               error.code != kPFErrorConnectionFailed));
 
             if (!permanent) {
                 PFLogWarning(PFLoggingTagCommon,
@@ -311,8 +303,6 @@ NSTimeInterval const PFEventuallyQueueDefaultTimeoutRetryInterval = 600.0f;
         // Notify anyone waiting that the operation is completed.
         if (resultTask.error) {
             taskCompletionSource.error = resultTask.error;
-        } else if (resultTask.exception) {
-            taskCompletionSource.exception = resultTask.exception;
         } else if (resultTask.cancelled) {
             [taskCompletionSource cancel];
         } else {
@@ -328,14 +318,13 @@ NSTimeInterval const PFEventuallyQueueDefaultTimeoutRetryInterval = 600.0f;
 
 - (BFTask *)_runCommand:(id<PFNetworkCommand>)command withIdentifier:(NSString *)identifier {
     if ([command isKindOfClass:[PFRESTCommand class]]) {
-        return [self.commandRunner runCommandAsync:(PFRESTCommand *)command withOptions:0];
+        return [self.dataSource.commandRunner runCommandAsync:(PFRESTCommand *)command withOptions:0];
     }
 
-    NSString *reason = [NSString stringWithFormat:@"Can't find a compatible runner for command %@.", command];
-    NSException *exception = [NSException exceptionWithName:NSInternalInconsistencyException
-                                                     reason:reason
-                                                   userInfo:nil];
-    return [BFTask taskWithException:exception];
+    NSError *error = [PFErrorUtilities errorWithCode:kPFErrorInternalServer
+                                             message:[NSString stringWithFormat:@"Can't find a compatible runner for command %@.", command]
+                                           shouldLog:NO];
+    return [BFTask taskWithError:error];
 }
 
 - (BFTask *)_didFinishRunningCommand:(id<PFNetworkCommand>)command
@@ -347,7 +336,7 @@ NSTimeInterval const PFEventuallyQueueDefaultTimeoutRetryInterval = 600.0f;
         [_taskCompletionSources removeObjectForKey:identifier];
     });
 
-    if (resultTask.exception || resultTask.error || resultTask.cancelled) {
+    if (resultTask.faulted || resultTask.cancelled) {
         [self.testHelper notify:PFEventuallyQueueEventCommandFailed];
     } else {
         [self.testHelper notify:PFEventuallyQueueEventCommandSucceded];
@@ -398,7 +387,7 @@ NSTimeInterval const PFEventuallyQueueDefaultTimeoutRetryInterval = 600.0f;
 #pragma mark - Accessors
 ///--------------------------------------
 
-/*! Manually sets the network connection status. */
+/** Manually sets the network connection status. */
 - (void)setConnected:(BOOL)connected {
     BFTaskCompletionSource *barrier = [BFTaskCompletionSource taskCompletionSource];
     dispatch_async(_processingQueue, ^{
@@ -426,7 +415,7 @@ NSTimeInterval const PFEventuallyQueueDefaultTimeoutRetryInterval = 600.0f;
 #pragma mark - Test Helper Method
 ///--------------------------------------
 
-/*! Makes this command cache forget all the state it keeps during a single run of the app. */
+/** Makes this command cache forget all the state it keeps during a single run of the app. */
 - (void)_simulateReboot {
     // Make sure there is no command pending enqueuing
     [[[[_commandEnqueueTaskQueue enqueue:^BFTask *(BFTask *toAwait) {
@@ -441,12 +430,12 @@ NSTimeInterval const PFEventuallyQueueDefaultTimeoutRetryInterval = 600.0f;
     }] waitUntilFinished];
 }
 
-/*! Test helper to return how many commands are being retained in memory by the cache. */
+/** Test helper to return how many commands are being retained in memory by the cache. */
 - (int)_commandsInMemory {
-    return (int)[_taskCompletionSources count];
+    return (int)_taskCompletionSources.count;
 }
 
-/*! Called by PFObject whenever an object has been updated after a saveEventually. */
+/** Called by PFObject whenever an object has been updated after a saveEventually. */
 - (void)_notifyTestHelperObjectUpdated {
     [self.testHelper notify:PFEventuallyQueueEventObjectUpdated];
 }
