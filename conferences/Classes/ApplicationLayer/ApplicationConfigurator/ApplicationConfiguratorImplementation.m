@@ -23,11 +23,14 @@
 #import <MagicalRecord/MagicalRecord.h>
 
 static NSString * const kRCFCoreDataStoreName = @"Conference";
+static NSString * const kRCFAppGroupIdentifier = @"group.ru.ramblerco.rambler.it";
 
 @implementation ApplicationConfiguratorImplementation
 
 - (void)setupCoreDataStack {
-    [MagicalRecord setupAutoMigratingCoreDataStack];
+    NSURL *directory = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:kRCFAppGroupIdentifier];
+    NSURL *storeURL = [directory  URLByAppendingPathComponent:[NSString stringWithFormat:@"%@s.sqlite", kRCFCoreDataStoreName]];
+    [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreAtURL:storeURL];
 }
 
 - (void)configureInitialSettings {
