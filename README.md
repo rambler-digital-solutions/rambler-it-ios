@@ -1,7 +1,7 @@
 ### Overview
-![Travis CI](https://travis-ci.org/rambler-ios/RamblerConferences.svg?branch=develop)
+![Travis CI](https://travis-ci.org/rambler-digital-solutions/rambler-it-ios.svg?branch=develop)
 
-**Rambler.Conferences** is an open source application, which highlights the basic approaches to mobile application architecture used in *Rambler&Co*.
+**Rambler&IT** is an open source application, which highlights the basic approaches to mobile application architecture used in *Rambler&Co*. You can download it from the [AppStore](https://itunes.apple.com/us/app/rambler-it/id1145829115).
 
 The design map:
 ![Design map](http://i.imgur.com/MhQqy87.png)
@@ -9,7 +9,7 @@ The design map:
 ### Key Features
 
 - The application is divided into three layers: `Presentation`, `BusinessLogic` and `Core`.
-- The `Presentation` layer is built using [VIPER architecture](https://github.com/rambler-ios/The-Book-of-VIPER).
+- The `Presentation` layer is built using [VIPER architecture](https://github.com/rambler-digital-solutions/The-Book-of-VIPER).
 - The `BusinessLogic` layer is built using SOA.
 - The `Core` layer is built using compound operations concept.
 - We extensively use [Typhoon framework](https://github.com/appsquickly/Typhoon) for dependency injection.
