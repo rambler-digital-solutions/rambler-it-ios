@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -12,25 +13,22 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="light-gray-circle" translatesAutoresizingMaskIntoConstraints="NO" id="IXH-zz-c02">
-                    <rect key="frame" x="107.5" y="8" width="96" height="96"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="96" id="PN4-rS-OY5"/>
                         <constraint firstAttribute="width" secondItem="IXH-zz-c02" secondAttribute="height" multiplier="1:1" id="ZkY-pN-KXz"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Андрей Зарембо-Годзяцкий" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BbI-AC-ro7">
-                    <rect key="frame" x="20" y="120" width="271" height="86"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rambler&amp;Co" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XbZ-xs-RRV">
-                    <rect key="frame" x="20" y="218" width="283" height="17"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="19" id="rUa-Au-6J6"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                     <variation key="default">
                         <mask key="constraints">
@@ -39,12 +37,12 @@
                     </variation>
                 </label>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="IXH-zz-c02" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="QxD-m7-0kx"/>
                 <constraint firstItem="IXH-zz-c02" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Txr-Rn-aGH"/>
                 <constraint firstItem="XbZ-xs-RRV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="XHD-6A-JSW"/>
-                <constraint firstAttribute="trailing" secondItem="XbZ-xs-RRV" secondAttribute="trailing" constant="8" id="dWZ-iT-gBi"/>
+                <constraint firstAttribute="trailing" secondItem="XbZ-xs-RRV" secondAttribute="trailing" constant="20" id="dWZ-iT-gBi"/>
                 <constraint firstItem="XbZ-xs-RRV" firstAttribute="top" secondItem="BbI-AC-ro7" secondAttribute="bottom" constant="12" id="fM9-OK-EhQ"/>
                 <constraint firstAttribute="bottom" secondItem="XbZ-xs-RRV" secondAttribute="bottom" id="qDd-W7-MBE"/>
                 <constraint firstAttribute="trailing" secondItem="BbI-AC-ro7" secondAttribute="trailing" constant="20" id="s9N-KI-sXZ"/>
