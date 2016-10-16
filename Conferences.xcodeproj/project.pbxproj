@@ -172,7 +172,7 @@
 		636E26E11D8FE7C9001ABB92 /* _MetaEventModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064331D3F9CE900246C8D /* _MetaEventModelObject.m */; };
 		636E26E21D8FE7D7001ABB92 /* MetaEventModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064591D3F9CE900246C8D /* MetaEventModelObject.m */; };
 		636E26E31D8FE7E3001ABB92 /* OperationSchedulerImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF99E501BC42FF6006F15AF /* OperationSchedulerImplementation.m */; };
-		636E26E41D8FE7EE001ABB92 /* PushNotificationServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF15BF1BC461DD00480CAF /* PushNotificationServiceImplementation.m */; };
+		636E26E41D8FE7EE001ABB92 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		636E26E51D8FE7FB001ABB92 /* RamblerLocationServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F40777E1D2BF4F300D47EF6 /* RamblerLocationServiceImplementation.m */; };
 		636E26E61D8FE807001ABB92 /* SpeakerServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B640F1BBDD6260053E38F /* SpeakerServiceImplementation.m */; };
 		636E26E71D8FE816001ABB92 /* SpeakerModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B20645F1D3F9CE900246C8D /* SpeakerModelObject.m */; };
@@ -195,6 +195,14 @@
 		636F8DDD1BCB8FE800552B91 /* RamblerLocationRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8DCD1BCB8FE800552B91 /* RamblerLocationRouter.m */; };
 		636F8DDE1BCB8FE800552B91 /* RamblerLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8DD11BCB8FE800552B91 /* RamblerLocationViewController.m */; };
 		636F8DFF1BCB91A900552B91 /* RamblerLocation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 636F8DFE1BCB91A900552B91 /* RamblerLocation.storyboard */; };
+		63BB9A0C1DB2858E00C2F2B9 /* PresentationLayerHelpersAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F2811BF7925F000017F3 /* PresentationLayerHelpersAssembly.m */; };
+		63BB9A0D1DB285A800C2F2B9 /* AppleMapsLinkBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFEAF0B1D2E5CE0006E9649 /* AppleMapsLinkBuilder.m */; };
+		63BB9A0E1DB285BA00C2F2B9 /* DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D86BD91C1439D800986536 /* DateFormatter.m */; };
+		63BB9A0F1DB285C900C2F2B9 /* EventTypeDeterminator.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F2BB1BF8A713000017F3 /* EventTypeDeterminator.m */; };
+		63BB9A101DB285D600C2F2B9 /* SafariFactoryImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8A101D5E5F1B00DA0C32 /* SafariFactoryImplementation.m */; };
+		63BB9A111DB285E300C2F2B9 /* VideoThumbnailGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8A071D5DFA1600DA0C32 /* VideoThumbnailGenerator.m */; };
+		63BB9A121DB285F200C2F2B9 /* YouTubeIdentifierDeriviator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B49E01D6EEE9000ED176B /* YouTubeIdentifierDeriviator.m */; };
+		63BB9A131DB2860000C2F2B9 /* YouTubePlayerFactoryImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B49E81D6EF72B00ED176B /* YouTubePlayerFactoryImplementation.m */; };
 		63BDBBC31D87E3DE006E8A15 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63BDBBC21D87E3DE006E8A15 /* Messages.framework */; };
 		63BDBBC71D87E3DE006E8A15 /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BDBBC61D87E3DE006E8A15 /* MessagesViewController.m */; };
 		63BDBBCA1D87E3DE006E8A15 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BDBBC81D87E3DE006E8A15 /* MainInterface.storyboard */; };
@@ -8458,16 +8466,19 @@
 				632184361D9D3816001BB7A7 /* EventListTableViewCell.xib in Sources */,
 				636E26D71D8FE719001ABB92 /* EventServiceImplementation.m in Sources */,
 				636E26ED1D8FE86A001ABB92 /* _TagModelObject.m in Sources */,
+				63BB9A101DB285D600C2F2B9 /* SafariFactoryImplementation.m in Sources */,
 				632184241D9D31B5001BB7A7 /* LectureMaterialModelObject.m in Sources */,
 				636E26EF1D8FE8CB001ABB92 /* _EventPlainObject.m in Sources */,
 				636E26CE1D8FE0C4001ABB92 /* EventListTableViewController.m in Sources */,
 				636E26E71D8FE816001ABB92 /* SpeakerModelObject.m in Sources */,
 				636E26CD1D8FE0B7001ABB92 /* EventListTableViewCell.m in Sources */,
+				63BB9A131DB2860000C2F2B9 /* YouTubePlayerFactoryImplementation.m in Sources */,
 				6321841E1D9BFD31001BB7A7 /* SpotlightIndexer.xcdatamodeld in Sources */,
 				636E26E21D8FE7D7001ABB92 /* MetaEventModelObject.m in Sources */,
 				632184311D9D3527001BB7A7 /* TechPlainObject.m in Sources */,
 				636E26DD1D8FE78D001ABB92 /* LectureModelObject.m in Sources */,
 				632184341D9D3574001BB7A7 /* SocialNetworkAccountPlainObject.m in Sources */,
+				63BB9A0C1DB2858E00C2F2B9 /* PresentationLayerHelpersAssembly.m in Sources */,
 				6321842A1D9D33E7001BB7A7 /* TagPlainObject.m in Sources */,
 				632184301D9D3521001BB7A7 /* _TechPlainObject.m in Sources */,
 				636E26D81D8FE73F001ABB92 /* _EventModelObject.m in Sources */,
@@ -8479,9 +8490,12 @@
 				636E26C61D8FDF41001ABB92 /* EventListModuleAssembly.m in Sources */,
 				632184321D9D3558001BB7A7 /* SocialNetworkAccountModelObject.m in Sources */,
 				636E26DE1D8FE799001ABB92 /* LastModifiedModelObject.m in Sources */,
+				63BB9A0E1DB285BA00C2F2B9 /* DateFormatter.m in Sources */,
+				63BB9A0D1DB285A800C2F2B9 /* AppleMapsLinkBuilder.m in Sources */,
 				636E26E81D8FE822001ABB92 /* SuggestServiceImplementation.m in Sources */,
 				6321842B1D9D33EF001BB7A7 /* _TagPlainObject.m in Sources */,
-				636E26E41D8FE7EE001ABB92 /* PushNotificationServiceImplementation.m in Sources */,
+				636E26E41D8FE7EE001ABB92 /* (null) in Sources */,
+				63BB9A121DB285F200C2F2B9 /* YouTubeIdentifierDeriviator.m in Sources */,
 				632184351D9D3579001BB7A7 /* _SocialNetworkAccountPlainObject.m in Sources */,
 				636E26E11D8FE7C9001ABB92 /* _MetaEventModelObject.m in Sources */,
 				632184271D9D32C6001BB7A7 /* SpeakerPlainObject.m in Sources */,
@@ -8504,6 +8518,7 @@
 				636E26EE1D8FE8AD001ABB92 /* EventPlainObject.m in Sources */,
 				636E26C81D8FE076001ABB92 /* EventListDataDisplayManager.m in Sources */,
 				636E26D91D8FE74D001ABB92 /* EventListQuery.m in Sources */,
+				63BB9A0F1DB285C900C2F2B9 /* EventTypeDeterminator.m in Sources */,
 				632184281D9D32CD001BB7A7 /* _SpeakerPlainObject.m in Sources */,
 				636E26DA1D8FE760001ABB92 /* EventModelObject.m in Sources */,
 				636E26C91D8FE082001ABB92 /* EventListInteractor.m in Sources */,
@@ -8520,6 +8535,7 @@
 				6321842F1D9D34D6001BB7A7 /* _TechModelObject.m in Sources */,
 				632184261D9D3268001BB7A7 /* LectureMaterialPlainObject.m in Sources */,
 				636E26DC1D8FE77D001ABB92 /* LectureServiceImplementation.m in Sources */,
+				63BB9A111DB285E300C2F2B9 /* VideoThumbnailGenerator.m in Sources */,
 				636E26CF1D8FE0D0001ABB92 /* MessageExtensionAssembly.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
