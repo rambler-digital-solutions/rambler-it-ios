@@ -47,4 +47,4 @@
 "OKAlertActionTitle" = "OK";
 "ErrorAlertTitle" = "Ошибка";
 
-"EventAlreadyStoredInCalendarErrorDescription" = "Событие уже существует в каледнаре.";
+"EventAlreadyStoredInCalendarErrorDescription" = "Событие уже существует в календаре.";
