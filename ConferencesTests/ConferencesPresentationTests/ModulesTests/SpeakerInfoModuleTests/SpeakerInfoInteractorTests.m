@@ -20,6 +20,7 @@
 
 #import <XCTest/XCTest.h>
 #import <OCMock/OCMock.h>
+#import <MessageUI/MessageUI.h>
 
 #import "SpeakerInfoInteractor.h"
 #import "ROSPonsomizer.h"
@@ -90,6 +91,35 @@
     
     // then
     XCTAssertEqualObjects([result firstObject], testUrl);
+}
+
+- (void)testThatInteractorChecksAvailabilityForUnsupportedDevice {
+    // given
+    [self stubComposerAvailability:NO];
+    
+    // when
+    BOOL result = [self.interactor checkIfEmailIsAvailable];
+    
+    // then
+    XCTAssertFalse(result);
+}
+
+- (void)testThatInteractorChecksAvailabilityForSupportedDevice {
+    // given
+    [self stubComposerAvailability:YES];
+    
+    // when
+    BOOL result = [self.interactor checkIfEmailIsAvailable];
+    
+    // then
+    XCTAssertTrue(result);
+}
+
+#pragma mark - Helper methods
+
+- (void)stubComposerAvailability:(BOOL)availability {
+    id composerMock = OCMClassMock([MFMailComposeViewController class]);
+    OCMStub([composerMock canSendMail]).andReturn(availability);
 }
 
 @end

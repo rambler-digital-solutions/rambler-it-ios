@@ -56,6 +56,10 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
     [self.output didTriggerSocialNetworkTapEventWithUrl:socialUrl];
 }
 
+- (void)didTapEmailCellWithEmail:(NSString *)email {
+    [self.output didTriggerEmailTapEventWithEmail:email];
+}
+
 - (void)didTapLectureCellWithLecture:(LecturePlainObject *)lecture {
     [self.output didTriggerLectureTapEventWithLecture:lecture];
 }

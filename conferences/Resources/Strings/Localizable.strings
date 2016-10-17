@@ -27,6 +27,10 @@
 "kSpeakerInfoSocialNetworksSectionName" = "Контакты";
 "kSpeakerInfoLecturesSectionName" = "Выступления";
 "kSpeakerInfoWebsiteSectionName" = "Веб-сайт";
+"kSpeakerInfoMailComposerUnavailableAlertTitle" = "Ошибка";
+"kSpeakerInfoMailComposerUnavailableAlertDescription" = "Настройте отправку писем на вашем устройстве";
+"kSpeakerInfoEmailUnavailableAlertTitle" = "Ошибка";
+"kSpeakerInfoEmailUnavailableAlertDescription" = "E-mail докладчика задан некорректно, свяжитесь с поддержкой";
 "kSpeakInfoFacebookAccountTitle" = "Facebook";
 "kSpeakInfoVkontakteAccountTitle" = "Vkontakte";
 "kSpeakInfoGithubAccountTitle" = "Github";

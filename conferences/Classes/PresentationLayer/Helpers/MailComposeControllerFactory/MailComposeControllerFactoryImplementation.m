@@ -1,3 +1,5 @@
+// Copyright (c) 2016 RAMBLER&Co
+//
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
@@ -16,20 +18,16 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import <Nimbus/NimbusModels.h>
-#import "SocialNetworkType.h"
+#import "MailComposeControllerFactoryImplementation.h"
 
-@class SocialNetworkAccountPlainObject;
+#import <MessageUI/MessageUI.h>
 
-@interface SpeakerInfoSocialContactsCellObject : NSObject <NICellObject>
+@implementation MailComposeControllerFactoryImplementation
 
-@property (nonatomic, assign, readonly) NSString *image;
-@property (nonatomic, strong, readonly) NSString *link;
-@property (nonatomic, strong, readonly) NSString *name;
-@property (nonatomic, assign, readonly) SocialNetworkType networkType;
+- (UIViewController *)obtainMailComposeViewControllerForRecepientEmail:(NSString *)email {
+    MFMailComposeViewController *controller = [MFMailComposeViewController new];
+    [controller setToRecipients:@[email]];
+    return controller;
+}
 
-+ (instancetype)objectWithSocialNetworkAccount:(SocialNetworkAccountPlainObject *)account
-                                         image:(NSString *)image
-                                          text:(NSString *)text;
 @end

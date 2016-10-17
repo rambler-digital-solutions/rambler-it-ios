@@ -1,3 +1,5 @@
+// Copyright (c) 2016 RAMBLER&Co
+//
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
@@ -17,19 +19,23 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-#import <Nimbus/NimbusModels.h>
-#import "SocialNetworkType.h"
 
-@class SocialNetworkAccountPlainObject;
+@class UIViewController;
 
-@interface SpeakerInfoSocialContactsCellObject : NSObject <NICellObject>
+/**
+ @author Egor Tolstoy
+ 
+ Factory for creating instances of controllers capable of sending emails
+ */
+@protocol MailComposeControllerFactory <NSObject>
 
-@property (nonatomic, assign, readonly) NSString *image;
-@property (nonatomic, strong, readonly) NSString *link;
-@property (nonatomic, strong, readonly) NSString *name;
-@property (nonatomic, assign, readonly) SocialNetworkType networkType;
+/**
+ @author Egor Tolstoy
+ 
+ Method returns a controller for sending emails
+ 
+ @param email The recepient email
+ */
+- (UIViewController *)obtainMailComposeViewControllerForRecepientEmail:(NSString *)email;
 
-+ (instancetype)objectWithSocialNetworkAccount:(SocialNetworkAccountPlainObject *)account
-                                         image:(NSString *)image
-                                          text:(NSString *)text;
 @end

@@ -55,6 +55,15 @@
 /**
  @author Egor Tolstoy
  
+ Method tells delegate that an email cell was tapped
+ 
+ @param email The receiver email
+ */
+- (void)didTapEmailCellWithEmail:(NSString *)email;
+
+/**
+ @author Egor Tolstoy
+ 
  VMethod tells delegate that a lecture cell was tapped
  
  @param socialUrl Social network URL
