@@ -102,8 +102,8 @@ static NSString *const kEventDescriptionSeparator = @"===============";
     [descriptionParts addObject:kEventDescriptionSeparator];
     
     for (LecturePlainObject *lecture in event.lectures) {
-        NSInteger lectureIndex = [[event.lectures allObjects] indexOfObject:lecture] + 1;
-        NSString *lectureText = [NSString stringWithFormat:@"%lu. %@. %@.\n%@", lectureIndex, lecture.name, lecture.speaker.name, lecture.lectureDescription];
+        NSUInteger lectureIndex = [[event.lectures allObjects] indexOfObject:lecture] + 1;
+        NSString *lectureText = [NSString stringWithFormat:@"%tu. %@. %@.\n%@", lectureIndex, lecture.name, lecture.speaker.name, lecture.lectureDescription];
         [descriptionParts addObject:lectureText];
     }
     
