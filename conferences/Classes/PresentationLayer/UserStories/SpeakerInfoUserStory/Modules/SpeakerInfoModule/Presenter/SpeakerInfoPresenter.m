@@ -42,11 +42,11 @@
 - (void)didTriggerEmailTapEventWithEmail:(NSString *)email {
     BOOL canSendMail = [self.interactor checkIfEmailIsAvailable];
     if (!canSendMail) {
-        // alert
+        [self.router openEmailComposerUnavailableAlertModule];
         return;
     }
     if (!email) {
-        
+        [self.router openEmptyEmailAlertModule];
         return;
     }
     [self.router openMailComposerModuleWithEmail:email];

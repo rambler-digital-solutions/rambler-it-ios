@@ -20,13 +20,31 @@
 
 #import <Foundation/Foundation.h>
 
-#import "MailComposeControllerFactory.h"
+@class UIAlertController;
 
 /**
  @author Egor Tolstoy
  
- Implementation of for creating instances of controllers capable of sending emails
+ Factory for creating alerts for SpeakerInfo module
  */
-@interface MailComposeControllerFactoryImplementation : NSObject <MailComposeControllerFactory>
+@interface SpeakerInfoAlertFactory : NSObject
+
+/**
+ @author Egor Tolstoy
+ 
+ Method creates alert for a case when MailComposer module is not available
+ 
+ @return UIAlertController
+ */
+- (UIAlertController *)createAlertControllerForUnavailableEmailComposer;
+
+/**
+ @author Egor Tolstoy
+ 
+ Method creates alert for a case when speaker email is unknown
+ 
+ @return UIAlertController
+ */
+- (UIAlertController *)createAlertControllerForMissingEmail;
 
 @end

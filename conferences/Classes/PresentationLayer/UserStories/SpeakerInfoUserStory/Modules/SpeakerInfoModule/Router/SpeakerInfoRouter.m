@@ -21,6 +21,7 @@
 #import "LectureModuleInput.h"
 #import "SafariFactory.h"
 #import "MailComposeControllerFactory.h"
+#import "SpeakerInfoAlertFactory.h"
 
 #import <MessageUI/MessageUI.h>
 
@@ -53,6 +54,16 @@ static NSString *const kSpeakerModuleToLectureModuleSegue = @"SpeakerModuleToLec
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
     
     [[(id)self.transitionHandler navigationController] presentViewController:activityViewController animated:true completion:nil];
+}
+
+- (void)openEmailComposerUnavailableAlertModule {
+    UIAlertController *alertController = [self.alertFactory createAlertControllerForUnavailableEmailComposer];
+    [[(id)self.transitionHandler navigationController] presentViewController:alertController animated:true completion:nil];
+}
+
+- (void)openEmptyEmailAlertModule {
+    UIAlertController *alertController = [self.alertFactory createAlertControllerForMissingEmail];
+    [[(id)self.transitionHandler navigationController] presentViewController:alertController animated:true completion:nil];
 }
 
 @end

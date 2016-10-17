@@ -30,6 +30,7 @@
 #import "PonsomizerAssembly.h"
 #import "PresentationLayerHelpersAssembly.h"
 #import "ShareUrlBuilderImplementation.h"
+#import "SpeakerInfoAlertFactory.h"
 
 static NSString *const kSpeakerShareItemType = @"speakers";
 
@@ -82,6 +83,8 @@ static NSString *const kSpeakerShareItemType = @"speakers";
                                                       with:[self.presentationLayerHelpersAssembly safariFactory]];
                                 [definition injectProperty:@selector(mailComposeFactory)
                                                       with:[self.presentationLayerHelpersAssembly mailComposeFactory]];
+                                [definition injectProperty:@selector(alertFactory)
+                                                      with:[self speakerInfoAlertFactory]];
            }];
 }
 
@@ -106,6 +109,10 @@ static NSString *const kSpeakerShareItemType = @"speakers";
                               [definition injectProperty:@selector(dateFormatter)
                                                     with:[self.presentationLayerHelpersAssembly dateFormatter]];
     }];
+}
+
+- (SpeakerInfoAlertFactory *)speakerInfoAlertFactory {
+    return [TyphoonDefinition withClass:[SpeakerInfoAlertFactory class]];
 }
 
 - (SocialContactsConfigurator *)socialContactsConfiguratorSpeakerInfo {

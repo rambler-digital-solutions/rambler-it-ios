@@ -370,6 +370,7 @@
 		9F1831211BC16195000E21A5 /* RCFResultResponseObjectFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1831201BC16195000E21A5 /* RCFResultResponseObjectFormatterTests.m */; };
 		9F18BE641DB42EC600CCD47B /* MailComposeControllerFactoryImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F18BE631DB42EC600CCD47B /* MailComposeControllerFactoryImplementation.m */; };
 		9F18BE671DB430F500CCD47B /* MailComposeControllerFactoryImplementationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F18BE661DB430F500CCD47B /* MailComposeControllerFactoryImplementationTests.m */; };
+		9F18BE6C1DB4FD3900CCD47B /* SpeakerInfoAlertFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F18BE6B1DB4FD3900CCD47B /* SpeakerInfoAlertFactory.m */; };
 		9F33B8801D63512200BE136C /* EventListTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F33B87F1D63512200BE136C /* EventListTableViewCellObject.m */; };
 		9F33B8841D639C6000BE136C /* SpeakerInfoLectureCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F33B8831D639C6000BE136C /* SpeakerInfoLectureCellObject.m */; };
 		9F33B8881D639C7300BE136C /* SpeakerInfoLectureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F33B8871D639C7300BE136C /* SpeakerInfoLectureCell.m */; };
@@ -1292,6 +1293,8 @@
 		9F18BE621DB42EC600CCD47B /* MailComposeControllerFactoryImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MailComposeControllerFactoryImplementation.h; path = MailComposeControllerFactory/MailComposeControllerFactoryImplementation.h; sourceTree = "<group>"; };
 		9F18BE631DB42EC600CCD47B /* MailComposeControllerFactoryImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MailComposeControllerFactoryImplementation.m; path = MailComposeControllerFactory/MailComposeControllerFactoryImplementation.m; sourceTree = "<group>"; };
 		9F18BE661DB430F500CCD47B /* MailComposeControllerFactoryImplementationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MailComposeControllerFactoryImplementationTests.m; path = MailComposeControllerFactoryTests/MailComposeControllerFactoryImplementationTests.m; sourceTree = "<group>"; };
+		9F18BE6A1DB4FD3900CCD47B /* SpeakerInfoAlertFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeakerInfoAlertFactory.h; path = SpeakerInfoAlertFactory/SpeakerInfoAlertFactory.h; sourceTree = "<group>"; };
+		9F18BE6B1DB4FD3900CCD47B /* SpeakerInfoAlertFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeakerInfoAlertFactory.m; path = SpeakerInfoAlertFactory/SpeakerInfoAlertFactory.m; sourceTree = "<group>"; };
 		9F1F37E41BBBB80D00C7797D /* Conferences.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conferences.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F1F38001BBBB80D00C7797D /* ConferencesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConferencesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F33B87E1D63512200BE136C /* EventListTableViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListTableViewCellObject.h; sourceTree = "<group>"; };
@@ -3571,6 +3574,7 @@
 		63F613351CB00A220002AEF0 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				9F18BE691DB4FD2300CCD47B /* SpeakerInfoAlertFactory */,
 				63F613361CB00A220002AEF0 /* SpeakerInfoRouter.h */,
 				63F613371CB00A220002AEF0 /* SpeakerInfoRouter.m */,
 				63F613381CB00A220002AEF0 /* SpeakerInfoRouterInput.h */,
@@ -5612,6 +5616,15 @@
 				9F18BE661DB430F500CCD47B /* MailComposeControllerFactoryImplementationTests.m */,
 			);
 			name = MailComposeControllerFactoryTests;
+			sourceTree = "<group>";
+		};
+		9F18BE691DB4FD2300CCD47B /* SpeakerInfoAlertFactory */ = {
+			isa = PBXGroup;
+			children = (
+				9F18BE6A1DB4FD3900CCD47B /* SpeakerInfoAlertFactory.h */,
+				9F18BE6B1DB4FD3900CCD47B /* SpeakerInfoAlertFactory.m */,
+			);
+			name = SpeakerInfoAlertFactory;
 			sourceTree = "<group>";
 		};
 		9F1F37DB1BBBB80D00C7797D = {
@@ -8497,6 +8510,7 @@
 				63FD4E061BE5038D0046378E /* UIColor+Hex.m in Sources */,
 				661CA4161D65D0EB0047EB68 /* LastModifiedPlainObject.m in Sources */,
 				9F18BE641DB42EC600CCD47B /* MailComposeControllerFactoryImplementation.m in Sources */,
+				9F18BE6C1DB4FD3900CCD47B /* SpeakerInfoAlertFactory.m in Sources */,
 				66704FF91D4606D800DD9D6E /* PonsomizerAssembly.m in Sources */,
 				9FBE8AFC1D634F0500DA0C32 /* EventListInteractor.m in Sources */,
 				9F0A84FF1BC1698B006F79FB /* RequestSigningOperation.m in Sources */,

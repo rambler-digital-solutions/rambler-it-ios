@@ -23,11 +23,13 @@
 
 @protocol SafariFactory;
 @protocol MailComposeControllerFactory;
+@class SpeakerInfoAlertFactory;
 
 @interface SpeakerInfoRouter : NSObject <SpeakerInfoRouterInput>
 
 @property (nonatomic, weak) id <RamblerViperModuleTransitionHandlerProtocol> transitionHandler;
 @property (nonatomic, strong) id<SafariFactory> safariFactory;
 @property (nonatomic, strong) id<MailComposeControllerFactory> mailComposeFactory;
+@property (nonatomic, strong) SpeakerInfoAlertFactory *alertFactory;
 
 @end

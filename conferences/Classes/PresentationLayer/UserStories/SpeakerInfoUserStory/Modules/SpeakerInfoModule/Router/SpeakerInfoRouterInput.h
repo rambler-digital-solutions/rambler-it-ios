@@ -56,5 +56,19 @@
  */
 - (void)openShareModuleWithActivityItems:(NSArray *)activityItems;
 
+/**
+ @author Egor Tolstoy
+ 
+ Method is used to show an alert about unavailable mail composer module
+ */
+- (void)openEmailComposerUnavailableAlertModule;
+
+/**
+ @author Egor Tolstoy
+ 
+ Method is used to show an alert about empty email
+ */
+- (void)openEmptyEmailAlertModule;
+
 @end
 

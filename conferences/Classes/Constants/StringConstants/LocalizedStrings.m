@@ -25,6 +25,10 @@
 NSString *const kSpeakerInfoSocialNetworksSectionName = @"kSpeakerInfoSocialNetworksSectionName";
 NSString *const kSpeakerInfoWebsiteSectionName = @"kSpeakerInfoWebsiteSectionName";
 NSString *const kSpeakerInfoLecturesSectionName = @"kSpeakerInfoLecturesSectionName";
+NSString *const kSpeakerInfoMailComposerUnavailableAlertTitle = @"kSpeakerInfoMailComposerUnavailableAlertTitle";
+NSString *const kSpeakerInfoMailComposerUnavailableAlertDescription = @"kSpeakerInfoMailComposerUnavailableAlertDescription";
+NSString *const kSpeakerInfoEmailUnavailableAlertTitle = @"kSpeakerInfoEmailUnavailableAlertTitle";
+NSString *const kSpeakerInfoEmailUnavailableAlertDescription = @"kSpeakerInfoEmailUnavailableAlertDescription";
 NSString *const kSpeakInfoFacebookAccountTitle = @"kSpeakInfoFacebookAccountTitle";
 NSString *const kSpeakInfoVkontakteAccountTitle = @"kSpeakInfoVkontakteAccountTitle";
 NSString *const kSpeakInfoGithubAccountTitle = @"kSpeakInfoGithubAccountTitle";
