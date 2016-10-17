@@ -80,6 +80,8 @@ static NSString *const kSpeakerShareItemType = @"speakers";
                                                       with:[self viewSpeakerInfo]];
                                 [definition injectProperty:@selector(safariFactory)
                                                       with:[self.presentationLayerHelpersAssembly safariFactory]];
+                                [definition injectProperty:@selector(mailComposeFactory)
+                                                      with:[self.presentationLayerHelpersAssembly mailComposeFactory]];
            }];
 }
 

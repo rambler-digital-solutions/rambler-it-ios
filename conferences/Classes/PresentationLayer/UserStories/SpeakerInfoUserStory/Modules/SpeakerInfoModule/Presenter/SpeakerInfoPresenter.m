@@ -39,6 +39,12 @@
     }
 }
 
+- (void)didTriggerEmailTapEventWithEmail:(NSString *)email {
+    if (email) {
+        [self.router openMailComposerModuleWithEmail:email];
+    }
+}
+
 - (void)didTriggerLectureTapEventWithLecture:(LecturePlainObject *)lecture {
     NSString *lectureId = lecture.lectureId;
     [self.router openLectureModuleWithLectureId:lectureId];

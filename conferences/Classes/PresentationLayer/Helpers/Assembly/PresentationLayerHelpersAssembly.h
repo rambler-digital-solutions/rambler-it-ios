@@ -27,6 +27,7 @@
 @class YouTubeIdentifierDeriviator;
 @protocol MapLinkBuilder;
 @protocol SafariFactory;
+@protocol MailComposeControllerFactory;
 @protocol YouTubePlayerFactory;
 
 /**
@@ -41,6 +42,7 @@
 - (id<MapLinkBuilder>)appleMapsLinkBuilder;
 - (VideoThumbnailGenerator *)videoThumbnailGenerator;
 - (id<SafariFactory>)safariFactory;
+- (id<MailComposeControllerFactory>)mailComposeFactory;
 - (id<YouTubePlayerFactory>)youTubePlayerFactory;
 - (YouTubeIdentifierDeriviator *)youTubeIdentifierDeriviator;
 

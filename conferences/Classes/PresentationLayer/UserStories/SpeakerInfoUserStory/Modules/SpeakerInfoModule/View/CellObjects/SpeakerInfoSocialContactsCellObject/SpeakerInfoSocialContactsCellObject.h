@@ -27,6 +27,7 @@
 @property (nonatomic, assign, readonly) NSString *image;
 @property (nonatomic, strong, readonly) NSString *link;
 @property (nonatomic, strong, readonly) NSString *name;
+@property (nonatomic, assign, readonly) SocialNetworkType networkType;
 
 + (instancetype)objectWithSocialNetworkAccount:(SocialNetworkAccountPlainObject *)account
                                          image:(NSString *)image

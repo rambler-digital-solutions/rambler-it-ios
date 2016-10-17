@@ -24,6 +24,7 @@
 #import "SpeakerInfoCellObjectBuilder.h"
 #import "SpeakerInfoSocialContactsCellObject.h"
 #import "SpeakerInfoLectureCellObject.h"
+#import "SocialNetworkType.h"
 #import "EXTScope.h"
 
 @interface SpeakerInfoDataDisplayManager ()
@@ -80,10 +81,19 @@
     @weakify(self);
     NIActionBlock socialContactActionBlock = ^BOOL(SpeakerInfoSocialContactsCellObject *object, UIViewController *controller, NSIndexPath *indexPath) {
         @strongify(self);
-        NSURL *socialUrl = [NSURL URLWithString:object.link];
+        SocialNetworkType type = object.networkType;
         
-        [self.delegate didTapSocialMaterialCellWithUrl:socialUrl];
-        return YES;
+        if (type == SocialNetworkEmailType) {
+            NSString *email = object.link;
+            
+            [self.delegate didTapEmailCellWithEmail:email];
+            return YES;
+        } else {
+            NSURL *socialUrl = [NSURL URLWithString:object.link];
+            
+            [self.delegate didTapSocialMaterialCellWithUrl:socialUrl];
+            return YES;
+        }
     };
     [self.tableViewActions attachToClass:[SpeakerInfoSocialContactsCellObject class]
                                 tapBlock:socialContactActionBlock];

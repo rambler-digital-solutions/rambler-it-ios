@@ -94,6 +94,28 @@
     OCMVerify([self.routerMock openWebBrowserModuleWithUrl:testUrl]);
 }
 
+- (void)testThatPresenterOpensMailComposeOnEmailTapEventIfThereIsEmail {
+    // given
+    NSString *const kTestEmail = @"etolstoy@rambler.ru";
+    
+    // when
+    [self.presenter didTriggerEmailTapEventWithEmail:kTestEmail];
+    
+    // then
+    OCMVerify([self.routerMock openMailComposerModuleWithEmail:kTestEmail]);
+}
+
+- (void)testThatPresenterDoesNotOpenMailComposeOnEmailTapEventIfThereIsNoEmail {
+    // given
+    [[self.routerMock reject] openMailComposerModuleWithEmail:OCMOCK_ANY];
+    
+    // when
+    [self.presenter didTriggerEmailTapEventWithEmail:nil];
+    
+    // then
+    OCMVerifyAll(self.routerMock);
+}
+
 - (void)testThatPresenterOpensLectureModuleOnLectureTapEvent {
     // given
     NSString *const kTestLectureId = @"1234";

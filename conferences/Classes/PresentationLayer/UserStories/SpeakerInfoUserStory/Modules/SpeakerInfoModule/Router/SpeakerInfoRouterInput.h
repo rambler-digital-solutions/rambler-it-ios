@@ -32,6 +32,15 @@
 /**
  @author Egor Tolstoy
  
+ Method is used to open mail composer module
+ 
+ @param email Receiver email
+ */
+- (void)openMailComposerModuleWithEmail:(NSString *)email;
+
+/**
+ @author Egor Tolstoy
+ 
  method is used to open Lecture Module
  
  @param lectureid Lecture identifier

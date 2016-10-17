@@ -20,6 +20,9 @@
 
 #import "LectureModuleInput.h"
 #import "SafariFactory.h"
+#import "MailComposeControllerFactory.h"
+
+#import <MessageUI/MessageUI.h>
 
 static NSString *const kSpeakerModuleToLectureModuleSegue = @"SpeakerModuleToLectureModuleSegue";
 
@@ -32,6 +35,14 @@ static NSString *const kSpeakerModuleToLectureModuleSegue = @"SpeakerModuleToLec
     [(id)self.transitionHandler presentViewController:safariViewController
                                              animated:YES
                                            completion:nil];
+}
+
+- (void)openMailComposerModuleWithEmail:(NSString *)email {
+    UIViewController *mailComposeController = [self.mailComposeFactory obtainMailComposeViewControllerForRecepientEmail:email];
+    if (!mailComposeController) {
+        return;
+    }
+    [[(id)self.transitionHandler navigationController] presentViewController:mailComposeController animated:true completion:nil];
 }
 
 - (void)openLectureModuleWithLectureId:(NSString *)lectureId {

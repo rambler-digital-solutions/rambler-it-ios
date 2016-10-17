@@ -25,6 +25,7 @@
 #import "AppleMapsLinkBuilder.h"
 #import "VideoThumbnailGenerator.h"
 #import "SafariFactoryImplementation.h"
+#import "MailComposeControllerFactoryImplementation.h"
 #import "YouTubeIdentifierDeriviator.h"
 #import "YouTubePlayerFactoryImplementation.h"
 
@@ -54,6 +55,10 @@
 
 - (SafariFactoryImplementation *)safariFactory {
     return [TyphoonDefinition withClass:[SafariFactoryImplementation class]];
+}
+
+- (MailComposeControllerFactoryImplementation *)mailComposeFactory {
+    return [TyphoonDefinition withClass:[MailComposeControllerFactoryImplementation class]];
 }
 
 - (id<YouTubePlayerFactory>)youTubePlayerFactory {

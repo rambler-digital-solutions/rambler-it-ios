@@ -22,10 +22,12 @@
 #import "SpeakerInfoRouterInput.h"
 
 @protocol SafariFactory;
+@protocol MailComposeControllerFactory;
 
 @interface SpeakerInfoRouter : NSObject <SpeakerInfoRouterInput>
 
 @property (nonatomic, weak) id <RamblerViperModuleTransitionHandlerProtocol> transitionHandler;
 @property (nonatomic, strong) id<SafariFactory> safariFactory;
+@property (nonatomic, strong) id<MailComposeControllerFactory> mailComposeFactory;
 
 @end
