@@ -46,17 +46,6 @@ static NSString *const kTestEmail = @"etolstoy@rambler.ru";
     [super tearDown];
 }
 
-- (void)testThatFactoryReturnsNilIfComposerNotAvailable {
-    // given
-    [self stubComposerAvailability:NO];
-    
-    // when
-    id result = [self.factory obtainMailComposeViewControllerForRecepientEmail:kTestEmail];
-    
-    // then
-    XCTAssertNil(result);
-}
-
 - (void)testThatFactoryReturnsComposer {
     // given
     [self stubComposerAvailability:YES];

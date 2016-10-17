@@ -40,9 +40,16 @@
 }
 
 - (void)didTriggerEmailTapEventWithEmail:(NSString *)email {
-    if (email) {
-        [self.router openMailComposerModuleWithEmail:email];
+    BOOL canSendMail = [self.interactor checkIfEmailIsAvailable];
+    if (!canSendMail) {
+        // alert
+        return;
     }
+    if (!email) {
+        
+        return;
+    }
+    [self.router openMailComposerModuleWithEmail:email];
 }
 
 - (void)didTriggerLectureTapEventWithLecture:(LecturePlainObject *)lecture {

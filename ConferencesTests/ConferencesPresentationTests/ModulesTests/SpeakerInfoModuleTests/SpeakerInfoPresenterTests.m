@@ -94,9 +94,10 @@
     OCMVerify([self.routerMock openWebBrowserModuleWithUrl:testUrl]);
 }
 
-- (void)testThatPresenterOpensMailComposeOnEmailTapEventIfThereIsEmail {
+- (void)testThatPresenterOpensMailComposeOnEmailTapEventIfThereIsEmailAndEmailComposeAvailable {
     // given
     NSString *const kTestEmail = @"etolstoy@rambler.ru";
+    OCMStub([self.interactorMock checkIfEmailIsAvailable]).andReturn(YES);
     
     // when
     [self.presenter didTriggerEmailTapEventWithEmail:kTestEmail];
@@ -111,6 +112,19 @@
     
     // when
     [self.presenter didTriggerEmailTapEventWithEmail:nil];
+    
+    // then
+    OCMVerifyAll(self.routerMock);
+}
+
+- (void)testThatPresenterDoesNotOpenMailComposeOnEmailTapEventIfEmailComposeNotAvailable {
+    // given
+    NSString *const kTestEmail = @"etolstoy@rambler.ru";
+    OCMStub([self.interactorMock checkIfEmailIsAvailable]).andReturn(NO);
+    [[self.routerMock reject] openMailComposerModuleWithEmail:OCMOCK_ANY];
+    
+    // when
+    [self.presenter didTriggerEmailTapEventWithEmail:kTestEmail];
     
     // then
     OCMVerifyAll(self.routerMock);

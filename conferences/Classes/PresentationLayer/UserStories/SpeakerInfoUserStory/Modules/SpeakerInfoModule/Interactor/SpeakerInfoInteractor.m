@@ -24,6 +24,8 @@
 #import "SpeakerService.h"
 #import "ShareUrlBuilder.h"
 
+#import <MessageUI/MessageUI.h>
+
 @implementation SpeakerInfoInteractor
 
 #pragma mark - SpeakerInfoInteractorInput
@@ -40,6 +42,11 @@
     NSURL *shareUrl = [self.shareUrlBuilder buildShareUrlWithItemId:speaker.speakerId];
     NSArray *activityItems = @[shareUrl];
     return activityItems;
+}
+
+- (BOOL)checkIfEmailIsAvailable {
+    BOOL canSendMail = [MFMailComposeViewController canSendMail];
+    return canSendMail;
 }
 
 @end

@@ -25,9 +25,6 @@
 @implementation MailComposeControllerFactoryImplementation
 
 - (UIViewController *)obtainMailComposeViewControllerForRecepientEmail:(NSString *)email {
-    if (![MFMailComposeViewController canSendMail]) {
-        return nil;
-    }
     MFMailComposeViewController *controller = [MFMailComposeViewController new];
     [controller setToRecipients:@[email]];
     return controller;

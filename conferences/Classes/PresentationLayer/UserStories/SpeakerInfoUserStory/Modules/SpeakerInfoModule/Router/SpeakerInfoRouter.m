@@ -39,9 +39,6 @@ static NSString *const kSpeakerModuleToLectureModuleSegue = @"SpeakerModuleToLec
 
 - (void)openMailComposerModuleWithEmail:(NSString *)email {
     UIViewController *mailComposeController = [self.mailComposeFactory obtainMailComposeViewControllerForRecepientEmail:email];
-    if (!mailComposeController) {
-        return;
-    }
     [[(id)self.transitionHandler navigationController] presentViewController:mailComposeController animated:true completion:nil];
 }
 
