@@ -31,6 +31,7 @@
 
 - (BOOL)shouldUpdateCellWithObject:(SpeakerInfoTableViewCellObject *)object {
     self.speakerDescription.text = object.speakerDescription;
+    self.speakerDescription.textAlignment = NSTextAlignmentLeft;
     
     return  true;
 }
