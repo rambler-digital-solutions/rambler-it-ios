@@ -1,5 +1,9 @@
 # RamblerTyphoonUtils
 
+![CocoaPods](https://cocoapod-badges.herokuapp.com/v/RamblerTyphoonUtils/badge.png)
+
+![Typhoon](http://i.imgur.com/MEHAMQX.jpg)
+
 [Typhoon](https://github.com/appsquickly/Typhoon) is a great tool, and iOS team in Rambler&Co loves it a lot. Besides actual contributing, we've developed some useful tools which cannot be included in the main project.
 
 1. `RamblerInitialAssemblyCollector` - this class can be used for activating assemblies on startup instead of plist integration.
@@ -80,8 +84,6 @@ You are testing the following things:
 - The result has all of the listed dependencies
 - Dependencies are of the right classes and conform to the required protocols
 
-## Requirements
-
 ## Installation
 
 RamblerTyphoonUtils is available through [CocoaPods](http://cocoapods.org). To use the `AssemblyCollector`:
@@ -100,13 +102,13 @@ end
 
 **Warning:** do not include `AssemblyTesting` subspec in the main target!
 
+## License
+
+RamblerTyphoonUtils is available under the MIT license. See the LICENSE file for more info.
+
 ## Authors
 
 - Egor Tolstoy, e.tolstoy@rambler-co.ru
 - Irina Dyagileva, i.dyagileva@rambler-co.ru
 - Andrey Rezanov, a.rezanov@rambler-co.ru
 - Andrey Zarembo-Godzyatsky, a.zarembo-godzyatsky@rambler-co.ru
-
-## License
-
-RamblerTyphoonUtils is available under the MIT license. See the LICENSE file for more info.

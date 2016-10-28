@@ -21,7 +21,7 @@
 #import <UIKit/UIKit.h>
 
 #import "TyphoonAssembly.h"
-#import "AssemblyCollector/RamblerInitialAssembly.h"
+#import <RamblerTyphoonUtils/AssemblyCollector.h>
 
 /**
  @author Artem Karpushin

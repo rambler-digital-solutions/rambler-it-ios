@@ -1,0 +1,1 @@
+../../../RamblerTyphoonUtils/Code/Testing/AssemblyTesting/RamblerTyphoonAssemblyTestsTypeDescriptor.h

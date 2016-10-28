@@ -84,16 +84,16 @@ PODS:
     - Nimbus/Core
   - OCMock (3.2)
   - PureLayout (3.0.1)
-  - RamblerAppDelegateProxy (HEAD based on 0.0.2)
-  - RamblerSegues (1.1.0):
-    - RamblerSegues/Core (= 1.1.0)
-    - RamblerSegues/CrossStoryboardSegue (= 1.1.0)
-    - RamblerSegues/EmbedSegue (= 1.1.0)
-  - RamblerSegues/Core (1.1.0)
-  - RamblerSegues/CrossStoryboardSegue (1.1.0)
-  - RamblerSegues/EmbedSegue (1.1.0)
-  - RamblerTyphoonUtils/AssemblyCollector (1.1.0)
-  - RamblerTyphoonUtils/AssemblyTesting (1.1.0)
+  - RamblerAppDelegateProxy (0.0.3)
+  - RamblerSegues (1.1.2):
+    - RamblerSegues/Core (= 1.1.2)
+    - RamblerSegues/CrossStoryboardSegue (= 1.1.2)
+    - RamblerSegues/EmbedSegue (= 1.1.2)
+  - RamblerSegues/Core (1.1.2)
+  - RamblerSegues/CrossStoryboardSegue (1.1.2)
+  - RamblerSegues/EmbedSegue (1.1.2)
+  - RamblerTyphoonUtils/AssemblyCollector (1.5.0)
+  - RamblerTyphoonUtils/AssemblyTesting (1.5.0)
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
@@ -102,12 +102,7 @@ PODS:
   - Typhoon/no-arc (3.5.1)
   - UICollectionViewLeftAlignedLayout (1.0.1)
   - UIViewController+Routing (0.1.1)
-  - ViperMcFlurry (1.3.1):
-    - ViperMcFlurry/Core (= 1.3.1)
-    - ViperMcFlurry/IntermoduleDataTransfer (= 1.3.1)
-  - ViperMcFlurry/Core (1.3.1)
-  - ViperMcFlurry/IntermoduleDataTransfer (1.3.1):
-    - ViperMcFlurry/Core
+  - ViperMcFlurry (1.5.2)
   - XCDYouTubeKit (2.5.3)
 
 DEPENDENCIES:
@@ -125,15 +120,15 @@ DEPENDENCIES:
   - Nimbus/Models (from `https://github.com/rambler-ios/nimbus`)
   - OCMock (~> 3.1)
   - PureLayout (~> 3.0)
-  - RamblerAppDelegateProxy (HEAD)
-  - RamblerSegues
-  - RamblerTyphoonUtils/AssemblyCollector
-  - RamblerTyphoonUtils/AssemblyTesting (= 1.1.0)
+  - RamblerAppDelegateProxy (= 0.0.3)
+  - RamblerSegues (= 1.1.2)
+  - RamblerTyphoonUtils/AssemblyCollector (= 1.5.0)
+  - RamblerTyphoonUtils/AssemblyTesting (= 1.5.0)
   - SDWebImage (~> 3.7)
   - Typhoon (~> 3.3)
   - UICollectionViewLeftAlignedLayout (= 1.0.1)
   - UIViewController+Routing (~> 0.1.0)
-  - ViperMcFlurry (= 1.3.1)
+  - ViperMcFlurry (= 1.5.2)
   - XCDYouTubeKit (~> 2.5)
 
 EXTERNAL SOURCES:
@@ -165,14 +160,16 @@ SPEC CHECKSUMS:
   Nimbus: 355131d4656498bf072fecc142752a9f343eb59b
   OCMock: 28def049ef47f996b515a8eeea958be7ccab2dbb
   PureLayout: f35f5384c9c4e4479df041dbe33ad7577b71ddfb
-  RamblerAppDelegateProxy: a0cf2f01a8474e9aee0e9dad81147ddf22874464
-  RamblerSegues: e4b34295ede5203115b53f6b749c14d9ba6b9e5e
-  RamblerTyphoonUtils: c799c606d7406002bf56f376443763b15947be8c
+  RamblerAppDelegateProxy: a29284f46e8711663f0d279f5023469a96b27529
+  RamblerSegues: 697ae59f2fbaefac805a57fc4e61fb73ba1fd5de
+  RamblerTyphoonUtils: 08a6b5592e045a490cd4550aa9ea4a581308d482
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   Typhoon: c0950bb9f2e835eb8a7dc6983160109b6baf2dda
   UICollectionViewLeftAlignedLayout: 6d10790db3e07958d91bd910d8b8e9dad952b1ef
   UIViewController+Routing: 6d34de88e5a30250d453f49ddd5993212f279b9a
-  ViperMcFlurry: 4988827744fa35e45862ef2485789278379fe394
+  ViperMcFlurry: 701bc3ad8d188b1f1e157ec0ddf4e77184de88b5
   XCDYouTubeKit: 90690f9e3523735dc93b8024269d991b0cfffe78
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 6d8697e28b928162d7f369904aefa86655e98d9e
+
+COCOAPODS: 1.1.1

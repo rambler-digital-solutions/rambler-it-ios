@@ -20,7 +20,7 @@
 
 #import <Typhoon/Typhoon.h>
 #import "ModuleAssemblyBase.h"
-#import "AssemblyCollector/RamblerInitialAssembly.h"
+#import <RamblerTyphoonUtils/AssemblyCollector.h>
 #import "PonsomizerAssembly.h"
 
 /**
