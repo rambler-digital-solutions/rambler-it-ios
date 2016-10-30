@@ -216,7 +216,6 @@
 		63F613D81CB111070002AEF0 /* EventListInteractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F613BA1CB111070002AEF0 /* EventListInteractorTests.m */; };
 		63F613D91CB111070002AEF0 /* EventListPresenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F613BB1CB111070002AEF0 /* EventListPresenterTests.m */; };
 		63F613DA1CB111070002AEF0 /* EventListRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F613BC1CB111070002AEF0 /* EventListRouterTests.m */; };
-		63F613DB1CB111070002AEF0 /* EventListTableViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F613BD1CB111070002AEF0 /* EventListTableViewControllerTests.m */; };
 		63F613DC1CB111070002AEF0 /* CurrentEventCellObjectBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F613C01CB111070002AEF0 /* CurrentEventCellObjectBuilderTests.m */; };
 		63F613DD1CB111070002AEF0 /* FutureEventCellObjectBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F613C11CB111070002AEF0 /* FutureEventCellObjectBuilderTests.m */; };
 		63F613DE1CB111070002AEF0 /* PastEventCellObjectBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F613C21CB111070002AEF0 /* PastEventCellObjectBuilderTests.m */; };
@@ -468,7 +467,6 @@
 		9FBE89BA1D5CB72D00DA0C32 /* CleanLaunchAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89B91D5CB72D00DA0C32 /* CleanLaunchAppDelegate.m */; };
 		9FBE89D31D5CB76900DA0C32 /* CleanLaunchAppDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89BE1D5CB76900DA0C32 /* CleanLaunchAppDelegateTests.m */; };
 		9FBE89D41D5CB76900DA0C32 /* SpotlightAppDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89C01D5CB76900DA0C32 /* SpotlightAppDelegateTests.m */; };
-		9FBE89D51D5CB76900DA0C32 /* TyphoonAppDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89C21D5CB76900DA0C32 /* TyphoonAppDelegateTests.m */; };
 		9FBE89D61D5CB76900DA0C32 /* SpotlightLaunchHandlerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89C51D5CB76900DA0C32 /* SpotlightLaunchHandlerTests.m */; };
 		9FBE89D71D5CB76900DA0C32 /* CleanLaunchRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89C91D5CB76900DA0C32 /* CleanLaunchRouterTests.m */; };
 		9FBE89D81D5CB76900DA0C32 /* EventLaunchRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89CB1D5CB76900DA0C32 /* EventLaunchRouterTests.m */; };
@@ -993,7 +991,6 @@
 		63F613BA1CB111070002AEF0 /* EventListInteractorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListInteractorTests.m; sourceTree = "<group>"; };
 		63F613BB1CB111070002AEF0 /* EventListPresenterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListPresenterTests.m; sourceTree = "<group>"; };
 		63F613BC1CB111070002AEF0 /* EventListRouterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListRouterTests.m; sourceTree = "<group>"; };
-		63F613BD1CB111070002AEF0 /* EventListTableViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListTableViewControllerTests.m; sourceTree = "<group>"; };
 		63F613C01CB111070002AEF0 /* CurrentEventCellObjectBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentEventCellObjectBuilderTests.m; sourceTree = "<group>"; };
 		63F613C11CB111070002AEF0 /* FutureEventCellObjectBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FutureEventCellObjectBuilderTests.m; sourceTree = "<group>"; };
 		63F613C21CB111070002AEF0 /* PastEventCellObjectBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PastEventCellObjectBuilderTests.m; sourceTree = "<group>"; };
@@ -1481,7 +1478,6 @@
 		9FBE89B91D5CB72D00DA0C32 /* CleanLaunchAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CleanLaunchAppDelegate.m; sourceTree = "<group>"; };
 		9FBE89BE1D5CB76900DA0C32 /* CleanLaunchAppDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CleanLaunchAppDelegateTests.m; sourceTree = "<group>"; };
 		9FBE89C01D5CB76900DA0C32 /* SpotlightAppDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotlightAppDelegateTests.m; sourceTree = "<group>"; };
-		9FBE89C21D5CB76900DA0C32 /* TyphoonAppDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TyphoonAppDelegateTests.m; sourceTree = "<group>"; };
 		9FBE89C51D5CB76900DA0C32 /* SpotlightLaunchHandlerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotlightLaunchHandlerTests.m; sourceTree = "<group>"; };
 		9FBE89C91D5CB76900DA0C32 /* CleanLaunchRouterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CleanLaunchRouterTests.m; sourceTree = "<group>"; };
 		9FBE89CB1D5CB76900DA0C32 /* EventLaunchRouterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventLaunchRouterTests.m; sourceTree = "<group>"; };
@@ -3680,7 +3676,6 @@
 				63F613BA1CB111070002AEF0 /* EventListInteractorTests.m */,
 				63F613BB1CB111070002AEF0 /* EventListPresenterTests.m */,
 				63F613BC1CB111070002AEF0 /* EventListRouterTests.m */,
-				63F613BD1CB111070002AEF0 /* EventListTableViewControllerTests.m */,
 			);
 			path = AnnouncementListModuleTests;
 			sourceTree = "<group>";
@@ -6893,7 +6888,6 @@
 				9F7B82271D7DA9DC002E977A /* QuickActionAppDelegate */,
 				9FBE89BD1D5CB76900DA0C32 /* CleanLaunchAppDelegate */,
 				9FBE89BF1D5CB76900DA0C32 /* SpotlightAppDelegate */,
-				9FBE89C11D5CB76900DA0C32 /* TyphoonAppDelegate */,
 			);
 			path = AppDelegates;
 			sourceTree = "<group>";
@@ -6912,14 +6906,6 @@
 				9FBE89C01D5CB76900DA0C32 /* SpotlightAppDelegateTests.m */,
 			);
 			path = SpotlightAppDelegate;
-			sourceTree = "<group>";
-		};
-		9FBE89C11D5CB76900DA0C32 /* TyphoonAppDelegate */ = {
-			isa = PBXGroup;
-			children = (
-				9FBE89C21D5CB76900DA0C32 /* TyphoonAppDelegateTests.m */,
-			);
-			path = TyphoonAppDelegate;
 			sourceTree = "<group>";
 		};
 		9FBE89C31D5CB76900DA0C32 /* LaunchHandler */ = {
@@ -8623,7 +8609,6 @@
 				662166501D4F4507000A1D11 /* ReportsSearchInteractorTests.m in Sources */,
 				63F613EF1CB111070002AEF0 /* SpeakerInfoViewControllerTests.m in Sources */,
 				9FBE89DA1D5CB76900DA0C32 /* SpeakerLaunchRouterTests.m in Sources */,
-				9FBE89D51D5CB76900DA0C32 /* TyphoonAppDelegateTests.m in Sources */,
 				635E18C21CA6A496005B8439 /* LectureModuleAssemblyTests.m in Sources */,
 				66A1DD461D7E984E00998F6B /* TagCellSizeRowCalculatorTests.m in Sources */,
 				9FF37E181D32397900471B4E /* RamblerLocationPresenterTests.m in Sources */,
@@ -8721,7 +8706,6 @@
 				9F78D7641D59E93B009DDCEA /* SpeakerChangeProviderFetchRequestFactoryTests.m in Sources */,
 				9F1830AB1BC1139B000E21A5 /* RCFParseRequestSignerTests.m in Sources */,
 				63F613D71CB111070002AEF0 /* EventListDataDisplayManagerTests.m in Sources */,
-				63F613DB1CB111070002AEF0 /* EventListTableViewControllerTests.m in Sources */,
 				63F403AF1BD0D0690086D030 /* ResponseMappersAssemblyTests.m in Sources */,
 				9F1830DF1BC12749000E21A5 /* RCFResponseValidatorTestsBase.m in Sources */,
 				63F403AC1BD0CD460086D030 /* ResponseDeserializersAssemblyTests.m in Sources */,

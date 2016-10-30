@@ -82,7 +82,7 @@ PODS:
   - Nimbus/Core (1.2.2)
   - Nimbus/Models (1.2.2):
     - Nimbus/Core
-  - OCMock (3.2)
+  - OCMock (3.3.1)
   - PureLayout (3.0.1)
   - RamblerAppDelegateProxy (0.0.3)
   - RamblerSegues (1.1.2):
@@ -118,14 +118,14 @@ DEPENDENCIES:
   - MMBarricade (~> 1.0.1)
   - Nimbus/Collections (from `https://github.com/rambler-ios/nimbus`)
   - Nimbus/Models (from `https://github.com/rambler-ios/nimbus`)
-  - OCMock (~> 3.1)
+  - OCMock (= 3.3.1)
   - PureLayout (~> 3.0)
   - RamblerAppDelegateProxy (= 0.0.3)
   - RamblerSegues (= 1.1.2)
   - RamblerTyphoonUtils/AssemblyCollector (= 1.5.0)
   - RamblerTyphoonUtils/AssemblyTesting (= 1.5.0)
   - SDWebImage (~> 3.7)
-  - Typhoon (~> 3.3)
+  - Typhoon (= 3.5.1)
   - UICollectionViewLeftAlignedLayout (= 1.0.1)
   - UIViewController+Routing (~> 0.1.0)
   - ViperMcFlurry (= 1.5.2)
@@ -158,7 +158,7 @@ SPEC CHECKSUMS:
   MagicalRecord: 89eb7d7ead39fb37f01c3d010665ee94d17f8dba
   MMBarricade: 61e17f747baa1a33cd7f8a9c75d520ca958508dd
   Nimbus: 355131d4656498bf072fecc142752a9f343eb59b
-  OCMock: 28def049ef47f996b515a8eeea958be7ccab2dbb
+  OCMock: f3f61e6eaa16038c30caa5798c5e49d3307b6f22
   PureLayout: f35f5384c9c4e4479df041dbe33ad7577b71ddfb
   RamblerAppDelegateProxy: a29284f46e8711663f0d279f5023469a96b27529
   RamblerSegues: 697ae59f2fbaefac805a57fc4e61fb73ba1fd5de
@@ -170,6 +170,6 @@ SPEC CHECKSUMS:
   ViperMcFlurry: 701bc3ad8d188b1f1e157ec0ddf4e77184de88b5
   XCDYouTubeKit: 90690f9e3523735dc93b8024269d991b0cfffe78
 
-PODFILE CHECKSUM: 6d8697e28b928162d7f369904aefa86655e98d9e
+PODFILE CHECKSUM: 38cf81b8b6d92896b8c126d711b91f0aa5b6cdab
 
 COCOAPODS: 1.1.1

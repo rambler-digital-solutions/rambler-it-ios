@@ -2,7 +2,7 @@ source 'https://github.com/cocoapods/Specs.git'
 
 target 'Conferences' do
     pod 'MagicalRecord', '~> 2.3'
-    pod 'Typhoon', '~> 3.3'
+    pod 'Typhoon', '3.5.1'
     pod 'libextobjc', '~> 0.4'
     pod 'AFNetworking', '~> 2.6'
     pod 'EasyMapping', '~> 0.15'
@@ -24,7 +24,7 @@ target 'Conferences' do
     pod 'XCDYouTubeKit', '~> 2.5'
     
     target 'ConferencesTests' do
-        pod 'OCMock', '~> 3.1'
+        pod 'OCMock', '3.3.1'
         pod 'MMBarricade', '~> 1.0.1'
         pod 'RamblerTyphoonUtils/AssemblyTesting', '1.5.0'
     end
