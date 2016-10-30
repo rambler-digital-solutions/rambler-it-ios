@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_RamblerTyphoonUtils_AssemblyCollector_AssemblyTesting : NSObject
+@end
+@implementation PodsDummy_RamblerTyphoonUtils_AssemblyCollector_AssemblyTesting
+@end

@@ -19,7 +19,7 @@
 // THE SOFTWARE.
 
 #import "ModuleAssemblyBase.h"
-#import "AssemblyCollector/RamblerInitialAssembly.h"
+#import <RamblerTyphoonUtils/AssemblyCollector.h>
 
 @class PonsomizerAssembly;
 
