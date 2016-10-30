@@ -101,7 +101,6 @@ PODS:
     - Typhoon/no-arc (= 3.5.1)
   - Typhoon/no-arc (3.5.1)
   - UICollectionViewLeftAlignedLayout (1.0.1)
-  - UIViewController+Routing (0.1.1)
   - ViperMcFlurry (1.5.2)
   - XCDYouTubeKit (2.5.3)
 
@@ -127,7 +126,6 @@ DEPENDENCIES:
   - SDWebImage (~> 3.7)
   - Typhoon (= 3.5.1)
   - UICollectionViewLeftAlignedLayout (= 1.0.1)
-  - UIViewController+Routing (~> 0.1.0)
   - ViperMcFlurry (= 1.5.2)
   - XCDYouTubeKit (~> 2.5)
 
@@ -166,10 +164,9 @@ SPEC CHECKSUMS:
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   Typhoon: c0950bb9f2e835eb8a7dc6983160109b6baf2dda
   UICollectionViewLeftAlignedLayout: 6d10790db3e07958d91bd910d8b8e9dad952b1ef
-  UIViewController+Routing: 6d34de88e5a30250d453f49ddd5993212f279b9a
   ViperMcFlurry: 701bc3ad8d188b1f1e157ec0ddf4e77184de88b5
   XCDYouTubeKit: 90690f9e3523735dc93b8024269d991b0cfffe78
 
-PODFILE CHECKSUM: 38cf81b8b6d92896b8c126d711b91f0aa5b6cdab
+PODFILE CHECKSUM: e1bd0b742ef6b5d223184a22970a462378d3ff05
 
 COCOAPODS: 1.1.1
