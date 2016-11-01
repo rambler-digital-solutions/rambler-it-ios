@@ -43,5 +43,6 @@ target 'RamblerMessageExtension', :exclusive => true do
     pod 'CocoaLumberjack', '~> 2.0'
     pod 'SDWebImage', '~> 3.7'
     pod 'XCDYouTubeKit', '~> 2.5'
+    pod 'ViperMcFlurry', '1.3.1'
 end
 

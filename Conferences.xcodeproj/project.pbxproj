@@ -78,6 +78,9 @@
 		2BDDB1D31D3F7235007FD547 /* DirectionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDDB1D21D3F7235007FD547 /* DirectionObject.m */; };
 		3784462F1D4E067A0016121E /* RCNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3784462E1D4E067A0016121E /* RCNavigationController.m */; };
 		5A5668508B92FC833070BA13 /* libPods-ConferencesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E72B1E234365770B87BDC6D /* libPods-ConferencesTests.a */; };
+		630E25FA1DBFA2860043C20E /* EventInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F6127C1CB00A220002AEF0 /* EventInteractor.m */; };
+		630E25FB1DBFA2920043C20E /* EventPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F612821CB00A220002AEF0 /* EventPresenter.m */; };
+		631060191DC87909006870EB /* MessagesConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 631060181DC87909006870EB /* MessagesConstants.m */; };
 		6315BA051C9EC23600999877 /* VideoRecordTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6315BA031C9EC23600999877 /* VideoRecordTableViewCell.m */; };
 		6315BA061C9EC23600999877 /* VideoRecordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6315BA041C9EC23600999877 /* VideoRecordTableViewCell.xib */; };
 		6315BA0A1C9EC2A200999877 /* TableViewSectionHeaderCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6315BA091C9EC2A200999877 /* TableViewSectionHeaderCellObject.m */; };
@@ -130,7 +133,6 @@
 		632184331D9D355F001BB7A7 /* _SocialNetworkAccountModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064371D3F9CE900246C8D /* _SocialNetworkAccountModelObject.m */; };
 		632184341D9D3574001BB7A7 /* SocialNetworkAccountPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064701D3F9CE900246C8D /* SocialNetworkAccountPlainObject.m */; };
 		632184351D9D3579001BB7A7 /* _SocialNetworkAccountPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B20644A1D3F9CE900246C8D /* _SocialNetworkAccountPlainObject.m */; };
-		632184361D9D3816001BB7A7 /* EventListTableViewCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8AEF1D634F0500DA0C32 /* EventListTableViewCell.xib */; };
 		635E18BF1CA6A0A9005B8439 /* SpeakerInfoModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 635E18BE1CA6A0A9005B8439 /* SpeakerInfoModuleAssemblyTests.m */; };
 		635E18C21CA6A496005B8439 /* LectureModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 635E18C11CA6A496005B8439 /* LectureModuleAssemblyTests.m */; };
 		635E18C71CA6B8CE005B8439 /* SpeakerShortInfoModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 635E18C61CA6B8CE005B8439 /* SpeakerShortInfoModuleAssemblyTests.m */; };
@@ -172,7 +174,6 @@
 		636E26E11D8FE7C9001ABB92 /* _MetaEventModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064331D3F9CE900246C8D /* _MetaEventModelObject.m */; };
 		636E26E21D8FE7D7001ABB92 /* MetaEventModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064591D3F9CE900246C8D /* MetaEventModelObject.m */; };
 		636E26E31D8FE7E3001ABB92 /* OperationSchedulerImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF99E501BC42FF6006F15AF /* OperationSchedulerImplementation.m */; };
-		636E26E41D8FE7EE001ABB92 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		636E26E51D8FE7FB001ABB92 /* RamblerLocationServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F40777E1D2BF4F300D47EF6 /* RamblerLocationServiceImplementation.m */; };
 		636E26E61D8FE807001ABB92 /* SpeakerServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B640F1BBDD6260053E38F /* SpeakerServiceImplementation.m */; };
 		636E26E71D8FE816001ABB92 /* SpeakerModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B20645F1D3F9CE900246C8D /* SpeakerModelObject.m */; };
@@ -195,6 +196,25 @@
 		636F8DDD1BCB8FE800552B91 /* RamblerLocationRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8DCD1BCB8FE800552B91 /* RamblerLocationRouter.m */; };
 		636F8DDE1BCB8FE800552B91 /* RamblerLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8DD11BCB8FE800552B91 /* RamblerLocationViewController.m */; };
 		636F8DFF1BCB91A900552B91 /* RamblerLocation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 636F8DFE1BCB91A900552B91 /* RamblerLocation.storyboard */; };
+		638918CC1DC28AA3009B34AF /* MessagesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 638918CB1DC28AA3009B34AF /* MessagesAppDelegate.m */; };
+		638918CE1DC28C73009B34AF /* MessagesLaunchHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 638918CD1DC28C73009B34AF /* MessagesLaunchHandler.m */; };
+		638918CF1DC333A4009B34AF /* MessagesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 638918CB1DC28AA3009B34AF /* MessagesAppDelegate.m */; };
+		638918D01DC333B6009B34AF /* MessagesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 638918CB1DC28AA3009B34AF /* MessagesAppDelegate.m */; };
+		638918D11DC333C4009B34AF /* MessagesLaunchHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 638918CD1DC28C73009B34AF /* MessagesLaunchHandler.m */; };
+		638918D21DC333CA009B34AF /* MessagesLaunchHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 638918CD1DC28C73009B34AF /* MessagesLaunchHandler.m */; };
+		638918D61DC33A33009B34AF /* MessagesUserActivityFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 638918D51DC33A33009B34AF /* MessagesUserActivityFactory.m */; };
+		638918D71DC33CC5009B34AF /* MessagesUserActivityFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 638918D51DC33A33009B34AF /* MessagesUserActivityFactory.m */; };
+		638918D81DC33CD0009B34AF /* MessagesUserActivityFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 638918D51DC33A33009B34AF /* MessagesUserActivityFactory.m */; };
+		638918DC1DC340B4009B34AF /* NSArray+NSURLQueryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 638918DB1DC340B4009B34AF /* NSArray+NSURLQueryItem.m */; };
+		63A9D5C51DB759A600169E2E /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F612F51CB00A220002AEF0 /* EventViewController.m */; };
+		63A9D5C61DB759B600169E2E /* LocalizedStrings.m in Sources */ = {isa = PBXBuildFile; fileRef = 631808621C4A66FA00A61E7D /* LocalizedStrings.m */; };
+		63A9D5C91DB7614900169E2E /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63F612F91CB00A220002AEF0 /* Event.storyboard */; };
+		63A9D5CA1DB7616200169E2E /* SpeakerInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63F6134B1CB00A220002AEF0 /* SpeakerInfo.storyboard */; };
+		63A9D5CB1DB7617200169E2E /* Events.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63F6125C1CB00A220002AEF0 /* Events.storyboard */; };
+		63A9D5CC1DB7617A00169E2E /* Lecture.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63F613221CB00A220002AEF0 /* Lecture.storyboard */; };
+		63A9D5CD1DB7618100169E2E /* RamblerLocation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 636F8DFE1BCB91A900552B91 /* RamblerLocation.storyboard */; };
+		63A9D5CE1DB7618500169E2E /* Reports.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63F612281CAFF8530002AEF0 /* Reports.storyboard */; };
+		63A9D5CF1DB7618900169E2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 636B64111BBFE2C20053E38F /* Main.storyboard */; };
 		63BB9A0C1DB2858E00C2F2B9 /* PresentationLayerHelpersAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F2811BF7925F000017F3 /* PresentationLayerHelpersAssembly.m */; };
 		63BB9A0D1DB285A800C2F2B9 /* AppleMapsLinkBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFEAF0B1D2E5CE0006E9649 /* AppleMapsLinkBuilder.m */; };
 		63BB9A0E1DB285BA00C2F2B9 /* DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D86BD91C1439D800986536 /* DateFormatter.m */; };
@@ -203,6 +223,39 @@
 		63BB9A111DB285E300C2F2B9 /* VideoThumbnailGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8A071D5DFA1600DA0C32 /* VideoThumbnailGenerator.m */; };
 		63BB9A121DB285F200C2F2B9 /* YouTubeIdentifierDeriviator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B49E01D6EEE9000ED176B /* YouTubeIdentifierDeriviator.m */; };
 		63BB9A131DB2860000C2F2B9 /* YouTubePlayerFactoryImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B49E81D6EF72B00ED176B /* YouTubePlayerFactoryImplementation.m */; };
+		63BB9A191DB4B45400C2F2B9 /* LaunchSystemAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89E21D5CBB7800DA0C32 /* LaunchSystemAssembly.m */; };
+		63BB9A1A1DB4B46300C2F2B9 /* EventLaunchRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE899F1D5CB71300DA0C32 /* EventLaunchRouter.m */; };
+		63BB9A1B1DB4B47C00C2F2B9 /* LectureLaunchRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89A21D5CB71300DA0C32 /* LectureLaunchRouter.m */; };
+		63BB9A1C1DB4B48800C2F2B9 /* QuickActionAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B82211D7DA554002E977A /* QuickActionAppDelegate.m */; };
+		63BB9A1D1DB4B49500C2F2B9 /* QuickActionLaunchHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B82251D7DA8B5002E977A /* QuickActionLaunchHandler.m */; };
+		63BB9A1E1DB4B4A200C2F2B9 /* QuickActionUserActivityFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B822C1D7DAB51002E977A /* QuickActionUserActivityFactory.m */; };
+		63BB9A1F1DB4B4BF00C2F2B9 /* SpeakerLaunchRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89A51D5CB71300DA0C32 /* SpeakerLaunchRouter.m */; };
+		63BB9A201DB4B4CB00C2F2B9 /* SpotlightAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE898A1D5CB71300DA0C32 /* SpotlightAppDelegate.m */; };
+		63BB9A211DB4B4D800C2F2B9 /* SpotlightLaunchHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89951D5CB71300DA0C32 /* SpotlightLaunchHandler.m */; };
+		63BB9A221DB4B4E500C2F2B9 /* TabLaunchRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B823A1D7ECA07002E977A /* TabLaunchRouter.m */; };
+		63BB9A231DB4B4F900C2F2B9 /* QuickActionConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B82321D7DB1AD002E977A /* QuickActionConstants.m */; };
+		63BB9A241DB4BA4600C2F2B9 /* SpotlightIndexerAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F40978C1D5210D9008BFE42 /* SpotlightIndexerAssembly.m */; };
+		63BB9A251DB4BA5400C2F2B9 /* ContextStorageImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D74D1D59D755009DDCEA /* ContextStorageImplementation.m */; };
+		63BB9A261DB4BA6700C2F2B9 /* EventChangeProviderFetchRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4097941D534F82008BFE42 /* EventChangeProviderFetchRequestFactory.m */; };
+		63BB9A271DB4BA7300C2F2B9 /* EventObjectIndexer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF1251D1D51DF460098625F /* EventObjectIndexer.m */; };
+		63BB9A281DB4BA8000C2F2B9 /* EventObjectTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4097831D51F658008BFE42 /* EventObjectTransformer.m */; };
+		63BB9A291DB4BA8D00C2F2B9 /* FetchedResultsControllerChangeProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F533A881D50DE84004F8E82 /* FetchedResultsControllerChangeProvider.m */; };
+		63BB9A2A1DB4BA9A00C2F2B9 /* IndexerMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F533A8D1D50EC10004F8E82 /* IndexerMonitor.m */; };
+		63BB9A2B1DB4BAA800C2F2B9 /* IndexTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F533A9F1D50F181004F8E82 /* IndexTransaction.m */; };
+		63BB9A2C1DB4BAB300C2F2B9 /* IndexerMonitorOperationQueueFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB6A6F1D53896E0061F333 /* IndexerMonitorOperationQueueFactory.m */; };
+		63BB9A2D1DB4BABE00C2F2B9 /* IndexerStateStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5316A81D50F56900F13931 /* IndexerStateStorage.m */; };
+		63BB9A2E1DB4BACA00C2F2B9 /* IndexState.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D7471D59D73E009DDCEA /* IndexState.m */; };
+		63BB9A2F1DB4BADA00C2F2B9 /* IndexTransactionBatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F533AA31D50F195004F8E82 /* IndexTransactionBatch.m */; };
+		63BB9A301DB4BB0100C2F2B9 /* LectureChangeProviderFetchRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D77C1D5A075C009DDCEA /* LectureChangeProviderFetchRequestFactory.m */; };
+		63BB9A311DB4BB1B00C2F2B9 /* LectureObjectIndexer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D7751D5A023B009DDCEA /* LectureObjectIndexer.m */; };
+		63BB9A321DB4BB3700C2F2B9 /* LectureObjectTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D76E1D59FFB8009DDCEA /* LectureObjectTransformer.m */; };
+		63BB9A331DB4BB4600C2F2B9 /* ObjectIndexerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F533A951D50EEE0004F8E82 /* ObjectIndexerBase.m */; };
+		63BB9A341DB4BB5400C2F2B9 /* SpeakerChangeProviderFetchRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D7601D59E8D2009DDCEA /* SpeakerChangeProviderFetchRequestFactory.m */; };
+		63BB9A351DB4BB5F00C2F2B9 /* SpeakerObjectIndexer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D7671D59EA02009DDCEA /* SpeakerObjectIndexer.m */; };
+		63BB9A361DB4BB6B00C2F2B9 /* SpeakerObjectTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D7591D59E6CB009DDCEA /* SpeakerObjectTransformer.m */; };
+		63BB9A371DB4BB7600C2F2B9 /* SpotlightCoreDataStackCoordinatorImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D73E1D59D6EF009DDCEA /* SpotlightCoreDataStackCoordinatorImplementation.m */; };
+		63BB9A381DB4BB8200C2F2B9 /* ObjectTransformerConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89EA1D5CCF8300DA0C32 /* ObjectTransformerConstants.m */; };
+		63BB9A391DB4BB8D00C2F2B9 /* SpotlightIndexerConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB6A6B1D5384F30061F333 /* SpotlightIndexerConstants.m */; };
 		63BDBBC31D87E3DE006E8A15 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63BDBBC21D87E3DE006E8A15 /* Messages.framework */; };
 		63BDBBC71D87E3DE006E8A15 /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BDBBC61D87E3DE006E8A15 /* MessagesViewController.m */; };
 		63BDBBCA1D87E3DE006E8A15 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BDBBC81D87E3DE006E8A15 /* MainInterface.storyboard */; };
@@ -802,6 +855,8 @@
 		5E72B1E234365770B87BDC6D /* libPods-ConferencesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ConferencesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FED76184BAB5478101AC945 /* Pods-ConferencesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConferencesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConferencesTests/Pods-ConferencesTests.release.xcconfig"; sourceTree = "<group>"; };
 		601B345D74E552114D07B660 /* EventGalleryRouterTests.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EventGalleryRouterTests.m; sourceTree = "<group>"; };
+		631060171DC87909006870EB /* MessagesConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessagesConstants.h; path = Classes/MessagesConstants.h; sourceTree = "<group>"; };
+		631060181DC87909006870EB /* MessagesConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesConstants.m; path = Classes/MessagesConstants.m; sourceTree = "<group>"; };
 		63136FE51BDCDB9E00994356 /* DataDisplayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataDisplayManager.h; sourceTree = "<group>"; };
 		6315BA021C9EC23600999877 /* VideoRecordTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoRecordTableViewCell.h; sourceTree = "<group>"; };
 		6315BA031C9EC23600999877 /* VideoRecordTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoRecordTableViewCell.m; sourceTree = "<group>"; };
@@ -918,9 +973,17 @@
 		6373A3E91BBDC05900DF67FF /* SpeakerService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerService.h; sourceTree = "<group>"; };
 		6373A40F1BBDC5EA00DF67FF /* Conference.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Conference.xcdatamodel; sourceTree = "<group>"; };
 		638172081C8B118D0094F19A /* EventStoreServiceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventStoreServiceProtocol.h; sourceTree = "<group>"; };
+		638918CA1DC28AA3009B34AF /* MessagesAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessagesAppDelegate.h; path = MessagesAppDelegate/MessagesAppDelegate.h; sourceTree = "<group>"; };
+		638918CB1DC28AA3009B34AF /* MessagesAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesAppDelegate.m; path = MessagesAppDelegate/MessagesAppDelegate.m; sourceTree = "<group>"; };
+		638918CD1DC28C73009B34AF /* MessagesLaunchHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagesLaunchHandler.m; sourceTree = "<group>"; };
+		638918D41DC33A33009B34AF /* MessagesUserActivityFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessagesUserActivityFactory.h; path = MessagesAppDelegate/MessagesUserActivityFactory/MessagesUserActivityFactory.h; sourceTree = "<group>"; };
+		638918D51DC33A33009B34AF /* MessagesUserActivityFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesUserActivityFactory.m; path = MessagesAppDelegate/MessagesUserActivityFactory/MessagesUserActivityFactory.m; sourceTree = "<group>"; };
+		638918DA1DC340B4009B34AF /* NSArray+NSURLQueryItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+NSURLQueryItem.h"; path = "NSArray+NSURLQueryItem/NSArray+NSURLQueryItem.h"; sourceTree = "<group>"; };
+		638918DB1DC340B4009B34AF /* NSArray+NSURLQueryItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+NSURLQueryItem.m"; path = "NSArray+NSURLQueryItem/NSArray+NSURLQueryItem.m"; sourceTree = "<group>"; };
 		6394E4181CB1510800548EAE /* LectureViewController_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LectureViewController_Testable.h; sourceTree = "<group>"; };
 		63AA03541D99063900F4C094 /* Conferences.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Conferences.entitlements; sourceTree = "<group>"; };
 		63AA03551D99067000F4C094 /* RamblerMessageExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RamblerMessageExtension.entitlements; sourceTree = "<group>"; };
+		63BB9A151DB3DD2D00C2F2B9 /* MessagesLaunchHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessagesLaunchHandler.h; path = Classes/LaunchHandler/MessagesLaunchHandler.h; sourceTree = "<group>"; };
 		63BDBBC11D87E3DE006E8A15 /* RamblerMessageExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RamblerMessageExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BDBBC21D87E3DE006E8A15 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		63BDBBC51D87E3DE006E8A15 /* MessagesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessagesViewController.h; sourceTree = "<group>"; };
@@ -2075,6 +2138,15 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
+		630E25F01DBF9BB50043C20E /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				63BDBBC51D87E3DE006E8A15 /* MessagesViewController.h */,
+				63BDBBC61D87E3DE006E8A15 /* MessagesViewController.m */,
+			);
+			name = Presentation;
+			sourceTree = "<group>";
+		};
 		63136F941BDCDB2600994356 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -2594,7 +2666,11 @@
 		636E26981D8ECF4A001ABB92 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				630E25F01DBF9BB50043C20E /* Presentation */,
+				63BB9A141DB3DD0000C2F2B9 /* LaunchHandler */,
 				636E26991D8ECF5D001ABB92 /* Assembly */,
+				631060171DC87909006870EB /* MessagesConstants.h */,
+				631060181DC87909006870EB /* MessagesConstants.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -2787,13 +2863,48 @@
 			path = SpeakerService;
 			sourceTree = "<group>";
 		};
+		638918C91DC28A47009B34AF /* MessagesAppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				638918D31DC339F3009B34AF /* MessagesUserActivityFactory */,
+				638918CA1DC28AA3009B34AF /* MessagesAppDelegate.h */,
+				638918CB1DC28AA3009B34AF /* MessagesAppDelegate.m */,
+			);
+			name = MessagesAppDelegate;
+			sourceTree = "<group>";
+		};
+		638918D31DC339F3009B34AF /* MessagesUserActivityFactory */ = {
+			isa = PBXGroup;
+			children = (
+				638918D41DC33A33009B34AF /* MessagesUserActivityFactory.h */,
+				638918D51DC33A33009B34AF /* MessagesUserActivityFactory.m */,
+			);
+			name = MessagesUserActivityFactory;
+			sourceTree = "<group>";
+		};
+		638918D91DC34096009B34AF /* NSArray+NSURLQueryItem */ = {
+			isa = PBXGroup;
+			children = (
+				638918DA1DC340B4009B34AF /* NSArray+NSURLQueryItem.h */,
+				638918DB1DC340B4009B34AF /* NSArray+NSURLQueryItem.m */,
+			);
+			name = "NSArray+NSURLQueryItem";
+			sourceTree = "<group>";
+		};
+		63BB9A141DB3DD0000C2F2B9 /* LaunchHandler */ = {
+			isa = PBXGroup;
+			children = (
+				63BB9A151DB3DD2D00C2F2B9 /* MessagesLaunchHandler.h */,
+				638918CD1DC28C73009B34AF /* MessagesLaunchHandler.m */,
+			);
+			name = LaunchHandler;
+			sourceTree = "<group>";
+		};
 		63BDBBC41D87E3DE006E8A15 /* RamblerMessageExtension */ = {
 			isa = PBXGroup;
 			children = (
 				63AA03551D99067000F4C094 /* RamblerMessageExtension.entitlements */,
 				636E26981D8ECF4A001ABB92 /* Classes */,
-				63BDBBC51D87E3DE006E8A15 /* MessagesViewController.h */,
-				63BDBBC61D87E3DE006E8A15 /* MessagesViewController.m */,
 				63BDBBC81D87E3DE006E8A15 /* MainInterface.storyboard */,
 				63BDBBCB1D87E3DE006E8A15 /* Assets.xcassets */,
 				63BDBBCD1D87E3DE006E8A15 /* Info.plist */,
@@ -4015,6 +4126,7 @@
 		63FDCDE01BBDBA2A00A43B60 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				638918D91DC34096009B34AF /* NSArray+NSURLQueryItem */,
 				9FA6E7811D6F20A10047D2C4 /* UIViewController+ForceRotation */,
 				661CA4041D65D0690047EB68 /* NSManagedObjectID+LJStringConversion */,
 				2B429A5C1D4789FA004C005F /* UINavigationBar */,
@@ -6831,6 +6943,7 @@
 		9FBE89841D5CB71300DA0C32 /* AppDelegates */ = {
 			isa = PBXGroup;
 			children = (
+				638918C91DC28A47009B34AF /* MessagesAppDelegate */,
 				9F7B821F1D7DA546002E977A /* QuickActionAppDelegate */,
 				9FBE89B71D5CB72D00DA0C32 /* CleanLaunchAppDelegate */,
 				9FBE89881D5CB71300DA0C32 /* SpotlightAppDelegate */,
@@ -8238,7 +8351,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				632184201D9BFD49001BB7A7 /* SpotlightIndexer.xcdatamodeld in Resources */,
+				63A9D5CD1DB7618100169E2E /* RamblerLocation.storyboard in Resources */,
+				63A9D5C91DB7614900169E2E /* Event.storyboard in Resources */,
+				63A9D5CB1DB7617200169E2E /* Events.storyboard in Resources */,
+				63A9D5CE1DB7618500169E2E /* Reports.storyboard in Resources */,
+				63A9D5CF1DB7618900169E2E /* Main.storyboard in Resources */,
+				63A9D5CA1DB7616200169E2E /* SpeakerInfo.storyboard in Resources */,
 				6321841F1D9BFD42001BB7A7 /* Conference.xcdatamodeld in Resources */,
+				63A9D5CC1DB7617A00169E2E /* Lecture.storyboard in Resources */,
 				63BDBBCC1D87E3DE006E8A15 /* Assets.xcassets in Resources */,
 				63BDBBCA1D87E3DE006E8A15 /* MainInterface.storyboard in Resources */,
 			);
@@ -8463,26 +8583,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				632184361D9D3816001BB7A7 /* EventListTableViewCell.xib in Sources */,
 				636E26D71D8FE719001ABB92 /* EventServiceImplementation.m in Sources */,
 				636E26ED1D8FE86A001ABB92 /* _TagModelObject.m in Sources */,
 				63BB9A101DB285D600C2F2B9 /* SafariFactoryImplementation.m in Sources */,
+				63BB9A391DB4BB8D00C2F2B9 /* SpotlightIndexerConstants.m in Sources */,
 				632184241D9D31B5001BB7A7 /* LectureMaterialModelObject.m in Sources */,
+				63BB9A201DB4B4CB00C2F2B9 /* SpotlightAppDelegate.m in Sources */,
+				63A9D5C61DB759B600169E2E /* LocalizedStrings.m in Sources */,
 				636E26EF1D8FE8CB001ABB92 /* _EventPlainObject.m in Sources */,
 				636E26CE1D8FE0C4001ABB92 /* EventListTableViewController.m in Sources */,
+				63BB9A301DB4BB0100C2F2B9 /* LectureChangeProviderFetchRequestFactory.m in Sources */,
 				636E26E71D8FE816001ABB92 /* SpeakerModelObject.m in Sources */,
 				636E26CD1D8FE0B7001ABB92 /* EventListTableViewCell.m in Sources */,
 				63BB9A131DB2860000C2F2B9 /* YouTubePlayerFactoryImplementation.m in Sources */,
 				6321841E1D9BFD31001BB7A7 /* SpotlightIndexer.xcdatamodeld in Sources */,
+				63BB9A381DB4BB8200C2F2B9 /* ObjectTransformerConstants.m in Sources */,
+				63BB9A371DB4BB7600C2F2B9 /* SpotlightCoreDataStackCoordinatorImplementation.m in Sources */,
+				63BB9A321DB4BB3700C2F2B9 /* LectureObjectTransformer.m in Sources */,
 				636E26E21D8FE7D7001ABB92 /* MetaEventModelObject.m in Sources */,
 				632184311D9D3527001BB7A7 /* TechPlainObject.m in Sources */,
 				636E26DD1D8FE78D001ABB92 /* LectureModelObject.m in Sources */,
+				638918D81DC33CD0009B34AF /* MessagesUserActivityFactory.m in Sources */,
 				632184341D9D3574001BB7A7 /* SocialNetworkAccountPlainObject.m in Sources */,
 				63BB9A0C1DB2858E00C2F2B9 /* PresentationLayerHelpersAssembly.m in Sources */,
 				6321842A1D9D33E7001BB7A7 /* TagPlainObject.m in Sources */,
+				63BB9A261DB4BA6700C2F2B9 /* EventChangeProviderFetchRequestFactory.m in Sources */,
 				632184301D9D3521001BB7A7 /* _TechPlainObject.m in Sources */,
 				636E26D81D8FE73F001ABB92 /* _EventModelObject.m in Sources */,
+				63BB9A2D1DB4BABE00C2F2B9 /* IndexerStateStorage.m in Sources */,
+				63BB9A341DB4BB5400C2F2B9 /* SpeakerChangeProviderFetchRequestFactory.m in Sources */,
 				636E26E01D8FE7AE001ABB92 /* MetaEventServiceImpementation.m in Sources */,
+				63BB9A241DB4BA4600C2F2B9 /* SpotlightIndexerAssembly.m in Sources */,
 				636E26F01D8FE8E6001ABB92 /* ErrorConstants.m in Sources */,
 				632184221D9D2F3A001BB7A7 /* LecturePlainObject.m in Sources */,
 				636E26E31D8FE7E3001ABB92 /* OperationSchedulerImplementation.m in Sources */,
@@ -8491,14 +8622,21 @@
 				632184321D9D3558001BB7A7 /* SocialNetworkAccountModelObject.m in Sources */,
 				636E26DE1D8FE799001ABB92 /* LastModifiedModelObject.m in Sources */,
 				63BB9A0E1DB285BA00C2F2B9 /* DateFormatter.m in Sources */,
+				63BB9A1F1DB4B4BF00C2F2B9 /* SpeakerLaunchRouter.m in Sources */,
 				63BB9A0D1DB285A800C2F2B9 /* AppleMapsLinkBuilder.m in Sources */,
 				636E26E81D8FE822001ABB92 /* SuggestServiceImplementation.m in Sources */,
+				63BB9A271DB4BA7300C2F2B9 /* EventObjectIndexer.m in Sources */,
 				6321842B1D9D33EF001BB7A7 /* _TagPlainObject.m in Sources */,
-				636E26E41D8FE7EE001ABB92 /* (null) in Sources */,
+				63BB9A361DB4BB6B00C2F2B9 /* SpeakerObjectTransformer.m in Sources */,
+				63BB9A351DB4BB5F00C2F2B9 /* SpeakerObjectIndexer.m in Sources */,
 				63BB9A121DB285F200C2F2B9 /* YouTubeIdentifierDeriviator.m in Sources */,
 				632184351D9D3579001BB7A7 /* _SocialNetworkAccountPlainObject.m in Sources */,
+				63BB9A281DB4BA8000C2F2B9 /* EventObjectTransformer.m in Sources */,
+				63BB9A311DB4BB1B00C2F2B9 /* LectureObjectIndexer.m in Sources */,
+				63BB9A331DB4BB4600C2F2B9 /* ObjectIndexerBase.m in Sources */,
 				636E26E11D8FE7C9001ABB92 /* _MetaEventModelObject.m in Sources */,
 				632184271D9D32C6001BB7A7 /* SpeakerPlainObject.m in Sources */,
+				63BB9A191DB4B45400C2F2B9 /* LaunchSystemAssembly.m in Sources */,
 				636E26CC1D8FE0AB001ABB92 /* EventListTableViewCellObject.m in Sources */,
 				636E26E61D8FE807001ABB92 /* SpeakerServiceImplementation.m in Sources */,
 				636E26F11D8FEF29001ABB92 /* NSManagedObjectID+LJStringConversion.m in Sources */,
@@ -8506,34 +8644,55 @@
 				636E26E91D8FE82D001ABB92 /* TagServiceImplementation.m in Sources */,
 				636E26DB1D8FE76E001ABB92 /* EventStoreService.m in Sources */,
 				636E26D21D8FE0F4001ABB92 /* ROSPonsomizerImplementation.m in Sources */,
+				63BB9A2C1DB4BAB300C2F2B9 /* IndexerMonitorOperationQueueFactory.m in Sources */,
 				636E26EA1D8FE837001ABB92 /* TagServicePredicateBuilder.m in Sources */,
+				63A9D5C51DB759A600169E2E /* EventViewController.m in Sources */,
+				630E25FB1DBFA2920043C20E /* EventPresenter.m in Sources */,
+				63BB9A251DB4BA5400C2F2B9 /* ContextStorageImplementation.m in Sources */,
 				636E26EC1D8FE859001ABB92 /* _SpeakerModelObject.m in Sources */,
 				636E26D01D8FE0DC001ABB92 /* ModuleAssemblyBase.m in Sources */,
+				63BB9A211DB4B4D800C2F2B9 /* SpotlightLaunchHandler.m in Sources */,
 				636E26D61D8FE706001ABB92 /* ServiceComponentsAssembly.m in Sources */,
 				632184291D9D3368001BB7A7 /* TagModelObject.m in Sources */,
+				63BB9A231DB4B4F900C2F2B9 /* QuickActionConstants.m in Sources */,
+				638918D01DC333B6009B34AF /* MessagesAppDelegate.m in Sources */,
 				636E26CB1D8FE09C001ABB92 /* EventListRouter.m in Sources */,
 				632184331D9D355F001BB7A7 /* _SocialNetworkAccountModelObject.m in Sources */,
 				636E26EB1D8FE847001ABB92 /* _LectureModelObject.m in Sources */,
 				6321842C1D9D342B001BB7A7 /* _MetaEventPlainObject.m in Sources */,
+				63BB9A2B1DB4BAA800C2F2B9 /* IndexTransaction.m in Sources */,
 				636E26EE1D8FE8AD001ABB92 /* EventPlainObject.m in Sources */,
 				636E26C81D8FE076001ABB92 /* EventListDataDisplayManager.m in Sources */,
 				636E26D91D8FE74D001ABB92 /* EventListQuery.m in Sources */,
+				63BB9A1D1DB4B49500C2F2B9 /* QuickActionLaunchHandler.m in Sources */,
+				63BB9A2A1DB4BA9A00C2F2B9 /* IndexerMonitor.m in Sources */,
 				63BB9A0F1DB285C900C2F2B9 /* EventTypeDeterminator.m in Sources */,
+				63BB9A1B1DB4B47C00C2F2B9 /* LectureLaunchRouter.m in Sources */,
+				63BB9A291DB4BA8D00C2F2B9 /* FetchedResultsControllerChangeProvider.m in Sources */,
 				632184281D9D32CD001BB7A7 /* _SpeakerPlainObject.m in Sources */,
 				636E26DA1D8FE760001ABB92 /* EventModelObject.m in Sources */,
+				63BB9A2F1DB4BADA00C2F2B9 /* IndexTransactionBatch.m in Sources */,
 				636E26C91D8FE082001ABB92 /* EventListInteractor.m in Sources */,
 				636E26E51D8FE7FB001ABB92 /* RamblerLocationServiceImplementation.m in Sources */,
 				636E26DF1D8FE7A2001ABB92 /* _LastModifiedModelObject.m in Sources */,
 				636E26D11D8FE0E9001ABB92 /* PonsomizerAssembly.m in Sources */,
 				632184231D9D2F65001BB7A7 /* _LecturePlainObject.m in Sources */,
+				630E25FA1DBFA2860043C20E /* EventInteractor.m in Sources */,
+				63BB9A1E1DB4B4A200C2F2B9 /* QuickActionUserActivityFactory.m in Sources */,
 				6321842D1D9D3430001BB7A7 /* MetaEventPlainObject.m in Sources */,
+				63BB9A1A1DB4B46300C2F2B9 /* EventLaunchRouter.m in Sources */,
+				63BB9A2E1DB4BACA00C2F2B9 /* IndexState.m in Sources */,
 				632184251D9D31BF001BB7A7 /* _LectureMaterialModelObject.m in Sources */,
 				636E26C71D8FE069001ABB92 /* EventListCellObjectBuilder.m in Sources */,
+				638918CE1DC28C73009B34AF /* MessagesLaunchHandler.m in Sources */,
 				63BDBBC71D87E3DE006E8A15 /* MessagesViewController.m in Sources */,
 				636E26CA1D8FE091001ABB92 /* EventListPresenter.m in Sources */,
+				631060191DC87909006870EB /* MessagesConstants.m in Sources */,
 				632184211D9D2F2B001BB7A7 /* _LectureMaterialPlainObject.m in Sources */,
+				63BB9A221DB4B4E500C2F2B9 /* TabLaunchRouter.m in Sources */,
 				6321842F1D9D34D6001BB7A7 /* _TechModelObject.m in Sources */,
 				632184261D9D3268001BB7A7 /* LectureMaterialPlainObject.m in Sources */,
+				63BB9A1C1DB4B48800C2F2B9 /* QuickActionAppDelegate.m in Sources */,
 				636E26DC1D8FE77D001ABB92 /* LectureServiceImplementation.m in Sources */,
 				63BB9A111DB285E300C2F2B9 /* VideoThumbnailGenerator.m in Sources */,
 				636E26CF1D8FE0D0001ABB92 /* MessageExtensionAssembly.m in Sources */,
@@ -8582,6 +8741,7 @@
 				63F613721CB00A220002AEF0 /* EventInfoTableViewCell.m in Sources */,
 				63F613671CB00A220002AEF0 /* LectureInfoTableViewCellObject.m in Sources */,
 				9F7B82261D7DA8B5002E977A /* QuickActionLaunchHandler.m in Sources */,
+				638918CC1DC28AA3009B34AF /* MessagesAppDelegate.m in Sources */,
 				2B2064971D3F9CE900246C8D /* SocialNetworkAccountPlainObject.m in Sources */,
 				63F6139B1CB00A220002AEF0 /* SpeakerInfoTableViewCell.m in Sources */,
 				667050101D46140200DD9D6E /* ReportsSearchInteractor.m in Sources */,
@@ -8723,6 +8883,7 @@
 				63F613841CB00A220002AEF0 /* EventCellObjectBuilderBase.m in Sources */,
 				2B2064861D3F9CE900246C8D /* _SpeakerPlainObject.m in Sources */,
 				636F8DDC1BCB8FE800552B91 /* RamblerLocationPresenter.m in Sources */,
+				638918D61DC33A33009B34AF /* MessagesUserActivityFactory.m in Sources */,
 				9F8B49E91D6EF72B00ED176B /* YouTubePlayerFactoryImplementation.m in Sources */,
 				9F533A961D50EEE0004F8E82 /* ObjectIndexerBase.m in Sources */,
 				9F8E5F841BC25A0700DC10DB /* ResponseMappersAssembly.m in Sources */,
@@ -8765,6 +8926,7 @@
 				63F613861CB00A220002AEF0 /* PastEventCellObjectBuilder.m in Sources */,
 				9F7B822D1D7DAB51002E977A /* QuickActionUserActivityFactory.m in Sources */,
 				9F0A84FC1BC1698B006F79FB /* CompoundOperationDebugDescriptionFormatter.m in Sources */,
+				638918DC1DC340B4009B34AF /* NSArray+NSURLQueryItem.m in Sources */,
 				9F0A84FE1BC1698B006F79FB /* RequestConfigurationOperation.m in Sources */,
 				9FBE8AB51D630D4C00DA0C32 /* EventGalleryAssembly.m in Sources */,
 				2B20649A1D3F9CE900246C8D /* TechPlainObject.m in Sources */,
@@ -8883,6 +9045,7 @@
 				9FE1397A1D65F3E900D7BF44 /* SearchCellObjectFactory.m in Sources */,
 				9F1830ED1BC14293000E21A5 /* ManagedObjectMapper.m in Sources */,
 				9F78D7611D59E8D2009DDCEA /* SpeakerChangeProviderFetchRequestFactory.m in Sources */,
+				638918D21DC333CA009B34AF /* MessagesLaunchHandler.m in Sources */,
 				2B2064951D3F9CE900246C8D /* MetaEventPlainObject.m in Sources */,
 				9FBE8A161D5F343F00DA0C32 /* LocationCardFlowLayout.m in Sources */,
 				63F6139E1CB00A220002AEF0 /* SpeakerInfoViewController.m in Sources */,
@@ -8902,6 +9065,7 @@
 				9F4077A01D2C11A700D47EF6 /* DirectionObjectMapperTests.m in Sources */,
 				63F613EA1CB111070002AEF0 /* SearchPresenterTests.m in Sources */,
 				635E18D51CA6CECB005B8439 /* EventHeaderModuleAssemblyTests.m in Sources */,
+				638918D71DC33CC5009B34AF /* MessagesUserActivityFactory.m in Sources */,
 				63F613E41CB111070002AEF0 /* LectureInteractorTests.m in Sources */,
 				66A1DD3B1D7E983100998F6B /* TagModuleTableViewCellTests.m in Sources */,
 				9F7B821B1D7CAB28002E977A /* QuickActionDaemonTests.m in Sources */,
@@ -8971,12 +9135,14 @@
 				63F402FB1BCF79390086D030 /* OperationFactoriesAssemblyTests.m in Sources */,
 				63F613EC1CB111070002AEF0 /* SearchTableViewControllerTests.m in Sources */,
 				9F0A85251BC185AA006F79FB /* RequestSigningOperationTests.m in Sources */,
+				638918D11DC333C4009B34AF /* MessagesLaunchHandler.m in Sources */,
 				9F4097891D51F8FD008BFE42 /* EventObjectTransformerTests.m in Sources */,
 				63F613DD1CB111070002AEF0 /* FutureEventCellObjectBuilderTests.m in Sources */,
 				9F0A85241BC185AA006F79FB /* RequestConfigurationOperationTests.m in Sources */,
 				9F4077881D2BF84000D47EF6 /* RamblerLocationServiceTests.m in Sources */,
 				9F8E5F9B1BC2753100DC10DB /* CompoundOperationFactoryTestsBase.m in Sources */,
 				66A1DD4D1D7E986000998F6B /* TagCollectionViewCellTests.m in Sources */,
+				638918CF1DC333A4009B34AF /* MessagesAppDelegate.m in Sources */,
 				2B01CEBE1D50A55900DA8E66 /* MetaEventServiceTests.m in Sources */,
 				631CBA721C020CCD00E3EBA8 /* EventListModuleAssemblyTests.m in Sources */,
 				66A1DD481D7E984E00998F6B /* TagDataDisplayManagerTests.m in Sources */,
