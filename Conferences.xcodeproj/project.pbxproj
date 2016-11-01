@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		2AA222A5031CC7BA4A19B3EF /* libPods-RamblerMessageExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C1AA7D4ECB1DA53BEC254E4 /* libPods-RamblerMessageExtension.a */; };
 		2B01CEBE1D50A55900DA8E66 /* MetaEventServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B01CEBD1D50A55900DA8E66 /* MetaEventServiceTests.m */; };
 		2B05E1611D50FEFC00E017AB /* SpeakerInfoCellObjectBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B05E1601D50FEFC00E017AB /* SpeakerInfoCellObjectBuilder.m */; };
 		2B05E1691D51D7A100E017AB /* SpeakerInfoSocialContactsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B05E1671D51D7A100E017AB /* SpeakerInfoSocialContactsTableViewCell.m */; };
@@ -77,10 +78,12 @@
 		2BDDAB551D363D34007FD547 /* ROSPonsomizerImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDDAB541D363D34007FD547 /* ROSPonsomizerImplementation.m */; };
 		2BDDB1D31D3F7235007FD547 /* DirectionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDDB1D21D3F7235007FD547 /* DirectionObject.m */; };
 		3784462F1D4E067A0016121E /* RCNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3784462E1D4E067A0016121E /* RCNavigationController.m */; };
-		5A5668508B92FC833070BA13 /* libPods-ConferencesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E72B1E234365770B87BDC6D /* libPods-ConferencesTests.a */; };
 		630E25FA1DBFA2860043C20E /* EventInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F6127C1CB00A220002AEF0 /* EventInteractor.m */; };
 		630E25FB1DBFA2920043C20E /* EventPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F612821CB00A220002AEF0 /* EventPresenter.m */; };
 		631060191DC87909006870EB /* MessagesConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 631060181DC87909006870EB /* MessagesConstants.m */; };
+		6310601E1DC89577006870EB /* MailComposeControllerFactoryImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6310601D1DC89577006870EB /* MailComposeControllerFactoryImplementation.m */; };
+		631060221DC8984F006870EB /* MailComposeControllerFactoryImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6310601D1DC89577006870EB /* MailComposeControllerFactoryImplementation.m */; };
+		631060231DC89850006870EB /* MailComposeControllerFactoryImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6310601D1DC89577006870EB /* MailComposeControllerFactoryImplementation.m */; };
 		6315BA051C9EC23600999877 /* VideoRecordTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6315BA031C9EC23600999877 /* VideoRecordTableViewCell.m */; };
 		6315BA061C9EC23600999877 /* VideoRecordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6315BA041C9EC23600999877 /* VideoRecordTableViewCell.xib */; };
 		6315BA0A1C9EC2A200999877 /* TableViewSectionHeaderCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6315BA091C9EC2A200999877 /* TableViewSectionHeaderCellObject.m */; };
@@ -133,6 +136,7 @@
 		632184331D9D355F001BB7A7 /* _SocialNetworkAccountModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064371D3F9CE900246C8D /* _SocialNetworkAccountModelObject.m */; };
 		632184341D9D3574001BB7A7 /* SocialNetworkAccountPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064701D3F9CE900246C8D /* SocialNetworkAccountPlainObject.m */; };
 		632184351D9D3579001BB7A7 /* _SocialNetworkAccountPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B20644A1D3F9CE900246C8D /* _SocialNetworkAccountPlainObject.m */; };
+		634EB9E11DC8E5FC00EAEC0F /* SpeakerInfoAlertFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 634EB9E01DC8E5FC00EAEC0F /* SpeakerInfoAlertFactory.m */; };
 		635E18BF1CA6A0A9005B8439 /* SpeakerInfoModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 635E18BE1CA6A0A9005B8439 /* SpeakerInfoModuleAssemblyTests.m */; };
 		635E18C21CA6A496005B8439 /* LectureModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 635E18C11CA6A496005B8439 /* LectureModuleAssemblyTests.m */; };
 		635E18C71CA6B8CE005B8439 /* SpeakerShortInfoModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 635E18C61CA6B8CE005B8439 /* SpeakerShortInfoModuleAssemblyTests.m */; };
@@ -349,7 +353,6 @@
 		63F613D81CB111070002AEF0 /* EventListInteractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F613BA1CB111070002AEF0 /* EventListInteractorTests.m */; };
 		63F613D91CB111070002AEF0 /* EventListPresenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F613BB1CB111070002AEF0 /* EventListPresenterTests.m */; };
 		63F613DA1CB111070002AEF0 /* EventListRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F613BC1CB111070002AEF0 /* EventListRouterTests.m */; };
-		63F613DB1CB111070002AEF0 /* EventListTableViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F613BD1CB111070002AEF0 /* EventListTableViewControllerTests.m */; };
 		63F613DC1CB111070002AEF0 /* CurrentEventCellObjectBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F613C01CB111070002AEF0 /* CurrentEventCellObjectBuilderTests.m */; };
 		63F613DD1CB111070002AEF0 /* FutureEventCellObjectBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F613C11CB111070002AEF0 /* FutureEventCellObjectBuilderTests.m */; };
 		63F613DE1CB111070002AEF0 /* PastEventCellObjectBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F613C21CB111070002AEF0 /* PastEventCellObjectBuilderTests.m */; };
@@ -453,7 +456,7 @@
 		66EE4D351D54BFCD0011F94A /* NITableViewModel+LJIndexOfObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EE4D311D54BFCD0011F94A /* NITableViewModel+LJIndexOfObject.m */; };
 		66EE4D361D54BFCD0011F94A /* NITableViewModel+NextInputResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EE4D331D54BFCD0011F94A /* NITableViewModel+NextInputResponder.m */; };
 		66FFD29C1D7DCCFB0009B7DC /* CollectionViewContentCellAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 66FFD29B1D7DCCFB0009B7DC /* CollectionViewContentCellAnimator.m */; };
-		9A0EEDB6B85D7A9A13847D60 /* libPods-RamblerMessageExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DD2D1BD8B19DA33CC71B815 /* libPods-RamblerMessageExtension.a */; };
+		9E94B671A997D53087214C4F /* libPods-Conferences-ConferencesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F1470A6FDBED5612278E025 /* libPods-Conferences-ConferencesTests.a */; };
 		9F0A6C1D1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */; };
 		9F0A6C2E1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C2D1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m */; };
 		9F0A84C31BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A84C21BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m */; };
@@ -599,7 +602,6 @@
 		9FBE89BA1D5CB72D00DA0C32 /* CleanLaunchAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89B91D5CB72D00DA0C32 /* CleanLaunchAppDelegate.m */; };
 		9FBE89D31D5CB76900DA0C32 /* CleanLaunchAppDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89BE1D5CB76900DA0C32 /* CleanLaunchAppDelegateTests.m */; };
 		9FBE89D41D5CB76900DA0C32 /* SpotlightAppDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89C01D5CB76900DA0C32 /* SpotlightAppDelegateTests.m */; };
-		9FBE89D51D5CB76900DA0C32 /* TyphoonAppDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89C21D5CB76900DA0C32 /* TyphoonAppDelegateTests.m */; };
 		9FBE89D61D5CB76900DA0C32 /* SpotlightLaunchHandlerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89C51D5CB76900DA0C32 /* SpotlightLaunchHandlerTests.m */; };
 		9FBE89D71D5CB76900DA0C32 /* CleanLaunchRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89C91D5CB76900DA0C32 /* CleanLaunchRouterTests.m */; };
 		9FBE89D81D5CB76900DA0C32 /* EventLaunchRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89CB1D5CB76900DA0C32 /* EventLaunchRouterTests.m */; };
@@ -701,7 +703,7 @@
 		9FFEAF051D2E41B4006E9649 /* DirectionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFEAF031D2E41B4006E9649 /* DirectionCollectionViewCell.m */; };
 		9FFEAF061D2E41B4006E9649 /* DirectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FFEAF041D2E41B4006E9649 /* DirectionCollectionViewCell.xib */; };
 		9FFEAF0C1D2E5CE0006E9649 /* AppleMapsLinkBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFEAF0B1D2E5CE0006E9649 /* AppleMapsLinkBuilder.m */; };
-		F826C56E7FA67515D33573A9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A4F504A716A8833A7A01A5D /* libPods.a */; };
+		B844903CD5D6757D08026D5E /* libPods-Conferences.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F15F66C7FD75B9A89EF39FB4 /* libPods-Conferences.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -736,7 +738,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2A4F504A716A8833A7A01A5D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AB36DD96D7739E6F91D7BBE /* Pods-Conferences.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conferences.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Conferences/Pods-Conferences.debug.xcconfig"; sourceTree = "<group>"; };
+		1C1AA7D4ECB1DA53BEC254E4 /* libPods-RamblerMessageExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RamblerMessageExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FC5571A228743BA28853AEA /* Pods-Conferences-ConferencesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conferences-ConferencesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Conferences-ConferencesTests/Pods-Conferences-ConferencesTests.release.xcconfig"; sourceTree = "<group>"; };
+		23EE5826624410C24CDC2BA5 /* Pods-RamblerMessageExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RamblerMessageExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-RamblerMessageExtension/Pods-RamblerMessageExtension.release.xcconfig"; sourceTree = "<group>"; };
+		2A1B7FADAB8BA2EA1E9B450D /* Pods-Conferences-ConferencesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conferences-ConferencesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Conferences-ConferencesTests/Pods-Conferences-ConferencesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2B01CEBD1D50A55900DA8E66 /* MetaEventServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetaEventServiceTests.m; sourceTree = "<group>"; };
 		2B05E15B1D50EDB900E017AB /* EventModuleSegueIdentifiersConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventModuleSegueIdentifiersConstants.h; sourceTree = "<group>"; };
 		2B05E15F1D50FEFC00E017AB /* SpeakerInfoCellObjectBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerInfoCellObjectBuilder.h; sourceTree = "<group>"; };
@@ -845,18 +851,18 @@
 		2BDDAB541D363D34007FD547 /* ROSPonsomizerImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ROSPonsomizerImplementation.m; sourceTree = "<group>"; };
 		2BDDB1D11D3F7235007FD547 /* DirectionObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectionObject.h; sourceTree = "<group>"; };
 		2BDDB1D21D3F7235007FD547 /* DirectionObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectionObject.m; sourceTree = "<group>"; };
-		2C01BA17D4018DCA62CC6C3B /* Pods-ConferencesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConferencesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConferencesTests/Pods-ConferencesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3784462D1D4E067A0016121E /* RCNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCNavigationController.h; sourceTree = "<group>"; };
 		3784462E1D4E067A0016121E /* RCNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCNavigationController.m; sourceTree = "<group>"; };
 		37C2D8F2CACC9D443740E428 /* EventGalleryInteractorTests.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EventGalleryInteractorTests.m; sourceTree = "<group>"; };
-		3FF34B2C16698CFE0F52F7C1 /* Pods.nightly.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.nightly.xcconfig; path = "Pods/Target Support Files/Pods/Pods.nightly.xcconfig"; sourceTree = "<group>"; };
-		4F6D62D1702A84C83A3BA854 /* Pods-RamblerMessageExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RamblerMessageExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-RamblerMessageExtension/Pods-RamblerMessageExtension.release.xcconfig"; sourceTree = "<group>"; };
-		559ED4EDBC100544852E4E6A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		5E72B1E234365770B87BDC6D /* libPods-ConferencesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ConferencesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5FED76184BAB5478101AC945 /* Pods-ConferencesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConferencesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConferencesTests/Pods-ConferencesTests.release.xcconfig"; sourceTree = "<group>"; };
+		44C28AC5C8513A913FE8B749 /* Pods-RamblerMessageExtension.nightly.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RamblerMessageExtension.nightly.xcconfig"; path = "Pods/Target Support Files/Pods-RamblerMessageExtension/Pods-RamblerMessageExtension.nightly.xcconfig"; sourceTree = "<group>"; };
+		5F1470A6FDBED5612278E025 /* libPods-Conferences-ConferencesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Conferences-ConferencesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		601B345D74E552114D07B660 /* EventGalleryRouterTests.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EventGalleryRouterTests.m; sourceTree = "<group>"; };
+		61435C41E57EED0504F7C502 /* Pods-RamblerMessageExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RamblerMessageExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RamblerMessageExtension/Pods-RamblerMessageExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		631060171DC87909006870EB /* MessagesConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessagesConstants.h; path = Classes/MessagesConstants.h; sourceTree = "<group>"; };
 		631060181DC87909006870EB /* MessagesConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesConstants.m; path = Classes/MessagesConstants.m; sourceTree = "<group>"; };
+		6310601B1DC89577006870EB /* MailComposeControllerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MailComposeControllerFactory.h; path = MailComposeControllerFactory/MailComposeControllerFactory.h; sourceTree = "<group>"; };
+		6310601C1DC89577006870EB /* MailComposeControllerFactoryImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MailComposeControllerFactoryImplementation.h; path = MailComposeControllerFactory/MailComposeControllerFactoryImplementation.h; sourceTree = "<group>"; };
+		6310601D1DC89577006870EB /* MailComposeControllerFactoryImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MailComposeControllerFactoryImplementation.m; path = MailComposeControllerFactory/MailComposeControllerFactoryImplementation.m; sourceTree = "<group>"; };
 		63136FE51BDCDB9E00994356 /* DataDisplayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataDisplayManager.h; sourceTree = "<group>"; };
 		6315BA021C9EC23600999877 /* VideoRecordTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoRecordTableViewCell.h; sourceTree = "<group>"; };
 		6315BA031C9EC23600999877 /* VideoRecordTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoRecordTableViewCell.m; sourceTree = "<group>"; };
@@ -913,6 +919,8 @@
 		631FFE171BEF451400749DB8 /* UIView+CDResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CDResponder.h"; sourceTree = "<group>"; };
 		631FFE181BEF451400749DB8 /* UIView+CDResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CDResponder.m"; sourceTree = "<group>"; };
 		6321841B1D9BF7E7001BB7A7 /* libMagicalRecord.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMagicalRecord.a; path = "../Library/Developer/Xcode/DerivedData/Conferences-fqevuzrasmsxnccgiaatgyhwrafz/Build/Products/Debug-iphonesimulator/libMagicalRecord.a"; sourceTree = "<group>"; };
+		634EB9DF1DC8E5FC00EAEC0F /* SpeakerInfoAlertFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeakerInfoAlertFactory.h; path = SpeakerInfoAlertFactory/SpeakerInfoAlertFactory.h; sourceTree = "<group>"; };
+		634EB9E01DC8E5FC00EAEC0F /* SpeakerInfoAlertFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeakerInfoAlertFactory.m; path = SpeakerInfoAlertFactory/SpeakerInfoAlertFactory.m; sourceTree = "<group>"; };
 		635E18BD1CA69F4A005B8439 /* SpeakerInfoModuleAssembly_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpeakerInfoModuleAssembly_Testable.h; sourceTree = "<group>"; };
 		635E18BE1CA6A0A9005B8439 /* SpeakerInfoModuleAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerInfoModuleAssemblyTests.m; sourceTree = "<group>"; };
 		635E18C01CA6A3E3005B8439 /* LectureModuleAssembly_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LectureModuleAssembly_Testable.h; sourceTree = "<group>"; };
@@ -1174,7 +1182,6 @@
 		63F613BA1CB111070002AEF0 /* EventListInteractorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListInteractorTests.m; sourceTree = "<group>"; };
 		63F613BB1CB111070002AEF0 /* EventListPresenterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListPresenterTests.m; sourceTree = "<group>"; };
 		63F613BC1CB111070002AEF0 /* EventListRouterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListRouterTests.m; sourceTree = "<group>"; };
-		63F613BD1CB111070002AEF0 /* EventListTableViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListTableViewControllerTests.m; sourceTree = "<group>"; };
 		63F613C01CB111070002AEF0 /* CurrentEventCellObjectBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentEventCellObjectBuilderTests.m; sourceTree = "<group>"; };
 		63F613C11CB111070002AEF0 /* FutureEventCellObjectBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FutureEventCellObjectBuilderTests.m; sourceTree = "<group>"; };
 		63F613C21CB111070002AEF0 /* PastEventCellObjectBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PastEventCellObjectBuilderTests.m; sourceTree = "<group>"; };
@@ -1360,10 +1367,8 @@
 		66FFD29A1D7DCCFB0009B7DC /* CollectionViewContentCellAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CollectionViewContentCellAnimator.h; path = conferences/Classes/PresentationLayer/Helpers/CollectionViewContentCellAnimator/CollectionViewContentCellAnimator.h; sourceTree = SOURCE_ROOT; };
 		66FFD29B1D7DCCFB0009B7DC /* CollectionViewContentCellAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CollectionViewContentCellAnimator.m; path = conferences/Classes/PresentationLayer/Helpers/CollectionViewContentCellAnimator/CollectionViewContentCellAnimator.m; sourceTree = SOURCE_ROOT; };
 		76E95A8F2CA91B564A26FB49 /* EventGalleryViewControllerTests.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EventGalleryViewControllerTests.m; sourceTree = "<group>"; };
-		78CE7016463ABBC901050F19 /* Pods-ConferencesTests.nightly.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConferencesTests.nightly.xcconfig"; path = "Pods/Target Support Files/Pods-ConferencesTests/Pods-ConferencesTests.nightly.xcconfig"; sourceTree = "<group>"; };
-		7C792CFFA34171CCC305DD0D /* Pods-RamblerMessageExtension.nightly.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RamblerMessageExtension.nightly.xcconfig"; path = "Pods/Target Support Files/Pods-RamblerMessageExtension/Pods-RamblerMessageExtension.nightly.xcconfig"; sourceTree = "<group>"; };
-		7DD2D1BD8B19DA33CC71B815 /* libPods-RamblerMessageExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RamblerMessageExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		84D2CBEF6E088EFC9A139E49 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		7C8D39C97CFC4A464220D54B /* libPods-Conferences-RamblerMessageExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Conferences-RamblerMessageExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AA70B1576B0B702AF66FB4E /* Pods-Conferences-ConferencesTests.nightly.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conferences-ConferencesTests.nightly.xcconfig"; path = "Pods/Target Support Files/Pods-Conferences-ConferencesTests/Pods-Conferences-ConferencesTests.nightly.xcconfig"; sourceTree = "<group>"; };
 		9F0A6C1B1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CompoundOperationBuilderConfig.h; path = OperationBuilders/CompoundOperationBuilderConfig/CompoundOperationBuilderConfig.h; sourceTree = "<group>"; };
 		9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CompoundOperationBuilderConfig.m; path = OperationBuilders/CompoundOperationBuilderConfig/CompoundOperationBuilderConfig.m; sourceTree = "<group>"; };
 		9F0A6C1E1BC1B53F00A25417 /* RequestConfigurationType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RequestConfigurationType.h; path = CoreComponents/RequestConfigurators/RequestConfigurationType.h; sourceTree = "<group>"; };
@@ -1656,7 +1661,6 @@
 		9FBE89B91D5CB72D00DA0C32 /* CleanLaunchAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CleanLaunchAppDelegate.m; sourceTree = "<group>"; };
 		9FBE89BE1D5CB76900DA0C32 /* CleanLaunchAppDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CleanLaunchAppDelegateTests.m; sourceTree = "<group>"; };
 		9FBE89C01D5CB76900DA0C32 /* SpotlightAppDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotlightAppDelegateTests.m; sourceTree = "<group>"; };
-		9FBE89C21D5CB76900DA0C32 /* TyphoonAppDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TyphoonAppDelegateTests.m; sourceTree = "<group>"; };
 		9FBE89C51D5CB76900DA0C32 /* SpotlightLaunchHandlerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotlightLaunchHandlerTests.m; sourceTree = "<group>"; };
 		9FBE89C91D5CB76900DA0C32 /* CleanLaunchRouterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CleanLaunchRouterTests.m; sourceTree = "<group>"; };
 		9FBE89CB1D5CB76900DA0C32 /* EventLaunchRouterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventLaunchRouterTests.m; sourceTree = "<group>"; };
@@ -1847,8 +1851,13 @@
 		9FFEAF091D2E5CD3006E9649 /* MapLinkBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapLinkBuilder.h; path = MapLinkBuilder/MapLinkBuilder.h; sourceTree = "<group>"; };
 		9FFEAF0A1D2E5CE0006E9649 /* AppleMapsLinkBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppleMapsLinkBuilder.h; path = MapLinkBuilder/AppleMapsLinkBuilder.h; sourceTree = "<group>"; };
 		9FFEAF0B1D2E5CE0006E9649 /* AppleMapsLinkBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppleMapsLinkBuilder.m; path = MapLinkBuilder/AppleMapsLinkBuilder.m; sourceTree = "<group>"; };
-		C734A53C32A7A16F1C8B0956 /* Pods-RamblerMessageExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RamblerMessageExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RamblerMessageExtension/Pods-RamblerMessageExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		BB481A1BA0B7D2DBE3750B94 /* Pods-Conferences.nightly.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conferences.nightly.xcconfig"; path = "Pods/Target Support Files/Pods-Conferences/Pods-Conferences.nightly.xcconfig"; sourceTree = "<group>"; };
+		D4D07FD12F22C53F88A5868D /* Pods-Conferences-RamblerMessageExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conferences-RamblerMessageExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Conferences-RamblerMessageExtension/Pods-Conferences-RamblerMessageExtension.release.xcconfig"; sourceTree = "<group>"; };
 		E95DD4B714E0257EE1CE1C0D /* EventGalleryPresenterTests.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EventGalleryPresenterTests.m; sourceTree = "<group>"; };
+		EA2D483C826269C2260999EA /* Pods-Conferences-RamblerMessageExtension.nightly.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conferences-RamblerMessageExtension.nightly.xcconfig"; path = "Pods/Target Support Files/Pods-Conferences-RamblerMessageExtension/Pods-Conferences-RamblerMessageExtension.nightly.xcconfig"; sourceTree = "<group>"; };
+		F15F66C7FD75B9A89EF39FB4 /* libPods-Conferences.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Conferences.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3A86F78E711F7856679A32A /* Pods-Conferences.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conferences.release.xcconfig"; path = "Pods/Target Support Files/Pods-Conferences/Pods-Conferences.release.xcconfig"; sourceTree = "<group>"; };
+		F7ACB5BE07AA63ABA575E72C /* Pods-Conferences-RamblerMessageExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conferences-RamblerMessageExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Conferences-RamblerMessageExtension/Pods-Conferences-RamblerMessageExtension.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1858,7 +1867,7 @@
 			files = (
 				636E26F31D8FF072001ABB92 /* CoreData.framework in Frameworks */,
 				63BDBBC31D87E3DE006E8A15 /* Messages.framework in Frameworks */,
-				9A0EEDB6B85D7A9A13847D60 /* libPods-RamblerMessageExtension.a in Frameworks */,
+				2AA222A5031CC7BA4A19B3EF /* libPods-RamblerMessageExtension.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1866,7 +1875,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F826C56E7FA67515D33573A9 /* libPods.a in Frameworks */,
+				B844903CD5D6757D08026D5E /* libPods-Conferences.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1874,7 +1883,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A5668508B92FC833070BA13 /* libPods-ConferencesTests.a in Frameworks */,
+				9E94B671A997D53087214C4F /* libPods-Conferences-ConferencesTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2145,6 +2154,16 @@
 				63BDBBC61D87E3DE006E8A15 /* MessagesViewController.m */,
 			);
 			name = Presentation;
+			sourceTree = "<group>";
+		};
+		6310601F1DC89580006870EB /* MailComposerFactory */ = {
+			isa = PBXGroup;
+			children = (
+				6310601B1DC89577006870EB /* MailComposeControllerFactory.h */,
+				6310601C1DC89577006870EB /* MailComposeControllerFactoryImplementation.h */,
+				6310601D1DC89577006870EB /* MailComposeControllerFactoryImplementation.m */,
+			);
+			name = MailComposerFactory;
 			sourceTree = "<group>";
 		};
 		63136F941BDCDB2600994356 /* Common */ = {
@@ -2489,6 +2508,15 @@
 				667050021D4613BC00DD9D6E /* SearchReportsModule */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		634EB9E21DC8E60700EAEC0F /* SpeakerInfoAlertFactory */ = {
+			isa = PBXGroup;
+			children = (
+				634EB9DF1DC8E5FC00EAEC0F /* SpeakerInfoAlertFactory.h */,
+				634EB9E01DC8E5FC00EAEC0F /* SpeakerInfoAlertFactory.m */,
+			);
+			name = SpeakerInfoAlertFactory;
 			sourceTree = "<group>";
 		};
 		635E18BB1CA69EF2005B8439 /* LectureModuleAssemblyTests */ = {
@@ -3838,6 +3866,7 @@
 		63F613351CB00A220002AEF0 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				634EB9E21DC8E60700EAEC0F /* SpeakerInfoAlertFactory */,
 				63F613361CB00A220002AEF0 /* SpeakerInfoRouter.h */,
 				63F613371CB00A220002AEF0 /* SpeakerInfoRouter.m */,
 				63F613381CB00A220002AEF0 /* SpeakerInfoRouterInput.h */,
@@ -3941,7 +3970,6 @@
 				63F613BA1CB111070002AEF0 /* EventListInteractorTests.m */,
 				63F613BB1CB111070002AEF0 /* EventListPresenterTests.m */,
 				63F613BC1CB111070002AEF0 /* EventListRouterTests.m */,
-				63F613BD1CB111070002AEF0 /* EventListTableViewControllerTests.m */,
 			);
 			path = AnnouncementListModuleTests;
 			sourceTree = "<group>";
@@ -4008,6 +4036,7 @@
 		63F8F27A1BF79090000017F3 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				6310601F1DC89580006870EB /* MailComposerFactory */,
 				9F8B49E51D6EF71200ED176B /* YouTubePlayerFactory */,
 				9F8B49DE1D6EEE5E00ED176B /* YouTubeIdentifierDeriviator */,
 				9FC305291D6476650052CB67 /* ShareUrlBuilder */,
@@ -4852,22 +4881,6 @@
 				E95DD4B714E0257EE1CE1C0D /* EventGalleryPresenterTests.m */,
 			);
 			path = Presenter;
-			sourceTree = "<group>";
-		};
-		9879306505819DD768BE2239 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				559ED4EDBC100544852E4E6A /* Pods.debug.xcconfig */,
-				84D2CBEF6E088EFC9A139E49 /* Pods.release.xcconfig */,
-				2C01BA17D4018DCA62CC6C3B /* Pods-ConferencesTests.debug.xcconfig */,
-				5FED76184BAB5478101AC945 /* Pods-ConferencesTests.release.xcconfig */,
-				C734A53C32A7A16F1C8B0956 /* Pods-RamblerMessageExtension.debug.xcconfig */,
-				4F6D62D1702A84C83A3BA854 /* Pods-RamblerMessageExtension.release.xcconfig */,
-				7C792CFFA34171CCC305DD0D /* Pods-RamblerMessageExtension.nightly.xcconfig */,
-				3FF34B2C16698CFE0F52F7C1 /* Pods.nightly.xcconfig */,
-				78CE7016463ABBC901050F19 /* Pods-ConferencesTests.nightly.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		9F0A6C1A1BC1AFB200A25417 /* CompoundOperationBuilderConfig */ = {
@@ -5876,8 +5889,8 @@
 				635E18CA1CA6C572005B8439 /* ConferencesTestHelpers */,
 				63BDBBC41D87E3DE006E8A15 /* RamblerMessageExtension */,
 				9F1F37E51BBBB80D00C7797D /* Products */,
-				9879306505819DD768BE2239 /* Pods */,
 				D1799435EABEFA40D1849E2A /* Frameworks */,
+				D207702C368676837EA803A5 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -7149,7 +7162,6 @@
 		9FBE89C11D5CB76900DA0C32 /* TyphoonAppDelegate */ = {
 			isa = PBXGroup;
 			children = (
-				9FBE89C21D5CB76900DA0C32 /* TyphoonAppDelegateTests.m */,
 			);
 			path = TyphoonAppDelegate;
 			sourceTree = "<group>";
@@ -8209,12 +8221,32 @@
 			children = (
 				6321841B1D9BF7E7001BB7A7 /* libMagicalRecord.a */,
 				636E26F21D8FF072001ABB92 /* CoreData.framework */,
-				2A4F504A716A8833A7A01A5D /* libPods.a */,
-				5E72B1E234365770B87BDC6D /* libPods-ConferencesTests.a */,
 				63BDBBC21D87E3DE006E8A15 /* Messages.framework */,
-				7DD2D1BD8B19DA33CC71B815 /* libPods-RamblerMessageExtension.a */,
+				F15F66C7FD75B9A89EF39FB4 /* libPods-Conferences.a */,
+				5F1470A6FDBED5612278E025 /* libPods-Conferences-ConferencesTests.a */,
+				1C1AA7D4ECB1DA53BEC254E4 /* libPods-RamblerMessageExtension.a */,
+				7C8D39C97CFC4A464220D54B /* libPods-Conferences-RamblerMessageExtension.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D207702C368676837EA803A5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1AB36DD96D7739E6F91D7BBE /* Pods-Conferences.debug.xcconfig */,
+				F3A86F78E711F7856679A32A /* Pods-Conferences.release.xcconfig */,
+				BB481A1BA0B7D2DBE3750B94 /* Pods-Conferences.nightly.xcconfig */,
+				2A1B7FADAB8BA2EA1E9B450D /* Pods-Conferences-ConferencesTests.debug.xcconfig */,
+				1FC5571A228743BA28853AEA /* Pods-Conferences-ConferencesTests.release.xcconfig */,
+				9AA70B1576B0B702AF66FB4E /* Pods-Conferences-ConferencesTests.nightly.xcconfig */,
+				61435C41E57EED0504F7C502 /* Pods-RamblerMessageExtension.debug.xcconfig */,
+				23EE5826624410C24CDC2BA5 /* Pods-RamblerMessageExtension.release.xcconfig */,
+				44C28AC5C8513A913FE8B749 /* Pods-RamblerMessageExtension.nightly.xcconfig */,
+				F7ACB5BE07AA63ABA575E72C /* Pods-Conferences-RamblerMessageExtension.debug.xcconfig */,
+				D4D07FD12F22C53F88A5868D /* Pods-Conferences-RamblerMessageExtension.release.xcconfig */,
+				EA2D483C826269C2260999EA /* Pods-Conferences-RamblerMessageExtension.nightly.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -8224,11 +8256,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63BDBBD41D87E3DE006E8A15 /* Build configuration list for PBXNativeTarget "RamblerMessageExtension" */;
 			buildPhases = (
-				9817CBBE92A90330574EF271 /* Check Pods Manifest.lock */,
+				8DBA6B940BC2407FF13F7FF6 /* [CP] Check Pods Manifest.lock */,
 				63BDBBBD1D87E3DE006E8A15 /* Sources */,
 				63BDBBBE1D87E3DE006E8A15 /* Frameworks */,
 				63BDBBBF1D87E3DE006E8A15 /* Resources */,
-				2402DCDF1C57B359AA190D2E /* Copy Pods Resources */,
+				E654ADF620C5D82860C1B66C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -8243,14 +8275,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9F1F38091BBBB80D00C7797D /* Build configuration list for PBXNativeTarget "Conferences" */;
 			buildPhases = (
-				557A799BF98EEBF2A32D64F3 /* Check Pods Manifest.lock */,
+				B535971CE77462210FF7A843 /* [CP] Check Pods Manifest.lock */,
 				9F1F37E01BBBB80D00C7797D /* Sources */,
 				9F1F37E11BBBB80D00C7797D /* Frameworks */,
 				9F1F37E21BBBB80D00C7797D /* Resources */,
-				AC57B147A39D9B475E98FAA1 /* Copy Pods Resources */,
-				98E8F62F8473562795B255F8 /* Embed Pods Frameworks */,
 				9FF4C3E41CE22036002157B2 /* ShellScript */,
 				63BDBBD51D87E3DE006E8A15 /* Embed App Extensions */,
+				AF3D91B360DF062D601D2F49 /* [CP] Embed Pods Frameworks */,
+				04853FD7ED0E623871FBC8D4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -8266,12 +8298,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9F1F380C1BBBB80D00C7797D /* Build configuration list for PBXNativeTarget "ConferencesTests" */;
 			buildPhases = (
-				E3AB2E0D3DFD6CD81E984FC2 /* Check Pods Manifest.lock */,
+				E71F09ED8DDAD3310B45A64B /* [CP] Check Pods Manifest.lock */,
 				9F1F37FC1BBBB80D00C7797D /* Sources */,
 				9F1F37FD1BBBB80D00C7797D /* Frameworks */,
 				9F1F37FE1BBBB80D00C7797D /* Resources */,
-				EBB7EAEA5A514FA65626B30F /* Copy Pods Resources */,
-				A7BF29F38C281717E12C8178 /* Embed Pods Frameworks */,
+				EEF8A008F04803B32ED23F26 /* [CP] Embed Pods Frameworks */,
+				141AD6D6AC2B5A5AD89549F1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -8430,19 +8462,34 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2402DCDF1C57B359AA190D2E /* Copy Pods Resources */ = {
+		04853FD7ED0E623871FBC8D4 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RamblerMessageExtension/Pods-RamblerMessageExtension-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Conferences/Pods-Conferences-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		141AD6D6AC2B5A5AD89549F1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Conferences-ConferencesTests/Pods-Conferences-ConferencesTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2B750D161D362DB000EACE98 /* ShellScript */ = {
@@ -8458,49 +8505,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Scripts/mogenerator.sh\"";
 		};
-		557A799BF98EEBF2A32D64F3 /* Check Pods Manifest.lock */ = {
+		8DBA6B940BC2407FF13F7FF6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		9817CBBE92A90330574EF271 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		98E8F62F8473562795B255F8 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		9FF4C3E41CE22036002157B2 /* ShellScript */ = {
@@ -8516,64 +8533,79 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 27234a8fb339211b7081a28ef1f90c7159278f54 9c0e8dedd527c8ff4f29a550b8a4ea698075f3607e7938bbfda9d19215c985eb";
 		};
-		A7BF29F38C281717E12C8178 /* Embed Pods Frameworks */ = {
+		AF3D91B360DF062D601D2F49 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConferencesTests/Pods-ConferencesTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Conferences/Pods-Conferences-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AC57B147A39D9B475E98FAA1 /* Copy Pods Resources */ = {
+		B535971CE77462210FF7A843 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		E3AB2E0D3DFD6CD81E984FC2 /* Check Pods Manifest.lock */ = {
+		E654ADF620C5D82860C1B66C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RamblerMessageExtension/Pods-RamblerMessageExtension-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EBB7EAEA5A514FA65626B30F /* Copy Pods Resources */ = {
+		E71F09ED8DDAD3310B45A64B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConferencesTests/Pods-ConferencesTests-resources.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EEF8A008F04803B32ED23F26 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Conferences-ConferencesTests/Pods-Conferences-ConferencesTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -8665,6 +8697,7 @@
 				636E26C81D8FE076001ABB92 /* EventListDataDisplayManager.m in Sources */,
 				636E26D91D8FE74D001ABB92 /* EventListQuery.m in Sources */,
 				63BB9A1D1DB4B49500C2F2B9 /* QuickActionLaunchHandler.m in Sources */,
+				631060221DC8984F006870EB /* MailComposeControllerFactoryImplementation.m in Sources */,
 				63BB9A2A1DB4BA9A00C2F2B9 /* IndexerMonitor.m in Sources */,
 				63BB9A0F1DB285C900C2F2B9 /* EventTypeDeterminator.m in Sources */,
 				63BB9A1B1DB4B47C00C2F2B9 /* LectureLaunchRouter.m in Sources */,
@@ -8850,6 +8883,7 @@
 				631808401C482B1300A61E7D /* SpeakerShortInfoInteractor.m in Sources */,
 				9FBE89B31D5CB71300DA0C32 /* EventLaunchRouter.m in Sources */,
 				661CA4071D65D0720047EB68 /* NSManagedObjectID+LJStringConversion.m in Sources */,
+				634EB9E11DC8E5FC00EAEC0F /* SpeakerInfoAlertFactory.m in Sources */,
 				661CA4031D65D04E0047EB68 /* ServerResponseModel.m in Sources */,
 				9F78D7441D59D6EF009DDCEA /* SpotlightCoreDataStackCoordinatorImplementation.m in Sources */,
 				667050531D46332200DD9D6E /* ReportsSearchCellObjectsBuilderImplementation.m in Sources */,
@@ -8949,6 +8983,7 @@
 				9FE1397D1D65F3E900D7BF44 /* ReportLectureTableViewCellObject.m in Sources */,
 				63F6135A1CB00A220002AEF0 /* EventHeaderModuleAssembly.m in Sources */,
 				9FBE8A081D5DFA1600DA0C32 /* VideoThumbnailGenerator.m in Sources */,
+				6310601E1DC89577006870EB /* MailComposeControllerFactoryImplementation.m in Sources */,
 				2B2064911D3F9CE900246C8D /* TechModelObject.m in Sources */,
 				9F0A84F91BC1698B006F79FB /* AsyncOperation.m in Sources */,
 				66E9997E1D54B0A000161D98 /* TagCellSizeCalculator.m in Sources */,
@@ -9074,7 +9109,6 @@
 				662166501D4F4507000A1D11 /* ReportsSearchInteractorTests.m in Sources */,
 				63F613EF1CB111070002AEF0 /* SpeakerInfoViewControllerTests.m in Sources */,
 				9FBE89DA1D5CB76900DA0C32 /* SpeakerLaunchRouterTests.m in Sources */,
-				9FBE89D51D5CB76900DA0C32 /* TyphoonAppDelegateTests.m in Sources */,
 				635E18C21CA6A496005B8439 /* LectureModuleAssemblyTests.m in Sources */,
 				66A1DD461D7E984E00998F6B /* TagCellSizeRowCalculatorTests.m in Sources */,
 				9FF37E181D32397900471B4E /* RamblerLocationPresenterTests.m in Sources */,
@@ -9123,6 +9157,7 @@
 				63F613E51CB111070002AEF0 /* LecturePresenterTests.m in Sources */,
 				9F0A85261BC185AA006F79FB /* ResponseDeserializationOperationTests.m in Sources */,
 				9FF750081D26C8EB000D208D /* EventListOperationFactoryTests.m in Sources */,
+				631060231DC89850006870EB /* MailComposeControllerFactoryImplementation.m in Sources */,
 				662166521D4F4507000A1D11 /* ReportsSearchViewControllerTests.m in Sources */,
 				63F403001BCF85EE0086D030 /* RequestConfiguratorsAssemblyTests.m in Sources */,
 				9F78D7721D5A005A009DDCEA /* LectureObjectTransformerTests.m in Sources */,
@@ -9173,7 +9208,6 @@
 				9F78D7641D59E93B009DDCEA /* SpeakerChangeProviderFetchRequestFactoryTests.m in Sources */,
 				9F1830AB1BC1139B000E21A5 /* RCFParseRequestSignerTests.m in Sources */,
 				63F613D71CB111070002AEF0 /* EventListDataDisplayManagerTests.m in Sources */,
-				63F613DB1CB111070002AEF0 /* EventListTableViewControllerTests.m in Sources */,
 				63F403AF1BD0D0690086D030 /* ResponseMappersAssemblyTests.m in Sources */,
 				9F1830DF1BC12749000E21A5 /* RCFResponseValidatorTestsBase.m in Sources */,
 				63F403AC1BD0CD460086D030 /* ResponseDeserializersAssemblyTests.m in Sources */,
@@ -9268,7 +9302,7 @@
 		};
 		63BDBBD11D87E3DE006E8A15 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C734A53C32A7A16F1C8B0956 /* Pods-RamblerMessageExtension.debug.xcconfig */;
+			baseConfigurationReference = 61435C41E57EED0504F7C502 /* Pods-RamblerMessageExtension.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
@@ -9291,7 +9325,7 @@
 		};
 		63BDBBD21D87E3DE006E8A15 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4F6D62D1702A84C83A3BA854 /* Pods-RamblerMessageExtension.release.xcconfig */;
+			baseConfigurationReference = 23EE5826624410C24CDC2BA5 /* Pods-RamblerMessageExtension.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
@@ -9315,7 +9349,7 @@
 		};
 		63BDBBD31D87E3DE006E8A15 /* Nightly */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7C792CFFA34171CCC305DD0D /* Pods-RamblerMessageExtension.nightly.xcconfig */;
+			baseConfigurationReference = 44C28AC5C8513A913FE8B749 /* Pods-RamblerMessageExtension.nightly.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
@@ -9379,7 +9413,7 @@
 		};
 		892D07FD1BED037200825704 /* Nightly */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3FF34B2C16698CFE0F52F7C1 /* Pods.nightly.xcconfig */;
+			baseConfigurationReference = BB481A1BA0B7D2DBE3750B94 /* Pods-Conferences.nightly.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Conferences/Conferences.entitlements;
@@ -9427,7 +9461,7 @@
 		};
 		892D07FE1BED037200825704 /* Nightly */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 78CE7016463ABBC901050F19 /* Pods-ConferencesTests.nightly.xcconfig */;
+			baseConfigurationReference = 9AA70B1576B0B702AF66FB4E /* Pods-Conferences-ConferencesTests.nightly.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "ConferencesTests/Supporting Files/Info.plist";
@@ -9526,7 +9560,7 @@
 		};
 		9F1F380A1BBBB80D00C7797D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 559ED4EDBC100544852E4E6A /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 1AB36DD96D7739E6F91D7BBE /* Pods-Conferences.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Conferences/Conferences.entitlements;
@@ -9575,7 +9609,7 @@
 		};
 		9F1F380B1BBBB80D00C7797D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 84D2CBEF6E088EFC9A139E49 /* Pods.release.xcconfig */;
+			baseConfigurationReference = F3A86F78E711F7856679A32A /* Pods-Conferences.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Conferences/Conferences.entitlements;
@@ -9624,7 +9658,7 @@
 		};
 		9F1F380D1BBBB80D00C7797D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2C01BA17D4018DCA62CC6C3B /* Pods-ConferencesTests.debug.xcconfig */;
+			baseConfigurationReference = 2A1B7FADAB8BA2EA1E9B450D /* Pods-Conferences-ConferencesTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				HEADER_SEARCH_PATHS = (
@@ -9653,7 +9687,7 @@
 		};
 		9F1F380E1BBBB80D00C7797D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5FED76184BAB5478101AC945 /* Pods-ConferencesTests.release.xcconfig */;
+			baseConfigurationReference = 1FC5571A228743BA28853AEA /* Pods-Conferences-ConferencesTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				HEADER_SEARCH_PATHS = (

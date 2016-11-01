@@ -19,7 +19,7 @@
 // THE SOFTWARE.
 
 #import <Typhoon/Typhoon.h>
-#import "AssemblyCollector/RamblerInitialAssembly.h"
+#import <RamblerTyphoonUtils/AssemblyCollector.h>
 
 /**
  @author Artem Karpushin

@@ -19,7 +19,7 @@
 // THE SOFTWARE.
 
 #import <Typhoon/Typhoon.h>
-#import "AssemblyCollector/RamblerInitialAssembly.h"
+#import <RamblerTyphoonUtils/AssemblyCollector.h>
 
 @class EventTypeDeterminator;
 @class DateFormatter;
@@ -27,6 +27,7 @@
 @class YouTubeIdentifierDeriviator;
 @protocol MapLinkBuilder;
 @protocol SafariFactory;
+@protocol MailComposeControllerFactory;
 @protocol YouTubePlayerFactory;
 
 /**
@@ -41,6 +42,7 @@
 - (id<MapLinkBuilder>)appleMapsLinkBuilder;
 - (VideoThumbnailGenerator *)videoThumbnailGenerator;
 - (id<SafariFactory>)safariFactory;
+- (id<MailComposeControllerFactory>)mailComposeFactory;
 - (id<YouTubePlayerFactory>)youTubePlayerFactory;
 - (YouTubeIdentifierDeriviator *)youTubeIdentifierDeriviator;
 

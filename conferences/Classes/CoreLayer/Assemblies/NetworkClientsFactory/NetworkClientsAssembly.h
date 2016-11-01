@@ -21,7 +21,7 @@
 #import <Typhoon/Typhoon.h>
 
 #import "NetworkClientsFactory.h"
-#import "AssemblyCollector/RamblerInitialAssembly.h"
+#import <RamblerTyphoonUtils/AssemblyCollector.h>
 
 /**
  @author Egor Tolstoy

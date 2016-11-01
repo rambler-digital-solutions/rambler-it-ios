@@ -21,8 +21,14 @@
 #import "EventStoreService.h"
 #import "EventStoreServiceProtocol.h"
 #import "EventPlainObject.h"
+#import "MetaEventPlainObject.h"
+#import "LecturePlainObject.h"
+#import "SpeakerPlainObject.h"
 #import <EventKit/EventKit.h>
 #import "ErrorConstants.h"
+
+static NSString *const kEventLocation = @"Варшавское шоссе, д. 9 с. 1, корпус \"Ряды Солдатенкова\"";
+static NSString *const kEventDescriptionSeparator = @"===============";
 
 @implementation EventStoreService
 
@@ -52,6 +58,9 @@
         calendarEvent.title = event.name;
         calendarEvent.startDate = event.startDate;
         calendarEvent.endDate = event.endDate;
+        calendarEvent.location = kEventLocation;
+        calendarEvent.notes = [self composeEventDescriptionForEvent:event];
+        
         calendarEvent.calendar = [eventStore defaultCalendarForNewEvents];
         
         NSError *savingEventError;
@@ -85,6 +94,21 @@
         }
     }
     return  needToSaveEvent;
+}
+
+- (NSString *)composeEventDescriptionForEvent:(EventPlainObject *)event {
+    NSMutableArray *descriptionParts = [NSMutableArray new];
+    [descriptionParts addObject:event.metaEvent.metaEventDescription];
+    [descriptionParts addObject:kEventDescriptionSeparator];
+    
+    for (LecturePlainObject *lecture in event.lectures) {
+        NSUInteger lectureIndex = [[event.lectures allObjects] indexOfObject:lecture] + 1;
+        NSString *lectureText = [NSString stringWithFormat:@"%tu. %@. %@.\n%@", lectureIndex, lecture.name, lecture.speaker.name, lecture.lectureDescription];
+        [descriptionParts addObject:lectureText];
+    }
+    
+    NSString *description = [descriptionParts componentsJoinedByString:@"\n\n"];
+    return description;
 }
 
 @end

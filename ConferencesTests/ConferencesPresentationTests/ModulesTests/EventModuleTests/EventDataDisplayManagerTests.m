@@ -48,26 +48,6 @@
     [super tearDown];
 }
 
-- (void)testSuccessConfigureDataDisplayManagerWithEvent {
-    // given
-    EventPlainObject *event = [ModelObjectGenerator generateEventObjects:1].firstObject;
-    NSArray *pastEvents = [ModelObjectGenerator generateEventObjects:3];
-    
-    id mockCellObjectBuilder = OCMClassMock([EventCellObjectBuilderBase class]);
-    id mockFactory = OCMClassMock([EventCellObjectBuilderFactory class]);
-    OCMStub([mockFactory builderForEventType:OCMOCK_ANY]).andReturn(mockCellObjectBuilder);
-    
-    self.dataDisplayManager.cellObjectBuilderFactory = mockFactory;
-    
-    // when
-    [self.dataDisplayManager configureDataDisplayManagerWithEvent:event pastEvents:pastEvents];
-    
-    // then
-    OCMVerify([mockCellObjectBuilder cellObjectsForEvent:event pastEvents:pastEvents]);
-    [mockFactory stopMocking];
-    [mockCellObjectBuilder stopMocking];
-}
-
 - (void)testThatDataDisplayManagerReturnsTableViewDataSource {
     // given
     

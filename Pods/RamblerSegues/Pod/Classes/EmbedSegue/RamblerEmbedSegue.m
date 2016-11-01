@@ -28,6 +28,7 @@
     [parentViewController addChildViewController:embeddableModuleViewController];
     UIView *moduleView = embeddableModuleViewController.view;
     [containerView addSubview:moduleView];
+    [embeddableModuleViewController didMoveToParentViewController:parentViewController];
     
     moduleView.translatesAutoresizingMaskIntoConstraints = NO;
     [containerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[moduleView]-0-|"

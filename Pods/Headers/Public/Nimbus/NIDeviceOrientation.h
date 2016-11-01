@@ -1,1 +1,1 @@
-../../../Nimbus/src/core/src/NIDeviceOrientation.h
+../../../../../nimbus/src/core/src/NIDeviceOrientation.h

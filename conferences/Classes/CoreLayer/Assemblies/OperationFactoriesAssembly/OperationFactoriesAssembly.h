@@ -19,7 +19,7 @@
 // THE SOFTWARE.
 
 #import "TyphoonAssembly.h"
-#import "AssemblyCollector/RamblerInitialAssembly.h"
+#import <RamblerTyphoonUtils/AssemblyCollector.h>
 
 @protocol RequestConfiguratorsFactory;
 @protocol RequestSignersFactory;

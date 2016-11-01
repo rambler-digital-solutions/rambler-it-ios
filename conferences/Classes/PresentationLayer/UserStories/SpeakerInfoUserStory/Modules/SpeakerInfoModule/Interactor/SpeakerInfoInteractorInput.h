@@ -42,5 +42,14 @@
  */
 - (NSArray *)obtainActivityItemsForSpeaker:(SpeakerPlainObject *)speaker;
 
+/**
+ @author Egor Tolstoy
+ 
+ Method ckecks whether email composition is available on the current device
+ 
+ @param objectId NString object
+ */
+- (BOOL)checkIfEmailIsAvailable;
+
 @end
 

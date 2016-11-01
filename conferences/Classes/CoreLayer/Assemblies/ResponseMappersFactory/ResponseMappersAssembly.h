@@ -21,7 +21,7 @@
 #import <Typhoon/Typhoon.h>
 
 #import "ResponseMappersFactory.h"
-#import "AssemblyCollector/RamblerInitialAssembly.h"
+#import <RamblerTyphoonUtils/AssemblyCollector.h>
 
 /**
  @author Egor Tolstoy

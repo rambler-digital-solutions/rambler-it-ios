@@ -20,6 +20,7 @@
 
 #import <XCTest/XCTest.h>
 #import <OCMock/OCMock.h>
+#import <UIKit/UIKit.h>
 
 #import "TagCollectionView.h"
 #import "TagModuleInput.h"
@@ -100,7 +101,6 @@
     [self.view setupVerticalContentAlign];
 
     // then
-    XCTAssertEqualObjects([self.view.collectionViewLayout class], [UICollectionViewLeftAlignedLayout class]);
     UICollectionViewLeftAlignedLayout *layout = (UICollectionViewLeftAlignedLayout *) self.view.collectionViewLayout;
     XCTAssertEqual([layout minimumInteritemSpacing], kExpectedSpacing);
     XCTAssertEqual([layout minimumLineSpacing], kExpectedSpacing);

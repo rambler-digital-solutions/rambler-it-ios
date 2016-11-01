@@ -20,6 +20,15 @@
 #import "SocialNetworkAccountPlainObject.h"
 #import "SpeakerInfoSocialContactsTableViewCell.h"
 
+@interface SpeakerInfoSocialContactsCellObject ()
+
+@property (nonatomic, assign, readwrite) NSString *image;
+@property (nonatomic, strong, readwrite) NSString *link;
+@property (nonatomic, strong, readwrite) NSString *name;
+@property (nonatomic, assign, readwrite) SocialNetworkType networkType;
+
+@end
+
 @implementation SpeakerInfoSocialContactsCellObject
 
 - (instancetype)initWithSocialNetworkAccount:(SocialNetworkAccountPlainObject *)account
@@ -30,6 +39,7 @@
         _image = image;
         _link = account.profileLink;
         _name = text;
+        _networkType = [account.type integerValue];
     }
     
     return self;

@@ -2,7 +2,7 @@
 
 [![Pod version](https://badge.fury.io/co/ViperMcFlurry.svg)](https://badge.fury.io/co/ViperMcFlurry)
 
-**VIPER McFlurry** is a modern framework for implementing [VIPER architecture](https://github.com/rambler-ios/The-Book-of-VIPER) in iOS application. It offers several tools and components that help either start new projects with VIPER or move from MVC.
+**VIPER McFlurry** is a modern framework for implementing [VIPER architecture](https://github.com/rambler-digital-solutions/The-Book-of-VIPER) in iOS application. It offers several tools and components that help either start new projects with VIPER or move from MVC.
 
 ![McFlurry](http://67.media.tumblr.com/36413ae65aa3f97fbce9ec53b21aa0ef/tumblr_oa2wlngg6u1r8u8uko1_500.jpg)
 
@@ -10,7 +10,7 @@
 
 - The framework itself pushes you to implement a **proper VIPER architecture**,
 - It provides an extremely nice and easy way to implement **intermodule data transfer**,
-- Used in [default Generamba template](https://github.com/rambler-ios/generamba-catalog/tree/master/rviper_controller).
+- Used in [default Generamba template](https://github.com/rambler-digital-solutions/generamba-catalog/tree/master/rviper_controller).
 
 ### Usage
 

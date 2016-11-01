@@ -1,1 +1,1 @@
-../../../Nimbus/src/models/src/NITableViewModel+Private.h
+../../../../../nimbus/src/models/src/NITableViewModel+Private.h

@@ -7,7 +7,7 @@
 //
 
 #import "ModuleAssemblyBase.h"
-#import "AssemblyCollector/RamblerInitialAssembly.h"
+#import <RamblerTyphoonUtils/AssemblyCollector.h>
 
 @class EventListModuleAssembly, PonsomizerAssembly, SpotlightIndexerAssembly, LaunchSystemAssembly;
 

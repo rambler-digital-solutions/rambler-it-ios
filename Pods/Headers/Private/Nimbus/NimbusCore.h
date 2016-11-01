@@ -1,1 +1,1 @@
-../../../Nimbus/src/core/src/NimbusCore.h
+../../../../../nimbus/src/core/src/NimbusCore.h

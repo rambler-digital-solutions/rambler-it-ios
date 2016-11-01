@@ -171,4 +171,15 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
     OCMVerify([self.mockOutput didTriggerShareButtonTapEvent]);
 }
 
+- (void)testSuccessDidTapEmail {
+    // given
+    NSString *const kTestEmail = @"etolstoy@rambler.ru";
+    
+    // when
+    [self.viewController didTapEmailCellWithEmail:kTestEmail];
+    
+    // then
+    OCMVerify([self.mockOutput didTriggerEmailTapEventWithEmail:kTestEmail]);
+}
+
 @end

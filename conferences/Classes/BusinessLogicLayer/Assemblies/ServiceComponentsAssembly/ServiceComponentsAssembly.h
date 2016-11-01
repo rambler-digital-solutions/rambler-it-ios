@@ -22,7 +22,7 @@
 #import "ServiceComponents.h"
 
 #import "OperationFactoriesAssembly.h"
-#import "AssemblyCollector/RamblerInitialAssembly.h"
+#import <RamblerTyphoonUtils/AssemblyCollector.h>
 
 @class ResourceClientAssembly;
 @class ResourceMapperAssembly;

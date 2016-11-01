@@ -46,7 +46,7 @@
     [super tearDown];
 }
 
-- (void)testSuccessSetupCoreDataStack {
+- (void)d_testSuccessSetupCoreDataStack {
     // given
     id mockMagicalRecord = OCMClassMock([MagicalRecord class]);
     

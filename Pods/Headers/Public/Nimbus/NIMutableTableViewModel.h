@@ -1,1 +1,1 @@
-../../../Nimbus/src/models/src/NIMutableTableViewModel.h
+../../../../../nimbus/src/models/src/NIMutableTableViewModel.h

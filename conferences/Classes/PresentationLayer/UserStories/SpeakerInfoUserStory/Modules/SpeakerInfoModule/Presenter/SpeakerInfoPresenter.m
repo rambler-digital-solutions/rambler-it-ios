@@ -39,6 +39,19 @@
     }
 }
 
+- (void)didTriggerEmailTapEventWithEmail:(NSString *)email {
+    BOOL canSendMail = [self.interactor checkIfEmailIsAvailable];
+    if (!canSendMail) {
+        [self.router openEmailComposerUnavailableAlertModule];
+        return;
+    }
+    if (!email) {
+        [self.router openEmptyEmailAlertModule];
+        return;
+    }
+    [self.router openMailComposerModuleWithEmail:email];
+}
+
 - (void)didTriggerLectureTapEventWithLecture:(LecturePlainObject *)lecture {
     NSString *lectureId = lecture.lectureId;
     [self.router openLectureModuleWithLectureId:lectureId];

@@ -41,6 +41,15 @@
 /**
  @author Egor Tolstoy
  
+ Method tells output that an email element was tapped
+ 
+ @param email The receiver email
+ */
+- (void)didTriggerEmailTapEventWithEmail:(NSString *)email;
+
+/**
+ @author Egor Tolstoy
+ 
  Method tells output that a lecture element was tapped
  
  @param lecture Lecture model object
