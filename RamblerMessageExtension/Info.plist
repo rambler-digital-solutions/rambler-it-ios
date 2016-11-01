@@ -27,12 +27,9 @@
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.message-payload-provider</string>
 	</dict>
-	<key>TyphoonInitialAssemblies</key>
+	<key>NSUserActivityTypes</key>
 	<array>
-		<string>PonsomizerAssembly</string>
-		<string>ModuleAssemblyBase</string>
-		<string>EventListModuleAssembly</string>
-		<string>MessageExtensionAssembly</string>
+		<string>com.imessage</string>
 	</array>
 </dict>
 </plist>

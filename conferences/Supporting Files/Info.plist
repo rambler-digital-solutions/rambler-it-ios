@@ -74,5 +74,16 @@
 	<true/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array/>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>ramblerconferences</string>
+			</array>
+			<key>CFBundleURLName</key>
+			<string>Editor</string>
+		</dict>
+	</array>
 </dict>
 </plist>
