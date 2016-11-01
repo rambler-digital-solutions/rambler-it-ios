@@ -9,10 +9,13 @@
 #import "ModuleAssemblyBase.h"
 #import "AssemblyCollector/RamblerInitialAssembly.h"
 
-@class EventListModuleAssembly;
+@class EventListModuleAssembly, PonsomizerAssembly, SpotlightIndexerAssembly, LaunchSystemAssembly;
 
 @interface MessageExtensionAssembly : ModuleAssemblyBase <RamblerInitialAssembly>
 
 @property (strong, nonatomic) EventListModuleAssembly *eventListAssembly;
+@property (nonatomic, strong) PonsomizerAssembly *ponsomizerAssembly;
+@property (strong, nonatomic, readonly) SpotlightIndexerAssembly *spotlightIndexerAssembly;
+@property (strong, nonatomic, readonly) LaunchSystemAssembly *launchSystemAssembly;
 
 @end

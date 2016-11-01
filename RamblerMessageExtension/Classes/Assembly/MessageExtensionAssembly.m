@@ -14,14 +14,35 @@
 
 #import "PonsomizerAssembly.h"
 
+#import "ServiceComponents.h"
+
+#import "MessagesLaunchHandler.h"
+
+#import "SpotlightIndexerAssembly.h"
+
+#import "LaunchSystemAssembly.h"
+
 @implementation MessageExtensionAssembly
 
 - (MessagesViewController *)messageExtension {
     return [TyphoonDefinition withClass:[MessagesViewController class]
                           configuration:^(TyphoonDefinition *definition) {
-        [definition injectProperty:@selector(childViewController)
-                              with:[self.eventListAssembly viewEventList]];
-    }];
+        [definition injectProperty:@selector(eventService)
+                              with:[self.serviceComponents eventService]];
+        [definition injectProperty:@selector(ponsomizer)
+                              with:[self.ponsomizerAssembly ponsomizer]];
+        [definition injectProperty:@selector(dataDisplayManager)
+                            with:[self.eventListAssembly dataDisplayManagerEventList]];
+        [definition injectProperty:@selector(transformer)
+                            with:[self.spotlightIndexerAssembly eventObjectTransformer]];
+        [definition injectProperty:@selector(output)
+                              with:[self.eventListAssembly presenterEventList]];
+        }];
 }
 
 @end
+
+
+
+
+
