@@ -22,6 +22,7 @@
 #import "AssemblyCollector/RamblerInitialAssembly.h"
 
 @class PonsomizerAssembly;
+@class EventViewController;
 
 /**
  @author Artem Karpushin
@@ -31,6 +32,8 @@
 @interface EventModuleAssembly : ModuleAssemblyBase <RamblerInitialAssembly>
 
 @property (nonatomic, strong) PonsomizerAssembly *ponsomizerAssembly;
+
+- (EventViewController *)viewEvent;
 
 @end
 

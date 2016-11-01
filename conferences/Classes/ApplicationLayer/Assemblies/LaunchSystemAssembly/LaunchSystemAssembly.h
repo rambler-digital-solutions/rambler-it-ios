@@ -27,6 +27,8 @@
 @class SpotlightIndexerAssembly;
 @class SpotlightAppDelegate;
 @class QuickActionAppDelegate;
+@class EventLaunchRouter;
+@class MessagesAppDelegate;
 
 /**
  @author Egor Tolstoy
@@ -42,5 +44,7 @@
 
 - (SpotlightAppDelegate *)spotlightAppDelegate;
 - (QuickActionAppDelegate *)quickActionAppDelegate;
+- (EventLaunchRouter *)eventLaunchRouter;
+- (MessagesAppDelegate *)messagesAppDelegate;
 
 @end

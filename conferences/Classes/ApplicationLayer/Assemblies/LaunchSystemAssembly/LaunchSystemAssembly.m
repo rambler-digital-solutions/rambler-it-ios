@@ -34,6 +34,9 @@
 #import "SpeakerLaunchRouter.h"
 #import "LectureLaunchRouter.h"
 #import "TabLaunchRouter.h"
+#import "MessagesAppDelegate.h"
+#import "MessagesLaunchHandler.h"
+#import "MessagesUserActivityFactory.h"
 
 #import "QuickActionConstants.h"
 
@@ -73,6 +76,16 @@ static NSUInteger const kSearchTabIndex = 2;
                                               }];
                               definition.scope = TyphoonScopeSingleton;
                           }];
+}
+
+- (MessagesAppDelegate *)messagesAppDelegate {
+    return [TyphoonDefinition withClass:[MessagesAppDelegate class] configuration:^(TyphoonDefinition *definition) {
+        [definition useInitializer:@selector(initWithLaunchHandlers:userActivityFactory:) parameters:^(TyphoonMethod *initializer) {
+            [initializer injectParameterWith:@[[self messagesLaunchHandler]]];
+            [initializer injectParameterWith:[self messagesUserActivityFactory]];
+        }];
+        definition.scope = TyphoonScopeSingleton;
+    }];
 }
 
 #pragma mark - Launch handlers
@@ -208,10 +221,24 @@ static NSUInteger const kSearchTabIndex = 2;
                           }];
 }
 
+- (MessagesLaunchHandler *)messagesLaunchHandler {
+    return [TyphoonDefinition withClass:[MessagesLaunchHandler class] configuration:^(TyphoonDefinition *definition) {
+        [definition useInitializer:@selector(initWithObjectTransformer:launchRouter:)
+                        parameters:^(TyphoonMethod *initializer) {
+                            [initializer injectParameterWith:[self.spotlightIndexerAssembly eventObjectTransformer]];
+                            [initializer injectParameterWith:[self eventLaunchRouter]];
+                        }];
+    }];
+}
+
 #pragma mark - Factories
 
 - (QuickActionUserActivityFactory *)quickActionUserActivityFactory {
     return [TyphoonDefinition withClass:[QuickActionUserActivityFactory class]];
+}
+
+- (MessagesUserActivityFactory *)messagesUserActivityFactory {
+    return [TyphoonDefinition withClass:[MessagesUserActivityFactory class]];
 }
 
 @end
