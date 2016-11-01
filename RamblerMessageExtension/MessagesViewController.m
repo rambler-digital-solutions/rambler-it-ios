@@ -13,16 +13,37 @@
 #import "EventListModuleAssembly.h"
 #import "MessageExtensionAssembly.h"
 #import "PonsomizerAssembly.h"
+#import "PresentationLayerHelpersAssembly.h"
 
 #import "ServiceComponentsAssembly.h"
 
 #import <MagicalRecord/MagicalRecord.h>
 
-static NSString * const kRCFAppGroupIdentifier = @"group.ru.ramblerco.rambler.it";
+#import "EventService.h"
 
-@interface MessagesViewController ()
+#import "ROSPonsomizer.h"
 
-@property (weak, nonatomic) IBOutlet UIView *containerView;
+#import "EventPlainObject.h"
+#import "DataDisplayManager.h"
+#import "UINavigationBar+States.h"
+
+#import "MessagesLaunchHandler.h"
+#import "EventLaunchRouter.h"
+#import "LaunchSystemAssembly.h"
+#import "SpotlightIndexerAssembly.h"
+#import "ObjectTransformer.h"
+#import "EventListViewOutput.h"
+#import "EventViewController.h"
+#import "EventListRouterInput.h"
+
+#import "MessagesConstants.h"
+
+
+static CGFloat const kEventTableViewEstimatedRowHeight = 100.0f;
+
+@interface MessagesViewController () <UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -32,98 +53,104 @@ static NSString * const kRCFAppGroupIdentifier = @"group.ru.ramblerco.rambler.it
     [super viewDidLoad];
 
     [self activateTyphoon];
-    NSURL *directory = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:kRCFAppGroupIdentifier];
-    NSURL *storeURL = [directory  URLByAppendingPathComponent:@"Conferences.sqlite"];
-    [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreAtURL:storeURL];
-   // [self.childViewController.output setupView];
-   // [self setupChildView];
-
+    [self setupCoreData];
+    [self loadEvents];
 }
 
-- (void)viewDidLayoutSubviews {
-    [super viewDidLayoutSubviews];
-
-    //[self.containerView layoutIfNeeded];
-
-}
-
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    [self.childViewController.view setNeedsUpdateConstraints];
-    [self.childViewController.view updateConstraintsIfNeeded];
-
-    [self.childViewController.view setNeedsLayout];
-    [self.childViewController.view layoutIfNeeded];
-
-
-}
+#pragma mark - setups
 
 - (void)activateTyphoon {
-    TyphoonComponentFactory *factory = [TyphoonBlockComponentFactory factoryWithAssemblies:@[[MessageExtensionAssembly assembly], [EventListModuleAssembly assembly], [PonsomizerAssembly assembly], [ServiceComponentsAssembly assembly]]];
+    TyphoonComponentFactory *factory = [TyphoonBlockComponentFactory factoryWithAssemblies:@[[MessageExtensionAssembly assembly], [EventListModuleAssembly assembly], [PonsomizerAssembly assembly], [ServiceComponentsAssembly assembly], [PresentationLayerHelpersAssembly assembly], [LaunchSystemAssembly assembly], [SpotlightIndexerAssembly assembly]]];
     [factory makeDefault];
     [factory inject:self];
 }
 
-- (void)setupChildView {
-    [self addChildViewController:self.childViewController];
-    self.childViewController.view.frame = self.containerView.bounds;
-    [self.containerView addSubview:self.childViewController.view];
-    [self.childViewController didMoveToParentViewController:self];
+- (void)setupCoreData {
+    NSURL *directory = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:RCFAppGroupIdentifier];
+    NSURL *storeURL = [directory  URLByAppendingPathComponent:RCFCoreDataNameKey];
+    [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreAtURL:storeURL];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)setupViewInitialState {
+    [self.navigationController.navigationBar rcf_becomeDefault];
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+    self.navigationController.navigationBar.hidden = NO;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+}
+
+- (void)loadEvents {
+    NSArray *events = [self.eventService obtainEventsWithPredicate:nil];
+    NSArray *plainObjects = [self.ponsomizer convertObject:events];
+    NSArray *sortedEvents = [self sortEventsByDate:plainObjects];
+    [self setupViewWithEventList:sortedEvents];
+}
+
+#pragma mark - AnnouncementListViewInput
+
+- (void)setupViewWithEventList:(NSArray *)events {
+    [self setupViewInitialState];
+    self.dataDisplayManager.delegate = self;
+
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.estimatedRowHeight = kEventTableViewEstimatedRowHeight;
+
+    self.tableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.tableView];
+    self.tableView.delegate = [self.dataDisplayManager delegateForTableView:self.tableView
+                                                           withBaseDelegate:self];
+
+    [self.dataDisplayManager updateTableViewModelWithEvents:events];
+}
+
+#pragma mark - EventListDataDisplayManagerDelegate
+
+- (void)didTapCellWithEvent:(EventPlainObject *)event {
+    NSString *identifier = [self.transformer identifierForObject:event];
+    MSMessage *message = [MSMessage new];
+    MSMessageTemplateLayout *layout = [MSMessageTemplateLayout new];
+    layout.caption = event.name;
+    layout.subcaption = event.eventSubtitle;
+    layout.mediaFileURL = [NSURL URLWithString:event.imageUrl];
+    message.layout = layout;
+    message.URL = [NSURL URLWithString:identifier];
+    MSConversation *conversation = [MSConversation new];
+    [conversation insertMessage:message completionHandler:nil];
 }
 
 #pragma mark - Conversation Handling
 
--(void)didBecomeActiveWithConversation:(MSConversation *)conversation {
-    // Called when the extension is about to move from the inactive to active state.
-    // This will happen when the extension is about to present UI.
-    
-    // Use this method to configure the extension and restore previously stored state.
+- (void)willBecomeActiveWithConversation:(MSConversation *)conversation {
+    MSConversation *savedConversation = conversation;
+    NSString *identifier = savedConversation.selectedMessage.URL.absoluteString;
+    if ([self.transformer isCorrectIdentifier:identifier]) {
+
+        [self openURLWithIdentifier:identifier];
+    }
 }
 
--(void)willResignActiveWithConversation:(MSConversation *)conversation {
-    // Called when the extension is about to move from the active to inactive state.
-    // This will happen when the user dissmises the extension, changes to a different
-    // conversation or quits Messages.
-    
-    // Use this method to release shared resources, save user data, invalidate timers,
-    // and store enough state information to restore your extension to its current state
-    // in case it is terminated later.
+- (void)openURLWithIdentifier:(NSString *)identifier {
+    NSURLComponents *urlComponents = [NSURLComponents new];
+    urlComponents.scheme = RCFURLScheme;
+    urlComponents.host = RCFURLHostName;
+    NSArray *identifierArray = [identifier componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"_"]];
+    NSURLQueryItem *type = [NSURLQueryItem queryItemWithName:RCFURLQueryItemType
+                                                       value:[identifierArray firstObject]];
+    NSURLQueryItem *itemId = [NSURLQueryItem queryItemWithName:RCFURLQueryItemId
+                                                         value:identifier];
+
+    urlComponents.queryItems = @[type, itemId];
+
+    [self.extensionContext openURL:urlComponents.URL
+            completionHandler:nil];
 }
 
--(void)didReceiveMessage:(MSMessage *)message conversation:(MSConversation *)conversation {
-    // Called when a message arrives that was generated by another instance of this
-    // extension on a remote device.
-    
-    // Use this method to trigger UI updates in response to the message.
+#pragma mark - Private methods
+
+- (NSArray *)sortEventsByDate:(NSArray *)events {
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:NSStringFromSelector(@selector(startDate)) ascending:NO];
+    events = [[events sortedArrayUsingDescriptors:@[sortDescriptor]] mutableCopy];
+
+    return events;
 }
 
--(void)didStartSendingMessage:(MSMessage *)message conversation:(MSConversation *)conversation {
-    // Called when the user taps the send button.
-}
-
--(void)didCancelSendingMessage:(MSMessage *)message conversation:(MSConversation *)conversation {
-    // Called when the user deletes the message without sending it.
-    
-    // Use this to clean up state related to the deleted message.
-}
-
--(void)willTransitionToPresentationStyle:(MSMessagesAppPresentationStyle)presentationStyle {
-    // Called before the extension transitions to a new presentation style.
-    
-    // Use this method to prepare for the change in presentation style.
-    self.containerView.frame = [[UIScreen mainScreen] bounds];
-}
-
--(void)didTransitionToPresentationStyle:(MSMessagesAppPresentationStyle)presentationStyle {
-    // Called after the extension transitions to a new presentation style.
-    
-    // Use this method to finalize any behaviors associated with the change in presentation style.
-}
 
 @end

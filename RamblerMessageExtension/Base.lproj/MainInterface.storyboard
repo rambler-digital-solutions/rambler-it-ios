@@ -18,27 +18,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Gu-Sp-QYm">
-                                <color key="backgroundColor" red="0.80784314869999996" green="0.1921568662" blue="0.1764705926" alpha="1" colorSpace="calibratedRGB"/>
-                            </containerView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6tU-dK-5cL">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="9Gu-Sp-QYm" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leading" id="GPt-p1-JWO"/>
-                            <constraint firstItem="n38-gi-rB5" firstAttribute="top" secondItem="9Gu-Sp-QYm" secondAttribute="bottom" id="aqT-U4-bZk"/>
-                            <constraint firstAttribute="trailing" secondItem="9Gu-Sp-QYm" secondAttribute="trailing" id="bfx-Jd-mRE"/>
-                            <constraint firstItem="9Gu-Sp-QYm" firstAttribute="top" secondItem="zMn-AG-sqS" secondAttribute="top" id="fba-MI-g3v"/>
+                            <constraint firstItem="6tU-dK-5cL" firstAttribute="top" secondItem="zMn-AG-sqS" secondAttribute="top" id="D4d-sF-hI6"/>
+                            <constraint firstAttribute="trailing" secondItem="6tU-dK-5cL" secondAttribute="trailing" id="PRA-FP-K4T"/>
+                            <constraint firstItem="n38-gi-rB5" firstAttribute="top" secondItem="6tU-dK-5cL" secondAttribute="bottom" id="b0M-Ns-zbd"/>
+                            <constraint firstItem="6tU-dK-5cL" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leading" id="kVB-jp-PQg"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="528"/>
                     <connections>
-                        <outlet property="containerView" destination="9Gu-Sp-QYm" id="A5i-zB-xmb"/>
+                        <outlet property="tableView" destination="6tU-dK-5cL" id="Zit-Hf-EUc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.59999999999999" y="137.6311844077961"/>
+            <point key="canvasLocation" x="137.59999999999999" y="136.73163418290855"/>
         </scene>
     </scenes>
 </document>

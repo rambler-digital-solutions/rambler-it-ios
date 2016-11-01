@@ -7,11 +7,22 @@
 //
 
 #import <Messages/Messages.h>
+#import "EventListViewInput.h"
+#import "EventListDataDisplayManager.h"
 
-@class EventListTableViewController;
+@class EventListDataDisplayManager, EventLaunchRouter, MessagesRouter;
+@protocol EventService, ROSPonsomizer, ObjectTransformer, EventListViewOutput;
+@protocol EventListRouterInput;
 
-@interface MessagesViewController : MSMessagesAppViewController
+@interface MessagesViewController : MSMessagesAppViewController <EventListViewInput, EventListDataDisplayManagerDelegate>
 
-@property (nonatomic, strong) EventListTableViewController *childViewController;
+@property (strong, nonatomic) id <EventService> eventService;
+@property (strong, nonatomic) id <ROSPonsomizer> ponsomizer;
+
+@property (nonatomic, strong) EventListDataDisplayManager *dataDisplayManager;
+//@property (nonatomic, strong) EventLaunchRouter *router;
+@property (nonatomic, strong) MessagesRouter *router;
+@property (nonatomic, strong) id<ObjectTransformer> transformer;
+@property (nonatomic, strong) id<EventListViewOutput> output;
 
 @end
