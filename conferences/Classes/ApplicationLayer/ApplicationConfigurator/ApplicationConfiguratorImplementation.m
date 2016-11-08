@@ -19,17 +19,15 @@
 // THE SOFTWARE.
 
 #import "ApplicationConfiguratorImplementation.h"
+#import "MessagesConstants.h"
 
 #import <MagicalRecord/MagicalRecord.h>
-
-static NSString * const kRCFCoreDataStoreName = @"Conference";
-static NSString * const kRCFAppGroupIdentifier = @"group.ru.ramblerco.rambler.it";
 
 @implementation ApplicationConfiguratorImplementation
 
 - (void)setupCoreDataStack {
-    NSURL *directory = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:kRCFAppGroupIdentifier];
-    NSURL *storeURL = [directory  URLByAppendingPathComponent:[NSString stringWithFormat:@"%@s.sqlite", kRCFCoreDataStoreName]];
+    NSURL *directory = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:RCFAppGroupIdentifier];
+    NSURL *storeURL = [directory  URLByAppendingPathComponent:RCFCoreDataNameKey];
     [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreAtURL:storeURL];
 }
 

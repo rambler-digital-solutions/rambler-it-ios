@@ -11,7 +11,6 @@
 
 extern NSString * const RCFAppGroupIdentifier;
 extern NSString * const RCFCoreDataNameKey;
-extern NSString * const EventControllerIdentifier;
 
 extern NSString * const RCFURLScheme;
 extern NSString * const RCFURLHostName;

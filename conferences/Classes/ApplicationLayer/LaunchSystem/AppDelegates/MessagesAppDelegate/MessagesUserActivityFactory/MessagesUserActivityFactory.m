@@ -9,18 +9,19 @@
 #import "MessagesUserActivityFactory.h"
 #import <CoreSpotlight/CoreSpotlight.h>
 #import "NSArray+NSURLQueryItem.h"
+#import "MessagesConstants.h"
 
 @implementation MessagesUserActivityFactory
 
 - (NSUserActivity *)createUserActivityFromURL:(NSURL *)url {
     NSURLComponents *urlComponents = [NSURLComponents componentsWithString:url.absoluteString];
-    if (![urlComponents.scheme isEqualToString:@"ramblerconferences"]) {
+    if (![urlComponents.scheme isEqualToString:RCFURLScheme]) {
         return nil;
     }
     NSArray<NSURLQueryItem *> *queryItems = urlComponents.queryItems;
-    NSString *type = [queryItems queryValueForKey:@"type"];
+    NSString *type = [queryItems queryValueForKey:RCFURLQueryItemType];
     NSUserActivity *activity = [[NSUserActivity alloc] initWithActivityType:type];
-    activity.userInfo = @{CSSearchableItemActivityIdentifier : [queryItems queryValueForKey:@"id"]};
+    activity.userInfo = @{CSSearchableItemActivityIdentifier : [queryItems queryValueForKey:RCFURLQueryItemId]};
     return activity;
 }
 

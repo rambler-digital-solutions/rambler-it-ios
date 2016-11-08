@@ -10,7 +10,6 @@
 
 NSString * const RCFAppGroupIdentifier = @"group.ru.ramblerco.rambler.it";
 NSString * const RCFCoreDataNameKey = @"Conferences.sqlite";
-NSString * const EventControllerIdentifier = @"EventViewController";
 NSString * const RCFURLScheme = @"ramblerconferences";
 NSString * const RCFURLHostName = @"report";
 NSString * const RCFURLQueryItemType = @"type";

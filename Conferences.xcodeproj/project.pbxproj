@@ -100,6 +100,7 @@
 		631808691C4A870C00A61E7D /* LectureMaterialInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 631808671C4A870C00A61E7D /* LectureMaterialInfoTableViewCell.m */; };
 		6318086A1C4A870C00A61E7D /* LectureMaterialInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 631808681C4A870C00A61E7D /* LectureMaterialInfoTableViewCell.xib */; };
 		6318086D1C4A872600A61E7D /* LectureMaterialInfoTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6318086C1C4A872600A61E7D /* LectureMaterialInfoTableViewCellObject.m */; };
+		631B75391DD1DC9900F62084 /* EventListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FBE8AEF1D634F0500DA0C32 /* EventListTableViewCell.xib */; };
 		631CBA381C0092C100E3EBA8 /* ApplicationConfiguratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA371C0092C100E3EBA8 /* ApplicationConfiguratorTests.m */; };
 		631CBA3B1C00935300E3EBA8 /* EventServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA3A1C00935300E3EBA8 /* EventServiceTests.m */; };
 		631CBA721C020CCD00E3EBA8 /* EventListModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA691C020CCD00E3EBA8 /* EventListModuleAssemblyTests.m */; };
@@ -136,6 +137,8 @@
 		632184331D9D355F001BB7A7 /* _SocialNetworkAccountModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064371D3F9CE900246C8D /* _SocialNetworkAccountModelObject.m */; };
 		632184341D9D3574001BB7A7 /* SocialNetworkAccountPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064701D3F9CE900246C8D /* SocialNetworkAccountPlainObject.m */; };
 		632184351D9D3579001BB7A7 /* _SocialNetworkAccountPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B20644A1D3F9CE900246C8D /* _SocialNetworkAccountPlainObject.m */; };
+		633628F51DD1E84B0048359F /* MessagesConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 631060181DC87909006870EB /* MessagesConstants.m */; };
+		633628F61DD1E84D0048359F /* MessagesConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 631060181DC87909006870EB /* MessagesConstants.m */; };
 		634EB9E11DC8E5FC00EAEC0F /* SpeakerInfoAlertFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 634EB9E01DC8E5FC00EAEC0F /* SpeakerInfoAlertFactory.m */; };
 		635E18BF1CA6A0A9005B8439 /* SpeakerInfoModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 635E18BE1CA6A0A9005B8439 /* SpeakerInfoModuleAssemblyTests.m */; };
 		635E18C21CA6A496005B8439 /* LectureModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 635E18C11CA6A496005B8439 /* LectureModuleAssemblyTests.m */; };
@@ -8382,6 +8385,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				631B75391DD1DC9900F62084 /* EventListTableViewCell.xib in Resources */,
 				632184201D9BFD49001BB7A7 /* SpotlightIndexer.xcdatamodeld in Resources */,
 				63A9D5CD1DB7618100169E2E /* RamblerLocation.storyboard in Resources */,
 				63A9D5C91DB7614900169E2E /* Event.storyboard in Resources */,
@@ -8899,6 +8903,7 @@
 				66FFD29C1D7DCCFB0009B7DC /* CollectionViewContentCellAnimator.m in Sources */,
 				9F78D77D1D5A075C009DDCEA /* LectureChangeProviderFetchRequestFactory.m in Sources */,
 				9FBE89EF1D5DDA5A00DA0C32 /* PreviousEventSectionFooterTableViewCell.m in Sources */,
+				633628F51DD1E84B0048359F /* MessagesConstants.m in Sources */,
 				636A37B31BC1356400B49C3D /* ApplicationConfiguratorImplementation.m in Sources */,
 				9F8E5FA91BC27D0D00DC10DB /* ServiceNameConstants.m in Sources */,
 				2B2064871D3F9CE900246C8D /* _TagPlainObject.m in Sources */,
@@ -9186,6 +9191,7 @@
 				635E18C71CA6B8CE005B8439 /* SpeakerShortInfoModuleAssemblyTests.m in Sources */,
 				9FBE8A351D5F3CD500DA0C32 /* EventGalleryPresenterTests.m in Sources */,
 				66A1DD301D7E980D00998F6B /* TagAssemblyTests.m in Sources */,
+				633628F61DD1E84D0048359F /* MessagesConstants.m in Sources */,
 				9FBE89D81D5CB76900DA0C32 /* EventLaunchRouterTests.m in Sources */,
 				9F0A851F1BC185AA006F79FB /* TestCancellableOperation.m in Sources */,
 				9F0A85271BC185AA006F79FB /* ResponseMappingOperationTests.m in Sources */,

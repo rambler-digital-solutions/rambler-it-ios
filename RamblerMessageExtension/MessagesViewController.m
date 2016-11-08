@@ -8,14 +8,13 @@
 
 #import "MessagesViewController.h"
 
-#import "EventListTableViewController.h"
-
+// Ассембли
 #import "EventListModuleAssembly.h"
 #import "MessageExtensionAssembly.h"
 #import "PonsomizerAssembly.h"
 #import "PresentationLayerHelpersAssembly.h"
-
 #import "ServiceComponentsAssembly.h"
+#import "SpotlightIndexerAssembly.h"
 
 #import <MagicalRecord/MagicalRecord.h>
 
@@ -25,21 +24,15 @@
 
 #import "EventPlainObject.h"
 #import "DataDisplayManager.h"
-#import "UINavigationBar+States.h"
 
 #import "MessagesLaunchHandler.h"
-#import "EventLaunchRouter.h"
-#import "LaunchSystemAssembly.h"
-#import "SpotlightIndexerAssembly.h"
+
 #import "ObjectTransformer.h"
-#import "EventListViewOutput.h"
-#import "EventViewController.h"
-#import "EventListRouterInput.h"
 
 #import "MessagesConstants.h"
 
 
-static CGFloat const kEventTableViewEstimatedRowHeight = 100.0f;
+static CGFloat const kiMessageEventTableViewEstimatedRowHeight = 100.0f;
 
 @interface MessagesViewController () <UITableViewDelegate>
 
@@ -51,16 +44,13 @@ static CGFloat const kEventTableViewEstimatedRowHeight = 100.0f;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     [self activateTyphoon];
-    [self setupCoreData];
-    [self loadEvents];
 }
 
 #pragma mark - setups
 
 - (void)activateTyphoon {
-    TyphoonComponentFactory *factory = [TyphoonBlockComponentFactory factoryWithAssemblies:@[[MessageExtensionAssembly assembly], [EventListModuleAssembly assembly], [PonsomizerAssembly assembly], [ServiceComponentsAssembly assembly], [PresentationLayerHelpersAssembly assembly], [LaunchSystemAssembly assembly], [SpotlightIndexerAssembly assembly]]];
+    TyphoonComponentFactory *factory = [TyphoonBlockComponentFactory factoryWithAssemblies:@[[MessageExtensionAssembly assembly], [EventListModuleAssembly assembly], [PonsomizerAssembly assembly], [ServiceComponentsAssembly assembly], [PresentationLayerHelpersAssembly assembly], [SpotlightIndexerAssembly assembly]]];
     [factory makeDefault];
     [factory inject:self];
 }
@@ -69,13 +59,6 @@ static CGFloat const kEventTableViewEstimatedRowHeight = 100.0f;
     NSURL *directory = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:RCFAppGroupIdentifier];
     NSURL *storeURL = [directory  URLByAppendingPathComponent:RCFCoreDataNameKey];
     [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreAtURL:storeURL];
-}
-
-- (void)setupViewInitialState {
-    [self.navigationController.navigationBar rcf_becomeDefault];
-    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
-    self.navigationController.navigationBar.hidden = NO;
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 - (void)loadEvents {
@@ -88,11 +71,10 @@ static CGFloat const kEventTableViewEstimatedRowHeight = 100.0f;
 #pragma mark - AnnouncementListViewInput
 
 - (void)setupViewWithEventList:(NSArray *)events {
-    [self setupViewInitialState];
     self.dataDisplayManager.delegate = self;
 
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.estimatedRowHeight = kEventTableViewEstimatedRowHeight;
+    self.tableView.estimatedRowHeight = kiMessageEventTableViewEstimatedRowHeight;
 
     self.tableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.tableView];
     self.tableView.delegate = [self.dataDisplayManager delegateForTableView:self.tableView
@@ -120,10 +102,14 @@ static CGFloat const kEventTableViewEstimatedRowHeight = 100.0f;
 
 - (void)willBecomeActiveWithConversation:(MSConversation *)conversation {
     MSConversation *savedConversation = conversation;
-    NSString *identifier = savedConversation.selectedMessage.URL.absoluteString;
-    if ([self.transformer isCorrectIdentifier:identifier]) {
-
-        [self openURLWithIdentifier:identifier];
+    if (savedConversation.selectedMessage != nil) {
+        NSString *identifier = savedConversation.selectedMessage.URL.absoluteString;
+        if ([self.transformer isCorrectIdentifier:identifier]) {
+            [self openURLWithIdentifier:identifier];
+        }
+    } else {
+        [self setupCoreData];
+        [self loadEvents];
     }
 }
 
@@ -151,6 +137,5 @@ static CGFloat const kEventTableViewEstimatedRowHeight = 100.0f;
 
     return events;
 }
-
 
 @end

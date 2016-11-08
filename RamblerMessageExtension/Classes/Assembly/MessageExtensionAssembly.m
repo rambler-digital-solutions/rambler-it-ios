@@ -20,8 +20,6 @@
 
 #import "SpotlightIndexerAssembly.h"
 
-#import "LaunchSystemAssembly.h"
-
 @implementation MessageExtensionAssembly
 
 - (MessagesViewController *)messageExtension {
@@ -35,8 +33,6 @@
                             with:[self.eventListAssembly dataDisplayManagerEventList]];
         [definition injectProperty:@selector(transformer)
                             with:[self.spotlightIndexerAssembly eventObjectTransformer]];
-        [definition injectProperty:@selector(output)
-                              with:[self.eventListAssembly presenterEventList]];
         }];
 }
 
