@@ -50,14 +50,29 @@ target 'Conferences' do
 end
 
 target 'RamblerMessageExtension' do
+    # Data mapping
     pod 'EasyMapping', '~> 0.15'
+
+    # Networking
     pod 'AFNetworking', '~> 2.6'
+
+    # UI
     pod 'Nimbus/Models', :path => '/Users/etrishina/nimbus'
+
+    # Dependency management
     pod 'Typhoon', '~> 3.3'
+
+    # Core Data
     pod 'MagicalRecord', '~> 2.3.2'
+
+    # Log
     pod 'CocoaLumberjack', '~> 2.0'
+
+    # Images & Video
     pod 'SDWebImage', '~> 3.7'
     pod 'XCDYouTubeKit', '~> 2.5'
+
+    # Navigation
     pod 'ViperMcFlurry', '1.5.2'
 
 post_install do |installer|
