@@ -33,7 +33,7 @@
 #import "MessagesLaunchHandler.h"
 #import "ObjectTransformer.h"
 #import "MessagesConstants.h"
-
+#import "EventListProcessor.h"
 
 static CGFloat const kiMessageEventTableViewEstimatedRowHeight = 100.0f;
 
@@ -61,7 +61,7 @@ static CGFloat const kiMessageEventTableViewEstimatedRowHeight = 100.0f;
 - (void)loadEvents {
     NSArray *events = [self.eventService obtainEventsWithPredicate:nil];
     NSArray *plainObjects = [self.ponsomizer convertObject:events];
-    NSArray *sortedEvents = [self sortEventsByDate:plainObjects];
+    NSArray *sortedEvents = [EventListProcessor sortEventsByDate:plainObjects];
     [self setupViewWithEventList:sortedEvents];
 }
 
@@ -124,15 +124,6 @@ static CGFloat const kiMessageEventTableViewEstimatedRowHeight = 100.0f;
 
     [self.extensionContext openURL:urlComponents.URL
             completionHandler:nil];
-}
-
-#pragma mark - Private methods
-
-- (NSArray *)sortEventsByDate:(NSArray *)events {
-    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:NSStringFromSelector(@selector(startDate)) ascending:NO];
-    events = [[events sortedArrayUsingDescriptors:@[sortDescriptor]] mutableCopy];
-
-    return events;
 }
 
 @end
