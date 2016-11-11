@@ -80,6 +80,8 @@
                           configuration:^(TyphoonDefinition *definition) {
                               [definition injectProperty:@selector(eventService)
                                                     with:[self.serviceComponents eventService]];
+                              [definition injectProperty:@selector(fileManager)
+                                                    with:[self.systemInfrastructureAssembly fileManager]];
                           }];
 }
 
