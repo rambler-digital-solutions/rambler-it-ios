@@ -28,7 +28,7 @@
 /**
  @author Egor Tolstoy
  
- This LaunchHandler is capable od handling application launch from QuickActions
+ This LaunchHandler is capable of handling application launch from QuickActions
  */
 @interface QuickActionLaunchHandler : NSObject <LaunchHandler>
 

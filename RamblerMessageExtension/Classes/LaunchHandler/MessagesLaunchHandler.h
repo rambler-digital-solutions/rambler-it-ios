@@ -28,7 +28,7 @@
 /**
  @author Trishina Ekaterina
 
- This LaunchHandler is capable od handling application launch from the iMessage app
+ This LaunchHandler is capable of handling application launch from the iMessage app
  */
 @interface MessagesLaunchHandler : NSObject <LaunchHandler>
 

@@ -28,7 +28,7 @@
 /**
  @author Egor Tolstoy
  
- This LaunchHandler is capable od handling application launch from the Spotlight search results
+ This LaunchHandler is capable of handling application launch from the Spotlight search results
  */
 @interface SpotlightLaunchHandler : NSObject <LaunchHandler>
 
