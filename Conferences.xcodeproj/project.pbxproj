@@ -206,6 +206,9 @@
 		6373827B1DD5AB28004246EC /* MessagesLaunchHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 6373827A1DD5AB28004246EC /* MessagesLaunchHandler.m */; };
 		6373827C1DD5AB6B004246EC /* MessagesLaunchHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 6373827A1DD5AB28004246EC /* MessagesLaunchHandler.m */; };
 		6373827D1DD5AB6D004246EC /* MessagesLaunchHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 6373827A1DD5AB28004246EC /* MessagesLaunchHandler.m */; };
+		637382811DD5AC88004246EC /* EventListProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 637382801DD5AC88004246EC /* EventListProcessor.m */; };
+		637382821DD5B2BB004246EC /* EventListProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 637382801DD5AC88004246EC /* EventListProcessor.m */; };
+		637382831DD5B2BE004246EC /* EventListProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 637382801DD5AC88004246EC /* EventListProcessor.m */; };
 		638918CC1DC28AA3009B34AF /* MessagesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 638918CB1DC28AA3009B34AF /* MessagesAppDelegate.m */; };
 		638918CF1DC333A4009B34AF /* MessagesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 638918CB1DC28AA3009B34AF /* MessagesAppDelegate.m */; };
 		638918D01DC333B6009B34AF /* MessagesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 638918CB1DC28AA3009B34AF /* MessagesAppDelegate.m */; };
@@ -980,6 +983,8 @@
 		636F8DD31BCB8FE800552B91 /* RamblerLocationViewOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RamblerLocationViewOutput.h; sourceTree = "<group>"; };
 		636F8DFE1BCB91A900552B91 /* RamblerLocation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RamblerLocation.storyboard; sourceTree = "<group>"; };
 		6373827A1DD5AB28004246EC /* MessagesLaunchHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesLaunchHandler.m; path = Classes/LaunchHandler/MessagesLaunchHandler.m; sourceTree = "<group>"; };
+		6373827F1DD5AC88004246EC /* EventListProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventListProcessor.h; path = EventListProcessor/EventListProcessor.h; sourceTree = "<group>"; };
+		637382801DD5AC88004246EC /* EventListProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListProcessor.m; path = EventListProcessor/EventListProcessor.m; sourceTree = "<group>"; };
 		6373A3E61BBDBFDC00DF67FF /* EventService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventService.h; sourceTree = "<group>"; };
 		6373A3E71BBDC02100DF67FF /* RegistrationQuestionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationQuestionService.h; sourceTree = "<group>"; };
 		6373A3E91BBDC05900DF67FF /* SpeakerService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerService.h; sourceTree = "<group>"; };
@@ -2838,6 +2843,15 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
+		6373827E1DD5AC54004246EC /* EventListProcessor */ = {
+			isa = PBXGroup;
+			children = (
+				6373827F1DD5AC88004246EC /* EventListProcessor.h */,
+				637382801DD5AC88004246EC /* EventListProcessor.m */,
+			);
+			name = EventListProcessor;
+			sourceTree = "<group>";
+		};
 		6373A3DE1BBDBDF700DF67FF /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -2925,8 +2939,8 @@
 		63BB9A141DB3DD0000C2F2B9 /* LaunchHandler */ = {
 			isa = PBXGroup;
 			children = (
-				6373827A1DD5AB28004246EC /* MessagesLaunchHandler.m */,
 				63BB9A151DB3DD2D00C2F2B9 /* MessagesLaunchHandler.h */,
+				6373827A1DD5AB28004246EC /* MessagesLaunchHandler.m */,
 			);
 			name = LaunchHandler;
 			sourceTree = "<group>";
@@ -4172,6 +4186,7 @@
 		63FDCDE11BBDBA2A00A43B60 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				6373827E1DD5AC54004246EC /* EventListProcessor */,
 				631FFE121BEF451400749DB8 /* CDResponder */,
 			);
 			path = Helpers;
@@ -8666,6 +8681,7 @@
 				6321842B1D9D33EF001BB7A7 /* _TagPlainObject.m in Sources */,
 				63BB9A361DB4BB6B00C2F2B9 /* SpeakerObjectTransformer.m in Sources */,
 				63BB9A351DB4BB5F00C2F2B9 /* SpeakerObjectIndexer.m in Sources */,
+				637382821DD5B2BB004246EC /* EventListProcessor.m in Sources */,
 				63BB9A121DB285F200C2F2B9 /* YouTubeIdentifierDeriviator.m in Sources */,
 				632184351D9D3579001BB7A7 /* _SocialNetworkAccountPlainObject.m in Sources */,
 				63BB9A281DB4BA8000C2F2B9 /* EventObjectTransformer.m in Sources */,
@@ -8951,6 +8967,7 @@
 				2B2064801D3F9CE900246C8D /* _EventPlainObject.m in Sources */,
 				66EE4D2B1D54BCDF0011F94A /* CollectionViewAnimator.m in Sources */,
 				9F8E5F741BC255AA00DC10DB /* RequestSignersAssembly.m in Sources */,
+				637382811DD5AC88004246EC /* EventListProcessor.m in Sources */,
 				9FBE8AFD1D634F0500DA0C32 /* EventListPresenter.m in Sources */,
 				9FBE8AC31D630D4C00DA0C32 /* EventGalleryCollectionViewCellShadower.m in Sources */,
 				9FBE89B61D5CB71300DA0C32 /* TabBarControllerFactoryImplementation.m in Sources */,
@@ -9146,6 +9163,7 @@
 				63F613E31CB111070002AEF0 /* EventViewControllerTests.m in Sources */,
 				63F613E71CB111070002AEF0 /* LectureViewControllerTests.m in Sources */,
 				6373827D1DD5AB6D004246EC /* MessagesLaunchHandler.m in Sources */,
+				637382831DD5B2BE004246EC /* EventListProcessor.m in Sources */,
 				9F0A853F1BC192F0006F79FB /* OperationChainerTests.m in Sources */,
 				9FBE8A341D5F3CD100DA0C32 /* EventGalleryInteractorTests.m in Sources */,
 				9F0A85211BC185AA006F79FB /* TestChainableOperationWithValidationBlock.m in Sources */,
