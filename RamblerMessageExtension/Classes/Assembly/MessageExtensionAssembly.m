@@ -19,46 +19,62 @@
 // THE SOFTWARE.
 
 #import "MessageExtensionAssembly.h"
-
 #import "MessagesViewController.h"
-
 #import "EventListModuleAssembly.h"
-
 #import "PonsomizerAssembly.h"
-
 #import "ServiceComponents.h"
-
 #import "MessagesLaunchHandler.h"
-
 #import "SpotlightIndexerAssembly.h"
-
 #import "MessagesRouter.h"
+#import "MessagesPresenter.h"
+#import "MessagesInteractor.h"
 
 @implementation MessageExtensionAssembly
 
 - (MessagesViewController *)messageExtension {
     return [TyphoonDefinition withClass:[MessagesViewController class]
                           configuration:^(TyphoonDefinition *definition) {
-        [definition injectProperty:@selector(eventService)
-                              with:[self.serviceComponents eventService]];
-        [definition injectProperty:@selector(ponsomizer)
-                              with:[self.ponsomizerAssembly ponsomizer]];
         [definition injectProperty:@selector(dataDisplayManager)
                             with:[self.eventListAssembly dataDisplayManagerEventList]];
-        [definition injectProperty:@selector(transformer)
-                            with:[self.spotlightIndexerAssembly eventObjectTransformer]];
-        [definition injectProperty:@selector(router)
-                            with:[self messagesRouter]];
+        [definition injectProperty:@selector(output)
+                              with:[self messagesPresenter]];
+        [definition injectProperty:@selector(currentConversation)
+                              with:[self conversation]];
         }];
+}
+
+- (MessagesPresenter *)messagesPresenter {
+    return [TyphoonDefinition withClass:[MessagesPresenter class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(view)
+                                                    with:[self messageExtension]];
+                              [definition injectProperty:@selector(interactor)
+                                                    with:[self messagesInteractor]];
+                              [definition injectProperty:@selector(router)
+                                                    with:[self messagesRouter]];
+                          }];
+}
+
+- (MessagesInteractor *)messagesInteractor {
+    return [TyphoonDefinition withClass:[MessagesInteractor class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(output)
+                                                    with:[self messagesPresenter]];
+                              [definition injectProperty:@selector(eventService)
+                                                    with:[self.serviceComponents eventService]];
+                              [definition injectProperty:@selector(ponsomizer)
+                                                    with:[self.ponsomizerAssembly ponsomizer]];
+                              [definition injectProperty:@selector(transformer)
+                                                    with:[self.spotlightIndexerAssembly eventObjectTransformer]];
+                          }];
 }
 
 - (id<MessagesRouterInput>)messagesRouter {
     return [TyphoonDefinition withClass:[MessagesRouter class]];
 }
 
+- (MSConversation *)conversation {
+    return [TyphoonDefinition with:[MSConversation class]];
+}
+
 @end
-
-
-
-
-
