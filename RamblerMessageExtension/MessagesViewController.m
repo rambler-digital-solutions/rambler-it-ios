@@ -19,28 +19,19 @@
 // THE SOFTWARE.
 
 #import "MessagesViewController.h"
-
-// Ассембли
 #import "EventListModuleAssembly.h"
 #import "MessageExtensionAssembly.h"
 #import "PonsomizerAssembly.h"
 #import "PresentationLayerHelpersAssembly.h"
 #import "ServiceComponentsAssembly.h"
 #import "SpotlightIndexerAssembly.h"
-
 #import <MagicalRecord/MagicalRecord.h>
-
 #import "EventService.h"
-
 #import "ROSPonsomizer.h"
-
 #import "EventPlainObject.h"
 #import "DataDisplayManager.h"
-
 #import "MessagesLaunchHandler.h"
-
 #import "ObjectTransformer.h"
-
 #import "MessagesConstants.h"
 
 
