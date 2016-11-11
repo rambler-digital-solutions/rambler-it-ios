@@ -1,13 +1,66 @@
+// Copyright (c) 2015 RAMBLER&Co
 //
-//  MessagesInteractor.m
-//  Conferences
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
 //
-//  Created by Trishina Ekaterina on 11/11/16.
-//  Copyright © 2016 Rambler. All rights reserved.
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
 //
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
 
 #import "MessagesInteractor.h"
+#import <Messages/Messages.h>
+#import "EventListInteractorOutput.h"
+#import "EventService.h"
+#import "EventModelObject.h"
+#import "EventPlainObject.h"
+#import "ROSPonsomizer.h"
+#import "ObjectTransformer.h"
+#import "EXTScope.h"
+#import "EventListProcessor.h"
+#import "MessagesConstants.h"
+#import <MagicalRecord/MagicalRecord.h>
 
 @implementation MessagesInteractor
+
+- (NSArray *)obtainEventList {
+    NSArray *events = [self.eventService obtainEventsWithPredicate:nil];
+    NSArray *plainObjects = [self.ponsomizer convertObject:events];
+    NSArray *sortedEvents = [EventListProcessor sortEventsByDate:plainObjects];
+
+    return sortedEvents;
+}
+
+- (MSMessage *)createMessageFromEvent:(EventPlainObject *)event {
+    NSString *identifier = [self.transformer identifierForObject:event];
+    MSMessage *message = [MSMessage new];
+    MSMessageTemplateLayout *layout = [MSMessageTemplateLayout new];
+    layout.caption = event.name;
+    layout.subcaption = event.eventSubtitle;
+    layout.mediaFileURL = [NSURL URLWithString:event.imageUrl];
+    message.layout = layout;
+    message.URL = [NSURL URLWithString:identifier];
+    return message;
+}
+
+- (void)setupCoreDataStack {
+    NSURL *directory = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:RCFAppGroupIdentifier];
+    NSURL *storeURL = [directory  URLByAppendingPathComponent:RCFCoreDataNameKey];
+    [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreAtURL:storeURL];
+}
+
+- (BOOL)isCorrectIdentifier:(NSString *)identifier {
+    return [self.transformer isCorrectIdentifier:identifier];
+}
 
 @end
