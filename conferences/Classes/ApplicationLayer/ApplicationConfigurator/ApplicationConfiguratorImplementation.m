@@ -27,7 +27,7 @@
 
 - (void)setupCoreDataStack {
     NSURL *directory = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:RCFAppGroupIdentifier];
-    NSURL *storeURL = [directory  URLByAppendingPathComponent:RCFCoreDataNameKey];
+    NSURL *storeURL = [directory URLByAppendingPathComponent:RCFCoreDataNameKey];
     [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreAtURL:storeURL];
 }
 
