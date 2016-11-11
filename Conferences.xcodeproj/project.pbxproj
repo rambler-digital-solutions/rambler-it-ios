@@ -2161,15 +2161,6 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
-		630E25F01DBF9BB50043C20E /* Presentation */ = {
-			isa = PBXGroup;
-			children = (
-				63BDBBC51D87E3DE006E8A15 /* MessagesViewController.h */,
-				63BDBBC61D87E3DE006E8A15 /* MessagesViewController.m */,
-			);
-			name = Presentation;
-			sourceTree = "<group>";
-		};
 		6310601F1DC89580006870EB /* MailComposerFactory */ = {
 			isa = PBXGroup;
 			children = (
@@ -2708,12 +2699,11 @@
 		636E26981D8ECF4A001ABB92 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				637382841DD5BEBF004246EC /* RamblerExtensionTyphoonActivator */,
-				630E25F01DBF9BB50043C20E /* Presentation */,
-				63BB9A141DB3DD0000C2F2B9 /* LaunchHandler */,
-				636E26991D8ECF5D001ABB92 /* Assembly */,
-				631060171DC87909006870EB /* MessagesConstants.h */,
-				631060181DC87909006870EB /* MessagesConstants.m */,
+				637382921DD5D63D004246EC /* ExtensionLayer */,
+				6373828C1DD5D49D004246EC /* PresentationLayer */,
+				637382931DD5D676004246EC /* MessagesConstants */,
+				637382941DD5D6BF004246EC /* Supporting Files */,
+				637382951DD5D6DE004246EC /* Images */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -2878,6 +2868,91 @@
 			name = MessageExtensionTyphoonActivator;
 			sourceTree = "<group>";
 		};
+		6373828C1DD5D49D004246EC /* PresentationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				6373828D1DD5D575004246EC /* MessagesModule */,
+				63BDBBC81D87E3DE006E8A15 /* MainInterface.storyboard */,
+			);
+			name = PresentationLayer;
+			sourceTree = "<group>";
+		};
+		6373828D1DD5D575004246EC /* MessagesModule */ = {
+			isa = PBXGroup;
+			children = (
+				636E26991D8ECF5D001ABB92 /* Assembly */,
+				6373828E1DD5D595004246EC /* Interactor */,
+				6373828F1DD5D5A2004246EC /* Presenter */,
+				637382901DD5D5A8004246EC /* Router */,
+				637382911DD5D5B0004246EC /* View */,
+			);
+			name = MessagesModule;
+			sourceTree = "<group>";
+		};
+		6373828E1DD5D595004246EC /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Interactor;
+			sourceTree = "<group>";
+		};
+		6373828F1DD5D5A2004246EC /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
+		637382901DD5D5A8004246EC /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Router;
+			sourceTree = "<group>";
+		};
+		637382911DD5D5B0004246EC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				63BDBBC51D87E3DE006E8A15 /* MessagesViewController.h */,
+				63BDBBC61D87E3DE006E8A15 /* MessagesViewController.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		637382921DD5D63D004246EC /* ExtensionLayer */ = {
+			isa = PBXGroup;
+			children = (
+				637382841DD5BEBF004246EC /* RamblerExtensionTyphoonActivator */,
+				63BB9A141DB3DD0000C2F2B9 /* LaunchHandler */,
+			);
+			name = ExtensionLayer;
+			sourceTree = "<group>";
+		};
+		637382931DD5D676004246EC /* MessagesConstants */ = {
+			isa = PBXGroup;
+			children = (
+				631060171DC87909006870EB /* MessagesConstants.h */,
+				631060181DC87909006870EB /* MessagesConstants.m */,
+			);
+			name = MessagesConstants;
+			sourceTree = "<group>";
+		};
+		637382941DD5D6BF004246EC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				63BDBBCD1D87E3DE006E8A15 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		637382951DD5D6DE004246EC /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				63BDBBCB1D87E3DE006E8A15 /* Assets.xcassets */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		6373A3DE1BBDBDF700DF67FF /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -2976,9 +3051,6 @@
 			children = (
 				63AA03551D99067000F4C094 /* RamblerMessageExtension.entitlements */,
 				636E26981D8ECF4A001ABB92 /* Classes */,
-				63BDBBC81D87E3DE006E8A15 /* MainInterface.storyboard */,
-				63BDBBCB1D87E3DE006E8A15 /* Assets.xcassets */,
-				63BDBBCD1D87E3DE006E8A15 /* Info.plist */,
 			);
 			path = RamblerMessageExtension;
 			sourceTree = "<group>";
