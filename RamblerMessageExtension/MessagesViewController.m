@@ -19,12 +19,9 @@
 // THE SOFTWARE.
 
 #import "MessagesViewController.h"
-#import "EventListModuleAssembly.h"
-#import "MessageExtensionAssembly.h"
-#import "PonsomizerAssembly.h"
-#import "PresentationLayerHelpersAssembly.h"
-#import "ServiceComponentsAssembly.h"
-#import "SpotlightIndexerAssembly.h"
+
+#import "MessageExtensionTyphoonActivator.h"
+
 #import <MagicalRecord/MagicalRecord.h>
 #import "EventService.h"
 #import "ROSPonsomizer.h"
@@ -41,16 +38,10 @@ static CGFloat const kiMessageEventTableViewEstimatedRowHeight = 100.0f;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self activateTyphoon];
+    [MessageExtensionTyphoonActivator activateWithSourceViewController:self];
 }
 
 #pragma mark - setups
-
-- (void)activateTyphoon {
-    TyphoonComponentFactory *factory = [TyphoonBlockComponentFactory factoryWithAssemblies:@[[MessageExtensionAssembly assembly], [EventListModuleAssembly assembly], [PonsomizerAssembly assembly], [ServiceComponentsAssembly assembly], [PresentationLayerHelpersAssembly assembly], [SpotlightIndexerAssembly assembly]]];
-    [factory makeDefault];
-    [factory inject:self];
-}
 
 - (void)setupCoreData {
     NSURL *directory = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:RCFAppGroupIdentifier];
