@@ -212,6 +212,8 @@
 		637382871DD5C11A004246EC /* RamblerExtensionTyphoonActivator.m in Sources */ = {isa = PBXBuildFile; fileRef = 637382861DD5C11A004246EC /* RamblerExtensionTyphoonActivator.m */; };
 		6373828B1DD5C157004246EC /* MessageExtensionTyphoonActivator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6373828A1DD5C157004246EC /* MessageExtensionTyphoonActivator.m */; };
 		637382991DD5D9C0004246EC /* MessagesRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 637382981DD5D9C0004246EC /* MessagesRouter.m */; };
+		6373829D1DD5E12F004246EC /* MessagesPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6373829C1DD5E12F004246EC /* MessagesPresenter.m */; };
+		637382A01DD5EA17004246EC /* MessagesInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6373829F1DD5EA17004246EC /* MessagesInteractor.m */; };
 		638918CC1DC28AA3009B34AF /* MessagesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 638918CB1DC28AA3009B34AF /* MessagesAppDelegate.m */; };
 		638918CF1DC333A4009B34AF /* MessagesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 638918CB1DC28AA3009B34AF /* MessagesAppDelegate.m */; };
 		638918D01DC333B6009B34AF /* MessagesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 638918CB1DC28AA3009B34AF /* MessagesAppDelegate.m */; };
@@ -995,6 +997,13 @@
 		637382961DD5D8FD004246EC /* MessagesRouterInput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MessagesRouterInput.h; path = Classes/PresentationLayer/MessagesModule/Router/MessagesRouterInput.h; sourceTree = "<group>"; };
 		637382971DD5D9C0004246EC /* MessagesRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessagesRouter.h; path = Classes/PresentationLayer/MessagesModule/Router/MessagesRouter.h; sourceTree = "<group>"; };
 		637382981DD5D9C0004246EC /* MessagesRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesRouter.m; path = Classes/PresentationLayer/MessagesModule/Router/MessagesRouter.m; sourceTree = "<group>"; };
+		6373829A1DD5E02C004246EC /* MessagesViewOutput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MessagesViewOutput.h; path = Classes/PresentationLayer/MessagesModule/View/MessagesViewOutput.h; sourceTree = "<group>"; };
+		6373829B1DD5E12F004246EC /* MessagesPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessagesPresenter.h; path = Classes/PresentationLayer/MessagesModule/Presenter/MessagesPresenter.h; sourceTree = "<group>"; };
+		6373829C1DD5E12F004246EC /* MessagesPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesPresenter.m; path = Classes/PresentationLayer/MessagesModule/Presenter/MessagesPresenter.m; sourceTree = "<group>"; };
+		6373829E1DD5EA17004246EC /* MessagesInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessagesInteractor.h; path = Classes/PresentationLayer/MessagesModule/Interactor/MessagesInteractor.h; sourceTree = "<group>"; };
+		6373829F1DD5EA17004246EC /* MessagesInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesInteractor.m; path = Classes/PresentationLayer/MessagesModule/Interactor/MessagesInteractor.m; sourceTree = "<group>"; };
+		637382A11DD5F5C4004246EC /* MessagesInteractorInput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MessagesInteractorInput.h; path = Classes/PresentationLayer/MessagesModule/Interactor/MessagesInteractorInput.h; sourceTree = "<group>"; };
+		637382A21DD60820004246EC /* MessagesViewInput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MessagesViewInput.h; path = Classes/PresentationLayer/MessagesModule/View/MessagesViewInput.h; sourceTree = "<group>"; };
 		6373A3E61BBDBFDC00DF67FF /* EventService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventService.h; sourceTree = "<group>"; };
 		6373A3E71BBDC02100DF67FF /* RegistrationQuestionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationQuestionService.h; sourceTree = "<group>"; };
 		6373A3E91BBDC05900DF67FF /* SpeakerService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerService.h; sourceTree = "<group>"; };
@@ -2896,6 +2905,9 @@
 		6373828E1DD5D595004246EC /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				6373829E1DD5EA17004246EC /* MessagesInteractor.h */,
+				6373829F1DD5EA17004246EC /* MessagesInteractor.m */,
+				637382A11DD5F5C4004246EC /* MessagesInteractorInput.h */,
 			);
 			name = Interactor;
 			sourceTree = "<group>";
@@ -2903,6 +2915,8 @@
 		6373828F1DD5D5A2004246EC /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				6373829B1DD5E12F004246EC /* MessagesPresenter.h */,
+				6373829C1DD5E12F004246EC /* MessagesPresenter.m */,
 			);
 			name = Presenter;
 			sourceTree = "<group>";
@@ -2922,6 +2936,8 @@
 			children = (
 				63BDBBC51D87E3DE006E8A15 /* MessagesViewController.h */,
 				63BDBBC61D87E3DE006E8A15 /* MessagesViewController.m */,
+				6373829A1DD5E02C004246EC /* MessagesViewOutput.h */,
+				637382A21DD60820004246EC /* MessagesViewInput.h */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -8799,6 +8815,7 @@
 				63BB9A191DB4B45400C2F2B9 /* LaunchSystemAssembly.m in Sources */,
 				636E26CC1D8FE0AB001ABB92 /* EventListTableViewCellObject.m in Sources */,
 				636E26E61D8FE807001ABB92 /* SpeakerServiceImplementation.m in Sources */,
+				6373829D1DD5E12F004246EC /* MessagesPresenter.m in Sources */,
 				636E26F11D8FEF29001ABB92 /* NSManagedObjectID+LJStringConversion.m in Sources */,
 				6321841D1D9BFD22001BB7A7 /* Conference.xcdatamodeld in Sources */,
 				636E26E91D8FE82D001ABB92 /* TagServiceImplementation.m in Sources */,
@@ -8820,6 +8837,7 @@
 				632184331D9D355F001BB7A7 /* _SocialNetworkAccountModelObject.m in Sources */,
 				636E26EB1D8FE847001ABB92 /* _LectureModelObject.m in Sources */,
 				6321842C1D9D342B001BB7A7 /* _MetaEventPlainObject.m in Sources */,
+				637382A01DD5EA17004246EC /* MessagesInteractor.m in Sources */,
 				63BB9A2B1DB4BAA800C2F2B9 /* IndexTransaction.m in Sources */,
 				636E26EE1D8FE8AD001ABB92 /* EventPlainObject.m in Sources */,
 				636E26C81D8FE076001ABB92 /* EventListDataDisplayManager.m in Sources */,
