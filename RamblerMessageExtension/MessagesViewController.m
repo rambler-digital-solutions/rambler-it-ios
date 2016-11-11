@@ -30,6 +30,7 @@
 #import "MessagesLaunchHandler.h"
 #import "ObjectTransformer.h"
 #import "MessagesConstants.h"
+#import "MessagesRouter.h"
 #import "EventListProcessor.h"
 
 static CGFloat const kiMessageEventTableViewEstimatedRowHeight = 100.0f;
@@ -93,28 +94,13 @@ static CGFloat const kiMessageEventTableViewEstimatedRowHeight = 100.0f;
     if (savedConversation.selectedMessage != nil) {
         NSString *identifier = savedConversation.selectedMessage.URL.absoluteString;
         if ([self.transformer isCorrectIdentifier:identifier]) {
-            [self openURLWithIdentifier:identifier];
+            [self.router openEventModuleWithIdentifier:identifier
+                                   andExtensionContext:self.extensionContext];
         }
     } else {
         [self setupCoreData];
         [self loadEvents];
     }
-}
-
-- (void)openURLWithIdentifier:(NSString *)identifier {
-    NSURLComponents *urlComponents = [NSURLComponents new];
-    urlComponents.scheme = RCFURLScheme;
-    urlComponents.host = RCFURLHostName;
-    NSArray *identifierArray = [identifier componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"_"]];
-    NSURLQueryItem *type = [NSURLQueryItem queryItemWithName:RCFURLQueryItemType
-                                                       value:[identifierArray firstObject]];
-    NSURLQueryItem *itemId = [NSURLQueryItem queryItemWithName:RCFURLQueryItemId
-                                                         value:identifier];
-
-    urlComponents.queryItems = @[type, itemId];
-
-    [self.extensionContext openURL:urlComponents.URL
-            completionHandler:nil];
 }
 
 @end

@@ -23,7 +23,7 @@
 #import "EventListDataDisplayManager.h"
 
 @class EventListDataDisplayManager, EventLaunchRouter, MessagesRouter;
-@protocol EventService, ROSPonsomizer, ObjectTransformer;
+@protocol EventService, ROSPonsomizer, ObjectTransformer, MessagesRouterInput;
 
 @interface MessagesViewController : MSMessagesAppViewController <EventListViewInput, EventListDataDisplayManagerDelegate, UITableViewDelegate>
 
@@ -33,7 +33,7 @@
 @property (strong, nonatomic) id <ROSPonsomizer> ponsomizer;
 
 @property (nonatomic, strong) EventListDataDisplayManager *dataDisplayManager;
-@property (nonatomic, strong) MessagesRouter *router;
 @property (nonatomic, strong) id<ObjectTransformer> transformer;
+@property (nonatomic, strong) id<MessagesRouterInput> router;
 
 @end
