@@ -80,7 +80,6 @@
 		3784462F1D4E067A0016121E /* RCNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3784462E1D4E067A0016121E /* RCNavigationController.m */; };
 		630E25FA1DBFA2860043C20E /* EventInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F6127C1CB00A220002AEF0 /* EventInteractor.m */; };
 		630E25FB1DBFA2920043C20E /* EventPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F612821CB00A220002AEF0 /* EventPresenter.m */; };
-		631060191DC87909006870EB /* MessagesConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 631060181DC87909006870EB /* MessagesConstants.m */; };
 		6310601E1DC89577006870EB /* MailComposeControllerFactoryImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6310601D1DC89577006870EB /* MailComposeControllerFactoryImplementation.m */; };
 		631060221DC8984F006870EB /* MailComposeControllerFactoryImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6310601D1DC89577006870EB /* MailComposeControllerFactoryImplementation.m */; };
 		631060231DC89850006870EB /* MailComposeControllerFactoryImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6310601D1DC89577006870EB /* MailComposeControllerFactoryImplementation.m */; };
@@ -137,8 +136,6 @@
 		632184331D9D355F001BB7A7 /* _SocialNetworkAccountModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064371D3F9CE900246C8D /* _SocialNetworkAccountModelObject.m */; };
 		632184341D9D3574001BB7A7 /* SocialNetworkAccountPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064701D3F9CE900246C8D /* SocialNetworkAccountPlainObject.m */; };
 		632184351D9D3579001BB7A7 /* _SocialNetworkAccountPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B20644A1D3F9CE900246C8D /* _SocialNetworkAccountPlainObject.m */; };
-		633628F51DD1E84B0048359F /* MessagesConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 631060181DC87909006870EB /* MessagesConstants.m */; };
-		633628F61DD1E84D0048359F /* MessagesConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 631060181DC87909006870EB /* MessagesConstants.m */; };
 		634EB9E11DC8E5FC00EAEC0F /* SpeakerInfoAlertFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 634EB9E01DC8E5FC00EAEC0F /* SpeakerInfoAlertFactory.m */; };
 		635E18BF1CA6A0A9005B8439 /* SpeakerInfoModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 635E18BE1CA6A0A9005B8439 /* SpeakerInfoModuleAssemblyTests.m */; };
 		635E18C21CA6A496005B8439 /* LectureModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 635E18C11CA6A496005B8439 /* LectureModuleAssemblyTests.m */; };
@@ -163,7 +160,6 @@
 		636E26CC1D8FE0AB001ABB92 /* EventListTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F33B87F1D63512200BE136C /* EventListTableViewCellObject.m */; };
 		636E26CD1D8FE0B7001ABB92 /* EventListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8AEE1D634F0500DA0C32 /* EventListTableViewCell.m */; };
 		636E26CE1D8FE0C4001ABB92 /* EventListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8AE31D634F0500DA0C32 /* EventListTableViewController.m */; };
-		636E26CF1D8FE0D0001ABB92 /* MessageExtensionAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 636E269B1D8ECFAC001ABB92 /* MessageExtensionAssembly.m */; };
 		636E26D01D8FE0DC001ABB92 /* ModuleAssemblyBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D0B1BCB825F00552B91 /* ModuleAssemblyBase.m */; };
 		636E26D11D8FE0E9001ABB92 /* PonsomizerAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 66704FF81D4606D800DD9D6E /* PonsomizerAssembly.m */; };
 		636E26D21D8FE0F4001ABB92 /* ROSPonsomizerImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDDAB541D363D34007FD547 /* ROSPonsomizerImplementation.m */; };
@@ -203,17 +199,18 @@
 		636F8DDD1BCB8FE800552B91 /* RamblerLocationRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8DCD1BCB8FE800552B91 /* RamblerLocationRouter.m */; };
 		636F8DDE1BCB8FE800552B91 /* RamblerLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8DD11BCB8FE800552B91 /* RamblerLocationViewController.m */; };
 		636F8DFF1BCB91A900552B91 /* RamblerLocation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 636F8DFE1BCB91A900552B91 /* RamblerLocation.storyboard */; };
-		6373827B1DD5AB28004246EC /* MessagesLaunchHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 6373827A1DD5AB28004246EC /* MessagesLaunchHandler.m */; };
-		6373827C1DD5AB6B004246EC /* MessagesLaunchHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 6373827A1DD5AB28004246EC /* MessagesLaunchHandler.m */; };
-		6373827D1DD5AB6D004246EC /* MessagesLaunchHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 6373827A1DD5AB28004246EC /* MessagesLaunchHandler.m */; };
 		637382811DD5AC88004246EC /* EventListProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 637382801DD5AC88004246EC /* EventListProcessor.m */; };
 		637382821DD5B2BB004246EC /* EventListProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 637382801DD5AC88004246EC /* EventListProcessor.m */; };
 		637382831DD5B2BE004246EC /* EventListProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 637382801DD5AC88004246EC /* EventListProcessor.m */; };
-		637382871DD5C11A004246EC /* RamblerExtensionTyphoonActivator.m in Sources */ = {isa = PBXBuildFile; fileRef = 637382861DD5C11A004246EC /* RamblerExtensionTyphoonActivator.m */; };
-		6373828B1DD5C157004246EC /* MessageExtensionTyphoonActivator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6373828A1DD5C157004246EC /* MessageExtensionTyphoonActivator.m */; };
 		637382991DD5D9C0004246EC /* MessagesRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 637382981DD5D9C0004246EC /* MessagesRouter.m */; };
 		6373829D1DD5E12F004246EC /* MessagesPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6373829C1DD5E12F004246EC /* MessagesPresenter.m */; };
 		637382A01DD5EA17004246EC /* MessagesInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6373829F1DD5EA17004246EC /* MessagesInteractor.m */; };
+		63770CB31DD61D2A0039AB0D /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63770CB21DD61D2A0039AB0D /* MessagesViewController.m */; };
+		63770CB61DD61D6F0039AB0D /* MessageExtensionAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 63770CB51DD61D6F0039AB0D /* MessageExtensionAssembly.m */; };
+		63770CB91DD61E100039AB0D /* RamblerExtensionTyphoonActivator.m in Sources */ = {isa = PBXBuildFile; fileRef = 63770CB81DD61E100039AB0D /* RamblerExtensionTyphoonActivator.m */; };
+		63770CBC1DD61E2A0039AB0D /* MessagesLaunchHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 63770CBB1DD61E2A0039AB0D /* MessagesLaunchHandler.m */; };
+		63770CBF1DD61E3D0039AB0D /* MessagesConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 63770CBE1DD61E3D0039AB0D /* MessagesConstants.m */; };
+		63770CC21DD61E6B0039AB0D /* MessageExtensionTyphoonActivator.m in Sources */ = {isa = PBXBuildFile; fileRef = 63770CC11DD61E6B0039AB0D /* MessageExtensionTyphoonActivator.m */; };
 		638918CC1DC28AA3009B34AF /* MessagesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 638918CB1DC28AA3009B34AF /* MessagesAppDelegate.m */; };
 		638918CF1DC333A4009B34AF /* MessagesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 638918CB1DC28AA3009B34AF /* MessagesAppDelegate.m */; };
 		638918D01DC333B6009B34AF /* MessagesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 638918CB1DC28AA3009B34AF /* MessagesAppDelegate.m */; };
@@ -272,7 +269,6 @@
 		63BB9A381DB4BB8200C2F2B9 /* ObjectTransformerConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89EA1D5CCF8300DA0C32 /* ObjectTransformerConstants.m */; };
 		63BB9A391DB4BB8D00C2F2B9 /* SpotlightIndexerConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB6A6B1D5384F30061F333 /* SpotlightIndexerConstants.m */; };
 		63BDBBC31D87E3DE006E8A15 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63BDBBC21D87E3DE006E8A15 /* Messages.framework */; };
-		63BDBBC71D87E3DE006E8A15 /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BDBBC61D87E3DE006E8A15 /* MessagesViewController.m */; };
 		63BDBBCA1D87E3DE006E8A15 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BDBBC81D87E3DE006E8A15 /* MainInterface.storyboard */; };
 		63BDBBCC1D87E3DE006E8A15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63BDBBCB1D87E3DE006E8A15 /* Assets.xcassets */; };
 		63BDBBD01D87E3DE006E8A15 /* RamblerMessageExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 63BDBBC11D87E3DE006E8A15 /* RamblerMessageExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -869,8 +865,6 @@
 		5F1470A6FDBED5612278E025 /* libPods-Conferences-ConferencesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Conferences-ConferencesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		601B345D74E552114D07B660 /* EventGalleryRouterTests.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EventGalleryRouterTests.m; sourceTree = "<group>"; };
 		61435C41E57EED0504F7C502 /* Pods-RamblerMessageExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RamblerMessageExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RamblerMessageExtension/Pods-RamblerMessageExtension.debug.xcconfig"; sourceTree = "<group>"; };
-		631060171DC87909006870EB /* MessagesConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessagesConstants.h; path = Classes/MessagesConstants.h; sourceTree = "<group>"; };
-		631060181DC87909006870EB /* MessagesConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesConstants.m; path = Classes/MessagesConstants.m; sourceTree = "<group>"; };
 		6310601B1DC89577006870EB /* MailComposeControllerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MailComposeControllerFactory.h; path = MailComposeControllerFactory/MailComposeControllerFactory.h; sourceTree = "<group>"; };
 		6310601C1DC89577006870EB /* MailComposeControllerFactoryImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MailComposeControllerFactoryImplementation.h; path = MailComposeControllerFactory/MailComposeControllerFactoryImplementation.h; sourceTree = "<group>"; };
 		6310601D1DC89577006870EB /* MailComposeControllerFactoryImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MailComposeControllerFactoryImplementation.m; path = MailComposeControllerFactory/MailComposeControllerFactoryImplementation.m; sourceTree = "<group>"; };
@@ -964,8 +958,6 @@
 		636B640E1BBDD6260053E38F /* SpeakerServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerServiceImplementation.h; sourceTree = "<group>"; };
 		636B640F1BBDD6260053E38F /* SpeakerServiceImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerServiceImplementation.m; sourceTree = "<group>"; };
 		636B64111BBFE2C20053E38F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		636E269A1D8ECFAC001ABB92 /* MessageExtensionAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageExtensionAssembly.h; path = Classes/Assembly/MessageExtensionAssembly.h; sourceTree = "<group>"; };
-		636E269B1D8ECFAC001ABB92 /* MessageExtensionAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageExtensionAssembly.m; path = Classes/Assembly/MessageExtensionAssembly.m; sourceTree = "<group>"; };
 		636E26F21D8FF072001ABB92 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		636F8C951BC97B3100552B91 /* EventServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventServiceImplementation.h; sourceTree = "<group>"; };
 		636F8C961BC97B3100552B91 /* EventServiceImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventServiceImplementation.m; sourceTree = "<group>"; };
@@ -987,13 +979,8 @@
 		636F8DD21BCB8FE800552B91 /* RamblerLocationViewInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RamblerLocationViewInput.h; sourceTree = "<group>"; };
 		636F8DD31BCB8FE800552B91 /* RamblerLocationViewOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RamblerLocationViewOutput.h; sourceTree = "<group>"; };
 		636F8DFE1BCB91A900552B91 /* RamblerLocation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RamblerLocation.storyboard; sourceTree = "<group>"; };
-		6373827A1DD5AB28004246EC /* MessagesLaunchHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesLaunchHandler.m; path = Classes/LaunchHandler/MessagesLaunchHandler.m; sourceTree = "<group>"; };
 		6373827F1DD5AC88004246EC /* EventListProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventListProcessor.h; path = EventListProcessor/EventListProcessor.h; sourceTree = "<group>"; };
 		637382801DD5AC88004246EC /* EventListProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListProcessor.m; path = EventListProcessor/EventListProcessor.m; sourceTree = "<group>"; };
-		637382851DD5C11A004246EC /* RamblerExtensionTyphoonActivator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RamblerExtensionTyphoonActivator.h; path = Classes/RamblerExtensionTyphoonActivator/RamblerExtensionTyphoonActivator.h; sourceTree = "<group>"; };
-		637382861DD5C11A004246EC /* RamblerExtensionTyphoonActivator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RamblerExtensionTyphoonActivator.m; path = Classes/RamblerExtensionTyphoonActivator/RamblerExtensionTyphoonActivator.m; sourceTree = "<group>"; };
-		637382891DD5C157004246EC /* MessageExtensionTyphoonActivator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageExtensionTyphoonActivator.h; path = MessageExtensionTyphoonActivator/MessageExtensionTyphoonActivator.h; sourceTree = "<group>"; };
-		6373828A1DD5C157004246EC /* MessageExtensionTyphoonActivator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageExtensionTyphoonActivator.m; path = MessageExtensionTyphoonActivator/MessageExtensionTyphoonActivator.m; sourceTree = "<group>"; };
 		637382961DD5D8FD004246EC /* MessagesRouterInput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MessagesRouterInput.h; path = Classes/PresentationLayer/MessagesModule/Router/MessagesRouterInput.h; sourceTree = "<group>"; };
 		637382971DD5D9C0004246EC /* MessagesRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessagesRouter.h; path = Classes/PresentationLayer/MessagesModule/Router/MessagesRouter.h; sourceTree = "<group>"; };
 		637382981DD5D9C0004246EC /* MessagesRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesRouter.m; path = Classes/PresentationLayer/MessagesModule/Router/MessagesRouter.m; sourceTree = "<group>"; };
@@ -1008,6 +995,18 @@
 		6373A3E71BBDC02100DF67FF /* RegistrationQuestionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationQuestionService.h; sourceTree = "<group>"; };
 		6373A3E91BBDC05900DF67FF /* SpeakerService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerService.h; sourceTree = "<group>"; };
 		6373A40F1BBDC5EA00DF67FF /* Conference.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Conference.xcdatamodel; sourceTree = "<group>"; };
+		63770CB11DD61D2A0039AB0D /* MessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessagesViewController.h; path = Classes/PresentationLayer/MessagesModule/View/MessagesViewController.h; sourceTree = "<group>"; };
+		63770CB21DD61D2A0039AB0D /* MessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesViewController.m; path = Classes/PresentationLayer/MessagesModule/View/MessagesViewController.m; sourceTree = "<group>"; };
+		63770CB41DD61D6F0039AB0D /* MessageExtensionAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageExtensionAssembly.h; path = Classes/PresentationLayer/MessagesModule/Assembly/MessageExtensionAssembly.h; sourceTree = "<group>"; };
+		63770CB51DD61D6F0039AB0D /* MessageExtensionAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageExtensionAssembly.m; path = Classes/PresentationLayer/MessagesModule/Assembly/MessageExtensionAssembly.m; sourceTree = "<group>"; };
+		63770CB71DD61E100039AB0D /* RamblerExtensionTyphoonActivator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RamblerExtensionTyphoonActivator.h; path = Classes/ExtensionLayer/RamblerExtensionTyphoonActivator/RamblerExtensionTyphoonActivator.h; sourceTree = "<group>"; };
+		63770CB81DD61E100039AB0D /* RamblerExtensionTyphoonActivator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RamblerExtensionTyphoonActivator.m; path = Classes/ExtensionLayer/RamblerExtensionTyphoonActivator/RamblerExtensionTyphoonActivator.m; sourceTree = "<group>"; };
+		63770CBA1DD61E2A0039AB0D /* MessagesLaunchHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessagesLaunchHandler.h; path = Classes/ExtensionLayer/LaunchHandler/MessagesLaunchHandler.h; sourceTree = "<group>"; };
+		63770CBB1DD61E2A0039AB0D /* MessagesLaunchHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesLaunchHandler.m; path = Classes/ExtensionLayer/LaunchHandler/MessagesLaunchHandler.m; sourceTree = "<group>"; };
+		63770CBD1DD61E3D0039AB0D /* MessagesConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessagesConstants.h; path = Classes/MessagesConstants/MessagesConstants.h; sourceTree = "<group>"; };
+		63770CBE1DD61E3D0039AB0D /* MessagesConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesConstants.m; path = Classes/MessagesConstants/MessagesConstants.m; sourceTree = "<group>"; };
+		63770CC01DD61E6B0039AB0D /* MessageExtensionTyphoonActivator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageExtensionTyphoonActivator.h; path = Classes/ExtensionLayer/RamblerExtensionTyphoonActivator/MessageExtensionTyphoonActivator/MessageExtensionTyphoonActivator.h; sourceTree = "<group>"; };
+		63770CC11DD61E6B0039AB0D /* MessageExtensionTyphoonActivator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageExtensionTyphoonActivator.m; path = Classes/ExtensionLayer/RamblerExtensionTyphoonActivator/MessageExtensionTyphoonActivator/MessageExtensionTyphoonActivator.m; sourceTree = "<group>"; };
 		638172081C8B118D0094F19A /* EventStoreServiceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventStoreServiceProtocol.h; sourceTree = "<group>"; };
 		638918CA1DC28AA3009B34AF /* MessagesAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessagesAppDelegate.h; path = MessagesAppDelegate/MessagesAppDelegate.h; sourceTree = "<group>"; };
 		638918CB1DC28AA3009B34AF /* MessagesAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesAppDelegate.m; path = MessagesAppDelegate/MessagesAppDelegate.m; sourceTree = "<group>"; };
@@ -1018,11 +1017,8 @@
 		6394E4181CB1510800548EAE /* LectureViewController_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LectureViewController_Testable.h; sourceTree = "<group>"; };
 		63AA03541D99063900F4C094 /* Conferences.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Conferences.entitlements; sourceTree = "<group>"; };
 		63AA03551D99067000F4C094 /* RamblerMessageExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RamblerMessageExtension.entitlements; sourceTree = "<group>"; };
-		63BB9A151DB3DD2D00C2F2B9 /* MessagesLaunchHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessagesLaunchHandler.h; path = Classes/LaunchHandler/MessagesLaunchHandler.h; sourceTree = "<group>"; };
 		63BDBBC11D87E3DE006E8A15 /* RamblerMessageExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RamblerMessageExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BDBBC21D87E3DE006E8A15 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
-		63BDBBC51D87E3DE006E8A15 /* MessagesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessagesViewController.h; sourceTree = "<group>"; };
-		63BDBBC61D87E3DE006E8A15 /* MessagesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessagesViewController.m; sourceTree = "<group>"; };
 		63BDBBC91D87E3DE006E8A15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		63BDBBCB1D87E3DE006E8A15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63BDBBCD1D87E3DE006E8A15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -2724,8 +2720,8 @@
 		636E26991D8ECF5D001ABB92 /* Assembly */ = {
 			isa = PBXGroup;
 			children = (
-				636E269A1D8ECFAC001ABB92 /* MessageExtensionAssembly.h */,
-				636E269B1D8ECFAC001ABB92 /* MessageExtensionAssembly.m */,
+				63770CB41DD61D6F0039AB0D /* MessageExtensionAssembly.h */,
+				63770CB51DD61D6F0039AB0D /* MessageExtensionAssembly.m */,
 			);
 			name = Assembly;
 			sourceTree = "<group>";
@@ -2866,8 +2862,8 @@
 			isa = PBXGroup;
 			children = (
 				637382881DD5C143004246EC /* MessageExtensionTyphoonActivator */,
-				637382851DD5C11A004246EC /* RamblerExtensionTyphoonActivator.h */,
-				637382861DD5C11A004246EC /* RamblerExtensionTyphoonActivator.m */,
+				63770CB71DD61E100039AB0D /* RamblerExtensionTyphoonActivator.h */,
+				63770CB81DD61E100039AB0D /* RamblerExtensionTyphoonActivator.m */,
 			);
 			name = RamblerExtensionTyphoonActivator;
 			sourceTree = "<group>";
@@ -2875,8 +2871,8 @@
 		637382881DD5C143004246EC /* MessageExtensionTyphoonActivator */ = {
 			isa = PBXGroup;
 			children = (
-				637382891DD5C157004246EC /* MessageExtensionTyphoonActivator.h */,
-				6373828A1DD5C157004246EC /* MessageExtensionTyphoonActivator.m */,
+				63770CC01DD61E6B0039AB0D /* MessageExtensionTyphoonActivator.h */,
+				63770CC11DD61E6B0039AB0D /* MessageExtensionTyphoonActivator.m */,
 			);
 			name = MessageExtensionTyphoonActivator;
 			sourceTree = "<group>";
@@ -2934,8 +2930,8 @@
 		637382911DD5D5B0004246EC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				63BDBBC51D87E3DE006E8A15 /* MessagesViewController.h */,
-				63BDBBC61D87E3DE006E8A15 /* MessagesViewController.m */,
+				63770CB11DD61D2A0039AB0D /* MessagesViewController.h */,
+				63770CB21DD61D2A0039AB0D /* MessagesViewController.m */,
 				6373829A1DD5E02C004246EC /* MessagesViewOutput.h */,
 				637382A21DD60820004246EC /* MessagesViewInput.h */,
 			);
@@ -2954,8 +2950,8 @@
 		637382931DD5D676004246EC /* MessagesConstants */ = {
 			isa = PBXGroup;
 			children = (
-				631060171DC87909006870EB /* MessagesConstants.h */,
-				631060181DC87909006870EB /* MessagesConstants.m */,
+				63770CBD1DD61E3D0039AB0D /* MessagesConstants.h */,
+				63770CBE1DD61E3D0039AB0D /* MessagesConstants.m */,
 			);
 			name = MessagesConstants;
 			sourceTree = "<group>";
@@ -3063,8 +3059,8 @@
 		63BB9A141DB3DD0000C2F2B9 /* LaunchHandler */ = {
 			isa = PBXGroup;
 			children = (
-				63BB9A151DB3DD2D00C2F2B9 /* MessagesLaunchHandler.h */,
-				6373827A1DD5AB28004246EC /* MessagesLaunchHandler.m */,
+				63770CBA1DD61E2A0039AB0D /* MessagesLaunchHandler.h */,
+				63770CBB1DD61E2A0039AB0D /* MessagesLaunchHandler.m */,
 			);
 			name = LaunchHandler;
 			sourceTree = "<group>";
@@ -8756,7 +8752,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				636E26D71D8FE719001ABB92 /* EventServiceImplementation.m in Sources */,
-				637382871DD5C11A004246EC /* RamblerExtensionTyphoonActivator.m in Sources */,
+				63770CC21DD61E6B0039AB0D /* MessageExtensionTyphoonActivator.m in Sources */,
 				636E26ED1D8FE86A001ABB92 /* _TagModelObject.m in Sources */,
 				63BB9A101DB285D600C2F2B9 /* SafariFactoryImplementation.m in Sources */,
 				63BB9A391DB4BB8D00C2F2B9 /* SpotlightIndexerConstants.m in Sources */,
@@ -8767,20 +8763,22 @@
 				636E26CE1D8FE0C4001ABB92 /* EventListTableViewController.m in Sources */,
 				63BB9A301DB4BB0100C2F2B9 /* LectureChangeProviderFetchRequestFactory.m in Sources */,
 				636E26E71D8FE816001ABB92 /* SpeakerModelObject.m in Sources */,
+				63770CBF1DD61E3D0039AB0D /* MessagesConstants.m in Sources */,
 				636E26CD1D8FE0B7001ABB92 /* EventListTableViewCell.m in Sources */,
-				6373828B1DD5C157004246EC /* MessageExtensionTyphoonActivator.m in Sources */,
 				63BB9A131DB2860000C2F2B9 /* YouTubePlayerFactoryImplementation.m in Sources */,
 				6321841E1D9BFD31001BB7A7 /* SpotlightIndexer.xcdatamodeld in Sources */,
 				63BB9A381DB4BB8200C2F2B9 /* ObjectTransformerConstants.m in Sources */,
 				63BB9A371DB4BB7600C2F2B9 /* SpotlightCoreDataStackCoordinatorImplementation.m in Sources */,
 				63BB9A321DB4BB3700C2F2B9 /* LectureObjectTransformer.m in Sources */,
 				636E26E21D8FE7D7001ABB92 /* MetaEventModelObject.m in Sources */,
+				63770CBC1DD61E2A0039AB0D /* MessagesLaunchHandler.m in Sources */,
 				632184311D9D3527001BB7A7 /* TechPlainObject.m in Sources */,
 				636E26DD1D8FE78D001ABB92 /* LectureModelObject.m in Sources */,
 				638918D81DC33CD0009B34AF /* MessagesUserActivityFactory.m in Sources */,
 				632184341D9D3574001BB7A7 /* SocialNetworkAccountPlainObject.m in Sources */,
 				63BB9A0C1DB2858E00C2F2B9 /* PresentationLayerHelpersAssembly.m in Sources */,
 				6321842A1D9D33E7001BB7A7 /* TagPlainObject.m in Sources */,
+				63770CB31DD61D2A0039AB0D /* MessagesViewController.m in Sources */,
 				63BB9A261DB4BA6700C2F2B9 /* EventChangeProviderFetchRequestFactory.m in Sources */,
 				632184301D9D3521001BB7A7 /* _TechPlainObject.m in Sources */,
 				636E26D81D8FE73F001ABB92 /* _EventModelObject.m in Sources */,
@@ -8794,7 +8792,6 @@
 				6321842E1D9D34CC001BB7A7 /* TechModelObject.m in Sources */,
 				636E26C61D8FDF41001ABB92 /* EventListModuleAssembly.m in Sources */,
 				632184321D9D3558001BB7A7 /* SocialNetworkAccountModelObject.m in Sources */,
-				6373827B1DD5AB28004246EC /* MessagesLaunchHandler.m in Sources */,
 				636E26DE1D8FE799001ABB92 /* LastModifiedModelObject.m in Sources */,
 				63BB9A0E1DB285BA00C2F2B9 /* DateFormatter.m in Sources */,
 				63BB9A1F1DB4B4BF00C2F2B9 /* SpeakerLaunchRouter.m in Sources */,
@@ -8817,6 +8814,7 @@
 				636E26E61D8FE807001ABB92 /* SpeakerServiceImplementation.m in Sources */,
 				6373829D1DD5E12F004246EC /* MessagesPresenter.m in Sources */,
 				636E26F11D8FEF29001ABB92 /* NSManagedObjectID+LJStringConversion.m in Sources */,
+				63770CB61DD61D6F0039AB0D /* MessageExtensionAssembly.m in Sources */,
 				6321841D1D9BFD22001BB7A7 /* Conference.xcdatamodeld in Sources */,
 				636E26E91D8FE82D001ABB92 /* TagServiceImplementation.m in Sources */,
 				636E26DB1D8FE76E001ABB92 /* EventStoreService.m in Sources */,
@@ -8864,17 +8862,15 @@
 				637382991DD5D9C0004246EC /* MessagesRouter.m in Sources */,
 				632184251D9D31BF001BB7A7 /* _LectureMaterialModelObject.m in Sources */,
 				636E26C71D8FE069001ABB92 /* EventListCellObjectBuilder.m in Sources */,
-				63BDBBC71D87E3DE006E8A15 /* MessagesViewController.m in Sources */,
 				636E26CA1D8FE091001ABB92 /* EventListPresenter.m in Sources */,
-				631060191DC87909006870EB /* MessagesConstants.m in Sources */,
 				632184211D9D2F2B001BB7A7 /* _LectureMaterialPlainObject.m in Sources */,
+				63770CB91DD61E100039AB0D /* RamblerExtensionTyphoonActivator.m in Sources */,
 				63BB9A221DB4B4E500C2F2B9 /* TabLaunchRouter.m in Sources */,
 				6321842F1D9D34D6001BB7A7 /* _TechModelObject.m in Sources */,
 				632184261D9D3268001BB7A7 /* LectureMaterialPlainObject.m in Sources */,
 				63BB9A1C1DB4B48800C2F2B9 /* QuickActionAppDelegate.m in Sources */,
 				636E26DC1D8FE77D001ABB92 /* LectureServiceImplementation.m in Sources */,
 				63BB9A111DB285E300C2F2B9 /* VideoThumbnailGenerator.m in Sources */,
-				636E26CF1D8FE0D0001ABB92 /* MessageExtensionAssembly.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -8981,7 +8977,6 @@
 				2B2064821D3F9CE900246C8D /* _LecturePlainObject.m in Sources */,
 				2B2064841D3F9CE900246C8D /* _RegistrationQuestionPlainObject.m in Sources */,
 				9FBE89B21D5CB71300DA0C32 /* CleanLaunchRouter.m in Sources */,
-				6373827C1DD5AB6B004246EC /* MessagesLaunchHandler.m in Sources */,
 				66764D041D4B636B00EF9D58 /* ReportsSearchViewAnimator.m in Sources */,
 				66E999631D54B04100161D98 /* TagObjectDescriptor.m in Sources */,
 				9FE139811D65F3E900D7BF44 /* GrayTableViewSectionHeaderAndFooterCell.m in Sources */,
@@ -9046,7 +9041,6 @@
 				66FFD29C1D7DCCFB0009B7DC /* CollectionViewContentCellAnimator.m in Sources */,
 				9F78D77D1D5A075C009DDCEA /* LectureChangeProviderFetchRequestFactory.m in Sources */,
 				9FBE89EF1D5DDA5A00DA0C32 /* PreviousEventSectionFooterTableViewCell.m in Sources */,
-				633628F51DD1E84B0048359F /* MessagesConstants.m in Sources */,
 				636A37B31BC1356400B49C3D /* ApplicationConfiguratorImplementation.m in Sources */,
 				9F8E5FA91BC27D0D00DC10DB /* ServiceNameConstants.m in Sources */,
 				2B2064871D3F9CE900246C8D /* _TagPlainObject.m in Sources */,
@@ -9288,7 +9282,6 @@
 				9FBE89D31D5CB76900DA0C32 /* CleanLaunchAppDelegateTests.m in Sources */,
 				63F613E31CB111070002AEF0 /* EventViewControllerTests.m in Sources */,
 				63F613E71CB111070002AEF0 /* LectureViewControllerTests.m in Sources */,
-				6373827D1DD5AB6D004246EC /* MessagesLaunchHandler.m in Sources */,
 				637382831DD5B2BE004246EC /* EventListProcessor.m in Sources */,
 				9F0A853F1BC192F0006F79FB /* OperationChainerTests.m in Sources */,
 				9FBE8A341D5F3CD100DA0C32 /* EventGalleryInteractorTests.m in Sources */,
@@ -9335,7 +9328,6 @@
 				635E18C71CA6B8CE005B8439 /* SpeakerShortInfoModuleAssemblyTests.m in Sources */,
 				9FBE8A351D5F3CD500DA0C32 /* EventGalleryPresenterTests.m in Sources */,
 				66A1DD301D7E980D00998F6B /* TagAssemblyTests.m in Sources */,
-				633628F61DD1E84D0048359F /* MessagesConstants.m in Sources */,
 				9FBE89D81D5CB76900DA0C32 /* EventLaunchRouterTests.m in Sources */,
 				9F0A851F1BC185AA006F79FB /* TestCancellableOperation.m in Sources */,
 				9F0A85271BC185AA006F79FB /* ResponseMappingOperationTests.m in Sources */,
