@@ -25,8 +25,8 @@
 
 @interface MessageExtensionAssembly : ModuleAssemblyBase <RamblerInitialAssembly>
 
-@property (strong, nonatomic) EventListModuleAssembly *eventListAssembly;
+@property (nonatomic, strong) EventListModuleAssembly *eventListAssembly;
 @property (nonatomic, strong) PonsomizerAssembly *ponsomizerAssembly;
-@property (strong, nonatomic, readonly) SpotlightIndexerAssembly *spotlightIndexerAssembly;
+@property (nonatomic, strong, readonly) SpotlightIndexerAssembly *spotlightIndexerAssembly;
 
 @end
