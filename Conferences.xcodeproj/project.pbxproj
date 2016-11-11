@@ -209,6 +209,8 @@
 		637382811DD5AC88004246EC /* EventListProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 637382801DD5AC88004246EC /* EventListProcessor.m */; };
 		637382821DD5B2BB004246EC /* EventListProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 637382801DD5AC88004246EC /* EventListProcessor.m */; };
 		637382831DD5B2BE004246EC /* EventListProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 637382801DD5AC88004246EC /* EventListProcessor.m */; };
+		637382871DD5C11A004246EC /* RamblerExtensionTyphoonActivator.m in Sources */ = {isa = PBXBuildFile; fileRef = 637382861DD5C11A004246EC /* RamblerExtensionTyphoonActivator.m */; };
+		6373828B1DD5C157004246EC /* MessageExtensionTyphoonActivator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6373828A1DD5C157004246EC /* MessageExtensionTyphoonActivator.m */; };
 		638918CC1DC28AA3009B34AF /* MessagesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 638918CB1DC28AA3009B34AF /* MessagesAppDelegate.m */; };
 		638918CF1DC333A4009B34AF /* MessagesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 638918CB1DC28AA3009B34AF /* MessagesAppDelegate.m */; };
 		638918D01DC333B6009B34AF /* MessagesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 638918CB1DC28AA3009B34AF /* MessagesAppDelegate.m */; };
@@ -985,6 +987,10 @@
 		6373827A1DD5AB28004246EC /* MessagesLaunchHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesLaunchHandler.m; path = Classes/LaunchHandler/MessagesLaunchHandler.m; sourceTree = "<group>"; };
 		6373827F1DD5AC88004246EC /* EventListProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventListProcessor.h; path = EventListProcessor/EventListProcessor.h; sourceTree = "<group>"; };
 		637382801DD5AC88004246EC /* EventListProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListProcessor.m; path = EventListProcessor/EventListProcessor.m; sourceTree = "<group>"; };
+		637382851DD5C11A004246EC /* RamblerExtensionTyphoonActivator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RamblerExtensionTyphoonActivator.h; path = Classes/RamblerExtensionTyphoonActivator/RamblerExtensionTyphoonActivator.h; sourceTree = "<group>"; };
+		637382861DD5C11A004246EC /* RamblerExtensionTyphoonActivator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RamblerExtensionTyphoonActivator.m; path = Classes/RamblerExtensionTyphoonActivator/RamblerExtensionTyphoonActivator.m; sourceTree = "<group>"; };
+		637382891DD5C157004246EC /* MessageExtensionTyphoonActivator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageExtensionTyphoonActivator.h; path = MessageExtensionTyphoonActivator/MessageExtensionTyphoonActivator.h; sourceTree = "<group>"; };
+		6373828A1DD5C157004246EC /* MessageExtensionTyphoonActivator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageExtensionTyphoonActivator.m; path = MessageExtensionTyphoonActivator/MessageExtensionTyphoonActivator.m; sourceTree = "<group>"; };
 		6373A3E61BBDBFDC00DF67FF /* EventService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventService.h; sourceTree = "<group>"; };
 		6373A3E71BBDC02100DF67FF /* RegistrationQuestionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationQuestionService.h; sourceTree = "<group>"; };
 		6373A3E91BBDC05900DF67FF /* SpeakerService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerService.h; sourceTree = "<group>"; };
@@ -2702,6 +2708,7 @@
 		636E26981D8ECF4A001ABB92 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				637382841DD5BEBF004246EC /* RamblerExtensionTyphoonActivator */,
 				630E25F01DBF9BB50043C20E /* Presentation */,
 				63BB9A141DB3DD0000C2F2B9 /* LaunchHandler */,
 				636E26991D8ECF5D001ABB92 /* Assembly */,
@@ -2850,6 +2857,25 @@
 				637382801DD5AC88004246EC /* EventListProcessor.m */,
 			);
 			name = EventListProcessor;
+			sourceTree = "<group>";
+		};
+		637382841DD5BEBF004246EC /* RamblerExtensionTyphoonActivator */ = {
+			isa = PBXGroup;
+			children = (
+				637382881DD5C143004246EC /* MessageExtensionTyphoonActivator */,
+				637382851DD5C11A004246EC /* RamblerExtensionTyphoonActivator.h */,
+				637382861DD5C11A004246EC /* RamblerExtensionTyphoonActivator.m */,
+			);
+			name = RamblerExtensionTyphoonActivator;
+			sourceTree = "<group>";
+		};
+		637382881DD5C143004246EC /* MessageExtensionTyphoonActivator */ = {
+			isa = PBXGroup;
+			children = (
+				637382891DD5C157004246EC /* MessageExtensionTyphoonActivator.h */,
+				6373828A1DD5C157004246EC /* MessageExtensionTyphoonActivator.m */,
+			);
+			name = MessageExtensionTyphoonActivator;
 			sourceTree = "<group>";
 		};
 		6373A3DE1BBDBDF700DF67FF /* Services */ = {
@@ -8635,6 +8661,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				636E26D71D8FE719001ABB92 /* EventServiceImplementation.m in Sources */,
+				637382871DD5C11A004246EC /* RamblerExtensionTyphoonActivator.m in Sources */,
 				636E26ED1D8FE86A001ABB92 /* _TagModelObject.m in Sources */,
 				63BB9A101DB285D600C2F2B9 /* SafariFactoryImplementation.m in Sources */,
 				63BB9A391DB4BB8D00C2F2B9 /* SpotlightIndexerConstants.m in Sources */,
@@ -8646,6 +8673,7 @@
 				63BB9A301DB4BB0100C2F2B9 /* LectureChangeProviderFetchRequestFactory.m in Sources */,
 				636E26E71D8FE816001ABB92 /* SpeakerModelObject.m in Sources */,
 				636E26CD1D8FE0B7001ABB92 /* EventListTableViewCell.m in Sources */,
+				6373828B1DD5C157004246EC /* MessageExtensionTyphoonActivator.m in Sources */,
 				63BB9A131DB2860000C2F2B9 /* YouTubePlayerFactoryImplementation.m in Sources */,
 				6321841E1D9BFD31001BB7A7 /* SpotlightIndexer.xcdatamodeld in Sources */,
 				63BB9A381DB4BB8200C2F2B9 /* ObjectTransformerConstants.m in Sources */,
