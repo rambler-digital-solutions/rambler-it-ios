@@ -13,7 +13,9 @@
 @class EventListDataDisplayManager, EventLaunchRouter, MessagesRouter;
 @protocol EventService, ROSPonsomizer, ObjectTransformer;
 
-@interface MessagesViewController : MSMessagesAppViewController <EventListViewInput, EventListDataDisplayManagerDelegate>
+@interface MessagesViewController : MSMessagesAppViewController <EventListViewInput, EventListDataDisplayManagerDelegate, UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (strong, nonatomic) id <EventService> eventService;
 @property (strong, nonatomic) id <ROSPonsomizer> ponsomizer;

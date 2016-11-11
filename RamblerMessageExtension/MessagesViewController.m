@@ -34,12 +34,6 @@
 
 static CGFloat const kiMessageEventTableViewEstimatedRowHeight = 100.0f;
 
-@interface MessagesViewController () <UITableViewDelegate>
-
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-
-@end
-
 @implementation MessagesViewController
 
 - (void)viewDidLoad {
