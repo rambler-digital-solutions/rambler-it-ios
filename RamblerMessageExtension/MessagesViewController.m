@@ -21,17 +21,8 @@
 #import "MessagesViewController.h"
 
 #import "MessageExtensionTyphoonActivator.h"
-
-#import <MagicalRecord/MagicalRecord.h>
-#import "EventService.h"
-#import "ROSPonsomizer.h"
 #import "EventPlainObject.h"
 #import "DataDisplayManager.h"
-#import "MessagesLaunchHandler.h"
-#import "ObjectTransformer.h"
-#import "MessagesConstants.h"
-#import "MessagesRouter.h"
-#import "EventListProcessor.h"
 
 static CGFloat const kiMessageEventTableViewEstimatedRowHeight = 100.0f;
 
@@ -42,19 +33,11 @@ static CGFloat const kiMessageEventTableViewEstimatedRowHeight = 100.0f;
     [MessageExtensionTyphoonActivator activateWithSourceViewController:self];
 }
 
-#pragma mark - setups
+#pragma mark - MessagesViewInput
 
-- (void)setupCoreData {
-    NSURL *directory = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:RCFAppGroupIdentifier];
-    NSURL *storeURL = [directory  URLByAppendingPathComponent:RCFCoreDataNameKey];
-    [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreAtURL:storeURL];
-}
-
-- (void)loadEvents {
-    NSArray *events = [self.eventService obtainEventsWithPredicate:nil];
-    NSArray *plainObjects = [self.ponsomizer convertObject:events];
-    NSArray *sortedEvents = [EventListProcessor sortEventsByDate:plainObjects];
-    [self setupViewWithEventList:sortedEvents];
+- (void)setupViewWithNewMessage:(MSMessage *)message {
+    [self.currentConversation insertMessage:message
+                          completionHandler:nil];
 }
 
 #pragma mark - AnnouncementListViewInput
@@ -68,38 +51,24 @@ static CGFloat const kiMessageEventTableViewEstimatedRowHeight = 100.0f;
     self.tableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.tableView];
     self.tableView.delegate = [self.dataDisplayManager delegateForTableView:self.tableView
                                                            withBaseDelegate:self];
-
     [self.dataDisplayManager updateTableViewModelWithEvents:events];
 }
 
 #pragma mark - EventListDataDisplayManagerDelegate
 
 - (void)didTapCellWithEvent:(EventPlainObject *)event {
-    NSString *identifier = [self.transformer identifierForObject:event];
-    MSMessage *message = [MSMessage new];
-    MSMessageTemplateLayout *layout = [MSMessageTemplateLayout new];
-    layout.caption = event.name;
-    layout.subcaption = event.eventSubtitle;
-    layout.mediaFileURL = [NSURL URLWithString:event.imageUrl];
-    message.layout = layout;
-    message.URL = [NSURL URLWithString:identifier];
-    MSConversation *conversation = [MSConversation new];
-    [conversation insertMessage:message completionHandler:nil];
+    [self.output didInsertNewMessageWithEvent:event];
 }
 
 #pragma mark - Conversation Handling
 
 - (void)willBecomeActiveWithConversation:(MSConversation *)conversation {
-    MSConversation *savedConversation = conversation;
-    if (savedConversation.selectedMessage != nil) {
-        NSString *identifier = savedConversation.selectedMessage.URL.absoluteString;
-        if ([self.transformer isCorrectIdentifier:identifier]) {
-            [self.router openEventModuleWithIdentifier:identifier
-                                   andExtensionContext:self.extensionContext];
-        }
+    self.currentConversation = conversation;
+    if (self.currentConversation.selectedMessage != nil) {
+        [self.output didTapMessageWith:self.currentConversation.selectedMessage
+                  withExtensionContext:self.extensionContext];
     } else {
-        [self setupCoreData];
-        [self loadEvents];
+        [self.output setupView];
     }
 }
 

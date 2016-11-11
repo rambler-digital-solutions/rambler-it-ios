@@ -19,21 +19,15 @@
 // THE SOFTWARE.
 
 #import <Messages/Messages.h>
-#import "EventListViewInput.h"
+#import "MessagesViewInput.h"
 #import "EventListDataDisplayManager.h"
+#import "MessagesViewOutput.h"
 
-@class EventListDataDisplayManager, EventLaunchRouter, MessagesRouter;
-@protocol EventService, ROSPonsomizer, ObjectTransformer, MessagesRouterInput;
-
-@interface MessagesViewController : MSMessagesAppViewController <EventListViewInput, EventListDataDisplayManagerDelegate, UITableViewDelegate>
+@interface MessagesViewController : MSMessagesAppViewController <MessagesViewInput, EventListDataDisplayManagerDelegate, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
-@property (strong, nonatomic) id <EventService> eventService;
-@property (strong, nonatomic) id <ROSPonsomizer> ponsomizer;
-
 @property (nonatomic, strong) EventListDataDisplayManager *dataDisplayManager;
-@property (nonatomic, strong) id<ObjectTransformer> transformer;
-@property (nonatomic, strong) id<MessagesRouterInput> router;
+@property (nonatomic, strong) id<MessagesViewOutput> output;
+@property (nonatomic, strong) MSConversation *currentConversation;
 
 @end
