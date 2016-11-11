@@ -211,6 +211,7 @@
 		637382831DD5B2BE004246EC /* EventListProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 637382801DD5AC88004246EC /* EventListProcessor.m */; };
 		637382871DD5C11A004246EC /* RamblerExtensionTyphoonActivator.m in Sources */ = {isa = PBXBuildFile; fileRef = 637382861DD5C11A004246EC /* RamblerExtensionTyphoonActivator.m */; };
 		6373828B1DD5C157004246EC /* MessageExtensionTyphoonActivator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6373828A1DD5C157004246EC /* MessageExtensionTyphoonActivator.m */; };
+		637382991DD5D9C0004246EC /* MessagesRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 637382981DD5D9C0004246EC /* MessagesRouter.m */; };
 		638918CC1DC28AA3009B34AF /* MessagesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 638918CB1DC28AA3009B34AF /* MessagesAppDelegate.m */; };
 		638918CF1DC333A4009B34AF /* MessagesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 638918CB1DC28AA3009B34AF /* MessagesAppDelegate.m */; };
 		638918D01DC333B6009B34AF /* MessagesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 638918CB1DC28AA3009B34AF /* MessagesAppDelegate.m */; };
@@ -991,6 +992,9 @@
 		637382861DD5C11A004246EC /* RamblerExtensionTyphoonActivator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RamblerExtensionTyphoonActivator.m; path = Classes/RamblerExtensionTyphoonActivator/RamblerExtensionTyphoonActivator.m; sourceTree = "<group>"; };
 		637382891DD5C157004246EC /* MessageExtensionTyphoonActivator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageExtensionTyphoonActivator.h; path = MessageExtensionTyphoonActivator/MessageExtensionTyphoonActivator.h; sourceTree = "<group>"; };
 		6373828A1DD5C157004246EC /* MessageExtensionTyphoonActivator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageExtensionTyphoonActivator.m; path = MessageExtensionTyphoonActivator/MessageExtensionTyphoonActivator.m; sourceTree = "<group>"; };
+		637382961DD5D8FD004246EC /* MessagesRouterInput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MessagesRouterInput.h; path = Classes/PresentationLayer/MessagesModule/Router/MessagesRouterInput.h; sourceTree = "<group>"; };
+		637382971DD5D9C0004246EC /* MessagesRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessagesRouter.h; path = Classes/PresentationLayer/MessagesModule/Router/MessagesRouter.h; sourceTree = "<group>"; };
+		637382981DD5D9C0004246EC /* MessagesRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesRouter.m; path = Classes/PresentationLayer/MessagesModule/Router/MessagesRouter.m; sourceTree = "<group>"; };
 		6373A3E61BBDBFDC00DF67FF /* EventService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventService.h; sourceTree = "<group>"; };
 		6373A3E71BBDC02100DF67FF /* RegistrationQuestionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationQuestionService.h; sourceTree = "<group>"; };
 		6373A3E91BBDC05900DF67FF /* SpeakerService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerService.h; sourceTree = "<group>"; };
@@ -2906,6 +2910,9 @@
 		637382901DD5D5A8004246EC /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				637382961DD5D8FD004246EC /* MessagesRouterInput.h */,
+				637382971DD5D9C0004246EC /* MessagesRouter.h */,
+				637382981DD5D9C0004246EC /* MessagesRouter.m */,
 			);
 			name = Router;
 			sourceTree = "<group>";
@@ -8836,6 +8843,7 @@
 				6321842D1D9D3430001BB7A7 /* MetaEventPlainObject.m in Sources */,
 				63BB9A1A1DB4B46300C2F2B9 /* EventLaunchRouter.m in Sources */,
 				63BB9A2E1DB4BACA00C2F2B9 /* IndexState.m in Sources */,
+				637382991DD5D9C0004246EC /* MessagesRouter.m in Sources */,
 				632184251D9D31BF001BB7A7 /* _LectureMaterialModelObject.m in Sources */,
 				636E26C71D8FE069001ABB92 /* EventListCellObjectBuilder.m in Sources */,
 				63BDBBC71D87E3DE006E8A15 /* MessagesViewController.m in Sources */,
