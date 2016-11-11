@@ -32,6 +32,8 @@
 
 #import "SpotlightIndexerAssembly.h"
 
+#import "MessagesRouter.h"
+
 @implementation MessageExtensionAssembly
 
 - (MessagesViewController *)messageExtension {
@@ -45,7 +47,13 @@
                             with:[self.eventListAssembly dataDisplayManagerEventList]];
         [definition injectProperty:@selector(transformer)
                             with:[self.spotlightIndexerAssembly eventObjectTransformer]];
+        [definition injectProperty:@selector(router)
+                            with:[self messagesRouter]];
         }];
+}
+
+- (id<MessagesRouterInput>)messagesRouter {
+    return [TyphoonDefinition withClass:[MessagesRouter class]];
 }
 
 @end
