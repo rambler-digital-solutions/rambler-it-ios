@@ -47,9 +47,9 @@
 #pragma mark - <UIApplicationDelegate>
 
 - (BOOL)application:(UIApplication *)application
-            openURL:(NSURL *)url
-  sourceApplication:(NSString *)sourceApplication
-         annotation:(id)annotation {
+            openURL:(nonnull NSURL *)url
+            options:(nonnull NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+    
     NSUserActivity *activity = [self.userActivityFactory createUserActivityFromURL:url];
     for (id<LaunchHandler> launchHandler in self.launchHandlers) {
         if ([launchHandler canHandleLaunchWithActivity:activity]) {
