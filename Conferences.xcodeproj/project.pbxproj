@@ -272,6 +272,12 @@
 		63BDBBCA1D87E3DE006E8A15 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BDBBC81D87E3DE006E8A15 /* MainInterface.storyboard */; };
 		63BDBBCC1D87E3DE006E8A15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63BDBBCB1D87E3DE006E8A15 /* Assets.xcassets */; };
 		63BDBBD01D87E3DE006E8A15 /* RamblerMessageExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 63BDBBC11D87E3DE006E8A15 /* RamblerMessageExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		63C31BF71DD9BB7F00AA51BD /* MessagesLaunchHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 63770CBB1DD61E2A0039AB0D /* MessagesLaunchHandler.m */; };
+		63C31BF81DD9BB9800AA51BD /* MessagesLaunchHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 63770CBB1DD61E2A0039AB0D /* MessagesLaunchHandler.m */; };
+		63C31BF91DD9BBAC00AA51BD /* MessagesConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 63770CBE1DD61E3D0039AB0D /* MessagesConstants.m */; };
+		63C31BFA1DD9BBAD00AA51BD /* MessagesConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 63770CBE1DD61E3D0039AB0D /* MessagesConstants.m */; };
+		63C31BFD1DD9C10900AA51BD /* MessagesAppDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C31BFC1DD9C10900AA51BD /* MessagesAppDelegateTests.m */; };
+		63C31C001DD9C14A00AA51BD /* MessagesUserActivityFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C31BFF1DD9C14A00AA51BD /* MessagesUserActivityFactoryTests.m */; };
 		63D86BDA1C1439D800986536 /* DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D86BD91C1439D800986536 /* DateFormatter.m */; };
 		63D86BDD1C143FCE00986536 /* DateFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D86BDC1C143FCE00986536 /* DateFormatterTests.m */; };
 		63ECC4161CA81E5300439A01 /* ErrorConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ECC4151CA81E5300439A01 /* ErrorConstants.m */; };
@@ -1022,6 +1028,8 @@
 		63BDBBC91D87E3DE006E8A15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		63BDBBCB1D87E3DE006E8A15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63BDBBCD1D87E3DE006E8A15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63C31BFC1DD9C10900AA51BD /* MessagesAppDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesAppDelegateTests.m; path = MessagesAppDelegate/MessagesAppDelegateTests.m; sourceTree = "<group>"; };
+		63C31BFF1DD9C14A00AA51BD /* MessagesUserActivityFactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesUserActivityFactoryTests.m; path = MessagesAppDelegate/MessagesUserActivityFactory/MessagesUserActivityFactoryTests.m; sourceTree = "<group>"; };
 		63D7460D1C8B0D5200E3A381 /* EventStoreService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventStoreService.h; sourceTree = "<group>"; };
 		63D7460E1C8B0D5200E3A381 /* EventStoreService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventStoreService.m; sourceTree = "<group>"; };
 		63D86BD81C1439D800986536 /* DateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateFormatter.h; sourceTree = "<group>"; };
@@ -3072,6 +3080,23 @@
 				636E26981D8ECF4A001ABB92 /* Classes */,
 			);
 			path = RamblerMessageExtension;
+			sourceTree = "<group>";
+		};
+		63C31BFB1DD9C0DB00AA51BD /* MessagesAppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				63C31BFE1DD9C13100AA51BD /* MessagesUserActivityFactory */,
+				63C31BFC1DD9C10900AA51BD /* MessagesAppDelegateTests.m */,
+			);
+			name = MessagesAppDelegate;
+			sourceTree = "<group>";
+		};
+		63C31BFE1DD9C13100AA51BD /* MessagesUserActivityFactory */ = {
+			isa = PBXGroup;
+			children = (
+				63C31BFF1DD9C14A00AA51BD /* MessagesUserActivityFactoryTests.m */,
+			);
+			name = MessagesUserActivityFactory;
 			sourceTree = "<group>";
 		};
 		63D7460B1C8B0CF600E3A381 /* EventStoreService */ = {
@@ -7270,6 +7295,7 @@
 		9FBE89BC1D5CB76900DA0C32 /* AppDelegates */ = {
 			isa = PBXGroup;
 			children = (
+				63C31BFB1DD9C0DB00AA51BD /* MessagesAppDelegate */,
 				9F7B82271D7DA9DC002E977A /* QuickActionAppDelegate */,
 				9FBE89BD1D5CB76900DA0C32 /* CleanLaunchAppDelegate */,
 				9FBE89BF1D5CB76900DA0C32 /* SpotlightAppDelegate */,
@@ -8974,9 +9000,11 @@
 				636F8DDD1BCB8FE800552B91 /* RamblerLocationRouter.m in Sources */,
 				9FC1F6841D28391E0070D9B5 /* EventListQueryTransformer.m in Sources */,
 				9F0A84FA1BC1698B006F79FB /* OperationBuffer.m in Sources */,
+				63C31BFA1DD9BBAD00AA51BD /* MessagesConstants.m in Sources */,
 				2B2064821D3F9CE900246C8D /* _LecturePlainObject.m in Sources */,
 				2B2064841D3F9CE900246C8D /* _RegistrationQuestionPlainObject.m in Sources */,
 				9FBE89B21D5CB71300DA0C32 /* CleanLaunchRouter.m in Sources */,
+				63C31BF81DD9BB9800AA51BD /* MessagesLaunchHandler.m in Sources */,
 				66764D041D4B636B00EF9D58 /* ReportsSearchViewAnimator.m in Sources */,
 				66E999631D54B04100161D98 /* TagObjectDescriptor.m in Sources */,
 				9FE139811D65F3E900D7BF44 /* GrayTableViewSectionHeaderAndFooterCell.m in Sources */,
@@ -9248,6 +9276,7 @@
 				9F7B821B1D7CAB28002E977A /* QuickActionDaemonTests.m in Sources */,
 				63F613D81CB111070002AEF0 /* EventListInteractorTests.m in Sources */,
 				63F613E61CB111070002AEF0 /* LectureRouterTests.m in Sources */,
+				63C31C001DD9C14A00AA51BD /* MessagesUserActivityFactoryTests.m in Sources */,
 				662166501D4F4507000A1D11 /* ReportsSearchInteractorTests.m in Sources */,
 				63F613EF1CB111070002AEF0 /* SpeakerInfoViewControllerTests.m in Sources */,
 				9FBE89DA1D5CB76900DA0C32 /* SpeakerLaunchRouterTests.m in Sources */,
@@ -9282,6 +9311,7 @@
 				9FBE89D31D5CB76900DA0C32 /* CleanLaunchAppDelegateTests.m in Sources */,
 				63F613E31CB111070002AEF0 /* EventViewControllerTests.m in Sources */,
 				63F613E71CB111070002AEF0 /* LectureViewControllerTests.m in Sources */,
+				63C31BF71DD9BB7F00AA51BD /* MessagesLaunchHandler.m in Sources */,
 				637382831DD5B2BE004246EC /* EventListProcessor.m in Sources */,
 				9F0A853F1BC192F0006F79FB /* OperationChainerTests.m in Sources */,
 				9FBE8A341D5F3CD100DA0C32 /* EventGalleryInteractorTests.m in Sources */,
@@ -9332,6 +9362,7 @@
 				9F0A851F1BC185AA006F79FB /* TestCancellableOperation.m in Sources */,
 				9F0A85271BC185AA006F79FB /* ResponseMappingOperationTests.m in Sources */,
 				9F1830F91BC1464C000E21A5 /* ManagedObjectMappingProviderTests.m in Sources */,
+				63C31BF91DD9BBAC00AA51BD /* MessagesConstants.m in Sources */,
 				63F403AA1BD0CB190086D030 /* RequestSignersAssemblyTests.m in Sources */,
 				63F613E21CB111070002AEF0 /* EventRouterTests.m in Sources */,
 				63F613EE1CB111070002AEF0 /* SpeakerInfoPresenterTests.m in Sources */,
@@ -9340,6 +9371,7 @@
 				631CBA771C020F2D00E3EBA8 /* ReportListModuleAssemblyTests.m in Sources */,
 				2B429A711D4B5305004C005F /* ModelObjectGenerator.m in Sources */,
 				666C5C331D4F2AF6002D73D5 /* ReportsSearchPresenterTests.m in Sources */,
+				63C31BFD1DD9C10900AA51BD /* MessagesAppDelegateTests.m in Sources */,
 				631CBA3B1C00935300E3EBA8 /* EventServiceTests.m in Sources */,
 				63F403B21BD0D4B40086D030 /* ResponseValidatorsAssemblyTests.m in Sources */,
 				9F78D7801D5A078F009DDCEA /* LectureChangeProviderFetchRequestFactoryTests.m in Sources */,
