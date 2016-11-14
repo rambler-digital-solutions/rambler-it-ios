@@ -278,6 +278,7 @@
 		63C31BFA1DD9BBAD00AA51BD /* MessagesConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 63770CBE1DD61E3D0039AB0D /* MessagesConstants.m */; };
 		63C31BFD1DD9C10900AA51BD /* MessagesAppDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C31BFC1DD9C10900AA51BD /* MessagesAppDelegateTests.m */; };
 		63C31C001DD9C14A00AA51BD /* MessagesUserActivityFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C31BFF1DD9C14A00AA51BD /* MessagesUserActivityFactoryTests.m */; };
+		63C31C031DD9FE4C00AA51BD /* MessagesLaunchHandlerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C31C021DD9FE4C00AA51BD /* MessagesLaunchHandlerTests.m */; };
 		63D86BDA1C1439D800986536 /* DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D86BD91C1439D800986536 /* DateFormatter.m */; };
 		63D86BDD1C143FCE00986536 /* DateFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D86BDC1C143FCE00986536 /* DateFormatterTests.m */; };
 		63ECC4161CA81E5300439A01 /* ErrorConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ECC4151CA81E5300439A01 /* ErrorConstants.m */; };
@@ -1030,6 +1031,7 @@
 		63BDBBCD1D87E3DE006E8A15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63C31BFC1DD9C10900AA51BD /* MessagesAppDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesAppDelegateTests.m; path = MessagesAppDelegate/MessagesAppDelegateTests.m; sourceTree = "<group>"; };
 		63C31BFF1DD9C14A00AA51BD /* MessagesUserActivityFactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesUserActivityFactoryTests.m; path = MessagesAppDelegate/MessagesUserActivityFactory/MessagesUserActivityFactoryTests.m; sourceTree = "<group>"; };
+		63C31C021DD9FE4C00AA51BD /* MessagesLaunchHandlerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesLaunchHandlerTests.m; path = MessagesLaunchHandler/MessagesLaunchHandlerTests.m; sourceTree = "<group>"; };
 		63D7460D1C8B0D5200E3A381 /* EventStoreService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventStoreService.h; sourceTree = "<group>"; };
 		63D7460E1C8B0D5200E3A381 /* EventStoreService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventStoreService.m; sourceTree = "<group>"; };
 		63D86BD81C1439D800986536 /* DateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateFormatter.h; sourceTree = "<group>"; };
@@ -3097,6 +3099,14 @@
 				63C31BFF1DD9C14A00AA51BD /* MessagesUserActivityFactoryTests.m */,
 			);
 			name = MessagesUserActivityFactory;
+			sourceTree = "<group>";
+		};
+		63C31C011DD9FE1900AA51BD /* MessagesLaunchHandler */ = {
+			isa = PBXGroup;
+			children = (
+				63C31C021DD9FE4C00AA51BD /* MessagesLaunchHandlerTests.m */,
+			);
+			name = MessagesLaunchHandler;
 			sourceTree = "<group>";
 		};
 		63D7460B1C8B0CF600E3A381 /* EventStoreService */ = {
@@ -7330,6 +7340,7 @@
 		9FBE89C31D5CB76900DA0C32 /* LaunchHandler */ = {
 			isa = PBXGroup;
 			children = (
+				63C31C011DD9FE1900AA51BD /* MessagesLaunchHandler */,
 				9F7B823C1D7ECACC002E977A /* QuickActionLaunchHandler */,
 				9FBE89C41D5CB76900DA0C32 /* SpotlightLaunchHandler */,
 			);
@@ -9347,6 +9358,7 @@
 				63F613DD1CB111070002AEF0 /* FutureEventCellObjectBuilderTests.m in Sources */,
 				9F0A85241BC185AA006F79FB /* RequestConfigurationOperationTests.m in Sources */,
 				9F4077881D2BF84000D47EF6 /* RamblerLocationServiceTests.m in Sources */,
+				63C31C031DD9FE4C00AA51BD /* MessagesLaunchHandlerTests.m in Sources */,
 				9F8E5F9B1BC2753100DC10DB /* CompoundOperationFactoryTestsBase.m in Sources */,
 				66A1DD4D1D7E986000998F6B /* TagCollectionViewCellTests.m in Sources */,
 				638918CF1DC333A4009B34AF /* MessagesAppDelegate.m in Sources */,
