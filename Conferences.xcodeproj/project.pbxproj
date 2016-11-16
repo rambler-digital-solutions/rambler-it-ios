@@ -211,6 +211,7 @@
 		63770CBC1DD61E2A0039AB0D /* MessagesLaunchHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 63770CBB1DD61E2A0039AB0D /* MessagesLaunchHandler.m */; };
 		63770CBF1DD61E3D0039AB0D /* MessagesConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 63770CBE1DD61E3D0039AB0D /* MessagesConstants.m */; };
 		63770CC21DD61E6B0039AB0D /* MessageExtensionTyphoonActivator.m in Sources */ = {isa = PBXBuildFile; fileRef = 63770CC11DD61E6B0039AB0D /* MessageExtensionTyphoonActivator.m */; };
+		6377140C1DDC8109009FF726 /* MessagesRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377140B1DDC8109009FF726 /* MessagesRouterTests.m */; };
 		638918CC1DC28AA3009B34AF /* MessagesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 638918CB1DC28AA3009B34AF /* MessagesAppDelegate.m */; };
 		638918CF1DC333A4009B34AF /* MessagesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 638918CB1DC28AA3009B34AF /* MessagesAppDelegate.m */; };
 		638918D01DC333B6009B34AF /* MessagesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 638918CB1DC28AA3009B34AF /* MessagesAppDelegate.m */; };
@@ -273,14 +274,24 @@
 		63BDBBCC1D87E3DE006E8A15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63BDBBCB1D87E3DE006E8A15 /* Assets.xcassets */; };
 		63BDBBD01D87E3DE006E8A15 /* RamblerMessageExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 63BDBBC11D87E3DE006E8A15 /* RamblerMessageExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		63C31BF71DD9BB7F00AA51BD /* MessagesLaunchHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 63770CBB1DD61E2A0039AB0D /* MessagesLaunchHandler.m */; };
-		63C31BF81DD9BB9800AA51BD /* MessagesLaunchHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 63770CBB1DD61E2A0039AB0D /* MessagesLaunchHandler.m */; };
 		63C31BF91DD9BBAC00AA51BD /* MessagesConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 63770CBE1DD61E3D0039AB0D /* MessagesConstants.m */; };
-		63C31BFA1DD9BBAD00AA51BD /* MessagesConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 63770CBE1DD61E3D0039AB0D /* MessagesConstants.m */; };
 		63C31BFD1DD9C10900AA51BD /* MessagesAppDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C31BFC1DD9C10900AA51BD /* MessagesAppDelegateTests.m */; };
 		63C31C001DD9C14A00AA51BD /* MessagesUserActivityFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C31BFF1DD9C14A00AA51BD /* MessagesUserActivityFactoryTests.m */; };
 		63C31C031DD9FE4C00AA51BD /* MessagesLaunchHandlerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C31C021DD9FE4C00AA51BD /* MessagesLaunchHandlerTests.m */; };
+		63C31C061DDAEFA000AA51BD /* MessagesModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C31C051DDAEFA000AA51BD /* MessagesModuleAssemblyTests.m */; };
+		63C31C081DDAF19700AA51BD /* MessagesInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6373829F1DD5EA17004246EC /* MessagesInteractor.m */; };
+		63C31C091DDAF1A500AA51BD /* MessagesPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6373829C1DD5E12F004246EC /* MessagesPresenter.m */; };
+		63C31C0A1DDAF1B000AA51BD /* MessagesRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 637382981DD5D9C0004246EC /* MessagesRouter.m */; };
+		63C31C0B1DDAF1BC00AA51BD /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63770CB21DD61D2A0039AB0D /* MessagesViewController.m */; };
+		63C31C0C1DDAF1DD00AA51BD /* MessageExtensionTyphoonActivator.m in Sources */ = {isa = PBXBuildFile; fileRef = 63770CC11DD61E6B0039AB0D /* MessageExtensionTyphoonActivator.m */; };
+		63C31C0D1DDAF1F400AA51BD /* RamblerExtensionTyphoonActivator.m in Sources */ = {isa = PBXBuildFile; fileRef = 63770CB81DD61E100039AB0D /* RamblerExtensionTyphoonActivator.m */; };
+		63C31C151DDB126700AA51BD /* MessageExtensionAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 63770CB51DD61D6F0039AB0D /* MessageExtensionAssembly.m */; };
+		63C31C161DDB132D00AA51BD /* MessagesConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 63770CBE1DD61E3D0039AB0D /* MessagesConstants.m */; };
+		63C31C171DDB134500AA51BD /* MessagesLaunchHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 63770CBB1DD61E2A0039AB0D /* MessagesLaunchHandler.m */; };
 		63D86BDA1C1439D800986536 /* DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D86BD91C1439D800986536 /* DateFormatter.m */; };
 		63D86BDD1C143FCE00986536 /* DateFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D86BDC1C143FCE00986536 /* DateFormatterTests.m */; };
+		63EB4DB01DDC742600548D88 /* MessagesInteractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EB4DAF1DDC742600548D88 /* MessagesInteractorTests.m */; };
+		63EB4DB21DDC7D4400548D88 /* MessagesPresenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EB4DB11DDC7D4400548D88 /* MessagesPresenterTests.m */; };
 		63ECC4161CA81E5300439A01 /* ErrorConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ECC4151CA81E5300439A01 /* ErrorConstants.m */; };
 		63ECC4191CA8373400439A01 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 63ECC4181CA8373400439A01 /* Localizable.strings */; };
 		63F342B01C8B20AB002AF7CD /* EventStoreService.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D7460E1C8B0D5200E3A381 /* EventStoreService.m */; };
@@ -1014,6 +1025,7 @@
 		63770CBE1DD61E3D0039AB0D /* MessagesConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesConstants.m; path = Classes/MessagesConstants/MessagesConstants.m; sourceTree = "<group>"; };
 		63770CC01DD61E6B0039AB0D /* MessageExtensionTyphoonActivator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageExtensionTyphoonActivator.h; path = Classes/ExtensionLayer/RamblerExtensionTyphoonActivator/MessageExtensionTyphoonActivator/MessageExtensionTyphoonActivator.h; sourceTree = "<group>"; };
 		63770CC11DD61E6B0039AB0D /* MessageExtensionTyphoonActivator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageExtensionTyphoonActivator.m; path = Classes/ExtensionLayer/RamblerExtensionTyphoonActivator/MessageExtensionTyphoonActivator/MessageExtensionTyphoonActivator.m; sourceTree = "<group>"; };
+		6377140B1DDC8109009FF726 /* MessagesRouterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesRouterTests.m; path = MessagesModuleTests/MessagesRouterTests.m; sourceTree = "<group>"; };
 		638172081C8B118D0094F19A /* EventStoreServiceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventStoreServiceProtocol.h; sourceTree = "<group>"; };
 		638918CA1DC28AA3009B34AF /* MessagesAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessagesAppDelegate.h; path = MessagesAppDelegate/MessagesAppDelegate.h; sourceTree = "<group>"; };
 		638918CB1DC28AA3009B34AF /* MessagesAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesAppDelegate.m; path = MessagesAppDelegate/MessagesAppDelegate.m; sourceTree = "<group>"; };
@@ -1032,11 +1044,14 @@
 		63C31BFC1DD9C10900AA51BD /* MessagesAppDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesAppDelegateTests.m; path = MessagesAppDelegate/MessagesAppDelegateTests.m; sourceTree = "<group>"; };
 		63C31BFF1DD9C14A00AA51BD /* MessagesUserActivityFactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesUserActivityFactoryTests.m; path = MessagesAppDelegate/MessagesUserActivityFactory/MessagesUserActivityFactoryTests.m; sourceTree = "<group>"; };
 		63C31C021DD9FE4C00AA51BD /* MessagesLaunchHandlerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesLaunchHandlerTests.m; path = MessagesLaunchHandler/MessagesLaunchHandlerTests.m; sourceTree = "<group>"; };
+		63C31C051DDAEFA000AA51BD /* MessagesModuleAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesModuleAssemblyTests.m; path = MessagesModuleAssemblyTests/MessagesModuleAssemblyTests.m; sourceTree = "<group>"; };
 		63D7460D1C8B0D5200E3A381 /* EventStoreService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventStoreService.h; sourceTree = "<group>"; };
 		63D7460E1C8B0D5200E3A381 /* EventStoreService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventStoreService.m; sourceTree = "<group>"; };
 		63D86BD81C1439D800986536 /* DateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateFormatter.h; sourceTree = "<group>"; };
 		63D86BD91C1439D800986536 /* DateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateFormatter.m; sourceTree = "<group>"; };
 		63D86BDC1C143FCE00986536 /* DateFormatterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateFormatterTests.m; sourceTree = "<group>"; };
+		63EB4DAF1DDC742600548D88 /* MessagesInteractorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesInteractorTests.m; path = MessagesModuleTests/MessagesInteractorTests.m; sourceTree = "<group>"; };
+		63EB4DB11DDC7D4400548D88 /* MessagesPresenterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesPresenterTests.m; path = MessagesModuleTests/MessagesPresenterTests.m; sourceTree = "<group>"; };
 		63ECC4141CA81E5300439A01 /* ErrorConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorConstants.h; sourceTree = "<group>"; };
 		63ECC4151CA81E5300439A01 /* ErrorConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorConstants.m; sourceTree = "<group>"; };
 		63ECC4181CA8373400439A01 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -2383,6 +2398,7 @@
 		631CBA661C020CCD00E3EBA8 /* EventsUserStoryTests */ = {
 			isa = PBXGroup;
 			children = (
+				63C31C041DDAEF7200AA51BD /* MessagesModuleAssemblyTests */,
 				635E18D21CA6CDD8005B8439 /* EventHeaderModuleAssemblyTests */,
 				635E18BB1CA69EF2005B8439 /* LectureModuleAssemblyTests */,
 				635E18BC1CA69EF2005B8439 /* SpeakerInfoModuleAssemblyTests */,
@@ -3109,6 +3125,14 @@
 			name = MessagesLaunchHandler;
 			sourceTree = "<group>";
 		};
+		63C31C041DDAEF7200AA51BD /* MessagesModuleAssemblyTests */ = {
+			isa = PBXGroup;
+			children = (
+				63C31C051DDAEFA000AA51BD /* MessagesModuleAssemblyTests.m */,
+			);
+			name = MessagesModuleAssemblyTests;
+			sourceTree = "<group>";
+		};
 		63D7460B1C8B0CF600E3A381 /* EventStoreService */ = {
 			isa = PBXGroup;
 			children = (
@@ -3134,6 +3158,16 @@
 				63D86BDC1C143FCE00986536 /* DateFormatterTests.m */,
 			);
 			path = DateFormatterTests;
+			sourceTree = "<group>";
+		};
+		63EB4DAE1DDC73E200548D88 /* MessagesModuleTests */ = {
+			isa = PBXGroup;
+			children = (
+				63EB4DAF1DDC742600548D88 /* MessagesInteractorTests.m */,
+				63EB4DB11DDC7D4400548D88 /* MessagesPresenterTests.m */,
+				6377140B1DDC8109009FF726 /* MessagesRouterTests.m */,
+			);
+			name = MessagesModuleTests;
 			sourceTree = "<group>";
 		};
 		63ECC4131CA81E4000439A01 /* ErrorConstants */ = {
@@ -4119,6 +4153,7 @@
 		63F613B71CB111070002AEF0 /* ModulesTests */ = {
 			isa = PBXGroup;
 			children = (
+				63EB4DAE1DDC73E200548D88 /* MessagesModuleTests */,
 				66A1DD271D7E97D500998F6B /* TagModuleTests */,
 				9FF37E121D3236AE00471B4E /* RamblerLocationModuleTests */,
 				63F613B81CB111070002AEF0 /* AnnouncementListModuleTests */,
@@ -8977,6 +9012,7 @@
 				9FBE8B071D634F0500DA0C32 /* EventListCellObjectBuilder.m in Sources */,
 				9FF1251E1D51DF460098625F /* EventObjectIndexer.m in Sources */,
 				2B2064881D3F9CE900246C8D /* _TechPlainObject.m in Sources */,
+				63C31C171DDB134500AA51BD /* MessagesLaunchHandler.m in Sources */,
 				9F0A84FD1BC1698B006F79FB /* NetworkOperation.m in Sources */,
 				63F613661CB00A220002AEF0 /* EventInfoTableViewCellObject.m in Sources */,
 				9F78D74A1D59D73E009DDCEA /* IndexState.m in Sources */,
@@ -9011,11 +9047,9 @@
 				636F8DDD1BCB8FE800552B91 /* RamblerLocationRouter.m in Sources */,
 				9FC1F6841D28391E0070D9B5 /* EventListQueryTransformer.m in Sources */,
 				9F0A84FA1BC1698B006F79FB /* OperationBuffer.m in Sources */,
-				63C31BFA1DD9BBAD00AA51BD /* MessagesConstants.m in Sources */,
 				2B2064821D3F9CE900246C8D /* _LecturePlainObject.m in Sources */,
 				2B2064841D3F9CE900246C8D /* _RegistrationQuestionPlainObject.m in Sources */,
 				9FBE89B21D5CB71300DA0C32 /* CleanLaunchRouter.m in Sources */,
-				63C31BF81DD9BB9800AA51BD /* MessagesLaunchHandler.m in Sources */,
 				66764D041D4B636B00EF9D58 /* ReportsSearchViewAnimator.m in Sources */,
 				66E999631D54B04100161D98 /* TagObjectDescriptor.m in Sources */,
 				9FE139811D65F3E900D7BF44 /* GrayTableViewSectionHeaderAndFooterCell.m in Sources */,
@@ -9080,6 +9114,7 @@
 				66FFD29C1D7DCCFB0009B7DC /* CollectionViewContentCellAnimator.m in Sources */,
 				9F78D77D1D5A075C009DDCEA /* LectureChangeProviderFetchRequestFactory.m in Sources */,
 				9FBE89EF1D5DDA5A00DA0C32 /* PreviousEventSectionFooterTableViewCell.m in Sources */,
+				63C31C161DDB132D00AA51BD /* MessagesConstants.m in Sources */,
 				636A37B31BC1356400B49C3D /* ApplicationConfiguratorImplementation.m in Sources */,
 				9F8E5FA91BC27D0D00DC10DB /* ServiceNameConstants.m in Sources */,
 				2B2064871D3F9CE900246C8D /* _TagPlainObject.m in Sources */,
@@ -9276,10 +9311,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F4077941D2BFA7100D47EF6 /* CommonResourceClientTests.m in Sources */,
+				63C31C081DDAF19700AA51BD /* MessagesInteractor.m in Sources */,
 				9FF37E1B1D323B0200471B4E /* RamblerLocationRouterTests.m in Sources */,
 				9FF37E111D3235BB00471B4E /* AppleMapsLinkBuilderTests.m in Sources */,
 				9F4077A01D2C11A700D47EF6 /* DirectionObjectMapperTests.m in Sources */,
 				63F613EA1CB111070002AEF0 /* SearchPresenterTests.m in Sources */,
+				63C31C0B1DDAF1BC00AA51BD /* MessagesViewController.m in Sources */,
+				63C31C0D1DDAF1F400AA51BD /* RamblerExtensionTyphoonActivator.m in Sources */,
 				635E18D51CA6CECB005B8439 /* EventHeaderModuleAssemblyTests.m in Sources */,
 				638918D71DC33CC5009B34AF /* MessagesUserActivityFactory.m in Sources */,
 				63F613E41CB111070002AEF0 /* LectureInteractorTests.m in Sources */,
@@ -9288,6 +9326,7 @@
 				63F613D81CB111070002AEF0 /* EventListInteractorTests.m in Sources */,
 				63F613E61CB111070002AEF0 /* LectureRouterTests.m in Sources */,
 				63C31C001DD9C14A00AA51BD /* MessagesUserActivityFactoryTests.m in Sources */,
+				63C31C061DDAEFA000AA51BD /* MessagesModuleAssemblyTests.m in Sources */,
 				662166501D4F4507000A1D11 /* ReportsSearchInteractorTests.m in Sources */,
 				63F613EF1CB111070002AEF0 /* SpeakerInfoViewControllerTests.m in Sources */,
 				9FBE89DA1D5CB76900DA0C32 /* SpeakerLaunchRouterTests.m in Sources */,
@@ -9304,6 +9343,7 @@
 				9F7B82291D7DA9E9002E977A /* QuickActionAppDelegateTests.m in Sources */,
 				63D86BDD1C143FCE00986536 /* DateFormatterTests.m in Sources */,
 				66A1DD551D7E993A00998F6B /* MockObjectsFactory.m in Sources */,
+				63C31C0A1DDAF1B000AA51BD /* MessagesRouter.m in Sources */,
 				9FE139261D65CC2500D7BF44 /* SuggestServiceImplementationTests.m in Sources */,
 				9F78D75D1D59E778009DDCEA /* SpeakerObjectTransformerTests.m in Sources */,
 				66A1DD3C1D7E983100998F6B /* TagShowMediatorTests.m in Sources */,
@@ -9344,6 +9384,7 @@
 				631060231DC89850006870EB /* MailComposeControllerFactoryImplementation.m in Sources */,
 				662166521D4F4507000A1D11 /* ReportsSearchViewControllerTests.m in Sources */,
 				63F403001BCF85EE0086D030 /* RequestConfiguratorsAssemblyTests.m in Sources */,
+				63EB4DB21DDC7D4400548D88 /* MessagesPresenterTests.m in Sources */,
 				9F78D7721D5A005A009DDCEA /* LectureObjectTransformerTests.m in Sources */,
 				9FC1F6801D2838FA0070D9B5 /* EventListQueryTransformerTests.m in Sources */,
 				9FBE89DB1D5CB76900DA0C32 /* TabBarControllerFactoryImplementationTests.m in Sources */,
@@ -9371,6 +9412,7 @@
 				9FBE8A351D5F3CD500DA0C32 /* EventGalleryPresenterTests.m in Sources */,
 				66A1DD301D7E980D00998F6B /* TagAssemblyTests.m in Sources */,
 				9FBE89D81D5CB76900DA0C32 /* EventLaunchRouterTests.m in Sources */,
+				63C31C0C1DDAF1DD00AA51BD /* MessageExtensionTyphoonActivator.m in Sources */,
 				9F0A851F1BC185AA006F79FB /* TestCancellableOperation.m in Sources */,
 				9F0A85271BC185AA006F79FB /* ResponseMappingOperationTests.m in Sources */,
 				9F1830F91BC1464C000E21A5 /* ManagedObjectMappingProviderTests.m in Sources */,
@@ -9384,6 +9426,7 @@
 				2B429A711D4B5305004C005F /* ModelObjectGenerator.m in Sources */,
 				666C5C331D4F2AF6002D73D5 /* ReportsSearchPresenterTests.m in Sources */,
 				63C31BFD1DD9C10900AA51BD /* MessagesAppDelegateTests.m in Sources */,
+				6377140C1DDC8109009FF726 /* MessagesRouterTests.m in Sources */,
 				631CBA3B1C00935300E3EBA8 /* EventServiceTests.m in Sources */,
 				63F403B21BD0D4B40086D030 /* ResponseValidatorsAssemblyTests.m in Sources */,
 				9F78D7801D5A078F009DDCEA /* LectureChangeProviderFetchRequestFactoryTests.m in Sources */,
@@ -9409,7 +9452,9 @@
 				635E18CD1CA6C5E5005B8439 /* StubTestHelper.m in Sources */,
 				9F7B82301D7DABB3002E977A /* QuickActionUserActivityFactoryTests.m in Sources */,
 				631CBA7E1C02140600E3EBA8 /* RamblerLocationModuleAssemblyTests.m in Sources */,
+				63C31C091DDAF1A500AA51BD /* MessagesPresenter.m in Sources */,
 				63F613DF1CB111070002AEF0 /* EventDataDisplayManagerTests.m in Sources */,
+				63EB4DB01DDC742600548D88 /* MessagesInteractorTests.m in Sources */,
 				63F613E81CB111070002AEF0 /* SearchDataDisplayManagerTests.m in Sources */,
 				9F1830C31BC11DE7000E21A5 /* RCFJSONResponseDeserializerTests.m in Sources */,
 				9F0A85221BC185AA006F79FB /* TestErrorChainableOperation.m in Sources */,
@@ -9421,6 +9466,7 @@
 				631CBA731C020CCD00E3EBA8 /* EventCellObjectBuilderFactoryTests.m in Sources */,
 				9F78D7551D59DB89009DDCEA /* ContextStorageImplementationTests.m in Sources */,
 				63F8F2F51BF9FDBF000017F3 /* CompoundOperationBaseTests.m in Sources */,
+				63C31C151DDB126700AA51BD /* MessageExtensionAssembly.m in Sources */,
 				9FAB6A731D53914C0061F333 /* IndexerStateStorageTests.m in Sources */,
 				63F613DE1CB111070002AEF0 /* PastEventCellObjectBuilderTests.m in Sources */,
 				2B4F202A1D54E11F00C9891E /* SpeakerInfoCellObjectsBuilderTests.m in Sources */,
