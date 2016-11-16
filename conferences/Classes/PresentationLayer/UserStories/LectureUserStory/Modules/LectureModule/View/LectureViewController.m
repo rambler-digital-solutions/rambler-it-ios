@@ -74,8 +74,8 @@ static CGFloat kTableViewFooterHeight = 16.0f;
 
 #pragma mark - <LectureDataDisplayManagerDelegate>
 
-- (void)didTapVideoRecordCellWithVideoUrl:(NSURL *)videoUrl {
-    [self.output didTapVideoPreviewWithUrl:videoUrl];
+- (void)didTapVideoRecordCellWithVideoMaterial:(LectureMaterialPlainObject *)videoMaterial; {
+    [self.output didTapVideoPreviewWithVideoMaterial:videoMaterial];
 }
 
 - (void)didTapMaterialCellWithUrl:(NSURL *)materialUrl {

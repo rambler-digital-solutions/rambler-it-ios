@@ -57,14 +57,15 @@
     }
     
     // Video preview block
-    NSURL *videoUrl = [self videoUrlForLecture:lecture];
-    if (videoUrl) {
+    LectureMaterialPlainObject *videoMaterial = [self videoMaterialForLecture:lecture];
+    if (videoMaterial.link) {
         NSString *videoRecordTextTitle = NSLocalizedString(VideoRecordTableViewCellTitle, nil);
         LectureMaterialTitleTableViewCellObject *videoRecordTextLabelCellObject = [LectureMaterialTitleTableViewCellObject objectWithText:videoRecordTextTitle];
         [cellObjects addObject:videoRecordTextLabelCellObject];
-        
+        NSURL *videoUrl = [NSURL URLWithString:videoMaterial.link];
         NSURL *previewImageUrl = [self.thumbnailGenerator generateThumbnailWithVideoURL:videoUrl];
-        VideoRecordTableViewCellObject *videoRecordTableViewCellObject = [VideoRecordTableViewCellObject objectWithPreviewImageUrl:previewImageUrl videoUrl:videoUrl];
+        VideoRecordTableViewCellObject *videoRecordTableViewCellObject = [VideoRecordTableViewCellObject objectWithPreviewImageUrl:previewImageUrl
+                                                                                                                     videoMaterial:videoMaterial];
         [cellObjects addObject:videoRecordTableViewCellObject];
     }
     
@@ -94,10 +95,10 @@
 
 #pragma mark - Private methods
 
-- (NSURL *)videoUrlForLecture:(LecturePlainObject *)lecture {
+- (LectureMaterialPlainObject *)videoMaterialForLecture:(LecturePlainObject *)lecture {
     for (LectureMaterialPlainObject *material in lecture.lectureMaterials) {
         if ([material.type integerValue] == LectureMaterialVideoType) {
-            return [NSURL URLWithString:material.link];
+            return material;
         }
     }
     return nil;

@@ -24,7 +24,7 @@
 @interface VideoRecordTableViewCell ()
 
 @property (nonatomic, strong, readwrite) NSURL *previewImageUrl;
-@property (nonatomic, strong, readwrite) NSURL *videoUrl;
+@property (nonatomic, strong, readwrite) LectureMaterialPlainObject *videoMaterial;
 
 @end
 
@@ -33,19 +33,19 @@
 #pragma mark - Initialization
 
 - (instancetype)initWithPreviewImageUrl:(NSURL *)previewImageUrl
-                               videoUrl:(NSURL *)videoUrl {
+                          videoMaterial:(LectureMaterialPlainObject *)videoMaterial {
     self = [super init];
     if (self) {
         _previewImageUrl = previewImageUrl;
-        _videoUrl = videoUrl;
+        _videoMaterial = videoMaterial;
     }
     return self;
 }
 
 + (instancetype)objectWithPreviewImageUrl:(NSURL *)previewImageUrl
-                                 videoUrl:(NSURL *)videoUrl {
+                          videoMaterial:(LectureMaterialPlainObject *)videoMaterial {
     return [[self alloc] initWithPreviewImageUrl:previewImageUrl
-                                        videoUrl:videoUrl];
+                                 videoMaterial:videoMaterial];
 }
 
 #pragma mark - NICellObject methods
@@ -55,7 +55,8 @@
 }
 
 - (UINib *)cellNib {
-    return [UINib nibWithNibName:NSStringFromClass([VideoRecordTableViewCell class]) bundle:[NSBundle mainBundle]];
+    return [UINib nibWithNibName:NSStringFromClass([VideoRecordTableViewCell class])
+                          bundle:[NSBundle mainBundle]];
 }
 
 @end

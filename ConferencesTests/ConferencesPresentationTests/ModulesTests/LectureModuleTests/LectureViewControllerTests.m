@@ -153,13 +153,13 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
 
 - (void)testSuccessDidTapVideoPreview {
     // given
-    NSURL *testUrl = [NSURL URLWithString:@"rambler.ru"];
+    id testUrl = [NSURL URLWithString:@"rambler.ru"];
     
     // when
-    [self.viewController didTapVideoRecordCellWithVideoUrl:testUrl];
+    [self.viewController didTapVideoRecordCellWithVideoMaterial:testUrl];
     
     // then
-    OCMVerify([self.presenterMock didTapVideoPreviewWithUrl:testUrl]);
+    OCMVerify([self.presenterMock didTapVideoPreviewWithVideoMaterial:testUrl]);
 }
 
 - (void)testSuccessDidTapMaterialPreview {

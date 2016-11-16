@@ -23,6 +23,7 @@
 #import "LectureInteractorInput.h"
 #import "LectureRouterInput.h"
 #import "LecturePresenterStateStorage.h"
+#import "LectureMaterialPlainObject.h"
 #import "LecturePlainObject.h"
 #import "SpeakerPlainObject.h"
 
@@ -44,7 +45,8 @@
     [self.view configureViewWithLecture:lecture];
 }
 
-- (void)didTapVideoPreviewWithUrl:(NSURL *)videoUrl {
+- (void)didTapVideoPreviewWithVideoMaterial:(LectureMaterialPlainObject *)videoMaterial {
+    NSURL *videoUrl = [NSURL URLWithString:videoMaterial.link];
     BOOL isYouTube = [self.interactor checkIfVideoIsFromYouTube:videoUrl];
     if (isYouTube) {
         NSString *videoIdentifier = [self.interactor deriveVideoIdFromYouTubeUrl:videoUrl];

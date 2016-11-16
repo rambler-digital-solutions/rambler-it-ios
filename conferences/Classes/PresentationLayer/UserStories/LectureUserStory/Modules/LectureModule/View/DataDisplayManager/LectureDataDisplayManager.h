@@ -22,6 +22,7 @@
 #import "DataDisplayManager.h"
 
 @class LecturePlainObject;
+@class LectureMaterialPlainObject;
 @protocol LectureCellObjectsBuilder;
 @protocol LectureDataDisplayManagerDelegate;
 
@@ -43,7 +44,7 @@
  
  @param videoUrl Video URL
  */
-- (void)didTapVideoRecordCellWithVideoUrl:(NSURL *)videoUrl;
+- (void)didTapVideoRecordCellWithVideoMaterial:(LectureMaterialPlainObject *)videoMaterial;
 
 /**
  @author Egor Tolstoy

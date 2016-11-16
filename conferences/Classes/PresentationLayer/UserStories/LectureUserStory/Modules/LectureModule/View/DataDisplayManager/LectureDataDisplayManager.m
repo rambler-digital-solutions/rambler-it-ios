@@ -87,9 +87,7 @@
     @weakify(self);
     NIActionBlock videoRecordActionBlock = ^BOOL(VideoRecordTableViewCellObject *object, UIViewController *controller, NSIndexPath *indexPath) {
         @strongify(self);
-        NSURL *videoUrl = object.videoUrl;
-        
-        [self.delegate didTapVideoRecordCellWithVideoUrl:videoUrl];
+        [self.delegate didTapVideoRecordCellWithVideoMaterial:object.videoMaterial];
         return YES;
     };
     [self.tableViewActions attachToClass:[VideoRecordTableViewCellObject class]
