@@ -46,6 +46,12 @@
 }
 
 - (void)didTapVideoPreviewWithVideoMaterial:(LectureMaterialPlainObject *)videoMaterial {
+    if (videoMaterial.localURL.length > 0) {
+        NSURL *localUrl = [NSURL URLWithString:videoMaterial.localURL];
+        [self.router openLocalVideoPlayerModuleWithLocalURL:localUrl];
+        return;
+    }
+    
     NSURL *videoUrl = [NSURL URLWithString:videoMaterial.link];
     BOOL isYouTube = [self.interactor checkIfVideoIsFromYouTube:videoUrl];
     if (isYouTube) {
@@ -69,6 +75,16 @@
     NSArray *activitiyItems = [self.interactor obtainActivityItemsForLecture:lecture];
     
     [self.router openShareModuleWithActivityItems:activitiyItems];
+}
+
+- (void)didTapCacheVideoWithVideoMaterial:(LectureMaterialPlainObject *)videoMaterial {
+    if (videoMaterial.localURL.length > 0) {
+        // удалить
+    }
+    else {
+        // скачать
+        self.interactor
+    }
 }
 
 @end

@@ -59,4 +59,6 @@ static NSString *const LectureModuleToSpeakerInfoModuleSegue = @"LectureModuleTo
     [((LectureViewController *)self.transitionHandler).navigationController presentViewController:activityViewController animated:true completion:nil];
 }
 
+- (void)openLocalVideoPlayerModuleWithLocalURL:(NSURL *)localURL {
+}
 @end

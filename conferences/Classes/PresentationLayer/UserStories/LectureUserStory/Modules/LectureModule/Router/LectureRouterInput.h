@@ -58,5 +58,7 @@
  */
 - (void)openYouTubeVideoPlayerModuleWithIdentifier:(NSString *)identifier;
 
+- (void)openLocalVideoPlayerModuleWithLocalURL:(NSURL *)localURL;
+
 @end
 

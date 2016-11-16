@@ -21,6 +21,7 @@
 #import <Foundation/Foundation.h>
 
 @class LecturePlainObject;
+@class LectureMaterialPlainObject;
 
 @protocol LectureInteractorInput <NSObject>
 
@@ -65,6 +66,9 @@
  @return YouTube video identifier
  */
 - (NSString *)deriveVideoIdFromYouTubeUrl:(NSURL *)videoUrl;
+
+- (void)downloadVideoToCacheWithLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial;
+- (void)removeVideoInCacheWithLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial;
 
 @end
 
