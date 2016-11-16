@@ -3,34 +3,12 @@
 
 #import "_EventModelObject.h"
 
-const struct EventModelObjectAttributes EventModelObjectAttributes = {
-	.endDate = @"endDate",
-	.eventDescription = @"eventDescription",
-	.eventId = @"eventId",
-	.eventSubtitle = @"eventSubtitle",
-	.eventType = @"eventType",
-	.imageUrl = @"imageUrl",
-	.lastVisitDate = @"lastVisitDate",
-	.liveStreamLink = @"liveStreamLink",
-	.name = @"name",
-	.startDate = @"startDate",
-	.timePadID = @"timePadID",
-	.twitterTag = @"twitterTag",
-};
-
-const struct EventModelObjectRelationships EventModelObjectRelationships = {
-	.lectures = @"lectures",
-	.metaEvent = @"metaEvent",
-	.registrationQuestions = @"registrationQuestions",
-	.tech = @"tech",
-};
-
 @implementation EventModelObjectID
 @end
 
 @implementation _EventModelObject
 
-+ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
++ (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_ {
 	NSParameterAssert(moc_);
 	return [NSEntityDescription insertNewObjectForEntityForName:@"Event" inManagedObjectContext:moc_];
 }
@@ -76,7 +54,7 @@ const struct EventModelObjectRelationships EventModelObjectRelationships = {
 }
 
 - (void)setEventTypeValue:(int32_t)value_ {
-	[self setEventType:[NSNumber numberWithInt:value_]];
+	[self setEventType:@(value_)];
 }
 
 - (int32_t)primitiveEventTypeValue {
@@ -85,7 +63,7 @@ const struct EventModelObjectRelationships EventModelObjectRelationships = {
 }
 
 - (void)setPrimitiveEventTypeValue:(int32_t)value_ {
-	[self setPrimitiveEventType:[NSNumber numberWithInt:value_]];
+	[self setPrimitiveEventType:@(value_)];
 }
 
 @dynamic imageUrl;
@@ -104,10 +82,10 @@ const struct EventModelObjectRelationships EventModelObjectRelationships = {
 
 @dynamic lectures;
 
-- (NSMutableOrderedSet*)lecturesSet {
+- (NSMutableOrderedSet<LectureModelObject*>*)lecturesSet {
 	[self willAccessValueForKey:@"lectures"];
 
-	NSMutableOrderedSet *result = (NSMutableOrderedSet*)[self mutableOrderedSetValueForKey:@"lectures"];
+	NSMutableOrderedSet<LectureModelObject*> *result = (NSMutableOrderedSet<LectureModelObject*>*)[self mutableOrderedSetValueForKey:@"lectures"];
 
 	[self didAccessValueForKey:@"lectures"];
 	return result;
@@ -117,10 +95,10 @@ const struct EventModelObjectRelationships EventModelObjectRelationships = {
 
 @dynamic registrationQuestions;
 
-- (NSMutableSet*)registrationQuestionsSet {
+- (NSMutableSet<RegistrationQuestionModelObject*>*)registrationQuestionsSet {
 	[self willAccessValueForKey:@"registrationQuestions"];
 
-	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"registrationQuestions"];
+	NSMutableSet<RegistrationQuestionModelObject*> *result = (NSMutableSet<RegistrationQuestionModelObject*>*)[self mutableSetValueForKey:@"registrationQuestions"];
 
 	[self didAccessValueForKey:@"registrationQuestions"];
 	return result;
@@ -131,10 +109,10 @@ const struct EventModelObjectRelationships EventModelObjectRelationships = {
 @end
 
 @implementation _EventModelObject (LecturesCoreDataGeneratedAccessors)
-- (void)addLectures:(NSOrderedSet*)value_ {
+- (void)addLectures:(NSOrderedSet<LectureModelObject*>*)value_ {
 	[self.lecturesSet unionOrderedSet:value_];
 }
-- (void)removeLectures:(NSOrderedSet*)value_ {
+- (void)removeLectures:(NSOrderedSet<LectureModelObject*>*)value_ {
 	[self.lecturesSet minusOrderedSet:value_];
 }
 - (void)addLecturesObject:(LectureModelObject*)value_ {
@@ -187,6 +165,60 @@ const struct EventModelObjectRelationships EventModelObjectRelationships = {
     [tmpOrderedSet replaceObjectsAtIndexes:indexes withObjects:value];
     [self setPrimitiveValue:tmpOrderedSet forKey:@"lectures"];
     [self didChange:NSKeyValueChangeReplacement valuesAtIndexes:indexes forKey:@"lectures"];
+}
+@end
+
+@implementation EventModelObjectAttributes 
++ (NSString *)endDate {
+	return @"endDate";
+}
++ (NSString *)eventDescription {
+	return @"eventDescription";
+}
++ (NSString *)eventId {
+	return @"eventId";
+}
++ (NSString *)eventSubtitle {
+	return @"eventSubtitle";
+}
++ (NSString *)eventType {
+	return @"eventType";
+}
++ (NSString *)imageUrl {
+	return @"imageUrl";
+}
++ (NSString *)lastVisitDate {
+	return @"lastVisitDate";
+}
++ (NSString *)liveStreamLink {
+	return @"liveStreamLink";
+}
++ (NSString *)name {
+	return @"name";
+}
++ (NSString *)startDate {
+	return @"startDate";
+}
++ (NSString *)timePadID {
+	return @"timePadID";
+}
++ (NSString *)twitterTag {
+	return @"twitterTag";
+}
+@end
+
+@implementation EventModelObjectRelationships 
++ (NSString *)lectures {
+	return @"lectures";
+}
++ (NSString *)metaEvent {
+	return @"metaEvent";
+}
++ (NSString *)registrationQuestions {
+	return @"registrationQuestions";
+}
++ (NSString *)tech {
+	return @"tech";
 }
 @end
 

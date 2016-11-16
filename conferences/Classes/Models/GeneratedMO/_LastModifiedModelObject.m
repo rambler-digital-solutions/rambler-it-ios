@@ -3,18 +3,12 @@
 
 #import "_LastModifiedModelObject.h"
 
-const struct LastModifiedModelObjectAttributes LastModifiedModelObjectAttributes = {
-	.lastModifiedDate = @"lastModifiedDate",
-	.lastModifiedId = @"lastModifiedId",
-	.name = @"name",
-};
-
 @implementation LastModifiedModelObjectID
 @end
 
 @implementation _LastModifiedModelObject
 
-+ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
++ (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_ {
 	NSParameterAssert(moc_);
 	return [NSEntityDescription insertNewObjectForEntityForName:@"LastModified" inManagedObjectContext:moc_];
 }
@@ -44,5 +38,17 @@ const struct LastModifiedModelObjectAttributes LastModifiedModelObjectAttributes
 
 @dynamic name;
 
+@end
+
+@implementation LastModifiedModelObjectAttributes 
++ (NSString *)lastModifiedDate {
+	return @"lastModifiedDate";
+}
++ (NSString *)lastModifiedId {
+	return @"lastModifiedId";
+}
++ (NSString *)name {
+	return @"name";
+}
 @end
 

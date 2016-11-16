@@ -3,26 +3,12 @@
 
 #import "_LectureModelObject.h"
 
-const struct LectureModelObjectAttributes LectureModelObjectAttributes = {
-	.favourite = @"favourite",
-	.lectureDescription = @"lectureDescription",
-	.lectureId = @"lectureId",
-	.name = @"name",
-};
-
-const struct LectureModelObjectRelationships LectureModelObjectRelationships = {
-	.event = @"event",
-	.lectureMaterials = @"lectureMaterials",
-	.speaker = @"speaker",
-	.tags = @"tags",
-};
-
 @implementation LectureModelObjectID
 @end
 
 @implementation _LectureModelObject
 
-+ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
++ (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_ {
 	NSParameterAssert(moc_);
 	return [NSEntityDescription insertNewObjectForEntityForName:@"Lecture" inManagedObjectContext:moc_];
 }
@@ -60,7 +46,7 @@ const struct LectureModelObjectRelationships LectureModelObjectRelationships = {
 }
 
 - (void)setFavouriteValue:(BOOL)value_ {
-	[self setFavourite:[NSNumber numberWithBool:value_]];
+	[self setFavourite:@(value_)];
 }
 
 - (BOOL)primitiveFavouriteValue {
@@ -69,7 +55,7 @@ const struct LectureModelObjectRelationships LectureModelObjectRelationships = {
 }
 
 - (void)setPrimitiveFavouriteValue:(BOOL)value_ {
-	[self setPrimitiveFavourite:[NSNumber numberWithBool:value_]];
+	[self setPrimitiveFavourite:@(value_)];
 }
 
 @dynamic lectureDescription;
@@ -82,10 +68,10 @@ const struct LectureModelObjectRelationships LectureModelObjectRelationships = {
 
 @dynamic lectureMaterials;
 
-- (NSMutableSet*)lectureMaterialsSet {
+- (NSMutableSet<LectureMaterialModelObject*>*)lectureMaterialsSet {
 	[self willAccessValueForKey:@"lectureMaterials"];
 
-	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"lectureMaterials"];
+	NSMutableSet<LectureMaterialModelObject*> *result = (NSMutableSet<LectureMaterialModelObject*>*)[self mutableSetValueForKey:@"lectureMaterials"];
 
 	[self didAccessValueForKey:@"lectureMaterials"];
 	return result;
@@ -95,14 +81,44 @@ const struct LectureModelObjectRelationships LectureModelObjectRelationships = {
 
 @dynamic tags;
 
-- (NSMutableSet*)tagsSet {
+- (NSMutableSet<TagModelObject*>*)tagsSet {
 	[self willAccessValueForKey:@"tags"];
 
-	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"tags"];
+	NSMutableSet<TagModelObject*> *result = (NSMutableSet<TagModelObject*>*)[self mutableSetValueForKey:@"tags"];
 
 	[self didAccessValueForKey:@"tags"];
 	return result;
 }
 
+@end
+
+@implementation LectureModelObjectAttributes 
++ (NSString *)favourite {
+	return @"favourite";
+}
++ (NSString *)lectureDescription {
+	return @"lectureDescription";
+}
++ (NSString *)lectureId {
+	return @"lectureId";
+}
++ (NSString *)name {
+	return @"name";
+}
+@end
+
+@implementation LectureModelObjectRelationships 
++ (NSString *)event {
+	return @"event";
+}
++ (NSString *)lectureMaterials {
+	return @"lectureMaterials";
+}
++ (NSString *)speaker {
+	return @"speaker";
+}
++ (NSString *)tags {
+	return @"tags";
+}
 @end
 
