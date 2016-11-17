@@ -38,4 +38,15 @@
  */
 - (UITabBarController *)obtainPreconfiguredTabBarController;
 
+/**
+ @author Egor Tolstoy
+ 
+ The method returns a configured UITabBarController with tabs and new searchController
+ 
+ @return UITabBarController
+ */
+- (void)configureTabBarController:(UITabBarController *)tabBarController
+                         withControllerIdentifier:(NSString *)identifier
+                                          atIndex:(NSInteger)index;
+
 @end

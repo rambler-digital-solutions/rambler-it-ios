@@ -96,7 +96,7 @@
         <!--Поиск-->
         <scene sceneID="kNR-4e-dMq">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="24b-F2-UUq" customClass="RCNavigationController" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SearchViewController" automaticallyAdjustsScrollViewInsets="NO" id="24b-F2-UUq" customClass="RCNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Поиск" image="search-tabbar-icon" id="YQW-lF-LbB"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="EGp-eR-BLf">

@@ -51,4 +51,14 @@
     return tabBarController;
 }
 
+- (void)configureTabBarController:(UITabBarController *)tabBarController
+                         withControllerIdentifier:(NSString *)identifier
+                                          atIndex:(NSInteger)index {
+    UINavigationController *navigationViewController = [self.storyboard instantiateViewControllerWithIdentifier:identifier];
+    NSMutableArray *controllers = [tabBarController.viewControllers mutableCopy];
+    [controllers replaceObjectAtIndex:index
+                           withObject:navigationViewController];
+    [tabBarController setViewControllers:[controllers copy]];
+}
+
 @end

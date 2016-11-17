@@ -57,12 +57,14 @@ static NSUInteger const kSearchTabIndex = 2;
     if (!tabBarController) {
         tabBarController = [self.tabBarControllerFactory obtainPreconfiguredTabBarController];
     }
-    if (!self.window.rootViewController) {
-        self.window.rootViewController = tabBarController;
-        [self.window makeKeyAndVisible];
-    }
-    tabBarController.selectedIndex = kSearchTabIndex;
+    self.window.rootViewController = tabBarController;
+    [self.window makeKeyAndVisible];
     
+    [self.tabBarControllerFactory configureTabBarController:tabBarController
+                                   withControllerIdentifier:NSStringFromClass([SearchViewController class])
+                                                    atIndex:kSearchTabIndex];
+    
+    tabBarController.selectedIndex = kSearchTabIndex;
     SearchViewController *searchViewController = (SearchViewController *)[(id)[tabBarController selectedViewController] topViewController];
     [searchViewController.output didChangeSearchBarWithSearchTerm:@"iOS"];
 }
