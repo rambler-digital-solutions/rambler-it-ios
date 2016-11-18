@@ -81,6 +81,10 @@
     self.searchBar.text = text;
 }
 
+- (void)startEditingSearchBar {
+    [self.searchBar becomeFirstResponder];
+}
+
 #pragma mark - SearchBarDelegate
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {

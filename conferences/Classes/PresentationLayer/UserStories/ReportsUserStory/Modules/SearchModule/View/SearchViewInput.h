@@ -39,6 +39,7 @@
  @param text Search text
  */
 - (void)updateSearchBarWithText:(NSString *)text;
+- (void)startEditingSearchBar;
 
 /**
  @author Zinovyev Konstantin

@@ -33,7 +33,7 @@
         return NO;
     }
     
-    [self.router openScreenWithData:@""];
+    [self.router openScreenWithData:userActivity.userInfo[CSSearchQueryString]];
     
     return YES;
 }

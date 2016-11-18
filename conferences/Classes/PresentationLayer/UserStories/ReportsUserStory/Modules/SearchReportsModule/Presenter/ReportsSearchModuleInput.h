@@ -23,7 +23,6 @@
 
 @protocol ReportsSearchModuleInput <RamblerViperModuleInput>
 
-
 /**
  @author Zinovyev Konstantin
  
@@ -32,6 +31,7 @@
  @param searchText текст в поле поиска
  */
 - (void)updateModuleWithSearchTerm:(NSString *)searchText;
+- (void)configureReportsSearchModuleWithSearchString:(NSString *)searchString;
 
 /**
  @author Zinovyev Konstantin

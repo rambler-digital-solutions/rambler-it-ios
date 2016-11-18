@@ -39,7 +39,8 @@
  
  @param moduleOutput Report list presenter
  */
-- (void)configureReportsSearchModuleWithModuleOutput:(id<ReportsSearchModuleOutput>)moduleOutput;
+- (void)configureReportsSearchModuleWithSearchString:(NSString *)searchString
+                                        moduleOutput:(id<ReportsSearchModuleOutput>)moduleOutput;
 
 @end
 

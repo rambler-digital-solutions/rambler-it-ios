@@ -38,8 +38,10 @@ static NSString *const kReportListModuleToReportsSearchModuleSegue = @"ReportLis
     }];
 }
 
-- (void)configureReportsSearchModuleWithModuleOutput:(id<ReportsSearchModuleOutput>)moduleOutput {
+- (void)configureReportsSearchModuleWithSearchString:(NSString *)searchString
+                                        moduleOutput:(id<ReportsSearchModuleOutput>)moduleOutput {
     [[self.transitionHandler openModuleUsingSegue:kReportListModuleToReportsSearchModuleSegue] thenChainUsingBlock:^id<ReportsSearchModuleOutput>(id<ReportsSearchModuleInput> moduleInput) {
+        [moduleInput configureReportsSearchModuleWithSearchString:searchString];
         return moduleOutput;
     }];
 }
