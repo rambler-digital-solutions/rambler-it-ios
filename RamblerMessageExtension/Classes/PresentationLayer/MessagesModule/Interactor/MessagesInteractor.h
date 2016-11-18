@@ -27,7 +27,7 @@
 @protocol ROSPonsomizer;
 @protocol ObjectTransformer;
 
-@interface MessagesInteractor : NSObject <EventListInteractorInput, MessagesInteractorInput>
+@interface MessagesInteractor : NSObject <MessagesInteractorInput>
 
 @property (nonatomic, weak) id <EventListInteractorOutput> output;
 @property (nonatomic, strong) id <EventService> eventService;

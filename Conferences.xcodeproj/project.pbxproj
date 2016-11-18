@@ -278,7 +278,6 @@
 		63C31BFD1DD9C10900AA51BD /* MessagesAppDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C31BFC1DD9C10900AA51BD /* MessagesAppDelegateTests.m */; };
 		63C31C001DD9C14A00AA51BD /* MessagesUserActivityFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C31BFF1DD9C14A00AA51BD /* MessagesUserActivityFactoryTests.m */; };
 		63C31C031DD9FE4C00AA51BD /* MessagesLaunchHandlerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C31C021DD9FE4C00AA51BD /* MessagesLaunchHandlerTests.m */; };
-		63C31C061DDAEFA000AA51BD /* MessagesModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C31C051DDAEFA000AA51BD /* MessagesModuleAssemblyTests.m */; };
 		63C31C081DDAF19700AA51BD /* MessagesInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6373829F1DD5EA17004246EC /* MessagesInteractor.m */; };
 		63C31C091DDAF1A500AA51BD /* MessagesPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6373829C1DD5E12F004246EC /* MessagesPresenter.m */; };
 		63C31C0A1DDAF1B000AA51BD /* MessagesRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 637382981DD5D9C0004246EC /* MessagesRouter.m */; };
@@ -1044,7 +1043,6 @@
 		63C31BFC1DD9C10900AA51BD /* MessagesAppDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesAppDelegateTests.m; path = MessagesAppDelegate/MessagesAppDelegateTests.m; sourceTree = "<group>"; };
 		63C31BFF1DD9C14A00AA51BD /* MessagesUserActivityFactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesUserActivityFactoryTests.m; path = MessagesAppDelegate/MessagesUserActivityFactory/MessagesUserActivityFactoryTests.m; sourceTree = "<group>"; };
 		63C31C021DD9FE4C00AA51BD /* MessagesLaunchHandlerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesLaunchHandlerTests.m; path = MessagesLaunchHandler/MessagesLaunchHandlerTests.m; sourceTree = "<group>"; };
-		63C31C051DDAEFA000AA51BD /* MessagesModuleAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesModuleAssemblyTests.m; path = MessagesModuleAssemblyTests/MessagesModuleAssemblyTests.m; sourceTree = "<group>"; };
 		63D7460D1C8B0D5200E3A381 /* EventStoreService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventStoreService.h; sourceTree = "<group>"; };
 		63D7460E1C8B0D5200E3A381 /* EventStoreService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventStoreService.m; sourceTree = "<group>"; };
 		63D86BD81C1439D800986536 /* DateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateFormatter.h; sourceTree = "<group>"; };
@@ -2398,7 +2396,6 @@
 		631CBA661C020CCD00E3EBA8 /* EventsUserStoryTests */ = {
 			isa = PBXGroup;
 			children = (
-				63C31C041DDAEF7200AA51BD /* MessagesModuleAssemblyTests */,
 				635E18D21CA6CDD8005B8439 /* EventHeaderModuleAssemblyTests */,
 				635E18BB1CA69EF2005B8439 /* LectureModuleAssemblyTests */,
 				635E18BC1CA69EF2005B8439 /* SpeakerInfoModuleAssemblyTests */,
@@ -3123,14 +3120,6 @@
 				63C31C021DD9FE4C00AA51BD /* MessagesLaunchHandlerTests.m */,
 			);
 			name = MessagesLaunchHandler;
-			sourceTree = "<group>";
-		};
-		63C31C041DDAEF7200AA51BD /* MessagesModuleAssemblyTests */ = {
-			isa = PBXGroup;
-			children = (
-				63C31C051DDAEFA000AA51BD /* MessagesModuleAssemblyTests.m */,
-			);
-			name = MessagesModuleAssemblyTests;
 			sourceTree = "<group>";
 		};
 		63D7460B1C8B0CF600E3A381 /* EventStoreService */ = {
@@ -9326,7 +9315,6 @@
 				63F613D81CB111070002AEF0 /* EventListInteractorTests.m in Sources */,
 				63F613E61CB111070002AEF0 /* LectureRouterTests.m in Sources */,
 				63C31C001DD9C14A00AA51BD /* MessagesUserActivityFactoryTests.m in Sources */,
-				63C31C061DDAEFA000AA51BD /* MessagesModuleAssemblyTests.m in Sources */,
 				662166501D4F4507000A1D11 /* ReportsSearchInteractorTests.m in Sources */,
 				63F613EF1CB111070002AEF0 /* SpeakerInfoViewControllerTests.m in Sources */,
 				9FBE89DA1D5CB76900DA0C32 /* SpeakerLaunchRouterTests.m in Sources */,
