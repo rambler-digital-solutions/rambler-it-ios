@@ -22,6 +22,10 @@
 
 #import <UIKit/UIKit.h>
 
+static NSString *const RIDEventGalleryNavigationControllerIdentifier = @"EventGalleryNavigationController";
+static NSString *const RIDLocationNavigationControllerIdentifier = @"LocationNavigationController";
+static NSString *const RIDSearchNavigationControllerIdentifier = @"SearchNavigationController";
+
 @interface TabBarControllerFactoryImplementation ()
 
 @property (nonatomic, strong) UIStoryboard *storyboard;
@@ -51,14 +55,28 @@
     return tabBarController;
 }
 
-- (void)configureTabBarController:(UITabBarController *)tabBarController
-                         withControllerIdentifier:(NSString *)identifier
-                                          atIndex:(NSInteger)index {
+- (void)updateControllerInTabBarController:(UITabBarController *)tabBarController
+                                   atIndex:(NSInteger)index {
+    NSDictionary *identifiers = [self identifierControllersNames];
+    NSString *identifier = identifiers[@(index)];
+    if (!identifier) {
+        return;
+    }
     UINavigationController *navigationViewController = [self.storyboard instantiateViewControllerWithIdentifier:identifier];
     NSMutableArray *controllers = [tabBarController.viewControllers mutableCopy];
     [controllers replaceObjectAtIndex:index
                            withObject:navigationViewController];
     [tabBarController setViewControllers:[controllers copy]];
+}
+
+#pragma mark - Private methods
+
+- (NSDictionary *)identifierControllersNames {
+    return @{
+             @0 : RIDEventGalleryNavigationControllerIdentifier,
+             @1 : RIDLocationNavigationControllerIdentifier,
+             @2 : RIDSearchNavigationControllerIdentifier
+             };
 }
 
 @end

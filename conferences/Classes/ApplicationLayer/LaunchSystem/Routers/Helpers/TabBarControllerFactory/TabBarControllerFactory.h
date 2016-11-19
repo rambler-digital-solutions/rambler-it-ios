@@ -45,8 +45,7 @@
  
  @return UITabBarController
  */
-- (void)configureTabBarController:(UITabBarController *)tabBarController
-                         withControllerIdentifier:(NSString *)identifier
-                                          atIndex:(NSInteger)index;
+- (void)updateControllerInTabBarController:(UITabBarController *)tabBarController
+                                   atIndex:(NSInteger)index;
 
 @end

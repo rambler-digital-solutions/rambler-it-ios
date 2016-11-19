@@ -29,11 +29,13 @@
 #pragma mark - <UIApplicationDelegate>
 
 - (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray * _Nullable))restorationHandler {
+    
     if (![userActivity.activityType isEqualToString:CSQueryContinuationActionType]) {
         return NO;
     }
     
-    [self.router openScreenWithData:userActivity.userInfo[CSSearchQueryString]];
+    NSString *searchString = userActivity.userInfo[CSSearchQueryString];
+    [self.router openScreenWithData:searchString];
     
     return YES;
 }
