@@ -1,7 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G26a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -10,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="162"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="161.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="161"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ypb-QJ-BP6">
@@ -21,9 +26,31 @@
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="play-icon-small" translatesAutoresizingMaskIntoConstraints="NO" id="32W-xN-HrW">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play-icon-small" translatesAutoresizingMaskIntoConstraints="NO" id="32W-xN-HrW">
                         <rect key="frame" x="150" y="67" width="20" height="27"/>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BiA-g5-6va">
+                        <rect key="frame" x="268" y="8" width="44" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="44" id="g7Z-9y-Ec3"/>
+                            <constraint firstAttribute="height" constant="44" id="wao-HE-yoO"/>
+                        </constraints>
+                        <state key="normal" title="➖"/>
+                        <connections>
+                            <action selector="didTapRemoveFromCacheVideoMaterial:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Acl-2C-y6X"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oqb-op-wg4">
+                        <rect key="frame" x="268" y="8" width="44" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="44" id="2hE-wf-sOb"/>
+                            <constraint firstAttribute="height" constant="44" id="XHb-gY-6Tf"/>
+                        </constraints>
+                        <state key="normal" title="➕"/>
+                        <connections>
+                            <action selector="didTapDownloadToCacheVideoMaterial:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="jVc-H7-e1a"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Ypb-QJ-BP6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="5M6-CA-icy"/>
@@ -34,8 +61,12 @@
                     <constraint firstItem="32W-xN-HrW" firstAttribute="centerX" secondItem="Ypb-QJ-BP6" secondAttribute="centerX" id="H3k-6V-cTM"/>
                     <constraint firstAttribute="trailing" secondItem="Ypb-QJ-BP6" secondAttribute="trailing" id="OA6-dS-ubl"/>
                     <constraint firstItem="ELo-Uk-S5K" firstAttribute="centerX" secondItem="Ypb-QJ-BP6" secondAttribute="centerX" id="PKR-Ae-g9c"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Oqb-op-wg4" secondAttribute="trailing" id="SWY-xj-s1e"/>
+                    <constraint firstItem="BiA-g5-6va" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="TbJ-Ve-JWX"/>
+                    <constraint firstItem="Oqb-op-wg4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="We0-Mj-LnD"/>
                     <constraint firstItem="Ypb-QJ-BP6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="ojs-Jc-V8U"/>
                     <constraint firstItem="32W-xN-HrW" firstAttribute="centerY" secondItem="Ypb-QJ-BP6" secondAttribute="centerY" id="qdo-EE-Prz"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="BiA-g5-6va" secondAttribute="trailing" id="uCr-7P-wUu"/>
                     <constraint firstItem="Ypb-QJ-BP6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="uTS-vS-UXW"/>
                     <constraint firstItem="Ypb-QJ-BP6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="wX8-4a-QRV"/>
                 </constraints>
@@ -49,8 +80,10 @@
             </tableViewCellContentView>
             <inset key="separatorInset" minX="9999" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
+                <outlet property="downloadButton" destination="Oqb-op-wg4" id="6b0-Zo-quv"/>
                 <outlet property="playIconImageView" destination="32W-xN-HrW" id="j3Q-CX-xEh"/>
                 <outlet property="previewImageView" destination="Ypb-QJ-BP6" id="XGw-AQ-QXN"/>
+                <outlet property="removeButton" destination="BiA-g5-6va" id="huy-rl-uHc"/>
                 <outlet property="titleLabel" destination="ELo-Uk-S5K" id="pRG-vh-4EK"/>
             </connections>
             <point key="canvasLocation" x="348" y="387"/>

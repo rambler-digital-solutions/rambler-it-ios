@@ -23,18 +23,19 @@
 #import "LectureViewInput.h"
 #import "LectureDataDisplayManager.h"
 #import "LectureInfoTableViewCellActionProtocol.h"
+#import "LectureMaterialCacheDelegate.h"
 
 @protocol LectureViewOutput;
 @protocol SpeakerShortInfoModuleInput;
 @class LectureDataDisplayManager;
 @class CollectionViewContentCellAnimator;
 
-@interface LectureViewController : UIViewController <LectureViewInput, LectureDataDisplayManagerDelegate, LectureInfoTableViewCellActionProtocol>
+@interface LectureViewController : UIViewController <LectureViewInput, LectureDataDisplayManagerDelegate, LectureInfoTableViewCellActionProtocol, LectureMaterialCacheDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView <SpeakerShortInfoModuleInput> *speakerShortInfoView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-@property (strong, nonatomic) id<LectureViewOutput> output;
+@property (strong, nonatomic) id<LectureViewOutput, LectureMaterialCacheDelegate> output;
 @property (nonatomic, strong) CollectionViewContentCellAnimator *animator;
 @property (strong, nonatomic) LectureDataDisplayManager *dataDisplayManager;
 

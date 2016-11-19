@@ -21,20 +21,40 @@
 #import "VideoRecordTableViewCell.h"
 #import "VideoRecordTableViewCellObject.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "Extensions/UIResponder+CDProxying/UIResponder+CDProxying.h"
+#import "LectureMaterialPlainObject.h"
+#import "LectureMaterialCacheDelegate.h"
 
 static CGFloat const kVideoRecordTableViewCellHeight = 168.0f;
 static NSString *const kPlaceholderImageName = @"placeholder";
 
+@interface VideoRecordTableViewCell ()
+
+@property (nonatomic, weak) id <LectureMaterialCacheDelegate> actionProxy;
+@property (nonatomic, strong) LectureMaterialPlainObject *videoMaterial;
+
+@end
+
 @implementation VideoRecordTableViewCell
+
+- (void)didMoveToSuperview {
+    [super didMoveToSuperview];
+    self.actionProxy = (id<LectureMaterialCacheDelegate>)[self cd_proxyForProtocol:@protocol(LectureMaterialCacheDelegate)];
+}
 
 #pragma mark - NICell methods
 
 - (BOOL)shouldUpdateCellWithObject:(VideoRecordTableViewCellObject *)object {
+    self.videoMaterial = object.videoMaterial;
     if (object.previewImageUrl) {
         [self setupPreviewStateWithObject:object];
     } else {
         [self setupNoVideoStateWithObject:object];
     }
+    BOOL isMaterialInCache = object.videoMaterial.localURL.length > 0;
+    [self.removeButton setHidden:!isMaterialInCache];
+    [self.downloadButton setHidden:isMaterialInCache];
+    
     return YES;
 }
 
@@ -55,6 +75,14 @@ static NSString *const kPlaceholderImageName = @"placeholder";
     self.titleLabel.hidden = NO;
     self.playIconImageView.hidden = YES;
     self.previewImageView.image = [UIImage imageNamed:kPlaceholderImageName];
+}
+
+- (IBAction)didTapRemoveFromCacheVideoMaterial:(id)sender {
+    [self.actionProxy didTapRemoveFromCacheLectureMaterial:self.videoMaterial];
+}
+
+- (IBAction)didTapDownloadToCacheVideoMaterial:(id)sender {
+    [self.actionProxy didTapDownloadToCacheLectureMaterial:self.videoMaterial];
 }
 
 @end

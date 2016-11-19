@@ -77,14 +77,13 @@
     [self.router openShareModuleWithActivityItems:activitiyItems];
 }
 
-- (void)didTapCacheVideoWithVideoMaterial:(LectureMaterialPlainObject *)videoMaterial {
-    if (videoMaterial.localURL.length > 0) {
-        // удалить
-    }
-    else {
-        // скачать
-        self.interactor
-    }
+#pragma mark - LectureMaterialCacheDelegate
+- (IBAction)didTapRemoveFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial {
+    [self.interactor removeVideoFromCacheWithLectureMaterial:lectureMaterial];
+}
+
+- (IBAction)didTapDownloadToCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial {
+    [self.interactor downloadVideoToCacheWithLectureMaterial:lectureMaterial];
 }
 
 @end

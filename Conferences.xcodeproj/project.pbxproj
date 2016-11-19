@@ -1089,6 +1089,7 @@
 		667050591D464BF200DD9D6E /* ReportsSearchCellObjectsDirector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportsSearchCellObjectsDirector.h; path = SearchReportsModule/View/ReportsSearchDataDisplayManager/ReportsSearchCellObjectsBuilder/ReportsSearchCellObjectsDirector.h; sourceTree = "<group>"; };
 		66764D021D4B636B00EF9D58 /* ReportsSearchViewAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportsSearchViewAnimator.h; path = SearchReportsModule/View/ReportSearchViewAnimator/ReportsSearchViewAnimator.h; sourceTree = "<group>"; };
 		66764D031D4B636B00EF9D58 /* ReportsSearchViewAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportsSearchViewAnimator.m; path = SearchReportsModule/View/ReportSearchViewAnimator/ReportsSearchViewAnimator.m; sourceTree = "<group>"; };
+		669D94451DE0C6C200589AC2 /* LectureMaterialCacheDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LectureMaterialCacheDelegate.h; sourceTree = "<group>"; };
 		66A1DD2E1D7E980D00998F6B /* TagAssembly_Testable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagAssembly_Testable.h; path = TagModuleTests/Assembly/TagAssembly_Testable.h; sourceTree = "<group>"; };
 		66A1DD2F1D7E980D00998F6B /* TagAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagAssemblyTests.m; path = TagModuleTests/Assembly/TagAssemblyTests.m; sourceTree = "<group>"; };
 		66A1DD311D7E981500998F6B /* TagInteractorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagInteractorTests.m; path = TagModuleTests/Interactor/TagInteractorTests.m; sourceTree = "<group>"; };
@@ -3462,6 +3463,7 @@
 				63F6131E1CB00A220002AEF0 /* LectureViewController.m */,
 				63F6131F1CB00A220002AEF0 /* LectureViewInput.h */,
 				63F613201CB00A220002AEF0 /* LectureViewOutput.h */,
+				669D94451DE0C6C200589AC2 /* LectureMaterialCacheDelegate.h */,
 			);
 			path = View;
 			sourceTree = "<group>";

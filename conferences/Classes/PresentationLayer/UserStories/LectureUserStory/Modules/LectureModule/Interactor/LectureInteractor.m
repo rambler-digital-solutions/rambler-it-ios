@@ -28,6 +28,7 @@
 
 #import "LecturePlainObject.h"
 #import "SpeakerPlainObject.h"
+#import "LectureMaterialPlainObject.h"
 
 static NSString *const kYouTubeValidationString = @"youtu";
 
@@ -54,6 +55,15 @@ static NSString *const kYouTubeValidationString = @"youtu";
 
 - (NSString *)deriveVideoIdFromYouTubeUrl:(NSURL *)videoUrl {
     return [self.deriviator deriveIdentifierFromUrl:videoUrl];
+}
+
+- (void)downloadVideoToCacheWithLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial {
+
+}
+- (void)removeVideoFromCacheWithLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial {
+    if (lectureMaterial.localURL.length == 0) {
+        return;
+    }
 }
 
 @end

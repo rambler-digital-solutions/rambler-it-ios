@@ -41,7 +41,8 @@ static CGFloat kTableViewFooterHeight = 16.0f;
 	[super viewDidLoad];
     
     [self cd_startObserveProtocols:@[@protocol(LectureInfoTableViewCellActionProtocol),
-                                     @protocol(TagTableViewCellDelegate)]];
+                                     @protocol(TagTableViewCellDelegate),
+                                     @protocol(LectureMaterialCacheDelegate)]];
     [self.output setupView];
 }
 
@@ -86,6 +87,47 @@ static CGFloat kTableViewFooterHeight = 16.0f;
 
 - (void)didSpeakerViewWithSpeakerId:(NSString *)speakerId {
     [self.output didTapSpeakerWithId:speakerId];
+}
+
+#pragma mark - LectureMaterialCacheDelegate
+
+- (void)didTapRemoveFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Удалить"
+                                                                             message:@"Вы уверены?"
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"Удалить"
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * _Nonnull action) {
+      [self.output didTapRemoveFromCacheLectureMaterial:lectureMaterial];
+    }];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Отмена"
+                                                           style:UIAlertActionStyleCancel
+                                                         handler:nil];
+    [alertController addAction:confirmAction];
+    [alertController addAction:cancelAction];
+    [self presentViewController:alertController
+                       animated:YES
+                     completion:nil];
+}
+
+- (void)didTapDownloadToCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Скачать"
+                                                                             message:@"Вы уверены?"
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"Скачать"
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * _Nonnull action) {
+        [self.output didTapDownloadToCacheLectureMaterial:lectureMaterial];
+    }];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Отмена"
+                                                           style:UIAlertActionStyleCancel
+                                                         handler:nil];
+    [alertController addAction:confirmAction];
+    [alertController addAction:cancelAction];
+    [self presentViewController:alertController
+                       animated:YES
+                     completion:nil];
+    
 }
 
 #pragma mark - Private methods
