@@ -34,11 +34,17 @@
 /**
  @author Egor Tolstoy
  
- MEthod is used to update a search edit field with a specific text
+ Method is used to update a search edit field with a specific text
  
  @param text Search text
  */
 - (void)updateSearchBarWithText:(NSString *)text;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ Method is used to start editing in search bar
+ */
 - (void)startEditingSearchBar;
 
 /**

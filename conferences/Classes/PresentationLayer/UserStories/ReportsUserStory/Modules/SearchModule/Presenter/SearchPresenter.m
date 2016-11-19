@@ -33,7 +33,9 @@
 
 @implementation SearchPresenter
 
-- (void)configureSearchModuleWithSearchString:(NSString *)searchString {
+#pragma mark - SearchModuleInput
+
+- (void)configureSearchModuleWithSearchTerm:(NSString *)searchString {
     self.searchString = searchString;
 }
 
@@ -41,8 +43,8 @@
 
 - (void)setupView {
     NSArray *suggests = [self.interactor obtainSuggests];
-    [self.router configureReportsSearchModuleWithSearchString:self.searchString
-                                                 moduleOutput:self];
+    [self.router configureReportsSearchModuleWithSearchTerm:self.searchString
+                                               moduleOutput:self];
     if (suggests.count > 0) {
         [self.view setupViewWithSuggests:suggests];
     }

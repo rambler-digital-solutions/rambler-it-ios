@@ -1181,6 +1181,7 @@
 		66FBA2571DE05CF000F5C2E9 /* LaunchSystemAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LaunchSystemAssemblyTests.m; path = LaunchSystemAssemblyTests/LaunchSystemAssemblyTests.m; sourceTree = "<group>"; };
 		66FBA25A1DE0607D00F5C2E9 /* SpotlightContinuationAppDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpotlightContinuationAppDelegateTests.m; path = SpotlightContinuationAppDelegate/SpotlightContinuationAppDelegateTests.m; sourceTree = "<group>"; };
 		66FBA25D1DE069E700F5C2E9 /* SearchLaunchRouterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchLaunchRouterTests.m; path = SearchLaunchRouterTests/SearchLaunchRouterTests.m; sourceTree = "<group>"; };
+		66FBA25F1DE07C0800F5C2E9 /* SearchModuleInput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchModuleInput.h; sourceTree = "<group>"; };
 		66FFD29A1D7DCCFB0009B7DC /* CollectionViewContentCellAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CollectionViewContentCellAnimator.h; path = conferences/Classes/PresentationLayer/Helpers/CollectionViewContentCellAnimator/CollectionViewContentCellAnimator.h; sourceTree = SOURCE_ROOT; };
 		66FFD29B1D7DCCFB0009B7DC /* CollectionViewContentCellAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CollectionViewContentCellAnimator.m; path = conferences/Classes/PresentationLayer/Helpers/CollectionViewContentCellAnimator/CollectionViewContentCellAnimator.m; sourceTree = SOURCE_ROOT; };
 		6C7A972E2814B586E4073760 /* libPods-Conferences.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Conferences.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2302,7 +2303,7 @@
 			isa = PBXGroup;
 			children = (
 				9FE139271D65F3E900D7BF44 /* SearchModule */,
-				667050021D4613BC00DD9D6E /* SearchReportsModule */,
+				667050021D4613BC00DD9D6E /* ReportsSearchModule */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -4117,7 +4118,7 @@
 			name = "UIColor+ConferencesPallete";
 			sourceTree = "<group>";
 		};
-		667050021D4613BC00DD9D6E /* SearchReportsModule */ = {
+		667050021D4613BC00DD9D6E /* ReportsSearchModule */ = {
 			isa = PBXGroup;
 			children = (
 				667050081D4613EA00DD9D6E /* View */,
@@ -4126,7 +4127,7 @@
 				667050051D4613D800DD9D6E /* Interactor */,
 				667050031D4613C200DD9D6E /* Assembly */,
 			);
-			name = SearchReportsModule;
+			name = ReportsSearchModule;
 			sourceTree = "<group>";
 		};
 		667050031D4613C200DD9D6E /* Assembly */ = {
@@ -7597,6 +7598,7 @@
 			children = (
 				9FE139311D65F3E900D7BF44 /* SearchPresenter.h */,
 				9FE139321D65F3E900D7BF44 /* SearchPresenter.m */,
+				66FBA25F1DE07C0800F5C2E9 /* SearchModuleInput.h */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";

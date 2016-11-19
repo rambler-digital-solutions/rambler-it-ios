@@ -24,8 +24,6 @@
 
 @protocol SearchViewOutput <NSObject>
 
-- (void)configureSearchModuleWithSearchString:(NSString *)searchString;
-
 /**
  @author Zinovyev Konstantin
  

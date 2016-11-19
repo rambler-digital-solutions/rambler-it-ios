@@ -65,7 +65,7 @@ static NSUInteger const kSearchTabIndex = 2;
     
     tabBarController.selectedIndex = kSearchTabIndex;
     SearchViewController *searchViewController = (SearchViewController *)[(id)[tabBarController selectedViewController] topViewController];
-    [searchViewController.output configureSearchModuleWithSearchString:data];
+    [searchViewController configureSearchModuleWithSearchTerm:data];
 }
 
 @end

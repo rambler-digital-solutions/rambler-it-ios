@@ -83,11 +83,11 @@
                       withModuleInputMock:moduleInputMock];
     
     // when
-    [self.router configureReportsSearchModuleWithSearchString:searchString
+    [self.router configureReportsSearchModuleWithSearchTerm:searchString
                                                  moduleOutput:nil];
     
     // then
-    OCMVerify([moduleInputMock configureReportsSearchModuleWithSearchString:searchString]);
+    OCMVerify([moduleInputMock configureReportsSearchModuleWithSearchTerm:searchString]);
 }
 
 @end

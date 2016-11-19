@@ -76,7 +76,7 @@
     
     // then
     OCMVerify([self.mockView setupViewWithSuggests:testArray]);
-    OCMVerify([self.mockRouter configureReportsSearchModuleWithSearchString:OCMOCK_ANY
+    OCMVerify([self.mockRouter configureReportsSearchModuleWithSearchTerm:OCMOCK_ANY
                                                                moduleOutput:self.presenter]);
 }
 
@@ -92,7 +92,7 @@
     
     // then
     OCMVerifyAll(self.mockView);
-    OCMVerify([self.mockRouter configureReportsSearchModuleWithSearchString:OCMOCK_ANY
+    OCMVerify([self.mockRouter configureReportsSearchModuleWithSearchTerm:OCMOCK_ANY
                                                                moduleOutput:self.presenter]);
 }
 
@@ -211,10 +211,10 @@
     NSString *searchString = @"searchString";
     
     //when
-    [self.presenter configureSearchModuleWithSearchString:searchString];
-    NSString *resultString = [self.presenter valueForKey:searchString];
+    [self.presenter configureSearchModuleWithSearchTerm:searchString];
     
     //then
+    NSString *resultString = [self.presenter valueForKey:searchString];
     XCTAssertEqual(searchString, resultString);
 }
 

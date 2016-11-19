@@ -31,7 +31,7 @@
 
 @implementation ReportsSearchPresenter
 
-- (void)configureReportsSearchModuleWithSearchString:(NSString *)searchString {
+- (void)configureReportsSearchModuleWithSearchTerm:(NSString *)searchString {
     self.searchString = searchString;
 }
 
