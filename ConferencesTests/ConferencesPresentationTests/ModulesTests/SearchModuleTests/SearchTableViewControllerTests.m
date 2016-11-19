@@ -27,7 +27,7 @@
 #import "SearchDataDisplayManager.h"
 #import "EventPlainObject.h"
 
-@interface SearchTableViewControllerTests : XCTestCase
+@interface SearchViewControllerTests : XCTestCase
 
 @property (strong, nonatomic) SearchViewController *viewController;
 @property (strong, nonatomic) SearchDataDisplayManager *mockDataDisplayManager;
@@ -36,7 +36,7 @@
 
 @end
 
-@implementation SearchTableViewControllerTests
+@implementation SearchViewControllerTests
 
 - (void)setUp {
     [super setUp];

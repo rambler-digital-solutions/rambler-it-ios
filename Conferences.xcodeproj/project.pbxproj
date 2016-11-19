@@ -318,6 +318,9 @@
 		66EE4D341D54BFCD0011F94A /* NIMutableCollectionViewModel+LJAddObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EE4D2F1D54BFCD0011F94A /* NIMutableCollectionViewModel+LJAddObject.m */; };
 		66EE4D351D54BFCD0011F94A /* NITableViewModel+LJIndexOfObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EE4D311D54BFCD0011F94A /* NITableViewModel+LJIndexOfObject.m */; };
 		66EE4D361D54BFCD0011F94A /* NITableViewModel+NextInputResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EE4D331D54BFCD0011F94A /* NITableViewModel+NextInputResponder.m */; };
+		66FBA2581DE05CF000F5C2E9 /* LaunchSystemAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66FBA2571DE05CF000F5C2E9 /* LaunchSystemAssemblyTests.m */; };
+		66FBA25B1DE0607D00F5C2E9 /* SpotlightContinuationAppDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66FBA25A1DE0607D00F5C2E9 /* SpotlightContinuationAppDelegateTests.m */; };
+		66FBA25E1DE069E700F5C2E9 /* SearchLaunchRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66FBA25D1DE069E700F5C2E9 /* SearchLaunchRouterTests.m */; };
 		66FFD29C1D7DCCFB0009B7DC /* CollectionViewContentCellAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 66FFD29B1D7DCCFB0009B7DC /* CollectionViewContentCellAnimator.m */; };
 		9F0A6C1D1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */; };
 		9F0A6C2E1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C2D1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m */; };
@@ -1175,6 +1178,9 @@
 		66EE4D311D54BFCD0011F94A /* NITableViewModel+LJIndexOfObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NITableViewModel+LJIndexOfObject.m"; path = "Nimbus/NITableViewModel+LJIndexOfObject.m"; sourceTree = "<group>"; };
 		66EE4D321D54BFCD0011F94A /* NITableViewModel+NextInputResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NITableViewModel+NextInputResponder.h"; path = "Nimbus/NITableViewModel+NextInputResponder.h"; sourceTree = "<group>"; };
 		66EE4D331D54BFCD0011F94A /* NITableViewModel+NextInputResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NITableViewModel+NextInputResponder.m"; path = "Nimbus/NITableViewModel+NextInputResponder.m"; sourceTree = "<group>"; };
+		66FBA2571DE05CF000F5C2E9 /* LaunchSystemAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LaunchSystemAssemblyTests.m; path = LaunchSystemAssemblyTests/LaunchSystemAssemblyTests.m; sourceTree = "<group>"; };
+		66FBA25A1DE0607D00F5C2E9 /* SpotlightContinuationAppDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpotlightContinuationAppDelegateTests.m; path = SpotlightContinuationAppDelegate/SpotlightContinuationAppDelegateTests.m; sourceTree = "<group>"; };
+		66FBA25D1DE069E700F5C2E9 /* SearchLaunchRouterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchLaunchRouterTests.m; path = SearchLaunchRouterTests/SearchLaunchRouterTests.m; sourceTree = "<group>"; };
 		66FFD29A1D7DCCFB0009B7DC /* CollectionViewContentCellAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CollectionViewContentCellAnimator.h; path = conferences/Classes/PresentationLayer/Helpers/CollectionViewContentCellAnimator/CollectionViewContentCellAnimator.h; sourceTree = SOURCE_ROOT; };
 		66FFD29B1D7DCCFB0009B7DC /* CollectionViewContentCellAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CollectionViewContentCellAnimator.m; path = conferences/Classes/PresentationLayer/Helpers/CollectionViewContentCellAnimator/CollectionViewContentCellAnimator.m; sourceTree = SOURCE_ROOT; };
 		6C7A972E2814B586E4073760 /* libPods-Conferences.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Conferences.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2699,6 +2705,7 @@
 		63F402EA1BCF77CB0086D030 /* ApplicationLayerAssemblyTests */ = {
 			isa = PBXGroup;
 			children = (
+				66FBA2561DE05CD300F5C2E9 /* LaunchSystemAssemblyTests */,
 				63F402EB1BCF77CB0086D030 /* ApplicationAssemblyTests */,
 				63F402EE1BCF77CB0086D030 /* ServiceComponentsAssemblyTests */,
 			);
@@ -4575,6 +4582,30 @@
 				66EE4D331D54BFCD0011F94A /* NITableViewModel+NextInputResponder.m */,
 			);
 			name = Nimbus;
+			sourceTree = "<group>";
+		};
+		66FBA2561DE05CD300F5C2E9 /* LaunchSystemAssemblyTests */ = {
+			isa = PBXGroup;
+			children = (
+				66FBA2571DE05CF000F5C2E9 /* LaunchSystemAssemblyTests.m */,
+			);
+			name = LaunchSystemAssemblyTests;
+			sourceTree = "<group>";
+		};
+		66FBA2591DE0605600F5C2E9 /* SpotlightContinuationAppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				66FBA25A1DE0607D00F5C2E9 /* SpotlightContinuationAppDelegateTests.m */,
+			);
+			name = SpotlightContinuationAppDelegate;
+			sourceTree = "<group>";
+		};
+		66FBA25C1DE069C900F5C2E9 /* SearchLaunchRouter */ = {
+			isa = PBXGroup;
+			children = (
+				66FBA25D1DE069E700F5C2E9 /* SearchLaunchRouterTests.m */,
+			);
+			name = SearchLaunchRouter;
 			sourceTree = "<group>";
 		};
 		66FFD2991D7DCCE80009B7DC /* CollectionViewContentCellAnimator */ = {
@@ -6893,6 +6924,7 @@
 		9FBE89BC1D5CB76900DA0C32 /* AppDelegates */ = {
 			isa = PBXGroup;
 			children = (
+				66FBA2591DE0605600F5C2E9 /* SpotlightContinuationAppDelegate */,
 				9F7B82271D7DA9DC002E977A /* QuickActionAppDelegate */,
 				9FBE89BD1D5CB76900DA0C32 /* CleanLaunchAppDelegate */,
 				9FBE89BF1D5CB76900DA0C32 /* SpotlightAppDelegate */,
@@ -6945,6 +6977,7 @@
 		9FBE89C71D5CB76900DA0C32 /* ConcreteClasses */ = {
 			isa = PBXGroup;
 			children = (
+				66FBA25C1DE069C900F5C2E9 /* SearchLaunchRouter */,
 				9F7B823F1D7ECF0A002E977A /* TabLaunchRouter */,
 				9FBE89C81D5CB76900DA0C32 /* CleanLaunchRouter */,
 				9FBE89CA1D5CB76900DA0C32 /* EventLaunchRouter */,
@@ -8650,6 +8683,7 @@
 				9F7B82291D7DA9E9002E977A /* QuickActionAppDelegateTests.m in Sources */,
 				63D86BDD1C143FCE00986536 /* DateFormatterTests.m in Sources */,
 				66A1DD551D7E993A00998F6B /* MockObjectsFactory.m in Sources */,
+				66FBA2581DE05CF000F5C2E9 /* LaunchSystemAssemblyTests.m in Sources */,
 				9FE139261D65CC2500D7BF44 /* SuggestServiceImplementationTests.m in Sources */,
 				9F78D75D1D59E778009DDCEA /* SpeakerObjectTransformerTests.m in Sources */,
 				66A1DD3C1D7E983100998F6B /* TagShowMediatorTests.m in Sources */,
@@ -8663,6 +8697,7 @@
 				631CBA811C021A5300E3EBA8 /* PresentationLayerHelpersAssemblyTests.m in Sources */,
 				9FAB6A831D54965F0061F333 /* SearchableIndexMock.m in Sources */,
 				631CBAA71C021C6900E3EBA8 /* EventTypeDeterminatorTests.m in Sources */,
+				66FBA25E1DE069E700F5C2E9 /* SearchLaunchRouterTests.m in Sources */,
 				63F402FE1BCF840A0086D030 /* NetworkClientsAssemblyTests.m in Sources */,
 				63F613E01CB111070002AEF0 /* EventInteractorTests.m in Sources */,
 				9FBE89D31D5CB76900DA0C32 /* CleanLaunchAppDelegateTests.m in Sources */,
@@ -8704,6 +8739,7 @@
 				9F4077881D2BF84000D47EF6 /* RamblerLocationServiceTests.m in Sources */,
 				9F8E5F9B1BC2753100DC10DB /* CompoundOperationFactoryTestsBase.m in Sources */,
 				66A1DD4D1D7E986000998F6B /* TagCollectionViewCellTests.m in Sources */,
+				66FBA25B1DE0607D00F5C2E9 /* SpotlightContinuationAppDelegateTests.m in Sources */,
 				2B01CEBE1D50A55900DA8E66 /* MetaEventServiceTests.m in Sources */,
 				631CBA721C020CCD00E3EBA8 /* EventListModuleAssemblyTests.m in Sources */,
 				66A1DD481D7E984E00998F6B /* TagDataDisplayManagerTests.m in Sources */,

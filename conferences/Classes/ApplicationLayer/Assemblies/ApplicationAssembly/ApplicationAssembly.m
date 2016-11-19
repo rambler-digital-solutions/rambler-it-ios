@@ -46,7 +46,8 @@
                                                 [method injectParameterWith:@[
                                                                               [self cleanStartAppDelegate],
                                                                               [self.launchSystemAssembly spotlightAppDelegate],
-                                                                              [self.launchSystemAssembly quickActionAppDelegate], [self.launchSystemAssembly spotlightContinuationAppDelegate]
+                                                                              [self.launchSystemAssembly quickActionAppDelegate],
+                                                                              [self.launchSystemAssembly spotlightContinuationAppDelegate]
                                                                               ]
                                                                               ];
                                             }];

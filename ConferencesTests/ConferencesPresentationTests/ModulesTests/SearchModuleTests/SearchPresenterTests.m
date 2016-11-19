@@ -76,6 +76,8 @@
     
     // then
     OCMVerify([self.mockView setupViewWithSuggests:testArray]);
+    OCMVerify([self.mockRouter configureReportsSearchModuleWithSearchString:OCMOCK_ANY
+                                                               moduleOutput:self.presenter]);
 }
 
 - (void)testSuccessDoesNotSetupViewWithSuggestsIfThereAreNo {
@@ -84,6 +86,37 @@
     OCMStub([self.mockInteractor obtainSuggests]).andReturn(testArray);
     
     [[self.mockView reject] setupViewWithSuggests:OCMOCK_ANY];
+    
+    // when
+    [self.presenter setupView];
+    
+    // then
+    OCMVerifyAll(self.mockView);
+    OCMVerify([self.mockRouter configureReportsSearchModuleWithSearchString:OCMOCK_ANY
+                                                               moduleOutput:self.presenter]);
+}
+
+- (void)testSuccessSetupViewWithSearchStringIfThereAreAny {
+    // given
+    NSString *searchString = @"searchString";
+    [self.presenter setValue:searchString
+                      forKey:searchString];
+    
+    // when
+    [self.presenter setupView];
+    
+    // then
+    OCMVerify([self.mockView showSearchModuleView]);
+    OCMVerify([self.mockView updateSearchBarWithText:searchString]);
+    OCMVerify([self.mockView startEditingSearchBar]);
+}
+
+- (void)testSuccessDoesNotSetupViewWithSearchStringIfThereAreNo {
+    // given
+    NSString *searchString = @"searchString";
+    [[self.mockView reject] showSearchModuleView];
+    [[self.mockView reject] updateSearchBarWithText:searchString];
+    [[self.mockView reject] startEditingSearchBar];
     
     // when
     [self.presenter setupView];
@@ -172,4 +205,17 @@
     // then
     XCTAssertEqual(self.presenter.reportsSearchModule, reportsSearchModule);
 }
+
+- (void)testThatPresenterConfigureModuleCorrectly {
+    //given
+    NSString *searchString = @"searchString";
+    
+    //when
+    [self.presenter configureSearchModuleWithSearchString:searchString];
+    NSString *resultString = [self.presenter valueForKey:searchString];
+    
+    //then
+    XCTAssertEqual(searchString, resultString);
+}
+
 @end

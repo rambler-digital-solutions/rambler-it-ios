@@ -19,7 +19,7 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-
+#import "LaunchRouter.h"
 @protocol TabBarControllerFactory;
 @class UIWindow;
 
@@ -28,7 +28,7 @@
  
  Launch router responsible for opening SearchModule with some search string
  */
-@interface SearchLaunchRouter : NSObject
+@interface SearchLaunchRouter : NSObject <LaunchRouter>
 
 - (instancetype)initWithTabBarControllerFactory:(id<TabBarControllerFactory>)tabBarControllerFactory
                                          window:(UIWindow *)window;
