@@ -23,4 +23,6 @@
 
 @interface LectureMaterialsServiceImplementation : NSObject <LectureMaterialsService>
 
+- (instancetype)initWithLectureMaterialsHandlers:(NSArray *)lectureMaterialsHandlers;
+
 @end

@@ -21,9 +21,9 @@
 #import <Foundation/Foundation.h>
 
 @class NSPredicate;
-@class LectureMaterials;
+@class LectureMaterialPlainObject;
 
-typedef void (^LectureMaterialsCompletionBlock)(LectureMaterials *lectureMaterials, NSError *error);
+typedef void (^LectureMaterialsCompletionBlock)(NSError *error);
 
 /**
  @author Artem Karpushin
@@ -31,5 +31,12 @@ typedef void (^LectureMaterialsCompletionBlock)(LectureMaterials *lectureMateria
  The service is designed to obtain / update LectureMaterials objects
  */
 @protocol LectureMaterialsService <NSObject>
+
+- (id)obtainFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial;
+
+- (void)downloadToCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial
+                            completion:(LectureMaterialsCompletionBlock)completionBlock;
+
+- (void)removeFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial;
 
 @end

@@ -29,8 +29,7 @@
 #import "LecturePlainObject.h"
 #import "SpeakerPlainObject.h"
 #import "LectureMaterialPlainObject.h"
-
-static NSString *const kYouTubeValidationString = @"youtu";
+#import "LectureMaterialsService.h"
 
 @implementation LectureInteractor
 
@@ -49,8 +48,7 @@ static NSString *const kYouTubeValidationString = @"youtu";
 }
 
 - (BOOL)checkIfVideoIsFromYouTube:(NSURL *)videoUrl {
-    NSString *videoUrlString = [videoUrl absoluteString];
-    return [videoUrlString containsString:kYouTubeValidationString];
+    return [self.deriviator checkIfVideoIsFromYouTube:videoUrl];
 }
 
 - (NSString *)deriveVideoIdFromYouTubeUrl:(NSURL *)videoUrl {
@@ -58,12 +56,17 @@ static NSString *const kYouTubeValidationString = @"youtu";
 }
 
 - (void)downloadVideoToCacheWithLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial {
-
+    [self.lectureMaterialsService downloadToCacheLectureMaterial:lectureMaterial completion:^(NSError *error) {
+        if (error) {
+            return;
+        }
+        id model = [self.lectureMaterialsService obtainFromCacheLectureMaterial:lectureMaterial];
+        LectureMaterialPlainObject *lecture = [self.ponsomizer convertObject:model];
+        [self.output didTriggerEndDownloadingLectureMaterial:lecture];
+    }];
 }
 - (void)removeVideoFromCacheWithLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial {
-    if (lectureMaterial.localURL.length == 0) {
-        return;
-    }
+    [self.lectureMaterialsService removeFromCacheLectureMaterial:lectureMaterial];
 }
 
 @end

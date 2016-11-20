@@ -27,12 +27,13 @@
 @class ResourceClientAssembly;
 @class ResourceMapperAssembly;
 @class PonsomizerAssembly;
-
+@class PresentationLayerHelpersAssembly;
 
 @interface ServiceComponentsAssembly : TyphoonAssembly <ServiceComponents, RamblerInitialAssembly>
 
 @property (strong, nonatomic) OperationFactoriesAssembly *operationFactoriesAssembly;
 @property (strong, nonatomic) ResourceClientAssembly *resourceClientAssembly;
 @property (strong, nonatomic) ResourceMapperAssembly *resourceMapperAssembly;
+@property (strong, nonatomic, readonly) PresentationLayerHelpersAssembly *presentationLayerHelpersAssembly;
 
 @end

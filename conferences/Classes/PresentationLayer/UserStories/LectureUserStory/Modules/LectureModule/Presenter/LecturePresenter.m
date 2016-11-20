@@ -78,12 +78,23 @@
 }
 
 #pragma mark - LectureMaterialCacheDelegate
-- (IBAction)didTapRemoveFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial {
+- (void)didTapRemoveFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial {
     [self.interactor removeVideoFromCacheWithLectureMaterial:lectureMaterial];
 }
 
-- (IBAction)didTapDownloadToCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial {
+- (void)didTapDownloadToCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial {
     [self.interactor downloadVideoToCacheWithLectureMaterial:lectureMaterial];
 }
+
+
+
+
+
+
+- (void)didTriggerEndDownloadingLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial {
+    [self.view showVideoFromCacheWithLocalPath:lectureMaterial.localURL];
+}
+
+
 
 @end

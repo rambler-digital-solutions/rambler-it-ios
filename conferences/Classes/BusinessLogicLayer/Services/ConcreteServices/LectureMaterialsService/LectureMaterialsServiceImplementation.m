@@ -19,7 +19,69 @@
 // THE SOFTWARE.
 
 #import "LectureMaterialsServiceImplementation.h"
+#import "LectureMaterialPlainObject.h"
+#import "LectureMaterialsHandler.h"
+#import <MagicalRecord/MagicalRecord.h>
+#import "LectureMaterialModelObject.h"
+
+@interface LectureMaterialsServiceImplementation ()
+
+@property (nonatomic, strong) NSArray<LectureMaterialsHandler> *lectureMaterialsHandlers;
+
+@end
 
 @implementation LectureMaterialsServiceImplementation
+
+- (instancetype)initWithLectureMaterialsHandlers:(NSArray<LectureMaterialsHandler> *)lectureMaterialsHandlers {
+    self = [super init];
+    
+    if (self) {
+        _lectureMaterialsHandlers = lectureMaterialsHandlers;
+    }
+    
+    return self;
+}
+
+- (id)obtainFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial {
+    id material = nil;
+    for (id<LectureMaterialsHandler> handler in self.lectureMaterialsHandlers) {
+        if ([handler canHandleLectureMaterial:lectureMaterial]) {
+            material = [handler obtainFromCacheLectureMaterial:lectureMaterial];
+            break;
+        }
+    }
+    return material;
+}
+
+- (void)downloadToCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial
+                            completion:(LectureMaterialsCompletionBlock)completionBlock{
+    NSManagedObjectContext *rootSavingContext = [NSManagedObjectContext MR_rootSavingContext];
+    
+    for (id<LectureMaterialsHandler> handler in self.lectureMaterialsHandlers) {
+        if ([handler canHandleLectureMaterial:lectureMaterial]) {
+            
+            [handler downloadToCacheLectureMaterial:lectureMaterial
+                                         completion:^(NSString *localUrl, NSError *error) {
+                 [rootSavingContext performBlockAndWait:^{
+                     LectureMaterialModelObject *modelMaterial = [LectureMaterialModelObject MR_findFirstByAttribute:LectureMaterialModelObjectAttributes.lectureMaterialId
+                                                               withValue:lectureMaterial.lectureMaterialId];
+                     modelMaterial.localURL = localUrl;
+                     [rootSavingContext MR_saveToPersistentStoreAndWait];
+                     completionBlock(error);
+                 }];
+            }];
+            break;
+        }
+    }
+}
+
+- (void)removeFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial {
+    for (id<LectureMaterialsHandler> handler in self.lectureMaterialsHandlers) {
+        if ([handler canHandleLectureMaterial:lectureMaterial]) {
+            [handler removeFromCacheLectureMaterial:lectureMaterial];
+            break;
+        }
+    }
+}
 
 @end

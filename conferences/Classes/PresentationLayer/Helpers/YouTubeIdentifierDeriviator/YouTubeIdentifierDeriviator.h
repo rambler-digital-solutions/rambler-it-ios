@@ -38,4 +38,6 @@
  */
 - (NSString *)deriveIdentifierFromUrl:(NSURL *)url;
 
+- (BOOL)checkIfVideoIsFromYouTube:(NSURL *)videoUrl;
+
 @end

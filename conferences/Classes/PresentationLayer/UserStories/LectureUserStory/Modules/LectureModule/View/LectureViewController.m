@@ -31,6 +31,8 @@
 #import "UIViewController+RCFForceRotation.h"
 #import "TagModuleTableViewCell.h"
 #import "CollectionViewContentCellAnimator.h"
+#import <AVKit/AVKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 static CGFloat kTableViewEstimatedRowHeight = 44.0f;
 static CGFloat kTableViewFooterHeight = 16.0f;
@@ -149,4 +151,12 @@ static CGFloat kTableViewFooterHeight = 16.0f;
                                                       cell:cell];
 }
 
+- (void)showVideoFromCacheWithLocalPath:(NSString *)localURL {
+    NSURL *moveUrl = [NSURL fileURLWithPath:localURL];
+    AVPlayer *player = [AVPlayer playerWithURL:moveUrl];
+    AVPlayerViewController *playerViewController = [AVPlayerViewController new];
+    playerViewController.player = player;
+    [self.view addSubview: playerViewController.view];
+    [self presentViewController:playerViewController animated:YES completion:nil];
+}
 @end

@@ -38,8 +38,13 @@
 #import "TagServiceImplementation.h"
 #import "TagServicePredicateBuilder.h"
 #import "SuggestServiceImplementation.h"
+#import "LectureMaterialsServiceImplementation.h"
+#import "VideoMaterialHandler.h"
+#import "PresentationLayerHelpersAssembly.h"
 
 @implementation ServiceComponentsAssembly
+
+#pragma mark - ServiceComponents
 
 - (id <EventService>)eventService {
     return [TyphoonDefinition withClass:[EventServiceImplementation class]
@@ -82,6 +87,18 @@
                           }];
 }
 
+- (id<LectureMaterialsService>)lectureMaterialsService {
+    return [TyphoonDefinition withClass:[LectureMaterialsServiceImplementation class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition useInitializer:@selector(initWithLectureMaterialsHandlers:)
+                                              parameters:^(TyphoonMethod *initializer) {
+                                                  [initializer injectParameterWith:@[
+                                                                                     [self videoLectureMaterialHandler]
+                                                                                     ]];
+                                              }];
+                          }];
+}
+
 - (id<SuggestService>)suggestService {
     return [TyphoonDefinition withClass:[SuggestServiceImplementation class]];
 }
@@ -95,8 +112,18 @@
                           }];
 }
 
+#pragma mark - Private methods
+
 - (id)tagServicePredicateBuilder {
     return [TyphoonDefinition withClass:[TagServicePredicateBuilder class]];
+}
+
+- (id<LectureMaterialsHandler>)videoLectureMaterialHandler {
+    return [TyphoonDefinition withClass:[VideoMaterialHandler class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(deriviator)
+                                                    with:[self.presentationLayerHelpersAssembly youTubeIdentifierDeriviator]];
+    }];
 }
 
 @end

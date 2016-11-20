@@ -274,6 +274,9 @@
 		667050531D46332200DD9D6E /* ReportsSearchCellObjectsBuilderImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 667050521D46332200DD9D6E /* ReportsSearchCellObjectsBuilderImplementation.m */; };
 		667050561D46369100DD9D6E /* ReportsSearchCellObjectsDirectorImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 667050551D46369100DD9D6E /* ReportsSearchCellObjectsDirectorImplementation.m */; };
 		66764D041D4B636B00EF9D58 /* ReportsSearchViewAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 66764D031D4B636B00EF9D58 /* ReportsSearchViewAnimator.m */; };
+		6677E3A81DE1A27F006B1AF3 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6677E3A71DE1A27F006B1AF3 /* AVKit.framework */; };
+		6677E3AA1DE1A378006B1AF3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6677E3A91DE1A378006B1AF3 /* AVFoundation.framework */; };
+		669D944B1DE0D97200589AC2 /* VideoMaterialHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 669D944A1DE0D97200589AC2 /* VideoMaterialHandler.m */; };
 		66A1DD301D7E980D00998F6B /* TagAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A1DD2F1D7E980D00998F6B /* TagAssemblyTests.m */; };
 		66A1DD321D7E981500998F6B /* TagInteractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A1DD311D7E981500998F6B /* TagInteractorTests.m */; };
 		66A1DD351D7E982500998F6B /* TagPresenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A1DD331D7E982500998F6B /* TagPresenterTests.m */; };
@@ -1089,7 +1092,12 @@
 		667050591D464BF200DD9D6E /* ReportsSearchCellObjectsDirector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportsSearchCellObjectsDirector.h; path = SearchReportsModule/View/ReportsSearchDataDisplayManager/ReportsSearchCellObjectsBuilder/ReportsSearchCellObjectsDirector.h; sourceTree = "<group>"; };
 		66764D021D4B636B00EF9D58 /* ReportsSearchViewAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportsSearchViewAnimator.h; path = SearchReportsModule/View/ReportSearchViewAnimator/ReportsSearchViewAnimator.h; sourceTree = "<group>"; };
 		66764D031D4B636B00EF9D58 /* ReportsSearchViewAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportsSearchViewAnimator.m; path = SearchReportsModule/View/ReportSearchViewAnimator/ReportsSearchViewAnimator.m; sourceTree = "<group>"; };
+		6677E3A71DE1A27F006B1AF3 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		6677E3A91DE1A378006B1AF3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		669D94451DE0C6C200589AC2 /* LectureMaterialCacheDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LectureMaterialCacheDelegate.h; sourceTree = "<group>"; };
+		669D94471DE0D8B500589AC2 /* LectureMaterialsHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LectureMaterialsHandler.h; path = LectureMaterialsHandlers/LectureMaterialsHandler.h; sourceTree = "<group>"; };
+		669D94491DE0D97200589AC2 /* VideoMaterialHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoMaterialHandler.h; path = VideoMaterialHandlers/VideoMaterialHandler.h; sourceTree = "<group>"; };
+		669D944A1DE0D97200589AC2 /* VideoMaterialHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VideoMaterialHandler.m; path = VideoMaterialHandlers/VideoMaterialHandler.m; sourceTree = "<group>"; };
 		66A1DD2E1D7E980D00998F6B /* TagAssembly_Testable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagAssembly_Testable.h; path = TagModuleTests/Assembly/TagAssembly_Testable.h; sourceTree = "<group>"; };
 		66A1DD2F1D7E980D00998F6B /* TagAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagAssemblyTests.m; path = TagModuleTests/Assembly/TagAssemblyTests.m; sourceTree = "<group>"; };
 		66A1DD311D7E981500998F6B /* TagInteractorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagInteractorTests.m; path = TagModuleTests/Interactor/TagInteractorTests.m; sourceTree = "<group>"; };
@@ -1679,6 +1687,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6677E3AA1DE1A378006B1AF3 /* AVFoundation.framework in Frameworks */,
+				6677E3A81DE1A27F006B1AF3 /* AVKit.framework in Frameworks */,
 				234C76A5941B9A10462172CC /* libPods-Conferences.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2441,6 +2451,7 @@
 		636B63C51BBDCC060053E38F /* LectureMaterialsService */ = {
 			isa = PBXGroup;
 			children = (
+				669D94461DE0D88F00589AC2 /* LectureMaterialsHandlers */,
 				636B63C91BBDCC550053E38F /* LectureMaterialsService.h */,
 				636B64051BBDD2A40053E38F /* LectureMaterialsServiceImplementation.h */,
 				636B64061BBDD2A40053E38F /* LectureMaterialsServiceImplementation.m */,
@@ -4207,6 +4218,24 @@
 			name = ReportSearchViewAnimator;
 			sourceTree = "<group>";
 		};
+		669D94461DE0D88F00589AC2 /* LectureMaterialsHandlers */ = {
+			isa = PBXGroup;
+			children = (
+				669D94471DE0D8B500589AC2 /* LectureMaterialsHandler.h */,
+				669D94481DE0D92600589AC2 /* VideoMaterialHandler */,
+			);
+			name = LectureMaterialsHandlers;
+			sourceTree = "<group>";
+		};
+		669D94481DE0D92600589AC2 /* VideoMaterialHandler */ = {
+			isa = PBXGroup;
+			children = (
+				669D94491DE0D97200589AC2 /* VideoMaterialHandler.h */,
+				669D944A1DE0D97200589AC2 /* VideoMaterialHandler.m */,
+			);
+			name = VideoMaterialHandler;
+			sourceTree = "<group>";
+		};
 		66A1DD271D7E97D500998F6B /* TagModuleTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -4585,6 +4614,8 @@
 		75B6DFED87955159473111D1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6677E3A91DE1A378006B1AF3 /* AVFoundation.framework */,
+				6677E3A71DE1A27F006B1AF3 /* AVKit.framework */,
 				6C7A972E2814B586E4073760 /* libPods-Conferences.a */,
 				C46B774BA2D16C41C04D78BA /* libPods-Conferences-ConferencesTests.a */,
 			);
@@ -8292,6 +8323,7 @@
 				6670501D1D46145300DD9D6E /* ReportsSearchViewController.m in Sources */,
 				2B750D171D362EE600EACE98 /* Conference.xcdatamodeld in Sources */,
 				9FE139801D65F3E900D7BF44 /* SearchSuggestTableViewCellObject.m in Sources */,
+				669D944B1DE0D97200589AC2 /* VideoMaterialHandler.m in Sources */,
 				2B05E1691D51D7A100E017AB /* SpeakerInfoSocialContactsTableViewCell.m in Sources */,
 				2B429A5F1D478A2F004C005F /* UINavigationBar+States.m in Sources */,
 				9F18311D1BC1615C000E21A5 /* SingleResponseObjectFormatter.m in Sources */,
