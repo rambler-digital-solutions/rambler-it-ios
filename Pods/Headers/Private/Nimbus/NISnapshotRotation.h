@@ -1,1 +1,1 @@
-../../../../../nimbus/src/core/src/NISnapshotRotation.h
+../../../Nimbus/src/core/src/NISnapshotRotation.h

@@ -1,1 +1,1 @@
-../../../../../nimbus/src/collections/src/NICollectionViewModel.h
+../../../Nimbus/src/collections/src/NICollectionViewModel.h

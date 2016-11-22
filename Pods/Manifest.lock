@@ -79,10 +79,10 @@ PODS:
   - MMBarricade (1.0.1):
     - MMBarricade/Core (= 1.0.1)
   - MMBarricade/Core (1.0.1)
-  - Nimbus/Collections (1.2.2):
+  - Nimbus/Collections (1.2.4):
     - Nimbus/Core
-  - Nimbus/Core (1.2.2)
-  - Nimbus/Models (1.2.2):
+  - Nimbus/Core (1.2.4)
+  - Nimbus/Models (1.2.4):
     - Nimbus/Core
   - OCMock (3.3.1)
   - PureLayout (3.0.1)
@@ -118,8 +118,8 @@ DEPENDENCIES:
   - MagicalRecord (~> 2.3)
   - MagicalRecord (~> 2.3.2)
   - MMBarricade (~> 1.0.1)
-  - Nimbus/Collections (from `/Users/etrishina/nimbus`)
-  - Nimbus/Models (from `/Users/etrishina/nimbus`)
+  - Nimbus/Collections (from `https://github.com/rambler-ios/nimbus`)
+  - Nimbus/Models (from `https://github.com/rambler-ios/nimbus`)
   - OCMock (= 3.3.1)
   - PureLayout (~> 3.0)
   - RamblerAppDelegateProxy (= 0.0.3)
@@ -138,12 +138,15 @@ EXTERNAL SOURCES:
     :git: https://github.com/CognitiveDisson/CrutchKit
     :tag: 0.0.10
   Nimbus:
-    :path: /Users/etrishina/nimbus
+    :git: https://github.com/rambler-ios/nimbus
 
 CHECKOUT OPTIONS:
   CrutchKit:
     :git: https://github.com/CognitiveDisson/CrutchKit
     :tag: 0.0.10
+  Nimbus:
+    :commit: f87fc967a359b6977e7fa153494d8b85a61d0dc1
+    :git: https://github.com/rambler-ios/nimbus
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
@@ -156,7 +159,7 @@ SPEC CHECKSUMS:
   libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
   MMBarricade: 61e17f747baa1a33cd7f8a9c75d520ca958508dd
-  Nimbus: 355131d4656498bf072fecc142752a9f343eb59b
+  Nimbus: 41be1576e98dda5d731381f10e580319df6c4f23
   OCMock: f3f61e6eaa16038c30caa5798c5e49d3307b6f22
   PureLayout: f35f5384c9c4e4479df041dbe33ad7577b71ddfb
   RamblerAppDelegateProxy: a29284f46e8711663f0d279f5023469a96b27529
@@ -168,6 +171,6 @@ SPEC CHECKSUMS:
   ViperMcFlurry: 701bc3ad8d188b1f1e157ec0ddf4e77184de88b5
   XCDYouTubeKit: 90690f9e3523735dc93b8024269d991b0cfffe78
 
-PODFILE CHECKSUM: 327080919aa021ab6d864a891c6fb275690fdec5
+PODFILE CHECKSUM: 4411f3a3679491d0dc612155bcbd7bc09dffb414
 
 COCOAPODS: 1.1.1

@@ -1,1 +1,1 @@
-../../../../../nimbus/src/core/src/NINavigationAppearance.h
+../../../Nimbus/src/core/src/NINavigationAppearance.h

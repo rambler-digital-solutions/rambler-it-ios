@@ -18,8 +18,8 @@ target 'Conferences' do
     
     # UI
     pod 'PureLayout', '~> 3.0'
-    pod 'Nimbus/Models', :path => '/Users/etrishina/nimbus'
-    pod 'Nimbus/Collections', :path => '/Users/etrishina/nimbus'
+    pod 'Nimbus/Models', :git => 'https://github.com/rambler-ios/nimbus'
+    pod 'Nimbus/Collections', :git => 'https://github.com/rambler-ios/nimbus'
     pod 'UICollectionViewLeftAlignedLayout', '1.0.1'
     pod 'CrutchKit/Proxying', :git => 'https://github.com/CognitiveDisson/CrutchKit', :tag => '0.0.10'
     
@@ -57,7 +57,7 @@ target 'RamblerMessageExtension' do
     pod 'AFNetworking', '~> 2.6'
 
     # UI
-    pod 'Nimbus/Models', :path => '/Users/etrishina/nimbus'
+    pod 'Nimbus/Models', :git => 'https://github.com/rambler-ios/nimbus'
 
     # Dependency management
     pod 'Typhoon', '~> 3.3'

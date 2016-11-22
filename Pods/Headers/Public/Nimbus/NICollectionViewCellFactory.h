@@ -1,1 +1,1 @@
-../../../../../nimbus/src/collections/src/NICollectionViewCellFactory.h
+../../../Nimbus/src/collections/src/NICollectionViewCellFactory.h
