@@ -19,11 +19,11 @@
 
 @interface MessagesInteractorTests : XCTestCase
 
-@property (strong, nonatomic) MessagesInteractor *interactor;
-@property (strong, nonatomic) id <EventService> mockEventService;
-@property (strong, nonatomic) id <ROSPonsomizer> mockPonsomizer;
-@property (strong, nonatomic) id <EventListInteractorOutput> mockOutput;
-@property (strong, nonatomic) id <ObjectTransformer> mockTransformer;
+@property (nonatomic, strong) MessagesInteractor *interactor;
+@property (nonatomic, strong) id <EventService> mockEventService;
+@property (nonatomic, strong) id <ROSPonsomizer> mockPonsomizer;
+@property (nonatomic, strong) id <EventListInteractorOutput> mockOutput;
+@property (nonatomic, strong) id <ObjectTransformer> mockTransformer;
 
 @end
 

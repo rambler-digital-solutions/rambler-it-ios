@@ -18,10 +18,10 @@
 
 @interface MessagesPresenterTests : XCTestCase
 
-@property (strong, nonatomic) MessagesPresenter *presenter;
-@property (strong, nonatomic) id <MessagesInteractorInput> mockInteractor;
-@property (strong, nonatomic) id <MessagesViewInput> mockView;
-@property (strong, nonatomic) id <MessagesRouterInput> mockRouter;
+@property (nonatomic, strong) MessagesPresenter *presenter;
+@property (nonatomic, strong) id <MessagesInteractorInput> mockInteractor;
+@property (nonatomic, strong) id <MessagesViewInput> mockView;
+@property (nonatomic, strong) id <MessagesRouterInput> mockRouter;
 
 @end
 

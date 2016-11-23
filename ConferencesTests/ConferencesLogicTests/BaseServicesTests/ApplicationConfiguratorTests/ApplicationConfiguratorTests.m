@@ -29,11 +29,11 @@
 
 @interface ApplicationConfiguratorTests : XCTestCase
 
-@property (strong, nonatomic) ApplicationConfiguratorImplementation *applicationConfigurator;
-@property (strong, nonatomic) id magicalRecordMock;
-@property (strong, nonatomic) id managedObjectModelClassMock;
-@property (strong, nonatomic) id migrationManager;
-@property (strong, nonatomic) NSFileManager *fileManagerMock;
+@property (nonatomic, strong) ApplicationConfiguratorImplementation *applicationConfigurator;
+@property (nonatomic, strong) id magicalRecordMock;
+@property (nonatomic, strong) id managedObjectModelClassMock;
+@property (nonatomic, strong) id migrationManager;
+@property (nonatomic, strong) NSFileManager *fileManagerMock;
 @property (nonatomic, strong) id bundleMock;
 
 @end
