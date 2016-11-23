@@ -27,6 +27,15 @@
  */
 @interface EventListProcessor : NSObject
 
+/**
+ @author Trishina Ekaterina
+
+ This method returns sorted events array
+
+ @param events Array with events
+
+ @return Array with events, sorted by date
+ */
 + (NSArray *)sortEventsByDate:(NSArray *)events;
 
 @end
