@@ -31,8 +31,6 @@
 #import "UIViewController+RCFForceRotation.h"
 #import "TagModuleTableViewCell.h"
 #import "CollectionViewContentCellAnimator.h"
-#import <AVKit/AVKit.h>
-#import <AVFoundation/AVFoundation.h>
 
 static CGFloat kTableViewEstimatedRowHeight = 44.0f;
 static CGFloat kTableViewFooterHeight = 16.0f;
@@ -94,42 +92,11 @@ static CGFloat kTableViewFooterHeight = 16.0f;
 #pragma mark - LectureMaterialCacheDelegate
 
 - (void)didTapRemoveFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial {
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Удалить"
-                                                                             message:@"Вы уверены?"
-                                                                      preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"Удалить"
-                                                            style:UIAlertActionStyleDefault
-                                                          handler:^(UIAlertAction * _Nonnull action) {
-      [self.output didTapRemoveFromCacheLectureMaterial:lectureMaterial];
-    }];
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Отмена"
-                                                           style:UIAlertActionStyleCancel
-                                                         handler:nil];
-    [alertController addAction:confirmAction];
-    [alertController addAction:cancelAction];
-    [self presentViewController:alertController
-                       animated:YES
-                     completion:nil];
+    [self.output didTapRemoveFromCacheLectureMaterial:lectureMaterial];
 }
 
 - (void)didTapDownloadToCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial {
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Скачать"
-                                                                             message:@"Вы уверены?"
-                                                                      preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"Скачать"
-                                                            style:UIAlertActionStyleDefault
-                                                          handler:^(UIAlertAction * _Nonnull action) {
-        [self.output didTapDownloadToCacheLectureMaterial:lectureMaterial];
-    }];
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Отмена"
-                                                           style:UIAlertActionStyleCancel
-                                                         handler:nil];
-    [alertController addAction:confirmAction];
-    [alertController addAction:cancelAction];
-    [self presentViewController:alertController
-                       animated:YES
-                     completion:nil];
-    
+    [self.output didTapDownloadToCacheLectureMaterial:lectureMaterial];
 }
 
 #pragma mark - Private methods
@@ -151,12 +118,8 @@ static CGFloat kTableViewFooterHeight = 16.0f;
                                                       cell:cell];
 }
 
-- (void)showVideoFromCacheWithLocalPath:(NSString *)localURL {
-    NSURL *moveUrl = [NSURL fileURLWithPath:localURL];
-    AVPlayer *player = [AVPlayer playerWithURL:moveUrl];
-    AVPlayerViewController *playerViewController = [AVPlayerViewController new];
-    playerViewController.player = player;
-    [self.view addSubview: playerViewController.view];
-    [self presentViewController:playerViewController animated:YES completion:nil];
+- (void)reloadTableView {
+    [self.tableView reloadData];
 }
+
 @end

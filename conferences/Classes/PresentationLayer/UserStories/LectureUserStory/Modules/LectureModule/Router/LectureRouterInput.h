@@ -20,6 +20,8 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void (^ActionAlertBlock)();
+
 @protocol LectureRouterInput <NSObject>
 
 /**
@@ -58,7 +60,11 @@
  */
 - (void)openYouTubeVideoPlayerModuleWithIdentifier:(NSString *)identifier;
 
-- (void)openLocalVideoPlayerModuleWithLocalURL:(NSURL *)localURL;
+- (void)openLocalVideoPlayerModuleWithPath:(NSString *)path;
+
+- (void)showAlertConfirmationRemoveWithActionBlock:(ActionAlertBlock)block;
+
+- (void)showAlertConfirmationDownloadWithActionBlock:(ActionAlertBlock)block;
 
 @end
 

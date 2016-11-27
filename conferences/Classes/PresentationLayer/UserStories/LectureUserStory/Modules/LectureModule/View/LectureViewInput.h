@@ -33,7 +33,7 @@
  */
 - (void)configureViewWithLecture:(LecturePlainObject *)lecture;
 
-- (void)showVideoFromCacheWithLocalPath:(NSString *)localURL;
+- (void)reloadTableView;
 
 @end
 

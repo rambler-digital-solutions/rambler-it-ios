@@ -19,6 +19,7 @@ typedef void (^LectureMaterialDownloadCompletionBlock)(NSString *localUrl, NSErr
 - (void)downloadToCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial
                             completion:(LectureMaterialDownloadCompletionBlock)completionBlock;
 
-- (void)removeFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial;
+- (void)removeFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial
+                                 error:(NSError **)error;
 
 @end

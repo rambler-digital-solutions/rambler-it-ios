@@ -37,6 +37,6 @@ typedef void (^LectureMaterialsCompletionBlock)(NSError *error);
 - (void)downloadToCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial
                             completion:(LectureMaterialsCompletionBlock)completionBlock;
 
-- (void)removeFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial;
+- (void)removeFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial error:(NSError **)error;
 
 @end

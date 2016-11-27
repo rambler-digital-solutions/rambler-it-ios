@@ -78,16 +78,26 @@
        }];
 }
 
-- (void)removeFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial {
-    
+- (void)removeFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial
+                                 error:(NSError **)error{
+    [[NSFileManager defaultManager] removeItemAtPath:lectureMaterial.localURL
+                                               error:error];
+    if (!error) {
+        NSManagedObjectContext *rootSavingContext = [NSManagedObjectContext MR_rootSavingContext];
+        LectureMaterialModelObject *modelObject = [LectureMaterialModelObject MR_findFirstByAttribute:LectureMaterialModelObjectAttributes.lectureMaterialId
+                                                                                            withValue:lectureMaterial.lectureMaterialId inContext:rootSavingContext];
+        modelObject.localURL = nil;
+        [rootSavingContext MR_saveToPersistentStoreAndWait];
+    }
 }
 
 #pragma mark - Private Methods
 
 - (NSArray *) videoQualities
 {
-    return @[@(XCDYouTubeVideoQualityHD720), @(XCDYouTubeVideoQualityMedium360), @(XCDYouTubeVideoQualitySmall240) ];
-    
+    return @[@(XCDYouTubeVideoQualityHD720),
+             @(XCDYouTubeVideoQualityMedium360),
+             @(XCDYouTubeVideoQualitySmall240) ];
 }
 
 

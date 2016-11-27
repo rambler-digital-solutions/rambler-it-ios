@@ -322,6 +322,7 @@
 		66EE4D351D54BFCD0011F94A /* NITableViewModel+LJIndexOfObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EE4D311D54BFCD0011F94A /* NITableViewModel+LJIndexOfObject.m */; };
 		66EE4D361D54BFCD0011F94A /* NITableViewModel+NextInputResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EE4D331D54BFCD0011F94A /* NITableViewModel+NextInputResponder.m */; };
 		66FFD29C1D7DCCFB0009B7DC /* CollectionViewContentCellAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 66FFD29B1D7DCCFB0009B7DC /* CollectionViewContentCellAnimator.m */; };
+		97F600291DEAF2AD004833B5 /* VideoRecordTableViewCellObjectMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 97F600281DEAF2AD004833B5 /* VideoRecordTableViewCellObjectMapper.m */; };
 		9F0A6C1D1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */; };
 		9F0A6C2E1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C2D1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m */; };
 		9F0A84C31BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A84C21BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m */; };
@@ -1189,6 +1190,8 @@
 		8324F5E12F2E2C427497BE00 /* Pods-Conferences.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conferences.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Conferences/Pods-Conferences.debug.xcconfig"; sourceTree = "<group>"; };
 		9166896486D6F8D1A801419D /* Pods-Conferences-ConferencesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conferences-ConferencesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Conferences-ConferencesTests/Pods-Conferences-ConferencesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9214F4090FA859CC9B06907E /* Pods-Conferences.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conferences.release.xcconfig"; path = "Pods/Target Support Files/Pods-Conferences/Pods-Conferences.release.xcconfig"; sourceTree = "<group>"; };
+		97F600271DEAF2AD004833B5 /* VideoRecordTableViewCellObjectMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoRecordTableViewCellObjectMapper.h; path = VideoRecordTableViewCellMapper/VideoRecordTableViewCellObjectMapper.h; sourceTree = "<group>"; };
+		97F600281DEAF2AD004833B5 /* VideoRecordTableViewCellObjectMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VideoRecordTableViewCellObjectMapper.m; path = VideoRecordTableViewCellMapper/VideoRecordTableViewCellObjectMapper.m; sourceTree = "<group>"; };
 		9F0A6C1B1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CompoundOperationBuilderConfig.h; path = OperationBuilders/CompoundOperationBuilderConfig/CompoundOperationBuilderConfig.h; sourceTree = "<group>"; };
 		9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CompoundOperationBuilderConfig.m; path = OperationBuilders/CompoundOperationBuilderConfig/CompoundOperationBuilderConfig.m; sourceTree = "<group>"; };
 		9F0A6C1E1BC1B53F00A25417 /* RequestConfigurationType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RequestConfigurationType.h; path = CoreComponents/RequestConfigurators/RequestConfigurationType.h; sourceTree = "<group>"; };
@@ -4367,6 +4370,7 @@
 		66E9992E1D549DB600161D98 /* LectureCellObjectsBuilder */ = {
 			isa = PBXGroup;
 			children = (
+				97F600261DEAF286004833B5 /* VideoRecordTableViewCellMapper */,
 				66E9992F1D549E0E00161D98 /* LectureCellObjectsBuilder.h */,
 				66E999301D549E2100161D98 /* LectureCellObjectsBuilderImplementation.h */,
 				66E999311D549E2100161D98 /* LectureCellObjectsBuilderImplementation.m */,
@@ -4628,6 +4632,15 @@
 				E95DD4B714E0257EE1CE1C0D /* EventGalleryPresenterTests.m */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		97F600261DEAF286004833B5 /* VideoRecordTableViewCellMapper */ = {
+			isa = PBXGroup;
+			children = (
+				97F600271DEAF2AD004833B5 /* VideoRecordTableViewCellObjectMapper.h */,
+				97F600281DEAF2AD004833B5 /* VideoRecordTableViewCellObjectMapper.m */,
+			);
+			name = VideoRecordTableViewCellMapper;
 			sourceTree = "<group>";
 		};
 		9F0A6C1A1BC1AFB200A25417 /* CompoundOperationBuilderConfig */ = {
@@ -8460,6 +8473,7 @@
 				9F33B8881D639C7300BE136C /* SpeakerInfoLectureCell.m in Sources */,
 				631808431C482B1300A61E7D /* SpeakerShortInfoView.m in Sources */,
 				63F613681CB00A220002AEF0 /* PreviousEventSectionHeaderTableViewCellObject.m in Sources */,
+				97F600291DEAF2AD004833B5 /* VideoRecordTableViewCellObjectMapper.m in Sources */,
 				9FE139771D65F3E900D7BF44 /* SearchInteractor.m in Sources */,
 				9FA6E7801D6EFE9E0047D2C4 /* RCTabBarController.m in Sources */,
 				9FBE89B01D5CB71300DA0C32 /* VerySpecialAppDelegateForTesting.m in Sources */,

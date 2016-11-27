@@ -26,6 +26,7 @@
 #import "LectureMaterialCacheDelegate.h"
 
 static CGFloat const kVideoRecordTableViewCellHeight = 168.0f;
+static NSInteger const kCacheButtonCornerRadius = 15.0f;
 static NSString *const kPlaceholderImageName = @"placeholder";
 
 @interface VideoRecordTableViewCell ()
@@ -51,9 +52,10 @@ static NSString *const kPlaceholderImageName = @"placeholder";
     } else {
         [self setupNoVideoStateWithObject:object];
     }
-    BOOL isMaterialInCache = object.videoMaterial.localURL.length > 0;
-    [self.removeButton setHidden:!isMaterialInCache];
-    [self.downloadButton setHidden:isMaterialInCache];
+    [self.removeButton setHidden:!object.isVideoCached];
+    [self.downloadButton setHidden:object.isVideoCached];
+    self.removeButton.layer.cornerRadius = kCacheButtonCornerRadius;
+    self.downloadButton.layer.cornerRadius = kCacheButtonCornerRadius;
     
     return YES;
 }

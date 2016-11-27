@@ -29,8 +29,7 @@
 #import "LectureInfoTableViewCellObject.h"
 #import "LectureMaterialTitleTableViewCellObject.h"
 #import "LectureMaterialInfoTableViewCellObject.h"
-#import "VideoRecordTableViewCellObject.h"
-#import "VideoThumbnailGenerator.h"
+#import "VideoRecordTableViewCellObjectMapper.h"
 #import "LectureMaterialType.h"
 
 #import "TagObjectDescriptor.h"
@@ -62,11 +61,9 @@
         NSString *videoRecordTextTitle = NSLocalizedString(VideoRecordTableViewCellTitle, nil);
         LectureMaterialTitleTableViewCellObject *videoRecordTextLabelCellObject = [LectureMaterialTitleTableViewCellObject objectWithText:videoRecordTextTitle];
         [cellObjects addObject:videoRecordTextLabelCellObject];
-        NSURL *videoUrl = [NSURL URLWithString:videoMaterial.link];
-        NSURL *previewImageUrl = [self.thumbnailGenerator generateThumbnailWithVideoURL:videoUrl];
-        VideoRecordTableViewCellObject *videoRecordTableViewCellObject = [VideoRecordTableViewCellObject objectWithPreviewImageUrl:previewImageUrl
-                                                                                                                     videoMaterial:videoMaterial];
-        [cellObjects addObject:videoRecordTableViewCellObject];
+        
+        id videoCellObject = [self.videoCellObjectMapper videoRecordCellObjectWithVideoMaterial:videoMaterial];
+        [cellObjects addObject:videoCellObject];
     }
     
     // Lecture materials block

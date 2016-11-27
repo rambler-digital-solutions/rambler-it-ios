@@ -75,10 +75,11 @@
     }
 }
 
-- (void)removeFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial {
+- (void)removeFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial error:(NSError **)error{
     for (id<LectureMaterialsHandler> handler in self.lectureMaterialsHandlers) {
         if ([handler canHandleLectureMaterial:lectureMaterial]) {
-            [handler removeFromCacheLectureMaterial:lectureMaterial];
+            [handler removeFromCacheLectureMaterial:lectureMaterial
+                                              error:error];
             break;
         }
     }

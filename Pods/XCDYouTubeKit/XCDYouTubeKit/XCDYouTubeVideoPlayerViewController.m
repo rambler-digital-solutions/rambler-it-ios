@@ -117,25 +117,7 @@ NSString *const XCDYouTubeVideoUserInfoKey = @"Video";
 				streamURL = video.streamURLs[videoQuality];
 				if (streamURL)
 				{
-//                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-//                        NSLog(@"Downloading Started");
-//                        NSData *urlData = [NSData dataWithContentsOfURL:streamURL];
-//                        if ( urlData )
-//                        {
-//                            NSArray       *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-//                            NSString  *documentsDirectory = [paths objectAtIndex:0];
-//                            
-//                            NSString  *filePath = [NSString stringWithFormat:@"%@/%@", documentsDirectory,@"thefile.mp4"];
-//                            
-//                            //saving is done on main thread
-//                            dispatch_async(dispatch_get_main_queue(), ^{
-//                                [urlData writeToFile:filePath atomically:YES];
-//                                NSLog(@"File Saved !");
-//                            });
-//                        }
-//                        
-//                    });
-					[self startVideo:video streamURL:streamURL];
+                    [self startVideo:video streamURL:streamURL];
 					break;
 				}
 			}

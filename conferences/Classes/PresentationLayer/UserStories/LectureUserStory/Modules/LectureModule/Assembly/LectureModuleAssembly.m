@@ -30,6 +30,7 @@
 #import "LectureCellObjectsBuilderImplementation.h"
 #import "ShareUrlBuilderImplementation.h"
 #import "CollectionViewContentCellAnimator.h"
+#import "VideoRecordTableViewCellObjectMapper.h"
 
 static NSString *const kLectureShareItemType = @"lecture";
 
@@ -112,8 +113,8 @@ static NSString *const kLectureShareItemType = @"lecture";
 - (LectureCellObjectsBuilderImplementation *)builderCellObjects {
     return [TyphoonDefinition withClass:[LectureCellObjectsBuilderImplementation class]
                           configuration:^(TyphoonDefinition *definition) {
-                              [definition injectProperty:@selector(thumbnailGenerator)
-                                                    with:[self.presentationLayerHelpersAssembly videoThumbnailGenerator]];
+                              [definition injectProperty:@selector(videoCellObjectMapper)
+                                                    with:[self videoRecordCellObjectMapper]];
                           }];
 }
 
@@ -124,6 +125,16 @@ static NSString *const kLectureShareItemType = @"lecture";
                                               parameters:^(TyphoonMethod *initializer) {
                                                   [initializer injectParameterWith:kLectureShareItemType];
                                               }];
+                          }];
+}
+
+#pragma mark - Private methods
+
+- (VideoRecordTableViewCellObjectMapper *)videoRecordCellObjectMapper {
+    return [TyphoonDefinition withClass:[VideoRecordTableViewCellObjectMapper class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(thumbnailGenerator)
+                                                    with:[self.presentationLayerHelpersAssembly videoThumbnailGenerator]];
                           }];
 }
 

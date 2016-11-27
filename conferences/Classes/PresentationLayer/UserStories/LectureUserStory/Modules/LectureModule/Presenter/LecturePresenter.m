@@ -46,9 +46,9 @@
 }
 
 - (void)didTapVideoPreviewWithVideoMaterial:(LectureMaterialPlainObject *)videoMaterial {
-    if (videoMaterial.localURL.length > 0) {
-        NSURL *localUrl = [NSURL URLWithString:videoMaterial.localURL];
-        [self.router openLocalVideoPlayerModuleWithLocalURL:localUrl];
+    BOOL isVideoCached = [[NSFileManager defaultManager] fileExistsAtPath:videoMaterial.localURL];
+    if (isVideoCached) {
+        [self.router openLocalVideoPlayerModuleWithPath:videoMaterial.localURL];
         return;
     }
     
@@ -79,22 +79,27 @@
 
 #pragma mark - LectureMaterialCacheDelegate
 - (void)didTapRemoveFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial {
-    [self.interactor removeVideoFromCacheWithLectureMaterial:lectureMaterial];
+    __block NSError *error;
+    ActionAlertBlock actionAlertBlock = ^{
+        [self.interactor removeVideoFromCacheWithLectureMaterial:lectureMaterial
+                                                           error:&error];
+        //TODO: Изменить кнопку !!!
+        [self.view reloadTableView];
+
+    };
+    [self.router showAlertConfirmationRemoveWithActionBlock:actionAlertBlock];
 }
 
 - (void)didTapDownloadToCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial {
-    [self.interactor downloadVideoToCacheWithLectureMaterial:lectureMaterial];
+    ActionAlertBlock actionAlertBlock = ^{
+        [self.interactor downloadVideoToCacheWithLectureMaterial:lectureMaterial];
+    };
+    [self.router showAlertConfirmationDownloadWithActionBlock:actionAlertBlock];
 }
-
-
-
-
-
 
 - (void)didTriggerEndDownloadingLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial {
-    [self.view showVideoFromCacheWithLocalPath:lectureMaterial.localURL];
+    //TODO: Изменить кнопку !!!
+    [self.view reloadTableView];
 }
-
-
 
 @end

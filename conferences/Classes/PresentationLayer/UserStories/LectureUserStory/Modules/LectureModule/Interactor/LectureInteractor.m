@@ -65,8 +65,10 @@
         [self.output didTriggerEndDownloadingLectureMaterial:lecture];
     }];
 }
-- (void)removeVideoFromCacheWithLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial {
-    [self.lectureMaterialsService removeFromCacheLectureMaterial:lectureMaterial];
+- (void)removeVideoFromCacheWithLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial
+                                          error:(NSError *__autoreleasing *)error {
+    [self.lectureMaterialsService removeFromCacheLectureMaterial:lectureMaterial
+                                                           error:error];
 }
 
 @end

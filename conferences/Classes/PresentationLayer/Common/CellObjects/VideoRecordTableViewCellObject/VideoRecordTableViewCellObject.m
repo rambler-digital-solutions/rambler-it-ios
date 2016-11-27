@@ -25,6 +25,7 @@
 
 @property (nonatomic, strong, readwrite) NSURL *previewImageUrl;
 @property (nonatomic, strong, readwrite) LectureMaterialPlainObject *videoMaterial;
+@property (nonatomic, assign, readwrite) BOOL isVideoCached;
 
 @end
 
@@ -33,19 +34,23 @@
 #pragma mark - Initialization
 
 - (instancetype)initWithPreviewImageUrl:(NSURL *)previewImageUrl
+                          isVideoCached:(BOOL)isVideoCached
                           videoMaterial:(LectureMaterialPlainObject *)videoMaterial {
     self = [super init];
     if (self) {
         _previewImageUrl = previewImageUrl;
         _videoMaterial = videoMaterial;
+        _isVideoCached = isVideoCached;
     }
     return self;
 }
 
 + (instancetype)objectWithPreviewImageUrl:(NSURL *)previewImageUrl
-                          videoMaterial:(LectureMaterialPlainObject *)videoMaterial {
+                            isVideoCached:(BOOL)isVideoCached
+                            videoMaterial:(LectureMaterialPlainObject *)videoMaterial {
     return [[self alloc] initWithPreviewImageUrl:previewImageUrl
-                                 videoMaterial:videoMaterial];
+                                   isVideoCached:isVideoCached
+                                   videoMaterial:videoMaterial];
 }
 
 #pragma mark - NICellObject methods
