@@ -28,6 +28,7 @@
 #import "MessagesRouter.h"
 #import "MessagesPresenter.h"
 #import "MessagesInteractor.h"
+#import "UrlComponentsHelper.h"
 
 @implementation MessageExtensionAssembly
 
@@ -72,11 +73,19 @@
 }
 
 - (id<MessagesRouterInput>)messagesRouter {
-    return [TyphoonDefinition withClass:[MessagesRouter class]];
+    return [TyphoonDefinition withClass:[MessagesRouter class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(helper)
+                                                    with:[self urlComponentsHelper]];
+    }];
 }
 
 - (MSConversation *)conversation {
     return [TyphoonDefinition with:[MSConversation class]];
+}
+
+- (UrlComponentsHelper *)urlComponentsHelper {
+    return [TyphoonDefinition withClass:[UrlComponentsHelper class]];
 }
 
 @end

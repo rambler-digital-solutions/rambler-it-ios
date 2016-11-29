@@ -212,6 +212,9 @@
 		63770CBF1DD61E3D0039AB0D /* MessagesConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 63770CBE1DD61E3D0039AB0D /* MessagesConstants.m */; };
 		63770CC21DD61E6B0039AB0D /* MessageExtensionTyphoonActivator.m in Sources */ = {isa = PBXBuildFile; fileRef = 63770CC11DD61E6B0039AB0D /* MessageExtensionTyphoonActivator.m */; };
 		6377140C1DDC8109009FF726 /* MessagesRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377140B1DDC8109009FF726 /* MessagesRouterTests.m */; };
+		637873901DED897000CA1859 /* UrlComponentsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6378738F1DED897000CA1859 /* UrlComponentsHelper.m */; };
+		637873911DEDA1C600CA1859 /* UrlComponentsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6378738F1DED897000CA1859 /* UrlComponentsHelper.m */; };
+		637873921DEDA1C700CA1859 /* UrlComponentsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6378738F1DED897000CA1859 /* UrlComponentsHelper.m */; };
 		638918CC1DC28AA3009B34AF /* MessagesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 638918CB1DC28AA3009B34AF /* MessagesAppDelegate.m */; };
 		638918CF1DC333A4009B34AF /* MessagesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 638918CB1DC28AA3009B34AF /* MessagesAppDelegate.m */; };
 		638918D01DC333B6009B34AF /* MessagesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 638918CB1DC28AA3009B34AF /* MessagesAppDelegate.m */; };
@@ -1026,6 +1029,8 @@
 		63770CC01DD61E6B0039AB0D /* MessageExtensionTyphoonActivator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageExtensionTyphoonActivator.h; path = Classes/ExtensionLayer/RamblerExtensionTyphoonActivator/MessageExtensionTyphoonActivator/MessageExtensionTyphoonActivator.h; sourceTree = "<group>"; };
 		63770CC11DD61E6B0039AB0D /* MessageExtensionTyphoonActivator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageExtensionTyphoonActivator.m; path = Classes/ExtensionLayer/RamblerExtensionTyphoonActivator/MessageExtensionTyphoonActivator/MessageExtensionTyphoonActivator.m; sourceTree = "<group>"; };
 		6377140B1DDC8109009FF726 /* MessagesRouterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesRouterTests.m; path = MessagesModuleTests/MessagesRouterTests.m; sourceTree = "<group>"; };
+		6378738E1DED897000CA1859 /* UrlComponentsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UrlComponentsHelper.h; path = Classes/PresentationLayer/MessagesModule/DeeplinkResolver/UrlComponentsHelper.h; sourceTree = "<group>"; };
+		6378738F1DED897000CA1859 /* UrlComponentsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UrlComponentsHelper.m; path = Classes/PresentationLayer/MessagesModule/DeeplinkResolver/UrlComponentsHelper.m; sourceTree = "<group>"; };
 		638172081C8B118D0094F19A /* EventStoreServiceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventStoreServiceProtocol.h; sourceTree = "<group>"; };
 		638918CA1DC28AA3009B34AF /* MessagesAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessagesAppDelegate.h; path = MessagesAppDelegate/MessagesAppDelegate.h; sourceTree = "<group>"; };
 		638918CB1DC28AA3009B34AF /* MessagesAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesAppDelegate.m; path = MessagesAppDelegate/MessagesAppDelegate.m; sourceTree = "<group>"; };
@@ -2915,6 +2920,7 @@
 		6373828D1DD5D575004246EC /* MessagesModule */ = {
 			isa = PBXGroup;
 			children = (
+				6378738D1DED892E00CA1859 /* Helper */,
 				636E26991D8ECF5D001ABB92 /* Assembly */,
 				6373828E1DD5D595004246EC /* Interactor */,
 				6373828F1DD5D5A2004246EC /* Presenter */,
@@ -3052,6 +3058,15 @@
 				636B640F1BBDD6260053E38F /* SpeakerServiceImplementation.m */,
 			);
 			path = SpeakerService;
+			sourceTree = "<group>";
+		};
+		6378738D1DED892E00CA1859 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				6378738E1DED897000CA1859 /* UrlComponentsHelper.h */,
+				6378738F1DED897000CA1859 /* UrlComponentsHelper.m */,
+			);
+			name = Helper;
 			sourceTree = "<group>";
 		};
 		638918C91DC28A47009B34AF /* MessagesAppDelegate */ = {
@@ -8861,6 +8876,7 @@
 				636E26F01D8FE8E6001ABB92 /* ErrorConstants.m in Sources */,
 				632184221D9D2F3A001BB7A7 /* LecturePlainObject.m in Sources */,
 				636E26E31D8FE7E3001ABB92 /* OperationSchedulerImplementation.m in Sources */,
+				637873901DED897000CA1859 /* UrlComponentsHelper.m in Sources */,
 				6321842E1D9D34CC001BB7A7 /* TechModelObject.m in Sources */,
 				636E26C61D8FDF41001ABB92 /* EventListModuleAssembly.m in Sources */,
 				632184321D9D3558001BB7A7 /* SocialNetworkAccountModelObject.m in Sources */,
@@ -9239,6 +9255,7 @@
 				63ECC4161CA81E5300439A01 /* ErrorConstants.m in Sources */,
 				661CA4271D65D2040047EB68 /* ResponseConverterAssembly.m in Sources */,
 				9F7B823B1D7ECA07002E977A /* TabLaunchRouter.m in Sources */,
+				637873911DEDA1C600CA1859 /* UrlComponentsHelper.m in Sources */,
 				636F8DDB1BCB8FE800552B91 /* RamblerLocationInteractor.m in Sources */,
 				63F613761CB00A220002AEF0 /* PreviousEventSectionHeaderTableViewCell.m in Sources */,
 				63F613601CB00A220002AEF0 /* EventInteractor.m in Sources */,
@@ -9411,6 +9428,7 @@
 				635E18C71CA6B8CE005B8439 /* SpeakerShortInfoModuleAssemblyTests.m in Sources */,
 				9FBE8A351D5F3CD500DA0C32 /* EventGalleryPresenterTests.m in Sources */,
 				66A1DD301D7E980D00998F6B /* TagAssemblyTests.m in Sources */,
+				637873921DEDA1C700CA1859 /* UrlComponentsHelper.m in Sources */,
 				9FBE89D81D5CB76900DA0C32 /* EventLaunchRouterTests.m in Sources */,
 				63C31C0C1DDAF1DD00AA51BD /* MessageExtensionTyphoonActivator.m in Sources */,
 				9F0A851F1BC185AA006F79FB /* TestCancellableOperation.m in Sources */,
