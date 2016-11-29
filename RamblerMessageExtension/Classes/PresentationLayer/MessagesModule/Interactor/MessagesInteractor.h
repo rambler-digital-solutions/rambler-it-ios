@@ -19,7 +19,6 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-#import "EventListInteractorInput.h"
 #import "MessagesInteractorInput.h"
 
 @protocol EventListInteractorOutput;
