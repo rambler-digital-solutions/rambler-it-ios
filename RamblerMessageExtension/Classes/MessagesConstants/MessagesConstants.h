@@ -20,14 +20,17 @@
 
 #import <Foundation/Foundation.h>
 
-
+// constant to shared group for app and extension
 extern NSString * const RCFAppGroupIdentifier;
+// core data name constant
 extern NSString * const RCFCoreDataNameKey;
-
+// extension url scheme for opening app
 extern NSString * const RCFURLScheme;
+// iMessage host name for opening app
 extern NSString * const RCFURLHostName;
-
+// key constant for type
 extern NSString * const RCFURLQueryItemType;
+// key constant for id
 extern NSString * const RCFURLQueryItemId;
 
 
