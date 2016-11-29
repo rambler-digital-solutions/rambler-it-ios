@@ -27,6 +27,6 @@
 
 @property (nonatomic, strong) EventListModuleAssembly *eventListAssembly;
 @property (nonatomic, strong) PonsomizerAssembly *ponsomizerAssembly;
-@property (nonatomic, strong, readonly) SpotlightIndexerAssembly *spotlightIndexerAssembly;
+@property (nonatomic, strong) SpotlightIndexerAssembly *spotlightIndexerAssembly;
 
 @end
