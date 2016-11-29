@@ -25,7 +25,7 @@
 
 @interface MessagesViewController : MSMessagesAppViewController <MessagesViewInput, EventListDataDisplayManagerDelegate, UITableViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) EventListDataDisplayManager *dataDisplayManager;
 @property (nonatomic, strong) id<MessagesViewOutput> output;
 @property (nonatomic, strong) MSConversation *currentConversation;
