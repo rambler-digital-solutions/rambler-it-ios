@@ -88,4 +88,22 @@
 + (UITableView *)mockTableViewWithStubCellClasses:(NSArray *)cellClasses
                                    forIdentifiers:(NSArray *)identifiers;
 
+/**
+ @author Trishina Ekaterina
+
+ Method returns EventModelObject scheme
+
+ @return NSString
+ */
++ (NSString *)eventModelObjectScheme;
+
+/**
+ @author Trishina Ekaterina
+
+ Method returns random id
+
+ @return NSString
+ */
++ (NSString *)randomObjectIdentifier;
+
 @end
