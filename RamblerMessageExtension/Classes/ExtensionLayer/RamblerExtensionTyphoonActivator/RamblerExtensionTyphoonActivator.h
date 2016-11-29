@@ -29,7 +29,12 @@
  */
 @interface RamblerExtensionTyphoonActivator : NSObject
 
+/**
+ @author Trishina Ekaterina
+
+ Activates Typhoon for view controller
+ */
 + (void)activateTyphoonWithFactory:(TyphoonComponentFactory *)factory
-                       andDelegate:(UIViewController *)controllerDelegate;
+                        controller:(UIViewController *)sourceController;
 
 @end

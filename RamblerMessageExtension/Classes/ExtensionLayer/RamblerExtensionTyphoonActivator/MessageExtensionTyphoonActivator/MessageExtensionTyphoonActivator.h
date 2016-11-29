@@ -27,6 +27,11 @@
  */
 @interface MessageExtensionTyphoonActivator : NSObject
 
+/**
+ @author Trishina Ekaterina
+
+ Activate Typhoon for iMessage controller
+ */
 + (void)activateWithSourceViewController:(UIViewController *)sourceViewController;
 
 @end
