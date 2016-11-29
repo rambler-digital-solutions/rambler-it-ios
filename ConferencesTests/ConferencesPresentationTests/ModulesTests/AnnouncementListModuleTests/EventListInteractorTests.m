@@ -25,6 +25,7 @@
 #import "EventService.h"
 #import "ROSPonsomizer.h"
 #import "EventListInteractorOutput.h"
+#import "EventListProcessor.h"
 
 typedef void (^ProxyBlock)(NSInvocation *);
 
@@ -34,6 +35,7 @@ typedef void (^ProxyBlock)(NSInvocation *);
 @property (strong, nonatomic) id <EventService> mockEventService;
 @property (strong, nonatomic) id <ROSPonsomizer> mockPonsomizer;
 @property (strong, nonatomic) id <EventListInteractorOutput> mockOutput;
+@property (strong, nonatomic) EventListProcessor *mockEventListProcessor;
 
 @end
 
@@ -46,10 +48,12 @@ typedef void (^ProxyBlock)(NSInvocation *);
     self.mockEventService = OCMProtocolMock(@protocol(EventService));
     self.mockPonsomizer = OCMProtocolMock(@protocol(ROSPonsomizer));
     self.mockOutput = OCMProtocolMock(@protocol(EventListInteractorOutput));
+    self.mockEventListProcessor = OCMClassMock([EventListProcessor class]);
     
     self.interactor.eventService = self.mockEventService;
     self.interactor.output = self.mockOutput;
     self.interactor.ponsomizer = self.mockPonsomizer;
+    self.interactor.processor = self.mockEventListProcessor;
 }
 
 - (void)tearDown {
@@ -57,6 +61,7 @@ typedef void (^ProxyBlock)(NSInvocation *);
     self.mockEventService = nil;
     self.mockOutput = nil;
     self.mockPonsomizer = nil;
+    self.mockEventListProcessor = nil;
     
     [super tearDown];
 }
@@ -69,6 +74,7 @@ typedef void (^ProxyBlock)(NSInvocation *);
     
     OCMStub([self.mockEventService obtainEventsWithPredicate:nil]).andReturn(eventsManagedObjects);
     OCMStub([self.mockPonsomizer convertObject:eventsManagedObjects]).andReturn(eventsPlainObjects);
+    OCMStub([self.mockEventListProcessor sortEventsByDate:eventsPlainObjects]).andReturn(eventsPlainObjects);
     
     // when
     id result = [self.interactor obtainEventList];

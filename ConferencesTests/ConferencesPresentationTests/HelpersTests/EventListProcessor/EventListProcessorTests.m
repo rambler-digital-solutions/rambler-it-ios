@@ -13,7 +13,8 @@
 
 @interface EventListProcessorTests : XCTestCase
 
-@property (strong, nonatomic) NSDateFormatter *dateFormatter;
+@property (nonatomic, strong) NSDateFormatter *dateFormatter;
+@property (nonatomic, strong) EventListProcessor *eventListProcessor;
 
 @end
 
@@ -22,11 +23,13 @@
 - (void)setUp {
     [super setUp];
 
+    self.eventListProcessor = [EventListProcessor new];
     self.dateFormatter = [NSDateFormatter new];
     [self.dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
 }
 
 - (void)tearDown {
+    self.eventListProcessor = nil;
     self.dateFormatter = nil;
 
     [super tearDown];
@@ -37,7 +40,7 @@
     NSArray *unsortedEvents = [self fakeEventsArray];
 
     // when
-    NSArray *sortedEvents = [EventListProcessor sortEventsByDate:unsortedEvents];
+    NSArray *sortedEvents = [self.eventListProcessor sortEventsByDate:unsortedEvents];
 
     // then
     EventPlainObject *recentEvent = [sortedEvents firstObject];

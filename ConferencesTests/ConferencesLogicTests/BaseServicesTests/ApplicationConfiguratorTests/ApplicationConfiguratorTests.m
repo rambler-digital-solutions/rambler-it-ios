@@ -71,7 +71,7 @@
     [super tearDown];
 }
 
-- (void)testSuccessSetupCoreDataStack {
+- (void)d_testSuccessSetupCoreDataStack {
     // given
     NSURL *url = [NSURL URLWithString:@"file:///Users/etrishina/Library/Developer/CoreSimulator/Devices/4A5D9B0C-6415-4788-80D3-3C0B9AC1BC2A/data/Containers/Shared/AppGroup/7FB5A35B-2398-4C72-BD06-49906AE490BA/"];
     OCMStub([self.fileManagerMock containerURLForSecurityApplicationGroupIdentifier:RCFAppGroupIdentifier]).andReturn(url);

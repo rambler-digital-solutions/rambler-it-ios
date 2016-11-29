@@ -16,6 +16,7 @@
 #import "EventListInteractorOutput.h"
 #import "EventPlainObject.h"
 #import "ObjectTransformer.h"
+#import "EventListProcessor.h"
 
 @interface MessagesInteractorTests : XCTestCase
 
@@ -24,6 +25,7 @@
 @property (nonatomic, strong) id <ROSPonsomizer> mockPonsomizer;
 @property (nonatomic, strong) id <EventListInteractorOutput> mockOutput;
 @property (nonatomic, strong) id <ObjectTransformer> mockTransformer;
+@property (nonatomic, strong) EventListProcessor *mockListProcessor;
 
 @end
 
@@ -36,11 +38,13 @@
     self.mockEventService = OCMProtocolMock(@protocol(EventService));
     self.mockPonsomizer = OCMProtocolMock(@protocol(ROSPonsomizer));
     self.mockTransformer = OCMProtocolMock(@protocol(ObjectTransformer));
+    self.mockListProcessor = OCMClassMock([EventListProcessor class]);
 
     self.interactor.eventService = self.mockEventService;
     self.interactor.output = self.mockOutput;
     self.interactor.ponsomizer = self.mockPonsomizer;
     self.interactor.transformer = self.mockTransformer;
+    self.interactor.eventListProcessor = self.mockListProcessor;
 }
 
 - (void)tearDown {
@@ -49,6 +53,7 @@
     self.mockOutput = nil;
     self.mockPonsomizer = nil;
     self.mockTransformer = nil;
+    self.mockListProcessor = nil;
 
     [super tearDown];
 }
@@ -61,6 +66,7 @@
 
     OCMStub([self.mockEventService obtainEventsWithPredicate:nil]).andReturn(eventsManagedObjects);
     OCMStub([self.mockPonsomizer convertObject:eventsManagedObjects]).andReturn(eventsPlainObjects);
+    OCMStub([self.mockListProcessor sortEventsByDate:eventsPlainObjects]).andReturn(eventsPlainObjects);
 
     // when
     id result = [self.interactor obtainEventList];
