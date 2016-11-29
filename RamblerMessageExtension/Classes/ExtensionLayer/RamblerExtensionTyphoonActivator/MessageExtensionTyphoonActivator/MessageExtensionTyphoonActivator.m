@@ -31,9 +31,18 @@
 @implementation MessageExtensionTyphoonActivator
 
 + (void)activateWithSourceViewController:(UIViewController *)sourceViewController {
-    TyphoonComponentFactory *factory = [TyphoonBlockComponentFactory factoryWithAssemblies:@[[MessageExtensionAssembly assembly], [EventListModuleAssembly assembly], [PonsomizerAssembly assembly], [ServiceComponentsAssembly assembly], [PresentationLayerHelpersAssembly assembly], [SpotlightIndexerAssembly assembly]]];
-    [RamblerExtensionTyphoonActivator activateTyphoonWithFactory:factory
-                                                      controller:sourceViewController];
+    NSArray *assembliesArray = [self assembliesArray];
+    TyphoonComponentFactory *activatedFactory = [RamblerExtensionTyphoonActivator activateFactoryWithAssemblyArray:assembliesArray];
+    [activatedFactory inject:sourceViewController];
+}
+
++ (NSArray *)assembliesArray {
+    return @[[MessageExtensionAssembly assembly],
+             [EventListModuleAssembly assembly],
+             [PonsomizerAssembly assembly],
+             [ServiceComponentsAssembly assembly],
+             [PresentationLayerHelpersAssembly assembly],
+             [SpotlightIndexerAssembly assembly]];
 }
 
 @end

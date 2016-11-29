@@ -23,10 +23,10 @@
 
 @implementation RamblerExtensionTyphoonActivator
 
-+ (void)activateTyphoonWithFactory:(TyphoonComponentFactory *)factory
-                        controller:(UIViewController *)sourceController {
++ (TyphoonComponentFactory *)activateFactoryWithAssemblyArray:(NSArray *)assemblyArray {
+    TyphoonComponentFactory *factory = [TyphoonBlockComponentFactory factoryWithAssemblies:assemblyArray];
     [factory makeDefault];
-    [factory inject:sourceController];
+    return factory;
 }
 
 @end

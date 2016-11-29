@@ -31,10 +31,13 @@
 
 /**
  @author Trishina Ekaterina
+ 
+ Method return activated factory
+ 
+ @param assemblyArray array of assemblies
 
- Activates Typhoon for view controller
+ @return TyphoonComponentFactory
  */
-+ (void)activateTyphoonWithFactory:(TyphoonComponentFactory *)factory
-                        controller:(UIViewController *)sourceController;
++ (TyphoonComponentFactory *)activateFactoryWithAssemblyArray:(NSArray *)assemblyArray;
 
 @end
