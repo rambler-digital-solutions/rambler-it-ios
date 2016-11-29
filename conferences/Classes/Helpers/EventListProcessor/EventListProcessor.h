@@ -36,6 +36,6 @@
 
  @return Array with events, sorted by date
  */
-+ (NSArray *)sortEventsByDate:(NSArray *)events;
+- (NSArray *)sortEventsByDate:(NSArray *)events;
 
 @end

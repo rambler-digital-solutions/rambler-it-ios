@@ -35,7 +35,7 @@
 - (NSArray *)obtainEventList {
     NSArray *events = [self.eventService obtainEventsWithPredicate:nil];
     NSArray *plainObjects = [self.ponsomizer convertObject:events];
-    NSArray *sortedEvents = [EventListProcessor sortEventsByDate:plainObjects];
+    NSArray *sortedEvents = [self.processor sortEventsByDate:plainObjects];
     
     return sortedEvents;
 }

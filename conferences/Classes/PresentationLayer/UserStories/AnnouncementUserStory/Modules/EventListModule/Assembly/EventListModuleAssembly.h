@@ -21,7 +21,7 @@
 #import "ModuleAssemblyBase.h"
 #import <RamblerTyphoonUtils/AssemblyCollector.h>
 
-@class PonsomizerAssembly, EventListTableViewController, EventListPresenter, EventListDataDisplayManager, EventListRouter;
+@class PonsomizerAssembly, EventListTableViewController, EventListPresenter, EventListDataDisplayManager, EventListRouter, EventListProcessor;
 
 /**
  @author Artem Karpushin
@@ -36,6 +36,7 @@
 - (EventListPresenter *)presenterEventList;
 - (EventListDataDisplayManager *)dataDisplayManagerEventList;
 - (EventListRouter *)routerEventList;
+- (EventListProcessor *)eventListProcessor;
 
 @end
 

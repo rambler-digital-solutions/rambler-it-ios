@@ -20,7 +20,7 @@
 
 @implementation EventListProcessor
 
-+ (NSArray *)sortEventsByDate:(NSArray *)events {
+- (NSArray *)sortEventsByDate:(NSArray *)events {
     NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:NSStringFromSelector(@selector(startDate)) ascending:NO];
     events = [[events sortedArrayUsingDescriptors:@[sortDescriptor]] mutableCopy];
 

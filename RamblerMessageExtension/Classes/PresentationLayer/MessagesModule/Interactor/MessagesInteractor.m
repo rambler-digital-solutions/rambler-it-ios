@@ -30,13 +30,14 @@
 #import "EventListProcessor.h"
 #import "MessagesConstants.h"
 #import <MagicalRecord/MagicalRecord.h>
+#import "EventListProcessor.h"
 
 @implementation MessagesInteractor
 
 - (NSArray *)obtainEventList {
     NSArray *events = [self.eventService obtainEventsWithPredicate:nil];
     NSArray *plainObjects = [self.ponsomizer convertObject:events];
-    NSArray *sortedEvents = [EventListProcessor sortEventsByDate:plainObjects];
+    NSArray *sortedEvents = [self.eventListProcessor sortEventsByDate:plainObjects];
 
     return sortedEvents;
 }

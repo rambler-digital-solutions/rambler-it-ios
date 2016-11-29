@@ -26,6 +26,7 @@
 @protocol EventService;
 @protocol ROSPonsomizer;
 @protocol ObjectTransformer;
+@class EventListProcessor;
 
 @interface MessagesInteractor : NSObject <MessagesInteractorInput>
 
@@ -33,5 +34,6 @@
 @property (nonatomic, strong) id <EventService> eventService;
 @property (nonatomic, strong) id <ROSPonsomizer> ponsomizer;
 @property (nonatomic, strong) id <ObjectTransformer> transformer;
+@property (nonatomic, strong) EventListProcessor *eventListProcessor;
 
 @end

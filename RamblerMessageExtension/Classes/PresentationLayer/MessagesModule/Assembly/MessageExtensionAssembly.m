@@ -66,6 +66,8 @@
                                                     with:[self.ponsomizerAssembly ponsomizer]];
                               [definition injectProperty:@selector(transformer)
                                                     with:[self.spotlightIndexerAssembly eventObjectTransformer]];
+                              [definition injectProperty:@selector(eventListProcessor)
+                                                    with:[self.eventListAssembly eventListProcessor]];
                           }];
 }
 
