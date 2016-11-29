@@ -24,8 +24,31 @@
 
 @protocol MessagesViewOutput <NSObject>
 
+/**
+ @author Trishina Ekaterina
+
+ Method is used to inform presenter that view needs to be configuered
+ */
 - (void)setupView;
+
+/**
+ @author Trishina Ekaterina
+
+ Method is used to inform presenter that user send message
+
+ @param event Chosen conference
+ */
 - (void)didInsertNewMessageWithEvent:(EventPlainObject *)event;
+
+/**
+ @author Trishina Ekaterina
+
+ Method is used to inform presenter that user tapped particular message
+
+ @param message User message
+ 
+ @param extensionContext Current context
+ */
 - (void)didTapMessageWith:(MSMessage *)message
      withExtensionContext:(NSExtensionContext *)extensionContext;
 
