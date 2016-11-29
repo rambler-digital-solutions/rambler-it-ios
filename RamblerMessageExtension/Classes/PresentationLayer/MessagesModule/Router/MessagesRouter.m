@@ -19,24 +19,14 @@
 // THE SOFTWARE.
 
 #import "MessagesRouter.h"
-#import "MessagesConstants.h"
+#import "UrlComponentsHelper.h"
 
 @implementation MessagesRouter
 
 - (void)openEventModuleWithIdentifier:(NSString *)eventIdentifier
                   andExtensionContext:(NSExtensionContext *)extensionContext {
-    NSURLComponents *urlComponents = [NSURLComponents new];
-    urlComponents.scheme = RCFURLScheme;
-    urlComponents.host = RCFURLHostName;
-    NSArray *identifierArray = [eventIdentifier componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"_"]];
-    NSURLQueryItem *type = [NSURLQueryItem queryItemWithName:RCFURLQueryItemType
-                                                       value:[identifierArray firstObject]];
-    NSURLQueryItem *itemId = [NSURLQueryItem queryItemWithName:RCFURLQueryItemId
-                                                         value:eventIdentifier];
-
-    urlComponents.queryItems = @[type, itemId];
-
-    [extensionContext openURL:urlComponents.URL
+    NSURL *url = [self.helper urlFromEventIdentifier:eventIdentifier];
+    [extensionContext openURL:url
             completionHandler:nil];
 }
 
