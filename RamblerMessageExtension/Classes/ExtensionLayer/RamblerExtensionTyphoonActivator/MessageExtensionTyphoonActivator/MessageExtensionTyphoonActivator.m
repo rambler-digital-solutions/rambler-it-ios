@@ -33,7 +33,7 @@
 + (void)activateWithSourceViewController:(UIViewController *)sourceViewController {
     TyphoonComponentFactory *factory = [TyphoonBlockComponentFactory factoryWithAssemblies:@[[MessageExtensionAssembly assembly], [EventListModuleAssembly assembly], [PonsomizerAssembly assembly], [ServiceComponentsAssembly assembly], [PresentationLayerHelpersAssembly assembly], [SpotlightIndexerAssembly assembly]]];
     [RamblerExtensionTyphoonActivator activateTyphoonWithFactory:factory
-                                                     andDelegate:sourceViewController];
+                                                      controller:sourceViewController];
 }
 
 @end

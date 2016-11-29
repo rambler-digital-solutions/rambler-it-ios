@@ -24,9 +24,9 @@
 @implementation RamblerExtensionTyphoonActivator
 
 + (void)activateTyphoonWithFactory:(TyphoonComponentFactory *)factory
-                       andDelegate:(UIViewController *)controllerDelegate {
+                        controller:(UIViewController *)sourceController {
     [factory makeDefault];
-    [factory inject:controllerDelegate];
+    [factory inject:sourceController];
 }
 
 @end
