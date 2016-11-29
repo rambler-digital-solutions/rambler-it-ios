@@ -91,7 +91,7 @@
 - (void)testSuccessCreateMessage {
     // given
     EventPlainObject *eventObject = [[EventPlainObject alloc] init];
-    NSString *identifier = @"EventModelObject_42";
+    NSString *identifier = [NSString stringWithFormat:[MockObjectsFactory eventModelObjectScheme], [MockObjectsFactory randomObjectIdentifier]];
     NSURL *givenURL = [NSURL URLWithString:identifier];
     OCMStub([self.mockTransformer identifierForObject:eventObject]).andReturn(identifier);
 
@@ -105,7 +105,7 @@
 
 - (void)testCorrectIdentifier {
     // given
-    NSString *identifier = @"EventModelObject_42";
+    NSString *identifier = [NSString stringWithFormat:[MockObjectsFactory eventModelObjectScheme], [MockObjectsFactory randomObjectIdentifier]];
     OCMStub([self.mockTransformer isCorrectIdentifier:identifier]).andReturn(YES);
 
     // when

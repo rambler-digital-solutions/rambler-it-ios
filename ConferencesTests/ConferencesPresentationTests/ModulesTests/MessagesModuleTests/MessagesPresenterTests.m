@@ -27,6 +27,7 @@
 #import "MessagesInteractorInput.h"
 #import "MessagesRouterInput.h"
 #import "EventPlainObject.h"
+#import "MockObjectsFactory.h"
 
 @interface MessagesPresenterTests : XCTestCase
 
@@ -75,7 +76,7 @@
 - (void)testSuccessDidTriggerTapCellWithEvent {
     // given
     MSMessage *message = [[MSMessage alloc] init];
-    NSString *givenIdentifier = @"EventModelObject_42";
+    NSString *givenIdentifier = [NSString stringWithFormat:[MockObjectsFactory eventModelObjectScheme], [MockObjectsFactory randomObjectIdentifier]];
     message.URL = [NSURL URLWithString:givenIdentifier];
     NSExtensionContext *context = [NSExtensionContext new];
     OCMStub([self.mockInteractor isCorrectIdentifier:givenIdentifier]).andReturn(YES);
@@ -91,7 +92,7 @@
 
 - (void)testSuccessDidInsertMessage {
     // given
-    NSString *objectId = @"123";
+    NSString *objectId = [NSString stringWithFormat:[MockObjectsFactory eventModelObjectScheme], [MockObjectsFactory randomObjectIdentifier]];
     EventPlainObject *event = [EventPlainObject new];
     event.eventId = objectId;
 

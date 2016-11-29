@@ -25,6 +25,7 @@
 
 #import "MessagesRouter.h"
 #import "MessagesRouterInput.h"
+#import "MockObjectsFactory.h"
 
 @interface MessagesRouterTests : XCTestCase
 
@@ -50,7 +51,7 @@
 
 - (void)testSuccessOpenEventModuleWithEventObjectId {
     // given
-    NSString *identifier = @"EventModelObject_42";
+    NSString *identifier = [NSString stringWithFormat:[MockObjectsFactory eventModelObjectScheme], [MockObjectsFactory randomObjectIdentifier]];
     NSURL *url = [NSURL URLWithString:identifier];
     NSExtensionContext *context = [NSExtensionContext new];
 
