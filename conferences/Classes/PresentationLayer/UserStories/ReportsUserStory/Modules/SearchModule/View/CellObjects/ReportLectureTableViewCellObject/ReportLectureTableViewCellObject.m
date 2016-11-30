@@ -58,7 +58,8 @@
 }
 
 + (instancetype)objectWithLecture:(LecturePlainObject *)lecture
-                             tags:(NSAttributedString *)tags speakerName:(NSAttributedString *)highlightedSpeakerName
+                             tags:(NSAttributedString *)tags
+                      speakerName:(NSAttributedString *)highlightedSpeakerName
                   highlightedText:(NSAttributedString *)highlightedText {
     
     NSURL *lectureImageURL = [NSURL URLWithString:[lecture speaker].imageUrl];

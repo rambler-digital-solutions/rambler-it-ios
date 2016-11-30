@@ -77,7 +77,8 @@ static const CGFloat kDefaultLineHeight = 3;
                                                      selectedText:selectedText
                                                             color:[UIColor rcf_lightBlueColor]];
     ReportLectureTableViewCellObject *cellObject = [ReportLectureTableViewCellObject objectWithLecture:lecture
-                                                                                                  tags:highlightedTags speakerName:highlightedSpeakerName highlightedText:highlightedName];
+                                                                                                  tags:highlightedTags
+                                                                                           speakerName:highlightedSpeakerName highlightedText:highlightedName];
     return cellObject;
 }
 
