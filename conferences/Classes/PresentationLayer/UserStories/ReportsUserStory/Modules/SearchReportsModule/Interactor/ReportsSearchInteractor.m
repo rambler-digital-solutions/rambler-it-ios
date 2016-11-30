@@ -33,6 +33,10 @@
 #import "EventTypeDeterminator.h"
 #import "ROSPonsomizer.h"
 
+static NSString *const kEventsNameAndLecturesTagContainsQuery = @"%K CONTAINS[c] %@ OR SUBQUERY(%K, $lecture, SUBQUERY($lecture.%K, $tag, $tag.%K CONTAINS[c] %@).@count > 0).@count > 0";
+static NSString *const kDefaultContainsQuery = @"%K CONTAINS[c] %@";
+static NSString *const kLecturesNameTagsAndSpeakerNameContainsQuery = @"%K CONTAINS[c] %@ OR SUBQUERY(%K, $tag, $tag.%K CONTAINS[c] %@).@count > 0 OR %K.%K CONTAINS[c] %@";
+
 @implementation ReportsSearchInteractor
 
 #pragma mark - ReportListInteractorInput
@@ -60,13 +64,13 @@
             continue;
         }
         
-        NSPredicate *eventsPredicate = [NSPredicate predicateWithFormat:@"%K CONTAINS[c] %@ OR SUBQUERY(%K, $lecture, SUBQUERY($lecture.%K, $tag, $tag.%K CONTAINS[c] %@).@count > 0).@count > 0", selectorEventName, string, selectorLectures, selectorTags, selectorTagName, string];
+        NSPredicate *eventsPredicate = [NSPredicate predicateWithFormat:kEventsNameAndLecturesTagContainsQuery, selectorEventName, string, selectorLectures, selectorTags, selectorTagName, string];
         [eventsPredicatesArray addObject:eventsPredicate];
         
-        NSPredicate *speakersPredicate = [NSPredicate predicateWithFormat:@"%K CONTAINS[c] %@", selectorSpeakerName, string];
+        NSPredicate *speakersPredicate = [NSPredicate predicateWithFormat:kDefaultContainsQuery, selectorSpeakerName, string];
         [speakersPredicatesArray addObject:speakersPredicate];
         
-        NSPredicate *lecturesPredicate = [NSPredicate predicateWithFormat:@"%K CONTAINS[c] %@ OR SUBQUERY(%K, $tag, $tag.%K CONTAINS[c] %@).@count > 0 OR %K.%K CONTAINS[c] %@", selectorLectureName, string, selectorTags,selectorTagName, string, selectorLectureSpeaker, selectorSpeakerName, string];
+        NSPredicate *lecturesPredicate = [NSPredicate predicateWithFormat:kLecturesNameTagsAndSpeakerNameContainsQuery, selectorLectureName, string, selectorTags,selectorTagName, string, selectorLectureSpeaker, selectorSpeakerName, string];
         [lecturesPredicatesArray addObject:lecturesPredicate];
     }
     
