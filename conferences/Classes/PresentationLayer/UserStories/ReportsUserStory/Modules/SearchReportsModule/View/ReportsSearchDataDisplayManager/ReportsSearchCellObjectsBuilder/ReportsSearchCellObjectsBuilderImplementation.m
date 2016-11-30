@@ -66,7 +66,7 @@ static const CGFloat kDefaultLineHeight = 3;
 
 - (ReportLectureTableViewCellObject *)lectureCellObjectFromPlainObject:(LecturePlainObject *)lecture
                                                           selectedText:(NSString *)selectedText {
-    NSAttributedString *highLightedSpeakerName = [self highlightInString:lecture.speaker.name
+    NSAttributedString *highlightedSpeakerName = [self highlightInString:lecture.speaker.name
                                                             selectedText:selectedText
                                                                    color:[UIColor rcf_lightBlueColor]];
     NSAttributedString *highlightedName = [self highlightInString:lecture.name
@@ -77,7 +77,7 @@ static const CGFloat kDefaultLineHeight = 3;
                                                      selectedText:selectedText
                                                             color:[UIColor rcf_lightBlueColor]];
     ReportLectureTableViewCellObject *cellObject = [ReportLectureTableViewCellObject objectWithLecture:lecture
-                                                                                                  tags:highlightedTags speakerName:highLightedSpeakerName highlightedText:highlightedName];
+                                                                                                  tags:highlightedTags speakerName:highlightedSpeakerName highlightedText:highlightedName];
     return cellObject;
 }
 

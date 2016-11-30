@@ -40,7 +40,7 @@
 
 + (instancetype)objectWithLecture:(LecturePlainObject *)lecture
                              tags:(NSAttributedString *)tags
-                      speakerName:(NSAttributedString *)highLightedSpeakerName
+                      speakerName:(NSAttributedString *)highlightedSpeakerName
                   highlightedText:(NSAttributedString *)highlightedText;
 
 @end
