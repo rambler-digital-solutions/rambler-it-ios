@@ -47,16 +47,16 @@ static const CGFloat kDefaultLineHeight = 3;
 
 - (ReportEventTableViewCellObject *)eventCellObjectFromPlainObject:(EventPlainObject *)event
                                                       selectedText:(NSString *)selectedText {
-
+    
     NSString *eventDate = [self.dateFormatter obtainDateWithDayMonthYearFormat:event.startDate];
     
     NSAttributedString *highlightedTitle = [self highlightInString:event.name
-                                                       selectedText:selectedText
-                                                              color:[UIColor rcf_lightBlueColor]];
-    NSString *stringFromTags = [self obtainTagsStringFromEvent:event];
-    NSAttributedString *highlightedTags = [self highlightInString:stringFromTags
                                                       selectedText:selectedText
                                                              color:[UIColor rcf_lightBlueColor]];
+    NSString *stringFromTags = [self obtainTagsStringFromEvent:event];
+    NSAttributedString *highlightedTags = [self highlightInString:stringFromTags
+                                                     selectedText:selectedText
+                                                            color:[UIColor rcf_lightBlueColor]];
     ReportEventTableViewCellObject *cellObject = [ReportEventTableViewCellObject objectWithEvent:event
                                                                                          andDate:eventDate
                                                                                             tags:highlightedTags
@@ -66,6 +66,9 @@ static const CGFloat kDefaultLineHeight = 3;
 
 - (ReportLectureTableViewCellObject *)lectureCellObjectFromPlainObject:(LecturePlainObject *)lecture
                                                           selectedText:(NSString *)selectedText {
+    NSAttributedString *highLightedSpeakerName = [self highlightInString:lecture.speaker.name
+                                                            selectedText:selectedText
+                                                                   color:[UIColor rcf_lightBlueColor]];
     NSAttributedString *highlightedName = [self highlightInString:lecture.name
                                                      selectedText:selectedText
                                                             color:[UIColor rcf_lightBlueColor]];
@@ -74,8 +77,7 @@ static const CGFloat kDefaultLineHeight = 3;
                                                      selectedText:selectedText
                                                             color:[UIColor rcf_lightBlueColor]];
     ReportLectureTableViewCellObject *cellObject = [ReportLectureTableViewCellObject objectWithLecture:lecture
-                                                                                                  tags:highlightedTags
-                                                                                       highlightedText:highlightedName];
+                                                                                                  tags:highlightedTags speakerName:highLightedSpeakerName highlightedText:highlightedName];
     return cellObject;
 }
 
@@ -106,14 +108,22 @@ static const CGFloat kDefaultLineHeight = 3;
     
     NSMutableAttributedString *highlightedString = [[NSMutableAttributedString alloc] initWithString:string];
     if ([selectedText length] != 0) {
-        NSRange range = [[string lowercaseString] rangeOfString:selectedText];
-        [highlightedString addAttribute:NSForegroundColorAttributeName value:color range:range];
+        NSArray *separetedTextArray = [selectedText componentsSeparatedByString:@" "];
         
-        NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
-        [style setLineSpacing:kDefaultLineHeight];
-        [highlightedString addAttribute:NSParagraphStyleAttributeName
-                           value:style
-                           range:NSMakeRange(0, highlightedString.length)];
+        for (NSString *separatedString in separetedTextArray) {
+            if (separatedString.length == 0) {
+                continue;
+            }
+            
+            NSRange range = [[string lowercaseString] rangeOfString:separatedString];
+            [highlightedString addAttribute:NSForegroundColorAttributeName value:color range:range];
+            
+            NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
+            [style setLineSpacing:kDefaultLineHeight];
+            [highlightedString addAttribute:NSParagraphStyleAttributeName
+                                      value:style
+                                      range:NSMakeRange(0, highlightedString.length)];
+        }
     }
     return [highlightedString copy];
 }

@@ -45,7 +45,7 @@ static NSString *const kPlaceholderImageName = @"speaker-placeholder";
     self.lectureImageView.layer.cornerRadius = self.lectureImageView.frame.size.height/2.0;
     [self.lectureImageView sd_setImageWithURL:object.imageURL
                              placeholderImage:[UIImage imageNamed:kPlaceholderImageName]];
-    self.speakerName.text = object.speakerName;
+    self.speakerName.attributedText = object.speakerName;
     self.tags.attributedText = object.tags;
     self.separatorInset = UIEdgeInsetsMake(0.f, kReportLectureTableViewSeparatorInset, 0.f, 0.0f);
     return YES;

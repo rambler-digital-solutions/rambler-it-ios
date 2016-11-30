@@ -36,10 +36,11 @@
 @property (nonatomic, strong, readonly) NSAttributedString *tags;
 @property (nonatomic, strong, readonly) NSURL *imageURL;
 @property (nonatomic, strong, readonly) LecturePlainObject *lecture;
-@property (nonatomic, strong, readonly) NSString *speakerName;
+@property (nonatomic, copy, readonly) NSAttributedString *speakerName;;
 
 + (instancetype)objectWithLecture:(LecturePlainObject *)lecture
                              tags:(NSAttributedString *)tags
+                      speakerName:(NSAttributedString *)highLightedSpeakerName
                   highlightedText:(NSAttributedString *)highlightedText;
 
 @end
