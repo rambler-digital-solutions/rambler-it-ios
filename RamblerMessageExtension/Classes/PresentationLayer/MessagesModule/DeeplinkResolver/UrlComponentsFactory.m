@@ -18,10 +18,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "UrlComponentsHelper.h"
+#import "UrlComponentsFactory.h"
 #import "MessagesConstants.h"
 
-@implementation UrlComponentsHelper
+@implementation UrlComponentsFactory
 
 - (NSURL *)urlFromEventIdentifier:(NSString *)identifier {
     NSURLComponents *urlComponents = [NSURLComponents new];

@@ -21,10 +21,10 @@
 #import <Foundation/Foundation.h>
 #import "MessagesRouterInput.h"
 
-@class UrlComponentsHelper;
+@class UrlComponentsFactory;
 
 @interface MessagesRouter : NSObject <MessagesRouterInput>
 
-@property (nonatomic, strong) UrlComponentsHelper *helper;
+@property (nonatomic, strong) UrlComponentsFactory *helper;
 
 @end

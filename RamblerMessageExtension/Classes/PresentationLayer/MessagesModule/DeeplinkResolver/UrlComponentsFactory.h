@@ -25,7 +25,7 @@
 
  Helper, which form NSURLComponents url
  */
-@interface UrlComponentsHelper : NSObject
+@interface UrlComponentsFactory : NSObject
 
 /**
  @author Trishina Ekaterina

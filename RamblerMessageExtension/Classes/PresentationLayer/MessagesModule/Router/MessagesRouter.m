@@ -19,7 +19,7 @@
 // THE SOFTWARE.
 
 #import "MessagesRouter.h"
-#import "UrlComponentsHelper.h"
+#import "UrlComponentsFactory.h"
 
 @implementation MessagesRouter
 

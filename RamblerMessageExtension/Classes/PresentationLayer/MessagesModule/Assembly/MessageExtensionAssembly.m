@@ -28,7 +28,7 @@
 #import "MessagesRouter.h"
 #import "MessagesPresenter.h"
 #import "MessagesInteractor.h"
-#import "UrlComponentsHelper.h"
+#import "UrlComponentsFactory.h"
 
 @implementation MessageExtensionAssembly
 
@@ -84,8 +84,8 @@
     return [TyphoonDefinition with:[MSConversation class]];
 }
 
-- (UrlComponentsHelper *)urlComponentsHelper {
-    return [TyphoonDefinition withClass:[UrlComponentsHelper class]];
+- (UrlComponentsFactory *)urlComponentsHelper {
+    return [TyphoonDefinition withClass:[UrlComponentsFactory class]];
 }
 
 @end
