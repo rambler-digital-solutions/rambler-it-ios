@@ -21,6 +21,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		028E445A1DF053B500734E84 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028E44581DF053B500734E84 /* ObjectMapper.framework */; };
+		028E445B1DF053B500734E84 /* UberRides.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028E44591DF053B500734E84 /* UberRides.framework */; };
 		1F78357EBF30489533FBC867 /* libPods-Conferences-ConferencesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C46B774BA2D16C41C04D78BA /* libPods-Conferences-ConferencesTests.a */; };
 		234C76A5941B9A10462172CC /* libPods-Conferences.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C7A972E2814B586E4073760 /* libPods-Conferences.a */; };
 		2B01CEBE1D50A55900DA8E66 /* MetaEventServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B01CEBD1D50A55900DA8E66 /* MetaEventServiceTests.m */; };
@@ -581,6 +583,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		028E44581DF053B500734E84 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
+		028E44591DF053B500734E84 /* UberRides.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UberRides.framework; path = Carthage/Build/iOS/UberRides.framework; sourceTree = "<group>"; };
 		2B01CEBD1D50A55900DA8E66 /* MetaEventServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetaEventServiceTests.m; sourceTree = "<group>"; };
 		2B05E15B1D50EDB900E017AB /* EventModuleSegueIdentifiersConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventModuleSegueIdentifiersConstants.h; sourceTree = "<group>"; };
 		2B05E15F1D50FEFC00E017AB /* SpeakerInfoCellObjectBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerInfoCellObjectBuilder.h; sourceTree = "<group>"; };
@@ -1679,6 +1683,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				234C76A5941B9A10462172CC /* libPods-Conferences.a in Frameworks */,
+				028E445A1DF053B500734E84 /* ObjectMapper.framework in Frameworks */,
+				028E445B1DF053B500734E84 /* UberRides.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4583,6 +4589,8 @@
 		75B6DFED87955159473111D1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				028E44581DF053B500734E84 /* ObjectMapper.framework */,
+				028E44591DF053B500734E84 /* UberRides.framework */,
 				6C7A972E2814B586E4073760 /* libPods-Conferences.a */,
 				C46B774BA2D16C41C04D78BA /* libPods-Conferences-ConferencesTests.a */,
 			);
@@ -7972,6 +7980,7 @@
 				9FF4C3E41CE22036002157B2 /* ShellScript */,
 				79CC11D65A7267714823E9D8 /* [CP] Embed Pods Frameworks */,
 				3F898D337096B8188198CE1A /* [CP] Copy Pods Resources */,
+				028E445C1DF053DB00734E84 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -8118,6 +8127,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		028E445C1DF053DB00734E84 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/UberRides.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 		2B750D161D362DB000EACE98 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -8826,11 +8850,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D62094F1B6ACB6EE592C4E20 /* Pods-Conferences.nightly.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 33;
 				DEVELOPMENT_TEAM = UM246WFXVS;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -8972,12 +9001,17 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8324F5E12F2E2C427497BE00 /* Pods-Conferences.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 33;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = UM246WFXVS;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -9021,11 +9055,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9214F4090FA859CC9B06907E /* Pods-Conferences.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 33;
 				DEVELOPMENT_TEAM = UM246WFXVS;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
