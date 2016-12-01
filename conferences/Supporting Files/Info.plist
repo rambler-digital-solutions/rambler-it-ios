@@ -2,6 +2,32 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+    <key>UberClientID</key>
+    <string>Cwgg6VCiOHcd8RxMNZmOmyqNvOZI81mI</string>
+    <key>UberServerToken</key>
+        <string>Xffxa0c0DEOMPvflcbd-2wFKXieR-4lJ9wts2IMn</string>
+        <key>UberDisplayName</key>
+        <string>Conferences</string>
+        <key>UberCallbackURIs</key>
+        <array>
+            <dict>
+                <key>UberCallbackURIType</key>
+                <string>General</string>
+                <key>URIString</key>
+                <string>callback://rambler_it</string>
+            </dict>
+        </array>
+        <key>CFBundleURLTypes</key>
+        <array>
+            <dict>
+                <key>CFBundleTypeRole</key>
+                <string>Editor</string>
+                <key>CFBundleURLSchemes</key>
+                <array>
+                    <string>rambler_it</string>
+                </array>
+            </dict>
+        </array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
