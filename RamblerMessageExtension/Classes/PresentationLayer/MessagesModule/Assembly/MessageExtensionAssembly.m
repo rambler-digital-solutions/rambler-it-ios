@@ -81,7 +81,7 @@
 }
 
 - (MSConversation *)conversation {
-    return [TyphoonDefinition with:[MSConversation class]];
+    return [TyphoonDefinition withClass:[MSConversation class]];
 }
 
 - (UrlComponentsFactory *)urlComponentsHelper {
