@@ -32,7 +32,7 @@
 #import "TagModuleTableViewCell.h"
 #import "CollectionViewContentCellAnimator.h"
 
-static CGFloat kTableViewEstimatedRowHeight = 44.0f;
+//static CGFloat kTableViewEstimatedRowHeight = 44.0f;
 static CGFloat kTableViewFooterHeight = 16.0f;
 
 @implementation LectureViewController
@@ -68,8 +68,6 @@ static CGFloat kTableViewFooterHeight = 16.0f;
 
 - (void)setupViewInitialState {
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, kTableViewFooterHeight)];
-    self.tableView.estimatedRowHeight = kTableViewEstimatedRowHeight;
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
     
     [self.navigationController.navigationBar rcf_becomeTransparent];
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];

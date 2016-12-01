@@ -26,6 +26,7 @@
 @property (nonatomic, strong, readwrite) NSURL *previewImageUrl;
 @property (nonatomic, strong, readwrite) LectureMaterialPlainObject *videoMaterial;
 @property (nonatomic, assign, readwrite) BOOL isVideoCached;
+@property (nonatomic, assign, readwrite) BOOL isVideoDownloading;
 
 @end
 
@@ -35,11 +36,13 @@
 
 - (instancetype)initWithPreviewImageUrl:(NSURL *)previewImageUrl
                           isVideoCached:(BOOL)isVideoCached
+                     isVideoDownloading:(BOOL)isVideoDownloading
                           videoMaterial:(LectureMaterialPlainObject *)videoMaterial {
     self = [super init];
     if (self) {
         _previewImageUrl = previewImageUrl;
         _videoMaterial = videoMaterial;
+        _isVideoDownloading = isVideoDownloading;
         _isVideoCached = isVideoCached;
     }
     return self;
@@ -47,9 +50,11 @@
 
 + (instancetype)objectWithPreviewImageUrl:(NSURL *)previewImageUrl
                             isVideoCached:(BOOL)isVideoCached
+                       isVideoDownloading:(BOOL)isVideoDownloading
                             videoMaterial:(LectureMaterialPlainObject *)videoMaterial {
     return [[self alloc] initWithPreviewImageUrl:previewImageUrl
                                    isVideoCached:isVideoCached
+                              isVideoDownloading:isVideoDownloading
                                    videoMaterial:videoMaterial];
 }
 

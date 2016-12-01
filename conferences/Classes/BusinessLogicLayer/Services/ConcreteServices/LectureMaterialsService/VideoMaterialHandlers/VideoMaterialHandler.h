@@ -10,9 +10,11 @@
 #import "LectureMaterialsHandler.h"
 
 @class YouTubeIdentifierDeriviator;
+@class VideoMaterialDownloadingStatesStorage;
 
 @interface VideoMaterialHandler : NSObject <LectureMaterialsHandler>
 
 @property (nonatomic, strong) YouTubeIdentifierDeriviator *deriviator;
+@property (nonatomic, strong) VideoMaterialDownloadingStatesStorage *statesStorage;
 
 @end

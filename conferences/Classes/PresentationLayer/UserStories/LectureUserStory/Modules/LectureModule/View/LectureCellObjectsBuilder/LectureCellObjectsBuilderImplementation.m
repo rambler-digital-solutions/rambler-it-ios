@@ -30,11 +30,13 @@
 #import "LectureMaterialTitleTableViewCellObject.h"
 #import "LectureMaterialInfoTableViewCellObject.h"
 #import "VideoRecordTableViewCellObjectMapper.h"
-#import "LectureMaterialType.h"
+#import "LectureInfoTableViewCellObjectMapper.h"
 
-#import "TagObjectDescriptor.h"
 #import "TagModuleTableViewCellObject.h"
+#import "LectureMaterialType.h"
+#import "TagObjectDescriptor.h"
 #import "TagShowMediator.h"
+
 
 @implementation LectureCellObjectsBuilderImplementation
 
@@ -42,7 +44,8 @@
     NSMutableArray *cellObjects = [NSMutableArray new];
     
     // Lecture description block
-    LectureInfoTableViewCellObject *lectureDescriptionCellObject = [LectureInfoTableViewCellObject objectWithLecture:lecture continueReadingFlag:NO];
+    id lectureDescriptionCellObject = [self.lectureInfoCellObjectMapper lectureInfoTableViewCellObjectWithLecture:lecture
+                                                                                              continueReadingFlag:NO];
     [cellObjects addObject:lectureDescriptionCellObject];
     
     // Lecture tags block

@@ -25,6 +25,7 @@
 @class DateFormatter;
 @class VideoThumbnailGenerator;
 @class YouTubeIdentifierDeriviator;
+@class VideoMaterialDownloadingStatesStorage;
 @protocol MapLinkBuilder;
 @protocol SafariFactory;
 @protocol MailComposeControllerFactory;
@@ -45,5 +46,6 @@
 - (id<MailComposeControllerFactory>)mailComposeFactory;
 - (id<YouTubePlayerFactory>)youTubePlayerFactory;
 - (YouTubeIdentifierDeriviator *)youTubeIdentifierDeriviator;
+- (VideoMaterialDownloadingStatesStorage *)videoMaterialDownloadingStatesStorage;
 
 @end

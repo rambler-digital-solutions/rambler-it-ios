@@ -22,9 +22,11 @@
 #import "LectureCellObjectsBuilder.h"
 
 @class VideoRecordTableViewCellObjectMapper;
+@class LectureInfoTableViewCellObjectMapper;
 
 @interface LectureCellObjectsBuilderImplementation : NSObject <LectureCellObjectsBuilder>
 
 @property (nonatomic, strong) VideoRecordTableViewCellObjectMapper *videoCellObjectMapper;
+@property (nonatomic, strong) LectureInfoTableViewCellObjectMapper *lectureInfoCellObjectMapper;
 
 @end

@@ -32,8 +32,10 @@
 @property (strong, nonatomic, readonly) NSString *lectureId;
 @property (strong, nonatomic, readonly) NSString *speakerId;
 @property (assign, nonatomic, readonly) BOOL continueReadingFlag;
+@property (assign, nonatomic, readonly) CGFloat height;
 
 + (instancetype)objectWithLecture:(LecturePlainObject *)lecture
-              continueReadingFlag:(BOOL)continueReadingFlag;
+              continueReadingFlag:(BOOL)continueReadingFlag
+                           height:(CGFloat)height;
 
 @end

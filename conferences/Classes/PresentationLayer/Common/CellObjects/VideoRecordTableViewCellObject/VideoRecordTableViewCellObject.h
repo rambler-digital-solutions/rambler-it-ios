@@ -27,9 +27,11 @@
 @property (nonatomic, strong, readonly) NSURL *previewImageUrl;
 @property (nonatomic, strong, readonly) LectureMaterialPlainObject *videoMaterial;
 @property (nonatomic, assign, readonly) BOOL isVideoCached;
+@property (nonatomic, assign, readonly) BOOL isVideoDownloading;
 
 + (instancetype)objectWithPreviewImageUrl:(NSURL *)previewImageUrl
                             isVideoCached:(BOOL)isVideoCached
+                       isVideoDownloading:(BOOL)isVideoDownloading
                             videoMaterial:(LectureMaterialPlainObject *)videoMaterial;
 
 @end

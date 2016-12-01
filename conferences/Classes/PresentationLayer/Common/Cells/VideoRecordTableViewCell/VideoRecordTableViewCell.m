@@ -52,10 +52,20 @@ static NSString *const kPlaceholderImageName = @"placeholder";
     } else {
         [self setupNoVideoStateWithObject:object];
     }
-    [self.removeButton setHidden:!object.isVideoCached];
-    [self.downloadButton setHidden:object.isVideoCached];
+    
     self.removeButton.layer.cornerRadius = kCacheButtonCornerRadius;
     self.downloadButton.layer.cornerRadius = kCacheButtonCornerRadius;
+    self.indicatorView.layer.cornerRadius = kCacheButtonCornerRadius;
+    
+    if (object.isVideoDownloading) {
+        [self.removeButton setHidden:YES];
+        [self.downloadButton setHidden:YES];
+        [self.indicatorView setHidden:NO];
+        return YES;
+    }
+    [self.removeButton setHidden:!object.isVideoCached];
+    [self.downloadButton setHidden:object.isVideoCached];
+    [self.indicatorView setHidden:YES];
     
     return YES;
 }

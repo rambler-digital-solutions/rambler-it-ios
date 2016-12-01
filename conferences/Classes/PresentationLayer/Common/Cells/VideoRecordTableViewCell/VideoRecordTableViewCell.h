@@ -27,5 +27,6 @@
 @property (nonatomic, weak) IBOutlet UIImageView *playIconImageView;
 @property (weak, nonatomic) IBOutlet UIButton *removeButton;
 @property (weak, nonatomic) IBOutlet UIButton *downloadButton;
+@property (weak, nonatomic) IBOutlet UIView *indicatorView;
 
 @end

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -11,16 +14,22 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="162"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <frame key="frameInset" width="320" height="161"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="161"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ypb-QJ-BP6"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ypb-QJ-BP6">
+                        <rect key="frame" x="20" y="0.0" width="280" height="161.5"/>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Видео будет позднее" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELo-Uk-S5K">
+                        <rect key="frame" x="75" y="71" width="170.5" height="20"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play-icon-small" translatesAutoresizingMaskIntoConstraints="NO" id="32W-xN-HrW"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play-icon-small" translatesAutoresizingMaskIntoConstraints="NO" id="32W-xN-HrW">
+                        <rect key="frame" x="150" y="67.5" width="20" height="27"/>
+                    </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BiA-g5-6va">
+                        <rect key="frame" x="261" y="5" width="34" height="34"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="34" id="g7Z-9y-Ec3"/>
@@ -32,6 +41,7 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oqb-op-wg4">
+                        <rect key="frame" x="261" y="5" width="34" height="34"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="34" id="2hE-wf-sOb"/>
@@ -42,11 +52,27 @@
                             <action selector="didTapDownloadToCacheVideoMaterial:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="jVc-H7-e1a"/>
                         </connections>
                     </button>
+                    <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v9f-an-um8" userLabel="Indicator View">
+                        <rect key="frame" x="261" y="5" width="34" height="34"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="0Q7-De-dQm">
+                                <rect key="frame" x="7" y="7" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.70788402288732399" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="0Q7-De-dQm" firstAttribute="centerX" secondItem="v9f-an-um8" secondAttribute="centerX" id="GTp-YS-kC0"/>
+                            <constraint firstAttribute="width" constant="34" id="Ziv-Yq-1fz"/>
+                            <constraint firstItem="0Q7-De-dQm" firstAttribute="centerY" secondItem="v9f-an-um8" secondAttribute="centerY" id="pMD-Fc-JL5"/>
+                            <constraint firstAttribute="height" constant="34" id="xoz-oo-OAH"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Ypb-QJ-BP6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="5M6-CA-icy"/>
                     <constraint firstItem="ELo-Uk-S5K" firstAttribute="centerY" secondItem="Ypb-QJ-BP6" secondAttribute="centerY" id="5Ux-j9-bcF"/>
                     <constraint firstAttribute="bottom" secondItem="Ypb-QJ-BP6" secondAttribute="bottom" id="5eJ-oZ-0S6"/>
+                    <constraint firstAttribute="trailing" secondItem="v9f-an-um8" secondAttribute="trailing" constant="25" id="6uL-rH-UOr"/>
                     <constraint firstAttribute="bottom" secondItem="Ypb-QJ-BP6" secondAttribute="bottom" id="7KQ-D2-82d"/>
                     <constraint firstItem="BiA-g5-6va" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="AAR-Z9-l4k"/>
                     <constraint firstAttribute="trailing" secondItem="Ypb-QJ-BP6" secondAttribute="trailing" constant="20" id="BKG-yf-K71"/>
@@ -56,6 +82,7 @@
                     <constraint firstItem="ELo-Uk-S5K" firstAttribute="centerX" secondItem="Ypb-QJ-BP6" secondAttribute="centerX" id="PKR-Ae-g9c"/>
                     <constraint firstAttribute="trailing" secondItem="Oqb-op-wg4" secondAttribute="trailing" constant="25" id="Pg5-4f-i8h"/>
                     <constraint firstItem="Oqb-op-wg4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="ZBu-sT-1e7"/>
+                    <constraint firstItem="v9f-an-um8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="aJD-yn-OUh"/>
                     <constraint firstItem="Ypb-QJ-BP6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="ojs-Jc-V8U"/>
                     <constraint firstItem="32W-xN-HrW" firstAttribute="centerY" secondItem="Ypb-QJ-BP6" secondAttribute="centerY" id="qdo-EE-Prz"/>
                     <constraint firstItem="Ypb-QJ-BP6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="uTS-vS-UXW"/>
@@ -72,6 +99,7 @@
             <inset key="separatorInset" minX="9999" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
                 <outlet property="downloadButton" destination="Oqb-op-wg4" id="6b0-Zo-quv"/>
+                <outlet property="indicatorView" destination="v9f-an-um8" id="cJR-2c-Zcs"/>
                 <outlet property="playIconImageView" destination="32W-xN-HrW" id="j3Q-CX-xEh"/>
                 <outlet property="previewImageView" destination="Ypb-QJ-BP6" id="XGw-AQ-QXN"/>
                 <outlet property="removeButton" destination="BiA-g5-6va" id="huy-rl-uHc"/>

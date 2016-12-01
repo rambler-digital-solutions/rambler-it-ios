@@ -31,6 +31,8 @@
 #import "ShareUrlBuilderImplementation.h"
 #import "CollectionViewContentCellAnimator.h"
 #import "VideoRecordTableViewCellObjectMapper.h"
+#import "LectureInfoTableViewCellObjectMapper.h"
+#import "LectureInfoTableViewCellCalculator.h"
 
 static NSString *const kLectureShareItemType = @"lecture";
 
@@ -115,6 +117,8 @@ static NSString *const kLectureShareItemType = @"lecture";
                           configuration:^(TyphoonDefinition *definition) {
                               [definition injectProperty:@selector(videoCellObjectMapper)
                                                     with:[self videoRecordCellObjectMapper]];
+                            [definition injectProperty:@selector(lectureInfoCellObjectMapper)
+                                                  with:[self lectureInfoCellObjectMapper]];
                           }];
 }
 
@@ -135,7 +139,23 @@ static NSString *const kLectureShareItemType = @"lecture";
                           configuration:^(TyphoonDefinition *definition) {
                               [definition injectProperty:@selector(thumbnailGenerator)
                                                     with:[self.presentationLayerHelpersAssembly videoThumbnailGenerator]];
+                              [definition injectProperty:@selector(deriviator)
+                                                    with:[self.presentationLayerHelpersAssembly youTubeIdentifierDeriviator]];
+                              [definition injectProperty:@selector(statesStorage)
+                                                    with:[self.presentationLayerHelpersAssembly videoMaterialDownloadingStatesStorage]];
                           }];
+}
+            
+- (LectureInfoTableViewCellObjectMapper *)lectureInfoCellObjectMapper {
+    return [TyphoonDefinition withClass:[LectureInfoTableViewCellObjectMapper class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(calculator)
+                                                    with:[self lectureInfoCellCalculator]];
+                          }];
+}
+
+- (LectureInfoTableViewCellCalculator *)lectureInfoCellCalculator {
+    return [TyphoonDefinition withClass:[LectureInfoTableViewCellCalculator class]];
 }
 
 @end

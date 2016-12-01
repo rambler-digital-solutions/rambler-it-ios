@@ -276,6 +276,10 @@
 		66764D041D4B636B00EF9D58 /* ReportsSearchViewAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 66764D031D4B636B00EF9D58 /* ReportsSearchViewAnimator.m */; };
 		6677E3A81DE1A27F006B1AF3 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6677E3A71DE1A27F006B1AF3 /* AVKit.framework */; };
 		6677E3AA1DE1A378006B1AF3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6677E3A91DE1A378006B1AF3 /* AVFoundation.framework */; };
+		667AD53D1DF0663100BCA9B9 /* LectureInfoTableViewCellObjectMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 667AD53C1DF0663100BCA9B9 /* LectureInfoTableViewCellObjectMapper.m */; };
+		667AD5411DF0664C00BCA9B9 /* LectureInfoTableViewCellCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 667AD5401DF0664C00BCA9B9 /* LectureInfoTableViewCellCalculator.m */; };
+		667AD5451DF06C7E00BCA9B9 /* UIFont+RIDTypefaces.m in Sources */ = {isa = PBXBuildFile; fileRef = 667AD5441DF06C7E00BCA9B9 /* UIFont+RIDTypefaces.m */; };
+		667AD5491DF0DB1800BCA9B9 /* VideoMaterialDownloadingStatesStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 667AD5481DF0DB1800BCA9B9 /* VideoMaterialDownloadingStatesStorage.m */; };
 		669D944B1DE0D97200589AC2 /* VideoMaterialHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 669D944A1DE0D97200589AC2 /* VideoMaterialHandler.m */; };
 		66A1DD301D7E980D00998F6B /* TagAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A1DD2F1D7E980D00998F6B /* TagAssemblyTests.m */; };
 		66A1DD321D7E981500998F6B /* TagInteractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A1DD311D7E981500998F6B /* TagInteractorTests.m */; };
@@ -1096,6 +1100,14 @@
 		66764D031D4B636B00EF9D58 /* ReportsSearchViewAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportsSearchViewAnimator.m; path = SearchReportsModule/View/ReportSearchViewAnimator/ReportsSearchViewAnimator.m; sourceTree = "<group>"; };
 		6677E3A71DE1A27F006B1AF3 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		6677E3A91DE1A378006B1AF3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		667AD53B1DF0663100BCA9B9 /* LectureInfoTableViewCellObjectMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LectureInfoTableViewCellObjectMapper.h; path = LectureCellObjectsBuilder/LectureInfoTableViewCellObjectMapper/LectureInfoTableViewCellObjectMapper.h; sourceTree = "<group>"; };
+		667AD53C1DF0663100BCA9B9 /* LectureInfoTableViewCellObjectMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LectureInfoTableViewCellObjectMapper.m; path = LectureCellObjectsBuilder/LectureInfoTableViewCellObjectMapper/LectureInfoTableViewCellObjectMapper.m; sourceTree = "<group>"; };
+		667AD53F1DF0664C00BCA9B9 /* LectureInfoTableViewCellCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LectureInfoTableViewCellCalculator.h; path = LectureCellObjectsBuilder/LectureInfoTableViewCellObjectMapper/LectureInfoTableViewCellCalculator/LectureInfoTableViewCellCalculator.h; sourceTree = "<group>"; };
+		667AD5401DF0664C00BCA9B9 /* LectureInfoTableViewCellCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LectureInfoTableViewCellCalculator.m; path = LectureCellObjectsBuilder/LectureInfoTableViewCellObjectMapper/LectureInfoTableViewCellCalculator/LectureInfoTableViewCellCalculator.m; sourceTree = "<group>"; };
+		667AD5431DF06C7E00BCA9B9 /* UIFont+RIDTypefaces.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIFont+RIDTypefaces.h"; path = "UIFont+RIDTypefaces/UIFont+RIDTypefaces.h"; sourceTree = "<group>"; };
+		667AD5441DF06C7E00BCA9B9 /* UIFont+RIDTypefaces.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIFont+RIDTypefaces.m"; path = "UIFont+RIDTypefaces/UIFont+RIDTypefaces.m"; sourceTree = "<group>"; };
+		667AD5471DF0DB1800BCA9B9 /* VideoMaterialDownloadingStatesStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoMaterialDownloadingStatesStorage.h; path = VideoMaterialHandlers/VideoMaterialDownloadingStatesStorage.h; sourceTree = "<group>"; };
+		667AD5481DF0DB1800BCA9B9 /* VideoMaterialDownloadingStatesStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VideoMaterialDownloadingStatesStorage.m; path = VideoMaterialHandlers/VideoMaterialDownloadingStatesStorage.m; sourceTree = "<group>"; };
 		669D94451DE0C6C200589AC2 /* LectureMaterialCacheDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LectureMaterialCacheDelegate.h; sourceTree = "<group>"; };
 		669D94471DE0D8B500589AC2 /* LectureMaterialsHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LectureMaterialsHandler.h; path = LectureMaterialsHandlers/LectureMaterialsHandler.h; sourceTree = "<group>"; };
 		669D94491DE0D97200589AC2 /* VideoMaterialHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoMaterialHandler.h; path = VideoMaterialHandlers/VideoMaterialHandler.h; sourceTree = "<group>"; };
@@ -2455,6 +2467,7 @@
 		636B63C51BBDCC060053E38F /* LectureMaterialsService */ = {
 			isa = PBXGroup;
 			children = (
+				667AD5461DF07BF100BCA9B9 /* Lec */,
 				669D94461DE0D88F00589AC2 /* LectureMaterialsHandlers */,
 				636B63C91BBDCC550053E38F /* LectureMaterialsService.h */,
 				636B64051BBDD2A40053E38F /* LectureMaterialsServiceImplementation.h */,
@@ -3878,6 +3891,7 @@
 		63FDCDE01BBDBA2A00A43B60 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				667AD5421DF06C3B00BCA9B9 /* UIFont+RIDTypefaces */,
 				9FA6E7811D6F20A10047D2C4 /* UIViewController+ForceRotation */,
 				661CA4041D65D0690047EB68 /* NSManagedObjectID+LJStringConversion */,
 				2B429A5C1D4789FA004C005F /* UINavigationBar */,
@@ -4222,6 +4236,41 @@
 			name = ReportSearchViewAnimator;
 			sourceTree = "<group>";
 		};
+		667AD53A1DF065D200BCA9B9 /* LectureInfoTableViewCellObjectMapper */ = {
+			isa = PBXGroup;
+			children = (
+				667AD53E1DF0663600BCA9B9 /* LectureInfoTableViewCellCalculator */,
+				667AD53B1DF0663100BCA9B9 /* LectureInfoTableViewCellObjectMapper.h */,
+				667AD53C1DF0663100BCA9B9 /* LectureInfoTableViewCellObjectMapper.m */,
+			);
+			name = LectureInfoTableViewCellObjectMapper;
+			sourceTree = "<group>";
+		};
+		667AD53E1DF0663600BCA9B9 /* LectureInfoTableViewCellCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				667AD53F1DF0664C00BCA9B9 /* LectureInfoTableViewCellCalculator.h */,
+				667AD5401DF0664C00BCA9B9 /* LectureInfoTableViewCellCalculator.m */,
+			);
+			name = LectureInfoTableViewCellCalculator;
+			sourceTree = "<group>";
+		};
+		667AD5421DF06C3B00BCA9B9 /* UIFont+RIDTypefaces */ = {
+			isa = PBXGroup;
+			children = (
+				667AD5431DF06C7E00BCA9B9 /* UIFont+RIDTypefaces.h */,
+				667AD5441DF06C7E00BCA9B9 /* UIFont+RIDTypefaces.m */,
+			);
+			name = "UIFont+RIDTypefaces";
+			sourceTree = "<group>";
+		};
+		667AD5461DF07BF100BCA9B9 /* Lec */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Lec;
+			sourceTree = "<group>";
+		};
 		669D94461DE0D88F00589AC2 /* LectureMaterialsHandlers */ = {
 			isa = PBXGroup;
 			children = (
@@ -4237,6 +4286,8 @@
 				6648409A1DEC234300B69934 /* VideoMaterialHandlerConstants.h */,
 				669D94491DE0D97200589AC2 /* VideoMaterialHandler.h */,
 				669D944A1DE0D97200589AC2 /* VideoMaterialHandler.m */,
+				667AD5471DF0DB1800BCA9B9 /* VideoMaterialDownloadingStatesStorage.h */,
+				667AD5481DF0DB1800BCA9B9 /* VideoMaterialDownloadingStatesStorage.m */,
 			);
 			name = VideoMaterialHandler;
 			sourceTree = "<group>";
@@ -4372,6 +4423,7 @@
 		66E9992E1D549DB600161D98 /* LectureCellObjectsBuilder */ = {
 			isa = PBXGroup;
 			children = (
+				667AD53A1DF065D200BCA9B9 /* LectureInfoTableViewCellObjectMapper */,
 				97F600261DEAF286004833B5 /* VideoRecordTableViewCellMapper */,
 				66E9992F1D549E0E00161D98 /* LectureCellObjectsBuilder.h */,
 				66E999301D549E2100161D98 /* LectureCellObjectsBuilderImplementation.h */,
@@ -8361,6 +8413,7 @@
 				9FBE8AC11D630D4C00DA0C32 /* EventGalleryMoreEventsCollectionViewCell.m in Sources */,
 				63F8F2821BF7925F000017F3 /* PresentationLayerHelpersAssembly.m in Sources */,
 				9FE139851D65F3E900D7BF44 /* ReportLectureTableViewCell.m in Sources */,
+				667AD53D1DF0663100BCA9B9 /* LectureInfoTableViewCellObjectMapper.m in Sources */,
 				2BDDB1D31D3F7235007FD547 /* DirectionObject.m in Sources */,
 				661CA3FE1D65CFF70047EB68 /* LastModifiedMapperOperation.m in Sources */,
 				9FBE8ABB1D630D4C00DA0C32 /* EventGalleryViewController.m in Sources */,
@@ -8419,6 +8472,7 @@
 				2B2064941D3F9CE900246C8D /* LecturePlainObject.m in Sources */,
 				9FE1397C1D65F3E900D7BF44 /* ReportEventTableViewCellObject.m in Sources */,
 				63F6136B1CB00A220002AEF0 /* PreviousLectureTableViewCellObject.m in Sources */,
+				667AD5491DF0DB1800BCA9B9 /* VideoMaterialDownloadingStatesStorage.m in Sources */,
 				63F613591CB00A220002AEF0 /* EventModuleAssembly.m in Sources */,
 				9FBE89B41D5CB71300DA0C32 /* LectureLaunchRouter.m in Sources */,
 				9F0A85371BC18A3C006F79FB /* NetworkCompoundOperationBuilder.m in Sources */,
@@ -8435,6 +8489,7 @@
 				2B2064991D3F9CE900246C8D /* TagPlainObject.m in Sources */,
 				631808401C482B1300A61E7D /* SpeakerShortInfoInteractor.m in Sources */,
 				9FBE89B31D5CB71300DA0C32 /* EventLaunchRouter.m in Sources */,
+				667AD5451DF06C7E00BCA9B9 /* UIFont+RIDTypefaces.m in Sources */,
 				661CA4071D65D0720047EB68 /* NSManagedObjectID+LJStringConversion.m in Sources */,
 				661CA4031D65D04E0047EB68 /* ServerResponseModel.m in Sources */,
 				9F78D7441D59D6EF009DDCEA /* SpotlightCoreDataStackCoordinatorImplementation.m in Sources */,
@@ -8521,6 +8576,7 @@
 				9FBE8ABF1D630D4C00DA0C32 /* EventGalleryEventCollectionViewCell.m in Sources */,
 				9F8E5F781BC2571B00DC10DB /* NetworkClientsAssembly.m in Sources */,
 				63F613741CB00A220002AEF0 /* LectureInfoTableViewCell.m in Sources */,
+				667AD5411DF0664C00BCA9B9 /* LectureInfoTableViewCellCalculator.m in Sources */,
 				2B429A631D4798D4004C005F /* EventViewAnimator.m in Sources */,
 				661CA40D1D65D0D80047EB68 /* _LastModifiedPlainObject.m in Sources */,
 				9F533A891D50DE84004F8E82 /* FetchedResultsControllerChangeProvider.m in Sources */,

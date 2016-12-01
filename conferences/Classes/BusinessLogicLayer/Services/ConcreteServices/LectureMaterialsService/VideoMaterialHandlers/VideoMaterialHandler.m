@@ -16,6 +16,7 @@
 
 #import "YouTubeIdentifierDeriviator.h"
 #import "VideoMaterialHandlerConstants.h"
+#import "VideoMaterialDownloadingStatesStorage.h"
 
 @implementation VideoMaterialHandler
 
@@ -38,11 +39,15 @@
         return;
     }
     NSString *identifier = [self.deriviator deriveIdentifierFromUrl:videoUrl];
+    if ([self.statesStorage isVideoDownloadingWithIdentifier:identifier]) {
+        return;
+    }
+    [self.statesStorage addVideoIdentifier:identifier];
+    
     NSString *filePath = [self filePathLocalVideoForVideoIdentifier:identifier];
     
     [[XCDYouTubeClient defaultClient] getVideoWithIdentifier:identifier
                                            completionHandler:^(XCDYouTubeVideo *video, NSError *error) {
-            
            if (error) {
                completionBlock(nil, error);
                return;
@@ -54,7 +59,6 @@
                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                        NSData *urlData = [NSData dataWithContentsOfURL:streamURL];
                        if ( urlData ) {
-                           //saving is done on main thread
                            dispatch_async(dispatch_get_main_queue(), ^{
                                [urlData writeToFile:filePath
                                          atomically:YES];
@@ -78,6 +82,9 @@
 
 - (void)removeFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial
                                  error:(NSError **)error{
+    NSURL *videoUrl = [NSURL URLWithString:lectureMaterial.link];
+    NSString *identifier = [self.deriviator deriveIdentifierFromUrl:videoUrl];
+    [self.statesStorage removeVideoIdentifier:identifier];
     [[NSFileManager defaultManager] removeItemAtPath:lectureMaterial.localURL
                                                error:error];
     if (!error) {

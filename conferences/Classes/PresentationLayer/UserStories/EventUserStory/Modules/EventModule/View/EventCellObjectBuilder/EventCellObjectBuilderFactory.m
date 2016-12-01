@@ -25,6 +25,8 @@
 #import "PastEventCellObjectBuilder.h"
 #import "EventCellObjectBuilderBase.h"
 #import "PresentationLayerHelpersAssembly.h"
+#import "LectureInfoTableViewCellCalculator.h"
+#import "LectureInfoTableViewCellObjectMapper.h"
 
 @interface EventCellObjectBuilderFactory ()
 
@@ -50,7 +52,9 @@
                           configuration:^(TyphoonDefinition *definition) {
                               definition.abstract = YES;
                               [definition injectProperty:@selector(dateFormatter)
-                          with:[self.presentationLayerHelpersAssembly dateFormatter]];
+                                                    with:[self.presentationLayerHelpersAssembly dateFormatter]];
+                              [definition injectProperty:@selector(lectureInfoCellObjectMapper)
+                                                    with:[self lectureInfoInEventCellObjectMapper]];
     }];
 }
 
@@ -73,6 +77,20 @@
                           configuration:^(TyphoonDefinition *definition) {
                               definition.parent = [self eventCellObjectBuilderBase];
     }];
+}
+
+#pragma mark - Private methods
+
+- (LectureInfoTableViewCellObjectMapper *)lectureInfoInEventCellObjectMapper {
+    return [TyphoonDefinition withClass:[LectureInfoTableViewCellObjectMapper class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(calculator)
+                                                    with:[self lectureInfoInEventCellCalculator]];
+                          }];
+}
+
+- (LectureInfoTableViewCellCalculator *)lectureInfoInEventCellCalculator {
+    return [TyphoonDefinition withClass:[LectureInfoTableViewCellCalculator class]];
 }
 
 @end
