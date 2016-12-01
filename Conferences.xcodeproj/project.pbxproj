@@ -23,6 +23,7 @@
 /* Begin PBXBuildFile section */
 		028E445A1DF053B500734E84 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028E44581DF053B500734E84 /* ObjectMapper.framework */; };
 		028E445B1DF053B500734E84 /* UberRides.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028E44591DF053B500734E84 /* UberRides.framework */; };
+		028E44601DF06CA300734E84 /* UberRidesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 028E445F1DF06CA300734E84 /* UberRidesAppDelegate.m */; };
 		1F78357EBF30489533FBC867 /* libPods-Conferences-ConferencesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C46B774BA2D16C41C04D78BA /* libPods-Conferences-ConferencesTests.a */; };
 		234C76A5941B9A10462172CC /* libPods-Conferences.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C7A972E2814B586E4073760 /* libPods-Conferences.a */; };
 		2B01CEBE1D50A55900DA8E66 /* MetaEventServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B01CEBD1D50A55900DA8E66 /* MetaEventServiceTests.m */; };
@@ -585,6 +586,8 @@
 /* Begin PBXFileReference section */
 		028E44581DF053B500734E84 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
 		028E44591DF053B500734E84 /* UberRides.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UberRides.framework; path = Carthage/Build/iOS/UberRides.framework; sourceTree = "<group>"; };
+		028E445E1DF06CA300734E84 /* UberRidesAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UberRidesAppDelegate.h; sourceTree = "<group>"; };
+		028E445F1DF06CA300734E84 /* UberRidesAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UberRidesAppDelegate.m; sourceTree = "<group>"; };
 		2B01CEBD1D50A55900DA8E66 /* MetaEventServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetaEventServiceTests.m; sourceTree = "<group>"; };
 		2B05E15B1D50EDB900E017AB /* EventModuleSegueIdentifiersConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventModuleSegueIdentifiersConstants.h; sourceTree = "<group>"; };
 		2B05E15F1D50FEFC00E017AB /* SpeakerInfoCellObjectBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerInfoCellObjectBuilder.h; sourceTree = "<group>"; };
@@ -1699,6 +1702,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		028E445D1DF06C9000734E84 /* UberRidesAppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				028E445E1DF06CA300734E84 /* UberRidesAppDelegate.h */,
+				028E445F1DF06CA300734E84 /* UberRidesAppDelegate.m */,
+			);
+			path = UberRidesAppDelegate;
+			sourceTree = "<group>";
+		};
 		29F930AE767A2E0D549FB50F /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -6715,6 +6727,7 @@
 		9FBE89841D5CB71300DA0C32 /* AppDelegates */ = {
 			isa = PBXGroup;
 			children = (
+				028E445D1DF06C9000734E84 /* UberRidesAppDelegate */,
 				9F7B821F1D7DA546002E977A /* QuickActionAppDelegate */,
 				9FBE89B71D5CB72D00DA0C32 /* CleanLaunchAppDelegate */,
 				9FBE89881D5CB71300DA0C32 /* SpotlightAppDelegate */,
@@ -8411,6 +8424,7 @@
 				631808401C482B1300A61E7D /* SpeakerShortInfoInteractor.m in Sources */,
 				9FBE89B31D5CB71300DA0C32 /* EventLaunchRouter.m in Sources */,
 				661CA4071D65D0720047EB68 /* NSManagedObjectID+LJStringConversion.m in Sources */,
+				028E44601DF06CA300734E84 /* UberRidesAppDelegate.m in Sources */,
 				661CA4031D65D04E0047EB68 /* ServerResponseModel.m in Sources */,
 				9F78D7441D59D6EF009DDCEA /* SpotlightCoreDataStackCoordinatorImplementation.m in Sources */,
 				667050531D46332200DD9D6E /* ReportsSearchCellObjectsBuilderImplementation.m in Sources */,
