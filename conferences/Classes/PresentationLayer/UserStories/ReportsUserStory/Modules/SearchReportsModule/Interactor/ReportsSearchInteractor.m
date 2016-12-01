@@ -53,13 +53,13 @@ static NSString *const kLecturesNameTagsAndSpeakerNameContainsQuery = @"%K CONTA
     NSString *selectorLectureName = LectureModelObjectAttributes.name;
     NSString *selectorLectureSpeaker = LectureModelObjectRelationships.speaker;
     
-    NSArray *separetedTextArray = [text componentsSeparatedByString:@" "];
+    NSArray *separatedTextArray = [text componentsSeparatedByString:@" "];
     
     NSMutableArray *eventsPredicatesArray = [NSMutableArray new];
     NSMutableArray *speakersPredicatesArray = [NSMutableArray new];
     NSMutableArray *lecturesPredicatesArray = [NSMutableArray new];
     
-    for (NSString *string in separetedTextArray) {
+    for (NSString *string in separatedTextArray) {
         if (string.length == 0) {
             continue;
         }

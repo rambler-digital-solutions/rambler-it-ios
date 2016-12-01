@@ -109,9 +109,9 @@ static const CGFloat kDefaultLineHeight = 3;
     
     NSMutableAttributedString *highlightedString = [[NSMutableAttributedString alloc] initWithString:string];
     if ([selectedText length] != 0) {
-        NSArray *separetedTextArray = [selectedText componentsSeparatedByString:@" "];
+        NSArray *separatedTextArray = [selectedText componentsSeparatedByString:@" "];
         
-        for (NSString *separatedString in separetedTextArray) {
+        for (NSString *separatedString in separatedTextArray) {
             if (separatedString.length == 0) {
                 continue;
             }
