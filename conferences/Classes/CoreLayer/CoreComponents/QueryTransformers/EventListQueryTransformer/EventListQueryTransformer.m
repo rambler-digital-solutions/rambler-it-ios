@@ -27,7 +27,7 @@ static NSString *const kLastModifiedFilterFormat = @"filter[modified_since]";
 @implementation EventListQueryTransformer
 
 - (NSDictionary *)deriveUrlParametersFromQuery:(EventListQuery *)query {
-    if (!query.lastModifiedString) {
+    if (!query.lastModifiedString || [query.lastModifiedString isEqualToString:@"0"]) {
         return nil;
     }
     NSString *lastModified = query.lastModifiedString;

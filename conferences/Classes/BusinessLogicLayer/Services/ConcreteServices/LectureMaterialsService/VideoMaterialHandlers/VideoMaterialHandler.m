@@ -7,13 +7,15 @@
 //
 
 #import "VideoMaterialHandler.h"
-#import "LectureMaterialPlainObject.h"
-#import "LectureMaterialType.h"
 #import <XCDYouTubeClient.h>
-#import "YouTubeIdentifierDeriviator.h"
-#import "XCDYouTubeVideo.h"
+
 #import <MagicalRecord/MagicalRecord.h>
+#import "LectureMaterialType.h"
+#import "LectureMaterialPlainObject.h"
 #import "LectureMaterialModelObject.h"
+
+#import "YouTubeIdentifierDeriviator.h"
+#import "VideoMaterialHandlerConstants.h"
 
 @implementation VideoMaterialHandler
 
@@ -36,6 +38,7 @@
         return;
     }
     NSString *identifier = [self.deriviator deriveIdentifierFromUrl:videoUrl];
+    NSString *filePath = [self filePathLocalVideoForVideoIdentifier:identifier];
     
     [[XCDYouTubeClient defaultClient] getVideoWithIdentifier:identifier
                                            completionHandler:^(XCDYouTubeVideo *video, NSError *error) {
@@ -45,24 +48,19 @@
                return;
            }
            NSURL *streamURL = nil;
-           
            for (NSNumber *videoQuality in self.videoQualities) {
                streamURL = video.streamURLs[videoQuality];
                if (streamURL) {
                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                       NSLog(@"Downloading Started");
                        NSData *urlData = [NSData dataWithContentsOfURL:streamURL];
                        if ( urlData ) {
-                           NSArray       *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-                           NSString  *documentsDirectory = [paths objectAtIndex:0];
-                           NSString  *filePath = [NSString stringWithFormat:@"%@/%@.mp4", documentsDirectory,identifier];
                            //saving is done on main thread
                            dispatch_async(dispatch_get_main_queue(), ^{
-                               [urlData writeToFile:filePath atomically:YES];
+                               [urlData writeToFile:filePath
+                                         atomically:YES];
                                completionBlock(filePath, error);
                            });
                        }
-                       
                    });
                    break;
                }
@@ -100,5 +98,12 @@
              @(XCDYouTubeVideoQualitySmall240) ];
 }
 
+- (NSString *)filePathLocalVideoForVideoIdentifier:(NSString *)identifier {
+    NSString  *documentsDirectory = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
+    NSString *fileName = [NSString stringWithFormat:@"%@%@", identifier,RITFormatVideo];
+    NSString  *filePath = [NSString stringWithFormat:@"%@%@", documentsDirectory,RITRelativePath];
+    NSString  *fileFullPath = [NSString stringWithFormat:@"%@/%@", filePath,fileName];
+    return fileFullPath;
+}
 
 @end

@@ -63,8 +63,9 @@
             [handler downloadToCacheLectureMaterial:lectureMaterial
                                          completion:^(NSString *localUrl, NSError *error) {
                  [rootSavingContext performBlockAndWait:^{
-                     LectureMaterialModelObject *modelMaterial = [LectureMaterialModelObject MR_findFirstByAttribute:LectureMaterialModelObjectAttributes.lectureMaterialId
-                                                               withValue:lectureMaterial.lectureMaterialId];
+                     NSString *attributeName = LectureMaterialModelObjectAttributes.lectureMaterialId;
+                     LectureMaterialModelObject *modelMaterial = [LectureMaterialModelObject MR_findFirstByAttribute:attributeName
+                                                                                                           withValue:lectureMaterial.lectureMaterialId];
                      modelMaterial.localURL = localUrl;
                      [rootSavingContext MR_saveToPersistentStoreAndWait];
                      completionBlock(error);

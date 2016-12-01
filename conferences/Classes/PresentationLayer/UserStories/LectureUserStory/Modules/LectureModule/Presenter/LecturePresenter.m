@@ -38,11 +38,8 @@
 #pragma mark - LectureViewOutput
 
 - (void)setupView {
-    LecturePlainObject *lecture = [self.interactor obtainLectureWithObjectId:self.stateStorage.lectureObjectId];
-    SpeakerPlainObject *speaker = lecture.speaker;
-    self.stateStorage.speakerObjectId = speaker.speakerId;
-    
-    [self.view configureViewWithLecture:lecture];
+    [self updateViewWithCurrentLecture];
+    [self.view setupViewInitialState];
 }
 
 - (void)didTapVideoPreviewWithVideoMaterial:(LectureMaterialPlainObject *)videoMaterial {
@@ -78,13 +75,13 @@
 }
 
 #pragma mark - LectureMaterialCacheDelegate
+
 - (void)didTapRemoveFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial {
     __block NSError *error;
     ActionAlertBlock actionAlertBlock = ^{
         [self.interactor removeVideoFromCacheWithLectureMaterial:lectureMaterial
                                                            error:&error];
-        //TODO: Изменить кнопку !!!
-        [self.view reloadTableView];
+        [self updateViewWithCurrentLecture];
 
     };
     [self.router showAlertConfirmationRemoveWithActionBlock:actionAlertBlock];
@@ -98,8 +95,15 @@
 }
 
 - (void)didTriggerEndDownloadingLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial {
-    //TODO: Изменить кнопку !!!
-    [self.view reloadTableView];
+    [self updateViewWithCurrentLecture];
+    
+}
+
+- (void)updateViewWithCurrentLecture {
+    LecturePlainObject *lecture = [self.interactor obtainLectureWithObjectId:self.stateStorage.lectureObjectId];
+    SpeakerPlainObject *speaker = lecture.speaker;
+    self.stateStorage.speakerObjectId = speaker.speakerId;
+    [self.view updateViewWithLecture:lecture];
 }
 
 @end

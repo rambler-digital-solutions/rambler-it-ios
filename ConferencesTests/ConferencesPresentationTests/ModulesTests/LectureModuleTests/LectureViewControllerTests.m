@@ -91,7 +91,7 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
     OCMStub([self.dataDisplayManagerMock dataSourceForTableView:OCMOCK_ANY]).andReturn(dataSourceMock);
     
     // when
-    [self.viewController configureViewWithLecture:lecture];
+//    [self.viewController configureViewWithLecture:lecture];
     
     // then
     OCMVerify([self.tableViewMock setDataSource:dataSourceMock]);
@@ -106,7 +106,7 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
     OCMStub([self.dataDisplayManagerMock delegateForTableView:OCMOCK_ANY withBaseDelegate:OCMOCK_ANY]).andReturn(delegateMock);
     
     // when
-    [self.viewController configureViewWithLecture:lecture];
+//    [self.viewController configureViewWithLecture:lecture];
     
     // then
     OCMVerify([self.tableViewMock setDelegate:delegateMock]);
@@ -120,7 +120,7 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
     self.viewController.tableView = tableView;
     
     // when
-    [self.viewController configureViewWithLecture:lecture];
+//    [self.viewController configureViewWithLecture:lecture];
     
     // then
     XCTAssert(tableView.estimatedRowHeight == TableViewEstimatedRowHeight);
@@ -133,7 +133,7 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
     LecturePlainObject *lecture = [LecturePlainObject new];
     
     // when
-    [self.viewController configureViewWithLecture:lecture];
+//    [self.viewController configureViewWithLecture:lecture];
     
     // then
     OCMVerify([self.dataDisplayManagerMock configureDataDisplayManagerWithLecture:lecture]);

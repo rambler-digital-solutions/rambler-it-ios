@@ -54,16 +54,12 @@
 #pragma mark - DataDisplayManager methods
 
 - (id<UITableViewDataSource>)dataSourceForTableView:(UITableView *)tableView {
-    if (!self.tableViewModel) {
-        [self updateTableViewModel];
-    }
+    [self updateTableViewModel];
     return self.tableViewModel;
 }
 
 - (id<UITableViewDelegate>)delegateForTableView:(UITableView *)tableView withBaseDelegate:(id<UITableViewDelegate>)baseTableViewDelegate {
-    if (!self.tableViewActions) {
-        [self setupTableViewActions];
-    }
+    [self setupTableViewActions];
     return [self.tableViewActions forwardingTo:self];
 }
 

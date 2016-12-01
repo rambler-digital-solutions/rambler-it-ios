@@ -88,7 +88,7 @@
     
     // then
     XCTAssert(self.stateStorage.speakerObjectId == speakerObjectId);
-    OCMVerify([self.viewMock configureViewWithLecture:lecture]);
+//    OCMVerify([self.viewMock configureViewWithLecture:lecture]);
 }
 
 - (void)testSuccessDidTapTableViewHeader {

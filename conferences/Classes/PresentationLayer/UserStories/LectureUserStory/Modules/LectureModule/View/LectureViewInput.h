@@ -31,9 +31,9 @@
  
  @param lecture LecturePlainObject object
  */
-- (void)configureViewWithLecture:(LecturePlainObject *)lecture;
+- (void)updateViewWithLecture:(LecturePlainObject *)lecture;
 
-- (void)reloadTableView;
+- (void)setupViewInitialState;
 
 @end
 

@@ -58,19 +58,23 @@ static CGFloat kTableViewFooterHeight = 16.0f;
 
 #pragma mark - LectureViewInput
 
-- (void)configureViewWithLecture:(LecturePlainObject *)lecture {
+- (void)updateViewWithLecture:(LecturePlainObject *)lecture {
     [self.dataDisplayManager configureDataDisplayManagerWithLecture:lecture];
-    
     self.tableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.tableView];
     self.tableView.delegate = [self.dataDisplayManager delegateForTableView:self.tableView
                                                            withBaseDelegate:nil];
-    
+    [self.tableView reloadData];
+}
+
+- (void)setupViewInitialState {
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, kTableViewFooterHeight)];
-    
     self.tableView.estimatedRowHeight = kTableViewEstimatedRowHeight;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     
-    [self setupViewInitialState];
+    [self.navigationController.navigationBar rcf_becomeTransparent];
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+    self.navigationController.navigationBar.hidden = NO;
+    self.animator.tableView = self.tableView;
 }
 
 #pragma mark - <LectureDataDisplayManagerDelegate>
@@ -101,13 +105,6 @@ static CGFloat kTableViewFooterHeight = 16.0f;
 
 #pragma mark - Private methods
 
-- (void)setupViewInitialState {
-    [self.navigationController.navigationBar rcf_becomeTransparent];
-    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
-    self.navigationController.navigationBar.hidden = NO;
-    self.animator.tableView = self.tableView;
-}
-
 - (IBAction)didTapShareButton:(id)sender {
     [self.output didTapShareButton];
 }
@@ -116,10 +113,6 @@ static CGFloat kTableViewFooterHeight = 16.0f;
                                       cell:(UITableViewCell *)cell {
     [self.animator animateChangeCellSizeFromCollectionView:collectionView
                                                       cell:cell];
-}
-
-- (void)reloadTableView {
-    [self.tableView reloadData];
 }
 
 @end
