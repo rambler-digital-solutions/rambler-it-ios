@@ -85,5 +85,7 @@
 			<string>Editor</string>
 		</dict>
 	</array>
+	<key>CoreSpotlightContinuation</key>
+	<true/>
 </dict>
 </plist>

@@ -18,35 +18,17 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Typhoon/Typhoon.h>
-#import <RamblerTyphoonUtils/AssemblyCollector.h>
+#import <UIKit/UIKit.h>
 
-@class ApplicationHelperAssembly;
-@class StoryboardAssembly;
-@class SystemInfrastructureAssembly;
-@class SpotlightIndexerAssembly;
-@class SpotlightAppDelegate;
-@class QuickActionAppDelegate;
-@class EventLaunchRouter;
-@class MessagesAppDelegate;
-@class SpotlightContinuationAppDelegate;
+@protocol LaunchRouter;
 
 /**
  @author Egor Tolstoy
  
- Assembly with definitions for LaunchSystem components
+ This AppDelegate is responsible for handling Spotlight Continuation
  */
-@interface LaunchSystemAssembly : TyphoonAssembly <RamblerInitialAssembly>
+@interface SpotlightContinuationAppDelegate : NSObject <UIApplicationDelegate>
 
-@property (strong, nonatomic, readonly) ApplicationHelperAssembly *applicationHelperAssembly;
-@property (strong, nonatomic, readonly) StoryboardAssembly *storyboardAssembly;
-@property (strong, nonatomic, readonly) SystemInfrastructureAssembly *systemInfrastructureAssembly;
-@property (strong, nonatomic, readonly) SpotlightIndexerAssembly *spotlightIndexerAssembly;
-
-- (SpotlightAppDelegate *)spotlightAppDelegate;
-- (SpotlightContinuationAppDelegate *)spotlightContinuationAppDelegate;
-- (QuickActionAppDelegate *)quickActionAppDelegate;
-- (EventLaunchRouter *)eventLaunchRouter;
-- (MessagesAppDelegate *)messagesAppDelegate;
+@property (nonatomic, strong) id<LaunchRouter> router;
 
 @end

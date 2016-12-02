@@ -18,30 +18,13 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import "ReportsSearchModuleOutput.h"
-
-@protocol SearchRouterInput <NSObject>
+@protocol SearchModuleInput <NSObject>
 
 /**
- @author Zinovyev Konstantin
+ @author Konstantin Zinovyev
  
- Method is used to open EventModule and configure with event Id
- 
- @param objectId Идентификатор события
+ Method is used to configure search module with search string
  */
-- (void)openEventModuleWithEventObjectId:(NSString *)objectId;
-
-/**
- @author Zinovyev Konstantin
- 
- Method is used to configure ReportsSearchModule
- 
- @param searchString Search string
- @param moduleOutput Report list presenter
- */
-- (void)configureReportsSearchModuleWithSearchTerm:(NSString *)searchString
-                                      moduleOutput:(id<ReportsSearchModuleOutput>)moduleOutput;
+- (void)configureSearchModuleWithSearchTerm:(NSString *)searchString;
 
 @end
-

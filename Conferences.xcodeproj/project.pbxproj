@@ -408,6 +408,9 @@
 		63FD4E061BE5038D0046378E /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FD4E051BE5038D0046378E /* UIColor+Hex.m */; };
 		63FDCE141BBDBA2A00A43B60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63FDCE021BBDBA2A00A43B60 /* Assets.xcassets */; };
 		63FDCE161BBDBA2A00A43B60 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FDCE051BBDBA2A00A43B60 /* main.m */; };
+		661B40A31DF17CB3002DA46C /* SearchLaunchRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 661B40A21DF17CB3002DA46C /* SearchLaunchRouter.m */; };
+		661B40A41DF17CC3002DA46C /* SearchLaunchRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 661B40A21DF17CB3002DA46C /* SearchLaunchRouter.m */; };
+		661B40A51DF17CCC002DA46C /* SpotlightContinuationAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCFC50D1D903719009FD57D /* SpotlightContinuationAppDelegate.m */; };
 		661CA3F51D65CF920047EB68 /* EventOperationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 661CA3F41D65CF920047EB68 /* EventOperationFactory.m */; };
 		661CA3FE1D65CFF70047EB68 /* LastModifiedMapperOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 661CA3FD1D65CFF70047EB68 /* LastModifiedMapperOperation.m */; };
 		661CA4031D65D04E0047EB68 /* ServerResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 661CA4021D65D04E0047EB68 /* ServerResponseModel.m */; };
@@ -483,6 +486,9 @@
 		66EE4D341D54BFCD0011F94A /* NIMutableCollectionViewModel+LJAddObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EE4D2F1D54BFCD0011F94A /* NIMutableCollectionViewModel+LJAddObject.m */; };
 		66EE4D351D54BFCD0011F94A /* NITableViewModel+LJIndexOfObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EE4D311D54BFCD0011F94A /* NITableViewModel+LJIndexOfObject.m */; };
 		66EE4D361D54BFCD0011F94A /* NITableViewModel+NextInputResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EE4D331D54BFCD0011F94A /* NITableViewModel+NextInputResponder.m */; };
+		66FBA2581DE05CF000F5C2E9 /* LaunchSystemAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66FBA2571DE05CF000F5C2E9 /* LaunchSystemAssemblyTests.m */; };
+		66FBA25B1DE0607D00F5C2E9 /* SpotlightContinuationAppDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66FBA25A1DE0607D00F5C2E9 /* SpotlightContinuationAppDelegateTests.m */; };
+		66FBA25E1DE069E700F5C2E9 /* SearchLaunchRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66FBA25D1DE069E700F5C2E9 /* SearchLaunchRouterTests.m */; };
 		66FFD29C1D7DCCFB0009B7DC /* CollectionViewContentCellAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 66FFD29B1D7DCCFB0009B7DC /* CollectionViewContentCellAnimator.m */; };
 		9E94B671A997D53087214C4F /* libPods-Conferences-ConferencesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F1470A6FDBED5612278E025 /* libPods-Conferences-ConferencesTests.a */; };
 		9F0A6C1D1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */; };
@@ -684,6 +690,7 @@
 		9FC1F6841D28391E0070D9B5 /* EventListQueryTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6831D28391E0070D9B5 /* EventListQueryTransformer.m */; };
 		9FC305321D6476EA0052CB67 /* ShareUrlBuilderImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC305311D6476EA0052CB67 /* ShareUrlBuilderImplementation.m */; };
 		9FC305351D6478F60052CB67 /* ShareUrlBuilderImplementationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC305341D6478F60052CB67 /* ShareUrlBuilderImplementationTests.m */; };
+		9FCFC50E1D903719009FD57D /* SpotlightContinuationAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCFC50D1D903719009FD57D /* SpotlightContinuationAppDelegate.m */; };
 		9FD740381CDC98010071BD71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FD740371CDC98010071BD71 /* LaunchScreen.storyboard */; };
 		9FE139231D65BD9700D7BF44 /* SuggestServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE139221D65BD9700D7BF44 /* SuggestServiceImplementation.m */; };
 		9FE139261D65CC2500D7BF44 /* SuggestServiceImplementationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE139251D65CC2500D7BF44 /* SuggestServiceImplementationTests.m */; };
@@ -1267,6 +1274,9 @@
 		63FDCE041BBDBA2A00A43B60 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63FDCE051BBDBA2A00A43B60 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6612BF6F1D7ECDEA00E07586 /* TagModuleViewConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TagModuleViewConstants.h; path = TagModule/View/Constants/TagModuleViewConstants.h; sourceTree = "<group>"; };
+		661B40A01DF17CA4002DA46C /* LaunchRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchRouter.h; sourceTree = "<group>"; };
+		661B40A11DF17CB3002DA46C /* SearchLaunchRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchLaunchRouter.h; path = SearchLaunchRouter/SearchLaunchRouter.h; sourceTree = "<group>"; };
+		661B40A21DF17CB3002DA46C /* SearchLaunchRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchLaunchRouter.m; path = SearchLaunchRouter/SearchLaunchRouter.m; sourceTree = "<group>"; };
 		661CA3F31D65CF920047EB68 /* EventOperationFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventOperationFactory.h; path = OperationFactories/EventListOperationFactory/EventOperationFactory.h; sourceTree = "<group>"; };
 		661CA3F41D65CF920047EB68 /* EventOperationFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventOperationFactory.m; path = OperationFactories/EventListOperationFactory/EventOperationFactory.m; sourceTree = "<group>"; };
 		661CA3FC1D65CFF70047EB68 /* LastModifiedMapperOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LastModifiedMapperOperation.h; path = MiscellaneousOperations/LastModifiedMapperOperation/LastModifiedMapperOperation.h; sourceTree = "<group>"; };
@@ -1417,6 +1427,10 @@
 		66EE4D311D54BFCD0011F94A /* NITableViewModel+LJIndexOfObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NITableViewModel+LJIndexOfObject.m"; path = "Nimbus/NITableViewModel+LJIndexOfObject.m"; sourceTree = "<group>"; };
 		66EE4D321D54BFCD0011F94A /* NITableViewModel+NextInputResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NITableViewModel+NextInputResponder.h"; path = "Nimbus/NITableViewModel+NextInputResponder.h"; sourceTree = "<group>"; };
 		66EE4D331D54BFCD0011F94A /* NITableViewModel+NextInputResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NITableViewModel+NextInputResponder.m"; path = "Nimbus/NITableViewModel+NextInputResponder.m"; sourceTree = "<group>"; };
+		66FBA2571DE05CF000F5C2E9 /* LaunchSystemAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LaunchSystemAssemblyTests.m; path = LaunchSystemAssemblyTests/LaunchSystemAssemblyTests.m; sourceTree = "<group>"; };
+		66FBA25A1DE0607D00F5C2E9 /* SpotlightContinuationAppDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpotlightContinuationAppDelegateTests.m; path = SpotlightContinuationAppDelegate/SpotlightContinuationAppDelegateTests.m; sourceTree = "<group>"; };
+		66FBA25D1DE069E700F5C2E9 /* SearchLaunchRouterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchLaunchRouterTests.m; path = SearchLaunchRouterTests/SearchLaunchRouterTests.m; sourceTree = "<group>"; };
+		66FBA25F1DE07C0800F5C2E9 /* SearchModuleInput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchModuleInput.h; sourceTree = "<group>"; };
 		66FFD29A1D7DCCFB0009B7DC /* CollectionViewContentCellAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CollectionViewContentCellAnimator.h; path = conferences/Classes/PresentationLayer/Helpers/CollectionViewContentCellAnimator/CollectionViewContentCellAnimator.h; sourceTree = SOURCE_ROOT; };
 		66FFD29B1D7DCCFB0009B7DC /* CollectionViewContentCellAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CollectionViewContentCellAnimator.m; path = conferences/Classes/PresentationLayer/Helpers/CollectionViewContentCellAnimator/CollectionViewContentCellAnimator.m; sourceTree = SOURCE_ROOT; };
 		76E95A8F2CA91B564A26FB49 /* EventGalleryViewControllerTests.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EventGalleryViewControllerTests.m; sourceTree = "<group>"; };
@@ -1709,7 +1723,6 @@
 		9FBE89A81D5CB71300DA0C32 /* TabBarControllerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarControllerFactory.h; sourceTree = "<group>"; };
 		9FBE89A91D5CB71300DA0C32 /* TabBarControllerFactoryImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarControllerFactoryImplementation.h; sourceTree = "<group>"; };
 		9FBE89AA1D5CB71300DA0C32 /* TabBarControllerFactoryImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarControllerFactoryImplementation.m; sourceTree = "<group>"; };
-		9FBE89AC1D5CB71300DA0C32 /* LaunchRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchRouter.h; sourceTree = "<group>"; };
 		9FBE89B81D5CB72D00DA0C32 /* CleanLaunchAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CleanLaunchAppDelegate.h; sourceTree = "<group>"; };
 		9FBE89B91D5CB72D00DA0C32 /* CleanLaunchAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CleanLaunchAppDelegate.m; sourceTree = "<group>"; };
 		9FBE89BE1D5CB76900DA0C32 /* CleanLaunchAppDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CleanLaunchAppDelegateTests.m; sourceTree = "<group>"; };
@@ -1818,6 +1831,8 @@
 		9FC305301D6476EA0052CB67 /* ShareUrlBuilderImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShareUrlBuilderImplementation.h; path = ShareUrlBuilder/ConcreteClasses/ShareUrlBuilderImplementation/ShareUrlBuilderImplementation.h; sourceTree = "<group>"; };
 		9FC305311D6476EA0052CB67 /* ShareUrlBuilderImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShareUrlBuilderImplementation.m; path = ShareUrlBuilder/ConcreteClasses/ShareUrlBuilderImplementation/ShareUrlBuilderImplementation.m; sourceTree = "<group>"; };
 		9FC305341D6478F60052CB67 /* ShareUrlBuilderImplementationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShareUrlBuilderImplementationTests.m; path = ShareUrlBuilderTests/ShareUrlBuilderImplementationTests.m; sourceTree = "<group>"; };
+		9FCFC50C1D903719009FD57D /* SpotlightContinuationAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpotlightContinuationAppDelegate.h; path = SpotlightContinuationAppDelegate/SpotlightContinuationAppDelegate.h; sourceTree = "<group>"; };
+		9FCFC50D1D903719009FD57D /* SpotlightContinuationAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpotlightContinuationAppDelegate.m; path = SpotlightContinuationAppDelegate/SpotlightContinuationAppDelegate.m; sourceTree = "<group>"; };
 		9FD740371CDC98010071BD71 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9FE139201D65BD8500D7BF44 /* SuggestService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SuggestService.h; path = SuggestService/SuggestService.h; sourceTree = "<group>"; };
 		9FE139211D65BD9700D7BF44 /* SuggestServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SuggestServiceImplementation.h; path = SuggestService/SuggestServiceImplementation.h; sourceTree = "<group>"; };
@@ -2550,7 +2565,7 @@
 			isa = PBXGroup;
 			children = (
 				9FE139271D65F3E900D7BF44 /* SearchModule */,
-				667050021D4613BC00DD9D6E /* SearchReportsModule */,
+				667050021D4613BC00DD9D6E /* ReportsSearchModule */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -3197,6 +3212,7 @@
 		63F402EA1BCF77CB0086D030 /* ApplicationLayerAssemblyTests */ = {
 			isa = PBXGroup;
 			children = (
+				66FBA2561DE05CD300F5C2E9 /* LaunchSystemAssemblyTests */,
 				63F402EB1BCF77CB0086D030 /* ApplicationAssemblyTests */,
 				63F402EE1BCF77CB0086D030 /* ServiceComponentsAssemblyTests */,
 			);
@@ -4619,7 +4635,7 @@
 			name = "UIColor+ConferencesPallete";
 			sourceTree = "<group>";
 		};
-		667050021D4613BC00DD9D6E /* SearchReportsModule */ = {
+		667050021D4613BC00DD9D6E /* ReportsSearchModule */ = {
 			isa = PBXGroup;
 			children = (
 				667050081D4613EA00DD9D6E /* View */,
@@ -4628,7 +4644,7 @@
 				667050051D4613D800DD9D6E /* Interactor */,
 				667050031D4613C200DD9D6E /* Assembly */,
 			);
-			name = SearchReportsModule;
+			name = ReportsSearchModule;
 			sourceTree = "<group>";
 		};
 		667050031D4613C200DD9D6E /* Assembly */ = {
@@ -5084,6 +5100,30 @@
 				66EE4D331D54BFCD0011F94A /* NITableViewModel+NextInputResponder.m */,
 			);
 			name = Nimbus;
+			sourceTree = "<group>";
+		};
+		66FBA2561DE05CD300F5C2E9 /* LaunchSystemAssemblyTests */ = {
+			isa = PBXGroup;
+			children = (
+				66FBA2571DE05CF000F5C2E9 /* LaunchSystemAssemblyTests.m */,
+			);
+			name = LaunchSystemAssemblyTests;
+			sourceTree = "<group>";
+		};
+		66FBA2591DE0605600F5C2E9 /* SpotlightContinuationAppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				66FBA25A1DE0607D00F5C2E9 /* SpotlightContinuationAppDelegateTests.m */,
+			);
+			name = SpotlightContinuationAppDelegate;
+			sourceTree = "<group>";
+		};
+		66FBA25C1DE069C900F5C2E9 /* SearchLaunchRouter */ = {
+			isa = PBXGroup;
+			children = (
+				66FBA25D1DE069E700F5C2E9 /* SearchLaunchRouterTests.m */,
+			);
+			name = SearchLaunchRouter;
 			sourceTree = "<group>";
 		};
 		66FFD2991D7DCCE80009B7DC /* CollectionViewContentCellAnimator */ = {
@@ -7177,6 +7217,7 @@
 			isa = PBXGroup;
 			children = (
 				638918C91DC28A47009B34AF /* MessagesAppDelegate */,
+				9FCFC50B1D9036F7009FD57D /* SpotlightContinuationAppDelegate */,
 				9F7B821F1D7DA546002E977A /* QuickActionAppDelegate */,
 				9FBE89B71D5CB72D00DA0C32 /* CleanLaunchAppDelegate */,
 				9FBE89881D5CB71300DA0C32 /* SpotlightAppDelegate */,
@@ -7261,6 +7302,7 @@
 		9FBE89991D5CB71300DA0C32 /* ConcreteClasses */ = {
 			isa = PBXGroup;
 			children = (
+				9FCFC50F1D9037B9009FD57D /* SearchLaunchRouter */,
 				9F7B82381D7ECA07002E977A /* TabLaunchRouter */,
 				9FBE899A1D5CB71300DA0C32 /* CleanLaunchRouter */,
 				9FBE899D1D5CB71300DA0C32 /* EventLaunchRouter */,
@@ -7327,7 +7369,7 @@
 		9FBE89AB1D5CB71300DA0C32 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				9FBE89AC1D5CB71300DA0C32 /* LaunchRouter.h */,
+				661B40A01DF17CA4002DA46C /* LaunchRouter.h */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -7356,6 +7398,7 @@
 			isa = PBXGroup;
 			children = (
 				63C31BFB1DD9C0DB00AA51BD /* MessagesAppDelegate */,
+				66FBA2591DE0605600F5C2E9 /* SpotlightContinuationAppDelegate */,
 				9F7B82271D7DA9DC002E977A /* QuickActionAppDelegate */,
 				9FBE89BD1D5CB76900DA0C32 /* CleanLaunchAppDelegate */,
 				9FBE89BF1D5CB76900DA0C32 /* SpotlightAppDelegate */,
@@ -7417,6 +7460,7 @@
 		9FBE89C71D5CB76900DA0C32 /* ConcreteClasses */ = {
 			isa = PBXGroup;
 			children = (
+				66FBA25C1DE069C900F5C2E9 /* SearchLaunchRouter */,
 				9F7B823F1D7ECF0A002E977A /* TabLaunchRouter */,
 				9FBE89C81D5CB76900DA0C32 /* CleanLaunchRouter */,
 				9FBE89CA1D5CB76900DA0C32 /* EventLaunchRouter */,
@@ -7963,6 +8007,24 @@
 			name = ShareUrlBuilderTests;
 			sourceTree = "<group>";
 		};
+		9FCFC50B1D9036F7009FD57D /* SpotlightContinuationAppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				9FCFC50C1D903719009FD57D /* SpotlightContinuationAppDelegate.h */,
+				9FCFC50D1D903719009FD57D /* SpotlightContinuationAppDelegate.m */,
+			);
+			name = SpotlightContinuationAppDelegate;
+			sourceTree = "<group>";
+		};
+		9FCFC50F1D9037B9009FD57D /* SearchLaunchRouter */ = {
+			isa = PBXGroup;
+			children = (
+				661B40A11DF17CB3002DA46C /* SearchLaunchRouter.h */,
+				661B40A21DF17CB3002DA46C /* SearchLaunchRouter.m */,
+			);
+			name = SearchLaunchRouter;
+			sourceTree = "<group>";
+		};
 		9FE1391F1D65BD6B00D7BF44 /* SuggestService */ = {
 			isa = PBXGroup;
 			children = (
@@ -8018,6 +8080,7 @@
 			children = (
 				9FE139311D65F3E900D7BF44 /* SearchPresenter.h */,
 				9FE139321D65F3E900D7BF44 /* SearchPresenter.m */,
+				66FBA25F1DE07C0800F5C2E9 /* SearchModuleInput.h */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -8857,6 +8920,7 @@
 				63BB9A381DB4BB8200C2F2B9 /* ObjectTransformerConstants.m in Sources */,
 				63BB9A371DB4BB7600C2F2B9 /* SpotlightCoreDataStackCoordinatorImplementation.m in Sources */,
 				63BB9A321DB4BB3700C2F2B9 /* LectureObjectTransformer.m in Sources */,
+				661B40A41DF17CC3002DA46C /* SearchLaunchRouter.m in Sources */,
 				636E26E21D8FE7D7001ABB92 /* MetaEventModelObject.m in Sources */,
 				63770CBC1DD61E2A0039AB0D /* MessagesLaunchHandler.m in Sources */,
 				632184311D9D3527001BB7A7 /* TechPlainObject.m in Sources */,
@@ -8899,6 +8963,7 @@
 				632184271D9D32C6001BB7A7 /* SpeakerPlainObject.m in Sources */,
 				63BB9A191DB4B45400C2F2B9 /* LaunchSystemAssembly.m in Sources */,
 				636E26CC1D8FE0AB001ABB92 /* EventListTableViewCellObject.m in Sources */,
+				661B40A51DF17CCC002DA46C /* SpotlightContinuationAppDelegate.m in Sources */,
 				636E26E61D8FE807001ABB92 /* SpeakerServiceImplementation.m in Sources */,
 				6373829D1DD5E12F004246EC /* MessagesPresenter.m in Sources */,
 				636E26F11D8FEF29001ABB92 /* NSManagedObjectID+LJStringConversion.m in Sources */,
@@ -9055,6 +9120,7 @@
 				9FBE8ABC1D630D4C00DA0C32 /* EventGalleryCellObjectFactory.m in Sources */,
 				9F1830931BC02293000E21A5 /* RESTRequestConfigurator.m in Sources */,
 				2B20647E1D3F9CE900246C8D /* _TagModelObject.m in Sources */,
+				661B40A31DF17CB3002DA46C /* SearchLaunchRouter.m in Sources */,
 				63F342B01C8B20AB002AF7CD /* EventStoreService.m in Sources */,
 				667050001D460E3100DD9D6E /* UIColor+ConferencesPalette.m in Sources */,
 				636F8DDA1BCB8FE800552B91 /* RamblerLocationModuleAssembly.m in Sources */,
@@ -9115,6 +9181,7 @@
 				9FBE89B31D5CB71300DA0C32 /* EventLaunchRouter.m in Sources */,
 				661CA4071D65D0720047EB68 /* NSManagedObjectID+LJStringConversion.m in Sources */,
 				634EB9E11DC8E5FC00EAEC0F /* SpeakerInfoAlertFactory.m in Sources */,
+				9FCFC50E1D903719009FD57D /* SpotlightContinuationAppDelegate.m in Sources */,
 				661CA4031D65D04E0047EB68 /* ServerResponseModel.m in Sources */,
 				9F78D7441D59D6EF009DDCEA /* SpotlightCoreDataStackCoordinatorImplementation.m in Sources */,
 				667050531D46332200DD9D6E /* ReportsSearchCellObjectsBuilderImplementation.m in Sources */,
@@ -9360,6 +9427,7 @@
 				63D86BDD1C143FCE00986536 /* DateFormatterTests.m in Sources */,
 				66A1DD551D7E993A00998F6B /* MockObjectsFactory.m in Sources */,
 				63C31C0A1DDAF1B000AA51BD /* MessagesRouter.m in Sources */,
+				66FBA2581DE05CF000F5C2E9 /* LaunchSystemAssemblyTests.m in Sources */,
 				9FE139261D65CC2500D7BF44 /* SuggestServiceImplementationTests.m in Sources */,
 				9F78D75D1D59E778009DDCEA /* SpeakerObjectTransformerTests.m in Sources */,
 				66A1DD3C1D7E983100998F6B /* TagShowMediatorTests.m in Sources */,
@@ -9373,6 +9441,7 @@
 				631CBA811C021A5300E3EBA8 /* PresentationLayerHelpersAssemblyTests.m in Sources */,
 				9FAB6A831D54965F0061F333 /* SearchableIndexMock.m in Sources */,
 				631CBAA71C021C6900E3EBA8 /* EventTypeDeterminatorTests.m in Sources */,
+				66FBA25E1DE069E700F5C2E9 /* SearchLaunchRouterTests.m in Sources */,
 				63F402FE1BCF840A0086D030 /* NetworkClientsAssemblyTests.m in Sources */,
 				63F613E01CB111070002AEF0 /* EventInteractorTests.m in Sources */,
 				9FBE89D31D5CB76900DA0C32 /* CleanLaunchAppDelegateTests.m in Sources */,
@@ -9420,6 +9489,7 @@
 				9F8E5F9B1BC2753100DC10DB /* CompoundOperationFactoryTestsBase.m in Sources */,
 				66A1DD4D1D7E986000998F6B /* TagCollectionViewCellTests.m in Sources */,
 				638918CF1DC333A4009B34AF /* MessagesAppDelegate.m in Sources */,
+				66FBA25B1DE0607D00F5C2E9 /* SpotlightContinuationAppDelegateTests.m in Sources */,
 				2B01CEBE1D50A55900DA8E66 /* MetaEventServiceTests.m in Sources */,
 				631CBA721C020CCD00E3EBA8 /* EventListModuleAssemblyTests.m in Sources */,
 				66A1DD481D7E984E00998F6B /* TagDataDisplayManagerTests.m in Sources */,

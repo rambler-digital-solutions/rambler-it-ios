@@ -25,6 +25,7 @@
 #import "StubTestHelper.h"
 #import "SearchRouter.h"
 #import "EventModuleInput.h"
+#import "ReportsSearchModuleInput.h"
 
 @interface SearchRouterTests : XCTestCase
 
@@ -69,6 +70,24 @@
     
     // then
     OCMVerify([moduleInputMock configureCurrentModuleWithEventObjectId:objectId]);
+}
+
+- (void)testThatRouterConfigureReportsSearchModuleCorrectly {
+    // given
+    NSString *searchString = @"3k3523";
+    
+    id <ReportsSearchModuleInput> moduleInputMock = OCMProtocolMock(@protocol(ReportsSearchModuleInput));
+    
+    StubTestHelper *stubTestHelper = [StubTestHelper new];
+    [stubTestHelper stubTransitionHandler:self.transitionHandlerMock
+                      withModuleInputMock:moduleInputMock];
+    
+    // when
+    [self.router configureReportsSearchModuleWithSearchTerm:searchString
+                                                 moduleOutput:nil];
+    
+    // then
+    OCMVerify([moduleInputMock configureReportsSearchModuleWithSearchTerm:searchString]);
 }
 
 @end

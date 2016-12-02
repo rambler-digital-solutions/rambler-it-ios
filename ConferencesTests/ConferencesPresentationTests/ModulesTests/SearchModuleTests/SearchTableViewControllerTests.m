@@ -27,23 +27,26 @@
 #import "SearchDataDisplayManager.h"
 #import "EventPlainObject.h"
 
-@interface SearchTableViewControllerTests : XCTestCase
+@protocol OutputProtocolTest <SearchViewOutput, SearchModuleInput>
+@end
+
+@interface SearchViewControllerTests : XCTestCase
 
 @property (strong, nonatomic) SearchViewController *viewController;
 @property (strong, nonatomic) SearchDataDisplayManager *mockDataDisplayManager;
-@property (strong, nonatomic) id <SearchViewOutput> mockOutput;
+@property (strong, nonatomic) id<OutputProtocolTest> mockOutput;
 @property (strong, nonatomic) UITableView *mockTableView;
 
 @end
 
-@implementation SearchTableViewControllerTests
+@implementation SearchViewControllerTests
 
 - (void)setUp {
     [super setUp];
     
     self.viewController = [SearchViewController new];
     self.mockDataDisplayManager = OCMClassMock([SearchDataDisplayManager class]);
-    self.mockOutput = OCMProtocolMock(@protocol(SearchViewOutput));
+    self.mockOutput = OCMProtocolMock(@protocol(OutputProtocolTest));
     self.mockTableView = OCMClassMock([UITableView class]);
     
     self.viewController.dataDisplayManager = self.mockDataDisplayManager;
@@ -117,6 +120,17 @@
     
     // then
     OCMVerify([self.mockOutput didTapSuggestWithText:testSuggest]);
+}
+
+- (void)testThatControllerConfigureModuleCorrectly {
+    // given
+    NSString *searchString = @"text";
+
+    // when
+    [self.viewController configureSearchModuleWithSearchTerm:searchString];
+    
+    // then
+    OCMVerify([self.mockOutput configureSearchModuleWithSearchTerm:searchString]);
 }
 
 @end

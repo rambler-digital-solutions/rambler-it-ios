@@ -18,35 +18,20 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Typhoon/Typhoon.h>
-#import <RamblerTyphoonUtils/AssemblyCollector.h>
+#import <Foundation/Foundation.h>
+#import "LaunchRouter.h"
 
-@class ApplicationHelperAssembly;
-@class StoryboardAssembly;
-@class SystemInfrastructureAssembly;
-@class SpotlightIndexerAssembly;
-@class SpotlightAppDelegate;
-@class QuickActionAppDelegate;
-@class EventLaunchRouter;
-@class MessagesAppDelegate;
-@class SpotlightContinuationAppDelegate;
+@protocol TabBarControllerFactory;
+@class UIWindow;
 
 /**
  @author Egor Tolstoy
  
- Assembly with definitions for LaunchSystem components
+ Launch router responsible for opening SearchModule with some search string
  */
-@interface LaunchSystemAssembly : TyphoonAssembly <RamblerInitialAssembly>
+@interface SearchLaunchRouter : NSObject <LaunchRouter>
 
-@property (strong, nonatomic, readonly) ApplicationHelperAssembly *applicationHelperAssembly;
-@property (strong, nonatomic, readonly) StoryboardAssembly *storyboardAssembly;
-@property (strong, nonatomic, readonly) SystemInfrastructureAssembly *systemInfrastructureAssembly;
-@property (strong, nonatomic, readonly) SpotlightIndexerAssembly *spotlightIndexerAssembly;
-
-- (SpotlightAppDelegate *)spotlightAppDelegate;
-- (SpotlightContinuationAppDelegate *)spotlightContinuationAppDelegate;
-- (QuickActionAppDelegate *)quickActionAppDelegate;
-- (EventLaunchRouter *)eventLaunchRouter;
-- (MessagesAppDelegate *)messagesAppDelegate;
+- (instancetype)initWithTabBarControllerFactory:(id<TabBarControllerFactory>)tabBarControllerFactory
+                                         window:(UIWindow *)window;
 
 @end

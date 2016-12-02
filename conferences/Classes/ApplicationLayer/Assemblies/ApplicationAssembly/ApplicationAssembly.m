@@ -47,7 +47,8 @@
                                                                               [self cleanStartAppDelegate],
                                                                               [self.launchSystemAssembly spotlightAppDelegate],
                                                                               [self.launchSystemAssembly quickActionAppDelegate],
-                                                                              [self.launchSystemAssembly messagesAppDelegate]
+                                                                              [self.launchSystemAssembly messagesAppDelegate],
+                                                                              [self.launchSystemAssembly spotlightContinuationAppDelegate]
                                                                               ]
                                                                               ];
                                             }];

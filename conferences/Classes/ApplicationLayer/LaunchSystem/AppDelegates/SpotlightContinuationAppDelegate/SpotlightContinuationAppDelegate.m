@@ -18,30 +18,26 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import "ReportsSearchModuleOutput.h"
+#import "SpotlightContinuationAppDelegate.h"
 
-@protocol SearchRouterInput <NSObject>
+#import "LaunchRouter.h"
 
-/**
- @author Zinovyev Konstantin
- 
- Method is used to open EventModule and configure with event Id
- 
- @param objectId Идентификатор события
- */
-- (void)openEventModuleWithEventObjectId:(NSString *)objectId;
+#import <CoreSpotlight/CoreSpotlight.h>
 
-/**
- @author Zinovyev Konstantin
- 
- Method is used to configure ReportsSearchModule
- 
- @param searchString Search string
- @param moduleOutput Report list presenter
- */
-- (void)configureReportsSearchModuleWithSearchTerm:(NSString *)searchString
-                                      moduleOutput:(id<ReportsSearchModuleOutput>)moduleOutput;
+@implementation SpotlightContinuationAppDelegate
+
+#pragma mark - <UIApplicationDelegate>
+
+- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray * _Nullable))restorationHandler {
+    
+    if (![userActivity.activityType isEqualToString:CSQueryContinuationActionType]) {
+        return NO;
+    }
+    
+    NSString *searchString = userActivity.userInfo[CSSearchQueryString];
+    [self.router openScreenWithData:searchString];
+    
+    return YES;
+}
 
 @end
-
