@@ -64,7 +64,7 @@
     OCMVerify([self.mockRouter openScreenWithData:searchString]);
 }
 
-- (void)testThatAppDelegateNotContinueUserActivityCorreclty {
+- (void)testThatAppDelegateNotContinueUserActivityCorrectly {
     //given
     NSUserActivity *activity = [[NSUserActivity alloc] initWithActivityType:CSSearchableItemActionType];
     
