@@ -66,7 +66,6 @@ static NSString *const kPlaceholderImageName = @"placeholder";
     [self.removeButton setHidden:!object.isVideoCached];
     [self.downloadButton setHidden:object.isVideoCached];
     [self.indicatorView setHidden:YES];
-    
     return YES;
 }
 

@@ -10,6 +10,7 @@
 #import <XCDYouTubeClient.h>
 
 #import <MagicalRecord/MagicalRecord.h>
+#import "EXTScope.h"
 #import "LectureMaterialType.h"
 #import "LectureMaterialPlainObject.h"
 #import "LectureMaterialModelObject.h"
@@ -45,10 +46,12 @@
     [self.statesStorage addVideoIdentifier:identifier];
     
     NSString *filePath = [self filePathLocalVideoForVideoIdentifier:identifier];
-    
+    @weakify(self);
     [[XCDYouTubeClient defaultClient] getVideoWithIdentifier:identifier
                                            completionHandler:^(XCDYouTubeVideo *video, NSError *error) {
+           @strongify(self);
            if (error) {
+               [self.statesStorage removeVideoIdentifier:identifier];
                completionBlock(nil, error);
                return;
            }
@@ -62,6 +65,7 @@
                            dispatch_async(dispatch_get_main_queue(), ^{
                                [urlData writeToFile:filePath
                                          atomically:YES];
+                               [self.statesStorage removeVideoIdentifier:identifier];
                                completionBlock(filePath, error);
                            });
                        }
@@ -74,6 +78,7 @@
                NSError *noStreamError = [NSError errorWithDomain:XCDYouTubeVideoErrorDomain
                                                                 code:XCDYouTubeErrorNoStreamAvailable
                                                             userInfo:nil];
+               [self.statesStorage removeVideoIdentifier:identifier];
                completionBlock(nil, noStreamError);
                return;
            }
@@ -82,9 +87,6 @@
 
 - (void)removeFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial
                                  error:(NSError **)error{
-    NSURL *videoUrl = [NSURL URLWithString:lectureMaterial.link];
-    NSString *identifier = [self.deriviator deriveIdentifierFromUrl:videoUrl];
-    [self.statesStorage removeVideoIdentifier:identifier];
     [[NSFileManager defaultManager] removeItemAtPath:lectureMaterial.localURL
                                                error:error];
     if (!error) {
