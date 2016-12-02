@@ -61,6 +61,8 @@
     
     self.searchFacade = nil;
     self.mockEventService = nil;
+    self.mockSpeakerService = nil;
+    self.mockLectureService = nil;
     self.mockPonsomizer = nil;
     
     [super tearDown];
@@ -107,11 +109,11 @@
     NSArray *notPonsoObjectsArray = @[@1];
     NSArray *expectedLecturesArray = @[lecture];
     
-    OCMStub([self.mockSpeakerService obtainSpeakerWithPredicate:OCMOCK_ANY]).andReturn(notPonsoObjectsArray);
+    OCMStub([self.mockLectureService obtainLectureWithPredicate:OCMOCK_ANY]).andReturn(notPonsoObjectsArray);
     OCMStub([self.mockPonsomizer convertObject:notPonsoObjectsArray]).andReturn(expectedLecturesArray);
     
     // when
-    NSArray *lecturesArray = [self.searchFacade speakersForPredicates:OCMOCK_ANY];
+    NSArray *lecturesArray = [self.searchFacade lecturesForPredicates:OCMOCK_ANY];
     
     // then
     XCTAssertEqual(lecturesArray, expectedLecturesArray);
