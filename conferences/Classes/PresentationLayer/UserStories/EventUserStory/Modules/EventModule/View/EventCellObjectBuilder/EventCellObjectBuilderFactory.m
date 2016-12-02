@@ -39,7 +39,7 @@
         [matcher caseEqual:@(FutureEvent)
                        use:[self futureEventCellObjectBuilder]];
         [matcher caseEqual:@(CurrentEvent)
-                       use:[self currentEventCellObjectBuilder]];
+                       use:[self pastEventCellObjectBuilder]];
         [matcher caseEqual:@(PastEvent)
                        use:[self pastEventCellObjectBuilder]];
     }];
@@ -51,13 +51,6 @@
                               definition.abstract = YES;
                               [definition injectProperty:@selector(dateFormatter)
                           with:[self.presentationLayerHelpersAssembly dateFormatter]];
-    }];
-}
-
-- (EventCellObjectBuilderBase *)currentEventCellObjectBuilder {
-    return [TyphoonDefinition withClass:[CurrentEventCellObjectBuilder class]
-                          configuration:^(TyphoonDefinition *definition) {
-                              definition.parent = [self eventCellObjectBuilderBase];
     }];
 }
 
