@@ -25,7 +25,7 @@
 
 @interface ReportsSearchPresenter ()
 
-@property (nonatomic, strong) NSString *searchString;
+@property (nonatomic, copy) NSString *searchString;
 
 @end
 

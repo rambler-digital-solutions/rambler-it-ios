@@ -22,8 +22,8 @@
 
 @interface ReportSearchSectionObject : NSObject
 
-@property (nonatomic, strong) NSString *titleSection;
-@property (nonatomic, strong) NSString *nameObjectClassInSection;
+@property (nonatomic, copy) NSString *titleSection;
+@property (nonatomic, copy) NSString *nameObjectClassInSection;
 @property (nonatomic, strong) UIColor *backgroundColorSection;
 
 +(instancetype)objectSectionWithTitle:(NSString *)title

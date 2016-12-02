@@ -46,14 +46,14 @@ typedef void(^CompoundOperationFactoryExpectationBlock)(id resultData, NSError *
 
 The request name for MMBarricade
 */
-@property (strong, nonatomic) NSString *requestName;
+@property (copy, nonatomic) NSString *requestName;
 
 /**
  @author Egor Tolstoy
  
  The URL suffix for stubbing responses
  */
-@property (strong, nonatomic) NSString *requestSuffix;
+@property (copy, nonatomic) NSString *requestSuffix;
 
 /**
  @author Egor Tolstoy
