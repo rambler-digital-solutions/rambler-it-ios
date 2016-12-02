@@ -36,6 +36,7 @@
 
 - (void)removeVideoIdentifier:(NSString *)identifier {
     [self.statesStorage removeObject:identifier];
+    [self.delegate didRemovedVideoFromDownloadingWithIdentifier:identifier];
 }
 
 @end

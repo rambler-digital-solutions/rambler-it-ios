@@ -27,6 +27,7 @@
 @protocol ShareUrlBuilder;
 @protocol LectureMaterialsService;
 @class YouTubeIdentifierDeriviator;
+@class VideoMaterialDownloadingStatesStorage;
 
 @interface LectureInteractor : NSObject<LectureInteractorInput>
 
@@ -36,6 +37,7 @@
 @property (nonatomic, strong) id<ShareUrlBuilder> shareUrlBuilder;
 @property (nonatomic, strong) YouTubeIdentifierDeriviator *deriviator;
 @property (nonatomic, weak) id<LectureInteractorOutput> output;
+@property (nonatomic, strong) VideoMaterialDownloadingStatesStorage *statesStorage;
 
 @end
 

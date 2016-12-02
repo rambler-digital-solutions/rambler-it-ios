@@ -70,6 +70,8 @@
 - (void)downloadVideoToCacheWithLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial;
 - (void)removeVideoFromCacheWithLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial
                                           error:(NSError **)error;
+- (void)updateDelegateStatesStorage;
+- (void)didRemovedVideoFromDownloadingWithIdentifier:(NSString *)identifier;
 
 @end
 

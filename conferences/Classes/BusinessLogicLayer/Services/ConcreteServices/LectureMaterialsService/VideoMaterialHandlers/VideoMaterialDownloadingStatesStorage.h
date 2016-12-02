@@ -7,8 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LectureInteractorInput.h"
 
 @interface VideoMaterialDownloadingStatesStorage : NSObject
+
+@property (nonatomic, weak) id<LectureInteractorInput> delegate;
 
 - (BOOL)isVideoDownloadingWithIdentifier:(NSString *)identifier;
 

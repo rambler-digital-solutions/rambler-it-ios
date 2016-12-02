@@ -24,7 +24,7 @@
 
 @protocol LectureInteractorOutput <NSObject>
 
-- (void)didTriggerEndDownloadingLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial;
+- (void)didTriggerEndDownloadingVideo;
 
 @end
 

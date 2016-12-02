@@ -39,6 +39,7 @@
 
 - (void)setupView {
     [self updateViewWithCurrentLecture];
+    [self.interactor updateDelegateStatesStorage];
     [self.view setupViewInitialState];
 }
 
@@ -95,7 +96,7 @@
     [self.router showAlertConfirmationDownloadWithActionBlock:actionAlertBlock];
 }
 
-- (void)didTriggerEndDownloadingLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial {
+- (void)didTriggerEndDownloadingVideo {
     [self updateViewWithCurrentLecture];
     
 }

@@ -30,10 +30,15 @@
 #import "SpeakerPlainObject.h"
 #import "LectureMaterialPlainObject.h"
 #import "LectureMaterialsService.h"
+#import "VideoMaterialDownloadingStatesStorage.h"
 
 @implementation LectureInteractor
 
 #pragma mark - LectureInteractorInput
+
+- (void)updateDelegateStatesStorage {
+    self.statesStorage.delegate = self;
+}
 
 - (LecturePlainObject *)obtainLectureWithObjectId:(NSString *)objectId {
     id lectureManagedObject = [self.lectureService obtainLectureWithLectureId:objectId];
@@ -60,9 +65,7 @@
         if (error) {
             return;
         }
-        id model = [self.lectureMaterialsService obtainFromCacheLectureMaterial:lectureMaterial];
-        LectureMaterialPlainObject *lecture = [self.ponsomizer convertObject:model];
-        [self.output didTriggerEndDownloadingLectureMaterial:lecture];
+        [self.output didTriggerEndDownloadingVideo];
     }];
 }
 - (void)removeVideoFromCacheWithLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial
@@ -70,5 +73,9 @@
     [self.lectureMaterialsService removeFromCacheLectureMaterial:lectureMaterial
                                                            error:error];
 }
+
+- (void)didRemovedVideoFromDownloadingWithIdentifier:(NSString *)identifier {
+    [self.output didTriggerEndDownloadingVideo];
+};
 
 @end
