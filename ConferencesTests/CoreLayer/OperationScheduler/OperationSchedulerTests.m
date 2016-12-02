@@ -27,7 +27,7 @@
 
 @interface OperationSchedulerTests : XCTestCase
 
-@property (strong, nonatomic) OperationSchedulerImplementation *scheduler;
+@property (nonatomic, strong) OperationSchedulerImplementation *scheduler;
 
 @end
 

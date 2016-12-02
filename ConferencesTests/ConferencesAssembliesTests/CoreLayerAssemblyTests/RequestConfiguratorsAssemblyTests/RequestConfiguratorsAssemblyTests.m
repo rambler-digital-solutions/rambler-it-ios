@@ -29,7 +29,7 @@
 
 @interface RequestConfiguratorsAssemblyTests : RamblerTyphoonAssemblyTests
 
-@property (strong, nonatomic) RequestConfiguratorsAssembly *assembly;
+@property (nonatomic, strong) RequestConfiguratorsAssembly *assembly;
 
 @end
 

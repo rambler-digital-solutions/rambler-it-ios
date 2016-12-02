@@ -35,7 +35,7 @@ static NSString *const kEventShareItemType = @"brand";
 
 @interface EventModuleAssembly ()
 
-@property (strong, nonatomic, readonly) EventCellObjectBuilderFactory *eventCellObjectBuilderFactory;
+@property (nonatomic, strong, readonly) EventCellObjectBuilderFactory *eventCellObjectBuilderFactory;
 
 @end
 

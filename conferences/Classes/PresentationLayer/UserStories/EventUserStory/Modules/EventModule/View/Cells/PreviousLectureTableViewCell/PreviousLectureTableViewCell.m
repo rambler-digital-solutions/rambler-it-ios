@@ -26,9 +26,9 @@ static NSString *const kPlaceholderImageName = @"placeholder";
 
 @interface PreviousLectureTableViewCell ()
 
-@property (weak, nonatomic) IBOutlet UIImageView *lectureImageView;
-@property (weak, nonatomic) IBOutlet UILabel *titleTextLabel;
-@property (weak, nonatomic) IBOutlet UILabel *speakerNameTextLabel;
+@property (nonatomic, weak) IBOutlet UIImageView *lectureImageView;
+@property (nonatomic, weak) IBOutlet UILabel *titleTextLabel;
+@property (nonatomic, weak) IBOutlet UILabel *speakerNameTextLabel;
 
 @end
 

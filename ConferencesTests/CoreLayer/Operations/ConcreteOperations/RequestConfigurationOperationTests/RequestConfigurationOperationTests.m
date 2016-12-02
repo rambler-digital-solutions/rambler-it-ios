@@ -27,8 +27,8 @@
 
 @interface RequestConfigurationOperationTests : ChainableOperationTestsBase
 
-@property (strong, nonatomic) RequestConfigurationOperation *operation;
-@property (strong, nonatomic) id mockRequestConfigurator;
+@property (nonatomic, strong) RequestConfigurationOperation *operation;
+@property (nonatomic, strong) id mockRequestConfigurator;
 
 @end
 

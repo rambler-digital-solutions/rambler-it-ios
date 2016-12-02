@@ -23,7 +23,7 @@
 
 @interface LectureMaterialTitleTableViewCellObject ()
 
-@property (strong, nonatomic, readwrite) NSString *text;
+@property (nonatomic, strong, readwrite) NSString *text;
 
 @end
 

@@ -28,8 +28,8 @@
 
 @interface TagInteractorTests : XCTestCase
 
-@property(strong, nonatomic) TagInteractor *interactor;
-@property(strong, nonatomic) id mockTagService;
+@property(nonatomic, strong) TagInteractor *interactor;
+@property(nonatomic, strong) id mockTagService;
 
 @end
 

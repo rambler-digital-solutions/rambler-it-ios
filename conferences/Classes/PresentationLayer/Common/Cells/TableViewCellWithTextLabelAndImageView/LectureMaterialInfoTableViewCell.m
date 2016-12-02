@@ -30,8 +30,8 @@ static NSString *const kOtherImageName = @"unspecified-material-icon";
 
 @interface LectureMaterialInfoTableViewCell ()
 
-@property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
-@property (weak, nonatomic) IBOutlet UILabel *label;
+@property (nonatomic, weak) IBOutlet UIImageView *iconImageView;
+@property (nonatomic, weak) IBOutlet UILabel *label;
 
 @end
 

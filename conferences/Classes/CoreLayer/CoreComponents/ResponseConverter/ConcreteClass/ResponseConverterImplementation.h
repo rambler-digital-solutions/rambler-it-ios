@@ -29,6 +29,6 @@
  */
 @interface ResponseConverterImplementation : NSObject <ResponseConverter>
 
-@property (strong, nonatomic) id<ResponseObjectFormatter> responseFormatter;
+@property (nonatomic, strong) id<ResponseObjectFormatter> responseFormatter;
 
 @end

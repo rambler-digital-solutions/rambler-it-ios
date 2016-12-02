@@ -31,7 +31,7 @@ static NSString *const kPlaceholderImageName = @"speaker-placeholder";
 
 @property (nonatomic, weak) IBOutlet UILabel *speakerTitle;
 @property (nonatomic, weak) IBOutlet UIImageView *speakerImageView;
-@property (weak, nonatomic) IBOutlet UILabel *companyLabel;
+@property (nonatomic, weak) IBOutlet UILabel *companyLabel;
 
 @end
 

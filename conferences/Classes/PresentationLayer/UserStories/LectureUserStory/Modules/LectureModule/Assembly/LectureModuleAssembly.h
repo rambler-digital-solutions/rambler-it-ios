@@ -30,7 +30,7 @@
  */
 @interface LectureModuleAssembly : ModuleAssemblyBase <RamblerInitialAssembly>
 
-@property (strong, nonatomic) PonsomizerAssembly *ponsomizerAssembly;
+@property (nonatomic, strong) PonsomizerAssembly *ponsomizerAssembly;
 
 @end
 

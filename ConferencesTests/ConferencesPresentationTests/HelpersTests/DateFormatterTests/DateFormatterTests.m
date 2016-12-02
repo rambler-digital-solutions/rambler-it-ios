@@ -24,8 +24,8 @@
 
 @interface DateFormatterTests : XCTestCase
 
-@property (strong, nonatomic) DateFormatter *dateFormatter;
-@property (strong, nonatomic) NSDate *date;
+@property (nonatomic, strong) DateFormatter *dateFormatter;
+@property (nonatomic, strong) NSDate *date;
 
 @end
 

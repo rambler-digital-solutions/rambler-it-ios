@@ -31,7 +31,7 @@
  */
 @interface DaemonAssembly : TyphoonAssembly <RamblerInitialAssembly>
 
-@property (strong, nonatomic, readonly) SystemInfrastructureAssembly *systemInfrastructureAssembly;
+@property (nonatomic, strong, readonly) SystemInfrastructureAssembly *systemInfrastructureAssembly;
 
 - (id<Daemon>)quickActionDaemon;
 

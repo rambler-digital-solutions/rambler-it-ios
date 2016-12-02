@@ -24,7 +24,7 @@
 
 @interface CurrentVideoTranslationTableViewCellObject : NSObject <NICellObject>
 
-@property (strong, nonatomic, readonly) UIColor *buttonColor;
+@property (nonatomic, strong, readonly) UIColor *buttonColor;
 
 + (instancetype)objectWithEvent:(EventPlainObject *)event;
 

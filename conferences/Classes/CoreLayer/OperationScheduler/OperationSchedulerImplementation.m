@@ -24,7 +24,7 @@ static NSString *const kOperationQueueName = @"ru.rambler.Conferences.OperationQ
 
 @interface OperationSchedulerImplementation ()
 
-@property (strong, nonatomic) NSOperationQueue *queue;
+@property (nonatomic, strong) NSOperationQueue *queue;
 
 @end
 

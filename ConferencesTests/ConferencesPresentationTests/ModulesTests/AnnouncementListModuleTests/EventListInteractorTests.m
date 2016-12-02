@@ -31,11 +31,11 @@ typedef void (^ProxyBlock)(NSInvocation *);
 
 @interface EventListInteractorTests : XCTestCase
 
-@property (strong, nonatomic) EventListInteractor *interactor;
-@property (strong, nonatomic) id <EventService> mockEventService;
-@property (strong, nonatomic) id <ROSPonsomizer> mockPonsomizer;
-@property (strong, nonatomic) id <EventListInteractorOutput> mockOutput;
-@property (strong, nonatomic) EventListProcessor *mockEventListProcessor;
+@property (nonatomic, strong) EventListInteractor *interactor;
+@property (nonatomic, strong) id <EventService> mockEventService;
+@property (nonatomic, strong) id <ROSPonsomizer> mockPonsomizer;
+@property (nonatomic, strong) id <EventListInteractorOutput> mockOutput;
+@property (nonatomic, strong) EventListProcessor *mockEventListProcessor;
 
 @end
 

@@ -30,7 +30,7 @@
  */
 @interface ReportsSearchCellObjectsBuilderImplementation <ReportsSearchCellObjectsBuilder> : NSObject
 
-@property (strong, nonatomic) DateFormatter *dateFormatter;
+@property (nonatomic, strong) DateFormatter *dateFormatter;
 
 - (instancetype)initWithDateFormatter:(DateFormatter *)dateFormatter;
 

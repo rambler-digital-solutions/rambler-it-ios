@@ -22,7 +22,7 @@
 
 @interface LecturePresenterStateStorage : NSObject
 
-@property (copy, nonatomic) NSString *lectureObjectId;
-@property (copy, nonatomic) NSString *speakerObjectId;
+@property (nonatomic, copy) NSString *lectureObjectId;
+@property (nonatomic, copy) NSString *speakerObjectId;
 
 @end

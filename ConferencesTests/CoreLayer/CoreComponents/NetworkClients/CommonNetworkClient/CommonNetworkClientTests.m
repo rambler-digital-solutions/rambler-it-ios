@@ -31,8 +31,8 @@ static NSString *const kTestURLPath = @"https://myapi.com/v1/rest";
 
 @interface CommonNetworkClientTests : XCTestCase
 
-@property (strong, nonatomic) CommonNetworkClient *client;
-@property (strong, nonatomic) id mockSession;
+@property (nonatomic, strong) CommonNetworkClient *client;
+@property (nonatomic, strong) id mockSession;
 
 @end
 

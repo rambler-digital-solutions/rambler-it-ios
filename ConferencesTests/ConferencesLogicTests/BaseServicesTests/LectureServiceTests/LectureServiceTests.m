@@ -29,7 +29,7 @@
 
 @interface LectureServiceTests : XCTestCase
 
-@property (strong, nonatomic) LectureServiceImplementation *lectureService;
+@property (nonatomic, strong) LectureServiceImplementation *lectureService;
 
 @end
 

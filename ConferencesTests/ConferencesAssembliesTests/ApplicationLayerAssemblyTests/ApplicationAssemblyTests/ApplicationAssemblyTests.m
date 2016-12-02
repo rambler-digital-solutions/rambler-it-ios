@@ -31,7 +31,7 @@
 
 @interface ApplicationAssemblyTests : RamblerTyphoonAssemblyTests
 
-@property (strong, nonatomic) ApplicationAssembly *assembly;
+@property (nonatomic, strong) ApplicationAssembly *assembly;
 
 @end
 

@@ -28,10 +28,10 @@
 @interface TagModuleTableViewCell ()
 
 @property (nonatomic, strong) TagModuleTableViewCellObject *cellObject;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topConstraintCollectionView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomConstraintCollectionView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *trailingConstraintCollectionView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *leadingConstraintCollectionView;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *topConstraintCollectionView;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *bottomConstraintCollectionView;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *trailingConstraintCollectionView;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *leadingConstraintCollectionView;
 
 @end
 

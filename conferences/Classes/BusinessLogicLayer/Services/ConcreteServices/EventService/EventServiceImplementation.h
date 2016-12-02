@@ -27,7 +27,7 @@
 
 @interface EventServiceImplementation : NSObject <EventService>
 
-@property (strong, nonatomic) EventOperationFactory *eventOperationFactory;
-@property (strong, nonatomic) id <OperationScheduler> operationScheduler;
+@property (nonatomic, strong) EventOperationFactory *eventOperationFactory;
+@property (nonatomic, strong) id <OperationScheduler> operationScheduler;
 
 @end

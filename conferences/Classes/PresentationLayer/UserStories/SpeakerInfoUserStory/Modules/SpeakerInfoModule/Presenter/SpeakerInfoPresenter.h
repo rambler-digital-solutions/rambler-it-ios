@@ -27,10 +27,10 @@
 
 @interface SpeakerInfoPresenter : NSObject  <SpeakerInfoViewOutput, SpeakerInfoModuleInput>
 
-@property (weak, nonatomic) id <SpeakerInfoViewInput> view;
-@property (strong, nonatomic) id <SpeakerInfoInteractorInput> interactor;
-@property (strong, nonatomic) id <SpeakerInfoRouterInput> router;
-@property (strong, nonatomic) SpeakerInfoPresenterStateStorage *stateStorage;
+@property (nonatomic, weak) id <SpeakerInfoViewInput> view;
+@property (nonatomic, strong) id <SpeakerInfoInteractorInput> interactor;
+@property (nonatomic, strong) id <SpeakerInfoRouterInput> router;
+@property (nonatomic, strong) SpeakerInfoPresenterStateStorage *stateStorage;
 
 @end
 

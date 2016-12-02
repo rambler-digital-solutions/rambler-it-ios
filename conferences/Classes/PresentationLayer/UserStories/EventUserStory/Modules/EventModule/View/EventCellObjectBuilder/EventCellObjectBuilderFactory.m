@@ -28,7 +28,7 @@
 
 @interface EventCellObjectBuilderFactory ()
 
-@property (strong, nonatomic, readonly) PresentationLayerHelpersAssembly *presentationLayerHelpersAssembly;
+@property (nonatomic, strong, readonly) PresentationLayerHelpersAssembly *presentationLayerHelpersAssembly;
 
 @end
 

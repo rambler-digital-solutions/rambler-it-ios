@@ -32,8 +32,8 @@ typedef NS_ENUM(NSUInteger, TableViewSectionIndex){
 
 @interface ReportsSearchDataDisplayManagerTests : XCTestCase
 
-@property (strong, nonatomic) ReportsSearchDataDisplayManager *dataDisplayManager;
-@property (strong, nonatomic) NSArray *events;
+@property (nonatomic, strong) ReportsSearchDataDisplayManager *dataDisplayManager;
+@property (nonatomic, strong) NSArray *events;
 
 @end
 

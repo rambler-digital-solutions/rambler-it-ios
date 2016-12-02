@@ -46,7 +46,7 @@ typedef void(^CompoundOperationResultBlock)(id data, NSError *error);
  
  This block is called after the operation is finished.
  */
-@property (copy, nonatomic) CompoundOperationResultBlock resultBlock;
+@property (nonatomic, copy) CompoundOperationResultBlock resultBlock;
 
 /**
  @author Egor Tolstoy
@@ -54,7 +54,7 @@ typedef void(^CompoundOperationResultBlock)(id data, NSError *error);
  The buffer is used to chain the compound operation with the first suboperation from its queue.
  It can be used to pass some input data for the operations chain.
  */
-@property (strong, nonatomic) id<CompoundOperationQueueInput> queueInput;
+@property (nonatomic, strong) id<CompoundOperationQueueInput> queueInput;
 
 /**
  @author Egor Tolstoy
@@ -62,7 +62,7 @@ typedef void(^CompoundOperationResultBlock)(id data, NSError *error);
  The buffer is used to chain the compound operation with the last suboperation from its queue.
  It can be used to obtain the result of operations chain work.
  */
-@property (strong, nonatomic) id<CompoundOperationQueueOutput> queueOutput;
+@property (nonatomic, strong) id<CompoundOperationQueueOutput> queueOutput;
 
 /**
  @author Egor Tolstoy

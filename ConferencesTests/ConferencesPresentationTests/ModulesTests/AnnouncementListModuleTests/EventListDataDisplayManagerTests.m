@@ -34,9 +34,9 @@ typedef NS_ENUM(NSUInteger, TableViewSectionIndex){
 
 @interface AnnouncementListDataDisplayManagerTests : XCTestCase
 
-@property (strong, nonatomic) EventListDataDisplayManager *dataDisplayManager;
-@property (strong, nonatomic) id mockCellObjectBuilder;
-@property (strong, nonatomic) NSArray *events;
+@property (nonatomic, strong) EventListDataDisplayManager *dataDisplayManager;
+@property (nonatomic, strong) id mockCellObjectBuilder;
+@property (nonatomic, strong) NSArray *events;
 
 @end
 

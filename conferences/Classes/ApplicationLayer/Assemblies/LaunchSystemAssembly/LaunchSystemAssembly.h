@@ -38,10 +38,10 @@
  */
 @interface LaunchSystemAssembly : TyphoonAssembly <RamblerInitialAssembly>
 
-@property (strong, nonatomic, readonly) ApplicationHelperAssembly *applicationHelperAssembly;
-@property (strong, nonatomic, readonly) StoryboardAssembly *storyboardAssembly;
-@property (strong, nonatomic, readonly) SystemInfrastructureAssembly *systemInfrastructureAssembly;
-@property (strong, nonatomic, readonly) SpotlightIndexerAssembly *spotlightIndexerAssembly;
+@property (nonatomic, strong, readonly) ApplicationHelperAssembly *applicationHelperAssembly;
+@property (nonatomic, strong, readonly) StoryboardAssembly *storyboardAssembly;
+@property (nonatomic, strong, readonly) SystemInfrastructureAssembly *systemInfrastructureAssembly;
+@property (nonatomic, strong, readonly) SpotlightIndexerAssembly *spotlightIndexerAssembly;
 
 - (SpotlightAppDelegate *)spotlightAppDelegate;
 - (SpotlightContinuationAppDelegate *)spotlightContinuationAppDelegate;

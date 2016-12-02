@@ -24,8 +24,8 @@ static NSString *const kParseApiKeyHeader = @"X-Parse-REST-API-Key";
 
 @interface ParseRequestSigner ()
 
-@property (copy, nonatomic) NSString *applicationId;
-@property (copy, nonatomic) NSString *apiKey;
+@property (nonatomic, copy) NSString *applicationId;
+@property (nonatomic, copy) NSString *apiKey;
 
 @end
 

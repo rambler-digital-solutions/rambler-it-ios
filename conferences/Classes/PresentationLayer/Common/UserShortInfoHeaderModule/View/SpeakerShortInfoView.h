@@ -26,11 +26,11 @@
 
 @interface SpeakerShortInfoView : UIView <SpeakerShortInfoViewInput, SpeakerShortInfoModuleInput>
 
-@property (strong, nonatomic) id <SpeakerShortInfoViewOutput> output;
+@property (nonatomic, strong) id <SpeakerShortInfoViewOutput> output;
 
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (weak, nonatomic) IBOutlet UILabel *nameTextLabel;
-@property (weak, nonatomic) IBOutlet UILabel *companyTextLabel;
+@property (nonatomic, weak) IBOutlet UIImageView *imageView;
+@property (nonatomic, weak) IBOutlet UILabel *nameTextLabel;
+@property (nonatomic, weak) IBOutlet UILabel *companyTextLabel;
 
 + (SpeakerShortInfoView *)speakerShortInfoView;
 

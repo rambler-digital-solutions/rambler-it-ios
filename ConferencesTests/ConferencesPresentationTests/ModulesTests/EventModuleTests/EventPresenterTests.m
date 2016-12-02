@@ -32,11 +32,11 @@
 
 @interface EventPresenterTests : XCTestCase
 
-@property (strong, nonatomic) EventPresenter *presenter;
-@property (strong, nonatomic) id <EventInteractorInput> interactorMock;
-@property (strong, nonatomic) id <EventViewInput> viewMock;
-@property (strong, nonatomic) EventPresenterStateStorage *presenterStateStorage;
-@property (strong, nonatomic) id routerMock;
+@property (nonatomic, strong) EventPresenter *presenter;
+@property (nonatomic, strong) id <EventInteractorInput> interactorMock;
+@property (nonatomic, strong) id <EventViewInput> viewMock;
+@property (nonatomic, strong) EventPresenterStateStorage *presenterStateStorage;
+@property (nonatomic, strong) id routerMock;
 
 @end
 

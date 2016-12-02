@@ -38,14 +38,14 @@
  
  Changed object identifier
  */
-@property (strong, nonatomic, readonly) NSString *identifier;
+@property (nonatomic, strong, readonly) NSString *identifier;
 
 /**
  @author Egor Tolstoy
  
  Changed object type
  */
-@property (strong, nonatomic, readonly) NSString *objectType;
+@property (nonatomic, strong, readonly) NSString *objectType;
 
 /**
  @author Egor Tolstoy

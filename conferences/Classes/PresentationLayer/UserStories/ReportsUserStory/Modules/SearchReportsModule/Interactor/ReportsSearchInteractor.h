@@ -32,11 +32,11 @@
 
 @interface ReportsSearchInteractor : NSObject <ReportsSearchInteractorInput>
 
-@property (weak, nonatomic) id <ReportsSearchInteractorOutput> output;
-@property (strong, nonatomic) id <EventService> eventService;
-@property (strong, nonatomic) id <SpeakerService> speakerService;
-@property (strong, nonatomic) id <LectureService> lectureService;
-@property (strong, nonatomic) id <ROSPonsomizer> ponsomizer;
-@property (strong, nonatomic) EventTypeDeterminator *eventTypeDeterminator;
+@property (nonatomic, weak) id <ReportsSearchInteractorOutput> output;
+@property (nonatomic, strong) id <EventService> eventService;
+@property (nonatomic, strong) id <SpeakerService> speakerService;
+@property (nonatomic, strong) id <LectureService> lectureService;
+@property (nonatomic, strong) id <ROSPonsomizer> ponsomizer;
+@property (nonatomic, strong) EventTypeDeterminator *eventTypeDeterminator;
 
 @end

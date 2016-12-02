@@ -24,9 +24,9 @@
 
 @interface EventInfoTableViewCellObject : NSObject <NICellObject>
 
-@property (strong, nonatomic, readonly) NSString *date;
-@property (strong, nonatomic, readonly) NSString *eventTitle;
-@property (strong, nonatomic, readonly) NSString *eventSubTitle;
+@property (nonatomic, strong, readonly) NSString *date;
+@property (nonatomic, strong, readonly) NSString *eventTitle;
+@property (nonatomic, strong, readonly) NSString *eventSubTitle;
 
 + (instancetype)objectWithEvent:(EventPlainObject *)event andDate:(NSString *)date;
 

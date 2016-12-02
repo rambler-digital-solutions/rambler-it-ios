@@ -32,7 +32,7 @@
 
 @interface EventCellObjectBuilderFactoryTests : RamblerTyphoonAssemblyTests
 
-@property (strong, nonatomic) EventCellObjectBuilderFactory *factory;
+@property (nonatomic, strong) EventCellObjectBuilderFactory *factory;
 
 @end
 

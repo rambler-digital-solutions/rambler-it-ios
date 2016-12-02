@@ -32,9 +32,9 @@
 
 @interface EventViewControllerTests : XCTestCase
 
-@property (strong, nonatomic) EventViewController <EventTableViewCellActionProtocol> *viewController;
-@property (strong, nonatomic) id <EventViewOutput> mockOutput;
-@property (strong, nonatomic) EventDataDisplayManager *mockDataDisplayManager;
+@property (nonatomic, strong) EventViewController <EventTableViewCellActionProtocol> *viewController;
+@property (nonatomic, strong) id <EventViewOutput> mockOutput;
+@property (nonatomic, strong) EventDataDisplayManager *mockDataDisplayManager;
 @property (nonatomic, strong) UITableView *mockTableView;
 
 @end

@@ -37,7 +37,7 @@
 
 @interface EventModuleAssemblyTests : RamblerTyphoonAssemblyTests
 
-@property (strong, nonatomic) EventModuleAssembly *assembly;
+@property (nonatomic, strong) EventModuleAssembly *assembly;
 
 @end
 

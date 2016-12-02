@@ -51,9 +51,9 @@
 
 @interface EventDataDisplayManager : NSObject <DataDisplayManager>
 
-@property (strong, nonatomic) EventCellObjectBuilderFactory *cellObjectBuilderFactory;
-@property (weak, nonatomic) id <EventDataDisplayManagerDelegate> delegate;
-@property (strong, nonatomic) EventViewAnimator *eventViewAnimator;
+@property (nonatomic, strong) EventCellObjectBuilderFactory *cellObjectBuilderFactory;
+@property (nonatomic, weak) id <EventDataDisplayManagerDelegate> delegate;
+@property (nonatomic, strong) EventViewAnimator *eventViewAnimator;
 
 - (void)configureDataDisplayManagerWithEvent:(EventPlainObject *)event
                                   pastEvents:(NSArray *)pastEvents;

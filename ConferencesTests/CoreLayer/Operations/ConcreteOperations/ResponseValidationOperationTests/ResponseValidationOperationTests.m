@@ -25,8 +25,8 @@
 
 @interface ResponseValidationOperationTests : ChainableOperationTestsBase
 
-@property (strong, nonatomic) ResponseValidationOperation *operation;
-@property (strong, nonatomic) id mockResponseValidator;
+@property (nonatomic, strong) ResponseValidationOperation *operation;
+@property (nonatomic, strong) id mockResponseValidator;
 
 @end
 

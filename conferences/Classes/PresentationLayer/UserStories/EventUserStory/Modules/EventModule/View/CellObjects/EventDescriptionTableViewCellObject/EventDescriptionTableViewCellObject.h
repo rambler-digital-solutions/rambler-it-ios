@@ -24,7 +24,7 @@
 
 @interface EventDescriptionTableViewCellObject : NSObject <NICellObject>
 
-@property (copy, nonatomic) NSString *eventDescription;
+@property (nonatomic, copy) NSString *eventDescription;
 
 + (instancetype)objectWithEvent:(EventPlainObject *)event;
 

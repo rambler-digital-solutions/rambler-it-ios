@@ -37,20 +37,20 @@
  
  The operation's delegate, which is informed when the operation is finished
  */
-@property (weak, nonatomic) id<ChainableOperationDelegate> delegate;
+@property (nonatomic, weak) id<ChainableOperationDelegate> delegate;
 
 /**
  @author Egor Tolstoy
  
  Inpud data source for the operation
  */
-@property (strong, nonatomic) id<ChainableOperationInput> input;
+@property (nonatomic, strong) id<ChainableOperationInput> input;
 
 /**
  @author Egor Tolstoy
  
  The container for the result of operation's work
  */
-@property (strong, nonatomic) id<ChainableOperationOutput> output;
+@property (nonatomic, strong) id<ChainableOperationOutput> output;
 
 @end

@@ -31,9 +31,9 @@
 
 @interface CompoundOperationBaseTests : XCTestCase
 
-@property (strong, nonatomic) CompoundOperationBase *compoundOperation;
-@property (strong, nonatomic) OperationBuffer *startBuffer;
-@property (strong, nonatomic) OperationBuffer *endBuffer;
+@property (nonatomic, strong) CompoundOperationBase *compoundOperation;
+@property (nonatomic, strong) OperationBuffer *startBuffer;
+@property (nonatomic, strong) OperationBuffer *endBuffer;
 
 @end
 

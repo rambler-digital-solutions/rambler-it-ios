@@ -23,7 +23,7 @@
 
 @interface CommonNetworkClient ()
 
-@property (strong, nonatomic) NSURLSession *session;
+@property (nonatomic, strong) NSURLSession *session;
 
 @end
 

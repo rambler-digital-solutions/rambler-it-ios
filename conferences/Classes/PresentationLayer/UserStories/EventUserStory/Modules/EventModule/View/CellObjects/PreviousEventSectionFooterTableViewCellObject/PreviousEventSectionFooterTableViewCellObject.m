@@ -27,7 +27,7 @@
 
 @interface PreviousEventSectionFooterTableViewCellObject ()
 
-@property (strong, nonatomic, readwrite) UIColor *contentViewColor;
+@property (nonatomic, strong, readwrite) UIColor *contentViewColor;
 
 @end
 

@@ -33,8 +33,8 @@
  */
 @interface ParseRequestSigner : NSObject <RequestSigner>
 
-@property (copy, nonatomic, readonly) NSString *applicationId;
-@property (copy, nonatomic, readonly) NSString *apiKey;
+@property (nonatomic, copy, readonly) NSString *applicationId;
+@property (nonatomic, copy, readonly) NSString *apiKey;
 
 /**
  @author Egor Tolstoy

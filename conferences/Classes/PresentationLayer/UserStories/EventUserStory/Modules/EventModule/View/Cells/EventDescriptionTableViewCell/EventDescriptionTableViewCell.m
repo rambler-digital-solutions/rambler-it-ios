@@ -26,9 +26,9 @@
 
 @interface EventDescriptionTableViewCell ()
 
-@property (weak, nonatomic) IBOutlet UITextView *eventDescription;
+@property (nonatomic, weak) IBOutlet UITextView *eventDescription;
 
-@property (weak, nonatomic) id <EventDescriptionTableViewCellActionProtocol> actionProxy;
+@property (nonatomic, weak) id <EventDescriptionTableViewCellActionProtocol> actionProxy;
 
 @end
 

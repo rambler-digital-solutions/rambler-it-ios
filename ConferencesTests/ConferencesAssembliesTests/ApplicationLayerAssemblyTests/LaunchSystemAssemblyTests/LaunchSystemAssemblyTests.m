@@ -29,7 +29,7 @@
 
 @interface LaunchSystemAssemblyTests : RamblerTyphoonAssemblyTests
 
-@property (strong, nonatomic) LaunchSystemAssembly *assembly;
+@property (nonatomic, strong) LaunchSystemAssembly *assembly;
 
 @end
 

@@ -28,7 +28,7 @@ static const int ddLogLevel = DDLogLevelVerbose;
 
 @interface ResponseValidationOperation ()
 
-@property (strong, nonatomic) id<ResponseValidator> responseValidator;
+@property (nonatomic, strong) id<ResponseValidator> responseValidator;
 
 @end
 

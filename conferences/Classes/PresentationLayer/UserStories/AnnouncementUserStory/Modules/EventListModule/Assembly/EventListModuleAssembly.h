@@ -30,7 +30,7 @@
  */
 @interface EventListModuleAssembly : ModuleAssemblyBase <RamblerInitialAssembly>
 
-@property (strong, nonatomic) PonsomizerAssembly *coreAssembly;
+@property (nonatomic, strong) PonsomizerAssembly *coreAssembly;
 
 - (EventListTableViewController *)viewEventList;
 - (EventListPresenter *)presenterEventList;

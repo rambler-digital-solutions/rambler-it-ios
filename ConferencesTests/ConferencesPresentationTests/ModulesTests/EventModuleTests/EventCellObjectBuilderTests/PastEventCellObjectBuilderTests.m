@@ -36,8 +36,8 @@
 
 @interface PastEventCellObjectBuilderTests : XCTestCase
 
-@property (strong, nonatomic) PastEventCellObjectBuilder *cellObjectBuilder;
-@property (strong, nonatomic) id mockDateFormatter;
+@property (nonatomic, strong) PastEventCellObjectBuilder *cellObjectBuilder;
+@property (nonatomic, strong) id mockDateFormatter;
 
 @end
 

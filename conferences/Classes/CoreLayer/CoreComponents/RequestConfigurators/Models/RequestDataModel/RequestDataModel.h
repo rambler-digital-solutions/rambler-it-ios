@@ -27,9 +27,9 @@
  */
 @interface RequestDataModel : NSObject
 
-@property (strong, nonatomic) NSDictionary *httpHeaderFields;
-@property (strong, nonatomic) NSDictionary *queryParameters;
-@property (strong, nonatomic) NSData *bodyData;
+@property (nonatomic, strong) NSDictionary *httpHeaderFields;
+@property (nonatomic, strong) NSDictionary *queryParameters;
+@property (nonatomic, strong) NSData *bodyData;
 
 - (instancetype)initWithHttpHeaderFields:(NSDictionary *)httpHeaderFields
                          queryParameters:(NSDictionary *)queryParameters

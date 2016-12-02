@@ -32,10 +32,10 @@
 
 @interface SearchViewControllerTests : XCTestCase
 
-@property (strong, nonatomic) SearchViewController *viewController;
-@property (strong, nonatomic) SearchDataDisplayManager *mockDataDisplayManager;
-@property (strong, nonatomic) id<OutputProtocolTest> mockOutput;
-@property (strong, nonatomic) UITableView *mockTableView;
+@property (nonatomic, strong) SearchViewController *viewController;
+@property (nonatomic, strong) SearchDataDisplayManager *mockDataDisplayManager;
+@property (nonatomic, strong) id<OutputProtocolTest> mockOutput;
+@property (nonatomic, strong) UITableView *mockTableView;
 
 @end
 

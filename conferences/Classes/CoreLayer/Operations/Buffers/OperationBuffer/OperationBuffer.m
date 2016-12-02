@@ -22,7 +22,7 @@
 
 @interface OperationBuffer ()
 
-@property (strong, nonatomic) id buffer;
+@property (nonatomic, strong) id buffer;
 
 @end
 

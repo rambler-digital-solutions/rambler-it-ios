@@ -23,8 +23,8 @@
 
 @interface EventListTableViewCell : UITableViewCell <NICell>
 
-@property (weak, nonatomic) IBOutlet UILabel *eventTitle;
-@property (weak, nonatomic) IBOutlet UILabel *date;
-@property (weak, nonatomic) IBOutlet UIImageView *eventImageView;
+@property (nonatomic, weak) IBOutlet UILabel *eventTitle;
+@property (nonatomic, weak) IBOutlet UILabel *date;
+@property (nonatomic, weak) IBOutlet UIImageView *eventImageView;
 
 @end

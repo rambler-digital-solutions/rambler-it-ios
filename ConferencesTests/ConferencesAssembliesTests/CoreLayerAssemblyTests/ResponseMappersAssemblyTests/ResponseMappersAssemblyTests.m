@@ -33,7 +33,7 @@
 
 @interface ResponseMappersAssemblyTests : RamblerTyphoonAssemblyTests
 
-@property (strong, nonatomic) ResponseMappersAssembly *assembly;
+@property (nonatomic, strong) ResponseMappersAssembly *assembly;
 
 @end
 

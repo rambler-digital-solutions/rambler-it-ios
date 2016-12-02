@@ -30,7 +30,7 @@ static NSString *const kTestBaseAPIPath = @"/v1/rest/";
 
 @interface RCFRESTRequestConfiguratorTests : XCTestCase
 
-@property (strong, nonatomic) RESTRequestConfigurator *configurator;
+@property (nonatomic, strong) RESTRequestConfigurator *configurator;
 
 @end
 

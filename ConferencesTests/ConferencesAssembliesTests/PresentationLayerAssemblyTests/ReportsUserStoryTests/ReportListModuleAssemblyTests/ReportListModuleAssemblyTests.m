@@ -37,7 +37,7 @@
 
 @interface ReportListModuleAssemblyTests : RamblerTyphoonAssemblyTests
 
-@property (strong, nonatomic) SearchModuleAssembly *assembly;
+@property (nonatomic, strong) SearchModuleAssembly *assembly;
 
 @end
 

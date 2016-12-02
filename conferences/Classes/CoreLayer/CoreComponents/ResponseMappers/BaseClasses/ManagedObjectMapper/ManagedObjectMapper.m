@@ -30,9 +30,9 @@
 
 @interface ManagedObjectMapper ()
 
-@property (strong, nonatomic) ManagedObjectMappingProvider *provider;
-@property (strong, nonatomic) id<ResponseObjectFormatter> responseFormatter;
-@property (strong, nonatomic) id<EntityNameFormatter> entityNameFormatter;
+@property (nonatomic, strong) ManagedObjectMappingProvider *provider;
+@property (nonatomic, strong) id<ResponseObjectFormatter> responseFormatter;
+@property (nonatomic, strong) id<EntityNameFormatter> entityNameFormatter;
 
 @end
 
