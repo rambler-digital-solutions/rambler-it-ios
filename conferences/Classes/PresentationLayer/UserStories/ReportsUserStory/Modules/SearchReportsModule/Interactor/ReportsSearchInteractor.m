@@ -20,20 +20,7 @@
 
 #import "ReportsSearchInteractor.h"
 
-#import "SpeakerService.h"
-#import "LectureService.h"
-#import "EventService.h"
-#import "EventModelObject.h"
-#import "LectureModelObject.h"
-#import "SpeakerModelObject.h"
-#import "TagModelObject.h"
-#import "EventPlainObject.h"
-#import "SpeakerPlainObject.h"
-#import "LecturePlainObject.h"
-#import "EventTypeDeterminator.h"
-#import "ROSPonsomizer.h"
 #import "SearchFacade.h"
-
 #import "PredicateConfigurator.h"
 
 @implementation ReportsSearchInteractor

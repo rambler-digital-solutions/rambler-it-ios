@@ -51,8 +51,6 @@
                                                     with:[self presenterReportsSearch]];
                               [definition injectProperty:@selector(searchFacade)
                                                     with:[self searchFacade]];
-                              [definition injectProperty:@selector(eventTypeDeterminator)
-                                                    with:[self.presentationLayerHelpersAssembly eventTypeDeterminator]];
                               [definition injectProperty:@selector(predicateConfigurator)
                                                     with:[self predicateConfigurator]];
                           }];

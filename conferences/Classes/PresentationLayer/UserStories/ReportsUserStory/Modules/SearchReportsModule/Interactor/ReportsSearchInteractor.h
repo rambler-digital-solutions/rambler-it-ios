@@ -26,12 +26,9 @@
 @protocol PredicateConfigurator;
 @protocol SearchFacade;
 
-@class EventTypeDeterminator;
-
 @interface ReportsSearchInteractor : NSObject <ReportsSearchInteractorInput>
 
 @property (nonatomic, weak) id <ReportsSearchInteractorOutput> output;
-@property (nonatomic, strong) EventTypeDeterminator *eventTypeDeterminator;
 @property (nonatomic, strong) id <PredicateConfigurator> predicateConfigurator;
 @property (nonatomic, strong) id <SearchFacade> searchFacade;
 
