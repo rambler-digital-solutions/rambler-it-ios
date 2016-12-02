@@ -26,6 +26,11 @@
 @protocol SpeakerService;
 @protocol ROSPonsomizer;
 
+/**
+ @author Surik Sarkisyan
+ 
+ Implementation of SearchFacade protocol
+ */
 @interface SearchFacadeImplementation : NSObject <SearchFacade>
 
 @property (nonatomic, strong) id <EventService> eventService;

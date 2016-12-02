@@ -20,10 +20,44 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ @author Surik Sarkisyan
+ 
+ The configurator is designed to constract predicates for further usage in services.
+ */
 @protocol PredicateConfigurator <NSObject>
 
+/**
+ @author Surik Sarkisyan
+ 
+ Method is used to constract predicates for event objects filter
+ 
+ @param string wich typed by user
+ 
+ @return predicates array configured from input string
+ */
 - (NSArray<NSPredicate *> *)configureEventsPredicatesForSearchText:(NSString *)searchText;
+
+/**
+ @author Surik Sarkisyan
+ 
+ Method is used to constract predicates for speaker objects filter
+ 
+ @param string wich typed by user
+ 
+ @return predicates array configured from input string
+ */
 - (NSArray<NSPredicate *> *)configureSpeakersPredicatesForSearchText:(NSString *)searchText;
+
+/**
+ @author Surik Sarkisyan
+ 
+ Method is used to constract predicates for lecture objects filter
+ 
+ @param string wich typed by user
+ 
+ @return predicates array configured from input string
+ */
 - (NSArray<NSPredicate *> *)configureLecturesPredicatesForSearchText:(NSString *)searchText;
 
 @end

@@ -22,6 +22,11 @@
 
 #import "PredicateConfigurator.h"
 
+/**
+ @author Surik Sarkisyan
+ 
+ Implementation of PredicateConfigurator protocol
+ */
 @interface PredicateConfiguratorImplementation : NSObject <PredicateConfigurator>
 
 @end

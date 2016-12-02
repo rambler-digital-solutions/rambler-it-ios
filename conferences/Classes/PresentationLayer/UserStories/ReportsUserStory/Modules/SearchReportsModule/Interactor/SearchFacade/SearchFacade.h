@@ -20,10 +20,44 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ @author Surik Sarkisyan
+ 
+ The facade is designed to work with different services for obtain some objects. e.g. Events/Speakers/Lectures
+ */
 @protocol SearchFacade <NSObject>
 
+/**
+ @author Surik Sarkisyan
+ 
+ Method is used to obtain Event objects array from storage
+ 
+ @param predicates array for specifying the filtering parameters
+ 
+ @return Event objects array
+ */
 - (NSArray *)eventsForPredicates:(NSArray<NSPredicate *> *)predicates;
+
+/**
+ @author Surik Sarkisyan
+ 
+ Method is used to obtain Speaker objects array from storage
+ 
+ @param predicates array for specifying the filtering parameters
+ 
+ @return Speaker objects array
+ */
 - (NSArray *)speakersForPredicates:(NSArray<NSPredicate *> *)predicates;
+
+/**
+ @author Surik Sarkisyan
+ 
+ Method is used to obtain Lectures objects array from storage
+ 
+ @param predicates array for specifying the filtering parameters
+ 
+ @return Lectures objects array
+ */
 - (NSArray *)lecturesForPredicates:(NSArray<NSPredicate *> *)predicates;
 
 @end
