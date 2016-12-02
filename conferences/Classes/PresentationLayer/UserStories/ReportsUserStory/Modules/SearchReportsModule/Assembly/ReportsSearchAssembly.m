@@ -25,6 +25,8 @@
 #import "ReportsSearchRouter.h"
 #import "ReportsSearchCellObjectsBuilderImplementation.h"
 #import "ReportsSearchCellObjectsDirectorImplementation.h"
+#import "PredicateConfiguratorImplementation.h"
+#import "SearchFacadeImplementation.h"
 
 #import <Typhoon/Typhoon.h>
 #import "ServiceComponents.h"
@@ -47,16 +49,12 @@
                           configuration:^(TyphoonDefinition *definition) {
                               [definition injectProperty:@selector(output)
                                                     with:[self presenterReportsSearch]];
-                              [definition injectProperty:@selector(eventService)
-                                                    with:[self.serviceComponents eventService]];
-                              [definition injectProperty:@selector(speakerService)
-                                                    with:[self.serviceComponents speakerService]];
-                              [definition injectProperty:@selector(lectureService)
-                                                    with:[self.serviceComponents lectureService]];
-                              [definition injectProperty:@selector(ponsomizer)
-                                                    with:[self.ponsomizerAssembly ponsomizer]];
+                              [definition injectProperty:@selector(searchFacade)
+                                                    with:[self searchFacade]];
                               [definition injectProperty:@selector(eventTypeDeterminator)
                                                     with:[self.presentationLayerHelpersAssembly eventTypeDeterminator]];
+                              [definition injectProperty:@selector(predicateConfigurator)
+                                                    with:[self predicateConfigurator]];
                           }];
 }
 
@@ -104,6 +102,24 @@
                               [definition useInitializer:@selector(initWithDateFormatter:) parameters:^(TyphoonMethod *initializer) {
                                   [initializer injectParameterWith:[self.presentationLayerHelpersAssembly dateFormatter]];
                               }];
+                          }];
+}
+
+- (PredicateConfiguratorImplementation *)predicateConfigurator {
+    return [TyphoonDefinition withClass:[PredicateConfiguratorImplementation class]];
+}
+
+- (SearchFacadeImplementation *)searchFacade {
+    return [TyphoonDefinition withClass:[SearchFacadeImplementation class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(eventService)
+                                                    with:[self.serviceComponents eventService]];
+                              [definition injectProperty:@selector(speakerService)
+                                                    with:[self.serviceComponents speakerService]];
+                              [definition injectProperty:@selector(lectureService)
+                                                    with:[self.serviceComponents lectureService]];
+                              [definition injectProperty:@selector(ponsomizer)
+                                                    with:[self.ponsomizerAssembly ponsomizer]];
                           }];
 }
 

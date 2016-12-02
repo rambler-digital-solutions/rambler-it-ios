@@ -32,10 +32,9 @@
 #import "LecturePlainObject.h"
 #import "EventTypeDeterminator.h"
 #import "ROSPonsomizer.h"
+#import "SearchFacade.h"
 
-static NSString *const kEventsNameAndLecturesTagContainsQuery = @"%K CONTAINS[c] %@ OR SUBQUERY(%K, $lecture, SUBQUERY($lecture.%K, $tag, $tag.%K CONTAINS[c] %@).@count > 0).@count > 0";
-static NSString *const kDefaultContainsQuery = @"%K CONTAINS[c] %@";
-static NSString *const kLecturesNameTagsAndSpeakerNameContainsQuery = @"%K CONTAINS[c] %@ OR SUBQUERY(%K, $tag, $tag.%K CONTAINS[c] %@).@count > 0 OR %K.%K CONTAINS[c] %@";
+#import "PredicateConfigurator.h"
 
 @implementation ReportsSearchInteractor
 
@@ -45,45 +44,16 @@ static NSString *const kLecturesNameTagsAndSpeakerNameContainsQuery = @"%K CONTA
     
     NSMutableArray *foundObjects = [NSMutableArray new];
     
-    NSString *selectorEventName = EventModelObjectAttributes.name;
-    NSString *selectorLectures = EventModelObjectRelationships.lectures;
-    NSString *selectorTags = LectureModelObjectRelationships.tags;
-    NSString *selectorTagName = TagModelObjectAttributes.name;
-    NSString *selectorSpeakerName = SpeakerModelObjectAttributes.name;
-    NSString *selectorLectureName = LectureModelObjectAttributes.name;
-    NSString *selectorLectureSpeaker = LectureModelObjectRelationships.speaker;
+    NSArray *eventsPredicatesArray = [self.predicateConfigurator configureEventsPredicatesForSearchText:text];
+    NSArray *speakersPredicatesArray = [self.predicateConfigurator configureSpeakersPredicatesForSearchText:text];
+    NSArray *lecturesPredicatesArray = [self.predicateConfigurator configureLecturesPredicatesForSearchText:text];
     
-    NSArray *separatedTextArray = [text componentsSeparatedByString:@" "];
+    NSArray *events = [self.searchFacade eventsForPredicates:eventsPredicatesArray];
+    NSArray *speakers = [self.searchFacade speakersForPredicates:speakersPredicatesArray];
+    NSArray *lectures = [self.searchFacade lecturesForPredicates:lecturesPredicatesArray];
     
-    NSMutableArray *eventsPredicatesArray = [NSMutableArray new];
-    NSMutableArray *speakersPredicatesArray = [NSMutableArray new];
-    NSMutableArray *lecturesPredicatesArray = [NSMutableArray new];
-    
-    for (NSString *string in separatedTextArray) {
-        if (string.length == 0) {
-            continue;
-        }
-        
-        NSPredicate *eventsPredicate = [NSPredicate predicateWithFormat:kEventsNameAndLecturesTagContainsQuery, selectorEventName, string, selectorLectures, selectorTags, selectorTagName, string];
-        [eventsPredicatesArray addObject:eventsPredicate];
-        
-        NSPredicate *speakersPredicate = [NSPredicate predicateWithFormat:kDefaultContainsQuery, selectorSpeakerName, string];
-        [speakersPredicatesArray addObject:speakersPredicate];
-        
-        NSPredicate *lecturesPredicate = [NSPredicate predicateWithFormat:kLecturesNameTagsAndSpeakerNameContainsQuery, selectorLectureName, string, selectorTags,selectorTagName, string, selectorLectureSpeaker, selectorSpeakerName, string];
-        [lecturesPredicatesArray addObject:lecturesPredicate];
-    }
-    
-    id managedObjectEvents = [self.eventService obtainEventsWithPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:[eventsPredicatesArray copy]]];
-    NSArray *events = [self.ponsomizer convertObject:managedObjectEvents];
     [foundObjects addObjectsFromArray:events];
-    
-    id managedObjectSpeakers = [self.speakerService obtainSpeakerWithPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:[speakersPredicatesArray copy]]];
-    NSArray *speakers = [self.ponsomizer convertObject:managedObjectSpeakers];
     [foundObjects addObjectsFromArray:speakers];
-    
-    id managedObjectLectures = [self.lectureService obtainLectureWithPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:[lecturesPredicatesArray copy]]];
-    NSArray *lectures = [self.ponsomizer convertObject:managedObjectLectures];
     [foundObjects addObjectsFromArray:lectures];
     
     return [foundObjects copy];

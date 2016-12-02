@@ -24,13 +24,8 @@
 #import "ReportsSearchInteractor.h"
 #import "ReportsSearchInteractorOutput.h"
 
-#import "EventService.h"
-#import "SpeakerService.h"
-#import "LectureService.h"
-#import "EventTypeDeterminator.h"
-#import "EventPlainObject.h"
-#import "EventModelObject.h"
-#import "ROSPonsomizer.h"
+#import "PredicateConfigurator.h"
+#import "SearchFacade.h"
 
 #import "XCTestCase+RCFHelpers.h"
 #import "TestConstants.h"
@@ -39,12 +34,13 @@ typedef void (^ProxyBlock)(NSInvocation *);
 @interface ReportsSearchInteractorTests : XCTestCase
 
 @property (nonatomic, strong) ReportsSearchInteractor *interactor;
-@property (nonatomic, strong) EventTypeDeterminator *mockEventTypeDeterminator;
 @property (nonatomic, strong) id <ReportsSearchInteractorOutput> mockOutput;
-@property (nonatomic, strong) id <EventService> mockEventService;
-@property (nonatomic, strong) id <SpeakerService> mockSpeakerService;
-@property (nonatomic, strong) id <LectureService> mockLectureService;
-@property (nonatomic, strong) id <ROSPonsomizer> mockPonsomizer;
+@property (nonatomic, strong) id <PredicateConfigurator> mockPredicateConfigurator;
+@property (nonatomic, strong) id <SearchFacade> mockSearchFacade;
+//@property (nonatomic, strong) id <EventService> mockEventService;
+//@property (nonatomic, strong) id <SpeakerService> mockSpeakerService;
+//@property (nonatomic, strong) id <LectureService> mockLectureService;
+//@property (nonatomic, strong) id <ROSPonsomizer> mockPonsomizer;
 
 @end
 
@@ -55,49 +51,47 @@ typedef void (^ProxyBlock)(NSInvocation *);
     
     self.interactor = [ReportsSearchInteractor new];
     self.mockOutput = OCMProtocolMock(@protocol(ReportsSearchInteractorOutput));
-    self.mockEventService = OCMProtocolMock(@protocol(EventService));
-    self.mockLectureService = OCMProtocolMock(@protocol(LectureService));
-    self.mockSpeakerService = OCMProtocolMock(@protocol(SpeakerService));
-    self.mockEventTypeDeterminator = OCMClassMock([EventTypeDeterminator class]);
-    self.mockPonsomizer = OCMProtocolMock(@protocol(ROSPonsomizer));
+    self.mockPredicateConfigurator = OCMProtocolMock(@protocol(PredicateConfigurator));
+    self.mockSearchFacade = OCMProtocolMock(@protocol(SearchFacade));
     
     self.interactor.output = self.mockOutput;
-    self.interactor.eventService = self.mockEventService;
-    self.interactor.lectureService = self.mockLectureService;
-    self.interactor.speakerService = self.mockSpeakerService;
-    self.interactor.eventTypeDeterminator = self.mockEventTypeDeterminator;
-    self.interactor.ponsomizer = self.mockPonsomizer;
+    self.interactor.predicateConfigurator = self.mockPredicateConfigurator;
+    self.interactor.searchFacade = self.mockSearchFacade;
 }
 
 - (void)tearDown {
     self.interactor = nil;
     self.mockOutput = nil;
-    self.mockEventService = nil;
-    self.mockSpeakerService = nil;
-    self.mockLectureService = nil;
-    self.mockEventTypeDeterminator = nil;
-    self.mockPonsomizer = nil;
+    self.mockPredicateConfigurator = nil;
+    self.mockSearchFacade = nil;
 
     [super tearDown];
 }
 
 - (void)testSuccessObtainEventList {
-    // given
+    //given
+    NSArray *expectedObjects = @[@1, @2, @3];
     
-    NSArray *expectetObjects = @[@1, @2, @3];
-    OCMStub([self.mockEventService obtainEventsWithPredicate:OCMOCK_ANY]).andReturn(@[@1]);
-    OCMStub([self.mockSpeakerService obtainSpeakerWithPredicate:OCMOCK_ANY]).andReturn(@[@2]);
-    OCMStub([self.mockLectureService obtainLectureWithPredicate:OCMOCK_ANY]).andReturn(@[@3]);
+    NSString *text = @"randomText";
     
-    OCMStub([self.mockPonsomizer convertObject:@[@1]]).andReturn(@[@1]);
-    OCMStub([self.mockPonsomizer convertObject:@[@2]]).andReturn(@[@2]);
-    OCMStub([self.mockPonsomizer convertObject:@[@3]]).andReturn(@[@3]);
+    NSArray *eventsPredicates = @[@5, @6];
+    NSArray *speakersPredicates = @[@5, @6];
+    NSArray *lecturesPredicates = @[@5, @6];
+    
+    OCMStub([self.mockPredicateConfigurator configureEventsPredicatesForSearchText:text]).andReturn(eventsPredicates);
+    OCMStub([self.mockPredicateConfigurator configureSpeakersPredicatesForSearchText:text]).andReturn(speakersPredicates);
+    OCMStub([self.mockPredicateConfigurator configureLecturesPredicatesForSearchText:text]).andReturn(lecturesPredicates);
+    
+    OCMStub([self.mockSearchFacade eventsForPredicates:eventsPredicates]).andReturn(@[@1]);
+    OCMStub([self.mockSearchFacade speakersForPredicates:speakersPredicates]).andReturn(@[@2]);
+    OCMStub([self.mockSearchFacade lecturesForPredicates:lecturesPredicates]).andReturn(@[@3]);
     
     // when
-    id result = [self.interactor obtainFoundObjectListWithSearchText:@""];
+    id result = [self.interactor obtainFoundObjectListWithSearchText:text];
     
     // then
-    XCTAssertEqualObjects(result, expectetObjects);
+    
+    XCTAssertEqualObjects(expectedObjects, result);
 }
 
 @end
