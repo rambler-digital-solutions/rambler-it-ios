@@ -29,6 +29,7 @@
 
 #import "XCTestCase+RCFHelpers.h"
 #import "TestConstants.h"
+
 typedef void (^ProxyBlock)(NSInvocation *);
 
 @interface ReportsSearchInteractorTests : XCTestCase
@@ -37,10 +38,6 @@ typedef void (^ProxyBlock)(NSInvocation *);
 @property (nonatomic, strong) id <ReportsSearchInteractorOutput> mockOutput;
 @property (nonatomic, strong) id <PredicateConfigurator> mockPredicateConfigurator;
 @property (nonatomic, strong) id <SearchFacade> mockSearchFacade;
-//@property (nonatomic, strong) id <EventService> mockEventService;
-//@property (nonatomic, strong) id <SpeakerService> mockSpeakerService;
-//@property (nonatomic, strong) id <LectureService> mockLectureService;
-//@property (nonatomic, strong) id <ROSPonsomizer> mockPonsomizer;
 
 @end
 
