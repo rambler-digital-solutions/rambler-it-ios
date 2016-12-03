@@ -5,3 +5,7 @@ branches:
   - master
   - develop
 script: fastlane scan
+before_install:
+- gem update --system
+- gem --version
+- gem install fastlane
