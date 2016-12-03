@@ -55,7 +55,7 @@
 - (void)testSuccessUpdateLectureWithPredicate {
     // given
     LectureModelObject *lecture = [LectureModelObject MR_createEntity];
-    [MagicalRecord saveWithBlockAndWait:nil];
+    [MagicalRecord saveWithBlockAndWait:^(NSManagedObjectContext * _Nonnull localContext) {}];
     NSArray *expectedLectures = @[lecture];
     
     // when
@@ -70,7 +70,7 @@
     NSString *lectureId = @"0";
     LectureModelObject *expectedLecture = [LectureModelObject MR_createEntity];
     expectedLecture.lectureId = lectureId;
-    [MagicalRecord saveWithBlockAndWait:nil];
+    [MagicalRecord saveWithBlockAndWait:^(NSManagedObjectContext * _Nonnull localContext) {}];
     
     // when
     LectureModelObject *lecture = [self.lectureService obtainLectureWithLectureId:lectureId];

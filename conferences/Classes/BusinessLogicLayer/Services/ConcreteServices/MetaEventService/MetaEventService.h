@@ -34,7 +34,7 @@
  
  Method returns meta event object by id
  
- @param metaEventId
+ @param metaEventId MetaEvent identifier
  
  @return MetaEventModelObject
  */

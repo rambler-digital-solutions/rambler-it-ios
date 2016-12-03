@@ -55,9 +55,9 @@
     activity.userInfo = @{CSSearchQueryString : searchString};
     
     //when
-    BOOL result = [self.appDelegate application:nil
+    BOOL result = [self.appDelegate application:[UIApplication sharedApplication]
                            continueUserActivity:activity
-                             restorationHandler:nil];
+                             restorationHandler:^(NSArray * _Nullable restorableObjects) {}];
     
     //then
     XCTAssertTrue(result);
@@ -69,9 +69,9 @@
     NSUserActivity *activity = [[NSUserActivity alloc] initWithActivityType:CSSearchableItemActionType];
     
     //when
-    BOOL result = [self.appDelegate application:nil
+    BOOL result = [self.appDelegate application:[UIApplication sharedApplication]
                            continueUserActivity:activity
-                             restorationHandler:nil];
+                             restorationHandler:^(NSArray * _Nullable restorableObjects) {}];
     
     //then
     XCTAssertFalse(result);

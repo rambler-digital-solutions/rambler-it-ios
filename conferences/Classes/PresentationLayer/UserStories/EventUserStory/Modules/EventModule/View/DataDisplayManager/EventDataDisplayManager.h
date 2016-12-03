@@ -43,7 +43,7 @@
  
  The method tells a delegate that an event cell was tapped
  
- @param lectureObjectId lecture identifier
+ @param eventId Event identifier
  */
 - (void)didTapEventCellWithEventId:(NSString *)eventId;
 

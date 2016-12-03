@@ -32,7 +32,7 @@
 
  Creates NSUserActivity
 
- @param url
+ @param url URL for creating NSUserActivity
 
  @return NSUserActivity
  */

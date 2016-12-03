@@ -26,7 +26,7 @@
  
  Method is used to cunfigure speaker info module
  
- @param objectId Speaker object id
+ @param speakerId Speaker object id
  */
 - (void)configureCurrentModuleWithSpeakerId:(NSString *)speakerId;
 
