@@ -29,7 +29,7 @@ static const int ddLogLevel = DDLogLevelVerbose;
 
 @interface RequestSigningOperation ()
 
-@property (strong, nonatomic) id<RequestSigner> requestSigner;
+@property (nonatomic, strong) id<RequestSigner> requestSigner;
 
 @end
 

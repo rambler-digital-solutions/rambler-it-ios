@@ -35,8 +35,8 @@
 
 @interface ReportsSearchDataDisplayManager () <UITableViewDelegate>
 
-@property (strong, nonatomic) NIMutableTableViewModel *tableViewModel;
-@property (strong, nonatomic) NITableViewActions *tableViewActions;
+@property (nonatomic, strong) NIMutableTableViewModel *tableViewModel;
+@property (nonatomic, strong) NITableViewActions *tableViewActions;
 
 @end
 

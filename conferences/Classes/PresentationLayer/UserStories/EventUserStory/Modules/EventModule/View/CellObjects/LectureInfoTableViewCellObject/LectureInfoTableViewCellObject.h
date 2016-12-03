@@ -24,13 +24,13 @@
 
 @interface LectureInfoTableViewCellObject : NSObject <NICellObject>
 
-@property (strong, nonatomic, readonly) NSString *speakerName;
-@property (strong, nonatomic, readonly) NSString *speakerCompanyName;
-@property (strong, nonatomic, readonly) NSString *lectureDescription;
-@property (strong, nonatomic, readonly) NSString *lectureTitle;
-@property (strong, nonatomic, readonly) NSURL *speakerImageUrl;
-@property (strong, nonatomic, readonly) NSString *lectureId;
-@property (strong, nonatomic, readonly) NSString *speakerId;
+@property (nonatomic, strong, readonly) NSString *speakerName;
+@property (nonatomic, strong, readonly) NSString *speakerCompanyName;
+@property (nonatomic, strong, readonly) NSString *lectureDescription;
+@property (nonatomic, strong, readonly) NSString *lectureTitle;
+@property (nonatomic, strong, readonly) NSURL *speakerImageUrl;
+@property (nonatomic, strong, readonly) NSString *lectureId;
+@property (nonatomic, strong, readonly) NSString *speakerId;
 @property (assign, nonatomic, readonly) BOOL continueReadingFlag;
 
 + (instancetype)objectWithLecture:(LecturePlainObject *)lecture

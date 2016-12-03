@@ -28,7 +28,7 @@
 
 @property (nonatomic, strong) id<ObjectTransformer> objectTransformer;
 @property (nonatomic, strong) id<LaunchRouter> launchRouter;
-@property (nonatomic, strong) NSString *quickActionItemType;
+@property (nonatomic, copy) NSString *quickActionItemType;
 
 @end
 

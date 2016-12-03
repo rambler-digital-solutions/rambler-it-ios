@@ -28,9 +28,9 @@
 
 @interface SpeakerShortInfoPresenter : NSObject <SpeakerShortInfoViewOutput, SpeakerShortInfoInteractorOutput>
 
-@property (weak, nonatomic) id <SpeakerShortInfoViewInput> view;
-@property (strong, nonatomic) id <SpeakerShortInfoInteractorInput> interactor;
-@property (strong, nonatomic) id <SpeakerShortInfoRouterInput> router;
+@property (nonatomic, weak) id <SpeakerShortInfoViewInput> view;
+@property (nonatomic, strong) id <SpeakerShortInfoInteractorInput> interactor;
+@property (nonatomic, strong) id <SpeakerShortInfoRouterInput> router;
 
 @end
 

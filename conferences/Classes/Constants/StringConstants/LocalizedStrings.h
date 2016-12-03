@@ -44,25 +44,28 @@ extern NSString *const kReportSearchSpeakerSectionTitle;
 
 #pragma mark - Cell title
 
-extern NSString * const VideoRecordTableViewCellTitle;
-extern NSString * const LectureMaterialsTableViewCellTitle;
-extern NSString * const AdditionInformationTableViewCellTitle;
+extern NSString *const VideoRecordTableViewCellTitle;
+extern NSString *const LectureMaterialsTableViewCellTitle;
+extern NSString *const AdditionInformationTableViewCellTitle;
 
-extern NSString * const LecturePresentationTableViewCellTitle;
-extern NSString * const LectureArticlesTableViewCellTitle;
-extern NSString * const LectureCodeGithubTableViewCellTitle;
+extern NSString *const LecturePresentationTableViewCellTitle;
+extern NSString *const LectureArticlesTableViewCellTitle;
+extern NSString *const LectureCodeGithubTableViewCellTitle;
 
-extern NSString * const SpeakerWebSiteTableViewCellTitle;
-extern NSString * const SpeakerContactsTableViewCellTitle;
+extern NSString *const SpeakerWebSiteTableViewCellTitle;
+extern NSString *const SpeakerContactsTableViewCellTitle;
 
 #pragma  mark - Alert
 
-extern NSString * const EventSavedToCalendarAlertMessage;
-extern NSString * const EmptyAlertTitle;
-extern NSString * const ErrorAlertTitle;
-extern NSString * const OKAlertActionTitle;
+extern NSString *const EventSavedToCalendarAlertMessage;
+extern NSString *const EmptyAlertTitle;
+extern NSString *const ErrorAlertTitle;
+extern NSString *const OKAlertActionTitle;
 
 #pragma mark - Error
 
-extern NSString * const EventAlreadyStoredInCalendarErrorDescription;
+extern NSString *const EventAlreadyStoredInCalendarErrorDescription;
 
+#pragma mark - Location module
+
+extern NSString *const kRamblerOfficeName;

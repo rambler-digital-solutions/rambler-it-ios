@@ -20,6 +20,7 @@
 
 #import <XCTest/XCTest.h>
 #import <OCMock/OCMock.h>
+#import <MapKit/MapKit.h>
 
 #import "RamblerLocationInteractor.h"
 
@@ -88,6 +89,30 @@
     
     // then
     XCTAssertEqualObjects(result, testUrl);
+}
+
+- (void)testThatInteractorRegistersUserActivity {
+    // given
+    
+    
+    // when
+    NSUserActivity *result = [self.interactor registerUserActivity];
+    
+    // then
+    XCTAssertNotNil(result);
+    XCTAssertNotNil(result.mapItem);
+}
+
+- (void)testThatInteractorUnregistersUserActivity {
+    // given
+    id mockActivity = OCMClassMock([NSUserActivity class]);
+    
+    // when
+    [self.interactor unregisterUserActivity:mockActivity];
+    
+    // then
+    OCMVerify([mockActivity resignCurrent]);
+    [mockActivity stopMocking];
 }
 
 @end

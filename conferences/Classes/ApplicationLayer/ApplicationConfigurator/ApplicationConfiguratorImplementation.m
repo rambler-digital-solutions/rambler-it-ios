@@ -19,15 +19,16 @@
 // THE SOFTWARE.
 
 #import "ApplicationConfiguratorImplementation.h"
+#import "MessagesConstants.h"
 
 #import <MagicalRecord/MagicalRecord.h>
-
-static NSString * const kRCFCoreDataStoreName = @"Conference";
 
 @implementation ApplicationConfiguratorImplementation
 
 - (void)setupCoreDataStack {
-    [MagicalRecord setupAutoMigratingCoreDataStack];
+    NSURL *directory = [self.fileManager containerURLForSecurityApplicationGroupIdentifier:RCFAppGroupIdentifier];
+    NSURL *storeURL = [directory URLByAppendingPathComponent:RCFCoreDataNameKey];
+    [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreAtURL:storeURL];
 }
 
 - (void)configureInitialSettings {

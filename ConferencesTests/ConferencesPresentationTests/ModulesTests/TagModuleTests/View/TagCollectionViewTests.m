@@ -32,11 +32,11 @@
 
 @interface TagCollectionViewTests : XCTestCase
 
-@property (strong, nonatomic) TagCollectionView *view;
+@property (nonatomic, strong) TagCollectionView *view;
 
-@property (strong, nonatomic) id mockModuleInput;
-@property (strong, nonatomic) id mockDataDisplayManager;
-@property (strong, nonatomic) TagCellSizeConfig *cellSizeConfig;
+@property (nonatomic, strong) id mockModuleInput;
+@property (nonatomic, strong) id mockDataDisplayManager;
+@property (nonatomic, strong) TagCellSizeConfig *cellSizeConfig;
 
 @end
 

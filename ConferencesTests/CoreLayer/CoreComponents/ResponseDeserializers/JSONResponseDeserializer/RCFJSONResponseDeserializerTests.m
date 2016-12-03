@@ -27,7 +27,7 @@
 
 @interface RCFJSONResponseDeserializerTests : XCTestCase
 
-@property (strong, nonatomic) JSONResponseDeserializer *deserializer;
+@property (nonatomic, strong) JSONResponseDeserializer *deserializer;
 
 @end
 

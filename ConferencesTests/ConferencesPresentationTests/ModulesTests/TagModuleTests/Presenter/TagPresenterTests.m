@@ -33,12 +33,12 @@
 
 @interface TagPresenterTests : XCTestCase
 
-@property (strong, nonatomic) TagPresenter *presenter;
+@property (nonatomic, strong) TagPresenter *presenter;
 
-@property (strong, nonatomic) id mockInteractor;
-@property (strong, nonatomic) id mockView;
-@property (strong, nonatomic) id mockOutput;
-@property (strong, nonatomic) id mockTagFilter;
+@property (nonatomic, strong) id mockInteractor;
+@property (nonatomic, strong) id mockView;
+@property (nonatomic, strong) id mockOutput;
+@property (nonatomic, strong) id mockTagFilter;
 
 @end
 

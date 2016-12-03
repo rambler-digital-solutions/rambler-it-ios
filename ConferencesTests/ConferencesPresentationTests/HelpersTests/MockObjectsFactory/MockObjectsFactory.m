@@ -74,4 +74,12 @@
     return mockTableView;
 }
 
++ (NSString *)eventModelObjectScheme {
+    return @"EventModelObject_%@";
+}
+
++ (NSString *)randomObjectIdentifier {
+    return [[NSUUID UUID] UUIDString];
+}
+
 @end

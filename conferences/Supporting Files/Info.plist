@@ -38,13 +38,13 @@
 	</dict>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
 	<key>NSCalendarsUsageDescription</key>
 	<string>Приложению требуется доступ к календарю</string>
+	<key>NSUserActivityTypes</key>
+	<array>
+		<string>ru.ramblerco.rambler.it.useractivity.event</string>
+		<string>ru.ramblerco.rambler.it.useractivity.location</string>
+	</array>
 	<key>UIApplicationShortcutItems</key>
 	<array>
 		<dict>
@@ -74,5 +74,18 @@
 	<true/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array/>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>ramblerconferences</string>
+			</array>
+			<key>CFBundleURLName</key>
+			<string>Editor</string>
+		</dict>
+	</array>
+	<key>CoreSpotlightContinuation</key>
+	<true/>
 </dict>
 </plist>

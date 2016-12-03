@@ -21,7 +21,7 @@
 
 @interface SpeakerInfoSectionHeaderTableViewCell ()
 
-@property (weak, nonatomic) IBOutlet UILabel *sectionName;
+@property (nonatomic, weak) IBOutlet UILabel *sectionName;
 
 @end
 

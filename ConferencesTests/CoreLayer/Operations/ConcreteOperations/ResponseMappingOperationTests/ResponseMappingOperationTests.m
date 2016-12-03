@@ -25,8 +25,8 @@
 
 @interface ResponseMappingOperationTests : ChainableOperationTestsBase
 
-@property (strong, nonatomic) ResponseMappingOperation *operation;
-@property (strong, nonatomic) id mockResponseMapper;
+@property (nonatomic, strong) ResponseMappingOperation *operation;
+@property (nonatomic, strong) id mockResponseMapper;
 
 @end
 

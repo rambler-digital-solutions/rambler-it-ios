@@ -29,7 +29,7 @@
 
 @interface ResponseDeserializersAssemblyTests : RamblerTyphoonAssemblyTests
 
-@property (strong, nonatomic) ResponseDeserializersAssembly *assembly;
+@property (nonatomic, strong) ResponseDeserializersAssembly *assembly;
 
 @end
 

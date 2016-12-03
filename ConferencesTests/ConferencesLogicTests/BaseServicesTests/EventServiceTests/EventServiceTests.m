@@ -33,7 +33,7 @@
 
 @interface EventServiceTests : XCTestCase
 
-@property (strong, nonatomic) EventServiceImplementation *eventService;
+@property (nonatomic, strong) EventServiceImplementation *eventService;
 @property (nonatomic, strong) EventOperationFactory *mockEventOperationFactory;
 @property (nonatomic, strong) id <OperationScheduler> mockOperationScheduler;
 @end

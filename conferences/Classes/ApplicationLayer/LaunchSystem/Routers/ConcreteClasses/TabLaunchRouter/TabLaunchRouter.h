@@ -24,7 +24,6 @@
 
 @protocol TabBarControllerFactory;
 @class UIWindow;
-@class UIStoryboard;
 
 /**
  @author Egor Tolstoy

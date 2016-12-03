@@ -31,7 +31,7 @@
 
 @interface TagAssemblyTests : RamblerTyphoonAssemblyTests
 
-@property(strong, nonatomic) TagAssembly *assembly;
+@property(nonatomic, strong) TagAssembly *assembly;
 
 @end
 

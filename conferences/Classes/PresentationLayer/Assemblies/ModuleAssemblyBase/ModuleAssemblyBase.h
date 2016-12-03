@@ -25,7 +25,7 @@
 
 @interface ModuleAssemblyBase : TyphoonAssembly
 
-@property (strong, nonatomic, readonly) TyphoonAssembly <ServiceComponents> *serviceComponents;
-@property (strong, nonatomic, readonly) PresentationLayerHelpersAssembly *presentationLayerHelpersAssembly;
+@property (nonatomic, strong, readonly) TyphoonAssembly <ServiceComponents> *serviceComponents;
+@property (nonatomic, strong, readonly) PresentationLayerHelpersAssembly *presentationLayerHelpersAssembly;
 
 @end

@@ -28,8 +28,8 @@
 
 @interface ManagedObjectMappingProviderTests : XCTestCase
 
-@property (strong, nonatomic) ManagedObjectMappingProvider *provider;
-@property (strong, nonatomic) id mockEntityNameFormatter;
+@property (nonatomic, strong) ManagedObjectMappingProvider *provider;
+@property (nonatomic, strong) id mockEntityNameFormatter;
 
 @end
 

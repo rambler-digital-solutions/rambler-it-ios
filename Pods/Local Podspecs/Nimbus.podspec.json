@@ -1,6 +1,6 @@
 {
   "name": "Nimbus",
-  "version": "1.2.2",
+  "version": "1.2.4",
   "license": "Apache License, Version 2.0",
   "summary": "An iOS framework whose growth is bounded by O(documentation).",
   "homepage": "http://nimbuskit.info",
@@ -19,8 +19,8 @@
     "Hwee-Boon Yar": "hboon@motionobj.com"
   },
   "source": {
-    "git": "git@gitlab.rambler.ru:cocoapods/nimbus.git",
-    "tag": "1.2.2"
+    "git": "https://github.com/rambler-ios/nimbus",
+    "tag": "1.2.4"
   },
   "description": "Nimbus is an iOS framework whose feature set grows only as fast as its documentation. By focusing on documentation first and features second, Nimbus hopes to be a framework that accelerates the development process of any application by being easy to use and simple to understand.",
   "platforms": {

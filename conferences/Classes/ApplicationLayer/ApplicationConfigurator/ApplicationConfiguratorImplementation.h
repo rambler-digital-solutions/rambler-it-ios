@@ -26,5 +26,6 @@
 @interface ApplicationConfiguratorImplementation : NSObject <ApplicationConfigurator>
 
 @property (nonatomic, strong) id<EventService> eventService;
+@property (nonatomic, strong) NSFileManager *fileManager;
 
 @end

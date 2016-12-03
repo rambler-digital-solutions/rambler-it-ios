@@ -31,8 +31,8 @@
 
 @interface ServiceComponentsAssembly : TyphoonAssembly <ServiceComponents, RamblerInitialAssembly>
 
-@property (strong, nonatomic) OperationFactoriesAssembly *operationFactoriesAssembly;
-@property (strong, nonatomic) ResourceClientAssembly *resourceClientAssembly;
-@property (strong, nonatomic) ResourceMapperAssembly *resourceMapperAssembly;
+@property (nonatomic, strong) OperationFactoriesAssembly *operationFactoriesAssembly;
+@property (nonatomic, strong) ResourceClientAssembly *resourceClientAssembly;
+@property (nonatomic, strong) ResourceMapperAssembly *resourceMapperAssembly;
 
 @end

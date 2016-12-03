@@ -25,10 +25,10 @@
 
 @interface PreviousLectureTableViewCellObject : NSObject <NICellObject>
 
-@property (strong, nonatomic, readonly) NSString *lectureTitle;
-@property (strong, nonatomic, readonly) NSString *lectureId;
-@property (strong, nonatomic, readonly) NSString *speakerName;
-@property (strong, nonatomic, readonly) NSString *spickerImageUrl;
+@property (nonatomic, strong, readonly) NSString *lectureTitle;
+@property (nonatomic, strong, readonly) NSString *lectureId;
+@property (nonatomic, strong, readonly) NSString *speakerName;
+@property (nonatomic, strong, readonly) NSString *spickerImageUrl;
 
 + (instancetype)objectWithLecture:(LecturePlainObject *)lecture;
 

@@ -20,6 +20,6 @@
 
 @interface SpeakerInfoPresenterStateStorage : NSObject
 
-@property (strong, nonatomic) NSString *speakerId;
+@property (nonatomic, copy) NSString *speakerId;
 
 @end

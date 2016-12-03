@@ -29,7 +29,7 @@
 
 @interface OperationChainerTests : XCTestCase
 
-@property (strong, nonatomic) OperationChainer *chainer;
+@property (nonatomic, strong) OperationChainer *chainer;
 
 @end
 

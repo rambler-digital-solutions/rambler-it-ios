@@ -24,12 +24,14 @@
 @protocol EventListInteractorOutput;
 @protocol EventService;
 @protocol ROSPonsomizer;
+@class EventListProcessor;
 
 @interface EventListInteractor : NSObject<EventListInteractorInput>
 
 @property (nonatomic, weak) id<EventListInteractorOutput> output;
 @property (nonatomic, strong) id <EventService> eventService;
-@property (strong, nonatomic) id <ROSPonsomizer> ponsomizer;
+@property (nonatomic, strong) id <ROSPonsomizer> ponsomizer;
+@property (nonatomic, strong) EventListProcessor *processor;
 
 @end
 

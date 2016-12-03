@@ -29,7 +29,7 @@ static const int ddLogLevel = DDLogLevelVerbose;
 
 @interface ResponseDeserializationOperation ()
 
-@property (strong, nonatomic) id<ResponseDeserializer> responseDeserializer;
+@property (nonatomic, strong) id<ResponseDeserializer> responseDeserializer;
 
 @end
 

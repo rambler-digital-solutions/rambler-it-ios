@@ -43,12 +43,17 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
     [self cd_startObserveProtocol:@protocol(EventTableViewCellActionProtocol)];
-	[self.output setupView];
+	[self.output didTriggerViewReadyEvent];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self setupViewInitialState];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.output didTriggerViewWillDisappearEvent];
 }
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {

@@ -32,8 +32,11 @@ static CGFloat const kAlphaOpacityBorder = 0.4;
 #pragma mark - Public methods
 
 - (void)animateColorChangeWithScrollOffset:(CGFloat)scrollOffset {
-    CGFloat farRightPoint = self.scrollView.contentSize.width - self.scrollView.frame.size.width;
-    if (scrollOffset < 0 || scrollOffset > farRightPoint) {
+    if (scrollOffset < 0) {
+        UIColor *leftColor = [self.dataSource obtainColorForPageWithNumber:0];
+        self.view.backgroundColor = leftColor;
+        self.additionalView.alpha = 0.;
+        
         return;
     }
     
@@ -50,18 +53,19 @@ static CGFloat const kAlphaOpacityBorder = 0.4;
     
     // delta is a distance from a central point between two cards. Can be negative and positive.
     CGFloat delta = (NSInteger)middleScreenOffset % (NSInteger)pageWidth;
+    
     if (delta > pageWidth / 2) {
         delta -= pageWidth;
     }
-
+    
     // We're interested in a range (-initialThreshold : initialThreshold). Wnen delta is out of this range, we just miss it.
     if (delta < -initialThreshold || delta > initialThreshold) {
         return;
     }
-
+    
     NSInteger leftPageNumber = currentPageNumber - 1 > 0 ? currentPageNumber - 1 : 0;
     NSUInteger rightPageNumber = leftPageNumber + 1;
-
+    
     UIColor *leftColor = [self.dataSource obtainColorForPageWithNumber:leftPageNumber];
     UIColor *rightColor = [self.dataSource obtainColorForPageWithNumber:rightPageNumber];
     

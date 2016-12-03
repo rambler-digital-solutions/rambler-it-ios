@@ -26,11 +26,11 @@
 
 @interface SpeakerInfoViewController : UIViewController <SpeakerInfoViewInput, SpeakerInfoDataDisplayManagerDelegate>
 
-@property (strong, nonatomic) id <SpeakerInfoViewOutput> output;
-@property (strong, nonatomic) SpeakerInfoDataDisplayManager *dataDisplayManager;
+@property (nonatomic, strong) id <SpeakerInfoViewOutput> output;
+@property (nonatomic, strong) SpeakerInfoDataDisplayManager *dataDisplayManager;
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UIView <SpeakerShortInfoModuleInput> *speakerShortInfoView;
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
+@property (nonatomic, weak) IBOutlet UIView <SpeakerShortInfoModuleInput> *speakerShortInfoView;
 
 #pragma mark - IBActions
 

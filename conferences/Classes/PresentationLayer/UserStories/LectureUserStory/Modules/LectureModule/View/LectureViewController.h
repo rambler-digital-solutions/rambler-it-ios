@@ -31,12 +31,12 @@
 
 @interface LectureViewController : UIViewController <LectureViewInput, LectureDataDisplayManagerDelegate, LectureInfoTableViewCellActionProtocol>
 
-@property (weak, nonatomic) IBOutlet UIView <SpeakerShortInfoModuleInput> *speakerShortInfoView;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, weak) IBOutlet UIView <SpeakerShortInfoModuleInput> *speakerShortInfoView;
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
 
-@property (strong, nonatomic) id<LectureViewOutput> output;
+@property (nonatomic, strong) id<LectureViewOutput> output;
 @property (nonatomic, strong) CollectionViewContentCellAnimator *animator;
-@property (strong, nonatomic) LectureDataDisplayManager *dataDisplayManager;
+@property (nonatomic, strong) LectureDataDisplayManager *dataDisplayManager;
 
 @end
 

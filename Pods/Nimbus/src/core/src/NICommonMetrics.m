@@ -51,11 +51,13 @@ NSTimeInterval NIStatusBarBoundsChangeAnimationDuration(void) {
 }
 
 CGFloat NIStatusBarHeight(void) {
-  CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
 
-  // We take advantage of the fact that the status bar will always be wider than it is tall
-  // in order to avoid having to check the status bar orientation.
-  CGFloat statusBarHeight = MIN(statusBarFrame.size.width, statusBarFrame.size.height);
+#   if !defined(NIMBUS_APP_EXTENSIONS)
+    CGFloat statusBarHeight = 20;
+#   else
+    CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
+    CGFloat statusBarHeight = MIN(statusBarFrame.size.width, statusBarFrame.size.height);
+#   endif /* !defined(NIMBUS_APP_EXTENSIONS) */
 
   return statusBarHeight;
 }

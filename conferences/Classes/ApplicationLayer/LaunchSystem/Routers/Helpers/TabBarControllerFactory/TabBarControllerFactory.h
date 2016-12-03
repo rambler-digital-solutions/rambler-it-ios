@@ -38,4 +38,12 @@
  */
 - (UITabBarController *)obtainPreconfiguredTabBarController;
 
+/**
+ @author Konstantin Zinovyev
+ 
+ The method creates new controller in UITabBarController with index
+ */
+- (void)updateControllerInTabBarController:(UITabBarController *)tabBarController
+                                   atIndex:(NSInteger)index;
+
 @end

@@ -48,3 +48,5 @@
 "ErrorAlertTitle" = "Ошибка";
 
 "EventAlreadyStoredInCalendarErrorDescription" = "Событие уже существует в календаре.";
+
+"kRamblerOfficeName" = "Офис Rambler&Co";

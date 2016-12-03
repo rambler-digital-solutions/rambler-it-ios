@@ -34,10 +34,10 @@
 
 @interface EventDataDisplayManager () <UITableViewDelegate>
 
-@property (strong, nonatomic) NITableViewModel *tableViewModel;
-@property (strong, nonatomic) NITableViewActions *tableViewActions;
-@property (strong, nonatomic) EventCellObjectBuilderBase *cellObjectBuilder;
-@property (strong, nonatomic) NSArray *cellObjects;
+@property (nonatomic, strong) NITableViewModel *tableViewModel;
+@property (nonatomic, strong) NITableViewActions *tableViewActions;
+@property (nonatomic, strong) EventCellObjectBuilderBase *cellObjectBuilder;
+@property (nonatomic, strong) NSArray *cellObjects;
 
 @end
 

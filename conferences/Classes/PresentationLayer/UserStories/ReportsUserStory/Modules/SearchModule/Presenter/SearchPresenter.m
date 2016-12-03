@@ -25,15 +25,34 @@
 #import "EventPlainObject.h"
 #import "ReportsSearchModuleInput.h"
 
+@interface SearchPresenter ()
+
+@property (nonatomic, copy) NSString *searchString;
+
+@end
+
 @implementation SearchPresenter
+
+#pragma mark - SearchModuleInput
+
+- (void)configureSearchModuleWithSearchTerm:(NSString *)searchString {
+    self.searchString = searchString;
+}
 
 #pragma mark - ReportListViewOutput
 
 - (void)setupView {
     NSArray *suggests = [self.interactor obtainSuggests];
-    [self.router configureReportsSearchModuleWithModuleOutput:self];
+    [self.router configureReportsSearchModuleWithSearchTerm:self.searchString
+                                               moduleOutput:self];
     if (suggests.count > 0) {
         [self.view setupViewWithSuggests:suggests];
+    }
+    
+    if (self.searchString.length > 0) {
+        [self.view showSearchModuleView];
+        [self.view updateSearchBarWithText:self.searchString];
+        [self.view startEditingSearchBar];
     }
 }
 

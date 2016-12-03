@@ -36,8 +36,8 @@
 
 @interface FutureEventCellObjectBuilderTests : XCTestCase
 
-@property (strong, nonatomic) FutureEventCellObjectBuilder *cellObjectBuilder;
-@property (strong, nonatomic) id mockDateFormatter;
+@property (nonatomic, strong) FutureEventCellObjectBuilder *cellObjectBuilder;
+@property (nonatomic, strong) id mockDateFormatter;
 
 @end
 

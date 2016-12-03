@@ -29,10 +29,10 @@ static const int ddLogLevel = DDLogLevelVerbose;
 
 @interface RequestConfigurationOperation ()
 
-@property (strong, nonatomic) id<RequestConfigurator> requestConfigurator;
-@property (strong, nonatomic) NSString *method;
-@property (strong, nonatomic) NSString *serviceName;
-@property (strong, nonatomic) NSArray *urlParameters;
+@property (nonatomic, strong) id<RequestConfigurator> requestConfigurator;
+@property (nonatomic, copy) NSString *method;
+@property (nonatomic, copy) NSString *serviceName;
+@property (nonatomic, strong) NSArray *urlParameters;
 
 @end
 

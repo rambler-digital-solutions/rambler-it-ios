@@ -26,7 +26,7 @@
 
 @interface CurrentVideoTranslationTableViewCellObject ()
 
-@property (strong, nonatomic, readwrite) UIColor *buttonColor;
+@property (nonatomic, strong, readwrite) UIColor *buttonColor;
 
 @end
 

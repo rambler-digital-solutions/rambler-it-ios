@@ -27,9 +27,9 @@
 
 @property (nonatomic, strong) TagCollectionViewCellObject *cellObject;
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *leadingConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *trailingConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *leadingConstraint;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *trailingConstraint;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *heightConstraint;
 
 @end
 

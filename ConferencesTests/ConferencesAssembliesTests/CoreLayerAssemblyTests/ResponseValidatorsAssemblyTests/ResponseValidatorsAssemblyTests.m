@@ -30,7 +30,7 @@
 
 @interface ResponseValidatorsAssemblyTests : RamblerTyphoonAssemblyTests
 
-@property (strong, nonatomic) ResponseValidatorsAssembly *assembly;
+@property (nonatomic, strong) ResponseValidatorsAssembly *assembly;
 
 @end
 

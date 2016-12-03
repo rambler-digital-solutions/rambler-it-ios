@@ -24,8 +24,8 @@
 
 @interface RESTRequestConfigurator ()
 
-@property (copy, nonatomic) NSURL *baseURL;
-@property (copy, nonatomic) NSString *apiPath;
+@property (nonatomic, copy) NSURL *baseURL;
+@property (nonatomic, copy) NSString *apiPath;
 
 @end
 

@@ -29,8 +29,8 @@ static const int ddLogLevel = DDLogLevelVerbose;
 
 @interface ResponseMappingOperation ()
 
-@property (strong, nonatomic) id<ResponseMapper> responseMapper;
-@property (strong, nonatomic) NSDictionary *mappingContext;
+@property (nonatomic, strong) id<ResponseMapper> responseMapper;
+@property (nonatomic, strong) NSDictionary *mappingContext;
 
 @end
 

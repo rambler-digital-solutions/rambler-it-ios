@@ -32,7 +32,7 @@
 
 @interface EventCellObjectBuilderFactoryTests : RamblerTyphoonAssemblyTests
 
-@property (strong, nonatomic) EventCellObjectBuilderFactory *factory;
+@property (nonatomic, strong) EventCellObjectBuilderFactory *factory;
 
 @end
 
@@ -48,20 +48,6 @@
     self.factory = nil;
 
     [super tearDown];
-}
-
-- (void)testThatAssemblyCreatesCurrentEventCellObjectBuilder {
-    // given
-    Class targetClass = [CurrentEventCellObjectBuilder class];
-    NSArray *dependencies = @[
-                              RamblerSelector(dateFormatter)
-                              ];
-    // when
-    id result = [self.factory currentEventCellObjectBuilder];
-    
-    // then
-    RamblerTyphoonAssemblyTestsTypeDescriptor *descriptor = [RamblerTyphoonAssemblyTestsTypeDescriptor descriptorWithClass:targetClass];
-    [self verifyTargetDependency:result withDescriptor:descriptor dependencies:dependencies];
 }
 
 - (void)testThatAssemblyCreatesFutureEventCellObjectBuilder {

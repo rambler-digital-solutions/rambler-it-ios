@@ -45,8 +45,8 @@
 
 @interface NetworkCompoundOperationBuilder ()
 
-@property (strong, nonatomic) NSMutableArray *operationsArray;
-@property (strong, nonatomic) OperationChainer *chainer;
+@property (nonatomic, strong) NSMutableArray *operationsArray;
+@property (nonatomic, strong) OperationChainer *chainer;
 
 @end
 

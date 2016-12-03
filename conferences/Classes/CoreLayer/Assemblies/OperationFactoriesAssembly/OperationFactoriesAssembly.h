@@ -40,12 +40,12 @@
 
 - (EventOperationFactory *)eventListOperationFactory;
 
-@property (strong, nonatomic, readonly) TyphoonAssembly <RequestConfiguratorsFactory> *requestConfiguratorsFactory;
-@property (strong, nonatomic, readonly) TyphoonAssembly <RequestSignersFactory> *requestSignersFactory;
-@property (strong, nonatomic, readonly) TyphoonAssembly <NetworkClientsFactory> *networkClientsFactory;
-@property (strong, nonatomic, readonly) TyphoonAssembly <ResponseDeserializersFactory> *responseDeserializersFactory;
-@property (strong, nonatomic, readonly) TyphoonAssembly <ResponseValidatorsFactory> *responseValidatorsFactory;
-@property (strong, nonatomic, readonly) TyphoonAssembly <ResponseMappersFactory> *responseMappersFactory;
-@property (strong, nonatomic, readonly) TyphoonAssembly <ResponseConverterFactory> *responseConverterFactory;
+@property (nonatomic, strong, readonly) TyphoonAssembly <RequestConfiguratorsFactory> *requestConfiguratorsFactory;
+@property (nonatomic, strong, readonly) TyphoonAssembly <RequestSignersFactory> *requestSignersFactory;
+@property (nonatomic, strong, readonly) TyphoonAssembly <NetworkClientsFactory> *networkClientsFactory;
+@property (nonatomic, strong, readonly) TyphoonAssembly <ResponseDeserializersFactory> *responseDeserializersFactory;
+@property (nonatomic, strong, readonly) TyphoonAssembly <ResponseValidatorsFactory> *responseValidatorsFactory;
+@property (nonatomic, strong, readonly) TyphoonAssembly <ResponseMappersFactory> *responseMappersFactory;
+@property (nonatomic, strong, readonly) TyphoonAssembly <ResponseConverterFactory> *responseConverterFactory;
 
 @end

@@ -25,10 +25,16 @@
 #import "ApplicationConfiguratorImplementation.h"
 
 #import <MagicalRecord/MagicalRecord.h>
+#import "MessagesConstants.h"
 
 @interface ApplicationConfiguratorTests : XCTestCase
 
-@property (strong, nonatomic) id <ApplicationConfigurator> applicationConfigurator;
+@property (nonatomic, strong) ApplicationConfiguratorImplementation *applicationConfigurator;
+@property (nonatomic, strong) id magicalRecordMock;
+@property (nonatomic, strong) id managedObjectModelClassMock;
+@property (nonatomic, strong) id migrationManager;
+@property (nonatomic, strong) NSFileManager *fileManagerMock;
+@property (nonatomic, strong) id bundleMock;
 
 @end
 
@@ -38,24 +44,43 @@
     [super setUp];
     
     self.applicationConfigurator = [ApplicationConfiguratorImplementation new];
+    self.magicalRecordMock = OCMClassMock([MagicalRecord class]);
+    OCMStub([self.magicalRecordMock setupCoreDataStackWithAutoMigratingSqliteStoreAtURL:OCMOCK_ANY]);
+
+    self.managedObjectModelClassMock = OCMClassMock([NSManagedObjectModel class]);
+    OCMStub([self.managedObjectModelClassMock MR_defaultManagedObjectModel]).andReturn(self.managedObjectModelClassMock);
+    self.fileManagerMock = OCMClassMock([NSFileManager class]);
+    self.applicationConfigurator.fileManager = self.fileManagerMock;
+    self.migrationManager = OCMClassMock([NSMigrationManager class]);
+    self.bundleMock = [OCMockObject mockForClass:[NSBundle class]];
+    [[[self.bundleMock stub] andReturn:[NSBundle bundleForClass:[self class]]] mainBundle];
 }
 
 - (void)tearDown {
     self.applicationConfigurator = nil;
+    self.fileManagerMock = nil;
+    [self.magicalRecordMock stopMocking];
+    self.magicalRecordMock = nil;
+    [self.managedObjectModelClassMock stopMocking];
+    self.managedObjectModelClassMock = nil;
+    [self.migrationManager stopMocking];
+    self.migrationManager = nil;
+    [self.bundleMock stopMocking];
+    self.bundleMock = nil;
     
     [super tearDown];
 }
 
 - (void)d_testSuccessSetupCoreDataStack {
     // given
-    id mockMagicalRecord = OCMClassMock([MagicalRecord class]);
+    NSURL *url = [NSURL URLWithString:@"file:///Users/etrishina/Library/Developer/CoreSimulator/Devices/4A5D9B0C-6415-4788-80D3-3C0B9AC1BC2A/data/Containers/Shared/AppGroup/7FB5A35B-2398-4C72-BD06-49906AE490BA/"];
+    OCMStub([self.fileManagerMock containerURLForSecurityApplicationGroupIdentifier:RCFAppGroupIdentifier]).andReturn(url);
     
     // when
     [self.applicationConfigurator setupCoreDataStack];
     
     // then
-    OCMVerify([mockMagicalRecord setupAutoMigratingCoreDataStack]);
-    [mockMagicalRecord stopMocking];
+    OCMVerify([self.magicalRecordMock setupCoreDataStackWithAutoMigratingSqliteStoreAtURL:url]);
 }
 
 @end

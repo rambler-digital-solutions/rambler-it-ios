@@ -25,10 +25,10 @@
 
 @interface ReportSpeakerTableViewCellObject ()
 
-@property (strong, nonatomic, readwrite) NSAttributedString *speakerName;
-@property (strong, nonatomic, readwrite) NSString *company;
-@property (strong, nonatomic, readwrite) NSURL *imageURL;
-@property (strong, nonatomic, readwrite) SpeakerPlainObject *speaker;
+@property (nonatomic, strong, readwrite) NSAttributedString *speakerName;
+@property (nonatomic, strong, readwrite) NSString *company;
+@property (nonatomic, strong, readwrite) NSURL *imageURL;
+@property (nonatomic, strong, readwrite) SpeakerPlainObject *speaker;
 
 @end
 

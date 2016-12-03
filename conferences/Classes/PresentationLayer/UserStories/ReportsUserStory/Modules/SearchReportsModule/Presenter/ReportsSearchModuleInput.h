@@ -23,20 +23,28 @@
 
 @protocol ReportsSearchModuleInput <RamblerViperModuleInput>
 
-
 /**
  @author Zinovyev Konstantin
  
- Метод настраивающий модуль при изменении текста в поле поиска
+ Method is used to update reports search module with search string
  
  @param searchText текст в поле поиска
  */
-- (void)updateModuleWithSearchTerm:(NSString *)searchText;
+- (void)updateModuleWithSearchTerm:(NSString *)searchTerm;
 
 /**
  @author Zinovyev Konstantin
  
- Метод настраивающий модуль при изменении текста в поле поиска
+ Method is used to configure reports search module with search string
+ 
+ @param searchText search string
+ */
+- (void)configureReportsSearchModuleWithSearchTerm:(NSString *)searchTerm;
+
+/**
+ @author Zinovyev Konstantin
+ 
+ Method is used to close reports search module
  */
 - (void)closeSearchModule;
 
