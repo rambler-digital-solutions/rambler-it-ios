@@ -30,7 +30,14 @@
  
  Method is used to inform presenter that view needs to be configuered
  */
-- (void)setupView;
+- (void)didTriggerViewReadyEvent;
+
+/**
+ @author Egor TOlstoy
+ 
+ Method is used to inform presenter that view will disappear
+ */
+- (void)didTriggerViewWillDisappearEvent;
 
 /**
  @author Artem Karpushin

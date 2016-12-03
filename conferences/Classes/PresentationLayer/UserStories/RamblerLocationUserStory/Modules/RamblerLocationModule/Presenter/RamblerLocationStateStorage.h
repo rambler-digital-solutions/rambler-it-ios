@@ -18,34 +18,15 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "RamblerLocationPresenter.h"
-#import "RamblerLocationViewInput.h"
-#import "RamblerLocationInteractorInput.h"
-#import "RamblerLocationRouterInput.h"
-#import "RamblerLocationStateStorage.h"
+#import <Foundation/Foundation.h>
 
-#import <CoreLocation/CoreLocation.h>
-#import <UIKit/UIKit.h>
+/**
+ @author Egor Tolstoy
+ 
+ This object is responsible for holding RamblerLocation module state
+ */
+@interface RamblerLocationStateStorage : NSObject
 
-@implementation RamblerLocationPresenter
-
-#pragma mark - RamblerLocationViewOutput
-
-- (void)didTriggerViewReadyEvent {
-    NSArray *directions = [self.interactor obtainDirections];
-    [self.view setupViewWithDirections:directions];
-    
-    NSUserActivity *activity = [self.interactor registerUserActivity];
-    self.stateStorage.activity = activity;
-}
-
-- (void)didTriggerViewWillDisappearEvent {
-    [self.interactor unregisterUserActivity:self.stateStorage.activity];
-}
-
-- (void)didTriggerShareButtonTapEvent {
-    NSURL *locationUrl = [self.interactor obtainRamblerLocationUrl];
-    [self.router openMapsWithUrl:locationUrl];
-}
+@property (nonatomic, strong) NSUserActivity *activity;
 
 @end

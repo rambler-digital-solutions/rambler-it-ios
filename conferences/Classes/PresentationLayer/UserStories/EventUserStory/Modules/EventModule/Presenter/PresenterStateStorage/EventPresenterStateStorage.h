@@ -25,5 +25,6 @@
 @interface EventPresenterStateStorage : NSObject
 
 @property (nonatomic, copy) NSString *eventObjectId;
+@property (nonatomic, strong) NSUserActivity *activity;
 
 @end

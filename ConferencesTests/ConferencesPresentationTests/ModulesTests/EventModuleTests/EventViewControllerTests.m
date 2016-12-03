@@ -77,7 +77,7 @@
     
     // then
     OCMVerify([partialMockViewController cd_startObserveProtocol:@protocol(EventTableViewCellActionProtocol)]);
-    OCMVerify([self.mockOutput setupView]);
+    OCMVerify([self.mockOutput didTriggerViewReadyEvent]);
     [(id)partialMockViewController stopMocking];
     partialMockViewController = nil;
 }
@@ -102,6 +102,17 @@
     OCMVerify([self.mockTableView setDataSource:dataSource]);
     OCMVerify([self.mockTableView setDelegate:delegate]);
     OCMVerify([self.mockDataDisplayManager configureDataDisplayManagerWithEvent:event pastEvents:pastEvents]);
+}
+
+- (void)testThatViewNotifiesPresenterAboutDisappearEvent {
+    // given
+    
+    
+    // when
+    [self.viewController viewWillDisappear:YES];
+    
+    // then
+    OCMVerify([self.mockOutput didTriggerViewWillDisappearEvent]);
 }
 
 - (void)testSuccesConfigureHeaderModule {

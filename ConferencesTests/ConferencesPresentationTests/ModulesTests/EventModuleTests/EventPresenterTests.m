@@ -93,10 +93,34 @@
     OCMStub([self.interactorMock obtainPastEventsForEvent:OCMOCK_ANY]).andReturn(pastEvents);
     
     // when
-    [self.presenter setupView];
+    [self.presenter didTriggerViewReadyEvent];
     
     // then
     OCMVerify([self.viewMock configureViewWithEvent:event pastEvents:pastEvents]);
+}
+
+- (void)testThatPresenterRegistersUserActivityOnReadyEvent {
+    // given
+    id mockActivity = [NSObject new];
+    OCMStub([self.interactorMock registerUserActivityForEvent:OCMOCK_ANY]).andReturn(mockActivity);
+    
+    // when
+    [self.presenter didTriggerViewReadyEvent];
+    
+    // then
+    XCTAssertEqualObjects(self.presenterStateStorage.activity, mockActivity);
+}
+
+- (void)testThatPresenterUnregistersUserActivityOnDisappearEvent {
+    // given
+    id mockActivity = [NSObject new];
+    self.presenterStateStorage.activity = mockActivity;
+    
+    // when
+    [self.presenter didTriggerViewWillDisappearEvent];
+    
+    // then
+    OCMVerify([self.interactorMock unregisterUserActivity:mockActivity]);
 }
 
 - (void)testSuccessDidTapSaveToCalendarButtonWithEvent {

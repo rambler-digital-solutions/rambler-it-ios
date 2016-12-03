@@ -28,12 +28,18 @@
 #import "EventTypeDeterminator.h"
 #import "EventStoreServiceProtocol.h"
 #import "ErrorConstants.h"
-#import <MagicalRecord/MagicalRecord.h>
 #import "MetaEventModelObject.h"
 #import "MetaEventPlainObject.h"
 #import "MetaEventService.h"
 #import "ShareUrlBuilder.h"
 #import "EXTScope.h"
+#import "ApplicationConstants.h"
+#import "LocalizedStrings.h"
+#import "RamblerLocationService.h"
+
+#import <MagicalRecord/MagicalRecord.h>
+#import <MapKit/MapKit.h>
+#import <Contacts/Contacts.h>
 
 @implementation EventInteractor
 
@@ -101,6 +107,26 @@
     NSURL *shareUrl = [self.shareUrlBuilder buildShareUrlWithItemId:event.eventId];
     NSArray *activityItems = @[shareUrl];
     return activityItems;
+}
+
+- (NSUserActivity *)registerUserActivityForEvent:(EventPlainObject *)event {
+    NSUserActivity *activity = [[NSUserActivity alloc] initWithActivityType:kEventUserActivityType];
+    
+    activity.title = event.name;
+    NSURL *shareUrl = [self.shareUrlBuilder buildShareUrlWithItemId:event.eventId];
+    activity.webpageURL = shareUrl;
+    
+    CLLocationCoordinate2D coordinates = [self.locationService obtainRamblerCoordinates];
+    MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:coordinates
+                                                   addressDictionary: @{CNPostalAddressStreetKey : event.name}];
+    activity.mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
+    [activity becomeCurrent];
+    
+    return activity;
+}
+
+- (void)unregisterUserActivity:(NSUserActivity *)activity {
+    [activity resignCurrent];
 }
 
 @end

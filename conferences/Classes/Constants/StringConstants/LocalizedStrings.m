@@ -44,22 +44,26 @@ NSString *const kReportSearchSpeakerSectionTitle = @"kReportSearchSpeakerSection
 
 #pragma mark - Cell title
 
-NSString * const VideoRecordTableViewCellTitle = @"VideoRecordTableViewCellTitle";
-NSString * const LectureMaterialsTableViewCellTitle = @"LectureMaterialsTableViewCellTitle";
-NSString * const AdditionInformationTableViewCellTitle = @"AdditionInformationTableViewCellTitle";
-NSString * const LecturePresentationTableViewCellTitle = @"LecturePresentationTableViewCellTitle";
-NSString * const LectureArticlesTableViewCellTitle = @"LectureArticlesTableViewCellTitle";
-NSString * const LectureCodeGithubTableViewCellTitle = @"LectureCodeGithubTableViewCellTitle";
-NSString * const SpeakerWebSiteTableViewCellTitle = @"SpeakerWebSiteTableViewCellTitle";
-NSString * const SpeakerContactsTableViewCellTitle = @"SpeakerContactsTableViewCellTitle";
+NSString *const VideoRecordTableViewCellTitle = @"VideoRecordTableViewCellTitle";
+NSString *const LectureMaterialsTableViewCellTitle = @"LectureMaterialsTableViewCellTitle";
+NSString *const AdditionInformationTableViewCellTitle = @"AdditionInformationTableViewCellTitle";
+NSString *const LecturePresentationTableViewCellTitle = @"LecturePresentationTableViewCellTitle";
+NSString *const LectureArticlesTableViewCellTitle = @"LectureArticlesTableViewCellTitle";
+NSString *const LectureCodeGithubTableViewCellTitle = @"LectureCodeGithubTableViewCellTitle";
+NSString *const SpeakerWebSiteTableViewCellTitle = @"SpeakerWebSiteTableViewCellTitle";
+NSString *const SpeakerContactsTableViewCellTitle = @"SpeakerContactsTableViewCellTitle";
 
 #pragma  mark - Alert
 
-NSString * const EventSavedToCalendarAlertMessage = @"EventSavedToCalendarAlertMessage";
-NSString * const EmptyAlertTitle = @"EmptyAlertTitle";
-NSString * const ErrorAlertTitle = @"ErrorAlertTitle";
-NSString * const OKAlertActionTitle = @"OKAlertActionTitle";
+NSString *const EventSavedToCalendarAlertMessage = @"EventSavedToCalendarAlertMessage";
+NSString *const EmptyAlertTitle = @"EmptyAlertTitle";
+NSString *const ErrorAlertTitle = @"ErrorAlertTitle";
+NSString *const OKAlertActionTitle = @"OKAlertActionTitle";
 
 #pragma mark - Error
 
-NSString * const EventAlreadyStoredInCalendarErrorDescription = @"EventAlreadyStoredInCalendarErrorDescription";
+NSString *const EventAlreadyStoredInCalendarErrorDescription = @"EventAlreadyStoredInCalendarErrorDescription";
+
+#pragma mark - Location module
+
+NSString *const kRamblerOfficeName = @"kRamblerOfficeName";
