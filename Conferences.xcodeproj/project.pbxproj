@@ -735,6 +735,7 @@
 		9FF750191D27E6EE000D208D /* ManagedObjectMapperTests.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9FF750181D27E6EE000D208D /* ManagedObjectMapperTests.bundle */; };
 		9FF99E511BC42FF6006F15AF /* OperationSchedulerImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF99E501BC42FF6006F15AF /* OperationSchedulerImplementation.m */; };
 		9FF99E541BC4317E006F15AF /* OperationSchedulerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF99E531BC4317E006F15AF /* OperationSchedulerTests.m */; };
+		9FFA8A281DF31F3400FB3C2E /* RamblerLocationStateStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFA8A271DF31F3400FB3C2E /* RamblerLocationStateStorage.m */; };
 		9FFEAF051D2E41B4006E9649 /* DirectionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFEAF031D2E41B4006E9649 /* DirectionCollectionViewCell.m */; };
 		9FFEAF061D2E41B4006E9649 /* DirectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FFEAF041D2E41B4006E9649 /* DirectionCollectionViewCell.xib */; };
 		9FFEAF0C1D2E5CE0006E9649 /* AppleMapsLinkBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFEAF0B1D2E5CE0006E9649 /* AppleMapsLinkBuilder.m */; };
@@ -1913,6 +1914,8 @@
 		9FF99E4F1BC42FF5006F15AF /* OperationSchedulerImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OperationSchedulerImplementation.h; path = OperationScheduler/OperationSchedulerImplementation.h; sourceTree = "<group>"; };
 		9FF99E501BC42FF6006F15AF /* OperationSchedulerImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OperationSchedulerImplementation.m; path = OperationScheduler/OperationSchedulerImplementation.m; sourceTree = "<group>"; };
 		9FF99E531BC4317E006F15AF /* OperationSchedulerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OperationSchedulerTests.m; path = CoreLayer/OperationScheduler/OperationSchedulerTests.m; sourceTree = "<group>"; };
+		9FFA8A261DF31F3400FB3C2E /* RamblerLocationStateStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RamblerLocationStateStorage.h; sourceTree = "<group>"; };
+		9FFA8A271DF31F3400FB3C2E /* RamblerLocationStateStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RamblerLocationStateStorage.m; sourceTree = "<group>"; };
 		9FFEAF021D2E41B4006E9649 /* DirectionCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DirectionCollectionViewCell.h; path = Cells/DirectionCollectionViewCell.h; sourceTree = "<group>"; };
 		9FFEAF031D2E41B4006E9649 /* DirectionCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DirectionCollectionViewCell.m; path = Cells/DirectionCollectionViewCell.m; sourceTree = "<group>"; };
 		9FFEAF041D2E41B4006E9649 /* DirectionCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DirectionCollectionViewCell.xib; path = Cells/DirectionCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -2857,6 +2860,8 @@
 			children = (
 				636F8DC91BCB8FE800552B91 /* RamblerLocationPresenter.h */,
 				636F8DCA1BCB8FE800552B91 /* RamblerLocationPresenter.m */,
+				9FFA8A261DF31F3400FB3C2E /* RamblerLocationStateStorage.h */,
+				9FFA8A271DF31F3400FB3C2E /* RamblerLocationStateStorage.m */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -9063,6 +9068,7 @@
 				66CCA7301D61A67E004153EA /* ReportSearchSectionTitleCellObject.m in Sources */,
 				2B2064781D3F9CE900246C8D /* _LectureMaterialModelObject.m in Sources */,
 				2B429A7C1D50987E004C005F /* MetaEventServiceImpementation.m in Sources */,
+				9FFA8A281DF31F3400FB3C2E /* RamblerLocationStateStorage.m in Sources */,
 				6670500B1D4613F800DD9D6E /* ReportsSearchAssembly.m in Sources */,
 				9FBE89F51D5DDA9E00DA0C32 /* PreviousEventSectionFooterTableViewCellObject.m in Sources */,
 				631808691C4A870C00A61E7D /* LectureMaterialInfoTableViewCell.m in Sources */,
