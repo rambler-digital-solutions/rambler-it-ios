@@ -26,6 +26,7 @@
 #import "RamblerLocationViewInput.h"
 #import "RamblerLocationInteractorInput.h"
 #import "RamblerLocationRouterInput.h"
+#import "RamblerLocationStateStorage.h"
 
 @interface RamblerLocationPresenterTests : XCTestCase
 
@@ -34,6 +35,7 @@
 @property (nonatomic, strong) id mockView;
 @property (nonatomic, strong) id mockInteractor;
 @property (nonatomic, strong) id mockRouter;
+@property (nonatomic, strong) id mockStateStorage;
 
 @end
 
@@ -47,10 +49,12 @@
     self.mockView = OCMProtocolMock(@protocol(RamblerLocationViewInput));
     self.mockInteractor = OCMProtocolMock(@protocol(RamblerLocationInteractorInput));
     self.mockRouter = OCMProtocolMock(@protocol(RamblerLocationRouterInput));
+    self.mockStateStorage = OCMClassMock([RamblerLocationStateStorage class]);
     
     self.presenter.view = self.mockView;
     self.presenter.interactor = self.mockInteractor;
     self.presenter.router = self.mockRouter;
+    self.presenter.stateStorage = self.mockStateStorage;
 }
 
 - (void)tearDown {
@@ -59,6 +63,9 @@
     self.mockRouter = nil;
     self.mockInteractor = nil;
     self.mockView = nil;
+    
+    [self.mockStateStorage stopMocking];
+    self.mockStateStorage = nil;
     
     [super tearDown];
 }
@@ -73,6 +80,31 @@
     
     // then
     OCMVerify([self.mockView setupViewWithDirections:testDirections]);
+}
+
+- (void)testThatPresenterRegistersUserActivityOnViewReadyEvent {
+    // given
+    id mockActivity = [NSObject new];
+    OCMStub([self.mockInteractor registerUserActivity]).andReturn(mockActivity);
+    
+    // when
+    [self.presenter didTriggerViewReadyEvent];
+    
+    // then
+    OCMVerify([self.mockInteractor registerUserActivity]);
+    OCMVerify([self.mockStateStorage setActivity:mockActivity]);
+}
+
+- (void)testThatPresenterUnregistersUserActivityOnViewWillDisappearEvent {
+    // given
+    id mockActivity = [NSObject new];
+    OCMStub([self.mockStateStorage userActivity]).andReturn(mockActivity);
+    
+    // when
+    [self.presenter didTriggerViewWillDisappearEvent];
+    
+    // then
+    OCMVerify([self.mockInteractor unregisterUserActivity:mockActivity]);
 }
 
 - (void)testThatPresenterHandlesShareButtonTapEvent {
