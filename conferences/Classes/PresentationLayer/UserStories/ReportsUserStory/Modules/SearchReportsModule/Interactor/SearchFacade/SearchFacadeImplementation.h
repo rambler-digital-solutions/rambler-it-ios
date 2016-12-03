@@ -1,4 +1,4 @@
-// Copyright (c) 2015 RAMBLER&Co
+// Copyright (c) 2016 RAMBLER&Co
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -19,28 +19,23 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-#import <Nimbus/NimbusModels.h>
+#import "SearchFacade.h"
+
+@protocol EventService;
+@protocol LectureService;
+@protocol SpeakerService;
+@protocol ROSPonsomizer;
 
 /**
- @author Zinovyev Konstantin
+ @author Surik Sarkisyan
  
- Object is used to create EventTableViewCell.
+ Implementation of SearchFacade protocol
  */
-@class LecturePlainObject;
+@interface SearchFacadeImplementation : NSObject <SearchFacade>
 
-@interface ReportLectureTableViewCellObject : NSObject <NICellObject>
-
-@property (nonatomic, strong, readonly) NSString *date;
-@property (nonatomic, strong, readonly) NSString *company;
-@property (nonatomic, strong, readonly) NSAttributedString *lectureTitle;
-@property (nonatomic, strong, readonly) NSAttributedString *tags;
-@property (nonatomic, strong, readonly) NSURL *imageURL;
-@property (nonatomic, strong, readonly) LecturePlainObject *lecture;
-@property (nonatomic, copy, readonly) NSAttributedString *speakerName;;
-
-+ (instancetype)objectWithLecture:(LecturePlainObject *)lecture
-                             tags:(NSAttributedString *)tags
-                      speakerName:(NSAttributedString *)highlightedSpeakerName
-                  highlightedText:(NSAttributedString *)highlightedText;
+@property (nonatomic, strong) id <EventService> eventService;
+@property (nonatomic, strong) id <SpeakerService> speakerService;
+@property (nonatomic, strong) id <LectureService> lectureService;
+@property (nonatomic, strong) id <ROSPonsomizer> ponsomizer;
 
 @end

@@ -1,4 +1,4 @@
-// Copyright (c) 2015 RAMBLER&Co
+// Copyright (c) 2016 RAMBLER&Co
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -19,28 +19,45 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-#import <Nimbus/NimbusModels.h>
 
 /**
- @author Zinovyev Konstantin
+ @author Surik Sarkisyan
  
- Object is used to create EventTableViewCell.
+ The configurator is designed to constract predicates for further usage in services.
  */
-@class LecturePlainObject;
+@protocol PredicateConfigurator <NSObject>
 
-@interface ReportLectureTableViewCellObject : NSObject <NICellObject>
+/**
+ @author Surik Sarkisyan
+ 
+ Method is used to constract predicates for event objects filter
+ 
+ @param string wich typed by user
+ 
+ @return predicates array configured from input string
+ */
+- (NSArray<NSPredicate *> *)configureEventsPredicatesForSearchText:(NSString *)searchText;
 
-@property (nonatomic, strong, readonly) NSString *date;
-@property (nonatomic, strong, readonly) NSString *company;
-@property (nonatomic, strong, readonly) NSAttributedString *lectureTitle;
-@property (nonatomic, strong, readonly) NSAttributedString *tags;
-@property (nonatomic, strong, readonly) NSURL *imageURL;
-@property (nonatomic, strong, readonly) LecturePlainObject *lecture;
-@property (nonatomic, copy, readonly) NSAttributedString *speakerName;;
+/**
+ @author Surik Sarkisyan
+ 
+ Method is used to constract predicates for speaker objects filter
+ 
+ @param string wich typed by user
+ 
+ @return predicates array configured from input string
+ */
+- (NSArray<NSPredicate *> *)configureSpeakersPredicatesForSearchText:(NSString *)searchText;
 
-+ (instancetype)objectWithLecture:(LecturePlainObject *)lecture
-                             tags:(NSAttributedString *)tags
-                      speakerName:(NSAttributedString *)highlightedSpeakerName
-                  highlightedText:(NSAttributedString *)highlightedText;
+/**
+ @author Surik Sarkisyan
+ 
+ Method is used to constract predicates for lecture objects filter
+ 
+ @param string wich typed by user
+ 
+ @return predicates array configured from input string
+ */
+- (NSArray<NSPredicate *> *)configureLecturesPredicatesForSearchText:(NSString *)searchText;
 
 @end

@@ -21,6 +21,12 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		028E446B1DF179CA00734E84 /* PredicateConfiguratorImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 028E446A1DF179CA00734E84 /* PredicateConfiguratorImplementation.m */; };
+		028E446F1DF184F100734E84 /* SearchFacadeImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 028E446E1DF184F100734E84 /* SearchFacadeImplementation.m */; };
+		028E44731DF19BA900734E84 /* PredicateConfiguratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 028E44721DF19BA900734E84 /* PredicateConfiguratorTests.m */; };
+		028E44761DF1B81C00734E84 /* SearchFacadeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 028E44751DF1B81C00734E84 /* SearchFacadeTests.m */; };
+		1F78357EBF30489533FBC867 /* libPods-Conferences-ConferencesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C46B774BA2D16C41C04D78BA /* libPods-Conferences-ConferencesTests.a */; };
+		234C76A5941B9A10462172CC /* libPods-Conferences.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C7A972E2814B586E4073760 /* libPods-Conferences.a */; };
 		2AA222A5031CC7BA4A19B3EF /* libPods-RamblerMessageExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C1AA7D4ECB1DA53BEC254E4 /* libPods-RamblerMessageExtension.a */; };
 		2B01CEBE1D50A55900DA8E66 /* MetaEventServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B01CEBD1D50A55900DA8E66 /* MetaEventServiceTests.m */; };
 		2B05E1611D50FEFC00E017AB /* SpeakerInfoCellObjectBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B05E1601D50FEFC00E017AB /* SpeakerInfoCellObjectBuilder.m */; };
@@ -776,6 +782,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		028E44681DF179B300734E84 /* PredicateConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PredicateConfigurator.h; sourceTree = "<group>"; };
+		028E44691DF179CA00734E84 /* PredicateConfiguratorImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PredicateConfiguratorImplementation.h; sourceTree = "<group>"; };
+		028E446A1DF179CA00734E84 /* PredicateConfiguratorImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PredicateConfiguratorImplementation.m; sourceTree = "<group>"; };
+		028E446D1DF184F100734E84 /* SearchFacadeImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchFacadeImplementation.h; sourceTree = "<group>"; };
+		028E446E1DF184F100734E84 /* SearchFacadeImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchFacadeImplementation.m; sourceTree = "<group>"; };
+		028E44701DF1851B00734E84 /* SearchFacade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchFacade.h; sourceTree = "<group>"; };
+		028E44721DF19BA900734E84 /* PredicateConfiguratorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PredicateConfiguratorTests.m; sourceTree = "<group>"; };
+		028E44751DF1B81C00734E84 /* SearchFacadeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchFacadeTests.m; sourceTree = "<group>"; };
 		1AB36DD96D7739E6F91D7BBE /* Pods-Conferences.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conferences.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Conferences/Pods-Conferences.debug.xcconfig"; sourceTree = "<group>"; };
 		1C1AA7D4ECB1DA53BEC254E4 /* libPods-RamblerMessageExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RamblerMessageExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FC5571A228743BA28853AEA /* Pods-Conferences-ConferencesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conferences-ConferencesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Conferences-ConferencesTests/Pods-Conferences-ConferencesTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -1965,6 +1979,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		028E44651DF1799900734E84 /* PredicateConfigurator */ = {
+			isa = PBXGroup;
+			children = (
+				028E44661DF1799900734E84 /* ConcreteClass */,
+				028E44671DF1799900734E84 /* Protocols */,
+			);
+			name = PredicateConfigurator;
+			path = CoreComponents/PredicateConfigurator;
+			sourceTree = "<group>";
+		};
+		028E44661DF1799900734E84 /* ConcreteClass */ = {
+			isa = PBXGroup;
+			children = (
+				028E44691DF179CA00734E84 /* PredicateConfiguratorImplementation.h */,
+				028E446A1DF179CA00734E84 /* PredicateConfiguratorImplementation.m */,
+			);
+			path = ConcreteClass;
+			sourceTree = "<group>";
+		};
+		028E44671DF1799900734E84 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				028E44681DF179B300734E84 /* PredicateConfigurator.h */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		028E446C1DF184E200734E84 /* SearchFacade */ = {
+			isa = PBXGroup;
+			children = (
+				028E446D1DF184F100734E84 /* SearchFacadeImplementation.h */,
+				028E446E1DF184F100734E84 /* SearchFacadeImplementation.m */,
+				028E44701DF1851B00734E84 /* SearchFacade.h */,
+			);
+			name = SearchFacade;
+			path = SearchReportsModule/Interactor/SearchFacade;
+			sourceTree = "<group>";
+		};
+		028E44711DF19BA000734E84 /* PredicateConfigurator */ = {
+			isa = PBXGroup;
+			children = (
+				028E44721DF19BA900734E84 /* PredicateConfiguratorTests.m */,
+			);
+			name = PredicateConfigurator;
+			path = CoreLayer/CoreComponents/PredicateConfigurator;
+			sourceTree = "<group>";
+		};
+		028E44741DF1B80800734E84 /* SearchFacade */ = {
+			isa = PBXGroup;
+			children = (
+				028E44751DF1B81C00734E84 /* SearchFacadeTests.m */,
+			);
+			name = SearchFacade;
+			path = CoreLayer/CoreComponents/SearchFacade;
+			sourceTree = "<group>";
+		};
 		29F930AE767A2E0D549FB50F /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -4669,6 +4739,7 @@
 		667050051D4613D800DD9D6E /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				028E446C1DF184E200734E84 /* SearchFacade */,
 				6670500C1D46140200DD9D6E /* ReportsSearchInteractor.h */,
 				6670500D1D46140200DD9D6E /* ReportsSearchInteractor.m */,
 				6670500E1D46140200DD9D6E /* ReportsSearchInteractorInput.h */,
@@ -5640,6 +5711,7 @@
 		9F18308B1BC01E65000E21A5 /* CoreComponents */ = {
 			isa = PBXGroup;
 			children = (
+				028E44651DF1799900734E84 /* PredicateConfigurator */,
 				661CA4171D65D1020047EB68 /* ResponseConverter */,
 				9F4077951D2C105100D47EF6 /* ResourceMappers */,
 				9F4077891D2BF8DB00D47EF6 /* ResourceClients */,
@@ -5709,6 +5781,8 @@
 		9F1830951BC022A6000E21A5 /* CoreComponents */ = {
 			isa = PBXGroup;
 			children = (
+				028E44741DF1B80800734E84 /* SearchFacade */,
+				028E44711DF19BA000734E84 /* PredicateConfigurator */,
 				9F40779D1D2C118A00D47EF6 /* ResourceMappers */,
 				9F4077911D2BFA5800D47EF6 /* ResourceClients */,
 				9FC1F67D1D2838CD0070D9B5 /* QueryTransformers */,
@@ -9165,6 +9239,7 @@
 				2B2064981D3F9CE900246C8D /* SpeakerPlainObject.m in Sources */,
 				63F613851CB00A220002AEF0 /* FutureEventCellObjectBuilder.m in Sources */,
 				2B2064921D3F9CE900246C8D /* EventPlainObject.m in Sources */,
+				028E446B1DF179CA00734E84 /* PredicateConfiguratorImplementation.m in Sources */,
 				9F4077B41D2E38AB00D47EF6 /* DirectionCellObjectFactory.m in Sources */,
 				6318086D1C4A872600A61E7D /* LectureMaterialInfoTableViewCellObject.m in Sources */,
 				66CCA72C1D61A654004153EA /* ReportSearchSectionTitleTableViewCell.m in Sources */,
@@ -9236,6 +9311,7 @@
 				9FFEAF051D2E41B4006E9649 /* DirectionCollectionViewCell.m in Sources */,
 				63F613841CB00A220002AEF0 /* EventCellObjectBuilderBase.m in Sources */,
 				2B2064861D3F9CE900246C8D /* _SpeakerPlainObject.m in Sources */,
+				028E446F1DF184F100734E84 /* SearchFacadeImplementation.m in Sources */,
 				636F8DDC1BCB8FE800552B91 /* RamblerLocationPresenter.m in Sources */,
 				638918D61DC33A33009B34AF /* MessagesUserActivityFactory.m in Sources */,
 				9F8B49E91D6EF72B00ED176B /* YouTubePlayerFactoryImplementation.m in Sources */,
@@ -9550,6 +9626,7 @@
 				63F403AF1BD0D0690086D030 /* ResponseMappersAssemblyTests.m in Sources */,
 				9F1830DF1BC12749000E21A5 /* RCFResponseValidatorTestsBase.m in Sources */,
 				63F403AC1BD0CD460086D030 /* ResponseDeserializersAssemblyTests.m in Sources */,
+				028E44731DF19BA900734E84 /* PredicateConfiguratorTests.m in Sources */,
 				9FF37E151D32373500471B4E /* RamblerLocationInteractorTests.m in Sources */,
 				9FF99E541BC4317E006F15AF /* OperationSchedulerTests.m in Sources */,
 				9FAB6A7C1D548D2D0061F333 /* EventObjectIndexerTests.m in Sources */,
@@ -9583,6 +9660,7 @@
 				9F1830FE1BC14E64000E21A5 /* Conference.xcdatamodeld in Sources */,
 				9F7B823E1D7ECAD9002E977A /* QuickActionLaunchHandlerTests.m in Sources */,
 				63F613E91CB111070002AEF0 /* SearchInteractorTests.m in Sources */,
+				028E44761DF1B81C00734E84 /* SearchFacadeTests.m in Sources */,
 				63F613E11CB111070002AEF0 /* EventPresenterTests.m in Sources */,
 				9F0A85281BC185AA006F79FB /* ResponseValidationOperationTests.m in Sources */,
 				66A1DD321D7E981500998F6B /* TagInteractorTests.m in Sources */,

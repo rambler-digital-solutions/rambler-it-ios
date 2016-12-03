@@ -23,20 +23,13 @@
 #import "ReportsSearchInteractorOutput.h"
 
 @protocol ReportSearchInteractorOutput;
-@protocol EventService;
-@protocol LectureService;
-@protocol SpeakerService;
-@protocol ROSPonsomizer;
-
-@class EventTypeDeterminator;
+@protocol PredicateConfigurator;
+@protocol SearchFacade;
 
 @interface ReportsSearchInteractor : NSObject <ReportsSearchInteractorInput>
 
 @property (nonatomic, weak) id <ReportsSearchInteractorOutput> output;
-@property (nonatomic, strong) id <EventService> eventService;
-@property (nonatomic, strong) id <SpeakerService> speakerService;
-@property (nonatomic, strong) id <LectureService> lectureService;
-@property (nonatomic, strong) id <ROSPonsomizer> ponsomizer;
-@property (nonatomic, strong) EventTypeDeterminator *eventTypeDeterminator;
+@property (nonatomic, strong) id <PredicateConfigurator> predicateConfigurator;
+@property (nonatomic, strong) id <SearchFacade> searchFacade;
 
 @end

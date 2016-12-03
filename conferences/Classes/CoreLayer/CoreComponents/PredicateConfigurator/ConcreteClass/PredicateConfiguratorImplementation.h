@@ -1,4 +1,4 @@
-// Copyright (c) 2015 RAMBLER&Co
+// Copyright (c) 2016 RAMBLER&Co
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -18,32 +18,15 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "ReportsSearchInteractor.h"
+#import <Foundation/Foundation.h>
 
-#import "SearchFacade.h"
 #import "PredicateConfigurator.h"
 
-@implementation ReportsSearchInteractor
-
-#pragma mark - ReportListInteractorInput
-
-- (NSArray *)obtainFoundObjectListWithSearchText:(NSString *)text {
-    
-    NSMutableArray *foundObjects = [NSMutableArray new];
-    
-    NSArray *eventsPredicatesArray = [self.predicateConfigurator configureEventsPredicatesForSearchText:text];
-    NSArray *speakersPredicatesArray = [self.predicateConfigurator configureSpeakersPredicatesForSearchText:text];
-    NSArray *lecturesPredicatesArray = [self.predicateConfigurator configureLecturesPredicatesForSearchText:text];
-    
-    NSArray *events = [self.searchFacade eventsForPredicates:eventsPredicatesArray];
-    NSArray *speakers = [self.searchFacade speakersForPredicates:speakersPredicatesArray];
-    NSArray *lectures = [self.searchFacade lecturesForPredicates:lecturesPredicatesArray];
-    
-    [foundObjects addObjectsFromArray:events];
-    [foundObjects addObjectsFromArray:speakers];
-    [foundObjects addObjectsFromArray:lectures];
-    
-    return [foundObjects copy];
-}
+/**
+ @author Surik Sarkisyan
+ 
+ Implementation of PredicateConfigurator protocol
+ */
+@interface PredicateConfiguratorImplementation : NSObject <PredicateConfigurator>
 
 @end

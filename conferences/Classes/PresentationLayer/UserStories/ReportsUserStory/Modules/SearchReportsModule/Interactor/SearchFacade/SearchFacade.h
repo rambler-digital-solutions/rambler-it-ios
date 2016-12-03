@@ -1,4 +1,4 @@
-// Copyright (c) 2015 RAMBLER&Co
+// Copyright (c) 2016 RAMBLER&Co
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -19,28 +19,45 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-#import <Nimbus/NimbusModels.h>
 
 /**
- @author Zinovyev Konstantin
+ @author Surik Sarkisyan
  
- Object is used to create EventTableViewCell.
+ The facade is designed to work with different services for obtain some objects. e.g. Events/Speakers/Lectures
  */
-@class LecturePlainObject;
+@protocol SearchFacade <NSObject>
 
-@interface ReportLectureTableViewCellObject : NSObject <NICellObject>
+/**
+ @author Surik Sarkisyan
+ 
+ Method is used to obtain Event objects array from storage
+ 
+ @param predicates array for specifying the filtering parameters
+ 
+ @return Event objects array
+ */
+- (NSArray *)eventsForPredicates:(NSArray<NSPredicate *> *)predicates;
 
-@property (nonatomic, strong, readonly) NSString *date;
-@property (nonatomic, strong, readonly) NSString *company;
-@property (nonatomic, strong, readonly) NSAttributedString *lectureTitle;
-@property (nonatomic, strong, readonly) NSAttributedString *tags;
-@property (nonatomic, strong, readonly) NSURL *imageURL;
-@property (nonatomic, strong, readonly) LecturePlainObject *lecture;
-@property (nonatomic, copy, readonly) NSAttributedString *speakerName;;
+/**
+ @author Surik Sarkisyan
+ 
+ Method is used to obtain Speaker objects array from storage
+ 
+ @param predicates array for specifying the filtering parameters
+ 
+ @return Speaker objects array
+ */
+- (NSArray *)speakersForPredicates:(NSArray<NSPredicate *> *)predicates;
 
-+ (instancetype)objectWithLecture:(LecturePlainObject *)lecture
-                             tags:(NSAttributedString *)tags
-                      speakerName:(NSAttributedString *)highlightedSpeakerName
-                  highlightedText:(NSAttributedString *)highlightedText;
+/**
+ @author Surik Sarkisyan
+ 
+ Method is used to obtain Lectures objects array from storage
+ 
+ @param predicates array for specifying the filtering parameters
+ 
+ @return Lectures objects array
+ */
+- (NSArray *)lecturesForPredicates:(NSArray<NSPredicate *> *)predicates;
 
 @end
