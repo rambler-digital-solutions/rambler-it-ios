@@ -50,20 +50,6 @@
     [super tearDown];
 }
 
-- (void)testThatAssemblyCreatesCurrentEventCellObjectBuilder {
-    // given
-    Class targetClass = [CurrentEventCellObjectBuilder class];
-    NSArray *dependencies = @[
-                              RamblerSelector(dateFormatter)
-                              ];
-    // when
-    id result = [self.factory currentEventCellObjectBuilder];
-    
-    // then
-    RamblerTyphoonAssemblyTestsTypeDescriptor *descriptor = [RamblerTyphoonAssemblyTestsTypeDescriptor descriptorWithClass:targetClass];
-    [self verifyTargetDependency:result withDescriptor:descriptor dependencies:dependencies];
-}
-
 - (void)testThatAssemblyCreatesFutureEventCellObjectBuilder {
     // given
     Class targetClass = [FutureEventCellObjectBuilder class];
