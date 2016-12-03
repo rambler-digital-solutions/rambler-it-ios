@@ -34,9 +34,12 @@
 - (id)obtainFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial;
 
 - (void)downloadToCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial
-                            completion:(LectureMaterialCompletionBlock)completionBlock;
+                              delegate:(id<NSURLSessionDownloadDelegate>)delegate;
 
 - (void)removeFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial
                             completion:(LectureMaterialCompletionBlock)completionBlock;
+
+- (void)updateDelegate:(id<NSURLSessionDownloadDelegate>)delegate
+    forLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial;
 
 @end

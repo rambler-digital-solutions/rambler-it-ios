@@ -23,6 +23,8 @@
 #import "LectureMaterialsHandler.h"
 #import <MagicalRecord/MagicalRecord.h>
 #import "LectureMaterialModelObject.h"
+#import "LectureMaterialDownloadingManager.h"
+#import "EXTScope.h"
 
 @interface LectureMaterialsServiceImplementation ()
 
@@ -54,17 +56,18 @@
 }
 
 - (void)downloadToCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial
-                            completion:(LectureMaterialCompletionBlock)completionBlock {
-    
+                              delegate:(id<NSURLSessionDownloadDelegate>)delegate {
+    [self.lectureMaterialDownloadingManager updateDelegate:delegate
+                                                    forURL:lectureMaterial.link];
     for (id<LectureMaterialsHandler> handler in self.lectureMaterialsHandlers) {
         if ([handler canHandleLectureMaterial:lectureMaterial]) {
-            
+            @weakify(self);
             [handler downloadToCacheLectureMaterial:lectureMaterial
+                                           delegate:self.lectureMaterialDownloadingManager
                                          completion:^(NSString *localUrl, NSError *error) {
+                 @strongify(self);
                  [self saveToPersistenStoreLectureMaterialWithID:lectureMaterial.lectureMaterialId
                                                         localURL:localUrl];
-                 
-                     completionBlock(localUrl, error);
             }];
             break;
         }
@@ -75,8 +78,10 @@
                             completion:(LectureMaterialCompletionBlock)completionBlock {
     for (id<LectureMaterialsHandler> handler in self.lectureMaterialsHandlers) {
         if ([handler canHandleLectureMaterial:lectureMaterial]) {
+            @weakify(self);
             [handler removeFromCacheLectureMaterial:lectureMaterial
                                          completion:^(NSString *localUrl, NSError *error) {
+                      @strongify(self);
                       [self saveToPersistenStoreLectureMaterialWithID:lectureMaterial.lectureMaterialId
                                                              localURL:localUrl];
                       completionBlock(localUrl, error);
@@ -84,6 +89,12 @@
             break;
         }
     }
+}
+
+- (void)updateDelegate:(id<NSURLSessionDownloadDelegate>)delegate
+    forLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial {
+    [self.lectureMaterialDownloadingManager updateDelegate:delegate
+                                                    forURL:lectureMaterial.link];
 }
 
 #pragma mark - Private methods

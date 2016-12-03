@@ -29,7 +29,7 @@
 @class YouTubeIdentifierDeriviator;
 @class VideoMaterialDownloadingStatesStorage;
 
-@interface LectureInteractor : NSObject<LectureInteractorInput>
+@interface LectureInteractor : NSObject <LectureInteractorInput, NSURLSessionDownloadDelegate>
 
 @property (nonatomic, strong) id<LectureService> lectureService;
 @property (nonatomic, strong) id<LectureMaterialsService> lectureMaterialsService;

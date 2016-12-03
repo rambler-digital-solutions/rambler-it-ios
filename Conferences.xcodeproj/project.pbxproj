@@ -326,6 +326,7 @@
 		66EE4D351D54BFCD0011F94A /* NITableViewModel+LJIndexOfObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EE4D311D54BFCD0011F94A /* NITableViewModel+LJIndexOfObject.m */; };
 		66EE4D361D54BFCD0011F94A /* NITableViewModel+NextInputResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EE4D331D54BFCD0011F94A /* NITableViewModel+NextInputResponder.m */; };
 		66FFD29C1D7DCCFB0009B7DC /* CollectionViewContentCellAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 66FFD29B1D7DCCFB0009B7DC /* CollectionViewContentCellAnimator.m */; };
+		97C7DD991DF33A8A00D5D1F4 /* LectureMaterialDownloadingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C7DD981DF33A8A00D5D1F4 /* LectureMaterialDownloadingManager.m */; };
 		97F600291DEAF2AD004833B5 /* VideoRecordTableViewCellObjectMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 97F600281DEAF2AD004833B5 /* VideoRecordTableViewCellObjectMapper.m */; };
 		9F0A6C1D1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */; };
 		9F0A6C2E1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C2D1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m */; };
@@ -1203,6 +1204,8 @@
 		8324F5E12F2E2C427497BE00 /* Pods-Conferences.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conferences.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Conferences/Pods-Conferences.debug.xcconfig"; sourceTree = "<group>"; };
 		9166896486D6F8D1A801419D /* Pods-Conferences-ConferencesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conferences-ConferencesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Conferences-ConferencesTests/Pods-Conferences-ConferencesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9214F4090FA859CC9B06907E /* Pods-Conferences.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conferences.release.xcconfig"; path = "Pods/Target Support Files/Pods-Conferences/Pods-Conferences.release.xcconfig"; sourceTree = "<group>"; };
+		97C7DD971DF33A8A00D5D1F4 /* LectureMaterialDownloadingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LectureMaterialDownloadingManager.h; path = LectureMaterialDownloadingManager/LectureMaterialDownloadingManager.h; sourceTree = "<group>"; };
+		97C7DD981DF33A8A00D5D1F4 /* LectureMaterialDownloadingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LectureMaterialDownloadingManager.m; path = LectureMaterialDownloadingManager/LectureMaterialDownloadingManager.m; sourceTree = "<group>"; };
 		97F600271DEAF2AD004833B5 /* VideoRecordTableViewCellObjectMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoRecordTableViewCellObjectMapper.h; path = VideoRecordTableViewCellMapper/VideoRecordTableViewCellObjectMapper.h; sourceTree = "<group>"; };
 		97F600281DEAF2AD004833B5 /* VideoRecordTableViewCellObjectMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VideoRecordTableViewCellObjectMapper.m; path = VideoRecordTableViewCellMapper/VideoRecordTableViewCellObjectMapper.m; sourceTree = "<group>"; };
 		9F0A6C1B1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CompoundOperationBuilderConfig.h; path = OperationBuilders/CompoundOperationBuilderConfig/CompoundOperationBuilderConfig.h; sourceTree = "<group>"; };
@@ -2467,7 +2470,7 @@
 		636B63C51BBDCC060053E38F /* LectureMaterialsService */ = {
 			isa = PBXGroup;
 			children = (
-				667AD5461DF07BF100BCA9B9 /* Lec */,
+				667AD5461DF07BF100BCA9B9 /* LectureMaterialDownloadingManager */,
 				669D94461DE0D88F00589AC2 /* LectureMaterialsHandlers */,
 				636B63C91BBDCC550053E38F /* LectureMaterialsService.h */,
 				636B64051BBDD2A40053E38F /* LectureMaterialsServiceImplementation.h */,
@@ -4264,11 +4267,13 @@
 			name = "UIFont+RIDTypefaces";
 			sourceTree = "<group>";
 		};
-		667AD5461DF07BF100BCA9B9 /* Lec */ = {
+		667AD5461DF07BF100BCA9B9 /* LectureMaterialDownloadingManager */ = {
 			isa = PBXGroup;
 			children = (
+				97C7DD971DF33A8A00D5D1F4 /* LectureMaterialDownloadingManager.h */,
+				97C7DD981DF33A8A00D5D1F4 /* LectureMaterialDownloadingManager.m */,
 			);
-			name = Lec;
+			name = LectureMaterialDownloadingManager;
 			sourceTree = "<group>";
 		};
 		669D94461DE0D88F00589AC2 /* LectureMaterialsHandlers */ = {
@@ -8363,6 +8368,7 @@
 				636F8DDE1BCB8FE800552B91 /* RamblerLocationViewController.m in Sources */,
 				2B2064831D3F9CE900246C8D /* _MetaEventPlainObject.m in Sources */,
 				9FBE8AB61D630D4C00DA0C32 /* EventGalleryInteractor.m in Sources */,
+				97C7DD991DF33A8A00D5D1F4 /* LectureMaterialDownloadingManager.m in Sources */,
 				9F533AA41D50F195004F8E82 /* IndexTransactionBatch.m in Sources */,
 				9F4097841D51F658008BFE42 /* EventObjectTransformer.m in Sources */,
 				9F8E5F941BC269EA00DC10DB /* OperationFactoriesAssembly.m in Sources */,

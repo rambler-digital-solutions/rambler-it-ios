@@ -33,6 +33,7 @@
 }
 
 - (void)downloadToCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial
+                              delegate:(id<NSURLSessionDownloadDelegate>)delegate
                             completion:(LectureMaterialCompletionBlock)completionBlock {
     NSURL *videoUrl = [NSURL URLWithString:lectureMaterial.link];
     BOOL isVideoFromYoutube = [self.deriviator checkIfVideoIsFromYouTube:videoUrl];
@@ -40,43 +41,41 @@
         return;
     }
     NSString *identifier = [self.deriviator deriveIdentifierFromUrl:videoUrl];
-    if ([self.statesStorage isVideoDownloadingWithIdentifier:identifier]) {
-        return;
-    }
-    [self.statesStorage addVideoIdentifier:identifier];
-    
     NSString *filePath = [self filePathLocalVideoForVideoIdentifier:identifier];
     @weakify(self);
     [[XCDYouTubeClient defaultClient] getVideoWithIdentifier:identifier
-                                           completionHandler:^(XCDYouTubeVideo *video, NSError *error) {
-           @strongify(self);
-           if (error) {
-               [self.statesStorage removeVideoIdentifier:identifier];
-               completionBlock(nil, error);
-               return;
-           }
-           NSURL *streamURL = [self getStreamURLForVideo:video];
-           if (!streamURL) {
-               NSError *noStreamError = [NSError errorWithDomain:XCDYouTubeVideoErrorDomain
-                                                            code:XCDYouTubeErrorNoStreamAvailable
-                                                        userInfo:nil];
-               [self.statesStorage removeVideoIdentifier:identifier];
-               completionBlock(nil, noStreamError);
-               return;
-           }
-                                               
-                   dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                       NSData *urlData = [NSData dataWithContentsOfURL:streamURL];
-                       if ( urlData ) {
-                           dispatch_async(dispatch_get_main_queue(), ^{
-                               [urlData writeToFile:filePath
-                                         atomically:YES];
-                               [self.statesStorage removeVideoIdentifier:identifier];
-                               completionBlock(filePath, error);
-                           });
-                       }
-                   });
-       }];
+                                           completionHandler:^(XCDYouTubeVideo *video, NSError *error)
+    {
+            @strongify(self);
+            if (error) {
+                completionBlock(nil, error);
+                return;
+            }
+            NSURL *streamURL = [self getStreamURLForVideo:video];
+            if (!streamURL) {
+                NSError *noStreamError = [NSError errorWithDomain:XCDYouTubeVideoErrorDomain
+                                                             code:XCDYouTubeErrorNoStreamAvailable
+                                                         userInfo:nil];
+                completionBlock(nil, noStreamError);
+                return;
+            }
+                                        
+            NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+            NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration
+                                                                  delegate:delegate
+                                                             delegateQueue:nil];
+            session.sessionDescription = lectureMaterial.link;
+            NSURLSessionTask *task = [session dataTaskWithURL:streamURL
+                                            completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                if (data) {
+                    [data writeToFile:filePath
+                           atomically:YES];
+                }
+                completionBlock(filePath, error);
+            }];
+        
+            [task resume];
+    }];
 }
 
 - (void)removeFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial

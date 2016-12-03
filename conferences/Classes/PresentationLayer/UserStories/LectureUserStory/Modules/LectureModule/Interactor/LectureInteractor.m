@@ -62,12 +62,7 @@
 
 - (void)downloadVideoToCacheWithLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial {
     [self.lectureMaterialsService downloadToCacheLectureMaterial:lectureMaterial
-                                                      completion:^(NSString *localUrl, NSError *error) {
-        if (error) {
-            return;
-        }
-        [self.output didTriggerEndDownloadingVideo];
-    }];
+                                                        delegate:self];
 }
 - (void)removeVideoFromCacheWithLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial{
     [self.lectureMaterialsService removeFromCacheLectureMaterial:lectureMaterial
@@ -77,5 +72,11 @@
 - (void)didRemovedVideoFromDownloadingWithIdentifier:(NSString *)identifier {
     [self.output didTriggerEndDownloadingVideo];
 };
+
+#pragma mark - NSURLSessionDownloadDelegate
+
+- (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location {
+    [self.output didTriggerEndDownloadingVideo];
+}
 
 @end

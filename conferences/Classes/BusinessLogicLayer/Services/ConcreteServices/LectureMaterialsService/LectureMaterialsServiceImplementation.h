@@ -21,7 +21,11 @@
 #import <Foundation/Foundation.h>
 #import "LectureMaterialsService.h"
 
+@class LectureMaterialDownloadingManager;
+
 @interface LectureMaterialsServiceImplementation : NSObject <LectureMaterialsService>
+
+@property (nonatomic, strong) LectureMaterialDownloadingManager *lectureMaterialDownloadingManager;
 
 - (instancetype)initWithLectureMaterialsHandlers:(NSArray *)lectureMaterialsHandlers;
 

@@ -17,6 +17,7 @@ typedef void (^LectureMaterialCompletionBlock)(NSString *localUrl, NSError *erro
 - (id)obtainFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial;
 
 - (void)downloadToCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial
+                              delegate:(id<NSURLSessionDownloadDelegate>)delegate
                             completion:(LectureMaterialCompletionBlock)completionBlock;
 
 - (void)removeFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial

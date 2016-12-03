@@ -41,6 +41,7 @@
 #import "LectureMaterialsServiceImplementation.h"
 #import "VideoMaterialHandler.h"
 #import "PresentationLayerHelpersAssembly.h"
+#import "LectureMaterialDownloadingManager.h"
 
 @implementation ServiceComponentsAssembly
 
@@ -95,7 +96,10 @@
                                                   [initializer injectParameterWith:@[
                                                                                      [self videoLectureMaterialHandler]
                                                                                      ]];
+                                                
                                               }];
+                              [definition injectProperty:@selector(lectureMaterialDownloadingManager)
+                                                    with:[self lectureMaterialDownloadingManager]];
                           }];
 }
 
@@ -125,6 +129,13 @@
                                                     with:[self.presentationLayerHelpersAssembly youTubeIdentifierDeriviator]];
                               [definition injectProperty:@selector(statesStorage)
                                                     with:[self.presentationLayerHelpersAssembly videoMaterialDownloadingStatesStorage]];
+    }];
+}
+
+- (LectureMaterialDownloadingManager *)lectureMaterialDownloadingManager {
+    return [TyphoonDefinition withClass:[LectureMaterialDownloadingManager class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              definition.scope = TyphoonScopeSingleton;
     }];
 }
 
