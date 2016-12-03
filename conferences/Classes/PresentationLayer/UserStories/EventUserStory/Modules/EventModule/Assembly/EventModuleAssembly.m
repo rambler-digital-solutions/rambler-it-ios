@@ -68,6 +68,8 @@ static NSString *const kEventShareItemType = @"brand";
                                                       with:[self.serviceComponents eventStoreService]];
                                 [definition injectProperty:@selector(shareUrlBuilder)
                                                       with:[self eventShareUrlBuilder]];
+                                [definition injectProperty:@selector(locationService)
+                                                      with:[self.serviceComponents ramblerLocationService]];
              }];
 }
 

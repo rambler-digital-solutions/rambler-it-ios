@@ -23,3 +23,4 @@
 #pragma mark - User Activity Types
 
 NSString *const kLocationUserActivityType = @"ru.ramblerco.rambler.it.useractivity.location";
+NSString *const kEventUserActivityType = @"ru.ramblerco.rambler.it.useractivity.event";

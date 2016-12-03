@@ -41,7 +41,7 @@
  
  Method is used to obtain past events plain objects with particular object id
  
- @param metaEventId NSString object id
+ @param event NSString object id
  
  @return NSArray
  */
@@ -75,6 +75,26 @@
  @return Activity items
  */
 - (NSArray *)obtainActivityItemsForEvent:(EventPlainObject *)event;
+
+/**
+ @author Egor Tolstoy
+ 
+ The method tells the system to remember current module
+ 
+ @param event Current event
+ 
+ @return Module activity
+ */
+- (NSUserActivity *)registerUserActivityForEvent:(EventPlainObject *)event;
+
+/**
+ @author Egor Tolstoy
+ 
+ The method tells the system to forget current module
+ 
+ @return Module activity
+ */
+- (void)unregisterUserActivity:(NSUserActivity *)activity;
 
 @end
 

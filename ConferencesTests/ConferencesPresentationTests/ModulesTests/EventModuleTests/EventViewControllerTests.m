@@ -77,7 +77,7 @@
     
     // then
     OCMVerify([partialMockViewController cd_startObserveProtocol:@protocol(EventTableViewCellActionProtocol)]);
-    OCMVerify([self.mockOutput setupView]);
+    OCMVerify([self.mockOutput didTriggerViewReadyEvent]);
     [(id)partialMockViewController stopMocking];
     partialMockViewController = nil;
 }

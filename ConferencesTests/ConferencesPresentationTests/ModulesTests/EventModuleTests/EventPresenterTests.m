@@ -93,7 +93,7 @@
     OCMStub([self.interactorMock obtainPastEventsForEvent:OCMOCK_ANY]).andReturn(pastEvents);
     
     // when
-    [self.presenter setupView];
+    [self.presenter didTriggerViewReadyEvent];
     
     // then
     OCMVerify([self.viewMock configureViewWithEvent:event pastEvents:pastEvents]);

@@ -737,6 +737,7 @@
 		9FF99E541BC4317E006F15AF /* OperationSchedulerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF99E531BC4317E006F15AF /* OperationSchedulerTests.m */; };
 		9FFA8A281DF31F3400FB3C2E /* RamblerLocationStateStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFA8A271DF31F3400FB3C2E /* RamblerLocationStateStorage.m */; };
 		9FFA8A2C1DF3220500FB3C2E /* ApplicationConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFA8A2B1DF3220500FB3C2E /* ApplicationConstants.m */; };
+		9FFA8A2D1DF32B4700FB3C2E /* ApplicationConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFA8A2B1DF3220500FB3C2E /* ApplicationConstants.m */; };
 		9FFEAF051D2E41B4006E9649 /* DirectionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFEAF031D2E41B4006E9649 /* DirectionCollectionViewCell.m */; };
 		9FFEAF061D2E41B4006E9649 /* DirectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FFEAF041D2E41B4006E9649 /* DirectionCollectionViewCell.xib */; };
 		9FFEAF0C1D2E5CE0006E9649 /* AppleMapsLinkBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFEAF0B1D2E5CE0006E9649 /* AppleMapsLinkBuilder.m */; };
@@ -8985,6 +8986,7 @@
 				636E26E61D8FE807001ABB92 /* SpeakerServiceImplementation.m in Sources */,
 				6373829D1DD5E12F004246EC /* MessagesPresenter.m in Sources */,
 				636E26F11D8FEF29001ABB92 /* NSManagedObjectID+LJStringConversion.m in Sources */,
+				9FFA8A2D1DF32B4700FB3C2E /* ApplicationConstants.m in Sources */,
 				63770CB61DD61D6F0039AB0D /* MessageExtensionAssembly.m in Sources */,
 				6321841D1D9BFD22001BB7A7 /* Conference.xcdatamodeld in Sources */,
 				636E26E91D8FE82D001ABB92 /* TagServiceImplementation.m in Sources */,

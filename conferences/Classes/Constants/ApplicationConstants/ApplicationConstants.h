@@ -23,3 +23,4 @@
 #pragma mark - User Activity Types
 
 extern NSString *const kLocationUserActivityType;
+extern NSString *const kEventUserActivityType;

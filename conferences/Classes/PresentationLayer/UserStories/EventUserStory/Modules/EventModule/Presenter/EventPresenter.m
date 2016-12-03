@@ -37,12 +37,17 @@
 
 #pragma mark - EventViewOutput
 
-- (void)setupView {
+- (void)didTriggerViewReadyEvent {
     EventPlainObject *event = [self.interactor obtainEventWithObjectId:self.presenterStateStorage.eventObjectId];
     NSArray *pastEvents = [self.interactor obtainPastEventsForEvent:event];
     [self.view configureViewWithEvent:event
                            pastEvents:pastEvents];
     [self.interactor trackEventVisitForEvent:event];
+    self.presenterStateStorage.activity = [self.interactor registerUserActivityForEvent:event];
+}
+
+- (void)didTriggerViewWillDisappearEvent {
+    [self.interactor unregisterUserActivity:self.presenterStateStorage.activity];
 }
 
 - (void)didTapSignUpButtonWithEvent:(EventPlainObject *)event {
