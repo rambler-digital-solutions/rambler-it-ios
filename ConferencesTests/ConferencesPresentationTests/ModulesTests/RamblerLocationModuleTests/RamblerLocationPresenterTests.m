@@ -98,7 +98,7 @@
 - (void)testThatPresenterUnregistersUserActivityOnViewWillDisappearEvent {
     // given
     id mockActivity = [NSObject new];
-    OCMStub([self.mockStateStorage userActivity]).andReturn(mockActivity);
+    OCMStub([self.mockStateStorage activity]).andReturn(mockActivity);
     
     // when
     [self.presenter didTriggerViewWillDisappearEvent];
