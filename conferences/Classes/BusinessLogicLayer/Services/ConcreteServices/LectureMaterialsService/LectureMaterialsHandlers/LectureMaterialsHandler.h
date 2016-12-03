@@ -8,7 +8,7 @@
 
 @class LectureMaterialPlainObject;
 
-typedef void (^LectureMaterialDownloadCompletionBlock)(NSString *localUrl, NSError *error);
+typedef void (^LectureMaterialCompletionBlock)(NSString *localUrl, NSError *error);
 
 @protocol LectureMaterialsHandler <NSObject>
 
@@ -17,9 +17,9 @@ typedef void (^LectureMaterialDownloadCompletionBlock)(NSString *localUrl, NSErr
 - (id)obtainFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial;
 
 - (void)downloadToCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial
-                            completion:(LectureMaterialDownloadCompletionBlock)completionBlock;
+                            completion:(LectureMaterialCompletionBlock)completionBlock;
 
 - (void)removeFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial
-                                 error:(NSError **)error;
+                            completion:(LectureMaterialCompletionBlock)completionBlock ;
 
 @end

@@ -19,11 +19,10 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
+#import "LectureMaterialsHandler.h"
 
 @class NSPredicate;
 @class LectureMaterialPlainObject;
-
-typedef void (^LectureMaterialsCompletionBlock)(NSError *error);
 
 /**
  @author Artem Karpushin
@@ -35,8 +34,9 @@ typedef void (^LectureMaterialsCompletionBlock)(NSError *error);
 - (id)obtainFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial;
 
 - (void)downloadToCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial
-                            completion:(LectureMaterialsCompletionBlock)completionBlock;
+                            completion:(LectureMaterialCompletionBlock)completionBlock;
 
-- (void)removeFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial error:(NSError **)error;
+- (void)removeFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial
+                            completion:(LectureMaterialCompletionBlock)completionBlock;
 
 @end

@@ -78,10 +78,8 @@
 #pragma mark - LectureMaterialCacheDelegate
 
 - (void)didTapRemoveFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial {
-    __block NSError *error;
     ActionAlertBlock actionAlertBlock = ^{
-        [self.interactor removeVideoFromCacheWithLectureMaterial:lectureMaterial
-                                                           error:&error];
+        [self.interactor removeVideoFromCacheWithLectureMaterial:lectureMaterial];
         [self updateViewWithCurrentLecture];
 
     };

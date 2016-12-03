@@ -54,7 +54,7 @@
 }
 
 - (void)downloadToCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial
-                            completion:(LectureMaterialsCompletionBlock)completionBlock{
+                            completion:(LectureMaterialCompletionBlock)completionBlock {
     NSManagedObjectContext *rootSavingContext = [NSManagedObjectContext MR_rootSavingContext];
     
     for (id<LectureMaterialsHandler> handler in self.lectureMaterialsHandlers) {
@@ -68,7 +68,7 @@
                                                                                                            withValue:lectureMaterial.lectureMaterialId];
                      modelMaterial.localURL = localUrl;
                      [rootSavingContext MR_saveToPersistentStoreAndWait];
-                     completionBlock(error);
+                     completionBlock(localUrl, error);
                  }];
             }];
             break;
@@ -76,11 +76,12 @@
     }
 }
 
-- (void)removeFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial error:(NSError **)error{
+- (void)removeFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial
+                            completion:(LectureMaterialCompletionBlock)completionBlock {
     for (id<LectureMaterialsHandler> handler in self.lectureMaterialsHandlers) {
         if ([handler canHandleLectureMaterial:lectureMaterial]) {
             [handler removeFromCacheLectureMaterial:lectureMaterial
-                                              error:error];
+                                         completion:completionBlock];
             break;
         }
     }

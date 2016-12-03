@@ -33,7 +33,7 @@
 }
 
 - (void)downloadToCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial
-                            completion:(LectureMaterialDownloadCompletionBlock)completionBlock;{
+                            completion:(LectureMaterialCompletionBlock)completionBlock {
     NSURL *videoUrl = [NSURL URLWithString:lectureMaterial.link];
     BOOL isVideoFromYoutube = [self.deriviator checkIfVideoIsFromYouTube:videoUrl];
     if (!isVideoFromYoutube) {
@@ -86,9 +86,10 @@
 }
 
 - (void)removeFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial
-                                 error:(NSError **)error{
+                            completion:(LectureMaterialCompletionBlock)completionBlock {
+    NSError *error;
     [[NSFileManager defaultManager] removeItemAtPath:lectureMaterial.localURL
-                                               error:error];
+                                               error:&error];
     if (!error) {
         NSManagedObjectContext *rootSavingContext = [NSManagedObjectContext MR_rootSavingContext];
         LectureMaterialModelObject *modelObject = [LectureMaterialModelObject MR_findFirstByAttribute:LectureMaterialModelObjectAttributes.lectureMaterialId
@@ -96,6 +97,7 @@
         modelObject.localURL = nil;
         [rootSavingContext MR_saveToPersistentStoreAndWait];
     }
+    completionBlock(nil,error);
 }
 
 #pragma mark - Private Methods

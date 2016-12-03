@@ -61,17 +61,17 @@
 }
 
 - (void)downloadVideoToCacheWithLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial {
-    [self.lectureMaterialsService downloadToCacheLectureMaterial:lectureMaterial completion:^(NSError *error) {
+    [self.lectureMaterialsService downloadToCacheLectureMaterial:lectureMaterial
+                                                      completion:^(NSString *localUrl, NSError *error) {
         if (error) {
             return;
         }
         [self.output didTriggerEndDownloadingVideo];
     }];
 }
-- (void)removeVideoFromCacheWithLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial
-                                          error:(NSError *__autoreleasing *)error {
+- (void)removeVideoFromCacheWithLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial{
     [self.lectureMaterialsService removeFromCacheLectureMaterial:lectureMaterial
-                                                           error:error];
+                                                           completion:nil];
 }
 
 - (void)didRemovedVideoFromDownloadingWithIdentifier:(NSString *)identifier {

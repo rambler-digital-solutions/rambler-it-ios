@@ -73,6 +73,16 @@ static NSString *const kPlaceholderImageName = @"placeholder";
     return kVideoRecordTableViewCellHeight;
 }
 
+#pragma mark - IBAction
+
+- (IBAction)didTapRemoveFromCacheVideoMaterial:(id)sender {
+    [self.actionProxy didTapRemoveFromCacheLectureMaterial:self.videoMaterial];
+}
+
+- (IBAction)didTapDownloadToCacheVideoMaterial:(id)sender {
+    [self.actionProxy didTapDownloadToCacheLectureMaterial:self.videoMaterial];
+}
+
 #pragma mark - Private methods
 
 - (void)setupPreviewStateWithObject:(VideoRecordTableViewCellObject *)object {
@@ -86,14 +96,6 @@ static NSString *const kPlaceholderImageName = @"placeholder";
     self.titleLabel.hidden = NO;
     self.playIconImageView.hidden = YES;
     self.previewImageView.image = [UIImage imageNamed:kPlaceholderImageName];
-}
-
-- (IBAction)didTapRemoveFromCacheVideoMaterial:(id)sender {
-    [self.actionProxy didTapRemoveFromCacheLectureMaterial:self.videoMaterial];
-}
-
-- (IBAction)didTapDownloadToCacheVideoMaterial:(id)sender {
-    [self.actionProxy didTapDownloadToCacheLectureMaterial:self.videoMaterial];
 }
 
 @end

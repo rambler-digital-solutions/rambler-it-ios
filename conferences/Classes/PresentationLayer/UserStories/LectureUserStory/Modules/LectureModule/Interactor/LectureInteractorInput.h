@@ -68,8 +68,7 @@
 - (NSString *)deriveVideoIdFromYouTubeUrl:(NSURL *)videoUrl;
 
 - (void)downloadVideoToCacheWithLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial;
-- (void)removeVideoFromCacheWithLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial
-                                          error:(NSError **)error;
+- (void)removeVideoFromCacheWithLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial;
 - (void)updateDelegateStatesStorage;
 - (void)didRemovedVideoFromDownloadingWithIdentifier:(NSString *)identifier;
 
