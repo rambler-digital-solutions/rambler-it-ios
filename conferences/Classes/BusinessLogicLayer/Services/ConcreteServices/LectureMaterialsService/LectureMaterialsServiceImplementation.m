@@ -55,21 +55,16 @@
 
 - (void)downloadToCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial
                             completion:(LectureMaterialCompletionBlock)completionBlock {
-    NSManagedObjectContext *rootSavingContext = [NSManagedObjectContext MR_rootSavingContext];
     
     for (id<LectureMaterialsHandler> handler in self.lectureMaterialsHandlers) {
         if ([handler canHandleLectureMaterial:lectureMaterial]) {
             
             [handler downloadToCacheLectureMaterial:lectureMaterial
                                          completion:^(NSString *localUrl, NSError *error) {
-                 [rootSavingContext performBlockAndWait:^{
-                     NSString *attributeName = LectureMaterialModelObjectAttributes.lectureMaterialId;
-                     LectureMaterialModelObject *modelMaterial = [LectureMaterialModelObject MR_findFirstByAttribute:attributeName
-                                                                                                           withValue:lectureMaterial.lectureMaterialId];
-                     modelMaterial.localURL = localUrl;
-                     [rootSavingContext MR_saveToPersistentStoreAndWait];
+                 [self saveToPersistenStoreLectureMaterialWithID:lectureMaterial.lectureMaterialId
+                                                        localURL:localUrl];
+                 
                      completionBlock(localUrl, error);
-                 }];
             }];
             break;
         }
@@ -81,10 +76,28 @@
     for (id<LectureMaterialsHandler> handler in self.lectureMaterialsHandlers) {
         if ([handler canHandleLectureMaterial:lectureMaterial]) {
             [handler removeFromCacheLectureMaterial:lectureMaterial
-                                         completion:completionBlock];
+                                         completion:^(NSString *localUrl, NSError *error) {
+                      [self saveToPersistenStoreLectureMaterialWithID:lectureMaterial.lectureMaterialId
+                                                             localURL:localUrl];
+                      completionBlock(localUrl, error);
+                                         }];
             break;
         }
     }
 }
 
+#pragma mark - Private methods
+
+- (void)saveToPersistenStoreLectureMaterialWithID:(NSString *)lectureMaterialId
+                                         localURL:(NSString *)localURL {
+    NSManagedObjectContext *rootSavingContext = [NSManagedObjectContext MR_rootSavingContext];
+    [rootSavingContext performBlockAndWait:^{
+        NSString *nameAttribute = LectureMaterialModelObjectAttributes.lectureMaterialId;
+        LectureMaterialModelObject *modelObject = [LectureMaterialModelObject MR_findFirstByAttribute:nameAttribute
+                                                                                            withValue:lectureMaterialId
+                                                                                            inContext:rootSavingContext];
+        modelObject.localURL = localURL;
+        [rootSavingContext MR_saveToPersistentStoreAndWait];
+    }];
+}
 @end

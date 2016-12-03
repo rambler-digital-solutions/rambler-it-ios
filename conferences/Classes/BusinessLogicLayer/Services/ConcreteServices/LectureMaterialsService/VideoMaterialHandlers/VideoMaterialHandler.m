@@ -55,10 +55,16 @@
                completionBlock(nil, error);
                return;
            }
-           NSURL *streamURL = nil;
-           for (NSNumber *videoQuality in self.videoQualities) {
-               streamURL = video.streamURLs[videoQuality];
-               if (streamURL) {
+           NSURL *streamURL = [self getStreamURLForVideo:video];
+           if (!streamURL) {
+               NSError *noStreamError = [NSError errorWithDomain:XCDYouTubeVideoErrorDomain
+                                                            code:XCDYouTubeErrorNoStreamAvailable
+                                                        userInfo:nil];
+               [self.statesStorage removeVideoIdentifier:identifier];
+               completionBlock(nil, noStreamError);
+               return;
+           }
+                                               
                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                        NSData *urlData = [NSData dataWithContentsOfURL:streamURL];
                        if ( urlData ) {
@@ -70,18 +76,6 @@
                            });
                        }
                    });
-                   break;
-               }
-           }
-           
-           if (!streamURL) {
-               NSError *noStreamError = [NSError errorWithDomain:XCDYouTubeVideoErrorDomain
-                                                                code:XCDYouTubeErrorNoStreamAvailable
-                                                            userInfo:nil];
-               [self.statesStorage removeVideoIdentifier:identifier];
-               completionBlock(nil, noStreamError);
-               return;
-           }
        }];
 }
 
@@ -90,18 +84,21 @@
     NSError *error;
     [[NSFileManager defaultManager] removeItemAtPath:lectureMaterial.localURL
                                                error:&error];
-    if (!error) {
-        NSManagedObjectContext *rootSavingContext = [NSManagedObjectContext MR_rootSavingContext];
-        LectureMaterialModelObject *modelObject = [LectureMaterialModelObject MR_findFirstByAttribute:LectureMaterialModelObjectAttributes.lectureMaterialId
-                                                                                            withValue:lectureMaterial.lectureMaterialId inContext:rootSavingContext];
-        modelObject.localURL = nil;
-        [rootSavingContext MR_saveToPersistentStoreAndWait];
-    }
     completionBlock(nil,error);
 }
 
 #pragma mark - Private Methods
 
+- (NSURL *)getStreamURLForVideo:(XCDYouTubeVideo *)video {
+    NSURL *streamURL = nil;
+    for (NSNumber *videoQuality in self.videoQualities) {
+        streamURL = video.streamURLs[videoQuality];
+        if (streamURL) {
+            return streamURL;
+        }
+    }
+    return nil;
+}
 - (NSArray *) videoQualities
 {
     return @[@(XCDYouTubeVideoQualityHD720),
