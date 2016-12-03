@@ -45,6 +45,10 @@
 	</dict>
 	<key>NSCalendarsUsageDescription</key>
 	<string>Приложению требуется доступ к календарю</string>
+	<key>NSUserActivityTypes</key>
+	<array>
+		<string>ru.ramblerco.rambler.it.useractivity.location</string>
+	</array>
 	<key>UIApplicationShortcutItems</key>
 	<array>
 		<dict>

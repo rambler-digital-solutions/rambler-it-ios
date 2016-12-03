@@ -42,5 +42,23 @@
  */
 - (NSURL *)obtainRamblerLocationUrl;
 
+/**
+ @author Egor Tolstoy
+ 
+ The method tells the system to remember current module
+ 
+ @return Module activity
+ */
+- (NSUserActivity *)registerUserActivity;
+
+/**
+ @author Egor Tolstoy
+ 
+ The method tells the system to forget current module
+ 
+ @return Module activity
+ */
+- (void)unregisterUserActivity:(NSUserActivity *)activity;
+
 @end
 

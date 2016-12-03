@@ -736,6 +736,7 @@
 		9FF99E511BC42FF6006F15AF /* OperationSchedulerImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF99E501BC42FF6006F15AF /* OperationSchedulerImplementation.m */; };
 		9FF99E541BC4317E006F15AF /* OperationSchedulerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF99E531BC4317E006F15AF /* OperationSchedulerTests.m */; };
 		9FFA8A281DF31F3400FB3C2E /* RamblerLocationStateStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFA8A271DF31F3400FB3C2E /* RamblerLocationStateStorage.m */; };
+		9FFA8A2C1DF3220500FB3C2E /* ApplicationConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFA8A2B1DF3220500FB3C2E /* ApplicationConstants.m */; };
 		9FFEAF051D2E41B4006E9649 /* DirectionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFEAF031D2E41B4006E9649 /* DirectionCollectionViewCell.m */; };
 		9FFEAF061D2E41B4006E9649 /* DirectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FFEAF041D2E41B4006E9649 /* DirectionCollectionViewCell.xib */; };
 		9FFEAF0C1D2E5CE0006E9649 /* AppleMapsLinkBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFEAF0B1D2E5CE0006E9649 /* AppleMapsLinkBuilder.m */; };
@@ -1916,6 +1917,8 @@
 		9FF99E531BC4317E006F15AF /* OperationSchedulerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OperationSchedulerTests.m; path = CoreLayer/OperationScheduler/OperationSchedulerTests.m; sourceTree = "<group>"; };
 		9FFA8A261DF31F3400FB3C2E /* RamblerLocationStateStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RamblerLocationStateStorage.h; sourceTree = "<group>"; };
 		9FFA8A271DF31F3400FB3C2E /* RamblerLocationStateStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RamblerLocationStateStorage.m; sourceTree = "<group>"; };
+		9FFA8A2A1DF3220500FB3C2E /* ApplicationConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ApplicationConstants.h; path = ApplicationConstants/ApplicationConstants.h; sourceTree = "<group>"; };
+		9FFA8A2B1DF3220500FB3C2E /* ApplicationConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ApplicationConstants.m; path = ApplicationConstants/ApplicationConstants.m; sourceTree = "<group>"; };
 		9FFEAF021D2E41B4006E9649 /* DirectionCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DirectionCollectionViewCell.h; path = Cells/DirectionCollectionViewCell.h; sourceTree = "<group>"; };
 		9FFEAF031D2E41B4006E9649 /* DirectionCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DirectionCollectionViewCell.m; path = Cells/DirectionCollectionViewCell.m; sourceTree = "<group>"; };
 		9FFEAF041D2E41B4006E9649 /* DirectionCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DirectionCollectionViewCell.xib; path = Cells/DirectionCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -4372,6 +4375,7 @@
 		63FDCDDE1BBDBA2A00A43B60 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				9FFA8A291DF321F300FB3C2E /* ApplicationConstants */,
 				63ECC4131CA81E4000439A01 /* ErrorConstants */,
 				631808601C4A66E900A61E7D /* StringConstants */,
 			);
@@ -8485,6 +8489,15 @@
 			name = OperationScheduler;
 			sourceTree = "<group>";
 		};
+		9FFA8A291DF321F300FB3C2E /* ApplicationConstants */ = {
+			isa = PBXGroup;
+			children = (
+				9FFA8A2A1DF3220500FB3C2E /* ApplicationConstants.h */,
+				9FFA8A2B1DF3220500FB3C2E /* ApplicationConstants.m */,
+			);
+			name = ApplicationConstants;
+			sourceTree = "<group>";
+		};
 		9FFEAF081D2E5CB4006E9649 /* MapLinkBuilder */ = {
 			isa = PBXGroup;
 			children = (
@@ -9312,6 +9325,7 @@
 				9F1830F51BC14444000E21A5 /* NSString+RCFCapitalization.m in Sources */,
 				2BDDAB551D363D34007FD547 /* ROSPonsomizerImplementation.m in Sources */,
 				63F613821CB00A220002AEF0 /* EventDataDisplayManager.m in Sources */,
+				9FFA8A2C1DF3220500FB3C2E /* ApplicationConstants.m in Sources */,
 				63F6138B1CB00A220002AEF0 /* LectureInteractor.m in Sources */,
 				9F8E5F7C1BC2584500DC10DB /* ResponseDeserializersAssembly.m in Sources */,
 				2B2064791D3F9CE900246C8D /* _LectureModelObject.m in Sources */,
