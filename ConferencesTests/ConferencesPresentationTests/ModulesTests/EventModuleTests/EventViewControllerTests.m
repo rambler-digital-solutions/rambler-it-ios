@@ -104,6 +104,17 @@
     OCMVerify([self.mockDataDisplayManager configureDataDisplayManagerWithEvent:event pastEvents:pastEvents]);
 }
 
+- (void)testThatViewNotifiesPresenterAboutDisappearEvent {
+    // given
+    
+    
+    // when
+    [self.viewController viewWillDisappear:YES];
+    
+    // then
+    OCMVerify([self.mockOutput didTriggerViewWillDisappearEvent]);
+}
+
 - (void)testSuccesConfigureHeaderModule {
     // given
     EventPlainObject *event = [EventPlainObject new];
