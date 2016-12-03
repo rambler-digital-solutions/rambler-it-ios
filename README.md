@@ -1,5 +1,5 @@
 ### Overview
-![Travis CI](https://travis-ci.org/rambler-digital-solutions/rambler-it-ios.svg?branch=develop)
+[![Travis CI](https://travis-ci.org/rambler-digital-solutions/rambler-it-ios.svg?branch=develop)](https://travis-ci.org/rambler-digital-solutions/rambler-it-ios)
 
 **Rambler&IT** is an open source application, which highlights the basic approaches to mobile application architecture used in *Rambler&Co*. You can download it from the [AppStore](https://itunes.apple.com/us/app/rambler-it/id1145829115).
 
