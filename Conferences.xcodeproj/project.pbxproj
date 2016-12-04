@@ -25,8 +25,6 @@
 		028E446F1DF184F100734E84 /* SearchFacadeImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 028E446E1DF184F100734E84 /* SearchFacadeImplementation.m */; };
 		028E44731DF19BA900734E84 /* PredicateConfiguratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 028E44721DF19BA900734E84 /* PredicateConfiguratorTests.m */; };
 		028E44761DF1B81C00734E84 /* SearchFacadeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 028E44751DF1B81C00734E84 /* SearchFacadeTests.m */; };
-		1F78357EBF30489533FBC867 /* libPods-Conferences-ConferencesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C46B774BA2D16C41C04D78BA /* libPods-Conferences-ConferencesTests.a */; };
-		234C76A5941B9A10462172CC /* libPods-Conferences.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C7A972E2814B586E4073760 /* libPods-Conferences.a */; };
 		2AA222A5031CC7BA4A19B3EF /* libPods-RamblerMessageExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C1AA7D4ECB1DA53BEC254E4 /* libPods-RamblerMessageExtension.a */; };
 		2B01CEBE1D50A55900DA8E66 /* MetaEventServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B01CEBD1D50A55900DA8E66 /* MetaEventServiceTests.m */; };
 		2B05E1611D50FEFC00E017AB /* SpeakerInfoCellObjectBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B05E1601D50FEFC00E017AB /* SpeakerInfoCellObjectBuilder.m */; };
@@ -8708,7 +8706,7 @@
 					63BDBBC01D87E3DE006E8A15 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = UM246WFXVS;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -9736,8 +9734,10 @@
 				INFOPLIST_FILE = RamblerMessageExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ru.ramblerco.rambler.it.RamblerMessageExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.ramblerco.rambler.it.extension-imessage";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6021fa01-5836-420e-a8ec-53ea5e574e9f";
+				PROVISIONING_PROFILE_SPECIFIER = "IT iMessage Development";
 				SKIP_INSTALL = YES;
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
@@ -9754,14 +9754,16 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CODE_SIGN_ENTITLEMENTS = RamblerMessageExtension/RamblerMessageExtension.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = UM246WFXVS;
 				INFOPLIST_FILE = RamblerMessageExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ru.ramblerco.rambler.it.RamblerMessageExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.ramblerco.rambler.it.extension-imessage";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "f8bf6152-321f-4e47-a448-2804490165ba";
+				PROVISIONING_PROFILE_SPECIFIER = "IT iMessage AppStore";
 				SKIP_INSTALL = YES;
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
@@ -9780,11 +9782,11 @@
 				CODE_SIGN_ENTITLEMENTS = RamblerMessageExtension/RamblerMessageExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = UM246WFXVS;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = RamblerMessageExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ru.ramblerco.rambler.it.RamblerMessageExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.ramblerco.rambler.it.extension-imessage";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				VALID_ARCHS = "arm64 armv7 armv7s";
