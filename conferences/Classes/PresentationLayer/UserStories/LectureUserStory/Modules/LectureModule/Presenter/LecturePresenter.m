@@ -89,6 +89,7 @@
 - (void)didTapDownloadToCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial {
     ActionAlertBlock actionAlertBlock = ^{
         [self.interactor downloadVideoToCacheWithLectureMaterial:lectureMaterial];
+        // не то
         [self updateViewWithCurrentLecture];
     };
     [self.router showAlertConfirmationDownloadWithActionBlock:actionAlertBlock];

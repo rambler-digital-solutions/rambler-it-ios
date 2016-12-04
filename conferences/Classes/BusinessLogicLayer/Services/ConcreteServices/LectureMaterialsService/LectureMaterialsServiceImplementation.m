@@ -57,8 +57,8 @@
 
 - (void)downloadToCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial
                               delegate:(id<NSURLSessionDownloadDelegate>)delegate {
-    [self.lectureMaterialDownloadingManager updateDelegate:delegate
-                                                    forURL:lectureMaterial.link];
+    [self.lectureMaterialDownloadingManager registerDelegate:delegate
+                                                      forURL:lectureMaterial.link];
     for (id<LectureMaterialsHandler> handler in self.lectureMaterialsHandlers) {
         if ([handler canHandleLectureMaterial:lectureMaterial]) {
             @weakify(self);

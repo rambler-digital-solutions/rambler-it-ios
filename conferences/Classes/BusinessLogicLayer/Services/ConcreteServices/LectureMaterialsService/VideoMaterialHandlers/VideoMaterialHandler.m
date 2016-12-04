@@ -41,7 +41,7 @@
         return;
     }
     NSString *identifier = [self.deriviator deriveIdentifierFromUrl:videoUrl];
-    NSString *filePath = [self filePathLocalVideoForVideoIdentifier:identifier];
+//    NSString *filePath = [self filePathLocalVideo];
     @weakify(self);
     [[XCDYouTubeClient defaultClient] getVideoWithIdentifier:identifier
                                            completionHandler:^(XCDYouTubeVideo *video, NSError *error)
@@ -65,13 +65,17 @@
                                                                   delegate:delegate
                                                              delegateQueue:nil];
             session.sessionDescription = lectureMaterial.link;
-            NSURLSessionTask *task = [session dataTaskWithURL:streamURL
-                                            completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                if (data) {
-                    [data writeToFile:filePath
-                           atomically:YES];
-                }
-                completionBlock(filePath, error);
+//            NSURLSessionTask *task = [session dataTaskWithURL:streamURL
+//                                            completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+//                if (data) {
+//                    [data writeToFile:filePath
+//                           atomically:YES];
+//                }
+//                completionBlock(filePath, error);
+//            }];
+        
+            NSURLSessionDownloadTask *task = [session downloadTaskWithURL:streamURL completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+                
             }];
         
             [task resume];
@@ -105,12 +109,10 @@
              @(XCDYouTubeVideoQualitySmall240) ];
 }
 
-- (NSString *)filePathLocalVideoForVideoIdentifier:(NSString *)identifier {
+- (NSString *)filePathLocalVideo {
     NSString  *documentsDirectory = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
-    NSString *fileName = [NSString stringWithFormat:@"%@%@", identifier,RITFormatVideo];
     NSString  *filePath = [NSString stringWithFormat:@"%@%@", documentsDirectory,RITRelativePath];
-    NSString  *fileFullPath = [NSString stringWithFormat:@"%@/%@", filePath,fileName];
-    return fileFullPath;
+    return filePath;
 }
 
 @end
