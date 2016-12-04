@@ -7,6 +7,9 @@
 //
 
 #import "LectureMaterialDownloadingManager.h"
+#import "LectureMaterialModelObject.h"
+#import "VideoMaterialHandlerConstants.h"
+#import <MagicalRecord/MagicalRecord.h>
 #import <objc/runtime.h>
 
 @interface LectureMaterialDownloadingManager ()
@@ -45,9 +48,15 @@
 // TODO: сохранять в базу (проблема с completionBlock)
 // TODO: удалять по всем завершающим операциям
 
+#pragma mark - NSURLSessionDownloadDelegate
+
 - (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location {
+    NSString *materialLink = session.sessionDescription;
+    NSString *destinationPath = [self filePathLocalVideo];
+    [self moveLectureMaterialFileFromPath:location.absoluteString toPath:destinationPath];
+    [self updateLectureMaterialWithLink:materialLink filePath:location.absoluteString];
     id delegate = [self.delegatesByIdentifier objectForKey:session.sessionDescription];
-    [self.delegatesByIdentifier removeObjectForKey:session.sessionDescription];
+    [self.delegatesByIdentifier removeObjectForKey:materialLink];
     [delegate URLSession:session downloadTask:downloadTask didFinishDownloadingToURL:location];
 }
 
@@ -60,8 +69,10 @@ didCompleteWithError:(nullable NSError *)error {
     }
 }
 
-- (BOOL)respondsToSelector:(SEL)aSelector {
-    return [self selector_belongsToProtocol:aSelector protocol:@protocol(NSURLSessionDownloadDelegate)];
+#pragma mark - NSObject
+
+- (BOOL)respondsToSelector:(SEL)selector {
+    return [self isSelector:selector conformToProtocol:@protocol(NSURLSessionDownloadDelegate)];
 }
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
@@ -84,18 +95,44 @@ didCompleteWithError:(nullable NSError *)error {
 
 #pragma mark - Private methods 
 
-// в категорию
-- (BOOL)selector_belongsToProtocol:(SEL)selector protocol:(Protocol *)protocol {
-    for (int optionbits = 0; optionbits < (1 << 2); optionbits++) {
-        BOOL required = optionbits & 1;
-        BOOL instance = !(optionbits & (1 << 1));
-        
-        struct objc_method_description hasMethod = protocol_getMethodDescription(protocol, selector, required, instance);
-        if (hasMethod.name || hasMethod.types) {
-            return YES;
+- (void)moveLectureMaterialFileFromPath:(NSString *)sourcePath toPath:(NSString *)destinationPath {
+    NSError *error;
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    BOOL isMove = [fileManager moveItemAtPath:sourcePath
+                                       toPath:destinationPath
+                                        error:&error];
+    if (!isMove) {
+        [fileManager removeItemAtPath:sourcePath
+                                error:&error];
+    }
+}
+
+- (void)updateLectureMaterialWithLink:(NSString *)link filePath:(NSString *)filePath {
+    NSManagedObjectContext *rootContext = [NSManagedObjectContext MR_rootSavingContext];
+    [rootContext performBlockAndWait:^{
+        NSString *attributeName = LectureMaterialModelObjectAttributes.link;
+        NSArray *materials = [LectureMaterialModelObject MR_findByAttribute:attributeName withValue:link];
+        for (LectureMaterialModelObject *material in materials) {
+            material.localURL = filePath;
         }
+        [rootContext MR_saveToPersistentStoreAndWait];
+    }];
+}
+
+- (BOOL)isSelector:(SEL)selector conformToProtocol:(Protocol *)protocol {
+    struct objc_method_description methodRequired = protocol_getMethodDescription(protocol, selector, YES, YES);
+    struct objc_method_description methodNonRequired = protocol_getMethodDescription(protocol, selector, NO, YES);
+    
+    if (methodRequired.name || methodNonRequired.name) {
+        return YES;
     }
     return NO;
+}
+
+- (NSString *)filePathLocalVideo {
+    NSString  *documentsDirectory = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
+    NSString  *filePath = [NSString stringWithFormat:@"%@%@", documentsDirectory,RITRelativePath];
+    return filePath;
 }
 
 @end
