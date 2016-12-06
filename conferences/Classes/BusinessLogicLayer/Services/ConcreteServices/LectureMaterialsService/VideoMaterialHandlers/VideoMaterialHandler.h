@@ -11,7 +11,7 @@
 
 @class YouTubeIdentifierDeriviator;
 
-@interface VideoMaterialHandler : NSObject <LectureMaterialsHandler, NSURLSessionDataDelegate>
+@interface VideoMaterialHandler : NSObject <LectureMaterialsHandler>
 
 @property (nonatomic, strong) YouTubeIdentifierDeriviator *deriviator;
 

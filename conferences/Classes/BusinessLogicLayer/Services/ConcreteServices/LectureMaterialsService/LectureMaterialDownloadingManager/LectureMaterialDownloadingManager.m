@@ -51,15 +51,16 @@
 
 - (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location {
     NSString *materialLink = session.sessionDescription;
-//    NSString *destinationPath = [self filePathLocalVideo];
-//    [self moveLectureMaterialFileFromPath:location.absoluteString
-//                                   toPath:destinationPath];
-//    [self updateLectureMaterialWithLink:materialLink
-//                               filePath:location.absoluteString];
-    id delegate = [self.delegatesByIdentifier objectForKey:session.sessionDescription];
+    NSString *destinationPath = [self cachedFilePathLocalVideoFromPath:location.path];
+    [self moveLectureMaterialFileFromPath:location.path
+                                   toPath:destinationPath];
+    [self updateLectureMaterialWithLink:materialLink
+                               filePath:destinationPath];
+    NSURL *newPath = [NSURL fileURLWithPath:destinationPath];
+    id delegate = [self.delegatesByIdentifier objectForKey:materialLink];
     [self.delegatesByIdentifier removeObjectForKey:materialLink];
     [delegate URLSession:session downloadTask:downloadTask
-                    didFinishDownloadingToURL:location];
+                    didFinishDownloadingToURL:newPath];
 }
 
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(nullable NSError *)error {
@@ -77,42 +78,46 @@
     }
 }
 
-#pragma mark - Runtime methods
-
-- (BOOL)respondsToSelector:(SEL)selector {
-    return [self isSelector:selector conformToProtocol:@protocol(NSURLSessionDownloadDelegate)];
-}
-
-- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
-    return [LectureMaterialDownloadingManager instanceMethodSignatureForSelector:aSelector];
-}
-
-- (void)forwardInvocation:(NSInvocation *)invocation {
-    SEL selector = [invocation selector];
-    id argument = nil;
-    [invocation getArgument:&argument atIndex:2];
-    if (![argument isKindOfClass:[NSURLSession class]]) {
-        return;
-    }
-    NSURLSession *session = argument;
-    id delegate = [self.delegatesByIdentifier objectForKey:session.sessionDescription];
-    if ([delegate respondsToSelector:selector]) {
-        [invocation invokeWithTarget:delegate];
-    }
-}
+//#pragma mark - Runtime methods
+//
+//- (BOOL)respondsToSelector:(SEL)selector {
+//    if ([self respondsToSelector:selector]) {
+//        return YES;
+//    }
+//    return [self isSelector:selector conformToProtocol:@protocol(NSURLSessionDownloadDelegate)];
+//}
+//
+//- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
+//    return [LectureMaterialDownloadingManager instanceMethodSignatureForSelector:aSelector];
+//}
+//
+//- (void)forwardInvocation:(NSInvocation *)invocation {
+//    SEL selector = [invocation selector];
+//    id argument = nil;
+//    [invocation getArgument:&argument atIndex:2];
+//    if (![argument isKindOfClass:[NSURLSession class]]) {
+//        return;
+//    }
+//    NSURLSession *session = argument;
+//    id delegate = [self.delegatesByIdentifier objectForKey:session.sessionDescription];
+//    if ([delegate respondsToSelector:selector]) {
+//        [invocation invokeWithTarget:delegate];
+//    }
+//}
 
 #pragma mark - Private methods 
 
-- (void)moveLectureMaterialFileFromPath:(NSString *)sourcePath toPath:(NSString *)destinationPath {
+- (void)moveLectureMaterialFileFromPath:(NSString *)sourcePath
+                                 toPath:(NSString *)destinationPath {
     NSError *error;
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    BOOL isMove = [fileManager moveItemAtPath:sourcePath
-                                       toPath:destinationPath
-                                        error:&error];
-    if (!isMove) {
-        [fileManager removeItemAtPath:sourcePath
-                                error:&error];
-    }
+    [fileManager moveItemAtPath:sourcePath
+                         toPath:destinationPath
+     
+                          error:&error];
+    
+    [fileManager removeItemAtPath:sourcePath
+                            error:&error];
 }
 
 - (void)updateLectureMaterialWithLink:(NSString *)link filePath:(NSString *)filePath {
@@ -138,10 +143,12 @@
     return NO;
 }
 
-- (NSString *)filePathLocalVideo {
+- (NSString *)cachedFilePathLocalVideoFromPath:(NSString *)oldPath {
     NSString  *documentsDirectory = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
-    NSString  *filePath = [NSString stringWithFormat:@"%@%@", documentsDirectory,RITRelativePath];
-    return filePath;
+    NSString *fileName = [oldPath lastPathComponent];
+    documentsDirectory = [documentsDirectory stringByAppendingPathComponent:RITRelativePath];
+    documentsDirectory = [documentsDirectory stringByAppendingPathComponent:fileName];
+    return documentsDirectory;
 }
 
 @end

@@ -7,4 +7,4 @@
 //
 
 static NSString *const RITFormatVideo = @".mp4";
-static NSString *const RITRelativePath = @"/Cached";
+static NSString *const RITRelativePath = @"Cached";

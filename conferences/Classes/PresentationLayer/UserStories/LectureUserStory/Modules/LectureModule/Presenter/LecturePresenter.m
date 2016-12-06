@@ -118,7 +118,7 @@
                                                                     link:link
                                                            isDownloading:@YES
                                                                  percent:@0];
-    [self updateViewWithCurrentLecture];
+    [self.view updateViewWithLecture:self.stateStorage.lectureViewModel];
 }
 
 - (void)didTriggerEndDownloadingLectureMaterialWithLink:(NSString *)link {
@@ -126,7 +126,7 @@
                                                                     link:link
                                                            isDownloading:@NO
                                                                  percent:0];
-    [self updateViewWithCurrentLecture];
+    [self.view updateViewWithLecture:self.stateStorage.lectureViewModel];
 }
 
 - (void)didTriggerRemoveDownloadingLectureMaterialWithLink:(NSString *)link {
@@ -134,9 +134,10 @@
 }
 
 #pragma mark - Private methods
-
+// надо обновлять конкретный материал и view и viewmodel
+//удаление пробрасывать действте после завершения (мб не надо так как все в мейнтреде)
+// перемещение и другая обработка ошибок
 - (void)updateViewWithCurrentLecture {
-    [self.view updateViewWithLecture:self.stateStorage.lectureViewModel];
 }
 
 @end

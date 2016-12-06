@@ -80,30 +80,30 @@
 }
 
 - (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location {
-//    NSString *link = session.sessionDescription;
-//    @weakify(self);
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//        @strongify(self);
-//        [self.output didTriggerEndDownloadingLectureMaterialWithLink:link];
-//    });
+    NSString *link = session.sessionDescription;
+    @weakify(self);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        @strongify(self);
+        [self.output didTriggerEndDownloadingLectureMaterialWithLink:link];
+    });
 }
 
 - (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite {
-//    @weakify(self);
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//        @strongify(self);
-//        CGFloat percent = totalBytesWritten * 100.0 / totalBytesExpectedToWrite;
-//        [self.output didTriggerDownloadingLectureMaterialWithLink:session.sessionDescription
-//                                                          percent:percent];
-//    });
+    @weakify(self);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        @strongify(self);
+        CGFloat percent = totalBytesWritten * 100.0 / totalBytesExpectedToWrite;
+        [self.output didTriggerDownloadingLectureMaterialWithLink:session.sessionDescription
+                                                          percent:percent];
+    });
 }
-
-- (void)URLSession:(NSURLSession *)session didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler {
-    completionHandler(NSURLSessionAuthChallengeUseCredential, [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust]);
-}
-
--(void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task willPerformHTTPRedirection:(NSHTTPURLResponse *)response newRequest:(NSURLRequest *)request completionHandler:(void (^)(NSURLRequest * _Nullable))completionHandler {
-    completionHandler(request);
-}
+//
+//- (void)URLSession:(NSURLSession *)session didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler {
+//    completionHandler(NSURLSessionAuthChallengeUseCredential, [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust]);
+//}
+//
+//-(void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task willPerformHTTPRedirection:(NSHTTPURLResponse *)response newRequest:(NSURLRequest *)request completionHandler:(void (^)(NSURLRequest * _Nullable))completionHandler {
+//    completionHandler(request);
+//}
 
 @end
