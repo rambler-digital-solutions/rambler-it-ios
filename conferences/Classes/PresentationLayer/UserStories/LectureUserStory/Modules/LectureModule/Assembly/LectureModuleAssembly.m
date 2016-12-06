@@ -33,6 +33,7 @@
 #import "VideoRecordTableViewCellObjectMapper.h"
 #import "LectureInfoTableViewCellObjectMapper.h"
 #import "LectureInfoTableViewCellCalculator.h"
+#import "LectureViewModelMapper.h"
 
 static NSString *const kLectureShareItemType = @"lecture";
 
@@ -65,8 +66,7 @@ static NSString *const kLectureShareItemType = @"lecture";
                                                       with:[self lectureShareUrlBuilder]];
                                 [definition injectProperty:@selector(deriviator)
                                                       with:[self.presentationLayerHelpersAssembly youTubeIdentifierDeriviator]];
-                                [definition injectProperty:@selector(statesStorage)
-                                                      with:[self.presentationLayerHelpersAssembly videoMaterialDownloadingStatesStorage]];
+                                
              }];
 }
 
@@ -81,6 +81,9 @@ static NSString *const kLectureShareItemType = @"lecture";
                                                       with:[self routerLecture]];
                                 [definition injectProperty:@selector(stateStorage)
                                                       with:[self presenterStateStorageLecture]];
+                                [definition injectProperty:@selector(mapperLectureViewModel)
+                                                      with:[self lectureViewModelMapper]];
+                                
             }];
 }
 
@@ -143,8 +146,6 @@ static NSString *const kLectureShareItemType = @"lecture";
                                                     with:[self.presentationLayerHelpersAssembly videoThumbnailGenerator]];
                               [definition injectProperty:@selector(deriviator)
                                                     with:[self.presentationLayerHelpersAssembly youTubeIdentifierDeriviator]];
-                              [definition injectProperty:@selector(statesStorage)
-                                                    with:[self.presentationLayerHelpersAssembly videoMaterialDownloadingStatesStorage]];
                           }];
 }
             
@@ -160,4 +161,7 @@ static NSString *const kLectureShareItemType = @"lecture";
     return [TyphoonDefinition withClass:[LectureInfoTableViewCellCalculator class]];
 }
 
+- (LectureViewModelMapper *)lectureViewModelMapper {
+    return [TyphoonDefinition withClass:[LectureViewModelMapper class]];
+}
 @end

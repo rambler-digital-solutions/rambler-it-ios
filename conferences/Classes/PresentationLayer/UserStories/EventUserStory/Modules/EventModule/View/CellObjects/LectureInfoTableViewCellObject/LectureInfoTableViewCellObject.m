@@ -20,7 +20,7 @@
 
 #import "LectureInfoTableViewCellObject.h"
 #import "LectureInfoTableViewCell.h"
-#import "LecturePlainObject.h"
+#import "LectureViewModel.h"
 #import "SpeakerPlainObject.h"
 
 @interface LectureInfoTableViewCellObject ()
@@ -40,7 +40,7 @@
 
 #pragma mark - Initialization
 
-- (instancetype)initWithLecture:(LecturePlainObject *)lecture
+- (instancetype)initWithLecture:(LectureViewModel *)lecture
             continueReadingFlag:(BOOL)continueReadingFlag
                          height:(CGFloat)height {
     self = [super init];
@@ -61,7 +61,7 @@
     return self;
 }
 
-+ (instancetype)objectWithLecture:(LecturePlainObject *)lecture
++ (instancetype)objectWithLecture:(LectureViewModel *)lecture
               continueReadingFlag:(BOOL)continueReadingFlag
                            height:(CGFloat)height{
     

@@ -18,8 +18,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "LectureInteractorInput.h"
+#import "LectureMaterialDownloadingDelegate.h"
 
 @protocol LectureService;
 @protocol ROSPonsomizer;
@@ -27,9 +28,8 @@
 @protocol ShareUrlBuilder;
 @protocol LectureMaterialsService;
 @class YouTubeIdentifierDeriviator;
-@class VideoMaterialDownloadingStatesStorage;
 
-@interface LectureInteractor : NSObject <LectureInteractorInput, NSURLSessionDownloadDelegate>
+@interface LectureInteractor : NSObject <LectureInteractorInput, LectureMaterialDownloadingDelegate>
 
 @property (nonatomic, strong) id<LectureService> lectureService;
 @property (nonatomic, strong) id<LectureMaterialsService> lectureMaterialsService;
@@ -37,7 +37,6 @@
 @property (nonatomic, strong) id<ShareUrlBuilder> shareUrlBuilder;
 @property (nonatomic, strong) YouTubeIdentifierDeriviator *deriviator;
 @property (nonatomic, weak) id<LectureInteractorOutput> output;
-@property (nonatomic, strong) VideoMaterialDownloadingStatesStorage *statesStorage;
 
 @end
 

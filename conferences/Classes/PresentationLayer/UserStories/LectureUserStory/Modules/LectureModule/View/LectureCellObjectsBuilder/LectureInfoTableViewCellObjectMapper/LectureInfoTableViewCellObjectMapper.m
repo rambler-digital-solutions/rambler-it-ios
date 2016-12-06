@@ -9,11 +9,11 @@
 #import "LectureInfoTableViewCellObjectMapper.h"
 #import "LectureInfoTableViewCellCalculator.h"
 #import "LectureInfoTableViewCellObject.h"
-#import "LecturePlainObject.h"
+#import "LectureViewModel.h"
 
 @implementation LectureInfoTableViewCellObjectMapper
 
-- (id<NICellObject>)lectureInfoTableViewCellObjectWithLecture:(LecturePlainObject *)lecture
+- (id<NICellObject>)lectureInfoTableViewCellObjectWithLecture:(LectureViewModel *)lecture
                                           continueReadingFlag:(BOOL)continueReadingFlag {
     CGFloat heightCell = [self.calculator calculateHeightForLectureInfoCellWithLecture:lecture
                                                                    continueReadingFlag:continueReadingFlag];

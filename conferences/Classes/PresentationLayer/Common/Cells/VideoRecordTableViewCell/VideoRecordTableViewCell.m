@@ -22,7 +22,7 @@
 #import "VideoRecordTableViewCellObject.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "Extensions/UIResponder+CDProxying/UIResponder+CDProxying.h"
-#import "LectureMaterialPlainObject.h"
+#import "LectureMaterialViewModel.h"
 #import "LectureMaterialCacheDelegate.h"
 
 static CGFloat const kVideoRecordTableViewCellHeight = 168.0f;
@@ -32,7 +32,7 @@ static NSString *const kPlaceholderImageName = @"placeholder";
 @interface VideoRecordTableViewCell ()
 
 @property (nonatomic, weak) id <LectureMaterialCacheDelegate> actionProxy;
-@property (nonatomic, strong) LectureMaterialPlainObject *videoMaterial;
+@property (nonatomic, strong) LectureMaterialViewModel *videoMaterial;
 
 @end
 
@@ -57,14 +57,17 @@ static NSString *const kPlaceholderImageName = @"placeholder";
     self.downloadButton.layer.cornerRadius = kCacheButtonCornerRadius;
     self.indicatorView.layer.cornerRadius = kCacheButtonCornerRadius;
     
-    if (object.isVideoDownloading) {
+    if ([object.videoMaterial.isDownloading boolValue]) {
         [self.removeButton setHidden:YES];
         [self.downloadButton setHidden:YES];
         [self.indicatorView setHidden:NO];
+        //устанавливаем количество процентов
         return YES;
     }
-    [self.removeButton setHidden:!object.isVideoCached];
-    [self.downloadButton setHidden:object.isVideoCached];
+    BOOL isVideoCached = object.videoMaterial.localURL.length != 0;
+    
+    [self.removeButton setHidden:!isVideoCached];
+    [self.downloadButton setHidden:isVideoCached];
     [self.indicatorView setHidden:YES];
     return YES;
 }

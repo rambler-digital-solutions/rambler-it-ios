@@ -20,7 +20,8 @@
 
 #import <Foundation/Foundation.h>
 
-@class LectureMaterialPlainObject;
+@class LectureMaterialViewModel;
+
 @protocol LectureViewOutput <NSObject>
 
 /**
@@ -37,7 +38,7 @@
  
  @param videoUrl The URL of the video
  */
-- (void)didTapVideoPreviewWithVideoMaterial:(LectureMaterialPlainObject *)videoMaterial;
+- (void)didTapVideoPreviewWithVideoMaterial:(LectureMaterialViewModel *)videoMaterial;
 
 /**
  @author Egor Tolstoy

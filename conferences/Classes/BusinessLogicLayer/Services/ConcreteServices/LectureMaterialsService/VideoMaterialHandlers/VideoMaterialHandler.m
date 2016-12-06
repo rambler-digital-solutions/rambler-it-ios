@@ -16,7 +16,6 @@
 #import "LectureMaterialModelObject.h"
 
 #import "YouTubeIdentifierDeriviator.h"
-#import "VideoMaterialDownloadingStatesStorage.h"
 
 @implementation VideoMaterialHandler
 

@@ -25,20 +25,15 @@
 #import "ROSPonsomizer.h"
 #import "ShareUrlBuilder.h"
 #import "YouTubeIdentifierDeriviator.h"
-
+#import "EXTScope.h"
 #import "LecturePlainObject.h"
 #import "SpeakerPlainObject.h"
 #import "LectureMaterialPlainObject.h"
 #import "LectureMaterialsService.h"
-#import "VideoMaterialDownloadingStatesStorage.h"
 
 @implementation LectureInteractor
 
 #pragma mark - LectureInteractorInput
-
-- (void)updateDelegateStatesStorage {
-    self.statesStorage.delegate = self;
-}
 
 - (LecturePlainObject *)obtainLectureWithObjectId:(NSString *)objectId {
     id lectureManagedObject = [self.lectureService obtainLectureWithLectureId:objectId];
@@ -69,20 +64,35 @@
                                                            completion:nil];
 }
 
-- (void)didRemovedVideoFromDownloadingWithIdentifier:(NSString *)identifier {
-    [self.output didTriggerEndDownloadingVideo];
-};
+- (void)updateDownloadingDelegateWithLectureMaterials:(NSArray *)lectureMaterials {
+    for (LectureMaterialPlainObject *lectureMaterial in lectureMaterials) {
+        [self.lectureMaterialsService updateDelegate:self
+                                  forLectureMaterial:lectureMaterial];
+    }
+}
 
-#pragma mark - NSURLSessionDownloadDelegate
+#pragma mark - LectureMaterialDownloadingDelegate
+
+- (void)didStartDownloadingLectureMaterialWithLink:(NSString *)link {
+    [self.output didTriggerStartDownloadingLectureMaterialWithLink:link];
+}
 
 - (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location {
+    @weakify(self);
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self.output didTriggerEndDownloadingVideo];
+        @strongify(self);
+        [self.output didTriggerEndDownloadingLectureMaterialWithLink:session.sessionDescription];
     });
 }
 
 - (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite {
-    
+    @weakify(self);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        @strongify(self);
+        CGFloat percent = totalBytesWritten * 1.0 / (totalBytesWritten + totalBytesExpectedToWrite);
+        [self.output didTriggerDownloadingLectureMaterialWithLink:session.sessionDescription
+                                                          percent:percent];
+    });
 }
 
 - (void)URLSession:(NSURLSession *)session didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler {

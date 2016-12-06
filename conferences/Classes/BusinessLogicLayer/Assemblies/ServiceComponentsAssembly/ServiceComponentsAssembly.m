@@ -127,8 +127,6 @@
                           configuration:^(TyphoonDefinition *definition) {
                               [definition injectProperty:@selector(deriviator)
                                                     with:[self.presentationLayerHelpersAssembly youTubeIdentifierDeriviator]];
-                              [definition injectProperty:@selector(statesStorage)
-                                                    with:[self.presentationLayerHelpersAssembly videoMaterialDownloadingStatesStorage]];
     }];
 }
 

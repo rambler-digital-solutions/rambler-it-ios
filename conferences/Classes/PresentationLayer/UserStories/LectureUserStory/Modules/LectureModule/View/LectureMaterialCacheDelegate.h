@@ -6,12 +6,12 @@
 //  Copyright © 2016 Rambler. All rights reserved.
 //
 
-@class LectureMaterialPlainObject;
+@class LectureMaterialViewModel;
 
 @protocol LectureMaterialCacheDelegate <NSObject>
 
-- (void)didTapRemoveFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial;
+- (void)didTapRemoveFromCacheLectureMaterial:(LectureMaterialViewModel *)lectureMaterial;
 
-- (void)didTapDownloadToCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial;
+- (void)didTapDownloadToCacheLectureMaterial:(LectureMaterialViewModel *)lectureMaterial;
 
 @end

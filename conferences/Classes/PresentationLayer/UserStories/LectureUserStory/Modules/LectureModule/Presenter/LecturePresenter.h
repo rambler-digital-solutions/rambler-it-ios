@@ -28,6 +28,7 @@
 @protocol LectureInteractorInput;
 @protocol LectureRouterInput;
 @class LecturePresenterStateStorage;
+@class LectureViewModelMapper;
 
 @interface LecturePresenter : NSObject <LectureViewOutput, LectureInteractorOutput, LectureModuleInput, LectureMaterialCacheDelegate>
 
@@ -35,6 +36,7 @@
 @property (strong, nonatomic) id<LectureInteractorInput>  interactor;
 @property (strong, nonatomic) id<LectureRouterInput> router;
 @property (strong, nonatomic) LecturePresenterStateStorage *stateStorage;
+@property (strong, nonatomic) LectureViewModelMapper *mapperLectureViewModel;
 
 @end
 

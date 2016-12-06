@@ -20,18 +20,14 @@
 
 #import <Nimbus/NimbusModels.h>
 
-@class LectureMaterialPlainObject;
+@class LectureMaterialViewModel;
 
 @interface VideoRecordTableViewCellObject : NSObject <NICellObject>
 
 @property (nonatomic, strong, readonly) NSURL *previewImageUrl;
-@property (nonatomic, strong, readonly) LectureMaterialPlainObject *videoMaterial;
-@property (nonatomic, assign, readonly) BOOL isVideoCached;
-@property (nonatomic, assign, readonly) BOOL isVideoDownloading;
+@property (nonatomic, strong, readonly) LectureMaterialViewModel *videoMaterial;
 
 + (instancetype)objectWithPreviewImageUrl:(NSURL *)previewImageUrl
-                            isVideoCached:(BOOL)isVideoCached
-                       isVideoDownloading:(BOOL)isVideoDownloading
-                            videoMaterial:(LectureMaterialPlainObject *)videoMaterial;
+                            videoMaterial:(LectureMaterialViewModel *)videoMaterial;
 
 @end

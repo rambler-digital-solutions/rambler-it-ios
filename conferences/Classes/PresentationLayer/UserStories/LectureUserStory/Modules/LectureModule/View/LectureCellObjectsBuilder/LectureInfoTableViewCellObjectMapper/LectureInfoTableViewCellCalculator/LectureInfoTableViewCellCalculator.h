@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@class LecturePlainObject;
+@class LectureViewModel;
 
 @interface LectureInfoTableViewCellCalculator : NSObject
 
-- (CGFloat)calculateHeightForLectureInfoCellWithLecture:(LecturePlainObject *)lecture
+- (CGFloat)calculateHeightForLectureInfoCellWithLecture:(LectureViewModel *)lecture
                                     continueReadingFlag:(BOOL)continueReadingFlag;
 
 @end

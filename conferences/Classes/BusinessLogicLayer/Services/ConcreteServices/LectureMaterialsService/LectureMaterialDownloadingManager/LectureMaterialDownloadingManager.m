@@ -11,6 +11,7 @@
 #import "VideoMaterialHandlerConstants.h"
 #import <MagicalRecord/MagicalRecord.h>
 #import <objc/runtime.h>
+#import "LectureMaterialDownloadingDelegate.h"
 
 @interface LectureMaterialDownloadingManager ()
 
@@ -33,6 +34,7 @@
 
 - (void)registerDelegate:(id)delegate forURL:(NSString *)url {
     __weak id weakDelegate = delegate;
+    [weakDelegate didStartDownloadingLectureMaterialWithLink:url];
     [self.delegatesByIdentifier setObject:weakDelegate forKey:url];
 }
 
@@ -40,13 +42,10 @@
     __weak id weakDelegate = delegate;
     id storedDelegate = [self.delegatesByIdentifier objectForKey:url];
     if (storedDelegate) {
+        [weakDelegate didStartDownloadingLectureMaterialWithLink:url];
         [self.delegatesByIdentifier setObject:weakDelegate forKey:url];
     }
 }
-
-// TODO: записывать в нормальный путь
-// TODO: сохранять в базу (проблема с completionBlock)
-// TODO: удалять по всем завершающим операциям
 
 #pragma mark - NSURLSessionDownloadDelegate
 
@@ -63,8 +62,7 @@
                     didFinishDownloadingToURL:location];
 }
 
-- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task
-didCompleteWithError:(nullable NSError *)error {
+- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(nullable NSError *)error {
     id delegate = [self.delegatesByIdentifier objectForKey:session.sessionDescription];
     [self.delegatesByIdentifier removeObjectForKey:session.sessionDescription];
     if ([delegate respondsToSelector:@selector(URLSession:task:didCompleteWithError:)]) {
@@ -79,7 +77,7 @@ didCompleteWithError:(nullable NSError *)error {
     }
 }
 
-#pragma mark - NSObject
+#pragma mark - Runtime methods
 
 - (BOOL)respondsToSelector:(SEL)selector {
     return [self isSelector:selector conformToProtocol:@protocol(NSURLSessionDownloadDelegate)];

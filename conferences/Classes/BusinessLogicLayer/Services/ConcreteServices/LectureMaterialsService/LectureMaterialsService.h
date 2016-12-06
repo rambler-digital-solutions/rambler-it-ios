@@ -23,6 +23,7 @@
 
 @class NSPredicate;
 @class LectureMaterialPlainObject;
+@protocol LectureMaterialDownloadingDelegate;
 
 /**
  @author Artem Karpushin
@@ -34,12 +35,12 @@
 - (id)obtainFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial;
 
 - (void)downloadToCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial
-                              delegate:(id<NSURLSessionDownloadDelegate>)delegate;
+                              delegate:(id<LectureMaterialDownloadingDelegate>)delegate;
 
 - (void)removeFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial
                             completion:(LectureMaterialCompletionBlock)completionBlock;
 
-- (void)updateDelegate:(id<NSURLSessionDownloadDelegate>)delegate
+- (void)updateDelegate:(id<LectureMaterialDownloadingDelegate>)delegate
     forLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial;
 
 @end

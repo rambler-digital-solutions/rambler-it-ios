@@ -23,7 +23,7 @@
 #import "LectureViewOutput.h"
 #import "LectureDataDisplayManager.h"
 #import "SpeakerPlainObject.h"
-#import "LecturePlainObject.h"
+#import "LectureViewModel.h"
 #import "SpeakerShortInfoModuleInput.h"
 
 #import "UINavigationBar+States.h"
@@ -58,7 +58,7 @@ static CGFloat kTableViewFooterHeight = 16.0f;
 
 #pragma mark - LectureViewInput
 
-- (void)updateViewWithLecture:(LecturePlainObject *)lecture {
+- (void)updateViewWithLecture:(LectureViewModel *)lecture {
     [self.dataDisplayManager configureDataDisplayManagerWithLecture:lecture];
     self.tableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.tableView];
     self.tableView.delegate = [self.dataDisplayManager delegateForTableView:self.tableView
@@ -77,7 +77,7 @@ static CGFloat kTableViewFooterHeight = 16.0f;
 
 #pragma mark - <LectureDataDisplayManagerDelegate>
 
-- (void)didTapVideoRecordCellWithVideoMaterial:(LectureMaterialPlainObject *)videoMaterial; {
+- (void)didTapVideoRecordCellWithVideoMaterial:(LectureMaterialViewModel *)videoMaterial; {
     [self.output didTapVideoPreviewWithVideoMaterial:videoMaterial];
 }
 
@@ -93,11 +93,11 @@ static CGFloat kTableViewFooterHeight = 16.0f;
 
 #pragma mark - LectureMaterialCacheDelegate
 
-- (void)didTapRemoveFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial {
+- (void)didTapRemoveFromCacheLectureMaterial:(LectureMaterialViewModel *)lectureMaterial {
     [self.output didTapRemoveFromCacheLectureMaterial:lectureMaterial];
 }
 
-- (void)didTapDownloadToCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial {
+- (void)didTapDownloadToCacheLectureMaterial:(LectureMaterialViewModel *)lectureMaterial {
     [self.output didTapDownloadToCacheLectureMaterial:lectureMaterial];
 }
 

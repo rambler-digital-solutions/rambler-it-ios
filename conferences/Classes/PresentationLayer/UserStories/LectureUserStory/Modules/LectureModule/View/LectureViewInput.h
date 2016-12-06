@@ -20,7 +20,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class LecturePlainObject;
+@class LectureViewModel;
 
 @protocol LectureViewInput <NSObject>
 
@@ -31,7 +31,7 @@
  
  @param lecture LecturePlainObject object
  */
-- (void)updateViewWithLecture:(LecturePlainObject *)lecture;
+- (void)updateViewWithLecture:(LectureViewModel *)lecture;
 
 - (void)setupViewInitialState;
 

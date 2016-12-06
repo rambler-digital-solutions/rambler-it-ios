@@ -46,7 +46,7 @@
         [cellObjects addObject:cellObject];
     }
     
-    for (LecturePlainObject *lecture in event.lectures) {
+    for (LectureViewModel *lecture in event.lectures) {
         id lectureCellobject = [self.lectureInfoCellObjectMapper lectureInfoTableViewCellObjectWithLecture:lecture
                                                                                        continueReadingFlag:YES];
         [cellObjects addObject:lectureCellobject];

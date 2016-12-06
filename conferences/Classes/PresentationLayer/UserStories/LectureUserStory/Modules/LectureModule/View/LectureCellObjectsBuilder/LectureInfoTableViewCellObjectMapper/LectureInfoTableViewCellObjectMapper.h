@@ -9,13 +9,13 @@
 #import <UIKit/UIKit.h>
 #import <Nimbus/NimbusModels.h>
 
-@class LecturePlainObject;
+@class LectureViewModel;
 @class LectureInfoTableViewCellCalculator;
 
 @interface LectureInfoTableViewCellObjectMapper : NSObject
 
 @property (nonatomic, strong) LectureInfoTableViewCellCalculator *calculator;
  
-- (id<NICellObject>)lectureInfoTableViewCellObjectWithLecture:(LecturePlainObject *)lecture
+- (id<NICellObject>)lectureInfoTableViewCellObjectWithLecture:(LectureViewModel *)lecture
                                           continueReadingFlag:(BOOL)continueReadingFlag;
 @end

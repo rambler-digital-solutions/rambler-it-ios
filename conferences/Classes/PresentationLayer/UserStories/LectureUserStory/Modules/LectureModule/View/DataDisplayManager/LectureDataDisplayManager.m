@@ -22,18 +22,19 @@
 
 #import "EXTScope.h"
 #import "LectureDataDisplayManager.h"
-#import "LecturePlainObject.h"
+#import "LectureViewModel.h"
 #import "LocalizedStrings.h"
 #import "LectureCellObjectsBuilder.h"
 #import "VideoRecordTableViewCellObject.h"
 #import "LectureMaterialInfoTableViewCellObject.h"
 #import "LectureMaterialPlainObject.h"
 #import "NITyphoonCellFactory.h"
+
 @interface LectureDataDisplayManager ()
 
 @property (strong, nonatomic) NITableViewModel *tableViewModel;
 @property (strong, nonatomic) NITableViewActions *tableViewActions;
-@property (strong, nonatomic) LecturePlainObject *lecture;
+@property (strong, nonatomic) LectureViewModel *lecture;
 
 @end
 
@@ -41,7 +42,7 @@
 
 #pragma mark - Public methods
 
-- (void)configureDataDisplayManagerWithLecture:(LecturePlainObject *)lecture {
+- (void)configureDataDisplayManagerWithLecture:(LectureViewModel *)lecture {
     self.lecture = lecture;
 }
 

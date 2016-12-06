@@ -21,8 +21,8 @@
 #import <Foundation/Foundation.h>
 #import "DataDisplayManager.h"
 
-@class LecturePlainObject;
-@class LectureMaterialPlainObject;
+@class LectureViewModel;
+@class LectureMaterialViewModel;
 @protocol LectureCellObjectsBuilder;
 @protocol LectureDataDisplayManagerDelegate;
 
@@ -31,7 +31,7 @@
 @property (nonatomic, strong) id<LectureCellObjectsBuilder> builderCellObjects;
 @property (nonatomic, weak) id<LectureDataDisplayManagerDelegate> delegate;
 
-- (void)configureDataDisplayManagerWithLecture:(LecturePlainObject *)lecture;
+- (void)configureDataDisplayManagerWithLecture:(LectureViewModel *)lecture;
 
 @end
 
@@ -44,7 +44,7 @@
  
  @param videoUrl Video URL
  */
-- (void)didTapVideoRecordCellWithVideoMaterial:(LectureMaterialPlainObject *)videoMaterial;
+- (void)didTapVideoRecordCellWithVideoMaterial:(LectureMaterialViewModel *)videoMaterial;
 
 /**
  @author Egor Tolstoy

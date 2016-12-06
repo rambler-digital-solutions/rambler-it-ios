@@ -20,7 +20,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class LecturePlainObject;
+@class LectureViewModel;
 
 @protocol LectureCellObjectsBuilder <NSObject>
 
@@ -33,6 +33,6 @@
  
  @return CellObjects
  */
-- (NSArray *)cellObjectsForLecture:(LecturePlainObject *)lecture;
+- (NSArray *)cellObjectsForLecture:(LectureViewModel *)lecture;
 
 @end

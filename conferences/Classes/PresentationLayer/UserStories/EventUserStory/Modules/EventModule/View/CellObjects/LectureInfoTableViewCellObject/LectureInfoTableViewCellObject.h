@@ -20,7 +20,7 @@
 
 #import <Nimbus/NimbusModels.h>
 
-@class LecturePlainObject;
+@class LectureViewModel;
 
 @interface LectureInfoTableViewCellObject : NSObject <NICellObject>
 
@@ -34,7 +34,7 @@
 @property (assign, nonatomic, readonly) BOOL continueReadingFlag;
 @property (assign, nonatomic, readonly) CGFloat height;
 
-+ (instancetype)objectWithLecture:(LecturePlainObject *)lecture
++ (instancetype)objectWithLecture:(LectureViewModel *)lecture
               continueReadingFlag:(BOOL)continueReadingFlag
                            height:(CGFloat)height;
 

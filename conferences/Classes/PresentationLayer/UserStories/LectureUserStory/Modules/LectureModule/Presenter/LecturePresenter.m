@@ -26,6 +26,8 @@
 #import "LectureMaterialPlainObject.h"
 #import "LecturePlainObject.h"
 #import "SpeakerPlainObject.h"
+#import "LectureViewModelMapper.h"
+#import "LectureMaterialViewModel.h"
 
 @implementation LecturePresenter
 
@@ -38,14 +40,19 @@
 #pragma mark - LectureViewOutput
 
 - (void)setupView {
-    [self updateViewWithCurrentLecture];
-    [self.interactor updateDelegateStatesStorage];
+    LecturePlainObject *lecture = [self.interactor obtainLectureWithObjectId:self.stateStorage.lectureObjectId];
+    SpeakerPlainObject *speaker = lecture.speaker;
+    self.stateStorage.speakerObjectId = speaker.speakerId;
+    
+    NSArray *lectureMaterials = [lecture.lectureMaterials allObjects];
+    self.stateStorage.lectureViewModel = [self.mapperLectureViewModel mapLectureViewModelFromLecturePlainObject:lecture];
+    [self.interactor updateDownloadingDelegateWithLectureMaterials:lectureMaterials];
+    [self.view updateViewWithLecture:self.stateStorage.lectureViewModel];
     [self.view setupViewInitialState];
 }
 
-- (void)didTapVideoPreviewWithVideoMaterial:(LectureMaterialPlainObject *)videoMaterial {
-    BOOL isVideoCached = [[NSFileManager defaultManager] fileExistsAtPath:videoMaterial.localURL];
-    if (isVideoCached) {
+- (void)didTapVideoPreviewWithVideoMaterial:(LectureMaterialViewModel *)videoMaterial {
+    if (videoMaterial.localURL.length != 0) {
         [self.router openLocalVideoPlayerModuleWithPath:videoMaterial.localURL];
         return;
     }
@@ -77,34 +84,55 @@
 
 #pragma mark - LectureMaterialCacheDelegate
 
-- (void)didTapRemoveFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial {
+- (void)didTapRemoveFromCacheLectureMaterial:(LectureMaterialViewModel *)lectureMaterialViewModel {
+    LectureMaterialPlainObject *lectureMaterialPlain = [self.mapperLectureViewModel mapLectureMaterialPlainFromViewModel:lectureMaterialViewModel];
     ActionAlertBlock actionAlertBlock = ^{
-        [self.interactor removeVideoFromCacheWithLectureMaterial:lectureMaterial];
+        [self.interactor removeVideoFromCacheWithLectureMaterial:lectureMaterialPlain];
         [self updateViewWithCurrentLecture];
 
     };
     [self.router showAlertConfirmationRemoveWithActionBlock:actionAlertBlock];
 }
 
-- (void)didTapDownloadToCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial {
+- (void)didTapDownloadToCacheLectureMaterial:(LectureMaterialViewModel *)lectureMaterialViewModel {
+    LectureMaterialPlainObject *lectureMaterialPlain = [self.mapperLectureViewModel mapLectureMaterialPlainFromViewModel:lectureMaterialViewModel];
     ActionAlertBlock actionAlertBlock = ^{
-        [self.interactor downloadVideoToCacheWithLectureMaterial:lectureMaterial];
-        // не то
-        [self updateViewWithCurrentLecture];
+        [self.interactor downloadVideoToCacheWithLectureMaterial:lectureMaterialPlain];
     };
     [self.router showAlertConfirmationDownloadWithActionBlock:actionAlertBlock];
 }
 
-- (void)didTriggerEndDownloadingVideo {
+#pragma mark - LectureInteractorOutput
+
+- (void)didTriggerDownloadingLectureMaterialWithLink:(NSString *)link
+                                             percent:(CGFloat)percent {
+    [self.mapperLectureViewModel updateLectureMaterialInLectureViewModel:self.stateStorage.lectureViewModel
+                                                                    link:link
+                                                           isDownloading:@YES
+                                                                 percent:@(percent)];
     [self updateViewWithCurrentLecture];
-    
 }
 
+- (void)didTriggerStartDownloadingLectureMaterialWithLink:(NSString *)link {
+    [self.mapperLectureViewModel updateLectureMaterialInLectureViewModel:self.stateStorage.lectureViewModel
+                                                                    link:link
+                                                           isDownloading:@YES
+                                                                 percent:@0];
+    [self updateViewWithCurrentLecture];
+}
+
+- (void)didTriggerEndDownloadingLectureMaterialWithLink:(NSString *)link {
+    [self.mapperLectureViewModel updateLectureMaterialInLectureViewModel:self.stateStorage.lectureViewModel
+                                                                    link:link
+                                                           isDownloading:@NO
+                                                                 percent:0];
+    [self updateViewWithCurrentLecture];
+}
+
+#pragma mark - Private methods
+
 - (void)updateViewWithCurrentLecture {
-    LecturePlainObject *lecture = [self.interactor obtainLectureWithObjectId:self.stateStorage.lectureObjectId];
-    SpeakerPlainObject *speaker = lecture.speaker;
-    self.stateStorage.speakerObjectId = speaker.speakerId;
-    [self.view updateViewWithLecture:lecture];
+    [self.view updateViewWithLecture:self.stateStorage.lectureViewModel];
 }
 
 @end

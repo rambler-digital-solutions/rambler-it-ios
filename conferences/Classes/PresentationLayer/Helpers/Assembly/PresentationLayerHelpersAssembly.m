@@ -28,7 +28,6 @@
 #import "MailComposeControllerFactoryImplementation.h"
 #import "YouTubeIdentifierDeriviator.h"
 #import "YouTubePlayerFactoryImplementation.h"
-#import "VideoMaterialDownloadingStatesStorage.h"
 
 @implementation PresentationLayerHelpersAssembly
 
@@ -68,13 +67,6 @@
 
 - (YouTubeIdentifierDeriviator *)youTubeIdentifierDeriviator {
     return [TyphoonDefinition withClass:[YouTubeIdentifierDeriviator class]];
-}
-
-- (VideoMaterialDownloadingStatesStorage *)videoMaterialDownloadingStatesStorage {
-    return [TyphoonDefinition withClass:[VideoMaterialDownloadingStatesStorage class]
-                          configuration:^(TyphoonDefinition *definition) {
-                              definition.scope = TyphoonScopeSingleton;
-    }];
 }
 
 @end

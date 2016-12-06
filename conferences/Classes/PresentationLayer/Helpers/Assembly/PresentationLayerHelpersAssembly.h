@@ -46,6 +46,5 @@
 - (id<MailComposeControllerFactory>)mailComposeFactory;
 - (id<YouTubePlayerFactory>)youTubePlayerFactory;
 - (YouTubeIdentifierDeriviator *)youTubeIdentifierDeriviator;
-- (VideoMaterialDownloadingStatesStorage *)videoMaterialDownloadingStatesStorage;
 
 @end

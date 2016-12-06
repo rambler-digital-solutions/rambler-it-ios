@@ -26,6 +26,8 @@
 #import "LectureMaterialDownloadingManager.h"
 #import "EXTScope.h"
 
+@protocol LectureMaterialDownloadingDelegate;
+
 @interface LectureMaterialsServiceImplementation ()
 
 @property (nonatomic, strong) NSArray<LectureMaterialsHandler> *lectureMaterialsHandlers;
@@ -56,7 +58,7 @@
 }
 
 - (void)downloadToCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial
-                              delegate:(id<NSURLSessionDownloadDelegate>)delegate {
+                              delegate:(id<LectureMaterialDownloadingDelegate>)delegate {
     [self.lectureMaterialDownloadingManager registerDelegate:delegate
                                                       forURL:lectureMaterial.link];
     for (id<LectureMaterialsHandler> handler in self.lectureMaterialsHandlers) {
@@ -91,7 +93,7 @@
     }
 }
 
-- (void)updateDelegate:(id<NSURLSessionDownloadDelegate>)delegate
+- (void)updateDelegate:(id<LectureMaterialDownloadingDelegate>)delegate
     forLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial {
     [self.lectureMaterialDownloadingManager updateDelegate:delegate
                                                     forURL:lectureMaterial.link];

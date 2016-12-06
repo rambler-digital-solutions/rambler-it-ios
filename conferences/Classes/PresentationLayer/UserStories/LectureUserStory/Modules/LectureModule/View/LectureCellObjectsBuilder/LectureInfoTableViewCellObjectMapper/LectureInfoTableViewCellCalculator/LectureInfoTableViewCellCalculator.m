@@ -7,7 +7,7 @@
 //
 
 #import "LectureInfoTableViewCellCalculator.h"
-#import "LecturePlainObject.h"
+#import "LectureViewModel.h"
 #import "UIFont+RIDTypefaces.h"
 
 static CGFloat const RIDTitleLeftInset = 20.0f;
@@ -19,7 +19,7 @@ static CGFloat const RIDWithoutContinueReadingInset = 10.0f;
 
 @implementation LectureInfoTableViewCellCalculator
 
-- (CGFloat)calculateHeightForLectureInfoCellWithLecture:(LecturePlainObject *)lecture
+- (CGFloat)calculateHeightForLectureInfoCellWithLecture:(LectureViewModel *)lecture
                                     continueReadingFlag:(BOOL)continueReadingFlag {
     CGFloat fullHeight = 0;
     NSInteger width = [UIScreen mainScreen].bounds.size.width - RIDTitleLeftInset - RIDTitleRightInset;
