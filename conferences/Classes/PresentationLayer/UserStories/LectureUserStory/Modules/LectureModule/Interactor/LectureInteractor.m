@@ -61,7 +61,9 @@
 }
 - (void)removeVideoFromCacheWithLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial{
     [self.lectureMaterialsService removeFromCacheLectureMaterial:lectureMaterial
-                                                           completion:nil];
+                                                      completion:^(NSString *localUrl, NSError *error) {
+                                                          [self.output didTriggerRemoveDownloadingLectureMaterialWithLink:nil];
+                                                      }];
 }
 
 - (void)updateDownloadingDelegateWithLectureMaterials:(NSArray *)lectureMaterials {
@@ -78,21 +80,22 @@
 }
 
 - (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location {
-    @weakify(self);
-    dispatch_async(dispatch_get_main_queue(), ^{
-        @strongify(self);
-        [self.output didTriggerEndDownloadingLectureMaterialWithLink:session.sessionDescription];
-    });
+//    NSString *link = session.sessionDescription;
+//    @weakify(self);
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        @strongify(self);
+//        [self.output didTriggerEndDownloadingLectureMaterialWithLink:link];
+//    });
 }
 
 - (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite {
-    @weakify(self);
-    dispatch_async(dispatch_get_main_queue(), ^{
-        @strongify(self);
-        CGFloat percent = totalBytesWritten * 1.0 / (totalBytesWritten + totalBytesExpectedToWrite);
-        [self.output didTriggerDownloadingLectureMaterialWithLink:session.sessionDescription
-                                                          percent:percent];
-    });
+//    @weakify(self);
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        @strongify(self);
+//        CGFloat percent = totalBytesWritten * 100.0 / totalBytesExpectedToWrite;
+//        [self.output didTriggerDownloadingLectureMaterialWithLink:session.sessionDescription
+//                                                          percent:percent];
+//    });
 }
 
 - (void)URLSession:(NSURLSession *)session didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler {

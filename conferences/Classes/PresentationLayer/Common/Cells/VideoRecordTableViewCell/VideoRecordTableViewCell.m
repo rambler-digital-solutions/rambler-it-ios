@@ -77,7 +77,7 @@ static NSString *const kPlaceholderImageName = @"placeholder";
         [self.removeButton setHidden:YES];
         [self.downloadButton setHidden:YES];
         [self.circleProgressBar setHidden:NO];
-        self.circleProgressBar.value = [object.videoMaterial.percent floatValue] * 100;
+        self.circleProgressBar.value = [object.videoMaterial.percent floatValue];
         return YES;
     }
     BOOL isVideoCached = object.videoMaterial.localURL.length != 0;

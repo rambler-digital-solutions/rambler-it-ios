@@ -86,7 +86,9 @@
                       @strongify(self);
                       [self saveToPersistenStoreLectureMaterialWithID:lectureMaterial.lectureMaterialId
                                                              localURL:localUrl];
-                      completionBlock(localUrl, error);
+                    if (completionBlock) {
+                        completionBlock(localUrl, error);
+                    }
                                          }];
             break;
         }
@@ -103,7 +105,7 @@
 
 - (void)saveToPersistenStoreLectureMaterialWithID:(NSString *)lectureMaterialId
                                          localURL:(NSString *)localURL {
-    NSManagedObjectContext *rootSavingContext = [NSManagedObjectContext MR_rootSavingContext];
+    NSManagedObjectContext *rootSavingContext = [NSManagedObjectContext MR_defaultContext];
     [rootSavingContext performBlockAndWait:^{
         NSString *nameAttribute = LectureMaterialModelObjectAttributes.lectureMaterialId;
         LectureMaterialModelObject *modelObject = [LectureMaterialModelObject MR_findFirstByAttribute:nameAttribute

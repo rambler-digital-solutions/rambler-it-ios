@@ -129,6 +129,10 @@
     [self updateViewWithCurrentLecture];
 }
 
+- (void)didTriggerRemoveDownloadingLectureMaterialWithLink:(NSString *)link {
+    
+}
+
 #pragma mark - Private methods
 
 - (void)updateViewWithCurrentLecture {

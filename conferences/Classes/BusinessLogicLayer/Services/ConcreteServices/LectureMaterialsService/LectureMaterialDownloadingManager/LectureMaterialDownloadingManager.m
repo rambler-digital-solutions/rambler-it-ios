@@ -51,11 +51,11 @@
 
 - (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location {
     NSString *materialLink = session.sessionDescription;
-    NSString *destinationPath = [self filePathLocalVideo];
-    [self moveLectureMaterialFileFromPath:location.absoluteString
-                                   toPath:destinationPath];
-    [self updateLectureMaterialWithLink:materialLink
-                               filePath:location.absoluteString];
+//    NSString *destinationPath = [self filePathLocalVideo];
+//    [self moveLectureMaterialFileFromPath:location.absoluteString
+//                                   toPath:destinationPath];
+//    [self updateLectureMaterialWithLink:materialLink
+//                               filePath:location.absoluteString];
     id delegate = [self.delegatesByIdentifier objectForKey:session.sessionDescription];
     [self.delegatesByIdentifier removeObjectForKey:materialLink];
     [delegate URLSession:session downloadTask:downloadTask
@@ -116,10 +116,11 @@
 }
 
 - (void)updateLectureMaterialWithLink:(NSString *)link filePath:(NSString *)filePath {
-    NSManagedObjectContext *rootContext = [NSManagedObjectContext MR_rootSavingContext];
+    NSManagedObjectContext *rootContext = [NSManagedObjectContext MR_defaultContext];
     [rootContext performBlockAndWait:^{
         NSString *attributeName = LectureMaterialModelObjectAttributes.link;
-        NSArray *materials = [LectureMaterialModelObject MR_findByAttribute:attributeName withValue:link];
+        NSArray *materials = [LectureMaterialModelObject MR_findByAttribute:attributeName
+                                                                  withValue:link];
         for (LectureMaterialModelObject *material in materials) {
             material.localURL = filePath;
         }

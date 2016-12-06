@@ -31,5 +31,7 @@
 
 - (void)didTriggerEndDownloadingLectureMaterialWithLink:(NSString *)link;
 
+- (void)didTriggerRemoveDownloadingLectureMaterialWithLink:(NSString *)link;
+
 @end
 
