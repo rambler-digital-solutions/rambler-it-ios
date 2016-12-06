@@ -74,6 +74,7 @@ PODS:
   - libextobjc/RuntimeExtensions (0.4.1)
   - libextobjc/UmbrellaHeader (0.4.1)
   - MagicalRecord (2.3.0)
+  - MBCircularProgressBar (0.3.5)
   - MMBarricade (1.0.1):
     - MMBarricade/Core (= 1.0.1)
   - MMBarricade/Core (1.0.1)
@@ -114,6 +115,7 @@ DEPENDENCIES:
   - FLAnimatedImage (~> 1.0)
   - libextobjc (~> 0.4)
   - MagicalRecord (~> 2.3)
+  - MBCircularProgressBar (= 0.3.5)
   - MMBarricade (~> 1.0.1)
   - Nimbus/Collections (from `https://github.com/rambler-ios/nimbus`)
   - Nimbus/Models (from `https://github.com/rambler-ios/nimbus`)
@@ -154,6 +156,7 @@ SPEC CHECKSUMS:
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
   MagicalRecord: 89eb7d7ead39fb37f01c3d010665ee94d17f8dba
+  MBCircularProgressBar: 0b795b722a5eb5b0923822f90474e2576a1a7855
   MMBarricade: 61e17f747baa1a33cd7f8a9c75d520ca958508dd
   Nimbus: 355131d4656498bf072fecc142752a9f343eb59b
   OCMock: f3f61e6eaa16038c30caa5798c5e49d3307b6f22
@@ -167,6 +170,6 @@ SPEC CHECKSUMS:
   ViperMcFlurry: 701bc3ad8d188b1f1e157ec0ddf4e77184de88b5
   XCDYouTubeKit: 90690f9e3523735dc93b8024269d991b0cfffe78
 
-PODFILE CHECKSUM: e1bd0b742ef6b5d223184a22970a462378d3ff05
+PODFILE CHECKSUM: 5c9fdc1c3e968fd4c3c120c41a5dd1a11c6bda37
 
 COCOAPODS: 1.1.1
