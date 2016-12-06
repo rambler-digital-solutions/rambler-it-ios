@@ -24,6 +24,7 @@
 #import "Extensions/UIResponder+CDProxying/UIResponder+CDProxying.h"
 #import "LectureMaterialViewModel.h"
 #import "LectureMaterialCacheDelegate.h"
+#import <MBCircularProgressBarView.h>
 
 static CGFloat const kVideoRecordTableViewCellHeight = 168.0f;
 static NSInteger const kCacheButtonCornerRadius = 15.0f;
@@ -37,6 +38,21 @@ static NSString *const kPlaceholderImageName = @"placeholder";
 @end
 
 @implementation VideoRecordTableViewCell
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    self.circleProgressBar.unitString = @"%";
+    self.circleProgressBar.progressAngle = 100;
+    self.circleProgressBar.progressLineWidth = 3;
+    self.circleProgressBar.progressColor = [UIColor whiteColor];
+    self.circleProgressBar.progressStrokeColor = [UIColor whiteColor];
+    self.circleProgressBar.progressCapType = 1;
+    self.circleProgressBar.valueFontSize = 10;
+    self.circleProgressBar.fontColor = [UIColor whiteColor];
+    self.circleProgressBar.emptyLineColor = [UIColor lightTextColor];
+    self.circleProgressBar.emptyLineWidth = 0.5;
+    self.circleProgressBar.value = 0;
+}
 
 - (void)didMoveToSuperview {
     [super didMoveToSuperview];
@@ -55,20 +71,20 @@ static NSString *const kPlaceholderImageName = @"placeholder";
     
     self.removeButton.layer.cornerRadius = kCacheButtonCornerRadius;
     self.downloadButton.layer.cornerRadius = kCacheButtonCornerRadius;
-    self.indicatorView.layer.cornerRadius = kCacheButtonCornerRadius;
+    self.circleProgressBar.layer.cornerRadius = kCacheButtonCornerRadius;
     
     if ([object.videoMaterial.isDownloading boolValue]) {
         [self.removeButton setHidden:YES];
         [self.downloadButton setHidden:YES];
-        [self.indicatorView setHidden:NO];
-        //устанавливаем количество процентов
+        [self.circleProgressBar setHidden:NO];
+        self.circleProgressBar.value = [object.videoMaterial.percent floatValue] * 100;
         return YES;
     }
     BOOL isVideoCached = object.videoMaterial.localURL.length != 0;
     
     [self.removeButton setHidden:!isVideoCached];
     [self.downloadButton setHidden:isVideoCached];
-    [self.indicatorView setHidden:YES];
+    [self.circleProgressBar setHidden:YES];
     return YES;
 }
 

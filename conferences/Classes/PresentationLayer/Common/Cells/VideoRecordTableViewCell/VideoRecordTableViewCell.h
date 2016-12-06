@@ -20,6 +20,8 @@
 
 #import <NICellFactory.h>
 
+@class MBCircularProgressBarView;
+
 @interface VideoRecordTableViewCell : UITableViewCell <NICell>
 
 @property (nonatomic, strong) IBOutlet UIImageView *previewImageView;
@@ -27,6 +29,6 @@
 @property (nonatomic, weak) IBOutlet UIImageView *playIconImageView;
 @property (weak, nonatomic) IBOutlet UIButton *removeButton;
 @property (weak, nonatomic) IBOutlet UIButton *downloadButton;
-@property (weak, nonatomic) IBOutlet UIView *indicatorView;
+@property (weak, nonatomic) IBOutlet MBCircularProgressBarView *circleProgressBar;
 
 @end
