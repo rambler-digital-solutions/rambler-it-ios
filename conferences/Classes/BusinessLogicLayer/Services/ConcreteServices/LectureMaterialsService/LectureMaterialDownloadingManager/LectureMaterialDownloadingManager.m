@@ -53,11 +53,14 @@
 - (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location {
     NSString *materialLink = session.sessionDescription;
     NSString *destinationPath = [self filePathLocalVideo];
-    [self moveLectureMaterialFileFromPath:location.absoluteString toPath:destinationPath];
-    [self updateLectureMaterialWithLink:materialLink filePath:location.absoluteString];
+    [self moveLectureMaterialFileFromPath:location.absoluteString
+                                   toPath:destinationPath];
+    [self updateLectureMaterialWithLink:materialLink
+                               filePath:location.absoluteString];
     id delegate = [self.delegatesByIdentifier objectForKey:session.sessionDescription];
     [self.delegatesByIdentifier removeObjectForKey:materialLink];
-    [delegate URLSession:session downloadTask:downloadTask didFinishDownloadingToURL:location];
+    [delegate URLSession:session downloadTask:downloadTask
+                    didFinishDownloadingToURL:location];
 }
 
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task
@@ -66,6 +69,13 @@ didCompleteWithError:(nullable NSError *)error {
     [self.delegatesByIdentifier removeObjectForKey:session.sessionDescription];
     if ([delegate respondsToSelector:@selector(URLSession:task:didCompleteWithError:)]) {
         [delegate URLSession:session task:task didCompleteWithError:error];
+    }
+}
+
+- (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite {
+    id delegate = [self.delegatesByIdentifier objectForKey:session.sessionDescription];
+    if ([delegate respondsToSelector:@selector(URLSession:downloadTask:didWriteData:totalBytesWritten:totalBytesExpectedToWrite:)]) {
+        [delegate URLSession:session downloadTask:downloadTask didWriteData:bytesWritten totalBytesWritten:totalBytesWritten totalBytesExpectedToWrite:totalBytesExpectedToWrite];
     }
 }
 
