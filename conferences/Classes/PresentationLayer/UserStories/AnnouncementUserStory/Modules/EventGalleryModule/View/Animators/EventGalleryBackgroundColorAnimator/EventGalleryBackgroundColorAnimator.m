@@ -63,7 +63,7 @@ static CGFloat const kAlphaOpacityBorder = 0.4;
         return;
     }
     
-    NSInteger leftPageNumber = currentPageNumber - 1 > 0 ? currentPageNumber - 1 : 0;
+    NSInteger leftPageNumber = currentPageNumber - 1;
     NSUInteger rightPageNumber = leftPageNumber + 1;
     
     UIColor *leftColor = [self.dataSource obtainColorForPageWithNumber:leftPageNumber];
