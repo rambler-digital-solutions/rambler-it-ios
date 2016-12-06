@@ -20,18 +20,18 @@
 
 #import <UIKit/UIKit.h>
 
-@class LecturePlainObject;
+@class LectureMaterialPlainObject;
 
 @protocol LectureInteractorOutput <NSObject>
 
-- (void)didTriggerDownloadingLectureMaterialWithLink:(NSString *)link
-                                             percent:(CGFloat)percent;
+- (void)didTriggerDownloadingLectureMaterialWithLectureMaterial:(LectureMaterialPlainObject *)material
+                                                        percent:(CGFloat)percent;
 
-- (void)didTriggerStartDownloadingLectureMaterialWithLink:(NSString *)link;
+- (void)didTriggerStartDownloadingLectureMaterialWithLectureMaterial:(LectureMaterialPlainObject *)material;
 
-- (void)didTriggerEndDownloadingLectureMaterialWithLink:(NSString *)link;
+- (void)didTriggerEndDownloadingLectureMaterialWithLectureMaterial:(LectureMaterialPlainObject *)material;
 
-- (void)didTriggerRemoveDownloadingLectureMaterialWithLink:(NSString *)link;
+- (void)didTriggerRemoveDownloadingLectureMaterialWithLectureMaterial:(LectureMaterialPlainObject *)material;
 
 @end
 

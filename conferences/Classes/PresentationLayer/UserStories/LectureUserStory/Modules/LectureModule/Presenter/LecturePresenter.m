@@ -88,7 +88,6 @@
     LectureMaterialPlainObject *lectureMaterialPlain = [self.mapperLectureViewModel mapLectureMaterialPlainFromViewModel:lectureMaterialViewModel];
     ActionAlertBlock actionAlertBlock = ^{
         [self.interactor removeVideoFromCacheWithLectureMaterial:lectureMaterialPlain];
-        [self updateViewWithCurrentLecture];
 
     };
     [self.router showAlertConfirmationRemoveWithActionBlock:actionAlertBlock];
@@ -104,40 +103,45 @@
 
 #pragma mark - LectureInteractorOutput
 
-- (void)didTriggerDownloadingLectureMaterialWithLink:(NSString *)link
-                                             percent:(CGFloat)percent {
+- (void)didTriggerDownloadingLectureMaterialWithLectureMaterial:(LectureMaterialPlainObject *)material
+                                                        percent:(CGFloat)percent {
     [self.mapperLectureViewModel updateLectureMaterialInLectureViewModel:self.stateStorage.lectureViewModel
-                                                                    link:link
+                                                         lectureMaterial:material
                                                            isDownloading:@YES
                                                                  percent:@(percent)];
-    [self updateViewWithCurrentLecture];
+    [self.view updateViewWithLecture:self.stateStorage.lectureViewModel];
 }
 
-- (void)didTriggerStartDownloadingLectureMaterialWithLink:(NSString *)link {
+- (void)didTriggerStartDownloadingLectureMaterialWithLectureMaterial:(LectureMaterialPlainObject *)material {
     [self.mapperLectureViewModel updateLectureMaterialInLectureViewModel:self.stateStorage.lectureViewModel
-                                                                    link:link
+                                                         lectureMaterial:material
                                                            isDownloading:@YES
                                                                  percent:@0];
     [self.view updateViewWithLecture:self.stateStorage.lectureViewModel];
 }
 
-- (void)didTriggerEndDownloadingLectureMaterialWithLink:(NSString *)link {
+- (void)didTriggerEndDownloadingLectureMaterialWithLectureMaterial:(LectureMaterialPlainObject *)material {
     [self.mapperLectureViewModel updateLectureMaterialInLectureViewModel:self.stateStorage.lectureViewModel
-                                                                    link:link
+                                                         lectureMaterial:material
                                                            isDownloading:@NO
-                                                                 percent:0];
+                                                                 percent:@0];
     [self.view updateViewWithLecture:self.stateStorage.lectureViewModel];
 }
 
-- (void)didTriggerRemoveDownloadingLectureMaterialWithLink:(NSString *)link {
-    
+- (void)didTriggerRemoveDownloadingLectureMaterialWithLectureMaterial:(LectureMaterialPlainObject *)material {
+    [self.mapperLectureViewModel updateLectureMaterialInLectureViewModel:self.stateStorage.lectureViewModel
+                                                         lectureMaterial:material
+                                                           isDownloading:@NO
+                                                                 percent:@0];
+    [self.view updateViewWithLecture:self.stateStorage.lectureViewModel];
 }
 
 #pragma mark - Private methods
-// надо обновлять конкретный материал и view и viewmodel
-//удаление пробрасывать действте после завершения (мб не надо так как все в мейнтреде)
-// перемещение и другая обработка ошибок
-- (void)updateViewWithCurrentLecture {
+// надо обновлять конкретный материал view
+// обработка ошибок
+
+- (void)updateViewViewModel {
+    
 }
 
 @end

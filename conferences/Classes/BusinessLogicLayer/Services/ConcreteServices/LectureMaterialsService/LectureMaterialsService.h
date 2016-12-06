@@ -25,6 +25,8 @@
 @class LectureMaterialPlainObject;
 @protocol LectureMaterialDownloadingDelegate;
 
+typedef void (^LectureMaterialServiceCompletionBlock)(NSError *error);
+
 /**
  @author Artem Karpushin
  
@@ -38,7 +40,7 @@
                               delegate:(id<LectureMaterialDownloadingDelegate>)delegate;
 
 - (void)removeFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial
-                            completion:(LectureMaterialCompletionBlock)completionBlock;
+                            completion:(LectureMaterialServiceCompletionBlock)completionBlock;
 
 - (void)updateDelegate:(id<LectureMaterialDownloadingDelegate>)delegate
     forLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial;

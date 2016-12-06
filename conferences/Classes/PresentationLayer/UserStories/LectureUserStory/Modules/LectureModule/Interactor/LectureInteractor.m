@@ -19,6 +19,7 @@
 // THE SOFTWARE.
 
 #import "LectureInteractor.h"
+#import <MagicalRecord/MagicalRecord.h>
 
 #import "LectureInteractorOutput.h"
 #import "LectureService.h"
@@ -30,6 +31,7 @@
 #import "SpeakerPlainObject.h"
 #import "LectureMaterialPlainObject.h"
 #import "LectureMaterialsService.h"
+#import "LectureMaterialModelObject.h"
 
 @implementation LectureInteractor
 
@@ -61,8 +63,9 @@
 }
 - (void)removeVideoFromCacheWithLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial{
     [self.lectureMaterialsService removeFromCacheLectureMaterial:lectureMaterial
-                                                      completion:^(NSString *localUrl, NSError *error) {
-                                                          [self.output didTriggerRemoveDownloadingLectureMaterialWithLink:nil];
+                                                      completion:^(NSError *error) {
+                                                          LectureMaterialPlainObject *material = [self getLectureMaterialByLink:lectureMaterial.link];
+                                                          [self.output didTriggerRemoveDownloadingLectureMaterialWithLectureMaterial:material];
                                                       }];
 }
 
@@ -76,27 +79,30 @@
 #pragma mark - LectureMaterialDownloadingDelegate
 
 - (void)didStartDownloadingLectureMaterialWithLink:(NSString *)link {
-    [self.output didTriggerStartDownloadingLectureMaterialWithLink:link];
+    LectureMaterialPlainObject *material = [self getLectureMaterialByLink:link];
+    [self.output didTriggerStartDownloadingLectureMaterialWithLectureMaterial:material];
 }
 
 - (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location {
-    NSString *link = session.sessionDescription;
+    LectureMaterialPlainObject *material = [self getLectureMaterialByLink:session.sessionDescription];
     @weakify(self);
     dispatch_async(dispatch_get_main_queue(), ^{
         @strongify(self);
-        [self.output didTriggerEndDownloadingLectureMaterialWithLink:link];
+        [self.output didTriggerEndDownloadingLectureMaterialWithLectureMaterial:material];
     });
 }
 
 - (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite {
+    LectureMaterialPlainObject *material = [self getLectureMaterialByLink:session.sessionDescription];
     @weakify(self);
     dispatch_async(dispatch_get_main_queue(), ^{
         @strongify(self);
         CGFloat percent = totalBytesWritten * 100.0 / totalBytesExpectedToWrite;
-        [self.output didTriggerDownloadingLectureMaterialWithLink:session.sessionDescription
-                                                          percent:percent];
+        [self.output didTriggerDownloadingLectureMaterialWithLectureMaterial:material
+                                                                     percent:percent];
     });
 }
+
 //
 //- (void)URLSession:(NSURLSession *)session didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler {
 //    completionHandler(NSURLSessionAuthChallengeUseCredential, [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust]);
@@ -106,4 +112,12 @@
 //    completionHandler(request);
 //}
 
+#pragma mark - Private methods
+
+- (LectureMaterialPlainObject *)getLectureMaterialByLink:(NSString *)link {
+    LectureMaterialModelObject *modelObject = [LectureMaterialModelObject MR_findFirstByAttribute:LectureMaterialModelObjectAttributes.link
+                                                                                        withValue:link];
+    LectureMaterialPlainObject *plainObject = [self.ponsomizer convertObject:modelObject];
+    return plainObject;
+}
 @end

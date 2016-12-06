@@ -49,18 +49,19 @@
 
 #pragma mark - NSURLSessionDownloadDelegate
 
-- (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location {
+- (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)source {
+    
     NSString *materialLink = session.sessionDescription;
-    NSString *destinationPath = [self cachedFilePathLocalVideoFromPath:location.path];
-    [self moveLectureMaterialFileFromPath:location.path
-                                   toPath:destinationPath];
+    NSURL *destination = [self cachedFileURLLocalVideoFromPath:source.path];
+    BOOL isMove = [self moveLectureMaterialFileFromURL:source
+                                                 toURL:destination];
+    destination = isMove ? destination : source;
     [self updateLectureMaterialWithLink:materialLink
-                               filePath:destinationPath];
-    NSURL *newPath = [NSURL fileURLWithPath:destinationPath];
+                               filePath:destination.path];
     id delegate = [self.delegatesByIdentifier objectForKey:materialLink];
     [self.delegatesByIdentifier removeObjectForKey:materialLink];
     [delegate URLSession:session downloadTask:downloadTask
-                    didFinishDownloadingToURL:newPath];
+                    didFinishDownloadingToURL:destination];
 }
 
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(nullable NSError *)error {
@@ -107,20 +108,18 @@
 
 #pragma mark - Private methods 
 
-- (void)moveLectureMaterialFileFromPath:(NSString *)sourcePath
-                                 toPath:(NSString *)destinationPath {
+- (BOOL)moveLectureMaterialFileFromURL:(NSURL *)source
+                                 toURL:(NSURL *)destination {
     NSError *error;
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    [fileManager moveItemAtPath:sourcePath
-                         toPath:destinationPath
-     
-                          error:&error];
+    return [fileManager moveItemAtURL:source
+                                toURL:destination
+                                error:&error];
     
-    [fileManager removeItemAtPath:sourcePath
-                            error:&error];
 }
 
-- (void)updateLectureMaterialWithLink:(NSString *)link filePath:(NSString *)filePath {
+- (void)updateLectureMaterialWithLink:(NSString *)link
+                             filePath:(NSString *)filePath {
     NSManagedObjectContext *rootContext = [NSManagedObjectContext MR_defaultContext];
     [rootContext performBlockAndWait:^{
         NSString *attributeName = LectureMaterialModelObjectAttributes.link;
@@ -143,12 +142,12 @@
     return NO;
 }
 
-- (NSString *)cachedFilePathLocalVideoFromPath:(NSString *)oldPath {
+- (NSURL *)cachedFileURLLocalVideoFromPath:(NSString *)oldPath {
     NSString  *documentsDirectory = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
     NSString *fileName = [oldPath lastPathComponent];
     documentsDirectory = [documentsDirectory stringByAppendingPathComponent:RITRelativePath];
     documentsDirectory = [documentsDirectory stringByAppendingPathComponent:fileName];
-    return documentsDirectory;
+    return [NSURL fileURLWithPath:documentsDirectory];
 }
 
 @end

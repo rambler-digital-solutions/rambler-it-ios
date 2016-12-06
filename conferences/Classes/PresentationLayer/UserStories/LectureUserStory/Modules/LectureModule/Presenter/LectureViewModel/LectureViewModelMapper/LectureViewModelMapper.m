@@ -27,16 +27,17 @@
 }
 
 - (LectureViewModel *)updateLectureMaterialInLectureViewModel:(LectureViewModel *)lecture
-                                                         link:(NSString *)link
+                                              lectureMaterial:(LectureMaterialPlainObject *)plainMaterial
                                                 isDownloading:(NSNumber *)isDownloading
                                                       percent:(NSNumber *)percent {
-    if (link.length == 0) {
+    if (plainMaterial.link.length == 0) {
         return lecture;
     }
     for (LectureMaterialViewModel *material in lecture.lectureMaterials) {
-        if ([material.link isEqualToString:link]) {
+        if ([material.link isEqualToString:material.link]) {
             material.isDownloading = isDownloading;
             material.percent = percent;
+            material.localURL = plainMaterial.localURL;
         }
     }
     return lecture;
@@ -50,6 +51,16 @@
     plain.name = lectureViewModel.name;
     plain.type = lectureViewModel.type;
     return plain;
+}
+
+- (LectureMaterialViewModel *)mapLectureMaterialViewModelFromPlainObject:(LectureMaterialPlainObject *)plainMaterial {
+    LectureMaterialViewModel *viewModel = [LectureMaterialViewModel new];
+    viewModel.lectureMaterialId = plainMaterial.lectureMaterialId;
+    viewModel.link = plainMaterial.link;
+    viewModel.localURL = plainMaterial.localURL;
+    viewModel.name = plainMaterial.name;
+    viewModel.type = plainMaterial.type;
+    return viewModel;
 }
 
 #pragma mark - Private methods

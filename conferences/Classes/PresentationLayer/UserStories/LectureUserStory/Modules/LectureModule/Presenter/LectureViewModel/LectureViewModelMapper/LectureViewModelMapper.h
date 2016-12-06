@@ -19,7 +19,7 @@
 - (LectureMaterialPlainObject *)mapLectureMaterialPlainFromViewModel:(LectureMaterialViewModel *)lectureViewModel;
 
 - (LectureViewModel *)updateLectureMaterialInLectureViewModel:(LectureViewModel *)lecture
-                                                         link:(NSString *)link
+                                              lectureMaterial:(LectureMaterialPlainObject *)material
                                                 isDownloading:(NSNumber *)isDownloading
                                                       percent:(NSNumber *)percent;
 

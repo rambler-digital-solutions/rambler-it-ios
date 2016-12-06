@@ -77,7 +77,7 @@
 }
 
 - (void)removeFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial
-                            completion:(LectureMaterialCompletionBlock)completionBlock {
+                            completion:(LectureMaterialServiceCompletionBlock)completionBlock {
     for (id<LectureMaterialsHandler> handler in self.lectureMaterialsHandlers) {
         if ([handler canHandleLectureMaterial:lectureMaterial]) {
             @weakify(self);
@@ -87,7 +87,7 @@
                       [self saveToPersistenStoreLectureMaterialWithID:lectureMaterial.lectureMaterialId
                                                              localURL:localUrl];
                     if (completionBlock) {
-                        completionBlock(localUrl, error);
+                        completionBlock(error);
                     }
                                          }];
             break;
