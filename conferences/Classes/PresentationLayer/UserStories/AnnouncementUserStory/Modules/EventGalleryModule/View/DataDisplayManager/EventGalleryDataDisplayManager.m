@@ -97,8 +97,12 @@
 
 #pragma mark - <EventGalleryBackgroundColorAnimatorDataSource>
 
-- (UIColor *)obtainColorForPageWithNumber:(NSUInteger)pageNumber {
-    if (pageNumber == self.events.count) {
+- (UIColor *)obtainColorForPageWithNumber:(NSInteger)pageNumber {
+    //That's the case for fast scrolling
+    pageNumber = pageNumber < 0 ? 0 : pageNumber;
+    pageNumber = pageNumber > self.events.count ? self.events.count : pageNumber;
+    
+    if (pageNumber >= self.events.count) {
         // That's the case for "More events" card
         UIColor *moreEventsColor = [UIColor rcf_lightGrayColor];
         return moreEventsColor;
