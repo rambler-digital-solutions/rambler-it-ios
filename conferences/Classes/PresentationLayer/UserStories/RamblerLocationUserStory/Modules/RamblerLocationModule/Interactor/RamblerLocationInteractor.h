@@ -22,7 +22,7 @@
 #import "RamblerLocationInteractorInput.h"
 
 #import "RamblerLocationService.h"
-#import "LocationServiceOutput.h"
+#import "LocationServiceDelegate.h"
 
 #import <UberRides/UberRides.h>
 
@@ -30,7 +30,7 @@
 @protocol MapLinkBuilder;
 @protocol LocationService;
 
-@interface RamblerLocationInteractor : NSObject<RamblerLocationInteractorInput, LocationServiceOutput>
+@interface RamblerLocationInteractor : NSObject<RamblerLocationInteractorInput, LocationServiceDelegate>
 
 @property (nonatomic, weak) id<RamblerLocationInteractorOutput> output;
 

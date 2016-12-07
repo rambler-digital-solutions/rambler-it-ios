@@ -23,8 +23,8 @@
 #import <CoreLocation/CoreLocation.h>
 
 static NSString *const kDropOffNickname = @"Rambler&Co";
-static CGFloat const kRamblerLatitude = 55.69868723594745;
-static CGFloat const kRamblerLongitude = 37.624738922787515;
+static CLLocationDegrees const kRamblerLatitude = 55.69868723594745;
+static CLLocationDegrees const kRamblerLongitude = 37.624738922787515;
 
 @implementation UberRidesAssembly
 

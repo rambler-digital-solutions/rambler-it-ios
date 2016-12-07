@@ -37,7 +37,7 @@
 #pragma mark - Outlets
 
 @property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
-@property (weak, nonatomic) IBOutlet UIView *rideButtonContainerView;
+@property (nonatomic, weak) IBOutlet UIView *rideButtonContainerView;
 
 #pragma mark - IBActions
 

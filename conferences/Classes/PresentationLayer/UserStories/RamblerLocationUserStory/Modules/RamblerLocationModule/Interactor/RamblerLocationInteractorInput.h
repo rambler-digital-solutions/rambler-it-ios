@@ -56,9 +56,9 @@
 /**
  @author Surik Sarkisyan
  
- The method trying to get user current location and update ride info if it possible.
+ The method tries to get user current location and update ride info if it possible.
  */
-- (void)obtainRideInfoForUserCurrentLocationIfPossible;
+- (void)performRideInfoForUserCurrentLocationIfPossible;
 
 @end
 

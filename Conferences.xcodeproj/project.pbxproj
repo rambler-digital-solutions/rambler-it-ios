@@ -598,7 +598,7 @@
 		0293588D1DF77C44007CD5FD /* LocationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationService.h; sourceTree = "<group>"; };
 		0293588E1DF77C59007CD5FD /* LocationServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationServiceImplementation.h; sourceTree = "<group>"; };
 		0293588F1DF77C59007CD5FD /* LocationServiceImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationServiceImplementation.m; sourceTree = "<group>"; };
-		029358911DF780B9007CD5FD /* LocationServiceOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationServiceOutput.h; sourceTree = "<group>"; };
+		029358921DF845C8007CD5FD /* LocationServiceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationServiceDelegate.h; sourceTree = "<group>"; };
 		2B01CEBD1D50A55900DA8E66 /* MetaEventServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetaEventServiceTests.m; sourceTree = "<group>"; };
 		2B05E15B1D50EDB900E017AB /* EventModuleSegueIdentifiersConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventModuleSegueIdentifiersConstants.h; sourceTree = "<group>"; };
 		2B05E15F1D50FEFC00E017AB /* SpeakerInfoCellObjectBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerInfoCellObjectBuilder.h; sourceTree = "<group>"; };
@@ -1737,7 +1737,7 @@
 			isa = PBXGroup;
 			children = (
 				0293588D1DF77C44007CD5FD /* LocationService.h */,
-				029358911DF780B9007CD5FD /* LocationServiceOutput.h */,
+				029358921DF845C8007CD5FD /* LocationServiceDelegate.h */,
 				0293588E1DF77C59007CD5FD /* LocationServiceImplementation.h */,
 				0293588F1DF77C59007CD5FD /* LocationServiceImplementation.m */,
 			);

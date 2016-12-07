@@ -19,7 +19,7 @@
 // THE SOFTWARE.
 
 #import "LocationServiceImplementation.h"
-#import "LocationServiceOutput.h"
+#import "LocationServiceDelegate.h"
 
 @interface LocationServiceImplementation ()
 
@@ -49,7 +49,7 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
     CLLocation *currentLocation = [locations lastObject];
     if (currentLocation) {
-        [self.delegate didUpdateLocation:currentLocation];
+        [self.delegate locationService:self didUpdateLocation:currentLocation];
         [self.locationManager stopUpdatingLocation];
     }
 }

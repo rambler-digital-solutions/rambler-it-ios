@@ -38,7 +38,7 @@
     [self.view setupUberRidesDefaultConfigWithParameters:parameters];
     [self.view updateRideRequestButtonFrame];
     [self.view updateRideInformation];
-    [self.interactor obtainRideInfoForUserCurrentLocationIfPossible];
+    [self.interactor performRideInfoForUserCurrentLocationIfPossible];
 }
 
 - (void)uberModalViewControllerWillDismiss {

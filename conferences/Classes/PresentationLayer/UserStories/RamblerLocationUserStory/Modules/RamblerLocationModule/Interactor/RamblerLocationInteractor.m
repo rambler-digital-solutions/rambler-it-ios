@@ -31,8 +31,7 @@
 #pragma mark - RamblerLocationInteractorInput
 
 - (NSArray<DirectionObject *> *)obtainDirections {
-    NSArray *directions = [self.ramblerLocationService obtainDirections];
-    return directions;
+    return [self.ramblerLocationService obtainDirections];;
 }
 
 - (NSURL *)obtainRamblerLocationUrl {
@@ -41,7 +40,7 @@
     return mapUrl;
 }
 
-- (void)obtainRideInfoForUserCurrentLocationIfPossible {
+- (void)performRideInfoForUserCurrentLocationIfPossible {
     [self.locationService obtainUserLocation];
 }
 
@@ -51,7 +50,7 @@
 
 #pragma mark - LocationServiceOutput
 
-- (void)didUpdateLocation:(CLLocation *)location {
+- (void)locationService:(id<LocationService>)locationService didUpdateLocation:(CLLocation *)location {
     [self.builder setPickupLocation:location];
     [self fetchCheapestProductWithPickupLocation:location];
 }

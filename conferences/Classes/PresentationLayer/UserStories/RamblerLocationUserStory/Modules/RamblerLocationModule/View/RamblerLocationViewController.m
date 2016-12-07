@@ -92,7 +92,7 @@
     [self.output rideRequestButtonDidLoadRideInformation];
 }
 
-#pragma mark - IBOutlets`
+#pragma mark - IBOutlets
 
 - (IBAction)didTapShareButton:(id)sender {
     [self.output didTriggerShareButtonTapEvent];

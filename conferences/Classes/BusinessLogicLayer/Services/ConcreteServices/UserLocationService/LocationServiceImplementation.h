@@ -23,11 +23,11 @@
 
 #import <CoreLocation/CoreLocation.h>
 
-@protocol LocationServiceOutput;
+@protocol LocationServiceDelegate;
 
 @interface LocationServiceImplementation : NSObject <LocationService, CLLocationManagerDelegate>
 
-@property (nonatomic, weak) id<LocationServiceOutput> delegate;
+@property (nonatomic, weak) id<LocationServiceDelegate> delegate;
 
 - (instancetype)initWithLocationManager:(CLLocationManager *)locationManager;
 

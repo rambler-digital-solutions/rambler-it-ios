@@ -20,10 +20,12 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol LocationService;
+
 @class CLLocation;
 
-@protocol LocationServiceOutput <NSObject>
+@protocol LocationServiceDelegate <NSObject>
 
-- (void)didUpdateLocation:(CLLocation *)location;
+- (void)locationService:(id<LocationService>)locationService didUpdateLocation:(CLLocation *)location;
 
 @end
