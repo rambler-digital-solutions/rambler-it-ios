@@ -55,7 +55,7 @@
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
-    
+    //Required for CLLocationManagerDelegate, thats why we should override this method
 }
 
 @end
