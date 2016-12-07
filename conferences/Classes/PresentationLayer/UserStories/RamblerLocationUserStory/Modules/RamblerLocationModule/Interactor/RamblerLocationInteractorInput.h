@@ -60,14 +60,5 @@
  */
 - (void)getRideInfoForUserCurrentLocationIfPossible;
 
-/**
- @author Surik Sarkisyan
- 
- The method loads possible ride info (time for wait, price).
- 
- @param location user current location
- */
-- (void)fetchCheapestProductWithPickupLocation:(CLLocation *)location;
-
 @end
 
