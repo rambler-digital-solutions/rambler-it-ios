@@ -34,11 +34,11 @@
     NSArray *directions = [self.interactor obtainDirections];
     [self.view setupViewWithDirections:directions];
     
-    id parameters = [self.interactor getDefaultParameters];
+    id parameters = [self.interactor obtainDefaultParameters];
     [self.view setupUberRidesDefaultConfigWithParameters:parameters];
     [self.view updateRideRequestButtonFrame];
     [self.view updateRideInformation];
-    [self.interactor getRideInfoForUserCurrentLocationIfPossible];
+    [self.interactor obtainRideInfoForUserCurrentLocationIfPossible];
 }
 
 - (void)uberModalViewControllerWillDismiss {

@@ -51,14 +51,14 @@
  
  @return UBSDKRideParameters
  */
-- (UBSDKRideParameters *)getDefaultParameters;
+- (UBSDKRideParameters *)obtainDefaultParameters;
 
 /**
  @author Surik Sarkisyan
  
  The method trying to get user current location and update ride info if it possible.
  */
-- (void)getRideInfoForUserCurrentLocationIfPossible;
+- (void)obtainRideInfoForUserCurrentLocationIfPossible;
 
 @end
 

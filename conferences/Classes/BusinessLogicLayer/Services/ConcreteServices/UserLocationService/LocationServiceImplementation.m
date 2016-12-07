@@ -40,7 +40,7 @@
     return self;
 }
 
-- (void)getUserLocation {
+- (void)obtainUserLocation {
     [self.locationManager requestLocation];
 }
 

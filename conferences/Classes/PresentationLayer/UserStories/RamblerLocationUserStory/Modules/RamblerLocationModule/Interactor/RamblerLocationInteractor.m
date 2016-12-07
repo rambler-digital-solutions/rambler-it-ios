@@ -41,21 +41,23 @@
     return mapUrl;
 }
 
-- (void)getRideInfoForUserCurrentLocationIfPossible {
-    [self.locationService getUserLocation];
+- (void)obtainRideInfoForUserCurrentLocationIfPossible {
+    [self.locationService obtainUserLocation];
 }
 
-- (UBSDKRideParameters *)getDefaultParameters {
+- (UBSDKRideParameters *)obtainDefaultParameters {
     return [self.builder build];
 }
 
 #pragma mark - LocationServiceOutput
+
 - (void)didUpdateLocation:(CLLocation *)location {
     [self.builder setPickupLocation:location];
     [self fetchCheapestProductWithPickupLocation:location];
 }
 
 #pragma mark - Private methods
+
 - (void)fetchCheapestProductWithPickupLocation:(CLLocation *)location {
     UBSDKRidesClient *ridesClient = [UBSDKRidesClient new];
     [ridesClient fetchCheapestProductWithPickupLocation:location completion:^(UBSDKUberProduct* _Nullable product, UBSDKResponse* _Nullable response) {

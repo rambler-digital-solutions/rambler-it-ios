@@ -22,6 +22,6 @@
 
 @protocol LocationService <NSObject>
 
-- (void)getUserLocation;
+- (void)obtainUserLocation;
 
 @end
