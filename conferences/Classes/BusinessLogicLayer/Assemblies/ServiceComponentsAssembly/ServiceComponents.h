@@ -30,6 +30,7 @@
 @protocol SuggestService;
 @protocol RamblerLocationService;
 @protocol LocationService;
+@protocol LocationServiceOutput;
 
 @protocol ServiceComponents <NSObject>
 
@@ -41,6 +42,6 @@
 - (id<RamblerLocationService>)ramblerLocationService;
 - (id<TagService>)tagService;
 - (id<SuggestService>)suggestService;
-- (id<LocationService>)locationServiceWithDelegate:(id)delegate;
+- (id<LocationService>)locationServiceWithDelegate:(id<LocationServiceOutput>)delegate;
 
 @end

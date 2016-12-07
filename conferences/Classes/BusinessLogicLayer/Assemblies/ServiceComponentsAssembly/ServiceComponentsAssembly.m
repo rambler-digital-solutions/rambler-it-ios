@@ -100,7 +100,7 @@
     return [TyphoonDefinition withClass:[TagServicePredicateBuilder class]];
 }
 
-- (id<LocationService>)locationServiceWithDelegate:(id)delegate {
+- (id<LocationService>)locationServiceWithDelegate:(id<LocationServiceOutput>)delegate {
     return [TyphoonDefinition withClass:[LocationServiceImplementation class]
                           configuration:^(TyphoonDefinition *definition) {
                               [definition useInitializer:@selector(initWithLocationManager:)
