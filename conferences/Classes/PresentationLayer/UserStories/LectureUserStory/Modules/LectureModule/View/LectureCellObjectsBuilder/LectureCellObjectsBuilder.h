@@ -21,6 +21,8 @@
 #import <Foundation/Foundation.h>
 
 @class LectureViewModel;
+@class VideoRecordTableViewCellObject;
+@class LectureMaterialViewModel;
 
 @protocol LectureCellObjectsBuilder <NSObject>
 
@@ -34,5 +36,6 @@
  @return CellObjects
  */
 - (NSArray *)cellObjectsForLecture:(LectureViewModel *)lecture;
-
+- (VideoRecordTableViewCellObject *)videoCellObjectForVideoMaterial:(LectureMaterialViewModel *)viewModel;
+    
 @end

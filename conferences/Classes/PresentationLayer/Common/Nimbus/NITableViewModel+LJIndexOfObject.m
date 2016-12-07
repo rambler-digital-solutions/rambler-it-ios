@@ -26,10 +26,10 @@
 - (NSUInteger)indexOfCellObjectInSection:(NSUInteger)sectionIndex
                              passingTest:(BOOL (^)(id, NSUInteger, BOOL *))predicate {
     NITableViewModelSection *section = [self.sections objectAtIndex:sectionIndex];
-    if (!section) {
+    if (section) {
         return [section.rows indexOfObjectPassingTest:predicate];
     }
-    return 0;
+    return NSNotFound;
 }
 
 @end

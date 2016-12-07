@@ -29,7 +29,7 @@
 static CGFloat const kVideoRecordTableViewCellHeight = 168.0f;
 static NSInteger const kCacheButtonCornerRadius = 15.0f;
 static NSString *const kPlaceholderImageName = @"placeholder";
-
+static NSString *const kFontPercentName = @"HelveticaNeue";
 @interface VideoRecordTableViewCell ()
 
 @property (nonatomic, weak) id <LectureMaterialCacheDelegate> actionProxy;
@@ -49,6 +49,8 @@ static NSString *const kPlaceholderImageName = @"placeholder";
     self.circleProgressBar.progressCapType = 1;
     self.circleProgressBar.valueFontSize = 10;
     self.circleProgressBar.fontColor = [UIColor whiteColor];
+    self.circleProgressBar.valueFontName = kFontPercentName;
+    self.circleProgressBar.unitFontName = kFontPercentName;
     self.circleProgressBar.emptyLineColor = [UIColor lightTextColor];
     self.circleProgressBar.emptyLineWidth = 0.5;
     self.circleProgressBar.value = 0;

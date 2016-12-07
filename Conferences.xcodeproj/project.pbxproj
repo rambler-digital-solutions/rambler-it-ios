@@ -282,6 +282,7 @@
 		667AD53D1DF0663100BCA9B9 /* LectureInfoTableViewCellObjectMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 667AD53C1DF0663100BCA9B9 /* LectureInfoTableViewCellObjectMapper.m */; };
 		667AD5411DF0664C00BCA9B9 /* LectureInfoTableViewCellCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 667AD5401DF0664C00BCA9B9 /* LectureInfoTableViewCellCalculator.m */; };
 		667AD5451DF06C7E00BCA9B9 /* UIFont+RIDTypefaces.m in Sources */ = {isa = PBXBuildFile; fileRef = 667AD5441DF06C7E00BCA9B9 /* UIFont+RIDTypefaces.m */; };
+		6691CC9D1DF86BD700894E99 /* LectureTableViewAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6691CC9C1DF86BD700894E99 /* LectureTableViewAnimator.m */; };
 		669D944B1DE0D97200589AC2 /* VideoMaterialHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 669D944A1DE0D97200589AC2 /* VideoMaterialHandler.m */; };
 		66A1DD301D7E980D00998F6B /* TagAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A1DD2F1D7E980D00998F6B /* TagAssemblyTests.m */; };
 		66A1DD321D7E981500998F6B /* TagInteractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A1DD311D7E981500998F6B /* TagInteractorTests.m */; };
@@ -1116,6 +1117,8 @@
 		667AD5401DF0664C00BCA9B9 /* LectureInfoTableViewCellCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LectureInfoTableViewCellCalculator.m; path = LectureCellObjectsBuilder/LectureInfoTableViewCellObjectMapper/LectureInfoTableViewCellCalculator/LectureInfoTableViewCellCalculator.m; sourceTree = "<group>"; };
 		667AD5431DF06C7E00BCA9B9 /* UIFont+RIDTypefaces.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIFont+RIDTypefaces.h"; path = "UIFont+RIDTypefaces/UIFont+RIDTypefaces.h"; sourceTree = "<group>"; };
 		667AD5441DF06C7E00BCA9B9 /* UIFont+RIDTypefaces.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIFont+RIDTypefaces.m"; path = "UIFont+RIDTypefaces/UIFont+RIDTypefaces.m"; sourceTree = "<group>"; };
+		6691CC9B1DF86BD700894E99 /* LectureTableViewAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LectureTableViewAnimator.h; path = LectureTableViewAnimator/LectureTableViewAnimator.h; sourceTree = "<group>"; };
+		6691CC9C1DF86BD700894E99 /* LectureTableViewAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LectureTableViewAnimator.m; path = LectureTableViewAnimator/LectureTableViewAnimator.m; sourceTree = "<group>"; };
 		669D94451DE0C6C200589AC2 /* LectureMaterialCacheDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LectureMaterialCacheDelegate.h; sourceTree = "<group>"; };
 		669D94471DE0D8B500589AC2 /* LectureMaterialsHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LectureMaterialsHandler.h; path = LectureMaterialsHandlers/LectureMaterialsHandler.h; sourceTree = "<group>"; };
 		669D94491DE0D97200589AC2 /* VideoMaterialHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoMaterialHandler.h; path = VideoMaterialHandlers/VideoMaterialHandler.h; sourceTree = "<group>"; };
@@ -3528,6 +3531,7 @@
 		63F6131A1CB00A220002AEF0 /* DataDisplayManager */ = {
 			isa = PBXGroup;
 			children = (
+				6691CC9A1DF86B6300894E99 /* LectureTableViewAnimator */,
 				63F6131B1CB00A220002AEF0 /* LectureDataDisplayManager.h */,
 				63F6131C1CB00A220002AEF0 /* LectureDataDisplayManager.m */,
 			);
@@ -4312,6 +4316,15 @@
 				97C7DD981DF33A8A00D5D1F4 /* LectureMaterialDownloadingManager.m */,
 			);
 			name = LectureMaterialDownloadingManager;
+			sourceTree = "<group>";
+		};
+		6691CC9A1DF86B6300894E99 /* LectureTableViewAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				6691CC9B1DF86BD700894E99 /* LectureTableViewAnimator.h */,
+				6691CC9C1DF86BD700894E99 /* LectureTableViewAnimator.m */,
+			);
+			name = LectureTableViewAnimator;
 			sourceTree = "<group>";
 		};
 		669D94461DE0D88F00589AC2 /* LectureMaterialsHandlers */ = {
@@ -8408,6 +8421,7 @@
 				9F533AA41D50F195004F8E82 /* IndexTransactionBatch.m in Sources */,
 				9F4097841D51F658008BFE42 /* EventObjectTransformer.m in Sources */,
 				9F8E5F941BC269EA00DC10DB /* OperationFactoriesAssembly.m in Sources */,
+				6691CC9D1DF86BD700894E99 /* LectureTableViewAnimator.m in Sources */,
 				9FBE8AFB1D634F0500DA0C32 /* EventListModuleAssembly.m in Sources */,
 				63F613971CB00A220002AEF0 /* SpeakerInfoPresenterStateStorage.m in Sources */,
 				666D7C2D1DF7055E00C89F14 /* LectureViewModelMapper.m in Sources */,

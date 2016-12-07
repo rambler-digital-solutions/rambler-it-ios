@@ -29,10 +29,13 @@
 #import "LectureMaterialInfoTableViewCellObject.h"
 #import "LectureMaterialPlainObject.h"
 #import "NITyphoonCellFactory.h"
+#import "NITableViewModel+LJIndexOfObject.h"
+#import "VideoRecordTableViewCellObject.h"
+#import "LectureTableViewAnimator.h"
 
 @interface LectureDataDisplayManager ()
 
-@property (strong, nonatomic) NITableViewModel *tableViewModel;
+@property (strong, nonatomic) NIMutableTableViewModel *tableViewModel;
 @property (strong, nonatomic) NITableViewActions *tableViewActions;
 @property (strong, nonatomic) LectureViewModel *lecture;
 
@@ -42,8 +45,10 @@
 
 #pragma mark - Public methods
 
-- (void)configureDataDisplayManagerWithLecture:(LectureViewModel *)lecture {
+- (void)configureDataDisplayManagerWithLecture:(LectureViewModel *)lecture
+                                      animator:(LectureTableViewAnimator *)animator{
     self.lecture = lecture;
+    self.animator = animator;
 }
 
 #pragma mark - UITableViewDelegate methods
@@ -64,6 +69,28 @@
     return [self.tableViewActions forwardingTo:self];
 }
 
+- (void)updateDataDisplayManagerWithLectureMaterial:(LectureMaterialViewModel *)material {
+    NSUInteger indexUpdatedCell;
+    indexUpdatedCell = [self.tableViewModel indexOfCellObjectInSection:0
+                                                           passingTest:^BOOL(id cellObject, NSUInteger index, BOOL *stop) {
+                                    if ([cellObject isKindOfClass:[VideoRecordTableViewCellObject class]]) {
+                                        VideoRecordTableViewCellObject *videoCellObject = (VideoRecordTableViewCellObject*)cellObject;
+                                        if (videoCellObject.videoMaterial.lectureMaterialId == material.lectureMaterialId) {
+                                            return YES;
+                                        }
+                                        return NO;
+                                    }
+                                    return NO;
+                        }];
+    
+    if (indexUpdatedCell == NSNotFound) {
+        return;
+    }
+    id cellObject = [self.builderCellObjects videoCellObjectForVideoMaterial:material];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:indexUpdatedCell inSection:0];
+    [self.animator updateCellWithIndexPath:indexPath withCellObject:cellObject];
+}
+    
 #pragma mark - Private methods
 
 - (NSArray *)generateCellObjects {
@@ -74,8 +101,8 @@
 - (void)updateTableViewModel {
     NSArray *cellObjects = [self generateCellObjects];
     
-    self.tableViewModel = [[NITableViewModel alloc] initWithSectionedArray:cellObjects
-                                                                  delegate:(id)[NITyphoonCellFactory class]];
+    self.tableViewModel = [[NIMutableTableViewModel alloc] initWithSectionedArray:cellObjects
+                                                                         delegate:(id)[NITyphoonCellFactory class]];
 }
 
 - (void)setupTableViewActions {

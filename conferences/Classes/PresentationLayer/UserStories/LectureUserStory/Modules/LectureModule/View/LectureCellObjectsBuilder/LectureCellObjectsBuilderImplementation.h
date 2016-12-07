@@ -28,5 +28,5 @@
 
 @property (nonatomic, strong) VideoRecordTableViewCellObjectMapper *videoCellObjectMapper;
 @property (nonatomic, strong) LectureInfoTableViewCellObjectMapper *lectureInfoCellObjectMapper;
-
+    
 @end

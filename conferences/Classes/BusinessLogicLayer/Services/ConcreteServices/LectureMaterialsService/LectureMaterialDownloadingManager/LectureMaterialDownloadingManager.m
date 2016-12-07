@@ -80,9 +80,9 @@
 }
 
 //#pragma mark - Runtime methods
-//
+
 //- (BOOL)respondsToSelector:(SEL)selector {
-//    if ([self respondsToSelector:selector]) {
+//    if ([super respondsToSelector:selector]) {
 //        return YES;
 //    }
 //    return [self isSelector:selector conformToProtocol:@protocol(NSURLSessionDownloadDelegate)];
@@ -95,6 +95,7 @@
 //- (void)forwardInvocation:(NSInvocation *)invocation {
 //    SEL selector = [invocation selector];
 //    id argument = nil;
+//    invocation
 //    [invocation getArgument:&argument atIndex:2];
 //    if (![argument isKindOfClass:[NSURLSession class]]) {
 //        return;
@@ -120,15 +121,14 @@
 
 - (void)updateLectureMaterialWithLink:(NSString *)link
                              filePath:(NSString *)filePath {
-    NSManagedObjectContext *rootContext = [NSManagedObjectContext MR_defaultContext];
-    [rootContext performBlockAndWait:^{
+    [MagicalRecord saveWithBlockAndWait:^(NSManagedObjectContext *localContext) {
         NSString *attributeName = LectureMaterialModelObjectAttributes.link;
         NSArray *materials = [LectureMaterialModelObject MR_findByAttribute:attributeName
-                                                                  withValue:link];
+                                                                  withValue:link
+                                                                  inContext:localContext];
         for (LectureMaterialModelObject *material in materials) {
             material.localURL = filePath;
         }
-        [rootContext MR_saveToPersistentStoreAndWait];
     }];
 }
 
@@ -143,10 +143,12 @@
 }
 
 - (NSURL *)cachedFileURLLocalVideoFromPath:(NSString *)oldPath {
+    // TODO: Завязка на видео, хорошо бы от это избавиться
     NSString  *documentsDirectory = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
-    NSString *fileName = [oldPath lastPathComponent];
+    NSString *fileName = [[oldPath lastPathComponent] stringByDeletingPathExtension];
     documentsDirectory = [documentsDirectory stringByAppendingPathComponent:RITRelativePath];
     documentsDirectory = [documentsDirectory stringByAppendingPathComponent:fileName];
+    documentsDirectory = [documentsDirectory stringByAppendingPathComponent:RITFormatVideo];
     return [NSURL fileURLWithPath:documentsDirectory];
 }
 

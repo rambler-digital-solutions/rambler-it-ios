@@ -33,6 +33,7 @@
 @interface LectureViewController : UIViewController <LectureViewInput, LectureDataDisplayManagerDelegate, LectureInfoTableViewCellActionProtocol, LectureMaterialCacheDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView <SpeakerShortInfoModuleInput> *speakerShortInfoView;
+@property (strong, nonatomic) IBOutlet LectureTableViewAnimator *tableViewAnimator;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (strong, nonatomic) id<LectureViewOutput, LectureMaterialCacheDelegate> output;

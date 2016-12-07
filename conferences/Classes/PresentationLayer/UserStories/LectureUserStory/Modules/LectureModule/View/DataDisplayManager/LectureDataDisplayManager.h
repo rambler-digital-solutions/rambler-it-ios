@@ -25,13 +25,17 @@
 @class LectureMaterialViewModel;
 @protocol LectureCellObjectsBuilder;
 @protocol LectureDataDisplayManagerDelegate;
+@class LectureTableViewAnimator;
 
 @interface LectureDataDisplayManager : NSObject <DataDisplayManager, UITableViewDelegate>
 
 @property (nonatomic, strong) id<LectureCellObjectsBuilder> builderCellObjects;
 @property (nonatomic, weak) id<LectureDataDisplayManagerDelegate> delegate;
-
-- (void)configureDataDisplayManagerWithLecture:(LectureViewModel *)lecture;
+@property (nonatomic, weak) IBOutlet LectureTableViewAnimator *animator;
+    
+- (void)configureDataDisplayManagerWithLecture:(LectureViewModel *)lecture
+                                      animator:(LectureTableViewAnimator *)animator;
+- (void)updateDataDisplayManagerWithLectureMaterial:(LectureMaterialViewModel *)material;
 
 @end
 

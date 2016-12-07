@@ -84,10 +84,10 @@
 }
 
 - (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location {
-    LectureMaterialPlainObject *material = [self getLectureMaterialByLink:session.sessionDescription];
     @weakify(self);
     dispatch_async(dispatch_get_main_queue(), ^{
         @strongify(self);
+        LectureMaterialPlainObject *material = [self getLectureMaterialByLink:session.sessionDescription];
         [self.output didTriggerEndDownloadingLectureMaterialWithLectureMaterial:material];
     });
 }

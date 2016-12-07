@@ -26,21 +26,22 @@
     return model;
 }
 
-- (LectureViewModel *)updateLectureMaterialInLectureViewModel:(LectureViewModel *)lecture
-                                              lectureMaterial:(LectureMaterialPlainObject *)plainMaterial
-                                                isDownloading:(NSNumber *)isDownloading
-                                                      percent:(NSNumber *)percent {
+- (LectureMaterialViewModel *)updateMaterialInLectureViewModel:(LectureViewModel *)lecture
+                                               lectureMaterial:(LectureMaterialPlainObject *)plainMaterial
+                                                 isDownloading:(NSNumber *)isDownloading
+                                                       percent:(NSNumber *)percent {
     if (plainMaterial.link.length == 0) {
-        return lecture;
+        return nil;
     }
     for (LectureMaterialViewModel *material in lecture.lectureMaterials) {
-        if ([material.link isEqualToString:material.link]) {
+        if ([material.link isEqualToString:plainMaterial.link]) {
             material.isDownloading = isDownloading;
             material.percent = percent;
             material.localURL = plainMaterial.localURL;
+            return material;
         }
     }
-    return lecture;
+    return nil;
 }
 
 - (LectureMaterialPlainObject *)mapLectureMaterialPlainFromViewModel:(LectureMaterialViewModel *)lectureViewModel {

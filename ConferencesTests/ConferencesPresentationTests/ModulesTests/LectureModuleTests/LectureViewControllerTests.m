@@ -136,7 +136,8 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
 //    [self.viewController configureViewWithLecture:lecture];
     
     // then
-    OCMVerify([self.dataDisplayManagerMock configureDataDisplayManagerWithLecture:lecture]);
+    OCMVerify([self.dataDisplayManagerMock configureDataDisplayManagerWithLecture:lecture
+                                                                         animator:nil]);
 }
 
 #pragma mark - Actions

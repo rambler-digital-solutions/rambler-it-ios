@@ -105,35 +105,35 @@
 
 - (void)didTriggerDownloadingLectureMaterialWithLectureMaterial:(LectureMaterialPlainObject *)material
                                                         percent:(CGFloat)percent {
-    [self.mapperLectureViewModel updateLectureMaterialInLectureViewModel:self.stateStorage.lectureViewModel
-                                                         lectureMaterial:material
-                                                           isDownloading:@YES
-                                                                 percent:@(percent)];
-    [self.view updateViewWithLecture:self.stateStorage.lectureViewModel];
+    LectureMaterialViewModel *newMaterial = [self.mapperLectureViewModel updateMaterialInLectureViewModel:self.stateStorage.lectureViewModel
+                                                                                          lectureMaterial:material
+                                                                                            isDownloading:@YES
+                                                                                                  percent:@(percent)];
+    [self.view updateViewWithLectureMaterial:newMaterial];
 }
 
 - (void)didTriggerStartDownloadingLectureMaterialWithLectureMaterial:(LectureMaterialPlainObject *)material {
-    [self.mapperLectureViewModel updateLectureMaterialInLectureViewModel:self.stateStorage.lectureViewModel
-                                                         lectureMaterial:material
-                                                           isDownloading:@YES
-                                                                 percent:@0];
-    [self.view updateViewWithLecture:self.stateStorage.lectureViewModel];
+    LectureMaterialViewModel *newMaterial = [self.mapperLectureViewModel updateMaterialInLectureViewModel:self.stateStorage.lectureViewModel
+                                                                                          lectureMaterial:material
+                                                                                            isDownloading:@YES
+                                                                                                  percent:@0];
+    [self.view updateViewWithLectureMaterial:newMaterial];
 }
 
 - (void)didTriggerEndDownloadingLectureMaterialWithLectureMaterial:(LectureMaterialPlainObject *)material {
-    [self.mapperLectureViewModel updateLectureMaterialInLectureViewModel:self.stateStorage.lectureViewModel
-                                                         lectureMaterial:material
-                                                           isDownloading:@NO
-                                                                 percent:@0];
-    [self.view updateViewWithLecture:self.stateStorage.lectureViewModel];
+    LectureMaterialViewModel *newMaterial = [self.mapperLectureViewModel updateMaterialInLectureViewModel:self.stateStorage.lectureViewModel
+                                                                                          lectureMaterial:material
+                                                                                            isDownloading:@NO
+                                                                                                  percent:@0];
+    [self.view updateViewWithLectureMaterial:newMaterial];
 }
 
 - (void)didTriggerRemoveDownloadingLectureMaterialWithLectureMaterial:(LectureMaterialPlainObject *)material {
-    [self.mapperLectureViewModel updateLectureMaterialInLectureViewModel:self.stateStorage.lectureViewModel
-                                                         lectureMaterial:material
-                                                           isDownloading:@NO
-                                                                 percent:@0];
-    [self.view updateViewWithLecture:self.stateStorage.lectureViewModel];
+    LectureMaterialViewModel *newMaterial = [self.mapperLectureViewModel updateMaterialInLectureViewModel:self.stateStorage.lectureViewModel
+                                                                                          lectureMaterial:material
+                                                                                            isDownloading:@NO
+                                                                                                  percent:@0];
+    [self.view updateViewWithLectureMaterial:newMaterial];
 }
 
 #pragma mark - Private methods
