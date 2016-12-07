@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "F98362A45BA392DA0FD36FDF7E10454ADF9E80B7",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "EA32E647612B3E4C99557394FE0723D07911B744" : 9223372036854775807,
+    "F98362A45BA392DA0FD36FDF7E10454ADF9E80B7" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "4D35B5A1-FA6A-4A0B-BADA-A384B81528CC",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "EA32E647612B3E4C99557394FE0723D07911B744" : "nimbus\/",
+    "F98362A45BA392DA0FD36FDF7E10454ADF9E80B7" : "rambler-it-ios\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Conferences",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Conferences.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/rambler-ios\/nimbus.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EA32E647612B3E4C99557394FE0723D07911B744"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/rambler-digital-solutions\/RamblerConferences.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F98362A45BA392DA0FD36FDF7E10454ADF9E80B7"
+    }
+  ]
+}

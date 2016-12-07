@@ -21,11 +21,11 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		028E445A1DF053B500734E84 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028E44581DF053B500734E84 /* ObjectMapper.framework */; };
-		028E445B1DF053B500734E84 /* UberRides.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028E44591DF053B500734E84 /* UberRides.framework */; };
 		028E44601DF06CA300734E84 /* UberRidesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 028E445F1DF06CA300734E84 /* UberRidesAppDelegate.m */; };
 		028E44631DF08ED200734E84 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028E44581DF053B500734E84 /* ObjectMapper.framework */; };
 		028E44641DF08ED300734E84 /* UberRides.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028E44591DF053B500734E84 /* UberRides.framework */; };
+		028E447C1DF69EE900734E84 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028E44581DF053B500734E84 /* ObjectMapper.framework */; };
+		028E447D1DF69EE900734E84 /* UberRides.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028E44591DF053B500734E84 /* UberRides.framework */; };
 		1F78357EBF30489533FBC867 /* libPods-Conferences-ConferencesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C46B774BA2D16C41C04D78BA /* libPods-Conferences-ConferencesTests.a */; };
 		234C76A5941B9A10462172CC /* libPods-Conferences.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C7A972E2814B586E4073760 /* libPods-Conferences.a */; };
 		2B01CEBE1D50A55900DA8E66 /* MetaEventServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B01CEBD1D50A55900DA8E66 /* MetaEventServiceTests.m */; };
@@ -1688,8 +1688,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				234C76A5941B9A10462172CC /* libPods-Conferences.a in Frameworks */,
-				028E445A1DF053B500734E84 /* ObjectMapper.framework in Frameworks */,
-				028E445B1DF053B500734E84 /* UberRides.framework in Frameworks */,
+				028E447C1DF69EE900734E84 /* ObjectMapper.framework in Frameworks */,
+				028E447D1DF69EE900734E84 /* UberRides.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -8053,6 +8053,7 @@
 					};
 					9F1F37FF1BBBB80D00C7797D = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = UM246WFXVS;
 						TestTargetID = 9F1F37E31BBBB80D00C7797D;
 					};
 				};
@@ -8355,6 +8356,7 @@
 				9FE139851D65F3E900D7BF44 /* ReportLectureTableViewCell.m in Sources */,
 				2BDDB1D31D3F7235007FD547 /* DirectionObject.m in Sources */,
 				661CA3FE1D65CFF70047EB68 /* LastModifiedMapperOperation.m in Sources */,
+				029358901DF77C59007CD5FD /* LocationServiceImplementation.m in Sources */,
 				9FBE8ABB1D630D4C00DA0C32 /* EventGalleryViewController.m in Sources */,
 				9F8E5FA61BC27CCE00DC10DB /* MappingConstants.m in Sources */,
 				2B20648B1D3F9CE900246C8D /* LectureModelObject.m in Sources */,
@@ -8921,6 +8923,7 @@
 			baseConfigurationReference = 3E1AE6F7E0F77223E5266DC9 /* Pods-Conferences-ConferencesTests.nightly.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = UM246WFXVS;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -9025,6 +9028,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Conferences/Conferences.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 33;
@@ -9131,6 +9135,7 @@
 			baseConfigurationReference = 9166896486D6F8D1A801419D /* Pods-Conferences-ConferencesTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = UM246WFXVS;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -9164,6 +9169,7 @@
 			baseConfigurationReference = 5AB31DDD00BCDD81411ED92C /* Pods-Conferences-ConferencesTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = UM246WFXVS;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

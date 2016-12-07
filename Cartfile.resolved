@@ -1,2 +1,2 @@
 github "Hearst-DD/ObjectMapper" "1.5.0"
-github "uber/rides-ios-sdk" "a86e520fb90fbf674aaae200e1e732a189fdca3b"
+github "uber/rides-ios-sdk" "v0.6.0"
