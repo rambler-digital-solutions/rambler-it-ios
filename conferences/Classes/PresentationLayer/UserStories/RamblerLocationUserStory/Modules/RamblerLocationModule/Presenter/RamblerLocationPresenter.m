@@ -33,11 +33,32 @@
 - (void)didTriggerViewReadyEvent {
     NSArray *directions = [self.interactor obtainDirections];
     [self.view setupViewWithDirections:directions];
+    
+    id parameters = [self.interactor getDefaultParameters];
+    [self.view setupUberRidesDefaultConfigWithParameters:parameters];
+    [self.view updateRideRequestButtonFrame];
+    [self.view updateRideInformation];
+    [self.interactor getRideInfoForUserCurrentLocationIfPossible];
+}
+
+- (void)uberModalViewControllerWillDismiss {
+    [self.view updateRideInformation];
+}
+
+- (void)rideRequestButtonDidLoadRideInformation {
+    [self.view updateRideRequestButtonFrame];
 }
 
 - (void)didTriggerShareButtonTapEvent {
     NSURL *locationUrl = [self.interactor obtainRamblerLocationUrl];
     [self.router openMapsWithUrl:locationUrl];
+}
+
+#pragma mark - RamblerLocationInteractorOutput
+
+- (void)rideParametersDidLoad:(UBSDKRideParameters *)parameters {
+    [self.view updateRideRequestButtonParameters:parameters];
+    [self.view updateRideInformation];
 }
 
 @end

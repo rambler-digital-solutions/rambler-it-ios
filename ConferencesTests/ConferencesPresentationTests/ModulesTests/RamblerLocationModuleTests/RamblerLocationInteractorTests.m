@@ -32,7 +32,7 @@
 @property (nonatomic, strong) RamblerLocationInteractor *interactor;
 
 @property (nonatomic, strong) id mockOutput;
-@property (nonatomic, strong) id mockLocationService;
+@property (nonatomic, strong) id mockRamblerLocationService;
 @property (nonatomic, strong) id mockMapLinkBuilder;
 
 @end
@@ -45,11 +45,11 @@
     self.interactor = [RamblerLocationInteractor new];
     
     self.mockOutput = OCMProtocolMock(@protocol(RamblerLocationInteractorOutput));
-    self.mockLocationService = OCMProtocolMock(@protocol(RamblerLocationService));
+    self.mockRamblerLocationService = OCMProtocolMock(@protocol(RamblerLocationService));
     self.mockMapLinkBuilder = OCMProtocolMock(@protocol(MapLinkBuilder));
     
     self.interactor.output = self.mockOutput;
-    self.interactor.locationService = self.mockLocationService;
+    self.interactor.ramblerLocationService = self.mockRamblerLocationService;
     self.interactor.mapLinkBuilder = self.mockMapLinkBuilder;
 }
 
@@ -57,7 +57,7 @@
     self.interactor = nil;
     
     self.mockOutput = nil;
-    self.mockLocationService = nil;
+    self.mockRamblerLocationService = nil;
     self.mockMapLinkBuilder = nil;
     
     [super tearDown];
@@ -66,7 +66,7 @@
 - (void)testThatInteractorObtainsDirections {
     // given
     NSArray *testDirections = @[@"1", @"2"];
-    OCMStub([self.mockLocationService obtainDirections]).andReturn(testDirections);
+    OCMStub([self.mockRamblerLocationService obtainDirections]).andReturn(testDirections);
     
     // when
     NSArray *result = [self.interactor obtainDirections];
@@ -78,7 +78,7 @@
 - (void)testThatInteractorObtainsRamblerLocationUrl {
     // given
     CLLocationCoordinate2D testCoordinates = CLLocationCoordinate2DMake(10, 20);
-    OCMStub([self.mockLocationService obtainRamblerCoordinates]).andReturn(testCoordinates);
+    OCMStub([self.mockRamblerLocationService obtainRamblerCoordinates]).andReturn(testCoordinates);
     
     NSURL *testUrl = [NSURL URLWithString:@"rambler.ru"];
     OCMStub([self.mockMapLinkBuilder buildUrlWithCoordinates:testCoordinates]).andReturn(testUrl);

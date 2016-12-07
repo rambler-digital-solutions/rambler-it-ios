@@ -39,6 +39,8 @@
                                                     with:[self presenterRamblerLocation]];
                               [definition injectProperty:@selector(dataDisplayManager)
                                                     with:[self dataDisplayManagerRamblerLocation]];
+                              [definition injectProperty:@selector(requestBehavior)
+                                                    with:[self.uberRidesAssembly requestBehaviorWithViewController:[self viewRamblerLocation]]];
                           }];
 }
 
@@ -47,10 +49,14 @@
                           configuration:^(TyphoonDefinition *definition) {
                               [definition injectProperty:@selector(output)
                                                     with:[self presenterRamblerLocation]];
-                              [definition injectProperty:@selector(locationService)
+                              [definition injectProperty:@selector(ramblerLocationService)
                                                     with:[self.serviceComponents ramblerLocationService]];
                               [definition injectProperty:@selector(mapLinkBuilder)
                                                     with:[self.presentationLayerHelpersAssembly appleMapsLinkBuilder]];
+                              [definition injectProperty:@selector(builder)
+                                                    with:[self.uberRidesAssembly builder]];
+                              [definition injectProperty:@selector(locationService)
+                                                    with:[self.serviceComponents locationServiceWithDelegate:[self interactorRamblerLocation]]];
                           }];
 }
 

@@ -2,39 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-        <string>uber</string>
-        <string>uberauth</string>
-    </array>
-    <key>UberClientID</key>
-    <string>Cwgg6VCiOHcd8RxMNZmOmyqNvOZI81mI</string>
-    <key>UberServerToken</key>
-        <string>Xffxa0c0DEOMPvflcbd-2wFKXieR-4lJ9wts2IMn</string>
-        <key>UberDisplayName</key>
-        <string>Conferences</string>
-        <key>UberCallbackURIs</key>
-        <array>
-            <dict>
-                <key>UberCallbackURIType</key>
-                <string>General</string>
-                <key>URIString</key>
-                <string>callback://rambler_it</string>
-            </dict>
-        </array>
-        <key>CFBundleURLTypes</key>
-        <array>
-            <dict>
-                <key>CFBundleTypeRole</key>
-                <string>Editor</string>
-                <key>CFBundleURLSchemes</key>
-                <array>
-                    <string>rambler_it</string>
-                </array>
-            </dict>
-        </array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Поделитесь своей геопозицией, чтобы мы могли рассчитать примерную стоимость такси до места мероприятия.</string>
 	<key>CFBundleDisplayName</key>
 	<string>Rambler&amp;IT</string>
 	<key>CFBundleExecutable</key>
@@ -51,6 +22,17 @@
 	<string>1.0.1</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>callback</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>45</string>
 	<key>Fabric</key>
@@ -67,6 +49,11 @@
 			</dict>
 		</array>
 	</dict>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>uber</string>
+		<string>uberauth</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -105,5 +92,20 @@
 	<true/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array/>
+	<key>UberCallbackURIs</key>
+	<array>
+		<dict>
+			<key>URIString</key>
+			<string>callback://rambler_it</string>
+			<key>UberCallbackURIType</key>
+			<string>General</string>
+		</dict>
+	</array>
+	<key>UberClientID</key>
+	<string>C3_MGMDcm8s74_WlfPX2lg_id8bwXC15</string>
+	<key>UberDisplayName</key>
+	<string>Conferences</string>
+	<key>UberServerToken</key>
+	<string>THiBWocYPkZshOYZvo7Uft43qBDHP-noPooRPdAY</string>
 </dict>
 </plist>

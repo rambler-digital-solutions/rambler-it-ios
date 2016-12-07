@@ -18,20 +18,13 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import <Typhoon/Typhoon.h>
+#import <RamblerTyphoonUtils/AssemblyCollector.h>
+#import <UberRides/UberRides.h>
 
-@class UBSDKRideParameters;
+@interface UberRidesAssembly : TyphoonAssembly <RamblerInitialAssembly>
 
-@protocol RamblerLocationInteractorOutput <NSObject>
-
-/**
- @author Surik Sarkisyan
- 
- The method returns loaded and configured parameters for update posible ride info(time for wait, price, etc).
- 
- @param parameters
- */
-- (void)rideParametersDidLoad:(UBSDKRideParameters *)parameters;
+- (UBSDKRideRequestViewRequestingBehavior *)requestBehaviorWithViewController:(UIViewController *)viewController;
+- (UBSDKRideParametersBuilder *)builder;
 
 @end
-

@@ -22,11 +22,14 @@
 #import "RamblerLocationViewOutput.h"
 #import "RamblerLocationDataDisplayManager.h"
 
+#import <CoreLocation/CoreLocation.h>
+
 @implementation RamblerLocationViewController
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	[self.output didTriggerViewReadyEvent];
+	
+    [self.output didTriggerViewReadyEvent];
 }
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
@@ -45,7 +48,51 @@
     [self.collectionView reloadData];
 }
 
-#pragma mark - IBOutlets
+- (void)setupUberRidesDefaultConfigWithParameters:(UBSDKRideParameters *)parameters {
+    self.requestBehavior.modalRideRequestViewController.delegate = self;
+    
+    self.rideRequestButton = [[UBSDKRideRequestButton alloc] initWithRideParameters:parameters requestingBehavior:self.requestBehavior];
+
+    self.rideRequestButton.delegate = self;
+
+    [self.rideButtonContainerView addSubview:self.rideRequestButton];
+}
+
+- (void)updateRideInformation {
+    [self.rideRequestButton loadRideInformation];
+}
+
+- (void)updateRideRequestButtonParameters:(UBSDKRideParameters *)parameters {
+    self.rideRequestButton.rideParameters = parameters;
+}
+
+- (void)updateRideRequestButtonFrame {
+    [self.rideButtonContainerView layoutIfNeeded];
+    [self.rideRequestButton sizeToFit];
+    self.rideRequestButton.center = (CGPoint){CGRectGetMidX(self.rideButtonContainerView.frame), self.rideButtonContainerView.frame.size.height / 2};
+}
+
+#pragma mark - UBSDKModalViewControllerDelegate
+
+- (void)modalViewControllerDidDismiss:(UBSDKModalViewController *)modalViewController {
+    //Required for UBSDKModalViewControllerDelegate, thats why we should override this method
+}
+
+- (void)modalViewControllerWillDismiss:(UBSDKModalViewController *)modalViewController {
+    [self.output uberModalViewControllerWillDismiss];
+}
+
+#pragma mark - UBSDKRideRequestButtonDelegate
+
+- (void)rideRequestButton:(UBSDKRideRequestButton *)button didReceiveError:(UBSDKRidesError *)error {
+    //Required for UBSDKRideRequestButtonDelegate, thats why we should override this method
+}
+
+- (void)rideRequestButtonDidLoadRideInformation:(UBSDKRideRequestButton *)button {
+    [self.output rideRequestButtonDidLoadRideInformation];
+}
+
+#pragma mark - IBOutlets`
 
 - (IBAction)didTapShareButton:(id)sender {
     [self.output didTriggerShareButtonTapEvent];

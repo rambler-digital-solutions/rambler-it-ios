@@ -22,16 +22,22 @@
 #import "RamblerLocationInteractorInput.h"
 
 #import "RamblerLocationService.h"
+#import "LocationServiceOutput.h"
+
+#import <UberRides/UberRides.h>
 
 @protocol RamblerLocationInteractorOutput;
 @protocol MapLinkBuilder;
+@protocol LocationService;
 
-@interface RamblerLocationInteractor : NSObject<RamblerLocationInteractorInput>
+@interface RamblerLocationInteractor : NSObject<RamblerLocationInteractorInput, LocationServiceOutput>
 
 @property (nonatomic, weak) id<RamblerLocationInteractorOutput> output;
 
-@property (nonatomic, strong) id<RamblerLocationService> locationService;
+@property (nonatomic, strong) id<RamblerLocationService> ramblerLocationService;
 @property (nonatomic, strong) id<MapLinkBuilder> mapLinkBuilder;
+@property (nonatomic, strong) UBSDKRideParametersBuilder *builder;
+@property (nonatomic, strong) id<LocationService> locationService;
 
 @end
 

@@ -21,6 +21,7 @@
 #import <Foundation/Foundation.h>
 
 @class DirectionObject;
+@class UBSDKRideParameters;
 
 @protocol RamblerLocationViewInput <NSObject>
 
@@ -32,6 +33,38 @@
  @param directions <#directions description#>
  */
 - (void)setupViewWithDirections:(NSArray <DirectionObject *> *)directions;
+
+/**
+ @author Surik Sarkisyan
+ 
+ Method setups uber rides default config
+ 
+ @param parameters contains pickupLocation, dropoffLocation, dropoffLocationName etc.
+ */
+- (void)setupUberRidesDefaultConfigWithParameters:(UBSDKRideParameters *)parameters;
+
+/**
+ @author Surik Sarkisyan
+ 
+ Method tells view update ride information and display on ride request button
+ */
+- (void)updateRideInformation;
+
+/**
+ @author Surik Sarkisyan
+ 
+ Method tells view update rideRequestButton frame
+ */
+- (void)updateRideRequestButtonFrame;
+
+/**
+ @author Surik Sarkisyan
+ 
+ Method tells view update rideRequestButton parameters
+ 
+ @param parameters contains pickupLocation, dropoffLocation, dropoffLocationName etc.
+ */
+- (void)updateRideRequestButtonParameters:(UBSDKRideParameters *)parameters;
 
 @end
 

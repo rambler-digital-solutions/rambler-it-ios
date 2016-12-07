@@ -18,20 +18,44 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import "LocationServiceImplementation.h"
+#import "LocationServiceOutput.h"
 
-@class UBSDKRideParameters;
+@interface LocationServiceImplementation ()
 
-@protocol RamblerLocationInteractorOutput <NSObject>
-
-/**
- @author Surik Sarkisyan
- 
- The method returns loaded and configured parameters for update posible ride info(time for wait, price, etc).
- 
- @param parameters
- */
-- (void)rideParametersDidLoad:(UBSDKRideParameters *)parameters;
+@property (nonatomic, strong) CLLocationManager *locationManager;
 
 @end
 
+@implementation LocationServiceImplementation
+
+- (instancetype)initWithLocationManager:(CLLocationManager *)locationManager {
+    self = [super init];
+    
+    if (self) {
+        _locationManager = locationManager;
+        _locationManager.delegate = self;
+    }
+    
+    return self;
+}
+
+- (void)getUserLocation {
+    [self.locationManager requestLocation];
+}
+
+#pragma mark - CLLocationManagerDelegate
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
+    CLLocation *currentLocation = [locations lastObject];
+    if (currentLocation) {
+        [self.delegate didUpdateLocation:currentLocation];
+        [self.locationManager stopUpdatingLocation];
+    }
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    
+}
+
+@end

@@ -21,6 +21,8 @@
 #import <Foundation/Foundation.h>
 
 @class DirectionObject;
+@class CLLocation;
+@class UBSDKRideParameters;
 
 @protocol RamblerLocationInteractorInput <NSObject>
 
@@ -41,6 +43,31 @@
  @return NSURL
  */
 - (NSURL *)obtainRamblerLocationUrl;
+
+/**
+ @author Surik Sarkisyan
+ 
+ The method returns defaul Uber Ride Parameters
+ 
+ @return UBSDKRideParameters
+ */
+- (UBSDKRideParameters *)getDefaultParameters;
+
+/**
+ @author Surik Sarkisyan
+ 
+ The method trying to get user current location and update ride info if it possible.
+ */
+- (void)getRideInfoForUserCurrentLocationIfPossible;
+
+/**
+ @author Surik Sarkisyan
+ 
+ The method loads possible ride info (time for wait, price).
+ 
+ @param location user current location
+ */
+- (void)fetchCheapestProductWithPickupLocation:(CLLocation *)location;
 
 @end
 

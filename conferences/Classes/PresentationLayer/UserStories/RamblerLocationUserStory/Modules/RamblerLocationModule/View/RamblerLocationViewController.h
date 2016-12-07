@@ -20,20 +20,24 @@
 
 #import <UIKit/UIKit.h>
 #import "RamblerLocationViewInput.h"
+#import <UberRides/UberRides.h>
 
 @protocol RamblerLocationViewOutput;
 @class RamblerLocationDataDisplayManager;
 
-@interface RamblerLocationViewController : UIViewController<RamblerLocationViewInput>
+@interface RamblerLocationViewController : UIViewController <RamblerLocationViewInput, UBSDKModalViewControllerDelegate, UBSDKRideRequestButtonDelegate>
 
 #pragma mark - Dependencies
 
 @property (nonatomic, strong) id<RamblerLocationViewOutput> output;
 @property (nonatomic, strong) RamblerLocationDataDisplayManager *dataDisplayManager;
+@property (nonatomic, strong) UBSDKRideRequestViewRequestingBehavior *requestBehavior;
+@property (nonatomic, strong) UBSDKRideRequestButton *rideRequestButton;
 
 #pragma mark - Outlets
 
 @property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UIView *rideButtonContainerView;
 
 #pragma mark - IBActions
 

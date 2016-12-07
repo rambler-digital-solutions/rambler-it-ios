@@ -24,19 +24,48 @@
 
 #import "MapLinkBuilder.h"
 
+#import "LocationService.h"
+
 @implementation RamblerLocationInteractor
 
 #pragma mark - RamblerLocationInteractorInput
 
 - (NSArray<DirectionObject *> *)obtainDirections {
-    NSArray *directions = [self.locationService obtainDirections];
+    NSArray *directions = [self.ramblerLocationService obtainDirections];
     return directions;
 }
 
 - (NSURL *)obtainRamblerLocationUrl {
-    CLLocationCoordinate2D coordinates = [self.locationService obtainRamblerCoordinates];
+    CLLocationCoordinate2D coordinates = [self.ramblerLocationService obtainRamblerCoordinates];
     NSURL *mapUrl = [self.mapLinkBuilder buildUrlWithCoordinates:coordinates];
     return mapUrl;
+}
+
+- (void)getRideInfoForUserCurrentLocationIfPossible {
+    [self.locationService getUserLocation];
+}
+
+- (UBSDKRideParameters *)getDefaultParameters {
+    return [self.builder build];
+}
+
+#pragma mark - LocationServiceOutput
+- (void)didUpdateLocation:(CLLocation *)location {
+    [self.builder setPickupLocation:location];
+    [self fetchCheapestProductWithPickupLocation:location];
+}
+
+#pragma mark - Private methods
+- (void)fetchCheapestProductWithPickupLocation:(CLLocation *)location {
+    UBSDKRidesClient *ridesClient = [UBSDKRidesClient new];
+    [ridesClient fetchCheapestProductWithPickupLocation:location completion:^(UBSDKUberProduct* _Nullable product, UBSDKResponse* _Nullable response) {
+        if (product) {
+            self.builder = [self.builder setProductID:product.productID];
+            
+            UBSDKRideParameters *parameters = [self.builder build];
+            [self.output rideParametersDidLoad:parameters];
+        }
+    }];
 }
 
 @end

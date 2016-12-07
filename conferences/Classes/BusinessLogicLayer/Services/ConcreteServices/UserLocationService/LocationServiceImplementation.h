@@ -19,19 +19,16 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
+#import "LocationService.h"
 
-@class UBSDKRideParameters;
+#import <CoreLocation/CoreLocation.h>
 
-@protocol RamblerLocationInteractorOutput <NSObject>
+@protocol LocationServiceOutput;
 
-/**
- @author Surik Sarkisyan
- 
- The method returns loaded and configured parameters for update posible ride info(time for wait, price, etc).
- 
- @param parameters
- */
-- (void)rideParametersDidLoad:(UBSDKRideParameters *)parameters;
+@interface LocationServiceImplementation : NSObject <LocationService, CLLocationManagerDelegate>
+
+@property (nonatomic, weak) id<LocationServiceOutput> delegate;
+
+- (instancetype)initWithLocationManager:(CLLocationManager *)locationManager;
 
 @end
-

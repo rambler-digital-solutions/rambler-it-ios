@@ -36,5 +36,19 @@
  */
 - (void)didTriggerShareButtonTapEvent;
 
+/**
+ @author Surik Sarkisyan
+ 
+ Method tells presenter that uberModalViewController will dismiss
+ */
+- (void)uberModalViewControllerWillDismiss;
+
+/**
+ @author Surik Sarkisyan
+ 
+ Method tells presenter that rideRequestButton did load new ride info
+ */
+- (void)rideRequestButtonDidLoadRideInformation;
+
 @end
 

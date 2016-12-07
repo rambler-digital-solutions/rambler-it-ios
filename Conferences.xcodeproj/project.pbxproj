@@ -24,8 +24,10 @@
 		028E44601DF06CA300734E84 /* UberRidesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 028E445F1DF06CA300734E84 /* UberRidesAppDelegate.m */; };
 		028E44631DF08ED200734E84 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028E44581DF053B500734E84 /* ObjectMapper.framework */; };
 		028E44641DF08ED300734E84 /* UberRides.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028E44591DF053B500734E84 /* UberRides.framework */; };
+		028E447B1DF6083400734E84 /* UberRidesAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 028E447A1DF6083400734E84 /* UberRidesAssembly.m */; };
 		028E447C1DF69EE900734E84 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028E44581DF053B500734E84 /* ObjectMapper.framework */; };
 		028E447D1DF69EE900734E84 /* UberRides.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028E44591DF053B500734E84 /* UberRides.framework */; };
+		029358901DF77C59007CD5FD /* LocationServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0293588F1DF77C59007CD5FD /* LocationServiceImplementation.m */; };
 		1F78357EBF30489533FBC867 /* libPods-Conferences-ConferencesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C46B774BA2D16C41C04D78BA /* libPods-Conferences-ConferencesTests.a */; };
 		234C76A5941B9A10462172CC /* libPods-Conferences.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C7A972E2814B586E4073760 /* libPods-Conferences.a */; };
 		2B01CEBE1D50A55900DA8E66 /* MetaEventServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B01CEBD1D50A55900DA8E66 /* MetaEventServiceTests.m */; };
@@ -590,6 +592,13 @@
 		028E44591DF053B500734E84 /* UberRides.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UberRides.framework; path = Carthage/Build/iOS/UberRides.framework; sourceTree = "<group>"; };
 		028E445E1DF06CA300734E84 /* UberRidesAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UberRidesAppDelegate.h; sourceTree = "<group>"; };
 		028E445F1DF06CA300734E84 /* UberRidesAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UberRidesAppDelegate.m; sourceTree = "<group>"; };
+		028E44791DF6083400734E84 /* UberRidesAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UberRidesAssembly.h; sourceTree = "<group>"; };
+		028E447A1DF6083400734E84 /* UberRidesAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UberRidesAssembly.m; sourceTree = "<group>"; };
+		028E447E1DF69FEF00734E84 /* Conferences.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Conferences.entitlements; sourceTree = "<group>"; };
+		0293588D1DF77C44007CD5FD /* LocationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationService.h; sourceTree = "<group>"; };
+		0293588E1DF77C59007CD5FD /* LocationServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationServiceImplementation.h; sourceTree = "<group>"; };
+		0293588F1DF77C59007CD5FD /* LocationServiceImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationServiceImplementation.m; sourceTree = "<group>"; };
+		029358911DF780B9007CD5FD /* LocationServiceOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationServiceOutput.h; sourceTree = "<group>"; };
 		2B01CEBD1D50A55900DA8E66 /* MetaEventServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetaEventServiceTests.m; sourceTree = "<group>"; };
 		2B05E15B1D50EDB900E017AB /* EventModuleSegueIdentifiersConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventModuleSegueIdentifiersConstants.h; sourceTree = "<group>"; };
 		2B05E15F1D50FEFC00E017AB /* SpeakerInfoCellObjectBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerInfoCellObjectBuilder.h; sourceTree = "<group>"; };
@@ -1715,6 +1724,26 @@
 			path = UberRidesAppDelegate;
 			sourceTree = "<group>";
 		};
+		028E44781DF607F400734E84 /* UberRidesAssembly */ = {
+			isa = PBXGroup;
+			children = (
+				028E44791DF6083400734E84 /* UberRidesAssembly.h */,
+				028E447A1DF6083400734E84 /* UberRidesAssembly.m */,
+			);
+			path = UberRidesAssembly;
+			sourceTree = "<group>";
+		};
+		029358781DF6E76D007CD5FD /* UserLocationService */ = {
+			isa = PBXGroup;
+			children = (
+				0293588D1DF77C44007CD5FD /* LocationService.h */,
+				029358911DF780B9007CD5FD /* LocationServiceOutput.h */,
+				0293588E1DF77C59007CD5FD /* LocationServiceImplementation.h */,
+				0293588F1DF77C59007CD5FD /* LocationServiceImplementation.m */,
+			);
+			path = UserLocationService;
+			sourceTree = "<group>";
+		};
 		29F930AE767A2E0D549FB50F /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -2623,6 +2652,7 @@
 		6373A3DF1BBDBDF700DF67FF /* ConcreteServices */ = {
 			isa = PBXGroup;
 			children = (
+				029358781DF6E76D007CD5FD /* UserLocationService */,
 				9FE1391F1D65BD6B00D7BF44 /* SuggestService */,
 				66E999961D54B2F800161D98 /* TagService */,
 				2B429A781D509857004C005F /* MetaEventService */,
@@ -2866,6 +2896,7 @@
 		63F54D961BC5A91800DB1746 /* Assemblies */ = {
 			isa = PBXGroup;
 			children = (
+				028E44781DF607F400734E84 /* UberRidesAssembly */,
 				63F54D971BC5A91800DB1746 /* ServiceComponentsAssembly */,
 			);
 			path = Assemblies;
@@ -5670,6 +5701,7 @@
 		9F1F37E61BBBB80D00C7797D /* Conferences */ = {
 			isa = PBXGroup;
 			children = (
+				028E447E1DF69FEF00734E84 /* Conferences.entitlements */,
 				63FDCDD81BBDBA2A00A43B60 /* Classes */,
 				63FDCE001BBDBA2A00A43B60 /* Resources */,
 				63FDCE031BBDBA2A00A43B60 /* Supporting Files */,
@@ -8046,6 +8078,9 @@
 						DevelopmentTeam = UM246WFXVS;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 0;
 							};
@@ -8307,6 +8342,7 @@
 				9FBE8AB61D630D4C00DA0C32 /* EventGalleryInteractor.m in Sources */,
 				9F533AA41D50F195004F8E82 /* IndexTransactionBatch.m in Sources */,
 				9F4097841D51F658008BFE42 /* EventObjectTransformer.m in Sources */,
+				028E447B1DF6083400734E84 /* UberRidesAssembly.m in Sources */,
 				9F8E5F941BC269EA00DC10DB /* OperationFactoriesAssembly.m in Sources */,
 				9FBE8AFB1D634F0500DA0C32 /* EventListModuleAssembly.m in Sources */,
 				63F613971CB00A220002AEF0 /* SpeakerInfoPresenterStateStorage.m in Sources */,
@@ -8872,6 +8908,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Conferences/Conferences.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 33;
@@ -9083,6 +9120,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Conferences/Conferences.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 33;
