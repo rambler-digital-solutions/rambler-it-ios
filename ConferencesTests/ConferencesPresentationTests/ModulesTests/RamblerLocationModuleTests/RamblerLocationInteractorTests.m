@@ -26,6 +26,9 @@
 #import "RamblerLocationInteractorOutput.h"
 #import "RamblerLocationService.h"
 #import "MapLinkBuilder.h"
+#import "LocationService.h"
+
+#import <UberRides/UberRides.h>
 
 @interface RamblerLocationInteractorTests : XCTestCase
 
@@ -34,6 +37,10 @@
 @property (nonatomic, strong) id mockOutput;
 @property (nonatomic, strong) id mockRamblerLocationService;
 @property (nonatomic, strong) id mockMapLinkBuilder;
+@property (nonatomic, strong) UBSDKRideParametersBuilder *mockBuilder;
+@property (nonatomic, strong) id mockLocationService;
+@property (nonatomic, strong) UBSDKRidesClient *mockRidesClient;
+@property (nonatomic, strong) UBSDKUberProduct *mockProduct;
 
 @end
 
@@ -47,10 +54,17 @@
     self.mockOutput = OCMProtocolMock(@protocol(RamblerLocationInteractorOutput));
     self.mockRamblerLocationService = OCMProtocolMock(@protocol(RamblerLocationService));
     self.mockMapLinkBuilder = OCMProtocolMock(@protocol(MapLinkBuilder));
+    self.mockBuilder = OCMClassMock([UBSDKRideParametersBuilder class]);
+    self.mockLocationService = OCMProtocolMock(@protocol(LocationService));
+    self.mockRidesClient = OCMClassMock([UBSDKRidesClient class]);
+    self.mockProduct = OCMClassMock([UBSDKUberProduct class]);
     
     self.interactor.output = self.mockOutput;
     self.interactor.ramblerLocationService = self.mockRamblerLocationService;
     self.interactor.mapLinkBuilder = self.mockMapLinkBuilder;
+    self.interactor.builder = self.mockBuilder;
+    self.interactor.locationService = self.mockLocationService;
+    self.interactor.ridesClient = self.mockRidesClient;
 }
 
 - (void)tearDown {
@@ -59,6 +73,10 @@
     self.mockOutput = nil;
     self.mockRamblerLocationService = nil;
     self.mockMapLinkBuilder = nil;
+    self.mockBuilder = nil;
+    self.mockLocationService = nil;
+    self.mockRidesClient = nil;
+    self.mockProduct = nil;
     
     [super tearDown];
 }
@@ -88,6 +106,92 @@
     
     // then
     XCTAssertEqualObjects(result, testUrl);
+}
+
+- (void)testThatInteractorPerformRideInfoForUserCurrentLocationIfPossible {
+    // when
+    [self.interactor performRideInfoForUserCurrentLocationIfPossible];
+    
+    // then
+    OCMVerify([self.mockLocationService obtainUserLocation]);
+}
+
+- (void)testThatInteractorObtainDefaultParameters {
+    // given
+    id randomObject = @5;
+    OCMStub([self.mockBuilder build]).andReturn(randomObject);
+    
+    // when
+    id object = [self.interactor obtainDefaultParameters];
+    
+    // then
+    XCTAssertEqualObjects(randomObject, object);
+}
+
+- (void)testThatInteractorLocationServiceDidUpdateLocation {
+    // given
+    CLLocation *location = [CLLocation new];
+    
+    // when
+    [self.interactor locationService:self.mockLocationService didUpdateLocation:location];
+    
+    // then
+    OCMVerify([self.mockBuilder setPickupLocation:location]);
+    OCMVerify([self.mockRidesClient fetchCheapestProductWithPickupLocation:location completion:OCMOCK_ANY]);
+}
+
+- (void)testThatInteractorSetProductIdAfterFetchCheapestProduct {
+    // given
+    CLLocation *location = [CLLocation new];
+    id productId = @5;
+    
+    [self prepareFetchCheapestProductTestWithLocation:location productId:productId];
+    
+    // when
+    [self.interactor locationService:self.mockLocationService didUpdateLocation:location];
+    
+    // then
+    OCMVerify([self.mockBuilder setProductID:productId]);
+}
+
+- (void)testThatInteractorSetBuilderAfterFetchCheapestProduct {
+    // given
+    CLLocation *location = [CLLocation new];
+    id productId = @5;
+    
+    [self prepareFetchCheapestProductTestWithLocation:location productId:productId];
+    
+    // when
+    [self.interactor locationService:self.mockLocationService didUpdateLocation:location];
+    
+    // then
+    XCTAssertEqualObjects(self.interactor.builder, self.mockBuilder);
+}
+
+- (void)testThatInteractorRideParametersDidLoadAfterFetchCheapestProduct {
+    // given
+    CLLocation *location = [CLLocation new];
+    id productId = @5;
+    id params = @1;
+    
+    [self prepareFetchCheapestProductTestWithLocation:location productId:productId];
+    OCMStub([self.mockBuilder build]).andReturn(params);
+    
+    // when
+    [self.interactor locationService:self.mockLocationService didUpdateLocation:location];
+    
+    // then
+    OCMVerify([self.mockOutput rideParametersDidLoad:params]);
+}
+
+#pragma mark - Private methods
+
+- (void)prepareFetchCheapestProductTestWithLocation:(CLLocation *)location productId:(id)productId {
+    id arg = [OCMArg invokeBlockWithArgs:self.mockProduct, OCMOCK_ANY, nil];
+    
+    OCMStub([self.mockRidesClient fetchCheapestProductWithPickupLocation:location completion:arg]);
+    OCMStub([self.mockProduct productID]).andReturn(productId);
+    OCMStub([self.mockBuilder setProductID:productId]).andReturn(self.mockBuilder);
 }
 
 @end

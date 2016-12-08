@@ -38,6 +38,7 @@
 @property (nonatomic, strong) id<MapLinkBuilder> mapLinkBuilder;
 @property (nonatomic, strong) UBSDKRideParametersBuilder *builder;
 @property (nonatomic, strong) id<LocationService> locationService;
+@property (nonatomic, strong) UBSDKRidesClient *ridesClient;
 
 @end
 

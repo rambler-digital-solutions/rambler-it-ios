@@ -27,6 +27,8 @@
 #import "RamblerLocationInteractorInput.h"
 #import "RamblerLocationRouterInput.h"
 
+#import <UberRides/UberRides.h>
+
 @interface RamblerLocationPresenterTests : XCTestCase
 
 @property (nonatomic, strong) RamblerLocationPresenter *presenter;
@@ -65,14 +67,20 @@
 
 - (void)testThatPresenterHandlesViewReadyEvent {
     // given
+    id object = @5;
+    
     NSArray *testDirections = @[@"1", @"2"];
     OCMStub([self.mockInteractor obtainDirections]).andReturn(testDirections);
+    OCMStub([self.mockInteractor obtainDefaultParameters]).andReturn(object);
     
     // when
     [self.presenter didTriggerViewReadyEvent];
     
     // then
     OCMVerify([self.mockView setupViewWithDirections:testDirections]);
+    OCMVerify([self.mockView setupUberRidesDefaultConfigWithParameters:object]);
+    OCMVerify([self.mockView updateRideInformation]);
+    OCMVerify([self.mockInteractor performRideInfoForUserCurrentLocationIfPossible]);
 }
 
 - (void)testThatPresenterHandlesShareButtonTapEvent {
@@ -85,6 +93,26 @@
     
     // then
     OCMVerify([self.mockRouter openMapsWithUrl:testUrl]);
+}
+
+- (void)testThatPresenterUberModalViewControllerWillDismiss {
+    // when
+    [self.presenter uberModalViewControllerWillDismiss];
+    
+    // then
+    OCMVerify([self.mockView updateRideInformation]);
+}
+
+- (void)testThatPresenterRideParametersDidLoad {
+    // given
+    id object = @5;
+    
+    // when
+    [self.presenter rideParametersDidLoad:object];
+    
+    // then
+    OCMVerify([self.mockView updateRideRequestButtonParameters:object]);
+    OCMVerify([self.mockView updateRideInformation]);
 }
 
 @end

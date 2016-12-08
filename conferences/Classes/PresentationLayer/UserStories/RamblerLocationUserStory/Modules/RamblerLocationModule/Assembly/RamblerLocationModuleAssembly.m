@@ -29,6 +29,7 @@
 #import "RamblerLocationRouter.h"
 #import "RamblerLocationDataDisplayManager.h"
 #import "DirectionCellObjectFactory.h"
+#import "UberRidesFactory.h"
 
 @implementation  RamblerLocationModuleAssembly
 
@@ -41,6 +42,8 @@
                                                     with:[self dataDisplayManagerRamblerLocation]];
                               [definition injectProperty:@selector(requestBehavior)
                                                     with:[self.uberRidesAssembly requestBehaviorWithViewController:[self viewRamblerLocation]]];
+                              [definition injectProperty:@selector(uberRidesFactory)
+                                                    with:[self uberRIdesFactory]];
                           }];
 }
 
@@ -57,6 +60,8 @@
                                                     with:[self.uberRidesAssembly builder]];
                               [definition injectProperty:@selector(locationService)
                                                     with:[self.serviceComponents locationServiceWithDelegate:[self interactorRamblerLocation]]];
+                              [definition injectProperty:@selector(ridesClient)
+                                                    with:[UBSDKRidesClient new]];
                           }];
 }
 
@@ -90,6 +95,10 @@
 
 - (DirectionCellObjectFactory *)directionCellObjectFactory {
     return [TyphoonDefinition withClass:[DirectionCellObjectFactory class]];
+}
+
+- (UberRidesFactory *)uberRIdesFactory {
+    return [TyphoonDefinition withClass:[UberRidesFactory class]];
 }
 
 @end

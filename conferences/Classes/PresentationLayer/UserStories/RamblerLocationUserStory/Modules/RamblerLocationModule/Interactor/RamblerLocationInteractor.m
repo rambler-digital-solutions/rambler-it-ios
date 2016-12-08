@@ -22,8 +22,8 @@
 
 #import "RamblerLocationInteractorOutput.h"
 
+#import "EXTScope.h"
 #import "MapLinkBuilder.h"
-
 #import "LocationService.h"
 
 @implementation RamblerLocationInteractor
@@ -58,8 +58,9 @@
 #pragma mark - Private methods
 
 - (void)fetchCheapestProductWithPickupLocation:(CLLocation *)location {
-    UBSDKRidesClient *ridesClient = [UBSDKRidesClient new];
-    [ridesClient fetchCheapestProductWithPickupLocation:location completion:^(UBSDKUberProduct* _Nullable product, UBSDKResponse* _Nullable response) {
+    @weakify(self);
+    [self.ridesClient fetchCheapestProductWithPickupLocation:location completion:^(UBSDKUberProduct* _Nullable product, UBSDKResponse* _Nullable response) {
+        @strongify(self);
         if (product) {
             self.builder = [self.builder setProductID:product.productID];
             

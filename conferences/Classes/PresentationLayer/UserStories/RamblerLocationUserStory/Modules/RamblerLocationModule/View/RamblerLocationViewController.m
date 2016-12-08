@@ -21,14 +21,22 @@
 #import "RamblerLocationViewController.h"
 #import "RamblerLocationViewOutput.h"
 #import "RamblerLocationDataDisplayManager.h"
+#import "UberRidesFactory.h"
 
 #import <CoreLocation/CoreLocation.h>
+#import <PureLayout/PureLayout.h>
+
+@interface RamblerLocationViewController ()
+
+@property (nonatomic, readwrite, strong) UBSDKRideRequestButton *rideRequestButton;
+
+@end
 
 @implementation RamblerLocationViewController
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	
+    
     [self.output didTriggerViewReadyEvent];
 }
 
@@ -51,11 +59,17 @@
 - (void)setupUberRidesDefaultConfigWithParameters:(UBSDKRideParameters *)parameters {
     self.requestBehavior.modalRideRequestViewController.delegate = self;
     
-    self.rideRequestButton = [[UBSDKRideRequestButton alloc] initWithRideParameters:parameters requestingBehavior:self.requestBehavior];
-
-    self.rideRequestButton.delegate = self;
+    self.rideRequestButton = [self.uberRidesFactory createRideRequestButtonWithParameters:parameters
+                                                                  requestingBehavior:self.requestBehavior];
 
     [self.rideButtonContainerView addSubview:self.rideRequestButton];
+}
+
+- (void)addRideRequestButtonConstraint {
+    self.rideRequestButton.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    NSArray<NSLayoutConstraint *> *constraints = self.rideRequestButton.autoCenterInSuperview;
+    [self.rideButtonContainerView addConstraints:constraints];
 }
 
 - (void)updateRideInformation {
@@ -66,12 +80,6 @@
     self.rideRequestButton.rideParameters = parameters;
 }
 
-- (void)updateRideRequestButtonFrame {
-    [self.rideButtonContainerView layoutIfNeeded];
-    [self.rideRequestButton sizeToFit];
-    self.rideRequestButton.center = (CGPoint){CGRectGetMidX(self.rideButtonContainerView.frame), self.rideButtonContainerView.frame.size.height / 2};
-}
-
 #pragma mark - UBSDKModalViewControllerDelegate
 
 - (void)modalViewControllerDidDismiss:(UBSDKModalViewController *)modalViewController {
@@ -80,16 +88,6 @@
 
 - (void)modalViewControllerWillDismiss:(UBSDKModalViewController *)modalViewController {
     [self.output uberModalViewControllerWillDismiss];
-}
-
-#pragma mark - UBSDKRideRequestButtonDelegate
-
-- (void)rideRequestButton:(UBSDKRideRequestButton *)button didReceiveError:(UBSDKRidesError *)error {
-    //Required for UBSDKRideRequestButtonDelegate, thats why we should override this method
-}
-
-- (void)rideRequestButtonDidLoadRideInformation:(UBSDKRideRequestButton *)button {
-    [self.output rideRequestButtonDidLoadRideInformation];
 }
 
 #pragma mark - IBOutlets

@@ -43,12 +43,5 @@
  */
 - (void)uberModalViewControllerWillDismiss;
 
-/**
- @author Surik Sarkisyan
- 
- Method tells presenter that rideRequestButton did load new ride info
- */
-- (void)rideRequestButtonDidLoadRideInformation;
-
 @end
 

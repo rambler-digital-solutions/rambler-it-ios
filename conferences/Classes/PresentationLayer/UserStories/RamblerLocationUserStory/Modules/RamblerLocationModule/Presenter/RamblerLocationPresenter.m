@@ -36,17 +36,13 @@
     
     id parameters = [self.interactor obtainDefaultParameters];
     [self.view setupUberRidesDefaultConfigWithParameters:parameters];
-    [self.view updateRideRequestButtonFrame];
+    [self.view addRideRequestButtonConstraint];
     [self.view updateRideInformation];
     [self.interactor performRideInfoForUserCurrentLocationIfPossible];
 }
 
 - (void)uberModalViewControllerWillDismiss {
     [self.view updateRideInformation];
-}
-
-- (void)rideRequestButtonDidLoadRideInformation {
-    [self.view updateRideRequestButtonFrame];
 }
 
 - (void)didTriggerShareButtonTapEvent {

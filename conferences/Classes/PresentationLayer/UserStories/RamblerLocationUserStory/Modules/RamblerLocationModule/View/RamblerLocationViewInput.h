@@ -53,9 +53,9 @@
 /**
  @author Surik Sarkisyan
  
- Method tells view update rideRequestButton frame
+ Method tells view add constraints for ride request button
  */
-- (void)updateRideRequestButtonFrame;
+- (void)addRideRequestButtonConstraint;
 
 /**
  @author Surik Sarkisyan
