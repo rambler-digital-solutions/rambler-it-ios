@@ -49,11 +49,6 @@
 			</dict>
 		</array>
 	</dict>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>uber</string>
-		<string>uberauth</string>
-	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
