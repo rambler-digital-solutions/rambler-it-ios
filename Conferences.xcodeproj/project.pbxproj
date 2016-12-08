@@ -104,7 +104,6 @@
 		6318086A1C4A870C00A61E7D /* LectureMaterialInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 631808681C4A870C00A61E7D /* LectureMaterialInfoTableViewCell.xib */; };
 		6318086D1C4A872600A61E7D /* LectureMaterialInfoTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6318086C1C4A872600A61E7D /* LectureMaterialInfoTableViewCellObject.m */; };
 		631B75391DD1DC9900F62084 /* EventListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FBE8AEF1D634F0500DA0C32 /* EventListTableViewCell.xib */; };
-		631CBA381C0092C100E3EBA8 /* ApplicationConfiguratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA371C0092C100E3EBA8 /* ApplicationConfiguratorTests.m */; };
 		631CBA3B1C00935300E3EBA8 /* EventServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA3A1C00935300E3EBA8 /* EventServiceTests.m */; };
 		631CBA721C020CCD00E3EBA8 /* EventListModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA691C020CCD00E3EBA8 /* EventListModuleAssemblyTests.m */; };
 		631CBA731C020CCD00E3EBA8 /* EventCellObjectBuilderFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA6D1C020CCD00E3EBA8 /* EventCellObjectBuilderFactoryTests.m */; };
@@ -947,7 +946,6 @@
 		631808681C4A870C00A61E7D /* LectureMaterialInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LectureMaterialInfoTableViewCell.xib; sourceTree = "<group>"; };
 		6318086B1C4A872600A61E7D /* LectureMaterialInfoTableViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectureMaterialInfoTableViewCellObject.h; sourceTree = "<group>"; };
 		6318086C1C4A872600A61E7D /* LectureMaterialInfoTableViewCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LectureMaterialInfoTableViewCellObject.m; sourceTree = "<group>"; };
-		631CBA371C0092C100E3EBA8 /* ApplicationConfiguratorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationConfiguratorTests.m; sourceTree = "<group>"; };
 		631CBA3A1C00935300E3EBA8 /* EventServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventServiceTests.m; sourceTree = "<group>"; };
 		631CBA681C020CCD00E3EBA8 /* EventListModuleAssembly_Testable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListModuleAssembly_Testable.h; sourceTree = "<group>"; };
 		631CBA691C020CCD00E3EBA8 /* EventListModuleAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListModuleAssemblyTests.m; sourceTree = "<group>"; };
@@ -2474,14 +2472,6 @@
 			path = ../../../../../../Common/Cells/TableViewCellWithTextLabelAndImageView;
 			sourceTree = "<group>";
 		};
-		631CBA361C0092C100E3EBA8 /* ApplicationConfiguratorTests */ = {
-			isa = PBXGroup;
-			children = (
-				631CBA371C0092C100E3EBA8 /* ApplicationConfiguratorTests.m */,
-			);
-			path = ApplicationConfiguratorTests;
-			sourceTree = "<group>";
-		};
 		631CBA391C0092C900E3EBA8 /* EventServiceTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -2743,7 +2733,6 @@
 				2B01CEBC1D50A54000DA8E66 /* MetaEventServiceTests */,
 				9F4077861D2BF82D00D47EF6 /* RamblerLocationServiceTests */,
 				631CBA391C0092C900E3EBA8 /* EventServiceTests */,
-				631CBA361C0092C100E3EBA8 /* ApplicationConfiguratorTests */,
 			);
 			path = BaseServicesTests;
 			sourceTree = "<group>";
@@ -9617,7 +9606,6 @@
 				9F0A84C31BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m in Sources */,
 				9F1831211BC16195000E21A5 /* RCFResultResponseObjectFormatterTests.m in Sources */,
 				9FAB6A801D54917F0061F333 /* ObjectIndexerBaseTests.m in Sources */,
-				631CBA381C0092C100E3EBA8 /* ApplicationConfiguratorTests.m in Sources */,
 				9F78D7641D59E93B009DDCEA /* SpeakerChangeProviderFetchRequestFactoryTests.m in Sources */,
 				9F1830AB1BC1139B000E21A5 /* RCFParseRequestSignerTests.m in Sources */,
 				63F613D71CB111070002AEF0 /* EventListDataDisplayManagerTests.m in Sources */,
