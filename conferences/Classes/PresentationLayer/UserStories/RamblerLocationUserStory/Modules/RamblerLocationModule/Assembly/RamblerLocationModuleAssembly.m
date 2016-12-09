@@ -43,7 +43,7 @@
                               [definition injectProperty:@selector(requestBehavior)
                                                     with:[self.uberRidesAssembly requestBehaviorWithViewController:[self viewRamblerLocation]]];
                               [definition injectProperty:@selector(uberRidesFactory)
-                                                    with:[self uberRIdesFactory]];
+                                                    with:[self uberRidesFactory]];
                           }];
 }
 
@@ -57,7 +57,7 @@
                               [definition injectProperty:@selector(mapLinkBuilder)
                                                     with:[self.presentationLayerHelpersAssembly appleMapsLinkBuilder]];
                               [definition injectProperty:@selector(builder)
-                                                    with:[self.uberRidesAssembly builder]];
+                                                    with:[self.uberRidesAssembly rideParametersBuilder]];
                               [definition injectProperty:@selector(locationService)
                                                     with:[self.serviceComponents locationServiceWithDelegate:[self interactorRamblerLocation]]];
                               [definition injectProperty:@selector(ridesClient)
@@ -97,7 +97,7 @@
     return [TyphoonDefinition withClass:[DirectionCellObjectFactory class]];
 }
 
-- (UberRidesFactory *)uberRIdesFactory {
+- (UberRidesFactory *)uberRidesFactory {
     return [TyphoonDefinition withClass:[UberRidesFactory class]];
 }
 

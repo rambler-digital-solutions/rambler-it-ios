@@ -1,20 +1,33 @@
+// Copyright (c) 2016 RAMBLER&Co
 //
-//  RamblerLocationViewControllerTests.m
-//  Conferences
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
 //
-//  Created by s.sarkisyan on 07.12.16.
-//  Copyright © 2016 Rambler. All rights reserved.
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
 //
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
 
 #import <XCTest/XCTest.h>
 #import <OCMock/OCMock.h>
 
 #import "RamblerLocationViewController.h"
-#import "TestableObject.h"
+#import "TestableObjectWithDelegate.h"
 
 #import "RamblerLocationViewOutput.h"
 #import "RamblerLocationDataDisplayManager.h"
 #import "UberRidesFactory.h"
+#import "MockObjectsFactory.h"
 
 #import <UberRides/UberRides.h>
 #import <PureLayout/PureLayout.h>
@@ -29,12 +42,12 @@
 
 @property (nonatomic, strong) RamblerLocationViewController *viewController;
 @property (nonatomic, strong) id mockOutput;
-@property (nonatomic, strong) RamblerLocationDataDisplayManager *mockDataDisplayManager;
-@property (nonatomic, strong) UBSDKRideRequestViewRequestingBehavior *mockRequestBehavior;
-@property (nonatomic, strong) UBSDKRideRequestButton *mockRideRequestButton;
-@property (nonatomic, strong) UICollectionView *mockCollectionView;
-@property (nonatomic, strong) UIView *mockRideButtonContainerView;
-@property (nonatomic, strong) UberRidesFactory *mockUberRidesFactory;
+@property (nonatomic, strong) id mockDataDisplayManager;
+@property (nonatomic, strong) id mockRequestBehavior;
+@property (nonatomic, strong) id mockRideRequestButton;
+@property (nonatomic, strong) id mockCollectionView;
+@property (nonatomic, strong) id mockRideButtonContainerView;
+@property (nonatomic, strong) id mockUberRidesFactory;
 
 @end
 
@@ -66,11 +79,23 @@
     self.viewController = nil;
     
     self.mockOutput = nil;
+    
+    [self.mockDataDisplayManager stopMocking];
     self.mockDataDisplayManager = nil;
+    
+    [self.mockRequestBehavior stopMocking];
     self.mockRequestBehavior = nil;
+    
+    [self.mockRideRequestButton stopMocking];
     self.mockRideRequestButton = nil;
+    
+    [self.mockCollectionView stopMocking];
     self.mockCollectionView = nil;
+    
+    [self.mockRideButtonContainerView stopMocking];
     self.mockRideButtonContainerView = nil;
+    
+    [self.mockUberRidesFactory stopMocking];
     self.mockUberRidesFactory = nil;
     
     [super tearDown];
@@ -89,10 +114,10 @@
     NSInteger expectedOrientation = UIInterfaceOrientationMaskPortrait;
     
     // when
-    NSInteger orinetation = [self.viewController supportedInterfaceOrientations];
+    NSInteger orientation = [self.viewController supportedInterfaceOrientations];
     
     // then
-    XCTAssertEqual(expectedOrientation, orinetation);
+    XCTAssertEqual(expectedOrientation, orientation);
 }
 
 - (void)testThatViewControllerUpdateRideInformation {
@@ -105,7 +130,7 @@
 
 - (void)testThatViewControllerUpdateRideRequestButtonParameters {
     // given
-    id params = @5;
+    id params = [MockObjectsFactory generateRandomNumber];
     
     // when
     [self.viewController updateRideRequestButtonParameters:params];
@@ -132,9 +157,9 @@
 
 - (void)testThatViewControllerSetupUberRidesDefaultConfigWithParameters {
     // given
-    id modalRideRequestObject = [TestableObject new];
-    id rideRequestObject = [TestableObject new];
-    id params = @5;
+    id modalRideRequestObject = [TestableObjectWithDelegate new];
+    id rideRequestObject = [TestableObjectWithDelegate new];
+    id params = [MockObjectsFactory generateRandomNumber];
     
     OCMStub([self.mockRequestBehavior modalRideRequestViewController]).andReturn(modalRideRequestObject);
     OCMStub([self.mockUberRidesFactory createRideRequestButtonWithParameters:params requestingBehavior:self.mockRequestBehavior]).andReturn(rideRequestObject);
@@ -164,8 +189,8 @@
 - (void)testThatViewControllerSetupViewWithDirections {
     // given
     NSArray *testDirections = @[@"1", @"2"];
-    id dataSource = @5;
-    id delegate = @6;
+    id dataSource = [MockObjectsFactory generateRandomNumber];
+    id delegate = [MockObjectsFactory generateRandomNumber];
     OCMStub([self.mockDataDisplayManager dataSourceForCollectionView:self.mockCollectionView
                                                       withDirections:testDirections]).andReturn(dataSource);
     OCMStub([self.mockDataDisplayManager delegateForCollectionView:self.mockCollectionView]).andReturn(delegate);

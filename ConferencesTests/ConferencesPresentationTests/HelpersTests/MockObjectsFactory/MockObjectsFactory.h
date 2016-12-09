@@ -88,4 +88,13 @@
 + (UITableView *)mockTableViewWithStubCellClasses:(NSArray *)cellClasses
                                    forIdentifiers:(NSArray *)identifiers;
 
+/**
+ @author Surik Sarkisyan
+ 
+ Method generates random number
+ 
+ @return NSNumber
+ */
++ (NSNumber *)generateRandomNumber;
+
 @end

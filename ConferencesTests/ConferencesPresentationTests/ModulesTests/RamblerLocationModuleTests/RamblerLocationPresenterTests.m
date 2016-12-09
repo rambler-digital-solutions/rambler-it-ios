@@ -26,6 +26,7 @@
 #import "RamblerLocationViewInput.h"
 #import "RamblerLocationInteractorInput.h"
 #import "RamblerLocationRouterInput.h"
+#import "MockObjectsFactory.h"
 
 #import <UberRides/UberRides.h>
 
@@ -67,7 +68,7 @@
 
 - (void)testThatPresenterHandlesViewReadyEvent {
     // given
-    id object = @5;
+    id object = [MockObjectsFactory generateRandomNumber];
     
     NSArray *testDirections = @[@"1", @"2"];
     OCMStub([self.mockInteractor obtainDirections]).andReturn(testDirections);
@@ -105,7 +106,7 @@
 
 - (void)testThatPresenterRideParametersDidLoad {
     // given
-    id object = @5;
+    id object = [MockObjectsFactory generateRandomNumber];
     
     // when
     [self.presenter rideParametersDidLoad:object];

@@ -24,6 +24,7 @@
 #import "RamblerLocationInteractor.h"
 
 #import "RamblerLocationInteractorOutput.h"
+#import "MockObjectsFactory.h"
 #import "RamblerLocationService.h"
 #import "MapLinkBuilder.h"
 #import "LocationService.h"
@@ -37,10 +38,10 @@
 @property (nonatomic, strong) id mockOutput;
 @property (nonatomic, strong) id mockRamblerLocationService;
 @property (nonatomic, strong) id mockMapLinkBuilder;
-@property (nonatomic, strong) UBSDKRideParametersBuilder *mockBuilder;
+@property (nonatomic, strong) id mockBuilder;
 @property (nonatomic, strong) id mockLocationService;
-@property (nonatomic, strong) UBSDKRidesClient *mockRidesClient;
-@property (nonatomic, strong) UBSDKUberProduct *mockProduct;
+@property (nonatomic, strong) id mockRidesClient;
+@property (nonatomic, strong) id mockProduct;
 
 @end
 
@@ -73,9 +74,15 @@
     self.mockOutput = nil;
     self.mockRamblerLocationService = nil;
     self.mockMapLinkBuilder = nil;
-    self.mockBuilder = nil;
     self.mockLocationService = nil;
+    
+    [self.mockBuilder stopMocking];
+    self.mockBuilder = nil;
+    
+    [self.mockRidesClient stopMocking];
     self.mockRidesClient = nil;
+    
+    [self.mockProduct stopMocking];
     self.mockProduct = nil;
     
     [super tearDown];
@@ -109,6 +116,8 @@
 }
 
 - (void)testThatInteractorPerformRideInfoForUserCurrentLocationIfPossible {
+    //given
+    
     // when
     [self.interactor performRideInfoForUserCurrentLocationIfPossible];
     
@@ -118,7 +127,7 @@
 
 - (void)testThatInteractorObtainDefaultParameters {
     // given
-    id randomObject = @5;
+    id randomObject = [MockObjectsFactory generateRandomNumber];
     OCMStub([self.mockBuilder build]).andReturn(randomObject);
     
     // when
@@ -143,7 +152,7 @@
 - (void)testThatInteractorSetProductIdAfterFetchCheapestProduct {
     // given
     CLLocation *location = [CLLocation new];
-    id productId = @5;
+    id productId = [MockObjectsFactory generateRandomNumber];
     
     [self prepareFetchCheapestProductTestWithLocation:location productId:productId];
     
@@ -157,7 +166,7 @@
 - (void)testThatInteractorSetBuilderAfterFetchCheapestProduct {
     // given
     CLLocation *location = [CLLocation new];
-    id productId = @5;
+    id productId = [MockObjectsFactory generateRandomNumber];
     
     [self prepareFetchCheapestProductTestWithLocation:location productId:productId];
     
@@ -171,8 +180,8 @@
 - (void)testThatInteractorRideParametersDidLoadAfterFetchCheapestProduct {
     // given
     CLLocation *location = [CLLocation new];
-    id productId = @5;
-    id params = @1;
+    id productId = [MockObjectsFactory generateRandomNumber];
+    id params = [MockObjectsFactory generateRandomNumber];
     
     [self prepareFetchCheapestProductTestWithLocation:location productId:productId];
     OCMStub([self.mockBuilder build]).andReturn(params);

@@ -20,8 +20,18 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ @author Surik Sarkisyan
+ 
+ Service for work with location
+ */
 @protocol LocationService <NSObject>
 
+/**
+ @author Surik Sarkisyan
+ 
+ Method is request current location from CLLocationManager. Result will be returned from CLLocationManagerDelegate method.
+ */
 - (void)obtainUserLocation;
 
 @end

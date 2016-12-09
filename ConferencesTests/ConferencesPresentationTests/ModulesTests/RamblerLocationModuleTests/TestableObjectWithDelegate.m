@@ -1,4 +1,4 @@
-// Copyright (c) 2015 RAMBLER&Co
+// Copyright (c) 2016 RAMBLER&Co
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -18,13 +18,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Typhoon/Typhoon.h>
-#import <RamblerTyphoonUtils/AssemblyCollector.h>
-#import <UberRides/UberRides.h>
+#import "TestableObjectWithDelegate.h"
 
-@interface UberRidesAssembly : TyphoonAssembly <RamblerInitialAssembly>
-
-- (UBSDKRideRequestViewRequestingBehavior *)requestBehaviorWithViewController:(UIViewController *)viewController;
-- (UBSDKRideParametersBuilder *)rideParametersBuilder;
+@implementation TestableObjectWithDelegate
 
 @end

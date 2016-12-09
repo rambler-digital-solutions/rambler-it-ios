@@ -74,4 +74,8 @@
     return mockTableView;
 }
 
++ (NSNumber *)generateRandomNumber {
+    return @5;
+}
+
 @end

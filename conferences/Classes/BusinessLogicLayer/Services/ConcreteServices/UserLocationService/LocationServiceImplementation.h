@@ -23,12 +23,31 @@
 
 #import <CoreLocation/CoreLocation.h>
 
+/**
+ @author Surik Sarkisyan
+ 
+ Implementation of LocationService protocol
+ */
 @protocol LocationServiceDelegate;
 
 @interface LocationServiceImplementation : NSObject <LocationService, CLLocationManagerDelegate>
 
+/**
+ @author Surik Sarkisyan
+ 
+ The locationService's delegate, which is informed when location is updated
+ */
 @property (nonatomic, weak) id<LocationServiceDelegate> delegate;
 
+/**
+ @author Surik Sarkisyan
+ 
+ The main initializer of LocationServiceImplementation
+ 
+ @param locationManager The CLLocationManager object used for getting location
+ 
+ @return LocationServiceImplementation
+ */
 - (instancetype)initWithLocationManager:(CLLocationManager *)locationManager;
 
 @end

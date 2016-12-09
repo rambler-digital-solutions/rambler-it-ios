@@ -1,4 +1,4 @@
-// Copyright (c) 2015 RAMBLER&Co
+// Copyright (c) 2016 RAMBLER&Co
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -38,7 +38,7 @@ static CLLocationDegrees const kRamblerLongitude = 37.624738922787515;
                           }];
 }
 
-- (UBSDKRideParametersBuilder *)builder {
+- (UBSDKRideParametersBuilder *)rideParametersBuilder {
     return [TyphoonDefinition withClass:[UBSDKRideParametersBuilder class]
                           configuration:^(TyphoonDefinition *definition) {
                               [definition injectMethod:@selector(setDropoffLocation:nickname:)

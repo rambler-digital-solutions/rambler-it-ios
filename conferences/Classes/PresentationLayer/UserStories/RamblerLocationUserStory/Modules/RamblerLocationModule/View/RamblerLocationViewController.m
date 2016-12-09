@@ -23,7 +23,6 @@
 #import "RamblerLocationDataDisplayManager.h"
 #import "UberRidesFactory.h"
 
-#import <CoreLocation/CoreLocation.h>
 #import <PureLayout/PureLayout.h>
 
 @interface RamblerLocationViewController ()

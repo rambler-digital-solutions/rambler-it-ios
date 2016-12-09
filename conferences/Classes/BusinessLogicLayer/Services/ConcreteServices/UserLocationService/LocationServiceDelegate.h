@@ -20,12 +20,22 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ @author Surik Sarkisyan
+ 
+ Delegate returns updated location info.
+ */
 @protocol LocationService;
 
 @class CLLocation;
 
 @protocol LocationServiceDelegate <NSObject>
 
+/**
+ @author Surik Sarkisyan
+ 
+ Method returns location obtained from CLLocationManager.
+ */
 - (void)locationService:(id<LocationService>)locationService didUpdateLocation:(CLLocation *)location;
 
 @end

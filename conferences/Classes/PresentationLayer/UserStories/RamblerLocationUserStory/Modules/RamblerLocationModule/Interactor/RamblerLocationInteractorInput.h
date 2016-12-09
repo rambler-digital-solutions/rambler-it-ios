@@ -47,7 +47,7 @@
 /**
  @author Surik Sarkisyan
  
- The method returns defaul Uber Ride Parameters
+ The method returns default Uber Ride Parameters
  
  @return UBSDKRideParameters
  */

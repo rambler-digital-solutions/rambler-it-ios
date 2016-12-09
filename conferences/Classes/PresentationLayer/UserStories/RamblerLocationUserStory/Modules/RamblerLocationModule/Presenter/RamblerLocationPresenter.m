@@ -23,9 +23,6 @@
 #import "RamblerLocationInteractorInput.h"
 #import "RamblerLocationRouterInput.h"
 
-#import <CoreLocation/CoreLocation.h>
-#import <UIKit/UIKit.h>
-
 @implementation RamblerLocationPresenter
 
 #pragma mark - RamblerLocationViewOutput
@@ -34,7 +31,7 @@
     NSArray *directions = [self.interactor obtainDirections];
     [self.view setupViewWithDirections:directions];
     
-    id parameters = [self.interactor obtainDefaultParameters];
+    UBSDKRideParameters *parameters = [self.interactor obtainDefaultParameters];
     [self.view setupUberRidesDefaultConfigWithParameters:parameters];
     [self.view addRideRequestButtonConstraint];
     [self.view updateRideInformation];
