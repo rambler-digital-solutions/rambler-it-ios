@@ -36,6 +36,16 @@
  @return CellObjects
  */
 - (NSArray *)cellObjectsForLecture:(LectureViewModel *)lecture;
+
+/**
+ @author Konstantin Zinovyev
+ 
+ Obtain video cell object with video material
+ 
+ @param viewModel video material
+ 
+ @return video cell object
+ */
 - (VideoRecordTableViewCellObject *)videoCellObjectForVideoMaterial:(LectureMaterialViewModel *)viewModel;
     
 @end

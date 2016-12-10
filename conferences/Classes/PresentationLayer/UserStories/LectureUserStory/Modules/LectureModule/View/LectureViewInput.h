@@ -30,13 +30,18 @@
  
  Method is used to configure view with Lecture object
  
- @param lecture LecturePlainObject object
- */
-- (void)updateViewWithLecture:(LectureViewModel *)lecture;
-    
-- (void)updateViewWithLectureMaterial:(LectureMaterialViewModel *)lectureMaterial;
+ @param lecture view model
+*/
+- (void)configureViewWithLecture:(LectureViewModel *)lecture;
 
-- (void)setupViewInitialState;
+/**
+ @author Konstantin Zinovyev
+ 
+ Method is used to update view with Lecture material object
+ 
+ @param lectureMaterial view model
+ */
+- (void)updateViewWithLectureMaterial:(LectureMaterialViewModel *)lectureMaterial;
 
 @end
 

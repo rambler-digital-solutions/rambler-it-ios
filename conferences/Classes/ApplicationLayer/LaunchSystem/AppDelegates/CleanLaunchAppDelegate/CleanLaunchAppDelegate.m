@@ -23,7 +23,7 @@
 #import "IndexerMonitor.h"
 #import "SpotlightCoreDataStackCoordinator.h"
 #import "CleanLaunchRouter.h"
-#import "VideoMaterialHandlerConstants.h"
+#import "LectureMaterialConstants.h"
 #import "Daemon.h"
 
 @implementation CleanLaunchAppDelegate
@@ -43,14 +43,15 @@
 
 - (void)createCachedVideoDirectoryIfNeeded {
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSString  *documentsDirectory = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
-    NSString  *filesPath = [NSString stringWithFormat:@"%@%@", documentsDirectory,RITRelativePath];
-    NSError *error;
-    
-    [fileManager createDirectoryAtPath:filesPath
+    NSString  *directory = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
+    directory = [directory stringByAppendingPathComponent:RITRelativePath];
+    if ([fileManager fileExistsAtPath:directory]) {
+        return;
+    }
+    [fileManager createDirectoryAtPath:directory
            withIntermediateDirectories:NO
                             attributes:nil
-                                 error:&error];
+                                 error:nil];
 }
 
 @end

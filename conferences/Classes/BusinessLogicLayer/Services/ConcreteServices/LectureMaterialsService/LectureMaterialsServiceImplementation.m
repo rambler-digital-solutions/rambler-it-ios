@@ -25,12 +25,11 @@
 #import "LectureMaterialModelObject.h"
 #import "LectureMaterialDownloadingManager.h"
 #import "EXTScope.h"
-
-@protocol LectureMaterialDownloadingDelegate;
+#import "LectureMaterialDownloadingDelegate.h"
 
 @interface LectureMaterialsServiceImplementation ()
 
-@property (nonatomic, strong) NSArray<LectureMaterialsHandler> *lectureMaterialsHandlers;
+@property (nonatomic, copy) NSArray<LectureMaterialsHandler> *lectureMaterialsHandlers;
 
 @end
 
@@ -46,19 +45,9 @@
     return self;
 }
 
-- (id)obtainFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial {
-    id material = nil;
-    for (id<LectureMaterialsHandler> handler in self.lectureMaterialsHandlers) {
-        if ([handler canHandleLectureMaterial:lectureMaterial]) {
-            material = [handler obtainFromCacheLectureMaterial:lectureMaterial];
-            break;
-        }
-    }
-    return material;
-}
-
-- (void)downloadToCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial
-                              delegate:(id<LectureMaterialDownloadingDelegate>)delegate {
+- (void)downloadToCacheLectureMaterialId:(NSString *)lectureMaterialId
+                                delegate:(id<LectureMaterialDownloadingDelegate>)delegate {
+    LectureMaterialModelObject *lectureMaterial = [self obtainFromCacheLectureMaterialWithId:lectureMaterialId];
     [self.lectureMaterialDownloadingManager registerDelegate:delegate
                                                       forURL:lectureMaterial.link];
     for (id<LectureMaterialsHandler> handler in self.lectureMaterialsHandlers) {
@@ -67,52 +56,63 @@
             [handler downloadToCacheLectureMaterial:lectureMaterial
                                            delegate:self.lectureMaterialDownloadingManager
                                          completion:^(NSString *localUrl, NSError *error) {
-                 @strongify(self);
-                 [self saveToPersistenStoreLectureMaterialWithID:lectureMaterial.lectureMaterialId
-                                                        localURL:localUrl];
+                @strongify(self);
+                if (error) {
+                    [delegate didEndDownloadingLectureMaterialWithError:error];
+                }
+                [self saveToPersistenStoreLectureMaterialWithID:lectureMaterial.lectureMaterialId
+                                                       localURL:localUrl];
             }];
             break;
         }
     }
 }
 
-- (void)removeFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial
-                            completion:(LectureMaterialServiceCompletionBlock)completionBlock {
+- (void)removeFromCacheLectureMaterialId:(NSString *)lectureMaterialId
+                              completion:(LectureMaterialsCompletionBlock)completionBlock {
+    LectureMaterialModelObject *lectureMaterial = [self obtainFromCacheLectureMaterialWithId:lectureMaterialId];
     for (id<LectureMaterialsHandler> handler in self.lectureMaterialsHandlers) {
         if ([handler canHandleLectureMaterial:lectureMaterial]) {
             @weakify(self);
             [handler removeFromCacheLectureMaterial:lectureMaterial
                                          completion:^(NSString *localUrl, NSError *error) {
-                      @strongify(self);
-                      [self saveToPersistenStoreLectureMaterialWithID:lectureMaterial.lectureMaterialId
+                @strongify(self);
+                [self saveToPersistenStoreLectureMaterialWithID:lectureMaterial.lectureMaterialId
                                                              localURL:localUrl];
-                    if (completionBlock) {
-                        completionBlock(error);
-                    }
-                                         }];
+                if (completionBlock) {
+                    completionBlock(error);
+                }
+            }];
             break;
         }
     }
 }
 
 - (void)updateDelegate:(id<LectureMaterialDownloadingDelegate>)delegate
-    forLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial {
+  forLectureMaterialId:(NSString *)lectureMaterialId {
+    LectureMaterialModelObject *lectureMaterial = [self obtainFromCacheLectureMaterialWithId:lectureMaterialId];
     [self.lectureMaterialDownloadingManager updateDelegate:delegate
                                                     forURL:lectureMaterial.link];
 }
 
-#pragma mark - Private methods
+#pragma mark - Private method
+
+- (LectureMaterialModelObject *)obtainFromCacheLectureMaterialWithId:(NSString *)lectureMaterialId {
+    LectureMaterialModelObject *modelObject = [LectureMaterialModelObject MR_findFirstByAttribute:LectureMaterialModelObjectAttributes.lectureMaterialId
+                                                                                        withValue:lectureMaterialId];
+    return modelObject;
+}
 
 - (void)saveToPersistenStoreLectureMaterialWithID:(NSString *)lectureMaterialId
                                          localURL:(NSString *)localURL {
-    NSManagedObjectContext *rootSavingContext = [NSManagedObjectContext MR_defaultContext];
-    [rootSavingContext performBlockAndWait:^{
+    NSManagedObjectContext *context = [NSManagedObjectContext MR_defaultContext];
+    [context performBlockAndWait:^{
         NSString *nameAttribute = LectureMaterialModelObjectAttributes.lectureMaterialId;
         LectureMaterialModelObject *modelObject = [LectureMaterialModelObject MR_findFirstByAttribute:nameAttribute
                                                                                             withValue:lectureMaterialId
-                                                                                            inContext:rootSavingContext];
+                                                                                            inContext:context];
         modelObject.localURL = localURL;
-        [rootSavingContext MR_saveToPersistentStoreAndWait];
+        [context MR_saveToPersistentStoreAndWait];
     }];
 }
 @end

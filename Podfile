@@ -1,6 +1,5 @@
 # CocoaPods specs repository URL
 source 'https://github.com/cocoapods/Specs.git'
-project 'Conferences.xcworkspace'
 
 # The main application target
 target 'Conferences' do

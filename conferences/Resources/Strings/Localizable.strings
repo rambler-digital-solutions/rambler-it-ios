@@ -48,3 +48,14 @@
 "ErrorAlertTitle" = "Ошибка";
 
 "EventAlreadyStoredInCalendarErrorDescription" = "Событие уже существует в календаре.";
+
+"kLectureMaterialRemoveAlertTitle" = "Удаление";
+"kLectureMaterialRemoveAlertMessage" = "Вы уверены?";
+"kLectureMaterialRemoveAlertConfirm" = "Удалить";
+"kLectureMaterialRemoveAlertCancel" = "Отмена";
+"kLectureMaterialErrorAlertCancel" = "Ок";
+"kLectureMaterialErrorAlertTitle" = "Ошибка";
+"kLectureMaterialDownloadAlertTitle" = "Скачивание";
+"kLectureMaterialDownloadAlertMessage" = "Вы уверены?";
+"kLectureMaterialDownloadAlertConfirm" = "Скачать";
+"kLectureMaterialDownloadAlertCancel" = "Отмена";

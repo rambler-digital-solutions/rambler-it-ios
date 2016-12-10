@@ -19,19 +19,33 @@
 // THE SOFTWARE.
 
 #import <UIKit/UIKit.h>
+#import "LectureMaterialCacheOperationType.h"
 
 @class LectureMaterialPlainObject;
 
 @protocol LectureInteractorOutput <NSObject>
 
-- (void)didTriggerDownloadingLectureMaterialWithLectureMaterial:(LectureMaterialPlainObject *)material
-                                                        percent:(CGFloat)percent;
+/**
+ @author Konstantin Zinovyev
+ 
+ Method is used to inform presenter that execute operation for lecture material with type
+ 
+ @param operationType    Lecture material operation type
+ @param material        Lecture material plain object
+ @param percent         The percentage data load
+ */
+- (void)didTriggerCacheOperationWithType:(LectureMaterialCacheOperationType)operationType
+                         lectureMaterial:(LectureMaterialPlainObject *)material
+                                 percent:(CGFloat)percent;
 
-- (void)didTriggerStartDownloadingLectureMaterialWithLectureMaterial:(LectureMaterialPlainObject *)material;
-
-- (void)didTriggerEndDownloadingLectureMaterialWithLectureMaterial:(LectureMaterialPlainObject *)material;
-
-- (void)didTriggerRemoveDownloadingLectureMaterialWithLectureMaterial:(LectureMaterialPlainObject *)material;
+/**
+ @author Konstantin Zinovyev
+ 
+ Method is used to inform presenter that occure error
+ 
+ @param error error
+ */
+- (void)didOccurreError:(NSError *)error;
 
 @end
 

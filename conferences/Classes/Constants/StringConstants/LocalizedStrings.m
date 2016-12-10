@@ -36,6 +36,19 @@ NSString *const kSpeakInfoLinkedInAccountTitle = @"kSpeakInfoLinkedInAccountTitl
 NSString *const kSpeakInfoInstagramAccountTitle = @"kSpeakInfoInstagramAccountTitle";
 NSString *const kSpeakInfoTwitterAccountTitle = @"kSpeakInfoTwitterAccountTitle";
 
+#pragma mark - Alerts
+
+NSString *const kLectureMaterialRemoveAlertTitle = @"kLectureMaterialRemoveAlertTitle";
+NSString *const kLectureMaterialRemoveAlertMessage = @"kLectureMaterialRemoveAlertMessage";
+NSString *const kLectureMaterialErrorAlertCancel = @"kLectureMaterialErrorAlertCancel";
+NSString *const kLectureMaterialErrorAlertTitle = @"kLectureMaterialErrorAlertTitle";
+NSString *const kLectureMaterialRemoveAlertConfirm = @"kLectureMaterialRemoveAlertConfirm";
+NSString *const kLectureMaterialRemoveAlertCancel = @"kLectureMaterialRemoveAlertCancel";
+NSString *const kLectureMaterialDownloadAlertTitle = @"kLectureMaterialDownloadAlertTitle";
+NSString *const kLectureMaterialDownloadAlertMessage = @"kLectureMaterialDownloadAlertMessage";
+NSString *const kLectureMaterialDownloadAlertConfirm = @"kLectureMaterialDownloadAlertConfirm";
+NSString *const kLectureMaterialDownloadAlertCancel = @"kLectureMaterialDownloadAlertCancel";
+
 #pragma mark - Search module
 
 NSString *const kReportSearchEventSectionTitle = @"kReportSearchEventSectionTitle";

@@ -21,28 +21,48 @@
 #import <Foundation/Foundation.h>
 #import "LectureMaterialsHandler.h"
 
-@class NSPredicate;
-@class LectureMaterialPlainObject;
 @protocol LectureMaterialDownloadingDelegate;
 
-typedef void (^LectureMaterialServiceCompletionBlock)(NSError *error);
+typedef void (^LectureMaterialsCompletionBlock)(NSError *error);
 
 /**
  @author Artem Karpushin
  
- The service is designed to obtain / update LectureMaterials objects
+ The service is designed to download / remove from cache LectureMaterials objects
  */
 @protocol LectureMaterialsService <NSObject>
 
-- (id)obtainFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial;
+/**
+ @author Konstantin Zinovyev
 
-- (void)downloadToCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial
-                              delegate:(id<LectureMaterialDownloadingDelegate>)delegate;
+ Method is used to start downloading data for Lecture Material with delegate
+ 
+ @param lectureMaterialId Identifier Lecture Material object
+ @param delegate          Object that obtain message about downloading
+ */
+- (void)downloadToCacheLectureMaterialId:(NSString *)lectureMaterialId
+                                delegate:(id<LectureMaterialDownloadingDelegate>)delegate;
 
-- (void)removeFromCacheLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial
-                            completion:(LectureMaterialServiceCompletionBlock)completionBlock;
+/**
+ @author Konstantin Zinovyev
 
+ Method is used to remove data for Lecture Material
+ 
+ @param lectureMaterialId Identifier Lecture Material object
+ @param completionBlock   Block that runs after removing data
+ */
+- (void)removeFromCacheLectureMaterialId:(NSString *)lectureMaterialId
+                            completion:(LectureMaterialsCompletionBlock)completionBlock;
+
+/**
+ @author Konstantin Zinovyev
+
+ Method is used to update delegate for Lecture Material object
+ 
+ @param delegate          Object that obtain message about downloading
+ @param lectureMaterialId Identifier Lecture Material object
+ */
 - (void)updateDelegate:(id<LectureMaterialDownloadingDelegate>)delegate
-    forLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial;
+  forLectureMaterialId:(NSString *)lectureMaterialId;
 
 @end

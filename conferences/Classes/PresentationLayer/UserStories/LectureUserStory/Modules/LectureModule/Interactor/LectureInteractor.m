@@ -32,6 +32,7 @@
 #import "LectureMaterialPlainObject.h"
 #import "LectureMaterialsService.h"
 #import "LectureMaterialModelObject.h"
+#import "LectureMaterialCacheOperationType.h"
 
 @implementation LectureInteractor
 
@@ -57,67 +58,76 @@
     return [self.deriviator deriveIdentifierFromUrl:videoUrl];
 }
 
-- (void)downloadVideoToCacheWithLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial {
-    [self.lectureMaterialsService downloadToCacheLectureMaterial:lectureMaterial
-                                                        delegate:self];
+- (void)downloadVideoToCacheWithLectureMaterialId:(NSString *)lectureMaterialId {
+    [self.lectureMaterialsService downloadToCacheLectureMaterialId:lectureMaterialId
+                                                          delegate:self];
 }
-- (void)removeVideoFromCacheWithLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial{
-    [self.lectureMaterialsService removeFromCacheLectureMaterial:lectureMaterial
+
+- (void)removeVideoFromCacheWithLectureMaterialId:(NSString *)lectureMaterialId{
+    [self.lectureMaterialsService removeFromCacheLectureMaterialId:lectureMaterialId
                                                       completion:^(NSError *error) {
-                                                          LectureMaterialPlainObject *material = [self getLectureMaterialByLink:lectureMaterial.link];
-                                                          [self.output didTriggerRemoveDownloadingLectureMaterialWithLectureMaterial:material];
+        LectureMaterialPlainObject *material = [self getLectureMaterialByAttribute:LectureMaterialModelObjectAttributes.lectureMaterialId
+                                                                         withValue:lectureMaterialId];
+        [self.output didTriggerCacheOperationWithType:LectureMaterialRemoveType
+                                      lectureMaterial:material
+                                              percent:0];
                                                       }];
 }
 
 - (void)updateDownloadingDelegateWithLectureMaterials:(NSArray *)lectureMaterials {
     for (LectureMaterialPlainObject *lectureMaterial in lectureMaterials) {
         [self.lectureMaterialsService updateDelegate:self
-                                  forLectureMaterial:lectureMaterial];
+                                forLectureMaterialId:lectureMaterial.lectureMaterialId];
     }
 }
 
 #pragma mark - LectureMaterialDownloadingDelegate
 
 - (void)didStartDownloadingLectureMaterialWithLink:(NSString *)link {
-    LectureMaterialPlainObject *material = [self getLectureMaterialByLink:link];
-    [self.output didTriggerStartDownloadingLectureMaterialWithLectureMaterial:material];
+    LectureMaterialPlainObject *material = [self getLectureMaterialByAttribute:LectureMaterialModelObjectAttributes.link
+                                                                     withValue:link];
+    [self.output didTriggerCacheOperationWithType:LectureMaterialStartDownloadType
+                                  lectureMaterial:material
+                                          percent:0];
+}
+
+- (void)didEndDownloadingLectureMaterialWithError:(NSError *)error {
+    [self.output didOccurreError:error];
 }
 
 - (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location {
     @weakify(self);
     dispatch_async(dispatch_get_main_queue(), ^{
         @strongify(self);
-        LectureMaterialPlainObject *material = [self getLectureMaterialByLink:session.sessionDescription];
-        [self.output didTriggerEndDownloadingLectureMaterialWithLectureMaterial:material];
+        LectureMaterialPlainObject *material = [self getLectureMaterialByAttribute:LectureMaterialModelObjectAttributes.link
+                                                                         withValue:session.sessionDescription];
+        [self.output didTriggerCacheOperationWithType:LectureMaterialEndDownloadType
+                                      lectureMaterial:material
+                                              percent:0];
     });
 }
 
 - (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite {
-    LectureMaterialPlainObject *material = [self getLectureMaterialByLink:session.sessionDescription];
+    LectureMaterialPlainObject *material = [self getLectureMaterialByAttribute:LectureMaterialModelObjectAttributes.link
+                                                                     withValue:session.sessionDescription];
     @weakify(self);
     dispatch_async(dispatch_get_main_queue(), ^{
         @strongify(self);
         CGFloat percent = totalBytesWritten * 100.0 / totalBytesExpectedToWrite;
-        [self.output didTriggerDownloadingLectureMaterialWithLectureMaterial:material
-                                                                     percent:percent];
+        [self.output didTriggerCacheOperationWithType:LectureMaterialDownloadType
+                                      lectureMaterial:material
+                                              percent:percent];
     });
 }
 
-//
-//- (void)URLSession:(NSURLSession *)session didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler {
-//    completionHandler(NSURLSessionAuthChallengeUseCredential, [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust]);
-//}
-//
-//-(void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task willPerformHTTPRedirection:(NSHTTPURLResponse *)response newRequest:(NSURLRequest *)request completionHandler:(void (^)(NSURLRequest * _Nullable))completionHandler {
-//    completionHandler(request);
-//}
-
 #pragma mark - Private methods
 
-- (LectureMaterialPlainObject *)getLectureMaterialByLink:(NSString *)link {
-    LectureMaterialModelObject *modelObject = [LectureMaterialModelObject MR_findFirstByAttribute:LectureMaterialModelObjectAttributes.link
-                                                                                        withValue:link];
+- (LectureMaterialPlainObject *)getLectureMaterialByAttribute:(NSString *)nameAttribute
+                                                    withValue:(id)value {
+    LectureMaterialModelObject *modelObject = [LectureMaterialModelObject MR_findFirstByAttribute:nameAttribute
+                                                                                        withValue:value];
     LectureMaterialPlainObject *plainObject = [self.ponsomizer convertObject:modelObject];
     return plainObject;
 }
+
 @end

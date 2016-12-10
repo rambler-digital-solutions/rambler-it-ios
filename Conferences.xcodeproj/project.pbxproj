@@ -1067,7 +1067,7 @@
 		6621664C1D4F4507000A1D11 /* ReportsSearchInteractorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportsSearchInteractorTests.m; path = ReportsSearchModuleTests/ReportsSearchInteractorTests.m; sourceTree = "<group>"; };
 		6621664D1D4F4507000A1D11 /* ReportsSearchRouterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportsSearchRouterTests.m; path = ReportsSearchModuleTests/ReportsSearchRouterTests.m; sourceTree = "<group>"; };
 		6621664E1D4F4507000A1D11 /* ReportsSearchViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportsSearchViewControllerTests.m; path = ReportsSearchModuleTests/ReportsSearchViewControllerTests.m; sourceTree = "<group>"; };
-		6648409A1DEC234300B69934 /* VideoMaterialHandlerConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VideoMaterialHandlerConstants.h; path = VideoMaterialHandlers/VideoMaterialHandlerConstants.h; sourceTree = "<group>"; };
+		6648409A1DEC234300B69934 /* LectureMaterialConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LectureMaterialConstants.h; path = VideoMaterialHandlers/LectureMaterialConstants.h; sourceTree = "<group>"; };
 		666C5C321D4F2AF6002D73D5 /* ReportsSearchPresenterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportsSearchPresenterTests.m; path = ReportsSearchModuleTests/ReportsSearchPresenterTests.m; sourceTree = "<group>"; };
 		666C5C3C1D4F344B002D73D5 /* ReportsSearchPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportsSearchPresenter.h; path = SearchReportsModule/Presenter/ReportsSearchPresenter.h; sourceTree = "<group>"; };
 		666C5C3D1D4F344B002D73D5 /* ReportsSearchPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportsSearchPresenter.m; path = SearchReportsModule/Presenter/ReportsSearchPresenter.m; sourceTree = "<group>"; };
@@ -1216,6 +1216,7 @@
 		9214F4090FA859CC9B06907E /* Pods-Conferences.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conferences.release.xcconfig"; path = "Pods/Target Support Files/Pods-Conferences/Pods-Conferences.release.xcconfig"; sourceTree = "<group>"; };
 		97C7DD971DF33A8A00D5D1F4 /* LectureMaterialDownloadingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LectureMaterialDownloadingManager.h; path = LectureMaterialDownloadingManager/LectureMaterialDownloadingManager.h; sourceTree = "<group>"; };
 		97C7DD981DF33A8A00D5D1F4 /* LectureMaterialDownloadingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LectureMaterialDownloadingManager.m; path = LectureMaterialDownloadingManager/LectureMaterialDownloadingManager.m; sourceTree = "<group>"; };
+		97D635611DFC1858000573FE /* LectureMaterialCacheOperationType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LectureMaterialCacheOperationType.h; path = LectureViewModel/LectureMaterialViewModel/LectureMaterialCacheOperationType.h; sourceTree = "<group>"; };
 		97F600271DEAF2AD004833B5 /* VideoRecordTableViewCellObjectMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoRecordTableViewCellObjectMapper.h; path = VideoRecordTableViewCellMapper/VideoRecordTableViewCellObjectMapper.h; sourceTree = "<group>"; };
 		97F600281DEAF2AD004833B5 /* VideoRecordTableViewCellObjectMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VideoRecordTableViewCellObjectMapper.m; path = VideoRecordTableViewCellMapper/VideoRecordTableViewCellObjectMapper.m; sourceTree = "<group>"; };
 		9F0A6C1B1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CompoundOperationBuilderConfig.h; path = OperationBuilders/CompoundOperationBuilderConfig/CompoundOperationBuilderConfig.h; sourceTree = "<group>"; };
@@ -4157,6 +4158,7 @@
 			children = (
 				666D7C271DF7052D00C89F14 /* LectureMaterialViewModel.h */,
 				666D7C281DF7052D00C89F14 /* LectureMaterialViewModel.m */,
+				97D635611DFC1858000573FE /* LectureMaterialCacheOperationType.h */,
 			);
 			name = LectureMaterialViewModel;
 			sourceTree = "<group>";
@@ -4339,7 +4341,7 @@
 		669D94481DE0D92600589AC2 /* VideoMaterialHandler */ = {
 			isa = PBXGroup;
 			children = (
-				6648409A1DEC234300B69934 /* VideoMaterialHandlerConstants.h */,
+				6648409A1DEC234300B69934 /* LectureMaterialConstants.h */,
 				669D94491DE0D97200589AC2 /* VideoMaterialHandler.h */,
 				669D944A1DE0D97200589AC2 /* VideoMaterialHandler.m */,
 			);

@@ -36,6 +36,20 @@ extern NSString *const kSpeakInfoLinkedInAccountTitle;
 extern NSString *const kSpeakInfoInstagramAccountTitle;
 extern NSString *const kSpeakInfoTwitterAccountTitle;
 
+#pragma mark - Alerts
+
+extern NSString *const kLectureMaterialRemoveAlertTitle;
+extern NSString *const kLectureMaterialRemoveAlertMessage;
+extern NSString *const kLectureMaterialRemoveAlertConfirm;
+extern NSString *const kLectureMaterialRemoveAlertCancel;
+extern NSString *const kLectureMaterialErrorAlertTitle;
+extern NSString *const kLectureMaterialErrorAlertCancel;
+extern NSString *const kLectureMaterialDownloadAlertTitle;
+extern NSString *const kLectureMaterialDownloadAlertMessage;
+extern NSString *const kLectureMaterialDownloadAlertConfirm;
+extern NSString *const kLectureMaterialDownloadAlertCancel;
+
+
 #pragma mark - Search module
 
 extern NSString *const kReportSearchEventSectionTitle;

@@ -18,6 +18,14 @@
 @property (nonatomic, strong) VideoThumbnailGenerator *thumbnailGenerator;
 @property (nonatomic, strong) YouTubeIdentifierDeriviator *deriviator;
 
+/**
+ @author Konstantin Zinovyev
+ 
+ Mapping from video material to video cell object
+
+ @param videoMaterial view model
+ @return video cell object
+ */
 - (VideoRecordTableViewCellObject *)videoRecordCellObjectWithVideoMaterial:(LectureMaterialViewModel *)videoMaterial;
 
 @end

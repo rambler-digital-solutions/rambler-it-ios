@@ -26,6 +26,7 @@
 #import "YouTubePlayerFactory.h"
 #import <AVKit/AVKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import "LocalizedStrings.h"
 
 static NSString *const LectureModuleToSpeakerInfoModuleSegue = @"LectureModuleToSpeakerInfoModuleSegue";
 
@@ -72,15 +73,15 @@ static NSString *const LectureModuleToSpeakerInfoModuleSegue = @"LectureModuleTo
 }
 
 - (void)showAlertConfirmationRemoveWithActionBlock:(ActionAlertBlock)block {
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Удалить"
-                                                                             message:@"Вы уверены?"
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:RCLocalize(kLectureMaterialRemoveAlertTitle)
+                                                                             message:RCLocalize(kLectureMaterialRemoveAlertMessage)
                                                                       preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"Удалить"
+    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:RCLocalize(kLectureMaterialRemoveAlertConfirm)
                                                             style:UIAlertActionStyleDefault
                                                           handler:^(UIAlertAction * _Nonnull action) {
                                                               block();
                                                           }];
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Отмена"
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:RCLocalize(kLectureMaterialRemoveAlertCancel)
                                                            style:UIAlertActionStyleCancel
                                                          handler:nil];
     [alertController addAction:confirmAction];
@@ -91,18 +92,31 @@ static NSString *const LectureModuleToSpeakerInfoModuleSegue = @"LectureModuleTo
 }
 
 - (void)showAlertConfirmationDownloadWithActionBlock:(ActionAlertBlock)block {
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Скачать"
-                                                                             message:@"Вы уверены?"
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:RCLocalize(kLectureMaterialDownloadAlertTitle)
+                                                                             message:RCLocalize(kLectureMaterialDownloadAlertMessage)
                                                                       preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"Скачать"
+    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:RCLocalize(kLectureMaterialDownloadAlertConfirm)
                                                             style:UIAlertActionStyleDefault
                                                           handler:^(UIAlertAction * _Nonnull action) {
                                                               block();
                                                           }];
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Отмена"
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:RCLocalize(kLectureMaterialDownloadAlertCancel)
                                                            style:UIAlertActionStyleCancel
                                                          handler:nil];
     [alertController addAction:confirmAction];
+    [alertController addAction:cancelAction];
+    [(id)self.transitionHandler presentViewController:alertController
+                                             animated:YES
+                                           completion:nil];
+}
+
+- (void)showAlertErrorWithMessage:(NSString *)message {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:RCLocalize(kLectureMaterialErrorAlertTitle)
+                                                                             message:message
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:RCLocalize(kLectureMaterialErrorAlertCancel)
+                                                           style:UIAlertActionStyleCancel
+                                                         handler:nil];
     [alertController addAction:cancelAction];
     [(id)self.transitionHandler presentViewController:alertController
                                              animated:YES

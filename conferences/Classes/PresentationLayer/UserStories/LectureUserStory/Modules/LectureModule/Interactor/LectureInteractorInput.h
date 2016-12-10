@@ -67,9 +67,32 @@
  */
 - (NSString *)deriveVideoIdFromYouTubeUrl:(NSURL *)videoUrl;
 
-- (void)downloadVideoToCacheWithLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial;
-- (void)removeVideoFromCacheWithLectureMaterial:(LectureMaterialPlainObject *)lectureMaterial;
-- (void)updateDownloadingDelegateWithLectureMaterials:(NSArray *)lectureMaterials;
+/**
+ @author Konstantin Zinovyev
+ 
+ Method is used to start download video for material
+ 
+ @param lectureMaterialId lecture material's identifier
+ */
+- (void)downloadVideoToCacheWithLectureMaterialId:(NSString *)lectureMaterialId;
+
+/**
+ @author Konstantin Zinovyev
+ 
+ Method is used to remove video from cache for material
+ 
+ @param lectureMaterialId lecture material's identifier
+ */
+- (void)removeVideoFromCacheWithLectureMaterialId:(NSString *)lectureMaterialId;
+
+/**
+ @author Konstantin Zinovyev
+ 
+ Method is used to update delegate fow downloading material
+ 
+ @param lectureMaterials Array of lecture material plain objects
+ */
+- (void)updateDownloadingDelegateWithLectureMaterials:(NSArray<LectureMaterialPlainObject *> *)lectureMaterials;
 
 @end
 

@@ -57,26 +57,24 @@ static CGFloat kTableViewFooterHeight = 16.0f;
 
 #pragma mark - LectureViewInput
 
-- (void)updateViewWithLecture:(LectureViewModel *)lecture {
+- (void)configureViewWithLecture:(LectureViewModel *)lecture {
     [self.dataDisplayManager configureDataDisplayManagerWithLecture:lecture
                                                            animator:self.tableViewAnimator];
     self.tableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.tableView];
     self.tableView.delegate = [self.dataDisplayManager delegateForTableView:self.tableView
                                                            withBaseDelegate:nil];
     [self.tableView reloadData];
-}
-
-- (void)updateViewWithLectureMaterial:(LectureMaterialViewModel *)material {
-    [self.dataDisplayManager updateDataDisplayManagerWithLectureMaterial:material];
-}
     
-- (void)setupViewInitialState {
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, kTableViewFooterHeight)];
     
     [self.navigationController.navigationBar rcf_becomeTransparent];
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     self.navigationController.navigationBar.hidden = NO;
     self.animator.tableView = self.tableView;
+}
+
+- (void)updateViewWithLectureMaterial:(LectureMaterialViewModel *)material {
+    [self.dataDisplayManager updateDataDisplayManagerWithLectureMaterial:material];
 }
 
 #pragma mark - <LectureDataDisplayManagerDelegate>

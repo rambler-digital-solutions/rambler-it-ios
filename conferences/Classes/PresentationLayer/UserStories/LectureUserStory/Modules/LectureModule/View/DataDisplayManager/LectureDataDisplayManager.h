@@ -32,9 +32,25 @@
 @property (nonatomic, strong) id<LectureCellObjectsBuilder> builderCellObjects;
 @property (nonatomic, weak) id<LectureDataDisplayManagerDelegate> delegate;
 @property (nonatomic, weak) IBOutlet LectureTableViewAnimator *animator;
-    
+
+/**
+ @author Konstantin Zinovyev
+ 
+ Method is used to configure data display manager with lecture view model
+ 
+ @param lecture view model
+ @param animator animator
+*/
 - (void)configureDataDisplayManagerWithLecture:(LectureViewModel *)lecture
                                       animator:(LectureTableViewAnimator *)animator;
+
+/**
+ @author Konstantin Zinovyev
+ 
+ Method is used to update data display manager with lecture material view model
+ 
+ @param material view model
+ */
 - (void)updateDataDisplayManagerWithLectureMaterial:(LectureMaterialViewModel *)material;
 
 @end

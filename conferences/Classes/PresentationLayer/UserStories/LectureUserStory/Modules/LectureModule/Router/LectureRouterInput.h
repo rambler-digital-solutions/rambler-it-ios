@@ -60,11 +60,41 @@ typedef void (^ActionAlertBlock)();
  */
 - (void)openYouTubeVideoPlayerModuleWithIdentifier:(NSString *)identifier;
 
+/**
+ @author Konstantin Zinovyev
+ 
+ Method opens AVPlayer with cache video
+ 
+ @param path Video path
+ */
 - (void)openLocalVideoPlayerModuleWithPath:(NSString *)path;
 
+/**
+ @author Konstantin Zinovyev
+ 
+ Method shows alert with removing message
+ 
+ @param block Confirm block
+ */
 - (void)showAlertConfirmationRemoveWithActionBlock:(ActionAlertBlock)block;
 
+/**
+ @author Konstantin Zinovyev
+ 
+ Method shows alert with dowloanloading message
+ 
+ @param block Confirm block
+ */
 - (void)showAlertConfirmationDownloadWithActionBlock:(ActionAlertBlock)block;
+
+/**
+ @author Konstantin Zinovyev
+ 
+ Method shows alert with error message
+ 
+ @param message error message
+ */
+- (void)showAlertErrorWithMessage:(NSString *)message;
 
 @end
 

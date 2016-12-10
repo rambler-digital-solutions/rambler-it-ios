@@ -60,35 +60,27 @@
 #pragma mark - DataDisplayManager methods
 
 - (id<UITableViewDataSource>)dataSourceForTableView:(UITableView *)tableView {
-    [self updateTableViewModel];
+    if (!self.tableViewModel) {
+        [self updateTableViewModel];
+    }
     return self.tableViewModel;
 }
 
 - (id<UITableViewDelegate>)delegateForTableView:(UITableView *)tableView withBaseDelegate:(id<UITableViewDelegate>)baseTableViewDelegate {
-    [self setupTableViewActions];
+    if (!self.tableViewActions) {
+        [self setupTableViewActions];
+    }
     return [self.tableViewActions forwardingTo:self];
 }
 
 - (void)updateDataDisplayManagerWithLectureMaterial:(LectureMaterialViewModel *)material {
-    NSUInteger indexUpdatedCell;
-    indexUpdatedCell = [self.tableViewModel indexOfCellObjectInSection:0
-                                                           passingTest:^BOOL(id cellObject, NSUInteger index, BOOL *stop) {
-                                    if ([cellObject isKindOfClass:[VideoRecordTableViewCellObject class]]) {
-                                        VideoRecordTableViewCellObject *videoCellObject = (VideoRecordTableViewCellObject*)cellObject;
-                                        if (videoCellObject.videoMaterial.lectureMaterialId == material.lectureMaterialId) {
-                                            return YES;
-                                        }
-                                        return NO;
-                                    }
-                                    return NO;
-                        }];
-    
-    if (indexUpdatedCell == NSNotFound) {
+    NSIndexPath *indexPath = [self indexPathForCellWithLectureMaterial:material];
+    if (!indexPath) {
         return;
     }
     id cellObject = [self.builderCellObjects videoCellObjectForVideoMaterial:material];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:indexUpdatedCell inSection:0];
-    [self.animator updateCellWithIndexPath:indexPath withCellObject:cellObject];
+    [self.animator updateCellWithIndexPath:indexPath
+                            withCellObject:cellObject];
 }
     
 #pragma mark - Private methods
@@ -126,6 +118,28 @@
     };
     [self.tableViewActions attachToClass:[LectureMaterialInfoTableViewCellObject class]
                                 tapBlock:materialActionBlock];
+}
+
+- (NSIndexPath *)indexPathForCellWithLectureMaterial:(LectureMaterialViewModel *)material {
+    NSUInteger indexUpdatedCell;
+    indexUpdatedCell = [self.tableViewModel indexOfCellObjectInSection:0
+                                                           passingTest:^BOOL(id cellObject, NSUInteger index, BOOL *stop) {
+                                                               if ([cellObject isKindOfClass:[VideoRecordTableViewCellObject class]]) {
+                                                                   VideoRecordTableViewCellObject *videoCellObject = (VideoRecordTableViewCellObject*)cellObject;
+                                                                   if (videoCellObject.videoMaterial.lectureMaterialId == material.lectureMaterialId) {
+                                                                       return YES;
+                                                                   }
+                                                                   return NO;
+                                                               }
+                                                               return NO;
+                                                           }];
+    
+    if (indexUpdatedCell == NSNotFound) {
+        return nil;
+    }
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:indexUpdatedCell
+                                                inSection:0];
+    return indexPath;
 }
 
 @end

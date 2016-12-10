@@ -99,6 +99,7 @@
     VideoRecordTableViewCellObject *videoCellObject = [self.videoCellObjectMapper videoRecordCellObjectWithVideoMaterial:viewModel];
     return videoCellObject;
 }
+
 #pragma mark - Private methods
 
 - (LectureMaterialViewModel *)videoMaterialForLecture:(LectureViewModel *)lecture {

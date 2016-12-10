@@ -1,14 +1,26 @@
+// Copyright (c) 2016 RAMBLER&Co
 //
-//  LectureMaterialDownloadingManager.m
-//  Conferences
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
 //
-//  Created by Konstantin Zinovyev on 03.12.16.
-//  Copyright © 2016 Rambler. All rights reserved.
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
 //
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
 
 #import "LectureMaterialDownloadingManager.h"
 #import "LectureMaterialModelObject.h"
-#import "VideoMaterialHandlerConstants.h"
+#import "LectureMaterialConstants.h"
 #import <MagicalRecord/MagicalRecord.h>
 #import <objc/runtime.h>
 #import "LectureMaterialDownloadingDelegate.h"
@@ -23,19 +35,17 @@
 
 - (instancetype)init{
     self = [super init];
-    
     if (self) {
         _delegatesByIdentifier = [[NSMapTable alloc] init];
-        
     }
-    
     return self;
 }
 
 - (void)registerDelegate:(id)delegate forURL:(NSString *)url {
     __weak id weakDelegate = delegate;
     [weakDelegate didStartDownloadingLectureMaterialWithLink:url];
-    [self.delegatesByIdentifier setObject:weakDelegate forKey:url];
+    [self.delegatesByIdentifier setObject:weakDelegate
+                                   forKey:url];
 }
 
 - (void)updateDelegate:(id)delegate forURL:(NSString *)url {
@@ -43,7 +53,8 @@
     id storedDelegate = [self.delegatesByIdentifier objectForKey:url];
     if (storedDelegate) {
         [weakDelegate didStartDownloadingLectureMaterialWithLink:url];
-        [self.delegatesByIdentifier setObject:weakDelegate forKey:url];
+        [self.delegatesByIdentifier setObject:weakDelegate
+                                       forKey:url];
     }
 }
 
@@ -60,8 +71,7 @@
                                filePath:destination.path];
     id delegate = [self.delegatesByIdentifier objectForKey:materialLink];
     [self.delegatesByIdentifier removeObjectForKey:materialLink];
-    [delegate URLSession:session downloadTask:downloadTask
-                    didFinishDownloadingToURL:destination];
+    [delegate URLSession:session downloadTask:downloadTask didFinishDownloadingToURL:destination];
 }
 
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(nullable NSError *)error {
@@ -79,7 +89,7 @@
     }
 }
 
-//#pragma mark - Runtime methods
+#pragma mark - Runtime methods
 
 //- (BOOL)respondsToSelector:(SEL)selector {
 //    if ([super respondsToSelector:selector]) {
@@ -106,6 +116,16 @@
 //        [invocation invokeWithTarget:delegate];
 //    }
 //}
+//
+//- (BOOL)isSelector:(SEL)selector conformToProtocol:(Protocol *)protocol {
+//    struct objc_method_description methodRequired = protocol_getMethodDescription(protocol, selector, YES, YES);
+//    struct objc_method_description methodNonRequired = protocol_getMethodDescription(protocol, selector, NO, YES);
+//    
+//    if (methodRequired.name || methodNonRequired.name) {
+//        return YES;
+//    }
+//    return NO;
+//}
 
 #pragma mark - Private methods 
 
@@ -130,16 +150,6 @@
             material.localURL = filePath;
         }
     }];
-}
-
-- (BOOL)isSelector:(SEL)selector conformToProtocol:(Protocol *)protocol {
-    struct objc_method_description methodRequired = protocol_getMethodDescription(protocol, selector, YES, YES);
-    struct objc_method_description methodNonRequired = protocol_getMethodDescription(protocol, selector, NO, YES);
-    
-    if (methodRequired.name || methodNonRequired.name) {
-        return YES;
-    }
-    return NO;
 }
 
 - (NSURL *)cachedFileURLLocalVideoFromPath:(NSString *)oldPath {
