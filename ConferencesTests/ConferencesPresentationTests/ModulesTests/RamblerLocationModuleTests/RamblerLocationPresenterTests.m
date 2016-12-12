@@ -118,14 +118,14 @@
 
 - (void)testThatPresenterRideRequestViewControllerDidReceiveError {
     // given
-    id vc = [MockObjectsFactory generateRandomViewController];
+    id viewController = [MockObjectsFactory generateRandomViewController];
     NSError *error = [NSError new];
     
     // when
-    [self.presenter rideRequestViewController:vc didReceiveError:error];
+    [self.presenter rideRequestViewController:viewController didReceiveError:error];
     
     // then
-    OCMVerify([self.mockView dismissRideRequestViewController:vc]);
+    OCMVerify([self.mockView dismissRideRequestViewController:viewController]);
     OCMVerify([self.mockView displayAlertWithTitle:OCMOCK_ANY andMessage:OCMOCK_ANY]);
 }
 

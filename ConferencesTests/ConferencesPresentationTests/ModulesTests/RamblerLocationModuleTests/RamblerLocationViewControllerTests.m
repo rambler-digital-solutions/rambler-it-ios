@@ -159,12 +159,12 @@
 - (void)testThatViewControllerSetupUberRidesDefaultConfigWithParameters {
     // given
     id modalRideRequestObject = [UberRidesModalTestableObject new];
-    id rideRequestVC = [TestableObjectWithDelegate new];
+    id rideRequestViewController = [TestableObjectWithDelegate new];
     id rideRequestObject = [TestableObjectWithDelegate new];
     id params = [MockObjectsFactory generateRandomNumber];
     
     OCMStub([self.mockRequestBehavior modalRideRequestViewController]).andReturn(modalRideRequestObject);
-    OCMStub([modalRideRequestObject rideRequestViewController]).andReturn(rideRequestVC);
+    OCMStub([modalRideRequestObject rideRequestViewController]).andReturn(rideRequestViewController);
     OCMStub([self.mockUberRidesFactory createRideRequestButtonWithParameters:params requestingBehavior:self.mockRequestBehavior]).andReturn(rideRequestObject);
     
     // when
@@ -172,7 +172,7 @@
     
     // then
     OCMVerify([modalRideRequestObject setDelegate:self.viewController]);
-    OCMVerify([rideRequestVC setDelegate:self.viewController]);
+    OCMVerify([rideRequestViewController setDelegate:self.viewController]);
     OCMVerify([self.mockRideButtonContainerView addSubview:rideRequestObject]);
 }
 
