@@ -2,15 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-        <string>uber</string>
-        <string>uberauth</string>
-    </array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Поделитесь своей геопозицией, чтобы мы могли рассчитать примерную стоимость такси до места мероприятия.</string>
 	<key>CFBundleDisplayName</key>
 	<string>Rambler&amp;IT</string>
 	<key>CFBundleExecutable</key>
@@ -34,7 +27,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-                <string>callback://rambler_it</string>
+				<string>ubercallback</string>
 			</array>
 		</dict>
 	</array>
@@ -54,6 +47,11 @@
 			</dict>
 		</array>
 	</dict>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>uber</string>
+		<string>uberauth</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -63,6 +61,8 @@
 	</dict>
 	<key>NSCalendarsUsageDescription</key>
 	<string>Приложению требуется доступ к календарю</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Поделитесь своей геопозицией, чтобы мы могли рассчитать примерную стоимость такси до места мероприятия.</string>
 	<key>UIApplicationShortcutItems</key>
 	<array>
 		<dict>
@@ -95,10 +95,10 @@
 	<key>UberCallbackURIs</key>
 	<array>
 		<dict>
+            <key>UberCallbackURIType</key>
+            <string>General</string>
 			<key>URIString</key>
-			<string>callback://rambler_it</string>
-			<key>UberCallbackURIType</key>
-			<string>General</string>
+			<string>ubercallback://rambler_it</string>
 		</dict>
 	</array>
 	<key>UberClientID</key>
