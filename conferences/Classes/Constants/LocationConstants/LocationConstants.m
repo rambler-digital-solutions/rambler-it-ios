@@ -20,5 +20,5 @@
 
 #import "LocationConstants.h"
 
-CGFloat const kRamblerLatitude = 55.70288;
-CGFloat const kRamblerLongitude = 37.621011;
+CLLocationDegrees const kRamblerLatitude = 55.70288;
+CLLocationDegrees const kRamblerLongitude = 37.621011;

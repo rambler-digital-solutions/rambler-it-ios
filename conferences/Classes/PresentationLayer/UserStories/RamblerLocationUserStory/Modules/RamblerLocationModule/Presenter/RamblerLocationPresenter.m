@@ -51,8 +51,8 @@
 - (void)rideRequestViewController:(UBSDKRideRequestViewController *)rideRequestViewController
                   didReceiveError:(NSError *)error {
     [self.view dismissRideRequestViewController:rideRequestViewController];
-    [self.view displayAlertWithTitle:NSLocalizedString(ErrorAlertTitle, nil)
-                          andMessage:NSLocalizedString(kUberAuthErrorMessage, nil)];
+    [self.view displayAlertWithTitle:RCLocalize(ErrorAlertTitle)
+                          andMessage:RCLocalize(kUberAuthErrorMessage)];
 }
 
 #pragma mark - RamblerLocationInteractorOutput

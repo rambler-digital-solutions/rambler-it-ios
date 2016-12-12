@@ -18,7 +18,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <CoreGraphics/CoreGraphics.h>
+#import <CoreLocation/CoreLocation.h>
 
-extern CGFloat const kRamblerLatitude;
-extern CGFloat const kRamblerLongitude;
+extern CLLocationDegrees const kRamblerLatitude;
+extern CLLocationDegrees const kRamblerLongitude;

@@ -86,9 +86,13 @@
 }
 
 - (void)displayAlertWithTitle:(NSString *)title andMessage:(NSString *)message {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle: UIAlertControllerStyleAlert];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title
+                                                                   message:message
+                                                            preferredStyle:UIAlertControllerStyleAlert];
     
-    UIAlertAction *closeAction = [UIAlertAction actionWithTitle:NSLocalizedString(OKAlertActionTitle, nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {}];
+    UIAlertAction *closeAction = [UIAlertAction actionWithTitle:RCLocalize(OKAlertActionTitle)
+                                                          style:UIAlertActionStyleDefault
+                                                        handler:^(UIAlertAction * _Nonnull action) {}];
     
     [alert addAction:closeAction];
     [self presentViewController:alert animated:YES completion:nil];
@@ -96,7 +100,8 @@
 
 #pragma mark - UBSDKRideRequestViewControllerDelegate
 
-- (void)rideRequestViewController:(UBSDKRideRequestViewController *)rideRequestViewController didReceiveError:(NSError *)error {
+- (void)rideRequestViewController:(UBSDKRideRequestViewController *)rideRequestViewController
+                  didReceiveError:(NSError *)error {
     [self.output rideRequestViewController:rideRequestViewController didReceiveError:error];
 }
 

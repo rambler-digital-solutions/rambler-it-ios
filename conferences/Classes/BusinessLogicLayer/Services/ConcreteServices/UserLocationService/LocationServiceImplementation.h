@@ -23,13 +23,13 @@
 
 #import <CoreLocation/CoreLocation.h>
 
+@protocol LocationServiceDelegate;
+
 /**
  @author Surik Sarkisyan
  
  Implementation of LocationService protocol
  */
-@protocol LocationServiceDelegate;
-
 @interface LocationServiceImplementation : NSObject <LocationService, CLLocationManagerDelegate>
 
 /**
