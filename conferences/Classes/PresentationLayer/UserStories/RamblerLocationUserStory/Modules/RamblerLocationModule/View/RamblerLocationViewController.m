@@ -22,6 +22,7 @@
 #import "RamblerLocationViewOutput.h"
 #import "RamblerLocationDataDisplayManager.h"
 #import "UberRidesFactory.h"
+#import "LocalizedStrings.h"
 
 #import <PureLayout/PureLayout.h>
 
@@ -57,6 +58,7 @@
 
 - (void)setupUberRidesDefaultConfigWithParameters:(UBSDKRideParameters *)parameters {
     self.requestBehavior.modalRideRequestViewController.delegate = self;
+    self.requestBehavior.modalRideRequestViewController.rideRequestViewController.delegate = self;
     
     self.rideRequestButton = [self.uberRidesFactory createRideRequestButtonWithParameters:parameters
                                                                   requestingBehavior:self.requestBehavior];
@@ -77,6 +79,25 @@
 
 - (void)updateRideRequestButtonParameters:(UBSDKRideParameters *)parameters {
     self.rideRequestButton.rideParameters = parameters;
+}
+
+- (void)dismissRideRequestViewController:(UBSDKRideRequestViewController *)rideRequestViewController {
+    [rideRequestViewController dismissViewControllerAnimated:NO completion:nil];
+}
+
+- (void)displayAlertWithTitle:(NSString *)title andMessage:(NSString *)message {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle: UIAlertControllerStyleAlert];
+    
+    UIAlertAction *closeAction = [UIAlertAction actionWithTitle:NSLocalizedString(OKAlertActionTitle, nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {}];
+    
+    [alert addAction:closeAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+#pragma mark - UBSDKRideRequestViewControllerDelegate
+
+- (void)rideRequestViewController:(UBSDKRideRequestViewController *)rideRequestViewController didReceiveError:(NSError *)error {
+    [self.output rideRequestViewController:rideRequestViewController didReceiveError:error];
 }
 
 #pragma mark - UBSDKModalViewControllerDelegate

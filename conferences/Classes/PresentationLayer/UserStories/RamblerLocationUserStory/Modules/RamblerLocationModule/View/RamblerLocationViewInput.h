@@ -22,6 +22,7 @@
 
 @class DirectionObject;
 @class UBSDKRideParameters;
+@class UBSDKRideRequestViewController;
 
 @protocol RamblerLocationViewInput <NSObject>
 
@@ -66,5 +67,24 @@
  */
 - (void)updateRideRequestButtonParameters:(UBSDKRideParameters *)parameters;
 
-@end
+/**
+ @author Surik Sarkisyan
+ 
+ Method tells view dismissRideRequestViewController;
+ 
+ @param UBSDKRideRequestViewController which should be dismissed
+ */
+- (void)dismissRideRequestViewController:(UBSDKRideRequestViewController *)rideRequestViewController;
 
+/**
+ @author Surik Sarkisyan
+ 
+ Method shows alert with title and message
+ 
+ @param title
+ @param message
+ */
+- (void)displayAlertWithTitle:(NSString *)title
+                   andMessage:(NSString *)message;
+
+@end

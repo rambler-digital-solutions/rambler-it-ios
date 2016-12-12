@@ -27,7 +27,7 @@
 
 @protocol RamblerLocationViewOutput;
 
-@interface RamblerLocationViewController : UIViewController <RamblerLocationViewInput, UBSDKModalViewControllerDelegate>
+@interface RamblerLocationViewController : UIViewController <RamblerLocationViewInput, UBSDKModalViewControllerDelegate, UBSDKRideRequestViewControllerDelegate>
 
 #pragma mark - Dependencies
 
