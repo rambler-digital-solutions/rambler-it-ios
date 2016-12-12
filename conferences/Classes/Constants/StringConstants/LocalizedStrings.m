@@ -63,3 +63,4 @@ NSString * const OKAlertActionTitle = @"OKAlertActionTitle";
 #pragma mark - Error
 
 NSString * const EventAlreadyStoredInCalendarErrorDescription = @"EventAlreadyStoredInCalendarErrorDescription";
+NSString * const kUberAuthErrorMessage = @"UberAuthErrorMessage";

@@ -21,6 +21,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		0231D7211DFE87150052471C /* LocationConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 0231D7201DFE87150052471C /* LocationConstants.m */; };
+		0231D7241DFEA33D0052471C /* UberRidesModalTestableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0231D7231DFEA33D0052471C /* UberRidesModalTestableObject.m */; };
 		028E44601DF06CA300734E84 /* UberRidesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 028E445F1DF06CA300734E84 /* UberRidesAppDelegate.m */; };
 		028E44631DF08ED200734E84 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028E44581DF053B500734E84 /* ObjectMapper.framework */; };
 		028E44641DF08ED300734E84 /* UberRides.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028E44591DF053B500734E84 /* UberRides.framework */; };
@@ -594,6 +596,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0231D71F1DFE87150052471C /* LocationConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationConstants.h; sourceTree = "<group>"; };
+		0231D7201DFE87150052471C /* LocationConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationConstants.m; sourceTree = "<group>"; };
+		0231D7221DFEA33D0052471C /* UberRidesModalTestableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UberRidesModalTestableObject.h; path = RamblerLocationModuleTests/UberRidesModalTestableObject.h; sourceTree = "<group>"; };
+		0231D7231DFEA33D0052471C /* UberRidesModalTestableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UberRidesModalTestableObject.m; path = RamblerLocationModuleTests/UberRidesModalTestableObject.m; sourceTree = "<group>"; };
 		028E44581DF053B500734E84 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
 		028E44591DF053B500734E84 /* UberRides.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UberRides.framework; path = Carthage/Build/iOS/UberRides.framework; sourceTree = "<group>"; };
 		028E445E1DF06CA300734E84 /* UberRidesAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UberRidesAppDelegate.h; sourceTree = "<group>"; };
@@ -1730,6 +1736,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0231D71E1DFE86D70052471C /* LocationConstants */ = {
+			isa = PBXGroup;
+			children = (
+				0231D71F1DFE87150052471C /* LocationConstants.h */,
+				0231D7201DFE87150052471C /* LocationConstants.m */,
+			);
+			path = LocationConstants;
+			sourceTree = "<group>";
+		};
 		028E445D1DF06C9000734E84 /* UberRidesAppDelegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -3935,6 +3950,7 @@
 		63FDCDDE1BBDBA2A00A43B60 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				0231D71E1DFE86D70052471C /* LocationConstants */,
 				63ECC4131CA81E4000439A01 /* ErrorConstants */,
 				631808601C4A66E900A61E7D /* StringConstants */,
 			);
@@ -7914,6 +7930,8 @@
 				029358971DF87EC9007CD5FD /* RamblerLocationPresenterTests.m */,
 				029358981DF87EC9007CD5FD /* RamblerLocationRouterTests.m */,
 				0293589E1DF87EF5007CD5FD /* RamblerLocationViewControllerTests.m */,
+				0231D7221DFEA33D0052471C /* UberRidesModalTestableObject.h */,
+				0231D7231DFEA33D0052471C /* UberRidesModalTestableObject.m */,
 				02F297BE1DFAA295001F9B10 /* TestableObjectWithDelegate.h */,
 				02F297BF1DFAA295001F9B10 /* TestableObjectWithDelegate.m */,
 			);
@@ -8346,6 +8364,7 @@
 				63F8F2BC1BF8A713000017F3 /* EventTypeDeterminator.m in Sources */,
 				2B20648C1D3F9CE900246C8D /* MetaEventModelObject.m in Sources */,
 				636B64101BBDD6260053E38F /* SpeakerServiceImplementation.m in Sources */,
+				0231D7211DFE87150052471C /* LocationConstants.m in Sources */,
 				63F6137A1CB00A220002AEF0 /* PreviousLectureSectionHeaderTableViewCell.m in Sources */,
 				9F33B8801D63512200BE136C /* EventListTableViewCellObject.m in Sources */,
 				63F613641CB00A220002AEF0 /* CurrentVideoTranslationTableViewCellObject.m in Sources */,
@@ -8704,6 +8723,7 @@
 				9FF37E111D3235BB00471B4E /* AppleMapsLinkBuilderTests.m in Sources */,
 				9F4077A01D2C11A700D47EF6 /* DirectionObjectMapperTests.m in Sources */,
 				63F613EA1CB111070002AEF0 /* SearchPresenterTests.m in Sources */,
+				0231D7241DFEA33D0052471C /* UberRidesModalTestableObject.m in Sources */,
 				635E18D51CA6CECB005B8439 /* EventHeaderModuleAssemblyTests.m in Sources */,
 				63F613E41CB111070002AEF0 /* LectureInteractorTests.m in Sources */,
 				66A1DD3B1D7E983100998F6B /* TagModuleTableViewCellTests.m in Sources */,

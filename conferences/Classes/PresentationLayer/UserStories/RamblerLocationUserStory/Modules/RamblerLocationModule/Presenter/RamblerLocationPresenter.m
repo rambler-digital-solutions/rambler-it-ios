@@ -22,6 +22,7 @@
 #import "RamblerLocationViewInput.h"
 #import "RamblerLocationInteractorInput.h"
 #import "RamblerLocationRouterInput.h"
+#import "LocalizedStrings.h"
 
 @implementation RamblerLocationPresenter
 
@@ -45,6 +46,13 @@
 - (void)didTriggerShareButtonTapEvent {
     NSURL *locationUrl = [self.interactor obtainRamblerLocationUrl];
     [self.router openMapsWithUrl:locationUrl];
+}
+
+- (void)rideRequestViewController:(UBSDKRideRequestViewController *)rideRequestViewController
+                  didReceiveError:(NSError *)error {
+    [self.view dismissRideRequestViewController:rideRequestViewController];
+    [self.view displayAlertWithTitle:NSLocalizedString(ErrorAlertTitle, nil)
+                          andMessage:NSLocalizedString(kUberAuthErrorMessage, nil)];
 }
 
 #pragma mark - RamblerLocationInteractorOutput

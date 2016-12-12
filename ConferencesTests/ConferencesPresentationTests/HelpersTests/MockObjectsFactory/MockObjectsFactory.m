@@ -78,4 +78,8 @@
     return @5;
 }
 
++ (UIViewController *)generateRandomViewController {
+    return [UIViewController new];
+}
+
 @end

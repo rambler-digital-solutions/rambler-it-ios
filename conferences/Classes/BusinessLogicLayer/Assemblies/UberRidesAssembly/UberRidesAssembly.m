@@ -20,11 +20,11 @@
 
 #import "UberRidesAssembly.h"
 
+#import "LocationConstants.h"
+
 #import <CoreLocation/CoreLocation.h>
 
 static NSString *const kDropOffNickname = @"Rambler&Co";
-static CLLocationDegrees const kRamblerLatitude = 55.69868723594745;
-static CLLocationDegrees const kRamblerLongitude = 37.624738922787515;
 
 @implementation UberRidesAssembly
 

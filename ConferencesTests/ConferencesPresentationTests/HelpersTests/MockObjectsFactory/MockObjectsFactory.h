@@ -97,4 +97,13 @@
  */
 + (NSNumber *)generateRandomNumber;
 
+/**
+ @author Surik Sarkisyan
+ 
+ Method generates random view controller
+ 
+ @return UIViewController
+ */
++ (UIViewController *)generateRandomViewController;
+
 @end

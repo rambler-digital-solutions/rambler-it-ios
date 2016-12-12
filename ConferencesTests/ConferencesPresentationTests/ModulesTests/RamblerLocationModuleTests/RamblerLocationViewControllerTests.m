@@ -27,6 +27,7 @@
 #import "RamblerLocationViewOutput.h"
 #import "RamblerLocationDataDisplayManager.h"
 #import "UberRidesFactory.h"
+#import "UberRidesModalTestableObject.h"
 #import "MockObjectsFactory.h"
 
 #import <UberRides/UberRides.h>
@@ -157,11 +158,13 @@
 
 - (void)testThatViewControllerSetupUberRidesDefaultConfigWithParameters {
     // given
-    id modalRideRequestObject = [TestableObjectWithDelegate new];
+    id modalRideRequestObject = [UberRidesModalTestableObject new];
+    id rideRequestVC = [TestableObjectWithDelegate new];
     id rideRequestObject = [TestableObjectWithDelegate new];
     id params = [MockObjectsFactory generateRandomNumber];
     
     OCMStub([self.mockRequestBehavior modalRideRequestViewController]).andReturn(modalRideRequestObject);
+    OCMStub([modalRideRequestObject rideRequestViewController]).andReturn(rideRequestVC);
     OCMStub([self.mockUberRidesFactory createRideRequestButtonWithParameters:params requestingBehavior:self.mockRequestBehavior]).andReturn(rideRequestObject);
     
     // when
@@ -169,6 +172,7 @@
     
     // then
     OCMVerify([modalRideRequestObject setDelegate:self.viewController]);
+    OCMVerify([rideRequestVC setDelegate:self.viewController]);
     OCMVerify([self.mockRideButtonContainerView addSubview:rideRequestObject]);
 }
 
@@ -202,6 +206,17 @@
     OCMVerify([self.mockCollectionView setDataSource:dataSource]);
     OCMVerify([self.mockCollectionView setDelegate:delegate]);
     OCMVerify([self.mockCollectionView reloadData]);
+}
+
+- (void)testThatViewControllerDismissRideRequestVC {
+    // given
+    id rideRequestViewController = [MockObjectsFactory generateRandomViewController];
+    
+    // when
+    [self.viewController dismissRideRequestViewController:rideRequestViewController];
+    
+    // then
+    OCMVerify([rideRequestViewController dismissViewControllerAnimated:NO completion:nil]);
 }
 
 @end

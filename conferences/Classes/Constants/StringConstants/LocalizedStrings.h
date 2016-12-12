@@ -66,3 +66,4 @@ extern NSString * const OKAlertActionTitle;
 
 extern NSString * const EventAlreadyStoredInCalendarErrorDescription;
 
+extern NSString * const kUberAuthErrorMessage;
