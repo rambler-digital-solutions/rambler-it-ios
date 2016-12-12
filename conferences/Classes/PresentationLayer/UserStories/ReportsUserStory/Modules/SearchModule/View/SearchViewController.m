@@ -54,6 +54,12 @@
     return UIInterfaceOrientationMaskPortrait;
 }
 
+#pragma mark - SearchModuleInput
+
+- (void)configureSearchModuleWithSearchTerm:(NSString *)searchString {
+    [self.output configureSearchModuleWithSearchTerm:searchString];
+}
+
 #pragma mark - ReportListViewInput
 
 - (void)setupViewWithSuggests:(NSArray *)suggests {
@@ -79,6 +85,10 @@
 
 - (void)updateSearchBarWithText:(NSString *)text {
     self.searchBar.text = text;
+}
+
+- (void)startEditingSearchBar {
+    [self.searchBar becomeFirstResponder];
 }
 
 #pragma mark - SearchBarDelegate

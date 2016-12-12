@@ -43,7 +43,7 @@
  
  The method tells a delegate that an event cell was tapped
  
- @param lectureObjectId lecture identifier
+ @param eventId Event identifier
  */
 - (void)didTapEventCellWithEventId:(NSString *)eventId;
 
@@ -51,9 +51,9 @@
 
 @interface EventDataDisplayManager : NSObject <DataDisplayManager>
 
-@property (strong, nonatomic) EventCellObjectBuilderFactory *cellObjectBuilderFactory;
-@property (weak, nonatomic) id <EventDataDisplayManagerDelegate> delegate;
-@property (strong, nonatomic) EventViewAnimator *eventViewAnimator;
+@property (nonatomic, strong) EventCellObjectBuilderFactory *cellObjectBuilderFactory;
+@property (nonatomic, weak) id <EventDataDisplayManagerDelegate> delegate;
+@property (nonatomic, strong) EventViewAnimator *eventViewAnimator;
 
 - (void)configureDataDisplayManagerWithEvent:(EventPlainObject *)event
                                   pastEvents:(NSArray *)pastEvents;

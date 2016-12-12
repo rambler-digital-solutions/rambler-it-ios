@@ -29,7 +29,7 @@
  */
 @interface CommonNetworkClient : NSObject <NetworkClient>
 
-@property (strong, nonatomic, readonly) NSURLSession *session;
+@property (nonatomic, strong, readonly) NSURLSession *session;
 
 /**
  @author Egor Tolstoy

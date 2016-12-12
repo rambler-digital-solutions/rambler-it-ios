@@ -30,10 +30,10 @@
 
 @interface LecturePresenter : NSObject <LectureViewOutput, LectureInteractorOutput, LectureModuleInput>
 
-@property (weak, nonatomic) id<LectureViewInput> view;
-@property (strong, nonatomic) id<LectureInteractorInput>  interactor;
-@property (strong, nonatomic) id<LectureRouterInput> router;
-@property (strong, nonatomic) LecturePresenterStateStorage *stateStorage;
+@property (nonatomic, weak) id<LectureViewInput> view;
+@property (nonatomic, strong) id<LectureInteractorInput>  interactor;
+@property (nonatomic, strong) id<LectureRouterInput> router;
+@property (nonatomic, strong) LecturePresenterStateStorage *stateStorage;
 
 @end
 

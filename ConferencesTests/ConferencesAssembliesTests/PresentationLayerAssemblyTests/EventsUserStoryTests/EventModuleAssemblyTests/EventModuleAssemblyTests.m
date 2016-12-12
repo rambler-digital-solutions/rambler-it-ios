@@ -20,6 +20,7 @@
 
 #import <XCTest/XCTest.h>
 #import <RamblerTyphoonUtils/AssemblyTesting.h>
+#import <RamblerTyphoonUtils/AssemblyCollector.h>
 
 #import "EventModuleAssembly.h"
 #import "EventModuleAssembly_Testable.h"
@@ -34,10 +35,11 @@
 #import "EventCellObjectBuilderFactory.h"
 #import "OperationFactoriesAssembly.h"
 #import "PonsomizerAssembly.h"
+#import "ResourceClientAssembly.h"
 
 @interface EventModuleAssemblyTests : RamblerTyphoonAssemblyTests
 
-@property (strong, nonatomic) EventModuleAssembly *assembly;
+@property (nonatomic, strong) EventModuleAssembly *assembly;
 
 @end
 
@@ -47,11 +49,10 @@
     [super setUp];
     
     self.assembly = [EventModuleAssembly new];
-    [self.assembly activateWithCollaboratingAssemblies:@[
-                                                         [ServiceComponentsAssembly new],
-                                                         [OperationFactoriesAssembly new],
-                                                         [PonsomizerAssembly new]
-                                                         ]];
+    
+    RamblerInitialAssemblyCollector *collector = [RamblerInitialAssemblyCollector new];
+    NSArray *assemblies = [collector collectInitialAssembliesExceptOne:[EventModuleAssembly class]];
+    [self.assembly activateWithCollaboratingAssemblies:assemblies];
 }
 
 - (void)tearDown {

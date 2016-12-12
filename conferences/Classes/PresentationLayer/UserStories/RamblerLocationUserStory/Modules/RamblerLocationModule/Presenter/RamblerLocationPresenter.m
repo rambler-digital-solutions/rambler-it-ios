@@ -37,10 +37,17 @@
     [self.view addRideRequestButtonConstraint];
     [self.view updateRideInformation];
     [self.interactor performRideInfoForUserCurrentLocationIfPossible];
+    
+    NSUserActivity *activity = [self.interactor registerUserActivity];
+    self.stateStorage.activity = activity;
 }
 
 - (void)uberModalViewControllerWillDismiss {
     [self.view updateRideInformation];
+}
+
+- (void)didTriggerViewWillDisappearEvent {
+    [self.interactor unregisterUserActivity:self.stateStorage.activity];
 }
 
 - (void)didTriggerShareButtonTapEvent {

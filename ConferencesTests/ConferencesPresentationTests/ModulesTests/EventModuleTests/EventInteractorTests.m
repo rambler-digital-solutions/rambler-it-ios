@@ -20,6 +20,7 @@
 
 #import <XCTest/XCTest.h>
 #import <OCMock/OCMock.h>
+#import <MapKit/MapKit.h>
 
 #import "EventInteractor.h"
 #import "EventService.h"
@@ -170,6 +171,31 @@ typedef void (^ProxyBlock)(NSInvocation *);
     
     // then
     OCMVerify([self.eventServiceMock trackEventVisitForEventId:kTestEventId]);
+}
+
+- (void)testThatInteractorRegistersUserActivity {
+    // given
+    EventPlainObject *event = [EventPlainObject new];
+    event.name = [[NSUUID UUID] UUIDString];
+    
+    // when
+    NSUserActivity *result = [self.interactor registerUserActivityForEvent:event];
+    
+    // then
+    XCTAssertNotNil(result);
+    XCTAssertNotNil(result.mapItem);
+}
+
+- (void)testThatInteractorUnregistersUserActivity {
+    // given
+    id mockActivity = OCMClassMock([NSUserActivity class]);
+    
+    // when
+    [self.interactor unregisterUserActivity:mockActivity];
+    
+    // then
+    OCMVerify([mockActivity resignCurrent]);
+    [mockActivity stopMocking];
 }
 
 @end

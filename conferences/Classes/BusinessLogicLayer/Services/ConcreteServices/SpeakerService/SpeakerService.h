@@ -48,7 +48,7 @@ typedef void (^SpeakerCompletionBlock)(SpeakerModelObject *speaker, NSError *err
  
  Method is used to obtain Speaker object from cache
  
- @param speakerId
+ @param speakerId Speaker identifier
  
  @return Speaker object
  */

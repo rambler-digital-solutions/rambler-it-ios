@@ -22,8 +22,8 @@
 #import <ViperMcFlurry/ViperMcFlurry.h>
 #import "SearchRouterInput.h"
 
-@interface SearchRouter : NSObject<SearchRouterInput>
+@interface SearchRouter : NSObject <SearchRouterInput>
 
-@property (weak, nonatomic) id <RamblerViperModuleTransitionHandlerProtocol> transitionHandler;
+@property (nonatomic, weak) id <RamblerViperModuleTransitionHandlerProtocol> transitionHandler;
 
 @end

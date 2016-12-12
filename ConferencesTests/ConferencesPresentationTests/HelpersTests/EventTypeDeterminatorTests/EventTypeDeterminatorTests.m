@@ -28,7 +28,7 @@ static NSUInteger const DefaultEventTestType = 111;
 
 @interface EventTypeDeterminatorTests : XCTestCase
 
-@property (strong, nonatomic) EventTypeDeterminator *typeDenerminator;
+@property (nonatomic, strong) EventTypeDeterminator *typeDenerminator;
 
 @end
 

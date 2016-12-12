@@ -34,6 +34,13 @@
 /**
  @author Egor Tolstoy
  
+ Method tells presenter that view is going to disappear
+ */
+- (void)didTriggerViewWillDisappearEvent;
+
+/**
+ @author Egor Tolstoy
+ 
  Method tells presenter that share button was tapped
  */
 - (void)didTriggerShareButtonTapEvent;

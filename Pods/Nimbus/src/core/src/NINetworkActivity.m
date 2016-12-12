@@ -47,8 +47,13 @@ static NSTimer* gScheduledDelayTimer = nil;
 + (void)disableNetworkActivity {
   pthread_mutex_lock(&gMutex);
   if (nil != gScheduledDelayTimer) {
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    gScheduledDelayTimer = nil;
+#   if !defined(NIMBUS_APP_EXTENSIONS)
+
+#   else
+      [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+#   endif /* !defined(NIMBUS_APP_EXTENSIONS) */
+      gScheduledDelayTimer = nil;
+
   }
   pthread_mutex_unlock(&gMutex);
 }
@@ -66,7 +71,12 @@ void NINetworkActivityTaskDidStart(void) {
   gScheduledDelayTimer = nil;
 
   if (enableNetworkActivityIndicator) {
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+#   if !defined(NIMBUS_APP_EXTENSIONS)
+
+#   else
+      [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+#   endif /* !defined(NIMBUS_APP_EXTENSIONS) */
+
   }
 
   pthread_mutex_unlock(&gMutex);

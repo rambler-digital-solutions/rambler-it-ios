@@ -60,4 +60,21 @@
     XCTAssertEqualObjects(result, mockController);
 }
 
+- (void)testThatFactoryUpdateTabBarControllerCorrectly {
+    // given
+    id mockUpdatedController = [UIViewController new];
+    id mockController = [UIViewController new];
+    UITabBarController *mockTabBarController = [UITabBarController new];
+    [mockTabBarController setViewControllers:@[mockController]];
+    NSInteger index = 0;
+    OCMStub([self.mockStoryboard instantiateViewControllerWithIdentifier:OCMOCK_ANY]).andReturn(mockUpdatedController);
+    
+    // when
+    [self.factory updateControllerInTabBarController:mockTabBarController
+                                             atIndex:index];
+    
+    // then
+    XCTAssertEqual(mockTabBarController.viewControllers[index], mockUpdatedController);
+}
+
 @end

@@ -20,6 +20,7 @@
 
 #import <XCTest/XCTest.h>
 #import <OCMock/OCMock.h>
+#import <MapKit/MapKit.h>
 
 #import "RamblerLocationInteractor.h"
 
@@ -195,12 +196,44 @@
 
 #pragma mark - Private methods
 
-- (void)prepareFetchCheapestProductTestWithLocation:(CLLocation *)location productId:(id)productId {
-    id arg = [OCMArg invokeBlockWithArgs:self.mockProduct, OCMOCK_ANY, nil];
+- (void)testThatInteractorRideParametersDidLoadAfterFetchCheapestProduct {
+    // given
+    CLLocation *location = [CLLocation new];
+    id productId = [MockObjectsFactory generateRandomNumber];
+    id params = [MockObjectsFactory generateRandomNumber];
     
-    OCMStub([self.mockRidesClient fetchCheapestProductWithPickupLocation:location completion:arg]);
-    OCMStub([self.mockProduct productID]).andReturn(productId);
-    OCMStub([self.mockBuilder setProductID:productId]).andReturn(self.mockBuilder);
+    [self prepareFetchCheapestProductTestWithLocation:location productId:productId];
+    OCMStub([self.mockBuilder build]).andReturn(params);
+    
+    // when
+    [self.interactor locationService:self.mockLocationService didUpdateLocation:location];
+    
+    // then
+    OCMVerify([self.mockOutput rideParametersDidLoad:params]);
+}
+
+- (void)testThatInteractorRegistersUserActivity {
+    // given
+    
+    
+    // when
+    NSUserActivity *result = [self.interactor registerUserActivity];
+    
+    // then
+    XCTAssertNotNil(result);
+    XCTAssertNotNil(result.mapItem);
+}
+
+- (void)testThatInteractorUnregistersUserActivity {
+    // given
+    id mockActivity = OCMClassMock([NSUserActivity class]);
+    
+    // when
+    [self.interactor unregisterUserActivity:mockActivity];
+    
+    // then
+    OCMVerify([mockActivity resignCurrent]);
+    [mockActivity stopMocking];
 }
 
 @end

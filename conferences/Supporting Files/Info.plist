@@ -17,22 +17,25 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.1</string>
+	<string>1.1</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
-			<key>CFBundleTypeRole</key>
+			<key>CFBundleURLName</key>
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>ubercallback</string>
+				<string>ramblerconferences</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>45</string>
+	<string>47</string>
+	<key>CoreSpotlightContinuation</key>
+	<true/>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -54,15 +57,15 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
 	<key>NSCalendarsUsageDescription</key>
 	<string>Приложению требуется доступ к календарю</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Поделитесь своей геопозицией, чтобы мы могли рассчитать примерную стоимость такси до места мероприятия.</string>
+	<key>NSUserActivityTypes</key>
+	<array>
+		<string>ru.ramblerco.rambler.it.useractivity.event</string>
+		<string>ru.ramblerco.rambler.it.useractivity.location</string>
+	</array>
 	<key>UIApplicationShortcutItems</key>
 	<array>
 		<dict>

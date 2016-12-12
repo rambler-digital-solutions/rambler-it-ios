@@ -33,9 +33,9 @@
  */
 @interface ManagedObjectMapper : NSObject <ResponseMapper>
 
-@property (strong, nonatomic, readonly) ManagedObjectMappingProvider *provider;
-@property (strong, nonatomic, readonly) id<ResponseObjectFormatter> responseFormatter;
-@property (strong, nonatomic, readonly) id<EntityNameFormatter> entityNameFormatter;
+@property (nonatomic, strong, readonly) ManagedObjectMappingProvider *provider;
+@property (nonatomic, strong, readonly) id<ResponseObjectFormatter> responseFormatter;
+@property (nonatomic, strong, readonly) id<EntityNameFormatter> entityNameFormatter;
 
 /**
  @author Egor Tolstoy

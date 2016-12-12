@@ -25,7 +25,7 @@
 
 @interface EventListOperationFactoryTests : CompoundOperationFactoryTestsBase
 
-@property (strong, nonatomic) InjectedClass(EventOperationFactory) factory;
+@property (nonatomic, strong) InjectedClass(EventOperationFactory) factory;
 
 @end
 

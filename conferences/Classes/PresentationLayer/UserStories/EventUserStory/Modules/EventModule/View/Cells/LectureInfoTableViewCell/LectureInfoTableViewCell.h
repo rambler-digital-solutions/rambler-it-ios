@@ -30,6 +30,6 @@
 @property (nonatomic, weak) IBOutlet UILabel *lectureTitle;
 @property (nonatomic, weak) IBOutlet UIView *speakerView;
 @property (nonatomic, weak) IBOutlet UIButton *continueReadingButton;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *lectureDescriptionTOBottomConstraint;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *lectureDescriptionTOBottomConstraint;
 
 @end

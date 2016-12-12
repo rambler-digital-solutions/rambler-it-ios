@@ -29,11 +29,11 @@
 
 @interface SearchInteractor : NSObject<SearchInteractorInput>
 
-@property (weak, nonatomic) id <SearchInteractorOutput> output;
-@property (strong, nonatomic) id <EventService> eventService;
-@property (strong, nonatomic) id <SuggestService> suggestService;
-@property (strong, nonatomic) id <ROSPonsomizer> ponsomizer;
-@property (strong, nonatomic) EventTypeDeterminator *eventTypeDeterminator;
+@property (nonatomic, weak) id <SearchInteractorOutput> output;
+@property (nonatomic, strong) id <EventService> eventService;
+@property (nonatomic, strong) id <SuggestService> suggestService;
+@property (nonatomic, strong) id <ROSPonsomizer> ponsomizer;
+@property (nonatomic, strong) EventTypeDeterminator *eventTypeDeterminator;
 
 @end
 

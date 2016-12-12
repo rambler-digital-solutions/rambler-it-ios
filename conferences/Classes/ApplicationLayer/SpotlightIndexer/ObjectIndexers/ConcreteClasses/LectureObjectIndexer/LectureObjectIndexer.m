@@ -48,7 +48,7 @@
     CSSearchableItem *item = [[CSSearchableItem alloc] initWithUniqueIdentifier:uniqueIdentifier
                                                                domainIdentifier:domainIdentifier
                                                                    attributeSet:attributeSet];
-    
+    item.expirationDate = [NSDate distantFuture];
     return item;
 }
 

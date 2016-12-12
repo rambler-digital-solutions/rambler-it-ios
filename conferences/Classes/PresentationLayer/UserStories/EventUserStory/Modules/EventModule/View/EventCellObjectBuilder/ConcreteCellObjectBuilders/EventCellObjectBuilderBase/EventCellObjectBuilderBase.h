@@ -27,7 +27,7 @@
 
 @interface EventCellObjectBuilderBase : NSObject
 
-@property (strong, nonatomic) DateFormatter *dateFormatter;
+@property (nonatomic, strong) DateFormatter *dateFormatter;
 
 /**
  @author Vasyura Anastasiya

@@ -35,10 +35,10 @@
  */
 @interface ApplicationAssembly : ModuleAssemblyBase <RamblerInitialAssembly>
 
-@property (strong, nonatomic, readonly) SpotlightIndexerAssembly *spotlightIndexerAssembly;
-@property (strong, nonatomic, readonly) DaemonAssembly *daemonAssembly;
-@property (strong, nonatomic, readonly) SystemInfrastructureAssembly *systemInfrastructureAssembly;
-@property (strong, nonatomic, readonly) ApplicationHelperAssembly *applicationHelperAssembly;
-@property (strong, nonatomic, readonly) LaunchSystemAssembly *launchSystemAssembly;
+@property (nonatomic, strong, readonly) SpotlightIndexerAssembly *spotlightIndexerAssembly;
+@property (nonatomic, strong, readonly) DaemonAssembly *daemonAssembly;
+@property (nonatomic, strong, readonly) SystemInfrastructureAssembly *systemInfrastructureAssembly;
+@property (nonatomic, strong, readonly) ApplicationHelperAssembly *applicationHelperAssembly;
+@property (nonatomic, strong, readonly) LaunchSystemAssembly *launchSystemAssembly;
 
 @end

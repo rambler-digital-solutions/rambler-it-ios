@@ -24,7 +24,7 @@
 
 @interface RCFSingleResponseObjectFormatterTests : XCTestCase
 
-@property (strong, nonatomic) SingleResponseObjectFormatter *formatter;
+@property (nonatomic, strong) SingleResponseObjectFormatter *formatter;
 
 @end
 

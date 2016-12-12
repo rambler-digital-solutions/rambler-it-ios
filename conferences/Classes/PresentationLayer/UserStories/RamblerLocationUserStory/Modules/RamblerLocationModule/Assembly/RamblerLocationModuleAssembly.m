@@ -30,6 +30,7 @@
 #import "RamblerLocationDataDisplayManager.h"
 #import "DirectionCellObjectFactory.h"
 #import "UberRidesFactory.h"
+#import "RamblerLocationStateStorage.h"
 
 @implementation  RamblerLocationModuleAssembly
 
@@ -74,6 +75,8 @@
                                                   with:[self interactorRamblerLocation]];
                             [definition injectProperty:@selector(router) 
                                                   with:[self routerRamblerLocation]];
+                              [definition injectProperty:@selector(stateStorage)
+                                                    with:[self stateStorageRamblerLocation]];
             }];
 }
 
@@ -99,6 +102,10 @@
 
 - (UberRidesFactory *)uberRidesFactory {
     return [TyphoonDefinition withClass:[UberRidesFactory class]];
+}
+
+- (DirectionCellObjectFactory *)stateStorageRamblerLocation {
+    return [TyphoonDefinition withClass:[RamblerLocationStateStorage class]];
 }
 
 @end

@@ -24,7 +24,7 @@ static NSString *const kBaseUrlPath = @"http://it.rambler-co.ru/#";
 
 @interface ShareUrlBuilderImplementation ()
 
-@property (nonatomic, strong) NSString *itemType;
+@property (nonatomic, copy) NSString *itemType;
 
 @end
 

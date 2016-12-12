@@ -24,7 +24,7 @@
 
 @interface RCFParseResponseValidatorTests : RCFResponseValidatorTestsBase
 
-@property (strong, nonatomic) ParseResponseValidator *validator;
+@property (nonatomic, strong) ParseResponseValidator *validator;
 
 @end
 

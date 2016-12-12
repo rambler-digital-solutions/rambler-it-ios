@@ -41,6 +41,11 @@
 		02F297C61DFAC5A2001F9B10 /* UberRidesAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F297C51DFAC5A2001F9B10 /* UberRidesAssemblyTests.m */; };
 		1F78357EBF30489533FBC867 /* libPods-Conferences-ConferencesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C46B774BA2D16C41C04D78BA /* libPods-Conferences-ConferencesTests.a */; };
 		234C76A5941B9A10462172CC /* libPods-Conferences.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C7A972E2814B586E4073760 /* libPods-Conferences.a */; };
+		028E446B1DF179CA00734E84 /* PredicateConfiguratorImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 028E446A1DF179CA00734E84 /* PredicateConfiguratorImplementation.m */; };
+		028E446F1DF184F100734E84 /* SearchFacadeImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 028E446E1DF184F100734E84 /* SearchFacadeImplementation.m */; };
+		028E44731DF19BA900734E84 /* PredicateConfiguratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 028E44721DF19BA900734E84 /* PredicateConfiguratorTests.m */; };
+		028E44761DF1B81C00734E84 /* SearchFacadeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 028E44751DF1B81C00734E84 /* SearchFacadeTests.m */; };
+		2AA222A5031CC7BA4A19B3EF /* libPods-RamblerMessageExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C1AA7D4ECB1DA53BEC254E4 /* libPods-RamblerMessageExtension.a */; };
 		2B01CEBE1D50A55900DA8E66 /* MetaEventServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B01CEBD1D50A55900DA8E66 /* MetaEventServiceTests.m */; };
 		2B05E1611D50FEFC00E017AB /* SpeakerInfoCellObjectBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B05E1601D50FEFC00E017AB /* SpeakerInfoCellObjectBuilder.m */; };
 		2B05E1691D51D7A100E017AB /* SpeakerInfoSocialContactsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B05E1671D51D7A100E017AB /* SpeakerInfoSocialContactsTableViewCell.m */; };
@@ -97,6 +102,11 @@
 		2BDDAB551D363D34007FD547 /* ROSPonsomizerImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDDAB541D363D34007FD547 /* ROSPonsomizerImplementation.m */; };
 		2BDDB1D31D3F7235007FD547 /* DirectionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDDB1D21D3F7235007FD547 /* DirectionObject.m */; };
 		3784462F1D4E067A0016121E /* RCNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3784462E1D4E067A0016121E /* RCNavigationController.m */; };
+		630E25FA1DBFA2860043C20E /* EventInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F6127C1CB00A220002AEF0 /* EventInteractor.m */; };
+		630E25FB1DBFA2920043C20E /* EventPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F612821CB00A220002AEF0 /* EventPresenter.m */; };
+		6310601E1DC89577006870EB /* MailComposeControllerFactoryImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6310601D1DC89577006870EB /* MailComposeControllerFactoryImplementation.m */; };
+		631060221DC8984F006870EB /* MailComposeControllerFactoryImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6310601D1DC89577006870EB /* MailComposeControllerFactoryImplementation.m */; };
+		631060231DC89850006870EB /* MailComposeControllerFactoryImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6310601D1DC89577006870EB /* MailComposeControllerFactoryImplementation.m */; };
 		6315BA051C9EC23600999877 /* VideoRecordTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6315BA031C9EC23600999877 /* VideoRecordTableViewCell.m */; };
 		6315BA061C9EC23600999877 /* VideoRecordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6315BA041C9EC23600999877 /* VideoRecordTableViewCell.xib */; };
 		6315BA0A1C9EC2A200999877 /* TableViewSectionHeaderCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6315BA091C9EC2A200999877 /* TableViewSectionHeaderCellObject.m */; };
@@ -113,7 +123,7 @@
 		631808691C4A870C00A61E7D /* LectureMaterialInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 631808671C4A870C00A61E7D /* LectureMaterialInfoTableViewCell.m */; };
 		6318086A1C4A870C00A61E7D /* LectureMaterialInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 631808681C4A870C00A61E7D /* LectureMaterialInfoTableViewCell.xib */; };
 		6318086D1C4A872600A61E7D /* LectureMaterialInfoTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6318086C1C4A872600A61E7D /* LectureMaterialInfoTableViewCellObject.m */; };
-		631CBA381C0092C100E3EBA8 /* ApplicationConfiguratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA371C0092C100E3EBA8 /* ApplicationConfiguratorTests.m */; };
+		631B75391DD1DC9900F62084 /* EventListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FBE8AEF1D634F0500DA0C32 /* EventListTableViewCell.xib */; };
 		631CBA3B1C00935300E3EBA8 /* EventServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA3A1C00935300E3EBA8 /* EventServiceTests.m */; };
 		631CBA721C020CCD00E3EBA8 /* EventListModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA691C020CCD00E3EBA8 /* EventListModuleAssemblyTests.m */; };
 		631CBA731C020CCD00E3EBA8 /* EventCellObjectBuilderFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBA6D1C020CCD00E3EBA8 /* EventCellObjectBuilderFactoryTests.m */; };
@@ -124,6 +134,32 @@
 		631CBAA71C021C6900E3EBA8 /* EventTypeDeterminatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CBAA61C021C6900E3EBA8 /* EventTypeDeterminatorTests.m */; };
 		631FFE191BEF451400749DB8 /* CDResponderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FFE141BEF451400749DB8 /* CDResponderTableViewCell.m */; };
 		631FFE1A1BEF451400749DB8 /* UIView+CDResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FFE181BEF451400749DB8 /* UIView+CDResponder.m */; };
+		6321841D1D9BFD22001BB7A7 /* Conference.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6373A40E1BBDC5EA00DF67FF /* Conference.xcdatamodeld */; };
+		6321841E1D9BFD31001BB7A7 /* SpotlightIndexer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D7401D59D6EF009DDCEA /* SpotlightIndexer.xcdatamodeld */; };
+		6321841F1D9BFD42001BB7A7 /* Conference.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 6373A40E1BBDC5EA00DF67FF /* Conference.xcdatamodeld */; };
+		632184201D9BFD49001BB7A7 /* SpotlightIndexer.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 9F78D7401D59D6EF009DDCEA /* SpotlightIndexer.xcdatamodeld */; };
+		632184211D9D2F2B001BB7A7 /* _LectureMaterialPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064421D3F9CE900246C8D /* _LectureMaterialPlainObject.m */; };
+		632184221D9D2F3A001BB7A7 /* LecturePlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B20646A1D3F9CE900246C8D /* LecturePlainObject.m */; };
+		632184231D9D2F65001BB7A7 /* _LecturePlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064441D3F9CE900246C8D /* _LecturePlainObject.m */; };
+		632184241D9D31B5001BB7A7 /* LectureMaterialModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064551D3F9CE900246C8D /* LectureMaterialModelObject.m */; };
+		632184251D9D31BF001BB7A7 /* _LectureMaterialModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B20642F1D3F9CE900246C8D /* _LectureMaterialModelObject.m */; };
+		632184261D9D3268001BB7A7 /* LectureMaterialPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064681D3F9CE900246C8D /* LectureMaterialPlainObject.m */; };
+		632184271D9D32C6001BB7A7 /* SpeakerPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064721D3F9CE900246C8D /* SpeakerPlainObject.m */; };
+		632184281D9D32CD001BB7A7 /* _SpeakerPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B20644C1D3F9CE900246C8D /* _SpeakerPlainObject.m */; };
+		632184291D9D3368001BB7A7 /* TagModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064611D3F9CE900246C8D /* TagModelObject.m */; };
+		6321842A1D9D33E7001BB7A7 /* TagPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064741D3F9CE900246C8D /* TagPlainObject.m */; };
+		6321842B1D9D33EF001BB7A7 /* _TagPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B20644E1D3F9CE900246C8D /* _TagPlainObject.m */; };
+		6321842C1D9D342B001BB7A7 /* _MetaEventPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064461D3F9CE900246C8D /* _MetaEventPlainObject.m */; };
+		6321842D1D9D3430001BB7A7 /* MetaEventPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B20646C1D3F9CE900246C8D /* MetaEventPlainObject.m */; };
+		6321842E1D9D34CC001BB7A7 /* TechModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064631D3F9CE900246C8D /* TechModelObject.m */; };
+		6321842F1D9D34D6001BB7A7 /* _TechModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B20643D1D3F9CE900246C8D /* _TechModelObject.m */; };
+		632184301D9D3521001BB7A7 /* _TechPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064501D3F9CE900246C8D /* _TechPlainObject.m */; };
+		632184311D9D3527001BB7A7 /* TechPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064761D3F9CE900246C8D /* TechPlainObject.m */; };
+		632184321D9D3558001BB7A7 /* SocialNetworkAccountModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B20645D1D3F9CE900246C8D /* SocialNetworkAccountModelObject.m */; };
+		632184331D9D355F001BB7A7 /* _SocialNetworkAccountModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064371D3F9CE900246C8D /* _SocialNetworkAccountModelObject.m */; };
+		632184341D9D3574001BB7A7 /* SocialNetworkAccountPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064701D3F9CE900246C8D /* SocialNetworkAccountPlainObject.m */; };
+		632184351D9D3579001BB7A7 /* _SocialNetworkAccountPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B20644A1D3F9CE900246C8D /* _SocialNetworkAccountPlainObject.m */; };
+		634EB9E11DC8E5FC00EAEC0F /* SpeakerInfoAlertFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 634EB9E01DC8E5FC00EAEC0F /* SpeakerInfoAlertFactory.m */; };
 		635E18BF1CA6A0A9005B8439 /* SpeakerInfoModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 635E18BE1CA6A0A9005B8439 /* SpeakerInfoModuleAssemblyTests.m */; };
 		635E18C21CA6A496005B8439 /* LectureModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 635E18C11CA6A496005B8439 /* LectureModuleAssemblyTests.m */; };
 		635E18C71CA6B8CE005B8439 /* SpeakerShortInfoModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 635E18C61CA6B8CE005B8439 /* SpeakerShortInfoModuleAssemblyTests.m */; };
@@ -138,6 +174,46 @@
 		636B640D1BBDD5000053E38F /* SocialNetworkAccountServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B640C1BBDD5000053E38F /* SocialNetworkAccountServiceImplementation.m */; };
 		636B64101BBDD6260053E38F /* SpeakerServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B640F1BBDD6260053E38F /* SpeakerServiceImplementation.m */; };
 		636B64121BBFE2C20053E38F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 636B64111BBFE2C20053E38F /* Main.storyboard */; };
+		636E26C61D8FDF41001ABB92 /* EventListModuleAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8AD01D634F0500DA0C32 /* EventListModuleAssembly.m */; };
+		636E26C71D8FE069001ABB92 /* EventListCellObjectBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8AFA1D634F0500DA0C32 /* EventListCellObjectBuilder.m */; };
+		636E26C81D8FE076001ABB92 /* EventListDataDisplayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8AF71D634F0500DA0C32 /* EventListDataDisplayManager.m */; };
+		636E26C91D8FE082001ABB92 /* EventListInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8AD31D634F0500DA0C32 /* EventListInteractor.m */; };
+		636E26CA1D8FE091001ABB92 /* EventListPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8AD81D634F0500DA0C32 /* EventListPresenter.m */; };
+		636E26CB1D8FE09C001ABB92 /* EventListRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8ADC1D634F0500DA0C32 /* EventListRouter.m */; };
+		636E26CC1D8FE0AB001ABB92 /* EventListTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F33B87F1D63512200BE136C /* EventListTableViewCellObject.m */; };
+		636E26CD1D8FE0B7001ABB92 /* EventListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8AEE1D634F0500DA0C32 /* EventListTableViewCell.m */; };
+		636E26CE1D8FE0C4001ABB92 /* EventListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8AE31D634F0500DA0C32 /* EventListTableViewController.m */; };
+		636E26D01D8FE0DC001ABB92 /* ModuleAssemblyBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D0B1BCB825F00552B91 /* ModuleAssemblyBase.m */; };
+		636E26D11D8FE0E9001ABB92 /* PonsomizerAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 66704FF81D4606D800DD9D6E /* PonsomizerAssembly.m */; };
+		636E26D21D8FE0F4001ABB92 /* ROSPonsomizerImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDDAB541D363D34007FD547 /* ROSPonsomizerImplementation.m */; };
+		636E26D61D8FE706001ABB92 /* ServiceComponentsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F54D9A1BC5AB3C00DB1746 /* ServiceComponentsAssembly.m */; };
+		636E26D71D8FE719001ABB92 /* EventServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8C961BC97B3100552B91 /* EventServiceImplementation.m */; };
+		636E26D81D8FE73F001ABB92 /* _EventModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B20642D1D3F9CE900246C8D /* _EventModelObject.m */; };
+		636E26D91D8FE74D001ABB92 /* EventListQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF74FF91D26C448000D208D /* EventListQuery.m */; };
+		636E26DA1D8FE760001ABB92 /* EventModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064531D3F9CE900246C8D /* EventModelObject.m */; };
+		636E26DB1D8FE76E001ABB92 /* EventStoreService.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D7460E1C8B0D5200E3A381 /* EventStoreService.m */; };
+		636E26DC1D8FE77D001ABB92 /* LectureServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64031BBDD19A0053E38F /* LectureServiceImplementation.m */; };
+		636E26DD1D8FE78D001ABB92 /* LectureModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064571D3F9CE900246C8D /* LectureModelObject.m */; };
+		636E26DE1D8FE799001ABB92 /* LastModifiedModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 661CA4111D65D0E30047EB68 /* LastModifiedModelObject.m */; };
+		636E26DF1D8FE7A2001ABB92 /* _LastModifiedModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 661CA4091D65D0D20047EB68 /* _LastModifiedModelObject.m */; };
+		636E26E01D8FE7AE001ABB92 /* MetaEventServiceImpementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B429A7B1D50987E004C005F /* MetaEventServiceImpementation.m */; };
+		636E26E11D8FE7C9001ABB92 /* _MetaEventModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064331D3F9CE900246C8D /* _MetaEventModelObject.m */; };
+		636E26E21D8FE7D7001ABB92 /* MetaEventModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064591D3F9CE900246C8D /* MetaEventModelObject.m */; };
+		636E26E31D8FE7E3001ABB92 /* OperationSchedulerImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF99E501BC42FF6006F15AF /* OperationSchedulerImplementation.m */; };
+		636E26E51D8FE7FB001ABB92 /* RamblerLocationServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F40777E1D2BF4F300D47EF6 /* RamblerLocationServiceImplementation.m */; };
+		636E26E61D8FE807001ABB92 /* SpeakerServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B640F1BBDD6260053E38F /* SpeakerServiceImplementation.m */; };
+		636E26E71D8FE816001ABB92 /* SpeakerModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B20645F1D3F9CE900246C8D /* SpeakerModelObject.m */; };
+		636E26E81D8FE822001ABB92 /* SuggestServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE139221D65BD9700D7BF44 /* SuggestServiceImplementation.m */; };
+		636E26E91D8FE82D001ABB92 /* TagServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E999991D54B31300161D98 /* TagServiceImplementation.m */; };
+		636E26EA1D8FE837001ABB92 /* TagServicePredicateBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E9999B1D54B31300161D98 /* TagServicePredicateBuilder.m */; };
+		636E26EB1D8FE847001ABB92 /* _LectureModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064311D3F9CE900246C8D /* _LectureModelObject.m */; };
+		636E26EC1D8FE859001ABB92 /* _SpeakerModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064391D3F9CE900246C8D /* _SpeakerModelObject.m */; };
+		636E26ED1D8FE86A001ABB92 /* _TagModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B20643B1D3F9CE900246C8D /* _TagModelObject.m */; };
+		636E26EE1D8FE8AD001ABB92 /* EventPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064661D3F9CE900246C8D /* EventPlainObject.m */; };
+		636E26EF1D8FE8CB001ABB92 /* _EventPlainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2064401D3F9CE900246C8D /* _EventPlainObject.m */; };
+		636E26F01D8FE8E6001ABB92 /* ErrorConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ECC4151CA81E5300439A01 /* ErrorConstants.m */; };
+		636E26F11D8FEF29001ABB92 /* NSManagedObjectID+LJStringConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 661CA4061D65D0720047EB68 /* NSManagedObjectID+LJStringConversion.m */; };
+		636E26F31D8FF072001ABB92 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636E26F21D8FF072001ABB92 /* CoreData.framework */; };
 		636F8C971BC97B3100552B91 /* EventServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8C961BC97B3100552B91 /* EventServiceImplementation.m */; };
 		636F8D0C1BCB825F00552B91 /* ModuleAssemblyBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8D0B1BCB825F00552B91 /* ModuleAssemblyBase.m */; };
 		636F8DDA1BCB8FE800552B91 /* RamblerLocationModuleAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8DC21BCB8FE800552B91 /* RamblerLocationModuleAssembly.m */; };
@@ -146,8 +222,101 @@
 		636F8DDD1BCB8FE800552B91 /* RamblerLocationRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8DCD1BCB8FE800552B91 /* RamblerLocationRouter.m */; };
 		636F8DDE1BCB8FE800552B91 /* RamblerLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F8DD11BCB8FE800552B91 /* RamblerLocationViewController.m */; };
 		636F8DFF1BCB91A900552B91 /* RamblerLocation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 636F8DFE1BCB91A900552B91 /* RamblerLocation.storyboard */; };
+		637382811DD5AC88004246EC /* EventListProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 637382801DD5AC88004246EC /* EventListProcessor.m */; };
+		637382821DD5B2BB004246EC /* EventListProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 637382801DD5AC88004246EC /* EventListProcessor.m */; };
+		637382831DD5B2BE004246EC /* EventListProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 637382801DD5AC88004246EC /* EventListProcessor.m */; };
+		637382991DD5D9C0004246EC /* MessagesRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 637382981DD5D9C0004246EC /* MessagesRouter.m */; };
+		6373829D1DD5E12F004246EC /* MessagesPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6373829C1DD5E12F004246EC /* MessagesPresenter.m */; };
+		637382A01DD5EA17004246EC /* MessagesInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6373829F1DD5EA17004246EC /* MessagesInteractor.m */; };
+		63770CB31DD61D2A0039AB0D /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63770CB21DD61D2A0039AB0D /* MessagesViewController.m */; };
+		63770CB61DD61D6F0039AB0D /* MessageExtensionAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 63770CB51DD61D6F0039AB0D /* MessageExtensionAssembly.m */; };
+		63770CB91DD61E100039AB0D /* RamblerExtensionTyphoonActivator.m in Sources */ = {isa = PBXBuildFile; fileRef = 63770CB81DD61E100039AB0D /* RamblerExtensionTyphoonActivator.m */; };
+		63770CBC1DD61E2A0039AB0D /* MessagesLaunchHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 63770CBB1DD61E2A0039AB0D /* MessagesLaunchHandler.m */; };
+		63770CBF1DD61E3D0039AB0D /* MessagesConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 63770CBE1DD61E3D0039AB0D /* MessagesConstants.m */; };
+		63770CC21DD61E6B0039AB0D /* MessageExtensionTyphoonActivator.m in Sources */ = {isa = PBXBuildFile; fileRef = 63770CC11DD61E6B0039AB0D /* MessageExtensionTyphoonActivator.m */; };
+		6377140C1DDC8109009FF726 /* MessagesRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377140B1DDC8109009FF726 /* MessagesRouterTests.m */; };
+		637873901DED897000CA1859 /* UrlComponentsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6378738F1DED897000CA1859 /* UrlComponentsFactory.m */; };
+		637873911DEDA1C600CA1859 /* UrlComponentsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6378738F1DED897000CA1859 /* UrlComponentsFactory.m */; };
+		637873921DEDA1C700CA1859 /* UrlComponentsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6378738F1DED897000CA1859 /* UrlComponentsFactory.m */; };
+		638918CC1DC28AA3009B34AF /* MessagesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 638918CB1DC28AA3009B34AF /* MessagesAppDelegate.m */; };
+		638918CF1DC333A4009B34AF /* MessagesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 638918CB1DC28AA3009B34AF /* MessagesAppDelegate.m */; };
+		638918D01DC333B6009B34AF /* MessagesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 638918CB1DC28AA3009B34AF /* MessagesAppDelegate.m */; };
+		638918D61DC33A33009B34AF /* MessagesUserActivityFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 638918D51DC33A33009B34AF /* MessagesUserActivityFactory.m */; };
+		638918D71DC33CC5009B34AF /* MessagesUserActivityFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 638918D51DC33A33009B34AF /* MessagesUserActivityFactory.m */; };
+		638918D81DC33CD0009B34AF /* MessagesUserActivityFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 638918D51DC33A33009B34AF /* MessagesUserActivityFactory.m */; };
+		638918DC1DC340B4009B34AF /* NSArray+NSURLQueryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 638918DB1DC340B4009B34AF /* NSArray+NSURLQueryItem.m */; };
+		63A9D5C51DB759A600169E2E /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F612F51CB00A220002AEF0 /* EventViewController.m */; };
+		63A9D5C61DB759B600169E2E /* LocalizedStrings.m in Sources */ = {isa = PBXBuildFile; fileRef = 631808621C4A66FA00A61E7D /* LocalizedStrings.m */; };
+		63A9D5C91DB7614900169E2E /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63F612F91CB00A220002AEF0 /* Event.storyboard */; };
+		63A9D5CA1DB7616200169E2E /* SpeakerInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63F6134B1CB00A220002AEF0 /* SpeakerInfo.storyboard */; };
+		63A9D5CB1DB7617200169E2E /* Events.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63F6125C1CB00A220002AEF0 /* Events.storyboard */; };
+		63A9D5CC1DB7617A00169E2E /* Lecture.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63F613221CB00A220002AEF0 /* Lecture.storyboard */; };
+		63A9D5CD1DB7618100169E2E /* RamblerLocation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 636F8DFE1BCB91A900552B91 /* RamblerLocation.storyboard */; };
+		63A9D5CE1DB7618500169E2E /* Reports.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63F612281CAFF8530002AEF0 /* Reports.storyboard */; };
+		63A9D5CF1DB7618900169E2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 636B64111BBFE2C20053E38F /* Main.storyboard */; };
+		63BB9A0C1DB2858E00C2F2B9 /* PresentationLayerHelpersAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F2811BF7925F000017F3 /* PresentationLayerHelpersAssembly.m */; };
+		63BB9A0D1DB285A800C2F2B9 /* AppleMapsLinkBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFEAF0B1D2E5CE0006E9649 /* AppleMapsLinkBuilder.m */; };
+		63BB9A0E1DB285BA00C2F2B9 /* DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D86BD91C1439D800986536 /* DateFormatter.m */; };
+		63BB9A0F1DB285C900C2F2B9 /* EventTypeDeterminator.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F2BB1BF8A713000017F3 /* EventTypeDeterminator.m */; };
+		63BB9A101DB285D600C2F2B9 /* SafariFactoryImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8A101D5E5F1B00DA0C32 /* SafariFactoryImplementation.m */; };
+		63BB9A111DB285E300C2F2B9 /* VideoThumbnailGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE8A071D5DFA1600DA0C32 /* VideoThumbnailGenerator.m */; };
+		63BB9A121DB285F200C2F2B9 /* YouTubeIdentifierDeriviator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B49E01D6EEE9000ED176B /* YouTubeIdentifierDeriviator.m */; };
+		63BB9A131DB2860000C2F2B9 /* YouTubePlayerFactoryImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B49E81D6EF72B00ED176B /* YouTubePlayerFactoryImplementation.m */; };
+		63BB9A191DB4B45400C2F2B9 /* LaunchSystemAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89E21D5CBB7800DA0C32 /* LaunchSystemAssembly.m */; };
+		63BB9A1A1DB4B46300C2F2B9 /* EventLaunchRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE899F1D5CB71300DA0C32 /* EventLaunchRouter.m */; };
+		63BB9A1B1DB4B47C00C2F2B9 /* LectureLaunchRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89A21D5CB71300DA0C32 /* LectureLaunchRouter.m */; };
+		63BB9A1C1DB4B48800C2F2B9 /* QuickActionAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B82211D7DA554002E977A /* QuickActionAppDelegate.m */; };
+		63BB9A1D1DB4B49500C2F2B9 /* QuickActionLaunchHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B82251D7DA8B5002E977A /* QuickActionLaunchHandler.m */; };
+		63BB9A1E1DB4B4A200C2F2B9 /* QuickActionUserActivityFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B822C1D7DAB51002E977A /* QuickActionUserActivityFactory.m */; };
+		63BB9A1F1DB4B4BF00C2F2B9 /* SpeakerLaunchRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89A51D5CB71300DA0C32 /* SpeakerLaunchRouter.m */; };
+		63BB9A201DB4B4CB00C2F2B9 /* SpotlightAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE898A1D5CB71300DA0C32 /* SpotlightAppDelegate.m */; };
+		63BB9A211DB4B4D800C2F2B9 /* SpotlightLaunchHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89951D5CB71300DA0C32 /* SpotlightLaunchHandler.m */; };
+		63BB9A221DB4B4E500C2F2B9 /* TabLaunchRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B823A1D7ECA07002E977A /* TabLaunchRouter.m */; };
+		63BB9A231DB4B4F900C2F2B9 /* QuickActionConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B82321D7DB1AD002E977A /* QuickActionConstants.m */; };
+		63BB9A241DB4BA4600C2F2B9 /* SpotlightIndexerAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F40978C1D5210D9008BFE42 /* SpotlightIndexerAssembly.m */; };
+		63BB9A251DB4BA5400C2F2B9 /* ContextStorageImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D74D1D59D755009DDCEA /* ContextStorageImplementation.m */; };
+		63BB9A261DB4BA6700C2F2B9 /* EventChangeProviderFetchRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4097941D534F82008BFE42 /* EventChangeProviderFetchRequestFactory.m */; };
+		63BB9A271DB4BA7300C2F2B9 /* EventObjectIndexer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF1251D1D51DF460098625F /* EventObjectIndexer.m */; };
+		63BB9A281DB4BA8000C2F2B9 /* EventObjectTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4097831D51F658008BFE42 /* EventObjectTransformer.m */; };
+		63BB9A291DB4BA8D00C2F2B9 /* FetchedResultsControllerChangeProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F533A881D50DE84004F8E82 /* FetchedResultsControllerChangeProvider.m */; };
+		63BB9A2A1DB4BA9A00C2F2B9 /* IndexerMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F533A8D1D50EC10004F8E82 /* IndexerMonitor.m */; };
+		63BB9A2B1DB4BAA800C2F2B9 /* IndexTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F533A9F1D50F181004F8E82 /* IndexTransaction.m */; };
+		63BB9A2C1DB4BAB300C2F2B9 /* IndexerMonitorOperationQueueFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB6A6F1D53896E0061F333 /* IndexerMonitorOperationQueueFactory.m */; };
+		63BB9A2D1DB4BABE00C2F2B9 /* IndexerStateStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5316A81D50F56900F13931 /* IndexerStateStorage.m */; };
+		63BB9A2E1DB4BACA00C2F2B9 /* IndexState.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D7471D59D73E009DDCEA /* IndexState.m */; };
+		63BB9A2F1DB4BADA00C2F2B9 /* IndexTransactionBatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F533AA31D50F195004F8E82 /* IndexTransactionBatch.m */; };
+		63BB9A301DB4BB0100C2F2B9 /* LectureChangeProviderFetchRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D77C1D5A075C009DDCEA /* LectureChangeProviderFetchRequestFactory.m */; };
+		63BB9A311DB4BB1B00C2F2B9 /* LectureObjectIndexer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D7751D5A023B009DDCEA /* LectureObjectIndexer.m */; };
+		63BB9A321DB4BB3700C2F2B9 /* LectureObjectTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D76E1D59FFB8009DDCEA /* LectureObjectTransformer.m */; };
+		63BB9A331DB4BB4600C2F2B9 /* ObjectIndexerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F533A951D50EEE0004F8E82 /* ObjectIndexerBase.m */; };
+		63BB9A341DB4BB5400C2F2B9 /* SpeakerChangeProviderFetchRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D7601D59E8D2009DDCEA /* SpeakerChangeProviderFetchRequestFactory.m */; };
+		63BB9A351DB4BB5F00C2F2B9 /* SpeakerObjectIndexer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D7671D59EA02009DDCEA /* SpeakerObjectIndexer.m */; };
+		63BB9A361DB4BB6B00C2F2B9 /* SpeakerObjectTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D7591D59E6CB009DDCEA /* SpeakerObjectTransformer.m */; };
+		63BB9A371DB4BB7600C2F2B9 /* SpotlightCoreDataStackCoordinatorImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F78D73E1D59D6EF009DDCEA /* SpotlightCoreDataStackCoordinatorImplementation.m */; };
+		63BB9A381DB4BB8200C2F2B9 /* ObjectTransformerConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE89EA1D5CCF8300DA0C32 /* ObjectTransformerConstants.m */; };
+		63BB9A391DB4BB8D00C2F2B9 /* SpotlightIndexerConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB6A6B1D5384F30061F333 /* SpotlightIndexerConstants.m */; };
+		63BDBBC31D87E3DE006E8A15 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63BDBBC21D87E3DE006E8A15 /* Messages.framework */; };
+		63BDBBCA1D87E3DE006E8A15 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BDBBC81D87E3DE006E8A15 /* MainInterface.storyboard */; };
+		63BDBBCC1D87E3DE006E8A15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63BDBBCB1D87E3DE006E8A15 /* Assets.xcassets */; };
+		63BDBBD01D87E3DE006E8A15 /* RamblerMessageExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 63BDBBC11D87E3DE006E8A15 /* RamblerMessageExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		63C31BF71DD9BB7F00AA51BD /* MessagesLaunchHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 63770CBB1DD61E2A0039AB0D /* MessagesLaunchHandler.m */; };
+		63C31BF91DD9BBAC00AA51BD /* MessagesConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 63770CBE1DD61E3D0039AB0D /* MessagesConstants.m */; };
+		63C31BFD1DD9C10900AA51BD /* MessagesAppDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C31BFC1DD9C10900AA51BD /* MessagesAppDelegateTests.m */; };
+		63C31C001DD9C14A00AA51BD /* MessagesUserActivityFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C31BFF1DD9C14A00AA51BD /* MessagesUserActivityFactoryTests.m */; };
+		63C31C031DD9FE4C00AA51BD /* MessagesLaunchHandlerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C31C021DD9FE4C00AA51BD /* MessagesLaunchHandlerTests.m */; };
+		63C31C081DDAF19700AA51BD /* MessagesInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6373829F1DD5EA17004246EC /* MessagesInteractor.m */; };
+		63C31C091DDAF1A500AA51BD /* MessagesPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6373829C1DD5E12F004246EC /* MessagesPresenter.m */; };
+		63C31C0A1DDAF1B000AA51BD /* MessagesRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 637382981DD5D9C0004246EC /* MessagesRouter.m */; };
+		63C31C0B1DDAF1BC00AA51BD /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63770CB21DD61D2A0039AB0D /* MessagesViewController.m */; };
+		63C31C0C1DDAF1DD00AA51BD /* MessageExtensionTyphoonActivator.m in Sources */ = {isa = PBXBuildFile; fileRef = 63770CC11DD61E6B0039AB0D /* MessageExtensionTyphoonActivator.m */; };
+		63C31C0D1DDAF1F400AA51BD /* RamblerExtensionTyphoonActivator.m in Sources */ = {isa = PBXBuildFile; fileRef = 63770CB81DD61E100039AB0D /* RamblerExtensionTyphoonActivator.m */; };
+		63C31C151DDB126700AA51BD /* MessageExtensionAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 63770CB51DD61D6F0039AB0D /* MessageExtensionAssembly.m */; };
+		63C31C161DDB132D00AA51BD /* MessagesConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 63770CBE1DD61E3D0039AB0D /* MessagesConstants.m */; };
+		63C31C171DDB134500AA51BD /* MessagesLaunchHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 63770CBB1DD61E2A0039AB0D /* MessagesLaunchHandler.m */; };
 		63D86BDA1C1439D800986536 /* DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D86BD91C1439D800986536 /* DateFormatter.m */; };
 		63D86BDD1C143FCE00986536 /* DateFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D86BDC1C143FCE00986536 /* DateFormatterTests.m */; };
+		63EB4DB01DDC742600548D88 /* MessagesInteractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EB4DAF1DDC742600548D88 /* MessagesInteractorTests.m */; };
+		63EB4DB21DDC7D4400548D88 /* MessagesPresenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EB4DB11DDC7D4400548D88 /* MessagesPresenterTests.m */; };
 		63ECC4161CA81E5300439A01 /* ErrorConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ECC4151CA81E5300439A01 /* ErrorConstants.m */; };
 		63ECC4191CA8373400439A01 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 63ECC4181CA8373400439A01 /* Localizable.strings */; };
 		63F342B01C8B20AB002AF7CD /* EventStoreService.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D7460E1C8B0D5200E3A381 /* EventStoreService.m */; };
@@ -258,9 +427,13 @@
 		63F8F2BC1BF8A713000017F3 /* EventTypeDeterminator.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8F2BB1BF8A713000017F3 /* EventTypeDeterminator.m */; };
 		63F8F2F51BF9FDBF000017F3 /* CompoundOperationBaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A85071BC185AA006F79FB /* CompoundOperationBaseTests.m */; };
 		63F8F2F61BF9FE7D000017F3 /* RCFRESTRequestConfiguratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1830991BC022EA000E21A5 /* RCFRESTRequestConfiguratorTests.m */; };
+		63F95BB71DE5A67D00F6BD1C /* EventListProcessorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F95BB61DE5A67D00F6BD1C /* EventListProcessorTests.m */; };
 		63FD4E061BE5038D0046378E /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FD4E051BE5038D0046378E /* UIColor+Hex.m */; };
 		63FDCE141BBDBA2A00A43B60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63FDCE021BBDBA2A00A43B60 /* Assets.xcassets */; };
 		63FDCE161BBDBA2A00A43B60 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FDCE051BBDBA2A00A43B60 /* main.m */; };
+		661B40A31DF17CB3002DA46C /* SearchLaunchRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 661B40A21DF17CB3002DA46C /* SearchLaunchRouter.m */; };
+		661B40A41DF17CC3002DA46C /* SearchLaunchRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 661B40A21DF17CB3002DA46C /* SearchLaunchRouter.m */; };
+		661B40A51DF17CCC002DA46C /* SpotlightContinuationAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCFC50D1D903719009FD57D /* SpotlightContinuationAppDelegate.m */; };
 		661CA3F51D65CF920047EB68 /* EventOperationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 661CA3F41D65CF920047EB68 /* EventOperationFactory.m */; };
 		661CA3FE1D65CFF70047EB68 /* LastModifiedMapperOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 661CA3FD1D65CFF70047EB68 /* LastModifiedMapperOperation.m */; };
 		661CA4031D65D04E0047EB68 /* ServerResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 661CA4021D65D04E0047EB68 /* ServerResponseModel.m */; };
@@ -336,7 +509,11 @@
 		66EE4D341D54BFCD0011F94A /* NIMutableCollectionViewModel+LJAddObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EE4D2F1D54BFCD0011F94A /* NIMutableCollectionViewModel+LJAddObject.m */; };
 		66EE4D351D54BFCD0011F94A /* NITableViewModel+LJIndexOfObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EE4D311D54BFCD0011F94A /* NITableViewModel+LJIndexOfObject.m */; };
 		66EE4D361D54BFCD0011F94A /* NITableViewModel+NextInputResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EE4D331D54BFCD0011F94A /* NITableViewModel+NextInputResponder.m */; };
+		66FBA2581DE05CF000F5C2E9 /* LaunchSystemAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66FBA2571DE05CF000F5C2E9 /* LaunchSystemAssemblyTests.m */; };
+		66FBA25B1DE0607D00F5C2E9 /* SpotlightContinuationAppDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66FBA25A1DE0607D00F5C2E9 /* SpotlightContinuationAppDelegateTests.m */; };
+		66FBA25E1DE069E700F5C2E9 /* SearchLaunchRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66FBA25D1DE069E700F5C2E9 /* SearchLaunchRouterTests.m */; };
 		66FFD29C1D7DCCFB0009B7DC /* CollectionViewContentCellAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 66FFD29B1D7DCCFB0009B7DC /* CollectionViewContentCellAnimator.m */; };
+		9E94B671A997D53087214C4F /* libPods-Conferences-ConferencesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F1470A6FDBED5612278E025 /* libPods-Conferences-ConferencesTests.a */; };
 		9F0A6C1D1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */; };
 		9F0A6C2E1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C2D1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m */; };
 		9F0A84C31BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A84C21BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m */; };
@@ -386,9 +563,6 @@
 		9F18311C1BC1615C000E21A5 /* ResultsResponseObjectFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1831181BC1615C000E21A5 /* ResultsResponseObjectFormatter.m */; };
 		9F18311D1BC1615C000E21A5 /* SingleResponseObjectFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F18311B1BC1615C000E21A5 /* SingleResponseObjectFormatter.m */; };
 		9F1831211BC16195000E21A5 /* RCFResultResponseObjectFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1831201BC16195000E21A5 /* RCFResultResponseObjectFormatterTests.m */; };
-		9F18BE641DB42EC600CCD47B /* MailComposeControllerFactoryImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F18BE631DB42EC600CCD47B /* MailComposeControllerFactoryImplementation.m */; };
-		9F18BE671DB430F500CCD47B /* MailComposeControllerFactoryImplementationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F18BE661DB430F500CCD47B /* MailComposeControllerFactoryImplementationTests.m */; };
-		9F18BE6C1DB4FD3900CCD47B /* SpeakerInfoAlertFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F18BE6B1DB4FD3900CCD47B /* SpeakerInfoAlertFactory.m */; };
 		9F33B8801D63512200BE136C /* EventListTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F33B87F1D63512200BE136C /* EventListTableViewCellObject.m */; };
 		9F33B8841D639C6000BE136C /* SpeakerInfoLectureCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F33B8831D639C6000BE136C /* SpeakerInfoLectureCellObject.m */; };
 		9F33B8881D639C7300BE136C /* SpeakerInfoLectureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F33B8871D639C7300BE136C /* SpeakerInfoLectureCell.m */; };
@@ -539,6 +713,7 @@
 		9FC1F6841D28391E0070D9B5 /* EventListQueryTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1F6831D28391E0070D9B5 /* EventListQueryTransformer.m */; };
 		9FC305321D6476EA0052CB67 /* ShareUrlBuilderImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC305311D6476EA0052CB67 /* ShareUrlBuilderImplementation.m */; };
 		9FC305351D6478F60052CB67 /* ShareUrlBuilderImplementationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC305341D6478F60052CB67 /* ShareUrlBuilderImplementationTests.m */; };
+		9FCFC50E1D903719009FD57D /* SpotlightContinuationAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCFC50D1D903719009FD57D /* SpotlightContinuationAppDelegate.m */; };
 		9FD740381CDC98010071BD71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FD740371CDC98010071BD71 /* LaunchScreen.storyboard */; };
 		9FE139231D65BD9700D7BF44 /* SuggestServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE139221D65BD9700D7BF44 /* SuggestServiceImplementation.m */; };
 		9FE139261D65CC2500D7BF44 /* SuggestServiceImplementationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE139251D65CC2500D7BF44 /* SuggestServiceImplementationTests.m */; };
@@ -580,12 +755,23 @@
 		9FF750191D27E6EE000D208D /* ManagedObjectMapperTests.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9FF750181D27E6EE000D208D /* ManagedObjectMapperTests.bundle */; };
 		9FF99E511BC42FF6006F15AF /* OperationSchedulerImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF99E501BC42FF6006F15AF /* OperationSchedulerImplementation.m */; };
 		9FF99E541BC4317E006F15AF /* OperationSchedulerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF99E531BC4317E006F15AF /* OperationSchedulerTests.m */; };
+		9FFA8A281DF31F3400FB3C2E /* RamblerLocationStateStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFA8A271DF31F3400FB3C2E /* RamblerLocationStateStorage.m */; };
+		9FFA8A2C1DF3220500FB3C2E /* ApplicationConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFA8A2B1DF3220500FB3C2E /* ApplicationConstants.m */; };
+		9FFA8A2D1DF32B4700FB3C2E /* ApplicationConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFA8A2B1DF3220500FB3C2E /* ApplicationConstants.m */; };
 		9FFEAF051D2E41B4006E9649 /* DirectionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFEAF031D2E41B4006E9649 /* DirectionCollectionViewCell.m */; };
 		9FFEAF061D2E41B4006E9649 /* DirectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FFEAF041D2E41B4006E9649 /* DirectionCollectionViewCell.xib */; };
 		9FFEAF0C1D2E5CE0006E9649 /* AppleMapsLinkBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFEAF0B1D2E5CE0006E9649 /* AppleMapsLinkBuilder.m */; };
+		B844903CD5D6757D08026D5E /* libPods-Conferences.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F15F66C7FD75B9A89EF39FB4 /* libPods-Conferences.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		63BDBBCE1D87E3DE006E8A15 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F1F37DC1BBBB80D00C7797D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 63BDBBC01D87E3DE006E8A15;
+			remoteInfo = RamblerMessageExtension;
+		};
 		9F1F38011BBBB80D00C7797D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9F1F37DC1BBBB80D00C7797D /* Project object */;
@@ -594,6 +780,20 @@
 			remoteInfo = Conferences;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		63BDBBD51D87E3DE006E8A15 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				63BDBBD01D87E3DE006E8A15 /* RamblerMessageExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0231D71F1DFE87150052471C /* LocationConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationConstants.h; sourceTree = "<group>"; };
@@ -623,6 +823,19 @@
 		02F297C21DFAB15E001F9B10 /* UberRidesAppDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UberRidesAppDelegateTests.m; sourceTree = "<group>"; };
 		02F297C51DFAC5A2001F9B10 /* UberRidesAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UberRidesAssemblyTests.m; sourceTree = "<group>"; };
 		02F297C71DFACF20001F9B10 /* UberRidesAssembly_Testable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UberRidesAssembly_Testable.h; sourceTree = "<group>"; };
+		028E44681DF179B300734E84 /* PredicateConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PredicateConfigurator.h; sourceTree = "<group>"; };
+		028E44691DF179CA00734E84 /* PredicateConfiguratorImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PredicateConfiguratorImplementation.h; sourceTree = "<group>"; };
+		028E446A1DF179CA00734E84 /* PredicateConfiguratorImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PredicateConfiguratorImplementation.m; sourceTree = "<group>"; };
+		028E446D1DF184F100734E84 /* SearchFacadeImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchFacadeImplementation.h; sourceTree = "<group>"; };
+		028E446E1DF184F100734E84 /* SearchFacadeImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchFacadeImplementation.m; sourceTree = "<group>"; };
+		028E44701DF1851B00734E84 /* SearchFacade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchFacade.h; sourceTree = "<group>"; };
+		028E44721DF19BA900734E84 /* PredicateConfiguratorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PredicateConfiguratorTests.m; sourceTree = "<group>"; };
+		028E44751DF1B81C00734E84 /* SearchFacadeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchFacadeTests.m; sourceTree = "<group>"; };
+		1AB36DD96D7739E6F91D7BBE /* Pods-Conferences.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conferences.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Conferences/Pods-Conferences.debug.xcconfig"; sourceTree = "<group>"; };
+		1C1AA7D4ECB1DA53BEC254E4 /* libPods-RamblerMessageExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RamblerMessageExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FC5571A228743BA28853AEA /* Pods-Conferences-ConferencesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conferences-ConferencesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Conferences-ConferencesTests/Pods-Conferences-ConferencesTests.release.xcconfig"; sourceTree = "<group>"; };
+		23EE5826624410C24CDC2BA5 /* Pods-RamblerMessageExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RamblerMessageExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-RamblerMessageExtension/Pods-RamblerMessageExtension.release.xcconfig"; sourceTree = "<group>"; };
+		2A1B7FADAB8BA2EA1E9B450D /* Pods-Conferences-ConferencesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conferences-ConferencesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Conferences-ConferencesTests/Pods-Conferences-ConferencesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2B01CEBD1D50A55900DA8E66 /* MetaEventServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetaEventServiceTests.m; sourceTree = "<group>"; };
 		2B05E15B1D50EDB900E017AB /* EventModuleSegueIdentifiersConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventModuleSegueIdentifiersConstants.h; sourceTree = "<group>"; };
 		2B05E15F1D50FEFC00E017AB /* SpeakerInfoCellObjectBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerInfoCellObjectBuilder.h; sourceTree = "<group>"; };
@@ -734,9 +947,13 @@
 		3784462D1D4E067A0016121E /* RCNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCNavigationController.h; sourceTree = "<group>"; };
 		3784462E1D4E067A0016121E /* RCNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCNavigationController.m; sourceTree = "<group>"; };
 		37C2D8F2CACC9D443740E428 /* EventGalleryInteractorTests.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EventGalleryInteractorTests.m; sourceTree = "<group>"; };
-		3E1AE6F7E0F77223E5266DC9 /* Pods-Conferences-ConferencesTests.nightly.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conferences-ConferencesTests.nightly.xcconfig"; path = "Pods/Target Support Files/Pods-Conferences-ConferencesTests/Pods-Conferences-ConferencesTests.nightly.xcconfig"; sourceTree = "<group>"; };
-		5AB31DDD00BCDD81411ED92C /* Pods-Conferences-ConferencesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conferences-ConferencesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Conferences-ConferencesTests/Pods-Conferences-ConferencesTests.release.xcconfig"; sourceTree = "<group>"; };
+		44C28AC5C8513A913FE8B749 /* Pods-RamblerMessageExtension.nightly.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RamblerMessageExtension.nightly.xcconfig"; path = "Pods/Target Support Files/Pods-RamblerMessageExtension/Pods-RamblerMessageExtension.nightly.xcconfig"; sourceTree = "<group>"; };
+		5F1470A6FDBED5612278E025 /* libPods-Conferences-ConferencesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Conferences-ConferencesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		601B345D74E552114D07B660 /* EventGalleryRouterTests.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EventGalleryRouterTests.m; sourceTree = "<group>"; };
+		61435C41E57EED0504F7C502 /* Pods-RamblerMessageExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RamblerMessageExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RamblerMessageExtension/Pods-RamblerMessageExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		6310601B1DC89577006870EB /* MailComposeControllerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MailComposeControllerFactory.h; path = MailComposeControllerFactory/MailComposeControllerFactory.h; sourceTree = "<group>"; };
+		6310601C1DC89577006870EB /* MailComposeControllerFactoryImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MailComposeControllerFactoryImplementation.h; path = MailComposeControllerFactory/MailComposeControllerFactoryImplementation.h; sourceTree = "<group>"; };
+		6310601D1DC89577006870EB /* MailComposeControllerFactoryImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MailComposeControllerFactoryImplementation.m; path = MailComposeControllerFactory/MailComposeControllerFactoryImplementation.m; sourceTree = "<group>"; };
 		63136FE51BDCDB9E00994356 /* DataDisplayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataDisplayManager.h; sourceTree = "<group>"; };
 		6315BA021C9EC23600999877 /* VideoRecordTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoRecordTableViewCell.h; sourceTree = "<group>"; };
 		6315BA031C9EC23600999877 /* VideoRecordTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoRecordTableViewCell.m; sourceTree = "<group>"; };
@@ -773,7 +990,6 @@
 		631808681C4A870C00A61E7D /* LectureMaterialInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LectureMaterialInfoTableViewCell.xib; sourceTree = "<group>"; };
 		6318086B1C4A872600A61E7D /* LectureMaterialInfoTableViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectureMaterialInfoTableViewCellObject.h; sourceTree = "<group>"; };
 		6318086C1C4A872600A61E7D /* LectureMaterialInfoTableViewCellObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LectureMaterialInfoTableViewCellObject.m; sourceTree = "<group>"; };
-		631CBA371C0092C100E3EBA8 /* ApplicationConfiguratorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationConfiguratorTests.m; sourceTree = "<group>"; };
 		631CBA3A1C00935300E3EBA8 /* EventServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventServiceTests.m; sourceTree = "<group>"; };
 		631CBA681C020CCD00E3EBA8 /* EventListModuleAssembly_Testable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListModuleAssembly_Testable.h; sourceTree = "<group>"; };
 		631CBA691C020CCD00E3EBA8 /* EventListModuleAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListModuleAssemblyTests.m; sourceTree = "<group>"; };
@@ -792,6 +1008,9 @@
 		631FFE151BEF451400749DB8 /* RCMResignFirstResponderHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCMResignFirstResponderHandler.h; sourceTree = "<group>"; };
 		631FFE171BEF451400749DB8 /* UIView+CDResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CDResponder.h"; sourceTree = "<group>"; };
 		631FFE181BEF451400749DB8 /* UIView+CDResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CDResponder.m"; sourceTree = "<group>"; };
+		6321841B1D9BF7E7001BB7A7 /* libMagicalRecord.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMagicalRecord.a; path = "../Library/Developer/Xcode/DerivedData/Conferences-fqevuzrasmsxnccgiaatgyhwrafz/Build/Products/Debug-iphonesimulator/libMagicalRecord.a"; sourceTree = "<group>"; };
+		634EB9DF1DC8E5FC00EAEC0F /* SpeakerInfoAlertFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeakerInfoAlertFactory.h; path = SpeakerInfoAlertFactory/SpeakerInfoAlertFactory.h; sourceTree = "<group>"; };
+		634EB9E01DC8E5FC00EAEC0F /* SpeakerInfoAlertFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeakerInfoAlertFactory.m; path = SpeakerInfoAlertFactory/SpeakerInfoAlertFactory.m; sourceTree = "<group>"; };
 		635E18BD1CA69F4A005B8439 /* SpeakerInfoModuleAssembly_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpeakerInfoModuleAssembly_Testable.h; sourceTree = "<group>"; };
 		635E18BE1CA6A0A9005B8439 /* SpeakerInfoModuleAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerInfoModuleAssemblyTests.m; sourceTree = "<group>"; };
 		635E18C01CA6A3E3005B8439 /* LectureModuleAssembly_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LectureModuleAssembly_Testable.h; sourceTree = "<group>"; };
@@ -824,6 +1043,7 @@
 		636B640E1BBDD6260053E38F /* SpeakerServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerServiceImplementation.h; sourceTree = "<group>"; };
 		636B640F1BBDD6260053E38F /* SpeakerServiceImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerServiceImplementation.m; sourceTree = "<group>"; };
 		636B64111BBFE2C20053E38F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		636E26F21D8FF072001ABB92 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		636F8C951BC97B3100552B91 /* EventServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventServiceImplementation.h; sourceTree = "<group>"; };
 		636F8C961BC97B3100552B91 /* EventServiceImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventServiceImplementation.m; sourceTree = "<group>"; };
 		636F8D0A1BCB825F00552B91 /* ModuleAssemblyBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleAssemblyBase.h; sourceTree = "<group>"; };
@@ -844,17 +1064,62 @@
 		636F8DD21BCB8FE800552B91 /* RamblerLocationViewInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RamblerLocationViewInput.h; sourceTree = "<group>"; };
 		636F8DD31BCB8FE800552B91 /* RamblerLocationViewOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RamblerLocationViewOutput.h; sourceTree = "<group>"; };
 		636F8DFE1BCB91A900552B91 /* RamblerLocation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RamblerLocation.storyboard; sourceTree = "<group>"; };
+		6373827F1DD5AC88004246EC /* EventListProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventListProcessor.h; path = EventListProcessor/EventListProcessor.h; sourceTree = "<group>"; };
+		637382801DD5AC88004246EC /* EventListProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListProcessor.m; path = EventListProcessor/EventListProcessor.m; sourceTree = "<group>"; };
+		637382961DD5D8FD004246EC /* MessagesRouterInput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MessagesRouterInput.h; path = Classes/PresentationLayer/MessagesModule/Router/MessagesRouterInput.h; sourceTree = "<group>"; };
+		637382971DD5D9C0004246EC /* MessagesRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessagesRouter.h; path = Classes/PresentationLayer/MessagesModule/Router/MessagesRouter.h; sourceTree = "<group>"; };
+		637382981DD5D9C0004246EC /* MessagesRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesRouter.m; path = Classes/PresentationLayer/MessagesModule/Router/MessagesRouter.m; sourceTree = "<group>"; };
+		6373829A1DD5E02C004246EC /* MessagesViewOutput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MessagesViewOutput.h; path = Classes/PresentationLayer/MessagesModule/View/MessagesViewOutput.h; sourceTree = "<group>"; };
+		6373829B1DD5E12F004246EC /* MessagesPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessagesPresenter.h; path = Classes/PresentationLayer/MessagesModule/Presenter/MessagesPresenter.h; sourceTree = "<group>"; };
+		6373829C1DD5E12F004246EC /* MessagesPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesPresenter.m; path = Classes/PresentationLayer/MessagesModule/Presenter/MessagesPresenter.m; sourceTree = "<group>"; };
+		6373829E1DD5EA17004246EC /* MessagesInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessagesInteractor.h; path = Classes/PresentationLayer/MessagesModule/Interactor/MessagesInteractor.h; sourceTree = "<group>"; };
+		6373829F1DD5EA17004246EC /* MessagesInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesInteractor.m; path = Classes/PresentationLayer/MessagesModule/Interactor/MessagesInteractor.m; sourceTree = "<group>"; };
+		637382A11DD5F5C4004246EC /* MessagesInteractorInput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MessagesInteractorInput.h; path = Classes/PresentationLayer/MessagesModule/Interactor/MessagesInteractorInput.h; sourceTree = "<group>"; };
+		637382A21DD60820004246EC /* MessagesViewInput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MessagesViewInput.h; path = Classes/PresentationLayer/MessagesModule/View/MessagesViewInput.h; sourceTree = "<group>"; };
 		6373A3E61BBDBFDC00DF67FF /* EventService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventService.h; sourceTree = "<group>"; };
 		6373A3E71BBDC02100DF67FF /* RegistrationQuestionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationQuestionService.h; sourceTree = "<group>"; };
 		6373A3E91BBDC05900DF67FF /* SpeakerService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerService.h; sourceTree = "<group>"; };
 		6373A40F1BBDC5EA00DF67FF /* Conference.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Conference.xcdatamodel; sourceTree = "<group>"; };
+		63770CB11DD61D2A0039AB0D /* MessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessagesViewController.h; path = Classes/PresentationLayer/MessagesModule/View/MessagesViewController.h; sourceTree = "<group>"; };
+		63770CB21DD61D2A0039AB0D /* MessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesViewController.m; path = Classes/PresentationLayer/MessagesModule/View/MessagesViewController.m; sourceTree = "<group>"; };
+		63770CB41DD61D6F0039AB0D /* MessageExtensionAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageExtensionAssembly.h; path = Classes/PresentationLayer/MessagesModule/Assembly/MessageExtensionAssembly.h; sourceTree = "<group>"; };
+		63770CB51DD61D6F0039AB0D /* MessageExtensionAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageExtensionAssembly.m; path = Classes/PresentationLayer/MessagesModule/Assembly/MessageExtensionAssembly.m; sourceTree = "<group>"; };
+		63770CB71DD61E100039AB0D /* RamblerExtensionTyphoonActivator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RamblerExtensionTyphoonActivator.h; path = Classes/ExtensionLayer/RamblerExtensionTyphoonActivator/RamblerExtensionTyphoonActivator.h; sourceTree = "<group>"; };
+		63770CB81DD61E100039AB0D /* RamblerExtensionTyphoonActivator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RamblerExtensionTyphoonActivator.m; path = Classes/ExtensionLayer/RamblerExtensionTyphoonActivator/RamblerExtensionTyphoonActivator.m; sourceTree = "<group>"; };
+		63770CBA1DD61E2A0039AB0D /* MessagesLaunchHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessagesLaunchHandler.h; path = Classes/ExtensionLayer/LaunchHandler/MessagesLaunchHandler.h; sourceTree = "<group>"; };
+		63770CBB1DD61E2A0039AB0D /* MessagesLaunchHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesLaunchHandler.m; path = Classes/ExtensionLayer/LaunchHandler/MessagesLaunchHandler.m; sourceTree = "<group>"; };
+		63770CBD1DD61E3D0039AB0D /* MessagesConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessagesConstants.h; path = Classes/MessagesConstants/MessagesConstants.h; sourceTree = "<group>"; };
+		63770CBE1DD61E3D0039AB0D /* MessagesConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesConstants.m; path = Classes/MessagesConstants/MessagesConstants.m; sourceTree = "<group>"; };
+		63770CC01DD61E6B0039AB0D /* MessageExtensionTyphoonActivator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageExtensionTyphoonActivator.h; path = Classes/ExtensionLayer/RamblerExtensionTyphoonActivator/MessageExtensionTyphoonActivator/MessageExtensionTyphoonActivator.h; sourceTree = "<group>"; };
+		63770CC11DD61E6B0039AB0D /* MessageExtensionTyphoonActivator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageExtensionTyphoonActivator.m; path = Classes/ExtensionLayer/RamblerExtensionTyphoonActivator/MessageExtensionTyphoonActivator/MessageExtensionTyphoonActivator.m; sourceTree = "<group>"; };
+		6377140B1DDC8109009FF726 /* MessagesRouterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesRouterTests.m; path = MessagesModuleTests/MessagesRouterTests.m; sourceTree = "<group>"; };
+		6378738E1DED897000CA1859 /* UrlComponentsFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UrlComponentsFactory.h; path = Classes/PresentationLayer/MessagesModule/DeeplinkResolver/UrlComponentsFactory.h; sourceTree = "<group>"; };
+		6378738F1DED897000CA1859 /* UrlComponentsFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UrlComponentsFactory.m; path = Classes/PresentationLayer/MessagesModule/DeeplinkResolver/UrlComponentsFactory.m; sourceTree = "<group>"; };
 		638172081C8B118D0094F19A /* EventStoreServiceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventStoreServiceProtocol.h; sourceTree = "<group>"; };
+		638918CA1DC28AA3009B34AF /* MessagesAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessagesAppDelegate.h; path = MessagesAppDelegate/MessagesAppDelegate.h; sourceTree = "<group>"; };
+		638918CB1DC28AA3009B34AF /* MessagesAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesAppDelegate.m; path = MessagesAppDelegate/MessagesAppDelegate.m; sourceTree = "<group>"; };
+		638918D41DC33A33009B34AF /* MessagesUserActivityFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessagesUserActivityFactory.h; path = MessagesAppDelegate/MessagesUserActivityFactory/MessagesUserActivityFactory.h; sourceTree = "<group>"; };
+		638918D51DC33A33009B34AF /* MessagesUserActivityFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesUserActivityFactory.m; path = MessagesAppDelegate/MessagesUserActivityFactory/MessagesUserActivityFactory.m; sourceTree = "<group>"; };
+		638918DA1DC340B4009B34AF /* NSArray+NSURLQueryItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+NSURLQueryItem.h"; path = "NSArray+NSURLQueryItem/NSArray+NSURLQueryItem.h"; sourceTree = "<group>"; };
+		638918DB1DC340B4009B34AF /* NSArray+NSURLQueryItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+NSURLQueryItem.m"; path = "NSArray+NSURLQueryItem/NSArray+NSURLQueryItem.m"; sourceTree = "<group>"; };
 		6394E4181CB1510800548EAE /* LectureViewController_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LectureViewController_Testable.h; sourceTree = "<group>"; };
+		63AA03541D99063900F4C094 /* Conferences.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Conferences.entitlements; sourceTree = "<group>"; };
+		63AA03551D99067000F4C094 /* RamblerMessageExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RamblerMessageExtension.entitlements; sourceTree = "<group>"; };
+		63BDBBC11D87E3DE006E8A15 /* RamblerMessageExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RamblerMessageExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		63BDBBC21D87E3DE006E8A15 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
+		63BDBBC91D87E3DE006E8A15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		63BDBBCB1D87E3DE006E8A15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		63BDBBCD1D87E3DE006E8A15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63C31BFC1DD9C10900AA51BD /* MessagesAppDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesAppDelegateTests.m; path = MessagesAppDelegate/MessagesAppDelegateTests.m; sourceTree = "<group>"; };
+		63C31BFF1DD9C14A00AA51BD /* MessagesUserActivityFactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesUserActivityFactoryTests.m; path = MessagesAppDelegate/MessagesUserActivityFactory/MessagesUserActivityFactoryTests.m; sourceTree = "<group>"; };
+		63C31C021DD9FE4C00AA51BD /* MessagesLaunchHandlerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesLaunchHandlerTests.m; path = MessagesLaunchHandler/MessagesLaunchHandlerTests.m; sourceTree = "<group>"; };
 		63D7460D1C8B0D5200E3A381 /* EventStoreService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventStoreService.h; sourceTree = "<group>"; };
 		63D7460E1C8B0D5200E3A381 /* EventStoreService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventStoreService.m; sourceTree = "<group>"; };
 		63D86BD81C1439D800986536 /* DateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateFormatter.h; sourceTree = "<group>"; };
 		63D86BD91C1439D800986536 /* DateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateFormatter.m; sourceTree = "<group>"; };
 		63D86BDC1C143FCE00986536 /* DateFormatterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateFormatterTests.m; sourceTree = "<group>"; };
+		63EB4DAF1DDC742600548D88 /* MessagesInteractorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesInteractorTests.m; path = MessagesModuleTests/MessagesInteractorTests.m; sourceTree = "<group>"; };
+		63EB4DB11DDC7D4400548D88 /* MessagesPresenterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesPresenterTests.m; path = MessagesModuleTests/MessagesPresenterTests.m; sourceTree = "<group>"; };
 		63ECC4141CA81E5300439A01 /* ErrorConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorConstants.h; sourceTree = "<group>"; };
 		63ECC4151CA81E5300439A01 /* ErrorConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorConstants.m; sourceTree = "<group>"; };
 		63ECC4181CA8373400439A01 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -1059,12 +1324,16 @@
 		63F8F2BB1BF8A713000017F3 /* EventTypeDeterminator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTypeDeterminator.m; sourceTree = "<group>"; };
 		63F8F2BD1BF8A756000017F3 /* EventType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventType.h; sourceTree = "<group>"; };
 		63F8F2D81BF8F7F0000017F3 /* ServiceComponentsAssembly_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServiceComponentsAssembly_Testable.h; sourceTree = "<group>"; };
+		63F95BB61DE5A67D00F6BD1C /* EventListProcessorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListProcessorTests.m; path = EventListProcessor/EventListProcessorTests.m; sourceTree = "<group>"; };
 		63FD4E041BE5038D0046378E /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
 		63FD4E051BE5038D0046378E /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
 		63FDCE021BBDBA2A00A43B60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63FDCE041BBDBA2A00A43B60 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63FDCE051BBDBA2A00A43B60 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6612BF6F1D7ECDEA00E07586 /* TagModuleViewConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TagModuleViewConstants.h; path = TagModule/View/Constants/TagModuleViewConstants.h; sourceTree = "<group>"; };
+		661B40A01DF17CA4002DA46C /* LaunchRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchRouter.h; sourceTree = "<group>"; };
+		661B40A11DF17CB3002DA46C /* SearchLaunchRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchLaunchRouter.h; path = SearchLaunchRouter/SearchLaunchRouter.h; sourceTree = "<group>"; };
+		661B40A21DF17CB3002DA46C /* SearchLaunchRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchLaunchRouter.m; path = SearchLaunchRouter/SearchLaunchRouter.m; sourceTree = "<group>"; };
 		661CA3F31D65CF920047EB68 /* EventOperationFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventOperationFactory.h; path = OperationFactories/EventListOperationFactory/EventOperationFactory.h; sourceTree = "<group>"; };
 		661CA3F41D65CF920047EB68 /* EventOperationFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventOperationFactory.m; path = OperationFactories/EventListOperationFactory/EventOperationFactory.m; sourceTree = "<group>"; };
 		661CA3FC1D65CFF70047EB68 /* LastModifiedMapperOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LastModifiedMapperOperation.h; path = MiscellaneousOperations/LastModifiedMapperOperation/LastModifiedMapperOperation.h; sourceTree = "<group>"; };
@@ -1215,13 +1484,15 @@
 		66EE4D311D54BFCD0011F94A /* NITableViewModel+LJIndexOfObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NITableViewModel+LJIndexOfObject.m"; path = "Nimbus/NITableViewModel+LJIndexOfObject.m"; sourceTree = "<group>"; };
 		66EE4D321D54BFCD0011F94A /* NITableViewModel+NextInputResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NITableViewModel+NextInputResponder.h"; path = "Nimbus/NITableViewModel+NextInputResponder.h"; sourceTree = "<group>"; };
 		66EE4D331D54BFCD0011F94A /* NITableViewModel+NextInputResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NITableViewModel+NextInputResponder.m"; path = "Nimbus/NITableViewModel+NextInputResponder.m"; sourceTree = "<group>"; };
+		66FBA2571DE05CF000F5C2E9 /* LaunchSystemAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LaunchSystemAssemblyTests.m; path = LaunchSystemAssemblyTests/LaunchSystemAssemblyTests.m; sourceTree = "<group>"; };
+		66FBA25A1DE0607D00F5C2E9 /* SpotlightContinuationAppDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpotlightContinuationAppDelegateTests.m; path = SpotlightContinuationAppDelegate/SpotlightContinuationAppDelegateTests.m; sourceTree = "<group>"; };
+		66FBA25D1DE069E700F5C2E9 /* SearchLaunchRouterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchLaunchRouterTests.m; path = SearchLaunchRouterTests/SearchLaunchRouterTests.m; sourceTree = "<group>"; };
+		66FBA25F1DE07C0800F5C2E9 /* SearchModuleInput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchModuleInput.h; sourceTree = "<group>"; };
 		66FFD29A1D7DCCFB0009B7DC /* CollectionViewContentCellAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CollectionViewContentCellAnimator.h; path = conferences/Classes/PresentationLayer/Helpers/CollectionViewContentCellAnimator/CollectionViewContentCellAnimator.h; sourceTree = SOURCE_ROOT; };
 		66FFD29B1D7DCCFB0009B7DC /* CollectionViewContentCellAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CollectionViewContentCellAnimator.m; path = conferences/Classes/PresentationLayer/Helpers/CollectionViewContentCellAnimator/CollectionViewContentCellAnimator.m; sourceTree = SOURCE_ROOT; };
-		6C7A972E2814B586E4073760 /* libPods-Conferences.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Conferences.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		76E95A8F2CA91B564A26FB49 /* EventGalleryViewControllerTests.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EventGalleryViewControllerTests.m; sourceTree = "<group>"; };
-		8324F5E12F2E2C427497BE00 /* Pods-Conferences.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conferences.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Conferences/Pods-Conferences.debug.xcconfig"; sourceTree = "<group>"; };
-		9166896486D6F8D1A801419D /* Pods-Conferences-ConferencesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conferences-ConferencesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Conferences-ConferencesTests/Pods-Conferences-ConferencesTests.debug.xcconfig"; sourceTree = "<group>"; };
-		9214F4090FA859CC9B06907E /* Pods-Conferences.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conferences.release.xcconfig"; path = "Pods/Target Support Files/Pods-Conferences/Pods-Conferences.release.xcconfig"; sourceTree = "<group>"; };
+		7C8D39C97CFC4A464220D54B /* libPods-Conferences-RamblerMessageExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Conferences-RamblerMessageExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AA70B1576B0B702AF66FB4E /* Pods-Conferences-ConferencesTests.nightly.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conferences-ConferencesTests.nightly.xcconfig"; path = "Pods/Target Support Files/Pods-Conferences-ConferencesTests/Pods-Conferences-ConferencesTests.nightly.xcconfig"; sourceTree = "<group>"; };
 		9F0A6C1B1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CompoundOperationBuilderConfig.h; path = OperationBuilders/CompoundOperationBuilderConfig/CompoundOperationBuilderConfig.h; sourceTree = "<group>"; };
 		9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CompoundOperationBuilderConfig.m; path = OperationBuilders/CompoundOperationBuilderConfig/CompoundOperationBuilderConfig.m; sourceTree = "<group>"; };
 		9F0A6C1E1BC1B53F00A25417 /* RequestConfigurationType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RequestConfigurationType.h; path = CoreComponents/RequestConfigurators/RequestConfigurationType.h; sourceTree = "<group>"; };
@@ -1328,12 +1599,6 @@
 		9F18311A1BC1615C000E21A5 /* SingleResponseObjectFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleResponseObjectFormatter.h; sourceTree = "<group>"; };
 		9F18311B1BC1615C000E21A5 /* SingleResponseObjectFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleResponseObjectFormatter.m; sourceTree = "<group>"; };
 		9F1831201BC16195000E21A5 /* RCFResultResponseObjectFormatterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCFResultResponseObjectFormatterTests.m; path = CoreLayer/CoreComponents/ResponseObjectFormatters/ResultResponseObjectFormatter/RCFResultResponseObjectFormatterTests.m; sourceTree = "<group>"; };
-		9F18BE611DB42DA500CCD47B /* MailComposeControllerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MailComposeControllerFactory.h; path = MailComposeControllerFactory/MailComposeControllerFactory.h; sourceTree = "<group>"; };
-		9F18BE621DB42EC600CCD47B /* MailComposeControllerFactoryImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MailComposeControllerFactoryImplementation.h; path = MailComposeControllerFactory/MailComposeControllerFactoryImplementation.h; sourceTree = "<group>"; };
-		9F18BE631DB42EC600CCD47B /* MailComposeControllerFactoryImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MailComposeControllerFactoryImplementation.m; path = MailComposeControllerFactory/MailComposeControllerFactoryImplementation.m; sourceTree = "<group>"; };
-		9F18BE661DB430F500CCD47B /* MailComposeControllerFactoryImplementationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MailComposeControllerFactoryImplementationTests.m; path = MailComposeControllerFactoryTests/MailComposeControllerFactoryImplementationTests.m; sourceTree = "<group>"; };
-		9F18BE6A1DB4FD3900CCD47B /* SpeakerInfoAlertFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeakerInfoAlertFactory.h; path = SpeakerInfoAlertFactory/SpeakerInfoAlertFactory.h; sourceTree = "<group>"; };
-		9F18BE6B1DB4FD3900CCD47B /* SpeakerInfoAlertFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeakerInfoAlertFactory.m; path = SpeakerInfoAlertFactory/SpeakerInfoAlertFactory.m; sourceTree = "<group>"; };
 		9F1F37E41BBBB80D00C7797D /* Conferences.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conferences.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F1F38001BBBB80D00C7797D /* ConferencesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConferencesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F33B87E1D63512200BE136C /* EventListTableViewCellObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListTableViewCellObject.h; sourceTree = "<group>"; };
@@ -1515,7 +1780,6 @@
 		9FBE89A81D5CB71300DA0C32 /* TabBarControllerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarControllerFactory.h; sourceTree = "<group>"; };
 		9FBE89A91D5CB71300DA0C32 /* TabBarControllerFactoryImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarControllerFactoryImplementation.h; sourceTree = "<group>"; };
 		9FBE89AA1D5CB71300DA0C32 /* TabBarControllerFactoryImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarControllerFactoryImplementation.m; sourceTree = "<group>"; };
-		9FBE89AC1D5CB71300DA0C32 /* LaunchRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchRouter.h; sourceTree = "<group>"; };
 		9FBE89B81D5CB72D00DA0C32 /* CleanLaunchAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CleanLaunchAppDelegate.h; sourceTree = "<group>"; };
 		9FBE89B91D5CB72D00DA0C32 /* CleanLaunchAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CleanLaunchAppDelegate.m; sourceTree = "<group>"; };
 		9FBE89BE1D5CB76900DA0C32 /* CleanLaunchAppDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CleanLaunchAppDelegateTests.m; sourceTree = "<group>"; };
@@ -1624,6 +1888,8 @@
 		9FC305301D6476EA0052CB67 /* ShareUrlBuilderImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShareUrlBuilderImplementation.h; path = ShareUrlBuilder/ConcreteClasses/ShareUrlBuilderImplementation/ShareUrlBuilderImplementation.h; sourceTree = "<group>"; };
 		9FC305311D6476EA0052CB67 /* ShareUrlBuilderImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShareUrlBuilderImplementation.m; path = ShareUrlBuilder/ConcreteClasses/ShareUrlBuilderImplementation/ShareUrlBuilderImplementation.m; sourceTree = "<group>"; };
 		9FC305341D6478F60052CB67 /* ShareUrlBuilderImplementationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShareUrlBuilderImplementationTests.m; path = ShareUrlBuilderTests/ShareUrlBuilderImplementationTests.m; sourceTree = "<group>"; };
+		9FCFC50C1D903719009FD57D /* SpotlightContinuationAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpotlightContinuationAppDelegate.h; path = SpotlightContinuationAppDelegate/SpotlightContinuationAppDelegate.h; sourceTree = "<group>"; };
+		9FCFC50D1D903719009FD57D /* SpotlightContinuationAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpotlightContinuationAppDelegate.m; path = SpotlightContinuationAppDelegate/SpotlightContinuationAppDelegate.m; sourceTree = "<group>"; };
 		9FD740371CDC98010071BD71 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9FE139201D65BD8500D7BF44 /* SuggestService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SuggestService.h; path = SuggestService/SuggestService.h; sourceTree = "<group>"; };
 		9FE139211D65BD9700D7BF44 /* SuggestServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SuggestServiceImplementation.h; path = SuggestService/SuggestServiceImplementation.h; sourceTree = "<group>"; };
@@ -1701,18 +1967,36 @@
 		9FF99E4F1BC42FF5006F15AF /* OperationSchedulerImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OperationSchedulerImplementation.h; path = OperationScheduler/OperationSchedulerImplementation.h; sourceTree = "<group>"; };
 		9FF99E501BC42FF6006F15AF /* OperationSchedulerImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OperationSchedulerImplementation.m; path = OperationScheduler/OperationSchedulerImplementation.m; sourceTree = "<group>"; };
 		9FF99E531BC4317E006F15AF /* OperationSchedulerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OperationSchedulerTests.m; path = CoreLayer/OperationScheduler/OperationSchedulerTests.m; sourceTree = "<group>"; };
+		9FFA8A261DF31F3400FB3C2E /* RamblerLocationStateStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RamblerLocationStateStorage.h; sourceTree = "<group>"; };
+		9FFA8A271DF31F3400FB3C2E /* RamblerLocationStateStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RamblerLocationStateStorage.m; sourceTree = "<group>"; };
+		9FFA8A2A1DF3220500FB3C2E /* ApplicationConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ApplicationConstants.h; path = ApplicationConstants/ApplicationConstants.h; sourceTree = "<group>"; };
+		9FFA8A2B1DF3220500FB3C2E /* ApplicationConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ApplicationConstants.m; path = ApplicationConstants/ApplicationConstants.m; sourceTree = "<group>"; };
 		9FFEAF021D2E41B4006E9649 /* DirectionCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DirectionCollectionViewCell.h; path = Cells/DirectionCollectionViewCell.h; sourceTree = "<group>"; };
 		9FFEAF031D2E41B4006E9649 /* DirectionCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DirectionCollectionViewCell.m; path = Cells/DirectionCollectionViewCell.m; sourceTree = "<group>"; };
 		9FFEAF041D2E41B4006E9649 /* DirectionCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DirectionCollectionViewCell.xib; path = Cells/DirectionCollectionViewCell.xib; sourceTree = "<group>"; };
 		9FFEAF091D2E5CD3006E9649 /* MapLinkBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapLinkBuilder.h; path = MapLinkBuilder/MapLinkBuilder.h; sourceTree = "<group>"; };
 		9FFEAF0A1D2E5CE0006E9649 /* AppleMapsLinkBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppleMapsLinkBuilder.h; path = MapLinkBuilder/AppleMapsLinkBuilder.h; sourceTree = "<group>"; };
 		9FFEAF0B1D2E5CE0006E9649 /* AppleMapsLinkBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppleMapsLinkBuilder.m; path = MapLinkBuilder/AppleMapsLinkBuilder.m; sourceTree = "<group>"; };
-		C46B774BA2D16C41C04D78BA /* libPods-Conferences-ConferencesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Conferences-ConferencesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D62094F1B6ACB6EE592C4E20 /* Pods-Conferences.nightly.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conferences.nightly.xcconfig"; path = "Pods/Target Support Files/Pods-Conferences/Pods-Conferences.nightly.xcconfig"; sourceTree = "<group>"; };
+		BB481A1BA0B7D2DBE3750B94 /* Pods-Conferences.nightly.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conferences.nightly.xcconfig"; path = "Pods/Target Support Files/Pods-Conferences/Pods-Conferences.nightly.xcconfig"; sourceTree = "<group>"; };
+		D4D07FD12F22C53F88A5868D /* Pods-Conferences-RamblerMessageExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conferences-RamblerMessageExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Conferences-RamblerMessageExtension/Pods-Conferences-RamblerMessageExtension.release.xcconfig"; sourceTree = "<group>"; };
 		E95DD4B714E0257EE1CE1C0D /* EventGalleryPresenterTests.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EventGalleryPresenterTests.m; sourceTree = "<group>"; };
+		EA2D483C826269C2260999EA /* Pods-Conferences-RamblerMessageExtension.nightly.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conferences-RamblerMessageExtension.nightly.xcconfig"; path = "Pods/Target Support Files/Pods-Conferences-RamblerMessageExtension/Pods-Conferences-RamblerMessageExtension.nightly.xcconfig"; sourceTree = "<group>"; };
+		F15F66C7FD75B9A89EF39FB4 /* libPods-Conferences.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Conferences.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3A86F78E711F7856679A32A /* Pods-Conferences.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conferences.release.xcconfig"; path = "Pods/Target Support Files/Pods-Conferences/Pods-Conferences.release.xcconfig"; sourceTree = "<group>"; };
+		F7ACB5BE07AA63ABA575E72C /* Pods-Conferences-RamblerMessageExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conferences-RamblerMessageExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Conferences-RamblerMessageExtension/Pods-Conferences-RamblerMessageExtension.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		63BDBBBE1D87E3DE006E8A15 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				636E26F31D8FF072001ABB92 /* CoreData.framework in Frameworks */,
+				63BDBBC31D87E3DE006E8A15 /* Messages.framework in Frameworks */,
+				2AA222A5031CC7BA4A19B3EF /* libPods-RamblerMessageExtension.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9F1F37E11BBBB80D00C7797D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1720,6 +2004,7 @@
 				234C76A5941B9A10462172CC /* libPods-Conferences.a in Frameworks */,
 				028E447C1DF69EE900734E84 /* ObjectMapper.framework in Frameworks */,
 				028E447D1DF69EE900734E84 /* UberRides.framework in Frameworks */,
+				B844903CD5D6757D08026D5E /* libPods-Conferences.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1730,6 +2015,7 @@
 				1F78357EBF30489533FBC867 /* libPods-Conferences-ConferencesTests.a in Frameworks */,
 				028E44631DF08ED200734E84 /* ObjectMapper.framework in Frameworks */,
 				028E44641DF08ED300734E84 /* UberRides.framework in Frameworks */,
+				9E94B671A997D53087214C4F /* libPods-Conferences-ConferencesTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1799,6 +2085,62 @@
 				02F297C71DFACF20001F9B10 /* UberRidesAssembly_Testable.h */,
 			);
 			path = UberRidesAssemblyTests;
+sourceTree = "<group>";
+};
+		028E44651DF1799900734E84 /* PredicateConfigurator */ = {
+			isa = PBXGroup;
+			children = (
+				028E44661DF1799900734E84 /* ConcreteClass */,
+				028E44671DF1799900734E84 /* Protocols */,
+			);
+			name = PredicateConfigurator;
+			path = CoreComponents/PredicateConfigurator;
+			sourceTree = "<group>";
+		};
+		028E44661DF1799900734E84 /* ConcreteClass */ = {
+			isa = PBXGroup;
+			children = (
+				028E44691DF179CA00734E84 /* PredicateConfiguratorImplementation.h */,
+				028E446A1DF179CA00734E84 /* PredicateConfiguratorImplementation.m */,
+			);
+			path = ConcreteClass;
+			sourceTree = "<group>";
+		};
+		028E44671DF1799900734E84 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				028E44681DF179B300734E84 /* PredicateConfigurator.h */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		028E446C1DF184E200734E84 /* SearchFacade */ = {
+			isa = PBXGroup;
+			children = (
+				028E446D1DF184F100734E84 /* SearchFacadeImplementation.h */,
+				028E446E1DF184F100734E84 /* SearchFacadeImplementation.m */,
+				028E44701DF1851B00734E84 /* SearchFacade.h */,
+			);
+			name = SearchFacade;
+			path = SearchReportsModule/Interactor/SearchFacade;
+			sourceTree = "<group>";
+		};
+		028E44711DF19BA000734E84 /* PredicateConfigurator */ = {
+			isa = PBXGroup;
+			children = (
+				028E44721DF19BA900734E84 /* PredicateConfiguratorTests.m */,
+			);
+			name = PredicateConfigurator;
+			path = CoreLayer/CoreComponents/PredicateConfigurator;
+			sourceTree = "<group>";
+		};
+		028E44741DF1B80800734E84 /* SearchFacade */ = {
+			isa = PBXGroup;
+			children = (
+				028E44751DF1B81C00734E84 /* SearchFacadeTests.m */,
+			);
+			name = SearchFacade;
+			path = CoreLayer/CoreComponents/SearchFacade;
 			sourceTree = "<group>";
 		};
 		29F930AE767A2E0D549FB50F /* Router */ = {
@@ -2058,6 +2400,16 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
+		6310601F1DC89580006870EB /* MailComposerFactory */ = {
+			isa = PBXGroup;
+			children = (
+				6310601B1DC89577006870EB /* MailComposeControllerFactory.h */,
+				6310601C1DC89577006870EB /* MailComposeControllerFactoryImplementation.h */,
+				6310601D1DC89577006870EB /* MailComposeControllerFactoryImplementation.m */,
+			);
+			name = MailComposerFactory;
+			sourceTree = "<group>";
+		};
 		63136F941BDCDB2600994356 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -2232,14 +2584,6 @@
 			path = ../../../../../../Common/Cells/TableViewCellWithTextLabelAndImageView;
 			sourceTree = "<group>";
 		};
-		631CBA361C0092C100E3EBA8 /* ApplicationConfiguratorTests */ = {
-			isa = PBXGroup;
-			children = (
-				631CBA371C0092C100E3EBA8 /* ApplicationConfiguratorTests.m */,
-			);
-			path = ApplicationConfiguratorTests;
-			sourceTree = "<group>";
-		};
 		631CBA391C0092C900E3EBA8 /* EventServiceTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -2334,7 +2678,7 @@
 		631CBA901C021C3900E3EBA8 /* HelpersTests */ = {
 			isa = PBXGroup;
 			children = (
-				9F18BE651DB430D300CCD47B /* MailComposeControllerFactoryTests */,
+				63F95BB51DE5A65F00F6BD1C /* EventListProcessor */,
 				66A1DD521D7E993300998F6B /* MockObjectsFactory */,
 				66A1DD4E1D7E990200998F6B /* XCTestCase+CollectionViewDataDisplayManager */,
 				9F8B49E21D6EEF3C00ED176B /* YouTubeIdentifierDeriviator */,
@@ -2398,9 +2742,18 @@
 			isa = PBXGroup;
 			children = (
 				9FE139271D65F3E900D7BF44 /* SearchModule */,
-				667050021D4613BC00DD9D6E /* SearchReportsModule */,
+				667050021D4613BC00DD9D6E /* ReportsSearchModule */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		634EB9E21DC8E60700EAEC0F /* SpeakerInfoAlertFactory */ = {
+			isa = PBXGroup;
+			children = (
+				634EB9DF1DC8E5FC00EAEC0F /* SpeakerInfoAlertFactory.h */,
+				634EB9E01DC8E5FC00EAEC0F /* SpeakerInfoAlertFactory.m */,
+			);
+			name = SpeakerInfoAlertFactory;
 			sourceTree = "<group>";
 		};
 		635E18BB1CA69EF2005B8439 /* LectureModuleAssemblyTests */ = {
@@ -2493,7 +2846,6 @@
 				2B01CEBC1D50A54000DA8E66 /* MetaEventServiceTests */,
 				9F4077861D2BF82D00D47EF6 /* RamblerLocationServiceTests */,
 				631CBA391C0092C900E3EBA8 /* EventServiceTests */,
-				631CBA361C0092C100E3EBA8 /* ApplicationConfiguratorTests */,
 			);
 			path = BaseServicesTests;
 			sourceTree = "<group>";
@@ -2574,6 +2926,27 @@
 				636B640C1BBDD5000053E38F /* SocialNetworkAccountServiceImplementation.m */,
 			);
 			path = SocialNetworkAccountService;
+			sourceTree = "<group>";
+		};
+		636E26981D8ECF4A001ABB92 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				637382921DD5D63D004246EC /* ExtensionLayer */,
+				6373828C1DD5D49D004246EC /* PresentationLayer */,
+				637382931DD5D676004246EC /* MessagesConstants */,
+				637382941DD5D6BF004246EC /* Supporting Files */,
+				637382951DD5D6DE004246EC /* Images */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		636E26991D8ECF5D001ABB92 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				63770CB41DD61D6F0039AB0D /* MessageExtensionAssembly.h */,
+				63770CB51DD61D6F0039AB0D /* MessageExtensionAssembly.m */,
+			);
+			name = Assembly;
 			sourceTree = "<group>";
 		};
 		636F8D081BCB822F00552B91 /* Assemblies */ = {
@@ -2661,6 +3034,8 @@
 			children = (
 				636F8DC91BCB8FE800552B91 /* RamblerLocationPresenter.h */,
 				636F8DCA1BCB8FE800552B91 /* RamblerLocationPresenter.m */,
+				9FFA8A261DF31F3400FB3C2E /* RamblerLocationStateStorage.h */,
+				9FFA8A271DF31F3400FB3C2E /* RamblerLocationStateStorage.m */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -2697,6 +3072,130 @@
 				636F8DFE1BCB91A900552B91 /* RamblerLocation.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		6373827E1DD5AC54004246EC /* EventListProcessor */ = {
+			isa = PBXGroup;
+			children = (
+				6373827F1DD5AC88004246EC /* EventListProcessor.h */,
+				637382801DD5AC88004246EC /* EventListProcessor.m */,
+			);
+			name = EventListProcessor;
+			sourceTree = "<group>";
+		};
+		637382841DD5BEBF004246EC /* RamblerExtensionTyphoonActivator */ = {
+			isa = PBXGroup;
+			children = (
+				637382881DD5C143004246EC /* MessageExtensionTyphoonActivator */,
+				63770CB71DD61E100039AB0D /* RamblerExtensionTyphoonActivator.h */,
+				63770CB81DD61E100039AB0D /* RamblerExtensionTyphoonActivator.m */,
+			);
+			name = RamblerExtensionTyphoonActivator;
+			sourceTree = "<group>";
+		};
+		637382881DD5C143004246EC /* MessageExtensionTyphoonActivator */ = {
+			isa = PBXGroup;
+			children = (
+				63770CC01DD61E6B0039AB0D /* MessageExtensionTyphoonActivator.h */,
+				63770CC11DD61E6B0039AB0D /* MessageExtensionTyphoonActivator.m */,
+			);
+			name = MessageExtensionTyphoonActivator;
+			sourceTree = "<group>";
+		};
+		6373828C1DD5D49D004246EC /* PresentationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				6373828D1DD5D575004246EC /* MessagesModule */,
+				63BDBBC81D87E3DE006E8A15 /* MainInterface.storyboard */,
+			);
+			name = PresentationLayer;
+			sourceTree = "<group>";
+		};
+		6373828D1DD5D575004246EC /* MessagesModule */ = {
+			isa = PBXGroup;
+			children = (
+				6378738D1DED892E00CA1859 /* Factory */,
+				636E26991D8ECF5D001ABB92 /* Assembly */,
+				6373828E1DD5D595004246EC /* Interactor */,
+				6373828F1DD5D5A2004246EC /* Presenter */,
+				637382901DD5D5A8004246EC /* Router */,
+				637382911DD5D5B0004246EC /* View */,
+			);
+			name = MessagesModule;
+			sourceTree = "<group>";
+		};
+		6373828E1DD5D595004246EC /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				6373829E1DD5EA17004246EC /* MessagesInteractor.h */,
+				6373829F1DD5EA17004246EC /* MessagesInteractor.m */,
+				637382A11DD5F5C4004246EC /* MessagesInteractorInput.h */,
+			);
+			name = Interactor;
+			sourceTree = "<group>";
+		};
+		6373828F1DD5D5A2004246EC /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				6373829B1DD5E12F004246EC /* MessagesPresenter.h */,
+				6373829C1DD5E12F004246EC /* MessagesPresenter.m */,
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
+		637382901DD5D5A8004246EC /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				637382961DD5D8FD004246EC /* MessagesRouterInput.h */,
+				637382971DD5D9C0004246EC /* MessagesRouter.h */,
+				637382981DD5D9C0004246EC /* MessagesRouter.m */,
+			);
+			name = Router;
+			sourceTree = "<group>";
+		};
+		637382911DD5D5B0004246EC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				63770CB11DD61D2A0039AB0D /* MessagesViewController.h */,
+				63770CB21DD61D2A0039AB0D /* MessagesViewController.m */,
+				6373829A1DD5E02C004246EC /* MessagesViewOutput.h */,
+				637382A21DD60820004246EC /* MessagesViewInput.h */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		637382921DD5D63D004246EC /* ExtensionLayer */ = {
+			isa = PBXGroup;
+			children = (
+				637382841DD5BEBF004246EC /* RamblerExtensionTyphoonActivator */,
+				63BB9A141DB3DD0000C2F2B9 /* LaunchHandler */,
+			);
+			name = ExtensionLayer;
+			sourceTree = "<group>";
+		};
+		637382931DD5D676004246EC /* MessagesConstants */ = {
+			isa = PBXGroup;
+			children = (
+				63770CBD1DD61E3D0039AB0D /* MessagesConstants.h */,
+				63770CBE1DD61E3D0039AB0D /* MessagesConstants.m */,
+			);
+			name = MessagesConstants;
+			sourceTree = "<group>";
+		};
+		637382941DD5D6BF004246EC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				63BDBBCD1D87E3DE006E8A15 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		637382951DD5D6DE004246EC /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				63BDBBCB1D87E3DE006E8A15 /* Assets.xcassets */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 		6373A3DE1BBDBDF700DF67FF /* Services */ = {
@@ -2756,6 +3255,86 @@
 			path = SpeakerService;
 			sourceTree = "<group>";
 		};
+		6378738D1DED892E00CA1859 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				6378738E1DED897000CA1859 /* UrlComponentsFactory.h */,
+				6378738F1DED897000CA1859 /* UrlComponentsFactory.m */,
+			);
+			name = Factory;
+			sourceTree = "<group>";
+		};
+		638918C91DC28A47009B34AF /* MessagesAppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				638918D31DC339F3009B34AF /* MessagesUserActivityFactory */,
+				638918CA1DC28AA3009B34AF /* MessagesAppDelegate.h */,
+				638918CB1DC28AA3009B34AF /* MessagesAppDelegate.m */,
+			);
+			name = MessagesAppDelegate;
+			sourceTree = "<group>";
+		};
+		638918D31DC339F3009B34AF /* MessagesUserActivityFactory */ = {
+			isa = PBXGroup;
+			children = (
+				638918D41DC33A33009B34AF /* MessagesUserActivityFactory.h */,
+				638918D51DC33A33009B34AF /* MessagesUserActivityFactory.m */,
+			);
+			name = MessagesUserActivityFactory;
+			sourceTree = "<group>";
+		};
+		638918D91DC34096009B34AF /* NSArray+NSURLQueryItem */ = {
+			isa = PBXGroup;
+			children = (
+				638918DA1DC340B4009B34AF /* NSArray+NSURLQueryItem.h */,
+				638918DB1DC340B4009B34AF /* NSArray+NSURLQueryItem.m */,
+			);
+			name = "NSArray+NSURLQueryItem";
+			sourceTree = "<group>";
+		};
+		63BB9A141DB3DD0000C2F2B9 /* LaunchHandler */ = {
+			isa = PBXGroup;
+			children = (
+				63770CBA1DD61E2A0039AB0D /* MessagesLaunchHandler.h */,
+				63770CBB1DD61E2A0039AB0D /* MessagesLaunchHandler.m */,
+			);
+			name = LaunchHandler;
+			sourceTree = "<group>";
+		};
+		63BDBBC41D87E3DE006E8A15 /* RamblerMessageExtension */ = {
+			isa = PBXGroup;
+			children = (
+				63AA03551D99067000F4C094 /* RamblerMessageExtension.entitlements */,
+				636E26981D8ECF4A001ABB92 /* Classes */,
+			);
+			path = RamblerMessageExtension;
+			sourceTree = "<group>";
+		};
+		63C31BFB1DD9C0DB00AA51BD /* MessagesAppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				63C31BFE1DD9C13100AA51BD /* MessagesUserActivityFactory */,
+				63C31BFC1DD9C10900AA51BD /* MessagesAppDelegateTests.m */,
+			);
+			name = MessagesAppDelegate;
+			sourceTree = "<group>";
+		};
+		63C31BFE1DD9C13100AA51BD /* MessagesUserActivityFactory */ = {
+			isa = PBXGroup;
+			children = (
+				63C31BFF1DD9C14A00AA51BD /* MessagesUserActivityFactoryTests.m */,
+			);
+			name = MessagesUserActivityFactory;
+			sourceTree = "<group>";
+		};
+		63C31C011DD9FE1900AA51BD /* MessagesLaunchHandler */ = {
+			isa = PBXGroup;
+			children = (
+				63C31C021DD9FE4C00AA51BD /* MessagesLaunchHandlerTests.m */,
+			);
+			name = MessagesLaunchHandler;
+			sourceTree = "<group>";
+		};
 		63D7460B1C8B0CF600E3A381 /* EventStoreService */ = {
 			isa = PBXGroup;
 			children = (
@@ -2783,6 +3362,16 @@
 			path = DateFormatterTests;
 			sourceTree = "<group>";
 		};
+		63EB4DAE1DDC73E200548D88 /* MessagesModuleTests */ = {
+			isa = PBXGroup;
+			children = (
+				63EB4DAF1DDC742600548D88 /* MessagesInteractorTests.m */,
+				63EB4DB11DDC7D4400548D88 /* MessagesPresenterTests.m */,
+				6377140B1DDC8109009FF726 /* MessagesRouterTests.m */,
+			);
+			name = MessagesModuleTests;
+			sourceTree = "<group>";
+		};
 		63ECC4131CA81E4000439A01 /* ErrorConstants */ = {
 			isa = PBXGroup;
 			children = (
@@ -2803,6 +3392,7 @@
 		63F402EA1BCF77CB0086D030 /* ApplicationLayerAssemblyTests */ = {
 			isa = PBXGroup;
 			children = (
+				66FBA2561DE05CD300F5C2E9 /* LaunchSystemAssemblyTests */,
 				63F402EB1BCF77CB0086D030 /* ApplicationAssemblyTests */,
 				63F402EE1BCF77CB0086D030 /* ServiceComponentsAssemblyTests */,
 			);
@@ -3684,7 +4274,7 @@
 		63F613351CB00A220002AEF0 /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				9F18BE691DB4FD2300CCD47B /* SpeakerInfoAlertFactory */,
+				634EB9E21DC8E60700EAEC0F /* SpeakerInfoAlertFactory */,
 				63F613361CB00A220002AEF0 /* SpeakerInfoRouter.h */,
 				63F613371CB00A220002AEF0 /* SpeakerInfoRouter.m */,
 				63F613381CB00A220002AEF0 /* SpeakerInfoRouterInput.h */,
@@ -3768,6 +4358,7 @@
 		63F613B71CB111070002AEF0 /* ModulesTests */ = {
 			isa = PBXGroup;
 			children = (
+				63EB4DAE1DDC73E200548D88 /* MessagesModuleTests */,
 				66A1DD271D7E97D500998F6B /* TagModuleTests */,
 				9FF37E121D3236AE00471B4E /* RamblerLocationModuleTests */,
 				63F613B81CB111070002AEF0 /* AnnouncementListModuleTests */,
@@ -3854,7 +4445,7 @@
 		63F8F27A1BF79090000017F3 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				9F18BE601DB42D8200CCD47B /* MailComposeControllerFactory */,
+				6310601F1DC89580006870EB /* MailComposerFactory */,
 				9F8B49E51D6EF71200ED176B /* YouTubePlayerFactory */,
 				9F8B49DE1D6EEE5E00ED176B /* YouTubeIdentifierDeriviator */,
 				9FC305291D6476650052CB67 /* ShareUrlBuilder */,
@@ -3898,6 +4489,14 @@
 				631CBA701C020CCD00E3EBA8 /* ReportsUserStoryTests */,
 			);
 			path = PresentationLayerAssemblyTests;
+			sourceTree = "<group>";
+		};
+		63F95BB51DE5A65F00F6BD1C /* EventListProcessor */ = {
+			isa = PBXGroup;
+			children = (
+				63F95BB61DE5A67D00F6BD1C /* EventListProcessorTests.m */,
+			);
+			name = EventListProcessor;
 			sourceTree = "<group>";
 		};
 		63FD4E021BE503440046378E /* UIColor+Hex */ = {
@@ -3951,6 +4550,7 @@
 			isa = PBXGroup;
 			children = (
 				0231D71E1DFE86D70052471C /* LocationConstants */,
+				9FFA8A291DF321F300FB3C2E /* ApplicationConstants */,
 				63ECC4131CA81E4000439A01 /* ErrorConstants */,
 				631808601C4A66E900A61E7D /* StringConstants */,
 			);
@@ -3974,6 +4574,7 @@
 		63FDCDE01BBDBA2A00A43B60 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				638918D91DC34096009B34AF /* NSArray+NSURLQueryItem */,
 				9FA6E7811D6F20A10047D2C4 /* UIViewController+ForceRotation */,
 				661CA4041D65D0690047EB68 /* NSManagedObjectID+LJStringConversion */,
 				2B429A5C1D4789FA004C005F /* UINavigationBar */,
@@ -3987,6 +4588,7 @@
 		63FDCDE11BBDBA2A00A43B60 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				6373827E1DD5AC54004246EC /* EventListProcessor */,
 				631FFE121BEF451400749DB8 /* CDResponder */,
 			);
 			path = Helpers;
@@ -4217,7 +4819,7 @@
 			name = "UIColor+ConferencesPallete";
 			sourceTree = "<group>";
 		};
-		667050021D4613BC00DD9D6E /* SearchReportsModule */ = {
+		667050021D4613BC00DD9D6E /* ReportsSearchModule */ = {
 			isa = PBXGroup;
 			children = (
 				667050081D4613EA00DD9D6E /* View */,
@@ -4226,7 +4828,7 @@
 				667050051D4613D800DD9D6E /* Interactor */,
 				667050031D4613C200DD9D6E /* Assembly */,
 			);
-			name = SearchReportsModule;
+			name = ReportsSearchModule;
 			sourceTree = "<group>";
 		};
 		667050031D4613C200DD9D6E /* Assembly */ = {
@@ -4241,6 +4843,7 @@
 		667050051D4613D800DD9D6E /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				028E446C1DF184E200734E84 /* SearchFacade */,
 				6670500C1D46140200DD9D6E /* ReportsSearchInteractor.h */,
 				6670500D1D46140200DD9D6E /* ReportsSearchInteractor.m */,
 				6670500E1D46140200DD9D6E /* ReportsSearchInteractorInput.h */,
@@ -4684,6 +5287,34 @@
 			name = Nimbus;
 			sourceTree = "<group>";
 		};
+		66FBA2561DE05CD300F5C2E9 /* LaunchSystemAssemblyTests */ = {
+			isa = PBXGroup;
+			children = (
+				66FBA2571DE05CF000F5C2E9 /* LaunchSystemAssemblyTests.m */,
+			);
+			name = LaunchSystemAssemblyTests;
+			sourceTree = "<group>";
+		};
+		66FBA2591DE0605600F5C2E9 /* SpotlightContinuationAppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				028E44581DF053B500734E84 /* ObjectMapper.framework */,
+				028E44591DF053B500734E84 /* UberRides.framework */,
+				6C7A972E2814B586E4073760 /* libPods-Conferences.a */,
+				C46B774BA2D16C41C04D78BA /* libPods-Conferences-ConferencesTests.a */,
+				66FBA25A1DE0607D00F5C2E9 /* SpotlightContinuationAppDelegateTests.m */,
+			);
+			name = SpotlightContinuationAppDelegate;
+			sourceTree = "<group>";
+		};
+		66FBA25C1DE069C900F5C2E9 /* SearchLaunchRouter */ = {
+			isa = PBXGroup;
+			children = (
+				66FBA25D1DE069E700F5C2E9 /* SearchLaunchRouterTests.m */,
+			);
+			name = SearchLaunchRouter;
+			sourceTree = "<group>";
+		};
 		66FFD2991D7DCCE80009B7DC /* CollectionViewContentCellAnimator */ = {
 			isa = PBXGroup;
 			children = (
@@ -4691,17 +5322,6 @@
 				66FFD29B1D7DCCFB0009B7DC /* CollectionViewContentCellAnimator.m */,
 			);
 			name = CollectionViewContentCellAnimator;
-			sourceTree = "<group>";
-		};
-		75B6DFED87955159473111D1 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				028E44581DF053B500734E84 /* ObjectMapper.framework */,
-				028E44591DF053B500734E84 /* UberRides.framework */,
-				6C7A972E2814B586E4073760 /* libPods-Conferences.a */,
-				C46B774BA2D16C41C04D78BA /* libPods-Conferences-ConferencesTests.a */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		846E56C9D402B4092A067186 /* Presenter */ = {
@@ -5199,6 +5819,7 @@
 		9F18308B1BC01E65000E21A5 /* CoreComponents */ = {
 			isa = PBXGroup;
 			children = (
+				028E44651DF1799900734E84 /* PredicateConfigurator */,
 				661CA4171D65D1020047EB68 /* ResponseConverter */,
 				9F4077951D2C105100D47EF6 /* ResourceMappers */,
 				9F4077891D2BF8DB00D47EF6 /* ResourceClients */,
@@ -5268,6 +5889,8 @@
 		9F1830951BC022A6000E21A5 /* CoreComponents */ = {
 			isa = PBXGroup;
 			children = (
+				028E44741DF1B80800734E84 /* SearchFacade */,
+				028E44711DF19BA000734E84 /* PredicateConfigurator */,
 				9F40779D1D2C118A00D47EF6 /* ResourceMappers */,
 				9F4077911D2BFA5800D47EF6 /* ResourceClients */,
 				9FC1F67D1D2838CD0070D9B5 /* QueryTransformers */,
@@ -5710,42 +6333,16 @@
 			name = ResultResponseObjectFormatter;
 			sourceTree = "<group>";
 		};
-		9F18BE601DB42D8200CCD47B /* MailComposeControllerFactory */ = {
-			isa = PBXGroup;
-			children = (
-				9F18BE611DB42DA500CCD47B /* MailComposeControllerFactory.h */,
-				9F18BE621DB42EC600CCD47B /* MailComposeControllerFactoryImplementation.h */,
-				9F18BE631DB42EC600CCD47B /* MailComposeControllerFactoryImplementation.m */,
-			);
-			name = MailComposeControllerFactory;
-			sourceTree = "<group>";
-		};
-		9F18BE651DB430D300CCD47B /* MailComposeControllerFactoryTests */ = {
-			isa = PBXGroup;
-			children = (
-				9F18BE661DB430F500CCD47B /* MailComposeControllerFactoryImplementationTests.m */,
-			);
-			name = MailComposeControllerFactoryTests;
-			sourceTree = "<group>";
-		};
-		9F18BE691DB4FD2300CCD47B /* SpeakerInfoAlertFactory */ = {
-			isa = PBXGroup;
-			children = (
-				9F18BE6A1DB4FD3900CCD47B /* SpeakerInfoAlertFactory.h */,
-				9F18BE6B1DB4FD3900CCD47B /* SpeakerInfoAlertFactory.m */,
-			);
-			name = SpeakerInfoAlertFactory;
-			sourceTree = "<group>";
-		};
 		9F1F37DB1BBBB80D00C7797D = {
 			isa = PBXGroup;
 			children = (
 				9F1F37E61BBBB80D00C7797D /* Conferences */,
 				9F1F38031BBBB80D00C7797D /* ConferencesTests */,
 				635E18CA1CA6C572005B8439 /* ConferencesTestHelpers */,
+				63BDBBC41D87E3DE006E8A15 /* RamblerMessageExtension */,
 				9F1F37E51BBBB80D00C7797D /* Products */,
-				9F80A52E4EBB7882A472D538 /* Pods */,
-				75B6DFED87955159473111D1 /* Frameworks */,
+				D1799435EABEFA40D1849E2A /* Frameworks */,
+				D207702C368676837EA803A5 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -5754,6 +6351,7 @@
 			children = (
 				9F1F37E41BBBB80D00C7797D /* Conferences.app */,
 				9F1F38001BBBB80D00C7797D /* ConferencesTests.xctest */,
+				63BDBBC11D87E3DE006E8A15 /* RamblerMessageExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -5762,6 +6360,7 @@
 			isa = PBXGroup;
 			children = (
 				028E447E1DF69FEF00734E84 /* Conferences.entitlements */,
+				63AA03541D99063900F4C094 /* Conferences.entitlements */,
 				63FDCDD81BBDBA2A00A43B60 /* Classes */,
 				63FDCE001BBDBA2A00A43B60 /* Resources */,
 				63FDCE031BBDBA2A00A43B60 /* Supporting Files */,
@@ -6556,19 +7155,6 @@
 			name = TabLaunchRouter;
 			sourceTree = "<group>";
 		};
-		9F80A52E4EBB7882A472D538 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				8324F5E12F2E2C427497BE00 /* Pods-Conferences.debug.xcconfig */,
-				9214F4090FA859CC9B06907E /* Pods-Conferences.release.xcconfig */,
-				D62094F1B6ACB6EE592C4E20 /* Pods-Conferences.nightly.xcconfig */,
-				9166896486D6F8D1A801419D /* Pods-Conferences-ConferencesTests.debug.xcconfig */,
-				5AB31DDD00BCDD81411ED92C /* Pods-Conferences-ConferencesTests.release.xcconfig */,
-				3E1AE6F7E0F77223E5266DC9 /* Pods-Conferences-ConferencesTests.nightly.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		9F8B49DE1D6EEE5E00ED176B /* YouTubeIdentifierDeriviator */ = {
 			isa = PBXGroup;
 			children = (
@@ -6824,6 +7410,8 @@
 			isa = PBXGroup;
 			children = (
 				028E445D1DF06C9000734E84 /* UberRidesAppDelegate */,
+				638918C91DC28A47009B34AF /* MessagesAppDelegate */,
+				9FCFC50B1D9036F7009FD57D /* SpotlightContinuationAppDelegate */,
 				9F7B821F1D7DA546002E977A /* QuickActionAppDelegate */,
 				9FBE89B71D5CB72D00DA0C32 /* CleanLaunchAppDelegate */,
 				9FBE89881D5CB71300DA0C32 /* SpotlightAppDelegate */,
@@ -6908,6 +7496,7 @@
 		9FBE89991D5CB71300DA0C32 /* ConcreteClasses */ = {
 			isa = PBXGroup;
 			children = (
+				9FCFC50F1D9037B9009FD57D /* SearchLaunchRouter */,
 				9F7B82381D7ECA07002E977A /* TabLaunchRouter */,
 				9FBE899A1D5CB71300DA0C32 /* CleanLaunchRouter */,
 				9FBE899D1D5CB71300DA0C32 /* EventLaunchRouter */,
@@ -6974,7 +7563,7 @@
 		9FBE89AB1D5CB71300DA0C32 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				9FBE89AC1D5CB71300DA0C32 /* LaunchRouter.h */,
+				661B40A01DF17CA4002DA46C /* LaunchRouter.h */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -7003,9 +7592,12 @@
 			isa = PBXGroup;
 			children = (
 				02F297C11DFAB143001F9B10 /* UberRidesAppDelegate */,
+				63C31BFB1DD9C0DB00AA51BD /* MessagesAppDelegate */,
+				66FBA2591DE0605600F5C2E9 /* SpotlightContinuationAppDelegate */,
 				9F7B82271D7DA9DC002E977A /* QuickActionAppDelegate */,
 				9FBE89BD1D5CB76900DA0C32 /* CleanLaunchAppDelegate */,
 				9FBE89BF1D5CB76900DA0C32 /* SpotlightAppDelegate */,
+				9FBE89C11D5CB76900DA0C32 /* TyphoonAppDelegate */,
 			);
 			path = AppDelegates;
 			sourceTree = "<group>";
@@ -7026,9 +7618,17 @@
 			path = SpotlightAppDelegate;
 			sourceTree = "<group>";
 		};
+		9FBE89C11D5CB76900DA0C32 /* TyphoonAppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TyphoonAppDelegate;
+			sourceTree = "<group>";
+		};
 		9FBE89C31D5CB76900DA0C32 /* LaunchHandler */ = {
 			isa = PBXGroup;
 			children = (
+				63C31C011DD9FE1900AA51BD /* MessagesLaunchHandler */,
 				9F7B823C1D7ECACC002E977A /* QuickActionLaunchHandler */,
 				9FBE89C41D5CB76900DA0C32 /* SpotlightLaunchHandler */,
 			);
@@ -7055,6 +7655,7 @@
 		9FBE89C71D5CB76900DA0C32 /* ConcreteClasses */ = {
 			isa = PBXGroup;
 			children = (
+				66FBA25C1DE069C900F5C2E9 /* SearchLaunchRouter */,
 				9F7B823F1D7ECF0A002E977A /* TabLaunchRouter */,
 				9FBE89C81D5CB76900DA0C32 /* CleanLaunchRouter */,
 				9FBE89CA1D5CB76900DA0C32 /* EventLaunchRouter */,
@@ -7601,6 +8202,24 @@
 			name = ShareUrlBuilderTests;
 			sourceTree = "<group>";
 		};
+		9FCFC50B1D9036F7009FD57D /* SpotlightContinuationAppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				9FCFC50C1D903719009FD57D /* SpotlightContinuationAppDelegate.h */,
+				9FCFC50D1D903719009FD57D /* SpotlightContinuationAppDelegate.m */,
+			);
+			name = SpotlightContinuationAppDelegate;
+			sourceTree = "<group>";
+		};
+		9FCFC50F1D9037B9009FD57D /* SearchLaunchRouter */ = {
+			isa = PBXGroup;
+			children = (
+				661B40A11DF17CB3002DA46C /* SearchLaunchRouter.h */,
+				661B40A21DF17CB3002DA46C /* SearchLaunchRouter.m */,
+			);
+			name = SearchLaunchRouter;
+			sourceTree = "<group>";
+		};
 		9FE1391F1D65BD6B00D7BF44 /* SuggestService */ = {
 			isa = PBXGroup;
 			children = (
@@ -7656,6 +8275,7 @@
 			children = (
 				9FE139311D65F3E900D7BF44 /* SearchPresenter.h */,
 				9FE139321D65F3E900D7BF44 /* SearchPresenter.m */,
+				66FBA25F1DE07C0800F5C2E9 /* SearchModuleInput.h */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -8036,6 +8656,15 @@
 			name = OperationScheduler;
 			sourceTree = "<group>";
 		};
+		9FFA8A291DF321F300FB3C2E /* ApplicationConstants */ = {
+			isa = PBXGroup;
+			children = (
+				9FFA8A2A1DF3220500FB3C2E /* ApplicationConstants.h */,
+				9FFA8A2B1DF3220500FB3C2E /* ApplicationConstants.m */,
+			);
+			name = ApplicationConstants;
+			sourceTree = "<group>";
+		};
 		9FFEAF081D2E5CB4006E9649 /* MapLinkBuilder */ = {
 			isa = PBXGroup;
 			children = (
@@ -8057,14 +8686,66 @@
 			path = AnnouncementGallery;
 			sourceTree = "<group>";
 		};
+		D1799435EABEFA40D1849E2A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6321841B1D9BF7E7001BB7A7 /* libMagicalRecord.a */,
+				636E26F21D8FF072001ABB92 /* CoreData.framework */,
+				63BDBBC21D87E3DE006E8A15 /* Messages.framework */,
+				F15F66C7FD75B9A89EF39FB4 /* libPods-Conferences.a */,
+				5F1470A6FDBED5612278E025 /* libPods-Conferences-ConferencesTests.a */,
+				1C1AA7D4ECB1DA53BEC254E4 /* libPods-RamblerMessageExtension.a */,
+				7C8D39C97CFC4A464220D54B /* libPods-Conferences-RamblerMessageExtension.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D207702C368676837EA803A5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1AB36DD96D7739E6F91D7BBE /* Pods-Conferences.debug.xcconfig */,
+				F3A86F78E711F7856679A32A /* Pods-Conferences.release.xcconfig */,
+				BB481A1BA0B7D2DBE3750B94 /* Pods-Conferences.nightly.xcconfig */,
+				2A1B7FADAB8BA2EA1E9B450D /* Pods-Conferences-ConferencesTests.debug.xcconfig */,
+				1FC5571A228743BA28853AEA /* Pods-Conferences-ConferencesTests.release.xcconfig */,
+				9AA70B1576B0B702AF66FB4E /* Pods-Conferences-ConferencesTests.nightly.xcconfig */,
+				61435C41E57EED0504F7C502 /* Pods-RamblerMessageExtension.debug.xcconfig */,
+				23EE5826624410C24CDC2BA5 /* Pods-RamblerMessageExtension.release.xcconfig */,
+				44C28AC5C8513A913FE8B749 /* Pods-RamblerMessageExtension.nightly.xcconfig */,
+				F7ACB5BE07AA63ABA575E72C /* Pods-Conferences-RamblerMessageExtension.debug.xcconfig */,
+				D4D07FD12F22C53F88A5868D /* Pods-Conferences-RamblerMessageExtension.release.xcconfig */,
+				EA2D483C826269C2260999EA /* Pods-Conferences-RamblerMessageExtension.nightly.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		63BDBBC01D87E3DE006E8A15 /* RamblerMessageExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63BDBBD41D87E3DE006E8A15 /* Build configuration list for PBXNativeTarget "RamblerMessageExtension" */;
+			buildPhases = (
+				8DBA6B940BC2407FF13F7FF6 /* [CP] Check Pods Manifest.lock */,
+				63BDBBBD1D87E3DE006E8A15 /* Sources */,
+				63BDBBBE1D87E3DE006E8A15 /* Frameworks */,
+				63BDBBBF1D87E3DE006E8A15 /* Resources */,
+				E654ADF620C5D82860C1B66C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RamblerMessageExtension;
+			productName = RamblerMessageExtension;
+			productReference = 63BDBBC11D87E3DE006E8A15 /* RamblerMessageExtension.appex */;
+			productType = "com.apple.product-type.app-extension.messages";
+		};
 		9F1F37E31BBBB80D00C7797D /* Conferences */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9F1F38091BBBB80D00C7797D /* Build configuration list for PBXNativeTarget "Conferences" */;
 			buildPhases = (
-				737D6A472F4D5FEAC6B91F06 /* [CP] Check Pods Manifest.lock */,
+				B535971CE77462210FF7A843 /* [CP] Check Pods Manifest.lock */,
 				9F1F37E01BBBB80D00C7797D /* Sources */,
 				9F1F37E11BBBB80D00C7797D /* Frameworks */,
 				9F1F37E21BBBB80D00C7797D /* Resources */,
@@ -8072,10 +8753,14 @@
 				79CC11D65A7267714823E9D8 /* [CP] Embed Pods Frameworks */,
 				3F898D337096B8188198CE1A /* [CP] Copy Pods Resources */,
 				028E445C1DF053DB00734E84 /* ShellScript */,
+				63BDBBD51D87E3DE006E8A15 /* Embed App Extensions */,
+				AF3D91B360DF062D601D2F49 /* [CP] Embed Pods Frameworks */,
+				04853FD7ED0E623871FBC8D4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				63BDBBCF1D87E3DE006E8A15 /* PBXTargetDependency */,
 			);
 			name = Conferences;
 			productName = Conferences;
@@ -8086,12 +8771,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9F1F380C1BBBB80D00C7797D /* Build configuration list for PBXNativeTarget "ConferencesTests" */;
 			buildPhases = (
-				84367F969D531B9A27D89918 /* [CP] Check Pods Manifest.lock */,
+				E71F09ED8DDAD3310B45A64B /* [CP] Check Pods Manifest.lock */,
 				9F1F37FC1BBBB80D00C7797D /* Sources */,
 				9F1F37FD1BBBB80D00C7797D /* Frameworks */,
 				9F1F37FE1BBBB80D00C7797D /* Resources */,
-				70401DA86FF400837DFD4ADF /* [CP] Embed Pods Frameworks */,
-				8F09D7B7249BEA06DC216E2F /* [CP] Copy Pods Resources */,
+				EEF8A008F04803B32ED23F26 /* [CP] Embed Pods Frameworks */,
+				141AD6D6AC2B5A5AD89549F1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -8115,12 +8800,25 @@
 					2B750D101D362C1B00EACE98 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
+					63BDBBC01D87E3DE006E8A15 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = UM246WFXVS;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					9F1F37E31BBBB80D00C7797D = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = UM246WFXVS;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
+                                enabled = 1;
+                            };
+							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
 							};
 							com.apple.Push = {
@@ -8151,11 +8849,31 @@
 				9F1F37E31BBBB80D00C7797D /* Conferences */,
 				2B750D101D362C1B00EACE98 /* Mogenerator */,
 				9F1F37FF1BBBB80D00C7797D /* ConferencesTests */,
+				63BDBBC01D87E3DE006E8A15 /* RamblerMessageExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		63BDBBBF1D87E3DE006E8A15 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				631B75391DD1DC9900F62084 /* EventListTableViewCell.xib in Resources */,
+				632184201D9BFD49001BB7A7 /* SpotlightIndexer.xcdatamodeld in Resources */,
+				63A9D5CD1DB7618100169E2E /* RamblerLocation.storyboard in Resources */,
+				63A9D5C91DB7614900169E2E /* Event.storyboard in Resources */,
+				63A9D5CB1DB7617200169E2E /* Events.storyboard in Resources */,
+				63A9D5CE1DB7618500169E2E /* Reports.storyboard in Resources */,
+				63A9D5CF1DB7618900169E2E /* Main.storyboard in Resources */,
+				63A9D5CA1DB7616200169E2E /* SpeakerInfo.storyboard in Resources */,
+				6321841F1D9BFD42001BB7A7 /* Conference.xcdatamodeld in Resources */,
+				63A9D5CC1DB7617A00169E2E /* Lecture.storyboard in Resources */,
+				63BDBBCC1D87E3DE006E8A15 /* Assets.xcassets in Resources */,
+				63BDBBCA1D87E3DE006E8A15 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9F1F37E21BBBB80D00C7797D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -8237,20 +8955,20 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
-		2B750D161D362DB000EACE98 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Scripts/mogenerator.sh\"";
-		};
-		3F898D337096B8188198CE1A /* [CP] Copy Pods Resources */ = {
+2B750D161D362DB000EACE98 /* ShellScript */ = {
+isa = PBXShellScriptBuildPhase;
+buildActionMask = 2147483647;
+files = (
+);
+inputPaths = (
+);
+outputPaths = (
+);
+runOnlyForDeploymentPostprocessing = 0;
+shellPath = /bin/sh;
+shellScript = "\"${SRCROOT}/Scripts/mogenerator.sh\"";
+};
+		04853FD7ED0E623871FBC8D4 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -8265,67 +8983,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Conferences/Pods-Conferences-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		70401DA86FF400837DFD4ADF /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Conferences-ConferencesTests/Pods-Conferences-ConferencesTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		737D6A472F4D5FEAC6B91F06 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		79CC11D65A7267714823E9D8 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Conferences/Pods-Conferences-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		84367F969D531B9A27D89918 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		8F09D7B7249BEA06DC216E2F /* [CP] Copy Pods Resources */ = {
+		141AD6D6AC2B5A5AD89549F1 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -8338,6 +8996,34 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Conferences-ConferencesTests/Pods-Conferences-ConferencesTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2B750D161D362DB000EACE98 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Scripts/mogenerator.sh\"";
+		};
+		8DBA6B940BC2407FF13F7FF6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		9FF4C3E41CE22036002157B2 /* ShellScript */ = {
@@ -8353,9 +9039,215 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 27234a8fb339211b7081a28ef1f90c7159278f54 9c0e8dedd527c8ff4f29a550b8a4ea698075f3607e7938bbfda9d19215c985eb";
 		};
+		AF3D91B360DF062D601D2F49 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Conferences/Pods-Conferences-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B535971CE77462210FF7A843 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E654ADF620C5D82860C1B66C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RamblerMessageExtension/Pods-RamblerMessageExtension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E71F09ED8DDAD3310B45A64B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EEF8A008F04803B32ED23F26 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Conferences-ConferencesTests/Pods-Conferences-ConferencesTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		63BDBBBD1D87E3DE006E8A15 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				636E26D71D8FE719001ABB92 /* EventServiceImplementation.m in Sources */,
+				63770CC21DD61E6B0039AB0D /* MessageExtensionTyphoonActivator.m in Sources */,
+				636E26ED1D8FE86A001ABB92 /* _TagModelObject.m in Sources */,
+				63BB9A101DB285D600C2F2B9 /* SafariFactoryImplementation.m in Sources */,
+				63BB9A391DB4BB8D00C2F2B9 /* SpotlightIndexerConstants.m in Sources */,
+				632184241D9D31B5001BB7A7 /* LectureMaterialModelObject.m in Sources */,
+				63BB9A201DB4B4CB00C2F2B9 /* SpotlightAppDelegate.m in Sources */,
+				63A9D5C61DB759B600169E2E /* LocalizedStrings.m in Sources */,
+				636E26EF1D8FE8CB001ABB92 /* _EventPlainObject.m in Sources */,
+				636E26CE1D8FE0C4001ABB92 /* EventListTableViewController.m in Sources */,
+				63BB9A301DB4BB0100C2F2B9 /* LectureChangeProviderFetchRequestFactory.m in Sources */,
+				636E26E71D8FE816001ABB92 /* SpeakerModelObject.m in Sources */,
+				63770CBF1DD61E3D0039AB0D /* MessagesConstants.m in Sources */,
+				636E26CD1D8FE0B7001ABB92 /* EventListTableViewCell.m in Sources */,
+				63BB9A131DB2860000C2F2B9 /* YouTubePlayerFactoryImplementation.m in Sources */,
+				6321841E1D9BFD31001BB7A7 /* SpotlightIndexer.xcdatamodeld in Sources */,
+				63BB9A381DB4BB8200C2F2B9 /* ObjectTransformerConstants.m in Sources */,
+				63BB9A371DB4BB7600C2F2B9 /* SpotlightCoreDataStackCoordinatorImplementation.m in Sources */,
+				63BB9A321DB4BB3700C2F2B9 /* LectureObjectTransformer.m in Sources */,
+				661B40A41DF17CC3002DA46C /* SearchLaunchRouter.m in Sources */,
+				636E26E21D8FE7D7001ABB92 /* MetaEventModelObject.m in Sources */,
+				63770CBC1DD61E2A0039AB0D /* MessagesLaunchHandler.m in Sources */,
+				632184311D9D3527001BB7A7 /* TechPlainObject.m in Sources */,
+				636E26DD1D8FE78D001ABB92 /* LectureModelObject.m in Sources */,
+				638918D81DC33CD0009B34AF /* MessagesUserActivityFactory.m in Sources */,
+				632184341D9D3574001BB7A7 /* SocialNetworkAccountPlainObject.m in Sources */,
+				63BB9A0C1DB2858E00C2F2B9 /* PresentationLayerHelpersAssembly.m in Sources */,
+				6321842A1D9D33E7001BB7A7 /* TagPlainObject.m in Sources */,
+				63770CB31DD61D2A0039AB0D /* MessagesViewController.m in Sources */,
+				63BB9A261DB4BA6700C2F2B9 /* EventChangeProviderFetchRequestFactory.m in Sources */,
+				632184301D9D3521001BB7A7 /* _TechPlainObject.m in Sources */,
+				636E26D81D8FE73F001ABB92 /* _EventModelObject.m in Sources */,
+				63BB9A2D1DB4BABE00C2F2B9 /* IndexerStateStorage.m in Sources */,
+				63BB9A341DB4BB5400C2F2B9 /* SpeakerChangeProviderFetchRequestFactory.m in Sources */,
+				636E26E01D8FE7AE001ABB92 /* MetaEventServiceImpementation.m in Sources */,
+				63BB9A241DB4BA4600C2F2B9 /* SpotlightIndexerAssembly.m in Sources */,
+				636E26F01D8FE8E6001ABB92 /* ErrorConstants.m in Sources */,
+				632184221D9D2F3A001BB7A7 /* LecturePlainObject.m in Sources */,
+				636E26E31D8FE7E3001ABB92 /* OperationSchedulerImplementation.m in Sources */,
+				637873901DED897000CA1859 /* UrlComponentsFactory.m in Sources */,
+				6321842E1D9D34CC001BB7A7 /* TechModelObject.m in Sources */,
+				636E26C61D8FDF41001ABB92 /* EventListModuleAssembly.m in Sources */,
+				632184321D9D3558001BB7A7 /* SocialNetworkAccountModelObject.m in Sources */,
+				636E26DE1D8FE799001ABB92 /* LastModifiedModelObject.m in Sources */,
+				63BB9A0E1DB285BA00C2F2B9 /* DateFormatter.m in Sources */,
+				63BB9A1F1DB4B4BF00C2F2B9 /* SpeakerLaunchRouter.m in Sources */,
+				63BB9A0D1DB285A800C2F2B9 /* AppleMapsLinkBuilder.m in Sources */,
+				636E26E81D8FE822001ABB92 /* SuggestServiceImplementation.m in Sources */,
+				63BB9A271DB4BA7300C2F2B9 /* EventObjectIndexer.m in Sources */,
+				6321842B1D9D33EF001BB7A7 /* _TagPlainObject.m in Sources */,
+				63BB9A361DB4BB6B00C2F2B9 /* SpeakerObjectTransformer.m in Sources */,
+				63BB9A351DB4BB5F00C2F2B9 /* SpeakerObjectIndexer.m in Sources */,
+				637382821DD5B2BB004246EC /* EventListProcessor.m in Sources */,
+				63BB9A121DB285F200C2F2B9 /* YouTubeIdentifierDeriviator.m in Sources */,
+				632184351D9D3579001BB7A7 /* _SocialNetworkAccountPlainObject.m in Sources */,
+				63BB9A281DB4BA8000C2F2B9 /* EventObjectTransformer.m in Sources */,
+				63BB9A311DB4BB1B00C2F2B9 /* LectureObjectIndexer.m in Sources */,
+				63BB9A331DB4BB4600C2F2B9 /* ObjectIndexerBase.m in Sources */,
+				636E26E11D8FE7C9001ABB92 /* _MetaEventModelObject.m in Sources */,
+				632184271D9D32C6001BB7A7 /* SpeakerPlainObject.m in Sources */,
+				63BB9A191DB4B45400C2F2B9 /* LaunchSystemAssembly.m in Sources */,
+				636E26CC1D8FE0AB001ABB92 /* EventListTableViewCellObject.m in Sources */,
+				661B40A51DF17CCC002DA46C /* SpotlightContinuationAppDelegate.m in Sources */,
+				636E26E61D8FE807001ABB92 /* SpeakerServiceImplementation.m in Sources */,
+				6373829D1DD5E12F004246EC /* MessagesPresenter.m in Sources */,
+				636E26F11D8FEF29001ABB92 /* NSManagedObjectID+LJStringConversion.m in Sources */,
+				9FFA8A2D1DF32B4700FB3C2E /* ApplicationConstants.m in Sources */,
+				63770CB61DD61D6F0039AB0D /* MessageExtensionAssembly.m in Sources */,
+				6321841D1D9BFD22001BB7A7 /* Conference.xcdatamodeld in Sources */,
+				636E26E91D8FE82D001ABB92 /* TagServiceImplementation.m in Sources */,
+				636E26DB1D8FE76E001ABB92 /* EventStoreService.m in Sources */,
+				636E26D21D8FE0F4001ABB92 /* ROSPonsomizerImplementation.m in Sources */,
+				63BB9A2C1DB4BAB300C2F2B9 /* IndexerMonitorOperationQueueFactory.m in Sources */,
+				636E26EA1D8FE837001ABB92 /* TagServicePredicateBuilder.m in Sources */,
+				63A9D5C51DB759A600169E2E /* EventViewController.m in Sources */,
+				630E25FB1DBFA2920043C20E /* EventPresenter.m in Sources */,
+				63BB9A251DB4BA5400C2F2B9 /* ContextStorageImplementation.m in Sources */,
+				636E26EC1D8FE859001ABB92 /* _SpeakerModelObject.m in Sources */,
+				636E26D01D8FE0DC001ABB92 /* ModuleAssemblyBase.m in Sources */,
+				63BB9A211DB4B4D800C2F2B9 /* SpotlightLaunchHandler.m in Sources */,
+				636E26D61D8FE706001ABB92 /* ServiceComponentsAssembly.m in Sources */,
+				632184291D9D3368001BB7A7 /* TagModelObject.m in Sources */,
+				63BB9A231DB4B4F900C2F2B9 /* QuickActionConstants.m in Sources */,
+				638918D01DC333B6009B34AF /* MessagesAppDelegate.m in Sources */,
+				636E26CB1D8FE09C001ABB92 /* EventListRouter.m in Sources */,
+				632184331D9D355F001BB7A7 /* _SocialNetworkAccountModelObject.m in Sources */,
+				636E26EB1D8FE847001ABB92 /* _LectureModelObject.m in Sources */,
+				6321842C1D9D342B001BB7A7 /* _MetaEventPlainObject.m in Sources */,
+				637382A01DD5EA17004246EC /* MessagesInteractor.m in Sources */,
+				63BB9A2B1DB4BAA800C2F2B9 /* IndexTransaction.m in Sources */,
+				636E26EE1D8FE8AD001ABB92 /* EventPlainObject.m in Sources */,
+				636E26C81D8FE076001ABB92 /* EventListDataDisplayManager.m in Sources */,
+				636E26D91D8FE74D001ABB92 /* EventListQuery.m in Sources */,
+				63BB9A1D1DB4B49500C2F2B9 /* QuickActionLaunchHandler.m in Sources */,
+				631060221DC8984F006870EB /* MailComposeControllerFactoryImplementation.m in Sources */,
+				63BB9A2A1DB4BA9A00C2F2B9 /* IndexerMonitor.m in Sources */,
+				63BB9A0F1DB285C900C2F2B9 /* EventTypeDeterminator.m in Sources */,
+				63BB9A1B1DB4B47C00C2F2B9 /* LectureLaunchRouter.m in Sources */,
+				63BB9A291DB4BA8D00C2F2B9 /* FetchedResultsControllerChangeProvider.m in Sources */,
+				632184281D9D32CD001BB7A7 /* _SpeakerPlainObject.m in Sources */,
+				636E26DA1D8FE760001ABB92 /* EventModelObject.m in Sources */,
+				63BB9A2F1DB4BADA00C2F2B9 /* IndexTransactionBatch.m in Sources */,
+				636E26C91D8FE082001ABB92 /* EventListInteractor.m in Sources */,
+				636E26E51D8FE7FB001ABB92 /* RamblerLocationServiceImplementation.m in Sources */,
+				636E26DF1D8FE7A2001ABB92 /* _LastModifiedModelObject.m in Sources */,
+				636E26D11D8FE0E9001ABB92 /* PonsomizerAssembly.m in Sources */,
+				632184231D9D2F65001BB7A7 /* _LecturePlainObject.m in Sources */,
+				630E25FA1DBFA2860043C20E /* EventInteractor.m in Sources */,
+				63BB9A1E1DB4B4A200C2F2B9 /* QuickActionUserActivityFactory.m in Sources */,
+				6321842D1D9D3430001BB7A7 /* MetaEventPlainObject.m in Sources */,
+				63BB9A1A1DB4B46300C2F2B9 /* EventLaunchRouter.m in Sources */,
+				63BB9A2E1DB4BACA00C2F2B9 /* IndexState.m in Sources */,
+				637382991DD5D9C0004246EC /* MessagesRouter.m in Sources */,
+				632184251D9D31BF001BB7A7 /* _LectureMaterialModelObject.m in Sources */,
+				636E26C71D8FE069001ABB92 /* EventListCellObjectBuilder.m in Sources */,
+				636E26CA1D8FE091001ABB92 /* EventListPresenter.m in Sources */,
+				632184211D9D2F2B001BB7A7 /* _LectureMaterialPlainObject.m in Sources */,
+				63770CB91DD61E100039AB0D /* RamblerExtensionTyphoonActivator.m in Sources */,
+				63BB9A221DB4B4E500C2F2B9 /* TabLaunchRouter.m in Sources */,
+				6321842F1D9D34D6001BB7A7 /* _TechModelObject.m in Sources */,
+				632184261D9D3268001BB7A7 /* LectureMaterialPlainObject.m in Sources */,
+				63BB9A1C1DB4B48800C2F2B9 /* QuickActionAppDelegate.m in Sources */,
+				636E26DC1D8FE77D001ABB92 /* LectureServiceImplementation.m in Sources */,
+				63BB9A111DB285E300C2F2B9 /* VideoThumbnailGenerator.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9F1F37E01BBBB80D00C7797D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -8394,12 +9286,14 @@
 				66CCA7301D61A67E004153EA /* ReportSearchSectionTitleCellObject.m in Sources */,
 				2B2064781D3F9CE900246C8D /* _LectureMaterialModelObject.m in Sources */,
 				2B429A7C1D50987E004C005F /* MetaEventServiceImpementation.m in Sources */,
+				9FFA8A281DF31F3400FB3C2E /* RamblerLocationStateStorage.m in Sources */,
 				6670500B1D4613F800DD9D6E /* ReportsSearchAssembly.m in Sources */,
 				9FBE89F51D5DDA9E00DA0C32 /* PreviousEventSectionFooterTableViewCellObject.m in Sources */,
 				631808691C4A870C00A61E7D /* LectureMaterialInfoTableViewCell.m in Sources */,
 				63F613721CB00A220002AEF0 /* EventInfoTableViewCell.m in Sources */,
 				63F613671CB00A220002AEF0 /* LectureInfoTableViewCellObject.m in Sources */,
 				9F7B82261D7DA8B5002E977A /* QuickActionLaunchHandler.m in Sources */,
+				638918CC1DC28AA3009B34AF /* MessagesAppDelegate.m in Sources */,
 				2B2064971D3F9CE900246C8D /* SocialNetworkAccountPlainObject.m in Sources */,
 				63F6139B1CB00A220002AEF0 /* SpeakerInfoTableViewCell.m in Sources */,
 				667050101D46140200DD9D6E /* ReportsSearchInteractor.m in Sources */,
@@ -8423,6 +9317,7 @@
 				9FBE8B071D634F0500DA0C32 /* EventListCellObjectBuilder.m in Sources */,
 				9FF1251E1D51DF460098625F /* EventObjectIndexer.m in Sources */,
 				2B2064881D3F9CE900246C8D /* _TechPlainObject.m in Sources */,
+				63C31C171DDB134500AA51BD /* MessagesLaunchHandler.m in Sources */,
 				9F0A84FD1BC1698B006F79FB /* NetworkOperation.m in Sources */,
 				63F613661CB00A220002AEF0 /* EventInfoTableViewCellObject.m in Sources */,
 				9F78D74A1D59D73E009DDCEA /* IndexState.m in Sources */,
@@ -8450,6 +9345,7 @@
 				9FBE8ABC1D630D4C00DA0C32 /* EventGalleryCellObjectFactory.m in Sources */,
 				9F1830931BC02293000E21A5 /* RESTRequestConfigurator.m in Sources */,
 				2B20647E1D3F9CE900246C8D /* _TagModelObject.m in Sources */,
+				661B40A31DF17CB3002DA46C /* SearchLaunchRouter.m in Sources */,
 				63F342B01C8B20AB002AF7CD /* EventStoreService.m in Sources */,
 				667050001D460E3100DD9D6E /* UIColor+ConferencesPalette.m in Sources */,
 				636F8DDA1BCB8FE800552B91 /* RamblerLocationModuleAssembly.m in Sources */,
@@ -8473,6 +9369,7 @@
 				2B2064981D3F9CE900246C8D /* SpeakerPlainObject.m in Sources */,
 				63F613851CB00A220002AEF0 /* FutureEventCellObjectBuilder.m in Sources */,
 				2B2064921D3F9CE900246C8D /* EventPlainObject.m in Sources */,
+				028E446B1DF179CA00734E84 /* PredicateConfiguratorImplementation.m in Sources */,
 				9F4077B41D2E38AB00D47EF6 /* DirectionCellObjectFactory.m in Sources */,
 				6318086D1C4A872600A61E7D /* LectureMaterialInfoTableViewCellObject.m in Sources */,
 				66CCA72C1D61A654004153EA /* ReportSearchSectionTitleTableViewCell.m in Sources */,
@@ -8510,6 +9407,8 @@
 				9FBE89B31D5CB71300DA0C32 /* EventLaunchRouter.m in Sources */,
 				661CA4071D65D0720047EB68 /* NSManagedObjectID+LJStringConversion.m in Sources */,
 				028E44601DF06CA300734E84 /* UberRidesAppDelegate.m in Sources */,
+				634EB9E11DC8E5FC00EAEC0F /* SpeakerInfoAlertFactory.m in Sources */,
+				9FCFC50E1D903719009FD57D /* SpotlightContinuationAppDelegate.m in Sources */,
 				661CA4031D65D04E0047EB68 /* ServerResponseModel.m in Sources */,
 				9F78D7441D59D6EF009DDCEA /* SpotlightCoreDataStackCoordinatorImplementation.m in Sources */,
 				667050531D46332200DD9D6E /* ReportsSearchCellObjectsBuilderImplementation.m in Sources */,
@@ -8525,6 +9424,7 @@
 				66FFD29C1D7DCCFB0009B7DC /* CollectionViewContentCellAnimator.m in Sources */,
 				9F78D77D1D5A075C009DDCEA /* LectureChangeProviderFetchRequestFactory.m in Sources */,
 				9FBE89EF1D5DDA5A00DA0C32 /* PreviousEventSectionFooterTableViewCell.m in Sources */,
+				63C31C161DDB132D00AA51BD /* MessagesConstants.m in Sources */,
 				636A37B31BC1356400B49C3D /* ApplicationConfiguratorImplementation.m in Sources */,
 				9F8E5FA91BC27D0D00DC10DB /* ServiceNameConstants.m in Sources */,
 				2B2064871D3F9CE900246C8D /* _TagPlainObject.m in Sources */,
@@ -8542,7 +9442,9 @@
 				9FFEAF051D2E41B4006E9649 /* DirectionCollectionViewCell.m in Sources */,
 				63F613841CB00A220002AEF0 /* EventCellObjectBuilderBase.m in Sources */,
 				2B2064861D3F9CE900246C8D /* _SpeakerPlainObject.m in Sources */,
+				028E446F1DF184F100734E84 /* SearchFacadeImplementation.m in Sources */,
 				636F8DDC1BCB8FE800552B91 /* RamblerLocationPresenter.m in Sources */,
+				638918D61DC33A33009B34AF /* MessagesUserActivityFactory.m in Sources */,
 				9F8B49E91D6EF72B00ED176B /* YouTubePlayerFactoryImplementation.m in Sources */,
 				9F533A961D50EEE0004F8E82 /* ObjectIndexerBase.m in Sources */,
 				9F8E5F841BC25A0700DC10DB /* ResponseMappersAssembly.m in Sources */,
@@ -8570,6 +9472,7 @@
 				2B2064801D3F9CE900246C8D /* _EventPlainObject.m in Sources */,
 				66EE4D2B1D54BCDF0011F94A /* CollectionViewAnimator.m in Sources */,
 				9F8E5F741BC255AA00DC10DB /* RequestSignersAssembly.m in Sources */,
+				637382811DD5AC88004246EC /* EventListProcessor.m in Sources */,
 				9FBE8AFD1D634F0500DA0C32 /* EventListPresenter.m in Sources */,
 				9FBE8AC31D630D4C00DA0C32 /* EventGalleryCollectionViewCellShadower.m in Sources */,
 				9FBE89B61D5CB71300DA0C32 /* TabBarControllerFactoryImplementation.m in Sources */,
@@ -8585,6 +9488,7 @@
 				63F613861CB00A220002AEF0 /* PastEventCellObjectBuilder.m in Sources */,
 				9F7B822D1D7DAB51002E977A /* QuickActionUserActivityFactory.m in Sources */,
 				9F0A84FC1BC1698B006F79FB /* CompoundOperationDebugDescriptionFormatter.m in Sources */,
+				638918DC1DC340B4009B34AF /* NSArray+NSURLQueryItem.m in Sources */,
 				9F0A84FE1BC1698B006F79FB /* RequestConfigurationOperation.m in Sources */,
 				9FBE8AB51D630D4C00DA0C32 /* EventGalleryAssembly.m in Sources */,
 				2B20649A1D3F9CE900246C8D /* TechPlainObject.m in Sources */,
@@ -8607,6 +9511,7 @@
 				9FE1397D1D65F3E900D7BF44 /* ReportLectureTableViewCellObject.m in Sources */,
 				63F6135A1CB00A220002AEF0 /* EventHeaderModuleAssembly.m in Sources */,
 				9FBE8A081D5DFA1600DA0C32 /* VideoThumbnailGenerator.m in Sources */,
+				6310601E1DC89577006870EB /* MailComposeControllerFactoryImplementation.m in Sources */,
 				2B2064911D3F9CE900246C8D /* TechModelObject.m in Sources */,
 				9F0A84F91BC1698B006F79FB /* AsyncOperation.m in Sources */,
 				66E9997E1D54B0A000161D98 /* TagCellSizeCalculator.m in Sources */,
@@ -8622,8 +9527,6 @@
 				63F6136A1CB00A220002AEF0 /* PreviousLectureSectionHeaderTableViewCellObject.m in Sources */,
 				63FD4E061BE5038D0046378E /* UIColor+Hex.m in Sources */,
 				661CA4161D65D0EB0047EB68 /* LastModifiedPlainObject.m in Sources */,
-				9F18BE641DB42EC600CCD47B /* MailComposeControllerFactoryImplementation.m in Sources */,
-				9F18BE6C1DB4FD3900CCD47B /* SpeakerInfoAlertFactory.m in Sources */,
 				66704FF91D4606D800DD9D6E /* PonsomizerAssembly.m in Sources */,
 				9FBE8AFC1D634F0500DA0C32 /* EventListInteractor.m in Sources */,
 				9F0A84FF1BC1698B006F79FB /* RequestSigningOperation.m in Sources */,
@@ -8631,6 +9534,7 @@
 				9F1830F51BC14444000E21A5 /* NSString+RCFCapitalization.m in Sources */,
 				2BDDAB551D363D34007FD547 /* ROSPonsomizerImplementation.m in Sources */,
 				63F613821CB00A220002AEF0 /* EventDataDisplayManager.m in Sources */,
+				9FFA8A2C1DF3220500FB3C2E /* ApplicationConstants.m in Sources */,
 				63F6138B1CB00A220002AEF0 /* LectureInteractor.m in Sources */,
 				9F8E5F7C1BC2584500DC10DB /* ResponseDeserializersAssembly.m in Sources */,
 				2B2064791D3F9CE900246C8D /* _LectureModelObject.m in Sources */,
@@ -8647,6 +9551,7 @@
 				63ECC4161CA81E5300439A01 /* ErrorConstants.m in Sources */,
 				661CA4271D65D2040047EB68 /* ResponseConverterAssembly.m in Sources */,
 				9F7B823B1D7ECA07002E977A /* TabLaunchRouter.m in Sources */,
+				637873911DEDA1C600CA1859 /* UrlComponentsFactory.m in Sources */,
 				636F8DDB1BCB8FE800552B91 /* RamblerLocationInteractor.m in Sources */,
 				63F613761CB00A220002AEF0 /* PreviousEventSectionHeaderTableViewCell.m in Sources */,
 				63F613601CB00A220002AEF0 /* EventInteractor.m in Sources */,
@@ -8724,12 +9629,21 @@
 				9F4077A01D2C11A700D47EF6 /* DirectionObjectMapperTests.m in Sources */,
 				63F613EA1CB111070002AEF0 /* SearchPresenterTests.m in Sources */,
 				0231D7241DFEA33D0052471C /* UberRidesModalTestableObject.m in Sources */,
+				63C31C081DDAF19700AA51BD /* MessagesInteractor.m in Sources */,
+				9FF37E1B1D323B0200471B4E /* RamblerLocationRouterTests.m in Sources */,
+				9FF37E111D3235BB00471B4E /* AppleMapsLinkBuilderTests.m in Sources */,
+				9F4077A01D2C11A700D47EF6 /* DirectionObjectMapperTests.m in Sources */,
+				63F613EA1CB111070002AEF0 /* SearchPresenterTests.m in Sources */,
+				63C31C0B1DDAF1BC00AA51BD /* MessagesViewController.m in Sources */,
+				63C31C0D1DDAF1F400AA51BD /* RamblerExtensionTyphoonActivator.m in Sources */,
 				635E18D51CA6CECB005B8439 /* EventHeaderModuleAssemblyTests.m in Sources */,
+				638918D71DC33CC5009B34AF /* MessagesUserActivityFactory.m in Sources */,
 				63F613E41CB111070002AEF0 /* LectureInteractorTests.m in Sources */,
 				66A1DD3B1D7E983100998F6B /* TagModuleTableViewCellTests.m in Sources */,
 				9F7B821B1D7CAB28002E977A /* QuickActionDaemonTests.m in Sources */,
 				63F613D81CB111070002AEF0 /* EventListInteractorTests.m in Sources */,
 				63F613E61CB111070002AEF0 /* LectureRouterTests.m in Sources */,
+				63C31C001DD9C14A00AA51BD /* MessagesUserActivityFactoryTests.m in Sources */,
 				662166501D4F4507000A1D11 /* ReportsSearchInteractorTests.m in Sources */,
 				63F613EF1CB111070002AEF0 /* SpeakerInfoViewControllerTests.m in Sources */,
 				9FBE89DA1D5CB76900DA0C32 /* SpeakerLaunchRouterTests.m in Sources */,
@@ -8745,6 +9659,8 @@
 				9F7B82291D7DA9E9002E977A /* QuickActionAppDelegateTests.m in Sources */,
 				63D86BDD1C143FCE00986536 /* DateFormatterTests.m in Sources */,
 				66A1DD551D7E993A00998F6B /* MockObjectsFactory.m in Sources */,
+				63C31C0A1DDAF1B000AA51BD /* MessagesRouter.m in Sources */,
+				66FBA2581DE05CF000F5C2E9 /* LaunchSystemAssemblyTests.m in Sources */,
 				9FE139261D65CC2500D7BF44 /* SuggestServiceImplementationTests.m in Sources */,
 				9F78D75D1D59E778009DDCEA /* SpeakerObjectTransformerTests.m in Sources */,
 				66A1DD3C1D7E983100998F6B /* TagShowMediatorTests.m in Sources */,
@@ -8759,19 +9675,21 @@
 				631CBA811C021A5300E3EBA8 /* PresentationLayerHelpersAssemblyTests.m in Sources */,
 				9FAB6A831D54965F0061F333 /* SearchableIndexMock.m in Sources */,
 				631CBAA71C021C6900E3EBA8 /* EventTypeDeterminatorTests.m in Sources */,
+				66FBA25E1DE069E700F5C2E9 /* SearchLaunchRouterTests.m in Sources */,
 				63F402FE1BCF840A0086D030 /* NetworkClientsAssemblyTests.m in Sources */,
 				63F613E01CB111070002AEF0 /* EventInteractorTests.m in Sources */,
 				02F297C01DFAA295001F9B10 /* TestableObjectWithDelegate.m in Sources */,
 				9FBE89D31D5CB76900DA0C32 /* CleanLaunchAppDelegateTests.m in Sources */,
 				63F613E31CB111070002AEF0 /* EventViewControllerTests.m in Sources */,
 				63F613E71CB111070002AEF0 /* LectureViewControllerTests.m in Sources */,
+				63C31BF71DD9BB7F00AA51BD /* MessagesLaunchHandler.m in Sources */,
+				637382831DD5B2BE004246EC /* EventListProcessor.m in Sources */,
 				9F0A853F1BC192F0006F79FB /* OperationChainerTests.m in Sources */,
 				9FBE8A341D5F3CD100DA0C32 /* EventGalleryInteractorTests.m in Sources */,
 				9F0A85211BC185AA006F79FB /* TestChainableOperationWithValidationBlock.m in Sources */,
 				9F78D7791D5A0330009DDCEA /* LectureObjectIndexerTests.m in Sources */,
 				63F402F11BCF77CB0086D030 /* ServiceComponentsAssemblyTests.m in Sources */,
 				9FC305351D6478F60052CB67 /* ShareUrlBuilderImplementationTests.m in Sources */,
-				9F18BE671DB430F500CCD47B /* MailComposeControllerFactoryImplementationTests.m in Sources */,
 				66E9992C1D54899C00161D98 /* LectureServiceTests.m in Sources */,
 				9F1830DB1BC126D7000E21A5 /* RCFParseResponseValidatorTests.m in Sources */,
 				9FBE89D71D5CB76900DA0C32 /* CleanLaunchRouterTests.m in Sources */,
@@ -8784,8 +9702,10 @@
 				63F613E51CB111070002AEF0 /* LecturePresenterTests.m in Sources */,
 				9F0A85261BC185AA006F79FB /* ResponseDeserializationOperationTests.m in Sources */,
 				9FF750081D26C8EB000D208D /* EventListOperationFactoryTests.m in Sources */,
+				631060231DC89850006870EB /* MailComposeControllerFactoryImplementation.m in Sources */,
 				662166521D4F4507000A1D11 /* ReportsSearchViewControllerTests.m in Sources */,
 				63F403001BCF85EE0086D030 /* RequestConfiguratorsAssemblyTests.m in Sources */,
+				63EB4DB21DDC7D4400548D88 /* MessagesPresenterTests.m in Sources */,
 				9F78D7721D5A005A009DDCEA /* LectureObjectTransformerTests.m in Sources */,
 				9FC1F6801D2838FA0070D9B5 /* EventListQueryTransformerTests.m in Sources */,
 				9FBE89DB1D5CB76900DA0C32 /* TabBarControllerFactoryImplementationTests.m in Sources */,
@@ -8798,11 +9718,15 @@
 				9F0A85251BC185AA006F79FB /* RequestSigningOperationTests.m in Sources */,
 				9F4097891D51F8FD008BFE42 /* EventObjectTransformerTests.m in Sources */,
 				02F297C61DFAC5A2001F9B10 /* UberRidesAssemblyTests.m in Sources */,
+				63F95BB71DE5A67D00F6BD1C /* EventListProcessorTests.m in Sources */,
 				63F613DD1CB111070002AEF0 /* FutureEventCellObjectBuilderTests.m in Sources */,
 				9F0A85241BC185AA006F79FB /* RequestConfigurationOperationTests.m in Sources */,
 				9F4077881D2BF84000D47EF6 /* RamblerLocationServiceTests.m in Sources */,
+				63C31C031DD9FE4C00AA51BD /* MessagesLaunchHandlerTests.m in Sources */,
 				9F8E5F9B1BC2753100DC10DB /* CompoundOperationFactoryTestsBase.m in Sources */,
 				66A1DD4D1D7E986000998F6B /* TagCollectionViewCellTests.m in Sources */,
+				638918CF1DC333A4009B34AF /* MessagesAppDelegate.m in Sources */,
+				66FBA25B1DE0607D00F5C2E9 /* SpotlightContinuationAppDelegateTests.m in Sources */,
 				2B01CEBE1D50A55900DA8E66 /* MetaEventServiceTests.m in Sources */,
 				631CBA721C020CCD00E3EBA8 /* EventListModuleAssemblyTests.m in Sources */,
 				66A1DD481D7E984E00998F6B /* TagDataDisplayManagerTests.m in Sources */,
@@ -8811,10 +9735,13 @@
 				635E18C71CA6B8CE005B8439 /* SpeakerShortInfoModuleAssemblyTests.m in Sources */,
 				9FBE8A351D5F3CD500DA0C32 /* EventGalleryPresenterTests.m in Sources */,
 				66A1DD301D7E980D00998F6B /* TagAssemblyTests.m in Sources */,
+				637873921DEDA1C700CA1859 /* UrlComponentsFactory.m in Sources */,
 				9FBE89D81D5CB76900DA0C32 /* EventLaunchRouterTests.m in Sources */,
+				63C31C0C1DDAF1DD00AA51BD /* MessageExtensionTyphoonActivator.m in Sources */,
 				9F0A851F1BC185AA006F79FB /* TestCancellableOperation.m in Sources */,
 				9F0A85271BC185AA006F79FB /* ResponseMappingOperationTests.m in Sources */,
 				9F1830F91BC1464C000E21A5 /* ManagedObjectMappingProviderTests.m in Sources */,
+				63C31BF91DD9BBAC00AA51BD /* MessagesConstants.m in Sources */,
 				63F403AA1BD0CB190086D030 /* RequestSignersAssemblyTests.m in Sources */,
 				63F613E21CB111070002AEF0 /* EventRouterTests.m in Sources */,
 				63F613EE1CB111070002AEF0 /* SpeakerInfoPresenterTests.m in Sources */,
@@ -8824,6 +9751,8 @@
 				029358A11DF87FF7007CD5FD /* LocationServiceTests.m in Sources */,
 				2B429A711D4B5305004C005F /* ModelObjectGenerator.m in Sources */,
 				666C5C331D4F2AF6002D73D5 /* ReportsSearchPresenterTests.m in Sources */,
+				63C31BFD1DD9C10900AA51BD /* MessagesAppDelegateTests.m in Sources */,
+				6377140C1DDC8109009FF726 /* MessagesRouterTests.m in Sources */,
 				631CBA3B1C00935300E3EBA8 /* EventServiceTests.m in Sources */,
 				0293589F1DF87EF5007CD5FD /* RamblerLocationViewControllerTests.m in Sources */,
 				63F403B21BD0D4B40086D030 /* ResponseValidatorsAssemblyTests.m in Sources */,
@@ -8831,13 +9760,14 @@
 				9F0A84C31BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m in Sources */,
 				9F1831211BC16195000E21A5 /* RCFResultResponseObjectFormatterTests.m in Sources */,
 				9FAB6A801D54917F0061F333 /* ObjectIndexerBaseTests.m in Sources */,
-				631CBA381C0092C100E3EBA8 /* ApplicationConfiguratorTests.m in Sources */,
 				9F78D7641D59E93B009DDCEA /* SpeakerChangeProviderFetchRequestFactoryTests.m in Sources */,
 				9F1830AB1BC1139B000E21A5 /* RCFParseRequestSignerTests.m in Sources */,
 				63F613D71CB111070002AEF0 /* EventListDataDisplayManagerTests.m in Sources */,
 				63F403AF1BD0D0690086D030 /* ResponseMappersAssemblyTests.m in Sources */,
 				9F1830DF1BC12749000E21A5 /* RCFResponseValidatorTestsBase.m in Sources */,
 				63F403AC1BD0CD460086D030 /* ResponseDeserializersAssemblyTests.m in Sources */,
+				028E44731DF19BA900734E84 /* PredicateConfiguratorTests.m in Sources */,
+				9FF37E151D32373500471B4E /* RamblerLocationInteractorTests.m in Sources */,
 				9FF99E541BC4317E006F15AF /* OperationSchedulerTests.m in Sources */,
 				0293589A1DF87EC9007CD5FD /* RamblerLocationPresenterTests.m in Sources */,
 				9FAB6A7C1D548D2D0061F333 /* EventObjectIndexerTests.m in Sources */,
@@ -8850,7 +9780,9 @@
 				635E18CD1CA6C5E5005B8439 /* StubTestHelper.m in Sources */,
 				9F7B82301D7DABB3002E977A /* QuickActionUserActivityFactoryTests.m in Sources */,
 				631CBA7E1C02140600E3EBA8 /* RamblerLocationModuleAssemblyTests.m in Sources */,
+				63C31C091DDAF1A500AA51BD /* MessagesPresenter.m in Sources */,
 				63F613DF1CB111070002AEF0 /* EventDataDisplayManagerTests.m in Sources */,
+				63EB4DB01DDC742600548D88 /* MessagesInteractorTests.m in Sources */,
 				63F613E81CB111070002AEF0 /* SearchDataDisplayManagerTests.m in Sources */,
 				9F1830C31BC11DE7000E21A5 /* RCFJSONResponseDeserializerTests.m in Sources */,
 				9F0A85221BC185AA006F79FB /* TestErrorChainableOperation.m in Sources */,
@@ -8862,6 +9794,7 @@
 				631CBA731C020CCD00E3EBA8 /* EventCellObjectBuilderFactoryTests.m in Sources */,
 				9F78D7551D59DB89009DDCEA /* ContextStorageImplementationTests.m in Sources */,
 				63F8F2F51BF9FDBF000017F3 /* CompoundOperationBaseTests.m in Sources */,
+				63C31C151DDB126700AA51BD /* MessageExtensionAssembly.m in Sources */,
 				9FAB6A731D53914C0061F333 /* IndexerStateStorageTests.m in Sources */,
 				63F613DE1CB111070002AEF0 /* PastEventCellObjectBuilderTests.m in Sources */,
 				029358991DF87EC9007CD5FD /* RamblerLocationInteractorTests.m in Sources */,
@@ -8869,6 +9802,7 @@
 				9F1830FE1BC14E64000E21A5 /* Conference.xcdatamodeld in Sources */,
 				9F7B823E1D7ECAD9002E977A /* QuickActionLaunchHandlerTests.m in Sources */,
 				63F613E91CB111070002AEF0 /* SearchInteractorTests.m in Sources */,
+				028E44761DF1B81C00734E84 /* SearchFacadeTests.m in Sources */,
 				63F613E11CB111070002AEF0 /* EventPresenterTests.m in Sources */,
 				9F0A85281BC185AA006F79FB /* ResponseValidationOperationTests.m in Sources */,
 				66A1DD321D7E981500998F6B /* TagInteractorTests.m in Sources */,
@@ -8880,12 +9814,28 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		63BDBBCF1D87E3DE006E8A15 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 63BDBBC01D87E3DE006E8A15 /* RamblerMessageExtension */;
+			targetProxy = 63BDBBCE1D87E3DE006E8A15 /* PBXContainerItemProxy */;
+		};
 		9F1F38021BBBB80D00C7797D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9F1F37E31BBBB80D00C7797D /* Conferences */;
 			targetProxy = 9F1F38011BBBB80D00C7797D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		63BDBBC81D87E3DE006E8A15 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63BDBBC91D87E3DE006E8A15 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		2B750D111D362C1B00EACE98 /* Debug */ = {
@@ -8909,6 +9859,82 @@
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Nightly;
+		};
+		63BDBBD11D87E3DE006E8A15 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61435C41E57EED0504F7C502 /* Pods-RamblerMessageExtension.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_ENTITLEMENTS = RamblerMessageExtension/RamblerMessageExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = RamblerMessageExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.ramblerco.rambler.it.extension-imessage";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s";
+			};
+			name = Debug;
+		};
+		63BDBBD21D87E3DE006E8A15 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23EE5826624410C24CDC2BA5 /* Pods-RamblerMessageExtension.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_ENTITLEMENTS = RamblerMessageExtension/RamblerMessageExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = RamblerMessageExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.ramblerco.rambler.it.extension-imessage";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s";
+			};
+			name = Release;
+		};
+		63BDBBD31D87E3DE006E8A15 /* Nightly */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44C28AC5C8513A913FE8B749 /* Pods-RamblerMessageExtension.nightly.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_ENTITLEMENTS = RamblerMessageExtension/RamblerMessageExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = RamblerMessageExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.ramblerco.rambler.it.extension-imessage";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Nightly;
 		};
@@ -8954,7 +9980,7 @@
 		};
 		892D07FD1BED037200825704 /* Nightly */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D62094F1B6ACB6EE592C4E20 /* Pods-Conferences.nightly.xcconfig */;
+			baseConfigurationReference = BB481A1BA0B7D2DBE3750B94 /* Pods-Conferences.nightly.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -8967,6 +9993,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
+				DEVELOPMENT_TEAM = "";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -9007,7 +10034,7 @@
 		};
 		892D07FE1BED037200825704 /* Nightly */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3E1AE6F7E0F77223E5266DC9 /* Pods-Conferences-ConferencesTests.nightly.xcconfig */;
+			baseConfigurationReference = 9AA70B1576B0B702AF66FB4E /* Pods-Conferences-ConferencesTests.nightly.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = UM246WFXVS;
@@ -9111,7 +10138,7 @@
 		};
 		9F1F380A1BBBB80D00C7797D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8324F5E12F2E2C427497BE00 /* Pods-Conferences.debug.xcconfig */;
+			baseConfigurationReference = 1AB36DD96D7739E6F91D7BBE /* Pods-Conferences.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -9125,6 +10152,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
+				DEVELOPMENT_TEAM = "";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -9166,7 +10194,7 @@
 		};
 		9F1F380B1BBBB80D00C7797D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9214F4090FA859CC9B06907E /* Pods-Conferences.release.xcconfig */;
+			baseConfigurationReference = F3A86F78E711F7856679A32A /* Pods-Conferences.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -9179,6 +10207,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
+				DEVELOPMENT_TEAM = "";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -9220,7 +10249,7 @@
 		};
 		9F1F380D1BBBB80D00C7797D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9166896486D6F8D1A801419D /* Pods-Conferences-ConferencesTests.debug.xcconfig */;
+			baseConfigurationReference = 2A1B7FADAB8BA2EA1E9B450D /* Pods-Conferences-ConferencesTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = UM246WFXVS;
@@ -9254,7 +10283,7 @@
 		};
 		9F1F380E1BBBB80D00C7797D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5AB31DDD00BCDD81411ED92C /* Pods-Conferences-ConferencesTests.release.xcconfig */;
+			baseConfigurationReference = 1FC5571A228743BA28853AEA /* Pods-Conferences-ConferencesTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = UM246WFXVS;
@@ -9295,6 +10324,16 @@
 				2B750D111D362C1B00EACE98 /* Debug */,
 				2B750D121D362C1B00EACE98 /* Release */,
 				2B750D131D362C1B00EACE98 /* Nightly */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		63BDBBD41D87E3DE006E8A15 /* Build configuration list for PBXNativeTarget "RamblerMessageExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63BDBBD11D87E3DE006E8A15 /* Debug */,
+				63BDBBD21D87E3DE006E8A15 /* Release */,
+				63BDBBD31D87E3DE006E8A15 /* Nightly */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

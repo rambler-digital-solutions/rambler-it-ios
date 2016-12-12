@@ -54,7 +54,7 @@
  
  Method is used to initiate transition to the speaker info module
  
- @param speakerId 
+ @param speakerId  Speaker identifier
  */
 - (void)openSpeakerInfoModuleWithSpeakerId:(NSString *)speakerId;
 

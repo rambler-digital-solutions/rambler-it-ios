@@ -25,7 +25,7 @@
 
 @interface PreviousEventSectionFooterTableViewCellObject : NSObject <NICellObject>
 
-@property (strong, nonatomic, readonly) UIColor *contentViewColor;
+@property (nonatomic, strong, readonly) UIColor *contentViewColor;
 
 + (instancetype)objectWithEvent:(EventPlainObject *)event;
 

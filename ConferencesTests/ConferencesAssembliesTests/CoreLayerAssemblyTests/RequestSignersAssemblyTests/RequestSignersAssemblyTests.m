@@ -28,7 +28,7 @@
 
 @interface RequestSignersAssemblyTests : RamblerTyphoonAssemblyTests
 
-@property (strong, nonatomic) RequestSignersAssembly *assembly;
+@property (nonatomic, strong) RequestSignersAssembly *assembly;
 
 @end
 

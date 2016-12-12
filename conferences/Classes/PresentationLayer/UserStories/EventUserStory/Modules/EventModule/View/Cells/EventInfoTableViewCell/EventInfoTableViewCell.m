@@ -23,9 +23,9 @@
 
 @interface EventInfoTableViewCell ()
 
-@property (weak, nonatomic) IBOutlet UILabel *date;
-@property (weak, nonatomic) IBOutlet UILabel *eventTitle;
-@property (weak, nonatomic) IBOutlet UILabel *eventSubTitle;
+@property (nonatomic, weak) IBOutlet UILabel *date;
+@property (nonatomic, weak) IBOutlet UILabel *eventTitle;
+@property (nonatomic, weak) IBOutlet UILabel *eventSubTitle;
 
 @end
 

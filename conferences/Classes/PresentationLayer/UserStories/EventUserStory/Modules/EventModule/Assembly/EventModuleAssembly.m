@@ -35,7 +35,7 @@ static NSString *const kEventShareItemType = @"brand";
 
 @interface EventModuleAssembly ()
 
-@property (strong, nonatomic, readonly) EventCellObjectBuilderFactory *eventCellObjectBuilderFactory;
+@property (nonatomic, strong, readonly) EventCellObjectBuilderFactory *eventCellObjectBuilderFactory;
 
 @end
 
@@ -68,6 +68,8 @@ static NSString *const kEventShareItemType = @"brand";
                                                       with:[self.serviceComponents eventStoreService]];
                                 [definition injectProperty:@selector(shareUrlBuilder)
                                                       with:[self eventShareUrlBuilder]];
+                                [definition injectProperty:@selector(locationService)
+                                                      with:[self.serviceComponents ramblerLocationService]];
              }];
 }
 

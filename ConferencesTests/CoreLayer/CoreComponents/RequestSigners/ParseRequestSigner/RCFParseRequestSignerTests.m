@@ -28,7 +28,7 @@ static NSString *const kTestURLPath = @"https://myapi.com/v1/rest";
 
 @interface ParseRequestSignerTests : XCTestCase
 
-@property (strong, nonatomic) ParseRequestSigner *signer;
+@property (nonatomic, strong) ParseRequestSigner *signer;
 
 @end
 

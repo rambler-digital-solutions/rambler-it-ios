@@ -31,9 +31,9 @@
 #import "NITyphoonCellFactory.h"
 @interface LectureDataDisplayManager ()
 
-@property (strong, nonatomic) NITableViewModel *tableViewModel;
-@property (strong, nonatomic) NITableViewActions *tableViewActions;
-@property (strong, nonatomic) LecturePlainObject *lecture;
+@property (nonatomic, strong) NITableViewModel *tableViewModel;
+@property (nonatomic, strong) NITableViewActions *tableViewActions;
+@property (nonatomic, strong) LecturePlainObject *lecture;
 
 @end
 

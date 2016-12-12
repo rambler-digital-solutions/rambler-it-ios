@@ -21,17 +21,18 @@
 #import <UIKit/UIKit.h>
 #import "SearchViewInput.h"
 #import "SearchSuggestTableViewCellActionProtocol.h"
+#import "SearchModuleInput.h"
 
 @protocol SearchViewOutput;
 @class  SearchDataDisplayManager;
 
-@interface SearchViewController : UIViewController <SearchViewInput, SearchSuggestTableViewCellActionProtocol>
+@interface SearchViewController : UIViewController <SearchViewInput, SearchSuggestTableViewCellActionProtocol, SearchModuleInput>
 
 @property (nonatomic, weak) IBOutlet UISearchBar *searchBar;
 @property (nonatomic, weak) IBOutlet UITableView *reportsTableView;
 @property (nonatomic, weak) IBOutlet UIView *searchEmbedContainer;
 
-@property (nonatomic, strong) id<SearchViewOutput> output;
+@property (nonatomic, strong) id<SearchViewOutput, SearchModuleInput> output;
 @property (nonatomic, strong) SearchDataDisplayManager *dataDisplayManager;
 
 @end

@@ -35,7 +35,7 @@ static NSString *const kLastModifiedHeaderKey = @"Date";
 
 @interface LastModifiedMapperOperation ()
 
-@property (nonatomic, strong) NSString *modelObjectId;
+@property (nonatomic, copy) NSString *modelObjectId;
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
 
 @end

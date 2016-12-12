@@ -29,12 +29,12 @@ static CGFloat const kSaveToCalendarButtonBorderWidth = 1.0f;
 
 @interface SignUpAndSaveToCalendarEventTableViewCell ()
 
-@property (weak, nonatomic) IBOutlet UIButton *signUpButton;
-@property (weak, nonatomic) IBOutlet UIButton *saveToCalendarButton;
+@property (nonatomic, weak) IBOutlet UIButton *signUpButton;
+@property (nonatomic, weak) IBOutlet UIButton *saveToCalendarButton;
 
-@property (weak, nonatomic) id <SignUpAndSaveToCalendarEventTableViewCellActionProtocol> actionProxy;
+@property (nonatomic, weak) id <SignUpAndSaveToCalendarEventTableViewCellActionProtocol> actionProxy;
 
-@property (strong, nonatomic) SignUpAndSaveToCalendarEventTableViewCellObject *cellObject;
+@property (nonatomic, strong) SignUpAndSaveToCalendarEventTableViewCellObject *cellObject;
 
 @end
 

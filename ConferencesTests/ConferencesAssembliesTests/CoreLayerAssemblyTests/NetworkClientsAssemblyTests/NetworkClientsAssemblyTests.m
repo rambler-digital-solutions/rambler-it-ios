@@ -29,7 +29,7 @@
 
 @interface NetworkClientsAssemblyTests : RamblerTyphoonAssemblyTests
 
-@property (strong, nonatomic) NetworkClientsAssembly *assembly;
+@property (nonatomic, strong) NetworkClientsAssembly *assembly;
 
 @end
 

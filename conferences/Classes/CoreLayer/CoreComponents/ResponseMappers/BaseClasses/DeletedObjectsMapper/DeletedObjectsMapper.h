@@ -32,9 +32,9 @@
  */
 @interface DeletedObjectsMapper : NSObject <ResponseMapper>
 
-@property (strong, nonatomic) id<ResponseObjectFormatter> deletedResponseFormatter;
-@property (strong, nonatomic, readonly) ManagedObjectMappingProvider *provider;
-@property (strong, nonatomic, readonly) id<EntityNameFormatter> entityNameFormatter;
+@property (nonatomic, strong) id<ResponseObjectFormatter> deletedResponseFormatter;
+@property (nonatomic, strong, readonly) ManagedObjectMappingProvider *provider;
+@property (nonatomic, strong, readonly) id<EntityNameFormatter> entityNameFormatter;
 
 - (instancetype)initWithMappingProvider:(ManagedObjectMappingProvider *)mappingProvider
                 responseObjectFormatter:(id <ResponseObjectFormatter>)responseFormatter

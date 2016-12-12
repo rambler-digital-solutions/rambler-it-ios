@@ -40,6 +40,12 @@
     [self.output didTriggerViewReadyEvent];
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [self.output didTriggerViewWillDisappearEvent];
+}
+
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskPortrait;
 }

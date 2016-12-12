@@ -23,7 +23,7 @@
 
 @interface LectureMaterialTitleTableViewCellObject : NSObject <NICellObject>
 
-@property (strong, nonatomic, readonly) NSString *text;
+@property (nonatomic, strong, readonly) NSString *text;
 
 + (instancetype)objectWithText:(NSString *)text;
 

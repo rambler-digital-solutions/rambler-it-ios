@@ -14,7 +14,7 @@
 		</dict>
 		<dict>
 			<key>FooterText</key>
-			<string>Copyright (c) 2011&#8211;2015 Alamofire Software Foundation (http://alamofire.org/)
+			<string>Copyright (c) 2011–2015 Alamofire Software Foundation (http://alamofire.org/)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -166,7 +166,7 @@ SOFTWARE.
  Software is furnished to do so, subject to the following
  conditions:
  
- * Link to the MagicalRecord Repository at http:/github.com/magicalpanda/magicalrecord in the credits section of your application
+ * Link to the MagicalRecord Repository at https://github.com/magicalpanda/MagicalRecord in the credits section of your application
 
  The above copyright notice and this permission notice shall be
  included in all copies or substantial portions of the Software.
@@ -814,7 +814,7 @@ THE SOFTWARE.
 			<key>FooterText</key>
 			<string>The MIT License (MIT)
 
-Copyright (c) 2013-2016 C&#233;dric Luthi
+Copyright (c) 2013-2016 Cédric Luthi
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

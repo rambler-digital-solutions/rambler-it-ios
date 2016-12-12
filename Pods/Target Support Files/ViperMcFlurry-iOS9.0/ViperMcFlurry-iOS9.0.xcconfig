@@ -1,0 +1,8 @@
+CONFIGURATION_BUILD_DIR = $PODS_CONFIGURATION_BUILD_DIR/ViperMcFlurry-iOS9.0
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/ViperMcFlurry" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AFNetworking" "${PODS_ROOT}/Headers/Public/CocoaLumberjack" "${PODS_ROOT}/Headers/Public/Crashlytics" "${PODS_ROOT}/Headers/Public/CrutchKit" "${PODS_ROOT}/Headers/Public/EasyMapping" "${PODS_ROOT}/Headers/Public/FLAnimatedImage" "${PODS_ROOT}/Headers/Public/Fabric" "${PODS_ROOT}/Headers/Public/MMBarricade" "${PODS_ROOT}/Headers/Public/MagicalRecord" "${PODS_ROOT}/Headers/Public/Nimbus" "${PODS_ROOT}/Headers/Public/OCMock" "${PODS_ROOT}/Headers/Public/PureLayout" "${PODS_ROOT}/Headers/Public/RamblerAppDelegateProxy" "${PODS_ROOT}/Headers/Public/RamblerSegues" "${PODS_ROOT}/Headers/Public/RamblerTyphoonUtils" "${PODS_ROOT}/Headers/Public/SDWebImage" "${PODS_ROOT}/Headers/Public/Typhoon" "${PODS_ROOT}/Headers/Public/UICollectionViewLeftAlignedLayout" "${PODS_ROOT}/Headers/Public/ViperMcFlurry" "${PODS_ROOT}/Headers/Public/XCDYouTubeKit" "${PODS_ROOT}/Headers/Public/libextobjc"
+PODS_BUILD_DIR = $BUILD_DIR
+PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_ROOT = ${SRCROOT}
+PRODUCT_BUNDLE_IDENTIFIER = org.cocoapods.${PRODUCT_NAME:rfc1034identifier}
+SKIP_INSTALL = YES

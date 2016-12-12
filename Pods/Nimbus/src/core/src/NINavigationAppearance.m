@@ -130,7 +130,12 @@ static NSMutableArray* sAppearanceStack = nil;
 - (id)initForNavigationController:(UINavigationController *)navigationController {
   self = [super init];
   if (self) {
-    _statusBarStyle = [[UIApplication sharedApplication] statusBarStyle];
+#   if !defined(NIMBUS_APP_EXTENSIONS)
+      _statusBarStyle = UIStatusBarStyleDefault;
+#   else
+      _statusBarStyle = [[UIApplication sharedApplication] statusBarStyle];
+#   endif /* !defined(NIMBUS_APP_EXTENSIONS) */
+
     _navBarStyle = navigationController.navigationBar.barStyle;
     _navBarTranslucent = navigationController.navigationBar.translucent;
     _navBarTintColor = navigationController.navigationBar.tintColor;
@@ -147,7 +152,11 @@ static NSMutableArray* sAppearanceStack = nil;
 }
 
 - (void)restoreForNavigationController:(UINavigationController *)navigationController animated:(BOOL)animated {
-  [[UIApplication sharedApplication] setStatusBarStyle:self.statusBarStyle animated:animated];
+#   if !defined(NIMBUS_APP_EXTENSIONS)
+    _statusBarStyle = UIStatusBarStyleDefault;
+#   else
+    [[UIApplication sharedApplication] setStatusBarStyle:self.statusBarStyle animated:animated];
+#   endif /* !defined(NIMBUS_APP_EXTENSIONS) */
   navigationController.navigationBar.barStyle = self.navBarStyle;
   navigationController.navigationBar.translucent = self.navBarTranslucent;
   navigationController.navigationBar.tintColor = self.navBarTintColor;

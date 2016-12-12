@@ -31,7 +31,7 @@
 
 @interface OperationFactoriesAssemblyTests : RamblerTyphoonAssemblyTests
 
-@property (strong, nonatomic) OperationFactoriesAssembly *assembly;
+@property (nonatomic, strong) OperationFactoriesAssembly *assembly;
 
 @end
 

@@ -7,7 +7,7 @@
 		<key>RESTPath</key>
 		<string>api</string>
 		<key>RootURL</key>
-		<string>NSURL(http://it.rambler-co.ru)</string>
+		<string>NSURL(https://it.rambler-co.ru)</string>
 	</dict>
 </dict>
 </plist>

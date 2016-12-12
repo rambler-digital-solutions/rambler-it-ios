@@ -28,9 +28,9 @@ static CGFloat const kCurrentVideoTranslationTableViewCellHeight = 60.0f;
 
 @interface CurrentVideoTranslationTableViewCell ()
 
-@property (weak, nonatomic) IBOutlet UIButton *currentTranslationButton;
+@property (nonatomic, weak) IBOutlet UIButton *currentTranslationButton;
 
-@property (weak, nonatomic) id <CurrentVideoTranslationTableViewCellActionProtocol> actionProxy;
+@property (nonatomic, weak) id <CurrentVideoTranslationTableViewCellActionProtocol> actionProxy;
 
 @end
 

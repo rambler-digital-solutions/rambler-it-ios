@@ -62,6 +62,6 @@
  
  @return UIColor
  */
-- (UIColor *)obtainColorForPageWithNumber:(NSUInteger)pageNumber;
+- (UIColor *)obtainColorForPageWithNumber:(NSInteger)pageNumber;
 
 @end

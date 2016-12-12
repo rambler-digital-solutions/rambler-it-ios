@@ -37,8 +37,13 @@ NI_FIX_CATEGORY_BUG(UIResponderNimbusCore)
  */
 + (instancetype)nimbus_currentFirstResponder {
   sCurrentFirstResponder = nil;
-  [[UIApplication sharedApplication] sendAction:@selector(nimbus_findFirstResponder:)
-                                             to:nil from:nil forEvent:nil];
+#   if !defined(NIMBUS_APP_EXTENSIONS)
+
+#   else
+    [[UIApplication sharedApplication] sendAction:@selector(nimbus_findFirstResponder:)
+                                               to:nil from:nil forEvent:nil];
+#   endif /* !defined(NIMBUS_APP_EXTENSIONS) */
+
   return sCurrentFirstResponder;
 }
 

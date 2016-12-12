@@ -25,9 +25,9 @@
 
 @interface EventInfoTableViewCellObject ()
 
-@property (strong, nonatomic, readwrite) NSString *date;
-@property (strong, nonatomic, readwrite) NSString *eventTitle;
-@property (strong, nonatomic, readwrite) NSString *eventSubTitle;
+@property (nonatomic, strong, readwrite) NSString *date;
+@property (nonatomic, strong, readwrite) NSString *eventTitle;
+@property (nonatomic, strong, readwrite) NSString *eventSubTitle;
 
 @end
 

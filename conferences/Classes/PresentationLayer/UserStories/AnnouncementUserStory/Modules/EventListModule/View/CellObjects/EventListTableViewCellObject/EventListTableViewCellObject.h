@@ -25,11 +25,11 @@
 
 @interface EventListTableViewCellObject : NSObject <NICellObject>
 
-@property (strong, nonatomic, readonly) NSString *eventTitle;
-@property (strong, nonatomic, readonly) NSURL *imageUrl;
-@property (strong, nonatomic, readonly) NSString *date;
-@property (strong, nonatomic, readonly) NSString *time;
-@property (strong, nonatomic, readonly) EventPlainObject *event;
+@property (nonatomic, strong, readonly) NSString *eventTitle;
+@property (nonatomic, strong, readonly) NSURL *imageUrl;
+@property (nonatomic, strong, readonly) NSString *date;
+@property (nonatomic, strong, readonly) NSString *time;
+@property (nonatomic, strong, readonly) EventPlainObject *event;
 @property (assign, nonatomic, readonly) BOOL customBackgroundFlag;
 
 + (instancetype)objectWithEvent:(EventPlainObject *)event

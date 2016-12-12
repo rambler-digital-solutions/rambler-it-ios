@@ -50,3 +50,4 @@
 "EventAlreadyStoredInCalendarErrorDescription" = "Событие уже существует в календаре.";
 
 "UberAuthErrorMessage" = "В процессе авторизации произошла ошибка. Возможно, у Вас установлена старая версия приложения Uber";
+"kRamblerOfficeName" = "Rambler&Co";

@@ -25,6 +25,10 @@
 #import "EXTScope.h"
 #import "MapLinkBuilder.h"
 #import "LocationService.h"
+#import "LocalizedStrings.h"
+#import "ApplicationConstants.h"
+#import <MapKit/MapKit.h>
+#import <Contacts/Contacts.h>
 
 @implementation RamblerLocationInteractor
 
@@ -68,6 +72,22 @@
             [self.output rideParametersDidLoad:parameters];
         }
     }];
+}
+
+- (NSUserActivity *)registerUserActivity {
+    NSUserActivity *activity = [[NSUserActivity alloc] initWithActivityType:kLocationUserActivityType];
+    
+    CLLocationCoordinate2D coordinates = [self.locationService obtainRamblerCoordinates];
+    MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:coordinates
+                                                   addressDictionary: @{CNPostalAddressStreetKey : RCLocalize(kRamblerOfficeName)}];
+    activity.mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
+    [activity becomeCurrent];
+    
+    return activity;
+}
+
+- (void)unregisterUserActivity:(NSUserActivity *)activity {
+    [activity resignCurrent];
 }
 
 @end

@@ -26,8 +26,8 @@
 
 @interface RequestSigningOperationTests : ChainableOperationTestsBase
 
-@property (strong, nonatomic) RequestSigningOperation *operation;
-@property (strong, nonatomic) id mockRequestSigner;
+@property (nonatomic, strong) RequestSigningOperation *operation;
+@property (nonatomic, strong) id mockRequestSigner;
 
 @end
 

@@ -31,6 +31,6 @@
 @interface TagCollectionViewCell : UICollectionViewCell <NICollectionViewCell>
 
 @property (nonatomic, weak) IBOutlet UILabel *tagLabel;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *trailingTagLabelConstraint;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *trailingTagLabelConstraint;
 
 @end

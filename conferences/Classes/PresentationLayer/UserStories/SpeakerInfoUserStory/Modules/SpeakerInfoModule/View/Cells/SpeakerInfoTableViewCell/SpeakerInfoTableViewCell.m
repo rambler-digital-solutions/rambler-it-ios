@@ -21,7 +21,7 @@
 
 @interface SpeakerInfoTableViewCell ()
 
-@property (weak, nonatomic) IBOutlet UILabel *speakerDescription;
+@property (nonatomic, weak) IBOutlet UILabel *speakerDescription;
 
 @end
 

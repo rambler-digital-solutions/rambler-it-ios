@@ -29,7 +29,7 @@
 
 @interface PresentationLayerHelpersAssemblyTests : RamblerTyphoonAssemblyTests
 
-@property (strong, nonatomic) PresentationLayerHelpersAssembly *assembly;
+@property (nonatomic, strong) PresentationLayerHelpersAssembly *assembly;
 
 @end
 

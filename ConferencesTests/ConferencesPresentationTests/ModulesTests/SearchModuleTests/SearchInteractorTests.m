@@ -37,12 +37,12 @@ typedef void (^ProxyBlock)(NSInvocation *);
 
 @interface SearchInteractorTests : XCTestCase
 
-@property (strong, nonatomic) SearchInteractor *interactor;
-@property (strong, nonatomic) EventTypeDeterminator *mockEventTypeDeterminator;
-@property (strong, nonatomic) id <SearchInteractorOutput> mockOutput;
-@property (strong, nonatomic) id <EventService> mockEventService;
-@property (strong, nonatomic) id mockSuggestService;
-@property (strong, nonatomic) id <ROSPonsomizer> mockPonsomizer;
+@property (nonatomic, strong) SearchInteractor *interactor;
+@property (nonatomic, strong) EventTypeDeterminator *mockEventTypeDeterminator;
+@property (nonatomic, strong) id <SearchInteractorOutput> mockOutput;
+@property (nonatomic, strong) id <EventService> mockEventService;
+@property (nonatomic, strong) id mockSuggestService;
+@property (nonatomic, strong) id <ROSPonsomizer> mockPonsomizer;
 
 @end
 

@@ -37,9 +37,11 @@
  
  Method is used to configure ReportsSearchModule
  
+ @param searchString Search string
  @param moduleOutput Report list presenter
  */
-- (void)configureReportsSearchModuleWithModuleOutput:(id<ReportsSearchModuleOutput>)moduleOutput;
+- (void)configureReportsSearchModuleWithSearchTerm:(NSString *)searchString
+                                      moduleOutput:(id<ReportsSearchModuleOutput>)moduleOutput;
 
 @end
 

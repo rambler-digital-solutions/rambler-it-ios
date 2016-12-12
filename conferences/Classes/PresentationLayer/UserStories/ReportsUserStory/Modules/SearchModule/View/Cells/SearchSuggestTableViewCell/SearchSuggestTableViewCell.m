@@ -29,7 +29,7 @@ static CGFloat const kSearchSuggestTableViewCellHeight = 44.0f;
 
 @interface SearchSuggestTableViewCell ()
 
-@property (nonatomic, strong) NSString *suggest;
+@property (nonatomic, copy) NSString *suggest;
 
 @end
 

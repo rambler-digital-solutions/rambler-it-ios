@@ -23,12 +23,13 @@
 #import "SearchInteractorOutput.h"
 #import "ReportsSearchModuleOutput.h"
 #import "ReportsSearchModuleInput.h"
+#import "SearchModuleInput.h"
 
 @protocol SearchViewInput;
 @protocol SearchInteractorInput;
 @protocol SearchRouterInput;
 
-@interface SearchPresenter : NSObject<SearchViewOutput,SearchInteractorOutput, ReportsSearchModuleOutput>
+@interface SearchPresenter : NSObject<SearchViewOutput, SearchInteractorOutput, ReportsSearchModuleOutput, SearchModuleInput>
 
 @property (nonatomic, weak) id<SearchViewInput> view;
 @property (nonatomic, strong) id<SearchInteractorInput>  interactor;

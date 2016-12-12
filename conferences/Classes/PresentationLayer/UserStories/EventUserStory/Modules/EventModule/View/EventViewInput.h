@@ -40,8 +40,8 @@
  
  Method shows alert with title and message
  
- @param title
- @param message 
+ @param title   Alert title
+ @param message Alert message
  */
 - (void)displayAlertWithTitle:(NSString *)title andMessage:(NSString *)message;
 

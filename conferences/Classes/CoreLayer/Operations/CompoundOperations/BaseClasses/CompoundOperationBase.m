@@ -26,7 +26,7 @@ static NSUInteger const DefaultMaxConcurrentOperationsCount = 3;
 
 @interface CompoundOperationBase ()
 
-@property (strong, nonatomic) NSOperationQueue *queue;
+@property (nonatomic, strong) NSOperationQueue *queue;
 
 @end
 

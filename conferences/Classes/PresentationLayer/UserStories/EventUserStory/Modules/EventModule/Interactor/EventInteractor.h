@@ -27,12 +27,14 @@
 @protocol ROSPonsomizer;
 @protocol ShareUrlBuilder;
 @protocol EventStoreServiceProtocol;
+@protocol RamblerLocationService;
 @class EventTypeDeterminator;
 
 @interface EventInteractor : NSObject<EventInteractorInput>
 
 @property (nonatomic, weak) id<EventInteractorOutput> output;
 @property (nonatomic, strong) id <EventService> eventService;
+@property (nonatomic, strong) id <RamblerLocationService> locationService;
 @property (nonatomic, strong) EventTypeDeterminator *eventTypeDeterminator;
 @property (nonatomic, strong) id <EventStoreServiceProtocol> eventStoreService;
 @property (nonatomic, strong) id <ROSPonsomizer> ponsomizer;

@@ -34,7 +34,7 @@
 
 @interface ServiceComponentsAssemblyTests : RamblerTyphoonAssemblyTests
 
-@property (strong, nonatomic) ServiceComponentsAssembly *assembly;
+@property (nonatomic, strong) ServiceComponentsAssembly *assembly;
 
 @end
 

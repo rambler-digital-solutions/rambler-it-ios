@@ -21,8 +21,8 @@
 
 @interface SpeakerInfoSocialContactsTableViewCell ()
 
-@property (weak, nonatomic) IBOutlet UIImageView *socailNetworkIcon;
-@property (weak, nonatomic) IBOutlet UILabel *socialNetworkName;
+@property (nonatomic, weak) IBOutlet UIImageView *socailNetworkIcon;
+@property (nonatomic, weak) IBOutlet UILabel *socialNetworkName;
 
 
 @end

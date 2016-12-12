@@ -39,7 +39,7 @@
 
 @interface ManagedObjectMapperTests : XCTestCase
 
-@property (strong, nonatomic) ManagedObjectMapper *mapper;
+@property (nonatomic, strong) ManagedObjectMapper *mapper;
 
 @end
 

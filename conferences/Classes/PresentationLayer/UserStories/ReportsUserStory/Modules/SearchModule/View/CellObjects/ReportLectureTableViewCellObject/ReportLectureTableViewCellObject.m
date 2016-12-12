@@ -31,7 +31,7 @@
 @property (nonatomic, strong, readwrite) NSAttributedString *tags;
 @property (nonatomic, strong, readwrite) NSURL *imageURL;
 @property (nonatomic, strong, readwrite) LecturePlainObject *lecture;
-@property (nonatomic, strong, readwrite) NSString *speakerName;
+@property (nonatomic, copy, readwrite) NSAttributedString *speakerName;
 
 @end
 
@@ -42,7 +42,7 @@
 - (instancetype)initWithLecture:(LecturePlainObject *)lecture
                  attributedName:(NSAttributedString *)attributedName
                            tags:(NSAttributedString *)tags
-                    speakerName:(NSString *)speakerName
+                    speakerName:(NSAttributedString *)speakerName
                        imageURL:(NSURL *)imageURL {
     self = [super init];
     if (self) {
@@ -59,14 +59,14 @@
 
 + (instancetype)objectWithLecture:(LecturePlainObject *)lecture
                              tags:(NSAttributedString *)tags
+                      speakerName:(NSAttributedString *)highlightedSpeakerName
                   highlightedText:(NSAttributedString *)highlightedText {
     
-    NSString *speakerName = [lecture speaker].name;
     NSURL *lectureImageURL = [NSURL URLWithString:[lecture speaker].imageUrl];
     return [[self alloc] initWithLecture:lecture
                           attributedName:highlightedText
                                     tags:tags
-                             speakerName:speakerName
+                             speakerName:highlightedSpeakerName
                                 imageURL:lectureImageURL];
 }
 

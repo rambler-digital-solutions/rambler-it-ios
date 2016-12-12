@@ -39,7 +39,7 @@
 
 @interface RamblerLocationModuleAssemblyTests : RamblerTyphoonAssemblyTests
 
-@property (strong, nonatomic) RamblerLocationModuleAssembly *assembly;
+@property (nonatomic, strong) RamblerLocationModuleAssembly *assembly;
 
 @end
 

@@ -25,7 +25,7 @@
 
 @interface SpeakerShortInfoInteractor : NSObject<SpeakerShortInfoInteractorInput>
 
-@property (weak, nonatomic) id<SpeakerShortInfoInteractorOutput> output;
+@property (nonatomic, weak) id<SpeakerShortInfoInteractorOutput> output;
 
 @end
 

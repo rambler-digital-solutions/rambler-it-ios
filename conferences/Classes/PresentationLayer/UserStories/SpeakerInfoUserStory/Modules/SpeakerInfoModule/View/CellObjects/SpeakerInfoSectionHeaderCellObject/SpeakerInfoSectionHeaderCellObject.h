@@ -21,7 +21,7 @@
 
 @interface SpeakerInfoSectionHeaderCellObject : NSObject <NICellObject>
 
-@property (nonatomic, strong) NSString *text;
+@property (nonatomic, copy) NSString *text;
 
 + (instancetype)objectWithText:(NSString *)text;
 

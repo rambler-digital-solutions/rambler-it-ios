@@ -103,7 +103,9 @@ static NSString *const kEventListName = @"kEventListName";
     EventListQuery *eventListQuery = [EventListQuery new];
     
     NSTimeInterval interval = [modelObject.lastModifiedDate timeIntervalSince1970];
-    eventListQuery.lastModifiedString = [NSString stringWithFormat:@"%d",(int)interval];
+    if (interval != 0) {
+        eventListQuery.lastModifiedString = [NSString stringWithFormat:@"%d",(int)interval];
+    }
     
     return eventListQuery;
 }

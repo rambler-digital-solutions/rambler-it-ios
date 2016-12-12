@@ -30,7 +30,7 @@
 
 @interface EventDataDisplayManagerTests : XCTestCase
 
-@property (strong, nonatomic) EventDataDisplayManager *dataDisplayManager;
+@property (nonatomic, strong) EventDataDisplayManager *dataDisplayManager;
 
 @end
 

@@ -30,7 +30,7 @@ static const int ddLogLevel = DDLogFlagVerbose;
 
 @interface NetworkOperation ()
 
-@property (strong, nonatomic) id<NetworkClient> networkClient;
+@property (nonatomic, strong) id<NetworkClient> networkClient;
 
 @end
 

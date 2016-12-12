@@ -25,8 +25,8 @@
 
 @interface ResponseDeserializationOperationTests : ChainableOperationTestsBase
 
-@property (strong, nonatomic) ResponseDeserializationOperation *operation;
-@property (strong, nonatomic) id mockResponseDeserializer;
+@property (nonatomic, strong) ResponseDeserializationOperation *operation;
+@property (nonatomic, strong) id mockResponseDeserializer;
 
 @end
 

@@ -30,11 +30,11 @@
 
 @interface ReportSpeakerTableViewCellObject : NSObject <NICellObject>
 
-@property (strong, nonatomic, readonly) NSAttributedString *speakerName;
-@property (strong, nonatomic, readonly) NSString *company;
-@property (strong, nonatomic, readonly) UIImage *speakerImage;
-@property (strong, nonatomic, readonly) NSURL *imageURL;
-@property (strong, nonatomic, readonly) SpeakerPlainObject *speaker;
+@property (nonatomic, strong, readonly) NSAttributedString *speakerName;
+@property (nonatomic, strong, readonly) NSString *company;
+@property (nonatomic, strong, readonly) UIImage *speakerImage;
+@property (nonatomic, strong, readonly) NSURL *imageURL;
+@property (nonatomic, strong, readonly) SpeakerPlainObject *speaker;
 
 + (instancetype)objectWithSpeaker:(SpeakerPlainObject *)speaker highlightedText:(NSAttributedString *)highlightedText;
 

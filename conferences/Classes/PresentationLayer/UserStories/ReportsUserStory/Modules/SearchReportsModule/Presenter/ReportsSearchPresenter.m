@@ -23,13 +23,24 @@
 #import "LecturePlainObject.h"
 #import "SpeakerPlainObject.h"
 
+@interface ReportsSearchPresenter ()
+
+@property (nonatomic, copy) NSString *searchString;
+
+@end
+
 @implementation ReportsSearchPresenter
+
+- (void)configureReportsSearchModuleWithSearchTerm:(NSString *)searchString {
+    self.searchString = searchString;
+}
 
 #pragma mark - ReportsSearchViewOutput
 
 - (void)setupView {
     [self.moduleOutput didLoadReportsSearchModuleInput:self];
     [self.view setupView];
+    [self updateModuleWithSearchTerm:self.searchString];
 }
 
 - (void)didTriggerTapCellWithEvent:(EventPlainObject *)event {

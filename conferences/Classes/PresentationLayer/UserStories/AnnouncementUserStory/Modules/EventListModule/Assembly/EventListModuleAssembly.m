@@ -29,6 +29,7 @@
 #import "PonsomizerAssembly.h"
 #import "EventListCellObjectBuilder.h"
 #import "UIView+LJLoadFromNib.h"
+#import "EventListProcessor.h"
 
 @implementation EventListModuleAssembly
 
@@ -53,6 +54,8 @@
                                                     with:[self.serviceComponents eventService]];
                                 [definition injectProperty:@selector(ponsomizer)
                                                       with:[self.coreAssembly ponsomizer]];
+                                [definition injectProperty:@selector(processor)
+                                                      with:[self eventListProcessor]];
              }];
 }
 
@@ -90,6 +93,10 @@
                               [definition injectProperty:@selector(dateFormatter)
                                                     with:[self.presentationLayerHelpersAssembly dateFormatter]];
                           }];
+}
+
+- (EventListProcessor *)eventListProcessor {
+    return [TyphoonDefinition withClass:[EventListProcessor class]];
 }
 
 @end

@@ -27,10 +27,10 @@
  */
 @interface EventGalleryEventCollectionViewCell : UICollectionViewCell <NICollectionViewCell>
 
-@property (weak, nonatomic) IBOutlet UILabel *eventTitleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *eventDescriptionLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *eventLogoImageView;
-@property (weak, nonatomic) IBOutlet UILabel *eventTimeLabel;
-@property (weak, nonatomic) IBOutlet UILabel *eventDateLabel;
+@property (nonatomic, weak) IBOutlet UILabel *eventTitleLabel;
+@property (nonatomic, weak) IBOutlet UILabel *eventDescriptionLabel;
+@property (nonatomic, weak) IBOutlet UIImageView *eventLogoImageView;
+@property (nonatomic, weak) IBOutlet UILabel *eventTimeLabel;
+@property (nonatomic, weak) IBOutlet UILabel *eventDateLabel;
 
 @end

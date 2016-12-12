@@ -25,7 +25,7 @@ static CGFloat const TableViewCellWithTextLabelHeight = 44.0f;
 
 @interface LectureMaterialTitleTableViewCell ()
 
-@property (weak, nonatomic) IBOutlet UILabel *label;
+@property (nonatomic, weak) IBOutlet UILabel *label;
 
 @end
 

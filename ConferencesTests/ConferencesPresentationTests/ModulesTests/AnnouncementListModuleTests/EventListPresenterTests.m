@@ -29,10 +29,10 @@
 
 @interface EventListPresenterTests : XCTestCase
 
-@property (strong, nonatomic) EventListPresenter *presenter;
-@property (strong, nonatomic) id <EventListInteractorInput> mockInteractor;
-@property (strong, nonatomic) id <EventListViewInput> mockView;
-@property (strong, nonatomic) id <EventListRouterInput> mockRouter;
+@property (nonatomic, strong) EventListPresenter *presenter;
+@property (nonatomic, strong) id <EventListInteractorInput> mockInteractor;
+@property (nonatomic, strong) id <EventListViewInput> mockView;
+@property (nonatomic, strong) id <EventListRouterInput> mockRouter;
 
 @end
 

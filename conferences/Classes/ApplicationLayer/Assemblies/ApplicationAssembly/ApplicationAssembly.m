@@ -48,7 +48,9 @@
                                                                               [self uberRidesAppDelegate],
                                                                               [self cleanStartAppDelegate],
                                                                               [self.launchSystemAssembly spotlightAppDelegate],
-                                                                              [self.launchSystemAssembly quickActionAppDelegate]
+                                                                              [self.launchSystemAssembly quickActionAppDelegate],
+                                                                              [self.launchSystemAssembly messagesAppDelegate],
+                                                                              [self.launchSystemAssembly spotlightContinuationAppDelegate]
                                                                               ]
                                                                               ];
                                             }];
@@ -85,6 +87,8 @@
                           configuration:^(TyphoonDefinition *definition) {
                               [definition injectProperty:@selector(eventService)
                                                     with:[self.serviceComponents eventService]];
+                              [definition injectProperty:@selector(fileManager)
+                                                    with:[self.systemInfrastructureAssembly fileManager]];
                           }];
 }
 

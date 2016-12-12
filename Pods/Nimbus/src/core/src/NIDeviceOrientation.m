@@ -44,7 +44,12 @@ BOOL NIIsSupportedOrientation(UIInterfaceOrientation orientation) {
 }
 
 UIInterfaceOrientation NIInterfaceOrientation(void) {
-  UIInterfaceOrientation orient = [UIApplication sharedApplication].statusBarOrientation;
+#   if !defined(NIMBUS_APP_EXTENSIONS)
+    UIInterfaceOrientation orient = UIDeviceOrientationPortrait;
+#   else
+    UIInterfaceOrientation orient = [UIApplication sharedApplication].statusBarOrientation;
+#   endif /* !defined(NIMBUS_APP_EXTENSIONS) */
+
 
   // This code used to use the Three20 navigator to find the currently visible view controller and
   // fall back to checking its orientation if we didn't know the status bar's orientation.

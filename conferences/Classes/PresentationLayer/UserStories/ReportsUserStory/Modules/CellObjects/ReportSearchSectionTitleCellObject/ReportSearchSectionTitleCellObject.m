@@ -23,8 +23,8 @@
 
 @interface ReportSearchSectionTitleCellObject ()
 
-@property (strong, nonatomic, readwrite) NSString *sectionTitle;
-@property (strong, nonatomic, readwrite) UIColor *backgroundColorSection;
+@property (nonatomic, strong, readwrite) NSString *sectionTitle;
+@property (nonatomic, strong, readwrite) UIColor *backgroundColorSection;
 
 @end
 

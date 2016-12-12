@@ -19,16 +19,45 @@
 // THE SOFTWARE.
 
 #import "ApplicationConfiguratorImplementation.h"
+#import "MessagesConstants.h"
 
 #import <MagicalRecord/MagicalRecord.h>
-
-static NSString * const kRCFCoreDataStoreName = @"Conference";
 
 @implementation ApplicationConfiguratorImplementation
 
 - (void)setupCoreDataStack {
-    [MagicalRecord setupAutoMigratingCoreDataStack];
+    if ([self shouldMigrateCoreData]) {
+        [self migrateStore];
+    } else {
+        NSURL *directory = [self.fileManager containerURLForSecurityApplicationGroupIdentifier:RCFAppGroupIdentifier];
+        NSURL *storeURL = [directory URLByAppendingPathComponent:RCFCoreDataNameKey];
+        [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreAtURL:storeURL];
+    }
 }
+
+- (BOOL)shouldMigrateCoreData {
+    NSString *oldStoreName = [MagicalRecord defaultStoreName];
+    return [[NSFileManager defaultManager] fileExistsAtPath:oldStoreName];
+}
+
+- (void)migrateStore {
+    NSString *oldStoreName = [MagicalRecord defaultStoreName];
+    NSPersistentStoreCoordinator *coordinator = [NSPersistentStoreCoordinator MR_coordinatorWithSqliteStoreNamed:oldStoreName];
+    // grab the current store
+    NSPersistentStore *currentStore = coordinator.persistentStores.lastObject;
+    // create a new URL
+    NSURL *directory = [self.fileManager containerURLForSecurityApplicationGroupIdentifier:RCFAppGroupIdentifier];
+    NSURL *newStoreURL = [directory URLByAppendingPathComponent:RCFCoreDataNameKey];
+
+    // migrate current store to new URL
+    [coordinator migratePersistentStore:currentStore
+                                  toURL:newStoreURL
+                                options:nil
+                               withType:NSSQLiteStoreType
+                                  error:nil];
+    [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreAtURL:newStoreURL];
+}
+
 
 - (void)configureInitialSettings {
     [[UITabBar appearance] setTintColor:[UIColor blackColor]];
