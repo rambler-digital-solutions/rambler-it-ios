@@ -26,13 +26,10 @@
 #import "RamblerLocationViewInput.h"
 #import "RamblerLocationInteractorInput.h"
 #import "RamblerLocationRouterInput.h"
-<<<<<<< HEAD
 #import "MockObjectsFactory.h"
+#import "RamblerLocationStateStorage.h"
 
 #import <UberRides/UberRides.h>
-=======
-#import "RamblerLocationStateStorage.h"
->>>>>>> develop
 
 @interface RamblerLocationPresenterTests : XCTestCase
 

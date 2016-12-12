@@ -27,6 +27,8 @@
 #import "LocationService.h"
 #import "LocalizedStrings.h"
 #import "ApplicationConstants.h"
+
+#import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 #import <Contacts/Contacts.h>
 
@@ -77,7 +79,7 @@
 - (NSUserActivity *)registerUserActivity {
     NSUserActivity *activity = [[NSUserActivity alloc] initWithActivityType:kLocationUserActivityType];
     
-    CLLocationCoordinate2D coordinates = [self.locationService obtainRamblerCoordinates];
+    CLLocationCoordinate2D coordinates = [self.ramblerLocationService obtainRamblerCoordinates];
     MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:coordinates
                                                    addressDictionary: @{CNPostalAddressStreetKey : RCLocalize(kRamblerOfficeName)}];
     activity.mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];

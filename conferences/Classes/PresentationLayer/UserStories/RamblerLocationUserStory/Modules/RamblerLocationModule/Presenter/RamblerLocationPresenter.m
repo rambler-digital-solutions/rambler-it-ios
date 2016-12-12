@@ -23,6 +23,7 @@
 #import "RamblerLocationInteractorInput.h"
 #import "RamblerLocationRouterInput.h"
 #import "LocalizedStrings.h"
+#import "RamblerLocationStateStorage.h"
 
 @implementation RamblerLocationPresenter
 

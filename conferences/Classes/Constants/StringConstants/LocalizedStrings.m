@@ -64,7 +64,6 @@ NSString *const OKAlertActionTitle = @"OKAlertActionTitle";
 
 NSString * const EventAlreadyStoredInCalendarErrorDescription = @"EventAlreadyStoredInCalendarErrorDescription";
 NSString * const kUberAuthErrorMessage = @"UberAuthErrorMessage";
-NSString *const EventAlreadyStoredInCalendarErrorDescription = @"EventAlreadyStoredInCalendarErrorDescription";
 
 #pragma mark - Location module
 
