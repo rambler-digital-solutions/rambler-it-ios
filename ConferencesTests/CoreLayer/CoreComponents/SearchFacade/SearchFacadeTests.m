@@ -46,10 +46,10 @@
     [super setUp];
     
     self.searchFacade = [SearchFacadeImplementation new];
-    self.mockEventService = OCMProtocolMock(@protocol(EventService));
-    self.mockSpeakerService = OCMProtocolMock(@protocol(SpeakerService));
-    self.mockLectureService = OCMProtocolMock(@protocol(LectureService));
-    self.mockPonsomizer = OCMProtocolMock(@protocol(ROSPonsomizer));
+    self.mockEventService = OCMStrictProtocolMock(@protocol(EventService));
+    self.mockSpeakerService = OCMStrictProtocolMock(@protocol(SpeakerService));
+    self.mockLectureService = OCMStrictProtocolMock(@protocol(LectureService));
+    self.mockPonsomizer = OCMStrictProtocolMock(@protocol(ROSPonsomizer));
     
     self.searchFacade.eventService = self.mockEventService;
     self.searchFacade.speakerService = self.mockSpeakerService;
@@ -58,8 +58,8 @@
 }
 
 - (void)tearDown {
-    
     self.searchFacade = nil;
+    
     self.mockEventService = nil;
     self.mockSpeakerService = nil;
     self.mockLectureService = nil;
@@ -82,7 +82,9 @@
     NSArray *eventsArray = [self.searchFacade eventsForPredicates:OCMOCK_ANY];
     
     // then
-    XCTAssertEqual(eventsArray, expectedEventsArray);
+    OCMVerify([self.mockEventService obtainEventsWithPredicate:OCMOCK_ANY]);
+    OCMVerify([self.mockPonsomizer convertObject:notPonsoObjectsArray]);
+    XCTAssertEqualObjects(eventsArray, expectedEventsArray);
 }
 
 - (void)testSuccessObtainSpeakers {
@@ -99,7 +101,9 @@
     NSArray *speakersArray = [self.searchFacade speakersForPredicates:OCMOCK_ANY];
     
     // then
-    XCTAssertEqual(speakersArray, expectedSpeakersArray);
+    OCMVerify([self.mockSpeakerService obtainSpeakerWithPredicate:OCMOCK_ANY]);
+    OCMVerify([self.mockPonsomizer convertObject:notPonsoObjectsArray]);
+    XCTAssertEqualObjects(speakersArray, expectedSpeakersArray);
 }
 
 - (void)testSuccessObtainLectures {
@@ -116,7 +120,9 @@
     NSArray *lecturesArray = [self.searchFacade lecturesForPredicates:OCMOCK_ANY];
     
     // then
-    XCTAssertEqual(lecturesArray, expectedLecturesArray);
+    OCMVerify([self.mockLectureService obtainLectureWithPredicate:OCMOCK_ANY]);
+    OCMVerify([self.mockPonsomizer convertObject:notPonsoObjectsArray]);
+    XCTAssertEqualObjects(lecturesArray, expectedLecturesArray);
 }
 
 @end
