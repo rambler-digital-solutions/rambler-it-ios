@@ -21,8 +21,18 @@
 #import <Foundation/Foundation.h>
 #import "TestableObjectWithDelegate.h"
 
+/**
+ @author Surik Sarkisyan
+ 
+ Class designated to test UBSDKRideRequestViewController's delegate
+ */
 @interface UberRidesModalTestableObject : TestableObjectWithDelegate
 
+/**
+ @author Surik Sarkisyan
+ 
+ Method returns rideRequestViewController - modalRideRequestViewController's property
+ */
 - (id)rideRequestViewController;
 
 @end
