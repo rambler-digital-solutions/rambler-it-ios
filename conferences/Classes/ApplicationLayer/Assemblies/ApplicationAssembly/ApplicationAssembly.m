@@ -33,6 +33,9 @@
 #import "CleanLaunchRouter.h"
 #import "CleanLaunchAppDelegate.h"
 #import "ServiceComponents.h"
+#import "SpotlightImageIndexer.h"
+#import "EventImageIndexer.h"
+#import "SpeakerImageIndexer.h"
 
 #import <RamblerAppDelegateProxy/RamblerAppDelegateProxy.h>
 
@@ -71,6 +74,8 @@
                                                     with:[self.spotlightIndexerAssembly spotlightCoreDataStackCoordinator]];
                               [definition injectProperty:@selector(quickActionDaemon)
                                                     with:[self.daemonAssembly quickActionDaemon]];
+                              [definition injectProperty:@selector(imageIndexer)
+                                                    with:[self spotlightImageIndexer]];
                               
                               definition.scope = TyphoonScopeSingleton;
                           }];
@@ -88,6 +93,25 @@
 
 - (id <ThirdPartiesConfigurator>)thirdPartiesConfigurator {
     return [TyphoonDefinition withClass:[ThirdPartiesConfiguratorImplementation class]];
+}
+
+- (SpotlightImageIndexer *)spotlightImageIndexer{
+    return [TyphoonDefinition withClass:[SpotlightImageIndexer class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(indexers)
+                                                    with:@[
+                                                           [self eventImageIndexer],
+                                                           [self speakerImageIndexer]
+                                                           ]];
+                          }];
+}
+
+- (SpeakerImageIndexer *)speakerImageIndexer {
+    return [TyphoonDefinition withClass:[SpeakerImageIndexer class]];
+}
+
+- (EventImageIndexer *)eventImageIndexer {
+    return [TyphoonDefinition withClass:[EventImageIndexer class]];
 }
 
 #pragma mark - StartUpSystem

@@ -23,7 +23,7 @@
 #import "LectureModelObject.h"
 #import "TagModelObject.h"
 #import "SpotlightIndexerConstants.h"
-
+#import "SpeakerModelObject.h"
 #import <CoreSpotlight/CoreSpotlight.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 
@@ -39,7 +39,7 @@
     CSSearchableItemAttributeSet *attributeSet = [[CSSearchableItemAttributeSet alloc] initWithItemContentType:(NSString *)kUTTypeJSON];
     attributeSet.title = object.name;
     attributeSet.contentDescription = object.lectureDescription;
-    
+    attributeSet.thumbnailURL = [NSURL URLWithString:object.speaker.imageUrl];
     NSArray *keywords = [self generateKeywordsForLecture:object];
     attributeSet.keywords = keywords;
     
@@ -62,7 +62,6 @@
             [keywords addObject:tag.name];
         }
     }
-    
     return [keywords copy];
 }
 

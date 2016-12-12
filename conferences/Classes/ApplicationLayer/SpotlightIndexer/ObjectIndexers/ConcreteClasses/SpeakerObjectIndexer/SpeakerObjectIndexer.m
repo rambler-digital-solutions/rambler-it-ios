@@ -22,9 +22,9 @@
 
 #import "SpeakerModelObject.h"
 #import "SpotlightIndexerConstants.h"
-
 #import <CoreSpotlight/CoreSpotlight.h>
 #import <MobileCoreServices/MobileCoreServices.h>
+#import <SDWebImage/SDImageCache.h>
 
 @implementation SpeakerObjectIndexer
 
@@ -40,6 +40,9 @@
     
     NSString *speakerDescription = [self generateSpeakerDescriptionForSpeaker:object];
     attributeSet.contentDescription = speakerDescription;
+    NSString *pathImage = [[SDImageCache sharedImageCache] defaultCachePathForKey:object.imageUrl];
+    NSURL *imageUrl = [NSURL fileURLWithPath:pathImage];
+    attributeSet.thumbnailURL = imageUrl;
     
     NSArray *keywords = [self generateKeywordsForSpeaker:object];
     attributeSet.keywords = keywords;

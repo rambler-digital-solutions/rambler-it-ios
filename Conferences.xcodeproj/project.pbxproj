@@ -493,6 +493,9 @@
 		66FBA25B1DE0607D00F5C2E9 /* SpotlightContinuationAppDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66FBA25A1DE0607D00F5C2E9 /* SpotlightContinuationAppDelegateTests.m */; };
 		66FBA25E1DE069E700F5C2E9 /* SearchLaunchRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66FBA25D1DE069E700F5C2E9 /* SearchLaunchRouterTests.m */; };
 		66FFD29C1D7DCCFB0009B7DC /* CollectionViewContentCellAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 66FFD29B1D7DCCFB0009B7DC /* CollectionViewContentCellAnimator.m */; };
+		972E24221DFF460D007338EF /* SpeakerImageIndexer.m in Sources */ = {isa = PBXBuildFile; fileRef = 972E24211DFF460D007338EF /* SpeakerImageIndexer.m */; };
+		972E24251DFF462E007338EF /* EventImageIndexer.m in Sources */ = {isa = PBXBuildFile; fileRef = 972E24241DFF462E007338EF /* EventImageIndexer.m */; };
+		973421B91DFD503900331745 /* SpotlightImageIndexer.m in Sources */ = {isa = PBXBuildFile; fileRef = 973421B81DFD503900331745 /* SpotlightImageIndexer.m */; };
 		9E94B671A997D53087214C4F /* libPods-Conferences-ConferencesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F1470A6FDBED5612278E025 /* libPods-Conferences-ConferencesTests.a */; };
 		9F0A6C1D1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */; };
 		9F0A6C2E1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A6C2D1BC1B8EC00A25417 /* RequestConfiguratorsAssembly.m */; };
@@ -1448,6 +1451,13 @@
 		66FFD29B1D7DCCFB0009B7DC /* CollectionViewContentCellAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CollectionViewContentCellAnimator.m; path = conferences/Classes/PresentationLayer/Helpers/CollectionViewContentCellAnimator/CollectionViewContentCellAnimator.m; sourceTree = SOURCE_ROOT; };
 		76E95A8F2CA91B564A26FB49 /* EventGalleryViewControllerTests.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EventGalleryViewControllerTests.m; sourceTree = "<group>"; };
 		7C8D39C97CFC4A464220D54B /* libPods-Conferences-RamblerMessageExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Conferences-RamblerMessageExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		972E24201DFF460D007338EF /* SpeakerImageIndexer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeakerImageIndexer.h; path = SpeakerImageIndexer/SpeakerImageIndexer.h; sourceTree = "<group>"; };
+		972E24211DFF460D007338EF /* SpeakerImageIndexer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeakerImageIndexer.m; path = SpeakerImageIndexer/SpeakerImageIndexer.m; sourceTree = "<group>"; };
+		972E24231DFF462E007338EF /* EventImageIndexer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventImageIndexer.h; path = EventImageIndexer/EventImageIndexer.h; sourceTree = "<group>"; };
+		972E24241DFF462E007338EF /* EventImageIndexer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventImageIndexer.m; path = EventImageIndexer/EventImageIndexer.m; sourceTree = "<group>"; };
+		973421B71DFD503900331745 /* SpotlightImageIndexer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpotlightImageIndexer.h; path = SpotlightImageIndexer/SpotlightImageIndexer.h; sourceTree = "<group>"; };
+		973421B81DFD503900331745 /* SpotlightImageIndexer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpotlightImageIndexer.m; path = SpotlightImageIndexer/SpotlightImageIndexer.m; sourceTree = "<group>"; };
+		973421BA1DFD818200331745 /* ObjectImageIndexer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ObjectImageIndexer.h; path = SpotlightIndexer/ObjectIndexers/Protocols/ObjectImageIndexer.h; sourceTree = "<group>"; };
 		9AA70B1576B0B702AF66FB4E /* Pods-Conferences-ConferencesTests.nightly.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conferences-ConferencesTests.nightly.xcconfig"; path = "Pods/Target Support Files/Pods-Conferences-ConferencesTests/Pods-Conferences-ConferencesTests.nightly.xcconfig"; sourceTree = "<group>"; };
 		9F0A6C1B1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CompoundOperationBuilderConfig.h; path = OperationBuilders/CompoundOperationBuilderConfig/CompoundOperationBuilderConfig.h; sourceTree = "<group>"; };
 		9F0A6C1C1BC1AFEA00A25417 /* CompoundOperationBuilderConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CompoundOperationBuilderConfig.m; path = OperationBuilders/CompoundOperationBuilderConfig/CompoundOperationBuilderConfig.m; sourceTree = "<group>"; };
@@ -5211,6 +5221,15 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		973421B61DFD501A00331745 /* SpotlightImageIndexer */ = {
+			isa = PBXGroup;
+			children = (
+				973421B71DFD503900331745 /* SpotlightImageIndexer.h */,
+				973421B81DFD503900331745 /* SpotlightImageIndexer.m */,
+			);
+			name = SpotlightImageIndexer;
+			sourceTree = "<group>";
+		};
 		9F0A6C1A1BC1AFB200A25417 /* CompoundOperationBuilderConfig */ = {
 			isa = PBXGroup;
 			children = (
@@ -6642,6 +6661,7 @@
 		9F533A7C1D50D6E7004F8E82 /* SpotlightIndexer */ = {
 			isa = PBXGroup;
 			children = (
+				973421B61DFD501A00331745 /* SpotlightImageIndexer */,
 				9F78D73A1D59D61F009DDCEA /* CoreDataStack */,
 				9FAB6A691D5384E30061F333 /* Constants */,
 				9F40977D1D51F619008BFE42 /* ObjectTransformers */,
@@ -6715,6 +6735,7 @@
 			isa = PBXGroup;
 			children = (
 				9F533A911D50EEBC004F8E82 /* ObjectIndexer.h */,
+				973421BA1DFD818200331745 /* ObjectImageIndexer.h */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -6882,6 +6903,8 @@
 			children = (
 				9F78D7661D59EA02009DDCEA /* SpeakerObjectIndexer.h */,
 				9F78D7671D59EA02009DDCEA /* SpeakerObjectIndexer.m */,
+				972E24201DFF460D007338EF /* SpeakerImageIndexer.h */,
+				972E24211DFF460D007338EF /* SpeakerImageIndexer.m */,
 			);
 			name = SpeakerObjectIndexer;
 			sourceTree = "<group>";
@@ -8383,6 +8406,8 @@
 			children = (
 				9FF1251C1D51DF460098625F /* EventObjectIndexer.h */,
 				9FF1251D1D51DF460098625F /* EventObjectIndexer.m */,
+				972E24231DFF462E007338EF /* EventImageIndexer.h */,
+				972E24241DFF462E007338EF /* EventImageIndexer.m */,
 			);
 			name = EventObjectIndexer;
 			sourceTree = "<group>";
@@ -9241,6 +9266,7 @@
 				9FE1398E1D65F3E900D7BF44 /* SearchViewController.m in Sources */,
 				9FBE8AFE1D634F0500DA0C32 /* EventListRouter.m in Sources */,
 				9F1830D11BC12492000E21A5 /* ResponseValidatorBase.m in Sources */,
+				973421B91DFD503900331745 /* SpotlightImageIndexer.m in Sources */,
 				63F613931CB00A220002AEF0 /* LectureViewController.m in Sources */,
 				9F78D75A1D59E6CB009DDCEA /* SpeakerObjectTransformer.m in Sources */,
 				2B2064941D3F9CE900246C8D /* LecturePlainObject.m in Sources */,
@@ -9366,6 +9392,7 @@
 				63F613611CB00A220002AEF0 /* EventPresenter.m in Sources */,
 				9FE1397D1D65F3E900D7BF44 /* ReportLectureTableViewCellObject.m in Sources */,
 				63F6135A1CB00A220002AEF0 /* EventHeaderModuleAssembly.m in Sources */,
+				972E24251DFF462E007338EF /* EventImageIndexer.m in Sources */,
 				9FBE8A081D5DFA1600DA0C32 /* VideoThumbnailGenerator.m in Sources */,
 				6310601E1DC89577006870EB /* MailComposeControllerFactoryImplementation.m in Sources */,
 				2B2064911D3F9CE900246C8D /* TechModelObject.m in Sources */,
@@ -9406,6 +9433,7 @@
 				9FE139871D65F3E900D7BF44 /* ReportSpeakerTableViewCell.m in Sources */,
 				63ECC4161CA81E5300439A01 /* ErrorConstants.m in Sources */,
 				661CA4271D65D2040047EB68 /* ResponseConverterAssembly.m in Sources */,
+				972E24221DFF460D007338EF /* SpeakerImageIndexer.m in Sources */,
 				9F7B823B1D7ECA07002E977A /* TabLaunchRouter.m in Sources */,
 				637873911DEDA1C600CA1859 /* UrlComponentsFactory.m in Sources */,
 				636F8DDB1BCB8FE800552B91 /* RamblerLocationInteractor.m in Sources */,
