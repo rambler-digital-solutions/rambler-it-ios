@@ -27,7 +27,7 @@
 /**
  @author Surik Sarkisyan
  
- The method returns loaded and configured parameters for update posible ride info(time for wait, price, etc).
+ The method passes loaded and configured parameters for update posible ride info(time for wait, price, etc).
  
  @param parameters
  */

@@ -203,6 +203,7 @@
     
     // then
     XCTAssertNotNil(result);
+    XCTAssertNotNil(result.title);
     XCTAssertNotNil(result.mapItem);
 }
 

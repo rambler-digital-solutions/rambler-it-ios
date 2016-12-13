@@ -78,11 +78,13 @@
 
 - (NSUserActivity *)registerUserActivity {
     NSUserActivity *activity = [[NSUserActivity alloc] initWithActivityType:kLocationUserActivityType];
-    
+    activity.title = RCLocalize(kRamblerOfficeName);
     CLLocationCoordinate2D coordinates = [self.ramblerLocationService obtainRamblerCoordinates];
     MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:coordinates
                                                    addressDictionary: @{CNPostalAddressStreetKey : RCLocalize(kRamblerOfficeName)}];
-    activity.mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
+    if (IS_IOS_10_OR_LATER) {
+        activity.mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
+    }
     [activity becomeCurrent];
     
     return activity;
