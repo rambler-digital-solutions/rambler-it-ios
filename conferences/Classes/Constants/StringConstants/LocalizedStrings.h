@@ -65,6 +65,7 @@ extern NSString *const OKAlertActionTitle;
 #pragma mark - Error
 
 extern NSString *const EventAlreadyStoredInCalendarErrorDescription;
+extern NSString * const kUberAuthErrorMessage;
 
 #pragma mark - Location module
 

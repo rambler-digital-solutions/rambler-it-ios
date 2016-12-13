@@ -35,6 +35,8 @@
 #import "ServiceComponentsAssembly.h"
 #import "OperationFactoriesAssembly.h"
 
+#import "UberRidesFactory.h"
+
 @interface RamblerLocationModuleAssemblyTests : RamblerTyphoonAssemblyTests
 
 @property (nonatomic, strong) RamblerLocationModuleAssembly *assembly;
@@ -61,7 +63,9 @@
     Class targetClass = [RamblerLocationViewController class];
     NSArray *dependencies = @[
                               RamblerSelector(output),
-                              RamblerSelector(dataDisplayManager)
+                              RamblerSelector(dataDisplayManager),
+                              RamblerSelector(requestBehavior),
+                              RamblerSelector(uberRidesFactory)
                               ];
     // when
     id result = [self.assembly viewRamblerLocation];
@@ -76,8 +80,11 @@
     Class targetClass = [RamblerLocationInteractor class];
     NSArray *dependencies = @[
                               RamblerSelector(output),
+                              RamblerSelector(ramblerLocationService),
+                              RamblerSelector(mapLinkBuilder),
+                              RamblerSelector(builder),
                               RamblerSelector(locationService),
-                              RamblerSelector(mapLinkBuilder)
+                              RamblerSelector(ridesClient),
                               ];
     // when
     id result = [self.assembly interactorRamblerLocation];
@@ -109,6 +116,19 @@
     NSArray *dependencies = @[];
     // when
     id result = [self.assembly routerRamblerLocation];
+    
+    // then
+    RamblerTyphoonAssemblyTestsTypeDescriptor *descriptor = [RamblerTyphoonAssemblyTestsTypeDescriptor descriptorWithClass:targetClass];
+    [self verifyTargetDependency:result withDescriptor:descriptor dependencies:dependencies];
+}
+
+- (void)testThatAssemblyCreatesUberRidesFactory {
+    // given
+    Class targetClass = [UberRidesFactory class];
+    NSArray *dependencies = @[];
+    
+    // when
+    id result = [self.assembly uberRidesFactory];
     
     // then
     RamblerTyphoonAssemblyTestsTypeDescriptor *descriptor = [RamblerTyphoonAssemblyTestsTypeDescriptor descriptorWithClass:targetClass];

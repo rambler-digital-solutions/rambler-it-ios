@@ -23,11 +23,14 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
 			<key>CFBundleURLName</key>
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>ramblerconferences</string>
+				<string>ubercallback</string>
 			</array>
 		</dict>
 	</array>
@@ -49,10 +52,17 @@
 			</dict>
 		</array>
 	</dict>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>uber</string>
+		<string>uberauth</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCalendarsUsageDescription</key>
 	<string>Приложению требуется доступ к календарю</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Поделитесь своей геопозицией, чтобы мы могли рассчитать примерную стоимость такси до места мероприятия.</string>
 	<key>NSUserActivityTypes</key>
 	<array>
 		<string>ru.ramblerco.rambler.it.useractivity.event</string>
@@ -87,5 +97,20 @@
 	<true/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array/>
+	<key>UberCallbackURIs</key>
+	<array>
+		<dict>
+			<key>URIString</key>
+			<string>ubercallback://rambler_it</string>
+			<key>UberCallbackURIType</key>
+			<string>General</string>
+		</dict>
+	</array>
+	<key>UberClientID</key>
+	<string>YBgclOF9aHmVfBWhjWxSWUOG6Iddxlqi</string>
+	<key>UberDisplayName</key>
+	<string>Rambler&amp;IT</string>
+	<key>UberServerToken</key>
+	<string>-sQjzaMsKu1TU7PFa3B5LaQoRHNWW0GrzkPJJgp6</string>
 </dict>
 </plist>

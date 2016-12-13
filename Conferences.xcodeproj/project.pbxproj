@@ -21,10 +21,30 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		0231D7211DFE87150052471C /* LocationConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 0231D7201DFE87150052471C /* LocationConstants.m */; };
+		0231D7241DFEA33D0052471C /* UberRidesModalTestableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0231D7231DFEA33D0052471C /* UberRidesModalTestableObject.m */; };
+		0231D7BE1DFF34E60052471C /* LocationServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0231D7BD1DFF34E60052471C /* LocationServiceImplementation.m */; };
+		0231D7BF1DFF36470052471C /* LocationServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0231D7BD1DFF34E60052471C /* LocationServiceImplementation.m */; };
+		0231D7C01DFF366E0052471C /* LocationConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 0231D7201DFE87150052471C /* LocationConstants.m */; };
+		028E44601DF06CA300734E84 /* UberRidesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 028E445F1DF06CA300734E84 /* UberRidesAppDelegate.m */; };
+		028E44631DF08ED200734E84 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028E44581DF053B500734E84 /* ObjectMapper.framework */; };
+		028E44641DF08ED300734E84 /* UberRides.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028E44591DF053B500734E84 /* UberRides.framework */; };
 		028E446B1DF179CA00734E84 /* PredicateConfiguratorImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 028E446A1DF179CA00734E84 /* PredicateConfiguratorImplementation.m */; };
 		028E446F1DF184F100734E84 /* SearchFacadeImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 028E446E1DF184F100734E84 /* SearchFacadeImplementation.m */; };
 		028E44731DF19BA900734E84 /* PredicateConfiguratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 028E44721DF19BA900734E84 /* PredicateConfiguratorTests.m */; };
 		028E44761DF1B81C00734E84 /* SearchFacadeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 028E44751DF1B81C00734E84 /* SearchFacadeTests.m */; };
+		028E447B1DF6083400734E84 /* UberRidesAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 028E447A1DF6083400734E84 /* UberRidesAssembly.m */; };
+		028E447C1DF69EE900734E84 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028E44581DF053B500734E84 /* ObjectMapper.framework */; };
+		028E447D1DF69EE900734E84 /* UberRides.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028E44591DF053B500734E84 /* UberRides.framework */; };
+		029358991DF87EC9007CD5FD /* RamblerLocationInteractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 029358961DF87EC9007CD5FD /* RamblerLocationInteractorTests.m */; };
+		0293589A1DF87EC9007CD5FD /* RamblerLocationPresenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 029358971DF87EC9007CD5FD /* RamblerLocationPresenterTests.m */; };
+		0293589B1DF87EC9007CD5FD /* RamblerLocationRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 029358981DF87EC9007CD5FD /* RamblerLocationRouterTests.m */; };
+		0293589F1DF87EF5007CD5FD /* RamblerLocationViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0293589E1DF87EF5007CD5FD /* RamblerLocationViewControllerTests.m */; };
+		029358A11DF87FF7007CD5FD /* LocationServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 029358A01DF87FF7007CD5FD /* LocationServiceTests.m */; };
+		029358CA1DF960F6007CD5FD /* UberRidesFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 029358C91DF960F6007CD5FD /* UberRidesFactory.m */; };
+		02F297C01DFAA295001F9B10 /* TestableObjectWithDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F297BF1DFAA295001F9B10 /* TestableObjectWithDelegate.m */; };
+		02F297C31DFAB15E001F9B10 /* UberRidesAppDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F297C21DFAB15E001F9B10 /* UberRidesAppDelegateTests.m */; };
+		02F297C61DFAC5A2001F9B10 /* UberRidesAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F297C51DFAC5A2001F9B10 /* UberRidesAssemblyTests.m */; };
 		2AA222A5031CC7BA4A19B3EF /* libPods-RamblerMessageExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C1AA7D4ECB1DA53BEC254E4 /* libPods-RamblerMessageExtension.a */; };
 		2B01CEBE1D50A55900DA8E66 /* MetaEventServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B01CEBD1D50A55900DA8E66 /* MetaEventServiceTests.m */; };
 		2B05E1611D50FEFC00E017AB /* SpeakerInfoCellObjectBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B05E1601D50FEFC00E017AB /* SpeakerInfoCellObjectBuilder.m */; };
@@ -397,7 +417,6 @@
 		63F613E71CB111070002AEF0 /* LectureViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F613CC1CB111070002AEF0 /* LectureViewControllerTests.m */; };
 		63F613E81CB111070002AEF0 /* SearchDataDisplayManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F613CE1CB111070002AEF0 /* SearchDataDisplayManagerTests.m */; };
 		63F613E91CB111070002AEF0 /* SearchInteractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F613CF1CB111070002AEF0 /* SearchInteractorTests.m */; };
-		63F613EA1CB111070002AEF0 /* SearchPresenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F613D01CB111070002AEF0 /* SearchPresenterTests.m */; };
 		63F613EB1CB111070002AEF0 /* SearchRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F613D11CB111070002AEF0 /* SearchRouterTests.m */; };
 		63F613EC1CB111070002AEF0 /* SearchTableViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F613D21CB111070002AEF0 /* SearchTableViewControllerTests.m */; };
 		63F613ED1CB111070002AEF0 /* SpeakerInfoInteractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F613D41CB111070002AEF0 /* SpeakerInfoInteractorTests.m */; };
@@ -554,7 +573,6 @@
 		9F4077901D2BF95200D47EF6 /* CommonResourceClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F40778F1D2BF95200D47EF6 /* CommonResourceClient.m */; };
 		9F4077941D2BFA7100D47EF6 /* CommonResourceClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4077931D2BFA7100D47EF6 /* CommonResourceClientTests.m */; };
 		9F40779C1D2C109200D47EF6 /* DirectionObjectMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F40779B1D2C109200D47EF6 /* DirectionObjectMapper.m */; };
-		9F4077A01D2C11A700D47EF6 /* DirectionObjectMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F40779F1D2C11A700D47EF6 /* DirectionObjectMapperTests.m */; };
 		9F4077A41D2C15C600D47EF6 /* ResourceClientAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4077A31D2C15C600D47EF6 /* ResourceClientAssembly.m */; };
 		9F4077A81D2C164800D47EF6 /* ResourceMapperAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4077A71D2C164800D47EF6 /* ResourceMapperAssembly.m */; };
 		9F4077B01D2E371C00D47EF6 /* DirectionCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4077AF1D2E371C00D47EF6 /* DirectionCellObject.m */; };
@@ -725,10 +743,6 @@
 		9FE1398F1D65F3E900D7BF44 /* CustomSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE139721D65F3E900D7BF44 /* CustomSearchBar.m */; };
 		9FE139901D65F3E900D7BF44 /* SuggestTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE139751D65F3E900D7BF44 /* SuggestTableView.m */; };
 		9FF1251E1D51DF460098625F /* EventObjectIndexer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF1251D1D51DF460098625F /* EventObjectIndexer.m */; };
-		9FF37E111D3235BB00471B4E /* AppleMapsLinkBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF37E101D3235BB00471B4E /* AppleMapsLinkBuilderTests.m */; };
-		9FF37E151D32373500471B4E /* RamblerLocationInteractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF37E141D32373500471B4E /* RamblerLocationInteractorTests.m */; };
-		9FF37E181D32397900471B4E /* RamblerLocationPresenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF37E171D32397900471B4E /* RamblerLocationPresenterTests.m */; };
-		9FF37E1B1D323B0200471B4E /* RamblerLocationRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF37E1A1D323B0200471B4E /* RamblerLocationRouterTests.m */; };
 		9FF74FFA1D26C448000D208D /* EventListQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF74FF91D26C448000D208D /* EventListQuery.m */; };
 		9FF750071D26C8EB000D208D /* EventListOperationFactoryTests.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9FF750051D26C8EB000D208D /* EventListOperationFactoryTests.bundle */; };
 		9FF750081D26C8EB000D208D /* EventListOperationFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF750061D26C8EB000D208D /* EventListOperationFactoryTests.m */; };
@@ -779,6 +793,19 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0231D71F1DFE87150052471C /* LocationConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationConstants.h; sourceTree = "<group>"; };
+		0231D7201DFE87150052471C /* LocationConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationConstants.m; sourceTree = "<group>"; };
+		0231D7221DFEA33D0052471C /* UberRidesModalTestableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UberRidesModalTestableObject.h; path = RamblerLocationModuleTests/UberRidesModalTestableObject.h; sourceTree = "<group>"; };
+		0231D7231DFEA33D0052471C /* UberRidesModalTestableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UberRidesModalTestableObject.m; path = RamblerLocationModuleTests/UberRidesModalTestableObject.m; sourceTree = "<group>"; };
+		0231D7B81DFF344B0052471C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		0231D7BA1DFF34E60052471C /* LocationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationService.h; sourceTree = "<group>"; };
+		0231D7BB1DFF34E60052471C /* LocationServiceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationServiceDelegate.h; sourceTree = "<group>"; };
+		0231D7BC1DFF34E60052471C /* LocationServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationServiceImplementation.h; sourceTree = "<group>"; };
+		0231D7BD1DFF34E60052471C /* LocationServiceImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationServiceImplementation.m; sourceTree = "<group>"; };
+		028E44581DF053B500734E84 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
+		028E44591DF053B500734E84 /* UberRides.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UberRides.framework; path = Carthage/Build/iOS/UberRides.framework; sourceTree = "<group>"; };
+		028E445E1DF06CA300734E84 /* UberRidesAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UberRidesAppDelegate.h; sourceTree = "<group>"; };
+		028E445F1DF06CA300734E84 /* UberRidesAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UberRidesAppDelegate.m; sourceTree = "<group>"; };
 		028E44681DF179B300734E84 /* PredicateConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PredicateConfigurator.h; sourceTree = "<group>"; };
 		028E44691DF179CA00734E84 /* PredicateConfiguratorImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PredicateConfiguratorImplementation.h; sourceTree = "<group>"; };
 		028E446A1DF179CA00734E84 /* PredicateConfiguratorImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PredicateConfiguratorImplementation.m; sourceTree = "<group>"; };
@@ -787,6 +814,21 @@
 		028E44701DF1851B00734E84 /* SearchFacade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchFacade.h; sourceTree = "<group>"; };
 		028E44721DF19BA900734E84 /* PredicateConfiguratorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PredicateConfiguratorTests.m; sourceTree = "<group>"; };
 		028E44751DF1B81C00734E84 /* SearchFacadeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchFacadeTests.m; sourceTree = "<group>"; };
+		028E44791DF6083400734E84 /* UberRidesAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UberRidesAssembly.h; sourceTree = "<group>"; };
+		028E447A1DF6083400734E84 /* UberRidesAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UberRidesAssembly.m; sourceTree = "<group>"; };
+		028E447E1DF69FEF00734E84 /* Conferences.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Conferences.entitlements; sourceTree = "<group>"; };
+		029358961DF87EC9007CD5FD /* RamblerLocationInteractorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RamblerLocationInteractorTests.m; path = RamblerLocationModuleTests/RamblerLocationInteractorTests.m; sourceTree = "<group>"; };
+		029358971DF87EC9007CD5FD /* RamblerLocationPresenterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RamblerLocationPresenterTests.m; path = RamblerLocationModuleTests/RamblerLocationPresenterTests.m; sourceTree = "<group>"; };
+		029358981DF87EC9007CD5FD /* RamblerLocationRouterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RamblerLocationRouterTests.m; path = RamblerLocationModuleTests/RamblerLocationRouterTests.m; sourceTree = "<group>"; };
+		0293589E1DF87EF5007CD5FD /* RamblerLocationViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RamblerLocationViewControllerTests.m; path = RamblerLocationModuleTests/RamblerLocationViewControllerTests.m; sourceTree = "<group>"; };
+		029358A01DF87FF7007CD5FD /* LocationServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationServiceTests.m; sourceTree = "<group>"; };
+		029358C81DF960F6007CD5FD /* UberRidesFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UberRidesFactory.h; sourceTree = "<group>"; };
+		029358C91DF960F6007CD5FD /* UberRidesFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UberRidesFactory.m; sourceTree = "<group>"; };
+		02F297BE1DFAA295001F9B10 /* TestableObjectWithDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestableObjectWithDelegate.h; path = RamblerLocationModuleTests/TestableObjectWithDelegate.h; sourceTree = "<group>"; };
+		02F297BF1DFAA295001F9B10 /* TestableObjectWithDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestableObjectWithDelegate.m; path = RamblerLocationModuleTests/TestableObjectWithDelegate.m; sourceTree = "<group>"; };
+		02F297C21DFAB15E001F9B10 /* UberRidesAppDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UberRidesAppDelegateTests.m; sourceTree = "<group>"; };
+		02F297C51DFAC5A2001F9B10 /* UberRidesAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UberRidesAssemblyTests.m; sourceTree = "<group>"; };
+		02F297C71DFACF20001F9B10 /* UberRidesAssembly_Testable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UberRidesAssembly_Testable.h; sourceTree = "<group>"; };
 		1AB36DD96D7739E6F91D7BBE /* Pods-Conferences.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conferences.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Conferences/Pods-Conferences.debug.xcconfig"; sourceTree = "<group>"; };
 		1C1AA7D4ECB1DA53BEC254E4 /* libPods-RamblerMessageExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RamblerMessageExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FC5571A228743BA28853AEA /* Pods-Conferences-ConferencesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conferences-ConferencesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Conferences-ConferencesTests/Pods-Conferences-ConferencesTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -1059,7 +1101,6 @@
 		638918DA1DC340B4009B34AF /* NSArray+NSURLQueryItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+NSURLQueryItem.h"; path = "NSArray+NSURLQueryItem/NSArray+NSURLQueryItem.h"; sourceTree = "<group>"; };
 		638918DB1DC340B4009B34AF /* NSArray+NSURLQueryItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+NSURLQueryItem.m"; path = "NSArray+NSURLQueryItem/NSArray+NSURLQueryItem.m"; sourceTree = "<group>"; };
 		6394E4181CB1510800548EAE /* LectureViewController_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LectureViewController_Testable.h; sourceTree = "<group>"; };
-		63AA03541D99063900F4C094 /* Conferences.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Conferences.entitlements; sourceTree = "<group>"; };
 		63AA03551D99067000F4C094 /* RamblerMessageExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RamblerMessageExtension.entitlements; sourceTree = "<group>"; };
 		63BDBBC11D87E3DE006E8A15 /* RamblerMessageExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RamblerMessageExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BDBBC21D87E3DE006E8A15 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
@@ -1908,9 +1949,6 @@
 		9FF1251C1D51DF460098625F /* EventObjectIndexer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventObjectIndexer.h; path = SpotlightIndexer/ObjectIndexers/ConcreteClasses/EventObjectIndexer/EventObjectIndexer.h; sourceTree = "<group>"; };
 		9FF1251D1D51DF460098625F /* EventObjectIndexer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventObjectIndexer.m; path = SpotlightIndexer/ObjectIndexers/ConcreteClasses/EventObjectIndexer/EventObjectIndexer.m; sourceTree = "<group>"; };
 		9FF37E101D3235BB00471B4E /* AppleMapsLinkBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppleMapsLinkBuilderTests.m; path = MapLinkBuildersTests/AppleMapsLinkBuilderTests.m; sourceTree = "<group>"; };
-		9FF37E141D32373500471B4E /* RamblerLocationInteractorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RamblerLocationInteractorTests.m; path = RamblerLocationModuleTests/RamblerLocationInteractorTests.m; sourceTree = "<group>"; };
-		9FF37E171D32397900471B4E /* RamblerLocationPresenterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RamblerLocationPresenterTests.m; path = RamblerLocationModuleTests/RamblerLocationPresenterTests.m; sourceTree = "<group>"; };
-		9FF37E1A1D323B0200471B4E /* RamblerLocationRouterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RamblerLocationRouterTests.m; path = RamblerLocationModuleTests/RamblerLocationRouterTests.m; sourceTree = "<group>"; };
 		9FF74FF81D26C448000D208D /* EventListQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventListQuery.h; path = ObjectQueries/EventListQUery/EventListQuery.h; sourceTree = "<group>"; };
 		9FF74FF91D26C448000D208D /* EventListQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventListQuery.m; path = ObjectQueries/EventListQUery/EventListQuery.m; sourceTree = "<group>"; };
 		9FF750051D26C8EB000D208D /* EventListOperationFactoryTests.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = EventListOperationFactoryTests.bundle; sourceTree = "<group>"; };
@@ -1960,6 +1998,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				028E447C1DF69EE900734E84 /* ObjectMapper.framework in Frameworks */,
+				028E447D1DF69EE900734E84 /* UberRides.framework in Frameworks */,
 				B844903CD5D6757D08026D5E /* libPods-Conferences.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1968,6 +2008,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				028E44631DF08ED200734E84 /* ObjectMapper.framework in Frameworks */,
+				028E44641DF08ED300734E84 /* UberRides.framework in Frameworks */,
 				9E94B671A997D53087214C4F /* libPods-Conferences-ConferencesTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1975,6 +2017,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0231D71E1DFE86D70052471C /* LocationConstants */ = {
+			isa = PBXGroup;
+			children = (
+				0231D71F1DFE87150052471C /* LocationConstants.h */,
+				0231D7201DFE87150052471C /* LocationConstants.m */,
+			);
+			path = LocationConstants;
+			sourceTree = "<group>";
+		};
+		028E445D1DF06C9000734E84 /* UberRidesAppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				028E445E1DF06CA300734E84 /* UberRidesAppDelegate.h */,
+				028E445F1DF06CA300734E84 /* UberRidesAppDelegate.m */,
+			);
+			path = UberRidesAppDelegate;
+			sourceTree = "<group>";
+		};
 		028E44651DF1799900734E84 /* PredicateConfigurator */ = {
 			isa = PBXGroup;
 			children = (
@@ -2029,6 +2089,53 @@
 			);
 			name = SearchFacade;
 			path = CoreLayer/CoreComponents/SearchFacade;
+			sourceTree = "<group>";
+		};
+		028E44781DF607F400734E84 /* UberRidesAssembly */ = {
+			isa = PBXGroup;
+			children = (
+				028E44791DF6083400734E84 /* UberRidesAssembly.h */,
+				028E447A1DF6083400734E84 /* UberRidesAssembly.m */,
+				029358C81DF960F6007CD5FD /* UberRidesFactory.h */,
+				029358C91DF960F6007CD5FD /* UberRidesFactory.m */,
+			);
+			path = UberRidesAssembly;
+			sourceTree = "<group>";
+		};
+		029358781DF6E76D007CD5FD /* UserLocationService */ = {
+			isa = PBXGroup;
+			children = (
+				0231D7BA1DFF34E60052471C /* LocationService.h */,
+				0231D7BB1DFF34E60052471C /* LocationServiceDelegate.h */,
+				0231D7BC1DFF34E60052471C /* LocationServiceImplementation.h */,
+				0231D7BD1DFF34E60052471C /* LocationServiceImplementation.m */,
+			);
+			path = UserLocationService;
+			sourceTree = "<group>";
+		};
+		029358931DF85BE2007CD5FD /* LocationServiceTests */ = {
+			isa = PBXGroup;
+			children = (
+				029358A01DF87FF7007CD5FD /* LocationServiceTests.m */,
+			);
+			path = LocationServiceTests;
+			sourceTree = "<group>";
+		};
+		02F297C11DFAB143001F9B10 /* UberRidesAppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				02F297C21DFAB15E001F9B10 /* UberRidesAppDelegateTests.m */,
+			);
+			path = UberRidesAppDelegate;
+			sourceTree = "<group>";
+		};
+		02F297C41DFAC59A001F9B10 /* UberRidesAssemblyTests */ = {
+			isa = PBXGroup;
+			children = (
+				02F297C51DFAC5A2001F9B10 /* UberRidesAssemblyTests.m */,
+				02F297C71DFACF20001F9B10 /* UberRidesAssembly_Testable.h */,
+			);
+			path = UberRidesAssemblyTests;
 			sourceTree = "<group>";
 		};
 		29F930AE767A2E0D549FB50F /* Router */ = {
@@ -2728,6 +2835,7 @@
 		636A37B71BC13B4B00B49C3D /* BaseServicesTests */ = {
 			isa = PBXGroup;
 			children = (
+				029358931DF85BE2007CD5FD /* LocationServiceTests */,
 				9FE139241D65CC1000D7BF44 /* SuggestServiceTests */,
 				66E9992D1D5489A300161D98 /* LectureServiceTests */,
 				2B01CEBC1D50A54000DA8E66 /* MetaEventServiceTests */,
@@ -3096,6 +3204,7 @@
 		6373A3DF1BBDBDF700DF67FF /* ConcreteServices */ = {
 			isa = PBXGroup;
 			children = (
+				029358781DF6E76D007CD5FD /* UserLocationService */,
 				9FE1391F1D65BD6B00D7BF44 /* SuggestService */,
 				66E999961D54B2F800161D98 /* TagService */,
 				2B429A781D509857004C005F /* MetaEventService */,
@@ -3306,6 +3415,7 @@
 		63F402F21BCF79040086D030 /* CoreLayerAssemblyTests */ = {
 			isa = PBXGroup;
 			children = (
+				02F297C41DFAC59A001F9B10 /* UberRidesAssemblyTests */,
 				63F402F31BCF79040086D030 /* NetworkClientsAssemblyTests */,
 				63F402F41BCF79040086D030 /* OperationFactoriesAssemblyTests */,
 				63F402F51BCF79040086D030 /* RequestConfiguratorsAssemblyTests */,
@@ -3430,6 +3540,7 @@
 		63F54D961BC5A91800DB1746 /* Assemblies */ = {
 			isa = PBXGroup;
 			children = (
+				028E44781DF607F400734E84 /* UberRidesAssembly */,
 				63F54D971BC5A91800DB1746 /* ServiceComponentsAssembly */,
 			);
 			path = Assemblies;
@@ -4433,6 +4544,7 @@
 		63FDCDDE1BBDBA2A00A43B60 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				0231D71E1DFE86D70052471C /* LocationConstants */,
 				9FFA8A291DF321F300FB3C2E /* ApplicationConstants */,
 				63ECC4131CA81E4000439A01 /* ErrorConstants */,
 				631808601C4A66E900A61E7D /* StringConstants */,
@@ -5181,6 +5293,8 @@
 		66FBA2591DE0605600F5C2E9 /* SpotlightContinuationAppDelegate */ = {
 			isa = PBXGroup;
 			children = (
+				028E44581DF053B500734E84 /* ObjectMapper.framework */,
+				028E44591DF053B500734E84 /* UberRides.framework */,
 				66FBA25A1DE0607D00F5C2E9 /* SpotlightContinuationAppDelegateTests.m */,
 			);
 			name = SpotlightContinuationAppDelegate;
@@ -6238,7 +6352,7 @@
 		9F1F37E61BBBB80D00C7797D /* Conferences */ = {
 			isa = PBXGroup;
 			children = (
-				63AA03541D99063900F4C094 /* Conferences.entitlements */,
+				028E447E1DF69FEF00734E84 /* Conferences.entitlements */,
 				63FDCDD81BBDBA2A00A43B60 /* Classes */,
 				63FDCE001BBDBA2A00A43B60 /* Resources */,
 				63FDCE031BBDBA2A00A43B60 /* Supporting Files */,
@@ -7287,6 +7401,7 @@
 		9FBE89841D5CB71300DA0C32 /* AppDelegates */ = {
 			isa = PBXGroup;
 			children = (
+				028E445D1DF06C9000734E84 /* UberRidesAppDelegate */,
 				638918C91DC28A47009B34AF /* MessagesAppDelegate */,
 				9FCFC50B1D9036F7009FD57D /* SpotlightContinuationAppDelegate */,
 				9F7B821F1D7DA546002E977A /* QuickActionAppDelegate */,
@@ -7468,6 +7583,7 @@
 		9FBE89BC1D5CB76900DA0C32 /* AppDelegates */ = {
 			isa = PBXGroup;
 			children = (
+				02F297C11DFAB143001F9B10 /* UberRidesAppDelegate */,
 				63C31BFB1DD9C0DB00AA51BD /* MessagesAppDelegate */,
 				66FBA2591DE0605600F5C2E9 /* SpotlightContinuationAppDelegate */,
 				9F7B82271D7DA9DC002E977A /* QuickActionAppDelegate */,
@@ -8422,35 +8538,16 @@
 		9FF37E121D3236AE00471B4E /* RamblerLocationModuleTests */ = {
 			isa = PBXGroup;
 			children = (
-				9FF37E191D323AF600471B4E /* Router */,
-				9FF37E161D32396900471B4E /* Presenter */,
-				9FF37E131D32370A00471B4E /* Interactor */,
+				029358961DF87EC9007CD5FD /* RamblerLocationInteractorTests.m */,
+				029358971DF87EC9007CD5FD /* RamblerLocationPresenterTests.m */,
+				029358981DF87EC9007CD5FD /* RamblerLocationRouterTests.m */,
+				0293589E1DF87EF5007CD5FD /* RamblerLocationViewControllerTests.m */,
+				0231D7221DFEA33D0052471C /* UberRidesModalTestableObject.h */,
+				0231D7231DFEA33D0052471C /* UberRidesModalTestableObject.m */,
+				02F297BE1DFAA295001F9B10 /* TestableObjectWithDelegate.h */,
+				02F297BF1DFAA295001F9B10 /* TestableObjectWithDelegate.m */,
 			);
 			name = RamblerLocationModuleTests;
-			sourceTree = "<group>";
-		};
-		9FF37E131D32370A00471B4E /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				9FF37E141D32373500471B4E /* RamblerLocationInteractorTests.m */,
-			);
-			name = Interactor;
-			sourceTree = "<group>";
-		};
-		9FF37E161D32396900471B4E /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				9FF37E171D32397900471B4E /* RamblerLocationPresenterTests.m */,
-			);
-			name = Presenter;
-			sourceTree = "<group>";
-		};
-		9FF37E191D323AF600471B4E /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				9FF37E1A1D323B0200471B4E /* RamblerLocationRouterTests.m */,
-			);
-			name = Router;
 			sourceTree = "<group>";
 		};
 		9FF74FF71D26C41C000D208D /* EventListQuery */ = {
@@ -8584,6 +8681,7 @@
 		D1799435EABEFA40D1849E2A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0231D7B81DFF344B0052471C /* CoreLocation.framework */,
 				6321841B1D9BF7E7001BB7A7 /* libMagicalRecord.a */,
 				636E26F21D8FF072001ABB92 /* CoreData.framework */,
 				63BDBBC21D87E3DE006E8A15 /* Messages.framework */,
@@ -8645,6 +8743,7 @@
 				9F1F37E11BBBB80D00C7797D /* Frameworks */,
 				9F1F37E21BBBB80D00C7797D /* Resources */,
 				9FF4C3E41CE22036002157B2 /* ShellScript */,
+				028E445C1DF053DB00734E84 /* ShellScript */,
 				63BDBBD51D87E3DE006E8A15 /* Embed App Extensions */,
 				AF3D91B360DF062D601D2F49 /* [CP] Embed Pods Frameworks */,
 				04853FD7ED0E623871FBC8D4 /* [CP] Copy Pods Resources */,
@@ -8710,6 +8809,9 @@
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
 							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 0;
 							};
@@ -8717,6 +8819,7 @@
 					};
 					9F1F37FF1BBBB80D00C7797D = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = UM246WFXVS;
 						TestTargetID = 9F1F37E31BBBB80D00C7797D;
 					};
 				};
@@ -8828,6 +8931,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		028E445C1DF053DB00734E84 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/UberRides.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 		04853FD7ED0E623871FBC8D4 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -8981,6 +9099,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0231D7C01DFF366E0052471C /* LocationConstants.m in Sources */,
+				0231D7BF1DFF36470052471C /* LocationServiceImplementation.m in Sources */,
 				636E26D71D8FE719001ABB92 /* EventServiceImplementation.m in Sources */,
 				63770CC21DD61E6B0039AB0D /* MessageExtensionTyphoonActivator.m in Sources */,
 				636E26ED1D8FE86A001ABB92 /* _TagModelObject.m in Sources */,
@@ -9116,6 +9236,7 @@
 				63F8F2BC1BF8A713000017F3 /* EventTypeDeterminator.m in Sources */,
 				2B20648C1D3F9CE900246C8D /* MetaEventModelObject.m in Sources */,
 				636B64101BBDD6260053E38F /* SpeakerServiceImplementation.m in Sources */,
+				0231D7211DFE87150052471C /* LocationConstants.m in Sources */,
 				63F6137A1CB00A220002AEF0 /* PreviousLectureSectionHeaderTableViewCell.m in Sources */,
 				9F33B8801D63512200BE136C /* EventListTableViewCellObject.m in Sources */,
 				63F613641CB00A220002AEF0 /* CurrentVideoTranslationTableViewCellObject.m in Sources */,
@@ -9136,6 +9257,7 @@
 				9FBE8AB61D630D4C00DA0C32 /* EventGalleryInteractor.m in Sources */,
 				9F533AA41D50F195004F8E82 /* IndexTransactionBatch.m in Sources */,
 				9F4097841D51F658008BFE42 /* EventObjectTransformer.m in Sources */,
+				028E447B1DF6083400734E84 /* UberRidesAssembly.m in Sources */,
 				9F8E5F941BC269EA00DC10DB /* OperationFactoriesAssembly.m in Sources */,
 				9FBE8AFB1D634F0500DA0C32 /* EventListModuleAssembly.m in Sources */,
 				63F613971CB00A220002AEF0 /* SpeakerInfoPresenterStateStorage.m in Sources */,
@@ -9263,6 +9385,7 @@
 				631808401C482B1300A61E7D /* SpeakerShortInfoInteractor.m in Sources */,
 				9FBE89B31D5CB71300DA0C32 /* EventLaunchRouter.m in Sources */,
 				661CA4071D65D0720047EB68 /* NSManagedObjectID+LJStringConversion.m in Sources */,
+				028E44601DF06CA300734E84 /* UberRidesAppDelegate.m in Sources */,
 				634EB9E11DC8E5FC00EAEC0F /* SpeakerInfoAlertFactory.m in Sources */,
 				9FCFC50E1D903719009FD57D /* SpotlightContinuationAppDelegate.m in Sources */,
 				661CA4031D65D04E0047EB68 /* ServerResponseModel.m in Sources */,
@@ -9338,6 +9461,7 @@
 				63F6136E1CB00A220002AEF0 /* CurrentVideoTranslationTableViewCell.m in Sources */,
 				63F6137C1CB00A220002AEF0 /* PreviousLectureTableViewCell.m in Sources */,
 				9F78D7451D59D6EF009DDCEA /* SpotlightIndexer.xcdatamodeld in Sources */,
+				0231D7BE1DFF34E60052471C /* LocationServiceImplementation.m in Sources */,
 				63F6135C1CB00A220002AEF0 /* EventHeaderPresenter.m in Sources */,
 				9F40779C1D2C109200D47EF6 /* DirectionObjectMapper.m in Sources */,
 				9F0A85031BC1698B006F79FB /* OperationDebugDescriptionFormatter.m in Sources */,
@@ -9413,6 +9537,7 @@
 				63F613601CB00A220002AEF0 /* EventInteractor.m in Sources */,
 				666C5C3E1D4F344B002D73D5 /* ReportsSearchPresenter.m in Sources */,
 				661CA4131D65D0E30047EB68 /* LastModifiedModelObject.m in Sources */,
+				029358CA1DF960F6007CD5FD /* UberRidesFactory.m in Sources */,
 				9FE139761D65F3E900D7BF44 /* SearchModuleAssembly.m in Sources */,
 				63F54D951BC5A79900DB1746 /* EXTScope.m in Sources */,
 				66E9996F1D54B06400161D98 /* TagCollectionView.m in Sources */,
@@ -9480,11 +9605,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F4077941D2BFA7100D47EF6 /* CommonResourceClientTests.m in Sources */,
+				0231D7241DFEA33D0052471C /* UberRidesModalTestableObject.m in Sources */,
 				63C31C081DDAF19700AA51BD /* MessagesInteractor.m in Sources */,
-				9FF37E1B1D323B0200471B4E /* RamblerLocationRouterTests.m in Sources */,
-				9FF37E111D3235BB00471B4E /* AppleMapsLinkBuilderTests.m in Sources */,
-				9F4077A01D2C11A700D47EF6 /* DirectionObjectMapperTests.m in Sources */,
-				63F613EA1CB111070002AEF0 /* SearchPresenterTests.m in Sources */,
 				63C31C0B1DDAF1BC00AA51BD /* MessagesViewController.m in Sources */,
 				63C31C0D1DDAF1F400AA51BD /* RamblerExtensionTyphoonActivator.m in Sources */,
 				635E18D51CA6CECB005B8439 /* EventHeaderModuleAssemblyTests.m in Sources */,
@@ -9500,7 +9622,6 @@
 				9FBE89DA1D5CB76900DA0C32 /* SpeakerLaunchRouterTests.m in Sources */,
 				635E18C21CA6A496005B8439 /* LectureModuleAssemblyTests.m in Sources */,
 				66A1DD461D7E984E00998F6B /* TagCellSizeRowCalculatorTests.m in Sources */,
-				9FF37E181D32397900471B4E /* RamblerLocationPresenterTests.m in Sources */,
 				6621664F1D4F4507000A1D11 /* ReportsSearchDataDisplayManagerTests.m in Sources */,
 				9FBE8A0B1D5DFAB700DA0C32 /* VideoThumbnailTests.m in Sources */,
 				9FBE8A3D1D5F402E00DA0C32 /* EventGalleryEventFilterTests.m in Sources */,
@@ -9521,6 +9642,7 @@
 				9FBE8A331D5F3CCC00DA0C32 /* EventGalleryRouterTests.m in Sources */,
 				666C5C3F1D4F344B002D73D5 /* ReportsSearchPresenter.m in Sources */,
 				63F613DC1CB111070002AEF0 /* CurrentEventCellObjectBuilderTests.m in Sources */,
+				0293589B1DF87EC9007CD5FD /* RamblerLocationRouterTests.m in Sources */,
 				9FBE89D61D5CB76900DA0C32 /* SpotlightLaunchHandlerTests.m in Sources */,
 				63F613EB1CB111070002AEF0 /* SearchRouterTests.m in Sources */,
 				631CBA811C021A5300E3EBA8 /* PresentationLayerHelpersAssemblyTests.m in Sources */,
@@ -9529,6 +9651,7 @@
 				66FBA25E1DE069E700F5C2E9 /* SearchLaunchRouterTests.m in Sources */,
 				63F402FE1BCF840A0086D030 /* NetworkClientsAssemblyTests.m in Sources */,
 				63F613E01CB111070002AEF0 /* EventInteractorTests.m in Sources */,
+				02F297C01DFAA295001F9B10 /* TestableObjectWithDelegate.m in Sources */,
 				9FBE89D31D5CB76900DA0C32 /* CleanLaunchAppDelegateTests.m in Sources */,
 				63F613E31CB111070002AEF0 /* EventViewControllerTests.m in Sources */,
 				63F613E71CB111070002AEF0 /* LectureViewControllerTests.m in Sources */,
@@ -9547,6 +9670,7 @@
 				66A1DD471D7E984E00998F6B /* TagCollectionViewTests.m in Sources */,
 				63F402F01BCF77CB0086D030 /* ApplicationAssemblyTests.m in Sources */,
 				9FF750171D27DCBE000D208D /* EntityNameFormatterImplementationTests.m in Sources */,
+				02F297C31DFAB15E001F9B10 /* UberRidesAppDelegateTests.m in Sources */,
 				9FBE8A361D5F3CD800DA0C32 /* EventGalleryViewControllerTests.m in Sources */,
 				63F613E51CB111070002AEF0 /* LecturePresenterTests.m in Sources */,
 				9F0A85261BC185AA006F79FB /* ResponseDeserializationOperationTests.m in Sources */,
@@ -9566,6 +9690,7 @@
 				63F613EC1CB111070002AEF0 /* SearchTableViewControllerTests.m in Sources */,
 				9F0A85251BC185AA006F79FB /* RequestSigningOperationTests.m in Sources */,
 				9F4097891D51F8FD008BFE42 /* EventObjectTransformerTests.m in Sources */,
+				02F297C61DFAC5A2001F9B10 /* UberRidesAssemblyTests.m in Sources */,
 				63F95BB71DE5A67D00F6BD1C /* EventListProcessorTests.m in Sources */,
 				63F613DD1CB111070002AEF0 /* FutureEventCellObjectBuilderTests.m in Sources */,
 				9F0A85241BC185AA006F79FB /* RequestConfigurationOperationTests.m in Sources */,
@@ -9596,11 +9721,13 @@
 				9F1830C81BC11EE6000E21A5 /* XCTestCase+RCFHelpers.m in Sources */,
 				66A1DD511D7E990A00998F6B /* XCTestCase+CollectionViewDataDisplayManager.m in Sources */,
 				631CBA771C020F2D00E3EBA8 /* ReportListModuleAssemblyTests.m in Sources */,
+				029358A11DF87FF7007CD5FD /* LocationServiceTests.m in Sources */,
 				2B429A711D4B5305004C005F /* ModelObjectGenerator.m in Sources */,
 				666C5C331D4F2AF6002D73D5 /* ReportsSearchPresenterTests.m in Sources */,
 				63C31BFD1DD9C10900AA51BD /* MessagesAppDelegateTests.m in Sources */,
 				6377140C1DDC8109009FF726 /* MessagesRouterTests.m in Sources */,
 				631CBA3B1C00935300E3EBA8 /* EventServiceTests.m in Sources */,
+				0293589F1DF87EF5007CD5FD /* RamblerLocationViewControllerTests.m in Sources */,
 				63F403B21BD0D4B40086D030 /* ResponseValidatorsAssemblyTests.m in Sources */,
 				9F78D7801D5A078F009DDCEA /* LectureChangeProviderFetchRequestFactoryTests.m in Sources */,
 				9F0A84C31BC162AD006F79FB /* RCFSingleResponseObjectFormatterTests.m in Sources */,
@@ -9613,8 +9740,8 @@
 				9F1830DF1BC12749000E21A5 /* RCFResponseValidatorTestsBase.m in Sources */,
 				63F403AC1BD0CD460086D030 /* ResponseDeserializersAssemblyTests.m in Sources */,
 				028E44731DF19BA900734E84 /* PredicateConfiguratorTests.m in Sources */,
-				9FF37E151D32373500471B4E /* RamblerLocationInteractorTests.m in Sources */,
 				9FF99E541BC4317E006F15AF /* OperationSchedulerTests.m in Sources */,
+				0293589A1DF87EC9007CD5FD /* RamblerLocationPresenterTests.m in Sources */,
 				9FAB6A7C1D548D2D0061F333 /* EventObjectIndexerTests.m in Sources */,
 				9FAB6A871D54981B0061F333 /* IndexerMonitorOperationQueueFactoryTests.m in Sources */,
 				9F1830B81BC119A5000E21A5 /* CommonNetworkClientTests.m in Sources */,
@@ -9642,6 +9769,7 @@
 				63C31C151DDB126700AA51BD /* MessageExtensionAssembly.m in Sources */,
 				9FAB6A731D53914C0061F333 /* IndexerStateStorageTests.m in Sources */,
 				63F613DE1CB111070002AEF0 /* PastEventCellObjectBuilderTests.m in Sources */,
+				029358991DF87EC9007CD5FD /* RamblerLocationInteractorTests.m in Sources */,
 				2B4F202A1D54E11F00C9891E /* SpeakerInfoCellObjectsBuilderTests.m in Sources */,
 				9F1830FE1BC14E64000E21A5 /* Conference.xcdatamodeld in Sources */,
 				9F7B823E1D7ECAD9002E977A /* QuickActionLaunchHandlerTests.m in Sources */,
@@ -9826,12 +9954,17 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BB481A1BA0B7D2DBE3750B94 /* Pods-Conferences.nightly.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Conferences/Conferences.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 33;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -9875,6 +10008,11 @@
 			baseConfigurationReference = 9AA70B1576B0B702AF66FB4E /* Pods-Conferences-ConferencesTests.nightly.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = UM246WFXVS;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "ConferencesTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.rambler.ConferencesTests;
@@ -9973,6 +10111,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1AB36DD96D7739E6F91D7BBE /* Pods-Conferences.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Conferences/Conferences.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -9980,6 +10119,10 @@
 				CURRENT_PROJECT_VERSION = 33;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -10023,12 +10166,17 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F3A86F78E711F7856679A32A /* Pods-Conferences.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Conferences/Conferences.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 33;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -10073,6 +10221,11 @@
 			baseConfigurationReference = 2A1B7FADAB8BA2EA1E9B450D /* Pods-Conferences-ConferencesTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = UM246WFXVS;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
@@ -10102,6 +10255,11 @@
 			baseConfigurationReference = 1FC5571A228743BA28853AEA /* Pods-Conferences-ConferencesTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = UM246WFXVS;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",

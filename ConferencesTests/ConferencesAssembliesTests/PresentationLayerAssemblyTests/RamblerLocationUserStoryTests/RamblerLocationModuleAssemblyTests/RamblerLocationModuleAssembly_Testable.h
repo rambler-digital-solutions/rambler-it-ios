@@ -24,6 +24,7 @@
 @class RamblerLocationInteractor;
 @class RamblerLocationPresenter;
 @class RamblerLocationRouter;
+@class UberRidesFactory;
 
 @interface RamblerLocationModuleAssembly ()
 
@@ -31,5 +32,6 @@
 - (RamblerLocationInteractor *)interactorRamblerLocation;
 - (RamblerLocationPresenter *)presenterRamblerLocation;
 - (RamblerLocationRouter *)routerRamblerLocation;
+- (UberRidesFactory *)uberRidesFactory;
 
 @end

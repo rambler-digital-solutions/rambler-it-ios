@@ -29,6 +29,7 @@
 #import "RamblerLocationRouter.h"
 #import "RamblerLocationDataDisplayManager.h"
 #import "DirectionCellObjectFactory.h"
+#import "UberRidesFactory.h"
 #import "RamblerLocationStateStorage.h"
 
 @implementation  RamblerLocationModuleAssembly
@@ -40,6 +41,10 @@
                                                     with:[self presenterRamblerLocation]];
                               [definition injectProperty:@selector(dataDisplayManager)
                                                     with:[self dataDisplayManagerRamblerLocation]];
+                              [definition injectProperty:@selector(requestBehavior)
+                                                    with:[self.uberRidesAssembly requestBehaviorWithViewController:[self viewRamblerLocation]]];
+                              [definition injectProperty:@selector(uberRidesFactory)
+                                                    with:[self uberRidesFactory]];
                           }];
 }
 
@@ -48,10 +53,16 @@
                           configuration:^(TyphoonDefinition *definition) {
                               [definition injectProperty:@selector(output)
                                                     with:[self presenterRamblerLocation]];
-                              [definition injectProperty:@selector(locationService)
+                              [definition injectProperty:@selector(ramblerLocationService)
                                                     with:[self.serviceComponents ramblerLocationService]];
                               [definition injectProperty:@selector(mapLinkBuilder)
                                                     with:[self.presentationLayerHelpersAssembly appleMapsLinkBuilder]];
+                              [definition injectProperty:@selector(builder)
+                                                    with:[self.uberRidesAssembly rideParametersBuilder]];
+                              [definition injectProperty:@selector(locationService)
+                                                    with:[self.serviceComponents locationServiceWithDelegate:[self interactorRamblerLocation]]];
+                              [definition injectProperty:@selector(ridesClient)
+                                                    with:[UBSDKRidesClient new]];
                           }];
 }
 
@@ -87,6 +98,10 @@
 
 - (DirectionCellObjectFactory *)directionCellObjectFactory {
     return [TyphoonDefinition withClass:[DirectionCellObjectFactory class]];
+}
+
+- (UberRidesFactory *)uberRidesFactory {
+    return [TyphoonDefinition withClass:[UberRidesFactory class]];
 }
 
 - (DirectionCellObjectFactory *)stateStorageRamblerLocation {

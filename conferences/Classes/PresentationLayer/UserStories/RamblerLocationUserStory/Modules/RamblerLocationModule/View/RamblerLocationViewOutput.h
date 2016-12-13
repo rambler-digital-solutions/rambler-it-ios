@@ -20,6 +20,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class UBSDKRideRequestViewController;
+
 @protocol RamblerLocationViewOutput <NSObject>
 
 /**
@@ -42,6 +44,24 @@
  Method tells presenter that share button was tapped
  */
 - (void)didTriggerShareButtonTapEvent;
+
+/**
+ @author Surik Sarkisyan
+ 
+ Method tells presenter that uberModalViewController will dismiss
+ */
+- (void)uberModalViewControllerWillDismiss;
+
+/**
+ @author Surik Sarkisyan
+ 
+ Method tells presenter that rideRequestViewController didReceiveError
+ 
+ @param UBSDKRideRequestViewController which receive error
+ @param NSError received error
+ */
+- (void)rideRequestViewController:(UBSDKRideRequestViewController *)rideRequestViewController
+                  didReceiveError:(NSError *)error;
 
 @end
 

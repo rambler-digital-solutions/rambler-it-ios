@@ -89,6 +89,24 @@
                                    forIdentifiers:(NSArray *)identifiers;
 
 /**
+ @author Surik Sarkisyan
+ 
+ Method generates random number
+ 
+ @return NSNumber
+ */
++ (NSNumber *)generateRandomNumber;
+
+/**
+ @author Surik Sarkisyan
+ 
+ Method generates random view controller
+ 
+ @return UIViewController
+ */
++ (UIViewController *)generateRandomViewController;
+
+/**
  @author Trishina Ekaterina
 
  Method returns EventModelObject scheme

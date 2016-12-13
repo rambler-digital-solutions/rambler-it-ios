@@ -22,9 +22,13 @@
 
 #import "RamblerLocationInteractorOutput.h"
 
+#import "EXTScope.h"
 #import "MapLinkBuilder.h"
+#import "LocationService.h"
 #import "LocalizedStrings.h"
 #import "ApplicationConstants.h"
+
+#import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 #import <Contacts/Contacts.h>
 
@@ -33,20 +37,49 @@
 #pragma mark - RamblerLocationInteractorInput
 
 - (NSArray<DirectionObject *> *)obtainDirections {
-    NSArray *directions = [self.locationService obtainDirections];
-    return directions;
+    return [self.ramblerLocationService obtainDirections];;
 }
 
 - (NSURL *)obtainRamblerLocationUrl {
-    CLLocationCoordinate2D coordinates = [self.locationService obtainRamblerCoordinates];
+    CLLocationCoordinate2D coordinates = [self.ramblerLocationService obtainRamblerCoordinates];
     NSURL *mapUrl = [self.mapLinkBuilder buildUrlWithCoordinates:coordinates];
     return mapUrl;
+}
+
+- (void)performRideInfoForUserCurrentLocationIfPossible {
+    [self.locationService obtainUserLocation];
+}
+
+- (UBSDKRideParameters *)obtainDefaultParameters {
+    return [self.builder build];
+}
+
+#pragma mark - LocationServiceOutput
+
+- (void)locationService:(id<LocationService>)locationService didUpdateLocation:(CLLocation *)location {
+    [self.builder setPickupLocation:location];
+    [self fetchCheapestProductWithPickupLocation:location];
+}
+
+#pragma mark - Private methods
+
+- (void)fetchCheapestProductWithPickupLocation:(CLLocation *)location {
+    @weakify(self);
+    [self.ridesClient fetchCheapestProductWithPickupLocation:location completion:^(UBSDKUberProduct* _Nullable product, UBSDKResponse* _Nullable response) {
+        @strongify(self);
+        if (product) {
+            self.builder = [self.builder setProductID:product.productID];
+            
+            UBSDKRideParameters *parameters = [self.builder build];
+            [self.output rideParametersDidLoad:parameters];
+        }
+    }];
 }
 
 - (NSUserActivity *)registerUserActivity {
     NSUserActivity *activity = [[NSUserActivity alloc] initWithActivityType:kLocationUserActivityType];
     
-    CLLocationCoordinate2D coordinates = [self.locationService obtainRamblerCoordinates];
+    CLLocationCoordinate2D coordinates = [self.ramblerLocationService obtainRamblerCoordinates];
     MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:coordinates
                                                    addressDictionary: @{CNPostalAddressStreetKey : RCLocalize(kRamblerOfficeName)}];
     activity.mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];

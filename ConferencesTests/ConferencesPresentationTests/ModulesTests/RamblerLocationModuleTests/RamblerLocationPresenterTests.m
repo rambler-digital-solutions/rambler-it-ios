@@ -26,7 +26,10 @@
 #import "RamblerLocationViewInput.h"
 #import "RamblerLocationInteractorInput.h"
 #import "RamblerLocationRouterInput.h"
+#import "MockObjectsFactory.h"
 #import "RamblerLocationStateStorage.h"
+
+#import <UberRides/UberRides.h>
 
 @interface RamblerLocationPresenterTests : XCTestCase
 
@@ -72,14 +75,20 @@
 
 - (void)testThatPresenterHandlesViewReadyEvent {
     // given
+    id object = [MockObjectsFactory generateRandomNumber];
+    
     NSArray *testDirections = @[@"1", @"2"];
     OCMStub([self.mockInteractor obtainDirections]).andReturn(testDirections);
+    OCMStub([self.mockInteractor obtainDefaultParameters]).andReturn(object);
     
     // when
     [self.presenter didTriggerViewReadyEvent];
     
     // then
     OCMVerify([self.mockView setupViewWithDirections:testDirections]);
+    OCMVerify([self.mockView setupUberRidesDefaultConfigWithParameters:object]);
+    OCMVerify([self.mockView updateRideInformation]);
+    OCMVerify([self.mockInteractor performRideInfoForUserCurrentLocationIfPossible]);
 }
 
 - (void)testThatPresenterRegistersUserActivityOnViewReadyEvent {
@@ -117,6 +126,39 @@
     
     // then
     OCMVerify([self.mockRouter openMapsWithUrl:testUrl]);
+}
+
+- (void)testThatPresenterUberModalViewControllerWillDismiss {
+    // when
+    [self.presenter uberModalViewControllerWillDismiss];
+    
+    // then
+    OCMVerify([self.mockView updateRideInformation]);
+}
+
+- (void)testThatPresenterRideParametersDidLoad {
+    // given
+    id object = [MockObjectsFactory generateRandomNumber];
+    
+    // when
+    [self.presenter rideParametersDidLoad:object];
+    
+    // then
+    OCMVerify([self.mockView updateRideRequestButtonParameters:object]);
+    OCMVerify([self.mockView updateRideInformation]);
+}
+
+- (void)testThatPresenterRideRequestViewControllerDidReceiveError {
+    // given
+    id viewController = [MockObjectsFactory generateRandomViewController];
+    NSError *error = [NSError new];
+    
+    // when
+    [self.presenter rideRequestViewController:viewController didReceiveError:error];
+    
+    // then
+    OCMVerify([self.mockView dismissRideRequestViewController:viewController]);
+    OCMVerify([self.mockView displayAlertWithTitle:OCMOCK_ANY andMessage:OCMOCK_ANY]);
 }
 
 @end

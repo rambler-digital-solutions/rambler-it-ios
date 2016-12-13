@@ -21,14 +21,13 @@
 #import "RamblerLocationServiceImplementation.h"
 
 #import "DirectionObject.h"
+#import "LocationConstants.h"
 
 #import <CoreGraphics/CoreGraphics.h>
 
 static NSString *kDirectionsFileName = @"directions";
 static NSString *kDirectionsFileType = @"plist";
 
-static CGFloat const kRamblerLatitude = 55.70288;
-static CGFloat const kRamblerLongitude = 37.621011;
 
 @implementation RamblerLocationServiceImplementation
 

@@ -21,12 +21,23 @@
 #import "RamblerLocationViewController.h"
 #import "RamblerLocationViewOutput.h"
 #import "RamblerLocationDataDisplayManager.h"
+#import "UberRidesFactory.h"
+#import "LocalizedStrings.h"
+
+#import <PureLayout/PureLayout.h>
+
+@interface RamblerLocationViewController ()
+
+@property (nonatomic, readwrite, strong) UBSDKRideRequestButton *rideRequestButton;
+
+@end
 
 @implementation RamblerLocationViewController
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	[self.output didTriggerViewReadyEvent];
+    
+    [self.output didTriggerViewReadyEvent];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -49,6 +60,65 @@
     self.collectionView.delegate = delegate;
     
     [self.collectionView reloadData];
+}
+
+- (void)setupUberRidesDefaultConfigWithParameters:(UBSDKRideParameters *)parameters {
+    self.requestBehavior.modalRideRequestViewController.delegate = self;
+    self.requestBehavior.modalRideRequestViewController.rideRequestViewController.delegate = self;
+    
+    self.rideRequestButton = [self.uberRidesFactory createRideRequestButtonWithParameters:parameters
+                                                                  requestingBehavior:self.requestBehavior];
+
+    [self.rideButtonContainerView addSubview:self.rideRequestButton];
+}
+
+- (void)addRideRequestButtonConstraint {
+    self.rideRequestButton.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    NSArray<NSLayoutConstraint *> *constraints = self.rideRequestButton.autoCenterInSuperview;
+    [self.rideButtonContainerView addConstraints:constraints];
+}
+
+- (void)updateRideInformation {
+    [self.rideRequestButton loadRideInformation];
+}
+
+- (void)updateRideRequestButtonParameters:(UBSDKRideParameters *)parameters {
+    self.rideRequestButton.rideParameters = parameters;
+}
+
+- (void)dismissRideRequestViewController:(UBSDKRideRequestViewController *)rideRequestViewController {
+    [rideRequestViewController dismissViewControllerAnimated:NO completion:nil];
+}
+
+- (void)displayAlertWithTitle:(NSString *)title andMessage:(NSString *)message {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title
+                                                                   message:message
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *closeAction = [UIAlertAction actionWithTitle:RCLocalize(OKAlertActionTitle)
+                                                          style:UIAlertActionStyleDefault
+                                                        handler:^(UIAlertAction * _Nonnull action) {}];
+    
+    [alert addAction:closeAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+#pragma mark - UBSDKRideRequestViewControllerDelegate
+
+- (void)rideRequestViewController:(UBSDKRideRequestViewController *)rideRequestViewController
+                  didReceiveError:(NSError *)error {
+    [self.output rideRequestViewController:rideRequestViewController didReceiveError:error];
+}
+
+#pragma mark - UBSDKModalViewControllerDelegate
+
+- (void)modalViewControllerDidDismiss:(UBSDKModalViewController *)modalViewController {
+    //Required for UBSDKModalViewControllerDelegate, thats why we should override this method
+}
+
+- (void)modalViewControllerWillDismiss:(UBSDKModalViewController *)modalViewController {
+    [self.output uberModalViewControllerWillDismiss];
 }
 
 #pragma mark - IBOutlets

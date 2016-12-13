@@ -21,6 +21,8 @@
 #import <Foundation/Foundation.h>
 
 @class DirectionObject;
+@class UBSDKRideParameters;
+@class UBSDKRideRequestViewController;
 
 @protocol RamblerLocationViewInput <NSObject>
 
@@ -33,5 +35,56 @@
  */
 - (void)setupViewWithDirections:(NSArray <DirectionObject *> *)directions;
 
-@end
+/**
+ @author Surik Sarkisyan
+ 
+ Method setups uber rides default config
+ 
+ @param parameters contains pickupLocation, dropoffLocation, dropoffLocationName etc.
+ */
+- (void)setupUberRidesDefaultConfigWithParameters:(UBSDKRideParameters *)parameters;
 
+/**
+ @author Surik Sarkisyan
+ 
+ Method tells view update ride information and display on ride request button
+ */
+- (void)updateRideInformation;
+
+/**
+ @author Surik Sarkisyan
+ 
+ Method tells view add constraints for ride request button
+ */
+- (void)addRideRequestButtonConstraint;
+
+/**
+ @author Surik Sarkisyan
+ 
+ Method tells view update rideRequestButton parameters
+ 
+ @param parameters contains pickupLocation, dropoffLocation, dropoffLocationName etc.
+ */
+- (void)updateRideRequestButtonParameters:(UBSDKRideParameters *)parameters;
+
+/**
+ @author Surik Sarkisyan
+ 
+ Method tells view dismissRideRequestViewController;
+ 
+ @param UBSDKRideRequestViewController which should be dismissed
+ */
+- (void)dismissRideRequestViewController:(UBSDKRideRequestViewController *)rideRequestViewController;
+
+/**
+ @author Surik Sarkisyan
+ 
+ Method shows alert with title and message
+ 
+ @param title
+ @param message
+ */
+- (void)displayAlertWithTitle:(NSString *)title
+                   andMessage:(NSString *)message;
+
+@end

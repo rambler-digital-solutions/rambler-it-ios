@@ -20,7 +20,18 @@
 
 #import <Foundation/Foundation.h>
 
+@class UBSDKRideParameters;
+
 @protocol RamblerLocationInteractorOutput <NSObject>
+
+/**
+ @author Surik Sarkisyan
+ 
+ The method returns loaded and configured parameters for update posible ride info(time for wait, price, etc).
+ 
+ @param parameters
+ */
+- (void)rideParametersDidLoad:(UBSDKRideParameters *)parameters;
 
 @end
 

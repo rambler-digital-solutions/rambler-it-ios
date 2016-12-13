@@ -25,7 +25,7 @@
 /**
  @author Golovko Mikhail
  
- Серис для работы с тегами.
+ Сервис для работы с тегами.
  */
 @protocol TagService <NSObject>
 

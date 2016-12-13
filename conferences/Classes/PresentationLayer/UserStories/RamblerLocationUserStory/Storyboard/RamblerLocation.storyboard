@@ -1,8 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G26a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="kbg-lh-1lE">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="kbg-lh-1lE">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Как добраться-->
@@ -14,35 +18,45 @@
                         <viewControllerLayoutGuide type="bottom" id="epi-lg-NWb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="SLa-UW-cIm">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rambler-map" translatesAutoresizingMaskIntoConstraints="NO" id="oZO-Be-Sfh">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eD1-qt-dDe">
-                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="496"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewLayout key="collectionViewLayout" id="74n-lv-bal" customClass="LocationCardFlowLayout"/>
                                 <cells/>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AoB-Bs-Pa5">
+                                <rect key="frame" x="0.0" y="565" width="375" height="45"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="DQF-8i-NQh"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="AoB-Bs-Pa5" secondAttribute="trailing" id="5jI-3E-FSX"/>
+                            <constraint firstItem="AoB-Bs-Pa5" firstAttribute="top" secondItem="eD1-qt-dDe" secondAttribute="bottom" constant="5" id="7uV-T7-6Eb"/>
                             <constraint firstItem="eD1-qt-dDe" firstAttribute="top" secondItem="SLa-UW-cIm" secondAttribute="top" constant="64" id="I2y-w6-gGS"/>
                             <constraint firstAttribute="trailing" secondItem="oZO-Be-Sfh" secondAttribute="trailing" id="Off-I4-lry"/>
-                            <constraint firstAttribute="bottom" secondItem="eD1-qt-dDe" secondAttribute="bottom" constant="49" id="Q39-EU-yuo"/>
+                            <constraint firstItem="epi-lg-NWb" firstAttribute="top" secondItem="AoB-Bs-Pa5" secondAttribute="bottom" constant="8" id="RFH-hv-3Es"/>
                             <constraint firstItem="oZO-Be-Sfh" firstAttribute="bottom" secondItem="SLa-UW-cIm" secondAttribute="bottomMargin" id="UMA-ob-wZ2"/>
                             <constraint firstAttribute="trailing" secondItem="eD1-qt-dDe" secondAttribute="trailing" id="VAA-AE-qgT"/>
                             <constraint firstItem="eD1-qt-dDe" firstAttribute="leading" secondItem="SLa-UW-cIm" secondAttribute="leading" id="aSG-u4-med"/>
                             <constraint firstItem="oZO-Be-Sfh" firstAttribute="top" secondItem="SLa-UW-cIm" secondAttribute="top" constant="64" id="mhH-kx-6MP"/>
+                            <constraint firstItem="AoB-Bs-Pa5" firstAttribute="leading" secondItem="SLa-UW-cIm" secondAttribute="leading" id="tab-LR-kQj"/>
                             <constraint firstItem="oZO-Be-Sfh" firstAttribute="leading" secondItem="SLa-UW-cIm" secondAttribute="leading" id="uzh-LX-NRv"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Как добраться" id="DZy-Ug-hKQ"/>
                     <navigationItem key="navigationItem" title="Как добраться" id="eWj-pQ-ha1">
                         <barButtonItem key="rightBarButtonItem" image="location-tabbar-icon" id="jKS-Vz-0ym">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="didTapShareButton:" destination="kbg-lh-1lE" id="vFh-A1-dTa"/>
                             </connections>
@@ -52,15 +66,21 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="eD1-qt-dDe" id="DOe-x5-0QU"/>
+                        <outlet property="rideButtonContainerView" destination="AoB-Bs-Pa5" id="ziG-ho-jGD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h56-b4-Lai" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="674" y="171"/>
+            <point key="canvasLocation" x="673.5" y="170.5"/>
         </scene>
     </scenes>
     <resources>
         <image name="location-tabbar-icon" width="24" height="24"/>
         <image name="rambler-map" width="1294" height="1462"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
 </document>

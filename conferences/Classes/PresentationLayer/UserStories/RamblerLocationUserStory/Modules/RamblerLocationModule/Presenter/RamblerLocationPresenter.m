@@ -22,10 +22,8 @@
 #import "RamblerLocationViewInput.h"
 #import "RamblerLocationInteractorInput.h"
 #import "RamblerLocationRouterInput.h"
+#import "LocalizedStrings.h"
 #import "RamblerLocationStateStorage.h"
-
-#import <CoreLocation/CoreLocation.h>
-#import <UIKit/UIKit.h>
 
 @implementation RamblerLocationPresenter
 
@@ -35,8 +33,18 @@
     NSArray *directions = [self.interactor obtainDirections];
     [self.view setupViewWithDirections:directions];
     
+    UBSDKRideParameters *parameters = [self.interactor obtainDefaultParameters];
+    [self.view setupUberRidesDefaultConfigWithParameters:parameters];
+    [self.view addRideRequestButtonConstraint];
+    [self.view updateRideInformation];
+    [self.interactor performRideInfoForUserCurrentLocationIfPossible];
+    
     NSUserActivity *activity = [self.interactor registerUserActivity];
     self.stateStorage.activity = activity;
+}
+
+- (void)uberModalViewControllerWillDismiss {
+    [self.view updateRideInformation];
 }
 
 - (void)didTriggerViewWillDisappearEvent {
@@ -46,6 +54,20 @@
 - (void)didTriggerShareButtonTapEvent {
     NSURL *locationUrl = [self.interactor obtainRamblerLocationUrl];
     [self.router openMapsWithUrl:locationUrl];
+}
+
+- (void)rideRequestViewController:(UBSDKRideRequestViewController *)rideRequestViewController
+                  didReceiveError:(NSError *)error {
+    [self.view dismissRideRequestViewController:rideRequestViewController];
+    [self.view displayAlertWithTitle:RCLocalize(ErrorAlertTitle)
+                          andMessage:RCLocalize(kUberAuthErrorMessage)];
+}
+
+#pragma mark - RamblerLocationInteractorOutput
+
+- (void)rideParametersDidLoad:(UBSDKRideParameters *)parameters {
+    [self.view updateRideRequestButtonParameters:parameters];
+    [self.view updateRideInformation];
 }
 
 @end

@@ -38,6 +38,7 @@
 #import "TagServiceImplementation.h"
 #import "TagServicePredicateBuilder.h"
 #import "SuggestServiceImplementation.h"
+#import "LocationServiceImplementation.h"
 
 @implementation ServiceComponentsAssembly
 
@@ -97,6 +98,33 @@
 
 - (id)tagServicePredicateBuilder {
     return [TyphoonDefinition withClass:[TagServicePredicateBuilder class]];
+}
+
+- (id<LocationService>)locationServiceWithDelegate:(id<LocationServiceDelegate>)delegate {
+    return [TyphoonDefinition withClass:[LocationServiceImplementation class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition useInitializer:@selector(initWithLocationManager:)
+                                              parameters:^(TyphoonMethod *initializer) {
+                                                  [initializer injectParameterWith:[self locationManager]];
+                                              }];
+                              [definition injectProperty:@selector(delegate)
+                                                    with:delegate];
+                          }];
+}
+
+#pragma mark - Private methods
+- (CLLocationManager *)locationManager {
+    return [TyphoonDefinition withClass:[CLLocationManager class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(distanceFilter)
+                                                    with:@(kCLDistanceFilterNone)];
+                              [definition injectProperty:@selector(desiredAccuracy)
+                                                    with:@(kCLLocationAccuracyBest)];
+                              [definition injectMethod:@selector(requestWhenInUseAuthorization)
+                                            parameters:nil];
+                              [definition injectMethod:@selector(startUpdatingLocation)
+                                            parameters:nil];
+                          }];
 }
 
 @end

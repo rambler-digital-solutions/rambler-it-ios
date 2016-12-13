@@ -74,6 +74,14 @@
     return mockTableView;
 }
 
++ (NSNumber *)generateRandomNumber {
+    return @5;
+}
+
++ (UIViewController *)generateRandomViewController {
+    return [UIViewController new];
+}
+
 + (NSString *)eventModelObjectScheme {
     return @"EventModelObject_%@";
 }
