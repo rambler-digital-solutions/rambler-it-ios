@@ -29,6 +29,7 @@
 		028E44601DF06CA300734E84 /* UberRidesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 028E445F1DF06CA300734E84 /* UberRidesAppDelegate.m */; };
 		028E44631DF08ED200734E84 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028E44581DF053B500734E84 /* ObjectMapper.framework */; };
 		028E44641DF08ED300734E84 /* UberRides.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028E44591DF053B500734E84 /* UberRides.framework */; };
+		0231D72B1DFEDCB50052471C /* UIAlertController+SupportedInterfaceOrientations.m in Sources */ = {isa = PBXBuildFile; fileRef = 0231D72A1DFEDCB50052471C /* UIAlertController+SupportedInterfaceOrientations.m */; };
 		028E446B1DF179CA00734E84 /* PredicateConfiguratorImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 028E446A1DF179CA00734E84 /* PredicateConfiguratorImplementation.m */; };
 		028E446F1DF184F100734E84 /* SearchFacadeImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 028E446E1DF184F100734E84 /* SearchFacadeImplementation.m */; };
 		028E44731DF19BA900734E84 /* PredicateConfiguratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 028E44721DF19BA900734E84 /* PredicateConfiguratorTests.m */; };
@@ -806,6 +807,8 @@
 		028E44591DF053B500734E84 /* UberRides.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UberRides.framework; path = Carthage/Build/iOS/UberRides.framework; sourceTree = "<group>"; };
 		028E445E1DF06CA300734E84 /* UberRidesAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UberRidesAppDelegate.h; sourceTree = "<group>"; };
 		028E445F1DF06CA300734E84 /* UberRidesAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UberRidesAppDelegate.m; sourceTree = "<group>"; };
+		0231D7291DFEDCB50052471C /* UIAlertController+SupportedInterfaceOrientations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+SupportedInterfaceOrientations.h"; sourceTree = "<group>"; };
+		0231D72A1DFEDCB50052471C /* UIAlertController+SupportedInterfaceOrientations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+SupportedInterfaceOrientations.m"; sourceTree = "<group>"; };
 		028E44681DF179B300734E84 /* PredicateConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PredicateConfigurator.h; sourceTree = "<group>"; };
 		028E44691DF179CA00734E84 /* PredicateConfiguratorImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PredicateConfiguratorImplementation.h; sourceTree = "<group>"; };
 		028E446A1DF179CA00734E84 /* PredicateConfiguratorImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PredicateConfiguratorImplementation.m; sourceTree = "<group>"; };
@@ -2033,6 +2036,15 @@
 				028E445F1DF06CA300734E84 /* UberRidesAppDelegate.m */,
 			);
 			path = UberRidesAppDelegate;
+sourceTree = "<group>";
+};
+		0231D7281DFEDCA30052471C /* UIAlertController+SupportedInterfaceOrientations */ = {
+			isa = PBXGroup;
+			children = (
+				0231D7291DFEDCB50052471C /* UIAlertController+SupportedInterfaceOrientations.h */,
+				0231D72A1DFEDCB50052471C /* UIAlertController+SupportedInterfaceOrientations.m */,
+			);
+			path = "UIAlertController+SupportedInterfaceOrientations";
 			sourceTree = "<group>";
 		};
 		028E44651DF1799900734E84 /* PredicateConfigurator */ = {
@@ -4440,6 +4452,7 @@
 		63F8F27A1BF79090000017F3 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				0231D7281DFEDCA30052471C /* UIAlertController+SupportedInterfaceOrientations */,
 				6310601F1DC89580006870EB /* MailComposerFactory */,
 				9F8B49E51D6EF71200ED176B /* YouTubePlayerFactory */,
 				9F8B49DE1D6EEE5E00ED176B /* YouTubeIdentifierDeriviator */,
@@ -9330,6 +9343,7 @@
 				636F8DDA1BCB8FE800552B91 /* RamblerLocationModuleAssembly.m in Sources */,
 				66E999851D54B0CC00161D98 /* TagCollectionViewCellObject.m in Sources */,
 				9F1830A71BC032CF000E21A5 /* ParseRequestSigner.m in Sources */,
+				0231D72B1DFEDCB50052471C /* UIAlertController+SupportedInterfaceOrientations.m in Sources */,
 				636F8DDD1BCB8FE800552B91 /* RamblerLocationRouter.m in Sources */,
 				9FC1F6841D28391E0070D9B5 /* EventListQueryTransformer.m in Sources */,
 				9F0A84FA1BC1698B006F79FB /* OperationBuffer.m in Sources */,
