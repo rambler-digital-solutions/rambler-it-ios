@@ -23,20 +23,18 @@
 /* Begin PBXBuildFile section */
 		0231D7211DFE87150052471C /* LocationConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 0231D7201DFE87150052471C /* LocationConstants.m */; };
 		0231D7241DFEA33D0052471C /* UberRidesModalTestableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0231D7231DFEA33D0052471C /* UberRidesModalTestableObject.m */; };
+		0231D72B1DFEDCB50052471C /* UIAlertController+SupportedInterfaceOrientations.m in Sources */ = {isa = PBXBuildFile; fileRef = 0231D72A1DFEDCB50052471C /* UIAlertController+SupportedInterfaceOrientations.m */; };
 		0231D7BE1DFF34E60052471C /* LocationServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0231D7BD1DFF34E60052471C /* LocationServiceImplementation.m */; };
 		0231D7BF1DFF36470052471C /* LocationServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0231D7BD1DFF34E60052471C /* LocationServiceImplementation.m */; };
 		0231D7C01DFF366E0052471C /* LocationConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 0231D7201DFE87150052471C /* LocationConstants.m */; };
+		0231D7F01E002C140052471C /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0231D7EE1E002C140052471C /* ObjectMapper.framework */; };
+		0231D7F11E002C140052471C /* UberRides.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0231D7EF1E002C140052471C /* UberRides.framework */; };
 		028E44601DF06CA300734E84 /* UberRidesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 028E445F1DF06CA300734E84 /* UberRidesAppDelegate.m */; };
-		028E44631DF08ED200734E84 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028E44581DF053B500734E84 /* ObjectMapper.framework */; };
-		028E44641DF08ED300734E84 /* UberRides.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028E44591DF053B500734E84 /* UberRides.framework */; };
-		0231D72B1DFEDCB50052471C /* UIAlertController+SupportedInterfaceOrientations.m in Sources */ = {isa = PBXBuildFile; fileRef = 0231D72A1DFEDCB50052471C /* UIAlertController+SupportedInterfaceOrientations.m */; };
 		028E446B1DF179CA00734E84 /* PredicateConfiguratorImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 028E446A1DF179CA00734E84 /* PredicateConfiguratorImplementation.m */; };
 		028E446F1DF184F100734E84 /* SearchFacadeImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 028E446E1DF184F100734E84 /* SearchFacadeImplementation.m */; };
 		028E44731DF19BA900734E84 /* PredicateConfiguratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 028E44721DF19BA900734E84 /* PredicateConfiguratorTests.m */; };
 		028E44761DF1B81C00734E84 /* SearchFacadeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 028E44751DF1B81C00734E84 /* SearchFacadeTests.m */; };
 		028E447B1DF6083400734E84 /* UberRidesAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 028E447A1DF6083400734E84 /* UberRidesAssembly.m */; };
-		028E447C1DF69EE900734E84 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028E44581DF053B500734E84 /* ObjectMapper.framework */; };
-		028E447D1DF69EE900734E84 /* UberRides.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028E44591DF053B500734E84 /* UberRides.framework */; };
 		029358991DF87EC9007CD5FD /* RamblerLocationInteractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 029358961DF87EC9007CD5FD /* RamblerLocationInteractorTests.m */; };
 		0293589A1DF87EC9007CD5FD /* RamblerLocationPresenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 029358971DF87EC9007CD5FD /* RamblerLocationPresenterTests.m */; };
 		0293589B1DF87EC9007CD5FD /* RamblerLocationRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 029358981DF87EC9007CD5FD /* RamblerLocationRouterTests.m */; };
@@ -798,17 +796,17 @@
 		0231D7201DFE87150052471C /* LocationConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationConstants.m; sourceTree = "<group>"; };
 		0231D7221DFEA33D0052471C /* UberRidesModalTestableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UberRidesModalTestableObject.h; path = RamblerLocationModuleTests/UberRidesModalTestableObject.h; sourceTree = "<group>"; };
 		0231D7231DFEA33D0052471C /* UberRidesModalTestableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UberRidesModalTestableObject.m; path = RamblerLocationModuleTests/UberRidesModalTestableObject.m; sourceTree = "<group>"; };
+		0231D7291DFEDCB50052471C /* UIAlertController+SupportedInterfaceOrientations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+SupportedInterfaceOrientations.h"; sourceTree = "<group>"; };
+		0231D72A1DFEDCB50052471C /* UIAlertController+SupportedInterfaceOrientations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+SupportedInterfaceOrientations.m"; sourceTree = "<group>"; };
 		0231D7B81DFF344B0052471C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		0231D7BA1DFF34E60052471C /* LocationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationService.h; sourceTree = "<group>"; };
 		0231D7BB1DFF34E60052471C /* LocationServiceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationServiceDelegate.h; sourceTree = "<group>"; };
 		0231D7BC1DFF34E60052471C /* LocationServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationServiceImplementation.h; sourceTree = "<group>"; };
 		0231D7BD1DFF34E60052471C /* LocationServiceImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationServiceImplementation.m; sourceTree = "<group>"; };
-		028E44581DF053B500734E84 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
-		028E44591DF053B500734E84 /* UberRides.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UberRides.framework; path = Carthage/Build/iOS/UberRides.framework; sourceTree = "<group>"; };
+		0231D7EE1E002C140052471C /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
+		0231D7EF1E002C140052471C /* UberRides.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UberRides.framework; path = Carthage/Build/iOS/UberRides.framework; sourceTree = "<group>"; };
 		028E445E1DF06CA300734E84 /* UberRidesAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UberRidesAppDelegate.h; sourceTree = "<group>"; };
 		028E445F1DF06CA300734E84 /* UberRidesAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UberRidesAppDelegate.m; sourceTree = "<group>"; };
-		0231D7291DFEDCB50052471C /* UIAlertController+SupportedInterfaceOrientations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+SupportedInterfaceOrientations.h"; sourceTree = "<group>"; };
-		0231D72A1DFEDCB50052471C /* UIAlertController+SupportedInterfaceOrientations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+SupportedInterfaceOrientations.m"; sourceTree = "<group>"; };
 		028E44681DF179B300734E84 /* PredicateConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PredicateConfigurator.h; sourceTree = "<group>"; };
 		028E44691DF179CA00734E84 /* PredicateConfiguratorImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PredicateConfiguratorImplementation.h; sourceTree = "<group>"; };
 		028E446A1DF179CA00734E84 /* PredicateConfiguratorImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PredicateConfiguratorImplementation.m; sourceTree = "<group>"; };
@@ -2001,9 +1999,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				028E447C1DF69EE900734E84 /* ObjectMapper.framework in Frameworks */,
-				028E447D1DF69EE900734E84 /* UberRides.framework in Frameworks */,
+				0231D7F01E002C140052471C /* ObjectMapper.framework in Frameworks */,
 				B844903CD5D6757D08026D5E /* libPods-Conferences.a in Frameworks */,
+				0231D7F11E002C140052471C /* UberRides.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2011,8 +2009,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				028E44631DF08ED200734E84 /* ObjectMapper.framework in Frameworks */,
-				028E44641DF08ED300734E84 /* UberRides.framework in Frameworks */,
 				9E94B671A997D53087214C4F /* libPods-Conferences-ConferencesTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2029,15 +2025,6 @@
 			path = LocationConstants;
 			sourceTree = "<group>";
 		};
-		028E445D1DF06C9000734E84 /* UberRidesAppDelegate */ = {
-			isa = PBXGroup;
-			children = (
-				028E445E1DF06CA300734E84 /* UberRidesAppDelegate.h */,
-				028E445F1DF06CA300734E84 /* UberRidesAppDelegate.m */,
-			);
-			path = UberRidesAppDelegate;
-sourceTree = "<group>";
-};
 		0231D7281DFEDCA30052471C /* UIAlertController+SupportedInterfaceOrientations */ = {
 			isa = PBXGroup;
 			children = (
@@ -2045,6 +2032,15 @@ sourceTree = "<group>";
 				0231D72A1DFEDCB50052471C /* UIAlertController+SupportedInterfaceOrientations.m */,
 			);
 			path = "UIAlertController+SupportedInterfaceOrientations";
+			sourceTree = "<group>";
+		};
+		028E445D1DF06C9000734E84 /* UberRidesAppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				028E445E1DF06CA300734E84 /* UberRidesAppDelegate.h */,
+				028E445F1DF06CA300734E84 /* UberRidesAppDelegate.m */,
+			);
+			path = UberRidesAppDelegate;
 			sourceTree = "<group>";
 		};
 		028E44651DF1799900734E84 /* PredicateConfigurator */ = {
@@ -5306,8 +5302,6 @@ sourceTree = "<group>";
 		66FBA2591DE0605600F5C2E9 /* SpotlightContinuationAppDelegate */ = {
 			isa = PBXGroup;
 			children = (
-				028E44581DF053B500734E84 /* ObjectMapper.framework */,
-				028E44591DF053B500734E84 /* UberRides.framework */,
 				66FBA25A1DE0607D00F5C2E9 /* SpotlightContinuationAppDelegateTests.m */,
 			);
 			name = SpotlightContinuationAppDelegate;
@@ -8694,6 +8688,8 @@ sourceTree = "<group>";
 		D1799435EABEFA40D1849E2A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0231D7EE1E002C140052471C /* ObjectMapper.framework */,
+				0231D7EF1E002C140052471C /* UberRides.framework */,
 				0231D7B81DFF344B0052471C /* CoreLocation.framework */,
 				6321841B1D9BF7E7001BB7A7 /* libMagicalRecord.a */,
 				636E26F21D8FF072001ABB92 /* CoreData.framework */,
