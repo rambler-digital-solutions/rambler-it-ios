@@ -20,6 +20,10 @@ The application uses staging API which is not available outside our private netw
 
 ### Installation
 
+Install `Carthage` before launching the project.
+You can use [Homebrew](http://brew.sh/) and install the Carthage tool on your system simply by running `brew update` and `brew install carthage`. (note: if you previously installed the binary version of Carthage, you should delete /Library/Frameworks/CarthageKit.framework).
+More info about Carthage installation you can find [here](https://github.com/Carthage/Carthage).
+
 Run `pod install` before launching the project. All of inner dependencies are public.
 
 ### License
