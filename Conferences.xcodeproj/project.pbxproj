@@ -758,12 +758,14 @@
 		9FFEAF061D2E41B4006E9649 /* DirectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FFEAF041D2E41B4006E9649 /* DirectionCollectionViewCell.xib */; };
 		9FFEAF0C1D2E5CE0006E9649 /* AppleMapsLinkBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFEAF0B1D2E5CE0006E9649 /* AppleMapsLinkBuilder.m */; };
 		B844903CD5D6757D08026D5E /* libPods-Conferences.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F15F66C7FD75B9A89EF39FB4 /* libPods-Conferences.a */; };
-		C33C178B1E02E80300BE21D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C33C178A1E02E80300BE21D8 /* main.m */; };
-		C33C178E1E02E80300BE21D8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C33C178D1E02E80300BE21D8 /* AppDelegate.m */; };
-		C33C17911E02E80300BE21D8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C33C17901E02E80300BE21D8 /* ViewController.m */; };
-		C33C17941E02E80300BE21D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C33C17921E02E80300BE21D8 /* Main.storyboard */; };
-		C33C17961E02E80300BE21D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C33C17951E02E80300BE21D8 /* Assets.xcassets */; };
 		C33C17A11E02E80400BE21D8 /* ConferencesTVTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C33C17A01E02E80400BE21D8 /* ConferencesTVTests.m */; };
+		C33C17B01E02ECDB00BE21D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C33C17AF1E02ECDB00BE21D8 /* Assets.xcassets */; };
+		C33C17B31E02EDFF00BE21D8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C33C17B11E02EDFF00BE21D8 /* Info.plist */; };
+		C33C17B41E02EDFF00BE21D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C33C17B21E02EDFF00BE21D8 /* main.m */; };
+		C33C17BC1E02EFE700BE21D8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C33C17B81E02EFE700BE21D8 /* AppDelegate.m */; };
+		C33C17BE1E02EFE700BE21D8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C33C17BB1E02EFE700BE21D8 /* ViewController.m */; };
+		C33C17C11E02EFFD00BE21D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C33C17BF1E02EFFD00BE21D8 /* Main.storyboard */; };
+		C33C17C61E02F1C900BE21D8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C33C17C51E02F1C900BE21D8 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1990,17 +1992,17 @@
 		9FFEAF0B1D2E5CE0006E9649 /* AppleMapsLinkBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppleMapsLinkBuilder.m; path = MapLinkBuilder/AppleMapsLinkBuilder.m; sourceTree = "<group>"; };
 		BB481A1BA0B7D2DBE3750B94 /* Pods-Conferences.nightly.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conferences.nightly.xcconfig"; path = "Pods/Target Support Files/Pods-Conferences/Pods-Conferences.nightly.xcconfig"; sourceTree = "<group>"; };
 		C33C17871E02E80300BE21D8 /* ConferencesTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConferencesTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C33C178A1E02E80300BE21D8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		C33C178C1E02E80300BE21D8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		C33C178D1E02E80300BE21D8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C33C178F1E02E80300BE21D8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C33C17901E02E80300BE21D8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		C33C17931E02E80300BE21D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C33C17951E02E80300BE21D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C33C17971E02E80300BE21D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C33C179C1E02E80400BE21D8 /* ConferencesTVTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConferencesTVTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C33C17A01E02E80400BE21D8 /* ConferencesTVTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConferencesTVTests.m; sourceTree = "<group>"; };
-		C33C17A21E02E80400BE21D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C33C17AF1E02ECDB00BE21D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resources/Images/Assets.xcassets; sourceTree = "<group>"; };
+		C33C17B11E02EDFF00BE21D8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Supporting Files/Info.plist"; sourceTree = "<group>"; };
+		C33C17B21E02EDFF00BE21D8 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "Supporting Files/main.m"; sourceTree = "<group>"; };
+		C33C17B71E02EFE700BE21D8 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/PresentationLayer/AppDelegate.h; sourceTree = "<group>"; };
+		C33C17B81E02EFE700BE21D8 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Classes/PresentationLayer/AppDelegate.m; sourceTree = "<group>"; };
+		C33C17BA1E02EFE700BE21D8 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Classes/PresentationLayer/ViewController.h; sourceTree = "<group>"; };
+		C33C17BB1E02EFE700BE21D8 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Classes/PresentationLayer/ViewController.m; sourceTree = "<group>"; };
+		C33C17C01E02EFFD00BE21D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Classes/PresentationLayer/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C33C17C51E02F1C900BE21D8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Supporting Files/Info.plist"; sourceTree = "<group>"; };
 		D4D07FD12F22C53F88A5868D /* Pods-Conferences-RamblerMessageExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conferences-RamblerMessageExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Conferences-RamblerMessageExtension/Pods-Conferences-RamblerMessageExtension.release.xcconfig"; sourceTree = "<group>"; };
 		E95DD4B714E0257EE1CE1C0D /* EventGalleryPresenterTests.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EventGalleryPresenterTests.m; sourceTree = "<group>"; };
 		EA2D483C826269C2260999EA /* Pods-Conferences-RamblerMessageExtension.nightly.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conferences-RamblerMessageExtension.nightly.xcconfig"; path = "Pods/Target Support Files/Pods-Conferences-RamblerMessageExtension/Pods-Conferences-RamblerMessageExtension.nightly.xcconfig"; sourceTree = "<group>"; };
@@ -8731,13 +8733,8 @@
 		C33C17881E02E80300BE21D8 /* ConferencesTV */ = {
 			isa = PBXGroup;
 			children = (
-				C33C178C1E02E80300BE21D8 /* AppDelegate.h */,
-				C33C178D1E02E80300BE21D8 /* AppDelegate.m */,
-				C33C178F1E02E80300BE21D8 /* ViewController.h */,
-				C33C17901E02E80300BE21D8 /* ViewController.m */,
-				C33C17921E02E80300BE21D8 /* Main.storyboard */,
-				C33C17951E02E80300BE21D8 /* Assets.xcassets */,
-				C33C17971E02E80300BE21D8 /* Info.plist */,
+				C33C17AB1E02E88100BE21D8 /* Classes */,
+				C33C17AC1E02E89700BE21D8 /* Resources */,
 				C33C17891E02E80300BE21D8 /* Supporting Files */,
 			);
 			path = ConferencesTV;
@@ -8746,7 +8743,8 @@
 		C33C17891E02E80300BE21D8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C33C178A1E02E80300BE21D8 /* main.m */,
+				C33C17B11E02EDFF00BE21D8 /* Info.plist */,
+				C33C17B21E02EDFF00BE21D8 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -8754,10 +8752,78 @@
 		C33C179F1E02E80400BE21D8 /* ConferencesTVTests */ = {
 			isa = PBXGroup;
 			children = (
+				C33C17C31E02F12B00BE21D8 /* ApplicationLayerTests */,
+				C33C17C41E02F13900BE21D8 /* ConferencesTVPresentationTests */,
+				C33C17C21E02F11600BE21D8 /* Supporting Files */,
 				C33C17A01E02E80400BE21D8 /* ConferencesTVTests.m */,
-				C33C17A21E02E80400BE21D8 /* Info.plist */,
 			);
 			path = ConferencesTVTests;
+			sourceTree = "<group>";
+		};
+		C33C17AB1E02E88100BE21D8 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C33C17B51E02EF1600BE21D8 /* ApplicationLayer */,
+				C33C17B61E02EF3100BE21D8 /* PresentationLayer */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		C33C17AC1E02E89700BE21D8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C33C17AE1E02ECB600BE21D8 /* Images */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		C33C17AE1E02ECB600BE21D8 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				C33C17AF1E02ECDB00BE21D8 /* Assets.xcassets */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		C33C17B51E02EF1600BE21D8 /* ApplicationLayer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ApplicationLayer;
+			sourceTree = "<group>";
+		};
+		C33C17B61E02EF3100BE21D8 /* PresentationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				C33C17B71E02EFE700BE21D8 /* AppDelegate.h */,
+				C33C17B81E02EFE700BE21D8 /* AppDelegate.m */,
+				C33C17BA1E02EFE700BE21D8 /* ViewController.h */,
+				C33C17BB1E02EFE700BE21D8 /* ViewController.m */,
+				C33C17BF1E02EFFD00BE21D8 /* Main.storyboard */,
+			);
+			name = PresentationLayer;
+			sourceTree = "<group>";
+		};
+		C33C17C21E02F11600BE21D8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C33C17C51E02F1C900BE21D8 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C33C17C31E02F12B00BE21D8 /* ApplicationLayerTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ApplicationLayerTests;
+			sourceTree = "<group>";
+		};
+		C33C17C41E02F13900BE21D8 /* ConferencesTVPresentationTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ConferencesTVPresentationTests;
 			sourceTree = "<group>";
 		};
 		D1799435EABEFA40D1849E2A /* Frameworks */ = {
@@ -9064,8 +9130,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C33C17961E02E80300BE21D8 /* Assets.xcassets in Resources */,
-				C33C17941E02E80300BE21D8 /* Main.storyboard in Resources */,
+				C33C17C11E02EFFD00BE21D8 /* Main.storyboard in Resources */,
+				C33C17B01E02ECDB00BE21D8 /* Assets.xcassets in Resources */,
+				C33C17B31E02EDFF00BE21D8 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -9073,6 +9140,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C33C17C61E02F1C900BE21D8 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -9936,9 +10004,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C33C17911E02E80300BE21D8 /* ViewController.m in Sources */,
-				C33C178E1E02E80300BE21D8 /* AppDelegate.m in Sources */,
-				C33C178B1E02E80300BE21D8 /* main.m in Sources */,
+				C33C17BE1E02EFE700BE21D8 /* ViewController.m in Sources */,
+				C33C17BC1E02EFE700BE21D8 /* AppDelegate.m in Sources */,
+				C33C17B41E02EDFF00BE21D8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -9979,10 +10047,10 @@
 			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
-		C33C17921E02E80300BE21D8 /* Main.storyboard */ = {
+		C33C17BF1E02EFFD00BE21D8 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C33C17931E02E80300BE21D8 /* Base */,
+				C33C17C01E02EFFD00BE21D8 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -10473,7 +10541,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				DEVELOPMENT_TEAM = UM246WFXVS;
-				INFOPLIST_FILE = ConferencesTV/Info.plist;
+				INFOPLIST_FILE = "ConferencesTV/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.ramblerco.rambler.it.ConferencesTV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -10492,7 +10560,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				DEVELOPMENT_TEAM = UM246WFXVS;
-				INFOPLIST_FILE = ConferencesTV/Info.plist;
+				INFOPLIST_FILE = "ConferencesTV/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.ramblerco.rambler.it.ConferencesTV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -10511,7 +10579,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				DEVELOPMENT_TEAM = UM246WFXVS;
-				INFOPLIST_FILE = ConferencesTV/Info.plist;
+				INFOPLIST_FILE = "ConferencesTV/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.ramblerco.rambler.it.ConferencesTV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -10529,7 +10597,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				DEVELOPMENT_TEAM = UM246WFXVS;
-				INFOPLIST_FILE = ConferencesTVTests/Info.plist;
+				INFOPLIST_FILE = "ConferencesTVTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.ramblerco.rambler.it.ConferencesTVTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -10547,7 +10615,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				DEVELOPMENT_TEAM = UM246WFXVS;
-				INFOPLIST_FILE = ConferencesTVTests/Info.plist;
+				INFOPLIST_FILE = "ConferencesTVTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.ramblerco.rambler.it.ConferencesTVTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -10565,7 +10633,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				DEVELOPMENT_TEAM = UM246WFXVS;
-				INFOPLIST_FILE = ConferencesTVTests/Info.plist;
+				INFOPLIST_FILE = "ConferencesTVTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.ramblerco.rambler.it.ConferencesTVTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
