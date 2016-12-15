@@ -758,6 +758,12 @@
 		9FFEAF061D2E41B4006E9649 /* DirectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FFEAF041D2E41B4006E9649 /* DirectionCollectionViewCell.xib */; };
 		9FFEAF0C1D2E5CE0006E9649 /* AppleMapsLinkBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFEAF0B1D2E5CE0006E9649 /* AppleMapsLinkBuilder.m */; };
 		B844903CD5D6757D08026D5E /* libPods-Conferences.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F15F66C7FD75B9A89EF39FB4 /* libPods-Conferences.a */; };
+		C33C178B1E02E80300BE21D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C33C178A1E02E80300BE21D8 /* main.m */; };
+		C33C178E1E02E80300BE21D8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C33C178D1E02E80300BE21D8 /* AppDelegate.m */; };
+		C33C17911E02E80300BE21D8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C33C17901E02E80300BE21D8 /* ViewController.m */; };
+		C33C17941E02E80300BE21D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C33C17921E02E80300BE21D8 /* Main.storyboard */; };
+		C33C17961E02E80300BE21D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C33C17951E02E80300BE21D8 /* Assets.xcassets */; };
+		C33C17A11E02E80400BE21D8 /* ConferencesTVTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C33C17A01E02E80400BE21D8 /* ConferencesTVTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -774,6 +780,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 9F1F37E31BBBB80D00C7797D;
 			remoteInfo = Conferences;
+		};
+		C33C179D1E02E80400BE21D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F1F37DC1BBBB80D00C7797D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C33C17861E02E80300BE21D8;
+			remoteInfo = ConferencesTV;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -1976,6 +1989,18 @@
 		9FFEAF0A1D2E5CE0006E9649 /* AppleMapsLinkBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppleMapsLinkBuilder.h; path = MapLinkBuilder/AppleMapsLinkBuilder.h; sourceTree = "<group>"; };
 		9FFEAF0B1D2E5CE0006E9649 /* AppleMapsLinkBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppleMapsLinkBuilder.m; path = MapLinkBuilder/AppleMapsLinkBuilder.m; sourceTree = "<group>"; };
 		BB481A1BA0B7D2DBE3750B94 /* Pods-Conferences.nightly.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conferences.nightly.xcconfig"; path = "Pods/Target Support Files/Pods-Conferences/Pods-Conferences.nightly.xcconfig"; sourceTree = "<group>"; };
+		C33C17871E02E80300BE21D8 /* ConferencesTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConferencesTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C33C178A1E02E80300BE21D8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C33C178C1E02E80300BE21D8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C33C178D1E02E80300BE21D8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C33C178F1E02E80300BE21D8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		C33C17901E02E80300BE21D8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C33C17931E02E80300BE21D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C33C17951E02E80300BE21D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C33C17971E02E80300BE21D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C33C179C1E02E80400BE21D8 /* ConferencesTVTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConferencesTVTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C33C17A01E02E80400BE21D8 /* ConferencesTVTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConferencesTVTests.m; sourceTree = "<group>"; };
+		C33C17A21E02E80400BE21D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4D07FD12F22C53F88A5868D /* Pods-Conferences-RamblerMessageExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conferences-RamblerMessageExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Conferences-RamblerMessageExtension/Pods-Conferences-RamblerMessageExtension.release.xcconfig"; sourceTree = "<group>"; };
 		E95DD4B714E0257EE1CE1C0D /* EventGalleryPresenterTests.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EventGalleryPresenterTests.m; sourceTree = "<group>"; };
 		EA2D483C826269C2260999EA /* Pods-Conferences-RamblerMessageExtension.nightly.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conferences-RamblerMessageExtension.nightly.xcconfig"; path = "Pods/Target Support Files/Pods-Conferences-RamblerMessageExtension/Pods-Conferences-RamblerMessageExtension.nightly.xcconfig"; sourceTree = "<group>"; };
@@ -2010,6 +2035,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E94B671A997D53087214C4F /* libPods-Conferences-ConferencesTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C33C17841E02E80300BE21D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C33C17991E02E80400BE21D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6340,6 +6379,8 @@
 				9F1F38031BBBB80D00C7797D /* ConferencesTests */,
 				635E18CA1CA6C572005B8439 /* ConferencesTestHelpers */,
 				63BDBBC41D87E3DE006E8A15 /* RamblerMessageExtension */,
+				C33C17881E02E80300BE21D8 /* ConferencesTV */,
+				C33C179F1E02E80400BE21D8 /* ConferencesTVTests */,
 				9F1F37E51BBBB80D00C7797D /* Products */,
 				D1799435EABEFA40D1849E2A /* Frameworks */,
 				D207702C368676837EA803A5 /* Pods */,
@@ -6352,6 +6393,8 @@
 				9F1F37E41BBBB80D00C7797D /* Conferences.app */,
 				9F1F38001BBBB80D00C7797D /* ConferencesTests.xctest */,
 				63BDBBC11D87E3DE006E8A15 /* RamblerMessageExtension.appex */,
+				C33C17871E02E80300BE21D8 /* ConferencesTV.app */,
+				C33C179C1E02E80400BE21D8 /* ConferencesTVTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -8685,6 +8728,38 @@
 			path = AnnouncementGallery;
 			sourceTree = "<group>";
 		};
+		C33C17881E02E80300BE21D8 /* ConferencesTV */ = {
+			isa = PBXGroup;
+			children = (
+				C33C178C1E02E80300BE21D8 /* AppDelegate.h */,
+				C33C178D1E02E80300BE21D8 /* AppDelegate.m */,
+				C33C178F1E02E80300BE21D8 /* ViewController.h */,
+				C33C17901E02E80300BE21D8 /* ViewController.m */,
+				C33C17921E02E80300BE21D8 /* Main.storyboard */,
+				C33C17951E02E80300BE21D8 /* Assets.xcassets */,
+				C33C17971E02E80300BE21D8 /* Info.plist */,
+				C33C17891E02E80300BE21D8 /* Supporting Files */,
+			);
+			path = ConferencesTV;
+			sourceTree = "<group>";
+		};
+		C33C17891E02E80300BE21D8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C33C178A1E02E80300BE21D8 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C33C179F1E02E80400BE21D8 /* ConferencesTVTests */ = {
+			isa = PBXGroup;
+			children = (
+				C33C17A01E02E80400BE21D8 /* ConferencesTVTests.m */,
+				C33C17A21E02E80400BE21D8 /* Info.plist */,
+			);
+			path = ConferencesTVTests;
+			sourceTree = "<group>";
+		};
 		D1799435EABEFA40D1849E2A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -8788,6 +8863,41 @@
 			productReference = 9F1F38001BBBB80D00C7797D /* ConferencesTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		C33C17861E02E80300BE21D8 /* ConferencesTV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C33C17A91E02E80400BE21D8 /* Build configuration list for PBXNativeTarget "ConferencesTV" */;
+			buildPhases = (
+				C33C17831E02E80300BE21D8 /* Sources */,
+				C33C17841E02E80300BE21D8 /* Frameworks */,
+				C33C17851E02E80300BE21D8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ConferencesTV;
+			productName = ConferencesTV;
+			productReference = C33C17871E02E80300BE21D8 /* ConferencesTV.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C33C179B1E02E80400BE21D8 /* ConferencesTVTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C33C17AA1E02E80400BE21D8 /* Build configuration list for PBXNativeTarget "ConferencesTVTests" */;
+			buildPhases = (
+				C33C17981E02E80400BE21D8 /* Sources */,
+				C33C17991E02E80400BE21D8 /* Frameworks */,
+				C33C179A1E02E80400BE21D8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C33C179E1E02E80400BE21D8 /* PBXTargetDependency */,
+			);
+			name = ConferencesTVTests;
+			productName = ConferencesTVTests;
+			productReference = C33C179C1E02E80400BE21D8 /* ConferencesTVTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -8831,6 +8941,17 @@
 						DevelopmentTeam = UM246WFXVS;
 						TestTargetID = 9F1F37E31BBBB80D00C7797D;
 					};
+					C33C17861E02E80300BE21D8 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = UM246WFXVS;
+						ProvisioningStyle = Automatic;
+					};
+					C33C179B1E02E80400BE21D8 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = UM246WFXVS;
+						ProvisioningStyle = Automatic;
+						TestTargetID = C33C17861E02E80300BE21D8;
+					};
 				};
 			};
 			buildConfigurationList = 9F1F37DF1BBBB80D00C7797D /* Build configuration list for PBXProject "Conferences" */;
@@ -8850,6 +8971,8 @@
 				2B750D101D362C1B00EACE98 /* Mogenerator */,
 				9F1F37FF1BBBB80D00C7797D /* ConferencesTests */,
 				63BDBBC01D87E3DE006E8A15 /* RamblerMessageExtension */,
+				C33C17861E02E80300BE21D8 /* ConferencesTV */,
+				C33C179B1E02E80400BE21D8 /* ConferencesTVTests */,
 			);
 		};
 /* End PBXProject section */
@@ -8934,6 +9057,22 @@
 			files = (
 				9FF750071D26C8EB000D208D /* EventListOperationFactoryTests.bundle in Resources */,
 				9FF750191D27E6EE000D208D /* ManagedObjectMapperTests.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C33C17851E02E80300BE21D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C33C17961E02E80300BE21D8 /* Assets.xcassets in Resources */,
+				C33C17941E02E80300BE21D8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C33C179A1E02E80400BE21D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -9793,6 +9932,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C33C17831E02E80300BE21D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C33C17911E02E80300BE21D8 /* ViewController.m in Sources */,
+				C33C178E1E02E80300BE21D8 /* AppDelegate.m in Sources */,
+				C33C178B1E02E80300BE21D8 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C33C17981E02E80400BE21D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C33C17A11E02E80400BE21D8 /* ConferencesTVTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -9806,6 +9963,11 @@
 			target = 9F1F37E31BBBB80D00C7797D /* Conferences */;
 			targetProxy = 9F1F38011BBBB80D00C7797D /* PBXContainerItemProxy */;
 		};
+		C33C179E1E02E80400BE21D8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C33C17861E02E80300BE21D8 /* ConferencesTV */;
+			targetProxy = C33C179D1E02E80400BE21D8 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -9815,6 +9977,14 @@
 				63BDBBC91D87E3DE006E8A15 /* Base */,
 			);
 			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		C33C17921E02E80300BE21D8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C33C17931E02E80300BE21D8 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -10294,6 +10464,117 @@
 			};
 			name = Release;
 		};
+		C33C17A31E02E80400BE21D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEVELOPMENT_TEAM = UM246WFXVS;
+				INFOPLIST_FILE = ConferencesTV/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.ramblerco.rambler.it.ConferencesTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		C33C17A41E02E80400BE21D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEVELOPMENT_TEAM = UM246WFXVS;
+				INFOPLIST_FILE = ConferencesTV/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.ramblerco.rambler.it.ConferencesTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		C33C17A51E02E80400BE21D8 /* Nightly */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEVELOPMENT_TEAM = UM246WFXVS;
+				INFOPLIST_FILE = ConferencesTV/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.ramblerco.rambler.it.ConferencesTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Nightly;
+		};
+		C33C17A61E02E80400BE21D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEVELOPMENT_TEAM = UM246WFXVS;
+				INFOPLIST_FILE = ConferencesTVTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.ramblerco.rambler.it.ConferencesTVTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ConferencesTV.app/ConferencesTV";
+				TVOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		C33C17A71E02E80400BE21D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEVELOPMENT_TEAM = UM246WFXVS;
+				INFOPLIST_FILE = ConferencesTVTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.ramblerco.rambler.it.ConferencesTVTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ConferencesTV.app/ConferencesTV";
+				TVOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		C33C17A81E02E80400BE21D8 /* Nightly */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEVELOPMENT_TEAM = UM246WFXVS;
+				INFOPLIST_FILE = ConferencesTVTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.ramblerco.rambler.it.ConferencesTVTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ConferencesTV.app/ConferencesTV";
+				TVOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Nightly;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -10346,6 +10627,24 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		C33C17A91E02E80400BE21D8 /* Build configuration list for PBXNativeTarget "ConferencesTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C33C17A31E02E80400BE21D8 /* Debug */,
+				C33C17A41E02E80400BE21D8 /* Release */,
+				C33C17A51E02E80400BE21D8 /* Nightly */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C33C17AA1E02E80400BE21D8 /* Build configuration list for PBXNativeTarget "ConferencesTVTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C33C17A61E02E80400BE21D8 /* Debug */,
+				C33C17A71E02E80400BE21D8 /* Release */,
+				C33C17A81E02E80400BE21D8 /* Nightly */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 
