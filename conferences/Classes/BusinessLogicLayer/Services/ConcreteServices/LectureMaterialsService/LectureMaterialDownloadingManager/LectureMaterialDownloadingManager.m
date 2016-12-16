@@ -44,8 +44,10 @@
 - (void)registerDelegate:(id)delegate forURL:(NSString *)url {
     __weak id weakDelegate = delegate;
     [weakDelegate didStartDownloadingLectureMaterialWithLink:url];
-    [self.delegatesByIdentifier setObject:weakDelegate
-                                   forKey:url];
+    @synchronized (self) {
+        [self.delegatesByIdentifier setObject:weakDelegate
+                                       forKey:url];
+    }
 }
 
 - (void)updateDelegate:(id)delegate forURL:(NSString *)url {
@@ -53,12 +55,14 @@
     id storedDelegate = [self.delegatesByIdentifier objectForKey:url];
     if (storedDelegate) {
         [weakDelegate didStartDownloadingLectureMaterialWithLink:url];
-        [self.delegatesByIdentifier setObject:weakDelegate
-                                       forKey:url];
+        @synchronized (self) {
+            [self.delegatesByIdentifier setObject:weakDelegate
+                                           forKey:url];
+        }
     }
 }
 
-#pragma mark - NSURLSessionDownloadDelegate
+#pragma mark - Require methods NSURLSessionDownloadDelegate 
 
 - (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)source {
     
@@ -82,6 +86,8 @@
     }
 }
 
+#pragma mark - Other methods
+
 - (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite {
     id delegate = [self.delegatesByIdentifier objectForKey:session.sessionDescription];
     if ([delegate respondsToSelector:@selector(URLSession:downloadTask:didWriteData:totalBytesWritten:totalBytesExpectedToWrite:)]) {
@@ -89,45 +95,71 @@
     }
 }
 
-#pragma mark - Runtime methods
+- (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didResumeAtOffset:(int64_t)fileOffset expectedTotalBytes:(int64_t)expectedTotalBytes {
+    id delegate = [self.delegatesByIdentifier objectForKey:session.sessionDescription];
+    if ([delegate respondsToSelector:@selector(URLSession:downloadTask:didResumeAtOffset:expectedTotalBytes:)]) {
+        [delegate URLSession:session downloadTask:downloadTask didResumeAtOffset:fileOffset expectedTotalBytes:expectedTotalBytes];
+    }
+}
 
-//- (BOOL)respondsToSelector:(SEL)selector {
-//    if ([super respondsToSelector:selector]) {
-//        return YES;
-//    }
-//    return [self isSelector:selector conformToProtocol:@protocol(NSURLSessionDownloadDelegate)];
-//}
-//
-//- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
-//    return [LectureMaterialDownloadingManager instanceMethodSignatureForSelector:aSelector];
-//}
-//
-//- (void)forwardInvocation:(NSInvocation *)invocation {
-//    SEL selector = [invocation selector];
-//    id argument = nil;
-//    invocation
-//    [invocation getArgument:&argument atIndex:2];
-//    if (![argument isKindOfClass:[NSURLSession class]]) {
-//        return;
-//    }
-//    NSURLSession *session = argument;
-//    id delegate = [self.delegatesByIdentifier objectForKey:session.sessionDescription];
-//    if ([delegate respondsToSelector:selector]) {
-//        [invocation invokeWithTarget:delegate];
-//    }
-//}
-//
-//- (BOOL)isSelector:(SEL)selector conformToProtocol:(Protocol *)protocol {
-//    struct objc_method_description methodRequired = protocol_getMethodDescription(protocol, selector, YES, YES);
-//    struct objc_method_description methodNonRequired = protocol_getMethodDescription(protocol, selector, NO, YES);
-//    
-//    if (methodRequired.name || methodNonRequired.name) {
-//        return YES;
-//    }
-//    return NO;
-//}
+- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task willPerformHTTPRedirection:(NSHTTPURLResponse *)response newRequest:(NSURLRequest *)request
+ completionHandler:(void (^)(NSURLRequest * _Nullable))completionHandler {
+    id delegate = [self.delegatesByIdentifier objectForKey:session.sessionDescription];
+    if ([delegate respondsToSelector:@selector(URLSession:task:willPerformHTTPRedirection:newRequest:completionHandler:)]) {
+        [delegate URLSession:session task:task willPerformHTTPRedirection:response newRequest:request completionHandler:completionHandler];
+    }
+}
 
-#pragma mark - Private methods 
+- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential * _Nullable credential))completionHandler {
+    id delegate = [self.delegatesByIdentifier objectForKey:session.sessionDescription];
+    if ([delegate respondsToSelector:@selector(URLSession:didReceiveChallenge:completionHandler:)]) {
+        [delegate URLSession:session didReceiveChallenge:challenge completionHandler:completionHandler];
+    }
+}
+
+- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task needNewBodyStream:(void (^)(NSInputStream * _Nullable bodyStream))completionHandler {
+    id delegate = [self.delegatesByIdentifier objectForKey:session.sessionDescription];
+    if ([delegate respondsToSelector:@selector(URLSession:task:needNewBodyStream:)]) {
+        [delegate URLSession:session task:task needNewBodyStream:completionHandler];
+    }
+}
+
+- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didSendBodyData:(int64_t)bytesSent totalBytesSent:(int64_t)totalBytesSent totalBytesExpectedToSend:(int64_t)totalBytesExpectedToSend {
+    id delegate = [self.delegatesByIdentifier objectForKey:session.sessionDescription];
+    if ([delegate respondsToSelector:@selector(connection:didSendBodyData:totalBytesWritten:totalBytesExpectedToWrite:)]) {
+        [delegate URLSession:session task:task didSendBodyData:bytesSent totalBytesSent:totalBytesSent totalBytesExpectedToSend:totalBytesExpectedToSend];
+    }
+}
+
+- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didFinishCollectingMetrics:(NSURLSessionTaskMetrics *)metrics {
+    id delegate = [self.delegatesByIdentifier objectForKey:session.sessionDescription];
+    if ([delegate respondsToSelector:@selector(URLSession:task:didFinishCollectingMetrics:)]) {
+        [delegate URLSession:session task:task didFinishCollectingMetrics:metrics];
+    }
+}
+
+- (void)URLSession:(NSURLSession *)session didBecomeInvalidWithError:(nullable NSError *)error {
+    id delegate = [self.delegatesByIdentifier objectForKey:session.sessionDescription];
+    if ([delegate respondsToSelector:@selector(URLSession:didBecomeInvalidWithError:)]) {
+        [delegate URLSession:session didBecomeInvalidWithError:error];
+    }
+}
+
+- (void)URLSession:(NSURLSession *)session didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential * _Nullable credential))completionHandler {
+    id delegate = [self.delegatesByIdentifier objectForKey:session.sessionDescription];
+    if ([delegate respondsToSelector:@selector(URLSession:didReceiveChallenge:completionHandler:)]) {
+        [delegate URLSession:session didReceiveChallenge:challenge completionHandler:completionHandler];
+    }
+}
+
+- (void)URLSessionDidFinishEventsForBackgroundURLSession:(NSURLSession *)session {
+    id delegate = [self.delegatesByIdentifier objectForKey:session.sessionDescription];
+    if ([delegate respondsToSelector:@selector(URLSessionDidFinishEventsForBackgroundURLSession:)]) {
+        [delegate URLSessionDidFinishEventsForBackgroundURLSession:session];
+    }
+}
+
+#pragma mark - Private methods
 
 - (BOOL)moveLectureMaterialFileFromURL:(NSURL *)source
                                  toURL:(NSURL *)destination {
@@ -153,11 +185,11 @@
 }
 
 - (NSURL *)cachedFileURLLocalVideoFromPath:(NSString *)oldPath {
-    // TODO: Завязка на видео, хорошо бы от это избавиться
     NSString  *documentsDirectory = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
     NSString *fileName = [[oldPath lastPathComponent] stringByDeletingPathExtension];
     documentsDirectory = [documentsDirectory stringByAppendingPathComponent:RITRelativePath];
     documentsDirectory = [documentsDirectory stringByAppendingPathComponent:fileName];
+    // TODO: Завязка на формат видео, хорошо бы от это избавиться
     documentsDirectory = [documentsDirectory stringByAppendingPathComponent:RITFormatVideo];
     return [NSURL fileURLWithPath:documentsDirectory];
 }

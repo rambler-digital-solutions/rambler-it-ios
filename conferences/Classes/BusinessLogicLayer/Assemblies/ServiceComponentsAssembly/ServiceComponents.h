@@ -29,7 +29,7 @@
 @protocol EventStoreServiceProtocol;
 @protocol SuggestService;
 @protocol RamblerLocationService;
-@protocol LectureMaterialsService;
+@protocol LectureMaterialService;
 
 @protocol ServiceComponents <NSObject>
 
@@ -41,6 +41,6 @@
 - (id<RamblerLocationService>)ramblerLocationService;
 - (id<TagService>)tagService;
 - (id<SuggestService>)suggestService;
-- (id<LectureMaterialsService>)lectureMaterialsService;
+- (id<LectureMaterialService>)lectureMaterialService;
 
 @end

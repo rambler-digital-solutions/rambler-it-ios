@@ -45,7 +45,7 @@
  
  @param error error
  */
-- (void)didOccurreError:(NSError *)error;
+- (void)didOccurError:(NSError *)error;
 
 @end
 

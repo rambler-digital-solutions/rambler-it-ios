@@ -24,11 +24,11 @@
 typedef void (^LectureMaterialCompletionBlock)(NSString *localUrl, NSError *error);
 
 /**
- @author Artem Karpushin
+ @author Konstantin Zinovyev
  
  The service is designed to download / remove data for Lecture objects
  */
-@protocol LectureMaterialsHandler <NSObject>
+@protocol LectureMaterialHandler <NSObject>
 
 /**
  @author Konstantin Zinovyev

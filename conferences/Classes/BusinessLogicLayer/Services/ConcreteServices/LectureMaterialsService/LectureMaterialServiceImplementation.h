@@ -19,14 +19,14 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-#import "LectureMaterialsService.h"
+#import "LectureMaterialService.h"
 
 @class LectureMaterialDownloadingManager;
 
-@interface LectureMaterialsServiceImplementation : NSObject <LectureMaterialsService>
+@interface LectureMaterialServiceImplementation : NSObject <LectureMaterialService>
 
-@property (nonatomic, strong) LectureMaterialDownloadingManager *lectureMaterialDownloadingManager;
+@property (nonatomic, strong) LectureMaterialDownloadingManager *lectureMaterialDownloadManager;
 
-- (instancetype)initWithLectureMaterialsHandlers:(NSArray *)lectureMaterialsHandlers;
+- (instancetype)initWithLectureMaterialHandlers:(NSArray *)lectureMaterialsHandlers;
 
 @end

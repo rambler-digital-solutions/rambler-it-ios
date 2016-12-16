@@ -32,13 +32,15 @@
  
  Method is used to register delegate with url
  */
-- (void)registerDelegate:(id)delegate forURL:(NSString *)url;
+- (void)registerDelegate:(id)delegate
+                  forURL:(NSString *)url;
 
 /**
  @author Konstantin Zinovyev
  
- Method is used to update delegate with url
+ Method is used to update delegate for active downloading material
  */
-- (void)updateDelegate:(id<LectureMaterialDownloadingDelegate>)delegate forURL:(NSString *)url;
+- (void)updateDelegate:(id<LectureMaterialDownloadingDelegate>)delegate
+                forURL:(NSString *)url;
 
 @end

@@ -30,7 +30,7 @@
 #import "LecturePlainObject.h"
 #import "SpeakerPlainObject.h"
 #import "LectureMaterialPlainObject.h"
-#import "LectureMaterialsService.h"
+#import "LectureMaterialService.h"
 #import "LectureMaterialModelObject.h"
 #import "LectureMaterialCacheOperationType.h"
 
@@ -59,12 +59,12 @@
 }
 
 - (void)downloadVideoToCacheWithLectureMaterialId:(NSString *)lectureMaterialId {
-    [self.lectureMaterialsService downloadToCacheLectureMaterialId:lectureMaterialId
+    [self.lectureMaterialService downloadToCacheLectureMaterialId:lectureMaterialId
                                                           delegate:self];
 }
 
 - (void)removeVideoFromCacheWithLectureMaterialId:(NSString *)lectureMaterialId{
-    [self.lectureMaterialsService removeFromCacheLectureMaterialId:lectureMaterialId
+    [self.lectureMaterialService removeFromCacheLectureMaterialId:lectureMaterialId
                                                       completion:^(NSError *error) {
         LectureMaterialPlainObject *material = [self getLectureMaterialByAttribute:LectureMaterialModelObjectAttributes.lectureMaterialId
                                                                          withValue:lectureMaterialId];
@@ -76,7 +76,7 @@
 
 - (void)updateDownloadingDelegateWithLectureMaterials:(NSArray *)lectureMaterials {
     for (LectureMaterialPlainObject *lectureMaterial in lectureMaterials) {
-        [self.lectureMaterialsService updateDelegate:self
+        [self.lectureMaterialService updateDelegate:self
                                 forLectureMaterialId:lectureMaterial.lectureMaterialId];
     }
 }
@@ -92,13 +92,11 @@
 }
 
 - (void)didEndDownloadingLectureMaterialWithError:(NSError *)error {
-    [self.output didOccurreError:error];
+    [self.output didOccurError:error];
 }
 
 - (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location {
-    @weakify(self);
     dispatch_async(dispatch_get_main_queue(), ^{
-        @strongify(self);
         LectureMaterialPlainObject *material = [self getLectureMaterialByAttribute:LectureMaterialModelObjectAttributes.link
                                                                          withValue:session.sessionDescription];
         [self.output didTriggerCacheOperationWithType:LectureMaterialEndDownloadType
@@ -110,9 +108,7 @@
 - (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite {
     LectureMaterialPlainObject *material = [self getLectureMaterialByAttribute:LectureMaterialModelObjectAttributes.link
                                                                      withValue:session.sessionDescription];
-    @weakify(self);
     dispatch_async(dispatch_get_main_queue(), ^{
-        @strongify(self);
         CGFloat percent = totalBytesWritten * 100.0 / totalBytesExpectedToWrite;
         [self.output didTriggerCacheOperationWithType:LectureMaterialDownloadType
                                       lectureMaterial:material

@@ -38,7 +38,7 @@
 #import "TagServiceImplementation.h"
 #import "TagServicePredicateBuilder.h"
 #import "SuggestServiceImplementation.h"
-#import "LectureMaterialsServiceImplementation.h"
+#import "LectureMaterialServiceImplementation.h"
 #import "VideoMaterialHandler.h"
 #import "PresentationLayerHelpersAssembly.h"
 #import "LectureMaterialDownloadingManager.h"
@@ -88,18 +88,18 @@
                           }];
 }
 
-- (id<LectureMaterialsService>)lectureMaterialsService {
-    return [TyphoonDefinition withClass:[LectureMaterialsServiceImplementation class]
+- (id<LectureMaterialService>)lectureMaterialService {
+    return [TyphoonDefinition withClass:[LectureMaterialServiceImplementation class]
                           configuration:^(TyphoonDefinition *definition) {
-                              [definition useInitializer:@selector(initWithLectureMaterialsHandlers:)
+                              [definition useInitializer:@selector(initWithLectureMaterialHandlers:)
                                               parameters:^(TyphoonMethod *initializer) {
                                                   [initializer injectParameterWith:@[
                                                                                      [self videoLectureMaterialHandler]
                                                                                      ]];
                                                 
                                               }];
-                              [definition injectProperty:@selector(lectureMaterialDownloadingManager)
-                                                    with:[self lectureMaterialDownloadingManager]];
+                              [definition injectProperty:@selector(lectureMaterialDownloadManager)
+                                                    with:[self lectureMaterialDownloadManager]];
                           }];
 }
 
@@ -122,7 +122,7 @@
     return [TyphoonDefinition withClass:[TagServicePredicateBuilder class]];
 }
 
-- (id<LectureMaterialsHandler>)videoLectureMaterialHandler {
+- (id<LectureMaterialHandler>)videoLectureMaterialHandler {
     return [TyphoonDefinition withClass:[VideoMaterialHandler class]
                           configuration:^(TyphoonDefinition *definition) {
                               [definition injectProperty:@selector(deriviator)
@@ -130,7 +130,7 @@
     }];
 }
 
-- (LectureMaterialDownloadingManager *)lectureMaterialDownloadingManager {
+- (LectureMaterialDownloadingManager *)lectureMaterialDownloadManager {
     return [TyphoonDefinition withClass:[LectureMaterialDownloadingManager class]
                           configuration:^(TyphoonDefinition *definition) {
                               definition.scope = TyphoonScopeSingleton;

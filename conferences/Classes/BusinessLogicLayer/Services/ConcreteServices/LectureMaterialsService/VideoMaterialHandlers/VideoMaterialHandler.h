@@ -19,11 +19,16 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-#import "LectureMaterialsHandler.h"
+#import "LectureMaterialHandler.h"
 
 @class YouTubeIdentifierDeriviator;
 
-@interface VideoMaterialHandler : NSObject <LectureMaterialsHandler>
+/**
+ @author Konstantin Zinovyev
+ 
+ The class is designed to download / remove video for Lecture objects from youtube
+ */
+@interface VideoMaterialHandler : NSObject <LectureMaterialHandler>
 
 @property (nonatomic, strong) YouTubeIdentifierDeriviator *deriviator;
 

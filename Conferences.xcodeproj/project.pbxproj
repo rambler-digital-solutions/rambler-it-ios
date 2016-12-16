@@ -115,7 +115,7 @@
 		636A37C21BC1413A00B49C3D /* SystemInfrastructureAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37C11BC1413A00B49C3D /* SystemInfrastructureAssembly.m */; };
 		636A37C51BC142BB00B49C3D /* ApplicationAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 636A37C41BC142BB00B49C3D /* ApplicationAssembly.m */; };
 		636B64041BBDD19A0053E38F /* LectureServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64031BBDD19A0053E38F /* LectureServiceImplementation.m */; };
-		636B64071BBDD2A40053E38F /* LectureMaterialsServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64061BBDD2A40053E38F /* LectureMaterialsServiceImplementation.m */; };
+		636B64071BBDD2A40053E38F /* LectureMaterialServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64061BBDD2A40053E38F /* LectureMaterialServiceImplementation.m */; };
 		636B640A1BBDD3FA0053E38F /* RegistrationQuestionServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64091BBDD3FA0053E38F /* RegistrationQuestionServiceImplementation.m */; };
 		636B640D1BBDD5000053E38F /* SocialNetworkAccountServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B640C1BBDD5000053E38F /* SocialNetworkAccountServiceImplementation.m */; };
 		636B64101BBDD6260053E38F /* SpeakerServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B640F1BBDD6260053E38F /* SpeakerServiceImplementation.m */; };
@@ -780,13 +780,13 @@
 		636A37C31BC142BB00B49C3D /* ApplicationAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationAssembly.h; sourceTree = "<group>"; };
 		636A37C41BC142BB00B49C3D /* ApplicationAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationAssembly.m; sourceTree = "<group>"; };
 		636A37CE1BC1500700B49C3D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		636B63C91BBDCC550053E38F /* LectureMaterialsService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectureMaterialsService.h; sourceTree = "<group>"; };
+		636B63C91BBDCC550053E38F /* LectureMaterialService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectureMaterialService.h; sourceTree = "<group>"; };
 		636B63CA1BBDCC720053E38F /* LectureService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectureService.h; sourceTree = "<group>"; };
 		636B63CB1BBDCC910053E38F /* SocialNetworkAccountService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialNetworkAccountService.h; sourceTree = "<group>"; };
 		636B64021BBDD19A0053E38F /* LectureServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectureServiceImplementation.h; sourceTree = "<group>"; };
 		636B64031BBDD19A0053E38F /* LectureServiceImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LectureServiceImplementation.m; sourceTree = "<group>"; };
-		636B64051BBDD2A40053E38F /* LectureMaterialsServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectureMaterialsServiceImplementation.h; sourceTree = "<group>"; };
-		636B64061BBDD2A40053E38F /* LectureMaterialsServiceImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LectureMaterialsServiceImplementation.m; sourceTree = "<group>"; };
+		636B64051BBDD2A40053E38F /* LectureMaterialServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectureMaterialServiceImplementation.h; sourceTree = "<group>"; };
+		636B64061BBDD2A40053E38F /* LectureMaterialServiceImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LectureMaterialServiceImplementation.m; sourceTree = "<group>"; };
 		636B64081BBDD3FA0053E38F /* RegistrationQuestionServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationQuestionServiceImplementation.h; sourceTree = "<group>"; };
 		636B64091BBDD3FA0053E38F /* RegistrationQuestionServiceImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationQuestionServiceImplementation.m; sourceTree = "<group>"; };
 		636B640B1BBDD5000053E38F /* SocialNetworkAccountServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialNetworkAccountServiceImplementation.h; sourceTree = "<group>"; };
@@ -1120,7 +1120,7 @@
 		6691CC9B1DF86BD700894E99 /* LectureTableViewAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LectureTableViewAnimator.h; path = LectureTableViewAnimator/LectureTableViewAnimator.h; sourceTree = "<group>"; };
 		6691CC9C1DF86BD700894E99 /* LectureTableViewAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LectureTableViewAnimator.m; path = LectureTableViewAnimator/LectureTableViewAnimator.m; sourceTree = "<group>"; };
 		669D94451DE0C6C200589AC2 /* LectureMaterialCacheDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LectureMaterialCacheDelegate.h; sourceTree = "<group>"; };
-		669D94471DE0D8B500589AC2 /* LectureMaterialsHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LectureMaterialsHandler.h; path = LectureMaterialsHandlers/LectureMaterialsHandler.h; sourceTree = "<group>"; };
+		669D94471DE0D8B500589AC2 /* LectureMaterialHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LectureMaterialHandler.h; path = LectureMaterialsHandlers/LectureMaterialHandler.h; sourceTree = "<group>"; };
 		669D94491DE0D97200589AC2 /* VideoMaterialHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoMaterialHandler.h; path = VideoMaterialHandlers/VideoMaterialHandler.h; sourceTree = "<group>"; };
 		669D944A1DE0D97200589AC2 /* VideoMaterialHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VideoMaterialHandler.m; path = VideoMaterialHandlers/VideoMaterialHandler.m; sourceTree = "<group>"; };
 		66A1DD2E1D7E980D00998F6B /* TagAssembly_Testable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagAssembly_Testable.h; path = TagModuleTests/Assembly/TagAssembly_Testable.h; sourceTree = "<group>"; };
@@ -2483,9 +2483,9 @@
 			children = (
 				667AD5461DF07BF100BCA9B9 /* LectureMaterialDownloadingManager */,
 				669D94461DE0D88F00589AC2 /* LectureMaterialsHandlers */,
-				636B63C91BBDCC550053E38F /* LectureMaterialsService.h */,
-				636B64051BBDD2A40053E38F /* LectureMaterialsServiceImplementation.h */,
-				636B64061BBDD2A40053E38F /* LectureMaterialsServiceImplementation.m */,
+				636B63C91BBDCC550053E38F /* LectureMaterialService.h */,
+				636B64051BBDD2A40053E38F /* LectureMaterialServiceImplementation.h */,
+				636B64061BBDD2A40053E38F /* LectureMaterialServiceImplementation.m */,
 			);
 			path = LectureMaterialsService;
 			sourceTree = "<group>";
@@ -4332,7 +4332,7 @@
 		669D94461DE0D88F00589AC2 /* LectureMaterialsHandlers */ = {
 			isa = PBXGroup;
 			children = (
-				669D94471DE0D8B500589AC2 /* LectureMaterialsHandler.h */,
+				669D94471DE0D8B500589AC2 /* LectureMaterialHandler.h */,
 				669D94481DE0D92600589AC2 /* VideoMaterialHandler */,
 			);
 			name = LectureMaterialsHandlers;
@@ -8606,7 +8606,7 @@
 				2B2064931D3F9CE900246C8D /* LectureMaterialPlainObject.m in Sources */,
 				9FBE89E71D5CBC5A00DA0C32 /* ApplicationHelperAssembly.m in Sources */,
 				66E9993D1D54AF5100161D98 /* TagAssembly.m in Sources */,
-				636B64071BBDD2A40053E38F /* LectureMaterialsServiceImplementation.m in Sources */,
+				636B64071BBDD2A40053E38F /* LectureMaterialServiceImplementation.m in Sources */,
 				2B2064801D3F9CE900246C8D /* _EventPlainObject.m in Sources */,
 				66EE4D2B1D54BCDF0011F94A /* CollectionViewAnimator.m in Sources */,
 				9F8E5F741BC255AA00DC10DB /* RequestSignersAssembly.m in Sources */,

@@ -22,6 +22,7 @@
 @protocol ThirdPartiesConfigurator;
 @protocol SpotlightCoreDataStackCoordinator;
 @protocol Daemon;
+@protocol LectureMaterialService;
 @class IndexerMonitor;
 @class CleanLaunchRouter;
 
@@ -38,5 +39,6 @@
 @property (nonatomic, strong) IndexerMonitor *indexerMonitor;
 @property (nonatomic, strong) CleanLaunchRouter *cleanStartRouter;
 @property (nonatomic, strong) id<SpotlightCoreDataStackCoordinator> spotlightCoreDataStackCoordinator;
+@property (nonatomic, strong) id<LectureMaterialService> lectureMaterialService;
 
 @end

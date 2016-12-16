@@ -19,7 +19,7 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-#import "LectureMaterialsHandler.h"
+#import "LectureMaterialHandler.h"
 
 @protocol LectureMaterialDownloadingDelegate;
 
@@ -30,7 +30,7 @@ typedef void (^LectureMaterialsCompletionBlock)(NSError *error);
  
  The service is designed to download / remove from cache LectureMaterials objects
  */
-@protocol LectureMaterialsService <NSObject>
+@protocol LectureMaterialService <NSObject>
 
 /**
  @author Konstantin Zinovyev
@@ -64,5 +64,12 @@ typedef void (^LectureMaterialsCompletionBlock)(NSError *error);
  */
 - (void)updateDelegate:(id<LectureMaterialDownloadingDelegate>)delegate
   forLectureMaterialId:(NSString *)lectureMaterialId;
+
+/**
+ @author Konstantin Zinovyev
+ 
+ Method is used to create directory for cached materials
+ */
+- (void)createCachedDirectoryIfNeeded;
 
 @end

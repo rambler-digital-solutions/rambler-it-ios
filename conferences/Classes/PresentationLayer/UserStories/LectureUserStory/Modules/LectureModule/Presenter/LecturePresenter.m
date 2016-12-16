@@ -28,6 +28,7 @@
 #import "SpeakerPlainObject.h"
 #import "LectureViewModelMapper.h"
 #import "LectureMaterialViewModel.h"
+#import "EXTScope.h"
 
 @implementation LecturePresenter
 
@@ -84,7 +85,9 @@
 #pragma mark - LectureMaterialCacheDelegate
 
 - (void)didTapRemoveFromCacheLectureMaterial:(LectureMaterialViewModel *)lectureMaterialViewModel {
+    @weakify(self);
     ActionAlertBlock actionAlertBlock = ^{
+        @strongify(self);
         [self.interactor removeVideoFromCacheWithLectureMaterialId:lectureMaterialViewModel.lectureMaterialId];
 
     };
@@ -92,7 +95,9 @@
 }
 
 - (void)didTapDownloadToCacheLectureMaterial:(LectureMaterialViewModel *)lectureMaterialViewModel {
+    @weakify(self);
     ActionAlertBlock actionAlertBlock = ^{
+        @strongify(self);
         [self.interactor downloadVideoToCacheWithLectureMaterialId:lectureMaterialViewModel.lectureMaterialId];
     };
     [self.router showAlertConfirmationDownloadWithActionBlock:actionAlertBlock];
@@ -110,7 +115,8 @@
     [self.view updateViewWithLectureMaterial:newMaterial];
 }
 
-- (void)didOccurreError:(NSError *)error {
+- (void)didOccurError:(NSError *)error {
     [self.router showAlertErrorWithMessage:error.localizedDescription];
 }
+
 @end

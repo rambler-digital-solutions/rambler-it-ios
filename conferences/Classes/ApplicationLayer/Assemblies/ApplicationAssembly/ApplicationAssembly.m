@@ -33,7 +33,6 @@
 #import "CleanLaunchRouter.h"
 #import "CleanLaunchAppDelegate.h"
 #import "ServiceComponents.h"
-
 #import <RamblerAppDelegateProxy/RamblerAppDelegateProxy.h>
 
 @implementation ApplicationAssembly
@@ -69,6 +68,8 @@
                                                     with:[self.spotlightIndexerAssembly spotlightCoreDataStackCoordinator]];
                               [definition injectProperty:@selector(quickActionDaemon)
                                                     with:[self.daemonAssembly quickActionDaemon]];
+                              [definition injectProperty:@selector(lectureMaterialService)
+                                                    with:[self.serviceComponents lectureMaterialService]];
                               
                               definition.scope = TyphoonScopeSingleton;
                           }];

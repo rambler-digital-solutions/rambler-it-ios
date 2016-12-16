@@ -60,8 +60,8 @@ static NSString *const kLectureShareItemType = @"lecture";
                                                       with:[self.ponsomizerAssembly ponsomizer]];
                                 [definition injectProperty:@selector(lectureService)
                                                       with:[self.serviceComponents lectureService]];
-                                [definition injectProperty:@selector(lectureMaterialsService)
-                                                      with:[self.serviceComponents lectureMaterialsService]];
+                                [definition injectProperty:@selector(lectureMaterialService)
+                                                      with:[self.serviceComponents lectureMaterialService]];
                                 [definition injectProperty:@selector(shareUrlBuilder)
                                                       with:[self lectureShareUrlBuilder]];
                                 [definition injectProperty:@selector(deriviator)

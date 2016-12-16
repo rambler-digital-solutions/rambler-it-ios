@@ -23,8 +23,8 @@
 #import "IndexerMonitor.h"
 #import "SpotlightCoreDataStackCoordinator.h"
 #import "CleanLaunchRouter.h"
-#import "LectureMaterialConstants.h"
 #import "Daemon.h"
+#import "LectureMaterialService.h"
 
 @implementation CleanLaunchAppDelegate
 
@@ -35,23 +35,10 @@
     [self.spotlightCoreDataStackCoordinator setupCoreDataStack];
     [self.indexerMonitor startMonitoring];
     [self.quickActionDaemon start];
-    [self createCachedVideoDirectoryIfNeeded];
+    [self.lectureMaterialService createCachedDirectoryIfNeeded];
     [self.cleanStartRouter openInitialScreen];
     
     return YES;
-}
-
-- (void)createCachedVideoDirectoryIfNeeded {
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSString  *directory = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
-    directory = [directory stringByAppendingPathComponent:RITRelativePath];
-    if ([fileManager fileExistsAtPath:directory]) {
-        return;
-    }
-    [fileManager createDirectoryAtPath:directory
-           withIntermediateDirectories:NO
-                            attributes:nil
-                                 error:nil];
 }
 
 @end
