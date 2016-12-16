@@ -42,6 +42,36 @@
     [super tearDown];
 }
 
+- (void)testThatChecksYouTubeVideoCorrectly {
+    // given
+    NSArray *exptectedResult = @[
+                                @YES,
+                                @YES,
+                                @YES,
+                                @NO
+                                ];
+    NSMutableArray *result = [[NSMutableArray alloc] init];
+    NSArray *allFormats = @[
+                            @"http://www.youtube.com/v/%@?fs=1&hl=en_US&rel=0",
+                            @"http://youtu.be/%@",
+                            @"http://www.youtube-nocookie.com/v/%@?version=3&hl=en_US&rel=0",
+                            @"http://www.rambler.ru"
+                            ];
+    
+    // when
+    for (NSString *linkFormat in allFormats) {
+        NSString *stringURL = [linkFormat stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+        NSURL *url = [NSURL URLWithString:stringURL];
+        BOOL isFromYoutube = [self.deriviator checkIfVideoIsFromYouTube:url];
+        [result addObject:@(isFromYoutube)];
+    }
+    
+    // then
+    for (NSUInteger i = 0; i < result.count; ++i) {
+        XCTAssertEqualObjects(exptectedResult[i], result[i]);
+    }
+}
+
 - (void)testThatWorksWithAllYouTubeFormats {
     // given
     NSString *videoId = @"dQw4w9WgXcQ";

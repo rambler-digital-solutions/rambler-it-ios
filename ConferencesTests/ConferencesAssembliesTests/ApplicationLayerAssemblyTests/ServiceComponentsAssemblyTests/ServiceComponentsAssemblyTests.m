@@ -31,6 +31,7 @@
 
 #import "RamblerLocationServiceImplementation.h"
 #import "RamblerInitialAssemblyCollector+Activate.h"
+#import "LectureMaterialServiceImplementation.h"
 
 @interface ServiceComponentsAssemblyTests : RamblerTyphoonAssemblyTests
 
@@ -95,6 +96,21 @@
     // then
     RamblerTyphoonAssemblyTestsTypeDescriptor *descriptor = [RamblerTyphoonAssemblyTestsTypeDescriptor descriptorWithClass:targetClass];
     [self verifyTargetDependency:result withDescriptor:descriptor dependencies:dependencies];
+}
+
+- (void)testThatAssemblyCreatesLectureMaterialService {
+    // given
+    Class targetClass = [LectureMaterialServiceImplementation class];
+    NSArray *dependencies = @[
+                              RamblerSelector(lectureMaterialDownloadManager)
+                              ];
+    // when
+    id result = [self.assembly lectureMaterialService];
+    
+    // then
+    [self verifyTargetDependency:result
+                       withClass:targetClass
+                    dependencies:dependencies];
 }
 
 @end

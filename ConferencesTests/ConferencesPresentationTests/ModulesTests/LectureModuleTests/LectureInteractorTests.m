@@ -116,7 +116,7 @@
     BOOL result = [self.interactor checkIfVideoIsFromYouTube:testUrl];
     
     // then
-    XCTAssertTrue(result);
+    OCMVerify([self.mockDeriviator checkIfVideoIsFromYouTube:testUrl]);
 }
 
 - (void)testThatInteractorDetectsNonYouTube {

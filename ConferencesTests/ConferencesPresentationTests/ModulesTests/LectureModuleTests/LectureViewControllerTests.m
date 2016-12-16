@@ -27,6 +27,7 @@
 #import "SpeakerShortInfoView.h"
 #import "LectureDataDisplayManager.h"
 #import "LecturePlainObject.h"
+#import "LectureViewModel.h"
 #import "SpeakerPlainObject.h"
 #import "LectureViewController_Testable.h"
 
@@ -84,14 +85,14 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
 
 - (void)testSuccessSetupTableViewDataSource {
     // given
-    LecturePlainObject *lecture = [LecturePlainObject new];
+    LectureViewModel *lecture = [LectureViewModel new];
     
     id dataSourceMock = OCMProtocolMock(@protocol(UITableViewDataSource));
     
     OCMStub([self.dataDisplayManagerMock dataSourceForTableView:OCMOCK_ANY]).andReturn(dataSourceMock);
     
     // when
-//    [self.viewController configureViewWithLecture:lecture];
+    [self.viewController configureViewWithLecture:lecture];
     
     // then
     OCMVerify([self.tableViewMock setDataSource:dataSourceMock]);
@@ -99,14 +100,14 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
 
 - (void)testSuccessSetupTableViewDelegate {
     // given
-    LecturePlainObject *lecture = [LecturePlainObject new];
+    LectureViewModel *lecture = [LectureViewModel new];
     
     id delegateMock = OCMProtocolMock(@protocol(UITableViewDelegate));
     
     OCMStub([self.dataDisplayManagerMock delegateForTableView:OCMOCK_ANY withBaseDelegate:OCMOCK_ANY]).andReturn(delegateMock);
     
     // when
-//    [self.viewController configureViewWithLecture:lecture];
+    [self.viewController configureViewWithLecture:lecture];
     
     // then
     OCMVerify([self.tableViewMock setDelegate:delegateMock]);
@@ -114,26 +115,25 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
 
 - (void)testSuccessSetupTableView {
     // given
-    LecturePlainObject *lecture = [LecturePlainObject new];
+    LectureViewModel *lecture = [LectureViewModel new];
     
     UITableView *tableView = [UITableView new];
     self.viewController.tableView = tableView;
     
     // when
-//    [self.viewController configureViewWithLecture:lecture];
+    [self.viewController configureViewWithLecture:lecture];
     
     // then
-    XCTAssert(tableView.estimatedRowHeight == TableViewEstimatedRowHeight);
     XCTAssert(tableView.rowHeight == UITableViewAutomaticDimension);
     XCTAssertNotNil(tableView.tableFooterView);
 }
 
 - (void)testSuccessConfigureViewWithLecture {
     // given
-    LecturePlainObject *lecture = [LecturePlainObject new];
+    LectureViewModel *lecture = [LectureViewModel new];
     
     // when
-//    [self.viewController configureViewWithLecture:lecture];
+    [self.viewController configureViewWithLecture:lecture];
     
     // then
     OCMVerify([self.dataDisplayManagerMock configureDataDisplayManagerWithLecture:lecture

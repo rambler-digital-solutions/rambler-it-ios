@@ -28,6 +28,7 @@
 #import "LecturePresenterStateStorage.h"
 #import "LecturePlainObject.h"
 #import "SpeakerPlainObject.h"
+#import "LectureMaterialViewModel.h"
 
 @interface LecturePresenterTests : XCTestCase
 
@@ -118,15 +119,32 @@
     OCMVerify([self.routerMock openShareModuleWithActivityItems:activityItems]);
 }
 
+- (void)testSuccessDidTapCachedVideoPreview {
+    // given
+    LectureMaterialViewModel *model = [LectureMaterialViewModel new];
+    id testUrl = @"rambler.ru";
+    model.localURL = testUrl;
+    
+    // when
+    [self.presenter didTapVideoPreviewWithVideoMaterial:model];
+    
+    // then
+    OCMVerify([self.routerMock openLocalVideoPlayerModuleWithPath:testUrl]);
+}
+
+
 - (void)testSuccessDidTapYouTubeVideoPreview {
     // given
-    id testUrl = [NSURL URLWithString:@"rambler.ru"];
+    LectureMaterialViewModel *model = [LectureMaterialViewModel new];
+    NSString *link = @"rambler.ru";
+    id testUrl = [NSURL URLWithString:link];
+    model.link = link;
     NSString *testIdentifier = @"1234";
     OCMStub([self.interactorMock checkIfVideoIsFromYouTube:testUrl]).andReturn(YES);
     OCMStub([self.interactorMock deriveVideoIdFromYouTubeUrl:testUrl]).andReturn(testIdentifier);
     
     // when
-    [self.presenter didTapVideoPreviewWithVideoMaterial:testUrl];
+    [self.presenter didTapVideoPreviewWithVideoMaterial:model];
     
     // then
     OCMVerify([self.routerMock openYouTubeVideoPlayerModuleWithIdentifier:testIdentifier]);
@@ -134,11 +152,14 @@
 
 - (void)testSuccessTapOtherVideoPreview {
     // given
-    id testUrl = [NSURL URLWithString:@"rambler.ru"];
+    LectureMaterialViewModel *model = [LectureMaterialViewModel new];
+    NSString *link = @"rambler.ru";
+    id testUrl = [NSURL URLWithString:link];
+    model.link = link;
     OCMStub([self.interactorMock checkIfVideoIsFromYouTube:testUrl]).andReturn(NO);
     
     // when
-    [self.presenter didTapVideoPreviewWithVideoMaterial:testUrl];
+    [self.presenter didTapVideoPreviewWithVideoMaterial:model];
     
     // then
     OCMVerify([self.routerMock openWebBrowserModuleWithUrl:testUrl]);
