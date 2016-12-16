@@ -3,22 +3,12 @@
 
 #import "_TagModelObject.h"
 
-const struct TagModelObjectAttributes TagModelObjectAttributes = {
-	.name = @"name",
-	.slug = @"slug",
-	.tagId = @"tagId",
-};
-
-const struct TagModelObjectRelationships TagModelObjectRelationships = {
-	.lectures = @"lectures",
-};
-
 @implementation TagModelObjectID
 @end
 
 @implementation _TagModelObject
 
-+ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
++ (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_ {
 	NSParameterAssert(moc_);
 	return [NSEntityDescription insertNewObjectForEntityForName:@"Tag" inManagedObjectContext:moc_];
 }
@@ -50,14 +40,32 @@ const struct TagModelObjectRelationships TagModelObjectRelationships = {
 
 @dynamic lectures;
 
-- (NSMutableSet*)lecturesSet {
+- (NSMutableSet<LectureModelObject*>*)lecturesSet {
 	[self willAccessValueForKey:@"lectures"];
 
-	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"lectures"];
+	NSMutableSet<LectureModelObject*> *result = (NSMutableSet<LectureModelObject*>*)[self mutableSetValueForKey:@"lectures"];
 
 	[self didAccessValueForKey:@"lectures"];
 	return result;
 }
 
+@end
+
+@implementation TagModelObjectAttributes 
++ (NSString *)name {
+	return @"name";
+}
++ (NSString *)slug {
+	return @"slug";
+}
++ (NSString *)tagId {
+	return @"tagId";
+}
+@end
+
+@implementation TagModelObjectRelationships 
++ (NSString *)lectures {
+	return @"lectures";
+}
 @end
 

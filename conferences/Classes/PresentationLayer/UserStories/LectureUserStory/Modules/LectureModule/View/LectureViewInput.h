@@ -20,7 +20,8 @@
 
 #import <Foundation/Foundation.h>
 
-@class LecturePlainObject;
+@class LectureViewModel;
+@class LectureMaterialViewModel;
 
 @protocol LectureViewInput <NSObject>
 
@@ -29,9 +30,18 @@
  
  Method is used to configure view with Lecture object
  
- @param lecture LecturePlainObject object
+ @param lecture view model
+*/
+- (void)configureViewWithLecture:(LectureViewModel *)lecture;
+
+/**
+ @author Konstantin Zinovyev
+ 
+ Method is used to update view with Lecture material object
+ 
+ @param lectureMaterial view model
  */
-- (void)configureViewWithLecture:(LecturePlainObject *)lecture;
+- (void)updateViewWithLectureMaterial:(LectureMaterialViewModel *)lectureMaterial;
 
 @end
 

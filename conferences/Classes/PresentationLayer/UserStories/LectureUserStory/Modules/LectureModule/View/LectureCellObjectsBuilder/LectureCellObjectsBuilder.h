@@ -20,7 +20,9 @@
 
 #import <Foundation/Foundation.h>
 
-@class LecturePlainObject;
+@class LectureViewModel;
+@class VideoRecordTableViewCellObject;
+@class LectureMaterialViewModel;
 
 @protocol LectureCellObjectsBuilder <NSObject>
 
@@ -33,6 +35,17 @@
  
  @return CellObjects
  */
-- (NSArray *)cellObjectsForLecture:(LecturePlainObject *)lecture;
+- (NSArray *)cellObjectsForLecture:(LectureViewModel *)lecture;
 
+/**
+ @author Konstantin Zinovyev
+ 
+ Obtain video cell object with video material
+ 
+ @param viewModel video material
+ 
+ @return video cell object
+ */
+- (VideoRecordTableViewCellObject *)videoCellObjectForVideoMaterial:(LectureMaterialViewModel *)viewModel;
+    
 @end

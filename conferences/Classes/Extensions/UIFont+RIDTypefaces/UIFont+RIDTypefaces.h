@@ -1,4 +1,4 @@
-// Copyright (c) 2015 RAMBLER&Co
+// Copyright (c) 2016 RAMBLER&Co
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -18,18 +18,28 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-
-@class NSPredicate;
-@class LectureMaterials;
-
-typedef void (^LectureMaterialsCompletionBlock)(LectureMaterials *lectureMaterials, NSError *error);
+#import <UIKit/UIKit.h>
 
 /**
- @author Artem Karpushin
+ @author Konstantin Zinovyev
  
- The service is designed to obtain / update LectureMaterials objects
+ Fonts for application
  */
-@protocol LectureMaterialsService <NSObject>
+@interface UIFont (RIDTypefaces)
+
+/**
+ @author Konstantin Zinovyev
+
+ System 24
+*/
++ (UIFont *)rid_lectureTitleFont;
+
+/**
+ @author Konstantin Zinovyev
+ 
+ System Semibold 16
+ */
++ (UIFont *)rid_lectureDescriptionFont;
+
 
 @end

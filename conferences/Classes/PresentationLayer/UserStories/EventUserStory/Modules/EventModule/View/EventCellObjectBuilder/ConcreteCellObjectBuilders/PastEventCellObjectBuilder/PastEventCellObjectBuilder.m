@@ -21,7 +21,6 @@
 #import "PastEventCellObjectBuilder.h"
 
 #import "EventInfoTableViewCellObject.h"
-#import "VideoRecordTableViewCellObject.h"
 #import "EventDescriptionTableViewCellObject.h"
 #import "LectureInfoTableViewCellObject.h"
 #import "EventPlainObject.h"

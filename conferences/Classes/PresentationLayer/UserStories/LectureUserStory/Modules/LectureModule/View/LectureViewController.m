@@ -23,7 +23,7 @@
 #import "LectureViewOutput.h"
 #import "LectureDataDisplayManager.h"
 #import "SpeakerPlainObject.h"
-#import "LecturePlainObject.h"
+#import "LectureViewModel.h"
 #import "SpeakerShortInfoModuleInput.h"
 
 #import "UINavigationBar+States.h"
@@ -32,7 +32,6 @@
 #import "TagModuleTableViewCell.h"
 #import "CollectionViewContentCellAnimator.h"
 
-static CGFloat kTableViewEstimatedRowHeight = 44.0f;
 static CGFloat kTableViewFooterHeight = 16.0f;
 
 @implementation LectureViewController
@@ -41,7 +40,8 @@ static CGFloat kTableViewFooterHeight = 16.0f;
 	[super viewDidLoad];
     
     [self cd_startObserveProtocols:@[@protocol(LectureInfoTableViewCellActionProtocol),
-                                     @protocol(TagTableViewCellDelegate)]];
+                                     @protocol(TagTableViewCellDelegate),
+                                     @protocol(LectureMaterialCacheDelegate)]];
     [self.output setupView];
 }
 
@@ -57,25 +57,30 @@ static CGFloat kTableViewFooterHeight = 16.0f;
 
 #pragma mark - LectureViewInput
 
-- (void)configureViewWithLecture:(LecturePlainObject *)lecture {
-    [self.dataDisplayManager configureDataDisplayManagerWithLecture:lecture];
-    
+- (void)configureViewWithLecture:(LectureViewModel *)lecture {
+    [self.dataDisplayManager configureDataDisplayManagerWithLecture:lecture
+                                                           animator:self.tableViewAnimator];
     self.tableView.dataSource = [self.dataDisplayManager dataSourceForTableView:self.tableView];
     self.tableView.delegate = [self.dataDisplayManager delegateForTableView:self.tableView
                                                            withBaseDelegate:nil];
+    [self.tableView reloadData];
     
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, kTableViewFooterHeight)];
     
-    self.tableView.estimatedRowHeight = kTableViewEstimatedRowHeight;
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
-    
-    [self setupViewInitialState];
+    [self.navigationController.navigationBar rcf_becomeTransparent];
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+    self.navigationController.navigationBar.hidden = NO;
+    self.animator.tableView = self.tableView;
+}
+
+- (void)updateViewWithLectureMaterial:(LectureMaterialViewModel *)material {
+    [self.dataDisplayManager updateDataDisplayManagerWithLectureMaterial:material];
 }
 
 #pragma mark - <LectureDataDisplayManagerDelegate>
 
-- (void)didTapVideoRecordCellWithVideoUrl:(NSURL *)videoUrl {
-    [self.output didTapVideoPreviewWithUrl:videoUrl];
+- (void)didTapVideoRecordCellWithVideoMaterial:(LectureMaterialViewModel *)videoMaterial; {
+    [self.output didTapVideoPreviewWithVideoMaterial:videoMaterial];
 }
 
 - (void)didTapMaterialCellWithUrl:(NSURL *)materialUrl {
@@ -88,14 +93,17 @@ static CGFloat kTableViewFooterHeight = 16.0f;
     [self.output didTapSpeakerWithId:speakerId];
 }
 
-#pragma mark - Private methods
+#pragma mark - LectureMaterialCacheDelegate
 
-- (void)setupViewInitialState {
-    [self.navigationController.navigationBar rcf_becomeTransparent];
-    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
-    self.navigationController.navigationBar.hidden = NO;
-    self.animator.tableView = self.tableView;
+- (void)didTapRemoveFromCacheLectureMaterial:(LectureMaterialViewModel *)lectureMaterial {
+    [self.output didTapRemoveFromCacheLectureMaterial:lectureMaterial];
 }
+
+- (void)didTapDownloadToCacheLectureMaterial:(LectureMaterialViewModel *)lectureMaterial {
+    [self.output didTapDownloadToCacheLectureMaterial:lectureMaterial];
+}
+
+#pragma mark - Private methods
 
 - (IBAction)didTapShareButton:(id)sender {
     [self.output didTapShareButton];

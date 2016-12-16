@@ -23,14 +23,14 @@
 
 #import "LectureMaterialType.h"
 
-@class LectureMaterialPlainObject;
+@class LectureMaterialViewModel;
 
 @interface LectureMaterialInfoTableViewCellObject : NSObject <NICellObject>
 
-@property (nonatomic, strong, readonly) LectureMaterialPlainObject *lectureMaterial;
+@property (nonatomic, strong, readonly) LectureMaterialViewModel *lectureMaterial;
 @property (nonatomic, strong, readonly) NSString *title;
 @property (nonatomic, assign, readonly) LectureMaterialType type;
 
-+ (instancetype)objectWithLectureMaterialObject:(LectureMaterialPlainObject *)lectureMaterialObject;
++ (instancetype)objectWithLectureMaterialObject:(LectureMaterialViewModel *)lectureMaterialObject;
 
 @end

@@ -23,8 +23,12 @@
 #import "LectureInteractorInput.h"
 #import "LectureRouterInput.h"
 #import "LecturePresenterStateStorage.h"
+#import "LectureMaterialPlainObject.h"
 #import "LecturePlainObject.h"
 #import "SpeakerPlainObject.h"
+#import "LectureViewModelMapper.h"
+#import "LectureMaterialViewModel.h"
+#import "EXTScope.h"
 
 @implementation LecturePresenter
 
@@ -41,10 +45,19 @@
     SpeakerPlainObject *speaker = lecture.speaker;
     self.stateStorage.speakerObjectId = speaker.speakerId;
     
-    [self.view configureViewWithLecture:lecture];
+    NSArray *lectureMaterials = [lecture.lectureMaterials allObjects];
+    self.stateStorage.lectureViewModel = [self.mapperLectureViewModel mapLectureViewModelFromLecturePlainObject:lecture];
+    [self.interactor updateDownloadingDelegateWithLectureMaterials:lectureMaterials];
+    [self.view configureViewWithLecture:self.stateStorage.lectureViewModel];
 }
 
-- (void)didTapVideoPreviewWithUrl:(NSURL *)videoUrl {
+- (void)didTapVideoPreviewWithVideoMaterial:(LectureMaterialViewModel *)videoMaterial {
+    if (videoMaterial.localURL.length != 0) {
+        [self.router openLocalVideoPlayerModuleWithPath:videoMaterial.localURL];
+        return;
+    }
+    
+    NSURL *videoUrl = [NSURL URLWithString:videoMaterial.link];
     BOOL isYouTube = [self.interactor checkIfVideoIsFromYouTube:videoUrl];
     if (isYouTube) {
         NSString *videoIdentifier = [self.interactor deriveVideoIdFromYouTubeUrl:videoUrl];
@@ -67,6 +80,45 @@
     NSArray *activitiyItems = [self.interactor obtainActivityItemsForLecture:lecture];
     
     [self.router openShareModuleWithActivityItems:activitiyItems];
+}
+
+#pragma mark - LectureMaterialCacheDelegate
+
+- (void)didTapRemoveFromCacheLectureMaterial:(LectureMaterialViewModel *)lectureMaterialViewModel {
+    @weakify(self);
+    ActionAlertBlock actionAlertBlock = ^{
+        @strongify(self);
+        [self.interactor removeVideoFromCacheWithLectureMaterialId:lectureMaterialViewModel.lectureMaterialId];
+
+    };
+    [self.router showAlertConfirmationRemoveWithActionBlock:actionAlertBlock];
+}
+
+- (void)didTapDownloadToCacheLectureMaterial:(LectureMaterialViewModel *)lectureMaterialViewModel {
+    @weakify(self);
+    ActionAlertBlock actionAlertBlock = ^{
+        @strongify(self);
+        [self.interactor downloadVideoToCacheWithLectureMaterialId:lectureMaterialViewModel.lectureMaterialId];
+    };
+    [self.router showAlertConfirmationDownloadWithActionBlock:actionAlertBlock];
+}
+
+#pragma mark - LectureInteractorOutput
+
+- (void)didTriggerCacheOperationWithType:(LectureMaterialCacheOperationType)operationType
+                         lectureMaterial:(LectureMaterialPlainObject *)material
+                                 percent:(CGFloat)percent {
+    LectureMaterialViewModel *newMaterial = [self.mapperLectureViewModel updateMaterialInLectureViewModel:self.stateStorage.lectureViewModel
+                                                                                          lectureMaterial:material
+                                                                                            operationType:operationType
+                                                                                                  percent:@(percent)];
+    [self.view updateViewWithLectureMaterial:newMaterial];
+}
+
+- (void)didOccurError:(NSError *)error {
+    if (error) {
+        [self.router showAlertErrorWithMessage:error.localizedDescription];
+    }
 }
 
 @end

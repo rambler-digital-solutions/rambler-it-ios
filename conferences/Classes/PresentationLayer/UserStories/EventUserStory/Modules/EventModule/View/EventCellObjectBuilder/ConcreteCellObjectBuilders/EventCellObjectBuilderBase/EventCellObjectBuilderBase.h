@@ -24,10 +24,12 @@
 @class DateFormatter;
 @class TechPlainObject;
 @class EventPlainObject;
+@class LectureInfoTableViewCellObjectMapper;
 
 @interface EventCellObjectBuilderBase : NSObject
 
 @property (nonatomic, strong) DateFormatter *dateFormatter;
+@property (nonatomic, strong) LectureInfoTableViewCellObjectMapper *lectureInfoCellObjectMapper;
 
 /**
  @author Vasyura Anastasiya

@@ -26,6 +26,7 @@
 #import "IndexerMonitor.h"
 #import "SpotlightCoreDataStackCoordinator.h"
 #import "CleanLaunchRouter.h"
+#import "LectureMaterialService.h"
 
 @interface CleanLaunchAppDelegateTests : XCTestCase
 
@@ -35,6 +36,7 @@
 @property (nonatomic, strong) id mockIndexerMonitor;
 @property (nonatomic, strong) id mockSpotlightCoreDataStackCoordinator;
 @property (nonatomic, strong) id mockCleanStartRouter;
+@property (nonatomic, strong) id mockLectureMaterialService;
 
 @end
 
@@ -50,12 +52,14 @@
     self.mockIndexerMonitor = OCMClassMock([IndexerMonitor class]);
     self.mockSpotlightCoreDataStackCoordinator = OCMProtocolMock(@protocol(SpotlightCoreDataStackCoordinator));
     self.mockCleanStartRouter = OCMClassMock([CleanLaunchRouter class]);
+    self.mockLectureMaterialService = OCMProtocolMock(@protocol(LectureMaterialService));
     
     self.appDelegate.applicationConfigurator = self.mockApplicationConfigurator;
     self.appDelegate.thirdPartiesConfigurator = self.mockThirdPartiesConfigurator;
     self.appDelegate.indexerMonitor = self.mockIndexerMonitor;
     self.appDelegate.spotlightCoreDataStackCoordinator = self.mockSpotlightCoreDataStackCoordinator;
     self.appDelegate.cleanStartRouter = self.mockCleanStartRouter;
+    self.appDelegate.lectureMaterialService = self.mockLectureMaterialService;
 }
 
 - (void)tearDown {
@@ -70,6 +74,8 @@
     
     [self.mockCleanStartRouter stopMocking];
     self.mockCleanStartRouter = nil;
+    
+    self.mockLectureMaterialService = nil;
     
     [super tearDown];
 }
@@ -87,6 +93,7 @@
     OCMVerify([self.mockSpotlightCoreDataStackCoordinator setupCoreDataStack]);
     OCMVerify([self.mockIndexerMonitor startMonitoring]);
     OCMVerify([self.mockCleanStartRouter openInitialScreen]);
+    OCMVerify([self.mockLectureMaterialService createCachedDirectoryIfNeeded]);
 }
 
 @end

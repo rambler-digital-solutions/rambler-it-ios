@@ -20,9 +20,15 @@
 
 #import "YouTubeIdentifierDeriviator.h"
 
+static NSString *const kYouTubeValidationString = @"youtu";
 static NSString * const kYouTubeVideoRegExp = @"((?<=(v|V)/)|(?<=be/)|(?<=(\\?|\\&)v=)|(?<=embed/)|((?<=e/)))([\\w-]++)";
 
 @implementation YouTubeIdentifierDeriviator
+
+- (BOOL)checkIfVideoIsFromYouTube:(NSURL *)videoUrl {
+    NSString *videoUrlString = [videoUrl absoluteString];
+    return [videoUrlString containsString:kYouTubeValidationString];
+}
 
 - (NSString *)deriveIdentifierFromUrl:(NSURL *)url {
     NSString *link = [url absoluteString];

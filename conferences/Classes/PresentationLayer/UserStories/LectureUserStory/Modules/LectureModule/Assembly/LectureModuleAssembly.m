@@ -30,6 +30,10 @@
 #import "LectureCellObjectsBuilderImplementation.h"
 #import "ShareUrlBuilderImplementation.h"
 #import "CollectionViewContentCellAnimator.h"
+#import "VideoRecordTableViewCellObjectMapper.h"
+#import "LectureInfoTableViewCellObjectMapper.h"
+#import "LectureInfoTableViewCellCalculator.h"
+#import "LectureViewModelMapper.h"
 
 static NSString *const kLectureShareItemType = @"lecture";
 
@@ -56,10 +60,13 @@ static NSString *const kLectureShareItemType = @"lecture";
                                                       with:[self.ponsomizerAssembly ponsomizer]];
                                 [definition injectProperty:@selector(lectureService)
                                                       with:[self.serviceComponents lectureService]];
+                                [definition injectProperty:@selector(lectureMaterialService)
+                                                      with:[self.serviceComponents lectureMaterialService]];
                                 [definition injectProperty:@selector(shareUrlBuilder)
                                                       with:[self lectureShareUrlBuilder]];
                                 [definition injectProperty:@selector(deriviator)
                                                       with:[self.presentationLayerHelpersAssembly youTubeIdentifierDeriviator]];
+                                
              }];
 }
 
@@ -74,6 +81,9 @@ static NSString *const kLectureShareItemType = @"lecture";
                                                       with:[self routerLecture]];
                                 [definition injectProperty:@selector(stateStorage)
                                                       with:[self presenterStateStorageLecture]];
+                                [definition injectProperty:@selector(mapperLectureViewModel)
+                                                      with:[self lectureViewModelMapper]];
+                                
             }];
 }
 
@@ -110,8 +120,10 @@ static NSString *const kLectureShareItemType = @"lecture";
 - (LectureCellObjectsBuilderImplementation *)builderCellObjects {
     return [TyphoonDefinition withClass:[LectureCellObjectsBuilderImplementation class]
                           configuration:^(TyphoonDefinition *definition) {
-                              [definition injectProperty:@selector(thumbnailGenerator)
-                                                    with:[self.presentationLayerHelpersAssembly videoThumbnailGenerator]];
+                              [definition injectProperty:@selector(videoCellObjectMapper)
+                                                    with:[self videoRecordCellObjectMapper]];
+                            [definition injectProperty:@selector(lectureInfoCellObjectMapper)
+                                                  with:[self lectureInfoCellObjectMapper]];
                           }];
 }
 
@@ -125,4 +137,31 @@ static NSString *const kLectureShareItemType = @"lecture";
                           }];
 }
 
+#pragma mark - Private methods
+
+- (VideoRecordTableViewCellObjectMapper *)videoRecordCellObjectMapper {
+    return [TyphoonDefinition withClass:[VideoRecordTableViewCellObjectMapper class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(thumbnailGenerator)
+                                                    with:[self.presentationLayerHelpersAssembly videoThumbnailGenerator]];
+                              [definition injectProperty:@selector(deriviator)
+                                                    with:[self.presentationLayerHelpersAssembly youTubeIdentifierDeriviator]];
+                          }];
+}
+            
+- (LectureInfoTableViewCellObjectMapper *)lectureInfoCellObjectMapper {
+    return [TyphoonDefinition withClass:[LectureInfoTableViewCellObjectMapper class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(calculator)
+                                                    with:[self lectureInfoCellCalculator]];
+                          }];
+}
+
+- (LectureInfoTableViewCellCalculator *)lectureInfoCellCalculator {
+    return [TyphoonDefinition withClass:[LectureInfoTableViewCellCalculator class]];
+}
+
+- (LectureViewModelMapper *)lectureViewModelMapper {
+    return [TyphoonDefinition withClass:[LectureViewModelMapper class]];
+}
 @end

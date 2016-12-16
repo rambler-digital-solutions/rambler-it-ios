@@ -23,7 +23,7 @@
 #import "LectureInfoTableViewCellActionProtocol.h"
 #import "EventTableViewCellActionProtocol.h"
 #import "Extensions/UIResponder+CDProxying/UIResponder+CDProxying.h"
-
+#import "UIFont+RIDTypefaces.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 static NSString *const kPlaceholderImageName = @"speaker-placeholder";
@@ -42,6 +42,8 @@ static NSString *const kPlaceholderImageName = @"speaker-placeholder";
     self.actionProxy = (id<LectureInfoTableViewCellActionProtocol>)[self cd_proxyForProtocol:@protocol(LectureInfoTableViewCellActionProtocol)];
     UITapGestureRecognizer *speakerViewTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapSpeakerView:)];
     [self.speakerView addGestureRecognizer:speakerViewTapRecognizer];
+    self.lectureTitle.font = [UIFont rid_lectureTitleFont];
+    self.lectureDescription.font = [UIFont rid_lectureDescriptionFont];
 }
 
 #pragma mark - NICell methods
@@ -67,8 +69,8 @@ static NSString *const kPlaceholderImageName = @"speaker-placeholder";
     return YES;
 }
 
-+ (CGFloat)heightForObject:(id)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
-    return UITableViewAutomaticDimension;
++ (CGFloat)heightForObject:(LectureInfoTableViewCellObject *)object atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
+    return object.height;
 }
 
 #pragma mark - IBActions

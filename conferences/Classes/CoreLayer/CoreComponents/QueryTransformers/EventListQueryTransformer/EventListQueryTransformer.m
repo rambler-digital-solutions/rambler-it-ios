@@ -23,11 +23,12 @@
 #import "EventListQuery.h"
 
 static NSString *const kLastModifiedFilterFormat = @"filter[modified_since]";
+static NSString *const kZeroTimestamp = @"0";
 
 @implementation EventListQueryTransformer
 
 - (NSDictionary *)deriveUrlParametersFromQuery:(EventListQuery *)query {
-    if (!query.lastModifiedString) {
+    if (!query.lastModifiedString || [query.lastModifiedString isEqualToString:kZeroTimestamp]) {
         return nil;
     }
     NSString *lastModified = query.lastModifiedString;

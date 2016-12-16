@@ -39,8 +39,14 @@
 #import "TagServicePredicateBuilder.h"
 #import "SuggestServiceImplementation.h"
 #import "LocationServiceImplementation.h"
+#import "LectureMaterialServiceImplementation.h"
+#import "VideoMaterialHandler.h"
+#import "PresentationLayerHelpersAssembly.h"
+#import "LectureMaterialDownloadingManager.h"
 
 @implementation ServiceComponentsAssembly
+
+#pragma mark - ServiceComponents
 
 - (id <EventService>)eventService {
     return [TyphoonDefinition withClass:[EventServiceImplementation class]
@@ -83,6 +89,21 @@
                           }];
 }
 
+- (id<LectureMaterialService>)lectureMaterialService {
+    return [TyphoonDefinition withClass:[LectureMaterialServiceImplementation class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition useInitializer:@selector(initWithLectureMaterialHandlers:)
+                                              parameters:^(TyphoonMethod *initializer) {
+                                                  [initializer injectParameterWith:@[
+                                                                                     [self videoLectureMaterialHandler]
+                                                                                     ]];
+                                                
+                                              }];
+                              [definition injectProperty:@selector(lectureMaterialDownloadManager)
+                                                    with:[self lectureMaterialDownloadManager]];
+                          }];
+}
+
 - (id<SuggestService>)suggestService {
     return [TyphoonDefinition withClass:[SuggestServiceImplementation class]];
 }
@@ -95,6 +116,8 @@
                               definition.scope = TyphoonScopeSingleton;
                           }];
 }
+
+#pragma mark - Private methods
 
 - (id)tagServicePredicateBuilder {
     return [TyphoonDefinition withClass:[TagServicePredicateBuilder class]];
@@ -112,7 +135,6 @@
                           }];
 }
 
-#pragma mark - Private methods
 - (CLLocationManager *)locationManager {
     return [TyphoonDefinition withClass:[CLLocationManager class]
                           configuration:^(TyphoonDefinition *definition) {
@@ -125,6 +147,21 @@
                               [definition injectMethod:@selector(startUpdatingLocation)
                                             parameters:nil];
                           }];
+}
+
+- (id<LectureMaterialHandler>)videoLectureMaterialHandler {
+    return [TyphoonDefinition withClass:[VideoMaterialHandler class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(deriviator)
+                                                    with:[self.presentationLayerHelpersAssembly youTubeIdentifierDeriviator]];
+    }];
+}
+
+- (LectureMaterialDownloadingManager *)lectureMaterialDownloadManager {
+    return [TyphoonDefinition withClass:[LectureMaterialDownloadingManager class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              definition.scope = TyphoonScopeSingleton;
+    }];
 }
 
 @end

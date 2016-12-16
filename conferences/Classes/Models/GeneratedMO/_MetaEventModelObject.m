@@ -3,24 +3,12 @@
 
 #import "_MetaEventModelObject.h"
 
-const struct MetaEventModelObjectAttributes MetaEventModelObjectAttributes = {
-	.imageUrlPath = @"imageUrlPath",
-	.metaEventDescription = @"metaEventDescription",
-	.metaEventId = @"metaEventId",
-	.name = @"name",
-	.websiteUrlPath = @"websiteUrlPath",
-};
-
-const struct MetaEventModelObjectRelationships MetaEventModelObjectRelationships = {
-	.events = @"events",
-};
-
 @implementation MetaEventModelObjectID
 @end
 
 @implementation _MetaEventModelObject
 
-+ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
++ (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_ {
 	NSParameterAssert(moc_);
 	return [NSEntityDescription insertNewObjectForEntityForName:@"MetaEvent" inManagedObjectContext:moc_];
 }
@@ -56,14 +44,38 @@ const struct MetaEventModelObjectRelationships MetaEventModelObjectRelationships
 
 @dynamic events;
 
-- (NSMutableSet*)eventsSet {
+- (NSMutableSet<EventModelObject*>*)eventsSet {
 	[self willAccessValueForKey:@"events"];
 
-	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"events"];
+	NSMutableSet<EventModelObject*> *result = (NSMutableSet<EventModelObject*>*)[self mutableSetValueForKey:@"events"];
 
 	[self didAccessValueForKey:@"events"];
 	return result;
 }
 
+@end
+
+@implementation MetaEventModelObjectAttributes 
++ (NSString *)imageUrlPath {
+	return @"imageUrlPath";
+}
++ (NSString *)metaEventDescription {
+	return @"metaEventDescription";
+}
++ (NSString *)metaEventId {
+	return @"metaEventId";
+}
++ (NSString *)name {
+	return @"name";
+}
++ (NSString *)websiteUrlPath {
+	return @"websiteUrlPath";
+}
+@end
+
+@implementation MetaEventModelObjectRelationships 
++ (NSString *)events {
+	return @"events";
+}
 @end
 

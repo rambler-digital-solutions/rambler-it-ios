@@ -21,6 +21,7 @@
 #import <Foundation/Foundation.h>
 
 @class LecturePlainObject;
+@class LectureMaterialPlainObject;
 
 @protocol LectureInteractorInput <NSObject>
 
@@ -65,6 +66,33 @@
  @return YouTube video identifier
  */
 - (NSString *)deriveVideoIdFromYouTubeUrl:(NSURL *)videoUrl;
+
+/**
+ @author Konstantin Zinovyev
+ 
+ Method is used to start download video for material
+ 
+ @param lectureMaterialId lecture material's identifier
+ */
+- (void)downloadVideoToCacheWithLectureMaterialId:(NSString *)lectureMaterialId;
+
+/**
+ @author Konstantin Zinovyev
+ 
+ Method is used to remove video from cache for material
+ 
+ @param lectureMaterialId lecture material's identifier
+ */
+- (void)removeVideoFromCacheWithLectureMaterialId:(NSString *)lectureMaterialId;
+
+/**
+ @author Konstantin Zinovyev
+ 
+ Method is used to update delegate fow downloading material
+ 
+ @param lectureMaterials Array of lecture material plain objects
+ */
+- (void)updateDownloadingDelegateWithLectureMaterials:(NSArray<LectureMaterialPlainObject *> *)lectureMaterials;
 
 @end
 

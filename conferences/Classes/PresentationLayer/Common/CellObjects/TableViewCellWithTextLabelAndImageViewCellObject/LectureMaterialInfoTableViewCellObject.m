@@ -21,11 +21,11 @@
 #import "LectureMaterialInfoTableViewCellObject.h"
 
 #import "LectureMaterialInfoTableViewCell.h"
-#import "LectureMaterialPlainObject.h"
+#import "LectureMaterialViewModel.h"
 
 @interface LectureMaterialInfoTableViewCellObject ()
 
-@property (nonatomic, strong, readwrite) LectureMaterialPlainObject *lectureMaterial;
+@property (nonatomic, strong, readwrite) LectureMaterialViewModel *lectureMaterial;
 @property (nonatomic, strong, readwrite) NSString *title;
 @property (nonatomic, assign, readwrite) LectureMaterialType type;
 
@@ -35,7 +35,7 @@
 
 #pragma mark - Initialization
 
-- (instancetype)initWithLectureMaterialObject:(LectureMaterialPlainObject *)lectureMaterialObject {
+- (instancetype)initWithLectureMaterialObject:(LectureMaterialViewModel *)lectureMaterialObject {
     self = [super init];
     if (self) {
         _lectureMaterial = lectureMaterialObject;
@@ -45,7 +45,7 @@
     return self;
 }
 
-+ (instancetype)objectWithLectureMaterialObject:(LectureMaterialPlainObject *)lectureMaterialObject {
++ (instancetype)objectWithLectureMaterialObject:(LectureMaterialViewModel *)lectureMaterialObject {
     return [[self alloc] initWithLectureMaterialObject:lectureMaterialObject];
 }
 

@@ -22,18 +22,22 @@
 
 #import "EXTScope.h"
 #import "LectureDataDisplayManager.h"
-#import "LecturePlainObject.h"
+#import "LectureViewModel.h"
 #import "LocalizedStrings.h"
 #import "LectureCellObjectsBuilder.h"
 #import "VideoRecordTableViewCellObject.h"
 #import "LectureMaterialInfoTableViewCellObject.h"
 #import "LectureMaterialPlainObject.h"
 #import "NITyphoonCellFactory.h"
+#import "NITableViewModel+LJIndexOfObject.h"
+#import "VideoRecordTableViewCellObject.h"
+#import "LectureTableViewAnimator.h"
+
 @interface LectureDataDisplayManager ()
 
 @property (nonatomic, strong) NITableViewModel *tableViewModel;
 @property (nonatomic, strong) NITableViewActions *tableViewActions;
-@property (nonatomic, strong) LecturePlainObject *lecture;
+@property (nonatomic, strong) LectureViewModel *lecture;
 
 @end
 
@@ -41,8 +45,10 @@
 
 #pragma mark - Public methods
 
-- (void)configureDataDisplayManagerWithLecture:(LecturePlainObject *)lecture {
+- (void)configureDataDisplayManagerWithLecture:(LectureViewModel *)lecture
+                                      animator:(LectureTableViewAnimator *)animator{
     self.lecture = lecture;
+    self.animator = animator;
 }
 
 #pragma mark - UITableViewDelegate methods
@@ -67,6 +73,16 @@
     return [self.tableViewActions forwardingTo:self];
 }
 
+- (void)updateDataDisplayManagerWithLectureMaterial:(LectureMaterialViewModel *)material {
+    NSIndexPath *indexPath = [self indexPathForCellWithLectureMaterial:material];
+    if (!indexPath) {
+        return;
+    }
+    id cellObject = [self.builderCellObjects videoCellObjectForVideoMaterial:material];
+    [self.animator updateCellWithIndexPath:indexPath
+                            withCellObject:cellObject];
+}
+    
 #pragma mark - Private methods
 
 - (NSArray *)generateCellObjects {
@@ -77,8 +93,8 @@
 - (void)updateTableViewModel {
     NSArray *cellObjects = [self generateCellObjects];
     
-    self.tableViewModel = [[NITableViewModel alloc] initWithSectionedArray:cellObjects
-                                                                  delegate:(id)[NITyphoonCellFactory class]];
+    self.tableViewModel = [[NIMutableTableViewModel alloc] initWithSectionedArray:cellObjects
+                                                                         delegate:(id)[NITyphoonCellFactory class]];
 }
 
 - (void)setupTableViewActions {
@@ -87,9 +103,7 @@
     @weakify(self);
     NIActionBlock videoRecordActionBlock = ^BOOL(VideoRecordTableViewCellObject *object, UIViewController *controller, NSIndexPath *indexPath) {
         @strongify(self);
-        NSURL *videoUrl = object.videoUrl;
-        
-        [self.delegate didTapVideoRecordCellWithVideoUrl:videoUrl];
+        [self.delegate didTapVideoRecordCellWithVideoMaterial:object.videoMaterial];
         return YES;
     };
     [self.tableViewActions attachToClass:[VideoRecordTableViewCellObject class]
@@ -104,6 +118,28 @@
     };
     [self.tableViewActions attachToClass:[LectureMaterialInfoTableViewCellObject class]
                                 tapBlock:materialActionBlock];
+}
+
+- (NSIndexPath *)indexPathForCellWithLectureMaterial:(LectureMaterialViewModel *)material {
+    NSUInteger indexUpdatedCell;
+    indexUpdatedCell = [self.tableViewModel indexOfCellObjectInSection:0
+                                                           passingTest:^BOOL(id cellObject, NSUInteger index, BOOL *stop) {
+                                                               if ([cellObject isKindOfClass:[VideoRecordTableViewCellObject class]]) {
+                                                                   VideoRecordTableViewCellObject *videoCellObject = (VideoRecordTableViewCellObject*)cellObject;
+                                                                   if (videoCellObject.videoMaterial.lectureMaterialId == material.lectureMaterialId) {
+                                                                       return YES;
+                                                                   }
+                                                                   return NO;
+                                                               }
+                                                               return NO;
+                                                           }];
+    
+    if (indexUpdatedCell == NSNotFound) {
+        return nil;
+    }
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:indexUpdatedCell
+                                                inSection:0];
+    return indexPath;
 }
 
 @end

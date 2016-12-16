@@ -29,6 +29,7 @@
 #import "EventPlainObject.h"
 #import "DateFormatter.h"
 #import "EventCellObjectBuilderConstants.h"
+#import "LectureInfoTableViewCellObjectMapper.h"
 
 @implementation EventCellObjectBuilderBase
 
@@ -45,8 +46,9 @@
         [cellObjects addObject:cellObject];
     }
     
-    for (LecturePlainObject *lecture in event.lectures) {
-        LectureInfoTableViewCellObject *lectureCellobject = [LectureInfoTableViewCellObject objectWithLecture:lecture continueReadingFlag:YES];
+    for (LectureViewModel *lecture in event.lectures) {
+        id lectureCellobject = [self.lectureInfoCellObjectMapper lectureInfoTableViewCellObjectWithLecture:lecture
+                                                                                       continueReadingFlag:YES];
         [cellObjects addObject:lectureCellobject];
     }
     

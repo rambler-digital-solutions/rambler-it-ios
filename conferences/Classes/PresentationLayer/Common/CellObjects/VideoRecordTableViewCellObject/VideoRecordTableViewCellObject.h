@@ -20,14 +20,14 @@
 
 #import <Nimbus/NimbusModels.h>
 
-@class EventPlainObject;
+@class LectureMaterialViewModel;
 
 @interface VideoRecordTableViewCellObject : NSObject <NICellObject>
 
 @property (nonatomic, strong, readonly) NSURL *previewImageUrl;
-@property (nonatomic, strong, readonly) NSURL *videoUrl;
+@property (nonatomic, strong, readonly) LectureMaterialViewModel *videoMaterial;
 
 + (instancetype)objectWithPreviewImageUrl:(NSURL *)previewImageUrl
-                                 videoUrl:(NSURL *)videoUrl;
+                            videoMaterial:(LectureMaterialViewModel *)videoMaterial;
 
 @end

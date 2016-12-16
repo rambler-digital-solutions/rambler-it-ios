@@ -38,4 +38,15 @@
  */
 - (NSString *)deriveIdentifierFromUrl:(NSURL *)url;
 
+/**
+ @author Konstantin Zinovyev
+ 
+ Checks that url has substring "youtu"
+ 
+ @param url Video url
+ 
+ @return YES - video from youtube
+ */
+- (BOOL)checkIfVideoIsFromYouTube:(NSURL *)videoUrl;
+
 @end

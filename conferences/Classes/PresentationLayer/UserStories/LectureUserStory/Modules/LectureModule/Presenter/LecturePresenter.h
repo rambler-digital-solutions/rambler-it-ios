@@ -22,18 +22,21 @@
 #import "LectureViewOutput.h"
 #import "LectureInteractorOutput.h"
 #import "LectureModuleInput.h"
+#import "LectureMaterialCacheDelegate.h"
 
 @protocol LectureViewInput;
 @protocol LectureInteractorInput;
 @protocol LectureRouterInput;
 @class LecturePresenterStateStorage;
+@class LectureViewModelMapper;
 
-@interface LecturePresenter : NSObject <LectureViewOutput, LectureInteractorOutput, LectureModuleInput>
+@interface LecturePresenter : NSObject <LectureViewOutput, LectureInteractorOutput, LectureModuleInput, LectureMaterialCacheDelegate>
 
-@property (nonatomic, weak) id<LectureViewInput> view;
-@property (nonatomic, strong) id<LectureInteractorInput>  interactor;
-@property (nonatomic, strong) id<LectureRouterInput> router;
-@property (nonatomic, strong) LecturePresenterStateStorage *stateStorage;
+@property (weak, nonatomic) id<LectureViewInput> view;
+@property (strong, nonatomic) id<LectureInteractorInput>  interactor;
+@property (strong, nonatomic) id<LectureRouterInput> router;
+@property (strong, nonatomic) LecturePresenterStateStorage *stateStorage;
+@property (strong, nonatomic) LectureViewModelMapper *mapperLectureViewModel;
 
 @end
 

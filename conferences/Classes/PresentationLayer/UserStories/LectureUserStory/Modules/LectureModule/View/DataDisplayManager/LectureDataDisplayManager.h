@@ -21,16 +21,37 @@
 #import <Foundation/Foundation.h>
 #import "DataDisplayManager.h"
 
-@class LecturePlainObject;
+@class LectureViewModel;
+@class LectureMaterialViewModel;
 @protocol LectureCellObjectsBuilder;
 @protocol LectureDataDisplayManagerDelegate;
+@class LectureTableViewAnimator;
 
 @interface LectureDataDisplayManager : NSObject <DataDisplayManager, UITableViewDelegate>
 
 @property (nonatomic, strong) id<LectureCellObjectsBuilder> builderCellObjects;
 @property (nonatomic, weak) id<LectureDataDisplayManagerDelegate> delegate;
+@property (nonatomic, weak) IBOutlet LectureTableViewAnimator *animator;
 
-- (void)configureDataDisplayManagerWithLecture:(LecturePlainObject *)lecture;
+/**
+ @author Konstantin Zinovyev
+ 
+ Method is used to configure data display manager with lecture view model
+ 
+ @param lecture view model
+ @param animator animator
+*/
+- (void)configureDataDisplayManagerWithLecture:(LectureViewModel *)lecture
+                                      animator:(LectureTableViewAnimator *)animator;
+
+/**
+ @author Konstantin Zinovyev
+ 
+ Method is used to update data display manager with lecture material view model
+ 
+ @param material view model
+ */
+- (void)updateDataDisplayManagerWithLectureMaterial:(LectureMaterialViewModel *)material;
 
 @end
 
@@ -43,7 +64,7 @@
  
  @param videoUrl Video URL
  */
-- (void)didTapVideoRecordCellWithVideoUrl:(NSURL *)videoUrl;
+- (void)didTapVideoRecordCellWithVideoMaterial:(LectureMaterialViewModel *)videoMaterial;
 
 /**
  @author Egor Tolstoy

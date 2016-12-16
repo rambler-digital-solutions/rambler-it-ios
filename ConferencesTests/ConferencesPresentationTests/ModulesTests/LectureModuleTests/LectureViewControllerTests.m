@@ -27,6 +27,7 @@
 #import "SpeakerShortInfoView.h"
 #import "LectureDataDisplayManager.h"
 #import "LecturePlainObject.h"
+#import "LectureViewModel.h"
 #import "SpeakerPlainObject.h"
 #import "LectureViewController_Testable.h"
 
@@ -84,7 +85,7 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
 
 - (void)testSuccessSetupTableViewDataSource {
     // given
-    LecturePlainObject *lecture = [LecturePlainObject new];
+    LectureViewModel *lecture = [LectureViewModel new];
     
     id dataSourceMock = OCMProtocolMock(@protocol(UITableViewDataSource));
     
@@ -99,7 +100,7 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
 
 - (void)testSuccessSetupTableViewDelegate {
     // given
-    LecturePlainObject *lecture = [LecturePlainObject new];
+    LectureViewModel *lecture = [LectureViewModel new];
     
     id delegateMock = OCMProtocolMock(@protocol(UITableViewDelegate));
     
@@ -114,7 +115,7 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
 
 - (void)testSuccessSetupTableView {
     // given
-    LecturePlainObject *lecture = [LecturePlainObject new];
+    LectureViewModel *lecture = [LectureViewModel new];
     
     UITableView *tableView = [UITableView new];
     self.viewController.tableView = tableView;
@@ -123,20 +124,20 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
     [self.viewController configureViewWithLecture:lecture];
     
     // then
-    XCTAssert(tableView.estimatedRowHeight == TableViewEstimatedRowHeight);
     XCTAssert(tableView.rowHeight == UITableViewAutomaticDimension);
     XCTAssertNotNil(tableView.tableFooterView);
 }
 
 - (void)testSuccessConfigureViewWithLecture {
     // given
-    LecturePlainObject *lecture = [LecturePlainObject new];
+    LectureViewModel *lecture = [LectureViewModel new];
     
     // when
     [self.viewController configureViewWithLecture:lecture];
     
     // then
-    OCMVerify([self.dataDisplayManagerMock configureDataDisplayManagerWithLecture:lecture]);
+    OCMVerify([self.dataDisplayManagerMock configureDataDisplayManagerWithLecture:lecture
+                                                                         animator:nil]);
 }
 
 #pragma mark - Actions
@@ -153,13 +154,13 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
 
 - (void)testSuccessDidTapVideoPreview {
     // given
-    NSURL *testUrl = [NSURL URLWithString:@"rambler.ru"];
+    id testUrl = [NSURL URLWithString:@"rambler.ru"];
     
     // when
-    [self.viewController didTapVideoRecordCellWithVideoUrl:testUrl];
+    [self.viewController didTapVideoRecordCellWithVideoMaterial:testUrl];
     
     // then
-    OCMVerify([self.presenterMock didTapVideoPreviewWithUrl:testUrl]);
+    OCMVerify([self.presenterMock didTapVideoPreviewWithVideoMaterial:testUrl]);
 }
 
 - (void)testSuccessDidTapMaterialPreview {

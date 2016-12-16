@@ -110,12 +110,14 @@ NSString *const XCDYouTubeVideoUserInfoKey = @"Video";
 		if (video)
 		{
 			NSURL *streamURL = nil;
+            
 			for (NSNumber *videoQuality in self.preferredVideoQualities)
 			{
+                
 				streamURL = video.streamURLs[videoQuality];
 				if (streamURL)
 				{
-					[self startVideo:video streamURL:streamURL];
+                    [self startVideo:video streamURL:streamURL];
 					break;
 				}
 			}

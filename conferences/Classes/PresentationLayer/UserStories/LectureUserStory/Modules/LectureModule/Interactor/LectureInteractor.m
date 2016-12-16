@@ -19,17 +19,20 @@
 // THE SOFTWARE.
 
 #import "LectureInteractor.h"
+#import <MagicalRecord/MagicalRecord.h>
 
 #import "LectureInteractorOutput.h"
 #import "LectureService.h"
 #import "ROSPonsomizer.h"
 #import "ShareUrlBuilder.h"
 #import "YouTubeIdentifierDeriviator.h"
-
+#import "EXTScope.h"
 #import "LecturePlainObject.h"
 #import "SpeakerPlainObject.h"
-
-static NSString *const kYouTubeValidationString = @"youtu";
+#import "LectureMaterialPlainObject.h"
+#import "LectureMaterialService.h"
+#import "LectureMaterialModelObject.h"
+#import "LectureMaterialCacheOperationType.h"
 
 @implementation LectureInteractor
 
@@ -48,12 +51,90 @@ static NSString *const kYouTubeValidationString = @"youtu";
 }
 
 - (BOOL)checkIfVideoIsFromYouTube:(NSURL *)videoUrl {
-    NSString *videoUrlString = [videoUrl absoluteString];
-    return [videoUrlString containsString:kYouTubeValidationString];
+    return [self.deriviator checkIfVideoIsFromYouTube:videoUrl];
 }
 
 - (NSString *)deriveVideoIdFromYouTubeUrl:(NSURL *)videoUrl {
     return [self.deriviator deriveIdentifierFromUrl:videoUrl];
+}
+
+- (void)downloadVideoToCacheWithLectureMaterialId:(NSString *)lectureMaterialId {
+    [self.lectureMaterialService downloadToCacheLectureMaterialId:lectureMaterialId
+                                                         delegate:self];
+}
+
+- (void)removeVideoFromCacheWithLectureMaterialId:(NSString *)lectureMaterialId{
+    [self.lectureMaterialService removeFromCacheLectureMaterialId:lectureMaterialId
+                                                      completion:^(NSError *error) {
+        LectureMaterialPlainObject *material = [self getLectureMaterialByAttribute:LectureMaterialModelObjectAttributes.lectureMaterialId
+                                                                         withValue:lectureMaterialId];
+        [self.output didTriggerCacheOperationWithType:LectureMaterialRemoveType
+                                      lectureMaterial:material
+                                              percent:0];
+                                                      }];
+}
+
+- (void)updateDownloadingDelegateWithLectureMaterials:(NSArray *)lectureMaterials {
+    for (LectureMaterialPlainObject *lectureMaterial in lectureMaterials) {
+        [self.lectureMaterialService updateDelegate:self
+                                forLectureMaterialId:lectureMaterial.lectureMaterialId];
+    }
+}
+
+#pragma mark - LectureMaterialDownloadingDelegate
+
+- (void)didStartDownloadingLectureMaterialWithLink:(NSString *)link {
+    LectureMaterialPlainObject *material = [self getLectureMaterialByAttribute:LectureMaterialModelObjectAttributes.link
+                                                                     withValue:link];
+    [self.output didTriggerCacheOperationWithType:LectureMaterialStartDownloadType
+                                  lectureMaterial:material
+                                          percent:0];
+}
+
+- (void)didEndDownloadingLectureMaterialWithLink:(NSString *)link
+                                           error:(NSError *)error {
+    [self.output didOccurError:error];
+    LectureMaterialPlainObject *material = [self getLectureMaterialByAttribute:LectureMaterialModelObjectAttributes.link
+                                                                     withValue:link];
+    [self.output didTriggerCacheOperationWithType:LectureMaterialEndDownloadType
+                                  lectureMaterial:material
+                                          percent:0];
+}
+
+- (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        LectureMaterialPlainObject *material = [self getLectureMaterialByAttribute:LectureMaterialModelObjectAttributes.link
+                                                                         withValue:session.sessionDescription];
+        [self.output didTriggerCacheOperationWithType:LectureMaterialEndDownloadType
+                                      lectureMaterial:material
+                                              percent:0];
+    });
+}
+
+- (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite {
+    LectureMaterialPlainObject *material = [self getLectureMaterialByAttribute:LectureMaterialModelObjectAttributes.link
+                                                                     withValue:session.sessionDescription];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        CGFloat percent = totalBytesWritten * 100.0 / totalBytesExpectedToWrite;
+        [self.output didTriggerCacheOperationWithType:LectureMaterialDownloadType
+                                      lectureMaterial:material
+                                              percent:percent];
+    });
+}
+
+- (void)URLSession:(NSURLSession *)session didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential * _Nullable credential))completionHandler {
+    NSURLCredential *credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
+    completionHandler(NSURLSessionAuthChallengeUseCredential,credential);
+}
+
+#pragma mark - Private methods
+
+- (LectureMaterialPlainObject *)getLectureMaterialByAttribute:(NSString *)nameAttribute
+                                                    withValue:(id)value {
+    LectureMaterialModelObject *modelObject = [LectureMaterialModelObject MR_findFirstByAttribute:nameAttribute
+                                                                                        withValue:value];
+    LectureMaterialPlainObject *plainObject = [self.ponsomizer convertObject:modelObject];
+    return plainObject;
 }
 
 @end

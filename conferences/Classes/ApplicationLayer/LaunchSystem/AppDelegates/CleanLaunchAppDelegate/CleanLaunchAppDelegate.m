@@ -24,6 +24,7 @@
 #import "SpotlightCoreDataStackCoordinator.h"
 #import "CleanLaunchRouter.h"
 #import "Daemon.h"
+#import "LectureMaterialService.h"
 
 @implementation CleanLaunchAppDelegate
 
@@ -34,7 +35,7 @@
     [self.spotlightCoreDataStackCoordinator setupCoreDataStack];
     [self.indexerMonitor startMonitoring];
     [self.quickActionDaemon start];
-    
+    [self.lectureMaterialService createCachedDirectoryIfNeeded];
     [self.cleanStartRouter openInitialScreen];
     
     return YES;

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15G31" minimumToolsVersion="Xcode 4.2">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16B2555" minimumToolsVersion="Xcode 4.2" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
     <entity name="Event" representedClassName="EventModelObject" syncable="YES">
-        <attribute name="endDate" attributeType="Date" syncable="YES"/>
+        <attribute name="endDate" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="eventDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="eventId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="eventSubtitle" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="eventType" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="eventType" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="imageUrl" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="lastVisitDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="lastVisitDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="liveStreamLink" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
-        <attribute name="startDate" attributeType="Date" syncable="YES"/>
+        <attribute name="startDate" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="timePadID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="twitterTag" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="lectures" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Lecture" inverseName="event" inverseEntity="Lecture" syncable="YES"/>
@@ -19,12 +19,12 @@
         <relationship name="tech" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Tech" inverseName="events" inverseEntity="Tech" syncable="YES"/>
     </entity>
     <entity name="LastModified" representedClassName="LastModifiedModelObject" syncable="YES">
-        <attribute name="lastModifiedDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="lastModifiedDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="lastModifiedId" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Lecture" representedClassName="LectureModelObject" syncable="YES">
-        <attribute name="favourite" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="favourite" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="lectureDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lectureId" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
@@ -36,8 +36,9 @@
     <entity name="LectureMaterial" representedClassName="LectureMaterialModelObject" syncable="YES">
         <attribute name="lectureMaterialId" attributeType="String" syncable="YES"/>
         <attribute name="link" attributeType="String" syncable="YES"/>
+        <attribute name="localURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
-        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
         <relationship name="lecture" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lecture" inverseName="lectureMaterials" inverseEntity="Lecture" syncable="YES"/>
     </entity>
     <entity name="MetaEvent" representedClassName="MetaEventModelObject" syncable="YES">
@@ -55,7 +56,7 @@
     </entity>
     <entity name="SocialNetworkAccount" representedClassName="SocialNetworkAccountModelObject" syncable="YES">
         <attribute name="profileLink" attributeType="String" syncable="YES"/>
-        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
         <relationship name="speaker" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Speaker" inverseName="socialNetworkAccounts" inverseEntity="Speaker" syncable="YES"/>
     </entity>
     <entity name="Speaker" representedClassName="SpeakerModelObject" syncable="YES">
@@ -84,7 +85,7 @@
         <element name="Event" positionX="0" positionY="0" width="128" height="285"/>
         <element name="LastModified" positionX="27" positionY="135" width="128" height="90"/>
         <element name="Lecture" positionX="0" positionY="0" width="128" height="165"/>
-        <element name="LectureMaterial" positionX="0" positionY="0" width="128" height="120"/>
+        <element name="LectureMaterial" positionX="0" positionY="0" width="128" height="135"/>
         <element name="MetaEvent" positionX="0" positionY="0" width="128" height="135"/>
         <element name="RegistrationQuestion" positionX="0" positionY="0" width="128" height="90"/>
         <element name="SocialNetworkAccount" positionX="0" positionY="0" width="128" height="90"/>

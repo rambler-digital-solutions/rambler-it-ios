@@ -1,4 +1,4 @@
-// Copyright (c) 2015 RAMBLER&Co
+// Copyright (c) 2016 RAMBLER&Co
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -18,9 +18,21 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import "LectureMaterialsService.h"
+#import <UIKit/UIKit.h>
+#import "NICellFactory.h"
 
-@interface LectureMaterialsServiceImplementation : NSObject <LectureMaterialsService>
+@interface LectureTableViewAnimator : NSObject
 
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
+
+/**
+ @author Konstantin Zinovyev
+
+ Update cell in table view with index path and cell object
+ 
+ @param indexPath index path
+ @param cellObject cell object
+ */
+- (void)updateCellWithIndexPath:(NSIndexPath *)indexPath withCellObject:(id)cellObject;
+    
 @end

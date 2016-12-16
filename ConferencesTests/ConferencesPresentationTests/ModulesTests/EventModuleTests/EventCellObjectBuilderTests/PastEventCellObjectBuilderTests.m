@@ -33,11 +33,13 @@
 #import "EventCellObjectBuilderConstants.h"
 #import "PreviousLectureTableViewCellObject.h"
 #import "EventListTableViewCellObject.h"
+#import "LectureInfoTableViewCellObjectMapper.h"
 
 @interface PastEventCellObjectBuilderTests : XCTestCase
 
-@property (nonatomic, strong) PastEventCellObjectBuilder *cellObjectBuilder;
-@property (nonatomic, strong) id mockDateFormatter;
+@property (strong, nonatomic) PastEventCellObjectBuilder *cellObjectBuilder;
+@property (strong, nonatomic) id mockDateFormatter;
+@property (strong, nonatomic) id mockLectureInfoCellObjectMapper;
 
 @end
 
@@ -48,8 +50,10 @@
     
     self.cellObjectBuilder = [PastEventCellObjectBuilder new];
     self.mockDateFormatter = OCMClassMock([DateFormatter class]);
+    self.mockLectureInfoCellObjectMapper = OCMClassMock([LectureInfoTableViewCellObjectMapper class]);
     
     self.cellObjectBuilder.dateFormatter = self.mockDateFormatter;
+    self.cellObjectBuilder.lectureInfoCellObjectMapper = self.mockLectureInfoCellObjectMapper;
 }
 
 - (void)tearDown {
@@ -66,6 +70,9 @@
     NSDate *eventStartDate = [NSDate date];
     EventPlainObject *event = [ModelObjectGenerator generateEventObjects:1].firstObject;
     event.startDate = eventStartDate;
+    id lectureInfoCellObject = [LectureInfoTableViewCellObject new];
+    OCMStub([self.mockLectureInfoCellObjectMapper lectureInfoTableViewCellObjectWithLecture:OCMOCK_ANY
+                                                                        continueReadingFlag:YES]).andReturn(lectureInfoCellObject);
     
     NSArray *pastEvents = [ModelObjectGenerator generateEventObjects:4];
     

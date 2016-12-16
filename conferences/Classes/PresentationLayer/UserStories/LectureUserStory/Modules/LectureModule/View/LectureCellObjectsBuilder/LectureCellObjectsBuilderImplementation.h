@@ -21,10 +21,12 @@
 #import <Foundation/Foundation.h>
 #import "LectureCellObjectsBuilder.h"
 
-@class VideoThumbnailGenerator;
+@class VideoRecordTableViewCellObjectMapper;
+@class LectureInfoTableViewCellObjectMapper;
 
 @interface LectureCellObjectsBuilderImplementation : NSObject <LectureCellObjectsBuilder>
 
-@property (nonatomic, strong) VideoThumbnailGenerator *thumbnailGenerator;
-
+@property (nonatomic, strong) VideoRecordTableViewCellObjectMapper *videoCellObjectMapper;
+@property (nonatomic, strong) LectureInfoTableViewCellObjectMapper *lectureInfoCellObjectMapper;
+    
 @end

@@ -20,30 +20,32 @@
 
 #import "LectureCellObjectsBuilderImplementation.h"
 
-#import "LecturePlainObject.h"
+#import "LectureViewModel.h"
 #import "LectureModelObject.h"
-#import "LectureMaterialPlainObject.h"
+#import "LectureMaterialViewModel.h"
 #import "LocalizedStrings.h"
 
 #import "LectureMaterialTitleTableViewCellObject.h"
 #import "LectureInfoTableViewCellObject.h"
 #import "LectureMaterialTitleTableViewCellObject.h"
 #import "LectureMaterialInfoTableViewCellObject.h"
-#import "VideoRecordTableViewCellObject.h"
-#import "VideoThumbnailGenerator.h"
-#import "LectureMaterialType.h"
+#import "VideoRecordTableViewCellObjectMapper.h"
+#import "LectureInfoTableViewCellObjectMapper.h"
 
-#import "TagObjectDescriptor.h"
 #import "TagModuleTableViewCellObject.h"
+#import "LectureMaterialType.h"
+#import "TagObjectDescriptor.h"
 #import "TagShowMediator.h"
+
 
 @implementation LectureCellObjectsBuilderImplementation
 
-- (NSArray *)cellObjectsForLecture:(LecturePlainObject *)lecture {
+- (NSArray *)cellObjectsForLecture:(LectureViewModel *)lecture {
     NSMutableArray *cellObjects = [NSMutableArray new];
     
     // Lecture description block
-    LectureInfoTableViewCellObject *lectureDescriptionCellObject = [LectureInfoTableViewCellObject objectWithLecture:lecture continueReadingFlag:NO];
+    id lectureDescriptionCellObject = [self.lectureInfoCellObjectMapper lectureInfoTableViewCellObjectWithLecture:lecture
+                                                                                              continueReadingFlag:NO];
     [cellObjects addObject:lectureDescriptionCellObject];
     
     // Lecture tags block
@@ -57,21 +59,20 @@
     }
     
     // Video preview block
-    NSURL *videoUrl = [self videoUrlForLecture:lecture];
-    if (videoUrl) {
+    LectureMaterialViewModel *videoMaterial = [self videoMaterialForLecture:lecture];
+    if (videoMaterial.link) {
         NSString *videoRecordTextTitle = NSLocalizedString(VideoRecordTableViewCellTitle, nil);
         LectureMaterialTitleTableViewCellObject *videoRecordTextLabelCellObject = [LectureMaterialTitleTableViewCellObject objectWithText:videoRecordTextTitle];
         [cellObjects addObject:videoRecordTextLabelCellObject];
         
-        NSURL *previewImageUrl = [self.thumbnailGenerator generateThumbnailWithVideoURL:videoUrl];
-        VideoRecordTableViewCellObject *videoRecordTableViewCellObject = [VideoRecordTableViewCellObject objectWithPreviewImageUrl:previewImageUrl videoUrl:videoUrl];
-        [cellObjects addObject:videoRecordTableViewCellObject];
+        id videoCellObject = [self.videoCellObjectMapper videoRecordCellObjectWithVideoMaterial:videoMaterial];
+        [cellObjects addObject:videoCellObject];
     }
     
     // Lecture materials block
     NSMutableArray *mainMaterials = [NSMutableArray new];
     NSMutableArray *otherMaterials = [NSMutableArray new];
-    for (LectureMaterialPlainObject *material in lecture.lectureMaterials) {
+    for (LectureMaterialViewModel *material in lecture.lectureMaterials) {
         if ([material.type integerValue] == LectureMaterialVideoType ||
             [material.type integerValue] == LectureMaterialPresentationType ||
             [material.type integerValue] == LectureMaterialArticleType) {
@@ -82,22 +83,29 @@
     }
     
     // Main lecture materials block
-    NSArray *mainMaterialCellObjects = [self generateMaterialsSectionCellObjectsWithMaterials:mainMaterials sectionTitle:NSLocalizedString(LectureMaterialsTableViewCellTitle, nil)];
+    NSArray *mainMaterialCellObjects = [self generateMaterialsSectionCellObjectsWithMaterials:mainMaterials
+                                                                                 sectionTitle:NSLocalizedString(LectureMaterialsTableViewCellTitle, nil)];
     [cellObjects addObjectsFromArray:mainMaterialCellObjects];
     
     // Other lecture materials block
-    NSArray *otherMaterialCellObjects = [self generateMaterialsSectionCellObjectsWithMaterials:otherMaterials sectionTitle:NSLocalizedString(AdditionInformationTableViewCellTitle, nil)];
+    NSArray *otherMaterialCellObjects = [self generateMaterialsSectionCellObjectsWithMaterials:otherMaterials
+                                                                                  sectionTitle:NSLocalizedString(AdditionInformationTableViewCellTitle, nil)];
     [cellObjects addObjectsFromArray:otherMaterialCellObjects];
 
     return cellObjects;
 }
 
+- (VideoRecordTableViewCellObject *)videoCellObjectForVideoMaterial:(LectureMaterialViewModel *)viewModel {
+    VideoRecordTableViewCellObject *videoCellObject = [self.videoCellObjectMapper videoRecordCellObjectWithVideoMaterial:viewModel];
+    return videoCellObject;
+}
+
 #pragma mark - Private methods
 
-- (NSURL *)videoUrlForLecture:(LecturePlainObject *)lecture {
-    for (LectureMaterialPlainObject *material in lecture.lectureMaterials) {
+- (LectureMaterialViewModel *)videoMaterialForLecture:(LectureViewModel *)lecture {
+    for (LectureMaterialViewModel *material in lecture.lectureMaterials) {
         if ([material.type integerValue] == LectureMaterialVideoType) {
-            return [NSURL URLWithString:material.link];
+            return material;
         }
     }
     return nil;
@@ -109,7 +117,7 @@
     if (materials.count > 0) {
         LectureMaterialTitleTableViewCellObject *materialsTextLabelCellObject = [LectureMaterialTitleTableViewCellObject objectWithText:sectionTitle];
         [cellObjects addObject:materialsTextLabelCellObject];
-        for (LectureMaterialPlainObject *material in materials) {
+        for (LectureMaterialViewModel *material in materials) {
             LectureMaterialInfoTableViewCellObject *cellObject = [LectureMaterialInfoTableViewCellObject objectWithLectureMaterialObject:material];
             [cellObjects addObject:cellObject];
         }

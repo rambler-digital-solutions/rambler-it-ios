@@ -20,9 +20,12 @@
 
 #import <Foundation/Foundation.h>
 
+@class LectureViewModel;
+
 @interface LecturePresenterStateStorage : NSObject
 
-@property (nonatomic, copy) NSString *lectureObjectId;
-@property (nonatomic, copy) NSString *speakerObjectId;
+@property (nonatomic, strong) NSString *lectureObjectId;
+@property (nonatomic, strong) NSString *speakerObjectId;
+@property (nonatomic, strong) LectureViewModel *lectureViewModel;
 
 @end

@@ -1,6 +1,8 @@
 # CocoaPods specs repository URL
 source 'https://github.com/cocoapods/Specs.git'
 
+project 'Conferences.xcodeproj'
+
 # The main application target
 target 'Conferences' do
     # Dependency management
@@ -22,6 +24,7 @@ target 'Conferences' do
     pod 'Nimbus/Collections', :git => 'https://github.com/rambler-ios/nimbus'
     pod 'UICollectionViewLeftAlignedLayout', '1.0.1'
     pod 'CrutchKit/Proxying', :git => 'https://github.com/CognitiveDisson/CrutchKit', :tag => '0.0.10'
+    pod 'MBCircularProgressBar', '0.3.5'
     
     # Images & Video
     pod 'SDWebImage', '~> 3.7'
