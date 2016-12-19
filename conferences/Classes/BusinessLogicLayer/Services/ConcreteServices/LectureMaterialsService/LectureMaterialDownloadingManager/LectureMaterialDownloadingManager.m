@@ -1,4 +1,4 @@
-// Copyright (c) 2016 RAMBLER&Co
+ // Copyright (c) 2016 RAMBLER&Co
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -165,8 +165,7 @@
 - (BOOL)moveLectureMaterialFileFromURL:(NSURL *)source
                                  toURL:(NSURL *)destination {
     NSError *error;
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    return [fileManager moveItemAtURL:source
+    return [self.fileManager moveItemAtURL:source
                                 toURL:destination
                                 error:&error];
     

@@ -25,6 +25,7 @@
 
 @interface LectureMaterialServiceImplementation : NSObject <LectureMaterialService>
 
+@property (nonatomic, strong) NSFileManager *fileManager;
 @property (nonatomic, strong) LectureMaterialDownloadingManager *lectureMaterialDownloadManager;
 
 - (instancetype)initWithLectureMaterialHandlers:(NSArray *)lectureMaterialsHandlers;

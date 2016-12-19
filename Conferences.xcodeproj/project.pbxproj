@@ -475,6 +475,10 @@
 		667E96981E0443FD00EC9F20 /* LectureMaterialServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B64061BBDD2A40053E38F /* LectureMaterialServiceImplementation.m */; };
 		667E96991E04440200EC9F20 /* VideoMaterialHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 669D944A1DE0D97200589AC2 /* VideoMaterialHandler.m */; };
 		6691CC9D1DF86BD700894E99 /* LectureTableViewAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6691CC9C1DF86BD700894E99 /* LectureTableViewAnimator.m */; };
+		669B8AC51E07E7C900D5889D /* LectureMaterialServiceImplementationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 669B8AC41E07E7C900D5889D /* LectureMaterialServiceImplementationTests.m */; };
+		669B8AC81E07E80700D5889D /* LectureMaterialDownloadingManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 669B8AC71E07E80700D5889D /* LectureMaterialDownloadingManagerTests.m */; };
+		669B8ACA1E07E81C00D5889D /* VideoMaterialHandlerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 669B8AC91E07E81C00D5889D /* VideoMaterialHandlerTests.m */; };
+		669B8ACC1E081DB300D5889D /* LectureMaterialDownloadingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C7DD981DF33A8A00D5D1F4 /* LectureMaterialDownloadingManager.m */; };
 		669D944B1DE0D97200589AC2 /* VideoMaterialHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 669D944A1DE0D97200589AC2 /* VideoMaterialHandler.m */; };
 		66A1DD301D7E980D00998F6B /* TagAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A1DD2F1D7E980D00998F6B /* TagAssemblyTests.m */; };
 		66A1DD321D7E981500998F6B /* TagInteractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A1DD311D7E981500998F6B /* TagInteractorTests.m */; };
@@ -1431,6 +1435,10 @@
 		667AD5441DF06C7E00BCA9B9 /* UIFont+RIDTypefaces.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIFont+RIDTypefaces.m"; path = "UIFont+RIDTypefaces/UIFont+RIDTypefaces.m"; sourceTree = "<group>"; };
 		6691CC9B1DF86BD700894E99 /* LectureTableViewAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LectureTableViewAnimator.h; path = LectureTableViewAnimator/LectureTableViewAnimator.h; sourceTree = "<group>"; };
 		6691CC9C1DF86BD700894E99 /* LectureTableViewAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LectureTableViewAnimator.m; path = LectureTableViewAnimator/LectureTableViewAnimator.m; sourceTree = "<group>"; };
+		669B8AC41E07E7C900D5889D /* LectureMaterialServiceImplementationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LectureMaterialServiceImplementationTests.m; path = LectureMaterialServiceImplementationTests/LectureMaterialServiceImplementationTests.m; sourceTree = "<group>"; };
+		669B8AC71E07E80700D5889D /* LectureMaterialDownloadingManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LectureMaterialDownloadingManagerTests.m; path = LectureMaterialServiceImplementationTests/LectureMaterialDownloadingManagerTests.m; sourceTree = "<group>"; };
+		669B8AC91E07E81C00D5889D /* VideoMaterialHandlerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VideoMaterialHandlerTests.m; path = LectureMaterialServiceImplementationTests/VideoMaterialHandlerTests.m; sourceTree = "<group>"; };
+		669B8ACD1E081E1600D5889D /* LectureMaterialDownloadingManager_Testable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LectureMaterialDownloadingManager_Testable.h; path = LectureMaterialServiceImplementationTests/LectureMaterialDownloadingManager_Testable.h; sourceTree = "<group>"; };
 		669D94451DE0C6C200589AC2 /* LectureMaterialCacheDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LectureMaterialCacheDelegate.h; sourceTree = "<group>"; };
 		669D94471DE0D8B500589AC2 /* LectureMaterialHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LectureMaterialHandler.h; path = LectureMaterialsHandlers/LectureMaterialHandler.h; sourceTree = "<group>"; };
 		669D94491DE0D97200589AC2 /* VideoMaterialHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoMaterialHandler.h; path = VideoMaterialHandlers/VideoMaterialHandler.h; sourceTree = "<group>"; };
@@ -2887,6 +2895,7 @@
 		636A37B71BC13B4B00B49C3D /* BaseServicesTests */ = {
 			isa = PBXGroup;
 			children = (
+				669B8AC31E07E70C00D5889D /* LectureMaterialServiceTests */,
 				029358931DF85BE2007CD5FD /* LocationServiceTests */,
 				9FE139241D65CC1000D7BF44 /* SuggestServiceTests */,
 				66E9992D1D5489A300161D98 /* LectureServiceTests */,
@@ -5050,6 +5059,17 @@
 				6691CC9C1DF86BD700894E99 /* LectureTableViewAnimator.m */,
 			);
 			name = LectureTableViewAnimator;
+			sourceTree = "<group>";
+		};
+		669B8AC31E07E70C00D5889D /* LectureMaterialServiceTests */ = {
+			isa = PBXGroup;
+			children = (
+				669B8AC41E07E7C900D5889D /* LectureMaterialServiceImplementationTests.m */,
+				669B8AC71E07E80700D5889D /* LectureMaterialDownloadingManagerTests.m */,
+				669B8AC91E07E81C00D5889D /* VideoMaterialHandlerTests.m */,
+				669B8ACD1E081E1600D5889D /* LectureMaterialDownloadingManager_Testable.h */,
+			);
+			name = LectureMaterialServiceTests;
 			sourceTree = "<group>";
 		};
 		669D94461DE0D88F00589AC2 /* LectureMaterialsHandlers */ = {
@@ -9403,6 +9423,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97C7DD991DF33A8A00D5D1F4 /* LectureMaterialDownloadingManager.m in Sources */,
 				2B2064851D3F9CE900246C8D /* _SocialNetworkAccountPlainObject.m in Sources */,
 				63F8F2BC1BF8A713000017F3 /* EventTypeDeterminator.m in Sources */,
 				2B20648C1D3F9CE900246C8D /* MetaEventModelObject.m in Sources */,
@@ -9426,7 +9447,6 @@
 				636F8DDE1BCB8FE800552B91 /* RamblerLocationViewController.m in Sources */,
 				2B2064831D3F9CE900246C8D /* _MetaEventPlainObject.m in Sources */,
 				9FBE8AB61D630D4C00DA0C32 /* EventGalleryInteractor.m in Sources */,
-				97C7DD991DF33A8A00D5D1F4 /* LectureMaterialDownloadingManager.m in Sources */,
 				9F533AA41D50F195004F8E82 /* IndexTransactionBatch.m in Sources */,
 				9F4097841D51F658008BFE42 /* EventObjectTransformer.m in Sources */,
 				028E447B1DF6083400734E84 /* UberRidesAssembly.m in Sources */,
@@ -9786,6 +9806,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				669B8ACC1E081DB300D5889D /* LectureMaterialDownloadingManager.m in Sources */,
 				9F4077941D2BFA7100D47EF6 /* CommonResourceClientTests.m in Sources */,
 				0231D7241DFEA33D0052471C /* UberRidesModalTestableObject.m in Sources */,
 				63C31C081DDAF19700AA51BD /* MessagesInteractor.m in Sources */,
@@ -9796,6 +9817,7 @@
 				63F613E41CB111070002AEF0 /* LectureInteractorTests.m in Sources */,
 				66A1DD3B1D7E983100998F6B /* TagModuleTableViewCellTests.m in Sources */,
 				9F7B821B1D7CAB28002E977A /* QuickActionDaemonTests.m in Sources */,
+				669B8AC51E07E7C900D5889D /* LectureMaterialServiceImplementationTests.m in Sources */,
 				63F613D81CB111070002AEF0 /* EventListInteractorTests.m in Sources */,
 				63F613E61CB111070002AEF0 /* LectureRouterTests.m in Sources */,
 				63C31C001DD9C14A00AA51BD /* MessagesUserActivityFactoryTests.m in Sources */,
@@ -9828,6 +9850,7 @@
 				9FBE89D61D5CB76900DA0C32 /* SpotlightLaunchHandlerTests.m in Sources */,
 				63F613EB1CB111070002AEF0 /* SearchRouterTests.m in Sources */,
 				631CBA811C021A5300E3EBA8 /* PresentationLayerHelpersAssemblyTests.m in Sources */,
+				669B8ACA1E07E81C00D5889D /* VideoMaterialHandlerTests.m in Sources */,
 				9FAB6A831D54965F0061F333 /* SearchableIndexMock.m in Sources */,
 				631CBAA71C021C6900E3EBA8 /* EventTypeDeterminatorTests.m in Sources */,
 				66FBA25E1DE069E700F5C2E9 /* SearchLaunchRouterTests.m in Sources */,
@@ -9957,6 +9980,7 @@
 				9F7B823E1D7ECAD9002E977A /* QuickActionLaunchHandlerTests.m in Sources */,
 				63F613E91CB111070002AEF0 /* SearchInteractorTests.m in Sources */,
 				028E44761DF1B81C00734E84 /* SearchFacadeTests.m in Sources */,
+				669B8AC81E07E80700D5889D /* LectureMaterialDownloadingManagerTests.m in Sources */,
 				63F613E11CB111070002AEF0 /* EventPresenterTests.m in Sources */,
 				9F0A85281BC185AA006F79FB /* ResponseValidationOperationTests.m in Sources */,
 				66A1DD321D7E981500998F6B /* TagInteractorTests.m in Sources */,

@@ -101,6 +101,8 @@
                                               }];
                               [definition injectProperty:@selector(lectureMaterialDownloadManager)
                                                     with:[self lectureMaterialDownloadManager]];
+                              [definition injectProperty:@selector(fileManager)
+                                                    with:[self fileManager]];
                           }];
 }
 
@@ -154,14 +156,22 @@
                           configuration:^(TyphoonDefinition *definition) {
                               [definition injectProperty:@selector(deriviator)
                                                     with:[self.presentationLayerHelpersAssembly youTubeIdentifierDeriviator]];
+                              [definition injectProperty:@selector(fileManager)
+                                                    with:[self fileManager]];
     }];
 }
 
 - (LectureMaterialDownloadingManager *)lectureMaterialDownloadManager {
     return [TyphoonDefinition withClass:[LectureMaterialDownloadingManager class]
                           configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(fileManager)
+                                                    with:[self fileManager]];
                               definition.scope = TyphoonScopeSingleton;
     }];
+}
+
+- (NSFileManager *)fileManager {
+    return [NSFileManager defaultManager];
 }
 
 @end

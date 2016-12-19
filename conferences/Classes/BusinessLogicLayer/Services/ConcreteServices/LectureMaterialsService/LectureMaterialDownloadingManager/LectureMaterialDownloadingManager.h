@@ -27,6 +27,8 @@
  */
 @interface LectureMaterialDownloadingManager : NSObject <NSURLSessionDownloadDelegate>
 
+@property (nonatomic, strong) NSFileManager *fileManager;
+
 /**
  @author Konstantin Zinovyev
  

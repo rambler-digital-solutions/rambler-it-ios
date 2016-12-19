@@ -42,7 +42,7 @@
     if (self) {
         _lectureMaterialsHandlers = lectureMaterialsHandlers;
     }
-    
+
     return self;
 }
 
@@ -61,9 +61,10 @@
                 if (error) {
                     [delegate didEndDownloadingLectureMaterialWithLink:lectureMaterial.link
                                                                  error:error];
+                    return;
                 }
                 [self saveToPersistentStoreLectureMaterialWithID:lectureMaterial.lectureMaterialId
-                                                       localURL:localUrl];
+                                                        localURL:localUrl];
             }];
             return;
         }
@@ -83,7 +84,7 @@
                                          completion:^(NSString *localUrl, NSError *error) {
                 @strongify(self);
                 [self saveToPersistentStoreLectureMaterialWithID:lectureMaterial.lectureMaterialId
-                                                             localURL:localUrl];
+                                                        localURL:localUrl];
                 if (completionBlock) {
                     completionBlock(error);
                 }
@@ -97,7 +98,19 @@
   forLectureMaterialId:(NSString *)lectureMaterialId {
     LectureMaterialModelObject *lectureMaterial = [self obtainFromCacheLectureMaterialWithId:lectureMaterialId];
     [self.lectureMaterialDownloadManager updateDelegate:delegate
-                                                    forURL:lectureMaterial.link];
+                                                 forURL:lectureMaterial.link];
+}
+
+- (void)createCachedDirectoryIfNeeded {
+    NSString  *directory = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
+    directory = [directory stringByAppendingPathComponent:RITRelativePath];
+    if ([self.fileManager fileExistsAtPath:directory]) {
+        return;
+    }
+    [self.fileManager createDirectoryAtPath:directory
+           withIntermediateDirectories:NO
+                            attributes:nil
+                                 error:nil];
 }
 
 #pragma mark - Private method
@@ -119,19 +132,6 @@
         modelObject.localURL = localURL;
         [context MR_saveToPersistentStoreAndWait];
     }];
-}
-
-- (void)createCachedDirectoryIfNeeded {
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSString  *directory = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
-    directory = [directory stringByAppendingPathComponent:RITRelativePath];
-    if ([fileManager fileExistsAtPath:directory]) {
-        return;
-    }
-    [fileManager createDirectoryAtPath:directory
-           withIntermediateDirectories:NO
-                            attributes:nil
-                                 error:nil];
 }
 
 @end
