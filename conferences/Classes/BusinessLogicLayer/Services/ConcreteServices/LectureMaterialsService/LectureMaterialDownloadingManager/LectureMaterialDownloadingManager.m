@@ -79,6 +79,7 @@
 }
 
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(nullable NSError *)error {
+    
     id delegate = [self.delegatesByIdentifier objectForKey:session.sessionDescription];
     [self.delegatesByIdentifier removeObjectForKey:session.sessionDescription];
     if ([delegate respondsToSelector:@selector(URLSession:task:didCompleteWithError:)]) {
@@ -190,7 +191,7 @@
     documentsDirectory = [documentsDirectory stringByAppendingPathComponent:RITRelativePath];
     documentsDirectory = [documentsDirectory stringByAppendingPathComponent:fileName];
     // TODO: Завязка на формат видео, хорошо бы от это избавиться
-    documentsDirectory = [documentsDirectory stringByAppendingPathComponent:RITFormatVideo];
+    documentsDirectory = [documentsDirectory stringByAppendingPathExtension:RITFormatVideo];
     return [NSURL fileURLWithPath:documentsDirectory];
 }
 
