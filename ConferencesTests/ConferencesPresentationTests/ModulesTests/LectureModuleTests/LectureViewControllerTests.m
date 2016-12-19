@@ -174,4 +174,48 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
     OCMVerify([self.presenterMock didTapMaterialWithUrl:testUrl]);
 }
 
+- (void)testThatViewUpdateWithLectureMaterialCorrectly {
+    // given
+    id lectureMaterial = @1;
+    
+    // when
+    [self.viewController updateViewWithLectureMaterial:lectureMaterial];
+    
+    // then
+    OCMVerify([self.dataDisplayManagerMock updateDataDisplayManagerWithLectureMaterial:lectureMaterial]);
+}
+
+- (void)testThatViewRemoveLectureMaterialCorrectly {
+    // given
+    id lectureMaterial = @1;
+    
+    // when
+    [self.viewController didTapRemoveFromCacheLectureMaterial:lectureMaterial];
+    
+    // then
+    OCMVerify([self.presenterMock didTapRemoveFromCacheLectureMaterial:lectureMaterial]);
+}
+
+- (void)testThatViewDownloadLectureMaterialCorrectly {
+    // given
+    id lectureMaterial = @1;
+    
+    // when
+    [self.viewController didTapDownloadToCacheLectureMaterial:lectureMaterial];
+    
+    // then
+    OCMVerify([self.presenterMock didTapDownloadToCacheLectureMaterial:lectureMaterial]);
+}
+
+- (void)testThatViewHandleTapOnVideoCellCorrectly {
+    // given
+    id lectureMaterial = @1;
+    
+    // when
+    [self.viewController didTapVideoRecordCellWithVideoMaterial:lectureMaterial];
+    
+    // then
+    OCMVerify([self.presenterMock didTapVideoPreviewWithVideoMaterial:lectureMaterial]);
+}
+
 @end

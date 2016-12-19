@@ -29,6 +29,8 @@
 #import "LecturePlainObject.h"
 #import "SpeakerPlainObject.h"
 #import "LectureMaterialViewModel.h"
+#import "LectureViewModelMapper.h"
+#import "LectureViewModel.h"
 
 @interface LecturePresenterTests : XCTestCase
 
@@ -37,6 +39,7 @@
 @property (nonatomic, strong) id interactorMock;
 @property (nonatomic, strong) id viewMock;
 @property (nonatomic, strong) id routerMock;
+@property (nonatomic, strong) id mockLectureViewModelMapper;
 
 @end
 
@@ -50,11 +53,13 @@
     self.interactorMock = OCMProtocolMock(@protocol(LectureInteractorInput));
     self.viewMock = OCMProtocolMock(@protocol(LectureViewInput));
     self.routerMock = OCMProtocolMock(@protocol(LectureRouterInput));
+    self.mockLectureViewModelMapper = OCMClassMock([LectureViewModelMapper class]);
     
     self.presenter.interactor = self.interactorMock;
     self.presenter.stateStorage = self.stateStorage;
     self.presenter.view = self.viewMock;
     self.presenter.router = self.routerMock;
+    self.presenter.mapperLectureViewModel = self.mockLectureViewModelMapper;
 }
 
 - (void)tearDown {
@@ -66,6 +71,9 @@
     self.viewMock = nil;
     [self.routerMock stopMocking];
     self.routerMock = nil;
+    
+    [self.mockLectureViewModelMapper stopMocking];
+    self.mockLectureViewModelMapper = nil;
     
     [super tearDown];
 }
@@ -81,15 +89,17 @@
     
     LecturePlainObject *lecture = [LecturePlainObject new];
     lecture.speaker = speaker;
-    
+    LectureViewModel *viewModel = [LectureViewModel new];
+    OCMStub([self.mockLectureViewModelMapper mapLectureViewModelFromLecturePlainObject:lecture]).andReturn(viewModel);
     OCMStub([self.interactorMock obtainLectureWithObjectId:OCMOCK_ANY]).andReturn(lecture);
 
     // when
     [self.presenter setupView];
     
     // then
+    OCMVerify([self.interactorMock updateDownloadingDelegateWithLectureMaterials:OCMOCK_ANY]);
     XCTAssert(self.stateStorage.speakerObjectId == speakerObjectId);
-//    OCMVerify([self.viewMock configureViewWithLecture:lecture]);
+    OCMVerify([self.viewMock configureViewWithLecture:viewModel]);
 }
 
 - (void)testSuccessDidTapTableViewHeader {
@@ -131,7 +141,6 @@
     // then
     OCMVerify([self.routerMock openLocalVideoPlayerModuleWithPath:testUrl]);
 }
-
 
 - (void)testSuccessDidTapYouTubeVideoPreview {
     // given
@@ -187,6 +196,52 @@
     
     // then
     XCTAssert(self.stateStorage.lectureObjectId == objectId);
+}
+
+- (void)testThatInteractorRemoveCacheMaterialCorrectly {
+    // given
+    LectureMaterialViewModel *model = [LectureMaterialViewModel new];
+    
+    // when
+    [self.presenter didTapRemoveFromCacheLectureMaterial:model];
+    
+    // then
+    OCMVerify([self.routerMock showAlertConfirmationRemoveWithActionBlock:OCMOCK_ANY]);
+}
+
+- (void)testThatInteractorDownloadToCacheMaterialCorrectly {
+    // given
+    LectureMaterialViewModel *model = [LectureMaterialViewModel new];
+    
+    // when
+    [self.presenter didTapDownloadToCacheLectureMaterial:model];
+    
+    // then
+    OCMVerify([self.routerMock showAlertConfirmationDownloadWithActionBlock:OCMOCK_ANY]);
+}
+
+- (void)testThatInteractorUpdateLectureMaterialCorrectly {
+    // given
+    
+    // when
+    [self.presenter didTriggerCacheOperationWithType:LectureMaterialStartDownloadType
+                                     lectureMaterial:OCMOCK_ANY
+                                             percent:0];
+    
+    // then
+    OCMVerify([self.viewMock updateViewWithLectureMaterial:OCMOCK_ANY]);
+}
+
+- (void)testThatInteractorOccurErrorCorrectly {
+    // given
+    NSError *error = [NSError new];
+    
+    // when
+    [self.presenter didOccurError:error];
+    
+    // then
+    OCMVerify([self.routerMock showAlertErrorWithMessage:OCMOCK_ANY]);
+    
 }
 
 @end

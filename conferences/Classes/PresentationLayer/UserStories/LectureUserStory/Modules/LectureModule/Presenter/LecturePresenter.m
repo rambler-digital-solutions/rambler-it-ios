@@ -46,8 +46,9 @@
     self.stateStorage.speakerObjectId = speaker.speakerId;
     
     NSArray *lectureMaterials = [lecture.lectureMaterials allObjects];
-    self.stateStorage.lectureViewModel = [self.mapperLectureViewModel mapLectureViewModelFromLecturePlainObject:lecture];
     [self.interactor updateDownloadingDelegateWithLectureMaterials:lectureMaterials];
+    
+    self.stateStorage.lectureViewModel = [self.mapperLectureViewModel mapLectureViewModelFromLecturePlainObject:lecture];
     [self.view configureViewWithLecture:self.stateStorage.lectureViewModel];
 }
 
