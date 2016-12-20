@@ -9,6 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "ObjectImageIndexer.h"
 
+/**
+ @author Konstantin Zinovyev
+ 
+ ImageIndexer for Speaker model object
+ */
 @interface SpeakerImageIndexer : NSObject <ObjectImageIndexer>
 
 @end

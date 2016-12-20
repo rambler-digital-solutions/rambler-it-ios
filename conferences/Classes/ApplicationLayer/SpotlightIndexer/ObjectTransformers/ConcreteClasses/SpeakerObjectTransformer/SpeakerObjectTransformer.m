@@ -53,7 +53,7 @@
     
     BOOL hasSeparator = [identifier rangeOfString:kIdentifierSeparator].location != NSNotFound;
     
-    NSUInteger speakerIdLocation = objectType.length + 1; // 1 for _ symbol
+    NSUInteger speakerIdLocation = objectType.length + kIdentifierSeparator.length;
     NSInteger speakerIdLength = identifier.length - speakerIdLocation;
     BOOL hasSpeakerId = speakerIdLength > 0;
     

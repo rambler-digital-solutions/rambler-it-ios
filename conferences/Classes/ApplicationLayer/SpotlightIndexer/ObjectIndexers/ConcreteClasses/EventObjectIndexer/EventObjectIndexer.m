@@ -37,9 +37,8 @@
 }
 
 - (CSSearchableItem *)searchableItemForObject:(EventModelObject *)object {
-    CSSearchableItemAttributeSet *attributeSet = [[CSSearchableItemAttributeSet alloc] initWithItemContentType:(NSString *)kUTTypeJSON];
+    CSSearchableItemAttributeSet *attributeSet = [[CSSearchableItemAttributeSet alloc] initWithItemContentType:(NSString *)kUTTypeContent];
     attributeSet.title = object.name;
-    
     NSString *eventDescription = [self generateEventDescriptionForEvent:object];
     attributeSet.contentDescription = eventDescription;
     
@@ -62,11 +61,15 @@
 #pragma mark - Private methods
 
 - (NSString *)generateEventDescriptionForEvent:(EventModelObject *)event {
-    NSMutableArray *lectureTitles = [NSMutableArray new];
+    NSMutableArray *componentsEventDescription = [NSMutableArray new];
+    [componentsEventDescription addObject:event.eventDescription ?: @"" ];
+    NSMutableArray *lectureTitles = [[NSMutableArray alloc] initWithObjects:@"Включает следующие лекции:", nil];
     for (LectureModelObject *lecture in event.lectures) {
         [lectureTitles addObject:lecture.name];
     }
-    NSString *eventDescription = [lectureTitles componentsJoinedByString:@", "];
+    NSString *listLectures = [lectureTitles componentsJoinedByString:@"\n * "];
+    [componentsEventDescription addObject:listLectures];
+    NSString *eventDescription = [componentsEventDescription componentsJoinedByString:@"\n"];
     return eventDescription;
 }
 

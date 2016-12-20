@@ -24,7 +24,7 @@
         NSArray *imageURLsForDownloading = [self filterDownloadedURLs:imageURLs];
         for (NSString *imageURL in imageURLsForDownloading) {
             NSURL *downloadURL = [NSURL URLWithString:imageURL];
-            NSInteger options = SDWebImageLowPriority | SDWebImageContinueInBackground;
+            NSInteger options = SDWebImageLowPriority | SDWebImageContinueInBackground | SDWebImageRefreshCached;
             [[SDWebImageManager sharedManager] downloadImageWithURL:downloadURL
                                                             options:options
                                                            progress:nil
@@ -36,14 +36,14 @@
 }
 
 - (NSArray *)filterDownloadedURLs:(NSArray *)imageURLs {
-    SDImageCache *cache = [SDImageCache sharedImageCache];
+//    SDImageCache *cache = [SDImageCache sharedImageCache];
     NSPredicate *predicateNull = [NSPredicate predicateWithFormat:@"SELF!=nil"];
-    NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(NSString *imageURL, NSDictionary<NSString *,id> *bindings) {
-        BOOL isImageNeedDownloading = ![cache diskImageExistsWithKey:imageURL];
-        return isImageNeedDownloading;
-    }];
+//    NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(NSString *imageURL, NSDictionary<NSString *,id> *bindings) {
+//        BOOL isImageNeedDownloading = ![cache diskImageExistsWithKey:imageURL];
+//        return isImageNeedDownloading;
+//    }];
     NSArray *filteredURLs = [imageURLs filteredArrayUsingPredicate:predicateNull];
-    filteredURLs = [filteredURLs filteredArrayUsingPredicate:predicate];
+//    filteredURLs = [filteredURLs filteredArrayUsingPredicate:predicate];
     return filteredURLs;
 }
 

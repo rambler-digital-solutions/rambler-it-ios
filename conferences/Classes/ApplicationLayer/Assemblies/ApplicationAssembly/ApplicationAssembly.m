@@ -25,6 +25,7 @@
 #import "LaunchSystemAssembly.h"
 #import "SpotlightIndexerAssembly.h"
 #import "DaemonAssembly.h"
+#import "PresentationLayerHelpersAssembly.h"
 
 #import "ApplicationConfigurator.h"
 #import "ApplicationConfiguratorImplementation.h"
@@ -36,6 +37,7 @@
 #import "SpotlightImageIndexer.h"
 #import "EventImageIndexer.h"
 #import "SpeakerImageIndexer.h"
+#import "LectureImageIndexer.h"
 
 #import <RamblerAppDelegateProxy/RamblerAppDelegateProxy.h>
 
@@ -101,13 +103,22 @@
                               [definition injectProperty:@selector(indexers)
                                                     with:@[
                                                            [self eventImageIndexer],
-                                                           [self speakerImageIndexer]
+                                                           [self speakerImageIndexer],
+                                                           [self lectureImageIndexer]
                                                            ]];
                           }];
 }
 
 - (SpeakerImageIndexer *)speakerImageIndexer {
     return [TyphoonDefinition withClass:[SpeakerImageIndexer class]];
+}
+
+- (LectureImageIndexer *)lectureImageIndexer {
+    return [TyphoonDefinition withClass:[LectureImageIndexer class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(videoThumbnailGenerator)
+                                                    with:[self.presentationHelpersAssembly videoThumbnailGenerator]];
+    }];
 }
 
 - (EventImageIndexer *)eventImageIndexer {

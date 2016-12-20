@@ -431,6 +431,7 @@
 		662166501D4F4507000A1D11 /* ReportsSearchInteractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6621664C1D4F4507000A1D11 /* ReportsSearchInteractorTests.m */; };
 		662166511D4F4507000A1D11 /* ReportsSearchRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6621664D1D4F4507000A1D11 /* ReportsSearchRouterTests.m */; };
 		662166521D4F4507000A1D11 /* ReportsSearchViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6621664E1D4F4507000A1D11 /* ReportsSearchViewControllerTests.m */; };
+		6623A6A31E09604700738000 /* LectureImageIndexer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6623A6A21E09604700738000 /* LectureImageIndexer.m */; };
 		666C5C331D4F2AF6002D73D5 /* ReportsSearchPresenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 666C5C321D4F2AF6002D73D5 /* ReportsSearchPresenterTests.m */; };
 		666C5C3E1D4F344B002D73D5 /* ReportsSearchPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 666C5C3D1D4F344B002D73D5 /* ReportsSearchPresenter.m */; };
 		666C5C3F1D4F344B002D73D5 /* ReportsSearchPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 666C5C3D1D4F344B002D73D5 /* ReportsSearchPresenter.m */; };
@@ -1325,6 +1326,8 @@
 		6621664C1D4F4507000A1D11 /* ReportsSearchInteractorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportsSearchInteractorTests.m; path = ReportsSearchModuleTests/ReportsSearchInteractorTests.m; sourceTree = "<group>"; };
 		6621664D1D4F4507000A1D11 /* ReportsSearchRouterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportsSearchRouterTests.m; path = ReportsSearchModuleTests/ReportsSearchRouterTests.m; sourceTree = "<group>"; };
 		6621664E1D4F4507000A1D11 /* ReportsSearchViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportsSearchViewControllerTests.m; path = ReportsSearchModuleTests/ReportsSearchViewControllerTests.m; sourceTree = "<group>"; };
+		6623A6A11E09604700738000 /* LectureImageIndexer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LectureImageIndexer.h; path = LectureImageIndexer/LectureImageIndexer.h; sourceTree = "<group>"; };
+		6623A6A21E09604700738000 /* LectureImageIndexer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LectureImageIndexer.m; path = LectureImageIndexer/LectureImageIndexer.m; sourceTree = "<group>"; };
 		666C5C321D4F2AF6002D73D5 /* ReportsSearchPresenterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportsSearchPresenterTests.m; path = ReportsSearchModuleTests/ReportsSearchPresenterTests.m; sourceTree = "<group>"; };
 		666C5C3C1D4F344B002D73D5 /* ReportsSearchPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportsSearchPresenter.h; path = SearchReportsModule/Presenter/ReportsSearchPresenter.h; sourceTree = "<group>"; };
 		666C5C3D1D4F344B002D73D5 /* ReportsSearchPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportsSearchPresenter.m; path = SearchReportsModule/Presenter/ReportsSearchPresenter.m; sourceTree = "<group>"; };
@@ -6939,6 +6942,8 @@
 			children = (
 				9F78D7741D5A023B009DDCEA /* LectureObjectIndexer.h */,
 				9F78D7751D5A023B009DDCEA /* LectureObjectIndexer.m */,
+				6623A6A11E09604700738000 /* LectureImageIndexer.h */,
+				6623A6A21E09604700738000 /* LectureImageIndexer.m */,
 			);
 			name = LectureObjectIndexer;
 			sourceTree = "<group>";
@@ -9171,6 +9176,7 @@
 				2B429A7C1D50987E004C005F /* MetaEventServiceImpementation.m in Sources */,
 				9FFA8A281DF31F3400FB3C2E /* RamblerLocationStateStorage.m in Sources */,
 				6670500B1D4613F800DD9D6E /* ReportsSearchAssembly.m in Sources */,
+				6623A6A31E09604700738000 /* LectureImageIndexer.m in Sources */,
 				9FBE89F51D5DDA9E00DA0C32 /* PreviousEventSectionFooterTableViewCellObject.m in Sources */,
 				631808691C4A870C00A61E7D /* LectureMaterialInfoTableViewCell.m in Sources */,
 				63F613721CB00A220002AEF0 /* EventInfoTableViewCell.m in Sources */,

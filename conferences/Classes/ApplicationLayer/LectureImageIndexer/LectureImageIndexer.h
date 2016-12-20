@@ -1,4 +1,4 @@
-// Copyright (c) 2015 RAMBLER&Co
+// Copyright (c) 2016 RAMBLER&Co
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -18,22 +18,18 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Typhoon/Typhoon.h>
-#import <RamblerTyphoonUtils/AssemblyCollector.h>
+#import <Foundation/Foundation.h>
+#import "ObjectImageIndexer.h"
 
-@class IndexerMonitor;
-@protocol SpotlightCoreDataStackCoordinator;
-@protocol ObjectTransformer;
-@class PresentationLayerHelpersAssembly;
+@class VideoThumbnailGenerator;
 
-@interface SpotlightIndexerAssembly : TyphoonAssembly <RamblerInitialAssembly>
+/**
+ @author Konstantin Zinovyev
+ 
+ ImageIndexer for Lecture model object
+ */
+@interface LectureImageIndexer : NSObject <ObjectImageIndexer>
 
-@property (nonatomic, strong, readonly) PresentationLayerHelpersAssembly *presentationHelpersAssembly;
-
-- (IndexerMonitor *)indexerMonitor;
-- (id<SpotlightCoreDataStackCoordinator>)spotlightCoreDataStackCoordinator;
-- (id<ObjectTransformer>)eventObjectTransformer;
-- (id<ObjectTransformer>)speakerObjectTransformer;
-- (id<ObjectTransformer>)lectureObjectTransformer;
+@property (nonatomic, strong) VideoThumbnailGenerator *videoThumbnailGenerator;
 
 @end

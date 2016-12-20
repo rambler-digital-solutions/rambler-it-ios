@@ -35,6 +35,7 @@
 #import "LectureObjectIndexer.h"
 #import "LectureChangeProviderFetchRequestFactory.h"
 #import "LectureObjectTransformer.h"
+#import "PresentationLayerHelpersAssembly.h"
 
 #import <CoreSpotlight/CoreSpotlight.h>
 
@@ -130,6 +131,8 @@
                                                   [initializer injectParameterWith:[self lectureObjectTransformer]];
                                                   [initializer injectParameterWith:[self searchableIndex]];
                                               }];
+                              [definition injectProperty:@selector(videoThumbnailGenerator)
+                                                    with:[self.presentationHelpersAssembly videoThumbnailGenerator]];
                           }];
 }
 

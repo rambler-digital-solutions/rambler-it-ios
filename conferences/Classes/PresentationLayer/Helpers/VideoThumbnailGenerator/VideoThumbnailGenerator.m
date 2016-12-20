@@ -22,7 +22,7 @@
 
 #import "YouTubeIdentifierDeriviator.h"
 
-static NSString * const kYouTubeVideoThumbnailFormat = @"http://img.youtube.com/vi/%@/hqdefault.jpg";
+static NSString * const kYouTubeVideoThumbnailFormat = @"https://img.youtube.com/vi/%@/hqdefault.jpg";
 
 @interface VideoThumbnailGenerator ()
 

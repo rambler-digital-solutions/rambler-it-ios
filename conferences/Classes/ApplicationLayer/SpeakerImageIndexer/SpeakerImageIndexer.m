@@ -26,12 +26,6 @@
                                                                             withValue:imageURL.absoluteString
                                                                             inContext:context];
         modelObject.imageUrl = modelObject.imageUrl;
-        
-        NSArray *lectures = [LectureModelObject MR_findByAttribute:LectureModelObjectRelationships.speaker
-                                                         withValue:modelObject];
-        for (LectureModelObject *lecture in lectures) {
-            lecture.name = lecture.name;
-        }
         [context MR_saveToPersistentStoreAndWait];
     }];
 }
