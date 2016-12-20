@@ -432,6 +432,7 @@
 		662166511D4F4507000A1D11 /* ReportsSearchRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6621664D1D4F4507000A1D11 /* ReportsSearchRouterTests.m */; };
 		662166521D4F4507000A1D11 /* ReportsSearchViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6621664E1D4F4507000A1D11 /* ReportsSearchViewControllerTests.m */; };
 		6623A6A31E09604700738000 /* LectureImageIndexer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6623A6A21E09604700738000 /* LectureImageIndexer.m */; };
+		6623A6A61E09A5A600738000 /* SpotlightImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6623A6A51E09A5A600738000 /* SpotlightImageModel.m */; };
 		666C5C331D4F2AF6002D73D5 /* ReportsSearchPresenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 666C5C321D4F2AF6002D73D5 /* ReportsSearchPresenterTests.m */; };
 		666C5C3E1D4F344B002D73D5 /* ReportsSearchPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 666C5C3D1D4F344B002D73D5 /* ReportsSearchPresenter.m */; };
 		666C5C3F1D4F344B002D73D5 /* ReportsSearchPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 666C5C3D1D4F344B002D73D5 /* ReportsSearchPresenter.m */; };
@@ -1328,6 +1329,8 @@
 		6621664E1D4F4507000A1D11 /* ReportsSearchViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportsSearchViewControllerTests.m; path = ReportsSearchModuleTests/ReportsSearchViewControllerTests.m; sourceTree = "<group>"; };
 		6623A6A11E09604700738000 /* LectureImageIndexer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LectureImageIndexer.h; path = LectureImageIndexer/LectureImageIndexer.h; sourceTree = "<group>"; };
 		6623A6A21E09604700738000 /* LectureImageIndexer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LectureImageIndexer.m; path = LectureImageIndexer/LectureImageIndexer.m; sourceTree = "<group>"; };
+		6623A6A41E09A5A600738000 /* SpotlightImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpotlightImageModel.h; path = SpotlightImageIndexer/SpotlightImageModel.h; sourceTree = "<group>"; };
+		6623A6A51E09A5A600738000 /* SpotlightImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpotlightImageModel.m; path = SpotlightImageIndexer/SpotlightImageModel.m; sourceTree = "<group>"; };
 		666C5C321D4F2AF6002D73D5 /* ReportsSearchPresenterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportsSearchPresenterTests.m; path = ReportsSearchModuleTests/ReportsSearchPresenterTests.m; sourceTree = "<group>"; };
 		666C5C3C1D4F344B002D73D5 /* ReportsSearchPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportsSearchPresenter.h; path = SearchReportsModule/Presenter/ReportsSearchPresenter.h; sourceTree = "<group>"; };
 		666C5C3D1D4F344B002D73D5 /* ReportsSearchPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportsSearchPresenter.m; path = SearchReportsModule/Presenter/ReportsSearchPresenter.m; sourceTree = "<group>"; };
@@ -5229,6 +5232,8 @@
 			children = (
 				973421B71DFD503900331745 /* SpotlightImageIndexer.h */,
 				973421B81DFD503900331745 /* SpotlightImageIndexer.m */,
+				6623A6A41E09A5A600738000 /* SpotlightImageModel.h */,
+				6623A6A51E09A5A600738000 /* SpotlightImageModel.m */,
 			);
 			name = SpotlightImageIndexer;
 			sourceTree = "<group>";
@@ -9412,6 +9417,7 @@
 				9F0A85321BC18906006F79FB /* EventQuery.m in Sources */,
 				66E999321D549E2100161D98 /* LectureCellObjectsBuilderImplementation.m in Sources */,
 				3784462F1D4E067A0016121E /* RCNavigationController.m in Sources */,
+				6623A6A61E09A5A600738000 /* SpotlightImageModel.m in Sources */,
 				2B05E1711D51E1B100E017AB /* SocialContactsConfigurator.m in Sources */,
 				63F6136A1CB00A220002AEF0 /* PreviousLectureSectionHeaderTableViewCellObject.m in Sources */,
 				63FD4E061BE5038D0046378E /* UIColor+Hex.m in Sources */,

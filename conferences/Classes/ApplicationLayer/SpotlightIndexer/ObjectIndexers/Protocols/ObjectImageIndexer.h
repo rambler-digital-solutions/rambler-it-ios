@@ -6,6 +6,8 @@
 //  Copyright © 2016 Rambler. All rights reserved.
 //
 
+@class SpotlightImageModel;
+
 /**
  @author Konstantin Zinovyev
  
@@ -18,13 +20,13 @@
  
  Collects all image urls of specific class
  */
-- (NSArray<NSURL *> *)obtainImageURLs;
+- (NSArray<SpotlightImageModel *> *)obtainImageURLs;
 
 /**
  @author Konstantin Zinovyev
  
  Update model object of specific class with imageURL
  */
-- (void)updateModelsForImageURL:(NSURL *)imageURL;
+- (void)updateModelsForEntityIdentifier:(NSString *)identifier;
 
 @end

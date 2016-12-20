@@ -110,7 +110,13 @@
 }
 
 - (SpeakerImageIndexer *)speakerImageIndexer {
-    return [TyphoonDefinition withClass:[SpeakerImageIndexer class]];
+    return [TyphoonDefinition withClass:[SpeakerImageIndexer class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(searchableIndex)
+                                                    with:[self.spotlightIndexerAssembly searchableIndex]];
+                              [definition injectProperty:@selector(indexer)
+                                                    with:[self.spotlightIndexerAssembly speakerObjectIndexer]];
+    }];
 }
 
 - (LectureImageIndexer *)lectureImageIndexer {
@@ -118,11 +124,21 @@
                           configuration:^(TyphoonDefinition *definition) {
                               [definition injectProperty:@selector(videoThumbnailGenerator)
                                                     with:[self.presentationHelpersAssembly videoThumbnailGenerator]];
+                              [definition injectProperty:@selector(searchableIndex)
+                                                    with:[self.spotlightIndexerAssembly searchableIndex]];
+                              [definition injectProperty:@selector(indexer)
+                                                    with:[self.spotlightIndexerAssembly lectureObjectIndexer]];
     }];
 }
 
 - (EventImageIndexer *)eventImageIndexer {
-    return [TyphoonDefinition withClass:[EventImageIndexer class]];
+    return [TyphoonDefinition withClass:[EventImageIndexer class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(searchableIndex)
+                                                    with:[self.spotlightIndexerAssembly searchableIndex]];
+                              [definition injectProperty:@selector(indexer)
+                                                    with:[self.spotlightIndexerAssembly eventObjectIndexer]];
+                          }];
 }
 
 #pragma mark - StartUpSystem

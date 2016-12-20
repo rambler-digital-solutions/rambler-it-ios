@@ -20,40 +20,46 @@
 
 #import "LectureImageIndexer.h"
 #import <MagicalRecord/MagicalRecord.h>
+#import <CoreSpotlight/CoreSpotlight.h>
 #import "LectureModelObject.h"
 #import "LectureMaterialModelObject.h"
 #import "LectureMaterialType.h"
 #import "VideoThumbnailGenerator.h"
+#import "LectureObjectIndexer.h"
+#import "SpotlightImageModel.h"
 
 @implementation LectureImageIndexer
 
-- (NSArray<NSURL *> *)obtainImageURLs {
+- (NSArray<SpotlightImageModel *> *)obtainImageURLs {
     NSArray *lecturesMaterials = [LectureMaterialModelObject MR_findByAttribute:LectureMaterialModelObjectAttributes.type
                                                                       withValue:@(LectureMaterialVideoType)];
-    NSMutableArray *imageURLs = [[NSMutableArray alloc] init];
-    
+    NSArray *lectures = [lecturesMaterials valueForKey:LectureMaterialModelObjectRelationships.lecture];
     NSArray *videoLinks = [lecturesMaterials valueForKey:LectureMaterialModelObjectAttributes.link];
-    for (NSString *videoLink in videoLinks) {
-        NSURL *videoURL = [NSURL URLWithString:videoLink];
-        NSURL *imageURL = [self.videoThumbnailGenerator generateThumbnailWithVideoURL:videoURL];
-        if (imageURL) {
-            [imageURLs addObject:imageURL.absoluteString];
+    NSMutableArray *imageModels = [NSMutableArray new];
+    
+    [videoLinks enumerateObjectsUsingBlock:^(NSString *videoLink, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (videoLink.length != 0 && lectures[idx]) {
+            NSURL *videoURL = [NSURL URLWithString:videoLink];
+            NSURL *imageURL = [self.videoThumbnailGenerator generateThumbnailWithVideoURL:videoURL];
+            if (imageURL) {
+                LectureModelObject *lecture = lectures[idx];
+                SpotlightImageModel *model = [[SpotlightImageModel alloc] initWithEntityId:lecture.lectureId
+                                                                                 imageLink:imageURL.absoluteString];
+                [imageModels addObject:model];
+            }
         }
-    }
-    return [imageURLs copy];
+    }];
+    
+    return [imageModels copy];
 }
 
-- (void)updateModelsForImageURL:(NSURL *)imageURL {
-    NSManagedObjectContext *context = [NSManagedObjectContext MR_defaultContext];
-    [context performBlockAndWait:^{
-        LectureMaterialModelObject *modelObject = [LectureMaterialModelObject MR_findFirstByAttribute:LectureMaterialModelObjectAttributes.link
-                                                                            withValue:imageURL.absoluteString
-                                                                            inContext:context];
-        LectureModelObject *lecture = modelObject.lecture;
-        lecture.lectureId = lecture.lectureId;
-        
-        [context MR_saveToPersistentStoreAndWait];
-    }];
+- (void)updateModelsForEntityIdentifier:(NSString *)identifier {
+    LectureModelObject *modelObject = [LectureModelObject MR_findFirstByAttribute:LectureModelObjectAttributes.lectureId
+                                                                        withValue:identifier];
+    CSSearchableItem *searchableItem = [self.indexer searchableItemForObject:modelObject];
+    [self.searchableIndex indexSearchableItems:@[searchableItem]
+                             completionHandler:nil];
+                                               
 }
 
 @end

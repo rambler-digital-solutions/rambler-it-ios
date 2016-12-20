@@ -10,24 +10,31 @@
 #import "SpeakerModelObject.h"
 #import "LectureModelObject.h"
 #import <MagicalRecord/MagicalRecord.h>
+#import <CoreSpotlight/CoreSpotlight.h>
+#import "SpeakerObjectIndexer.h"
+#import "SpotlightImageModel.h"
 
 @implementation SpeakerImageIndexer
 
-- (NSArray<NSURL *> *)obtainImageURLs {
+- (NSArray<SpotlightImageModel *> *)obtainImageURLs {
     NSArray *speakers = [SpeakerModelObject MR_findAll];
-    NSArray *imageURLs = [speakers valueForKey:SpeakerModelObjectAttributes.imageUrl];
-    return imageURLs;
+    NSMutableArray *imageModels = [NSMutableArray new];
+    for (SpeakerModelObject *speaker in speakers) {
+        if (speaker.imageUrl.length > 0) {
+            SpotlightImageModel *model = [[SpotlightImageModel alloc] initWithEntityId:speaker.speakerId
+                                                                             imageLink:speaker.imageUrl];
+            [imageModels addObject:model];
+        }
+    }
+    return [imageModels copy];
 }
 
-- (void)updateModelsForImageURL:(NSURL *)imageURL {
-    NSManagedObjectContext *context = [NSManagedObjectContext MR_defaultContext];
-    [context performBlockAndWait:^{
-        SpeakerModelObject *modelObject = [SpeakerModelObject MR_findFirstByAttribute:SpeakerModelObjectAttributes.imageUrl
-                                                                            withValue:imageURL.absoluteString
-                                                                            inContext:context];
-        modelObject.imageUrl = modelObject.imageUrl;
-        [context MR_saveToPersistentStoreAndWait];
-    }];
+- (void)updateModelsForEntityIdentifier:(NSString *)identifier {
+    SpeakerModelObject *modelObject = [SpeakerModelObject MR_findFirstByAttribute:SpeakerModelObjectAttributes.speakerId
+                                                                        withValue:identifier];
+    CSSearchableItem *searchableItem = [self.indexer searchableItemForObject:modelObject];
+    [self.searchableIndex indexSearchableItems:@[searchableItem]
+                             completionHandler:nil];
 }
 
 @end

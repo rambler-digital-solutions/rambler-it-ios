@@ -9,11 +9,17 @@
 #import <Foundation/Foundation.h>
 #import "ObjectImageIndexer.h"
 
+@class CSSearchableIndex;
+@class EventObjectIndexer;
+
 /**
  @author Konstantin Zinovyev
  
  ImageIndexer for Event model object
  */
 @interface EventImageIndexer : NSObject <ObjectImageIndexer>
+
+@property (nonatomic, strong) CSSearchableIndex *searchableIndex;
+@property (nonatomic, strong) EventObjectIndexer *indexer;
 
 @end

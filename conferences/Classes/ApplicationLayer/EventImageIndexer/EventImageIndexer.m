@@ -9,24 +9,30 @@
 #import "EventImageIndexer.h"
 #import "EventModelObject.h"
 #import <MagicalRecord/MagicalRecord.h>
+#import <CoreSpotlight/CoreSpotlight.h>
+#import "SpotlightImageModel.h"
+#import "EventObjectIndexer.h"
 
 @implementation EventImageIndexer
 
-- (NSArray<NSURL *> *)obtainImageURLs {
+- (NSArray<SpotlightImageModel *> *)obtainImageURLs {
     NSArray *events = [EventModelObject MR_findAll];
-    NSArray *imageURLs = [events valueForKey:EventModelObjectAttributes.imageUrl];
-    return imageURLs;
+    NSMutableArray *imageModels = [NSMutableArray new];
+    for (EventModelObject *event in events) {
+        if (event.imageUrl.length > 0) {
+            SpotlightImageModel *model = [[SpotlightImageModel alloc] initWithEntityId:event.eventId
+                                                                             imageLink:event.imageUrl];
+            [imageModels addObject:model];
+        }
+    }
+    return [imageModels copy];
 }
 
-- (void)updateModelsForImageURL:(NSURL *)imageURL {
-    NSManagedObjectContext *context = [NSManagedObjectContext MR_defaultContext];
-    [context performBlockAndWait:^{
-        EventModelObject *modelObject = [EventModelObject MR_findFirstByAttribute:EventModelObjectAttributes.imageUrl
-                                                                        withValue:imageURL.absoluteString
-                                                                        inContext:context];
-        modelObject.imageUrl = modelObject.imageUrl;
-        [context MR_saveToPersistentStoreAndWait];
-    }];
+- (void)updateModelsForEntityIdentifier:(NSString *)identifier {
+    EventModelObject *modelObject = [EventModelObject MR_findFirstByAttribute:EventModelObjectAttributes.eventId
+                                                                    withValue:identifier];
+    CSSearchableItem *searchableItem = [self.indexer searchableItemForObject:modelObject];
+    [self.searchableIndex indexSearchableItems:@[searchableItem]
+                             completionHandler:nil];
 }
-
 @end

@@ -22,8 +22,11 @@
 #import <RamblerTyphoonUtils/AssemblyCollector.h>
 
 @class IndexerMonitor;
+@class CSSearchableIndex;
 @protocol SpotlightCoreDataStackCoordinator;
 @protocol ObjectTransformer;
+@protocol ObjectIndexer;
+
 @class PresentationLayerHelpersAssembly;
 
 @interface SpotlightIndexerAssembly : TyphoonAssembly <RamblerInitialAssembly>
@@ -35,5 +38,9 @@
 - (id<ObjectTransformer>)eventObjectTransformer;
 - (id<ObjectTransformer>)speakerObjectTransformer;
 - (id<ObjectTransformer>)lectureObjectTransformer;
+- (CSSearchableIndex *)searchableIndex;
+- (id<ObjectIndexer>)lectureObjectIndexer;
+- (id<ObjectIndexer>)speakerObjectIndexer;
+- (id<ObjectIndexer>)eventObjectIndexer;
 
 @end

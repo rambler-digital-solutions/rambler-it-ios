@@ -9,11 +9,17 @@
 #import <Foundation/Foundation.h>
 #import "ObjectImageIndexer.h"
 
+@class CSSearchableIndex;
+@class SpeakerObjectIndexer;
+
 /**
  @author Konstantin Zinovyev
  
  ImageIndexer for Speaker model object
  */
 @interface SpeakerImageIndexer : NSObject <ObjectImageIndexer>
+
+@property (nonatomic, strong) CSSearchableIndex *searchableIndex;
+@property (nonatomic, strong) SpeakerObjectIndexer *indexer;
 
 @end

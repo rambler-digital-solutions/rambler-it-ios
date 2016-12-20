@@ -22,6 +22,8 @@
 #import "ObjectImageIndexer.h"
 
 @class VideoThumbnailGenerator;
+@class CSSearchableIndex;
+@class LectureObjectIndexer;
 
 /**
  @author Konstantin Zinovyev
@@ -31,5 +33,7 @@
 @interface LectureImageIndexer : NSObject <ObjectImageIndexer>
 
 @property (nonatomic, strong) VideoThumbnailGenerator *videoThumbnailGenerator;
+@property (nonatomic, strong) CSSearchableIndex *searchableIndex;
+@property (nonatomic, strong) LectureObjectIndexer *indexer;
 
 @end

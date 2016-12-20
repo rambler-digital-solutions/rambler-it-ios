@@ -12,6 +12,7 @@
 #import <SDWebImage/SDWebImageManager.h>
 #import "SpeakerModelObject.h"
 #import "ObjectImageIndexer.h"
+#import "SpotlightImageModel.h"
 
 @implementation SpotlightImageIndexer
 
@@ -20,32 +21,30 @@
 
 - (void)startIndexImageForSpotlight {
     for (id<ObjectImageIndexer> indexer in self.indexers) {
-        NSArray *imageURLs = [indexer obtainImageURLs];
-        NSArray *imageURLsForDownloading = [self filterDownloadedURLs:imageURLs];
-        for (NSString *imageURL in imageURLsForDownloading) {
-            NSURL *downloadURL = [NSURL URLWithString:imageURL];
+        NSArray<SpotlightImageModel *> *imageModels = [indexer obtainImageURLs];
+//        NSArray *imageURLsForDownloading = [self filterDownloadedURLs:imageURLs];
+        for (SpotlightImageModel *model in imageModels) {
+            NSURL *downloadURL = [NSURL URLWithString:model.imageLink];
             NSInteger options = SDWebImageLowPriority | SDWebImageContinueInBackground | SDWebImageRefreshCached;
             [[SDWebImageManager sharedManager] downloadImageWithURL:downloadURL
                                                             options:options
                                                            progress:nil
                                                           completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *url) {
-                [indexer updateModelsForImageURL:downloadURL];
+                [indexer updateModelsForEntityIdentifier:model.entityId];
             }];
         }
     }
 }
 
-- (NSArray *)filterDownloadedURLs:(NSArray *)imageURLs {
+//- (NSArray *)filterDownloadedURLs:(NSArray *)imageURLs {
 //    SDImageCache *cache = [SDImageCache sharedImageCache];
-    NSPredicate *predicateNull = [NSPredicate predicateWithFormat:@"SELF!=nil"];
 //    NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(NSString *imageURL, NSDictionary<NSString *,id> *bindings) {
 //        BOOL isImageNeedDownloading = ![cache diskImageExistsWithKey:imageURL];
 //        return isImageNeedDownloading;
 //    }];
-    NSArray *filteredURLs = [imageURLs filteredArrayUsingPredicate:predicateNull];
 //    filteredURLs = [filteredURLs filteredArrayUsingPredicate:predicate];
-    return filteredURLs;
-}
+//    return filteredURLs;
+//}
 
 
 @end
