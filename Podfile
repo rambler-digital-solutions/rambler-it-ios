@@ -1,11 +1,19 @@
 # CocoaPods specs repository URL
 source 'https://github.com/cocoapods/Specs.git'
 
+target 'ConferencesTV' do
+    platform :tvos, '10.0'
+    pod 'Typhoon', '3.5.1'
+    pod 'RamblerTyphoonUtils/AssemblyCollector', :git => 'https://github.com/aporohov/RamblerTyphoonUtils', :branch => 'tvos_support'
+    
+    pod 'ViperMcFlurry', '1.5.2'
+end
+
 # The main application target
 target 'Conferences' do
     # Dependency management
     pod 'Typhoon', '3.5.1'
-    pod 'RamblerTyphoonUtils/AssemblyCollector', '1.5.0'
+    pod 'RamblerTyphoonUtils/AssemblyCollector', :git => 'https://github.com/aporohov/RamblerTyphoonUtils', :branch => 'tvos_support'
     
     # Networking
     pod 'AFNetworking', '~> 2.6'
@@ -45,46 +53,46 @@ target 'Conferences' do
     target 'ConferencesTests' do
         pod 'OCMock', '3.3.1'
         pod 'MMBarricade', '~> 1.0.1'
-        pod 'RamblerTyphoonUtils/AssemblyTesting', '1.5.0'
+        pod 'RamblerTyphoonUtils/AssemblyTesting', :git => 'https://github.com/aporohov/RamblerTyphoonUtils', :branch => 'tvos_support'
     end
 end
 
 target 'RamblerMessageExtension' do
     # Data mapping
     pod 'EasyMapping', '~> 0.15'
-
+    
     # Networking
     pod 'AFNetworking', '~> 2.6'
-
+    
     # UI
     pod 'Nimbus/Models', :git => 'https://github.com/rambler-ios/nimbus'
-
+    
     # Dependency management
     pod 'Typhoon', '~> 3.3'
-
+    
     # Core Data
     pod 'MagicalRecord', '~> 2.3.2'
-
+    
     # Log
     pod 'CocoaLumberjack', '~> 2.0'
-
+    
     # Images & Video
     pod 'SDWebImage', '~> 3.7'
     pod 'XCDYouTubeKit', '~> 2.5'
-
+    
     # Navigation
     pod 'ViperMcFlurry', '1.5.2'
-
-post_install do |installer|
-    installer.pods_project.targets.each do |target|
-        if target.name == 'Nimbus/Models'
-            target.build_configurations.each do |config|
-                if config.build_settings['APPLICATION_EXTENSION_API_ONLY'] == 'YES'
-                    config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] = ['$(inherited)', 'NIMBUS_APP_EXTENSIONS=1']
+    
+    post_install do |installer|
+        installer.pods_project.targets.each do |target|
+            if target.name == 'Nimbus/Models'
+                target.build_configurations.each do |config|
+                    if config.build_settings['APPLICATION_EXTENSION_API_ONLY'] == 'YES'
+                        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] = ['$(inherited)', 'NIMBUS_APP_EXTENSIONS=1']
+                    end
                 end
             end
         end
     end
-end
 end
 
