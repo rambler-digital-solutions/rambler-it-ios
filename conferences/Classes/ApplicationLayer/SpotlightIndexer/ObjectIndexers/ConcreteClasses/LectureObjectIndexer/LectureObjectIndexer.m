@@ -48,7 +48,6 @@
     
     NSString *imagePath = [[SDImageCache sharedImageCache] defaultCachePathForKey:imageURL.absoluteString];
     attributeSet.thumbnailURL = [NSURL fileURLWithPath:imagePath];
-    attributeSet.authorNames = @[object.speaker.name];
     NSArray *keywords = [self generateKeywordsForLecture:object];
     attributeSet.keywords = keywords;
     

@@ -92,7 +92,6 @@
     OCMVerify([self.mockSpotlightCoreDataStackCoordinator setupCoreDataStack]);
     OCMVerify([self.mockIndexerMonitor startMonitoring]);
     OCMVerify([self.mockCleanStartRouter openInitialScreen]);
-    OCMVerify([self.mockImageIndexer startIndexImageForSpotlight]);
 }
 
 @end

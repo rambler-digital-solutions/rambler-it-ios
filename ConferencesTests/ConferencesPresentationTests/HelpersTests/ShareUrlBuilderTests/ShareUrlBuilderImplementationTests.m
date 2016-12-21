@@ -47,7 +47,7 @@ static NSString *const kTestItemType = @"item";
 - (void)testThatBuilderBuildsProperUrl {
     // given
     NSString *const kTestItemId = @"1234";
-    NSString *const kExpectedUrlString = @"http://it.rambler-co.ru/#/item/1234";
+    NSString *const kExpectedUrlString = @"https://it.rambler-co.ru/#/item/1234";
     
     // when
     NSURL *result = [self.builder buildShareUrlWithItemId:kTestItemId];
