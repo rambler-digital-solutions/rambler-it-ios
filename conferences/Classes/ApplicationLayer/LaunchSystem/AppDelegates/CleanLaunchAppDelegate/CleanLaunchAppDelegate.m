@@ -24,7 +24,6 @@
 #import "SpotlightCoreDataStackCoordinator.h"
 #import "CleanLaunchRouter.h"
 #import "Daemon.h"
-#import "SpotlightImageIndexer.h"
 
 @implementation CleanLaunchAppDelegate
 
@@ -37,7 +36,6 @@
     [self.quickActionDaemon start];
     
     [self.cleanStartRouter openInitialScreen];
-    [self.imageIndexer startIndexImageForSpotlight];
     
     return YES;
 }

@@ -24,6 +24,7 @@
 @protocol ApplicationConfigurator;
 @protocol PushNotificationCenter;
 @protocol ThirdPartiesConfigurator;
+@class CleanLaunchAppDelegate;
 
 @interface ApplicationAssembly ()
 
@@ -31,5 +32,6 @@
 - (id <ApplicationConfigurator>)applicationConfigurator;
 - (id <PushNotificationCenter>)pushNotificationCenter;
 - (id <ThirdPartiesConfigurator>)thirdPartiesConfigurator;
+- (CleanLaunchAppDelegate *)cleanStartAppDelegate;
 
 @end

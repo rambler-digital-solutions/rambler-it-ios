@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ObjectImageIndexer.h"
+#import "SpotlightEntityImageIndexer.h"
 
 @class CSSearchableIndex;
 @class SpeakerObjectIndexer;
@@ -17,7 +17,7 @@
  
  ImageIndexer for Speaker model object
  */
-@interface SpeakerImageIndexer : NSObject <ObjectImageIndexer>
+@interface SpeakerImageIndexer : NSObject <SpotlightEntityImageIndexer>
 
 @property (nonatomic, strong) CSSearchableIndex *searchableIndex;
 @property (nonatomic, strong) SpeakerObjectIndexer *indexer;

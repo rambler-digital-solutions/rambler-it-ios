@@ -30,7 +30,7 @@
 
 @implementation LectureImageIndexer
 
-- (NSArray<SpotlightImageModel *> *)obtainImageURLs {
+- (NSArray<SpotlightImageModel *> *)obtainImageModels {
     NSArray *lecturesMaterials = [LectureMaterialModelObject MR_findByAttribute:LectureMaterialModelObjectAttributes.type
                                                                       withValue:@(LectureMaterialVideoType)];
     NSArray *lectures = [lecturesMaterials valueForKey:LectureMaterialModelObjectRelationships.lecture];
@@ -41,8 +41,8 @@
         if (videoLink.length != 0 && lectures[idx]) {
             NSURL *videoURL = [NSURL URLWithString:videoLink];
             NSURL *imageURL = [self.videoThumbnailGenerator generateThumbnailWithVideoURL:videoURL];
-            if (imageURL) {
-                LectureModelObject *lecture = lectures[idx];
+            LectureModelObject *lecture = lectures[idx];
+            if (imageURL.absoluteString.length > 0 && lecture.lectureId.length > 0) {
                 SpotlightImageModel *model = [[SpotlightImageModel alloc] initWithEntityId:lecture.lectureId
                                                                                  imageLink:imageURL.absoluteString];
                 [imageModels addObject:model];

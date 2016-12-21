@@ -19,7 +19,7 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-#import "ObjectImageIndexer.h"
+#import "SpotlightEntityImageIndexer.h"
 
 @class VideoThumbnailGenerator;
 @class CSSearchableIndex;
@@ -30,7 +30,7 @@
  
  ImageIndexer for Lecture model object
  */
-@interface LectureImageIndexer : NSObject <ObjectImageIndexer>
+@interface LectureImageIndexer : NSObject <SpotlightEntityImageIndexer>
 
 @property (nonatomic, strong) VideoThumbnailGenerator *videoThumbnailGenerator;
 @property (nonatomic, strong) CSSearchableIndex *searchableIndex;

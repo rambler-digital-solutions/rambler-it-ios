@@ -26,7 +26,7 @@
 #import "EventPlainObject.h"
 #import "ROSPonsomizer.h"
 #import "EventGalleryEventFilter.h"
-
+#import "SpotlightImageIndexer.h"
 #import "EXTScope.h"
 
 @implementation EventGalleryInteractor
@@ -41,9 +41,8 @@
             [self.output didUpdateEventListWithError];
             return;
         }
-        
+        [self.imageIndexer startIndexImageForSpotlight];
         NSArray *futureEvents = [self obtainFutureEventList];
-        
         [self.output didUpdateEventListWithFutureEvents:futureEvents];
     }];
 }

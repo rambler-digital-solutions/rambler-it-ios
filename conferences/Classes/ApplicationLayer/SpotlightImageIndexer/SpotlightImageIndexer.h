@@ -8,10 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol ObjectImageIndexer;
+@class SDWebImageManager;
+@class SDImageCache;
+@protocol SpotlightEntityImageIndexer;
+
 @interface SpotlightImageIndexer : NSObject
 
-@property (nonatomic, strong) NSArray<id<ObjectImageIndexer>> *indexers;
+@property (nonatomic, strong) NSArray<id<SpotlightEntityImageIndexer>> *indexers;
+@property (nonatomic, strong) SDImageCache *imageCache;
+@property (nonatomic, strong) SDWebImageManager *imageManager;
 
 - (void)startIndexImageForSpotlight;
 

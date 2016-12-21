@@ -15,11 +15,11 @@
 
 @implementation EventImageIndexer
 
-- (NSArray<SpotlightImageModel *> *)obtainImageURLs {
+- (NSArray<SpotlightImageModel *> *)obtainImageModels {
     NSArray *events = [EventModelObject MR_findAll];
     NSMutableArray *imageModels = [NSMutableArray new];
     for (EventModelObject *event in events) {
-        if (event.imageUrl.length > 0) {
+        if (event.imageUrl.length > 0 && event.eventId.length > 0) {
             SpotlightImageModel *model = [[SpotlightImageModel alloc] initWithEntityId:event.eventId
                                                                              imageLink:event.imageUrl];
             [imageModels addObject:model];

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ObjectImageIndexer.h"
+#import "SpotlightEntityImageIndexer.h"
 
 @class CSSearchableIndex;
 @class EventObjectIndexer;
@@ -17,7 +17,7 @@
  
  ImageIndexer for Event model object
  */
-@interface EventImageIndexer : NSObject <ObjectImageIndexer>
+@interface EventImageIndexer : NSObject <SpotlightEntityImageIndexer>
 
 @property (nonatomic, strong) CSSearchableIndex *searchableIndex;
 @property (nonatomic, strong) EventObjectIndexer *indexer;

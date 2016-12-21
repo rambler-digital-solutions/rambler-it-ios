@@ -16,11 +16,11 @@
 
 @implementation SpeakerImageIndexer
 
-- (NSArray<SpotlightImageModel *> *)obtainImageURLs {
+- (NSArray<SpotlightImageModel *> *)obtainImageModels {
     NSArray *speakers = [SpeakerModelObject MR_findAll];
     NSMutableArray *imageModels = [NSMutableArray new];
     for (SpeakerModelObject *speaker in speakers) {
-        if (speaker.imageUrl.length > 0) {
+        if (speaker.imageUrl.length > 0 && speaker.speakerId.length > 0) {
             SpotlightImageModel *model = [[SpotlightImageModel alloc] initWithEntityId:speaker.speakerId
                                                                              imageLink:speaker.imageUrl];
             [imageModels addObject:model];

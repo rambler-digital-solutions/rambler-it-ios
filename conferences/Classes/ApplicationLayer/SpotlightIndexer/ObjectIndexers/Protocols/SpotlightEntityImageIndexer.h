@@ -1,5 +1,5 @@
 //
-//  ObjectImageIndexer.h
+//  SpotlightEntityImageIndexer.h
 //  Conferences
 //
 //  Created by Konstantin Zinovyev on 11.12.16.
@@ -13,14 +13,14 @@
  
  Responsible for indexing image of specific class
  */
-@protocol ObjectImageIndexer <NSObject>
+@protocol SpotlightEntityImageIndexer <NSObject>
 
 /**
  @author Konstantin Zinovyev
  
  Collects all image urls of specific class
  */
-- (NSArray<SpotlightImageModel *> *)obtainImageURLs;
+- (NSArray<SpotlightImageModel *> *)obtainImageModels;
 
 /**
  @author Konstantin Zinovyev

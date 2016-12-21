@@ -39,6 +39,5 @@
 @property (nonatomic, strong) IndexerMonitor *indexerMonitor;
 @property (nonatomic, strong) CleanLaunchRouter *cleanStartRouter;
 @property (nonatomic, strong) id<SpotlightCoreDataStackCoordinator> spotlightCoreDataStackCoordinator;
-@property (nonatomic, strong) SpotlightImageIndexer *imageIndexer;
 
 @end

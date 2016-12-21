@@ -19,7 +19,6 @@
 // THE SOFTWARE.
 
 #import "ObjectIndexerBase.h"
-#import "ObjectImageIndexer.h"
 
 /**
  @author Egor Tolstoy

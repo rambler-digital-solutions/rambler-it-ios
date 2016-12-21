@@ -26,6 +26,7 @@
 #import "IndexerMonitor.h"
 #import "SpotlightCoreDataStackCoordinator.h"
 #import "CleanLaunchRouter.h"
+#import "SpotlightImageIndexer.h"
 
 @interface CleanLaunchAppDelegateTests : XCTestCase
 
@@ -35,6 +36,7 @@
 @property (nonatomic, strong) id mockIndexerMonitor;
 @property (nonatomic, strong) id mockSpotlightCoreDataStackCoordinator;
 @property (nonatomic, strong) id mockCleanStartRouter;
+@property (nonatomic, strong) id mockImageIndexer;
 
 @end
 
@@ -50,7 +52,7 @@
     self.mockIndexerMonitor = OCMClassMock([IndexerMonitor class]);
     self.mockSpotlightCoreDataStackCoordinator = OCMProtocolMock(@protocol(SpotlightCoreDataStackCoordinator));
     self.mockCleanStartRouter = OCMClassMock([CleanLaunchRouter class]);
-    
+    self.mockImageIndexer = OCMClassMock([SpotlightImageIndexer class]);
     self.appDelegate.applicationConfigurator = self.mockApplicationConfigurator;
     self.appDelegate.thirdPartiesConfigurator = self.mockThirdPartiesConfigurator;
     self.appDelegate.indexerMonitor = self.mockIndexerMonitor;
@@ -67,6 +69,9 @@
     
     [self.mockIndexerMonitor stopMocking];
     self.mockIndexerMonitor = nil;
+    
+    [self.mockImageIndexer stopMocking];
+    self.mockImageIndexer = nil;
     
     [self.mockCleanStartRouter stopMocking];
     self.mockCleanStartRouter = nil;
@@ -87,6 +92,7 @@
     OCMVerify([self.mockSpotlightCoreDataStackCoordinator setupCoreDataStack]);
     OCMVerify([self.mockIndexerMonitor startMonitoring]);
     OCMVerify([self.mockCleanStartRouter openInitialScreen]);
+    OCMVerify([self.mockImageIndexer startIndexImageForSpotlight]);
 }
 
 @end

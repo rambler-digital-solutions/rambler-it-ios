@@ -22,7 +22,7 @@
 
 #import <CoreLocation/CoreLocation.h>
 
-static NSString *const kAppleMapsURLString = @"http://maps.apple.com/maps";
+static NSString *const kAppleMapsURLString = @"https://maps.apple.com/maps";
 static NSString *const kAppleMapsLocationKey = @"ll";
 static NSString *const kAppleMapsZoomKey = @"z";
 static NSUInteger const kDesiredZoomLevel = 16;
