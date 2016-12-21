@@ -35,8 +35,14 @@
 #import "LectureObjectIndexer.h"
 #import "LectureChangeProviderFetchRequestFactory.h"
 #import "LectureObjectTransformer.h"
-
+#import "PresentationLayerHelpersAssembly.h"
+#import "SpotlightImageIndexer.h"
+#import "EventImageIndexer.h"
+#import "SpeakerImageIndexer.h"
+#import "LectureImageIndexer.h"
 #import <CoreSpotlight/CoreSpotlight.h>
+#import <SDWebImage/SDWebImageManager.h>
+#import <SDWebImage/SDImageCache.h>
 
 @implementation SpotlightIndexerAssembly
 
@@ -130,6 +136,8 @@
                                                   [initializer injectParameterWith:[self lectureObjectTransformer]];
                                                   [initializer injectParameterWith:[self searchableIndex]];
                                               }];
+                              [definition injectProperty:@selector(videoThumbnailGenerator)
+                                                    with:[self.presentationHelpersAssembly videoThumbnailGenerator]];
                           }];
 }
 
@@ -207,6 +215,56 @@
 - (CSSearchableIndex *)searchableIndex {
     return [TyphoonDefinition withFactory:[CSSearchableIndex class]
                                  selector:@selector(defaultSearchableIndex)];
+}
+
+#pragma mark - Image indexer
+
+- (SpotlightImageIndexer *)spotlightImageIndexer{
+    return [TyphoonDefinition withClass:[SpotlightImageIndexer class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(indexers)
+                                                    with:@[
+                                                           [self eventImageIndexer],
+                                                           [self speakerImageIndexer],
+                                                           [self lectureImageIndexer]
+                                                           ]];
+                              [definition injectProperty:@selector(imageManager)
+                                                    with:[SDWebImageManager sharedManager]];
+                              [definition injectProperty:@selector(imageCache)
+                                                    with:[SDImageCache sharedImageCache]];
+                          }];
+}
+
+- (SpeakerImageIndexer *)speakerImageIndexer {
+    return [TyphoonDefinition withClass:[SpeakerImageIndexer class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(searchableIndex)
+                                                    with:[self searchableIndex]];
+                              [definition injectProperty:@selector(indexer)
+                                                    with:[self speakerObjectIndexer]];
+                          }];
+}
+
+- (LectureImageIndexer *)lectureImageIndexer {
+    return [TyphoonDefinition withClass:[LectureImageIndexer class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(videoThumbnailGenerator)
+                                                    with:[self.presentationHelpersAssembly videoThumbnailGenerator]];
+                              [definition injectProperty:@selector(searchableIndex)
+                                                    with:[self searchableIndex]];
+                              [definition injectProperty:@selector(indexer)
+                                                    with:[self lectureObjectIndexer]];
+                          }];
+}
+
+- (EventImageIndexer *)eventImageIndexer {
+    return [TyphoonDefinition withClass:[EventImageIndexer class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(searchableIndex)
+                                                    with:[self searchableIndex]];
+                              [definition injectProperty:@selector(indexer)
+                                                    with:[self eventObjectIndexer]];
+                          }];
 }
 
 @end

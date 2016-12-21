@@ -25,6 +25,7 @@
 #import "LaunchSystemAssembly.h"
 #import "SpotlightIndexerAssembly.h"
 #import "DaemonAssembly.h"
+#import "PresentationLayerHelpersAssembly.h"
 
 #import "ApplicationConfigurator.h"
 #import "ApplicationConfiguratorImplementation.h"

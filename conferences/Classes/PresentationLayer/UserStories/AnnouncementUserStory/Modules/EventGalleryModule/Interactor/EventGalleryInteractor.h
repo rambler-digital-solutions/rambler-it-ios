@@ -24,6 +24,7 @@
 @protocol EventService;
 @protocol ROSPonsomizer;
 @class EventGalleryEventFilter;
+@class SpotlightImageIndexer;
 
 @interface EventGalleryInteractor : NSObject <EventGalleryInteractorInput>
 
@@ -31,5 +32,6 @@
 @property (nonatomic, strong) id <EventService> eventService;
 @property (nonatomic, strong) id <ROSPonsomizer> ponsomizer;
 @property (nonatomic, strong) EventGalleryEventFilter *futureEventFilter;
+@property (nonatomic, strong) SpotlightImageIndexer *imageIndexer;
 
 @end

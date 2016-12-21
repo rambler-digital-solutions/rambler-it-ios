@@ -35,7 +35,7 @@
 #import "EventGalleryBackgroundColorAnimator.h"
 #import "EventGalleryCollectionViewFlowLayout.h"
 #import "EventGalleryCollectionViewCellShadower.h"
-
+#import "SpotlightIndexerAssembly.h"
 #import <ViperMcFlurry/ViperMcFlurry.h>
 
 @implementation EventGalleryAssembly
@@ -69,6 +69,8 @@
                                                     with:[self.ponsomizerAssembly ponsomizer]];
                               [definition injectProperty:@selector(futureEventFilter)
                                                     with:[self eventGalleryEventFilter]];
+                              [definition injectProperty:@selector(imageIndexer)
+                                                    with:[self.spotlightAssembly spotlightImageIndexer]];
                           }];
 }
 

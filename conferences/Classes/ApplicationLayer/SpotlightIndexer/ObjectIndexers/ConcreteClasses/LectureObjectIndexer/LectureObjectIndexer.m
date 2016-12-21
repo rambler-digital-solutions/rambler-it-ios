@@ -23,9 +23,14 @@
 #import "LectureModelObject.h"
 #import "TagModelObject.h"
 #import "SpotlightIndexerConstants.h"
-
+#import "SpeakerModelObject.h"
 #import <CoreSpotlight/CoreSpotlight.h>
 #import <MobileCoreServices/MobileCoreServices.h>
+#import <SDWebImage/SDImageCache.h>
+#import "LectureMaterialModelObject.h"
+#import "LectureMaterialType.h"
+#import "VideoThumbnailGenerator.h"
+#import "EventModelObject.h"
 
 @implementation LectureObjectIndexer
 
@@ -36,10 +41,13 @@
 }
 
 - (CSSearchableItem *)searchableItemForObject:(LectureModelObject *)object {
-    CSSearchableItemAttributeSet *attributeSet = [[CSSearchableItemAttributeSet alloc] initWithItemContentType:(NSString *)kUTTypeJSON];
+    CSSearchableItemAttributeSet *attributeSet = [[CSSearchableItemAttributeSet alloc] initWithItemContentType:(NSString *)kUTTypeContent];
     attributeSet.title = object.name;
     attributeSet.contentDescription = object.lectureDescription;
+    NSURL *imageURL = [self obtainVideoMaterialThumbnailImageURLFromLectureMaterials:object.lectureMaterials];
     
+    NSString *imagePath = [[SDImageCache sharedImageCache] defaultCachePathForKey:imageURL.absoluteString];
+    attributeSet.thumbnailURL = [NSURL fileURLWithPath:imagePath];
     NSArray *keywords = [self generateKeywordsForLecture:object];
     attributeSet.keywords = keywords;
     
@@ -48,11 +56,32 @@
     CSSearchableItem *item = [[CSSearchableItem alloc] initWithUniqueIdentifier:uniqueIdentifier
                                                                domainIdentifier:domainIdentifier
                                                                    attributeSet:attributeSet];
+    
     item.expirationDate = [NSDate distantFuture];
     return item;
 }
 
 #pragma mark - Private methods
+
+- (NSString *)generateLectureDescriptionForSpeaker:(LectureModelObject *)lecture {
+    NSMutableArray *lectureDescriptionParts = [[NSMutableArray alloc] init];
+    
+    
+    if (lecture.speaker.name && lecture.speaker.name.length > 0) {
+        [lectureDescriptionParts addObject:lecture.speaker.name];
+    }
+    
+    if (lecture.event.name && lecture.event.name.length > 0) {
+        [lectureDescriptionParts addObject:lecture.event.name];
+    }
+    if (lecture.lectureDescription && lecture.lectureDescription.length > 0) {
+        [lectureDescriptionParts addObject:lecture.lectureDescription];
+    }
+    
+    NSString *lectureDescription = [lectureDescriptionParts componentsJoinedByString:@"\n"];
+    
+    return lectureDescription;
+}
 
 - (NSArray *)generateKeywordsForLecture:(LectureModelObject *)lecture {
     NSMutableArray *keywords = [NSMutableArray new];
@@ -62,8 +91,21 @@
             [keywords addObject:tag.name];
         }
     }
-    
     return [keywords copy];
+}
+
+- (NSURL *)obtainVideoMaterialThumbnailImageURLFromLectureMaterials:(NSSet *)lectureMaterials {
+    NSURL *videoURL = nil;
+    for (LectureMaterialModelObject *material in [lectureMaterials allObjects]) {
+        if ([material.type isEqualToNumber:@(LectureMaterialVideoType)]) {
+            videoURL = [NSURL URLWithString:material.link];
+            break;
+        }
+    }
+    if (!videoURL) {
+        return nil;
+    }
+    return [self.videoThumbnailGenerator generateThumbnailWithVideoURL:videoURL];
 }
 
 @end

@@ -20,11 +20,15 @@
 
 #import "ObjectIndexerBase.h"
 
+@class VideoThumbnailGenerator;
+
 /**
  @author Egor Tolstoy
  
  ObjectIndexer for Lecture model object
  */
 @interface LectureObjectIndexer : ObjectIndexerBase
+
+@property (nonatomic, strong) VideoThumbnailGenerator *videoThumbnailGenerator;
 
 @end

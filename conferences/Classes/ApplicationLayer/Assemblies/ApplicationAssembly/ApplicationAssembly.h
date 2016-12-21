@@ -27,6 +27,7 @@
 @class ApplicationHelperAssembly;
 @class LaunchSystemAssembly;
 @class DaemonAssembly;
+@class PresentationLayerHelpersAssembly;
 
 /**
  @author Artem Karpushin
@@ -40,5 +41,6 @@
 @property (nonatomic, strong, readonly) SystemInfrastructureAssembly *systemInfrastructureAssembly;
 @property (nonatomic, strong, readonly) ApplicationHelperAssembly *applicationHelperAssembly;
 @property (nonatomic, strong, readonly) LaunchSystemAssembly *launchSystemAssembly;
+@property (nonatomic, strong, readonly) PresentationLayerHelpersAssembly *presentationHelpersAssembly;
 
 @end

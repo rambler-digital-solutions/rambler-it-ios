@@ -93,7 +93,7 @@
     NSString *const kTestSpeakerName = @"Стас Цыганов";
     NSString *const kTestSpeakerJob = @"iOS разработчик";
     NSString *const kTestSpeakerCompany = @"Rambler&Co";
-    NSString *const kExpectedResult = @"iOS разработчик @ Rambler&Co";
+    NSString *const kExpectedResult = @"Rambler&Co\niOS разработчик";
     
     SpeakerModelObject *speaker = [self generateSpeakerForTestPurposesWithName:kTestSpeakerName];
     speaker.job = kTestSpeakerJob;

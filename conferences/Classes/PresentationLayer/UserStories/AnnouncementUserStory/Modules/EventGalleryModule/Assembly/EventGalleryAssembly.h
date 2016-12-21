@@ -24,6 +24,7 @@
 #import "ModuleAssemblyBase.h"
 
 @class PonsomizerAssembly;
+@class SpotlightIndexerAssembly;
 
 /**
  @author Egor Tolstoy
@@ -33,5 +34,6 @@
 @interface EventGalleryAssembly : ModuleAssemblyBase <RamblerInitialAssembly>
 
 @property (nonatomic, strong) PonsomizerAssembly *ponsomizerAssembly;
+@property (nonatomic, strong) SpotlightIndexerAssembly *spotlightAssembly;
 
 @end

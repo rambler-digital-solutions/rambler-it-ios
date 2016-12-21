@@ -1,4 +1,4 @@
-// Copyright (c) 2015 RAMBLER&Co
+// Copyright (c) 2016 RAMBLER&Co
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -18,25 +18,20 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Typhoon/Typhoon.h>
-#import <RamblerTyphoonUtils/AssemblyCollector.h>
+#import "SpotlightImageModel.h"
 
-@class IndexerMonitor;
-@class SpotlightImageIndexer;
-@protocol SpotlightCoreDataStackCoordinator;
-@protocol ObjectTransformer;
+@implementation SpotlightImageModel
 
-@class PresentationLayerHelpersAssembly;
-
-@interface SpotlightIndexerAssembly : TyphoonAssembly <RamblerInitialAssembly>
-
-@property (nonatomic, strong, readonly) PresentationLayerHelpersAssembly *presentationHelpersAssembly;
-
-- (IndexerMonitor *)indexerMonitor;
-- (id<SpotlightCoreDataStackCoordinator>)spotlightCoreDataStackCoordinator;
-- (id<ObjectTransformer>)eventObjectTransformer;
-- (id<ObjectTransformer>)speakerObjectTransformer;
-- (id<ObjectTransformer>)lectureObjectTransformer;
-- (SpotlightImageIndexer *)spotlightImageIndexer;
+- (instancetype)initWithEntityId:(NSString *)entityId
+                       imageLink:(NSString *)imageLink {
+    self = [super init];
+    
+    if (self) {
+        _entityId = entityId;
+        _imageLink = imageLink;
+    }
+    
+    return self;
+}
 
 @end

@@ -1,4 +1,4 @@
-// Copyright (c) 2015 RAMBLER&Co
+// Copyright (c) 2016 RAMBLER&Co
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -18,25 +18,27 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Typhoon/Typhoon.h>
-#import <RamblerTyphoonUtils/AssemblyCollector.h>
+@class SpotlightImageModel;
 
-@class IndexerMonitor;
-@class SpotlightImageIndexer;
-@protocol SpotlightCoreDataStackCoordinator;
-@protocol ObjectTransformer;
+/**
+ @author Konstantin Zinovyev
+ 
+ Responsible for indexing image of specific class
+ */
+@protocol SpotlightEntityImageIndexer <NSObject>
 
-@class PresentationLayerHelpersAssembly;
+/**
+ @author Konstantin Zinovyev
+ 
+ Collects all image urls of specific class
+ */
+- (NSArray<SpotlightImageModel *> *)obtainImageModels;
 
-@interface SpotlightIndexerAssembly : TyphoonAssembly <RamblerInitialAssembly>
-
-@property (nonatomic, strong, readonly) PresentationLayerHelpersAssembly *presentationHelpersAssembly;
-
-- (IndexerMonitor *)indexerMonitor;
-- (id<SpotlightCoreDataStackCoordinator>)spotlightCoreDataStackCoordinator;
-- (id<ObjectTransformer>)eventObjectTransformer;
-- (id<ObjectTransformer>)speakerObjectTransformer;
-- (id<ObjectTransformer>)lectureObjectTransformer;
-- (SpotlightImageIndexer *)spotlightImageIndexer;
+/**
+ @author Konstantin Zinovyev
+ 
+ Update model object of specific class with imageURL
+ */
+- (void)updateModelsForEntityIdentifier:(NSString *)identifier;
 
 @end

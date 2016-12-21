@@ -28,6 +28,7 @@
 #import "ApplicationConfiguratorImplementation.h"
 #import "ThirdPartiesConfiguratorImplementation.h"
 #import "RamblerInitialAssemblyCollector+Activate.h"
+#import "CleanLaunchAppDelegate.h"
 
 @interface ApplicationAssemblyTests : RamblerTyphoonAssemblyTests
 
@@ -73,6 +74,27 @@
     // then
     RamblerTyphoonAssemblyTestsTypeDescriptor *descriptor = [RamblerTyphoonAssemblyTestsTypeDescriptor descriptorWithClass:targetClass];
     [self verifyTargetDependency:result withDescriptor:descriptor];
+}
+
+- (void)testThatAssemblyCreatesCleanAppDelegate {
+    // given
+    Class targetClass = [CleanLaunchAppDelegate class];
+    NSArray *dependencies = @[
+                              RamblerSelector(applicationConfigurator),
+                              RamblerSelector(thirdPartiesConfigurator),
+                              RamblerSelector(cleanStartRouter),
+                              RamblerSelector(indexerMonitor),
+                              RamblerSelector(spotlightCoreDataStackCoordinator),
+                              RamblerSelector(quickActionDaemon)
+                              ];
+    
+    // when
+    id result = [self.assembly cleanStartAppDelegate];
+    
+    // then
+    [self verifyTargetDependency:result
+                       withClass:targetClass
+                    dependencies:dependencies];
 }
 
 @end

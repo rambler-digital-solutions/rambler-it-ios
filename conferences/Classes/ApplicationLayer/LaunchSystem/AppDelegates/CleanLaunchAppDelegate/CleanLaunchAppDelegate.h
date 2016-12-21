@@ -25,6 +25,7 @@
 @protocol LectureMaterialService;
 @class IndexerMonitor;
 @class CleanLaunchRouter;
+@class SpotlightImageIndexer;
 
 /**
  @author Egor Tolstoy

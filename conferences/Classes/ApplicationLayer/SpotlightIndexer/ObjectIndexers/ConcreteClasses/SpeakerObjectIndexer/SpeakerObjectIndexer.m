@@ -22,9 +22,9 @@
 
 #import "SpeakerModelObject.h"
 #import "SpotlightIndexerConstants.h"
-
 #import <CoreSpotlight/CoreSpotlight.h>
 #import <MobileCoreServices/MobileCoreServices.h>
+#import <SDWebImage/SDImageCache.h>
 
 @implementation SpeakerObjectIndexer
 
@@ -40,6 +40,9 @@
     
     NSString *speakerDescription = [self generateSpeakerDescriptionForSpeaker:object];
     attributeSet.contentDescription = speakerDescription;
+    
+    NSString *pathImage = [[SDImageCache sharedImageCache] defaultCachePathForKey:object.imageUrl];
+    attributeSet.thumbnailURL = [NSURL fileURLWithPath:pathImage];
     
     NSArray *keywords = [self generateKeywordsForSpeaker:object];
     attributeSet.keywords = keywords;
@@ -58,18 +61,17 @@
 - (NSString *)generateSpeakerDescriptionForSpeaker:(SpeakerModelObject *)speaker {
     NSMutableArray *speakerDescriptionParts = [NSMutableArray new];
     
-    if (speaker.job && speaker.job.length > 0) {
-        [speakerDescriptionParts addObject:speaker.job];
-    }
-    
     if (speaker.company && speaker.company.length > 0) {
         [speakerDescriptionParts addObject:speaker.company];
     }
-    
-    NSString *speakerDescription = [speakerDescriptionParts componentsJoinedByString:@" @ "];
-    if (speakerDescription.length == 0 && speaker.biography && speaker.biography.length > 0) {
-        speakerDescription = speaker.biography;
+    if (speaker.biography && speaker.biography.length > 0) {
+        [speakerDescriptionParts addObject:speaker.biography];
     }
+    else if (speaker.job && speaker.job.length > 0) {
+        [speakerDescriptionParts addObject:speaker.job];
+    }
+    
+    NSString *speakerDescription = [speakerDescriptionParts componentsJoinedByString:@"\n"];
 
     return speakerDescription;
 }

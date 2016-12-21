@@ -28,6 +28,8 @@
 #import <CoreSpotlight/CoreSpotlight.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 
+static NSString *const RITTitleEventLectures = @"Включает следующие лекции:";
+
 @implementation EventObjectIndexer
 
 #pragma mark - Overriden methods
@@ -37,7 +39,7 @@
 }
 
 - (CSSearchableItem *)searchableItemForObject:(EventModelObject *)object {
-    CSSearchableItemAttributeSet *attributeSet = [[CSSearchableItemAttributeSet alloc] initWithItemContentType:(NSString *)kUTTypeJSON];
+    CSSearchableItemAttributeSet *attributeSet = [[CSSearchableItemAttributeSet alloc] initWithItemContentType:(NSString *)kUTTypeContent];
     attributeSet.title = object.name;
     
     NSString *eventDescription = [self generateEventDescriptionForEvent:object];
@@ -62,11 +64,15 @@
 #pragma mark - Private methods
 
 - (NSString *)generateEventDescriptionForEvent:(EventModelObject *)event {
-    NSMutableArray *lectureTitles = [NSMutableArray new];
+    NSMutableArray *componentsEventDescription = [NSMutableArray new];
+    [componentsEventDescription addObject:event.eventDescription ?: @"" ];
+    NSMutableArray *lectureTitles = [[NSMutableArray alloc] initWithObjects:RITTitleEventLectures, nil];
     for (LectureModelObject *lecture in event.lectures) {
         [lectureTitles addObject:lecture.name];
     }
-    NSString *eventDescription = [lectureTitles componentsJoinedByString:@", "];
+    NSString *listLectures = [lectureTitles componentsJoinedByString:@"\n - "];
+    [componentsEventDescription addObject:listLectures];
+    NSString *eventDescription = [componentsEventDescription componentsJoinedByString:@"\n"];
     return eventDescription;
 }
 
