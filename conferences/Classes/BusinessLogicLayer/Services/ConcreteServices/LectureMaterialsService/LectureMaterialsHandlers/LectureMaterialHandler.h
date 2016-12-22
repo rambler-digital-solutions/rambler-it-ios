@@ -35,7 +35,7 @@ typedef void (^LectureMaterialCompletionBlock)(NSString *localUrl, NSError *erro
  
  Method is used to check that handler could handle Lecture Material object
  
- @param lectureMaterialId Identifier Lecture Material object
+ @param lectureMaterial Identifier Lecture Material object
  
  @return YES - if could handle lecture material object
  */
@@ -46,7 +46,7 @@ typedef void (^LectureMaterialCompletionBlock)(NSString *localUrl, NSError *erro
  
  Method is used to start downloading video data for Lecture Material with delegate
  
- @param lectureMaterialId Identifier Lecture Material object
+ @param lectureMaterial Identifier Lecture Material object
  @param delegate          Object that obtain message about downloading
  */
 - (void)downloadToCacheLectureMaterial:(LectureMaterialModelObject *)lectureMaterial
@@ -58,7 +58,7 @@ typedef void (^LectureMaterialCompletionBlock)(NSString *localUrl, NSError *erro
  
  Method is used to remove video data for Lecture Material
  
- @param lectureMaterialId Identifier Lecture Material object
+ @param lectureMaterial Identifier Lecture Material object
  @param completionBlock   Block that runs after removing data
  */
 - (void)removeFromCacheLectureMaterial:(LectureMaterialModelObject *)lectureMaterial

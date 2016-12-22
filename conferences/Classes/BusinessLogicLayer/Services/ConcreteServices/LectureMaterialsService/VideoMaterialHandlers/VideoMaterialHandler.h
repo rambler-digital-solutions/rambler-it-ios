@@ -30,6 +30,7 @@
  */
 @interface VideoMaterialHandler : NSObject <LectureMaterialHandler>
 
+@property (nonatomic, strong) NSFileManager *fileManager;
 @property (nonatomic, strong) YouTubeIdentifierDeriviator *deriviator;
 
 @end

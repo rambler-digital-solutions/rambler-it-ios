@@ -28,6 +28,8 @@
 #import "LectureService.h"
 #import "LecturePlainObject.h"
 #import "YouTubeIdentifierDeriviator.h"
+#import "LectureMaterialService.h"
+#import "LectureMaterialPlainObject.h"
 
 @interface LectureInteractorTests : XCTestCase
 
@@ -35,6 +37,7 @@
 @property (nonatomic, strong) id mockPresenter;
 @property (nonatomic, strong) id mockPonsomizer;
 @property (nonatomic, strong) id mockLectureService;
+@property (nonatomic, strong) id mockLectureMaterialService;
 @property (nonatomic, strong) id mockUrlBuilder;
 @property (nonatomic, strong) id mockDeriviator;
 
@@ -50,6 +53,7 @@
     self.mockPonsomizer = OCMProtocolMock(@protocol(ROSPonsomizer));
     self.mockLectureService = OCMProtocolMock(@protocol(LectureService));
     self.mockUrlBuilder = OCMProtocolMock(@protocol(ShareUrlBuilder));
+    self.mockLectureMaterialService = OCMProtocolMock(@protocol(LectureMaterialService));
     self.mockDeriviator = OCMClassMock([YouTubeIdentifierDeriviator class]);
     
     self.interactor.output = self.mockPresenter;
@@ -57,6 +61,7 @@
     self.interactor.lectureService = self.mockLectureService;
     self.interactor.shareUrlBuilder = self.mockUrlBuilder;
     self.interactor.deriviator = self.mockDeriviator;
+    self.interactor.lectureMaterialService = self.mockLectureMaterialService;
 }
 
 - (void)tearDown {
@@ -70,6 +75,7 @@
     self.mockPonsomizer = nil;
     self.mockLectureService = nil;
     self.mockUrlBuilder = nil;
+    self.mockLectureMaterialService = nil;
     
     [super tearDown];
 }
@@ -113,7 +119,7 @@
     NSURL *testUrl = [NSURL URLWithString:testUrlString];
     
     // when
-    BOOL result = [self.interactor checkIfVideoIsFromYouTube:testUrl];
+    [self.interactor checkIfVideoIsFromYouTube:testUrl];
     
     // then
     OCMVerify([self.mockDeriviator checkIfVideoIsFromYouTube:testUrl]);
@@ -144,6 +150,43 @@
     
     // then
     XCTAssertEqualObjects(result, identifier);
+}
+
+- (void)testThatInteractorDownloadLectureMaterial {
+    // given
+    NSString *materialId = @"materialId";
+    
+    // when
+    [self.interactor downloadVideoToCacheWithLectureMaterialId:materialId];
+    
+    // then
+    OCMVerify([self.mockLectureMaterialService downloadToCacheLectureMaterialId:materialId
+                                                                       delegate:self.interactor]);
+}
+
+- (void)testThatInteractorRemoveLectureMaterial {
+    // given
+    NSString *materialId = @"materialId";
+    
+    // when
+    [self.interactor removeVideoFromCacheWithLectureMaterialId:materialId];
+    
+    // then
+    OCMVerify([self.mockLectureMaterialService removeFromCacheLectureMaterialId:materialId
+                                                                     completion:OCMOCK_ANY]);
+}
+
+- (void)testThatInteractorUpdateDownloadingDelegateForLectureMaterials {
+    // given
+    LectureMaterialPlainObject *plain = [LectureMaterialPlainObject new];
+    plain.lectureMaterialId = @"materialId";
+    
+    // when
+    [self.interactor updateDownloadingDelegateWithLectureMaterials:@[plain]];
+    
+    // then
+    OCMVerify([self.mockLectureMaterialService updateDelegate:self.interactor
+                                         forLectureMaterialId:plain.lectureMaterialId]);
 }
 
 @end

@@ -43,7 +43,7 @@
  
  Checks that url has substring "youtu"
  
- @param url Video url
+ @param videoUrl Video url
  
  @return YES - video from youtube
  */

@@ -18,31 +18,17 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import <OCMock/OCMock.h>
 
-@protocol LectureMaterialDownloadingDelegate;
+#define $mockedProtocolsArray( _objs... ) ( { id objs[] = { _objs }; [NSArray arrayWithObjects: objs count: sizeof(objs) / sizeof(id)]; } )
 
-/**
- Tha manager is responsible for forwarding methods for right delegate
- */
-@interface LectureMaterialDownloadingManager : NSObject <NSURLSessionDownloadDelegate>
+#define OCMProtocolsMock( _objs... ) \
+( { id protocols = $mockedProtocolsArray(_objs); \
+  [OCMockObject niceMockForProtocols:protocols]; \
+} )
 
-@property (nonatomic, strong) NSFileManager *fileManager;
+@interface OCMockObject (ProtocolsMock)
 
-/**
- @author Konstantin Zinovyev
- 
- Method is used to register delegate with url
- */
-- (void)registerDelegate:(id)delegate
-                  forURL:(NSString *)url;
-
-/**
- @author Konstantin Zinovyev
- 
- Method is used to update delegate for active downloading material
- */
-- (void)updateDelegate:(id<LectureMaterialDownloadingDelegate>)delegate
-                forURL:(NSString *)url;
++ (id)niceMockForProtocols:(id)aProtocols;
 
 @end

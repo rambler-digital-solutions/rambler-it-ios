@@ -102,7 +102,8 @@
     // given
     Class targetClass = [LectureMaterialServiceImplementation class];
     NSArray *dependencies = @[
-                              RamblerSelector(lectureMaterialDownloadManager)
+                              RamblerSelector(lectureMaterialDownloadManager),
+                              RamblerSelector(fileManager)
                               ];
     // when
     id result = [self.assembly lectureMaterialService];

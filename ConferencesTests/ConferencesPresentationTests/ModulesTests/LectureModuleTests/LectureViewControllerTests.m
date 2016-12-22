@@ -20,7 +20,7 @@
 
 #import <XCTest/XCTest.h>
 #import <OCMock/OCMock.h>
-
+#import "OCMockObject+ProtocolsMock.h"
 #import "LectureViewController.h"
 #import "LectureViewOutput.h"
 #import "SpeakerShortInfoModuleInput.h"
@@ -30,8 +30,6 @@
 #import "LectureViewModel.h"
 #import "SpeakerPlainObject.h"
 #import "LectureViewController_Testable.h"
-
-static CGFloat TableViewEstimatedRowHeight = 44.0f;
 
 @interface LectureViewControllerTests : XCTestCase
 
@@ -48,7 +46,7 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
     [super setUp];
     
     self.viewController = [LectureViewController new];
-    self.presenterMock = OCMProtocolMock(@protocol(LectureViewOutput));
+    self.presenterMock = OCMProtocolsMock(@protocol(LectureViewOutput), @protocol(LectureMaterialCacheDelegate));
     self.dataDisplayManagerMock = OCMClassMock([LectureDataDisplayManager class]);
     self.tableViewMock = OCMClassMock([UITableView class]);
     
@@ -172,6 +170,50 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
     
     // then
     OCMVerify([self.presenterMock didTapMaterialWithUrl:testUrl]);
+}
+
+- (void)testThatViewUpdateWithLectureMaterialCorrectly {
+    // given
+    id lectureMaterial = @1;
+    
+    // when
+    [self.viewController updateViewWithLectureMaterial:lectureMaterial];
+    
+    // then
+    OCMVerify([self.dataDisplayManagerMock updateDataDisplayManagerWithLectureMaterial:lectureMaterial]);
+}
+
+- (void)testThatViewRemoveLectureMaterialCorrectly {
+    // given
+    id lectureMaterial = @1;
+    
+    // when
+    [self.viewController didTapRemoveFromCacheLectureMaterial:lectureMaterial];
+    
+    // then
+    OCMVerify([self.presenterMock didTapRemoveFromCacheLectureMaterial:lectureMaterial]);
+}
+
+- (void)testThatViewDownloadLectureMaterialCorrectly {
+    // given
+    id lectureMaterial = @1;
+    
+    // when
+    [self.viewController didTapDownloadToCacheLectureMaterial:lectureMaterial];
+    
+    // then
+    OCMVerify([self.presenterMock didTapDownloadToCacheLectureMaterial:lectureMaterial]);
+}
+
+- (void)testThatViewHandleTapOnVideoCellCorrectly {
+    // given
+    id lectureMaterial = @1;
+    
+    // when
+    [self.viewController didTapVideoRecordCellWithVideoMaterial:lectureMaterial];
+    
+    // then
+    OCMVerify([self.presenterMock didTapVideoPreviewWithVideoMaterial:lectureMaterial]);
 }
 
 @end

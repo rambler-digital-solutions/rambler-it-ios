@@ -78,9 +78,11 @@
 - (void)removeFromCacheLectureMaterial:(LectureMaterialModelObject *)lectureMaterial
                             completion:(LectureMaterialCompletionBlock)completionBlock {
     NSError *error;
-    [[NSFileManager defaultManager] removeItemAtPath:lectureMaterial.localURL
+    [self.fileManager removeItemAtPath:lectureMaterial.localURL
                                                error:&error];
-    completionBlock(nil,error);
+    if (completionBlock) {
+        completionBlock(nil,error);
+    }
 }
 
 #pragma mark - Private Methods
