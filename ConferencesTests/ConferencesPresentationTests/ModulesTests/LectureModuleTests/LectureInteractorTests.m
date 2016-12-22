@@ -119,7 +119,7 @@
     NSURL *testUrl = [NSURL URLWithString:testUrlString];
     
     // when
-    BOOL result = [self.interactor checkIfVideoIsFromYouTube:testUrl];
+    [self.interactor checkIfVideoIsFromYouTube:testUrl];
     
     // then
     OCMVerify([self.mockDeriviator checkIfVideoIsFromYouTube:testUrl]);

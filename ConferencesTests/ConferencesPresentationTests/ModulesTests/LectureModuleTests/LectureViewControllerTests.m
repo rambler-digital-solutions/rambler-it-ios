@@ -31,8 +31,6 @@
 #import "SpeakerPlainObject.h"
 #import "LectureViewController_Testable.h"
 
-static CGFloat TableViewEstimatedRowHeight = 44.0f;
-
 @interface LectureViewControllerTests : XCTestCase
 
 @property (nonatomic, strong) LectureViewController *viewController;

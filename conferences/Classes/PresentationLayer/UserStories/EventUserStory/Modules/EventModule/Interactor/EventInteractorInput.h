@@ -92,7 +92,7 @@
  
  The method tells the system to forget current module
  
- @param Module activity
+ @param activity activity
  */
 - (void)unregisterUserActivity:(NSUserActivity *)activity;
 

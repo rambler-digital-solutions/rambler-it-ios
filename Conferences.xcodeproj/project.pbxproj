@@ -8976,7 +8976,7 @@
 		9F1F37DC1BBBB80D00C7797D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Rambler;
 				TargetAttributes = {
 					2B750D101D362C1B00EACE98 = {
@@ -10048,7 +10048,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 61435C41E57EED0504F7C502 /* Pods-RamblerMessageExtension.debug.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -10074,7 +10073,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 23EE5826624410C24CDC2BA5 /* Pods-RamblerMessageExtension.release.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -10100,7 +10098,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 44C28AC5C8513A913FE8B749 /* Pods-RamblerMessageExtension.nightly.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
