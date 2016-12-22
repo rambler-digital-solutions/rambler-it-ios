@@ -95,7 +95,8 @@ PODS:
   - RamblerSegues/CrossStoryboardSegue (1.1.2)
   - RamblerSegues/EmbedSegue (1.1.2)
   - RamblerTyphoonUtils/AssemblyCollector (1.5.0)
-  - RamblerTyphoonUtils/AssemblyTesting (1.5.0)
+  - RamblerTyphoonUtils/AssemblyTesting (1.5.0):
+    - OCMock (~> 3)
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
@@ -124,8 +125,8 @@ DEPENDENCIES:
   - PureLayout (~> 3.0)
   - RamblerAppDelegateProxy (= 0.0.3)
   - RamblerSegues (= 1.1.2)
-  - RamblerTyphoonUtils/AssemblyCollector (= 1.5.0)
-  - RamblerTyphoonUtils/AssemblyTesting (= 1.5.0)
+  - RamblerTyphoonUtils/AssemblyCollector (from `https://github.com/aporohov/RamblerTyphoonUtils`, branch `tvos_support`)
+  - RamblerTyphoonUtils/AssemblyTesting (from `https://github.com/aporohov/RamblerTyphoonUtils`, branch `tvos_support`)
   - SDWebImage (~> 3.7)
   - Typhoon (= 3.5.1)
   - Typhoon (~> 3.3)
@@ -139,6 +140,9 @@ EXTERNAL SOURCES:
     :tag: 0.0.10
   Nimbus:
     :git: https://github.com/rambler-ios/nimbus
+  RamblerTyphoonUtils:
+    :branch: tvos_support
+    :git: https://github.com/aporohov/RamblerTyphoonUtils
 
 CHECKOUT OPTIONS:
   CrutchKit:
@@ -147,6 +151,9 @@ CHECKOUT OPTIONS:
   Nimbus:
     :commit: f87fc967a359b6977e7fa153494d8b85a61d0dc1
     :git: https://github.com/rambler-ios/nimbus
+  RamblerTyphoonUtils:
+    :commit: 9ec9cdd3c53d247c79d53c29a9bc4d95b669a0d5
+    :git: https://github.com/aporohov/RamblerTyphoonUtils
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
@@ -164,13 +171,13 @@ SPEC CHECKSUMS:
   PureLayout: f35f5384c9c4e4479df041dbe33ad7577b71ddfb
   RamblerAppDelegateProxy: a29284f46e8711663f0d279f5023469a96b27529
   RamblerSegues: 697ae59f2fbaefac805a57fc4e61fb73ba1fd5de
-  RamblerTyphoonUtils: 08a6b5592e045a490cd4550aa9ea4a581308d482
+  RamblerTyphoonUtils: e9a135b3d975192705da90193059b23728fe9078
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   Typhoon: c0950bb9f2e835eb8a7dc6983160109b6baf2dda
   UICollectionViewLeftAlignedLayout: 6d10790db3e07958d91bd910d8b8e9dad952b1ef
   ViperMcFlurry: 701bc3ad8d188b1f1e157ec0ddf4e77184de88b5
   XCDYouTubeKit: 90690f9e3523735dc93b8024269d991b0cfffe78
 
-PODFILE CHECKSUM: 4411f3a3679491d0dc612155bcbd7bc09dffb414
+PODFILE CHECKSUM: 4758998e88f7f4bd003db724f0e61ec4c34d2ba4
 
 COCOAPODS: 1.1.1
