@@ -9,6 +9,7 @@
 #import "RamblerTyphoonAssemblyTestUtilities.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
+#import "RamblerTyphoonAssemblyTestsTypeDescriptor.h"
 
 @implementation RamblerTyphoonAssemblyTestUtilities
 
@@ -25,6 +26,89 @@
     }
     
     return [properties copy];
+}
+
++ (RamblerPropertyType)propertyTypeByString:(NSString *)propertyTypeString {
+    if ([propertyTypeString isEqualToString:@"?"]) {
+        return RamblerBlock;
+    }
+    
+    if ([propertyTypeString isEqualToString:@""]) {
+        return RamblerPrimitive;
+    }
+    
+    if ([propertyTypeString isEqualToString:@"id"]) {
+        return RamblerId;
+    }
+    
+    if ([propertyTypeString rangeOfString:@"<"].length != 0 ) {
+        return RamblerProtocol;
+    }
+    
+    return RamblerClass;
+}
+
++ (RamblerTyphoonAssemblyTestsTypeDescriptor *)typeDescriptorFromPropertyWithProtocol:(NSString *)property {
+    NSUInteger classNameProtocolsNamesSeparatorIndex = [property rangeOfString:@"<"].location;
+    
+    /**
+     @author Aleksandr Sychev
+     
+     Find out property class
+     */
+    NSRange propertyClassNameSubstringRange = NSMakeRange(0u, classNameProtocolsNamesSeparatorIndex);
+    NSString *propertyClassNameSubstring = [property substringWithRange:propertyClassNameSubstringRange];
+    Class propertyClass = NSClassFromString(propertyClassNameSubstring);
+    
+    /**
+     @author Aleksandr Sychev
+     
+     Find out property protocols
+     */
+    NSString *propertyProtocolsNamesSubstring = [property substringFromIndex:classNameProtocolsNamesSeparatorIndex];
+    NSRange searchedRange = NSMakeRange(0u, propertyProtocolsNamesSubstring.length);
+    NSString *pattern = @"<(.*?)>";
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern
+                                                                           options:0u
+                                                                             error:NULL];
+    NSMutableArray *protocols = [NSMutableArray new];
+    [regex enumerateMatchesInString:propertyProtocolsNamesSubstring
+                            options:0u
+                              range:searchedRange
+                         usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
+                             NSRange range = [result rangeAtIndex:1u];
+                             NSString *protocolName = [propertyProtocolsNamesSubstring substringWithRange:range];
+                             if (protocolName.length > 0u) {
+                                 [protocols addObject:NSProtocolFromString(protocolName)];
+                             }
+                         }];
+    
+    return [RamblerTyphoonAssemblyTestsTypeDescriptor descriptorWithClass:propertyClass
+                                                             andProtocols:[protocols copy]];
+}
+
++ (SEL)setterForPropertyWithName:(NSString *)propertyName inClass:(Class)clazz {
+    SEL setterSelector = nil;
+    
+    objc_property_t property = class_getProperty(clazz, [propertyName cStringUsingEncoding:NSASCIIStringEncoding]);
+    if (property) {
+        if (![self isReadonlyProperty:property]) {
+            NSString *selectorString = [self customSetterForProperty:property];
+            if (!selectorString) {
+                selectorString = [self defaultSetterForPropertyWithName:propertyName];
+            }
+            setterSelector = NSSelectorFromString(selectorString);
+        }
+    }
+    else if (propertyName.length > 0) {
+        NSString *selectorString = [self defaultSetterForPropertyWithName:propertyName];
+        SEL aSelector = NSSelectorFromString(selectorString);
+        if (class_getInstanceMethod(clazz, aSelector)) {
+            setterSelector = aSelector;
+        }
+    }
+    
+    return setterSelector;
 }
 
 #pragma mark - Helpers
@@ -89,5 +173,36 @@
     }
     return typeName;
 }
+
++ (BOOL)isReadonlyProperty:(objc_property_t)property
+{
+    char *readonlyFlag = property_copyAttributeValue(property, "R");
+    BOOL isReadonly = readonlyFlag != NULL;
+    free(readonlyFlag);
+    return isReadonly;
+}
+
++ (NSString *)customSetterForProperty:(objc_property_t)property
+{
+    NSString *customSetter = nil;
+    
+    char *setterName = property_copyAttributeValue(property, "S");
+    
+    if (setterName != NULL) {
+        customSetter = [NSString stringWithCString:setterName encoding:NSASCIIStringEncoding];;
+        free(setterName);
+    }
+    
+    return customSetter;
+}
+
++ (NSString *)defaultSetterForPropertyWithName:(NSString *)propertyName
+{
+    NSString *firstLetterUppercase = [[propertyName substringToIndex:1] uppercaseString];
+    NSString *propertyPart = [propertyName stringByReplacingCharactersInRange:NSMakeRange(0, 1)
+                                                                   withString:firstLetterUppercase];
+    return [NSString stringWithFormat:@"set%@:", propertyPart];
+}
+
 
 @end

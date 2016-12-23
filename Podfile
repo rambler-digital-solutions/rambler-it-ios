@@ -1,13 +1,19 @@
 # CocoaPods specs repository URL
 source 'https://github.com/cocoapods/Specs.git'
 
-project 'Conferences.xcodeproj'
+target 'ConferencesTV' do
+    platform :tvos, '10.0'
+    pod 'Typhoon', '3.5.1'
+    pod 'RamblerTyphoonUtils/AssemblyCollector', :git => 'https://github.com/aporohov/RamblerTyphoonUtils', :branch => 'tvos_support'
+    
+    pod 'ViperMcFlurry', '1.5.2'
+end
 
 # The main application target
 target 'Conferences' do
     # Dependency management
     pod 'Typhoon', '3.5.1'
-    pod 'RamblerTyphoonUtils/AssemblyCollector', '1.5.0'
+    pod 'RamblerTyphoonUtils/AssemblyCollector', :git => 'https://github.com/aporohov/RamblerTyphoonUtils', :branch => 'tvos_support'
     
     # Networking
     pod 'AFNetworking', '~> 2.6'
@@ -48,7 +54,7 @@ target 'Conferences' do
     target 'ConferencesTests' do
         pod 'OCMock', '3.3.1'
         pod 'MMBarricade', '~> 1.0.1'
-        pod 'RamblerTyphoonUtils/AssemblyTesting', '1.5.0'
+        pod 'RamblerTyphoonUtils/AssemblyTesting', :git => 'https://github.com/aporohov/RamblerTyphoonUtils', :branch => 'tvos_support'
     end
 end
 

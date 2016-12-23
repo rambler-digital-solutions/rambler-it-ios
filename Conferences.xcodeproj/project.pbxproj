@@ -44,6 +44,7 @@
 		02F297C01DFAA295001F9B10 /* TestableObjectWithDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F297BF1DFAA295001F9B10 /* TestableObjectWithDelegate.m */; };
 		02F297C31DFAB15E001F9B10 /* UberRidesAppDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F297C21DFAB15E001F9B10 /* UberRidesAppDelegateTests.m */; };
 		02F297C61DFAC5A2001F9B10 /* UberRidesAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F297C51DFAC5A2001F9B10 /* UberRidesAssemblyTests.m */; };
+		142B8D1338B595F12F7B4B4F /* libPods-ConferencesTV.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A77F3393455EA58E8057DF0 /* libPods-ConferencesTV.a */; };
 		23CE8DF5981F15951ADE2AAA /* TVEventListModuleRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C571C519D4438BD8E0A5DB48 /* TVEventListModuleRouterTests.m */; };
 		2AA222A5031CC7BA4A19B3EF /* libPods-RamblerMessageExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C1AA7D4ECB1DA53BEC254E4 /* libPods-RamblerMessageExtension.a */; };
 		2B01CEBE1D50A55900DA8E66 /* MetaEventServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B01CEBD1D50A55900DA8E66 /* MetaEventServiceTests.m */; };
@@ -893,6 +894,7 @@
 		02F297C51DFAC5A2001F9B10 /* UberRidesAssemblyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UberRidesAssemblyTests.m; sourceTree = "<group>"; };
 		02F297C71DFACF20001F9B10 /* UberRidesAssembly_Testable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UberRidesAssembly_Testable.h; sourceTree = "<group>"; };
 		0E72BBC4767EF33333E95EBB /* TVEventListModuleInteractorTests.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TVEventListModuleInteractorTests.m; sourceTree = "<group>"; };
+		174037C61CED0B74665DDFDB /* Pods-ConferencesTV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConferencesTV.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConferencesTV/Pods-ConferencesTV.debug.xcconfig"; sourceTree = "<group>"; };
 		1991FAD2E1C161ABA001E353 /* TVEventListModuleAssemblyTests.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TVEventListModuleAssemblyTests.m; sourceTree = "<group>"; };
 		1AB36DD96D7739E6F91D7BBE /* Pods-Conferences.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conferences.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Conferences/Pods-Conferences.debug.xcconfig"; sourceTree = "<group>"; };
 		1C1AA7D4ECB1DA53BEC254E4 /* libPods-RamblerMessageExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RamblerMessageExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1595,7 +1597,9 @@
 		66FFD29B1D7DCCFB0009B7DC /* CollectionViewContentCellAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CollectionViewContentCellAnimator.m; path = conferences/Classes/PresentationLayer/Helpers/CollectionViewContentCellAnimator/CollectionViewContentCellAnimator.m; sourceTree = SOURCE_ROOT; };
 		70D0735E49CDE8A097D0983D /* TVEventListModuleViewControllerTests.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TVEventListModuleViewControllerTests.m; sourceTree = "<group>"; };
 		76E95A8F2CA91B564A26FB49 /* EventGalleryViewControllerTests.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EventGalleryViewControllerTests.m; sourceTree = "<group>"; };
+		78731D79761FD4756ADC9CFA /* Pods-ConferencesTV.nightly.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConferencesTV.nightly.xcconfig"; path = "Pods/Target Support Files/Pods-ConferencesTV/Pods-ConferencesTV.nightly.xcconfig"; sourceTree = "<group>"; };
 		7C8D39C97CFC4A464220D54B /* libPods-Conferences-RamblerMessageExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Conferences-RamblerMessageExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		87DBB8CD2FAB651CE76C5260 /* Pods-ConferencesTV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConferencesTV.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConferencesTV/Pods-ConferencesTV.release.xcconfig"; sourceTree = "<group>"; };
 		972E24201DFF460D007338EF /* SpeakerImageIndexer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeakerImageIndexer.h; path = SpeakerImageIndexer/SpeakerImageIndexer.h; sourceTree = "<group>"; };
 		972E24211DFF460D007338EF /* SpeakerImageIndexer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeakerImageIndexer.m; path = SpeakerImageIndexer/SpeakerImageIndexer.m; sourceTree = "<group>"; };
 		972E24231DFF462E007338EF /* EventImageIndexer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventImageIndexer.h; path = EventImageIndexer/EventImageIndexer.h; sourceTree = "<group>"; };
@@ -2168,6 +2172,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				142B8D1338B595F12F7B4B4F /* libPods-ConferencesTV.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5710,26 +5715,6 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		973421B61DFD501A00331745 /* SpotlightImageIndexer */ = {
-			isa = PBXGroup;
-			children = (
-				973421B71DFD503900331745 /* SpotlightImageIndexer.h */,
-				973421B81DFD503900331745 /* SpotlightImageIndexer.m */,
-				6623A6A41E09A5A600738000 /* SpotlightImageModel.h */,
-				6623A6A51E09A5A600738000 /* SpotlightImageModel.m */,
-			);
-			name = SpotlightImageIndexer;
-			sourceTree = "<group>";
-		};
-		97F600261DEAF286004833B5 /* VideoRecordTableViewCellMapper */ = {
-			isa = PBXGroup;
-			children = (
-				97F600271DEAF2AD004833B5 /* VideoRecordTableViewCellObjectMapper.h */,
-				97F600281DEAF2AD004833B5 /* VideoRecordTableViewCellObjectMapper.m */,
-			);
-			name = VideoRecordTableViewCellMapper;
-			sourceTree = "<group>";
-		};
 		87960BF927BB032FD0FEA610 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
@@ -5751,6 +5736,26 @@
 				F14A0831FC37F258A8FD0362 /* Router */,
 			);
 			path = EventListModule;
+			sourceTree = "<group>";
+		};
+		973421B61DFD501A00331745 /* SpotlightImageIndexer */ = {
+			isa = PBXGroup;
+			children = (
+				973421B71DFD503900331745 /* SpotlightImageIndexer.h */,
+				973421B81DFD503900331745 /* SpotlightImageIndexer.m */,
+				6623A6A41E09A5A600738000 /* SpotlightImageModel.h */,
+				6623A6A51E09A5A600738000 /* SpotlightImageModel.m */,
+			);
+			name = SpotlightImageIndexer;
+			sourceTree = "<group>";
+		};
+		97F600261DEAF286004833B5 /* VideoRecordTableViewCellMapper */ = {
+			isa = PBXGroup;
+			children = (
+				97F600271DEAF2AD004833B5 /* VideoRecordTableViewCellObjectMapper.h */,
+				97F600281DEAF2AD004833B5 /* VideoRecordTableViewCellObjectMapper.m */,
+			);
+			name = VideoRecordTableViewCellMapper;
 			sourceTree = "<group>";
 		};
 		983BD5A1DFB450A9BCF4C749 /* View */ = {
@@ -9288,6 +9293,9 @@
 				F7ACB5BE07AA63ABA575E72C /* Pods-Conferences-RamblerMessageExtension.debug.xcconfig */,
 				D4D07FD12F22C53F88A5868D /* Pods-Conferences-RamblerMessageExtension.release.xcconfig */,
 				EA2D483C826269C2260999EA /* Pods-Conferences-RamblerMessageExtension.nightly.xcconfig */,
+				174037C61CED0B74665DDFDB /* Pods-ConferencesTV.debug.xcconfig */,
+				87DBB8CD2FAB651CE76C5260 /* Pods-ConferencesTV.release.xcconfig */,
+				78731D79761FD4756ADC9CFA /* Pods-ConferencesTV.nightly.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -9398,9 +9406,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C33C17A91E02E80400BE21D8 /* Build configuration list for PBXNativeTarget "ConferencesTV" */;
 			buildPhases = (
+				9334C85A0B4F0CF1D472A547 /* [CP] Check Pods Manifest.lock */,
 				C33C17831E02E80300BE21D8 /* Sources */,
 				C33C17841E02E80300BE21D8 /* Frameworks */,
 				C33C17851E02E80300BE21D8 /* Resources */,
+				673D4CBB5600B54A6F17C3F5 /* [CP] Embed Pods Frameworks */,
+				1F5E5F3A0D93156AC9DB5A30 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -9658,6 +9669,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Conferences-ConferencesTests/Pods-Conferences-ConferencesTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		1F5E5F3A0D93156AC9DB5A30 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConferencesTV/Pods-ConferencesTV-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		2B750D161D362DB000EACE98 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -9671,7 +9697,37 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Scripts/mogenerator.sh\"";
 		};
+		673D4CBB5600B54A6F17C3F5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConferencesTV/Pods-ConferencesTV-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		8DBA6B940BC2407FF13F7FF6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9334C85A0B4F0CF1D472A547 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -11041,6 +11097,7 @@
 		};
 		C33C17A31E02E80400BE21D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 174037C61CED0B74665DDFDB /* Pods-ConferencesTV.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -11060,6 +11117,7 @@
 		};
 		C33C17A41E02E80400BE21D8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87DBB8CD2FAB651CE76C5260 /* Pods-ConferencesTV.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -11079,6 +11137,7 @@
 		};
 		C33C17A51E02E80400BE21D8 /* Nightly */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78731D79761FD4756ADC9CFA /* Pods-ConferencesTV.nightly.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
