@@ -12,9 +12,5 @@
 #import "RamblerTyphoonAssemblyTests.h"
 #import "RamblerTyphoonAssemblyTestUtilities.h"
 #import "RamblerTyphoonAssemblyTestsTypeDescriptor.h"
-#import "OCMArg+Rambler.h"
-#import "ROCMClassConstraint.h"
-#import "ROCMProtocolConstraint.h"
-#import "ROCMVerifier.h"
 
 #endif

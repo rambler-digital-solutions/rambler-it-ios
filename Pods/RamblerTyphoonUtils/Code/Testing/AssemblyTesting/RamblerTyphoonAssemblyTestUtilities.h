@@ -8,16 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSInteger, RamblerPropertyType) {
-    RamblerId,
-    RamblerBlock,
-    RamblerClass,
-    RamblerProtocol,
-    RamblerPrimitive
-};
-
-@class RamblerTyphoonAssemblyTestsTypeDescriptor;
-
 /**
  @author Egor Tolstoy
 
@@ -33,30 +23,5 @@ typedef NS_ENUM(NSInteger, RamblerPropertyType) {
  @return NSDictionary
  */
 + (NSDictionary *)propertiesForHierarchyOfClass:(Class)objectClass;
-
-/**
- Method converts property type string to RamblerPropertyType
-
- @param propertyTypeString Property Type
- @return RamblerPropertyType
- */
-+ (RamblerPropertyType)propertyTypeByString:(NSString *)propertyTypeString;
-
-/**
- Method converts property type string to RamblerTyphoonAssemblyTestsTypeDescriptor
-
- @param property Property Type
- @return Type Descriptor
- */
-+ (RamblerTyphoonAssemblyTestsTypeDescriptor *)typeDescriptorFromPropertyWithProtocol:(NSString *)property;
-
-/**
- Return setter selector for property
-
- @param propertyName Property name, for which to get setter selector
- @param clazz Class
- @return setter selector
- */
-+ (SEL)setterForPropertyWithName:(NSString *)propertyName inClass:(Class)clazz;
 
 @end

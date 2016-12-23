@@ -10,31 +10,16 @@
 
 #import "RamblerTyphoonAssemblyTestsTypeDescriptor.h"
 #import "RamblerTyphoonAssemblyTestUtilities.h"
-#import "OCMock.h"
 
-@interface RamblerTyphoonAssemblyTests ()
-
-@property (nonatomic, strong) id realInstance;
-@property (nonatomic, strong) id partitialMock;
-
-@end
+typedef NS_ENUM(NSInteger, RamblerPropertyType) {
+    RamblerId,
+    RamblerBlock,
+    RamblerClass,
+    RamblerProtocol,
+    RamblerPrimitive
+};
 
 @implementation RamblerTyphoonAssemblyTests
-
-- (void)tearDown {
-    self.realInstance = nil;
-    
-    [self.partitialMock stopMocking];
-    self.partitialMock = nil;
-    
-    [super tearDown];
-}
-
-- (void)prepateAssemblyTestClass:(Class)clazz {
-    self.realInstance  = [clazz alloc];
-    self.partitialMock = OCMPartialMock(self.realInstance);
-    OCMStub([self.partitialMock alloc]).andReturn(self.partitialMock);
-}
 
 #pragma mark - Public
 
@@ -137,7 +122,7 @@
               dependencies:(NSDictionary *)dependencies {
     for (NSString *propertyName in dependencies) {
         NSString *dependencyExpectedType = dependencies[propertyName];
-        RamblerPropertyType propertyType = [RamblerTyphoonAssemblyTestUtilities propertyTypeByString:dependencyExpectedType];
+        RamblerPropertyType propertyType = [self propertyTypeByString:dependencyExpectedType];
         
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
@@ -159,7 +144,7 @@
 
             case RamblerProtocol: {
                 RamblerTyphoonAssemblyTestsTypeDescriptor *propertyTypeDescriptor =
-                    [RamblerTyphoonAssemblyTestUtilities typeDescriptorFromPropertyWithProtocol:dependencyExpectedType];
+                    [self typeDescriptorFromPropertyWithProtocol:dependencyExpectedType];
                 [self verifyTargetDependency:dependencyObject
                               withDescriptor:propertyTypeDescriptor];
                 break;
@@ -170,6 +155,65 @@
                 break;
         }
     }
+}
+
+- (RamblerPropertyType)propertyTypeByString:(NSString *)propertyTypeString {
+    if ([propertyTypeString isEqualToString:@"?"]) {
+        return RamblerBlock;
+    }
+    
+    if ([propertyTypeString isEqualToString:@""]) {
+        return RamblerPrimitive;
+    }
+    
+    if ([propertyTypeString isEqualToString:@"id"]) {
+        return RamblerId;
+    }
+    
+    if ([propertyTypeString rangeOfString:@"<"].length != 0 ) {
+        return RamblerProtocol;
+    }
+    
+    return RamblerClass;
+}
+
+- (RamblerTyphoonAssemblyTestsTypeDescriptor *)typeDescriptorFromPropertyWithProtocol:(NSString *)property {
+    NSUInteger classNameProtocolsNamesSeparatorIndex = [property rangeOfString:@"<"].location;
+    
+    /**
+     @author Aleksandr Sychev
+     
+     Find out property class
+     */
+    NSRange propertyClassNameSubstringRange = NSMakeRange(0u, classNameProtocolsNamesSeparatorIndex);
+    NSString *propertyClassNameSubstring = [property substringWithRange:propertyClassNameSubstringRange];
+    Class propertyClass = NSClassFromString(propertyClassNameSubstring);
+    
+    /**
+     @author Aleksandr Sychev
+     
+     Find out property protocols
+     */
+    NSString *propertyProtocolsNamesSubstring = [property substringFromIndex:classNameProtocolsNamesSeparatorIndex];
+    NSRange searchedRange = NSMakeRange(0u, propertyProtocolsNamesSubstring.length);
+    NSString *pattern = @"<(.*?)>";
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern
+                                                                           options:0u
+                                                                             error:NULL];
+    NSMutableArray *protocols = [NSMutableArray new];
+    [regex enumerateMatchesInString:propertyProtocolsNamesSubstring
+                            options:0u
+                              range:searchedRange
+                         usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
+                             NSRange range = [result rangeAtIndex:1u];
+                             NSString *protocolName = [propertyProtocolsNamesSubstring substringWithRange:range];
+                             if (protocolName.length > 0u) {
+                                 [protocols addObject:NSProtocolFromString(protocolName)];
+                             }
+                         }];
+
+    return [RamblerTyphoonAssemblyTestsTypeDescriptor descriptorWithClass:propertyClass
+                                                             andProtocols:[protocols copy]];
 }
 
 @end

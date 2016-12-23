@@ -1,1 +1,0 @@
-../../../RamblerTyphoonUtils/Code/Testing/AssemblyTesting/ROCMProtocolConstraint.h
