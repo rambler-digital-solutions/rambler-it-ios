@@ -97,7 +97,6 @@
     [self.presenter setupView];
     
     // then
-    OCMVerify([self.interactorMock updateDownloadingDelegateWithLectureMaterials:OCMOCK_ANY]);
     XCTAssert(self.stateStorage.speakerObjectId == speakerObjectId);
     OCMVerify([self.viewMock configureViewWithLecture:viewModel]);
 }
@@ -198,7 +197,7 @@
     XCTAssert(self.stateStorage.lectureObjectId == objectId);
 }
 
-- (void)testThatInteractorRemoveCacheMaterialCorrectly {
+- (void)testThatPresenterRemoveCacheMaterialCorrectly {
     // given
     LectureMaterialViewModel *model = [LectureMaterialViewModel new];
     
@@ -209,7 +208,7 @@
     OCMVerify([self.routerMock showAlertConfirmationRemoveWithActionBlock:OCMOCK_ANY]);
 }
 
-- (void)testThatInteractorDownloadToCacheMaterialCorrectly {
+- (void)testThatPresenterDownloadToCacheMaterialCorrectly {
     // given
     LectureMaterialViewModel *model = [LectureMaterialViewModel new];
     
@@ -220,7 +219,7 @@
     OCMVerify([self.routerMock showAlertConfirmationDownloadWithActionBlock:OCMOCK_ANY]);
 }
 
-- (void)testThatInteractorUpdateLectureMaterialCorrectly {
+- (void)testThatPresenterUpdateLectureMaterialCorrectly {
     // given
     
     // when
@@ -232,7 +231,7 @@
     OCMVerify([self.viewMock updateViewWithLectureMaterial:OCMOCK_ANY]);
 }
 
-- (void)testThatInteractorOccurErrorCorrectly {
+- (void)testThatPresenterOccurErrorCorrectly {
     // given
     id error = OCMClassMock([NSError class]);
     NSString *localizedDescription = @"";
@@ -244,6 +243,29 @@
     // then
     OCMVerify([self.routerMock showAlertErrorWithMessage:localizedDescription]);
     
+}
+
+- (void)testThatPresenterOccurErrorIfNilCorrectly {
+    // given
+    id error = nil;
+    
+    // when
+    [self.presenter didOccurError:error];
+    
+    // then
+    OCMVerify([self.routerMock showAlertErrorWithMessage:nil]);
+}
+
+- (void)testThatPresenterDidTriggerViewWillAppearCorrectly {
+    // given
+    self.stateStorage.lectureObjectId = @"id";
+    
+    // when
+    [self.presenter didTriggerViewWillAppear];
+    
+    // then
+    OCMVerify([self.interactorMock obtainLectureWithObjectId:self.stateStorage.lectureObjectId]);
+    OCMVerify([self.interactorMock updateDownloadingDelegateWithLectureMaterials:OCMOCK_ANY]);
 }
 
 @end

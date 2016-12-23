@@ -29,6 +29,7 @@
 #import "LocalizedStrings.h"
 
 static NSString *const LectureModuleToSpeakerInfoModuleSegue = @"LectureModuleToSpeakerInfoModuleSegue";
+static NSString *const RITUnknownError = @"Произошла неизвестная ошибка. Повторите операцию позднее.";
 
 @implementation LectureRouter
 
@@ -111,6 +112,9 @@ static NSString *const LectureModuleToSpeakerInfoModuleSegue = @"LectureModuleTo
 }
 
 - (void)showAlertErrorWithMessage:(NSString *)message {
+    if (!message) {
+        message = RITUnknownError;
+    }
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:RCLocalize(kLectureMaterialErrorAlertTitle)
                                                                              message:message
                                                                       preferredStyle:UIAlertControllerStyleAlert];

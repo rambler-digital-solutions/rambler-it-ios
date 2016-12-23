@@ -27,6 +27,7 @@
 #import "EXTScope.h"
 #import "LectureMaterialDownloadingDelegate.h"
 #import "LectureMaterialConstants.h"
+#import "ErrorConstants.h"
 
 @interface LectureMaterialServiceImplementation ()
 
@@ -69,9 +70,11 @@
             return;
         }
     }
-    // TODO: Добавить ошибку
+    NSError *error = [NSError errorWithDomain:ErrorDomain
+                                         code:ErrorDownloadingVideo
+                                     userInfo:nil];
     [delegate didEndDownloadingLectureMaterialWithLink:lectureMaterial.link
-                                                 error:nil];
+                                                 error:error];
 }
 
 - (void)removeFromCacheLectureMaterialId:(NSString *)lectureMaterialId

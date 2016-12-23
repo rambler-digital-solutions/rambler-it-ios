@@ -79,6 +79,16 @@
     OCMVerify([self.presenterMock setupView]);
 }
 
+-(void)testSuccessViewWillAppear {
+    // given
+    
+    // when
+    [self.viewController viewWillAppear:YES];
+    
+    // then
+    OCMVerify([self.presenterMock didTriggerViewWillAppear]);
+}
+
 #pragma mark - LectureViewInput
 
 - (void)testSuccessSetupTableViewDataSource {
