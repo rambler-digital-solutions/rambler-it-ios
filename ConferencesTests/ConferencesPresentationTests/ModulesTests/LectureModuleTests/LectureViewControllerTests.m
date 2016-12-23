@@ -53,7 +53,11 @@
     self.viewController.dataDisplayManager = self.dataDisplayManagerMock;
     self.viewController.tableView = self.tableViewMock;
     self.viewController.output = self.presenterMock;
+    [UIView animateWithDuration:0.2 animations:^{
+        
+    }];
 }
+
 
 - (void)tearDown {
     self.viewController = nil;
@@ -69,11 +73,11 @@
 
 #pragma mark - Lifecycle methods
 
-- (void)testSuccessViewDidLoad {
+-(void)testSuccessViewWillAppear {
     // given
     
     // when
-    [self.viewController viewDidLoad];
+    [self.viewController viewWillAppear:YES];
     
     // then
     OCMVerify([self.presenterMock setupView]);

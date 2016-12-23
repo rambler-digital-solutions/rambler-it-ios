@@ -71,7 +71,10 @@
         [self.output didTriggerCacheOperationWithType:LectureMaterialRemoveType
                                       lectureMaterial:material
                                               percent:0];
-                                                      }];
+        if (error) {
+            [self.output didOccurError:error];
+        }
+    }];
 }
 
 - (void)updateDownloadingDelegateWithLectureMaterials:(NSArray *)lectureMaterials {
@@ -93,13 +96,17 @@
 
 - (void)didEndDownloadingLectureMaterialWithLink:(NSString *)link
                                            error:(NSError *)error {
-    [self.output didOccurError:error];
     LectureMaterialPlainObject *material = [self getLectureMaterialByAttribute:LectureMaterialModelObjectAttributes.link
                                                                      withValue:link];
     [self.output didTriggerCacheOperationWithType:LectureMaterialEndDownloadType
                                   lectureMaterial:material
                                           percent:0];
+    if (error) {
+        [self.output didOccurError:error];
+    }
 }
+
+#pragma mark - NSURLSessionDownloadDelegate
 
 - (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location {
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -125,6 +132,28 @@
 - (void)URLSession:(NSURLSession *)session didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential * _Nullable credential))completionHandler {
     NSURLCredential *credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
     completionHandler(NSURLSessionAuthChallengeUseCredential,credential);
+}
+
+- (void)URLSession:(NSURLSession *)session didBecomeInvalidWithError:(nullable NSError *)error {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        LectureMaterialPlainObject *material = [self getLectureMaterialByAttribute:LectureMaterialModelObjectAttributes.link
+                                                                         withValue:session.sessionDescription];
+        [self.output didTriggerCacheOperationWithType:LectureMaterialEndDownloadType
+                                      lectureMaterial:material
+                                              percent:0];
+        [self.output didOccurError:error];
+    });
+}
+
+- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(nullable NSError *)error {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        LectureMaterialPlainObject *material = [self getLectureMaterialByAttribute:LectureMaterialModelObjectAttributes.link
+                                                                         withValue:session.sessionDescription];
+        [self.output didTriggerCacheOperationWithType:LectureMaterialEndDownloadType
+                                      lectureMaterial:material
+                                              percent:0];
+        [self.output didOccurError:error];
+    });
 }
 
 #pragma mark - Private methods

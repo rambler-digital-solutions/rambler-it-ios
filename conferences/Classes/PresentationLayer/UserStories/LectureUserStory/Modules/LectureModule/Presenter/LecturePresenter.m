@@ -117,9 +117,7 @@
 }
 
 - (void)didOccurError:(NSError *)error {
-    if (error) {
-        [self.router showAlertErrorWithMessage:error.localizedDescription];
-    }
+    [self.router showAlertErrorWithMessage:error.localizedDescription];
 }
 
 @end
