@@ -47,7 +47,7 @@ static CGFloat kTableViewFooterHeight = 16.0f;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-   
+    [self.output didTriggerViewWillAppear];
     [self rcf_forceRotateToOrientation:UIDeviceOrientationPortrait];
 }
 

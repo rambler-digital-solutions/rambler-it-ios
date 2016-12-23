@@ -33,5 +33,12 @@ typedef NS_ENUM(NSInteger, ErrorCode) {
      
      Event is already stored in the calendar
      */
-    ErrorEventAlreadyStoredInCalendar = 102
+    ErrorEventAlreadyStoredInCalendar = 102,
+    
+    /**
+     @author Konstantin Zinovyev
+     
+     Error downloading video
+     */
+    ErrorDownloadingVideo = 103
 };
