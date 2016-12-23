@@ -2,33 +2,33 @@
 company: Rambler&Co
 
 ### Xcode project settings
-project_name: RamblerConferences
-prefix: 
+project_name: Conferences
+prefix: TV
 xcodeproj_path: Conferences.xcodeproj
 
 ### Code generation settings section
 # The main project target name
-project_target: Conferences
+project_target: ConferencesTV
 
 # The file path for new modules
-project_file_path: Conferences/Classes/PresentationLayer/UserStories/
+project_file_path: ConferencesTV/Classes/PresentationLayer/UserStories/EventList/Modules
 
 # The Xcode group path to new modules
-project_group_path: Conferences/Classes/PresentationLayer/UserStories/
+project_group_path: ConferencesTV/Classes/PresentationLayer/UserStories/EventList/Modules
 
 ### Tests generation settings section
 # The tests target name
-test_target: Conferences
+test_target: ConferencesTVTests
 
 # The file path for new tests
-test_file_path: ConferencesTests/
+test_file_path: ConferencesTVTests/PresentationLayer/ModulesTests
 
 # The Xcode group path to new tests
-test_group_path: ConferencesTests/
+test_group_path: ConferencesTVTests/PresentationLayer/ModulesTests
 
 ### Dependencies settings section
-podfile_path:
-cartfile_path: 
+podfile_path: Podfile
+cartfile_path: Cartfile
 
 ### Templates
 templates:
