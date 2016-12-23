@@ -35,7 +35,7 @@
 #import "LectureInfoTableViewCellCalculator.h"
 #import "LectureViewModelMapper.h"
 
-static NSString *const kLectureShareItemType = @"lecture";
+static NSString *const kLectureShareItemType = @"lectures";
 
 @implementation  LectureModuleAssembly
 

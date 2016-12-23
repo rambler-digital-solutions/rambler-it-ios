@@ -20,7 +20,7 @@
 
 #import "ShareUrlBuilderImplementation.h"
 
-static NSString *const kBaseUrlPath = @"https://it.rambler-co.ru/#";
+static NSString *const kBaseUrlPath = @"https://it.rambler-co.ru";
 
 @interface ShareUrlBuilderImplementation ()
 
