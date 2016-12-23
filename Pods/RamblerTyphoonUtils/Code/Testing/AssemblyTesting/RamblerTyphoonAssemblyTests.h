@@ -10,12 +10,22 @@
 
 #define RamblerSelector(x) NSStringFromSelector(@selector(x))
 
+#define RamblerPrepareAssemblyTestClass(clazz) \
+    [self prepateAssemblyTestClass:clazz]
+
 @class RamblerTyphoonAssemblyTestsTypeDescriptor;
 
 /**
  The base class for all of the TyphoonAssembly tests
  */
 @interface RamblerTyphoonAssemblyTests : XCTestCase
+
+/**
+ Method for prepare testing an object, created via TyphoonAssembly
+
+ @param clazz Created class
+ */
+- (void)prepateAssemblyTestClass:(Class)clazz;
 
 /**
  Method for testing an object, created via TyphoonAssembly
