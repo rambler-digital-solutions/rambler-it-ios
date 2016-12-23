@@ -65,12 +65,5 @@
  */
 - (void)didTapShareButton;
 
-/**
- @author Artem Karpushin
- 
- Method is used to inform presenter that view will appear
- */
-- (void)didTriggerViewWillAppear;
-
 @end
 

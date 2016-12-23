@@ -53,7 +53,11 @@
     self.viewController.dataDisplayManager = self.dataDisplayManagerMock;
     self.viewController.tableView = self.tableViewMock;
     self.viewController.output = self.presenterMock;
+    [UIView animateWithDuration:0.2 animations:^{
+        
+    }];
 }
+
 
 - (void)tearDown {
     self.viewController = nil;
@@ -69,16 +73,6 @@
 
 #pragma mark - Lifecycle methods
 
-- (void)testSuccessViewDidLoad {
-    // given
-    
-    // when
-    [self.viewController viewDidLoad];
-    
-    // then
-    OCMVerify([self.presenterMock setupView]);
-}
-
 -(void)testSuccessViewWillAppear {
     // given
     
@@ -86,7 +80,7 @@
     [self.viewController viewWillAppear:YES];
     
     // then
-    OCMVerify([self.presenterMock didTriggerViewWillAppear]);
+    OCMVerify([self.presenterMock setupView]);
 }
 
 #pragma mark - LectureViewInput

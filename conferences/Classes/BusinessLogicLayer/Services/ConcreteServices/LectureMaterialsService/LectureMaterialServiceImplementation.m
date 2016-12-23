@@ -49,11 +49,11 @@
 
 - (void)downloadToCacheLectureMaterialId:(NSString *)lectureMaterialId
                                 delegate:(id<LectureMaterialDownloadingDelegate>)delegate {
-    LectureMaterialModelObject *lectureMaterial = [self obtainFromCacheLectureMaterialWithId:lectureMaterialId];
-    [self.lectureMaterialDownloadManager registerDelegate:delegate
-                                                   forURL:lectureMaterial.link];
+                LectureMaterialModelObject *lectureMaterial = [self obtainFromCacheLectureMaterialWithId:lectureMaterialId];
     for (id<LectureMaterialHandler> handler in self.lectureMaterialsHandlers) {
         if ([handler canHandleLectureMaterial:lectureMaterial]) {
+            [self.lectureMaterialDownloadManager registerDelegate:delegate
+                                                           forURL:lectureMaterial.link];
             @weakify(self);
             [handler downloadToCacheLectureMaterial:lectureMaterial
                                            delegate:self.lectureMaterialDownloadManager
