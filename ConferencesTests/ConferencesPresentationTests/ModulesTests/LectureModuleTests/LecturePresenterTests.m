@@ -256,16 +256,4 @@
     OCMVerify([self.routerMock showAlertErrorWithMessage:nil]);
 }
 
-- (void)testThatPresenterDidTriggerViewWillAppearCorrectly {
-    // given
-    self.stateStorage.lectureObjectId = @"id";
-    
-    // when
-    [self.presenter didTriggerViewWillAppear];
-    
-    // then
-    OCMVerify([self.interactorMock obtainLectureWithObjectId:self.stateStorage.lectureObjectId]);
-    OCMVerify([self.interactorMock updateDownloadingDelegateWithLectureMaterials:OCMOCK_ANY]);
-}
-
 @end

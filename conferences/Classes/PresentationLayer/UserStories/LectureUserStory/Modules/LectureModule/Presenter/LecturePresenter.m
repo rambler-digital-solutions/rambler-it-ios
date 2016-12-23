@@ -45,6 +45,9 @@
     SpeakerPlainObject *speaker = lecture.speaker;
     self.stateStorage.speakerObjectId = speaker.speakerId;
     
+    NSArray *lectureMaterials = [lecture.lectureMaterials allObjects];
+    [self.interactor updateDownloadingDelegateWithLectureMaterials:lectureMaterials];
+    
     self.stateStorage.lectureViewModel = [self.mapperLectureViewModel mapLectureViewModelFromLecturePlainObject:lecture];
     [self.view configureViewWithLecture:self.stateStorage.lectureViewModel];
 }
@@ -78,12 +81,6 @@
     NSArray *activitiyItems = [self.interactor obtainActivityItemsForLecture:lecture];
     
     [self.router openShareModuleWithActivityItems:activitiyItems];
-}
-
-- (void)didTriggerViewWillAppear {
-    LecturePlainObject *lecture = [self.interactor obtainLectureWithObjectId:self.stateStorage.lectureObjectId];
-    NSArray *lectureMaterials = [lecture.lectureMaterials allObjects];
-    [self.interactor updateDownloadingDelegateWithLectureMaterials:lectureMaterials];
 }
 
 #pragma mark - LectureMaterialCacheDelegate

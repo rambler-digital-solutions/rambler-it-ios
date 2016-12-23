@@ -42,12 +42,11 @@ static CGFloat kTableViewFooterHeight = 16.0f;
     [self cd_startObserveProtocols:@[@protocol(LectureInfoTableViewCellActionProtocol),
                                      @protocol(TagTableViewCellDelegate),
                                      @protocol(LectureMaterialCacheDelegate)]];
-    [self.output setupView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.output didTriggerViewWillAppear];
+    [self.output setupView];
     [self rcf_forceRotateToOrientation:UIDeviceOrientationPortrait];
 }
 
