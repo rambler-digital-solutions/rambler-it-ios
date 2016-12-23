@@ -28,7 +28,7 @@
  */
 @interface CollectionViewAnimator : NSObject
 
-@property (nonatomic, strong, readonly) UICollectionView *collectionView;
+@property (nonatomic, weak, readonly) UICollectionView *collectionView;
 
 - (instancetype)initWithCollectionView:(UICollectionView *)collectionView;
 
