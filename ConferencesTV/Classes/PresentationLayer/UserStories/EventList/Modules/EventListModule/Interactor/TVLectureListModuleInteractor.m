@@ -14,4 +14,10 @@
 
 #pragma mark - Методы TVLectureListModuleInteractorInput
 
+- (void)updateLectureListWithTags:(NSSet <TagPlainObject *> *)tags {
+    // TODO: Запрос списка лекций по набору тегов
+    
+    [self.output didUpdateLectureListWithLectures:nil];
+}
+
 @end

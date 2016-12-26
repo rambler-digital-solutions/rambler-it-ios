@@ -8,6 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+@class TagPlainObject;
+
 @protocol TVLectureListModuleInteractorInput <NSObject>
+
+/**
+ @author Porokhov Artem
+ 
+ Метод обновляет список лекций с фильтром по заданным тегам
+ */
+- (void)updateLectureListWithTags:(NSSet <TagPlainObject *> *)tags;
 
 @end

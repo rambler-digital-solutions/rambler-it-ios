@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class LecturePlainObject;
+
 @protocol TVLectureListModuleViewInput <NSObject>
 
 /**
@@ -16,5 +18,12 @@
  Метод настраивает начальный стейт view
  */
 - (void)setupInitialState;
+
+/**
+ @author Porokhov Artem
+ 
+ Метод обновляет коллекцию лекций
+ */
+- (void)updateLectureListWithLectures:(NSArray <LecturePlainObject *> *)lectures;
 
 @end

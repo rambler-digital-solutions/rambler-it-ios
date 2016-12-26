@@ -8,6 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+@class LecturePlainObject;
+
 @protocol TVLectureListModuleInteractorOutput <NSObject>
+
+/**
+ @author Porokhov Artem
+ 
+ Метод отправляет полученный список лекций презентеру
+ */
+- (void)didUpdateLectureListWithLectures:(NSArray <LecturePlainObject *> *)lectures;
 
 @end

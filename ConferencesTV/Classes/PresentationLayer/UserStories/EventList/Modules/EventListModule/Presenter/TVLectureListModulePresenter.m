@@ -24,8 +24,14 @@
 
 - (void)didTriggerViewReadyEvent {
 	[self.view setupInitialState];
+    
+    [self.interactor updateLectureListWithTags:nil];
 }
 
 #pragma mark - Методы TVLectureListModuleInteractorOutput
+
+- (void)didUpdateLectureListWithLectures:(NSArray<LecturePlainObject *> *)lectures {
+    [self.view updateLectureListWithLectures:lectures];
+}
 
 @end
