@@ -16,4 +16,6 @@
 
 @property (nonatomic, strong) id<TVLectureListModuleViewOutput> output;
 
+@property (nonatomic, weak) IBOutlet UICollectionView *lecturesCollectionView;
+
 @end
