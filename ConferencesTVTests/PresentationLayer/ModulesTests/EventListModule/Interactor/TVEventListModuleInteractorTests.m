@@ -1,5 +1,5 @@
 //
-//  TVEventListModuleTVEventListModuleInteractorTests.m
+//  TVLectureListModuleTVLectureListModuleInteractorTests.m
 //  Conferences
 //
 //  Created by Porokhov Artem on 21/12/2016.
@@ -9,28 +9,28 @@
 #import <XCTest/XCTest.h>
 #import <OCMock/OCMock.h>
 
-#import "TVEventListModuleInteractor.h"
+#import "TVLectureListModuleInteractor.h"
 
-#import "TVEventListModuleInteractorOutput.h"
+#import "TVLectureListModuleInteractorOutput.h"
 
-@interface TVEventListModuleInteractorTests : XCTestCase
+@interface TVLectureListModuleInteractorTests : XCTestCase
 
-@property (nonatomic, strong) TVEventListModuleInteractor *interactor;
+@property (nonatomic, strong) TVLectureListModuleInteractor *interactor;
 
 @property (nonatomic, strong) id mockOutput;
 
 @end
 
-@implementation TVEventListModuleInteractorTests
+@implementation TVLectureListModuleInteractorTests
 
 #pragma mark - Настройка окружения для тестирования
 
 - (void)setUp {
     [super setUp];
 
-    self.interactor = [[TVEventListModuleInteractor alloc] init];
+    self.interactor = [[TVLectureListModuleInteractor alloc] init];
 
-    self.mockOutput = OCMProtocolMock(@protocol(TVEventListModuleInteractorOutput));
+    self.mockOutput = OCMProtocolMock(@protocol(TVLectureListModuleInteractorOutput));
 
     self.interactor.output = self.mockOutput;
 }
@@ -43,6 +43,6 @@
     [super tearDown];
 }
 
-#pragma mark - Тестирование методов TVEventListModuleInteractorInput
+#pragma mark - Тестирование методов TVLectureListModuleInteractorInput
 
 @end

@@ -1,5 +1,5 @@
 //
-//  TVEventListModuleTVEventListModuleModuleInput.h
+//  TVLectureListModuleTVLectureListModuleModuleInput.h
 //  Conferences
 //
 //  Created by Porokhov Artem on 21/12/2016.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <ViperMcFlurry/ViperMcFlurry.h>
 
-@protocol TVEventListModuleModuleInput <RamblerViperModuleInput>
+@protocol TVLectureListModuleModuleInput <RamblerViperModuleInput>
 
 /**
  @author Porokhov Artem

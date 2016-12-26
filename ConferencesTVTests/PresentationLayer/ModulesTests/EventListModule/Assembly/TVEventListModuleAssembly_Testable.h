@@ -1,23 +1,23 @@
 //
-//  TVEventListModuleTVEventListModuleAssembly_Testable.h
+//  TVLectureListModuleTVLectureListModuleAssembly_Testable.h
 //  Conferences
 //
 //  Created by Porokhov Artem on 21/12/2016.
 //  Copyright © 2016 Rambler&Co. All rights reserved.
 //
 
-#import "TVEventListModuleAssembly.h"
+#import "TVLectureListModuleAssembly.h"
 
-@class TVEventListModuleViewController;
-@class TVEventListModuleInteractor;
-@class TVEventListModulePresenter;
-@class TVEventListModuleRouter;
+@class TVLectureListModuleViewController;
+@class TVLectureListModuleInteractor;
+@class TVLectureListModulePresenter;
+@class TVLectureListModuleRouter;
 
-@interface TVEventListModuleAssembly ()
+@interface TVLectureListModuleAssembly ()
 
-- (TVEventListModuleViewController *)viewEventListModuleModule;
-- (TVEventListModulePresenter *)presenterEventListModuleModule;
-- (TVEventListModuleInteractor *)interactorEventListModuleModule;
-- (TVEventListModuleRouter *)routerEventListModuleModule;
+- (TVLectureListModuleViewController *)viewEventListModuleModule;
+- (TVLectureListModulePresenter *)presenterEventListModuleModule;
+- (TVLectureListModuleInteractor *)interactorEventListModuleModule;
+- (TVLectureListModuleRouter *)routerEventListModuleModule;
 
 @end

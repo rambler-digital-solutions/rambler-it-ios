@@ -1,5 +1,5 @@
 //
-//  TVEventListModuleTVEventListModuleViewOutput.h
+//  TVLectureListModuleTVLectureListModuleViewOutput.h
 //  Conferences
 //
 //  Created by Porokhov Artem on 21/12/2016.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol TVEventListModuleViewOutput <NSObject>
+@protocol TVLectureListModuleViewOutput <NSObject>
 
 /**
  @author Porokhov Artem

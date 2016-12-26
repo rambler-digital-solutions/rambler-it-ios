@@ -1,5 +1,5 @@
 //
-//  TVEventListModuleTVEventListModuleAssembly.h
+//  TVLectureListModuleTVLectureListModuleAssembly.h
 //  Conferences
 //
 //  Created by Porokhov Artem on 21/12/2016.
@@ -14,6 +14,6 @@
 
  EventListModule module
  */
-@interface TVEventListModuleAssembly : TyphoonAssembly <RamblerInitialAssembly>
+@interface TVLectureListModuleAssembly : TyphoonAssembly <RamblerInitialAssembly>
 
 @end

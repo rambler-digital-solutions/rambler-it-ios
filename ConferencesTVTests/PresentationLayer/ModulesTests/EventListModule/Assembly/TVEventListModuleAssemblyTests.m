@@ -1,5 +1,5 @@
 //
-//  TVEventListModuleTVEventListModuleAssemblyTests.m
+//  TVLectureListModuleTVLectureListModuleAssemblyTests.m
 //  Conferences
 //
 //  Created by Porokhov Artem on 21/12/2016.
@@ -9,28 +9,28 @@
 #import <RamblerTyphoonUtils/AssemblyTesting.h>
 #import <Typhoon/Typhoon.h>
 
-#import "TVEventListModuleAssembly.h"
-#import "TVEventListModuleAssembly_Testable.h"
+#import "TVLectureListModuleAssembly.h"
+#import "TVLectureListModuleAssembly_Testable.h"
 
-#import "TVEventListModuleViewController.h"
-#import "TVEventListModulePresenter.h"
-#import "TVEventListModuleInteractor.h"
-#import "TVEventListModuleRouter.h"
+#import "TVLectureListModuleViewController.h"
+#import "TVLectureListModulePresenter.h"
+#import "TVLectureListModuleInteractor.h"
+#import "TVLectureListModuleRouter.h"
 
-@interface TVEventListModuleAssemblyTests : RamblerTyphoonAssemblyTests
+@interface TVLectureListModuleAssemblyTests : RamblerTyphoonAssemblyTests
 
-@property (nonatomic, strong) TVEventListModuleAssembly *assembly;
+@property (nonatomic, strong) TVLectureListModuleAssembly *assembly;
 
 @end
 
-@implementation TVEventListModuleAssemblyTests
+@implementation TVLectureListModuleAssemblyTests
 
 #pragma mark - Настройка окружения для тестирования
 
 - (void)setUp {
     [super setUp];
 
-    self.assembly = [[TVEventListModuleAssembly alloc] init];
+    self.assembly = [[TVLectureListModuleAssembly alloc] init];
     [self.assembly activate];
 }
 
@@ -44,9 +44,9 @@
 
 - (void)testThatAssemblyCreatesViewController {
     // given
-    Class targetClass = [TVEventListModuleViewController class];
+    Class targetClass = [TVLectureListModuleViewController class];
     NSArray *protocols = @[
-                           @protocol(TVEventListModuleViewInput)
+                           @protocol(TVLectureListModuleViewInput)
                            ];
     NSArray *dependencies = @[
                               RamblerSelector(output)
@@ -65,11 +65,11 @@
 
 - (void)testThatAssemblyCreatesPresenter {
     // given
-    Class targetClass = [TVEventListModulePresenter class];
+    Class targetClass = [TVLectureListModulePresenter class];
     NSArray *protocols = @[
-                           @protocol(TVEventListModuleModuleInput),
-                           @protocol(TVEventListModuleViewOutput),
-                           @protocol(TVEventListModuleInteractorOutput)
+                           @protocol(TVLectureListModuleModuleInput),
+                           @protocol(TVLectureListModuleViewOutput),
+                           @protocol(TVLectureListModuleInteractorOutput)
                            ];
     NSArray *dependencies = @[
                               RamblerSelector(interactor),
@@ -90,9 +90,9 @@
 
 - (void)testThatAssemblyCreatesInteractor {
     // given
-    Class targetClass = [TVEventListModuleInteractor class];
+    Class targetClass = [TVLectureListModuleInteractor class];
     NSArray *protocols = @[
-                           @protocol(TVEventListModuleInteractorInput)
+                           @protocol(TVLectureListModuleInteractorInput)
                            ];
     NSArray *dependencies = @[
                               RamblerSelector(output)
@@ -111,9 +111,9 @@
 
 - (void)testThatAssemblyCreatesRouter {
     // given
-    Class targetClass = [TVEventListModuleRouter class];
+    Class targetClass = [TVLectureListModuleRouter class];
     NSArray *protocols = @[
-                           @protocol(TVEventListModuleRouterInput)
+                           @protocol(TVLectureListModuleRouterInput)
                            ];
     NSArray *dependencies = @[
                               RamblerSelector(transitionHandler)

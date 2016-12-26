@@ -1,5 +1,5 @@
 //
-//  TVEventListModuleTVEventListModuleViewControllerTests.m
+//  TVLectureListModuleTVLectureListModuleViewControllerTests.m
 //  Conferences
 //
 //  Created by Porokhov Artem on 21/12/2016.
@@ -9,28 +9,28 @@
 #import <XCTest/XCTest.h>
 #import <OCMock/OCMock.h>
 
-#import "TVEventListModuleViewController.h"
+#import "TVLectureListModuleViewController.h"
 
-#import "TVEventListModuleViewOutput.h"
+#import "TVLectureListModuleViewOutput.h"
 
-@interface TVEventListModuleViewControllerTests : XCTestCase
+@interface TVLectureListModuleViewControllerTests : XCTestCase
 
-@property (nonatomic, strong) TVEventListModuleViewController *controller;
+@property (nonatomic, strong) TVLectureListModuleViewController *controller;
 
 @property (nonatomic, strong) id mockOutput;
 
 @end
 
-@implementation TVEventListModuleViewControllerTests
+@implementation TVLectureListModuleViewControllerTests
 
 #pragma mark - Настройка окружения для тестирования
 
 - (void)setUp {
     [super setUp];
 
-    self.controller = [[TVEventListModuleViewController alloc] init];
+    self.controller = [[TVLectureListModuleViewController alloc] init];
 
-    self.mockOutput = OCMProtocolMock(@protocol(TVEventListModuleViewOutput));
+    self.mockOutput = OCMProtocolMock(@protocol(TVLectureListModuleViewOutput));
 
     self.controller.output = self.mockOutput;
 }
@@ -57,6 +57,6 @@
 
 #pragma mark - Тестирование методов интерфейса
 
-#pragma mark - Тестирование методов TVEventListModuleViewInput
+#pragma mark - Тестирование методов TVLectureListModuleViewInput
 
 @end

@@ -1,5 +1,5 @@
 //
-//  TVEventListModuleTVEventListModulePresenterTests.m
+//  TVLectureListModuleTVLectureListModulePresenterTests.m
 //  Conferences
 //
 //  Created by Porokhov Artem on 21/12/2016.
@@ -9,15 +9,15 @@
 #import <XCTest/XCTest.h>
 #import <OCMock/OCMock.h>
 
-#import "TVEventListModulePresenter.h"
+#import "TVLectureListModulePresenter.h"
 
-#import "TVEventListModuleViewInput.h"
-#import "TVEventListModuleInteractorInput.h"
-#import "TVEventListModuleRouterInput.h"
+#import "TVLectureListModuleViewInput.h"
+#import "TVLectureListModuleInteractorInput.h"
+#import "TVLectureListModuleRouterInput.h"
 
-@interface TVEventListModulePresenterTests : XCTestCase
+@interface TVLectureListModulePresenterTests : XCTestCase
 
-@property (nonatomic, strong) TVEventListModulePresenter *presenter;
+@property (nonatomic, strong) TVLectureListModulePresenter *presenter;
 
 @property (nonatomic, strong) id mockInteractor;
 @property (nonatomic, strong) id mockRouter;
@@ -25,18 +25,18 @@
 
 @end
 
-@implementation TVEventListModulePresenterTests
+@implementation TVLectureListModulePresenterTests
 
 #pragma mark - Настройка окружения для тестирования
 
 - (void)setUp {
     [super setUp];
 
-    self.presenter = [[TVEventListModulePresenter alloc] init];
+    self.presenter = [[TVLectureListModulePresenter alloc] init];
 
-    self.mockInteractor = OCMProtocolMock(@protocol(TVEventListModuleInteractorInput));
-    self.mockRouter = OCMProtocolMock(@protocol(TVEventListModuleRouterInput));
-    self.mockView = OCMProtocolMock(@protocol(TVEventListModuleViewInput));
+    self.mockInteractor = OCMProtocolMock(@protocol(TVLectureListModuleInteractorInput));
+    self.mockRouter = OCMProtocolMock(@protocol(TVLectureListModuleRouterInput));
+    self.mockView = OCMProtocolMock(@protocol(TVLectureListModuleViewInput));
 
     self.presenter.interactor = self.mockInteractor;
     self.presenter.router = self.mockRouter;
@@ -53,9 +53,9 @@
     [super tearDown];
 }
 
-#pragma mark - Тестирование методов TVEventListModuleModuleInput
+#pragma mark - Тестирование методов TVLectureListModuleModuleInput
 
-#pragma mark - Тестирование методов TVEventListModuleViewOutput
+#pragma mark - Тестирование методов TVLectureListModuleViewOutput
 
 - (void)testThatPresenterHandlesViewReadyEvent {
     // given
@@ -68,6 +68,6 @@
     OCMVerify([self.mockView setupInitialState]);
 }
 
-#pragma mark - Тестирование методов TVEventListModuleInteractorOutput
+#pragma mark - Тестирование методов TVLectureListModuleInteractorOutput
 
 @end

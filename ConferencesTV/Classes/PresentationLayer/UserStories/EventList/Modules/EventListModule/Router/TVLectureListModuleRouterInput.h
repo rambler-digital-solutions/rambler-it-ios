@@ -1,5 +1,5 @@
 //
-//  TVEventListModuleTVEventListModuleRouterInput.h
+//  TVLectureListModuleTVLectureListModuleRouterInput.h
 //  Conferences
 //
 //  Created by Porokhov Artem on 21/12/2016.
@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol TVEventListModuleRouterInput <NSObject>
+@protocol TVLectureListModuleRouterInput <NSObject>
 
 @end

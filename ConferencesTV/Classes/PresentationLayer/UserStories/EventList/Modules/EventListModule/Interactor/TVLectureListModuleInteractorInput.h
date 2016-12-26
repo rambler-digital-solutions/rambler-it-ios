@@ -1,5 +1,5 @@
 //
-//  TVEventListModuleTVEventListModuleInteractorInput.h
+//  TVLectureListModuleTVLectureListModuleInteractorInput.h
 //  Conferences
 //
 //  Created by Porokhov Artem on 21/12/2016.
@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol TVEventListModuleInteractorInput <NSObject>
+@protocol TVLectureListModuleInteractorInput <NSObject>
 
 @end

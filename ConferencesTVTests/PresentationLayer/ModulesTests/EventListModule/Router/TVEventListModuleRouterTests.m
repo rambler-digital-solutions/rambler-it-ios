@@ -1,5 +1,5 @@
 //
-//  TVEventListModuleTVEventListModuleRouterTests.m
+//  TVLectureListModuleTVLectureListModuleRouterTests.m
 //  Conferences
 //
 //  Created by Porokhov Artem on 21/12/2016.
@@ -9,22 +9,22 @@
 #import <XCTest/XCTest.h>
 #import <OCMock/OCMock.h>
 
-#import "TVEventListModuleRouter.h"
+#import "TVLectureListModuleRouter.h"
 
-@interface TVEventListModuleRouterTests : XCTestCase
+@interface TVLectureListModuleRouterTests : XCTestCase
 
-@property (nonatomic, strong) TVEventListModuleRouter *router;
+@property (nonatomic, strong) TVLectureListModuleRouter *router;
 
 @end
 
-@implementation TVEventListModuleRouterTests
+@implementation TVLectureListModuleRouterTests
 
 #pragma mark - Настройка окружения для тестирования
 
 - (void)setUp {
     [super setUp];
 
-    self.router = [[TVEventListModuleRouter alloc] init];
+    self.router = [[TVLectureListModuleRouter alloc] init];
 }
 
 - (void)tearDown {

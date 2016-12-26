@@ -799,12 +799,12 @@
 		ADDA714100CAC44CE5771D5C /* TVEventListModuleAssemblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1991FAD2E1C161ABA001E353 /* TVEventListModuleAssemblyTests.m */; };
 		B844903CD5D6757D08026D5E /* libPods-Conferences.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F15F66C7FD75B9A89EF39FB4 /* libPods-Conferences.a */; };
 		BC47E9750E102E570F2F0A94 /* TVEventListModuleInteractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E72BBC4767EF33333E95EBB /* TVEventListModuleInteractorTests.m */; };
-		C31E1A271E0AEF9600039EAF /* TVEventListModuleAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = C31E1A261E0AEF9600039EAF /* TVEventListModuleAssembly.m */; };
-		C31E1A2C1E0AEFAE00039EAF /* TVEventListModuleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C31E1A291E0AEFAE00039EAF /* TVEventListModuleViewController.m */; };
-		C31E1A301E0AEFC500039EAF /* TVEventListModulePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = C31E1A2F1E0AEFC500039EAF /* TVEventListModulePresenter.m */; };
-		C31E1A351E0AF09E00039EAF /* TVEventListModuleInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = C31E1A321E0AF09E00039EAF /* TVEventListModuleInteractor.m */; };
-		C31E1A391E0AF0D400039EAF /* TVEventListModuleRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = C31E1A371E0AF0D400039EAF /* TVEventListModuleRouter.m */; };
-		C31E1A3C1E0AF23A00039EAF /* EventList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C31E1A3B1E0AF23A00039EAF /* EventList.storyboard */; };
+		C31E1A271E0AEF9600039EAF /* TVLectureListModuleAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = C31E1A261E0AEF9600039EAF /* TVLectureListModuleAssembly.m */; };
+		C31E1A2C1E0AEFAE00039EAF /* TVLectureListModuleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C31E1A291E0AEFAE00039EAF /* TVLectureListModuleViewController.m */; };
+		C31E1A301E0AEFC500039EAF /* TVLectureListModulePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = C31E1A2F1E0AEFC500039EAF /* TVLectureListModulePresenter.m */; };
+		C31E1A351E0AF09E00039EAF /* TVLectureListModuleInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = C31E1A321E0AF09E00039EAF /* TVLectureListModuleInteractor.m */; };
+		C31E1A391E0AF0D400039EAF /* TVLectureListModuleRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = C31E1A371E0AF0D400039EAF /* TVLectureListModuleRouter.m */; };
+		C31E1A3C1E0AF23A00039EAF /* LectureList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C31E1A3B1E0AF23A00039EAF /* LectureList.storyboard */; };
 		C33C17A11E02E80400BE21D8 /* ConferencesTVTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C33C17A01E02E80400BE21D8 /* ConferencesTVTests.m */; };
 		C33C17B01E02ECDB00BE21D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C33C17AF1E02ECDB00BE21D8 /* Assets.xcassets */; };
 		C33C17B31E02EDFF00BE21D8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C33C17B11E02EDFF00BE21D8 /* Info.plist */; };
@@ -2099,23 +2099,23 @@
 		9FFEAF0A1D2E5CE0006E9649 /* AppleMapsLinkBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppleMapsLinkBuilder.h; path = MapLinkBuilder/AppleMapsLinkBuilder.h; sourceTree = "<group>"; };
 		9FFEAF0B1D2E5CE0006E9649 /* AppleMapsLinkBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppleMapsLinkBuilder.m; path = MapLinkBuilder/AppleMapsLinkBuilder.m; sourceTree = "<group>"; };
 		BB481A1BA0B7D2DBE3750B94 /* Pods-Conferences.nightly.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conferences.nightly.xcconfig"; path = "Pods/Target Support Files/Pods-Conferences/Pods-Conferences.nightly.xcconfig"; sourceTree = "<group>"; };
-		C31E1A251E0AEF9600039EAF /* TVEventListModuleAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TVEventListModuleAssembly.h; path = ConferencesTV/Classes/PresentationLayer/UserStories/EventList/Modules/EventListModule/Assembly/TVEventListModuleAssembly.h; sourceTree = SOURCE_ROOT; };
-		C31E1A261E0AEF9600039EAF /* TVEventListModuleAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TVEventListModuleAssembly.m; path = ConferencesTV/Classes/PresentationLayer/UserStories/EventList/Modules/EventListModule/Assembly/TVEventListModuleAssembly.m; sourceTree = SOURCE_ROOT; };
-		C31E1A281E0AEFAE00039EAF /* TVEventListModuleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TVEventListModuleViewController.h; path = ConferencesTV/Classes/PresentationLayer/UserStories/EventList/Modules/EventListModule/View/TVEventListModuleViewController.h; sourceTree = SOURCE_ROOT; };
-		C31E1A291E0AEFAE00039EAF /* TVEventListModuleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TVEventListModuleViewController.m; path = ConferencesTV/Classes/PresentationLayer/UserStories/EventList/Modules/EventListModule/View/TVEventListModuleViewController.m; sourceTree = SOURCE_ROOT; };
-		C31E1A2A1E0AEFAE00039EAF /* TVEventListModuleViewInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TVEventListModuleViewInput.h; path = ConferencesTV/Classes/PresentationLayer/UserStories/EventList/Modules/EventListModule/View/TVEventListModuleViewInput.h; sourceTree = SOURCE_ROOT; };
-		C31E1A2B1E0AEFAE00039EAF /* TVEventListModuleViewOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TVEventListModuleViewOutput.h; path = ConferencesTV/Classes/PresentationLayer/UserStories/EventList/Modules/EventListModule/View/TVEventListModuleViewOutput.h; sourceTree = SOURCE_ROOT; };
-		C31E1A2D1E0AEFC500039EAF /* TVEventListModuleModuleInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TVEventListModuleModuleInput.h; path = ConferencesTV/Classes/PresentationLayer/UserStories/EventList/Modules/EventListModule/Presenter/TVEventListModuleModuleInput.h; sourceTree = SOURCE_ROOT; };
-		C31E1A2E1E0AEFC500039EAF /* TVEventListModulePresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TVEventListModulePresenter.h; path = ConferencesTV/Classes/PresentationLayer/UserStories/EventList/Modules/EventListModule/Presenter/TVEventListModulePresenter.h; sourceTree = SOURCE_ROOT; };
-		C31E1A2F1E0AEFC500039EAF /* TVEventListModulePresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TVEventListModulePresenter.m; path = ConferencesTV/Classes/PresentationLayer/UserStories/EventList/Modules/EventListModule/Presenter/TVEventListModulePresenter.m; sourceTree = SOURCE_ROOT; };
-		C31E1A311E0AF09E00039EAF /* TVEventListModuleInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TVEventListModuleInteractor.h; path = ConferencesTV/Classes/PresentationLayer/UserStories/EventList/Modules/EventListModule/Interactor/TVEventListModuleInteractor.h; sourceTree = SOURCE_ROOT; };
-		C31E1A321E0AF09E00039EAF /* TVEventListModuleInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TVEventListModuleInteractor.m; path = ConferencesTV/Classes/PresentationLayer/UserStories/EventList/Modules/EventListModule/Interactor/TVEventListModuleInteractor.m; sourceTree = SOURCE_ROOT; };
-		C31E1A331E0AF09E00039EAF /* TVEventListModuleInteractorInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TVEventListModuleInteractorInput.h; path = ConferencesTV/Classes/PresentationLayer/UserStories/EventList/Modules/EventListModule/Interactor/TVEventListModuleInteractorInput.h; sourceTree = SOURCE_ROOT; };
-		C31E1A341E0AF09E00039EAF /* TVEventListModuleInteractorOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TVEventListModuleInteractorOutput.h; path = ConferencesTV/Classes/PresentationLayer/UserStories/EventList/Modules/EventListModule/Interactor/TVEventListModuleInteractorOutput.h; sourceTree = SOURCE_ROOT; };
-		C31E1A361E0AF0D400039EAF /* TVEventListModuleRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TVEventListModuleRouter.h; path = ConferencesTV/Classes/PresentationLayer/UserStories/EventList/Modules/EventListModule/Router/TVEventListModuleRouter.h; sourceTree = SOURCE_ROOT; };
-		C31E1A371E0AF0D400039EAF /* TVEventListModuleRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TVEventListModuleRouter.m; path = ConferencesTV/Classes/PresentationLayer/UserStories/EventList/Modules/EventListModule/Router/TVEventListModuleRouter.m; sourceTree = SOURCE_ROOT; };
-		C31E1A381E0AF0D400039EAF /* TVEventListModuleRouterInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TVEventListModuleRouterInput.h; path = ConferencesTV/Classes/PresentationLayer/UserStories/EventList/Modules/EventListModule/Router/TVEventListModuleRouterInput.h; sourceTree = SOURCE_ROOT; };
-		C31E1A3B1E0AF23A00039EAF /* EventList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = EventList.storyboard; path = ConferencesTV/Classes/PresentationLayer/UserStories/EventList/Storyboard/EventList.storyboard; sourceTree = SOURCE_ROOT; };
+		C31E1A251E0AEF9600039EAF /* TVLectureListModuleAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TVLectureListModuleAssembly.h; path = ConferencesTV/Classes/PresentationLayer/UserStories/EventList/Modules/EventListModule/Assembly/TVLectureListModuleAssembly.h; sourceTree = SOURCE_ROOT; };
+		C31E1A261E0AEF9600039EAF /* TVLectureListModuleAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TVLectureListModuleAssembly.m; path = ConferencesTV/Classes/PresentationLayer/UserStories/EventList/Modules/EventListModule/Assembly/TVLectureListModuleAssembly.m; sourceTree = SOURCE_ROOT; };
+		C31E1A281E0AEFAE00039EAF /* TVLectureListModuleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TVLectureListModuleViewController.h; path = ConferencesTV/Classes/PresentationLayer/UserStories/EventList/Modules/EventListModule/View/TVLectureListModuleViewController.h; sourceTree = SOURCE_ROOT; };
+		C31E1A291E0AEFAE00039EAF /* TVLectureListModuleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TVLectureListModuleViewController.m; path = ConferencesTV/Classes/PresentationLayer/UserStories/EventList/Modules/EventListModule/View/TVLectureListModuleViewController.m; sourceTree = SOURCE_ROOT; };
+		C31E1A2A1E0AEFAE00039EAF /* TVLectureListModuleViewInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TVLectureListModuleViewInput.h; path = ConferencesTV/Classes/PresentationLayer/UserStories/EventList/Modules/EventListModule/View/TVLectureListModuleViewInput.h; sourceTree = SOURCE_ROOT; };
+		C31E1A2B1E0AEFAE00039EAF /* TVLectureListModuleViewOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TVLectureListModuleViewOutput.h; path = ConferencesTV/Classes/PresentationLayer/UserStories/EventList/Modules/EventListModule/View/TVLectureListModuleViewOutput.h; sourceTree = SOURCE_ROOT; };
+		C31E1A2D1E0AEFC500039EAF /* TVLectureListModuleModuleInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TVLectureListModuleModuleInput.h; path = ConferencesTV/Classes/PresentationLayer/UserStories/EventList/Modules/EventListModule/Presenter/TVLectureListModuleModuleInput.h; sourceTree = SOURCE_ROOT; };
+		C31E1A2E1E0AEFC500039EAF /* TVLectureListModulePresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TVLectureListModulePresenter.h; path = ConferencesTV/Classes/PresentationLayer/UserStories/EventList/Modules/EventListModule/Presenter/TVLectureListModulePresenter.h; sourceTree = SOURCE_ROOT; };
+		C31E1A2F1E0AEFC500039EAF /* TVLectureListModulePresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TVLectureListModulePresenter.m; path = ConferencesTV/Classes/PresentationLayer/UserStories/EventList/Modules/EventListModule/Presenter/TVLectureListModulePresenter.m; sourceTree = SOURCE_ROOT; };
+		C31E1A311E0AF09E00039EAF /* TVLectureListModuleInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TVLectureListModuleInteractor.h; path = ConferencesTV/Classes/PresentationLayer/UserStories/EventList/Modules/EventListModule/Interactor/TVLectureListModuleInteractor.h; sourceTree = SOURCE_ROOT; };
+		C31E1A321E0AF09E00039EAF /* TVLectureListModuleInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TVLectureListModuleInteractor.m; path = ConferencesTV/Classes/PresentationLayer/UserStories/EventList/Modules/EventListModule/Interactor/TVLectureListModuleInteractor.m; sourceTree = SOURCE_ROOT; };
+		C31E1A331E0AF09E00039EAF /* TVLectureListModuleInteractorInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TVLectureListModuleInteractorInput.h; path = ConferencesTV/Classes/PresentationLayer/UserStories/EventList/Modules/EventListModule/Interactor/TVLectureListModuleInteractorInput.h; sourceTree = SOURCE_ROOT; };
+		C31E1A341E0AF09E00039EAF /* TVLectureListModuleInteractorOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TVLectureListModuleInteractorOutput.h; path = ConferencesTV/Classes/PresentationLayer/UserStories/EventList/Modules/EventListModule/Interactor/TVLectureListModuleInteractorOutput.h; sourceTree = SOURCE_ROOT; };
+		C31E1A361E0AF0D400039EAF /* TVLectureListModuleRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TVLectureListModuleRouter.h; path = ConferencesTV/Classes/PresentationLayer/UserStories/EventList/Modules/EventListModule/Router/TVLectureListModuleRouter.h; sourceTree = SOURCE_ROOT; };
+		C31E1A371E0AF0D400039EAF /* TVLectureListModuleRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TVLectureListModuleRouter.m; path = ConferencesTV/Classes/PresentationLayer/UserStories/EventList/Modules/EventListModule/Router/TVLectureListModuleRouter.m; sourceTree = SOURCE_ROOT; };
+		C31E1A381E0AF0D400039EAF /* TVLectureListModuleRouterInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TVLectureListModuleRouterInput.h; path = ConferencesTV/Classes/PresentationLayer/UserStories/EventList/Modules/EventListModule/Router/TVLectureListModuleRouterInput.h; sourceTree = SOURCE_ROOT; };
+		C31E1A3B1E0AF23A00039EAF /* LectureList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LectureList.storyboard; path = ConferencesTV/Classes/PresentationLayer/UserStories/EventList/Storyboard/LectureList.storyboard; sourceTree = SOURCE_ROOT; };
 		C33C17871E02E80300BE21D8 /* ConferencesTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConferencesTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C33C179C1E02E80400BE21D8 /* ConferencesTVTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConferencesTVTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C33C17A01E02E80400BE21D8 /* ConferencesTVTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConferencesTVTests.m; sourceTree = "<group>"; };
@@ -2316,12 +2316,13 @@
 			path = UberRidesAssemblyTests;
 			sourceTree = "<group>";
 		};
-		0AFF306098DC9A952DB57BA7 /* EventList */ = {
+		0AFF306098DC9A952DB57BA7 /* LectureList */ = {
 			isa = PBXGroup;
 			children = (
 				C31E1A3A1E0AF0E400039EAF /* Storyboard */,
 				A1C8E7DAE73995EB36CCA4E3 /* Modules */,
 			);
+			name = LectureList;
 			path = EventList;
 			sourceTree = "<group>";
 		};
@@ -2348,9 +2349,9 @@
 		29A32680B4EAD7DCB56EB58E /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				C31E1A2D1E0AEFC500039EAF /* TVEventListModuleModuleInput.h */,
-				C31E1A2E1E0AEFC500039EAF /* TVEventListModulePresenter.h */,
-				C31E1A2F1E0AEFC500039EAF /* TVEventListModulePresenter.m */,
+				C31E1A2D1E0AEFC500039EAF /* TVLectureListModuleModuleInput.h */,
+				C31E1A2E1E0AEFC500039EAF /* TVLectureListModulePresenter.h */,
+				C31E1A2F1E0AEFC500039EAF /* TVLectureListModulePresenter.m */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -2623,7 +2624,7 @@
 		3F491A9E1EFC70E827C05D22 /* UserStories */ = {
 			isa = PBXGroup;
 			children = (
-				0AFF306098DC9A952DB57BA7 /* EventList */,
+				0AFF306098DC9A952DB57BA7 /* LectureList */,
 			);
 			path = UserStories;
 			sourceTree = "<group>";
@@ -5718,15 +5719,15 @@
 		87960BF927BB032FD0FEA610 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				C31E1A311E0AF09E00039EAF /* TVEventListModuleInteractor.h */,
-				C31E1A321E0AF09E00039EAF /* TVEventListModuleInteractor.m */,
-				C31E1A331E0AF09E00039EAF /* TVEventListModuleInteractorInput.h */,
-				C31E1A341E0AF09E00039EAF /* TVEventListModuleInteractorOutput.h */,
+				C31E1A311E0AF09E00039EAF /* TVLectureListModuleInteractor.h */,
+				C31E1A321E0AF09E00039EAF /* TVLectureListModuleInteractor.m */,
+				C31E1A331E0AF09E00039EAF /* TVLectureListModuleInteractorInput.h */,
+				C31E1A341E0AF09E00039EAF /* TVLectureListModuleInteractorOutput.h */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
 		};
-		879A4EDAD46BD11494E1F6AC /* EventListModule */ = {
+		879A4EDAD46BD11494E1F6AC /* LectureListModule */ = {
 			isa = PBXGroup;
 			children = (
 				CF30E333F3284C23315629F4 /* Assembly */,
@@ -5735,6 +5736,7 @@
 				87960BF927BB032FD0FEA610 /* Interactor */,
 				F14A0831FC37F258A8FD0362 /* Router */,
 			);
+			name = LectureListModule;
 			path = EventListModule;
 			sourceTree = "<group>";
 		};
@@ -5761,10 +5763,10 @@
 		983BD5A1DFB450A9BCF4C749 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C31E1A281E0AEFAE00039EAF /* TVEventListModuleViewController.h */,
-				C31E1A291E0AEFAE00039EAF /* TVEventListModuleViewController.m */,
-				C31E1A2A1E0AEFAE00039EAF /* TVEventListModuleViewInput.h */,
-				C31E1A2B1E0AEFAE00039EAF /* TVEventListModuleViewOutput.h */,
+				C31E1A281E0AEFAE00039EAF /* TVLectureListModuleViewController.h */,
+				C31E1A291E0AEFAE00039EAF /* TVLectureListModuleViewController.m */,
+				C31E1A2A1E0AEFAE00039EAF /* TVLectureListModuleViewInput.h */,
+				C31E1A2B1E0AEFAE00039EAF /* TVLectureListModuleViewOutput.h */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -9128,7 +9130,7 @@
 		A1C8E7DAE73995EB36CCA4E3 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				879A4EDAD46BD11494E1F6AC /* EventListModule */,
+				879A4EDAD46BD11494E1F6AC /* LectureListModule */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -9147,7 +9149,7 @@
 		C31E1A3A1E0AF0E400039EAF /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				C31E1A3B1E0AF23A00039EAF /* EventList.storyboard */,
+				C31E1A3B1E0AF23A00039EAF /* LectureList.storyboard */,
 			);
 			name = Storyboard;
 			path = Modules;
@@ -9254,8 +9256,8 @@
 		CF30E333F3284C23315629F4 /* Assembly */ = {
 			isa = PBXGroup;
 			children = (
-				C31E1A251E0AEF9600039EAF /* TVEventListModuleAssembly.h */,
-				C31E1A261E0AEF9600039EAF /* TVEventListModuleAssembly.m */,
+				C31E1A251E0AEF9600039EAF /* TVLectureListModuleAssembly.h */,
+				C31E1A261E0AEF9600039EAF /* TVLectureListModuleAssembly.m */,
 			);
 			path = Assembly;
 			sourceTree = "<group>";
@@ -9328,9 +9330,9 @@
 		F14A0831FC37F258A8FD0362 /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				C31E1A361E0AF0D400039EAF /* TVEventListModuleRouter.h */,
-				C31E1A371E0AF0D400039EAF /* TVEventListModuleRouter.m */,
-				C31E1A381E0AF0D400039EAF /* TVEventListModuleRouterInput.h */,
+				C31E1A361E0AF0D400039EAF /* TVLectureListModuleRouter.h */,
+				C31E1A371E0AF0D400039EAF /* TVLectureListModuleRouter.m */,
+				C31E1A381E0AF0D400039EAF /* TVLectureListModuleRouterInput.h */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -9607,7 +9609,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C33C17C11E02EFFD00BE21D8 /* Main.storyboard in Resources */,
-				C31E1A3C1E0AF23A00039EAF /* EventList.storyboard in Resources */,
+				C31E1A3C1E0AF23A00039EAF /* LectureList.storyboard in Resources */,
 				C33C17B01E02ECDB00BE21D8 /* Assets.xcassets in Resources */,
 				C33C17B31E02EDFF00BE21D8 /* Info.plist in Resources */,
 			);
@@ -10560,14 +10562,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C31E1A271E0AEF9600039EAF /* TVEventListModuleAssembly.m in Sources */,
-				C31E1A351E0AF09E00039EAF /* TVEventListModuleInteractor.m in Sources */,
+				C31E1A271E0AEF9600039EAF /* TVLectureListModuleAssembly.m in Sources */,
+				C31E1A351E0AF09E00039EAF /* TVLectureListModuleInteractor.m in Sources */,
 				C33C17BE1E02EFE700BE21D8 /* ViewController.m in Sources */,
-				C31E1A391E0AF0D400039EAF /* TVEventListModuleRouter.m in Sources */,
+				C31E1A391E0AF0D400039EAF /* TVLectureListModuleRouter.m in Sources */,
 				C33C17BC1E02EFE700BE21D8 /* AppDelegate.m in Sources */,
 				C33C17B41E02EDFF00BE21D8 /* main.m in Sources */,
-				C31E1A2C1E0AEFAE00039EAF /* TVEventListModuleViewController.m in Sources */,
-				C31E1A301E0AEFC500039EAF /* TVEventListModulePresenter.m in Sources */,
+				C31E1A2C1E0AEFAE00039EAF /* TVLectureListModuleViewController.m in Sources */,
+				C31E1A301E0AEFC500039EAF /* TVLectureListModulePresenter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
