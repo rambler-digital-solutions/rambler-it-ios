@@ -513,6 +513,24 @@
 		66CCA72C1D61A654004153EA /* ReportSearchSectionTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CCA72A1D61A654004153EA /* ReportSearchSectionTitleTableViewCell.m */; };
 		66CCA72D1D61A654004153EA /* ReportSearchSectionTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66CCA72B1D61A654004153EA /* ReportSearchSectionTitleTableViewCell.xib */; };
 		66CCA7301D61A67E004153EA /* ReportSearchSectionTitleCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CCA72F1D61A67E004153EA /* ReportSearchSectionTitleCellObject.m */; };
+		66D0A0701E23853200DA8680 /* TagShowMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E999541D54AFE900161D98 /* TagShowMediator.m */; };
+		66D0A0711E23853400DA8680 /* TagModuleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E9994A1D54AFB000161D98 /* TagModuleTableViewCell.m */; };
+		66D0A0721E23853C00DA8680 /* TagModuleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66E9994B1D54AFB000161D98 /* TagModuleTableViewCell.xib */; };
+		66D0A0731E23854000DA8680 /* TagModuleTableViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E999471D54AFA500161D98 /* TagModuleTableViewCellObject.m */; };
+		66D0A0741E23854300DA8680 /* TagInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E9993F1D54AF6800161D98 /* TagInteractor.m */; };
+		66D0A0751E23854500DA8680 /* TagAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E9993C1D54AF5100161D98 /* TagAssembly.m */; };
+		66D0A0761E23854800DA8680 /* TagPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E999671D54B04A00161D98 /* TagPresenter.m */; };
+		66D0A0771E23854B00DA8680 /* TagModuleConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E9995F1D54B04100161D98 /* TagModuleConfig.m */; };
+		66D0A0781E23854D00DA8680 /* TagObjectDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E999611D54B04100161D98 /* TagObjectDescriptor.m */; };
+		66D0A0791E23855000DA8680 /* TagCollectionViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E999841D54B0CC00161D98 /* TagCollectionViewCellObject.m */; };
+		66D0A07A1E23855400DA8680 /* TagCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E999911D54B10800161D98 /* TagCollectionViewCell.m */; };
+		66D0A07B1E23855700DA8680 /* TagCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E9996B1D54B06400161D98 /* TagCollectionView.m */; };
+		66D0A07C1E23855A00DA8680 /* TagCellSizeCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E999791D54B0A000161D98 /* TagCellSizeCalculator.m */; };
+		66D0A07D1E23855D00DA8680 /* TagCellSizeConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E9997B1D54B0A000161D98 /* TagCellSizeConfig.m */; };
+		66D0A07E1E23856000DA8680 /* TagCellSizeRowCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E9997D1D54B0A000161D98 /* TagCellSizeRowCalculator.m */; };
+		66D0A07F1E23856200DA8680 /* TagDataDisplayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E999741D54B08B00161D98 /* TagDataDisplayManager.m */; };
+		66D0A0801E23856B00DA8680 /* TagCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66E9996C1D54B06400161D98 /* TagCollectionView.xib */; };
+		66D0A0811E23856E00DA8680 /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66E999921D54B10800161D98 /* TagCollectionViewCell.xib */; };
 		66DB636E1D65DCFE009071FD /* ResponseConverterOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 66DB636D1D65DCFE009071FD /* ResponseConverterOperation.m */; };
 		66E9992C1D54899C00161D98 /* LectureServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E9992B1D54899C00161D98 /* LectureServiceTests.m */; };
 		66E999321D549E2100161D98 /* LectureCellObjectsBuilderImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E999311D549E2100161D98 /* LectureCellObjectsBuilderImplementation.m */; };
@@ -9607,7 +9625,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C33C17C11E02EFFD00BE21D8 /* Main.storyboard in Resources */,
+				66D0A0811E23856E00DA8680 /* TagCollectionViewCell.xib in Resources */,
+				66D0A0721E23853C00DA8680 /* TagModuleTableViewCell.xib in Resources */,
 				C31E1A3C1E0AF23A00039EAF /* EventList.storyboard in Resources */,
+				66D0A0801E23856B00DA8680 /* TagCollectionView.xib in Resources */,
 				C33C17B01E02ECDB00BE21D8 /* Assets.xcassets in Resources */,
 				C33C17B31E02EDFF00BE21D8 /* Info.plist in Resources */,
 			);
@@ -10561,12 +10582,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				C31E1A271E0AEF9600039EAF /* TVEventListModuleAssembly.m in Sources */,
+				66D0A0741E23854300DA8680 /* TagInteractor.m in Sources */,
+				66D0A0781E23854D00DA8680 /* TagObjectDescriptor.m in Sources */,
+				66D0A07C1E23855A00DA8680 /* TagCellSizeCalculator.m in Sources */,
+				66D0A07E1E23856000DA8680 /* TagCellSizeRowCalculator.m in Sources */,
 				C31E1A351E0AF09E00039EAF /* TVEventListModuleInteractor.m in Sources */,
+				66D0A0771E23854B00DA8680 /* TagModuleConfig.m in Sources */,
+				66D0A0711E23853400DA8680 /* TagModuleTableViewCell.m in Sources */,
+				66D0A07B1E23855700DA8680 /* TagCollectionView.m in Sources */,
+				66D0A0701E23853200DA8680 /* TagShowMediator.m in Sources */,
 				C33C17BE1E02EFE700BE21D8 /* ViewController.m in Sources */,
 				C31E1A391E0AF0D400039EAF /* TVEventListModuleRouter.m in Sources */,
+				66D0A07F1E23856200DA8680 /* TagDataDisplayManager.m in Sources */,
+				66D0A0731E23854000DA8680 /* TagModuleTableViewCellObject.m in Sources */,
 				C33C17BC1E02EFE700BE21D8 /* AppDelegate.m in Sources */,
+				66D0A0761E23854800DA8680 /* TagPresenter.m in Sources */,
 				C33C17B41E02EDFF00BE21D8 /* main.m in Sources */,
+				66D0A07D1E23855D00DA8680 /* TagCellSizeConfig.m in Sources */,
+				66D0A07A1E23855400DA8680 /* TagCollectionViewCell.m in Sources */,
 				C31E1A2C1E0AEFAE00039EAF /* TVEventListModuleViewController.m in Sources */,
+				66D0A0751E23854500DA8680 /* TagAssembly.m in Sources */,
+				66D0A0791E23855000DA8680 /* TagCollectionViewCellObject.m in Sources */,
 				C31E1A301E0AEFC500039EAF /* TVEventListModulePresenter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
