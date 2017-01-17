@@ -53,10 +53,13 @@
 @property (nonatomic, readonly, assign) CGRect frameBeforeRotation;
 @property (nonatomic, readonly, assign) CGRect frameAfterRotation;
 
+#if defined(TARGET_OS_TV)
+#else
+    BOOL NIIsSupportedOrientation(UIInterfaceOrientation orientation);
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration;
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration;
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation;
-
+#endif
 @end
 
 /**

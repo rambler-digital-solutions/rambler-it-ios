@@ -108,7 +108,8 @@ UIImageView* NISnapshotViewOfViewWithTransparency(UIView* view) {
 - (id)init {
   return [self initWithDelegate:nil];
 }
-
+#if defined(TARGET_OS_TV)
+#else
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
   if (!self.isSupportedOS) {
     return;
@@ -127,7 +128,10 @@ UIImageView* NISnapshotViewOfViewWithTransparency(UIView* view) {
   self.snapshotViewBeforeRotation = NISnapshotViewOfViewWithTransparency(rotationView);
   [containerView insertSubview:self.snapshotViewBeforeRotation aboveSubview:rotationView];
 }
+#endif
 
+#if defined(TARGET_OS_TV)
+#else
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
   if (!self.isSupportedOS) {
     return;
@@ -188,7 +192,10 @@ UIImageView* NISnapshotViewOfViewWithTransparency(UIView* view) {
 
   rotationView.hidden = YES;
 }
+#endif
 
+#if defined(TARGET_OS_TV)
+#else
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
   if (!self.isSupportedOS) {
     return;
@@ -210,6 +217,7 @@ UIImageView* NISnapshotViewOfViewWithTransparency(UIView* view) {
 
   rotationView.hidden = NO;
 }
+#endif
 
 @end
 

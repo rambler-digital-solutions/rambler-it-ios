@@ -27,6 +27,8 @@
 #error "Nimbus requires ARC support."
 #endif
 
+#if defined(TARGET_OS_TV)
+#else
 BOOL NIIsSupportedOrientation(UIInterfaceOrientation orientation) {
   if (NIIsPad()) {
     return YES;
@@ -42,7 +44,10 @@ BOOL NIIsSupportedOrientation(UIInterfaceOrientation orientation) {
     }
   }
 }
+#endif
 
+#if defined(TARGET_OS_TV)
+#else
 UIInterfaceOrientation NIInterfaceOrientation(void) {
 #   if !defined(NIMBUS_APP_EXTENSIONS)
     UIInterfaceOrientation orient = UIDeviceOrientationPortrait;
@@ -60,7 +65,10 @@ UIInterfaceOrientation NIInterfaceOrientation(void) {
 
   return orient;
 }
+#endif
 
+#if defined(TARGET_OS_TV)
+#else
 BOOL NIIsLandscapePhoneOrientation(UIInterfaceOrientation orientation) {
   return NIIsPhone() && UIInterfaceOrientationIsLandscape(orientation);
 }
@@ -79,3 +87,4 @@ CGAffineTransform NIRotateTransformForOrientation(UIInterfaceOrientation orienta
     return CGAffineTransformIdentity;
   }
 }
+#endif

@@ -110,8 +110,13 @@
 - (UITableViewCellAccessoryType)accessoryTypeForObject:(id)object {
   NIObjectActions* action = [self actionForObjectOrClassOfObject:object];
   // Detail disclosure indicator takes precedence over regular disclosure indicator.
+
   if (nil != action.detailAction || nil != action.detailSelector) {
+#if defined(TARGET_OS_TV)
+      return UITableViewCellAccessoryNone;
+#else
     return UITableViewCellAccessoryDetailDisclosureButton;
+#endif
 
   } else if (nil != action.navigateAction || nil != action.navigateSelector) {
     return  UITableViewCellAccessoryDisclosureIndicator;

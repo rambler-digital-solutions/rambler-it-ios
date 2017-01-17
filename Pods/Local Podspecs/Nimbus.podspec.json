@@ -24,7 +24,8 @@
   },
   "description": "Nimbus is an iOS framework whose feature set grows only as fast as its documentation. By focusing on documentation first and features second, Nimbus hopes to be a framework that accelerates the development process of any application by being easy to use and simple to understand.",
   "platforms": {
-    "ios": "6.0"
+    "ios": "6.0",
+    "tvos": "9.0"
   },
   "requires_arc": true,
   "subspecs": [

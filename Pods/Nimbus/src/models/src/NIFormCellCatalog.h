@@ -185,8 +185,10 @@
  * @param target Receiver for didChangeSelector calls.
  * @param selector Method that is called when a segment is selected.
  */
+#if defined(TARGET_OS_TV)
+#else
 + (id)datePickerElementWithID:(NSInteger)elementID labelText:(NSString *)labelText date:(NSDate *)date datePickerMode:(UIDatePickerMode)datePickerMode didChangeTarget:(id)target didChangeSelector:(SEL)selector;
-
+#endif
 /**
  * Initializes a date picker form element with callback method for value changed events.
  *
@@ -195,11 +197,16 @@
  * @param date Initial date to show in the picker
  * @param datePickerMode UIDatePickerMode to user for the date picker
  */
+#if defined(TARGET_OS_TV)
+#else
 + (id)datePickerElementWithID:(NSInteger)elementID labelText:(NSString *)labelText date:(NSDate *)date datePickerMode:(UIDatePickerMode)datePickerMode;
-
+#endif
 @property (nonatomic, copy) NSString *labelText;
 @property (nonatomic, strong) NSDate *date;
+#if defined(TARGET_OS_TV)
+#else
 @property (nonatomic, assign) UIDatePickerMode datePickerMode;
+#endif
 @property (nonatomic, weak) id didChangeTarget;
 @property (nonatomic, assign) SEL didChangeSelector;
 
@@ -242,7 +249,10 @@
  * @ingroup TableCellCatalog
  */
 @interface NISwitchFormElementCell : NIFormElementCell <UITextFieldDelegate>
+#if defined(TARGET_OS_TV)
+#else
 @property (nonatomic, readonly, strong) UISwitch* switchControl;
+#endif
 @end
 
 /**
@@ -255,7 +265,10 @@
  * @ingroup TableCellCatalog
  */
 @interface NISliderFormElementCell : NIFormElementCell <UITextFieldDelegate>
+#if defined(TARGET_OS_TV)
+#else
 @property (nonatomic, readonly, strong) UISlider* sliderControl;
+#endif
 @end
 
 @interface NITableViewModel (NIFormElementSearch)
@@ -285,6 +298,9 @@
  */
 @interface NIDatePickerFormElementCell : NIFormElementCell <UITextFieldDelegate>
 @property (nonatomic, readonly, strong) UITextField *dateField;
+#if defined(TARGET_OS_TV)
+#else
 @property (nonatomic, readonly, strong) UIDatePicker *datePicker;
+#endif
 @end
 

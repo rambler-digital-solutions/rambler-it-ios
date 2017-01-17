@@ -152,9 +152,12 @@
     sectionPrefixToSectionIndex = [NSMutableDictionary dictionary];
 
     // The search symbol is always first in the index.
+#if defined(TARGET_OS_TV)
+#else
     if (_sectionIndexShowsSearch) {
       [titles addObject:UITableViewIndexSearch];
     }
+#endif
   }
 
   // A dynamic index shows the first letter of every section in the index in whatever order the
@@ -171,6 +174,8 @@
   } else if (NITableViewModelSectionIndexAlphabetical == _sectionIndexType) {
     // Use the localized indexed collation to create the index. In English, this will always be
     // the entire alphabet.
+#if defined(TARGET_OS_TV)
+#else
     NSArray* sectionIndexTitles = [[UILocalizedIndexedCollation currentCollation] sectionIndexTitles];
 
     // The localized indexed collection sometimes includes a # for summaries, but we might
@@ -182,6 +187,7 @@
         [titles addObject:letter];
       }
     }
+#endif
   }
 
   // Add the section summary symbol if it was requested.
@@ -260,6 +266,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
   if (tableView.tableHeaderView) {
+#if defined(TARGET_OS_TV)
+#else
     if (index == 0 && [self.sectionIndexTitles count] > 0
         && [self.sectionIndexTitles objectAtIndex:0] == UITableViewIndexSearch)  {
       // This is a hack to get the table header to appear when the user touches the
@@ -268,6 +276,7 @@
       [tableView scrollRectToVisible:tableView.tableHeaderView.bounds animated:NO];
       return -1;
     }
+#endif
   }
 
   NSString* letter = [title substringToIndex:1];

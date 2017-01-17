@@ -121,8 +121,8 @@ DEPENDENCIES:
   - MagicalRecord (~> 2.3.2)
   - MBCircularProgressBar (= 0.3.5)
   - MMBarricade (~> 1.0.1)
-  - Nimbus/Collections (from `https://github.com/rambler-ios/nimbus`)
-  - Nimbus/Models (from `https://github.com/rambler-ios/nimbus`)
+  - Nimbus/Collections (from `https://github.com/constZinovyev/nimbus.git`, branch `tvos_support`)
+  - Nimbus/Models (from `https://github.com/constZinovyev/nimbus.git`, branch `tvos_support`)
   - OCMock (= 3.3.1)
   - PureLayout (~> 3.0)
   - RamblerAppDelegateProxy (= 0.0.3)
@@ -141,7 +141,8 @@ EXTERNAL SOURCES:
     :git: https://github.com/CognitiveDisson/CrutchKit
     :tag: 0.0.10
   Nimbus:
-    :git: https://github.com/rambler-ios/nimbus
+    :branch: tvos_support
+    :git: https://github.com/constZinovyev/nimbus.git
   RamblerTyphoonUtils:
     :branch: tvos_support
     :git: https://github.com/aporohov/RamblerTyphoonUtils
@@ -151,8 +152,8 @@ CHECKOUT OPTIONS:
     :git: https://github.com/CognitiveDisson/CrutchKit
     :tag: 0.0.10
   Nimbus:
-    :commit: f87fc967a359b6977e7fa153494d8b85a61d0dc1
-    :git: https://github.com/rambler-ios/nimbus
+    :commit: ff3299f817362e5d8965ef20f625acc85931af44
+    :git: https://github.com/constZinovyev/nimbus.git
   RamblerTyphoonUtils:
     :commit: 9ec9cdd3c53d247c79d53c29a9bc4d95b669a0d5
     :git: https://github.com/aporohov/RamblerTyphoonUtils
@@ -169,7 +170,7 @@ SPEC CHECKSUMS:
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
   MBCircularProgressBar: 0b795b722a5eb5b0923822f90474e2576a1a7855
   MMBarricade: 61e17f747baa1a33cd7f8a9c75d520ca958508dd
-  Nimbus: 41be1576e98dda5d731381f10e580319df6c4f23
+  Nimbus: 7be998c8955b53136e1d16bf60b70d271434b1b2
   OCMock: f3f61e6eaa16038c30caa5798c5e49d3307b6f22
   PureLayout: f35f5384c9c4e4479df041dbe33ad7577b71ddfb
   RamblerAppDelegateProxy: a29284f46e8711663f0d279f5023469a96b27529
@@ -181,6 +182,6 @@ SPEC CHECKSUMS:
   ViperMcFlurry: 701bc3ad8d188b1f1e157ec0ddf4e77184de88b5
   XCDYouTubeKit: 90690f9e3523735dc93b8024269d991b0cfffe78
 
-PODFILE CHECKSUM: d6196dcc57e094de4c6295338c610d10524727c8
+PODFILE CHECKSUM: fcb3c56c7c9bebe9b9b2dbbb37d928c003b35863
 
 COCOAPODS: 1.1.1

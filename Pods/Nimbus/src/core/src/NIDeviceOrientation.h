@@ -53,8 +53,10 @@ extern "C" {
  *
  *      Always returns YES.
  */
+#if defined(TARGET_OS_TV)
+#else
 BOOL NIIsSupportedOrientation(UIInterfaceOrientation orientation);
-
+#endif
 /**
  * Returns the application's current interface orientation.
  *
@@ -62,7 +64,10 @@ BOOL NIIsSupportedOrientation(UIInterfaceOrientation orientation);
  *
  * @returns The current interface orientation.
  */
-UIInterfaceOrientation NIInterfaceOrientation(void);
+#if defined(TARGET_OS_TV)
+#else
+    UIInterfaceOrientation NIInterfaceOrientation(void);
+#endif
 
 /**
  * Returns YES if the device is a phone and the orientation is landscape.
@@ -72,7 +77,10 @@ UIInterfaceOrientation NIInterfaceOrientation(void);
  *
  * @returns YES if the device is a phone and orientation is landscape.
  */
-BOOL NIIsLandscapePhoneOrientation(UIInterfaceOrientation orientation);
+#if defined(TARGET_OS_TV)
+#else
+    BOOL NIIsLandscapePhoneOrientation(UIInterfaceOrientation orientation);
+#endif
 
 /**
  * Creates an affine transform for the given device orientation.
@@ -80,7 +88,10 @@ BOOL NIIsLandscapePhoneOrientation(UIInterfaceOrientation orientation);
  * This is useful for creating a transformation matrix for a view that has been added
  * directly to the window and doesn't automatically have its transformation modified.
  */
-CGAffineTransform NIRotateTransformForOrientation(UIInterfaceOrientation orientation);
+#if defined(TARGET_OS_TV)
+#else
+    CGAffineTransform NIRotateTransformForOrientation(UIInterfaceOrientation orientation);
+#endif
 
 #if defined __cplusplus
 };

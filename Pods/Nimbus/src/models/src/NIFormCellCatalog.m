@@ -159,7 +159,8 @@ static const CGFloat kDatePickerTextFieldRightMargin = 5;
 
 @implementation NIDatePickerFormElement
 
-
+#if defined(TARGET_OS_TV)
+#else
 + (id)datePickerElementWithID:(NSInteger)elementID labelText:(NSString *)labelText date:(NSDate *)date datePickerMode:(UIDatePickerMode)datePickerMode didChangeTarget:(id)target didChangeSelector:(SEL)selector {
     NIDatePickerFormElement *element = [super elementWithID:elementID];
     element.labelText = labelText;
@@ -173,6 +174,7 @@ static const CGFloat kDatePickerTextFieldRightMargin = 5;
 + (id)datePickerElementWithID:(NSInteger)elementID labelText:(NSString *)labelText date:(NSDate *)date datePickerMode:(UIDatePickerMode)datePickerMode {
     return [self datePickerElementWithID:elementID labelText:labelText date:date datePickerMode:datePickerMode didChangeTarget:nil didChangeSelector:nil];
 }
+#endif
 
 - (Class)cellClass {
     return [NIDatePickerFormElementCell class];
@@ -284,10 +286,12 @@ static const CGFloat kDatePickerTextFieldRightMargin = 5;
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
   if ((self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])) {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
-
+#if defined(TARGET_OS_TV)
+#else
     _switchControl = [[UISwitch alloc] init];
     [_switchControl addTarget:self action:@selector(switchDidChangeValue) forControlEvents:UIControlEventValueChanged];
     [self.contentView addSubview:_switchControl];
+#endif
   }
   return self;
 }
@@ -297,7 +301,8 @@ static const CGFloat kDatePickerTextFieldRightMargin = 5;
 
   UIEdgeInsets contentPadding = NICellContentPadding();
   CGRect contentFrame = UIEdgeInsetsInsetRect(self.contentView.frame, contentPadding);
-
+#if defined(TARGET_OS_TV)
+#else
   [_switchControl sizeToFit];
   CGRect frame = _switchControl.frame;
   frame.origin.y = NICGFloatFloor((self.contentView.frame.size.height - frame.size.height) / 2);
@@ -317,6 +322,7 @@ static const CGFloat kDatePickerTextFieldRightMargin = 5;
                       - kSwitchLeftMargin
                       - leftEdge);
   self.textLabel.frame = frame;
+#endif
 }
 
 - (void)prepareForReuse {
@@ -327,10 +333,16 @@ static const CGFloat kDatePickerTextFieldRightMargin = 5;
 
 - (BOOL)shouldUpdateCellWithObject:(NISwitchFormElement *)switchElement {
   if ([super shouldUpdateCellWithObject:switchElement]) {
+      
+#if defined(TARGET_OS_TV)
+#else
     _switchControl.on = switchElement.value;
+#endif
     self.textLabel.text = switchElement.labelText;
-
+#if defined(TARGET_OS_TV)
+#else
     _switchControl.tag = self.tag;
+#endif
 
     [self setNeedsLayout];
     return YES;
@@ -340,7 +352,10 @@ static const CGFloat kDatePickerTextFieldRightMargin = 5;
 
 - (void)switchDidChangeValue {
   NISwitchFormElement* switchElement = (NISwitchFormElement *)self.element;
+#if defined(TARGET_OS_TV)
+#else
   switchElement.value = _switchControl.on;
+#endif
 
   if (nil != switchElement.didChangeSelector && nil != switchElement.didChangeTarget
       && [switchElement.didChangeTarget respondsToSelector:switchElement.didChangeSelector]) {
@@ -352,8 +367,11 @@ static const CGFloat kDatePickerTextFieldRightMargin = 5;
       
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+#if defined(TARGET_OS_TV)
+#else
     [switchElement.didChangeTarget performSelector:switchElement.didChangeSelector
                                         withObject:_switchControl];
+#endif
 #pragma clang diagnostic pop
 
   }
@@ -369,10 +387,12 @@ static const CGFloat kDatePickerTextFieldRightMargin = 5;
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
   if ((self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])) {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
-
+#if defined(TARGET_OS_TV)
+#else
     _sliderControl = [[UISlider alloc] init];
     [_sliderControl addTarget:self action:@selector(sliderDidChangeValue) forControlEvents:UIControlEventValueChanged];
     [self.contentView addSubview:_sliderControl];
+#endif
   }
   return self;
 }
@@ -389,12 +409,15 @@ static const CGFloat kDatePickerTextFieldRightMargin = 5;
   self.textLabel.frame = frame;
 
   static const CGFloat kSliderLeftMargin = 8;
+#if defined(TARGET_OS_TV)
+#else
   [_sliderControl sizeToFit];
   frame = _sliderControl.frame;
   frame.origin.y = NICGFloatFloor((self.contentView.frame.size.height - frame.size.height) / 2);
   frame.origin.x = self.textLabel.frame.origin.x + self.textLabel.frame.size.width + kSliderLeftMargin;
   frame.size.width = contentFrame.size.width - frame.origin.x;
   _sliderControl.frame = frame;
+#endif
 }
 
 - (void)prepareForReuse {
@@ -405,12 +428,15 @@ static const CGFloat kDatePickerTextFieldRightMargin = 5;
 
 - (BOOL)shouldUpdateCellWithObject:(NISliderFormElement *)sliderElement {
   if ([super shouldUpdateCellWithObject:sliderElement]) {
+#if defined(TARGET_OS_TV)
+#else
     _sliderControl.minimumValue = sliderElement.minimumValue;
     _sliderControl.maximumValue = sliderElement.maximumValue;
     _sliderControl.value = sliderElement.value;
     self.textLabel.text = sliderElement.labelText;
 
     _sliderControl.tag = self.tag;
+#endif
 
     [self setNeedsLayout];
     return YES;
@@ -420,15 +446,21 @@ static const CGFloat kDatePickerTextFieldRightMargin = 5;
 
 - (void)sliderDidChangeValue {
   NISliderFormElement* sliderElement = (NISliderFormElement *)self.element;
+#if defined(TARGET_OS_TV)
+#else
   sliderElement.value = _sliderControl.value;
+#endif
 
   if (nil != sliderElement.didChangeSelector && nil != sliderElement.didChangeTarget
       && [sliderElement.didChangeTarget respondsToSelector:sliderElement.didChangeSelector]) {
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+#if defined(TARGET_OS_TV)
+#else
     [sliderElement.didChangeTarget performSelector:sliderElement.didChangeSelector
                                         withObject:_sliderControl];
+#endif
 #pragma clang diagnostic pop
   }
 }
@@ -534,11 +566,13 @@ static const CGFloat kDatePickerTextFieldRightMargin = 5;
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
   if ((self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])) {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
-    
+#if defined(TARGET_OS_TV)
+#else
     _datePicker = [[UIDatePicker alloc] init];
     [_datePicker addTarget:self 
-                    action:@selector(selectedDateDidChange) 
+                    action:@selector(selectedDateDidChange)
           forControlEvents:UIControlEventValueChanged];
+#endif
 
     _dateField = [[UITextField alloc] init];
     _dateField.delegate = self;
@@ -551,7 +585,10 @@ static const CGFloat kDatePickerTextFieldRightMargin = 5;
 #else
     _dateField.textAlignment = NSTextAlignmentRight;
 #endif
+#if defined(TARGET_OS_TV)
+#else
     _dateField.inputView = _datePicker;
+#endif
     [self.contentView addSubview:_dateField];
 
     _dumbDateField = [[UITextField alloc] init];
@@ -599,19 +636,21 @@ static const CGFloat kDatePickerTextFieldRightMargin = 5;
 - (BOOL)shouldUpdateCellWithObject:(NIDatePickerFormElement *)datePickerElement {
   if ([super shouldUpdateCellWithObject:datePickerElement]) {
     self.textLabel.text = datePickerElement.labelText;
+#if defined(TARGET_OS_TV)
+#else
     self.datePicker.datePickerMode = datePickerElement.datePickerMode;
     self.datePicker.date = datePickerElement.date;
     
     switch (self.datePicker.datePickerMode) {
       case UIDatePickerModeDate:
-        self.dateField.text = [NSDateFormatter localizedStringFromDate:self.datePicker.date 
-                                                             dateStyle:NSDateFormatterShortStyle 
+        self.dateField.text = [NSDateFormatter localizedStringFromDate:self.datePicker.date
+                                                             dateStyle:NSDateFormatterShortStyle
                                                              timeStyle:NSDateFormatterNoStyle];
         break;
         
       case UIDatePickerModeTime:
-        self.dateField.text = [NSDateFormatter localizedStringFromDate:self.datePicker.date 
-                                                             dateStyle:NSDateFormatterNoStyle 
+        self.dateField.text = [NSDateFormatter localizedStringFromDate:self.datePicker.date
+                                                             dateStyle:NSDateFormatterNoStyle
                                                              timeStyle:NSDateFormatterShortStyle];
         break;
         
@@ -623,27 +662,30 @@ static const CGFloat kDatePickerTextFieldRightMargin = 5;
           int minutes = (int)((self.datePicker.countDownDuration - hours * 3600) / 60);
           
           self.dateField.text = [NSString stringWithFormat:
-                                 NSLocalizedString(@"%d hours, %d min", 
-                                                   @"datepicker countdown hours and minutes"), 
-                                 hours, 
+                                 NSLocalizedString(@"%d hours, %d min",
+                                                   @"datepicker countdown hours and minutes"),
+                                 hours,
                                  minutes];
         }
         break;
         
       case UIDatePickerModeDateAndTime:
       default:
-        self.dateField.text = [NSDateFormatter localizedStringFromDate:self.datePicker.date 
-                                                             dateStyle:NSDateFormatterShortStyle 
+        self.dateField.text = [NSDateFormatter localizedStringFromDate:self.datePicker.date
+                                                             dateStyle:NSDateFormatterShortStyle
                                                              timeStyle:NSDateFormatterShortStyle];
         break;
     }
+#endif
 
     self.dumbDateField.text = self.dateField.text;
     
     _dateField.tag = self.tag;
-    
+#if defined(TARGET_OS_TV)
+#else
     _datePicker.date = datePickerElement.date;
     _datePicker.tag = self.tag;
+#endif
     
     [self setNeedsLayout];
     return YES;
@@ -652,16 +694,18 @@ static const CGFloat kDatePickerTextFieldRightMargin = 5;
 }
 
 - (void)selectedDateDidChange {
+#if defined(TARGET_OS_TV)
+#else
   switch (self.datePicker.datePickerMode) {
     case UIDatePickerModeDate:
-      self.dateField.text = [NSDateFormatter localizedStringFromDate:_datePicker.date 
-                                                           dateStyle:NSDateFormatterShortStyle 
+      self.dateField.text = [NSDateFormatter localizedStringFromDate:_datePicker.date
+                                                           dateStyle:NSDateFormatterShortStyle
                                                            timeStyle:NSDateFormatterNoStyle];
       break;
       
     case UIDatePickerModeTime:
-      self.dateField.text = [NSDateFormatter localizedStringFromDate:_datePicker.date 
-                                                           dateStyle:NSDateFormatterNoStyle 
+      self.dateField.text = [NSDateFormatter localizedStringFromDate:_datePicker.date
+                                                           dateStyle:NSDateFormatterNoStyle
                                                            timeStyle:NSDateFormatterShortStyle];
       break;
       
@@ -673,32 +717,39 @@ static const CGFloat kDatePickerTextFieldRightMargin = 5;
         int minutes = (int)((self.datePicker.countDownDuration - hours * 3600) / 60);
         
         self.dateField.text = [NSString stringWithFormat:
-                               NSLocalizedString(@"%d hours, %d min", 
-                                                 @"datepicker countdown hours and minutes"), 
-                               hours, 
+                               NSLocalizedString(@"%d hours, %d min",
+                                                 @"datepicker countdown hours and minutes"),
+                               hours,
                                minutes];
       }
       break;
       
     case UIDatePickerModeDateAndTime:
     default:
-      self.dateField.text = [NSDateFormatter localizedStringFromDate:_datePicker.date 
-                                                           dateStyle:NSDateFormatterShortStyle 
+      self.dateField.text = [NSDateFormatter localizedStringFromDate:_datePicker.date
+                                                           dateStyle:NSDateFormatterShortStyle
                                                            timeStyle:NSDateFormatterShortStyle];
       break;
   }
+#endif
 
   self.dumbDateField.text = self.dateField.text;
 
   NIDatePickerFormElement *datePickerElement = (NIDatePickerFormElement *)self.element;
+#if defined(TARGET_OS_TV)
+#else
   datePickerElement.date = _datePicker.date;
+#endif
   
   if (nil != datePickerElement.didChangeSelector && nil != datePickerElement.didChangeTarget
       && [datePickerElement.didChangeTarget respondsToSelector:datePickerElement.didChangeSelector]) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+#if defined(TARGET_OS_TV)
+#else
     [datePickerElement.didChangeTarget performSelector:datePickerElement.didChangeSelector
                                             withObject:_datePicker];
+#endif
 #pragma clang diagnostic pop
   }
 }

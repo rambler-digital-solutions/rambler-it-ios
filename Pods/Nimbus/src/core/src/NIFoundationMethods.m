@@ -78,6 +78,9 @@ CGRect NIFrameOfCenteredViewWithinView(UIView* viewToCenter, UIView* containerVi
 }
 
 CGSize NISizeOfStringWithLabelProperties(NSString *string, CGSize constrainedToSize, UIFont *font, NSLineBreakMode lineBreakMode, NSInteger numberOfLines) {
+#if defined(TARGET_OS_TV)
+    return CGSizeZero;
+#else
   if (string.length == 0) {
     return CGSizeZero;
   }
@@ -101,6 +104,7 @@ CGSize NISizeOfStringWithLabelProperties(NSString *string, CGSize constrainedToS
   }
 
   return size;
+#endif
 }
 
 #pragma mark - NSRange

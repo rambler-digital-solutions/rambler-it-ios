@@ -99,7 +99,12 @@ CGFloat NIMinimumTapDimension(void);
  *
  * On the iPad: always 44
  */
-CGFloat NIToolbarHeightForOrientation(UIInterfaceOrientation orientation);
+    
+#   if !defined(TARGET_OS_TV)
+    CGFloat NIToolbarHeightForOrientation(UIInterfaceOrientation orientation);
+#   else
+    CGFloat NIToolbarHeightForOrientation = 44;
+#   endif
 
 /**
  * The animation curve used when changing the status bar's visibility.

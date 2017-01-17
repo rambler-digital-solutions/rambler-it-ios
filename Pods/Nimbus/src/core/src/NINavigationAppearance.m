@@ -37,8 +37,11 @@ static NSMutableArray* sAppearanceStack = nil;
 @interface NINavigationAppearanceSnapshot : NSObject {
 @private
   BOOL _navBarTranslucent;
+#if defined(TARGET_OS_TV)
+#else
   UIBarStyle _navBarStyle;
   UIStatusBarStyle _statusBarStyle;
+#endif
   UIColor* _navBarTintColor;
   UIImage* _navBarDefaultImage;
   UIImage* _navBarLandscapePhoneImage;
@@ -52,12 +55,18 @@ static NSMutableArray* sAppearanceStack = nil;
 /**
  * Holds value of UINavigationBar's barStyle property.
  */
+#if defined(TARGET_OS_TV)
+#else
 @property (nonatomic, readonly, assign) UIBarStyle navBarStyle;
+#endif
 
 /**
  * Holds value of UIApplication's statusBarStyle property.
  */
+#if defined(TARGET_OS_TV)
+#else
 @property (nonatomic, readonly, assign) UIStatusBarStyle statusBarStyle;
+#endif
 
 /**
  * Holds value of UINavigationBar's tintColor property.
@@ -130,6 +139,8 @@ static NSMutableArray* sAppearanceStack = nil;
 - (id)initForNavigationController:(UINavigationController *)navigationController {
   self = [super init];
   if (self) {
+#if defined(TARGET_OS_TV)
+#else
 #   if !defined(NIMBUS_APP_EXTENSIONS)
       _statusBarStyle = UIStatusBarStyleDefault;
 #   else
@@ -137,6 +148,7 @@ static NSMutableArray* sAppearanceStack = nil;
 #   endif /* !defined(NIMBUS_APP_EXTENSIONS) */
 
     _navBarStyle = navigationController.navigationBar.barStyle;
+#endif
     _navBarTranslucent = navigationController.navigationBar.translucent;
     _navBarTintColor = navigationController.navigationBar.tintColor;
     if ([navigationController.navigationBar respondsToSelector:@selector(backgroundImageForBarMetrics:)])
@@ -152,12 +164,15 @@ static NSMutableArray* sAppearanceStack = nil;
 }
 
 - (void)restoreForNavigationController:(UINavigationController *)navigationController animated:(BOOL)animated {
+#if defined(TARGET_OS_TV)
+#else
 #   if !defined(NIMBUS_APP_EXTENSIONS)
     _statusBarStyle = UIStatusBarStyleDefault;
 #   else
     [[UIApplication sharedApplication] setStatusBarStyle:self.statusBarStyle animated:animated];
 #   endif /* !defined(NIMBUS_APP_EXTENSIONS) */
   navigationController.navigationBar.barStyle = self.navBarStyle;
+#endif
   navigationController.navigationBar.translucent = self.navBarTranslucent;
   navigationController.navigationBar.tintColor = self.navBarTintColor;
   if ([navigationController.navigationBar respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)])

@@ -26,6 +26,8 @@ CGFloat NIMinimumTapDimension(void) {
   return 44;
 }
 
+#if defined(TARGET_OS_TV)
+#else
 CGFloat NIToolbarHeightForOrientation(UIInterfaceOrientation orientation) {
   return (NIIsPad()
           ? 44
@@ -33,6 +35,7 @@ CGFloat NIToolbarHeightForOrientation(UIInterfaceOrientation orientation) {
              ? 44
              : 33));
 }
+#endif
 
 UIViewAnimationCurve NIStatusBarAnimationCurve(void) {
   return UIViewAnimationCurveEaseIn;
