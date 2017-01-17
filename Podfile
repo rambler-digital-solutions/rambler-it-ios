@@ -1,11 +1,13 @@
 # CocoaPods specs repository URL
 source 'https://github.com/cocoapods/Specs.git'
+project 'Conferences.xcodeproj'
 
 target 'ConferencesTV' do
     platform :tvos, '10.0'
     pod 'Typhoon', '3.5.1'
     pod 'RamblerTyphoonUtils/AssemblyCollector', :git => 'https://github.com/aporohov/RamblerTyphoonUtils', :branch => 'tvos_support'
-    
+    pod 'Nimbus/Models', :git => 'https://github.com/constZinovyev/nimbus.git', :branch => 'tvos_support'
+    pod 'Nimbus/Collections', :git => 'https://github.com/constZinovyev/nimbus.git', :branch => 'tvos_support'
     pod 'ViperMcFlurry', '1.5.2'
 end
 
@@ -26,8 +28,8 @@ target 'Conferences' do
     
     # UI
     pod 'PureLayout', '~> 3.0'
-    pod 'Nimbus/Models', :git => 'https://github.com/rambler-ios/nimbus'
-    pod 'Nimbus/Collections', :git => 'https://github.com/rambler-ios/nimbus'
+    pod 'Nimbus/Models', :git => 'https://github.com/constZinovyev/nimbus.git', :branch => 'tvos_support'
+    pod 'Nimbus/Collections', :git => 'https://github.com/constZinovyev/nimbus.git', :branch => 'tvos_support'
     pod 'UICollectionViewLeftAlignedLayout', '1.0.1'
     pod 'CrutchKit/Proxying', :git => 'https://github.com/CognitiveDisson/CrutchKit', :tag => '0.0.10'
     pod 'MBCircularProgressBar', '0.3.5'
@@ -66,7 +68,7 @@ target 'RamblerMessageExtension' do
     pod 'AFNetworking', '~> 2.6'
     
     # UI
-    pod 'Nimbus/Models', :git => 'https://github.com/rambler-ios/nimbus'
+    pod 'Nimbus/Models', :git => 'https://github.com/constZinovyev/nimbus.git', :branch => 'tvos_support'
     
     # Dependency management
     pod 'Typhoon', '~> 3.3'
