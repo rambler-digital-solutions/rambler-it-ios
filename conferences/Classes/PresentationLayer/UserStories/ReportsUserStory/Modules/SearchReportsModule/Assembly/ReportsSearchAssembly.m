@@ -27,10 +27,11 @@
 #import "ReportsSearchCellObjectsDirectorImplementation.h"
 #import "PredicateConfiguratorImplementation.h"
 #import "SearchFacadeImplementation.h"
-
-#import <Typhoon/Typhoon.h>
 #import "ServiceComponents.h"
 #import "PresentationLayerHelpersAssembly.h"
+#import "FeedbackGeneratorsAssembly.h"
+
+#import <Typhoon/Typhoon.h>
 
 @implementation ReportsSearchAssembly
 
@@ -41,6 +42,8 @@
                                                     with:[self presenterReportsSearch]];
                               [definition injectProperty:@selector(dataDisplayManager)
                                                     with:[self dataDisplayManagerReportsSearch]];
+                              [definition injectProperty:@selector(impactGenerator)
+                                                    with:[self.feedbackGeneratorsAssembly impactGeneratorSearchList]];
                           }];
 }
 

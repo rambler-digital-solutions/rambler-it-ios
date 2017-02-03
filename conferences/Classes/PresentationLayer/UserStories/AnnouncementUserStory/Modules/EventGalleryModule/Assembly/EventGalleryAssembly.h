@@ -25,6 +25,7 @@
 
 @class PonsomizerAssembly;
 @class SpotlightIndexerAssembly;
+@class FeedbackGeneratorsAssembly;
 
 /**
  @author Egor Tolstoy
@@ -35,5 +36,6 @@
 
 @property (nonatomic, strong) PonsomizerAssembly *ponsomizerAssembly;
 @property (nonatomic, strong) SpotlightIndexerAssembly *spotlightAssembly;
+@property (nonatomic, strong) FeedbackGeneratorsAssembly *feedbackGeneratorsAssembly;
 
 @end

@@ -37,6 +37,7 @@
 @property (nonatomic, strong) ReportsSearchViewAnimator *mockAnimator;
 @property (nonatomic, strong) id <ReportsSearchViewOutput> mockOutput;
 @property (nonatomic, strong) UITableView *mockTableView;
+@property (nonatomic, strong) id impactGeneratorMock;
 
 @end
 
@@ -50,7 +51,9 @@
     self.mockOutput = OCMProtocolMock(@protocol(ReportsSearchViewOutput));
     self.mockTableView = OCMClassMock([UITableView class]);
     self.mockAnimator = OCMClassMock([ReportsSearchViewAnimator class]);
+    self.impactGeneratorMock = OCMClassMock([UIImpactFeedbackGenerator class]);
     
+    self.viewController.impactGenerator = self.impactGeneratorMock;
     self.viewController.dataDisplayManager = self.mockDataDisplayManager;
     self.viewController.output = self.mockOutput;
     self.viewController.reportsListSearchTableView = self.mockTableView;
@@ -58,15 +61,21 @@
 }
 
 - (void)tearDown {
-    self.viewController = nil;
+    [self.impactGeneratorMock stopMocking];
+    self.impactGeneratorMock = nil;
+    
     [(id)self.mockDataDisplayManager stopMocking];
     self.mockDataDisplayManager = nil;
+    
     [(id)self.mockOutput stopMocking];
     self.mockOutput = nil;
+    
     [(id)self.mockTableView stopMocking];
     self.mockTableView = nil;
+    
     self.mockAnimator = nil;
-
+    self.viewController = nil;
+    
     [super tearDown];
 }
 
@@ -193,6 +202,15 @@
     OCMVerify([self.mockOutput didTapClearPlaceholderView]);
 }
 
-
+- (void)testThatControllerGenerateLightImpact {
+    // given
+    
+    // when
+    [self.viewController generateLightImpact];
+    
+    // then
+    OCMVerify([self.impactGeneratorMock prepare]);
+    OCMVerify([self.impactGeneratorMock impactOccurred]);
+}
 
 @end

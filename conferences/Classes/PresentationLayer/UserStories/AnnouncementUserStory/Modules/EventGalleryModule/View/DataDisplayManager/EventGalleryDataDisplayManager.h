@@ -22,13 +22,11 @@
 
 @class EventPlainObject;
 @class EventGalleryCellObjectFactory;
-@class EventGalleryBackgroundColorAnimator;
 @protocol EventGalleryDataDisplayManagerDelegate;
 
 @interface EventGalleryDataDisplayManager : NSObject
 
 - (instancetype)initWithCellObjectFactory:(EventGalleryCellObjectFactory *)cellObjectFactory
-                                 animator:(EventGalleryBackgroundColorAnimator *)animator
                                  delegate:(id<EventGalleryDataDisplayManagerDelegate>)delegate;
 
 /**
@@ -74,5 +72,14 @@
  @param event Event object
  */
 - (void)didTapEventAnnouncementCellWithEvent:(EventPlainObject *)event;
+
+/**
+ @author Surik Sarkisyan
+ 
+ Method tells delegate that scrollView did scroll
+ 
+ @param scrollView
+ */
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView;
 
 @end

@@ -33,5 +33,6 @@
 @property (nonatomic, weak) IBOutlet UITableView *reportsListSearchTableView;
 @property (nonatomic, weak) IBOutlet UIView *emptyPlaceholderView;
 @property (nonatomic, weak) IBOutlet UIView *clearPlaceholderView;
+@property (nonatomic, strong) UIImpactFeedbackGenerator *impactGenerator;
 
 @end

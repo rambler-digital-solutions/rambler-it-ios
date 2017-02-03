@@ -78,6 +78,12 @@ static NSInteger kDefaultEstimatedHeight = 116;
     [self.dataDisplayManager updateTableViewModelWithObjects:foundObjects searchText:searchText];
 }
 
+
+- (void)generateLightImpact {
+    [self.impactGenerator prepare];
+    [self.impactGenerator impactOccurred];
+}
+
 #pragma mark - ReportsSearchDataDisplayManagerDelegate methods
 
 - (void)didUpdateTableViewModel {

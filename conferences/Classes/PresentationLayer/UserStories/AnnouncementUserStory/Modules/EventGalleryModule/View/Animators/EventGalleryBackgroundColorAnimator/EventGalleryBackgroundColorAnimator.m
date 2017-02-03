@@ -21,6 +21,7 @@
 #import "EventGalleryBackgroundColorAnimator.h"
 
 #import "EventGalleryPageSizeCalculator.h"
+#import "EventGalleryBackgroundColorAnimatorDataSource.h"
 
 #import <UIKit/UIKit.h>
 
