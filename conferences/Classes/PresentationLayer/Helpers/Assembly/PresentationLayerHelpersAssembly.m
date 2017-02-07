@@ -28,6 +28,8 @@
 #import "MailComposeControllerFactoryImplementation.h"
 #import "YouTubeIdentifierDeriviator.h"
 #import "YouTubePlayerFactoryImplementation.h"
+#import "GeneralFeedbackGeneratorImplementation.h"
+#import "FeedbackGeneratorsFactoryImplementation.h"
 
 @implementation PresentationLayerHelpersAssembly
 
@@ -67,6 +69,18 @@
 
 - (YouTubeIdentifierDeriviator *)youTubeIdentifierDeriviator {
     return [TyphoonDefinition withClass:[YouTubeIdentifierDeriviator class]];
+}
+
+- (id<GeneralFeedbackGenerator>)generalFeedbackGenerator {
+    return [TyphoonDefinition withClass:[GeneralFeedbackGeneratorImplementation class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(feedbackGeneratorsFactory)
+                                                    with:[self feedbackGeneratorsFactory]];
+                          }];
+}
+
+- (id<FeedbackGeneratorsFactory>)feedbackGeneratorsFactory {
+    return [TyphoonDefinition withClass:[FeedbackGeneratorsFactoryImplementation class]];
 }
 
 @end

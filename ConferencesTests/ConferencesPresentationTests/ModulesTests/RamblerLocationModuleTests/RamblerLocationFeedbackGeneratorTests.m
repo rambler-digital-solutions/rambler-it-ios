@@ -20,13 +20,14 @@
 
 #import <XCTest/XCTest.h>
 #import <OCMock/OCMock.h>
+#import "GeneralFeedbackGenerator.h"
 
 #import "RamblerLocationFeedbackGeneratorImplementation.h"
 
 @interface RamblerLocationFeedbackGeneratorTests : XCTestCase
 
 @property (nonatomic, strong) RamblerLocationFeedbackGeneratorImplementation *generator;
-@property (nonatomic, strong) id selectionFeedbackGeneratorMock;
+@property (nonatomic, strong) id feedbackGeneratorMock;
 
 @end
 
@@ -36,14 +37,13 @@
     [super setUp];
     
     self.generator = [RamblerLocationFeedbackGeneratorImplementation new];
-    self.selectionFeedbackGeneratorMock = OCMClassMock([UISelectionFeedbackGenerator class]);
+    self.feedbackGeneratorMock = OCMProtocolMock(@protocol(GeneralFeedbackGenerator));
     
-    self.generator.selectionFeedbackGenerator = self.selectionFeedbackGeneratorMock;
+    self.generator.feedbackGenerator = self.feedbackGeneratorMock;
 }
 
 - (void)tearDown {
-    [self.selectionFeedbackGeneratorMock stopMocking];
-    self.selectionFeedbackGeneratorMock = nil;
+    self.feedbackGeneratorMock = nil;
     
     self.generator = nil;
     
@@ -63,8 +63,7 @@
     [self.generator generateSelectionFeedbackInScrollView:scrollView];
     
     // then
-    OCMVerify([self.selectionFeedbackGeneratorMock prepare]);
-    OCMVerify([self.selectionFeedbackGeneratorMock selectionChanged]);
+    OCMVerify([self.feedbackGeneratorMock generateFeedbackWithType:FeedbackTypeSelection]);
 }
 
 - (void)testThatGeneratorNotGenerateSelectionFeedback {
@@ -74,12 +73,13 @@
     scrollView.contentSize = (CGSize){1000.0, 0.0};
     scrollView.contentOffset = (CGPoint){contentOffsetX, 0.0};
     
+    [[[self.feedbackGeneratorMock reject] ignoringNonObjectArgs] generateFeedbackWithType:0];
+    
     // when
     [self.generator generateSelectionFeedbackInScrollView:scrollView];
     
     // then
-    OCMReject([self.selectionFeedbackGeneratorMock selectionChanged]);
-    
+    OCMExpect(self.feedbackGeneratorMock);
 }
 
 @end

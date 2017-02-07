@@ -23,7 +23,6 @@
 #import "ServiceComponents.h"
 #import "PonsomizerAssembly.h"
 #import "PresentationLayerHelpersAssembly.h"
-#import "FeedbackGeneratorsAssembly.h"
 
 #import "EventGalleryViewController.h"
 #import "EventGalleryInteractor.h"
@@ -152,10 +151,8 @@
                           configuration:^(TyphoonDefinition *definition) {
                               [definition injectProperty:@selector(calculator)
                                                     with:[self eventGalleryPageSizeCalculator]];
-                              [definition injectProperty:@selector(selectionFeedbackGenerator)
-                                                    with:[self.feedbackGeneratorsAssembly selectionFeedbackGenerator]];
-                               [definition injectProperty:@selector(notificationFeedbackGenerator)
-                                                     with:[self.feedbackGeneratorsAssembly notificationFeedbackGenerator]];
+                              [definition injectProperty:@selector(feedbackGenerator)
+                                                    with:[self.presentationLayerHelpersAssembly generalFeedbackGenerator]];
                           }];
 }
 

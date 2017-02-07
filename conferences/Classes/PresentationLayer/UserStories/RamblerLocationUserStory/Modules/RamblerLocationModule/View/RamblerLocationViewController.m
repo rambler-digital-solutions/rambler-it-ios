@@ -30,7 +30,6 @@
 @interface RamblerLocationViewController ()
 
 @property (nonatomic, readwrite, strong) UBSDKRideRequestButton *rideRequestButton;
-@property (nonatomic, assign) NSUInteger currentPage;
 
 @end
 
@@ -38,7 +37,6 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-    self.currentPage = 1;
     [self.output didTriggerViewReadyEvent];
 }
 

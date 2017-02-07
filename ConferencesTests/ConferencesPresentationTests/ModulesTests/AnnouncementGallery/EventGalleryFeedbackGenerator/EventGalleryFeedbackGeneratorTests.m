@@ -22,14 +22,14 @@
 
 #import "EventGalleryFeedbackGeneratorImplementation.h"
 #import "EventGalleryPageSizeCalculator.h"
+#import "GeneralFeedbackGenerator.h"
 
 #import <OCMock/OCMock.h>
 
 @interface EventGalleryFeedbackGeneratorTests : XCTestCase
 
 @property (nonatomic, strong) EventGalleryFeedbackGeneratorImplementation *generator;
-@property (nonatomic, strong) id selectionFeedbackGeneratorMock;
-@property (nonatomic, strong) id notificationFeedbackGeneratorMock;
+@property (nonatomic, strong) id feedbackGeneratorMock;
 @property (nonatomic, strong) id calculatorMock;
 
 @end
@@ -42,23 +42,17 @@
     self.generator = [EventGalleryFeedbackGeneratorImplementation new];
     
     self.calculatorMock = OCMClassMock([EventGalleryPageSizeCalculator class]);
-    self.selectionFeedbackGeneratorMock = OCMClassMock([UISelectionFeedbackGenerator class]);
-    self.notificationFeedbackGeneratorMock = OCMClassMock([UINotificationFeedbackGenerator class]);
+    self.feedbackGeneratorMock = OCMProtocolMock(@protocol(GeneralFeedbackGenerator));
     
     self.generator.calculator = self.calculatorMock;
-    self.generator.selectionFeedbackGenerator = self.selectionFeedbackGeneratorMock;
-    self.generator.notificationFeedbackGenerator = self.notificationFeedbackGeneratorMock;
+    self.generator.feedbackGenerator = self.feedbackGeneratorMock;
 }
 
 - (void)tearDown {
     [self.calculatorMock stopMocking];
     self.calculatorMock = nil;
     
-    [self.notificationFeedbackGeneratorMock stopMocking];
-    self.notificationFeedbackGeneratorMock = nil;
-    
-    [self.selectionFeedbackGeneratorMock stopMocking];
-    self.selectionFeedbackGeneratorMock = nil;
+    self.feedbackGeneratorMock = nil;
     
     self.generator = nil;
     
@@ -72,20 +66,20 @@
     [self.generator generateNotificationErrorFeedback];
     
     // then
-    OCMVerify([self.notificationFeedbackGeneratorMock prepare]);
-    OCMVerify([self.notificationFeedbackGeneratorMock notificationOccurred:UINotificationFeedbackTypeError]);
+    OCMVerify([self.feedbackGeneratorMock generateFeedbackWithType:FeedbackTypeNotificationError]);
 }
 
 - (void)testThatGeneratorNotGenerateSelectionFeedbackWhenOffsetIsNegative {
     // given
     CGFloat contentOffsetX = -10.0;
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:[UIScreen mainScreen].bounds collectionViewLayout:[UICollectionViewLayout new]];
+    OCMReject([self.feedbackGeneratorMock generateFeedbackWithType:FeedbackTypeSelection]);
     
     // when
     [self.generator generateSelectionFeedbackForContentOffset:contentOffsetX inView:collectionView];
     
     // then
-    OCMReject([self.selectionFeedbackGeneratorMock prepare]);
+    OCMVerify(self.feedbackGeneratorMock);
 }
 
 - (void)testThatGeneratorGenerateSelectionFeedback {
@@ -101,8 +95,7 @@
     [self.generator generateSelectionFeedbackForContentOffset:contentOffsetX inView:collectionView];
     
     // then
-    OCMVerify([self.selectionFeedbackGeneratorMock prepare]);
-    OCMVerify([self.selectionFeedbackGeneratorMock selectionChanged]);
+    OCMVerify([self.feedbackGeneratorMock generateFeedbackWithType:FeedbackTypeSelection]);
 }
 
 - (void)testThatGeneratorNotGenerateSelectionFeedback {
@@ -111,13 +104,13 @@
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:[UIScreen mainScreen].bounds collectionViewLayout:[UICollectionViewLayout new]];
     collectionView.contentSize = (CGSize){1000.0, 0.0};
     OCMStub([self.calculatorMock calculatePageSizeForViewWidth:collectionView.frame.size.width]).andReturn(250.0);
+    OCMReject([self.feedbackGeneratorMock generateFeedbackWithType:FeedbackTypeSelection]);
     
     // when
     [self.generator generateSelectionFeedbackForContentOffset:contentOffsetX inView:collectionView];
     
     // then
-    OCMReject([self.selectionFeedbackGeneratorMock selectionChanged]);
-    
+    OCMVerify(self.feedbackGeneratorMock);
 }
 
 @end

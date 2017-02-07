@@ -22,14 +22,12 @@
 
 #import "EventGalleryFeedbackGenerator.h"
 
-@class UISelectionFeedbackGenerator;
-@class UINotificationFeedbackGenerator;
 @class EventGalleryPageSizeCalculator;
+@protocol GeneralFeedbackGenerator;
 
 @interface EventGalleryFeedbackGeneratorImplementation : NSObject <EventGalleryFeedbackGenerator>
 
-@property (nonatomic, strong) UISelectionFeedbackGenerator *selectionFeedbackGenerator;
-@property (nonatomic, strong) UINotificationFeedbackGenerator *notificationFeedbackGenerator;
+@property (nonatomic, strong) id<GeneralFeedbackGenerator> feedbackGenerator;
 @property (nonatomic, strong) EventGalleryPageSizeCalculator *calculator;
 @property (nonatomic, assign) NSUInteger currentPage;
 

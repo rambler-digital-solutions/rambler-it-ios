@@ -25,6 +25,7 @@
 #import "ReportsSearchViewOutput.h"
 #import "DataDisplayManager.h"
 #import "ReportsSearchDataDisplayManager.h"
+#import "GeneralFeedbackGenerator.h"
 
 #import "EventPlainObject.h"
 #import "LecturePlainObject.h"
@@ -37,7 +38,7 @@
 @property (nonatomic, strong) ReportsSearchViewAnimator *mockAnimator;
 @property (nonatomic, strong) id <ReportsSearchViewOutput> mockOutput;
 @property (nonatomic, strong) UITableView *mockTableView;
-@property (nonatomic, strong) id impactGeneratorMock;
+@property (nonatomic, strong) id feedbackGeneratorMock;
 
 @end
 
@@ -51,9 +52,9 @@
     self.mockOutput = OCMProtocolMock(@protocol(ReportsSearchViewOutput));
     self.mockTableView = OCMClassMock([UITableView class]);
     self.mockAnimator = OCMClassMock([ReportsSearchViewAnimator class]);
-    self.impactGeneratorMock = OCMClassMock([UIImpactFeedbackGenerator class]);
+    self.feedbackGeneratorMock = OCMProtocolMock(@protocol(GeneralFeedbackGenerator));
     
-    self.viewController.impactGenerator = self.impactGeneratorMock;
+    self.viewController.feedbackGenerator = self.feedbackGeneratorMock;
     self.viewController.dataDisplayManager = self.mockDataDisplayManager;
     self.viewController.output = self.mockOutput;
     self.viewController.reportsListSearchTableView = self.mockTableView;
@@ -61,8 +62,7 @@
 }
 
 - (void)tearDown {
-    [self.impactGeneratorMock stopMocking];
-    self.impactGeneratorMock = nil;
+    self.feedbackGeneratorMock = nil;
     
     [(id)self.mockDataDisplayManager stopMocking];
     self.mockDataDisplayManager = nil;
@@ -209,8 +209,7 @@
     [self.viewController generateLightImpact];
     
     // then
-    OCMVerify([self.impactGeneratorMock prepare]);
-    OCMVerify([self.impactGeneratorMock impactOccurred]);
+    OCMVerify([self.feedbackGeneratorMock generateFeedbackWithType:FeedbackTypeLightImpact]);
 }
 
 @end

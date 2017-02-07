@@ -20,6 +20,7 @@
 
 #import "RamblerLocationFeedbackGeneratorImplementation.h"
 #import "LocationCardFlowLayoutConstants.h"
+#import "GeneralFeedbackGenerator.h"
 
 #import <UIKit/UIKit.h>
 
@@ -40,16 +41,14 @@
     if (scrollView.contentOffset.x < 0 || actualScrollValue > scrollView.contentSize.width) {
         return;
     }
-
-    [self.selectionFeedbackGenerator prepare];
     
-    CGFloat delta = 2 * kLocationCardHorizontalInset + kLocationCardHorizontalInset / 2;
+    CGFloat delta = 2.5 * kLocationCardHorizontalInset;
     
     NSInteger newPageNumber = (scrollView.contentOffset.x + locationCardWidth - delta) / (locationCardWidth + kLocationCardHorizontalInset / 2) + 1;
     
     if (self.currentPage != newPageNumber) {
         self.currentPage = newPageNumber;
-        [self.selectionFeedbackGenerator selectionChanged];
+        [self.feedbackGenerator generateFeedbackWithType:FeedbackTypeSelection];
     }
 }
 

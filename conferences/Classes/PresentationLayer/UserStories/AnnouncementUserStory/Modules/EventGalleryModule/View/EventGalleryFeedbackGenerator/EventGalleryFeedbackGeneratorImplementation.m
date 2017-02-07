@@ -21,6 +21,7 @@
 #import "EventGalleryFeedbackGeneratorImplementation.h"
 
 #import "EventGalleryPageSizeCalculator.h"
+#import "GeneralFeedbackGenerator.h"
 
 #import <UIKit/UIKit.h>
 
@@ -42,19 +43,16 @@
         return;
     }
     
-    [self.selectionFeedbackGenerator prepare];
-    
     NSInteger newPageNumber = (contentOffsetX + pageWidth / 2) / pageWidth + 1;
     
     if (self.currentPage != newPageNumber) {
         self.currentPage = newPageNumber;
-        [self.selectionFeedbackGenerator selectionChanged];
+        [self.feedbackGenerator generateFeedbackWithType:FeedbackTypeSelection];
     }
 }
 
 - (void)generateNotificationErrorFeedback {
-    [self.notificationFeedbackGenerator prepare];
-    [self.notificationFeedbackGenerator notificationOccurred:UINotificationFeedbackTypeError];
+    [self.feedbackGenerator generateFeedbackWithType:FeedbackTypeNotificationError];
 }
 
 @end

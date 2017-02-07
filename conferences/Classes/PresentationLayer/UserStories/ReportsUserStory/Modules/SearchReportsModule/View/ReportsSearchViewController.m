@@ -22,6 +22,7 @@
 
 #import "ReportsSearchViewAnimator.h"
 #import "UIColor+ConferencesPalette.h"
+#import "GeneralFeedbackGenerator.h"
 
 @class LecturePlainObject;
 @class SpeakerPlainObject;
@@ -80,8 +81,7 @@ static NSInteger kDefaultEstimatedHeight = 116;
 
 
 - (void)generateLightImpact {
-    [self.impactGenerator prepare];
-    [self.impactGenerator impactOccurred];
+    [self.feedbackGenerator generateFeedbackWithType:FeedbackTypeLightImpact];
 }
 
 #pragma mark - ReportsSearchDataDisplayManagerDelegate methods

@@ -18,20 +18,22 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "FeedbackGeneratorsAssembly.h"
+#import "FeedbackGeneratorsFactoryImplementation.h"
 
-@implementation FeedbackGeneratorsAssembly
+#import <UIKit/UIKit.h>
+
+@implementation FeedbackGeneratorsFactoryImplementation
 
 - (UISelectionFeedbackGenerator *)selectionFeedbackGenerator {
-    return [TyphoonDefinition withClass:[UISelectionFeedbackGenerator class]];
+    return [UISelectionFeedbackGenerator new];
+}
+
+- (UIImpactFeedbackGenerator *)lightImpactFeedbackGenerator {
+    return [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleLight];
 }
 
 - (UINotificationFeedbackGenerator *)notificationFeedbackGenerator {
-    return [TyphoonDefinition withClass:[UINotificationFeedbackGenerator class]];
-}
-
-- (UIImpactFeedbackGenerator *)impactGeneratorSearchList {
-    return [TyphoonDefinition withClass:[UIImpactFeedbackGenerator class]];
+    return [UINotificationFeedbackGenerator new];
 }
 
 @end

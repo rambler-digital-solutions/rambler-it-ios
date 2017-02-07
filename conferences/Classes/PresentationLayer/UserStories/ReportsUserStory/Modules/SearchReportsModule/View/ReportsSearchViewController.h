@@ -24,6 +24,8 @@
 #import "ReportsSearchDataDisplayManager.h"
 #import "ReportsSearchViewAnimator.h"
 
+@protocol GeneralFeedbackGenerator;
+
 @interface ReportsSearchViewController : UIViewController <ReportsSearchViewInput, ReportSearchDataDisplayManagerDelegate, ReportsSearchViewAnimatorOutput>
 
 @property (nonatomic, strong) id<ReportsSearchViewOutput> output;
@@ -33,6 +35,6 @@
 @property (nonatomic, weak) IBOutlet UITableView *reportsListSearchTableView;
 @property (nonatomic, weak) IBOutlet UIView *emptyPlaceholderView;
 @property (nonatomic, weak) IBOutlet UIView *clearPlaceholderView;
-@property (nonatomic, strong) UIImpactFeedbackGenerator *impactGenerator;
+@property (nonatomic, strong) id<GeneralFeedbackGenerator> feedbackGenerator;
 
 @end

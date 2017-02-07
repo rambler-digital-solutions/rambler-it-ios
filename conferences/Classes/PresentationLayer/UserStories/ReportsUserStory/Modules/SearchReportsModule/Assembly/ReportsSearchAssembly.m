@@ -29,7 +29,6 @@
 #import "SearchFacadeImplementation.h"
 #import "ServiceComponents.h"
 #import "PresentationLayerHelpersAssembly.h"
-#import "FeedbackGeneratorsAssembly.h"
 
 #import <Typhoon/Typhoon.h>
 
@@ -42,8 +41,8 @@
                                                     with:[self presenterReportsSearch]];
                               [definition injectProperty:@selector(dataDisplayManager)
                                                     with:[self dataDisplayManagerReportsSearch]];
-                              [definition injectProperty:@selector(impactGenerator)
-                                                    with:[self.feedbackGeneratorsAssembly impactGeneratorSearchList]];
+                              [definition injectProperty:@selector(feedbackGenerator)
+                                                    with:[self.presentationLayerHelpersAssembly generalFeedbackGenerator]];
                           }];
 }
 

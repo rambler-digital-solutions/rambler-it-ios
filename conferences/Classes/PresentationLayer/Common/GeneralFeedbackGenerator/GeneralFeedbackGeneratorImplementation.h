@@ -18,18 +18,14 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Typhoon/Typhoon.h>
-#import <RamblerTyphoonUtils/AssemblyCollector.h>
+#import <Foundation/Foundation.h>
 
-/**
- @author Surik Sarkisyan
- 
- A TyphoonAssembly which is responsible for creating UIFeedBackGenerators
- */
-@interface FeedbackGeneratorsAssembly : TyphoonAssembly <RamblerInitialAssembly>
+#import "GeneralFeedbackGenerator.h"
 
-- (UISelectionFeedbackGenerator *)selectionFeedbackGenerator;
-- (UINotificationFeedbackGenerator *)notificationFeedbackGenerator;
-- (UIImpactFeedbackGenerator *)impactGeneratorSearchList;
+@protocol FeedbackGeneratorsFactory;
+
+@interface GeneralFeedbackGeneratorImplementation : NSObject <GeneralFeedbackGenerator>
+
+@property (nonatomic, strong) id<FeedbackGeneratorsFactory> feedbackGeneratorsFactory;
 
 @end

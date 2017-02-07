@@ -18,7 +18,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <CoreGraphics/CoreGraphics.h>
+#import <CoreGraphics/CGBase.h>
 
 extern CGFloat const kLocationCardHorizontalInset;
 extern CGFloat const kLocationCardVerticalInset;

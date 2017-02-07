@@ -20,13 +20,30 @@
 
 #import <Foundation/Foundation.h>
 
-#import "RamblerLocationFeedbackGenerator.h"
+/**
+ @author Surik Sarkisyan
+ 
+ Feedback types
+ */
+typedef NS_ENUM(NSUInteger, FeedbackType) {
+    FeedbackTypeUnknown = 0,
+    FeedbackTypeSelection = 1,
+    FeedbackTypeLightImpact = 2,
+    FeedbackTypeNotificationError = 3
+};
 
-@protocol GeneralFeedbackGenerator;
+/**
+ @author Surik Sarkisyan
+ 
+ Common feedbacks(taptic engine) generator
+ */
+@protocol GeneralFeedbackGenerator <NSObject>
 
-@interface RamblerLocationFeedbackGeneratorImplementation : NSObject <RamblerLocationFeedbackGenerator>
-
-@property (nonatomic, strong) id<GeneralFeedbackGenerator> feedbackGenerator;
-@property (nonatomic, assign) NSUInteger currentPage;
+/**
+ @author Surik Sarkisyan
+ 
+ Method is used to generate feedback with type
+ */
+- (void)generateFeedbackWithType:(FeedbackType)feedbackType;
 
 @end

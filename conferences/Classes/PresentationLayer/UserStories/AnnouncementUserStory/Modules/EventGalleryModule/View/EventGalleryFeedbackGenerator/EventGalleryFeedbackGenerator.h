@@ -20,21 +20,21 @@
 
 #import <Foundation/Foundation.h>
 
-#import <CoreGraphics/CoreGraphics.h>
+#import <CoreGraphics/CGBase.h>
 
 @class UICollectionView;
 
 /**
  @author Surik Sarkisyan
  
- Feedbacks(taptic engine) generator
+ The generator is designated to handle scroll event and generate feedback(taptic engine) if needed
  */
 @protocol EventGalleryFeedbackGenerator <NSObject>
 
 /**
  @author Surik Sarkisyan
  
- Method is used to generate selection feedback when scroll page did change via UISelectionFeedbackGenerator
+ Method is used to generate selection feedback when scroll page did change
  */
 - (void)generateSelectionFeedbackForContentOffset:(CGFloat)contentOffsetX
                                            inView:(UICollectionView *)collectionView;

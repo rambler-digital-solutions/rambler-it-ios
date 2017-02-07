@@ -20,13 +20,42 @@
 
 #import <Foundation/Foundation.h>
 
-#import "RamblerLocationFeedbackGenerator.h"
+@class UINotificationFeedbackGenerator;
+@class UISelectionFeedbackGenerator;
+@class UIImpactFeedbackGenerator;
 
-@protocol GeneralFeedbackGenerator;
+/**
+ @author Surik Sarkisyan
+ 
+ Factory for creating instances of UIFeedbackGenerator
+ */
+@protocol FeedbackGeneratorsFactory <NSObject>
 
-@interface RamblerLocationFeedbackGeneratorImplementation : NSObject <RamblerLocationFeedbackGenerator>
+/**
+ @author Surik Sarkisyan
+ 
+ Method returns selection feedback generator
+ 
+ @return UISelectionFeedbackGenerator
+ */
+- (UISelectionFeedbackGenerator *)selectionFeedbackGenerator;
 
-@property (nonatomic, strong) id<GeneralFeedbackGenerator> feedbackGenerator;
-@property (nonatomic, assign) NSUInteger currentPage;
+/**
+ @author Surik Sarkisyan
+ 
+ Method returns light impact feedback generator
+ 
+ @return UIImpactFeedbackGenerator
+ */
+- (UIImpactFeedbackGenerator *)lightImpactFeedbackGenerator;
+
+/**
+ @author Surik Sarkisyan
+ 
+ Method returns notification feedback generator
+ 
+ @return UINotificationFeedbackGenerator
+ */
+- (UINotificationFeedbackGenerator *)notificationFeedbackGenerator;
 
 @end

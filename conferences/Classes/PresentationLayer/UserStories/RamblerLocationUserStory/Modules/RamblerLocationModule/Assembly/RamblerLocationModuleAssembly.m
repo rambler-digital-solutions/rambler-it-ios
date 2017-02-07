@@ -22,7 +22,6 @@
 
 #import "ServiceComponents.h"
 #import "PresentationLayerHelpersAssembly.h"
-#import "FeedbackGeneratorsAssembly.h"
 #import "UberRidesAssembly.h"
 
 #import "RamblerLocationViewController.h"
@@ -116,8 +115,8 @@
 - (RamblerLocationFeedbackGeneratorImplementation *)feedbackGeneratorRamblerLocation {
     return [TyphoonDefinition withClass:[RamblerLocationFeedbackGeneratorImplementation class]
                           configuration:^(TyphoonDefinition *definition) {
-                              [definition injectProperty:@selector(selectionFeedbackGenerator)
-                                                    with:[self.feedbackGeneratorsAssembly selectionFeedbackGenerator]];
+                              [definition injectProperty:@selector(feedbackGenerator)
+                                                    with:[self.presentationLayerHelpersAssembly generalFeedbackGenerator]];
                           }];
 }
 

@@ -141,7 +141,7 @@
     // given
     Class targetClass = [RamblerLocationFeedbackGeneratorImplementation class];
     NSArray *dependencies = @[
-                              RamblerSelector(selectionFeedbackGenerator) ];
+                              RamblerSelector(feedbackGenerator) ];
     // when
     id result = [self.assembly feedbackGeneratorRamblerLocation];
     

@@ -20,13 +20,8 @@
 
 #import <Foundation/Foundation.h>
 
-#import "RamblerLocationFeedbackGenerator.h"
+#import "FeedbackGeneratorsFactory.h"
 
-@protocol GeneralFeedbackGenerator;
-
-@interface RamblerLocationFeedbackGeneratorImplementation : NSObject <RamblerLocationFeedbackGenerator>
-
-@property (nonatomic, strong) id<GeneralFeedbackGenerator> feedbackGenerator;
-@property (nonatomic, assign) NSUInteger currentPage;
+@interface FeedbackGeneratorsFactoryImplementation : NSObject <FeedbackGeneratorsFactory>
 
 @end
