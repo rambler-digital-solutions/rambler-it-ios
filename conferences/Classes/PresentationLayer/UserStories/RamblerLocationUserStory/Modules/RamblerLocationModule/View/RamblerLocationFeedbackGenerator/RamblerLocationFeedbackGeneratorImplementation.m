@@ -48,7 +48,7 @@
     
     if (self.currentPage != newPageNumber) {
         self.currentPage = newPageNumber;
-        [self.feedbackGenerator generateFeedbackWithType:FeedbackTypeSelection];
+        [self.feedbackGenerator generateFeedbackWithType:TapticEngineFeedbackTypeSelection];
     }
 }
 

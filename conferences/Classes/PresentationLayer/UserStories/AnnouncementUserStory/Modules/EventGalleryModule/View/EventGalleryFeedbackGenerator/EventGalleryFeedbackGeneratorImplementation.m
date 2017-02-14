@@ -47,12 +47,12 @@
     
     if (self.currentPage != newPageNumber) {
         self.currentPage = newPageNumber;
-        [self.feedbackGenerator generateFeedbackWithType:FeedbackTypeSelection];
+        [self.feedbackGenerator generateFeedbackWithType:TapticEngineFeedbackTypeSelection];
     }
 }
 
 - (void)generateNotificationErrorFeedback {
-    [self.feedbackGenerator generateFeedbackWithType:FeedbackTypeNotificationError];
+    [self.feedbackGenerator generateFeedbackWithType:TapticEngineFeedbackTypeNotificationError];
 }
 
 @end

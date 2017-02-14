@@ -66,14 +66,14 @@
     [self.generator generateNotificationErrorFeedback];
     
     // then
-    OCMVerify([self.feedbackGeneratorMock generateFeedbackWithType:FeedbackTypeNotificationError]);
+    OCMVerify([self.feedbackGeneratorMock generateFeedbackWithType:TapticEngineFeedbackTypeNotificationError]);
 }
 
 - (void)testThatGeneratorNotGenerateSelectionFeedbackWhenOffsetIsNegative {
     // given
     CGFloat contentOffsetX = -10.0;
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:[UIScreen mainScreen].bounds collectionViewLayout:[UICollectionViewLayout new]];
-    OCMReject([self.feedbackGeneratorMock generateFeedbackWithType:FeedbackTypeSelection]);
+    OCMReject([self.feedbackGeneratorMock generateFeedbackWithType:TapticEngineFeedbackTypeSelection]);
     
     // when
     [self.generator generateSelectionFeedbackForContentOffset:contentOffsetX inView:collectionView];
@@ -95,7 +95,7 @@
     [self.generator generateSelectionFeedbackForContentOffset:contentOffsetX inView:collectionView];
     
     // then
-    OCMVerify([self.feedbackGeneratorMock generateFeedbackWithType:FeedbackTypeSelection]);
+    OCMVerify([self.feedbackGeneratorMock generateFeedbackWithType:TapticEngineFeedbackTypeSelection]);
 }
 
 - (void)testThatGeneratorNotGenerateSelectionFeedback {
@@ -104,7 +104,7 @@
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:[UIScreen mainScreen].bounds collectionViewLayout:[UICollectionViewLayout new]];
     collectionView.contentSize = (CGSize){1000.0, 0.0};
     OCMStub([self.calculatorMock calculatePageSizeForViewWidth:collectionView.frame.size.width]).andReturn(250.0);
-    OCMReject([self.feedbackGeneratorMock generateFeedbackWithType:FeedbackTypeSelection]);
+    OCMReject([self.feedbackGeneratorMock generateFeedbackWithType:TapticEngineFeedbackTypeSelection]);
     
     // when
     [self.generator generateSelectionFeedbackForContentOffset:contentOffsetX inView:collectionView];

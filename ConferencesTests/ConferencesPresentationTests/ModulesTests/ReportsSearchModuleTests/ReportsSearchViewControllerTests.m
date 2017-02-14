@@ -209,7 +209,7 @@
     [self.viewController generateLightImpact];
     
     // then
-    OCMVerify([self.feedbackGeneratorMock generateFeedbackWithType:FeedbackTypeLightImpact]);
+    OCMVerify([self.feedbackGeneratorMock generateFeedbackWithType:TapticEngineFeedbackTypeLightImpact]);
 }
 
 @end

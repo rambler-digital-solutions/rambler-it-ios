@@ -55,7 +55,7 @@
     OCMStub([self.feedbackGeneratorsFactoryMock selectionFeedbackGenerator]).andReturn(selectionFeedbackGenerator);
     
     // when
-    [self.feedbackGenerator generateFeedbackWithType:FeedbackTypeSelection];
+    [self.feedbackGenerator generateFeedbackWithType:TapticEngineFeedbackTypeSelection];
     
     // then
     OCMVerify([selectionFeedbackGenerator prepare]);
@@ -70,7 +70,7 @@
     OCMStub([self.feedbackGeneratorsFactoryMock lightImpactFeedbackGenerator]).andReturn(lightImpactFeedbackGenerator);
     
     // when
-    [self.feedbackGenerator generateFeedbackWithType:FeedbackTypeLightImpact];
+    [self.feedbackGenerator generateFeedbackWithType:TapticEngineFeedbackTypeLightImpact];
     
     // then
     OCMVerify([lightImpactFeedbackGenerator prepare]);
@@ -85,7 +85,7 @@
     OCMStub([self.feedbackGeneratorsFactoryMock notificationFeedbackGenerator]).andReturn(notificationErrorFeedbackGenerator);
     
     // when
-    [self.feedbackGenerator generateFeedbackWithType:FeedbackTypeNotificationError];
+    [self.feedbackGenerator generateFeedbackWithType:TapticEngineFeedbackTypeNotificationError];
     
     // then
     OCMVerify([notificationErrorFeedbackGenerator prepare]);
@@ -103,7 +103,7 @@
     OCMReject([self.feedbackGeneratorsFactoryMock selectionFeedbackGenerator]);
     
     // when
-    [self.feedbackGenerator generateFeedbackWithType:FeedbackTypeSelection];
+    [self.feedbackGenerator generateFeedbackWithType:TapticEngineFeedbackTypeSelection];
     
     // then
     OCMVerify(self.feedbackGeneratorsFactoryMock);

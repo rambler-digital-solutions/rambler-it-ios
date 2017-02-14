@@ -63,7 +63,7 @@
     [self.generator generateSelectionFeedbackInScrollView:scrollView];
     
     // then
-    OCMVerify([self.feedbackGeneratorMock generateFeedbackWithType:FeedbackTypeSelection]);
+    OCMVerify([self.feedbackGeneratorMock generateFeedbackWithType:TapticEngineFeedbackTypeSelection]);
 }
 
 - (void)testThatGeneratorNotGenerateSelectionFeedback {

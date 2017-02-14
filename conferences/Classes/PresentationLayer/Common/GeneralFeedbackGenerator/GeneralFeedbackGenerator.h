@@ -25,11 +25,11 @@
  
  Feedback types
  */
-typedef NS_ENUM(NSUInteger, FeedbackType) {
-    FeedbackTypeUnknown = 0,
-    FeedbackTypeSelection = 1,
-    FeedbackTypeLightImpact = 2,
-    FeedbackTypeNotificationError = 3
+typedef NS_ENUM(NSUInteger, TapticEngineFeedbackType) {
+    TapticEngineFeedbackTypeUnknown = 0,
+    TapticEngineFeedbackTypeSelection = 1,
+    TapticEngineFeedbackTypeLightImpact = 2,
+    TapticEngineFeedbackTypeNotificationError = 3
 };
 
 /**
@@ -44,6 +44,6 @@ typedef NS_ENUM(NSUInteger, FeedbackType) {
  
  Method is used to generate feedback with type
  */
-- (void)generateFeedbackWithType:(FeedbackType)feedbackType;
+- (void)generateFeedbackWithType:(TapticEngineFeedbackType)tapticEngineFeedbackType;
 
 @end

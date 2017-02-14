@@ -81,7 +81,7 @@ static NSInteger kDefaultEstimatedHeight = 116;
 
 
 - (void)generateLightImpact {
-    [self.feedbackGenerator generateFeedbackWithType:FeedbackTypeLightImpact];
+    [self.feedbackGenerator generateFeedbackWithType:TapticEngineFeedbackTypeLightImpact];
 }
 
 #pragma mark - ReportsSearchDataDisplayManagerDelegate methods
