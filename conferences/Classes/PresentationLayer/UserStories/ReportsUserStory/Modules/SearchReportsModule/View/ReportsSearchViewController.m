@@ -22,6 +22,7 @@
 
 #import "ReportsSearchViewAnimator.h"
 #import "UIColor+ConferencesPalette.h"
+#import "GeneralFeedbackGenerator.h"
 
 @class LecturePlainObject;
 @class SpeakerPlainObject;
@@ -76,6 +77,11 @@ static NSInteger kDefaultEstimatedHeight = 116;
     
     searchText = [searchText lowercaseString];
     [self.dataDisplayManager updateTableViewModelWithObjects:foundObjects searchText:searchText];
+}
+
+
+- (void)generateLightImpact {
+    [self.feedbackGenerator generateFeedbackWithType:TapticEngineFeedbackTypeLightImpact];
 }
 
 #pragma mark - ReportsSearchDataDisplayManagerDelegate methods

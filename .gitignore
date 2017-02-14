@@ -38,3 +38,4 @@ artifacts
 .idea/misc.xml
 .idea/RamblerConferencesGitHub.iml
 .idea/runConfigurations/Conferences.xml
+.DS_Store

@@ -23,6 +23,7 @@
 #import "RamblerLocationDataDisplayManager.h"
 #import "UberRidesFactory.h"
 #import "LocalizedStrings.h"
+#import "RamblerLocationFeedbackGenerator.h"
 
 #import <PureLayout/PureLayout.h>
 
@@ -36,7 +37,6 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-    
     [self.output didTriggerViewReadyEvent];
 }
 
@@ -56,6 +56,7 @@
     id<UICollectionViewDataSource> dataSource = [self.dataDisplayManager dataSourceForCollectionView:self.collectionView
                                                                                       withDirections:directions];
     id<UICollectionViewDelegate> delegate = [self.dataDisplayManager delegateForCollectionView:self.collectionView];
+    [self.dataDisplayManager setDelegateForDataDisplayManager:self];
     self.collectionView.dataSource = dataSource;
     self.collectionView.delegate = delegate;
     
@@ -102,6 +103,12 @@
     
     [alert addAction:closeAction];
     [self presentViewController:alert animated:YES completion:nil];
+}
+
+#pragma mark - RamblerLocationDataDisplayManagerDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [self.feedbackGenerator generateSelectionFeedbackInScrollView:scrollView];
 }
 
 #pragma mark - UBSDKRideRequestViewControllerDelegate

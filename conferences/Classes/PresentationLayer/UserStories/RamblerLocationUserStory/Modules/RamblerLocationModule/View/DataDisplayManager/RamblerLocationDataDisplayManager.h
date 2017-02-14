@@ -23,6 +23,7 @@
 
 @class DirectionCellObjectFactory;
 @class DirectionObject;
+@protocol RamblerLocationDataDisplayManagerDelegate;
 
 /**
  @author Egor Tolstoy
@@ -56,5 +57,27 @@
  @return Delegate
  */
 - (id<UICollectionViewDelegate>)delegateForCollectionView:(UICollectionView *)collectionView;
+
+/**
+ @author Surik Sarkisyan
+ 
+ Method tells dataDisplayManager to set delegate
+ 
+ @param delegate
+ */
+- (void)setDelegateForDataDisplayManager:(id<RamblerLocationDataDisplayManagerDelegate>)delegate;
+
+@end
+
+@protocol RamblerLocationDataDisplayManagerDelegate <NSObject>
+
+/**
+ @author Surik Sarkisyan
+
+ Method tells delegate that scrollView did scroll
+ 
+ @param scrollView
+ */
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView;
 
 @end

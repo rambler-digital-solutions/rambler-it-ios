@@ -1,4 +1,4 @@
-// Copyright (c) 2015 RAMBLER&Co
+// Copyright (c) 2017 RAMBLER&Co
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -18,22 +18,21 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "RamblerLocationModuleAssembly.h"
+#import <Foundation/Foundation.h>
 
-@class RamblerLocationViewController;
-@class RamblerLocationInteractor;
-@class RamblerLocationPresenter;
-@class RamblerLocationRouter;
-@class UberRidesFactory;
-@class RamblerLocationFeedbackGeneratorImplementation;
+@class UIColor;
 
-@interface RamblerLocationModuleAssembly ()
+@protocol EventGalleryBackgroundColorAnimatorDataSource <NSObject>
 
-- (RamblerLocationViewController *)viewRamblerLocation;
-- (RamblerLocationInteractor *)interactorRamblerLocation;
-- (RamblerLocationPresenter *)presenterRamblerLocation;
-- (RamblerLocationRouter *)routerRamblerLocation;
-- (UberRidesFactory *)uberRidesFactory;
-- (RamblerLocationFeedbackGeneratorImplementation *)feedbackGeneratorRamblerLocation;
+/**
+ @author Egor Tolstoy
+ 
+ The method returns a color for a specific page
+ 
+ @param pageNumber Page number
+ 
+ @return UIColor
+ */
+- (UIColor *)obtainColorForPageWithNumber:(NSInteger)pageNumber;
 
 @end

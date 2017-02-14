@@ -23,9 +23,11 @@
 #import "PonsomizerAssembly.h"
 
 @protocol RamblerInitialAssembly;
+@class FeedbackGeneratorsAssembly;
 
 @interface ReportsSearchAssembly : ModuleAssemblyBase <RamblerInitialAssembly>
 
 @property (nonatomic, strong) PonsomizerAssembly *ponsomizerAssembly;
+@property (nonatomic, strong) FeedbackGeneratorsAssembly *feedbackGeneratorsAssembly;
 
 @end

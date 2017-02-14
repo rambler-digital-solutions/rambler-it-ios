@@ -22,6 +22,7 @@
 
 #import "ServiceComponents.h"
 #import "PresentationLayerHelpersAssembly.h"
+#import "UberRidesAssembly.h"
 
 #import "RamblerLocationViewController.h"
 #import "RamblerLocationInteractor.h"
@@ -31,6 +32,7 @@
 #import "DirectionCellObjectFactory.h"
 #import "UberRidesFactory.h"
 #import "RamblerLocationStateStorage.h"
+#import "RamblerLocationFeedbackGeneratorImplementation.h"
 
 @implementation  RamblerLocationModuleAssembly
 
@@ -45,6 +47,8 @@
                                                     with:[self.uberRidesAssembly requestBehaviorWithViewController:[self viewRamblerLocation]]];
                               [definition injectProperty:@selector(uberRidesFactory)
                                                     with:[self uberRidesFactory]];
+                              [definition injectProperty:@selector(feedbackGenerator)
+                                                    with:[self feedbackGeneratorRamblerLocation]];
                           }];
 }
 
@@ -106,6 +110,14 @@
 
 - (DirectionCellObjectFactory *)stateStorageRamblerLocation {
     return [TyphoonDefinition withClass:[RamblerLocationStateStorage class]];
+}
+
+- (RamblerLocationFeedbackGeneratorImplementation *)feedbackGeneratorRamblerLocation {
+    return [TyphoonDefinition withClass:[RamblerLocationFeedbackGeneratorImplementation class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(feedbackGenerator)
+                                                    with:[self.presentationLayerHelpersAssembly generalFeedbackGenerator]];
+                          }];
 }
 
 @end

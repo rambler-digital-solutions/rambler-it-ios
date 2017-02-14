@@ -28,6 +28,7 @@
 @interface RamblerLocationDataDisplayManager () <UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, strong) NICollectionViewModel *collectionModel;
+@property (nonatomic, weak) id<RamblerLocationDataDisplayManagerDelegate> delegate;
 
 @end
 
@@ -45,6 +46,16 @@
 
 - (id<UICollectionViewDelegate>)delegateForCollectionView:(UICollectionView *)collectionView {
     return self;
+}
+
+- (void)setDelegateForDataDisplayManager:(id<RamblerLocationDataDisplayManagerDelegate>)delegate {
+    self.delegate = delegate;
+}
+
+#pragma mark - ScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [self.delegate scrollViewDidScroll:scrollView];
 }
 
 #pragma mark - Private Methods

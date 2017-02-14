@@ -44,14 +44,17 @@
 }
 
 - (void)didTriggerTapCellWithEvent:(EventPlainObject *)event {
+    [self.view generateLightImpact];
     [self.router openEventModuleWithEventObjectId:event.eventId];
 }
 
 - (void)didTriggerTapCellWithLecture:(LecturePlainObject *)lecture {
+    [self.view generateLightImpact];
     [self.router openLectureModuleWithLectureObjectId:lecture.lectureId];
 }
 
 - (void)didTriggerTapCellWithSpeaker:(SpeakerPlainObject *)speaker {
+    [self.view generateLightImpact];
     [self.router openSpeakerModuleWithSpeakerObjectId:speaker.speakerId];
 }
 

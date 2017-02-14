@@ -1,4 +1,4 @@
-// Copyright (c) 2015 RAMBLER&Co
+// Copyright (c) 2017 RAMBLER&Co
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -18,22 +18,22 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "RamblerLocationModuleAssembly.h"
+#import "FeedbackGeneratorsFactoryImplementation.h"
 
-@class RamblerLocationViewController;
-@class RamblerLocationInteractor;
-@class RamblerLocationPresenter;
-@class RamblerLocationRouter;
-@class UberRidesFactory;
-@class RamblerLocationFeedbackGeneratorImplementation;
+#import <UIKit/UIKit.h>
 
-@interface RamblerLocationModuleAssembly ()
+@implementation FeedbackGeneratorsFactoryImplementation
 
-- (RamblerLocationViewController *)viewRamblerLocation;
-- (RamblerLocationInteractor *)interactorRamblerLocation;
-- (RamblerLocationPresenter *)presenterRamblerLocation;
-- (RamblerLocationRouter *)routerRamblerLocation;
-- (UberRidesFactory *)uberRidesFactory;
-- (RamblerLocationFeedbackGeneratorImplementation *)feedbackGeneratorRamblerLocation;
+- (UISelectionFeedbackGenerator *)selectionFeedbackGenerator {
+    return [UISelectionFeedbackGenerator new];
+}
+
+- (UIImpactFeedbackGenerator *)lightImpactFeedbackGenerator {
+    return [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleLight];
+}
+
+- (UINotificationFeedbackGenerator *)notificationFeedbackGenerator {
+    return [UINotificationFeedbackGenerator new];
+}
 
 @end

@@ -34,6 +34,7 @@
 #import "RamblerLocationRouter.h"
 #import "ServiceComponentsAssembly.h"
 #import "OperationFactoriesAssembly.h"
+#import "RamblerLocationFeedbackGeneratorImplementation.h"
 
 #import "UberRidesFactory.h"
 
@@ -65,7 +66,8 @@
                               RamblerSelector(output),
                               RamblerSelector(dataDisplayManager),
                               RamblerSelector(requestBehavior),
-                              RamblerSelector(uberRidesFactory)
+                              RamblerSelector(uberRidesFactory),
+                              RamblerSelector(feedbackGenerator)
                               ];
     // when
     id result = [self.assembly viewRamblerLocation];
@@ -129,6 +131,19 @@
     
     // when
     id result = [self.assembly uberRidesFactory];
+    
+    // then
+    RamblerTyphoonAssemblyTestsTypeDescriptor *descriptor = [RamblerTyphoonAssemblyTestsTypeDescriptor descriptorWithClass:targetClass];
+    [self verifyTargetDependency:result withDescriptor:descriptor dependencies:dependencies];
+}
+
+- (void)testThatAssemblyCreatesFeebackGenerator {
+    // given
+    Class targetClass = [RamblerLocationFeedbackGeneratorImplementation class];
+    NSArray *dependencies = @[
+                              RamblerSelector(feedbackGenerator) ];
+    // when
+    id result = [self.assembly feedbackGeneratorRamblerLocation];
     
     // then
     RamblerTyphoonAssemblyTestsTypeDescriptor *descriptor = [RamblerTyphoonAssemblyTestsTypeDescriptor descriptorWithClass:targetClass];

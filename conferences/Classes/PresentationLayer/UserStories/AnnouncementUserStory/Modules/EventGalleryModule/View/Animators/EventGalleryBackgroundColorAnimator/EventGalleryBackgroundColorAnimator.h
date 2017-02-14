@@ -50,18 +50,3 @@
 - (void)animateColorChangeWithScrollOffset:(CGFloat)scrollOffset;
 
 @end
-
-@protocol EventGalleryBackgroundColorAnimatorDataSource <NSObject>
-
-/**
- @author Egor Tolstoy
- 
- The method returns a color for a specific page
- 
- @param pageNumber Page number
- 
- @return UIColor
- */
-- (UIColor *)obtainColorForPageWithNumber:(NSInteger)pageNumber;
-
-@end
