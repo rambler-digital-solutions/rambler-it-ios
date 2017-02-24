@@ -42,7 +42,7 @@
 /**
  @author Egor Tolstoy
  
- Inpud data source for the operation
+ Input data source for the operation
  */
 @property (nonatomic, strong) id<ChainableOperationInput> input;
 
