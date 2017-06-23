@@ -31,7 +31,7 @@
 #import "PonsomizerAssembly.h"
 #import "ShareUrlBuilderImplementation.h"
 
-static NSString *const kEventShareItemType = @"brand";
+static NSString *const kEventShareItemType = @"events";
 
 @interface EventModuleAssembly ()
 
