@@ -21,6 +21,18 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		022E33C51E436ECD00B9B9BF /* EventGalleryFeedbackGeneratorImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 022E33C41E436ECD00B9B9BF /* EventGalleryFeedbackGeneratorImplementation.m */; };
+		022E33C81E4397F900B9B9BF /* EventGalleryFeedbackGeneratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 022E33C71E4397F900B9B9BF /* EventGalleryFeedbackGeneratorTests.m */; };
+		022E33CD1E44A50E00B9B9BF /* RamblerLocationFeedbackGeneratorImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 022E33CC1E44A50E00B9B9BF /* RamblerLocationFeedbackGeneratorImplementation.m */; };
+		022E33D01E44A77B00B9B9BF /* LocationCardFlowLayoutConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 022E33CF1E44A77B00B9B9BF /* LocationCardFlowLayoutConstants.m */; };
+		022E33D81E44B3D100B9B9BF /* RamblerLocationFeedbackGeneratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 022E33D71E44B3D100B9B9BF /* RamblerLocationFeedbackGeneratorTests.m */; };
+		022E342A1E48774D00B9B9BF /* GeneralFeedbackGeneratorImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 022E34291E48774D00B9B9BF /* GeneralFeedbackGeneratorImplementation.m */; };
+		022E342F1E4879A400B9B9BF /* FeedbackGeneratorsFactoryImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 022E342E1E4879A400B9B9BF /* FeedbackGeneratorsFactoryImplementation.m */; };
+		022E34531E48943100B9B9BF /* GeneralFeedbackGeneratorImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 022E34291E48774D00B9B9BF /* GeneralFeedbackGeneratorImplementation.m */; };
+		022E34541E48944400B9B9BF /* FeedbackGeneratorsFactoryImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 022E342E1E4879A400B9B9BF /* FeedbackGeneratorsFactoryImplementation.m */; };
+		022E34571E48C82200B9B9BF /* GeneralFeedbackGeneratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 022E34561E48C82200B9B9BF /* GeneralFeedbackGeneratorTests.m */; };
+		022E34911E49BAED00B9B9BF /* FeedbackGeneratorsFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 022E34901E49BAED00B9B9BF /* FeedbackGeneratorsFactoryTests.m */; };
+		022E34B81E49CF7000B9B9BF /* RamblerLocationDataDisplayManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 022E34B71E49CF7000B9B9BF /* RamblerLocationDataDisplayManagerTests.m */; };
 		0231D7211DFE87150052471C /* LocationConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 0231D7201DFE87150052471C /* LocationConstants.m */; };
 		0231D7241DFEA33D0052471C /* UberRidesModalTestableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0231D7231DFEA33D0052471C /* UberRidesModalTestableObject.m */; };
 		0231D72B1DFEDCB50052471C /* UIAlertController+SupportedInterfaceOrientations.m in Sources */ = {isa = PBXBuildFile; fileRef = 0231D72A1DFEDCB50052471C /* UIAlertController+SupportedInterfaceOrientations.m */; };
@@ -828,6 +840,26 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		022E33C11E436C3E00B9B9BF /* EventGalleryBackgroundColorAnimatorDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventGalleryBackgroundColorAnimatorDataSource.h; sourceTree = "<group>"; };
+		022E33C21E436EC400B9B9BF /* EventGalleryFeedbackGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventGalleryFeedbackGenerator.h; sourceTree = "<group>"; };
+		022E33C31E436ECD00B9B9BF /* EventGalleryFeedbackGeneratorImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventGalleryFeedbackGeneratorImplementation.h; sourceTree = "<group>"; };
+		022E33C41E436ECD00B9B9BF /* EventGalleryFeedbackGeneratorImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventGalleryFeedbackGeneratorImplementation.m; sourceTree = "<group>"; };
+		022E33C71E4397F900B9B9BF /* EventGalleryFeedbackGeneratorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventGalleryFeedbackGeneratorTests.m; sourceTree = "<group>"; };
+		022E33CA1E44A50300B9B9BF /* RamblerLocationFeedbackGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RamblerLocationFeedbackGenerator.h; sourceTree = "<group>"; };
+		022E33CB1E44A50E00B9B9BF /* RamblerLocationFeedbackGeneratorImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RamblerLocationFeedbackGeneratorImplementation.h; sourceTree = "<group>"; };
+		022E33CC1E44A50E00B9B9BF /* RamblerLocationFeedbackGeneratorImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RamblerLocationFeedbackGeneratorImplementation.m; sourceTree = "<group>"; };
+		022E33CE1E44A77B00B9B9BF /* LocationCardFlowLayoutConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationCardFlowLayoutConstants.h; path = LocationCardFlowLayout/LocationCardFlowLayoutConstants.h; sourceTree = "<group>"; };
+		022E33CF1E44A77B00B9B9BF /* LocationCardFlowLayoutConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationCardFlowLayoutConstants.m; path = LocationCardFlowLayout/LocationCardFlowLayoutConstants.m; sourceTree = "<group>"; };
+		022E33D71E44B3D100B9B9BF /* RamblerLocationFeedbackGeneratorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RamblerLocationFeedbackGeneratorTests.m; path = RamblerLocationModuleTests/RamblerLocationFeedbackGeneratorTests.m; sourceTree = "<group>"; };
+		022E34271E48773C00B9B9BF /* GeneralFeedbackGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralFeedbackGenerator.h; sourceTree = "<group>"; };
+		022E34281E48774D00B9B9BF /* GeneralFeedbackGeneratorImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralFeedbackGeneratorImplementation.h; sourceTree = "<group>"; };
+		022E34291E48774D00B9B9BF /* GeneralFeedbackGeneratorImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneralFeedbackGeneratorImplementation.m; sourceTree = "<group>"; };
+		022E342C1E48799A00B9B9BF /* FeedbackGeneratorsFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackGeneratorsFactory.h; sourceTree = "<group>"; };
+		022E342D1E4879A400B9B9BF /* FeedbackGeneratorsFactoryImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackGeneratorsFactoryImplementation.h; sourceTree = "<group>"; };
+		022E342E1E4879A400B9B9BF /* FeedbackGeneratorsFactoryImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackGeneratorsFactoryImplementation.m; sourceTree = "<group>"; };
+		022E34561E48C82200B9B9BF /* GeneralFeedbackGeneratorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneralFeedbackGeneratorTests.m; sourceTree = "<group>"; };
+		022E34901E49BAED00B9B9BF /* FeedbackGeneratorsFactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackGeneratorsFactoryTests.m; sourceTree = "<group>"; };
+		022E34B71E49CF7000B9B9BF /* RamblerLocationDataDisplayManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RamblerLocationDataDisplayManagerTests.m; path = RamblerLocationModuleTests/RamblerLocationDataDisplayManagerTests.m; sourceTree = "<group>"; };
 		0231D71F1DFE87150052471C /* LocationConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationConstants.h; sourceTree = "<group>"; };
 		0231D7201DFE87150052471C /* LocationConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationConstants.m; sourceTree = "<group>"; };
 		0231D7221DFEA33D0052471C /* UberRidesModalTestableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UberRidesModalTestableObject.h; path = RamblerLocationModuleTests/UberRidesModalTestableObject.h; sourceTree = "<group>"; };
@@ -1897,7 +1929,6 @@
 		9FBE8A101D5E5F1B00DA0C32 /* SafariFactoryImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SafariFactoryImplementation.m; path = SafariFactory/SafariFactoryImplementation.m; sourceTree = "<group>"; };
 		9FBE8A141D5F343F00DA0C32 /* LocationCardFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationCardFlowLayout.h; path = LocationCardFlowLayout/LocationCardFlowLayout.h; sourceTree = "<group>"; };
 		9FBE8A151D5F343F00DA0C32 /* LocationCardFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationCardFlowLayout.m; path = LocationCardFlowLayout/LocationCardFlowLayout.m; sourceTree = "<group>"; };
-		9FBE8A171D5F393900DA0C32 /* LocationCardFlowLayoutConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LocationCardFlowLayoutConstants.h; path = LocationCardFlowLayout/LocationCardFlowLayoutConstants.h; sourceTree = "<group>"; };
 		9FBE8A3C1D5F402E00DA0C32 /* EventGalleryEventFilterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventGalleryEventFilterTests.m; sourceTree = "<group>"; };
 		9FBE8A781D630D4C00DA0C32 /* EventGalleryAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventGalleryAssembly.h; sourceTree = "<group>"; };
 		9FBE8A791D630D4C00DA0C32 /* EventGalleryAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventGalleryAssembly.m; sourceTree = "<group>"; };
@@ -2105,6 +2136,63 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		022E33BD1E43579C00B9B9BF /* EventGalleryFeedbackGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				022E33C21E436EC400B9B9BF /* EventGalleryFeedbackGenerator.h */,
+				022E33C31E436ECD00B9B9BF /* EventGalleryFeedbackGeneratorImplementation.h */,
+				022E33C41E436ECD00B9B9BF /* EventGalleryFeedbackGeneratorImplementation.m */,
+			);
+			path = EventGalleryFeedbackGenerator;
+			sourceTree = "<group>";
+		};
+		022E33C61E4397E600B9B9BF /* EventGalleryFeedbackGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				022E33C71E4397F900B9B9BF /* EventGalleryFeedbackGeneratorTests.m */,
+			);
+			path = EventGalleryFeedbackGenerator;
+			sourceTree = "<group>";
+		};
+		022E33C91E44A4F200B9B9BF /* RamblerLocationFeedbackGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				022E33CA1E44A50300B9B9BF /* RamblerLocationFeedbackGenerator.h */,
+				022E33CB1E44A50E00B9B9BF /* RamblerLocationFeedbackGeneratorImplementation.h */,
+				022E33CC1E44A50E00B9B9BF /* RamblerLocationFeedbackGeneratorImplementation.m */,
+			);
+			path = RamblerLocationFeedbackGenerator;
+			sourceTree = "<group>";
+		};
+		022E34261E48772B00B9B9BF /* GeneralFeedbackGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				022E34271E48773C00B9B9BF /* GeneralFeedbackGenerator.h */,
+				022E34281E48774D00B9B9BF /* GeneralFeedbackGeneratorImplementation.h */,
+				022E34291E48774D00B9B9BF /* GeneralFeedbackGeneratorImplementation.m */,
+			);
+			path = GeneralFeedbackGenerator;
+			sourceTree = "<group>";
+		};
+		022E342B1E48798A00B9B9BF /* FeedbackGeneratorsFactory */ = {
+			isa = PBXGroup;
+			children = (
+				022E342C1E48799A00B9B9BF /* FeedbackGeneratorsFactory.h */,
+				022E342D1E4879A400B9B9BF /* FeedbackGeneratorsFactoryImplementation.h */,
+				022E342E1E4879A400B9B9BF /* FeedbackGeneratorsFactoryImplementation.m */,
+			);
+			path = FeedbackGeneratorsFactory;
+			sourceTree = "<group>";
+		};
+		022E34551E48C81200B9B9BF /* GeneralFeedbackGeneratorTests */ = {
+			isa = PBXGroup;
+			children = (
+				022E34561E48C82200B9B9BF /* GeneralFeedbackGeneratorTests.m */,
+			);
+			name = GeneralFeedbackGeneratorTests;
+			path = Common/GeneralFeedbackGeneratorTests;
+			sourceTree = "<group>";
+		};
 		0231D71E1DFE86D70052471C /* LocationConstants */ = {
 			isa = PBXGroup;
 			children = (
@@ -2505,6 +2593,7 @@
 		63136F941BDCDB2600994356 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				022E34261E48772B00B9B9BF /* GeneralFeedbackGenerator */,
 				9FA6E77D1D6EFE8A0047D2C4 /* TabBarController */,
 				66EE4D2C1D54BFB90011F94A /* Nimbus */,
 				66EE4D281D54BCD70011F94A /* CollectionViewAnimator */,
@@ -2763,6 +2852,7 @@
 			isa = PBXGroup;
 			children = (
 				631CBA801C021A5200E3EBA8 /* PresentationLayerHelpersAssemblyTests.m */,
+				022E34901E49BAED00B9B9BF /* FeedbackGeneratorsFactoryTests.m */,
 			);
 			path = HelpersTests;
 			sourceTree = "<group>";
@@ -3148,6 +3238,7 @@
 		636F8DCF1BCB8FE800552B91 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				022E33C91E44A4F200B9B9BF /* RamblerLocationFeedbackGenerator */,
 				9FBE8A131D5F341C00DA0C32 /* LocationCardFlowLayout */,
 				9F4077B11D2E389700D47EF6 /* CellObjectFactory */,
 				9F4077AD1D2E370100D47EF6 /* CellObjects */,
@@ -4544,6 +4635,7 @@
 		63F8F27A1BF79090000017F3 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				022E342B1E48798A00B9B9BF /* FeedbackGeneratorsFactory */,
 				0231D7281DFEDCA30052471C /* UIAlertController+SupportedInterfaceOrientations */,
 				6310601F1DC89580006870EB /* MailComposerFactory */,
 				9F8B49E51D6EF71200ED176B /* YouTubePlayerFactory */,
@@ -4582,6 +4674,7 @@
 		63F8F2D11BF8D4C0000017F3 /* PresentationLayerAssemblyTests */ = {
 			isa = PBXGroup;
 			children = (
+				022E34551E48C81200B9B9BF /* GeneralFeedbackGeneratorTests */,
 				635E18C31CA6B7A4005B8439 /* Common */,
 				631CBA7F1C021A3600E3EBA8 /* HelpersTests */,
 				631CBA661C020CCD00E3EBA8 /* EventsUserStoryTests */,
@@ -8057,7 +8150,8 @@
 			children = (
 				9FBE8A141D5F343F00DA0C32 /* LocationCardFlowLayout.h */,
 				9FBE8A151D5F343F00DA0C32 /* LocationCardFlowLayout.m */,
-				9FBE8A171D5F393900DA0C32 /* LocationCardFlowLayoutConstants.h */,
+				022E33CE1E44A77B00B9B9BF /* LocationCardFlowLayoutConstants.h */,
+				022E33CF1E44A77B00B9B9BF /* LocationCardFlowLayoutConstants.m */,
 			);
 			name = LocationCardFlowLayout;
 			sourceTree = "<group>";
@@ -8118,6 +8212,7 @@
 		9FBE8A8A1D630D4C00DA0C32 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				022E33BD1E43579C00B9B9BF /* EventGalleryFeedbackGenerator */,
 				9FBE8A8B1D630D4C00DA0C32 /* Animators */,
 				9FBE8A8F1D630D4C00DA0C32 /* EventGalleryViewController.h */,
 				9FBE8A901D630D4C00DA0C32 /* EventGalleryViewController.m */,
@@ -8146,6 +8241,7 @@
 			children = (
 				9FBE8A8D1D630D4C00DA0C32 /* EventGalleryBackgroundColorAnimator.h */,
 				9FBE8A8E1D630D4C00DA0C32 /* EventGalleryBackgroundColorAnimator.m */,
+				022E33C11E436C3E00B9B9BF /* EventGalleryBackgroundColorAnimatorDataSource.h */,
 			);
 			path = EventGalleryBackgroundColorAnimator;
 			sourceTree = "<group>";
@@ -8810,6 +8906,8 @@
 				029358971DF87EC9007CD5FD /* RamblerLocationPresenterTests.m */,
 				029358981DF87EC9007CD5FD /* RamblerLocationRouterTests.m */,
 				0293589E1DF87EF5007CD5FD /* RamblerLocationViewControllerTests.m */,
+				022E34B71E49CF7000B9B9BF /* RamblerLocationDataDisplayManagerTests.m */,
+				022E33D71E44B3D100B9B9BF /* RamblerLocationFeedbackGeneratorTests.m */,
 				0231D7221DFEA33D0052471C /* UberRidesModalTestableObject.h */,
 				0231D7231DFEA33D0052471C /* UberRidesModalTestableObject.m */,
 				02F297BE1DFAA295001F9B10 /* TestableObjectWithDelegate.h */,
@@ -8938,6 +9036,7 @@
 		AE35A84265303BC48C2CD8D7 /* AnnouncementGallery */ = {
 			isa = PBXGroup;
 			children = (
+				022E33C61E4397E600B9B9BF /* EventGalleryFeedbackGenerator */,
 				2F78E70CD8438165FE1F4A7A /* View */,
 				846E56C9D402B4092A067186 /* Presenter */,
 				3D24A952DDF1D4E328573040 /* Interactor */,
@@ -9402,6 +9501,7 @@
 				667E96981E0443FD00EC9F20 /* LectureMaterialServiceImplementation.m in Sources */,
 				632184341D9D3574001BB7A7 /* SocialNetworkAccountPlainObject.m in Sources */,
 				63BB9A0C1DB2858E00C2F2B9 /* PresentationLayerHelpersAssembly.m in Sources */,
+				022E34541E48944400B9B9BF /* FeedbackGeneratorsFactoryImplementation.m in Sources */,
 				6321842A1D9D33E7001BB7A7 /* TagPlainObject.m in Sources */,
 				63770CB31DD61D2A0039AB0D /* MessagesViewController.m in Sources */,
 				63BB9A261DB4BA6700C2F2B9 /* EventChangeProviderFetchRequestFactory.m in Sources */,
@@ -9469,6 +9569,7 @@
 				6321842C1D9D342B001BB7A7 /* _MetaEventPlainObject.m in Sources */,
 				637382A01DD5EA17004246EC /* MessagesInteractor.m in Sources */,
 				63BB9A2B1DB4BAA800C2F2B9 /* IndexTransaction.m in Sources */,
+				022E34531E48943100B9B9BF /* GeneralFeedbackGeneratorImplementation.m in Sources */,
 				636E26EE1D8FE8AD001ABB92 /* EventPlainObject.m in Sources */,
 				636E26C81D8FE076001ABB92 /* EventListDataDisplayManager.m in Sources */,
 				636E26D91D8FE74D001ABB92 /* EventListQuery.m in Sources */,
@@ -9580,6 +9681,7 @@
 				9FBE8B071D634F0500DA0C32 /* EventListCellObjectBuilder.m in Sources */,
 				9FF1251E1D51DF460098625F /* EventObjectIndexer.m in Sources */,
 				2B2064881D3F9CE900246C8D /* _TechPlainObject.m in Sources */,
+				022E33D01E44A77B00B9B9BF /* LocationCardFlowLayoutConstants.m in Sources */,
 				63C31C171DDB134500AA51BD /* MessagesLaunchHandler.m in Sources */,
 				9F0A84FD1BC1698B006F79FB /* NetworkOperation.m in Sources */,
 				63F613661CB00A220002AEF0 /* EventInfoTableViewCellObject.m in Sources */,
@@ -9598,6 +9700,7 @@
 				9F8E5FA61BC27CCE00DC10DB /* MappingConstants.m in Sources */,
 				2B20648B1D3F9CE900246C8D /* LectureModelObject.m in Sources */,
 				661CA42F1D65D2550047EB68 /* ModifiedDataListServerResponse.m in Sources */,
+				022E33C51E436ECD00B9B9BF /* EventGalleryFeedbackGeneratorImplementation.m in Sources */,
 				9F8E5F801BC2592600DC10DB /* ResponseValidatorsAssembly.m in Sources */,
 				9FBE89AF1D5CB71300DA0C32 /* TyphoonAppDelegate.m in Sources */,
 				6315BA051C9EC23600999877 /* VideoRecordTableViewCell.m in Sources */,
@@ -9662,6 +9765,7 @@
 				2B4F20221D53273100C9891E /* SpeakerInfoSectionHeaderTableViewCell.m in Sources */,
 				661CA42B1D65D2270047EB68 /* DeletedResponseObjectFormatter.m in Sources */,
 				9FE139901D65F3E900D7BF44 /* SuggestTableView.m in Sources */,
+				022E342F1E4879A400B9B9BF /* FeedbackGeneratorsFactoryImplementation.m in Sources */,
 				66E9999D1D54B31300161D98 /* TagServicePredicateBuilder.m in Sources */,
 				63F613961CB00A220002AEF0 /* SpeakerInfoInteractor.m in Sources */,
 				9F4077901D2BF95200D47EF6 /* CommonResourceClient.m in Sources */,
@@ -9716,6 +9820,7 @@
 				9F8E5F841BC25A0700DC10DB /* ResponseMappersAssembly.m in Sources */,
 				9F33B8881D639C7300BE136C /* SpeakerInfoLectureCell.m in Sources */,
 				631808431C482B1300A61E7D /* SpeakerShortInfoView.m in Sources */,
+				022E342A1E48774D00B9B9BF /* GeneralFeedbackGeneratorImplementation.m in Sources */,
 				63F613681CB00A220002AEF0 /* PreviousEventSectionHeaderTableViewCellObject.m in Sources */,
 				97F600291DEAF2AD004833B5 /* VideoRecordTableViewCellObjectMapper.m in Sources */,
 				9FE139771D65F3E900D7BF44 /* SearchInteractor.m in Sources */,
@@ -9781,6 +9886,7 @@
 				63F6135A1CB00A220002AEF0 /* EventHeaderModuleAssembly.m in Sources */,
 				972E24251DFF462E007338EF /* EventImageIndexer.m in Sources */,
 				9FBE8A081D5DFA1600DA0C32 /* VideoThumbnailGenerator.m in Sources */,
+				022E33CD1E44A50E00B9B9BF /* RamblerLocationFeedbackGeneratorImplementation.m in Sources */,
 				6310601E1DC89577006870EB /* MailComposeControllerFactoryImplementation.m in Sources */,
 				2B2064911D3F9CE900246C8D /* TechModelObject.m in Sources */,
 				9F0A84F91BC1698B006F79FB /* AsyncOperation.m in Sources */,
@@ -9929,6 +10035,7 @@
 				663740AF1E0A91A400A3FCF8 /* SpotlightImageIndexerTests.m in Sources */,
 				9F78D76B1D59EB52009DDCEA /* SpeakerObjectIndexerTests.m in Sources */,
 				631CBA741C020CCD00E3EBA8 /* EventModuleAssemblyTests.m in Sources */,
+				022E34B81E49CF7000B9B9BF /* RamblerLocationDataDisplayManagerTests.m in Sources */,
 				9F7B82291D7DA9E9002E977A /* QuickActionAppDelegateTests.m in Sources */,
 				63D86BDD1C143FCE00986536 /* DateFormatterTests.m in Sources */,
 				66A1DD551D7E993A00998F6B /* MockObjectsFactory.m in Sources */,
@@ -9941,6 +10048,7 @@
 				63F8F2F61BF9FE7D000017F3 /* RCFRESTRequestConfiguratorTests.m in Sources */,
 				9FBE8A331D5F3CCC00DA0C32 /* EventGalleryRouterTests.m in Sources */,
 				666C5C3F1D4F344B002D73D5 /* ReportsSearchPresenter.m in Sources */,
+				022E33D81E44B3D100B9B9BF /* RamblerLocationFeedbackGeneratorTests.m in Sources */,
 				63F613DC1CB111070002AEF0 /* CurrentEventCellObjectBuilderTests.m in Sources */,
 				0293589B1DF87EC9007CD5FD /* RamblerLocationRouterTests.m in Sources */,
 				9FBE89D61D5CB76900DA0C32 /* SpotlightLaunchHandlerTests.m in Sources */,
@@ -9962,6 +10070,7 @@
 				9F0A853F1BC192F0006F79FB /* OperationChainerTests.m in Sources */,
 				9FBE8A341D5F3CD100DA0C32 /* EventGalleryInteractorTests.m in Sources */,
 				9F0A85211BC185AA006F79FB /* TestChainableOperationWithValidationBlock.m in Sources */,
+				022E33C81E4397F900B9B9BF /* EventGalleryFeedbackGeneratorTests.m in Sources */,
 				9F78D7791D5A0330009DDCEA /* LectureObjectIndexerTests.m in Sources */,
 				63F402F11BCF77CB0086D030 /* ServiceComponentsAssemblyTests.m in Sources */,
 				9FC305351D6478F60052CB67 /* ShareUrlBuilderImplementationTests.m in Sources */,
@@ -10021,6 +10130,7 @@
 				63F613E21CB111070002AEF0 /* EventRouterTests.m in Sources */,
 				63F613EE1CB111070002AEF0 /* SpeakerInfoPresenterTests.m in Sources */,
 				9F1830C81BC11EE6000E21A5 /* XCTestCase+RCFHelpers.m in Sources */,
+				022E34571E48C82200B9B9BF /* GeneralFeedbackGeneratorTests.m in Sources */,
 				66A1DD511D7E990A00998F6B /* XCTestCase+CollectionViewDataDisplayManager.m in Sources */,
 				631CBA771C020F2D00E3EBA8 /* ReportListModuleAssemblyTests.m in Sources */,
 				029358A11DF87FF7007CD5FD /* LocationServiceTests.m in Sources */,
@@ -10075,6 +10185,7 @@
 				029358991DF87EC9007CD5FD /* RamblerLocationInteractorTests.m in Sources */,
 				2B4F202A1D54E11F00C9891E /* SpeakerInfoCellObjectsBuilderTests.m in Sources */,
 				66BF6B431E0BE07A001631FA /* OCProtocolsMockObject.m in Sources */,
+				022E34911E49BAED00B9B9BF /* FeedbackGeneratorsFactoryTests.m in Sources */,
 				9F1830FE1BC14E64000E21A5 /* Conference.xcdatamodeld in Sources */,
 				9F7B823E1D7ECAD9002E977A /* QuickActionLaunchHandlerTests.m in Sources */,
 				63F613E91CB111070002AEF0 /* SearchInteractorTests.m in Sources */,

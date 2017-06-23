@@ -1,4 +1,4 @@
-// Copyright (c) 2015 RAMBLER&Co
+// Copyright (c) 2016 RAMBLER&Co
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -18,11 +18,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#ifndef LocationCardFlowLayoutConstants_h
-#define LocationCardFlowLayoutConstants_h
+#import <CoreGraphics/CGBase.h>
 
-static CGFloat const kLocationCardHorizontalInset = 50.0f;
-static CGFloat const kLocationCardVerticalInset = 20.0f;
-static CGFloat const kLocationCardFlickVelocity = 0.5f;
-
-#endif /* LocationCardFlowLayoutConstants_h */
+extern CGFloat const kLocationCardHorizontalInset;
+extern CGFloat const kLocationCardVerticalInset;
+extern CGFloat const kLocationCardFlickVelocity;

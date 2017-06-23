@@ -1,4 +1,4 @@
-// Copyright (c) 2015 RAMBLER&Co
+// Copyright (c) 2017 RAMBLER&Co
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -18,22 +18,32 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "RamblerLocationModuleAssembly.h"
+#import <Foundation/Foundation.h>
 
-@class RamblerLocationViewController;
-@class RamblerLocationInteractor;
-@class RamblerLocationPresenter;
-@class RamblerLocationRouter;
-@class UberRidesFactory;
-@class RamblerLocationFeedbackGeneratorImplementation;
+/**
+ @author Surik Sarkisyan
+ 
+ Feedback types
+ */
+typedef NS_ENUM(NSUInteger, TapticEngineFeedbackType) {
+    TapticEngineFeedbackTypeUnknown = 0,
+    TapticEngineFeedbackTypeSelection = 1,
+    TapticEngineFeedbackTypeLightImpact = 2,
+    TapticEngineFeedbackTypeNotificationError = 3
+};
 
-@interface RamblerLocationModuleAssembly ()
+/**
+ @author Surik Sarkisyan
+ 
+ Common feedbacks(taptic engine) generator
+ */
+@protocol GeneralFeedbackGenerator <NSObject>
 
-- (RamblerLocationViewController *)viewRamblerLocation;
-- (RamblerLocationInteractor *)interactorRamblerLocation;
-- (RamblerLocationPresenter *)presenterRamblerLocation;
-- (RamblerLocationRouter *)routerRamblerLocation;
-- (UberRidesFactory *)uberRidesFactory;
-- (RamblerLocationFeedbackGeneratorImplementation *)feedbackGeneratorRamblerLocation;
+/**
+ @author Surik Sarkisyan
+ 
+ Method is used to generate feedback with type
+ */
+- (void)generateFeedbackWithType:(TapticEngineFeedbackType)tapticEngineFeedbackType;
 
 @end

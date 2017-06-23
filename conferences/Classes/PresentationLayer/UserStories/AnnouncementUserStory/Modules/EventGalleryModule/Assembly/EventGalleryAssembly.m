@@ -35,6 +35,7 @@
 #import "EventGalleryBackgroundColorAnimator.h"
 #import "EventGalleryCollectionViewFlowLayout.h"
 #import "EventGalleryCollectionViewCellShadower.h"
+#import "EventGalleryFeedbackGeneratorImplementation.h"
 #import "SpotlightIndexerAssembly.h"
 #import <ViperMcFlurry/ViperMcFlurry.h>
 
@@ -55,6 +56,8 @@
                                                     with:[self flowLayoutEventGalleryModule]];
                               [definition injectProperty:@selector(shadower)
                                                     with:[self eventGalleryCollectionViewCellShadower]];
+                              [definition injectProperty:@selector(feedbackGenerator)
+                                                    with:[self eventGalleryFeedbackGenerator]];
                           }];
 }
 
@@ -101,10 +104,9 @@
 - (EventGalleryDataDisplayManager *)dataDisplayManagerEventGalleryModule {
     return [TyphoonDefinition withClass:[EventGalleryDataDisplayManager class]
                           configuration:^(TyphoonDefinition *definition) {
-                              [definition useInitializer:@selector(initWithCellObjectFactory:animator:delegate:)
+                              [definition useInitializer:@selector(initWithCellObjectFactory:delegate:)
                                               parameters:^(TyphoonMethod *initializer) {
                                                   [initializer injectParameterWith:[self cellObjectFactoryEventGalleryModule]];
-                                                  [initializer injectParameterWith:[self eventGalleryBackgroundColorAnimator]];
                                                   [initializer injectParameterWith:[self viewEventGalleryModule]];
                                               }];
                           }];
@@ -142,6 +144,16 @@
 
 - (EventGalleryCollectionViewCellShadower *)eventGalleryCollectionViewCellShadower {
     return [TyphoonDefinition withClass:[EventGalleryCollectionViewCellShadower class]];
+}
+
+- (EventGalleryFeedbackGeneratorImplementation *)eventGalleryFeedbackGenerator {
+    return [TyphoonDefinition withClass:[EventGalleryFeedbackGeneratorImplementation class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(calculator)
+                                                    with:[self eventGalleryPageSizeCalculator]];
+                              [definition injectProperty:@selector(feedbackGenerator)
+                                                    with:[self.presentationLayerHelpersAssembly generalFeedbackGenerator]];
+                          }];
 }
 
 @end

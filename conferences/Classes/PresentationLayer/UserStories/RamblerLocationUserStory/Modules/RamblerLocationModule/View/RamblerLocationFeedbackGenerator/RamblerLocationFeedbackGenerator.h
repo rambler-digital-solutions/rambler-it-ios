@@ -1,4 +1,4 @@
-// Copyright (c) 2015 RAMBLER&Co
+// Copyright (c) 2017 RAMBLER&Co
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -18,22 +18,22 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "RamblerLocationModuleAssembly.h"
+#import <Foundation/Foundation.h>
 
-@class RamblerLocationViewController;
-@class RamblerLocationInteractor;
-@class RamblerLocationPresenter;
-@class RamblerLocationRouter;
-@class UberRidesFactory;
-@class RamblerLocationFeedbackGeneratorImplementation;
+@class UIScrollView;
 
-@interface RamblerLocationModuleAssembly ()
+/**
+ @author Surik Sarkisyan
+ 
+ The generator is designated to handle scroll event and generate feedback(taptic engine) if needed 
+ */
+@protocol RamblerLocationFeedbackGenerator <NSObject>
 
-- (RamblerLocationViewController *)viewRamblerLocation;
-- (RamblerLocationInteractor *)interactorRamblerLocation;
-- (RamblerLocationPresenter *)presenterRamblerLocation;
-- (RamblerLocationRouter *)routerRamblerLocation;
-- (UberRidesFactory *)uberRidesFactory;
-- (RamblerLocationFeedbackGeneratorImplementation *)feedbackGeneratorRamblerLocation;
+/**
+ @author Surik Sarkisyan
+ 
+ Method is used to generate selection feedback when scroll page did change
+ */
+- (void)generateSelectionFeedbackInScrollView:(UIScrollView *)scrollView;
 
 @end

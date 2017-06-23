@@ -1,4 +1,4 @@
-// Copyright (c) 2015 RAMBLER&Co
+// Copyright (c) 2017 RAMBLER&Co
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -18,22 +18,44 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "RamblerLocationModuleAssembly.h"
+#import <Foundation/Foundation.h>
 
-@class RamblerLocationViewController;
-@class RamblerLocationInteractor;
-@class RamblerLocationPresenter;
-@class RamblerLocationRouter;
-@class UberRidesFactory;
-@class RamblerLocationFeedbackGeneratorImplementation;
+@class UINotificationFeedbackGenerator;
+@class UISelectionFeedbackGenerator;
+@class UIImpactFeedbackGenerator;
 
-@interface RamblerLocationModuleAssembly ()
+/**
+ @author Surik Sarkisyan
+ 
+ Factory for creating instances of UIFeedbackGenerator
+ */
+@protocol FeedbackGeneratorsFactory <NSObject>
 
-- (RamblerLocationViewController *)viewRamblerLocation;
-- (RamblerLocationInteractor *)interactorRamblerLocation;
-- (RamblerLocationPresenter *)presenterRamblerLocation;
-- (RamblerLocationRouter *)routerRamblerLocation;
-- (UberRidesFactory *)uberRidesFactory;
-- (RamblerLocationFeedbackGeneratorImplementation *)feedbackGeneratorRamblerLocation;
+/**
+ @author Surik Sarkisyan
+ 
+ Method returns selection feedback generator
+ 
+ @return UISelectionFeedbackGenerator
+ */
+- (UISelectionFeedbackGenerator *)selectionFeedbackGenerator;
+
+/**
+ @author Surik Sarkisyan
+ 
+ Method returns light impact feedback generator
+ 
+ @return UIImpactFeedbackGenerator
+ */
+- (UIImpactFeedbackGenerator *)lightImpactFeedbackGenerator;
+
+/**
+ @author Surik Sarkisyan
+ 
+ Method returns notification feedback generator
+ 
+ @return UINotificationFeedbackGenerator
+ */
+- (UINotificationFeedbackGenerator *)notificationFeedbackGenerator;
 
 @end

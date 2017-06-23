@@ -24,6 +24,7 @@
 #import "EventGalleryBackgroundColorAnimator.h"
 #import "EventGalleryCollectionViewFlowLayout.h"
 #import "EventGalleryCollectionViewCellShadower.h"
+#import "EventGalleryFeedbackGenerator.h"
 
 #import "EventPlainObject.h"
 #import "TechPlainObject.h"
@@ -115,6 +116,8 @@ static CGFloat const kLoadingAnimationDuration = 1.8f;
     NSData *imageData = [self obtainErrorAnimatedImageData];
     FLAnimatedImage *image = [FLAnimatedImage animatedImageWithGIFData:imageData];
     self.errorImageView.animatedImage = image;
+    
+    [self.feedbackGenerator generateNotificationErrorFeedback];
 }
 
 #pragma mark - <EventGalleryMoreEventsCollectionViewCellActionProtocol>
@@ -124,6 +127,12 @@ static CGFloat const kLoadingAnimationDuration = 1.8f;
 }
 
 #pragma mark - <EventGalleryDataDisplayManagerDelegate>
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [self.feedbackGenerator generateSelectionFeedbackForContentOffset:scrollView.contentOffset.x
+                                                               inView:self.collectionView];
+    [self.backgroundColorAnimator animateColorChangeWithScrollOffset:scrollView.contentOffset.x];
+}
 
 - (void)didTapEventAnnouncementCellWithEvent:(EventPlainObject *)event {
     [self.output didTriggerEventTapEventWithObject:event];

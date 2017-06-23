@@ -25,11 +25,13 @@
 #import "EventGalleryMoreEventsCollectionViewCellActionProtocol.h"
 
 @protocol EventGalleryViewOutput;
+@protocol EventGalleryFeedbackGenerator;
 @class EventGalleryBackgroundColorAnimator;
 @class EventGalleryDataDisplayManager;
 @class EventGalleryCollectionViewFlowLayout;
 @class FLAnimatedImageView;
 @class EventGalleryCollectionViewCellShadower;
+@class EventGalleryFeedbackGenerator;
 
 @interface EventGalleryViewController : UIViewController <EventGalleryViewInput, EventGalleryDataDisplayManagerDelegate, EventGalleryMoreEventsCollectionViewCellActionProtocol>
 
@@ -50,6 +52,7 @@
 @property (nonatomic, strong) EventGalleryBackgroundColorAnimator *backgroundColorAnimator;
 @property (nonatomic, strong) EventGalleryCollectionViewFlowLayout *collectionViewFlowLayout;
 @property (nonatomic, strong) EventGalleryCollectionViewCellShadower *shadower;
+@property (nonatomic, strong) id<EventGalleryFeedbackGenerator> feedbackGenerator;
 
 #pragma mark - IBActions
 

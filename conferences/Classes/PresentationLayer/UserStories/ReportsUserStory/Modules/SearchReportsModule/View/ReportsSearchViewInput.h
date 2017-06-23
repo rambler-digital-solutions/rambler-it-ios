@@ -54,5 +54,12 @@
  */
 - (void)closeSearchView;
 
+/**
+ @author Surik Sarkisyan
+ 
+ Method is used to generate impact feedback via UIImpactFeedbackGenerator
+ */
+- (void)generateLightImpact;
+
 @end
 

@@ -119,7 +119,9 @@
     CLLocationCoordinate2D coordinates = [self.locationService obtainRamblerCoordinates];
     MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:coordinates
                                                    addressDictionary: @{CNPostalAddressStreetKey : event.name}];
-    activity.mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
+    if (IS_IOS_10_OR_LATER) {
+        activity.mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
+    }
     [activity becomeCurrent];
     
     return activity;

@@ -28,7 +28,7 @@ static NSString *const kDescriptionKey = @"description";
 
 @implementation DirectionObjectMapper
 
-- (DirectionObject *)mapResource:(NSDictionary *)dictionary {
+- (NSArray<DirectionObject *> *)mapResource:(NSDictionary *)dictionary {
     NSArray *items = dictionary[kRootKey];
     NSMutableArray *directions = [NSMutableArray new];
     

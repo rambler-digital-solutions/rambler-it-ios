@@ -22,7 +22,7 @@
 
 #import "EventGalleryCellObjectFactory.h"
 #import "EventGalleryEventCollectionViewCellObject.h"
-#import "EventGalleryBackgroundColorAnimator.h"
+#import "EventGalleryBackgroundColorAnimatorDataSource.h"
 #import "EventPlainObject.h"
 #import "TechPlainObject.h"
 
@@ -37,7 +37,6 @@
 @property (nonatomic, strong) NICollectionViewActions *collectionActions;
 @property (nonatomic, strong) EventGalleryCellObjectFactory *cellObjectFactory;
 @property (nonatomic, weak) id<EventGalleryDataDisplayManagerDelegate> delegate;
-@property (nonatomic, strong) EventGalleryBackgroundColorAnimator *animator;
 
 @property (nonatomic, strong) NSArray *events;
 
@@ -48,13 +47,11 @@
 #pragma mark - Initialization
 
 - (instancetype)initWithCellObjectFactory:(EventGalleryCellObjectFactory *)cellObjectFactory
-                                 animator:(EventGalleryBackgroundColorAnimator *)animator
                                  delegate:(id<EventGalleryDataDisplayManagerDelegate>)delegate {
     self = [super init];
     if (self) {
         _cellObjectFactory = cellObjectFactory;
         _delegate = delegate;
-        _animator = animator;
     }
     return self;
 }
@@ -92,7 +89,7 @@
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    [self.animator animateColorChangeWithScrollOffset:scrollView.contentOffset.x];
+    [self.delegate scrollViewDidScroll:scrollView];
 }
 
 #pragma mark - <EventGalleryBackgroundColorAnimatorDataSource>

@@ -21,11 +21,13 @@
 #import "ModuleAssemblyBase.h"
 #import <RamblerTyphoonUtils/AssemblyCollector.h>
 
-#import "UberRidesAssembly.h"
+@class UberRidesAssembly;
+@class FeedbackGeneratorsAssembly;
 
 @interface RamblerLocationModuleAssembly : ModuleAssemblyBase <RamblerInitialAssembly>
 
 @property (nonatomic, strong) UberRidesAssembly *uberRidesAssembly;
+@property (nonatomic, strong) FeedbackGeneratorsAssembly *feedbackGeneratorsAssembly;
 
 @end
 

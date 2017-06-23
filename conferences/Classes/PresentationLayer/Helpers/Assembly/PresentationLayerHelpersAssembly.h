@@ -30,6 +30,7 @@
 @protocol SafariFactory;
 @protocol MailComposeControllerFactory;
 @protocol YouTubePlayerFactory;
+@protocol GeneralFeedbackGenerator;
 
 /**
  @author Artem Karpushin
@@ -46,5 +47,6 @@
 - (id<MailComposeControllerFactory>)mailComposeFactory;
 - (id<YouTubePlayerFactory>)youTubePlayerFactory;
 - (YouTubeIdentifierDeriviator *)youTubeIdentifierDeriviator;
+- (id<GeneralFeedbackGenerator>)generalFeedbackGenerator;
 
 @end
