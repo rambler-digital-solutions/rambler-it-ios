@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Поиск-->
+        <scene sceneID="J2Q-yz-PPa">
+            <objects>
+                <viewController storyboardIdentifier="SearchViewController" id="HJq-I7-iIp" customClass="SearchViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NLT-fm-8ht"/>
+                        <viewControllerLayoutGuide type="bottom" id="Fe3-sy-4K7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FyI-eO-14m">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Поиск" translatesAutoresizingMaskIntoConstraints="NO" id="AyC-as-YWd" customClass="CustomSearchBar">
+                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="0Fy-tA-R8x"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="HJq-I7-iIp" id="yVn-uE-fO6"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="568" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fsa-Jb-EBP" customClass="SuggestTableView">
+                                <rect key="frame" x="0.0" y="108" width="320" height="460"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Em2-rY-Okg" userLabel="Search Embed Container">
+                                <rect key="frame" x="0.0" y="108" width="320" height="460"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Fe3-sy-4K7" firstAttribute="top" secondItem="fsa-Jb-EBP" secondAttribute="bottom" id="21d-mv-Gcy"/>
+                            <constraint firstAttribute="trailing" secondItem="fsa-Jb-EBP" secondAttribute="trailing" id="Ljy-aY-T73"/>
+                            <constraint firstItem="fsa-Jb-EBP" firstAttribute="leading" secondItem="FyI-eO-14m" secondAttribute="leading" id="TtW-D0-gcA"/>
+                            <constraint firstItem="Em2-rY-Okg" firstAttribute="leading" secondItem="FyI-eO-14m" secondAttribute="leading" id="UZg-dA-U5f"/>
+                            <constraint firstItem="AyC-as-YWd" firstAttribute="leading" secondItem="FyI-eO-14m" secondAttribute="leading" id="WXA-fP-eBD"/>
+                            <constraint firstItem="Fe3-sy-4K7" firstAttribute="top" secondItem="Em2-rY-Okg" secondAttribute="bottom" id="dt4-BD-I7z"/>
+                            <constraint firstItem="AyC-as-YWd" firstAttribute="top" secondItem="NLT-fm-8ht" secondAttribute="bottom" id="g6u-Vi-USY"/>
+                            <constraint firstAttribute="trailing" secondItem="Em2-rY-Okg" secondAttribute="trailing" id="pyj-YO-E46"/>
+                            <constraint firstItem="fsa-Jb-EBP" firstAttribute="top" secondItem="AyC-as-YWd" secondAttribute="bottom" id="qsG-yA-b7G"/>
+                            <constraint firstItem="Em2-rY-Okg" firstAttribute="top" secondItem="NLT-fm-8ht" secondAttribute="bottom" constant="44" id="t0K-9c-zYY"/>
+                            <constraint firstAttribute="trailing" secondItem="AyC-as-YWd" secondAttribute="trailing" id="zFu-9O-gRY"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Поиск" id="lte-jg-HaB"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="reportsTableView" destination="fsa-Jb-EBP" id="mNm-Jq-lxz"/>
+                        <outlet property="searchBar" destination="AyC-as-YWd" id="6JH-XG-e2N"/>
+                        <outlet property="searchEmbedContainer" destination="Em2-rY-Okg" id="bir-xp-ace"/>
+                        <segue destination="oc7-Lc-F2T" kind="custom" identifier="ReportListModuleToReportsSearchModuleSegue" customClass="RamblerEmbedSegue" id="ReD-oc-ryr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iSu-Ax-ZhD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1146" y="889"/>
+        </scene>
+        <!--SpeakerInfoViewController-->
+        <scene sceneID="xK4-tR-4a3">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SpeakerInfo" referencedIdentifier="SpeakerInfoViewController" id="qMA-Bk-oT9" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="gbl-bd-QM8"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zz9-Oo-gA1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2196" y="1391"/>
+        </scene>
+        <!--EventViewController-->
+        <scene sceneID="uD5-9y-Ox0">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Event" referencedIdentifier="EventViewController" id="Rfg-4w-L7M" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="BAJ-Lx-1ru"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LaW-6U-u9o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2191.5" y="1506"/>
+        </scene>
+        <!--LectureViewController-->
+        <scene sceneID="ah5-sY-1fy">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Lecture" referencedIdentifier="LectureViewController" id="GSP-14-n54" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="paF-er-EJa"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a2c-HB-x5Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2196" y="1321"/>
+        </scene>
+        <!--Reports Search View Controller-->
+        <scene sceneID="jdV-Ct-Pb1">
+            <objects>
+                <viewController id="oc7-Lc-F2T" customClass="ReportsSearchViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iQk-Wh-vcW"/>
+                        <viewControllerLayoutGuide type="bottom" id="2vE-Bz-vJU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Aqa-0h-oMZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="39z-7p-f7K" userLabel="ClearPlaceholder">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="wEp-zY-b0M" appends="YES" id="Gbc-bF-Hm0"/>
+                                </connections>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ef0-fI-DXD" userLabel="EmptyPlaceholder">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empty list" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pL6-vX-MT7">
+                                        <rect key="frame" x="112" y="172" width="97" height="25"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="21"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="pL6-vX-MT7" firstAttribute="centerY" secondItem="ef0-fI-DXD" secondAttribute="centerY" constant="-100" id="712-bF-dk4"/>
+                                    <constraint firstItem="pL6-vX-MT7" firstAttribute="centerX" secondItem="ef0-fI-DXD" secondAttribute="centerX" id="L6w-XV-8V3"/>
+                                </constraints>
+                            </view>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ymM-1E-AlH">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ef0-fI-DXD" firstAttribute="top" secondItem="Aqa-0h-oMZ" secondAttribute="top" id="Ecq-y4-TnE"/>
+                            <constraint firstItem="ymM-1E-AlH" firstAttribute="leading" secondItem="Aqa-0h-oMZ" secondAttribute="leading" id="H2q-ih-ycf"/>
+                            <constraint firstAttribute="bottom" secondItem="ymM-1E-AlH" secondAttribute="bottom" id="K4M-6y-zA2"/>
+                            <constraint firstAttribute="bottom" secondItem="39z-7p-f7K" secondAttribute="bottom" id="UbA-M4-osN"/>
+                            <constraint firstItem="ymM-1E-AlH" firstAttribute="top" secondItem="Aqa-0h-oMZ" secondAttribute="top" id="Xln-S8-C6S"/>
+                            <constraint firstItem="39z-7p-f7K" firstAttribute="leading" secondItem="Aqa-0h-oMZ" secondAttribute="leading" id="dcc-q9-gXU"/>
+                            <constraint firstAttribute="bottom" secondItem="ef0-fI-DXD" secondAttribute="bottom" id="ezL-kk-HyZ"/>
+                            <constraint firstItem="ef0-fI-DXD" firstAttribute="leading" secondItem="Aqa-0h-oMZ" secondAttribute="leading" id="hnO-1s-2LW"/>
+                            <constraint firstItem="39z-7p-f7K" firstAttribute="top" secondItem="Aqa-0h-oMZ" secondAttribute="top" id="mLA-rD-Uez"/>
+                            <constraint firstAttribute="trailing" secondItem="ef0-fI-DXD" secondAttribute="trailing" id="tG9-Ky-f9M"/>
+                            <constraint firstAttribute="trailing" secondItem="39z-7p-f7K" secondAttribute="trailing" id="utN-dQ-xay"/>
+                            <constraint firstAttribute="trailing" secondItem="ymM-1E-AlH" secondAttribute="trailing" id="x13-Pa-hau"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="animatorReportsSearchView" destination="WVH-53-MID" id="jRP-CI-LuA"/>
+                        <outlet property="clearPlaceholderView" destination="39z-7p-f7K" id="ob4-C1-Bwf"/>
+                        <outlet property="emptyPlaceholderView" destination="ef0-fI-DXD" id="3Wj-3u-Nhe"/>
+                        <outlet property="reportsListSearchTableView" destination="ymM-1E-AlH" id="fWt-OP-4Fi"/>
+                        <segue destination="GSP-14-n54" kind="push" identifier="ReportsSearchModuleToLectureModuleSegue" id="8BM-dq-5wt"/>
+                        <segue destination="qMA-Bk-oT9" kind="push" identifier="ReportsSearchModuleToSpeakerModuleSegue" id="CxD-rk-JNL"/>
+                        <segue destination="Rfg-4w-L7M" kind="push" identifier="ReportsSearchModuleToEventModuleSegue" id="BuA-DV-KG4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iMU-4N-SSR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="wEp-zY-b0M">
+                    <connections>
+                        <action selector="handleTapClearPlaceholder:" destination="oc7-Lc-F2T" id="k5L-jW-QMO"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <customObject id="WVH-53-MID" customClass="ReportsSearchViewAnimator">
+                    <connections>
+                        <outlet property="clearPlaceholderView" destination="39z-7p-f7K" id="7HA-Zs-fqA"/>
+                        <outlet property="containerView" destination="Aqa-0h-oMZ" id="rrA-88-q1U"/>
+                        <outlet property="emptyPlaceholderView" destination="ef0-fI-DXD" id="E9D-lL-eVO"/>
+                        <outlet property="reportsListSearchTableView" destination="ymM-1E-AlH" id="G0n-KC-DaO"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="1696" y="1439"/>
+        </scene>
+    </scenes>
+</document>

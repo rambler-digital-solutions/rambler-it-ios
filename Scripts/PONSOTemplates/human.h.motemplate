@@ -1,0 +1,10 @@
+//
+//  <$name$>PlainObject.h
+//
+//
+
+#import "_<$name$>PlainObject.h"
+
+@interface <$name$>PlainObject : _<$name$>PlainObject
+// Custom logic goes here.
+@end

@@ -1,0 +1,1 @@
+../../../MMBarricade/Barricade/Core/UI/MMBarricadeResponseSetViewController.h

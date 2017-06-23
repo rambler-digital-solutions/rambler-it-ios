@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="LectureDescriptionTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="135"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="134.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 октября в 19:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gat-mK-mNT">
+                        <rect key="frame" x="20" y="8" width="280" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="L45-HP-Klo"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JSDoc3 in Depth" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V89-zK-gvz">
+                        <rect key="frame" x="20" y="44" width="280" height="41"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Я уверен, все не любят писать JS" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u5d-dV-o5b">
+                        <rect key="frame" x="20" y="107" width="280" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="u5d-dV-o5b" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="4UK-vi-dOi"/>
+                    <constraint firstItem="Gat-mK-mNT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="AAc-qv-s8K"/>
+                    <constraint firstAttribute="trailing" secondItem="V89-zK-gvz" secondAttribute="trailing" constant="20" id="BCB-8L-OrM"/>
+                    <constraint firstItem="Gat-mK-mNT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="FLT-tL-wzi"/>
+                    <constraint firstItem="u5d-dV-o5b" firstAttribute="top" secondItem="V89-zK-gvz" secondAttribute="bottom" constant="22" id="IB2-g5-Jod"/>
+                    <constraint firstItem="V89-zK-gvz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="N7T-wG-pwD"/>
+                    <constraint firstItem="V89-zK-gvz" firstAttribute="top" secondItem="Gat-mK-mNT" secondAttribute="bottom" constant="15" id="NNy-wR-8X1"/>
+                    <constraint firstAttribute="trailing" secondItem="u5d-dV-o5b" secondAttribute="trailing" constant="20" id="eCW-kI-usM"/>
+                    <constraint firstAttribute="bottom" secondItem="u5d-dV-o5b" secondAttribute="bottom" constant="6.5" id="gKb-gX-Hn4"/>
+                    <constraint firstAttribute="trailing" secondItem="Gat-mK-mNT" secondAttribute="trailing" constant="20" id="tm4-6j-xPC"/>
+                </constraints>
+            </tableViewCellContentView>
+            <inset key="separatorInset" minX="9999" minY="0.0" maxX="0.0" maxY="0.0"/>
+            <connections>
+                <outlet property="dateLabel" destination="Gat-mK-mNT" id="bGC-1s-AZz"/>
+                <outlet property="descriptionLabel" destination="u5d-dV-o5b" id="yNL-6h-xXp"/>
+                <outlet property="titleLabel" destination="V89-zK-gvz" id="JLv-BG-sKs"/>
+            </connections>
+            <point key="canvasLocation" x="381" y="389.5"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -1,0 +1,11 @@
+language: objective-c
+osx_image: xcode8.2
+branches:
+  only:
+  - master
+  - develop
+script: scan --scheme "ConferencesTests"
+before_install:
+- gem update --system
+- gem --version
+- gem install fastlane

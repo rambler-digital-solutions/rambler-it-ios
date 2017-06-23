@@ -1,0 +1,1 @@
+../../../Nimbus/src/core/src/NISnapshotRotation.h

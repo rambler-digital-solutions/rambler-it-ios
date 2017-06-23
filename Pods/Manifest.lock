@@ -1,1 +1,179 @@
-COCOAPODS: 0.38.2
+PODS:
+  - AFNetworking (2.6.3):
+    - AFNetworking/NSURLConnection (= 2.6.3)
+    - AFNetworking/NSURLSession (= 2.6.3)
+    - AFNetworking/Reachability (= 2.6.3)
+    - AFNetworking/Security (= 2.6.3)
+    - AFNetworking/Serialization (= 2.6.3)
+    - AFNetworking/UIKit (= 2.6.3)
+  - AFNetworking/NSURLConnection (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.6.3)
+  - AFNetworking/Security (2.6.3)
+  - AFNetworking/Serialization (2.6.3)
+  - AFNetworking/UIKit (2.6.3):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - CocoaLumberjack (2.2.0):
+    - CocoaLumberjack/Default (= 2.2.0)
+    - CocoaLumberjack/Extensions (= 2.2.0)
+  - CocoaLumberjack/Core (2.2.0)
+  - CocoaLumberjack/Default (2.2.0):
+    - CocoaLumberjack/Core
+  - CocoaLumberjack/Extensions (2.2.0):
+    - CocoaLumberjack/Default
+  - Crashlytics (3.7.0):
+    - Fabric (~> 1.6.3)
+  - CrutchKit/Proxying (0.0.10):
+    - CrutchKit/Runtime
+  - CrutchKit/Runtime (0.0.10)
+  - EasyMapping (0.15.3):
+    - EasyMapping/Core (= 0.15.3)
+  - EasyMapping/Core (0.15.3)
+  - Fabric (1.6.7)
+  - FLAnimatedImage (1.0.12)
+  - libextobjc (0.4.1):
+    - libextobjc/EXTADT (= 0.4.1)
+    - libextobjc/EXTConcreteProtocol (= 0.4.1)
+    - libextobjc/EXTKeyPathCoding (= 0.4.1)
+    - libextobjc/EXTNil (= 0.4.1)
+    - libextobjc/EXTSafeCategory (= 0.4.1)
+    - libextobjc/EXTScope (= 0.4.1)
+    - libextobjc/EXTSelectorChecking (= 0.4.1)
+    - libextobjc/EXTSynthesize (= 0.4.1)
+    - libextobjc/NSInvocation+EXT (= 0.4.1)
+    - libextobjc/NSMethodSignature+EXT (= 0.4.1)
+    - libextobjc/RuntimeExtensions (= 0.4.1)
+    - libextobjc/UmbrellaHeader (= 0.4.1)
+  - libextobjc/EXTADT (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTConcreteProtocol (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTKeyPathCoding (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTNil (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTSafeCategory (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTScope (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTSelectorChecking (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTSynthesize (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/NSInvocation+EXT (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/NSMethodSignature+EXT (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/RuntimeExtensions (0.4.1)
+  - libextobjc/UmbrellaHeader (0.4.1)
+  - MagicalRecord (2.3.2):
+    - MagicalRecord/Core (= 2.3.2)
+  - MagicalRecord/Core (2.3.2)
+  - MBCircularProgressBar (0.3.5)
+  - MMBarricade (1.0.1):
+    - MMBarricade/Core (= 1.0.1)
+  - MMBarricade/Core (1.0.1)
+  - Nimbus/Collections (1.2.4):
+    - Nimbus/Core
+  - Nimbus/Core (1.2.4)
+  - Nimbus/Models (1.2.4):
+    - Nimbus/Core
+  - OCMock (3.3.1)
+  - PureLayout (3.0.1)
+  - RamblerAppDelegateProxy (0.0.3)
+  - RamblerSegues (1.1.2):
+    - RamblerSegues/Core (= 1.1.2)
+    - RamblerSegues/CrossStoryboardSegue (= 1.1.2)
+    - RamblerSegues/EmbedSegue (= 1.1.2)
+  - RamblerSegues/Core (1.1.2)
+  - RamblerSegues/CrossStoryboardSegue (1.1.2)
+  - RamblerSegues/EmbedSegue (1.1.2)
+  - RamblerTyphoonUtils/AssemblyCollector (1.5.0)
+  - RamblerTyphoonUtils/AssemblyTesting (1.5.0)
+  - SDWebImage (3.7.3):
+    - SDWebImage/Core (= 3.7.3)
+  - SDWebImage/Core (3.7.3)
+  - Typhoon (3.5.1):
+    - Typhoon/no-arc (= 3.5.1)
+  - Typhoon/no-arc (3.5.1)
+  - UICollectionViewLeftAlignedLayout (1.0.1)
+  - ViperMcFlurry (1.5.2)
+  - XCDYouTubeKit (2.5.3)
+
+DEPENDENCIES:
+  - AFNetworking (~> 2.6)
+  - CocoaLumberjack (~> 2.0)
+  - Crashlytics
+  - CrutchKit/Proxying (from `https://github.com/CognitiveDisson/CrutchKit`, tag `0.0.10`)
+  - EasyMapping (~> 0.15)
+  - Fabric
+  - FLAnimatedImage (~> 1.0)
+  - libextobjc (~> 0.4)
+  - MagicalRecord (~> 2.3)
+  - MagicalRecord (~> 2.3.2)
+  - MBCircularProgressBar (= 0.3.5)
+  - MMBarricade (~> 1.0.1)
+  - Nimbus/Collections (from `https://github.com/rambler-ios/nimbus`)
+  - Nimbus/Models (from `https://github.com/rambler-ios/nimbus`)
+  - OCMock (= 3.3.1)
+  - PureLayout (~> 3.0)
+  - RamblerAppDelegateProxy (= 0.0.3)
+  - RamblerSegues (= 1.1.2)
+  - RamblerTyphoonUtils/AssemblyCollector (= 1.5.0)
+  - RamblerTyphoonUtils/AssemblyTesting (= 1.5.0)
+  - SDWebImage (~> 3.7)
+  - Typhoon (= 3.5.1)
+  - Typhoon (~> 3.3)
+  - UICollectionViewLeftAlignedLayout (= 1.0.1)
+  - ViperMcFlurry (= 1.5.2)
+  - XCDYouTubeKit (~> 2.5)
+
+EXTERNAL SOURCES:
+  CrutchKit:
+    :git: https://github.com/CognitiveDisson/CrutchKit
+    :tag: 0.0.10
+  Nimbus:
+    :git: https://github.com/rambler-ios/nimbus
+
+CHECKOUT OPTIONS:
+  CrutchKit:
+    :git: https://github.com/CognitiveDisson/CrutchKit
+    :tag: 0.0.10
+  Nimbus:
+    :commit: f87fc967a359b6977e7fa153494d8b85a61d0dc1
+    :git: https://github.com/rambler-ios/nimbus
+
+SPEC CHECKSUMS:
+  AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  CocoaLumberjack: 17fe8581f84914d5d7e6360f7c70022b173c3ae0
+  Crashlytics: c3a2333dea9e2733d2777f730910321fc9e25c0d
+  CrutchKit: 562cf1276c995cb3e575d468684da7eb7ae2a93c
+  EasyMapping: 5baf5a9a814538fdac4859cf56270ae761dd904a
+  Fabric: caf7580c725e64db144f610ac65cd60956911dc7
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
+  MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
+  MBCircularProgressBar: 0b795b722a5eb5b0923822f90474e2576a1a7855
+  MMBarricade: 61e17f747baa1a33cd7f8a9c75d520ca958508dd
+  Nimbus: 41be1576e98dda5d731381f10e580319df6c4f23
+  OCMock: f3f61e6eaa16038c30caa5798c5e49d3307b6f22
+  PureLayout: f35f5384c9c4e4479df041dbe33ad7577b71ddfb
+  RamblerAppDelegateProxy: a29284f46e8711663f0d279f5023469a96b27529
+  RamblerSegues: 697ae59f2fbaefac805a57fc4e61fb73ba1fd5de
+  RamblerTyphoonUtils: '08a6b5592e045a490cd4550aa9ea4a581308d482'
+  SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
+  Typhoon: c0950bb9f2e835eb8a7dc6983160109b6baf2dda
+  UICollectionViewLeftAlignedLayout: 6d10790db3e07958d91bd910d8b8e9dad952b1ef
+  ViperMcFlurry: 701bc3ad8d188b1f1e157ec0ddf4e77184de88b5
+  XCDYouTubeKit: 90690f9e3523735dc93b8024269d991b0cfffe78
+
+PODFILE CHECKSUM: 80cbe8da099f6dd019320bb01cf92d24ffda5c79
+
+COCOAPODS: 1.1.1

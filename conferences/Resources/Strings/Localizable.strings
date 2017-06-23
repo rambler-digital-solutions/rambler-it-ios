@@ -1,0 +1,65 @@
+// Copyright (c) 2015 RAMBLER&Co
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+
+"VideoRecordTableViewCellTitle" = "Запись выступления";
+"LectureMaterialsTableViewCellTitle" = "Материалы";
+"AdditionInformationTableViewCellTitle" = "Дополнительно";
+"LecturePresentationTableViewCellTitle" = "презентация";
+"LectureArticlesTableViewCellTitle" = "cтатья";
+"LectureCodeGithubTableViewCellTitle" = "код проекта на Гитхабе";
+"kSpeakerInfoSocialNetworksSectionName" = "Контакты";
+"kSpeakerInfoLecturesSectionName" = "Выступления";
+"kSpeakerInfoWebsiteSectionName" = "Веб-сайт";
+"kSpeakerInfoMailComposerUnavailableAlertTitle" = "Ошибка";
+"kSpeakerInfoMailComposerUnavailableAlertDescription" = "Настройте отправку писем на вашем устройстве";
+"kSpeakerInfoEmailUnavailableAlertTitle" = "Ошибка";
+"kSpeakerInfoEmailUnavailableAlertDescription" = "E-mail докладчика задан некорректно, свяжитесь с поддержкой";
+"kSpeakInfoFacebookAccountTitle" = "Facebook";
+"kSpeakInfoVkontakteAccountTitle" = "Vkontakte";
+"kSpeakInfoGithubAccountTitle" = "Github";
+"kSpeakInfoLinkedInAccountTitle" = "LinkedIn";
+"kSpeakInfoInstagramAccountTitle" = "Instagram";
+"kSpeakInfoTwitterAccountTitle" = "Twitter";
+
+"kReportSearchEventSectionTitle" = "События";
+"kReportSearchLectureSectionTitle" = "Выступления";
+"kReportSearchSpeakerSectionTitle" = "Докладчики";
+
+"EventSavedToCalendarAlertMessage" = "Событие сохранено в календарь.";
+"EmptyAlertTitle" = "";
+"OKAlertActionTitle" = "OK";
+"ErrorAlertTitle" = "Ошибка";
+
+"EventAlreadyStoredInCalendarErrorDescription" = "Событие уже существует в календаре.";
+
+
+"UberAuthErrorMessage" = "В процессе авторизации произошла ошибка. Возможно, у Вас установлена старая версия приложения Uber";
+"kRamblerOfficeName" = "Rambler&Co";
+
+"kLectureMaterialRemoveAlertTitle" = "Удаление";
+"kLectureMaterialRemoveAlertMessage" = "Вы уверены?";
+"kLectureMaterialRemoveAlertConfirm" = "Удалить";
+"kLectureMaterialRemoveAlertCancel" = "Отмена";
+"kLectureMaterialErrorAlertCancel" = "Ок";
+"kLectureMaterialErrorAlertTitle" = "Ошибка";
+"kLectureMaterialDownloadAlertTitle" = "Скачивание";
+"kLectureMaterialDownloadAlertMessage" = "Вы уверены?";
+"kLectureMaterialDownloadAlertConfirm" = "Скачать";
+"kLectureMaterialDownloadAlertCancel" = "Отмена";

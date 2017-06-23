@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Lecture View Controller-->
+        <scene sceneID="yMb-rJ-n2g">
+            <objects>
+                <viewController storyboardIdentifier="LectureViewController" id="JLc-iV-GVs" customClass="LectureViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EvR-v3-elB"/>
+                        <viewControllerLayoutGuide type="bottom" id="saL-R1-koD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="l1P-3G-ghg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5kv-X3-9eX">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="JLc-iV-GVs" id="Xpk-CI-3CJ"/>
+                                    <outlet property="delegate" destination="JLc-iV-GVs" id="FuO-iO-bdF"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="giD-j7-nfl">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="AZ9-us-HpO"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="giD-j7-nfl" firstAttribute="top" secondItem="l1P-3G-ghg" secondAttribute="topMargin" id="ETM-dG-WeE"/>
+                            <constraint firstItem="giD-j7-nfl" firstAttribute="leading" secondItem="l1P-3G-ghg" secondAttribute="leading" id="QQq-V0-qRt"/>
+                            <constraint firstItem="5kv-X3-9eX" firstAttribute="leading" secondItem="l1P-3G-ghg" secondAttribute="leading" id="SBX-l8-PbA"/>
+                            <constraint firstAttribute="trailing" secondItem="5kv-X3-9eX" secondAttribute="trailing" id="ZV1-od-cL5"/>
+                            <constraint firstAttribute="bottom" secondItem="5kv-X3-9eX" secondAttribute="bottom" id="gCW-j7-nMe"/>
+                            <constraint firstAttribute="trailing" secondItem="giD-j7-nfl" secondAttribute="trailing" id="rVs-r8-Fga"/>
+                            <constraint firstItem="5kv-X3-9eX" firstAttribute="top" secondItem="l1P-3G-ghg" secondAttribute="top" id="shs-Dh-8As"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="eai-cD-md8">
+                        <barButtonItem key="rightBarButtonItem" image="ic-share" id="Iis-44-I6V">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="didTapShareButton:" destination="JLc-iV-GVs" id="oDh-3O-Akh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="5kv-X3-9eX" id="aRd-NN-7o7"/>
+                        <outlet property="tableViewAnimator" destination="b0x-q0-hzi" id="GXh-Le-Iu9"/>
+                        <segue destination="p1O-q9-0wo" kind="push" identifier="LectureModuleToSpeakerInfoModuleSegue" id="XaW-hB-fJG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DF2-UC-Jdq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="b0x-q0-hzi" customClass="LectureTableViewAnimator">
+                    <connections>
+                        <outlet property="tableView" destination="5kv-X3-9eX" id="Vbu-1X-6mJ"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="2232" y="258"/>
+        </scene>
+        <!--SpeakerInfoViewController-->
+        <scene sceneID="ARJ-aI-mmf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SpeakerInfo" referencedIdentifier="SpeakerInfoViewController" id="p1O-q9-0wo" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J2x-xj-0EH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2719" y="258"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic-share" width="24" height="24"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
+</document>
