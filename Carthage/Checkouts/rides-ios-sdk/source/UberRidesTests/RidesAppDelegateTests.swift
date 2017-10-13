@@ -32,12 +32,12 @@ class RidesAppDelegateTests : XCTestCase {
     
     override func setUp() {
         super.setUp()
-        Configuration.restoreDefaults()
+        Configuration.bundle = Bundle(for: type(of: self))
         Configuration.plistName = "testInfo"
-        Configuration.bundle = NSBundle(forClass: self.dynamicType)
-        Configuration.setClientID(clientID)
-        Configuration.setSandboxEnabled(true)
-        versionNumber = NSBundle(forClass: RideParameters.self).objectForInfoDictionaryKey("CFBundleShortVersionString") as? String
+        Configuration.restoreDefaults()
+        Configuration.shared.clientID = clientID
+        Configuration.shared.isSandbox = true
+        versionNumber = Bundle(for: RideParameters.self).object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
         expectedDeeplinkUserAgent = "rides-ios-v\(versionNumber!)-deeplink"
         expectedButtonUserAgent = "rides-ios-v\(versionNumber!)-button"
     }
@@ -49,30 +49,30 @@ class RidesAppDelegateTests : XCTestCase {
     }
     
     func testOpenUrlReturnsFalse_whenNoLoginManager() {
-        let appDelegate = RidesAppDelegate.sharedInstance
+        let appDelegate = RidesAppDelegate.shared
         
-        let testApp = UIApplication.sharedApplication()
-        guard let url = NSURL(string: "http://www.google.com") else {
+        let testApp = UIApplication.shared
+        guard let url = URL(string: "http://www.google.com") else {
             XCTFail()
             return
         }
         
-        XCTAssertFalse(appDelegate.application(testApp, openURL: url, sourceApplication: nil, annotation: nil))
+        XCTAssertFalse(appDelegate.application(testApp, open: url, sourceApplication: nil, annotation: ""))
     }
     
     func testOpenUrlReturnsTrue_callsOpenURLOnLoginManager() {
-        let expectation = expectationWithDescription("open URL called")
-        let appDelegate = RidesAppDelegate.sharedInstance
+        let expectation = self.expectation(description: "open URL called")
+        let appDelegate = RidesAppDelegate.shared
         let loginManagerMock = LoginManagingProtocolMock()
-        let testApp = UIApplication.sharedApplication()
-        guard let testURL = NSURL(string: "http://www.google.com") else {
+        let testApp = UIApplication.shared
+        guard let testURL = URL(string: "http://www.google.com") else {
             XCTFail()
             return
         }
         let testSourceApplication = "testSource"
         let testAnnotation = "annotation"
         
-        let urlClosure: ((UIApplication, NSURL, String?, AnyObject?) -> Bool) = { application, url, source, annotation in
+        let urlClosure: ((UIApplication, URL, String?, Any?) -> Bool) = { application, url, source, annotation in
             XCTAssertEqual(application, testApp)
             XCTAssertEqual(url, testURL)
             XCTAssertEqual(source, testSourceApplication)
@@ -83,34 +83,34 @@ class RidesAppDelegateTests : XCTestCase {
         
         loginManagerMock.openURLClosure = urlClosure
         appDelegate.loginManager = loginManagerMock
-        XCTAssertTrue(appDelegate.application(testApp, openURL: testURL, sourceApplication: testSourceApplication, annotation: testAnnotation))
+        XCTAssertTrue(appDelegate.application(testApp, open: testURL, sourceApplication: testSourceApplication, annotation: testAnnotation))
         XCTAssertNil(appDelegate.loginManager)
-        waitForExpectationsWithTimeout(0.2, handler: nil)
+        waitForExpectations(timeout: 0.2, handler: nil)
     }
     
     func testDidFinishLaunchingReturnsFalse_whenNoLaunchOptions() {
-        let appDelegate = RidesAppDelegate.sharedInstance
-        let testApp = UIApplication.sharedApplication()
+        let appDelegate = RidesAppDelegate.shared
+        let testApp = UIApplication.shared
         XCTAssertFalse(appDelegate.application(testApp, didFinishLaunchingWithOptions: nil))
     }
     
     func testDidFinishLaunchingCallsOpenURL_whenLaunchURL() {
-        let expectation = expectationWithDescription("open URL called")
-        let appDelegate = RidesAppDelegate.sharedInstance
-        let testApp = UIApplication.sharedApplication()
+        let expectation = self.expectation(description: "open URL called")
+        let appDelegate = RidesAppDelegate.shared
+        let testApp = UIApplication.shared
         let loginManagerMock = LoginManagingProtocolMock()
-        guard let testURL = NSURL(string: "http://www.google.com") else {
+        guard let testURL = URL(string: "http://www.google.com") else {
             XCTFail()
             return
         }
         let testSourceApplication = "testSource"
         let testAnnotation = "annotation"
-        var launchOptions = [String: AnyObject]()
-        launchOptions[UIApplicationLaunchOptionsURLKey] = testURL
-        launchOptions[UIApplicationLaunchOptionsSourceApplicationKey] = testSourceApplication
-        launchOptions[UIApplicationLaunchOptionsAnnotationKey] = testAnnotation
+        var launchOptions = [UIApplicationLaunchOptionsKey: Any]()
+        launchOptions[UIApplicationLaunchOptionsKey.url] = testURL as Any
+        launchOptions[UIApplicationLaunchOptionsKey.sourceApplication] = testSourceApplication as Any
+        launchOptions[UIApplicationLaunchOptionsKey.annotation] = testAnnotation as Any
         
-        let urlClosure: ((UIApplication, NSURL, String?, AnyObject?) -> Bool) = { application, url, source, annotation in
+        let urlClosure: ((UIApplication, URL, String?, Any?) -> Bool) = { application, url, source, annotation in
             XCTAssertEqual(application, testApp)
             XCTAssertEqual(url, testURL)
             XCTAssertEqual(source, testSourceApplication)
@@ -123,12 +123,12 @@ class RidesAppDelegateTests : XCTestCase {
         appDelegate.loginManager = loginManagerMock
         XCTAssertTrue(appDelegate.application(testApp, didFinishLaunchingWithOptions: launchOptions))
         XCTAssertNil(appDelegate.loginManager)
-        waitForExpectationsWithTimeout(0.2, handler: nil)
+        waitForExpectations(timeout: 0.2, handler: nil)
     }
     
     func testDidBecomeActiveCallsLoginManager_whenDidBecomeActiveNotification() {
-        let expectation = expectationWithDescription("didBecomeActive called")
-        let appDelegate = RidesAppDelegate.sharedInstance
+        let expectation = self.expectation(description: "didBecomeActive called")
+        let appDelegate = RidesAppDelegate.shared
         let loginManagerMock = LoginManagingProtocolMock()
         
         let didBecomeActiveClosure: () -> () = {
@@ -138,9 +138,9 @@ class RidesAppDelegateTests : XCTestCase {
         loginManagerMock.didBecomeActiveClosure = didBecomeActiveClosure
         appDelegate.loginManager = loginManagerMock
         
-        NSNotificationCenter.defaultCenter().postNotificationName(UIApplicationDidBecomeActiveNotification, object: nil)
+        NotificationCenter.default.post(name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
         
-        waitForExpectationsWithTimeout(0.2) { _ in
+        waitForExpectations(timeout: 0.2) { _ in
             XCTAssertNil(appDelegate.loginManager)
         }
     }

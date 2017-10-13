@@ -7,4 +7,5 @@ framework module UberRides {
 
 module UberRides.Swift {
     header "UberRides-Swift.h"
+    requires objc
 }

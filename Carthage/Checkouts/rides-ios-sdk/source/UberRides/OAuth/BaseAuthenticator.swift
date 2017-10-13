@@ -28,44 +28,44 @@ import UIKit
 @objc(UBSDKBaseAuthenticator) public class BaseAuthenticator: NSObject, UberAuthenticating {
     
     /// Optional identifier for saving the access token in keychain
-    public var accessTokenIdentifier: String?
+    @objc public var accessTokenIdentifier: String?
     
     /// Optional access group for saving the access token in keychain
-    public var keychainAccessGroup: String?
+    @objc public var keychainAccessGroup: String?
     
     /// Completion block for when login has completed
-    public var loginCompletion: ((accessToken: AccessToken?, error: NSError?) -> Void)?
+    @objc public var loginCompletion: ((_ accessToken: AccessToken?, _ error: NSError?) -> Void)?
     
     /// Scopes to request during login
-    public var scopes: [RidesScope]
+    @objc public var scopes: [RidesScope]
     
     /// The Callback URL Type to use for this authentication method
-    public var callbackURIType: CallbackURIType = .General
+    @objc public var callbackURIType: CallbackURIType = .general
     
-    init(scopes: [RidesScope]) {
+    @objc init(scopes: [RidesScope]) {
         self.scopes = scopes
         super.init()
     }
     
-    func handleRedirectRequest(request: NSURLRequest) -> Bool {
+    func handleRedirect(for request: URLRequest) -> Bool {
         var didHandleRedirect = false
-        if let url = request.URL where AuthenticationURLUtility.shouldHandleRedirectURL(url, type: callbackURIType) {
+        if let url = request.url, AuthenticationURLUtility.shouldHandleRedirectURL(url, type: callbackURIType) {
             do {
-                let accessToken = try AccessTokenFactory.createAccessTokenFromRedirectURL(url)
+                let accessToken = try AccessTokenFactory.createAccessToken(fromRedirectURL: url)
                 
-                let tokenIdentifier = accessTokenIdentifier ?? Configuration.getDefaultAccessTokenIdentifier()
-                let accessGroup = keychainAccessGroup ?? Configuration.getDefaultKeychainAccessGroup()
+                let tokenIdentifier = accessTokenIdentifier ?? Configuration.shared.defaultAccessTokenIdentifier
+                let accessGroup = keychainAccessGroup ?? Configuration.shared.defaultKeychainAccessGroup
                 var error: NSError?
-                let success = TokenManager.saveToken(accessToken, tokenIdentifier: tokenIdentifier, accessGroup: accessGroup)
+                let success = TokenManager.save(accessToken: accessToken, tokenIdentifier: tokenIdentifier, accessGroup: accessGroup)
                 if !success {
-                    error = RidesAuthenticationErrorFactory.errorForType(ridesAuthenticationErrorType: .UnableToSaveAccessToken)
+                    error = RidesAuthenticationErrorFactory.errorForType(ridesAuthenticationErrorType: .unableToSaveAccessToken)
                     print("Error: access token failed to save to keychain")
                 }
-                loginCompletion?(accessToken: accessToken, error: error)
+                loginCompletion?(accessToken, error)
             } catch let ridesError as NSError {
-                loginCompletion?(accessToken: nil, error: ridesError)
+                loginCompletion?(nil, ridesError)
             } catch {
-                loginCompletion?(accessToken: nil, error: RidesAuthenticationErrorFactory.errorForType(ridesAuthenticationErrorType: .InvalidResponse))
+                loginCompletion?(nil, RidesAuthenticationErrorFactory.errorForType(ridesAuthenticationErrorType: .invalidResponse))
             }
             didHandleRedirect = true
         }

@@ -41,11 +41,10 @@ static NSString *const kDropOffNickname = @"Rambler&Co";
 - (UBSDKRideParametersBuilder *)rideParametersBuilder {
     return [TyphoonDefinition withClass:[UBSDKRideParametersBuilder class]
                           configuration:^(TyphoonDefinition *definition) {
-                              [definition injectMethod:@selector(setDropoffLocation:nickname:)
-                                            parameters:^(TyphoonMethod *method) {
-                                                [method injectParameterWith:[self dropOffLocation]];
-                                                [method injectParameterWith:kDropOffNickname];
-                                            }];
+                              [definition injectProperty:@selector(dropoffLocation)
+                                                    with:[self dropOffLocation]];
+                              [definition injectProperty:@selector(dropoffNickname)
+                                                    with:kDropOffNickname];
                           }];
 }
 

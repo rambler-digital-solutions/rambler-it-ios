@@ -39,7 +39,6 @@
 		0231D7BE1DFF34E60052471C /* LocationServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0231D7BD1DFF34E60052471C /* LocationServiceImplementation.m */; };
 		0231D7BF1DFF36470052471C /* LocationServiceImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0231D7BD1DFF34E60052471C /* LocationServiceImplementation.m */; };
 		0231D7C01DFF366E0052471C /* LocationConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 0231D7201DFE87150052471C /* LocationConstants.m */; };
-		0231D7F01E002C140052471C /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0231D7EE1E002C140052471C /* ObjectMapper.framework */; };
 		0231D7F11E002C140052471C /* UberRides.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0231D7EF1E002C140052471C /* UberRides.framework */; };
 		028E44601DF06CA300734E84 /* UberRidesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 028E445F1DF06CA300734E84 /* UberRidesAppDelegate.m */; };
 		028E446B1DF179CA00734E84 /* PredicateConfiguratorImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 028E446A1DF179CA00734E84 /* PredicateConfiguratorImplementation.m */; };
@@ -2117,7 +2116,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0231D7F01E002C140052471C /* ObjectMapper.framework in Frameworks */,
 				B844903CD5D6757D08026D5E /* libPods-Conferences.a in Frameworks */,
 				0231D7F11E002C140052471C /* UberRides.framework in Frameworks */,
 				6677E3AA1DE1A378006B1AF3 /* AVFoundation.framework in Frameworks */,
@@ -9307,7 +9305,6 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/UberRides.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework",
 			);
 			outputPaths = (
 			);
@@ -10378,7 +10375,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
@@ -10536,7 +10533,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
@@ -10590,7 +10587,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",

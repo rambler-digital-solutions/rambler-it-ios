@@ -51,16 +51,6 @@
     [super tearDown];
 }
 
-- (void)testThatAppDelegateCallSetRegion {
-    // given
-    
-    // when
-    [self.appDelegate application:OCMOCK_ANY didFinishLaunchingWithOptions:OCMOCK_ANY];
-    
-    // then
-    OCMVerify(ClassMethod([self.mockUberConfiguration setRegion:RegionDefault]));
-}
-
 - (void)testThatAppDelegateCallSetSandboxEnabled {
     // given
     
@@ -68,7 +58,7 @@
     [self.appDelegate application:OCMOCK_ANY didFinishLaunchingWithOptions:OCMOCK_ANY];
     
     // then
-    OCMVerify(ClassMethod([self.mockUberConfiguration setSandboxEnabled:NO]));
+    OCMVerify(ClassMethod([self.mockUberConfiguration setIsSandbox:NO]));
 }
 
 - (void)testThatAppDelegateCallSetFallbackEnabled {
@@ -78,7 +68,7 @@
     [self.appDelegate application:OCMOCK_ANY didFinishLaunchingWithOptions:OCMOCK_ANY];
     
     // then
-    OCMVerify(ClassMethod([self.mockUberConfiguration setFallbackEnabled:NO]));
+    OCMVerify(ClassMethod([self.mockUberConfiguration setUseFallback:NO]));
 }
 
 @end

@@ -23,7 +23,6 @@
 //  THE SOFTWARE.
 
 import CoreLocation
-import ObjectMapper
 
 // MARK: RideRequestDataBuilder
 
@@ -42,6 +41,7 @@ class RideRequestDataBuilder {
     let placeIDKey = "place_id"
     let productIDKey = "product_id"
     let surgeConfirmationKey = "surge_confirmation_id"
+    let upfrontFareKey = "fare_id"
     
     private var rideParameters: RideParameters
     
@@ -49,8 +49,8 @@ class RideRequestDataBuilder {
         self.rideParameters = rideParameters
     }
     
-    func build() -> NSData? {
-        var data = [String: AnyObject]()
+    func build() -> Data? {
+        var data = [String: Any]()
         
         if let productID = rideParameters.productID {
             data[productIDKey] = productID
@@ -93,10 +93,14 @@ class RideRequestDataBuilder {
         if let surgeConfirmation = rideParameters.surgeConfirmationID {
             data["\(surgeConfirmationKey)"] = surgeConfirmation
         }
+
+        if let upfrontFareID = rideParameters.upfrontFare?.fareID {
+            data[upfrontFareKey] = upfrontFareID
+        }
         
-        var bodyData: NSData?
+        var bodyData: Data?
         do {
-            bodyData = try NSJSONSerialization.dataWithJSONObject(data, options: .PrettyPrinted)
+            bodyData = try JSONSerialization.data(withJSONObject: data, options: [])
             return bodyData
         } catch { }
         return nil

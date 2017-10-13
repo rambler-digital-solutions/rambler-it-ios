@@ -59,7 +59,7 @@
     self.mockBuilder = OCMClassMock([UBSDKRideParametersBuilder class]);
     self.mockLocationService = OCMProtocolMock(@protocol(LocationService));
     self.mockRidesClient = OCMClassMock([UBSDKRidesClient class]);
-    self.mockProduct = OCMClassMock([UBSDKUberProduct class]);
+    self.mockProduct = OCMClassMock([UBSDKProduct class]);
     
     self.interactor.output = self.mockOutput;
     self.interactor.ramblerLocationService = self.mockRamblerLocationService;
@@ -147,7 +147,7 @@
     
     // then
     OCMVerify([self.mockBuilder setPickupLocation:location]);
-    OCMVerify([self.mockRidesClient fetchCheapestProductWithPickupLocation:location completion:OCMOCK_ANY]);
+    OCMVerify([self.mockRidesClient fetchProductsWithPickupLocation:location completion:OCMOCK_ANY]);
 }
 
 - (void)testThatInteractorSetProductIdAfterFetchCheapestProduct {
@@ -224,7 +224,7 @@
 - (void)prepareFetchCheapestProductTestWithLocation:(CLLocation *)location productId:(id)productId {
     id arg = [OCMArg invokeBlockWithArgs:self.mockProduct, OCMOCK_ANY, nil];
     
-    OCMStub([self.mockRidesClient fetchCheapestProductWithPickupLocation:location completion:arg]);
+    OCMStub([self.mockRidesClient fetchProductsWithPickupLocation:location completion:arg]);
     OCMStub([self.mockProduct productID]).andReturn(productId);
     OCMStub([self.mockBuilder setProductID:productId]).andReturn(self.mockBuilder);
 }

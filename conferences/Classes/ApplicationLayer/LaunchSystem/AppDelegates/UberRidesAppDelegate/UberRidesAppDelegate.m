@@ -25,17 +25,17 @@
 @implementation UberRidesAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [UBSDKConfiguration setRegion:RegionDefault];
-    [UBSDKConfiguration setSandboxEnabled:NO];
-    [UBSDKConfiguration setFallbackEnabled:NO];
+    [UBSDKConfiguration shared].isSandbox = NO;
+    [UBSDKConfiguration shared].useFallback = NO;
     
     return YES;
 }
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options {
-    [[UBSDKRidesAppDelegate sharedInstance] application:app openURL:url sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey] annotation:options[UIApplicationOpenURLOptionsAnnotationKey]];
-    
-    return YES;
+   return [[UBSDKRidesAppDelegate shared] application:app
+                                                 open:url
+                                    sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
+                                           annotation:options[UIApplicationOpenURLOptionsAnnotationKey]];
 }
 
 @end
