@@ -1,7 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Event Gallery View Controller-->
@@ -13,30 +17,30 @@
                         <viewControllerLayoutGuide type="bottom" id="4Ae-hD-WCO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="LQ0-C4-6R2">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lT5-OJ-HHf">
-                                <rect key="frame" x="32" y="156" width="256" height="256"/>
+                                <rect key="frame" x="59.5" y="205.5" width="256" height="256"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="256" id="Xhy-Hq-v6n"/>
                                     <constraint firstAttribute="height" constant="256" id="cVR-ta-wgZ"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1dW-rk-T4d">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Sbt-Sf-L4Y">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewLayout key="collectionViewLayout" id="4bE-UB-04j" customClass="EventGalleryCollectionViewFlowLayout"/>
                                 <cells/>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="61J-Ae-4aK" userLabel="ErrorView">
-                                <rect key="frame" x="0.0" y="24.5" width="320" height="519"/>
+                                <rect key="frame" x="27.5" y="74" width="320" height="519"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Не удалось загрузить данные" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivb-iI-TOo">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Failed to load data" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivb-iI-TOo">
                                         <rect key="frame" x="48" y="347.5" width="224" height="48"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="224" id="a2v-SV-yAs"/>
@@ -47,12 +51,12 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3pH-jK-hqY">
                                         <rect key="frame" x="67" y="409" width="186" height="40"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="1" green="0.99997437000274658" blue="0.99999129772186279" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="2Te-Ff-LJb"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                        <state key="normal" title="Повторить">
+                                        <state key="normal" title="Retry">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
@@ -70,14 +74,14 @@
                                                 </constraints>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="Zen-IY-gTV" firstAttribute="centerY" secondItem="fAA-Sj-V89" secondAttribute="centerY" id="bjT-k3-EQJ"/>
                                             <constraint firstItem="Zen-IY-gTV" firstAttribute="centerX" secondItem="fAA-Sj-V89" secondAttribute="centerX" id="yZ7-Ye-vwl"/>
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="fAA-Sj-V89" firstAttribute="leading" secondItem="61J-Ae-4aK" secondAttribute="leading" id="5Ko-wp-K6V"/>
                                     <constraint firstAttribute="trailing" secondItem="fAA-Sj-V89" secondAttribute="trailing" id="9z9-TZ-r68"/>
@@ -93,7 +97,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.96470588235294119" green="0.95686274509803915" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.96470588235294119" green="0.95686274509803915" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="61J-Ae-4aK" firstAttribute="centerX" secondItem="LQ0-C4-6R2" secondAttribute="centerX" id="C6w-tZ-2Mk"/>
                             <constraint firstItem="1dW-rk-T4d" firstAttribute="leading" secondItem="LQ0-C4-6R2" secondAttribute="leading" id="DUl-rN-nVd"/>
@@ -135,21 +139,21 @@
             </objects>
             <point key="canvasLocation" x="1764" y="-777"/>
         </scene>
-        <!--Все события-->
+        <!--All events-->
         <scene sceneID="nOx-C3-ZAu">
             <objects>
                 <tableViewController storyboardIdentifier="EventListTableViewController" id="nCN-ol-buU" customClass="EventListTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="96" sectionHeaderHeight="28" sectionFooterHeight="28" id="LWI-Zc-aHz">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <inset key="separatorInset" minX="12" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <connections>
                             <outlet property="dataSource" destination="nCN-ol-buU" id="LLe-nF-pJ7"/>
                             <outlet property="delegate" destination="nCN-ol-buU" id="Li9-M4-ulR"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Все события" id="bnq-gD-ykW"/>
+                    <navigationItem key="navigationItem" title="All events" id="bnq-gD-ykW"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>

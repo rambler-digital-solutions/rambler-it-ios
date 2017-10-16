@@ -1,0 +1,15 @@
+
+/* Class = "UITabBarItem"; title = "Search"; ObjectID = "YQW-lF-LbB"; */
+"YQW-lF-LbB.title" = "Поиск";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "fwf-Bh-7Vb"; */
+"fwf-Bh-7Vb.title" = "Item";
+
+/* Class = "UINavigationController"; title = "How to get to"; ObjectID = "jQF-k4-Vet"; */
+"jQF-k4-Vet.title" = "Как добраться";
+
+/* Class = "UITabBarItem"; title = "How to get to"; ObjectID = "spG-Da-Y0v"; */
+"spG-Da-Y0v.title" = "Как добраться";
+
+/* Class = "UITabBarItem"; title = "Events"; ObjectID = "toR-Yz-X4q"; */
+"toR-Yz-X4q.title" = "События";
