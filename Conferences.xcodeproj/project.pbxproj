@@ -440,6 +440,7 @@
 		63FD4E061BE5038D0046378E /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FD4E051BE5038D0046378E /* UIColor+Hex.m */; };
 		63FDCE141BBDBA2A00A43B60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63FDCE021BBDBA2A00A43B60 /* Assets.xcassets */; };
 		63FDCE161BBDBA2A00A43B60 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FDCE051BBDBA2A00A43B60 /* main.m */; };
+		644FB8C41F94B5C600CA2C7B /* TagModelObjectMock.m in Sources */ = {isa = PBXBuildFile; fileRef = 644FB8C31F94B5C600CA2C7B /* TagModelObjectMock.m */; };
 		661B40A31DF17CB3002DA46C /* SearchLaunchRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 661B40A21DF17CB3002DA46C /* SearchLaunchRouter.m */; };
 		661B40A41DF17CC3002DA46C /* SearchLaunchRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 661B40A21DF17CB3002DA46C /* SearchLaunchRouter.m */; };
 		661B40A51DF17CCC002DA46C /* SpotlightContinuationAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCFC50D1D903719009FD57D /* SpotlightContinuationAppDelegate.m */; };
@@ -870,7 +871,6 @@
 		0231D7BB1DFF34E60052471C /* LocationServiceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationServiceDelegate.h; sourceTree = "<group>"; };
 		0231D7BC1DFF34E60052471C /* LocationServiceImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationServiceImplementation.h; sourceTree = "<group>"; };
 		0231D7BD1DFF34E60052471C /* LocationServiceImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationServiceImplementation.m; sourceTree = "<group>"; };
-		0231D7EE1E002C140052471C /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
 		0231D7EF1E002C140052471C /* UberRides.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UberRides.framework; path = Carthage/Build/iOS/UberRides.framework; sourceTree = "<group>"; };
 		028E445E1DF06CA300734E84 /* UberRidesAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UberRidesAppDelegate.h; sourceTree = "<group>"; };
 		028E445F1DF06CA300734E84 /* UberRidesAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UberRidesAppDelegate.m; sourceTree = "<group>"; };
@@ -1395,6 +1395,8 @@
 		63FDCE021BBDBA2A00A43B60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63FDCE041BBDBA2A00A43B60 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63FDCE051BBDBA2A00A43B60 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		644FB8C21F94B5C600CA2C7B /* TagModelObjectMock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TagModelObjectMock.h; path = TagModuleTests/Interactor/TagModelObjectMock.h; sourceTree = "<group>"; };
+		644FB8C31F94B5C600CA2C7B /* TagModelObjectMock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TagModelObjectMock.m; path = TagModuleTests/Interactor/TagModelObjectMock.m; sourceTree = "<group>"; };
 		6612BF6F1D7ECDEA00E07586 /* TagModuleViewConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TagModuleViewConstants.h; path = TagModule/View/Constants/TagModuleViewConstants.h; sourceTree = "<group>"; };
 		661B40A01DF17CA4002DA46C /* LaunchRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchRouter.h; sourceTree = "<group>"; };
 		661B40A11DF17CB3002DA46C /* SearchLaunchRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchLaunchRouter.h; path = SearchLaunchRouter/SearchLaunchRouter.h; sourceTree = "<group>"; };
@@ -5265,6 +5267,8 @@
 			isa = PBXGroup;
 			children = (
 				66A1DD311D7E981500998F6B /* TagInteractorTests.m */,
+				644FB8C21F94B5C600CA2C7B /* TagModelObjectMock.h */,
+				644FB8C31F94B5C600CA2C7B /* TagModelObjectMock.m */,
 			);
 			name = Interactor;
 			sourceTree = "<group>";
@@ -9046,7 +9050,6 @@
 		D1799435EABEFA40D1849E2A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0231D7EE1E002C140052471C /* ObjectMapper.framework */,
 				0231D7EF1E002C140052471C /* UberRides.framework */,
 				0231D7B81DFF344B0052471C /* CoreLocation.framework */,
 				6321841B1D9BF7E7001BB7A7 /* libMagicalRecord.a */,
@@ -10125,6 +10128,7 @@
 				63C31BF91DD9BBAC00AA51BD /* MessagesConstants.m in Sources */,
 				63F403AA1BD0CB190086D030 /* RequestSignersAssemblyTests.m in Sources */,
 				63F613E21CB111070002AEF0 /* EventRouterTests.m in Sources */,
+				644FB8C41F94B5C600CA2C7B /* TagModelObjectMock.m in Sources */,
 				63F613EE1CB111070002AEF0 /* SpeakerInfoPresenterTests.m in Sources */,
 				9F1830C81BC11EE6000E21A5 /* XCTestCase+RCFHelpers.m in Sources */,
 				022E34571E48C82200B9B9BF /* GeneralFeedbackGeneratorTests.m in Sources */,

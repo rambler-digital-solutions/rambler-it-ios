@@ -154,7 +154,7 @@
     // given
     CLLocation *location = [CLLocation new];
     id productId = [MockObjectsFactory generateRandomNumber];
-    
+
     [self prepareFetchCheapestProductTestWithLocation:location productId:productId];
     
     // when
@@ -222,11 +222,10 @@
 #pragma mark - Private methods
 
 - (void)prepareFetchCheapestProductTestWithLocation:(CLLocation *)location productId:(id)productId {
-    id arg = [OCMArg invokeBlockWithArgs:self.mockProduct, OCMOCK_ANY, nil];
+    id arg = [OCMArg invokeBlockWithArgs:@[self.mockProduct], OCMOCK_ANY, nil];
     
-    OCMStub([self.mockRidesClient fetchProductsWithPickupLocation:location completion:arg]);
+    OCMStub([self.mockRidesClient fetchProductsWithPickupLocation:OCMOCK_ANY completion:arg]);
     OCMStub([self.mockProduct productID]).andReturn(productId);
-    OCMStub([self.mockBuilder setProductID:productId]).andReturn(self.mockBuilder);
 }
 
 @end

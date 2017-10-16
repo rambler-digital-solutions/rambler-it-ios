@@ -40,6 +40,7 @@
     self.appDelegate = [UberRidesAppDelegate new];
     
     self.mockUberConfiguration = OCMClassMock([UBSDKConfiguration class]);
+    OCMStub([self.mockUberConfiguration shared]).andReturn(self.mockUberConfiguration);
 }
 
 - (void)tearDown {
@@ -58,7 +59,7 @@
     [self.appDelegate application:OCMOCK_ANY didFinishLaunchingWithOptions:OCMOCK_ANY];
     
     // then
-    OCMVerify(ClassMethod([self.mockUberConfiguration setIsSandbox:NO]));
+    OCMVerify([self.mockUberConfiguration setIsSandbox:NO]);
 }
 
 - (void)testThatAppDelegateCallSetFallbackEnabled {
@@ -68,7 +69,7 @@
     [self.appDelegate application:OCMOCK_ANY didFinishLaunchingWithOptions:OCMOCK_ANY];
     
     // then
-    OCMVerify(ClassMethod([self.mockUberConfiguration setUseFallback:NO]));
+    OCMVerify([self.mockUberConfiguration setUseFallback:NO]);
 }
 
 @end

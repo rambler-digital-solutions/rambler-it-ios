@@ -95,7 +95,7 @@
 }
 
 - (UBSDKProduct *)cheapestProductInProducts:(NSArray *)products {
-    UBSDKProduct *cheapestProduct;
+    UBSDKProduct *cheapestProduct = products.firstObject;
     for (UBSDKProduct *product in products) {
         if (product.priceDetails.costPerDistance < cheapestProduct.priceDetails.costPerDistance) {
             cheapestProduct = product;
