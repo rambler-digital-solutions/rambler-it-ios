@@ -28,7 +28,8 @@ static CGFloat TableViewEstimatedRowHeight = 44.0f;
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	[self.output setupView];
+
+    [self.output setupView];
 }
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {

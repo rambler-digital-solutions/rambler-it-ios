@@ -9,8 +9,8 @@
             <objects>
                 <viewController storyboardIdentifier="EventGalleryViewController" id="uzr-oH-WTB" customClass="EventGalleryViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="9ZW-vw-Bfk"/>
-                        <viewControllerLayoutGuide type="bottom" id="4Ae-hD-WCO"/>
+                        <viewControllerLayoutGuide type="top" id="3j8-S8-UTQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="8lc-0T-QbE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="LQ0-C4-6R2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -105,7 +105,7 @@
                             <constraint firstItem="61J-Ae-4aK" firstAttribute="centerY" secondItem="LQ0-C4-6R2" secondAttribute="centerY" id="uBI-QG-CED"/>
                             <constraint firstItem="Sbt-Sf-L4Y" firstAttribute="top" secondItem="LQ0-C4-6R2" secondAttribute="top" id="vNo-Mc-pvZ"/>
                             <constraint firstAttribute="bottom" secondItem="1dW-rk-T4d" secondAttribute="bottom" id="wUF-nt-IMD"/>
-                            <constraint firstItem="4Ae-hD-WCO" firstAttribute="top" secondItem="Sbt-Sf-L4Y" secondAttribute="bottom" id="xdZ-jw-IQY"/>
+                            <constraint firstItem="8lc-0T-QbE" firstAttribute="top" secondItem="Sbt-Sf-L4Y" secondAttribute="bottom" id="xdZ-jw-IQY"/>
                             <constraint firstItem="lT5-OJ-HHf" firstAttribute="centerX" secondItem="LQ0-C4-6R2" secondAttribute="centerX" id="y7o-RY-S3C"/>
                         </constraints>
                     </view>
