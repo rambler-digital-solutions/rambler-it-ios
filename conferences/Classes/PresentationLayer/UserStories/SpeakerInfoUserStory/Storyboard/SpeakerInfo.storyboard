@@ -1,59 +1,49 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Speaker Info View Controller-->
         <scene sceneID="SfL-VR-c8q">
             <objects>
                 <viewController storyboardIdentifier="SpeakerInfoViewController" id="mwt-bL-fmW" customClass="SpeakerInfoViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="VEl-uh-q9F"/>
-                        <viewControllerLayoutGuide type="bottom" id="P5s-5A-poX"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="nxD-Il-s5p">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rrv-wF-P8N">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" restorationIdentifier="viewSpeakerShortInfo" id="7dX-Eb-ltY" customClass="TyphoonLoadedView">
-                                    <rect key="frame" x="0.0" y="64" width="320" height="200"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </view>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="L6q-9b-XHu">
-                                    <rect key="frame" x="0.0" y="264" width="320" height="1"/>
+                                    <rect key="frame" x="0.0" y="200" width="375" height="1"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </view>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U0t-rW-4Kg">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="64" id="Li9-pk-jWl"/>
-                                    <constraint firstAttribute="height" constant="64" id="SP6-Vo-8tg"/>
-                                </constraints>
-                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="rrv-wF-P8N" firstAttribute="leading" secondItem="nxD-Il-s5p" secondAttribute="leading" id="JUM-PO-HWs"/>
-                            <constraint firstAttribute="trailing" secondItem="rrv-wF-P8N" secondAttribute="trailing" id="Ux9-IF-F25"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="rrv-wF-P8N" secondAttribute="bottom" id="hVO-FA-lqA"/>
-                            <constraint firstItem="U0t-rW-4Kg" firstAttribute="top" secondItem="nxD-Il-s5p" secondAttribute="top" id="iag-3r-to5"/>
-                            <constraint firstItem="U0t-rW-4Kg" firstAttribute="leading" secondItem="nxD-Il-s5p" secondAttribute="leading" id="pQd-1x-ELE"/>
-                            <constraint firstItem="rrv-wF-P8N" firstAttribute="top" secondItem="nxD-Il-s5p" secondAttribute="top" id="sbf-C6-BQx"/>
-                            <constraint firstAttribute="trailing" secondItem="U0t-rW-4Kg" secondAttribute="trailing" id="xfV-Vl-34z"/>
+                            <constraint firstItem="rrv-wF-P8N" firstAttribute="leading" secondItem="Cc2-D9-9Pe" secondAttribute="leading" id="JUM-PO-HWs"/>
+                            <constraint firstItem="Cc2-D9-9Pe" firstAttribute="trailing" secondItem="rrv-wF-P8N" secondAttribute="trailing" id="Ux9-IF-F25"/>
+                            <constraint firstItem="Cc2-D9-9Pe" firstAttribute="bottom" secondItem="rrv-wF-P8N" secondAttribute="bottom" id="hVO-FA-lqA"/>
+                            <constraint firstItem="rrv-wF-P8N" firstAttribute="top" secondItem="Cc2-D9-9Pe" secondAttribute="top" id="sbf-C6-BQx"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="Cc2-D9-9Pe"/>
                     </view>
                     <navigationItem key="navigationItem" id="adq-Wh-qrY">
                         <barButtonItem key="rightBarButtonItem" image="ic-share" id="EO9-KQ-OxQ">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="didTapShareButton:" destination="mwt-bL-fmW" id="Fle-RH-4FV"/>
                             </connections>
