@@ -75,7 +75,7 @@
 #pragma mark - LocationServiceOutput
 
 - (void)locationService:(id<LocationService>)locationService didUpdateLocation:(CLLocation *)location {
-    [self.builder setPickupLocation:location];
+    self.builder.pickupLocation = location;
     [self fetchCheapestProductWithPickupLocation:location];
 }
 

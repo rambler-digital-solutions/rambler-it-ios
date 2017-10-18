@@ -25,17 +25,17 @@
 @implementation UberRidesAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [UBSDKConfiguration shared].isSandbox = NO;
-    [UBSDKConfiguration shared].useFallback = NO;
+    self.configuration.isSandbox = NO;
+    self.configuration.useFallback = NO;
     
     return YES;
 }
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options {
-   return [[UBSDKRidesAppDelegate shared] application:app
-                                                 open:url
-                                    sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
-                                           annotation:options[UIApplicationOpenURLOptionsAnnotationKey]];
+   return [self.ridesAppDelegate application:app
+                                        open:url
+                           sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
+                                  annotation:options[UIApplicationOpenURLOptionsAnnotationKey]];
 }
 
 @end

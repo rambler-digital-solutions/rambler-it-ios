@@ -29,6 +29,7 @@
 
 @property (nonatomic, strong) UberRidesAppDelegate *appDelegate;
 @property (nonatomic, strong) id mockUberConfiguration;
+@property (nonatomic, strong) id mockRidesAppDelegate;
 
 @end
 
@@ -40,7 +41,10 @@
     self.appDelegate = [UberRidesAppDelegate new];
     
     self.mockUberConfiguration = OCMClassMock([UBSDKConfiguration class]);
-    OCMStub([self.mockUberConfiguration shared]).andReturn(self.mockUberConfiguration);
+    self.mockRidesAppDelegate = OCMClassMock([UBSDKRidesAppDelegate class]);
+    
+    self.appDelegate.configuration = self.mockUberConfiguration;
+    self.appDelegate.ridesAppDelegate = self.mockRidesAppDelegate;
 }
 
 - (void)tearDown {
@@ -48,6 +52,9 @@
     
     [self.mockUberConfiguration stopMocking];
     self.mockUberConfiguration = nil;
+    
+    [self.mockRidesAppDelegate stopMocking];
+    self.mockRidesAppDelegate = nil;
     
     [super tearDown];
 }
@@ -70,6 +77,23 @@
     
     // then
     OCMVerify([self.mockUberConfiguration setUseFallback:NO]);
+}
+
+- (void)testThatAppDelegateOpenUrl {
+    // given
+    NSURL *url = [NSURL new];
+    NSDictionary *options = @{UIApplicationOpenURLOptionsSourceApplicationKey : [NSNull null],
+                                 UIApplicationOpenURLOptionsAnnotationKey : [NSNull null]};
+    UIApplication *app = [UIApplication sharedApplication];
+    
+    // when
+    [self.appDelegate application:app openURL:url options:options];
+    
+    // then
+    OCMVerify([self.mockRidesAppDelegate application:app
+                                                open:url
+                                   sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
+                                          annotation:options[UIApplicationOpenURLOptionsAnnotationKey]]);
 }
 
 @end
