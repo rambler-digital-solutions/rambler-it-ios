@@ -1,0 +1,9 @@
+
+/* Class = "UISearchBar"; placeholder = "Search"; ObjectID = "AyC-as-YWd"; */
+"AyC-as-YWd.placeholder" = "Поиск";
+
+/* Class = "UINavigationItem"; title = "Search"; ObjectID = "lte-jg-HaB"; */
+"lte-jg-HaB.title" = "Поиск";
+
+/* Class = "UILabel"; text = "Empty list"; ObjectID = "pL6-vX-MT7"; */
+"pL6-vX-MT7.text" = "Пустой список";

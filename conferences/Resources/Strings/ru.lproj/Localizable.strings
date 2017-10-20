@@ -30,7 +30,7 @@
 "kSpeakerInfoMailComposerUnavailableAlertTitle" = "Ошибка";
 "kSpeakerInfoMailComposerUnavailableAlertDescription" = "Настройте отправку писем на вашем устройстве";
 "kSpeakerInfoEmailUnavailableAlertTitle" = "Ошибка";
-"kSpeakerInfoEmailUnavailableAlertDescription" = "E-mail докладчика задан некорректно, свяжитесь с поддержкой";
+"kSpeakerInfoEmailUnavailableAlertDescription" = "Email докладчика задан некорректно, свяжитесь с поддержкой";
 "kSpeakInfoFacebookAccountTitle" = "Facebook";
 "kSpeakInfoVkontakteAccountTitle" = "Vkontakte";
 "kSpeakInfoGithubAccountTitle" = "Github";
@@ -49,9 +49,8 @@
 
 "EventAlreadyStoredInCalendarErrorDescription" = "Событие уже существует в календаре.";
 
-
 "UberAuthErrorMessage" = "В процессе авторизации произошла ошибка. Возможно, у Вас установлена старая версия приложения Uber";
-"kRamblerOfficeName" = "Rambler&Co";
+"kRamblerOfficeName" = "RAMBLER&Co";
 
 "kLectureMaterialRemoveAlertTitle" = "Удаление";
 "kLectureMaterialRemoveAlertMessage" = "Вы уверены?";

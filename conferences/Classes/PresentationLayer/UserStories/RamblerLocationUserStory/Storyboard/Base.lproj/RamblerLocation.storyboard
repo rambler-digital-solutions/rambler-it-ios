@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="kbg-lh-1lE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="kbg-lh-1lE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Как добраться-->
+        <!--How to get to-->
         <scene sceneID="gwa-bU-8oJ">
             <objects>
                 <viewController storyboardIdentifier="RamblerLocationViewController" id="kbg-lh-1lE" customClass="RamblerLocationViewController" sceneMemberID="viewController">
@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rambler-map" translatesAutoresizingMaskIntoConstraints="NO" id="oZO-Be-Sfh">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eD1-qt-dDe">
                                 <rect key="frame" x="0.0" y="64" width="375" height="496"/>
@@ -53,8 +53,8 @@
                             <constraint firstItem="oZO-Be-Sfh" firstAttribute="leading" secondItem="SLa-UW-cIm" secondAttribute="leading" id="uzh-LX-NRv"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Как добраться" id="DZy-Ug-hKQ"/>
-                    <navigationItem key="navigationItem" title="Как добраться" id="eWj-pQ-ha1">
+                    <tabBarItem key="tabBarItem" title="How to get to" id="DZy-Ug-hKQ"/>
+                    <navigationItem key="navigationItem" title="How to get to" id="eWj-pQ-ha1">
                         <barButtonItem key="rightBarButtonItem" image="location-tabbar-icon" id="jKS-Vz-0ym">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
@@ -78,9 +78,4 @@
         <image name="location-tabbar-icon" width="24" height="24"/>
         <image name="rambler-map" width="1294" height="1462"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
-    </simulatedMetricsContainer>
 </document>
