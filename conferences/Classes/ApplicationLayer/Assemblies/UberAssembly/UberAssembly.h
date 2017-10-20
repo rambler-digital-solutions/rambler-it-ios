@@ -20,29 +20,16 @@
 
 #import <Typhoon/Typhoon.h>
 #import <RamblerTyphoonUtils/AssemblyCollector.h>
-#import "ModuleAssemblyBase.h"
 
-@class SpotlightIndexerAssembly;
-@class SystemInfrastructureAssembly;
-@class ApplicationHelperAssembly;
-@class LaunchSystemAssembly;
-@class DaemonAssembly;
-@class PresentationLayerHelpersAssembly;
-@class UberAssembly;
+@class UberRidesAppDelegate;
 
 /**
- @author Artem Karpushin
+ @author Egor Tolstoy
  
- This Assembly is responsible for configuration of the objects in charge of the general logic of the application. Such as: applicationConfigurator, appDelegate
+ Assembly for creating uber sdk instances
  */
-@interface ApplicationAssembly : ModuleAssemblyBase <RamblerInitialAssembly>
+@interface UberAssembly : TyphoonAssembly <RamblerInitialAssembly>
 
-@property (nonatomic, strong, readonly) SpotlightIndexerAssembly *spotlightIndexerAssembly;
-@property (nonatomic, strong, readonly) DaemonAssembly *daemonAssembly;
-@property (nonatomic, strong, readonly) SystemInfrastructureAssembly *systemInfrastructureAssembly;
-@property (nonatomic, strong, readonly) ApplicationHelperAssembly *applicationHelperAssembly;
-@property (nonatomic, strong, readonly) LaunchSystemAssembly *launchSystemAssembly;
-@property (nonatomic, strong, readonly) PresentationLayerHelpersAssembly *presentationHelpersAssembly;
-@property (nonatomic, strong, readonly) UberAssembly *uberAssembly;
+- (UberRidesAppDelegate *)uberRidesAppDelegate;
 
 @end

@@ -441,6 +441,7 @@
 		645938FF1F94C955007DACBF /* Reports.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 645939011F94C955007DACBF /* Reports.storyboard */; };
 		645939041F94CADB007DACBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 645939071F94CADB007DACBF /* Main.storyboard */; };
 		645939051F94CADB007DACBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 645939071F94CADB007DACBF /* Main.storyboard */; };
+		64811EFC1F978D320074DB24 /* UberAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 64811EFB1F978D320074DB24 /* UberAssembly.m */; };
 		661B40A31DF17CB3002DA46C /* SearchLaunchRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 661B40A21DF17CB3002DA46C /* SearchLaunchRouter.m */; };
 		661B40A41DF17CC3002DA46C /* SearchLaunchRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 661B40A21DF17CB3002DA46C /* SearchLaunchRouter.m */; };
 		661B40A51DF17CCC002DA46C /* SpotlightContinuationAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCFC50D1D903719009FD57D /* SpotlightContinuationAppDelegate.m */; };
@@ -1402,6 +1403,8 @@
 		645939031F94C959007DACBF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Reports.strings; sourceTree = "<group>"; };
 		645939061F94CADB007DACBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		645939091F94CADE007DACBF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		64811EFA1F978D320074DB24 /* UberAssembly.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UberAssembly.h; sourceTree = "<group>"; };
+		64811EFB1F978D320074DB24 /* UberAssembly.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UberAssembly.m; sourceTree = "<group>"; };
 		6612BF6F1D7ECDEA00E07586 /* TagModuleViewConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TagModuleViewConstants.h; path = TagModule/View/Constants/TagModuleViewConstants.h; sourceTree = "<group>"; };
 		661B40A01DF17CA4002DA46C /* LaunchRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchRouter.h; sourceTree = "<group>"; };
 		661B40A11DF17CB3002DA46C /* SearchLaunchRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchLaunchRouter.h; path = SearchLaunchRouter/SearchLaunchRouter.h; sourceTree = "<group>"; };
@@ -3050,6 +3053,7 @@
 		636A37BC1BC13FA200B49C3D /* Assemblies */ = {
 			isa = PBXGroup;
 			children = (
+				64811EF91F978CE30074DB24 /* UberAssembly */,
 				9F4825351D7C99560066D9EE /* DaemonAssembly */,
 				9FBE89E41D5CBC4900DA0C32 /* ApplicationHelperAssembly */,
 				9FBE89E01D5CBAE200DA0C32 /* LaunchSystemAssembly */,
@@ -4862,6 +4866,15 @@
 			name = "Supporting Files";
 			path = "conferences/Supporting Files";
 			sourceTree = SOURCE_ROOT;
+		};
+		64811EF91F978CE30074DB24 /* UberAssembly */ = {
+			isa = PBXGroup;
+			children = (
+				64811EFA1F978D320074DB24 /* UberAssembly.h */,
+				64811EFB1F978D320074DB24 /* UberAssembly.m */,
+			);
+			path = UberAssembly;
+			sourceTree = "<group>";
 		};
 		6612BF6E1D7ECDC500E07586 /* Constants */ = {
 			isa = PBXGroup;
@@ -9739,6 +9752,7 @@
 				9FC305321D6476EA0052CB67 /* ShareUrlBuilderImplementation.m in Sources */,
 				9F5316A91D50F56900F13931 /* IndexerStateStorage.m in Sources */,
 				9F533A8E1D50EC10004F8E82 /* IndexerMonitor.m in Sources */,
+				64811EFC1F978D320074DB24 /* UberAssembly.m in Sources */,
 				2B2064981D3F9CE900246C8D /* SpeakerPlainObject.m in Sources */,
 				63F613851CB00A220002AEF0 /* FutureEventCellObjectBuilder.m in Sources */,
 				2B2064921D3F9CE900246C8D /* EventPlainObject.m in Sources */,

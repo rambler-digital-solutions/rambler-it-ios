@@ -18,18 +18,30 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import "UberAssembly.h"
+#import <UberRides/UberRides.h>
+#import "UberRidesAppDelegate.h"
 
-/**
- @author Aleksey Yakimenko
- 
- Mock class for TagModelObject
- */
-@interface TagModelObjectMock : NSObject
+@implementation UberAssembly
 
-@property (nonatomic, copy) NSString *name;
-@property (nonatomic, copy) NSString *slug;
-@property (nonatomic, copy) NSString *tagId;
-@property (nonatomic, strong) NSSet *lectures;
+- (UberRidesAppDelegate *)uberRidesAppDelegate {
+    return [TyphoonDefinition withClass:[UberRidesAppDelegate class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(configuration)
+                                                    with:[self configuration]];
+                              [definition injectProperty:@selector(ridesAppDelegate)
+                                                    with:[self ridesAppDelegate]];
+                          }];
+}
+
+#pragma mark - Private methods
+
+- (UBSDKConfiguration *)configuration {
+    return [TyphoonDefinition withClass:[UBSDKConfiguration class]];
+}
+
+- (UBSDKRidesAppDelegate *)ridesAppDelegate {
+    return [TyphoonDefinition withClass:[UBSDKRidesAppDelegate class]];
+}
 
 @end
