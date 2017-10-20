@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="kbg-lh-1lE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kbg-lh-1lE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,10 +14,6 @@
         <scene sceneID="gwa-bU-8oJ">
             <objects>
                 <viewController storyboardIdentifier="RamblerLocationViewController" id="kbg-lh-1lE" customClass="RamblerLocationViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="xR8-ZE-yV8"/>
-                        <viewControllerLayoutGuide type="bottom" id="epi-lg-NWb"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="SLa-UW-cIm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -40,18 +37,19 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="AoB-Bs-Pa5" secondAttribute="trailing" id="5jI-3E-FSX"/>
+                            <constraint firstItem="jlP-tM-oCU" firstAttribute="trailing" secondItem="AoB-Bs-Pa5" secondAttribute="trailing" id="5jI-3E-FSX"/>
                             <constraint firstItem="AoB-Bs-Pa5" firstAttribute="top" secondItem="eD1-qt-dDe" secondAttribute="bottom" constant="5" id="7uV-T7-6Eb"/>
-                            <constraint firstItem="eD1-qt-dDe" firstAttribute="top" secondItem="SLa-UW-cIm" secondAttribute="top" constant="64" id="I2y-w6-gGS"/>
-                            <constraint firstAttribute="trailing" secondItem="oZO-Be-Sfh" secondAttribute="trailing" id="Off-I4-lry"/>
-                            <constraint firstItem="epi-lg-NWb" firstAttribute="top" secondItem="AoB-Bs-Pa5" secondAttribute="bottom" constant="8" id="RFH-hv-3Es"/>
+                            <constraint firstItem="eD1-qt-dDe" firstAttribute="top" secondItem="jlP-tM-oCU" secondAttribute="top" id="I2y-w6-gGS"/>
+                            <constraint firstItem="jlP-tM-oCU" firstAttribute="trailing" secondItem="oZO-Be-Sfh" secondAttribute="trailing" id="Off-I4-lry"/>
+                            <constraint firstItem="jlP-tM-oCU" firstAttribute="bottom" secondItem="AoB-Bs-Pa5" secondAttribute="bottom" constant="8" id="RFH-hv-3Es"/>
                             <constraint firstItem="oZO-Be-Sfh" firstAttribute="bottom" secondItem="SLa-UW-cIm" secondAttribute="bottomMargin" id="UMA-ob-wZ2"/>
-                            <constraint firstAttribute="trailing" secondItem="eD1-qt-dDe" secondAttribute="trailing" id="VAA-AE-qgT"/>
-                            <constraint firstItem="eD1-qt-dDe" firstAttribute="leading" secondItem="SLa-UW-cIm" secondAttribute="leading" id="aSG-u4-med"/>
-                            <constraint firstItem="oZO-Be-Sfh" firstAttribute="top" secondItem="SLa-UW-cIm" secondAttribute="top" constant="64" id="mhH-kx-6MP"/>
-                            <constraint firstItem="AoB-Bs-Pa5" firstAttribute="leading" secondItem="SLa-UW-cIm" secondAttribute="leading" id="tab-LR-kQj"/>
-                            <constraint firstItem="oZO-Be-Sfh" firstAttribute="leading" secondItem="SLa-UW-cIm" secondAttribute="leading" id="uzh-LX-NRv"/>
+                            <constraint firstItem="jlP-tM-oCU" firstAttribute="trailing" secondItem="eD1-qt-dDe" secondAttribute="trailing" id="VAA-AE-qgT"/>
+                            <constraint firstItem="eD1-qt-dDe" firstAttribute="leading" secondItem="jlP-tM-oCU" secondAttribute="leading" id="aSG-u4-med"/>
+                            <constraint firstItem="oZO-Be-Sfh" firstAttribute="top" secondItem="jlP-tM-oCU" secondAttribute="top" id="mhH-kx-6MP"/>
+                            <constraint firstItem="AoB-Bs-Pa5" firstAttribute="leading" secondItem="jlP-tM-oCU" secondAttribute="leading" id="tab-LR-kQj"/>
+                            <constraint firstItem="oZO-Be-Sfh" firstAttribute="leading" secondItem="jlP-tM-oCU" secondAttribute="leading" id="uzh-LX-NRv"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="jlP-tM-oCU"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Как добраться" id="DZy-Ug-hKQ"/>
                     <navigationItem key="navigationItem" title="Как добраться" id="eWj-pQ-ha1">
