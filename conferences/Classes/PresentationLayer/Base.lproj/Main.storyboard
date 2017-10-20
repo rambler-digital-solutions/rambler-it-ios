@@ -22,7 +22,6 @@
         <scene sceneID="umH-x8-iBI">
             <objects>
                 <viewControllerPlaceholder storyboardName="RamblerLocation" referencedIdentifier="RamblerLocationViewController" id="N0F-Xl-Wdc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="fwf-Bh-7Vb"/>
                     <navigationItem key="navigationItem" id="Fye-og-Owd"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yUG-41-N1B" userLabel="First Responder" sceneMemberID="firstResponder"/>

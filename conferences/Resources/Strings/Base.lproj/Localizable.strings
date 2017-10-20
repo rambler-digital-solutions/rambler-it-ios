@@ -30,7 +30,7 @@
 "kSpeakerInfoMailComposerUnavailableAlertTitle" = "Error";
 "kSpeakerInfoMailComposerUnavailableAlertDescription" = "Set up email on your device";
 "kSpeakerInfoEmailUnavailableAlertTitle" = "Error";
-"kSpeakerInfoEmailUnavailableAlertDescription" = "The e-mail of the speaker was not set correctly, contact support";
+"kSpeakerInfoEmailUnavailableAlertDescription" = "The email of the speaker was not set correctly, contact support";
 "kSpeakInfoFacebookAccountTitle" = "Facebook";
 "kSpeakInfoVkontakteAccountTitle" = "Vkontakte";
 "kSpeakInfoGithubAccountTitle" = "Github";
@@ -49,9 +49,8 @@
 
 "EventAlreadyStoredInCalendarErrorDescription" = "The event already exists in the calendar.";
 
-
 "UberAuthErrorMessage" = "An error occurred during the authorization process. Perhaps you have an older version of the Uber application";
-"kRamblerOfficeName" = "Rambler&Co";
+"kRamblerOfficeName" = "RAMBLER&Co";
 
 "kLectureMaterialRemoveAlertTitle" = "Removing";
 "kLectureMaterialRemoveAlertMessage" = "Are your sure?";

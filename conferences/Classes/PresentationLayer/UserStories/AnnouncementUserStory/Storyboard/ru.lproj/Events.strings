@@ -1,9 +1,9 @@
 
-/* Class = "UIButton"; normalTitle = "Повторить"; ObjectID = "3pH-jK-hqY"; */
+/* Class = "UIButton"; normalTitle = "Retry"; ObjectID = "3pH-jK-hqY"; */
 "3pH-jK-hqY.normalTitle" = "Повторить";
 
-/* Class = "UINavigationItem"; title = "Все события"; ObjectID = "bnq-gD-ykW"; */
+/* Class = "UINavigationItem"; title = "All events"; ObjectID = "bnq-gD-ykW"; */
 "bnq-gD-ykW.title" = "Все события";
 
-/* Class = "UILabel"; text = "Не удалось загрузить данные"; ObjectID = "ivb-iI-TOo"; */
+/* Class = "UILabel"; text = "Failed to load data"; ObjectID = "ivb-iI-TOo"; */
 "ivb-iI-TOo.text" = "Не удалось загрузить данные";
