@@ -26,24 +26,24 @@ import XCTest
 @testable import UberRides
 
 class OAuthTests: XCTestCase {
-    var expectation: XCTestExpectation!
+    var testExpectation: XCTestExpectation!
     var accessToken: AccessToken?
     var error: NSError?
-    let timeout: NSTimeInterval = 2
+    let timeout: TimeInterval = 2
     let tokenString = "accessToken1234"
     private var redirectURI: String = ""
     
     override func setUp() {
         super.setUp()
-        Configuration.restoreDefaults()
+        Configuration.bundle = Bundle(for: type(of: self))
         Configuration.plistName = "testInfo"
-        Configuration.bundle = NSBundle(forClass: self.dynamicType)
-        Configuration.setSandboxEnabled(true)
-        redirectURI = Configuration.getCallbackURIString()
+        Configuration.restoreDefaults()
+        Configuration.shared.isSandbox = true
+        redirectURI = Configuration.shared.getCallbackURIString()
     }
     
     override func tearDown() {
-        TokenManager.deleteToken()
+        _ = TokenManager.deleteToken()
         Configuration.restoreDefaults()
         super.tearDown()
     }
@@ -52,18 +52,18 @@ class OAuthTests: XCTestCase {
      Test for parsing successful access token retrieval.
      */
     func testParseAccessTokenFromRedirect() {
-        expectation = expectationWithDescription("success access token")
-        redirectURI = Configuration.getCallbackURIString(.Implicit)
-        let loginBehavior = ImplicitGrantAuthenticator(presentingViewController: UIViewController(), scopes: [.Profile])
+        testExpectation = expectation(description: "success access token")
+        redirectURI = Configuration.shared.getCallbackURIString(for: .implicit)
+        let loginBehavior = ImplicitGrantAuthenticator(presentingViewController: UIViewController(), scopes: [.profile])
         loginBehavior.loginCompletion = loginCompletion()
         let loginView = LoginView(loginAuthenticator: loginBehavior)
         
-        let url = NSURL(string: "\(redirectURI)#access_token=\(tokenString)")
-        loginView.webView.loadRequest(NSURLRequest(URL: url!))
+        let url = URL(string: "\(redirectURI)#access_token=\(tokenString)")
+        loginView.webView.load(URLRequest(url: url!))
         
-        waitForExpectationsWithTimeout(timeout, handler: { error in
-            if error != nil {
-                print("Error: \(error)")
+        waitForExpectations(timeout: timeout, handler: { error in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
             }
             
             XCTAssertNotNil(self.accessToken)
@@ -75,18 +75,18 @@ class OAuthTests: XCTestCase {
      Test for empty access token string (this should never happen though).
      */
     func testParseEmptyAccessTokenFromRedirect() {
-        expectation = expectationWithDescription("empty access token")
-        redirectURI = Configuration.getCallbackURIString(.Implicit)
-        let loginBehavior = ImplicitGrantAuthenticator(presentingViewController: UIViewController(), scopes: [.Profile])
+        testExpectation = expectation(description: "empty access token")
+        redirectURI = Configuration.shared.getCallbackURIString(for: .implicit)
+        let loginBehavior = ImplicitGrantAuthenticator(presentingViewController: UIViewController(), scopes: [.profile])
         loginBehavior.loginCompletion = loginCompletion()
         let loginView = LoginView(loginAuthenticator: loginBehavior)
         
-        let url = NSURL(string: "\(redirectURI)#access_token=")
-        loginView.webView.loadRequest(NSURLRequest(URL: url!))
+        let url = URL(string: "\(redirectURI)#access_token=")
+        loginView.webView.load(URLRequest(url: url!))
         
-        waitForExpectationsWithTimeout(timeout, handler: { error in
-            if error != nil {
-                print("Error: \(error)")
+        waitForExpectations(timeout: timeout, handler: { error in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
                 return
             }
             
@@ -99,23 +99,23 @@ class OAuthTests: XCTestCase {
      Test error mapping when redirect URI doesn't match what's expected for client ID.
      */
     func testMismatchingRedirectError() {
-        expectation = expectationWithDescription("errors")
-        redirectURI = Configuration.getCallbackURIString(.Implicit)
-        let loginBehavior = ImplicitGrantAuthenticator(presentingViewController: UIViewController(), scopes: [.Profile])
+        testExpectation = expectation(description: "errors")
+        redirectURI = Configuration.shared.getCallbackURIString(for: .implicit)
+        let loginBehavior = ImplicitGrantAuthenticator(presentingViewController: UIViewController(), scopes: [.profile])
         loginBehavior.loginCompletion = loginCompletion()
         let loginView = LoginView(loginAuthenticator: loginBehavior)
         
-        let url = NSURL(string: "\(redirectURI)/errors?error=mismatching_redirect_uri")
-        loginView.webView.loadRequest(NSURLRequest(URL: url!))
+        let url = URL(string: "\(redirectURI)/errors?error=mismatching_redirect_uri")
+        loginView.webView.load(URLRequest(url: url!))
         
-        waitForExpectationsWithTimeout(timeout, handler: { error in
-            if error != nil {
-                print("Error: \(error)")
+        waitForExpectations(timeout: timeout, handler: { error in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
                 return
             }
             
             XCTAssertNotNil(self.error)
-            XCTAssertEqual(self.error?.code, RidesAuthenticationErrorType.MismatchingRedirect.rawValue)
+            XCTAssertEqual(self.error?.code, RidesAuthenticationErrorType.mismatchingRedirect.rawValue)
             XCTAssertEqual(self.error?.domain, RidesAuthenticationErrorFactory.errorDomain)
         })
     }
@@ -124,23 +124,23 @@ class OAuthTests: XCTestCase {
      Test error mapping when redirect URI is invalid.
      */
     func testInvalidRedirectError() {
-        expectation = expectationWithDescription("errors")
-        redirectURI = Configuration.getCallbackURIString(.Implicit)
-        let loginBehavior = ImplicitGrantAuthenticator(presentingViewController: UIViewController(), scopes: [.Profile])
+        testExpectation = expectation(description: "errors")
+        redirectURI = Configuration.shared.getCallbackURIString(for: .implicit)
+        let loginBehavior = ImplicitGrantAuthenticator(presentingViewController: UIViewController(), scopes: [.profile])
         loginBehavior.loginCompletion = loginCompletion()
         let loginView = LoginView(loginAuthenticator: loginBehavior)
         
-        let url = NSURL(string: "\(redirectURI)/errors?error=invalid_redirect_uri")
-        loginView.webView.loadRequest(NSURLRequest(URL: url!))
+        let url = URL(string: "\(redirectURI)/errors?error=invalid_redirect_uri")
+        loginView.webView.load(URLRequest(url: url!))
         
-        waitForExpectationsWithTimeout(timeout, handler: { error in
-            if error != nil {
-                print("Error: \(error)")
+        waitForExpectations(timeout: timeout, handler: { error in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
                 return
             }
             
             XCTAssertNotNil(self.error)
-            XCTAssertEqual(self.error?.code, RidesAuthenticationErrorType.InvalidRedirect.rawValue)
+            XCTAssertEqual(self.error?.code, RidesAuthenticationErrorType.invalidRedirect.rawValue)
             XCTAssertEqual(self.error?.domain, RidesAuthenticationErrorFactory.errorDomain)
         })
     }
@@ -149,23 +149,23 @@ class OAuthTests: XCTestCase {
      Test error mapping when client ID is invalid.
      */
     func testInvalidClientIDError() {
-        expectation = expectationWithDescription("errors")
-        redirectURI = Configuration.getCallbackURIString(.Implicit)
-        let loginBehavior = ImplicitGrantAuthenticator(presentingViewController: UIViewController(), scopes: [.Profile])
+        testExpectation = expectation(description: "errors")
+        redirectURI = Configuration.shared.getCallbackURIString(for: .implicit)
+        let loginBehavior = ImplicitGrantAuthenticator(presentingViewController: UIViewController(), scopes: [.profile])
         loginBehavior.loginCompletion = loginCompletion()
         let loginView = LoginView(loginAuthenticator: loginBehavior)
         
-        let url = NSURL(string: "\(redirectURI)/errors?error=invalid_client_id")
-        loginView.webView.loadRequest(NSURLRequest(URL: url!))
+        let url = URL(string: "\(redirectURI)/errors?error=invalid_client_id")
+        loginView.webView.load(URLRequest(url: url!))
         
-        waitForExpectationsWithTimeout(timeout, handler: { error in
-            if error != nil {
-                print("Error: \(error)")
+        waitForExpectations(timeout: timeout, handler: { error in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
                 return
             }
             
             XCTAssertNotNil(self.error)
-            XCTAssertEqual(self.error?.code, RidesAuthenticationErrorType.InvalidClientID.rawValue)
+            XCTAssertEqual(self.error?.code, RidesAuthenticationErrorType.invalidClientID.rawValue)
             XCTAssertEqual(self.error?.domain, RidesAuthenticationErrorFactory.errorDomain)
         })
     }
@@ -174,23 +174,23 @@ class OAuthTests: XCTestCase {
      Test error mapping when scope provided is invalid.
      */
     func testInvalidScopeError() {
-        expectation = expectationWithDescription("errors")
-        redirectURI = Configuration.getCallbackURIString(.Implicit)
-        let loginBehavior = ImplicitGrantAuthenticator(presentingViewController: UIViewController(), scopes: [.Profile])
+        testExpectation = expectation(description: "errors")
+        redirectURI = Configuration.shared.getCallbackURIString(for: .implicit)
+        let loginBehavior = ImplicitGrantAuthenticator(presentingViewController: UIViewController(), scopes: [.profile])
         loginBehavior.loginCompletion = loginCompletion()
         let loginView = LoginView(loginAuthenticator: loginBehavior)
         
-        let url = NSURL(string: "\(redirectURI)/errors?error=invalid_scope")
-        loginView.webView.loadRequest(NSURLRequest(URL: url!))
+        let url = URL(string: "\(redirectURI)/errors?error=invalid_scope")
+        loginView.webView.load(URLRequest(url: url!))
         
-        waitForExpectationsWithTimeout(timeout, handler: { error in
-            if error != nil {
-                print("Error: \(error)")
+        waitForExpectations(timeout: timeout, handler: { error in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
                 return
             }
             
             XCTAssertNotNil(self.error)
-            XCTAssertEqual(self.error?.code, RidesAuthenticationErrorType.InvalidScope.rawValue)
+            XCTAssertEqual(self.error?.code, RidesAuthenticationErrorType.invalidScope.rawValue)
             XCTAssertEqual(self.error?.domain, RidesAuthenticationErrorFactory.errorDomain)
         })
     }
@@ -199,23 +199,23 @@ class OAuthTests: XCTestCase {
      Test error mapping when parameters are generally invalid.
      */
     func testInvalidParametersError() {
-        expectation = expectationWithDescription("errors")
-        redirectURI = Configuration.getCallbackURIString(.Implicit)
-        let loginBehavior = ImplicitGrantAuthenticator(presentingViewController: UIViewController(), scopes: [.Profile])
+        testExpectation = expectation(description: "errors")
+        redirectURI = Configuration.shared.getCallbackURIString(for: .implicit)
+        let loginBehavior = ImplicitGrantAuthenticator(presentingViewController: UIViewController(), scopes: [.profile])
         loginBehavior.loginCompletion = loginCompletion()
         let loginView = LoginView(loginAuthenticator: loginBehavior)
         
-        let url = NSURL(string: "\(redirectURI)/errors?error=invalid_parameters")
-        loginView.webView.loadRequest(NSURLRequest(URL: url!))
+        let url = URL(string: "\(redirectURI)/errors?error=invalid_parameters")
+        loginView.webView.load(URLRequest(url: url!))
         
-        waitForExpectationsWithTimeout(timeout, handler: { error in
-            if error != nil {
-                print("Error: \(error)")
+        waitForExpectations(timeout: timeout, handler: { error in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
                 return
             }
             
             XCTAssertNotNil(self.error)
-            XCTAssertEqual(self.error?.code, RidesAuthenticationErrorType.InvalidRequest.rawValue)
+            XCTAssertEqual(self.error?.code, RidesAuthenticationErrorType.invalidRequest.rawValue)
             XCTAssertEqual(self.error?.domain, RidesAuthenticationErrorFactory.errorDomain)
         })
     }
@@ -224,23 +224,23 @@ class OAuthTests: XCTestCase {
      Test error mapping when server error is encountered.
      */
     func testServerError() {
-        expectation = expectationWithDescription("errors")
-        redirectURI = Configuration.getCallbackURIString(.Implicit)
-        let loginBehavior = ImplicitGrantAuthenticator(presentingViewController: UIViewController(), scopes: [.Profile])
+        testExpectation = expectation(description: "errors")
+        redirectURI = Configuration.shared.getCallbackURIString(for: .implicit)
+        let loginBehavior = ImplicitGrantAuthenticator(presentingViewController: UIViewController(), scopes: [.profile])
         loginBehavior.loginCompletion = loginCompletion()
         let loginView = LoginView(loginAuthenticator: loginBehavior)
         
-        let url = NSURL(string: "\(redirectURI)/errors?error=server_error")
-        loginView.webView.loadRequest(NSURLRequest(URL: url!))
+        let url = URL(string: "\(redirectURI)/errors?error=server_error")
+        loginView.webView.load(URLRequest(url: url!))
         
-        waitForExpectationsWithTimeout(timeout, handler: { error in
-            if error != nil {
-                print("Error: \(error)")
+        waitForExpectations(timeout: timeout, handler: { error in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
                 return
             }
             
             XCTAssertNotNil(self.error)
-            XCTAssertEqual(self.error?.code, RidesAuthenticationErrorType.ServerError.rawValue)
+            XCTAssertEqual(self.error?.code, RidesAuthenticationErrorType.serverError.rawValue)
             XCTAssertEqual(self.error?.domain, RidesAuthenticationErrorFactory.errorDomain)
         })
     }
@@ -267,7 +267,7 @@ class OAuthTests: XCTestCase {
         let result = keychain.getObjectForKey(key) as! AccessToken
         XCTAssertEqual(result.tokenString, token.tokenString)
         XCTAssertEqual(result.refreshToken, token.refreshToken)
-        XCTAssertEqual(result.grantedScopes!, token.grantedScopes!)
+        XCTAssertEqual(result.grantedScopes, token.grantedScopes)
         
         XCTAssertTrue(keychain.deleteObjectForKey(key))
         
@@ -293,7 +293,7 @@ class OAuthTests: XCTestCase {
         let result = keychain.getObjectForKey(key) as! AccessToken
         XCTAssertEqual(result.tokenString, newToken.tokenString)
         XCTAssertEqual(result.refreshToken, newToken.refreshToken)
-        XCTAssertEqual(result.grantedScopes!, newToken.grantedScopes!)
+        XCTAssertEqual(result.grantedScopes, newToken.grantedScopes)
         
         XCTAssertTrue(keychain.deleteObjectForKey(key))
         
@@ -305,13 +305,13 @@ class OAuthTests: XCTestCase {
      Test that endpoint has correct query
      */
     func testImplicitGrantAuthenticator_withScopes_returnsCorrectEndpoint() {
-        redirectURI = Configuration.getCallbackURIString(.Implicit)
-        let scopes = [RidesScope.Profile]
+        redirectURI = Configuration.shared.getCallbackURIString(for: .implicit)
+        let scopes = [RidesScope.profile]
         let expectedPath = "/oauth/v2/authorize"
         let implicitGrantBehavior = ImplicitGrantAuthenticator(presentingViewController: UIViewController(), scopes: scopes)
         
         var params = [String: String]()
-        let queryItems: [NSURLQueryItem] = implicitGrantBehavior.endpoint.query
+        let queryItems: [URLQueryItem] = implicitGrantBehavior.endpoint.query
         
         for query in queryItems {
             params[query.name] = query.value!
@@ -324,107 +324,107 @@ class OAuthTests: XCTestCase {
     }
     
     func testImplicitGrantRedirect_shouldReturnFalse_forNonRedirectUrlRequest() {
-        redirectURI = Configuration.getCallbackURIString(.Implicit)
-        let request = NSURLRequest(URL: NSURL(string: "test://notRedirect")!)
-        let implicitGrantBehavior = ImplicitGrantAuthenticator(presentingViewController: UIViewController(), scopes: [.Profile])
+        redirectURI = Configuration.shared.getCallbackURIString(for: .implicit)
+        let request = URLRequest(url: URL(string: "test://notRedirect")!)
+        let implicitGrantBehavior = ImplicitGrantAuthenticator(presentingViewController: UIViewController(), scopes: [.profile])
         implicitGrantBehavior.loginCompletion = { accessToken, error in
             XCTAssert(false)
         }
-        let result = implicitGrantBehavior.handleRedirectRequest(request)
+        let result = implicitGrantBehavior.handleRedirect(for: request)
         XCTAssertFalse(result)
     }
     
     func testAuthorizationCodeGrantRedirect_shouldReturnFalse_forNonRedirectUrlRequest() {
-        redirectURI = Configuration.getCallbackURIString(.AuthorizationCode)
-        let request = NSURLRequest(URL: NSURL(string: "test://notRedirect")!)
-        let authorizationCodeGrantAuthenticator = AuthorizationCodeGrantAuthenticator(presentingViewController: UIViewController(), scopes: [.Profile], state: "state")
+        redirectURI = Configuration.shared.getCallbackURIString(for: .authorizationCode)
+        let request = URLRequest(url: URL(string: "test://notRedirect")!)
+        let authorizationCodeGrantAuthenticator = AuthorizationCodeGrantAuthenticator(presentingViewController: UIViewController(), scopes: [.profile], state: "state")
         authorizationCodeGrantAuthenticator.loginCompletion = { accessToken, error in
             XCTAssert(false)
         }
-        let result = authorizationCodeGrantAuthenticator.handleRedirectRequest(request)
+        let result = authorizationCodeGrantAuthenticator.handleRedirect(for: request)
         XCTAssertFalse(result)
     }
     
     func testImplicitGrantRedirect_shouldReturnTrue_forCorrectRedirectRequest() {
-        redirectURI = Configuration.getCallbackURIString(.Implicit)
+        redirectURI = Configuration.shared.getCallbackURIString(for: .implicit)
         let tokenString = "accessToken1234"
-        guard let url = NSURL(string: "\(redirectURI)#access_token=\(tokenString)") else {
+        guard let url = URL(string: "\(redirectURI)#access_token=\(tokenString)") else {
             XCTFail()
             return
         }
-        let request = NSURLRequest(URL: url)
-        let expectation = expectationWithDescription("call login completion")
-        let implicitGrantBehavior = ImplicitGrantAuthenticator(presentingViewController: UIViewController(), scopes: [.Profile])
+        let request = URLRequest(url: url)
+        testExpectation = expectation(description: "call login completion")
+        let implicitGrantBehavior = ImplicitGrantAuthenticator(presentingViewController: UIViewController(), scopes: [.profile])
         implicitGrantBehavior.loginCompletion = { accessToken, error in
             XCTAssertNil(error)
             XCTAssertNotNil(accessToken)
             XCTAssertEqual(accessToken?.tokenString, tokenString)
-            expectation.fulfill()
+            self.testExpectation.fulfill()
         }
-        let result = implicitGrantBehavior.handleRedirectRequest(request)
+        let result = implicitGrantBehavior.handleRedirect(for: request)
         XCTAssertTrue(result)
         
-        waitForExpectationsWithTimeout(timeout, handler: { error in
+        waitForExpectations(timeout: timeout, handler: { error in
             XCTAssertNil(error)
         })
     }
     
     func testAuthorizationCodeGrantRedirect_shouldReturnTrue_forCorrectRedirectRequest() {
-        redirectURI = Configuration.getCallbackURIString(.AuthorizationCode)
-        let request = NSURLRequest(URL: NSURL(string: redirectURI)!)
-        let loginCompletionExpectation = expectationWithDescription("call login completion")
-        let executeLoginExpectation = expectationWithDescription("execute login")
-        let authorizationCodeGrantAuthenticator = AuthorizationCodeGrantAuthenticatorMock(presentingViewController: UIViewController(), scopes: [.Profile], state: "state", expectation: executeLoginExpectation)
+        redirectURI = Configuration.shared.getCallbackURIString(for: .authorizationCode)
+        let request = URLRequest(url: URL(string: redirectURI)!)
+        let loginCompletionExpectation = expectation(description: "call login completion")
+        let executeLoginExpectation = expectation(description: "execute login")
+        let authorizationCodeGrantAuthenticator = AuthorizationCodeGrantAuthenticatorMock(presentingViewController: UIViewController(), scopes: [.profile], state: "state", expectation: executeLoginExpectation)
         authorizationCodeGrantAuthenticator.loginCompletion = { accessToken, error in
             XCTAssertNil(error)
             XCTAssertNil(accessToken)
             loginCompletionExpectation.fulfill()
         }
-        let result = authorizationCodeGrantAuthenticator.handleRedirectRequest(request)
+        let result = authorizationCodeGrantAuthenticator.handleRedirect(for: request)
         XCTAssertTrue(result)
         
-        waitForExpectationsWithTimeout(timeout, handler: { error in
+        waitForExpectations(timeout: timeout, handler: { error in
             XCTAssertNil(error)
         })
     }
     
     func testAuthorizationCodeGrantRedirect_shouldReturnTrue_forCorrectRedirectRequest_withErrorParameter() {
-        redirectURI = Configuration.getCallbackURIString(.AuthorizationCode)
-        guard let urlComponents = NSURLComponents(string: redirectURI) else {
+        redirectURI = Configuration.shared.getCallbackURIString(for: .authorizationCode)
+        guard var urlComponents = URLComponents(string: redirectURI) else {
             XCTFail()
             return
         }
-        let errorQueryItem = NSURLQueryItem(name: "error", value: "server_error")
+        let errorQueryItem = URLQueryItem(name: "error", value: "server_error")
         urlComponents.queryItems = [errorQueryItem]
-        guard let requestURL = urlComponents.URL else {
+        guard let requestURL = urlComponents.url else {
             XCTFail()
             return
         }
-        let request = NSURLRequest(URL: requestURL)
-        let loginCompletionExpectation = expectationWithDescription("call login completion")
-        let authorizationCodeGrantAuthenticator = AuthorizationCodeGrantAuthenticator(presentingViewController: UIViewController(), scopes: [.Profile])
+        let request = URLRequest(url: requestURL)
+        let loginCompletionExpectation = expectation(description: "call login completion")
+        let authorizationCodeGrantAuthenticator = AuthorizationCodeGrantAuthenticator(presentingViewController: UIViewController(), scopes: [.profile])
         authorizationCodeGrantAuthenticator.loginCompletion = { accessToken, error in
             if let error = error {
-                XCTAssertEqual(RidesAuthenticationErrorType.ServerError.rawValue, error.code)
+                XCTAssertEqual(RidesAuthenticationErrorType.serverError.rawValue, error.code)
             } else {
                 XCTFail()
             }
             XCTAssertNil(accessToken)
             loginCompletionExpectation.fulfill()
         }
-        let result = authorizationCodeGrantAuthenticator.handleRedirectRequest(request)
+        let result = authorizationCodeGrantAuthenticator.handleRedirect(for: request)
         XCTAssertTrue(result)
         
-        waitForExpectationsWithTimeout(timeout, handler: { error in
+        waitForExpectations(timeout: timeout, handler: { error in
             XCTAssertNil(error)
         })
     }
     
     func testImplicitGrantRedirect_shouldReturnError_forEmptyAccessToken() {
-        redirectURI = Configuration.getCallbackURIString(.Implicit)
-        let request = NSURLRequest(URL: NSURL(string: "\(redirectURI)?error=mismatching_redirect_uri")!)
-        let expectation = expectationWithDescription("call login completion with error")
-        let implicitGrantBehavior = ImplicitGrantAuthenticator(presentingViewController: UIViewController(), scopes: [.Profile])
+        redirectURI = Configuration.shared.getCallbackURIString(for: .implicit)
+        let request = URLRequest(url: URL(string: "\(redirectURI)?error=mismatching_redirect_uri")!)
+        testExpectation = expectation(description: "call login completion with error")
+        let implicitGrantBehavior = ImplicitGrantAuthenticator(presentingViewController: UIViewController(), scopes: [.profile])
         implicitGrantBehavior.loginCompletion = { accessToken, error in
             XCTAssertNil(accessToken)
             guard let error = error else {
@@ -432,47 +432,47 @@ class OAuthTests: XCTestCase {
                 return
             }
             XCTAssertEqual(error.domain, "com.uber.rides-ios-sdk.ridesAuthenticationError")
-            XCTAssertEqual(error.code, RidesAuthenticationErrorType.MismatchingRedirect.rawValue)
+            XCTAssertEqual(error.code, RidesAuthenticationErrorType.mismatchingRedirect.rawValue)
             
-            expectation.fulfill()
+            self.testExpectation.fulfill()
         }
-        let result = implicitGrantBehavior.handleRedirectRequest(request)
+        let result = implicitGrantBehavior.handleRedirect(for: request)
         XCTAssertTrue(result)
         
-        waitForExpectationsWithTimeout(timeout, handler: { error in
+        waitForExpectations(timeout: timeout, handler: { error in
             XCTAssertNil(error)
         })
     }
     
     func testImplicitGrantLogin_showsLogin() {
-        redirectURI = Configuration.getCallbackURIString(.Implicit)
-        let expectation = expectationWithDescription("present login")
+        redirectURI = Configuration.shared.getCallbackURIString(for: .implicit)
+        testExpectation = expectation(description: "present login")
     
-        let implicitGrantBehavior = ImplicitGrantAuthenticator(presentingViewController: UIViewControllerMock(expectation: expectation), scopes: [.Profile])
+        let implicitGrantBehavior = ImplicitGrantAuthenticator(presentingViewController: UIViewControllerMock(expectation: testExpectation), scopes: [.profile])
         implicitGrantBehavior.login()
         
-        waitForExpectationsWithTimeout(timeout, handler: { error in
+        waitForExpectations(timeout: timeout, handler: { error in
             XCTAssertNil(error)
         })
     }
     
     func testAuthorizationCodeGrantLogin_showsLogin() {
-        redirectURI = Configuration.getCallbackURIString(.AuthorizationCode)
-        let expectation = expectationWithDescription("present login")
+        redirectURI = Configuration.shared.getCallbackURIString(for: .authorizationCode)
+        testExpectation = expectation(description: "present login")
         
-        let implicitGrantBehavior = AuthorizationCodeGrantAuthenticator(presentingViewController: UIViewControllerMock(expectation: expectation), scopes: [.Profile], state: "state")
+        let implicitGrantBehavior = AuthorizationCodeGrantAuthenticator(presentingViewController: UIViewControllerMock(expectation: testExpectation), scopes: [.profile], state: "state")
         implicitGrantBehavior.login()
         
-        waitForExpectationsWithTimeout(timeout, handler: { error in
+        waitForExpectations(timeout: timeout, handler: { error in
             XCTAssertNil(error)
         })
     }
     
-    func loginCompletion() -> ((accessToken: AccessToken?, error: NSError?) -> Void) {
+    func loginCompletion() -> ((_ accessToken: AccessToken?, _ error: NSError?) -> Void) {
         return { token, error in
             self.accessToken = token
             self.error = error
-            self.expectation.fulfill()
+            self.testExpectation.fulfill()
         }
     }
 }
@@ -480,23 +480,23 @@ class OAuthTests: XCTestCase {
 // Mark: Helper
 
 private class AuthorizationCodeGrantAuthenticatorMock: AuthorizationCodeGrantAuthenticator {
-    var expectation: XCTestExpectation
+    var testExpectation: XCTestExpectation
     
     init(presentingViewController: UIViewController, scopes: [RidesScope], state: String, expectation: XCTestExpectation) {
-        self.expectation = expectation
+        self.testExpectation = expectation
         super.init(presentingViewController: presentingViewController, scopes: scopes, state: state)
     }
     
-    override func executeRedirect(request: NSURLRequest) {
-        self.expectation.fulfill()
+    override func executeRedirect(_ request: URLRequest) {
+        self.testExpectation.fulfill()
     }
 }
 
 private class UIViewControllerMock : UIViewController {
-    var expectation: XCTestExpectation
+    var testExpectation: XCTestExpectation
     
     init(expectation: XCTestExpectation) {
-        self.expectation = expectation
+        self.testExpectation = expectation
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -504,18 +504,19 @@ private class UIViewControllerMock : UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func presentViewController(viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)?) {
-        self.expectation.fulfill()
+    override func present(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)?) {
+        self.testExpectation.fulfill()
         return
     }
 }
 
-func tokenFixture(accessToken: String = "token") -> AccessToken?
+func tokenFixture(_ accessToken: String = "token") -> AccessToken?
 {
-    var jsonDictionary = [String : AnyObject]()
+    var jsonDictionary = [String: String]()
     jsonDictionary["access_token"] = accessToken
     jsonDictionary["refresh_token"] = "refresh"
     jsonDictionary["expires_in"] = "10030.23"
     jsonDictionary["scope"] = "profile history"
-    return AccessToken(JSON: jsonDictionary)
+    let jsonData = try! JSONEncoder().encode(jsonDictionary)
+    return try? JSONDecoder.uberDecoder.decode(AccessToken.self, from: jsonData)
 }

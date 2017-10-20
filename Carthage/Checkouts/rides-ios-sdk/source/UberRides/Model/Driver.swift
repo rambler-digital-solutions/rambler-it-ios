@@ -22,36 +22,42 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-import ObjectMapper
-
 // MARK: Driver
 
 /**
  *  Contains information for an Uber driver dispatched for a ride request.
  */
-@objc(UBSDKDriver) public class Driver: NSObject {
+@objc(UBSDKDriver) public class Driver: NSObject, Codable {
     
     /// The first name of the driver.
-    public private(set) var name: String?
+    @objc public private(set) var name: String
     
     /// The URL to the photo of the driver.
-    public private(set) var pictureURL: String?
-    
-    /// The formatted phone number for contacting the driver.
-    public private(set) var phoneNumber: String?
+    @objc public private(set) var pictureURL: URL
+
+    /// The formatted phone number for calling the driver.
+    @objc public private(set) var phoneNumber: String
+
+    /// The formatted phone number for sending a SMS to the driver.
+    @objc public private(set) var smsNumber: String
     
     /// The driver's star rating out of 5 stars.
-    public private(set) var rating: Double = 0.0
-    
-    public required init?(_ map: Map) {
-    }
-}
+    @objc public private(set) var rating: Double
 
-extension Driver: UberModel {
-    public func mapping(map: Map) {
-        name        <- map["name"]
-        pictureURL  <- map["picture_url"]
-        phoneNumber <- map["phone_number"]
-        rating      <- map["rating"]
+    enum CodingKeys: String, CodingKey {
+        case name        = "name"
+        case pictureURL  = "picture_url"
+        case phoneNumber = "phone_number"
+        case smsNumber = "sms_number"
+        case rating      = "rating"
+    }
+
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        name = try container.decode(String.self, forKey: .name)
+        pictureURL = try container.decode(URL.self, forKey: .pictureURL)
+        phoneNumber = try container.decode(String.self, forKey: .phoneNumber)
+        smsNumber = try container.decode(String.self, forKey: .smsNumber)
+        rating = try container.decode(Double.self, forKey: .rating)
     }
 }

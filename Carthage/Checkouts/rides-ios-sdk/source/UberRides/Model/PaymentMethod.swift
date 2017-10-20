@@ -22,49 +22,43 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-import ObjectMapper
-
 // MARK: PaymentMethods
 
 /**
  *  Internal struct for handling a list of payment methods
  */
-struct PaymentMethods {
+struct PaymentMethods: Codable {
     var lastUsed: String?
     var list: [PaymentMethod]?
-    
-    init?(_ map: Map) {
+
+    enum CodingKeys: String, CodingKey {
+        case lastUsed = "last_used"
+        case list     = "payment_methods"
     }
 }
-
-extension PaymentMethods: UberModel {
-    mutating func mapping(map: Map) {
-        lastUsed <- map["last_used"]
-        list     <- map["payment_methods"]
-    }
-}
-
 // MARK: PaymentMethod
 
-@objc(UBSDKPaymentMethod) public class PaymentMethod: NSObject {
+@objc(UBSDKPaymentMethod) public class PaymentMethod: NSObject, Codable {
     
     /// The account identification or description associated with the payment method.
-    public private(set) var paymentDescription: String?
+    @objc public private(set) var paymentDescription: String?
     
     /// Unique identifier of the payment method.
-    public private(set) var methodID: String?
+    @objc public private(set) var methodID: String
     
     /// The type of the payment method. See https://developer.uber.com/docs/v1-payment-methods.
-    public private(set) var type: String?
-    
-    public required init?(_ map: Map) {
-    }
-}
+    @objc public private(set) var type: String
 
-extension PaymentMethod: UberModel {
-    public func mapping(map: Map) {
-        paymentDescription <- map["description"]
-        methodID           <- map["payment_method_id"]
-        type               <- map["type"]
+    enum CodingKeys: String, CodingKey {
+        case paymentDescription = "description"
+        case methodID           = "payment_method_id"
+        case type               = "type"
+    }
+
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        paymentDescription = try container.decodeIfPresent(String.self, forKey: .paymentDescription)
+        methodID = try container.decode(String.self, forKey: .methodID)
+        type = try container.decode(String.self, forKey: .type)
     }
 }

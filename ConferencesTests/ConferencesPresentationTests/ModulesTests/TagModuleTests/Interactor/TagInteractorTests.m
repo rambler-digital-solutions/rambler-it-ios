@@ -26,6 +26,8 @@
 #import "TagModelObject.h"
 #import "TagObjectDescriptor.h"
 
+#import "TagModelObjectMock.h"
+
 @interface TagInteractorTests : XCTestCase
 
 @property(nonatomic, strong) TagInteractor *interactor;
@@ -50,7 +52,7 @@
     self.interactor = nil;
 
     self.mockTagService = nil;
-
+    
     [super tearDown];
 }
 
@@ -76,9 +78,9 @@
 - (NSArray *)generateTags:(NSInteger)count {
     NSMutableArray *items = [NSMutableArray array];
     for (int i = 0; i < count; ++i) {
-        TagModelObject *tag = OCMClassMock([TagModelObject class]);
+        TagModelObjectMock *tag = [TagModelObjectMock new];
         NSString *name = [NSString stringWithFormat:@"name %d", i];
-        OCMStub([tag name]).andReturn(name);
+        tag.name = name;
         [items addObject:tag];
     }
     return [items copy];
@@ -86,7 +88,7 @@
 
 - (NSArray *)generateTagNames:(NSArray *)tags {
     NSMutableArray *items = [NSMutableArray array];
-    for (TagModelObject *tag in tags) {
+    for (TagModelObjectMock *tag in tags) {
         [items addObject:tag.name];
     }
     return [items copy];

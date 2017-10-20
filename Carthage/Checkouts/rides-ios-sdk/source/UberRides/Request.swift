@@ -27,16 +27,16 @@
 */
 @objc(UBSDKResponse) public class Response: NSObject {
     /// String representing JSON response data.
-    public var data: NSData?
+    @objc public var data: Data?
     
     /// HTTP status code of response.
-    public var statusCode: Int
+    @objc public var statusCode: Int
     
     /// Response metadata.
-    public var response: NSHTTPURLResponse?
+    @objc public var response: HTTPURLResponse?
     
     /// NSError representing an optional error.
-    public var error: RidesError?
+    @objc public var error: RidesError?
     
     /**
      Initialize a Response object.
@@ -45,7 +45,7 @@
      - parameter response: Provides response metadata, such as HTTP headers and status code.
      - parameter error:    Indicates why the request failed, or nil if the request was successful.
      */
-    init(data: NSData?, statusCode: Int, response: NSHTTPURLResponse?, error: RidesError?) {
+    @objc init(data: Data?, statusCode: Int, response: HTTPURLResponse?, error: RidesError?) {
         self.data = data
         self.response = response
         self.statusCode = statusCode
@@ -55,22 +55,22 @@
     /**
      - returns: string representation of JSON data.
      */
-    func toJSONString() -> NSString {
+    func toJSONString() -> String {
         guard let data = data else {
             return ""
         }
         
-        return NSString(data: data, encoding: NSUTF8StringEncoding)!
+        return String(data: data, encoding: String.Encoding.utf8)!
     }
 }
 
 /// Class to create and execute NSURLRequests.
 class Request: NSObject {
-    let session: NSURLSession?
+    let session: URLSession?
     let endpoint: UberAPI
-    let urlRequest: NSMutableURLRequest
-    let serverToken: NSString?
-    let bearerToken: NSString?
+    var urlRequest: URLRequest
+    let serverToken: String?
+    let bearerToken: String?
     
     /**
      Initialize a request object.
@@ -80,25 +80,24 @@ class Request: NSObject {
      - parameter endpoint:    UberAPI conforming endpoint.
      - parameter serverToken: Developer's server token.
      */
-    init(session: NSURLSession?, endpoint: UberAPI, serverToken: NSString? = nil, bearerToken: NSString? = nil) {
-        self.session = session
-        self.endpoint = endpoint
-        self.urlRequest = NSMutableURLRequest()
-        self.serverToken = serverToken
-        self.bearerToken = bearerToken
-    }
-    
-    /**
-     Creates a URL based off the endpoint requested. Function asserts for valid URL.
-     
-     - returns: constructed NSURL or nil if construction failed.
-     */
-    func requestURL() -> NSURL? {
-        let components = NSURLComponents(string: endpoint.host)!
+    init?(session: URLSession?, endpoint: UberAPI, serverToken: String? = nil, bearerToken: String? = nil) {
+        guard var components = URLComponents(string: endpoint.host) else {
+            return nil
+        }
         components.path = endpoint.path
         components.queryItems = endpoint.query
-        
-        return components.URL
+
+        guard let url = components.url else {
+            return nil
+        }
+        urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = endpoint.method.rawValue
+        urlRequest.httpBody = endpoint.body
+
+        self.session = session
+        self.endpoint = endpoint
+        self.serverToken = serverToken
+        self.bearerToken = bearerToken
     }
     
     /**
@@ -122,9 +121,6 @@ class Request: NSObject {
      Prepares the NSURLRequest by adding necessary fields.
      */
     func prepare() {
-        urlRequest.URL = requestURL()
-        urlRequest.HTTPMethod = endpoint.method.rawValue
-        urlRequest.HTTPBody = endpoint.body
         addHeaders()
     }
     
@@ -133,15 +129,14 @@ class Request: NSObject {
      
      - parameter completion: completion handler for returned Response.
      */
-    func execute(completion: (response: Response) -> Void) {
+    func execute(_ completion: @escaping (_ response: Response) -> Void) {
         guard let session = session else {
             return
         }
         
-        prepare()
-        let task = session.dataTaskWithRequest(urlRequest, completionHandler: {
-            (data, response, error) in
-            let httpResponse: NSHTTPURLResponse? = response as? NSHTTPURLResponse
+        addHeaders()
+        let task = session.dataTask(with: urlRequest, completionHandler: { (data, response, error) in
+            let httpResponse: HTTPURLResponse? = response as? HTTPURLResponse
             var statusCode: Int = 0
             var ridesError: RidesError?
             
@@ -153,13 +148,12 @@ class Request: NSObject {
                     break errorCheck
                 }
                 
-                let jsonString = NSString(data: data!, encoding: NSUTF8StringEncoding)!
                 if statusCode >= 400 && statusCode <= 499 {
-                    ridesError = ModelMapper<RidesClientError>().mapFromJSON(jsonString)
+                    ridesError = try? JSONDecoder.uberDecoder.decode(RidesClientError.self, from: data!)
                 } else if (statusCode >= 500 && statusCode <= 599) {
-                    ridesError = ModelMapper<RidesServerError>().mapFromJSON(jsonString)
+                    ridesError = try? JSONDecoder.uberDecoder.decode(RidesServerError.self, from: data!)
                 } else {
-                    ridesError = ModelMapper<RidesUnknownError>().mapFromJSON(jsonString)
+                    ridesError = try? JSONDecoder.uberDecoder.decode(RidesUnknownError.self, from: data!)
                 }
                 
                 ridesError?.status = statusCode
@@ -167,19 +161,15 @@ class Request: NSObject {
             
             // Any other errors.
             if response == nil || error != nil {
-                ridesError = RidesUnknownError()
-                
-                if let error = error {
-                    ridesError!.title = error.domain
-                    ridesError!.status = error.code
+                if let error = error as NSError? {
+                    ridesError = RidesUnknownError(status: error.code, code: nil, title: error.domain)
                 } else {
-                    ridesError!.title = "Request could not complete"
-                    ridesError!.code = "request_error"
+                    ridesError = RidesUnknownError(status: -1, code: "request_error", title: "Request could not complete")
                 }
             }
-            
+          
             let ridesResponse = Response(data: data, statusCode: statusCode, response: httpResponse, error: ridesError)
-            completion(response: ridesResponse)
+            completion(ridesResponse)
         })
         task.resume()
     }

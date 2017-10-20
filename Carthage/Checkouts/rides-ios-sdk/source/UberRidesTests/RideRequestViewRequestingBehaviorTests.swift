@@ -28,10 +28,10 @@ class RideRequestViewRequestingBehaviorTests : XCTestCase {
 
     override func setUp() {
         super.setUp()
-        Configuration.restoreDefaults()
+        Configuration.bundle = Bundle(for: type(of: self))
         Configuration.plistName = "testInfo"
-        Configuration.bundle = NSBundle(forClass: self.dynamicType)
-        Configuration.setSandboxEnabled(true)
+        Configuration.restoreDefaults()
+        Configuration.shared.isSandbox = true
     }
     
     override func tearDown() {
@@ -41,7 +41,7 @@ class RideRequestViewRequestingBehaviorTests : XCTestCase {
     
     func testUpdateLoginManager() {
         let baseVC = UIViewController()
-        let initialLoginManger = LoginManager(loginType: .Native)
+        let initialLoginManger = LoginManager(loginType: .native)
         let behavior = RideRequestViewRequestingBehavior(presentingViewController: baseVC, loginManager: initialLoginManger)
         XCTAssertNotNil(behavior.loginManager)
         XCTAssertEqual(behavior.modalRideRequestViewController.rideRequestViewController.loginManager, initialLoginManger)
@@ -54,26 +54,28 @@ class RideRequestViewRequestingBehaviorTests : XCTestCase {
     
     func testRideParametersUpdated() {
         class UIViewControllerMock : UIViewController {
-            override func presentViewController(viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)?) {
+            override func present(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)?) {
                 return
             }
         }
         
         let baseVC = UIViewControllerMock()
-        let initialLoginManger = LoginManager(loginType: .Native)
+        let initialLoginManger = LoginManager(loginType: .native)
         let behavior = RideRequestViewRequestingBehavior(presentingViewController: baseVC, loginManager: initialLoginManger)
         XCTAssertNotNil(behavior.modalRideRequestViewController)
         XCTAssertNotNil(behavior.modalRideRequestViewController.rideRequestViewController)
         let pickupLocation = CLLocation(latitude: -32.0, longitude: 42.2)
-        let newRideParams = RideParametersBuilder().setPickupLocation(pickupLocation).build()
-        behavior.requestRide(newRideParams)
+        let rideParametersBuilder = RideParametersBuilder()
+        rideParametersBuilder.pickupLocation = pickupLocation
+        let newRideParams = rideParametersBuilder.build()
+        behavior.requestRide(parameters: newRideParams)
         XCTAssertTrue(behavior.modalRideRequestViewController.rideRequestViewController.rideRequestView.rideParameters === newRideParams)
     }
     
     func testPresentModal() {
         class UIViewControllerMock : UIViewController {
             let testClosure: (UIViewController) -> ()
-            private init(testClosure: (UIViewController) -> ()) {
+            fileprivate init(testClosure: @escaping (UIViewController) -> ()) {
                 self.testClosure = testClosure
                 super.init(nibName: nil, bundle: nil)
             }
@@ -82,23 +84,23 @@ class RideRequestViewRequestingBehaviorTests : XCTestCase {
                 fatalError("init(coder:) has not been implemented")
             }
             
-            override func presentViewController(viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)?) {
+            override func present(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)?) {
                 self.testClosure(viewControllerToPresent)
                 return
             }
         }
         
-        let expectation = expectationWithDescription("ModalRideViewController is presented")
+        let expectation = self.expectation(description: "ModalRideViewController is presented")
         let expectationClosure: (UIViewController) -> () = { viewController in
-            XCTAssertTrue(viewController.isKindOfClass(ModalRideRequestViewController))
+            XCTAssertTrue(viewController is ModalRideRequestViewController)
             expectation.fulfill()
         }
         
         let baseVC = UIViewControllerMock(testClosure: expectationClosure)
-        let initialLoginManger = LoginManager(loginType: .Native)
+        let initialLoginManger = LoginManager(loginType: .native)
         let behavior = RideRequestViewRequestingBehavior(presentingViewController: baseVC, loginManager: initialLoginManger)
-        behavior.requestRide(RideParametersBuilder().build())
-        waitForExpectationsWithTimeout(2.0) {error in
+        behavior.requestRide(parameters: RideParametersBuilder().build())
+        waitForExpectations(timeout: 2.0) {error in
             XCTAssertNil(error)
         }
     }

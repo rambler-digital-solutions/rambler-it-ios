@@ -22,36 +22,51 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-import ObjectMapper
-
 // MARK: RideRequestLocation
 
 /**
  *  Location of a pickup or destination in a ride request.
  */
-@objc(UBSDKRideRequestLocation) public class RideRequestLocation: NSObject {
+@objc(UBSDKRideRequestLocation) public class RideRequestLocation: NSObject, Codable {
+    /**
+      The alias from an Uber user’s profile mapped to the pickup address (if available).
+      Can be either work or home. Only exposed with a valid access token for places scope.
+     */
+    @objc public private(set) var alias: String?
+
+    /// The name of the pickup place (if available). Not exposed in sandbox.
+    @objc public private(set) var name: String?
     
     /// The current bearing in degrees for a moving location.
-    public private(set) var bearing: Int = 0
+    @nonobjc public private(set) var bearing: Int?
+
+    /// The current bearing in degrees for a moving location. UBSDKBearingUnavailable if not present.
+    @objc public var objc_bearing: Int {
+        return bearing ?? UBSDKBearingUnavailable
+    }
     
     /// ETA is only available when the trips is accepted or arriving.
-    public private(set) var eta: Int = 0
+    @nonobjc public private(set) var eta: Int?
+
+    /// ETA is only available when the trips is accepted or arriving. -1 if not present.
+    @objc public var objc_eta: Int {
+        return eta ?? UBSDKEstimateUnavailable
+    }
     
     /// The latitude of the location.
-    public private(set) var latitude: Double = 0
+    @objc public private(set) var latitude: Double
     
     /// The longitude of the location.
-    public private(set) var longitude: Double = 0
-    
-    public required init?(_ map: Map) {
-    }
-}
+    @objc public private(set) var longitude: Double
 
-extension RideRequestLocation: UberModel {
-    public func mapping(map: Map) {
-        bearing   <- map["bearing"]
-        eta       <- map["eta"]
-        latitude  <- map["latitude"]
-        longitude <- map["longitude"]
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        alias = try container.decodeIfPresent(String.self, forKey: .alias)
+        name = try container.decodeIfPresent(String.self, forKey: .name)
+        bearing = try container.decodeIfPresent(Int.self, forKey: .bearing)
+        eta = try container.decodeIfPresent(Int.self, forKey: .eta)
+        eta = eta != -1 ? eta : nil // Since the API returns -1, converting to an optional. 
+        latitude = try container.decode(Double.self, forKey: .latitude)
+        longitude = try container.decode(Double.self, forKey: .longitude)
     }
 }
