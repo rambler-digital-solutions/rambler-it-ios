@@ -28,6 +28,7 @@
 @class LaunchSystemAssembly;
 @class DaemonAssembly;
 @class PresentationLayerHelpersAssembly;
+@class UberAssembly;
 
 /**
  @author Artem Karpushin
@@ -42,5 +43,6 @@
 @property (nonatomic, strong, readonly) ApplicationHelperAssembly *applicationHelperAssembly;
 @property (nonatomic, strong, readonly) LaunchSystemAssembly *launchSystemAssembly;
 @property (nonatomic, strong, readonly) PresentationLayerHelpersAssembly *presentationHelpersAssembly;
+@property (nonatomic, strong, readonly) UberAssembly *uberAssembly;
 
 @end

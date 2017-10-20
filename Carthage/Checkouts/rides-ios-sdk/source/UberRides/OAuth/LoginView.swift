@@ -26,11 +26,11 @@ import Foundation
 import WebKit
 
 /// Login Web View class. Wrapper around a WKWebView to handle Login flow for Implicit Grant
-@objc(UBSDKLoginView) public class LoginView : UIView {
+@objc(UBSDKLoginView) public class LoginView: UIView {
     
-    public var loginAuthenticator: LoginViewAuthenticator
+    @objc public var loginAuthenticator: LoginViewAuthenticator
     
-    var clientID = Configuration.getClientID()
+    var clientID = Configuration.shared.clientID
     let webView: WKWebView
     
     //MARK: Initializers
@@ -43,27 +43,15 @@ import WebKit
     
     - returns: An initialized LoginWebView
     */
-    @objc public init(loginAuthenticator: LoginViewAuthenticator, frame: CGRect) {
+    @objc public init(loginAuthenticator: LoginViewAuthenticator, frame: CGRect = CGRect.zero) {
         let configuration = WKWebViewConfiguration()
-        configuration.processPool = Configuration.processPool
+        configuration.processPool = Configuration.shared.processPool
         webView = WKWebView.init(frame: frame, configuration: configuration)
         self.loginAuthenticator = loginAuthenticator
         super.init(frame: frame)
         webView.navigationDelegate = self
         self.addSubview(webView)
         setupWebView()
-    }
-    
-    /**
-     Creates a LoginWebView for obtaining an access token.
-     Defaults to a CGRectZero Frame
-     
-     - parameter loginAuthenticator: the login authentication process to use
-     
-     - returns: An initialized LoginWebView
-     */
-    @objc public convenience init(loginAuthenticator: LoginViewAuthenticator) {
-        self.init(loginAuthenticator: loginAuthenticator, frame: CGRectZero)
     }
 
     /**
@@ -90,8 +78,8 @@ import WebKit
         self.webView.translatesAutoresizingMaskIntoConstraints = false
 
         let views = ["webView": webView]
-        let horizontalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|[webView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views)
-        let verticalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|[webView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views)
+        let horizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|[webView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views)
+        let verticalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|[webView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views)
         
         addConstraints(horizontalConstraints)
         addConstraints(verticalConstraints)
@@ -102,51 +90,50 @@ import WebKit
     /**
     Loads the login page
     */
-    public func load() {
+    @objc public func load() {
         // Create URL for request
-        let request = Request(session: nil, endpoint: loginAuthenticator.endpoint)
-        request.prepare()
-        
-        guard let _ = request.requestURL() else {
-            loginAuthenticator.loginCompletion?(accessToken: nil, error: RidesAuthenticationErrorFactory.errorForType(ridesAuthenticationErrorType:.InvalidRequest))
+        guard let request = Request(session: nil, endpoint: loginAuthenticator.endpoint) else {
+            loginAuthenticator.loginCompletion?(nil, RidesAuthenticationErrorFactory.errorForType(ridesAuthenticationErrorType:.invalidRequest))
             
             return
         }
         
         // Load request in web view
-        self.webView.loadRequest(request.urlRequest)
+        self.webView.load(request.urlRequest)
     }
     
     /**
      Stops loading the login page and clears the view.
      If the login page has already loaded, calling this still clears the view.
      */
-    public func cancelLoad() {
+    @objc public func cancelLoad() {
         webView.stopLoading()
-        if let url = NSURL(string: "about:blank") {
-            webView.loadRequest(NSURLRequest(URL: url))
+        if let url = URL(string: "about:blank") {
+            webView.load(URLRequest(url: url))
         }
     }
 }
 
 extension LoginView : WKNavigationDelegate {
     
-    public func webView(webView: WKWebView, decidePolicyForNavigationAction navigationAction: WKNavigationAction, decisionHandler: (WKNavigationActionPolicy) -> Void) {
+    public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
             
-        if loginAuthenticator.handleRedirectRequest(navigationAction.request) {
-            decisionHandler(WKNavigationActionPolicy.Cancel)
+        if loginAuthenticator.handleRedirect(for: navigationAction.request) {
+            decisionHandler(WKNavigationActionPolicy.cancel)
         } else {
-            decisionHandler(WKNavigationActionPolicy.Allow)
+            decisionHandler(WKNavigationActionPolicy.allow)
         }
     }
     
-    public func webView(webView: WKWebView, didFailNavigation navigation: WKNavigation!, withError error: NSError) {
-        loginAuthenticator.loginCompletion?(accessToken: nil, error: RidesAuthenticationErrorFactory.errorForType(ridesAuthenticationErrorType: .NetworkError))
+    public func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        if (error as NSError).code != RidesWebViewErrors.frameLoadInterruptError.rawValue && (error as NSError).code != NSURLErrorCancelled {
+            loginAuthenticator.loginCompletion?(nil, RidesAuthenticationErrorFactory.errorForType(ridesAuthenticationErrorType: .networkError))
+        }
     }
     
-    public func webView(webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: NSError) {
-        if error.code != 102 {
-            loginAuthenticator.loginCompletion?(accessToken: nil, error: RidesAuthenticationErrorFactory.errorForType(ridesAuthenticationErrorType: .NetworkError))
+    public func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        if (error as NSError).code != RidesWebViewErrors.frameLoadInterruptError.rawValue && (error as NSError).code != NSURLErrorCancelled {
+            loginAuthenticator.loginCompletion?(nil, RidesAuthenticationErrorFactory.errorForType(ridesAuthenticationErrorType: .networkError))
         }
     }
 }

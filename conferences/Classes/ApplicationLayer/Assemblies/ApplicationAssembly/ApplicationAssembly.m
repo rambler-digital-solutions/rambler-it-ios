@@ -26,6 +26,7 @@
 #import "SpotlightIndexerAssembly.h"
 #import "DaemonAssembly.h"
 #import "PresentationLayerHelpersAssembly.h"
+#import "UberAssembly.h"
 
 #import "ApplicationConfigurator.h"
 #import "ApplicationConfiguratorImplementation.h"
@@ -34,7 +35,6 @@
 #import "CleanLaunchRouter.h"
 #import "CleanLaunchAppDelegate.h"
 #import "ServiceComponents.h"
-#import "UberRidesAppDelegate.h"
 #import <RamblerAppDelegateProxy/RamblerAppDelegateProxy.h>
 
 @implementation ApplicationAssembly
@@ -45,7 +45,7 @@
                               [definition injectMethod:@selector(addAppDelegates:)
                                             parameters:^(TyphoonMethod *method) {
                                                 [method injectParameterWith:@[
-                                                                              [self uberRidesAppDelegate],
+                                                                              [self.uberAssembly uberRidesAppDelegate],
                                                                               [self cleanStartAppDelegate],
                                                                               [self.launchSystemAssembly spotlightAppDelegate],
                                                                               [self.launchSystemAssembly quickActionAppDelegate],
@@ -56,10 +56,6 @@
                                             }];
                               definition.scope = TyphoonScopeSingleton;
                           }];
-}
-
-- (UberRidesAppDelegate *)uberRidesAppDelegate {
-    return [TyphoonDefinition withClass:[UberRidesAppDelegate class]];
 }
 
 - (CleanLaunchAppDelegate *)cleanStartAppDelegate {

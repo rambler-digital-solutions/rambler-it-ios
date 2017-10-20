@@ -28,7 +28,7 @@
 @objc(UBSDKLoginManager) public class LoginManager: NSObject, LoginManaging {
     
     /// Optional state to use for explcit grant authorization
-    public var state: String?
+    @objc public var state: String?
     
     var accessTokenIdentifier: String
     var keychainAccessGroup: String
@@ -36,12 +36,12 @@
     var oauthViewController: OAuthViewController?
     var authenticator: UberAuthenticating?
     var loggingIn: Bool = false
-    
+
     /**
     Create instance of login manager to authenticate user and retreive access token.
     
-    - parameter accessTokenIdentifier: The access token identifier to use for saving the Access Token, defaults to Configuration.getDefaultAccessTokenIdentifier()
-    - parameter keychainAccessGroup:   The keychain access group to use for saving the Access Token, defaults to Configuration.getDefaultKeychainAccessGroup()
+    - parameter accessTokenIdentifier: The access token identifier to use for saving the Access Token, defaults to Configuration.shared.defaultAccessTokenIdentifier
+    - parameter keychainAccessGroup:   The keychain access group to use for saving the Access Token, defaults to Configuration.shared.defaultKeychainAccessGroup
     - parameter loginType:         The login type to use for logging in, defaults to Implicit
     
     - returns: An initialized LoginManager
@@ -49,62 +49,61 @@
     @objc public init(accessTokenIdentifier: String, keychainAccessGroup: String?, loginType: LoginType) {
 
         self.accessTokenIdentifier = accessTokenIdentifier
-        self.keychainAccessGroup = keychainAccessGroup ?? Configuration.getDefaultKeychainAccessGroup()
+        self.keychainAccessGroup = keychainAccessGroup ?? Configuration.shared.defaultKeychainAccessGroup
         self.loginType = loginType
         
         super.init()
     }
-    
+
     /**
      Create instance of login manager to authenticate user and retreive access token.
      Uses the Implicit Login Behavior
-     
+
      - parameter accessTokenIdentifier: The access token identifier to use for saving the Access Token, defaults to Configuration.getDefaultAccessTokenIdentifier()
      - parameter keychainAccessGroup:   The keychain access group to use for saving the Access Token, defaults to Configuration.getDefaultKeychainAccessGroup()
-     
+
      - returns: An initialized LoginManager
      */
     @objc public convenience init(accessTokenIdentifier: String, keychainAccessGroup: String?) {
-        let accessGroup = keychainAccessGroup ?? Configuration.getDefaultKeychainAccessGroup()
-        self.init(accessTokenIdentifier: accessTokenIdentifier, keychainAccessGroup: accessGroup, loginType: LoginType.Implicit)
+        self.init(accessTokenIdentifier: accessTokenIdentifier, keychainAccessGroup: keychainAccessGroup, loginType: LoginType.implicit)
     }
-    
+
     /**
      Create instance of login manager to authenticate user and retreive access token.
      Uses the Implicit Login Behavior & your Configuration's keychain access group
-     
+
      - parameter accessTokenIdentifier: The access token identifier to use for saving the Access Token, defaults to Configuration.getDefaultAccessTokenIdentifier()
-     
+
      - returns: An initialized LoginManager
      */
     @objc public convenience init(accessTokenIdentifier: String) {
         self.init(accessTokenIdentifier: accessTokenIdentifier, keychainAccessGroup: nil)
     }
-    
+
     /**
      Create instance of login manager to authenticate user and retreive access token.
      Uses the provided LoginType, with the accessTokenIdentifier & keychainAccessGroup defined
      in your Configuration
-     
+
      - parameter loginType: The login behavior to use for logging in
-     
+
      - returns: An initialized LoginManager
      */
     @objc public convenience init(loginType: LoginType) {
-        self.init(accessTokenIdentifier: Configuration.getDefaultAccessTokenIdentifier(), keychainAccessGroup: Configuration.getDefaultKeychainAccessGroup(), loginType: loginType)
+        self.init(accessTokenIdentifier: Configuration.shared.defaultAccessTokenIdentifier, keychainAccessGroup: nil, loginType: loginType)
     }
-    
+
     /**
      Create instance of login manager to authenticate user and retreive access token.
      Uses the Native LoginType, with the accessTokenIdentifier & keychainAccessGroup defined
      in your Configuration
-     
+
      - returns: An initialized LoginManager
      */
     @objc public convenience override init() {
-        self.init(accessTokenIdentifier: Configuration.getDefaultAccessTokenIdentifier(), keychainAccessGroup: Configuration.getDefaultKeychainAccessGroup(), loginType: LoginType.Native)
+        self.init(accessTokenIdentifier: Configuration.shared.defaultAccessTokenIdentifier, keychainAccessGroup: nil, loginType: LoginType.native)
     }
-    
+
     // Mark: LoginManaging
     
      /**
@@ -115,32 +114,32 @@
      - parameter presentingViewController: The presenting view controller present the login view controller over.
      - parameter completion:               The LoginManagerRequestTokenHandler completion handler for login success/failure.
      */
-    @objc public func login(requestedScopes scopes: [RidesScope], presentingViewController: UIViewController? = nil, completion: ((accessToken: AccessToken?, error: NSError?) -> Void)? = nil) {
+    @objc public func login(requestedScopes scopes: [RidesScope], presentingViewController: UIViewController? = nil, completion: ((_ accessToken: AccessToken?, _ error: NSError?) -> Void)? = nil) {
         guard !loggingIn else {
-            completion?(accessToken: nil, error: RidesAuthenticationErrorFactory.errorForType(ridesAuthenticationErrorType: .Unavailable))
+            completion?(nil, RidesAuthenticationErrorFactory.errorForType(ridesAuthenticationErrorType: .unavailable))
             return
         }
         
         var loginAuthenticator: UberAuthenticating!
         
         switch loginType {
-        case .AuthorizationCode:
+        case .authorizationCode:
             guard let presentingViewController = presentingViewController else {
-                completion?(accessToken: nil, error: RidesAuthenticationErrorFactory.errorForType(ridesAuthenticationErrorType: .UnableToPresentLogin))
+                completion?(nil, RidesAuthenticationErrorFactory.errorForType(ridesAuthenticationErrorType: .unableToPresentLogin))
                 return
             }
             loginAuthenticator = AuthorizationCodeGrantAuthenticator(presentingViewController: presentingViewController, scopes: scopes, state: state)
-        case .Implicit:
+        case .implicit:
             guard let presentingViewController = presentingViewController else {
-                completion?(accessToken: nil, error: RidesAuthenticationErrorFactory.errorForType(ridesAuthenticationErrorType: .UnableToPresentLogin))
+                completion?(nil, RidesAuthenticationErrorFactory.errorForType(ridesAuthenticationErrorType: .unableToPresentLogin))
                 return
             }
             loginAuthenticator = ImplicitGrantAuthenticator(presentingViewController: presentingViewController, scopes: scopes)
-        case .Native:
+        case .native:
             let nativeAuthenticator = NativeAuthenticator(scopes: scopes)
             nativeAuthenticator.deeplinkCompletion = { error in
                 if (error == nil) {
-                    RidesAppDelegate.sharedInstance.loginManager = self
+                    RidesAppDelegate.shared.loginManager = self
                 }
             };
             loginAuthenticator = nativeAuthenticator
@@ -163,33 +162,44 @@
      - parameter url:               The URL resource to open. As passed to the corresponding AppDelegate methods
      - parameter sourceApplication: The bundle ID of the app that is requesting your app to open the URL (url).
      As passed to the corresponding AppDelegate method (iOS 8)
-     OR
-     options[UIApplicationOpenURLOptionsSourceApplicationKey] (iOS 9+)
      - parameter annotation:        annotation: A property list object supplied by the source app to communicate
      information to the receiving app As passed to the corresponding AppDelegate method (iOS 8)
-     OR
-     options[UIApplicationLaunchOptionsAnnotationKey] (iOS 9+)
-     
      
      - returns: true if the url was meant to be handled by the SDK, false otherwise
      */
-    public func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
-        guard let source = sourceApplication where source.hasPrefix("com.ubercab"),
+    public func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        guard let source = sourceApplication, source.hasPrefix("com.ubercab"),
         let nativeAuthenticator = authenticator as? NativeAuthenticator else {
             return false
         }
-        let redirectURL = NSURLRequest(URL: url)
-        let handled = nativeAuthenticator.handleRedirectRequest(redirectURL)
+        let redirectURL = URLRequest(url: url)
+        let handled = nativeAuthenticator.handleRedirect(for: redirectURL)
         loggingIn = false
         authenticator = nil
         return handled
+    }
+
+    /**
+     Called via the RidesAppDelegate when the application is opened via a URL. Responsible
+     for parsing the url and creating an OAuthToken. (iOS 9+)
+
+     - parameter application:       The UIApplication object. Pass in the value from the App Delegate
+     - parameter url:               The URL resource to open. As passed to the corresponding AppDelegate methods
+     - parameter options:           A dictionary of URL handling options. As passed to the corresponding AppDelegate method.
+
+     - returns: true if the url was meant to be handled by the SDK, false otherwise
+     */
+    @available(iOS 9.0, *)
+    public func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
+        let sourceApplication = options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String
+        let annotation = options[.annotation] as Any
+
+        return application(app, open: url, sourceApplication: sourceApplication, annotation: annotation)
     }
     
     /**
      Called via the RidesAppDelegate when the application becomes active. Used to determine
      if a user abandons Native login without getting an access token.
-     
-     - parameter application: The UIApplication object. Pass in the value from the App Delegate
      */
     public func applicationDidBecomeActive() {
         if loggingIn {
@@ -207,37 +217,37 @@
     
     private func handleLoginCanceled() {
         loggingIn = false
-        authenticator?.loginCompletion?(accessToken: nil, error: RidesAuthenticationErrorFactory.errorForType(ridesAuthenticationErrorType: .UserCancelled))
+        authenticator?.loginCompletion?(nil, RidesAuthenticationErrorFactory.errorForType(ridesAuthenticationErrorType: .userCancelled))
         authenticator = nil
     }
     
-    private func loginCompletion(loginType: LoginType, presentingViewController: UIViewController?, completion: ((accessToken: AccessToken?, error: NSError?) -> Void)?) -> ((accessToken: AccessToken?, error: NSError?) -> Void)? {
-        var loginCompletion: ((accessToken: AccessToken?, error: NSError?) -> Void)?
+    private func loginCompletion(_ loginType: LoginType, presentingViewController: UIViewController?, completion: ((_ accessToken: AccessToken?, _ error: NSError?) -> Void)?) -> ((_ accessToken: AccessToken?, _ error: NSError?) -> Void)? {
+        var loginCompletion: ((_ accessToken: AccessToken?, _ error: NSError?) -> Void)?
         
         switch loginType {
-        case .Native:
+        case .native:
             loginCompletion = { token, error in
                 self.loggingIn = false
-                if let error = error where error.code == RidesAuthenticationErrorType.Unavailable.rawValue {
+                if let error = error, error.code == RidesAuthenticationErrorType.unavailable.rawValue {
                     self.handleNativeFallback(error, presentingViewController: presentingViewController, completion: completion)
                 } else {
-                    completion?(accessToken: token, error: error)
+                    completion?(token, error)
                 }
             }
             break
-        case .Implicit:
+        case .implicit:
             fallthrough
-        case .AuthorizationCode:
+        case .authorizationCode:
             fallthrough
         default:
             loginCompletion = { token, error in
                 self.loggingIn = false
                 if let presentingViewController = presentingViewController {
-                    presentingViewController.dismissViewControllerAnimated(true, completion: { () -> Void in
-                        completion?(accessToken: token, error: error)
+                    presentingViewController.dismiss(animated: true, completion: { () -> Void in
+                        completion?(token, error)
                     })
                 } else {
-                    completion?(accessToken: token, error: error)
+                    completion?(token, error)
                 }
             }
             break
@@ -246,24 +256,24 @@
         return loginCompletion
     }
     
-    private func handleNativeFallback(error: NSError?, presentingViewController: UIViewController?, completion: ((accessToken: AccessToken?, error: NSError?) -> Void)?) {
+    private func handleNativeFallback(_ error: NSError?, presentingViewController: UIViewController?, completion: ((_ accessToken: AccessToken?, _ error: NSError?) -> Void)?) {
         guard let manager = authenticator as? NativeAuthenticator else {
-            completion?(accessToken: nil, error: error)
+            completion?(nil, error)
             return
         }
         
-        if manager.scopes.contains({ $0.scopeType == .Privileged }) {
-            if (Configuration.getFallbackEnabled()) {
-                loginType = .AuthorizationCode
+        if manager.scopes.contains(where: { $0.scopeType == .privileged }) {
+            if (Configuration.shared.useFallback) {
+                loginType = .authorizationCode
             } else {
                 let appstoreDeeplink = AppStoreDeeplink(userAgent: nil)
-                appstoreDeeplink.execute({ _ in
-                    completion?(accessToken: nil, error: error)
+                appstoreDeeplink.execute(completion: { _ in
+                    completion?(nil, error)
                 })
                 return
             }
         } else {
-            loginType = .Implicit
+            loginType = .implicit
         }
         login(requestedScopes: manager.scopes, presentingViewController: presentingViewController, completion: completion)
     }

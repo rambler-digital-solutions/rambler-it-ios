@@ -22,22 +22,16 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-import ObjectMapper
-
 // MARK: PriceEstimates
 
 /**
 *  Internal object that contains a list of price estimates for Uber products.
 */
-struct PriceEstimates {
+struct PriceEstimates: Codable {
     var list: [PriceEstimate]?
-    init?(_ map: Map) {
-    }
-}
 
-extension PriceEstimates: UberModel {
-    mutating func mapping(map: Map) {
-        list <- map["prices"]
+    enum CodingKeys: String, CodingKey {
+        case list = "prices"
     }
 }
 
@@ -46,57 +40,87 @@ extension PriceEstimates: UberModel {
 /**
 *  Contains information about estimated price range for each Uber product offered at a location.
 */
-@objc(UBSDKPriceEstimate) public class PriceEstimate: NSObject {
+@objc(UBSDKPriceEstimate) public class PriceEstimate: NSObject, Codable {
     
     /// ISO 4217 currency code.
-    public private(set) var currencyCode: String?
-    
+    @objc public private(set) var currencyCode: String?
+
     /// Expected activity distance (in miles).
-    public private(set) var distance: Double = 0.0
+    @nonobjc public private(set) var distance: Double?
+
+    /// Expected activity distance (in miles). -1 if not present.
+    @objc(distance) public var objc_distance: Double {
+        return distance ?? UBSDKDistanceUnavailable
+    }
     
     /// Expected activity duration (in seconds).
-    public private(set) var duration: Int = 0
+    @nonobjc public private(set) var duration: Int?
+
+    /// Expected activity duration (in seconds). UBSDKEstimateUnavailable if not present.
+    @objc(duration) public var objc_duration: Int {
+        return duration ?? UBSDKEstimateUnavailable
+    }
     
     /// A formatted string representing the estimate in local currency. Could be range, single number, or "Metered" for TAXI.
-    public private(set) var estimate: String?
+    @objc public private(set) var estimate: String?
     
     /// Upper bound of the estimated price.
-    public private(set) var highEstimate: Int = 0
+    @nonobjc public private(set) var highEstimate: Int?
+
+    /// Upper bound of the estimated price. UBSDKEstimateUnavailable if not present.
+    @objc(highEstimate) public var objc_highEstimate: Int {
+        return highEstimate ?? UBSDKEstimateUnavailable
+    }
     
     /// Lower bound of the estimated price.
-    public private(set) var lowEstimate: Int = 0
+    @nonobjc public private(set) var lowEstimate: Int?
+
+    /// Lower bound of the estimated price. UBSDKEstimateUnavailable if not present.
+    @objc(lowEstimate) public var objc_lowEstimate: Int {
+        return lowEstimate ?? UBSDKEstimateUnavailable
+    }
     
     /// Display name of product. Ex: "UberBLACK".
-    public private(set) var name: String?
+    @objc public private(set) var name: String?
     
     /// Unique identifier representing a specific product for a given latitude & longitude.
-    public private(set) var productID: String?
+    @objc public private(set) var productID: String?
     
     /// The unique identifier of the surge session for a user. Nil for no surge.
-    public private(set) var surgeConfirmationID: String?
+    @objc public private(set) var surgeConfirmationID: String?
     
     /// The URL a user must visit to accept surge pricing.
-    public private(set) var surgeConfirmationURL: String?
+    @objc public private(set) var surgeConfirmationURL: URL?
     
     /// Expected surge multiplier (active if surge is greater than 1).
-    public private(set) var surgeMultiplier: Double = 1.0
-    
-    public required init?(_ map: Map) {
-    }
-}
+    @objc public private(set) var surgeMultiplier: Double
 
-extension PriceEstimate: UberModel {
-    public func mapping(map: Map) {
-        currencyCode         <- map["currency_code"]
-        distance             <- map["distance"]
-        duration             <- map["duration"]
-        estimate             <- map["estimate"]
-        highEstimate         <- map["high_estimate"]
-        lowEstimate          <- map["low_estimate"]
-        name                 <- map["display_name"]
-        productID            <- map["product_id"]
-        surgeConfirmationID  <- map["surge_confirmation_id"]
-        surgeConfirmationURL <- map["surge_confirmation_href"]
-        surgeMultiplier      <- map["surge_multiplier"]
+    enum CodingKeys: String, CodingKey {
+        case currencyCode         = "currency_code"
+        case distance             = "distance"
+        case duration             = "duration"
+        case estimate             = "estimate"
+        case highEstimate         = "high_estimate"
+        case lowEstimate          = "low_estimate"
+        case name                 = "display_name"
+        case productID            = "product_id"
+        case surgeConfirmationID  = "surge_confirmation_id"
+        case surgeConfirmationURL = "surge_confirmation_href"
+        case surgeMultiplier      = "surge_multiplier"
+    }
+
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        currencyCode = try container.decodeIfPresent(String.self, forKey: .currencyCode)
+        distance = try container.decodeIfPresent(Double.self, forKey: .distance)
+        duration = try container.decodeIfPresent(Int.self, forKey: .duration)
+        estimate = try container.decodeIfPresent(String.self, forKey: .estimate)
+        highEstimate = try container.decodeIfPresent(Int.self, forKey: .highEstimate)
+        lowEstimate = try container.decodeIfPresent(Int.self, forKey: .lowEstimate)
+        name = try container.decodeIfPresent(String.self, forKey: .name)
+        productID = try container.decodeIfPresent(String.self, forKey: .productID)
+        surgeConfirmationID = try container.decodeIfPresent(String.self, forKey: .surgeConfirmationID)
+        surgeConfirmationURL = try container.decodeIfPresent(URL.self, forKey: .surgeConfirmationURL)
+        surgeMultiplier = try container.decodeIfPresent(Double.self, forKey: .surgeMultiplier) ?? 1.0
     }
 }

@@ -31,7 +31,7 @@ import UIKit
  - Privileged: scopes that require approval before opened to your users in production.
  */
 @objc public enum ScopeType : Int {
-    case General, Privileged
+    case general, privileged
 }
 
 /**
@@ -47,48 +47,48 @@ import UIKit
  - RideWidgets:    The scope for using the Ride Request Widget.
  */
 @objc public enum RidesScopeType: Int {
-    case AllTrips
-    case History
-    case HistoryLite
-    case Places
-    case Profile
-    case Request
-    case RequestReceipt
-    case RideWidgets
+    case allTrips
+    case history
+    case historyLite
+    case places
+    case profile
+    case request
+    case requestReceipt
+    case rideWidgets
     
     
     var type: ScopeType {
         switch(self) {
-        case .History: fallthrough
-        case .HistoryLite: fallthrough
-        case .Places: fallthrough
-        case .Profile: fallthrough
-        case .RideWidgets:
-            return .General
-        case .AllTrips: fallthrough
-        case .Request: fallthrough
-        case .RequestReceipt:
-            return .Privileged
+        case .history: fallthrough
+        case .historyLite: fallthrough
+        case .places: fallthrough
+        case .profile: fallthrough
+        case .rideWidgets:
+            return .general
+        case .allTrips: fallthrough
+        case .request: fallthrough
+        case .requestReceipt:
+            return .privileged
         }
     }
     
     func toString() -> String {
         switch self {
-        case .AllTrips:
+        case .allTrips:
             return "all_trips"
-        case .History:
+        case .history:
             return "history"
-        case .HistoryLite:
+        case .historyLite:
             return "history_lite"
-        case .Places:
+        case .places:
             return "places"
-        case .Profile:
+        case .profile:
             return "profile"
-        case .Request:
+        case .request:
             return "request"
-        case .RequestReceipt:
+        case .requestReceipt:
             return "request_receipt"
-        case .RideWidgets:
+        case .rideWidgets:
             return "ride_widgets"
         }
     }
@@ -99,19 +99,19 @@ import UIKit
  */
 @objc(UBSDKRidesScope) public class RidesScope : NSObject {
     /// The RidesScopeType of this RidesScope
-    public let ridesScopeType: RidesScopeType
+    @objc public let ridesScopeType: RidesScopeType
     /// The ScopeType of this RidesScope (General / Privileged)
-    public let scopeType : ScopeType
+    @objc public let scopeType : ScopeType
     /// The String raw value of the scope
-    public let rawValue : String
+    @objc public let rawValue : String
     
-    public init(ridesScopeType: RidesScopeType) {
+    @objc public init(ridesScopeType: RidesScopeType) {
         self.ridesScopeType = ridesScopeType
         scopeType = ridesScopeType.type
         rawValue = ridesScopeType.toString()
     }
     
-    override public func isEqual(object: AnyObject?) -> Bool {
+    override public func isEqual(_ object: Any?) -> Bool {
         if let object = object as? RidesScope {
             return self.ridesScopeType == object.ridesScopeType
         } else {
@@ -124,61 +124,61 @@ import UIKit
     }
     
     /// Convenience variable for the AllTrips scope
-    public static let AllTrips = RidesScope(ridesScopeType: .AllTrips)
+    @objc public static let allTrips = RidesScope(ridesScopeType: .allTrips)
     
     /// Convenience variable for the History scope
-    public static let History = RidesScope(ridesScopeType: .History)
+    @objc public static let history = RidesScope(ridesScopeType: .history)
     
     /// Convenience variable for the HistoryLite scope
-    public static let HistoryLite = RidesScope(ridesScopeType: .HistoryLite)
+    @objc public static let historyLite = RidesScope(ridesScopeType: .historyLite)
     
     /// Convenience variable for the Places scope
-    public static let Places = RidesScope(ridesScopeType: .Places)
+    @objc public static let places = RidesScope(ridesScopeType: .places)
     
     /// Convenience variable for the Profile scope
-    public static let Profile = RidesScope(ridesScopeType: .Profile)
+    @objc public static let profile = RidesScope(ridesScopeType: .profile)
     
     /// Convenience variable for the Request scope
-    public static let Request = RidesScope(ridesScopeType: .Request)
+    @objc public static let request = RidesScope(ridesScopeType: .request)
     
     /// Convenience variable for the RequestReceipt scope
-    public static let RequestReceipt = RidesScope(ridesScopeType: .RequestReceipt)
+    @objc public static let requestReceipt = RidesScope(ridesScopeType: .requestReceipt)
     
     /// Convenience variable for the RideWidgets scope
-    public static let RideWidgets = RidesScope(ridesScopeType: .RideWidgets)
+    @objc public static let rideWidgets = RidesScope(ridesScopeType: .rideWidgets)
     
 }
 
 class RidesScopeFactory : NSObject {
-    static func ridesScopeForType(ridesScopeType: RidesScopeType) -> RidesScope {
+    static func ridesScopeForType(_ ridesScopeType: RidesScopeType) -> RidesScope {
         return RidesScope(ridesScopeType: ridesScopeType)
     }
     
-    static func ridesScopeForString(rawString: String) -> RidesScope? {
+    static func ridesScopeForString(_ rawString: String) -> RidesScope? {
         guard let type = ridesScopeTypeForRawValue(rawString) else {
             return nil
         }
         return ridesScopeForType(type)
     }
     
-    static func ridesScopeTypeForRawValue(rawValue: String) -> RidesScopeType? {
-        switch rawValue.lowercaseString {
-        case RidesScopeType.History.toString():
-            return .History
-        case RidesScopeType.HistoryLite.toString():
-            return .HistoryLite
-        case RidesScopeType.Places.toString():
-            return .Places
-        case RidesScopeType.Profile.toString():
-            return .Profile
-        case RidesScopeType.RideWidgets.toString():
-            return .RideWidgets
-        case RidesScopeType.AllTrips.toString():
-            return .AllTrips
-        case RidesScopeType.Request.toString():
-            return .Request
-        case RidesScopeType.RequestReceipt.toString():
-            return .RequestReceipt
+    static func ridesScopeTypeForRawValue(_ rawValue: String) -> RidesScopeType? {
+        switch rawValue.lowercased() {
+        case RidesScopeType.history.toString():
+            return .history
+        case RidesScopeType.historyLite.toString():
+            return .historyLite
+        case RidesScopeType.places.toString():
+            return .places
+        case RidesScopeType.profile.toString():
+            return .profile
+        case RidesScopeType.rideWidgets.toString():
+            return .rideWidgets
+        case RidesScopeType.allTrips.toString():
+            return .allTrips
+        case RidesScopeType.request.toString():
+            return .request
+        case RidesScopeType.requestReceipt.toString():
+            return .requestReceipt
         default:
             return nil
         }
@@ -197,7 +197,7 @@ extension String {
     func toRidesScopesArray() -> [RidesScope]
     {
         var scopesArray = [RidesScope]()
-        for scopeString in self.componentsSeparatedByString(" ") {
+        for scopeString in self.components(separatedBy: " ") {
             guard let scope = RidesScopeFactory.ridesScopeForString(scopeString) else {
                 continue
             }
@@ -211,7 +211,7 @@ extension String {
  Extends SequenceType of RidesScope to allow for easy conversion to a space 
  delimited scope string
  */
-extension SequenceType where Generator.Element == RidesScope {
+extension Sequence where Iterator.Element == RidesScope {
     /**
      Converts an array of RidesScopes into a space delimited String
      - parameter scopes: The array of RidesScopes to convert
@@ -224,6 +224,6 @@ extension SequenceType where Generator.Element == RidesScope {
             scopeStringArray.append(scope.rawValue)
         }
         
-        return scopeStringArray.joinWithSeparator(" ")
+        return scopeStringArray.joined(separator: " ")
     }
 }

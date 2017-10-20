@@ -54,28 +54,6 @@
     return [self.builder build];
 }
 
-#pragma mark - LocationServiceOutput
-
-- (void)locationService:(id<LocationService>)locationService didUpdateLocation:(CLLocation *)location {
-    [self.builder setPickupLocation:location];
-    [self fetchCheapestProductWithPickupLocation:location];
-}
-
-#pragma mark - Private methods
-
-- (void)fetchCheapestProductWithPickupLocation:(CLLocation *)location {
-    @weakify(self);
-    [self.ridesClient fetchCheapestProductWithPickupLocation:location completion:^(UBSDKUberProduct* _Nullable product, UBSDKResponse* _Nullable response) {
-        @strongify(self);
-        if (product) {
-            self.builder = [self.builder setProductID:product.productID];
-            
-            UBSDKRideParameters *parameters = [self.builder build];
-            [self.output rideParametersDidLoad:parameters];
-        }
-    }];
-}
-
 - (NSUserActivity *)registerUserActivity {
     NSUserActivity *activity = [[NSUserActivity alloc] initWithActivityType:kLocationUserActivityType];
     activity.title = RCLocalize(kRamblerOfficeName);
@@ -92,6 +70,38 @@
 
 - (void)unregisterUserActivity:(NSUserActivity *)activity {
     [activity resignCurrent];
+}
+
+#pragma mark - LocationServiceOutput
+
+- (void)locationService:(id<LocationService>)locationService didUpdateLocation:(CLLocation *)location {
+    self.builder.pickupLocation = location;
+    [self fetchCheapestProductWithPickupLocation:location];
+}
+
+#pragma mark - Private methods
+
+- (void)fetchCheapestProductWithPickupLocation:(CLLocation *)location {
+    @weakify(self);
+    [self.ridesClient fetchProductsWithPickupLocation:location
+                                           completion:^(NSArray<UBSDKProduct *> *products, UBSDKResponse * response) {
+                                               @strongify(self);
+                                               UBSDKProduct *cheapestProduct = [self cheapestProductInProducts:products];
+                                               self.builder.productID = cheapestProduct.productID;
+                                               
+                                               UBSDKRideParameters *parameters = [self.builder build];
+                                               [self.output rideParametersDidLoad:parameters];
+                                           }];
+}
+
+- (UBSDKProduct *)cheapestProductInProducts:(NSArray *)products {
+    UBSDKProduct *cheapestProduct = products.firstObject;
+    for (UBSDKProduct *product in products) {
+        if (product.priceDetails.costPerDistance < cheapestProduct.priceDetails.costPerDistance) {
+            cheapestProduct = product;
+        }
+    }
+    return cheapestProduct;
 }
 
 @end

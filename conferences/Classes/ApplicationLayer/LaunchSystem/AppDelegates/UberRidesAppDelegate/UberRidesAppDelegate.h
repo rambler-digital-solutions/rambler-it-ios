@@ -20,11 +20,16 @@
 
 #import <UIKit/UIKit.h>
 
+@class UBSDKConfiguration, UBSDKRidesAppDelegate;
+
 /**
  @author Surik Sarkisyan
  
  This AppDelegate is responsible for config Uber SDK
  */
 @interface UberRidesAppDelegate : NSObject <UIApplicationDelegate>
+
+@property (nonatomic, weak) UBSDKConfiguration *configuration;
+@property (nonatomic, weak) UBSDKRidesAppDelegate *ridesAppDelegate;
 
 @end

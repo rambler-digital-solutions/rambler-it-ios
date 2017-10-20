@@ -22,60 +22,69 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-import ObjectMapper
-
 // MARK: Ride
+
+import CoreLocation
 
 /**
  *  Contains the status of an ongoing/completed trip created using the Ride Request endpoint
  */
-@objc(UBSDKRide) public class Ride: NSObject {
+@objc(UBSDKRide) public class Ride: NSObject, Decodable {
     
     /// Contains the information about the destination of the trip, if one has been set.
-    public private(set) var destination: RideRequestLocation?
+    @objc public private(set) var destination: RideRequestLocation?
     
     /// The object that contains driver details. Only non-null during an ongoing trip.
-    public private(set) var driver: Driver?
+    @objc public private(set) var driver: Driver?
     
     /// The object that contains the location information of the vehicle and driver.
-    public private(set) var driverLocation: RideRequestLocation?
-    
-    /// The estimated time of vehicle arrival in minutes.
-    public private(set) var eta: Int = 0
+    @objc public private(set) var driverLocation: RideRequestLocation?
     
     /// The object containing the information about the pickup for the trip.
-    public private(set) var pickup: RideRequestLocation?
+    @objc public private(set) var pickup: RideRequestLocation?
     
     /// The unique ID of the Request.
-    public private(set) var requestID: String?
+    @objc public private(set) var requestID: String
+
+    /// The ID of the product
+    @objc public private(set) var productID: String
     
     /// The status of the Request indicating state.
-    public private(set) var status: RideStatus = .Unknown
+    @objc public private(set) var status: RideStatus
     
     /// The surge pricing multiplier used to calculate the increased price of a Request.
-    public private(set) var surgeMultiplier: Double = 1.0
+    @objc public private(set) var surgeMultiplier: Double
     
     /// The object that contains vehicle details. Only non-null during an ongoing trip.
-    public private(set) var vehicle: Vehicle?
-    
-    public required init?(_ map: Map) {
-    }
-}
+    @objc public private(set) var vehicle: Vehicle?
 
-extension Ride: UberModel {
-    public func mapping(map: Map) {
-        destination     <- map["destination"]
-        driver          <- map["driver"]
-        driverLocation  <- map["location"]
-        eta             <- map["eta"]
-        pickup          <- map["pickup"]
-        requestID       <- map["request_id"]
-        surgeMultiplier <- map["surge_multiplier"]
-        vehicle         <- map["vehicle"]
-        
-        status = .Unknown
-        if let value = map["status"].currentValue as? String {
-            status = RideStatusFactory.convertRideStatus(value)
-        }
+    /// True if the ride is an UberPOOL ride. False otherwise.
+    @objc public private(set) var isShared: Bool
+
+    enum CodingKeys: String, CodingKey {
+        case destination     = "destination"
+        case driver          = "driver"
+        case driverLocation  = "location"
+        case pickup          = "pickup"
+        case requestID       = "request_id"
+        case productID       = "product_id"
+        case surgeMultiplier = "surge_multiplier"
+        case vehicle         = "vehicle"
+        case status          = "status"
+        case isShared        = "shared"
+    }
+
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        destination = try container.decodeIfPresent(RideRequestLocation.self, forKey: .destination)
+        driver = try container.decodeIfPresent(Driver.self, forKey: .driver)
+        driverLocation = try container.decodeIfPresent(RideRequestLocation.self, forKey: .driverLocation)
+        pickup = try container.decodeIfPresent(RideRequestLocation.self, forKey: .pickup)
+        requestID = try container.decode(String.self, forKey: .requestID)
+        productID = try container.decode(String.self, forKey: .productID)
+        surgeMultiplier = try container.decodeIfPresent(Double.self, forKey: .surgeMultiplier) ?? 1.0
+        vehicle = try container.decodeIfPresent(Vehicle.self, forKey: .vehicle)
+        status = try container.decodeIfPresent(RideStatus.self, forKey: .status) ?? .unknown
+        isShared = try container.decode(Bool.self, forKey: .isShared)
     }
 }
