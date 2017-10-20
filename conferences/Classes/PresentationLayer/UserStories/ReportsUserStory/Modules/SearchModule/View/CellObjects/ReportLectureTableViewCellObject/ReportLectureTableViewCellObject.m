@@ -32,6 +32,7 @@
 @property (nonatomic, strong, readwrite) NSURL *imageURL;
 @property (nonatomic, strong, readwrite) LecturePlainObject *lecture;
 @property (nonatomic, copy, readwrite) NSAttributedString *speakerName;
+@property (nonatomic, copy, readwrite) void (^tagAction)(NSString *tag);
 
 @end
 
@@ -43,7 +44,8 @@
                  attributedName:(NSAttributedString *)attributedName
                            tags:(NSAttributedString *)tags
                     speakerName:(NSAttributedString *)speakerName
-                       imageURL:(NSURL *)imageURL {
+                       imageURL:(NSURL *)imageURL
+                      tagAction:(void(^)(NSString *))tagAction {
     self = [super init];
     if (self) {
         _lectureTitle = attributedName;
@@ -52,7 +54,7 @@
         _company = lecture.speaker.company;
         _tags = tags;
         _speakerName = speakerName;
-        
+        _tagAction = tagAction;
     }
     return self;
 }
@@ -60,14 +62,16 @@
 + (instancetype)objectWithLecture:(LecturePlainObject *)lecture
                              tags:(NSAttributedString *)tags
                       speakerName:(NSAttributedString *)highlightedSpeakerName
-                  highlightedText:(NSAttributedString *)highlightedText {
+                  highlightedText:(NSAttributedString *)highlightedText
+                        tagAction:(void(^)(NSString *))tagAction {
     
     NSURL *lectureImageURL = [NSURL URLWithString:[lecture speaker].imageUrl];
     return [[self alloc] initWithLecture:lecture
                           attributedName:highlightedText
                                     tags:tags
                              speakerName:highlightedSpeakerName
-                                imageURL:lectureImageURL];
+                                imageURL:lectureImageURL
+                               tagAction:tagAction];
 }
 
 #pragma mark - NICellObject methods

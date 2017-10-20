@@ -432,6 +432,7 @@
 		63FDCE141BBDBA2A00A43B60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63FDCE021BBDBA2A00A43B60 /* Assets.xcassets */; };
 		63FDCE161BBDBA2A00A43B60 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FDCE051BBDBA2A00A43B60 /* main.m */; };
 		644FB8C41F94B5C600CA2C7B /* TagModelObjectMock.m in Sources */ = {isa = PBXBuildFile; fileRef = 644FB8C31F94B5C600CA2C7B /* TagModelObjectMock.m */; };
+		64811EF81F9782D40074DB24 /* SearchPresenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F613D01CB111070002AEF0 /* SearchPresenterTests.m */; };
 		645938EE1F94C866007DACBF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 645938F01F94C866007DACBF /* Localizable.strings */; };
 		645938F21F94C896007DACBF /* Events.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 645938F51F94C896007DACBF /* Events.storyboard */; };
 		645938F31F94C896007DACBF /* Events.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 645938F51F94C896007DACBF /* Events.storyboard */; };
@@ -10058,6 +10059,7 @@
 				022E34B81E49CF7000B9B9BF /* RamblerLocationDataDisplayManagerTests.m in Sources */,
 				9F7B82291D7DA9E9002E977A /* QuickActionAppDelegateTests.m in Sources */,
 				63D86BDD1C143FCE00986536 /* DateFormatterTests.m in Sources */,
+				64811EF81F9782D40074DB24 /* SearchPresenterTests.m in Sources */,
 				66A1DD551D7E993A00998F6B /* MockObjectsFactory.m in Sources */,
 				63C31C0A1DDAF1B000AA51BD /* MessagesRouter.m in Sources */,
 				66FBA2581DE05CF000F5C2E9 /* LaunchSystemAssemblyTests.m in Sources */,

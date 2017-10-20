@@ -32,15 +32,26 @@
 #import "UIColor+ConferencesPalette.h"
 #import "DateFormatter.h"
 
+#import "EXTScope.h"
+#import "ReportsSearchViewOutput.h"
+
 static NSString *const kSeparatorTagsString = @", ";
 static const CGFloat kDefaultLineHeight = 3;
 
+@interface ReportsSearchCellObjectsBuilderImplementation()
+
+@property (nonatomic, weak) id <ReportsSearchViewOutput> viewOutput;
+
+@end
+
 @implementation ReportsSearchCellObjectsBuilderImplementation
 
-- (instancetype)initWithDateFormatter:(DateFormatter *)dateFormatter {
+- (instancetype)initWithDateFormatter:(DateFormatter *)dateFormatter
+                       withViewOutput:(id<ReportsSearchViewOutput>)viewOutput{
     self = [super init];
     if (self) {
         _dateFormatter = dateFormatter;
+        _viewOutput = viewOutput;
     }
     return self;
 }
@@ -73,12 +84,17 @@ static const CGFloat kDefaultLineHeight = 3;
                                                      selectedText:selectedText
                                                             color:[UIColor rcf_lightBlueColor]];
     NSString *tagsString = [self obtainTagsStringFromLecture:lecture];
-    NSAttributedString *highlightedTags = [self highlightInString:tagsString
-                                                     selectedText:selectedText
-                                                            color:[UIColor rcf_lightBlueColor]];
+    NSAttributedString *highlightedTags = [self tagStringFromString:tagsString
+                                                         withColor:[UIColor rcf_lightBlueColor]];
+    @weakify(self);
     ReportLectureTableViewCellObject *cellObject = [ReportLectureTableViewCellObject objectWithLecture:lecture
                                                                                                   tags:highlightedTags
-                                                                                           speakerName:highlightedSpeakerName highlightedText:highlightedName];
+                                                                                           speakerName:highlightedSpeakerName
+                                                                                       highlightedText:highlightedName
+                                                                                             tagAction:^(NSString *tag) {
+                                                                                                 @strongify(self);
+                                                                                                 [self.viewOutput didSelectTag:tag];
+                                                                                             }];
     return cellObject;
 }
 
@@ -117,13 +133,40 @@ static const CGFloat kDefaultLineHeight = 3;
             }
             
             NSRange range = [[string lowercaseString] rangeOfString:separatedString];
-            [highlightedString addAttribute:NSForegroundColorAttributeName value:color range:range];
+            [highlightedString addAttribute:NSForegroundColorAttributeName
+                                      value:color
+                                      range:range];
             
             NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
             [style setLineSpacing:kDefaultLineHeight];
             [highlightedString addAttribute:NSParagraphStyleAttributeName
                                       value:style
                                       range:NSMakeRange(0, highlightedString.length)];
+        }
+    }
+    return [highlightedString copy];
+}
+
+- (NSAttributedString *)tagStringFromString:(NSString *)string
+                                  withColor:(UIColor *)color {
+    NSMutableAttributedString *highlightedString = [[NSMutableAttributedString alloc] initWithString:string];
+
+    if ([string length] != 0) {
+        NSArray *separatedStrings = [string componentsSeparatedByString:@", "];
+        
+        for (NSString *separatedString in separatedStrings) {
+            if (separatedString.length == 0) {
+                continue;
+            }
+            
+            NSRange range = [[string lowercaseString] rangeOfString:separatedString];
+            [highlightedString addAttribute:NSForegroundColorAttributeName
+                                      value:color
+                                      range:range];
+        
+            [highlightedString addAttribute:NSLinkAttributeName
+                                      value:separatedString
+                                      range:range];
         }
     }
     return [highlightedString copy];

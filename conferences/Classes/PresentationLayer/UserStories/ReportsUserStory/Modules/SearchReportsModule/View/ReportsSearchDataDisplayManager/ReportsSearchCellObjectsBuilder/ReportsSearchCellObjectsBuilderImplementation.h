@@ -21,7 +21,7 @@
 #import <Foundation/Foundation.h>
 
 @class DateFormatter;
-@protocol ReportsSearchCellObjectsBuilder;
+@protocol ReportsSearchCellObjectsBuilder, ReportsSearchViewOutput;
 
 /**
  @author Zinovyev Konstantin
@@ -32,6 +32,7 @@
 
 @property (nonatomic, strong) DateFormatter *dateFormatter;
 
-- (instancetype)initWithDateFormatter:(DateFormatter *)dateFormatter;
+- (instancetype)initWithDateFormatter:(DateFormatter *)dateFormatter
+                       withViewOutput:(id <ReportsSearchViewOutput>)viewOutput;
 
 @end

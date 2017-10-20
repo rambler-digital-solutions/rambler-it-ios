@@ -41,5 +41,14 @@
  */
 - (void)didTapClearScreenSearchModule;
 
+/**
+ @author Aleksey Yakimenko
+ 
+ Method is used to inform module output that user did select new search string
+ 
+ @param tag - selected tag name
+ */
+- (void)didSelectSearchString:(NSString *)searchString;
+
 @end
 

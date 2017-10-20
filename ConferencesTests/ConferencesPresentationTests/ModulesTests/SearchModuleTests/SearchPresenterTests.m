@@ -218,4 +218,16 @@
     XCTAssertEqual(searchString, resultString);
 }
 
+- (void)testSuccessDidSelectTag {
+    // given
+    NSString *searchString = @"searchString";
+    
+    // when
+    [self.presenter didSelectSearchString:searchString];
+    
+    // then
+    OCMVerify([self.mockView updateSearchBarWithText:searchString]);
+    OCMVerify([self.mockView startEditingSearchBar]);
+}
+
 @end

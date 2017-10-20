@@ -68,5 +68,14 @@
  */
 - (void)didTapClearPlaceholderView;
 
+/**
+ @author Aleksey Yakimenko
+ 
+ Method is used to inform presenter that user did select tag
+ 
+ @param tag - selected tag name
+ */
+- (void)didSelectTag:(NSString *)tag;
+
 @end
 
