@@ -103,6 +103,8 @@
                                   [initializer injectParameterWith:[self.presentationLayerHelpersAssembly dateFormatter]];
                                   [initializer injectParameterWith:[self presenterReportsSearch]];
                               }];
+                              [definition injectProperty:@selector(stringFormatter)
+                                                    with:[self.presentationLayerHelpersAssembly stringFormatter]];
                           }];
 }
 

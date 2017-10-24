@@ -54,7 +54,7 @@
         _company = lecture.speaker.company;
         _tags = tags;
         _speakerName = speakerName;
-        _tagAction = tagAction;
+        self.tagAction = tagAction;
     }
     return self;
 }

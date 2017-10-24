@@ -141,7 +141,7 @@
     OCMVerify([self.mockView updateViewWithObjectList:OCMOCK_ANY searchText:searchText]);
 }
 
-- (void)testThatSuccessDidSelectTag {
+- (void)testThatTagSelectionIsCorrect {
     // given
     NSString *tag = @"someTag";
     

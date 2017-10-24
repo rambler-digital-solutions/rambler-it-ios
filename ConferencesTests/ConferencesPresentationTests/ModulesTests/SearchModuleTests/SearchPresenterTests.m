@@ -218,7 +218,7 @@
     XCTAssertEqual(searchString, resultString);
 }
 
-- (void)testSuccessDidSelectTag {
+- (void)testThatSearchStringSelectionUpdatesView {
     // given
     NSString *searchString = @"searchString";
     

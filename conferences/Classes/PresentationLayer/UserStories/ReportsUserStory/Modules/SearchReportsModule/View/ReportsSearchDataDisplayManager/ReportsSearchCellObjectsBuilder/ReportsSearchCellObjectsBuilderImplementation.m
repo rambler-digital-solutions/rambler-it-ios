@@ -31,16 +31,17 @@
 #import "ReportSearchSectionTitleCellObject.h"
 #import "UIColor+ConferencesPalette.h"
 #import "DateFormatter.h"
+#import "StringFormatter.h"
 
 #import "EXTScope.h"
 #import "ReportsSearchViewOutput.h"
 
 static NSString *const kSeparatorTagsString = @", ";
-static const CGFloat kDefaultLineHeight = 3;
+static const CGFloat kDefaultLineHeight = 3.0;
 
 @interface ReportsSearchCellObjectsBuilderImplementation()
 
-@property (nonatomic, weak) id <ReportsSearchViewOutput> viewOutput;
+@property (nonatomic, weak) id<ReportsSearchViewOutput> viewOutput;
 
 @end
 
@@ -84,8 +85,8 @@ static const CGFloat kDefaultLineHeight = 3;
                                                      selectedText:selectedText
                                                             color:[UIColor rcf_lightBlueColor]];
     NSString *tagsString = [self obtainTagsStringFromLecture:lecture];
-    NSAttributedString *highlightedTags = [self tagStringFromString:tagsString
-                                                         withColor:[UIColor rcf_lightBlueColor]];
+    NSAttributedString *highlightedTags = [self.stringFormatter linkStringFromString:tagsString
+                                                                           withColor:[UIColor rcf_lightBlueColor]];
     @weakify(self);
     ReportLectureTableViewCellObject *cellObject = [ReportLectureTableViewCellObject objectWithLecture:lecture
                                                                                                   tags:highlightedTags
@@ -142,31 +143,6 @@ static const CGFloat kDefaultLineHeight = 3;
             [highlightedString addAttribute:NSParagraphStyleAttributeName
                                       value:style
                                       range:NSMakeRange(0, highlightedString.length)];
-        }
-    }
-    return [highlightedString copy];
-}
-
-- (NSAttributedString *)tagStringFromString:(NSString *)string
-                                  withColor:(UIColor *)color {
-    NSMutableAttributedString *highlightedString = [[NSMutableAttributedString alloc] initWithString:string];
-
-    if ([string length] != 0) {
-        NSArray *separatedStrings = [string componentsSeparatedByString:@", "];
-        
-        for (NSString *separatedString in separatedStrings) {
-            if (separatedString.length == 0) {
-                continue;
-            }
-            
-            NSRange range = [[string lowercaseString] rangeOfString:separatedString];
-            [highlightedString addAttribute:NSForegroundColorAttributeName
-                                      value:color
-                                      range:range];
-        
-            [highlightedString addAttribute:NSLinkAttributeName
-                                      value:separatedString
-                                      range:range];
         }
     }
     return [highlightedString copy];

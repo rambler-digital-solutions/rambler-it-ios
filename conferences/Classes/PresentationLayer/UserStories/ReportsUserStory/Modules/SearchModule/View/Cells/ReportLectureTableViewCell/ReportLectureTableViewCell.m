@@ -44,6 +44,10 @@ static NSString *const kPlaceholderImageName = @"speaker-placeholder";
     self.tags.delegate = self;
 }
 
+- (void)dealloc {
+    self.tags.delegate = nil;
+}
+
 #pragma mark - NICell methods
 
 - (BOOL)shouldUpdateCellWithObject:(ReportLectureTableViewCellObject *)object {
@@ -68,15 +72,20 @@ static NSString *const kPlaceholderImageName = @"speaker-placeholder";
 
 #pragma mark - UITextViewDelegate
 
-- (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange {
-    if (self.tagAction) {
+- (BOOL)textView:(UITextView *)textView
+shouldInteractWithURL:(NSURL *)URL
+         inRange:(NSRange)characterRange {
+    if (self.tagAction != nil) {
         self.tagAction(URL.absoluteString);
     }
     return YES;
 }
 
-- (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange interaction:(UITextItemInteraction)interaction {
-    if (self.tagAction) {
+- (BOOL)textView:(UITextView *)textView
+shouldInteractWithURL:(NSURL *)URL
+         inRange:(NSRange)characterRange
+     interaction:(UITextItemInteraction)interaction {
+    if (self.tagAction != nil) {
         self.tagAction(URL.absoluteString);
     }
     return YES;
