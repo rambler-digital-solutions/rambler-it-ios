@@ -18,12 +18,14 @@
 /**
  @author Aleksey Yakimenko
  
- Method creates instance of NSAttributedString for certain string with given color.
+ Method creates instance of NSAttributedString for certain string. The string is divided into substrings ending with separator. New attributed string gets two attributes (NSForegroundColorAttributeName, NSLinkAttributeName) for ranges of every substring. Value for NSForegroundColorAttributeName is given color and for NSLinkAttributeName is particular substring.
  
  @param string - certain string
  @param color - given color
+ @param separator - given separator
  */
-- (nullable NSAttributedString *)linkStringFromString:(nonnull NSString *)string
-                                            withColor:(nonnull UIColor *)color;
+- (nullable NSAttributedString *)colorLinksStringFromString:(nonnull NSString *)string
+                                                      сolor:(nonnull UIColor *)color
+                                                  separator:(nonnull NSString *)separator;
 
 @end

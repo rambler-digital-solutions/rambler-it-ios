@@ -45,7 +45,7 @@ static NSString *const kPlaceholderImageName = @"speaker-placeholder";
 }
 
 - (void)dealloc {
-    self.tags.delegate = nil;
+    _tags.delegate = nil;
 }
 
 #pragma mark - NICell methods

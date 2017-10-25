@@ -53,8 +53,8 @@
         _lecture = lecture;
         _company = lecture.speaker.company;
         _tags = tags;
-        _speakerName = speakerName;
-        self.tagAction = tagAction;
+        _speakerName = [speakerName copy];
+        _tagAction = [tagAction copy];
     }
     return self;
 }

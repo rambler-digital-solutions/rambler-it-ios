@@ -8,18 +8,29 @@
 
 #import "StringFormatterImplementation.h"
 
+static NSString *const DefaultStringSeparator = @"";
+
 @implementation StringFormatterImplementation
 
-- (nullable NSAttributedString *)linkStringFromString:(nonnull NSString *)string
-                                            withColor:(nonnull UIColor *)color {
+- (nullable NSAttributedString *)colorLinksStringFromString:(nonnull NSString *)string
+                                                      сolor:(nonnull UIColor *)color
+                                                  separator:(nonnull NSString *)separator {
     if (string == nil || color == nil) {
         return nil;
+    }
+    
+    NSString *stringSeparator;
+    
+    if (separator == nil) {
+        stringSeparator = DefaultStringSeparator;
+    } else {
+        stringSeparator = separator;
     }
     
     NSMutableAttributedString *linkString = [[NSMutableAttributedString alloc] initWithString:string];
     
     if (string.length != 0) {
-        NSCharacterSet *separatingCharacters = [NSCharacterSet characterSetWithCharactersInString:@", "];
+        NSCharacterSet *separatingCharacters = [NSCharacterSet characterSetWithCharactersInString:stringSeparator];
         NSArray *separatedStrings = [string componentsSeparatedByCharactersInSet:separatingCharacters];
         
         for (NSString *separatedString in separatedStrings) {
@@ -29,15 +40,16 @@
             
             NSRange range = [string.lowercaseString rangeOfString:separatedString];
             [linkString addAttribute:NSForegroundColorAttributeName
-                              value:color
-                              range:range];
+                               value:color
+                               range:range];
             
             [linkString addAttribute:NSLinkAttributeName
-                              value:separatedString
-                              range:range];
+                               value:separatedString
+                               range:range];
         }
     }
     return [linkString copy];
+    
 }
 
 @end

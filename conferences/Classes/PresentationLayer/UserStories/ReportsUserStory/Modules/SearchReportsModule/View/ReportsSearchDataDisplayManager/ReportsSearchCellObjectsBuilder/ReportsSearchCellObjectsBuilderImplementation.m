@@ -85,8 +85,9 @@ static const CGFloat kDefaultLineHeight = 3.0;
                                                      selectedText:selectedText
                                                             color:[UIColor rcf_lightBlueColor]];
     NSString *tagsString = [self obtainTagsStringFromLecture:lecture];
-    NSAttributedString *highlightedTags = [self.stringFormatter linkStringFromString:tagsString
-                                                                           withColor:[UIColor rcf_lightBlueColor]];
+    NSAttributedString *highlightedTags = [self.stringFormatter colorLinksStringFromString:tagsString
+                                                                                     сolor:[UIColor rcf_lightBlueColor]
+                                                                                 separator:kSeparatorTagsString];
     @weakify(self);
     ReportLectureTableViewCellObject *cellObject = [ReportLectureTableViewCellObject objectWithLecture:lecture
                                                                                                   tags:highlightedTags

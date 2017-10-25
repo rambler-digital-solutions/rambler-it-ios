@@ -12,7 +12,7 @@
 /**
  @author Aleksey Yakimenko
  
- Particular implementation of protocol - StringFormatter
+ Particular implementation of protocol - StringFormatter.
  */
 @interface StringFormatterImplementation : NSObject <StringFormatter>
 
