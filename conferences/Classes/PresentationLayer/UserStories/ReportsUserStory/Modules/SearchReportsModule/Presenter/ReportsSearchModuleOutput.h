@@ -28,7 +28,7 @@
 /**
  @author Zinovyev Konstantin
  
- Метод сообщает презентеру, о том что был загружен модуль ReportsSearchModule
+ Method tells the presenter that the ReportsSearchModule has been loaded
  
  @param reportsSearchModule Ссылка на модуль
  */
@@ -37,9 +37,18 @@
 /**
  @author Zinovyev Konstantin
  
- Метод сообщает презентеру, о том что было совершенно нажатие на прозрачный экран в модуле поиска
+ Method tells presenter that there was a click on the transparent screen in the search module
  */
 - (void)didTapClearScreenSearchModule;
+
+/**
+ @author Aleksey Yakimenko
+ 
+ Method is used to inform module output that user did select new search string
+ 
+ @param searchString - selected search string
+ */
+- (void)didSelectSearchString:(NSString *)searchString;
 
 @end
 

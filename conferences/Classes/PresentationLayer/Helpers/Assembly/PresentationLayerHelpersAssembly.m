@@ -30,6 +30,7 @@
 #import "YouTubePlayerFactoryImplementation.h"
 #import "GeneralFeedbackGeneratorImplementation.h"
 #import "FeedbackGeneratorsFactoryImplementation.h"
+#import "StringFormatterImplementation.h"
 
 @implementation PresentationLayerHelpersAssembly
 
@@ -81,6 +82,10 @@
 
 - (id<FeedbackGeneratorsFactory>)feedbackGeneratorsFactory {
     return [TyphoonDefinition withClass:[FeedbackGeneratorsFactoryImplementation class]];
+}
+
+- (id<StringFormatter>)stringFormatter {
+    return [TyphoonDefinition withClass:[StringFormatterImplementation class]];
 }
 
 @end

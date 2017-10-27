@@ -62,6 +62,10 @@
     [self.moduleOutput didTapClearScreenSearchModule];
 }
 
+- (void)didSelectTag:(NSString *)tag {
+    [self.moduleOutput didSelectSearchString:tag];
+}
+
 #pragma mark - ReportsSearchModuleInput
 
 - (void)updateModuleWithSearchTerm:(NSString *)searchText {

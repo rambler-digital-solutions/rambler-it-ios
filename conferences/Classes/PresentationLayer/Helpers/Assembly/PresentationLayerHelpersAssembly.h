@@ -31,6 +31,7 @@
 @protocol MailComposeControllerFactory;
 @protocol YouTubePlayerFactory;
 @protocol GeneralFeedbackGenerator;
+@protocol StringFormatter;
 
 /**
  @author Artem Karpushin
@@ -48,5 +49,6 @@
 - (id<YouTubePlayerFactory>)youTubePlayerFactory;
 - (YouTubeIdentifierDeriviator *)youTubeIdentifierDeriviator;
 - (id<GeneralFeedbackGenerator>)generalFeedbackGenerator;
+- (id<StringFormatter>)stringFormatter;
 
 @end

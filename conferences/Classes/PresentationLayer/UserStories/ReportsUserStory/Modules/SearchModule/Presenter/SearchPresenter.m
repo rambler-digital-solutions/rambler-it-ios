@@ -84,4 +84,9 @@
     self.reportsSearchModule = reportsSearchModule;
 }
 
+- (void)didSelectSearchString:(NSString *)searchString {
+    [self.view updateSearchBarWithText:searchString];
+    [self.view startEditingSearchBar];
+}
+
 @end

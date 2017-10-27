@@ -99,9 +99,12 @@
 - (ReportsSearchCellObjectsBuilderImplementation *)cellObjectsBuilder {
     return [TyphoonDefinition withClass:[ReportsSearchCellObjectsBuilderImplementation class]
                           configuration:^(TyphoonDefinition *definition) {
-                              [definition useInitializer:@selector(initWithDateFormatter:) parameters:^(TyphoonMethod *initializer) {
+                              [definition useInitializer:@selector(initWithDateFormatter:withViewOutput:) parameters:^(TyphoonMethod *initializer) {
                                   [initializer injectParameterWith:[self.presentationLayerHelpersAssembly dateFormatter]];
+                                  [initializer injectParameterWith:[self presenterReportsSearch]];
                               }];
+                              [definition injectProperty:@selector(stringFormatter)
+                                                    with:[self.presentationLayerHelpersAssembly stringFormatter]];
                           }];
 }
 
