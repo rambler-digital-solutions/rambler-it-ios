@@ -48,11 +48,11 @@
                       tagAction:(void(^)(NSString *))tagAction {
     self = [super init];
     if (self) {
-        _lectureTitle = attributedName;
+        _lectureTitle = [attributedName copy];
         _imageURL = imageURL;
         _lecture = lecture;
         _company = lecture.speaker.company;
-        _tags = tags;
+        _tags = [tags copy];
         _speakerName = [speakerName copy];
         _tagAction = [tagAction copy];
     }

@@ -87,7 +87,7 @@
     XCTAssertEqualObjects(firstSubstringLink, secondSubstringLink);
 }
 
-- (void)testThatStringFormatterWithSeparatorArgumentWhichIncludeCharactersNotFoundInArgumentStringReturnsStringWithOneLink {
+- (void)testThatStringFormatterWithSeparatorArgumentNotFoundReturnsStringWithOneLink {
     NSString *string = @"string1, string2";
     UIColor *color = OCMOCK_ANY;
     NSString *separator = @"!!!!";
