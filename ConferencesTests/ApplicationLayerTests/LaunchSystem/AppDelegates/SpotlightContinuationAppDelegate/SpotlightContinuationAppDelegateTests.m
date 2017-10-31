@@ -48,20 +48,40 @@
     [super tearDown];
 }
 
-- (void)testThatAppDelegateContinueUserActivityCorreclty {
-    //given
+- (void)testThatAppDelegateContinuesUserActivityCorreclty {
+    if (@available(iOS 10, *)) {
+        [self iOS10AndHigherTestThatAppDelegateContinuesUserActivityCorreclty];
+    } else {
+        [self iOS9AndLowerTestThatAppDelegateContinuesUserActivityCorreclty];
+    }
+}
+
+- (void)iOS10AndHigherTestThatAppDelegateContinuesUserActivityCorreclty {
+    // given
     NSString *searchString = @"searchString";
     NSUserActivity *activity = [[NSUserActivity alloc] initWithActivityType:CSQueryContinuationActionType];
-    activity.userInfo = @{CSSearchQueryString : searchString};
-    
-    //when
+    activity.userInfo = @{ CSSearchQueryString : searchString };
+
+    // then
     BOOL result = [self.appDelegate application:[UIApplication sharedApplication]
                            continueUserActivity:activity
                              restorationHandler:^(NSArray * _Nullable restorableObjects) {}];
-    
-    //then
+
+    // then
     XCTAssertTrue(result);
     OCMVerify([self.mockRouter openScreenWithData:searchString]);
+}
+
+- (void)iOS9AndLowerTestThatAppDelegateContinuesUserActivityCorreclty {
+    // given
+
+    // then
+    BOOL result = [self.appDelegate application:OCMOCK_ANY
+                           continueUserActivity:OCMOCK_ANY
+                             restorationHandler:OCMOCK_ANY];
+
+    // then
+    XCTAssertFalse(result);
 }
 
 - (void)testThatAppDelegateNotContinueUserActivityCorrectly {
