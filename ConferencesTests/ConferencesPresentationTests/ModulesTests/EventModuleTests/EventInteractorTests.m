@@ -183,7 +183,9 @@ typedef void (^ProxyBlock)(NSInvocation *);
     
     // then
     XCTAssertNotNil(result);
-    XCTAssertNotNil(result.mapItem);
+    if (@available(iOS 10, *)) {
+        XCTAssertNotNil(result.mapItem);
+    }
 }
 
 - (void)testThatInteractorUnregistersUserActivity {

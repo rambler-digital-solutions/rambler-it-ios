@@ -28,16 +28,21 @@
 
 #pragma mark - <UIApplicationDelegate>
 
-- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray * _Nullable))restorationHandler {
-    
-    if (![userActivity.activityType isEqualToString:CSQueryContinuationActionType]) {
-        return NO;
+- (BOOL)application:(UIApplication *)application
+continueUserActivity:(NSUserActivity *)userActivity
+ restorationHandler:(void (^)(NSArray * _Nullable))restorationHandler {
+
+    if (@available(iOS 10, *)) {
+        if (![userActivity.activityType isEqualToString:CSQueryContinuationActionType]) {
+            return NO;
+        }
+
+        NSString *searchString = userActivity.userInfo[CSSearchQueryString];
+        [self.router openScreenWithData:searchString];
+
+        return YES;
     }
-    
-    NSString *searchString = userActivity.userInfo[CSSearchQueryString];
-    [self.router openScreenWithData:searchString];
-    
-    return YES;
+    return NO;
 }
 
 @end
