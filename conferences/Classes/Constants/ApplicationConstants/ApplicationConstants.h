@@ -20,9 +20,6 @@
 
 #import <Foundation/Foundation.h>
 
-#define IS_IOS_9 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0 && [[[UIDevice currentDevice] systemVersion] floatValue] < 10.0)
-#define IS_IOS_10_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 10.0)
-
 #pragma mark - User Activity Types
 
 extern NSString *const kLocationUserActivityType;
