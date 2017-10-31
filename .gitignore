@@ -1,41 +1,66 @@
-### Objective-C ###
+# macOS
+## General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+## Icon must end with two \r
+Icon
+
+
+## Thumbnails
+._*
+
+## Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+## Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
 # Xcode
-#
-/build/
-*.pbxuser
-!default.pbxuser
-*.mode1v3
-!default.mode1v3
-*.mode2v3
-!default.mode2v3
-*.perspectivev3
-!default.perspectivev3
-xcuserdata
+## User settings
+xcuserdata/
+
+## compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)
+*.xcscmblueprint
 *.xccheckout
-*.moved-aside
-DerivedData
+
+## Obj-C/Swift specific
 *.hmap
 *.ipa
-*.xcuserstate
-artifacts
-.idea/.name
-.idea/encodings.xml
-.idea/modules.xml
-.idea/rmailmobile-ios.iml
-.idea/vcs.xml
-.idea/workspace.xml
-.idea/xcode.xml
-.idea/runConfigurations/GCov_controller.xml
-.idea/runConfigurations/GCov_logic.xml
-.idea/runConfigurations/Mail.xml
-.idea/runConfigurations/MailAssembliesTests.xml
-.idea/runConfigurations/MailDoubles.xml
-.idea/runConfigurations/MailLogicTests.xml
-.idea/runConfigurations/MailPresentationTests.xml
-.idea/runConfigurations/MailRendererSnapshotTests.xml
-.idea/scopes/scope_settings.xml
-.idea/RamblerMail_iOS.iml
-.idea/misc.xml
-.idea/RamblerConferencesGitHub.iml
-.idea/runConfigurations/Conferences.xml
-.DS_Store
+*.dSYM.zip
+*.dSYM
+
+# Carthage
+#
+
+Carthage/Build
+
+# fastlane
+#
+# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
+# screenshots whenever they are needed.
+# For more information about the recommended setup visit:
+# https://docs.fastlane.tools/best-practices/source-control/#source-control
+
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# Code Injection
+#
+# After new code Injection tools there's a generated folder /iOSInjectionProject
+# https://github.com/johnno1962/injectionforxcode
+
+iOSInjectionProject/
