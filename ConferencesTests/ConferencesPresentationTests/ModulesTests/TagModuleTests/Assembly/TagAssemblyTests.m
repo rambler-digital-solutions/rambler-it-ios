@@ -22,6 +22,8 @@
 #import <Typhoon/Typhoon.h>
 #import <RamblerTyphoonUtils/AssemblyCollector.h>
 
+#import "RamblerInitialAssemblyCollector+Activate.h"
+
 #import "TagAssembly.h"
 #import "TagAssembly_Testable.h"
 
@@ -41,20 +43,9 @@
 
 - (void)setUp {
     [super setUp];
-    
-    RamblerInitialAssemblyCollector *collector = [RamblerInitialAssemblyCollector new];
-    NSArray *assemblyClasses = [collector collectInitialAssemblyClasses];
-    NSMutableArray *collaboratingAssemblies = [NSMutableArray array];
-    for (Class assemblyClass in assemblyClasses) {
-        if (assemblyClass == [TagAssembly class]) {
-            continue;
-        }
-        TyphoonAssembly *assembly = [assemblyClass new];
-        [collaboratingAssemblies addObject:assembly];
-    }
 
-    self.assembly = [[TagAssembly alloc] init];
-    [self.assembly activateWithCollaboratingAssemblies:collaboratingAssemblies];
+    Class class = [TagAssembly class];
+    self.assembly = [RamblerInitialAssemblyCollector rds_activateAssemblyWithClass:class];
 }
 
 - (void)tearDown {
@@ -73,6 +64,7 @@
             RamblerSelector(dataDisplayManager),
             RamblerSelector(cellSizeConfig)
     ];
+    
     // when
     id result = [self.assembly collectionViewTagModule];
 

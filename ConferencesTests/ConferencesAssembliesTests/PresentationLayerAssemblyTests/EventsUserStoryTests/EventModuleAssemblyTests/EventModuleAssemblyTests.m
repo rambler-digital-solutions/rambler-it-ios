@@ -22,6 +22,8 @@
 #import <RamblerTyphoonUtils/AssemblyTesting.h>
 #import <RamblerTyphoonUtils/AssemblyCollector.h>
 
+#import "RamblerInitialAssemblyCollector+Activate.h"
+
 #import "EventModuleAssembly.h"
 #import "EventModuleAssembly_Testable.h"
 #import "EventViewController.h"
@@ -47,12 +49,9 @@
 
 - (void)setUp {
     [super setUp];
-    
-    self.assembly = [EventModuleAssembly new];
-    
-    RamblerInitialAssemblyCollector *collector = [RamblerInitialAssemblyCollector new];
-    NSArray *assemblies = [collector collectInitialAssembliesExceptOne:[EventModuleAssembly class]];
-    [self.assembly activateWithCollaboratingAssemblies:assemblies];
+
+    Class class = [EventModuleAssembly class];
+    self.assembly = [RamblerInitialAssemblyCollector rds_activateAssemblyWithClass:class];
 }
 
 - (void)tearDown {

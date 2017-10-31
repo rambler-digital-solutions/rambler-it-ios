@@ -196,15 +196,17 @@
 
 - (void)testThatInteractorRegistersUserActivity {
     // given
-    
-    
+
+
     // when
     NSUserActivity *result = [self.interactor registerUserActivity];
     
     // then
     XCTAssertNotNil(result);
     XCTAssertNotNil(result.title);
-    XCTAssertNotNil(result.mapItem);
+    if (@available(iOS 10, *)) {
+        XCTAssertNotNil(result.mapItem);
+    }
 }
 
 - (void)testThatInteractorUnregistersUserActivity {

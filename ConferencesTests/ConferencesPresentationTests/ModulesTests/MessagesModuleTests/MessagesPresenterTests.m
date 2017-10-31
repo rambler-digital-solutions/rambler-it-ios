@@ -74,20 +74,22 @@
 }
 
 - (void)testSuccessDidTriggerTapCellWithEvent {
-    // given
-    MSMessage *message = [[MSMessage alloc] init];
-    NSString *givenIdentifier = [NSString stringWithFormat:[MockObjectsFactory eventModelObjectScheme], [MockObjectsFactory randomObjectIdentifier]];
-    message.URL = [NSURL URLWithString:givenIdentifier];
-    NSExtensionContext *context = [NSExtensionContext new];
-    OCMStub([self.mockInteractor isCorrectIdentifier:givenIdentifier]).andReturn(YES);
+    if (@available(iOS 10, *)) {
+        // given
+        MSMessage *message = [[MSMessage alloc] init];
+        NSString *givenIdentifier = [NSString stringWithFormat:[MockObjectsFactory eventModelObjectScheme], [MockObjectsFactory randomObjectIdentifier]];
+        message.URL = [NSURL URLWithString:givenIdentifier];
+        NSExtensionContext *context = [NSExtensionContext new];
+        OCMStub([self.mockInteractor isCorrectIdentifier:givenIdentifier]).andReturn(YES);
 
-    // when
-    [self.presenter didTapMessageWith:message
-                 withExtensionContext:context];
+        // when
+        [self.presenter didTapMessageWith:message
+                     withExtensionContext:context];
 
-    // then
-    OCMVerify([self.mockRouter openEventModuleWithIdentifier:givenIdentifier
-                                         andExtensionContext:context]);
+        // then
+        OCMVerify([self.mockRouter openEventModuleWithIdentifier:givenIdentifier
+                                             andExtensionContext:context]);
+    }
 }
 
 - (void)testSuccessDidInsertMessage {
