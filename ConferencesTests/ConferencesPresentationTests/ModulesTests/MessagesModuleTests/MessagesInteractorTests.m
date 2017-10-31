@@ -89,18 +89,20 @@
 }
 
 - (void)testSuccessCreateMessage {
-    // given
-    EventPlainObject *eventObject = [[EventPlainObject alloc] init];
-    NSString *identifier = [NSString stringWithFormat:[MockObjectsFactory eventModelObjectScheme], [MockObjectsFactory randomObjectIdentifier]];
-    NSURL *givenURL = [NSURL URLWithString:identifier];
-    OCMStub([self.mockTransformer identifierForObject:eventObject]).andReturn(identifier);
+    if (@available(iOS 10, *)) {
+        // given
+        EventPlainObject *eventObject = [[EventPlainObject alloc] init];
+        NSString *identifier = [NSString stringWithFormat:[MockObjectsFactory eventModelObjectScheme], [MockObjectsFactory randomObjectIdentifier]];
+        NSURL *givenURL = [NSURL URLWithString:identifier];
+        OCMStub([self.mockTransformer identifierForObject:eventObject]).andReturn(identifier);
 
-    // when
-    MSMessage *message = [self.interactor createMessageFromEvent:eventObject];
+        // when
+        MSMessage *message = [self.interactor createMessageFromEvent:eventObject];
 
-    // then
-    XCTAssertNotNil(message);
-    XCTAssertEqualObjects(givenURL, message.URL);
+        // then
+        XCTAssertNotNil(message);
+        XCTAssertEqualObjects(givenURL, message.URL);
+    }
 }
 
 - (void)testCorrectIdentifier {
