@@ -37,7 +37,7 @@
 
         /**
          HACK
-         
+
          MessageExtensionAssembly is unavailable in iOS 9 and lower because of `- (MSConversation *)conversation` method
          */
         } else if (assemblyClass == [MessageExtensionAssembly class]) {
