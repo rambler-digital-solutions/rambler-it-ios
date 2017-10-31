@@ -100,21 +100,15 @@
     }
 }
 
-- (void)testThatGeneratorCorrectlyHandlesLowIOSVersion {
+- (void)testThatGeneratorCorrectlyHandlesUnknownFeedbackType {
     // given
-    id device = OCMClassMock([UIDevice class]);
-    OCMStub(ClassMethod([device currentDevice])).andReturn(device);
-    
-    OCMStub([(UIDevice *)device systemVersion]).andReturn(@"9.0");
     OCMReject([self.feedbackGeneratorsFactoryMock selectionFeedbackGenerator]);
     
     // when
-    [self.feedbackGenerator generateFeedbackWithType:TapticEngineFeedbackTypeSelection];
+    [self.feedbackGenerator generateFeedbackWithType:TapticEngineFeedbackTypeUnknown];
     
     // then
     OCMVerify(self.feedbackGeneratorsFactoryMock);
-    [device stopMocking];
-    device = nil;
 }
 
 @end
