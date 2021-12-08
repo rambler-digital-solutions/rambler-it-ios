@@ -1,7 +1,8 @@
-![Build Status](https://travis-ci.org/EasyMapping/EasyMapping.png?branch=master) &nbsp;
-![CocoaPod platform](https://cocoapod-badges.herokuapp.com/p/EasyMapping/badge.png) &nbsp; 
-![CocoaPod version](https://cocoapod-badges.herokuapp.com/v/EasyMapping/badge.png) &nbsp; 
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+![CI](https://github.com/lucasmedeirosleite/EasyMapping/workflows/CI/badge.svg)
+[![codecov.io](http://codecov.io/github/lucasmedeirosleite/EasyMapping/coverage.svg?branch=master)](http://codecov.io/github/lucasmedeirosleite/EasyMapping?branch=master)
+![CocoaPod platform](https://cocoapod-badges.herokuapp.com/p/EasyMapping/badge.png) &nbsp;
+![CocoaPod version](https://cocoapod-badges.herokuapp.com/v/EasyMapping/badge.png) &nbsp;
+[![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 ![License MIT](https://go-shields.herokuapp.com/license-MIT-blue.png)
 
 # EasyMapping
@@ -164,7 +165,7 @@ To fill an already instantiated object you can do this:
 
 ### Swift
 
-EasyMapping is partially compatible with Swift. [Here's detailed look](https://github.com/EasyMapping/EasyMapping/wiki/Swift-and-EasyMapping) at EasyMapping usage in Swift and current limitations.
+EasyMapping is partially compatible with Swift. [Here's detailed look](https://github.com/lucasmedeirosleite/EasyMapping/wiki/Swift-and-EasyMapping) at EasyMapping usage in Swift and current limitations.
 
 ### Convenience classes
 
