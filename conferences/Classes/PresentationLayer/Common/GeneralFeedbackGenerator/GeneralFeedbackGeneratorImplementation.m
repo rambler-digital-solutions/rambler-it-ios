@@ -29,22 +29,20 @@
 @implementation GeneralFeedbackGeneratorImplementation
 
 - (void)generateFeedbackWithType:(TapticEngineFeedbackType)tapticEngineFeedbackType {
-    if (IS_IOS_10_OR_LATER == NO) {
-        return;
-    }
-    
-    switch (tapticEngineFeedbackType) {
-        case TapticEngineFeedbackTypeSelection:
-            [self generateSelectionFeedback];
-            break;
-        case TapticEngineFeedbackTypeLightImpact:
-            [self generateLightImpactFeedback];
-            break;
-        case TapticEngineFeedbackTypeNotificationError:
-            [self generateNotificationErrorFeedback];
-            break;
-        default:
-            break;
+    if (@available(iOS 10, *)) {
+        switch (tapticEngineFeedbackType) {
+            case TapticEngineFeedbackTypeSelection:
+                [self generateSelectionFeedback];
+                break;
+            case TapticEngineFeedbackTypeLightImpact:
+                [self generateLightImpactFeedback];
+                break;
+            case TapticEngineFeedbackTypeNotificationError:
+                [self generateNotificationErrorFeedback];
+                break;
+            default:
+                break;
+        }
     }
 }
 

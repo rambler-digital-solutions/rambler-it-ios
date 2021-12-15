@@ -30,11 +30,11 @@ import CoreLocation
 /// Make sure to replace instances of "YOUR_URL" with the path for your backend service
 class AuthorizationCodeGrantExampleViewController: AuthorizationBaseViewController {
     
-    private let states = ["accepted", "arriving", "in_progress", "completed"]
+    fileprivate let states = ["accepted", "arriving", "in_progress", "completed"]
     
     /// The LoginManager to use for login
     /// Specify authorization code grant as the loginType to use privileged scopes
-    let loginManager = LoginManager(loginType: .AuthorizationCode)
+    let loginManager = LoginManager(loginType: .authorizationCode)
     
     /// The RidesClient to use for endpoints
     let ridesClient = RidesClient()
@@ -50,15 +50,15 @@ class AuthorizationCodeGrantExampleViewController: AuthorizationBaseViewControll
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loginButton.enabled = true
+        loginButton.isEnabled = true
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
         let loggedIn = TokenManager.fetchToken() != nil
-        loginButton.enabled = !loggedIn
-        requestButton.enabled = loggedIn
+        loginButton.isEnabled = !loggedIn
+        requestButton.isEnabled = loggedIn
         
         reset()
     }
@@ -71,14 +71,14 @@ class AuthorizationCodeGrantExampleViewController: AuthorizationBaseViewControll
         driverImageView.image = nil
     }
     
-    @IBAction func login(sender: AnyObject) {
+    @IBAction func login(_ sender: AnyObject) {
         // Can define a state variable to prevent tampering
-        loginManager.state = NSUUID().UUIDString
+        loginManager.state = UUID().uuidString
         
         // Define which scopes we're requesting
         // Need to be authorized on your developer dashboard at developer.uber.com
         // Privileged scopes can be used by anyone in sandbox for your own account but must be approved for production
-        let requestedScopes = [RidesScope.Request, RidesScope.AllTrips]
+        let requestedScopes = [RidesScope.request, RidesScope.allTrips]
         // Use your loginManager to login with the requested scopes, viewcontroller to present over, and completion block
         loginManager.login(requestedScopes: requestedScopes, presentingViewController: self) { (accessToken, error) -> () in
             // Error
@@ -89,66 +89,63 @@ class AuthorizationCodeGrantExampleViewController: AuthorizationBaseViewControll
             
             // Poll backend for access token
             // Replace "YOUR_URL" with the path for your backend service
-            if let url = NSURL(string: "YOUR_URL") {
-                let request = NSURLRequest(URL: url)
-                NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: {
-                    (data, response, error) in
-                    dispatch_async(dispatch_get_main_queue(), {
+            if let url = URL(string: "YOUR_URL") {
+                let request = URLRequest(url: url)
+                URLSession.shared.dataTask(with: request) { (data, response, error) in
+                    DispatchQueue.main.async {
                         guard let data = data,
-                            let jsonString = String(data: data, encoding: NSUTF8StringEncoding),
-                            let token = AccessTokenFactory.createAccessTokenFromJSONString(jsonString) else {
+                            let jsonString = String(data: data, encoding: String.Encoding.utf8) else {
                                 self.showMessage("Unable to retrieve access token")
                                 return
                         }
-                        
+                        let token = AccessToken(tokenString: jsonString)
+
                         // Do any additional work to verify the state passed in earlier
                         
-                        if !TokenManager.saveToken(token) {
+                        if !TokenManager.save(accessToken: token) {
                             self.showMessage("Unable to save access token")
                         } else {
                             self.showMessage("Saved an AccessToken!")
-                            self.loginButton.enabled = false
-                            self.requestButton.enabled = true
+                            self.loginButton.isEnabled = false
+                            self.requestButton.isEnabled = true
                         }
-                    })
-                }).resume()
+                    }
+                }.resume()
             }
         }
     }
     
-    @IBAction func requestRide(sender: AnyObject) {
+    @IBAction func requestRide(_ sender: AnyObject) {
         // Create ride parameters
-        let parameterBuilder = RideParametersBuilder()
-        self.requestButton.enabled = false
-        parameterBuilder.setProductID("a1111c8c-c720-46c3-8534-2fcdd730040d")
+        self.requestButton.isEnabled = false
         let pickupLocation = CLLocation(latitude: 37.770, longitude: -122.466)
-        parameterBuilder.setPickupLocation(pickupLocation, nickname: "California Academy of Sciences")
         let dropoffLocation = CLLocation(latitude: 37.791, longitude: -122.405)
-        parameterBuilder.setDropoffLocation(dropoffLocation, nickname: "Pier 39")
-        
+
+        let builder = RideParametersBuilder()
+        builder.pickupLocation = pickupLocation
+        builder.pickupNickname = "California Academy of Sciences"
+        builder.dropoffLocation = dropoffLocation
+        builder.dropoffNickname = "Pier 39"
+        builder.productID = "a1111c8c-c720-46c3-8534-2fcdd730040d"
+
         // Use the POST /v1/requests endpoint to make a ride request (in sandbox)
-        ridesClient.requestRide(parameterBuilder.build(), completion: { ride, response in
-            dispatch_async(dispatch_get_main_queue(), {
+        ridesClient.requestRide(parameters: builder.build(), completion: { ride, response in
+            DispatchQueue.main.async(execute: {
                 self.checkError(response)
                 if let ride = ride {
                     self.statusLabel.text = "Processing"
                     
-                    // Simulate stepping through the different ride statuses
-                    guard let requestID = ride.requestID else {
-                        return
-                    }
-                    
-                    self.updateRideStatus(requestID, index: 0)
+                    self.updateRideStatus(ride.requestID, index: 0)
                 } else {
-                    self.requestButton.enabled = true
+                    self.requestButton.isEnabled = true
                 }
             })
         })
     }
     
     // Uses the the GET /v1/requests/{request_id} endpoint to get information about a ride request
-    func getRideData(requestID: String) {
-        ridesClient.fetchRideDetails(requestID, completion: { ride, response in
+    func getRideData(_ requestID: String) {
+        ridesClient.fetchRideDetails(requestID: requestID) { ride, response in
             self.checkError(response)
             
             // Unwrap some optionals for data we want to use
@@ -164,42 +161,38 @@ class AuthorizationCodeGrantExampleViewController: AuthorizationBaseViewControll
             }
             
             // Update the UI on the main thread
-            dispatch_async(dispatch_get_main_queue(), {
+            DispatchQueue.main.async {
                 self.driverLabel.text = "\(driverName)\n\(driverNumber)"
                 self.carLabel.text = "\(make) \(model)\n(\(licensePlate)"
                 
                 // Asynchronously fetch images
-                if let driverUrl = NSURL(string: driverImage) {
-                    NSURLSession.sharedSession().dataTaskWithURL(driverUrl, completionHandler: {
-                        (data, response, error) in
-                        dispatch_async(dispatch_get_main_queue(), {
-                            guard let data = data else {
-                                return
-                            }
-                            
-                            self.driverImageView.image = UIImage(data: data)
-                        })
-                    }).resume()
-                }
-                if let vehicleUrl = NSURL(string: carImage) {
-                    NSURLSession.sharedSession().dataTaskWithURL(vehicleUrl, completionHandler: {
-                        (data, response, error) in
-                        dispatch_async(dispatch_get_main_queue(), {
-                            guard let data = data else {
-                                return
-                            }
-                            
-                            self.carImageView.image = UIImage(data: data)
-                        })
-                    }).resume()
-                }
+                URLSession.shared.dataTask(with: driverImage) {
+                    (data, response, error) in
+                    DispatchQueue.main.async {
+                        guard let data = data else {
+                            return
+                        }
+
+                        self.driverImageView.image = UIImage(data: data)
+                    }
+                }.resume()
+                URLSession.shared.dataTask(with: carImage) {
+                    (data, response, error) in
+                    DispatchQueue.main.async {
+                        guard let data = data else {
+                            return
+                        }
+
+                        self.carImageView.image = UIImage(data: data)
+                    }
+                }.resume()
                 self.updateRideStatus(requestID, index: 1)
-            })
-        })
+            }
+        }
     }
     
     // Simulates stepping through ride statuses recursively
-    func updateRideStatus(requestID: String, index: Int) {
+    func updateRideStatus(_ requestID: String, index: Int) {
         guard index < states.count,
             let token = TokenManager.fetchToken() else {
             return
@@ -208,23 +201,23 @@ class AuthorizationCodeGrantExampleViewController: AuthorizationBaseViewControll
         let status = states[index]
 
         // Use the PUT /v1/sandbox/requests/{request_id} to update the ride status
-        let updateStatusEndpoint = NSURL(string: "https://sandbox-api.uber.com/v1/sandbox/requests/\(requestID)")!
-        let request = NSMutableURLRequest(URL: updateStatusEndpoint)
-        request.HTTPMethod = "PUT"
+        let updateStatusEndpoint = URL(string: "https://sandbox-api.uber.com/v1/sandbox/requests/\(requestID)")!
+        var request = URLRequest(url: updateStatusEndpoint)
+        request.httpMethod = "PUT"
         request.setValue("Bearer \(token.tokenString!)", forHTTPHeaderField: "Authorization")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         do {
-            let data = try NSJSONSerialization.dataWithJSONObject(["status":status], options: .PrettyPrinted)
-            request.HTTPBody = data
+            let data = try JSONSerialization.data(withJSONObject: ["status":status], options: .prettyPrinted)
+            request.httpBody = data
         } catch { }
         
-        NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: { (data, response, error) in
-            dispatch_async(dispatch_get_main_queue(), {
-                if let response = response as? NSHTTPURLResponse where response.statusCode != 204  {
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            DispatchQueue.main.async {
+                if let response = response as? HTTPURLResponse, response.statusCode != 204  {
                     return
                 }
                 
-                self.statusLabel.text = status.capitalizedString
+                self.statusLabel.text = status.capitalized
                 
                 // Get ride data when in the Accepted state
                 if status == "accepted" {
@@ -232,10 +225,10 @@ class AuthorizationCodeGrantExampleViewController: AuthorizationBaseViewControll
                     return
                 }
                     
-                self.delay(1.5, closure: {
+                self.delay(2) {
                     self.updateRideStatus(requestID, index: index+1)
-                })
-            })
-        }).resume()
+                }
+            }
+        }.resume()
     }
 }

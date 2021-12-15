@@ -29,6 +29,7 @@
 
 @property (nonatomic, strong) UberRidesAppDelegate *appDelegate;
 @property (nonatomic, strong) id mockUberConfiguration;
+@property (nonatomic, strong) id mockRidesAppDelegate;
 
 @end
 
@@ -40,6 +41,10 @@
     self.appDelegate = [UberRidesAppDelegate new];
     
     self.mockUberConfiguration = OCMClassMock([UBSDKConfiguration class]);
+    self.mockRidesAppDelegate = OCMClassMock([UBSDKRidesAppDelegate class]);
+    
+    self.appDelegate.configuration = self.mockUberConfiguration;
+    self.appDelegate.ridesAppDelegate = self.mockRidesAppDelegate;
 }
 
 - (void)tearDown {
@@ -48,17 +53,10 @@
     [self.mockUberConfiguration stopMocking];
     self.mockUberConfiguration = nil;
     
+    [self.mockRidesAppDelegate stopMocking];
+    self.mockRidesAppDelegate = nil;
+    
     [super tearDown];
-}
-
-- (void)testThatAppDelegateCallSetRegion {
-    // given
-    
-    // when
-    [self.appDelegate application:OCMOCK_ANY didFinishLaunchingWithOptions:OCMOCK_ANY];
-    
-    // then
-    OCMVerify(ClassMethod([self.mockUberConfiguration setRegion:RegionDefault]));
 }
 
 - (void)testThatAppDelegateCallSetSandboxEnabled {
@@ -68,7 +66,7 @@
     [self.appDelegate application:OCMOCK_ANY didFinishLaunchingWithOptions:OCMOCK_ANY];
     
     // then
-    OCMVerify(ClassMethod([self.mockUberConfiguration setSandboxEnabled:NO]));
+    OCMVerify([self.mockUberConfiguration setIsSandbox:NO]);
 }
 
 - (void)testThatAppDelegateCallSetFallbackEnabled {
@@ -78,7 +76,24 @@
     [self.appDelegate application:OCMOCK_ANY didFinishLaunchingWithOptions:OCMOCK_ANY];
     
     // then
-    OCMVerify(ClassMethod([self.mockUberConfiguration setFallbackEnabled:NO]));
+    OCMVerify([self.mockUberConfiguration setUseFallback:NO]);
+}
+
+- (void)testThatAppDelegateOpenUrl {
+    // given
+    NSURL *url = [NSURL new];
+    NSDictionary *options = @{UIApplicationOpenURLOptionsSourceApplicationKey : [NSNull null],
+                                 UIApplicationOpenURLOptionsAnnotationKey : [NSNull null]};
+    UIApplication *app = [UIApplication sharedApplication];
+    
+    // when
+    [self.appDelegate application:app openURL:url options:options];
+    
+    // then
+    OCMVerify([self.mockRidesAppDelegate application:app
+                                                open:url
+                                   sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
+                                          annotation:options[UIApplicationOpenURLOptionsAnnotationKey]]);
 }
 
 @end

@@ -31,16 +31,28 @@
 #import "ReportSearchSectionTitleCellObject.h"
 #import "UIColor+ConferencesPalette.h"
 #import "DateFormatter.h"
+#import "StringFormatter.h"
+
+#import "EXTScope.h"
+#import "ReportsSearchViewOutput.h"
 
 static NSString *const kSeparatorTagsString = @", ";
-static const CGFloat kDefaultLineHeight = 3;
+static const CGFloat kDefaultLineHeight = 3.0;
+
+@interface ReportsSearchCellObjectsBuilderImplementation()
+
+@property (nonatomic, weak) id<ReportsSearchViewOutput> viewOutput;
+
+@end
 
 @implementation ReportsSearchCellObjectsBuilderImplementation
 
-- (instancetype)initWithDateFormatter:(DateFormatter *)dateFormatter {
+- (instancetype)initWithDateFormatter:(DateFormatter *)dateFormatter
+                       withViewOutput:(id<ReportsSearchViewOutput>)viewOutput{
     self = [super init];
     if (self) {
         _dateFormatter = dateFormatter;
+        _viewOutput = viewOutput;
     }
     return self;
 }
@@ -73,12 +85,18 @@ static const CGFloat kDefaultLineHeight = 3;
                                                      selectedText:selectedText
                                                             color:[UIColor rcf_lightBlueColor]];
     NSString *tagsString = [self obtainTagsStringFromLecture:lecture];
-    NSAttributedString *highlightedTags = [self highlightInString:tagsString
-                                                     selectedText:selectedText
-                                                            color:[UIColor rcf_lightBlueColor]];
+    NSAttributedString *highlightedTags = [self.stringFormatter colorLinksStringFromString:tagsString
+                                                                                     сolor:[UIColor rcf_lightBlueColor]
+                                                                                 separator:kSeparatorTagsString];
+    @weakify(self);
     ReportLectureTableViewCellObject *cellObject = [ReportLectureTableViewCellObject objectWithLecture:lecture
                                                                                                   tags:highlightedTags
-                                                                                           speakerName:highlightedSpeakerName highlightedText:highlightedName];
+                                                                                           speakerName:highlightedSpeakerName
+                                                                                       highlightedText:highlightedName
+                                                                                             tagAction:^(NSString *tag) {
+                                                                                                 @strongify(self);
+                                                                                                 [self.viewOutput didSelectTag:tag];
+                                                                                             }];
     return cellObject;
 }
 
@@ -117,7 +135,9 @@ static const CGFloat kDefaultLineHeight = 3;
             }
             
             NSRange range = [[string lowercaseString] rangeOfString:separatedString];
-            [highlightedString addAttribute:NSForegroundColorAttributeName value:color range:range];
+            [highlightedString addAttribute:NSForegroundColorAttributeName
+                                      value:color
+                                      range:range];
             
             NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
             [style setLineSpacing:kDefaultLineHeight];

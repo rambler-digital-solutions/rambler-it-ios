@@ -25,17 +25,28 @@
 static CGFloat const kReportLectureTableViewSeparatorInset = 20.0f;
 static NSString *const kPlaceholderImageName = @"speaker-placeholder";
 
-@interface ReportLectureTableViewCell ()
+@interface ReportLectureTableViewCell () <UITextViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UILabel *lectureTitle;
 @property (nonatomic, weak) IBOutlet UILabel *speakerName;
-@property (nonatomic, weak) IBOutlet UILabel *tags;
+@property (nonatomic, weak) IBOutlet UITextView *tags;
 @property (nonatomic, weak) IBOutlet UILabel *companyLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *lectureImageView;
+@property (nonatomic, copy) void (^tagAction)(NSString *);
 
 @end
 
 @implementation ReportLectureTableViewCell
+
+-(void)awakeFromNib {
+    [super awakeFromNib];
+
+    self.tags.delegate = self;
+}
+
+- (void)dealloc {
+    _tags.delegate = nil;
+}
 
 #pragma mark - NICell methods
 
@@ -46,8 +57,10 @@ static NSString *const kPlaceholderImageName = @"speaker-placeholder";
     [self.lectureImageView sd_setImageWithURL:object.imageURL
                              placeholderImage:[UIImage imageNamed:kPlaceholderImageName]];
     self.speakerName.attributedText = object.speakerName;
+    
     self.tags.attributedText = object.tags;
     self.separatorInset = UIEdgeInsetsMake(0.f, kReportLectureTableViewSeparatorInset, 0.f, 0.0f);
+    self.tagAction = object.tagAction;
     return YES;
 }
 
@@ -55,6 +68,27 @@ static NSString *const kPlaceholderImageName = @"speaker-placeholder";
                atIndexPath:(NSIndexPath *)indexPath
                  tableView:(UITableView *)tableView {
     return UITableViewAutomaticDimension;
+}
+
+#pragma mark - UITextViewDelegate
+
+- (BOOL)textView:(UITextView *)textView
+shouldInteractWithURL:(NSURL *)URL
+         inRange:(NSRange)characterRange {
+    if (self.tagAction != nil) {
+        self.tagAction(URL.absoluteString);
+    }
+    return YES;
+}
+
+- (BOOL)textView:(UITextView *)textView
+shouldInteractWithURL:(NSURL *)URL
+         inRange:(NSRange)characterRange
+     interaction:(UITextItemInteraction)interaction {
+    if (self.tagAction != nil) {
+        self.tagAction(URL.absoluteString);
+    }
+    return YES;
 }
 
 @end

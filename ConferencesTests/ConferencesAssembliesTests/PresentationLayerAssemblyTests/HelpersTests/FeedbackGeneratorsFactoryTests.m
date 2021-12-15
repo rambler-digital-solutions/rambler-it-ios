@@ -46,37 +46,43 @@
 }
 
 - (void)testThatFactoryGenerateSelectionFeedbackGenerator {
-    // given
-    
-    // when
-    id result = [self.factory selectionFeedbackGenerator];
-    
-    // then
-    XCTAssertTrue([result isMemberOfClass:[UISelectionFeedbackGenerator class]]);
+    if (@available(iOS 10, *)) {
+        // given
+
+        // when
+        id result = [self.factory selectionFeedbackGenerator];
+
+        // then
+        XCTAssertTrue([result isMemberOfClass:[UISelectionFeedbackGenerator class]]);
+    }
 }
 
 - (void)testThatFactoryGenerateLightImpactFeedbackGenerator {
-    // given
-    id generator = OCMClassMock([UIImpactFeedbackGenerator class]);
-    OCMStub(ClassMethod([generator alloc])).andReturn(generator);
-    
-    // when
-    [self.factory lightImpactFeedbackGenerator];
-    
-    // then
-    OCMVerify([(UIImpactFeedbackGenerator *)generator initWithStyle:UIImpactFeedbackStyleLight]);
-    [generator stopMocking];
-    generator = nil;
+    if (@available(iOS 10, *)) {
+        // given
+        id generator = OCMClassMock([UIImpactFeedbackGenerator class]);
+        OCMStub(ClassMethod([generator alloc])).andReturn(generator);
+
+        // when
+        [self.factory lightImpactFeedbackGenerator];
+
+        // then
+        OCMVerify([(UIImpactFeedbackGenerator *)generator initWithStyle:UIImpactFeedbackStyleLight]);
+        [generator stopMocking];
+        generator = nil;
+    }
 }
 
 - (void)testThatFactoryGenerateNotificationFeedbackGenerator {
-    // given
-    
-    // when
-    id result = [self.factory notificationFeedbackGenerator];
-    
-    // then
-    XCTAssertTrue([result isMemberOfClass:[UINotificationFeedbackGenerator class]]);
+    if (@available(iOS 10, *)) {
+        // given
+
+        // when
+        id result = [self.factory notificationFeedbackGenerator];
+
+        // then
+        XCTAssertTrue([result isMemberOfClass:[UINotificationFeedbackGenerator class]]);
+    }
 }
 
 @end

@@ -1,0 +1,44 @@
+{
+    "estimate": {
+        "surge_confirmation_href": "https://api.uber.com/v1/surge-confirmations/7d604f5e",
+        "high_estimate": 22,
+        "surge_confirmation_id": "7d604f5e",
+        "minimum": 9,
+        "low_estimate": 17,
+        "fare_breakdown": [
+                           {
+                           "high_amount": 2.5,
+                           "display_amount": "2.50",
+                           "display_name": "Base Fare",
+                           "low_amount": 2.5
+                           },
+                           {
+                           "high_amount": 13.63,
+                           "display_amount": "10.22-13.63",
+                           "display_name": "Distance",
+                           "low_amount": 10.22
+                           },
+                           {
+                           "high_amount": 0.55,
+                           "display_amount": "0.55",
+                           "display_name": "Booking Fee",
+                           "low_amount": 0.55
+                           },
+                           {
+                           "high_amount": 5.24,
+                           "display_amount": "3.93-5.24",
+                           "display_name": "Time",
+                           "low_amount": 3.93
+                           }
+                           ],
+        "surge_multiplier": 1.2,
+        "display": "A$17-22",
+        "currency_code": "AUD"
+    },
+    "trip": {
+        "distance_unit": "mile",
+        "duration_estimate": 660,
+        "distance_estimate": 4.87
+    },
+    "pickup_estimate": 2
+}

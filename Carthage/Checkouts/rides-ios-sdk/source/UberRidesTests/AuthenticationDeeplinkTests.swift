@@ -30,10 +30,10 @@ class AuthenticationDeeplinkTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        Configuration.restoreDefaults()
+        Configuration.bundle = Bundle(for: type(of: self))
         Configuration.plistName = "testInfo"
-        Configuration.bundle = NSBundle(forClass: self.dynamicType)
-        versionNumber = NSBundle(forClass: RideParameters.self).objectForInfoDictionaryKey("CFBundleShortVersionString") as? String
+        Configuration.restoreDefaults()
+        versionNumber = Bundle(for: RideParameters.self).object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
     }
     
     override func tearDown() {
@@ -53,15 +53,15 @@ class AuthenticationDeeplinkTests: XCTestCase {
     
     func testPath() {
         let authenticationDeeplink = AuthenticationDeeplink(scopes:[])
-        XCTAssertNil(authenticationDeeplink.path)
+        XCTAssertEqual(authenticationDeeplink.path, "")
     }
     
     func testDeeplinkURL() {
-        let scopes = [RidesScope.AllTrips, RidesScope.Profile]
+        let scopes = [RidesScope.allTrips, RidesScope.profile]
         let authenticationDeeplink = AuthenticationDeeplink(scopes:scopes)
         let expectedURLPrefix = "uberauth://connect?"
         
-        XCTAssertTrue(authenticationDeeplink.deeplinkURL.absoluteString!.hasPrefix(expectedURLPrefix))
+        XCTAssertTrue(authenticationDeeplink.deeplinkURL.absoluteString.hasPrefix(expectedURLPrefix))
     }
 }
 

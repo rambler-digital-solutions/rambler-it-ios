@@ -57,7 +57,7 @@
     // then
     EventPlainObject *recentEvent = [sortedEvents firstObject];
     EventPlainObject *oldEvent = [sortedEvents lastObject];
-    XCTAssertGreaterThan(oldEvent.startDate, recentEvent.startDate);
+    XCTAssertTrue([oldEvent.startDate compare:recentEvent.startDate] == NSOrderedAscending);
 }
 
 - (NSArray *)fakeEventsArray {

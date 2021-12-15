@@ -19,8 +19,11 @@
 // THE SOFTWARE.
 
 #import "RamblerInitialAssemblyCollector+Activate.h"
+
 #import <Typhoon/Typhoon.h>
 #import <RamblerTyphoonUtils/AssemblyCollector.h>
+
+#import "MessageExtensionAssembly.h"
 
 @implementation RamblerInitialAssemblyCollector (Activate)
 
@@ -31,6 +34,18 @@
     for (Class assemblyClass in assemblyClasses) {
         if (assemblyClass == class) {
             continue;
+
+        /**
+         HACK
+
+         MessageExtensionAssembly is unavailable in iOS 9 and lower because of `- (MSConversation *)conversation` method
+         */
+        } else if (assemblyClass == [MessageExtensionAssembly class]) {
+            if (@available(iOS 10, *)) {
+
+            } else {
+                continue;
+            }
         }
         TyphoonAssembly *assembly = [assemblyClass new];
         [collaboratingAssemblies addObject:assembly];

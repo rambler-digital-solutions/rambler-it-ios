@@ -49,66 +49,66 @@
     [super tearDown];
 }
 
-- (void)testThatGeneratorGenerateSelectionFeedback {
-    // given
-    id selectionFeedbackGenerator = OCMClassMock([UISelectionFeedbackGenerator class]);
-    OCMStub([self.feedbackGeneratorsFactoryMock selectionFeedbackGenerator]).andReturn(selectionFeedbackGenerator);
-    
-    // when
-    [self.feedbackGenerator generateFeedbackWithType:TapticEngineFeedbackTypeSelection];
-    
-    // then
-    OCMVerify([selectionFeedbackGenerator prepare]);
-    OCMVerify([selectionFeedbackGenerator selectionChanged]);
-    [selectionFeedbackGenerator stopMocking];
-    selectionFeedbackGenerator = nil;
+- (void)testThatGeneratorGeneratesSelectionFeedback {
+    if (@available(iOS 10, *)) {
+        // given
+        id selectionFeedbackGenerator = OCMClassMock([UISelectionFeedbackGenerator class]);
+        OCMStub([self.feedbackGeneratorsFactoryMock selectionFeedbackGenerator]).andReturn(selectionFeedbackGenerator);
+
+        // when
+        [self.feedbackGenerator generateFeedbackWithType:TapticEngineFeedbackTypeSelection];
+
+        // then
+        OCMVerify([selectionFeedbackGenerator prepare]);
+        OCMVerify([selectionFeedbackGenerator selectionChanged]);
+        [selectionFeedbackGenerator stopMocking];
+        selectionFeedbackGenerator = nil;
+    }
 }
 
-- (void)testThatGeneratorGenerateLightImpactFeedback {
-    // given
-    id lightImpactFeedbackGenerator = OCMClassMock([UIImpactFeedbackGenerator class]);
-    OCMStub([self.feedbackGeneratorsFactoryMock lightImpactFeedbackGenerator]).andReturn(lightImpactFeedbackGenerator);
-    
-    // when
-    [self.feedbackGenerator generateFeedbackWithType:TapticEngineFeedbackTypeLightImpact];
-    
-    // then
-    OCMVerify([lightImpactFeedbackGenerator prepare]);
-    OCMVerify([lightImpactFeedbackGenerator impactOccurred]);
-    [lightImpactFeedbackGenerator stopMocking];
-    lightImpactFeedbackGenerator = nil;
+- (void)testThatGeneratorGeneratesLightImpactFeedback {
+    if (@available(iOS 10, *)) {
+        // given
+        id lightImpactFeedbackGenerator = OCMClassMock([UIImpactFeedbackGenerator class]);
+        OCMStub([self.feedbackGeneratorsFactoryMock lightImpactFeedbackGenerator]).andReturn(lightImpactFeedbackGenerator);
+
+        // when
+        [self.feedbackGenerator generateFeedbackWithType:TapticEngineFeedbackTypeLightImpact];
+
+        // then
+        OCMVerify([lightImpactFeedbackGenerator prepare]);
+        OCMVerify([lightImpactFeedbackGenerator impactOccurred]);
+        [lightImpactFeedbackGenerator stopMocking];
+        lightImpactFeedbackGenerator = nil;
+    }
 }
 
-- (void)testThatGeneratorGenerateNotificationErrorFeedback {
-    // given
-    id notificationErrorFeedbackGenerator = OCMClassMock([UINotificationFeedbackGenerator class]);
-    OCMStub([self.feedbackGeneratorsFactoryMock notificationFeedbackGenerator]).andReturn(notificationErrorFeedbackGenerator);
-    
-    // when
-    [self.feedbackGenerator generateFeedbackWithType:TapticEngineFeedbackTypeNotificationError];
-    
-    // then
-    OCMVerify([notificationErrorFeedbackGenerator prepare]);
-    OCMVerify([notificationErrorFeedbackGenerator notificationOccurred:UINotificationFeedbackTypeError]);
-    [notificationErrorFeedbackGenerator stopMocking];
-    notificationErrorFeedbackGenerator = nil;
+- (void)testThatGeneratorGeneratesNotificationErrorFeedback {
+    if (@available(iOS 10, *)) {
+        // given
+        id notificationErrorFeedbackGenerator = OCMClassMock([UINotificationFeedbackGenerator class]);
+        OCMStub([self.feedbackGeneratorsFactoryMock notificationFeedbackGenerator]).andReturn(notificationErrorFeedbackGenerator);
+
+        // when
+        [self.feedbackGenerator generateFeedbackWithType:TapticEngineFeedbackTypeNotificationError];
+
+        // then
+        OCMVerify([notificationErrorFeedbackGenerator prepare]);
+        OCMVerify([notificationErrorFeedbackGenerator notificationOccurred:UINotificationFeedbackTypeError]);
+        [notificationErrorFeedbackGenerator stopMocking];
+        notificationErrorFeedbackGenerator = nil;
+    }
 }
 
-- (void)testThatGeneratorCorrectlyHandleLowIOSVersion {
+- (void)testThatGeneratorCorrectlyHandlesUnknownFeedbackType {
     // given
-    id device = OCMClassMock([UIDevice class]);
-    OCMStub(ClassMethod([device currentDevice])).andReturn(device);
-    
-    OCMStub([(UIDevice *)device systemVersion]).andReturn(@"9.0");
     OCMReject([self.feedbackGeneratorsFactoryMock selectionFeedbackGenerator]);
     
     // when
-    [self.feedbackGenerator generateFeedbackWithType:TapticEngineFeedbackTypeSelection];
+    [self.feedbackGenerator generateFeedbackWithType:TapticEngineFeedbackTypeUnknown];
     
     // then
     OCMVerify(self.feedbackGeneratorsFactoryMock);
-    [device stopMocking];
-    device = nil;
 }
 
 @end
